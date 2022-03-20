@@ -57,8 +57,8 @@ export default defineComponent({
         if (item.sorter || item.filter) {
           const titleContent = renderTitle(h, context.slots, item, i);
           item.title = (h, p) => {
-            const sortIcon = renderSortIcon(h, p);
-            const filterIcon = renderFilterIcon(h, p);
+            const sortIcon = item.sorter ? renderSortIcon(h, p) : null;
+            const filterIcon = item.filter ? renderFilterIcon(h, p) : null;
             return renderTitleWidthIcon(h, [titleContent, sortIcon, filterIcon]);
           };
         }

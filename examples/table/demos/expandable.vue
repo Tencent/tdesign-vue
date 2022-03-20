@@ -28,11 +28,11 @@
       :data="emptyData ? [] : data"
       :expanded-row-keys="expandedRowKeys"
       :expanded-row="expandedRow"
-      @expand-change="rehandleExpandChange"
       :expandIcon="expandIcon"
       :expandOnRowClick="expandOnRowClick"
       table-layout="auto"
       tableContentWidth="1200"
+      @expand-change="rehandleExpandChange"
     >
       <template #status="{ row }">
         <p v-if="row.status === 0" class="status">健康</p>

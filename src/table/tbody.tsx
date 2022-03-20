@@ -90,6 +90,9 @@ export default defineComponent({
     const { tableFullRowClasses, tableBaseClass } = useClassName();
 
     const tbodyClases = computed(() => [tableBaseClass.body]);
+    const isFixedLeftColumn = computed(
+      () => props.isWidthOverflow && !!props.columns.find((col) => col.fixed === 'left'),
+    );
 
     const getTrListeners = () => {
       const trListeners: { [eventName: string]: (e: MouseEvent) => void } = {};
@@ -108,10 +111,11 @@ export default defineComponent({
     return {
       t,
       global,
-      renderTNode,
       tableFullRowClasses,
       tbodyClases,
       tableBaseClass,
+      isFixedLeftColumn,
+      renderTNode,
       getTrListeners,
     };
   },
@@ -142,15 +146,15 @@ export default defineComponent({
       const tType = camelCase(type);
       const fullRowNode = this.renderTNode(tType);
       if (['', null, undefined, false].includes(fullRowNode)) return null;
-      const isFixedToLeft = this.isWidthOverflow && this.columns.find((col) => col.fixed === 'left');
+      // const isFixedToLeft = this.isWidthOverflow && this.columns.find((col) => col.fixed === 'left');
       const classes = [this.tableFullRowClasses.base, this.tableFullRowClasses[tType]];
       /** innerFullRow 和 innerFullElement 同时存在，是为了保证 固定列时，当前行不随内容进行横向滚动 */
       return (
         <tr class={classes}>
           <td colspan={columnLength}>
             <div
-              class={{ [this.tableFullRowClasses.innerFullRow]: isFixedToLeft }}
-              style={isFixedToLeft ? { width: `${this.tableWidth}px` } : {}}
+              class={{ [this.tableFullRowClasses.innerFullRow]: this.isFixedToLeft }}
+              style={this.isFixedToLeft ? { width: `${this.tableWidth}px` } : {}}
             >
               <div class={this.tableFullRowClasses.innerFullElement}>{fullRowNode}</div>
             </div>
@@ -226,7 +230,7 @@ export default defineComponent({
           row,
           index: rowIndex,
           columns: this.columns,
-          tableWidth: this.tableContentWidth,
+          tableWidth: this.tableWidth,
           isWidthOverflow: this.isWidthOverflow,
         };
         const expandedContent = this.renderExpandedRow(h, p);

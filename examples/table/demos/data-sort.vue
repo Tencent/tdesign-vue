@@ -63,36 +63,13 @@ const columns = [
 ];
 
 // 本地数据排序，表示组件内部会对参数 data 进行数据排序。如果 data 数据为 10 条，就仅对这 10 条数据进行排序。
-const data = [
-  {
-    id: 1,
-    instance: 'JQTest1',
-    status: 0,
-    owner: 'jenny;peter',
-    survivalTime: 1000,
-  },
-  {
-    id: 2,
-    instance: 'JQTest2',
-    status: 1,
-    owner: 'jenny',
-    survivalTime: 1000,
-  },
-  {
-    id: 3,
-    instance: 'JQTest3',
-    status: 2,
-    owner: 'jenny',
-    survivalTime: 500,
-  },
-  {
-    id: 4,
-    instance: 'JQTest4',
-    status: 1,
-    owner: 'peter',
-    survivalTime: 1500,
-  },
-];
+const data = new Array(4).fill(null).map((_, i) => ({
+  id: i + 1,
+  instance: `JQTest${i + 1}`,
+  status: [0, 1, 2, 1][i % 3],
+  owner: ['jenny;peter', 'jenny', 'peter'][i % 3],
+  survivalTime: [1000, 1000, 500, 1500][i % 3],
+}));
 
 export default {
   components: {
@@ -146,11 +123,6 @@ export default {
 <style lang="less">
 /deep/ [class*='t-table-expandable-icon-cell'] .t-icon {
   background-color: transparent;
-}
-
-/** 修正自定义排序图标位置 */
-.t-table-demo-sort .t-table-sort-desc {
-  margin-top: -12px;
 }
 
 .demo-container {

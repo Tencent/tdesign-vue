@@ -3084,12 +3084,11 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
           <tr>
             <th data-colkey="type" class="t-table__th-type">
               <div class="t-table__th-cell-inner">
-                <div class="t-table__cell--sortable t-table__cell--filterable">
+                <div class="t-table__cell--sortable">
                   <div class="t-table__cell--title">
                     <div>Type</div>
                     <div class="t-table__filter-icon-wrap">
-                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></span></div>
-                      <!---->
+                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></div>
                     </div>
                   </div>
                 </div>
@@ -3115,7 +3114,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
                   <div class="t-table__cell--title">
                     <div>Property</div>
                     <div class="t-table__filter-icon-wrap">
-                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></span></div>
+                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></div>
                       <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
                           <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
                         </svg></div>
@@ -3153,12 +3152,11 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
             </th>
             <th data-colkey="type" class="t-table__th-type">
               <div class="t-table__th-cell-inner">
-                <div class="t-table__cell--sortable t-table__cell--filterable">
+                <div class="t-table__cell--sortable">
                   <div class="t-table__cell--title">
                     <div>Type</div>
                     <div class="t-table__filter-icon-wrap">
-                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></span></div>
-                      <!---->
+                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></div>
                     </div>
                   </div>
                 </div>
@@ -3184,7 +3182,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
                   <div class="t-table__cell--title">
                     <div>Property</div>
                     <div class="t-table__filter-icon-wrap">
-                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></span></div>
+                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></div>
                       <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
                           <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
                         </svg></div>
@@ -11852,12 +11850,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
               </th>
               <th data-colkey="status" class="t-table__th-status">
                 <div class="t-table__th-cell-inner">
-                  <div class="t-table__cell--sortable t-table__cell--filterable">
+                  <div class="t-table__cell--sortable">
                     <div class="t-table__cell--title">
                       <div>状态</div>
                       <div class="t-table__filter-icon-wrap">
-                        <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
-                        <!---->
+                        <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></div>
                       </div>
                     </div>
                   </div>
@@ -11865,12 +11862,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
               </th>
               <th data-colkey="survivalTime" class="t-table__th-survivalTime">
                 <div class="t-table__th-cell-inner">
-                  <div class="t-table__cell--sortable t-table__cell--filterable">
+                  <div class="t-table__cell--sortable">
                     <div class="t-table__cell--title">
                       <div>存活时间(s)</div>
                       <div class="t-table__filter-icon-wrap">
-                        <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
-                        <!---->
+                        <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></div>
                       </div>
                     </div>
                   </div>
@@ -11910,17 +11906,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
                 </p>
               </td>
               <td>500</td>
-              <td>jenny</td>
+              <td>peter</td>
             </tr>
             <tr>
               <td>JQTest4</td>
               <td>
-                <p class="status warning">
-                  警告
+                <p class="status">
+                  健康
                 </p>
               </td>
-              <td>1500</td>
-              <td>peter</td>
+              <td>1000</td>
+              <td>jenny;peter</td>
             </tr>
           </tbody>
           <!---->
@@ -12358,7 +12354,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
                   <div class="t-table__cell--title">
                     <div>LastName</div>
                     <div class="t-table__filter-icon-wrap">
-                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
+                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></div>
                       <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
                           <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
                         </svg></div>
@@ -13439,12 +13435,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
             </th>
             <th data-colkey="default" class="t-table__th-default">
               <div class="t-table__th-cell-inner">
-                <div class="t-table__cell--sortable t-table__cell--filterable">
+                <div class="t-table__cell--sortable">
                   <div class="t-table__cell--title">
                     <div>默认值</div>
                     <div class="t-table__filter-icon-wrap">
-                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
-                      <!---->
+                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></div>
                     </div>
                   </div>
                 </div>
@@ -13509,12 +13504,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
               </th>
               <th data-colkey="status" class="t-table__th-status">
                 <div class="t-table__th-cell-inner">
-                  <div class="t-table__cell--sortable t-table__cell--filterable">
+                  <div class="t-table__cell--sortable">
                     <div class="t-table__cell--title">
                       <div>状态</div>
                       <div class="t-table__filter-icon-wrap">
-                        <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
-                        <!---->
+                        <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></div>
                       </div>
                     </div>
                   </div>
@@ -13522,12 +13516,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
               </th>
               <th data-colkey="survivalTime" class="t-table__th-survivalTime">
                 <div class="t-table__th-cell-inner">
-                  <div class="t-table__cell--sortable t-table__cell--filterable">
+                  <div class="t-table__cell--sortable">
                     <div class="t-table__cell--title">
                       <div>存活时间(s)</div>
                       <div class="t-table__filter-icon-wrap">
-                        <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
-                        <!---->
+                        <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></div>
                       </div>
                     </div>
                   </div>
@@ -14080,12 +14073,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
             </th>
             <th data-colkey="status" class="t-table__th-status">
               <div class="t-table__th-cell-inner">
-                <div class="t-table__cell--sortable t-table__cell--filterable">
+                <div class="t-table__cell--sortable">
                   <div class="t-table__cell--title">
                     <div>状态</div>
                     <div class="t-table__filter-icon-wrap">
-                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
-                      <!---->
+                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></div>
                     </div>
                   </div>
                 </div>
@@ -14093,12 +14085,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
             </th>
             <th data-colkey="survivalTime" class="t-table__th-survivalTime">
               <div class="t-table__th-cell-inner">
-                <div class="t-table__cell--sortable t-table__cell--filterable">
+                <div class="t-table__cell--sortable">
                   <div class="t-table__cell--title">
                     <div>存活时间(s)</div>
                     <div class="t-table__filter-icon-wrap">
-                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></div>
-                      <!---->
+                      <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></div>
                     </div>
                   </div>
                 </div>
@@ -14138,17 +14129,17 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
               <p class="status unhealth">异常</p>
             </td>
             <td>500</td>
-            <td>jenny</td>
+            <td>peter</td>
           </tr>
           <tr>
             <td>JQTest4</td>
             <td>
+              <p class="status">健康</p>
               <!---->
-              <p class="status warning">警告</p>
               <!---->
             </td>
-            <td>1500</td>
-            <td>peter</td>
+            <td>1000</td>
+            <td>jenny;peter</td>
           </tr>
         </tbody>
         <!---->

@@ -1629,7 +1629,7 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
                   class="t-table__th-cell-inner"
                 >
                   <div
-                    class="t-table__cell--sortable t-table__cell--filterable"
+                    class="t-table__cell--sortable"
                   >
                     <div
                       class="t-table__cell--title"
@@ -1643,44 +1643,41 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
                         <div
                           class="t-table__cell--sort-trigger t-table__double-icons"
                         >
-                          <span>
-                            <span
-                              class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"
+                          <span
+                            class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"
+                          >
+                            <svg
+                              class="t-icon t-icon-chevron-down"
+                              fill="none"
+                              height="1em"
+                              viewBox="0 0 16 16"
+                              width="1em"
                             >
-                              <svg
-                                class="t-icon t-icon-chevron-down"
-                                fill="none"
-                                height="1em"
-                                viewBox="0 0 16 16"
-                                width="1em"
-                              >
-                                <path
-                                  d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-                                  fill="currentColor"
-                                  fill-opacity="0.9"
-                                />
-                              </svg>
-                            </span>
-                            <span
-                              class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc"
+                              <path
+                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                                fill="currentColor"
+                                fill-opacity="0.9"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc t-table-sort-desc"
+                          >
+                            <svg
+                              class="t-icon t-icon-chevron-down"
+                              fill="none"
+                              height="1em"
+                              viewBox="0 0 16 16"
+                              width="1em"
                             >
-                              <svg
-                                class="t-icon t-icon-chevron-down"
-                                fill="none"
-                                height="1em"
-                                viewBox="0 0 16 16"
-                                width="1em"
-                              >
-                                <path
-                                  d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-                                  fill="currentColor"
-                                  fill-opacity="0.9"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                                fill="currentColor"
+                                fill-opacity="0.9"
+                              />
+                            </svg>
                           </span>
                         </div>
-                        <!---->
                       </div>
                     </div>
                   </div>
@@ -1694,7 +1691,7 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
                   class="t-table__th-cell-inner"
                 >
                   <div
-                    class="t-table__cell--sortable t-table__cell--filterable"
+                    class="t-table__cell--sortable"
                   >
                     <div
                       class="t-table__cell--title"
@@ -1708,44 +1705,41 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
                         <div
                           class="t-table__cell--sort-trigger t-table__double-icons"
                         >
-                          <span>
-                            <span
-                              class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"
+                          <span
+                            class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"
+                          >
+                            <svg
+                              class="t-icon t-icon-chevron-down"
+                              fill="none"
+                              height="1em"
+                              viewBox="0 0 16 16"
+                              width="1em"
                             >
-                              <svg
-                                class="t-icon t-icon-chevron-down"
-                                fill="none"
-                                height="1em"
-                                viewBox="0 0 16 16"
-                                width="1em"
-                              >
-                                <path
-                                  d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-                                  fill="currentColor"
-                                  fill-opacity="0.9"
-                                />
-                              </svg>
-                            </span>
-                            <span
-                              class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"
+                              <path
+                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                                fill="currentColor"
+                                fill-opacity="0.9"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"
+                          >
+                            <svg
+                              class="t-icon t-icon-chevron-down"
+                              fill="none"
+                              height="1em"
+                              viewBox="0 0 16 16"
+                              width="1em"
                             >
-                              <svg
-                                class="t-icon t-icon-chevron-down"
-                                fill="none"
-                                height="1em"
-                                viewBox="0 0 16 16"
-                                width="1em"
-                              >
-                                <path
-                                  d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-                                  fill="currentColor"
-                                  fill-opacity="0.9"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                                fill="currentColor"
+                                fill-opacity="0.9"
+                              />
+                            </svg>
                           </span>
                         </div>
-                        <!---->
                       </div>
                     </div>
                   </div>
@@ -1853,7 +1847,7 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
               <td
                 class=""
               >
-                jenny
+                peter
               </td>
             </tr>
             <tr
@@ -1868,22 +1862,22 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
                 class=""
               >
                 <p
-                  class="status warning"
+                  class="status"
                 >
                   
-            警告
+            健康
           
                 </p>
               </td>
               <td
                 class=""
               >
-                1500
+                1000
               </td>
               <td
                 class=""
               >
-                peter
+                jenny;peter
               </td>
             </tr>
           </tbody>
@@ -3415,41 +3409,39 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
                       <div
                         class="t-table__cell--sort-trigger t-table__double-icons"
                       >
-                        <span>
-                          <span
-                            class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"
+                        <span
+                          class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"
+                        >
+                          <svg
+                            class="t-icon t-icon-chevron-down"
+                            fill="none"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            width="1em"
                           >
-                            <svg
-                              class="t-icon t-icon-chevron-down"
-                              fill="none"
-                              height="1em"
-                              viewBox="0 0 16 16"
-                              width="1em"
-                            >
-                              <path
-                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-                                fill="currentColor"
-                                fill-opacity="0.9"
-                              />
-                            </svg>
-                          </span>
-                          <span
-                            class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"
+                            <path
+                              d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                              fill="currentColor"
+                              fill-opacity="0.9"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"
+                        >
+                          <svg
+                            class="t-icon t-icon-chevron-down"
+                            fill="none"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            width="1em"
                           >
-                            <svg
-                              class="t-icon t-icon-chevron-down"
-                              fill="none"
-                              height="1em"
-                              viewBox="0 0 16 16"
-                              width="1em"
-                            >
-                              <path
-                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-                                fill="currentColor"
-                                fill-opacity="0.9"
-                              />
-                            </svg>
-                          </span>
+                            <path
+                              d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                              fill="currentColor"
+                              fill-opacity="0.9"
+                            />
+                          </svg>
                         </span>
                       </div>
                       <div
@@ -12648,7 +12640,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
                 class="t-table__th-cell-inner"
               >
                 <div
-                  class="t-table__cell--sortable t-table__cell--filterable"
+                  class="t-table__cell--sortable"
                 >
                   <div
                     class="t-table__cell--title"
@@ -12662,44 +12654,41 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
                       <div
                         class="t-table__cell--sort-trigger t-table__double-icons"
                       >
-                        <span>
-                          <span
-                            class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"
+                        <span
+                          class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"
+                        >
+                          <svg
+                            class="t-icon t-icon-chevron-down"
+                            fill="none"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            width="1em"
                           >
-                            <svg
-                              class="t-icon t-icon-chevron-down"
-                              fill="none"
-                              height="1em"
-                              viewBox="0 0 16 16"
-                              width="1em"
-                            >
-                              <path
-                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-                                fill="currentColor"
-                                fill-opacity="0.9"
-                              />
-                            </svg>
-                          </span>
-                          <span
-                            class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"
+                            <path
+                              d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                              fill="currentColor"
+                              fill-opacity="0.9"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"
+                        >
+                          <svg
+                            class="t-icon t-icon-chevron-down"
+                            fill="none"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            width="1em"
                           >
-                            <svg
-                              class="t-icon t-icon-chevron-down"
-                              fill="none"
-                              height="1em"
-                              viewBox="0 0 16 16"
-                              width="1em"
-                            >
-                              <path
-                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-                                fill="currentColor"
-                                fill-opacity="0.9"
-                              />
-                            </svg>
-                          </span>
+                            <path
+                              d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                              fill="currentColor"
+                              fill-opacity="0.9"
+                            />
+                          </svg>
                         </span>
                       </div>
-                      <!---->
                     </div>
                   </div>
                 </div>
@@ -12846,7 +12835,7 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
                   class="t-table__th-cell-inner"
                 >
                   <div
-                    class="t-table__cell--sortable t-table__cell--filterable"
+                    class="t-table__cell--sortable"
                   >
                     <div
                       class="t-table__cell--title"
@@ -12860,44 +12849,41 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
                         <div
                           class="t-table__cell--sort-trigger t-table__double-icons"
                         >
-                          <span>
-                            <span
-                              class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"
+                          <span
+                            class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"
+                          >
+                            <svg
+                              class="t-icon t-icon-chevron-down"
+                              fill="none"
+                              height="1em"
+                              viewBox="0 0 16 16"
+                              width="1em"
                             >
-                              <svg
-                                class="t-icon t-icon-chevron-down"
-                                fill="none"
-                                height="1em"
-                                viewBox="0 0 16 16"
-                                width="1em"
-                              >
-                                <path
-                                  d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-                                  fill="currentColor"
-                                  fill-opacity="0.9"
-                                />
-                              </svg>
-                            </span>
-                            <span
-                              class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc"
+                              <path
+                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                                fill="currentColor"
+                                fill-opacity="0.9"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc t-table-sort-desc"
+                          >
+                            <svg
+                              class="t-icon t-icon-chevron-down"
+                              fill="none"
+                              height="1em"
+                              viewBox="0 0 16 16"
+                              width="1em"
                             >
-                              <svg
-                                class="t-icon t-icon-chevron-down"
-                                fill="none"
-                                height="1em"
-                                viewBox="0 0 16 16"
-                                width="1em"
-                              >
-                                <path
-                                  d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-                                  fill="currentColor"
-                                  fill-opacity="0.9"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                                fill="currentColor"
+                                fill-opacity="0.9"
+                              />
+                            </svg>
                           </span>
                         </div>
-                        <!---->
                       </div>
                     </div>
                   </div>
@@ -12911,7 +12897,7 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
                   class="t-table__th-cell-inner"
                 >
                   <div
-                    class="t-table__cell--sortable t-table__cell--filterable"
+                    class="t-table__cell--sortable"
                   >
                     <div
                       class="t-table__cell--title"
@@ -12925,44 +12911,41 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
                         <div
                           class="t-table__cell--sort-trigger t-table__double-icons"
                         >
-                          <span>
-                            <span
-                              class="t-table__sort-icon--active t-table__sort-icon t-table-sort-asc t-negative-rotate-180"
+                          <span
+                            class="t-table__sort-icon--active t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"
+                          >
+                            <svg
+                              class="t-icon t-icon-chevron-down"
+                              fill="none"
+                              height="1em"
+                              viewBox="0 0 16 16"
+                              width="1em"
                             >
-                              <svg
-                                class="t-icon t-icon-chevron-down"
-                                fill="none"
-                                height="1em"
-                                viewBox="0 0 16 16"
-                                width="1em"
-                              >
-                                <path
-                                  d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-                                  fill="currentColor"
-                                  fill-opacity="0.9"
-                                />
-                              </svg>
-                            </span>
-                            <span
-                              class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"
+                              <path
+                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                                fill="currentColor"
+                                fill-opacity="0.9"
+                              />
+                            </svg>
+                          </span>
+                          <span
+                            class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"
+                          >
+                            <svg
+                              class="t-icon t-icon-chevron-down"
+                              fill="none"
+                              height="1em"
+                              viewBox="0 0 16 16"
+                              width="1em"
                             >
-                              <svg
-                                class="t-icon t-icon-chevron-down"
-                                fill="none"
-                                height="1em"
-                                viewBox="0 0 16 16"
-                                width="1em"
-                              >
-                                <path
-                                  d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-                                  fill="currentColor"
-                                  fill-opacity="0.9"
-                                />
-                              </svg>
-                            </span>
+                              <path
+                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                                fill="currentColor"
+                                fill-opacity="0.9"
+                              />
+                            </svg>
                           </span>
                         </div>
-                        <!---->
                       </div>
                     </div>
                   </div>
@@ -14972,7 +14955,7 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
                 class="t-table__th-cell-inner"
               >
                 <div
-                  class="t-table__cell--sortable t-table__cell--filterable"
+                  class="t-table__cell--sortable"
                 >
                   <div
                     class="t-table__cell--title"
@@ -14986,44 +14969,41 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
                       <div
                         class="t-table__cell--sort-trigger t-table__double-icons"
                       >
-                        <span>
-                          <span
-                            class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"
+                        <span
+                          class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"
+                        >
+                          <svg
+                            class="t-icon t-icon-chevron-down"
+                            fill="none"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            width="1em"
                           >
-                            <svg
-                              class="t-icon t-icon-chevron-down"
-                              fill="none"
-                              height="1em"
-                              viewBox="0 0 16 16"
-                              width="1em"
-                            >
-                              <path
-                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-                                fill="currentColor"
-                                fill-opacity="0.9"
-                              />
-                            </svg>
-                          </span>
-                          <span
-                            class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc"
+                            <path
+                              d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                              fill="currentColor"
+                              fill-opacity="0.9"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc t-table-sort-desc"
+                        >
+                          <svg
+                            class="t-icon t-icon-chevron-down"
+                            fill="none"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            width="1em"
                           >
-                            <svg
-                              class="t-icon t-icon-chevron-down"
-                              fill="none"
-                              height="1em"
-                              viewBox="0 0 16 16"
-                              width="1em"
-                            >
-                              <path
-                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-                                fill="currentColor"
-                                fill-opacity="0.9"
-                              />
-                            </svg>
-                          </span>
+                            <path
+                              d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                              fill="currentColor"
+                              fill-opacity="0.9"
+                            />
+                          </svg>
                         </span>
                       </div>
-                      <!---->
                     </div>
                   </div>
                 </div>
@@ -15037,7 +15017,7 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
                 class="t-table__th-cell-inner"
               >
                 <div
-                  class="t-table__cell--sortable t-table__cell--filterable"
+                  class="t-table__cell--sortable"
                 >
                   <div
                     class="t-table__cell--title"
@@ -15051,44 +15031,41 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
                       <div
                         class="t-table__cell--sort-trigger t-table__double-icons"
                       >
-                        <span>
-                          <span
-                            class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180"
+                        <span
+                          class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"
+                        >
+                          <svg
+                            class="t-icon t-icon-chevron-down"
+                            fill="none"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            width="1em"
                           >
-                            <svg
-                              class="t-icon t-icon-chevron-down"
-                              fill="none"
-                              height="1em"
-                              viewBox="0 0 16 16"
-                              width="1em"
-                            >
-                              <path
-                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-                                fill="currentColor"
-                                fill-opacity="0.9"
-                              />
-                            </svg>
-                          </span>
-                          <span
-                            class="t-icon-sort--default t-table__sort-icon t-table-sort-desc"
+                            <path
+                              d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                              fill="currentColor"
+                              fill-opacity="0.9"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"
+                        >
+                          <svg
+                            class="t-icon t-icon-chevron-down"
+                            fill="none"
+                            height="1em"
+                            viewBox="0 0 16 16"
+                            width="1em"
                           >
-                            <svg
-                              class="t-icon t-icon-chevron-down"
-                              fill="none"
-                              height="1em"
-                              viewBox="0 0 16 16"
-                              width="1em"
-                            >
-                              <path
-                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-                                fill="currentColor"
-                                fill-opacity="0.9"
-                              />
-                            </svg>
-                          </span>
+                            <path
+                              d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                              fill="currentColor"
+                              fill-opacity="0.9"
+                            />
+                          </svg>
                         </span>
                       </div>
-                      <!---->
                     </div>
                   </div>
                 </div>
@@ -15202,7 +15179,7 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
             <td
               class=""
             >
-              jenny
+              peter
             </td>
           </tr>
           <tr
@@ -15216,25 +15193,25 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
             <td
               class=""
             >
-              <!---->
-               
               <p
-                class="status warning"
+                class="status"
               >
-                警告
+                健康
               </p>
                
               <!---->
+               
+              <!---->
             </td>
             <td
               class=""
             >
-              1500
+              1000
             </td>
             <td
               class=""
             >
-              peter
+              jenny;peter
             </td>
           </tr>
         </tbody>

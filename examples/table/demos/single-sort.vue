@@ -3,7 +3,6 @@
     <!-- 非受控用法：不需要传 sort，或者只需要传 defaultSort: { sortBy: 'status', descending: true }），defaultSort 仅第一次有效 -->
     <!-- 非受控用法，示例代码有效，勿删 -->
     <!-- <t-table rowKey="id" :columns="columns" :data="data" @sort-change="defaultSortChange">
-      <descending-order-icon slot='op-column' />
       <template #status="{ row }">
         <p v-if="row.status === 0" class="status">健康</p>
         <p v-if="row.status === 1" class="status warning">警告</p>
@@ -18,11 +17,10 @@
       :columns="columns"
       :data="data"
       :sort="sort"
+      bordered
       @sort-change="sortChange"
       @change="onChange"
-      bordered
     >
-      <order-descending-icon slot="op-column" />
       <template #status="{ row }">
         <p v-if="row.status === 0" class="status">健康</p>
         <p v-if="row.status === 1" class="status warning">警告</p>
@@ -33,8 +31,6 @@
 </template>
 
 <script>
-import { OrderDescendingIcon } from 'tdesign-icons-vue';
-
 const columns = [
   { colKey: 'instance', title: '集群名称', width: 150 },
   {
@@ -53,42 +49,15 @@ const columns = [
   },
   { colKey: 'owner', title: '管理员', width: 100 },
 ];
-const data = [
-  {
-    id: 1,
-    instance: 'JQTest1',
-    status: 0,
-    owner: 'jenny;peter',
-    survivalTime: 1000,
-  },
-  {
-    id: 2,
-    instance: 'JQTest2',
-    status: 1,
-    owner: 'jenny',
-    survivalTime: 1000,
-  },
-  {
-    id: 3,
-    instance: 'JQTest3',
-    status: 2,
-    owner: 'jenny',
-    survivalTime: 500,
-  },
-  {
-    id: 4,
-    instance: 'JQTest4',
-    status: 1,
-    owner: 'peter',
-    survivalTime: 1500,
-  },
-];
+const data = new Array(4).fill(null).map((_, i) => ({
+  id: i + 1,
+  instance: `JQTest${i + 1}`,
+  status: [0, 1, 2, 1][i % 3],
+  owner: ['jenny;peter', 'jenny', 'peter'][i % 3],
+  survivalTime: [1000, 1000, 500, 1500][i % 3],
+}));
 
 export default {
-  components: {
-    OrderDescendingIcon,
-  },
-
   data() {
     return {
       data,
