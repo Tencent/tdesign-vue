@@ -63,24 +63,11 @@ export default {
         },
       ],
       /** 非受控用法：与分页组件对齐（此处注释为非受控用法示例，代码有效，勿删） */
-      // pagination: {
-      //   defaultCurrent: 2,
-      //   defaultPageSize: 5,
-      //   total: TOTAL,
-      //   showJumper: true,
-      // },
-      /** 受控用法：与分页组件对齐（此处注释为受控用法示例，代码有效，勿删） */
       pagination: {
-        current: 1,
-        pageSize: 5,
+        defaultCurrent: 2,
+        defaultPageSize: 5,
         total: TOTAL,
         showJumper: true,
-        // 也可以监听表格组件的 page-change 事件进行处理
-        // 还可以使用表格组件的 change 事件处理变化。排序、分页、过滤等发生变化时都会触发 change 事件
-        onChange: (pageInfo) => {
-          this.pagination.current = pageInfo.current;
-          this.pagination.pageSize = pageInfo.pageSize;
-        },
       },
     };
   },

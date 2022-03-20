@@ -103,18 +103,14 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
             <div class={`${prefix}-table__column-controller-body`}>
               <p class={`${prefix}-table__column-controller-desc`}>请选择需要在表格中显示的数据列</p>
               <div class={`${prefix}-table__column-controller-block`}>
-                <Checkbox
-                  indeterminate={isIndeterminate}
-                  checked={isCheckedAll}
-                  onChange={handleClickAllShowColumns}
-                  {...(columnController.value?.checkboxProps || {})}
-                >
+                <Checkbox indeterminate={isIndeterminate} checked={isCheckedAll} onChange={handleClickAllShowColumns}>
                   全选
                 </Checkbox>
               </div>
               <div class={`${prefix}-table__column-controller-block`}>
                 <CheckboxGroup
                   options={checkboxOptions.value}
+                  props={columnController.value?.checkboxProps}
                   value={columnCheckboxKeys.value}
                   onChange={handleCheckChange}
                 />

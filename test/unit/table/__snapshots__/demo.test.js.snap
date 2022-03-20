@@ -3308,7 +3308,7 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
    
   <div>
     <label
-      class="t-checkbox"
+      class="t-checkbox t-is-checked"
     >
       <input
         class="t-checkbox__former"
@@ -3327,7 +3327,7 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-size-m"
+    class="t-table t-size-m t-table--bordered"
     style="position: relative;"
   >
     <div
@@ -3655,22 +3655,22 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
             <td
               class=""
             >
-              Zandra
+              Eric
             </td>
             <td
               class=""
             >
-              Croson
+              Spinke
             </td>
             <td
               class=""
             >
-              zcroson5@virginia.edu
+              espinke0@apache.org
             </td>
             <td
               class=""
             >
-              2022-03-01
+              2021-11-01
             </td>
           </tr>
         </tbody>
@@ -12236,7 +12236,7 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
 exports[`Table Table multiHeaderVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large tdesign-demo-table-multi-header"
-  style="width: 90%;"
+  style="width: 100%;"
 >
   <div>
     <label
@@ -12407,7 +12407,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
             style="width: 100px;"
           />
           <col
-            style="width: 100px;"
+            style="width: 110px;"
           />
           <col
             style="width: 100px;"
@@ -13105,8 +13105,7 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
 
 exports[`Table Table paginationAjaxVue demo works fine 1`] = `
 <div
-  class="t-table t-size-m t-table--bordered t-table--striped t-vertical-align-top"
-  data-a="sheep"
+  class="t-table t-size-m t-table--bordered t-table--striped"
   style="position: relative;"
 >
   <div
@@ -13170,7 +13169,11 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
             <div
               class="t-table__th-cell-inner"
             >
-              邮箱
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                邮箱
+              </div>
             </div>
           </th>
         </tr>
@@ -13286,6 +13289,32 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
           />
         </svg>
       </div>
+      <div
+        class="t-pagination__jump"
+      >
+        跳至
+        <div
+          class="t-input-number t-size-m t-input-number--normal t-pagination__input"
+        >
+          <div
+            class="t-input__wrap"
+          >
+            <div
+              class="t-input t-size-m"
+              ref="refInputElem"
+            >
+              <input
+                autocomplete="off"
+                class="t-input__inner"
+                placeholder="请输入"
+                type="text"
+                unselectable="off"
+              />
+            </div>
+          </div>
+        </div>
+        页
+      </div>
     </div>
   </div>
 </div>
@@ -13396,45 +13425,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
             <td
               class="row t-align-center"
             >
-              0
-            </td>
-            <td
-              class=""
-            >
-              共有
-            </td>
-            <td
-              class=""
-            >
-              String
-            </td>
-            <td
-              class=""
-            >
-              -
-            </td>
-            <td
-              class=""
-            >
-              是
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 0 个数据的嵌套信息值
-              </div>
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class="row t-align-center"
-            >
-              1
+              5
             </td>
             <td
               class=""
@@ -13462,7 +13453,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
               <div
                 class="t-table__ellipsis t-text-ellipsis"
               >
-                读取 1 个数据的嵌套信息值
+                读取 5 个数据的嵌套信息值
               </div>
             </td>
           </tr>
@@ -13472,7 +13463,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
             <td
               class="row t-align-center"
             >
-              2
+              6
             </td>
             <td
               class=""
@@ -13500,7 +13491,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
               <div
                 class="t-table__ellipsis t-text-ellipsis"
               >
-                读取 2 个数据的嵌套信息值
+                读取 6 个数据的嵌套信息值
               </div>
             </td>
           </tr>
@@ -13510,7 +13501,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
             <td
               class="row t-align-center"
             >
-              3
+              7
             </td>
             <td
               class=""
@@ -13538,7 +13529,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
               <div
                 class="t-table__ellipsis t-text-ellipsis"
               >
-                读取 3 个数据的嵌套信息值
+                读取 7 个数据的嵌套信息值
               </div>
             </td>
           </tr>
@@ -13548,7 +13539,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
             <td
               class="row t-align-center"
             >
-              4
+              8
             </td>
             <td
               class=""
@@ -13576,7 +13567,45 @@ exports[`Table Table paginationVue demo works fine 1`] = `
               <div
                 class="t-table__ellipsis t-text-ellipsis"
               >
-                读取 4 个数据的嵌套信息值
+                读取 8 个数据的嵌套信息值
+              </div>
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class="row t-align-center"
+            >
+              9
+            </td>
+            <td
+              class=""
+            >
+              私有
+            </td>
+            <td
+              class=""
+            >
+              Number
+            </td>
+            <td
+              class=""
+            >
+              0
+            </td>
+            <td
+              class=""
+            >
+              否
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                读取 9 个数据的嵌套信息值
               </div>
             </td>
           </tr>
@@ -13631,8 +13660,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
           </div>
         </div>
         <div
-          class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-          disabled="disabled"
+          class="t-pagination__btn t-pagination__btn-prev"
         >
           <svg
             class="t-icon t-icon-chevron-left"
@@ -13652,12 +13680,12 @@ exports[`Table Table paginationVue demo works fine 1`] = `
           class="t-pagination__pager"
         >
           <li
-            class="t-pagination__number t-is-current"
+            class="t-pagination__number"
           >
             1
           </li>
           <li
-            class="t-pagination__number"
+            class="t-pagination__number t-is-current"
           >
             2
           </li>
@@ -14420,13 +14448,13 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             </td>
           </tr>
           <tr
-            class=""
+            class="t-table__row--selected"
           >
             <td
               class="demo-single-select-cell"
             >
               <label
-                class="t-radio"
+                class="t-radio t-is-checked"
               >
                 <input
                   class="t-radio__former"
@@ -15907,7 +15935,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
           <col />
           <col />
           <col
-            style="width: 250px;"
+            style="width: 280px;"
           />
         </colgroup>
         <thead
@@ -16016,7 +16044,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
                       fill-opacity="0.9"
                     />
                   </svg>
-                  我是 0 号（第 1 页）
+                  我是 0_1 号（第 1 页）
                 </div>
               </div>
             </td>
@@ -16118,7 +16146,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
                       fill-opacity="0.9"
                     />
                   </svg>
-                  我是 1 号（第 1 页）
+                  我是 1_1 号（第 1 页）
                 </div>
               </div>
             </td>
@@ -16220,7 +16248,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
                       fill-opacity="0.9"
                     />
                   </svg>
-                  我是 2 号（第 1 页）
+                  我是 2_1 号（第 1 页）
                 </div>
               </div>
             </td>
@@ -16322,7 +16350,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
                       fill-opacity="0.9"
                     />
                   </svg>
-                  我是 3 号（第 1 页）
+                  我是 3_1 号（第 1 页）
                 </div>
               </div>
             </td>
@@ -16424,7 +16452,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
                       fill-opacity="0.9"
                     />
                   </svg>
-                  我是 4 号（第 1 页）
+                  我是 4_1 号（第 1 页）
                 </div>
               </div>
             </td>

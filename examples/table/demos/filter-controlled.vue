@@ -22,6 +22,7 @@
     </t-table> -->
 
     <!-- filter-value.sync 等同于 filter-value + filter-change -->
+    <!-- :filter-row="() => null" 用于隐藏过滤结果行 -->
     <t-table
       rowKey="key"
       :columns="columns"
@@ -35,50 +36,26 @@
 </template>
 
 <script lang="jsx">
-const data = [
-  {
-    key: '1',
-    firstName: 'Eric',
-    lastName: 'Spinke',
-    email: 'espinke0@apache.org',
-    createTime: '2021-11-01',
-  },
-  {
-    key: '2',
-    firstName: 'Gilberta',
-    lastName: 'Purves',
-    email: 'gpurves1@issuu.com',
-    createTime: '2021-12-01',
-  },
-  {
-    key: '3',
-    firstName: 'Heriberto',
-    lastName: 'Kment',
-    email: 'hkment2@nsw.gov.au',
-    createTime: '2022-01-01',
-  },
-  {
-    key: '4',
-    firstName: 'Lazarus',
-    lastName: 'Skures',
-    email: 'lskures3@apache.org',
-    createTime: '2022-02-01',
-  },
-  {
-    key: '5',
-    firstName: 'Zandra',
-    lastName: 'Croson',
-    email: 'zcroson5@virginia.edu',
-    createTime: '2022-03-01',
-  },
-];
+const data = new Array(5).fill(null).map((_, i) => ({
+  key: String(i + 1),
+  firstName: ['Eric', 'Gilberta', 'Heriberto', 'Lazarus', 'Zandra'][i % 4],
+  lastName: ['Spinke', 'Purves', 'Kment', 'Skures', 'Croson'][i % 4],
+  email: [
+    'espinke0@apache.org',
+    'gpurves1@issuu.com',
+    'hkment2@nsw.gov.au',
+    'lskures3@apache.org',
+    'zcroson5@virginia.edu',
+  ][i % 4],
+  createTime: ['2021-11-01', '2021-12-01', '2022-01-01', '2022-02-01', '2022-03-01'][i % 4],
+}));
 
 export default {
   data() {
     return {
       data,
       filterValue: {},
-      bordered: false,
+      bordered: true,
       columns: [
         {
           title: 'FirstName',
@@ -97,6 +74,7 @@ export default {
         {
           title: 'LastName',
           colKey: 'lastName',
+          // 用于查看同时存在排序和过滤时的图标显示是否正常
           sorter: true,
           // 多选过滤配置
           filter: {
@@ -128,7 +106,7 @@ export default {
         {
           title: 'Date',
           colKey: 'createTime',
-          // 自定义过滤组件
+          // 自定义过滤组件：日期过滤配置，请确保自定义组件包含 value 和 onChange 属性
           filter: {
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             component: (h) => <t-date-picker clearable />,

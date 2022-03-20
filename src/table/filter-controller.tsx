@@ -126,11 +126,19 @@ export default defineComponent({
             size="small"
             onClick={() => {
               this.$emit('reset', column);
+              this.filterPopupVisible = false;
             }}
           >
             重置
           </TButton>
-          <TButton theme="primary" size="small" onClick={() => this.$emit('confirm', column)}>
+          <TButton
+            theme="primary"
+            size="small"
+            onClick={() => {
+              this.$emit('confirm', column);
+              this.filterPopupVisible = false;
+            }}
+          >
             确认
           </TButton>
         </div>

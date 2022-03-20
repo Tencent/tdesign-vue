@@ -30,8 +30,6 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
   const renderTNode = useTNodeDefault();
   const { filterValue } = toRefs(props);
   const { tableFilterClasses, isFocusClass } = useClassName();
-  // 记录筛选列是否处理下拉展开状态
-  const filterPopupVisible = ref<{ [key: string]: boolean }>({});
 
   // uncontroll and controll
   const [tFilterValue, setTFilterValue] = useDefaultValue(
@@ -127,17 +125,14 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
         || '',
     };
     emitFilterChange(filterValue, column);
-    filterPopupVisible.value = { ...filterPopupVisible.value, [column.colKey]: false };
   }
 
   function onResetAll() {
     emitFilterChange({}, undefined);
-    filterPopupVisible.value = {};
   }
 
   function onConfirm(column: PrimaryTableCol) {
     emitFilterChange(innerFilterValue.value, column);
-    filterPopupVisible.value = { ...filterPopupVisible.value, [column.colKey]: false };
   }
 
   // 图标：内置图标，组件自定义图标，全局配置图标

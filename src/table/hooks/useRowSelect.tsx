@@ -86,10 +86,7 @@ export default function useRowSelect(props: TdPrimaryTableProps) {
     const selectBoxProps = {
       props: {
         checked,
-        ...column,
-        type: column.type,
         disabled,
-        rowIndex,
         ...checkProps,
       },
       on: {

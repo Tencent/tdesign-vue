@@ -1,6 +1,6 @@
 <template>
   <!-- 注意控制父元素宽度 -->
-  <div style="width: 90%" class="tdesign-demo-block-column-large tdesign-demo-table-multi-header">
+  <div style="width: 100%" class="tdesign-demo-block-column-large tdesign-demo-table-multi-header">
     <!-- 按钮操作区域 -->
     <div>
       <t-checkbox v-model="bordered">显示表格边框</t-checkbox>
@@ -26,7 +26,7 @@
       :filterRow="() => null"
       :headerAffixProps="{ offsetTop: 0 }"
       :headerAffixedTop="headerAffixedTop"
-      :scroll="virtualScroll ? { type: 'virtual', threshold: 2, rowHeight: 48, bufferSize: 30 } : undefined"
+      :scroll="virtualScroll ? { type: 'virtual', threshold: 2, rowHeight: 48, bufferSize: 10 } : undefined"
       @data-change="onDataChange"
       @filter-change="onFilterChange"
     ></t-table>
@@ -91,7 +91,7 @@ function getColumns(fixedLeftCol, fixedRightCol) {
               colKey: 'type',
               title: '类型',
               fixed: fixedLeftCol && 'left',
-              width: 100,
+              width: 110,
             },
             {
               align: 'left',

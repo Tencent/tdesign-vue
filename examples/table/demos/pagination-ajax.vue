@@ -3,12 +3,10 @@
     :data="data"
     :columns="columns"
     :rowKey="rowKey"
-    :verticalAlign="verticalAlign"
     :loading="isLoading"
     :pagination="pagination"
     @change="rehandleChange"
     @page-change="onPageChange"
-    data-a="sheep"
     bordered
     stripe
   >
@@ -47,15 +45,16 @@ export default {
           width: 260,
           colKey: 'email',
           title: '邮箱',
+          ellipsis: true,
         },
       ],
       rowKey: 'property',
       tableLayout: 'auto',
-      verticalAlign: 'top',
       rowClassName: 'property-class',
       pagination: {
         current: 1,
         pageSize: 10,
+        showJumper: true,
       },
     };
   },
@@ -72,13 +71,9 @@ export default {
         const params = { page: current, results: pageSize };
         Object.keys(params).forEach((key) => url.searchParams.append(key, params[key]));
         const response = await fetch(url).then((x) => x.json());
-        console.log('response', response);
         this.data = response.results;
-        this.pagination = {
-          ...pagination,
-          total: 120,
-        };
-        console.log('分页数据', response.results);
+        // 数据加载完成，设置数据总条数
+        this.pagination.total = 120;
       } catch (err) {
         this.data = [];
       }
@@ -93,6 +88,8 @@ export default {
     // BaseTable 中只有 page-change 事件，没有 change 事件
     async onPageChange(pageInfo) {
       console.log('page-change', pageInfo);
+      this.pagination.current = pageInfo.current;
+      this.pagination.pageSize = pageInfo.pageSize;
       await this.fetchData(pageInfo);
     },
   },

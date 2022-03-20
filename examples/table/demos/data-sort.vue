@@ -109,13 +109,15 @@ export default {
   methods: {
     // 除了监听 sortChange 事件调整排序，也可以监听 change 事件
     sortChange(sort, options) {
+      console.log('sort-change', sort, options);
+      // 受控操作当中，this.sort 和 this.data 的赋值都是必须
       this.sort = sort;
-      console.log('#### sortChange:', sort, options);
+      this.data = options.currentDataSource;
     },
     dataChange(data) {
-      // data 同 sortChange 中的 options.currentDataSource，
-      // 因此也可以直接在 sortChange 中对 data 进行赋值操作
-      this.data = data;
+      // 除了 sortChange，也可以在这里对 data.value 进行赋值
+      // this.data = data;
+      console.log('data-change', data);
     },
   },
 };

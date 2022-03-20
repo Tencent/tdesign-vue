@@ -40,7 +40,7 @@ function getData(currentPage = 1) {
   for (let i = 0; i < 5; i++) {
     const obj = {
       id: i,
-      key: `我是 ${i} 号（${pageInfo}）`,
+      key: `我是 ${i}_${currentPage} 号（${pageInfo}）`,
       platform: i % 2 === 0 ? '共有' : '私有',
       type: ['String', 'Number', 'Array', 'Object'][i % 4],
       default: ['-', '0', '[]', '{}'][i % 4],
@@ -55,14 +55,14 @@ function getData(currentPage = 1) {
       const secondObj = {
         ...obj,
         id: secondIndex,
-        key: `我是 ${secondIndex} 号（${pageInfo}）`,
+        key: `我是 ${secondIndex}_${currentPage} 号（${pageInfo}）`,
       };
       secondObj.list = new Array(3).fill(null).map((m, n) => {
         const thirdIndex = secondIndex * 1000 + 100 * m + (n + 1) * 10;
         return {
           ...obj,
           id: thirdIndex,
-          key: `我是 ${thirdIndex} 号（${pageInfo}）`,
+          key: `我是 ${thirdIndex}_${currentPage} 号（${pageInfo}）`,
         };
       });
       return secondObj;
@@ -111,7 +111,7 @@ export default {
         },
         {
           colKey: 'operate',
-          width: 250,
+          width: 280,
           title: '操作',
           align: 'center',
           // 增、删、改、查 等操作
@@ -182,10 +182,8 @@ export default {
     },
 
     onPageChange(pageInfo) {
-      this.pagination = {
-        ...this.pagination,
-        ...pageInfo,
-      };
+      this.pagination.current = pageInfo.current;
+      this.pagination.pageSize = pageInfo.pageSize;
       this.data = getData(pageInfo.current);
     },
   },
