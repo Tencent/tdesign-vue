@@ -5,7 +5,7 @@ toc: false
 docClass: timeline
 ---
 
-## 0.37.1 `2022-03-18`
+## 0.37.2 `2022-03-18`
 ### Bug Fixes
 
 * Button: 修复 `disabled` 不生效的问题，[pr #584](https://github.com/Tencent/tdesign-vue/pull/584)，[@lanniuniu](https://github.com/lanniuniu)
@@ -20,10 +20,11 @@ docClass: timeline
   - 修复超出滚动失效
   - 修复 `paste` 事件未生效
 * TreeSelect: 修复异步加载数据的情况下，`label` 展示错误的问题，[issue #537](https://github.com/Tencent/tdesign-vue/issues/537)，[@YikaJ](https://github.com/YikaJ)
+* InputNumber: 修复 `value` 为 null 时组件报错的问题，[pr #598](https://github.com/Tencent/tdesign-vue/pull/598)，[@xiaosansiji](https://github.com/xiaosansiji)
 
 ### Features
 
-* Timepicker: `close`、`open` 事件回调增加参数
+* Timepicker: `close`、`open` 事件回调增加参数，[pr #587](https://github.com/Tencent/tdesign-vue/pull/587)，[@uyarn](https://github.com/uyarn)
 
 ## 0.37.0 `2022-03-14`
 
