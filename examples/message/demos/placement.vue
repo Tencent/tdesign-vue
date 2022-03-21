@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="t-message-offset">
-      <t-input placeholder="请输入横向偏移量" v-model="offsetX" class="input-offset"></t-input>
-      <t-input placeholder="请输入纵向偏移量" v-model="offsetY" class="input-offset"></t-input>
+      <t-input placeholder="请输入横向偏移量" v-model="offsetX"></t-input>
+      <t-input placeholder="请输入纵向偏移量" v-model="offsetY"></t-input>
     </div>
     <div class="tdesign-tooltip-placement">
       <t-button variant="outline" @click="$message.success(msgList[0])" class="placement-center">center</t-button>
@@ -58,7 +58,8 @@ export default {
   margin-right: 16px;
   margin-bottom: 16px;
 }
-.t-message-offset .input-offset {
+
+.t-message-offset > .t-input__wrap {
   width: 130px;
   display: inline-block;
   margin-right: 20px;
@@ -74,47 +75,51 @@ export default {
 .placement-top {
   position: absolute;
   top: 0;
-  left: 42%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .placement-top-left {
   position: absolute;
   top: 0;
-  left: 70px;
+  left: 0;
 }
 .placement-top-right {
   position: absolute;
   top: 0;
-  right: 70px;
+  right: 0;
 }
 .placement-bottom {
   position: absolute;
   bottom: 0;
-  left: 42%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .placement-bottom-left {
   position: absolute;
   bottom: 0;
-  left: 70px;
-  width: 120px;
+  left: 0;
 }
 .placement-bottom-right {
   position: absolute;
   bottom: 0;
-  right: 70px;
+  right: 0;
 }
 .placement-left {
   position: absolute;
   left: 0;
-  top: 42%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .placement-right {
   position: absolute;
   right: 0;
-  top: 42%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .placement-center {
   position: absolute;
-  right: 42%;
-  bottom: 42%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 </style>
