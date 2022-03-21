@@ -134,6 +134,7 @@ export default function useClassName() {
     // 树形结构类名
     tableTreeClasses: {
       col: `${prefix}-table__tree-col`,
+      inlineCol: `${prefix}-table__tree-col--inline`,
       icon: `${prefix}-table__tree-op-icon`,
     },
 
