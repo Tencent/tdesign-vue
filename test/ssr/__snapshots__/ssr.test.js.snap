@@ -11459,7 +11459,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
         </colgroup>
         <thead class="t-table__header">
           <tr>
-            <th data-colkey="index" class="row t-table__th-index t-align-center">
+            <th data-colkey="index" class="custom-column-class-name t-table__th-index t-align-center">
               <div class="t-table__th-cell-inner">序号</div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
@@ -11483,7 +11483,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="row t-align-center">0</td>
+            <td data-id="first-column" class="custom-column-class-name t-align-center">0</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -11493,7 +11493,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             </td>
           </tr>
           <tr>
-            <td class="row t-align-center">1</td>
+            <td data-id="first-column" class="custom-column-class-name t-align-center">1</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -11503,7 +11503,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             </td>
           </tr>
           <tr>
-            <td class="row t-align-center">2</td>
+            <td data-id="first-column" class="custom-column-class-name t-align-center">2</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -11513,7 +11513,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             </td>
           </tr>
           <tr>
-            <td class="row t-align-center">3</td>
+            <td data-id="first-column" class="custom-column-class-name t-align-center">3</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
@@ -11523,7 +11523,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             </td>
           </tr>
           <tr>
-            <td class="row t-align-center">4</td>
+            <td data-id="first-column" class="custom-column-class-name t-align-center">4</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>

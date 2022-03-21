@@ -17,6 +17,7 @@ const SIMPLE_COLUMNS = [
   { title: 'Instance', colKey: 'instance' },
 ];
 
+// 4 类表格组件同时测试
 const TABLES = [Table, BaseTable, PrimaryTable, EnhancedTable];
 
 TABLES.forEach((TTable) => {
@@ -47,7 +48,7 @@ TABLES.forEach((TTable) => {
       expect(fn).toHaveBeenCalled();
     });
 
-    it('Events.onRowDbClick', async () => {
+    it('Events.onRowDblclick', async () => {
       const fn = jest.fn();
       const wrapper = mount({
         render() {

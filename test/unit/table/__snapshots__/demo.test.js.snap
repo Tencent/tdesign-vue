@@ -409,7 +409,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
         >
           <tr>
             <th
-              class="row t-table__th-index t-align-center"
+              class="custom-column-class-name t-table__th-index t-align-center"
               data-colkey="index"
             >
               <div
@@ -481,7 +481,8 @@ exports[`Table Table baseVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="row t-align-center"
+              class="custom-column-class-name t-align-center"
+              data-id="first-column"
             >
               0
             </td>
@@ -519,7 +520,8 @@ exports[`Table Table baseVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="row t-align-center"
+              class="custom-column-class-name t-align-center"
+              data-id="first-column"
             >
               1
             </td>
@@ -557,7 +559,8 @@ exports[`Table Table baseVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="row t-align-center"
+              class="custom-column-class-name t-align-center"
+              data-id="first-column"
             >
               2
             </td>
@@ -595,7 +598,8 @@ exports[`Table Table baseVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="row t-align-center"
+              class="custom-column-class-name t-align-center"
+              data-id="first-column"
             >
               3
             </td>
@@ -633,7 +637,8 @@ exports[`Table Table baseVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="row t-align-center"
+              class="custom-column-class-name t-align-center"
+              data-id="first-column"
             >
               4
             </td>

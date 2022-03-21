@@ -12,6 +12,7 @@ const data = new Array(5).fill(null).map((item, index) => ({
   description: 'test',
 }));
 
+// 4 类表格组件同时测试
 const TABLES = [Table, BaseTable, PrimaryTable, EnhancedTable];
 
 TABLES.forEach((TTable) => {

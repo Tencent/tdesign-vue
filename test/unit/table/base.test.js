@@ -17,6 +17,7 @@ const SIMPLE_COLUMNS = [
   { title: 'Instance', colKey: 'instance' },
 ];
 
+// 4 类表格组件同时测试
 const TABLES = [Table, BaseTable, PrimaryTable, EnhancedTable];
 
 // 每一种表格组件都需要单独测试，避免出现组件之间属性或事件透传不成功的情况
