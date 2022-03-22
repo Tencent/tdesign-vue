@@ -31,6 +31,10 @@ function fadeOut(dom: HTMLElement, placement: string, onFinish: Function) {
       dom.style.display = 'none';
       onFinish();
     };
+  } else {
+    // eslint-disable-next-line no-param-reassign
+    dom.style.display = 'none';
+    onFinish();
   }
 }
 
@@ -57,13 +61,13 @@ function getFadeInKeyframes(placement: string, offsetWidth: Number, offsetHeight
       { opacity: 1, marginRight: '0' },
     ];
   }
-  if (['top'].includes(placement)) {
+  if (['top', 'center'].includes(placement)) {
     return [
       { opacity: 0, marginTop: `-${offsetHeight}px` },
       { opacity: 1, marginTop: '0' },
     ];
   }
-  if (['center', 'bottom'].includes(placement)) {
+  if (['bottom'].includes(placement)) {
     return [
       { opacity: 0, transform: `translate3d(0, ${offsetHeight}px, 0)` },
       { opacity: 1, transform: 'translate3d(0, 0, 0)' },
