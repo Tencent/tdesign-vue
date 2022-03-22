@@ -31,6 +31,10 @@ function fadeOut(dom: HTMLElement, placement: string, onFinish: Function) {
       dom.style.display = 'none';
       onFinish();
     };
+  } else {
+    // eslint-disable-next-line no-param-reassign
+    dom.style.display = 'none';
+    onFinish();
   }
 }
 
