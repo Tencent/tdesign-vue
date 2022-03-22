@@ -10,7 +10,11 @@ import { TdTabsProps, TdTabPanelProps } from './type';
 import tabProps from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { TabPanelProps } from '.';
-import BaseTab from './baseTab';
+import tabBase from '../_common/js/tabs/base';
+
+const {
+  calculateCanToLeft, calculateCanToRight, calcScrollLeft, scrollToLeft, scrollToRight, moveActiveTabIntoView,
+} = tabBase;
 
 const getActiveTabEl = (navs: Array<VNode>, value: TabPanelProps['value']): HTMLElement => {
   for (let i = 0; i < navs.length; i++) {
@@ -47,7 +51,6 @@ export default Vue.extend({
       canToLeft: false,
       canToRight: false,
       navBarStyle: {},
-      baseEntity: null,
     };
   },
   computed: {
@@ -138,7 +141,7 @@ export default Vue.extend({
   watch: {
     dataCanUpdateArrow() {
       this.$nextTick(() => {
-        this.baseEntity.adjustArrowDisplay();
+        this.adjustArrowDisplay();
       });
     },
     dataCanUpdateNavBarStyle() {
@@ -153,22 +156,39 @@ export default Vue.extend({
     },
     navs() {
       this.$nextTick(() => {
-        this.baseEntity.adjustScrollbar();
+        this.adjustScrollbar();
       });
     },
   },
   methods: {
+    getRefs(
+      refs: string[] = ['navsContainer', 'navsWrap', 'leftOperations', 'toLeftBtn', 'rightOperations', 'toRightBtn'],
+    ) {
+      return refs.reduce((ans, key): Record<string, HTMLElement> => {
+        // eslint-disable-next-line no-param-reassign
+        ans[key] = this.$refs[key] as HTMLElement;
+        return ans;
+      }, {});
+    },
+    adjustArrowDisplay() {
+      this.canToLeft = calculateCanToLeft(this.getRefs(), this.scrollLeft, this.placement);
+      this.canToRight = calculateCanToRight(this.getRefs(), this.scrollLeft, this.placement);
+    },
+    adjustScrollbar() {
+      this.scrollLeft = calcScrollLeft(
+        {
+          ...this.getRefs(),
+        },
+        this.scrollLeft,
+      );
+    },
     calculateNavBarStyle() {
       const getNavBarStyle = () => {
         if (this.theme === 'card') return {};
-        const getPropName = () => {
-          if (['left', 'right'].includes(this.placement.toLowerCase())) {
-            return ['height', 'top'];
-          }
-          return ['width', 'left'];
-        };
+
+        const isVertical = ['left', 'right'].includes(this.placement.toLowerCase());
+        const [sizePropName, offsetPropName] = isVertical ? ['height', 'top'] : ['width', 'left'];
         let offset = 0;
-        const [sizePropName, offsetPropName] = getPropName();
         let i = 0;
         for (; i < this.navs.length; i++) {
           if ((this.navs[i].componentInstance as InstanceType<typeof TTabPanel>)?.value === this.value) {
@@ -187,8 +207,8 @@ export default Vue.extend({
 
     watchDomChange() {
       const onResize = debounce(() => {
-        this.baseEntity.adjustScrollbar();
-        this.baseEntity.adjustArrowDisplay();
+        this.adjustScrollbar();
+        this.adjustArrowDisplay();
       }, 300);
       window.addEventListener('resize', onResize);
       this.$once('beforeDestroy', () => {
@@ -204,20 +224,19 @@ export default Vue.extend({
     },
 
     handleScrollToLeft() {
-      this.baseEntity.scrollToLeft();
+      this.scrollLeft = scrollToLeft(this.getRefs(), this.scrollLeft);
     },
 
     handleScrollToRight() {
-      this.baseEntity.scrollToRight();
+      this.scrollLeft = scrollToRight(this.getRefs(), this.scrollLeft);
     },
 
     moveActiveTabIntoView({ needCheckUpdate } = { needCheckUpdate: true }) {
-      const { baseEntity } = this;
       if (['left', 'right'].includes(this.placement)) {
         return false;
       }
-      const activeTabEl: HTMLElement = getActiveTabEl(this.navs, this.value);
-      if (!activeTabEl) {
+      const activeTab: HTMLElement = getActiveTabEl(this.navs, this.value);
+      if (!activeTab) {
         // 如果没有当前 value 对应的tab，一种情况是真没有；一种情况是在修改value的同时，新增了一个值为该value的tab。后者因为navs的更新在$nextTick之后，所以得等下一个updated才能拿到新的tab
         if (needCheckUpdate) {
           this.$once('hook:updated', () => {
@@ -226,7 +245,13 @@ export default Vue.extend({
         }
         return false;
       }
-      return baseEntity.shouldMoveToLeftSide(activeTabEl) || baseEntity.shouldMoveToRightSide(activeTabEl);
+      this.scrollLeft = moveActiveTabIntoView(
+        {
+          activeTab,
+          ...this.getRefs(),
+        },
+        this.scrollLeft,
+      );
     },
 
     handleAddTab(e: MouseEvent) {
@@ -247,19 +272,19 @@ export default Vue.extend({
 
     renderArrows() {
       return [
-        <div ref="leftOperationsZone" class={[`${prefix}-tabs__operations`, `${prefix}-tabs__operations--left`]}>
+        <div ref="leftOperations" class={[`${prefix}-tabs__operations`, `${prefix}-tabs__operations--left`]}>
           <transition name="fade" mode="out-in" appear>
             {this.canToLeft ? (
-              <div ref="leftIcon" class={this.leftIconClass} onClick={this.handleScrollToLeft}>
+              <div ref="toLeftBtn" class={this.leftIconClass} onClick={this.handleScrollToLeft}>
                 <ChevronLeftIcon />
               </div>
             ) : null}
           </transition>
         </div>,
-        <div ref="rightOperationsZone" class={[`${prefix}-tabs__operations`, `${prefix}-tabs__operations--right`]}>
+        <div ref="rightOperations" class={[`${prefix}-tabs__operations`, `${prefix}-tabs__operations--right`]}>
           <transition name="fade" mode="out-in" appear>
             {this.canToRight ? (
-              <div ref="rightIcon" class={this.rightIconClass} onClick={this.handleScrollToRight}>
+              <div ref="toRightBtn" class={this.rightIconClass} onClick={this.handleScrollToRight}>
                 <ChevronRightIcon />
               </div>
             ) : null}
@@ -290,15 +315,10 @@ export default Vue.extend({
     },
   },
   mounted() {
-    this.baseEntity = new BaseTab({
-      getState: (prop: string) => this[prop],
-      getElement: (refName: string) => this.$refs[refName] as HTMLElement,
-      setState: (key: string, value: any) => (this[key] = value),
-    });
     this.$nextTick(() => {
       this.watchDomChange();
       this.calculateNavBarStyle();
-      this.baseEntity.adjustArrowDisplay();
+      this.adjustArrowDisplay();
     });
   },
   render() {
