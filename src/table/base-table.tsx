@@ -70,6 +70,7 @@ export default defineComponent({
       showColumnShadow,
       showAffixHeader,
       rowAndColFixedPosition,
+      refreshTable,
       onTableContentScroll,
       updateHeaderScroll,
     } = useFixed(props, context);
@@ -84,6 +85,11 @@ export default defineComponent({
       { [tableBaseClass.multipleHeader]: isMultipleHeader.value },
       { [tableColFixedClasses.leftShadow]: showColumnShadow.left },
       { [tableColFixedClasses.rightShadow]: showColumnShadow.right },
+    ]);
+
+    const tableElmClasses = computed(() => [
+      [tableLayoutClasses[props.tableLayout]],
+      { [tableBaseClass.fullHeight]: props.height },
     ]);
 
     const isVirtual = computed(() => type === 'virtual' && props.data?.length > (props.scroll?.threshold || 100));
@@ -166,6 +172,7 @@ export default defineComponent({
       tableElementStyles,
       virtualScrollClasses,
       tableLayoutClasses,
+      tableElmClasses,
       tableContentRef,
       isFixedHeader,
       isWidthOverflow,
@@ -196,6 +203,7 @@ export default defineComponent({
       onFixedChange,
       updateHeaderScroll,
       onInnerScroll,
+      refreshTable,
     };
   },
 
@@ -217,10 +225,7 @@ export default defineComponent({
         style={{ width: `${this.tableWidth}px`, opacity: Number(this.showAffixHeader) }}
         class={{ [this.tableBaseClass.affixedHeaderElm]: this.headerAffixedTop || this.isVirtual }}
       >
-        <table
-          class={[this.tableLayoutClasses[this.tableLayout]]}
-          style={{ ...this.tableElementStyles, width: `${this.tableWidth}px` }}
-        >
+        <table class={this.tableElmClasses} style={{ ...this.tableElementStyles, width: `${this.tableWidth}px` }}>
           {colgroup}
           <THead
             scopedSlots={this.$scopedSlots}
@@ -273,7 +278,7 @@ export default defineComponent({
       >
         {this.isVirtual && <div class={this.virtualScrollClasses.cursor} style={virtualStyle} />}
 
-        <table ref="tableElmRef" class={this.tableLayoutClasses[this.tableLayout]} style={this.tableElementStyles}>
+        <table ref="tableElmRef" class={this.tableElmClasses} style={this.tableElementStyles}>
           {colgroup}
           <THead
             scopedSlots={this.$scopedSlots}

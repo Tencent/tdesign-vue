@@ -1,13 +1,5 @@
 import {
-  ref,
-  reactive,
-  watch,
-  toRefs,
-  SetupContext,
-  onMounted,
-  onUnmounted,
-  computed,
-  onUpdated,
+  ref, reactive, watch, toRefs, SetupContext, onMounted, onUnmounted, computed,
 } from '@vue/composition-api';
 import get from 'lodash/get';
 import log from '../../_common/js/log';
@@ -402,6 +394,11 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     }, 0);
   };
 
+  const setTableWidth = () => {
+    const rect = tableContentRef.value.getBoundingClientRect();
+    tableWidth.value = rect.width - scrollbarWidth.value - (props.bordered ? 1 : 0);
+  };
+
   const setThWidthList = (trList: HTMLCollection) => {
     const widthMap: { [colKey: string]: number } = {};
     for (let i = 0, len = trList.length; i < len; i++) {
@@ -413,8 +410,6 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
       }
     }
     thWidthList.value = widthMap;
-    const rect = tableContentRef.value.getBoundingClientRect();
-    tableWidth.value = rect.width - scrollbarWidth.value - (props.bordered ? 1 : 0);
     if (affixHeaderRef.value) {
       const left = tableContentRef.value.scrollLeft;
       lastScrollLeft = left;
@@ -425,6 +420,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   const setThWidthListHander = () => {
     if (notNeedThWidthList.value) return;
     const timer = setTimeout(() => {
+      setTableWidth();
       const thead = tableContentRef.value.querySelector('thead');
       setThWidthList(thead.children);
       clearTimeout(timer);
@@ -474,7 +470,9 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     }
   });
 
-  const onResize = () => {
+  const refreshTable = () => {
+    setTableWidth();
+    updateFixedHeader();
     if (!notNeedThWidthList.value) {
       setThWidthListHander();
     }
@@ -484,21 +482,13 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     }
   };
 
-  onUpdated(() => {
-    // 如果元素的父元素状态为 display: none，表格宽度为 0，无法计算固定列宽和阴影，因此需要在元素更新的时候再次更新固定列宽
-    // 添加条件 !tableContentRef.value.clientWidth 只为执行一次，避免重复计算影响表格组件性能
-    if (!tableContentRef.value.clientWidth && (isFixedColumn.value || isFixedHeader.value)) {
-      updateFixedStatus();
-      updateColumnFixedShadow(tableContentRef.value);
-    }
-  });
+  const onResize = refreshTable;
 
   onMounted(() => {
     const scrollWidth = getScrollbarWidth();
     scrollbarWidth.value = scrollWidth;
     const timer = setTimeout(() => {
-      const rect = tableContentRef.value.getBoundingClientRect();
-      tableWidth.value = rect.width - scrollWidth - (props.bordered ? 1 : 0);
+      setTableWidth();
       clearTimeout(timer);
     });
     if (isFixedColumn.value || isFixedHeader.value || !notNeedThWidthList.value) {
@@ -528,6 +518,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     virtualScrollHeaderPos,
     affixHeaderRef,
     scrollbarWidth,
+    refreshTable,
     setThWidthListHander,
     updateHeaderScroll,
     onTableContentScroll,
