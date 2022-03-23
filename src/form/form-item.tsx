@@ -17,6 +17,7 @@ import {
   ValidateTriggerType,
   AllValidateResult,
   FormErrorMessage,
+  FormItemValidateMessage,
 } from './type';
 import props from './form-item-props';
 import { CLASS_NAMES, FORM_ITEM_CLASS_PREFIX } from './const';
@@ -67,6 +68,12 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
   },
 
   computed: {
+    needErrorMessage(): Boolean {
+      if (typeof this.showErrorMessage === 'boolean') return this.showErrorMessage;
+
+      const parent = this.form;
+      return parent?.showErrorMessage;
+    },
     classes(): ClassName {
       return [
         CLASS_NAMES.formItem,
@@ -94,13 +101,13 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       ];
     },
     errorClasses(): string {
-      const parent = this.form;
-      if (!parent.showErrorMessage) return '';
+      if (!this.needErrorMessage) return '';
       if (this.verifyStatus === VALIDATE_STATUS.SUCCESS) {
         return this.successBorder ? [CLASS_NAMES.success, CLASS_NAMES.successBorder].join(' ') : CLASS_NAMES.success;
       }
-      if (!this.errorList.length) return;
-      const type = this.errorList[0].type || 'error';
+      const list = this.errorList;
+      if (!list.length) return;
+      const type = list[0].type || 'error';
       return type === 'error' ? CLASS_NAMES.error : CLASS_NAMES.warning;
     },
 
@@ -200,6 +207,17 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
         }
       });
     },
+    // 设置表单错误信息
+    setValidateMessage(validateMessage: FormItemValidateMessage[]) {
+      if (!validateMessage || !Array.isArray(validateMessage)) return;
+      if (validateMessage.length === 0) {
+        this.errorList = [];
+        this.verifyStatus = VALIDATE_STATUS.SUCCESS;
+        return;
+      }
+      this.errorList = validateMessage;
+      this.verifyStatus = VALIDATE_STATUS.FAIL;
+    },
     // T 表示表单数据的类型
     async validate<T>(trigger: ValidateTriggerType): Promise<FormItemValidateResult<T>> {
       this.resetValidating = true;
@@ -211,7 +229,7 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
         .filter((item) => item.result !== true)
         .map((item) => {
           Object.keys(item).forEach((key) => {
-            if (!item.message && this.errorMessages[key]) {
+            if (typeof item.message === 'undefined' && this.errorMessages[key]) {
               const compiled = lodashTemplate(this.errorMessages[key]);
               // eslint-disable-next-line no-param-reassign
               item.message = compiled({
@@ -271,13 +289,12 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       );
     },
     renderTipsInfo(): VNode {
-      const parent = this.form;
       let helpVNode: VNode;
       if (this.help) {
         helpVNode = <div class={CLASS_NAMES.help}>{this.help}</div>;
       }
       const list = this.errorList;
-      if (parent.showErrorMessage && list && list[0] && list[0].message) {
+      if (this.needErrorMessage && list && list[0] && list[0].message) {
         return <p class={CLASS_NAMES.extra}>{list[0].message}</p>;
       }
       if (this.successList.length) {
@@ -296,7 +313,7 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
         return resultIcon(CheckCircleFilledIcon);
       }
       if (list && list[0]) {
-        const type = this.errorList[0].type || 'error';
+        const type = list[0].type || 'error';
         const icon = {
           error: CloseCircleFilledIcon,
           warning: ErrorCircleFilledIcon,

@@ -263,3 +263,12 @@ export const scrollSelectedIntoView = (parentEle: HTMLElement, selected: HTMLEle
     parentEle.scrollTop = selectedBottom - parentEle.clientHeight;
   }
 };
+
+export const removeDom = (el: HTMLElement) => {
+  if (el.remove) {
+    el.remove();
+  } else {
+    // ie
+    el.parentNode.removeChild(el);
+  }
+};

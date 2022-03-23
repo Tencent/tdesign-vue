@@ -53,7 +53,11 @@ export default Vue.extend({
       /** if a trusted action (opening or closing) is prevented, increase this flag */
       visibleState: 0,
       mouseInRange: false,
+      /** mark popup as clicked when mousedown, reset after mouseup */
       contentClicked: false,
+      /**
+       * mark reference as clicked when click,
+       * reset after click event bubbles to document */
       refClicked: false,
     };
   },
@@ -83,9 +87,7 @@ export default Vue.extend({
     visible(val) {
       const reference = this.$el;
       const { hasTrigger } = this;
-      const parent = (this as any).popup;
       if (val) {
-        parent?.preventClosing(true);
         this.preventClosing(true);
         if (!this.hasDocumentEvent) {
           on(document, 'click', this.handleDocumentClick);
@@ -100,11 +102,11 @@ export default Vue.extend({
           });
         }
       } else {
-        parent?.preventClosing(false);
         this.preventClosing(false);
         // destruction is delayed until after animation ends
         off(document, 'click', this.handleDocumentClick);
         this.hasDocumentEvent = false;
+        this.mouseInRange = false;
       }
     },
     overlayStyle() {
@@ -127,6 +129,9 @@ export default Vue.extend({
     if (hasTrigger.hover) {
       on(reference, 'mouseenter', () => this.handleOpen({ trigger: 'trigger-element-hover' }));
       on(reference, 'mouseleave', () => this.handleClose({ trigger: 'trigger-element-hover' }));
+      on(reference, 'click', () => {
+        this.refClicked = true;
+      });
     } else if (hasTrigger.focus) {
       on(reference, 'focusin', () => this.handleOpen({ trigger: 'trigger-element-focus' }));
       on(reference, 'focusout', () => this.handleClose({ trigger: 'trigger-element-blur' }));
@@ -136,6 +141,10 @@ export default Vue.extend({
         // override nested popups with trigger hover since higher priority
         this.visibleState = 0;
         this.handleToggle({ e, trigger: 'trigger-element-click' });
+        // ie9-10 trigger propagation
+        if (getIEVersion() < 11) {
+          this.handleDocumentClick();
+        }
       });
     } else if (hasTrigger['context-menu']) {
       on(reference, 'contextmenu', (e: MouseEvent) => {
@@ -163,17 +172,20 @@ export default Vue.extend({
       this.popper?.destroy();
 
       this.popper = createPopper(reference, popperElm, {
-        modifiers: getIEVersion() > 9 ? [] : [
-          {
-            name: 'computeStyles',
-            options: {
-              // 默认为 true，即使用 transform 定位，开启 gpu 加速
-              // ie9 不支持 transform，需要添加 -ms- 前缀，@popperjs/core 没有添加这个样式，
-              // 在 ie9 下则去掉 gpu 优化加速，使用 top, right, bottom, left 定位
-              gpuAcceleration: false,
-            },
-          },
-        ],
+        modifiers:
+          getIEVersion() > 9
+            ? []
+            : [
+              {
+                name: 'computeStyles',
+                options: {
+                  // 默认为 true，即使用 transform 定位，开启 gpu 加速
+                  // ie9 不支持 transform，需要添加 -ms- 前缀，@popperjs/core 没有添加这个样式，
+                  // 在 ie9 下则去掉 gpu 优化加速，使用 top, right, bottom, left 定位
+                  gpuAcceleration: false,
+                },
+              },
+            ],
         placement: getPopperPlacement(currentPlacement),
         onFirstUpdate: () => {
           this.$nextTick(this.updatePopper);
@@ -244,12 +256,11 @@ export default Vue.extend({
     },
     handleDocumentClick() {
       if (this.contentClicked || this.refClicked) {
-        if (this.contentClicked) {
+        this.refClicked = false;
+        // clear the flag if mouseup handler is failed
+        setTimeout(() => {
           this.contentClicked = false;
-        }
-        if (this.refClicked) {
-          this.refClicked = false;
-        }
+        });
         return;
       }
       this.visibleState = 0;
@@ -273,13 +284,16 @@ export default Vue.extend({
       // 需要做碰撞检测去阻止父级 popup 关闭
       if (this.visibleState > 1) {
         const rect = (this.$refs.popper as HTMLElement).getBoundingClientRect();
-        if (
-          ev.x > rect.x && ev.x < rect.x + rect.width
-          && ev.y > rect.y && ev.y < rect.y + rect.height
-        ) return;
+        if (ev.x > rect.x && ev.x < rect.x + rect.width && ev.y > rect.y && ev.y < rect.y + rect.height) return;
       }
       this.mouseInRange = false;
       this.handleClose({});
+
+      // parent can no longer monitor mouse leave
+      const parent = (this as any).popup;
+      if (parent?.mouseInRange) {
+        parent.onMouseLeave(ev);
+      }
     },
     onBeforeEnter() {
       if (this.visible) {
@@ -291,20 +305,20 @@ export default Vue.extend({
         this.updatePopper();
       }
     },
-    preventClosing(enable: boolean) {
-      if (enable) {
+    preventClosing(preventing: boolean) {
+      const parent = (this as any).popup;
+      parent?.preventClosing(preventing);
+      if (preventing) {
         this.visibleState += 1;
       } else if (this.visibleState) {
         this.visibleState -= 1;
         if (!this.visibleState) {
           this.emitPopVisible(false, {});
-          const parent = (this as any).popup;
           if (parent?.hasTrigger.hover && !parent?.mouseInRange) {
             parent.emitPopVisible(false, {});
           }
         }
       }
-      return this.visibleState;
     },
   },
 
@@ -319,53 +333,89 @@ export default Vue.extend({
       return ref;
     }
 
-    const overlay = visible || !destroyOnClose ? h('div', {
-      class: name,
-      ref: 'popper',
-      directives: destroyOnClose ? undefined : [{
-        name: 'show',
-        rawName: 'v-show',
-        value: visible,
-        expression: 'visible',
-      } as VNodeDirective],
-      on: {
-        mousedown: () => {
-          this.contentClicked = true;
+    const overlay = visible || !destroyOnClose
+      ? h(
+        'div',
+        {
+          class: name,
+          ref: 'popper',
+          directives: destroyOnClose
+            ? undefined
+            : [
+                    {
+                      name: 'show',
+                      rawName: 'v-show',
+                      value: visible,
+                      expression: 'visible',
+                    } as VNodeDirective,
+            ],
+          on: {
+            mousedown: () => {
+              this.contentClicked = true;
+            },
+            mouseup: () => {
+              // make sure to execute after document click is triggered
+              setTimeout(() => {
+                // clear the flag which was set by mousedown
+                this.contentClicked = false;
+              });
+            },
+            ...(hasTrigger.hover && {
+              mouseenter: this.onMouseEnter,
+              mouseleave: this.onMouseLeave,
+            }),
+          },
         },
-        ...hasTrigger.hover && {
-          mouseenter: this.onMouseEnter,
-          mouseleave: this.onMouseLeave,
-        },
-      },
-    }, [
-      h('div', {
-        class: this.overlayClasses,
-        ref: 'overlay',
-        on: onScroll ? { scroll(e: WheelEvent) { onScroll({ e }); } } : undefined,
-      },
-      [
-        content,
-        this.showArrow && h('div', { class: `${name}__arrow` }),
-      ]),
-    ]) : null;
+        [
+          h(
+            'div',
+            {
+              class: this.overlayClasses,
+              ref: 'overlay',
+              on: onScroll
+                ? {
+                  scroll(e: WheelEvent) {
+                    onScroll({ e });
+                  },
+                }
+                : undefined,
+            },
+            [content, this.showArrow && h('div', { class: `${name}__arrow` })],
+          ),
+        ],
+      )
+      : null;
 
     return (
-        <Container ref="container" onMounted={() => {
+      <Container
+        ref="container"
+        onMounted={() => {
           if (visible) {
             this.updatePopper();
             this.updateOverlayStyle();
           }
-        }} parent={this} visible={visible} attach={this.attach}>
-          <transition
-            slot="content"
-            name={this.expandAnimation ? `${name}--animation-expand` : `${name}--animation`}
-            appear
-            onBeforeEnter={this.onBeforeEnter}
-            onAfterEnter={this.onAfterEnter}
-            onAfterLeave={this.destroyPopper}
-          >{(visible || !destroyOnClose) && overlay}</transition>
-          {ref}
-        </Container>
+        }}
+        onRefResize={() => {
+          if (visible) {
+            this.updatePopper();
+          }
+        }}
+        parent={this}
+        visible={visible}
+        attach={this.attach}
+      >
+        <transition
+          slot="content"
+          name={this.expandAnimation ? `${name}--animation-expand` : `${name}--animation`}
+          appear
+          onBeforeEnter={this.onBeforeEnter}
+          onAfterEnter={this.onAfterEnter}
+          onAfterLeave={this.destroyPopper}
+        >
+          {(visible || !destroyOnClose) && overlay}
+        </transition>
+        {ref}
+      </Container>
     );
   },
 });

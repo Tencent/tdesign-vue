@@ -58,6 +58,8 @@ export interface DatePickerMethods {
   getPlaceholderText(): string;
   handleTimePick(col: EPickerCols, time: number): any;
   getDates(inputDate: any): Date[];
+  onPopupVisibleChange: (visible: boolean, context: { trigger: string }) => void;
+  handleTInputFocus: () => void;
 }
 
 export interface DatePickerComputed {

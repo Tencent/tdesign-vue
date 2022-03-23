@@ -33,7 +33,6 @@ exports[`Slider base demo works fine 1`] = `
           >
             <div
               class="t-slider__button"
-              popper-class=""
             />
           </div>
         </div>
@@ -71,7 +70,6 @@ exports[`Slider base demo works fine 1`] = `
           >
             <div
               class="t-slider__button"
-              popper-class=""
             />
           </div>
           <div
@@ -82,7 +80,6 @@ exports[`Slider base demo works fine 1`] = `
           >
             <div
               class="t-slider__button"
-              popper-class=""
             />
           </div>
         </div>

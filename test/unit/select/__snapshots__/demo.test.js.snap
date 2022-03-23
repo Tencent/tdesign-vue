@@ -8,7 +8,7 @@ exports[`Steps Steps base demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -22,7 +22,7 @@ exports[`Steps Steps base demo works fine 1`] = `
         +0
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -43,7 +43,7 @@ exports[`Steps Steps base demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -57,7 +57,7 @@ exports[`Steps Steps base demo works fine 1`] = `
         +0
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -82,7 +82,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
@@ -140,7 +140,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
         +1
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -164,7 +164,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
@@ -222,7 +222,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
         +1
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -246,7 +246,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
@@ -307,7 +307,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
         </span>
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -333,7 +333,7 @@ exports[`Steps Steps creatable demo works fine 1`] = `
     style="width: 200px;"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -342,17 +342,23 @@ exports[`Steps Steps creatable demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input t-size-m t-is-readonly t-select__input"
+        class="t-input__wrap"
       >
-        <input
-          class="t-input__inner"
-          placeholder="支持自定义创建"
-          readonly="readonly"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m t-is-readonly"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="支持自定义创建"
+            readonly="readonly"
+            type="text"
+            unselectable="on"
+          />
+        </div>
       </div>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -379,7 +385,7 @@ exports[`Steps Steps customOptions demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -393,7 +399,7 @@ exports[`Steps Steps customOptions demo works fine 1`] = `
         +0
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -417,7 +423,7 @@ exports[`Steps Steps customOptions demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -431,7 +437,7 @@ exports[`Steps Steps customOptions demo works fine 1`] = `
         +0
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -456,7 +462,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
@@ -519,7 +525,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
         +3
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -543,7 +549,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
@@ -632,7 +638,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
         +4
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -658,7 +664,7 @@ exports[`Steps Steps disabled demo works fine 1`] = `
     style="width: 200px; display: inline-block; margin-right: 20px;"
   >
     <div
-      class="t-select t-is-disabled t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-is-disabled t-size-m t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -672,7 +678,7 @@ exports[`Steps Steps disabled demo works fine 1`] = `
         +0
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -694,7 +700,7 @@ exports[`Steps Steps disabled demo works fine 1`] = `
     style="width: 200px; display: inline-block;"
   >
     <div
-      class="t-select t-is-disabled t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-is-disabled t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-is-disabled t-tag--disabled"
@@ -727,7 +733,7 @@ exports[`Steps Steps disabled demo works fine 1`] = `
         +2
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -753,7 +759,7 @@ exports[`Steps Steps filterable demo works fine 1`] = `
     style="width: 200px; display: inline-block; margin: 0px 20px 20px 0px;"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -762,17 +768,23 @@ exports[`Steps Steps filterable demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input t-size-m t-is-readonly t-select__input"
+        class="t-input__wrap"
       >
-        <input
-          class="t-input__inner"
-          placeholder="-请选择-"
-          readonly="readonly"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m t-is-readonly"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="-请选择-"
+            readonly="readonly"
+            type="text"
+            unselectable="on"
+          />
+        </div>
       </div>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -794,7 +806,7 @@ exports[`Steps Steps filterable demo works fine 1`] = `
     style="width: 400px; display: inline-block;"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -803,17 +815,23 @@ exports[`Steps Steps filterable demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input t-size-m t-is-readonly t-select__input"
+        class="t-input__wrap"
       >
-        <input
-          class="t-input__inner"
-          placeholder="-请选择-"
-          readonly="readonly"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m t-is-readonly"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="-请选择-"
+            readonly="readonly"
+            type="text"
+            unselectable="on"
+          />
+        </div>
       </div>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -840,7 +858,7 @@ exports[`Steps Steps group demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -849,17 +867,23 @@ exports[`Steps Steps group demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input t-size-m t-is-readonly t-select__input"
+        class="t-input__wrap"
       >
-        <input
-          class="t-input__inner"
-          placeholder="请选择"
-          readonly="readonly"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m t-is-readonly"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请选择"
+            readonly="readonly"
+            type="text"
+            unselectable="on"
+          />
+        </div>
       </div>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -880,7 +904,7 @@ exports[`Steps Steps group demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -889,17 +913,23 @@ exports[`Steps Steps group demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input t-size-m t-is-readonly t-select__input"
+        class="t-input__wrap"
       >
-        <input
-          class="t-input__inner"
-          placeholder="请选择"
-          readonly="readonly"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m t-is-readonly"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请选择"
+            readonly="readonly"
+            type="text"
+            unselectable="on"
+          />
+        </div>
       </div>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -925,7 +955,7 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
     style="width: 200px; display: inline-block; margin-right: 20px;"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -940,7 +970,7 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
         选项一
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -962,7 +992,7 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
     style="width: 200px; display: inline-block;"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
@@ -996,7 +1026,7 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
         +1
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -1022,7 +1052,7 @@ exports[`Steps Steps max demo works fine 1`] = `
     style="width: 200px;"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -1036,7 +1066,7 @@ exports[`Steps Steps max demo works fine 1`] = `
         +0
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -1063,7 +1093,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
@@ -1122,7 +1152,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
         +2
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -1146,7 +1176,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
@@ -1305,7 +1335,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
         +6
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -1329,7 +1359,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
@@ -1437,7 +1467,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
         +2
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -1463,7 +1493,7 @@ exports[`Steps Steps noborder demo works fine 1`] = `
     style="width: 200px;"
   >
     <div
-      class="t-select t-size-m t-no-border t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-no-border t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -1478,7 +1508,7 @@ exports[`Steps Steps noborder demo works fine 1`] = `
         已选择的选项
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -1504,7 +1534,7 @@ exports[`Steps Steps popupProps demo works fine 1`] = `
     style="width: 200px; display: inline-block;"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -1519,7 +1549,7 @@ exports[`Steps Steps popupProps demo works fine 1`] = `
         已选择的选项
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -1541,7 +1571,7 @@ exports[`Steps Steps popupProps demo works fine 1`] = `
     style="width: 200px; display: inline-block; margin-left: 20px;"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -1556,7 +1586,7 @@ exports[`Steps Steps popupProps demo works fine 1`] = `
         已选择的选项
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -1582,7 +1612,7 @@ exports[`Steps Steps prefix demo works fine 1`] = `
     style="width: 200px;"
   >
     <div
-      class="t-select t-size-m t-has-prefix t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-has-prefix t-select__popup-reference"
     >
       <span
         class="t-select__left-icon"
@@ -1607,7 +1637,7 @@ exports[`Steps Steps prefix demo works fine 1`] = `
         +0
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -1633,7 +1663,7 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
     style="width: 200px; display: inline-block; margin: 0px 20px 20px 0px;"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -1642,17 +1672,23 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input t-size-m t-is-readonly t-select__input"
+        class="t-input__wrap"
       >
-        <input
-          class="t-input__inner"
-          placeholder="请选择"
-          readonly="readonly"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m t-is-readonly"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请选择"
+            readonly="readonly"
+            type="text"
+            unselectable="on"
+          />
+        </div>
       </div>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -1674,7 +1710,7 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
     style="width: 400px; display: inline-block;"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -1683,17 +1719,23 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input t-size-m t-is-readonly t-select__input"
+        class="t-input__wrap"
       >
-        <input
-          class="t-input__inner"
-          placeholder="请输入搜索"
-          readonly="readonly"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m t-is-readonly"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请输入搜索"
+            readonly="readonly"
+            type="text"
+            unselectable="on"
+          />
+        </div>
       </div>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -1719,7 +1761,7 @@ exports[`Steps Steps size demo works fine 1`] = `
     style="width: 200px; display: inline-block; margin-right: 20px;"
   >
     <div
-      class="t-select t-size-s t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-s t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -1733,7 +1775,7 @@ exports[`Steps Steps size demo works fine 1`] = `
         +0
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -1755,7 +1797,7 @@ exports[`Steps Steps size demo works fine 1`] = `
     style="width: 200px; display: inline-block; margin-right: 20px;"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -1769,7 +1811,7 @@ exports[`Steps Steps size demo works fine 1`] = `
         +0
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -1791,7 +1833,7 @@ exports[`Steps Steps size demo works fine 1`] = `
     style="width: 200px; display: inline-block;"
   >
     <div
-      class="t-select t-size-l t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-l t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -1805,7 +1847,7 @@ exports[`Steps Steps size demo works fine 1`] = `
         +0
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -1832,7 +1874,7 @@ exports[`Steps Steps status demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -1846,7 +1888,7 @@ exports[`Steps Steps status demo works fine 1`] = `
         +0
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -1867,7 +1909,7 @@ exports[`Steps Steps status demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-is-disabled t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-is-disabled t-size-m t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -1881,7 +1923,7 @@ exports[`Steps Steps status demo works fine 1`] = `
         +0
       </span>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         viewBox="0 0 16 16"
@@ -1902,7 +1944,7 @@ exports[`Steps Steps status demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -1916,7 +1958,7 @@ exports[`Steps Steps status demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon"
+        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon t-select__right-icon-polyfill"
       >
         <svg
           class="t-loading__gradient t-icon-loading"

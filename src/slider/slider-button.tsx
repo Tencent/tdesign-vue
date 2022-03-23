@@ -2,16 +2,18 @@ import Vue, { VNode, PropType, VueConstructor } from 'vue';
 import { Styles } from '@src/common';
 import { prefix } from '../config';
 import Slider from './slider';
-import Popup from '../popup/popup';
+import Tooltip from '../tooltip/index';
+import ITooltip from '../tooltip/tooltip';
 import { getIEVersion } from '../_common/js/utils/helper';
 import { TdSliderProps } from './type';
+import { TdTooltipProps } from '../tooltip/type';
 
 const name = `${prefix}-slider-button`;
 interface SliderInstanceType extends Vue {
   slider: InstanceType<typeof Slider>;
 }
 
-type PopupInstanceType = InstanceType<typeof Popup>;
+type TooltipInstanceType = InstanceType<typeof ITooltip>;
 
 export default (Vue as VueConstructor<SliderInstanceType>).extend({
   name,
@@ -128,6 +130,12 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
         }
       }
     },
+    getTooltipProps(): TdTooltipProps {
+      if (this.tooltipProps instanceof Object) {
+        return this.tooltipProps;
+      }
+      return {};
+    },
     handleIE() {
       if (getIEVersion() <= 11) {
         this.$nextTick(() => {
@@ -135,21 +143,23 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
         });
       }
     },
-    showPopup() {
+    showTooltipComponent() {
       this.visible = true;
     },
-    hidePopup() {
+    hideTooltipComponent() {
       this.visible = false;
     },
 
     handleMouseEnter() {
       this.hovering = true;
-      this.showPopup();
+      this.showTooltipComponent();
       (this.$refs.button as HTMLElement).focus();
     },
     handleMouseLeave() {
       this.hovering = false;
-      this.hidePopup();
+      if (!this.dragging) {
+        this.hideTooltipComponent();
+      }
     },
     onButtonDown(event: MouseEvent) {
       if (this.disabled) {
@@ -214,7 +224,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
       }
 
       this.isClick = false;
-      this.showPopup();
+      this.showTooltipComponent();
       this.slider.resetSize();
       let diff = 0;
 
@@ -242,11 +252,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
       if (this.dragging) {
         setTimeout(() => {
           this.dragging = false;
-          this.hidePopup();
-          if (!this.isClick) {
-            this.setPosition(this.newPos);
-            // this.$parent.emitChange(parseInt(this.newPos));
-          }
+          this.hideTooltipComponent();
         }, 0);
         window.removeEventListener('mousemove', this.onDragging);
         window.removeEventListener('touchmove', this.onDragging);
@@ -273,8 +279,8 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
       value = Number(parseFloat(`${value}`).toFixed(this.precision));
       this.$emit('input', value);
       this.$nextTick(() => {
-        this.showPopup();
-        this.$refs.popup && (this.$refs.popup as PopupInstanceType).updatePopper();
+        this.showTooltipComponent();
+        this.$refs.tooltip && (this.$refs.tooltip as TooltipInstanceType).updatedTooltip();
       });
       if (!this.dragging && this.value !== this.prevValue) {
         this.prevValue = this.value;
@@ -300,21 +306,9 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
         onblur={this.handleMouseLeave}
         onKeydown={this.onNativeKeyDown}
       >
-        <t-popup
-          ref="popup"
-          popper-class={this.popupClass}
-          disabled={!this.showTooltip}
-          content={String(this.formatValue)}
-          placement={this.placement}
-          trigger={this.trigger}
-          showArrow={this.showArrow}
-          overlayStyle={this.overlayStyle}
-          overlayClassName={this.overlayClassName}
-          attach={this.attach}
-          visible={this.visible}
-        >
+        <Tooltip ref="tooltip" props={this.getTooltipProps()} visible={this.visible} content={String(this.formatValue)}>
           <div class={[`${prefix}-slider__button`, { [`${prefix}-slider__button--dragging`]: this.dragging }]} />
-        </t-popup>
+        </Tooltip>
       </div>
     );
   },

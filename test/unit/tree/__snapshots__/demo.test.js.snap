@@ -1284,13 +1284,19 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         checked:
       </span>
       <div
-        class="t-input t-size-m"
+        class="t-input__wrap"
       >
-        <input
-          class="t-input__inner"
-          placeholder="请输入"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请输入"
+            type="text"
+            unselectable="off"
+          />
+        </div>
       </div>
     </div>
      
@@ -1303,13 +1309,19 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         expanded:
       </span>
       <div
-        class="t-input t-size-m"
+        class="t-input__wrap"
       >
-        <input
-          class="t-input__inner"
-          placeholder="请输入"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请输入"
+            type="text"
+            unselectable="off"
+          />
+        </div>
       </div>
     </div>
      
@@ -1322,13 +1334,19 @@ exports[`Tree:demo controlled demo works fine 1`] = `
         actived:
       </span>
       <div
-        class="t-input t-size-m"
+        class="t-input__wrap"
       >
-        <input
-          class="t-input__inner"
-          placeholder="请输入"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请输入"
+            type="text"
+            unselectable="off"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -3159,13 +3177,6 @@ exports[`Tree:demo empty demo works fine 1`] = `
   <div
     class="t-tree t-tree--transition"
   >
-    <transition-group-stub
-      class="t-tree__list"
-      enteractiveclass="t-tree__item--enter-active"
-      leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
-      tag="div"
-    />
     <div
       class="t-tree__empty"
     >
@@ -3177,13 +3188,6 @@ exports[`Tree:demo empty demo works fine 1`] = `
   <div
     class="t-tree t-tree--transition"
   >
-    <transition-group-stub
-      class="t-tree__list"
-      enteractiveclass="t-tree__item--enter-active"
-      leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
-      tag="div"
-    />
     <div
       class="t-tree__empty"
     >
@@ -3195,13 +3199,6 @@ exports[`Tree:demo empty demo works fine 1`] = `
   <div
     class="t-tree t-tree--transition"
   >
-    <transition-group-stub
-      class="t-tree__list"
-      enteractiveclass="t-tree__item--enter-active"
-      leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
-      tag="div"
-    />
     <div
       class="t-tree__empty"
     >
@@ -3215,13 +3212,6 @@ exports[`Tree:demo empty demo works fine 1`] = `
   <div
     class="t-tree t-tree--transition"
   >
-    <transition-group-stub
-      class="t-tree__list"
-      enteractiveclass="t-tree__item--enter-active"
-      leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
-      tag="div"
-    />
     <div
       class="t-tree__empty"
     >
@@ -3965,13 +3955,19 @@ exports[`Tree:demo filter demo works fine 1`] = `
       filter:
     </span>
     <div
-      class="t-input t-size-m"
+      class="t-input__wrap"
     >
-      <input
-        class="t-input__inner"
-        placeholder="请输入"
-        type="text"
-      />
+      <div
+        class="t-input t-size-m"
+      >
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder="请输入"
+          type="text"
+          unselectable="off"
+        />
+      </div>
     </div>
   </div>
    
@@ -7142,13 +7138,19 @@ exports[`Tree:demo operations demo works fine 1`] = `
         filter:
       </span>
       <div
-        class="t-input t-size-m"
+        class="t-input__wrap"
       >
-        <input
-          class="t-input__inner"
-          placeholder="请输入"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请输入"
+            type="text"
+            unselectable="off"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -7488,13 +7490,19 @@ exports[`Tree:demo sync demo works fine 1`] = `
         checked:
       </span>
       <div
-        class="t-input t-size-m"
+        class="t-input__wrap"
       >
-        <input
-          class="t-input__inner"
-          placeholder="请输入"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请输入"
+            type="text"
+            unselectable="off"
+          />
+        </div>
       </div>
     </div>
      
@@ -7507,13 +7515,19 @@ exports[`Tree:demo sync demo works fine 1`] = `
         expanded:
       </span>
       <div
-        class="t-input t-size-m"
+        class="t-input__wrap"
       >
-        <input
-          class="t-input__inner"
-          placeholder="请输入"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请输入"
+            type="text"
+            unselectable="off"
+          />
+        </div>
       </div>
     </div>
      
@@ -7526,13 +7540,19 @@ exports[`Tree:demo sync demo works fine 1`] = `
         actived:
       </span>
       <div
-        class="t-input t-size-m"
+        class="t-input__wrap"
       >
-        <input
-          class="t-input__inner"
-          placeholder="请输入"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请输入"
+            type="text"
+            unselectable="off"
+          />
+        </div>
       </div>
     </div>
   </div>

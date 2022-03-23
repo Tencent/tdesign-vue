@@ -84,7 +84,7 @@ export default mixins(getConfigReceiverMixins<TimePickerPanelInstance, TimePicke
   },
   methods: {
     panelColUpdate() {
-      this.$nextTick(() => {
+      setTimeout(() => {
         (this.$refs.panelCol_0 as TimePickerPanelColInstance)?.updateTimeScrollPos();
         (this.$refs.panelCol_1 as TimePickerPanelColInstance)?.updateTimeScrollPos();
       });
@@ -101,7 +101,7 @@ export default mixins(getConfigReceiverMixins<TimePickerPanelInstance, TimePicke
           <t-button theme="primary" variant="base" onClick={confirmAction}>
             {this.t(this.global.confirm)}
           </t-button>
-          { this.showNowTime && (
+          {this.showNowTime && (
             <t-button theme="primary" variant="text" onClick={this.nowAction}>
               {this.t(this.global.now)}
             </t-button>
@@ -135,8 +135,8 @@ export default mixins(getConfigReceiverMixins<TimePickerPanelInstance, TimePicke
         />
       );
     },
-    confirmBtnClick() {
-      this.$emit('sure');
+    confirmBtnClick(e: MouseEvent) {
+      this.$emit('sure', e);
     },
     nowAction() {
       this.$emit('now-action');

@@ -8,7 +8,7 @@ exports[`TreeSelect base demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -23,16 +23,22 @@ exports[`TreeSelect base demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input t-size-m t-select__input"
+        class="t-input__wrap"
       >
-        <input
-          class="t-input__inner"
-          placeholder="请选择"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请选择"
+            type="text"
+            unselectable="off"
+          />
+        </div>
       </div>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         style="font-size: medium;"
@@ -48,7 +54,7 @@ exports[`TreeSelect base demo works fine 1`] = `
         />
       </svg>
       <svg
-        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
+        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
         fill="none"
         height="1em"
         style="display: none;"
@@ -62,7 +68,7 @@ exports[`TreeSelect base demo works fine 1`] = `
         />
       </svg>
       <div
-        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon"
+        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
         style="display: none;"
       >
         <svg
@@ -99,7 +105,7 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
     class="demo-space t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select-selected t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select-selected t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -108,9 +114,15 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
         请选择
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+        title="guangzhou"
       >
-        guangzhou
+        <span
+          class="t-tag--text"
+          style="max-width: 300px;"
+        >
+          guangzhou
+        </span>
         <svg
           class="t-icon t-icon-close t-tag__icon-close"
           fill="none"
@@ -126,10 +138,16 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
         </svg>
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="display: none;"
+        title="shenzhen"
       >
-        shenzhen
+        <span
+          class="t-tag--text"
+          style="max-width: 300px;"
+        >
+          shenzhen
+        </span>
         <svg
           class="t-icon t-icon-close t-tag__icon-close"
           fill="none"
@@ -150,17 +168,23 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
         +1
       </span>
       <div
-        class="t-input t-size-m t-select__input"
+        class="t-input__wrap"
         style="display: none;"
       >
-        <input
-          class="t-input__inner"
-          placeholder=""
-          type="text"
-        />
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder=""
+            type="text"
+            unselectable="off"
+          />
+        </div>
       </div>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         style="font-size: medium;"
@@ -176,7 +200,7 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
         />
       </svg>
       <svg
-        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
+        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
         fill="none"
         height="1em"
         style="display: none;"
@@ -190,7 +214,7 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
         />
       </svg>
       <div
-        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon"
+        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
         style="display: none;"
       >
         <svg
@@ -221,7 +245,7 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select-selected t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select-selected t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -230,9 +254,15 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
         请选择
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+        title="guangzhou"
       >
-        guangzhou
+        <span
+          class="t-tag--text"
+          style="max-width: 300px;"
+        >
+          guangzhou
+        </span>
         <svg
           class="t-icon t-icon-close t-tag__icon-close"
           fill="none"
@@ -248,10 +278,16 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
         </svg>
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="display: none;"
+        title="shenzhen"
       >
-        shenzhen
+        <span
+          class="t-tag--text"
+          style="max-width: 300px;"
+        >
+          shenzhen
+        </span>
         <svg
           class="t-icon t-icon-close t-tag__icon-close"
           fill="none"
@@ -272,17 +308,23 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
         更多...
       </span>
       <div
-        class="t-input t-size-m t-select__input"
+        class="t-input__wrap"
         style="display: none;"
       >
-        <input
-          class="t-input__inner"
-          placeholder=""
-          type="text"
-        />
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder=""
+            type="text"
+            unselectable="off"
+          />
+        </div>
       </div>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         style="font-size: medium;"
@@ -298,7 +340,7 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
         />
       </svg>
       <svg
-        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
+        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
         fill="none"
         height="1em"
         style="display: none;"
@@ -312,7 +354,7 @@ exports[`TreeSelect collapsed demo works fine 1`] = `
         />
       </svg>
       <div
-        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon"
+        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
         style="display: none;"
       >
         <svg
@@ -398,7 +440,7 @@ exports[`TreeSelect filterable demo works fine 1`] = `
     style="width: 300px;"
   >
     <div
-      class="t-select t-size-m t-select-selected t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select-selected t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -419,17 +461,23 @@ exports[`TreeSelect filterable demo works fine 1`] = `
         shenzhen
       </span>
       <div
-        class="t-input t-size-m t-select__input"
+        class="t-input__wrap"
         style="display: none;"
       >
-        <input
-          class="t-input__inner"
-          placeholder="shenzhen"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="shenzhen"
+            type="text"
+            unselectable="off"
+          />
+        </div>
       </div>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         style="font-size: medium;"
@@ -445,7 +493,7 @@ exports[`TreeSelect filterable demo works fine 1`] = `
         />
       </svg>
       <svg
-        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
+        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
         fill="none"
         height="1em"
         style="display: none;"
@@ -459,7 +507,7 @@ exports[`TreeSelect filterable demo works fine 1`] = `
         />
       </svg>
       <div
-        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon"
+        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
         style="display: none;"
       >
         <svg
@@ -496,7 +544,7 @@ exports[`TreeSelect lazy demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -510,17 +558,23 @@ exports[`TreeSelect lazy demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input t-size-m t-select__input"
+        class="t-input__wrap"
         style="display: none;"
       >
-        <input
-          class="t-input__inner"
-          placeholder="请选择"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请选择"
+            type="text"
+            unselectable="off"
+          />
+        </div>
       </div>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         style="font-size: medium;"
@@ -536,7 +590,7 @@ exports[`TreeSelect lazy demo works fine 1`] = `
         />
       </svg>
       <svg
-        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
+        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
         fill="none"
         height="1em"
         style="display: none;"
@@ -550,7 +604,7 @@ exports[`TreeSelect lazy demo works fine 1`] = `
         />
       </svg>
       <div
-        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon"
+        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
         style="display: none;"
       >
         <svg
@@ -587,7 +641,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select-selected t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select-selected t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -596,9 +650,15 @@ exports[`TreeSelect multiple demo works fine 1`] = `
         请选择
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+        title="guangzhou"
       >
-        guangzhou
+        <span
+          class="t-tag--text"
+          style="max-width: 300px;"
+        >
+          guangzhou
+        </span>
         <svg
           class="t-icon t-icon-close t-tag__icon-close"
           fill="none"
@@ -614,9 +674,15 @@ exports[`TreeSelect multiple demo works fine 1`] = `
         </svg>
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+        title="shenzhen"
       >
-        shenzhen
+        <span
+          class="t-tag--text"
+          style="max-width: 300px;"
+        >
+          shenzhen
+        </span>
         <svg
           class="t-icon t-icon-close t-tag__icon-close"
           fill="none"
@@ -638,17 +704,23 @@ exports[`TreeSelect multiple demo works fine 1`] = `
         +2
       </span>
       <div
-        class="t-input t-size-m t-select__input"
+        class="t-input__wrap"
         style="display: none;"
       >
-        <input
-          class="t-input__inner"
-          placeholder=""
-          type="text"
-        />
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder=""
+            type="text"
+            unselectable="off"
+          />
+        </div>
       </div>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         style="font-size: medium;"
@@ -664,7 +736,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
         />
       </svg>
       <svg
-        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
+        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
         fill="none"
         height="1em"
         style="display: none;"
@@ -678,7 +750,7 @@ exports[`TreeSelect multiple demo works fine 1`] = `
         />
       </svg>
       <div
-        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon"
+        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
         style="display: none;"
       >
         <svg
@@ -715,7 +787,7 @@ exports[`TreeSelect prefix demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-has-prefix t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-has-prefix t-select__popup-reference"
     >
       <span
         class="t-select__left-icon"
@@ -740,17 +812,23 @@ exports[`TreeSelect prefix demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input t-size-m t-select__input"
+        class="t-input__wrap"
         style="display: none;"
       >
-        <input
-          class="t-input__inner"
-          placeholder="请输入"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请输入"
+            type="text"
+            unselectable="off"
+          />
+        </div>
       </div>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         style="font-size: medium;"
@@ -766,7 +844,7 @@ exports[`TreeSelect prefix demo works fine 1`] = `
         />
       </svg>
       <svg
-        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
+        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
         fill="none"
         height="1em"
         style="display: none;"
@@ -780,7 +858,7 @@ exports[`TreeSelect prefix demo works fine 1`] = `
         />
       </svg>
       <div
-        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon"
+        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
         style="display: none;"
       >
         <svg
@@ -817,7 +895,7 @@ exports[`TreeSelect props demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select-selected t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select-selected t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -838,17 +916,23 @@ exports[`TreeSelect props demo works fine 1`] = `
         shenzhen
       </span>
       <div
-        class="t-input t-size-m t-select__input"
+        class="t-input__wrap"
         style="display: none;"
       >
-        <input
-          class="t-input__inner"
-          placeholder="shenzhen"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="shenzhen"
+            type="text"
+            unselectable="off"
+          />
+        </div>
       </div>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         style="font-size: medium;"
@@ -864,7 +948,7 @@ exports[`TreeSelect props demo works fine 1`] = `
         />
       </svg>
       <svg
-        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
+        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
         fill="none"
         height="1em"
         style="display: none;"
@@ -878,7 +962,7 @@ exports[`TreeSelect props demo works fine 1`] = `
         />
       </svg>
       <div
-        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon"
+        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
         style="display: none;"
       >
         <svg
@@ -915,7 +999,7 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select-selected t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select-selected t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -936,17 +1020,23 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
         [object Object]
       </span>
       <div
-        class="t-input t-size-m t-select__input"
+        class="t-input__wrap"
         style="display: none;"
       >
-        <input
-          class="t-input__inner"
-          placeholder="[object Object]"
-          type="text"
-        />
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="[object Object]"
+            type="text"
+            unselectable="off"
+          />
+        </div>
       </div>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         style="font-size: medium;"
@@ -962,7 +1052,7 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
         />
       </svg>
       <svg
-        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
+        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
         fill="none"
         height="1em"
         style="display: none;"
@@ -976,7 +1066,7 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
         />
       </svg>
       <div
-        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon"
+        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
         style="display: none;"
       >
         <svg
@@ -1007,7 +1097,7 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
     class="tree-select-multiple t-select__wrap"
   >
     <div
-      class="t-select t-size-m t-select-selected t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-m t-select-selected t-select__popup-reference"
     >
       <span
         class="t-select__placeholder"
@@ -1016,9 +1106,15 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
         请选择
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+        title="[object Object]"
       >
-        undefined
+        <span
+          class="t-tag--text"
+          style="max-width: 300px;"
+        >
+          undefined
+        </span>
         <svg
           class="t-icon t-icon-close t-tag__icon-close"
           fill="none"
@@ -1034,9 +1130,15 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
         </svg>
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+        title="[object Object]"
       >
-        undefined
+        <span
+          class="t-tag--text"
+          style="max-width: 300px;"
+        >
+          undefined
+        </span>
         <svg
           class="t-icon t-icon-close t-tag__icon-close"
           fill="none"
@@ -1058,17 +1160,23 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
         +2
       </span>
       <div
-        class="t-input t-size-m t-select__input"
+        class="t-input__wrap"
         style="display: none;"
       >
-        <input
-          class="t-input__inner"
-          placeholder=""
-          type="text"
-        />
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder=""
+            type="text"
+            unselectable="off"
+          />
+        </div>
       </div>
       <svg
-        class="t-fake-arrow t-select__right-icon"
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
         fill="none"
         height="16"
         style="font-size: medium;"
@@ -1084,7 +1192,7 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
         />
       </svg>
       <svg
-        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-clear"
+        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
         fill="none"
         height="1em"
         style="display: none;"
@@ -1098,7 +1206,7 @@ exports[`TreeSelect valuetype demo works fine 1`] = `
         />
       </svg>
       <div
-        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon"
+        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
         style="display: none;"
       >
         <svg

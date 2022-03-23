@@ -8,6 +8,8 @@ import {
   CheckboxOptionObj, TdCheckboxProps, CheckboxGroupValue, TdCheckboxGroupProps,
 } from './type';
 
+type CheckedChangeType = Parameters<TdCheckboxGroupProps['onChange']>;
+
 const name = `${prefix}-checkbox-group`;
 
 export default Vue.extend({
@@ -105,12 +107,8 @@ export default Vue.extend({
   render(): VNode {
     let children = null;
     if (this.options?.length) {
-      children = this.optionList?.map((option) => (
-        <Checkbox
-          key={option.value}
-          props={{ ...option }}
-          checked={this.checkedMap[option.value]}
-        >
+      children = this.optionList?.map((option, index) => (
+        <Checkbox key={index} props={option} checked={this.checkedMap[option.value]}>
           {this.renderLabel(option)}
         </Checkbox>
       ));
@@ -120,14 +118,14 @@ export default Vue.extend({
       children = nodes;
     }
     return (
-      <div class={name}>
+      <div class={name} onClick={(e: MouseEvent) => this.$emit('click', e)}>
         {children}
       </div>
     );
   },
 
   methods: {
-    onCheckedChange(p: { checked: boolean, checkAll: boolean, e: Event, option: TdCheckboxProps }) {
+    onCheckedChange(p: { checked: boolean; checkAll: boolean; e: Event; option: TdCheckboxProps }) {
       const { checked, checkAll, e } = p;
       if (checkAll) {
         this.onCheckAllChange(checked, { e });
@@ -149,8 +147,8 @@ export default Vue.extend({
       }
       return option.label;
     },
-    emitChange(val: CheckboxGroupValue, e?: Event) {
-      emitEvent<Parameters<TdCheckboxGroupProps['onChange']>>(this, 'change', val, { e });
+    emitChange(val: CheckboxGroupValue, context: CheckedChangeType[1]) {
+      emitEvent<CheckedChangeType>(this, 'change', val, context);
     },
     // used for <t-checkbox />
     handleCheckboxChange(data: { checked: boolean; e: Event; option: TdCheckboxProps }) {
@@ -163,7 +161,11 @@ export default Vue.extend({
           const i = val.indexOf(currentValue);
           val.splice(i, 1);
         }
-        this.emitChange(val, data.e);
+        this.emitChange(val, {
+          e: data.e,
+          current: data.option.value,
+          type: data.checked ? 'check' : 'uncheck',
+        });
       } else {
         console.warn(`TDesign CheckboxGroup Warn: \`value\` must be an array, instead of ${typeof this.value}`);
       }
@@ -178,11 +180,13 @@ export default Vue.extend({
       }
       return [...val];
     },
-    onCheckAllChange(checked: boolean, context: { e: Event, source?: 't-checkbox' }) {
-      const value: CheckboxGroupValue = checked
-        ? this.getAllCheckboxValue()
-        : [];
-      this.emitChange(value, context.e);
+    onCheckAllChange(checked: boolean, context: { e: Event; source?: 't-checkbox' }) {
+      const value: CheckboxGroupValue = checked ? this.getAllCheckboxValue() : [];
+      this.emitChange(value, {
+        e: context.e,
+        type: checked ? 'check' : 'uncheck',
+        current: undefined,
+      });
     },
   },
 });

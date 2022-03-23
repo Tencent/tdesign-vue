@@ -1,8 +1,43 @@
 import Vue from 'vue';
-import { getAttach } from '../utils/dom';
+import { getAttach, removeDom } from '../utils/dom';
 import props from './props';
 
+function isContentRectChanged(rect1: DOMRectReadOnly, rect2: DOMRectReadOnly) {
+  if (!rect1 || !rect2) return;
+  if (['width', 'height', 'x', 'y'].some((k) => rect1[k] !== rect2[k])) {
+    return true;
+  }
+  return false;
+}
+
 const Ref = Vue.extend({
+  data() {
+    return {
+      contentRect: null as DOMRectReadOnly,
+    };
+  },
+  mounted() {
+    if (window?.ResizeObserver && this.$el) {
+      const el = this.$el;
+      const vm = this as any;
+      const ro = new ResizeObserver((entries = []) => {
+        const { contentRect } = entries[0] || {};
+        if (isContentRectChanged(contentRect, vm.contentRect)) {
+          vm.contentRect = contentRect;
+          vm.$emit('resize', { ...contentRect });
+          return;
+        }
+        // omit initial change
+        if (!vm.contentRect) {
+          vm.contentRect = contentRect;
+        }
+      });
+      ro.observe(el);
+      this.$on('hook:destroyed', () => {
+        ro.unobserve(el);
+      });
+    }
+  },
   render() {
     const children = this.$slots.default || [];
     if (children.length > 1 || !children[0]?.tag) {
@@ -54,7 +89,7 @@ export default Vue.extend({
         },
         destroyed() {
           parent.content = null;
-          elm.remove();
+          removeDom(elm);
         },
       });
       getAttach(this.attach).appendChild(elm);
@@ -68,6 +103,6 @@ export default Vue.extend({
     },
   },
   render() {
-    return <Ref>{this.$slots.default}</Ref>;
+    return <Ref onResize={(ev: DOMRectReadOnly) => this.$emit('refResize', ev)}>{this.$slots.default}</Ref>;
   },
 });

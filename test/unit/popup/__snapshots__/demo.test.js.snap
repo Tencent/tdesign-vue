@@ -351,13 +351,19 @@ exports[`Progress trigger demo works fine 1`] = `
   </button>
    
   <div
-    class="t-input t-size-m"
+    class="t-input__wrap"
   >
-    <input
-      class="t-input__inner"
-      placeholder="获得焦点时触发"
-      type="text"
-    />
+    <div
+      class="t-input t-size-m"
+    >
+      <input
+        autocomplete=""
+        class="t-input__inner"
+        placeholder="获得焦点时触发"
+        type="text"
+        unselectable="off"
+      />
+    </div>
   </div>
    
   <button

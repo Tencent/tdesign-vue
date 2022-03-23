@@ -31,6 +31,8 @@ export default Vue.extend({
     showUploadProgress: props.showUploadProgress,
     // 已上传完成的文件
     files: Array as PropType<Array<UploadFile>>,
+    // 合并上传
+    batchUpload: Boolean,
     // 上传队列中的文件（可能存在已经上传过的文件）
     toUploadFiles: Array as PropType<Array<UploadFile>>,
     placeholder: String,
@@ -89,6 +91,9 @@ export default Vue.extend({
     uploadText(): string {
       if (this.isUploading) return '上传中...';
       return this.failedList && this.failedList.length ? '重新上传' : '开始上传';
+    },
+    batchRemoveRow(): boolean {
+      return this.batchUpload && this.files.length > 0;
     },
   },
   methods: {
@@ -188,22 +193,59 @@ export default Vue.extend({
               <td colspan={4}>{this.renderDrager()}</td>
             </tr>
           )}
-          {this.listFiles.map((file, index) => (
-            <tr>
-              <td>{abridgeName(file.name, 7, 10)}</td>
-              <td>{returnFileSize(file.size)}</td>
-              <td>{this.renderStatus(file)}</td>
-              <td>
-                <span
-                  class={`${UPLOAD_NAME}__flow-button`}
-                  onClick={(e: MouseEvent) => this.remove({ e, index, file })}
-                >
-                  删除
-                </span>
-              </td>
-            </tr>
-          ))}
+          {this.listFiles.map((file, index) => {
+            // 合并操作出现条件为：当前为合并上传模式且列表内没有待上传文件
+            const showBatchUploadAction = this.batchUpload && this.toUploadFiles.length === 0;
+            return (
+              <tr>
+                <td>{abridgeName(file.name, 7, 10)}</td>
+                <td>{returnFileSize(file.size)}</td>
+                <td>{this.renderStatus(file)}</td>
+                {showBatchUploadAction ? this.renderBatchActionCol(index) : this.renderNormalActionCol(file, index)}
+              </tr>
+            );
+          })}
         </table>
+      );
+    },
+
+    renderNormalActionCol(file: UploadFile, index: number) {
+      return (
+        <td>
+          <span
+            class={`${UPLOAD_NAME}__flow-button`}
+            onClick={(e: MouseEvent) => this.remove({
+              e,
+              index,
+              file,
+            })
+            }
+          >
+            删除
+          </span>
+        </td>
+      );
+    },
+
+    // batchUpload action col
+    renderBatchActionCol(index: number) {
+      // 第一行数据才需要合并单元格
+      return index === 0 ? (
+        <td rowspan={this.listFiles.length} class={`${UPLOAD_NAME}__flow-table__batch-row`}>
+          <span
+            class={`${UPLOAD_NAME}__flow-button`}
+            onClick={(e: MouseEvent) => this.remove({
+              e,
+              index: -1,
+              file: null,
+            })
+            }
+          >
+            删除
+          </span>
+        </td>
+      ) : (
+        ''
       );
     },
 

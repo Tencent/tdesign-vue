@@ -554,6 +554,9 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
           </button>
         </div>
       </div>
+      <div
+        style="z-index: 1; position: absolute; background: transparent; left: 0px; width: 16px; height: 100%; cursor: col-resize;"
+      />
     </div>
   </div>
    
@@ -965,13 +968,19 @@ exports[`Drawer Demo operation wroks fine 1`] = `
           </span>
            
           <div
-            class="t-input t-size-m"
+            class="t-input__wrap"
           >
-            <input
-              class="t-input__inner"
-              placeholder="请输入"
-              type="text"
-            />
+            <div
+              class="t-input t-size-m"
+            >
+              <input
+                autocomplete=""
+                class="t-input__inner"
+                placeholder="请输入"
+                type="text"
+                unselectable="off"
+              />
+            </div>
           </div>
         </div>
          
@@ -983,13 +992,19 @@ exports[`Drawer Demo operation wroks fine 1`] = `
           </span>
            
           <div
-            class="t-input t-size-m"
+            class="t-input__wrap"
           >
-            <input
-              class="t-input__inner"
-              placeholder="请输入"
-              type="text"
-            />
+            <div
+              class="t-input t-size-m"
+            >
+              <input
+                autocomplete=""
+                class="t-input__inner"
+                placeholder="请输入"
+                type="text"
+                unselectable="off"
+              />
+            </div>
           </div>
         </div>
          
@@ -1001,13 +1016,19 @@ exports[`Drawer Demo operation wroks fine 1`] = `
           </span>
            
           <div
-            class="t-input t-size-m"
+            class="t-input__wrap"
           >
-            <input
-              class="t-input__inner"
-              placeholder="请输入"
-              type="text"
-            />
+            <div
+              class="t-input t-size-m"
+            >
+              <input
+                autocomplete=""
+                class="t-input__inner"
+                placeholder="请输入"
+                type="text"
+                unselectable="off"
+              />
+            </div>
           </div>
         </div>
       </div>
