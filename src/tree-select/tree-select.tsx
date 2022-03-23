@@ -175,8 +175,9 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       if (this.multiple && isArray(this.value) && !isEmpty(this.value)) {
         return '';
       }
-      if (!this.multiple && this.selectedSingle) {
-        return this.selectedSingle;
+      const single = this.selectedSingle instanceof Array ? this.selectedSingle[0] : this.selectedSingle;
+      if (!this.multiple && single) {
+        return single;
       }
       return this.placeholder;
     },
