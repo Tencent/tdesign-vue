@@ -202,12 +202,11 @@ export default defineComponent({
           isInit.value = true;
         });
     };
-    const {
-      trs, row: rowData, scrollType, isVirtual,
-    } = props;
 
     onMounted(() => {
-      const { rowIndex, rowHeight, bufferSize } = props;
+      const {
+        rowIndex, rowHeight, bufferSize, trs, row: rowData, scrollType, isVirtual,
+      } = props;
       if (scrollType === 'virtual') {
         if (isVirtual) {
           const { $index } = rowData;
@@ -236,8 +235,8 @@ export default defineComponent({
 
     onBeforeUnmount(() => {
       if (props.isVirtual) {
-        const { $index } = rowData;
-        trs.delete($index);
+        const { $index } = props.row;
+        props.trs.delete($index);
       }
     });
 
