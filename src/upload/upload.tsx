@@ -317,6 +317,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
         }
         const request = xhr;
         this.xhrReq = request({
+          method: this.method,
           action: this.action,
           data: this.data,
           files: innerFiles,
