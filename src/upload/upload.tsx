@@ -490,7 +490,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
       // 上传成功的文件发送到 files
       const newFiles = innerFiles.map((file) => ({ ...file, response: res }));
-      // 处理并发回调v-model数据
+      // 处理并发回调v-model数据 by brianfzhang
       this.multiple && this.files.push(...newFiles);
       const uploadedFiles = this.multiple ? this.files : newFiles;
 
