@@ -5,6 +5,9 @@
 </template>
 
 <script>
+import merge from 'lodash/merge';
+import enConfig from 'tdesign-vue/config-provider/en_US_config';
+
 const MONTHS = [
   'January',
   'February',
@@ -20,7 +23,8 @@ const MONTHS = [
   'December',
 ];
 
-const GLOBAL_CONFIG = {
+// 全局特性配置，可以引入英文默认配置 enConfig，还可以在默认配置的基础上进行自定义配置
+const GLOBAL_CONFIG = merge(enConfig, {
   calendar: {
     yearSelection: '{year}',
     // 1 表示周一；7 表示周日
@@ -32,19 +36,19 @@ const GLOBAL_CONFIG = {
     showWeekend: 'Show Weekend',
     today: 'Today',
     thisMonth: 'This Month',
-    week: ['Monday', 'Tuesday', 'Wedsday', 'Thuresday', 'Friday', 'Staturday', 'Sunday'].join(),
+    week: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].join(),
     cellMonth: MONTHS.join(),
     fillWithZero: false,
     controllerConfig: {
       year: {
         visible: true,
-        selecteProps: {
+        selectProps: {
           size: 'small',
         },
       },
       month: {
         visible: true,
-        selecteProps: {
+        selectProps: {
           size: 'small',
         },
       },
@@ -76,7 +80,7 @@ const GLOBAL_CONFIG = {
       },
     },
   },
-};
+});
 
 export default {
   data() {

@@ -12,6 +12,8 @@
 
 <script lang="jsx">
 import { ChevronRightIcon, CaretDownSmallIcon } from 'tdesign-icons-vue';
+import merge from 'lodash/merge';
+import enConfig from 'tdesign-vue/config-provider/en_US_config';
 
 const columns = [
   {
@@ -45,23 +47,26 @@ const data = [
 export default {
   data() {
     return {
-      // 全局特性配置
-      globalConfig: {
+      // 全局特性配置，可以引入英文默认配置 enConfig，还可以在默认配置的基础上进行自定义配置
+      globalConfig: merge(enConfig, {
         table: {
           // 支持 String 和 Function 两种数据类型
           empty: 'Empty Data',
+          // empty can also be a function
           // empty: (h) => h && <div class='custom-empty-content'>Empty Data</div>,
           expandIcon: (h) => h && <ChevronRightIcon />,
           sortIcon: (h) => h && <CaretDownSmallIcon size="18px" />,
+
+          // More config
           // filterIcon: () => <span>Filter</span>,
-          filterInputPlaceholder: 'Enter Keyword',
-          loadingMoreText: 'Load More',
-          loadingText: 'Loading',
-          sortAscendingOperationText: 'ascending sort',
-          sortCancelOperationText: 'cancel sort',
-          sortDescendingOperationText: 'decending sort',
+          // filterInputPlaceholder: 'Enter Keyword',
+          // loadingMoreText: 'Load More',
+          // loadingText: 'Loading',
+          // sortAscendingOperationText: 'ascending sort',
+          // sortCancelOperationText: 'cancel sort',
+          // sortDescendingOperationText: 'descending sort',
         },
-      },
+      }),
       columns,
       data,
     };
