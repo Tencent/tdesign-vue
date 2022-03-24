@@ -6,8 +6,8 @@
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
 activable | Boolean | false | 节点是否可高亮 | N
-actived | Array | - | 高亮的节点值。支持语法糖 `.sync`。TS 类型：`Array<TreeNodeValue>` | N
-defaultActived | Array | - | 高亮的节点值。非受控属性。TS 类型：`Array<TreeNodeValue>` | N
+activated | Array | - | 高亮的节点值。支持语法糖 `.sync`。TS 类型：`Array<TreeNodeValue>` | N
+defaultActivated | Array | - | 高亮的节点值。非受控属性。TS 类型：`Array<TreeNodeValue>` | N
 activeMultiple | Boolean | false | 是否允许多个节点同时高亮 | N
 checkable | Boolean | false | 隐藏节点复选框 | N
 checkProps | Object | - | 透传属性到 checkbox 组件。参考 checkbox 组件 API。TS 类型：`CheckboxProps`，[Checkbox API Documents](./checkbox?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts) | N
@@ -73,7 +73,7 @@ setItem | `(value: TreeNodeValue, options: TreeNodeState)` | - | 设置节点状
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
 activable | Boolean | false | 节点是否允许被激活 | N
-actived | Boolean | false | 节点是否被激活 | N
+activated | Boolean | false | 节点是否被激活 | N
 checkable | Boolean | false | 节点是否允许被选中 | N
 checked | Boolean | false | 节点是否被选中 | N
 disabled | Boolean | false | 节点是否被禁用 | N
@@ -89,7 +89,7 @@ visible | Boolean | false | 节点是否可视 | N
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
-actived | Boolean | - | 必需。当前节点是否处于高亮激活态 | Y
+activated | Boolean | - | 必需。当前节点是否处于高亮激活态 | Y
 checked | Boolean | - | 必需。当前节点是否被选中 | Y
 data | Object | - | 必需。节点数据，泛型 `T` 表示树节点 TS 类型。TS 类型：`T` | Y
 expanded | Boolean | - | 必需。当前节点是否展开 | Y

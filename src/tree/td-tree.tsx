@@ -86,8 +86,8 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     expanded(nVal) {
       this.store.replaceExpanded(nVal);
     },
-    actived(nVal) {
-      this.store.replaceActived(nVal);
+    activated(nVal) {
+      this.store.replaceActivated(nVal);
     },
   },
   methods: {
@@ -191,7 +191,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     build() {
       let list = this.data;
       const {
-        actived, value, valueMode, filter,
+        activated, value, valueMode, filter,
       } = this;
 
       const store = new TreeStore({
@@ -226,8 +226,8 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       this.updateExpanded();
 
       // 初始化激活状态
-      if (Array.isArray(actived)) {
-        store.setActived(actived);
+      if (Array.isArray(activated)) {
+        store.setActivated(activated);
       }
 
       // 树的数据初始化之后，需要立即进行一次视图刷新
@@ -236,7 +236,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     rebuild(list: TdTreeProps['data']) {
       this.getNodesMap().clear();
       this.treeNodes.length = 0;
-      const { store, value, actived } = this;
+      const { store, value, activated } = this;
       store.reload(list);
       // 初始化选中状态
       if (Array.isArray(value)) {
@@ -244,25 +244,25 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       }
       this.updateExpanded();
       // 初始化激活状态
-      if (Array.isArray(actived)) {
-        store.setActived(actived);
+      if (Array.isArray(activated)) {
+        store.setActivated(activated);
       }
       store.refreshState();
     },
-    toggleActived(item: TypeTargetNode): TreeNodeValue[] {
+    toggleActivated(item: TypeTargetNode): TreeNodeValue[] {
       const node = getNode(this.store, item);
-      return this.setActived(node, !node.isActived());
+      return this.setActivated(node, !node.isActivated());
     },
-    setActived(item: TypeTargetNode, isActived: boolean) {
+    setActivated(item: TypeTargetNode, isActivated: boolean) {
       const node = getNode(this.store, item);
-      const actived = node.setActived(isActived);
+      const activated = node.setActivated(isActivated);
       const { mouseEvent } = this;
       const ctx = {
         node: node.getModel(),
         e: mouseEvent,
       };
-      emitEvent<Parameters<TypeTdTreeProps['onActive']>>(this, 'active', actived, ctx);
-      return actived;
+      emitEvent<Parameters<TypeTdTreeProps['onActive']>>(this, 'active', activated, ctx);
+      return activated;
     },
     toggleExpanded(item: TypeTargetNode): TreeNodeValue[] {
       const node = getNode(this.store, item);
@@ -298,7 +298,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         node: node.getModel(),
       };
       const {
-        value, expanded, actived, store,
+        value, expanded, activated, store,
       } = this;
       if (value && value.length > 0) {
         store.replaceChecked(value);
@@ -306,8 +306,8 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       if (expanded && expanded.length > 0) {
         store.replaceExpanded(expanded);
       }
-      if (actived && actived.length > 0) {
-        store.replaceActived(actived);
+      if (activated && activated.length > 0) {
+        store.replaceActivated(activated);
       }
       emitEvent<Parameters<TypeTdTreeProps['onLoad']>>(this, 'load', ctx);
     },
@@ -343,7 +343,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         this.toggleExpanded(node);
       }
       if (shouldActive) {
-        this.toggleActived(node);
+        this.toggleActivated(node);
       }
 
       const ctx = {
@@ -369,7 +369,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       const spec = options;
       const keys = Object.keys(spec);
       if (node && spec) {
-        ['expanded', 'actived', 'checked'].forEach((name) => {
+        ['expanded', 'activated', 'checked'].forEach((name) => {
           if (keys.includes(name)) {
             this[`set${upperFirst(name)}`](node, spec[name]);
             delete spec[name];

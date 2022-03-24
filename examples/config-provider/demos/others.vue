@@ -71,7 +71,7 @@
     <br /><br />
     <br />
     <t-steps :current="2" layout="vertical">
-      <t-step-item title="Fisrt Step" content="You need to click the blue button"></t-step-item>
+      <t-step-item title="First Step" content="You need to click the blue button"></t-step-item>
       <t-step-item title="Second Step" content="Fill your base information into the form"></t-step-item>
       <t-step-item title="Error Step" status="error" content="Something Wrong! Custom Error Icon!"></t-step-item>
       <t-step-item title="Last Step" content="You haven't finish this step."></t-step-item>

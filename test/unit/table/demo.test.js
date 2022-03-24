@@ -16,39 +16,39 @@ describe('Table', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
   it('base demo works fine', () => {
-    const wraper = mount(base);
-    expect(wraper.element).toMatchSnapshot();
+    const wrapper = mount(base);
+    expect(wrapper.element).toMatchSnapshot();
   });
   it('fixedHeader demo works fine', () => {
-    const wraper = mount(fixedHeader);
-    expect(wraper.element).toMatchSnapshot();
+    const wrapper = mount(fixedHeader);
+    expect(wrapper.element).toMatchSnapshot();
   });
   it('fixedColumn demo works fine', () => {
-    const wraper = mount(fixedColumn);
-    expect(wraper.element).toMatchSnapshot();
+    const wrapper = mount(fixedColumn);
+    expect(wrapper.element).toMatchSnapshot();
   });
   it('customCell demo works fine', () => {
-    const wraper = mount(customCell);
-    expect(wraper.element).toMatchSnapshot();
+    const wrapper = mount(customCell);
+    expect(wrapper.element).toMatchSnapshot();
   });
   it('empty demo works fine', () => {
-    const wraper = mount(empty);
-    expect(wraper.element).toMatchSnapshot();
+    const wrapper = mount(empty);
+    expect(wrapper.element).toMatchSnapshot();
   });
   it('multiHeader demo works fine', () => {
-    const wraper = mount(multiHeader);
-    expect(wraper.element).toMatchSnapshot();
+    const wrapper = mount(multiHeader);
+    expect(wrapper.element).toMatchSnapshot();
   });
   it('expandable demo works fine', () => {
-    const wraper = mount(expandable);
-    expect(wraper.element).toMatchSnapshot();
+    const wrapper = mount(expandable);
+    expect(wrapper.element).toMatchSnapshot();
   });
   it('selectSingle demo works fine', () => {
-    const wraper = mount(selectSingle);
-    expect(wraper.element).toMatchSnapshot();
+    const wrapper = mount(selectSingle);
+    expect(wrapper.element).toMatchSnapshot();
   });
   it('selectMultiple demo works fine', () => {
-    const wraper = mount(selectMultiple);
-    expect(wraper.element).toMatchSnapshot();
+    const wrapper = mount(selectMultiple);
+    expect(wrapper.element).toMatchSnapshot();
   });
 });

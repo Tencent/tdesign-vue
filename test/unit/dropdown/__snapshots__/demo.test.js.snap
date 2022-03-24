@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Dropdown Demo CustomUsageExample wroks fine 1`] = `
+exports[`Dropdown Demo CustomUsageExample works fine 1`] = `
 <div>
   <button
     class="t-button t-size-m t-button--variant-text t-button--theme-default"
@@ -15,7 +15,7 @@ exports[`Dropdown Demo CustomUsageExample wroks fine 1`] = `
 </div>
 `;
 
-exports[`Dropdown Demo DisableUsageExample wroks fine 1`] = `
+exports[`Dropdown Demo DisableUsageExample works fine 1`] = `
 <div
   class="tdesign-demo-dropdown"
 >
@@ -51,7 +51,7 @@ exports[`Dropdown Demo DisableUsageExample wroks fine 1`] = `
 </div>
 `;
 
-exports[`Dropdown Demo EventUsageExample wroks fine 1`] = `
+exports[`Dropdown Demo EventUsageExample works fine 1`] = `
 <div>
   <button
     class="t-button t-size-m t-button--variant-text t-button--theme-default"
@@ -66,7 +66,7 @@ exports[`Dropdown Demo EventUsageExample wroks fine 1`] = `
 </div>
 `;
 
-exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
+exports[`Dropdown Demo LongUsageExample works fine 1`] = `
 <div>
   <button
     class="t-button t-size-m t-button--variant-text t-button--theme-default"
@@ -81,7 +81,7 @@ exports[`Dropdown Demo LongUsageExample wroks fine 1`] = `
 </div>
 `;
 
-exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
+exports[`Dropdown Demo MultipleUsageExample works fine 1`] = `
 <div
   class="tdesign-demo-dropdown"
 >
@@ -117,7 +117,7 @@ exports[`Dropdown Demo MultipleUsageExample wroks fine 1`] = `
 </div>
 `;
 
-exports[`Dropdown Demo SplitUsageExample wroks fine 1`] = `
+exports[`Dropdown Demo SplitUsageExample works fine 1`] = `
 <div>
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
@@ -132,7 +132,7 @@ exports[`Dropdown Demo SplitUsageExample wroks fine 1`] = `
 </div>
 `;
 
-exports[`Dropdown Demo buttonUsageExample wroks fine 1`] = `
+exports[`Dropdown Demo buttonUsageExample works fine 1`] = `
 <div>
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"

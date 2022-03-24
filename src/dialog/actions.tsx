@@ -32,7 +32,7 @@ export default Vue.extend({
       if (confirmBtn && this.$scopedSlots.confirmBtn) {
         console.warn('Both $props.confirmBtn and $scopedSlots.confirmBtn exist, $props.confirmBtn is preferred.');
       }
-      const defaultButtonProps = this.getDefaultConfrimBtnProps(options);
+      const defaultButtonProps = this.getDefaultConfirmBtnProps(options);
       // 属性和插槽都不存在，就返回全局默认配置
       if (!confirmBtn && !this.$scopedSlots.confirmBtn) {
         return <TButton class={className} props={{ ...defaultButtonProps }} />;
@@ -71,9 +71,7 @@ export default Vue.extend({
       } else if (isObject(button)) {
         newOptions = { ...newOptions, ...button };
       }
-      return (
-        <TButton class={className} props={newOptions}/>
-      );
+      return <TButton class={className} props={newOptions} />;
     },
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -82,7 +80,7 @@ export default Vue.extend({
     cancelBtnAction(e: MouseEvent) {},
 
     // 全局配置属性综合
-    getDefaultConfrimBtnProps(options: MixinsConfirmBtn): ButtonProps {
+    getDefaultConfirmBtnProps(options: MixinsConfirmBtn): ButtonProps {
       const { globalConfirm, theme, globalConfirmBtnTheme } = options;
       const defaultTheme = globalConfirmBtnTheme?.[theme] || 'primary';
       let props: ButtonProps = {
@@ -118,5 +116,4 @@ export default Vue.extend({
       return props;
     },
   },
-
 });

@@ -31,7 +31,7 @@ const GLOBAL_CONFIG_EN: GlobalConfigProvider = {
   transfer: {
     title: '{checked} / {total}',
     empty: 'Empty Data',
-    placeholder: 'type keyworkd to search',
+    placeholder: 'type keyword to search',
   },
   timePicker: {
     now: 'Now',

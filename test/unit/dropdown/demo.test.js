@@ -14,31 +14,31 @@ describe('Dropdown', () => {
     const wrapper = mount(demo);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('Demo buttonUsageExample wroks fine', () => {
+  it('Demo buttonUsageExample works fine', () => {
     const wrapper = mount(buttonUsageExample);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('Demo CustomUsageExample wroks fine', () => {
+  it('Demo CustomUsageExample works fine', () => {
     const wrapper = mount(CustomUsageExample);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('Demo DisableUsageExample wroks fine', () => {
+  it('Demo DisableUsageExample works fine', () => {
     const wrapper = mount(DisableUsageExample);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('Demo EventUsageExample wroks fine', () => {
+  it('Demo EventUsageExample works fine', () => {
     const wrapper = mount(EventUsageExample);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('Demo LongUsageExample wroks fine', () => {
+  it('Demo LongUsageExample works fine', () => {
     const wrapper = mount(LongUsageExample);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('Demo MultipleUsageExample wroks fine', () => {
+  it('Demo MultipleUsageExample works fine', () => {
     const wrapper = mount(MultipleUsageExample);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('Demo SplitUsageExample wroks fine', () => {
+  it('Demo SplitUsageExample works fine', () => {
     const wrapper = mount(SplitUsageExample);
     expect(wrapper.element).toMatchSnapshot();
   });

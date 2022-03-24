@@ -2,13 +2,13 @@
   <div class="tdesign-demo-block-column-large">
     <div class="tdesign-demo-block-column">
       <t-addon prepend="checked:">
-        <t-input :value="allChecked"/>
+        <t-input :value="allChecked" />
       </t-addon>
       <t-addon prepend="expanded:">
-        <t-input :value="allExpanded"/>
+        <t-input :value="allExpanded" />
       </t-addon>
-      <t-addon prepend="actived:">
-        <t-input :value="allActived"/>
+      <t-addon prepend="activated:">
+        <t-input :value="allActivated" />
       </t-addon>
     </div>
 
@@ -19,7 +19,7 @@
       :expand-on-click-node="false"
       :active-multiple="false"
       :expanded="expanded"
-      :actived="actived"
+      :activated="activated"
       :value="checked"
       :value-mode="valueMode"
       @expand="onExpand"
@@ -37,73 +37,100 @@ export default {
       valueMode: 'onlyLeaf',
       checked: ['1.1.1.1', '1.1.1.2'],
       expanded: ['1', '1.1', '1.1.1', '2'],
-      actived: ['2'],
-      items: [{
-        value: '1',
-        label: '1',
-        children: [{
-          value: '1.1',
-          label: '1.1',
-          children: [{
-            value: '1.1.1',
-            label: '1.1.1',
-            children: [{
-              value: '1.1.1.1',
-              label: '1.1.1.1',
-            }, {
-              value: '1.1.1.2',
-              label: '1.1.1.2',
-            }],
-          }, {
-            value: '1.1.2',
-            label: '1.1.2',
-            children: [{
-              value: '1.1.2.1',
-              label: '1.1.2.1',
-            }, {
-              value: '1.1.2.2',
-              label: '1.1.2.2',
-            }],
-          }],
-        }, {
-          value: '1.2',
-          label: '1.2',
-          children: [{
-            value: '1.2.1',
-            label: '1.2.1',
-            children: [{
-              value: '1.2.1.1',
-              label: '1.2.1.1',
-            }, {
-              value: '1.2.1.2',
-              label: '1.2.1.2',
-            }],
-          }, {
-            value: '1.2.2',
-            label: '1.2.2',
-            children: [{
-              value: '1.2.2.1',
-              label: '1.2.2.1',
-            }, {
-              value: '1.2.2.2',
-              label: '1.2.2.2',
-            }],
-          }],
-        }],
-      }, {
-        value: '2',
-        label: '2 这个节点不允许展开, 不允许激活',
-        checkable: false,
-        children: [{
-          value: '2.1',
-          label: '2.1 这个节点不允许选中',
+      activated: ['2'],
+      items: [
+        {
+          value: '1',
+          label: '1',
+          children: [
+            {
+              value: '1.1',
+              label: '1.1',
+              children: [
+                {
+                  value: '1.1.1',
+                  label: '1.1.1',
+                  children: [
+                    {
+                      value: '1.1.1.1',
+                      label: '1.1.1.1',
+                    },
+                    {
+                      value: '1.1.1.2',
+                      label: '1.1.1.2',
+                    },
+                  ],
+                },
+                {
+                  value: '1.1.2',
+                  label: '1.1.2',
+                  children: [
+                    {
+                      value: '1.1.2.1',
+                      label: '1.1.2.1',
+                    },
+                    {
+                      value: '1.1.2.2',
+                      label: '1.1.2.2',
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              value: '1.2',
+              label: '1.2',
+              children: [
+                {
+                  value: '1.2.1',
+                  label: '1.2.1',
+                  children: [
+                    {
+                      value: '1.2.1.1',
+                      label: '1.2.1.1',
+                    },
+                    {
+                      value: '1.2.1.2',
+                      label: '1.2.1.2',
+                    },
+                  ],
+                },
+                {
+                  value: '1.2.2',
+                  label: '1.2.2',
+                  children: [
+                    {
+                      value: '1.2.2.1',
+                      label: '1.2.2.1',
+                    },
+                    {
+                      value: '1.2.2.2',
+                      label: '1.2.2.2',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          value: '2',
+          label: '2 这个节点不允许展开, 不允许激活',
           checkable: false,
-        }, {
-          value: '2.2',
-          label: '2.2',
-          checkable: false,
-        }],
-      }],
+          children: [
+            {
+              value: '2.1',
+              label: '2.1 这个节点不允许选中',
+              checkable: false,
+            },
+            {
+              value: '2.2',
+              label: '2.2',
+              checkable: false,
+            },
+          ],
+        },
+      ],
     };
   },
   computed: {
@@ -121,10 +148,10 @@ export default {
       }
       return arr.join(', ');
     },
-    allActived() {
+    allActivated() {
       let arr = [];
-      if (Array.isArray(this.actived)) {
-        arr = this.actived;
+      if (Array.isArray(this.activated)) {
+        arr = this.activated;
       }
       return arr.join(', ');
     },
@@ -135,21 +162,21 @@ export default {
     },
     onChange(vals, context) {
       console.info('onChange:', vals, context);
-      const checked = vals.filter((val) => (val !== '2.1'));
+      const checked = vals.filter((val) => val !== '2.1');
       console.info('节点 2.1 不允许选中');
       this.checked = checked;
     },
     onExpand(vals, context) {
       console.info('onExpand:', vals, context);
-      const expanded = vals.filter((val) => (val !== '2'));
+      const expanded = vals.filter((val) => val !== '2');
       console.info('节点 2 不允许展开');
       this.expanded = expanded;
     },
     onActive(vals, context) {
       console.info('onActive:', vals, context);
-      const actived = vals.filter((val) => (val !== '2'));
+      const activated = vals.filter((val) => val !== '2');
       console.info('节点 2 不允许激活');
-      this.actived = actived;
+      this.activated = activated;
     },
   },
 };

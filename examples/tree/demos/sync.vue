@@ -7,8 +7,8 @@
       <t-addon prepend="expanded:">
         <t-input :value="allExpanded" @change="onAllExpandedInput" />
       </t-addon>
-      <t-addon prepend="actived:">
-        <t-input :value="allActived" @change="onAllActivedInput" />
+      <t-addon prepend="activated:">
+        <t-input :value="allActivated" @change="onAllActivatedInput" />
       </t-addon>
     </div>
     <t-tree
@@ -18,7 +18,7 @@
       :expand-on-click-node="false"
       :active-multiple="false"
       :expanded.sync="expanded"
-      :actived.sync="actived"
+      :activated.sync="activated"
       :value.sync="checked"
       :value-mode="valueMode"
     />
@@ -32,7 +32,7 @@ export default {
       valueMode: 'onlyLeaf',
       checked: ['1.1.1.1', '1.1.1.2'],
       expanded: ['1', '1.1', '1.1.1', '2'],
-      actived: ['2'],
+      activated: ['2'],
       items: [
         {
           value: '1',
@@ -143,10 +143,10 @@ export default {
       }
       return arr.map((val) => `{${val}}`).join(', ');
     },
-    allActived() {
+    allActivated() {
       let arr = [];
-      if (Array.isArray(this.actived)) {
-        arr = this.actived;
+      if (Array.isArray(this.activated)) {
+        arr = this.activated;
       }
       return arr.map((val) => `{${val}}`).join(', ');
     },
@@ -175,10 +175,10 @@ export default {
       const vals = this.getValueFromString(val);
       this.expanded = vals;
     },
-    onAllActivedInput(val) {
-      console.log('actived input on change', val);
+    onAllActivatedInput(val) {
+      console.log('activated input on change', val);
       const vals = this.getValueFromString(val);
-      this.actived = vals;
+      this.activated = vals;
     },
   },
 };

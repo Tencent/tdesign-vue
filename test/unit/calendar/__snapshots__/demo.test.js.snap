@@ -2041,7 +2041,7 @@ exports[`Calendar cell demo works fine 1`] = `
                   class="item"
                 >
                   <span
-                    class="waring"
+                    class="warning"
                   />
                   
           警告事件
@@ -8080,7 +8080,7 @@ exports[`Calendar slotPropsApi demo works fine 1`] = `
                     class="item"
                   >
                     <span
-                      class="waring"
+                      class="warning"
                     />
                     警告事件
                   </div>

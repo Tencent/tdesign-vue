@@ -1331,7 +1331,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
       <span
         class="t-addon__prepend"
       >
-        actived:
+        activated:
       </span>
       <div
         class="t-input__wrap"
@@ -7537,7 +7537,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
       <span
         class="t-addon__prepend"
       >
-        actived:
+        activated:
       </span>
       <div
         class="t-input__wrap"

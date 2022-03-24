@@ -12,12 +12,12 @@ export default {
   /** 节点是否可高亮 */
   activable: Boolean,
   /** 高亮的节点值 */
-  actived: {
-    type: Array as PropType<TdTreeProps['actived']>,
+  activated: {
+    type: Array as PropType<TdTreeProps['activated']>,
   },
   /** 高亮的节点值，非受控属性 */
-  defaultActived: {
-    type: Array as PropType<TdTreeProps['defaultActived']>,
+  defaultActivated: {
+    type: Array as PropType<TdTreeProps['defaultActivated']>,
   },
   /** 是否允许多个节点同时高亮 */
   activeMultiple: Boolean,

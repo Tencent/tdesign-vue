@@ -12,7 +12,7 @@ const tree = `${prefix}-tree`;
 export const CLASS_NAMES = {
   icon: `${prefix}-icon`,
   folderIcon: `${prefix}-folder-icon`,
-  actived: `${prefix}-is-active`,
+  activated: `${prefix}-is-active`,
   disabled: `${prefix}-is-disabled`,
   treeIconRight: `${prefix}-icon-arrow-right`,
   treeIconDown: `${prefix}-icon-arrow-down`,

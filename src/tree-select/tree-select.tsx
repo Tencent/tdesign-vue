@@ -51,7 +51,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       } as PopupProps,
       filterText: '',
       filterByText: null,
-      actived: [],
+      activated: [],
       expanded: [],
       nodeInfo: null,
       treeKey: 0,
@@ -61,7 +61,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     async value() {
       await this.changeNodeInfo();
       if (!this.multiple) {
-        this.actived = this.nodeInfo ? [this.nodeInfo.value] : [];
+        this.activated = this.nodeInfo ? [this.nodeInfo.value] : [];
       }
     },
     async data() {
@@ -226,11 +226,11 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       await this.change(this.defaultValue, null);
     }
     if (this.isObjectValue) {
-      this.actived = isArray(this.value)
+      this.activated = isArray(this.value)
         ? this.value.map((item) => (item as NodeOptions).value)
         : [(this.value as NodeOptions).value];
     } else {
-      this.actived = isArray(this.value) ? this.value : [this.value];
+      this.activated = isArray(this.value) ? this.value : [this.value];
     }
     this.changeNodeInfo();
   },
@@ -258,7 +258,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     clear(e: MouseEvent) {
       const defaultValue: TreeSelectValue = this.multiple ? [] : '';
       this.change(defaultValue, null);
-      this.actived = [];
+      this.activated = [];
       this.filterText = '';
       emitEvent<Parameters<TdTreeSelectProps['onClear']>>(this, 'clear', { e });
     },
@@ -283,7 +283,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         current = value.map((nodeValue) => this.getTreeNode(this.data, nodeValue));
       }
       this.change(current, context.node);
-      this.actived = value;
+      this.activated = value;
     },
     treeNodeActive(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<TreeOptionData>; e: MouseEvent }) {
       // 多选模式屏蔽 Active 事件
@@ -298,7 +298,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         current = isEmpty(value) ? '' : value[0];
       }
       this.change(current, context.node);
-      this.actived = value;
+      this.activated = value;
       this.visible = false;
     },
     treeNodeExpand(value: Array<TreeNodeValue>) {
@@ -386,7 +386,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         empty={this.empty}
         size={this.size}
         filter={this.filterByText}
-        actived={this.actived}
+        activated={this.activated}
         expanded={this.expanded}
         activeMultiple={this.multiple}
         onChange={this.treeNodeChange}

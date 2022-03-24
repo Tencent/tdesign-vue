@@ -6,7 +6,7 @@
     <div class="operations">
       <t-form labelWidth="200">
         <t-form-item label="插入节点使用高亮节点">
-          <t-switch v-model="useActived" />
+          <t-switch v-model="useActivated" />
         </t-form-item>
         <t-form-item label="子节点展开触发父节点展开">
           <t-switch v-model="expandParent" />
@@ -46,7 +46,7 @@
       <t-button theme="primary" @click="getItem">获取 value 为 'node1' 的单个节点</t-button>
       <t-button theme="primary" @click="getAllItems">获取所有节点</t-button>
       <t-button theme="primary" @click="getActiveChildren">获取高亮节点的所有子节点</t-button>
-      <t-button theme="primary" @click="getAllActived">获取所有高亮节点</t-button>
+      <t-button theme="primary" @click="getAllActivated">获取所有高亮节点</t-button>
       <t-button theme="primary" @click="getActiveChecked">获取高亮节点下的选中节点</t-button>
       <t-button theme="primary" @click="append()">插入一个根节点</t-button>
       <t-button theme="primary" @click="getActiveParent">获取高亮节点的父节点</t-button>
@@ -69,7 +69,7 @@ export default {
       activeIds: [],
       expandIds: [],
       checkedIds: [],
-      useActived: false,
+      useActivated: false,
       expandParent: true,
       filterText: '',
       filterByText: null,
@@ -84,9 +84,9 @@ export default {
     };
   },
   computed: {
-    btnSetActivedVariant() {
+    btnSetActivatedVariant() {
       let variant = 'outline';
-      if (this.useActived) {
+      if (this.useActivated) {
         variant = 'base';
       }
       return variant;
@@ -129,7 +129,7 @@ export default {
       );
     },
     getActiveChildren() {
-      const node = this.getActivedNode();
+      const node = this.getActivatedNode();
       if (!node) return;
       let nodes = [];
       if (node) {
@@ -140,12 +140,12 @@ export default {
         nodes.map((node) => node.value),
       );
     },
-    getAllActived() {
-      console.info('getActived value:', this.activeIds.slice(0));
+    getAllActivated() {
+      console.info('getActivated value:', this.activeIds.slice(0));
     },
     getActiveChecked() {
       const { tree } = this.$refs;
-      const node = this.getActivedNode();
+      const node = this.getActivatedNode();
       if (!node) return;
       const nodes = tree.getItems(node.value);
       console.info(
@@ -153,7 +153,7 @@ export default {
         nodes.filter((node) => node.checked).map((node) => node.value),
       );
     },
-    getActivedNode() {
+    getActivatedNode() {
       const { tree } = this.$refs;
       const { activeId } = this;
       const activeNode = tree.getItem(activeId);
@@ -161,8 +161,8 @@ export default {
     },
     getInsertItem() {
       let item = null;
-      if (this.useActived) {
-        item = this.getActivedNode();
+      if (this.useActivated) {
+        item = this.getActivatedNode();
       } else {
         this.index += 1;
         const value = `t${this.index}`;
@@ -232,19 +232,19 @@ export default {
         this.setLabel(item.value);
       }
     },
-    setUseActived() {
-      this.useActived = !this.useActived;
+    setUseActivated() {
+      this.useActivated = !this.useActivated;
     },
     getActiveParent() {
       const { tree } = this.$refs;
-      const node = this.getActivedNode();
+      const node = this.getActivatedNode();
       if (!node) return;
       const parent = tree.getParent(node.value);
       console.info('getParent', parent?.value);
     },
     getActiveParents() {
       const { tree } = this.$refs;
-      const node = this.getActivedNode();
+      const node = this.getActivatedNode();
       if (!node) return;
       const parents = tree.getParents(node.value);
       console.info(
@@ -254,7 +254,7 @@ export default {
     },
     setActiveChecked() {
       const { tree } = this.$refs;
-      const node = this.getActivedNode();
+      const node = this.getActivatedNode();
       if (!node) return;
       tree.setItem(node?.value, {
         checked: true,
@@ -262,7 +262,7 @@ export default {
     },
     setActiveExpanded() {
       const { tree } = this.$refs;
-      const node = this.getActivedNode();
+      const node = this.getActivatedNode();
       if (!node) return;
       tree.setItem(node?.value, {
         expanded: true,
@@ -270,13 +270,13 @@ export default {
     },
     getActiveIndex() {
       const { tree } = this.$refs;
-      const node = this.getActivedNode();
+      const node = this.getActivatedNode();
       if (!node) return;
       const index = tree.getIndex(node.value);
       console.info('getIndex', index);
     },
     getActivePlainData() {
-      const node = this.getActivedNode();
+      const node = this.getActivatedNode();
       if (!node) return;
       const data = this.getPlainData(node);
       return data;

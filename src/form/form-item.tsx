@@ -40,11 +40,11 @@ export const enum VALIDATE_STATUS {
   FAIL = 'fail',
 }
 
-export interface FormItemContructor extends Vue {
+export interface FormItemConstructor extends Vue {
   form: FormInstance;
 }
 
-export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('form')).extend({
+export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('form')).extend({
   name: 'TFormItem',
 
   props: { ...props },

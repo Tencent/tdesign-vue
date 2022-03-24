@@ -37,7 +37,7 @@ export default {
     const timeStamp = new Date('2021-12-12').getTime();
     return {
       index: 2,
-      useActived: false,
+      useActivated: false,
       expandParent: true,
       // icon 要先预置到节点中，才能触发视图更新
       items: [

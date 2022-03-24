@@ -17,11 +17,11 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
   /**
    * 高亮的节点值
    */
-  actived?: Array<TreeNodeValue>;
+  activated?: Array<TreeNodeValue>;
   /**
    * 高亮的节点值，非受控属性
    */
-  defaultActived?: Array<TreeNodeValue>;
+  defaultActivated?: Array<TreeNodeValue>;
   /**
    * 是否允许多个节点同时高亮
    * @default false
@@ -175,7 +175,7 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
    * 异步加载后触发，泛型 `T` 表示树节点 TS 类型
    */
   onLoad?: (context: { node: TreeNodeModel<T> }) => void;
-};
+}
 
 /** 组件实例方法 */
 export interface TreeInstanceFunctions<T extends TreeOptionData = TreeOptionData> {
@@ -235,7 +235,7 @@ export interface TreeNodeState {
    * 节点是否被激活
    * @default false
    */
-  actived?: boolean;
+  activated?: boolean;
   /**
    * 节点是否允许被选中
    * @default false
@@ -285,13 +285,13 @@ export interface TreeNodeState {
    * @default false
    */
   visible?: boolean;
-};
+}
 
 export interface TreeNodeModel<T extends TreeOptionData = TreeOptionData> extends TreeNodeState {
   /**
    * 当前节点是否处于高亮激活态
    */
-  actived: boolean;
+  activated: boolean;
   /**
    * 当前节点是否被选中
    */
@@ -376,8 +376,12 @@ export interface TreeNodeModel<T extends TreeOptionData = TreeOptionData> extend
    * 设置当前节点数据，数据变化可自动刷新页面，泛型 `T` 表示树节点 TS 类型
    */
   setData: (data: T) => void;
-};
+}
 
-export interface TreeKeysType { value?: string; label?: string; children?: string };
+export interface TreeKeysType {
+  value?: string;
+  label?: string;
+  children?: string;
+}
 
 export type TreeNodeValue = string | number;

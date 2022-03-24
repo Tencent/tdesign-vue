@@ -51,15 +51,15 @@ export default Vue.extend({
   },
   methods: {
     renderContent(): VNode {
-      let wraperStyles = {};
+      let wrapperStyles = {};
       if (this.direction === 'vertical') {
-        wraperStyles = {
+        wrapperStyles = {
           height: `${this.items.length * 100}%`,
           transform: `translate(0,${(-this.index * 100) / this.items.length}%)`,
           transition: `transform ${this.duration / 1000}s`,
         };
       } else {
-        wraperStyles = {
+        wrapperStyles = {
           width: `${this.items.length * 100}%`,
           transform: `translate(${(-this.index * 100) / this.items.length}%,0)`,
           transition: `transform ${this.duration / 1000}s`,
@@ -67,7 +67,7 @@ export default Vue.extend({
       }
       return (
         <div class={`${name}__content`}>
-          <div class={`${name}__swiper-wrap--${this.direction}`} style={wraperStyles}>
+          <div class={`${name}__swiper-wrap--${this.direction}`} style={wrapperStyles}>
             {this.items}
           </div>
         </div>

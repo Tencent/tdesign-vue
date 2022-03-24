@@ -63,7 +63,7 @@ describe('Message', () => {
     it(':closeBtn is a tring, equal "关闭".', () => {
       const wrapper = mount({
         render() {
-          return <Message closeBtn='关闭'></Message>;
+          return <Message closeBtn="关闭"></Message>;
         },
       });
       const msg = wrapper.findComponent(Message);
@@ -76,11 +76,7 @@ describe('Message', () => {
     it(':closeBtn is a function, () => VNode.', () => {
       const wrapper = mount({
         render() {
-          return (
-            <Message
-              closeBtn={() => <b class='t-message-close-content'>x</b>}
-            ></Message>
-          );
+          return <Message closeBtn={() => <b class="t-message-close-content">x</b>}></Message>;
         },
       });
       const msg = wrapper.findComponent(Message);
@@ -93,7 +89,7 @@ describe('Message', () => {
     it(':icon is false', () => {
       const wrapper = mount({
         render() {
-          return <Message icon={false} ></Message>;
+          return <Message icon={false}></Message>;
         },
       });
       const msg = wrapper.findComponent(Message);
@@ -101,28 +97,20 @@ describe('Message', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    it(':icon is a funtion, () => MoreIcon', () => {
+    it(':icon is a function, () => MoreIcon', () => {
       const wrapper = mount({
         render() {
-          return (
-            <Message
-              icon={() => <MoreIcon></MoreIcon>}
-            ></Message>
-          );
+          return <Message icon={() => <MoreIcon></MoreIcon>}></Message>;
         },
       });
       expect(wrapper.findComponent(MoreIcon).exists()).toBe(true);
       expect(wrapper).toMatchSnapshot();
     });
 
-    it(':default is a funtion, () => <b>这是重要信息</b>', () => {
+    it(':default is a function, () => <b>这是重要信息</b>', () => {
       const wrapper = mount({
         render() {
-          return (
-            <Message
-              content={() => <b>这是重要信息</b>}
-            ></Message>
-          );
+          return <Message content={() => <b>这是重要信息</b>}></Message>;
         },
       });
       expect(wrapper).toMatchSnapshot();
@@ -131,9 +119,7 @@ describe('Message', () => {
     it(':default is a string, 这是普通信息', () => {
       const wrapper = mount({
         render() {
-          return (
-            <Message content='这是普通信息'></Message>
-          );
+          return <Message content="这是普通信息"></Message>;
         },
       });
       expect(wrapper).toMatchSnapshot();
@@ -179,7 +165,7 @@ describe('Message', () => {
             <Message
               {...{
                 scopedSlots: {
-                  default: () => <Button class='custom-message'>自定义细心内容</Button>,
+                  default: () => <Button class="custom-message">自定义细心内容</Button>,
                 },
               }}
             ></Message>
@@ -215,7 +201,7 @@ describe('Message', () => {
             <Message
               {...{
                 scopedSlots: {
-                  closeBtn: () => <div class='custome-close-btn'>x</div>,
+                  closeBtn: () => <div class="custome-close-btn">x</div>,
                 },
               }}
             ></Message>

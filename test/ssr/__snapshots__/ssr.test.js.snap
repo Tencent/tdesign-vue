@@ -1149,7 +1149,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
                 <div class="item"><span class="error"></span>
                   错误事件
                 </div>
-                <div class="item"><span class="waring"></span>
+                <div class="item"><span class="warning"></span>
                   警告事件
                 </div>
                 <div class="item"><span class="success"></span>
@@ -2106,7 +2106,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/slot-props-api.vue 
           </div>
           <div class="t-calendar__table-body-cell">
             <div class="calendar-slot-props-api-demo"><span><div class="calendar-slot-props-api-demo-slot-warrper"><div class="item"><span class="error"></span>错误事件</div>
-            <div class="item"><span class="waring"></span>警告事件</div>
+            <div class="item"><span class="warning"></span>警告事件</div>
             <div class="item"><span class="success"></span>正常事件</div>
           </div>
           <div class="shadow"></div></span>
@@ -2981,7 +2981,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/others.vue c
       <div class="t-steps-item__inner t-steps-item--clickable">
         <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
         <div class="t-steps-item__content">
-          <div class="t-steps-item__title">Fisrt Step</div>
+          <div class="t-steps-item__title">First Step</div>
           <div class="t-steps-item__description">You need to click the blue button</div>
           <div class="t-steps-item__extra"></div>
         </div>
@@ -3547,7 +3547,7 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/custom.vue correctly 
         <p>抽屉的内容</p>
       </div>
       <div class="t-drawer__footer">
-        <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">confrim</span></button><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">cancel</span></button></div>
+        <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">confirm</span></button><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">cancel</span></button></div>
       </div>
     </div>
   </div>
@@ -11389,7 +11389,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
               <td class="" key="type" colspan="1" rowspan="1">类型</td>
               <td class="" key="default" colspan="1" rowspan="1">默认值</td>
               <td class="" key="needed" colspan="1" rowspan="1">是否必传</td>
-              <td class="t-text-ellipsis" key="detail.postion" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
+              <td class="t-text-ellipsis" key="detail.position" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
             </tr>
           </thead>
           <tbody class="t-table__body">
@@ -11399,7 +11399,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
               <td class="" key="type" length="6">String</td>
               <td class="" key="default" length="6">-</td>
               <td class="" key="needed" length="6">是</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="6" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
             </tr>
             <tr rowKey="index" class="" key="1">
               <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">1</td>
@@ -11407,7 +11407,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
               <td class="" key="type" length="6">Number</td>
               <td class="" key="default" length="6">0</td>
               <td class="" key="needed" length="6">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="6" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
             </tr>
             <tr rowKey="index" class="" key="2">
               <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">2</td>
@@ -11415,7 +11415,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
               <td class="" key="type" length="6">Array</td>
               <td class="" key="default" length="6">[]</td>
               <td class="" key="needed" length="6">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="6" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
             </tr>
             <tr rowKey="index" class="" key="3">
               <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">3</td>
@@ -11423,7 +11423,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
               <td class="" key="type" length="6">Object</td>
               <td class="" key="default" length="6">{}</td>
               <td class="" key="needed" length="6">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="6" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
             </tr>
             <tr rowKey="index" class="" key="4">
               <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">4</td>
@@ -11431,7 +11431,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
               <td class="" key="type" length="6">String</td>
               <td class="" key="default" length="6">-</td>
               <td class="" key="needed" length="6">是</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="6" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
             </tr>
           </tbody>
         </table>
@@ -11521,7 +11521,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
               <td class="" key="type" colspan="1" rowspan="1">类型</td>
               <td class="" key="default" colspan="1" rowspan="1">默认值</td>
               <td class="" key="needed" colspan="1" rowspan="1">是否必传</td>
-              <td class="t-text-ellipsis" key="detail.postion" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
+              <td class="t-text-ellipsis" key="detail.position" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
             </tr>
           </thead>
           <tbody class="t-table__body">
@@ -11531,7 +11531,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
               <td class="" key="type" length="6">String</td>
               <td class="" key="default" length="6">-</td>
               <td class="" key="needed" length="6">是</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="6" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
             </tr>
             <tr rowKey="index" class="" key="1">
               <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">1</td>
@@ -11539,7 +11539,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
               <td class="" key="type" length="6">Number</td>
               <td class="" key="default" length="6">0</td>
               <td class="" key="needed" length="6">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="6" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
             </tr>
             <tr rowKey="index" class="" key="2">
               <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">2</td>
@@ -11547,7 +11547,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
               <td class="" key="type" length="6">Array</td>
               <td class="" key="default" length="6">[]</td>
               <td class="" key="needed" length="6">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="6" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
             </tr>
             <tr rowKey="index" class="" key="3">
               <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">3</td>
@@ -11555,7 +11555,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
               <td class="" key="type" length="6">Object</td>
               <td class="" key="default" length="6">{}</td>
               <td class="" key="needed" length="6">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="6" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
             </tr>
             <tr rowKey="index" class="" key="4">
               <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">4</td>
@@ -11563,7 +11563,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
               <td class="" key="type" length="6">String</td>
               <td class="" key="default" length="6">-</td>
               <td class="" key="needed" length="6">是</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="6" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
             </tr>
           </tbody>
         </table>
@@ -12047,7 +12047,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
               <td class="t-table__cell--fixed-left" key="platform" colspan="1" rowspan="1" style="position:sticky;left:0px;">平台</td>
               <td class="" key="type" colspan="1" rowspan="1" style="overflow:hidden;">类型</td>
               <td class="" key="default" colspan="1" rowspan="1" style="overflow:hidden;">默认值</td>
-              <td class="" key="detail.postion" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
+              <td class="" key="detail.position" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
               <td class="" key="description" colspan="1" rowspan="1" style="overflow:hidden;">说明</td>
               <td class="" key="needed" colspan="1" rowspan="1" style="overflow:hidden;">是否必传</td>
               <td class="t-table__cell--fixed-right" key="operation" colspan="1" rowspan="1" style="position:sticky;right:0px;">操作</td>
@@ -12059,7 +12059,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">String</td>
               <td class="" key="default" length="8" style="overflow:hidden;">-</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="" key="needed" length="8" style="overflow:hidden;">是</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12069,7 +12069,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">Number</td>
               <td class="" key="default" length="8" style="overflow:hidden;">0</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="" key="needed" length="8" style="overflow:hidden;">否</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12079,7 +12079,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">Array</td>
               <td class="" key="default" length="8" style="overflow:hidden;">[]</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="" key="needed" length="8" style="overflow:hidden;">否</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12089,7 +12089,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">Object</td>
               <td class="" key="default" length="8" style="overflow:hidden;">{}</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="" key="needed" length="8" style="overflow:hidden;">否</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12099,7 +12099,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">String</td>
               <td class="" key="default" length="8" style="overflow:hidden;">-</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="" key="needed" length="8" style="overflow:hidden;">是</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12134,7 +12134,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" colspan="1" rowspan="1">类型</td>
               <td class="" key="default" colspan="1" rowspan="1">默认值</td>
               <td class="" key="needed" colspan="1" rowspan="1">是否必传</td>
-              <td class="t-text-ellipsis" key="detail.postion" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
+              <td class="t-text-ellipsis" key="detail.position" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
               <td class="" key="description" colspan="1" rowspan="1">说明</td>
             </tr>
           </thead>
@@ -12158,7 +12158,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">String</td>
               <td class="" key="default" length="7">-</td>
               <td class="" key="needed" length="7">是</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
             <tr rowKey="index" class="" key="1">
@@ -12167,7 +12167,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">Number</td>
               <td class="" key="default" length="7">0</td>
               <td class="" key="needed" length="7">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
             <tr rowKey="index" class="" key="2">
@@ -12176,7 +12176,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">Array</td>
               <td class="" key="default" length="7">[]</td>
               <td class="" key="needed" length="7">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
             <tr rowKey="index" class="" key="3">
@@ -12185,7 +12185,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">Object</td>
               <td class="" key="default" length="7">{}</td>
               <td class="" key="needed" length="7">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
             <tr rowKey="index" class="" key="4">
@@ -12194,7 +12194,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">String</td>
               <td class="" key="default" length="7">-</td>
               <td class="" key="needed" length="7">是</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
             <tr rowKey="index" class="" key="5">
@@ -12203,7 +12203,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">Number</td>
               <td class="" key="default" length="7">0</td>
               <td class="" key="needed" length="7">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 5 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 5 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
             <tr rowKey="index" class="" key="6">
@@ -12212,7 +12212,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">Array</td>
               <td class="" key="default" length="7">[]</td>
               <td class="" key="needed" length="7">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 6 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 6 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
             <tr rowKey="index" class="" key="7">
@@ -12221,7 +12221,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">Object</td>
               <td class="" key="default" length="7">{}</td>
               <td class="" key="needed" length="7">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 7 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 7 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
             <tr rowKey="index" class="" key="8">
@@ -12230,7 +12230,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">String</td>
               <td class="" key="default" length="7">-</td>
               <td class="" key="needed" length="7">是</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 8 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 8 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
             <tr rowKey="index" class="" key="9">
@@ -12239,7 +12239,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">Number</td>
               <td class="" key="default" length="7">0</td>
               <td class="" key="needed" length="7">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 9 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 9 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
             <tr rowKey="index" class="" key="10">
@@ -12248,7 +12248,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">Array</td>
               <td class="" key="default" length="7">[]</td>
               <td class="" key="needed" length="7">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 10 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 10 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
             <tr rowKey="index" class="" key="11">
@@ -12257,7 +12257,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">Object</td>
               <td class="" key="default" length="7">{}</td>
               <td class="" key="needed" length="7">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 11 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 11 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
             <tr rowKey="index" class="" key="12">
@@ -12266,7 +12266,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">String</td>
               <td class="" key="default" length="7">-</td>
               <td class="" key="needed" length="7">是</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 12 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 12 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
             <tr rowKey="index" class="" key="13">
@@ -12275,7 +12275,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">Number</td>
               <td class="" key="default" length="7">0</td>
               <td class="" key="needed" length="7">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 13 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 13 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
             <tr rowKey="index" class="" key="14">
@@ -12284,7 +12284,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">Array</td>
               <td class="" key="default" length="7">[]</td>
               <td class="" key="needed" length="7">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 14 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 14 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
             <tr rowKey="index" class="" key="15">
@@ -12293,7 +12293,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">Object</td>
               <td class="" key="default" length="7">{}</td>
               <td class="" key="needed" length="7">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 15 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 15 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
             <tr rowKey="index" class="" key="16">
@@ -12302,7 +12302,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">String</td>
               <td class="" key="default" length="7">-</td>
               <td class="" key="needed" length="7">是</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 16 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 16 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
             <tr rowKey="index" class="" key="17">
@@ -12311,7 +12311,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">Number</td>
               <td class="" key="default" length="7">0</td>
               <td class="" key="needed" length="7">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 17 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 17 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
             <tr rowKey="index" class="" key="18">
@@ -12320,7 +12320,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">Array</td>
               <td class="" key="default" length="7">[]</td>
               <td class="" key="needed" length="7">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 18 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 18 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
             <tr rowKey="index" class="" key="19">
@@ -12329,7 +12329,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
               <td class="" key="type" length="7">Object</td>
               <td class="" key="default" length="7">{}</td>
               <td class="" key="needed" length="7">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="7" style="overflow:hidden;">读取 19 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="7" style="overflow:hidden;">读取 19 个数据的嵌套信息值</td>
               <td class="" key="description" length="7">数据源</td>
             </tr>
           </tbody>
@@ -12362,7 +12362,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" colspan="1" rowspan="1" style="position:sticky;left:0px;">平台</td>
               <td class="" key="type" colspan="1" rowspan="1" style="overflow:hidden;">类型</td>
               <td class="" key="default" colspan="1" rowspan="1" style="overflow:hidden;">默认值</td>
-              <td class="" key="detail.postion" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
+              <td class="" key="detail.position" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
               <td class="" key="description" colspan="1" rowspan="1" style="overflow:hidden;">说明</td>
               <td class="t-table__cell--fixed-right" key="needed" colspan="1" rowspan="1" style="position:sticky;right:0px;">是否必传</td>
               <td class="t-table__cell--fixed-right" key="operation" colspan="1" rowspan="1" style="position:sticky;right:0px;">操作</td>
@@ -12388,7 +12388,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">String</td>
               <td class="" key="default" length="8" style="overflow:hidden;">-</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">是</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12398,7 +12398,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">Number</td>
               <td class="" key="default" length="8" style="overflow:hidden;">0</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">否</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12408,7 +12408,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">Array</td>
               <td class="" key="default" length="8" style="overflow:hidden;">[]</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">否</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12418,7 +12418,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">Object</td>
               <td class="" key="default" length="8" style="overflow:hidden;">{}</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">否</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12428,7 +12428,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">String</td>
               <td class="" key="default" length="8" style="overflow:hidden;">-</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">是</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12438,7 +12438,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">Number</td>
               <td class="" key="default" length="8" style="overflow:hidden;">0</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 5 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 5 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">否</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12448,7 +12448,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">Array</td>
               <td class="" key="default" length="8" style="overflow:hidden;">[]</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 6 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 6 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">否</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12458,7 +12458,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">Object</td>
               <td class="" key="default" length="8" style="overflow:hidden;">{}</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 7 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 7 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">否</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12468,7 +12468,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">String</td>
               <td class="" key="default" length="8" style="overflow:hidden;">-</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 8 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 8 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">是</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12478,7 +12478,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">Number</td>
               <td class="" key="default" length="8" style="overflow:hidden;">0</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 9 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 9 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">否</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12488,7 +12488,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">Array</td>
               <td class="" key="default" length="8" style="overflow:hidden;">[]</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 10 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 10 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">否</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12498,7 +12498,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">Object</td>
               <td class="" key="default" length="8" style="overflow:hidden;">{}</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 11 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 11 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">否</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12508,7 +12508,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">String</td>
               <td class="" key="default" length="8" style="overflow:hidden;">-</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 12 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 12 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">是</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12518,7 +12518,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">Number</td>
               <td class="" key="default" length="8" style="overflow:hidden;">0</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 13 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 13 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">否</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12528,7 +12528,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">Array</td>
               <td class="" key="default" length="8" style="overflow:hidden;">[]</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 14 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 14 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">否</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12538,7 +12538,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">Object</td>
               <td class="" key="default" length="8" style="overflow:hidden;">{}</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 15 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 15 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">否</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12548,7 +12548,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">String</td>
               <td class="" key="default" length="8" style="overflow:hidden;">-</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 16 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 16 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">是</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12558,7 +12558,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">Number</td>
               <td class="" key="default" length="8" style="overflow:hidden;">0</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 17 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 17 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">否</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12568,7 +12568,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">共有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">Array</td>
               <td class="" key="default" length="8" style="overflow:hidden;">[]</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 18 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 18 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">否</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12578,7 +12578,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
               <td class="t-table__cell--fixed-left" key="platform" length="8" style="position:sticky;left:0px;">私有</td>
               <td class="" key="type" length="8" style="overflow:hidden;">Object</td>
               <td class="" key="default" length="8" style="overflow:hidden;">{}</td>
-              <td class="" key="detail.postion" length="8" style="overflow:hidden;">读取 19 个数据的嵌套信息值</td>
+              <td class="" key="detail.position" length="8" style="overflow:hidden;">读取 19 个数据的嵌套信息值</td>
               <td class="" key="description" length="8" style="overflow:hidden;">数据源</td>
               <td class="t-table__cell--fixed-right" key="needed" length="8" style="position:sticky;right:0px;">否</td>
               <td class="t-table__cell--fixed-right" key="operation" length="8" style="position:sticky;right:0px;"><a class="link">删除</a></td>
@@ -12971,7 +12971,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
               <td class="" key="type" colspan="1" rowspan="1">类型</td>
               <td class="" key="default" colspan="1" rowspan="1">默认值</td>
               <td class="" key="needed" colspan="1" rowspan="1">是否必传</td>
-              <td class="t-text-ellipsis" key="detail.postion" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
+              <td class="t-text-ellipsis" key="detail.position" colspan="1" rowspan="1" style="overflow:hidden;">详情信息</td>
             </tr>
           </thead>
           <tbody class="t-table__body">
@@ -12981,7 +12981,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
               <td class="" key="type" length="6">String</td>
               <td class="" key="default" length="6">-</td>
               <td class="" key="needed" length="6">是</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="6" style="overflow:hidden;">读取 0 个数据的嵌套信息值</td>
             </tr>
             <tr rowKey="index" class="" key="1">
               <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">1</td>
@@ -12989,7 +12989,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
               <td class="" key="type" length="6">Number</td>
               <td class="" key="default" length="6">0</td>
               <td class="" key="needed" length="6">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="6" style="overflow:hidden;">读取 1 个数据的嵌套信息值</td>
             </tr>
             <tr rowKey="index" class="" key="2">
               <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">2</td>
@@ -12997,7 +12997,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
               <td class="" key="type" length="6">Array</td>
               <td class="" key="default" length="6">[]</td>
               <td class="" key="needed" length="6">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="6" style="overflow:hidden;">读取 2 个数据的嵌套信息值</td>
             </tr>
             <tr rowKey="index" class="" key="3">
               <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">3</td>
@@ -13005,7 +13005,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
               <td class="" key="type" length="6">Object</td>
               <td class="" key="default" length="6">{}</td>
               <td class="" key="needed" length="6">否</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="6" style="overflow:hidden;">读取 3 个数据的嵌套信息值</td>
             </tr>
             <tr rowKey="index" class="" key="4">
               <td class="t-align-center row" key="index" length="6" style="overflow:hidden;">4</td>
@@ -13013,7 +13013,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
               <td class="" key="type" length="6">String</td>
               <td class="" key="default" length="6">-</td>
               <td class="" key="needed" length="6">是</td>
-              <td class="t-text-ellipsis" key="detail.postion" length="6" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
+              <td class="t-text-ellipsis" key="detail.position" length="6" style="overflow:hidden;">读取 4 个数据的嵌套信息值</td>
             </tr>
           </tbody>
         </table>
@@ -13714,10 +13714,10 @@ exports[`ssr snapshot test renders ./examples/tabs/demos/base.vue correctly 1`] 
       </div>
       <div class="t-tabs__content">
         <div class="t-tab-panel">
-          <p style="padding:25px;">选项卡1的内容，使用 t-tab-pannel 渲染</p>
+          <p style="padding:25px;">选项卡1的内容，使用 t-tab-panel 渲染</p>
         </div>
         <div class="t-tab-panel" style="display:none;">
-          <p style="padding:25px;">选项卡2的内容，使用 t-tab-pannel 渲染</p>
+          <p style="padding:25px;">选项卡2的内容，使用 t-tab-panel 渲染</p>
         </div>
         <!---->
       </div>
@@ -15087,7 +15087,7 @@ exports[`ssr snapshot test renders ./examples/tree/demos/controlled.vue correctl
         <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="1, 1.1, 1.1.1, 2" class="t-input__inner"></div>
       </div>
     </div>
-    <div class="t-addon t-addon--prepend"><span class="t-addon__prepend">actived:</span>
+    <div class="t-addon t-addon--prepend"><span class="t-addon__prepend">activated:</span>
       <div class="t-input__wrap">
         <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="2" class="t-input__inner"></div>
       </div>
@@ -15856,7 +15856,7 @@ exports[`ssr snapshot test renders ./examples/tree/demos/sync.vue correctly 1`] 
         <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="{1}, {1.1}, {1.1.1}, {2}" class="t-input__inner"></div>
       </div>
     </div>
-    <div class="t-addon t-addon--prepend"><span class="t-addon__prepend">actived:</span>
+    <div class="t-addon t-addon--prepend"><span class="t-addon__prepend">activated:</span>
       <div class="t-input__wrap">
         <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="{2}" class="t-input__inner"></div>
       </div>

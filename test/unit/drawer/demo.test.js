@@ -15,36 +15,36 @@ describe('Drawer', () => {
     const wrapper = mount(demo);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('Demo CurrentDOMModeUsageExample wroks fine', () => {
+  it('Demo CurrentDOMModeUsageExample works fine', () => {
     const wrapper = mount(CurrentDOMModeUsageExample);
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  it('Demo destroy wroks fine', () => {
+  it('Demo destroy works fine', () => {
     const wrapper = mount(destroy);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('Demo CustomUsageExample wroks fine', () => {
+  it('Demo CustomUsageExample works fine', () => {
     const wrapper = mount(CustomUsageExample);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('Demo PopupUsageExample wroks fine', () => {
+  it('Demo PopupUsageExample works fine', () => {
     const wrapper = mount(PopupUsageExample);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('Demo NoMaskUsageExample wroks fine', () => {
+  it('Demo NoMaskUsageExample works fine', () => {
     const wrapper = mount(NoMaskUsageExample);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('Demo operation wroks fine', () => {
+  it('Demo operation works fine', () => {
     const wrapper = mount(operation);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('Demo PlacementUsageExample wroks fine', () => {
+  it('Demo PlacementUsageExample works fine', () => {
     const wrapper = mount(PlacementUsageExample);
     expect(wrapper.element).toMatchSnapshot();
   });
-  it('Demo SizeUsageExample wroks fine', () => {
+  it('Demo SizeUsageExample works fine', () => {
     const wrapper = mount(SizeUsageExample);
     expect(wrapper.element).toMatchSnapshot();
   });

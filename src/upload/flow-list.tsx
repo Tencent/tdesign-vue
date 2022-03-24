@@ -58,8 +58,8 @@ export default Vue.extend({
 
   computed: {
     showInitial(): boolean {
-      const isWatingEmpty = !this.waitingUploadFiles || !this.waitingUploadFiles.length;
-      return (!this.files || !this.files.length) && isWatingEmpty;
+      const isWaitingEmpty = !this.waitingUploadFiles || !this.waitingUploadFiles.length;
+      return (!this.files || !this.files.length) && isWaitingEmpty;
     },
     // 上传队列中的文件（不包含已经上传过的文件）
     waitingUploadFiles(): Array<UploadFile> {

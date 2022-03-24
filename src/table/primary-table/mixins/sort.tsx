@@ -48,7 +48,7 @@ export default Vue.extend({
       return sortMap;
     },
     localDataSort(): boolean {
-      return (!!Object.keys(this.sorterFuncMap).length);
+      return !!Object.keys(this.sorterFuncMap).length;
     },
   },
   methods: {
@@ -56,12 +56,12 @@ export default Vue.extend({
     handleDataSort(): TableData {
       const { data, sort } = this;
       if (!sort || !this.localDataSort) return;
-      const formatedSort = sort instanceof Array ? sort : [sort];
+      const formattedSort = sort instanceof Array ? sort : [sort];
       // data为受控的，data.slice()浅拷贝，防止sort导致原数据变异
       const newData: TableData = data.slice().sort((a: TableData[0], b: TableData[0]) => {
         let sortResult = 0;
-        for (let i = 0, len = formatedSort.length; i < len; i++) {
-          const item = formatedSort[i];
+        for (let i = 0, len = formattedSort.length; i < len; i++) {
+          const item = formattedSort[i];
           const sortFunc = this.sorterFuncMap[item.sortBy];
           // 上一个排序字段值相同时才会进行下一个字段的大小对比
           if (sortResult === 0 && sortFunc) {
@@ -85,7 +85,7 @@ export default Vue.extend({
       return sorter && (!sortType || (Array.isArray(sortType) && sortType.length > 0) || typeof sortType === 'string');
     },
     getNextSortOrder(currentSortOrder: SortType, sortType: SortType) {
-      const sorterTypes: Array<SortType> = (!sortType || sortType === 'all') ? ['desc', 'asc'] : [sortType];
+      const sorterTypes: Array<SortType> = !sortType || sortType === 'all' ? ['desc', 'asc'] : [sortType];
       const idx: number = (sorterTypes.indexOf(currentSortOrder) + 1) % (sorterTypes.length + 1);
       return sorterTypes[idx];
     },
@@ -103,7 +103,8 @@ export default Vue.extend({
         col,
       });
       emitEvent<ChangeContext>(
-        this, 'change',
+        this,
+        'change',
         { sorter: sortInfo },
         { trigger: 'sorter', currentData: newData || this.data },
       );

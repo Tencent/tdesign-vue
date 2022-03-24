@@ -45,7 +45,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
       list.push(CLASS_NAMES.treeNode);
       list.push({
         [CLASS_NAMES.treeNodeOpen]: node.expanded,
-        [CLASS_NAMES.actived]: node.isActivable() ? node.actived : false,
+        [CLASS_NAMES.activated]: node.isActivable() ? node.activated : false,
         [CLASS_NAMES.disabled]: node.isDisabled(),
       });
       if (node.visible) {
@@ -181,7 +181,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
         CLASS_NAMES.treeLabel,
         CLASS_NAMES.treeLabelStrictly,
         {
-          [CLASS_NAMES.actived]: node.isActivable() ? node.actived : false,
+          [CLASS_NAMES.activated]: node.isActivable() ? node.activated : false,
         },
       ];
 

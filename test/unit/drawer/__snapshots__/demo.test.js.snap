@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
+exports[`Drawer Demo CurrentDOMModeUsageExample works fine 1`] = `
 <div
   class="t-container"
 >
@@ -219,7 +219,7 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
 </div>
 `;
 
-exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
+exports[`Drawer Demo CustomUsageExample works fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right"
@@ -314,7 +314,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
             <span
               class="t-button__text"
             >
-              confrim
+              confirm
             </span>
           </button>
           <button
@@ -429,7 +429,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
 </div>
 `;
 
-exports[`Drawer Demo NoMaskUsageExample wroks fine 1`] = `
+exports[`Drawer Demo NoMaskUsageExample works fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right t-drawer--without-mask"
@@ -498,7 +498,7 @@ exports[`Drawer Demo NoMaskUsageExample wroks fine 1`] = `
 </div>
 `;
 
-exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
+exports[`Drawer Demo PlacementUsageExample works fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right"
@@ -657,7 +657,7 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
 </div>
 `;
 
-exports[`Drawer Demo PopupUsageExample wroks fine 1`] = `
+exports[`Drawer Demo PopupUsageExample works fine 1`] = `
 <div>
    
   <div
@@ -725,7 +725,7 @@ exports[`Drawer Demo PopupUsageExample wroks fine 1`] = `
 </div>
 `;
 
-exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
+exports[`Drawer Demo SizeUsageExample works fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right"
@@ -919,7 +919,7 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
 </div>
 `;
 
-exports[`Drawer Demo destroy wroks fine 1`] = `
+exports[`Drawer Demo destroy works fine 1`] = `
 <div>
   <!---->
    
@@ -936,7 +936,7 @@ exports[`Drawer Demo destroy wroks fine 1`] = `
 </div>
 `;
 
-exports[`Drawer Demo operation wroks fine 1`] = `
+exports[`Drawer Demo operation works fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right"

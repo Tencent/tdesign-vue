@@ -226,13 +226,13 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       this.windowInnerWidth = window.innerWidth;
       this.windowInnerHeight = window.innerHeight;
       // 元素按下时注册document鼠标监听事件
-      document.addEventListener('mousemove', this.mouseMoverHander);
+      document.addEventListener('mousemove', this.mouseMoverHandler);
       // 鼠标弹起来移除document鼠标监听事件
       document.addEventListener('mouseup', this.mouseUpHandler);
       // 拖拽结束移除鼠标监听事件，解决文字拖拽结束事件未解绑问题(window系统双击文本然后拖拽触发)
       document.addEventListener('dragend', this.mouseUpHandler);
     },
-    mouseMoverHander(documentEvent: MouseEvent) {
+    mouseMoverHandler(documentEvent: MouseEvent) {
       const target = this.$refs.dialog as HTMLElement;
       // 用鼠标的位置减去鼠标相对元素的位置，得到元素的位置
       const left = documentEvent.clientX - this.disX;
@@ -253,7 +253,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       target.style.top = `${this.dTop}px`;
     },
     mouseUpHandler() {
-      document.removeEventListener('mousemove', this.mouseMoverHander);
+      document.removeEventListener('mousemove', this.mouseMoverHandler);
       document.removeEventListener('mouseup', this.mouseUpHandler);
       document.removeEventListener('dragend', this.mouseUpHandler);
     },

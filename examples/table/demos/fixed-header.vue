@@ -1,10 +1,5 @@
 <template>
-  <t-table
-    rowKey="index"
-    :data="data"
-    :columns="columns"
-    :height="200"
-  ></t-table>
+  <t-table rowKey="index" :data="data" :columns="columns" :height="200"></t-table>
 </template>
 <script>
 const data = [];
@@ -15,7 +10,7 @@ for (let i = 0; i < 20; i++) {
     type: ['String', 'Number', 'Array', 'Object'][i % 4],
     default: ['-', '0', '[]', '{}'][i % 4],
     detail: {
-      postion: `读取 ${i} 个数据的嵌套信息值`,
+      position: `读取 ${i} 个数据的嵌套信息值`,
     },
     needed: i % 4 === 0 ? '是' : '否',
     description: '数据源',
@@ -50,7 +45,7 @@ export default {
           title: '是否必传',
         },
         {
-          colKey: 'detail.postion',
+          colKey: 'detail.position',
           title: '详情信息',
           width: 200,
           ellipsis: true,

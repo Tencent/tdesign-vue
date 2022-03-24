@@ -6,10 +6,10 @@
         <div class="slotWarrper">
           <div v-for="(item, index) in dataList" :key="index" class="item">
             <span :class="item.value"></span>
-            {{item.label}}
+            {{ item.label }}
           </div>
         </div>
-        <div class="shadow"/>
+        <div class="shadow" />
       </template>
     </div>
   </t-calendar>
@@ -21,16 +21,20 @@ import dayjs from 'dayjs';
 export default {
   data() {
     return {
-      dataList: [{
-        value: 'error',
-        label: '错误事件',
-      }, {
-        value: 'waring',
-        label: '警告事件',
-      }, {
-        value: 'success',
-        label: '正常事件',
-      }],
+      dataList: [
+        {
+          value: 'error',
+          label: '错误事件',
+        },
+        {
+          value: 'warning',
+          label: '警告事件',
+        },
+        {
+          value: 'success',
+          label: '正常事件',
+        },
+      ],
     };
   },
   methods: {
@@ -58,7 +62,7 @@ export default {
     width: 100%;
     height: 12px;
     bottom: 0;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
   }
   .number {
     font-weight: bold;
@@ -81,14 +85,14 @@ export default {
       margin-right: 4px;
     }
   }
-  .error  {
-    background: #E34D59;
+  .error {
+    background: #e34d59;
   }
-  .waring {
-    background: #ED7B2F;
+  .warning {
+    background: #ed7b2f;
   }
   .success {
-    background: #00A870;
+    background: #00a870;
   }
 
   .slotWarrper {

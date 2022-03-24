@@ -1,6 +1,5 @@
 <template>
   <div class="tdesign-demo-block-column">
-
     <t-loading :loading="loading" text="加载中..." fullscreen />
     <!-- <t-loading :loading="loading" text="加载中..." attach="body" fullscreen /> -->
 
@@ -16,7 +15,7 @@
 </template>
 <script>
 export default {
-  name: 'FullScrennLoading',
+  name: 'FullScreenLoading',
   data() {
     return {
       loading: false,

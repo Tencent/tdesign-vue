@@ -2,11 +2,11 @@
   <div class="tdesign-demo-block-column">
     <t-form labelWidth="150" style="max-width: 500px">
       <t-addon prepend="插入节点数量:">
-        <t-input v-model="insertCount"/>
+        <t-input v-model="insertCount" />
       </t-addon>
       <t-button @click="append()">插入根节点</t-button>
       <t-form-item label="展开动画">
-        <t-switch v-model="transition"/>
+        <t-switch v-model="transition" />
       </t-form-item>
     </t-form>
 
@@ -21,7 +21,7 @@
       :label="label"
       ref="tree"
     >
-      <template #operations="{node}">
+      <template #operations="{ node }">
         <div class="tdesign-demo-block-row">
           <t-button size="small" variant="base" @click="append(node)">添加子节点</t-button>
           <t-button size="small" variant="base" theme="danger" @click="remove(node)">删除</t-button>
@@ -32,7 +32,6 @@
 </template>
 
 <script>
-
 const allLevels = [3, 3, 3];
 
 let cacheIndex = 0;
@@ -70,7 +69,7 @@ export default {
       index: 0,
       transition: true,
       insertCount: 1,
-      useActived: false,
+      useActivated: false,
       expandParent: true,
       items,
     };
