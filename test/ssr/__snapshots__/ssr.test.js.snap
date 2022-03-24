@@ -14356,20 +14356,16 @@ exports[`ssr snapshot test renders ./examples/textarea/demos/type.vue correctly 
 <div class="tdesign-demo-block-column">
   <div class="t-textarea t-is-disabled"><textarea disabled="disabled" unselectable="off" class="t-textarea__inner t-is-disabled">禁用状态</textarea></div>
   <div class="t-textarea t-is-readonly"><textarea readonly="readonly" unselectable="on" class="t-textarea__inner">只读状态</textarea></div>
-  <div class="t-textarea__wrap">
-    <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner">普通状态</textarea></div>
+  <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner">普通状态</textarea>
     <div class="t-textarea__tips t-textarea__tips--normal">这是普通文本提示</div>
   </div>
-  <div class="t-textarea__wrap">
-    <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner t-is-success">成功状态</textarea></div>
+  <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner t-is-success">成功状态</textarea>
     <div class="t-textarea__tips t-textarea__tips--success">校验通过文本提示</div>
   </div>
-  <div class="t-textarea__wrap">
-    <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner t-is-warning">警告状态</textarea></div>
+  <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner t-is-warning">警告状态</textarea>
     <div class="t-textarea__tips t-textarea__tips--warning">校验不通过文本提示</div>
   </div>
-  <div class="t-textarea__wrap">
-    <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner t-is-error">错误状态</textarea></div>
+  <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner t-is-error">错误状态</textarea>
     <div class="t-textarea__tips t-textarea__tips--error">校验存在严重问题文本提示</div>
   </div>
 </div>

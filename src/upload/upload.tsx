@@ -327,6 +327,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
           onError: this.onError,
           onProgress: this.handleProgress,
           onSuccess: this.handleSuccess,
+          method: this.method,
         });
       }
     },

@@ -10,7 +10,6 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import { ClassName } from '../common';
 
 const name = `${prefix}-textarea`;
-const TEXTAREA_WRAP_CLASS = `${prefix}-textarea__wrap`;
 const TEXTAREA_TIPS_CLASS = `${prefix}-textarea__tips`;
 const TEXTAREA_LIMIT = `${name}__limit`;
 
@@ -173,7 +172,8 @@ export default Vue.extend({
         [`${prefix}-resize-none`]: typeof this.autosize === 'object',
       },
     ];
-    const textareaNode = (
+    const tips = renderTNodeJSX(this, 'tips');
+    return (
       <div class={this.textareaClasses}>
         <textarea
           onInput={this.handleInput}
@@ -188,18 +188,10 @@ export default Vue.extend({
         {!this.maxcharacter && this.maxlength ? (
           <span class={TEXTAREA_LIMIT}>{`${this.value ? String(this.value)?.length : 0}/${this.maxlength}`}</span>
         ) : null}
+        {tips && (
+          <div class={`${TEXTAREA_TIPS_CLASS} ${prefix}-textarea__tips--${this.status || 'normal'}`}>{tips}</div>
+        )}
       </div>
     );
-
-    const tips = renderTNodeJSX(this, 'tips');
-    if (tips) {
-      return (
-        <div class={TEXTAREA_WRAP_CLASS}>
-          {textareaNode}
-          <div class={`${TEXTAREA_TIPS_CLASS} ${prefix}-textarea__tips--${this.status || 'normal'}`}>{tips}</div>
-        </div>
-      );
-    }
-    return textareaNode;
   },
 });
