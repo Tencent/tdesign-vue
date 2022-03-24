@@ -6,8 +6,6 @@ docClass: timeline
 ---
 
 ## 0.37.3 `2022-03-24`
-
-
 ### Bug Fixes
 
 * Form: 修复不能在表单项内换行输入的问题，[pr #624](https://github.com/Tencent/tdesign-vue/pull/624)，[@chaishi](https://github.com/chaishi)
@@ -17,6 +15,8 @@ docClass: timeline
 * Progress: 修复 `theme = plump` 且 `percent = 10` 时没有展示文案的问题，[issue #569](https://github.com/Tencent/tdesign-vue/issues/569)，[@uyarn](https://github.com/uyarn)
 * TreeSelect: 修复 `placehodler` 告警，[pr #624](https://github.com/Tencent/tdesign-vue/pull/624)，[@chaishi](https://github.com/chaishi)
 * InputNumber: 默认尺寸下输入框宽度调整，修复默认内容展示不全的问题，[issue #623](https://github.com/Tencent/tdesign-vue/issues/623)，[@xiaosansiji](https://github.com/xiaosansiji)
+* Upload: 修复 `handleSuccess` 回调并发导致 v-model 设置数据失效的问题，[pr #628](https://github.com/Tencent/tdesign-vue/pull/628)，[@brianzhang](https://github.com/brianzhang)
+
 ### Features
 
 * Table: 支持自定义 columns，[pr #423](https://github.com/Tencent/tdesign-vue/pull/423)，[@LeeJim](https://github.com/LeeJim)
