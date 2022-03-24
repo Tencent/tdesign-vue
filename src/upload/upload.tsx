@@ -490,7 +490,8 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
       // 上传成功的文件发送到 files
       const newFiles = innerFiles.map((file) => ({ ...file, response: res }));
-      const uploadedFiles = this.multiple ? this.files.concat(newFiles) : newFiles;
+      this.multiple && this.files.push(...newFiles);
+      const uploadedFiles = this.multiple ? this.files : newFiles;
 
       const context = { e: event, response: res, trigger: 'upload-success' };
       this.emitChangeEvent(uploadedFiles, context);
