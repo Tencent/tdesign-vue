@@ -11,9 +11,4 @@ script/test/cypress
 _site
 temp*
 static/
-# site/
-# !site/plugin-tdoc/transforms.js
-site/plugin-tdoc/index.js
-site/public/sw.js
-site/src/sw.js
-site/vite.config.js
+site/
