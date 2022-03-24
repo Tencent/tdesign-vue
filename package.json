@@ -86,7 +86,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
-    "@babel/core": "~7.16.0",
+    "@babel/core": "~7.17.8",
     "@babel/plugin-proposal-class-properties": "^7.16.0",
     "@babel/plugin-transform-modules-commonjs": "^7.9.6",
     "@babel/plugin-transform-object-assign": "^7.2.0",
@@ -178,13 +178,6 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
