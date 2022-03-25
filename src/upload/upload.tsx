@@ -286,9 +286,10 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
           if (!canUpload) return;
           const newFiles = this.toUploadFiles.concat();
           newFiles.push(uploadFile);
-          this.toUploadFiles = !this.allowUploadDuplicateFile
+          const uploadFileList = !this.allowUploadDuplicateFile
             ? dedupeFile([...new Set(newFiles)])
             : [...new Set(newFiles)];
+          this.toUploadFiles = this.max ? uploadFileList.slice(0, this.max - this.files.length) : uploadFileList;
           this.loadingFile = uploadFile;
           if (this.autoUpload) {
             this.upload(uploadFile);
