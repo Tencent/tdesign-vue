@@ -20,6 +20,7 @@ import { renderContent } from '../utils/render-tnode';
 import props from './props';
 import { ClassName } from '../common';
 import { emitEvent } from '../utils/event';
+import { dedupeFile } from './util';
 import {
   HTMLInputEvent,
   SuccessContext,
@@ -285,7 +286,9 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
           if (!canUpload) return;
           const newFiles = this.toUploadFiles.concat();
           newFiles.push(uploadFile);
-          this.toUploadFiles = [...new Set(newFiles)];
+          this.toUploadFiles = !this.allowUploadDuplicateFile
+            ? dedupeFile([...new Set(newFiles)])
+            : [...new Set(newFiles)];
           this.loadingFile = uploadFile;
           if (this.autoUpload) {
             this.upload(uploadFile);
@@ -691,6 +694,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
             toUploadFiles={this.toUploadFiles}
             remove={this.handleListRemove}
             showUploadProgress={this.showUploadProgress}
+            allowUploadDuplicateFile={this.allowUploadDuplicateFile}
             upload={this.multipleUpload}
             cancel={this.cancelUpload}
             display={this.theme}

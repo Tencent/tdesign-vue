@@ -18,6 +18,8 @@ export default {
     type: String,
     default: '',
   },
+  /** 是否允许重复上传相同文件名的文件 */
+  allowUploadDuplicateFile: Boolean,
   /** 是否选取文件后自动上传 */
   autoUpload: {
     type: Boolean,
@@ -76,7 +78,7 @@ export default {
     default: 'POST' as TdUploadProps['method'],
     validator(val: TdUploadProps['method']): boolean {
       if (!val) return true;
-      return ['POST', 'GET', 'PUT', 'OPTION'].includes(val);
+      return ['POST', 'GET', 'PUT', 'OPTION', 'PATCH', 'post', 'get', 'put', 'option', 'patch'].includes(val);
     },
   },
   /** 是否支持多选文件 */
