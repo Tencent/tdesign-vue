@@ -445,7 +445,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
       innerFiles.forEach((file) => {
         file.percent = Math.min(percent, 100);
-        this.loadingFile = file;
+        this.loadingFile = file.status === 'success' ? null : file;
       });
       const progressCtx = {
         percent,
