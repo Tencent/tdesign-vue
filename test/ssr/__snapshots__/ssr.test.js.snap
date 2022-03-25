@@ -14356,20 +14356,16 @@ exports[`ssr snapshot test renders ./examples/textarea/demos/type.vue correctly 
 <div class="tdesign-demo-block-column">
   <div class="t-textarea t-is-disabled"><textarea disabled="disabled" unselectable="off" class="t-textarea__inner t-is-disabled">禁用状态</textarea></div>
   <div class="t-textarea t-is-readonly"><textarea readonly="readonly" unselectable="on" class="t-textarea__inner">只读状态</textarea></div>
-  <div class="t-textarea__wrap">
-    <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner">普通状态</textarea></div>
+  <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner">普通状态</textarea>
     <div class="t-textarea__tips t-textarea__tips--normal">这是普通文本提示</div>
   </div>
-  <div class="t-textarea__wrap">
-    <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner t-is-success">成功状态</textarea></div>
+  <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner t-is-success">成功状态</textarea>
     <div class="t-textarea__tips t-textarea__tips--success">校验通过文本提示</div>
   </div>
-  <div class="t-textarea__wrap">
-    <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner t-is-warning">警告状态</textarea></div>
+  <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner t-is-warning">警告状态</textarea>
     <div class="t-textarea__tips t-textarea__tips--warning">校验不通过文本提示</div>
   </div>
-  <div class="t-textarea__wrap">
-    <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner t-is-error">错误状态</textarea></div>
+  <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner t-is-error">错误状态</textarea>
     <div class="t-textarea__tips t-textarea__tips--error">校验存在严重问题文本提示</div>
   </div>
 </div>
@@ -16240,6 +16236,36 @@ exports[`ssr snapshot test renders ./examples/upload/demos/file-flow-list-batch-
     <div class="t-upload__flow t-upload__flow-file-flow">
       <div class="t-upload__flow-op">
         <div class="t-upload__trigger"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">选择文件</span></button></div><small class="t-size-s t-upload__flow-placeholder">批量合并上传，会通过一个接口上传所有的文件</small>
+      </div>
+      <table class="t-upload__flow-table">
+        <tr>
+          <th>文件名</th>
+          <th>大小</th>
+          <th>状态</th>
+          <th>操作</th>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <div class="t-upload__flow-empty">点击上方“选择文件”或将文件拖拽到此区域</div>
+          </td>
+        </tr>
+      </table>
+      <div class="t-upload__flow-bottom"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">取消</span></button><button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"><span class="t-button__text">开始上传</span></button></div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/upload/demos/file-flow-list-duplicate.vue correctly 1`] = `
+<div class="t-upload__file-flow-demo">
+  <div>是否重复文件上传：<div class="t-switch t-size-m"><span class="t-switch__handle"></span>
+      <div class="t-switch__content t-size-m"></div>
+    </div>
+  </div>
+  <div class="t-upload"><input type="file" multiple="multiple" accept="" hidden="hidden">
+    <div class="t-upload__flow t-upload__flow-file-flow">
+      <div class="t-upload__flow-op">
+        <div class="t-upload__trigger"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">选择文件</span></button></div><small class="t-size-s t-upload__flow-placeholder">支持批量上传文件，文件格式不限，最多只能上传 10 份文件</small>
       </div>
       <table class="t-upload__flow-table">
         <tr>

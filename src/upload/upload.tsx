@@ -20,6 +20,7 @@ import { renderContent } from '../utils/render-tnode';
 import props from './props';
 import { ClassName } from '../common';
 import { emitEvent } from '../utils/event';
+import { dedupeFile } from './util';
 import {
   HTMLInputEvent,
   SuccessContext,
@@ -285,7 +286,9 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
           if (!canUpload) return;
           const newFiles = this.toUploadFiles.concat();
           newFiles.push(uploadFile);
-          this.toUploadFiles = [...new Set(newFiles)];
+          this.toUploadFiles = !this.allowUploadDuplicateFile
+            ? dedupeFile([...new Set(newFiles)])
+            : [...new Set(newFiles)];
           this.loadingFile = uploadFile;
           if (this.autoUpload) {
             this.upload(uploadFile);
@@ -317,6 +320,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
         }
         const request = xhr;
         this.xhrReq = request({
+          method: this.method,
           action: this.action,
           data: this.data,
           files: innerFiles,
@@ -490,7 +494,9 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
       // 上传成功的文件发送到 files
       const newFiles = innerFiles.map((file) => ({ ...file, response: res }));
-      const uploadedFiles = this.multiple ? this.files.concat(newFiles) : newFiles;
+      // 处理并发回调v-model数据 by brianfzhang
+      this.multiple && this.files.push(...newFiles);
+      const uploadedFiles = this.multiple ? this.files : newFiles;
 
       const context = { e: event, response: res, trigger: 'upload-success' };
       this.emitChangeEvent(uploadedFiles, context);
@@ -688,6 +694,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
             toUploadFiles={this.toUploadFiles}
             remove={this.handleListRemove}
             showUploadProgress={this.showUploadProgress}
+            allowUploadDuplicateFile={this.allowUploadDuplicateFile}
             upload={this.multipleUpload}
             cancel={this.cancelUpload}
             display={this.theme}

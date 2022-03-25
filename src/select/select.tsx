@@ -648,20 +648,28 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
         : this.renderOptions(this.displayOptions);
     },
     initHoverindex() {
+      const ableOptionIndex = Object.keys(this.hoverOptions).filter((i) => !this.hoverOptions[i].disabled);
+      const ableIndex = ableOptionIndex.length ? ableOptionIndex[0] : '0';
       if (!this.multiple && (typeof this.value === 'string' || typeof this.value === 'number')) {
         const targetIndex = Object.keys(this.hoverOptions).filter(
           (i) => get(this.hoverOptions[i], this.realValue) === this.value,
         );
-        this.hoverIndex = targetIndex.length ? parseInt(targetIndex[targetIndex.length - 1], 10) : -1;
-      } else if (this.multiple && Array.isArray(this.value) && this.value.length) {
-        this.value.some((item: string | number | TdOptionProps) => {
-          const targetIndex = Object.keys(this.hoverOptions).filter(
-            (i) => (typeof item === 'object' && get(this.hoverOptions[i], this.realValue) === get(item, this.realValue))
-              || get(this.hoverOptions[i], this.realValue) === item,
-          );
-          this.hoverIndex = targetIndex.length ? parseInt(targetIndex[targetIndex.length - 1], 10) : -1;
-          return this.hoverIndex !== -1;
-        });
+        this.hoverIndex = targetIndex.length
+          ? parseInt(targetIndex[targetIndex.length - 1], 10)
+          : parseInt(ableIndex, 10);
+      } else if (this.multiple) {
+        this.hoverIndex = parseInt(ableIndex, 10);
+        Array.isArray(this.value)
+          && this.value.some((item: string | number | TdOptionProps) => {
+            const targetIndex = Object.keys(this.hoverOptions).filter(
+              (i) => (typeof item === 'object' && get(this.hoverOptions[i], this.realValue) === get(item, this.realValue))
+                || get(this.hoverOptions[i], this.realValue) === item,
+            );
+            this.hoverIndex = targetIndex.length
+              ? parseInt(targetIndex[targetIndex.length - 1], 10)
+              : parseInt(ableIndex, 10);
+            return this.hoverIndex !== -1;
+          });
       }
     },
 
