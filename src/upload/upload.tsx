@@ -445,6 +445,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
       innerFiles.forEach((file) => {
         file.percent = Math.min(percent, 100);
+        // 判断文件状态是否上传完成
         this.loadingFile = file.status === 'success' ? null : file;
       });
       const progressCtx = {
