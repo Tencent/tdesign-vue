@@ -11,6 +11,7 @@ import requestMethod from '@/examples/upload/demos/request-method.vue';
 import singleCustom from '@/examples/upload/demos/single-custom.vue';
 import singleInput from '@/examples/upload/demos/single-input.vue';
 import table from '@/examples/upload/demos/table.vue';
+import fileFlowListDuplicate from '@/examples/upload/demos/file-flow-list-duplicate.vue';
 
 // unit test for component in examples.
 describe('Upload', () => {
@@ -64,6 +65,10 @@ describe('Upload', () => {
   });
   it('base table works fine', () => {
     const wrapper = mount(table);
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it('base fileFlowListDuplicate works fine', () => {
+    const wrapper = mount(fileFlowListDuplicate);
     expect(wrapper.element).toMatchSnapshot();
   });
 });

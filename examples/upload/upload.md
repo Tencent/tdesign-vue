@@ -12,6 +12,7 @@
 -- | -- | -- | -- | --
 accept | String | - | 接受上传的文件类型，[查看 W3C示例](https://www.w3schools.com/tags/att_input_accept.asp)，[查看 MDN 示例](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/file) | N
 action | String | - | 上传接口 | N
+allowUploadDuplicateFile | Boolean | false | 是否允许重复上传相同文件名的文件 | N
 autoUpload | Boolean | true | 是否选取文件后自动上传 | N
 beforeUpload | Function | - | 上传文件之前的钩子，参数为上传的文件，返回值决定是否上传。TS 类型：`(file: File | UploadFile) => boolean | Promise<boolean>` | N
 data | Object | - | 上传文件时所需的额外数据。TS 类型：`Record<string, any> | ((file: File) => Record<string, any>)` | N
@@ -26,7 +27,7 @@ formatResponse | Function | - | 用于格式化文件上传后的响应数据。
 headers | Object | - | 设置上传的请求头部。TS 类型：`{[key: string]: string}` | N
 isBatchUpload | Boolean | false | 文件是否作为一个独立文件包，整体替换，整体删除。不允许追加文件，只允许替换文件 | N
 max | Number | 0 | 用于控制文件上传数量，值为 0 则不限制 | N
-method | String | POST | HTTP 请求类型。可选项：POST/GET/PUT/OPTION | N
+method | String | POST | HTTP 请求类型。可选项：POST/GET/PUT/OPTION/PATCH/post/get/put/option/patch | N
 multiple | Boolean | false | 是否支持多选文件 | N
 name | String | 'file' | 文件上传时的名称 | N
 placeholder | String | - | 占位符 | N

@@ -3072,7 +3072,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/popconfirm.v
 
 exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue correctly 1`] = `
 <div style="padding:16px;">
-  <div class="t-table t-size-m t-table--bordered" style="position:relative;">
+  <div class="t-table t-table--bordered" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -3136,7 +3136,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
       </table>
     </div>
   </div> <br><br>
-  <div class="t-table t-size-m" style="position:relative;">
+  <div class="t-table" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -11371,7 +11371,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
-  <div class="t-table t-size-m" style="position:relative;">
+  <div class="t-table" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -11446,7 +11446,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
 exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
   <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示斑马纹</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示表格边框</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示悬浮效果</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">宽度自适应</span></label></div>
-  <div class="t-table t-size-m t-table--bordered t-table--striped" style="position:relative;">
+  <div class="t-table t-table--bordered t-table--striped" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -11542,7 +11542,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
 
 exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correctly 1`] = `
 <div>
-  <div class="t-table t-size-m t-vertical-align-top" style="position:relative;">
+  <div class="t-table t-vertical-align-top" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -11600,7 +11600,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
 
 exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
-  <div class="t-table t-size-m t-table--bordered t-table--striped" style="position:relative;">
+  <div class="t-table t-table--bordered t-table--striped" style="position:relative;">
     <div class="t-table__top-content">
       <div class="t-table__column-controller"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-setting">
             <path fill="currentColor" d="M11 8a3 3 0 11-6 0 3 3 0 016 0zm-1 0a2 2 0 10-4 0 2 2 0 004 0z" fill-opacity="0.9"></path>
@@ -11702,7 +11702,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
 
 exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
-  <div class="t-table t-size-m" style="position:relative;">
+  <div class="t-table" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -11788,7 +11788,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/custom-header.vue correctly 1`] = `
-<div class="t-table t-size-m" style="position:relative;">
+<div class="t-table" style="position:relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed" style="width:;">
       <colgroup>
@@ -11834,7 +11834,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
   <div class="item">
     <div style="margin:16px;"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否允许多字段排序</span></label></div>
     <div style="margin:16px;">排序：{&quot;sortBy&quot;:&quot;status&quot;,&quot;descending&quot;:true}</div>
-    <div class="t-table t-size-m" style="position:relative;">
+    <div class="t-table" style="position:relative;">
       <div class="t-table__content">
         <table class="t-table--layout-fixed" style="width:;">
           <colgroup>
@@ -11930,7 +11930,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
 exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctly 1`] = `
 <div class="demo-container t-table-demo-sort">
   <div class="item">
-    <div class="t-table t-size-m" style="position:relative;">
+    <div class="t-table" style="position:relative;">
       <div class="t-table__content">
         <table class="t-table--layout-fixed" style="width:;">
           <colgroup>
@@ -12007,7 +12007,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
 
 exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
-  <div class="t-table t-size-m" style="position:relative;">
+  <div class="t-table" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -12051,7 +12051,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
       </table>
     </div>
   </div>
-  <div class="t-table t-size-m" style="position:relative;">
+  <div class="t-table" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -12095,7 +12095,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
       </table>
     </div>
   </div>
-  <div class="t-table t-size-m" style="position:relative;">
+  <div class="t-table" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -12150,7 +12150,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
     </div>
   </div>
   <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">允许点击行之后展开/收起</span></label> <label class="t-checkbox" style="margin-left:32px;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定列</span></label> <label class="t-checkbox" style="margin-left:32px;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">空数据</span></label></div>
-  <div class="t-table t-size-m" style="position:relative;">
+  <div class="t-table" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-auto" style="width:1200px;">
         <colgroup>
@@ -12323,7 +12323,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
 <div class="tdesign-demo-block-column">
   <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">清除筛选条件</span></button> <span style="padding-left:36px;">已选筛选条件：{}</span></div>
   <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否显示表格边框</span></label></div>
-  <div class="t-table t-size-m t-table--bordered" style="position:relative;">
+  <div class="t-table t-table--bordered" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -12449,7 +12449,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div> <label class="t-checkbox" style="margin-left:16px;vertical-align:middle;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">空数据</span></label>
   </div>
-  <div class="t-table t-size-m t-table--bordered t-table--column-fixed" style="position:relative;">
+  <div class="t-table t-table--bordered t-table--column-fixed" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -12569,7 +12569,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
     </div>
   </div> <br><br>
   <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否冻结首尾两行</span></label></div> <br><br>
-  <div class="t-table t-size-m t-table--bordered" style="position:relative;">
+  <div class="t-table t-table--bordered" style="position:relative;">
     <div class="t-table__content" style="max-height:300px;">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -12830,7 +12830,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
     </div>
   </div>
   <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否冻结首尾两行</span></label></div>
-  <div class="t-table t-size-m t-table--bordered t-table--column-fixed" style="position:relative;">
+  <div class="t-table t-table--bordered t-table--column-fixed" style="position:relative;">
     <div class="t-table__content" style="max-height:300px;">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -13347,7 +13347,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
 exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large tdesign-demo-table-multi-header" style="width:100%;">
   <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示表格边框</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示固定表头</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">虚拟滚动</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定左侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定右侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表头吸顶</span></label></div>
-  <div class="t-table t-size-m t-table--bordered t-table--multiple-header" style="position:relative;">
+  <div class="t-table t-table--bordered t-table--multiple-header" style="position:relative;">
     <div class="t-table__top-content">
       <div class="t-table__column-controller"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-setting">
             <path fill="currentColor" d="M11 8a3 3 0 11-6 0 3 3 0 016 0zm-1 0a2 2 0 10-4 0 2 2 0 004 0z" fill-opacity="0.9"></path>
@@ -13488,7 +13488,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
       &quot;descending&quot;: false
       }
       ]</p> <br>
-    <div class="t-table t-size-m" style="position:relative;">
+    <div class="t-table" style="position:relative;">
       <div class="t-table__content">
         <table class="t-table--layout-fixed" style="width:;">
           <colgroup>
@@ -13583,7 +13583,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
 
 exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correctly 1`] = `
 <div>
-  <div class="t-table t-size-m" style="position:relative;">
+  <div class="t-table" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -13710,7 +13710,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue correctly 1`] = `
-<div class="t-table t-size-m t-table--bordered t-table--striped" style="position:relative;">
+<div class="t-table t-table--bordered t-table--striped" style="position:relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed" style="width:;">
       <colgroup>
@@ -13776,7 +13776,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
 
 exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue correctly 1`] = `
 <div>
-  <div class="t-table t-size-m" style="position:relative;">
+  <div class="t-table" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -13877,7 +13877,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
 
 exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue correctly 1`] = `
 <div>
-  <div class="t-table t-size-m" style="position:relative;">
+  <div class="t-table" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -13978,7 +13978,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
 
 exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue correctly 1`] = `
 <div>
-  <div show-columns="" class="t-table t-size-m" style="position:relative;">
+  <div show-columns="" class="t-table" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -14064,7 +14064,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
     &quot;sortBy&quot;: &quot;status&quot;,
     &quot;descending&quot;: true
     }</p>
-  <div class="t-table t-size-m t-table--bordered" style="position:relative;">
+  <div class="t-table t-table--bordered" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -14159,7 +14159,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
 exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`] = `
 <div>
   <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置数据</span></button></div> <br>
-  <div class="t-table t-size-m" style="position:relative;">
+  <div class="t-table" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -14328,7 +14328,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div> <br>
-  <div class="t-table t-size-m" style="position:relative;">
+  <div class="t-table" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -14448,7 +14448,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
 exports[`ssr snapshot test renders ./examples/table/demos/virtual-scroll.vue correctly 1`] = `
 <div class="demo-container">
   <div class="item">
-    <div class="t-table t-size-m" style="position:relative;">
+    <div class="t-table" style="position:relative;">
       <div class="t-table__content" style="height:300px;">
         <div class="t-table__virtual-scroll-cursor" style="transform:translate(0, 28800px);-ms-transform:translate(0, 28800px);-moz-transform:translate(0, 28800px);-webkit-transform:translate(0, 28800px);"></div>
         <table class="t-table--layout-fixed t-table--full-height" style="width:;">
@@ -15190,20 +15190,16 @@ exports[`ssr snapshot test renders ./examples/textarea/demos/type.vue correctly 
 <div class="tdesign-demo-block-column">
   <div class="t-textarea t-is-disabled"><textarea disabled="disabled" unselectable="off" class="t-textarea__inner t-is-disabled">禁用状态</textarea></div>
   <div class="t-textarea t-is-readonly"><textarea readonly="readonly" unselectable="on" class="t-textarea__inner">只读状态</textarea></div>
-  <div class="t-textarea__wrap">
-    <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner">普通状态</textarea></div>
+  <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner">普通状态</textarea>
     <div class="t-textarea__tips t-textarea__tips--normal">这是普通文本提示</div>
   </div>
-  <div class="t-textarea__wrap">
-    <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner t-is-success">成功状态</textarea></div>
+  <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner t-is-success">成功状态</textarea>
     <div class="t-textarea__tips t-textarea__tips--success">校验通过文本提示</div>
   </div>
-  <div class="t-textarea__wrap">
-    <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner t-is-warning">警告状态</textarea></div>
+  <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner t-is-warning">警告状态</textarea>
     <div class="t-textarea__tips t-textarea__tips--warning">校验不通过文本提示</div>
   </div>
-  <div class="t-textarea__wrap">
-    <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner t-is-error">错误状态</textarea></div>
+  <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner t-is-error">错误状态</textarea>
     <div class="t-textarea__tips t-textarea__tips--error">校验存在严重问题文本提示</div>
   </div>
 </div>
@@ -17074,6 +17070,36 @@ exports[`ssr snapshot test renders ./examples/upload/demos/file-flow-list-batch-
     <div class="t-upload__flow t-upload__flow-file-flow">
       <div class="t-upload__flow-op">
         <div class="t-upload__trigger"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">选择文件</span></button></div><small class="t-size-s t-upload__flow-placeholder">批量合并上传，会通过一个接口上传所有的文件</small>
+      </div>
+      <table class="t-upload__flow-table">
+        <tr>
+          <th>文件名</th>
+          <th>大小</th>
+          <th>状态</th>
+          <th>操作</th>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <div class="t-upload__flow-empty">点击上方“选择文件”或将文件拖拽到此区域</div>
+          </td>
+        </tr>
+      </table>
+      <div class="t-upload__flow-bottom"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">取消</span></button><button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"><span class="t-button__text">开始上传</span></button></div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/upload/demos/file-flow-list-duplicate.vue correctly 1`] = `
+<div class="t-upload__file-flow-demo">
+  <div>是否重复文件上传：<div class="t-switch t-size-m"><span class="t-switch__handle"></span>
+      <div class="t-switch__content t-size-m"></div>
+    </div>
+  </div>
+  <div class="t-upload"><input type="file" multiple="multiple" accept="" hidden="hidden">
+    <div class="t-upload__flow t-upload__flow-file-flow">
+      <div class="t-upload__flow-op">
+        <div class="t-upload__trigger"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">选择文件</span></button></div><small class="t-size-s t-upload__flow-placeholder">支持批量上传文件，文件格式不限，最多只能上传 10 份文件</small>
       </div>
       <table class="t-upload__flow-table">
         <tr>

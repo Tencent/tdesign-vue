@@ -2362,7 +2362,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input__wrap"
+        class="t-input__wrap t-select__input"
         style="display: none;"
       >
         <div
@@ -2457,7 +2457,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input__wrap"
+        class="t-input__wrap t-select__input"
         style="display: none;"
       >
         <div
@@ -2536,7 +2536,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
         +0
       </span>
       <div
-        class="t-input__wrap"
+        class="t-input__wrap t-select__input"
       >
         <div
           class="t-input t-size-m"
@@ -3310,7 +3310,7 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
   style="padding: 16px;"
 >
   <div
-    class="t-table t-size-m t-table--bordered"
+    class="t-table t-table--bordered"
     style="position: relative;"
   >
     <div
@@ -3542,7 +3542,7 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
   <br />
    
   <div
-    class="t-table t-size-m"
+    class="t-table"
     style="position: relative;"
   >
     <div

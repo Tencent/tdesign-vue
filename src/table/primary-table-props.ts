@@ -41,7 +41,7 @@ export default {
   /** 展开行 */
   expandedRowKeys: {
     type: Array as PropType<TdPrimaryTableProps['expandedRowKeys']>,
-    default: undefined,
+    default: (): TdPrimaryTableProps['expandedRowKeys'] => [],
   },
   /** 展开行，非受控属性 */
   defaultExpandedRowKeys: {
@@ -66,7 +66,6 @@ export default {
   /** 过滤数据的值 */
   filterValue: {
     type: Object as PropType<TdPrimaryTableProps['filterValue']>,
-    default: undefined,
   },
   /** 过滤数据的值，非受控属性 */
   defaultFilterValue: {
@@ -77,7 +76,6 @@ export default {
   /** 选中的行，控制属性 */
   selectedRowKeys: {
     type: Array as PropType<TdPrimaryTableProps['selectedRowKeys']>,
-    default: undefined,
   },
   /** 选中的行，控制属性，非受控属性 */
   defaultSelectedRowKeys: {
@@ -86,7 +84,6 @@ export default {
   /** 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序 */
   sort: {
     type: [Object, Array] as PropType<TdPrimaryTableProps['sort']>,
-    default: undefined,
   },
   /** 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序，非受控属性 */
   defaultSort: {
@@ -106,7 +103,7 @@ export default {
   onChange: Function as PropType<TdPrimaryTableProps['onChange']>,
   /** 【开发中】列配置发生变化时触发。`context.columns` 表示已选中的列；`context.currentColumn` 表示本次变化操作的列，值不存在表示全选操作；`context.type` 表示当前操作属于选中列或是取消列 */
   onColumnChange: Function as PropType<TdPrimaryTableProps['onColumnChange']>,
-  /** 表格数据发生变化时触发，比如：本地排序方法 sorter */
+  /** 本地数据排序导致 `data` 变化时触发，第一个参数指变化后的数据，第二个参数 `context.trigger` 表示触发本次变化的来源 */
   onDataChange: Function as PropType<TdPrimaryTableProps['onDataChange']>,
   /** 拖拽排序时触发 */
   onDragSort: Function as PropType<TdPrimaryTableProps['onDragSort']>,

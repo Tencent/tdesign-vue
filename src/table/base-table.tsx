@@ -20,7 +20,7 @@ import { BaseTableProps } from './interface';
 import { useTNodeJSX } from '../hooks/tnode';
 import useStyle, { formatCSSUnit } from './hooks/useStyle';
 import useClassName from './hooks/useClassName';
-import { TableConfig, useConfig } from '../config-provider/useConfig';
+import { useConfig } from '../config-provider/useConfig';
 import { Affix } from '../affix';
 import { ROW_LISTENERS } from './tr';
 import useCommonClassName from '../hooks/useCommonClassName';
@@ -55,7 +55,7 @@ export default defineComponent({
     const { statusClassNames } = useCommonClassName();
     // 表格基础样式类
     const { tableClasses, tableContentStyles, tableElementStyles } = useStyle(props);
-    const { global } = useConfig<TableConfig>('table');
+    const { global } = useConfig('table');
     // 固定表头和固定列逻辑
     const {
       affixHeaderRef,

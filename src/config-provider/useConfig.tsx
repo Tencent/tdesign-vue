@@ -1,34 +1,33 @@
-import {
-  computed, inject, Ref, h,
-} from '@vue/composition-api';
-import defaultConfig from './zh_CN_config';
-import { GlobalConfigProvider } from './type';
+import { computed, inject, h } from '@vue/composition-api';
+import cloneDeep from 'lodash/cloneDeep';
+import _mergeWith from 'lodash/mergeWith';
+import { defaultGlobalConfig, GlobalConfig } from './context';
 
 export * from './type';
 
-export type ComponentNames = Exclude<keyof GlobalConfigProvider, 'animation' | 'classPrefix'>;
+// deal with https://github.com/lodash/lodash/issues/1313
+export const merge = (defaultGlobalConfig: GlobalConfig, injectConfig: GlobalConfig) => _mergeWith(defaultGlobalConfig, injectConfig, (objValue, srcValue) => {
+  if (Array.isArray(objValue)) {
+    return srcValue;
+  }
+});
 
 /**
- * receive component global config
+ * component global config
  * @param componentName
  * @returns {t, global}
+ * useConfig('pagination')
  */
-export function useConfig<T>(componentName?: ComponentNames): {
-  t: <T>(pattern: T, placement?: Record<string, string | number>) => any;
-  global: Ref<T>;
-  classPrefix: string;
-} {
-  const global = computed(() => {
-    const globalConfig = inject('globalConfig', {});
-    const defaultConfigData = defaultConfig[componentName];
-    if (globalConfig && globalConfig[componentName]) {
-      return {
-        ...defaultConfigData,
-        ...globalConfig[componentName],
-      };
-    }
-    return defaultConfigData;
+export function useConfig<T extends keyof GlobalConfig>(componentName?: T) {
+  const mergedGlobalConfig = computed(() => {
+    const globalConfig = inject<GlobalConfig>('globalConfig', Object.create(null));
+    const mergedGlobalConfig = merge(cloneDeep(defaultGlobalConfig), globalConfig);
+    return mergedGlobalConfig;
   });
+
+  const global = computed(() => mergedGlobalConfig.value[componentName]);
+
+  const classPrefix = computed(() => mergedGlobalConfig.value.classPrefix);
 
   // 处理正则表达式
   const t = function <T> (pattern: T, data?: Record<string, string | number>) {
@@ -44,15 +43,20 @@ export function useConfig<T>(componentName?: ComponentNames): {
       return translated;
     }
     if (typeof pattern === 'function') {
+      // 重要：组件的渲染必须存在参数 h，不能移除
       return pattern(data ?? h);
     }
     return '';
   };
 
-  const classPrefix = 't';
   return {
     t,
     global,
     classPrefix,
   };
+}
+
+export function usePrefixClass(componentName?: string) {
+  const { classPrefix } = useConfig('classPrefix');
+  return computed(() => (componentName ? `${classPrefix.value}-${componentName}` : classPrefix.value));
 }

@@ -3,7 +3,7 @@ import { ChevronDownIcon } from 'tdesign-icons-vue';
 import useClassName from './hooks/useClassName';
 import { SortType } from './type';
 import Tooltip, { TooltipProps } from '../tooltip';
-import { TableConfig, useConfig } from '../config-provider/useConfig';
+import { useConfig } from '../config-provider/useConfig';
 import { useTNodeDefault } from '../hooks/tnode';
 import { TNode } from '../common';
 
@@ -24,9 +24,9 @@ export default defineComponent({
   },
 
   setup(props, context) {
-    const { tableSortClasses, negativeRoate180 } = useClassName();
+    const { tableSortClasses, negativeRotate180 } = useClassName();
     const renderTNode = useTNodeDefault();
-    const { t, global } = useConfig<TableConfig>('table');
+    const { t, global } = useConfig('table');
 
     const allowSortTypes = computed<SortTypeEnums>(() => props.sortType === 'all' ? ['asc', 'desc'] : [props.sortType]);
 
@@ -38,7 +38,7 @@ export default defineComponent({
       t,
       global,
       tableSortClasses,
-      negativeRoate180,
+      negativeRotate180,
       allowSortTypes,
       onSortIconClick,
       renderTNode,
@@ -53,7 +53,7 @@ export default defineComponent({
         activeClass,
         this.tableSortClasses.sortIcon,
         this.tableSortClasses.iconDirection[direction],
-        { [this.negativeRoate180]: direction === 'asc' },
+        { [this.negativeRotate180]: direction === 'asc' },
       ];
       return (
         <span class={sortClassName} onClick={(e: MouseEvent) => this.onSortIconClick(e, direction)}>

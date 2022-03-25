@@ -28,7 +28,7 @@ export function getColumnKeys(columns: PrimaryTableCol[], keys: string[] = []) {
 
 export default function useColumnController(props: TdPrimaryTableProps, context: SetupContext) {
   const renderTNode = useTNodeDefault();
-  const { classPrefix: prefix } = useConfig();
+  const { classPrefix } = useConfig();
   const { columns, columnController } = toRefs(props);
 
   const enabledColKeys = computed(() => {
@@ -98,6 +98,7 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
         const checkedLength = intersectionChecked.value.length;
         const isCheckedAll = checkedLength === enabledColKeys.value.size;
         const isIndeterminate = checkedLength > 0 && checkedLength < enabledColKeys.value.size;
+        const prefix = classPrefix.value;
         const defaultNode = (
           <div class={[`${prefix}-table__column-controller`, `${prefix}-table__column-controller--${widthMode}`]}>
             <div class={`${prefix}-table__column-controller-body`}>
@@ -137,7 +138,7 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
   // eslint-disable-next-line
   const renderColumnController = (h: CreateElement) => {
     return (
-      <div class={`${prefix}-table__column-controller`}>
+      <div class={`${classPrefix.value}-table__column-controller`}>
         <t-button theme="default" variant="outline" onClick={handleToggleColumnController}>
           <SettingIcon slot="icon" />
           列配置

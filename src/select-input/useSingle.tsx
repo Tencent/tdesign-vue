@@ -1,5 +1,5 @@
 import {
-  SetupContext, ref, watch, computed, toRefs, getCurrentInstance,
+  SetupContext, ref, computed, toRefs, getCurrentInstance,
 } from '@vue/composition-api';
 
 import isObject from 'lodash/isObject';
@@ -11,6 +11,8 @@ import Input, { InputValue } from '../input';
 import Loading from '../loading';
 
 import { useTNodeJSX } from '../hooks/tnode';
+import { usePrefixClass } from '../config-provider';
+import useDefaultValue from '../hooks/useDefaultValue';
 
 // single 和 multiple 共有特性
 const COMMON_PROPERTIES = [
@@ -41,9 +43,18 @@ function getInputValue(value: TdSelectInputProps['value'], keys: TdSelectInputPr
 export default function useSingle(props: TdSelectInputProps, context: SetupContext) {
   const instance = getCurrentInstance();
 
-  const { value, keys } = toRefs(props);
+  const { value, keys, inputValue: propsInputValue } = toRefs(props);
+  const classPrefix = usePrefixClass();
+
+  const [inputValue, setInputValue] = useDefaultValue(
+    propsInputValue,
+    props.defaultInputValue ?? '',
+    props.onInputChange,
+    'inputValue',
+    'input-change',
+  );
+
   const inputRef = ref();
-  const inputValue = ref<string | number>('');
   const renderTNode = useTNodeJSX();
 
   const commonInputProps = computed<SelectInputCommonProperties>(() => pick(props, COMMON_PROPERTIES));
@@ -52,37 +63,33 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
     context?.e?.stopPropagation();
     props.onClear?.(context);
     instance.emit('clear', context);
-    inputValue.value = '';
+    setInputValue('', { trigger: 'clear' });
   };
 
   const onInnerInputChange = (value: InputValue, context: { e: InputEvent | MouseEvent }) => {
     if (props.allowInput) {
-      inputValue.value = value;
-      props.onInputChange?.(value, { ...context, trigger: 'input' });
-      instance.emit('input-change', value, { ...context, trigger: 'input' });
+      setInputValue(value, { ...context, trigger: 'input' });
     }
   };
 
-  watch(
-    [value],
-    () => {
-      inputValue.value = getInputValue(value.value, keys.value);
-    },
-    { immediate: true },
-  );
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const renderSelectSingle = (h: Vue.CreateElement) => {
+  const renderSelectSingle = (h: Vue.CreateElement, popupVisible: boolean) => {
     const singleValueDisplay = renderTNode('valueDisplay');
+    const displayedValue = popupVisible && props.allowInput ? inputValue.value : getInputValue(value.value, keys.value);
     const prefixContent = [singleValueDisplay, renderTNode('label')];
     const inputProps = {
       ...commonInputProps.value,
       ...props.inputProps,
-      value: singleValueDisplay ? undefined : inputValue.value,
+      value: singleValueDisplay ? undefined : displayedValue,
       label: prefixContent.length ? () => prefixContent : undefined,
       autoWidth: props.autoWidth,
       readonly: !props.allowInput,
       placeholder: singleValueDisplay ? '' : props.placeholder,
       suffixIcon: !props.disabled && props.loading ? () => <Loading loading size="small" /> : props.suffixIcon,
+      showClearIconOnEmpty: Boolean(props.clearable && inputValue.value),
+      inputClass: {
+        [`${classPrefix.value}-input--focused`]: popupVisible,
+      },
     };
 
     return (
@@ -93,13 +100,13 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
         onChange={onInnerInputChange}
         onClear={onInnerClear}
         onBlur={(val: InputValue, context: { e: MouseEvent }) => {
-          props.onBlur?.(value, { ...context, inputValue: val });
+          props.onBlur?.(value.value, { ...context, inputValue: val });
+          instance.emit('blur', value.value, { ...context, inputValue: val });
           inputValue.value = getInputValue(value.value, keys.value);
-          instance.emit('blur', props.value, { ...context, inputValue: val });
         }}
         onFocus={(val: InputValue, context: { e: MouseEvent }) => {
-          props.onFocus?.(value, { ...context, inputValue: val });
-          instance.emit('focus', props.value, { ...context, tagInputValue: val });
+          props.onFocus?.(value.value, { ...context, inputValue: val });
+          instance.emit('focus', value.value, { ...context, tagInputValue: val });
         }}
       />
     );

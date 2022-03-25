@@ -116,7 +116,7 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   scroll?: TableScroll;
   /**
-   * 表格尺寸
+   * 【设计稿确认中】表格尺寸
    * @default medium
    */
   size?: SizeEnum;
@@ -362,9 +362,9 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   onColumnChange?: (context: PrimaryTableColumnChange<T>) => void;
   /**
-   * 表格数据发生变化时触发，比如：本地排序方法 sorter
+   * 本地数据排序导致 `data` 变化时触发，第一个参数指变化后的数据，第二个参数 `context.trigger` 表示触发本次变化的来源
    */
-  onDataChange?: (data: Array<T>) => void;
+  onDataChange?: (data: Array<T>, context: TableDataChangeContext) => void;
   /**
    * 拖拽排序时触发
    */
@@ -665,6 +665,10 @@ export interface PrimaryTableColumnChange<T> {
   columns?: CheckboxGroupValue;
   currentColumn?: PrimaryTableCol<T>;
   type?: 'check' | 'uncheck';
+}
+
+export interface TableDataChangeContext {
+  trigger: 'sort';
 }
 
 export interface DragSortContext<T> {

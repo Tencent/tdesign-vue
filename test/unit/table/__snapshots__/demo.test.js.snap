@@ -91,7 +91,7 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-size-m"
+    class="t-table"
     style="position: relative;"
   >
     <div
@@ -381,7 +381,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-size-m t-table--bordered t-table--striped"
+    class="t-table t-table--bordered t-table--striped"
     style="position: relative;"
   >
     <div
@@ -683,7 +683,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
 exports[`Table Table customCellVue demo works fine 1`] = `
 <div>
   <div
-    class="t-table t-size-m t-vertical-align-top"
+    class="t-table t-vertical-align-top"
     style="position: relative;"
   >
     <div
@@ -852,7 +852,7 @@ exports[`Table Table customColVue demo works fine 1`] = `
   class="tdesign-demo-block-column-large"
 >
   <div
-    class="t-table t-size-m t-table--bordered t-table--striped"
+    class="t-table t-table--bordered t-table--striped"
     style="position: relative;"
   >
     <div
@@ -1181,7 +1181,7 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
   class="tdesign-demo-block-column-large"
 >
   <div
-    class="t-table t-size-m"
+    class="t-table"
     style="position: relative;"
   >
     <div
@@ -1438,7 +1438,7 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
 
 exports[`Table Table customHeaderVue demo works fine 1`] = `
 <div
-  class="t-table t-size-m"
+  class="t-table"
   style="position: relative;"
 >
   <div
@@ -1589,7 +1589,7 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-table t-size-m"
+      class="t-table"
       style="position: relative;"
     >
       <div
@@ -1902,7 +1902,7 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
     class="item"
   >
     <div
-      class="t-table t-size-m"
+      class="t-table"
       style="position: relative;"
     >
       <div
@@ -2108,7 +2108,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
   class="tdesign-demo-block-column-large"
 >
   <div
-    class="t-table t-size-m"
+    class="t-table"
     style="position: relative;"
   >
     <div
@@ -2214,7 +2214,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-size-m"
+    class="t-table"
     style="position: relative;"
   >
     <div
@@ -2322,7 +2322,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-size-m"
+    class="t-table"
     style="position: relative;"
   >
     <div
@@ -2562,7 +2562,7 @@ exports[`Table Table expandableVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-size-m"
+    class="t-table"
     style="position: relative;"
   >
     <div
@@ -3332,7 +3332,7 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-size-m t-table--bordered"
+    class="t-table t-table--bordered"
     style="position: relative;"
   >
     <div
@@ -3854,7 +3854,7 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-size-m t-table--bordered t-table--column-fixed"
+    class="t-table t-table--bordered t-table--column-fixed"
     style="position: relative;"
   >
     <div
@@ -4324,7 +4324,7 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-size-m t-table--bordered t-table--column-fixed"
+    class="t-table t-table--bordered t-table--column-fixed"
     style="position: relative;"
   >
     <div
@@ -5521,7 +5521,7 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
   <br />
    
   <div
-    class="t-table t-size-m t-table--bordered"
+    class="t-table t-table--bordered"
     style="position: relative;"
   >
     <div
@@ -6432,7 +6432,7 @@ exports[`Table Table lazyVue demo works fine 1`] = `
     <br />
      
     <div
-      class="t-table t-size-m"
+      class="t-table"
       style="position: relative;"
     >
       <div
@@ -12354,7 +12354,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-size-m t-table--bordered t-table--multiple-header"
+    class="t-table t-table--bordered t-table--multiple-header"
     style="position: relative;"
   >
     <div
@@ -12795,7 +12795,7 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
     <br />
      
     <div
-      class="t-table t-size-m"
+      class="t-table"
       style="position: relative;"
     >
       <div
@@ -13110,7 +13110,7 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
 
 exports[`Table Table paginationAjaxVue demo works fine 1`] = `
 <div
-  class="t-table t-size-m t-table--bordered t-table--striped"
+  class="t-table t-table--bordered t-table--striped"
   style="position: relative;"
 >
   <div
@@ -13328,7 +13328,7 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
 exports[`Table Table paginationVue demo works fine 1`] = `
 <div>
   <div
-    class="t-table t-size-m"
+    class="t-table"
     style="position: relative;"
   >
     <div
@@ -13784,7 +13784,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
 exports[`Table Table selectMultipleVue demo works fine 1`] = `
 <div>
   <div
-    class="t-table t-size-m"
+    class="t-table"
     style="position: relative;"
   >
     <div
@@ -14227,7 +14227,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
 exports[`Table Table selectSingleVue demo works fine 1`] = `
 <div>
   <div
-    class="t-table t-size-m"
+    class="t-table"
     style="position: relative;"
   >
     <div
@@ -14659,7 +14659,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
 exports[`Table Table showColumnsVue demo works fine 1`] = `
 <div>
   <div
-    class="t-table t-size-m"
+    class="t-table"
     show-columns=""
     style="position: relative;"
   >
@@ -14943,7 +14943,7 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
   </p>
    
   <div
-    class="t-table t-size-m t-table--bordered"
+    class="t-table t-table--bordered"
     style="position: relative;"
   >
     <div
@@ -15314,7 +15314,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
   <br />
    
   <div
-    class="t-table t-size-m"
+    class="t-table"
     style="position: relative;"
   >
     <div
@@ -15928,7 +15928,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
   <br />
    
   <div
-    class="t-table t-size-m"
+    class="t-table"
     style="position: relative;"
   >
     <div
@@ -16683,7 +16683,7 @@ exports[`Table Table virtualScrollVue demo works fine 1`] = `
     class="item"
   >
     <div
-      class="t-table t-size-m"
+      class="t-table"
       style="position: relative;"
     >
       <div

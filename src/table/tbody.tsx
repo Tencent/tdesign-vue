@@ -6,7 +6,7 @@ import camelCase from 'lodash/camelCase';
 import get from 'lodash/get';
 import pick from 'lodash/pick';
 import TrElement, { TrProps, ROW_LISTENERS, TABLE_PROPS } from './tr';
-import { TableConfig, useConfig } from '../config-provider/useConfig';
+import { useConfig } from '../config-provider/useConfig';
 import { RowspanColspan, TableRowData, BaseTableCellParams } from './type';
 import { BaseTableProps } from './interface';
 import { RowAndColFixedPosition } from './hooks/useFixed';
@@ -86,7 +86,7 @@ export default defineComponent({
   // eslint-disable-next-line
   setup(props: TableBodyProps, { emit }: SetupContext) {
     const renderTNode = useTNodeJSX();
-    const { t, global } = useConfig<TableConfig>('table');
+    const { t, global } = useConfig('table');
     const { tableFullRowClasses, tableBaseClass } = useClassName();
 
     const tbodyClases = computed(() => [tableBaseClass.body]);

@@ -5,11 +5,11 @@ import { useTNodeJSX } from '../../hooks/tnode';
 import { TdPrimaryTableProps } from '../type';
 import Loading from '../../loading';
 import useClassName from './useClassName';
-import { TableConfig, useConfig } from '../../config-provider/useConfig';
+import { useConfig } from '../../config-provider/useConfig';
 
 export default function useAsyncLoading(props: TdPrimaryTableProps, context: SetupContext) {
   const renderTNode = useTNodeJSX();
-  const { global } = useConfig<TableConfig>('table');
+  const { global } = useConfig('table');
   const { isLoadingClass, isLoadMoreClass, asyncLoadingClass } = useClassName();
 
   const classes = computed(() => [
@@ -32,7 +32,6 @@ export default function useAsyncLoading(props: TdPrimaryTableProps, context: Set
     const asyncLoadingNode = renderTNode('asyncLoading');
     if (isString(asyncLoadingNode)) {
       const { asyncLoading } = props;
-      // TODO: GLOBLE_CONFIG
       const loadingText = {
         'load-more': global.value.loadingMoreText,
         loading: global.value.loadingText,

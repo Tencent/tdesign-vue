@@ -11,7 +11,7 @@ export function formatCSSUnit(unit: string | number) {
 
 export default function useStyle(props: TdBaseTableProps) {
   const {
-    size, bordered, stripe, hover, verticalAlign, height, maxHeight, tableContentWidth,
+    bordered, stripe, hover, verticalAlign, height, maxHeight, tableContentWidth,
   } = toRefs(props);
 
   const { tableBaseClass, tableAlignClasses } = useClassName();
@@ -20,7 +20,7 @@ export default function useStyle(props: TdBaseTableProps) {
   const tableClasses = computed<ClassName>(() => [
     tableBaseClass.table,
     {
-      [sizeClassNames[size.value]]: size.value,
+      [sizeClassNames[props.size]]: props.size !== 'medium',
       [tableBaseClass.bordered]: bordered.value,
       [tableBaseClass.striped]: stripe.value,
       [tableBaseClass.hover]: hover.value,

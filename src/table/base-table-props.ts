@@ -95,7 +95,7 @@ export default {
   scroll: {
     type: Object as PropType<TdBaseTableProps['scroll']>,
   },
-  /** 表格尺寸 */
+  /** 【设计稿确认中】表格尺寸 */
   size: {
     type: String as PropType<TdBaseTableProps['size']>,
     default: 'medium' as TdBaseTableProps['size'],

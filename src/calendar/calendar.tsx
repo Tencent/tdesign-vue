@@ -607,7 +607,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
               {week.map(
                 (item, itemIndex) => this.checkMonthCellItemShowed(item) && (
                     <calendar-cell-item
-                      key={`${weekIndex}-${itemIndex}`}
+                      key={`d-${weekIndex}-${itemIndex}`}
                       item={item}
                       theme={this.theme}
                       t={this.t}
@@ -634,7 +634,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
             <tr class={`${COMPONENT_NAME}__table-body-row`}>
               {cell.map((item, itemIndex) => (
                 <calendar-cell-item
-                  key={`${cellIndex}-${itemIndex}`}
+                  key={`m-${cellIndex}-${itemIndex}`}
                   item={item}
                   theme={this.theme}
                   t={this.t}

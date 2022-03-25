@@ -9,7 +9,7 @@ import Input from '../input';
 import TButton from '../button';
 import { useTNodeDefault } from '../hooks/tnode';
 import { PrimaryTableCol, FilterValue } from './type';
-import { TableConfig, useConfig } from '../config-provider/useConfig';
+import { useConfig } from '../config-provider/useConfig';
 
 type Params = Parameters<CreateElement>;
 type FirstParams = Params[0];
@@ -47,7 +47,7 @@ export default defineComponent({
   // eslint-disable-next-line
   setup(props: TableFilterControllerProps) {
     const renderTNode = useTNodeDefault();
-    const { t, global } = useConfig<TableConfig>('table');
+    const { t, global } = useConfig('table');
     const filterPopupVisible = ref(false);
 
     const onFilterPopupVisibleChange = (visible: boolean) => {

@@ -13,13 +13,13 @@ import {
 import useClassName from './useClassName';
 import { useTNodeJSX } from '../../hooks/tnode';
 import useDefaultValue from '../../hooks/useDefaultValue';
-import { TableConfig, useConfig } from '../../config-provider/useConfig';
+import { useConfig } from '../../config-provider/useConfig';
 
 export default function useRowExpand(props: TdPrimaryTableProps, context: SetupContext) {
   const { expandedRowKeys } = toRefs(props);
   const renderTNode = useTNodeJSX();
-  const { t, global } = useConfig<TableConfig>('table');
-  const { tableExpandClasses, positiveRoate90, tableFullRowClasses } = useClassName();
+  const { t, global } = useConfig('table');
+  const { tableExpandClasses, positiveRotate90, tableFullRowClasses } = useClassName();
   // controlled and uncontrolled
   const [tExpandedRowKeys, setTExpandedRowKeys] = useDefaultValue(
     expandedRowKeys,
@@ -59,7 +59,7 @@ export default function useRowExpand(props: TdPrimaryTableProps, context: SetupC
     const classes = [
       tableExpandClasses.iconBox,
       tableExpandClasses[expanded ? 'expanded' : 'collapsed'],
-      { [positiveRoate90]: expanded },
+      { [positiveRotate90]: expanded },
     ];
     return (
       <span class={classes} onClick={(e: MouseEvent) => onToggleExpand(e, row)}>
