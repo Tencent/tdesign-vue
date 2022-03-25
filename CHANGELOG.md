@@ -5,7 +5,10 @@ toc: false
 docClass: timeline
 ---
 
-## 0.37.3 `2022-03-24`
+## 0.38.0 `2022-03-25`
+### BREAKING CHANGES
+* Input/Textarea: Input 外部传入样式挂载至 `t-input__wrap` 层级的 DOM 节点，不再传入到 `t-input` 层级；Textarea 去除 `t-textarea__wrap`，[pr #276](https://github.com/Tencent/tdesign-vue/pull/627)，[@pengYYYYY](https://github.com/pengYYYYY)
+
 ### Bug Fixes
 
 * Form: 修复不能在表单项内换行输入的问题，[pr #624](https://github.com/Tencent/tdesign-vue/pull/624)，[@chaishi](https://github.com/chaishi)
@@ -16,11 +19,21 @@ docClass: timeline
 * TreeSelect: 修复 `placehodler` 告警，[pr #624](https://github.com/Tencent/tdesign-vue/pull/624)，[@chaishi](https://github.com/chaishi)
 * InputNumber: 默认尺寸下输入框宽度调整，修复默认内容展示不全的问题，[issue #623](https://github.com/Tencent/tdesign-vue/issues/623)，[@xiaosansiji](https://github.com/xiaosansiji)
 * Upload: 修复 `handleSuccess` 回调并发导致 v-model 设置数据失效的问题，[pr #628](https://github.com/Tencent/tdesign-vue/pull/628)，[@brianzhang](https://github.com/brianzhang)
+* Datepicker/Timepicker: focused 态样式修复
+* SelectInput:
+  - 修复在非输入状态下无 focused 态
+  - 修复在非输入状态下不显示清除按钮
+  - 修复在 single 模式下 inputValue 的受控表现
+* Cascader: [@pengYYYYY](https://github.com/pengYYYYY)
+  - 修复 `value` 为 number 类型时无法回显的问题，[issue #619](https://github.com/Tencent/tdesign-vue/issues/619)
+  - 修复动态修改 `options` 为空数组时不生效的问题，[issue #467](https://github.com/Tencent/tdesign-vue/issues/467)
 
 ### Features
 
 * Table: 支持自定义 columns，[pr #423](https://github.com/Tencent/tdesign-vue/pull/423)，[@LeeJim](https://github.com/LeeJim)
 * Message: 将 `placement = center` 的 fadeIn 动画改为从上往下出现，[pr #611](https://github.com/Tencent/tdesign-vue/pull/611)，[@Zack921](https://github.com/Zack921)
+* Input: 增加 `inputClass` 属性，用于透传 class 到 `t-input` 同级，[pr #276](https://github.com/Tencent/tdesign-vue/pull/627)，[@pengYYYYY](https://github.com/pengYYYYY)
+* Upload: 新增 `allowUploadDuplicateFile` 属性，支持重复文件名的文件上传，[pr #636](https://github.com/Tencent/tdesign-vue/pull/636)，[@brianzhang](https://github.com/brianzhang)
 
 ## 0.37.2 `2022-03-18`
 ### Bug Fixes
