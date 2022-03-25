@@ -85,7 +85,7 @@ import {
   ErrorIcon, ChevronRightIcon, CloseIcon, CloseCircleIcon,
 } from 'tdesign-icons-vue';
 import merge from 'lodash/merge';
-import enConfig from 'tdesign-vue/config-provider/en_US_config';
+import { enConfig } from 'tdesign-vue/config-provider';
 
 const transferList = [];
 for (let i = 0; i < 20; i++) {

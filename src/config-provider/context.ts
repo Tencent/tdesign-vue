@@ -1,8 +1,7 @@
-import defaultConfig from './zh_CN_config';
-
-// TODO 替换 zh_CN_config 配置拆分，local内未走查，走查后更换，暂时使用现有配置
-// import defaultLocale from '../_common/js/locale/zh_CN';
-// export type Locale = typeof defaultLocale;
+import merge from 'lodash/merge';
+import defaultConfig from '../_common/js/global-config/default-config';
+import defaultZhCN from '../_common/js/global-config/locale/zh_CN';
+import defaultEnUS from '../_common/js/global-config/locale/en_US';
 
 export enum EAnimationType {
   ripple = 'ripple',
@@ -10,24 +9,10 @@ export enum EAnimationType {
   fade = 'fade',
 }
 
-export const defaultClassPrefix = 't';
+export const defaultGlobalConfig = merge(defaultConfig, defaultZhCN);
 
-export const defaultAnimation: {
-  include: string[];
-  exclude: string[];
-} = {
-  include: [EAnimationType.ripple, EAnimationType.expand, EAnimationType.fade],
-  exclude: [],
-};
-
-export const defaultGlobalConfig = {
-  animation: defaultAnimation,
-  classPrefix: defaultClassPrefix,
-  ...defaultConfig,
-};
-
+export type Locale = typeof defaultZhCN;
 export type GlobalConfig = typeof defaultGlobalConfig;
 
-export interface Config {
-  globalConfig?: GlobalConfig;
-}
+export const zhCN = defaultZhCN;
+export const enUS = defaultEnUS;

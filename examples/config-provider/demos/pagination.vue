@@ -6,7 +6,7 @@
 
 <script>
 import merge from 'lodash/merge';
-import enConfig from 'tdesign-vue/config-provider/en_US_config';
+import { enConfig } from 'tdesign-vue/config-provider';
 
 export default {
   data() {

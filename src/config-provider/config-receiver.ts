@@ -1,6 +1,6 @@
 import Vue, { VueConstructor } from 'vue';
 import mergeWith from 'lodash/mergeWith';
-import defaultConfig from './zh_CN_config';
+import { defaultGlobalConfig } from './context';
 import { GlobalConfigProvider, AnimationType } from './type';
 
 export type ValueOf<T> = T[keyof T];
@@ -32,7 +32,7 @@ export default function getConfigReceiverMixins<BasicComponent extends Vue, C ex
 
     computed: {
       global(): C {
-        const defaultData = defaultConfig[componentName];
+        const defaultData = defaultGlobalConfig[componentName];
         if (this.globalConfig && this.globalConfig[componentName]) {
           return {
             ...defaultData,
