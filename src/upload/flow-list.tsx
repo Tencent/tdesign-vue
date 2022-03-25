@@ -29,6 +29,8 @@ export default Vue.extend({
 
   props: {
     showUploadProgress: props.showUploadProgress,
+    // 是否过滤重复文件
+    allowUploadDuplicateFile: props.allowUploadDuplicateFile,
     // 已上传完成的文件
     files: Array as PropType<Array<UploadFile>>,
     // 合并上传
@@ -65,8 +67,13 @@ export default Vue.extend({
     waitingUploadFiles(): Array<UploadFile> {
       const list: Array<UploadFile> = [];
       this.toUploadFiles.forEach((item) => {
-        const r = this.files.filter((t) => t.name === item.name);
-        if (!r.length) {
+        // 判断是否需要过滤重复文件
+        if (!this.allowUploadDuplicateFile) {
+          const r = this.files.filter((t) => t.name === item.name);
+          if (!r.length) {
+            list.push(item);
+          }
+        } else {
           list.push(item);
         }
       });
