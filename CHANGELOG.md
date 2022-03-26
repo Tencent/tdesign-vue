@@ -9,7 +9,7 @@ docClass: timeline
 ### Features
 * SelectInput: 实现 `enter` 事件 [pr #642](https://github.com/Tencent/tdesign-vue/pull/642)，[@pengYYYYY](https://github.com/pengYYYYY)
 
-## Bug Fixes
+### Bug Fixes
 * SelectInput: 修复单选可输入状态下的 focus 时 input value 的错误 [pr #642](https://github.com/Tencent/tdesign-vue/pull/642)，[@pengYYYYY](https://github.com/pengYYYYY)
 
 ## 0.38.0 `2022-03-25`
