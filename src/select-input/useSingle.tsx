@@ -102,11 +102,15 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
         onBlur={(val: InputValue, context: { e: MouseEvent }) => {
           props.onBlur?.(value.value, { ...context, inputValue: val });
           instance.emit('blur', value.value, { ...context, inputValue: val });
-          inputValue.value = getInputValue(value.value, keys.value);
+        }}
+        onEnter={(val: InputValue, context: { e: KeyboardEvent }) => {
+          props.onEnter?.(value.value, { ...context, inputValue: val });
+          instance.emit('enter', value.value, { ...context, inputValue: val });
         }}
         onFocus={(val: InputValue, context: { e: MouseEvent }) => {
           props.onFocus?.(value.value, { ...context, inputValue: val });
           instance.emit('focus', value.value, { ...context, tagInputValue: val });
+          !popupVisible && setInputValue(getInputValue(value.value, keys.value), { ...context, trigger: 'input' }); // 聚焦时拿到value
         }}
       />
     );
