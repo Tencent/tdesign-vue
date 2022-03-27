@@ -45,28 +45,31 @@ function getData(currentPage = 1) {
       type: ['String', 'Number', 'Array', 'Object'][i % 4],
       default: ['-', '0', '[]', '{}'][i % 4],
       detail: {
-        postion: `读取 ${i} 个数据的嵌套信息值`,
+        position: `读取 ${i} 个数据的嵌套信息值`,
       },
       needed: i % 4 === 0 ? '是' : '否',
       description: '数据源',
     };
-    obj.list = new Array(2).fill(null).map((t, j) => {
-      const secondIndex = 100 * j + (i + 1) * 10;
-      const secondObj = {
-        ...obj,
-        id: secondIndex,
-        key: `我是 ${secondIndex}_${currentPage} 号（${pageInfo}）`,
-      };
-      secondObj.list = new Array(3).fill(null).map((m, n) => {
-        const thirdIndex = secondIndex * 1000 + 100 * m + (n + 1) * 10;
-        return {
+    // 第一行不设置子节点
+    obj.list = i === 0
+      ? []
+      : new Array(2).fill(null).map((t, j) => {
+        const secondIndex = 100 * j + (i + 1) * 10;
+        const secondObj = {
           ...obj,
-          id: thirdIndex,
-          key: `我是 ${thirdIndex}_${currentPage} 号（${pageInfo}）`,
+          id: secondIndex,
+          key: `我是 ${secondIndex}_${currentPage} 号（${pageInfo}）`,
         };
+        secondObj.list = new Array(3).fill(null).map((m, n) => {
+          const thirdIndex = secondIndex * 1000 + 100 * m + (n + 1) * 10;
+          return {
+            ...obj,
+            id: thirdIndex,
+            key: `我是 ${thirdIndex}_${currentPage} 号（${pageInfo}）`,
+          };
+        });
+        return secondObj;
       });
-      return secondObj;
-    });
     data.push(obj);
   }
   return data;

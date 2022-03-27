@@ -23,7 +23,6 @@ import useClassName from './hooks/useClassName';
 import { useConfig } from '../config-provider/useConfig';
 import { Affix } from '../affix';
 import { ROW_LISTENERS } from './tr';
-import useCommonClassName from '../hooks/useCommonClassName';
 import THead from './thead';
 import TFoot from './tfoot';
 
@@ -52,7 +51,6 @@ export default defineComponent({
     const {
       virtualScrollClasses, tableLayoutClasses, tableBaseClass, tableColFixedClasses,
     } = useClassName();
-    const { statusClassNames } = useCommonClassName();
     // 表格基础样式类
     const { tableClasses, tableContentStyles, tableElementStyles } = useStyle(props);
     const { global } = useConfig('table');
@@ -191,7 +189,6 @@ export default defineComponent({
       translateY,
       affixHeaderRef,
       showAffixHeader,
-      statusClassNames,
       scrollbarWidth,
       isMultipleHeader,
       showRightDivider,
@@ -214,7 +211,7 @@ export default defineComponent({
     const colgroup = (
       <colgroup>
         {(this.spansAndLeafNodes?.leafColumns || this.columns).map((col) => (
-          <col style={{ width: formatCSSUnit(col.width) }}></col>
+          <col key={col.colKey} style={{ width: formatCSSUnit(col.width) }}></col>
         ))}
       </colgroup>
     );

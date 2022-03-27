@@ -280,7 +280,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     }
   };
 
-  const setRowAndColFixedPosition = (tableContentElm: HTMLElement, initialColumnMap: RowAndColFixedPosition) => {
+  const updateRowAndColFixedPosition = (tableContentElm: HTMLElement, initialColumnMap: RowAndColFixedPosition) => {
     rowAndColFixedPosition.value.clear();
     const thead = tableContentElm.querySelector('thead');
     // 处理固定列
@@ -362,7 +362,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     setIsLastOrFirstFixedCol(levelNodes);
     const timer = setTimeout(() => {
       if (isFixedColumn.value || fixedRows.value?.length) {
-        setRowAndColFixedPosition(tableContentRef.value, newColumnsMap);
+        updateRowAndColFixedPosition(tableContentRef.value, newColumnsMap);
       }
       clearTimeout(timer);
     }, 0);
@@ -394,12 +394,12 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     }, 0);
   };
 
-  const setTableWidth = () => {
+  const updateTableWidth = () => {
     const rect = tableContentRef.value.getBoundingClientRect();
     tableWidth.value = rect.width - scrollbarWidth.value - (props.bordered ? 1 : 0);
   };
 
-  const setThWidthList = (trList: HTMLCollection) => {
+  const updateThWidthList = (trList: HTMLCollection) => {
     const widthMap: { [colKey: string]: number } = {};
     for (let i = 0, len = trList.length; i < len; i++) {
       const thList = trList[i].children;
@@ -417,12 +417,12 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     }
   };
 
-  const setThWidthListHander = () => {
+  const updateThWidthListHandler = () => {
     if (notNeedThWidthList.value) return;
     const timer = setTimeout(() => {
-      setTableWidth();
+      updateTableWidth();
       const thead = tableContentRef.value.querySelector('thead');
-      setThWidthList(thead.children);
+      updateThWidthList(thead.children);
       clearTimeout(timer);
     }, 0);
   };
@@ -458,7 +458,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   // 影响表头宽度的元素
   watch(
     [data, columns, bordered, tableLayout, fixedRows, isFixedHeader, headerAffixedTop, tableContentWidth],
-    setThWidthListHander,
+    updateThWidthListHandler,
     { immediate: true },
   );
 
@@ -471,10 +471,10 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   });
 
   const refreshTable = () => {
-    setTableWidth();
+    updateTableWidth();
     updateFixedHeader();
     if (!notNeedThWidthList.value) {
-      setThWidthListHander();
+      updateThWidthListHandler();
     }
     if (isFixedColumn.value || isFixedHeader.value) {
       updateFixedStatus();
@@ -488,7 +488,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     const scrollWidth = getScrollbarWidth();
     scrollbarWidth.value = scrollWidth;
     const timer = setTimeout(() => {
-      setTableWidth();
+      updateTableWidth();
       clearTimeout(timer);
     });
     if (isFixedColumn.value || isFixedHeader.value || !notNeedThWidthList.value) {
@@ -519,7 +519,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     affixHeaderRef,
     scrollbarWidth,
     refreshTable,
-    setThWidthListHander,
+    updateThWidthListHandler,
     updateHeaderScroll,
     onTableContentScroll,
   };
