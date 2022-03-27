@@ -54,12 +54,20 @@ export default {
       pagination: {
         current: 1,
         pageSize: 10,
+        // defaultCurrent: 1,
+        // defaultPageSize: 10,
         showJumper: true,
+        onChange: (pageInfo) => {
+          console.log('pagination.onChange', pageInfo);
+        },
       },
     };
   },
   async mounted() {
-    await this.fetchData(this.pagination);
+    await this.fetchData({
+      current: this.pagination.current || this.pagination.defaultCurrent,
+      pageSize: this.pagination.pageSize || this.pagination.defaultPageSize,
+    });
   },
   methods: {
     async fetchData(pagination = this.pagination) {

@@ -64,6 +64,8 @@ export default {
       ],
       /** 非受控用法：与分页组件对齐（此处注释为非受控用法示例，代码有效，勿删） */
       pagination: {
+        // current: 2,
+        // pageSize: 5,
         defaultCurrent: 2,
         defaultPageSize: 5,
         total: TOTAL,
@@ -78,6 +80,9 @@ export default {
     },
     // 分页变化时触发该事件
     onPageChange(pageInfo, newData) {
+      // 受控用法所需
+      // this.pagination.current = pageInfo.current;
+      // this.pagination.pageSize = pageInfo.pageSize;
       console.log('page-change:', pageInfo, newData);
     },
   },
