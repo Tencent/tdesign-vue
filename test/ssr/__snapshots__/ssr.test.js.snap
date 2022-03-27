@@ -11445,7 +11445,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
 
 exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
-  <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示斑马纹</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示表格边框</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示悬浮效果</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">宽度自适应</span></label></div>
+  <div>
+    <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button"><input type="radio" value="small" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">小尺寸</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="medium" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">中尺寸</span></label> <label class="t-radio-button"><input type="radio" value="large" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">大尺寸</span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+    </div> <br><br> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示斑马纹</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示表格边框</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示悬浮效果</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">宽度自适应</span></label>
+  </div>
   <div class="t-table t-table--bordered t-table--striped" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
@@ -11474,7 +11478,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             <th data-colkey="needed" class="t-table__th-needed">
               <div class="t-table__th-cell-inner">是否必传</div>
             </th>
-            <th data-colkey="detail.postion" class="t-table__th-detail.postion">
+            <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__ellipsis t-text-ellipsis">详情信息</div>
               </div>
@@ -11483,58 +11487,82 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td data-id="first-column" class="custom-column-class-name t-align-center">0</td>
-            <td>共有</td>
-            <td>String</td>
-            <td>-</td>
-            <td>是</td>
-            <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis t-text-ellipsis">读取 0 个数据的嵌套信息值</div>
-            </td>
-          </tr>
-          <tr>
-            <td data-id="first-column" class="custom-column-class-name t-align-center">1</td>
+            <td data-id="first-column" class="custom-column-class-name t-align-center">5</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis t-text-ellipsis">读取 1 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 5 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr>
-            <td data-id="first-column" class="custom-column-class-name t-align-center">2</td>
+            <td data-id="first-column" class="custom-column-class-name t-align-center">6</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis t-text-ellipsis">读取 2 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 6 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr>
-            <td data-id="first-column" class="custom-column-class-name t-align-center">3</td>
+            <td data-id="first-column" class="custom-column-class-name t-align-center">7</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis t-text-ellipsis">读取 3 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 7 个数据的嵌套信息值</div>
             </td>
           </tr>
           <tr>
-            <td data-id="first-column" class="custom-column-class-name t-align-center">4</td>
+            <td data-id="first-column" class="custom-column-class-name t-align-center">8</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
             <td>是</td>
             <td class="t-table-td--ellipsis">
-              <div class="t-table__ellipsis t-text-ellipsis">读取 4 个数据的嵌套信息值</div>
+              <div class="t-table__ellipsis t-text-ellipsis">读取 8 个数据的嵌套信息值</div>
+            </td>
+          </tr>
+          <tr>
+            <td data-id="first-column" class="custom-column-class-name t-align-center">9</td>
+            <td>私有</td>
+            <td>Number</td>
+            <td>0</td>
+            <td>否</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 9 个数据的嵌套信息值</div>
             </td>
           </tr>
         </tbody>
         <!---->
       </table>
+    </div>
+    <div class="t-table__pagination">
+      <div class="t-pagination t-size-m">
+        <div class="t-pagination__total">共 28 项数据</div>
+        <div class="t-select__wrap t-pagination__select">
+          <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span title="5" class="t-select__single">5</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
+              <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+            </svg></div>
+        </div>
+        <div class="t-pagination__btn t-pagination__btn-prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
+            <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
+          </svg></div>
+        <ul class="t-pagination__pager">
+          <li class="t-pagination__number">1</li>
+          <li class="t-pagination__number t-is-current">2</li>
+          <li class="t-pagination__number">3</li>
+          <li class="t-pagination__number">4</li>
+          <li class="t-pagination__number">5</li>
+          <li class="t-pagination__number">6</li>
+        </ul>
+        <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
+            <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
+          </svg></div>
+      </div>
     </div>
   </div>
 </div>
@@ -11634,7 +11662,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
             <th data-colkey="needed" class="t-table__th-needed">
               <div class="t-table__th-cell-inner">是否必传</div>
             </th>
-            <th data-colkey="detail.postion" class="t-table__th-detail.postion">
+            <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__ellipsis t-text-ellipsis">详情信息</div>
               </div>
@@ -11730,7 +11758,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
             <th data-colkey="required" class="t-table__th-required">
               <div class="t-table__th-cell-inner">是否必传</div>
             </th>
-            <th data-colkey="detail.postion" class="t-table__th-detail.postion">
+            <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__ellipsis t-text-ellipsis">详情信息</div>
               </div>
@@ -12485,7 +12513,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
             <th data-colkey="operation" class="t-table__th-operation">
               <div class="t-table__th-cell-inner">操作</div>
             </th>
-            <th data-colkey="detail.postion" class="t-table__th-detail.postion">
+            <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__ellipsis t-text-ellipsis">详情信息</div>
               </div>
@@ -12594,7 +12622,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <th data-colkey="needed" class="t-table__th-needed">
               <div class="t-table__th-cell-inner">必传</div>
             </th>
-            <th data-colkey="detail.postion" class="t-table__th-detail.postion">
+            <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__ellipsis t-text-ellipsis">详情信息</div>
               </div>
@@ -12857,7 +12885,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <th data-colkey="default" class="t-table__th-default">
               <div class="t-table__th-cell-inner">默认值</div>
             </th>
-            <th data-colkey="detail.postion" class="t-table__th-detail.postion">
+            <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">详情信息</div>
             </th>
             <th data-colkey="description" class="t-table__th-description">
@@ -13611,7 +13639,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             <th data-colkey="needed" class="t-table__th-needed">
               <div class="t-table__th-cell-inner">是否必传</div>
             </th>
-            <th data-colkey="detail.postion" class="t-table__th-detail.postion">
+            <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__ellipsis t-text-ellipsis">详情信息</div>
               </div>
