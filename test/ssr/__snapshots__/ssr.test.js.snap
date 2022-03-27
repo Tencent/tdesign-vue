@@ -11801,7 +11801,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
           <tr class="t-tdesign__custom-footer-tr">
             <td><b style="color:rgb(0, 82, 217);">表尾</b></td>
             <td><span>第 1 行</span></td>
-            <td>-</td>
+            <td>全部类型</td>
             <td><span>空</span></td>
             <td> 插槽渲染表尾 </td>
             <td>

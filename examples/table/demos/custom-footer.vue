@@ -26,7 +26,7 @@ export default {
     return {
       data,
       // 表尾有一行数据
-      footData: [{}],
+      footData: [{ type: '全部类型', description: '-' }],
       columns: [
         {
           align: 'center',
@@ -45,7 +45,6 @@ export default {
         {
           colKey: 'type',
           title: '类型',
-          foot: '-',
         },
         {
           colKey: 'default',

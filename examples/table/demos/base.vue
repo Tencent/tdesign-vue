@@ -95,9 +95,9 @@ export default {
           ellipsis: true,
 
           // 透传省略内容浮层 Popup 组件全部特性，示例代码有效，勿删！！！
-          // ellipsis: { placement: 'top', destroyOnClose: false },
+          // ellipsis: { placement: 'bottom', destroyOnClose: false },
 
-          // 自定义 ellipsis 样式和内容，示例代码有效，勿删！！！
+          // 完全自定义 ellipsis 浮层的样式和内容，示例代码有效，勿删！！！
           // ellipsis: (h, {
           //   row, col, rowIndex, colIndex,
           // }) => {
