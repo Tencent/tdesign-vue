@@ -291,8 +291,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         return;
       }
 
-      const triggerValue = context.node.data[this.realValue];
-
+      const triggerValue = this.isObjectValue ? context.node.data : context.node.data[this.realValue];
       // 参照 Select 下点击即选中
       this.change(triggerValue, context.node);
       this.actived = [triggerValue];
