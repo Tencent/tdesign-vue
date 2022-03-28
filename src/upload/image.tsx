@@ -7,8 +7,10 @@ import { UPLOAD_NAME } from './util';
 import props from './props';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
+import mixins from '../utils/mixins';
+import getConfigReceiverMixins, { UploadConfig } from '../config-provider/config-receiver';
 
-export default Vue.extend({
+export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).extend({
   name: 'TImageUpload',
 
   components: {
@@ -93,12 +95,14 @@ export default Vue.extend({
             {this.showUploadProgress && this.loadingFile && this.loadingFile.status === 'progress' ? (
               <div class={`${UPLOAD_NAME}__card-container ${UPLOAD_NAME}__card-box`}>
                 <TLoading />
-                <p>上传中 {Math.min(this.loadingFile.percent, 99)}%</p>
+                <p>
+                  {this.global.progress.uploadingText} {Math.min(this.loadingFile.percent, 99)}%
+                </p>
               </div>
             ) : (
               <div class={`${UPLOAD_NAME}__card-container ${UPLOAD_NAME}__card-box`}>
                 <AddIcon></AddIcon>
-                <p class={`${prefix}-size-s`}>点击上传图片</p>
+                <p class={`${prefix}-size-s`}>{this.global.triggerUploadText.image}</p>
               </div>
             )}
           </li>

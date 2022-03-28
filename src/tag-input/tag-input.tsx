@@ -128,6 +128,7 @@ export default defineComponent({
     return (
       <TInput
         ref="tagInputRef"
+        readonly={this.readonly}
         {...this.inputProps}
         value={this.tInputValue}
         onChange={(val: InputValue, context?: { e?: InputEvent | MouseEvent }) => {
@@ -136,7 +137,6 @@ export default defineComponent({
         onMousewheel={this.onWheel}
         autoWidth={this.autoWidth}
         size={this.size}
-        readonly={this.readonly}
         disabled={this.disabled}
         label={() => this.renderLabel({ displayNode, label }, h)}
         class={this.classes}

@@ -166,12 +166,12 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       return this.uploadInOneRequest && this.isBatchUpload;
     },
     uploadListTriggerText(): string {
-      let uploadText = '选择文件';
+      let uploadText = this.global.triggerUploadText.fileInput;
       if (this.toUploadFiles?.length > 0 || this.files?.length > 0) {
         if (this.theme === 'file-input' || (this.files?.length > 0 && this.canBatchUpload)) {
-          uploadText = '重新选择';
+          uploadText = this.global.triggerUploadText.reupload;
         } else {
-          uploadText = '继续选择';
+          uploadText = this.global.triggerUploadText.continueUpload;
         }
       }
       return uploadText;
@@ -256,7 +256,8 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
       let tmpFiles = [...files];
       if (this.max) {
-        tmpFiles = tmpFiles.slice(0, this.max - this.files.length);
+        // 判断当前待上传列表长度
+        tmpFiles = tmpFiles.slice(0, this.max - this.toUploadFiles.length - this.files.length);
         if (tmpFiles.length !== files.length) {
           console.warn(`TDesign Upload Warn: you can only upload ${this.max} files`);
         }
@@ -284,8 +285,11 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
         this.handleBeforeUpload(file).then((canUpload) => {
           if (!canUpload) return;
           const newFiles = this.toUploadFiles.concat();
-          newFiles.push(uploadFile);
-          this.toUploadFiles = [...new Set(newFiles)];
+          // 判断是否为重复文件条件，已选是否存在检验
+          if (this.allowUploadDuplicateFile || !this.toUploadFiles.find((file) => file.name === uploadFile.name)) {
+            newFiles.push(uploadFile);
+          }
+          this.toUploadFiles = newFiles;
           this.loadingFile = uploadFile;
           if (this.autoUpload) {
             this.upload(uploadFile);
@@ -317,6 +321,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
         }
         const request = xhr;
         this.xhrReq = request({
+          method: this.method,
           action: this.action,
           data: this.data,
           files: innerFiles,
@@ -441,7 +446,8 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
       innerFiles.forEach((file) => {
         file.percent = Math.min(percent, 100);
-        this.loadingFile = file;
+        // 判断文件状态是否上传完成
+        this.loadingFile = file.status === 'success' ? null : file;
       });
       const progressCtx = {
         percent,
@@ -490,7 +496,9 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
       // 上传成功的文件发送到 files
       const newFiles = innerFiles.map((file) => ({ ...file, response: res }));
-      const uploadedFiles = this.multiple ? this.files.concat(newFiles) : newFiles;
+      // 处理并发回调v-model数据 by brianfzhang
+      this.multiple && this.files.push(...newFiles);
+      const uploadedFiles = this.multiple ? this.files : newFiles;
 
       const context = { e: event, response: res, trigger: 'upload-success' };
       this.emitChangeEvent(uploadedFiles, context);
@@ -583,7 +591,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       return (
         <TButton variant="outline">
           <UploadIcon slot="icon" />
-          {this.files?.length ? '重新上传' : '点击上传'}
+          {this.files?.length ? this.global.triggerUploadText.reupload : this.global.triggerUploadText.normal}
         </TButton>
       );
     },
@@ -688,6 +696,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
             toUploadFiles={this.toUploadFiles}
             remove={this.handleListRemove}
             showUploadProgress={this.showUploadProgress}
+            allowUploadDuplicateFile={this.allowUploadDuplicateFile}
             upload={this.multipleUpload}
             cancel={this.cancelUpload}
             display={this.theme}

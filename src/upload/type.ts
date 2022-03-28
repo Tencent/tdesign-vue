@@ -18,6 +18,11 @@ export interface TdUploadProps {
    */
   action?: string;
   /**
+   * 是否允许重复上传相同文件名的文件
+   * @default false
+   */
+  allowUploadDuplicateFile?: boolean;
+  /**
    * 是否选取文件后自动上传
    * @default true
    */
@@ -82,7 +87,7 @@ export interface TdUploadProps {
    * HTTP 请求类型
    * @default POST
    */
-  method?: 'POST' | 'GET' | 'PUT' | 'OPTION';
+  method?: 'POST' | 'GET' | 'PUT' | 'OPTION' | 'PATCH' | 'post' | 'get' | 'put' | 'option' | 'patch';
   /**
    * 是否支持多选文件
    * @default false

@@ -20,7 +20,7 @@ for (let i = 0; i < TOTAL; i++) {
     type: ['String', 'Number', 'Array', 'Object'][i % 4],
     default: ['-', '0', '[]', '{}'][i % 4],
     detail: {
-      postion: `读取 ${i} 个数据的嵌套信息值`,
+      position: `读取 ${i} 个数据的嵌套信息值`,
     },
     needed: i % 4 === 0 ? '是' : '否',
     description: '数据源',
@@ -56,31 +56,20 @@ export default {
           title: '是否必传',
         },
         {
-          colKey: 'detail.postion',
+          colKey: 'detail.position',
           title: '详情信息',
           width: 200,
           ellipsis: true,
         },
       ],
       /** 非受控用法：与分页组件对齐（此处注释为非受控用法示例，代码有效，勿删） */
-      // pagination: {
-      //   defaultCurrent: 2,
-      //   defaultPageSize: 5,
-      //   total: TOTAL,
-      //   showJumper: true,
-      // },
-      /** 受控用法：与分页组件对齐（此处注释为受控用法示例，代码有效，勿删） */
       pagination: {
-        current: 1,
-        pageSize: 5,
+        // current: 2,
+        // pageSize: 5,
+        defaultCurrent: 2,
+        defaultPageSize: 5,
         total: TOTAL,
         showJumper: true,
-        // 也可以监听表格组件的 page-change 事件进行处理
-        // 还可以使用表格组件的 change 事件处理变化。排序、分页、过滤等发生变化时都会触发 change 事件
-        onChange: (pageInfo) => {
-          this.pagination.current = pageInfo.current;
-          this.pagination.pageSize = pageInfo.pageSize;
-        },
       },
     };
   },
@@ -90,8 +79,11 @@ export default {
       console.log('change:', params, context);
     },
     // 分页变化时触发该事件
-    onPageChange(pageInfo) {
-      console.log('page-change:', pageInfo);
+    onPageChange(pageInfo, newData) {
+      // 受控用法所需
+      // this.pagination.current = pageInfo.current;
+      // this.pagination.pageSize = pageInfo.pageSize;
+      console.log('page-change:', pageInfo, newData);
     },
   },
 };
