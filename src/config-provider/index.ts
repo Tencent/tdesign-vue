@@ -3,7 +3,6 @@ import _ConnfigProvider from './config-provider';
 
 export * from './type';
 export * from './useConfig';
-export { zhCN, enUS } from './context';
 
 export type { GlobalConfig, Locale } from './context';
 
