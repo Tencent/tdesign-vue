@@ -20,7 +20,6 @@ import { renderContent } from '../utils/render-tnode';
 import props from './props';
 import { ClassName } from '../common';
 import { emitEvent } from '../utils/event';
-import { dedupeFile } from './util';
 import {
   HTMLInputEvent,
   SuccessContext,
@@ -257,7 +256,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
       let tmpFiles = [...files];
       if (this.max) {
-        tmpFiles = tmpFiles.slice(0, this.max - this.files.length);
+        tmpFiles = tmpFiles.slice(0, this.max - this.toUploadFiles.length - this.files.length);
         if (tmpFiles.length !== files.length) {
           console.warn(`TDesign Upload Warn: you can only upload ${this.max} files`);
         }
@@ -285,11 +284,10 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
         this.handleBeforeUpload(file).then((canUpload) => {
           if (!canUpload) return;
           const newFiles = this.toUploadFiles.concat();
-          newFiles.push(uploadFile);
-          const uploadFileList = !this.allowUploadDuplicateFile
-            ? dedupeFile([...new Set(newFiles)])
-            : [...new Set(newFiles)];
-          this.toUploadFiles = this.max ? uploadFileList.slice(0, this.max - this.files.length) : uploadFileList;
+          if (this.allowUploadDuplicateFile || !this.toUploadFiles.find((file) => file.name === uploadFile.name)) {
+            newFiles.push(uploadFile);
+          }
+          this.toUploadFiles = newFiles;
           this.loadingFile = uploadFile;
           if (this.autoUpload) {
             this.upload(uploadFile);
