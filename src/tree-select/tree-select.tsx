@@ -301,9 +301,12 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     },
     treeNodeExpand(value: Array<TreeNodeValue>) {
       this.expanded = value;
-      this.filterByText = null;
     },
     onInputChange() {
+      if (!this.filterText) {
+        this.filterByText = null;
+        return null;
+      }
       this.filterByText = (node: TreeNodeModel<TreeOptionData>) => {
         if (isFunction(this.filter)) {
           const filter: boolean | Promise<boolean> = this.filter(this.filterText, node);
