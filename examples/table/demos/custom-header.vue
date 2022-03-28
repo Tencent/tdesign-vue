@@ -1,9 +1,7 @@
 <template>
   <t-table :data="data" :columns="columns" rowKey="property">
     <!-- 自定义表头，title值为插槽名称  -->
-    <template #title-slot-name>
-      <app-icon /> 类型
-    </template>
+    <template #title-slot-name> <app-icon /> 类型 </template>
   </t-table>
 </template>
 <script lang="jsx">
@@ -36,12 +34,13 @@ export default {
       columns: [
         {
           colKey: 'type',
+          // title-slot-name 表示当前列插槽名称
           title: 'title-slot-name',
         },
         {
           colKey: 'platform',
           // 使用 title 自定义标题
-          title: (h, { colIndex }) => (<b style="color: #0052d9">{['', '标题'][colIndex]}</b>),
+          title: (h, { colIndex }) => <b style="color: #0052d9">{['', '标题'][colIndex]}</b>,
         },
         {
           colKey: 'property',

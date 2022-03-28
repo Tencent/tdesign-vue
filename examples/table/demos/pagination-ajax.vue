@@ -3,10 +3,10 @@
     :data="data"
     :columns="columns"
     :rowKey="rowKey"
-    :verticalAlign="verticalAlign"
     :loading="isLoading"
     :pagination="pagination"
     @change="rehandleChange"
+    @page-change="onPageChange"
     bordered
     stripe
   >
@@ -45,20 +45,29 @@ export default {
           width: 260,
           colKey: 'email',
           title: '邮箱',
+          ellipsis: true,
         },
       ],
       rowKey: 'property',
       tableLayout: 'auto',
-      verticalAlign: 'top',
       rowClassName: 'property-class',
       pagination: {
         current: 1,
         pageSize: 10,
+        // defaultCurrent: 1,
+        // defaultPageSize: 10,
+        showJumper: true,
+        onChange: (pageInfo) => {
+          console.log('pagination.onChange', pageInfo);
+        },
       },
     };
   },
   async mounted() {
-    await this.fetchData(this.pagination);
+    await this.fetchData({
+      current: this.pagination.current || this.pagination.defaultCurrent,
+      pageSize: this.pagination.pageSize || this.pagination.defaultPageSize,
+    });
   },
   methods: {
     async fetchData(pagination = this.pagination) {
@@ -70,24 +79,26 @@ export default {
         const params = { page: current, results: pageSize };
         Object.keys(params).forEach((key) => url.searchParams.append(key, params[key]));
         const response = await fetch(url).then((x) => x.json());
-        console.log('response', response);
         this.data = response.results;
-        this.pagination = {
-          ...pagination,
-          total: 120,
-        };
-        console.log('分页数据', response.results);
+        // 数据加载完成，设置数据总条数
+        this.pagination.total = 120;
       } catch (err) {
         this.data = [];
       }
       this.isLoading = false;
     },
-    // 也可以使用 page-change 事件
-    async rehandleChange(changeParams, triggerAndData) {
+
+    // BaseTable 中只有 page-change 事件，没有 change 事件
+    rehandleChange(changeParams, triggerAndData) {
       console.log('分页、排序、过滤等发生变化时会触发 change 事件：', changeParams, triggerAndData);
-      const { current, pageSize } = changeParams.pagination;
-      const pagination = { current, pageSize };
-      await this.fetchData(pagination);
+    },
+
+    // BaseTable 中只有 page-change 事件，没有 change 事件
+    async onPageChange(pageInfo) {
+      console.log('page-change', pageInfo);
+      this.pagination.current = pageInfo.current;
+      this.pagination.pageSize = pageInfo.pageSize;
+      await this.fetchData(pageInfo);
     },
   },
 };

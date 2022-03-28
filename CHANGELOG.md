@@ -5,6 +5,54 @@ toc: false
 docClass: timeline
 ---
 
+## 0.39.0 `2022-03-28`
+
+Table 组件使用 `Composition API` 重构，[pr #365](https://github.com/Tencent/tdesign-vue/pull/365)，[@chaishi](https://github.com/chaishi)
+### Breaking Change
+
+- BaseTable HTML 结构变更，写过 CSS 样式覆盖的同学需注意更新样式
+- 表头更为使用 `th` 标签，之前为 `td`，不符合语义
+- 事件 `row-db-click` 更为`row-dblclick` ，`onRowDbClick` 更为`rowDblclick`
+- 事件 `row-hover` 更为 `row-mouseover`, `onRowHover` 更为 `onRowMouseover`（本没有 rowHover 事件）
+- CSS 类名 `t-table__row-first-full-row` 更为 `t-table__first-full-row`，`t-table__row-last-full-row` 更为 `t-table__last-full-row`
+
+### Affix 组件 BUG FIX
+- 修复 `onFixedChange` 触发时机，在固定状态发生变化时才会触发该事件（改动之前为：滚动一直触发）
+
+### Table 组件 BUG FIX
+
+- 自定义列配置功能：多级表头和列显示配置同时存在时，无法进行正确的列配置的问题，列配置仅显示了第一层表头
+- 多级表头和固定列同时存在时，固定列有问题，[issue #465](https://github.com/Tencent/tdesign-vue/issues/465)
+- `verticalAlign` 不生效问题，[issue #372](https://github.com/Tencent/tdesign-vue/issues/372)
+-  右上角出现文字穿透问题，[issue #383](https://github.com/Tencent/tdesign-vue/issues/383)
+- 固定表头和固定列，全部使用 CSS sticky 输出样式，组件仅渲染一个表格，表头和表内容不再分开渲染输出。不仅支持 `table-layout: fixed`模式，同时也支持 `table-layout: auto` 模式
+- 设置 `tableLayout: auto` ，固定表头异常，[issue #278](https://github.com/Tencent/tdesign-vue/issues/278)
+- 设置 `tableLayout: auto` ，`maxHeight` 显示异常，[issue #371](https://github.com/Tencent/tdesign-vue/issues/371)
+- [#issue 432](https://github.com/Tencent/tdesign-vue/issues/432)
+- Table组件 BaseTableCol 配置项 fixed 和 ellipsis(true) 属性共存导致fix阴影无法显示， [issue #392](https://github.com/Tencent/tdesign-vue/issues/392)
+- 多级表头的表格 改变children的宽度无效 [issue #367](https://github.com/Tencent/tdesign-vue/issues/367)
+-  table 组件使用 PrimaryTable 控制台报错 t-primary-table 未注册[issue #373](https://github.com/Tencent/tdesign-vue/issues/373)
+- 表格组件设置 height 或 maxHeight 后未出现滚动条的时候竖线不对齐，[issue #378](https://github.com/Tencent/tdesign-vue/issues/378)
+- 修复，排序图标和过滤图标同时存在时，样式异常问题
+
+
+### Table 组件 FEATURE
+
+- 排序交互变更：排序方式支持点击直接排序[issue #480](https://github.com/Tencent/tdesign-vue/issues/480)
+- 优化表格最后一列 `ellipsis` 浮层位置底部右对齐
+- 新增超出省略功能， `ellipsis` 支持透传 Popup 组件全部属性
+- 新增表尾合计行，支持固定在底部，支持多行合计，支持完全自定义内容 [issue #116](https://github.com/Tencent/tdesign-vue/issues/116)
+- 新增`loadingProps` 透传加载组件全部特性
+- 新增固定行（冻结行）
+- 虚拟滚动，[issue #74](https://github.com/Tencent/tdesign-vue/issues/74)，[@Louiszhai](https://github.com/Louiszhai)
+- 新增排序图标自定义，插槽(slot='filterIcon')和渲染函数(props.filterIcon) 均可
+- 新增全局配置：过滤图标、空元素、异步加载文本配置、排序按钮文本配置
+- 新增 `scroll` 滚动事件
+- 新增表头吸顶功能，[issue #216](https://github.com/Tencent/tdesign-vue/issues/216)
+- 新增综合功能：多级表头 + 固定表头 + 固定列 + 表头吸顶 + 虚拟滚动 + 自定义列配置
+- 过滤功能，条件为真时，高亮筛选图标
+
+
 ## 0.38.1 `2022-03-26`
 ### Features
 * SelectInput: 实现 `enter` 事件 [pr #642](https://github.com/Tencent/tdesign-vue/pull/642)，[@pengYYYYY](https://github.com/pengYYYYY)

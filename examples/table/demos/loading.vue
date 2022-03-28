@@ -1,30 +1,22 @@
 <template>
   <div class="tdesign-demo-block-column">
-    <div>默认加载状态</div>
-    <t-table
-      :data="data"
-      :columns="columns"
-      :rowKey="rowKey"
-      :size="size"
-      :loading="true"
-      height="150"
-    ></t-table>
+    <t-table :data="data" :columns="columns" :rowKey="rowKey" :size="size" :loading="true" height="150"></t-table>
 
-    <div>插槽定义加载状态</div>
+    <!-- loading-props 用于透传全部加载组件特性，以便实现更多自定义内容-->
+    <!-- loadingProps.indicator=false 隐藏加载图标 -->
     <t-table
       :data="[]"
       :columns="columns"
       :rowKey="rowKey"
       :size="size"
       :loading="true"
+      :loading-props="{ indicator: false }"
       height="150"
     >
-      <div slot='loading' class='t-table--loading-message'>
-        这里使用插槽自定义加载状态
-      </div>
+      <div slot="loading" class="t-table--loading-message">😊 这里使用插槽自定义加载状态 😊</div>
     </t-table>
 
-    <div>渲染函数定义加载状态</div>
+    <!-- loadingProps.indicator=false 隐藏加载图标 -->
     <t-table
       :data="[]"
       :columns="columns"
@@ -108,7 +100,7 @@ export default {
   },
   methods: {
     renderLoading() {
-      return <div class='t-table--loading-message'>这里使用渲染函数定义加载状态</div>;
+      return <div class="t-table--loading-message">这里使用渲染函数定义加载状态</div>;
     },
   },
 };
