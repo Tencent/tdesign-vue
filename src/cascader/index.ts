@@ -3,6 +3,8 @@ import withInstall from '../utils/withInstall';
 import mapProps from '../utils/map-props';
 import './style';
 
+export * from './interface';
+
 export const Cascader = withInstall(
   mapProps(['value'], {
     model: { prop: 'value', event: 'change' },
