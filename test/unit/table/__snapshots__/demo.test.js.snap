@@ -1836,14 +1836,15 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
                             class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"
                           >
                             <svg
-                              class="t-icon t-icon-chevron-down"
+                              class="t-icon t-icon-caret-down-small"
                               fill="none"
                               height="1em"
+                              style="font-size: 16px;"
                               viewBox="0 0 16 16"
                               width="1em"
                             >
                               <path
-                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                                d="M11 6H5l3 4.5L11 6z"
                                 fill="currentColor"
                                 fill-opacity="0.9"
                               />
@@ -1853,14 +1854,15 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
                             class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc t-table-sort-desc"
                           >
                             <svg
-                              class="t-icon t-icon-chevron-down"
+                              class="t-icon t-icon-caret-down-small"
                               fill="none"
                               height="1em"
+                              style="font-size: 16px;"
                               viewBox="0 0 16 16"
                               width="1em"
                             >
                               <path
-                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                                d="M11 6H5l3 4.5L11 6z"
                                 fill="currentColor"
                                 fill-opacity="0.9"
                               />
@@ -1898,14 +1900,15 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
                             class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"
                           >
                             <svg
-                              class="t-icon t-icon-chevron-down"
+                              class="t-icon t-icon-caret-down-small"
                               fill="none"
                               height="1em"
+                              style="font-size: 16px;"
                               viewBox="0 0 16 16"
                               width="1em"
                             >
                               <path
-                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                                d="M11 6H5l3 4.5L11 6z"
                                 fill="currentColor"
                                 fill-opacity="0.9"
                               />
@@ -1915,14 +1918,15 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
                             class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"
                           >
                             <svg
-                              class="t-icon t-icon-chevron-down"
+                              class="t-icon t-icon-caret-down-small"
                               fill="none"
                               height="1em"
+                              style="font-size: 16px;"
                               viewBox="0 0 16 16"
                               width="1em"
                             >
                               <path
-                                d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+                                d="M11 6H5l3 4.5L11 6z"
                                 fill="currentColor"
                                 fill-opacity="0.9"
                               />

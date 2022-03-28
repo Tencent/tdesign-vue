@@ -167,12 +167,12 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       return this.uploadInOneRequest && this.isBatchUpload;
     },
     uploadListTriggerText(): string {
-      let uploadText = '选择文件';
+      let uploadText = this.global.triggerUploadText.fileInput;
       if (this.toUploadFiles?.length > 0 || this.files?.length > 0) {
         if (this.theme === 'file-input' || (this.files?.length > 0 && this.canBatchUpload)) {
-          uploadText = '重新选择';
+          uploadText = this.global.triggerUploadText.reupload;
         } else {
-          uploadText = '继续选择';
+          uploadText = this.global.triggerUploadText.continueUpload;
         }
       }
       return uploadText;
@@ -589,7 +589,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       return (
         <TButton variant="outline">
           <UploadIcon slot="icon" />
-          {this.files?.length ? '重新上传' : '点击上传'}
+          {this.files?.length ? this.global.triggerUploadText.reupload : this.global.triggerUploadText.normal}
         </TButton>
       );
     },
