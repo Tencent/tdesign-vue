@@ -12,6 +12,7 @@ import useRowSelect from './hooks/useRowSelect';
 import { TdPrimaryTableProps, PrimaryTableCol, TableRowData } from './type';
 import useSorter from './hooks/useSorter';
 import useFilter from './hooks/useFilter';
+import useDragSort from './hooks/useDragSort';
 import useAsyncLoading from './hooks/useAsyncLoading';
 import { PageInfo } from '../pagination';
 
@@ -40,6 +41,9 @@ export default defineComponent({
     const { formatToRowSelectColumn, tRowClassNames } = useRowSelect(props);
     // 过滤功能
     const { hasEmptyCondition, renderFilterIcon, renderFirstFilterRow } = useFilter(props, context);
+
+    // 拖拽排序功能
+    const { isColDraggable, isRowDraggable } = useDragSort(props, context);
 
     const { renderTitleWidthIcon } = useTableHeader(props);
     const { renderAsyncLoading } = useAsyncLoading(props, context);
@@ -107,6 +111,8 @@ export default defineComponent({
       renderFirstFilterRow,
       renderAsyncLoading,
       onInnerPageChange,
+      isColDraggable,
+      isRowDraggable,
     };
   },
 
@@ -153,6 +159,8 @@ export default defineComponent({
       topContent,
       firstFullRow,
       lastFullRow,
+      isColDraggable: this.isColDraggable,
+      isRowDraggable: this.isRowDraggable,
     };
 
     // 事件，Vue3 do not need this.getListenser
