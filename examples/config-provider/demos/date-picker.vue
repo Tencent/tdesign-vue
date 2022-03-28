@@ -17,11 +17,11 @@
 
 <script>
 import merge from 'lodash/merge';
-import { enConfig } from 'tdesign-vue/config-provider';
+import { enUS } from 'tdesign-vue/config-provider';
 // import dayjs from 'dayjs';
 
 // 全局特性配置，可以引入英文默认配置 enConfig，还可以在默认配置的基础上进行自定义配置
-const DATE_PICK_CONFIGS = merge(enConfig, {
+const DATE_PICK_CONFIGS = merge(enUS, {
   placeholder: {
     date: 'select date',
     month: 'select month',

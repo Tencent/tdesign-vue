@@ -13,7 +13,7 @@
 <script lang="jsx">
 import { ChevronRightIcon, CaretDownSmallIcon } from 'tdesign-icons-vue';
 import merge from 'lodash/merge';
-import { enConfig } from 'tdesign-vue/config-provider';
+import { enUS } from 'tdesign-vue/config-provider';
 
 const columns = [
   {
@@ -48,7 +48,7 @@ export default {
   data() {
     return {
       // 全局特性配置，可以引入英文默认配置 enConfig，还可以在默认配置的基础上进行自定义配置
-      globalConfig: merge(enConfig, {
+      globalConfig: merge(enUS, {
         table: {
           // 支持 String 和 Function 两种数据类型
           empty: 'Empty Data',

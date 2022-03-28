@@ -6,14 +6,14 @@
 
 <script>
 import merge from 'lodash/merge';
-import { enConfig } from 'tdesign-vue/config-provider';
+import { enUS } from 'tdesign-vue/config-provider';
 
 export default {
   data() {
     return {
       current: 1,
       // 全局特性配置，可以引入英文默认配置 enConfig，还可以在默认配置的基础上进行自定义配置
-      globalConfig: merge(enConfig, {
+      globalConfig: merge(enUS, {
         pagination: {
           itemsPerPage: '{size} / page',
           jumpTo: 'jump to',

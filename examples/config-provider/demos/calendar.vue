@@ -6,7 +6,7 @@
 
 <script>
 import merge from 'lodash/merge';
-import { enConfig } from 'tdesign-vue/config-provider';
+import { enUS } from 'tdesign-vue/config-provider';
 
 const MONTHS = [
   'January',
@@ -24,7 +24,7 @@ const MONTHS = [
 ];
 
 // 全局特性配置，可以引入英文默认配置 enConfig，还可以在默认配置的基础上进行自定义配置
-const GLOBAL_CONFIG = merge(enConfig, {
+const GLOBAL_CONFIG = merge(enUS, {
   calendar: {
     yearSelection: '{year}',
     // 1 表示周一；7 表示周日
