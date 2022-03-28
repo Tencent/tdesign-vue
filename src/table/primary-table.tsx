@@ -39,7 +39,9 @@ export default defineComponent({
     // 行选中功能
     const { formatToRowSelectColumn, tRowClassNames } = useRowSelect(props);
     // 过滤功能
-    const { hasEmptyCondition, renderFilterIcon, renderFirstFilterRow } = useFilter(props, context);
+    const {
+      hasEmptyCondition, primaryTableRef, renderFilterIcon, renderFirstFilterRow,
+    } = useFilter(props, context);
 
     const { renderTitleWidthIcon } = useTableHeader(props);
     const { renderAsyncLoading } = useAsyncLoading(props, context);
@@ -100,6 +102,7 @@ export default defineComponent({
       showExpandedRow,
       tRowClassNames,
       hasEmptyCondition,
+      primaryTableRef,
       renderTNode,
       renderColumnController,
       renderExpandedRow,
@@ -112,14 +115,14 @@ export default defineComponent({
 
   methods: {
     // support @row-click @page-change @row-hover .etc. events, Vue3 do not need this function
-    getListenser() {
-      const listenser: TableListeners = {};
+    getListener() {
+      const listener: TableListeners = {};
       BASE_TABLE_ALL_EVENTS.forEach((key) => {
-        listenser[key] = (...args: any) => {
+        listener[key] = (...args: any) => {
           this.$emit(key, ...args);
         };
       });
-      return listenser;
+      return listener;
     },
 
     formatNode(api: string, renderInnerNode: Function, condition: boolean) {
@@ -131,8 +134,8 @@ export default defineComponent({
       if (innerNode && propsNode) {
         return () => (
           <div>
-            {innerNode}
             {propsNode}
+            {innerNode}
           </div>
         );
       }
@@ -155,15 +158,15 @@ export default defineComponent({
       lastFullRow,
     };
 
-    // 事件，Vue3 do not need this.getListenser
+    // 事件，Vue3 do not need this.getListener
     const on: TableListeners = {
-      ...this.getListenser(),
+      ...this.getListener(),
       'page-change': this.onInnerPageChange,
     };
     if (this.expandOnRowClick) {
       on['row-click'] = this.onInnerExpandRowClick;
     }
     // replace `scopedSlots={this.$scopedSlots}` of `v-slots={this.$slots}` in Vue3
-    return <BaseTable scopedSlots={this.$scopedSlots} props={props} on={on} {...this.$attrs} />;
+    return <BaseTable ref="primaryTableRef" scopedSlots={this.$scopedSlots} props={props} on={on} {...this.$attrs} />;
   },
 });

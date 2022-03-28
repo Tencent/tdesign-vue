@@ -31,6 +31,7 @@ export interface TableFilterControllerProps {
   };
   isFocusClass: string;
   column: PrimaryTableCol;
+  primaryTableElement: HTMLDivElement;
 }
 
 export default defineComponent({
@@ -42,10 +43,12 @@ export default defineComponent({
     innerFilterValue: Object as PropType<TableFilterControllerProps['innerFilterValue']>,
     tableFilterClasses: Object as PropType<TableFilterControllerProps['tableFilterClasses']>,
     isFocusClass: String,
+    primaryTableElement: HTMLDivElement,
   },
 
   // eslint-disable-next-line
   setup(props: TableFilterControllerProps) {
+    const triggerElementRef = ref<HTMLDivElement>(null);
     const renderTNode = useTNodeDefault();
     const { t, global } = useConfig('table');
     const filterPopupVisible = ref(false);
@@ -58,6 +61,7 @@ export default defineComponent({
       t,
       global,
       filterPopupVisible,
+      triggerElementRef,
       renderTNode,
       onFilterPopupVisibleChange,
     };
@@ -150,6 +154,7 @@ export default defineComponent({
     const defaultFilterIcon = this.t(this.global.filterIcon) || <FilterIcon />;
     return (
       <Popup
+        attach={this.primaryTableElement ? () => this.primaryTableElement : undefined}
         visible={this.filterPopupVisible}
         destroyOnClose
         trigger="click"
@@ -167,7 +172,7 @@ export default defineComponent({
           </div>
         )}
       >
-        <div>{this.renderTNode('filterIcon', defaultFilterIcon)}</div>
+        <div ref="triggerElementRef">{this.renderTNode('filterIcon', defaultFilterIcon)}</div>
       </Popup>
     );
   },
