@@ -52,6 +52,7 @@ export default Vue.extend({
         }
         return (
           <Radio
+            props={option}
             key={`radio-group-options-${opt.value}-${index}`}
             name={this.name}
             checked={this.value === opt.value}
@@ -92,7 +93,6 @@ export default Vue.extend({
 
   mounted() {
     this.calcBarStyle();
-
     const observer = new MutationObserver(this.calcBarStyle);
     observer.observe(this.$el, { childList: true, attributes: true, subtree: true });
     this.observer = observer;

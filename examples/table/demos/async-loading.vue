@@ -80,12 +80,14 @@ export default {
     };
   },
   computed: {
-    loadingNode() {
+    // eslint-disable-next-line
+    loadingNode(h) {
       return this.asyncLoading === 'loading-custom' ? this.customLoadingNode : this.asyncLoading;
     },
   },
   methods: {
-    customLoadingNode() {
+    // eslint-disable-next-line
+    customLoadingNode(h) {
       return <div class="t-table__async-loading">这是自定义加载状态和内容</div>;
     },
     onAsyncLoadingClick({ status }) {

@@ -25,13 +25,13 @@ const GLOBAL_CONFIG_EN: GlobalConfigProvider = {
     showWeekend: 'Show Week',
     today: 'Today',
     thisMonth: 'This Month',
-    week: 'Monday,Tuesday,Wedsday,Thuresday,Friday,Staturday,Sunday',
+    week: 'Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday',
     cellMonth: 'January,February,March,April,May,June,July,August,September,October,November,December',
   },
   transfer: {
     title: '{checked} / {total}',
     empty: 'Empty Data',
-    placeholder: 'type keyworkd to search',
+    placeholder: 'type keyword to search',
   },
   timePicker: {
     now: 'Now',
@@ -70,6 +70,11 @@ const GLOBAL_CONFIG_EN: GlobalConfigProvider = {
     expandIcon: undefined,
     // 排序图标（使用降序图标）
     sortIcon: undefined,
+    loadingMoreText: 'Load More',
+    loadingText: 'Loading',
+    sortAscendingOperationText: 'ascending sort',
+    sortCancelOperationText: 'cancel sort',
+    sortDescendingOperationText: 'descending sort',
   },
   select: {
     empty: 'Empty Data',

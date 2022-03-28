@@ -1,4 +1,4 @@
-import { computed, inject } from '@vue/composition-api';
+import { computed, inject, h } from '@vue/composition-api';
 import cloneDeep from 'lodash/cloneDeep';
 import _mergeWith from 'lodash/mergeWith';
 import { defaultGlobalConfig, GlobalConfig } from './context';
@@ -18,7 +18,7 @@ export const merge = (defaultGlobalConfig: GlobalConfig, injectConfig: GlobalCon
  * @returns {t, global}
  * useConfig('pagination')
  */
-export function useConfig<T extends keyof GlobalConfig>(componentName: T) {
+export function useConfig<T extends keyof GlobalConfig>(componentName?: T) {
   const mergedGlobalConfig = computed(() => {
     const globalConfig = inject<GlobalConfig>('globalConfig', Object.create(null));
     const mergedGlobalConfig = merge(cloneDeep(defaultGlobalConfig), globalConfig);
@@ -43,7 +43,8 @@ export function useConfig<T extends keyof GlobalConfig>(componentName: T) {
       return translated;
     }
     if (typeof pattern === 'function') {
-      return pattern(data);
+      // 重要：组件的渲染必须存在参数 h，不能移除
+      return pattern(data ?? h);
     }
     return '';
   };
