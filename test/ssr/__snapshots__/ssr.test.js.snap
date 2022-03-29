@@ -11974,7 +11974,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
                 <div class="t-table__th-cell-inner">排序</div>
               </th>
               <th data-colkey="instance" class="t-table__th-instance">
-                <div class="t-table__th-cell-inner">集群名称22</div>
+                <div class="t-table__th-cell-inner">集群名称</div>
               </th>
               <th data-colkey="status" class="t-table__th-status">
                 <div class="t-table__th-cell-inner">状态</div>
@@ -12064,7 +12064,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
           <thead class="t-table__header">
             <tr>
               <th data-colkey="instance" class="t-table__th-instance">
-                <div class="t-table__th-cell-inner">集群名称22</div>
+                <div class="t-table__th-cell-inner">集群名称</div>
               </th>
               <th data-colkey="status" class="t-table__th-status">
                 <div class="t-table__th-cell-inner">状态</div>
