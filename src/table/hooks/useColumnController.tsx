@@ -69,7 +69,7 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
     columnCheckboxKeys.value = val;
     const params = { columns: val };
     props.onColumnChange?.(params);
-    // Vue3 ignore next linet
+    // Vue3 ignore next line
     context.emit('column-change', params);
   };
 
@@ -78,13 +78,13 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
       const newData = columns.value?.map((t) => t.colKey) || [];
       columnCheckboxKeys.value = newData;
       props.onColumnChange?.({ type: 'check', columns: newData });
-      // Vue3 ignore next linet
+      // Vue3 ignore next line
       context.emit('column-change', { type: 'check', columns: newData });
     } else {
       const disabledColKeys = checkboxOptions.value.filter((t) => t.disabled).map((t) => t.value);
       columnCheckboxKeys.value = disabledColKeys;
       props.onColumnChange?.({ type: 'uncheck', columns: disabledColKeys });
-      // Vue3 ignore next linet
+      // Vue3 ignore next line
       context.emit('column-change', { type: 'uncheck', columns: disabledColKeys });
     }
   };
