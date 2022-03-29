@@ -393,6 +393,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
               max={this.pageCount}
               min={min}
               theme="normal"
+              placeholder=""
             />
             {this.t(this.global.page)}
           </div>
