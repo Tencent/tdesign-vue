@@ -272,6 +272,14 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   columns?: Array<PrimaryTableCol<T>>;
   /**
+   * 列配置功能中，当前显示的列
+   */
+  displayColumns?: CheckboxGroupValue;
+  /**
+   * 列配置功能中，当前显示的列，非受控属性
+   */
+  defaultDisplayColumns?: CheckboxGroupValue;
+  /**
    * 拖拽排序方式，值为 `row` 表示行拖拽排序，这种方式无法进行文本复制，慎用。值为`drag-col` 表示通过专门的 拖拽列 进行拖拽排序
    * @default drag-col
    */
@@ -366,6 +374,10 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    * 本地数据排序导致 `data` 变化时触发，第一个参数指变化后的数据，第二个参数 `context.trigger` 表示触发本次变化的来源
    */
   onDataChange?: (data: Array<T>, context: TableDataChangeContext) => void;
+  /**
+   * 列配置选中列发生变化时触发
+   */
+  onDisplayColumnsChange?: (value: CheckboxGroupValue) => void;
   /**
    * 拖拽排序时触发，`currentData` 表示拖拽排序结束后的新数据
    */

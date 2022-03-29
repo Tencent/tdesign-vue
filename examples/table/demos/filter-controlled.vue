@@ -10,7 +10,6 @@
       <t-button @click="setFilters" variant="text" style="margin-left: 36px">清除筛选条件</t-button>
       <span style="padding-left: 36px">已选筛选条件：{{ filterValue }}</span>
     </div>
-    <div></div>
     <div>
       <t-checkbox v-model="bordered">是否显示表格边框</t-checkbox>
     </div>

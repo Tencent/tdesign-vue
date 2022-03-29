@@ -13,6 +13,7 @@ import { useTNodeDefault } from '../../hooks/tnode';
 import { renderTitle } from './useTableHeader';
 import { PrimaryTableCol, TdPrimaryTableProps } from '../type';
 import { useConfig } from '../../config-provider/useConfig';
+import useDefaultValue from '../../hooks/useDefaultValue';
 
 export function getColumnKeys(columns: PrimaryTableCol[], keys: string[] = []) {
   for (let i = 0, len = columns.length; i < len; i++) {
@@ -27,6 +28,7 @@ export function getColumnKeys(columns: PrimaryTableCol[], keys: string[] = []) {
 }
 
 export default function useColumnController(props: TdPrimaryTableProps, context: SetupContext) {
+  const { displayColumns } = toRefs(props);
   const renderTNode = useTNodeDefault();
   const { classPrefix } = useConfig();
   const { columns, columnController } = toRefs(props);
@@ -39,7 +41,14 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
   const keys = [...new Set(getColumnKeys(columns.value))];
 
   // 确认后的列配置
-  const displayColumnKeys = ref<CheckboxGroupValue>(keys);
+  // const displayColumnKeys = ref<CheckboxGroupValue>(keys);
+  const [tDisplayColumns, setTDisplayColumns] = useDefaultValue(
+    displayColumns,
+    props.defaultDisplayColumns || keys,
+    props.onDisplayColumnsChange,
+    'displayColumns',
+    'display-columns-change',
+  );
   // 弹框内的多选
   const columnCheckboxKeys = ref<CheckboxGroupValue>(keys);
 
@@ -125,7 +134,7 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
       cancelBtn: '取消',
       width: 612,
       onConfirm: () => {
-        displayColumnKeys.value = [...columnCheckboxKeys.value];
+        setTDisplayColumns([...columnCheckboxKeys.value]);
         dialogInstance.hide();
       },
       onClose: () => {
@@ -148,7 +157,7 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
   };
 
   return {
-    displayColumnKeys,
+    tDisplayColumns,
     columnCheckboxKeys,
     checkboxOptions,
     renderColumnController,
