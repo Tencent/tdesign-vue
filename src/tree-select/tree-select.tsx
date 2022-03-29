@@ -305,6 +305,10 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       this.expanded = value;
     },
     onInputChange() {
+      if (!this.filterText) {
+        this.filterByText = null;
+        return null;
+      }
       this.filterByText = (node: TreeNodeModel<TreeOptionData>) => {
         if (isFunction(this.filter)) {
           const filter: boolean | Promise<boolean> = this.filter(this.filterText, node);
@@ -327,25 +331,53 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       await this.value;
 
       if (!this.multiple && this.value) {
-        const nodeValue = this.isObjectValue ? (this.value as NodeOptions).value : this.value;
+        this.changeSingleNodeInfo();
+      } else if (this.multiple && isArray(this.value)) {
+        this.changeMultipleNodeInfo();
+      } else {
+        this.nodeInfo = null;
+      }
+    },
+    changeSingleNodeInfo() {
+      const { tree } = this.$refs;
+      const nodeValue = this.isObjectValue ? (this.value as NodeOptions).value : this.value;
+
+      if (tree && this.treeProps?.load) {
+        if (!isEmpty(this.data)) {
+          const node = (tree as any).getItem(nodeValue);
+          if (!node) return;
+          this.nodeInfo = { label: node.data[this.realLabel], value: node.data[this.realValue] };
+        } else {
+          this.nodeInfo = { label: nodeValue, value: nodeValue };
+        }
+      } else {
         const node = this.getTreeNode(this.data, nodeValue);
         if (!node) {
           this.nodeInfo = { label: nodeValue, value: nodeValue };
         } else {
           this.nodeInfo = node;
         }
-      } else if (this.multiple && isArray(this.value)) {
-        this.nodeInfo = this.value.map((value) => {
-          const nodeValue = this.isObjectValue ? (value as NodeOptions).value : value;
-          const node = this.getTreeNode(this.data, nodeValue);
-          if (!node) {
-            return { label: nodeValue, value: nodeValue };
-          }
-          return node;
-        });
-      } else {
-        this.nodeInfo = null;
       }
+    },
+    changeMultipleNodeInfo() {
+      const { tree } = this.$refs;
+
+      this.nodeInfo = (this.value as Array<TreeSelectValue>).map((value) => {
+        const nodeValue = this.isObjectValue ? (value as NodeOptions).value : value;
+        if (tree && this.treeProps?.load) {
+          if (!isEmpty(this.data)) {
+            const node = (tree as any).getItem(nodeValue);
+            if (!node) return;
+            return { label: node.data[this.realLabel], value: node.data[this.realValue] };
+          }
+          return { label: nodeValue, value: nodeValue };
+        }
+        const node = this.getTreeNode(this.data, nodeValue);
+        if (!node) {
+          return { label: nodeValue, value: nodeValue };
+        }
+        return node;
+      });
     },
     getTreeNode(data: Array<TreeOptionData>, targetValue: TreeSelectValue): TreeSelectNodeValue | null {
       for (let i = 0, len = data.length; i < len; i++) {
