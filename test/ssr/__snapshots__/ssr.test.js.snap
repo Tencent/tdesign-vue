@@ -3043,7 +3043,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/pagination.v
     </svg></div>
   <div class="t-pagination__jump">jump to<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
       <div class="t-input__wrap">
-        <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="please enter" type="text" unselectable="off" value="1" class="t-input__inner"></div>
+        <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="" type="text" unselectable="off" value="1" class="t-input__inner"></div>
       </div>
     </div>
   </div>
@@ -8245,7 +8245,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/customizable.vue 
       </svg></div>
     <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
         <div class="t-input__wrap">
-          <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="1" class="t-input__inner"></div>
+          <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="" type="text" unselectable="off" value="1" class="t-input__inner"></div>
         </div>
       </div>页</div>
   </div>
@@ -8280,7 +8280,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/disabled.vue corr
       </svg></div>
     <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
         <div class="t-input__wrap">
-          <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="1" class="t-input__inner"></div>
+          <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="" type="text" unselectable="off" value="1" class="t-input__inner"></div>
         </div>
       </div>页</div>
   </div>
@@ -8338,7 +8338,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/jump.vue correctl
       </svg></div>
     <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
         <div class="t-input__wrap">
-          <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="1" class="t-input__inner"></div>
+          <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="" type="text" unselectable="off" value="1" class="t-input__inner"></div>
         </div>
       </div>页</div>
   </div>
@@ -13217,8 +13217,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
 <div class="tdesign-demo-block-column">
   <div class="t-table t-size-s" style="position:relative;">
     <div class="t-loading__parent">
-      <div class="t-table__content" style="height:150px;">
-        <table class="t-table--layout-fixed t-table--full-height" style="width:;">
+      <div class="t-table__content">
+        <table class="t-table--layout-fixed" style="width:;">
           <colgroup>
             <col style="width:100px;">
             <col style="width:100px;">
@@ -13274,8 +13274,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
   </div>
   <div class="t-table t-size-s" style="position:relative;">
     <div class="t-loading__parent">
-      <div class="t-table__content" style="height:150px;">
-        <table class="t-table--layout-fixed t-table--full-height" style="width:;">
+      <div class="t-table__content">
+        <table class="t-table--layout-fixed" style="width:;">
           <colgroup>
             <col style="width:100px;">
             <col style="width:100px;">
@@ -13331,8 +13331,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
   </div>
   <div class="t-table t-size-s" style="position:relative;">
     <div class="t-loading__parent">
-      <div class="t-table__content" style="height:150px;">
-        <table class="t-table--layout-fixed t-table--full-height" style="width:;">
+      <div class="t-table__content">
+        <table class="t-table--layout-fixed" style="width:;">
           <colgroup>
             <col style="width:100px;">
             <col style="width:100px;">
@@ -13489,7 +13489,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
           <col style="width:100px;">
           <col style="width:100px;">
           <col style="width:100px;">
-          <col style="width:100px;">
+          <col style="width:110px;">
           <col style="width:100px;">
           <col style="width:100px;">
           <col style="width:100px;">
@@ -13531,15 +13531,13 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
             </th>
             <th data-colkey="property" rowspan="2" class="t-table__th-property">
               <div class="t-table__th-cell-inner">
-                <div class="t-table__ellipsis t-text-ellipsis">
-                  <div class="t-table__cell--filterable">
-                    <div class="t-table__cell--title">
-                      <div>属性</div>
-                      <div class="t-table__filter-icon-wrap">
-                        <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
-                            <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
-                          </svg></div>
-                      </div>
+                <div class="t-table__cell--filterable">
+                  <div class="t-table__cell--title">
+                    <div>属性</div>
+                    <div class="t-table__filter-icon-wrap">
+                      <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
+                          <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
+                        </svg></div>
                     </div>
                   </div>
                 </div>
@@ -13822,7 +13820,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
           </svg></div>
         <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
             <div class="t-input__wrap">
-              <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="2" class="t-input__inner"></div>
+              <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="" type="text" unselectable="off" value="2" class="t-input__inner"></div>
             </div>
           </div>页</div>
       </div>
@@ -13844,7 +13842,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
       <thead class="t-table__header">
         <tr>
           <th data-colkey="name" class="t-table__th-name">
-            <div class="t-table__th-cell-inner">UNKNOW_USER</div>
+            <div class="t-table__th-cell-inner">UNKNOWN_USER</div>
           </th>
           <th data-colkey="gender" class="t-table__th-gender">
             <div class="t-table__th-cell-inner">性别</div>
@@ -13888,7 +13886,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
         </svg></div>
       <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
           <div class="t-input__wrap">
-            <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="1" class="t-input__inner"></div>
+            <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="" type="text" unselectable="off" value="1" class="t-input__inner"></div>
           </div>
         </div>页</div>
     </div>

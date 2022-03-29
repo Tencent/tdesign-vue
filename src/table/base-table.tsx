@@ -79,12 +79,14 @@ export default defineComponent({
 
     const dynamicBaseTableClasses = computed(() => [
       tableClasses.value,
-      { [tableBaseClass.headerFixed]: isFixedHeader.value },
-      { [tableBaseClass.columnFixed]: isFixedColumn.value },
-      { [tableBaseClass.widthOverflow]: isWidthOverflow.value },
-      { [tableBaseClass.multipleHeader]: isMultipleHeader.value },
-      { [tableColFixedClasses.leftShadow]: showColumnShadow.left },
-      { [tableColFixedClasses.rightShadow]: showColumnShadow.right },
+      {
+        [tableBaseClass.headerFixed]: isFixedHeader.value,
+        [tableBaseClass.columnFixed]: isFixedColumn.value,
+        [tableBaseClass.widthOverflow]: isWidthOverflow.value,
+        [tableBaseClass.multipleHeader]: isMultipleHeader.value,
+        [tableColFixedClasses.leftShadow]: showColumnShadow.left,
+        [tableColFixedClasses.rightShadow]: showColumnShadow.right,
+      },
     ]);
 
     const tableElmClasses = computed(() => [
@@ -306,8 +308,8 @@ export default defineComponent({
       <Loading
         loading={!!(this.loading || customLoadingText)}
         text={customLoadingText ? () => customLoadingText : undefined}
-        props={this.loadingProps}
         showOverlay
+        props={this.loadingProps}
       >
         {tableContent}
       </Loading>
