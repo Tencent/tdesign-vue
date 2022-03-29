@@ -171,7 +171,7 @@ export default defineComponent({
 
     const observe = (element: HTMLElement, root: HTMLElement, callback: Function, marginBottom: number) => {
       if (!window || !window.IntersectionObserver) {
-        callback(); // fix: Ie not method IntersectionObserver
+        callback();
         return;
       }
       try {
