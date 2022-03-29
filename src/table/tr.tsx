@@ -128,7 +128,7 @@ export default defineComponent({
     trs: Map as PropType<TrProps['trs']>,
     bufferSize: Number,
     isVirtual: Boolean,
-    tableElm: HTMLDivElement as PropType<TrProps['tableElm']>,
+    tableElm: {},
   },
 
   setup(props: TrProps, context: SetupContext) {
@@ -171,6 +171,7 @@ export default defineComponent({
 
     const observe = (element: HTMLElement, root: HTMLElement, callback: Function, marginBottom: number) => {
       if (!window || !window.IntersectionObserver) {
+        callback();
         return;
       }
       try {

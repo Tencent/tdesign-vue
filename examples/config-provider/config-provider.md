@@ -5,10 +5,13 @@
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
+alert | Object | - | 警告全局配置。TS 类型：`AlertConfig` | N
+anchor | Object | - | 锚点全局配置。TS 类型：`AnchorConfig` | N
 animation | Object | `{ include: ['ripple','expand','fade'], exclude: [] }` | 动画效果控制，`ripple`指波纹动画， `expand` 指展开动画，`fade` 指渐变动画。TS 类型：`Record<'include'|'exclude', Array<AnimationType>> ` `type AnimationType = 'ripple' | 'expand' | 'fade'`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
 calendar | Object | - | 日历组件全局配置。TS 类型：`CalendarConfig` | N
 cascader | Object | - | 级联选择器全局配置。TS 类型：`CascaderConfig` | N
 classPrefix | String | t | CSS 类名前缀 | N
+colorPicker | Object | - | 颜色选择器全局配置。TS 类型：`ColorPickerConfig` | N
 datePicker | Object | - | 日期选择器全局配置。TS 类型：`DatePickerConfig` | N
 dialog | Object | - | 对话框全局配置。TS 类型：`DialogConfig` | N
 drawer | Object | - | 抽屉全局配置。TS 类型：`DrawerConfig` | N
@@ -67,6 +70,14 @@ yearSelection | String | '{year} 年' | 语言配置，“年”选择描述文�
 empty | String | '暂无数据' | 空数据文本，示例：'empty data' | N
 loadingText | String | '加载中' | “加载中”描述文本 | N
 placeholder | String | '请选择' | 选择器占位文本，示例：'select time' | N
+
+### ColorPickerConfig
+
+名称 | 类型 | 默认值 | 说明 | 必传
+-- | -- | -- | -- | --
+clearConfirmText | String | '确定清空最近使用的颜色吗？' | 清空颜色确认文案，示例：'确定清空最近使用的颜色吗？' | N
+recentColorTitle | String | '最近使用颜色' | 最近使用颜色区域标题文本，示例：'最近使用颜色' | N
+swatchColorTitle | String | '系统预设颜色' | 系统预设颜色区域标题文本，示例：'系统预设颜色' | N
 
 ### TransferConfig
 
@@ -174,7 +185,7 @@ empty | String | '暂无数据' | “暂无数据”描述文本 | N
 loadingText | String | '加载中' | “加载中”描述文本 | N
 placeholder | String | '请选择' | 占位符描述文本 | N
 
-### ListConfig
+### TreeSelectConfig
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
@@ -190,7 +201,7 @@ dragger | Object | - | 语言配置，拖拽相关。示例：{ dragDropText: '�
 file | Object | - | 语言配置，文件信息相关。示例：{  fileNameText: '文件名', fileSizeText: '文件尺寸', fileStatusText: '状态', fileOperationText: '操作', fileOperationDateText: '上传日期' }。TS 类型：`UploadConfigFileList` | N
 progress | Object | - | 语言配置，上传进度相关。示例：{ uploadText: '上传中', waitingText: '待上传', 'failText': '上传失败', successText: '上传成功' }。TS 类型：`UploadConfigProgress` | N
 sizeLimitMessage | String | '文件大小不能超过 {sizeLimit}' | 语言配置，文件大小超出限制时提醒文本 | N
-triggerUploadText | Object | - | 语言配置，上传功能触发文案。示例：{ image: '点击上传图片', normal: '点击上传',  fileInput: '选择文件',reupload: '重新上传',fileInput: '删除' }。TS 类型：`UploadTriggerUploadText` `interface UploadTriggerUploadText { image?: string, normal?: string,  fileInput?: string,  reupload?: string,  delete?: string }`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
+triggerUploadText | Object | - | 语言配置，上传功能触发文案。示例：{ image: '点击上传图片', normal: '点击上传',  fileInput: '选择文件',reupload: '重新上传',fileInput: '删除' }。TS 类型：`UploadTriggerUploadText` `interface UploadTriggerUploadText { image?: string, normal?: string,  fileInput?: string,  reupload?: string, continueUpload: string, delete?: string }`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
 
 ### UploadConfigProgress
 
@@ -237,3 +248,17 @@ closeIcon | Function | - | 关闭图标，【注意】使用渲染函数输出�
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
 errorIcon | Slot / Function | - | 错误步骤图标，【注意】使用渲染函数输出图标组件。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+
+### AlertConfig
+
+名称 | 类型 | 默认值 | 说明 | 必传
+-- | -- | -- | -- | --
+collapseText | String | 收起 | 收起提示文本 | N
+expandText | String | 展开更多 | 展开提示文本 | N
+
+### AnchorConfig
+
+名称 | 类型 | 默认值 | 说明 | 必传
+-- | -- | -- | -- | --
+copySuccessText | String | 链接复制成功 | 复制成功文字 | N
+copyText | String | 复制链接 | 复制提示文字 | N

@@ -25,7 +25,7 @@ export default {
           colKey: 'name',
           title: '姓名',
           render(h, { row: { name } }) {
-            return name ? `${name.first} ${name.last}` : 'UNKNOW_USER';
+            return name ? `${name.first} ${name.last}` : 'UNKNOWN_USER';
           },
         },
         {
@@ -48,7 +48,7 @@ export default {
           ellipsis: true,
         },
       ],
-      rowKey: 'property',
+      rowKey: 'phone',
       tableLayout: 'auto',
       rowClassName: 'property-class',
       pagination: {

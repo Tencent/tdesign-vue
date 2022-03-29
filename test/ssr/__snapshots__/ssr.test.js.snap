@@ -131,7 +131,7 @@ exports[`ssr snapshot test renders ./examples/alert/demos/collapse.vue correctly
         <div class="t-alert__description">
           <div><span>这是折叠的第一条消息</span></div>
           <div> </div>
-          <div class="t-alert__collapse">展开全部</div>
+          <div class="t-alert__collapse">展开更多</div>
         </div>
       </div>
     </div>
@@ -5658,7 +5658,7 @@ exports[`ssr snapshot test renders ./examples/input/demos/textarea.vue correctly
 exports[`ssr snapshot test renders ./examples/input-number/demos/align.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
   <div style="width:20%;">
-    <div class="t-input-number t-size-m t-input-number--row" style="width:120px;"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
+    <div class="t-input-number t-size-m t-input-number--row"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
           <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
         </svg></button>
       <div class="t-input__wrap">
@@ -5667,7 +5667,7 @@ exports[`ssr snapshot test renders ./examples/input-number/demos/align.vue corre
           <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
         </svg></button>
     </div>
-    <div class="t-input-number t-size-m t-input-number--row" style="width:120px;"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
+    <div class="t-input-number t-size-m t-input-number--row"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
           <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
         </svg></button>
       <div class="t-input__wrap">
@@ -5676,7 +5676,7 @@ exports[`ssr snapshot test renders ./examples/input-number/demos/align.vue corre
           <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
         </svg></button>
     </div>
-    <div class="t-input-number t-size-m t-input-number--row" style="width:120px;"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
+    <div class="t-input-number t-size-m t-input-number--row"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
           <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
         </svg></button>
       <div class="t-input__wrap">
@@ -5687,17 +5687,17 @@ exports[`ssr snapshot test renders ./examples/input-number/demos/align.vue corre
     </div>
   </div>
   <div style="width:20%;">
-    <div class="t-input-number t-size-m t-input-number--normal" style="width:120px;">
+    <div class="t-input-number t-size-m t-input-number--normal">
       <div class="t-input__wrap">
         <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="100" class="t-input__inner"></div>
       </div>
     </div>
-    <div class="t-input-number t-size-m t-input-number--normal" style="width:120px;">
+    <div class="t-input-number t-size-m t-input-number--normal">
       <div class="t-input__wrap">
         <div ref="refInputElem" class="t-input t-size-m t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="200" class="t-input__inner"></div>
       </div>
     </div>
-    <div class="t-input-number t-size-m t-input-number--normal" style="width:120px;">
+    <div class="t-input-number t-size-m t-input-number--normal">
       <div class="t-input__wrap">
         <div ref="refInputElem" class="t-input t-size-m t-align-right"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="300" class="t-input__inner"></div>
       </div>
@@ -8245,7 +8245,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/customizable.vue 
       </svg></div>
     <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
         <div class="t-input__wrap">
-          <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="1" class="t-input__inner"></div>
+          <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="" type="text" unselectable="off" value="1" class="t-input__inner"></div>
         </div>
       </div>页</div>
   </div>
@@ -8280,7 +8280,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/disabled.vue corr
       </svg></div>
     <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
         <div class="t-input__wrap">
-          <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="1" class="t-input__inner"></div>
+          <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="" type="text" unselectable="off" value="1" class="t-input__inner"></div>
         </div>
       </div>页</div>
   </div>
@@ -8338,7 +8338,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/jump.vue correctl
       </svg></div>
     <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
         <div class="t-input__wrap">
-          <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="1" class="t-input__inner"></div>
+          <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="" type="text" unselectable="off" value="1" class="t-input__inner"></div>
         </div>
       </div>页</div>
   </div>
@@ -11882,7 +11882,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
                     <div class="t-table__cell--title">
                       <div>状态</div>
                       <div class="t-table__filter-icon-wrap">
-                        <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></div>
+                        <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:16px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:16px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></div>
                       </div>
                     </div>
                   </div>
@@ -11894,7 +11894,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
                     <div class="t-table__cell--title">
                       <div>存活时间(s)</div>
                       <div class="t-table__filter-icon-wrap">
-                        <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></div>
+                        <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:16px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:16px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></div>
                       </div>
                     </div>
                   </div>
@@ -13123,8 +13123,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
 <div class="tdesign-demo-block-column">
   <div class="t-table t-size-s" style="position:relative;">
     <div class="t-loading__parent">
-      <div class="t-table__content" style="height:150px;">
-        <table class="t-table--layout-fixed t-table--full-height" style="width:;">
+      <div class="t-table__content">
+        <table class="t-table--layout-fixed" style="width:;">
           <colgroup>
             <col style="width:100px;">
             <col style="width:100px;">
@@ -13180,8 +13180,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
   </div>
   <div class="t-table t-size-s" style="position:relative;">
     <div class="t-loading__parent">
-      <div class="t-table__content" style="height:150px;">
-        <table class="t-table--layout-fixed t-table--full-height" style="width:;">
+      <div class="t-table__content">
+        <table class="t-table--layout-fixed" style="width:;">
           <colgroup>
             <col style="width:100px;">
             <col style="width:100px;">
@@ -13237,8 +13237,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
   </div>
   <div class="t-table t-size-s" style="position:relative;">
     <div class="t-loading__parent">
-      <div class="t-table__content" style="height:150px;">
-        <table class="t-table--layout-fixed t-table--full-height" style="width:;">
+      <div class="t-table__content">
+        <table class="t-table--layout-fixed" style="width:;">
           <colgroup>
             <col style="width:100px;">
             <col style="width:100px;">
@@ -13395,7 +13395,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
           <col style="width:100px;">
           <col style="width:100px;">
           <col style="width:100px;">
-          <col style="width:100px;">
+          <col style="width:110px;">
           <col style="width:100px;">
           <col style="width:100px;">
           <col style="width:100px;">
@@ -13437,15 +13437,13 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
             </th>
             <th data-colkey="property" rowspan="2" class="t-table__th-property">
               <div class="t-table__th-cell-inner">
-                <div class="t-table__ellipsis t-text-ellipsis">
-                  <div class="t-table__cell--filterable">
-                    <div class="t-table__cell--title">
-                      <div>属性</div>
-                      <div class="t-table__filter-icon-wrap">
-                        <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
-                            <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
-                          </svg></div>
-                      </div>
+                <div class="t-table__cell--filterable">
+                  <div class="t-table__cell--title">
+                    <div>属性</div>
+                    <div class="t-table__filter-icon-wrap">
+                      <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
+                          <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
+                        </svg></div>
                     </div>
                   </div>
                 </div>
@@ -13728,7 +13726,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
           </svg></div>
         <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
             <div class="t-input__wrap">
-              <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="2" class="t-input__inner"></div>
+              <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="" type="text" unselectable="off" value="2" class="t-input__inner"></div>
             </div>
           </div>页</div>
       </div>
@@ -13750,7 +13748,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
       <thead class="t-table__header">
         <tr>
           <th data-colkey="name" class="t-table__th-name">
-            <div class="t-table__th-cell-inner">UNKNOW_USER</div>
+            <div class="t-table__th-cell-inner">UNKNOWN_USER</div>
           </th>
           <th data-colkey="gender" class="t-table__th-gender">
             <div class="t-table__th-cell-inner">性别</div>
@@ -13794,7 +13792,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
         </svg></div>
       <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
           <div class="t-input__wrap">
-            <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="1" class="t-input__inner"></div>
+            <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="" type="text" unselectable="off" value="1" class="t-input__inner"></div>
           </div>
         </div>页</div>
     </div>
@@ -15302,7 +15300,7 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/hide-clear-butto
     <div class="t-input__wrap">
       <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
-    <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-placeholder">请选择时间</span></div>
+    <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-placeholder">选择时间</span></div>
   </div>
 </div>
 `;
@@ -15313,7 +15311,7 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/hm.vue correctly
     <div class="t-input__wrap">
       <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
-    <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-placeholder">请选择时间</span></div>
+    <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-placeholder">选择时间</span></div>
   </div>
 </div>
 `;
@@ -15365,7 +15363,7 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/show-steps.vue c
     <div class="t-input__wrap">
       <div class="t-input t-size-m t-input--suffix"><input autocomplete="" placeholder=" " type="text" unselectable="off" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span></div>
     </div>
-    <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-placeholder">请选择时间</span></div>
+    <div size="medium" class="t-time-picker__input"><span class="t-time-picker__input-placeholder">选择时间</span></div>
   </div>
 </div>
 `;
@@ -15846,12 +15844,12 @@ exports[`ssr snapshot test renders ./examples/tree/demos/activable.vue correctly
   </div>
   <div class="t-tree t-tree--hoverable t-tree--transition">
     <transition-group-stub tag="div" name="t-tree-toggle" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
-      <div data-value="t15" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1</span></span></div>
-      <div data-value="t16" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.1</span></span></div>
-      <div data-value="t17" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.2</span></span></div>
-      <div data-value="t18" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2</span></span></div>
-      <div data-value="t19" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.1</span></span></div>
-      <div data-value="t20" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.2</span></span></div>
+      <div data-value="t11" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1</span></span></div>
+      <div data-value="t12" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.1</span></span></div>
+      <div data-value="t13" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.2</span></span></div>
+      <div data-value="t14" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2</span></span></div>
+      <div data-value="t15" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.1</span></span></div>
+      <div data-value="t16" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.2</span></span></div>
     </transition-group-stub>
   </div>
 </div>
@@ -15861,10 +15859,10 @@ exports[`ssr snapshot test renders ./examples/tree/demos/base.vue correctly 1`] 
 <div class="tdesign-tree-demo">
   <div class="t-tree t-tree--hoverable t-tree--transition">
     <transition-group-stub tag="div" name="t-tree-toggle" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
-      <div data-value="t33" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">第一段</span></span></div>
-      <div data-value="t36" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">第一段</span></span></div>
-      <div data-value="t39" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">第一段</span></span></div>
-      <div data-value="t42" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">第一段</span></span></div>
+      <div data-value="t29" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">第一段</span></span></div>
+      <div data-value="t32" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">第一段</span></span></div>
+      <div data-value="t35" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">第一段</span></span></div>
+      <div data-value="t38" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">第一段</span></span></div>
     </transition-group-stub>
   </div>
 </div>
@@ -16067,16 +16065,16 @@ exports[`ssr snapshot test renders ./examples/tree/demos/disabled.vue correctly 
   </div>
   <div class="t-tree t-is-disabled t-tree--hoverable t-tree--checkable t-tree--transition">
     <transition-group-stub tag="div" name="t-tree-toggle" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
-      <div data-value="t65" data-level="0" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t65" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1</span></label></div>
-      <div data-value="t66" data-level="1" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t66" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1</span></label></div>
-      <div data-value="t67" data-level="2" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t67" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1.1</span></label></div>
-      <div data-value="t68" data-level="2" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t68" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1.2</span></label></div>
-      <div data-value="t69" data-level="1" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t69" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.2</span></label></div>
-      <div data-value="t70" data-level="2" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t70" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.2.1</span></label></div>
-      <div data-value="t71" data-level="2" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t71" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.2.2</span></label></div>
-      <div data-value="t72" data-level="0" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t72" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2</span></label></div>
-      <div data-value="t73" data-level="1" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t73" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.1</span></label></div>
-      <div data-value="t74" data-level="1" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t74" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.2</span></label></div>
+      <div data-value="t61" data-level="0" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t61" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1</span></label></div>
+      <div data-value="t62" data-level="1" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t62" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1</span></label></div>
+      <div data-value="t63" data-level="2" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t63" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1.1</span></label></div>
+      <div data-value="t64" data-level="2" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t64" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1.2</span></label></div>
+      <div data-value="t65" data-level="1" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t65" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.2</span></label></div>
+      <div data-value="t66" data-level="2" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t66" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.2.1</span></label></div>
+      <div data-value="t67" data-level="2" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t67" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.2.2</span></label></div>
+      <div data-value="t68" data-level="0" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t68" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2</span></label></div>
+      <div data-value="t69" data-level="1" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t69" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.1</span></label></div>
+      <div data-value="t70" data-level="1" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t70" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.2</span></label></div>
     </transition-group-stub>
   </div>
   <div class="operations">
@@ -16095,16 +16093,16 @@ exports[`ssr snapshot test renders ./examples/tree/demos/disabled.vue correctly 
   </div>
   <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition">
     <transition-group-stub tag="div" name="t-tree-toggle" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
-      <div data-value="t75" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t75" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1</span></label></div>
-      <div data-value="t76" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t76" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1</span></label></div>
-      <div data-value="t77" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t77" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1.1</span></label></div>
-      <div data-value="t78" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t78" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1.2</span></label></div>
-      <div data-value="t79" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t79" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.2</span></label></div>
-      <div data-value="t80" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t80" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.2.1</span></label></div>
-      <div data-value="t81" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t81" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.2.2</span></label></div>
-      <div data-value="t82" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t82" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2</span></label></div>
-      <div data-value="t83" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t83" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.1</span></label></div>
-      <div data-value="t84" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t84" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.2</span></label></div>
+      <div data-value="t71" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t71" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1</span></label></div>
+      <div data-value="t72" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t72" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1</span></label></div>
+      <div data-value="t73" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t73" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1.1</span></label></div>
+      <div data-value="t74" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t74" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1.2</span></label></div>
+      <div data-value="t75" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t75" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.2</span></label></div>
+      <div data-value="t76" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t76" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.2.1</span></label></div>
+      <div data-value="t77" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t77" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.2.2</span></label></div>
+      <div data-value="t78" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t78" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2</span></label></div>
+      <div data-value="t79" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"><input type="checkbox" disabled="disabled" name="t79" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.1</span></label></div>
+      <div data-value="t80" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t80" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.2</span></label></div>
     </transition-group-stub>
   </div>
 </div>
@@ -16159,16 +16157,16 @@ exports[`ssr snapshot test renders ./examples/tree/demos/expand-all.vue correctl
   </div>
   <div class="t-tree t-tree--transition">
     <transition-group-stub tag="div" name="t-tree-toggle" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
-      <div data-value="t95" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1</span></span></div>
-      <div data-value="t96" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.1</span></span></div>
-      <div data-value="t97" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.1.1</span></span></div>
-      <div data-value="t98" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.1.2</span></span></div>
-      <div data-value="t99" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.2</span></span></div>
-      <div data-value="t100" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.2.1</span></span></div>
-      <div data-value="t101" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.2.2</span></span></div>
-      <div data-value="t102" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2</span></span></div>
-      <div data-value="t103" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.1</span></span></div>
-      <div data-value="t104" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.2</span></span></div>
+      <div data-value="t91" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1</span></span></div>
+      <div data-value="t92" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.1</span></span></div>
+      <div data-value="t93" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.1.1</span></span></div>
+      <div data-value="t94" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.1.2</span></span></div>
+      <div data-value="t95" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.2</span></span></div>
+      <div data-value="t96" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.2.1</span></span></div>
+      <div data-value="t97" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.2.2</span></span></div>
+      <div data-value="t98" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2</span></span></div>
+      <div data-value="t99" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.1</span></span></div>
+      <div data-value="t100" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.2</span></span></div>
     </transition-group-stub>
   </div>
 </div>
@@ -16178,12 +16176,12 @@ exports[`ssr snapshot test renders ./examples/tree/demos/expand-level.vue correc
 <div class="tdesign-tree-demo">
   <div class="t-tree t-tree--hoverable t-tree--transition">
     <transition-group-stub tag="div" name="t-tree-toggle" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
-      <div data-value="t115" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1</span></span></div>
-      <div data-value="t116" data-level="1" class="t-tree__item t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.1</span></span></div>
-      <div data-value="t119" data-level="1" class="t-tree__item t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.2</span></span></div>
-      <div data-value="t122" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2</span></span></div>
-      <div data-value="t123" data-level="1" class="t-tree__item t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.1</span></span></div>
-      <div data-value="t124" data-level="1" class="t-tree__item t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.2</span></span></div>
+      <div data-value="t111" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1</span></span></div>
+      <div data-value="t112" data-level="1" class="t-tree__item t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.1</span></span></div>
+      <div data-value="t115" data-level="1" class="t-tree__item t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1.2</span></span></div>
+      <div data-value="t118" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2</span></span></div>
+      <div data-value="t119" data-level="1" class="t-tree__item t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.1</span></span></div>
+      <div data-value="t120" data-level="1" class="t-tree__item t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2.2</span></span></div>
     </transition-group-stub>
   </div>
 </div>
@@ -16217,8 +16215,8 @@ exports[`ssr snapshot test renders ./examples/tree/demos/expand-mutex.vue correc
   </div>
   <div class="t-tree t-tree--hoverable t-tree--transition t-tree--block-node">
     <transition-group-stub tag="div" name="t-tree-toggle" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
-      <div data-value="t139" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1</span></span></div>
-      <div data-value="t146" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2</span></span></div>
+      <div data-value="t135" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1</span></span></div>
+      <div data-value="t142" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2</span></span></div>
     </transition-group-stub>
   </div>
 </div>
@@ -16245,15 +16243,15 @@ exports[`ssr snapshot test renders ./examples/tree/demos/icon.vue correctly 1`] 
   <h3>render:</h3>
   <div class="t-tree t-tree--hoverable t-tree--transition">
     <transition-group-stub tag="div" name="t-tree-toggle" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
-      <div data-value="t157" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-folder"><use href="#t-icon-folder"></use></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1</span></span></div>
-      <div data-value="t158" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-folder"><use href="#t-icon-folder"></use></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2</span></span></div>
+      <div data-value="t153" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-folder"><use href="#t-icon-folder"></use></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1</span></span></div>
+      <div data-value="t154" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-folder"><use href="#t-icon-folder"></use></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2</span></span></div>
     </transition-group-stub>
   </div>
   <h3>scope slot:</h3>
   <div class="t-tree t-tree--hoverable t-tree--transition">
     <transition-group-stub tag="div" name="t-tree-toggle" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
-      <div data-value="t159" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-caret-right"><use href="#t-icon-caret-right"></use></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1</span></span></div>
-      <div data-value="t160" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-caret-right"><use href="#t-icon-caret-right"></use></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2</span></span></div>
+      <div data-value="t155" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-caret-right"><use href="#t-icon-caret-right"></use></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">1</span></span></div>
+      <div data-value="t156" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-caret-right"><use href="#t-icon-caret-right"></use></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;">2</span></span></div>
     </transition-group-stub>
   </div>
 </div>
@@ -16264,23 +16262,23 @@ exports[`ssr snapshot test renders ./examples/tree/demos/label.vue correctly 1`]
   <h3>render:</h3>
   <div class="t-tree t-tree--transition">
     <transition-group-stub tag="div" name="t-tree-toggle" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
-      <div data-value="t173" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;"><strong>value: t173, label: 1</strong></span></span></div>
-      <div data-value="t174" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;"><strong>value: t174, label: 1.1</strong></span></span></div>
-      <div data-value="t175" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;"><strong>value: t175, label: 1.2</strong></span></span></div>
-      <div data-value="t176" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;"><strong>value: t176, label: 2</strong></span></span></div>
-      <div data-value="t177" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;"><strong>value: t177, label: 2.1</strong></span></span></div>
-      <div data-value="t178" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;"><strong>value: t178, label: 2.2</strong></span></span></div>
+      <div data-value="t169" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;"><strong>value: t169, label: 1</strong></span></span></div>
+      <div data-value="t170" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;"><strong>value: t170, label: 1.1</strong></span></span></div>
+      <div data-value="t171" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;"><strong>value: t171, label: 1.2</strong></span></span></div>
+      <div data-value="t172" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;"><strong>value: t172, label: 2</strong></span></span></div>
+      <div data-value="t173" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;"><strong>value: t173, label: 2.1</strong></span></span></div>
+      <div data-value="t174" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label t-tree__label--strictly"><span style="position:relative;"><strong>value: t174, label: 2.2</strong></span></span></div>
     </transition-group-stub>
   </div>
   <h3>scope slot:</h3>
   <div class="t-tree t-tree--checkable t-tree--transition">
     <transition-group-stub tag="div" name="t-tree-toggle" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
-      <div data-value="t179" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t179" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"><font color="blue">label: 1, value: t179</font></span></label></div>
-      <div data-value="t180" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t180" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"><font color="blue">label: 1.1, value: t180</font></span></label></div>
-      <div data-value="t181" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t181" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"><font color="blue">label: 1.2, value: t181</font></span></label></div>
-      <div data-value="t182" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t182" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"><font color="blue">label: 2, value: t182</font></span></label></div>
-      <div data-value="t183" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t183" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"><font color="blue">label: 2.1, value: t183</font></span></label></div>
-      <div data-value="t184" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t184" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"><font color="blue">label: 2.2, value: t184</font></span></label></div>
+      <div data-value="t175" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t175" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"><font color="blue">label: 1, value: t175</font></span></label></div>
+      <div data-value="t176" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t176" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"><font color="blue">label: 1.1, value: t176</font></span></label></div>
+      <div data-value="t177" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t177" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"><font color="blue">label: 1.2, value: t177</font></span></label></div>
+      <div data-value="t178" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t178" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"><font color="blue">label: 2, value: t178</font></span></label></div>
+      <div data-value="t179" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t179" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"><font color="blue">label: 2.1, value: t179</font></span></label></div>
+      <div data-value="t180" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label t-tree__label--strictly"><input type="checkbox" name="t180" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"><font color="blue">label: 2.2, value: t180</font></span></label></div>
     </transition-group-stub>
   </div>
 </div>
@@ -17073,7 +17071,7 @@ exports[`ssr snapshot test renders ./examples/upload/demos/file-flow-list.vue co
       <table class="t-upload__flow-table">
         <tr>
           <th>文件名</th>
-          <th>大小</th>
+          <th>文件大小</th>
           <th>状态</th>
           <th>操作</th>
         </tr>
@@ -17083,7 +17081,7 @@ exports[`ssr snapshot test renders ./examples/upload/demos/file-flow-list.vue co
           </td>
         </tr>
       </table>
-      <div class="t-upload__flow-bottom"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">取消</span></button><button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"><span class="t-button__text">开始上传</span></button></div>
+      <div class="t-upload__flow-bottom"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">取消上传</span></button><button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"><span class="t-button__text">点击上传</span></button></div>
     </div>
   </div>
 </div>
@@ -17099,7 +17097,7 @@ exports[`ssr snapshot test renders ./examples/upload/demos/file-flow-list-batch-
       <table class="t-upload__flow-table">
         <tr>
           <th>文件名</th>
-          <th>大小</th>
+          <th>文件大小</th>
           <th>状态</th>
           <th>操作</th>
         </tr>
@@ -17109,7 +17107,7 @@ exports[`ssr snapshot test renders ./examples/upload/demos/file-flow-list-batch-
           </td>
         </tr>
       </table>
-      <div class="t-upload__flow-bottom"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">取消</span></button><button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"><span class="t-button__text">开始上传</span></button></div>
+      <div class="t-upload__flow-bottom"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">取消上传</span></button><button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"><span class="t-button__text">点击上传</span></button></div>
     </div>
   </div>
 </div>
@@ -17129,7 +17127,7 @@ exports[`ssr snapshot test renders ./examples/upload/demos/file-flow-list-duplic
       <table class="t-upload__flow-table">
         <tr>
           <th>文件名</th>
-          <th>大小</th>
+          <th>文件大小</th>
           <th>状态</th>
           <th>操作</th>
         </tr>
@@ -17139,7 +17137,7 @@ exports[`ssr snapshot test renders ./examples/upload/demos/file-flow-list-duplic
           </td>
         </tr>
       </table>
-      <div class="t-upload__flow-bottom"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">取消</span></button><button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"><span class="t-button__text">开始上传</span></button></div>
+      <div class="t-upload__flow-bottom"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">取消上传</span></button><button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"><span class="t-button__text">点击上传</span></button></div>
     </div>
   </div>
 </div>
@@ -17216,7 +17214,7 @@ exports[`ssr snapshot test renders ./examples/upload/demos/img-flow-list.vue cor
       <div class="t-upload__flow-card-area">
         <div class="t-upload__flow-empty">点击上方“选择文件”或将文件拖拽到此区域</div>
       </div>
-      <div class="t-upload__flow-bottom"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">取消</span></button><button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"><span class="t-button__text">开始上传</span></button></div>
+      <div class="t-upload__flow-bottom"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">取消上传</span></button><button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"><span class="t-button__text">点击上传</span></button></div>
     </div>
     <div duration="300" name="t-dialog-zoom__vue" class="t-upload__dialog"></div>
   </div>

@@ -1,6 +1,4 @@
-import uniqWith from 'lodash/uniqWith';
 import { prefix } from '../config';
-import { UploadFile } from './type';
 
 export const UPLOAD_NAME = `${prefix}-upload`;
 
@@ -43,13 +41,4 @@ export function abridgeName(inputName: string, leftCount = 5, rightcount = 7): s
     }
   }
   return name.replace(new RegExp(`^(.{${leftLength}})(.+)(.{${rightLength}})$`), '$1…$3');
-}
-/**
- * 重复数组检查
- * @param files Array
- * @param key string default name
- * @returns Array of files
- */
-export function dedupeFile(files: Array<UploadFile>, key = 'name'): any {
-  return uniqWith(files, (val1, val2) => val1[key] === val2[key]);
 }

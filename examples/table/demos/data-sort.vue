@@ -1,7 +1,7 @@
 <template>
   <div class="demo-container t-table-demo-sort">
     <!-- t-locale-provider 一般用于全局配置某个组件的特性，此代码示例 示范了如何对表格排序图标进行统一配置 -->
-    <t-locale-provider :globalLocale="globalLocale">
+    <t-config-provider :globalConfig="globalLocale">
       <div class="item">
         <div style="margin: 16px">
           <t-checkbox v-model="allowMultipleSort">是否允许多字段排序</t-checkbox>
@@ -36,7 +36,7 @@
           </template>
         </t-table>
       </div>
-    </t-locale-provider>
+    </t-config-provider>
   </div>
 </template>
 

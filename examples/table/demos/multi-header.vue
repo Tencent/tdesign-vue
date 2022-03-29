@@ -21,7 +21,7 @@
       :sort.sync="sortInfo"
       :columns="columns"
       :bordered="bordered"
-      :max-height="fixedHeader ? 380 : 1000"
+      :max-height="fixedHeader ? 380 : undefined"
       :columnController="{ displayType: 'auto-width' }"
       :filterRow="() => null"
       :headerAffixProps="{ offsetTop: 0 }"
@@ -141,11 +141,10 @@ function getColumns(fixedLeftCol, fixedRightCol) {
       children: [
         {
           align: 'left',
-          ellipsis: true,
           colKey: 'property',
           title: '属性',
           fixed: fixedRightCol && 'right',
-          width: 100,
+          width: 110,
           filter: {
             type: 'single',
             list: [
