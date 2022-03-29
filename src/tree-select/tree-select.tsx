@@ -290,15 +290,11 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       if (this.multiple) {
         return;
       }
-      let current: TreeSelectValue = value;
-      if (this.isObjectValue) {
-        const nodeValue = isEmpty(value) ? '' : value[0];
-        current = this.getTreeNode(this.data, nodeValue);
-      } else {
-        current = isEmpty(value) ? '' : value[0];
-      }
-      this.change(current, context.node);
-      this.actived = value;
+
+      const triggerValue = this.isObjectValue ? context.node.data : context.node.data[this.realValue];
+      // 参照 Select 下点击即选中
+      this.change(triggerValue, context.node);
+      this.actived = [triggerValue];
       this.visible = false;
     },
     treeNodeExpand(value: Array<TreeNodeValue>) {
@@ -329,7 +325,6 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     },
     async changeNodeInfo() {
       await this.value;
-
       if (!this.multiple && this.value) {
         this.changeSingleNodeInfo();
       } else if (this.multiple && isArray(this.value)) {
