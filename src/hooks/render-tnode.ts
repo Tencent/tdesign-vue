@@ -16,7 +16,7 @@ export interface JSXRenderContext {
 
 export type OptionsType = VNode | JSXRenderContext | string;
 
-const isVNode = (obj: OptionsType) => {
+export const isVNode = (obj: OptionsType) => {
   const vNode = h('span', '');
   const VNode = vNode.constructor;
   return obj instanceof VNode;
