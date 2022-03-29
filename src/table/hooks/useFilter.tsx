@@ -27,11 +27,12 @@ function filterEmptyData(data: FilterValue) {
 }
 
 export default function useFilter(props: TdPrimaryTableProps, context: SetupContext) {
+  const primaryTableRef = ref(null);
   const renderTNode = useTNodeDefault();
   const { filterValue } = toRefs(props);
   const { tableFilterClasses, isFocusClass } = useClassName();
 
-  // uncontroll and controll
+  // unControl and control
   const [tFilterValue, setTFilterValue] = useDefaultValue(
     filterValue,
     props.defaultFilterValue,
@@ -144,6 +145,7 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
         innerFilterValue={innerFilterValue.value}
         tableFilterClasses={tableFilterClasses}
         isFocusClass={isFocusClass}
+        primaryTableElement={primaryTableRef.value?.$el}
         on={{
           reset: onReset,
           confirm: onConfirm,
@@ -154,6 +156,7 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
   }
 
   return {
+    primaryTableRef,
     hasEmptyCondition,
     renderFilterIcon,
     renderFirstFilterRow,
