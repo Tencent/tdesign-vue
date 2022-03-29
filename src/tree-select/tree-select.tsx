@@ -323,8 +323,8 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     // get tree data, even load async load
     getTreeData() {
       return ((this.$refs.tree as TreeInstanceFunctions)?.getItems() || []).map((item) => ({
-        label: item.data[this.realLabel],
-        value: item.data[this.realValue],
+        [this.realLabel]: item.data[this.realLabel],
+        [this.realValue]: item.data[this.realValue],
       }));
     },
     async changeNodeInfo() {
