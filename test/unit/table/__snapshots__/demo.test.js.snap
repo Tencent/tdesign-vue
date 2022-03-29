@@ -13499,7 +13499,7 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
               <input
                 autocomplete="off"
                 class="t-input__inner"
-                placeholder="请输入"
+                placeholder=""
                 type="text"
                 unselectable="off"
               />
@@ -13954,7 +13954,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
                 <input
                   autocomplete="off"
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder=""
                   type="text"
                   unselectable="off"
                 />

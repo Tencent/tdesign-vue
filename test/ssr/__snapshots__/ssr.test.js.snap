@@ -3043,7 +3043,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/pagination.v
     </svg></div>
   <div class="t-pagination__jump">jump to<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
       <div class="t-input__wrap">
-        <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="please enter" type="text" unselectable="off" value="1" class="t-input__inner"></div>
+        <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="" type="text" unselectable="off" value="1" class="t-input__inner"></div>
       </div>
     </div>
   </div>
@@ -8245,7 +8245,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/customizable.vue 
       </svg></div>
     <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
         <div class="t-input__wrap">
-          <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="1" class="t-input__inner"></div>
+          <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="" type="text" unselectable="off" value="1" class="t-input__inner"></div>
         </div>
       </div>页</div>
   </div>
@@ -8280,7 +8280,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/disabled.vue corr
       </svg></div>
     <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
         <div class="t-input__wrap">
-          <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="1" class="t-input__inner"></div>
+          <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="" type="text" unselectable="off" value="1" class="t-input__inner"></div>
         </div>
       </div>页</div>
   </div>
@@ -8338,7 +8338,7 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/jump.vue correctl
       </svg></div>
     <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
         <div class="t-input__wrap">
-          <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="1" class="t-input__inner"></div>
+          <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="" type="text" unselectable="off" value="1" class="t-input__inner"></div>
         </div>
       </div>页</div>
   </div>
@@ -13728,7 +13728,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
           </svg></div>
         <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
             <div class="t-input__wrap">
-              <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="2" class="t-input__inner"></div>
+              <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="" type="text" unselectable="off" value="2" class="t-input__inner"></div>
             </div>
           </div>页</div>
       </div>
@@ -13794,7 +13794,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
         </svg></div>
       <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
           <div class="t-input__wrap">
-            <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="1" class="t-input__inner"></div>
+            <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="" type="text" unselectable="off" value="1" class="t-input__inner"></div>
           </div>
         </div>页</div>
     </div>
