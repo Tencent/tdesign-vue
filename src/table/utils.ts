@@ -1,9 +1,11 @@
 import isFunction from 'lodash/isFunction';
 import get from 'lodash/get';
+import Sortable, { SortableOptions } from 'sortablejs';
 import {
   PrimaryTableCol, RowClassNameParams, TableRowData, TdBaseTableProps,
 } from './type';
 import { ClassName, HTMLElementAttributes } from '../common';
+import { TargetDom } from './interface';
 
 export function toString(obj: any): string {
   return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase();
@@ -132,4 +134,12 @@ export function isRowSelectedDisabled(
     }
   }
   return !!disabled;
+}
+
+// 拖拽排序api
+export function setSortableConfig(target: TargetDom, options: SortableOptions) {
+  if (!target) {
+    return;
+  }
+  return new Sortable(target as any, { ...options });
 }

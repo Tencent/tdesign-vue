@@ -11955,6 +11955,100 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue correctly 1`] = `
+<div class="demo-container t-table-demo-sort">
+  <div class="item">
+    <div class="t-table" style="position:relative;">
+      <div class="t-table__content">
+        <table class="t-table--layout-fixed" style="width:;">
+          <colgroup>
+            <col style="width:100px;">
+            <col style="width:150px;">
+            <col style="width:100px;">
+            <col style="width:200px;">
+            <col style="width:100px;">
+          </colgroup>
+          <thead class="t-table__header">
+            <tr>
+              <th data-colkey="drag" class="t-table__th-drag">
+                <div class="t-table__th-cell-inner">排序</div>
+              </th>
+              <th data-colkey="instance" class="t-table__th-instance">
+                <div class="t-table__th-cell-inner">集群名称</div>
+              </th>
+              <th data-colkey="status" class="t-table__th-status">
+                <div class="t-table__th-cell-inner">状态</div>
+              </th>
+              <th data-colkey="survivalTime" class="t-table__th-survivalTime">
+                <div class="t-table__th-cell-inner">存活时间(s)</div>
+              </th>
+              <th data-colkey="owner" class="t-table__th-owner">
+                <div class="t-table__th-cell-inner">管理员</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="t-table__body t-table__col-draggable">
+            <tr>
+              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
+                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
+                </svg></td>
+              <td>JQTest1</td>
+              <td>
+                <p class="status">
+                  健康
+                </p>
+              </td>
+              <td>1000</td>
+              <td>jenny;peter</td>
+            </tr>
+            <tr>
+              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
+                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
+                </svg></td>
+              <td>JQTest2</td>
+              <td>
+                <p class="status warning">
+                  警告
+                </p>
+              </td>
+              <td>1000</td>
+              <td>jenny</td>
+            </tr>
+            <tr>
+              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
+                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
+                </svg></td>
+              <td>JQTest3</td>
+              <td>
+                <p class="status unhealth">
+                  异常
+                </p>
+              </td>
+              <td>500</td>
+              <td>jenny</td>
+            </tr>
+            <tr>
+              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
+                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
+                </svg></td>
+              <td>JQTest4</td>
+              <td>
+                <p class="status warning">
+                  警告
+                </p>
+              </td>
+              <td>1500</td>
+              <td>peter</td>
+            </tr>
+          </tbody>
+          <!---->
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctly 1`] = `
 <div class="demo-container t-table-demo-sort">
   <div class="item">
@@ -11983,7 +12077,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
               </th>
             </tr>
           </thead>
-          <tbody class="t-table__body">
+          <tbody class="t-table__body t-table__row--draggable">
             <tr>
               <td>JQTest1</td>
               <td>

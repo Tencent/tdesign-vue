@@ -2160,7 +2160,7 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
             </tr>
           </thead>
           <tbody
-            class="t-table__body"
+            class="t-table__body t-table__row--draggable"
           >
             <tr
               class=""

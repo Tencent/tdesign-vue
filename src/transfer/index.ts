@@ -6,11 +6,10 @@ import './style';
 
 export * from './interface';
 
-export const Transfer = withInstall(mapProps([
-  { name: 'value' },
-  { name: 'checked', event: 'update:checked' },
-], {
-  model: { prop: 'value', event: 'change' },
-})(_Transfer));
+export const Transfer = withInstall(
+  mapProps([{ name: 'value' }, { name: 'checked', event: 'update:checked' }], {
+    model: { prop: 'value', event: 'change' },
+  })(_Transfer),
+);
 
 export default Transfer;
