@@ -4,7 +4,7 @@ import { ref, toRefs, SetupContext } from '@vue/composition-api';
 import { SortableEvent } from 'sortablejs';
 import { TdPrimaryTableProps, TableRowData } from '../type';
 import { TargetDom } from '../interface';
-import setSortableConfig from '../util/sortable';
+import { setSortableConfig } from '../utils';
 import useClassName from './useClassName';
 
 export default function useDragSort(props: TdPrimaryTableProps, context: SetupContext) {

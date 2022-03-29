@@ -299,9 +299,7 @@ export default defineComponent({
           [this.tdEllipsisClass]: col.ellipsis,
           [this.tableBaseClass.tdLastRow]: rowIndex + cellSpans.rowspan === dataLength,
           [this.tdAlignClasses[col.align]]: col.align && col.align !== 'left',
-        },
-        // 标记可拖拽列
-        {
+          // 标记可拖拽列
           [this.tableDraggableClasses.handle]: col.colKey === 'drag',
         },
       ];

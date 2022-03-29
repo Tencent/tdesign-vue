@@ -2124,7 +2124,7 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  集群名称22
+                  集群名称
                 </div>
               </th>
               <th

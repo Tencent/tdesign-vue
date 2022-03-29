@@ -124,13 +124,6 @@ export default defineComponent({
       registerDragEvent,
     };
   },
-  // mounted() {
-  //   // 注册拖拽事件
-  //   if (this.isColDraggable || this.isRowDraggable) {
-  //     const element = this.$el.querySelector('tbody');
-  //     this.registerDragEvent(element);
-  //   }
-  // },
   methods: {
     // support @row-click @page-change @row-hover .etc. events, Vue3 do not need this function
     getListener() {

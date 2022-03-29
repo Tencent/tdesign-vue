@@ -83,15 +83,6 @@ export default {
       currentIndex, current, targetIndex, target, currentData, e,
     }) {
       console.log('交换行', currentIndex, current, targetIndex, target, currentData, e);
-      // const newData = [].concat(this.data);
-      // if (targetIndex - currentIndex > 0) {
-      //   newData.splice(targetIndex + 1, 0, this.data[currentIndex]);
-      //   newData.splice(currentIndex, 1);
-      // } else {
-      //   newData.splice(targetIndex, 0, this.data[currentIndex]);
-      //   newData.splice(currentIndex + 1, 1);
-      // }
-      // this.data = newData;
       this.data = currentData;
     },
   },
