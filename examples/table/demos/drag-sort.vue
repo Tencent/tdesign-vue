@@ -16,7 +16,7 @@
 
 <script>
 const columns = [
-  { colKey: 'instance', title: '集群名称22', width: 150 },
+  { colKey: 'instance', title: '集群名称', width: 150 },
   {
     colKey: 'status',
     title: '状态',

@@ -68,7 +68,7 @@ export default defineComponent({
     columns: Array as PropType<TableBodyProps['columns']>,
     rowAndColFixedPosition: Map as PropType<TableBodyProps['rowAndColFixedPosition']>,
     showColumnShadow: Object as PropType<TableBodyProps['showColumnShadow']>,
-    tableElm: HTMLDivElement as PropType<TableBodyProps['tableElm']>,
+    tableElm: {},
     tableWidth: Number,
     isWidthOverflow: Boolean,
     // 以下内容为虚拟滚动所需参数

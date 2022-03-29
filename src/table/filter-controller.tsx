@@ -43,7 +43,7 @@ export default defineComponent({
     innerFilterValue: Object as PropType<TableFilterControllerProps['innerFilterValue']>,
     tableFilterClasses: Object as PropType<TableFilterControllerProps['tableFilterClasses']>,
     isFocusClass: String,
-    primaryTableElement: HTMLDivElement,
+    primaryTableElement: {},
   },
 
   // eslint-disable-next-line
