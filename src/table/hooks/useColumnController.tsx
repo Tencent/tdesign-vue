@@ -28,10 +28,9 @@ export function getColumnKeys(columns: PrimaryTableCol[], keys: string[] = []) {
 }
 
 export default function useColumnController(props: TdPrimaryTableProps, context: SetupContext) {
-  const { displayColumns } = toRefs(props);
   const renderTNode = useTNodeDefault();
   const { classPrefix } = useConfig();
-  const { columns, columnController } = toRefs(props);
+  const { columns, columnController, displayColumns } = toRefs(props);
 
   const enabledColKeys = computed(() => {
     const arr = (columnController.value?.fields || [...new Set(getColumnKeys(columns.value))] || []).filter((v) => v);

@@ -12,11 +12,11 @@ export default {
   asyncLoading: {
     type: [String, Function] as PropType<TdPrimaryTableProps['asyncLoading']>,
   },
-  /** 【开发中】自定义显示列控制器，值为空不会显示。<br />`columnController.fields` 表示只允许用户对数组里面的列进行显示或隐藏的控制，默认为全部字段。<br />`columnController.displayType` 是指字段呈现方式：`fixed-width` 表示固定宽度，每行固定数量，横向和纵向均对齐，`auto-width` 表示宽度随列标题数量自由显示，横向铺满，纵向不要求对齐，默认为 `auto-width`。<br />支持透传 CheckboxGroup 和 Dialog 组件等全部属性 */
+  /** 自定义显示列控制器，值为空不会显示。<br />`columnController.fields` 表示只允许用户对数组里面的列进行显示或隐藏的控制，默认为全部字段。<br />`columnController.displayType` 是指字段呈现方式：`fixed-width` 表示固定宽度，每行固定数量，横向和纵向均对齐，`auto-width` 表示宽度随列标题数量自由显示，横向铺满，纵向不要求对齐，默认为 `auto-width`。<br />支持透传 CheckboxGroup 和 Dialog 组件等全部属性 */
   columnController: {
     type: Object as PropType<TdPrimaryTableProps['columnController']>,
   },
-  /** 【开发中】自定义显示列控制器的内容呈现，可以填充任意内容 */
+  /** 【讨论中】自定义显示列控制器的内容呈现，可以填充任意内容 */
   columnControllerContent: {
     type: [String, Function] as PropType<TdPrimaryTableProps['columnControllerContent']>,
   },

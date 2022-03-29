@@ -27,7 +27,7 @@ rowClassName | String / Object / Array / Function | - | 行类名，泛型 T 指
 rowKey | String | - | 必需。使用 rowKey 唯一标识一行数据 | Y
 rowspanAndColspan | Function | - | 用于自定义合并单元格，泛型 T 指表格数据类型。示例：`({ row, col, rowIndex, colIndex }) => { rowspan: 2, colspan: 3 }`。TS 类型：`TableRowspanAndColspanFunc<T>` `type TableRowspanAndColspanFunc<T> = (params: BaseTableCellParams<T>) => RowspanColspan` `interface RowspanColspan { colspan?: number; rowspan?: number }`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 scroll | Object | - | 懒加载和虚拟滚动。为保证组件收益最大化，当数据量小于阈值 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，`scroll.threshold` 默认为 `100`。TS 类型：`TableScroll` | N
-size | String | medium | 【设计稿确认中】表格尺寸。可选项：small/medium/large。TS 类型：`SizeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+size | String | medium | 表格尺寸。可选项：small/medium/large。TS 类型：`SizeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 stripe | Boolean | false | 是否显示斑马纹 | N
 tableContentWidth | String | - | 表格内容的总宽度，注意不是表格可见宽度。主要应用于 `table-layout: auto` 模式下的固定列显示。`tableContentWidth` 内容宽度的值必须大于表格可见宽度 | N
 tableLayout | String | fixed | 表格布局方式。可选项：auto/fixed | N
@@ -85,8 +85,8 @@ width | String / Number | - | 列宽 | N
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
 asyncLoading | String / Slot / Function | - | 异步加载状态。值为 `loading` 显示默认文字 “正在加载中，请稍后”，值为 `loading-more` 显示“点击加载更多”，值为其他，表示完全自定义异步加载区域内容。TS 类型：`'loading' | 'load-more' | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-columnController | Object | - | 【开发中】自定义显示列控制器，值为空不会显示。<br />`columnController.fields` 表示只允许用户对数组里面的列进行显示或隐藏的控制，默认为全部字段。<br />`columnController.displayType` 是指字段呈现方式：`fixed-width` 表示固定宽度，每行固定数量，横向和纵向均对齐，`auto-width` 表示宽度随列标题数量自由显示，横向铺满，纵向不要求对齐，默认为 `auto-width`。<br />支持透传 CheckboxGroup 和 Dialog 组件等全部属性。TS 类型：`TableColumnController` `interface TableColumnController { fields?: string[]; displayType: 'fixed-width' | 'auto-width'; checkboxProps?: CheckboxGroupProps; dialogProps?: DialogProps }` `import { CheckboxGroupProps } from '@Checkbox'`，[Dialog API Documents](./dialog?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
-columnControllerContent | String / Slot / Function | - | 【开发中】自定义显示列控制器的内容呈现，可以填充任意内容。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+columnController | Object | - | 自定义显示列控制器，值为空不会显示。<br />`columnController.fields` 表示只允许用户对数组里面的列进行显示或隐藏的控制，默认为全部字段。<br />`columnController.displayType` 是指字段呈现方式：`fixed-width` 表示固定宽度，每行固定数量，横向和纵向均对齐，`auto-width` 表示宽度随列标题数量自由显示，横向铺满，纵向不要求对齐，默认为 `auto-width`。<br />支持透传 CheckboxGroup 和 Dialog 组件等全部属性。TS 类型：`TableColumnController` `interface TableColumnController { fields?: string[]; displayType: 'fixed-width' | 'auto-width'; checkboxProps?: CheckboxGroupProps; dialogProps?: DialogProps }` `import { CheckboxGroupProps } from '@Checkbox'`，[Dialog API Documents](./dialog?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
+columnControllerContent | String / Slot / Function | - | 【讨论中】自定义显示列控制器的内容呈现，可以填充任意内容。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 columns | Array | [] | 列配置，泛型 T 指表格数据类型。TS 类型：`Array<PrimaryTableCol<T>>` | N
 displayColumns | Array | - | 列配置功能中，当前显示的列。支持语法糖 `.sync`。TS 类型：`CheckboxGroupValue` | N
 defaultDisplayColumns | Array | - | 列配置功能中，当前显示的列。非受控属性。TS 类型：`CheckboxGroupValue` | N
