@@ -7,7 +7,6 @@ docClass: timeline
 
 ## 0.39.1 `2022-03-29`
 
-
 ### Bug Fixes
 
 * Upload: [pr #640](https://github.com/Tencent/tdesign-vue/pull/640)，[@brianzhang](https://github.com/brianzhang)
@@ -27,14 +26,6 @@ docClass: timeline
 * Table: [pr #660](https://github.com/Tencent/tdesign-vue/pull/660)，[@chaishi](https://github.com/chaishi)
   - 表格超出省略浮层父元素更为表头 `thead`，避免挂载到全局 `body`
   - 过滤功能浮层元素默认挂载到 `t-table`，不再挂载到全局 `body`，[issue#658](https://github.com/Tencent/tdesign-vue/issues/658)
-
-
-### BREAKING CHANGES
-
-* 修复handleProgress handleSuccess同时触发回调，导致loadingFile为正常清空
-
-
-
 
 ## 0.39.0 `2022-03-28`
 ### BREAKING CHANGES
