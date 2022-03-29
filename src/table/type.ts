@@ -11,6 +11,7 @@ import { PopupProps } from '../popup';
 import { CheckboxGroupProps } from '../checkbox';
 import { DialogProps } from '../dialog';
 import { CheckboxGroupValue } from '../checkbox';
+import { SortableEvent } from 'sortablejs';
 import { CheckboxProps } from '../checkbox';
 import { RadioProps } from '../radio';
 import { InputProps } from '../input';
@@ -354,9 +355,9 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   onCellClick?: (context: PrimaryTableCellEventContext<T>) => void;
   /**
-   * 分页、排序、过滤等内容变化时触发，泛型 T 指表格数据类型
+   * 分页、排序、过滤等内容变化时触发，泛型 T 指表格数据类型，`currentData` 表示变化后的数据
    */
-  onChange?: (data: TableChangeData, context: TableChangeContext<Array<T>>) => void;
+  onChange?: (data: TableChangeData, context: TableChangeContext<T>) => void;
   /**
    * 【开发中】列配置发生变化时触发。`context.columns` 表示已选中的列；`context.currentColumn` 表示本次变化操作的列，值不存在表示全选操作；`context.type` 表示当前操作属于选中列或是取消列
    */
@@ -366,7 +367,7 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   onDataChange?: (data: Array<T>, context: TableDataChangeContext) => void;
   /**
-   * 拖拽排序时触发
+   * 拖拽排序时触发，`currentData` 表示拖拽排序结束后的新数据
    */
   onDragSort?: (context: DragSortContext<T>) => void;
   /**
@@ -656,7 +657,7 @@ export interface TableChangeData {
 
 export interface TableChangeContext<T> {
   trigger: TableChangeTrigger;
-  currentData?: T;
+  currentData?: T[];
 }
 
 export type TableChangeTrigger = 'filter' | 'sorter' | 'pagination';
@@ -676,6 +677,8 @@ export interface DragSortContext<T> {
   current: T;
   targetIndex: number;
   target: T;
+  currentData: T[];
+  e: SortableEvent;
 }
 
 export interface ExpandOptions<T> {

@@ -20,7 +20,6 @@ import { renderContent } from '../utils/render-tnode';
 import props from './props';
 import { ClassName } from '../common';
 import { emitEvent } from '../utils/event';
-import { dedupeFile } from './util';
 import {
   HTMLInputEvent,
   SuccessContext,
@@ -257,7 +256,8 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
       let tmpFiles = [...files];
       if (this.max) {
-        tmpFiles = tmpFiles.slice(0, this.max - this.files.length);
+        // 判断当前待上传列表长度
+        tmpFiles = tmpFiles.slice(0, this.max - this.toUploadFiles.length - this.files.length);
         if (tmpFiles.length !== files.length) {
           console.warn(`TDesign Upload Warn: you can only upload ${this.max} files`);
         }
@@ -285,10 +285,11 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
         this.handleBeforeUpload(file).then((canUpload) => {
           if (!canUpload) return;
           const newFiles = this.toUploadFiles.concat();
-          newFiles.push(uploadFile);
-          this.toUploadFiles = !this.allowUploadDuplicateFile
-            ? dedupeFile([...new Set(newFiles)])
-            : [...new Set(newFiles)];
+          // 判断是否为重复文件条件，已选是否存在检验
+          if (this.allowUploadDuplicateFile || !this.toUploadFiles.find((file) => file.name === uploadFile.name)) {
+            newFiles.push(uploadFile);
+          }
+          this.toUploadFiles = newFiles;
           this.loadingFile = uploadFile;
           if (this.autoUpload) {
             this.upload(uploadFile);
@@ -445,7 +446,8 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
       innerFiles.forEach((file) => {
         file.percent = Math.min(percent, 100);
-        this.loadingFile = file;
+        // 判断文件状态是否上传完成
+        this.loadingFile = file.status === 'success' ? null : file;
       });
       const progressCtx = {
         percent,

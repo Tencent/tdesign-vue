@@ -19,7 +19,7 @@ import { MoveIcon } from 'tdesign-icons-vue';
 
 const columns = [
   {
-    colKey: 'drag',
+    colKey: 'drag', // 列拖拽排序必要参数
     title: '排序',
     width: 100,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars

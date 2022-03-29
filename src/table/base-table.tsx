@@ -217,7 +217,6 @@ export default defineComponent({
         ))}
       </colgroup>
     );
-
     const affixedHeader = Boolean((this.headerAffixedTop || this.isVirtual) && this.tableWidth) && (
       <div
         ref="affixHeaderRef"

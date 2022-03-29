@@ -93,17 +93,14 @@ export default defineComponent({
     const { t, global } = useConfig('table');
     const { tableFullRowClasses, tableBaseClass, tableDraggableClasses } = useClassName();
 
-    const tbodyClasses = computed(() => {
-      if (props.isColDraggable) {
-        // 拖拽表格增加class
-        return [tableBaseClass.body, tableDraggableClasses.bodyCol];
-      }
-      if (props.isRowDraggable) {
-        // 拖拽表格增加class
-        return [tableBaseClass.body, tableDraggableClasses.bodyRow];
-      }
-      return [tableBaseClass.body];
-    });
+    const tbodyClasses = computed(() => [
+      tableBaseClass.body,
+      {
+        [tableDraggableClasses.bodyCol]: props.isColDraggable,
+        [tableDraggableClasses.bodyRow]: props.isRowDraggable,
+      },
+    ]);
+
     const isFixedLeftColumn = computed(
       () => props.isWidthOverflow && !!props.columns.find((col) => col.fixed === 'left'),
     );
@@ -266,9 +263,12 @@ export default defineComponent({
       '-moz-transform': translate,
       '-webkit-transform': translate,
     };
-
     return (
-      <tbody class={this.tbodyClasses} style={this.isVirtual && { ...posStyle }}>
+      <tbody
+        class={this.tbodyClasses}
+        style={this.isVirtual && { ...posStyle }}
+        ref={(this.isColDraggable || this.isRowDraggable) && 'tbodyDragRef'}
+      >
         {isEmpty ? renderEmpty(h, this.columns) : list}
       </tbody>
     );

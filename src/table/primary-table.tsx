@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, toRefs, h,
+  computed, defineComponent, toRefs, h, ref, onMounted,
 } from '@vue/composition-api';
 import baseTableProps from './base-table-props';
 import primaryTableProps from './primary-table-props';
@@ -42,9 +42,16 @@ export default defineComponent({
     // 过滤功能
     const { hasEmptyCondition, renderFilterIcon, renderFirstFilterRow } = useFilter(props, context);
 
+    const primaryTableRef = ref(null);
     // 拖拽排序功能
-    const { isColDraggable, isRowDraggable } = useDragSort(props, context);
+    const { isColDraggable, isRowDraggable, registerDragEvent } = useDragSort(props, context);
 
+    onMounted(() => {
+      if (primaryTableRef?.value?.$el) {
+        // 注册拖拽事件
+        registerDragEvent(primaryTableRef?.value?.$el);
+      }
+    });
     const { renderTitleWidthIcon } = useTableHeader(props);
     const { renderAsyncLoading } = useAsyncLoading(props, context);
 
@@ -98,7 +105,6 @@ export default defineComponent({
       // Vue3 ignore next line
       context.emit('change', ...changeParams);
     };
-
     return {
       tColumns,
       showExpandedRow,
@@ -113,9 +119,17 @@ export default defineComponent({
       onInnerPageChange,
       isColDraggable,
       isRowDraggable,
+      registerDragEvent,
+      primaryTableRef,
     };
   },
-
+  // mounted() {
+  //   // 注册拖拽事件
+  //   if (this.isColDraggable || this.isRowDraggable) {
+  //     const element = this.$el.querySelector('tbody');
+  //     this.registerDragEvent(element);
+  //   }
+  // },
   methods: {
     // support @row-click @page-change @row-hover .etc. events, Vue3 do not need this function
     getListenser() {
@@ -172,6 +186,6 @@ export default defineComponent({
       on['row-click'] = this.onInnerExpandRowClick;
     }
     // replace `scopedSlots={this.$scopedSlots}` of `v-slots={this.$slots}` in Vue3
-    return <BaseTable scopedSlots={this.$scopedSlots} props={props} on={on} {...this.$attrs} />;
+    return <BaseTable scopedSlots={this.$scopedSlots} props={props} on={on} {...this.$attrs} ref="primaryTableRef" />;
   },
 });
