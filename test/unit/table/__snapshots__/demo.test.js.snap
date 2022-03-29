@@ -3565,8 +3565,6 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
     </span>
   </div>
    
-  <div />
-   
   <div>
     <label
       class="t-checkbox t-is-checked"
