@@ -140,6 +140,14 @@ export default function useClassName() {
       icon: `${classPrefix.value}-table__tree-op-icon`,
     },
 
+    // 拖拽功能类名
+    tableDraggableClasses: {
+      bodyRow: `${classPrefix.value}-table__row--draggable`,
+      bodyCol: `${classPrefix.value}-table__col-draggable`,
+      handle: `${classPrefix.value}-table__handle-draggable`,
+      ghost: `${classPrefix.value}-table__col--draggable-ghost`,
+    },
+
     virtualScrollClasses: {
       cursor: `${classPrefix.value}-table__virtual-scroll-cursor`,
       header: `${classPrefix.value}-table__virtual-scroll-header`,

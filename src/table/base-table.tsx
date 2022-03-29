@@ -41,6 +41,8 @@ export default defineComponent({
     /**
      * 渲染展开行，非公开属性，请勿在业务中使用
      */
+    isColDraggable: Boolean,
+    isRowDraggable: Boolean,
     renderExpandedRow: Function as PropType<BaseTableProps['renderExpandedRow']>,
   },
 
@@ -217,7 +219,6 @@ export default defineComponent({
         ))}
       </colgroup>
     );
-
     const affixedHeader = Boolean((this.headerAffixedTop || this.isVirtual) && this.tableWidth) && (
       <div
         ref="affixHeaderRef"
