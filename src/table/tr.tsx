@@ -197,7 +197,7 @@ export default defineComponent({
     };
     const tr = ref(null);
     const isInit = ref(props.rowIndex === 0);
-    const requestAnimationFrame = window.requestAnimationFrame || ((cb) => setTimeout(cb, 1000 / 60));
+    const requestAnimationFrame = window.requestAnimationFrame || ((cb) => setTimeout(cb, 16.6));
     const init = () => {
       !isInit.value
         && requestAnimationFrame(() => {
