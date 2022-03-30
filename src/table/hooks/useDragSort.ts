@@ -2,7 +2,7 @@
 
 import { ref, toRefs, SetupContext } from '@vue/composition-api';
 import { SortableEvent } from 'sortablejs';
-import { TdPrimaryTableProps, TableRowData } from '../type';
+import { TdPrimaryTableProps } from '../type';
 import { TargetDom } from '../interface';
 import { setSortableConfig } from '../utils';
 import useClassName from './useClassName';
@@ -21,33 +21,6 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
   const innerData = ref(data.value);
 
   const { tableDraggableClasses } = useClassName();
-
-  function emitChange(
-    currentIndex: number,
-    current: TableRowData,
-    targetIndex: number,
-    target: TableRowData,
-    currentData: TableRowData[],
-    e: SortableEvent,
-  ) {
-    props.onDragSort?.({
-      currentIndex,
-      current,
-      targetIndex,
-      target,
-      currentData,
-      e,
-    });
-    // Vue3 ignore next linet
-    context.emit('drag-sort', {
-      currentIndex,
-      current,
-      targetIndex,
-      target,
-      currentData,
-      e,
-    });
-  }
 
   // 注册拖拽事件
   const registerDragEvent = (element: TargetDom) => {
@@ -69,14 +42,18 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
           newData.splice(newIndex, 0, newData[oldIndex]);
           newData.splice(oldIndex + 1, 1);
         }
-        emitChange(
-          evt.oldIndex,
-          innerData.value[evt.oldIndex],
-          evt.newIndex,
-          innerData.value[evt.newIndex],
-          newData,
-          evt,
-        );
+        const params = {
+          currentIndex: evt.oldIndex,
+          current: innerData.value[evt.oldIndex],
+          targetIndex: evt.newIndex,
+          target: innerData.value[evt.newIndex],
+          currentData: newData,
+          e: evt,
+        };
+        props.onDragSort?.(params);
+        // Vue3 ignore next line
+        context.emit('drag-sort', params);
+
         innerData.value = newData;
       },
     };
@@ -89,7 +66,7 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
       handle: `.${handle}`,
       ...baseOptions,
     };
-    if (isRowDraggable) {
+    if (isRowDraggable.value) {
       setSortableConfig(dragContainer, rowOptions);
     } else {
       setSortableConfig(dragContainer, colOptions);

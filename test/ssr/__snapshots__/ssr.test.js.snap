@@ -11962,11 +11962,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
       <div class="t-table__content">
         <table class="t-table--layout-fixed" style="width:;">
           <colgroup>
-            <col style="width:100px;">
-            <col style="width:150px;">
-            <col style="width:100px;">
-            <col style="width:200px;">
-            <col style="width:100px;">
+            <col style="width:80px;">
+            <col>
+            <col>
+            <col>
+            <col>
           </colgroup>
           <thead class="t-table__header">
             <tr>
@@ -12443,7 +12443,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
 
 exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
-  <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">清除筛选条件</span></button> <span style="padding-left:36px;">已选筛选条件：{}</span></div>
+  <div>
+    <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="left" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左对齐</span></label> <label class="t-radio-button"><input type="radio" value="center" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">居中对齐</span></label> <label class="t-radio-button"><input type="radio" value="right" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右对齐</span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+    </div> <button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default" style="margin-left:36px;"><span class="t-button__text">清除筛选条件</span></button> <span style="padding-left:36px;">已选筛选条件：{}</span>
+  </div>
   <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否显示表格边框</span></label></div>
   <div class="t-table t-table--bordered" style="position:relative;">
     <div class="t-table__content">
@@ -13394,7 +13398,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correctly 1`] = `
-<div class="t-table t-size-s t-table--bordered" style="position:relative;">
+<div class="t-table t-size-s t-table--bordered t-table--rowspan-colspan" style="position:relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed" style="width:;">
       <colgroup>
@@ -13425,37 +13429,34 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
       </thead>
       <tbody class="t-table__body">
         <tr>
-          <td class="test">公有</td>
+          <td rowspan="2" class="test t-table__td-first-col">公有</td>
           <td class="row">Array&lt;any&gt;</td>
           <td class="test4">[]</td>
           <td colspan="2" class="test3">Y</td>
         </tr>
         <tr>
-          <td class="test">公有</td>
           <td rowspan="2" colspan="2" class="row">String</td>
           <td class="test3">Y</td>
           <td class="row">描述</td>
         </tr>
         <tr>
-          <td class="test">公有</td>
+          <td rowspan="2" class="test t-table__td-first-col">公有</td>
           <td class="test3">Y</td>
           <td class="row">复杂类型</td>
         </tr>
         <tr>
-          <td class="test">公有</td>
           <td class="row">Boolean</td>
           <td class="test4">false</td>
           <td class="test3">Y</td>
           <td class="row">标识符</td>
         </tr>
         <tr>
-          <td class="test">公有</td>
+          <td rowspan="2" class="test t-table__td-last-row t-table__td-first-col">公有</td>
           <td class="row">Array&lt;any&gt;</td>
           <td rowspan="2" colspan="2" class="test4 t-table__td-last-row">-1</td>
           <td class="row">数据源</td>
         </tr>
         <tr>
-          <td class="test">公有</td>
           <td class="row">String</td>
           <td class="row">描述</td>
         </tr>

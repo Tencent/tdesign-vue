@@ -21,22 +21,20 @@ const columns = [
   {
     colKey: 'drag', // 列拖拽排序必要参数
     title: '排序',
-    width: 100,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     cell: (h) => <MoveIcon />,
+    width: 80,
   },
-  { colKey: 'instance', title: '集群名称', width: 150 },
+  { colKey: 'instance', title: '集群名称' },
   {
     colKey: 'status',
     title: '状态',
-    width: 100,
   },
   {
     colKey: 'survivalTime',
     title: '存活时间(s)',
-    width: 200,
   },
-  { colKey: 'owner', title: '管理员', width: 100 },
+  { colKey: 'owner', title: '管理员' },
 ];
 
 const data = [
@@ -78,7 +76,6 @@ export default {
     };
   },
   methods: {
-    // 必须手动实现交换数据，否则data不会发生变异
     onDragSort({
       currentIndex, current, targetIndex, target, currentData, e,
     }) {
