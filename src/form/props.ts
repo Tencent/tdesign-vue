@@ -15,11 +15,25 @@ export default {
     type: Object as PropType<TdFormProps['data']>,
     default: () => ({}),
   },
+  /** 是否禁用整个表单 */
+  disabled: {
+    type: Boolean,
+    default: undefined,
+  },
+  /** 表单错误信息配置，示例：`{ idcard: '请输入正确的身份证号码', max: '字符长度不能超过 ${max}' }` */
+  errorMessage: {
+    type: Object as PropType<TdFormProps['errorMessage']>,
+  },
+  /** 允许表单统一控制禁用状态的自定义组件名称列表。默认会有组件库的全部输入类组件：TInput、TInputNumber、TCascader、TSelect、TOption、TSwitch、TCheckbox、TCheckboxGroup、TRadio、TRadioGroup、TTreeSelect、TDatePicker、TTimePicker、TUpload、TTransfer、TSlider。对于自定义组件，组件内部需要包含可以控制表单禁用状态的变量 `formDisabled`。示例：`['CustomUpload', 'CustomInput']` */
+  formControlledComponents: {
+    type: Array as PropType<TdFormProps['formControlledComponents']>,
+  },
   /** 表单字段标签对齐方式：左对齐、右对齐、顶部对齐 */
   labelAlign: {
     type: String as PropType<TdFormProps['labelAlign']>,
     default: 'right' as TdFormProps['labelAlign'],
     validator(val: TdFormProps['labelAlign']): boolean {
+      if (!val) return true;
       return ['left', 'right', 'top'].includes(val);
     },
   },
@@ -33,15 +47,16 @@ export default {
     type: String as PropType<TdFormProps['layout']>,
     default: 'vertical' as TdFormProps['layout'],
     validator(val: TdFormProps['layout']): boolean {
+      if (!val) return true;
       return ['vertical', 'inline'].includes(val);
     },
   },
-  /** 是否阻止表单提交默认事件，即提交后会刷新页面 */
+  /** 是否阻止表单提交默认事件（表单提交默认事件会刷新页面），设置为 `true` 可以避免刷新 */
   preventSubmitDefault: {
     type: Boolean,
     default: true,
   },
-  /** 是否显示必填符号，默认显示 */
+  /** 是否显示必填符号（*），默认显示 */
   requiredMark: {
     type: Boolean,
     default: undefined,
@@ -51,6 +66,7 @@ export default {
     type: String as PropType<TdFormProps['resetType']>,
     default: 'empty' as TdFormProps['resetType'],
     validator(val: TdFormProps['resetType']): boolean {
+      if (!val) return true;
       return ['empty', 'initial'].includes(val);
     },
   },
@@ -62,10 +78,11 @@ export default {
   scrollToFirstError: {
     type: String as PropType<TdFormProps['scrollToFirstError']>,
     validator(val: TdFormProps['scrollToFirstError']): boolean {
+      if (!val) return true;
       return ['smooth', 'auto'].includes(val);
     },
   },
-  /** 校验不通过时，是否显示错误提示信息 */
+  /** 校验不通过时，是否显示错误提示信息，统一控制全部表单项。如果希望控制单个表单项，请给 FormItem 设置该属性 */
   showErrorMessage: {
     type: Boolean,
     default: true,
@@ -75,14 +92,17 @@ export default {
     type: String as PropType<TdFormProps['size']>,
     default: 'medium' as TdFormProps['size'],
     validator(val: TdFormProps['size']): boolean {
+      if (!val) return true;
       return ['medium', 'large'].includes(val);
     },
   },
-  /** 校验状态图标 */
+  /** 校验状态图标，值为 `true` 显示默认图标，默认图标有 成功、失败、警告 等，不同的状态图标不同。`statusIcon` 值为 `false`，不显示图标。`statusIcon` 值类型为渲染函数，则可以自定义右侧状态图标 */
   statusIcon: {
     type: [Boolean, Function] as PropType<TdFormProps['statusIcon']>,
     default: undefined,
   },
+  /** 【讨论中】当校验结果只有告警信息时，是否触发 `submit` 提交事件 */
+  submitWithWarningMessage: Boolean,
   /** 表单重置时触发 */
   onReset: Function as PropType<TdFormProps['onReset']>,
   /** 表单提交时触发。其中 context.validateResult 表示校验结果，context .firstError 表示校验不通过的第一个规则提醒。context.validateResult 值为 true 表示校验通过；如果校验不通过，context.validateResult 值为校验结果列表 */

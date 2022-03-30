@@ -19,6 +19,7 @@
 ## 开发
 
 ```bash
+# 子仓库需要ssh拉取，如果出现类似Host Key verification failed的错误，请先配置ssh，参考文档（https://git-scm.com/book/zh/v2/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E7%94%9F%E6%88%90-SSH-%E5%85%AC%E9%92%A5）
 git clone --recurse-submodules https://github.com/Tencent/tdesign-vue.git
 cd tdesign-vue
 

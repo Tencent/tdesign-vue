@@ -42,6 +42,7 @@ export const MessageList = Vue.extend({
       const mg = {
         ...msg,
         key: getUniqueId(),
+        placement: this.placement,
       };
       this.list.push(mg);
       return this.list.length - 1;

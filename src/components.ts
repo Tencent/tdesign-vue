@@ -1,51 +1,65 @@
-export * from './locale';
-export * from './config-provider';
-export * from './layout';
-export * from './grid';
-export * from './loading';
-export * from './avatar';
-export * from './popup';
+// 基础
 export * from './button';
-export * from './cascader';
-export * from './message';
-export * from './notification';
-export * from './dialog';
-export * from './swiper';
-export * from './alert';
+export * from './divider';
+export * from './icon';
+
+// 布局
+export * from './grid';
+export * from './layout';
+
+// 导航
+export * from './affix';
 export * from './anchor';
 export * from './breadcrumb';
-export * from './calendar';
-export * from './date-picker';
-export * from './checkbox';
-export * from './drawer';
 export * from './dropdown';
-export * from './form';
-export * from './input';
-export * from './list';
 export * from './menu';
 export * from './pagination';
-export * from './popconfirm';
+export * from './steps';
+export * from './tabs';
+
+// 输入
+export * from './cascader';
+export * from './checkbox';
+export * from './date-picker';
+export * from './form';
+export * from './input';
+export * from './input-number';
 export * from './radio';
 export * from './select';
 export * from './slider';
-export * from './steps';
 export * from './switch';
-export * from './skeleton';
-export * from './table';
-export * from './tabs';
-export * from './tag';
-export * from './tree';
-export * from './upload';
-export * from './dropdown';
-export * from './tooltip';
-export * from './input-number';
-export * from './divider';
-export * from './progress';
-export * from './transfer';
-export * from './badge';
+export * from './tag-input';
+export * from './select-input';
 export * from './textarea';
+export * from './transfer';
 export * from './time-picker';
-export * from './affix';
 export * from './tree-select';
+
+// 数据展示
+export * from './avatar';
+export * from './badge';
+export * from './calendar';
 export * from './comment';
-export * from './icon';
+export * from './list';
+export * from './loading';
+export * from './progress';
+export * from './skeleton';
+export * from './swiper';
+export * from './table';
+export * from './tag';
+export * from './tooltip';
+export * from './tree';
+
+// 消息提醒
+
+export * from './alert';
+export * from './dialog';
+export * from './drawer';
+export * from './message';
+export * from './notification';
+export * from './popconfirm';
+export * from './popup';
+export * from './upload';
+
+// 全局配置
+export * from './config-provider';

@@ -229,9 +229,9 @@ exports[`Progress :props :strokeWidth :strokeWidth is String, equal to "50px" 1`
 exports[`Progress :props :theme :theme circle progress has t-progress__circle-outer and t-progress__circle-inner class 1`] = `
 <div class="t-progress">
   <div class="t-progress--circle t-progress--status--undefined" style="width: 112px; height: 112px; font-size: 20px;">
-    <div class="t-progress__info">0%</div><svg width="112" height="112" viewBox="0 0 112 112">
+    <div class="t-progress__info">10%</div><svg width="112" height="112" viewBox="0 0 112 112">
       <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
-      <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="0  314.1592653589793" class="t-progress__circle-inner"></circle>
+      <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="35.18583772020568  316.6725394818512" class="t-progress__circle-inner"></circle>
     </svg>
   </div>
 </div>
@@ -257,12 +257,30 @@ exports[`Progress :props :theme :theme line and plump progress have t-progress__
 </div>
 `;
 
+exports[`Progress :props :theme :theme line and plump progress have t-progress__inner class 3`] = `
+<div class="t-progress">
+  <div class="t-progress__bar t-progress--plump t-progress--under-ten" style="border-radius: undefinedpx;">
+    <div class="t-progress__inner" style="width: 10%;"></div>
+    <div class="t-progress__info">10%</div>
+  </div>
+</div>
+`;
+
+exports[`Progress :props :theme :theme line and plump progress have t-progress__inner class 4`] = `
+<div class="t-progress">
+  <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="border-radius: undefinedpx;">
+    <div class="t-progress__inner" style="width: 11%;">
+      <div class="t-progress__info">11%</div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Progress :props :theme :theme:circle 1`] = `
 <div class="t-progress">
   <div class="t-progress--circle t-progress--status--undefined" style="width: 112px; height: 112px; font-size: 20px;">
     <div class="t-progress__info">0%</div><svg width="112" height="112" viewBox="0 0 112 112">
       <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer"></circle>
-      <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="0  314.1592653589793" class="t-progress__circle-inner"></circle>
     </svg>
   </div>
 </div>

@@ -13,9 +13,11 @@ const Ripple = {
   startTimeId: null as NodeJS.Timeout,
   finishTimeId: null as NodeJS.Timeout,
   inserted(el: HTMLElement, binding: DirectiveBinding) {
+    // 关闭ripple
+    if (binding.value === false) return;
     const period = 200;
     const defaultBg = 'rgba(0, 0, 0, 0.35)';
-    let bg = typeof binding.value === 'boolean' || binding.value == null ? defaultBg : binding.value;
+    let bg = binding.value === true || binding.value == null ? defaultBg : binding.value;
     const rippleContainer = document.createElement('div');
     let hasCreateContainer = false;
     let count = 0;
@@ -25,7 +27,9 @@ const Ripple = {
         el.classList.contains(`${prefix}-is-active`)
         || el.classList.contains(`${prefix}-is-disabled`)
         || el.classList.contains(`${prefix}-is-checked`)
-      ) { return; }
+      ) {
+        return;
+      }
 
       if (e.button !== 0) return; // 非鼠标左键点击；避免出现动画之后不消失的bug
 

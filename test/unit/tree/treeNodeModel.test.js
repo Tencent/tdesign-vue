@@ -6,21 +6,19 @@ describe('Tree:treeNodeModel', () => {
   jest.useRealTimers();
   describe('#getLevel', () => {
     it('返回节点深度', async () => {
-      const data = [{
-        value: 't1',
-        children: [{
-          value: 't1.1',
-        }],
-      }];
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+          ],
+        },
+      ];
       const wrapper = mount({
         render() {
-          return (
-            <Tree
-              ref="tree"
-              data={data}
-              expandAll
-            ></Tree>
-          );
+          return <Tree ref="tree" data={data} expandAll></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -33,23 +31,22 @@ describe('Tree:treeNodeModel', () => {
 
   describe('#getIndex', () => {
     it('获取子节点序号', async () => {
-      const data = [{
-        value: 't1',
-        children: [{
-          value: 't1.1',
-        }, {
-          value: 't1.2',
-        }],
-      }];
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+            {
+              value: 't1.2',
+            },
+          ],
+        },
+      ];
       const wrapper = mount({
         render() {
-          return (
-            <Tree
-              ref="tree"
-              data={data}
-              expandAll
-            ></Tree>
-          );
+          return <Tree ref="tree" data={data} expandAll></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -61,23 +58,22 @@ describe('Tree:treeNodeModel', () => {
 
   describe('#isFirst', () => {
     it('是否为首节点', async () => {
-      const data = [{
-        value: 't1',
-        children: [{
-          value: 't1.1',
-        }, {
-          value: 't1.2',
-        }],
-      }];
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+            {
+              value: 't1.2',
+            },
+          ],
+        },
+      ];
       const wrapper = mount({
         render() {
-          return (
-            <Tree
-              ref="tree"
-              data={data}
-              expandAll
-            ></Tree>
-          );
+          return <Tree ref="tree" data={data} expandAll></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -89,23 +85,22 @@ describe('Tree:treeNodeModel', () => {
 
   describe('#isLast', () => {
     it('是否为末尾节点', async () => {
-      const data = [{
-        value: 't1',
-        children: [{
-          value: 't1.1',
-        }, {
-          value: 't1.2',
-        }],
-      }];
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+            {
+              value: 't1.2',
+            },
+          ],
+        },
+      ];
       const wrapper = mount({
         render() {
-          return (
-            <Tree
-              ref="tree"
-              data={data}
-              expandAll
-            ></Tree>
-          );
+          return <Tree ref="tree" data={data} expandAll></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -117,23 +112,22 @@ describe('Tree:treeNodeModel', () => {
 
   describe('#isLeaf', () => {
     it('是否为叶节点', async () => {
-      const data = [{
-        value: 't1',
-        children: [{
-          value: 't1.1',
-        }, {
-          value: 't1.2',
-        }],
-      }];
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+            {
+              value: 't1.2',
+            },
+          ],
+        },
+      ];
       const wrapper = mount({
         render() {
-          return (
-            <Tree
-              ref="tree"
-              data={data}
-              expandAll
-            ></Tree>
-          );
+          return <Tree ref="tree" data={data} expandAll></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -144,23 +138,22 @@ describe('Tree:treeNodeModel', () => {
 
   describe('#insertBefore', () => {
     it('向前插入数据', async () => {
-      const data = [{
-        value: 't1',
-        children: [{
-          value: 't1.1',
-        }, {
-          value: 't1.2',
-        }],
-      }];
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+            {
+              value: 't1.2',
+            },
+          ],
+        },
+      ];
       const wrapper = mount({
         render() {
-          return (
-            <Tree
-              ref="tree"
-              data={data}
-              expandAll
-            ></Tree>
-          );
+          return <Tree ref="tree" data={data} expandAll></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -181,23 +174,22 @@ describe('Tree:treeNodeModel', () => {
 
   describe('#insertAfter', () => {
     it('向后插入数据', async () => {
-      const data = [{
-        value: 't1',
-        children: [{
-          value: 't1.1',
-        }, {
-          value: 't1.2',
-        }],
-      }];
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+            {
+              value: 't1.2',
+            },
+          ],
+        },
+      ];
       const wrapper = mount({
         render() {
-          return (
-            <Tree
-              ref="tree"
-              data={data}
-              expandAll
-            ></Tree>
-          );
+          return <Tree ref="tree" data={data} expandAll></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -218,34 +210,37 @@ describe('Tree:treeNodeModel', () => {
 
   describe('#appendData', () => {
     it('添加数据', async () => {
-      const data = [{
-        value: 't1',
-        children: [{
-          value: 't1.1',
-        }],
-      }];
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+          ],
+        },
+      ];
       const wrapper = mount({
         render() {
-          return (
-            <Tree
-              ref="tree"
-              data={data}
-              expandAll
-            ></Tree>
-          );
+          return <Tree ref="tree" data={data} expandAll></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
       const node1 = tree.getItem('t1');
       const node2 = tree.getItem('t1.1');
-      node1.appendData([{
-        value: 't1.2',
-        children: [{
-          value: 't1.2.1',
-        }],
-      }, {
-        value: 't1.3',
-      }]);
+      node1.appendData([
+        {
+          value: 't1.2',
+          children: [
+            {
+              value: 't1.2.1',
+            },
+          ],
+        },
+        {
+          value: 't1.3',
+        },
+      ]);
       node2.appendData({
         value: 't1.1.1',
       });
@@ -263,24 +258,24 @@ describe('Tree:treeNodeModel', () => {
 
   describe('#getPath', () => {
     it('获取路径节点', async () => {
-      const data = [{
-        value: 't1',
-        children: [{
-          value: 't1.1',
-          children: [{
-            value: 't1.1.1',
-          }],
-        }],
-      }];
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+              children: [
+                {
+                  value: 't1.1.1',
+                },
+              ],
+            },
+          ],
+        },
+      ];
       const wrapper = mount({
         render() {
-          return (
-            <Tree
-              ref="tree"
-              data={data}
-              expandAll
-            ></Tree>
-          );
+          return <Tree ref="tree" data={data} expandAll></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -295,24 +290,24 @@ describe('Tree:treeNodeModel', () => {
 
   describe('#getParent', () => {
     it('获取指定节点的父节点', async () => {
-      const data = [{
-        value: 't1',
-        children: [{
-          value: 't1.1',
-          children: [{
-            value: 't1.1.1',
-          }],
-        }],
-      }];
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+              children: [
+                {
+                  value: 't1.1.1',
+                },
+              ],
+            },
+          ],
+        },
+      ];
       const wrapper = mount({
         render() {
-          return (
-            <Tree
-              ref="tree"
-              data={data}
-              expandAll
-            ></Tree>
-          );
+          return <Tree ref="tree" data={data} expandAll></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -329,24 +324,24 @@ describe('Tree:treeNodeModel', () => {
 
   describe('#getParents', () => {
     it('获取所有父节点', async () => {
-      const data = [{
-        value: 't1',
-        children: [{
-          value: 't1.1',
-          children: [{
-            value: 't1.1.1',
-          }],
-        }],
-      }];
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+              children: [
+                {
+                  value: 't1.1.1',
+                },
+              ],
+            },
+          ],
+        },
+      ];
       const wrapper = mount({
         render() {
-          return (
-            <Tree
-              ref="tree"
-              data={data}
-              expandAll
-            ></Tree>
-          );
+          return <Tree ref="tree" data={data} expandAll></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -360,24 +355,24 @@ describe('Tree:treeNodeModel', () => {
 
   describe('#getRoot', () => {
     it('获取根节点', async () => {
-      const data = [{
-        value: 't1',
-        children: [{
-          value: 't1.1',
-          children: [{
-            value: 't1.1.1',
-          }],
-        }],
-      }];
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+              children: [
+                {
+                  value: 't1.1.1',
+                },
+              ],
+            },
+          ],
+        },
+      ];
       const wrapper = mount({
         render() {
-          return (
-            <Tree
-              ref="tree"
-              data={data}
-              expandAll
-            ></Tree>
-          );
+          return <Tree ref="tree" data={data} expandAll></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -389,27 +384,28 @@ describe('Tree:treeNodeModel', () => {
 
   describe('#getSiblings', () => {
     it('获取兄弟节点', async () => {
-      const data = [{
-        value: 't1',
-        children: [{
-          value: 't1.1',
-        }, {
-          value: 't1.2',
-        }],
-      }, {
-        value: 't2',
-      }, {
-        value: 't3',
-      }];
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+            {
+              value: 't1.2',
+            },
+          ],
+        },
+        {
+          value: 't2',
+        },
+        {
+          value: 't3',
+        },
+      ];
       const wrapper = mount({
         render() {
-          return (
-            <Tree
-              ref="tree"
-              data={data}
-              expandAll
-            ></Tree>
-          );
+          return <Tree ref="tree" data={data} expandAll></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -426,26 +422,27 @@ describe('Tree:treeNodeModel', () => {
 
   describe('#getChildren', () => {
     it('返回基本子节点', async () => {
-      const data = [{
-        value: 't1',
-        children: [{
-          value: 't1.1',
-          children: [{
-            value: 't1.1.1',
-          }],
-        }, {
-          value: 't1.2',
-        }],
-      }];
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+              children: [
+                {
+                  value: 't1.1.1',
+                },
+              ],
+            },
+            {
+              value: 't1.2',
+            },
+          ],
+        },
+      ];
       const wrapper = mount({
         render() {
-          return (
-            <Tree
-              ref="tree"
-              data={data}
-              expandAll
-            ></Tree>
-          );
+          return <Tree ref="tree" data={data} expandAll></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -456,26 +453,27 @@ describe('Tree:treeNodeModel', () => {
     });
 
     it('返回所有子节点', async () => {
-      const data = [{
-        value: 't1',
-        children: [{
-          value: 't1.1',
-          children: [{
-            value: 't1.1.1',
-          }],
-        }, {
-          value: 't1.2',
-        }],
-      }];
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+              children: [
+                {
+                  value: 't1.1.1',
+                },
+              ],
+            },
+            {
+              value: 't1.2',
+            },
+          ],
+        },
+      ];
       const wrapper = mount({
         render() {
-          return (
-            <Tree
-              ref="tree"
-              data={data}
-              expandAll
-            ></Tree>
-          );
+          return <Tree ref="tree" data={data} expandAll></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -488,110 +486,89 @@ describe('Tree:treeNodeModel', () => {
 
   describe('#remove', () => {
     it('不传参删除节点', async () => {
-      const data = [{
-        value: 't1',
-        children: [{
-          value: 't1.1',
-        }],
-      }];
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+          ],
+        },
+      ];
       const wrapper = mount({
         render() {
-          return (
-            <Tree
-              ref="tree"
-              data={data}
-              expandAll
-            ></Tree>
-          );
+          return <Tree ref="tree" data={data} expandAll></Tree>;
         },
       });
-      expect(
-        wrapper
-          .find('[data-value="t1.1"]')
-          .exists(),
-      ).toBe(true);
+      expect(wrapper.find('[data-value="t1.1"]').exists()).toBe(true);
       const node = wrapper.vm.$refs.tree.getItem('t1.1');
       node.remove();
       await delay(1);
-      expect(
-        wrapper
-          .find('[data-value="t1.1"]')
-          .exists(),
-      ).toBe(false);
+      expect(wrapper.find('[data-value="t1.1"]').exists()).toBe(false);
     });
 
     it('传参删除节点', async () => {
-      const data = [{
-        value: 't1',
-        children: [{
-          value: 't1.1',
-        }],
-      }];
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+          ],
+        },
+      ];
       const wrapper = mount({
         render() {
-          return (
-            <Tree
-              ref="tree"
-              data={data}
-              expandAll
-            ></Tree>
-          );
+          return <Tree ref="tree" data={data} expandAll></Tree>;
         },
       });
-      expect(
-        wrapper
-          .find('[data-value="t1.1"]')
-          .exists(),
-      ).toBe(true);
+      expect(wrapper.find('[data-value="t1.1"]').exists()).toBe(true);
       const node = wrapper.vm.$refs.tree.getItem('t1');
       node.remove('t1.1');
       await delay(1);
-      expect(
-        wrapper
-          .find('[data-value="t1.1"]')
-          .exists(),
-      ).toBe(false);
+      expect(wrapper.find('[data-value="t1.1"]').exists()).toBe(false);
     });
 
     it('删除不存在的节点', async () => {
-      const data = [{
-        value: 't1',
-        children: [{
-          value: 't1.1',
-        }],
-      }];
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+          ],
+        },
+      ];
       const wrapper = mount({
         render() {
-          return (
-            <Tree
-              ref="tree"
-              data={data}
-              expandAll
-            ></Tree>
-          );
+          return <Tree ref="tree" data={data} expandAll></Tree>;
         },
       });
       const node = wrapper.vm.$refs.tree.getItem('t1');
+      // 这会产生一个警告信息
       node.remove('t1.2');
       await delay(1);
-      expect(
-        wrapper
-          .find('[data-value="t1.1"]')
-          .exists(),
-      ).toBe(true);
+      expect(wrapper.find('[data-value="t1.1"]').exists()).toBe(true);
     });
   });
 
   describe('#setData', () => {
     it('设置节点数据', async () => {
-      const data = [{
-        value: 't1',
-        info: 'a',
-        children: [{
-          value: 't1.1',
-          info: 'b',
-        }],
-      }];
+      const data = [
+        {
+          value: 't1',
+          info: 'a',
+          children: [
+            {
+              value: 't1.1',
+              info: 'b',
+            },
+          ],
+        },
+      ];
       const wrapper = mount({
         methods: {
           label(createElement, node) {
@@ -599,14 +576,7 @@ describe('Tree:treeNodeModel', () => {
           },
         },
         render() {
-          return (
-            <Tree
-              ref="tree"
-              label={this.label}
-              data={data}
-              expandAll
-            ></Tree>
-          );
+          return <Tree ref="tree" label={this.label} data={data} expandAll></Tree>;
         },
       });
       const el = wrapper.find('[data-value="t1.1"]');

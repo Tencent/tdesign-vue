@@ -8,7 +8,7 @@ exports[`Loading attach demo works fine 1`] = `
     class="loading-attach-demo__title"
     id="alice"
   >
-    Hello, I'm Alice.
+    Hello, I'm Alice. I'm going to be a front-end developer.
   </div>
    
   <div
@@ -34,6 +34,21 @@ exports[`Loading attach demo works fine 1`] = `
         />
       </foreignobject>
     </svg>
+  </div>
+   
+  <div>
+    <div
+      class="t-switch t-size-m t-is-checked"
+    >
+      <span
+        class="t-switch__handle"
+      />
+      <div
+        class="t-switch__content t-size-m"
+      >
+        显示
+      </div>
+    </div>
   </div>
 </div>
 `;

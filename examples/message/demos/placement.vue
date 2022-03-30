@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="t-message-offset">
-      <t-input placeholder='请输入横向偏移量' v-model="offsetX"></t-input>
-      <t-input placeholder='请输入纵向偏移量' v-model="offsetY"></t-input>
+      <t-input placeholder="请输入横向偏移量" v-model="offsetX"></t-input>
+      <t-input placeholder="请输入纵向偏移量" v-model="offsetY"></t-input>
     </div>
     <div class="tdesign-tooltip-placement">
       <t-button variant="outline" @click="$message.success(msgList[0])" class="placement-center">center</t-button>
@@ -11,9 +11,15 @@
       <t-button variant="outline" @click="$message.loading(msgList[3])" class="placement-right">right</t-button>
       <t-button variant="outline" @click="$message.warning(msgList[4])" class="placement-bottom">bottom</t-button>
       <t-button variant="outline" @click="$message.error(msgList[5])" class="placement-top-left">top-left</t-button>
-      <t-button variant="outline" @click="$message.question(msgList[6])" class="placement-top-right">top-right</t-button>
-      <t-button variant="outline" @click="$message.warning(msgList[7])" class="placement-bottom-left">bottom-left</t-button>
-      <t-button variant="outline" @click="$message.warning(msgList[8])" class="placement-bottom-right">bottom-right</t-button>
+      <t-button variant="outline" @click="$message.question(msgList[6])" class="placement-top-right"
+      >top-right</t-button
+      >
+      <t-button variant="outline" @click="$message.warning(msgList[7])" class="placement-bottom-left"
+      >bottom-left</t-button
+      >
+      <t-button variant="outline" @click="$message.warning(msgList[8])" class="placement-bottom-right"
+      >bottom-right</t-button
+      >
     </div>
   </div>
 </template>
@@ -48,67 +54,72 @@ export default {
 </script>
 
 <style scoped>
-  .t-button {
-    margin-right: 16px;
-    margin-bottom: 16px;
-  }
-  .t-message-offset .t-input {
-    width: 130px;
-    display: inline-block;
-    margin-right: 20px;
-    margin-bottom: 36px;
-  }
+.t-button {
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
 
-  .t-message-placement {
+.t-message-offset > .t-input__wrap {
+  width: 130px;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 36px;
+}
+
+.t-message-placement {
   margin: 0 auto;
   width: 500px;
   height: 260px;
   position: relative;
-  }
-  .placement-top {
-    position: absolute;
-    top: 0;
-    left: 42%;
-  }
-  .placement-top-left {
-    position: absolute;
-    top: 0;
-    left: 70px;
-  }
-  .placement-top-right {
-    position: absolute;
-    top: 0;
-    right: 70px;
-  }
-  .placement-bottom {
-    position: absolute;
-    bottom: 0;
-    left: 42%;
-  }
-  .placement-bottom-left {
-    position: absolute;
-    bottom: 0;
-    left: 70px;
-    width: 120px;
-  }
-  .placement-bottom-right {
-    position: absolute;
-    bottom: 0;
-    right: 70px;
-  }
-  .placement-left {
-    position: absolute;
-    left: 0;
-    top: 42%;
-  }
-  .placement-right {
-    position: absolute;
-    right: 0;
-    top: 42%;
-  }
-  .placement-center {
-    position: absolute;
-    right: 42%;
-    bottom: 42%;
-  }
+}
+.placement-top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.placement-top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.placement-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.placement-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.placement-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.placement-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.placement-left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.placement-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.placement-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 </style>

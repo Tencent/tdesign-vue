@@ -13,8 +13,8 @@ disabled | Boolean | false | 是否禁用组件 | N
 empty | String / Slot / Function | '' | 当下拉列表为空时显示的内容。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 filter | Function | - | 自定义过滤方法，用于对现有数据进行搜索过滤，判断是否过滤某一项数据。TS 类型：`(filterWords: string, option: T) => boolean | Promise<boolean>` | N
 filterable | Boolean | false | 是否可搜索 | N
-inputProps | Object | - | 透传 Input 组件全部属性。TS 类型：`InputProps`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts) | N
-keys | Object | - | 用来定义 value / label 在 `options` 中对应的字段别名。TS 类型：`SelectKeysType`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts) | N
+inputProps | Object | - | 透传 Input 组件全部属性。TS 类型：`InputProps`，[Input API Documents](./input?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts) | N
+keys | Object | - | 用来定义 value / label 在 `options` 中对应的字段别名。TS 类型：`SelectKeysType` `interface SelectKeysType { value?: string; label?: string }`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts) | N
 loading | Boolean | false | 是否为加载状态 | N
 loadingText | String / Slot / Function | '' | 远程加载时显示的文字，支持自定义。如加上超链接。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 max | Number | 0 | 用于控制多选数量，值为 0 则不限制 | N
@@ -24,13 +24,13 @@ options | Array | [] | 数据化配置选项内容。TS 类型：`Array<T>` | N
 panelBottomContent | String / Slot / Function | - | 面板内的底部内容。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 panelTopContent | String / Slot / Function | - | 面板内的顶部内容。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 placeholder | String | undefined | 占位符 | N
-popupProps | Object | - | 透传给 popup 组件的参数。TS 类型：`PopupProps`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts) | N
+popupProps | Object | - | 透传给 popup 组件的参数。TS 类型：`PopupProps`，[Popup API Documents](./popup?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts) | N
 prefixIcon | Slot / Function | - | 组件前置图标。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 reserveKeyword | Boolean | false | 多选且可搜索时，是否在选中一个选项后保留当前的搜索关键词 | N
 showArrow | Boolean | true | 是否显示右侧箭头，默认显示 | N
 size | String | medium | 组件尺寸。可选项：small / medium / large。TS 类型：`SizeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-value | String / Number / Object / Array | - | 选中值。支持语法糖 `v-model`。TS 类型：`SelectValue`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts) | N
-defaultValue | String / Number / Object / Array | - | 选中值。非受控属性。TS 类型：`SelectValue`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts) | N
+value | String / Number / Object / Array | - | 选中值。支持语法糖 `v-model`。TS 类型：`SelectValue` `type SelectValue<T extends SelectOption = SelectOption> = string | number | T | Array<SelectValue<T>>`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts) | N
+defaultValue | String / Number / Object / Array | - | 选中值。非受控属性。TS 类型：`SelectValue` `type SelectValue<T extends SelectOption = SelectOption> = string | number | T | Array<SelectValue<T>>`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts) | N
 valueDisplay | Slot / Function | - | 自定义选中项呈现方式。TS 类型：`TNode<{ value: T[]; onClose: () => void }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 valueType | String | value | 用于控制选中值的类型。假设数据选项为：`[{ label: '姓名', value: 'name' }]`，value 表示值仅返回数据选项中的 value， object 表示值返回全部数据。。可选项：value/object | N
 onBlur | Function |  | TS 类型：`(context: { value: SelectValue; e: FocusEvent | KeyboardEvent }) => void`<br/>输入框失去焦点时触发 | N

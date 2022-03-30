@@ -33,6 +33,10 @@ describe('Progress', () => {
         });
         const lineClass = lineWrapper.element.querySelector('.t-progress__inner');
 
+        expect(lineClass !== undefined && lineClass !== null).toBe(true);
+        expect(lineWrapper).toMatchSnapshot();
+
+        // < 10% plump
         const plumpWrapper = mount({
           render() {
             return <Progress theme={'plump'}></Progress>;
@@ -40,16 +44,39 @@ describe('Progress', () => {
         });
         const plumpClass = plumpWrapper.element.querySelector('.t-progress__inner');
 
-        expect(lineClass !== undefined && lineClass !== null).toBe(true);
-        expect(lineWrapper).toMatchSnapshot();
-
         expect(plumpClass !== undefined && plumpClass !== null).toBe(true);
         expect(plumpWrapper).toMatchSnapshot();
+        expect(plumpWrapper.element.querySelector('.t-progress__info').innerHTML).toBe('0%');
+
+        // =10% plump
+        const plump10Wrapper = mount({
+          render() {
+            return <Progress theme={'plump'} percentage={10}></Progress>;
+          },
+        });
+        const plump10Class = plump10Wrapper.element.querySelector('.t-progress__inner');
+
+        expect(plump10Class !== undefined && plump10Class !== null).toBe(true);
+        expect(plump10Wrapper).toMatchSnapshot();
+        expect(plump10Wrapper.element.querySelector('.t-progress__info').innerHTML).toBe('10%');
+
+        // >10% plump
+        const plump11Wrapper = mount({
+          render() {
+            return <Progress theme={'plump'} percentage={11}></Progress>;
+          },
+        });
+        const plump11Class = plump11Wrapper.element.querySelector('.t-progress__inner');
+
+        expect(plump11Class !== undefined && plump11Class !== null).toBe(true);
+        expect(plump11Wrapper).toMatchSnapshot();
+        expect(plump11Class.querySelector('.t-progress__info').innerHTML).toBe('11%');
       });
+
       it(':theme circle progress has t-progress__circle-outer and t-progress__circle-inner class', () => {
         const wrapper = mount({
           render() {
-            return <Progress theme={'circle'}></Progress>;
+            return <Progress theme={'circle'} percentage={'10'}></Progress>;
           },
         });
         const outerClass = wrapper.element.querySelector('.t-progress__circle-outer');
@@ -90,6 +117,7 @@ describe('Progress', () => {
       });
     });
 
+    // label相关单测
     describe(':label', () => {
       it(':label is String, equal to "custom label test"', () => {
         const wrapper = mount({
@@ -148,6 +176,7 @@ describe('Progress', () => {
       });
     });
 
+    // color相关单测
     describe(':color', () => {
       it(':color is String, equal to "#aaa"', () => {
         const wrapper = mount({
@@ -188,6 +217,7 @@ describe('Progress', () => {
       });
     });
 
+    // strokeWidth 相关单测
     describe(':strokeWidth', () => {
       it(':strokeWidth is String, equal to "50px"', () => {
         const wrapper = mount({
@@ -209,6 +239,7 @@ describe('Progress', () => {
       });
     });
 
+    // size相关单测
     describe(':size', () => {
       Object.values(CIRCLE_SIZE).forEach((size) => {
         it(`:size is String, equal to "${size}"`, () => {

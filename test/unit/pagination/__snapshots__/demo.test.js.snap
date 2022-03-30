@@ -14,109 +14,35 @@ exports[`Pagination base demo works fine 1`] = `
       class="t-select__wrap t-pagination__select"
     >
       <div
-        class="t-popup__reference t-select__popup-reference"
+        class="t-select t-select-polyfill t-size-m t-select__popup-reference"
       >
-        <transition-stub
-          appear="true"
-          name="t-popup--animation"
+        <span
+          class="t-tag t-tag--default t-size-m t-tag--dark"
+          style="display: none;"
         >
-          <div
-            aria-hidden="true"
-            class="t-popup"
-            role="tooltip"
-            style="display: none;"
-          >
-            <div
-              class="t-popup__content  t-select__dropdown narrow-scrollbar"
-            >
-              <div>
-                <ul
-                  class="t-select__create-option t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-size-m t-select__create-option--special"
-                    title=""
-                  >
-                    <span />
-                  </li>
-                </ul>
-                <li
-                  class="t-select__empty t-size-m"
-                >
-                  暂无数据
-                </li>
-                <ul
-                  class="t-select__groups t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-is-selected t-size-m"
-                    title="5 条/页"
-                  >
-                    <span>
-                      5 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="10 条/页"
-                  >
-                    <span>
-                      10 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="20 条/页"
-                  >
-                    <span>
-                      20 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="50 条/页"
-                  >
-                    <span>
-                      50 条/页
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </transition-stub>
-        <div
-          class="t-select t-size-m"
+          +0
+        </span>
+        <span
+          class="t-select__single"
+          title="5"
         >
-          <span
-            class="t-select__placeholder"
-          >
-             请选择
-          </span>
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
-            style="display: none;"
-          >
-            +0
-          </span>
-          <svg
-            class="t-fake-arrow t-select__right-icon"
-            fill="none"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-        </div>
+          5
+        </span>
+        <svg
+          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+            stroke="black"
+            stroke-opacity="0.9"
+            stroke-width="1.3"
+          />
+        </svg>
       </div>
     </div>
     <div
@@ -214,109 +140,35 @@ exports[`Pagination base demo works fine 1`] = `
       class="t-select__wrap t-pagination__select"
     >
       <div
-        class="t-popup__reference t-select__popup-reference"
+        class="t-select t-select-polyfill t-size-m t-select__popup-reference"
       >
-        <transition-stub
-          appear="true"
-          name="t-popup--animation"
+        <span
+          class="t-tag t-tag--default t-size-m t-tag--dark"
+          style="display: none;"
         >
-          <div
-            aria-hidden="true"
-            class="t-popup"
-            role="tooltip"
-            style="display: none;"
-          >
-            <div
-              class="t-popup__content  t-select__dropdown narrow-scrollbar"
-            >
-              <div>
-                <ul
-                  class="t-select__create-option t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-size-m t-select__create-option--special"
-                    title=""
-                  >
-                    <span />
-                  </li>
-                </ul>
-                <li
-                  class="t-select__empty t-size-m"
-                >
-                  暂无数据
-                </li>
-                <ul
-                  class="t-select__groups t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-size-m"
-                    title="5 条/页"
-                  >
-                    <span>
-                      5 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-is-selected t-size-m"
-                    title="10 条/页"
-                  >
-                    <span>
-                      10 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="20 条/页"
-                  >
-                    <span>
-                      20 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="50 条/页"
-                  >
-                    <span>
-                      50 条/页
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </transition-stub>
-        <div
-          class="t-select t-size-m"
+          +0
+        </span>
+        <span
+          class="t-select__single"
+          title="10"
         >
-          <span
-            class="t-select__placeholder"
-          >
-             请选择
-          </span>
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
-            style="display: none;"
-          >
-            +0
-          </span>
-          <svg
-            class="t-fake-arrow t-select__right-icon"
-            fill="none"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-        </div>
+          10
+        </span>
+        <svg
+          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+            stroke="black"
+            stroke-opacity="0.9"
+            stroke-width="1.3"
+          />
+        </svg>
       </div>
     </div>
     <div
@@ -386,30 +238,9 @@ exports[`Pagination customizable demo works fine 1`] = `
   <div class="t-pagination t-size-m" show-sizer="">
     <div class="t-pagination__total">共 200 项数据</div>
     <div class="t-select__wrap t-pagination__select">
-      <div class="t-popup__reference t-select__popup-reference">
-        <transition-stub name="t-popup--animation" appear="true">
-          <div role="tooltip" aria-hidden="true" class="t-popup" style="display: none;">
-            <div class="t-popup__content  t-select__dropdown narrow-scrollbar">
-              <div>
-                <ul class="t-select__create-option t-select__list" style="display: none;">
-                  <li title="" class="t-select-option t-size-m t-select__create-option--special"><span></span></li>
-                </ul>
-                <li class="t-select__empty t-size-m">暂无数据</li>
-                <ul class="t-select__groups t-select__list" style="display: none;">
-                  <li title="10 条/页" class="t-select-option t-size-m"><span>10 条/页</span></li>
-                  <li title="20 条/页" class="t-select-option t-is-selected t-size-m"><span>20 条/页</span></li>
-                  <li title="30 条/页" class="t-select-option t-size-m"><span>30 条/页</span></li>
-                  <li title="100 条/页" class="t-select-option t-size-m"><span>100 条/页</span></li>
-                  <li title="200 条/页" class="t-select-option t-size-m"><span>200 条/页</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </transition-stub>
-        <div class="t-select t-size-m"><span class="t-select__placeholder"> 请选择</span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon">
-            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-          </svg></div>
-      </div>
+      <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;">+0</span><span title="20" class="t-select__single">20</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
+          <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+        </svg></div>
     </div>
     <div disabled="disabled" class="t-pagination__btn t-pagination__btn-prev t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
         <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
@@ -430,7 +261,9 @@ exports[`Pagination customizable demo works fine 1`] = `
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
       </svg></div>
     <div class="t-pagination__jump">跳至<div class="t-input-number t-size-m t-input-number--normal t-pagination__input">
-        <div class="t-input"><input autocomplete="off" ref="refInputElem" placeholder="" class="t-input__inner"></div>
+        <div class="t-input__wrap">
+          <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="" type="text" unselectable="off" class="t-input__inner"></div>
+        </div>
       </div>页</div>
   </div>
 </div>
@@ -451,109 +284,35 @@ exports[`Pagination disabled demo works fine 1`] = `
       class="t-select__wrap t-pagination__select"
     >
       <div
-        class="t-popup__reference t-select__popup-reference"
+        class="t-select t-select-polyfill t-is-disabled t-size-m t-select__popup-reference"
       >
-        <transition-stub
-          appear="true"
-          name="t-popup--animation"
+        <span
+          class="t-tag t-tag--default t-size-m t-tag--dark"
+          style="display: none;"
         >
-          <div
-            aria-hidden="true"
-            class="t-popup"
-            role="tooltip"
-            style="display: none;"
-          >
-            <div
-              class="t-popup__content t-is-disabled  t-select__dropdown narrow-scrollbar"
-            >
-              <div>
-                <ul
-                  class="t-select__create-option t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-size-m t-select__create-option--special"
-                    title=""
-                  >
-                    <span />
-                  </li>
-                </ul>
-                <li
-                  class="t-select__empty t-size-m"
-                >
-                  暂无数据
-                </li>
-                <ul
-                  class="t-select__groups t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-is-selected t-size-m"
-                    title="5 条/页"
-                  >
-                    <span>
-                      5 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="10 条/页"
-                  >
-                    <span>
-                      10 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="20 条/页"
-                  >
-                    <span>
-                      20 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="50 条/页"
-                  >
-                    <span>
-                      50 条/页
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </transition-stub>
-        <div
-          class="t-select t-is-disabled t-size-m"
+          +0
+        </span>
+        <span
+          class="t-select__single"
+          title="5"
         >
-          <span
-            class="t-select__placeholder"
-          >
-             请选择
-          </span>
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
-            style="display: none;"
-          >
-            +0
-          </span>
-          <svg
-            class="t-fake-arrow t-select__right-icon"
-            fill="none"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-        </div>
+          5
+        </span>
+        <svg
+          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+            stroke="black"
+            stroke-opacity="0.9"
+            stroke-width="1.3"
+          />
+        </svg>
       </div>
     </div>
     <div
@@ -651,14 +410,20 @@ exports[`Pagination disabled demo works fine 1`] = `
         class="t-input-number t-size-m t-input-number--normal t-pagination__input"
       >
         <div
-          class="t-input"
+          class="t-input__wrap"
         >
-          <input
-            autocomplete="off"
-            class="t-input__inner"
-            placeholder=""
+          <div
+            class="t-input t-size-m"
             ref="refInputElem"
-          />
+          >
+            <input
+              autocomplete="off"
+              class="t-input__inner"
+              placeholder=""
+              type="text"
+              unselectable="off"
+            />
+          </div>
         </div>
       </div>
       页
@@ -681,109 +446,35 @@ exports[`Pagination few demo works fine 1`] = `
       class="t-select__wrap t-pagination__select"
     >
       <div
-        class="t-popup__reference t-select__popup-reference"
+        class="t-select t-select-polyfill t-size-m t-select__popup-reference"
       >
-        <transition-stub
-          appear="true"
-          name="t-popup--animation"
+        <span
+          class="t-tag t-tag--default t-size-m t-tag--dark"
+          style="display: none;"
         >
-          <div
-            aria-hidden="true"
-            class="t-popup"
-            role="tooltip"
-            style="display: none;"
-          >
-            <div
-              class="t-popup__content  t-select__dropdown narrow-scrollbar"
-            >
-              <div>
-                <ul
-                  class="t-select__create-option t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-size-m t-select__create-option--special"
-                    title=""
-                  >
-                    <span />
-                  </li>
-                </ul>
-                <li
-                  class="t-select__empty t-size-m"
-                >
-                  暂无数据
-                </li>
-                <ul
-                  class="t-select__groups t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-size-m"
-                    title="5 条/页"
-                  >
-                    <span>
-                      5 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-is-selected t-size-m"
-                    title="10 条/页"
-                  >
-                    <span>
-                      10 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="20 条/页"
-                  >
-                    <span>
-                      20 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="50 条/页"
-                  >
-                    <span>
-                      50 条/页
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </transition-stub>
-        <div
-          class="t-select t-size-m"
+          +0
+        </span>
+        <span
+          class="t-select__single"
+          title="10"
         >
-          <span
-            class="t-select__placeholder"
-          >
-             请选择
-          </span>
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
-            style="display: none;"
-          >
-            +0
-          </span>
-          <svg
-            class="t-fake-arrow t-select__right-icon"
-            fill="none"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-        </div>
+          10
+        </span>
+        <svg
+          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+            stroke="black"
+            stroke-opacity="0.9"
+            stroke-width="1.3"
+          />
+        </svg>
       </div>
     </div>
     <div
@@ -867,109 +558,35 @@ exports[`Pagination jump demo works fine 1`] = `
       class="t-select__wrap t-pagination__select"
     >
       <div
-        class="t-popup__reference t-select__popup-reference"
+        class="t-select t-select-polyfill t-size-m t-select__popup-reference"
       >
-        <transition-stub
-          appear="true"
-          name="t-popup--animation"
+        <span
+          class="t-tag t-tag--default t-size-m t-tag--dark"
+          style="display: none;"
         >
-          <div
-            aria-hidden="true"
-            class="t-popup"
-            role="tooltip"
-            style="display: none;"
-          >
-            <div
-              class="t-popup__content  t-select__dropdown narrow-scrollbar"
-            >
-              <div>
-                <ul
-                  class="t-select__create-option t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-size-m t-select__create-option--special"
-                    title=""
-                  >
-                    <span />
-                  </li>
-                </ul>
-                <li
-                  class="t-select__empty t-size-m"
-                >
-                  暂无数据
-                </li>
-                <ul
-                  class="t-select__groups t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-size-m"
-                    title="5 条/页"
-                  >
-                    <span>
-                      5 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="10 条/页"
-                  >
-                    <span>
-                      10 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-is-selected t-size-m"
-                    title="20 条/页"
-                  >
-                    <span>
-                      20 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="50 条/页"
-                  >
-                    <span>
-                      50 条/页
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </transition-stub>
-        <div
-          class="t-select t-size-m"
+          +0
+        </span>
+        <span
+          class="t-select__single"
+          title="20"
         >
-          <span
-            class="t-select__placeholder"
-          >
-             请选择
-          </span>
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
-            style="display: none;"
-          >
-            +0
-          </span>
-          <svg
-            class="t-fake-arrow t-select__right-icon"
-            fill="none"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-        </div>
+          20
+        </span>
+        <svg
+          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+            stroke="black"
+            stroke-opacity="0.9"
+            stroke-width="1.3"
+          />
+        </svg>
       </div>
     </div>
     <div
@@ -1049,14 +666,20 @@ exports[`Pagination jump demo works fine 1`] = `
         class="t-input-number t-size-m t-input-number--normal t-pagination__input"
       >
         <div
-          class="t-input"
+          class="t-input__wrap"
         >
-          <input
-            autocomplete="off"
-            class="t-input__inner"
-            placeholder=""
+          <div
+            class="t-input t-size-m"
             ref="refInputElem"
-          />
+          >
+            <input
+              autocomplete="off"
+              class="t-input__inner"
+              placeholder=""
+              type="text"
+              unselectable="off"
+            />
+          </div>
         </div>
       </div>
       页
@@ -1079,109 +702,35 @@ exports[`Pagination mini works fine 1`] = `
       class="t-select__wrap t-pagination__select"
     >
       <div
-        class="t-popup__reference t-select__popup-reference"
+        class="t-select t-select-polyfill t-size-s t-select__popup-reference"
       >
-        <transition-stub
-          appear="true"
-          name="t-popup--animation"
+        <span
+          class="t-tag t-tag--default t-size-s t-tag--dark"
+          style="display: none;"
         >
-          <div
-            aria-hidden="true"
-            class="t-popup"
-            role="tooltip"
-            style="display: none;"
-          >
-            <div
-              class="t-popup__content  t-select__dropdown narrow-scrollbar"
-            >
-              <div>
-                <ul
-                  class="t-select__create-option t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-size-s t-select__create-option--special"
-                    title=""
-                  >
-                    <span />
-                  </li>
-                </ul>
-                <li
-                  class="t-select__empty t-size-s"
-                >
-                  暂无数据
-                </li>
-                <ul
-                  class="t-select__groups t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-is-selected t-size-s"
-                    title="5 条/页"
-                  >
-                    <span>
-                      5 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-s"
-                    title="10 条/页"
-                  >
-                    <span>
-                      10 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-s"
-                    title="20 条/页"
-                  >
-                    <span>
-                      20 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-s"
-                    title="50 条/页"
-                  >
-                    <span>
-                      50 条/页
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </transition-stub>
-        <div
-          class="t-select t-size-s"
+          +0
+        </span>
+        <span
+          class="t-select__single"
+          title="5"
         >
-          <span
-            class="t-select__placeholder"
-          >
-             请选择
-          </span>
-          <span
-            class="t-tag t-tag--default t-size-s t-tag--dark"
-            style="display: none;"
-          >
-            +0
-          </span>
-          <svg
-            class="t-fake-arrow t-select__right-icon"
-            fill="none"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-        </div>
+          5
+        </span>
+        <svg
+          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+            stroke="black"
+            stroke-opacity="0.9"
+            stroke-width="1.3"
+          />
+        </svg>
       </div>
     </div>
     <div
@@ -1288,109 +837,35 @@ exports[`Pagination more works fine 1`] = `
       class="t-select__wrap t-pagination__select"
     >
       <div
-        class="t-popup__reference t-select__popup-reference"
+        class="t-select t-select-polyfill t-size-m t-select__popup-reference"
       >
-        <transition-stub
-          appear="true"
-          name="t-popup--animation"
+        <span
+          class="t-tag t-tag--default t-size-m t-tag--dark"
+          style="display: none;"
         >
-          <div
-            aria-hidden="true"
-            class="t-popup"
-            role="tooltip"
-            style="display: none;"
-          >
-            <div
-              class="t-popup__content  t-select__dropdown narrow-scrollbar"
-            >
-              <div>
-                <ul
-                  class="t-select__create-option t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-size-m t-select__create-option--special"
-                    title=""
-                  >
-                    <span />
-                  </li>
-                </ul>
-                <li
-                  class="t-select__empty t-size-m"
-                >
-                  暂无数据
-                </li>
-                <ul
-                  class="t-select__groups t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-is-selected t-size-m"
-                    title="5 条/页"
-                  >
-                    <span>
-                      5 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="10 条/页"
-                  >
-                    <span>
-                      10 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="20 条/页"
-                  >
-                    <span>
-                      20 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="50 条/页"
-                  >
-                    <span>
-                      50 条/页
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </transition-stub>
-        <div
-          class="t-select t-size-m"
+          +0
+        </span>
+        <span
+          class="t-select__single"
+          title="5"
         >
-          <span
-            class="t-select__placeholder"
-          >
-             请选择
-          </span>
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
-            style="display: none;"
-          >
-            +0
-          </span>
-          <svg
-            class="t-fake-arrow t-select__right-icon"
-            fill="none"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-        </div>
+          5
+        </span>
+        <svg
+          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+            stroke="black"
+            stroke-opacity="0.9"
+            stroke-width="1.3"
+          />
+        </svg>
       </div>
     </div>
     <div
@@ -1519,109 +994,35 @@ exports[`Pagination page-num demo works fine 1`] = `
       class="t-select__wrap t-pagination__select"
     >
       <div
-        class="t-popup__reference t-select__popup-reference"
+        class="t-select t-select-polyfill t-size-m t-select__popup-reference"
       >
-        <transition-stub
-          appear="true"
-          name="t-popup--animation"
+        <span
+          class="t-tag t-tag--default t-size-m t-tag--dark"
+          style="display: none;"
         >
-          <div
-            aria-hidden="true"
-            class="t-popup"
-            role="tooltip"
-            style="display: none;"
-          >
-            <div
-              class="t-popup__content  t-select__dropdown narrow-scrollbar"
-            >
-              <div>
-                <ul
-                  class="t-select__create-option t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-size-m t-select__create-option--special"
-                    title=""
-                  >
-                    <span />
-                  </li>
-                </ul>
-                <li
-                  class="t-select__empty t-size-m"
-                >
-                  暂无数据
-                </li>
-                <ul
-                  class="t-select__groups t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-size-m"
-                    title="每页 10 条"
-                  >
-                    <span>
-                      每页 10 条
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-is-selected t-size-m"
-                    title="每页 30 条"
-                  >
-                    <span>
-                      每页 30 条
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="每页 50 条"
-                  >
-                    <span>
-                      每页 50 条
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="每页 100 条"
-                  >
-                    <span>
-                      每页 100 条
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </transition-stub>
-        <div
-          class="t-select t-size-m"
+          +0
+        </span>
+        <span
+          class="t-select__single"
+          title="30"
         >
-          <span
-            class="t-select__placeholder"
-          >
-             请选择
-          </span>
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
-            style="display: none;"
-          >
-            +0
-          </span>
-          <svg
-            class="t-fake-arrow t-select__right-icon"
-            fill="none"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-        </div>
+          30
+        </span>
+        <svg
+          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+            stroke="black"
+            stroke-opacity="0.9"
+            stroke-width="1.3"
+          />
+        </svg>
       </div>
     </div>
     <div
@@ -1728,109 +1129,35 @@ exports[`Pagination simple demo works fine 1`] = `
       class="t-select__wrap t-pagination__select"
     >
       <div
-        class="t-popup__reference t-select__popup-reference"
+        class="t-select t-select-polyfill t-size-m t-select__popup-reference"
       >
-        <transition-stub
-          appear="true"
-          name="t-popup--animation"
+        <span
+          class="t-tag t-tag--default t-size-m t-tag--dark"
+          style="display: none;"
         >
-          <div
-            aria-hidden="true"
-            class="t-popup"
-            role="tooltip"
-            style="display: none;"
-          >
-            <div
-              class="t-popup__content  t-select__dropdown narrow-scrollbar"
-            >
-              <div>
-                <ul
-                  class="t-select__create-option t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-size-m t-select__create-option--special"
-                    title=""
-                  >
-                    <span />
-                  </li>
-                </ul>
-                <li
-                  class="t-select__empty t-size-m"
-                >
-                  暂无数据
-                </li>
-                <ul
-                  class="t-select__groups t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-is-selected t-size-m"
-                    title="5 条/页"
-                  >
-                    <span>
-                      5 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="10 条/页"
-                  >
-                    <span>
-                      10 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="20 条/页"
-                  >
-                    <span>
-                      20 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="50 条/页"
-                  >
-                    <span>
-                      50 条/页
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </transition-stub>
-        <div
-          class="t-select t-size-m"
+          +0
+        </span>
+        <span
+          class="t-select__single"
+          title="5"
         >
-          <span
-            class="t-select__placeholder"
-          >
-             请选择
-          </span>
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
-            style="display: none;"
-          >
-            +0
-          </span>
-          <svg
-            class="t-fake-arrow t-select__right-icon"
-            fill="none"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-        </div>
+          5
+        </span>
+        <svg
+          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+            stroke="black"
+            stroke-opacity="0.9"
+            stroke-width="1.3"
+          />
+        </svg>
       </div>
     </div>
     <div
@@ -1855,232 +1182,35 @@ exports[`Pagination simple demo works fine 1`] = `
       class="t-select__wrap t-pagination__select"
     >
       <div
-        class="t-popup__reference t-select__popup-reference"
+        class="t-select t-select-polyfill t-size-m t-select__popup-reference"
       >
-        <transition-stub
-          appear="true"
-          name="t-popup--animation"
+        <span
+          class="t-tag t-tag--default t-size-m t-tag--dark"
+          style="display: none;"
         >
-          <div
-            aria-hidden="true"
-            class="t-popup"
-            role="tooltip"
-            style="display: none;"
-          >
-            <div
-              class="t-popup__content  t-select__dropdown narrow-scrollbar"
-            >
-              <div>
-                <ul
-                  class="t-select__create-option t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-size-m t-select__create-option--special"
-                    title=""
-                  >
-                    <span />
-                  </li>
-                </ul>
-                <ul
-                  class="t-select__list"
-                >
-                  <li
-                    class="t-select-option t-is-selected t-size-m"
-                    title="1/20"
-                  >
-                    <span>
-                      1/20
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="2/20"
-                  >
-                    <span>
-                      2/20
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="3/20"
-                  >
-                    <span>
-                      3/20
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="4/20"
-                  >
-                    <span>
-                      4/20
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="5/20"
-                  >
-                    <span>
-                      5/20
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="6/20"
-                  >
-                    <span>
-                      6/20
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="7/20"
-                  >
-                    <span>
-                      7/20
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="8/20"
-                  >
-                    <span>
-                      8/20
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="9/20"
-                  >
-                    <span>
-                      9/20
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="10/20"
-                  >
-                    <span>
-                      10/20
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="11/20"
-                  >
-                    <span>
-                      11/20
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="12/20"
-                  >
-                    <span>
-                      12/20
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="13/20"
-                  >
-                    <span>
-                      13/20
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="14/20"
-                  >
-                    <span>
-                      14/20
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="15/20"
-                  >
-                    <span>
-                      15/20
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="16/20"
-                  >
-                    <span>
-                      16/20
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="17/20"
-                  >
-                    <span>
-                      17/20
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="18/20"
-                  >
-                    <span>
-                      18/20
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="19/20"
-                  >
-                    <span>
-                      19/20
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="20/20"
-                  >
-                    <span>
-                      20/20
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </transition-stub>
-        <div
-          class="t-select t-size-m"
+          +0
+        </span>
+        <span
+          class="t-select__single"
+          title="1/20"
         >
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
-            style="display: none;"
-          >
-            +0
-          </span>
-          <span
-            class="t-select__single"
-            title="1/20"
-          >
-            1/20
-          </span>
-          <svg
-            class="t-fake-arrow t-select__right-icon"
-            fill="none"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-        </div>
+          1/20
+        </span>
+        <svg
+          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+            stroke="black"
+            stroke-opacity="0.9"
+            stroke-width="1.3"
+          />
+        </svg>
       </div>
     </div>
     <div
@@ -2117,109 +1247,35 @@ exports[`Pagination simple-mini demo works fine 1`] = `
     class="t-select__wrap t-pagination__select"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-s t-select__popup-reference"
     >
-      <transition-stub
-        appear="true"
-        name="t-popup--animation"
+      <span
+        class="t-tag t-tag--default t-size-s t-tag--dark"
+        style="display: none;"
       >
-        <div
-          aria-hidden="true"
-          class="t-popup"
-          role="tooltip"
-          style="display: none;"
-        >
-          <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
-          >
-            <div>
-              <ul
-                class="t-select__create-option t-select__list"
-                style="display: none;"
-              >
-                <li
-                  class="t-select-option t-size-s t-select__create-option--special"
-                  title=""
-                >
-                  <span />
-                </li>
-              </ul>
-              <li
-                class="t-select__empty t-size-s"
-              >
-                暂无数据
-              </li>
-              <ul
-                class="t-select__groups t-select__list"
-                style="display: none;"
-              >
-                <li
-                  class="t-select-option t-is-selected t-size-s"
-                  title="5 条/页"
-                >
-                  <span>
-                    5 条/页
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="10 条/页"
-                >
-                  <span>
-                    10 条/页
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="20 条/页"
-                >
-                  <span>
-                    20 条/页
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="50 条/页"
-                >
-                  <span>
-                    50 条/页
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </transition-stub>
-      <div
-        class="t-select t-size-s"
+        +0
+      </span>
+      <span
+        class="t-select__single"
+        title="5"
       >
-        <span
-          class="t-select__placeholder"
-        >
-           请选择
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-s t-tag--dark"
-          style="display: none;"
-        >
-          +0
-        </span>
-        <svg
-          class="t-fake-arrow t-select__right-icon"
-          fill="none"
-          height="16"
-          viewBox="0 0 16 16"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-            stroke="black"
-            stroke-opacity="0.9"
-            stroke-width="1.3"
-          />
-        </svg>
-      </div>
+        5
+      </span>
+      <svg
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
+        fill="none"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+          stroke="black"
+          stroke-opacity="0.9"
+          stroke-width="1.3"
+        />
+      </svg>
     </div>
   </div>
   <div
@@ -2244,232 +1300,35 @@ exports[`Pagination simple-mini demo works fine 1`] = `
     class="t-select__wrap t-pagination__select"
   >
     <div
-      class="t-popup__reference t-select__popup-reference"
+      class="t-select t-select-polyfill t-size-s t-select__popup-reference"
     >
-      <transition-stub
-        appear="true"
-        name="t-popup--animation"
+      <span
+        class="t-tag t-tag--default t-size-s t-tag--dark"
+        style="display: none;"
       >
-        <div
-          aria-hidden="true"
-          class="t-popup"
-          role="tooltip"
-          style="display: none;"
-        >
-          <div
-            class="t-popup__content  t-select__dropdown narrow-scrollbar"
-          >
-            <div>
-              <ul
-                class="t-select__create-option t-select__list"
-                style="display: none;"
-              >
-                <li
-                  class="t-select-option t-size-s t-select__create-option--special"
-                  title=""
-                >
-                  <span />
-                </li>
-              </ul>
-              <ul
-                class="t-select__list"
-              >
-                <li
-                  class="t-select-option t-is-selected t-size-s"
-                  title="1/20"
-                >
-                  <span>
-                    1/20
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="2/20"
-                >
-                  <span>
-                    2/20
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="3/20"
-                >
-                  <span>
-                    3/20
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="4/20"
-                >
-                  <span>
-                    4/20
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="5/20"
-                >
-                  <span>
-                    5/20
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="6/20"
-                >
-                  <span>
-                    6/20
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="7/20"
-                >
-                  <span>
-                    7/20
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="8/20"
-                >
-                  <span>
-                    8/20
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="9/20"
-                >
-                  <span>
-                    9/20
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="10/20"
-                >
-                  <span>
-                    10/20
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="11/20"
-                >
-                  <span>
-                    11/20
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="12/20"
-                >
-                  <span>
-                    12/20
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="13/20"
-                >
-                  <span>
-                    13/20
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="14/20"
-                >
-                  <span>
-                    14/20
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="15/20"
-                >
-                  <span>
-                    15/20
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="16/20"
-                >
-                  <span>
-                    16/20
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="17/20"
-                >
-                  <span>
-                    17/20
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="18/20"
-                >
-                  <span>
-                    18/20
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="19/20"
-                >
-                  <span>
-                    19/20
-                  </span>
-                </li>
-                <li
-                  class="t-select-option t-size-s"
-                  title="20/20"
-                >
-                  <span>
-                    20/20
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </transition-stub>
-      <div
-        class="t-select t-size-s"
+        +0
+      </span>
+      <span
+        class="t-select__single"
+        title="1/20"
       >
-        <span
-          class="t-tag t-tag--default t-size-s t-tag--dark"
-          style="display: none;"
-        >
-          +0
-        </span>
-        <span
-          class="t-select__single"
-          title="1/20"
-        >
-          1/20
-        </span>
-        <svg
-          class="t-fake-arrow t-select__right-icon"
-          fill="none"
-          height="16"
-          viewBox="0 0 16 16"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-            stroke="black"
-            stroke-opacity="0.9"
-            stroke-width="1.3"
-          />
-        </svg>
-      </div>
+        1/20
+      </span>
+      <svg
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
+        fill="none"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+          stroke="black"
+          stroke-opacity="0.9"
+          stroke-width="1.3"
+        />
+      </svg>
     </div>
   </div>
   <div
@@ -2506,109 +1365,35 @@ exports[`Pagination total demo works fine 1`] = `
       class="t-select__wrap t-pagination__select"
     >
       <div
-        class="t-popup__reference t-select__popup-reference"
+        class="t-select t-select-polyfill t-size-m t-select__popup-reference"
       >
-        <transition-stub
-          appear="true"
-          name="t-popup--animation"
+        <span
+          class="t-tag t-tag--default t-size-m t-tag--dark"
+          style="display: none;"
         >
-          <div
-            aria-hidden="true"
-            class="t-popup"
-            role="tooltip"
-            style="display: none;"
-          >
-            <div
-              class="t-popup__content  t-select__dropdown narrow-scrollbar"
-            >
-              <div>
-                <ul
-                  class="t-select__create-option t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-size-m t-select__create-option--special"
-                    title=""
-                  >
-                    <span />
-                  </li>
-                </ul>
-                <li
-                  class="t-select__empty t-size-m"
-                >
-                  暂无数据
-                </li>
-                <ul
-                  class="t-select__groups t-select__list"
-                  style="display: none;"
-                >
-                  <li
-                    class="t-select-option t-size-m"
-                    title="5 条/页"
-                  >
-                    <span>
-                      5 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-is-selected t-size-m"
-                    title="10 条/页"
-                  >
-                    <span>
-                      10 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="20 条/页"
-                  >
-                    <span>
-                      20 条/页
-                    </span>
-                  </li>
-                  <li
-                    class="t-select-option t-size-m"
-                    title="50 条/页"
-                  >
-                    <span>
-                      50 条/页
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </transition-stub>
-        <div
-          class="t-select t-size-m"
+          +0
+        </span>
+        <span
+          class="t-select__single"
+          title="10"
         >
-          <span
-            class="t-select__placeholder"
-          >
-             请选择
-          </span>
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
-            style="display: none;"
-          >
-            +0
-          </span>
-          <svg
-            class="t-fake-arrow t-select__right-icon"
-            fill="none"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-        </div>
+          10
+        </span>
+        <svg
+          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+            stroke="black"
+            stroke-opacity="0.9"
+            stroke-width="1.3"
+          />
+        </svg>
       </div>
     </div>
     <div

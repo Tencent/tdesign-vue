@@ -10,7 +10,6 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import { ClassName } from '../common';
 
 const name = `${prefix}-textarea`;
-const TEXTAREA_WRAP_CLASS = `${prefix}-textarea__wrap`;
 const TEXTAREA_TIPS_CLASS = `${prefix}-textarea__tips`;
 const TEXTAREA_LIMIT = `${name}__limit`;
 
@@ -30,6 +29,7 @@ export default Vue.extend({
   },
   data() {
     return {
+      formDisabled: undefined,
       focused: false,
       mouseHover: false,
       textareaStyle: {},
@@ -37,11 +37,14 @@ export default Vue.extend({
   },
 
   computed: {
+    tDisabled(): boolean {
+      return this.formDisabled || this.disabled;
+    },
     textareaClasses(): ClassName {
       return [
         name,
         {
-          [`${prefix}-is-disabled`]: this.disabled,
+          [`${prefix}-is-disabled`]: this.tDisabled,
           [`${prefix}-is-readonly`]: this.readonly,
         },
       ];
@@ -49,15 +52,16 @@ export default Vue.extend({
     inputAttrs(): Record<string, any> {
       return getValidAttrs({
         autofocus: this.autofocus,
-        disabled: this.disabled,
+        disabled: this.tDisabled,
         readonly: this.readonly,
         placeholder: this.placeholder,
         maxlength: this.maxlength || undefined,
         name: this.name || undefined,
+        unselectable: this.readonly ? 'on' : 'off',
       });
     },
     characterNumber(): number {
-      const characterInfo = getCharacterLength(String(this.value));
+      const characterInfo = getCharacterLength(String(this.value || ''));
       if (typeof characterInfo === 'object') {
         return characterInfo.length;
       }
@@ -129,19 +133,19 @@ export default Vue.extend({
       }
     },
     emitKeyDown(e: KeyboardEvent) {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       this.emitEvent('keydown', this.value, { e });
     },
     emitKeyUp(e: KeyboardEvent) {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       this.emitEvent('keyup', this.value, { e });
     },
     emitKeypress(e: KeyboardEvent) {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       this.emitEvent('keypress', this.value, { e });
     },
     emitFocus(e: FocusEvent) {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       this.focused = true;
       this.emitEvent('focus', this.value, { e });
     },
@@ -163,12 +167,13 @@ export default Vue.extend({
       `${name}__inner`,
       {
         [`${prefix}-is-${this.status}`]: this.status,
-        [CLASSNAMES.STATUS.disabled]: this.disabled,
+        [CLASSNAMES.STATUS.disabled]: this.tDisabled,
         [CLASSNAMES.STATUS.focused]: this.focused,
         [`${prefix}-resize-none`]: typeof this.autosize === 'object',
       },
     ];
-    const textareaNode = (
+    const tips = renderTNodeJSX(this, 'tips');
+    return (
       <div class={this.textareaClasses}>
         <textarea
           onInput={this.handleInput}
@@ -183,18 +188,10 @@ export default Vue.extend({
         {!this.maxcharacter && this.maxlength ? (
           <span class={TEXTAREA_LIMIT}>{`${this.value ? String(this.value)?.length : 0}/${this.maxlength}`}</span>
         ) : null}
+        {tips && (
+          <div class={`${TEXTAREA_TIPS_CLASS} ${prefix}-textarea__tips--${this.status || 'normal'}`}>{tips}</div>
+        )}
       </div>
     );
-
-    const tips = renderTNodeJSX(this, 'tips');
-    if (tips) {
-      return (
-        <div class={TEXTAREA_WRAP_CLASS}>
-          {textareaNode}
-          <div class={`${TEXTAREA_TIPS_CLASS} ${prefix}-textarea__tips--${this.status || 'normal'}`}>{tips}</div>
-        </div>
-      );
-    }
-    return textareaNode;
   },
 });

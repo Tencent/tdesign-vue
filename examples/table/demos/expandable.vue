@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column">
+  <div class="tdesign-demo-block-column" style="width: 100%">
     <!-- t-config-provider 一般用于全局配置某个组件的特性，此代码示例 示范了如何对表格扩展图标进行统一配置 -->
     <!-- `globalLocale.table.expandIcon` 可用于自定义展开箭头图标 -->
     <!-- <t-config-provider :globalLocale="globalLocale"> -->
@@ -15,17 +15,24 @@
       </t-radio-group>
     </div>
 
-    <t-checkbox v-model="expandOnRowClick">允许点击行之后展开/收起</t-checkbox>
+    <div>
+      <t-checkbox v-model="expandOnRowClick">允许点击行之后展开/收起</t-checkbox>
+      <t-checkbox v-model="fixedColums" style="margin-left: 32px">固定列</t-checkbox>
+      <t-checkbox v-model="emptyData" style="margin-left: 32px">空数据</t-checkbox>
+    </div>
 
+    <!-- :defaultExpandedRowKeys="defaultExpandedRowKeys" -->
     <t-table
       row-key="id"
       :columns="columns"
-      :data="data"
+      :data="emptyData ? [] : data"
       :expanded-row-keys="expandedRowKeys"
       :expanded-row="expandedRow"
-      @expand-change="rehandleExpandChange"
       :expandIcon="expandIcon"
       :expandOnRowClick="expandOnRowClick"
+      table-layout="auto"
+      tableContentWidth="1200"
+      @expand-change="rehandleExpandChange"
     >
       <template #status="{ row }">
         <p v-if="row.status === 0" class="status">健康</p>
@@ -54,64 +61,55 @@
 <script lang="jsx">
 import { ChevronRightIcon, ChevronRightCircleIcon } from 'tdesign-icons-vue';
 
-const columns = [
-  { colKey: 'instance', title: '集群名称', width: 150 },
+const getColums = (isFixedColumn) => [
+  { colKey: 'instance', title: '集群名称', fixed: isFixedColumn ? 'left' : '' },
   {
     colKey: 'status',
     title: '状态',
-    width: 100,
     cell: 'status',
   },
   { colKey: 'owner', title: '管理员' },
   { colKey: 'description', title: '描述' },
+  { colKey: 'field1', title: '字段 1' },
+  { colKey: 'field2', title: '字段 2' },
+  { colKey: 'field3', title: '字段 3' },
+  { colKey: 'field4', title: '字段 4' },
+  { colKey: 'field5', title: '字段 5' },
+  { colKey: 'field6', title: '字段 6' },
   {
     colKey: 'op',
-    width: 200,
     title: 'op-column',
     cell: 'op',
+    fixed: isFixedColumn ? 'right' : '',
   },
 ];
-const data = [
-  {
-    id: 1,
-    instance: '集群测试1',
-    status: 0,
-    owner: 'jenny;peter',
-    description: '隐藏展开图标',
-  },
-  {
-    id: '2',
-    instance: '集群测试2',
-    status: 1,
-    owner: 'jenny',
-    description: 'test',
-  },
-  {
-    id: 3,
-    instance: '集群测试3',
-    status: 0,
-    owner: 'jenny',
-    description: '自定义图标',
-  },
-  {
-    id: 4,
-    instance: '集群测试4',
-    status: 1,
-    owner: 'peter',
-    description: 'test',
-  },
-];
+
+const data = new Array(5).fill(null).map((item, index) => ({
+  id: index + 100,
+  instance: `JQTest${index + 1}`,
+  status: index % 2,
+  owner: 'jenny;peter',
+  description: 'description',
+  field1: 'field1',
+  field2: 'field2',
+  field3: 'field3',
+  field4: 'field4',
+  field5: 'field5',
+  field6: 'field6',
+}));
+
 export default {
   data() {
     return {
       expandControl: 'true',
       expandIcon: true,
       expandOnRowClick: true,
-      columns,
+      fixedColums: false,
+      emptyData: false,
       data,
       // 有哪些 data.id 在 expandedRowKeys 中，就显示这些 id 对应的行
-      expandedRowKeys: ['2'],
-      // defaultExpandedRowKeys: ['2', 4],
+      expandedRowKeys: [102],
+      // defaultExpandedRowKeys: [102, 104],
       expandedRow: (h, { row }) => (
         <div class="more-detail">
           <p class="title">
@@ -137,6 +135,11 @@ export default {
       },
     };
   },
+  computed: {
+    columns() {
+      return getColums(this.fixedColums);
+    },
+  },
   watch: {
     expandControl(val) {
       if (val === 'true') {
@@ -151,7 +154,7 @@ export default {
           // 第一行不显示展开图标
           if (index === 0) return false;
           // 第三行，使用自定义展开图标
-          if (row.id === 3) return <ChevronRightIcon />;
+          if (row.id === 103) return <ChevronRightIcon />;
           // 其他行，使用表格同款展开图标
           return <ChevronRightCircleIcon />;
         };
@@ -159,8 +162,8 @@ export default {
     },
   },
   methods: {
-    rehandleClickOp({ text, row }) {
-      console.log(text, row);
+    rehandleClickOp(data) {
+      console.log(data);
     },
     rehandleExpandChange(value, { expandedRowData }) {
       this.expandedRowKeys = value;

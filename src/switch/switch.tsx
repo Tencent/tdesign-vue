@@ -10,18 +10,28 @@ const name = `${prefix}-switch`;
 
 export default Vue.extend({
   name: 'TSwitch',
+
   props: { ...props },
+
   model: {
     prop: 'value',
     event: 'change',
   },
+
+  data() {
+    return {
+      // 表单控制禁用态时的变量
+      formDisabled: undefined,
+    };
+  },
+
   computed: {
     classes(): ClassName {
       return [
         `${name}`,
         CLASSNAMES.SIZE[this.size],
         {
-          [CLASSNAMES.STATUS.disabled]: this.disabled,
+          [CLASSNAMES.STATUS.disabled]: this.tDisabled,
           [CLASSNAMES.STATUS.loading]: this.loading,
           [CLASSNAMES.STATUS.checked]: this.value === this.activeValue,
         },
@@ -31,7 +41,7 @@ export default Vue.extend({
       return [
         `${name}__handle`,
         {
-          [CLASSNAMES.STATUS.disabled]: this.disabled,
+          [CLASSNAMES.STATUS.disabled]: this.tDisabled,
           [CLASSNAMES.STATUS.loading]: this.loading,
         },
       ];
@@ -41,9 +51,12 @@ export default Vue.extend({
         `${name}__content`,
         CLASSNAMES.SIZE[this.size],
         {
-          [CLASSNAMES.STATUS.disabled]: this.disabled,
+          [CLASSNAMES.STATUS.disabled]: this.tDisabled,
         },
       ];
+    },
+    tDisabled(): boolean {
+      return this.formDisabled || this.disabled;
     },
     activeValue(): SwitchValue {
       if (this.customValue && this.customValue.length > 0) {
@@ -92,13 +105,12 @@ export default Vue.extend({
   },
   methods: {
     handleToggle(): void {
-      const checked = this.value === this.activeValue
-        ? this.inactiveValue : this.activeValue;
+      const checked = this.value === this.activeValue ? this.inactiveValue : this.activeValue;
       typeof this.onChange === 'function' && this.onChange(checked);
       this.$emit('change', checked);
     },
     toggle(): void {
-      if (this.disabled || this.loading) {
+      if (this.tDisabled || this.loading) {
         return;
       }
       this.handleToggle();
@@ -106,13 +118,7 @@ export default Vue.extend({
   },
   render(): VNode {
     const {
-      loading,
-      disabled,
-      content,
-      nodeClasses,
-      classes,
-      toggle,
-      contentClasses,
+      loading, disabled, content, nodeClasses, classes, toggle, contentClasses,
     } = this;
 
     let switchContent: TNodeReturnValue;
@@ -125,13 +131,9 @@ export default Vue.extend({
     }
 
     return (
-      <div
-        class={classes}
-        disabled={disabled}
-        onClick={toggle}
-        >
-          <span class={nodeClasses}>{loadingContent}</span>
-          <div class={contentClasses}>{switchContent}</div>
+      <div class={classes} disabled={disabled} onClick={toggle}>
+        <span class={nodeClasses}>{loadingContent}</span>
+        <div class={contentClasses}>{switchContent}</div>
       </div>
     );
   },

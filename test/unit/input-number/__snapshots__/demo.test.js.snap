@@ -3,7 +3,7 @@
 exports[`InputNumber center demo works fine 1`] = `
 <div>
   <div
-    class="t-input-number t-size-m"
+    class="t-input-number t-size-m t-input-number--row"
   >
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
@@ -24,14 +24,20 @@ exports[`InputNumber center demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input__wrap"
     >
-      <input
-        autocomplete="off"
-        class="t-input__inner t-input-number-text-align"
-        placeholder=""
+      <div
+        class="t-input t-size-m t-align-center"
         ref="refInputElem"
-      />
+      >
+        <input
+          autocomplete="off"
+          class="t-input__inner"
+          placeholder="请输入"
+          type="text"
+          unselectable="off"
+        />
+      </div>
     </div>
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
@@ -58,7 +64,7 @@ exports[`InputNumber center demo works fine 1`] = `
 exports[`InputNumber defaultDemo demo works fine 1`] = `
 <div>
   <div
-    class="t-input-number t-size-m"
+    class="t-input-number t-size-m t-input-number--row"
   >
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
@@ -79,14 +85,20 @@ exports[`InputNumber defaultDemo demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input__wrap"
     >
-      <input
-        autocomplete="off"
-        class="t-input__inner t-input-number-text-align"
-        placeholder=""
+      <div
+        class="t-input t-size-m t-align-center"
         ref="refInputElem"
-      />
+      >
+        <input
+          autocomplete="off"
+          class="t-input__inner"
+          placeholder="请输入"
+          type="text"
+          unselectable="off"
+        />
+      </div>
     </div>
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
@@ -113,7 +125,7 @@ exports[`InputNumber defaultDemo demo works fine 1`] = `
 exports[`InputNumber disabled demo works fine 1`] = `
 <div>
   <div
-    class="t-input-number t-size-m t-is-disabled"
+    class="t-input-number t-size-m t-is-disabled t-input-number--row"
   >
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"
@@ -134,15 +146,21 @@ exports[`InputNumber disabled demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input__wrap"
     >
-      <input
-        autocomplete="off"
-        class="t-input__inner t-is-disabled t-input-number-text-align"
-        disabled="disabled"
-        placeholder=""
+      <div
+        class="t-input t-size-m t-is-disabled t-align-center"
         ref="refInputElem"
-      />
+      >
+        <input
+          autocomplete="off"
+          class="t-input__inner"
+          disabled="disabled"
+          placeholder="请输入"
+          type="text"
+          unselectable="off"
+        />
+      </div>
     </div>
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase t-is-disabled"
@@ -169,7 +187,7 @@ exports[`InputNumber disabled demo works fine 1`] = `
 exports[`InputNumber format demo works fine 1`] = `
 <div>
   <div
-    class="t-input-number t-size-m"
+    class="t-input-number t-size-m t-input-number--row"
   >
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
@@ -190,14 +208,20 @@ exports[`InputNumber format demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input__wrap"
     >
-      <input
-        autocomplete="off"
-        class="t-input__inner t-input-number-text-align"
-        placeholder=""
+      <div
+        class="t-input t-size-m t-align-center"
         ref="refInputElem"
-      />
+      >
+        <input
+          autocomplete="off"
+          class="t-input__inner"
+          placeholder="请输入"
+          type="text"
+          unselectable="off"
+        />
+      </div>
     </div>
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
@@ -224,7 +248,7 @@ exports[`InputNumber format demo works fine 1`] = `
 exports[`InputNumber left demo works fine 1`] = `
 <div>
   <div
-    class="t-input-number t-size-m t-is-controls-right"
+    class="t-input-number t-size-m t-is-controls-right t-input-number--column"
   >
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
@@ -245,14 +269,20 @@ exports[`InputNumber left demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input__wrap"
     >
-      <input
-        autocomplete="off"
-        class="t-input__inner"
-        placeholder=""
+      <div
+        class="t-input t-size-m"
         ref="refInputElem"
-      />
+      >
+        <input
+          autocomplete="off"
+          class="t-input__inner"
+          placeholder="请输入"
+          type="text"
+          unselectable="off"
+        />
+      </div>
     </div>
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
@@ -279,7 +309,7 @@ exports[`InputNumber left demo works fine 1`] = `
 exports[`InputNumber size demo works fine 1`] = `
 <div>
   <div
-    class="t-input-number t-size-s"
+    class="t-input-number t-size-s t-input-number--row"
   >
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
@@ -300,14 +330,20 @@ exports[`InputNumber size demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input__wrap"
     >
-      <input
-        autocomplete="off"
-        class="t-input__inner t-input-number-text-align"
-        placeholder=""
+      <div
+        class="t-input t-size-m t-align-center"
         ref="refInputElem"
-      />
+      >
+        <input
+          autocomplete="off"
+          class="t-input__inner"
+          placeholder="请输入"
+          type="text"
+          unselectable="off"
+        />
+      </div>
     </div>
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
@@ -330,7 +366,7 @@ exports[`InputNumber size demo works fine 1`] = `
   </div>
    
   <div
-    class="t-input-number t-size-m"
+    class="t-input-number t-size-m t-input-number--row"
     style="margin: 0px 50px;"
   >
     <button
@@ -352,14 +388,20 @@ exports[`InputNumber size demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input__wrap"
     >
-      <input
-        autocomplete="off"
-        class="t-input__inner t-input-number-text-align"
-        placeholder=""
+      <div
+        class="t-input t-size-m t-align-center"
         ref="refInputElem"
-      />
+      >
+        <input
+          autocomplete="off"
+          class="t-input__inner"
+          placeholder="请输入"
+          type="text"
+          unselectable="off"
+        />
+      </div>
     </div>
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
@@ -382,7 +424,7 @@ exports[`InputNumber size demo works fine 1`] = `
   </div>
    
   <div
-    class="t-input-number t-size-l"
+    class="t-input-number t-size-l t-input-number--row"
   >
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
@@ -403,14 +445,20 @@ exports[`InputNumber size demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input__wrap"
     >
-      <input
-        autocomplete="off"
-        class="t-input__inner t-input-number-text-align"
-        placeholder=""
+      <div
+        class="t-input t-size-m t-align-center"
         ref="refInputElem"
-      />
+      >
+        <input
+          autocomplete="off"
+          class="t-input__inner"
+          placeholder="请输入"
+          type="text"
+          unselectable="off"
+        />
+      </div>
     </div>
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
@@ -437,7 +485,7 @@ exports[`InputNumber size demo works fine 1`] = `
 exports[`InputNumber step demo works fine 1`] = `
 <div>
   <div
-    class="t-input-number t-size-m"
+    class="t-input-number t-size-m t-input-number--row"
   >
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
@@ -458,14 +506,20 @@ exports[`InputNumber step demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input__wrap"
     >
-      <input
-        autocomplete="off"
-        class="t-input__inner t-input-number-text-align"
-        placeholder=""
+      <div
+        class="t-input t-size-m t-align-center"
         ref="refInputElem"
-      />
+      >
+        <input
+          autocomplete="off"
+          class="t-input__inner"
+          placeholder="请输入"
+          type="text"
+          unselectable="off"
+        />
+      </div>
     </div>
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
@@ -492,7 +546,7 @@ exports[`InputNumber step demo works fine 1`] = `
 exports[`InputNumber undefined demo works fine 1`] = `
 <div>
   <div
-    class="t-input-number t-size-m"
+    class="t-input-number t-size-m t-input-number--row"
   >
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
@@ -513,14 +567,20 @@ exports[`InputNumber undefined demo works fine 1`] = `
       </svg>
     </button>
     <div
-      class="t-input"
+      class="t-input__wrap"
     >
-      <input
-        autocomplete="off"
-        class="t-input__inner t-input-number-text-align"
-        placeholder="输入"
+      <div
+        class="t-input t-size-m t-align-center"
         ref="refInputElem"
-      />
+      >
+        <input
+          autocomplete="off"
+          class="t-input__inner"
+          placeholder="输入"
+          type="text"
+          unselectable="off"
+        />
+      </div>
     </div>
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"

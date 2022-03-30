@@ -29,5 +29,5 @@ hover | `(context: { e: MouseEvent; item: TdStickyItemProps })` | 悬浮到某�
 icon | String / Slot / Function | - | 图标。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 label | String / Slot / Function | - | 名称。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 popup | String / Slot / Function | - | 浮层内容。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-popupProps | Object | - | 透传浮层组件全部属性。TS 类型：`PopupProps`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/sticky-tool/type.ts) | N
+popupProps | Object | - | 透传浮层组件全部属性。TS 类型：`PopupProps`，[Popup API Documents](./popup?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/sticky-tool/type.ts) | N
 trigger | String | hover | 触发浮层显示的方式。可选项：hover/click | N

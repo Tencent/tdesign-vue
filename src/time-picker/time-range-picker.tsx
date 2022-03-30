@@ -42,6 +42,8 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
   data() {
     // 初始化数据
     return {
+      // 表单控制禁用态时的变量
+      formDisabled: undefined,
       els: [],
       focus: false,
       isShowPanel: false,
@@ -53,6 +55,9 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
   },
 
   computed: {
+    tDisabled(): boolean {
+      return this.formDisabled || this.disabled;
+    },
     // 传递给选择面板的时间值
     panelValue(): Array<dayjs.Dayjs> {
       const time = this.time || TIME_PICKER_EMPTY;
@@ -133,13 +138,14 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
     },
     // 面板展示隐藏
     panelVisibleChange(val: boolean, context?: PopupVisibleChangeContext) {
-      if (context) {
+      if (this.tDisabled) return;
+      if (context.trigger) {
         const isClickDoc = context.trigger === 'document';
         this.isShowPanel = !isClickDoc;
-        this.$emit(isClickDoc ? 'close' : 'open');
+        this.$emit(isClickDoc ? 'close' : 'open', context);
       } else {
         this.isShowPanel = val;
-        this.$emit(val ? 'open' : 'close');
+        this.$emit(val ? 'open' : 'close', context);
       }
     },
     // 切换上下午
@@ -189,8 +195,8 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
       shouldUpdatePanel && panelRef.panelColUpdate();
     },
     // 确定按钮
-    makeSure() {
-      this.panelVisibleChange(false);
+    makeSure(e: MouseEvent) {
+      this.panelVisibleChange(false, { e });
     },
     // 设置输入框展示
     updateInputTime() {
@@ -252,6 +258,11 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
       this.$emit('change', values);
       isFunction(this.onChange) && this.onChange(values);
     },
+    handleTInputFocus() {
+      // TODO: 待改成select-input后删除
+      // hack 在input聚焦时马上blur 避免出现输入光标
+      (this.$refs.tInput as HTMLInputElement).blur();
+    },
     renderInput() {
       const classes = [
         `${name}__group`,
@@ -260,22 +271,22 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
         },
       ];
       return (
-        <div class={classes} onClick={() => (this.isShowPanel = true)}>
+        <div class={classes}>
           <t-input
-            disabled={this.disabled}
+            disabled={this.tDisabled}
             size={this.size}
             onClear={this.clear}
             clearable={this.clearable}
             placeholder=" "
-            readonly
             value={!isEqual(this.time, TIME_PICKER_EMPTY) ? ' ' : undefined}
+            ref="tInput"
           >
             <time-icon slot="suffix-icon"></time-icon>
           </t-input>
           <input-items
             size={this.size}
             dayjs={this.inputTime}
-            disabled={this.disabled}
+            disabled={this.tDisabled}
             format={this.format}
             allowInput={this.allowInput}
             placeholder={this.placeholder || this.global.placeholder}
@@ -293,7 +304,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
   render() {
     // 初始化数据
     const {
-      $props: { size, className, disabled },
+      $props: { size, className, tDisabled },
     } = this;
     // 样式类名
     const classes = [name, CLASSNAMES.SIZE[size], className];
@@ -304,7 +315,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
         class={classes}
         placement="bottom-left"
         trigger="click"
-        disabled={disabled}
+        disabled={tDisabled}
         visible={this.isShowPanel}
         overlayClassName={`${componentName}__panel-container ${componentName}__range`}
         on={{ 'visible-change': this.panelVisibleChange }}
@@ -316,7 +327,7 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
             ref="panel"
             format={this.format}
             value={this.panelValue}
-            disabled={this.disabled}
+            disabled={this.tDisabled}
             isShowPanel={this.isShowPanel}
             ontime-pick={this.pickTime}
             onsure={this.makeSure}

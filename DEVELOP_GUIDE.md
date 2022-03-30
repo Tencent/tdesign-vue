@@ -165,9 +165,9 @@ npm run init button
 
 ### demo 调试
 
-当一个 md 文件插入了很多个 demo 之后，一些组件生命周期方法调试起来会变得困难，若想对某个 demo 单独调试，可以访问路由：/demos/组件名/demo 名，如想单独调试 button 组件 demos 文件夹下的 base demo，则可点击 demo 旁的箭头或直接访问：<http://127.0.0.1:16000/#/vue/demos/button/base>
+当一个 md 文件插入了很多个 demo 之后，一些组件生命周期方法调试起来会变得困难，若想对某个 demo 单独调试，可以访问路由：/demos/组件名/demo 名，如想单独调试 button 组件 demos 文件夹下的 base demo，则可点击 demo 旁的箭头或直接访问：<http://127.0.0.1:16000/vue/demos/button/base>
 
-所有 demo 路由列表页：<http://127.0.0.1:16000/#/vue/demos>
+所有 demo 路由列表页：<http://127.0.0.1:16000/vue/demos>
 
 ### 实现组件的受控与非受控用法
 

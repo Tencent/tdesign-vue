@@ -6,9 +6,8 @@
       placement="top"
       :overlay-style="{ width: '200px' }"
       show-arrow
-      trigger="click"
     >
-      <t-button variant="outline"> top </t-button>
+      <t-button variant="outline" style="width: 80px"> top </t-button>
     </t-tooltip>
     <t-tooltip
       class="placement top left"
@@ -35,7 +34,7 @@
       placement="bottom"
       show-arrow
     >
-      <t-button variant="outline"> bottom </t-button>
+      <t-button variant="outline" style="width: 80px"> bottom </t-button>
     </t-tooltip>
     <t-tooltip
       class="placement bottom left"

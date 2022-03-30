@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Upload :props :isBatchUpload 1`] = `
+<div class="t-upload"><input type="file" multiple="multiple" accept="" hidden="hidden">
+  <div class="t-upload__single t-upload__single-file">
+    <div class="t-upload__trigger"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-upload">
+          <path fill="currentColor" d="M3.74 6.68L7.5 2.9v8.59h1V2.91l3.76 3.77.71-.7-4.62-4.63a.5.5 0 00-.7 0L3.03 5.97l.7.7z" fill-opacity="0.9"></path>
+          <path fill="currentColor" d="M2 11v2a1 1 0 001 1h10a1 1 0 001-1v-2h-1v2H3v-2H2z" fill-opacity="0.9"></path>
+        </svg><span class="t-button__text">点击上传</span></button></div>
+  </div>
+</div>
+`;

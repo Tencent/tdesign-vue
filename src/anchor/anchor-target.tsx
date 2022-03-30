@@ -5,8 +5,10 @@ import Message from '../message/plugin';
 import props from './anchor-target-props';
 import TPopup from '../popup';
 import { COMPONENT_NAME } from './constant';
+import mixins from '../utils/mixins';
+import getConfigReceiverMixins, { AnchorConfig } from '../config-provider/config-receiver';
 
-export default Vue.extend({
+export default mixins(getConfigReceiverMixins<Vue, AnchorConfig>('anchor')).extend({
   name: 'TAnchorTarget',
 
   components: {
@@ -26,7 +28,7 @@ export default Vue.extend({
       const a = document.createElement('a');
       a.href = `#${this.id}`;
       copyText(a.href);
-      Message.success('链接复制成功', 1000);
+      Message.success(this.global.copySuccessText, 1000);
     },
   },
   render() {
@@ -40,7 +42,7 @@ export default Vue.extend({
     return (
       <Tag id={id} class={className}>
         {children && children(null)}
-        <t-popup content="复制链接" placement="top" showArrow class={iconClassName}>
+        <t-popup content={this.global.copyText} placement="top" showArrow class={iconClassName}>
           <file-copy-icon nativeOnClick={this.copyText} />
         </t-popup>
       </Tag>

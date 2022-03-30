@@ -9,10 +9,12 @@ import {
 } from './util';
 import { ClassName } from '../common';
 import props from './props';
+import mixins from '../utils/mixins';
+import getConfigReceiverMixins, { UploadConfig } from '../config-provider/config-receiver';
 
 const name = `${prefix}-upload-dragger`;
 
-export default Vue.extend({
+export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).extend({
   name,
 
   components: {
@@ -108,11 +110,11 @@ export default Vue.extend({
     renderDefaultDragElement(): VNode {
       const unActiveElement = (
         <div>
-          <span class={`${prefix}-upload--highlight`}>点击上传</span>
-          <span>&nbsp;&nbsp;/&nbsp;&nbsp;拖拽到此区域</span>
+          <span class={`${prefix}-upload--highlight`}>{this.global.triggerUploadText.normal}</span>
+          <span>&nbsp;&nbsp;/&nbsp;&nbsp;{this.global.dragger.draggingText}</span>
         </div>
       );
-      const activeElement = <div>释放鼠标</div>;
+      const activeElement = <div>{this.global.dragger.dragDropText}</div>;
       return this.dragActive ? activeElement : unActiveElement;
     },
 
@@ -153,8 +155,12 @@ export default Vue.extend({
               {this.loadingFile && this.renderUploading()}
               {!this.loadingFile && !!this.file && <CheckCircleFilledIcon />}
             </div>
-            <small class={`${prefix}-size-s`}>文件大小：{returnFileSize(this.size)}</small>
-            <small class={`${prefix}-size-s`}>上传日期：{getCurrentDate()}</small>
+            <small class={`${prefix}-size-s`}>
+              {this.global.file.fileSizeText}：{returnFileSize(this.size)}
+            </small>
+            <small class={`${prefix}-size-s`}>
+              {this.global.file.fileOperationDateText}：{getCurrentDate()}
+            </small>
             <div class={`${UPLOAD_NAME}__dragger-btns`}>
               {['progress', 'waiting'].includes(this.loadingFile?.status) && (
                 <TButton
@@ -163,7 +169,7 @@ export default Vue.extend({
                   class={`${UPLOAD_NAME}__dragger-progress-cancel`}
                   onClick={this.cancel}
                 >
-                  取消上传
+                  {this.global.cancelUploadText}
                 </TButton>
               )}
               {!this.autoUpload && this.loadingFile?.status === 'waiting' && (
@@ -172,7 +178,7 @@ export default Vue.extend({
                   variant="text"
                   onClick={(e: MouseEvent) => this.upload({ ...this.loadingFile }, e)}
                 >
-                  开始上传
+                  {this.global.triggerUploadText.normal}
                 </TButton>
               )}
             </div>
@@ -184,10 +190,10 @@ export default Vue.extend({
                   class={`${UPLOAD_NAME}__dragger-progress-cancel`}
                   onClick={this.reupload}
                 >
-                  重新上传
+                  {this.global.triggerUploadText.reupload}
                 </TButton>
                 <TButton theme="primary" variant="text" onClick={this.remove}>
-                  删除
+                  {this.global.triggerUploadText.delete}
                 </TButton>
               </div>
             )}

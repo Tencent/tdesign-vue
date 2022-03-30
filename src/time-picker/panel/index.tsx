@@ -78,13 +78,15 @@ export default mixins(getConfigReceiverMixins<TimePickerPanelInstance, TimePicke
       }
     },
   },
+  mounted() {
+    // 不做 isShowPanel 的判断，故无法合并到 watch
+    this.panelColUpdate();
+  },
   methods: {
     panelColUpdate() {
-      const panelCol0 = this.$refs.panelCol_0 as TimePickerPanelColInstance;
-      const panelCol1 = this.$refs.panelCol_1 as TimePickerPanelColInstance;
-      this.$nextTick(() => {
-        panelCol0 && panelCol0.updateTimeScrollPos();
-        panelCol1 && panelCol1.updateTimeScrollPos();
+      setTimeout(() => {
+        (this.$refs.panelCol_0 as TimePickerPanelColInstance)?.updateTimeScrollPos();
+        (this.$refs.panelCol_1 as TimePickerPanelColInstance)?.updateTimeScrollPos();
       });
     },
     scrollToTime(colIndex: number, col: EPickerCols, time: number | string, behavior: ScrollBehavior) {
@@ -99,7 +101,7 @@ export default mixins(getConfigReceiverMixins<TimePickerPanelInstance, TimePicke
           <t-button theme="primary" variant="base" onClick={confirmAction}>
             {this.t(this.global.confirm)}
           </t-button>
-          { this.showNowTime && (
+          {this.showNowTime && (
             <t-button theme="primary" variant="text" onClick={this.nowAction}>
               {this.t(this.global.now)}
             </t-button>
@@ -133,8 +135,8 @@ export default mixins(getConfigReceiverMixins<TimePickerPanelInstance, TimePicke
         />
       );
     },
-    confirmBtnClick() {
-      this.$emit('sure');
+    confirmBtnClick(e: MouseEvent) {
+      this.$emit('sure', e);
     },
     nowAction() {
       this.$emit('now-action');

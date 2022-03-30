@@ -19,7 +19,7 @@ export function getNodeStatusClass(node: TreeNode, CLASSNAMES: any, cascaderCont
   const {
     checkStrictly, multiple, value, max,
   } = cascaderContext;
-  const expandedActive = !checkStrictly && node.expanded && (multiple ? !node.isLeaf() : true);
+  const expandedActive = (!checkStrictly && node.expanded && (multiple ? !node.isLeaf() : true)) || (checkStrictly && node.expanded);
 
   const isLeaf = node.isLeaf();
 
@@ -47,9 +47,9 @@ export function getCascaderItemClass(
     `${prefix}-cascader__item`,
     ...getNodeStatusClass(node, CLASSNAMES, cascaderContext),
     {
-      [`${prefix}-cascader__item--with-icon`]: node.children,
+      [`${prefix}-cascader__item--with-icon`]: !!node.children,
       [`${prefix}-cascader__item--leaf`]: node.isLeaf(),
-      [CLASSNAMES.SIZE[size]]: size,
+      [CLASSNAMES.SIZE[size]]: !!size,
     },
   ];
 }
