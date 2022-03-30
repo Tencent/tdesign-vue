@@ -328,12 +328,9 @@ export default Vue.extend({
     } = this;
     const ref = renderContent(this, 'default', 'triggerElement');
     const content = renderTNodeJSX(this, 'content');
+    const isEmptyPopup = this.hideEmptyPopup && ['', undefined, null].includes(content);
 
-    if (this.hideEmptyPopup && ['', undefined, null].includes(content)) {
-      return ref;
-    }
-
-    const overlay = visible || !destroyOnClose
+    const overlay = (visible || !destroyOnClose) && !isEmptyPopup
       ? h(
         'div',
         {
