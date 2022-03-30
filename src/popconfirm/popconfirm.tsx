@@ -80,6 +80,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, PopconfirmConfig
     const cancelBtn = this.getCancelBtn({
       cancelBtn: this.cancelBtn,
       globalCancel: this.global.cancel,
+      size: 'small',
       className: `${name}__cancel`,
     });
     // this.getConfirmBtn is a function of ActionMixin
@@ -87,6 +88,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, PopconfirmConfig
       theme: this.theme,
       confirmBtn: this.confirmBtn,
       globalConfirm: this.global.confirm,
+      size: 'small',
       globalConfirmBtnTheme: this.global.confirmBtnTheme,
       className: `${name}__confirm`,
     });
