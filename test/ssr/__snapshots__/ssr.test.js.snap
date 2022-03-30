@@ -3195,19 +3195,19 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="t-table__expandable-icon-cell t-table__td-first-col"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></td>
+            <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></td>
             <td>Array</td>
             <td>Vue(PC)</td>
             <td>A</td>
           </tr>
           <tr>
-            <td class="t-table__expandable-icon-cell t-table__td-first-col"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></td>
+            <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></td>
             <td>String</td>
             <td>React(PC)</td>
             <td>B</td>
           </tr>
           <tr>
-            <td class="t-table__expandable-icon-cell t-table__td-first-col"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></td>
+            <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></td>
             <td>Object</td>
             <td>Miniprogram</td>
             <td>C</td>
@@ -11394,27 +11394,27 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="t-table__td-first-col">Eric</td>
+            <td>Eric</td>
             <td>Spinke</td>
             <td>espinke0@apache.org</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">Gilberta</td>
+            <td>Gilberta</td>
             <td>Purves</td>
             <td>gpurves1@issuu.com</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">Heriberto</td>
+            <td>Heriberto</td>
             <td>Kment</td>
             <td>hkment2@nsw.gov.au</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">Lazarus</td>
+            <td>Lazarus</td>
             <td>Skures</td>
             <td>lskures3@apache.org</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">Zandra</td>
+            <td>Zandra</td>
             <td>Croson</td>
             <td>zcroson5@virginia.edu</td>
           </tr>
@@ -11487,7 +11487,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td data-id="first-column" class="custom-column-class-name t-table__td-first-col t-align-center">5</td>
+            <td data-id="first-column" class="custom-column-class-name t-align-center">5</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -11497,7 +11497,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             </td>
           </tr>
           <tr>
-            <td data-id="first-column" class="custom-column-class-name t-table__td-first-col t-align-center">6</td>
+            <td data-id="first-column" class="custom-column-class-name t-align-center">6</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -11507,7 +11507,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             </td>
           </tr>
           <tr>
-            <td data-id="first-column" class="custom-column-class-name t-table__td-first-col t-align-center">7</td>
+            <td data-id="first-column" class="custom-column-class-name t-align-center">7</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
@@ -11517,7 +11517,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             </td>
           </tr>
           <tr>
-            <td data-id="first-column" class="custom-column-class-name t-table__td-first-col t-align-center">8</td>
+            <td data-id="first-column" class="custom-column-class-name t-align-center">8</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -11527,7 +11527,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             </td>
           </tr>
           <tr>
-            <td data-id="first-column" class="custom-column-class-name t-table__td-first-col t-align-center">9</td>
+            <td data-id="first-column" class="custom-column-class-name t-align-center">9</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -11597,7 +11597,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="t-table__td-first-col"> 自定义插槽名称：any[] </td>
+            <td> 自定义插槽名称：any[] </td>
             <td><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-attach">
                 <path fill="currentColor" d="M12.13 3.86a2.02 2.02 0 00-2.85 0l-7.2 7.21-.71-.7 7.2-7.21a3.02 3.02 0 114.27 4.26L7 13.26a1.88 1.88 0 01-2.66-2.66L10 4.93l.71.7-5.67 5.68a.88.88 0 101.25 1.25l5.84-5.84c.79-.8.78-2.08-.01-2.86z" fill-opacity="0.9"></path>
               </svg><a href="#" class="link">公有</a>（插槽自定义单元格）
@@ -11608,7 +11608,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
             <td>render 方法渲染单元格: 0-3</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col"> 自定义插槽名称：String </td>
+            <td> 自定义插槽名称：String </td>
             <td><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-attach">
                 <path fill="currentColor" d="M12.13 3.86a2.02 2.02 0 00-2.85 0l-7.2 7.21-.71-.7 7.2-7.21a3.02 3.02 0 114.27 4.26L7 13.26a1.88 1.88 0 01-2.66-2.66L10 4.93l.71.7-5.67 5.68a.88.88 0 101.25 1.25l5.84-5.84c.79-.8.78-2.08-.01-2.86z" fill-opacity="0.9"></path>
               </svg><a href="#" class="link">公有</a>（插槽自定义单元格）
@@ -11671,7 +11671,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="row t-table__td-first-col t-align-center">0</td>
+            <td class="row t-align-center">0</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -11681,7 +11681,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
             </td>
           </tr>
           <tr>
-            <td class="row t-table__td-first-col t-align-center">1</td>
+            <td class="row t-align-center">1</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -11691,7 +11691,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
             </td>
           </tr>
           <tr>
-            <td class="row t-table__td-first-col t-align-center">2</td>
+            <td class="row t-align-center">2</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -11701,7 +11701,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
             </td>
           </tr>
           <tr>
-            <td class="row t-table__td-first-col t-align-center">3</td>
+            <td class="row t-align-center">3</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
@@ -11711,7 +11711,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
             </td>
           </tr>
           <tr>
-            <td class="row t-table__td-first-col t-align-center">4</td>
+            <td class="row t-align-center">4</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -11767,7 +11767,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
         </thead>
         <tbody class="t-table__body">
           <tr class="t-tdesign__custom-body-tr">
-            <td class="row t-table__td-first-col t-align-center">0</td>
+            <td class="row t-align-center">0</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -11777,7 +11777,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
             </td>
           </tr>
           <tr class="t-tdesign__custom-body-tr">
-            <td class="row t-table__td-first-col t-align-center">1</td>
+            <td class="row t-align-center">1</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -11787,7 +11787,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
             </td>
           </tr>
           <tr class="t-tdesign__custom-body-tr">
-            <td class="row t-table__td-first-col t-align-center">2</td>
+            <td class="row t-align-center">2</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -11841,12 +11841,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-header.vue corr
       </thead>
       <tbody class="t-table__body">
         <tr>
-          <td class="t-table__td-first-col">标题是用插槽自定义</td>
+          <td>标题是用插槽自定义</td>
           <td>标题使用 title 方法自定义</td>
           <td>data</td>
         </tr>
         <tr>
-          <td class="t-table__td-first-col">插槽名称为 title 的值</td>
+          <td>插槽名称为 title 的值</td>
           <td>标题使用 title 方法自定义</td>
           <td>rowkey</td>
         </tr>
@@ -11907,7 +11907,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
           </thead>
           <tbody class="t-table__body">
             <tr>
-              <td class="t-table__td-first-col">JQTest1</td>
+              <td>JQTest1</td>
               <td>
                 <p class="status">
                   健康
@@ -11917,7 +11917,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
               <td>jenny;peter</td>
             </tr>
             <tr>
-              <td class="t-table__td-first-col">JQTest2</td>
+              <td>JQTest2</td>
               <td>
                 <p class="status warning">
                   警告
@@ -11927,7 +11927,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
               <td>jenny</td>
             </tr>
             <tr>
-              <td class="t-table__td-first-col">JQTest3</td>
+              <td>JQTest3</td>
               <td>
                 <p class="status unhealth">
                   异常
@@ -11937,7 +11937,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
               <td>peter</td>
             </tr>
             <tr>
-              <td class="t-table__td-first-col">JQTest4</td>
+              <td>JQTest4</td>
               <td>
                 <p class="status">
                   健康
@@ -11989,7 +11989,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
           </thead>
           <tbody class="t-table__body t-table__col-draggable">
             <tr>
-              <td class="t-table__td-first-col t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
+              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
                   <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
                 </svg></td>
               <td>JQTest1</td>
@@ -12002,7 +12002,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
               <td>jenny;peter</td>
             </tr>
             <tr>
-              <td class="t-table__td-first-col t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
+              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
                   <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
                 </svg></td>
               <td>JQTest2</td>
@@ -12015,7 +12015,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
               <td>jenny</td>
             </tr>
             <tr>
-              <td class="t-table__td-first-col t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
+              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
                   <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
                 </svg></td>
               <td>JQTest3</td>
@@ -12028,7 +12028,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
               <td>jenny</td>
             </tr>
             <tr>
-              <td class="t-table__td-first-col t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
+              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
                   <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
                 </svg></td>
               <td>JQTest4</td>
@@ -12079,7 +12079,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
           </thead>
           <tbody class="t-table__body t-table__row--draggable">
             <tr>
-              <td class="t-table__td-first-col">JQTest1</td>
+              <td>JQTest1</td>
               <td>
                 <p class="status">
                   健康
@@ -12089,7 +12089,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
               <td>jenny;peter</td>
             </tr>
             <tr>
-              <td class="t-table__td-first-col">JQTest2</td>
+              <td>JQTest2</td>
               <td>
                 <p class="status warning">
                   警告
@@ -12099,7 +12099,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
               <td>jenny</td>
             </tr>
             <tr>
-              <td class="t-table__td-first-col">JQTest3</td>
+              <td>JQTest3</td>
               <td>
                 <p class="status unhealth">
                   异常
@@ -12109,7 +12109,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
               <td>jenny</td>
             </tr>
             <tr>
-              <td class="t-table__td-first-col">JQTest4</td>
+              <td>JQTest4</td>
               <td>
                 <p class="status warning">
                   警告
@@ -12333,7 +12333,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="t-table__expandable-icon-cell t-table__td-first-col"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
+            <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td>JQTest1</td>
             <td>
               <p class="status">健康</p>
@@ -12350,7 +12350,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__expandable-icon-cell t-table__td-first-col"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
+            <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td>JQTest2</td>
             <td>
               <!---->
@@ -12367,7 +12367,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__expandable-icon-cell t-table__td-first-col"><span class="t-table__expand-box t-table__row--expanded t-positive-rotate-90"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
+            <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--expanded t-positive-rotate-90"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td>JQTest3</td>
             <td>
               <p class="status">健康</p>
@@ -12400,7 +12400,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
             </td>
           </tr>
           <tr>
-            <td class="t-table__expandable-icon-cell t-table__td-first-col"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
+            <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td>JQTest4</td>
             <td>
               <!---->
@@ -12417,7 +12417,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__expandable-icon-cell t-table__td-first-col"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
+            <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td>JQTest5</td>
             <td>
               <p class="status">健康</p>
@@ -12521,31 +12521,31 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="t-table__td-first-col">Eric</td>
+            <td>Eric</td>
             <td>Spinke</td>
             <td>espinke0@apache.org</td>
             <td>2021-11-01</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">Gilberta</td>
+            <td>Gilberta</td>
             <td>Purves</td>
             <td>gpurves1@issuu.com</td>
             <td>2021-12-01</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">Heriberto</td>
+            <td>Heriberto</td>
             <td>Kment</td>
             <td>hkment2@nsw.gov.au</td>
             <td>2022-01-01</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">Lazarus</td>
+            <td>Lazarus</td>
             <td>Skures</td>
             <td>lskures3@apache.org</td>
             <td>2022-02-01</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">Eric</td>
+            <td>Eric</td>
             <td>Spinke</td>
             <td>espinke0@apache.org</td>
             <td>2021-11-01</td>
@@ -12620,7 +12620,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="t-table__td-first-col t-align-center">0</td>
+            <td class="t-align-center">0</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -12632,7 +12632,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
             </td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">1</td>
+            <td class="t-align-center">1</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -12644,7 +12644,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
             </td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">2</td>
+            <td class="t-align-center">2</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -12656,7 +12656,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
             </td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">3</td>
+            <td class="t-align-center">3</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
@@ -12668,7 +12668,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
             </td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">4</td>
+            <td class="t-align-center">4</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -12732,7 +12732,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="t-table__td-first-col">共有</td>
+            <td>共有</td>
             <td>String</td>
             <td>-</td>
             <td>是</td>
@@ -12742,7 +12742,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>数据源</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">私有</td>
+            <td>私有</td>
             <td>Number</td>
             <td>0</td>
             <td>否</td>
@@ -12752,7 +12752,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>数据源</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">共有</td>
+            <td>共有</td>
             <td>Array</td>
             <td>[]</td>
             <td>否</td>
@@ -12762,7 +12762,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>数据源</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">私有</td>
+            <td>私有</td>
             <td>Object</td>
             <td>{}</td>
             <td>否</td>
@@ -12772,7 +12772,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>数据源</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">共有</td>
+            <td>共有</td>
             <td>String</td>
             <td>-</td>
             <td>是</td>
@@ -12782,7 +12782,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>数据源</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">私有</td>
+            <td>私有</td>
             <td>Number</td>
             <td>0</td>
             <td>否</td>
@@ -12792,7 +12792,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>数据源</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">共有</td>
+            <td>共有</td>
             <td>Array</td>
             <td>[]</td>
             <td>否</td>
@@ -12802,7 +12802,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>数据源</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">私有</td>
+            <td>私有</td>
             <td>Object</td>
             <td>{}</td>
             <td>否</td>
@@ -12812,7 +12812,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>数据源</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">共有</td>
+            <td>共有</td>
             <td>String</td>
             <td>-</td>
             <td>是</td>
@@ -12822,7 +12822,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>数据源</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">私有</td>
+            <td>私有</td>
             <td>Number</td>
             <td>0</td>
             <td>否</td>
@@ -12832,7 +12832,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>数据源</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">共有</td>
+            <td>共有</td>
             <td>Array</td>
             <td>[]</td>
             <td>否</td>
@@ -12842,7 +12842,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>数据源</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">私有</td>
+            <td>私有</td>
             <td>Object</td>
             <td>{}</td>
             <td>否</td>
@@ -12852,7 +12852,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>数据源</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">共有</td>
+            <td>共有</td>
             <td>String</td>
             <td>-</td>
             <td>是</td>
@@ -12862,7 +12862,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>数据源</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">私有</td>
+            <td>私有</td>
             <td>Number</td>
             <td>0</td>
             <td>否</td>
@@ -12872,7 +12872,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>数据源</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">共有</td>
+            <td>共有</td>
             <td>Array</td>
             <td>[]</td>
             <td>否</td>
@@ -12882,7 +12882,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>数据源</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">私有</td>
+            <td>私有</td>
             <td>Object</td>
             <td>{}</td>
             <td>否</td>
@@ -12892,7 +12892,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>数据源</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">共有</td>
+            <td>共有</td>
             <td>String</td>
             <td>-</td>
             <td>是</td>
@@ -12902,7 +12902,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>数据源</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">私有</td>
+            <td>私有</td>
             <td>Number</td>
             <td>0</td>
             <td>否</td>
@@ -12912,7 +12912,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>数据源</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">共有</td>
+            <td>共有</td>
             <td>Array</td>
             <td>[]</td>
             <td>否</td>
@@ -12922,7 +12922,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
             <td>数据源</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">私有</td>
+            <td>私有</td>
             <td>Object</td>
             <td>{}</td>
             <td>否</td>
@@ -12999,7 +12999,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="t-table__td-first-col t-align-center">0</td>
+            <td class="t-align-center">0</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -13009,7 +13009,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">1</td>
+            <td class="t-align-center">1</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -13019,7 +13019,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">2</td>
+            <td class="t-align-center">2</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -13029,7 +13029,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">3</td>
+            <td class="t-align-center">3</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
@@ -13039,7 +13039,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">4</td>
+            <td class="t-align-center">4</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -13049,7 +13049,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">5</td>
+            <td class="t-align-center">5</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -13059,7 +13059,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">6</td>
+            <td class="t-align-center">6</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -13069,7 +13069,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">7</td>
+            <td class="t-align-center">7</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
@@ -13079,7 +13079,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">8</td>
+            <td class="t-align-center">8</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -13089,7 +13089,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">9</td>
+            <td class="t-align-center">9</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -13099,7 +13099,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">10</td>
+            <td class="t-align-center">10</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -13109,7 +13109,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">11</td>
+            <td class="t-align-center">11</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
@@ -13119,7 +13119,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">12</td>
+            <td class="t-align-center">12</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -13129,7 +13129,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">13</td>
+            <td class="t-align-center">13</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -13139,7 +13139,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">14</td>
+            <td class="t-align-center">14</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -13149,7 +13149,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">15</td>
+            <td class="t-align-center">15</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
@@ -13159,7 +13159,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">16</td>
+            <td class="t-align-center">16</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -13169,7 +13169,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">17</td>
+            <td class="t-align-center">17</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -13179,7 +13179,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">18</td>
+            <td class="t-align-center">18</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -13189,7 +13189,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td><a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col t-align-center">19</td>
+            <td class="t-align-center">19</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
@@ -13398,7 +13398,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correctly 1`] = `
-<div class="t-table t-size-s t-table--bordered" style="position:relative;">
+<div class="t-table t-size-s t-table--bordered t-table--rowspan-colspan" style="position:relative;">
   <div class="t-table__content">
     <table class="t-table--layout-fixed" style="width:;">
       <colgroup>
@@ -13657,7 +13657,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
           </thead>
           <tbody class="t-table__body">
             <tr>
-              <td class="t-table__td-first-col">JQTest1</td>
+              <td>JQTest1</td>
               <td>
                 <p class="status">健康</p>
                 <!---->
@@ -13667,7 +13667,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
               <td>jenny;peter</td>
             </tr>
             <tr>
-              <td class="t-table__td-first-col">JQTest2</td>
+              <td>JQTest2</td>
               <td>
                 <!---->
                 <p class="status warning">警告</p>
@@ -13677,7 +13677,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
               <td>jenny</td>
             </tr>
             <tr>
-              <td class="t-table__td-first-col">JQTest3</td>
+              <td>JQTest3</td>
               <td>
                 <!---->
                 <!---->
@@ -13687,7 +13687,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
               <td>jenny</td>
             </tr>
             <tr>
-              <td class="t-table__td-first-col">JQTest4</td>
+              <td>JQTest4</td>
               <td>
                 <!---->
                 <p class="status warning">警告</p>
@@ -13744,7 +13744,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="row t-table__td-first-col t-align-center">5</td>
+            <td class="row t-align-center">5</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -13754,7 +13754,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             </td>
           </tr>
           <tr>
-            <td class="row t-table__td-first-col t-align-center">6</td>
+            <td class="row t-align-center">6</td>
             <td>共有</td>
             <td>Array</td>
             <td>[]</td>
@@ -13764,7 +13764,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             </td>
           </tr>
           <tr>
-            <td class="row t-table__td-first-col t-align-center">7</td>
+            <td class="row t-align-center">7</td>
             <td>私有</td>
             <td>Object</td>
             <td>{}</td>
@@ -13774,7 +13774,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             </td>
           </tr>
           <tr>
-            <td class="row t-table__td-first-col t-align-center">8</td>
+            <td class="row t-align-center">8</td>
             <td>共有</td>
             <td>String</td>
             <td>-</td>
@@ -13784,7 +13784,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
             </td>
           </tr>
           <tr>
-            <td class="row t-table__td-first-col t-align-center">9</td>
+            <td class="row t-align-center">9</td>
             <td>私有</td>
             <td>Number</td>
             <td>0</td>
@@ -13937,7 +13937,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="demo-multiple-select-cell t-table__td-first-col"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
+            <td class="demo-multiple-select-cell"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest1</td>
             <td>
               <p class="status">健康</p>
@@ -13948,7 +13948,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="demo-multiple-select-cell t-table__td-first-col"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
+            <td class="demo-multiple-select-cell"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest2</td>
             <td>
               <!---->
@@ -13959,7 +13959,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="demo-multiple-select-cell t-table__td-first-col"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
+            <td class="demo-multiple-select-cell"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest3</td>
             <td>
               <p class="status">健康</p>
@@ -13970,7 +13970,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="demo-multiple-select-cell t-table__td-first-col"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
+            <td class="demo-multiple-select-cell"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest4</td>
             <td>
               <!---->
@@ -13981,7 +13981,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="demo-multiple-select-cell t-table__td-first-col"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
+            <td class="demo-multiple-select-cell"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest5</td>
             <td>
               <p class="status">健康</p>
@@ -14038,7 +14038,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="demo-single-select-cell t-table__td-first-col"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+            <td class="demo-single-select-cell"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest1</td>
             <td>
               <p class="status">健康</p>
@@ -14049,7 +14049,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr class="t-table__row--disabled">
-            <td class="demo-single-select-cell t-table__td-first-col"><label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+            <td class="demo-single-select-cell"><label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest2</td>
             <td>
               <!---->
@@ -14060,7 +14060,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr class="t-table__row--selected">
-            <td class="demo-single-select-cell t-table__td-first-col"><label class="t-radio t-is-checked"><input type="radio" checked="checked" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+            <td class="demo-single-select-cell"><label class="t-radio t-is-checked"><input type="radio" checked="checked" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest3</td>
             <td>
               <p class="status">健康</p>
@@ -14071,7 +14071,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr class="t-table__row--disabled">
-            <td class="demo-single-select-cell t-table__td-first-col"><label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+            <td class="demo-single-select-cell"><label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest4</td>
             <td>
               <!---->
@@ -14082,7 +14082,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="demo-single-select-cell t-table__td-first-col"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+            <td class="demo-single-select-cell"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest5</td>
             <td>
               <p class="status">健康</p>
@@ -14135,7 +14135,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue corre
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="t-table__td-first-col">JQTest1</td>
+            <td>JQTest1</td>
             <td>
               <p class="status">健康</p>
               <!---->
@@ -14145,7 +14145,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue corre
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">JQTest2</td>
+            <td>JQTest2</td>
             <td>
               <!---->
               <p class="status unhealth">异常</p>
@@ -14155,7 +14155,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue corre
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">JQTest3</td>
+            <td>JQTest3</td>
             <td>
               <p class="status">健康</p>
               <!---->
@@ -14165,7 +14165,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue corre
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">JQTest4</td>
+            <td>JQTest4</td>
             <td>
               <!---->
               <p class="status unhealth">异常</p>
@@ -14233,7 +14233,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="t-table__td-first-col">JQTest1</td>
+            <td>JQTest1</td>
             <td>
               <p class="status">健康</p>
               <!---->
@@ -14243,7 +14243,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
             <td>jenny;peter</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">JQTest2</td>
+            <td>JQTest2</td>
             <td>
               <!---->
               <p class="status warning">警告</p>
@@ -14253,7 +14253,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
             <td>jenny</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">JQTest3</td>
+            <td>JQTest3</td>
             <td>
               <!---->
               <!---->
@@ -14263,7 +14263,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
             <td>peter</td>
           </tr>
           <tr>
-            <td class="t-table__td-first-col">JQTest4</td>
+            <td>JQTest4</td>
             <td>
               <p class="status">健康</p>
               <!---->
@@ -14318,7 +14318,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="t-table-td--ellipsis t-table__td-first-col">
+            <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">0</div>
             </td>
             <td class="t-table-td--ellipsis">
@@ -14333,7 +14333,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
           </tr>
           <tr>
-            <td class="t-table-td--ellipsis t-table__td-first-col">
+            <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">1</div>
             </td>
             <td class="t-table-td--ellipsis">
@@ -14351,7 +14351,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
           </tr>
           <tr>
-            <td class="t-table-td--ellipsis t-table__td-first-col">
+            <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">2</div>
             </td>
             <td class="t-table-td--ellipsis">
@@ -14369,7 +14369,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
           </tr>
           <tr>
-            <td class="t-table-td--ellipsis t-table__td-first-col">
+            <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">3</div>
             </td>
             <td class="t-table-td--ellipsis">
@@ -14387,7 +14387,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
           </tr>
           <tr>
-            <td class="t-table-td--ellipsis t-table__td-first-col">
+            <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">4</div>
             </td>
             <td class="t-table-td--ellipsis">
@@ -14484,7 +14484,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="t-table__expandable-icon-cell t-table__td-first-col"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
+            <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
               <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
@@ -14499,7 +14499,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td>important.</td>
           </tr>
           <tr>
-            <td class="t-table__expandable-icon-cell t-table__td-first-col"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
+            <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
               <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
@@ -14514,7 +14514,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td>important.</td>
           </tr>
           <tr>
-            <td class="t-table__expandable-icon-cell t-table__td-first-col"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
+            <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
               <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
@@ -14529,7 +14529,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td>important.</td>
           </tr>
           <tr>
-            <td class="t-table__expandable-icon-cell t-table__td-first-col"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
+            <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
               <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
@@ -14544,7 +14544,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td>important.</td>
           </tr>
           <tr>
-            <td class="t-table__expandable-icon-cell t-table__td-first-col"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
+            <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
               <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">

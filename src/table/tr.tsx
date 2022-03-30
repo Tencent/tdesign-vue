@@ -81,13 +81,13 @@ export interface TrProps extends TrCommonProps {
   rowAndColFixedPosition: RowAndColFixedPosition;
   // 属性透传，引用传值，可内部改变
   skipSpansMap: Map<any, boolean>;
+  tableElm: HTMLDivElement;
   onTrRowspanOrColspan?: (params: PrimaryTableCellParams<TableRowData>, cellSpans: RowspanColspan) => void;
   scrollType: string;
   isVirtual: boolean;
   rowHeight: number;
   trs: Map<number, object>;
   bufferSize: number;
-  tableElm: HTMLDivElement;
 }
 
 export const ROW_LISTENERS = ['click', 'dblclick', 'mouseover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];
@@ -298,7 +298,7 @@ export default defineComponent({
         {
           [this.tdEllipsisClass]: col.ellipsis,
           [this.tableBaseClass.tdLastRow]: rowIndex + cellSpans.rowspan === dataLength,
-          [this.tableBaseClass.tdFirstCol]: colIndex === 0,
+          [this.tableBaseClass.tdFirstCol]: colIndex === 0 && this.rowspanAndColspan,
           [this.tdAlignClasses[col.align]]: col.align && col.align !== 'left',
           // 标记可拖拽列
           [this.tableDraggableClasses.handle]: col.colKey === 'drag',
