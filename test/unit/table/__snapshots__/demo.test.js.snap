@@ -12343,6 +12343,7 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
         >
           <td
             class="test t-table__td-first-col"
+            rowspan="2"
           >
             公有
           </td>
@@ -12367,11 +12368,6 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
           class=""
         >
           <td
-            class="test t-table__td-first-col"
-          >
-            公有
-          </td>
-          <td
             class="row"
             colspan="2"
             rowspan="2"
@@ -12394,6 +12390,7 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
         >
           <td
             class="test t-table__td-first-col"
+            rowspan="2"
           >
             公有
           </td>
@@ -12411,11 +12408,6 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
         <tr
           class=""
         >
-          <td
-            class="test t-table__td-first-col"
-          >
-            公有
-          </td>
           <td
             class="row"
           >
@@ -12441,7 +12433,8 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
           class=""
         >
           <td
-            class="test t-table__td-first-col"
+            class="test t-table__td-last-row t-table__td-first-col"
+            rowspan="2"
           >
             公有
           </td>
@@ -12466,11 +12459,6 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
         <tr
           class=""
         >
-          <td
-            class="test t-table__td-first-col"
-          >
-            公有
-          </td>
           <td
             class="row"
           >

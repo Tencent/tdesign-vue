@@ -2,7 +2,7 @@
  * 自定义显示列控制器，即列配置
  */
 import {
-  computed, ref, SetupContext, toRefs, h,
+  computed, ref, SetupContext, toRefs, h, watch,
 } from '@vue/composition-api';
 import { SettingIcon } from 'tdesign-icons-vue';
 import intersection from 'lodash/intersection';
@@ -49,11 +49,15 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
     'display-columns-change',
   );
   // 弹框内的多选
-  const columnCheckboxKeys = ref<CheckboxGroupValue>(keys);
+  const columnCheckboxKeys = ref<CheckboxGroupValue>(displayColumns.value || props.defaultDisplayColumns || keys);
 
   const checkboxOptions = computed<CheckboxOptionObj[]>(() => getCheckboxOptions(columns.value));
 
   const intersectionChecked = computed(() => intersection(columnCheckboxKeys.value, [...enabledColKeys.value]));
+
+  watch([displayColumns], ([val]) => {
+    columnCheckboxKeys.value = val;
+  });
 
   function getCheckboxOptions(columns: PrimaryTableCol[], arr: CheckboxOptionObj[] = []) {
     // 减少循环次数

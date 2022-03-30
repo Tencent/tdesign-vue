@@ -13429,37 +13429,34 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
       </thead>
       <tbody class="t-table__body">
         <tr>
-          <td class="test t-table__td-first-col">公有</td>
+          <td rowspan="2" class="test t-table__td-first-col">公有</td>
           <td class="row">Array&lt;any&gt;</td>
           <td class="test4">[]</td>
           <td colspan="2" class="test3">Y</td>
         </tr>
         <tr>
-          <td class="test t-table__td-first-col">公有</td>
           <td rowspan="2" colspan="2" class="row">String</td>
           <td class="test3">Y</td>
           <td class="row">描述</td>
         </tr>
         <tr>
-          <td class="test t-table__td-first-col">公有</td>
+          <td rowspan="2" class="test t-table__td-first-col">公有</td>
           <td class="test3">Y</td>
           <td class="row">复杂类型</td>
         </tr>
         <tr>
-          <td class="test t-table__td-first-col">公有</td>
           <td class="row">Boolean</td>
           <td class="test4">false</td>
           <td class="test3">Y</td>
           <td class="row">标识符</td>
         </tr>
         <tr>
-          <td class="test t-table__td-first-col">公有</td>
+          <td rowspan="2" class="test t-table__td-last-row t-table__td-first-col">公有</td>
           <td class="row">Array&lt;any&gt;</td>
           <td rowspan="2" colspan="2" class="test4 t-table__td-last-row">-1</td>
           <td class="row">数据源</td>
         </tr>
         <tr>
-          <td class="test t-table__td-first-col">公有</td>
           <td class="row">String</td>
           <td class="row">描述</td>
         </tr>
