@@ -30,6 +30,10 @@ export default (Vue as VueConstructor<Affix>).extend({
     offsetBottom() {
       this.calcInitValue();
     },
+    fixedTop(val) {
+      this.$emit('fixedChange', val !== false, { top: val });
+      if (isFunction(this.onFixedChange)) this.onFixedChange(val !== false, { top: Number(val) });
+    },
   },
   methods: {
     handleScroll() {
@@ -52,8 +56,6 @@ export default (Vue as VueConstructor<Affix>).extend({
             this.fixedTop = false;
           }
           this.ticking = false;
-          this.$emit('fixedChange', this.fixedTop !== false, { top: this.fixedTop });
-          if (isFunction(this.onFixedChange)) this.onFixedChange(this.fixedTop !== false, { top: this.fixedTop });
         });
         this.ticking = true;
       }

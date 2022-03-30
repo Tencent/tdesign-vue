@@ -596,6 +596,7 @@ exports[`Dialog custom demo works fine 1`] = `
   <p>
     弹窗内容自定义
   </p>
+   
   <br />
    
   <div>
@@ -635,7 +636,6 @@ exports[`Dialog custom demo works fine 1`] = `
     <transition-stub
       duration="300"
       name="t-dialog-zoom__vue"
-      onclickconfirm="function () { [native code] }"
     >
       <div
         class="t-dialog__ctx t-dialog__ctx--fixed"
@@ -706,7 +706,6 @@ exports[`Dialog custom demo works fine 1`] = `
     <transition-stub
       duration="300"
       name="t-dialog-zoom__vue"
-      onclickconfirm="function () { [native code] }"
     >
       <div
         class="t-dialog__ctx t-dialog__ctx--fixed"
@@ -781,7 +780,6 @@ exports[`Dialog custom demo works fine 1`] = `
     <transition-stub
       duration="300"
       name="t-dialog-zoom__vue"
-      onclickconfirm="function () { [native code] }"
     >
       <div
         class="t-dialog__ctx t-dialog__ctx--fixed"
@@ -863,11 +861,16 @@ exports[`Dialog custom demo works fine 1`] = `
   <p>
     操作按钮自定义
   </p>
+   
   <br />
    
   <p>
-    底部按钮有两个控制属性：confirmBtn 和 cancelBtn。属性类型有多种：string | ButtonProps | TNode。也可以通过 footer 来自定义控制
+    
+    底部按钮有两个控制属性：confirmBtn 和 cancelBtn。属性类型有多种：string | ButtonProps | TNode。也可以通过 footer
+    来自定义控制
+  
   </p>
+   
   <br />
    
   <button
@@ -1139,7 +1142,6 @@ exports[`Dialog custom demo works fine 1`] = `
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
-    onclickconfirm="function () { [native code] }"
   >
     <div
       class="t-dialog__ctx t-dialog__ctx--fixed"
@@ -1988,7 +1990,6 @@ exports[`Dialog modal demo works fine 1`] = `
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
-    onclickconfirm="function (){ return this$1.visibleModeless = false; }"
   >
     <div
       class="t-dialog__ctx"
@@ -2062,7 +2063,6 @@ exports[`Dialog modal demo works fine 1`] = `
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
-    onclickconfirm="function (){ return this$1.visibleModeless = false; }"
   >
     <div
       class="t-dialog__ctx"
@@ -2232,7 +2232,6 @@ exports[`Dialog position demo works fine 1`] = `
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
-    onclickconfirm="function () { [native code] }"
   >
     <div
       class="t-dialog__ctx t-dialog__ctx--fixed"
@@ -2859,9 +2858,6 @@ exports[`Dialog warning demo works fine 1`] = `
             </span>
           </div>
         </div>
-        <span
-          class="t-dialog__close"
-        />
         <div
           class="t-dialog__body"
         >

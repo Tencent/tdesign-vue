@@ -5,7 +5,7 @@ import props from './row-props';
 import { ClassName, Styles } from '../common';
 import { calcSize } from '../utils/responsive';
 import { TdRowProps } from './type';
-import { getIEVersion } from '../utils/helper';
+import { getIEVersion } from '../_common/js/utils/helper';
 
 const name = `${prefix}-row`;
 
@@ -51,7 +51,18 @@ export default Vue.extend({
 
   mounted() {
     this.updateSize();
+    this.handleIE();
     window.addEventListener('resize', this.updateSize);
+  },
+
+  watch: {
+    gutter() {
+      this.handleIE();
+    },
+
+    size() {
+      this.handleIE();
+    },
   },
 
   beforeDestroy() {
@@ -61,6 +72,15 @@ export default Vue.extend({
   methods: {
     updateSize() {
       this.size = calcSize(window.innerWidth);
+    },
+
+    handleIE() {
+      if (getIEVersion() <= 11) {
+        const rowGap = this.rowGap(this.gutter, this.size);
+        if (rowGap) {
+          this.$el.setAttribute('row-gap', `${rowGap}`);
+        }
+      }
     },
 
     calcRowStyle(gutter: TdRowProps['gutter'], currentSize: string): Styles {
@@ -135,10 +155,6 @@ export default Vue.extend({
       style: rowStyle,
       attrs: {},
     };
-    if (getIEVersion() <= 9) {
-      const rowGap = this.rowGap(this.gutter, this.size);
-      attributes.attrs['row-gap'] = rowGap;
-    }
     return <tag {...attributes}>{this.$slots.default}</tag>;
   },
 });

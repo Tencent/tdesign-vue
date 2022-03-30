@@ -1,4 +1,4 @@
-import config from '../site.config.js';
+import config from '../site.config';
 import TdesignComponents from './components/page.vue';
 
 const { docs } = config;
@@ -41,6 +41,12 @@ const routes = [
     redirect: '/vue/overview',
   },
   {
+    name: 'demos',
+    path: '/vue/demos/:componentName/',
+    component: () => import('./components/demo-page.vue'),
+  },
+  {
+    name: 'demos',
     path: '/vue/demos/:componentName/:demoName',
     component: () => import('./components/demo-page.vue'),
   },

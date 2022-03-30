@@ -1,4 +1,4 @@
-import Vue, { VueConstructor } from 'vue';
+import Vue from 'vue';
 import { ChevronRightIcon } from 'tdesign-icons-vue';
 import TDivider from '../divider';
 import { prefix } from '../config';
@@ -9,10 +9,14 @@ import { DropdownOption } from './type';
 import { renderContent } from '../utils/render-tnode';
 import { emitEvent } from '../utils/event';
 import ripple from '../utils/ripple';
+import mixins from '../utils/mixins';
+import { getKeepAnimationMixins } from '../config-provider/config-receiver';
 
 import { TNodeReturnValue } from '../common';
 
 const name = `${prefix}-dropdown__item`;
+
+const keepAnimationMixins = getKeepAnimationMixins<DropdownItemInstance>();
 
 export interface DropdownItemInstance extends Vue {
   dropdown: {
@@ -20,7 +24,7 @@ export interface DropdownItemInstance extends Vue {
   };
 }
 
-export default (Vue as VueConstructor<DropdownItemInstance>).extend({
+export default mixins(keepAnimationMixins).extend({
   name: 'TDropdownItem',
   components: {
     ChevronRightIcon,
@@ -80,7 +84,12 @@ export default (Vue as VueConstructor<DropdownItemInstance>).extend({
     ];
     return (
       <div>
-        <div v-ripple class={classes} onClick={this.handleItemClick} onMouseover={this.handleMouseover}>
+        <div
+          v-ripple={this.keepAnimation.ripple}
+          class={classes}
+          onClick={this.handleItemClick}
+          onMouseover={this.handleMouseover}
+        >
           <div class={`${name}-content`}>
             <span class={`${name}-text`}>{renderContent(this, 'content', 'default')}</span>
           </div>

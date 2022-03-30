@@ -9,6 +9,7 @@ exports[`Drawer Demo CurrentDOMModeUsageExample wroks fine 1`] = `
   >
     <div
       class="t-drawer t-drawer--right t-drawer--attach"
+      tabindex="0"
     >
       <div
         class="t-drawer__mask"
@@ -222,6 +223,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right"
+    tabindex="0"
   >
     <div
       class="t-drawer__mask"
@@ -277,6 +279,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
    
   <div
     class="t-drawer t-drawer--right"
+    tabindex="0"
   >
     <div
       class="t-drawer__mask"
@@ -331,6 +334,7 @@ exports[`Drawer Demo CustomUsageExample wroks fine 1`] = `
    
   <div
     class="t-drawer t-drawer--right"
+    tabindex="0"
   >
     <div
       class="t-drawer__mask"
@@ -429,6 +433,7 @@ exports[`Drawer Demo NoMaskUsageExample wroks fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right t-drawer--without-mask"
+    tabindex="0"
   >
     <div
       class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
@@ -497,6 +502,7 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right"
+    tabindex="0"
   >
     <div
       class="t-drawer__mask"
@@ -548,6 +554,9 @@ exports[`Drawer Demo PlacementUsageExample wroks fine 1`] = `
           </button>
         </div>
       </div>
+      <div
+        style="z-index: 1; position: absolute; background: transparent; left: 0px; width: 16px; height: 100%; cursor: col-resize;"
+      />
     </div>
   </div>
    
@@ -720,6 +729,7 @@ exports[`Drawer Demo SizeUsageExample wroks fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right"
+    tabindex="0"
   >
     <div
       class="t-drawer__mask"
@@ -930,6 +940,7 @@ exports[`Drawer Demo operation wroks fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right"
+    tabindex="0"
   >
     <div
       class="t-drawer__mask"
@@ -957,13 +968,19 @@ exports[`Drawer Demo operation wroks fine 1`] = `
           </span>
            
           <div
-            class="t-input t-size-m"
+            class="t-input__wrap"
           >
-            <input
-              class="t-input__inner"
-              placeholder="请输入"
-              type="text"
-            />
+            <div
+              class="t-input t-size-m"
+            >
+              <input
+                autocomplete=""
+                class="t-input__inner"
+                placeholder="请输入"
+                type="text"
+                unselectable="off"
+              />
+            </div>
           </div>
         </div>
          
@@ -975,13 +992,19 @@ exports[`Drawer Demo operation wroks fine 1`] = `
           </span>
            
           <div
-            class="t-input t-size-m"
+            class="t-input__wrap"
           >
-            <input
-              class="t-input__inner"
-              placeholder="请输入"
-              type="text"
-            />
+            <div
+              class="t-input t-size-m"
+            >
+              <input
+                autocomplete=""
+                class="t-input__inner"
+                placeholder="请输入"
+                type="text"
+                unselectable="off"
+              />
+            </div>
           </div>
         </div>
          
@@ -993,13 +1016,19 @@ exports[`Drawer Demo operation wroks fine 1`] = `
           </span>
            
           <div
-            class="t-input t-size-m"
+            class="t-input__wrap"
           >
-            <input
-              class="t-input__inner"
-              placeholder="请输入"
-              type="text"
-            />
+            <div
+              class="t-input t-size-m"
+            >
+              <input
+                autocomplete=""
+                class="t-input__inner"
+                placeholder="请输入"
+                type="text"
+                unselectable="off"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -1051,6 +1080,7 @@ exports[`Drawer base demo works fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right"
+    tabindex="0"
   >
     <div
       class="t-drawer__mask"

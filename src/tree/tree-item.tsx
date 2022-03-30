@@ -2,7 +2,7 @@ import Vue, { VNode, CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
 import { CaretRightSmallIcon } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { TreeConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { TreeConfig, getKeepAnimationMixins } from '../config-provider/config-receiver';
 import TCheckBox from '../checkbox';
 import TLoading from '../loading';
 import TreeNode from '../_common/js/tree/tree-node';
@@ -11,6 +11,8 @@ import { TypeEventState } from './interface';
 import { TREE_NODE_NAME, CLASS_NAMES } from './constants';
 import { ClassName } from '../common';
 import ripple from '../utils/ripple';
+
+const keepAnimationMixins = getKeepAnimationMixins();
 
 export const TreeItemProps = {
   node: {
@@ -21,13 +23,14 @@ export const TreeItemProps = {
   },
 };
 
-export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
+export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnimationMixins).extend({
   name: TREE_NODE_NAME,
   props: TreeItemProps,
   directives: { ripple },
   data() {
     return {
       data: null,
+      clicked: false,
     };
   },
   methods: {
@@ -95,7 +98,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
           });
 
           const styles = {
-            '--level': level,
+            '--level': level ? String(level) : undefined,
             'box-shadow': shadowStyles.join(','),
           };
 
@@ -199,7 +202,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
 
         labelNode = (
           <TCheckBox
-            v-ripple
+            v-ripple={this.keepAnimation.ripple}
             class={labelClasses}
             checked={node.checked}
             indeterminate={node.indeterminate}
@@ -215,7 +218,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
       } else {
         const inner = <span style="position: relative">{labelNode}</span>;
         labelNode = node.isActivable() ? ( // 使用key是为了避免元素复用，从而顺利移除ripple指令
-          <span key="1" v-ripple class={labelClasses}>
+          <span key="1" v-ripple={this.keepAnimation.ripple} class={labelClasses}>
             {inner}
           </span>
         ) : (
@@ -278,6 +281,14 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
       return itemNodes;
     },
     handleClick(evt: MouseEvent) {
+      // checkbox 上也有 emit click 事件
+      // 用这个逻辑避免重复的 click 事件被触发
+      if (this.clicked) return;
+      this.clicked = true;
+      setTimeout(() => {
+        this.clicked = false;
+      });
+
       const { node } = this;
       const state: TypeEventState = {
         mouseEvent: evt,
@@ -302,9 +313,11 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
       this.data = this.node.data;
     }
   },
+  destroyed() {
+    this.data = null;
+  },
   render(createElement: CreateElement) {
     const { node } = this;
-
     const { tree, level, value } = node;
 
     if (!tree || !tree.nodeMap.get(value)) {
@@ -315,7 +328,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree')).extend({
     return (
       <div
         class={classList}
-        data-value={node.value}
+        data-value={value}
         data-level={level}
         style={styles}
         onClick={(evt: MouseEvent) => this.handleClick(evt)}

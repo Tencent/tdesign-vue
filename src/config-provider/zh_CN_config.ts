@@ -1,3 +1,4 @@
+/* eslint-disable no-template-curly-in-string */
 import { GlobalConfigProvider } from './type';
 
 const GLOBAL_CONFIG_ZH: GlobalConfigProvider = {
@@ -74,6 +75,11 @@ const GLOBAL_CONFIG_ZH: GlobalConfigProvider = {
     expandIcon: undefined,
     // 排序图标（使用降序图标）
     sortIcon: undefined,
+    loadingMoreText: '点击加载更多',
+    loadingText: '正在加载中，请稍后',
+    sortAscendingOperationText: '点击升序',
+    sortCancelOperationText: '点击取消排序',
+    sortDescendingOperationText: '点击降序',
   },
   select: {
     empty: '暂无数据',
@@ -90,6 +96,7 @@ const GLOBAL_CONFIG_ZH: GlobalConfigProvider = {
   treeSelect: {
     empty: '暂无数据',
     loadingText: '加载中',
+    placeholder: '请选择',
   },
   datePicker: {
     placeholder: {
@@ -120,15 +127,73 @@ const GLOBAL_CONFIG_ZH: GlobalConfigProvider = {
   upload: {
     sizeLimitMessage: '文件大小不能超过 {sizeLimit}',
     cancelUploadText: '取消上传',
+    file: {
+      fileNameText: '文件名',
+      fileOperationDateText: '上传日期',
+      fileOperationText: '操作',
+      fileSizeText: '文件尺寸',
+      fileStatusText: '状态',
+    },
+    progress: {
+      failText: '上传失败',
+      successText: '上传成功',
+      uploadingText: '上传中',
+      waitingText: '待上传',
+    },
+    dragger: {
+      clickAndDragText: '点击上方“选择文件”或将文件拖到此区域',
+      dragDropText: '释放鼠标',
+      draggingText: '拖拽到此区域',
+    },
+    triggerUploadText: {
+      image: '点击上传图片',
+      normal: '点击上传',
+      fileInput: '选择文件',
+      reupload: '重新上传',
+      continueUpload: '继续上传',
+      delete: '删除',
+    },
   },
   tag: {
     closeIcon: undefined,
   },
   form: {
     requiredMark: true,
+    errorMessage: {
+      date: '请输入正确的${name}',
+      url: '请输入正确的${name}',
+      required: '${name}必填',
+      max: '${name}字符长度不能超过 ${validate} 个字符，一个中文等于两个字符',
+      min: '${name}字符长度不能少于 ${validate} 个字符，一个中文等于两个字符',
+      len: '${name}字符长度必须是 ${validate}',
+      enum: '${name}只能是${validate}等',
+      idcard: '请输入正确的${name}',
+      telnumber: '请输入正确的${name}',
+      pattern: '请输入正确的${name}',
+      validator: '${name}不符合要求',
+      boolean: '${name}数据类型必须是布尔类型',
+      number: '${name}必须是数字',
+    },
   },
   input: {
     placeholder: '请输入',
+  },
+  list: {
+    loadingText: '正在加载中，请稍等',
+    loadingMoreText: '点击加载更多',
+  },
+  alert: {
+    expandText: '展开更多',
+    collapseText: '收起',
+  },
+  anchor: {
+    copySuccessText: '链接复制成功',
+    copyText: '复制链接',
+  },
+  colorPicker: {
+    swatchColorTitle: '系统预设颜色',
+    recentColorTitle: '最近使用颜色',
+    clearConfirmText: '确定清空最近使用的颜色吗？',
   },
 };
 

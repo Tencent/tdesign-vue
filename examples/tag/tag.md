@@ -50,11 +50,12 @@ close | `(context: { e: MouseEvent })` | 如果关闭按钮存在，点击关闭
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
-checked | Boolean | false | 标签选中的状态，默认风格（theme=default）才有选中态。支持语法糖 `v-model` | N
-defaultChecked | Boolean | false | 标签选中的状态，默认风格（theme=default）才有选中态。非受控属性 | N
+checked | Boolean | undefined | 标签选中的状态，默认风格（theme=default）才有选中态。支持语法糖 `v-model` | N
+defaultChecked | Boolean | undefined | 标签选中的状态，默认风格（theme=default）才有选中态。非受控属性 | N
 content | String / Number / Slot / Function | - | 组件子元素。TS 类型：`string | number | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 default | String / Number / Slot / Function | - | 组件子元素，同 content。TS 类型：`string | number | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 disabled | Boolean | false | 标签禁用态，失效标签不能触发事件。默认风格（theme=default）才有禁用态 | N
+size | String | medium | 标签尺寸。可选项：small/medium/large。TS 类型：`SizeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 onChange | Function |  | TS 类型：`(checked: boolean) => void`<br/>组件子元素 | N
 onClick | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/>点击标签时触发 | N
 

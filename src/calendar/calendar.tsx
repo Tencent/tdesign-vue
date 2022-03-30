@@ -7,6 +7,7 @@ import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { CalendarConfig } from '../config-provider/config-receiver';
 import * as utils from './utils';
 import { emitEvent } from '../utils/event';
+import { getIEVersion } from '../_common/js/utils/helper';
 
 // 组件的一些常量
 import {
@@ -52,12 +53,12 @@ const getDefaultControllerConfigData = (visible = true): Record<string, any> => 
   // 年份选择框组件相关设置
   year: {
     visible: true, // 是否显示
-    selecteProps: {}, // 用于透传props给该select组件
+    selectProps: {}, // 用于透传props给该select组件
   },
   // 年份选择框组件相关设置
   month: {
     visible: true, // 是否显示（“year”模式下本身是不显示该组件的）
-    selecteProps: {}, // 用于透传props给该select组件
+    selectProps: {}, // 用于透传props给该select组件
   },
   // 隐藏\显示周末按钮组件相关设置
   weekend: {
@@ -260,12 +261,13 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     },
 
     controllerConfigData(): Record<string, any> {
-      if (typeof this.controllerConfig === 'boolean') {
-        return getDefaultControllerConfigData(this.controllerConfig);
+      const controllerConfig = this.controllerConfig ?? this.global.controllerConfig ?? true;
+      if (typeof controllerConfig === 'boolean') {
+        return getDefaultControllerConfigData(controllerConfig);
       }
       return {
         ...getDefaultControllerConfigData(),
-        ...this.controllerConfig,
+        ...controllerConfig,
       };
     },
 
@@ -310,10 +312,10 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
       return this.checkControllerDisabled('mode', 'radioGroupProps');
     },
     isYearDisabled(): boolean {
-      return this.checkControllerDisabled('year', 'selecteProps');
+      return this.checkControllerDisabled('year', 'selectProps');
     },
     isMonthDisabled(): boolean {
-      return this.checkControllerDisabled('month', 'selecteProps');
+      return this.checkControllerDisabled('month', 'selectProps');
     },
     isWeekendToggleDisabled(): boolean {
       const p = this.isShowWeekend ? 'hideWeekendButtonProps' : 'showWeekendButtonProps';
@@ -322,6 +324,19 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     isCurrentBtnDisabled(): boolean {
       const p = this.curSelectedMode === 'month' ? 'currentDayButtonProps' : 'currentMonthButtonProps';
       return this.checkControllerDisabled('current', p);
+    },
+
+    filterYearStr(): string {
+      return `${this.controllerOptions.filterDate.getFullYear()}`;
+    },
+    filterMonthStr(): string {
+      return `${this.controllerOptions.filterDate.getMonth() + 1}`;
+    },
+    filterYearMonth(): { month: string; year: string } {
+      return {
+        year: this.filterYearStr,
+        month: this.filterMonthStr,
+      };
     },
   },
   watch: {
@@ -343,8 +358,38 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
       },
       immediate: true,
     },
+    filterYearMonth: {
+      handler(v: { month: string; year: string }) {
+        emitEvent<Parameters<TdCalendarProps['onMonthChange']>>(this, 'month-change', v);
+        this.controllerChange();
+      },
+    },
+    curSelectedMode() {
+      this.handleIE();
+    },
+    isShowWeekend() {
+      this.handleIE();
+    },
+    isControllerVisible() {
+      this.handleIE();
+    },
+  },
+  mounted() {
+    this.handleIE();
   },
   methods: {
+    handleIE() {
+      if (getIEVersion() <= 9) {
+        this.$nextTick(() => {
+          const element = this.$el.children[this.isControllerVisible ? 1 : 0];
+          if (this.curSelectedMode === 'month') {
+            element.setAttribute('is-show-weekend', `${this.isShowWeekend}`);
+          } else {
+            element.removeAttribute('is-show-weekend');
+          }
+        });
+      }
+    },
     getCalendarWeekSlotData(item: CellColHeader): CalendarWeek {
       return {
         day: item.num,
@@ -388,15 +433,6 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     controllerChange(): void {
       const options = this.controllerOptions;
       emitEvent<Parameters<TdCalendarProps['onControllerChange']>>(this, 'controller-change', options);
-    },
-    // 月份切换响应事件（包括年和月下拉框变化）
-    monthChange(): void {
-      const options = {
-        year: `${this.controllerOptions.filterDate.getFullYear()}`,
-        month: `${this.controllerOptions.filterDate.getMonth() + 1}`,
-      };
-      emitEvent<Parameters<TdCalendarProps['onMonthChange']>>(this, 'month-change', options);
-      this.controllerChange();
     },
     onWeekendToggleClick(): void {
       this.isShowWeekend = !this.isShowWeekend;
@@ -465,8 +501,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                   v-model={this.curSelectedYear}
                   size={this.controlSize}
                   disabled={this.isYearDisabled}
-                  {...this.controllerConfigData.year.selecteProps}
-                  onChange={this.monthChange}
+                  props={{ ...this.controllerConfigData.year.selectProps }}
                 >
                   {this.yearSelectOptionList.map((item) => (
                     <t-option key={item.value} value={item.value} label={item.label} disabled={item.disabled}>
@@ -482,8 +517,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                   v-model={this.curSelectedMonth}
                   size={this.controlSize}
                   disabled={this.isMonthDisabled}
-                  {...this.controllerConfigData.month.selecteProps}
-                  onChange={this.monthChange}
+                  props={{ ...this.controllerConfigData.month.selectProps }}
                 >
                   {this.monthSelectOptionList.map((item) => (
                     <t-option key={item.value} value={item.value} label={item.label} disabled={item.disabled}>
@@ -500,7 +534,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                   variant="default-filled"
                   size={this.controlSize}
                   disabled={this.isModeDisabled}
-                  {...this.controllerConfigData.mode.radioGroupProps}
+                  props={{ ...this.controllerConfigData.mode.radioGroupProps }}
                   onChange={this.controllerChange}
                 >
                   {this.modeSelectOptionList.map((item) => (
@@ -516,10 +550,9 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                 <t-check-tag
                   class={`${COMPONENT_NAME}__control-tag`}
                   defaultChecked={!this.isShowWeekend}
-                  size={this.controlSize}
                   disabled={this.isWeekendToggleDisabled}
-                  {...this.weekendBtnVBind}
                   onClick={this.onWeekendToggleClick}
+                  props={{ ...this.weekendBtnVBind }}
                 >
                   {this.weekendBtnText}
                 </t-check-tag>
@@ -533,7 +566,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                   onClick={() => {
                     this.toCurrent();
                   }}
-                  {...this.currentBtnVBind}
+                  props={{ ...this.currentBtnVBind }}
                 >
                   {this.currentBtnText}
                 </t-button>
@@ -574,7 +607,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
               {week.map(
                 (item, itemIndex) => this.checkMonthCellItemShowed(item) && (
                     <calendar-cell-item
-                      key={`${weekIndex}-${itemIndex}`}
+                      key={`d-${weekIndex}-${itemIndex}`}
                       item={item}
                       theme={this.theme}
                       t={this.t}
@@ -601,7 +634,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
             <tr class={`${COMPONENT_NAME}__table-body-row`}>
               {cell.map((item, itemIndex) => (
                 <calendar-cell-item
-                  key={`${cellIndex}-${itemIndex}`}
+                  key={`m-${cellIndex}-${itemIndex}`}
                   item={item}
                   theme={this.theme}
                   t={this.t}

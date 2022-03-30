@@ -11,6 +11,7 @@ exports[`Textarea base demo works fine 1`] = `
       class="t-textarea__inner"
       name="description"
       placeholder="请输入描述文案"
+      unselectable="off"
     />
   </div>
    
@@ -21,6 +22,7 @@ exports[`Textarea base demo works fine 1`] = `
       class="t-textarea__inner"
       name="description"
       placeholder="请输入文案，高度可自适应；autosize=true"
+      unselectable="off"
     />
   </div>
    
@@ -31,6 +33,7 @@ exports[`Textarea base demo works fine 1`] = `
       class="t-textarea__inner t-resize-none"
       name="description"
       placeholder="请输入文案，高度可自适应，最小3行，最大5行；autosize={minRows: 3, maxRows: 5}"
+      unselectable="off"
     />
   </div>
 </div>
@@ -46,6 +49,7 @@ exports[`Textarea events demo works fine 1`] = `
     <textarea
       class="t-textarea__inner"
       placeholder="请输入"
+      unselectable="off"
     />
   </div>
 </div>
@@ -60,6 +64,7 @@ exports[`Textarea maxlength demo works fine 1`] = `
       class="t-textarea__inner"
       maxlength="20"
       placeholder="请输入描述文案，文本长度最多20，maxlength=20"
+      unselectable="off"
     />
     <span
       class="t-textarea__limit"
@@ -76,6 +81,7 @@ exports[`Textarea maxlength demo works fine 1`] = `
     <textarea
       class="t-textarea__inner"
       placeholder="请输入描述文案，最多20字符（一个汉字占两个字符长度），maxcharacter=20"
+      unselectable="off"
     />
     <span
       class="t-textarea__limit"
@@ -96,6 +102,7 @@ exports[`Textarea type demo works fine 1`] = `
     <textarea
       class="t-textarea__inner t-is-disabled"
       disabled="disabled"
+      unselectable="off"
     />
   </div>
    
@@ -105,19 +112,17 @@ exports[`Textarea type demo works fine 1`] = `
     <textarea
       class="t-textarea__inner"
       readonly="readonly"
+      unselectable="on"
     />
   </div>
    
   <div
-    class="t-textarea__wrap"
+    class="t-textarea"
   >
-    <div
-      class="t-textarea"
-    >
-      <textarea
-        class="t-textarea__inner"
-      />
-    </div>
+    <textarea
+      class="t-textarea__inner"
+      unselectable="off"
+    />
     <div
       class="t-textarea__tips t-textarea__tips--normal"
     >
@@ -126,15 +131,12 @@ exports[`Textarea type demo works fine 1`] = `
   </div>
    
   <div
-    class="t-textarea__wrap"
+    class="t-textarea"
   >
-    <div
-      class="t-textarea"
-    >
-      <textarea
-        class="t-textarea__inner t-is-success"
-      />
-    </div>
+    <textarea
+      class="t-textarea__inner t-is-success"
+      unselectable="off"
+    />
     <div
       class="t-textarea__tips t-textarea__tips--success"
     >
@@ -143,15 +145,12 @@ exports[`Textarea type demo works fine 1`] = `
   </div>
    
   <div
-    class="t-textarea__wrap"
+    class="t-textarea"
   >
-    <div
-      class="t-textarea"
-    >
-      <textarea
-        class="t-textarea__inner t-is-warning"
-      />
-    </div>
+    <textarea
+      class="t-textarea__inner t-is-warning"
+      unselectable="off"
+    />
     <div
       class="t-textarea__tips t-textarea__tips--warning"
     >
@@ -160,15 +159,12 @@ exports[`Textarea type demo works fine 1`] = `
   </div>
    
   <div
-    class="t-textarea__wrap"
+    class="t-textarea"
   >
-    <div
-      class="t-textarea"
-    >
-      <textarea
-        class="t-textarea__inner t-is-error"
-      />
-    </div>
+    <textarea
+      class="t-textarea__inner t-is-error"
+      unselectable="off"
+    />
     <div
       class="t-textarea__tips t-textarea__tips--error"
     >

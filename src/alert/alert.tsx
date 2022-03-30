@@ -8,10 +8,12 @@ import { prefix } from '../config';
 import { on, off, addClass } from '../utils/dom';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import mixins from '../utils/mixins';
+import getConfigReceiverMixins, { AlertConfig } from '../config-provider/config-receiver';
 
 const name = `${prefix}-alert`;
 
-export default Vue.extend({
+export default mixins(getConfigReceiverMixins<Vue, AlertConfig>('alert')).extend({
   name: 'TAlert',
   data() {
     return {
@@ -65,15 +67,16 @@ export default Vue.extend({
 
     renderClose(): VNode {
       let closeContent: ScopedSlotReturnValue = null;
-      if (typeof this.close === 'string') {
+      if (this.close === true || this.close === '') {
+        closeContent = <CloseIcon />;
+      } else if (typeof this.close === 'string') {
         closeContent = this.close;
       } else if (typeof this.close === 'function') {
         closeContent = this.close(this.$createElement);
-      } else if (this.close === true) {
-        closeContent = <CloseIcon />;
       } else {
         closeContent = this.$scopedSlots.close && this.$scopedSlots.close(null)[0];
       }
+
       return closeContent ? (
         <div class={`${name}__close`} onClick={this.handleClose}>
           {closeContent}
@@ -134,7 +137,7 @@ export default Vue.extend({
                 this.collapsed = !this.collapsed;
               }}
             >
-              {this.collapsed ? '展开全部' : '收起'}
+              {this.collapsed ? this.global.expandText : this.global.collapseText}
             </div>
           ) : null}
         </div>

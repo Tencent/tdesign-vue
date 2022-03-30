@@ -1,5 +1,7 @@
 import Vue, { CreateElement, VNode } from 'vue';
 import { BrowseIcon, BrowseOffIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+import camelCase from 'lodash/camelCase';
+import kebabCase from 'lodash/kebabCase';
 import { InputValue, TdInputProps } from './type';
 import { getCharacterLength, omit } from '../utils/helper';
 import getConfigReceiverMixins, { InputConfig } from '../config-provider/config-receiver';
@@ -35,25 +37,36 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
   props: { ...props },
   data() {
     return {
+      formDisabled: undefined,
       isHover: false,
       focused: false,
       renderType: this.type,
+      inputValue: this.value,
     };
   },
   computed: {
+    tDisabled(): boolean {
+      return this.formDisabled || this.disabled;
+    },
+    tPlaceholder(): string {
+      return this.placeholder ?? this.t(this.global.placeholder);
+    },
     showClear(): boolean {
-      return this.value && !this.disabled && this.clearable && this.isHover;
+      return (
+        (this.value && !this.disabled && this.clearable && this.isHover && !this.readonly) || this.showClearIconOnEmpty
+      );
     },
     inputAttrs(): Record<string, any> {
       return getValidAttrs({
         autofocus: this.autofocus,
-        disabled: this.disabled,
+        disabled: this.tDisabled,
         readonly: this.readonly,
         autocomplete: this.autocomplete,
-        placeholder: this.placeholder ?? this.t(this.global.placeholder),
+        placeholder: this.tPlaceholder,
         maxlength: this.maxlength,
         name: this.name || undefined,
         type: this.renderType,
+        unselectable: this.readonly ? 'on' : 'off',
       });
     },
     inputClasses(): ClassName {
@@ -61,12 +74,14 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         name,
         CLASSNAMES.SIZE[this.size] || '',
         {
-          [CLASSNAMES.STATUS.disabled]: this.disabled,
+          [CLASSNAMES.STATUS.disabled]: this.tDisabled,
           [CLASSNAMES.STATUS.focused]: this.focused,
           [`${prefix}-is-${this.status}`]: this.status,
-          [`${prefix}-is-disabled`]: this.disabled,
+          [`${prefix}-align-${this.align}`]: this.align !== 'left',
+          [`${prefix}-is-disabled`]: this.tDisabled,
           [`${prefix}-is-readonly`]: this.readonly,
           [`${name}--focused`]: this.focused,
+          [`${name}--auto-width`]: this.autoWidth,
         },
       ];
     },
@@ -76,9 +91,15 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       handler(val) {
         if (val === true) {
           this.$nextTick(() => {
-            (this.$refs.refInputElem as HTMLInputElement).focus();
+            (this.$refs.inputRef as HTMLInputElement).focus();
           });
         }
+      },
+      immediate: true,
+    },
+    value: {
+      handler(val) {
+        this.inputValue = val;
       },
       immediate: true,
     },
@@ -86,9 +107,23 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
 
   created() {
     this.composing = false;
+    if (this.autoWidth) {
+      this.addListenders();
+    }
   },
-
   methods: {
+    addListenders() {
+      this.$watch(
+        () => this.value + this.placeholder,
+        () => {
+          if (!this.autoWidth) return;
+          this.$nextTick(() => {
+            this.updateInputWidth();
+          });
+        },
+        { immediate: true },
+      );
+    },
     mouseEvent(v: boolean) {
       this.isHover = v;
     },
@@ -96,13 +131,20 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       if (typeof icon === 'function') {
         return icon(h);
       }
-      if (this.$scopedSlots[iconType]) {
-        return this.$scopedSlots[iconType](null);
+
+      // 插槽名称为中划线
+      if (this.$scopedSlots[kebabCase(iconType)]) {
+        return this.$scopedSlots[kebabCase(iconType)](null);
       }
+      // 插槽名称为驼峰
+      if (this.$scopedSlots[camelCase(iconType)]) {
+        return this.$scopedSlots[camelCase(iconType)](null);
+      }
+
       return null;
     },
     setInputValue(v: InputValue = ''): void {
-      const input = this.$refs.refInputElem as HTMLInputElement;
+      const input = this.$refs.inputRef as HTMLInputElement;
       if (!input) return;
       const sV = String(v);
       if (input.value !== sV) {
@@ -110,11 +152,11 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       }
     },
     focus(): void {
-      const input = this.$refs.refInputElem as HTMLInputElement;
+      const input = this.$refs.inputRef as HTMLInputElement;
       input?.focus();
     },
     blur(): void {
-      const input = this.$refs.refInputElem as HTMLInputElement;
+      const input = this.$refs.inputRef as HTMLInputElement;
       input?.blur();
     },
     handleInput(e: InputEvent): void {
@@ -125,7 +167,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     },
 
     handleKeydown(e: KeyboardEvent) {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       const code = e.code || e.key;
       if (code === 'Enter' || code === 'NumpadEnter') {
         emitEvent<Parameters<TdInputProps['onEnter']>>(this, 'enter', this.value, { e });
@@ -134,18 +176,21 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       }
     },
     handleKeyUp(e: KeyboardEvent) {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       emitEvent<Parameters<TdInputProps['onKeyup']>>(this, 'keyup', this.value, { e });
     },
     handleKeypress(e: KeyboardEvent) {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       emitEvent<Parameters<TdInputProps['onKeypress']>>(this, 'keypress', this.value, { e });
     },
     onHandlePaste(e: ClipboardEvent) {
-      if (this.disabled) return;
+      if (this.tDisabled) return;
       // @ts-ignore
       const clipData = e.clipboardData || window.clipboardData;
       emitEvent<Parameters<TdInputProps['onPaste']>>(this, 'paste', { e, pasteValue: clipData?.getData('text/plain') });
+    },
+    onHandleMousewheel(e: WheelEvent) {
+      emitEvent<Parameters<TdInputProps['onWheel']>>(this, 'wheel', { e });
     },
     emitPassword() {
       const { renderType } = this;
@@ -159,16 +204,24 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       this.emitFocus(e);
     },
     emitFocus(e: FocusEvent) {
-      if (this.disabled) return;
+      this.inputValue = this.value;
+      if (this.tDisabled) return;
       this.focused = true;
       emitEvent<Parameters<TdInputProps['onFocus']>>(this, 'focus', this.value, { e });
     },
-    emitBlur(e: FocusEvent) {
+    formatAndEmitBlur(e: FocusEvent) {
+      if (this.format) {
+        this.inputValue = this.format(this.value);
+      }
       this.focused = false;
       emitEvent<Parameters<TdInputProps['onBlur']>>(this, 'blur', this.value, { e });
     },
-    onCompositionend(e: InputEvent) {
+    compositionendHandler(e: InputEvent) {
       this.inputValueChangeHandle(e);
+    },
+    onRootClick(e: MouseEvent) {
+      (this.$refs.inputRef as HTMLInputElement)?.focus();
+      this.$emit('click', e);
     },
     inputValueChangeHandle(e: InputEvent) {
       const { target } = e;
@@ -191,12 +244,19 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       this.mouseEvent(false);
       this.onMouseleave?.({ e });
     },
+
+    updateInputWidth() {
+      const pre = this.$refs.inputPreRef as HTMLSpanElement;
+      if (!pre) return;
+      const width = pre.offsetWidth;
+      (this.$refs.inputRef as HTMLInputElement).style.width = `${width}px`;
+    },
   },
 
   render(h: CreateElement): VNode {
     const inputEvents = getValidAttrs({
       focus: this.emitFocus,
-      blur: this.emitBlur,
+      blur: this.formatAndEmitBlur,
       keydown: this.handleKeydown,
       keyup: this.handleKeyUp,
       keypress: this.handleKeypress,
@@ -232,6 +292,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
 
     const classes = [
       this.inputClasses,
+      this.inputClass,
       {
         [`${name}--prefix`]: prefixIcon || labelContent,
         [`${name}--suffix`]: suffixIcon || suffixContent,
@@ -240,20 +301,27 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     const inputNode = (
       <div
         class={classes}
+        onClick={this.onRootClick}
         onMouseenter={this.onInputMouseenter}
         onMouseleave={this.onInputMouseleave}
+        onwheel={this.onHandleMousewheel}
         {...{ attrs: wrapperAttrs, on: wrapperEvents }}
       >
         {prefixIcon ? <span class={[`${name}__prefix`, `${name}__prefix-icon`]}>{prefixIcon}</span> : null}
         {labelContent}
         <input
           {...{ attrs: this.inputAttrs, on: inputEvents }}
-          ref="refInputElem"
+          ref="inputRef"
           class={`${name}__inner`}
-          value={this.value}
+          value={this.inputValue}
           onInput={this.handleInput}
-          onCompositionend={this.onCompositionend}
+          onCompositionend={this.compositionendHandler}
         />
+        {this.autoWidth && (
+          <span ref="inputPreRef" class={`${prefix}-input__input-pre`}>
+            {this.value || this.tPlaceholder}
+          </span>
+        )}
         {suffixContent}
         {suffixIcon ? (
           <span class={[`${name}__suffix`, `${name}__suffix-icon`, { [`${name}__clear`]: this.showClear }]}>
@@ -264,14 +332,11 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     );
 
     const tips = renderTNodeJSX(this, 'tips');
-    if (tips) {
-      return (
-        <div class={INPUT_WRAP_CLASS}>
-          {inputNode}
-          <div class={`${INPUT_TIPS_CLASS} ${prefix}-input__tips--${this.status || 'normal'}`}>{tips}</div>
-        </div>
-      );
-    }
-    return inputNode;
+    return (
+      <div class={INPUT_WRAP_CLASS}>
+        {inputNode}
+        {tips && <div class={`${INPUT_TIPS_CLASS} ${prefix}-input__tips--${this.status || 'normal'}`}>{tips}</div>}
+      </div>
+    );
   },
 });

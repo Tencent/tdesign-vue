@@ -2,11 +2,11 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-12 16:59:59
  * */
 
 import { InputProps } from '../input';
 import { PopupProps } from '../popup';
+import { TimePickerProps } from '../time-picker';
 import { TNode } from '../common';
 
 export interface TdDatePickerProps {
@@ -16,7 +16,7 @@ export interface TdDatePickerProps {
    */
   allowInput?: boolean;
   /**
-   * 是否显示清楚按钮
+   * 是否显示清除按钮
    * @default false
    */
   clearable?: boolean;
@@ -39,8 +39,7 @@ export interface TdDatePickerProps {
    */
   firstDayOfWeek?: number;
   /**
-   * 用于格式化日期，[详细文档](https://day.js.org/docs/en/display/format)
-   * @default 'YYYY-MM-DD'
+   * 用于格式化日期，全局配置默认为：'YYYY-MM-DD'，[详细文档](https://day.js.org/docs/en/display/format)
    */
   format?: string;
   /**
@@ -83,6 +82,10 @@ export interface TdDatePickerProps {
    */
   suffixIcon?: TNode;
   /**
+   * 透传 TimePicker 组件属性
+   */
+  timePickerProps?: TimePickerProps;
+  /**
    * 选中值
    */
   value?: DateValue;
@@ -106,7 +109,7 @@ export interface TdDatePickerProps {
    * 输入框数据发生变化时触发，参数 input 表示输入内容，value 表示组件当前有效值
    */
   onInput?: (context: { input: string; value: DateValue; e: InputEvent }) => void;
-};
+}
 
 export interface TdDateRangePickerProps {
   /**
@@ -196,24 +199,39 @@ export interface TdDateRangePickerProps {
    * 选中日期时触发，可能是开始日期，也可能是结束日期，第二个参数可以区分是开始日期或是结束日期
    */
   onPick?: (value: DateValue, context: PickContext) => void;
-};
+}
 
 export type DisableDate = Array<DateValue> | DisableDateObj | ((date: DateValue) => boolean);
 
-export interface DisableDateObj { from?: string; to?: string; before?: string; after?: string };
+export interface DisableDateObj {
+  from?: string;
+  to?: string;
+  before?: string;
+  after?: string;
+}
 
-export interface PresetDate { [name: string]: DateValue | (() => DateValue) };
+export interface PresetDate {
+  [name: string]: DateValue | (() => DateValue);
+}
 
 export type DateValue = string | Date | Array<DateValue>;
 
-export type DisableRangeDate = Array<DateValue> | DisableDateObj | ((context: { date: DateRangeValue; partial: DateRangePickerPartial }) => boolean);
+export type DisableRangeDate =
+  | Array<DateValue>
+  | DisableDateObj
+  | ((context: { date: DateRangeValue; partial: DateRangePickerPartial }) => boolean);
 
 export type DateRangePickerPartial = 'start' | 'end';
 
-export interface PresetRange { [range: string]: DateRange | (() => DateRange)};
+export interface PresetRange {
+  [range: string]: DateRange | (() => DateRange);
+}
 
 export type DateRange = [DateValue, DateValue];
 
 export type DateRangeValue = Array<DateValue>;
 
-export interface PickContext { e: MouseEvent; partial: DateRangePickerPartial };
+export interface PickContext {
+  e: MouseEvent;
+  partial: DateRangePickerPartial;
+}

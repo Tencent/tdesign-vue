@@ -1,7 +1,8 @@
-import Vue, { VNode, VueConstructor } from 'vue';
+import Vue, { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import get from 'lodash/get';
 import { renderContent } from '../utils/render-tnode';
+import mixins from '../utils/mixins';
 import { scrollSelectedIntoView } from '../utils/dom';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
@@ -11,17 +12,21 @@ import { TdOptionProps } from './type';
 import Checkbox from '../checkbox/index';
 import { SelectInstance } from './instance';
 import { ClassName } from '../common';
+import { getKeepAnimationMixins } from '../config-provider/config-receiver';
+
+const keepAnimationMixins = getKeepAnimationMixins<OptionInstance>();
 
 const selectName = `${prefix}-select`;
 export interface OptionInstance extends Vue {
   tSelect: SelectInstance;
 }
 
-export default (Vue as VueConstructor<OptionInstance>).extend({
+export default mixins(keepAnimationMixins).extend({
   name: 'TOption',
   data() {
     return {
       isHover: false,
+      formDisabled: undefined,
     };
   },
   props: { ...props },
@@ -51,6 +56,9 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
     },
   },
   computed: {
+    tDisabled(): boolean {
+      return this.formDisabled || this.disabled;
+    },
     // 键盘上下按键选中hover样式的选项
     hovering(): boolean {
       return (
@@ -76,7 +84,7 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
       return [
         `${prefix}-select-option`,
         {
-          [CLASSNAMES.STATUS.disabled]: this.disabled || this.multiLimitDisabled,
+          [CLASSNAMES.STATUS.disabled]: this.tDisabled || this.multiLimitDisabled,
           [CLASSNAMES.STATUS.selected]: this.selected,
           [CLASSNAMES.SIZE[this.tSelect && this.tSelect.size]]: this.tSelect && this.tSelect.size,
           [`${prefix}-select-option__hover`]: this.hovering,
@@ -124,7 +132,7 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
   methods: {
     select(e: MouseEvent | KeyboardEvent) {
       e.stopPropagation();
-      if (this.disabled || this.multiLimitDisabled) {
+      if (this.tDisabled || this.multiLimitDisabled) {
         return false;
       }
       const parent = this.$el.parentNode as HTMLElement;
@@ -141,7 +149,7 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
     this.tSelect && this.tSelect.getOptions(this);
   },
   beforeDestroy() {
-    this.tSelect && this.tSelect.hasOptions && this.tSelect.destroyOptions(this);
+    this.tSelect && this.tSelect.hasSlotOptions && this.tSelect.destroyOptions(this);
   },
   render(): VNode {
     const {
@@ -157,7 +165,7 @@ export default (Vue as VueConstructor<OptionInstance>).extend({
         onMouseenter={this.mouseEvent.bind(true)}
         onMouseleave={this.mouseEvent.bind(false)}
         onClick={this.select}
-        v-ripple
+        v-ripple={this.keepAnimation.ripple}
       >
         {this.tSelect && this.tSelect.multiple ? (
           <t-checkbox

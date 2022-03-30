@@ -14,12 +14,17 @@ import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import FakeArrow from '../common-components/fake-arrow';
 import Ripple from '../utils/ripple';
 import { TdMenuInterface, TdSubMenuInterface } from './const';
+import { getKeepAnimationMixins } from '../config-provider/config-receiver';
+import { AnimationType } from '../config-provider/type';
+
+const keepAnimationMixins = getKeepAnimationMixins();
 
 export default defineComponent({
   name: 'TSubmenu',
   components: {
     FakeArrow,
   },
+  mixins: [keepAnimationMixins],
   directives: {
     ripple: Ripple,
   },
@@ -129,8 +134,9 @@ export default defineComponent({
   },
   methods: {
     renderHeadSubmenu() {
+      const rippleVal = (this.keepAnimation as Record<AnimationType, boolean>).ripple ? this.rippleColor : false;
       const normalSubmenu = [
-        <div v-ripple={this.rippleColor} class={this.submenuClass} onClick={this.handleSubmenuItemClick}>
+        <div v-ripple={rippleVal} class={this.submenuClass} onClick={this.handleSubmenuItemClick}>
           {renderTNodeJSX(this, 'title')}
         </div>,
         <ul style="opacity: 0; width: 0; height: 0; overflow: hidden">{renderContent(this, 'default', 'content')}</ul>,
@@ -163,9 +169,10 @@ export default defineComponent({
       }
 
       const needRotate = this.mode === 'popup' && this.isNested;
+      const rippleVal = (this.keepAnimation as Record<AnimationType, boolean>).ripple ? this.rippleColor : false;
 
       const normalSubmenu = [
-        <div v-ripple={this.rippleColor} class={this.submenuClass} onClick={this.handleSubmenuItemClick}>
+        <div v-ripple={rippleVal} class={this.submenuClass} onClick={this.handleSubmenuItemClick}>
           {icon}
           <span class={[`${prefix}-menu__content`]}>{renderTNodeJSX(this, 'title')}</span>
           {hasContent && (

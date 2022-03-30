@@ -1,4 +1,3 @@
-// import Vue, { VNode, VueConstructor, CreateElement } from 'vue';
 import { VNode } from 'vue';
 import upperFirst from 'lodash/upperFirst';
 import pick from 'lodash/pick';
@@ -21,15 +20,8 @@ import {
   TypeTreeInstance,
   TypeTargetNode,
 } from './interface';
-import {
-  CLASS_NAMES,
-  FX,
-} from './constants';
-import {
-  getMark,
-  getNode,
-  emitEvent,
-} from './util';
+import { CLASS_NAMES, FX } from './constants';
+import { getMark, getNode, emitEvent } from './util';
 
 export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tree')).extend({
   name: 'TTree',
@@ -40,12 +32,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
   props,
   data() {
     const {
-      checkProps,
-      empty,
-      icon,
-      label,
-      line,
-      operations,
+      checkProps, empty, icon, label, line, operations,
     } = this;
 
     return {
@@ -69,11 +56,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     classList(): ClassName {
       const list: Array<string> = [CLASS_NAMES.tree];
       const {
-        disabled,
-        hover,
-        transition,
-        checkable,
-        expandOnClickNode,
+        disabled, hover, transition, checkable, expandOnClickNode,
       } = this;
       if (disabled) {
         list.push(CLASS_NAMES.disabled);
@@ -131,69 +114,35 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       }
       return nodesMap;
     },
-    // 更新视图节点映射关系
-    updateNodesMap() {
-      const { store, treeNodes } = this;
-      const nodesMap = this.getNodesMap();
-
-      let index = 0;
-      while (index < treeNodes.length) {
-        const nodeView = treeNodes[index];
-        if (nodeView && nodeView.componentInstance) {
-          const { node } = nodeView.componentInstance;
-          if (node && !store.getNode(node.value)) {
-            // 视图列表中的节点，在树中不存在
-            const nodeViewIndex = treeNodes.indexOf(nodeView);
-            // 则从视图中删除对应节点
-            treeNodes.splice(nodeViewIndex, 1);
-            // 注意 $destroy 是一个耗时操作
-            nodeView.componentInstance.$destroy();
-            nodesMap.set(node.value, null);
-            nodesMap.delete(node.value);
-          } else {
-            index += 1;
-          }
-        } else {
-          index += 1;
-        }
-      }
-    },
     // 刷新树的视图状态
     refresh() {
-      const {
-        store,
-        treeNodes,
-      } = this;
-
-      // 性能改进说明
-      // $destroy 方法极耗性能，因此不能频繁调用
-      // 但没有 $destroy 方法的调用，重复创建节点，会导致内存泄露
-      // 即使用缓存存储节点，如果反复插入节点，也会发现占用内存持续走高，而释放速度不足
-      // 因此不再对显示隐藏行为进行节点增删操作，仅改变样式
-
+      const { store } = this;
       const nodesMap = this.getNodesMap();
-      this.updateNodesMap();
-
-      // 遍历模型中的所有节点
-      let index = 0;
       const allNodes = store.getNodes();
-      allNodes.forEach((node: TreeNode) => {
-        if (nodesMap.has(node.value)) {
-          const nodeView = nodesMap.get(node.value);
-          const nodeViewIndex = treeNodes.indexOf(nodeView);
-          if (nodeViewIndex !== index) {
-            // 节点存在，但位置与可视节点位置冲突，需要更新节点位置
-            treeNodes.splice(nodeViewIndex, 1);
-            treeNodes.splice(index, 0, nodeView);
-          }
-        } else if (node.visible) {
+      const curNodesMap = new Map();
+      this.treeNodes = allNodes.map((node: TreeNode) => {
+        curNodesMap.set(node.value, 1);
+        // 维持住已经渲染的节点，不进行dom的增删
+        let nodeView = nodesMap.get(node.value);
+        // 如果需要展示，生成新的vnode
+        if (!nodeView && node.visible) {
           // 初次仅渲染可显示的节点
           // 不存在节点视图，则创建该节点视图并插入到当前位置
-          const nodeView = this.renderItem(node);
-          treeNodes.splice(index, 0, nodeView);
+          nodeView = this.renderItem(node);
           nodesMap.set(node.value, nodeView);
         }
-        index += 1;
+        return nodeView;
+      });
+
+      // 更新缓存后，被删除的节点要移除掉，避免内存泄露
+      this.$nextTick(() => {
+        const keys = [...nodesMap.keys()];
+        keys.forEach((value: string) => {
+          if (!curNodesMap.get(value)) {
+            nodesMap.delete(value);
+          }
+        });
+        curNodesMap.clear();
       });
     },
     // 同步 Store 选项
@@ -220,11 +169,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       store.setConfig(storeProps);
     },
     updateExpanded() {
-      const {
-        store,
-        expanded,
-        expandParent,
-      } = this;
+      const { store, expanded, expandParent } = this;
       // 初始化展开状态
       // 校验是否自动展开父节点
       if (Array.isArray(expanded)) {
@@ -246,10 +191,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     build() {
       let list = this.data;
       const {
-        actived,
-        value,
-        valueMode,
-        filter,
+        actived, value, valueMode, filter,
       } = this;
 
       const store = new TreeStore({
@@ -294,11 +236,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     rebuild(list: TdTreeProps['data']) {
       this.getNodesMap().clear();
       this.treeNodes.length = 0;
-      const {
-        store,
-        value,
-        actived,
-      } = this;
+      const { store, value, actived } = this;
       store.reload(list);
       // 初始化选中状态
       if (Array.isArray(value)) {
@@ -360,10 +298,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         node: node.getModel(),
       };
       const {
-        value,
-        expanded,
-        actived,
-        store,
+        value, expanded, actived, store,
       } = this;
       if (value && value.length > 0) {
         store.replaceChecked(value);
@@ -378,12 +313,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     },
     handleClick(state: TypeEventState): void {
       const { expandOnClickNode } = this;
-      const {
-        mouseEvent,
-        event,
-        node,
-      } = state;
-
+      const { mouseEvent, event, node } = state;
       if (!node || this.disabled || node.disabled) {
         return;
       }
@@ -393,11 +323,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       let shouldExpand = expandOnClickNode;
       let shouldActive = true;
       ['trigger', 'ignore'].forEach((markName) => {
-        const mark = getMark(
-          markName,
-          event.target as HTMLElement,
-          event.currentTarget as HTMLElement,
-        );
+        const mark = getMark(markName, event.target as HTMLElement, event.currentTarget as HTMLElement);
         const markValue = mark?.value || '';
         if (markValue.indexOf('expand') >= 0) {
           if (markName === 'trigger') {
@@ -513,8 +439,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       const node = this.store.getNode(value);
       let pathNodes = [];
       if (node) {
-        pathNodes = node.getPath()
-          .map((node: TreeNode) => node.getModel());
+        pathNodes = node.getPath().map((node: TreeNode) => node.getModel());
       }
       return pathNodes;
     },
@@ -532,14 +457,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       $scopedSlots: scopedSlots,
     } = this;
 
-    const scopeProps = pick(this, [
-      'checkProps',
-      'disableCheck',
-      'icon',
-      'label',
-      'line',
-      'operations',
-    ]);
+    const scopeProps = pick(this, ['checkProps', 'disableCheck', 'icon', 'label', 'line', 'operations']);
 
     this.updateStoreConfig();
     Object.assign(treeScope, scopeProps);
@@ -551,9 +469,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     if (treeNodes.length <= 0) {
       const useLocale = !this.empty && !this.$scopedSlots.empty;
       emptyNode = (
-        <div class={CLASS_NAMES.treeEmpty}>
-          {useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty')}
-        </div>
+        <div class={CLASS_NAMES.treeEmpty}>{useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty')}</div>
       );
     }
 
@@ -564,14 +480,11 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         class={CLASS_NAMES.treeList}
         enter-active-class={CLASS_NAMES.treeNodeEnter}
         leave-active-class={CLASS_NAMES.treeNodeLeave}
-      >{treeNodes}</transition-group>
+      >
+        {treeNodes}
+      </transition-group>
     );
 
-    return (
-      <div class={classList}>
-        {treeNodeList}
-        {emptyNode}
-      </div>
-    );
+    return <div class={classList}>{emptyNode || treeNodeList}</div>;
   },
 });

@@ -41,11 +41,13 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
   props: { ...props },
   data() {
     return {
+      // Form 表单控制禁用态时的变量
+      formDisabled: undefined,
       isHover: false,
       visible: false,
       searchInput: '',
       showCreateOption: false,
-      hasOptions: false, // select的slot是否有options组件
+      hasSlotOptions: false, // select的slot是否有options组件
       defaultProps: {
         trigger: 'click',
         placement: 'bottom-left' as string,
@@ -60,6 +62,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       hoverIndex: -1,
       popupOpenTime: 250, // popup打开弹出层的延迟时间
       checkScroll: true, // 弹出层执行加宽事件（仅执行一次，且在有滚动条时执行）
+      isInited: false,
     };
   },
   components: {
@@ -81,8 +84,9 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     classes(): ClassName {
       return [
         `${name}`,
+        `${prefix}-select-polyfill`, // 基于select-input改造时需要移除，polyfill代码，同时移除common中此类名
         {
-          [CLASSNAMES.STATUS.disabled]: this.disabled,
+          [CLASSNAMES.STATUS.disabled]: this.tDisabled,
           [CLASSNAMES.STATUS.active]: this.visible,
           [CLASSNAMES.SIZE[this.size]]: this.size,
           [`${prefix}-has-prefix`]: this.$scopedSlots.prefixIcon,
@@ -109,6 +113,9 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           [CLASSNAMES.SIZE[this.size]]: this.size,
         },
       ];
+    },
+    tDisabled(): boolean {
+      return this.formDisabled || this.disabled;
     },
     showPlaceholder(): boolean {
       if (
@@ -141,7 +148,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return Boolean(
         this.clearable
           && this.isHover
-          && !this.disabled
+          && !this.tDisabled
           && ((!this.multiple && (this.value || this.value === 0))
             || (this.multiple && Array.isArray(this.value) && this.value.length)),
       );
@@ -151,7 +158,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return (
         !this.clearable
         || !this.isHover
-        || this.disabled
+        || this.tDisabled
         || (!this.multiple && !this.value && this.value !== 0)
         || (this.multiple && (!Array.isArray(this.value) || (Array.isArray(this.value) && !this.value.length)))
       );
@@ -160,10 +167,10 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return this.filterable || isFunction(this.filter);
     },
     showLoading(): boolean {
-      return this.loading && !this.disabled;
+      return this.loading && !this.tDisabled;
     },
     showFilter(): boolean {
-      if (this.disabled) return false;
+      if (this.tDisabled) return false;
       if (!this.multiple && this.selectedSingle && this.canFilter) {
         return this.visible;
       }
@@ -181,6 +188,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           }
           return get(target[target.length - 1], this.realLabel);
         }
+        return this.value.toString();
       }
       const showText = get(this.value, this.realLabel);
       // label为空时显示value值
@@ -264,6 +272,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       }
     },
     searchInput(val) {
+      if (!val && !this.visible) return;
       if (isFunction(this.onSearch) || this.$listeners.search) {
         this.debounceOnRemote();
       }
@@ -287,7 +296,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     visible() {
       this.visible && document.addEventListener('keydown', this.keydownEvent);
       !this.visible && document.removeEventListener('keydown', this.keydownEvent);
-      this.visible && Array.isArray(this.hoverOptions) && this.initHoverindex();
+      !this.visible && (this.showCreateOption = false);
     },
   },
   methods: {
@@ -320,10 +329,6 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     visibleChange(val: boolean) {
       emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', val);
-      if (this.focusing && !val) {
-        this.visible = true;
-        return;
-      }
       this.visible = val;
       if (!val) {
         this.searchInput = '';
@@ -369,7 +374,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     removeTag(index: number, context?: { e?: MouseEvent | KeyboardEvent }) {
       const { e } = context || {};
       e?.stopPropagation();
-      if (this.disabled) {
+      if (this.tDisabled) {
         return;
       }
       const val = this.value[index];
@@ -402,7 +407,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
         (item) => get(item, this.realValue) === option.value && get(item, this.realLabel) === option.label,
       );
       if (!tmp.length) {
-        this.hasOptions = true;
+        this.hasSlotOptions = true;
         const valueLabel = {};
         set(valueLabel, this.realValue, option.value);
         set(valueLabel, this.realLabel, option.label);
@@ -464,6 +469,10 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       }
       switch (e.code) {
         case 'ArrowDown':
+          if (this.hoverIndex === -1) {
+            this.initHoverindex();
+            return;
+          }
           if (this.hoverIndex < this.hoverOptions.length - 1) {
             this.hoverIndex += 1;
             this.arrowDownOption();
@@ -473,6 +482,10 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           }
           break;
         case 'ArrowUp':
+          if (this.hoverIndex === -1) {
+            this.initHoverindex();
+            return;
+          }
           if (this.hoverIndex > 0) {
             this.hoverIndex -= 1;
             this.arrowUpOption();
@@ -547,7 +560,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       this.$nextTick(() => {
         let styles = (this.popupProps && this.popupProps.overlayStyle) || {};
         if (this.popupProps && isFunction(this.popupProps.overlayStyle)) {
-          styles = this.popupProps.overlayStyle(this.$refs.select as HTMLElement) || {};
+          styles = this.popupProps.overlayStyle(this.$refs.select as HTMLElement, this.$refs.content as HTMLElement) || {};
         }
         if (typeof styles === 'object' && !styles.width) {
           const elWidth = (this.$refs.select as HTMLElement).getBoundingClientRect().width;
@@ -582,7 +595,8 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       return this.placeholder || this.t(this.global.placeholder);
     },
     getCloseIcon() {
-      const closeIconClass = [`${name}__right-icon`, `${name}__right-icon-clear`];
+      // TODO 基于select-input改造时需要移除，polyfill代码，同时移除common中此类名
+      const closeIconClass = [`${name}__right-icon`, `${name}__right-icon-clear`, `${name}__right-icon-polyfill`];
       if (isFunction(this.global.clearIcon)) {
         return (
           <span class={closeIconClass} onClick={this.clearSelect}>
@@ -603,7 +617,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           {options.map((groupList: SelectOptionGroup) => {
             const children = groupList.children.filter((item) => this.displayOptionsMap.get(item));
             return (
-              <t-option-group label={groupList.group} divider={groupList.divider}>
+              <t-option-group v-show={children.length} label={groupList.group} divider={groupList.divider}>
                 {this.renderOptions(children)}
               </t-option-group>
             );
@@ -634,20 +648,28 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
         : this.renderOptions(this.displayOptions);
     },
     initHoverindex() {
+      const ableOptionIndex = Object.keys(this.hoverOptions).filter((i) => !this.hoverOptions[i].disabled);
+      const ableIndex = ableOptionIndex.length ? ableOptionIndex[0] : '0';
       if (!this.multiple && (typeof this.value === 'string' || typeof this.value === 'number')) {
         const targetIndex = Object.keys(this.hoverOptions).filter(
           (i) => get(this.hoverOptions[i], this.realValue) === this.value,
         );
-        this.hoverIndex = targetIndex.length ? parseInt(targetIndex[targetIndex.length - 1], 10) : -1;
-      } else if (this.multiple && Array.isArray(this.value) && this.value.length) {
-        this.value.some((item: string | number | TdOptionProps) => {
-          const targetIndex = Object.keys(this.hoverOptions).filter(
-            (i) => (typeof item === 'object' && get(this.hoverOptions[i], this.realValue) === get(item, this.realValue))
-              || get(this.hoverOptions[i], this.realValue) === item,
-          );
-          this.hoverIndex = targetIndex.length ? parseInt(targetIndex[targetIndex.length - 1], 10) : -1;
-          return this.hoverIndex !== -1;
-        });
+        this.hoverIndex = targetIndex.length
+          ? parseInt(targetIndex[targetIndex.length - 1], 10)
+          : parseInt(ableIndex, 10);
+      } else if (this.multiple) {
+        this.hoverIndex = parseInt(ableIndex, 10);
+        Array.isArray(this.value)
+          && this.value.some((item: string | number | TdOptionProps) => {
+            const targetIndex = Object.keys(this.hoverOptions).filter(
+              (i) => (typeof item === 'object' && get(this.hoverOptions[i], this.realValue) === get(item, this.realValue))
+                || get(this.hoverOptions[i], this.realValue) === item,
+            );
+            this.hoverIndex = targetIndex.length
+              ? parseInt(targetIndex[targetIndex.length - 1], 10)
+              : parseInt(ableIndex, 10);
+            return this.hoverIndex !== -1;
+          });
       }
     },
 
@@ -657,14 +679,14 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
       const emptySlot = this.getEmpty();
       const loadingTextSlot = this.getLoadingText();
       return (
-        <div slot="content">
+        <div slot="content" class={`${name}__dropdown-inner`}>
           {renderTNodeJSX(this, 'panelTopContent')}
           <ul v-show={showCreateOption} class={[`${name}__create-option`, listName]}>
             <t-option value={this.searchInput} label={this.searchInput} class={`${name}__create-option--special`} />
           </ul>
-          {loading && <li class={this.tipsClass}>{loadingTextSlot}</li>}
-          {!loading && !displayOptions.length && !showCreateOption && <li class={this.emptyClass}>{emptySlot}</li>}
-          {!this.hasOptions && displayOptions.length && !loading ? (
+          {loading && <div class={this.tipsClass}>{loadingTextSlot}</div>}
+          {!loading && !displayOptions.length && !showCreateOption && <div class={this.emptyClass}>{emptySlot}</div>}
+          {!this.hasSlotOptions && displayOptions.length && !loading ? (
             this.renderDataWithOptions()
           ) : (
             <ul v-show={!loading && displayOptions.length} class={[`${prefix}-select__groups`, listName]}>
@@ -675,13 +697,54 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
         </div>
       );
     },
+    /**
+     * Parse options from slots before popup, execute only once
+     */
+    initOptions() {
+      if (this.realOptions.length || this.isInited) return;
+
+      const children = renderTNodeJSX(this, 'default');
+      if (children) {
+        this.realOptions = parseOptions(children);
+        this.isInited = true;
+        this.hasSlotOptions = true;
+      }
+
+      function parseOptions(vnodes: VNode[]): TdOptionProps[] {
+        if (!vnodes) return [];
+        return vnodes.reduce((options, vnode) => {
+          const { componentOptions } = vnode;
+          if (componentOptions?.tag === 't-option') {
+            const propsData = componentOptions.propsData as any;
+            return options.concat({
+              label: propsData.label,
+              value: propsData.value,
+              disabled: propsData.disabled,
+              content: componentOptions.children ? () => componentOptions.children : propsData.content,
+              default: propsData.default,
+            });
+          }
+          if (componentOptions?.tag === 't-option-group') {
+            return options.concat(parseOptions(componentOptions.children));
+          }
+          return options;
+        }, []);
+      }
+    },
+  },
+
+  mounted() {
+    this.initOptions();
+  },
+  updated() {
+    this.initOptions();
   },
 
   render(): VNode {
     const {
       classes,
       popupObject,
-      disabled,
+      tDisabled,
       popClass,
       size,
       showPlaceholder,
@@ -700,7 +763,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           ref="popup"
           visible={this.visible}
           class={`${name}__popup-reference`}
-          disabled={disabled}
+          disabled={tDisabled}
           on={{ 'visible-change': this.visibleChange }}
           expandAnimation={true}
           {...{ props: { ...popupObject, overlayClassName: popClass } }}
@@ -721,8 +784,8 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
                     v-show={this.minCollapsedNum <= 0 || index < this.minCollapsedNum}
                     key={index}
                     size={size}
-                    closable={!item.disabled && !disabled}
-                    disabled={disabled}
+                    closable={!item.disabled && !tDisabled}
+                    disabled={tDisabled}
                     style="max-width: 100%;"
                     maxWidth="100%"
                     title={get(item, realLabel)}
@@ -755,7 +818,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
                 v-model={this.searchInput}
                 size={size}
                 placeholder={filterPlaceholder}
-                disabled={disabled}
+                disabled={tDisabled}
                 class={`${name}__input`}
                 readonly={!this.visible || !this.showFilter}
                 onFocus={this.focus}
@@ -764,10 +827,17 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
               />
             )}
             {this.showRightArrow && !this.showLoading && (
-              <fake-arrow overlayClassName={`${name}__right-icon`} isActive={this.visible && !this.disabled} />
+              // TODO 基于select-input改造时需要移除，polyfill代码，同时移除common中此类名
+              <fake-arrow
+                overlayClassName={`${name}__right-icon ${name}__right-icon-polyfill`}
+                isActive={this.visible && !this.tDisabled}
+              />
             )}
             {this.showClose && !this.showLoading && this.getCloseIcon()}
-            {this.showLoading && <t-loading class={`${name}__right-icon ${name}__active-icon`} size="small" />}
+            {/* TODO 基于select-input改造时需要移除，polyfill代码，同时移除common中此类名 */}
+            {this.showLoading && (
+              <t-loading class={`${name}__right-icon ${name}__active-icon ${name}__right-icon-polyfill`} size="small" />
+            )}
           </div>
           {this.renderContent()}
         </Popup>

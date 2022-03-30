@@ -2,10 +2,20 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-19 10:44:26
  * */
 
+import { TNode } from '../common';
+
 export interface TdInputNumberProps {
+  /**
+   * 文本内容位置，居左/居中/居右
+   */
+  align?: 'left' | 'center' | 'right';
+  /**
+   * 宽度随内容自适应
+   * @default false
+   */
+  autoWidth?: boolean;
   /**
    * [小数位数](https://en.wiktionary.org/wiki/decimal_place)
    */
@@ -31,14 +41,22 @@ export interface TdInputNumberProps {
   min?: number;
   /**
    * 占位符
-   * @default ''
    */
   placeholder?: string;
+  /**
+   * 只读状态
+   * @default false
+   */
+  readonly?: boolean;
   /**
    * 组件尺寸
    * @default medium
    */
   size?: 'small' | 'medium' | 'large';
+  /**
+   * 文本框状态
+   */
+  status?: 'success' | 'warning' | 'error';
   /**
    * 数值改变步数，可以是小数
    * @default 1
@@ -49,6 +67,10 @@ export interface TdInputNumberProps {
    * @default row
    */
   theme?: 'column' | 'row' | 'normal';
+  /**
+   * 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式
+   */
+  tips?: string | TNode;
   /**
    * 值
    */
@@ -85,8 +107,11 @@ export interface TdInputNumberProps {
    * 释放键盘时触发
    */
   onKeyup?: (value: number, context: { e: KeyboardEvent }) => void;
-};
+}
 
-export interface ChangeContext { type: ChangeSource; e: InputEvent | MouseEvent | FocusEvent };
+export interface ChangeContext {
+  type: ChangeSource;
+  e: InputEvent | MouseEvent | FocusEvent;
+}
 
 export type ChangeSource = 'add' | 'reduce' | 'input' | '';

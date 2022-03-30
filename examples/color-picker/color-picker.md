@@ -9,7 +9,7 @@ disabled | Boolean | false | 是否禁用组件 | N
 enableAlpha | Boolean | false | 是否开启透明通道 | N
 format | String | RGB | 格式化色值。`enableAlpha` 为真时，`RGBA/HSLA/HSVA/HEX8` 等值有效。可选项：RGB/RGBA/HSL/HSLA/HSB/HSV/HSVA/HEX/HEX8/CMYK/CSS | N
 multiple | Boolean | false | 是否允许选中多个颜色 | N
-popupProps | Object | - | 透传 Popup 组件全部属性，如 `placement` `overlayStyle` `overlayClassName` 等。TS 类型：`PopupProps`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/color-picker/type.ts) | N
+popupProps | Object | - | 透传 Popup 组件全部属性，如 `placement` `overlayStyle` `overlayClassName` 等。TS 类型：`PopupProps`，[Popup API Documents](./popup?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/color-picker/type.ts) | N
 swatchColors | Array | - | 颜色样例。TS 类型：`Array<string>` | N
 value | String | - | 色值。支持语法糖 `v-model` | N
 defaultValue | String | - | 色值。非受控属性 | N

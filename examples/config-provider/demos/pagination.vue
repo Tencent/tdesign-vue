@@ -5,18 +5,22 @@
 </template>
 
 <script>
+import merge from 'lodash/merge';
+import enConfig from 'tdesign-vue/locale/en_US';
+
 export default {
   data() {
     return {
       current: 1,
-      globalConfig: {
+      // 全局特性配置，可以引入英文默认配置 enConfig，还可以在默认配置的基础上进行自定义配置
+      globalConfig: merge(enConfig, {
         pagination: {
           itemsPerPage: '{size} / page',
           jumpTo: 'jump to',
           page: '',
           total: 'Total {total} items',
         },
-      },
+      }),
     };
   },
 };

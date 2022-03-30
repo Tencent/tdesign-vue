@@ -12,6 +12,7 @@ import { THEME_LIST } from './const';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import props from './props';
 import { ClassName } from '../common';
+import { fadeIn, fadeOut } from './animation';
 
 const name = `${prefix}-message`;
 
@@ -27,7 +28,10 @@ export default Vue.extend({
     Loading,
   },
 
-  props: { ...props },
+  props: {
+    ...props,
+    placement: String, // just for animation
+  },
 
   data() {
     return {
@@ -55,6 +59,11 @@ export default Vue.extend({
     this.duration && this.setTimer();
   },
 
+  mounted() {
+    const msgDom = this.$refs.msg as HTMLElement;
+    fadeIn(msgDom, this.$props.placement);
+  },
+
   methods: {
     setTimer() {
       if (!this.duration) {
@@ -63,7 +72,10 @@ export default Vue.extend({
       this.timer = Number(
         setTimeout(() => {
           this.clearTimer();
-          this.$emit('duration-end');
+          const msgDom = this.$refs.msg as HTMLElement;
+          fadeOut(msgDom, this.$props.placement, () => {
+            this.$emit('duration-end');
+          });
           if (this.onDurationEnd) {
             this.onDurationEnd();
           }
@@ -107,7 +119,7 @@ export default Vue.extend({
 
   render() {
     return (
-      <div class={this.classes} onMouseenter={this.clearTimer} onMouseleave={this.setTimer}>
+      <div ref="msg" class={this.classes} onMouseenter={this.clearTimer} onMouseleave={this.setTimer}>
         {this.renderIcon()}
         {renderContent(this, 'default', 'content')}
         {this.renderClose()}

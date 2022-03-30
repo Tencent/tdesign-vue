@@ -11,6 +11,7 @@ export type MixnsFooterButton = string | ButtonProps | TNode;
 export interface MixinsConfirmBtn {
   theme?: MixinsThemeType;
   className?: ClassName;
+  size?: ButtonProps['size'];
   confirmBtn: MixnsFooterButton;
   globalConfirm: PopconfirmConfig['confirm'] | DrawerConfig['confirm'] | DialogConfig['confirm'];
   globalConfirmBtnTheme?: PopconfirmConfig['confirmBtnTheme'] | DialogConfig['confirmBtnTheme'];
@@ -18,6 +19,7 @@ export interface MixinsConfirmBtn {
 
 export interface MixinsCancelBtn {
   className?: ClassName;
+  size?: ButtonProps['size'];
   cancelBtn: MixnsFooterButton;
   globalCancel: PopconfirmConfig['cancel'] | DrawerConfig['cancel'] | DialogConfig['cancel'];
 }
@@ -71,9 +73,7 @@ export default Vue.extend({
       } else if (isObject(button)) {
         newOptions = { ...newOptions, ...button };
       }
-      return (
-        <TButton class={className} props={newOptions}/>
-      );
+      return <TButton class={className} props={newOptions} />;
     },
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -88,6 +88,7 @@ export default Vue.extend({
       let props: ButtonProps = {
         theme: defaultTheme,
         content: '确定',
+        size: options.size,
         onClick: (e) => {
           this.confirmBtnAction(e);
         },
@@ -106,6 +107,7 @@ export default Vue.extend({
       let props: ButtonProps = {
         theme: 'default',
         content: '取消',
+        size: options.size,
         onClick: (e) => {
           this.cancelBtnAction(e);
         },
@@ -118,5 +120,4 @@ export default Vue.extend({
       return props;
     },
   },
-
 });

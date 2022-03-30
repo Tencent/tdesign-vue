@@ -1,14 +1,24 @@
-import Vue, { VNode } from 'vue';
+import { VNode } from 'vue';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import TLoading from '../loading';
 import props from './props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import ripple from '../utils/ripple';
+import { getKeepAnimationMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
 const name = `${prefix}-button`;
 
-export default Vue.extend({
+const keepAnimationMixins = getKeepAnimationMixins();
+export interface ButtonHTMLAttributes {
+  attrs?: {
+    disabled?: boolean;
+    type?: string;
+  };
+}
+
+export default mixins(keepAnimationMixins).extend({
   name: 'TButton',
 
   props,
@@ -53,14 +63,15 @@ export default Vue.extend({
       on.click = this.onClick;
     }
 
+    const buttonAttrs: ButtonHTMLAttributes = {
+      attrs: {
+        type: this.type,
+        disabled,
+      },
+    };
+
     return (
-      <button
-        v-ripple
-        class={buttonClass}
-        type={this.type}
-        disabled={disabled}
-        {...{ on }}
-      >
+      <button v-ripple={this.keepAnimation.ripple} class={buttonClass} {...buttonAttrs} {...{ on }}>
         {buttonContent}
       </button>
     );

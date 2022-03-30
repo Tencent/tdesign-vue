@@ -5,13 +5,19 @@
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
+alert | Object | - | 警告全局配置。TS 类型：`AlertConfig` | N
+anchor | Object | - | 锚点全局配置。TS 类型：`AnchorConfig` | N
+animation | Object | `{ include: ['ripple','expand','fade'], exclude: [] }` | 动画效果控制，`ripple`指波纹动画， `expand` 指展开动画，`fade` 指渐变动画。TS 类型：`Record<'include'|'exclude', Array<AnimationType>> ` `type AnimationType = 'ripple' | 'expand' | 'fade'`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
 calendar | Object | - | 日历组件全局配置。TS 类型：`CalendarConfig` | N
 cascader | Object | - | 级联选择器全局配置。TS 类型：`CascaderConfig` | N
+classPrefix | String | t | CSS 类名前缀 | N
+colorPicker | Object | - | 颜色选择器全局配置。TS 类型：`ColorPickerConfig` | N
 datePicker | Object | - | 日期选择器全局配置。TS 类型：`DatePickerConfig` | N
 dialog | Object | - | 对话框全局配置。TS 类型：`DialogConfig` | N
 drawer | Object | - | 抽屉全局配置。TS 类型：`DrawerConfig` | N
 form | Object | - | 表单组件全局配置。TS 类型：`FormConfig` | N
 input | Object | - | 输入框组件全局配置。TS 类型：`InputConfig` | N
+list | Object | - | 列表组件全局配置。TS 类型：`ListConfig` | N
 pagination | Object | - | 分页组件全局配置。TS 类型：`PaginationConfig` | N
 popconfirm | Object | - | 气泡确认框全局配置。TS 类型：`PopconfirmConfig` | N
 select | Object | - | 选择器组件全局配置。TS 类型：`SelectConfig` | N
@@ -43,19 +49,19 @@ total | String | '共 {total} 项数据' | 数据总条数文本，示例：`'to
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
-cellMonth | String | '一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月' | 月份描述文本 | N
-controllerConfig | Object | - | 日历右上角控制器按钮配置。TS 类型：`CalendarController`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
+cellMonth | String | '一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月' | 语言配置，月份描述文本 | N
+controllerConfig | Object | - | 日历右上角控制器按钮配置。TS 类型：`CalendarController`，[Calendar API Documents](./calendar?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
 fillWithZero | Boolean | true | 当日期数字小于 10 时，是否使用 '0' 填充 | N
 firstDayOfWeek | Number | 1 | 第一天从星期几开始。可选项：1/2/3/4/5/6/7 | N
-hideWeekend | String | '隐藏周末' | “隐藏周末”描述文本 | N
-monthRadio | String | '月' | 模式切换时的“月”描述文本 | N
-monthSelection | String | '{month} 月' | "月"选择描述文本 | N
-showWeekend | String | '显示周末末' | “显示周末”描述文本 | N
-thisMonth | String | '本月' | “本月”描述文本 | N
-today | String | '今天' | “今天”描述文本 | N
-week | String | 一,二,三,四,五,六,日 | 星期描述文本，示例：'周一,周二,周三,周四,周五,周六,周日' | N
-yearRadio | String | '年' | 模式切换时的“年”描述文本 | N
-yearSelection | String | '{year} 年' | “年”选择描述文本 | N
+hideWeekend | String | '隐藏周末' | 语言配置，“隐藏周末”描述文本 | N
+monthRadio | String | '月' | 语言配置，模式切换时的“月”描述文本 | N
+monthSelection | String | '{month} 月' | 语言配置，"月"选择描述文本 | N
+showWeekend | String | '显示周末末' | 语言配置，“显示周末”描述文本 | N
+thisMonth | String | '本月' | 语言配置，“本月”描述文本 | N
+today | String | '今天' | 语言配置，“今天”描述文本 | N
+week | String | 一,二,三,四,五,六,日 | 语言配置，星期描述文本，示例：'周一,周二,周三,周四,周五,周六,周日' | N
+yearRadio | String | '年' | 语言配置，模式切换时的“年”描述文本 | N
+yearSelection | String | '{year} 年' | 语言配置，“年”选择描述文本 | N
 
 ### CascaderConfig
 
@@ -64,6 +70,14 @@ yearSelection | String | '{year} 年' | “年”选择描述文本 | N
 empty | String | '暂无数据' | 空数据文本，示例：'empty data' | N
 loadingText | String | '加载中' | “加载中”描述文本 | N
 placeholder | String | '请选择' | 选择器占位文本，示例：'select time' | N
+
+### ColorPickerConfig
+
+名称 | 类型 | 默认值 | 说明 | 必传
+-- | -- | -- | -- | --
+clearConfirmText | String | '确定清空最近使用的颜色吗？' | 清空颜色确认文案，示例：'确定清空最近使用的颜色吗？' | N
+recentColorTitle | String | '最近使用颜色' | 最近使用颜色区域标题文本，示例：'最近使用颜色' | N
+swatchColorTitle | String | '系统预设颜色' | 系统预设颜色区域标题文本，示例：'系统预设颜色' | N
 
 ### TransferConfig
 
@@ -77,11 +91,11 @@ title | String | '{checked} / {total} 项' | 穿梭框标题描述文本 | N
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
-anteMeridiem | String | '上午' | “上午”描述文本 | N
-confirm | String | '确定' | “确定”描述文本 | N
-now | String | '此刻' | “此刻”描述文本 | N
-placeholder | String | '请选择时间' | 占位符描述文本 | N
-postMeridiem | String | '下午' | “下午”描述文本 | N
+anteMeridiem | String | '上午' | 语言配置，“上午”描述文本 | N
+confirm | String | '确定' | 语言配置，“确定”描述文本 | N
+now | String | '此刻' | 语言配置，“此刻”描述文本 | N
+placeholder | String | '请选择时间' | 语言配置，占位符描述文本 | N
+postMeridiem | String | '下午' | 语言配置，“下午”描述文本 | N
 
 ### DatePickerConfig
 
@@ -92,6 +106,7 @@ dayAriaLabel | String | '日' | “日” 描述文本 | N
 direction | String | 'ltr' | 日期方向，'ltr' 表示从左往右 | N
 firstDayOfWeek | Number | 7 | 第一天从星期几开始。可选项：1/2/3/4/5/6/7 | N
 format | String | 'YYYY-MM-DD' | 日期格式化规则 | N
+monthAriaLabel | String | '月' | “月” 描述文本 | N
 months | Array | - | 星期文本描述，默认值：['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']。TS 类型：`string[]` | N
 nextDecade | String | '下个十年' | “下个十年” 描述文本 | N
 nextMonth | String | '下个月' | “下个月” 描述文本 | N
@@ -100,7 +115,7 @@ now | String | '此刻' | “now” 描述文本 | N
 placeholder | Object | - | 占位符文本提示，默认值：`{ date: '请选择日期',  month: '请选择月份',  year: '请选择年份' }`。TS 类型：`{ date?: string; month?: string; year?: string }` | N
 preDecade | String | '上个十年' | “上个十年” 描述文本 | N
 preMonth | String | '上个月' | “上个月” 描述文本 | N
-presets | Object | - | 【暂不支持，讨论确认中】预设快捷日期选择，示例：`{ '元旦': '2021-01-01', '昨天':  dayjs().subtract(1, 'day').format('YYYY-MM-DD'), '特定日期': () => ['2021-02-01'] }`。TS 类型：`ConfigPresetDate`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
+presets | Object | - | 【暂不支持，讨论确认中】预设快捷日期选择，示例：`{ '元旦': '2021-01-01', '昨天':  dayjs().subtract(1, 'day').format('YYYY-MM-DD'), '特定日期': () => ['2021-02-01'] }`。TS 类型：`ConfigPresetDate` `interface ConfigPresetDate { [name: string]: DateConfigValue | (() => DateConfigValue) }` `type DateConfigValue = string | Date | Array<DateConfigValue>`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
 preYear | String | '上一年' | “上一年” 描述文本 | N
 rangeSeparator | String | ' 至 ' | 范围分隔符描述文本，示例：' ~ ' | N
 selectDate | String | '选择日期' | “选择日期” 描述文本 | N
@@ -113,7 +128,7 @@ yearAriaLabel | String | '年' | “年” 描述文本 | N
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
-cancel | Object | - | 取消按钮风格。TS 类型：`string | ButtonProps`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
+cancel | Object | - | 取消按钮风格。TS 类型：`string | ButtonProps`，[Button API Documents](./button?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
 confirm | Object | - | 确认按钮风格。TS 类型：`string | ButtonProps` | N
 confirmBtnTheme | Object | - | 确认按钮主题色，即 Dialog 的 `theme` 和 确认按钮的 `theme` 映射关系。示例：{ danger: 'danger' }。TS 类型：`{ default: string; info: string; warning: string; danger: string; success: string; }` | N
 
@@ -128,7 +143,7 @@ confirm | String | '确认' | “确认”描述文本。TS 类型：`string | B
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
-cancel | String / Object | '取消' | “取消”描述文本。TS 类型：`string | ButtonProps`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
+cancel | String / Object | '取消' | “取消”描述文本。TS 类型：`string | ButtonProps`，[Button API Documents](./button?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
 confirm | String / Object | '确定' | “确定”描述文本。TS 类型：`string | ButtonProps` | N
 confirmBtnTheme | Object | - | 确认按钮主题色，即 Popconfirm 的 `theme` 和 确认按钮的 `theme` 映射关系。示例：{ danger: 'danger' }。TS 类型：`{ default: string; warning: string; danger: string; }` | N
 
@@ -136,9 +151,15 @@ confirmBtnTheme | Object | - | 确认按钮主题色，即 Popconfirm 的 `theme
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
-empty | String | '暂无数据' | “暂无数据”描述文本 | N
-expandIcon | Function | undefined | 展开和收起图标（配置传入收起图标即可），如果没有配置，组件会内置默认图标。【注意】使用渲染函数输出图标组件。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-sortIcon | Function | undefined | 排序图标（配置传入降序图标即可），如果没有配置，组件会内置默认图标。【注意】使用渲染函数输出图标组件。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+empty | String / Slot / Function | '暂无数据' | 语言配置，'暂无数据' 描述文本。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+expandIcon | Slot / Function | undefined | 展开和收起图标（配置传入收起图标即可），如果没有配置，组件会内置默认图标。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+filterIcon | Slot / Function | undefined | 过滤图标，如果没有配置，组件会内置默认图标。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+loadingMoreText | String | '点击加载更多' | 语言配置，'点击加载更多' 描述文本 | N
+loadingText | String | '正在加载中，请稍后' | 语言配置，'正在加载中，请稍后' 描述文本 | N
+sortAscendingOperationText | String | '点击升序' | 语言配置，'点击升序' 描述文本 | N
+sortCancelOperationText | String | '点击取消排序' | 语言配置，'点击取消排序' 描述文本 | N
+sortDescendingOperationText | String | '点击降序' | 语言配置，'点击降序' 描述文本 | N
+sortIcon | Slot / Function | undefined | 排序图标（配置传入降序图标即可），如果没有配置，组件会内置默认图标。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 
 ### SelectConfig
 
@@ -162,19 +183,59 @@ folderIcon | Function | - | 目录层级图标，传入收起状态图标即可�
 -- | -- | -- | -- | --
 empty | String | '暂无数据' | “暂无数据”描述文本 | N
 loadingText | String | '加载中' | “加载中”描述文本 | N
+placeholder | String | '请选择' | 占位符描述文本 | N
+
+### TreeSelectConfig
+
+名称 | 类型 | 默认值 | 说明 | 必传
+-- | -- | -- | -- | --
+loadingMoreText | String | '点击加载更多' | 语言配置，'点击加载更多' 描述文本 | N
+loadingText | String | '正在加载中，请稍后' | 语言配置，'正在加载中，请稍后' 描述文本 | N
 
 ### UploadConfig
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
-cancelUploadText | String | '取消上传' | “取消上传” 描述文本 | N
-sizeLimitMessage | String | '文件大小不能超过 {sizeLimit}' | 文件大小超出限制时提醒文本 | N
+cancelUploadText | String | '取消上传' | 语言配置，“取消上传” 描述文本 | N
+dragger | Object | - | 语言配置，拖拽相关。示例：{ dragDropText: '释放图标', draggingText: '拖拽到此区域', clickAndDragText: '点击上方“选择文件”或将文件拖到此区域' }。TS 类型：`UploadConfigDragger` | N
+file | Object | - | 语言配置，文件信息相关。示例：{  fileNameText: '文件名', fileSizeText: '文件尺寸', fileStatusText: '状态', fileOperationText: '操作', fileOperationDateText: '上传日期' }。TS 类型：`UploadConfigFileList` | N
+progress | Object | - | 语言配置，上传进度相关。示例：{ uploadText: '上传中', waitingText: '待上传', 'failText': '上传失败', successText: '上传成功' }。TS 类型：`UploadConfigProgress` | N
+sizeLimitMessage | String | '文件大小不能超过 {sizeLimit}' | 语言配置，文件大小超出限制时提醒文本 | N
+triggerUploadText | Object | - | 语言配置，上传功能触发文案。示例：{ image: '点击上传图片', normal: '点击上传',  fileInput: '选择文件',reupload: '重新上传',fileInput: '删除' }。TS 类型：`UploadTriggerUploadText` `interface UploadTriggerUploadText { image?: string, normal?: string,  fileInput?: string,  reupload?: string, continueUpload: string, delete?: string }`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
+
+### UploadConfigProgress
+
+名称 | 类型 | 默认值 | 说明 | 必传
+-- | -- | -- | -- | --
+failText | String | '上传失败' | 语言配置，“上传失败”文本描述 | N
+successText | String | '上传成功' | 语言配置，“上传成功”文本描述 | N
+uploadingText | String | '上传中' | 语言配置，“上传中”文本描述 | N
+waitingText | String | '待上传' | 语言配置，“待上传”文本描述 | N
+
+### UploadConfigDragger
+
+名称 | 类型 | 默认值 | 说明 | 必传
+-- | -- | -- | -- | --
+clickAndDragText | String | '点击上方“选择文件”或将文件拖到此区域' | 语言配置，'点击上方“选择文件”或将文件拖到此区域' 描述文本 | N
+dragDropText | String | '释放图标' | 语言配置，'释放图标' 描述文本 | N
+draggingText | String | '拖拽到此区域' | 语言配置，'拖拽到此区域' 描述文本 | N
+
+### UploadConfigFileList
+
+名称 | 类型 | 默认值 | 说明 | 必传
+-- | -- | -- | -- | --
+fileNameText | String | '文件名' | 语言配置，'文件名' 描述文本 | N
+fileOperationDateText | String | '上传日期' | 语言配置，'上传日期' 描述文本 | N
+fileOperationText | String | '操作' | 语言配置，'操作' 描述文本 | N
+fileSizeText | String | '文件尺寸' | 语言配置，'文件尺寸' 描述文本 | N
+fileStatusText | String | '状态' | 语言配置，'状态' 描述文本 | N
 
 ### FormConfig
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
-requiredMark | Boolean | true | 是否显示必填符号，默认显示 | N
+errorMessage | Object | - | 表单错误信息配置，示例：`{ idcard: '请输入正确的身份证号码', max: '字符长度不能超过 ${max}' }`。TS 类型：`FormErrorMessage`，[Form API Documents](./form?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
+requiredMark | Boolean | true | 是否显示必填符号（*），默认显示 | N
 
 ### TagConfig
 
@@ -187,3 +248,17 @@ closeIcon | Function | - | 关闭图标，【注意】使用渲染函数输出�
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
 errorIcon | Slot / Function | - | 错误步骤图标，【注意】使用渲染函数输出图标组件。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+
+### AlertConfig
+
+名称 | 类型 | 默认值 | 说明 | 必传
+-- | -- | -- | -- | --
+collapseText | String | 收起 | 收起提示文本 | N
+expandText | String | 展开更多 | 展开提示文本 | N
+
+### AnchorConfig
+
+名称 | 类型 | 默认值 | 说明 | 必传
+-- | -- | -- | -- | --
+copySuccessText | String | 链接复制成功 | 复制成功文字 | N
+copyText | String | 复制链接 | 复制提示文字 | N
