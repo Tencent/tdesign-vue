@@ -47,3 +47,7 @@
 - 本地删除 node_modules 目录后重新安装依赖后，执行 `npm run build` 通过
 - 推送 develop 分支到远端，触发部署体验环境，验证体验环境无误
 - 本地 `git tag x.y.z` 后 `git push origin x.y.z`，触发 [TAG_PUSH](https://github.com/Tencent/tdesign-vue/blob/develop/.github/workflows/tag-push.yml) GitAction 进行发包动作
+- 包发布成功后，merge develop 到 main 分支，推送远端后触发官网部署流水线
+- 官网部署完毕后，企微机器人通知群里用户更新
+- copy changelog 到 GitHub repo release（后面考虑改成自动触发更新 release）
+- 内网 mk TDesign 发版 Topic 下，copy changlog 内容发布新的版本更新动态

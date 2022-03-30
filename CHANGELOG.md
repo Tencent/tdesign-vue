@@ -5,6 +5,108 @@ toc: false
 docClass: timeline
 ---
 
+## 0.39.1 `2022-03-29`
+
+### Bug Fixes
+
+* Upload: [pr #640](https://github.com/Tencent/tdesign-vue/pull/640)，[@brianzhang](https://github.com/brianzhang)
+  - 修复 `success` 事件先于 `progress` 事件触发时，上传文件 `loadingFile` 值不正确的问题
+  - 修复最大数量限制 max 在多次文件选择中判断不正确的问题
+* Pagination: 修复跳转页输入框展示了额外 placeholder 默认内容的问题，[pr #667](https://github.com/Tencent/tdesign-vue/pull/667)，[@xiaosansiji](https://github.com/xiaosansiji)
+* TreeSelect:
+  - 修复 `treeProps` 中同时传入 key、load 时选中项显示的问题，[issue #622](https://github.com/Tencent/tdesign-vue/issues/622)，[@Zwow](https://github.com/Zwow)
+  - 修正 TreeSelect 的交互行为，与 Select 保持一致，[issue #617](https://github.com/Tencent/tdesign-vue/issues/617)，[@YikaJ](https://github.com/YikaJ)
+  - 修复 filter 状态下，树无法折叠的问题；修复 lazy 状态下，无法正确展示 label 的问题，[issue #550](https://github.com/Tencent/tdesign-vue/issues/550)，[@Godlike-meteor](https://github.com/Godlike-meteor)
+* Table: [pr #660](https://github.com/Tencent/tdesign-vue/pull/660)，[@chaishi](https://github.com/chaishi)
+  - 修复虚拟滚动 `threshold` 引起的报错，[issue#661](https://github.com/Tencent/tdesign-vue/issues/661)
+* 修复 TS 定义报错问题，非 Typescript 或 SSR 项目请尽快由 0.39.0 版本升级，[pr #664](https://github.com/Tencent/tdesign-vue/pull/664)，[@uyarn](https://github.com/uyarn)
+### Features
+
+* ConfigProvider: 完善语言配置能力，使用 common 仓库中的配置数据，[pr #643](https://github.com/Tencent/tdesign-vue/pull/643)，[@pengYYYYY](https://github.com/pengYYYYY)
+* Table: [pr #660](https://github.com/Tencent/tdesign-vue/pull/660)，[@chaishi](https://github.com/chaishi)
+  - 表格超出省略浮层父元素更为表头 `thead`，避免挂载到全局 `body`
+  - 过滤功能浮层元素默认挂载到 `t-table`，不再挂载到全局 `body`，[issue#658](https://github.com/Tencent/tdesign-vue/issues/658)
+
+## 0.39.0 `2022-03-28`
+### BREAKING CHANGES
+Table 组件使用 `Composition API` 重构，[pr #365](https://github.com/Tencent/tdesign-vue/pull/365)，[@chaishi](https://github.com/chaishi)
+- BaseTable HTML 结构变更，写过 CSS 样式覆盖的同学需注意更新样式
+- 表头更为使用 `th` 标签，之前为 `td`，不符合语义
+- 事件 `row-db-click` 更为`row-dblclick` ，`onRowDbClick` 更为`rowDblclick`
+- 事件 `row-hover` 更为 `row-mouseover`, `onRowHover` 更为 `onRowMouseover`（本没有 rowHover 事件）
+- CSS 类名 `t-table__row-first-full-row` 更为 `t-table__first-full-row`，`t-table__row-last-full-row` 更为 `t-table__last-full-row`
+
+### Bug Fixes
+* Affix: 修复 `onFixedChange` 触发时机，在固定状态发生变化时才会触发该事件（改动之前为：滚动一直触发）
+* Table:
+  - 自定义列配置功能：多级表头和列显示配置同时存在时，无法进行正确的列配置的问题，列配置仅显示了第一层表头
+  - 多级表头和固定列同时存在时，固定列有问题，[issue #465](https://github.com/Tencent/tdesign-vue/issues/465)
+  - `verticalAlign` 不生效问题，[issue #372](https://github.com/Tencent/tdesign-vue/issues/372)
+  -  右上角出现文字穿透问题，[issue #383](https://github.com/Tencent/tdesign-vue/issues/383)
+  - 固定表头和固定列，全部使用 CSS sticky 输出样式，组件仅渲染一个表格，表头和表内容不再分开渲染输出。不仅支持 `table-layout: fixed`模式，同时也支持 `table-layout: auto` 模式
+  - 设置 `tableLayout: auto` ，固定表头异常，[issue #278](https://github.com/Tencent/tdesign-vue/issues/278)
+  - 设置 `tableLayout: auto` ，`maxHeight` 显示异常，[issue #371](https://github.com/Tencent/tdesign-vue/issues/371)
+  - [#issue 432](https://github.com/Tencent/tdesign-vue/issues/432)
+  - Table组件 BaseTableCol 配置项 fixed 和 ellipsis(true) 属性共存导致fix阴影无法显示， [issue #392](https://github.com/Tencent/tdesign-vue/issues/392)
+  - 多级表头的表格 改变children的宽度无效 [issue #367](https://github.com/Tencent/tdesign-vue/issues/367)
+  -  table 组件使用 PrimaryTable 控制台报错 t-primary-table 未注册[issue #373](https://github.com/Tencent/tdesign-vue/issues/373)
+  - 表格组件设置 height 或 maxHeight 后未出现滚动条的时候竖线不对齐，[issue #378](https://github.com/Tencent/tdesign-vue/issues/378)
+  - 修复，排序图标和过滤图标同时存在时，样式异常问题
+### Features
+
+* Table:
+  - 排序交互变更：排序方式支持点击直接排序[issue #480](https://github.com/Tencent/tdesign-vue/issues/480)
+  - 优化表格最后一列 `ellipsis` 浮层位置底部右对齐
+  - 新增超出省略功能， `ellipsis` 支持透传 Popup 组件全部属性
+  - 新增表尾合计行，支持固定在底部，支持多行合计，支持完全自定义内容 [issue #116](https://github.com/Tencent/tdesign-vue/issues/116)
+  - 新增`loadingProps` 透传加载组件全部特性
+  - 新增固定行（冻结行）
+  - 虚拟滚动，[issue #74](https://github.com/Tencent/tdesign-vue/issues/74)，[@Louiszhai](https://github.com/Louiszhai)
+  - 新增排序图标自定义，插槽(slot='filterIcon')和渲染函数(props.filterIcon) 均可
+  - 新增全局配置：过滤图标、空元素、异步加载文本配置、排序按钮文本配置
+  - 新增 `scroll` 滚动事件
+  - 新增表头吸顶功能，[issue #216](https://github.com/Tencent/tdesign-vue/issues/216)
+  - 新增综合功能：多级表头 + 固定表头 + 固定列 + 表头吸顶 + 虚拟滚动 + 自定义列配置
+  - 过滤功能，条件为真时，高亮筛选图标
+
+
+## 0.38.1 `2022-03-26`
+### Features
+* SelectInput: 实现 `enter` 事件 [pr #642](https://github.com/Tencent/tdesign-vue/pull/642)，[@pengYYYYY](https://github.com/pengYYYYY)
+
+## Bug Fixes
+* SelectInput: 修复单选可输入状态下的 focus 时 input value 的错误 [pr #642](https://github.com/Tencent/tdesign-vue/pull/642)，[@pengYYYYY](https://github.com/pengYYYYY)
+
+## 0.38.0 `2022-03-25`
+### BREAKING CHANGES
+* Input/Textarea: Input 外部传入样式挂载至 `t-input__wrap` 层级的 DOM 节点，不再传入到 `t-input` 层级；Textarea 去除 `t-textarea__wrap`，[pr #276](https://github.com/Tencent/tdesign-vue/pull/627)，[@pengYYYYY](https://github.com/pengYYYYY)
+
+### Bug Fixes
+
+* Form: 修复不能在表单项内换行输入的问题，[pr #624](https://github.com/Tencent/tdesign-vue/pull/624)，[@chaishi](https://github.com/chaishi)
+* Select: 修复未选值时，键盘事件不生效的问题，[pr #603](https://github.com/Tencent/tdesign-vue/pull/603)，[@geff1991](https://github.com/geff1991)
+* Menu: 修复无 overflow 状态时，仍出现滚动条的问题，[pr #597](https://github.com/Tencent/tdesign-vue/pull/597)，[@LeeJim](https://github.com/LeeJim)
+* Popup: 修复 document click 多次触发导致异常关闭的问题，[issue #558](https://github.com/Tencent/tdesign-vue/issues/558)，[@ikeq](https://github.com/ikeq)
+* Progress: 修复 `theme = plump` 且 `percent = 10` 时没有展示文案的问题，[issue #569](https://github.com/Tencent/tdesign-vue/issues/569)，[@uyarn](https://github.com/uyarn)
+* TreeSelect: 修复 `placehodler` 告警，[pr #624](https://github.com/Tencent/tdesign-vue/pull/624)，[@chaishi](https://github.com/chaishi)
+* InputNumber: 默认尺寸下输入框宽度调整，修复默认内容展示不全的问题，[issue #623](https://github.com/Tencent/tdesign-vue/issues/623)，[@xiaosansiji](https://github.com/xiaosansiji)
+* Upload: 修复 `handleSuccess` 回调并发导致 v-model 设置数据失效的问题，[pr #628](https://github.com/Tencent/tdesign-vue/pull/628)，[@brianzhang](https://github.com/brianzhang)
+* Datepicker/Timepicker: focused 态样式修复
+* SelectInput:
+  - 修复在非输入状态下无 focused 态
+  - 修复在非输入状态下不显示清除按钮
+  - 修复在 single 模式下 inputValue 的受控表现
+* Cascader: [@pengYYYYY](https://github.com/pengYYYYY)
+  - 修复 `value` 为 number 类型时无法回显的问题，[issue #619](https://github.com/Tencent/tdesign-vue/issues/619)
+  - 修复动态修改 `options` 为空数组时不生效的问题，[issue #467](https://github.com/Tencent/tdesign-vue/issues/467)
+
+### Features
+
+* Table: 支持自定义 columns，[pr #423](https://github.com/Tencent/tdesign-vue/pull/423)，[@LeeJim](https://github.com/LeeJim)
+* Message: 将 `placement = center` 的 fadeIn 动画改为从上往下出现，[pr #611](https://github.com/Tencent/tdesign-vue/pull/611)，[@Zack921](https://github.com/Zack921)
+* Input: 增加 `inputClass` 属性，用于透传 class 到 `t-input` 同级，[pr #276](https://github.com/Tencent/tdesign-vue/pull/627)，[@pengYYYYY](https://github.com/pengYYYYY)
+* Upload: 新增 `allowUploadDuplicateFile` 属性，支持重复文件名的文件上传，[pr #636](https://github.com/Tencent/tdesign-vue/pull/636)，[@brianzhang](https://github.com/brianzhang)
+
 ## 0.37.2 `2022-03-18`
 ### Bug Fixes
 

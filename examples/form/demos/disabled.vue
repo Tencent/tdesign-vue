@@ -14,7 +14,7 @@
       @submit="onSubmit"
     >
       <t-form-item label="姓名" name="name">
-        <t-input v-model="formData.name"></t-input>
+        <t-input v-model="formData.name" @enter="onEnter"></t-input>
       </t-form-item>
       <t-form-item label="学院" name="college">
         <t-select v-model="formData.college" :options="COLLEGE_OPTIONS" clearable></t-select>
@@ -116,6 +116,12 @@ export default {
       } else {
         console.log('Errors: ', validateResult);
         this.$message.warning(firstError);
+      }
+    },
+    // 阻止表单默认提交事件
+    onEnter(_, ctx) {
+      if (ctx && ctx.e) {
+        ctx.e.preventDefault();
       }
     },
   },

@@ -13,8 +13,10 @@ import TLoading from '../loading';
 import { returnFileSize, abridgeName, UPLOAD_NAME } from './util';
 import { FlowRemoveContext } from './interface';
 import props from './props';
+import mixins from '../utils/mixins';
+import getConfigReceiverMixins, { UploadConfig } from '../config-provider/config-receiver';
 
-export default Vue.extend({
+export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).extend({
   name: 'TUploadFlowList',
 
   components: {
@@ -29,6 +31,8 @@ export default Vue.extend({
 
   props: {
     showUploadProgress: props.showUploadProgress,
+    // 是否过滤重复文件
+    allowUploadDuplicateFile: props.allowUploadDuplicateFile,
     // 已上传完成的文件
     files: Array as PropType<Array<UploadFile>>,
     // 合并上传
@@ -65,8 +69,13 @@ export default Vue.extend({
     waitingUploadFiles(): Array<UploadFile> {
       const list: Array<UploadFile> = [];
       this.toUploadFiles.forEach((item) => {
-        const r = this.files.filter((t) => t.name === item.name);
-        if (!r.length) {
+        // 判断是否需要过滤重复文件
+        if (!this.allowUploadDuplicateFile) {
+          const r = this.files.filter((t) => t.name === item.name);
+          if (!r.length) {
+            list.push(item);
+          }
+        } else {
           list.push(item);
         }
       });
@@ -89,8 +98,10 @@ export default Vue.extend({
       return Boolean(this.waitingUploadFiles && this.waitingUploadFiles.length) && !this.isUploading;
     },
     uploadText(): string {
-      if (this.isUploading) return '上传中...';
-      return this.failedList && this.failedList.length ? '重新上传' : '开始上传';
+      if (this.isUploading) return `${this.global.progress.uploadingText}...`;
+      return this.failedList && this.failedList.length
+        ? this.global.triggerUploadText.reupload
+        : this.global.triggerUploadText.normal;
     },
     batchRemoveRow(): boolean {
       return this.batchUpload && this.files.length > 0;
@@ -104,7 +115,7 @@ export default Vue.extend({
           status = (
             <div class={`${UPLOAD_NAME}__flow-status`}>
               <CheckCircleFilledIcon />
-              <span>上传成功</span>
+              <span>{this.global.progress.successText}</span>
             </div>
           );
           break;
@@ -112,7 +123,7 @@ export default Vue.extend({
           status = (
             <div class={`${UPLOAD_NAME}__flow-status`}>
               <ErrorCircleFilledIcon />
-              <span>上传失败</span>
+              <span>{this.global.progress.failText}</span>
             </div>
           );
           break;
@@ -121,7 +132,9 @@ export default Vue.extend({
             && (status = (
               <div class={`${UPLOAD_NAME}__flow-status`}>
                 <TLoading />
-                <span>上传中 {Math.min(file.percent, 99)}%</span>
+                <span>
+                  `${this.global.progress.uploadingText} ${Math.min(file.percent, 99)}%`
+                </span>
               </div>
             ));
           break;
@@ -129,7 +142,7 @@ export default Vue.extend({
           status = (
             <div class={`${UPLOAD_NAME}__flow-status`}>
               <TimeFilledIcon />
-              <span>待上传</span>
+              <span>{this.global.progress.waitingText}</span>
             </div>
           );
           break;
@@ -174,7 +187,7 @@ export default Vue.extend({
           onDragover={this.handleDragover}
           onDragleave={this.handleDragleave}
         >
-          {this.dragActive ? '释放鼠标' : '点击上方“选择文件”或将文件拖拽到此区域'}
+          {this.dragActive ? this.global.dragger.dragDropText : this.global.dragger.clickAndDragText}
         </div>
       );
     },
@@ -183,10 +196,10 @@ export default Vue.extend({
       return (
         <table class={`${UPLOAD_NAME}__flow-table`}>
           <tr>
-            <th>文件名</th>
-            <th>大小</th>
-            <th>状态</th>
-            <th>操作</th>
+            <th>{this.global.file.fileNameText}</th>
+            <th>{this.global.file.fileSizeText}</th>
+            <th>{this.global.file.fileStatusText}</th>
+            <th>{this.global.file.fileOperationText}</th>
           </tr>
           {this.showInitial && (
             <tr>
@@ -221,7 +234,7 @@ export default Vue.extend({
             })
             }
           >
-            删除
+            {this.global.triggerUploadText.delete}
           </span>
         </td>
       );
@@ -241,7 +254,7 @@ export default Vue.extend({
             })
             }
           >
-            删除
+            {this.global.triggerUploadText.delete}
           </span>
         </td>
       ) : (
@@ -263,13 +276,15 @@ export default Vue.extend({
                     {file.status === 'fail' && (
                       <div class={`${UPLOAD_NAME}__card-status-wrap`}>
                         <ErrorCircleFilledIcon />
-                        <p>上传失败</p>
+                        <p>{this.global.progress.failText}</p>
                       </div>
                     )}
                     {file.status === 'progress' && (
                       <div class={`${UPLOAD_NAME}__card-status-wrap`}>
                         <TLoading />
-                        <p>上传中 {Math.min(file.percent, 99)}</p>
+                        <p>
+                          {this.global.progress.uploadingText} {Math.min(file.percent, 99)}
+                        </p>
                       </div>
                     )}
                     {(['waiting', 'success'].includes(file.status) || (!file.status && file.url)) && (
@@ -316,7 +331,7 @@ export default Vue.extend({
         {this.display === 'image-flow' && this.renderImgList()}
         <div class={`${UPLOAD_NAME}__flow-bottom`}>
           <TButton theme="default" onClick={this.cancel}>
-            取消
+            {this.global.cancelUploadText}
           </TButton>
           <TButton
             disabled={!this.allowUpload}

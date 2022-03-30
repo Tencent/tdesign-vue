@@ -94,6 +94,7 @@ export default {
 .tdesign-demo__panel-options-borderless-multiple {
   width: 100%;
   padding: 4px 0;
+  display: inline-block;
 }
 .tdesign-demo__panel-options-borderless-multiple .t-checkbox {
   display: flex;

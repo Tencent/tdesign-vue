@@ -3,7 +3,7 @@
     <!-- 支持非受控属性 default-selected-row-keys -->
     <!-- 支持语法糖 selected-row-keys.sync -->
     <t-table
-      rowKey='id'
+      rowKey="id"
       :columns="columns"
       :data="data"
       :selected-row-keys="selectedRowKeys"
@@ -23,48 +23,52 @@
 </template>
 
 <script>
+const data = new Array(5).fill(null).map((item, index) => ({
+  id: index + 100,
+  instance: `JQTest${index + 1}`,
+  status: index % 2,
+  owner: 'jenny;peter',
+  description: 'test',
+}));
+
 export default {
   data() {
     return {
-      selectedRowKeys: [],
+      selectedRowKeys: [102],
       columns: [
         {
           colKey: 'row-select',
           type: 'single',
+          className: 'demo-single-select-cell',
+          // 允许单选(Radio)取消行选中
+          checkProps: { allowUncheck: true },
 
-          // 禁用行选中方式一：使用 disabled 禁用行（示例代码有效，勿删）。disabled 参数：{row: RowData; rowIndex: number })
+          // 禁用行选中方式一：使用 disabled 禁用行（示例代码有效，勿删，随时需要测试）。disabled 参数：{row: RowData; rowIndex: number })
           // 这种方式禁用行选中，当前行会添加行类名 t-table__row--disabled，禁用行文字变灰
           disabled: ({ rowIndex }) => rowIndex === 1 || rowIndex === 3,
 
-          // 禁用行选中方式二：使用 checkProps 禁用行（示例代码有效，勿删）
+          // 禁用行选中方式二：使用 checkProps 禁用行（示例代码有效，勿删，随时需要测试）
           // 这种方式禁用行选中，行文本不会变灰
           // checkProps: ({ rowIndex }) => ({ disabled: rowIndex % 2 !== 0 }),
-          width: 50,
+          width: 64,
         },
         { colKey: 'instance', title: '集群名称', width: 150 },
         {
-          colKey: 'status', title: '状态', width: 100, cell: 'status',
+          colKey: 'status',
+          title: '状态',
+          width: 100,
+          cell: 'status',
         },
         { colKey: 'owner', title: '管理员' },
         { colKey: 'description', title: '描述' },
         {
-          colKey: 'op', width: 200, title: 'op-column', cell: 'op',
+          colKey: 'op',
+          width: 200,
+          title: 'op-column',
+          cell: 'op',
         },
       ],
-      data: [
-        {
-          id: 1, instance: 'JQTest1', status: 0, owner: 'jenny;peter', description: 'test',
-        },
-        {
-          id: '2', instance: 'JQTest2', status: 1, owner: 'jenny', description: 'test',
-        },
-        {
-          id: 3, instance: 'JQTest3', status: 0, owner: 'jenny', description: 'test',
-        },
-        {
-          id: 4, instance: 'JQTest4', status: 1, owner: 'peter', description: 'test',
-        },
-      ],
+      data,
     };
   },
   methods: {
@@ -86,15 +90,15 @@ export default {
 }
 .status {
   position: relative;
-  color: #00A870;
+  color: #00a870;
   margin-left: 10px;
   &::before {
     position: absolute;
     top: 50%;
     left: 0px;
     transform: translateY(-50%);
-    content: "";
-    background-color: #00A870;
+    content: '';
+    background-color: #00a870;
     width: 6px;
     height: 6px;
     margin-left: -10px;
@@ -102,9 +106,9 @@ export default {
   }
 }
 .status.unhealth {
-  color: #E34D59;
+  color: #e34d59;
   &::before {
-    background-color: #E34D59;
+    background-color: #e34d59;
   }
 }
 </style>

@@ -9,10 +9,12 @@ import { InputValue } from '../input';
 import TagInput, { TagInputValue, InputValueChangeContext } from '../tag-input';
 import Loading from '../loading';
 import useDefaultValue from '../hooks/useDefaultValue';
+import { usePrefixClass } from '../config-provider';
 
 export interface RenderSelectMultipleParams {
   commonInputProps: SelectInputCommonProperties;
   onInnerClear: (context: { e: MouseEvent }) => void;
+  popupVisible: boolean;
 }
 
 const DEFAULT_KEYS = {
@@ -23,6 +25,7 @@ const DEFAULT_KEYS = {
 
 export default function useMultiple(props: TdSelectInputProps, context: SetupContext) {
   const { inputValue } = toRefs(props);
+  const classPrefix = usePrefixClass();
   const instance = getCurrentInstance();
   const tagInputRef = ref();
   const [tInputValue, setTInputValue] = useDefaultValue(
@@ -67,6 +70,12 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
       valueDisplay: props.valueDisplay,
       value: tags.value,
       inputValue: tInputValue.value || '',
+      inputProps: {
+        readonly: !props.allowInput || props.readonly,
+        inputClass: {
+          [`${classPrefix.value}-input--focused`]: p.popupVisible,
+        },
+      },
       suffixIcon: !props.disabled && props.loading ? () => <Loading loading size="small" /> : props.suffixIcon,
     };
 

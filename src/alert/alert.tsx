@@ -8,10 +8,12 @@ import { prefix } from '../config';
 import { on, off, addClass } from '../utils/dom';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import mixins from '../utils/mixins';
+import getConfigReceiverMixins, { AlertConfig } from '../config-provider/config-receiver';
 
 const name = `${prefix}-alert`;
 
-export default Vue.extend({
+export default mixins(getConfigReceiverMixins<Vue, AlertConfig>('alert')).extend({
   name: 'TAlert',
   data() {
     return {
@@ -135,7 +137,7 @@ export default Vue.extend({
                 this.collapsed = !this.collapsed;
               }}
             >
-              {this.collapsed ? '展开全部' : '收起'}
+              {this.collapsed ? this.global.expandText : this.global.collapseText}
             </div>
           ) : null}
         </div>
