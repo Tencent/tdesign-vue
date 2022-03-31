@@ -562,12 +562,10 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
     cancelUpload() {
       if (this.loadingFile) {
-        // 如果存在自定义上传方法，则只需要抛出事件，而后由父组件处理取消上传
-        if (this.requestMethod) {
-          emitEvent<Parameters<TdUploadProps['onCancelUpload']>>(this, 'cancel-upload');
-        } else {
-          this.xhrReq && this.xhrReq.abort();
+        if (!this.requestMethod) {
+          this.xhrReq?.abort?.();
         }
+        emitEvent<Parameters<TdUploadProps['onCancelUpload']>>(this, 'cancel-upload');
         this.loadingFile = null;
       }
       (this.$refs.input as HTMLInputElement).value = '';
