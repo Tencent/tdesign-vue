@@ -21,22 +21,20 @@ const columns = [
   {
     colKey: 'drag', // 列拖拽排序必要参数
     title: '排序',
-    width: 100,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     cell: (h) => <MoveIcon />,
+    width: 80,
   },
-  { colKey: 'instance', title: '集群名称', width: 150 },
+  { colKey: 'instance', title: '集群名称' },
   {
     colKey: 'status',
     title: '状态',
-    width: 100,
   },
   {
     colKey: 'survivalTime',
     title: '存活时间(s)',
-    width: 200,
   },
-  { colKey: 'owner', title: '管理员', width: 100 },
+  { colKey: 'owner', title: '管理员' },
 ];
 
 const data = [
@@ -82,12 +80,14 @@ export default {
       currentIndex, current, targetIndex, target, currentData, e,
     }) {
       console.log('交换行', currentIndex, current, targetIndex, target, currentData, e);
-      // 忽略拖拽后新顺序，手动控制列表数据顺序
-      // 先将数据置空，否则页面不刷新
-      this.data = [];
-      this.$nextTick(() => {
-        this.data = currentData;
-      });
+      // 为保证数据和 DOM 一致，此处必须赋值
+      this.data = currentData;
+
+      // 如果希望组件数据和 DOM 元素完全受控，请使用以下方法，示例代码，有效勿删
+      // this.data = [];
+      // this.$nextTick(() => {
+      //    this.data = currentData;
+      // })
     },
   },
 };

@@ -2,7 +2,7 @@
  * 自定义显示列控制器，即列配置
  */
 import {
-  computed, ref, SetupContext, toRefs, h,
+  computed, ref, SetupContext, toRefs, h, watch,
 } from '@vue/composition-api';
 import { SettingIcon } from 'tdesign-icons-vue';
 import intersection from 'lodash/intersection';
@@ -13,6 +13,7 @@ import { useTNodeDefault } from '../../hooks/tnode';
 import { renderTitle } from './useTableHeader';
 import { PrimaryTableCol, TdPrimaryTableProps } from '../type';
 import { useConfig } from '../../config-provider/useConfig';
+import useDefaultValue from '../../hooks/useDefaultValue';
 
 export function getColumnKeys(columns: PrimaryTableCol[], keys: string[] = []) {
   for (let i = 0, len = columns.length; i < len; i++) {
@@ -29,7 +30,7 @@ export function getColumnKeys(columns: PrimaryTableCol[], keys: string[] = []) {
 export default function useColumnController(props: TdPrimaryTableProps, context: SetupContext) {
   const renderTNode = useTNodeDefault();
   const { classPrefix } = useConfig();
-  const { columns, columnController } = toRefs(props);
+  const { columns, columnController, displayColumns } = toRefs(props);
 
   const enabledColKeys = computed(() => {
     const arr = (columnController.value?.fields || [...new Set(getColumnKeys(columns.value))] || []).filter((v) => v);
@@ -39,13 +40,24 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
   const keys = [...new Set(getColumnKeys(columns.value))];
 
   // 确认后的列配置
-  const displayColumnKeys = ref<CheckboxGroupValue>(keys);
+  // const displayColumnKeys = ref<CheckboxGroupValue>(keys);
+  const [tDisplayColumns, setTDisplayColumns] = useDefaultValue(
+    displayColumns,
+    props.defaultDisplayColumns || keys,
+    props.onDisplayColumnsChange,
+    'displayColumns',
+    'display-columns-change',
+  );
   // 弹框内的多选
-  const columnCheckboxKeys = ref<CheckboxGroupValue>(keys);
+  const columnCheckboxKeys = ref<CheckboxGroupValue>(displayColumns.value || props.defaultDisplayColumns || keys);
 
   const checkboxOptions = computed<CheckboxOptionObj[]>(() => getCheckboxOptions(columns.value));
 
   const intersectionChecked = computed(() => intersection(columnCheckboxKeys.value, [...enabledColKeys.value]));
+
+  watch([displayColumns], ([val]) => {
+    columnCheckboxKeys.value = val;
+  });
 
   function getCheckboxOptions(columns: PrimaryTableCol[], arr: CheckboxOptionObj[] = []) {
     // 减少循环次数
@@ -69,7 +81,7 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
     columnCheckboxKeys.value = val;
     const params = { columns: val };
     props.onColumnChange?.(params);
-    // Vue3 ignore next linet
+    // Vue3 ignore next line
     context.emit('column-change', params);
   };
 
@@ -78,13 +90,13 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
       const newData = columns.value?.map((t) => t.colKey) || [];
       columnCheckboxKeys.value = newData;
       props.onColumnChange?.({ type: 'check', columns: newData });
-      // Vue3 ignore next linet
+      // Vue3 ignore next line
       context.emit('column-change', { type: 'check', columns: newData });
     } else {
       const disabledColKeys = checkboxOptions.value.filter((t) => t.disabled).map((t) => t.value);
       columnCheckboxKeys.value = disabledColKeys;
       props.onColumnChange?.({ type: 'uncheck', columns: disabledColKeys });
-      // Vue3 ignore next linet
+      // Vue3 ignore next line
       context.emit('column-change', { type: 'uncheck', columns: disabledColKeys });
     }
   };
@@ -125,7 +137,7 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
       cancelBtn: '取消',
       width: 612,
       onConfirm: () => {
-        displayColumnKeys.value = [...columnCheckboxKeys.value];
+        setTDisplayColumns([...columnCheckboxKeys.value]);
         dialogInstance.hide();
       },
       onClose: () => {
@@ -148,7 +160,7 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
   };
 
   return {
-    displayColumnKeys,
+    tDisplayColumns,
     columnCheckboxKeys,
     checkboxOptions,
     renderColumnController,
