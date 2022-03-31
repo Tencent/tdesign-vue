@@ -8,7 +8,7 @@ docClass: timeline
 ## 0.40.0 `2022-03-31`
 ### BREAKING CHANGES
 * Table: 表格行列拖拽排序功能重构，新用法请参考[官网 demo](https://tdesign.tencent.com/vue/components/table#%E5%8F%AF%E6%8B%96%E6%8B%BD%E6%8E%92%E5%BA%8F%E7%9A%84%E8%A1%A8%E6%A0%BC)，[pr #657](https://github.com/Tencent/tdesign-vue/pull/657)，[@wangmerry](https://github.com/wangmerry)
-* Form: label 为空时不再默认渲染宽度占位，[pr #687](https://github.com/Tencent/tdesign-vue/pull/687)，[@HQ-Lin](https://github.com/HQ-Lin)
+* Form: label 为空时不再默认渲染宽度占位，需要手动设置样式保持表单对齐[pr #687](https://github.com/Tencent/tdesign-vue/pull/687)，[@HQ-Lin](https://github.com/HQ-Lin)
 ### Bug Fixes
 
 * Popconfirm: 修复确认框中按钮默认大小，[pr #673](https://github.com/Tencent/tdesign-vue/pull/673)，[@pengYYYYY](https://github.com/pengYYYYY)
