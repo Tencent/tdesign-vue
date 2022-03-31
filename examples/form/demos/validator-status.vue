@@ -71,7 +71,7 @@
         </t-button>
       </t-form-item>
 
-      <t-form-item :statusIcon="false" style="padding-top: 8px">
+      <t-form-item :statusIcon="false" style="margin-left: 80px">
         <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
         <t-button theme="default" variant="base" type="reset">重置</t-button>
       </t-form-item>

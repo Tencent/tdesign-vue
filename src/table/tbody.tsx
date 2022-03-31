@@ -56,6 +56,8 @@ export const extendTableProps = [
   'onScroll',
   'onScrollX',
   'onScrollY',
+  'isColDraggable',
+  'isRowDraggable',
 ];
 
 export default defineComponent({
@@ -80,6 +82,8 @@ export default defineComponent({
     renderExpandedRow: Function as PropType<TableBodyProps['renderExpandedRow']>,
     firstFullRow: [String, Function] as PropType<TableBodyProps['firstFullRow']>,
     lastFullRow: [String, Function] as PropType<TableBodyProps['lastFullRow']>,
+    isColDraggable: Boolean,
+    isRowDraggable: Boolean,
     ...pick(baseTableProps, extendTableProps),
   },
 
@@ -87,9 +91,16 @@ export default defineComponent({
   setup(props: TableBodyProps, { emit }: SetupContext) {
     const renderTNode = useTNodeJSX();
     const { t, global } = useConfig('table');
-    const { tableFullRowClasses, tableBaseClass } = useClassName();
+    const { tableFullRowClasses, tableBaseClass, tableDraggableClasses } = useClassName();
 
-    const tbodyClasses = computed(() => [tableBaseClass.body]);
+    const tbodyClasses = computed(() => [
+      tableBaseClass.body,
+      {
+        [tableDraggableClasses.bodyCol]: props.isColDraggable,
+        [tableDraggableClasses.bodyRow]: props.isRowDraggable,
+      },
+    ]);
+
     const isFixedLeftColumn = computed(
       () => props.isWidthOverflow && !!props.columns.find((col) => col.fixed === 'left'),
     );
@@ -252,9 +263,12 @@ export default defineComponent({
       '-moz-transform': translate,
       '-webkit-transform': translate,
     };
-
     return (
-      <tbody class={this.tbodyClasses} style={this.isVirtual && { ...posStyle }}>
+      <tbody
+        class={this.tbodyClasses}
+        style={this.isVirtual && { ...posStyle }}
+        ref={(this.isColDraggable || this.isRowDraggable) && 'tbodyDragRef'}
+      >
         {isEmpty ? renderEmpty(h, this.columns) : list}
       </tbody>
     );

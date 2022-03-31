@@ -15,9 +15,6 @@
       <t-form-item label="密码" name="password">
         <t-input v-model="formData.password" type="password"></t-input>
       </t-form-item>
-      <t-form-item style="padding-top: 8px">
-        <t-button theme="primary" type="submit">登录</t-button>
-      </t-form-item>
     </t-form>
   </div>
 </template>
