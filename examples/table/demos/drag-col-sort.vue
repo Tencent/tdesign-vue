@@ -78,12 +78,16 @@ export default {
     };
   },
   methods: {
-    // 必须手动实现交换数据，否则data不会发生变异
     onDragSort({
       currentIndex, current, targetIndex, target, currentData, e,
     }) {
       console.log('交换行', currentIndex, current, targetIndex, target, currentData, e);
-      this.data = currentData;
+      // 忽略拖拽后新顺序，手动控制列表数据顺序
+      // 先将数据置空，否则页面不刷新
+      this.data = [];
+      this.$nextTick(() => {
+        this.data = currentData;
+      });
     },
   },
 };

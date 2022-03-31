@@ -1,6 +1,8 @@
 // 表格 行拖拽 + 列拖拽功能
 
-import { ref, toRefs, SetupContext } from '@vue/composition-api';
+import {
+  ref, toRefs, SetupContext, watch,
+} from '@vue/composition-api';
 import { SortableEvent } from 'sortablejs';
 import { TdPrimaryTableProps, TableRowData } from '../type';
 import { TargetDom } from '../interface';
@@ -21,7 +23,9 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
   const innerData = ref(data.value);
 
   const { tableDraggableClasses } = useClassName();
-
+  watch([data], (newData) => {
+    innerData.value = newData;
+  });
   function emitChange(
     currentIndex: number,
     current: TableRowData,
@@ -58,7 +62,8 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
     const { handle, ghost } = tableDraggableClasses;
     const baseOptions = {
       animation: 150,
-      ghostClass: ghost, // 放置占位符的类名
+      // 放置占位符的类名
+      ghostClass: ghost,
       onEnd(evt: SortableEvent) {
         const { oldIndex, newIndex } = evt;
         const newData = [].concat(innerData.value);
@@ -77,7 +82,6 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
           newData,
           evt,
         );
-        innerData.value = newData;
       },
     };
     // 注册拖拽事件
@@ -89,7 +93,7 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
       handle: `.${handle}`,
       ...baseOptions,
     };
-    if (isRowDraggable) {
+    if (isRowDraggable.value) {
       setSortableConfig(dragContainer, rowOptions);
     } else {
       setSortableConfig(dragContainer, colOptions);
