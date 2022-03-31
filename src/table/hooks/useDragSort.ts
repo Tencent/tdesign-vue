@@ -23,7 +23,7 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
   const innerData = ref(data.value);
 
   const { tableDraggableClasses } = useClassName();
-  watch([data], (newData) => {
+  watch(data, (newData) => {
     innerData.value = newData;
   });
   function emitChange(
@@ -66,7 +66,7 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
       ghostClass: ghost,
       onEnd(evt: SortableEvent) {
         const { oldIndex, newIndex } = evt;
-        const newData = [].concat(innerData.value);
+        const newData = innerData.value;
         if (newIndex - oldIndex > 0) {
           newData.splice(newIndex + 1, 0, newData[oldIndex]);
           newData.splice(oldIndex, 1);
