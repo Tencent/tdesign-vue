@@ -3320,9 +3320,15 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
         class="t-table--layout-fixed"
       >
         <colgroup>
-          <col />
-          <col />
-          <col />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
         </colgroup>
         <thead
           class="t-table__header"
@@ -3555,9 +3561,15 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
           <col
             style="width: 64px;"
           />
-          <col />
-          <col />
-          <col />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
         </colgroup>
         <thead
           class="t-table__header"

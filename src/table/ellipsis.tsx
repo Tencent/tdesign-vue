@@ -58,18 +58,16 @@ export default defineComponent({
 
     // 当表格数据量大时，不希望默认渲染全量的 Popup，期望在用户 mouseenter 的时候再显示
     const onTriggerMouseenter = () => {
-      // const timer = setTimeout(() => {
-      // console.log(root.value, isNodeOverflow(root.value));
       if (!root.value) return;
       visible.value = true;
       isOverflow.value = isNodeOverflow(root.value);
-      //   clearTimeout(timer);
-      // }, 10);
     };
 
     const onTriggerMouseleave = () => {
-      // isOverflow.value = false;
-      visible.value = false;
+      const timer = setTimeout(() => {
+        visible.value = false;
+        clearTimeout(timer);
+      }, 10);
     };
 
     return {
@@ -105,7 +103,7 @@ export default defineComponent({
       content = ellipsisContent;
     }
     return (
-      <div onMouseenter={this.onTriggerMouseenter} onMouseout={this.onTriggerMouseleave}>
+      <div onMouseenter={this.onTriggerMouseenter} onMouseleave={this.onTriggerMouseleave}>
         {content}
       </div>
     );
