@@ -3816,12 +3816,6 @@ exports[`ssr snapshot test renders ./examples/form/demos/align.vue correctly 1`]
         </div>
       </div>
     </div>
-    <div class="t-form__item t-form-item__" style="padding-top:8px;">
-      <div class="t-form__label t-form__label--right" style="width:60px;"><label for=""></label></div>
-      <div class="t-form__controls" style="margin-left:60px;">
-        <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">登录</span></button></div>
-      </div>
-    </div>
   </form>
 </div>
 `;
@@ -3875,9 +3869,9 @@ exports[`ssr snapshot test renders ./examples/form/demos/base.vue correctly 1`] 
         </div>
       </div>
     </div>
-    <div class="t-form__item t-form-item__" style="padding-top:8px;">
+    <div class="t-form__item t-form-item__" style="margin-left:100px;">
       <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
-      <div class="t-form__controls" style="margin-left:100px;">
+      <div class="t-form__controls">
         <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button></div>
       </div>
     </div>
@@ -3978,9 +3972,9 @@ exports[`ssr snapshot test renders ./examples/form/demos/clear-validate.vue corr
         </div>
       </div>
     </div>
-    <div class="t-form__item t-form-item__" style="padding-top:8px;">
+    <div class="t-form__item t-form-item__" style="margin-left:100px;">
       <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
-      <div class="t-form__controls" style="margin-left:100px;">
+      <div class="t-form__controls">
         <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text"> 提交 </span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-right:10px;"><span class="t-button__text"> 重置 </span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-right:10px;"><span class="t-button__text">
         清空校验结果
       </span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text"> 清除指定字段的校验结果 </span></button></div>
@@ -4025,9 +4019,9 @@ exports[`ssr snapshot test renders ./examples/form/demos/custom-validator.vue co
         <div class="t-form__help">自定义异步校验方法</div>
       </div>
     </div>
-    <div class="t-form__item t-form-item__" style="padding-top:8px;">
+    <div class="t-form__item t-form-item__" style="margin-left:100px;">
       <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
-      <div class="t-form__controls" style="margin-left:100px;">
+      <div class="t-form__controls">
         <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button></div>
       </div>
     </div>
@@ -4171,9 +4165,9 @@ exports[`ssr snapshot test renders ./examples/form/demos/disabled.vue correctly 
         </div>
       </div>
     </div>
-    <div class="t-form__item t-form-item__" style="padding-top:8px;">
+    <div class="t-form__item t-form-item__" style="margin-left:100px;">
       <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
-      <div class="t-form__controls" style="margin-left:100px;">
+      <div class="t-form__controls">
         <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button></div>
       </div>
     </div>
@@ -4283,9 +4277,9 @@ exports[`ssr snapshot test renders ./examples/form/demos/error-message.vue corre
         </div>
       </div>
     </div>
-    <div class="t-form__item t-form-item__" style="padding-top:8px;">
+    <div class="t-form__item t-form-item__" style="margin-left:100px;">
       <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
-      <div class="t-form__controls" style="margin-left:100px;">
+      <div class="t-form__controls">
         <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-right:10px;"><span class="t-button__text">重置</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">清空校验结果</span></button></div>
       </div>
     </div>
@@ -4346,7 +4340,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/login.vue correctly 1`]
         </div>
       </div>
     </div>
-    <div class="t-form__item t-form-item__" style="padding-top:8px;">
+    <div class="t-form__item t-form-item__" style="margin-left:100px;">
       <div class="t-form__controls">
         <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-size-full-width"><span class="t-button__text">登录</span></button></div>
       </div>
@@ -4391,9 +4385,9 @@ exports[`ssr snapshot test renders ./examples/form/demos/reset.vue correctly 1`]
         </div>
       </div>
     </div>
-    <div class="t-form__item t-form-item__" style="padding-top:8px;">
+    <div class="t-form__item t-form-item__" style="margin-left:100px;">
       <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
-      <div class="t-form__controls" style="margin-left:100px;">
+      <div class="t-form__controls">
         <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button></div>
       </div>
     </div>
@@ -4455,9 +4449,9 @@ exports[`ssr snapshot test renders ./examples/form/demos/size.vue correctly 1`] 
         </div>
       </div>
     </div>
-    <div class="t-form__item t-form-item__" style="padding-top:8px;">
+    <div class="t-form__item t-form-item__" style="margin-left:100px;">
       <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
-      <div class="t-form__controls" style="margin-left:100px;">
+      <div class="t-form__controls">
         <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button></div>
       </div>
     </div>
@@ -4524,9 +4518,9 @@ exports[`ssr snapshot test renders ./examples/form/demos/validate-complicated-da
                 </div>
               </div>
             </div>
-            <div class="t-form__item t-form-item__" style="padding-top:8px;">
+            <div class="t-form__item t-form-item__" style="margin-left:100px;">
               <div class="t-form__label t-form__label--right" style="width:80px;"><label for=""></label></div>
-              <div class="t-form__controls" style="margin-left:80px;">
+              <div class="t-form__controls">
                 <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button></div>
               </div>
             </div>
@@ -4560,9 +4554,9 @@ exports[`ssr snapshot test renders ./examples/form/demos/validate-complicated-da
                 </div>
               </div>
             </div>
-            <div class="t-form__item t-form-item__" style="padding-top:8px;">
+            <div class="t-form__item t-form-item__" style="margin-left:100px;">
               <div class="t-form__label t-form__label--right" style="width:80px;"><label for=""></label></div>
-              <div class="t-form__controls" style="margin-left:80px;">
+              <div class="t-form__controls">
                 <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button></div>
               </div>
             </div>
@@ -4609,9 +4603,9 @@ exports[`ssr snapshot test renders ./examples/form/demos/validate-message.vue co
         </div>
       </div>
     </div>
-    <div class="t-form__item t-form-item__" style="padding-top:8px;">
+    <div class="t-form__item t-form-item__" style="margin-left:100px;">
       <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
-      <div class="t-form__controls" style="margin-left:100px;">
+      <div class="t-form__controls">
         <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-right:10px;"><span class="t-button__text">重置</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">设置校验信息提示</span></button></div>
       </div>
     </div>
@@ -4767,9 +4761,9 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator.vue correctly
         </div>
       </div>
     </div>
-    <div class="t-form__item t-form-item__" style="padding-top:8px;">
+    <div class="t-form__item t-form-item__" style="margin-left:100px;">
       <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
-      <div class="t-form__controls" style="margin-left:100px;">
+      <div class="t-form__controls">
         <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-right:10px;"><span class="t-button__text">重置</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">清空校验结果</span></button></div>
       </div>
     </div>
@@ -4876,9 +4870,9 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator-status.vue co
         </div>
       </div>
     </div>
-    <div class="t-form__item t-form-item__" style="padding-top:8px;">
+    <div class="t-form__item t-form-item__" style="margin-left:80px;">
       <div class="t-form__label t-form__label--right" style="width:80px;"><label for=""></label></div>
-      <div class="t-form__controls" style="margin-left:80px;">
+      <div class="t-form__controls">
         <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button></div>
       </div>
     </div>
