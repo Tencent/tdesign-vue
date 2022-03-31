@@ -3,10 +3,10 @@
     <div class="item">
       <!-- 拖拽排序涉及到 data 的变更，相对比较慎重，因此仅支持受控用法 -->
 
-      <t-table rowKey="id" :columns="columns" :data="data" @drag-sort="onDragSort" sort-on-row-draggable dragSort="row">
+      <t-table rowKey="id" :columns="columns" :data="data" @drag-sort="onDragSort" dragSort="drag-col">
         <template #status="{ row }">
-          <p class="status" :class="['', 'warning', 'unhealth'][row && row.status]">
-            {{ ['健康', '警告', '异常'][row && row.status] }}
+          <p class="status" :class="['', 'warning', 'unhealth'][row.status]">
+            {{ ['健康', '警告', '异常'][row.status] }}
           </p>
         </template>
       </t-table>
@@ -14,20 +14,27 @@
   </div>
 </template>
 
-<script>
+<script lang="jsx">
+import { MoveIcon } from 'tdesign-icons-vue';
+
 const columns = [
-  { colKey: 'instance', title: '集群名称', width: 150 },
+  {
+    colKey: 'drag', // 列拖拽排序必要参数
+    title: '排序',
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    cell: (h) => <MoveIcon />,
+    width: 80,
+  },
+  { colKey: 'instance', title: '集群名称' },
   {
     colKey: 'status',
     title: '状态',
-    width: 100,
   },
   {
     colKey: 'survivalTime',
     title: '存活时间(s)',
-    width: 200,
   },
-  { colKey: 'owner', title: '管理员', width: 100 },
+  { colKey: 'owner', title: '管理员' },
 ];
 
 const data = [
@@ -72,7 +79,7 @@ export default {
     onDragSort({
       currentIndex, current, targetIndex, target, currentData, e,
     }) {
-      console.log('重新排序', currentIndex, current, targetIndex, target, currentData, e);
+      console.log('交换行', currentIndex, current, targetIndex, target, currentData, e);
       this.data = currentData;
     },
   },

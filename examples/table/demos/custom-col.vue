@@ -1,7 +1,10 @@
 <template>
   <div class="tdesign-demo-block-column-large">
     <!-- 按钮操作区域 -->
-    <!-- 设置哪些列允许自定义显示 :columnController="{ fields: ['platform', 'type', 'default']}" -->
+    <!-- 1. 设置哪些列允许自定义显示 :columnController="{ fields: ['platform', 'type', 'default']}" -->
+    <!-- 2. defaultDisplayColumns = ['platform'] 设置默认显示哪些列，仅第一次有效 -->
+    <!-- 3. displayColumns 动态设置显示哪些列，受控属性，支持 displayColumns.sync 语法糖 -->
+    <!-- 4. onDisplayColumnsChange 当前显示列发生变化时触发 -->
     <t-table
       rowKey="index"
       :data="data"
@@ -33,6 +36,7 @@ export default {
   data() {
     return {
       data,
+      displayColumns: ['platform'],
       columns: [
         {
           align: 'center',

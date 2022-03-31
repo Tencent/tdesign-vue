@@ -124,7 +124,7 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       const labelAlign = isNil(this.labelAlign) ? parent?.labelAlign : this.labelAlign;
       const labelWidth = isNil(this.labelWidth) ? parent?.labelWidth : this.labelWidth;
       let contentStyle = {};
-      if (labelWidth && labelAlign !== 'top') {
+      if (this.label && labelWidth && labelAlign !== 'top') {
         if (typeof labelWidth === 'number') {
           contentStyle = { marginLeft: `${labelWidth}px` };
         } else {

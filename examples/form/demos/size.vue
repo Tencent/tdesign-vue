@@ -28,7 +28,7 @@
       <t-form-item label="课程" name="course">
         <t-checkbox-group v-model="formData.course" :options="courseOptions"></t-checkbox-group>
       </t-form-item>
-      <t-form-item style="padding-top: 8px">
+      <t-form-item style="margin-left: 100px">
         <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
         <t-button theme="default" variant="base" type="reset">重置</t-button>
       </t-form-item>

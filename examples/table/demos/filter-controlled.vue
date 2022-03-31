@@ -1,7 +1,13 @@
 <template>
   <div class="tdesign-demo-block-column">
+    <!-- 是否显示表格边框 和 对齐方式都决定着 排序图标 和 筛选图标的排列位置 -->
     <div>
-      <t-button @click="setFilters">清除筛选条件</t-button>
+      <t-radio-group v-model="align" variant="default-filled">
+        <t-radio-button value="left">左对齐</t-radio-button>
+        <t-radio-button value="center">居中对齐</t-radio-button>
+        <t-radio-button value="right">右对齐</t-radio-button>
+      </t-radio-group>
+      <t-button @click="setFilters" variant="text" style="margin-left: 36px">清除筛选条件</t-button>
       <span style="padding-left: 36px">已选筛选条件：{{ filterValue }}</span>
     </div>
     <div>
@@ -56,10 +62,17 @@ export default {
       data,
       filterValue: {},
       bordered: true,
-      columns: [
+      align: 'left',
+    };
+  },
+
+  computed: {
+    columns() {
+      return [
         {
           title: 'FirstName',
           colKey: 'firstName',
+          align: this.align,
           // 单选过滤配置
           filter: {
             type: 'single',
@@ -112,9 +125,10 @@ export default {
             component: (h) => <t-date-picker clearable />,
           },
         },
-      ],
-    };
+      ];
+    },
   },
+
   methods: {
     // filters 参数包含自定义过滤组件 日期选择器 的值
     onFilterChange(filters) {

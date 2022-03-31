@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, toRefs, h,
+  computed, defineComponent, toRefs, h, onMounted,
 } from '@vue/composition-api';
 import baseTableProps from './base-table-props';
 import primaryTableProps from './primary-table-props';
@@ -12,6 +12,7 @@ import useRowSelect from './hooks/useRowSelect';
 import { TdPrimaryTableProps, PrimaryTableCol, TableRowData } from './type';
 import useSorter from './hooks/useSorter';
 import useFilter from './hooks/useFilter';
+import useDragSort from './hooks/useDragSort';
 import useAsyncLoading from './hooks/useAsyncLoading';
 import { PageInfo } from '../pagination';
 
@@ -29,7 +30,7 @@ export default defineComponent({
     const renderTNode = useTNodeJSX();
     const { columns } = toRefs(props);
     // 自定义列配置功能
-    const { displayColumnKeys, renderColumnController } = useColumnController(props, context);
+    const { tDisplayColumns, renderColumnController } = useColumnController(props, context);
     // 展开/收起行功能
     const {
       showExpandedRow, showExpandIconColumn, getExpandColumn, renderExpandedRow, onInnerExpandRowClick,
@@ -43,6 +44,15 @@ export default defineComponent({
       hasEmptyCondition, primaryTableRef, renderFilterIcon, renderFirstFilterRow,
     } = useFilter(props, context);
 
+    // 拖拽排序功能
+    const { isColDraggable, isRowDraggable, registerDragEvent } = useDragSort(props, context);
+
+    onMounted(() => {
+      if (primaryTableRef?.value?.$el) {
+        // 注册拖拽事件
+        registerDragEvent(primaryTableRef?.value?.$el);
+      }
+    });
     const { renderTitleWidthIcon } = useTableHeader(props);
     const { renderAsyncLoading } = useAsyncLoading(props, context);
 
@@ -52,7 +62,7 @@ export default defineComponent({
       for (let i = 0, len = columns.length; i < len; i++) {
         let item = { ...columns[i] };
         // 自定义列显示控制
-        const isDisplayColumn = item.children?.length || displayColumnKeys.value?.includes(item.colKey);
+        const isDisplayColumn = item.children?.length || tDisplayColumns.value?.includes(item.colKey);
         if (!isDisplayColumn && props.columnController) continue;
         item = formatToRowSelectColumn(item);
         // 添加排序图标和过滤图标
@@ -96,7 +106,6 @@ export default defineComponent({
       // Vue3 ignore next line
       context.emit('change', ...changeParams);
     };
-
     return {
       tColumns,
       showExpandedRow,
@@ -110,9 +119,11 @@ export default defineComponent({
       renderFirstFilterRow,
       renderAsyncLoading,
       onInnerPageChange,
+      isColDraggable,
+      isRowDraggable,
+      registerDragEvent,
     };
   },
-
   methods: {
     // support @row-click @page-change @row-hover .etc. events, Vue3 do not need this function
     getListener() {
@@ -156,6 +167,8 @@ export default defineComponent({
       topContent,
       firstFullRow,
       lastFullRow,
+      isColDraggable: this.isColDraggable,
+      isRowDraggable: this.isRowDraggable,
     };
 
     // 事件，Vue3 do not need this.getListener
@@ -167,6 +180,7 @@ export default defineComponent({
       on['row-click'] = this.onInnerExpandRowClick;
     }
     // replace `scopedSlots={this.$scopedSlots}` of `v-slots={this.$slots}` in Vue3
+
     return <BaseTable ref="primaryTableRef" scopedSlots={this.$scopedSlots} props={props} on={on} {...this.$attrs} />;
   },
 });

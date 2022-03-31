@@ -11,6 +11,7 @@ import { PopupProps } from '../popup';
 import { CheckboxGroupProps } from '../checkbox';
 import { DialogProps } from '../dialog';
 import { CheckboxGroupValue } from '../checkbox';
+import { SortableEvent } from 'sortablejs';
 import { CheckboxProps } from '../checkbox';
 import { RadioProps } from '../radio';
 import { InputProps } from '../input';
@@ -116,7 +117,7 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   scroll?: TableScroll;
   /**
-   * 【设计稿确认中】表格尺寸
+   * 表格尺寸
    * @default medium
    */
   size?: SizeEnum;
@@ -258,11 +259,11 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   asyncLoading?: 'loading' | 'load-more' | TNode;
   /**
-   * 【开发中】自定义显示列控制器，值为空不会显示。<br />`columnController.fields` 表示只允许用户对数组里面的列进行显示或隐藏的控制，默认为全部字段。<br />`columnController.displayType` 是指字段呈现方式：`fixed-width` 表示固定宽度，每行固定数量，横向和纵向均对齐，`auto-width` 表示宽度随列标题数量自由显示，横向铺满，纵向不要求对齐，默认为 `auto-width`。<br />支持透传 CheckboxGroup 和 Dialog 组件等全部属性
+   * 自定义显示列控制器，值为空不会显示。<br />`columnController.fields` 表示只允许用户对数组里面的列进行显示或隐藏的控制，默认为全部字段。<br />`columnController.displayType` 是指字段呈现方式：`fixed-width` 表示固定宽度，每行固定数量，横向和纵向均对齐，`auto-width` 表示宽度随列标题数量自由显示，横向铺满，纵向不要求对齐，默认为 `auto-width`。<br />支持透传 CheckboxGroup 和 Dialog 组件等全部属性
    */
   columnController?: TableColumnController;
   /**
-   * 【开发中】自定义显示列控制器的内容呈现，可以填充任意内容
+   * 【讨论中】自定义显示列控制器的内容呈现，可以填充任意内容
    */
   columnControllerContent?: string | TNode;
   /**
@@ -270,6 +271,14 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    * @default []
    */
   columns?: Array<PrimaryTableCol<T>>;
+  /**
+   * 列配置功能中，当前显示的列
+   */
+  displayColumns?: CheckboxGroupValue;
+  /**
+   * 列配置功能中，当前显示的列，非受控属性
+   */
+  defaultDisplayColumns?: CheckboxGroupValue;
   /**
    * 拖拽排序方式，值为 `row` 表示行拖拽排序，这种方式无法进行文本复制，慎用。值为`drag-col` 表示通过专门的 拖拽列 进行拖拽排序
    * @default drag-col
@@ -354,9 +363,9 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   onCellClick?: (context: PrimaryTableCellEventContext<T>) => void;
   /**
-   * 分页、排序、过滤等内容变化时触发，泛型 T 指表格数据类型
+   * 分页、排序、过滤等内容变化时触发，泛型 T 指表格数据类型，`currentData` 表示变化后的数据
    */
-  onChange?: (data: TableChangeData, context: TableChangeContext<Array<T>>) => void;
+  onChange?: (data: TableChangeData, context: TableChangeContext<T>) => void;
   /**
    * 【开发中】列配置发生变化时触发。`context.columns` 表示已选中的列；`context.currentColumn` 表示本次变化操作的列，值不存在表示全选操作；`context.type` 表示当前操作属于选中列或是取消列
    */
@@ -366,7 +375,11 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   onDataChange?: (data: Array<T>, context: TableDataChangeContext) => void;
   /**
-   * 拖拽排序时触发
+   * 列配置选中列发生变化时触发
+   */
+  onDisplayColumnsChange?: (value: CheckboxGroupValue) => void;
+  /**
+   * 拖拽排序时触发，`currentData` 表示拖拽排序结束后的新数据
    */
   onDragSort?: (context: DragSortContext<T>) => void;
   /**
@@ -656,7 +669,7 @@ export interface TableChangeData {
 
 export interface TableChangeContext<T> {
   trigger: TableChangeTrigger;
-  currentData?: T;
+  currentData?: T[];
 }
 
 export type TableChangeTrigger = 'filter' | 'sorter' | 'pagination';
@@ -676,6 +689,8 @@ export interface DragSortContext<T> {
   current: T;
   targetIndex: number;
   target: T;
+  currentData: T[];
+  e: SortableEvent;
 }
 
 export interface ExpandOptions<T> {

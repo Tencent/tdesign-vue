@@ -9,10 +9,12 @@ export default function useClassName() {
       content: `${classPrefix.value}-table__content`,
       topContent: `${classPrefix.value}-table__top-content`,
       tdLastRow: `${classPrefix.value}-table__td-last-row`,
+      tdFirstCol: `${classPrefix.value}-table__td-first-col`,
       thCellInner: `${classPrefix.value}-table__th-cell-inner`,
       bordered: `${classPrefix.value}-table--bordered`,
       striped: `${classPrefix.value}-table--striped`,
       hover: `${classPrefix.value}-table--hoverable`,
+      rowspanAndColspan: `${classPrefix.value}-table--rowspan-colspan`,
       empty: `${classPrefix.value}-table__empty`,
       emptyRow: `${classPrefix.value}-table__empty-row`,
       headerFixed: `${classPrefix.value}-table--header-fixed`,
@@ -138,6 +140,14 @@ export default function useClassName() {
       col: `${classPrefix.value}-table__tree-col`,
       inlineCol: `${classPrefix.value}-table__tree-col--inline`,
       icon: `${classPrefix.value}-table__tree-op-icon`,
+    },
+
+    // 拖拽功能类名
+    tableDraggableClasses: {
+      bodyRow: `${classPrefix.value}-table__row--draggable`,
+      bodyCol: `${classPrefix.value}-table__col-draggable`,
+      handle: `${classPrefix.value}-table__handle-draggable`,
+      ghost: `${classPrefix.value}-table__col--draggable-ghost`,
     },
 
     virtualScrollClasses: {

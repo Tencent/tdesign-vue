@@ -41,6 +41,8 @@ export default defineComponent({
     /**
      * 渲染展开行，非公开属性，请勿在业务中使用
      */
+    isColDraggable: Boolean,
+    isRowDraggable: Boolean,
     renderExpandedRow: Function as PropType<BaseTableProps['renderExpandedRow']>,
   },
 
@@ -106,15 +108,15 @@ export default defineComponent({
       });
     };
 
-    // Vue3 do not need getListenser
-    const getListenser = () => {
-      const listenser: TableListeners = {};
+    // Vue3 do not need getListener
+    const getListener = () => {
+      const listener: TableListeners = {};
       BASE_TABLE_ALL_EVENTS.forEach((key) => {
-        listenser[key] = (...args: any) => {
+        listener[key] = (...args: any) => {
           context.emit(key, ...args);
         };
       });
-      return listenser;
+      return listener;
     };
 
     const {
@@ -194,7 +196,7 @@ export default defineComponent({
       scrollbarWidth,
       isMultipleHeader,
       showRightDivider,
-      getListenser,
+      getListener,
       onTableContentScroll,
       renderPagination,
       renderTNode,
@@ -217,7 +219,6 @@ export default defineComponent({
         ))}
       </colgroup>
     );
-
     const affixedHeader = Boolean((this.headerAffixedTop || this.isVirtual) && this.tableWidth) && (
       <div
         ref="affixHeaderRef"
@@ -266,8 +267,8 @@ export default defineComponent({
       renderExpandedRow: this.renderExpandedRow,
       ...pick(this.$props, extendTableProps),
     };
-    // Vue3 do not need getListenser
-    const on = this.getListenser();
+    // Vue3 do not need getListener
+    const on = this.getListener();
     const tableContent = (
       <div
         ref="tableContentRef"
