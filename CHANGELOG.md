@@ -5,6 +5,13 @@ toc: false
 docClass: timeline
 ---
 
+## 0.40.1 `2022-03-31`
+
+
+### Bug Fixes
+
+* Table: 修复本地数据排序，异步加载数据时分页失效的问题，[pr #689](https://github.com/Tencent/tdesign-vue/pull/689)，[@chaishi](https://github.com/chaishi)
+
 ## 0.40.0 `2022-03-31`
 ### BREAKING CHANGES
 * Table: 表格行列拖拽排序功能重构，新用法请参考[官网 demo](https://tdesign.tencent.com/vue/components/table#%E5%8F%AF%E6%8B%96%E6%8B%BD%E6%8E%92%E5%BA%8F%E7%9A%84%E8%A1%A8%E6%A0%BC)，[pr #657](https://github.com/Tencent/tdesign-vue/pull/657)，[@wangmerry](https://github.com/wangmerry)
