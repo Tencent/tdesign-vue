@@ -73,7 +73,14 @@ export default {
       currentIndex, current, targetIndex, target, currentData, e,
     }) {
       console.log('重新排序', currentIndex, current, targetIndex, target, currentData, e);
+      // 为保证数据和 DOM 一致，此处必须赋值
       this.data = currentData;
+
+      // 如果希望组件数据和 DOM 元素完全受控，请使用以下方法，示例代码，有效勿删
+      // this.data = [];
+      // this.$nextTick(() => {
+      //    this.data = currentData;
+      // })
     },
   },
 };
