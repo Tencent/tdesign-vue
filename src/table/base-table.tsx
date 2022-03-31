@@ -212,10 +212,11 @@ export default defineComponent({
     const { rowAndColFixedPosition } = this;
     const data = this.isPaginateData ? this.dataSource : this.data;
 
+    const defaultColWidth = this.tableLayout === 'fixed' ? '100px' : undefined;
     const colgroup = (
       <colgroup>
         {(this.spansAndLeafNodes?.leafColumns || this.columns).map((col) => (
-          <col key={col.colKey} style={{ width: formatCSSUnit(col.width) }}></col>
+          <col key={col.colKey} style={{ width: formatCSSUnit(col.width) || defaultColWidth }}></col>
         ))}
       </colgroup>
     );
