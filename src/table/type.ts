@@ -247,7 +247,7 @@ export interface BaseTableCol<T extends TableRowData = TableRowData> {
    */
   title?: string | TNode<{ col: BaseTableCol; colIndex: number }>;
   /**
-   * 列宽
+   * 列宽，可以作为最小宽度使用。当列宽总和小于 `table` 元素时，浏览器根据宽度设置情况自动分配宽度；当列宽总和大于 `table` 元素，表现为定宽。可以同时调整 `table` 元素的宽度来达到自己想要的效果
    */
   width?: string | number;
 }
@@ -474,6 +474,10 @@ export interface EnhancedTableInstanceFunctions<T extends TableRowData = TableRo
    * 树形结构中，用于更新行数据。泛型 `T` 表示行数据类型
    */
   setData: (key: TableRowValue, newRowData: T) => void;
+  /**
+   * 展开或收起树形行
+   */
+  toggleExpandData: (p: { row: T; rowIndex: number }) => void;
 }
 
 export interface TableRowState<T extends TableRowData = TableRowData> {
