@@ -47,7 +47,7 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
 
   toggleExpandData(p: { rowIndex: number; row: T }, dataSource: T[], keys: KeysType) {
     const rowValue = get(p.row, keys.rowKey);
-    if (!rowValue) {
+    if (rowValue === undefined) {
       log.error('EnhancedTable', '`rowKey` could be wrong, can not get rowValue from `data` by `rowKey`.');
       return;
     }
@@ -227,7 +227,7 @@ export function initialTreeDataMap<T extends TableRowData = TableRowData>(
   for (let i = 0, len = dataSource.length; i < len; i++) {
     const item = dataSource[i];
     const rowValue = get(item, keys.rowKey);
-    if (!rowValue) {
+    if (rowValue === undefined) {
       log.error('EnhancedTable', '`rowKey` could be wrong, can not get rowValue from `data` by `rowKey`.');
       return;
     }
