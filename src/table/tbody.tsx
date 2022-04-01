@@ -214,6 +214,8 @@ export default defineComponent({
         trs: this.trs,
         bufferSize: this.bufferSize,
         tableElm: this.tableElm,
+        isColDraggable: this.$props.isColDraggable,
+        isRowDraggable: this.$props.isRowDraggable,
       };
       if (this.onCellClick) {
         trProps.onCellClick = this.onCellClick;
