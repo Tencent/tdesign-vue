@@ -12014,7 +12014,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
             </tr>
           </thead>
           <tbody class="t-table__body t-table__col-draggable">
-            <tr>
+            <tr data-id="1">
               <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
                   <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
                 </svg></td>
@@ -12027,7 +12027,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
               <td>1000</td>
               <td>jenny;peter</td>
             </tr>
-            <tr>
+            <tr data-id="2">
               <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
                   <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
                 </svg></td>
@@ -12040,7 +12040,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
               <td>1000</td>
               <td>jenny</td>
             </tr>
-            <tr>
+            <tr data-id="3">
               <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
                   <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
                 </svg></td>
@@ -12053,7 +12053,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
               <td>500</td>
               <td>jenny</td>
             </tr>
-            <tr>
+            <tr data-id="4">
               <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
                   <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
                 </svg></td>
@@ -12104,7 +12104,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
             </tr>
           </thead>
           <tbody class="t-table__body t-table__row--draggable">
-            <tr>
+            <tr data-id="1">
               <td>JQTest1</td>
               <td>
                 <p class="status">
@@ -12114,7 +12114,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
               <td>1000</td>
               <td>jenny;peter</td>
             </tr>
-            <tr>
+            <tr data-id="2">
               <td>JQTest2</td>
               <td>
                 <p class="status warning">
@@ -12124,7 +12124,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
               <td>1000</td>
               <td>jenny</td>
             </tr>
-            <tr>
+            <tr data-id="3">
               <td>JQTest3</td>
               <td>
                 <p class="status unhealth">
@@ -12134,7 +12134,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
               <td>500</td>
               <td>jenny</td>
             </tr>
-            <tr>
+            <tr data-id="4">
               <td>JQTest4</td>
               <td>
                 <p class="status warning">
