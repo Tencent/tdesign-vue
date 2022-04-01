@@ -1,0 +1,23 @@
+[
+  {
+    "name": "hideOnLoadFailed",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "shape",
+    "type": "enum",
+    "defaultValue": "circle",
+    "enum": [
+      {
+        "label": "circle",
+        "value": "circle"
+      },
+      {
+        "label": "round",
+        "value": "round"
+      }
+    ]
+  }
+]

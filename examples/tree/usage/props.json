@@ -1,0 +1,123 @@
+[
+  {
+    "name": "activable",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "activeMultiple",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "allowFoldNodeOnFilter",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "checkable",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "checkStrictly",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "disableCheck",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "disabled",
+    "type": "Boolean",
+    "defaultValue": "",
+    "enum": []
+  },
+  {
+    "name": "expandAll",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "expandMutex",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "expandOnClickNode",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "expandParent",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "hover",
+    "type": "Boolean",
+    "defaultValue": "",
+    "enum": []
+  },
+  {
+    "name": "icon",
+    "type": "Boolean",
+    "defaultValue": "true",
+    "enum": []
+  },
+  {
+    "name": "label",
+    "type": "String",
+    "defaultValue": "true",
+    "enum": []
+  },
+  {
+    "name": "lazy",
+    "type": "Boolean",
+    "defaultValue": "true",
+    "enum": []
+  },
+  {
+    "name": "line",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "transition",
+    "type": "Boolean",
+    "defaultValue": "true",
+    "enum": []
+  },
+  {
+    "name": "valueMode",
+    "type": "enum",
+    "defaultValue": "onlyLeaf",
+    "enum": [
+      {
+        "label": "onlyLeaf",
+        "value": "onlyLeaf"
+      },
+      {
+        "label": "parentFirst",
+        "value": "parentFirst"
+      },
+      {
+        "label": "all",
+        "value": "all"
+      }
+    ]
+  }
+]

@@ -1,0 +1,129 @@
+[
+  {
+    "name": "closeBtn",
+    "type": "String",
+    "defaultValue": "true",
+    "enum": []
+  },
+  {
+    "name": "closeOnEscKeydown",
+    "type": "Boolean",
+    "defaultValue": "true",
+    "enum": []
+  },
+  {
+    "name": "closeOnOverlayClick",
+    "type": "Boolean",
+    "defaultValue": "true",
+    "enum": []
+  },
+  {
+    "name": "destroyOnClose",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "draggable",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "footer",
+    "type": "Boolean",
+    "defaultValue": "true",
+    "enum": []
+  },
+  {
+    "name": "header",
+    "type": "String",
+    "defaultValue": "true",
+    "enum": []
+  },
+  {
+    "name": "mode",
+    "type": "enum",
+    "defaultValue": "modal",
+    "enum": [
+      {
+        "label": "modal",
+        "value": "modal"
+      },
+      {
+        "label": "modeless",
+        "value": "modeless"
+      },
+      {
+        "label": "normal",
+        "value": "normal"
+      }
+    ]
+  },
+  {
+    "name": "placement",
+    "type": "enum",
+    "defaultValue": "top",
+    "enum": [
+      {
+        "label": "top",
+        "value": "top"
+      },
+      {
+        "label": "center",
+        "value": "center"
+      }
+    ]
+  },
+  {
+    "name": "preventScrollThrough",
+    "type": "Boolean",
+    "defaultValue": "true",
+    "enum": []
+  },
+  {
+    "name": "showInAttachedElement",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "showOverlay",
+    "type": "Boolean",
+    "defaultValue": "true",
+    "enum": []
+  },
+  {
+    "name": "theme",
+    "type": "enum",
+    "defaultValue": "default",
+    "enum": [
+      {
+        "label": "default",
+        "value": "default"
+      },
+      {
+        "label": "info",
+        "value": "info"
+      },
+      {
+        "label": "warning",
+        "value": "warning"
+      },
+      {
+        "label": "danger",
+        "value": "danger"
+      },
+      {
+        "label": "success",
+        "value": "success"
+      }
+    ]
+  },
+  {
+    "name": "visible",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  }
+]

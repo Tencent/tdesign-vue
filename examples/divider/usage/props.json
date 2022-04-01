@@ -1,0 +1,57 @@
+[
+  {
+    "name": "align",
+    "type": "enum",
+    "defaultValue": "center",
+    "enum": [
+      {
+        "label": "left",
+        "value": "left"
+      },
+      {
+        "label": "right",
+        "value": "right"
+      },
+      {
+        "label": "center",
+        "value": "center"
+      }
+    ]
+  },
+  {
+    "name": "dashed",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "layout",
+    "type": "enum",
+    "defaultValue": "horizontal",
+    "enum": [
+      {
+        "label": "horizontal",
+        "value": "horizontal"
+      },
+      {
+        "label": "vertical",
+        "value": "vertical"
+      }
+    ]
+  },
+  {
+    "name": "theme",
+    "type": "enum",
+    "defaultValue": "horizontal",
+    "enum": [
+      {
+        "label": "horizontal",
+        "value": "horizontal"
+      },
+      {
+        "label": "vertical",
+        "value": "vertical"
+      }
+    ]
+  }
+]

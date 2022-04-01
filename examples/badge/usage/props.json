@@ -1,0 +1,44 @@
+[
+  {
+    "name": "dot",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "shape",
+    "type": "enum",
+    "defaultValue": "circle",
+    "enum": [
+      {
+        "label": "circle",
+        "value": "circle"
+      },
+      {
+        "label": "round",
+        "value": "round"
+      }
+    ]
+  },
+  {
+    "name": "showZero",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "size",
+    "type": "enum",
+    "defaultValue": "medium",
+    "enum": [
+      {
+        "label": "small",
+        "value": "small"
+      },
+      {
+        "label": "medium",
+        "value": "medium"
+      }
+    ]
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "fullscreen",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "indicator",
+    "type": "Boolean",
+    "defaultValue": "true",
+    "enum": []
+  },
+  {
+    "name": "inheritColor",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "loading",
+    "type": "Boolean",
+    "defaultValue": "true",
+    "enum": []
+  },
+  {
+    "name": "preventScrollThrough",
+    "type": "Boolean",
+    "defaultValue": "true",
+    "enum": []
+  },
+  {
+    "name": "showOverlay",
+    "type": "Boolean",
+    "defaultValue": "true",
+    "enum": []
+  }
+]

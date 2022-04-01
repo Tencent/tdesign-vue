@@ -1,0 +1,31 @@
+[
+  {
+    "name": "close",
+    "type": "String",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "theme",
+    "type": "enum",
+    "defaultValue": "info",
+    "enum": [
+      {
+        "label": "success",
+        "value": "success"
+      },
+      {
+        "label": "info",
+        "value": "info"
+      },
+      {
+        "label": "warning",
+        "value": "warning"
+      },
+      {
+        "label": "error",
+        "value": "error"
+      }
+    ]
+  }
+]

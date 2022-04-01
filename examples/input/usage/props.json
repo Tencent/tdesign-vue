@@ -1,0 +1,115 @@
+[
+  {
+    "name": "align",
+    "type": "enum",
+    "defaultValue": "left",
+    "enum": [
+      {
+        "label": "left",
+        "value": "left"
+      },
+      {
+        "label": "center",
+        "value": "center"
+      },
+      {
+        "label": "right",
+        "value": "right"
+      }
+    ]
+  },
+  {
+    "name": "autofocus",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "autoWidth",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "clearable",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "disabled",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "readonly",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "showClearIconOnEmpty",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "size",
+    "type": "enum",
+    "defaultValue": "medium",
+    "enum": [
+      {
+        "label": "small",
+        "value": "small"
+      },
+      {
+        "label": "medium",
+        "value": "medium"
+      },
+      {
+        "label": "large",
+        "value": "large"
+      }
+    ]
+  },
+  {
+    "name": "type",
+    "type": "enum",
+    "defaultValue": "text",
+    "enum": [
+      {
+        "label": "text",
+        "value": "text"
+      },
+      {
+        "label": "number",
+        "value": "number"
+      },
+      {
+        "label": "url",
+        "value": "url"
+      },
+      {
+        "label": "tel",
+        "value": "tel"
+      },
+      {
+        "label": "password",
+        "value": "password"
+      },
+      {
+        "label": "search",
+        "value": "search"
+      },
+      {
+        "label": "submit",
+        "value": "submit"
+      },
+      {
+        "label": "hidden",
+        "value": "hidden"
+      }
+    ]
+  }
+]

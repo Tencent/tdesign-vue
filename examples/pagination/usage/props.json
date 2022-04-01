@@ -1,0 +1,50 @@
+[
+  {
+    "name": "disabled",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "showJumper",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "size",
+    "type": "enum",
+    "defaultValue": "medium",
+    "enum": [
+      {
+        "label": "small",
+        "value": "small"
+      },
+      {
+        "label": "medium",
+        "value": "medium"
+      }
+    ]
+  },
+  {
+    "name": "theme",
+    "type": "enum",
+    "defaultValue": "default",
+    "enum": [
+      {
+        "label": "default",
+        "value": "default"
+      },
+      {
+        "label": "simple",
+        "value": "simple"
+      }
+    ]
+  },
+  {
+    "name": "totalContent",
+    "type": "Boolean",
+    "defaultValue": "true",
+    "enum": []
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "name": "bordered",
+    "type": "Boolean",
+    "defaultValue": "true",
+    "enum": []
+  },
+  {
+    "name": "loading",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "shadow",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "size",
+    "type": "enum",
+    "defaultValue": "medium",
+    "enum": [
+      {
+        "label": "medium",
+        "value": "medium"
+      },
+      {
+        "label": "small",
+        "value": "small"
+      }
+    ]
+  },
+  {
+    "name": "theme",
+    "type": "enum",
+    "defaultValue": "normal",
+    "enum": [
+      {
+        "label": "normal",
+        "value": "normal"
+      },
+      {
+        "label": "poster1",
+        "value": "poster1"
+      },
+      {
+        "label": "poster2",
+        "value": "poster2"
+      }
+    ]
+  }
+]

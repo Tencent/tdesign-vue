@@ -1,0 +1,68 @@
+[
+  {
+    "name": "direction",
+    "type": "enum",
+    "defaultValue": "horizontal",
+    "enum": [
+      {
+        "label": "horizontal",
+        "value": "horizontal"
+      },
+      {
+        "label": "vertical",
+        "value": "vertical"
+      }
+    ]
+  },
+  {
+    "name": "layout",
+    "type": "enum",
+    "defaultValue": "horizontal",
+    "enum": [
+      {
+        "label": "horizontal",
+        "value": "horizontal"
+      },
+      {
+        "label": "vertical",
+        "value": "vertical"
+      }
+    ]
+  },
+  {
+    "name": "readonly",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "sequence",
+    "type": "enum",
+    "defaultValue": "positive",
+    "enum": [
+      {
+        "label": "positive",
+        "value": "positive"
+      },
+      {
+        "label": "reverse",
+        "value": "reverse"
+      }
+    ]
+  },
+  {
+    "name": "theme",
+    "type": "enum",
+    "defaultValue": "default",
+    "enum": [
+      {
+        "label": "default",
+        "value": "default"
+      },
+      {
+        "label": "dot",
+        "value": "dot"
+      }
+    ]
+  }
+]

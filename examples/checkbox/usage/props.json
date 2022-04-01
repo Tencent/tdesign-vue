@@ -1,0 +1,32 @@
+[
+  {
+    "name": "checkAll",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "checked",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "disabled",
+    "type": "Boolean",
+    "defaultValue": "undefined",
+    "enum": []
+  },
+  {
+    "name": "indeterminate",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "readonly",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  }
+]

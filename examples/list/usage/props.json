@@ -1,0 +1,48 @@
+[
+  {
+    "name": "layout",
+    "type": "enum",
+    "defaultValue": "horizontal",
+    "enum": [
+      {
+        "label": "horizontal",
+        "value": "horizontal"
+      },
+      {
+        "label": "vertical",
+        "value": "vertical"
+      }
+    ]
+  },
+  {
+    "name": "size",
+    "type": "enum",
+    "defaultValue": "medium",
+    "enum": [
+      {
+        "label": "small",
+        "value": "small"
+      },
+      {
+        "label": "medium",
+        "value": "medium"
+      },
+      {
+        "label": "large",
+        "value": "large"
+      }
+    ]
+  },
+  {
+    "name": "split",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "stripe",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  }
+]

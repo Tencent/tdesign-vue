@@ -1,0 +1,130 @@
+[
+  {
+    "name": "checkStrictly",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "clearable",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "disabled",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "filterable",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "lazy",
+    "type": "Boolean",
+    "defaultValue": "true",
+    "enum": []
+  },
+  {
+    "name": "loading",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "multiple",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "popupVisible",
+    "type": "Boolean",
+    "defaultValue": "undefined",
+    "enum": []
+  },
+  {
+    "name": "readonly",
+    "type": "Boolean",
+    "defaultValue": "false",
+    "enum": []
+  },
+  {
+    "name": "showAllLevels",
+    "type": "Boolean",
+    "defaultValue": "true",
+    "enum": []
+  },
+  {
+    "name": "size",
+    "type": "enum",
+    "defaultValue": "medium",
+    "enum": [
+      {
+        "label": "large",
+        "value": "large"
+      },
+      {
+        "label": "medium",
+        "value": "medium"
+      },
+      {
+        "label": "small",
+        "value": "small"
+      }
+    ]
+  },
+  {
+    "name": "trigger",
+    "type": "enum",
+    "defaultValue": "click",
+    "enum": [
+      {
+        "label": "click",
+        "value": "click"
+      },
+      {
+        "label": "hover",
+        "value": "hover"
+      }
+    ]
+  },
+  {
+    "name": "valueMode",
+    "type": "enum",
+    "defaultValue": "onlyLeaf",
+    "enum": [
+      {
+        "label": "onlyLeaf",
+        "value": "onlyLeaf"
+      },
+      {
+        "label": "parentFirst",
+        "value": "parentFirst"
+      },
+      {
+        "label": "all",
+        "value": "all"
+      }
+    ]
+  },
+  {
+    "name": "valueType",
+    "type": "enum",
+    "defaultValue": "single",
+    "enum": [
+      {
+        "label": "single",
+        "value": "single"
+      },
+      {
+        "label": "full",
+        "value": "full"
+      }
+    ]
+  }
+]
