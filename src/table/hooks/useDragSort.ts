@@ -4,6 +4,7 @@ import {
   SetupContext, computed, toRefs, ref, watch,
 } from '@vue/composition-api';
 import { SortableEvent } from 'sortablejs';
+import get from 'lodash/get';
 import { TdPrimaryTableProps } from '../type';
 import { TargetDom } from '../interface';
 import { setSortableConfig } from '../utils';
@@ -27,7 +28,7 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
   const startList = ref([]);
   watch(data, (newData) => {
     // 更新排列顺序
-    startList.value = newData.map((item) => item[props.rowKey]);
+    startList.value = newData.map((item) => get(item, props.rowKey));
   });
   // 注册拖拽事件
   const registerDragEvent = (element: TargetDom) => {

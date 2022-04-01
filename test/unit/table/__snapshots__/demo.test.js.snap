@@ -15957,6 +15957,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
             >
               <div
                 class="t-table__tree-col"
+                style="padding-left: 1px;"
               >
                 <svg
                   class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
@@ -16053,6 +16054,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
             >
               <div
                 class="t-table__tree-col"
+                style="padding-left: 1px;"
               >
                 <svg
                   class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
@@ -16148,6 +16150,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
             >
               <div
                 class="t-table__tree-col"
+                style="padding-left: 1px;"
               >
                 <svg
                   class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
@@ -16244,6 +16247,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
             >
               <div
                 class="t-table__tree-col"
+                style="padding-left: 1px;"
               >
                 <svg
                   class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
@@ -16339,6 +16343,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
             >
               <div
                 class="t-table__tree-col"
+                style="padding-left: 1px;"
               >
                 <svg
                   class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
