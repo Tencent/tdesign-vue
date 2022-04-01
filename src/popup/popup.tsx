@@ -129,15 +129,11 @@ export default Vue.extend({
     if (hasTrigger.hover) {
       on(reference, 'mouseenter', () => this.handleOpen({ trigger: 'trigger-element-hover' }));
       on(reference, 'mouseleave', () => this.handleClose({ trigger: 'trigger-element-hover' }));
-      on(reference, 'click', () => {
-        this.refClicked = true;
-      });
     } else if (hasTrigger.focus) {
       on(reference, 'focusin', () => this.handleOpen({ trigger: 'trigger-element-focus' }));
       on(reference, 'focusout', () => this.handleClose({ trigger: 'trigger-element-blur' }));
     } else if (hasTrigger.click) {
       on(reference, 'click', (e: MouseEvent) => {
-        this.refClicked = true;
         // override nested popups with trigger hover since higher priority
         this.visibleState = 0;
         this.handleToggle({ e, trigger: 'trigger-element-click' });
@@ -152,6 +148,11 @@ export default Vue.extend({
         // MouseEvent.button
         // 2: Secondary button pressed, usually the right button
         e.button === 2 && this.handleToggle({ trigger: 'context-menu' });
+      });
+    }
+    if (!hasTrigger['context-menu']) {
+      on(reference, 'click', () => {
+        this.refClicked = true;
       });
     }
   },
@@ -328,10 +329,7 @@ export default Vue.extend({
     } = this;
     const ref = renderContent(this, 'default', 'triggerElement');
     const content = renderTNodeJSX(this, 'content');
-
-    if (this.hideEmptyPopup && ['', undefined, null].includes(content)) {
-      return ref;
-    }
+    const hidePopup = this.hideEmptyPopup && ['', undefined, null].includes(content);
 
     const overlay = visible || !destroyOnClose
       ? h(
@@ -339,13 +337,14 @@ export default Vue.extend({
         {
           class: name,
           ref: 'popper',
+          style: destroyOnClose && hidePopup ? { display: 'none' } : undefined,
           directives: destroyOnClose
             ? undefined
             : [
                     {
                       name: 'show',
                       rawName: 'v-show',
-                      value: visible,
+                      value: visible && !hidePopup,
                       expression: 'visible',
                     } as VNodeDirective,
             ],
@@ -389,13 +388,18 @@ export default Vue.extend({
     return (
       <Container
         ref="container"
-        onMounted={() => {
+        onContentMounted={() => {
           if (visible) {
             this.updatePopper();
             this.updateOverlayStyle();
           }
         }}
         onRefResize={() => {
+          if (visible) {
+            this.updatePopper();
+          }
+        }}
+        onContentResize={() => {
           if (visible) {
             this.updatePopper();
           }
