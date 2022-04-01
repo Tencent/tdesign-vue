@@ -64,10 +64,7 @@ export default defineComponent({
     };
 
     const onTriggerMouseleave = () => {
-      const timer = setTimeout(() => {
-        visible.value = false;
-        clearTimeout(timer);
-      }, 10);
+      visible.value = false;
     };
 
     return {

@@ -1,7 +1,7 @@
 import get from 'lodash/get';
 import { isRowSelectedDisabled } from '../utils';
 import {
-  PrimaryTableCol, TableRowState, TableRowValue, PrimaryTableCellParams, TableRowData,
+  PrimaryTableCol, TableRowState, TableRowValue, TableRowData,
 } from '../type';
 import log from '../../_common/js/log';
 
@@ -45,7 +45,7 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
     initialTreeDataMap(this.treeDataMap, dataSource, columns[0], keys);
   }
 
-  toggleExpandData(p: PrimaryTableCellParams<T>, dataSource: T[], keys: KeysType) {
+  toggleExpandData(p: { rowIndex: number; row: T }, dataSource: T[], keys: KeysType) {
     const rowValue = get(p.row, keys.rowKey);
     if (!rowValue) {
       log.error('EnhancedTable', '`rowKey` could be wrong, can not get rowValue from `data` by `rowKey`.');
@@ -242,7 +242,7 @@ export function initialTreeDataMap<T extends TableRowData = TableRowData>(
     state.path = [state];
     treeDataMap.set(rowValue, state);
     const children = get(item, keys.childrenKey);
-    if (column.colKey === 'row-select' && children?.length) {
+    if (children?.length) {
       initialTreeDataMap(treeDataMap, children, column, keys);
     }
   }

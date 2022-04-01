@@ -16398,6 +16398,18 @@ exports[`Table Table treeVue demo works fine 1`] = `
         重置数据
       </span>
     </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-default"
+      style="margin-left: 16px;"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        展开/收起可见行
+      </span>
+    </button>
   </div>
    
   <br />
