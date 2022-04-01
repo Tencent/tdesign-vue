@@ -465,15 +465,9 @@ exports[`Table Table baseVue demo works fine 1`] = `
           <col
             style="width: 100px;"
           />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
+          <col />
+          <col />
+          <col />
           <col
             style="width: 200px;"
           />
@@ -895,18 +889,10 @@ exports[`Table Table customCellVue demo works fine 1`] = `
         class="t-table--layout-fixed"
       >
         <colgroup>
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
+          <col />
+          <col />
+          <col />
+          <col />
         </colgroup>
         <thead
           class="t-table__header"
@@ -1419,12 +1405,8 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
           <col
             style="width: 100px;"
           />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
+          <col />
+          <col />
           <col
             style="width: 150px;"
           />
@@ -1682,15 +1664,9 @@ exports[`Table Table customHeaderVue demo works fine 1`] = `
       class="t-table--layout-fixed"
     >
       <colgroup>
-        <col
-          style="width: 100px;"
-        />
-        <col
-          style="width: 100px;"
-        />
-        <col
-          style="width: 100px;"
-        />
+        <col />
+        <col />
+        <col />
       </colgroup>
       <thead
         class="t-table__header"
@@ -2366,24 +2342,12 @@ exports[`Table Table emptyVue demo works fine 1`] = `
         class="t-table--layout-fixed"
       >
         <colgroup>
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
         </colgroup>
         <thead
           class="t-table__header"
@@ -2484,24 +2448,12 @@ exports[`Table Table emptyVue demo works fine 1`] = `
         class="t-table--layout-fixed"
       >
         <colgroup>
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
         </colgroup>
         <thead
           class="t-table__header"
@@ -2604,24 +2556,12 @@ exports[`Table Table emptyVue demo works fine 1`] = `
         class="t-table--layout-fixed"
       >
         <colgroup>
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
         </colgroup>
         <thead
           class="t-table__header"
@@ -3692,18 +3632,10 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
         class="t-table--layout-fixed"
       >
         <colgroup>
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
+          <col />
+          <col />
+          <col />
+          <col />
         </colgroup>
         <thead
           class="t-table__header"
@@ -4232,9 +4164,7 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
           <col
             style="width: 150px;"
           />
-          <col
-            style="width: 100px;"
-          />
+          <col />
           <col
             style="width: 100px;"
           />
@@ -5909,18 +5839,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
           <col
             style="width: 120px;"
           />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
+          <col />
+          <col />
           <col
             style="width: 200px;"
           />
-          <col
-            style="width: 100px;"
-          />
+          <col />
         </colgroup>
         <thead
           class="t-table__header"
@@ -6862,18 +6786,10 @@ exports[`Table Table lazyVue demo works fine 1`] = `
           class="t-table--layout-fixed t-table--full-height"
         >
           <colgroup>
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
+            <col />
+            <col />
+            <col />
+            <col />
           </colgroup>
           <thead
             class="t-table__header"
@@ -13794,15 +13710,9 @@ exports[`Table Table paginationVue demo works fine 1`] = `
           <col
             style="width: 100px;"
           />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
+          <col />
+          <col />
+          <col />
           <col
             style="width: 200px;"
           />
@@ -14271,12 +14181,8 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
           <col
             style="width: 100px;"
           />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
+          <col />
+          <col />
           <col
             style="width: 200px;"
           />
@@ -14718,12 +14624,8 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
           <col
             style="width: 100px;"
           />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
+          <col />
+          <col />
           <col
             style="width: 200px;"
           />
@@ -15152,12 +15054,8 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
           <col
             style="width: 100px;"
           />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
+          <col />
+          <col />
           <col
             style="width: 200px;"
           />
@@ -15816,12 +15714,8 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
           <col
             style="width: 100px;"
           />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
+          <col />
+          <col />
         </colgroup>
         <thead
           class="t-table__header"
@@ -16434,18 +16328,12 @@ exports[`Table Table treeVue demo works fine 1`] = `
         class="t-table--layout-fixed"
       >
         <colgroup>
-          <col
-            style="width: 100px;"
-          />
+          <col />
           <col
             style="width: 220px;"
           />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
+          <col />
+          <col />
           <col
             style="width: 280px;"
           />
@@ -17206,18 +17094,10 @@ exports[`Table Table virtualScrollVue demo works fine 1`] = `
           class="t-table--layout-fixed t-table--full-height"
         >
           <colgroup>
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
+            <col />
+            <col />
+            <col />
+            <col />
           </colgroup>
           <thead
             class="t-table__header"

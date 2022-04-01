@@ -212,7 +212,7 @@ export default defineComponent({
     const { rowAndColFixedPosition } = this;
     const data = this.isPaginateData ? this.dataSource : this.data;
 
-    const defaultColWidth = this.tableLayout === 'fixed' ? '100px' : undefined;
+    const defaultColWidth = this.tableLayout === 'fixed' && this.isWidthOverflow ? '100px' : undefined;
     const colgroup = (
       <colgroup>
         {(this.spansAndLeafNodes?.leafColumns || this.columns).map((col) => (

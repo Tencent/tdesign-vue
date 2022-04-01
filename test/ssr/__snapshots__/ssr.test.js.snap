@@ -3076,9 +3076,9 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col>
+          <col>
+          <col>
         </colgroup>
         <thead class="t-table__header">
           <tr>
@@ -3141,9 +3141,9 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:64px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col>
+          <col>
+          <col>
         </colgroup>
         <thead class="t-table__header">
           <tr>
@@ -11450,9 +11450,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
         <colgroup>
           <col style="width:100px;">
           <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col>
+          <col>
+          <col>
           <col style="width:200px;">
         </colgroup>
         <thead class="t-table__header">
@@ -11580,10 +11580,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col>
+          <col>
+          <col>
+          <col>
         </colgroup>
         <thead class="t-table__header">
           <tr>
@@ -11754,8 +11754,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
         <colgroup>
           <col style="width:100px;">
           <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col>
+          <col>
           <col style="width:150px;">
           <col style="width:200px;">
         </colgroup>
@@ -11846,9 +11846,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-header.vue corr
   <div class="t-table__content">
     <table class="t-table--layout-fixed" style="width:;">
       <colgroup>
-        <col style="width:100px;">
-        <col style="width:100px;">
-        <col style="width:100px;">
+        <col>
+        <col>
+        <col>
       </colgroup>
       <thead class="t-table__header">
         <tr>
@@ -11989,10 +11989,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
         <table class="t-table--layout-fixed" style="width:;">
           <colgroup>
             <col style="width:80px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
+            <col>
+            <col>
+            <col>
+            <col>
           </colgroup>
           <thead class="t-table__header">
             <tr>
@@ -12159,12 +12159,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
         </colgroup>
         <thead class="t-table__header">
           <tr>
@@ -12203,12 +12203,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
         </colgroup>
         <thead class="t-table__header">
           <tr>
@@ -12247,12 +12247,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
         </colgroup>
         <thead class="t-table__header">
           <tr>
@@ -12479,10 +12479,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col>
+          <col>
+          <col>
+          <col>
         </colgroup>
         <thead class="t-table__header">
           <tr>
@@ -12608,7 +12608,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
           <col style="width:80px;">
           <col style="width:100px;">
           <col style="width:150px;">
-          <col style="width:100px;">
+          <col>
           <col style="width:100px;">
           <col style="width:150px;">
           <col style="width:100px;">
@@ -12739,10 +12739,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
         <colgroup>
           <col style="width:120px;">
           <col style="width:120px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col>
+          <col>
           <col style="width:200px;">
-          <col style="width:100px;">
+          <col>
         </colgroup>
         <thead class="t-table__header">
           <tr>
@@ -13830,9 +13830,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
         <colgroup>
           <col style="width:100px;">
           <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col>
+          <col>
+          <col>
           <col style="width:200px;">
         </colgroup>
         <thead class="t-table__header">
@@ -14038,8 +14038,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
           <col style="width:64px;">
           <col style="width:150px;">
           <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col>
+          <col>
           <col style="width:200px;">
         </colgroup>
         <thead class="t-table__header">
@@ -14139,8 +14139,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
           <col style="width:64px;">
           <col style="width:150px;">
           <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col>
+          <col>
           <col style="width:200px;">
         </colgroup>
         <thead class="t-table__header">
@@ -14239,8 +14239,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue corre
         <colgroup>
           <col style="width:150px;">
           <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col>
+          <col>
           <col style="width:200px;">
         </colgroup>
         <thead class="t-table__header">
@@ -14418,10 +14418,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
-          <col style="width:100px;">
+          <col>
           <col style="width:220px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col>
+          <col>
           <col style="width:280px;">
         </colgroup>
         <thead class="t-table__header">
@@ -14612,8 +14612,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
           <col style="width:20px;">
           <col style="width:200px;">
           <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col>
+          <col>
         </colgroup>
         <thead class="t-table__header">
           <tr>
@@ -14729,10 +14729,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/virtual-scroll.vue cor
         <div class="t-table__virtual-scroll-cursor" style="transform:translate(0, 28800px);-ms-transform:translate(0, 28800px);-moz-transform:translate(0, 28800px);-webkit-transform:translate(0, 28800px);"></div>
         <table class="t-table--layout-fixed t-table--full-height" style="width:;">
           <colgroup>
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
+            <col>
+            <col>
+            <col>
+            <col>
           </colgroup>
           <thead class="t-table__header">
             <tr>
