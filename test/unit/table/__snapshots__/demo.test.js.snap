@@ -2164,6 +2164,7 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
           >
             <tr
               class=""
+              data-id="1"
             >
               <td
                 class=""
@@ -2194,6 +2195,7 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
             </tr>
             <tr
               class=""
+              data-id="2"
             >
               <td
                 class=""
@@ -2224,6 +2226,7 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
             </tr>
             <tr
               class=""
+              data-id="3"
             >
               <td
                 class=""
@@ -2254,6 +2257,7 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
             </tr>
             <tr
               class=""
+              data-id="4"
             >
               <td
                 class=""
