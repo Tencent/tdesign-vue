@@ -5,6 +5,32 @@ toc: false
 docClass: timeline
 ---
 
+## 0.40.1 `2022-03-31`
+
+
+### Bug Fixes
+
+* Table: 修复本地数据排序，异步加载数据时分页失效的问题，[pr #689](https://github.com/Tencent/tdesign-vue/pull/689)，[@chaishi](https://github.com/chaishi)
+
+## 0.40.0 `2022-03-31`
+### BREAKING CHANGES
+* Table: 表格行列拖拽排序功能重构，新用法请参考[官网 demo](https://tdesign.tencent.com/vue/components/table#%E5%8F%AF%E6%8B%96%E6%8B%BD%E6%8E%92%E5%BA%8F%E7%9A%84%E8%A1%A8%E6%A0%BC)，[pr #657](https://github.com/Tencent/tdesign-vue/pull/657)，[@wangmerry](https://github.com/wangmerry)
+* Form: label 为空时不再默认渲染宽度占位，需要手动设置样式保持表单对齐[pr #687](https://github.com/Tencent/tdesign-vue/pull/687)，[@HQ-Lin](https://github.com/HQ-Lin)
+### Bug Fixes
+
+* Popconfirm: 修复确认框中按钮默认大小，[pr #673](https://github.com/Tencent/tdesign-vue/pull/673)，[@pengYYYYY](https://github.com/pengYYYYY)
+* Upload:
+  - 修复上传中状态文案，[pr #678](https://github.com/Tencent/tdesign-vue/pull/678)，[@pengYYYYY](https://github.com/pengYYYYY)
+  - 修复上传模版问题，[issue #675](https://github.com/Tencent/tdesign-vue/issues/675)，[@YikaJ](https://github.com/YikaJ)
+* Popup: 修复 `hideEmptyPopup` 在动态改变内容时不生效的问题，[@LoopZhou](https://github.com/LoopZhou)
+* Table: 修复合并单元格边框样式问题，[issue #671](https://github.com/Tencent/tdesign-vue/issues/671)，[@chaishi](https://github.com/chaishi)
+* Datepicker: 修复区间时间选择时，月份/年份选择面板样式异常的问题，[issue #588](https://github.com/Tencent/tdesign-vue/issues/588)，[@HQ-Lin](https://github.com/HQ-Lin)
+* 修复 Table/SelectInput/TagInput 按需引入时出现 composition-api 相关报错的问题，[pr #688](https://github.com/Tencent/tdesign-vue/pull/688)，[@xiaosansiji](https://github.com/xiaosansiji)
+
+### Features
+
+* Table: 支持外部设置当前显示列，新增 API `displayColumns` `defaultDisplayColumns` `onDisplayColumnsChange` 和事件 `display-columns-change`，[pr #672](https://github.com/Tencent/tdesign-vue/pull/672)，[@chaishi](https://github.com/chaishi)
+
 ## 0.39.1 `2022-03-29`
 
 ### Bug Fixes
@@ -32,7 +58,7 @@ docClass: timeline
 Table 组件使用 `Composition API` 重构，[pr #365](https://github.com/Tencent/tdesign-vue/pull/365)，[@chaishi](https://github.com/chaishi)
 - BaseTable HTML 结构变更，写过 CSS 样式覆盖的同学需注意更新样式
 - 表头更为使用 `th` 标签，之前为 `td`，不符合语义
-- 事件 `row-db-click` 更为`row-dblclick` ，`onRowDbClick` 更为`rowDblclick`
+- 事件 `row-db-click` 更为`row-dblclick` ，`onRowDbClick` 更为`onRowDblclick`
 - 事件 `row-hover` 更为 `row-mouseover`, `onRowHover` 更为 `onRowMouseover`（本没有 rowHover 事件）
 - CSS 类名 `t-table__row-first-full-row` 更为 `t-table__first-full-row`，`t-table__row-last-full-row` 更为 `t-table__last-full-row`
 

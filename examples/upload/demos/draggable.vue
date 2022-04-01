@@ -18,6 +18,7 @@
       :data="{ extra_data: 123, file_name: 'certificate' }"
       draggable
       action="https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo"
+      @cancel-upload="onCancelUpload"
     />
   </div>
 </template>
@@ -29,5 +30,10 @@ export default {
     display: 'file',
     files: [],
   }),
+  methods: {
+    onCancelUpload() {
+      console.log('cancel upload');
+    },
+  },
 };
 </script>

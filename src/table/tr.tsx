@@ -81,13 +81,15 @@ export interface TrProps extends TrCommonProps {
   rowAndColFixedPosition: RowAndColFixedPosition;
   // 属性透传，引用传值，可内部改变
   skipSpansMap: Map<any, boolean>;
+  tableElm: HTMLDivElement;
   onTrRowspanOrColspan?: (params: PrimaryTableCellParams<TableRowData>, cellSpans: RowspanColspan) => void;
   scrollType: string;
   isVirtual: boolean;
   rowHeight: number;
   trs: Map<number, object>;
   bufferSize: number;
-  tableElm: HTMLDivElement;
+  isColDraggable: Boolean;
+  isRowDraggable: Boolean;
 }
 
 export const ROW_LISTENERS = ['click', 'dblclick', 'mouseover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];
@@ -129,6 +131,8 @@ export default defineComponent({
     bufferSize: Number,
     isVirtual: Boolean,
     tableElm: {},
+    isColDraggable: Boolean,
+    isRowDraggable: Boolean,
   },
 
   setup(props: TrProps, context: SetupContext) {
@@ -202,6 +206,7 @@ export default defineComponent({
     };
     const tr = ref(null);
     const isInit = ref(props.rowIndex === 0);
+    const requestAnimationFrame = window.requestAnimationFrame || ((cb) => setTimeout(cb, 16.6));
     const init = () => {
       !isInit.value
         && requestAnimationFrame(() => {
@@ -298,6 +303,7 @@ export default defineComponent({
         {
           [this.tdEllipsisClass]: col.ellipsis,
           [this.tableBaseClass.tdLastRow]: rowIndex + cellSpans.rowspan === dataLength,
+          [this.tableBaseClass.tdFirstCol]: colIndex === 0 && this.rowspanAndColspan,
           [this.tdAlignClasses[col.align]]: col.align && col.align !== 'left',
           // 标记可拖拽列
           [this.tableDraggableClasses.handle]: col.colKey === 'drag',
@@ -346,10 +352,15 @@ export default defineComponent({
         cellSpans,
       });
     });
+    const attrs = this.trAttributes || {};
+    // 拖拽设置data-id属性，用于排序
+    if (this.$props.isColDraggable || this.$props.isRowDraggable) {
+      attrs['data-id'] = row[this.$props.rowKey];
+    }
     return (
       <tr
         ref="tr"
-        attrs={this.trAttributes}
+        attrs={attrs}
         style={this.trStyles?.style}
         class={this.classes}
         on={this.getTrListeners(row, rowIndex)}

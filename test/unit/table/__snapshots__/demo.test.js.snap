@@ -2164,6 +2164,7 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
           >
             <tr
               class=""
+              data-id="1"
             >
               <td
                 class=""
@@ -2194,6 +2195,7 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
             </tr>
             <tr
               class=""
+              data-id="2"
             >
               <td
                 class=""
@@ -2224,6 +2226,7 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
             </tr>
             <tr
               class=""
+              data-id="3"
             >
               <td
                 class=""
@@ -2254,6 +2257,7 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
             </tr>
             <tr
               class=""
+              data-id="4"
             >
               <td
                 class=""
@@ -3481,8 +3485,74 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
   class="tdesign-demo-block-column"
 >
   <div>
+    <div
+      class="t-radio-group t-size-m t-radio-group--filled"
+    >
+      <label
+        class="t-radio-button t-is-checked"
+      >
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="left"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          左对齐
+        </span>
+      </label>
+       
+      <label
+        class="t-radio-button"
+      >
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="center"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          居中对齐
+        </span>
+      </label>
+       
+      <label
+        class="t-radio-button"
+      >
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="right"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          右对齐
+        </span>
+      </label>
+      <div
+        class="t-radio-group__bg-block"
+        style="width: 0px; left: 0px;"
+      />
+    </div>
+     
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      class="t-button t-size-m t-button--variant-text t-button--theme-default"
+      style="margin-left: 36px;"
       type="button"
     >
       <span
@@ -12187,7 +12257,7 @@ exports[`Table Table loadingVue demo works fine 1`] = `
 
 exports[`Table Table mergeCellsVue demo works fine 1`] = `
 <div
-  class="t-table t-size-s t-table--bordered"
+  class="t-table t-size-s t-table--bordered t-table--rowspan-colspan"
   style="position: relative;"
 >
   <div
@@ -12276,7 +12346,8 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
           class=""
         >
           <td
-            class="test"
+            class="test t-table__td-first-col"
+            rowspan="2"
           >
             公有
           </td>
@@ -12301,11 +12372,6 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
           class=""
         >
           <td
-            class="test"
-          >
-            公有
-          </td>
-          <td
             class="row"
             colspan="2"
             rowspan="2"
@@ -12327,7 +12393,8 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
           class=""
         >
           <td
-            class="test"
+            class="test t-table__td-first-col"
+            rowspan="2"
           >
             公有
           </td>
@@ -12345,11 +12412,6 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
         <tr
           class=""
         >
-          <td
-            class="test"
-          >
-            公有
-          </td>
           <td
             class="row"
           >
@@ -12375,7 +12437,8 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
           class=""
         >
           <td
-            class="test"
+            class="test t-table__td-last-row t-table__td-first-col"
+            rowspan="2"
           >
             公有
           </td>
@@ -12400,11 +12463,6 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
         <tr
           class=""
         >
-          <td
-            class="test"
-          >
-            公有
-          </td>
           <td
             class="row"
           >

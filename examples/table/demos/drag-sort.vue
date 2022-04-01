@@ -69,7 +69,6 @@ export default {
     };
   },
   methods: {
-    // 必须手动实现交换数据，否则data不会发生变异
     onDragSort({
       currentIndex, current, targetIndex, target, currentData, e,
     }) {

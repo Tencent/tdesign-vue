@@ -132,9 +132,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
             && (status = (
               <div class={`${UPLOAD_NAME}__flow-status`}>
                 <TLoading />
-                <span>
-                  `${this.global.progress.uploadingText} ${Math.min(file.percent, 99)}%`
-                </span>
+                <span>{`${this.global.progress.uploadingText} ${Math.min(file.percent, 99)}%`}</span>
               </div>
             ));
           break;
