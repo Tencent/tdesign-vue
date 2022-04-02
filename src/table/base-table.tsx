@@ -292,6 +292,7 @@ export default defineComponent({
           />
           <TBody scopedSlots={this.$scopedSlots} props={tableBodyProps} on={on} />
           <TFoot
+            rowKey={this.rowKey}
             scopedSlots={this.$scopedSlots}
             isFixedHeader={this.isFixedHeader}
             rowAndColFixedPosition={rowAndColFixedPosition}

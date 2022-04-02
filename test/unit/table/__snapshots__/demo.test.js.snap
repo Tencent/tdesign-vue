@@ -5714,7 +5714,9 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
         <tfoot
           class="t-table__footer"
         >
-          <tr>
+          <tr
+            class=""
+          >
             <td>
               总述
             </td>
@@ -6725,7 +6727,9 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
         <tfoot
           class="t-table__footer"
         >
-          <tr>
+          <tr
+            class=""
+          >
             <td>
               汇总
             </td>
