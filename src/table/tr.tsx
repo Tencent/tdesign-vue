@@ -354,8 +354,8 @@ export default defineComponent({
     });
     const attrs = this.trAttributes || {};
     // 拖拽设置data-id属性，用于排序
-    if (this.$props.isColDraggable || this.$props.isRowDraggable) {
-      attrs['data-id'] = row[this.$props.rowKey];
+    if (this.isColDraggable || this.isRowDraggable) {
+      attrs['data-id'] = get(row, this.rowKey);
     }
     return (
       <tr

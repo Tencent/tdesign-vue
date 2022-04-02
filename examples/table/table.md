@@ -13,8 +13,8 @@ empty | String / Slot / Function | '' | 空表格呈现样式，支持全局配�
 firstFullRow | String / Slot / Function | - | 首行内容。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 fixedRows | Array | - | 固定行（冻结行），示例：[M, N]，表示冻结表头 M 行和表尾 N 行。M 和 N 值为 0 时，表示不冻结行。TS 类型：`Array<number>` | N
 footData | Array | [] | 表尾数据源，泛型 T 指表格数据类型。TS 类型：`Array<T>` | N
-headerAffixedTop | Boolean | false | 【开发中】表头吸顶 | N
-headerAffixProps | Object | - | 【开发中】表头吸顶基于 Affix 组件开发，透传全部 Affix 组件属性。TS 类型：`AffixProps`，[Affix API Documents](./affix?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
+headerAffixedTop | Boolean | false | 表头吸顶 | N
+headerAffixProps | Object | - | 表头吸顶基于 Affix 组件开发，透传全部 Affix 组件属性。TS 类型：`AffixProps`，[Affix API Documents](./affix?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 height | String / Number | - | 表格高度，超出后会出现滚动条。示例：100,  '30%',  '300px'。值为数字类型，会自动加上单位 px。如果不是绝对固定表格高度，建议使用 `maxHeight` | N
 hover | Boolean | false | 是否显示鼠标悬浮状态 | N
 lastFullRow | String / Slot / Function | - | 尾行内容。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
@@ -78,7 +78,7 @@ fixed | String | left | 固定列显示位置。可选项：left/right | N
 foot | String / Function | - | 自定义表尾表尾。值类型为 Function 表示以函数形式渲染表尾内容。值类型为 string 表示使用插槽渲染，插槽名称为 `foot` 值。TS 类型：`string | TNode<{ col: BaseTableCol; colIndex: number }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 render | Function | - | 自定义表头或单元格，泛型 T 指表格数据类型。TS 类型：`TNode<BaseTableRenderParams<T>>` `interface BaseTableRenderParams<T> extends BaseTableCellParams<T> { type: RenderType }` `type RenderType = 'cell' | 'title'`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 title | String / Function | - | 自定义表头渲染。值类型为 Function 表示以函数形式渲染表头。值类型为 string 表示使用插槽渲染，插槽名称为 title 的值。优先级高于 render。TS 类型：`string | TNode<{ col: BaseTableCol; colIndex: number }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-width | String / Number | - | 列宽 | N
+width | String / Number | - | 列宽，可以作为最小宽度使用。当列宽总和小于 `table` 元素时，浏览器根据宽度设置情况自动分配宽度；当列宽总和大于 `table` 元素，表现为定宽。可以同时调整 `table` 元素的宽度来达到自己想要的效果 | N
 
 ### PrimaryTable Props
 
@@ -167,6 +167,7 @@ tree | Object | - | 树形结构相关配置。`tree.indent` 表示树结点缩�
 getData | `(key: TableRowValue)` | `TableRowState<T>` | 必需。树形结构中，用于获取行数据所有信息。泛型 `T` 表示行数据类型。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts)。<br/>`type TableRowValue = string | number`<br/>
 remove | `(key: TableRowValue)` | - | 必需。树形结构中，移除指定节点
 setData | `(key: TableRowValue, newRowData: T)` | - | 必需。树形结构中，用于更新行数据。泛型 `T` 表示行数据类型
+toggleExpandData | `(p: { row: T,  rowIndex: number})` | - | 必需。展开或收起树形行
 
 ### TableRowState
 

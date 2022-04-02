@@ -6,12 +6,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import get from 'lodash/get';
 import TableTreeStore from './tree-store';
 import {
-  TdEnhancedTableProps,
-  PrimaryTableCol,
-  PrimaryTableCellParams,
-  TableRowData,
-  TableRowValue,
-  TableRowState,
+  TdEnhancedTableProps, PrimaryTableCol, TableRowData, TableRowValue, TableRowState,
 } from '../type';
 import useClassName from './useClassName';
 import { renderCell } from '../tr';
@@ -65,7 +60,11 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     return { paddingLeft: `${level * indent || 1}px` };
   }
 
-  function toggleExpandData(p: PrimaryTableCellParams<TableRowData>) {
+  /**
+   * 组件实例方法，展开或收起某一行
+   * @param p 行数据
+   */
+  function toggleExpandData(p: { row: TableRowData; rowIndex: number }) {
     dataSource.value = store.value.toggleExpandData(p, dataSource.value, rowDataKeys.value);
   }
 
@@ -97,7 +96,12 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
           : AddRectangleIcon;
         return (
           <div class={[tableTreeClasses.col, classes]} style={colStyle}>
-            {!!childrenNodes.length && <IconNode class={tableTreeClasses.icon} onClick={() => toggleExpandData(p)} />}
+            {!!childrenNodes.length && (
+              <IconNode
+                class={tableTreeClasses.icon}
+                onClick={() => toggleExpandData({ row: p.row, rowIndex: p.rowIndex })}
+              />
+            )}
             {cellInfo}
           </div>
         );
@@ -155,6 +159,13 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     dataSource.value = store.value.appendTo(key, newData, dataSource.value, rowDataKeys.value);
   }
 
+  /**
+   * 设置展开行层级
+   */
+  // function setExpandedLevel(level: 1 | 2 | 3 | 4 | 5) {
+  //   dataSource.value = store.value.setExpandedLevel(level, dataSource.value, rowDataKeys.value);
+  // }
+
   return {
     store,
     rowDataKeys,
@@ -164,5 +175,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     remove,
     appendTo,
     formatTreeColum,
+    toggleExpandData,
+    // setExpandedLevel,
   };
 }
