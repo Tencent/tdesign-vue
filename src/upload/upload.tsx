@@ -4,7 +4,6 @@ import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import findIndex from 'lodash/findIndex';
 import isFunction from 'lodash/isFunction';
 import without from 'lodash/without';
-import isNumber from 'lodash/isNumber';
 import { UploadIcon } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { UploadConfig } from '../config-provider/config-receiver';
@@ -306,7 +305,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
         if (this.isSingleRequest) {
           this.xhrReq = currentXhr;
-        } else if (isNumber(index)) this.toUploadFiles[index].xhr = currentXhr;
+        } else if (typeof index === 'number') this.toUploadFiles[index].xhr = currentXhr;
       }
     },
     /** 模拟进度条 Mock Progress */
@@ -542,7 +541,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
           this.multiple
             && this.toUploadFiles.forEach((file) => {
-              if (file.xhr && file.status === 'progress') {
+              if (file.status === 'progress') {
                 !this.isBatchUpload && file.xhr.abort(); // 合并上传已统一取消 不需要在文件中手动取消
                 file.status = 'waiting';
               }

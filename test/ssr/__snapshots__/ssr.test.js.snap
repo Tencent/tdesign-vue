@@ -17319,7 +17319,7 @@ exports[`ssr snapshot test renders ./examples/upload/demos/file-flow-list.vue co
   <div class="t-upload"><input type="file" multiple="multiple" accept="" hidden="hidden">
     <div class="t-upload__flow t-upload__flow-file-flow">
       <div class="t-upload__flow-op">
-        <div class="t-upload__trigger"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">选择文件</span></button></div><small class="t-size-s t-upload__flow-placeholder">支持批量上传文件，文件格式不限，最多只能上传 10 份文件</small>
+        <div class="t-upload__trigger"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">选择文件</span></button></div><small class="t-size-s t-upload__flow-placeholder">支持批量上传文件，文件格式不限，最多只能上传 5 份文件</small>
       </div>
       <table class="t-upload__flow-table">
         <tr>
