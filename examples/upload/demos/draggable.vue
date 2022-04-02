@@ -19,6 +19,7 @@
       draggable
       action="https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo"
       @cancel-upload="onCancelUpload"
+      @remove="onRemove"
     />
   </div>
 </template>
@@ -33,6 +34,9 @@ export default {
   methods: {
     onCancelUpload() {
       console.log('cancel upload');
+    },
+    onRemove() {
+      console.log('remove file');
     },
   },
 };
