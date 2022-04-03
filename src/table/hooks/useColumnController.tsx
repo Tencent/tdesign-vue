@@ -7,13 +7,19 @@ import {
 import { SettingIcon } from 'tdesign-icons-vue';
 import intersection from 'lodash/intersection';
 import { CreateElement } from 'vue';
-import Checkbox, { CheckboxGroup, CheckboxGroupValue, CheckboxOptionObj } from '../../checkbox';
+import Checkbox, {
+  CheckboxGroup, CheckboxGroupValue, CheckboxOptionObj, CheckboxGroupChangeContext,
+} from '../../checkbox';
 import { DialogPlugin } from '../../dialog/plugin';
 import { useTNodeDefault } from '../../hooks/tnode';
 import { renderTitle } from './useTableHeader';
-import { PrimaryTableCol, TdPrimaryTableProps } from '../type';
+import {
+  PrimaryTableCol, TdPrimaryTableProps, PrimaryTableColumnChange, TableRowData,
+} from '../type';
 import { useConfig } from '../../config-provider/useConfig';
+
 import useDefaultValue from '../../hooks/useDefaultValue';
+import { getCurrentRowByKey } from '../utils';
 
 export function getColumnKeys(columns: PrimaryTableCol[], keys: string[] = []) {
   for (let i = 0, len = columns.length; i < len; i++) {
@@ -40,7 +46,6 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
   const keys = [...new Set(getColumnKeys(columns.value))];
 
   // 确认后的列配置
-  // const displayColumnKeys = ref<CheckboxGroupValue>(keys);
   const [tDisplayColumns, setTDisplayColumns] = useDefaultValue(
     displayColumns,
     props.defaultDisplayColumns || keys,
@@ -77,27 +82,34 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
     return arr;
   }
 
-  const handleCheckChange = (val: CheckboxGroupValue) => {
+  const handleCheckChange = (val: CheckboxGroupValue, ctx: CheckboxGroupChangeContext) => {
     columnCheckboxKeys.value = val;
-    const params = { columns: val };
+    const params = {
+      columns: val,
+      type: ctx.type,
+      currentColumn: getCurrentRowByKey(columns.value, String(ctx.current)),
+      e: ctx.e,
+    };
     props.onColumnChange?.(params);
     // Vue3 ignore next line
     context.emit('column-change', params);
   };
 
-  const handleClickAllShowColumns = (checked: boolean) => {
+  const handleClickAllShowColumns = (checked: boolean, ctx: { e: Event }) => {
     if (checked) {
       const newData = columns.value?.map((t) => t.colKey) || [];
       columnCheckboxKeys.value = newData;
-      props.onColumnChange?.({ type: 'check', columns: newData });
+      const params: PrimaryTableColumnChange<TableRowData> = { type: 'check', columns: newData, e: ctx.e };
+      props.onColumnChange?.(params);
       // Vue3 ignore next line
-      context.emit('column-change', { type: 'check', columns: newData });
+      context.emit('column-change', params);
     } else {
       const disabledColKeys = checkboxOptions.value.filter((t) => t.disabled).map((t) => t.value);
       columnCheckboxKeys.value = disabledColKeys;
-      props.onColumnChange?.({ type: 'uncheck', columns: disabledColKeys });
+      const params: PrimaryTableColumnChange<TableRowData> = { type: 'uncheck', columns: disabledColKeys, e: ctx.e };
+      props.onColumnChange?.(params);
       // Vue3 ignore next line
-      context.emit('column-change', { type: 'uncheck', columns: disabledColKeys });
+      context.emit('column-change', params);
     }
   };
 
