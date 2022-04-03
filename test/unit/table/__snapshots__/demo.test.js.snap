@@ -533,10 +533,12 @@ exports[`Table Table baseVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  详情信息
+                <div>
+                  <div
+                    class="t-table__ellipsis t-text-ellipsis"
+                  >
+                    详情信息
+                  </div>
                 </div>
               </div>
             </th>
@@ -577,10 +579,12 @@ exports[`Table Table baseVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 5 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 5 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -616,10 +620,12 @@ exports[`Table Table baseVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 6 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 6 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -655,10 +661,12 @@ exports[`Table Table baseVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 7 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 7 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -694,10 +702,12 @@ exports[`Table Table baseVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 8 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 8 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -733,10 +743,12 @@ exports[`Table Table baseVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 9 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 9 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -1150,10 +1162,12 @@ exports[`Table Table customColVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  详情信息
+                <div>
+                  <div
+                    class="t-table__ellipsis t-text-ellipsis"
+                  >
+                    详情信息
+                  </div>
                 </div>
               </div>
             </th>
@@ -1193,10 +1207,12 @@ exports[`Table Table customColVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 0 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 0 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -1231,10 +1247,12 @@ exports[`Table Table customColVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 1 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 1 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -1269,10 +1287,12 @@ exports[`Table Table customColVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 2 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 2 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -1307,10 +1327,12 @@ exports[`Table Table customColVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 3 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 3 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -1345,10 +1367,12 @@ exports[`Table Table customColVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 4 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 4 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -1451,10 +1475,12 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  详情信息
+                <div>
+                  <div
+                    class="t-table__ellipsis t-text-ellipsis"
+                  >
+                    详情信息
+                  </div>
                 </div>
               </div>
             </th>
@@ -1494,10 +1520,12 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 0 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 0 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -1532,10 +1560,12 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 1 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 1 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -1570,10 +1600,12 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 2 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 2 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -4227,10 +4259,12 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  详情信息
+                <div>
+                  <div
+                    class="t-table__ellipsis t-text-ellipsis"
+                  >
+                    详情信息
+                  </div>
                 </div>
               </div>
             </th>
@@ -4284,10 +4318,12 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 0 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 0 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -4336,10 +4372,12 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 1 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 1 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -4388,10 +4426,12 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 2 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 2 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -4440,10 +4480,12 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 3 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 3 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -4492,10 +4534,12 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 4 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 4 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -5855,10 +5899,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  详情信息
+                <div>
+                  <div
+                    class="t-table__ellipsis t-text-ellipsis"
+                  >
+                    详情信息
+                  </div>
                 </div>
               </div>
             </th>
@@ -5903,10 +5949,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 0 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 0 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -5941,10 +5989,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 1 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 1 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -5979,10 +6029,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 2 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 2 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -6017,10 +6069,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 3 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 3 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -6055,10 +6109,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 4 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 4 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -6093,10 +6149,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 5 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 5 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -6131,10 +6189,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 6 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 6 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -6169,10 +6229,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 7 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 7 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -6207,10 +6269,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 8 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 8 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -6245,10 +6309,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 9 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 9 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -6283,10 +6349,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 10 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 10 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -6321,10 +6389,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 11 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 11 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -6359,10 +6429,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 12 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 12 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -6397,10 +6469,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 13 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 13 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -6435,10 +6509,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 14 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 14 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -6473,10 +6549,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 15 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 15 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -6511,10 +6589,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 16 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 16 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -6549,10 +6629,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 17 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 17 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -6587,10 +6669,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 18 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 18 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -6625,10 +6709,12 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 19 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 19 个数据的嵌套信息值
+                </div>
               </div>
             </td>
             <td
@@ -11834,10 +11920,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    类型
+                  <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
+                      类型
+                    </div>
                   </div>
                 </div>
               </th>
@@ -11848,10 +11936,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    平台
+                  <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
+                      平台
+                    </div>
                   </div>
                 </div>
               </th>
@@ -11862,10 +11952,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    属性
+                  <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
+                      属性
+                    </div>
                   </div>
                 </div>
               </th>
@@ -11876,10 +11968,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    默认值
+                  <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
+                      默认值
+                    </div>
                   </div>
                 </div>
               </th>
@@ -11890,10 +11984,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    是否必传
+                  <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
+                      是否必传
+                    </div>
                   </div>
                 </div>
               </th>
@@ -11904,10 +12000,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    说明
+                  <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
+                      说明
+                    </div>
                   </div>
                 </div>
               </th>
@@ -11990,10 +12088,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    类型
+                  <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
+                      类型
+                    </div>
                   </div>
                 </div>
               </th>
@@ -12004,10 +12104,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    平台
+                  <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
+                      平台
+                    </div>
                   </div>
                 </div>
               </th>
@@ -12018,10 +12120,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    属性
+                  <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
+                      属性
+                    </div>
                   </div>
                 </div>
               </th>
@@ -12032,10 +12136,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    默认值
+                  <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
+                      默认值
+                    </div>
                   </div>
                 </div>
               </th>
@@ -12046,10 +12152,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    是否必传
+                  <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
+                      是否必传
+                    </div>
                   </div>
                 </div>
               </th>
@@ -12060,10 +12168,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    说明
+                  <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
+                      说明
+                    </div>
                   </div>
                 </div>
               </th>
@@ -12135,10 +12245,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    类型
+                  <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
+                      类型
+                    </div>
                   </div>
                 </div>
               </th>
@@ -12149,10 +12261,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    平台
+                  <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
+                      平台
+                    </div>
                   </div>
                 </div>
               </th>
@@ -12163,10 +12277,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    属性
+                  <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
+                      属性
+                    </div>
                   </div>
                 </div>
               </th>
@@ -12177,10 +12293,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    默认值
+                  <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
+                      默认值
+                    </div>
                   </div>
                 </div>
               </th>
@@ -12191,10 +12309,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    是否必传
+                  <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
+                      是否必传
+                    </div>
                   </div>
                 </div>
               </th>
@@ -12205,10 +12325,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    说明
+                  <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
+                      说明
+                    </div>
                   </div>
                 </div>
               </th>
@@ -12860,10 +12982,12 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  说明
+                <div>
+                  <div
+                    class="t-table__ellipsis t-text-ellipsis"
+                  >
+                    说明
+                  </div>
                 </div>
               </div>
             </th>
@@ -12978,10 +13102,12 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  描述
+                <div>
+                  <div
+                    class="t-table__ellipsis t-text-ellipsis"
+                  >
+                    描述
+                  </div>
                 </div>
               </div>
             </th>
@@ -13416,10 +13542,12 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
             <div
               class="t-table__th-cell-inner"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                邮箱
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  邮箱
+                </div>
               </div>
             </div>
           </th>
@@ -13654,10 +13782,12 @@ exports[`Table Table paginationVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  详情信息
+                <div>
+                  <div
+                    class="t-table__ellipsis t-text-ellipsis"
+                  >
+                    详情信息
+                  </div>
                 </div>
               </div>
             </th>
@@ -13697,10 +13827,12 @@ exports[`Table Table paginationVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 5 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 5 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -13735,10 +13867,12 @@ exports[`Table Table paginationVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 6 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 6 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -13773,10 +13907,12 @@ exports[`Table Table paginationVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 7 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 7 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -13811,10 +13947,12 @@ exports[`Table Table paginationVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 8 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 8 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -13849,10 +13987,12 @@ exports[`Table Table paginationVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 9 个数据的嵌套信息值
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 9 个数据的嵌套信息值
+                </div>
               </div>
             </td>
           </tr>
@@ -16213,10 +16353,12 @@ exports[`Table Table treeVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  编号
+                <div>
+                  <div
+                    class="t-table__ellipsis t-text-ellipsis"
+                  >
+                    编号
+                  </div>
                 </div>
               </div>
             </th>
@@ -16227,10 +16369,12 @@ exports[`Table Table treeVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  名称
+                <div>
+                  <div
+                    class="t-table__ellipsis t-text-ellipsis"
+                  >
+                    名称
+                  </div>
                 </div>
               </div>
             </th>
@@ -16275,23 +16419,27 @@ exports[`Table Table treeVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                0
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  0
+                </div>
               </div>
             </td>
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
+              <div>
                 <div
-                  class="t-table__tree-col t-table__tree-col--inline"
-                  style="padding-left: 1px;"
+                  class="t-table__ellipsis t-text-ellipsis"
                 >
-                  我是 0_1 号（第 1 页）
+                  <div
+                    class="t-table__tree-col t-table__tree-col--inline"
+                    style="padding-left: 1px;"
+                  >
+                    我是 0_1 号（第 1 页）
+                  </div>
                 </div>
               </div>
             </td>
@@ -16360,41 +16508,45 @@ exports[`Table Table treeVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                1
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  1
+                </div>
               </div>
             </td>
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
+              <div>
                 <div
-                  class="t-table__tree-col t-table__tree-col--inline"
-                  style="padding-left: 1px;"
+                  class="t-table__ellipsis t-text-ellipsis"
                 >
-                  <svg
-                    class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                    fill="none"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    width="1em"
+                  <div
+                    class="t-table__tree-col t-table__tree-col--inline"
+                    style="padding-left: 1px;"
                   >
-                    <path
-                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                    <path
-                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                  </svg>
-                  我是 1_1 号（第 1 页）
+                    <svg
+                      class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                      <path
+                        d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                    我是 1_1 号（第 1 页）
+                  </div>
                 </div>
               </div>
             </td>
@@ -16463,41 +16615,45 @@ exports[`Table Table treeVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                2
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  2
+                </div>
               </div>
             </td>
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
+              <div>
                 <div
-                  class="t-table__tree-col t-table__tree-col--inline"
-                  style="padding-left: 1px;"
+                  class="t-table__ellipsis t-text-ellipsis"
                 >
-                  <svg
-                    class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                    fill="none"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    width="1em"
+                  <div
+                    class="t-table__tree-col t-table__tree-col--inline"
+                    style="padding-left: 1px;"
                   >
-                    <path
-                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                    <path
-                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                  </svg>
-                  我是 2_1 号（第 1 页）
+                    <svg
+                      class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                      <path
+                        d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                    我是 2_1 号（第 1 页）
+                  </div>
                 </div>
               </div>
             </td>
@@ -16566,41 +16722,45 @@ exports[`Table Table treeVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                3
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  3
+                </div>
               </div>
             </td>
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
+              <div>
                 <div
-                  class="t-table__tree-col t-table__tree-col--inline"
-                  style="padding-left: 1px;"
+                  class="t-table__ellipsis t-text-ellipsis"
                 >
-                  <svg
-                    class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                    fill="none"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    width="1em"
+                  <div
+                    class="t-table__tree-col t-table__tree-col--inline"
+                    style="padding-left: 1px;"
                   >
-                    <path
-                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                    <path
-                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                  </svg>
-                  我是 3_1 号（第 1 页）
+                    <svg
+                      class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                      <path
+                        d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                    我是 3_1 号（第 1 页）
+                  </div>
                 </div>
               </div>
             </td>
@@ -16669,41 +16829,45 @@ exports[`Table Table treeVue demo works fine 1`] = `
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                4
+              <div>
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  4
+                </div>
               </div>
             </td>
             <td
               class="t-table-td--ellipsis"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
+              <div>
                 <div
-                  class="t-table__tree-col t-table__tree-col--inline"
-                  style="padding-left: 1px;"
+                  class="t-table__ellipsis t-text-ellipsis"
                 >
-                  <svg
-                    class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                    fill="none"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    width="1em"
+                  <div
+                    class="t-table__tree-col t-table__tree-col--inline"
+                    style="padding-left: 1px;"
                   >
-                    <path
-                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                    <path
-                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                  </svg>
-                  我是 4_1 号（第 1 页）
+                    <svg
+                      class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                      <path
+                        d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                    我是 4_1 号（第 1 页）
+                  </div>
                 </div>
               </div>
             </td>
