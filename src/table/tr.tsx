@@ -37,26 +37,9 @@ export interface RenderEllipsisCellParams {
   cellNode: any;
 }
 
-export type TrPropsKeys =
-  | 'rowKey'
-  | 'rowClassName'
-  | 'columns'
-  | 'fixedRows'
-  | 'footData'
-  | 'rowAttributes'
-  | 'rowspanAndColspan'
-  | 'onCellClick'
-  | 'onRowClick'
-  | 'onRowDblclick'
-  | 'onRowMouseover'
-  | 'onRowMousedown'
-  | 'onRowMouseenter'
-  | 'onRowMouseleave'
-  | 'onRowMouseup';
-
 export type TrCommonProps = Pick<TdPrimaryTableProps, TrPropsKeys>;
 
-export const TABLE_PROPS: TrPropsKeys[] = [
+export const TABLE_PROPS = [
   'rowKey',
   'rowClassName',
   'columns',
@@ -72,7 +55,9 @@ export const TABLE_PROPS: TrPropsKeys[] = [
   'onRowMouseenter',
   'onRowMouseleave',
   'onRowMouseup',
-];
+] as const;
+
+export type TrPropsKeys = typeof TABLE_PROPS[number];
 
 export interface TrProps extends TrCommonProps {
   row: TableRowData;
