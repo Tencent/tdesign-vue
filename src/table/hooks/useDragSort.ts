@@ -9,6 +9,7 @@ import { TdPrimaryTableProps } from '../type';
 import { TargetDom } from '../interface';
 import { setSortableConfig } from '../utils';
 import useClassName from './useClassName';
+import log from '../../_common/js/log';
 
 export default function useDragSort(props: TdPrimaryTableProps, context: SetupContext) {
   const {
@@ -20,7 +21,15 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
   // 行拖拽判断条件
   const isRowDraggable = computed(() => sortOnRowDraggable.value || dragSort.value === 'row');
   // 列拖拽判断条件
-  const isColDraggable = computed(() => dragSort.value === 'drag-col' && !!dragCol.value);
+  const isColDraggable = computed(() => ['drag-col', 'col'].includes(dragSort.value) && !!dragCol.value);
+
+  if (dragSort.value === 'drag-col') {
+    log.warn('Table', "dragSort='drag-col' is going to be deprecated, use dragSort='col' instead.");
+  }
+
+  if (props.sortOnRowDraggable) {
+    log.warn('Table', "`sortOnRowDraggable` is going to be deprecated, use dragSort='row' instead.");
+  }
 
   const { tableDraggableClasses } = useClassName();
   // 拖拽实例
@@ -69,17 +78,13 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
         context.emit('drag-sort', params);
       },
     };
-    // 注册拖拽事件
-    const rowOptions = {
-      ...baseOptions,
-    };
 
     const colOptions = {
       handle: `.${handle}`,
       ...baseOptions,
     };
     if (isRowDraggable.value) {
-      dragInstance.value = setSortableConfig(dragContainer, rowOptions);
+      dragInstance.value = setSortableConfig(dragContainer, { ...baseOptions });
     } else {
       dragInstance.value = setSortableConfig(dragContainer, colOptions);
     }
