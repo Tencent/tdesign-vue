@@ -73,8 +73,6 @@ export interface TrProps extends TrCommonProps {
   rowHeight: number;
   trs: Map<number, object>;
   bufferSize: number;
-  isColDraggable: Boolean;
-  isRowDraggable: Boolean;
 }
 
 export const ROW_LISTENERS = ['click', 'dblclick', 'mouseover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];
@@ -116,8 +114,6 @@ export default defineComponent({
     bufferSize: Number,
     isVirtual: Boolean,
     tableElm: {},
-    isColDraggable: Boolean,
-    isRowDraggable: Boolean,
   },
 
   setup(props: TrProps, context: SetupContext) {
@@ -338,10 +334,6 @@ export default defineComponent({
       });
     });
     const attrs = this.trAttributes || {};
-    // 拖拽设置data-id属性，用于排序
-    if (this.isColDraggable || this.isRowDraggable) {
-      attrs['data-id'] = get(row, this.rowKey);
-    }
     return (
       <tr
         ref="tr"

@@ -38,11 +38,6 @@ export default defineComponent({
 
   props: {
     ...props,
-    /**
-     * 渲染展开行，非公开属性，请勿在业务中使用
-     */
-    isColDraggable: Boolean,
-    isRowDraggable: Boolean,
     renderExpandedRow: Function as PropType<BaseTableProps['renderExpandedRow']>,
   },
 

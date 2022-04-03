@@ -47,7 +47,7 @@ export default defineComponent({
   },
 
   // eslint-disable-next-line
-  setup(props: TableFilterControllerProps) {
+  setup(props: TableFilterControllerProps, { emit }) {
     const triggerElementRef = ref<HTMLDivElement>(null);
     const renderTNode = useTNodeDefault();
     const { t, global } = useConfig('table');
@@ -55,6 +55,7 @@ export default defineComponent({
 
     const onFilterPopupVisibleChange = (visible: boolean) => {
       filterPopupVisible.value = visible;
+      emit('visible-change', visible);
     };
 
     return {

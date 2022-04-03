@@ -14,6 +14,7 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
   const {
     sortOnRowDraggable, dragSort, columns, data,
   } = toRefs(props);
+  const primaryTableRef = ref(null);
   // 判断是否有拖拽列
   const dragCol = computed(() => columns.value.find((item) => item.colKey === 'drag'));
   // 行拖拽判断条件
@@ -84,9 +85,20 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
     }
     startList.value = dragInstance.value.toArray();
   };
+
+  function setDragSortPrimaryTableRef(primaryTableElement: any) {
+    primaryTableRef.value = primaryTableElement;
+  }
+
+  // 注册拖拽事件
+  watch([primaryTableRef], ([val]: [any]) => {
+    registerDragEvent(val?.$el);
+  });
+
   return {
     isRowDraggable,
     isColDraggable,
     registerDragEvent,
+    setDragSortPrimaryTableRef,
   };
 }

@@ -31,6 +31,7 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
   const renderTNode = useTNodeDefault();
   const { filterValue } = toRefs(props);
   const { tableFilterClasses, isFocusClass } = useClassName();
+  const isTableOverflowHidden = ref<boolean>();
 
   // unControl and control
   const [tFilterValue, setTFilterValue] = useDefaultValue(
@@ -150,15 +151,27 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
           reset: onReset,
           confirm: onConfirm,
           'inner-filter-change': onInnerFilterChange,
+          'visible-change': onPopupVisibleChange,
         }}
       ></TableFilterController>
     );
   }
 
+  function setFilterPrimaryTableRef(primaryTableElement: any) {
+    primaryTableRef.value = primaryTableElement;
+  }
+
+  function onPopupVisibleChange(visible: boolean) {
+    if (visible && !isTableOverflowHidden.value) {
+      isTableOverflowHidden.value = !visible;
+    }
+  }
+
   return {
-    primaryTableRef,
     hasEmptyCondition,
+    isTableOverflowHidden,
     renderFilterIcon,
     renderFirstFilterRow,
+    setFilterPrimaryTableRef,
   };
 }
