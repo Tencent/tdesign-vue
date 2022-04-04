@@ -8,7 +8,10 @@ import { SettingIcon } from 'tdesign-icons-vue';
 import intersection from 'lodash/intersection';
 import { CreateElement } from 'vue';
 import Checkbox, {
-  CheckboxGroup, CheckboxGroupValue, CheckboxOptionObj, CheckboxGroupChangeContext,
+  CheckboxGroup,
+  CheckboxGroupValue,
+  CheckboxOptionObj,
+  CheckboxGroupChangeContext,
 } from '../../checkbox';
 import { DialogPlugin } from '../../dialog/plugin';
 import { useTNodeDefault } from '../../hooks/tnode';
@@ -35,7 +38,7 @@ export function getColumnKeys(columns: PrimaryTableCol[], keys: string[] = []) {
 
 export default function useColumnController(props: TdPrimaryTableProps, context: SetupContext) {
   const renderTNode = useTNodeDefault();
-  const { classPrefix } = useConfig();
+  const { classPrefix, global } = useConfig('table');
   const { columns, columnController, displayColumns } = toRefs(props);
 
   const enabledColKeys = computed(() => {
@@ -115,7 +118,7 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
 
   const handleToggleColumnController = () => {
     const dialogInstance = DialogPlugin.confirm({
-      header: '表格列配置',
+      header: global.value.columnConfigTitleText,
       // eslint-disable-next-line
       body: (h: CreateElement) => {
         const widthMode = columnController.value?.displayType === 'fixed-width' ? 'fixed' : 'auto';
@@ -126,10 +129,11 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
         const defaultNode = (
           <div class={[`${prefix}-table__column-controller`, `${prefix}-table__column-controller--${widthMode}`]}>
             <div class={`${prefix}-table__column-controller-body`}>
-              <p class={`${prefix}-table__column-controller-desc`}>请选择需要在表格中显示的数据列</p>
+              {/* 请选择需要在表格中显示的数据列 */}
+              <p class={`${prefix}-table__column-controller-desc`}>{global.value.columnConfigDescriptionText}</p>
               <div class={`${prefix}-table__column-controller-block`}>
                 <Checkbox indeterminate={isIndeterminate} checked={isCheckedAll} onChange={handleClickAllShowColumns}>
-                  全选
+                  {global.value.selectAllText}
                 </Checkbox>
               </div>
               <div class={`${prefix}-table__column-controller-block`}>
@@ -145,8 +149,8 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
         );
         return renderTNode('columnControllerContent', defaultNode);
       },
-      confirmBtn: '确认',
-      cancelBtn: '取消',
+      confirmBtn: global.value.confirmText,
+      cancelBtn: global.value.cancelText,
       width: 612,
       onConfirm: () => {
         setTDisplayColumns([...columnCheckboxKeys.value]);
@@ -165,7 +169,7 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
       <div class={`${classPrefix.value}-table__column-controller`}>
         <t-button theme="default" variant="outline" onClick={handleToggleColumnController}>
           <SettingIcon slot="icon" />
-          列配置
+          {global.value.columnConfigButtonText}
         </t-button>
       </div>
     );

@@ -110,35 +110,73 @@ export interface GlobalConfigProvider {
   upload?: UploadConfig;
 }
 
-export interface InputConfig {
+export interface TreeConfig {
   /**
-   * 占位符文本
-   * @default 请输入
+   * “暂无数据”描述文本
+   * @default '暂无数据'
    */
-  placeholder?: string;
+  empty?: string;
+  /**
+   * 目录层级图标，传入收起状态图标即可。【注意】使用渲染函数输出图标组件
+   */
+  folderIcon?: TNode;
 }
 
-export interface PaginationConfig {
+export interface AnchorConfig {
   /**
-   * 每页条数文本，示例：`'{ total } / page'`
-   * @default '{size} 条/页'
+   * 复制成功文字
+   * @default 链接复制成功
    */
-  itemsPerPage?: string;
+  copySuccessText?: string;
   /**
-   * 页码跳转文本，示例：'jump to'
-   * @default '跳至'
+   * 复制提示文字
+   * @default 复制链接
    */
-  jumpTo?: string;
+  copyText?: string;
+}
+
+export interface AlertConfig {
   /**
-   * “页”文本，示例：'page'
-   * @default '页'
+   * 收起提示文本
+   * @default 收起
    */
-  page?: string;
+  collapseText?: string;
   /**
-   * 数据总条数文本，示例：`'total { total }'`
-   * @default '共 {total} 项数据'
+   * 展开提示文本
+   * @default 展开更多
    */
-  total?: string;
+  expandText?: string;
+}
+
+export interface ListConfig {
+  /**
+   * 语言配置，'点击加载更多' 描述文本
+   * @default '点击加载更多'
+   */
+  loadingMoreText?: string;
+  /**
+   * 语言配置，'正在加载中，请稍后' 描述文本
+   * @default '正在加载中，请稍后'
+   */
+  loadingText?: string;
+}
+
+export interface CascaderConfig {
+  /**
+   * 空数据文本，示例：'empty data'
+   * @default '暂无数据'
+   */
+  empty?: string;
+  /**
+   * “加载中”描述文本
+   * @default '加载中'
+   */
+  loadingText?: string;
+  /**
+   * 选择器占位文本，示例：'select time'
+   * @default '请选择'
+   */
+  placeholder?: string;
 }
 
 export interface CalendarConfig {
@@ -208,86 +246,81 @@ export interface CalendarConfig {
   yearSelection?: string;
 }
 
-export interface CascaderConfig {
+export interface UploadConfig {
   /**
-   * 空数据文本，示例：'empty data'
-   * @default '暂无数据'
+   * 语言配置，“取消上传” 描述文本
+   * @default '取消上传'
    */
-  empty?: string;
+  cancelUploadText?: string;
   /**
-   * “加载中”描述文本
-   * @default '加载中'
+   * 语言配置，拖拽相关。示例：{ dragDropText: '释放图标', draggingText: '拖拽到此区域', clickAndDragText: '点击上方“选择文件”或将文件拖到此区域' }
    */
-  loadingText?: string;
+  dragger?: UploadConfigDragger;
   /**
-   * 选择器占位文本，示例：'select time'
-   * @default '请选择'
+   * 语言配置，文件信息相关。示例：{  fileNameText: '文件名', fileSizeText: '文件尺寸', fileStatusText: '状态', fileOperationText: '操作', fileOperationDateText: '上传日期' }
+   */
+  file?: UploadConfigFileList;
+  /**
+   * 语言配置，上传进度相关。示例：{ uploadText: '上传中', waitingText: '待上传', 'failText': '上传失败', successText: '上传成功' }
+   */
+  progress?: UploadConfigProgress;
+  /**
+   * 语言配置，文件大小超出限制时提醒文本
+   * @default '文件大小不能超过 {sizeLimit}'
+   */
+  sizeLimitMessage?: string;
+  /**
+   * 语言配置，上传功能触发文案。示例：{ image: '点击上传图片', normal: '点击上传',  fileInput: '选择文件',reupload: '重新上传',fileInput: '删除' }
+   */
+  triggerUploadText?: UploadTriggerUploadText;
+}
+
+export interface InputConfig {
+  /**
+   * 占位符文本
+   * @default 请输入
    */
   placeholder?: string;
 }
 
-export interface ColorPickerConfig {
+export interface DialogConfig {
   /**
-   * 清空颜色确认文案，示例：'确定清空最近使用的颜色吗？'
-   * @default '确定清空最近使用的颜色吗？'
+   * 取消按钮风格
    */
-  clearConfirmText?: string;
+  cancel?: string | ButtonProps;
   /**
-   * 最近使用颜色区域标题文本，示例：'最近使用颜色'
-   * @default '最近使用颜色'
+   * 确认按钮风格
    */
-  recentColorTitle?: string;
+  confirm?: string | ButtonProps;
   /**
-   * 系统预设颜色区域标题文本，示例：'系统预设颜色'
-   * @default '系统预设颜色'
+   * 确认按钮主题色，即 Dialog 的 `theme` 和 确认按钮的 `theme` 映射关系。示例：{ danger: 'danger' }
    */
-  swatchColorTitle?: string;
+  confirmBtnTheme?: { default: string; info: string; warning: string; danger: string; success: string };
 }
 
-export interface TransferConfig {
+export interface DrawerConfig {
   /**
-   * 空数据描述文本
-   * @default '暂无数据'
+   * “取消”描述文本
+   * @default '取消'
    */
-  empty?: string;
+  cancel?: string | ButtonProps;
   /**
-   * 占位符描述文本
-   * @default '请输入关键词搜索'
+   * “确认”描述文本
+   * @default '确认'
    */
-  placeholder?: string;
-  /**
-   * 穿梭框标题描述文本
-   * @default '{checked} / {total} 项'
-   */
-  title?: string;
+  confirm?: string | ButtonProps;
 }
 
-export interface TimePickerConfig {
+export interface FormConfig {
   /**
-   * 语言配置，“上午”描述文本
-   * @default '上午'
+   * 表单错误信息配置，示例：`{ idcard: '请输入正确的身份证号码', max: '字符长度不能超过 ${max}' }`
    */
-  anteMeridiem?: string;
+  errorMessage?: FormErrorMessage;
   /**
-   * 语言配置，“确定”描述文本
-   * @default '确定'
+   * 是否显示必填符号（*），默认显示
+   * @default true
    */
-  confirm?: string;
-  /**
-   * 语言配置，“此刻”描述文本
-   * @default '此刻'
-   */
-  now?: string;
-  /**
-   * 语言配置，占位符描述文本
-   * @default '请选择时间'
-   */
-  placeholder?: string;
-  /**
-   * 语言配置，“下午”描述文本
-   * @default '下午'
-   */
-  postMeridiem?: string;
+  requiredMark?: boolean;
 }
 
 export interface DatePickerConfig {
@@ -399,94 +432,45 @@ export interface DatePickerConfig {
   yearAriaLabel?: string;
 }
 
-export interface DialogConfig {
+export interface ColorPickerConfig {
   /**
-   * 取消按钮风格
+   * 清空颜色确认文案，示例：'确定清空最近使用的颜色吗？'
+   * @default '确定清空最近使用的颜色吗？'
    */
-  cancel?: string | ButtonProps;
+  clearConfirmText?: string;
   /**
-   * 确认按钮风格
+   * 最近使用颜色区域标题文本，示例：'最近使用颜色'
+   * @default '最近使用颜色'
    */
-  confirm?: string | ButtonProps;
+  recentColorTitle?: string;
   /**
-   * 确认按钮主题色，即 Dialog 的 `theme` 和 确认按钮的 `theme` 映射关系。示例：{ danger: 'danger' }
+   * 系统预设颜色区域标题文本，示例：'系统预设颜色'
+   * @default '系统预设颜色'
    */
-  confirmBtnTheme?: { default: string; info: string; warning: string; danger: string; success: string };
+  swatchColorTitle?: string;
 }
 
-export interface DrawerConfig {
+export interface PaginationConfig {
   /**
-   * “取消”描述文本
-   * @default '取消'
+   * 每页条数文本，示例：`'{ total } / page'`
+   * @default '{size} 条/页'
    */
-  cancel?: string | ButtonProps;
+  itemsPerPage?: string;
   /**
-   * “确认”描述文本
-   * @default '确认'
+   * 页码跳转文本，示例：'jump to'
+   * @default '跳至'
    */
-  confirm?: string | ButtonProps;
-}
-
-export interface PopconfirmConfig {
+  jumpTo?: string;
   /**
-   * “取消”描述文本
-   * @default '取消'
+   * “页”文本，示例：'page'
+   * @default '页'
    */
-  cancel?: string | ButtonProps;
+  page?: string;
   /**
-   * “确定”描述文本
-   * @default '确定'
+   * 数据总条数文本，示例：`'total { total }'`
+   * @default '共 {total} 项数据'
    */
-  confirm?: string | ButtonProps;
-  /**
-   * 确认按钮主题色，即 Popconfirm 的 `theme` 和 确认按钮的 `theme` 映射关系。示例：{ danger: 'danger' }
-   */
-  confirmBtnTheme?: { default: string; warning: string; danger: string };
-}
-
-export interface TableConfig {
-  /**
-   * 语言配置，'暂无数据' 描述文本
-   * @default '暂无数据'
-   */
-  empty?: string | TNode;
-  /**
-   * 展开和收起图标（配置传入收起图标即可），如果没有配置，组件会内置默认图标
-   */
-  expandIcon?: TNode;
-  /**
-   * 过滤图标，如果没有配置，组件会内置默认图标
-   */
-  filterIcon?: TNode;
-  /**
-   * 语言配置，'点击加载更多' 描述文本
-   * @default '点击加载更多'
-   */
-  loadingMoreText?: string;
-  /**
-   * 语言配置，'正在加载中，请稍后' 描述文本
-   * @default '正在加载中，请稍后'
-   */
-  loadingText?: string;
-  /**
-   * 语言配置，'点击升序' 描述文本
-   * @default '点击升序'
-   */
-  sortAscendingOperationText?: string;
-  /**
-   * 语言配置，'点击取消排序' 描述文本
-   * @default '点击取消排序'
-   */
-  sortCancelOperationText?: string;
-  /**
-   * 语言配置，'点击降序' 描述文本
-   * @default '点击降序'
-   */
-  sortDescendingOperationText?: string;
-  /**
-   * 排序图标（配置传入降序图标即可），如果没有配置，组件会内置默认图标
-   */
-  sortIcon?: TNode;
+  total?: string;
 }
 
 export interface SelectConfig {
@@ -511,16 +495,171 @@ export interface SelectConfig {
   placeholder?: string;
 }
 
-export interface TreeConfig {
+export interface PopconfirmConfig {
   /**
-   * “暂无数据”描述文本
+   * “取消”描述文本
+   * @default '取消'
+   */
+  cancel?: string | ButtonProps;
+  /**
+   * “确定”描述文本
+   * @default '确定'
+   */
+  confirm?: string | ButtonProps;
+  /**
+   * 确认按钮主题色，即 Popconfirm 的 `theme` 和 确认按钮的 `theme` 映射关系。示例：{ danger: 'danger' }
+   */
+  confirmBtnTheme?: { default: string; warning: string; danger: string };
+}
+
+export interface StepsConfig {
+  /**
+   * 错误步骤图标，【注意】使用渲染函数输出图标组件
+   */
+  errorIcon?: TNode;
+}
+
+export interface TableConfig {
+  /**
+   * 语言配置，'取消' 描述文本
+   * @default '取消'
+   */
+  cancelText?: string;
+  /**
+   * 语言配置，过滤功能中，'清空筛选' 描述文本
+   * @default '清空筛选'
+   */
+  clearFilterResultButtonText?: string;
+  /**
+   * 语言配置，列配置功能中，'列配置' 按钮描述文本
+   * @default '列配置'
+   */
+  columnConfigButtonText?: string;
+  /**
+   * 语言配置，'请选择需要在表格中显示的数据列' 描述文本，列配置功能中弹框顶部描述
+   * @default '请选择需要在表格中显示的数据列'
+   */
+  columnConfigDescriptionText?: string;
+  /**
+   * 语言配置，'表格列配置' 描述文本，列配置功能中弹框的标题
+   * @default '表格列配置'
+   */
+  columnConfigTitleText?: string;
+  /**
+   * 语言配置，'确认' 描述文本
+   * @default '确认'
+   */
+  confirmText?: string;
+  /**
+   * 语言配置，'暂无数据' 描述文本
+   * @default '暂无数据'
+   */
+  empty?: string | TNode;
+  /**
+   * 展开和收起图标（配置传入收起图标即可），如果没有配置，组件会内置默认图标
+   */
+  expandIcon?: TNode;
+  /**
+   * 过滤图标，如果没有配置，组件会内置默认图标
+   */
+  filterIcon?: TNode;
+  /**
+   * 语言配置，'点击加载更多' 描述文本
+   * @default '点击加载更多'
+   */
+  loadingMoreText?: string;
+  /**
+   * 语言配置，'正在加载中，请稍后' 描述文本
+   * @default '正在加载中，请稍后'
+   */
+  loadingText?: string;
+  /**
+   * 语言配置，'重置' 描述文本
+   * @default '重置'
+   */
+  resetText?: string;
+  /**
+   * 语言配置，过滤功能中，过滤条件和结果描述文本
+   * @default '搜索“{result}”，找到 {count} 条结果'
+   */
+  searchResultText?: string;
+  /**
+   * 语言配置，'全选' 描述文本
+   * @default '全部'
+   */
+  selectAllText?: string;
+  /**
+   * 语言配置，'点击升序' 描述文本
+   * @default '点击升序'
+   */
+  sortAscendingOperationText?: string;
+  /**
+   * 语言配置，'点击取消排序' 描述文本
+   * @default '点击取消排序'
+   */
+  sortCancelOperationText?: string;
+  /**
+   * 语言配置，'点击降序' 描述文本
+   * @default '点击降序'
+   */
+  sortDescendingOperationText?: string;
+  /**
+   * 排序图标（配置传入降序图标即可），如果没有配置，组件会内置默认图标
+   */
+  sortIcon?: TNode;
+}
+
+export interface TagConfig {
+  /**
+   * 关闭图标，【注意】使用渲染函数输出图标组件
+   */
+  closeIcon?: TNode;
+}
+
+export interface TimePickerConfig {
+  /**
+   * 语言配置，“上午”描述文本
+   * @default '上午'
+   */
+  anteMeridiem?: string;
+  /**
+   * 语言配置，“确定”描述文本
+   * @default '确定'
+   */
+  confirm?: string;
+  /**
+   * 语言配置，“此刻”描述文本
+   * @default '此刻'
+   */
+  now?: string;
+  /**
+   * 语言配置，占位符描述文本
+   * @default '请选择时间'
+   */
+  placeholder?: string;
+  /**
+   * 语言配置，“下午”描述文本
+   * @default '下午'
+   */
+  postMeridiem?: string;
+}
+
+export interface TransferConfig {
+  /**
+   * 空数据描述文本
    * @default '暂无数据'
    */
   empty?: string;
   /**
-   * 目录层级图标，传入收起状态图标即可。【注意】使用渲染函数输出图标组件
+   * 占位符描述文本
+   * @default '请输入关键词搜索'
    */
-  folderIcon?: TNode;
+  placeholder?: string;
+  /**
+   * 穿梭框标题描述文本
+   * @default '{checked} / {total} 项'
+   */
+  title?: string;
 }
 
 export interface TreeSelectConfig {
@@ -539,71 +678,6 @@ export interface TreeSelectConfig {
    * @default '请选择'
    */
   placeholder?: string;
-}
-
-export interface ListConfig {
-  /**
-   * 语言配置，'点击加载更多' 描述文本
-   * @default '点击加载更多'
-   */
-  loadingMoreText?: string;
-  /**
-   * 语言配置，'正在加载中，请稍后' 描述文本
-   * @default '正在加载中，请稍后'
-   */
-  loadingText?: string;
-}
-
-export interface UploadConfig {
-  /**
-   * 语言配置，“取消上传” 描述文本
-   * @default '取消上传'
-   */
-  cancelUploadText?: string;
-  /**
-   * 语言配置，拖拽相关。示例：{ dragDropText: '释放图标', draggingText: '拖拽到此区域', clickAndDragText: '点击上方“选择文件”或将文件拖到此区域' }
-   */
-  dragger?: UploadConfigDragger;
-  /**
-   * 语言配置，文件信息相关。示例：{  fileNameText: '文件名', fileSizeText: '文件尺寸', fileStatusText: '状态', fileOperationText: '操作', fileOperationDateText: '上传日期' }
-   */
-  file?: UploadConfigFileList;
-  /**
-   * 语言配置，上传进度相关。示例：{ uploadText: '上传中', waitingText: '待上传', 'failText': '上传失败', successText: '上传成功' }
-   */
-  progress?: UploadConfigProgress;
-  /**
-   * 语言配置，文件大小超出限制时提醒文本
-   * @default '文件大小不能超过 {sizeLimit}'
-   */
-  sizeLimitMessage?: string;
-  /**
-   * 语言配置，上传功能触发文案。示例：{ image: '点击上传图片', normal: '点击上传',  fileInput: '选择文件',reupload: '重新上传',fileInput: '删除' }
-   */
-  triggerUploadText?: UploadTriggerUploadText;
-}
-
-export interface UploadConfigProgress {
-  /**
-   * 语言配置，“上传失败”文本描述
-   * @default '上传失败'
-   */
-  failText?: string;
-  /**
-   * 语言配置，“上传成功”文本描述
-   * @default '上传成功'
-   */
-  successText?: string;
-  /**
-   * 语言配置，“上传中”文本描述
-   * @default '上传中'
-   */
-  uploadingText?: string;
-  /**
-   * 语言配置，“待上传”文本描述
-   * @default '待上传'
-   */
-  waitingText?: string;
 }
 
 export interface UploadConfigDragger {
@@ -652,65 +726,30 @@ export interface UploadConfigFileList {
   fileStatusText?: string;
 }
 
-export interface FormConfig {
+export interface UploadConfigProgress {
   /**
-   * 表单错误信息配置，示例：`{ idcard: '请输入正确的身份证号码', max: '字符长度不能超过 ${max}' }`
+   * 语言配置，“上传失败”文本描述
+   * @default '上传失败'
    */
-  errorMessage?: FormErrorMessage;
+  failText?: string;
   /**
-   * 是否显示必填符号（*），默认显示
-   * @default true
+   * 语言配置，“上传成功”文本描述
+   * @default '上传成功'
    */
-  requiredMark?: boolean;
-}
-
-export interface TagConfig {
+  successText?: string;
   /**
-   * 关闭图标，【注意】使用渲染函数输出图标组件
+   * 语言配置，“上传中”文本描述
+   * @default '上传中'
    */
-  closeIcon?: TNode;
-}
-
-export interface StepsConfig {
+  uploadingText?: string;
   /**
-   * 错误步骤图标，【注意】使用渲染函数输出图标组件
+   * 语言配置，“待上传”文本描述
+   * @default '待上传'
    */
-  errorIcon?: TNode;
-}
-
-export interface AlertConfig {
-  /**
-   * 收起提示文本
-   * @default 收起
-   */
-  collapseText?: string;
-  /**
-   * 展开提示文本
-   * @default 展开更多
-   */
-  expandText?: string;
-}
-
-export interface AnchorConfig {
-  /**
-   * 复制成功文字
-   * @default 链接复制成功
-   */
-  copySuccessText?: string;
-  /**
-   * 复制提示文字
-   * @default 复制链接
-   */
-  copyText?: string;
+  waitingText?: string;
 }
 
 export type AnimationType = 'ripple' | 'expand' | 'fade';
-
-export interface ConfigPresetDate {
-  [name: string]: DateConfigValue | (() => DateConfigValue);
-}
-
-export type DateConfigValue = string | Date | Array<DateConfigValue>;
 
 export interface UploadTriggerUploadText {
   image?: string;
@@ -720,3 +759,9 @@ export interface UploadTriggerUploadText {
   continueUpload: string;
   delete?: string;
 }
+
+export interface ConfigPresetDate {
+  [name: string]: DateConfigValue | (() => DateConfigValue);
+}
+
+export type DateConfigValue = string | Date | Array<DateConfigValue>;
