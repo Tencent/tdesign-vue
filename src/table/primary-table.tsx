@@ -64,11 +64,13 @@ export default defineComponent({
       [tableBaseClass.overflowVisible]: isTableOverflowHidden.value === false,
     }));
 
+    // 如果想给 TR 添加类名，请在这里补充，不要透传更多额外 Props 到 BaseTable
     const tRowClassNames = computed(() => {
       const tClassNames = [props.rowClassName, selectedRowClassNames.value];
       return tClassNames.filter((v) => v);
     });
 
+    // 如果想给 TR 添加属性，请在这里补充，不要透传更多额外 Props 到 BaseTable
     const tRowAttributes = computed(() => {
       const tAttributes = [props.rowAttributes];
       if (isColDraggable.value || isRowDraggable.value) {

@@ -14203,7 +14203,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
             <td>test</td>
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
-          <tr>
+          <tr class="t-table__row--disabled">
             <td class="demo-single-select-cell"><label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest2</td>
             <td>
@@ -14214,7 +14214,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
             <td>test</td>
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
-          <tr>
+          <tr class="t-table__row--selected">
             <td class="demo-single-select-cell"><label class="t-radio t-is-checked"><input type="radio" checked="checked" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest3</td>
             <td>
@@ -14225,7 +14225,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
             <td>test</td>
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
-          <tr>
+          <tr class="t-table__row--disabled">
             <td class="demo-single-select-cell"><label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest4</td>
             <td>
