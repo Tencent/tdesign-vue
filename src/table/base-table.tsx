@@ -315,6 +315,9 @@ export default defineComponent({
     );
 
     const topContent = this.renderTNode('topContent');
+    const bottomContent = this.renderTNode('bottomContent');
+    const pagination = this.renderPagination(h);
+    const bottom = !!bottomContent && <div class={this.tableBaseClass.bottomContent}>{bottomContent}</div>;
     return (
       <div ref="tableRef" class={this.dynamicBaseTableClasses} style="position: relative">
         {!!topContent && <div class={this.tableBaseClass.topContent}>{topContent}</div>}
@@ -337,7 +340,9 @@ export default defineComponent({
           ></div>
         )}
 
-        {this.renderPagination(h)}
+        {bottom}
+        {pagination}
+        {/* {this.bordered ? [pagination, bottom] : [bottom, pagination]} */}
       </div>
     );
   },

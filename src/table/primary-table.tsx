@@ -162,18 +162,23 @@ export default defineComponent({
       return listener;
     },
 
-    formatNode(api: string, renderInnerNode: Function, condition: boolean) {
+    formatNode(api: string, renderInnerNode: Function, condition: boolean, extra?: { reverse?: boolean }) {
       if (!condition) return this[api];
       const innerNode = renderInnerNode(h);
       const propsNode = this.renderTNode(api);
       if (innerNode && !propsNode) return () => innerNode;
       if (propsNode && !innerNode) return () => propsNode;
       if (innerNode && propsNode) {
-        return () => (
-          <div>
-            {propsNode}
-            {innerNode}
-          </div>
+        return () => extra?.reverse ? (
+            <div>
+              {innerNode}
+              {propsNode}
+            </div>
+        ) : (
+            <div>
+              {propsNode}
+              {innerNode}
+            </div>
         );
       }
       return null;
@@ -181,7 +186,17 @@ export default defineComponent({
   },
 
   render() {
-    const topContent = this.formatNode('topContent', this.renderColumnController, !!this.columnController);
+    const isColumnController = !!(this.columnController && Object.keys(this.columnController).length);
+    const placement = isColumnController ? this.columnController.placement || 'top-right' : '';
+    const isBottomController = isColumnController && placement?.indexOf('bottom') !== -1;
+    const topContent = this.formatNode(
+      'topContent',
+      this.renderColumnController,
+      isColumnController && !isBottomController,
+    );
+    const bottomContent = this.formatNode('bottomContent', this.renderColumnController, isBottomController, {
+      reverse: true,
+    });
     const firstFullRow = this.formatNode('firstFullRow', this.renderFirstFilterRow, !this.hasEmptyCondition);
     const lastFullRow = this.formatNode('lastFullRow', this.renderAsyncLoading, !!this.asyncLoading);
 
@@ -191,6 +206,7 @@ export default defineComponent({
       rowAttributes: this.tRowAttributes,
       columns: this.tColumns,
       topContent,
+      bottomContent,
       firstFullRow,
       lastFullRow,
       renderExpandedRow: this.showExpandedRow ? this.renderExpandedRow : undefined,

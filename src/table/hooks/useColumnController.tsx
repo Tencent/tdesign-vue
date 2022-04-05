@@ -23,6 +23,7 @@ import { useConfig } from '../../config-provider/useConfig';
 
 import useDefaultValue from '../../hooks/useDefaultValue';
 import { getCurrentRowByKey } from '../utils';
+import { DialogInstance } from '../../dialog';
 
 export function getColumnKeys(columns: PrimaryTableCol[], keys: string[] = []) {
   for (let i = 0, len = columns.length; i < len; i++) {
@@ -39,8 +40,10 @@ export function getColumnKeys(columns: PrimaryTableCol[], keys: string[] = []) {
 export default function useColumnController(props: TdPrimaryTableProps, context: SetupContext) {
   const renderTNode = useTNodeDefault();
   const { classPrefix, global } = useConfig('table');
-  const { columns, columnController, displayColumns } = toRefs(props);
-
+  const {
+    columns, columnController, displayColumns, columnControllerVisible,
+  } = toRefs(props);
+  const dialogInstance = ref<DialogInstance>(null);
   const enabledColKeys = computed(() => {
     const arr = (columnController.value?.fields || [...new Set(getColumnKeys(columns.value))] || []).filter((v) => v);
     return new Set(arr);
@@ -117,7 +120,7 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
   };
 
   const handleToggleColumnController = () => {
-    const dialogInstance = DialogPlugin.confirm({
+    dialogInstance.value = DialogPlugin.confirm({
       header: global.value.columnConfigTitleText,
       // eslint-disable-next-line
       body: (h: CreateElement) => {
@@ -126,8 +129,9 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
         const isCheckedAll = checkedLength === enabledColKeys.value.size;
         const isIndeterminate = checkedLength > 0 && checkedLength < enabledColKeys.value.size;
         const prefix = classPrefix.value;
+        const classes = [`${prefix}-table__column-controller`, `${prefix}-table__column-controller--${widthMode}`];
         const defaultNode = (
-          <div class={[`${prefix}-table__column-controller`, `${prefix}-table__column-controller--${widthMode}`]}>
+          <div class={classes}>
             <div class={`${prefix}-table__column-controller-body`}>
               {/* 请选择需要在表格中显示的数据列 */}
               <p class={`${prefix}-table__column-controller-desc`}>{global.value.columnConfigDescriptionText}</p>
@@ -154,23 +158,62 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
       width: 612,
       onConfirm: () => {
         setTDisplayColumns([...columnCheckboxKeys.value]);
-        dialogInstance.hide();
+        // 此处逻辑不要随意改动，涉及到 内置列配置按钮 和 不包含列配置按钮等场景
+        if (columnControllerVisible.value === undefined) {
+          dialogInstance.value.hide();
+        } else {
+          props.onColumnControllerVisibleChange?.(false, { trigger: 'cancel' });
+          context.emit('update:columnControllerVisible', false);
+        }
       },
       onClose: () => {
-        dialogInstance.hide();
+        // 此处逻辑不要随意改动，涉及到 内置列配置按钮 和 不包含列配置按钮等场景
+        if (columnControllerVisible.value === undefined) {
+          dialogInstance.value.hide();
+        } else {
+          props.onColumnControllerVisibleChange?.(false, { trigger: 'confirm' });
+          context.emit('update:columnControllerVisible', false);
+        }
       },
       ...(columnController.value?.dialogProps || {}),
     });
   };
 
+  // columnControllerVisible 一般应用于不包含列配置按钮的场景，有外部直接控制弹框的显示或隐藏
+  watch(
+    [columnControllerVisible],
+    ([visible]) => {
+      if (visible === undefined) return;
+      if (dialogInstance.value) {
+        visible ? dialogInstance.value.show() : dialogInstance.value.hide();
+      } else {
+        visible && handleToggleColumnController();
+      }
+    },
+    { immediate: true },
+  );
+
   // eslint-disable-next-line
   const renderColumnController = (h: CreateElement) => {
+    const isColumnController = !!(columnController.value && Object.keys(columnController.value).length);
+    const placement = isColumnController ? columnController.value.placement || 'top-right' : '';
+    if (isColumnController && columnController.value.hideTriggerButton) return null;
+    const classes = [
+      `${classPrefix.value}-table__column-controller-trigger`,
+      { [`${classPrefix.value}-align-${placement}`]: !!placement },
+    ];
     return (
-      <div class={`${classPrefix.value}-table__column-controller`}>
-        <t-button theme="default" variant="outline" onClick={handleToggleColumnController}>
-          <SettingIcon slot="icon" />
-          {global.value.columnConfigButtonText}
-        </t-button>
+      <div class={classes}>
+        <t-button
+          theme="default"
+          variant="outline"
+          onClick={handleToggleColumnController}
+          content={global.value.columnConfigButtonText}
+          scopedSlots={{
+            icon: () => <SettingIcon />,
+          }}
+          props={props.columnController?.buttonProps}
+        ></t-button>
       </div>
     );
   };
