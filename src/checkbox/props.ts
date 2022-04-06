@@ -14,7 +14,7 @@ export default {
   checked: Boolean,
   /** 是否选中，非受控属性 */
   defaultChecked: Boolean,
-  /** 复选框内容，同 label */
+  /** 多选框内容，同 label */
   default: {
     type: [String, Function] as PropType<TdCheckboxProps['default']>,
   },
@@ -34,9 +34,9 @@ export default {
     type: String,
     default: '',
   },
-  /** 组件是否只读 */
+  /** 只读状态 */
   readonly: Boolean,
-  /** 复选框的值 */
+  /** 多选框的值 */
   value: {
     type: [String, Number] as PropType<TdCheckboxProps['value']>,
   },

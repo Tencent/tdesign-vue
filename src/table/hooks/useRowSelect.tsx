@@ -23,11 +23,9 @@ import { ClassName } from '../../common';
 import log from '../../_common/js/log';
 
 export default function useRowSelect(props: TdPrimaryTableProps) {
-  const {
-    selectedRowKeys, columns, data, rowClassName,
-  } = toRefs(props);
+  const { selectedRowKeys, columns, data } = toRefs(props);
   const { tableSelectedClasses } = useClassName();
-  const tRowClassNames = ref();
+  const selectedRowClassNames = ref();
   const [tSelectedRowKeys, setTSelectedRowKeys] = useDefaultValue(
     selectedRowKeys,
     props.defaultSelectedRowKeys || [],
@@ -44,7 +42,7 @@ export default function useRowSelect(props: TdPrimaryTableProps) {
   ));
 
   watch(
-    [data, columns, rowClassName, tSelectedRowKeys],
+    [data, columns, tSelectedRowKeys],
     () => {
       const disabledRowFunc = (p: RowClassNameParams<TableRowData>): ClassName => selectColumn.value.disabled(p) ? tableSelectedClasses.disabled : '';
       const disabledRowClass = selectColumn.value?.disabled ? disabledRowFunc : undefined;
@@ -54,7 +52,7 @@ export default function useRowSelect(props: TdPrimaryTableProps) {
         return selected.has(rowId) ? tableSelectedClasses.selected : '';
       };
       const selectedRowClass = selected.size ? selectedRowClassFunc : undefined;
-      tRowClassNames.value = [rowClassName.value, disabledRowClass, selectedRowClass];
+      selectedRowClassNames.value = [disabledRowClass, selectedRowClass].filter((v) => v);
     },
     { immediate: true },
   );
@@ -148,7 +146,7 @@ export default function useRowSelect(props: TdPrimaryTableProps) {
   }
 
   return {
-    tRowClassNames,
+    selectedRowClassNames,
     formatToRowSelectColumn,
   };
 }

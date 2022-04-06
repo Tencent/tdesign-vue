@@ -47,7 +47,7 @@ export default defineComponent({
   },
 
   // eslint-disable-next-line
-  setup(props: TableFilterControllerProps) {
+  setup(props: TableFilterControllerProps, { emit }) {
     const triggerElementRef = ref<HTMLDivElement>(null);
     const renderTNode = useTNodeDefault();
     const { t, global } = useConfig('table');
@@ -55,6 +55,7 @@ export default defineComponent({
 
     const onFilterPopupVisibleChange = (visible: boolean) => {
       filterPopupVisible.value = visible;
+      emit('visible-change', visible);
     };
 
     return {
@@ -133,7 +134,7 @@ export default defineComponent({
               this.filterPopupVisible = false;
             }}
           >
-            重置
+            {this.global.resetText}
           </TButton>
           <TButton
             theme="primary"
@@ -143,7 +144,7 @@ export default defineComponent({
               this.filterPopupVisible = false;
             }}
           >
-            确认
+            {this.global.confirmText}
           </TButton>
         </div>
       );

@@ -2,6 +2,7 @@
 import {
   defineComponent, PropType, ref, computed,
 } from '@vue/composition-api';
+import debounce from 'lodash/debounce';
 import { TNode } from '../common';
 import { renderContent } from '../utils/render-tnode';
 import { isNodeOverflow } from '../utils/dom';
@@ -49,7 +50,6 @@ export default defineComponent({
     const { classPrefix } = useConfig();
     const root = ref();
     const isOverflow = ref(false);
-    const visible = ref(false);
 
     const ellipsisClasses = computed(() => [
       `${classPrefix.value}-table__ellipsis`,
@@ -59,28 +59,30 @@ export default defineComponent({
     // 当表格数据量大时，不希望默认渲染全量的 Popup，期望在用户 mouseenter 的时候再显示
     const onTriggerMouseenter = () => {
       if (!root.value) return;
-      visible.value = true;
       isOverflow.value = isNodeOverflow(root.value);
     };
 
     const onTriggerMouseleave = () => {
-      visible.value = false;
+      isOverflow.value = isNodeOverflow(root.value);
     };
+
+    // 使用 debounce 有两个原因：1. 避免 safari/firefox 等浏览器不显示省略浮层；2. 避免省略列快速滚动时，出现一堆的省略浮层
+    const onMouseAround = debounce((e: MouseEvent) => {
+      e.type === 'mouseleave' ? onTriggerMouseleave() : onTriggerMouseenter();
+    }, 80);
 
     return {
       root,
       isOverflow,
       ellipsisClasses,
-      visible,
-      onTriggerMouseenter,
-      onTriggerMouseleave,
+      onMouseAround,
     };
   },
 
   render() {
     const cellNode = renderContent(this, 'default', 'content');
     const ellipsisContent = (
-      <div ref="root" class={this.ellipsisClasses}>
+      <div ref="root" class={this.ellipsisClasses} onMouseenter={this.onMouseAround} onMouseleave={this.onMouseAround}>
         {cellNode}
       </div>
     );
@@ -88,7 +90,6 @@ export default defineComponent({
     if (this.isOverflow) {
       const rProps = {
         content: this.popupContent || (() => cellNode),
-        visible: this.visible,
         destroyOnClose: true,
         zIndex: this.zIndex,
         attach: this.attach || (() => this.root),
@@ -99,10 +100,6 @@ export default defineComponent({
     } else {
       content = ellipsisContent;
     }
-    return (
-      <div onMouseenter={this.onTriggerMouseenter} onMouseleave={this.onTriggerMouseleave}>
-        {content}
-      </div>
-    );
+    return content;
   },
 });
