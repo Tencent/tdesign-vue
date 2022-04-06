@@ -1,11 +1,15 @@
 import Vue, { PropType } from 'vue';
+import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { CloseCircleFilledIcon, ErrorCircleFilledIcon, CheckCircleFilledIcon } from 'tdesign-icons-vue';
 import Loading from '../loading';
 import { prefix } from '../config';
 import { UploadFile } from './type';
 import { ClassName } from '../common';
-import { abridgeName, UPLOAD_NAME } from './util';
+import { abridgeName } from '../_common/js/upload/utils';
+import { renderTNodeJSX } from '../utils/render-tnode';
 import props from './props';
+
+const uploadName = `${prefix}-upload`;
 
 export default Vue.extend({
   name: 'TUploadSingleFile',
@@ -63,10 +67,10 @@ export default Vue.extend({
       return this.inputName || this.placeholder;
     },
     inputTextClass(): ClassName {
-      return [`${prefix}-input__inner`, { [`${UPLOAD_NAME}__placeholder`]: !this.inputName }];
+      return [`${prefix}-input__inner`, { [`${uploadName}__placeholder`]: !this.inputName }];
     },
     classes(): ClassName {
-      return [`${UPLOAD_NAME}__single`, `${UPLOAD_NAME}__single-${this.display}`];
+      return [`${uploadName}__single`, `${uploadName}__single-${this.display}`];
     },
   },
 
@@ -77,9 +81,9 @@ export default Vue.extend({
       }
       if (this.showUploadProgress) {
         return (
-          <div class={`${UPLOAD_NAME}__single-progress`}>
+          <div class={`${uploadName}__single-progress`}>
             <Loading />
-            <span class={`${UPLOAD_NAME}__single-percent`}>{Math.min(this.loadingFile.percent, 99)}%</span>
+            <span class={`${uploadName}__single-percent`}>{Math.min(this.loadingFile.percent, 99)}%</span>
           </div>
         );
       }
@@ -94,18 +98,18 @@ export default Vue.extend({
       }
       return '';
     },
-
     // 文本型预览
     renderFilePreviewAsText() {
       if (!this.inputName) return;
+      const fileListDisplay: ScopedSlotReturnValue = renderTNodeJSX(this, 'fileListDisplay');
       return (
-        <div class={`${UPLOAD_NAME}__single-display-text t-upload__display-text--margin`}>
-          <span class={`${UPLOAD_NAME}__single-name`}>{this.inputName}</span>
+        <div class={[`${uploadName}__single-display-text`, `${uploadName}__display-text--margin`]}>
+          {fileListDisplay || <span class={`${uploadName}__single-name`}>{this.inputName}</span>}
           {this.showProgress ? (
             this.renderProgress()
           ) : (
             <CloseCircleFilledIcon
-              class={`${UPLOAD_NAME}__icon-delete`}
+              class={`${uploadName}__icon-delete`}
               nativeOnClick={(e: MouseEvent) => this.remove(e)}
             />
           )}
@@ -115,9 +119,9 @@ export default Vue.extend({
     // 输入框型预览
     renderFilePreviewAsInput() {
       return (
-        <div class={`${UPLOAD_NAME}__single-input-preview ${prefix}-input`}>
+        <div class={`${uploadName}__single-input-preview ${prefix}-input`}>
           <div class={this.inputTextClass}>
-            {<span class={`${UPLOAD_NAME}__single-input-text`}>{abridgeName(this.inputText, 4, 6)}</span>}
+            {<span class={`${uploadName}__single-input-text`}>{abridgeName(this.inputText, 4, 6)}</span>}
             {this.showProgress && this.renderProgress()}
             {this.renderResult()}
           </div>
@@ -133,7 +137,7 @@ export default Vue.extend({
         {this.$scopedSlots.default && this.$scopedSlots.default(null)}
         {this.showTextPreview && this.renderFilePreviewAsText()}
         {this.showInput && this.showDelete && (
-          <span class={`${UPLOAD_NAME}__single-input-delete`} onClick={(e: MouseEvent) => this.remove(e)}>
+          <span class={`${uploadName}__single-input-delete`} onClick={(e: MouseEvent) => this.remove(e)}>
             删除
           </span>
         )}

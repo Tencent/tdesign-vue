@@ -1,7 +1,7 @@
 {
   "name": "tdesign-vue",
   "purename": "tdesign",
-  "version": "0.40.0",
+  "version": "0.40.1",
   "description": "tdesign-vue",
   "title": "tdesign-vue",
   "keywords": [
@@ -121,7 +121,7 @@
     "babel-eslint": "^10.0.3",
     "babel-jest": "^27.4.5",
     "babel-polyfill": "^6.26.0",
-    "camelcase": "~6.2.1",
+    "camelcase": "~6.3.0",
     "cli-color": "^2.0.0",
     "commitizen": "^4.0.3",
     "cross-env": "^7.0.2",
