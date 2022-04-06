@@ -30,6 +30,7 @@ export interface TableBodyProps extends BaseTableProps {
   rowHeight: number;
   trs: Map<number, object>;
   bufferSize: number;
+  tableContentElm: HTMLDivElement;
   handleRowMounted: () => void;
 }
 
@@ -44,6 +45,7 @@ export const extendTableProps = [
   'firstFullRow',
   'lastFullRow',
   'rowspanAndColspan',
+  'scroll',
   'onCellClick',
   'onPageChange',
   'onRowClick',
@@ -76,6 +78,8 @@ export default defineComponent({
     rowHeight: Number,
     trs: Map as PropType<TableBodyProps['trs']>,
     bufferSize: Number,
+    // eslint-disable-next-line
+    tableContentElm: {},
     handleRowMounted: Function as PropType<TableBodyProps['handleRowMounted']>,
     renderExpandedRow: Function as PropType<TableBodyProps['renderExpandedRow']>,
     firstFullRow: [String, Function] as PropType<TableBodyProps['firstFullRow']>,
@@ -204,6 +208,7 @@ export default defineComponent({
         trs: this.trs,
         bufferSize: this.bufferSize,
         tableElm: this.tableElm,
+        tableContentElm: this.tableContentElm,
       };
       if (this.onCellClick) {
         trProps.onCellClick = this.onCellClick;

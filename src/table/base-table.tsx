@@ -259,6 +259,8 @@ export default defineComponent({
       rowHeight: this.rowHeight,
       trs: this.trs,
       bufferSize: this.bufferSize,
+      scroll: this.scroll,
+      tableContentElm: this.tableContentRef,
       handleRowMounted: this.handleRowMounted,
       renderExpandedRow: this.renderExpandedRow,
       ...pick(this.$props, extendTableProps),

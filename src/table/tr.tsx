@@ -3,13 +3,12 @@ import {
   PropType,
   SetupContext,
   h,
-  computed,
   ref,
-  Ref,
-  onMounted,
+  reactive,
+  computed,
   onBeforeUnmount,
-  inject,
-  nextTick,
+  onMounted,
+  toRefs,
 } from '@vue/composition-api';
 import isFunction from 'lodash/isFunction';
 import upperFirst from 'lodash/upperFirst';
@@ -25,6 +24,7 @@ import {
   BaseTableCellParams, TableRowData, RowspanColspan, TdPrimaryTableProps, PrimaryTableCellParams,
 } from './type';
 import baseTableProps from './base-table-props';
+import useLazyLoad from './hooks/useLazyLoad';
 
 export interface RenderTdExtra {
   rowAndColFixedPosition: RowAndColFixedPosition;
@@ -47,6 +47,7 @@ export const TABLE_PROPS = [
   'footData',
   'rowAttributes',
   'rowspanAndColspan',
+  'scroll',
   'onCellClick',
   'onRowClick',
   'onRowDblclick',
@@ -73,6 +74,7 @@ export interface TrProps extends TrCommonProps {
   rowHeight: number;
   trs: Map<number, object>;
   bufferSize: number;
+  tableContentElm: HTMLDivElement;
 }
 
 export const ROW_LISTENERS = ['click', 'dblclick', 'mouseover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];
@@ -113,10 +115,15 @@ export default defineComponent({
     trs: Map as PropType<TrProps['trs']>,
     bufferSize: Number,
     isVirtual: Boolean,
+    // eslint-disabled-next-line
     tableElm: {},
+    // eslint-disabled-next-line
+    tableContentElm: {},
   },
 
   setup(props: TrProps, context: SetupContext) {
+    const { tableContentElm } = toRefs(props);
+    const trRef = ref(null);
     const {
       tdEllipsisClass,
       tableBaseClass,
@@ -125,6 +132,7 @@ export default defineComponent({
       tdAlignClasses,
       tableDraggableClasses,
     } = useClassName();
+
     const trStyles = computed(() => getRowFixedStyles(
       get(props.row, props.rowKey || 'id'),
       props.rowIndex,
@@ -145,6 +153,12 @@ export default defineComponent({
       return [trStyles.value?.classes, customClasses];
     });
 
+    const { hasLazyLoadHolder, tRowHeight } = useLazyLoad(
+      tableContentElm,
+      trRef,
+      reactive({ ...props.scroll, rowIndex: props.rowIndex }),
+    );
+
     const getTrListeners = (row: TableRowData, rowIndex: number) => {
       const trListeners: { [eventName: string]: (e: MouseEvent) => void } = {};
       // add events to row
@@ -159,69 +173,16 @@ export default defineComponent({
       return trListeners;
     };
 
-    const observe = (element: HTMLElement, root: HTMLElement, callback: Function, marginBottom: number) => {
-      if (!window || !window.IntersectionObserver) {
-        callback();
-        return;
-      }
-      try {
-        const io = new window.IntersectionObserver(
-          (entries) => {
-            const entry = entries[0];
-            if (entry.isIntersecting) {
-              callback();
-              io.unobserve(element);
-            }
-          },
-          {
-            rootMargin: `0px 0px ${marginBottom}px 0px`,
-            root,
-          },
-        );
-        io.observe(element);
-        return io;
-      } catch (e) {
-        console.error(e);
-        callback();
-      }
-    };
-    const tr = ref(null);
-    const isInit = ref(props.rowIndex === 0);
-    const requestAnimationFrame = window.requestAnimationFrame || ((cb) => setTimeout(cb, 16.6));
-    const init = () => {
-      !isInit.value
-        && requestAnimationFrame(() => {
-          isInit.value = true;
-        });
-    };
-
     onMounted(() => {
       const {
-        rowIndex, rowHeight, bufferSize, trs, row: rowData, scrollType, isVirtual,
+        trs, row: rowData, scrollType, isVirtual,
       } = props;
       if (scrollType === 'virtual') {
         if (isVirtual) {
           const { $index } = rowData;
-          trs.set($index, tr.value);
+          trs.set($index, trRef.value);
           context.emit('onRowMounted');
         }
-      } else if (scrollType === 'lazy') {
-        const tableContentRef: Ref = inject('tableContentRef');
-        const rowHeightRef: Ref = inject('rowHeightRef');
-        nextTick(() => {
-          if (rowHeight === undefined) {
-            if (rowIndex === 0) {
-              // 获取第一行高度
-              const { offsetHeight } = tr.value;
-              rowHeightRef.value = offsetHeight;
-            } else {
-              const height = rowHeightRef.value;
-              observe(tr.value, tableContentRef.value, init, height * bufferSize);
-            }
-          } else {
-            observe(tr.value, tableContentRef.value, init, rowHeight * bufferSize);
-          }
-        });
       }
     });
 
@@ -234,6 +195,7 @@ export default defineComponent({
     });
 
     return {
+      trRef,
       tableColFixedClasses,
       tableDraggableClasses,
       tSlots: context.slots,
@@ -243,9 +205,9 @@ export default defineComponent({
       trStyles,
       classes,
       trAttributes,
+      tRowHeight,
+      hasLazyLoadHolder,
       getTrListeners,
-      tr,
-      isInit,
     };
   },
 
@@ -306,10 +268,8 @@ export default defineComponent({
 
   render(h) {
     const {
-      row, rowIndex, dataLength, rowAndColFixedPosition, scrollType, isInit,
+      row, rowIndex, dataLength, rowAndColFixedPosition,
     } = this;
-    const hasHolder = scrollType === 'lazy' && !isInit;
-    const rowHeightRef: Ref = inject('rowHeightRef');
     const columVNodeList = this.columns?.map((col, colIndex) => {
       const cellSpans: RowspanColspan = {};
       const params = {
@@ -336,13 +296,13 @@ export default defineComponent({
     const attrs = this.trAttributes || {};
     return (
       <tr
-        ref="tr"
+        ref="trRef"
         attrs={attrs}
         style={this.trStyles?.style}
         class={this.classes}
         on={this.getTrListeners(row, rowIndex)}
       >
-        {hasHolder ? [<td style={{ height: `${rowHeightRef.value}px`, border: 'none' }} />] : columVNodeList}
+        {this.hasLazyLoadHolder ? [<td style={{ height: `${this.tRowHeight}px`, border: 'none' }} />] : columVNodeList}
       </tr>
     );
   },
