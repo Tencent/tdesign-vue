@@ -2,25 +2,25 @@
   {
     "name": "allowUncheck",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "checked",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "disabled",
     "type": "Boolean",
-    "defaultValue": "undefined",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "value",
-    "type": "String",
-    "defaultValue": "false",
-    "enum": []
+    "type": "Boolean",
+    "defaultValue": false,
+    "options": []
   }
 ]

@@ -3,7 +3,7 @@
     "name": "layout",
     "type": "enum",
     "defaultValue": "horizontal",
-    "enum": [
+    "options": [
       {
         "label": "horizontal",
         "value": "horizontal"
@@ -18,7 +18,7 @@
     "name": "size",
     "type": "enum",
     "defaultValue": "medium",
-    "enum": [
+    "options": [
       {
         "label": "small",
         "value": "small"
@@ -36,13 +36,13 @@
   {
     "name": "split",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "stripe",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   }
 ]

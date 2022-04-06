@@ -2,20 +2,20 @@
   {
     "name": "closable",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "disabled",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "shape",
     "type": "enum",
     "defaultValue": "square",
-    "enum": [
+    "options": [
       {
         "label": "square",
         "value": "square"
@@ -34,7 +34,7 @@
     "name": "size",
     "type": "enum",
     "defaultValue": "medium",
-    "enum": [
+    "options": [
       {
         "label": "small",
         "value": "small"
@@ -53,7 +53,7 @@
     "name": "theme",
     "type": "enum",
     "defaultValue": "default",
-    "enum": [
+    "options": [
       {
         "label": "default",
         "value": "default"
@@ -80,7 +80,7 @@
     "name": "variant",
     "type": "enum",
     "defaultValue": "dark",
-    "enum": [
+    "options": [
       {
         "label": "dark",
         "value": "dark"

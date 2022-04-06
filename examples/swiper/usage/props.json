@@ -3,7 +3,7 @@
     "name": "animation",
     "type": "enum",
     "defaultValue": "slide",
-    "enum": [
+    "options": [
       {
         "label": "slide",
         "value": "slide"
@@ -17,14 +17,14 @@
   {
     "name": "autoplay",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "direction",
     "type": "enum",
     "defaultValue": "horizontal",
-    "enum": [
+    "options": [
       {
         "label": "horizontal",
         "value": "horizontal"
@@ -38,20 +38,20 @@
   {
     "name": "loop",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "stopOnHover",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "theme",
     "type": "enum",
     "defaultValue": "light",
-    "enum": [
+    "options": [
       {
         "label": "light",
         "value": "light"
@@ -66,7 +66,7 @@
     "name": "trigger",
     "type": "enum",
     "defaultValue": "hover",
-    "enum": [
+    "options": [
       {
         "label": "hover",
         "value": "hover"
@@ -81,7 +81,7 @@
     "name": "type",
     "type": "enum",
     "defaultValue": "default",
-    "enum": [
+    "options": [
       {
         "label": "default",
         "value": "default"

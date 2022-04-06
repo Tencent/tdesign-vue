@@ -3,7 +3,7 @@
     "name": "direction",
     "type": "enum",
     "defaultValue": "right",
-    "enum": [
+    "options": [
       {
         "label": "left",
         "value": "left"
@@ -17,20 +17,20 @@
   {
     "name": "disabled",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "hideAfterItemClick",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "placement",
     "type": "enum",
     "defaultValue": "bottom-left",
-    "enum": [
+    "options": [
       {
         "label": "top",
         "value": "top"
@@ -85,7 +85,7 @@
     "name": "trigger",
     "type": "enum",
     "defaultValue": "hover",
-    "enum": [
+    "options": [
       {
         "label": "hover",
         "value": "hover"

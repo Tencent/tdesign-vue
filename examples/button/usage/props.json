@@ -2,32 +2,32 @@
   {
     "name": "block",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "disabled",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "ghost",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "loading",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "shape",
     "type": "enum",
     "defaultValue": "rectangle",
-    "enum": [
+    "options": [
       {
         "label": "rectangle",
         "value": "rectangle"
@@ -50,7 +50,7 @@
     "name": "size",
     "type": "enum",
     "defaultValue": "medium",
-    "enum": [
+    "options": [
       {
         "label": "small",
         "value": "small"
@@ -69,7 +69,7 @@
     "name": "theme",
     "type": "enum",
     "defaultValue": "default",
-    "enum": [
+    "options": [
       {
         "label": "default",
         "value": "default"
@@ -96,7 +96,7 @@
     "name": "variant",
     "type": "enum",
     "defaultValue": "base",
-    "enum": [
+    "options": [
       {
         "label": "base",
         "value": "base"

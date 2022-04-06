@@ -2,14 +2,14 @@
   {
     "name": "loading",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "theme",
     "type": "enum",
     "defaultValue": "text",
-    "enum": [
+    "options": [
       {
         "label": "text",
         "value": "text"

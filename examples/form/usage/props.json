@@ -2,20 +2,20 @@
   {
     "name": "colon",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "disabled",
     "type": "Boolean",
-    "defaultValue": "undefined",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "labelAlign",
     "type": "enum",
     "defaultValue": "right",
-    "enum": [
+    "options": [
       {
         "label": "left",
         "value": "left"
@@ -34,7 +34,7 @@
     "name": "layout",
     "type": "enum",
     "defaultValue": "vertical",
-    "enum": [
+    "options": [
       {
         "label": "vertical",
         "value": "vertical"
@@ -48,20 +48,20 @@
   {
     "name": "preventSubmitDefault",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "requiredMark",
     "type": "Boolean",
-    "defaultValue": "undefined",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "resetType",
     "type": "enum",
     "defaultValue": "empty",
-    "enum": [
+    "options": [
       {
         "label": "empty",
         "value": "empty"
@@ -75,14 +75,14 @@
   {
     "name": "showErrorMessage",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "size",
     "type": "enum",
     "defaultValue": "medium",
-    "enum": [
+    "options": [
       {
         "label": "medium",
         "value": "medium"
@@ -96,13 +96,13 @@
   {
     "name": "statusIcon",
     "type": "Boolean",
-    "defaultValue": "undefined",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "submitWithWarningMessage",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   }
 ]

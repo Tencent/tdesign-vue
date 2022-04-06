@@ -2,97 +2,97 @@
   {
     "name": "autoWidth",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "bordered",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "borderless",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "clearable",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "creatable",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "disabled",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "filterable",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "loading",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "multiple",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "popupVisible",
     "type": "Boolean",
-    "defaultValue": "undefined",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "readonly",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "reserveKeyword",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "showArrow",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "size",
     "type": "enum",
     "defaultValue": "medium",
-    "enum": [
+    "options": [
       {
-        "label": "small ",
-        "value": "small "
+        "label": "small",
+        "value": "small"
       },
       {
-        "label": " medium ",
-        "value": " medium "
+        "label": "medium",
+        "value": "medium"
       },
       {
-        "label": " large",
-        "value": " large"
+        "label": "large",
+        "value": "large"
       }
     ]
   },
@@ -100,7 +100,7 @@
     "name": "valueType",
     "type": "enum",
     "defaultValue": "value",
-    "enum": [
+    "options": [
       {
         "label": "value",
         "value": "value"

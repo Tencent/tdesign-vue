@@ -2,14 +2,14 @@
   {
     "name": "destroyOnClose",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "placement",
     "type": "enum",
     "defaultValue": "top",
-    "enum": [
+    "options": [
       {
         "label": "top",
         "value": "top"
@@ -63,14 +63,14 @@
   {
     "name": "showArrow",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "theme",
     "type": "enum",
     "defaultValue": "default",
-    "enum": [
+    "options": [
       {
         "label": "default",
         "value": "default"
@@ -88,7 +88,7 @@
   {
     "name": "visible",
     "type": "Boolean",
-    "defaultValue": "",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   }
 ]

@@ -2,20 +2,20 @@
   {
     "name": "disabled",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "loading",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "size",
     "type": "enum",
     "defaultValue": "medium",
-    "enum": [
+    "options": [
       {
         "label": "small",
         "value": "small"
@@ -34,6 +34,6 @@
     "name": "value",
     "type": "String",
     "defaultValue": "undefined",
-    "enum": []
+    "options": []
   }
 ]

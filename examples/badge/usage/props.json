@@ -2,14 +2,14 @@
   {
     "name": "dot",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "shape",
     "type": "enum",
     "defaultValue": "circle",
-    "enum": [
+    "options": [
       {
         "label": "circle",
         "value": "circle"
@@ -23,14 +23,14 @@
   {
     "name": "showZero",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "size",
     "type": "enum",
     "defaultValue": "medium",
-    "enum": [
+    "options": [
       {
         "label": "small",
         "value": "small"

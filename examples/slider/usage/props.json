@@ -2,26 +2,26 @@
   {
     "name": "disabled",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "inputNumberProps",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "label",
-    "type": "String",
-    "defaultValue": "false",
-    "enum": []
+    "type": "Boolean",
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "layout",
     "type": "enum",
     "defaultValue": "horizontal",
-    "enum": [
+    "options": [
       {
         "label": "vertical",
         "value": "vertical"
@@ -35,7 +35,7 @@
   {
     "name": "range",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   }
 ]

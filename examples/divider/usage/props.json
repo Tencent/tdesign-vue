@@ -3,7 +3,7 @@
     "name": "align",
     "type": "enum",
     "defaultValue": "center",
-    "enum": [
+    "options": [
       {
         "label": "left",
         "value": "left"
@@ -21,14 +21,14 @@
   {
     "name": "dashed",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "layout",
     "type": "enum",
     "defaultValue": "horizontal",
-    "enum": [
+    "options": [
       {
         "label": "horizontal",
         "value": "horizontal"
@@ -43,7 +43,7 @@
     "name": "theme",
     "type": "enum",
     "defaultValue": "horizontal",
-    "enum": [
+    "options": [
       {
         "label": "horizontal",
         "value": "horizontal"

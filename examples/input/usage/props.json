@@ -3,7 +3,7 @@
     "name": "align",
     "type": "enum",
     "defaultValue": "left",
-    "enum": [
+    "options": [
       {
         "label": "left",
         "value": "left"
@@ -21,44 +21,44 @@
   {
     "name": "autofocus",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "autoWidth",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "clearable",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "disabled",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "readonly",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "showClearIconOnEmpty",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "size",
     "type": "enum",
     "defaultValue": "medium",
-    "enum": [
+    "options": [
       {
         "label": "small",
         "value": "small"
@@ -77,7 +77,7 @@
     "name": "type",
     "type": "enum",
     "defaultValue": "text",
-    "enum": [
+    "options": [
       {
         "label": "text",
         "value": "text"

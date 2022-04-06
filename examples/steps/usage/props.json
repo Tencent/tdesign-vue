@@ -3,7 +3,7 @@
     "name": "direction",
     "type": "enum",
     "defaultValue": "horizontal",
-    "enum": [
+    "options": [
       {
         "label": "horizontal",
         "value": "horizontal"
@@ -18,7 +18,7 @@
     "name": "layout",
     "type": "enum",
     "defaultValue": "horizontal",
-    "enum": [
+    "options": [
       {
         "label": "horizontal",
         "value": "horizontal"
@@ -32,14 +32,14 @@
   {
     "name": "readonly",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "sequence",
     "type": "enum",
     "defaultValue": "positive",
-    "enum": [
+    "options": [
       {
         "label": "positive",
         "value": "positive"
@@ -54,7 +54,7 @@
     "name": "theme",
     "type": "enum",
     "defaultValue": "default",
-    "enum": [
+    "options": [
       {
         "label": "default",
         "value": "default"

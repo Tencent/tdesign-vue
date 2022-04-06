@@ -3,19 +3,19 @@
     "name": "closeBtn",
     "type": "String",
     "defaultValue": "undefined",
-    "enum": []
+    "options": []
   },
   {
     "name": "icon",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "theme",
     "type": "enum",
     "defaultValue": "info",
-    "enum": [
+    "options": [
       {
         "label": "info",
         "value": "info"

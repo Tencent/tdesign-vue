@@ -1,51 +1,51 @@
 [
   {
     "name": "closeBtn",
-    "type": "String",
-    "defaultValue": "true",
-    "enum": []
+    "type": "Boolean",
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "closeOnEscKeydown",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "closeOnOverlayClick",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "destroyOnClose",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "draggable",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "footer",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "header",
-    "type": "String",
-    "defaultValue": "true",
-    "enum": []
+    "type": "Boolean",
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "mode",
     "type": "enum",
     "defaultValue": "modal",
-    "enum": [
+    "options": [
       {
         "label": "modal",
         "value": "modal"
@@ -64,7 +64,7 @@
     "name": "placement",
     "type": "enum",
     "defaultValue": "top",
-    "enum": [
+    "options": [
       {
         "label": "top",
         "value": "top"
@@ -78,26 +78,26 @@
   {
     "name": "preventScrollThrough",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "showInAttachedElement",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "showOverlay",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "theme",
     "type": "enum",
     "defaultValue": "default",
-    "enum": [
+    "options": [
       {
         "label": "default",
         "value": "default"
@@ -123,7 +123,7 @@
   {
     "name": "visible",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   }
 ]

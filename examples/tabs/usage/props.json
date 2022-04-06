@@ -2,20 +2,20 @@
   {
     "name": "addable",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "disabled",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "placement",
     "type": "enum",
     "defaultValue": "top",
-    "enum": [
+    "options": [
       {
         "label": "left",
         "value": "left"
@@ -38,7 +38,7 @@
     "name": "size",
     "type": "enum",
     "defaultValue": "medium",
-    "enum": [
+    "options": [
       {
         "label": "medium",
         "value": "medium"
@@ -53,7 +53,7 @@
     "name": "theme",
     "type": "enum",
     "defaultValue": "normal",
-    "enum": [
+    "options": [
       {
         "label": "normal",
         "value": "normal"

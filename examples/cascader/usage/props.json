@@ -2,68 +2,68 @@
   {
     "name": "checkStrictly",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "clearable",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "disabled",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "filterable",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "lazy",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "loading",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "multiple",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "popupVisible",
     "type": "Boolean",
-    "defaultValue": "undefined",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "readonly",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "showAllLevels",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "size",
     "type": "enum",
     "defaultValue": "medium",
-    "enum": [
+    "options": [
       {
         "label": "large",
         "value": "large"
@@ -82,7 +82,7 @@
     "name": "trigger",
     "type": "enum",
     "defaultValue": "click",
-    "enum": [
+    "options": [
       {
         "label": "click",
         "value": "click"
@@ -97,7 +97,7 @@
     "name": "valueMode",
     "type": "enum",
     "defaultValue": "onlyLeaf",
-    "enum": [
+    "options": [
       {
         "label": "onlyLeaf",
         "value": "onlyLeaf"
@@ -116,7 +116,7 @@
     "name": "valueType",
     "type": "enum",
     "defaultValue": "single",
-    "enum": [
+    "options": [
       {
         "label": "single",
         "value": "single"

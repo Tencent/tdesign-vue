@@ -2,26 +2,26 @@
   {
     "name": "controllerConfig",
     "type": "Boolean",
-    "defaultValue": "undefined",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "fillWithZero",
     "type": "Boolean",
-    "defaultValue": "undefined",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "isShowWeekendDefault",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "mode",
     "type": "enum",
     "defaultValue": "month",
-    "enum": [
+    "options": [
       {
         "label": "month",
         "value": "month"
@@ -35,14 +35,14 @@
   {
     "name": "preventCellContextmenu",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "theme",
     "type": "enum",
     "defaultValue": "full",
-    "enum": [
+    "options": [
       {
         "label": "full",
         "value": "full"

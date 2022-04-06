@@ -2,20 +2,20 @@
   {
     "name": "collapsed",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "expandMutex",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "expandType",
     "type": "enum",
     "defaultValue": "normal",
-    "enum": [
+    "options": [
       {
         "label": "normal",
         "value": "normal"
@@ -30,7 +30,7 @@
     "name": "theme",
     "type": "enum",
     "defaultValue": "light",
-    "enum": [
+    "options": [
       {
         "label": "light",
         "value": "light"

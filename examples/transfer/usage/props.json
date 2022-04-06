@@ -3,7 +3,7 @@
     "name": "direction",
     "type": "enum",
     "defaultValue": "both",
-    "enum": [
+    "options": [
       {
         "label": "left",
         "value": "left"
@@ -21,26 +21,26 @@
   {
     "name": "disabled",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "search",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "showCheckAll",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "targetSort",
     "type": "enum",
     "defaultValue": "original",
-    "enum": [
+    "options": [
       {
         "label": "original",
         "value": "original"

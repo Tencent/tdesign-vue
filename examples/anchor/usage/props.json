@@ -3,18 +3,18 @@
     "name": "size",
     "type": "enum",
     "defaultValue": "medium",
-    "enum": [
+    "options": [
       {
-        "label": "small ",
-        "value": "small "
+        "label": "small",
+        "value": "small"
       },
       {
-        "label": " medium ",
-        "value": " medium "
+        "label": "medium",
+        "value": "medium"
       },
       {
-        "label": " large",
-        "value": " large"
+        "label": "large",
+        "value": "large"
       }
     ]
   }

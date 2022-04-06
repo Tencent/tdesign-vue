@@ -2,26 +2,26 @@
   {
     "name": "bordered",
     "type": "Boolean",
-    "defaultValue": "true",
-    "enum": []
+    "defaultValue": true,
+    "options": []
   },
   {
     "name": "loading",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "shadow",
     "type": "Boolean",
-    "defaultValue": "false",
-    "enum": []
+    "defaultValue": false,
+    "options": []
   },
   {
     "name": "size",
     "type": "enum",
     "defaultValue": "medium",
-    "enum": [
+    "options": [
       {
         "label": "medium",
         "value": "medium"
@@ -36,7 +36,7 @@
     "name": "theme",
     "type": "enum",
     "defaultValue": "normal",
-    "enum": [
+    "options": [
       {
         "label": "normal",
         "value": "normal"
