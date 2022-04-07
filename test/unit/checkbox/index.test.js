@@ -71,7 +71,9 @@ describe('Checkbox CheckboxGroup', () => {
           return (
             <CheckboxGroup defaultChecked={['sz']}>
               <Checkbox value="gz">广州</Checkbox>
-              <Checkbox value="sz" disabled>深圳</Checkbox>
+              <Checkbox value="sz" disabled>
+                深圳
+              </Checkbox>
             </CheckboxGroup>
           );
         },
@@ -84,7 +86,9 @@ describe('Checkbox CheckboxGroup', () => {
           return (
             <CheckboxGroup checked={['sz']}>
               <Checkbox value="gz">广州</Checkbox>
-              <Checkbox value="sz" disabled>深圳</Checkbox>
+              <Checkbox value="sz" disabled>
+                深圳
+              </Checkbox>
             </CheckboxGroup>
           );
         },
@@ -98,7 +102,9 @@ describe('Checkbox CheckboxGroup', () => {
             <CheckboxGroup disabled={true}>
               <Checkbox value="bj">北京</Checkbox>
               <Checkbox value="gz">广州</Checkbox>
-              <Checkbox value="sz" disabled={false}>深圳</Checkbox>
+              <Checkbox value="sz" disabled={false}>
+                深圳
+              </Checkbox>
             </CheckboxGroup>
           );
         },
@@ -113,9 +119,7 @@ describe('Checkbox CheckboxGroup', () => {
       ];
       const wrapper = mount({
         render() {
-          return (
-            <CheckboxGroup options={options} value={['sz', 'gz']} max={2} />
-          );
+          return <CheckboxGroup options={options} value={['sz', 'gz']} max={2} />;
         },
       });
       expect(wrapper).toMatchSnapshot();
@@ -138,7 +142,9 @@ describe('Checkbox CheckboxGroup', () => {
           return (
             <CheckboxGroup name={'checkbox-name'}>
               <Checkbox value="gz">广州</Checkbox>
-              <Checkbox value="sz" disabled>深圳</Checkbox>
+              <Checkbox value="sz" disabled>
+                深圳
+              </Checkbox>
             </CheckboxGroup>
           );
         },
@@ -155,21 +161,23 @@ describe('Checkbox CheckboxGroup', () => {
           return (
             <CheckboxGroup>
               <Checkbox value="gz">广州</Checkbox>
-              <Checkbox value="sz" disabled>深圳</Checkbox>
+              <Checkbox value="sz" disabled>
+                深圳
+              </Checkbox>
             </CheckboxGroup>
           );
         },
       });
       const checkboxInput = wrapper.find('input[type="checkbox"]');
       await checkboxInput.setChecked();
-      const checkoxGroup = wrapper.findComponent(CheckboxGroup);
+      const checkboxGroup = wrapper.findComponent(CheckboxGroup);
       const checkbox = wrapper.findComponent(Checkbox);
       expect(checkbox.emitted().change.length).toBe(1);
-      expect(checkoxGroup.emitted().change.length).toBe(1);
+      expect(checkboxGroup.emitted().change.length).toBe(1);
       // 选中单项时间参数为 true
       expect(checkbox.emitted().change[0][0]).toBeTruthy();
       // checkboxGroup 事件参数为 ['gz']
-      expect(checkoxGroup.emitted().change[0][0]).toEqual(['gz']);
+      expect(checkboxGroup.emitted().change[0][0]).toEqual(['gz']);
     });
   });
 });
