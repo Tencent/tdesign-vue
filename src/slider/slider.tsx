@@ -434,6 +434,9 @@ export default Vue.extend({
               value={range ? this.firstValue : this.prevValue}
               ref="button1"
               disabled={this.tDisabled}
+              label={this.label}
+              range={this.range}
+              position="start"
               tooltip-props={this.tooltipProps}
               onInput={(v: number) => {
                 this.range ? (this.firstValue = v) : (this.prevValue = v);
@@ -445,6 +448,9 @@ export default Vue.extend({
                 v-model={this.secondValue}
                 ref="button2"
                 disabled={this.tDisabled}
+                range={this.range}
+                position="end"
+                label={this.label}
                 tooltip-props={this.tooltipProps}
               ></TSliderButton>
             )}

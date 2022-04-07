@@ -5,7 +5,7 @@
     </div>
 
     <div class="block">
-      <t-slider v-model="value2" range :tooltipProps="{}"/>
+      <t-slider v-model="value2" range :tooltipProps="{}" :label="renderLabel" />
     </div>
   </div>
 </template>
@@ -17,6 +17,12 @@ export default {
       value2: [30, 70],
       tooltipProps: {},
     };
+  },
+  methods: {
+    renderLabel(_, { value, position }) {
+      console.log(`the position is ${position}`);
+      return `${value}`;
+    },
   },
 };
 </script>
