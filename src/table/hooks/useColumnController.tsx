@@ -7,13 +7,23 @@ import {
 import { SettingIcon } from 'tdesign-icons-vue';
 import intersection from 'lodash/intersection';
 import { CreateElement } from 'vue';
-import Checkbox, { CheckboxGroup, CheckboxGroupValue, CheckboxOptionObj } from '../../checkbox';
+import Checkbox, {
+  CheckboxGroup,
+  CheckboxGroupValue,
+  CheckboxOptionObj,
+  CheckboxGroupChangeContext,
+} from '../../checkbox';
 import { DialogPlugin } from '../../dialog/plugin';
 import { useTNodeDefault } from '../../hooks/tnode';
 import { renderTitle } from './useTableHeader';
-import { PrimaryTableCol, TdPrimaryTableProps } from '../type';
+import {
+  PrimaryTableCol, TdPrimaryTableProps, PrimaryTableColumnChange, TableRowData,
+} from '../type';
 import { useConfig } from '../../config-provider/useConfig';
+
 import useDefaultValue from '../../hooks/useDefaultValue';
+import { getCurrentRowByKey } from '../utils';
+import { DialogInstance } from '../../dialog';
 
 export function getColumnKeys(columns: PrimaryTableCol[], keys: string[] = []) {
   for (let i = 0, len = columns.length; i < len; i++) {
@@ -29,9 +39,11 @@ export function getColumnKeys(columns: PrimaryTableCol[], keys: string[] = []) {
 
 export default function useColumnController(props: TdPrimaryTableProps, context: SetupContext) {
   const renderTNode = useTNodeDefault();
-  const { classPrefix } = useConfig();
-  const { columns, columnController, displayColumns } = toRefs(props);
-
+  const { classPrefix, global } = useConfig('table');
+  const {
+    columns, columnController, displayColumns, columnControllerVisible,
+  } = toRefs(props);
+  const dialogInstance = ref<DialogInstance>(null);
   const enabledColKeys = computed(() => {
     const arr = (columnController.value?.fields || [...new Set(getColumnKeys(columns.value))] || []).filter((v) => v);
     return new Set(arr);
@@ -40,7 +52,6 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
   const keys = [...new Set(getColumnKeys(columns.value))];
 
   // 确认后的列配置
-  // const displayColumnKeys = ref<CheckboxGroupValue>(keys);
   const [tDisplayColumns, setTDisplayColumns] = useDefaultValue(
     displayColumns,
     props.defaultDisplayColumns || keys,
@@ -77,33 +88,40 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
     return arr;
   }
 
-  const handleCheckChange = (val: CheckboxGroupValue) => {
+  const handleCheckChange = (val: CheckboxGroupValue, ctx: CheckboxGroupChangeContext) => {
     columnCheckboxKeys.value = val;
-    const params = { columns: val };
+    const params = {
+      columns: val,
+      type: ctx.type,
+      currentColumn: getCurrentRowByKey(columns.value, String(ctx.current)),
+      e: ctx.e,
+    };
     props.onColumnChange?.(params);
     // Vue3 ignore next line
     context.emit('column-change', params);
   };
 
-  const handleClickAllShowColumns = (checked: boolean) => {
+  const handleClickAllShowColumns = (checked: boolean, ctx: { e: Event }) => {
     if (checked) {
       const newData = columns.value?.map((t) => t.colKey) || [];
       columnCheckboxKeys.value = newData;
-      props.onColumnChange?.({ type: 'check', columns: newData });
+      const params: PrimaryTableColumnChange<TableRowData> = { type: 'check', columns: newData, e: ctx.e };
+      props.onColumnChange?.(params);
       // Vue3 ignore next line
-      context.emit('column-change', { type: 'check', columns: newData });
+      context.emit('column-change', params);
     } else {
       const disabledColKeys = checkboxOptions.value.filter((t) => t.disabled).map((t) => t.value);
       columnCheckboxKeys.value = disabledColKeys;
-      props.onColumnChange?.({ type: 'uncheck', columns: disabledColKeys });
+      const params: PrimaryTableColumnChange<TableRowData> = { type: 'uncheck', columns: disabledColKeys, e: ctx.e };
+      props.onColumnChange?.(params);
       // Vue3 ignore next line
-      context.emit('column-change', { type: 'uncheck', columns: disabledColKeys });
+      context.emit('column-change', params);
     }
   };
 
   const handleToggleColumnController = () => {
-    const dialogInstance = DialogPlugin.confirm({
-      header: '表格列配置',
+    dialogInstance.value = DialogPlugin.confirm({
+      header: global.value.columnConfigTitleText,
       // eslint-disable-next-line
       body: (h: CreateElement) => {
         const widthMode = columnController.value?.displayType === 'fixed-width' ? 'fixed' : 'auto';
@@ -111,13 +129,15 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
         const isCheckedAll = checkedLength === enabledColKeys.value.size;
         const isIndeterminate = checkedLength > 0 && checkedLength < enabledColKeys.value.size;
         const prefix = classPrefix.value;
+        const classes = [`${prefix}-table__column-controller`, `${prefix}-table__column-controller--${widthMode}`];
         const defaultNode = (
-          <div class={[`${prefix}-table__column-controller`, `${prefix}-table__column-controller--${widthMode}`]}>
+          <div class={classes}>
             <div class={`${prefix}-table__column-controller-body`}>
-              <p class={`${prefix}-table__column-controller-desc`}>请选择需要在表格中显示的数据列</p>
+              {/* 请选择需要在表格中显示的数据列 */}
+              <p class={`${prefix}-table__column-controller-desc`}>{global.value.columnConfigDescriptionText}</p>
               <div class={`${prefix}-table__column-controller-block`}>
                 <Checkbox indeterminate={isIndeterminate} checked={isCheckedAll} onChange={handleClickAllShowColumns}>
-                  全选
+                  {global.value.selectAllText}
                 </Checkbox>
               </div>
               <div class={`${prefix}-table__column-controller-block`}>
@@ -133,28 +153,67 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
         );
         return renderTNode('columnControllerContent', defaultNode);
       },
-      confirmBtn: '确认',
-      cancelBtn: '取消',
+      confirmBtn: global.value.confirmText,
+      cancelBtn: global.value.cancelText,
       width: 612,
       onConfirm: () => {
         setTDisplayColumns([...columnCheckboxKeys.value]);
-        dialogInstance.hide();
+        // 此处逻辑不要随意改动，涉及到 内置列配置按钮 和 不包含列配置按钮等场景
+        if (columnControllerVisible.value === undefined) {
+          dialogInstance.value.hide();
+        } else {
+          props.onColumnControllerVisibleChange?.(false, { trigger: 'cancel' });
+          context.emit('update:columnControllerVisible', false);
+        }
       },
       onClose: () => {
-        dialogInstance.hide();
+        // 此处逻辑不要随意改动，涉及到 内置列配置按钮 和 不包含列配置按钮等场景
+        if (columnControllerVisible.value === undefined) {
+          dialogInstance.value.hide();
+        } else {
+          props.onColumnControllerVisibleChange?.(false, { trigger: 'confirm' });
+          context.emit('update:columnControllerVisible', false);
+        }
       },
       ...(columnController.value?.dialogProps || {}),
     });
   };
 
+  // columnControllerVisible 一般应用于不包含列配置按钮的场景，有外部直接控制弹框的显示或隐藏
+  watch(
+    [columnControllerVisible],
+    ([visible]) => {
+      if (visible === undefined) return;
+      if (dialogInstance.value) {
+        visible ? dialogInstance.value.show() : dialogInstance.value.hide();
+      } else {
+        visible && handleToggleColumnController();
+      }
+    },
+    { immediate: true },
+  );
+
   // eslint-disable-next-line
   const renderColumnController = (h: CreateElement) => {
+    const isColumnController = !!(columnController.value && Object.keys(columnController.value).length);
+    const placement = isColumnController ? columnController.value.placement || 'top-right' : '';
+    if (isColumnController && columnController.value.hideTriggerButton) return null;
+    const classes = [
+      `${classPrefix.value}-table__column-controller-trigger`,
+      { [`${classPrefix.value}-align-${placement}`]: !!placement },
+    ];
     return (
-      <div class={`${classPrefix.value}-table__column-controller`}>
-        <t-button theme="default" variant="outline" onClick={handleToggleColumnController}>
-          <SettingIcon slot="icon" />
-          列配置
-        </t-button>
+      <div class={classes}>
+        <t-button
+          theme="default"
+          variant="outline"
+          onClick={handleToggleColumnController}
+          content={global.value.columnConfigButtonText}
+          scopedSlots={{
+            icon: () => <SettingIcon />,
+          }}
+          props={props.columnController?.buttonProps}
+        ></t-button>
       </div>
     );
   };

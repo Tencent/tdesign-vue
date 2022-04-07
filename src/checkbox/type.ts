@@ -23,7 +23,7 @@ export interface TdCheckboxProps {
    */
   defaultChecked?: boolean;
   /**
-   * 复选框内容，同 label
+   * 多选框内容，同 label
    */
   default?: string | TNode;
   /**
@@ -45,12 +45,12 @@ export interface TdCheckboxProps {
    */
   name?: string;
   /**
-   * 组件是否只读
+   * 只读状态
    * @default false
    */
   readonly?: boolean;
   /**
-   * 复选框的值
+   * 多选框的值
    */
   value?: string | number;
   /**
@@ -109,6 +109,7 @@ export type CheckboxGroupValue = Array<string | number>;
 
 export interface CheckboxGroupChangeContext {
   e: Event;
-  current: CheckboxOption | TdCheckboxProps;
+  current: string | number;
+  option: CheckboxOption | TdCheckboxProps;
   type: 'check' | 'uncheck';
 }
