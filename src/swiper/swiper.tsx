@@ -8,7 +8,7 @@ import TSwiperItem from './swiper-item';
 import { isVNode } from '../hooks/render-tnode';
 import { emitEvent } from '../utils/event';
 
-interface SwiperVue extends Vue {
+export interface SwiperVue extends Vue {
   swiperTimer: number;
   swiperSwitchingTimer: number;
 }
