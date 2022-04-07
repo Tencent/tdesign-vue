@@ -19,7 +19,7 @@ export default {
     };
   },
   methods: {
-    renderLabel(_, { value, position }) {
+    renderLabel(h, { value, position }) {
       console.log(`the position is ${position}`);
       return `${value}`;
     },
