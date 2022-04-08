@@ -2,7 +2,7 @@
   <div>
     <div>
       <t-button theme="default" @click="setData1">重置数据</t-button>
-      <t-button theme="default" @click="onRowToggle" style="margin-left: 16px">展开/收起可见行</t-button>
+      <t-button theme="default" style="margin-left: 16px" @click="onRowToggle">展开/收起可见行</t-button>
     </div>
     <br />
     <!-- 第一列展开树结点，缩进为 24px，子节点字段 childrenKey 默认为 children -->
