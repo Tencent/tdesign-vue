@@ -16,7 +16,7 @@ export default {
     return {
       value1: 12,
       value2: [30, 70],
-      inputNumberProps: { theme: 'column' },
+      inputNumberProps: { theme: 'column', autoWidth: true },
     };
   },
 };

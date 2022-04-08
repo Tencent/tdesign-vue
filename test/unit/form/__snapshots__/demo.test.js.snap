@@ -266,7 +266,7 @@ exports[`Form base demo works fine 1`] = `
      
     <div
       class="t-form__item t-form-item__"
-      style="padding-top: 8px;"
+      style="margin-left: 100px;"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -278,7 +278,6 @@ exports[`Form base demo works fine 1`] = `
       </div>
       <div
         class="t-form__controls"
-        style="margin-left: 100px;"
       >
         <div
           class="t-form__controls-content"

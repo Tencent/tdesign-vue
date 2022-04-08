@@ -1,20 +1,35 @@
 <template>
   <div class="tdesign-demo-block-column-large">
     <!-- 按钮操作区域 -->
+    <div>
+      <t-button @click="columnControllerVisible = true">显示列配置弹窗</t-button>
+    </div>
+
+    <!-- 1. defaultDisplayColumns = ['platform'] 设置默认显示哪些列，仅第一次有效 -->
+    <!-- 2. displayColumns 动态设置显示哪些列，受控属性，支持 displayColumns.sync 语法糖 -->
+    <!-- 3. onDisplayColumnsChange 当前显示列发生变化时触发 -->
+    <!-- 受控用法，示例代码有效，勿删  -->
     <t-table
       rowKey="index"
       :data="data"
       :columns="columns"
-      :stripe="stripe"
-      :bordered="bordered"
-      :hover="hover"
-      :columnController="{ displayType: 'auto-width' }"
+      :displayColumns.sync="displayColumns"
+      :columnControllerVisible.sync="columnControllerVisible"
+      :columnController="{
+        fields: ['platform', 'type', 'default'],
+        dialogProps: { preventScrollThrough: true },
+        hideTriggerButton: true,
+      }"
+      :pagination="{ defaultPageSize: 5, defaultCurrent: 1, total: 100 }"
+      tableLayout="auto"
+      stripe
+      @column-change="onColumnChange"
     ></t-table>
   </div>
 </template>
 <script lang="jsx">
 const data = [];
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 100; i++) {
   data.push({
     index: i,
     platform: i % 2 === 0 ? '共有' : '私有',
@@ -27,23 +42,22 @@ for (let i = 0; i < 5; i++) {
     description: '数据源',
   });
 }
+
+const staticColumn = ['index', 'needed', 'detail.position'];
 export default {
   data() {
     return {
       data,
-      stripe: true,
-      bordered: true,
-      hover: false,
+      columnControllerVisible: false,
+      displayColumns: staticColumn.concat(['platform', 'type', 'default']),
       columns: [
         {
           align: 'center',
-          width: '100',
           className: 'row',
           colKey: 'index',
           title: '序号',
         },
         {
-          width: 100,
           colKey: 'platform',
           title: '平台',
         },
@@ -62,37 +76,16 @@ export default {
         {
           colKey: 'detail.position',
           title: '详情信息',
-          width: 200,
           ellipsis: true,
-          // 自定义 ellipsis 样式和内容，示例代码有效，勿删！！！
-          // ellipsis: (h, {
-          //   row, col, rowIndex, colIndex,
-          // }) => {
-          //   if (rowIndex % 2) {
-          //     return <div>is even row {rowIndex + 1}, with data {row.detail.position}</div>;
-          //   }
-          //   return <div>is odd row {rowIndex + 1}, with data {row.detail.position}</div>;
-          // },
         },
       ],
-      /** 非受控用法：与分页组件对齐 */
-      pagination: {
-        defaultCurrent: 2,
-        defaultPageSize: 10,
-        total: 120,
-      },
-      /** 受控用法：与分页组件对齐（此处注释为受控用法示例，代码有效，勿删） */
-      // pagination: {
-      //   current: 1,
-      //   pageSize: 10,
-      //   total: 120,
-      //   // 也可以监听表格组件的 page-change 事件进行处理
-      //   onChange: (pageInfo.current) => {
-      //     this.pagination.current = pageInfo.current;
-      //     this.pagination.pageSize = pageInfo.pageSize;
-      //   },
-      // },
     };
+  },
+
+  methods: {
+    onColumnChange(params) {
+      console.log(params);
+    },
   },
 };
 </script>

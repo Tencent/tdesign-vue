@@ -63,4 +63,3 @@ export * from './upload';
 
 // 全局配置
 export * from './config-provider';
-export * from './locale';

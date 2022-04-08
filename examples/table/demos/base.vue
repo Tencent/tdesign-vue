@@ -2,9 +2,16 @@
   <div class="tdesign-demo-block-column-large">
     <!-- 按钮操作区域 -->
     <div>
+      <t-radio-group v-model="size" variant="default-filled">
+        <t-radio-button value="small">小尺寸</t-radio-button>
+        <t-radio-button value="medium">中尺寸</t-radio-button>
+        <t-radio-button value="large">大尺寸</t-radio-button>
+      </t-radio-group>
+      <br /><br />
       <t-checkbox v-model="stripe">显示斑马纹</t-checkbox>
       <t-checkbox v-model="bordered">显示表格边框</t-checkbox>
       <t-checkbox v-model="hover">显示悬浮效果</t-checkbox>
+      <t-checkbox v-model="tableLayout">宽度自适应</t-checkbox>
     </div>
 
     <t-table
@@ -14,12 +21,16 @@
       :stripe="stripe"
       :bordered="bordered"
       :hover="hover"
+      :size="size"
+      :table-layout="tableLayout ? 'auto' : 'fixed'"
+      :pagination="pagination"
     ></t-table>
   </div>
 </template>
 <script lang="jsx">
 const data = [];
-for (let i = 0; i < 5; i++) {
+const total = 28;
+for (let i = 0; i < total; i++) {
   data.push({
     index: i,
     platform: i % 2 === 0 ? '共有' : '私有',
@@ -36,16 +47,24 @@ export default {
   data() {
     return {
       data,
+      size: 'medium',
+      tableLayout: false,
       stripe: true,
       bordered: true,
       hover: false,
       columns: [
         {
-          align: 'center',
           width: '100',
-          className: 'row',
           colKey: 'index',
           title: '序号',
+          // 对齐方式
+          align: 'center',
+          // 设置列类名
+          className: 'custom-column-class-name',
+          // 设置列属性
+          attrs: {
+            'data-id': 'first-column',
+          },
         },
         {
           width: 100,
@@ -68,8 +87,17 @@ export default {
           colKey: 'detail.position',
           title: '详情信息',
           width: 200,
+          /**
+           * 1.内容超出时，是否显示省略号。值为 true，则浮层默认显示单元格内容；
+           * 2.值类型为 Function 则自定义浮层显示内容；
+           * 3.值类型为 Object，则自动透传属性到 Popup 组件。
+           */
           ellipsis: true,
-          // 自定义 ellipsis 样式和内容，示例代码有效，勿删！！！
+
+          // 透传省略内容浮层 Popup 组件全部特性，示例代码有效，勿删！！！
+          // ellipsis: { placement: 'bottom', destroyOnClose: false },
+
+          // 完全自定义 ellipsis 浮层的样式和内容，示例代码有效，勿删！！！
           // ellipsis: (h, {
           //   row, col, rowIndex, colIndex,
           // }) => {
@@ -83,20 +111,9 @@ export default {
       /** 非受控用法：与分页组件对齐 */
       pagination: {
         defaultCurrent: 2,
-        defaultPageSize: 10,
-        total: 120,
+        defaultPageSize: 5,
+        total,
       },
-      /** 受控用法：与分页组件对齐（此处注释为受控用法示例，代码有效，勿删） */
-      // pagination: {
-      //   current: 1,
-      //   pageSize: 10,
-      //   total: 120,
-      //   // 也可以监听表格组件的 page-change 事件进行处理
-      //   onChange: (pageInfo.current) => {
-      //     this.pagination.current = pageInfo.current;
-      //     this.pagination.pageSize = pageInfo.pageSize;
-      //   },
-      // },
     };
   },
 };

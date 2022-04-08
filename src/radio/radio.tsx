@@ -86,7 +86,8 @@ export default (Vue as VueConstructor<RadioInstance>).extend({
   methods: {
     handleChange(e: Event) {
       if (this.radioGroup) {
-        this.radioGroup.$emit('checked-change', this.value, { e });
+        // this.radioGroup.$emit('checked-change', this.value, { e });
+        this.radioGroup.handleRadioChange(this.value, { e });
       } else {
         const target = e.target as HTMLInputElement;
         emitEvent<Parameters<TdRadioProps['onChange']>>(this, 'change', target.checked, { e });
@@ -96,7 +97,8 @@ export default (Vue as VueConstructor<RadioInstance>).extend({
       this.$emit('click');
       if (!this.checked || !this.allowUncheck) return;
       if (this.radioGroup) {
-        this.radioGroup.$emit('checked-change', undefined, { e });
+        // this.radioGroup.$emit('checked-change', undefined, { e });
+        this.radioGroup.handleRadioChange(undefined, { e });
       } else {
         emitEvent<Parameters<TdRadioProps['onChange']>>(this, 'change', false, { e });
       }

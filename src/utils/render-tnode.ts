@@ -4,7 +4,7 @@ import {
   PropType, CreateElement, VNode, VNodeChildren, RenderContext,
 } from 'vue/types/umd';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import isObject from 'lodash/isObject';
+// import isObject from 'lodash/isObject';
 import { TNode } from '../common';
 
 // 组件render属性的ts类型
@@ -87,11 +87,11 @@ interface JSXRenderContext {
  */
 export const renderTNodeJSX = (vm: VmType, name: string, options?: ScopedSlotReturnValue | JSXRenderContext) => {
   // 是否静默日志
-  const isSilent = Boolean(isObject(options) && 'silent' in options && options.silent);
+  // const isSilent = Boolean(isObject(options) && 'silent' in options && options.silent);
 
-  if (vm.$scopedSlots[name] && vm[name] && vm[name] !== true && !isSilent) {
-    console.warn(`Both $scopedSlots.${name} and $props.${name} exist, $props.${name} is preferred`);
-  }
+  // if (vm.$scopedSlots[name] && vm[name] && vm[name] !== true && !isSilent) {
+  //   console.warn(`Both $scopedSlots.${name} and $props.${name} exist, $props.${name} is preferred`);
+  // }
   const params = typeof options === 'object' && 'params' in options ? options.params : null;
   const defaultNode = typeof options === 'object' && 'defaultNode' in options ? options.defaultNode : options;
   const propsNode = vm[name];

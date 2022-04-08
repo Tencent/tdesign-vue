@@ -16,6 +16,7 @@ import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
 import { addClass, removeClass } from '../utils/dom';
 import { ClassName, Styles } from '../common';
+import { updateElement } from '../hooks/useDestroyOnClose';
 
 const name = `${prefix}-dialog`;
 const lockClass = `${prefix}-dialog--lock`;
@@ -112,6 +113,12 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       this.addKeyboardEvent(value);
       if (this.isModeless && this.draggable) {
         this.initDragEvent(value);
+      }
+      // 父元素为 display: none 时，需要更新子元素，避免 Dialog 前套 Table 组件时，固定列等特性失效
+      if (value && !this.destroyOnClose && requestAnimationFrame) {
+        requestAnimationFrame(() => {
+          updateElement(this);
+        });
       }
     },
   },

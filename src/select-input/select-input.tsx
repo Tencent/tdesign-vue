@@ -55,6 +55,8 @@ export default defineComponent({
 
   render(h) {
     // 浮层显示的受控与非受控
+    // 浮层显示的受控与非受控
+    const visibleProps = { visible: this.popupVisible ?? this.innerPopupVisible };
 
     const mainContent = (
       <Popup
@@ -76,10 +78,11 @@ export default defineComponent({
             {
               commonInputProps: this.commonInputProps,
               onInnerClear: this.onInnerClear,
+              popupVisible: visibleProps.visible,
             },
             h,
           )
-          : this.renderSelectSingle(h)}
+          : this.renderSelectSingle(h, visibleProps.visible)}
       </Popup>
     );
 

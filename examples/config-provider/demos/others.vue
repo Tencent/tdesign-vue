@@ -57,10 +57,10 @@
     <br /><br /><br />
 
     <!-- 自定义关闭按钮示例 -->
-    <t-tag theme="primary" closable>Fearure Tag</t-tag>
-    <t-tag theme="success" closable>Fearure Tag</t-tag>
-    <t-tag theme="warning" closable>Fearure Tag</t-tag>
-    <t-tag theme="danger" closable>Fearure Tag</t-tag>
+    <t-tag theme="primary" closable>Feature Tag</t-tag>
+    <t-tag theme="success" closable>Feature Tag</t-tag>
+    <t-tag theme="warning" closable>Feature Tag</t-tag>
+    <t-tag theme="danger" closable>Feature Tag</t-tag>
     <br /><br />
 
     <!-- 数组件空数据 -->
@@ -84,6 +84,8 @@
 import {
   ErrorIcon, ChevronRightIcon, CloseIcon, CloseCircleIcon,
 } from 'tdesign-icons-vue';
+import merge from 'lodash/merge';
+import enConfig from 'tdesign-vue/locale/en_US';
 
 const transferList = [];
 for (let i = 0; i < 20; i++) {
@@ -94,7 +96,7 @@ for (let i = 0; i < 20; i++) {
   });
 }
 
-const SELECET_OPTIONS = [
+const SELECT_OPTIONS = [
   { label: 'Shanghai', value: 'shanghai' },
   { label: 'Beijing', value: 'beijing' },
   { label: 'Shenzhen', value: 'shenzhen' },
@@ -134,8 +136,8 @@ const TREE_DATA = [
 export default {
   data() {
     return {
-      // 全局特性配置
-      globalConfig: {
+      // 全局特性配置，可以引入英文默认配置 enConfig，还可以在默认配置的基础上进行自定义配置
+      globalConfig: merge(enConfig, {
         form: {
           requiredMark: false,
         },
@@ -175,11 +177,11 @@ export default {
         steps: {
           errorIcon: (h) => h && <ErrorIcon />,
         },
-      },
+      }),
       transferList,
       transferChecked: [],
       transferTargetValue: [],
-      options1: SELECET_OPTIONS.concat(),
+      options1: SELECT_OPTIONS.concat(),
       treeValue: '',
       treeOptions: TREE_OPTIONS,
       treeData: TREE_DATA,

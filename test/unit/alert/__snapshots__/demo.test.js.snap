@@ -376,7 +376,7 @@ exports[`Alert collapse demo works fine 1`] = `
           <div
             class="t-alert__collapse"
           >
-            展开全部
+            展开更多
           </div>
         </div>
       </div>
