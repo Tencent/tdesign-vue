@@ -20,7 +20,7 @@ import {
   TypeTreeInstance,
   TypeTargetNode,
 } from './interface';
-import { CLASS_NAMES, FX } from './constants';
+import { CLASS_NAMES } from './constants';
 import { getMark, getNode, emitEvent } from './util';
 
 export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tree')).extend({
@@ -39,6 +39,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       store: null,
       nodesMap: null,
       mouseEvent: null,
+      useNestedView: true,
       treeNodes: [],
       treeScope: {
         checkProps,
@@ -98,6 +99,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         <TreeItem
           key={node.value}
           node={node}
+          nested={this.useNestedView}
           treeScope={treeScope}
           onClick={this.handleClick}
           onChange={this.handleChange}
@@ -114,8 +116,8 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       }
       return nodesMap;
     },
-    // 刷新树的视图状态
-    refresh() {
+    // 渲染为平铺列表
+    renderTileList() {
       const { store } = this;
       const nodesMap = this.getNodesMap();
       const allNodes = store.getNodes();
@@ -144,6 +146,45 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         });
         curNodesMap.clear();
       });
+    },
+    // 渲染为嵌套结构列表
+    renderNestedList() {
+      const { store } = this;
+      const nodesMap = this.getNodesMap();
+      const childrenNodes = store.getChildren();
+      const curNodesMap = new Map();
+      this.treeNodes = childrenNodes.map((node: TreeNode) => {
+        curNodesMap.set(node.value, 1);
+        // 维持住已经渲染的节点，不进行dom的增删
+        let nodeView = nodesMap.get(node.value);
+        // 如果需要展示，生成新的vnode
+        if (!nodeView && node.visible) {
+          // 初次仅渲染可显示的节点
+          // 不存在节点视图，则创建该节点视图并插入到当前位置
+          nodeView = this.renderItem(node);
+          nodesMap.set(node.value, nodeView);
+        }
+        return nodeView;
+      });
+
+      // 更新缓存后，被删除的节点要移除掉，避免内存泄露
+      this.$nextTick(() => {
+        const keys = [...nodesMap.keys()];
+        keys.forEach((value: string) => {
+          if (!curNodesMap.get(value)) {
+            nodesMap.delete(value);
+          }
+        });
+        curNodesMap.clear();
+      });
+    },
+    // 刷新树的视图状态
+    refresh() {
+      if (this.useNestedView) {
+        this.renderNestedList();
+      } else {
+        this.renderTileList();
+      }
     },
     // 同步 Store 选项
     updateStoreConfig() {
@@ -223,6 +264,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         store.setChecked(value);
       }
 
+      // 更新节点展开状态
       this.updateExpanded();
 
       // 初始化激活状态
@@ -242,11 +284,13 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       if (Array.isArray(value)) {
         store.setChecked(value);
       }
+      // 更新展开状态
       this.updateExpanded();
       // 初始化激活状态
       if (Array.isArray(actived)) {
         store.setActived(actived);
       }
+      // 刷新节点状态
       store.refreshState();
     },
     toggleActived(item: TypeTargetNode): TreeNodeValue[] {
@@ -475,7 +519,6 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
 
     treeNodeList = (
       <transition-group
-        name={FX.treeNode}
         tag="div"
         class={CLASS_NAMES.treeList}
         enter-active-class={CLASS_NAMES.treeNodeEnter}

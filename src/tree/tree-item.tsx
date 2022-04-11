@@ -15,6 +15,10 @@ import ripple from '../utils/ripple';
 const keepAnimationMixins = getKeepAnimationMixins();
 
 export const TreeItemProps = {
+  nested: {
+    type: Boolean,
+    default: false,
+  },
   node: {
     type: TreeNode,
   },
@@ -23,7 +27,7 @@ export const TreeItemProps = {
   },
 };
 
-export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnimationMixins).extend({
+const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnimationMixins).extend({
   name: TREE_NODE_NAME,
   props: TreeItemProps,
   directives: { ripple },
@@ -307,6 +311,12 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
       };
       this.$emit('change', state);
     },
+    proxyClick(state: TypeEventState) {
+      this.$emit('click', state);
+    },
+    proxyChange(state: TypeEventState) {
+      this.$emit('change', state);
+    },
   },
   created() {
     if (this.node) {
@@ -317,7 +327,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
     this.data = null;
   },
   render(createElement: CreateElement) {
-    const { node } = this;
+    const { node, nested } = this;
     const { tree, level, value } = node;
 
     if (!tree || !tree.nodeMap.get(value)) {
@@ -325,7 +335,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
     }
     const styles = this.getStyles();
     const classList = this.getClassList();
-    return (
+    const itemNode = (
       <div
         class={classList}
         data-value={value}
@@ -336,5 +346,51 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
         {this.renderItem(createElement)}
       </div>
     );
+
+    if (!nested) {
+      // 返回平铺列表形式节点
+      return itemNode;
+    }
+
+    // 以嵌套形式渲染节点
+    let children: TreeNode[] = [];
+    if (Array.isArray(node.children)) {
+      children = node.children;
+    }
+
+    const childrenNodes = children.map((child: TreeNode) => {
+      const { treeScope } = this;
+      return (
+        <TreeItem
+          key={child.value}
+          node={child}
+          nested={nested}
+          treeScope={treeScope}
+          onClick={this.handleClick}
+          onChange={this.handleChange}
+        />
+      );
+    });
+
+    const childrenBox = (
+      <transition-group
+        tag="div"
+        class={CLASS_NAMES.treeChildren}
+        enter-active-class={CLASS_NAMES.treeNodeEnter}
+        leave-active-class={CLASS_NAMES.treeNodeLeave}
+      >
+        {childrenNodes}
+      </transition-group>
+    );
+
+    const branchNode = (
+      <div class={CLASS_NAMES.treeBranch}>
+        {itemNode}
+        {childrenBox}
+      </div>
+    );
+    return branchNode;
   },
 });
+
+export default TreeItem;

@@ -19,6 +19,8 @@ export const CLASS_NAMES = {
   tree,
   treeTransition: `${tree}--transition`,
   treeBlockNode: `${tree}--block-node`,
+  treeBranch: `${tree}__branch`,
+  treeChildren: `${tree}__children`,
   treeEmpty: `${tree}__empty`,
   treeList: `${tree}__list`,
   treeNode: `${tree}__item`,
