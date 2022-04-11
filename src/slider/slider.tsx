@@ -71,7 +71,7 @@ export default Vue.extend({
       ];
     },
     sliderRailClass(): ClassName {
-      return [`${name}__rail`, { 'show-input': this.inputNumberProps, disabled: this.tDisabled }];
+      return [`${name}__rail`, { 'show-input': this.inputNumberProps, [`${prefix}-is-disabled`]: this.tDisabled }];
     },
     sliderNumberClass(): ClassName {
       return [
@@ -136,8 +136,8 @@ export default Vue.extend({
       return Math.max(this.firstValue, this.secondValue);
     },
     barSize(): string {
-      const cuttentDiff = this.range ? this.maxValue - this.minValue : this.prevValue - this.min;
-      return `${(100 * cuttentDiff) / this.rangeDiff}%`;
+      const diff = this.range ? this.maxValue - this.minValue : this.prevValue - this.min;
+      return `${(100 * diff) / this.rangeDiff}%`;
     },
     barStart(): string {
       return this.range ? `${(100 * (this.minValue - this.min)) / this.rangeDiff}%` : '0%';
@@ -162,6 +162,20 @@ export default Vue.extend({
           width: this.barSize,
           left: this.barStart,
         };
+    },
+    calcInputNumberProps(): object {
+      const defaultInputNumberProps = {
+        decimalPlaces: 0,
+        placeholder: '',
+        theme: 'column',
+      };
+      if (typeof this.inputNumberProps === 'object') {
+        return {
+          ...defaultInputNumberProps,
+          ...this.inputNumberProps,
+        };
+      }
+      return defaultInputNumberProps;
     },
   },
   watch: {
@@ -258,28 +272,6 @@ export default Vue.extend({
       this.prevValue = prevValue;
       return prevValue;
     },
-    setInputProps(): void {
-      if (this.inputNumberProps instanceof Object) {
-        const {
-          decimalPlaces: inputDecimalPlaces,
-          format: inputFormat,
-          placeholder: inputPlaceholder,
-          theme: inputTheme,
-        } = this.inputNumberProps;
-        if (typeof inputDecimalPlaces === 'number' && !isNaN(inputDecimalPlaces)) {
-          this.inputDecimalPlaces = inputDecimalPlaces;
-        }
-        if (inputPlaceholder) {
-          this.inputPlaceholder = inputPlaceholder;
-        }
-        if (typeof inputFormat === 'function') {
-          this.inputFormat = inputFormat;
-        }
-        if (['column', 'row', 'normal'].includes(inputTheme)) {
-          this.inputTheme = inputTheme;
-        }
-      }
-    },
     // 相应button的位置
     setPosition(percent: number): void {
       let targetValue = (percent * this.rangeDiff) / 100;
@@ -352,7 +344,7 @@ export default Vue.extend({
             <div>
               {this.markList.map((item, index) => (
                 <div
-                  class={`${name}__stop ${name}__mark-stop`}
+                  class={[`${name}__stop`, `${name}__mark-stop`]}
                   style={this.getStopStyle(item.position)}
                   key={index}
                 ></div>
@@ -398,10 +390,7 @@ export default Vue.extend({
               disabled={this.tDisabled}
               min={min}
               max={max}
-              decimalPlaces={this.inputDecimalPlaces}
-              format={this.inputFormat}
-              placeholder={this.inputPlaceholder}
-              theme={this.inputTheme}
+              props={this.calcInputNumberProps}
             ></t-input-number>
           }
           {range && <div class={`${name}__center-line`} />}
@@ -414,10 +403,7 @@ export default Vue.extend({
               disabled={this.tDisabled}
               min={min}
               max={max}
-              decimalPlaces={this.inputDecimalPlaces}
-              format={this.inputFormat}
-              placeholder={this.inputPlaceholder}
-              theme={this.inputTheme}
+              props={this.calcInputNumberProps}
             ></t-input-number>
           )}
         </div>
@@ -448,6 +434,9 @@ export default Vue.extend({
               value={range ? this.firstValue : this.prevValue}
               ref="button1"
               disabled={this.tDisabled}
+              label={this.label}
+              range={this.range}
+              position="start"
               tooltip-props={this.tooltipProps}
               onInput={(v: number) => {
                 this.range ? (this.firstValue = v) : (this.prevValue = v);
@@ -459,6 +448,9 @@ export default Vue.extend({
                 v-model={this.secondValue}
                 ref="button2"
                 disabled={this.tDisabled}
+                range={this.range}
+                position="end"
+                label={this.label}
                 tooltip-props={this.tooltipProps}
               ></TSliderButton>
             )}

@@ -310,7 +310,7 @@ exports[`Upload base fileFlowList works fine 1`] = `
         <small
           class="t-size-s t-upload__flow-placeholder"
         >
-          支持批量上传文件，文件格式不限，最多只能上传 10 份文件
+          支持批量上传文件，文件格式不限，最多只能上传 5 份文件
         </small>
       </div>
       <table
