@@ -20,7 +20,7 @@ export const TreeItemProps = {
     default: false,
   },
   node: {
-    type: TreeNode,
+    type: Object,
   },
   treeScope: {
     type: Object,
@@ -379,7 +379,7 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
     });
 
     const childrenClassList = [];
-    childrenClassList.push(CLASS_NAMES.treeBranch);
+    childrenClassList.push(CLASS_NAMES.treeChildren);
     if (node.expanded) {
       childrenClassList.push(CLASS_NAMES.treeChildrenVisible);
     } else {
@@ -388,7 +388,7 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
 
     const allChildren = node.walk();
     allChildren.shift();
-    const visibleChildren = allChildren.filter((node) => node.visible);
+    const visibleChildren = allChildren.filter((node: TreeNode) => node.visible);
     const childrenStyles = {
       '--hscale': visibleChildren.length,
     };
