@@ -34,7 +34,8 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
   data() {
     return {
       data: null,
-      clicked: false,
+      $clicked: false,
+      $nodesMap: null,
     };
   },
   methods: {
@@ -289,10 +290,10 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
     handleClick(evt: MouseEvent) {
       // checkbox 上也有 emit click 事件
       // 用这个逻辑避免重复的 click 事件被触发
-      if (this.clicked) return;
-      this.clicked = true;
+      if (this.$clicked) return;
+      this.$clicked = true;
       setTimeout(() => {
-        this.clicked = false;
+        this.$clicked = false;
       });
 
       const { node } = this;
@@ -319,22 +320,71 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
     proxyChange(state: TypeEventState) {
       this.$emit('change', state);
     },
+    // 创建单个 tree 节点
+    getNestedItem(node: TreeNode) {
+      const { nested, treeScope } = this;
+      const treeItem = (
+        <TreeItem
+          key={node.value}
+          node={node}
+          nested={nested}
+          treeScope={treeScope}
+          onClick={this.proxyClick}
+          onChange={this.proxyChange}
+        />
+      );
+      return treeItem;
+    },
+    getChildNodes() {
+      const { node, $nodesMap } = this;
+      // 以嵌套形式渲染节点
+      let children: TreeNode[] = [];
+      if (Array.isArray(node.children)) {
+        children = node.children;
+      }
+
+      const curNodesMap = new Map();
+      const childrenNodes = children.map((child: TreeNode) => {
+        curNodesMap.set(child.value, 1);
+        let nodeView = $nodesMap.get(child.value);
+        if (!nodeView && child.visible) {
+          nodeView = this.getNestedItem(child);
+          $nodesMap.set(child.value, nodeView);
+        }
+        return nodeView;
+      });
+
+      // 移除不再使用的节点
+      this.$nextTick(() => {
+        const keys = [...$nodesMap.keys()];
+        keys.forEach((value: string) => {
+          if (!curNodesMap.get(value)) {
+            $nodesMap.delete(value);
+          }
+        });
+        curNodesMap.clear();
+      });
+
+      return childrenNodes;
+    },
   },
   created() {
     // console.log('created:', this.node.value);
     if (this.node) {
       this.data = this.node.data;
     }
-  },
-  mounted() {
-    // console.log('mounted:', this.node.value);
+    this.$nodesMap = new Map();
   },
   destroyed() {
     this.data = null;
+    this.$nodesMap.clear();
   },
   render(createElement: CreateElement) {
     const { node, nested } = this;
     const { tree, level, value } = node;
+
+    // 用于性能调试
+    // console.log('item render', node.value);
 
     if (!tree || !tree.nodeMap.get(value)) {
       this.$destroy();
@@ -358,25 +408,7 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
       return itemNode;
     }
 
-    // 以嵌套形式渲染节点
-    let children: TreeNode[] = [];
-    if (Array.isArray(node.children)) {
-      children = node.children;
-    }
-
-    const childrenNodes = children.map((child: TreeNode) => {
-      const { treeScope } = this;
-      return (
-        <TreeItem
-          key={child.value}
-          node={child}
-          nested={nested}
-          treeScope={treeScope}
-          onClick={this.proxyClick}
-          onChange={this.proxyChange}
-        />
-      );
-    });
+    const childNodes = this.getChildNodes();
 
     const childrenClassList = [];
     childrenClassList.push(CLASS_NAMES.treeChildren);
@@ -388,9 +420,9 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
 
     const allChildren = node.walk();
     allChildren.shift();
-    const visibleChildren = allChildren.filter((node: TreeNode) => node.visible);
+    const allVisibleChildren = allChildren.filter((node: TreeNode) => node.visible);
     const childrenStyles = {
-      '--hscale': visibleChildren.length,
+      '--hscale': allVisibleChildren.length,
     };
 
     const childrenBox = (
@@ -401,7 +433,7 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
         enter-active-class={CLASS_NAMES.treeNodeEnter}
         leave-active-class={CLASS_NAMES.treeNodeLeave}
       >
-        {childrenNodes}
+        {childNodes}
       </transition-group>
     );
 

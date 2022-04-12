@@ -33,12 +33,12 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
   data() {
     // 为属性加 $ 前缀，避免 vue 监听
     return {
-      // 当前渲染节点列表
-      treeNodes: [],
       // 数据源
       store: null,
+      // 当前渲染节点列表
+      treeNodes: [],
       // 是否启用嵌套布局
-      $nested: false,
+      nested: true,
       // 缓存节点
       $nodesMap: null,
       // 缓存鼠标事件
@@ -88,13 +88,12 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
   methods: {
     // 创建单个 tree 节点
     renderItem(node: TreeNode) {
-      const { $nested, $treeScope } = this;
-      $treeScope.store = this.store;
+      const { nested, $treeScope } = this;
       const treeItem = (
         <TreeItem
           key={node.value}
           node={node}
-          nested={$nested}
+          nested={nested}
           treeScope={$treeScope}
           onClick={this.handleClick}
           onChange={this.handleChange}
@@ -102,21 +101,11 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       );
       return treeItem;
     },
-    // 获取视图节点映射关系
-    getNodesMap() {
-      let { $nodesMap } = this;
-      if (!$nodesMap) {
-        $nodesMap = new Map();
-        this.$nodesMap = $nodesMap;
-      }
-      return $nodesMap;
-    },
     // 刷新树的视图状态
     refresh() {
-      const { store, $nested } = this;
-      const nodesMap = this.getNodesMap();
+      const { store, nested, $nodesMap } = this;
       let nodes = [];
-      if ($nested) {
+      if (nested) {
         // 渲染为嵌套结构
         nodes = store.getChildren();
       } else {
@@ -127,23 +116,23 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       this.treeNodes = nodes.map((node: TreeNode) => {
         curNodesMap.set(node.value, 1);
         // 维持住已经渲染的节点，不进行dom的增删
-        let nodeView = nodesMap.get(node.value);
+        let nodeView = $nodesMap.get(node.value);
         // 如果需要展示，生成新的vnode
         if (!nodeView && node.visible) {
           // 初次仅渲染可显示的节点
           // 不存在节点视图，则创建该节点视图并插入到当前位置
           nodeView = this.renderItem(node);
-          nodesMap.set(node.value, nodeView);
+          $nodesMap.set(node.value, nodeView);
         }
         return nodeView;
       });
 
       // 更新缓存后，被删除的节点要移除掉，避免内存泄露
       this.$nextTick(() => {
-        const keys = [...nodesMap.keys()];
+        const keys = [...$nodesMap.keys()];
         keys.forEach((value: string) => {
           if (!curNodesMap.get(value)) {
-            nodesMap.delete(value);
+            $nodesMap.delete(value);
           }
         });
         curNodesMap.clear();
@@ -239,7 +228,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       this.refresh();
     },
     rebuild(list: TdTreeProps['data']) {
-      this.getNodesMap().clear();
+      this.$nodesMap.clear();
       this.treeNodes.length = 0;
       const { store, value, actived } = this;
       store.reload(list);
@@ -469,8 +458,8 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       operations,
       scopedSlots: null,
     };
-    this.$nested = false;
-    this.$nodesMap = null;
+    this.treeNodes = [];
+    this.$nodesMap = new Map();
     this.$mouseEvent = null;
 
     this.build();
@@ -484,6 +473,9 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       $scopedSlots: scopedSlots,
     } = this;
 
+    // 用于性能调试
+    // console.log('tree render');
+
     const scopeProps = pick(this, ['checkProps', 'disableCheck', 'icon', 'label', 'line', 'operations']);
 
     this.updateStoreConfig();
@@ -495,9 +487,8 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
 
     if (treeNodes.length <= 0) {
       const useLocale = !this.empty && !this.$scopedSlots.empty;
-      emptyNode = (
-        <div class={CLASS_NAMES.treeEmpty}>{useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty')}</div>
-      );
+      const emptyContent = useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty');
+      emptyNode = <div class={CLASS_NAMES.treeEmpty}>{emptyContent}</div>;
     }
 
     treeNodeList = (
