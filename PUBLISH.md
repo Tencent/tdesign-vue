@@ -50,4 +50,4 @@
 - 包发布成功后，merge develop 到 main 分支，推送远端后触发官网部署流水线
 - 官网部署完毕后，企微机器人通知群里用户更新
 - copy changelog 到 GitHub repo release（后面考虑改成自动触发更新 release）
-- 内网 mk TDesign 发版 Topic 下，copy changlog 内容发布新的版本更新动态
+- 内网 mk TDesign 发版 Topic 下，copy changelog 内容发布新的版本更新动态

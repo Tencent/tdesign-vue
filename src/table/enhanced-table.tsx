@@ -34,7 +34,7 @@ export default defineComponent({
 
   setup(props: TdEnhancedTableProps, context: SetupContext) {
     const {
-      store, dataSource, formatTreeColum, ...treeInstanceFunctions
+      store, dataSource, formatTreeColumn, ...treeInstanceFunctions
     } = useTreeData(props, context);
 
     const treeDataMap = ref(store.value.treeDataMap);
@@ -46,7 +46,7 @@ export default defineComponent({
       const arr: PrimaryTableCol<TableRowData>[] = [];
       for (let i = 0, len = columns.length; i < len; i++) {
         let item = { ...columns[i] };
-        item = formatTreeColum(item);
+        item = formatTreeColumn(item);
         if (item.children?.length) {
           item.children = getColumns(item.children);
         }

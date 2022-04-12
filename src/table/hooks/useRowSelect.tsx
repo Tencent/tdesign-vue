@@ -111,7 +111,7 @@ export default function useRowSelect(props: TdPrimaryTableProps) {
     } else if (selectColumn.value.type === 'single') {
       selectedRowKeys = !isExisted ? [id] : [];
     } else {
-      log.warn('Table', '`column.type` must be one of `multilpe` and `single`');
+      log.warn('Table', '`column.type` must be one of `multiple` and `single`');
       return;
     }
     setTSelectedRowKeys(selectedRowKeys, {
