@@ -36,11 +36,17 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     } = this;
 
     return {
+      // 数据源
       store: null,
+      // 缓存节点
       nodesMap: null,
+      // 缓存鼠标事件
       mouseEvent: null,
-      useNestedView: true,
+      // 是否启用嵌套布局
+      nested: true,
+      // 当前渲染节点列表
       treeNodes: [],
+      // 混合配置对象
       treeScope: {
         checkProps,
         empty,
@@ -50,7 +56,6 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         operations,
         scopedSlots: null,
       },
-      transitionCD: null,
     };
   },
   computed: {
@@ -99,7 +104,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         <TreeItem
           key={node.value}
           node={node}
-          nested={this.useNestedView}
+          nested={this.nested}
           treeScope={treeScope}
           onClick={this.handleClick}
           onChange={this.handleChange}
@@ -116,75 +121,43 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       }
       return nodesMap;
     },
-    // 渲染为平铺列表
-    renderTileList() {
-      const { store } = this;
-      const nodesMap = this.getNodesMap();
-      const allNodes = store.getNodes();
-      const curNodesMap = new Map();
-      this.treeNodes = allNodes.map((node: TreeNode) => {
-        curNodesMap.set(node.value, 1);
-        // 维持住已经渲染的节点，不进行dom的增删
-        let nodeView = nodesMap.get(node.value);
-        // 如果需要展示，生成新的vnode
-        if (!nodeView && node.visible) {
-          // 初次仅渲染可显示的节点
-          // 不存在节点视图，则创建该节点视图并插入到当前位置
-          nodeView = this.renderItem(node);
-          nodesMap.set(node.value, nodeView);
-        }
-        return nodeView;
-      });
-
-      // 更新缓存后，被删除的节点要移除掉，避免内存泄露
-      this.$nextTick(() => {
-        const keys = [...nodesMap.keys()];
-        keys.forEach((value: string) => {
-          if (!curNodesMap.get(value)) {
-            nodesMap.delete(value);
-          }
-        });
-        curNodesMap.clear();
-      });
-    },
-    // 渲染为嵌套结构列表
-    renderNestedList() {
-      const { store } = this;
-      const nodesMap = this.getNodesMap();
-      const childrenNodes = store.getChildren();
-      const curNodesMap = new Map();
-      this.treeNodes = childrenNodes.map((node: TreeNode) => {
-        curNodesMap.set(node.value, 1);
-        // 维持住已经渲染的节点，不进行dom的增删
-        let nodeView = nodesMap.get(node.value);
-        // 如果需要展示，生成新的vnode
-        if (!nodeView && node.visible) {
-          // 初次仅渲染可显示的节点
-          // 不存在节点视图，则创建该节点视图并插入到当前位置
-          nodeView = this.renderItem(node);
-          nodesMap.set(node.value, nodeView);
-        }
-        return nodeView;
-      });
-
-      // 更新缓存后，被删除的节点要移除掉，避免内存泄露
-      this.$nextTick(() => {
-        const keys = [...nodesMap.keys()];
-        keys.forEach((value: string) => {
-          if (!curNodesMap.get(value)) {
-            nodesMap.delete(value);
-          }
-        });
-        curNodesMap.clear();
-      });
-    },
     // 刷新树的视图状态
     refresh() {
-      if (this.useNestedView) {
-        this.renderNestedList();
+      const { store, nested } = this;
+      const nodesMap = this.getNodesMap();
+      let nodes = [];
+      if (nested) {
+        // 渲染为嵌套结构
+        nodes = store.getChildren();
       } else {
-        this.renderTileList();
+        // 渲染为平铺列表
+        nodes = store.getNodes();
       }
+      const curNodesMap = new Map();
+      this.treeNodes = nodes.map((node: TreeNode) => {
+        curNodesMap.set(node.value, 1);
+        // 维持住已经渲染的节点，不进行dom的增删
+        let nodeView = nodesMap.get(node.value);
+        // 如果需要展示，生成新的vnode
+        if (!nodeView && node.visible) {
+          // 初次仅渲染可显示的节点
+          // 不存在节点视图，则创建该节点视图并插入到当前位置
+          nodeView = this.renderItem(node);
+          nodesMap.set(node.value, nodeView);
+        }
+        return nodeView;
+      });
+
+      // 更新缓存后，被删除的节点要移除掉，避免内存泄露
+      this.$nextTick(() => {
+        const keys = [...nodesMap.keys()];
+        keys.forEach((value: string) => {
+          if (!curNodesMap.get(value)) {
+            nodesMap.delete(value);
+          }
+        });
+        curNodesMap.clear();
+      });
     },
     // 同步 Store 选项
     updateStoreConfig() {

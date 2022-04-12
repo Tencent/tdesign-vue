@@ -44,7 +44,7 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
       return styles;
     },
     getClassList(): ClassName {
-      const { node } = this;
+      const { node, nested } = this;
       const list = [];
       list.push(CLASS_NAMES.treeNode);
       list.push({
@@ -52,10 +52,12 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
         [CLASS_NAMES.actived]: node.isActivable() ? node.actived : false,
         [CLASS_NAMES.disabled]: node.isDisabled(),
       });
-      if (node.visible) {
-        list.push(CLASS_NAMES.treeNodeVisible);
-      } else {
-        list.push(CLASS_NAMES.treeNodeHidden);
+      if (!nested) {
+        if (node.visible) {
+          list.push(CLASS_NAMES.treeNodeVisible);
+        } else {
+          list.push(CLASS_NAMES.treeNodeHidden);
+        }
       }
       return list;
     },
@@ -319,9 +321,13 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
     },
   },
   created() {
+    // console.log('created:', this.node.value);
     if (this.node) {
       this.data = this.node.data;
     }
+  },
+  mounted() {
+    // console.log('mounted:', this.node.value);
   },
   destroyed() {
     this.data = null;
@@ -366,16 +372,32 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
           node={child}
           nested={nested}
           treeScope={treeScope}
-          onClick={this.handleClick}
-          onChange={this.handleChange}
+          onClick={this.proxyClick}
+          onChange={this.proxyChange}
         />
       );
     });
 
+    const childrenClassList = [];
+    childrenClassList.push(CLASS_NAMES.treeBranch);
+    if (node.expanded) {
+      childrenClassList.push(CLASS_NAMES.treeChildrenVisible);
+    } else {
+      childrenClassList.push(CLASS_NAMES.treeChildrenHidden);
+    }
+
+    const allChildren = node.walk();
+    allChildren.shift();
+    const visibleChildren = allChildren.filter((node) => node.visible);
+    const childrenStyles = {
+      '--hscale': visibleChildren.length,
+    };
+
     const childrenBox = (
       <transition-group
         tag="div"
-        class={CLASS_NAMES.treeChildren}
+        class={childrenClassList}
+        style={childrenStyles}
         enter-active-class={CLASS_NAMES.treeNodeEnter}
         leave-active-class={CLASS_NAMES.treeNodeLeave}
       >

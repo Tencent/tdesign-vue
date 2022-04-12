@@ -35,6 +35,8 @@ export const CLASS_NAMES = {
   treeOperations: `${tree}__operations`,
   treeNodeVisible: `${tree}__item--visible`,
   treeNodeHidden: `${tree}__item--hidden`,
+  treeChildrenVisible: `${tree}__children--visible`,
+  treeChildrenHidden: `${tree}__children--hidden`,
   treeNodeEnter: `${tree}__item--enter-active`,
   treeNodeLeave: `${tree}__item--leave-active`,
   line: `${tree}__line`,
