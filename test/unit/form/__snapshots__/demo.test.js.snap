@@ -6,7 +6,7 @@ exports[`Form base demo works fine 1`] = `
     class="t-form"
   >
     <div
-      class="t-form__item t-form-item__name"
+      class="t-form__item t-form-item__name t-form__item-with-extra"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -41,11 +41,14 @@ exports[`Form base demo works fine 1`] = `
             </div>
           </div>
         </div>
+        <div
+          class="t-input__extra"
+        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__tel"
+      class="t-form__item t-form-item__tel t-form__item-with-extra"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -80,11 +83,14 @@ exports[`Form base demo works fine 1`] = `
             </div>
           </div>
         </div>
+        <div
+          class="t-input__extra"
+        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__status"
+      class="t-form__item t-form-item__status t-form__item-with-extra"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -114,11 +120,14 @@ exports[`Form base demo works fine 1`] = `
             />
           </div>
         </div>
+        <div
+          class="t-input__extra"
+        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__gender"
+      class="t-form__item t-form-item__gender t-form__item-with-extra"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -179,11 +188,14 @@ exports[`Form base demo works fine 1`] = `
             </label>
           </div>
         </div>
+        <div
+          class="t-input__extra"
+        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__course"
+      class="t-form__item t-form-item__course t-form__item-with-extra"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -261,11 +273,14 @@ exports[`Form base demo works fine 1`] = `
             </label>
           </div>
         </div>
+        <div
+          class="t-input__extra"
+        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item t-form-item__ t-form__item-with-extra"
       style="margin-left: 100px;"
     >
       <div
@@ -305,6 +320,9 @@ exports[`Form base demo works fine 1`] = `
             </span>
           </button>
         </div>
+        <div
+          class="t-input__extra"
+        />
       </div>
     </div>
   </form>
