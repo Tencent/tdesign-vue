@@ -46,10 +46,14 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
   }
 
   toggleExpandData(p: { rowIndex: number; row: T }, dataSource: T[], keys: KeysType) {
+    if (!p) {
+      log.error('EnhancedTable', 'the node you want to toggleExpand doest not exist in `data`');
+      return dataSource;
+    }
     const rowValue = get(p.row, keys.rowKey);
     if (rowValue === undefined) {
       log.error('EnhancedTable', '`rowKey` could be wrong, can not get rowValue from `data` by `rowKey`.');
-      return;
+      return [];
     }
     const r = this.treeDataMap.get(rowValue) || {
       row: p.row,

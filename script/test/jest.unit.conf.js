@@ -7,13 +7,7 @@ module.exports = {
   // close coverage by default
   collectCoverage: true,
   coverageDirectory: '<rootDir>/test/unit/coverage',
-  collectCoverageFrom: [
-    'src/**/*.{ts,tsx,js,vue}',
-    '!**/node_modules/**',
-  ],
-  testPathIgnorePatterns: [
-    '/node_modules/',
-    '/src/_common',
-  ],
-  coverageReporters: ['html', 'text-summary'],
+  collectCoverageFrom: ['src/**/*.{ts,tsx,js,vue}', '!**/node_modules/**'],
+  testPathIgnorePatterns: ['/node_modules/', '/src/_common'],
+  coverageReporters: ['html', 'text-summary', 'cobertura'],
 };

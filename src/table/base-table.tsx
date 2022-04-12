@@ -38,11 +38,6 @@ export default defineComponent({
 
   props: {
     ...props,
-    /**
-     * 渲染展开行，非公开属性，请勿在业务中使用
-     */
-    isColDraggable: Boolean,
-    isRowDraggable: Boolean,
     renderExpandedRow: Function as PropType<BaseTableProps['renderExpandedRow']>,
   },
 
@@ -264,6 +259,8 @@ export default defineComponent({
       rowHeight: this.rowHeight,
       trs: this.trs,
       bufferSize: this.bufferSize,
+      scroll: this.scroll,
+      tableContentElm: this.tableContentRef,
       handleRowMounted: this.handleRowMounted,
       renderExpandedRow: this.renderExpandedRow,
       ...pick(this.$props, extendTableProps),
@@ -320,6 +317,9 @@ export default defineComponent({
     );
 
     const topContent = this.renderTNode('topContent');
+    const bottomContent = this.renderTNode('bottomContent');
+    const pagination = this.renderPagination(h);
+    const bottom = !!bottomContent && <div class={this.tableBaseClass.bottomContent}>{bottomContent}</div>;
     return (
       <div ref="tableRef" class={this.dynamicBaseTableClasses} style="position: relative">
         {!!topContent && <div class={this.tableBaseClass.topContent}>{topContent}</div>}
@@ -342,7 +342,9 @@ export default defineComponent({
           ></div>
         )}
 
-        {this.renderPagination(h)}
+        {bottom}
+        {pagination}
+        {/* {this.bordered ? [pagination, bottom] : [bottom, pagination]} */}
       </div>
     );
   },
