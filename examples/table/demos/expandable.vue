@@ -17,7 +17,7 @@
 
     <div>
       <t-checkbox v-model="expandOnRowClick">允许点击行之后展开/收起</t-checkbox>
-      <t-checkbox v-model="fixedColums" style="margin-left: 32px">固定列</t-checkbox>
+      <t-checkbox v-model="fixedColumns" style="margin-left: 32px">固定列</t-checkbox>
       <t-checkbox v-model="emptyData" style="margin-left: 32px">空数据</t-checkbox>
     </div>
 
@@ -61,7 +61,7 @@
 <script lang="jsx">
 import { ChevronRightIcon, ChevronRightCircleIcon } from 'tdesign-icons-vue';
 
-const getColums = (isFixedColumn) => [
+const getColumns = (isFixedColumn) => [
   { colKey: 'instance', title: '集群名称', fixed: isFixedColumn ? 'left' : '' },
   {
     colKey: 'status',
@@ -104,7 +104,7 @@ export default {
       expandControl: 'true',
       expandIcon: true,
       expandOnRowClick: true,
-      fixedColums: false,
+      fixedColumns: false,
       emptyData: false,
       data,
       // 有哪些 data.id 在 expandedRowKeys 中，就显示这些 id 对应的行
@@ -137,7 +137,7 @@ export default {
   },
   computed: {
     columns() {
-      return getColums(this.fixedColums);
+      return getColumns(this.fixedColumns);
     },
   },
   watch: {
