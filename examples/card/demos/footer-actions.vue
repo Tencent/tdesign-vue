@@ -1,0 +1,104 @@
+<template>
+  <div class="tdesign-demo-block">
+    <t-row :align="'middle'" justify="center" :gutter="16">
+      <t-col :span="8">
+        <t-card :cover="cover" theme="poster2">
+          <template #footer>
+            <t-row :align="'middle'" justify="center">
+              <t-col flex="auto">
+                <t-button block variant="text">
+                  <thumb-up-icon size="24" />
+                </t-button>
+              </t-col>
+              <t-col flex="none">
+                <t-divider theme="vertical" />
+              </t-col>
+              <t-col flex="auto">
+                <t-button block variant="text">
+                  <chat-icon size="24" />
+                </t-button>
+              </t-col>
+              <t-col flex="none">
+                <t-divider theme="vertical" />
+              </t-col>
+              <t-col flex="auto">
+                <t-button block variant="text">
+                  <share-icon size="24" />
+                </t-button>
+              </t-col>
+            </t-row>
+          </template>
+        </t-card>
+      </t-col>
+    </t-row>
+    <br />
+    <t-row :align="'middle'" justify="center" :gutter="16">
+      <t-col :span="8">
+        <t-card :cover="cover" theme="poster2">
+          <template #footer>
+            <t-button variant="text">
+              <heart-icon size="24" />
+            </t-button>
+            <t-button variant="text">
+              <share-icon size="24" />
+            </t-button>
+          </template>
+          <template #actions>
+            <t-dropdown :options="options" :min-column-width="112" @click="clickHandler">
+              <t-button variant="text">
+                <more-icon size="24" />
+              </t-button>
+            </t-dropdown>
+          </template>
+        </t-card>
+      </t-col>
+    </t-row>
+    <br />
+    <t-row :align="'middle'" justify="center" :gutter="16">
+      <t-col :span="8">
+        <t-card :cover="cover" theme="poster2">
+          <template #footer>
+            <t-avatar-group cascading="left-up" :max="2">
+              <t-avatar :image="image" />
+              <t-avatar>Q</t-avatar>
+              <t-avatar>C</t-avatar>
+              <t-avatar>G</t-avatar>
+              <t-avatar :icon="icon" />
+            </t-avatar-group>
+          </template>
+          <template #actions>
+            <t-dropdown :options="options" :min-column-width="112" @click="clickHandler">
+              <t-button variant="text">
+                <more-icon size="24" />
+              </t-button>
+            </t-dropdown>
+          </template>
+        </t-card>
+      </t-col>
+    </t-row>
+  </div>
+</template>
+<script setup lang="jsx">
+import { ThumbUpIcon, ChatIcon, ShareIcon, HeartIcon, MoreIcon, UserIcon } from 'tdesign-icons-vue-next';
+import { MessagePlugin } from 'tdesign-vue-next';
+
+const cover = 'https://tdesign.gtimg.com/site/source/card-demo.png';
+
+const icon = () => <UserIcon />;
+const image = 'https://tdesign.gtimg.com/site/avatar.jpg';
+
+const options = [
+  {
+    content: '操作一',
+    value: 1,
+  },
+  {
+    content: '操作二',
+    value: 2,
+  },
+];
+
+const clickHandler = (data) => {
+  MessagePlugin.success(`选中【${data.content}】`);
+};
+</script>
