@@ -185,7 +185,9 @@ export default mixins(
     handleTInputFocus() {
       // TODO: 待改成select-input后删除
       // hack 在input聚焦时马上blur 避免出现输入光标
-      (this.$refs.native as HTMLInputElement).blur();
+      this.$nextTick(() => {
+        (this.$refs.native as HTMLInputElement).blur();
+      });
     },
     handleTimePick(col: EPickerCols, time: number, index: number) {
       if (!this.range || index === 0) {

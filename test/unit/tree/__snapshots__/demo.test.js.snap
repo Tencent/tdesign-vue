@@ -11,7 +11,7 @@ exports[`Tree:demo activable demo works fine 1`] = `
       class="t-form"
     >
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -39,11 +39,14 @@ exports[`Tree:demo activable demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
        
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -71,11 +74,14 @@ exports[`Tree:demo activable demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
        
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -103,6 +109,9 @@ exports[`Tree:demo activable demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
     </form>
@@ -444,7 +453,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
     class="t-form"
   >
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item t-form-item__ t-form__item-with-extra"
       style="margin-bottom: 16px;"
     >
       <div
@@ -475,11 +484,14 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             />
           </div>
         </div>
+        <div
+          class="t-input__extra"
+        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item t-form-item__ t-form__item-with-extra"
       style="margin-bottom: 16px;"
     >
       <div
@@ -510,11 +522,14 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             />
           </div>
         </div>
+        <div
+          class="t-input__extra"
+        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item t-form-item__ t-form__item-with-extra"
       style="margin-bottom: 16px;"
     >
       <div
@@ -597,6 +612,9 @@ exports[`Tree:demo checkable demo works fine 1`] = `
             />
           </div>
         </div>
+        <div
+          class="t-input__extra"
+        />
       </div>
     </div>
   </form>
@@ -1769,7 +1787,7 @@ exports[`Tree:demo data demo works fine 1`] = `
       class="t-form"
     >
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -1797,11 +1815,14 @@ exports[`Tree:demo data demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
        
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -1829,11 +1850,14 @@ exports[`Tree:demo data demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
        
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -1861,11 +1885,14 @@ exports[`Tree:demo data demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
        
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -1893,11 +1920,14 @@ exports[`Tree:demo data demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
        
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -1925,6 +1955,9 @@ exports[`Tree:demo data demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
     </form>
@@ -2312,7 +2345,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
       class="t-form"
     >
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -2340,11 +2373,14 @@ exports[`Tree:demo disabled demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
        
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -2372,6 +2408,9 @@ exports[`Tree:demo disabled demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
     </form>
@@ -2763,7 +2802,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
       class="t-form"
     >
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -2791,6 +2830,9 @@ exports[`Tree:demo disabled demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
     </form>
@@ -3234,7 +3276,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
       class="t-form"
     >
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -3262,11 +3304,14 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
        
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -3294,6 +3339,9 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
     </form>
@@ -3792,7 +3840,7 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
       class="t-form"
     >
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -3820,11 +3868,14 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
        
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -3852,6 +3903,9 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
     </form>
@@ -4685,7 +4739,7 @@ exports[`Tree:demo lazy demo works fine 1`] = `
       class="t-form"
     >
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -4713,11 +4767,14 @@ exports[`Tree:demo lazy demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
        
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -4745,6 +4802,9 @@ exports[`Tree:demo lazy demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
     </form>
@@ -4861,7 +4921,7 @@ exports[`Tree:demo line demo works fine 1`] = `
     class="t-form"
   >
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item t-form-item__ t-form__item-with-extra"
       style="margin-bottom: 16px;"
     >
       <div
@@ -4892,11 +4952,14 @@ exports[`Tree:demo line demo works fine 1`] = `
             />
           </div>
         </div>
+        <div
+          class="t-input__extra"
+        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item t-form-item__ t-form__item-with-extra"
       style="margin-bottom: 16px;"
     >
       <div
@@ -4927,6 +4990,9 @@ exports[`Tree:demo line demo works fine 1`] = `
             />
           </div>
         </div>
+        <div
+          class="t-input__extra"
+        />
       </div>
     </div>
   </form>
@@ -6813,7 +6879,7 @@ exports[`Tree:demo load demo works fine 1`] = `
       class="t-form"
     >
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -6841,6 +6907,9 @@ exports[`Tree:demo load demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
     </form>
@@ -7061,7 +7130,7 @@ exports[`Tree:demo operations demo works fine 1`] = `
       class="t-form"
     >
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -7089,11 +7158,14 @@ exports[`Tree:demo operations demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
        
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item t-form-item__ t-form__item-with-extra"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -7121,6 +7193,9 @@ exports[`Tree:demo operations demo works fine 1`] = `
               />
             </div>
           </div>
+          <div
+            class="t-input__extra"
+          />
         </div>
       </div>
     </form>
