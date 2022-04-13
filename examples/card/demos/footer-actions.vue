@@ -78,27 +78,47 @@
     </t-row>
   </div>
 </template>
-<script setup lang="jsx">
-import { ThumbUpIcon, ChatIcon, ShareIcon, HeartIcon, MoreIcon, UserIcon } from 'tdesign-icons-vue-next';
-import { MessagePlugin } from 'tdesign-vue-next';
+<script lang="jsx">
+import {
+  ThumbUpIcon, ChatIcon, ShareIcon, HeartIcon, MoreIcon, UserIcon,
+} from 'tdesign-icons-vue';
+import { MessagePlugin } from 'tdesign-vue';
 
-const cover = 'https://tdesign.gtimg.com/site/source/card-demo.png';
-
-const icon = () => <UserIcon />;
-const image = 'https://tdesign.gtimg.com/site/avatar.jpg';
-
-const options = [
-  {
-    content: '操作一',
-    value: 1,
+export default {
+  components: {
+    ThumbUpIcon,
+    ChatIcon,
+    ShareIcon,
+    HeartIcon,
+    MoreIcon,
   },
-  {
-    content: '操作二',
-    value: 2,
+  data() {
+    return {
+      cover: 'https://tdesign.gtimg.com/site/source/card-demo.png',
+      infoMessage: `这是一段很长很长很长很长很长很长很长很长很长很长很长很长
+  很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+  很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+  很长很长很长很长很长很长很长很长很长很长很长的内容示例。`,
+      image: 'https://tdesign.gtimg.com/site/avatar.jpg',
+      options: [
+        {
+          content: '操作一',
+          value: 1,
+        },
+        {
+          content: '操作二',
+          value: 2,
+        },
+      ],
+    };
   },
-];
-
-const clickHandler = (data) => {
-  MessagePlugin.success(`选中【${data.content}】`);
+  methods: {
+    icon() {
+      return <UserIcon />;
+    },
+    clickHandler(data) {
+      MessagePlugin.success(`选中【${data.content}】`);
+    },
+  },
 };
 </script>

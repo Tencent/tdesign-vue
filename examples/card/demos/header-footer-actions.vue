@@ -43,24 +43,38 @@
     </t-col>
   </t-row>
 </template>
-<script setup lang="jsx">
-import { ThumbUpIcon, ChatIcon, ShareIcon, MoreIcon } from 'tdesign-icons-vue-next';
-import { MessagePlugin } from 'tdesign-vue-next';
+<script>
+import {
+  ThumbUpIcon, ChatIcon, ShareIcon, MoreIcon,
+} from 'tdesign-icons-vue';
+import { MessagePlugin } from 'tdesign-vue';
 
-const cover = 'https://tdesign.gtimg.com/site/source/card-demo.png';
-
-const options = [
-  {
-    content: '操作一',
-    value: 1,
+export default {
+  components: {
+    ThumbUpIcon,
+    ChatIcon,
+    ShareIcon,
+    MoreIcon,
   },
-  {
-    content: '操作二',
-    value: 2,
+  data() {
+    return {
+      cover: 'https://tdesign.gtimg.com/site/source/card-demo.png',
+      options: [
+        {
+          content: '操作一',
+          value: 1,
+        },
+        {
+          content: '操作二',
+          value: 2,
+        },
+      ],
+    };
   },
-];
-
-const clickHandler = (data) => {
-  MessagePlugin.success(`选中【${data.content}】`);
+  methods: {
+    clickHandler() {
+      MessagePlugin.success('操作');
+    },
+  },
 };
 </script>

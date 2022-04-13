@@ -14,22 +14,37 @@
     </t-card>
   </div>
 </template>
-<script setup lang="jsx">
-import { MessagePlugin } from 'tdesign-vue-next';
-import { MoreIcon } from 'tdesign-icons-vue-next';
+<script>
+import { MessagePlugin } from 'tdesign-vue';
+import { MoreIcon } from 'tdesign-icons-vue';
 
-const clickHandler = (data) => {
-  MessagePlugin.success(`选中【${data.content}】`);
+export default {
+  components: {
+    MoreIcon,
+  },
+  data() {
+    return {
+      infoMessage: `这是一段很长很长很长很长很长很长很长很长很长很长很长很长
+  很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+  很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+  很长很长很长很长很长很长很长很长很长很长很长的内容示例。`,
+      options: [
+        {
+          content: '操作一',
+          value: 1,
+        },
+        {
+          content: '操作二',
+          value: 2,
+        },
+      ],
+      cover: 'https://tdesign.gtimg.com/site/source/card-demo.png',
+    };
+  },
+  methods: {
+    clickHandler(data) {
+      MessagePlugin.success(`选中【${data.content}】`);
+    },
+  },
 };
-const options = [
-  {
-    content: '操作一',
-    value: 1,
-  },
-  {
-    content: '操作二',
-    value: 2,
-  },
-];
-const cover = 'https://tdesign.gtimg.com/site/source/card-demo.png';
 </script>

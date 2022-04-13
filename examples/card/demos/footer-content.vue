@@ -8,12 +8,23 @@
   </div>
 </template>
 <script setup lang="jsx">
-import { MoreIcon } from 'tdesign-icons-vue-next';
+import { MoreIcon } from 'tdesign-icons-vue';
 
-import { MessagePlugin } from 'tdesign-vue-next';
+import { MessagePlugin } from 'tdesign-vue';
 
-const clickHandler = (data) => {
-  MessagePlugin.success(`选中【${data.content}】`);
+export default {
+  components: {
+    MoreIcon,
+  },
+  data() {
+    return {
+      cover: 'https://tdesign.gtimg.com/site/source/card-demo.png',
+    };
+  },
+  methods: {
+    clickHandler(data) {
+      MessagePlugin.success(`选中【${data.content}】`);
+    },
+  },
 };
-const cover = 'https://tdesign.gtimg.com/site/source/card-demo.png';
 </script>

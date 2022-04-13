@@ -16,18 +16,25 @@
     </t-row>
   </div>
 </template>
-<script setup lang="jsx">
-import { MessagePlugin } from 'tdesign-vue-next';
+<script>
+import { MessagePlugin } from 'tdesign-vue';
 
-const clickHandler = () => {
-  MessagePlugin.success('操作');
-};
-
-const title = '标题';
-const subtitle = '副标题';
-const description = '描述';
-const actions = '操作';
-const infoMessage = `这是一段很长很长很长很长
+export default {
+  data() {
+    return {
+      title: '标题',
+      subtitle: '副标题',
+      description: '描述',
+      actions: '操作',
+      infoMessage: `这是一段很长很长很长很长
   很长很长很长很长很长很长很长很长很长很长很长很长很长很长
-  很长很长很长很长很长很长很长很长很长很长很长的内容示例。`;
+  很长很长很长很长很长很长很长很长很长很长很长的内容示例。`,
+    };
+  },
+  methods: {
+    clickHandler() {
+      MessagePlugin.success('操作');
+    },
+  },
+};
 </script>

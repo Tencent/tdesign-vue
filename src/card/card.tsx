@@ -2,15 +2,16 @@ import { defineComponent, computed } from '@vue/composition-api';
 
 import { usePrefixClass } from '../config-provider';
 import useCommonClassName from '../hooks/useCommonClassName';
-import { useTNodeJSX } from '../hooks/tnode';
+import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
+
 import TLoading from '../loading';
 import props from './props';
 
 export default defineComponent({
   name: 'TCard',
-  props,
+  props: { ...props },
+  components: { TLoading },
   setup(props, { slots }) {
-    const renderTNodeJSX = useTNodeJSX();
     const COMPONENT_NAME = usePrefixClass('card');
     const { sizeClassNames } = useCommonClassName();
 
@@ -58,7 +59,6 @@ export default defineComponent({
         || showTitle.value
         || showSubtitle.value
         || showDescription.value
-        || showDescription.value
         || showAvatar.value
         || (showStatus.value && isPoster2.value)
         || (showActions.value && !isPoster2.value),
@@ -67,50 +67,81 @@ export default defineComponent({
     // 是否展示底部区域
     const isFooterRender = computed(() => showFooter.value || (showActions.value && isPoster2.value));
 
-    if (showLoading.value) {
+    return {
+      isHeaderRender,
+      isFooterRender,
+      isPoster2,
+      showLoading,
+      showHeader,
+      showTitle,
+      showSubtitle,
+      showDescription,
+      showAvatar,
+      showActions,
+      showStatus,
+      showContent,
+      showCover,
+      showFooter,
+      baseCls,
+      bodyCls,
+      footerCls,
+      coverCls,
+      actionsCls,
+      headerCls,
+      headerAvatarCls,
+      headerTitleCls,
+      headerSubTitleCls,
+      headerDescriptionCls,
+      COMPONENT_NAME,
+    };
+  },
+  methods: {
+    renderLoading() {},
+    // 封面区域渲染逻辑
+    renderCover() {
+      const textCover = typeof this.cover === 'string';
       return (
-        renderTNodeJSX('loading') || (
-          <TLoading>
-            <div class={baseCls}></div>
-          </TLoading>
-        )
+        <div class={this.coverCls}>{textCover ? <img src={this.cover}></img> : renderTNodeJSX(this, 'cover')}</div>
       );
-    }
-
+    },
     // 头部区域渲染逻辑
-    const renderHeader = () => {
-      if (showHeader.value) return <div class={headerCls}>{renderTNodeJSX('header')}</div>;
+    renderHeader() {
+      if (this.showHeader) return <div class={this.headerCls}>{renderTNodeJSX(this, 'header')}</div>;
       return (
-        <div class={headerCls}>
-          <div class={`${COMPONENT_NAME.value}__header-wrapper`}>
-            {showAvatar.value && <div class={headerAvatarCls}>{renderTNodeJSX('avatar')}</div>}
+        <div class={this.headerCls}>
+          <div class={`${this.COMPONENT_NAME}__header-wrapper`}>
+            {this.showAvatar && <div class={this.headerAvatarCls}>{renderTNodeJSX(this, 'avatar')}</div>}
             <div>
-              {showTitle.value && <span class={headerTitleCls}>{renderTNodeJSX('title')}</span>}
-              {showSubtitle.value && <span class={headerSubTitleCls}>{renderTNodeJSX('subtitle')}</span>}
-              {showDescription.value && <p class={headerDescriptionCls}>{renderTNodeJSX('description')}</p>}
+              {this.showTitle && <span class={this.headerTitleCls}>{renderTNodeJSX(this, 'title')}</span>}
+              {this.showSubtitle && <span class={this.headerSubTitleCls}>{renderTNodeJSX(this, 'subtitle')}</span>}
+              {this.showDescription && <p class={this.headerDescriptionCls}>{renderTNodeJSX(this, 'description')}</p>}
             </div>
           </div>
-          {showActions.value && !isPoster2.value && <div class={actionsCls}>{renderTNodeJSX('actions')}</div>}
-          {showStatus.value && <div class={actionsCls}>{renderTNodeJSX('status')}</div>}
+          {this.showActions && !this.isPoster2 && <div class={this.actionsCls}>{renderTNodeJSX(this, 'actions')}</div>}
+          {this.showStatus && <div class={this.actionsCls}>{renderTNodeJSX(this, 'status')}</div>}
         </div>
       );
-    };
-
-    // 封面区域渲染逻辑
-    const renderCover = () => {
-      const textCover = typeof props.cover === 'string';
-      return <div class={coverCls}>{textCover ? <img src={props.cover}></img> : renderTNodeJSX('cover')}</div>;
-    };
-
-    return () => (
-      <div class={baseCls}>
-        {isHeaderRender.value ? renderHeader() : null}
-        {showCover.value ? renderCover() : null}
-        {showContent.value && <div class={bodyCls}>{renderTNodeJSX('default') || renderTNodeJSX('content')}</div>}
-        {isFooterRender.value && (
-          <div class={footerCls}>
-            <div class={`${COMPONENT_NAME.value}__footer-wrapper`}>{renderTNodeJSX('footer')}</div>
-            {showActions.value && isPoster2.value && <div class={actionsCls}>{renderTNodeJSX('actions')}</div>}
+    },
+  },
+  render() {
+    if (this.loading) {
+      return renderTNodeJSX(this, 'loading', {
+        defaultNode: (
+          <t-loading>
+            <div class={this.baseCls}></div>
+          </t-loading>
+        ),
+      });
+    }
+    return (
+      <div class={this.baseCls}>
+        {this.isHeaderRender ? this.renderHeader() : null}
+        {this.showCover ? this.renderCover() : null}
+        {this.showContent && <div class={this.bodyCls}>{renderContent(this, 'default', 'content')}</div>}
+        {this.isFooterRender && (
+          <div class={this.footerCls}>
+            <div class={`${this.COMPONENT_NAME}__footer-wrapper`}>{renderTNodeJSX(this, 'footer')}</div>
+            {this.showActions && this.isPoster2 && <div class={this.actionsCls}>{renderTNodeJSX(this, 'actions')}</div>}
           </div>
         )}
       </div>

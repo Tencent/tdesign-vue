@@ -40,11 +40,22 @@
     </t-row>
   </div>
 </template>
-<script setup lang="jsx">
-import { ThumbUpIcon, ChatIcon, ShareIcon } from 'tdesign-icons-vue-next';
+<script>
+import { ThumbUpIcon, ChatIcon, ShareIcon } from 'tdesign-icons-vue';
 
-const title = '标题';
-const subtitle = '副标题';
-const actions = '默认标签';
-const cover = 'https://tdesign.gtimg.com/site/source/card-demo.png';
+export default {
+  components: {
+    ThumbUpIcon,
+    ChatIcon,
+    ShareIcon,
+  },
+  data() {
+    return {
+      title: '标题',
+      subtitle: '副标题',
+      actions: '默认标签',
+      cover: 'https://tdesign.gtimg.com/site/source/card-demo.png',
+    };
+  },
+};
 </script>
