@@ -308,16 +308,16 @@ export default {
           component: () => import('@/examples/progress/progress.md'),
         },
         {
-          title: 'Swiper 轮播框',
-          name: 'swiper',
-          path: '/vue/components/swiper',
-          component: () => import('@/examples/swiper/swiper.md'),
-        },
-        {
           title: 'Skeleton 骨架屏',
           name: 'skeleton',
           path: '/vue/components/skeleton',
           component: () => import('@/examples/skeleton/skeleton.md'),
+        },
+        {
+          title: 'Swiper 轮播框',
+          name: 'swiper',
+          path: '/vue/components/swiper',
+          component: () => import('@/examples/swiper/swiper.md'),
         },
         {
           title: 'Table 表格',

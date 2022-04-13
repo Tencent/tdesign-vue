@@ -21,12 +21,12 @@
       </t-swiper-item>
     </t-swiper>
     <div class="tdesign-demo-block-row">
-      <Button
+      <t-button
         size="small"
         @click="current = current + 2 > 6 ? 0 : current + 1"
       >
         跳转到第 {{current + 2 >= 7 ? 1 : current + 2}} 项
-      </Button>
+      </t-button>
     </div>
   </div>
 </template>
