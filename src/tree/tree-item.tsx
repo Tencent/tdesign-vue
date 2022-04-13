@@ -186,7 +186,6 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
 
       const labelClasses = [
         CLASS_NAMES.treeLabel,
-        CLASS_NAMES.treeLabelStrictly,
         {
           [CLASS_NAMES.actived]: node.isActivable() ? node.actived : false,
         },
@@ -369,7 +368,6 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
     },
   },
   created() {
-    // console.log('created:', this.node.value);
     if (this.node) {
       this.data = this.node.data;
     }
@@ -420,9 +418,13 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
 
     const allChildren = node.walk();
     allChildren.shift();
-    const allVisibleChildren = allChildren.filter((node: TreeNode) => node.visible);
+    const allExpandedChildren = allChildren.filter((node: TreeNode) => {
+      const parent = node.getParent();
+      if (!parent) return true;
+      return parent.expanded;
+    });
     const childrenStyles = {
-      '--hscale': allVisibleChildren.length,
+      '--hscale': allExpandedChildren.length,
     };
 
     const childrenBox = (

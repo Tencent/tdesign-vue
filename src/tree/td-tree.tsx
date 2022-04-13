@@ -35,10 +35,10 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     return {
       // 数据源
       store: null,
+      // 是否启用嵌套布局
+      nested: false,
       // 当前渲染节点列表
       treeNodes: [],
-      // 是否启用嵌套布局
-      nested: true,
       // 缓存节点
       $nodesMap: null,
       // 缓存鼠标事件
@@ -458,7 +458,6 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       operations,
       scopedSlots: null,
     };
-    this.treeNodes = [];
     this.$nodesMap = new Map();
     this.$mouseEvent = null;
 

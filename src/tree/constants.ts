@@ -28,7 +28,6 @@ export const CLASS_NAMES = {
   treeHoverable: `${tree}--hoverable`,
   treeCheckable: `${tree}--checkable`,
   treeLabel: `${tree}__label`,
-  treeLabelStrictly: `${tree}__label--strictly`,
   treeIcon: `${tree}__icon`,
   treeIconDefault: `${tree}__icon--default`,
   treeSpace: `${tree}__space`,
