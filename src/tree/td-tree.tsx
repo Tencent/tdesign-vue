@@ -36,10 +36,10 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     return {
       // 数据源
       store: null,
-      // 是否启用嵌套布局
-      nested: false,
-      // 当前渲染节点列表
-      treeNodes: [],
+      // 可视节点数据列表
+      visibleNodes: [],
+      // 视图列表
+      treeNodeViews: [],
       // 混合配置对象
       // 传递给子节点，一起监听属性
       // 便于同步传递给 tree 的状态
@@ -53,7 +53,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         operations: null,
       },
       // 缓存节点
-      $nodesMap: null,
+      $cacheMap: null,
       // 缓存鼠标事件
       $mouseEvent: null,
       // 用于禁止绑定监听的 scope 对象，例如 scopedSlots
@@ -85,6 +85,26 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         list.push(CLASS_NAMES.treeBlockNode);
       }
       return list;
+    },
+    // 单个节点高度(px)
+    itemMaxHeight(): number {
+      return 42;
+    },
+    // tree 高度限制格式化
+    maxHeight(): number {
+      return Math.max(0, this.height);
+    },
+    // 是否使用虚拟滚动
+    vScrollEnable(): boolean {
+      return !!this.maxHeight;
+    },
+    // 是否启用嵌套布局
+    nested(): boolean {
+      let nested = !!this.maxHeight;
+      // 暂时仅使用平铺布局
+      // 嵌套布局还需要进一步提升渲染性能
+      nested = false;
+      return nested;
     },
   },
   watch: {
@@ -120,7 +140,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     },
     // 刷新树的视图状态
     refresh() {
-      const { store, nested, $nodesMap } = this;
+      const { store, nested } = this;
       let nodes = [];
       if (nested) {
         // 渲染为嵌套结构
@@ -129,30 +149,37 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         // 渲染为平铺列表
         nodes = store.getNodes();
       }
-      const curNodesMap = new Map();
-      this.treeNodes = nodes.map((node: TreeNode) => {
-        curNodesMap.set(node.value, 1);
-        // 维持住已经渲染的节点，不进行dom的增删
-        let nodeView = $nodesMap.get(node.value);
-        // 如果需要展示，生成新的vnode
-        if (!nodeView && node.visible) {
+      // 默认取全部可显示节点
+      this.visibleNodes = nodes.filter((node: TreeNode) => node.visible);
+      this.renderTreeNodeViews();
+    },
+    // 记录要渲染的节点
+    renderTreeNodeViews() {
+      const { store, visibleNodes, $cacheMap } = this;
+      this.treeNodeViews = visibleNodes.map((node: TreeNode) => {
+        // 如果节点已经存在，则使用缓存节点
+        let nodeView = $cacheMap.get(node.value);
+        // 如果节点未曾创建，则临时创建
+        if (!nodeView) {
+          // console.log('rebuild view:', node.value);
           // 初次仅渲染可显示的节点
           // 不存在节点视图，则创建该节点视图并插入到当前位置
           nodeView = this.renderItem(node);
-          $nodesMap.set(node.value, nodeView);
+          $cacheMap.set(node.value, nodeView);
+        } else {
+          // console.log('use cached view:', node.value);
         }
         return nodeView;
       });
 
       // 更新缓存后，被删除的节点要移除掉，避免内存泄露
       this.$nextTick(() => {
-        const keys = [...$nodesMap.keys()];
-        keys.forEach((value: string) => {
-          if (!curNodesMap.get(value)) {
-            $nodesMap.delete(value);
+        $cacheMap.forEach((view: VNode, value: string) => {
+          if (!store.getNode(value)) {
+            // console.log('cache delete', value);
+            $cacheMap.delete(value);
           }
         });
-        curNodesMap.clear();
       });
     },
     // 同步 Store 选项
@@ -245,8 +272,8 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       this.refresh();
     },
     rebuild(list: TdTreeProps['data']) {
-      this.$nodesMap.clear();
-      this.treeNodes.length = 0;
+      this.$cacheMap.clear();
+      this.visibleNodes.length = 0;
       const { store, value, actived } = this;
       store.reload(list);
       // 初始化选中状态
@@ -467,7 +494,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     // -------- 公共方法 end --------
   },
   created() {
-    this.$nodesMap = new Map();
+    this.$cacheMap = new Map();
     this.$mouseEvent = null;
     this.$proxyScope = {};
     this.updateTreeScope();
@@ -475,7 +502,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     this.build();
   },
   render(): VNode {
-    const { classList, treeNodes, $proxyScope } = this;
+    const { classList, $proxyScope, treeNodeViews } = this;
 
     // 用于性能调试
     // console.log('tree render');
@@ -489,7 +516,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
 
     // 空数据判定
     let emptyNode: TNodeReturnValue = null;
-    if (treeNodes.length <= 0) {
+    if (treeNodeViews.length <= 0) {
       const useLocale = !this.empty && !this.treeScope.empty;
       const emptyContent = useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty');
       emptyNode = <div class={CLASS_NAMES.treeEmpty}>{emptyContent}</div>;
@@ -503,7 +530,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         enter-active-class={CLASS_NAMES.treeNodeEnter}
         leave-active-class={CLASS_NAMES.treeNodeLeave}
       >
-        {treeNodes}
+        {treeNodeViews}
       </transition-group>
     );
 

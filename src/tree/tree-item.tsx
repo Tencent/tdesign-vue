@@ -376,10 +376,12 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
     },
   },
   created() {
-    if (this.node) {
-      this.data = this.node.data;
+    const { node } = this;
+    if (node) {
+      this.data = node.data;
     }
     this.$nodesMap = new Map();
+    // console.log('item created', node.value);
   },
   destroyed() {
     this.data = null;
