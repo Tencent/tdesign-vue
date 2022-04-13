@@ -25,6 +25,9 @@ export const TreeItemProps = {
   treeScope: {
     type: Object,
   },
+  proxyScope: {
+    type: Object,
+  },
 };
 
 const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnimationMixins).extend({
@@ -63,8 +66,9 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
       return list;
     },
     renderLine(createElement: CreateElement): VNode {
-      const { node, treeScope } = this;
-      const { line, scopedSlots } = treeScope;
+      const { node, treeScope, proxyScope } = this;
+      const { line } = treeScope;
+      const { scopedSlots } = proxyScope;
       const iconVisible = !!treeScope.icon;
 
       let lineNode = null;
@@ -126,8 +130,9 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
       return <CaretRightSmallIcon />;
     },
     renderIcon(createElement: CreateElement): VNode {
-      const { node, treeScope } = this;
-      const { icon, scopedSlots } = treeScope;
+      const { node, treeScope, proxyScope } = this;
+      const { icon } = treeScope;
+      const { scopedSlots } = proxyScope;
       let isDefaultIcon = false;
 
       let iconNode = null;
@@ -164,8 +169,9 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
       return iconNode;
     },
     renderLabel(createElement: CreateElement): VNode {
-      const { node, treeScope } = this;
-      const { label, scopedSlots, disableCheck } = treeScope;
+      const { node, treeScope, proxyScope } = this;
+      const { label, disableCheck } = treeScope;
+      const { scopedSlots } = proxyScope;
       const checkProps = treeScope.checkProps || {};
 
       let labelNode = null;
@@ -237,8 +243,9 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
       return labelNode;
     },
     renderOperations(createElement: CreateElement): VNode {
-      const { node, treeScope } = this;
-      const { operations, scopedSlots } = treeScope;
+      const { node, treeScope, proxyScope } = this;
+      const { operations } = treeScope;
+      const { scopedSlots } = proxyScope;
 
       let opNode = null;
       if (scopedSlots?.operations) {
@@ -321,13 +328,14 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
     },
     // 创建单个 tree 节点
     getNestedItem(node: TreeNode) {
-      const { nested, treeScope } = this;
+      const { nested, treeScope, proxyScope } = this;
       const treeItem = (
         <TreeItem
           key={node.value}
           node={node}
           nested={nested}
           treeScope={treeScope}
+          proxyScope={proxyScope}
           onClick={this.proxyClick}
           onChange={this.proxyChange}
         />

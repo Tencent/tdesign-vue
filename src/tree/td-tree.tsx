@@ -31,7 +31,8 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
   },
   props,
   data() {
-    // 为属性加 $ 前缀，避免 vue 监听
+    // 添加 $ 前缀的属性，不会被 vue 监听，初始化时无法取得 data 中定义的值
+    // 写在 data 中是为了通过 ts 语法检测，应当在 created 生命周期初始化
     return {
       // 数据源
       store: null,
@@ -39,12 +40,27 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       nested: false,
       // 当前渲染节点列表
       treeNodes: [],
+      // 混合配置对象
+      // 传递给子节点，一起监听属性
+      // 便于同步传递给 tree 的状态
+      treeScope: {
+        checkProps: null,
+        disableCheck: false,
+        empty: null,
+        icon: null,
+        label: null,
+        line: null,
+        operations: null,
+      },
       // 缓存节点
       $nodesMap: null,
       // 缓存鼠标事件
       $mouseEvent: null,
-      // 混合配置对象
-      $treeScope: null,
+      // 用于禁止绑定监听的 scope 对象，例如 scopedSlots
+      // 如果 scopedSlots 放在可监听属性如 treeScope 中
+      // 会导致外部关联组件如 input value 更新时，同步触发了所有子节点 render 方法
+      // 因此单独提供此对象解锁关联
+      $proxyScope: null,
     };
   },
   computed: {
@@ -88,13 +104,14 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
   methods: {
     // 创建单个 tree 节点
     renderItem(node: TreeNode) {
-      const { nested, $treeScope } = this;
+      const { nested, treeScope, $proxyScope } = this;
       const treeItem = (
         <TreeItem
           key={node.value}
           node={node}
           nested={nested}
-          treeScope={$treeScope}
+          treeScope={treeScope}
+          proxyScope={$proxyScope}
           onClick={this.handleClick}
           onChange={this.handleChange}
         />
@@ -358,6 +375,11 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       }
       this.toggleChecked(node);
     },
+    updateTreeScope(): void {
+      const { treeScope } = this;
+      const scopedProps = pick(this, ['checkProps', 'disableCheck', 'empty', 'icon', 'label', 'line', 'operations']);
+      Object.assign(treeScope, scopedProps);
+    },
 
     // -------- 公共方法 start --------
     setItem(value: TreeNodeValue, options: TreeNodeState): void {
@@ -445,52 +467,36 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     // -------- 公共方法 end --------
   },
   created() {
-    const {
-      checkProps, empty, icon, label, line, operations,
-    } = this;
-    // 混合配置对象
-    this.$treeScope = {
-      checkProps,
-      empty,
-      icon,
-      label,
-      line,
-      operations,
-      scopedSlots: null,
-    };
     this.$nodesMap = new Map();
     this.$mouseEvent = null;
+    this.$proxyScope = {};
+    this.updateTreeScope();
 
     this.build();
   },
   render(): VNode {
-    const {
-      classList,
-      treeNodes,
-      // 用于同步 slot 属性
-      $treeScope,
-      $scopedSlots: scopedSlots,
-    } = this;
+    const { classList, treeNodes, $proxyScope } = this;
 
     // 用于性能调试
     // console.log('tree render');
 
-    const scopeProps = pick(this, ['checkProps', 'disableCheck', 'icon', 'label', 'line', 'operations']);
-
+    // 一些选项的变化，要传递到子节点去
     this.updateStoreConfig();
-    Object.assign($treeScope, scopeProps);
-    $treeScope.scopedSlots = scopedSlots;
+    this.updateTreeScope();
 
+    // 更新 scopedSlots
+    $proxyScope.scopedSlots = this.$scopedSlots;
+
+    // 空数据判定
     let emptyNode: TNodeReturnValue = null;
-    let treeNodeList = null;
-
     if (treeNodes.length <= 0) {
-      const useLocale = !this.empty && !this.$scopedSlots.empty;
+      const useLocale = !this.empty && !this.treeScope.empty;
       const emptyContent = useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty');
       emptyNode = <div class={CLASS_NAMES.treeEmpty}>{emptyContent}</div>;
     }
 
-    treeNodeList = (
+    // 构造列表
+    const treeNodeList = (
       <transition-group
         tag="div"
         class={CLASS_NAMES.treeList}
