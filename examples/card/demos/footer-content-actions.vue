@@ -48,3 +48,9 @@ export default {
   },
 };
 </script>
+<style scoped>
+.tdesign-demo-block /deep/ .t-card__actions {
+  display: flex;
+  align-items: center;
+}
+</style>

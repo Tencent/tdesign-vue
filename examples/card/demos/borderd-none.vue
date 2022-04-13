@@ -36,6 +36,6 @@ export default {
 <style lang="less" scoped>
 .demo-card {
   padding: 16px;
-  background-color: rgba(230, 230, 230, 1);
+  background-color: var(--td-bg-color-container-hover);
 }
 </style>
