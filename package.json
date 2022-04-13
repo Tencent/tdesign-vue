@@ -53,7 +53,7 @@
     "lint:tsc": "tsc --emitDeclarationOnly",
     "test": "npm run test:demo && npm run test:unit && npm run test:node",
     "test:demo": "node src/_common/test/script/generate-demo-test.js",
-    "test:update": "npm run test:unit-update && npm run test:node-update",
+    "test:update": "npm run test:demo && npm run test:unit-update && npm run test:node-update",
     "test:unit": "jest --config script/test/jest.unit.conf.js",
     "test:unit-update": "jest --config script/test/jest.unit.conf.js --updateSnapshot",
     "test:node": "jest --config script/test/jest.ssr.conf.js",
