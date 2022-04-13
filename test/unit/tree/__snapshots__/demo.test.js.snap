@@ -115,7 +115,6 @@ exports[`Tree:demo activable demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -144,7 +143,7 @@ exports[`Tree:demo activable demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -165,7 +164,7 @@ exports[`Tree:demo activable demo works fine 1`] = `
           trigger="expand"
         />
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -186,7 +185,7 @@ exports[`Tree:demo activable demo works fine 1`] = `
           trigger="expand"
         />
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -221,7 +220,7 @@ exports[`Tree:demo activable demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -242,7 +241,7 @@ exports[`Tree:demo activable demo works fine 1`] = `
           trigger="expand"
         />
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -263,7 +262,7 @@ exports[`Tree:demo activable demo works fine 1`] = `
           trigger="expand"
         />
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -288,7 +287,6 @@ exports[`Tree:demo base demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -317,7 +315,7 @@ exports[`Tree:demo base demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -352,7 +350,7 @@ exports[`Tree:demo base demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -387,7 +385,7 @@ exports[`Tree:demo base demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -422,7 +420,7 @@ exports[`Tree:demo base demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -608,7 +606,6 @@ exports[`Tree:demo checkable demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -637,7 +634,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -681,7 +678,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -725,7 +722,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -755,7 +752,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -785,7 +782,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -829,7 +826,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -859,7 +856,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -889,7 +886,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -933,7 +930,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -977,7 +974,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -1007,7 +1004,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -1037,7 +1034,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -1081,7 +1078,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -1111,7 +1108,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -1141,7 +1138,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -1185,7 +1182,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -1215,7 +1212,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -1245,7 +1242,7 @@ exports[`Tree:demo checkable demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -1358,7 +1355,6 @@ exports[`Tree:demo controlled demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -1387,7 +1383,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-is-indeterminate t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-indeterminate t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -1432,7 +1428,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-is-indeterminate t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-indeterminate t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -1477,7 +1473,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-is-checked t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-checked t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -1507,7 +1503,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-is-checked t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-checked t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -1537,7 +1533,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-is-checked t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-checked t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -1581,7 +1577,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -1625,7 +1621,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -1669,7 +1665,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly t-is-active"
+          class="t-checkbox t-tree__label t-is-active"
         >
           <input
             class="t-checkbox__former"
@@ -1699,7 +1695,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -1729,7 +1725,7 @@ exports[`Tree:demo controlled demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -1937,7 +1933,6 @@ exports[`Tree:demo data demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -1966,7 +1961,7 @@ exports[`Tree:demo data demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2010,7 +2005,7 @@ exports[`Tree:demo data demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2040,7 +2035,7 @@ exports[`Tree:demo data demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2070,7 +2065,7 @@ exports[`Tree:demo data demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2114,7 +2109,7 @@ exports[`Tree:demo data demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2144,7 +2139,7 @@ exports[`Tree:demo data demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2174,7 +2169,7 @@ exports[`Tree:demo data demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2218,7 +2213,7 @@ exports[`Tree:demo data demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2248,7 +2243,7 @@ exports[`Tree:demo data demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2278,7 +2273,7 @@ exports[`Tree:demo data demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2384,7 +2379,6 @@ exports[`Tree:demo disabled demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -2413,7 +2407,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-disabled t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2458,7 +2452,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-disabled t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2489,7 +2483,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-disabled t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2520,7 +2514,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-disabled t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2565,7 +2559,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-disabled t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2596,7 +2590,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-disabled t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2627,7 +2621,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-disabled t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2672,7 +2666,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-disabled t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2703,7 +2697,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-disabled t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2734,7 +2728,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-disabled t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2803,7 +2797,6 @@ exports[`Tree:demo disabled demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -2832,7 +2825,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2876,7 +2869,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-disabled t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2907,7 +2900,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2937,7 +2930,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -2981,7 +2974,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-disabled t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -3012,7 +3005,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -3042,7 +3035,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -3086,7 +3079,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -3116,7 +3109,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-is-disabled t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-disabled t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -3147,7 +3140,7 @@ exports[`Tree:demo disabled demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -3306,7 +3299,6 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -3335,7 +3327,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -3370,7 +3362,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -3391,7 +3383,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
           trigger="expand"
         />
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -3412,7 +3404,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
           trigger="expand"
         />
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -3447,7 +3439,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -3468,7 +3460,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
           trigger="expand"
         />
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -3489,7 +3481,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
           trigger="expand"
         />
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -3524,7 +3516,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -3545,7 +3537,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
           trigger="expand"
         />
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -3566,7 +3558,7 @@ exports[`Tree:demo expand-all demo works fine 1`] = `
           trigger="expand"
         />
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -3591,7 +3583,6 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -3620,7 +3611,7 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -3655,7 +3646,7 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -3690,7 +3681,7 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -3725,7 +3716,7 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -3746,7 +3737,7 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
           trigger="expand"
         />
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -3767,7 +3758,7 @@ exports[`Tree:demo expand-level demo works fine 1`] = `
           trigger="expand"
         />
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -3864,7 +3855,6 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -3893,7 +3883,7 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -3928,7 +3918,7 @@ exports[`Tree:demo expand-mutex demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -3978,7 +3968,6 @@ exports[`Tree:demo filter demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -4007,7 +3996,7 @@ exports[`Tree:demo filter demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -4042,7 +4031,7 @@ exports[`Tree:demo filter demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -4071,7 +4060,6 @@ exports[`Tree:demo icon demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -4094,7 +4082,7 @@ exports[`Tree:demo icon demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -4123,7 +4111,7 @@ exports[`Tree:demo icon demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -4146,7 +4134,6 @@ exports[`Tree:demo icon demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -4169,7 +4156,7 @@ exports[`Tree:demo icon demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -4198,7 +4185,7 @@ exports[`Tree:demo icon demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -4227,7 +4214,6 @@ exports[`Tree:demo label demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -4256,7 +4242,7 @@ exports[`Tree:demo label demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -4279,7 +4265,7 @@ exports[`Tree:demo label demo works fine 1`] = `
           trigger="expand"
         />
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -4302,7 +4288,7 @@ exports[`Tree:demo label demo works fine 1`] = `
           trigger="expand"
         />
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -4339,7 +4325,7 @@ exports[`Tree:demo label demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -4362,7 +4348,7 @@ exports[`Tree:demo label demo works fine 1`] = `
           trigger="expand"
         />
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -4385,7 +4371,7 @@ exports[`Tree:demo label demo works fine 1`] = `
           trigger="expand"
         />
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -4410,7 +4396,6 @@ exports[`Tree:demo label demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -4439,7 +4424,7 @@ exports[`Tree:demo label demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -4473,7 +4458,7 @@ exports[`Tree:demo label demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -4507,7 +4492,7 @@ exports[`Tree:demo label demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -4555,7 +4540,7 @@ exports[`Tree:demo label demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -4589,7 +4574,7 @@ exports[`Tree:demo label demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -4623,7 +4608,7 @@ exports[`Tree:demo label demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -4757,7 +4742,6 @@ exports[`Tree:demo lazy demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -4786,7 +4770,7 @@ exports[`Tree:demo lazy demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -4830,7 +4814,7 @@ exports[`Tree:demo lazy demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -4941,7 +4925,6 @@ exports[`Tree:demo line demo works fine 1`] = `
         class="t-tree__list"
         enteractiveclass="t-tree__item--enter-active"
         leaveactiveclass="t-tree__item--leave-active"
-        name="t-tree-toggle"
         tag="div"
       >
         <div
@@ -4970,7 +4953,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -4995,7 +4978,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5020,7 +5003,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5055,7 +5038,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5094,7 +5077,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5133,7 +5116,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5172,7 +5155,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5197,7 +5180,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5222,7 +5205,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5247,7 +5230,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5272,7 +5255,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5307,7 +5290,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5332,7 +5315,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5357,7 +5340,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5378,7 +5361,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5401,7 +5384,6 @@ exports[`Tree:demo line demo works fine 1`] = `
         class="t-tree__list"
         enteractiveclass="t-tree__item--enter-active"
         leaveactiveclass="t-tree__item--leave-active"
-        name="t-tree-toggle"
         tag="div"
       >
         <div
@@ -5437,7 +5419,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5480,7 +5462,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5523,7 +5505,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5565,7 +5547,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5611,7 +5593,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5660,7 +5642,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5712,7 +5694,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5764,7 +5746,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5816,7 +5798,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5862,7 +5844,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5905,7 +5887,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5947,7 +5929,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -5990,7 +5972,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -6033,7 +6015,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -6072,7 +6054,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -6095,7 +6077,6 @@ exports[`Tree:demo line demo works fine 1`] = `
         class="t-tree__list"
         enteractiveclass="t-tree__item--enter-active"
         leaveactiveclass="t-tree__item--leave-active"
-        name="t-tree-toggle"
         tag="div"
       >
         <div
@@ -6133,7 +6114,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -6177,7 +6158,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -6221,7 +6202,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -6265,7 +6246,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -6313,7 +6294,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -6364,7 +6345,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -6418,7 +6399,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -6471,7 +6452,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -6524,7 +6505,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -6571,7 +6552,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -6615,7 +6596,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -6659,7 +6640,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -6703,7 +6684,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -6747,7 +6728,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -6787,7 +6768,7 @@ exports[`Tree:demo line demo works fine 1`] = `
             trigger="expand"
           />
           <span
-            class="t-tree__label t-tree__label--strictly"
+            class="t-tree__label"
           >
             <span
               style="position: relative;"
@@ -6853,7 +6834,6 @@ exports[`Tree:demo load demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -6893,7 +6873,7 @@ exports[`Tree:demo load demo works fine 1`] = `
           </div>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -6948,7 +6928,7 @@ exports[`Tree:demo load demo works fine 1`] = `
           </div>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -6988,7 +6968,6 @@ exports[`Tree:demo operations demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -7003,7 +6982,7 @@ exports[`Tree:demo operations demo works fine 1`] = `
           trigger="expand"
         />
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -7030,7 +7009,7 @@ exports[`Tree:demo operations demo works fine 1`] = `
           trigger="expand"
         />
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -7162,7 +7141,6 @@ exports[`Tree:demo operations demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -7177,7 +7155,7 @@ exports[`Tree:demo operations demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -7255,7 +7233,7 @@ exports[`Tree:demo operations demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -7564,7 +7542,6 @@ exports[`Tree:demo sync demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -7593,7 +7570,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-is-indeterminate t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-indeterminate t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -7638,7 +7615,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-is-indeterminate t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-indeterminate t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -7683,7 +7660,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-is-checked t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-checked t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -7713,7 +7690,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-is-checked t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-checked t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -7743,7 +7720,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-is-checked t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-is-checked t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -7787,7 +7764,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -7831,7 +7808,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -7875,7 +7852,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly t-is-active"
+          class="t-checkbox t-tree__label t-is-active"
         >
           <input
             class="t-checkbox__former"
@@ -7905,7 +7882,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -7935,7 +7912,7 @@ exports[`Tree:demo sync demo works fine 1`] = `
           trigger="expand"
         />
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
