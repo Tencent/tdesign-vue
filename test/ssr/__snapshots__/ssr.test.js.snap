@@ -11128,9 +11128,9 @@ exports[`ssr snapshot test renders ./examples/swiper/demos/current.vue correctly
       <ul class="t-swiper__navigation t-swiper__navigation-bars"></ul>
     </div>
   </div>
-  <div class="tdesign-demo-block-row"><Button size="small">
+  <div class="tdesign-demo-block-row"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">
       跳转到第 2 项
-    </Button></div>
+    </span></button></div>
 </div>
 `;
 
