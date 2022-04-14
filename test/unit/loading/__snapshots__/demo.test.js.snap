@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Loading attach demo works fine 1`] = `
+exports[`Loading Loading attachVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column"
 >
@@ -53,7 +53,7 @@ exports[`Loading attach demo works fine 1`] = `
 </div>
 `;
 
-exports[`Loading base demo works fine 1`] = `
+exports[`Loading Loading baseVue demo works fine 1`] = `
 <div
   class="t-loading-demo"
 >
@@ -84,7 +84,7 @@ exports[`Loading base demo works fine 1`] = `
 </div>
 `;
 
-exports[`Loading delay demo works fine 1`] = `
+exports[`Loading Loading delayVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column"
 >
@@ -159,7 +159,7 @@ exports[`Loading delay demo works fine 1`] = `
 </div>
 `;
 
-exports[`Loading fullscreen demo works fine 1`] = `
+exports[`Loading Loading fullscreenVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column"
 >
@@ -183,7 +183,7 @@ exports[`Loading fullscreen demo works fine 1`] = `
 </div>
 `;
 
-exports[`Loading iconText demo works fine 1`] = `
+exports[`Loading Loading iconTextVue demo works fine 1`] = `
 <div>
   <div
     class="t-loading--center t-size-s t-loading"
@@ -217,7 +217,7 @@ exports[`Loading iconText demo works fine 1`] = `
 </div>
 `;
 
-exports[`Loading service demo works fine 1`] = `
+exports[`Loading Loading serviceVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column"
 >
@@ -320,7 +320,7 @@ exports[`Loading service demo works fine 1`] = `
 </div>
 `;
 
-exports[`Loading size demo works fine 1`] = `
+exports[`Loading Loading sizeVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large"
 >
@@ -488,7 +488,7 @@ exports[`Loading size demo works fine 1`] = `
 </div>
 `;
 
-exports[`Loading text demo works fine 1`] = `
+exports[`Loading Loading textVue demo works fine 1`] = `
 <div
   class="t-loading-demo"
 >
@@ -526,7 +526,7 @@ exports[`Loading text demo works fine 1`] = `
 </div>
 `;
 
-exports[`Loading wrap demo works fine 1`] = `
+exports[`Loading Loading wrapVue demo works fine 1`] = `
 <div
   class="loading-wrap-demo"
 >
