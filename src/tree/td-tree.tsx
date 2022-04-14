@@ -517,7 +517,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     // 空数据判定
     let emptyNode: TNodeReturnValue = null;
     if (treeNodeViews.length <= 0) {
-      const useLocale = !this.empty && !this.treeScope.empty;
+      const useLocale = !this.empty && !this.$scopedSlots.empty;
       const emptyContent = useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty');
       emptyNode = <div class={CLASS_NAMES.treeEmpty}>{emptyContent}</div>;
     }
