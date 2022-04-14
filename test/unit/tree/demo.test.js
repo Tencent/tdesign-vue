@@ -23,6 +23,7 @@ import operationsVue from '@/examples/tree/demos/operations.vue';
 import performanceVue from '@/examples/tree/demos/performance.vue';
 import stateVue from '@/examples/tree/demos/state.vue';
 import syncVue from '@/examples/tree/demos/sync.vue';
+import vscrollVue from '@/examples/tree/demos/vscroll.vue';
 
 const mapper = {
   activableVue,
@@ -45,6 +46,7 @@ const mapper = {
   performanceVue,
   stateVue,
   syncVue,
+  vscrollVue,
 };
 
 describe('Tree', () => {
