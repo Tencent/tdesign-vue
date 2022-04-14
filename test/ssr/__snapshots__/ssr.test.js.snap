@@ -2427,7 +2427,7 @@ exports[`ssr snapshot test renders ./examples/card/demos/footer-actions.vue corr
     <div class="t-card__footer">
       <div class="t-card__footer-wrapper">
         <div class="t-avatar-group t-avatar--offset-left">
-          <div class="t-avatar t-avatar--circle"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt=""></div>
+          <div class="t-avatar t-avatar--circle"><img src="https://tdesign.gtimg.com/site/avatar-boy.jpg" alt=""></div>
           <div class="t-avatar t-avatar--circle"><span style="transform:;">+7</span></div>
         </div>
       </div>
@@ -2444,7 +2444,7 @@ exports[`ssr snapshot test renders ./examples/card/demos/footer-content.vue corr
     <div class="t-card__footer-wrapper">
       <div class="t-comment">
         <div class="t-comment__inner">
-          <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt="" class="t-comment__avatar-image"></div>
+          <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/site/avatar-boy.jpg" alt="" class="t-comment__avatar-image"></div>
           <div class="t-comment__content">
             <div class="t-comment__author"><span class="t-comment__name">标题</span></div>
             <div class="t-comment__detail">卡片内容</div>
@@ -2464,7 +2464,7 @@ exports[`ssr snapshot test renders ./examples/card/demos/footer-content-actions.
       <div class="t-card__footer-wrapper">
         <div class="t-comment">
           <div class="t-comment__inner">
-            <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt="" class="t-comment__avatar-image"></div>
+            <div class="t-comment__avatar"><img src="https://tdesign.gtimg.com/site/avatar-boy.jpg" alt="" class="t-comment__avatar-image"></div>
             <div class="t-comment__content">
               <div class="t-comment__author"><span class="t-comment__name">标题</span></div>
               <div class="t-comment__detail">卡片内容</div>
@@ -2556,7 +2556,7 @@ exports[`ssr snapshot test renders ./examples/card/demos/header-footer-actions.v
   <div class="t-card__header">
     <div class="t-card__header-wrapper">
       <div class="t-card__avatar">
-        <div class="t-avatar t-avatar--circle"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt=""></div>
+        <div class="t-avatar t-avatar--circle"><img src="https://tdesign.gtimg.com/site/avatar-boy.jpg" alt=""></div>
       </div>
       <div><span class="t-card__title">标题</span>
         <p class="t-card__description">卡片内容</p>
