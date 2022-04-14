@@ -1,4 +1,4 @@
-import { defineComponent, computed } from '@vue/composition-api';
+import { defineComponent, computed, ref } from '@vue/composition-api';
 
 import { usePrefixClass } from '../config-provider';
 import useCommonClassName from '../hooks/useCommonClassName';
@@ -12,30 +12,31 @@ export default defineComponent({
   props: { ...props },
   components: { TLoading },
   setup(props, { slots }) {
-    const COMPONENT_NAME = usePrefixClass('card');
     const { sizeClassNames } = useCommonClassName();
+    const COMPONENT_NAME = usePrefixClass('card');
 
-    const baseCls = [`${COMPONENT_NAME.value}`];
-    const headerCls = [`${COMPONENT_NAME.value}__header`];
-    const headerAvatarCls = [`${COMPONENT_NAME.value}__avatar`];
-    const headerTitleCls = [`${COMPONENT_NAME.value}__title`];
-    const headerSubTitleCls = [`${COMPONENT_NAME.value}__subtitle`];
-    const headerDescriptionCls = [`${COMPONENT_NAME.value}__description`];
-    const actionsCls = [`${COMPONENT_NAME.value}__actions`];
+    const baseCls = computed(() => [COMPONENT_NAME.value]);
+    const headerCls = ref([`${COMPONENT_NAME.value}__header`]);
+    const headerWrapperCls = ref([`${COMPONENT_NAME.value}__header-wrapper`]);
+    const headerAvatarCls = ref([`${COMPONENT_NAME.value}__avatar`]);
+    const headerTitleCls = ref([`${COMPONENT_NAME.value}__title`]);
+    const headerSubTitleCls = ref([`${COMPONENT_NAME.value}__subtitle`]);
+    const headerDescriptionCls = ref([`${COMPONENT_NAME.value}__description`]);
+    const actionsCls = ref([`${COMPONENT_NAME.value}__actions`]);
+    const bodyCls = ref([`${COMPONENT_NAME.value}__body`]);
+    const coverCls = ref([`${COMPONENT_NAME.value}__cover`]);
+    const footerCls = ref([`${COMPONENT_NAME.value}__footer`]);
+    const footerWrapperCls = ref([`${COMPONENT_NAME.value}__footer-wrapper`]);
 
-    const bodyCls = [`${COMPONENT_NAME.value}__body`];
-    const coverCls = [`${COMPONENT_NAME.value}__cover`];
-    const footerCls = [`${COMPONENT_NAME.value}__footer`];
+    if (props.size === 'small') baseCls.value.push(`${sizeClassNames[props.size]}`);
 
-    if (props.size === 'small') baseCls.push(`${sizeClassNames[props.size]}`);
+    if (props.bordered) baseCls.value.push(`${COMPONENT_NAME.value}--bordered`);
 
-    if (props.bordered) baseCls.push(`${COMPONENT_NAME.value}--bordered`);
+    if (props.shadow) baseCls.value.push(`${COMPONENT_NAME.value}--shadow`);
 
-    if (props.shadow) baseCls.push(`${COMPONENT_NAME.value}--shadow`);
+    if (props.hoverShadow) baseCls.value.push(`${COMPONENT_NAME.value}--shadow-hover`);
 
-    if (props.hoverShadow) baseCls.push(`${COMPONENT_NAME.value}--shadow-hover`);
-
-    if (props.headerBordered) headerCls.push(`${COMPONENT_NAME.value}__title--bordered`);
+    if (props.headerBordered) headerCls.value.push(`${COMPONENT_NAME.value}__title--bordered`);
 
     // 卡片风格：普通风格、海报风格1（操作区域在顶部）、海报风格2（操作区域在底部）。
     // 可选项：normal/poster1/poster2
@@ -85,9 +86,11 @@ export default defineComponent({
       baseCls,
       bodyCls,
       footerCls,
+      footerWrapperCls,
       coverCls,
       actionsCls,
       headerCls,
+      headerWrapperCls,
       headerAvatarCls,
       headerTitleCls,
       headerSubTitleCls,
@@ -109,7 +112,7 @@ export default defineComponent({
       if (this.showHeader) return <div class={this.headerCls}>{renderTNodeJSX(this, 'header')}</div>;
       return (
         <div class={this.headerCls}>
-          <div class={`${this.COMPONENT_NAME}__header-wrapper`}>
+          <div class={this.headerWrapperCls}>
             {this.showAvatar && <div class={this.headerAvatarCls}>{renderTNodeJSX(this, 'avatar')}</div>}
             <div>
               {this.showTitle && <span class={this.headerTitleCls}>{renderTNodeJSX(this, 'title')}</span>}
@@ -140,7 +143,7 @@ export default defineComponent({
         {this.showContent && <div class={this.bodyCls}>{renderContent(this, 'default', 'content')}</div>}
         {this.isFooterRender && (
           <div class={this.footerCls}>
-            <div class={`${this.COMPONENT_NAME}__footer-wrapper`}>{renderTNodeJSX(this, 'footer')}</div>
+            <div class={this.footerWrapperCls}>{renderTNodeJSX(this, 'footer')}</div>
             {this.showActions && this.isPoster2 && <div class={this.actionsCls}>{renderTNodeJSX(this, 'actions')}</div>}
           </div>
         )}
