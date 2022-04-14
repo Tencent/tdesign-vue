@@ -36,8 +36,6 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     return {
       // 数据源
       store: null,
-      // 可视节点数据列表
-      visibleNodes: [],
       // 视图列表
       treeNodeViews: [],
       // 混合配置对象
@@ -150,24 +148,20 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         nodes = store.getNodes();
       }
       // 默认取全部可显示节点
-      this.visibleNodes = nodes.filter((node: TreeNode) => node.visible);
-      this.renderTreeNodeViews();
+      this.renderTreeNodeViews(nodes);
     },
     // 记录要渲染的节点
-    renderTreeNodeViews() {
-      const { store, visibleNodes, $cacheMap } = this;
-      this.treeNodeViews = visibleNodes.map((node: TreeNode) => {
+    renderTreeNodeViews(nodes: TreeNode[]) {
+      const { store, $cacheMap } = this;
+      this.treeNodeViews = nodes.map((node: TreeNode) => {
         // 如果节点已经存在，则使用缓存节点
         let nodeView = $cacheMap.get(node.value);
         // 如果节点未曾创建，则临时创建
-        if (!nodeView) {
-          // console.log('rebuild view:', node.value);
+        if (!nodeView && node.visible) {
           // 初次仅渲染可显示的节点
           // 不存在节点视图，则创建该节点视图并插入到当前位置
           nodeView = this.renderItem(node);
           $cacheMap.set(node.value, nodeView);
-        } else {
-          // console.log('use cached view:', node.value);
         }
         return nodeView;
       });
@@ -176,7 +170,6 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       this.$nextTick(() => {
         $cacheMap.forEach((view: VNode, value: string) => {
           if (!store.getNode(value)) {
-            // console.log('cache delete', value);
             $cacheMap.delete(value);
           }
         });
@@ -273,7 +266,6 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     },
     rebuild(list: TdTreeProps['data']) {
       this.$cacheMap.clear();
-      this.visibleNodes.length = 0;
       const { store, value, actived } = this;
       store.reload(list);
       // 初始化选中状态
