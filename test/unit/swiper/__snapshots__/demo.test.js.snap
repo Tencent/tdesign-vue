@@ -80,11 +80,16 @@ exports[`Swiper Swiper currentVue demo works fine 1`] = `
     class="tdesign-demo-block-row"
   >
     <button
-      size="small"
+      class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+      type="button"
     >
-      
+      <span
+        class="t-button__text"
+      >
+        
       跳转到第 2 项
     
+      </span>
     </button>
   </div>
 </div>
