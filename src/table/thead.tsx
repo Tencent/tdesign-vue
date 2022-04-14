@@ -1,5 +1,5 @@
 import {
-  defineComponent, computed, SetupContext, PropType,
+  defineComponent, computed, SetupContext, PropType, ref,
 } from '@vue/composition-api';
 import isFunction from 'lodash/isFunction';
 import { CreateElement } from 'vue';
@@ -41,6 +41,7 @@ export default defineComponent({
   },
 
   setup(props: TheadProps, { slots }: SetupContext) {
+    const theadRef = ref<HTMLHeadElement>();
     const classnames = useClassName();
     const { tableHeaderClasses, tableBaseClass } = classnames;
     const { classPrefix } = useConfig();
@@ -55,6 +56,7 @@ export default defineComponent({
 
     return {
       ...classnames,
+      theadRef,
       theadClasses,
       classPrefix,
       slots,
@@ -73,9 +75,9 @@ export default defineComponent({
       const thRowspanAndColspan = this.spansAndLeafNodes.rowspanAndColspanMap;
       return this.thList.map((row, rowIndex) => {
         const thRow = row.map((col: TableColumns[0], index: number) => {
-          const rospanAndColspan = thRowspanAndColspan.get(col);
-          if (index === 0 && rospanAndColspan.rowspan > 1) {
-            for (let j = rowIndex + 1; j < rowIndex + rospanAndColspan.rowspan; j++) {
+          const rowspanAndColspan = thRowspanAndColspan.get(col);
+          if (index === 0 && rowspanAndColspan.rowspan > 1) {
+            for (let j = rowIndex + 1; j < rowIndex + rowspanAndColspan.rowspan; j++) {
               thBorderMap.set(this.thList[j][0], true);
             }
           }
@@ -107,10 +109,14 @@ export default defineComponent({
               data-colkey={col.colKey}
               class={thClasses}
               style={styles}
-              attrs={{ ...rospanAndColspan }}
+              attrs={{ ...rowspanAndColspan }}
             >
               <div class={this.tableBaseClass.thCellInner}>
-                {col.ellipsis ? <TEllipsis>{innerTh}</TEllipsis> : innerTh}
+                {col.ellipsis ? (
+                  <TEllipsis attach={this.theadRef ? () => this.theadRef : undefined}>{innerTh}</TEllipsis>
+                ) : (
+                  innerTh
+                )}
               </div>
             </th>
           );

@@ -30,6 +30,7 @@ export interface TableBodyProps extends BaseTableProps {
   rowHeight: number;
   trs: Map<number, object>;
   bufferSize: number;
+  tableContentElm: HTMLDivElement;
   handleRowMounted: () => void;
 }
 
@@ -44,6 +45,7 @@ export const extendTableProps = [
   'firstFullRow',
   'lastFullRow',
   'rowspanAndColspan',
+  'scroll',
   'onCellClick',
   'onPageChange',
   'onRowClick',
@@ -66,7 +68,7 @@ export default defineComponent({
     columns: Array as PropType<TableBodyProps['columns']>,
     rowAndColFixedPosition: Map as PropType<TableBodyProps['rowAndColFixedPosition']>,
     showColumnShadow: Object as PropType<TableBodyProps['showColumnShadow']>,
-    tableElm: HTMLDivElement as PropType<TableBodyProps['tableElm']>,
+    tableElm: {},
     tableWidth: Number,
     isWidthOverflow: Boolean,
     // 以下内容为虚拟滚动所需参数
@@ -76,6 +78,8 @@ export default defineComponent({
     rowHeight: Number,
     trs: Map as PropType<TableBodyProps['trs']>,
     bufferSize: Number,
+    // eslint-disable-next-line
+    tableContentElm: {},
     handleRowMounted: Function as PropType<TableBodyProps['handleRowMounted']>,
     renderExpandedRow: Function as PropType<TableBodyProps['renderExpandedRow']>,
     firstFullRow: [String, Function] as PropType<TableBodyProps['firstFullRow']>,
@@ -90,6 +94,7 @@ export default defineComponent({
     const { tableFullRowClasses, tableBaseClass } = useClassName();
 
     const tbodyClasses = computed(() => [tableBaseClass.body]);
+
     const isFixedLeftColumn = computed(
       () => props.isWidthOverflow && !!props.columns.find((col) => col.fixed === 'left'),
     );
@@ -203,6 +208,7 @@ export default defineComponent({
         trs: this.trs,
         bufferSize: this.bufferSize,
         tableElm: this.tableElm,
+        tableContentElm: this.tableContentElm,
       };
       if (this.onCellClick) {
         trProps.onCellClick = this.onCellClick;
@@ -252,7 +258,6 @@ export default defineComponent({
       '-moz-transform': translate,
       '-webkit-transform': translate,
     };
-
     return (
       <tbody class={this.tbodyClasses} style={this.isVirtual && { ...posStyle }}>
         {isEmpty ? renderEmpty(h, this.columns) : list}

@@ -71,7 +71,11 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       const dialogClass = [`${name}`, `${name}--default`, `${name}--${this.placement}`, `${name}__modal-${this.theme}`];
       if (['modeless', 'modal'].includes(this.mode)) {
         dialogClass.push(`${name}--fixed`);
+        if (this.isModal && this.showInAttachedElement) {
+          dialogClass.push(`${name}--absolute`);
+        }
       }
+
       return dialogClass;
     },
     dialogStyle(): Styles {
@@ -101,11 +105,13 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     visible(value) {
       if (value) {
         const { scrollWidth } = this;
-        if (scrollWidth > 0) {
-          const bodyCssText = `position: relative;width: calc(100% - ${scrollWidth}px);`;
-          document.body.style.cssText = bodyCssText;
+        if (this.isModal && !this.showInAttachedElement) {
+          if (scrollWidth > 0) {
+            const bodyCssText = `position: relative;width: calc(100% - ${scrollWidth}px);`;
+            document.body.style.cssText = bodyCssText;
+          }
+          addClass(document.body, lockClass);
         }
-        addClass(document.body, lockClass);
       } else {
         document.body.style.cssText = '';
         removeClass(document.body, lockClass);
@@ -342,7 +348,13 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     const dialogView = this.renderDialog();
     const view = [maskView, dialogView];
     const ctxStyle: any = { zIndex: this.zIndex };
-    const ctxClass = [`${name}__ctx`, { [`${prefix}-dialog__ctx--fixed`]: this.mode === 'modal' }];
+    const ctxClass = [
+      `${name}__ctx`,
+      {
+        [`${prefix}-dialog__ctx--fixed`]: this.mode === 'modal',
+        [`${prefix}-dialog__ctx--absolute`]: this.isModal && this.showInAttachedElement,
+      },
+    ];
     return (
       <transition
         duration={300}

@@ -68,7 +68,12 @@ export default {
     };
   },
   methods: {
-    rowspanAndColspan({ col, rowIndex }) {
+    rowspanAndColspan({ col, rowIndex, colIndex }) {
+      if (colIndex === 0 && rowIndex % 2 === 0) {
+        return {
+          rowspan: 2,
+        };
+      }
       if (col.colKey === 'needed' && rowIndex === 0) {
         return {
           colspan: 2,

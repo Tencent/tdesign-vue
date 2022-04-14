@@ -12,26 +12,41 @@ export default {
   asyncLoading: {
     type: [String, Function] as PropType<TdPrimaryTableProps['asyncLoading']>,
   },
-  /** 【开发中】自定义显示列控制器，值为空不会显示。<br />`columnController.fields` 表示只允许用户对数组里面的列进行显示或隐藏的控制，默认为全部字段。<br />`columnController.displayType` 是指字段呈现方式：`fixed-width` 表示固定宽度，每行固定数量，横向和纵向均对齐，`auto-width` 表示宽度随列标题数量自由显示，横向铺满，纵向不要求对齐，默认为 `auto-width`。<br />支持透传 CheckboxGroup 和 Dialog 组件等全部属性 */
+  /** 自定义显示列控制器，值为空不会显示。具体属性请看下方 `TableColumnController` 文档 */
   columnController: {
     type: Object as PropType<TdPrimaryTableProps['columnController']>,
   },
-  /** 【开发中】自定义显示列控制器的内容呈现，可以填充任意内容 */
-  columnControllerContent: {
-    type: [String, Function] as PropType<TdPrimaryTableProps['columnControllerContent']>,
+  /** 是否显示列配置弹框控制器，只要该属性值不为 `undefined`，弹框的显示/隐藏完全由该属性控制 */
+  columnControllerVisible: {
+    type: Boolean,
+    default: undefined,
+  },
+  /** 是否显示列配置弹框控制器，只要该属性值不为 `undefined`，弹框的显示/隐藏完全由该属性控制，非受控属性 */
+  defaultColumnControllerVisible: {
+    type: Boolean,
+    default: undefined,
   },
   /** 列配置，泛型 T 指表格数据类型 */
   columns: {
     type: Array as PropType<TdPrimaryTableProps['columns']>,
     default: (): TdPrimaryTableProps['columns'] => [],
   },
-  /** 拖拽排序方式，值为 `row` 表示行拖拽排序，这种方式无法进行文本复制，慎用。值为`drag-col` 表示通过专门的 拖拽列 进行拖拽排序 */
+  /** 列配置功能中，当前显示的列 */
+  displayColumns: {
+    type: Array as PropType<TdPrimaryTableProps['displayColumns']>,
+    default: undefined,
+  },
+  /** 列配置功能中，当前显示的列，非受控属性 */
+  defaultDisplayColumns: {
+    type: Array as PropType<TdPrimaryTableProps['defaultDisplayColumns']>,
+  },
+  /** 拖拽排序方式，值为 `row` 表示行拖拽排序，这种方式无法进行文本复制，慎用。值为`col` 表示通过专门的 拖拽列 进行拖拽排序。`drag-col` 已废弃，请勿使用 */
   dragSort: {
     type: String as PropType<TdPrimaryTableProps['dragSort']>,
-    default: 'drag-col' as TdPrimaryTableProps['dragSort'],
+    default: 'col' as TdPrimaryTableProps['dragSort'],
     validator(val: TdPrimaryTableProps['dragSort']): boolean {
       if (!val) return true;
-      return ['row', 'drag-col'].includes(val);
+      return ['row', 'col', 'drag-col'].includes(val);
     },
   },
   /** 展开行内容，泛型 T 指表格数据类型 */
@@ -41,7 +56,7 @@ export default {
   /** 展开行 */
   expandedRowKeys: {
     type: Array as PropType<TdPrimaryTableProps['expandedRowKeys']>,
-    default: (): TdPrimaryTableProps['expandedRowKeys'] => [],
+    default: undefined,
   },
   /** 展开行，非受控属性 */
   defaultExpandedRowKeys: {
@@ -66,6 +81,7 @@ export default {
   /** 过滤数据的值 */
   filterValue: {
     type: Object as PropType<TdPrimaryTableProps['filterValue']>,
+    default: undefined,
   },
   /** 过滤数据的值，非受控属性 */
   defaultFilterValue: {
@@ -76,6 +92,7 @@ export default {
   /** 选中的行，控制属性 */
   selectedRowKeys: {
     type: Array as PropType<TdPrimaryTableProps['selectedRowKeys']>,
+    default: undefined,
   },
   /** 选中的行，控制属性，非受控属性 */
   defaultSelectedRowKeys: {
@@ -84,6 +101,7 @@ export default {
   /** 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序 */
   sort: {
     type: [Object, Array] as PropType<TdPrimaryTableProps['sort']>,
+    default: undefined,
   },
   /** 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序，非受控属性 */
   defaultSort: {
@@ -93,19 +111,23 @@ export default {
   sortIcon: {
     type: Function as PropType<TdPrimaryTableProps['sortIcon']>,
   },
-  /** 已废弃。允许表格行拖拽时排序 */
+  /** 已废弃。允许表格行拖拽时排序。请更为使用 `dragSort="row"` */
   sortOnRowDraggable: Boolean,
   /** 异步加载区域被点击时触发 */
   onAsyncLoadingClick: Function as PropType<TdPrimaryTableProps['onAsyncLoadingClick']>,
   /** 单元格点击时触发 */
   onCellClick: Function as PropType<TdPrimaryTableProps['onCellClick']>,
-  /** 分页、排序、过滤等内容变化时触发，泛型 T 指表格数据类型 */
+  /** 分页、排序、过滤等内容变化时触发，泛型 T 指表格数据类型，`currentData` 表示变化后的数据 */
   onChange: Function as PropType<TdPrimaryTableProps['onChange']>,
-  /** 【开发中】列配置发生变化时触发。`context.columns` 表示已选中的列；`context.currentColumn` 表示本次变化操作的列，值不存在表示全选操作；`context.type` 表示当前操作属于选中列或是取消列 */
+  /** 确认操作之前列配置发生变化时触发。`context.columns` 表示已选中的列；`context.currentColumn` 表示本次变化操作的列，值不存在表示全选操作；`context.type` 表示当前操作属于选中列或是取消列 */
   onColumnChange: Function as PropType<TdPrimaryTableProps['onColumnChange']>,
+  /** 列配置弹窗显示或隐藏变化时触发 */
+  onColumnControllerVisibleChange: Function as PropType<TdPrimaryTableProps['onColumnControllerVisibleChange']>,
   /** 本地数据排序导致 `data` 变化时触发，第一个参数指变化后的数据，第二个参数 `context.trigger` 表示触发本次变化的来源 */
   onDataChange: Function as PropType<TdPrimaryTableProps['onDataChange']>,
-  /** 拖拽排序时触发 */
+  /** 确认列配置时触发 */
+  onDisplayColumnsChange: Function as PropType<TdPrimaryTableProps['onDisplayColumnsChange']>,
+  /** 拖拽排序时触发，`currentData` 表示拖拽排序结束后的新数据 */
   onDragSort: Function as PropType<TdPrimaryTableProps['onDragSort']>,
   /** 展开行发生变化时触发，泛型 T 指表格数据类型 */
   onExpandChange: Function as PropType<TdPrimaryTableProps['onExpandChange']>,

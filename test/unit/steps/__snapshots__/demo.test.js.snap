@@ -1,689 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Steps Steps NoSequence demo works fine 1`] = `
-<div
-  class="t-steps t-steps--horizontal t-steps--dot-anchor"
->
-  <div
-    class="t-steps-item t-steps-item--finish"
-  >
-    <div
-      class="t-steps-item__inner "
-    >
-      <div
-        class="t-steps-item__icon t-steps-item--finish"
-      />
-      <div
-        class="t-steps-item__content"
-      >
-        <div
-          class="t-steps-item__title"
-        >
-          已完成的步骤
-        </div>
-        <div
-          class="t-steps-item__description"
-        >
-          这里是提示文字
-        </div>
-        <div
-          class="t-steps-item__extra"
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-steps-item t-steps-item--process"
-  >
-    <div
-      class="t-steps-item__inner "
-    >
-      <div
-        class="t-steps-item__icon t-steps-item--process"
-      />
-      <div
-        class="t-steps-item__content"
-      >
-        <div
-          class="t-steps-item__title"
-        >
-          进行中的步骤
-        </div>
-        <div
-          class="t-steps-item__description"
-        >
-          这里是提示文字
-        </div>
-        <div
-          class="t-steps-item__extra"
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-steps-item t-steps-item--default"
-  >
-    <div
-      class="t-steps-item__inner "
-    >
-      <div
-        class="t-steps-item__icon t-steps-item--default"
-      />
-      <div
-        class="t-steps-item__content"
-      >
-        <div
-          class="t-steps-item__title"
-        >
-          未进行的步骤
-        </div>
-        <div
-          class="t-steps-item__description"
-        >
-          这里是提示文字
-        </div>
-        <div
-          class="t-steps-item__extra"
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-steps-item t-steps-item--default"
-  >
-    <div
-      class="t-steps-item__inner "
-    >
-      <div
-        class="t-steps-item__icon t-steps-item--default"
-      />
-      <div
-        class="t-steps-item__content"
-      >
-        <div
-          class="t-steps-item__title"
-        >
-          未进行的步骤
-        </div>
-        <div
-          class="t-steps-item__description"
-        >
-          这里是提示文字
-        </div>
-        <div
-          class="t-steps-item__extra"
-        />
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Steps Steps VerticalNoSequence demo works fine 1`] = `
-<div
-  class="setps-demo"
->
-  <div
-    class="tdesign-demo-block"
-  >
-    <div
-      class="t-steps t-steps--vertical t-steps--dot-anchor t-steps--positive"
-    >
-      <div
-        class="t-steps-item t-steps-item--finish"
-      >
-        <div
-          class="t-steps-item__inner "
-        >
-          <div
-            class="t-steps-item__icon t-steps-item--finish"
-          />
-          <div
-            class="t-steps-item__content"
-          >
-            <div
-              class="t-steps-item__title"
-            >
-              已完成的步骤
-            </div>
-            <div
-              class="t-steps-item__description"
-            >
-              这里是提示文字
-            </div>
-            <div
-              class="t-steps-item__extra"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-steps-item t-steps-item--process"
-      >
-        <div
-          class="t-steps-item__inner "
-        >
-          <div
-            class="t-steps-item__icon t-steps-item--process"
-          />
-          <div
-            class="t-steps-item__content"
-          >
-            <div
-              class="t-steps-item__title"
-            >
-              进行中的步骤
-            </div>
-            <div
-              class="t-steps-item__description"
-            >
-              这里是提示文字
-            </div>
-            <div
-              class="t-steps-item__extra"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-steps-item t-steps-item--default"
-      >
-        <div
-          class="t-steps-item__inner "
-        >
-          <div
-            class="t-steps-item__icon t-steps-item--default"
-          />
-          <div
-            class="t-steps-item__content"
-          >
-            <div
-              class="t-steps-item__title"
-            >
-              未进行的步骤
-            </div>
-            <div
-              class="t-steps-item__description"
-            >
-              这里是提示文字
-            </div>
-            <div
-              class="t-steps-item__extra"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-steps-item t-steps-item--default"
-      >
-        <div
-          class="t-steps-item__inner "
-        >
-          <div
-            class="t-steps-item__icon t-steps-item--default"
-          />
-          <div
-            class="t-steps-item__content"
-          >
-            <div
-              class="t-steps-item__title"
-            >
-              未进行的步骤
-            </div>
-            <div
-              class="t-steps-item__description"
-            >
-              这里是提示文字
-            </div>
-            <div
-              class="t-steps-item__extra"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-     
-    <div
-      class="t-steps t-steps--vertical t-steps--dot-anchor t-steps--reverse"
-    >
-      <div
-        class="t-steps-item t-steps-item--finish"
-      >
-        <div
-          class="t-steps-item__inner "
-        >
-          <div
-            class="t-steps-item__icon t-steps-item--finish"
-          />
-          <div
-            class="t-steps-item__content"
-          >
-            <div
-              class="t-steps-item__title"
-            >
-              已完成的步骤
-            </div>
-            <div
-              class="t-steps-item__description"
-            >
-              这里是提示文字
-            </div>
-            <div
-              class="t-steps-item__extra"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-steps-item t-steps-item--process"
-      >
-        <div
-          class="t-steps-item__inner "
-        >
-          <div
-            class="t-steps-item__icon t-steps-item--process"
-          />
-          <div
-            class="t-steps-item__content"
-          >
-            <div
-              class="t-steps-item__title"
-            >
-              进行中的步骤
-            </div>
-            <div
-              class="t-steps-item__description"
-            >
-              这里是提示文字
-            </div>
-            <div
-              class="t-steps-item__extra"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-steps-item t-steps-item--default"
-      >
-        <div
-          class="t-steps-item__inner "
-        >
-          <div
-            class="t-steps-item__icon t-steps-item--default"
-          />
-          <div
-            class="t-steps-item__content"
-          >
-            <div
-              class="t-steps-item__title"
-            >
-              未进行的步骤
-            </div>
-            <div
-              class="t-steps-item__description"
-            >
-              这里是提示文字
-            </div>
-            <div
-              class="t-steps-item__extra"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-steps-item t-steps-item--default"
-      >
-        <div
-          class="t-steps-item__inner "
-        >
-          <div
-            class="t-steps-item__icon t-steps-item--default"
-          />
-          <div
-            class="t-steps-item__content"
-          >
-            <div
-              class="t-steps-item__title"
-            >
-              未进行的步骤
-            </div>
-            <div
-              class="t-steps-item__description"
-            >
-              这里是提示文字
-            </div>
-            <div
-              class="t-steps-item__extra"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Steps Steps VerticalSequence demo works fine 1`] = `
-<div
-  class="setps-demo"
->
-  <div
-    class="tdesign-demo-block"
-  >
-    <div
-      class="t-steps t-steps--vertical t-steps--default-anchor t-steps--positive"
-    >
-      <div
-        class="t-steps-item t-steps-item--finish"
-      >
-        <div
-          class="t-steps-item__inner "
-        >
-          <div
-            class="t-steps-item__icon t-steps-item--finish"
-          >
-            <span
-              class="t-steps-item__icon--number"
-            >
-              <svg
-                class="t-icon t-icon-check"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            class="t-steps-item__content"
-          >
-            <div
-              class="t-steps-item__title"
-            >
-              已完成的步骤
-            </div>
-            <div
-              class="t-steps-item__description"
-            >
-              这里是提示文字
-            </div>
-            <div
-              class="t-steps-item__extra"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-steps-item t-steps-item--process"
-      >
-        <div
-          class="t-steps-item__inner "
-        >
-          <div
-            class="t-steps-item__icon t-steps-item--process"
-          >
-            <span
-              class="t-steps-item__icon--number"
-            >
-              0
-            </span>
-          </div>
-          <div
-            class="t-steps-item__content"
-          >
-            <div
-              class="t-steps-item__title"
-            >
-              进行中的步骤
-            </div>
-            <div
-              class="t-steps-item__description"
-            >
-              这里是提示文字
-            </div>
-            <div
-              class="t-steps-item__extra"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-steps-item t-steps-item--default"
-      >
-        <div
-          class="t-steps-item__inner "
-        >
-          <div
-            class="t-steps-item__icon t-steps-item--default"
-          >
-            <span
-              class="t-steps-item__icon--number"
-            >
-              0
-            </span>
-          </div>
-          <div
-            class="t-steps-item__content"
-          >
-            <div
-              class="t-steps-item__title"
-            >
-              未进行的步骤
-            </div>
-            <div
-              class="t-steps-item__description"
-            >
-              这里是提示文字
-            </div>
-            <div
-              class="t-steps-item__extra"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-steps-item t-steps-item--default"
-      >
-        <div
-          class="t-steps-item__inner "
-        >
-          <div
-            class="t-steps-item__icon t-steps-item--default"
-          >
-            <span
-              class="t-steps-item__icon--number"
-            >
-              0
-            </span>
-          </div>
-          <div
-            class="t-steps-item__content"
-          >
-            <div
-              class="t-steps-item__title"
-            >
-              未进行的步骤
-            </div>
-            <div
-              class="t-steps-item__description"
-            >
-              这里是提示文字
-            </div>
-            <div
-              class="t-steps-item__extra"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-     
-    <div
-      style="margin: 16px 0px;"
-    />
-     
-    <div
-      class="t-steps t-steps--vertical t-steps--default-anchor t-steps--reverse"
-    >
-      <div
-        class="t-steps-item t-steps-item--finish"
-      >
-        <div
-          class="t-steps-item__inner "
-        >
-          <div
-            class="t-steps-item__icon t-steps-item--finish"
-          >
-            <span
-              class="t-steps-item__icon--number"
-            >
-              <svg
-                class="t-icon t-icon-check"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
-          </div>
-          <div
-            class="t-steps-item__content"
-          >
-            <div
-              class="t-steps-item__title"
-            >
-              已完成的步骤
-            </div>
-            <div
-              class="t-steps-item__description"
-            >
-              这里是提示文字
-            </div>
-            <div
-              class="t-steps-item__extra"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-steps-item t-steps-item--process"
-      >
-        <div
-          class="t-steps-item__inner "
-        >
-          <div
-            class="t-steps-item__icon t-steps-item--process"
-          >
-            <span
-              class="t-steps-item__icon--number"
-            >
-              0
-            </span>
-          </div>
-          <div
-            class="t-steps-item__content"
-          >
-            <div
-              class="t-steps-item__title"
-            >
-              进行中的步骤
-            </div>
-            <div
-              class="t-steps-item__description"
-            >
-              这里是提示文字
-            </div>
-            <div
-              class="t-steps-item__extra"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-steps-item t-steps-item--default"
-      >
-        <div
-          class="t-steps-item__inner "
-        >
-          <div
-            class="t-steps-item__icon t-steps-item--default"
-          >
-            <span
-              class="t-steps-item__icon--number"
-            >
-              0
-            </span>
-          </div>
-          <div
-            class="t-steps-item__content"
-          >
-            <div
-              class="t-steps-item__title"
-            >
-              未进行的步骤
-            </div>
-            <div
-              class="t-steps-item__description"
-            >
-              这里是提示文字
-            </div>
-            <div
-              class="t-steps-item__extra"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-steps-item t-steps-item--default"
-      >
-        <div
-          class="t-steps-item__inner "
-        >
-          <div
-            class="t-steps-item__icon t-steps-item--default"
-          >
-            <span
-              class="t-steps-item__icon--number"
-            >
-              0
-            </span>
-          </div>
-          <div
-            class="t-steps-item__content"
-          >
-            <div
-              class="t-steps-item__title"
-            >
-              未进行的步骤
-            </div>
-            <div
-              class="t-steps-item__description"
-            >
-              这里是提示文字
-            </div>
-            <div
-              class="t-steps-item__extra"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Steps Steps extra demo works fine 1`] = `
+exports[`Steps Steps extraVue demo works fine 1`] = `
 <div
   class="t-steps t-steps--vertical t-steps--default-anchor t-steps--positive"
 >
@@ -864,7 +181,7 @@ exports[`Steps Steps extra demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps icon demo works fine 1`] = `
+exports[`Steps Steps iconVue demo works fine 1`] = `
 <div
   class="t-steps t-steps--horizontal t-steps--default-anchor"
 >
@@ -1049,7 +366,126 @@ exports[`Steps Steps icon demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps options demo works fine 1`] = `
+exports[`Steps Steps noSequenceVue demo works fine 1`] = `
+<div
+  class="t-steps t-steps--horizontal t-steps--dot-anchor"
+>
+  <div
+    class="t-steps-item t-steps-item--finish"
+  >
+    <div
+      class="t-steps-item__inner "
+    >
+      <div
+        class="t-steps-item__icon t-steps-item--finish"
+      />
+      <div
+        class="t-steps-item__content"
+      >
+        <div
+          class="t-steps-item__title"
+        >
+          已完成的步骤
+        </div>
+        <div
+          class="t-steps-item__description"
+        >
+          这里是提示文字
+        </div>
+        <div
+          class="t-steps-item__extra"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-steps-item t-steps-item--process"
+  >
+    <div
+      class="t-steps-item__inner "
+    >
+      <div
+        class="t-steps-item__icon t-steps-item--process"
+      />
+      <div
+        class="t-steps-item__content"
+      >
+        <div
+          class="t-steps-item__title"
+        >
+          进行中的步骤
+        </div>
+        <div
+          class="t-steps-item__description"
+        >
+          这里是提示文字
+        </div>
+        <div
+          class="t-steps-item__extra"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-steps-item t-steps-item--default"
+  >
+    <div
+      class="t-steps-item__inner "
+    >
+      <div
+        class="t-steps-item__icon t-steps-item--default"
+      />
+      <div
+        class="t-steps-item__content"
+      >
+        <div
+          class="t-steps-item__title"
+        >
+          未进行的步骤
+        </div>
+        <div
+          class="t-steps-item__description"
+        >
+          这里是提示文字
+        </div>
+        <div
+          class="t-steps-item__extra"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-steps-item t-steps-item--default"
+  >
+    <div
+      class="t-steps-item__inner "
+    >
+      <div
+        class="t-steps-item__icon t-steps-item--default"
+      />
+      <div
+        class="t-steps-item__content"
+      >
+        <div
+          class="t-steps-item__title"
+        >
+          未进行的步骤
+        </div>
+        <div
+          class="t-steps-item__description"
+        >
+          这里是提示文字
+        </div>
+        <div
+          class="t-steps-item__extra"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Steps Steps optionsVue demo works fine 1`] = `
 <div
   class="t-steps t-steps--horizontal t-steps--default-anchor"
 >
@@ -1204,7 +640,7 @@ exports[`Steps Steps options demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps sequence demo works fine 1`] = `
+exports[`Steps Steps sequenceVue demo works fine 1`] = `
 <div>
   <div
     class="t-steps t-steps--horizontal t-steps--default-anchor"
@@ -1520,7 +956,7 @@ exports[`Steps Steps sequence demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps status demo works fine 1`] = `
+exports[`Steps Steps statusVue demo works fine 1`] = `
 <div>
   <div
     class="t-steps t-steps--horizontal t-steps--default-anchor"
@@ -1851,6 +1287,570 @@ exports[`Steps Steps status demo works fine 1`] = `
           <div
             class="t-steps-item__extra"
           />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Steps Steps verticalNoSequenceVue demo works fine 1`] = `
+<div
+  class="setps-demo"
+>
+  <div
+    class="tdesign-demo-block"
+  >
+    <div
+      class="t-steps t-steps--vertical t-steps--dot-anchor t-steps--positive"
+    >
+      <div
+        class="t-steps-item t-steps-item--finish"
+      >
+        <div
+          class="t-steps-item__inner "
+        >
+          <div
+            class="t-steps-item__icon t-steps-item--finish"
+          />
+          <div
+            class="t-steps-item__content"
+          >
+            <div
+              class="t-steps-item__title"
+            >
+              已完成的步骤
+            </div>
+            <div
+              class="t-steps-item__description"
+            >
+              这里是提示文字
+            </div>
+            <div
+              class="t-steps-item__extra"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-steps-item t-steps-item--process"
+      >
+        <div
+          class="t-steps-item__inner "
+        >
+          <div
+            class="t-steps-item__icon t-steps-item--process"
+          />
+          <div
+            class="t-steps-item__content"
+          >
+            <div
+              class="t-steps-item__title"
+            >
+              进行中的步骤
+            </div>
+            <div
+              class="t-steps-item__description"
+            >
+              这里是提示文字
+            </div>
+            <div
+              class="t-steps-item__extra"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-steps-item t-steps-item--default"
+      >
+        <div
+          class="t-steps-item__inner "
+        >
+          <div
+            class="t-steps-item__icon t-steps-item--default"
+          />
+          <div
+            class="t-steps-item__content"
+          >
+            <div
+              class="t-steps-item__title"
+            >
+              未进行的步骤
+            </div>
+            <div
+              class="t-steps-item__description"
+            >
+              这里是提示文字
+            </div>
+            <div
+              class="t-steps-item__extra"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-steps-item t-steps-item--default"
+      >
+        <div
+          class="t-steps-item__inner "
+        >
+          <div
+            class="t-steps-item__icon t-steps-item--default"
+          />
+          <div
+            class="t-steps-item__content"
+          >
+            <div
+              class="t-steps-item__title"
+            >
+              未进行的步骤
+            </div>
+            <div
+              class="t-steps-item__description"
+            >
+              这里是提示文字
+            </div>
+            <div
+              class="t-steps-item__extra"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="t-steps t-steps--vertical t-steps--dot-anchor t-steps--reverse"
+    >
+      <div
+        class="t-steps-item t-steps-item--finish"
+      >
+        <div
+          class="t-steps-item__inner "
+        >
+          <div
+            class="t-steps-item__icon t-steps-item--finish"
+          />
+          <div
+            class="t-steps-item__content"
+          >
+            <div
+              class="t-steps-item__title"
+            >
+              已完成的步骤
+            </div>
+            <div
+              class="t-steps-item__description"
+            >
+              这里是提示文字
+            </div>
+            <div
+              class="t-steps-item__extra"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-steps-item t-steps-item--process"
+      >
+        <div
+          class="t-steps-item__inner "
+        >
+          <div
+            class="t-steps-item__icon t-steps-item--process"
+          />
+          <div
+            class="t-steps-item__content"
+          >
+            <div
+              class="t-steps-item__title"
+            >
+              进行中的步骤
+            </div>
+            <div
+              class="t-steps-item__description"
+            >
+              这里是提示文字
+            </div>
+            <div
+              class="t-steps-item__extra"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-steps-item t-steps-item--default"
+      >
+        <div
+          class="t-steps-item__inner "
+        >
+          <div
+            class="t-steps-item__icon t-steps-item--default"
+          />
+          <div
+            class="t-steps-item__content"
+          >
+            <div
+              class="t-steps-item__title"
+            >
+              未进行的步骤
+            </div>
+            <div
+              class="t-steps-item__description"
+            >
+              这里是提示文字
+            </div>
+            <div
+              class="t-steps-item__extra"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-steps-item t-steps-item--default"
+      >
+        <div
+          class="t-steps-item__inner "
+        >
+          <div
+            class="t-steps-item__icon t-steps-item--default"
+          />
+          <div
+            class="t-steps-item__content"
+          >
+            <div
+              class="t-steps-item__title"
+            >
+              未进行的步骤
+            </div>
+            <div
+              class="t-steps-item__description"
+            >
+              这里是提示文字
+            </div>
+            <div
+              class="t-steps-item__extra"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Steps Steps verticalSequenceVue demo works fine 1`] = `
+<div
+  class="setps-demo"
+>
+  <div
+    class="tdesign-demo-block"
+  >
+    <div
+      class="t-steps t-steps--vertical t-steps--default-anchor t-steps--positive"
+    >
+      <div
+        class="t-steps-item t-steps-item--finish"
+      >
+        <div
+          class="t-steps-item__inner "
+        >
+          <div
+            class="t-steps-item__icon t-steps-item--finish"
+          >
+            <span
+              class="t-steps-item__icon--number"
+            >
+              <svg
+                class="t-icon t-icon-check"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            class="t-steps-item__content"
+          >
+            <div
+              class="t-steps-item__title"
+            >
+              已完成的步骤
+            </div>
+            <div
+              class="t-steps-item__description"
+            >
+              这里是提示文字
+            </div>
+            <div
+              class="t-steps-item__extra"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-steps-item t-steps-item--process"
+      >
+        <div
+          class="t-steps-item__inner "
+        >
+          <div
+            class="t-steps-item__icon t-steps-item--process"
+          >
+            <span
+              class="t-steps-item__icon--number"
+            >
+              0
+            </span>
+          </div>
+          <div
+            class="t-steps-item__content"
+          >
+            <div
+              class="t-steps-item__title"
+            >
+              进行中的步骤
+            </div>
+            <div
+              class="t-steps-item__description"
+            >
+              这里是提示文字
+            </div>
+            <div
+              class="t-steps-item__extra"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-steps-item t-steps-item--default"
+      >
+        <div
+          class="t-steps-item__inner "
+        >
+          <div
+            class="t-steps-item__icon t-steps-item--default"
+          >
+            <span
+              class="t-steps-item__icon--number"
+            >
+              0
+            </span>
+          </div>
+          <div
+            class="t-steps-item__content"
+          >
+            <div
+              class="t-steps-item__title"
+            >
+              未进行的步骤
+            </div>
+            <div
+              class="t-steps-item__description"
+            >
+              这里是提示文字
+            </div>
+            <div
+              class="t-steps-item__extra"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-steps-item t-steps-item--default"
+      >
+        <div
+          class="t-steps-item__inner "
+        >
+          <div
+            class="t-steps-item__icon t-steps-item--default"
+          >
+            <span
+              class="t-steps-item__icon--number"
+            >
+              0
+            </span>
+          </div>
+          <div
+            class="t-steps-item__content"
+          >
+            <div
+              class="t-steps-item__title"
+            >
+              未进行的步骤
+            </div>
+            <div
+              class="t-steps-item__description"
+            >
+              这里是提示文字
+            </div>
+            <div
+              class="t-steps-item__extra"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      style="margin: 16px 0px;"
+    />
+     
+    <div
+      class="t-steps t-steps--vertical t-steps--default-anchor t-steps--reverse"
+    >
+      <div
+        class="t-steps-item t-steps-item--finish"
+      >
+        <div
+          class="t-steps-item__inner "
+        >
+          <div
+            class="t-steps-item__icon t-steps-item--finish"
+          >
+            <span
+              class="t-steps-item__icon--number"
+            >
+              <svg
+                class="t-icon t-icon-check"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            class="t-steps-item__content"
+          >
+            <div
+              class="t-steps-item__title"
+            >
+              已完成的步骤
+            </div>
+            <div
+              class="t-steps-item__description"
+            >
+              这里是提示文字
+            </div>
+            <div
+              class="t-steps-item__extra"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-steps-item t-steps-item--process"
+      >
+        <div
+          class="t-steps-item__inner "
+        >
+          <div
+            class="t-steps-item__icon t-steps-item--process"
+          >
+            <span
+              class="t-steps-item__icon--number"
+            >
+              0
+            </span>
+          </div>
+          <div
+            class="t-steps-item__content"
+          >
+            <div
+              class="t-steps-item__title"
+            >
+              进行中的步骤
+            </div>
+            <div
+              class="t-steps-item__description"
+            >
+              这里是提示文字
+            </div>
+            <div
+              class="t-steps-item__extra"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-steps-item t-steps-item--default"
+      >
+        <div
+          class="t-steps-item__inner "
+        >
+          <div
+            class="t-steps-item__icon t-steps-item--default"
+          >
+            <span
+              class="t-steps-item__icon--number"
+            >
+              0
+            </span>
+          </div>
+          <div
+            class="t-steps-item__content"
+          >
+            <div
+              class="t-steps-item__title"
+            >
+              未进行的步骤
+            </div>
+            <div
+              class="t-steps-item__description"
+            >
+              这里是提示文字
+            </div>
+            <div
+              class="t-steps-item__extra"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-steps-item t-steps-item--default"
+      >
+        <div
+          class="t-steps-item__inner "
+        >
+          <div
+            class="t-steps-item__icon t-steps-item--default"
+          >
+            <span
+              class="t-steps-item__icon--number"
+            >
+              0
+            </span>
+          </div>
+          <div
+            class="t-steps-item__content"
+          >
+            <div
+              class="t-steps-item__title"
+            >
+              未进行的步骤
+            </div>
+            <div
+              class="t-steps-item__description"
+            >
+              这里是提示文字
+            </div>
+            <div
+              class="t-steps-item__extra"
+            />
+          </div>
         </div>
       </div>
     </div>

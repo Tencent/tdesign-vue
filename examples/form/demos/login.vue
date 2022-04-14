@@ -1,25 +1,18 @@
 <template>
   <div style="width: 350px">
-    <t-form
-      :data="formData"
-      ref="form"
-      @reset="onReset"
-      @submit="onSubmit"
-      :colon="true"
-      :labelWidth="0"
-    >
-      <t-form-item name='account'>
+    <t-form :data="formData" ref="form" @reset="onReset" @submit="onSubmit" :colon="true" :labelWidth="0">
+      <t-form-item name="account">
         <t-input clearable v-model="formData.account" placeholder="请输入账户名">
           <desktop-icon slot="prefix-icon"></desktop-icon>
         </t-input>
       </t-form-item>
-      <t-form-item name='password'>
+      <t-form-item name="password">
         <t-input type="password" clearable v-model="formData.password" placeholder="请输入密码">
           <lock-on-icon slot="prefix-icon"></lock-on-icon>
         </t-input>
       </t-form-item>
-      <t-form-item style="padding-top: 8px">
-        <t-button theme="primary" type="submit" block >登录</t-button>
+      <t-form-item style="margin-left: 100px">
+        <t-button theme="primary" type="submit" block>登录</t-button>
       </t-form-item>
     </t-form>
   </div>
@@ -34,7 +27,8 @@ const INITIAL_DATA = {
 
 export default {
   components: {
-    DesktopIcon, LockOnIcon,
+    DesktopIcon,
+    LockOnIcon,
   },
   data() {
     return {

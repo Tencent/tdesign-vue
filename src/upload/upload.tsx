@@ -13,6 +13,7 @@ import ImageCard from './image';
 import FlowList from './flow-list';
 import xhr from '../_common/js/upload/xhr';
 import log from '../_common/js/log';
+import { formatFiles, isOverSizeLimit } from '../_common/js/upload/utils';
 import TButton from '../button';
 import TDialog from '../dialog';
 import SingleFile from './single-file';
@@ -20,7 +21,7 @@ import { renderContent } from '../utils/render-tnode';
 import props from './props';
 import { ClassName } from '../common';
 import { emitEvent } from '../utils/event';
-import { dedupeFile } from './util';
+
 import {
   HTMLInputEvent,
   SuccessContext,
@@ -34,54 +35,10 @@ import {
   UploadFile,
   UploadRemoveContext,
   RequestMethodResponse,
-  SizeUnit,
   SizeLimitObj,
 } from './type';
 
 const name = `${prefix}-upload`;
-/**
- * [*] 表示方法采用这种方式
- * [x] 表示方法不采用这种方式
- *
- * [x] bit      位              b     0 or 1
- * [*] byte     字节            B     8 bits
- * [x] kilobit  千位            kb    1000 bites
- * [*] kilobyte 千字节(二进制)   KB    1024 bytes
- * [x] kilobyte 千字节(十进制)   KB    1000 bytes
- * [x] Megabite 百万位          Mb    1000 kilobits
- * [*] Megabyte 兆字节(二进制)   KB    1024 kilobytes
- * [*] Megabyte 兆字节(十进制)   KB    1000 kilobytes
- * [x] Gigabit  万亿位          Gb    1000 Megabite
- * [*] Gigabyte 吉字节(二进制)   GB    1024 Megabytes
- * [x] Gigabyte 吉字节(十进制)   GB    1000 Megabytes
- */
-
-// 各个单位和 KB 的关系
-const SIZE_MAP = {
-  B: 1024,
-  KB: 1,
-  MB: 1048576, // 1024 * 1024
-  GB: 1073741824, // 1024 * 1024 * 1024
-};
-
-/**
- * 大小比较
- * @param size 文件大小
- * @param unit 计算机计量单位
- */
-function isOverSizeLimit(fileSize: number, sizeLimit: number, unit: SizeUnit) {
-  // 以 KB 为单位进行比较
-  const units = ['B', 'KB', 'MB', 'GB'];
-  const KBIndex = 1;
-  let index = units.indexOf(unit);
-  if (index === -1) {
-    console.warn(`TDesign Upload Warn: \`sizeLimit.unit\` can only be one of ${units.join()}`);
-    index = KBIndex;
-  }
-  const num = SIZE_MAP[unit];
-  const limit = index < KBIndex ? sizeLimit / num : sizeLimit * num;
-  return fileSize <= limit;
-}
 
 export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).extend({
   name: 'TUpload',
@@ -103,13 +60,10 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
   data() {
     return {
-      // 表单控制禁用态时的变量
-      formDisabled: undefined,
+      formDisabled: undefined, // 表单控制禁用态时的变量
       dragActive: false,
-      // 加载中的文件
-      loadingFile: null as UploadFile,
-      // 等待上传的文件队列
-      toUploadFiles: [],
+      loadingFile: null as UploadFile, // 加载中的文件
+      toUploadFiles: [], // 等待上传的文件队列
       errorMsg: '',
       showImageViewDialog: false,
       showImageViewUrl: '',
@@ -118,6 +72,10 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
   },
 
   computed: {
+    isSingleRequest(): boolean {
+      // 单文件和合并上传的情况实际都是只发起一个请求
+      return !this.multiple || this.isBatchUpload;
+    },
     tDisabled(): boolean {
       return this.formDisabled || this.disabled;
     },
@@ -152,10 +110,10 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       return ['image', 'image-flow', 'custom'].includes(this.theme);
     },
     showErrorMsg(): boolean {
-      return !this.showUploadList && !!this.errorMsg;
+      return !!this.errorMsg;
     },
     tipsClasses(): ClassName {
-      return [`${name}__tips ${prefix}-size-s`];
+      return [`${name}__tips`, `${prefix}-size-s`];
     },
     errorClasses(): ClassName {
       return this.tipsClasses.concat(`${name}__tips-error`);
@@ -167,18 +125,17 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       return this.uploadInOneRequest && this.isBatchUpload;
     },
     uploadListTriggerText(): string {
-      let uploadText = '选择文件';
+      let uploadText = this.global.triggerUploadText.fileInput;
       if (this.toUploadFiles?.length > 0 || this.files?.length > 0) {
         if (this.theme === 'file-input' || (this.files?.length > 0 && this.canBatchUpload)) {
-          uploadText = '重新选择';
+          uploadText = this.global.triggerUploadText.reupload;
         } else {
-          uploadText = '继续选择';
+          uploadText = this.global.triggerUploadText.continueUpload;
         }
       }
       return uploadText;
     },
   },
-
   methods: {
     emitChangeEvent(files: Array<UploadFile>, ctx: UploadChangeContext) {
       emitEvent<Parameters<TdUploadProps['onChange']>>(this, 'change', files, ctx);
@@ -200,12 +157,22 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       const { files } = event.target;
       if (this.tDisabled) return;
       this.uploadFiles(files);
+      emitEvent<Parameters<TdUploadProps['onSelectChange']>>(
+        this,
+        'select-change',
+        formatFiles(Array.from(files), this.format),
+      );
       (this.$refs.input as HTMLInputElement).value = '';
     },
 
     handleDragChange(files: FileList): void {
       if (this.tDisabled) return;
       this.uploadFiles(files);
+      emitEvent<Parameters<TdUploadProps['onSelectChange']>>(
+        this,
+        'select-change',
+        formatFiles(Array.from(files), this.format),
+      );
     },
 
     handleSingleRemove(e: MouseEvent) {
@@ -238,13 +205,14 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     },
 
     handleListRemove(context: FlowRemoveContext) {
-      const { file } = context;
+      const { file, e } = context;
       const index = findIndex(this.toUploadFiles, (o) => o.name === file?.name);
       if (index >= 0) {
         this.toUploadFiles.splice(index, 1);
+        this.emitRemoveEvent({ e, file, index });
       } else {
         const index = findIndex(this.files, (o) => o.name === file?.name);
-        this.handleMultipleRemove({ e: context.e, index });
+        this.handleMultipleRemove({ e, index });
       }
     },
 
@@ -257,7 +225,8 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
       let tmpFiles = [...files];
       if (this.max) {
-        tmpFiles = tmpFiles.slice(0, this.max - this.files.length);
+        // 判断当前待上传列表长度
+        tmpFiles = tmpFiles.slice(0, this.max - this.toUploadFiles.length - this.files.length);
         if (tmpFiles.length !== files.length) {
           console.warn(`TDesign Upload Warn: you can only upload ${this.max} files`);
         }
@@ -285,10 +254,11 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
         this.handleBeforeUpload(file).then((canUpload) => {
           if (!canUpload) return;
           const newFiles = this.toUploadFiles.concat();
-          newFiles.push(uploadFile);
-          this.toUploadFiles = !this.allowUploadDuplicateFile
-            ? dedupeFile([...new Set(newFiles)])
-            : [...new Set(newFiles)];
+          // 判断是否为重复文件条件，已选是否存在检验
+          if (this.allowUploadDuplicateFile || !this.toUploadFiles.find((file) => file.name === uploadFile.name)) {
+            newFiles.push(uploadFile);
+          }
+          this.toUploadFiles = newFiles;
           this.loadingFile = uploadFile;
           if (this.autoUpload) {
             this.upload(uploadFile);
@@ -297,7 +267,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       });
     },
 
-    async upload(currentFiles: UploadFile | UploadFile[]): Promise<void> {
+    async upload(currentFiles: UploadFile | UploadFile[], index?: number) {
       // support allFilesInOneRequest upload，兼容原有的单文件模式
       const innerFiles = Array.isArray(currentFiles) ? currentFiles : [currentFiles];
 
@@ -319,7 +289,8 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
           this.handleMockProgress(innerFiles);
         }
         const request = xhr;
-        this.xhrReq = request({
+
+        const currentXhr = request({
           method: this.method,
           action: this.action,
           data: this.data,
@@ -331,6 +302,10 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
           onProgress: this.handleProgress,
           onSuccess: this.handleSuccess,
         });
+
+        if (this.isSingleRequest) {
+          this.xhrReq = currentXhr;
+        } else if (typeof index === 'number') this.toUploadFiles[index].xhr = currentXhr;
       }
     },
     /** 模拟进度条 Mock Progress */
@@ -376,22 +351,22 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
     handleRequestMethodResponse(res: RequestMethodResponse) {
       if (!res) {
-        console.error('TDesign Upoad Error: `requestMethodResponse` is required.');
+        console.error('TDesign Upload Error: `requestMethodResponse` is required.');
         return false;
       }
       if (!res.status) {
         console.error(
-          'TDesign Upoad Error: `requestMethodResponse.status` is missing, which value is `success` or `fail`',
+          'TDesign Upload Error: `requestMethodResponse.status` is missing, which value is `success` or `fail`',
         );
         return false;
       }
       if (!['success', 'fail'].includes(res.status)) {
-        console.error('TDesign Upoad Error: `requestMethodResponse.status` must be `success` or `fail`');
+        console.error('TDesign Upload Error: `requestMethodResponse.status` must be `success` or `fail`');
         return false;
       }
       if (res.status === 'success' && (!res.response || !res.response.url)) {
         console.warn(
-          'TDesign Upoad Warn: `requestMethodResponse.response.url` is required, when `status` is `success`',
+          'TDesign Upload Warn: `requestMethodResponse.response.url` is required, when `status` is `success`',
         );
       }
       return true;
@@ -402,8 +377,8 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
         // 一个请求同时上传多个文件
         this.upload(currentFiles);
       } else {
-        currentFiles.forEach((file) => {
-          this.upload(file);
+        currentFiles.forEach((file, index) => {
+          this.upload(file, index);
         });
       }
     },
@@ -445,7 +420,8 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
       innerFiles.forEach((file) => {
         file.percent = Math.min(percent, 100);
-        this.loadingFile = file;
+        // 判断文件状态是否上传完成
+        this.loadingFile = file.status === 'success' ? null : file;
       });
       const progressCtx = {
         percent,
@@ -560,12 +536,18 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
     cancelUpload() {
       if (this.loadingFile) {
-        // 如果存在自定义上传方法，则只需要抛出事件，而后由父组件处理取消上传
-        if (this.requestMethod) {
-          emitEvent<Parameters<TdUploadProps['onCancelUpload']>>(this, 'cancel-upload');
-        } else {
-          this.xhrReq && this.xhrReq.abort();
+        if (!this.requestMethod) {
+          this.isSingleRequest && this.xhrReq?.abort?.();
+
+          this.multiple
+            && this.toUploadFiles.forEach((file) => {
+              if (file.status === 'progress') {
+                !this.isBatchUpload && file.xhr.abort(); // 合并上传已统一取消 不需要在文件中手动取消
+                file.status = 'waiting';
+              }
+            });
         }
+        emitEvent<Parameters<TdUploadProps['onCancelUpload']>>(this, 'cancel-upload');
         this.loadingFile = null;
       }
       (this.$refs.input as HTMLInputElement).value = '';
@@ -589,7 +571,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       return (
         <TButton variant="outline">
           <UploadIcon slot="icon" />
-          {this.files?.length ? '重新上传' : '点击上传'}
+          {this.files?.length ? this.global.triggerUploadText.reupload : this.global.triggerUploadText.normal}
         </TButton>
       );
     },
@@ -617,6 +599,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
           remove={this.handleSingleRemove}
           showUploadProgress={this.showUploadProgress}
           placeholder={this.placeholder}
+          fileListDisplay={this.fileListDisplay}
         >
           <div class={`${name}__trigger`} onclick={this.triggerUpload}>
             {triggerElement}
@@ -667,7 +650,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
   render(): VNode {
     const triggerElement = this.renderTrigger();
     return (
-      <div class={`${name}`}>
+      <div class={name}>
         {this.renderInput()}
         {this.showCustomDisplay && this.renderCustom(triggerElement)}
         {this.showSingleDisplay && this.renderSingleDisplay(triggerElement)}

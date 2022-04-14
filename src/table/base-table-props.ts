@@ -10,6 +10,10 @@ import { PropType } from 'vue';
 export default {
   /** 是否显示表格边框 */
   bordered: Boolean,
+  /** 表格底部内容，可以用于自定义列设置等 */
+  bottomContent: {
+    type: [String, Function] as PropType<TdBaseTableProps['bottomContent']>,
+  },
   /** 列配置，泛型 T 指表格数据类型 */
   columns: {
     type: Array as PropType<TdBaseTableProps['columns']>,
@@ -40,9 +44,9 @@ export default {
     type: Array as PropType<TdBaseTableProps['footData']>,
     default: (): TdBaseTableProps['footData'] => [],
   },
-  /** 【开发中】表头吸顶 */
+  /** 表头吸顶 */
   headerAffixedTop: Boolean,
-  /** 【开发中】表头吸顶基于 Affix 组件开发，透传全部 Affix 组件属性 */
+  /** 表头吸顶基于 Affix 组件开发，透传全部 Affix 组件属性 */
   headerAffixProps: {
     type: Object as PropType<TdBaseTableProps['headerAffixProps']>,
   },
@@ -95,7 +99,7 @@ export default {
   scroll: {
     type: Object as PropType<TdBaseTableProps['scroll']>,
   },
-  /** 【设计稿确认中】表格尺寸 */
+  /** 表格尺寸 */
   size: {
     type: String as PropType<TdBaseTableProps['size']>,
     default: 'medium' as TdBaseTableProps['size'],
@@ -120,7 +124,7 @@ export default {
       return ['auto', 'fixed'].includes(val);
     },
   },
-  /** 表格顶部内容，可以用于自定义列设置等 */
+  /** 表格顶部内容，可以用于自定义列设置、顶部查询条件等 */
   topContent: {
     type: [String, Function] as PropType<TdBaseTableProps['topContent']>,
   },

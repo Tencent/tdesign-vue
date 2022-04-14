@@ -38,9 +38,6 @@ export default defineComponent({
 
   props: {
     ...props,
-    /**
-     * 渲染展开行，非公开属性，请勿在业务中使用
-     */
     renderExpandedRow: Function as PropType<BaseTableProps['renderExpandedRow']>,
   },
 
@@ -77,12 +74,14 @@ export default defineComponent({
 
     const dynamicBaseTableClasses = computed(() => [
       tableClasses.value,
-      { [tableBaseClass.headerFixed]: isFixedHeader.value },
-      { [tableBaseClass.columnFixed]: isFixedColumn.value },
-      { [tableBaseClass.widthOverflow]: isWidthOverflow.value },
-      { [tableBaseClass.multipleHeader]: isMultipleHeader.value },
-      { [tableColFixedClasses.leftShadow]: showColumnShadow.left },
-      { [tableColFixedClasses.rightShadow]: showColumnShadow.right },
+      {
+        [tableBaseClass.headerFixed]: isFixedHeader.value,
+        [tableBaseClass.columnFixed]: isFixedColumn.value,
+        [tableBaseClass.widthOverflow]: isWidthOverflow.value,
+        [tableBaseClass.multipleHeader]: isMultipleHeader.value,
+        [tableColFixedClasses.leftShadow]: showColumnShadow.left,
+        [tableColFixedClasses.rightShadow]: showColumnShadow.right,
+      },
     ]);
 
     const tableElmClasses = computed(() => [
@@ -104,15 +103,15 @@ export default defineComponent({
       });
     };
 
-    // Vue3 do not need getListenser
-    const getListenser = () => {
-      const listenser: TableListeners = {};
+    // Vue3 do not need getListener
+    const getListener = () => {
+      const listener: TableListeners = {};
       BASE_TABLE_ALL_EVENTS.forEach((key) => {
-        listenser[key] = (...args: any) => {
+        listener[key] = (...args: any) => {
           context.emit(key, ...args);
         };
       });
-      return listenser;
+      return listener;
     };
 
     const {
@@ -192,7 +191,7 @@ export default defineComponent({
       scrollbarWidth,
       isMultipleHeader,
       showRightDivider,
-      getListenser,
+      getListener,
       onTableContentScroll,
       renderPagination,
       renderTNode,
@@ -208,14 +207,14 @@ export default defineComponent({
     const { rowAndColFixedPosition } = this;
     const data = this.isPaginateData ? this.dataSource : this.data;
 
+    const defaultColWidth = this.tableLayout === 'fixed' && this.isWidthOverflow ? '100px' : undefined;
     const colgroup = (
       <colgroup>
         {(this.spansAndLeafNodes?.leafColumns || this.columns).map((col) => (
-          <col key={col.colKey} style={{ width: formatCSSUnit(col.width) }}></col>
+          <col key={col.colKey} style={{ width: formatCSSUnit(col.width) || defaultColWidth }}></col>
         ))}
       </colgroup>
     );
-
     const affixedHeader = Boolean((this.headerAffixedTop || this.isVirtual) && this.tableWidth) && (
       <div
         ref="affixHeaderRef"
@@ -260,12 +259,14 @@ export default defineComponent({
       rowHeight: this.rowHeight,
       trs: this.trs,
       bufferSize: this.bufferSize,
+      scroll: this.scroll,
+      tableContentElm: this.tableContentRef,
       handleRowMounted: this.handleRowMounted,
       renderExpandedRow: this.renderExpandedRow,
       ...pick(this.$props, extendTableProps),
     };
-    // Vue3 do not need getListenser
-    const on = this.getListenser();
+    // Vue3 do not need getListener
+    const on = this.getListener();
     const tableContent = (
       <div
         ref="tableContentRef"
@@ -288,6 +289,7 @@ export default defineComponent({
           />
           <TBody scopedSlots={this.$scopedSlots} props={tableBodyProps} on={on} />
           <TFoot
+            rowKey={this.rowKey}
             scopedSlots={this.$scopedSlots}
             isFixedHeader={this.isFixedHeader}
             rowAndColFixedPosition={rowAndColFixedPosition}
@@ -305,8 +307,8 @@ export default defineComponent({
       <Loading
         loading={!!(this.loading || customLoadingText)}
         text={customLoadingText ? () => customLoadingText : undefined}
-        props={this.loadingProps}
         showOverlay
+        props={this.loadingProps}
       >
         {tableContent}
       </Loading>
@@ -315,6 +317,9 @@ export default defineComponent({
     );
 
     const topContent = this.renderTNode('topContent');
+    const bottomContent = this.renderTNode('bottomContent');
+    const pagination = this.renderPagination(h);
+    const bottom = !!bottomContent && <div class={this.tableBaseClass.bottomContent}>{bottomContent}</div>;
     return (
       <div ref="tableRef" class={this.dynamicBaseTableClasses} style="position: relative">
         {!!topContent && <div class={this.tableBaseClass.topContent}>{topContent}</div>}
@@ -337,7 +342,9 @@ export default defineComponent({
           ></div>
         )}
 
-        {this.renderPagination(h)}
+        {bottom}
+        {pagination}
+        {/* {this.bordered ? [pagination, bottom] : [bottom, pagination]} */}
       </div>
     );
   },
