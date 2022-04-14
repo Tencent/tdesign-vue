@@ -92,7 +92,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     },
     // tree 高度限制格式化
     maxHeight(): number {
-      return Math.max(0, this.height);
+      return 0;
     },
     // 是否使用虚拟滚动
     vScrollEnable(): boolean {

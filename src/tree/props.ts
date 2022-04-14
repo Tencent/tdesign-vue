@@ -130,10 +130,6 @@ export default {
       return ['onlyLeaf', 'parentFirst', 'all'].includes(val);
     },
   },
-  height: {
-    type: Number,
-    default: 0,
-  },
   /** 节点激活时触发，泛型 `T` 表示树节点 TS 类型 */
   onActive: Function as PropType<TdTreeProps['onActive']>,
   /** 节点选中状态变化时触发，context.node 表示当前变化的选项，泛型 `T` 表示树节点 TS 类型 */
