@@ -7529,11 +7529,10 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
 
 exports[`Tree Tree performanceVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column"
+  class="tdesign-tree-demo tdesign-demo-performance"
 >
-  <form
-    class="t-form"
-    style="max-width: 500px;"
+  <div
+    class="operations"
   >
     <div
       class="t-addon t-addon--prepend"
@@ -7559,7 +7558,11 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
+  </div>
+   
+  <div
+    class="operations"
+  >
     <button
       class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
@@ -7570,7 +7573,12 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
         插入根节点
       </span>
     </button>
-     
+  </div>
+   
+  <form
+    class="t-form"
+    style="max-width: 500px;"
+  >
     <div
       class="t-form__item t-form-item__ t-form__item-with-extra"
     >
@@ -7605,6 +7613,76 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
         />
       </div>
     </div>
+     
+    <div
+      class="t-form__item t-form-item__ t-form__item-with-extra"
+    >
+      <div
+        class="t-form__label t-form__label--right"
+      >
+        <label
+          for=""
+        >
+          显示连线
+        </label>
+      </div>
+      <div
+        class="t-form__controls"
+      >
+        <div
+          class="t-form__controls-content"
+        >
+          <div
+            class="t-switch t-size-m t-is-checked"
+          >
+            <span
+              class="t-switch__handle"
+            />
+            <div
+              class="t-switch__content t-size-m"
+            />
+          </div>
+        </div>
+        <div
+          class="t-input__extra"
+        />
+      </div>
+    </div>
+     
+    <div
+      class="t-form__item t-form-item__ t-form__item-with-extra"
+    >
+      <div
+        class="t-form__label t-form__label--right"
+      >
+        <label
+          for=""
+        >
+          显示图标
+        </label>
+      </div>
+      <div
+        class="t-form__controls"
+      >
+        <div
+          class="t-form__controls-content"
+        >
+          <div
+            class="t-switch t-size-m t-is-checked"
+          >
+            <span
+              class="t-switch__handle"
+            />
+            <div
+              class="t-switch__content t-size-m"
+            />
+          </div>
+        </div>
+        <div
+          class="t-input__extra"
+        />
+      </div>
+    </div>
   </form>
    
   <div
@@ -7614,7 +7692,6 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -7643,7 +7720,7 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -7717,7 +7794,7 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -7791,7 +7868,7 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -7868,7 +7945,6 @@ exports[`Tree Tree stateVue demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -7891,7 +7967,7 @@ exports[`Tree Tree stateVue demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
@@ -7992,7 +8068,7 @@ exports[`Tree Tree stateVue demo works fine 1`] = `
           </svg>
         </span>
         <label
-          class="t-checkbox t-tree__label t-tree__label--strictly"
+          class="t-checkbox t-tree__label"
         >
           <input
             class="t-checkbox__former"
