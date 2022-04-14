@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column">
+  <div class="tdesign-demo-block-column" style="max-width: 1200px">
     <div>
       <t-radio-group v-model="leftFixedColumn" variant="default-filled">
         <t-radio-button :value="1">左侧固定一列</t-radio-button>
@@ -87,7 +87,7 @@ export default {
         {
           colKey: 'default',
           title: '默认值',
-          width: 150,
+          // width: 150,
         },
         {
           colKey: 'description',

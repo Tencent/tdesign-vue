@@ -50,7 +50,7 @@ UI 开发规范参考子仓库 README [子仓库 README](https://github.com/Tenc
 
 ### API 规范
 
-[API](./src/_common/api.md)
+[API](https://github.com/Tencent/tdesign/wiki/%E7%BB%84%E4%BB%B6-API-%E5%88%B6%E5%AE%9A%E6%8C%87%E5%BC%95)
 
 ### 前缀
 
@@ -175,7 +175,7 @@ npm run init button
 
 ### 单元测试 & e2e 测试文档
 
-[组件测试文档](./test.md)
+[组件测试文档](./TEST_GUIDE.md)
 
 ### 项目常用脚本说明
 

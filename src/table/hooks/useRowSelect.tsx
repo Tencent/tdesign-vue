@@ -23,11 +23,9 @@ import { ClassName } from '../../common';
 import log from '../../_common/js/log';
 
 export default function useRowSelect(props: TdPrimaryTableProps) {
-  const {
-    selectedRowKeys, columns, data, rowClassName,
-  } = toRefs(props);
+  const { selectedRowKeys, columns, data } = toRefs(props);
   const { tableSelectedClasses } = useClassName();
-  const tRowClassNames = ref();
+  const selectedRowClassNames = ref();
   const [tSelectedRowKeys, setTSelectedRowKeys] = useDefaultValue(
     selectedRowKeys,
     props.defaultSelectedRowKeys || [],
@@ -38,24 +36,23 @@ export default function useRowSelect(props: TdPrimaryTableProps) {
   const selectColumn = computed(() => props.columns.find(({ type }) => ['multiple', 'single'].includes(type)));
   const canSelectedRows = computed(() => props.data.filter((row, rowIndex): boolean => !isDisabled(row, rowIndex)));
   // 选中的行，和所有可以选择的行，交集，用于计算 isSelectedAll 和 isIndeterminate
-  const inersectionKeys = computed(() => intersection(
+  const intersectionKeys = computed(() => intersection(
     tSelectedRowKeys.value,
     canSelectedRows.value.map((t) => get(t, props.rowKey || 'id')),
   ));
 
   watch(
-    [data, columns, rowClassName, tSelectedRowKeys],
+    [data, columns, tSelectedRowKeys],
     () => {
-      if (!selectColumn.value) {
-        tRowClassNames.value = rowClassName.value;
-        return;
-      }
-      const disabledRowFunc = selectColumn.value.disabled
-        ? (p: RowClassNameParams<TableRowData>): ClassName => selectColumn.value.disabled(p) ? tableSelectedClasses.disabled : ''
-        : undefined;
+      const disabledRowFunc = (p: RowClassNameParams<TableRowData>): ClassName => selectColumn.value.disabled(p) ? tableSelectedClasses.disabled : '';
+      const disabledRowClass = selectColumn.value?.disabled ? disabledRowFunc : undefined;
       const selected = new Set(tSelectedRowKeys.value);
-      const selectedRowClassFunc = ({ row }: RowClassNameParams<TableRowData>) => selected.has(get(row, props.rowKey || 'id')) ? tableSelectedClasses.selected : '';
-      tRowClassNames.value = [rowClassName.value, disabledRowFunc, selectedRowClassFunc].filter((v) => v);
+      const selectedRowClassFunc = ({ row }: RowClassNameParams<TableRowData>) => {
+        const rowId = get(row, props.rowKey || 'id');
+        return selected.has(rowId) ? tableSelectedClasses.selected : '';
+      };
+      const selectedRowClass = selected.size ? selectedRowClassFunc : undefined;
+      selectedRowClassNames.value = [disabledRowClass, selectedRowClass].filter((v) => v);
     },
     { immediate: true },
   );
@@ -66,10 +63,10 @@ export default function useRowSelect(props: TdPrimaryTableProps) {
 
   // eslint-disable-next-line
   function getSelectedHeader(h: CreateElement) {
-    const isIndeterminate = inersectionKeys.value.length > 0 && inersectionKeys.value.length < canSelectedRows.value.length;
+    const isIndeterminate = intersectionKeys.value.length > 0 && intersectionKeys.value.length < canSelectedRows.value.length;
     return () => (
       <Checkbox
-        checked={inersectionKeys.value.length === canSelectedRows.value.length}
+        checked={intersectionKeys.value.length === canSelectedRows.value.length}
         indeterminate={isIndeterminate}
         disabled={!canSelectedRows.value.length}
         {...{ on: { change: handleSelectAll } }}
@@ -149,7 +146,7 @@ export default function useRowSelect(props: TdPrimaryTableProps) {
   }
 
   return {
-    tRowClassNames,
+    selectedRowClassNames,
     formatToRowSelectColumn,
   };
 }

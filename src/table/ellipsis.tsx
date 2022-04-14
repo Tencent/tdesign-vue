@@ -2,6 +2,7 @@
 import {
   defineComponent, PropType, ref, computed,
 } from '@vue/composition-api';
+import debounce from 'lodash/debounce';
 import { TNode } from '../common';
 import { renderContent } from '../utils/render-tnode';
 import { isNodeOverflow } from '../utils/dom';
@@ -56,36 +57,36 @@ export default defineComponent({
     ]);
 
     // 当表格数据量大时，不希望默认渲染全量的 Popup，期望在用户 mouseenter 的时候再显示
-    const updateIsOverflow = () => {
+    const onTriggerMouseenter = () => {
       if (!root.value) return;
       isOverflow.value = isNodeOverflow(root.value);
     };
 
-    const onMouseleave = () => {
-      isOverflow.value = false;
+    const onTriggerMouseleave = () => {
+      isOverflow.value = isNodeOverflow(root.value);
     };
+
+    // 使用 debounce 有两个原因：1. 避免 safari/firefox 等浏览器不显示省略浮层；2. 避免省略列快速滚动时，出现一堆的省略浮层
+    const onMouseAround = debounce((e: MouseEvent) => {
+      e.type === 'mouseleave' ? onTriggerMouseleave() : onTriggerMouseenter();
+    }, 80);
 
     return {
       root,
       isOverflow,
       ellipsisClasses,
-      updateIsOverflow,
-      onMouseleave,
+      onMouseAround,
     };
   },
 
   render() {
     const cellNode = renderContent(this, 'default', 'content');
     const ellipsisContent = (
-      <div
-        ref="root"
-        class={this.ellipsisClasses}
-        onMouseenter={this.updateIsOverflow}
-        onMouseleave={this.onMouseleave}
-      >
+      <div ref="root" class={this.ellipsisClasses} onMouseenter={this.onMouseAround} onMouseleave={this.onMouseAround}>
         {cellNode}
       </div>
     );
+    let content = null;
     if (this.isOverflow) {
       const rProps = {
         content: this.popupContent || (() => cellNode),
@@ -95,8 +96,10 @@ export default defineComponent({
         placement: this.placement,
         ...(this.popupProps || {}),
       };
-      return <TPopup props={rProps}>{ellipsisContent}</TPopup>;
+      content = <TPopup props={rProps}>{ellipsisContent}</TPopup>;
+    } else {
+      content = ellipsisContent;
     }
-    return ellipsisContent;
+    return content;
   },
 });

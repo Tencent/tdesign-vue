@@ -124,7 +124,7 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       const labelAlign = isNil(this.labelAlign) ? parent?.labelAlign : this.labelAlign;
       const labelWidth = isNil(this.labelWidth) ? parent?.labelWidth : this.labelWidth;
       let contentStyle = {};
-      if (labelWidth && labelAlign !== 'top') {
+      if (this.getLabelContent() && labelWidth && labelAlign !== 'top') {
         if (typeof labelWidth === 'number') {
           contentStyle = { marginLeft: `${labelWidth}px` };
         } else {
@@ -289,16 +289,16 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       );
     },
     renderTipsInfo(): VNode {
-      let helpVNode: VNode;
+      let helpVNode: VNode = <div class={CLASS_NAMES.extra}></div>;
       if (this.help) {
-        helpVNode = <div class={CLASS_NAMES.help}>{this.help}</div>;
+        helpVNode = <div class={CLASS_NAMES.extra}>{this.help}</div>;
       }
       const list = this.errorList;
       if (this.needErrorMessage && list && list[0] && list[0].message) {
-        return <p class={CLASS_NAMES.extra}>{list[0].message}</p>;
+        return <div class={CLASS_NAMES.extra}>{list[0].message}</div>;
       }
       if (this.successList.length) {
-        return <p class={CLASS_NAMES.extra}>{this.successList[0].message}</p>;
+        return <div class={CLASS_NAMES.extra}>{this.successList[0].message}</div>;
       }
       return helpVNode;
     },

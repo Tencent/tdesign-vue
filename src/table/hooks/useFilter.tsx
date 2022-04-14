@@ -10,6 +10,7 @@ import {
 import useDefaultValue from '../../hooks/useDefaultValue';
 import { useTNodeDefault } from '../../hooks/tnode';
 import TableFilterController from '../filter-controller';
+import { useConfig } from '../../config-provider';
 
 // 筛选条件不为空，才需要显示筛选结果行
 function filterEmptyData(data: FilterValue) {
@@ -27,11 +28,14 @@ function filterEmptyData(data: FilterValue) {
 }
 
 export default function useFilter(props: TdPrimaryTableProps, context: SetupContext) {
+  const primaryTableRef = ref(null);
+  const { t, global } = useConfig('table');
   const renderTNode = useTNodeDefault();
   const { filterValue } = toRefs(props);
   const { tableFilterClasses, isFocusClass } = useClassName();
+  const isTableOverflowHidden = ref<boolean>();
 
-  // uncontroll and controll
+  // unControl and control
   const [tFilterValue, setTFilterValue] = useDefaultValue(
     filterValue,
     props.defaultFilterValue,
@@ -57,10 +61,14 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
     if (hasEmptyCondition.value) return null;
     const defaultNode = (
       <div class={tableFilterClasses.result}>
-        <span>搜索 “{getFilterResultContent()}”，</span>
-        <span>找到 {props.pagination?.total || props.data?.length} 条结果</span>
+        {/* <span>搜索 “{getFilterResultContent()}”，</span>
+        <span>找到 {props.pagination?.total || props.data?.length} 条结果</span> */}
+        {t(global.value.searchResultText, {
+          result: getFilterResultContent(),
+          count: props.pagination?.total || props.data?.length,
+        })}
         <TButton theme="primary" variant="text" onClick={onResetAll}>
-          清空筛选
+          {global.value.clearFilterResultButtonText}
         </TButton>
       </div>
     );
@@ -144,18 +152,32 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
         innerFilterValue={innerFilterValue.value}
         tableFilterClasses={tableFilterClasses}
         isFocusClass={isFocusClass}
+        primaryTableElement={primaryTableRef.value?.$el}
         on={{
           reset: onReset,
           confirm: onConfirm,
           'inner-filter-change': onInnerFilterChange,
+          'visible-change': onPopupVisibleChange,
         }}
       ></TableFilterController>
     );
   }
 
+  function setFilterPrimaryTableRef(primaryTableElement: any) {
+    primaryTableRef.value = primaryTableElement;
+  }
+
+  function onPopupVisibleChange(visible: boolean) {
+    if (visible && !isTableOverflowHidden.value) {
+      isTableOverflowHidden.value = !visible;
+    }
+  }
+
   return {
     hasEmptyCondition,
+    isTableOverflowHidden,
     renderFilterIcon,
     renderFirstFilterRow,
+    setFilterPrimaryTableRef,
   };
 }

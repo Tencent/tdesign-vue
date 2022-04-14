@@ -1431,6 +1431,36 @@ exports[`ConfigProvider ConfigProvider dialogVue demo works fine 1`] = `
 </div>
 `;
 
+exports[`ConfigProvider ConfigProvider globalVue demo works fine 1`] = `
+<div>
+  <div>
+    使用
+    <code>
+      t-config-provider
+    </code>
+    包裹业务功能的最外层组件，点击下方图标查看示例代码
+  </div>
+   
+  <br />
+   
+  <div>
+    英文语言包引入路径：
+    <code>
+      import enConfig from 'tdesign-vue/locale/en_US';
+    </code>
+  </div>
+   
+  <br />
+   
+  <div>
+    中文语言包引入路径：
+    <code>
+      import enConfig from 'tdesign-vue/locale/zh_CN';
+    </code>
+  </div>
+</div>
+`;
+
 exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
 <div
   class="tdesign-demo-item--locale-provider-base"
@@ -1439,7 +1469,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
     class="t-form"
   >
     <div
-      class="t-form__item t-form-item__username"
+      class="t-form__item t-form-item__username t-form__item-with-extra"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -1475,11 +1505,14 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
             </div>
           </div>
         </div>
+        <div
+          class="t-input__extra"
+        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__password"
+      class="t-form__item t-form-item__password t-form__item-with-extra"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -1537,6 +1570,9 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
             </div>
           </div>
         </div>
+        <div
+          class="t-input__extra"
+        />
       </div>
     </div>
   </form>

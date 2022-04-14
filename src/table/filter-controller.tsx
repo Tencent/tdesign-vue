@@ -31,6 +31,7 @@ export interface TableFilterControllerProps {
   };
   isFocusClass: string;
   column: PrimaryTableCol;
+  primaryTableElement: HTMLDivElement;
 }
 
 export default defineComponent({
@@ -42,22 +43,26 @@ export default defineComponent({
     innerFilterValue: Object as PropType<TableFilterControllerProps['innerFilterValue']>,
     tableFilterClasses: Object as PropType<TableFilterControllerProps['tableFilterClasses']>,
     isFocusClass: String,
+    primaryTableElement: {},
   },
 
   // eslint-disable-next-line
-  setup(props: TableFilterControllerProps) {
+  setup(props: TableFilterControllerProps, { emit }) {
+    const triggerElementRef = ref<HTMLDivElement>(null);
     const renderTNode = useTNodeDefault();
     const { t, global } = useConfig('table');
     const filterPopupVisible = ref(false);
 
     const onFilterPopupVisibleChange = (visible: boolean) => {
       filterPopupVisible.value = visible;
+      emit('visible-change', visible);
     };
 
     return {
       t,
       global,
       filterPopupVisible,
+      triggerElementRef,
       renderTNode,
       onFilterPopupVisibleChange,
     };
@@ -129,7 +134,7 @@ export default defineComponent({
               this.filterPopupVisible = false;
             }}
           >
-            重置
+            {this.global.resetText}
           </TButton>
           <TButton
             theme="primary"
@@ -139,7 +144,7 @@ export default defineComponent({
               this.filterPopupVisible = false;
             }}
           >
-            确认
+            {this.global.confirmText}
           </TButton>
         </div>
       );
@@ -150,6 +155,7 @@ export default defineComponent({
     const defaultFilterIcon = this.t(this.global.filterIcon) || <FilterIcon />;
     return (
       <Popup
+        attach={this.primaryTableElement ? () => this.primaryTableElement : undefined}
         visible={this.filterPopupVisible}
         destroyOnClose
         trigger="click"
@@ -167,7 +173,7 @@ export default defineComponent({
           </div>
         )}
       >
-        <div>{this.renderTNode('filterIcon', defaultFilterIcon)}</div>
+        <div ref="triggerElementRef">{this.renderTNode('filterIcon', defaultFilterIcon)}</div>
       </Popup>
     );
   },

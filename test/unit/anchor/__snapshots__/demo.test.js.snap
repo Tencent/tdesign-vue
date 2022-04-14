@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Anchor base demo works fine 1`] = `
+exports[`Anchor Anchor baseVue demo works fine 1`] = `
 <div
   style="display: flex;"
 >
@@ -92,7 +92,288 @@ exports[`Anchor base demo works fine 1`] = `
 </div>
 `;
 
-exports[`Anchor bounds demo works fine 1`] = `
+exports[`Anchor Anchor containerVue demo works fine 1`] = `
+<div
+  class="anchor-demo anchor-container-demo"
+>
+  <div
+    class="t-anchor t-size-m"
+  >
+    <div
+      class="t-anchor__line"
+    >
+      <div
+        class="t-anchor__line-cursor-wrapper"
+      >
+        <div
+          class="t-anchor__line-cursor"
+        />
+      </div>
+    </div>
+    <div
+      class="t-anchor__item"
+    >
+      <a
+        class="t-anchor__item-link"
+        href="#content-1"
+        target="_self"
+        title="content-1"
+      >
+        content-1
+      </a>
+    </div>
+     
+    <div
+      class="t-anchor__item"
+    >
+      <a
+        class="t-anchor__item-link"
+        href="#content-2"
+        target="_self"
+        title="content-2"
+      >
+        content-2
+      </a>
+    </div>
+     
+    <div
+      class="t-anchor__item"
+    >
+      <a
+        class="t-anchor__item-link"
+        href="#content-3"
+        target="_self"
+        title="content-3"
+      >
+        content-3
+      </a>
+    </div>
+     
+    <div
+      class="t-anchor__item"
+    >
+      <a
+        class="t-anchor__item-link"
+        href="#content-4"
+        target="_self"
+        title="content-4"
+      >
+        content-4
+      </a>
+    </div>
+  </div>
+   
+  <div
+    id="anchor-container"
+  >
+    <div
+      class="anchor-content-1"
+      id="content-1"
+    >
+      anchor-content-1
+    </div>
+     
+    <div
+      class="anchor-content-2"
+      id="content-2"
+    >
+      anchor-content-2
+    </div>
+     
+    <div
+      class="anchor-content-3"
+      id="content-3"
+    >
+      anchor-content-3
+    </div>
+     
+    <div
+      class="anchor-content-4"
+      id="content-4"
+    >
+      anchor-content-4
+    </div>
+     
+    <div
+      class="anchor-content-5"
+      id="content-5"
+    >
+      anchor-content-5
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Anchor Anchor cursorVue demo works fine 1`] = `
+<div
+  class="anchor-demo"
+>
+  <div
+    class="t-anchor t-size-m"
+  >
+    <div
+      class="t-anchor__line"
+    >
+      <div
+        class="t-anchor__line-cursor-wrapper"
+      >
+        <div
+          class="test-cursor"
+        />
+      </div>
+    </div>
+     
+    <div
+      class="t-anchor__item"
+    >
+      <a
+        class="t-anchor__item-link"
+        href="#基础锚点"
+        target="_self"
+        title="基础锚点"
+      >
+        基础锚点
+      </a>
+    </div>
+     
+    <div
+      class="t-anchor__item"
+    >
+      <a
+        class="t-anchor__item-link"
+        href="#多级锚点"
+        target="_self"
+        title="多级锚点"
+      >
+        多级锚点
+      </a>
+    </div>
+     
+    <div
+      class="t-anchor__item"
+    >
+      <a
+        class="t-anchor__item-link"
+        href="#指定容器锚点"
+        target="_self"
+        title="指定容器锚点"
+      >
+        指定容器锚点
+      </a>
+    </div>
+     
+    <div
+      class="t-anchor__item"
+    >
+      <a
+        class="t-anchor__item-link"
+        href="#特定交互锚点"
+        target="_self"
+        title="特定交互锚点"
+      >
+        特定交互锚点
+      </a>
+    </div>
+     
+    <div
+      class="t-anchor__item"
+    >
+      <a
+        class="t-anchor__item-link"
+        href="#尺寸"
+        target="_self"
+        title="尺寸"
+      >
+        尺寸
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Anchor Anchor largeVue demo works fine 1`] = `
+<div
+  class="t-anchor t-size-l"
+>
+  <div
+    class="t-anchor__line"
+  >
+    <div
+      class="t-anchor__line-cursor-wrapper"
+    >
+      <div
+        class="t-anchor__line-cursor"
+      />
+    </div>
+  </div>
+  <div
+    class="t-anchor__item"
+  >
+    <a
+      class="t-anchor__item-link"
+      href="#基础锚点"
+      target="_self"
+      title="基础锚点"
+    >
+      基础锚点
+    </a>
+  </div>
+   
+  <div
+    class="t-anchor__item"
+  >
+    <a
+      class="t-anchor__item-link"
+      href="#多级锚点"
+      target="_self"
+      title="多级锚点"
+    >
+      多级锚点
+    </a>
+  </div>
+   
+  <div
+    class="t-anchor__item"
+  >
+    <a
+      class="t-anchor__item-link"
+      href="#指定容器锚点"
+      target="_self"
+      title="指定容器锚点"
+    >
+      指定容器锚点
+    </a>
+  </div>
+   
+  <div
+    class="t-anchor__item"
+  >
+    <a
+      class="t-anchor__item-link"
+      href="#特定交互锚点"
+      target="_self"
+      title="特定交互锚点"
+    >
+      特定交互锚点
+    </a>
+  </div>
+   
+  <div
+    class="t-anchor__item"
+  >
+    <a
+      class="t-anchor__item-link"
+      href="#尺寸"
+      target="_self"
+      title="尺寸"
+    >
+      尺寸
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Anchor Anchor multipleVue demo works fine 1`] = `
 <div
   class="anchor-demo"
 >
@@ -178,13 +459,99 @@ exports[`Anchor bounds demo works fine 1`] = `
 </div>
 `;
 
-exports[`Anchor target demo works fine 1`] = `
+exports[`Anchor Anchor smallVue demo works fine 1`] = `
+<div
+  class="anchor-demo"
+>
+  <div
+    class="t-anchor t-size-s"
+  >
+    <div
+      class="t-anchor__line"
+    >
+      <div
+        class="t-anchor__line-cursor-wrapper"
+      >
+        <div
+          class="t-anchor__line-cursor"
+        />
+      </div>
+    </div>
+    <div
+      class="t-anchor__item"
+    >
+      <a
+        class="t-anchor__item-link"
+        href="#基础锚点"
+        target="_self"
+        title="基础锚点"
+      >
+        基础锚点
+      </a>
+    </div>
+     
+    <div
+      class="t-anchor__item"
+    >
+      <a
+        class="t-anchor__item-link"
+        href="#多级锚点"
+        target="_self"
+        title="多级锚点"
+      >
+        多级锚点
+      </a>
+    </div>
+     
+    <div
+      class="t-anchor__item"
+    >
+      <a
+        class="t-anchor__item-link"
+        href="#指定容器锚点"
+        target="_self"
+        title="指定容器锚点"
+      >
+        指定容器锚点
+      </a>
+    </div>
+     
+    <div
+      class="t-anchor__item"
+    >
+      <a
+        class="t-anchor__item-link"
+        href="#特定交互锚点"
+        target="_self"
+        title="特定交互锚点"
+      >
+        特定交互锚点
+      </a>
+    </div>
+     
+    <div
+      class="t-anchor__item"
+    >
+      <a
+        class="t-anchor__item-link"
+        href="#尺寸"
+        target="_self"
+        title="尺寸"
+      >
+        尺寸
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Anchor Anchor targetVue demo works fine 1`] = `
 <div
   class="anchor-demo"
 >
   <div
     class="t-anchor__target"
-    id="http://example.com#anchor-target-1"
+    id="#anchor-target-1"
   >
     定义
     <svg
@@ -209,7 +576,7 @@ exports[`Anchor target demo works fine 1`] = `
    
   <div
     class="t-anchor__target"
-    id="http://example.com#anchor-target-2"
+    id="#anchor-target-2"
   >
     服务功能
     <svg
@@ -234,7 +601,7 @@ exports[`Anchor target demo works fine 1`] = `
    
   <div
     class="t-anchor__target"
-    id="http://example.com#anchor-target-3"
+    id="#anchor-target-3"
   >
     使用指南
     <svg
@@ -259,7 +626,7 @@ exports[`Anchor target demo works fine 1`] = `
    
   <div
     class="t-anchor__target"
-    id="http://example.com#anchor-target-4"
+    id="#anchor-target-4"
   >
     创建签名
     <svg
@@ -284,7 +651,7 @@ exports[`Anchor target demo works fine 1`] = `
    
   <div
     class="t-anchor__target"
-    id="http://example.com#anchor-target-5"
+    id="#anchor-target-5"
   >
     创建内容
     <svg
@@ -309,7 +676,7 @@ exports[`Anchor target demo works fine 1`] = `
    
   <div
     class="t-anchor__target"
-    id="http://example.com#anchor-target-6"
+    id="#anchor-target-6"
   >
     保密协议
     <svg
@@ -334,7 +701,7 @@ exports[`Anchor target demo works fine 1`] = `
    
   <div
     class="t-anchor__target"
-    id="http://example.com#anchor-target-7"
+    id="#anchor-target-7"
   >
     其他
     <svg
