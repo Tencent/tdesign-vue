@@ -66,6 +66,7 @@ export default {
     type: String as PropType<TdDialogProps['mode']>,
     default: 'modal' as TdDialogProps['mode'],
     validator(val: TdDialogProps['mode']): boolean {
+      if (!val) return true;
       return ['modal', 'modeless', 'normal'].includes(val);
     },
   },
@@ -74,6 +75,7 @@ export default {
     type: String as PropType<TdDialogProps['placement']>,
     default: 'top' as TdDialogProps['placement'],
     validator(val: TdDialogProps['placement']): boolean {
+      if (!val) return true;
       return ['top', 'center'].includes(val);
     },
   },
@@ -82,6 +84,8 @@ export default {
     type: Boolean,
     default: true,
   },
+  /** 仅在挂载元素中显示抽屉，默认在浏览器可视区域显示。父元素需要有定位属性，如：position: relative */
+  showInAttachedElement: Boolean,
   /** 是否显示遮罩层 */
   showOverlay: {
     type: Boolean,
@@ -92,6 +96,7 @@ export default {
     type: String as PropType<TdDialogProps['theme']>,
     default: 'default' as TdDialogProps['theme'],
     validator(val: TdDialogProps['theme']): boolean {
+      if (!val) return true;
       return ['default', 'info', 'warning', 'danger', 'success'].includes(val);
     },
   },

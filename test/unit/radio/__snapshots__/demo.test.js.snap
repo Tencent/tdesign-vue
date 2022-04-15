@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Radio base demo works fine 1`] = `
+exports[`Radio Radio baseVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-row"
 >
@@ -84,7 +84,175 @@ exports[`Radio base demo works fine 1`] = `
 </div>
 `;
 
-exports[`Radio radio button size demo works fine 1`] = `
+exports[`Radio Radio groupVue demo works fine 1`] = `
+<div
+  class="tdesign-demo-block-column"
+>
+  <div>
+    <div
+      class="t-radio-group t-size-m t-radio-group__outline"
+    >
+      <label
+        class="t-radio"
+      >
+        <input
+          class="t-radio__former"
+          name="city"
+          type="radio"
+          value="1"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          选项一
+        </span>
+      </label>
+      <label
+        class="t-radio"
+      >
+        <input
+          class="t-radio__former"
+          name="city"
+          type="radio"
+          value="2"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          选项二
+        </span>
+      </label>
+      <label
+        class="t-radio"
+      >
+        <input
+          class="t-radio__former"
+          name="city"
+          type="radio"
+          value="3"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          选项三
+        </span>
+      </label>
+      <label
+        class="t-radio"
+      >
+        <input
+          class="t-radio__former"
+          name="city"
+          type="radio"
+          value="4"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          选项四
+        </span>
+      </label>
+    </div>
+  </div>
+   
+  <div>
+    <div
+      class="t-radio-group t-size-m t-radio-group__outline"
+    >
+      <label
+        class="t-radio t-is-checked"
+      >
+        <input
+          class="t-radio__former"
+          name=""
+          type="radio"
+          value="1"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          选项一
+        </span>
+      </label>
+       
+      <label
+        class="t-radio"
+      >
+        <input
+          class="t-radio__former"
+          name=""
+          type="radio"
+          value="2"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          选项二
+        </span>
+      </label>
+       
+      <label
+        class="t-radio"
+      >
+        <input
+          class="t-radio__former"
+          name=""
+          type="radio"
+          value="3"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          选项三
+        </span>
+      </label>
+       
+      <label
+        class="t-radio t-is-disabled"
+      >
+        <input
+          class="t-radio__former"
+          disabled=""
+          name=""
+          type="radio"
+          value="4"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          选项四
+        </span>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Radio Radio sizeVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column"
 >
@@ -330,175 +498,7 @@ exports[`Radio radio button size demo works fine 1`] = `
 </div>
 `;
 
-exports[`Radio radio group demo works fine 1`] = `
-<div
-  class="tdesign-demo-block-column"
->
-  <div>
-    <div
-      class="t-radio-group t-size-m t-radio-group__outline"
-    >
-      <label
-        class="t-radio"
-      >
-        <input
-          class="t-radio__former"
-          name="city"
-          type="radio"
-          value="1"
-        />
-        <span
-          class="t-radio__input"
-        />
-        <span
-          class="t-radio__label"
-        >
-          选项一
-        </span>
-      </label>
-      <label
-        class="t-radio"
-      >
-        <input
-          class="t-radio__former"
-          name="city"
-          type="radio"
-          value="2"
-        />
-        <span
-          class="t-radio__input"
-        />
-        <span
-          class="t-radio__label"
-        >
-          选项二
-        </span>
-      </label>
-      <label
-        class="t-radio"
-      >
-        <input
-          class="t-radio__former"
-          name="city"
-          type="radio"
-          value="3"
-        />
-        <span
-          class="t-radio__input"
-        />
-        <span
-          class="t-radio__label"
-        >
-          选项三
-        </span>
-      </label>
-      <label
-        class="t-radio"
-      >
-        <input
-          class="t-radio__former"
-          name="city"
-          type="radio"
-          value="4"
-        />
-        <span
-          class="t-radio__input"
-        />
-        <span
-          class="t-radio__label"
-        >
-          选项四
-        </span>
-      </label>
-    </div>
-  </div>
-   
-  <div>
-    <div
-      class="t-radio-group t-size-m t-radio-group__outline"
-    >
-      <label
-        class="t-radio t-is-checked"
-      >
-        <input
-          class="t-radio__former"
-          name=""
-          type="radio"
-          value="1"
-        />
-        <span
-          class="t-radio__input"
-        />
-        <span
-          class="t-radio__label"
-        >
-          选项一
-        </span>
-      </label>
-       
-      <label
-        class="t-radio"
-      >
-        <input
-          class="t-radio__former"
-          name=""
-          type="radio"
-          value="2"
-        />
-        <span
-          class="t-radio__input"
-        />
-        <span
-          class="t-radio__label"
-        >
-          选项二
-        </span>
-      </label>
-       
-      <label
-        class="t-radio"
-      >
-        <input
-          class="t-radio__former"
-          name=""
-          type="radio"
-          value="3"
-        />
-        <span
-          class="t-radio__input"
-        />
-        <span
-          class="t-radio__label"
-        >
-          选项三
-        </span>
-      </label>
-       
-      <label
-        class="t-radio t-is-disabled"
-      >
-        <input
-          class="t-radio__former"
-          disabled=""
-          name=""
-          type="radio"
-          value="4"
-        />
-        <span
-          class="t-radio__input"
-        />
-        <span
-          class="t-radio__label"
-        >
-          选项四
-        </span>
-      </label>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Radio radio type demo works fine 1`] = `
+exports[`Radio Radio typeVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large"
 >

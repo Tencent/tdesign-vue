@@ -8,6 +8,9 @@
   <a href="https://github.com/Tencent/tdesign-vue/blob/main/LICENSE">
     <img src="https://img.shields.io/npm/l/tdesign-vue.svg?sanitize=true" alt="License">
   </a>
+  <a href="https://app.codecov.io/gh/Tencent/tdesign-vue">
+    <img src="https://img.shields.io/codecov/c/github/Tencent/tdesign-vue/develop.svg?style=flat-square" alt="codecov">
+  </a>
   <a href="https://www.npmjs.com/package/tdesign-vue">
     <img src="https://img.shields.io/npm/v/tdesign-vue.svg?sanitize=true" alt="Version">
   </a>
