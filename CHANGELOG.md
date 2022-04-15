@@ -5,6 +5,22 @@ toc: false
 docClass: timeline
 ---
 
+## 0.40.3 `2022-04-15`
+
+
+### Bug Fixes
+
+* Timepicker: 修复手动清空 value 时异常的问题，[pr #731](https://github.com/Tencent/tdesign-vue/pull/731)，[@uyarn](https://github.com/uyarn)
+* Textarea: 修复输入数字零时显示异常的问题，[issue #727](https://github.com/Tencent/tdesign-vue/issues/727)，[@mokywu](https://github.com/mokywu)
+* Menu: 修复局部注册组件时报错的问题，[issue #696](https://github.com/Tencent/tdesign-vue/issues/696)，[@LeeJim](https://github.com/LeeJim)
+* Select: 修复可过滤的选择器提前换行的问题，[issue #726](https://github.com/Tencent/tdesign-vue/issues/726)，[@uyarn](https://github.com/uyarn)
+### Features
+
+* Form: 默认渲染 extra DOM 节点，[pr #730](https://github.com/Tencent/tdesign-vue/pull/730)，[@HQ-Lin](https://github.com/HQ-Lin)
+* Dialog: 新增 `showInAttachedElement` API 用于控制是否仅在挂载元素中显示弹窗，[pr #711](https://github.com/Tencent/tdesign-vue/pull/711)，[@zhaodanchun](https://github.com/zhaodanchun)
+* Card: 新增卡片组件，[pr #739](https://github.com/Tencent/tdesign-vue/pull/739)，[@uyarn](https://github.com/uyarn)，[@zhwachen](https://github.com/zhwachen)
+* Swiper: 新增轮播框组件，[pr #668](https://github.com/Tencent/tdesign-vue/pull/668)，[@start940315](https://github.com/start940315)
+
 ## 0.40.2 `2022-04-08`
 
 
