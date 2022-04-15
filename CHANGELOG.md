@@ -7,7 +7,6 @@ docClass: timeline
 
 ## 0.40.3 `2022-04-15`
 
-
 ### Bug Fixes
 
 * Timepicker: 修复手动清空 value 时异常的问题，[pr #731](https://github.com/Tencent/tdesign-vue/pull/731)，[@uyarn](https://github.com/uyarn)
