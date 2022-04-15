@@ -30,7 +30,7 @@
     <br />
     <t-card :cover="cover" theme="poster2" :style="{ width: '400px' }">
       <template #footer>
-        <t-button variant="text" shape="square">
+        <t-button variant="text" shape="square" :style="{ 'margin-right': '16px' }">
           <heart-icon size="24" />
         </t-button>
         <t-button variant="text" shape="square">

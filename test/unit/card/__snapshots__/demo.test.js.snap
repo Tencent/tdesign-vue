@@ -251,6 +251,7 @@ exports[`Card Card footerActionsVue demo works fine 1`] = `
       >
         <button
           class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          style="margin-right: 16px;"
           type="button"
         >
           <span
