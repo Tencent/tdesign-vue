@@ -284,6 +284,13 @@ export default {
           component: () => import('@/examples/calendar/calendar.md'),
         },
         {
+          title: 'Card 卡片',
+          name: 'card',
+          docType: 'data',
+          path: '/vue/components/card',
+          component: () => import('@/examples/card/card.md'),
+        },
+        {
           title: 'Comment 评论',
           name: 'comment',
           path: '/vue/components/comment',
@@ -307,17 +314,17 @@ export default {
           path: '/vue/components/progress',
           component: () => import('@/examples/progress/progress.md'),
         },
-        // {
-        //   title: 'Swiper 轮播框',
-        //   name: 'swiper',
-        //   path: '/vue/components/swiper',
-        //   component: () => import('@/examples/swiper/swiper.md'),
-        // },
         {
           title: 'Skeleton 骨架屏',
           name: 'skeleton',
           path: '/vue/components/skeleton',
           component: () => import('@/examples/skeleton/skeleton.md'),
+        },
+        {
+          title: 'Swiper 轮播框',
+          name: 'swiper',
+          path: '/vue/components/swiper',
+          component: () => import('@/examples/swiper/swiper.md'),
         },
         {
           title: 'Table 表格',
