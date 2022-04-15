@@ -1,4 +1,4 @@
-import { defineComponent, computed, ref } from '@vue/composition-api';
+import { defineComponent, computed } from '@vue/composition-api';
 
 import { usePrefixClass } from '../config-provider';
 import useCommonClassName from '../hooks/useCommonClassName';
@@ -15,28 +15,35 @@ export default defineComponent({
     const { sizeClassNames } = useCommonClassName();
     const COMPONENT_NAME = usePrefixClass('card');
 
-    const baseCls = computed(() => [COMPONENT_NAME.value]);
-    const headerCls = ref([`${COMPONENT_NAME.value}__header`]);
-    const headerWrapperCls = ref([`${COMPONENT_NAME.value}__header-wrapper`]);
-    const headerAvatarCls = ref([`${COMPONENT_NAME.value}__avatar`]);
-    const headerTitleCls = ref([`${COMPONENT_NAME.value}__title`]);
-    const headerSubTitleCls = ref([`${COMPONENT_NAME.value}__subtitle`]);
-    const headerDescriptionCls = ref([`${COMPONENT_NAME.value}__description`]);
-    const actionsCls = ref([`${COMPONENT_NAME.value}__actions`]);
-    const bodyCls = ref([`${COMPONENT_NAME.value}__body`]);
-    const coverCls = ref([`${COMPONENT_NAME.value}__cover`]);
-    const footerCls = ref([`${COMPONENT_NAME.value}__footer`]);
-    const footerWrapperCls = ref([`${COMPONENT_NAME.value}__footer-wrapper`]);
+    const baseCls = computed(() => {
+      const defaultClass = [COMPONENT_NAME.value];
 
-    if (props.size === 'small') baseCls.value.push(`${sizeClassNames[props.size]}`);
+      if (props.size === 'small') defaultClass.push(`${sizeClassNames[props.size]}`);
+      if (props.bordered) defaultClass.push(`${COMPONENT_NAME.value}--bordered`);
+      if (props.shadow) defaultClass.push(`${COMPONENT_NAME.value}--shadow`);
+      if (props.hoverShadow) defaultClass.push(`${COMPONENT_NAME.value}--shadow-hover`);
 
-    if (props.bordered) baseCls.value.push(`${COMPONENT_NAME.value}--bordered`);
+      return defaultClass;
+    });
 
-    if (props.shadow) baseCls.value.push(`${COMPONENT_NAME.value}--shadow`);
+    const headerCls = computed(() => {
+      const defaultClass = [`${COMPONENT_NAME.value}__header`];
+      return props.headerBordered
+        ? defaultClass.concat(`${COMPONENT_NAME.value}__title--bordered`)
+        : [`${COMPONENT_NAME.value}__header`];
+    });
 
-    if (props.hoverShadow) baseCls.value.push(`${COMPONENT_NAME.value}--shadow-hover`);
+    const headerWrapperCls = usePrefixClass('card__header-wrapper');
+    const headerAvatarCls = usePrefixClass('card__avatar');
+    const headerTitleCls = usePrefixClass('card__title');
+    const headerSubTitleCls = usePrefixClass('card__subtitle');
+    const headerDescriptionCls = usePrefixClass('card__description');
+    const actionsCls = usePrefixClass('card__actions');
 
-    if (props.headerBordered) headerCls.value.push(`${COMPONENT_NAME.value}__title--bordered`);
+    const bodyCls = usePrefixClass('card__body');
+    const coverCls = usePrefixClass('card__cover');
+    const footerCls = usePrefixClass('card__footer');
+    const footerWrapperCls = usePrefixClass('card__footer-wrapper');
 
     // 卡片风格：普通风格、海报风格1（操作区域在顶部）、海报风格2（操作区域在底部）。
     // 可选项：normal/poster1/poster2
