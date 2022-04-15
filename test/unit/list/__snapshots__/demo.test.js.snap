@@ -1,6 +1,123 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button headerFooter demo works fine 1`] = `
+exports[`List List baseVue demo works fine 1`] = `
+<div
+  class="t-list t-size-m"
+>
+  <ul
+    class="t-list__inner"
+  >
+    <li
+      class="t-list-item"
+    >
+      <div
+        class="t-list-item-main"
+      >
+        <div
+          class="t-list-item__content"
+        >
+          
+    列表内容的描述性文字
+    
+        </div>
+        <li
+          class="t-list-item__action"
+        >
+          <button
+            class="t-button t-size-m t-button--variant-text t-button--theme-default"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              操作1
+            </span>
+          </button>
+           
+          <button
+            class="t-button t-size-m t-button--variant-text t-button--theme-default"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              操作2
+            </span>
+          </button>
+           
+          <button
+            class="t-button t-size-m t-button--variant-text t-button--theme-default"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              操作3
+            </span>
+          </button>
+        </li>
+      </div>
+    </li>
+     
+    <li
+      class="t-list-item"
+    >
+      <div
+        class="t-list-item-main"
+      >
+        <div
+          class="t-list-item__content"
+        >
+          
+    列表内容的描述性文字
+    
+        </div>
+        <li
+          class="t-list-item__action"
+        >
+          <button
+            class="t-button t-size-m t-button--variant-text t-button--theme-default"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              操作1
+            </span>
+          </button>
+           
+          <button
+            class="t-button t-size-m t-button--variant-text t-button--theme-default"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              操作2
+            </span>
+          </button>
+           
+          <button
+            class="t-button t-size-m t-button--variant-text t-button--theme-default"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              操作3
+            </span>
+          </button>
+        </li>
+      </div>
+    </li>
+  </ul>
+  <div
+    class="t-list__load"
+  />
+</div>
+`;
+
+exports[`List List headerFooterVue demo works fine 1`] = `
 <div>
   <div
     class="t-list t-size-m t-list--split"
@@ -279,7 +396,7 @@ exports[`Button headerFooter demo works fine 1`] = `
 </div>
 `;
 
-exports[`Button imageText demo works fine 1`] = `
+exports[`List List imageTextVue demo works fine 1`] = `
 <div>
   <div
     class="t-list t-size-m t-list--split"
@@ -463,7 +580,232 @@ exports[`Button imageText demo works fine 1`] = `
 </div>
 `;
 
-exports[`Button multiline demo works fine 1`] = `
+exports[`List List loadingVue demo works fine 1`] = `
+<div
+  class="tdesign-demo-block-column"
+>
+  <div>
+    <div
+      class="t-radio-group t-size-m t-radio-group--filled"
+    >
+      <label
+        class="t-radio-button t-is-checked"
+      >
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="load-more"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          加载更多
+        </span>
+      </label>
+       
+      <label
+        class="t-radio-button"
+      >
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="loading"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          加载中
+        </span>
+      </label>
+       
+      <label
+        class="t-radio-button"
+      >
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="loading-custom"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          自定义加载更多
+        </span>
+      </label>
+       
+      <label
+        class="t-radio-button"
+      >
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value=""
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          加载完成
+        </span>
+      </label>
+      <div
+        class="t-radio-group__bg-block"
+        style="width: 0px; left: 0px;"
+      />
+    </div>
+  </div>
+   
+  <div
+    class="t-list t-size-m t-list--split"
+  >
+    <ul
+      class="t-list__inner"
+    >
+      <li
+        class="t-list-item"
+      >
+        <div
+          class="t-list-item-main"
+        >
+          <div
+            class="t-list-item__content"
+          >
+            <div
+              class="t-list-item__meta"
+            >
+              <div
+                class="t-list-item__meta-avatar"
+              >
+                <img
+                  src="https://tdesign.gtimg.com/site/avatar.jpg"
+                />
+              </div>
+              <div
+                class="t-list-item__meta-content"
+              >
+                <h3
+                  class="t-list-item__meta-title"
+                >
+                  列表标题
+                </h3>
+                <p
+                  class="t-list-item__meta-description"
+                >
+                  列表内容的描述性文字
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        class="t-list-item"
+      >
+        <div
+          class="t-list-item-main"
+        >
+          <div
+            class="t-list-item__content"
+          >
+            <div
+              class="t-list-item__meta"
+            >
+              <div
+                class="t-list-item__meta-avatar"
+              >
+                <img
+                  src="https://tdesign.gtimg.com/site/avatar.jpg"
+                />
+              </div>
+              <div
+                class="t-list-item__meta-content"
+              >
+                <h3
+                  class="t-list-item__meta-title"
+                >
+                  列表标题
+                </h3>
+                <p
+                  class="t-list-item__meta-description"
+                >
+                  列表内容的描述性文字
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        class="t-list-item"
+      >
+        <div
+          class="t-list-item-main"
+        >
+          <div
+            class="t-list-item__content"
+          >
+            <div
+              class="t-list-item__meta"
+            >
+              <div
+                class="t-list-item__meta-avatar"
+              >
+                <img
+                  src="https://tdesign.gtimg.com/site/avatar.jpg"
+                />
+              </div>
+              <div
+                class="t-list-item__meta-content"
+              >
+                <h3
+                  class="t-list-item__meta-title"
+                >
+                  列表标题
+                </h3>
+                <p
+                  class="t-list-item__meta-description"
+                >
+                  列表内容的描述性文字
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div
+      class="t-list__load"
+    >
+      <div
+        class="t-loading--center t-size-m t-loading t-is-load-more"
+      >
+        <div
+          class="t-loading__text"
+        >
+          点击加载更多
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`List List multilineVue demo works fine 1`] = `
 <div>
   <div
     class="t-list t-size-m t-list--split"
@@ -571,7 +913,7 @@ exports[`Button multiline demo works fine 1`] = `
 </div>
 `;
 
-exports[`Button operation demo works fine 1`] = `
+exports[`List List operationVue demo works fine 1`] = `
 <div>
   <div
     class="t-list t-size-m t-list--split"
@@ -937,7 +1279,7 @@ exports[`Button operation demo works fine 1`] = `
 </div>
 `;
 
-exports[`Button scroll demo works fine 1`] = `
+exports[`List List scrollVue demo works fine 1`] = `
 <div
   class="t-list t-size-m"
   style="max-height: 200px;"
@@ -1175,7 +1517,7 @@ exports[`Button scroll demo works fine 1`] = `
 </div>
 `;
 
-exports[`Button size demo works fine 1`] = `
+exports[`List List sizeVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column"
 >
@@ -1291,6 +1633,77 @@ exports[`Button size demo works fine 1`] = `
     <ul
       class="t-list__inner"
     >
+      <li
+        class="t-list-item"
+      >
+        <div
+          class="t-list-item-main"
+        >
+          <div
+            class="t-list-item__content"
+          >
+            列表内容的描述性文字
+          </div>
+        </div>
+      </li>
+       
+      <li
+        class="t-list-item"
+      >
+        <div
+          class="t-list-item-main"
+        >
+          <div
+            class="t-list-item__content"
+          >
+            列表内容的描述性文字
+          </div>
+        </div>
+      </li>
+       
+      <li
+        class="t-list-item"
+      >
+        <div
+          class="t-list-item-main"
+        >
+          <div
+            class="t-list-item__content"
+          >
+            列表内容的描述性文字
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div
+      class="t-list__load"
+    />
+  </div>
+</div>
+`;
+
+exports[`List List stripeVue demo works fine 1`] = `
+<div>
+  <div
+    class="t-list t-size-m t-list--stripe"
+  >
+    <ul
+      class="t-list__inner"
+    >
+      <li
+        class="t-list-item"
+      >
+        <div
+          class="t-list-item-main"
+        >
+          <div
+            class="t-list-item__content"
+          >
+            列表内容的描述性文字
+          </div>
+        </div>
+      </li>
+       
       <li
         class="t-list-item"
       >

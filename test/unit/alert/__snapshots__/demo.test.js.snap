@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Alert base demo works fine 1`] = `
+exports[`Alert Alert baseVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block"
 >
@@ -152,7 +152,7 @@ exports[`Alert base demo works fine 1`] = `
 </div>
 `;
 
-exports[`Alert close demo works fine 1`] = `
+exports[`Alert Alert closeVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block"
 >
@@ -332,7 +332,7 @@ exports[`Alert close demo works fine 1`] = `
 </div>
 `;
 
-exports[`Alert collapse demo works fine 1`] = `
+exports[`Alert Alert collapseVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block"
 >
@@ -402,7 +402,7 @@ exports[`Alert collapse demo works fine 1`] = `
 </div>
 `;
 
-exports[`Alert icon demo works fine 1`] = `
+exports[`Alert Alert iconVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block"
 >
@@ -571,7 +571,7 @@ exports[`Alert icon demo works fine 1`] = `
 </div>
 `;
 
-exports[`Alert operation demo works fine 1`] = `
+exports[`Alert Alert operationVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block"
 >
@@ -636,7 +636,7 @@ exports[`Alert operation demo works fine 1`] = `
 </div>
 `;
 
-exports[`Alert title demo works fine 1`] = `
+exports[`Alert Alert titleVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block"
 >
