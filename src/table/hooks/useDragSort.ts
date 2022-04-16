@@ -25,7 +25,7 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
     () => ['drag-col', 'col', 'row-handler'].includes(dragSort.value) && !!dragCol.value,
   );
   // 列拖拽排序，待开发
-  // const isColDraggable = computed(() => dragSort.value === 'col' && !!dragCol.value);
+  // const isColDraggable = computed(() => dragSort.value === 'col';
 
   if (dragSort.value === 'col') {
     log.error(
