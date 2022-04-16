@@ -32,16 +32,19 @@ function observeResize(elm: Element, cb: (rect: DOMRectReadOnly) => void) {
   };
 }
 
-const Ref = Vue.extend({
+const Trigger = Vue.extend({
   data() {
     return {
       contentRect: null as DOMRectReadOnly,
     };
   },
   mounted() {
-    this.$on('hook:destroyed', observeResize(this.$el, (ev) => {
-      this.$emit('resize', ev);
-    }));
+    this.$on(
+      'hook:destroyed',
+      observeResize(this.$el, (ev) => {
+        this.$emit('resize', ev);
+      }),
+    );
   },
   render() {
     const children = this.$slots.default || [];
@@ -93,9 +96,12 @@ export default Vue.extend({
           parent.$emit('contentMounted');
           const content = this.$el.children[0];
           if (content) {
-            this.$on('hook:destroyed', observeResize(content, (ev) => {
-              parent.$emit('contentResize', ev);
-            }));
+            this.$on(
+              'hook:destroyed',
+              observeResize(content, () => {
+                parent.$emit('resize');
+              }),
+            );
           }
         },
         destroyed() {
@@ -114,6 +120,6 @@ export default Vue.extend({
     },
   },
   render() {
-    return <Ref onResize={(ev: DOMRectReadOnly) => this.$emit('refResize', ev)}>{this.$slots.default}</Ref>;
+    return <Trigger onResize={() => this.$emit('resize')}>{this.$slots.default}</Trigger>;
   },
 });
