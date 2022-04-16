@@ -20,15 +20,26 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
   const dragCol = computed(() => columns.value.find((item) => item.colKey === 'drag'));
   // 行拖拽判断条件
   const isRowDraggable = computed(() => sortOnRowDraggable.value || dragSort.value === 'row');
-  // 列拖拽判断条件
-  const isColDraggable = computed(() => ['drag-col', 'col'].includes(dragSort.value) && !!dragCol.value);
+  // 行手柄列拖拽判断条件
+  const isRowHandlerDraggable = computed(
+    () => ['drag-col', 'col', 'row-handler'].includes(dragSort.value) && !!dragCol.value,
+  );
+  // 列拖拽排序，待开发
+  // const isColDraggable = computed(() => dragSort.value === 'col' && !!dragCol.value);
+
+  if (dragSort.value === 'col') {
+    log.error(
+      'Table',
+      "dragSort='drag' is going to be used as column drag, please use dragSort='row-handler' instead.",
+    );
+  }
 
   if (dragSort.value === 'drag-col') {
-    log.warn('Table', "dragSort='drag-col' is going to be deprecated, use dragSort='col' instead.");
+    log.error('Table', "dragSort='drag-col' is going to be deprecated, please use dragSort='col' instead.");
   }
 
   if (props.sortOnRowDraggable) {
-    log.warn('Table', "`sortOnRowDraggable` is going to be deprecated, use dragSort='row' instead.");
+    log.error('Table', "`sortOnRowDraggable` is going to be deprecated, please use dragSort='row' instead.");
   }
 
   const { tableDraggableClasses } = useClassName();
@@ -42,7 +53,7 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
   });
   // 注册拖拽事件
   const registerDragEvent = (element: TargetDom) => {
-    if (!isColDraggable.value && !isRowDraggable.value) {
+    if (!isRowHandlerDraggable.value && !isRowDraggable.value) {
       return;
     }
     const dragContainer = element?.querySelector('tbody');
@@ -102,7 +113,7 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
 
   return {
     isRowDraggable,
-    isColDraggable,
+    isRowHandlerDraggable,
     registerDragEvent,
     setDragSortPrimaryTableRef,
   };

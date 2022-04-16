@@ -25,19 +25,27 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
 
   watch(
     [data],
-    ([val]) => {
-      if (!val) return [];
+    ([data]) => {
+      if (!data) return [];
       // 如果没有树形解构，则不需要相关逻辑
       if (!props.tree || !Object.keys(props.tree).length) {
-        dataSource.value = val;
+        // @ts-ignore
+        dataSource.value = data;
         return;
       }
-      const newVal = cloneDeep(val);
+      const newVal = cloneDeep(data);
+      // @ts-ignore
       dataSource.value = newVal;
+      // @ts-ignore
       store.value.initialTreeStore(newVal, props.columns, rowDataKeys.value);
     },
     { immediate: true },
   );
+
+  // 不能启用这部分代码。如果启用，会导致选中树形结构子节点时数据被重置，全部节点收起
+  // watch([columns, rowDataKeys], ([columns, rowDataKeys]) => {
+  //   store.value.initialTreeStore(data.value, columns, rowDataKeys);
+  // });
 
   onUnmounted(() => {
     if (!props.tree || !Object.keys(props.tree).length) return;
@@ -64,8 +72,20 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
    * 组件实例方法，展开或收起某一行
    * @param p 行数据
    */
-  function toggleExpandData(p: { row: TableRowData; rowIndex: number }) {
+  function toggleExpandData(p: { row: TableRowData; rowIndex: number; trigger?: 'inner' }) {
+    if (!props.tree) {
+      console.error('toggleExpandData can only be used in tree data.');
+      return;
+    }
     dataSource.value = store.value.toggleExpandData(p, dataSource.value, rowDataKeys.value);
+    if (p.trigger === 'inner') {
+      const rowValue = get(p.row, rowDataKeys.value.rowKey);
+      props.onTreeExpandChange?.({
+        row: p.row,
+        rowIndex: p.rowIndex,
+        rowState: store.value?.treeDataMap?.get(rowValue),
+      });
+    }
   }
 
   function getTreeNodeColumnCol() {
@@ -99,7 +119,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
             {!!childrenNodes.length && (
               <IconNode
                 class={tableTreeClasses.icon}
-                onClick={() => toggleExpandData({ row: p.row, rowIndex: p.rowIndex })}
+                onClick={() => toggleExpandData({ row: p.row, rowIndex: p.rowIndex, trigger: 'inner' })}
               />
             )}
             {cellInfo}
