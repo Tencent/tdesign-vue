@@ -100,7 +100,7 @@ export default {
     font-size: 14px;
     line-height: 28px;
     display: block;
-    margin: 10px 0px;
+    margin: 10px 0;
     i {
       font-style: normal;
     }
@@ -112,7 +112,7 @@ export default {
     &::before {
       position: absolute;
       top: 50%;
-      left: 0px;
+      left: 0;
       transform: translateY(-50%);
       content: '';
       background-color: #00a870;
