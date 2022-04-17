@@ -80,11 +80,14 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     dataSource.value = store.value.toggleExpandData(p, dataSource.value, rowDataKeys.value);
     if (p.trigger === 'inner') {
       const rowValue = get(p.row, rowDataKeys.value.rowKey);
-      props.onTreeExpandChange?.({
+      const params = {
         row: p.row,
         rowIndex: p.rowIndex,
         rowState: store.value?.treeDataMap?.get(rowValue),
-      });
+      };
+      props.onTreeExpandChange?.(params);
+      // Vue3 ignore next line
+      context.emit('tree-expand-change', params);
     }
   }
 

@@ -7,7 +7,7 @@
       <!-- 只要有 maxHeight，就有固定表头，无论该值是否存在 -->
       <t-checkbox v-model="fixedHeader">显示固定表头</t-checkbox>
       <!-- 为保证组件收益最大化，当数据量小于 `100` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动 -->
-      <t-checkbox v-model="virtualScroll">虚拟滚动</t-checkbox>
+      <!-- <t-checkbox v-model="virtualScroll">虚拟滚动</t-checkbox> -->
       <t-checkbox v-model="fixedLeftCol">固定左侧列</t-checkbox>
       <t-checkbox v-model="fixedRightCol">固定右侧列</t-checkbox>
       <t-checkbox v-model="headerAffixedTop">表头吸顶</t-checkbox>
@@ -15,6 +15,7 @@
 
     <!-- tableContentWidth 必须大于表格的外层宽度，否则请设置 width: 100% -->
     <!-- 多级表头中，如果要使用固定列功能，则必须设置 colKey 和 fixed -->
+    <!-- :scroll="{ type: 'virtual' }" -->
     <t-table
       row-key="index"
       :data="data"
@@ -26,7 +27,7 @@
       :filterRow="() => null"
       :headerAffixProps="{ offsetTop: 0 }"
       :headerAffixedTop="headerAffixedTop"
-      :scroll="virtualScroll ? { type: 'virtual', bufferSize: 20 } : undefined"
+      :scroll="{ type: 'virtual' }"
       @data-change="onDataChange"
       @filter-change="onFilterChange"
     ></t-table>
@@ -34,7 +35,7 @@
 </template>
 <script>
 const data = [];
-for (let i = 0; i < 600; i++) {
+for (let i = 0; i < 1000; i++) {
   data.push({
     index: i,
     platform: i % 2 === 0 ? '共有' : '私有',
