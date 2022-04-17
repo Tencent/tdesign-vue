@@ -53,12 +53,18 @@ export default defineComponent({
     } = useFilter(props, context);
 
     // 拖拽排序功能
-    const { isRowHandlerDraggable, isRowDraggable, setDragSortPrimaryTableRef } = useDragSort(props, context);
+    const {
+      isRowHandlerDraggable, isRowDraggable, isColDraggable, setDragSortPrimaryTableRef,
+    } = useDragSort(
+      props,
+      context,
+    );
 
     const { renderTitleWidthIcon } = useTableHeader(props);
     const { renderAsyncLoading } = useAsyncLoading(props, context);
 
     const primaryTableClasses = computed(() => ({
+      [tableDraggableClasses.colDraggable]: isColDraggable.value,
       [tableDraggableClasses.rowHandlerDraggable]: isRowHandlerDraggable.value,
       [tableDraggableClasses.rowDraggable]: isRowDraggable.value,
       [tableBaseClass.overflowVisible]: isTableOverflowHidden.value === false,
