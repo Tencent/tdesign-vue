@@ -26,7 +26,7 @@ exports[`Form Form alignVue demo works fine 1`] = `
           左对齐
         </span>
       </label>
-       
+
       <label
         class="t-radio-button t-is-checked"
       >
@@ -45,7 +45,7 @@ exports[`Form Form alignVue demo works fine 1`] = `
           右对齐
         </span>
       </label>
-       
+
       <label
         class="t-radio-button"
       >
@@ -70,7 +70,7 @@ exports[`Form Form alignVue demo works fine 1`] = `
       />
     </div>
   </div>
-   
+
   <form
     class="t-form"
   >
@@ -115,7 +115,7 @@ exports[`Form Form alignVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__password t-form__item-with-extra"
     >
@@ -229,7 +229,7 @@ exports[`Form Form baseVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__tel t-form__item-with-extra"
     >
@@ -271,7 +271,7 @@ exports[`Form Form baseVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__status t-form__item-with-extra"
     >
@@ -308,7 +308,7 @@ exports[`Form Form baseVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__gender t-form__item-with-extra"
     >
@@ -350,7 +350,7 @@ exports[`Form Form baseVue demo works fine 1`] = `
                 男
               </span>
             </label>
-             
+
             <label
               class="t-radio"
             >
@@ -376,7 +376,7 @@ exports[`Form Form baseVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__course t-form__item-with-extra"
     >
@@ -461,7 +461,7 @@ exports[`Form Form baseVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__ t-form__item-with-extra"
       style="margin-left: 100px;"
@@ -491,7 +491,7 @@ exports[`Form Form baseVue demo works fine 1`] = `
               提交
             </span>
           </button>
-           
+
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="reset"
@@ -560,7 +560,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__description t-form__item-with-help t-form__item-with-extra"
     >
@@ -604,7 +604,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__password t-form__item-with-extra"
     >
@@ -668,7 +668,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__email t-form__item-with-extra"
     >
@@ -710,7 +710,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__gender t-form__item-with-extra"
     >
@@ -752,7 +752,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
                 男
               </span>
             </label>
-             
+
             <label
               class="t-radio"
             >
@@ -778,7 +778,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__course t-form__item-with-extra"
     >
@@ -881,7 +881,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__college t-form__item-with-extra"
     >
@@ -942,7 +942,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__date t-form__item-with-extra"
     >
@@ -984,7 +984,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__content.url t-form__item-with-extra"
     >
@@ -1026,7 +1026,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__ t-form__item-with-extra"
       style="margin-left: 100px;"
@@ -1053,10 +1053,10 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             <span
               class="t-button__text"
             >
-               提交 
+               提交
             </span>
           </button>
-           
+
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             style="margin-right: 10px;"
@@ -1065,10 +1065,10 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             <span
               class="t-button__text"
             >
-               重置 
+               重置
             </span>
           </button>
-           
+
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             style="margin-right: 10px;"
@@ -1077,12 +1077,12 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             <span
               class="t-button__text"
             >
-              
+
         清空校验结果
-      
+
             </span>
           </button>
-           
+
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="button"
@@ -1090,7 +1090,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             <span
               class="t-button__text"
             >
-               清除指定字段的校验结果 
+               清除指定字段的校验结果
             </span>
           </button>
         </div>
@@ -1149,7 +1149,7 @@ exports[`Form Form customValidatorVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__password t-form__item-with-help t-form__item-with-extra"
     >
@@ -1215,7 +1215,7 @@ exports[`Form Form customValidatorVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__rePassword t-form__item-with-help t-form__item-with-extra"
     >
@@ -1281,7 +1281,7 @@ exports[`Form Form customValidatorVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__ t-form__item-with-extra"
       style="margin-left: 100px;"
@@ -1311,7 +1311,7 @@ exports[`Form Form customValidatorVue demo works fine 1`] = `
               提交
             </span>
           </button>
-           
+
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="reset"
@@ -1351,14 +1351,14 @@ exports[`Form Form disabledVue demo works fine 1`] = `
       <span
         class="t-checkbox__label"
       >
-         是否禁用表单 
+         是否禁用表单
       </span>
     </label>
   </div>
-   
+
   <br />
   <br />
-   
+
   <form
     class="t-form"
   >
@@ -1403,7 +1403,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__college t-form__item-with-extra"
     >
@@ -1464,7 +1464,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__address1 t-form__item-with-extra"
     >
@@ -1581,7 +1581,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__address2 t-form__item-with-extra"
     >
@@ -1632,7 +1632,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__date t-form__item-with-extra"
     >
@@ -1700,7 +1700,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__personalProfile t-form__item-with-extra"
     >
@@ -1738,7 +1738,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__message t-form__item-with-extra"
     >
@@ -1777,7 +1777,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__gender t-form__item-with-extra"
     >
@@ -1819,7 +1819,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
                 男
               </span>
             </label>
-             
+
             <label
               class="t-radio"
             >
@@ -1845,7 +1845,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__course t-form__item-with-extra"
     >
@@ -1930,7 +1930,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__gradePoint t-form__item-with-extra"
     >
@@ -1977,7 +1977,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__avatar t-form__item-with-extra"
     >
@@ -2140,7 +2140,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__ t-form__item-with-extra"
       style="margin-left: 100px;"
@@ -2170,7 +2170,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
               提交
             </span>
           </button>
-           
+
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="reset"
@@ -2213,13 +2213,13 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
           class="t-radio-button__label"
         >
           <span>
-            
+
           使用表单默认校验信息
-        
+
           </span>
         </span>
       </label>
-       
+
       <label
         class="t-radio-button"
       >
@@ -2236,9 +2236,9 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
           class="t-radio-button__label"
         >
           <span>
-            
+
           表单统一配置校验信息
-        
+
           </span>
         </span>
       </label>
@@ -2248,10 +2248,10 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
       />
     </div>
   </div>
-   
+
   <br />
   <br />
-   
+
   <form
     class="t-form"
   >
@@ -2298,7 +2298,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__description t-form__item-with-help t-form__item-with-extra"
     >
@@ -2342,7 +2342,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__password t-form__item-with-extra"
     >
@@ -2406,7 +2406,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__email t-form__item-with-extra"
     >
@@ -2448,7 +2448,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__gender t-form__item-with-extra"
     >
@@ -2490,7 +2490,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
                 男
               </span>
             </label>
-             
+
             <label
               class="t-radio"
             >
@@ -2498,7 +2498,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
                 class="t-radio__former"
                 name=""
                 type="radio"
-                value="femal"
+                value="female"
               />
               <span
                 class="t-radio__input"
@@ -2516,7 +2516,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__course t-form__item-with-extra"
     >
@@ -2619,7 +2619,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__college t-form__item-with-extra"
     >
@@ -2680,7 +2680,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__date t-form__item-with-extra"
     >
@@ -2722,7 +2722,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__content.url t-form__item-with-extra"
     >
@@ -2764,7 +2764,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__ t-form__item-with-extra"
       style="margin-left: 100px;"
@@ -2794,7 +2794,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
               提交
             </span>
           </button>
-           
+
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             style="margin-right: 10px;"
@@ -2806,7 +2806,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
               重置
             </span>
           </button>
-           
+
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="button"
@@ -2853,7 +2853,7 @@ exports[`Form Form layoutVue demo works fine 1`] = `
           纵向布局
         </span>
       </label>
-       
+
       <label
         class="t-radio-button t-is-checked"
       >
@@ -2878,7 +2878,7 @@ exports[`Form Form layoutVue demo works fine 1`] = `
       />
     </div>
   </div>
-   
+
   <form
     class="t-form t-form-inline"
   >
@@ -2922,7 +2922,7 @@ exports[`Form Form layoutVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__password t-form__item-with-extra"
     >
@@ -3043,7 +3043,7 @@ exports[`Form Form loginVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__password t-form__item-with-extra"
     >
@@ -3118,7 +3118,7 @@ exports[`Form Form loginVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__ t-form__item-with-extra"
       style="margin-left: 100px;"
@@ -3173,7 +3173,7 @@ exports[`Form Form resetVue demo works fine 1`] = `
           重置为空
         </span>
       </label>
-       
+
       <label
         class="t-radio-button t-is-checked"
       >
@@ -3190,7 +3190,7 @@ exports[`Form Form resetVue demo works fine 1`] = `
           class="t-radio-button__label"
         >
           <span>
-             重置为初始值 
+             重置为初始值
           </span>
         </span>
       </label>
@@ -3200,10 +3200,10 @@ exports[`Form Form resetVue demo works fine 1`] = `
       />
     </div>
   </div>
-   
+
   <br />
   <br />
-   
+
   <form
     class="t-form"
   >
@@ -3248,7 +3248,7 @@ exports[`Form Form resetVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__tel t-form__item-with-extra"
     >
@@ -3290,7 +3290,7 @@ exports[`Form Form resetVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__course t-form__item-with-extra"
     >
@@ -3375,7 +3375,7 @@ exports[`Form Form resetVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__ t-form__item-with-extra"
       style="margin-left: 100px;"
@@ -3405,7 +3405,7 @@ exports[`Form Form resetVue demo works fine 1`] = `
               提交
             </span>
           </button>
-           
+
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="reset"
@@ -3450,7 +3450,7 @@ exports[`Form Form sizeVue demo works fine 1`] = `
           中尺寸（默认）
         </span>
       </label>
-       
+
       <label
         class="t-radio-button"
       >
@@ -3475,10 +3475,10 @@ exports[`Form Form sizeVue demo works fine 1`] = `
       />
     </div>
   </div>
-   
+
   <br />
   <br />
-   
+
   <form
     class="t-form"
   >
@@ -3523,7 +3523,7 @@ exports[`Form Form sizeVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__tel t-form__item-with-extra"
     >
@@ -3565,7 +3565,7 @@ exports[`Form Form sizeVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__status t-form__item-with-extra"
     >
@@ -3602,7 +3602,7 @@ exports[`Form Form sizeVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__gender t-form__item-with-extra"
     >
@@ -3644,7 +3644,7 @@ exports[`Form Form sizeVue demo works fine 1`] = `
                 男
               </span>
             </label>
-             
+
             <label
               class="t-radio"
             >
@@ -3670,7 +3670,7 @@ exports[`Form Form sizeVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__course t-form__item-with-extra"
     >
@@ -3755,7 +3755,7 @@ exports[`Form Form sizeVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__ t-form__item-with-extra"
       style="margin-left: 100px;"
@@ -3785,7 +3785,7 @@ exports[`Form Form sizeVue demo works fine 1`] = `
               提交
             </span>
           </button>
-           
+
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="reset"
@@ -3896,7 +3896,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-tabs"
       style="margin-left: 30px;"
@@ -4007,7 +4007,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                 />
               </div>
             </div>
-             
+
             <div
               class="t-form__item t-form-item__students[0].courseType t-form__item-with-extra"
             >
@@ -4049,7 +4049,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                         文科
                       </span>
                     </label>
-                     
+
                     <label
                       class="t-radio"
                     >
@@ -4075,7 +4075,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                 />
               </div>
             </div>
-             
+
             <div
               class="t-form__item t-form-item__students[0].course t-form__item-with-extra"
             >
@@ -4233,7 +4233,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                 />
               </div>
             </div>
-             
+
             <div
               class="t-form__item t-form-item__ t-form__item-with-extra"
               style="margin-left: 100px;"
@@ -4263,7 +4263,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                       提交
                     </span>
                   </button>
-                   
+
                   <button
                     class="t-button t-size-m t-button--variant-base t-button--theme-default"
                     type="reset"
@@ -4330,7 +4330,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                 />
               </div>
             </div>
-             
+
             <div
               class="t-form__item t-form-item__students[1].courseType t-form__item-with-extra"
             >
@@ -4372,7 +4372,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                         文科
                       </span>
                     </label>
-                     
+
                     <label
                       class="t-radio"
                     >
@@ -4398,7 +4398,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                 />
               </div>
             </div>
-             
+
             <div
               class="t-form__item t-form-item__students[1].course t-form__item-with-extra"
             >
@@ -4555,7 +4555,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                 />
               </div>
             </div>
-             
+
             <div
               class="t-form__item t-form-item__ t-form__item-with-extra"
               style="margin-left: 100px;"
@@ -4585,7 +4585,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                       提交
                     </span>
                   </button>
-                   
+
                   <button
                     class="t-button t-size-m t-button--variant-base t-button--theme-default"
                     type="reset"
@@ -4658,7 +4658,7 @@ exports[`Form Form validateMessageVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__description t-form__item-with-help t-form__item-with-extra"
     >
@@ -4702,7 +4702,7 @@ exports[`Form Form validateMessageVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__password t-form__item-with-extra"
     >
@@ -4766,7 +4766,7 @@ exports[`Form Form validateMessageVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__ t-form__item-with-extra"
       style="margin-left: 100px;"
@@ -4796,7 +4796,7 @@ exports[`Form Form validateMessageVue demo works fine 1`] = `
               提交
             </span>
           </button>
-           
+
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             style="margin-right: 10px;"
@@ -4808,7 +4808,7 @@ exports[`Form Form validateMessageVue demo works fine 1`] = `
               重置
             </span>
           </button>
-           
+
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="button"
@@ -4855,7 +4855,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
           显示校验图标
         </span>
       </label>
-       
+
       <label
         class="t-radio-button"
       >
@@ -4880,10 +4880,10 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
       />
     </div>
   </div>
-   
+
   <br />
   <br />
-   
+
   <form
     class="t-form"
   >
@@ -4928,7 +4928,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__warning t-form__item-with-extra"
     >
@@ -4970,7 +4970,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__success t-form__item-with-extra"
     >
@@ -5012,7 +5012,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__success t-form__item-with-extra"
     >
@@ -5054,7 +5054,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__failB t-form__item-with-extra"
     >
@@ -5096,7 +5096,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__warningB t-form__item-with-extra"
     >
@@ -5138,7 +5138,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__loading t-form__item-with-extra"
     >
@@ -5213,7 +5213,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__help t-form__item-with-extra"
     >
@@ -5267,7 +5267,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__add0 t-form__item-with-extra"
     >
@@ -5303,7 +5303,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
               />
             </div>
           </div>
-            
+
           <!---->
           <span
             class="t-form__status"
@@ -5332,7 +5332,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__ t-form__item-with-extra"
       style="margin-left: 80px;"
@@ -5362,7 +5362,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
               提交
             </span>
           </button>
-           
+
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="reset"
@@ -5431,7 +5431,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__age t-form__item-with-extra"
     >
@@ -5514,7 +5514,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__region t-form__item-with-extra"
     >
@@ -5565,7 +5565,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__password t-form__item-with-extra"
     >
@@ -5629,7 +5629,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__email t-form__item-with-extra"
     >
@@ -5671,7 +5671,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__gender t-form__item-with-extra"
     >
@@ -5713,7 +5713,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
                 男
               </span>
             </label>
-             
+
             <label
               class="t-radio"
             >
@@ -5739,7 +5739,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__course t-form__item-with-extra"
     >
@@ -5842,7 +5842,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__college t-form__item-with-extra"
     >
@@ -5914,7 +5914,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__date t-form__item-with-extra"
     >
@@ -5982,7 +5982,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__content.url t-form__item-with-extra"
     >
@@ -6024,7 +6024,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__description t-form__item-with-help t-form__item-with-extra"
     >
@@ -6061,7 +6061,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__hobby t-form__item-with-extra"
     >
@@ -6178,7 +6178,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
+
     <div
       class="t-form__item t-form-item__ t-form__item-with-extra"
       style="margin-left: 100px;"
@@ -6208,7 +6208,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
               提交
             </span>
           </button>
-           
+
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             style="margin-right: 10px;"
@@ -6220,7 +6220,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
               重置
             </span>
           </button>
-           
+
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="button"
