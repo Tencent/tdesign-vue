@@ -59,7 +59,7 @@ export default Vue.extend({
     renderFooter() {
       return (
         <div>
-          <t-button>confrim</t-button>
+          <t-button>confirm</t-button>
           <t-button variant='outline' onClick={() => this.visible2 = false}>cancel</t-button>
         </div>
       );

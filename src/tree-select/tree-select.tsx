@@ -17,7 +17,7 @@ import { emitEvent } from '../utils/event';
 import Popup, { PopupProps } from '../popup';
 import Tag from '../tag';
 import Tree, { TreeNodeModel, TreeNodeValue } from '../tree';
-import Input, { InputValue, InputBlurEventParams, InputFocustEventParams } from '../input';
+import Input, { InputValue, InputBlurEventParams, InputFocusEventParams } from '../input';
 import FakeArrow from '../common-components/fake-arrow';
 import CLASSNAMES from '../utils/classnames';
 import props from './props';
@@ -437,7 +437,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         placeholder={this.filterPlaceholder}
         onChange={this.onInputChange}
         onBlur={(value: InputValue, context: InputBlurEventParams[1]) => this.blur(context)}
-        onFocus={(value: InputValue, context: InputFocustEventParams[1]) => this.focus(context)}
+        onFocus={(value: InputValue, context: InputFocusEventParams[1]) => this.focus(context)}
       />
     );
     const tagItem = !isEmpty(this.tagList) && (this.valueDisplay || this.$scopedSlots.valueDisplay)

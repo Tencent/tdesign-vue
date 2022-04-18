@@ -3,7 +3,7 @@ import isFunction from 'lodash/isFunction';
 import { CloseCircleFilledIcon } from 'tdesign-icons-vue';
 import { prefix } from '../../config';
 import CLASSNAMES from '../../utils/classnames';
-import getConnfigRecevierMixins, { CascaderConfig } from '../../config-provider/config-receiver';
+import getConfigReceiverMixins, { CascaderConfig } from '../../config-provider/config-receiver';
 import mixins from '../../utils/mixins';
 import { renderTNodeJSX } from '../../utils/render-tnode';
 import { TreeNode, CascaderContextType, InputContentProps } from '../interface';
@@ -58,11 +58,11 @@ interface ComponentMethods {
 
 interface ComponentInstanceType extends ComponentComputed, ComponentData, ComponentMethods {}
 
-const cascaderGglobalConfig = getConnfigRecevierMixins<InputContentProps & Vue & ComponentInstanceType, CascaderConfig>(
+const cascaderGlobalConfig = getConfigReceiverMixins<InputContentProps & Vue & ComponentInstanceType, CascaderConfig>(
   'cascader',
 );
 
-export default mixins(cascaderGglobalConfig).extend({
+export default mixins(cascaderGlobalConfig).extend({
   name: `${name}-input-content`,
   props: {
     cascaderContext: {

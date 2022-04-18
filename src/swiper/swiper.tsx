@@ -147,8 +147,8 @@ export default (Vue as VueConstructor<SwiperVue>).extend({
       const swiperItemList = originalChildren
         .map((swiper: VNode) => swiper.componentOptions)
         .filter((swiper) => kebabCase(swiper?.tag).endsWith(`${prefix}-swiper-item`));
-      const isUnchange = swiperItemList.length === this.swiperItemList.length && this.swiperItemList.every((swiperItem, index) => swiperItem === swiperItemList[index]);
-      if (isUnchange) return;
+      const isUnchanged = swiperItemList.length === this.swiperItemList.length && this.swiperItemList.every((swiperItem, index) => swiperItem === swiperItemList[index]);
+      if (isUnchanged) return;
       this.swiperItemList = swiperItemList;
     },
     setTimer() {

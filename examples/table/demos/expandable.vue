@@ -61,7 +61,7 @@
 <script lang="jsx">
 import { ChevronRightIcon, ChevronRightCircleIcon } from 'tdesign-icons-vue';
 
-const getColums = (isFixedColumn) => [
+const getColumns = (isFixedColumn) => [
   { colKey: 'instance', title: '集群名称', fixed: isFixedColumn ? 'left' : '' },
   {
     colKey: 'status',
@@ -137,7 +137,7 @@ export default {
   },
   computed: {
     columns() {
-      return getColums(this.fixedColums);
+      return getColumns(this.fixedColums);
     },
   },
   watch: {

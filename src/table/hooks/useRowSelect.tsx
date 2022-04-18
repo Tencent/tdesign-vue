@@ -88,7 +88,7 @@ export default function useRowSelect(props: TdPrimaryTableProps) {
       },
       on: {
         click: (e: MouseEvent) => {
-          // 选中行功能中，点击 checkbo/radio 需阻止事件冒泡，避免触发不必要的 onRowClick
+          // 选中行功能中，点击 checbox/radio 需阻止事件冒泡，避免触发不必要的 onRowClick
           e?.stopPropagation();
         },
         // radio 单选框可再点击一次关闭选择，input / change 事件无法监听
@@ -111,7 +111,7 @@ export default function useRowSelect(props: TdPrimaryTableProps) {
     } else if (selectColumn.value.type === 'single') {
       selectedRowKeys = !isExisted ? [id] : [];
     } else {
-      log.warn('Table', '`column.type` must be one of `multilpe` and `single`');
+      log.warn('Table', '`column.type` must be one of `multiple` and `single`');
       return;
     }
     setTSelectedRowKeys(selectedRowKeys, {

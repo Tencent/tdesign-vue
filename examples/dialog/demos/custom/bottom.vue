@@ -17,7 +17,7 @@
     <t-dialog
       :visible="visible2"
       header="提示"
-      body="自定义底部按钮，传入 ButttonProps"
+      body="自定义底部按钮，传入 ButtonProps"
       :confirmBtn="{
         content: '前往购物车',
         variant: 'base',

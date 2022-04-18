@@ -348,8 +348,8 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
           colMapInfo.lastLeftFixedCol = true;
         }
         const lastColMapInfo = nodes[i - 1];
-        const isParentFirstRigthFixedCol = !parent || parent?.firstRightFixedCol;
-        if (isParentFirstRigthFixedCol && colMapInfo.col.fixed === 'right' && lastColMapInfo?.col.fixed !== 'right') {
+        const isParentFirstRightFixedCol = !parent || parent?.firstRightFixedCol;
+        if (isParentFirstRightFixedCol && colMapInfo.col.fixed === 'right' && lastColMapInfo?.col.fixed !== 'right') {
           colMapInfo.firstRightFixedCol = true;
         }
       }

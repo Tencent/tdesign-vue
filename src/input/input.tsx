@@ -108,11 +108,11 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
   created() {
     this.composing = false;
     if (this.autoWidth) {
-      this.addListenders();
+      this.addListeners();
     }
   },
   methods: {
-    addListenders() {
+    addListeners() {
       this.$watch(
         () => this.value + this.placeholder,
         () => {

@@ -160,7 +160,7 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
       });
     } else {
       // TODO, remove from dataSource
-      console.warn('TDesign Table Warn: Do not remove this node, which is not appreared.');
+      console.warn('TDesign Table Warn: Do not remove this node, which is not appeared.');
     }
     return dataSource;
   }
