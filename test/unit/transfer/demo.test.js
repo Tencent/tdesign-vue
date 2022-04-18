@@ -1,26 +1,35 @@
+/**
+ * 该文件为由脚本 `npm run test:demo` 自动生成，如需修改，执行脚本命令即可。请勿手写直接修改，否则会被覆盖
+ */
+
 import { mount } from '@vue/test-utils';
-import path from 'path';
+import baseVue from '@/examples/transfer/demos/base.vue';
+import checkedVue from '@/examples/transfer/demos/checked.vue';
+import customVue from '@/examples/transfer/demos/custom.vue';
+import disabledVue from '@/examples/transfer/demos/disabled.vue';
+import emptyVue from '@/examples/transfer/demos/empty.vue';
+import paginationVue from '@/examples/transfer/demos/pagination.vue';
+import searchVue from '@/examples/transfer/demos/search.vue';
+import targetValueVue from '@/examples/transfer/demos/target-value.vue';
+import treeVue from '@/examples/transfer/demos/tree.vue';
 
-const rootDir = path.resolve(__dirname, '../../../');
+const mapper = {
+  baseVue,
+  checkedVue,
+  customVue,
+  disabledVue,
+  emptyVue,
+  paginationVue,
+  searchVue,
+  targetValueVue,
+  treeVue,
+};
 
-function testDemo(demoName) {
-  const demoFile = path.resolve(rootDir, 'examples/transfer/demos', `${demoName}.vue`);
-  const demo = require(demoFile).default;
-  it(`${demoName} demo works fine`, () => {
-    const wrapper = mount(demo);
-    expect(wrapper.element).toMatchSnapshot();
-  });
-}
-
-// unit test for component in examples.
 describe('Transfer', () => {
-  testDemo('base');
-  testDemo('checked');
-  testDemo('custom');
-  testDemo('disabled');
-  testDemo('empty');
-  testDemo('pagination');
-  testDemo('search');
-  testDemo('target-value');
-  testDemo('tree');
+  Object.keys(mapper).forEach((demoName) => {
+    it(`Transfer ${demoName} demo works fine`, () => {
+      const wrapper = mount(mapper[demoName]);
+      expect(wrapper.element).toMatchSnapshot();
+    });
+  });
 });
