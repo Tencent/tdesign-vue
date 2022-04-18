@@ -16206,7 +16206,7 @@ exports[`ssr snapshot test renders ./examples/transfer/demos/disabled.vue correc
 
 exports[`ssr snapshot test renders ./examples/transfer/demos/empty.vue correctly 1`] = `
 <div>
-  <p style="margin:10px 0px;">默认暂无数据</p>
+  <p style="margin:10px 0;">默认暂无数据</p>
   <div class="t-transfer">
     <div class="t-transfer__list t-transfer__list-source">
       <div class="t-transfer__list-header">
