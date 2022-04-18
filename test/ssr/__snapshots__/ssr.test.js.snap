@@ -2833,6 +2833,226 @@ exports[`ssr snapshot test renders ./examples/checkbox/demos/link.vue correctly 
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/collapse/demos/base.vue correctly 1`] = `
+<div class="tdesign-collapse">
+  <div class="t-collapse">
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-fake-arrow--active t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>设置默认展开项<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>自定义折叠面板内容<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>嵌套折叠面板<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:10px;">当前展开项:[
+    1
+    ]</div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/collapse/demos/icon.vue correctly 1`] = `
+<div class="tdesign-collapse">
+  <div class="t-collapse">
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+  </div>
+  <div class="button-area"><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示箭头</span></label>
+    <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio t-is-checked"><input type="radio" checked="checked" value="left" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">左边</span></label> <label class="t-radio"><input type="radio" value="right" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">右边</span></label></div>
+  </div>
+  <div style="margin-top:10px;"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">仅图标响应点击</span></label></div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/collapse/demos/mutex.vue correctly 1`] = `
+<div class="tdesign-collapse">
+  <div class="t-collapse">
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:10px;">当前展开项：[]</div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/collapse/demos/other.vue correctly 1`] = `
+<div class="tdesign-collapse">
+  <div class="t-collapse">
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+  </div>
+  <div class="button-area"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">全部禁用</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">无边框模式</span></label></div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/collapse/demos/rightSlot.vue correctly 1`] = `
+<div class="tdesign-collapse">
+  <div class="t-collapse">
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题可以设置右侧操作区域<div class="t-collapse-panel__header--blank"></div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">禁用</span></label> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">操作</span></button></div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel t-is-disabled">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题可以设置右侧操作区域<div class="t-collapse-panel__header--blank"></div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">禁用</span></label> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">操作</span></button></div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题可以设置右侧操作区域<div class="t-collapse-panel__header--blank"></div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">禁用</span></label> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">操作</span></button></div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel t-is-disabled">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题可以设置右侧操作区域<div class="t-collapse-panel__header--blank"></div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">禁用</span></label> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">操作</span></button></div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/comment/demos/base.vue correctly 1`] = `
 <div class="t-comment">
   <div class="t-comment__inner">
