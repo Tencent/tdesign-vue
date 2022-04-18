@@ -9,7 +9,7 @@ export { emitEvent } from '../utils/event';
 export const TRANSFER_NAME = 'TTransfer';
 
 interface TreeNode {
-  children?: Array<TreeNode>
+  children?: Array<TreeNode>;
 }
 
 function findTopNode(vm: Vue): Vue {
@@ -36,10 +36,14 @@ function getTransferListOption<T>(prop: T | Array<T>): TransferListOptionBase<T>
   };
 }
 
-function getDataValues(data: Array<TransferItemOption>, filterValues: Array<TransferValue>, {
-  isTreeMode = false,
-  include = true, // true=保留filterValues，false=删除filterValues中元素
-} = {}): Array<TransferValue> {
+function getDataValues(
+  data: Array<TransferItemOption>,
+  filterValues: Array<TransferValue>,
+  {
+    isTreeMode = false,
+    include = true, // true=保留filterValues，false=删除filterValues中元素
+  } = {},
+): Array<TransferValue> {
   // 用于处理 tree 组件这种数据结构是树形的
   if (isTreeMode) {
     let result: Array<TransferValue> = [];
@@ -65,10 +69,12 @@ function getDataValues(data: Array<TransferItemOption>, filterValues: Array<Tran
     }
     return result;
   }
-  return data.filter((item) => {
-    const isInclude = filterValues.includes(item.value);
-    return ((include && isInclude) || (!include && !isInclude)) && !item.disabled;
-  }).map((item) => item.value);
+  return data
+    .filter((item) => {
+      const isInclude = filterValues.includes(item.value);
+      return ((include && isInclude) || (!include && !isInclude)) && !item.disabled;
+    })
+    .map((item) => item.value);
 }
 
 function getTransferData(
@@ -85,13 +91,13 @@ function getTransferData(
     if (transferDataItem[valueKey] === undefined) {
       throw `${valueKey} is not in DataOption ${JSON.stringify(transferDataItem)}`;
     }
-    const result: TransferItemOption = ({
+    const result: TransferItemOption = {
       label: transferDataItem[labelKey] as string,
       value: transferDataItem[valueKey],
       key: `key__value_${transferDataItem[valueKey]}_index_${index}`,
       disabled: transferDataItem.disabled ?? false,
       data: transferDataItem,
-    });
+    };
     if (isTreeMode && transferDataItem.children) {
       result.children = getTransferData(transferDataItem.children, keys, true);
     }
@@ -156,9 +162,14 @@ function filterTransferData(
   isTreeMode = false,
 ) {
   if (!isTreeMode) {
+    if (needMatch) {
+      // 正向过滤。要保持filterValues顺序
+      return filterValues.map((value) => data.find((item) => item.value === value));
+    }
+    // 反向过滤
     return data.filter((item) => {
       const isMatch = filterValues.includes(item.value);
-      return needMatch ? isMatch : !isMatch;
+      return !isMatch;
     });
   }
 
@@ -181,6 +192,11 @@ function getLeefCount(nodes: Array<TreeNode>): number {
 }
 
 export {
-  findTopNode, getTransferListOption, getDataValues, getTransferData, cloneTreeWithFilter,
-  filterTransferData, getLeefCount,
+  findTopNode,
+  getTransferListOption,
+  getDataValues,
+  getTransferData,
+  cloneTreeWithFilter,
+  filterTransferData,
+  getLeefCount,
 };
