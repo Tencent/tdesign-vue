@@ -579,6 +579,22 @@ exports[`Collapse Collapse iconVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
+          <svg
+            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+            fill="none"
+            height="16"
+            name="arrow"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+              stroke="black"
+              stroke-opacity="0.9"
+              stroke-width="1.3"
+            />
+          </svg>
           这是一个折叠标题
           <div
             class="t-collapse-panel__header--blank"
@@ -612,6 +628,22 @@ exports[`Collapse Collapse iconVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
+          <svg
+            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+            fill="none"
+            height="16"
+            name="arrow"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+              stroke="black"
+              stroke-opacity="0.9"
+              stroke-width="1.3"
+            />
+          </svg>
           这是一个折叠标题
           <div
             class="t-collapse-panel__header--blank"
@@ -643,6 +675,22 @@ exports[`Collapse Collapse iconVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
+          <svg
+            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+            fill="none"
+            height="16"
+            name="arrow"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+              stroke="black"
+              stroke-opacity="0.9"
+              stroke-width="1.3"
+            />
+          </svg>
           这是一个折叠标题
           <div
             class="t-collapse-panel__header--blank"
@@ -676,6 +724,22 @@ exports[`Collapse Collapse iconVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
+          <svg
+            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+            fill="none"
+            height="16"
+            name="arrow"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+              stroke="black"
+              stroke-opacity="0.9"
+              stroke-width="1.3"
+            />
+          </svg>
           这是一个折叠标题
           <div
             class="t-collapse-panel__header--blank"
@@ -705,7 +769,7 @@ exports[`Collapse Collapse iconVue demo works fine 1`] = `
     class="button-area"
   >
     <label
-      class="t-checkbox"
+      class="t-checkbox t-is-checked"
     >
       <input
         class="t-checkbox__former"

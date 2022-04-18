@@ -284,18 +284,18 @@ export default {
           component: () => import('@/examples/calendar/calendar.md'),
         },
         {
-          title: 'Collapse 折叠面板',
-          name: 'collapse',
-          docType: 'data',
-          path: '/vue/components/collapse',
-          component: () => import('@/examples/collapse/collapse.md')
-        },
-        {
           title: 'Card 卡片',
           name: 'card',
           docType: 'data',
           path: '/vue/components/card',
           component: () => import('@/examples/card/card.md'),
+        },
+        {
+          title: 'Collapse 折叠面板',
+          name: 'collapse',
+          docType: 'data',
+          path: '/vue/components/collapse',
+          component: () => import('@/examples/collapse/collapse.md')
         },
         {
           title: 'Comment 评论',
