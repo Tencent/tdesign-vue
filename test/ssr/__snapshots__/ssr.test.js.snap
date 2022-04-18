@@ -12489,17 +12489,13 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
       <div class="t-table__content">
         <table class="t-table--layout-fixed" style="width:;">
           <colgroup>
-            <col style="width:80px;">
-            <col>
-            <col>
-            <col>
-            <col>
+            <col style="width:150px;">
+            <col style="width:100px;">
+            <col style="width:200px;">
+            <col style="width:100px;">
           </colgroup>
           <thead class="t-table__header">
             <tr>
-              <th data-colkey="drag" class="t-table__th-drag">
-                <div class="t-table__th-cell-inner">排序</div>
-              </th>
               <th data-colkey="instance" class="t-table__th-instance">
                 <div class="t-table__th-cell-inner">集群名称</div>
               </th>
@@ -12515,10 +12511,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
             </tr>
           </thead>
           <tbody class="t-table__body">
-            <tr data-id="1">
-              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
-                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
-                </svg></td>
+            <tr>
               <td>JQTest1</td>
               <td>
                 <p class="status">
@@ -12528,10 +12521,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
               <td>1000</td>
               <td>jenny;peter</td>
             </tr>
-            <tr data-id="2">
-              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
-                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
-                </svg></td>
+            <tr>
               <td>JQTest2</td>
               <td>
                 <p class="status warning">
@@ -12541,10 +12531,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
               <td>1000</td>
               <td>jenny</td>
             </tr>
-            <tr data-id="3">
-              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
-                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
-                </svg></td>
+            <tr>
               <td>JQTest3</td>
               <td>
                 <p class="status unhealth">
@@ -12554,10 +12541,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
               <td>500</td>
               <td>jenny</td>
             </tr>
-            <tr data-id="4">
-              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
-                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
-                </svg></td>
+            <tr>
               <td>JQTest4</td>
               <td>
                 <p class="status warning">
@@ -12636,6 +12620,100 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
               <td>jenny</td>
             </tr>
             <tr data-id="4">
+              <td>JQTest4</td>
+              <td>
+                <p class="status warning">
+                  警告
+                </p>
+              </td>
+              <td>1500</td>
+              <td>peter</td>
+            </tr>
+          </tbody>
+          <!---->
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/table/demos/drag-sort-handler.vue correctly 1`] = `
+<div class="demo-container t-table-demo-sort">
+  <div class="item">
+    <div class="t-table t-table--row-handler-draggable" style="position:relative;">
+      <div class="t-table__content">
+        <table class="t-table--layout-fixed" style="width:;">
+          <colgroup>
+            <col style="width:80px;">
+            <col>
+            <col>
+            <col>
+            <col>
+          </colgroup>
+          <thead class="t-table__header">
+            <tr>
+              <th data-colkey="drag" class="t-table__th-drag">
+                <div class="t-table__th-cell-inner">排序</div>
+              </th>
+              <th data-colkey="instance" class="t-table__th-instance">
+                <div class="t-table__th-cell-inner">集群名称</div>
+              </th>
+              <th data-colkey="status" class="t-table__th-status">
+                <div class="t-table__th-cell-inner">状态</div>
+              </th>
+              <th data-colkey="survivalTime" class="t-table__th-survivalTime">
+                <div class="t-table__th-cell-inner">存活时间(s)</div>
+              </th>
+              <th data-colkey="owner" class="t-table__th-owner">
+                <div class="t-table__th-cell-inner">管理员</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="t-table__body">
+            <tr data-id="1">
+              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
+                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
+                </svg></td>
+              <td>JQTest1</td>
+              <td>
+                <p class="status">
+                  健康
+                </p>
+              </td>
+              <td>1000</td>
+              <td>jenny;peter</td>
+            </tr>
+            <tr data-id="2">
+              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
+                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
+                </svg></td>
+              <td>JQTest2</td>
+              <td>
+                <p class="status warning">
+                  警告
+                </p>
+              </td>
+              <td>1000</td>
+              <td>jenny</td>
+            </tr>
+            <tr data-id="3">
+              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
+                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
+                </svg></td>
+              <td>JQTest3</td>
+              <td>
+                <p class="status unhealth">
+                  异常
+                </p>
+              </td>
+              <td>500</td>
+              <td>jenny</td>
+            </tr>
+            <tr data-id="4">
+              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
+                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
+                </svg></td>
               <td>JQTest4</td>
               <td>
                 <p class="status warning">
@@ -13996,7 +14074,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
 
 exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large tdesign-demo-table-multi-header" style="width:100%;">
-  <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示表格边框</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示固定表头</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">虚拟滚动</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定左侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定右侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表头吸顶</span></label></div>
+  <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示表格边框</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示固定表头</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定左侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定右侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表头吸顶</span></label></div>
   <div class="t-table t-table--bordered t-table--multiple-header" style="position:relative;">
     <div class="t-table__top-content">
       <div class="t-table__column-controller-trigger t-align-top-right"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-setting">
@@ -14005,7 +14083,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
           </svg><span class="t-button__text">列配置</span></button></div>
     </div>
     <div class="t-table__content" style="max-height:380px;">
-      <div class="t-table__virtual-scroll-cursor" style="transform:translate(0, 28800px);-ms-transform:translate(0, 28800px);-moz-transform:translate(0, 28800px);-webkit-transform:translate(0, 28800px);"></div>
+      <div class="t-table__virtual-scroll-cursor" style="transform:translate(0, 30000px);-ms-transform:translate(0, 30000px);-moz-transform:translate(0, 30000px);-webkit-transform:translate(0, 30000px);"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:100px;">
