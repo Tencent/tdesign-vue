@@ -1,5 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+
 exports[`Dialog Dialog asyncVue demo works fine 1`] = `
 <div>
   <button
