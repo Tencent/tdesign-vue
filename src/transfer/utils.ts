@@ -181,6 +181,11 @@ function getLeafCount(nodes: Array<TreeNode>): number {
 }
 
 export {
-  findTopNode, getTransferListOption, getDataValues, getTransferData, cloneTreeWithFilter,
-  filterTransferData, getLeafCount,
+  findTopNode,
+  getTransferListOption,
+  getDataValues,
+  getTransferData,
+  cloneTreeWithFilter,
+  filterTransferData,
+  getLeafCount,
 };
