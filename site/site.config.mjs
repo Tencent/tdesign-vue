@@ -291,6 +291,13 @@ export default {
           component: () => import('@/examples/card/card.md'),
         },
         {
+          title: 'Collapse 折叠面板',
+          name: 'collapse',
+          docType: 'data',
+          path: '/vue/components/collapse',
+          component: () => import('@/examples/collapse/collapse.md')
+        },
+        {
           title: 'Comment 评论',
           name: 'comment',
           path: '/vue/components/comment',
