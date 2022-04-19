@@ -10,7 +10,7 @@ import './style';
 export * from './type';
 export type InputProps = TdInputProps;
 export type InputBlurEventParams = Parameters<InputProps['onBlur']>;
-export type InputFocustEventParams = Parameters<InputProps['onFocus']>;
+export type InputFocusEventParams = Parameters<InputProps['onFocus']>;
 
 export const Addon = withInstall(_Addon);
 export const Input = withInstall(mapProps(['value'], {

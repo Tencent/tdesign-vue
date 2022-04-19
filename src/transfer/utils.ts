@@ -179,11 +179,11 @@ function filterTransferData(
 }
 
 // 获取树节点的叶子数量
-function getLeefCount(nodes: Array<TreeNode>): number {
+function getLeafCount(nodes: Array<TreeNode>): number {
   let total = 0;
   nodes.forEach((child) => {
     if (child.children && child.children.length > 0) {
-      total += getLeefCount(child.children);
+      total += getLeafCount(child.children);
     } else {
       total += 1;
     }
@@ -198,5 +198,5 @@ export {
   getTransferData,
   cloneTreeWithFilter,
   filterTransferData,
-  getLeefCount,
+  getLeafCount,
 };

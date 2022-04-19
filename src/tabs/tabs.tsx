@@ -68,8 +68,8 @@ export default (Vue as VueConstructor<TabVue>).extend({
         .map((panel: VNode) => panel.componentInstance as InstanceType<typeof TTabPanel>)
         .filter(Boolean)
         .filter((child) => kebabCase(child?.$vnode?.tag).endsWith(`${prefix}-tab-panel`));
-      const isUnchange = () => newPanels.length === this.panels.length && this.panels.every((panel, index) => panel === newPanels[index]);
-      if (isUnchange() && !force) return;
+      const isUnchanged = () => newPanels.length === this.panels.length && this.panels.every((panel, index) => panel === newPanels[index]);
+      if (isUnchanged() && !force) return;
       this.panels = newPanels;
     },
     onAddTab(e: MouseEvent) {

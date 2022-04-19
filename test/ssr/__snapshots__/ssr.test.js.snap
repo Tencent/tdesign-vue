@@ -1043,43 +1043,43 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
       <tbody class="t-calendar__table-body">
         <tr class="t-calendar__table-body-row">
           <div class="t-calendar__table-body-cell t-is-disabled">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">29</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell t-is-disabled">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">30</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">1</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">2</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">3</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">4</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">5</div>
               <!---->
             </div>
@@ -1087,43 +1087,43 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
         </tr>
         <tr class="t-calendar__table-body-row">
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">6</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">7</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">8</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">9</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">10</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">11</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">12</div>
               <!---->
             </div>
@@ -1131,21 +1131,21 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
         </tr>
         <tr class="t-calendar__table-body-row">
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">13</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">14</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">15</div>
-              <div class="slotWarrper">
+              <div class="slotWrapper">
                 <div class="item"><span class="error"></span>
                   错误事件
                 </div>
@@ -1160,25 +1160,25 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">16</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">17</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">18</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">19</div>
               <!---->
             </div>
@@ -1186,43 +1186,43 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
         </tr>
         <tr class="t-calendar__table-body-row">
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">20</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">21</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">22</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">23</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">24</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">25</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">26</div>
               <!---->
             </div>
@@ -1230,43 +1230,43 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
         </tr>
         <tr class="t-calendar__table-body-row">
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">27</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">28</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">29</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">30</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">31</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell t-is-disabled">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">1</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell t-is-disabled">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">2</div>
               <!---->
             </div>
@@ -1445,14 +1445,14 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/controller-config.v
       <div class="t-calendar__control-section">
         <div class="t-calendar__control-section-cell">
           <div class="t-select__wrap">
-            <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span title="2021" class="t-select__single">2021</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
+            <div class="t-select t-select-polyfill t-size-s t-select__popup-reference"><span class="t-tag t-tag--default t-size-s t-tag--dark" style="display:none;">+0</span><span title="2021" class="t-select__single">2021</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
               </svg></div>
           </div>
         </div>
         <div class="t-calendar__control-section-cell">
           <div class="t-select__wrap">
-            <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span title="12" class="t-select__single">12</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
+            <div class="t-select t-select-polyfill t-size-s t-select__popup-reference"><span class="t-tag t-tag--default t-size-s t-tag--dark" style="display:none;">+0</span><span title="12" class="t-select__single">12</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
               </svg></div>
           </div>
@@ -2105,7 +2105,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/slot-props-api.vue 
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="calendar-slot-props-api-demo"><span><div class="calendar-slot-props-api-demo-slot-warrper"><div class="item"><span class="error"></span>错误事件</div>
+            <div class="calendar-slot-props-api-demo"><span><div class="calendar-slot-props-api-demo-slot-wrapper"><div class="item"><span class="error"></span>错误事件</div>
             <div class="item"><span class="waring"></span>警告事件</div>
             <div class="item"><span class="success"></span>正常事件</div>
           </div>
@@ -4173,7 +4173,7 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/custom.vue correctly 
         <p>抽屉的内容</p>
       </div>
       <div class="t-drawer__footer">
-        <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">confrim</span></button><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">cancel</span></button></div>
+        <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">confirm</span></button><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">cancel</span></button></div>
       </div>
     </div>
   </div>
@@ -4824,7 +4824,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/error-message.vue corre
       <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">性别</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
-          <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio"><input type="radio" value="male" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="femal" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
+          <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio"><input type="radio" value="male" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="female" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
         </div>
         <div class="t-input__extra"></div>
       </div>
@@ -15491,10 +15491,10 @@ exports[`ssr snapshot test renders ./examples/tabs/demos/base.vue correctly 1`] 
       </div>
       <div class="t-tabs__content">
         <div class="t-tab-panel">
-          <p style="padding:25px;">选项卡1的内容，使用 t-tab-pannel 渲染</p>
+          <p style="padding:25px;">选项卡1的内容，使用 t-tab-panel 渲染</p>
         </div>
         <div class="t-tab-panel" style="display:none;">
-          <p style="padding:25px;">选项卡2的内容，使用 t-tab-pannel 渲染</p>
+          <p style="padding:25px;">选项卡2的内容，使用 t-tab-panel 渲染</p>
         </div>
         <!---->
       </div>

@@ -345,7 +345,7 @@ export default mixins(
         const fd = this.formatDate(d);
         return fd;
       });
-      // submit formate date
+      // submit format date
       this.submitInput(selectedDates, true);
       this.$emit('onChange', selectedDates);
 
@@ -457,8 +457,8 @@ export default mixins(
       // 禁用日期，示例：['A', 'B'] 表示日期 A 和日期 B 会被禁用。
       if (Array.isArray(disableDate)) {
         let isIncludes = false;
-        const formatedDisabledDate = disableDate.map((item: string) => dayjs(item, dateFormat));
-        formatedDisabledDate.forEach((item) => {
+        const formattedDisabledDate = disableDate.map((item: string) => dayjs(item, dateFormat));
+        formattedDisabledDate.forEach((item) => {
           if (item.isSame(dayjs(value))) {
             isIncludes = true;
           }
