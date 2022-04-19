@@ -1445,14 +1445,14 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/controller-config.v
       <div class="t-calendar__control-section">
         <div class="t-calendar__control-section-cell">
           <div class="t-select__wrap">
-            <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span title="2021" class="t-select__single">2021</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
+            <div class="t-select t-select-polyfill t-size-s t-select__popup-reference"><span class="t-tag t-tag--default t-size-s t-tag--dark" style="display:none;">+0</span><span title="2021" class="t-select__single">2021</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
               </svg></div>
           </div>
         </div>
         <div class="t-calendar__control-section-cell">
           <div class="t-select__wrap">
-            <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span title="12" class="t-select__single">12</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
+            <div class="t-select t-select-polyfill t-size-s t-select__popup-reference"><span class="t-tag t-tag--default t-size-s t-tag--dark" style="display:none;">+0</span><span title="12" class="t-select__single">12</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
               </svg></div>
           </div>
@@ -4173,7 +4173,7 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/custom.vue correctly 
         <p>抽屉的内容</p>
       </div>
       <div class="t-drawer__footer">
-        <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">confrim</span></button><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">cancel</span></button></div>
+        <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">confirm</span></button><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">cancel</span></button></div>
       </div>
     </div>
   </div>
@@ -15413,10 +15413,10 @@ exports[`ssr snapshot test renders ./examples/tabs/demos/base.vue correctly 1`] 
       </div>
       <div class="t-tabs__content">
         <div class="t-tab-panel">
-          <p style="padding:25px;">选项卡1的内容，使用 t-tab-pannel 渲染</p>
+          <p style="padding:25px;">选项卡1的内容，使用 t-tab-panel 渲染</p>
         </div>
         <div class="t-tab-panel" style="display:none;">
-          <p style="padding:25px;">选项卡2的内容，使用 t-tab-pannel 渲染</p>
+          <p style="padding:25px;">选项卡2的内容，使用 t-tab-panel 渲染</p>
         </div>
         <!---->
       </div>
