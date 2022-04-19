@@ -137,6 +137,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   const thWidthList = ref<{ [colKey: string]: number }>({});
 
   const isFixedColumn = ref(false);
+  const isFixedRightColumn = ref(false);
 
   // 没有表头吸顶，没有虚拟滚动，则不需要表头宽度计算
   const notNeedThWidthList = computed(() => !(props.headerAffixedTop || props.scroll?.type === 'virtual'));
@@ -152,6 +153,9 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
       const col = columns[i];
       if (['left', 'right'].includes(col.fixed)) {
         isFixedColumn.value = true;
+      }
+      if (col.fixed === 'right') {
+        isFixedRightColumn.value = true;
       }
       const key = col.colKey || i;
       const columnInfo: FixedColumnInfo = { col, parent, index: i };
@@ -396,7 +400,10 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
 
   const updateTableWidth = () => {
     const rect = tableContentRef.value.getBoundingClientRect();
-    tableWidth.value = rect.width - scrollbarWidth.value - (props.bordered ? 1 : 0);
+    // 存在纵向滚动条，且固定表头时，需去除滚动条宽度
+    const reduceWidth = isFixedHeader.value ? scrollbarWidth.value : 0;
+    const fixedBordered = isFixedRightColumn.value ? 1 : 2;
+    tableWidth.value = rect.width - reduceWidth - (props.bordered ? fixedBordered : 0);
   };
 
   const updateThWidthList = (trList: HTMLCollection) => {

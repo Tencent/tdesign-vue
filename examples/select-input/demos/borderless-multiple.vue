@@ -109,8 +109,7 @@ export default {
   word-wrap: normal;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 0;
-  margin-bottom: 4px;
+  margin: 0 0 4px;
 }
 
 .tdesign-demo__panel-options-borderless-multiple .t-checkbox:hover {
