@@ -11,7 +11,7 @@ describe('Swiper', () => {
         render() {
           return (
             <Swiper>
-                <SwiperItem>1</SwiperItem>
+              <SwiperItem>1</SwiperItem>
             </Swiper>
           );
         },
@@ -23,7 +23,7 @@ describe('Swiper', () => {
         render() {
           return (
             <Swiper animation={'fade'}>
-                <SwiperItem>1</SwiperItem>
+              <SwiperItem>1</SwiperItem>
             </Swiper>
           );
         },
@@ -35,7 +35,7 @@ describe('Swiper', () => {
         render() {
           return (
             <Swiper autoplay>
-                <SwiperItem>1</SwiperItem>
+              <SwiperItem>1</SwiperItem>
             </Swiper>
           );
         },
@@ -47,8 +47,8 @@ describe('Swiper', () => {
         render() {
           return (
             <Swiper defaultCurrent={2}>
-                <SwiperItem>1</SwiperItem>
-                <SwiperItem>2</SwiperItem>
+              <SwiperItem>1</SwiperItem>
+              <SwiperItem>2</SwiperItem>
             </Swiper>
           );
         },
@@ -60,8 +60,8 @@ describe('Swiper', () => {
         render() {
           return (
             <Swiper direction={'vertical'}>
-                <SwiperItem>1</SwiperItem>
-                <SwiperItem>2</SwiperItem>
+              <SwiperItem>1</SwiperItem>
+              <SwiperItem>2</SwiperItem>
             </Swiper>
           );
         },
@@ -73,8 +73,8 @@ describe('Swiper', () => {
         render() {
           return (
             <Swiper duration={3000}>
-                <SwiperItem>1</SwiperItem>
-                <SwiperItem>2</SwiperItem>
+              <SwiperItem>1</SwiperItem>
+              <SwiperItem>2</SwiperItem>
             </Swiper>
           );
         },
@@ -86,8 +86,8 @@ describe('Swiper', () => {
         render() {
           return (
             <Swiper height={600}>
-                <SwiperItem>1</SwiperItem>
-                <SwiperItem>2</SwiperItem>
+              <SwiperItem>1</SwiperItem>
+              <SwiperItem>2</SwiperItem>
             </Swiper>
           );
         },
@@ -99,8 +99,8 @@ describe('Swiper', () => {
         render() {
           return (
             <Swiper interval={3000}>
-                <SwiperItem>1</SwiperItem>
-                <SwiperItem>2</SwiperItem>
+              <SwiperItem>1</SwiperItem>
+              <SwiperItem>2</SwiperItem>
             </Swiper>
           );
         },
@@ -111,10 +111,10 @@ describe('Swiper', () => {
       const wrapper = mount({
         render() {
           return (
-              <Swiper loop={true}>
-                  <SwiperItem>1</SwiperItem>
-                  <SwiperItem>2</SwiperItem>
-              </Swiper>
+            <Swiper loop={true}>
+              <SwiperItem>1</SwiperItem>
+              <SwiperItem>2</SwiperItem>
+            </Swiper>
           );
         },
       });
@@ -124,14 +124,16 @@ describe('Swiper', () => {
       const wrapper = mount({
         render() {
           return (
-            <Swiper navigation={{
-              placement: 'outside',
-              showSlideBtn: 'hover',
-              size: 'large',
-              type: 'dots-bar',
-            }}>
-                <SwiperItem>1</SwiperItem>
-                <SwiperItem>2</SwiperItem>
+            <Swiper
+              navigation={{
+                placement: 'outside',
+                showSlideBtn: 'hover',
+                size: 'large',
+                type: 'dots-bar',
+              }}
+            >
+              <SwiperItem>1</SwiperItem>
+              <SwiperItem>2</SwiperItem>
             </Swiper>
           );
         },
@@ -143,8 +145,8 @@ describe('Swiper', () => {
         render() {
           return (
             <Swiper theme={'dark'}>
-                <SwiperItem>1</SwiperItem>
-                <SwiperItem>2</SwiperItem>
+              <SwiperItem>1</SwiperItem>
+              <SwiperItem>2</SwiperItem>
             </Swiper>
           );
         },
@@ -156,8 +158,8 @@ describe('Swiper', () => {
         render() {
           return (
             <Swiper type={'card'}>
-                <SwiperItem>1</SwiperItem>
-                <SwiperItem>2</SwiperItem>
+              <SwiperItem>1</SwiperItem>
+              <SwiperItem>2</SwiperItem>
             </Swiper>
           );
         },
@@ -174,8 +176,8 @@ describe('Swiper', () => {
         render() {
           return (
             <Swiper onChange={fn}>
-                <SwiperItem>1</SwiperItem>
-                <SwiperItem>2</SwiperItem>
+              <SwiperItem>1</SwiperItem>
+              <SwiperItem>2</SwiperItem>
             </Swiper>
           );
         },
@@ -193,13 +195,11 @@ describe('Swiper', () => {
     it('navigation: VNode', async () => {
       const wrapper = mount({
         render() {
-          const renderNavigation = () => (
-            <div>123</div>
-          );
+          const renderNavigation = () => <div>123</div>;
           return (
             <Swiper navigation={renderNavigation()}>
-                <SwiperItem>1</SwiperItem>
-                <SwiperItem>2</SwiperItem>
+              <SwiperItem>1</SwiperItem>
+              <SwiperItem>2</SwiperItem>
             </Swiper>
           );
         },
