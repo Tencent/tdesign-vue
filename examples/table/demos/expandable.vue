@@ -188,7 +188,7 @@ export default {
   &::before {
     position: absolute;
     top: 50%;
-    left: 0px;
+    left: 0;
     transform: translateY(-50%);
     content: '';
     background-color: #00a870;
