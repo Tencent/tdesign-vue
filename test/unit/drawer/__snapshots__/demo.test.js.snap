@@ -400,7 +400,7 @@ exports[`Drawer Drawer customVue demo works fine 1`] = `
             <span
               class="t-button__text"
             >
-              confrim
+              confirm
             </span>
           </button>
           <button

@@ -30,7 +30,7 @@ exports[`Message :props :default is a string, 这是普通信息 1`] = `
   </svg>这是普通信息<span class="t-message__close"></span></div>
 `;
 
-exports[`Message :props :icon is a funtion, () => MoreIcon 1`] = `
+exports[`Message :props :icon is a function, () => MoreIcon 1`] = `
 <div class="t-message t-is-info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-more">
     <path fill="currentColor" d="M8 4a1 1 0 100-2 1 1 0 000 2zM8 9a1 1 0 100-2 1 1 0 000 2zM9 13a1 1 0 11-2 0 1 1 0 012 0z" fill-opacity="0.9"></path>
   </svg><span class="t-message__close"></span></div>

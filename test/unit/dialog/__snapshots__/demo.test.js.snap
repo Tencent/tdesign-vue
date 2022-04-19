@@ -1,6 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-
 exports[`Dialog Dialog asyncVue demo works fine 1`] = `
 <div>
   <button
@@ -13,7 +12,7 @@ exports[`Dialog Dialog asyncVue demo works fine 1`] = `
       异步加载类按钮
     </span>
   </button>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -127,7 +126,7 @@ exports[`Dialog Dialog attachVue demo works fine 1`] = `
       挂载在body
     </span>
   </button>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -138,7 +137,7 @@ exports[`Dialog Dialog attachVue demo works fine 1`] = `
       挂载特定元素
     </span>
   </button>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -149,7 +148,7 @@ exports[`Dialog Dialog attachVue demo works fine 1`] = `
       挂载函数返回节点
     </span>
   </button>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -160,22 +159,22 @@ exports[`Dialog Dialog attachVue demo works fine 1`] = `
       展示在挂载元素区域
     </span>
   </button>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
   />
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
   />
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
   />
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -219,7 +218,7 @@ exports[`Dialog Dialog attachVue demo works fine 1`] = `
             <div>
               父元素（挂载元素）需要有定位属性，如：position: relative
             </div>
-
+             
             <div>
               showInAttachedElement API 仅针对模态对话框有效
             </div>
@@ -269,7 +268,7 @@ exports[`Dialog Dialog baseVue demo works fine 1`] = `
       基础确认对话框
     </span>
   </button>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -349,9 +348,9 @@ exports[`Dialog Dialog custom demo works fine 1`] = `
   <p>
     弹窗内容自定义
   </p>
-
+   
   <br />
-
+   
   <div>
     <button
       class="t-button t-size-m t-button--variant-base t-button--theme-primary"
@@ -363,7 +362,7 @@ exports[`Dialog Dialog custom demo works fine 1`] = `
         隐藏标题
       </span>
     </button>
-
+     
     <button
       class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
@@ -374,7 +373,7 @@ exports[`Dialog Dialog custom demo works fine 1`] = `
         渲染函数定义内容
       </span>
     </button>
-
+     
     <button
       class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
@@ -385,7 +384,7 @@ exports[`Dialog Dialog custom demo works fine 1`] = `
         插槽方式定义内容
       </span>
     </button>
-
+     
     <transition-stub
       duration="300"
       name="t-dialog-zoom__vue"
@@ -455,7 +454,7 @@ exports[`Dialog Dialog custom demo works fine 1`] = `
         </div>
       </div>
     </transition-stub>
-
+     
     <transition-stub
       duration="300"
       name="t-dialog-zoom__vue"
@@ -529,7 +528,7 @@ exports[`Dialog Dialog custom demo works fine 1`] = `
         </div>
       </div>
     </transition-stub>
-
+     
     <transition-stub
       duration="300"
       name="t-dialog-zoom__vue"
@@ -606,26 +605,26 @@ exports[`Dialog Dialog custom demo works fine 1`] = `
       </div>
     </transition-stub>
   </div>
-
+   
   <br />
   <br />
   <br />
-
+   
   <p>
     操作按钮自定义
   </p>
-
+   
   <br />
-
+   
   <p>
-
+    
     底部按钮有两个控制属性：confirmBtn 和 cancelBtn。属性类型有多种：string | ButtonProps | TNode。也可以通过 footer
     来自定义控制
-
+  
   </p>
-
+   
   <br />
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -636,7 +635,7 @@ exports[`Dialog Dialog custom demo works fine 1`] = `
       按钮文字
     </span>
   </button>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -647,7 +646,7 @@ exports[`Dialog Dialog custom demo works fine 1`] = `
       按钮属性
     </span>
   </button>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -658,7 +657,7 @@ exports[`Dialog Dialog custom demo works fine 1`] = `
       渲染函数按钮
     </span>
   </button>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -669,7 +668,7 @@ exports[`Dialog Dialog custom demo works fine 1`] = `
       隐藏底部
     </span>
   </button>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -741,7 +740,7 @@ exports[`Dialog Dialog custom demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -828,7 +827,7 @@ exports[`Dialog Dialog custom demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -891,7 +890,7 @@ exports[`Dialog Dialog custom demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -948,9 +947,9 @@ exports[`Dialog Dialog customVue demo works fine 1`] = `
   <p>
     弹窗内容自定义
   </p>
-
+   
   <br />
-
+   
   <div>
     <button
       class="t-button t-size-m t-button--variant-base t-button--theme-primary"
@@ -962,7 +961,7 @@ exports[`Dialog Dialog customVue demo works fine 1`] = `
         隐藏标题
       </span>
     </button>
-
+     
     <button
       class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
@@ -973,7 +972,7 @@ exports[`Dialog Dialog customVue demo works fine 1`] = `
         渲染函数定义内容
       </span>
     </button>
-
+     
     <button
       class="t-button t-size-m t-button--variant-base t-button--theme-primary"
       type="button"
@@ -984,7 +983,7 @@ exports[`Dialog Dialog customVue demo works fine 1`] = `
         插槽方式定义内容
       </span>
     </button>
-
+     
     <transition-stub
       duration="300"
       name="t-dialog-zoom__vue"
@@ -1054,7 +1053,7 @@ exports[`Dialog Dialog customVue demo works fine 1`] = `
         </div>
       </div>
     </transition-stub>
-
+     
     <transition-stub
       duration="300"
       name="t-dialog-zoom__vue"
@@ -1128,7 +1127,7 @@ exports[`Dialog Dialog customVue demo works fine 1`] = `
         </div>
       </div>
     </transition-stub>
-
+     
     <transition-stub
       duration="300"
       name="t-dialog-zoom__vue"
@@ -1205,26 +1204,26 @@ exports[`Dialog Dialog customVue demo works fine 1`] = `
       </div>
     </transition-stub>
   </div>
-
+   
   <br />
   <br />
   <br />
-
+   
   <p>
     操作按钮自定义
   </p>
-
+   
   <br />
-
+   
   <p>
-
+    
     底部按钮有两个控制属性：confirmBtn 和 cancelBtn。属性类型有多种：string | ButtonProps | TNode。也可以通过 footer
     来自定义控制
-
+  
   </p>
-
+   
   <br />
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -1235,7 +1234,7 @@ exports[`Dialog Dialog customVue demo works fine 1`] = `
       按钮文字
     </span>
   </button>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -1246,7 +1245,7 @@ exports[`Dialog Dialog customVue demo works fine 1`] = `
       按钮属性
     </span>
   </button>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -1257,7 +1256,7 @@ exports[`Dialog Dialog customVue demo works fine 1`] = `
       渲染函数按钮
     </span>
   </button>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -1268,7 +1267,7 @@ exports[`Dialog Dialog customVue demo works fine 1`] = `
       隐藏底部
     </span>
   </button>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -1340,7 +1339,7 @@ exports[`Dialog Dialog customVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -1381,7 +1380,7 @@ exports[`Dialog Dialog customVue demo works fine 1`] = `
         <div
           class="t-dialog__body"
         >
-          自定义底部按钮，传入 ButttonProps
+          自定义底部按钮，传入 ButtonProps
         </div>
         <div
           class="t-dialog__footer"
@@ -1427,7 +1426,7 @@ exports[`Dialog Dialog customVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -1490,7 +1489,7 @@ exports[`Dialog Dialog customVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -1554,7 +1553,7 @@ exports[`Dialog Dialog dragVue demo works fine 1`] = `
       非模态对话框-可拖拽
     </span>
   </button>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -1565,7 +1564,7 @@ exports[`Dialog Dialog dragVue demo works fine 1`] = `
       非模态对话框-不可拖拽
     </span>
   </button>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -1576,9 +1575,9 @@ exports[`Dialog Dialog dragVue demo works fine 1`] = `
       模态对话框-不支持拖拽
     </span>
   </button>
-
+   
   <br />
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -1623,7 +1622,7 @@ exports[`Dialog Dialog dragVue demo works fine 1`] = `
             <div>
               默认点击蒙层或按ESC可关闭
             </div>
-
+             
             <div>
               对话框内容
             </div>
@@ -1658,7 +1657,7 @@ exports[`Dialog Dialog dragVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -1731,7 +1730,7 @@ exports[`Dialog Dialog dragVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -1889,9 +1888,9 @@ exports[`Dialog Dialog iconVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <br />
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -1972,9 +1971,9 @@ exports[`Dialog Dialog iconVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <br />
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -2055,9 +2054,9 @@ exports[`Dialog Dialog iconVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <br />
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -2138,15 +2137,15 @@ exports[`Dialog Dialog iconVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <br />
-
+   
   <!---->
-
+   
   <!---->
-
+   
   <!---->
-
+   
   <!---->
 </div>
 `;
@@ -2163,7 +2162,7 @@ exports[`Dialog Dialog modalVue demo works fine 1`] = `
       模态对话框
     </span>
   </button>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -2174,7 +2173,7 @@ exports[`Dialog Dialog modalVue demo works fine 1`] = `
       非模态对话框
     </span>
   </button>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -2185,7 +2184,7 @@ exports[`Dialog Dialog modalVue demo works fine 1`] = `
       模态对话框-不可拖拽
     </span>
   </button>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -2230,7 +2229,7 @@ exports[`Dialog Dialog modalVue demo works fine 1`] = `
             <div>
               默认点击蒙层或按ESC可关闭
             </div>
-
+             
             <div>
               对话框内容
             </div>
@@ -2265,7 +2264,7 @@ exports[`Dialog Dialog modalVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -2338,7 +2337,7 @@ exports[`Dialog Dialog modalVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -2411,7 +2410,7 @@ exports[`Dialog Dialog modalVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -2499,7 +2498,7 @@ exports[`Dialog Dialog pluginVue demo works fine 1`] = `
       dialog
     </span>
   </button>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -2510,7 +2509,7 @@ exports[`Dialog Dialog pluginVue demo works fine 1`] = `
       handleDialogNode
     </span>
   </button>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -2521,7 +2520,7 @@ exports[`Dialog Dialog pluginVue demo works fine 1`] = `
       confirm
     </span>
   </button>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -2532,7 +2531,7 @@ exports[`Dialog Dialog pluginVue demo works fine 1`] = `
       alert
     </span>
   </button>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -2558,7 +2557,7 @@ exports[`Dialog Dialog positionVue demo works fine 1`] = `
       默认位置
     </span>
   </button>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -2569,7 +2568,7 @@ exports[`Dialog Dialog positionVue demo works fine 1`] = `
       垂直居中
     </span>
   </button>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -2580,7 +2579,7 @@ exports[`Dialog Dialog positionVue demo works fine 1`] = `
       自定义top
     </span>
   </button>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -2652,7 +2651,7 @@ exports[`Dialog Dialog positionVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -2723,7 +2722,7 @@ exports[`Dialog Dialog positionVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -2810,7 +2809,7 @@ exports[`Dialog Dialog warningVue demo works fine 1`] = `
       提示反馈
     </span>
   </button>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -2895,7 +2894,7 @@ exports[`Dialog Dialog warningVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -2906,7 +2905,7 @@ exports[`Dialog Dialog warningVue demo works fine 1`] = `
       成功反馈
     </span>
   </button>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -2991,7 +2990,7 @@ exports[`Dialog Dialog warningVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -3002,7 +3001,7 @@ exports[`Dialog Dialog warningVue demo works fine 1`] = `
       警示反馈
     </span>
   </button>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -3077,7 +3076,7 @@ exports[`Dialog Dialog warningVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -3088,7 +3087,7 @@ exports[`Dialog Dialog warningVue demo works fine 1`] = `
       错误反馈
     </span>
   </button>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -3163,7 +3162,7 @@ exports[`Dialog Dialog warningVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-
+   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
     type="button"
@@ -3174,7 +3173,7 @@ exports[`Dialog Dialog warningVue demo works fine 1`] = `
       自定义图标
     </span>
   </button>
-
+   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -3202,7 +3201,7 @@ exports[`Dialog Dialog warningVue demo works fine 1`] = `
                 href="#t-icon-check-circle-filled"
               />
             </svg>
-
+             
             <span
               style="vertical-align: middle;"
             >
