@@ -74,6 +74,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       }
       return dialogClass;
     },
+    resizeStyle(): Styles {
+      return { position: 'absolute', right: '40px', bottom: '20px' };
+    },
     dialogStyle(): Styles {
       const { top, placement } = this;
       let topStyle = {};
@@ -93,7 +96,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
           maxHeight: 'calc(100% - 20%)',
         };
       }
-      return { width: getCSSValue(this.width), ...topStyle };
+      return { height: getCSSValue(this.width), width: getCSSValue(this.width), ...topStyle };
     },
   },
 
@@ -114,6 +117,10 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       if (this.isModeless && this.draggable) {
         this.initDragEvent(value);
       }
+      if (this.resizeable) {
+        this.initResizeEvent();
+      }
+
       // 父元素为 display: none 时，需要更新子元素，避免 Dialog 前套 Table 组件时，固定列等特性失效
       if (value && !this.destroyOnClose && requestAnimationFrame) {
         requestAnimationFrame(() => {
@@ -197,6 +204,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
 
     emitCloseEvent(context: DialogCloseContext) {
       emitEvent<Parameters<TdDialogProps['onClose']>>(this, 'close', context);
+
       // 默认关闭弹窗
       this.$emit('update:visible', false);
     },
@@ -272,6 +280,70 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         target.removeEventListener('mousedown', this.mousedownHanler);
       }
     },
+    initResizeEvent() {
+      const dragDom = this.$refs.dialog as HTMLElement;
+      let minWidth = 0;
+      let minHeight = 0;
+      this.$nextTick(() => {
+        // @ts-ignore
+        minHeight = this.$refs.dialog.offsetHeight;
+        // @ts-ignore
+        minWidth = this.$refs.dialog.offsetWidth;
+      });
+
+      // 拉伸
+      const resizeEl = document.createElement('div');
+      dragDom.appendChild(resizeEl);
+      // 在弹窗右下角加上一个10-10px的控制块
+      resizeEl.style.cursor = 'se-resize';
+      resizeEl.style.position = 'absolute';
+      resizeEl.style.height = '10px';
+      resizeEl.style.width = '10px';
+      resizeEl.style.right = '0px';
+      resizeEl.style.bottom = '0px';
+      resizeEl.style.background = 'url(https://tdesign.gtimg.com/site/resizer.svg)';
+
+      // 鼠标拉伸弹窗
+      resizeEl.onmousedown = (e) => {
+        // 记录初始x位置
+        const { clientX } = e;
+        // 鼠标按下，计算当前元素距离可视区的距离
+        const disX = e.clientX - resizeEl.offsetLeft;
+        const disY = e.clientY - resizeEl.offsetTop;
+        dragDom.removeEventListener('mousedown', this.mousedownHanler);
+        document.onmousemove = function (e) {
+          e.preventDefault(); // 移动时禁用默认事件
+          const screenWidth = document.body.clientWidth; // body当前宽度
+          const screenHeight = document.documentElement.clientHeight; // 可见区域高度(应为body高度，可某些环境下无法获取)
+
+          // 通过事件委托，计算移动的距离
+          const x = e.clientX - disX + (e.clientX - clientX); // 这里 由于elementUI的dialog控制居中的，所以水平拉伸效果是双倍
+          const y = e.clientY - disY;
+          // 比较是否小于最小宽高
+          if (x > screenWidth) {
+            dragDom.style.width = `${screenWidth}px`;
+          } else if (x > minWidth) {
+            dragDom.style.width = `${x}px`;
+          } else {
+            dragDom.style.width = `${minWidth}px`;
+          }
+
+          if (y > screenHeight) {
+            dragDom.style.height = `${screenHeight}px`;
+          } else if (y > minHeight) {
+            dragDom.style.height = `${y}px`;
+          } else {
+            dragDom.style.height = `${minHeight}px`;
+          }
+        };
+        // 拉伸结束
+        document.onmouseup = () => {
+          dragDom.addEventListener('mousedown', this.mousedownHanler);
+          document.onmousemove = null;
+          document.onmouseup = null;
+        };
+      };
+    },
     /**
      * 获取设置的translate值
      */
@@ -299,7 +371,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       // this.getConfirmBtn is a function of ActionMixin
       // this.getCancelBtn is a function of ActionMixin
       const defaultFooter = (
-        <div>
+        <div style={this.resizeable ? this.resizeStyle : {}}>
           {this.getCancelBtn({
             cancelBtn: this.cancelBtn,
             globalCancel: this.global.cancel,
