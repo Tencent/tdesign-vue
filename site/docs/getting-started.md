@@ -48,7 +48,7 @@ npm package 中提供了多种构建产物，可以阅读 [这里](https://githu
 </template>
 
 <script>
-  // import { TButton } from 'tdesign-vue' // 组件的引入可以省略
+  // import { Button as TButton } from 'tdesign-vue' // 组件的引入可以省略
   export default {
     // components: { TButton }, // 对应的组件注册也可以省略
   }
