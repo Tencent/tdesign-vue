@@ -117,3 +117,10 @@ module.exports = {
 
 
 详情参见[桌面端组件库浏览器兼容性说明](https://github.com/Tencent/tdesign/wiki/%E6%A1%8C%E9%9D%A2%E7%AB%AF%E7%BB%84%E4%BB%B6%E5%BA%93%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7%E8%AF%B4%E6%98%8E)
+
+
+### FAQ
+
+Q: 通过局部注册 (Local Registration) 使用时，报错 `Uncaught Error: [vue-composition-api] must call Vue.use(plugin) before using any function`
+
+A: 由于组件内部使用了 `CompositionAPI` ，因此要解决这个报错，需要在 `main.js` 中，优先使用 `Vue.use(CompositionAPI)`
