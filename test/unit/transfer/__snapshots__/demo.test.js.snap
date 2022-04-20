@@ -3339,7 +3339,6 @@ exports[`Transfer Transfer paginationVue demo works fine 1`] = `
               </span>
               <span
                 class="t-select__single"
-                title="1/2"
               >
                 1/2
               </span>
