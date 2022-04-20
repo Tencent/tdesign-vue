@@ -102,11 +102,14 @@ export default Vue.extend({
   render(): VNode {
     return (
       <div
-        class={[`${prefix}-swiper__container__item`, {
-          [`${prefix}-swiper__card`]: this.type === 'card',
-          [`${prefix}-is-active`]: this.type === 'card' && this.active,
-          [`${prefix}-swiper__fade`]: this.animation === 'fade',
-        }]}
+        class={[
+          `${prefix}-swiper__container__item`,
+          {
+            [`${prefix}-swiper__card`]: this.type === 'card',
+            [`${prefix}-is-active`]: this.type === 'card' && this.active,
+            [`${prefix}-swiper__fade`]: this.animation === 'fade',
+          },
+        ]}
         style={this.itemStyle}
       >
         {this.$scopedSlots.default?.({}) || []}

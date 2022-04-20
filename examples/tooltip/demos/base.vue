@@ -145,7 +145,7 @@
     bottom: 50px;
   }
   &.right-full {
-    right: 0px;
+    right: 0;
   }
 }
 </style>

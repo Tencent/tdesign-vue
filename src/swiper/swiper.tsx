@@ -103,7 +103,9 @@ export default (Vue as VueConstructor<SwiperVue>).extend({
           getWrapAttribute={this.getWrapAttribute}
           swiperItemLength={this.swiperItemLength}
           props={{ ...this.$props, ...swiperItem.propsData }}
-        >{swiperItem.children}</TSwiperItem>
+        >
+          {swiperItem.children}
+        </TSwiperItem>
       ));
     },
   },
@@ -147,7 +149,8 @@ export default (Vue as VueConstructor<SwiperVue>).extend({
       const swiperItemList = originalChildren
         .map((swiper: VNode) => swiper.componentOptions)
         .filter((swiper) => kebabCase(swiper?.tag).endsWith(`${prefix}-swiper-item`));
-      const isUnchange = swiperItemList.length === this.swiperItemList.length && this.swiperItemList.every((swiperItem, index) => swiperItem === swiperItemList[index]);
+      const isUnchange = swiperItemList.length === this.swiperItemList.length
+        && this.swiperItemList.every((swiperItem, index) => swiperItem === swiperItemList[index]);
       if (isUnchange) return;
       this.swiperItemList = swiperItemList;
     },
@@ -218,15 +221,13 @@ export default (Vue as VueConstructor<SwiperVue>).extend({
     renderPagination() {
       const fractionIndex = this.currentIndex + 1 > this.swiperItemLength ? 1 : this.currentIndex + 1;
       return (
-        <div
-          class={`${prefix}-swiper__arrow`}
-        >
+        <div class={`${prefix}-swiper__arrow`}>
           <div class={`${prefix}-swiper__arrow-left`} onClick={() => this.goPrevious({ source: 'click' })}>
             <ChevronLeftIcon />
           </div>
           <div class={`${prefix}-swiper__navigation-text-fraction`}>
-              {fractionIndex}/{this.swiperItemLength}
-            </div>
+            {fractionIndex}/{this.swiperItemLength}
+          </div>
           <div class={`${prefix}-swiper__arrow-right`} onClick={() => this.goNext({ source: 'click' })}>
             <ChevronRightIcon />
           </div>
@@ -236,9 +237,7 @@ export default (Vue as VueConstructor<SwiperVue>).extend({
     renderArrow() {
       if (!this.showArrow) return null;
       return (
-        <div
-          class={[`${prefix}-swiper__arrow`, `${prefix}-swiper__arrow--default`]}
-        >
+        <div class={[`${prefix}-swiper__arrow`, `${prefix}-swiper__arrow--default`]}>
           <div class={`${prefix}-swiper__arrow-left`} onClick={() => this.goPrevious({ source: 'click' })}>
             <ChevronLeftIcon />
           </div>
@@ -260,16 +259,22 @@ export default (Vue as VueConstructor<SwiperVue>).extend({
 
       return (
         <ul
-          class={[`${prefix}-swiper__navigation`, {
-            [`${prefix}-swiper__navigation-bars`]: this.navigationConfig.type === 'bars',
-          }]}
+          class={[
+            `${prefix}-swiper__navigation`,
+            {
+              [`${prefix}-swiper__navigation-bars`]: this.navigationConfig.type === 'bars',
+            },
+          ]}
         >
           {this.swiperItemList.map((_, i: number) => (
             <li
               key={i}
-              class={[`${prefix}-swiper__navigation-item`, {
-                [`${prefix}-is-active`]: i === this.currentIndex,
-              }]}
+              class={[
+                `${prefix}-swiper__navigation-item`,
+                {
+                  [`${prefix}-is-active`]: i === this.currentIndex,
+                },
+              ]}
               onMouseenter={() => this.onMouseEnterNavigationItem(i)}
               onClick={() => this.onClickNavigationItem(i)}
             >
@@ -292,14 +297,15 @@ export default (Vue as VueConstructor<SwiperVue>).extend({
         onMouseLeave={this.onMouseLeave}
         ref="swiperWrap"
       >
-        <div
-          class={this.swiperWrapClass}
-        >
+        <div class={this.swiperWrapClass}>
           <div
-            class={[`${prefix}-swiper__content`, {
-              [`${prefix}-swiper-fade`]: this.animation === 'fade',
-              [`${prefix}-swiper-card`]: this.type === 'card',
-            }]}
+            class={[
+              `${prefix}-swiper__content`,
+              {
+                [`${prefix}-swiper-fade`]: this.animation === 'fade',
+                [`${prefix}-swiper-card`]: this.type === 'card',
+              },
+            ]}
           >
             <div class={`${prefix}-swiper__container`} style={this.containerStyle}>
               {this.renderSwiperItems()}

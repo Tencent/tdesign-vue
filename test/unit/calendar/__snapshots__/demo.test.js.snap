@@ -2540,7 +2540,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell t-is-disabled"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2555,7 +2555,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2570,7 +2570,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2585,7 +2585,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2600,7 +2600,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2615,7 +2615,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2630,7 +2630,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2649,7 +2649,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2664,7 +2664,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2679,7 +2679,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2694,7 +2694,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2709,7 +2709,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2724,7 +2724,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2739,7 +2739,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2758,7 +2758,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2773,7 +2773,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2782,7 +2782,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
               </div>
                
               <div
-                class="slotWarrper"
+                class="slotWrapper"
               >
                 <div
                   class="item"
@@ -2825,7 +2825,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2840,7 +2840,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2855,7 +2855,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2870,7 +2870,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2885,7 +2885,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2904,7 +2904,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2919,7 +2919,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2934,7 +2934,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2949,7 +2949,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2964,7 +2964,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2979,7 +2979,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -2994,7 +2994,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -3013,7 +3013,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -3028,7 +3028,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -3043,7 +3043,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -3058,7 +3058,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -3073,7 +3073,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell t-is-disabled"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -3088,7 +3088,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell t-is-disabled"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -3103,7 +3103,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-calendar__table-body-cell t-is-disabled"
           >
             <div
-              class="outerWarrper"
+              class="outerWrapper"
             >
               <div
                 class="number"
@@ -3384,10 +3384,10 @@ exports[`Calendar Calendar controllerConfigVue demo works fine 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-select t-select-polyfill t-size-m t-select__popup-reference"
+              class="t-select t-select-polyfill t-size-s t-select__popup-reference"
             >
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark"
+                class="t-tag t-tag--default t-size-s t-tag--dark"
                 style="display: none;"
               >
                 +0
@@ -3423,10 +3423,10 @@ exports[`Calendar Calendar controllerConfigVue demo works fine 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-select t-select-polyfill t-size-m t-select__popup-reference"
+              class="t-select t-select-polyfill t-size-s t-select__popup-reference"
             >
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark"
+                class="t-tag t-tag--default t-size-s t-tag--dark"
                 style="display: none;"
               >
                 +0
@@ -8066,7 +8066,7 @@ exports[`Calendar Calendar slotPropsApiVue demo works fine 1`] = `
             >
               <span>
                 <div
-                  class="calendar-slot-props-api-demo-slot-warrper"
+                  class="calendar-slot-props-api-demo-slot-wrapper"
                 >
                   <div
                     class="item"

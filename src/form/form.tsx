@@ -10,7 +10,7 @@ import {
   FormValidateMessage,
 } from './type';
 import props from './props';
-import { FORM_ITEM_CLASS_PREFIX, CLASS_NAMES, FORM_CONTROLE_COMPONENTS } from './const';
+import { FORM_ITEM_CLASS_PREFIX, CLASS_NAMES, FORM_CONTROL_COMPONENTS } from './const';
 import { emitEvent } from '../utils/event';
 import FormItem, { FormItemValidateResult } from './form-item';
 import { FormResetEvent, FormSubmitEvent, ClassName } from '../common';
@@ -46,7 +46,7 @@ export default Vue.extend({
       ];
     },
     controlledComponents(): string[] {
-      let fields = FORM_CONTROLE_COMPONENTS;
+      let fields = FORM_CONTROL_COMPONENTS;
       if (this.formControlledComponents?.length) {
         fields = fields.concat(this.formControlledComponents);
       }

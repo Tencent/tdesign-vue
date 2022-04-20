@@ -2800,6 +2800,215 @@ exports[`Table Table dragColSortVue demo works fine 1`] = `
         >
           <colgroup>
             <col
+              style="width: 150px;"
+            />
+            <col
+              style="width: 100px;"
+            />
+            <col
+              style="width: 200px;"
+            />
+            <col
+              style="width: 100px;"
+            />
+          </colgroup>
+          <thead
+            class="t-table__header"
+          >
+            <tr>
+              <th
+                class="t-table__th-instance"
+                data-colkey="instance"
+              >
+                <div
+                  class="t-table__th-cell-inner"
+                >
+                  集群名称
+                </div>
+              </th>
+              <th
+                class="t-table__th-status"
+                data-colkey="status"
+              >
+                <div
+                  class="t-table__th-cell-inner"
+                >
+                  状态
+                </div>
+              </th>
+              <th
+                class="t-table__th-survivalTime"
+                data-colkey="survivalTime"
+              >
+                <div
+                  class="t-table__th-cell-inner"
+                >
+                  存活时间(s)
+                </div>
+              </th>
+              <th
+                class="t-table__th-owner"
+                data-colkey="owner"
+              >
+                <div
+                  class="t-table__th-cell-inner"
+                >
+                  管理员
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="t-table__body"
+          >
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                JQTest1
+              </td>
+              <td
+                class=""
+              >
+                <p
+                  class="status"
+                >
+                  
+          健康
+        
+                </p>
+              </td>
+              <td
+                class=""
+              >
+                1000
+              </td>
+              <td
+                class=""
+              >
+                jenny;peter
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                JQTest2
+              </td>
+              <td
+                class=""
+              >
+                <p
+                  class="status warning"
+                >
+                  
+          警告
+        
+                </p>
+              </td>
+              <td
+                class=""
+              >
+                1000
+              </td>
+              <td
+                class=""
+              >
+                jenny
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                JQTest3
+              </td>
+              <td
+                class=""
+              >
+                <p
+                  class="status unhealth"
+                >
+                  
+          异常
+        
+                </p>
+              </td>
+              <td
+                class=""
+              >
+                500
+              </td>
+              <td
+                class=""
+              >
+                jenny
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                JQTest4
+              </td>
+              <td
+                class=""
+              >
+                <p
+                  class="status warning"
+                >
+                  
+          警告
+        
+                </p>
+              </td>
+              <td
+                class=""
+              >
+                1500
+              </td>
+              <td
+                class=""
+              >
+                peter
+              </td>
+            </tr>
+          </tbody>
+          <!---->
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
+<div
+  class="demo-container t-table-demo-sort"
+>
+  <div
+    class="item"
+  >
+    <div
+      class="t-table t-table--row-handler-draggable"
+      style="position: relative;"
+    >
+      <div
+        class="t-table__content"
+      >
+        <table
+          class="t-table--layout-fixed"
+        >
+          <colgroup>
+            <col
               style="width: 80px;"
             />
             <col />
@@ -15510,24 +15719,6 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
     </label>
      
     <label
-      class="t-checkbox t-is-checked"
-    >
-      <input
-        class="t-checkbox__former"
-        type="checkbox"
-        value=""
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        虚拟滚动
-      </span>
-    </label>
-     
-    <label
       class="t-checkbox"
     >
       <input
@@ -15628,7 +15819,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
     >
       <div
         class="t-table__virtual-scroll-cursor"
-        style="transform: translate(0, 28800px);"
+        style="transform: translate(0, 30000px);"
       />
       <table
         class="t-table--layout-fixed"
