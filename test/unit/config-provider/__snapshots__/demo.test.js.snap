@@ -1446,7 +1446,7 @@ exports[`ConfigProvider ConfigProvider globalVue demo works fine 1`] = `
   <div>
     英文语言包引入路径：
     <code>
-      import enConfig from 'tdesign-vue/locale/en_US';
+      import enConfig from 'tdesign-vue/es/locale/en_US';
     </code>
   </div>
    
@@ -1455,7 +1455,7 @@ exports[`ConfigProvider ConfigProvider globalVue demo works fine 1`] = `
   <div>
     中文语言包引入路径：
     <code>
-      import enConfig from 'tdesign-vue/locale/zh_CN';
+      import enConfig from 'tdesign-vue/es/locale/zh_CN';
     </code>
   </div>
 </div>
