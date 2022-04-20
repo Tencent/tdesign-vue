@@ -123,4 +123,13 @@ module.exports = {
 
 Q: 通过局部注册 (Local Registration) 使用时，报错 `Uncaught Error: [vue-composition-api] must call Vue.use(plugin) before using any function`
 
-A: 由于组件内部使用了 `CompositionAPI` ，因此要解决这个报错，需要在 `main.js` 中，优先使用 `Vue.use(CompositionAPI)`
+A: 组件内部使用了 `CompositionAPI`，因此要解决这个报错，需要在 `main.js` 中，优先使用 `Vue.use(CompositionAPI)`，例如：
+
+```js
+// main.js
+import Vue from 'vue';
+import VueCompositionAPI from '@vue/composition-api';
+
+Vue.use(VueCompositionAPI); // 必须是第一个 use
+Vue.use(otherPlugin);
+```
