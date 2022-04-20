@@ -48,7 +48,7 @@
     "build:tsc-esm": "tsc --emitDeclarationOnly -d --outDir esm/",
     "build:tsc-lib": " tsc --emitDeclarationOnly -d --outDir lib/",
     "postbuild": "node script/postbuild.js",
-    "lint:fix": "eslint --ext .vue,.js,.ts,.tsx ./ --max-warnings 0 --fix",
+    "lint:fix": "eslint --fix",
     "lint": "npm run lint:tsc && eslint --ext .vue,.js,.ts,.tsx ./ --max-warnings 0",
     "lint:tsc": "tsc --emitDeclarationOnly",
     "test": "npm run test:demo && npm run test:unit && npm run test:node",
@@ -186,7 +186,7 @@
   "lint-staged": {
     "*.{vue,js,jsx,ts,tsx}": [
       "prettier --write",
-      "eslint --fix"
+      "npm run lint:fix"
     ]
   }
 }

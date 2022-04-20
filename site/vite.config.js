@@ -12,8 +12,8 @@ const publicPathMap = {
 };
 
 // https://vitejs.dev/config/
-export default ({ mode }) => {
-  return defineConfig({
+export default ({ mode }) =>
+  defineConfig({
     base: publicPathMap[mode],
     resolve: {
       alias: {
@@ -46,4 +46,3 @@ export default ({ mode }) => {
       VitePWA(pwaConfig),
     ],
   });
-};
