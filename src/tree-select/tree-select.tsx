@@ -325,7 +325,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     },
     async changeNodeInfo() {
       await this.value;
-      if (!this.multiple && this.value) {
+      if (!this.multiple && (this.value || this.value === 0)) {
         this.changeSingleNodeInfo();
       } else if (this.multiple && isArray(this.value)) {
         this.changeMultipleNodeInfo();
