@@ -260,6 +260,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       this.change(defaultValue, null);
       this.actived = [];
       this.filterText = '';
+      this.filterByText = null;
       emitEvent<Parameters<TdTreeSelectProps['onClear']>>(this, 'clear', { e });
     },
     focus(ctx: InputFocusEventParams[1]) {
@@ -269,6 +270,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     blur(ctx: InputBlurEventParams[1]) {
       this.focusing = false;
       this.filterText = '';
+      this.filterByText = null;
       emitEvent<Parameters<TdTreeSelectProps['onBlur']>>(this, 'blur', { value: this.value, ...ctx });
     },
     remove(options: RemoveOptions<TreeOptionData>) {
@@ -325,7 +327,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     },
     async changeNodeInfo() {
       await this.value;
-      if (!this.multiple && this.value) {
+      if (!this.multiple && (this.value || this.value === 0)) {
         this.changeSingleNodeInfo();
       } else if (this.multiple && isArray(this.value)) {
         this.changeMultipleNodeInfo();
