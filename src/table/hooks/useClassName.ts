@@ -20,11 +20,14 @@ export default function useClassName() {
       empty: `${classPrefix.value}-table__empty`,
       emptyRow: `${classPrefix.value}-table__empty-row`,
       headerFixed: `${classPrefix.value}-table--header-fixed`,
+      footerFixed: `${classPrefix.value}-table--footer-fixed`,
       columnFixed: `${classPrefix.value}-table--column-fixed`,
       widthOverflow: `${classPrefix.value}-table--width-overflow`,
       multipleHeader: `${classPrefix.value}-table--multiple-header`,
       affixedHeader: `${classPrefix.value}-table--affixed-header`,
+      affixedFooter: `${classPrefix.value}-table--affixed-footer`,
       affixedHeaderElm: `${classPrefix.value}-table__affixed-header-elm`,
+      affixedFooterElm: `${classPrefix.value}-table__affixed-footer-elm`,
       // 边框模式，固定表头，横向滚动时，右侧添加边线，分隔滚动条
       scrollbarDivider: `${classPrefix.value}-table__scroll-bar-divider`,
       // 当用户设置 height 为固定高度，为保证行元素铺满 table，则需设置 table 元素高度为 100%

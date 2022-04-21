@@ -50,6 +50,12 @@ export default {
   headerAffixProps: {
     type: Object as PropType<TdBaseTableProps['headerAffixProps']>,
   },
+  /** 表尾吸底 */
+  footerAffixedBottom: Boolean,
+  /** 表尾吸底基于 Affix 组件开发，透传全部 Affix 组件属性 */
+  footerAffixProps: {
+    type: Object as PropType<TdBaseTableProps['footerAffixProps']>,
+  },
   /** 表格高度，超出后会出现滚动条。示例：100,  '30%',  '300'。值为数字类型，会自动加上单位 px。如果不是绝对固定表格高度，建议使用 `maxHeight` */
   height: {
     type: [String, Number] as PropType<TdBaseTableProps['height']>,

@@ -54,16 +54,19 @@ export default defineComponent({
     // 固定表头和固定列逻辑
     const {
       affixHeaderRef,
+      affixFooterRef,
       scrollbarWidth,
       virtualScrollHeaderPos,
       tableWidth,
       tableContentRef,
       isFixedHeader,
+      isFixedFooter,
       isWidthOverflow,
       isFixedColumn,
       thWidthList,
       showColumnShadow,
       showAffixHeader,
+      showAffixFooter,
       rowAndColFixedPosition,
       refreshTable,
       onTableContentScroll,
@@ -76,6 +79,7 @@ export default defineComponent({
       tableClasses.value,
       {
         [tableBaseClass.headerFixed]: isFixedHeader.value,
+        [tableBaseClass.footerFixed]: isFixedFooter.value,
         [tableBaseClass.columnFixed]: isFixedColumn.value,
         [tableBaseClass.widthOverflow]: isWidthOverflow.value,
         [tableBaseClass.multipleHeader]: isMultipleHeader.value,
@@ -172,6 +176,7 @@ export default defineComponent({
       tableElmClasses,
       tableContentRef,
       isFixedHeader,
+      isFixedFooter,
       isWidthOverflow,
       isFixedColumn,
       rowAndColFixedPosition,
@@ -187,7 +192,9 @@ export default defineComponent({
       visibleData,
       translateY,
       affixHeaderRef,
+      affixFooterRef,
       showAffixHeader,
+      showAffixFooter,
       scrollbarWidth,
       isMultipleHeader,
       showRightDivider,
@@ -233,6 +240,35 @@ export default defineComponent({
             thList={this.thList}
             thWidthList={this.thWidthList}
           />
+        </table>
+      </div>
+    );
+
+    const pagination = <div ref="pagination">{this.renderPagination(h)}</div>;
+    const paginationHeight = this.$refs.pagination && (this.$refs.pagination as HTMLElement).offsetHeight;
+
+    const affixedFooter = Boolean((this.footerAffixedBottom || this.isVirtual) && this.tableWidth) && (
+      <div
+        ref="affixFooterRef"
+        style={{
+          width: `${this.tableWidth}px`,
+          opacity: Number(this.showAffixFooter),
+          bottom: `${paginationHeight}px`,
+        }}
+        class={{ [this.tableBaseClass.affixedFooterElm]: this.footerAffixedBottom || this.isVirtual }}
+      >
+        <table class={this.tableElmClasses} style={{ ...this.tableElementStyles, width: `${this.tableWidth}px` }}>
+          {colgroup}
+          <TFoot
+            rowKey={this.rowKey}
+            scopedSlots={this.$scopedSlots}
+            isFixedFooter={this.isFixedFooter}
+            rowAndColFixedPosition={rowAndColFixedPosition}
+            footData={this.footData}
+            columns={this.columns}
+            rowAttributes={this.rowAttributes}
+            rowClassName={this.rowClassName}
+          ></TFoot>
         </table>
       </div>
     );
@@ -318,7 +354,7 @@ export default defineComponent({
 
     const topContent = this.renderTNode('topContent');
     const bottomContent = this.renderTNode('bottomContent');
-    const pagination = this.renderPagination(h);
+    // const pagination = this.renderPagination(h);
     const bottom = !!bottomContent && <div class={this.tableBaseClass.bottomContent}>{bottomContent}</div>;
     return (
       <div ref="tableRef" class={this.dynamicBaseTableClasses} style="position: relative">
@@ -334,6 +370,15 @@ export default defineComponent({
           ))}
 
         {loadingContent}
+
+        {!!(this.isVirtual || this.footerAffixedBottom)
+          && (this.footerAffixedBottom ? (
+            <Affix offsetBottom={-paginationHeight} props={this.footerAffixProps} onFixedChange={this.onFixedChange}>
+              {affixedFooter}
+            </Affix>
+          ) : (
+            this.isFixedFooter && affixedFooter
+          ))}
 
         {this.showRightDivider && (
           <div

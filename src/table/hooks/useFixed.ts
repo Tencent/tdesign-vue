@@ -115,14 +115,19 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     lastFullRow,
     maxHeight,
     headerAffixedTop,
+    footerAffixedBottom,
     bordered,
   } = toRefs(props);
   const tableContentRef = ref<HTMLDivElement>();
   const isFixedHeader = ref(false);
+  const isFixedFooter = ref(false);
   const isWidthOverflow = ref(false);
   const affixHeaderRef = ref<HTMLDivElement>();
+  const affixFooterRef = ref<HTMLDivElement>();
   // 当表格完全滚动消失在视野时，需要隐藏吸顶表头
   const showAffixHeader = ref(true);
+  // 当表格完全滚动消失在视野时，需要隐藏吸底表尾
+  const showAffixFooter = ref(true);
   // CSS 样式设置了固定 6px
   const scrollbarWidth = ref(6);
   // 固定列、固定表头、固定表尾等内容的位置信息
@@ -133,6 +138,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   });
   // 虚拟滚动不能使用 CSS sticky 固定表头
   const virtualScrollHeaderPos = ref<{ left: number; top: number }>({ left: 0, top: 0 });
+  const virtualScrollFooterPos = ref<{ left: number; bottom: number }>({ left: 0, bottom: 0 });
   const tableWidth = ref(0);
   const thWidthList = ref<{ [colKey: string]: number }>({});
 
@@ -389,6 +395,21 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     }, 0);
   };
 
+  const updateFixedFooter = () => {
+    const timer = setTimeout(() => {
+      if (!tableContentRef.value) return;
+      isFixedFooter.value = tableContentRef.value.scrollHeight > tableContentRef.value.clientHeight;
+      isWidthOverflow.value = tableContentRef.value.scrollWidth > tableContentRef.value.clientWidth;
+      const pos = tableContentRef.value.getBoundingClientRect();
+
+      virtualScrollFooterPos.value = {
+        bottom: pos.bottom,
+        left: pos.left,
+      };
+      clearTimeout(timer);
+    }, 0);
+  };
+
   const updateFixedColumnHandler = () => {
     const timer = setTimeout(() => {
       if (isFixedColumn.value) {
@@ -422,6 +443,12 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
       lastScrollLeft = left;
       affixHeaderRef.value.scrollLeft = left;
     }
+
+    if (affixFooterRef.value) {
+      const left = tableContentRef.value.scrollLeft;
+      lastScrollLeft = left;
+      affixFooterRef.value.scrollLeft = left;
+    }
   };
 
   const updateThWidthListHandler = () => {
@@ -430,6 +457,10 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
       updateTableWidth();
       const thead = tableContentRef.value.querySelector('thead');
       updateThWidthList(thead.children);
+
+      // const tfoot = tableContentRef.value.querySelector('tfoot');
+      // updateThWidthList(tfoot.children);
+
       clearTimeout(timer);
     }, 0);
   };
@@ -437,7 +468,9 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   const onDocumentScroll = () => {
     const pos = tableContentRef.value.getBoundingClientRect();
     const r = affixHeaderRef.value?.offsetHeight - pos.top < pos.height;
+    const v = affixFooterRef.value?.offsetHeight - pos.bottom < pos.height;
     showAffixHeader.value = r;
+    showAffixFooter.value = v;
   };
 
   watch(
@@ -448,6 +481,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
       tableLayout,
       tableContentWidth,
       isFixedHeader,
+      isFixedFooter,
       isWidthOverflow,
       isFixedColumn,
       fixedRows,
@@ -462,14 +496,27 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
 
   watch([maxHeight, data, columns, bordered], updateFixedHeader, { immediate: true });
 
+  watch([maxHeight, data, columns, bordered], updateFixedFooter, { immediate: true });
+
   // 影响表头宽度的元素
   watch(
-    [data, columns, bordered, tableLayout, fixedRows, isFixedHeader, headerAffixedTop, tableContentWidth],
+    [
+      data,
+      columns,
+      bordered,
+      tableLayout,
+      fixedRows,
+      isFixedHeader,
+      isFixedFooter,
+      headerAffixedTop,
+      footerAffixedBottom,
+      tableContentWidth,
+    ],
     updateThWidthListHandler,
     { immediate: true },
   );
 
-  watch([headerAffixedTop], () => {
+  watch([headerAffixedTop, footerAffixedBottom], () => {
     if (headerAffixedTop) {
       on(document, 'scroll', onDocumentScroll);
     } else {
@@ -507,7 +554,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     if (isFixedColumn.value || isFixedHeader.value || !notNeedThWidthList.value) {
       off(window, 'resize', onResize);
     }
-    if (props.headerAffixedTop) {
+    if (props.headerAffixedTop || props.footerAffixedBottom) {
       off(document, 'scroll', onDocumentScroll);
     }
   });
@@ -516,14 +563,17 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     tableWidth,
     thWidthList,
     isFixedHeader,
+    isFixedFooter,
     isWidthOverflow,
     tableContentRef,
     showAffixHeader,
+    showAffixFooter,
     isFixedColumn,
     showColumnShadow,
     rowAndColFixedPosition,
     virtualScrollHeaderPos,
     affixHeaderRef,
+    affixFooterRef,
     scrollbarWidth,
     refreshTable,
     updateThWidthListHandler,
