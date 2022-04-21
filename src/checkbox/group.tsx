@@ -164,6 +164,7 @@ export default Vue.extend({
         this.emitChange(val, {
           e: data.e,
           current: data.option.value,
+          option: data.option,
           type: data.checked ? 'check' : 'uncheck',
         });
       } else {
@@ -186,6 +187,7 @@ export default Vue.extend({
         e: context.e,
         type: checked ? 'check' : 'uncheck',
         current: undefined,
+        option: undefined,
       });
     },
   },

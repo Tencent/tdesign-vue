@@ -7,6 +7,7 @@ import ITooltip from '../tooltip/tooltip';
 import { getIEVersion } from '../_common/js/utils/helper';
 import { TdSliderProps } from './type';
 import { TdTooltipProps } from '../tooltip/type';
+import { renderTNodeJSXDefault } from '../utils/render-tnode';
 
 const name = `${prefix}-slider-button`;
 interface SliderInstanceType extends Vue {
@@ -34,6 +35,17 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
       type: [Boolean, Object] as PropType<TdSliderProps['tooltipProps']>,
       default: true,
     },
+    label: {
+      type: [String, Function, Boolean] as PropType<TdSliderProps['label']>,
+      default: true,
+    },
+    range: {
+      type: Boolean,
+      default: false,
+    },
+    position: {
+      type: String,
+    },
   },
   inject: {
     slider: { default: undefined },
@@ -49,9 +61,6 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
     },
     rangeDiff(): number {
       return this.max - this.min;
-    },
-    formatValue(): TdSliderProps['value'] {
-      return this.value;
     },
     disabled(): boolean {
       return this.slider.disabled;
@@ -110,6 +119,17 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
     this.handleIE();
   },
   methods: {
+    getTooltipContent() {
+      if (typeof this.label === 'boolean') return String(this.value);
+      return renderTNodeJSXDefault(this, 'label', {
+        params: this.range
+          ? {
+            value: this.value,
+            position: this.position,
+          }
+          : { value: this.value },
+      });
+    },
     setTooltipProps() {
       if (this.tooltipProps instanceof Object) {
         const {
@@ -290,6 +310,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
       return str === undefined || str === null;
     },
   },
+
   render(): VNode {
     return (
       <div
@@ -306,7 +327,12 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
         onblur={this.handleMouseLeave}
         onKeydown={this.onNativeKeyDown}
       >
-        <Tooltip ref="tooltip" props={this.getTooltipProps()} visible={this.visible} content={String(this.formatValue)}>
+        <Tooltip
+          ref="tooltip"
+          props={this.getTooltipProps()}
+          visible={this.label && this.visible}
+          content={this.getTooltipContent}
+        >
           <div class={[`${prefix}-slider__button`, { [`${prefix}-slider__button--dragging`]: this.dragging }]} />
         </Tooltip>
       </div>

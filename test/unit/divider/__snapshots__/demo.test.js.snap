@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Divider base demo works fine 1`] = `
+exports[`Divider Divider baseVue demo works fine 1`] = `
 <div>
   <p>
     
@@ -30,7 +30,7 @@ exports[`Divider base demo works fine 1`] = `
 </div>
 `;
 
-exports[`Divider text demo works fine 1`] = `
+exports[`Divider Divider textVue demo works fine 1`] = `
 <div>
   <p>
     
@@ -88,7 +88,7 @@ exports[`Divider text demo works fine 1`] = `
 </div>
 `;
 
-exports[`Divider vertical demo works fine 1`] = `
+exports[`Divider Divider verticalVue demo works fine 1`] = `
 <div>
   <span>
     正直

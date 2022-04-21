@@ -8,7 +8,7 @@ import kebabCase from 'lodash/kebabCase';
 import {
   getDefaultNode, getParams, OptionsType, JSXRenderContext,
 } from './render-tnode';
-import log from '../_common/js/log';
+// import log from '../_common/js/log';
 
 // 兼容处理插槽名称，同时支持驼峰命名和中划线命名，示例：value-display 和 valueDisplay
 function handleSlots(slots: SetupContext['slots'], name: string, params: Record<string, any>) {
@@ -48,9 +48,9 @@ export const useTNodeJSX = () => {
     }
 
     // 同名插槽和属性同时存在，则提醒用户只需要选择一种方式即可
-    if (slots[name] && propsNode && propsNode !== true) {
-      log.warn('', `Both slots.${name} and props.${name} exist, props.${name} is preferred`);
-    }
+    // if (slots[name] && propsNode && propsNode !== true) {
+    //   log.warn('', `Both slots.${name} and props.${name} exist, props.${name} is preferred`);
+    // }
     // propsNode 为 false 不渲染
     if (propsNode === false) return;
     if (propsNode === true) {

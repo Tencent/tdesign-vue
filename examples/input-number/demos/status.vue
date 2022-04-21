@@ -55,7 +55,7 @@ export default {
 </script>
 <style scoped>
 .t-form__item {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .t-input-number {

@@ -1,11 +1,10 @@
 import isFunction from 'lodash/isFunction';
 import get from 'lodash/get';
-import Sortable, { SortableOptions } from 'sortablejs';
+import isObject from 'lodash/isObject';
 import {
   PrimaryTableCol, RowClassNameParams, TableRowData, TdBaseTableProps,
 } from './type';
 import { ClassName, HTMLElementAttributes } from '../common';
-import { TargetDom } from './interface';
 
 export function toString(obj: any): string {
   return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase();
@@ -56,12 +55,14 @@ export function formatRowClassNames(
   for (let i = 0, len = rowClassList.length; i < len; i++) {
     const rName = rowClassList[i];
     let tClass = isFunction(rName) ? rName(params) : rName;
-    if (typeof tClass === 'object') {
+    if (isObject(tClass) && !(tClass instanceof Array)) {
       // 根据下标设置行类名
       tClass[rowIndex] && (tClass = tClass[rowIndex]);
       // 根据行唯一标识设置行类名
       const rowId = get(row, rowKey || 'id');
       tClass[rowId] && (tClass = tClass[rowId]);
+    } else if (tClass instanceof Array) {
+      tClass = formatRowClassNames(tClass, params, rowKey);
     }
     customClasses = customClasses.concat(tClass);
   }
@@ -136,10 +137,14 @@ export function isRowSelectedDisabled(
   return !!disabled;
 }
 
-// 拖拽排序api
-export function setSortableConfig(target: TargetDom, options: SortableOptions) {
-  if (!target) {
-    return;
+// 多级表头，列配置场景，获取 currentRow
+export function getCurrentRowByKey<T extends { colKey?: string; children?: any[] }>(columns: T[], key: string): T {
+  if (!columns || !key) return;
+  const col = columns?.find((t) => t.colKey === key);
+  if (col) return col;
+  for (let i = 0, len = columns.length; i < len; i++) {
+    if (columns[i]?.children?.length) {
+      return getCurrentRowByKey(columns[i]?.children, key);
+    }
   }
-  return new Sortable(target as any, { ...options });
 }

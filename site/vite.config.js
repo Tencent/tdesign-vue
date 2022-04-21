@@ -12,8 +12,8 @@ const publicPathMap = {
 };
 
 // https://vitejs.dev/config/
-export default ({ mode }) => {
-  return defineConfig({
+export default ({ mode }) =>
+  defineConfig({
     base: publicPathMap[mode],
     resolve: {
       alias: {
@@ -21,6 +21,7 @@ export default ({ mode }) => {
         '@docs': path.resolve(__dirname, './docs'),
         '@components': path.resolve(__dirname, './src/components'),
         '@common': path.resolve(__dirname, '../src/_common'),
+        'tdesign-vue/es': path.resolve(__dirname, '../src'),
         'tdesign-vue': path.resolve(__dirname, '../src'),
       },
     },
@@ -45,4 +46,3 @@ export default ({ mode }) => {
       VitePWA(pwaConfig),
     ],
   });
-}

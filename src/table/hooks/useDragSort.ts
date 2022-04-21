@@ -1,77 +1,167 @@
 // 表格 行拖拽 + 列拖拽功能
-
-import { SetupContext, computed, toRefs } from '@vue/composition-api';
-import { SortableEvent } from 'sortablejs';
-import { TdPrimaryTableProps } from '../type';
-import { TargetDom } from '../interface';
-import { setSortableConfig } from '../utils';
+import {
+  SetupContext, computed, toRefs, ref, watch,
+} from '@vue/composition-api';
+import Sortable, { SortableEvent, SortableOptions } from 'sortablejs';
+import get from 'lodash/get';
+import { TableRowData, TdPrimaryTableProps, DragSortContext } from '../type';
 import useClassName from './useClassName';
+import log from '../../_common/js/log';
+import swapDragArrayElement from '../../_common/js/utils/swapDragArrayElement';
 
+/**
+ * TODO:
+ * 1. 同时支持行拖拽和列拖拽，此时 dragSort 扩展为支持数组即可
+ * 2. 支持多级表头场景下的列拖拽排序，此时需要将叶子结点 tColumns 作为参数传入。tColumns 已在 useMultiHeader 中计算出来
+ * 3. 优化列拖拽排序样式（优先级不高，可以慢慢来）
+ * @param props
+ * @param context
+ * @returns
+ */
 export default function useDragSort(props: TdPrimaryTableProps, context: SetupContext) {
-  const { sortOnRowDraggable, dragSort, columns } = toRefs(props);
+  const {
+    sortOnRowDraggable, dragSort, columns, data,
+  } = toRefs(props);
+  const { tableDraggableClasses, tableBaseClass } = useClassName();
+  const primaryTableRef = ref(null);
   // 判断是否有拖拽列
   const dragCol = computed(() => columns.value.find((item) => item.colKey === 'drag'));
   // 行拖拽判断条件
   const isRowDraggable = computed(() => sortOnRowDraggable.value || dragSort.value === 'row');
-  // 列拖拽判断条件
-  const isColDraggable = computed(() => dragSort.value === 'drag-col' && !!dragCol.value);
+  // 行手柄列拖拽判断条件
+  const isRowHandlerDraggable = computed(() => ['drag-col', 'row-handler'].includes(dragSort.value) && !!dragCol.value);
+  // 列拖拽排序，待开发
+  const isColDraggable = computed(() => dragSort.value === 'col');
+  // 行拖拽排序，存储上一次的变化结果
+  const lastRowList = ref([]);
+  // 列拖拽排序，存储上一次的变化结果
+  const lastColList = ref([]);
 
-  const { tableDraggableClasses } = useClassName();
+  if (dragSort.value === 'col') {
+    log.error('Table', "dragSort='col' is going to be used as column drag, please use dragSort='row-handler' instead.");
+  }
 
-  // 注册拖拽事件
-  const registerDragEvent = (element: TargetDom) => {
-    if (!isColDraggable.value && !isRowDraggable.value) {
-      return;
-    }
+  if (dragSort.value === 'drag-col') {
+    log.error('Table', "dragSort='drag-col' is going to be deprecated, please use dragSort='col' instead.");
+  }
+
+  if (props.sortOnRowDraggable) {
+    log.error('Table', "`sortOnRowDraggable` is going to be deprecated, please use dragSort='row' instead.");
+  }
+
+  watch(
+    data,
+    (data) => {
+      lastRowList.value = data?.map((item) => get(item, props.rowKey));
+    },
+    { immediate: true },
+  );
+
+  watch(
+    columns,
+    (columns) => {
+      lastColList.value = columns || [];
+    },
+    { immediate: true },
+  );
+
+  // 行拖拽排序
+  const registerRowDragEvent = (element: HTMLDivElement): void => {
+    if (!isRowHandlerDraggable.value && !isRowDraggable.value) return;
     const dragContainer = element?.querySelector('tbody');
-    const { handle, ghost } = tableDraggableClasses;
-    const baseOptions = {
+    if (!dragContainer) {
+      console.error('tbody does not exist.');
+      return null;
+    }
+    // 拖拽实例
+    let dragInstanceTmp: Sortable = null;
+    const baseOptions: SortableOptions = {
       animation: 150,
-      // 放置占位符的类名
-      ghostClass: ghost,
+      ...props.dragSortOptions,
+      ghostClass: tableDraggableClasses.ghost,
+      chosenClass: tableDraggableClasses.chosen,
+      dragClass: tableDraggableClasses.dragging,
       onEnd(evt: SortableEvent) {
-        const { oldIndex, newIndex } = evt;
-        const newData = [...props.data];
-        if (newIndex - oldIndex > 0) {
-          newData.splice(newIndex + 1, 0, newData[oldIndex]);
-          newData.splice(oldIndex, 1);
-        } else {
-          newData.splice(newIndex, 0, newData[oldIndex]);
-          newData.splice(oldIndex + 1, 1);
-        }
-
-        const params = {
-          currentIndex: evt.oldIndex,
-          current: props.data[evt.oldIndex],
-          targetIndex: evt.newIndex,
-          target: props.data[evt.newIndex],
-          currentData: newData,
+        // 处理受控：拖拽列表恢复原始排序
+        dragInstanceTmp?.sort(lastRowList.value);
+        const { oldIndex: currentIndex, newIndex: targetIndex } = evt;
+        const params: DragSortContext<TableRowData> = {
+          currentIndex,
+          current: data[currentIndex],
+          targetIndex,
+          target: data[targetIndex],
+          currentData: swapDragArrayElement(props.data, currentIndex, targetIndex),
           e: evt,
+          sort: 'row',
         };
         props.onDragSort?.(params);
         // Vue3 ignore next line
         context.emit('drag-sort', params);
       },
     };
-    // 注册拖拽事件
-    const rowOptions = {
-      ...baseOptions,
-    };
 
-    const colOptions = {
-      handle: `.${handle}`,
-      ...baseOptions,
-    };
     if (isRowDraggable.value) {
-      setSortableConfig(dragContainer, rowOptions);
+      dragInstanceTmp = new Sortable(dragContainer, { ...baseOptions });
     } else {
-      setSortableConfig(dragContainer, colOptions);
+      dragInstanceTmp = new Sortable(dragContainer, {
+        ...baseOptions,
+        handle: `.${tableDraggableClasses.handle}`,
+      });
     }
+    lastRowList.value = dragInstanceTmp.toArray();
   };
+
+  // 列拖拽排序
+  const registerColDragEvent = (tableElement: HTMLElement) => {
+    if (!isColDraggable.value || !tableElement) return;
+    // 拖拽实例
+    let dragInstanceTmp: Sortable = null;
+    const options: SortableOptions = {
+      animation: 150,
+      ...props.dragSortOptions,
+      dataIdAttr: 'data-colkey',
+      direction: 'vertical',
+      ghostClass: tableDraggableClasses.ghost,
+      chosenClass: tableDraggableClasses.chosen,
+      dragClass: tableDraggableClasses.dragging,
+      handle: `.${tableBaseClass.thCellInner}`,
+      onEnd: (evt: SortableEvent) => {
+        // 处理受控：拖拽列表恢复原始排序，等待外部数据 data 变化，更新最终顺序
+        dragInstanceTmp?.sort([...lastColList.value]);
+        const { oldIndex: currentIndex, newIndex: targetIndex } = evt;
+        const params: DragSortContext<TableRowData> = {
+          currentIndex,
+          current: columns.value[currentIndex],
+          targetIndex,
+          target: columns.value[targetIndex],
+          currentData: swapDragArrayElement(columns.value, currentIndex, targetIndex),
+          e: evt,
+          sort: 'col',
+        };
+        props.onDragSort?.(params);
+        // Vue3 ignore next line
+        context.emit('drag-sort', params);
+      },
+    };
+    const container = tableElement.querySelector('thead > tr') as HTMLDivElement;
+    dragInstanceTmp = new Sortable(container, options);
+    lastColList.value = dragInstanceTmp?.toArray();
+  };
+
+  function setDragSortPrimaryTableRef(primaryTableElement: any) {
+    primaryTableRef.value = primaryTableElement;
+  }
+
+  // 注册拖拽事件
+  watch([primaryTableRef], ([val]: [any]) => {
+    val?.$el && registerRowDragEvent(val?.$el);
+    val?.$el && registerColDragEvent(val?.$el);
+  });
 
   return {
     isRowDraggable,
+    isRowHandlerDraggable,
     isColDraggable,
-    registerDragEvent,
+    setDragSortPrimaryTableRef,
   };
 }

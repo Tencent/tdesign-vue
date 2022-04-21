@@ -12,7 +12,7 @@ import {
 } from '../interface';
 import { PageInfo, TdPaginationProps, Pagination as TPagination } from '../../pagination';
 import { Checkbox as TCheckbox, CheckboxGroup as TCheckboxGroup, CheckboxProps } from '../../checkbox';
-import { findTopNode, getLeefCount, getDataValues } from '../utils';
+import { findTopNode, getLeafCount, getDataValues } from '../utils';
 import ripple from '../../utils/ripple';
 import Search from './transfer-search';
 import { renderTNodeJSXDefault } from '../../utils/render-tnode';
@@ -142,7 +142,7 @@ export default mixins(keepAnimationMixins).extend({
       );
     },
     totalCount(): number {
-      return getLeefCount(this.dataSource);
+      return getLeafCount(this.dataSource);
     },
   },
   methods: {

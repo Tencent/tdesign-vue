@@ -5,9 +5,11 @@ export default function useClassName() {
   const classNames = {
     tableBaseClass: {
       table: `${classPrefix.value}-table`,
+      overflowVisible: `${classPrefix.value}-table--overflow-visible`,
       body: `${classPrefix.value}-table__body`,
       content: `${classPrefix.value}-table__content`,
       topContent: `${classPrefix.value}-table__top-content`,
+      bottomContent: `${classPrefix.value}-table__bottom-content`,
       tdLastRow: `${classPrefix.value}-table__td-last-row`,
       tdFirstCol: `${classPrefix.value}-table__td-first-col`,
       thCellInner: `${classPrefix.value}-table__th-cell-inner`,
@@ -144,10 +146,13 @@ export default function useClassName() {
 
     // 拖拽功能类名
     tableDraggableClasses: {
-      bodyRow: `${classPrefix.value}-table__row--draggable`,
-      bodyCol: `${classPrefix.value}-table__col-draggable`,
+      rowDraggable: `${classPrefix.value}-table--row-draggable`,
+      rowHandlerDraggable: `${classPrefix.value}-table--row-handler-draggable`,
+      colDraggable: `${classPrefix.value}-table--col-draggable`,
       handle: `${classPrefix.value}-table__handle-draggable`,
-      ghost: `${classPrefix.value}-table__col--draggable-ghost`,
+      ghost: `${classPrefix.value}-table__ele--draggable-ghost`,
+      chosen: `${classPrefix.value}-table__ele--draggable-chosen`,
+      dragging: `${classPrefix.value}-table__ele--draggable-dragging`,
     },
 
     virtualScrollClasses: {

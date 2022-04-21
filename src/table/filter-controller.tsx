@@ -47,7 +47,7 @@ export default defineComponent({
   },
 
   // eslint-disable-next-line
-  setup(props: TableFilterControllerProps) {
+  setup(props: TableFilterControllerProps, { emit }) {
     const triggerElementRef = ref<HTMLDivElement>(null);
     const renderTNode = useTNodeDefault();
     const { t, global } = useConfig('table');
@@ -55,6 +55,7 @@ export default defineComponent({
 
     const onFilterPopupVisibleChange = (visible: boolean) => {
       filterPopupVisible.value = visible;
+      emit('visible-change', visible);
     };
 
     return {
@@ -84,16 +85,18 @@ export default defineComponent({
         input: Input,
       }[column.filter.type];
       if (!component && !column?.filter?.component) return;
-      const props: { [key: string]: any } = {
+      const filterComponentProps: { [key: string]: any } = {
         options: ['single', 'multiple'].includes(column.filter.type) ? column.filter?.list : undefined,
         ...(column.filter?.props || {}),
         value: this.innerFilterValue?.[column.colKey],
       };
+      // 这个代码必须放在这里，没事儿别改
       if (column.filter.type === 'single') {
-        props.onChange = (val: any) => {
+        filterComponentProps.onChange = (val: any) => {
           this.$emit('inner-filter-change', val, column);
         };
       }
+      // 这个代码必须放在这里，没事儿别改
       const on = {
         change: (val: any) => {
           this.$emit('inner-filter-change', val, column);
@@ -109,12 +112,16 @@ export default defineComponent({
             column?.filter?.component((v: FirstParams, b: SecondParams) => {
               const tProps = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
               return h(v, {
-                props: { ...props, ...tProps },
+                props: { ...filterComponentProps, ...tProps },
                 on,
               });
             })
           ) : (
-            <component value={this.innerFilterValue?.[column.colKey]} props={{ ...props }} on={{ ...on }}></component>
+            <component
+              value={this.innerFilterValue?.[column.colKey]}
+              props={{ ...filterComponentProps }}
+              on={{ ...on }}
+            ></component>
           )}
         </div>
       );
@@ -133,7 +140,7 @@ export default defineComponent({
               this.filterPopupVisible = false;
             }}
           >
-            重置
+            {this.global.resetText}
           </TButton>
           <TButton
             theme="primary"
@@ -143,7 +150,7 @@ export default defineComponent({
               this.filterPopupVisible = false;
             }}
           >
-            确认
+            {this.global.confirmText}
           </TButton>
         </div>
       );

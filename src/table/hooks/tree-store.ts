@@ -1,7 +1,7 @@
 import get from 'lodash/get';
 import { isRowSelectedDisabled } from '../utils';
 import {
-  PrimaryTableCol, TableRowState, TableRowValue, PrimaryTableCellParams, TableRowData,
+  PrimaryTableCol, TableRowState, TableRowValue, TableRowData,
 } from '../type';
 import log from '../../_common/js/log';
 
@@ -45,8 +45,16 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
     initialTreeDataMap(this.treeDataMap, dataSource, columns[0], keys);
   }
 
-  toggleExpandData(p: PrimaryTableCellParams<T>, dataSouce: T[], keys: KeysType) {
+  toggleExpandData(p: { rowIndex: number; row: T }, dataSource: T[], keys: KeysType) {
+    if (!p) {
+      log.error('EnhancedTable', 'the node you want to toggleExpand doest not exist in `data`');
+      return dataSource;
+    }
     const rowValue = get(p.row, keys.rowKey);
+    if (rowValue === undefined) {
+      log.error('EnhancedTable', '`rowKey` could be wrong, can not get rowValue from `data` by `rowKey`.');
+      return [];
+    }
     const r = this.treeDataMap.get(rowValue) || {
       row: p.row,
       rowIndex: p.rowIndex,
@@ -55,7 +63,7 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
     r.rowIndex = p.rowIndex;
     r.expanded = !r.expanded;
     this.treeDataMap.set(rowValue, r);
-    return this.updateExpandRow(r, dataSouce, keys);
+    return this.updateExpandRow(r, dataSource, keys);
   }
 
   updateExpandRow(changeRow: TableRowState<T>, dataSource: T[], keys: KeysType) {
@@ -152,7 +160,7 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
       });
     } else {
       // TODO, remove from dataSource
-      console.warn('TDesign Table Warn: Do not remove this node, which is not appreared.');
+      console.warn('TDesign Table Warn: Do not remove this node, which is not appeared.');
     }
     return dataSource;
   }
@@ -223,6 +231,10 @@ export function initialTreeDataMap<T extends TableRowData = TableRowData>(
   for (let i = 0, len = dataSource.length; i < len; i++) {
     const item = dataSource[i];
     const rowValue = get(item, keys.rowKey);
+    if (rowValue === undefined) {
+      log.error('EnhancedTable', '`rowKey` could be wrong, can not get rowValue from `data` by `rowKey`.');
+      return;
+    }
     const state: TableRowState = {
       row: item,
       rowIndex: i,
@@ -234,7 +246,7 @@ export function initialTreeDataMap<T extends TableRowData = TableRowData>(
     state.path = [state];
     treeDataMap.set(rowValue, state);
     const children = get(item, keys.childrenKey);
-    if (column.colKey === 'row-select' && children?.length) {
+    if (children?.length) {
       initialTreeDataMap(treeDataMap, children, column, keys);
     }
   }

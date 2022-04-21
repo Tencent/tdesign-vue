@@ -10,6 +10,10 @@ import { PropType } from 'vue';
 export default {
   /** 是否显示表格边框 */
   bordered: Boolean,
+  /** 表格底部内容，可以用于自定义列设置等 */
+  bottomContent: {
+    type: [String, Function] as PropType<TdBaseTableProps['bottomContent']>,
+  },
   /** 列配置，泛型 T 指表格数据类型 */
   columns: {
     type: Array as PropType<TdBaseTableProps['columns']>,
@@ -40,13 +44,13 @@ export default {
     type: Array as PropType<TdBaseTableProps['footData']>,
     default: (): TdBaseTableProps['footData'] => [],
   },
-  /** 【开发中】表头吸顶 */
+  /** 表头吸顶 */
   headerAffixedTop: Boolean,
-  /** 【开发中】表头吸顶基于 Affix 组件开发，透传全部 Affix 组件属性 */
+  /** 表头吸顶基于 Affix 组件开发，透传全部 Affix 组件属性 */
   headerAffixProps: {
     type: Object as PropType<TdBaseTableProps['headerAffixProps']>,
   },
-  /** 表格高度，超出后会出现滚动条。示例：100,  '30%',  '300px'。值为数字类型，会自动加上单位 px。如果不是绝对固定表格高度，建议使用 `maxHeight` */
+  /** 表格高度，超出后会出现滚动条。示例：100,  '30%',  '300'。值为数字类型，会自动加上单位 px。如果不是绝对固定表格高度，建议使用 `maxHeight` */
   height: {
     type: [String, Number] as PropType<TdBaseTableProps['height']>,
   },
@@ -65,7 +69,7 @@ export default {
   loadingProps: {
     type: Object as PropType<TdBaseTableProps['loadingProps']>,
   },
-  /** 表格最大高度，超出后会出现滚动条。示例：100, '30%', '300px'。值为数字类型，会自动加上单位 px */
+  /** 表格最大高度，超出后会出现滚动条。示例：100, '30%', '300'。值为数字类型，会自动加上单位 px */
   maxHeight: {
     type: [String, Number] as PropType<TdBaseTableProps['maxHeight']>,
   },
@@ -120,7 +124,7 @@ export default {
       return ['auto', 'fixed'].includes(val);
     },
   },
-  /** 表格顶部内容，可以用于自定义列设置等 */
+  /** 表格顶部内容，可以用于自定义列设置、顶部查询条件等 */
   topContent: {
     type: [String, Function] as PropType<TdBaseTableProps['topContent']>,
   },

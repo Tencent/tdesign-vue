@@ -83,7 +83,7 @@ export default Vue.extend({
           theme: 'danger',
         },
         onConfirm: ({ e }) => {
-          console.log('confrim e: ', e);
+          console.log('confirm e: ', e);
           alertDia.hide();
         },
         onClose: ({ e, trigger }) => {
