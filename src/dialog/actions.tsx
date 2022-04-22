@@ -6,13 +6,13 @@ import TButton, { ButtonProps } from '../button';
 import { PopconfirmConfig, DialogConfig, DrawerConfig } from '../config-provider';
 import { ClassName, TNode } from '../common';
 
-export type MixnsFooterButton = string | ButtonProps | TNode;
+export type MixinsFooterButton = string | ButtonProps | TNode;
 
 export interface MixinsConfirmBtn {
   theme?: MixinsThemeType;
   className?: ClassName;
   size?: ButtonProps['size'];
-  confirmBtn: MixnsFooterButton;
+  confirmBtn: MixinsFooterButton;
   globalConfirm: PopconfirmConfig['confirm'] | DrawerConfig['confirm'] | DialogConfig['confirm'];
   globalConfirmBtnTheme?: PopconfirmConfig['confirmBtnTheme'] | DialogConfig['confirmBtnTheme'];
 }
@@ -20,7 +20,7 @@ export interface MixinsConfirmBtn {
 export interface MixinsCancelBtn {
   className?: ClassName;
   size?: ButtonProps['size'];
-  cancelBtn: MixnsFooterButton;
+  cancelBtn: MixinsFooterButton;
   globalCancel: PopconfirmConfig['cancel'] | DrawerConfig['cancel'] | DialogConfig['cancel'];
 }
 
@@ -34,7 +34,7 @@ export default Vue.extend({
       if (confirmBtn && this.$scopedSlots.confirmBtn) {
         console.warn('Both $props.confirmBtn and $scopedSlots.confirmBtn exist, $props.confirmBtn is preferred.');
       }
-      const defaultButtonProps = this.getDefaultConfrimBtnProps(options);
+      const defaultButtonProps = this.getDefaultConfirmBtnProps(options);
       // 属性和插槽都不存在，就返回全局默认配置
       if (!confirmBtn && !this.$scopedSlots.confirmBtn) {
         return <TButton class={className} props={{ ...defaultButtonProps }} />;
@@ -82,7 +82,7 @@ export default Vue.extend({
     cancelBtnAction(e: MouseEvent) {},
 
     // 全局配置属性综合
-    getDefaultConfrimBtnProps(options: MixinsConfirmBtn): ButtonProps {
+    getDefaultConfirmBtnProps(options: MixinsConfirmBtn): ButtonProps {
       const { globalConfirm, theme, globalConfirmBtnTheme } = options;
       const defaultTheme = globalConfirmBtnTheme?.[theme] || 'primary';
       let props: ButtonProps = {

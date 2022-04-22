@@ -41,7 +41,7 @@
       <t-form-item label="性别" name="gender">
         <t-radio-group v-model="formData.gender">
           <t-radio value="male">男</t-radio>
-          <t-radio value="femal">女</t-radio>
+          <t-radio value="female">女</t-radio>
         </t-radio-group>
       </t-form-item>
       <t-form-item label="课程" name="course">

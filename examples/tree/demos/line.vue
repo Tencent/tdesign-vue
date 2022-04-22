@@ -286,6 +286,6 @@ export default {
   border: 1px solid #0052d9;
   background-color: #fff;
   transform: rotate(45deg);
-  transform-origin: 50%, 50%;
+  transform-origin: 50% 50%;
 }
 </style>

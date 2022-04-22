@@ -16,7 +16,7 @@
 </template>
 <script>
 export default {
-  name: 'FullScrennLoading',
+  name: 'FullScreenLoading',
   data() {
     return {
       loading: false,

@@ -12,30 +12,38 @@ export default defineComponent({
   props: { ...props },
   components: { TLoading },
   setup(props, { slots }) {
-    const COMPONENT_NAME = usePrefixClass('card');
     const { sizeClassNames } = useCommonClassName();
+    const COMPONENT_NAME = usePrefixClass('card');
 
-    const baseCls = [`${COMPONENT_NAME.value}`];
-    const headerCls = [`${COMPONENT_NAME.value}__header`];
-    const headerAvatarCls = [`${COMPONENT_NAME.value}__avatar`];
-    const headerTitleCls = [`${COMPONENT_NAME.value}__title`];
-    const headerSubTitleCls = [`${COMPONENT_NAME.value}__subtitle`];
-    const headerDescriptionCls = [`${COMPONENT_NAME.value}__description`];
-    const actionsCls = [`${COMPONENT_NAME.value}__actions`];
+    const baseCls = computed(() => {
+      const defaultClass = [COMPONENT_NAME.value];
 
-    const bodyCls = [`${COMPONENT_NAME.value}__body`];
-    const coverCls = [`${COMPONENT_NAME.value}__cover`];
-    const footerCls = [`${COMPONENT_NAME.value}__footer`];
+      if (props.size === 'small') defaultClass.push(`${sizeClassNames[props.size]}`);
+      if (props.bordered) defaultClass.push(`${COMPONENT_NAME.value}--bordered`);
+      if (props.shadow) defaultClass.push(`${COMPONENT_NAME.value}--shadow`);
+      if (props.hoverShadow) defaultClass.push(`${COMPONENT_NAME.value}--shadow-hover`);
 
-    if (props.size === 'small') baseCls.push(`${sizeClassNames[props.size]}`);
+      return defaultClass;
+    });
 
-    if (props.bordered) baseCls.push(`${COMPONENT_NAME.value}--bordered`);
+    const headerCls = computed(() => {
+      const defaultClass = [`${COMPONENT_NAME.value}__header`];
+      return props.headerBordered
+        ? defaultClass.concat(`${COMPONENT_NAME.value}__title--bordered`)
+        : [`${COMPONENT_NAME.value}__header`];
+    });
 
-    if (props.shadow) baseCls.push(`${COMPONENT_NAME.value}--shadow`);
+    const headerWrapperCls = usePrefixClass('card__header-wrapper');
+    const headerAvatarCls = usePrefixClass('card__avatar');
+    const headerTitleCls = usePrefixClass('card__title');
+    const headerSubTitleCls = usePrefixClass('card__subtitle');
+    const headerDescriptionCls = usePrefixClass('card__description');
+    const actionsCls = usePrefixClass('card__actions');
 
-    if (props.hoverShadow) baseCls.push(`${COMPONENT_NAME.value}--shadow-hover`);
-
-    if (props.headerBordered) headerCls.push(`${COMPONENT_NAME.value}__title--bordered`);
+    const bodyCls = usePrefixClass('card__body');
+    const coverCls = usePrefixClass('card__cover');
+    const footerCls = usePrefixClass('card__footer');
+    const footerWrapperCls = usePrefixClass('card__footer-wrapper');
 
     // 卡片风格：普通风格、海报风格1（操作区域在顶部）、海报风格2（操作区域在底部）。
     // 可选项：normal/poster1/poster2
@@ -85,9 +93,11 @@ export default defineComponent({
       baseCls,
       bodyCls,
       footerCls,
+      footerWrapperCls,
       coverCls,
       actionsCls,
       headerCls,
+      headerWrapperCls,
       headerAvatarCls,
       headerTitleCls,
       headerSubTitleCls,
@@ -109,7 +119,7 @@ export default defineComponent({
       if (this.showHeader) return <div class={this.headerCls}>{renderTNodeJSX(this, 'header')}</div>;
       return (
         <div class={this.headerCls}>
-          <div class={`${this.COMPONENT_NAME}__header-wrapper`}>
+          <div class={this.headerWrapperCls}>
             {this.showAvatar && <div class={this.headerAvatarCls}>{renderTNodeJSX(this, 'avatar')}</div>}
             <div>
               {this.showTitle && <span class={this.headerTitleCls}>{renderTNodeJSX(this, 'title')}</span>}
@@ -140,7 +150,7 @@ export default defineComponent({
         {this.showContent && <div class={this.bodyCls}>{renderContent(this, 'default', 'content')}</div>}
         {this.isFooterRender && (
           <div class={this.footerCls}>
-            <div class={`${this.COMPONENT_NAME}__footer-wrapper`}>{renderTNodeJSX(this, 'footer')}</div>
+            <div class={this.footerWrapperCls}>{renderTNodeJSX(this, 'footer')}</div>
             {this.showActions && this.isPoster2 && <div class={this.actionsCls}>{renderTNodeJSX(this, 'actions')}</div>}
           </div>
         )}

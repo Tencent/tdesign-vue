@@ -1043,43 +1043,43 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
       <tbody class="t-calendar__table-body">
         <tr class="t-calendar__table-body-row">
           <div class="t-calendar__table-body-cell t-is-disabled">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">29</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell t-is-disabled">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">30</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">1</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">2</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">3</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">4</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">5</div>
               <!---->
             </div>
@@ -1087,43 +1087,43 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
         </tr>
         <tr class="t-calendar__table-body-row">
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">6</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">7</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">8</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">9</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">10</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">11</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">12</div>
               <!---->
             </div>
@@ -1131,21 +1131,21 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
         </tr>
         <tr class="t-calendar__table-body-row">
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">13</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">14</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">15</div>
-              <div class="slotWarrper">
+              <div class="slotWrapper">
                 <div class="item"><span class="error"></span>
                   错误事件
                 </div>
@@ -1160,25 +1160,25 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">16</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">17</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">18</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">19</div>
               <!---->
             </div>
@@ -1186,43 +1186,43 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
         </tr>
         <tr class="t-calendar__table-body-row">
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">20</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">21</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">22</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">23</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">24</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">25</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">26</div>
               <!---->
             </div>
@@ -1230,43 +1230,43 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
         </tr>
         <tr class="t-calendar__table-body-row">
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">27</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">28</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">29</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">30</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">31</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell t-is-disabled">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">1</div>
               <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell t-is-disabled">
-            <div class="outerWarrper">
+            <div class="outerWrapper">
               <div class="number">2</div>
               <!---->
             </div>
@@ -1445,14 +1445,14 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/controller-config.v
       <div class="t-calendar__control-section">
         <div class="t-calendar__control-section-cell">
           <div class="t-select__wrap">
-            <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span title="2021" class="t-select__single">2021</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
+            <div class="t-select t-select-polyfill t-size-s t-select__popup-reference"><span class="t-tag t-tag--default t-size-s t-tag--dark" style="display:none;">+0</span><span title="2021" class="t-select__single">2021</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
               </svg></div>
           </div>
         </div>
         <div class="t-calendar__control-section-cell">
           <div class="t-select__wrap">
-            <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span title="12" class="t-select__single">12</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
+            <div class="t-select t-select-polyfill t-size-s t-select__popup-reference"><span class="t-tag t-tag--default t-size-s t-tag--dark" style="display:none;">+0</span><span title="12" class="t-select__single">12</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
                 <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
               </svg></div>
           </div>
@@ -2105,7 +2105,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/slot-props-api.vue 
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
-            <div class="calendar-slot-props-api-demo"><span><div class="calendar-slot-props-api-demo-slot-warrper"><div class="item"><span class="error"></span>错误事件</div>
+            <div class="calendar-slot-props-api-demo"><span><div class="calendar-slot-props-api-demo-slot-wrapper"><div class="item"><span class="error"></span>错误事件</div>
             <div class="item"><span class="waring"></span>警告事件</div>
             <div class="item"><span class="success"></span>正常事件</div>
           </div>
@@ -2409,7 +2409,7 @@ exports[`ssr snapshot test renders ./examples/card/demos/footer-actions.vue corr
   <div class="t-card t-card--bordered" style="width:400px;">
     <div class="t-card__cover"><img src="https://tdesign.gtimg.com/site/source/card-demo.png"></div>
     <div class="t-card__footer">
-      <div class="t-card__footer-wrapper"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"><span class="t-button__text"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-heart" style="font-size:24;"><path fill="currentColor" d="M8 5.86l1.06-.98a2.35 2.35 0 013.25 3.4L8 12.57l-4.31-4.3a2.35 2.35 0 013.25-3.4L8 5.86zm-.39-1.72a3.35 3.35 0 00-4.63 4.84l4.87 4.87a.2.2 0 00.3 0l4.87-4.87a3.35 3.35 0 00-4.63-4.84L8 4.5l-.39-.36z" fill-opacity="0.9"></path></svg></span></button> <button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"><span class="t-button__text"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-share" style="font-size:24;"><path fill="currentColor" d="M9.93 5.36a2.31 2.31 0 004.02-1.57 2.32 2.32 0 10-4.52.7L6.07 6.45a2.31 2.31 0 00-4.02 1.58A2.32 2.32 0 006.07 9.6l3.36 1.96a2.32 2.32 0 10.5-.87L6.57 8.73a2.32 2.32 0 000-1.41l3.36-1.96zm1.7-2.9a1.32 1.32 0 110 2.64 1.32 1.32 0 010-2.63zM5.5 7.35a.5.5 0 00.03.05 1.31 1.31 0 01-.03 1.33 1.32 1.32 0 110-1.38zm4.83 4.93c0-.22.05-.43.14-.6a.52.52 0 00.07-.13 1.32 1.32 0 11-.21.73z" fill-opacity="0.9"></path></svg></span></button></div>
+      <div class="t-card__footer-wrapper"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square" style="margin-right:16px;"><span class="t-button__text"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-heart" style="font-size:24;"><path fill="currentColor" d="M8 5.86l1.06-.98a2.35 2.35 0 013.25 3.4L8 12.57l-4.31-4.3a2.35 2.35 0 013.25-3.4L8 5.86zm-.39-1.72a3.35 3.35 0 00-4.63 4.84l4.87 4.87a.2.2 0 00.3 0l4.87-4.87a3.35 3.35 0 00-4.63-4.84L8 4.5l-.39-.36z" fill-opacity="0.9"></path></svg></span></button> <button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"><span class="t-button__text"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-share" style="font-size:24;"><path fill="currentColor" d="M9.93 5.36a2.31 2.31 0 004.02-1.57 2.32 2.32 0 10-4.52.7L6.07 6.45a2.31 2.31 0 00-4.02 1.58A2.32 2.32 0 006.07 9.6l3.36 1.96a2.32 2.32 0 10.5-.87L6.57 8.73a2.32 2.32 0 000-1.41l3.36-1.96zm1.7-2.9a1.32 1.32 0 110 2.64 1.32 1.32 0 010-2.63zM5.5 7.35a.5.5 0 00.03.05 1.31 1.31 0 01-.03 1.33 1.32 1.32 0 110-1.38zm4.83 4.93c0-.22.05-.43.14-.6a.52.52 0 00.07-.13 1.32 1.32 0 11-.21.73z" fill-opacity="0.9"></path></svg></span></button></div>
       <div class="t-card__actions"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"><span class="t-button__text"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-more" style="font-size:24;"><path fill="currentColor" d="M8 4a1 1 0 100-2 1 1 0 000 2zM8 9a1 1 0 100-2 1 1 0 000 2zM9 13a1 1 0 11-2 0 1 1 0 012 0z" fill-opacity="0.9"></path></svg></span></button></div>
     </div>
   </div> <br>
@@ -2833,6 +2833,226 @@ exports[`ssr snapshot test renders ./examples/checkbox/demos/link.vue correctly 
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/collapse/demos/base.vue correctly 1`] = `
+<div class="tdesign-collapse">
+  <div class="t-collapse">
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-fake-arrow--active t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>设置默认展开项<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>自定义折叠面板内容<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>嵌套折叠面板<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:10px;">当前展开项:[
+    1
+    ]</div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/collapse/demos/icon.vue correctly 1`] = `
+<div class="tdesign-collapse">
+  <div class="t-collapse">
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+  </div>
+  <div class="button-area"><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示箭头</span></label>
+    <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio t-is-checked"><input type="radio" checked="checked" value="left" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">左边</span></label> <label class="t-radio"><input type="radio" value="right" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">右边</span></label></div>
+  </div>
+  <div style="margin-top:10px;"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">仅图标响应点击</span></label></div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/collapse/demos/mutex.vue correctly 1`] = `
+<div class="tdesign-collapse">
+  <div class="t-collapse">
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:10px;">当前展开项：[]</div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/collapse/demos/other.vue correctly 1`] = `
+<div class="tdesign-collapse">
+  <div class="t-collapse">
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题<div class="t-collapse-panel__header--blank"></div>
+        </div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+  </div>
+  <div class="button-area"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">全部禁用</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">无边框模式</span></label></div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/collapse/demos/rightSlot.vue correctly 1`] = `
+<div class="tdesign-collapse">
+  <div class="t-collapse">
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题可以设置右侧操作区域<div class="t-collapse-panel__header--blank"></div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">禁用</span></label> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">操作</span></button></div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel t-is-disabled">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题可以设置右侧操作区域<div class="t-collapse-panel__header--blank"></div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">禁用</span></label> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">操作</span></button></div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header t-is-clickable"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题可以设置右侧操作区域<div class="t-collapse-panel__header--blank"></div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">禁用</span></label> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">操作</span></button></div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+    <div class="t-collapse-panel t-is-disabled">
+      <div class="t-collapse-panel__wrapper">
+        <div class="t-collapse-panel__header"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" name="arrow" class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left">
+            <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+          </svg>这是一个折叠标题可以设置右侧操作区域<div class="t-collapse-panel__header--blank"></div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">禁用</span></label> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">操作</span></button></div>
+        <div name="t-slide-down"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/comment/demos/base.vue correctly 1`] = `
 <div class="t-comment">
   <div class="t-comment__inner">
@@ -3160,8 +3380,8 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/dialog.vue c
 exports[`ssr snapshot test renders ./examples/config-provider/demos/global.vue correctly 1`] = `
 <div>
   <div>使用<code>t-config-provider</code>包裹业务功能的最外层组件，点击下方图标查看示例代码</div> <br>
-  <div>英文语言包引入路径：<code>import enConfig from 'tdesign-vue/locale/en_US';</code></div> <br>
-  <div>中文语言包引入路径：<code>import enConfig from 'tdesign-vue/locale/zh_CN';</code></div>
+  <div>英文语言包引入路径：<code>import enConfig from 'tdesign-vue/es/locale/en_US';</code></div> <br>
+  <div>中文语言包引入路径：<code>import enConfig from 'tdesign-vue/es/locale/zh_CN';</code></div>
 </div>
 `;
 
@@ -3937,7 +4157,9 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/custom.vue correctly 
       <div class="t-drawer__header">
         <div>自定义头部</div>
       </div>
-      <div class="t-drawer__close-btn"></div>
+      <div class="t-drawer__close-btn"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-submenu-icon">
+          <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+        </svg></div>
       <div class="t-drawer__body">
         <p>抽屉的内容</p>
       </div>
@@ -3948,12 +4170,14 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/custom.vue correctly 
     <div class="t-drawer__mask"></div>
     <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">抽屉标题</div>
-      <div class="t-drawer__close-btn"></div>
+      <div class="t-drawer__close-btn"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-submenu-icon">
+          <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+        </svg></div>
       <div class="t-drawer__body">
         <p>抽屉的内容</p>
       </div>
       <div class="t-drawer__footer">
-        <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">confrim</span></button><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">cancel</span></button></div>
+        <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">confirm</span></button><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">cancel</span></button></div>
       </div>
     </div>
   </div>
@@ -3961,7 +4185,9 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/custom.vue correctly 
     <div class="t-drawer__mask"></div>
     <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
       <div class="t-drawer__header">抽屉标题</div>
-      <div class="t-drawer__close-btn"></div>
+      <div class="t-drawer__close-btn"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-submenu-icon">
+          <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+        </svg></div>
       <div class="t-drawer__body">
         <p>抽屉的内容</p>
       </div>
@@ -4604,7 +4830,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/error-message.vue corre
       <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">性别</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
-          <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio"><input type="radio" value="male" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="femal" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
+          <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio"><input type="radio" value="male" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="female" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
         </div>
         <div class="t-input__extra"></div>
       </div>
@@ -12489,17 +12715,13 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
       <div class="t-table__content">
         <table class="t-table--layout-fixed" style="width:;">
           <colgroup>
-            <col style="width:80px;">
-            <col>
-            <col>
-            <col>
-            <col>
+            <col style="width:150px;">
+            <col style="width:100px;">
+            <col style="width:200px;">
+            <col style="width:100px;">
           </colgroup>
           <thead class="t-table__header">
             <tr>
-              <th data-colkey="drag" class="t-table__th-drag">
-                <div class="t-table__th-cell-inner">排序</div>
-              </th>
               <th data-colkey="instance" class="t-table__th-instance">
                 <div class="t-table__th-cell-inner">集群名称</div>
               </th>
@@ -12515,10 +12737,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
             </tr>
           </thead>
           <tbody class="t-table__body">
-            <tr data-id="1">
-              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
-                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
-                </svg></td>
+            <tr>
               <td>JQTest1</td>
               <td>
                 <p class="status">
@@ -12528,10 +12747,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
               <td>1000</td>
               <td>jenny;peter</td>
             </tr>
-            <tr data-id="2">
-              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
-                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
-                </svg></td>
+            <tr>
               <td>JQTest2</td>
               <td>
                 <p class="status warning">
@@ -12541,10 +12757,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
               <td>1000</td>
               <td>jenny</td>
             </tr>
-            <tr data-id="3">
-              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
-                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
-                </svg></td>
+            <tr>
               <td>JQTest3</td>
               <td>
                 <p class="status unhealth">
@@ -12554,10 +12767,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
               <td>500</td>
               <td>jenny</td>
             </tr>
-            <tr data-id="4">
-              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
-                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
-                </svg></td>
+            <tr>
               <td>JQTest4</td>
               <td>
                 <p class="status warning">
@@ -12636,6 +12846,100 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
               <td>jenny</td>
             </tr>
             <tr data-id="4">
+              <td>JQTest4</td>
+              <td>
+                <p class="status warning">
+                  警告
+                </p>
+              </td>
+              <td>1500</td>
+              <td>peter</td>
+            </tr>
+          </tbody>
+          <!---->
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/table/demos/drag-sort-handler.vue correctly 1`] = `
+<div class="demo-container t-table-demo-sort">
+  <div class="item">
+    <div class="t-table t-table--row-handler-draggable" style="position:relative;">
+      <div class="t-table__content">
+        <table class="t-table--layout-fixed" style="width:;">
+          <colgroup>
+            <col style="width:80px;">
+            <col>
+            <col>
+            <col>
+            <col>
+          </colgroup>
+          <thead class="t-table__header">
+            <tr>
+              <th data-colkey="drag" class="t-table__th-drag">
+                <div class="t-table__th-cell-inner">排序</div>
+              </th>
+              <th data-colkey="instance" class="t-table__th-instance">
+                <div class="t-table__th-cell-inner">集群名称</div>
+              </th>
+              <th data-colkey="status" class="t-table__th-status">
+                <div class="t-table__th-cell-inner">状态</div>
+              </th>
+              <th data-colkey="survivalTime" class="t-table__th-survivalTime">
+                <div class="t-table__th-cell-inner">存活时间(s)</div>
+              </th>
+              <th data-colkey="owner" class="t-table__th-owner">
+                <div class="t-table__th-cell-inner">管理员</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="t-table__body">
+            <tr data-id="1">
+              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
+                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
+                </svg></td>
+              <td>JQTest1</td>
+              <td>
+                <p class="status">
+                  健康
+                </p>
+              </td>
+              <td>1000</td>
+              <td>jenny;peter</td>
+            </tr>
+            <tr data-id="2">
+              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
+                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
+                </svg></td>
+              <td>JQTest2</td>
+              <td>
+                <p class="status warning">
+                  警告
+                </p>
+              </td>
+              <td>1000</td>
+              <td>jenny</td>
+            </tr>
+            <tr data-id="3">
+              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
+                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
+                </svg></td>
+              <td>JQTest3</td>
+              <td>
+                <p class="status unhealth">
+                  异常
+                </p>
+              </td>
+              <td>500</td>
+              <td>jenny</td>
+            </tr>
+            <tr data-id="4">
+              <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
+                  <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
+                </svg></td>
               <td>JQTest4</td>
               <td>
                 <p class="status warning">
@@ -13996,7 +14300,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
 
 exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large tdesign-demo-table-multi-header" style="width:100%;">
-  <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示表格边框</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示固定表头</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">虚拟滚动</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定左侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定右侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表头吸顶</span></label></div>
+  <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示表格边框</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示固定表头</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定左侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定右侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表头吸顶</span></label></div>
   <div class="t-table t-table--bordered t-table--multiple-header" style="position:relative;">
     <div class="t-table__top-content">
       <div class="t-table__column-controller-trigger t-align-top-right"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-setting">
@@ -14005,7 +14309,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
           </svg><span class="t-button__text">列配置</span></button></div>
     </div>
     <div class="t-table__content" style="max-height:380px;">
-      <div class="t-table__virtual-scroll-cursor" style="transform:translate(0, 28800px);-ms-transform:translate(0, 28800px);-moz-transform:translate(0, 28800px);-webkit-transform:translate(0, 28800px);"></div>
+      <div class="t-table__virtual-scroll-cursor" style="transform:translate(0, 30000px);-ms-transform:translate(0, 30000px);-moz-transform:translate(0, 30000px);-webkit-transform:translate(0, 30000px);"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:100px;">
@@ -15193,10 +15497,10 @@ exports[`ssr snapshot test renders ./examples/tabs/demos/base.vue correctly 1`] 
       </div>
       <div class="t-tabs__content">
         <div class="t-tab-panel">
-          <p style="padding:25px;">选项卡1的内容，使用 t-tab-pannel 渲染</p>
+          <p style="padding:25px;">选项卡1的内容，使用 t-tab-panel 渲染</p>
         </div>
         <div class="t-tab-panel" style="display:none;">
-          <p style="padding:25px;">选项卡2的内容，使用 t-tab-pannel 渲染</p>
+          <p style="padding:25px;">选项卡2的内容，使用 t-tab-panel 渲染</p>
         </div>
         <!---->
       </div>
@@ -16206,7 +16510,7 @@ exports[`ssr snapshot test renders ./examples/transfer/demos/disabled.vue correc
 
 exports[`ssr snapshot test renders ./examples/transfer/demos/empty.vue correctly 1`] = `
 <div>
-  <p style="margin:10px 0px;">默认暂无数据</p>
+  <p style="margin:10px 0;">默认暂无数据</p>
   <div class="t-transfer">
     <div class="t-transfer__list t-transfer__list-source">
       <div class="t-transfer__list-header">

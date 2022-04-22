@@ -46,7 +46,7 @@ export interface TdBreadcrumbItemProps {
    */
   href?: string;
   /**
-   * 最大宽度，超出后会以省略号形式呈现。优先级高于 Breadcrum 中的 maxItemWidth
+   * 最大宽度，超出后会以省略号形式呈现。优先级高于 Breadcrumb 中的 maxItemWidth
    */
   maxWidth?: string;
   /**
