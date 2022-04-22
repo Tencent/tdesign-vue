@@ -2,7 +2,6 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-08 20:28:17
  * */
 
 import { TdMessageProps } from './type';
@@ -33,6 +32,7 @@ export default {
     type: String as PropType<TdMessageProps['theme']>,
     default: 'info' as TdMessageProps['theme'],
     validator(val: TdMessageProps['theme']): boolean {
+      if (!val) return true;
       return ['info', 'success', 'warning', 'error', 'question', 'loading'].includes(val);
     },
   },
