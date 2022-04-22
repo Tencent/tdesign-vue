@@ -31,7 +31,6 @@ exports[`ConfigProvider ConfigProvider calendarVue demo works fine 1`] = `
             </span>
             <span
               class="t-select__single"
-              title="2020"
             >
               2020
             </span>
@@ -70,7 +69,6 @@ exports[`ConfigProvider ConfigProvider calendarVue demo works fine 1`] = `
             </span>
             <span
               class="t-select__single"
-              title="12"
             >
               12
             </span>
@@ -3110,7 +3108,6 @@ exports[`ConfigProvider ConfigProvider paginationVue demo works fine 1`] = `
       </span>
       <span
         class="t-select__single"
-        title="10"
       >
         10
       </span>
