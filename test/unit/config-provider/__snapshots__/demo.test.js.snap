@@ -2822,7 +2822,6 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
-      name="t-tree-toggle"
       tag="div"
     >
       <div
@@ -2852,7 +2851,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
@@ -2888,7 +2887,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
           </svg>
         </span>
         <span
-          class="t-tree__label t-tree__label--strictly"
+          class="t-tree__label"
         >
           <span
             style="position: relative;"
