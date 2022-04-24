@@ -18,13 +18,13 @@
       <div class="t-popup-demo-base-item">
         <t-popup
           content="我的触发元素通过渲染函数 default 渲染"
-          :default="renderTrigerElement1"
+          :default="renderTriggerElement1"
         ></t-popup>
       </div>
       <div class="t-popup-demo-base-item">
         <t-popup
           content="我的触发元素通过渲染函数 triggerElement 渲染"
-          :triggerElement="renderTrigerElement2"
+          :triggerElement="renderTriggerElement2"
         ></t-popup>
       </div>
     </div>
@@ -34,10 +34,10 @@
 <script lang="jsx">
 export default {
   methods: {
-    renderTrigerElement1() {
+    renderTriggerElement1() {
       return <t-button variant="outline">渲染函数定义触发元素1</t-button>;
     },
-    renderTrigerElement2() {
+    renderTriggerElement2() {
       return <t-button variant="outline">渲染函数定义触发元素2</t-button>;
     },
   },

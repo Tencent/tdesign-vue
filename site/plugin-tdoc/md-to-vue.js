@@ -6,7 +6,7 @@ import camelCase from 'camelcase';
 
 import testCoverage from '../test-coverage';
 
-const DEAULT_TABS = [
+const DEFAULT_TABS = [
   { tab: 'demo', name: '示例' },
   { tab: 'api', name: 'API' },
   { tab: 'design', name: '指南' },
@@ -133,7 +133,7 @@ function customRender({ source, file, md }) {
     description: '',
     isComponent: false,
     tdDocHeader: true,
-    tdDocTabs: DEAULT_TABS,
+    tdDocTabs: DEFAULT_TABS,
     apiFlag: /#+\s*API/,
     docClass: '',
     lastUpdated: Math.round(fs.statSync(file).mtimeMs),

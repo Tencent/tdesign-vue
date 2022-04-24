@@ -2498,7 +2498,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
                 class="t-radio__former"
                 name=""
                 type="radio"
-                value="femal"
+                value="female"
               />
               <span
                 class="t-radio__input"

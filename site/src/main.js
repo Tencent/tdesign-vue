@@ -45,6 +45,7 @@ router.afterEach(() => {
   if (typeof NProgress !== 'undefined') {
     NProgress.done();
   }
+  document.querySelector('td-stats')?.track?.();
 });
 
 new Vue({

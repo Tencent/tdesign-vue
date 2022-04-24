@@ -1,9 +1,9 @@
 <template>
   <t-calendar>
-    <div slot="cell" slot-scope="data" class="outerWarrper">
+    <div slot="cell" slot-scope="data" class="outerWrapper">
       <div class="number">{{ displayNum(data) }}</div>
       <template v-if="isShow(data)">
-        <div class="slotWarrper">
+        <div class="slotWrapper">
           <div v-for="(item, index) in dataList" :key="index" class="item">
             <span :class="item.value"></span>
             {{item.label}}
@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.outerWarrper {
+.outerWrapper {
   width: 100%;
   height: 100%;
   position: relative;
@@ -91,7 +91,7 @@ export default {
     background: #00A870;
   }
 
-  .slotWarrper {
+  .slotWrapper {
     position: absolute;
     bottom: 2px;
     left: 5px;

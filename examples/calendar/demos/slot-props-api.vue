@@ -35,7 +35,7 @@ export default {
           ? dayjs(params.formattedDate).date() === 15
           : dayjs(params.formattedDate).month() === 7) && (
             <span>
-              <div class="calendar-slot-props-api-demo-slot-warrper">
+              <div class="calendar-slot-props-api-demo-slot-wrapper">
                 {dataList.map((item) => (
                   <div class="item">
                     <span class={item.value}></span>
@@ -98,7 +98,7 @@ export default {
     background: #00a870;
   }
 }
-.calendar-slot-props-api-demo-slot-warrper {
+.calendar-slot-props-api-demo-slot-wrapper {
   position: absolute;
   bottom: 2px;
   left: 5px;

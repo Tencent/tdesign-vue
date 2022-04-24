@@ -83,7 +83,7 @@ export interface TdDialogProps {
    */
   preventScrollThrough?: boolean;
   /**
-   * 仅在挂载元素中显示抽屉，默认在浏览器可视区域显示。父元素需要有定位属性，如：position: relative
+   * 【开发中】仅在挂载元素中显示抽屉，默认在浏览器可视区域显示。父元素需要有定位属性，如：position: relative
    * @default false
    */
   showInAttachedElement?: boolean;
@@ -195,4 +195,4 @@ export type DialogMethod = (options?: DialogOptions) => DialogInstance;
 
 export type DialogConfirmMethod = (options?: DialogOptions) => DialogInstance;
 
-export type DialogAlertMethod = (options?: Omit<DialogOptions, 'confirmBtn'>) => DialogInstance;
+export type DialogAlertMethod = (options?: Omit<DialogOptions, 'cancelBtn'>) => DialogInstance;

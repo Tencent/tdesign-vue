@@ -3,7 +3,7 @@ import { prefix } from '../../config';
 
 // utils
 import { renderTNodeJSXDefault } from '../../utils/render-tnode';
-import getLocalRecevierMixins, { CascaderConfig } from '../../config-provider/config-receiver';
+import getLocalReceiverMixins, { CascaderConfig } from '../../config-provider/config-receiver';
 import mixins from '../../utils/mixins';
 
 // common logic
@@ -20,7 +20,7 @@ import CascaderProps from '../props';
 
 const name = `${prefix}-cascader`;
 
-export default mixins(getLocalRecevierMixins<CascaderPanelProps & Vue, CascaderConfig>('cascader')).extend({
+export default mixins(getLocalReceiverMixins<CascaderPanelProps & Vue, CascaderConfig>('cascader')).extend({
   name: `${name}-panel`,
   props: {
     empty: CascaderProps.empty,
