@@ -769,7 +769,6 @@ exports[`Table Table baseVue demo works fine 1`] = `
             </span>
             <span
               class="t-select__single"
-              title="5"
             >
               5
             </span>
@@ -1506,7 +1505,6 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
             </span>
             <span
               class="t-select__single"
-              title="5"
             >
               5
             </span>
@@ -1946,7 +1944,6 @@ exports[`Table Table customColVue demo works fine 1`] = `
             </span>
             <span
               class="t-select__single"
-              title="5"
             >
               5
             </span>
@@ -16644,7 +16641,6 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
           </span>
           <span
             class="t-select__single"
-            title="10"
           >
             10
           </span>
@@ -17059,7 +17055,6 @@ exports[`Table Table paginationVue demo works fine 1`] = `
             </span>
             <span
               class="t-select__single"
-              title="5"
             >
               5
             </span>
@@ -19969,7 +19964,6 @@ exports[`Table Table treeVue demo works fine 1`] = `
             </span>
             <span
               class="t-select__single"
-              title="10"
             >
               10
             </span>

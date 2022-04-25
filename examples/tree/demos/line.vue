@@ -238,7 +238,7 @@ export default {
   content: '';
   position: absolute;
   display: block;
-  bottom: 26px;
+  bottom: 22px;
   left: 6px;
   width: 12px;
   height: 26px;
@@ -260,7 +260,7 @@ export default {
 }
 .tdesign-tree-line .custom-line-icon {
   position: absolute;
-  top: 6px;
+  top: 10px;
   right: -14px;
   display: flex;
   box-sizing: border-box;
@@ -277,11 +277,11 @@ export default {
   position: absolute;
   display: block;
   box-sizing: border-box;
-  top: 9px;
+  top: 14px;
   left: 3px;
   z-index: 1;
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 2px;
   border: 1px solid #0052d9;
   background-color: #fff;

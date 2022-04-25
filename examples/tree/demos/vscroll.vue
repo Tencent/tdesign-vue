@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-tree-demo tdesign-demo-performance">
+  <div class="tdesign-tree-demo tdesign-demo-vscroll">
     <div class="operations">
       <t-addon prepend="插入节点数量:">
         <t-input v-model="insertCount" />
@@ -18,6 +18,9 @@
       <t-form-item label="显示图标">
         <t-switch v-model="showIcon" />
       </t-form-item>
+      <t-form-item label="启用虚拟滚动">
+        <t-switch v-model="enableVScroll" />
+      </t-form-item>
     </t-form>
 
     <t-tree
@@ -25,6 +28,8 @@
       hover
       activable
       checkable
+      expand-all
+      :height="enableVScroll ? 300 : 0"
       :transition="transition"
       :expand-on-click-node="false"
       :line="showLine"
@@ -81,6 +86,7 @@ export default {
       transition: true,
       insertCount: 1,
       useActived: false,
+      enableVScroll: true,
       expandParent: true,
       showLine: true,
       showIcon: true,

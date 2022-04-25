@@ -20,7 +20,7 @@ header | String / Boolean / Slot / Function | true | 头部内容。值为 true 
 mode | String | modal | 对话框类型，有三种：模态对话框、非模态对话框和普通对话框。弹出「模态对话框」时，只能操作对话框里面的内容，不能操作其他内容。弹出「非模态对话框」时，则可以操作页面内所有内容。「普通对话框」是指没有脱离文档流的对话框，可以在这个基础上开发更多的插件。可选项：modal/modeless/normal | N
 placement | String | top | 对话框位置，内置两种：垂直水平居中显示 和 靠近顶部（top:20%）显示。可选项：top/center | N
 preventScrollThrough | Boolean | true | 防止滚动穿透 | N
-showInAttachedElement | Boolean | false | 仅在挂载元素中显示抽屉，默认在浏览器可视区域显示。父元素需要有定位属性，如：position: relative | N
+showInAttachedElement | Boolean | false | 【开发中】仅在挂载元素中显示抽屉，默认在浏览器可视区域显示。父元素需要有定位属性，如：position: relative | N
 showOverlay | Boolean | true | 是否显示遮罩层 | N
 theme | String | default | 对话框风格。可选项：default/info/warning/danger/success | N
 top | String / Number | - | 用于弹框具体窗口顶部的距离，优先级大于 placement | N
@@ -91,4 +91,4 @@ options | - | - | TS 类型：`DialogOptions`
 
 参数名称 | 参数类型 | 参数默认值 | 参数说明
 -- | -- | -- | --
-options | Object | - | TS 类型：`Omit<DialogOptions, 'confirmBtn'>`
+options | Object | - | TS 类型：`Omit<DialogOptions, 'cancelBtn'>`
