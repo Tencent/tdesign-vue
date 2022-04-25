@@ -18,6 +18,7 @@ export const CLASS_NAMES = {
   controlsContent: `${form}__controls-content`,
   status: `${form}__status`,
   extra: `${input}__extra`,
+  help: `${input}__help`,
   success: `${is}-success`,
   successBorder: `${form}--success-border`,
   error: `${is}-error`,
