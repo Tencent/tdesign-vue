@@ -289,9 +289,9 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       );
     },
     renderTipsInfo(): VNode {
-      let helpVNode: VNode = <div class={CLASS_NAMES.extra}></div>;
+      let helpVNode: VNode = <div class={CLASS_NAMES.help}></div>;
       if (this.help) {
-        helpVNode = <div class={CLASS_NAMES.extra}>{this.help}</div>;
+        helpVNode = <div class={CLASS_NAMES.help}>{this.help}</div>;
       }
       const list = this.errorList;
       if (this.needErrorMessage && list && list[0] && list[0].message) {

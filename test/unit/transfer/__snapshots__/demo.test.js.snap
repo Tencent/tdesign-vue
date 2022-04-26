@@ -3339,7 +3339,6 @@ exports[`Transfer Transfer paginationVue demo works fine 1`] = `
               </span>
               <span
                 class="t-select__single"
-                title="1/2"
               >
                 1/2
               </span>
@@ -4671,7 +4670,6 @@ exports[`Transfer Transfer treeVue demo works fine 1`] = `
               class="t-tree__list"
               enteractiveclass="t-tree__item--enter-active"
               leaveactiveclass="t-tree__item--leave-active"
-              name="t-tree-toggle"
               tag="div"
             >
               <div
@@ -4700,7 +4698,7 @@ exports[`Transfer Transfer treeVue demo works fine 1`] = `
                   </svg>
                 </span>
                 <label
-                  class="t-checkbox t-tree__label t-tree__label--strictly"
+                  class="t-checkbox t-tree__label"
                 >
                   <input
                     class="t-checkbox__former"
@@ -4730,7 +4728,7 @@ exports[`Transfer Transfer treeVue demo works fine 1`] = `
                   trigger="expand"
                 />
                 <label
-                  class="t-checkbox t-tree__label t-tree__label--strictly"
+                  class="t-checkbox t-tree__label"
                 >
                   <input
                     class="t-checkbox__former"
@@ -4774,7 +4772,7 @@ exports[`Transfer Transfer treeVue demo works fine 1`] = `
                   </svg>
                 </span>
                 <label
-                  class="t-checkbox t-tree__label t-tree__label--strictly"
+                  class="t-checkbox t-tree__label"
                 >
                   <input
                     class="t-checkbox__former"
@@ -4818,7 +4816,7 @@ exports[`Transfer Transfer treeVue demo works fine 1`] = `
                   </svg>
                 </span>
                 <label
-                  class="t-checkbox t-tree__label t-tree__label--strictly"
+                  class="t-checkbox t-tree__label"
                 >
                   <input
                     class="t-checkbox__former"
@@ -4848,7 +4846,7 @@ exports[`Transfer Transfer treeVue demo works fine 1`] = `
                   trigger="expand"
                 />
                 <label
-                  class="t-checkbox t-tree__label t-tree__label--strictly"
+                  class="t-checkbox t-tree__label"
                 >
                   <input
                     class="t-checkbox__former"
@@ -4878,7 +4876,7 @@ exports[`Transfer Transfer treeVue demo works fine 1`] = `
                   trigger="expand"
                 />
                 <label
-                  class="t-checkbox t-tree__label t-tree__label--strictly"
+                  class="t-checkbox t-tree__label"
                 >
                   <input
                     class="t-checkbox__former"
@@ -4922,7 +4920,7 @@ exports[`Transfer Transfer treeVue demo works fine 1`] = `
                   </svg>
                 </span>
                 <label
-                  class="t-checkbox t-tree__label t-tree__label--strictly"
+                  class="t-checkbox t-tree__label"
                 >
                   <input
                     class="t-checkbox__former"
@@ -4952,7 +4950,7 @@ exports[`Transfer Transfer treeVue demo works fine 1`] = `
                   trigger="expand"
                 />
                 <label
-                  class="t-checkbox t-tree__label t-tree__label--strictly"
+                  class="t-checkbox t-tree__label"
                 >
                   <input
                     class="t-checkbox__former"
@@ -4982,7 +4980,7 @@ exports[`Transfer Transfer treeVue demo works fine 1`] = `
                   trigger="expand"
                 />
                 <label
-                  class="t-checkbox t-tree__label t-tree__label--strictly"
+                  class="t-checkbox t-tree__label"
                 >
                   <input
                     class="t-checkbox__former"

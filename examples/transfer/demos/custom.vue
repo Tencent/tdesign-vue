@@ -19,7 +19,7 @@
     <p style="margin: 10px">自定义渲染数据</p>
     <t-transfer
       theme="primary"
-      :data="custommList"
+      :data="customList"
       v-model="targetValue2"
       :checked-value="checkedValue2"
       :transfer-item="transferItem"
@@ -36,9 +36,9 @@ for (let i = 0; i < 20; i++) {
   });
 }
 
-const custommList = [];
+const customList = [];
 for (let i = 0; i < 20; i++) {
-  custommList.push({
+  customList.push({
     value: i.toString(),
     label: `内容${i + 1}`,
     description: `第${i + 1}段信息`,
@@ -48,7 +48,7 @@ export default {
   data() {
     return {
       list,
-      custommList,
+      customList,
       targetValue: [],
       checkedValue: [],
       targetValue2: [],
