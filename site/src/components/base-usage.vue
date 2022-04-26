@@ -1,64 +1,83 @@
 <template>
-  <td-doc-usage ref="usage" @ConfigChange="onConfigChange">
-    <slot :configProps="{ ...defaultProps, ...changedProps }" />
+  <td-doc-usage ref="usageRef" :code="usageCode">
+    <div
+      v-for="item in panelList"
+      :slot="item.value"
+      :key="item.value"
+      :style="{
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }"
+    >
+      <slot :name="item.value" :configProps="{ ...defaultProps, ...changedProps }"></slot>
+    </div>
   </td-doc-usage>
 </template>
 
-<script>
-export default {
-  props: {
-    code: String,
-    configList: Array,
-  },
+<script setup lang="jsx">
+import { ref, set, onMounted, computed, onBeforeUnmount, watchEffect } from '@vue/composition-api';
 
-  data() {
-    const defaultProps = this.configList.reduce((prev, curr) => {
-      if (curr.defaultValue !== undefined) Object.assign(prev, { [curr.name]: curr.defaultValue });
-      return prev;
-    }, {});
-    return {
-      defaultProps,
-      changedProps: {},
-    };
-  },
-
-  computed: {
-    usageCode() {
-      const propsStrs = Object.keys(this.changedProps)
-        .map((name) => `${this.stringifyProp(name, this.changedProps[name])}`)
-        .filter(Boolean);
-      return this.code.replace(
-        /(\s+)v-bind="configProps"(\s*)/,
-        (m, prefix, suffix) => propsStrs.length ? `\n  ${propsStrs.join('\n  ')}\n` : suffix,
-      );
-    },
-  },
-  watch: {
-    usageCode: {
-      immediate: true,
-      handler() {
-        if (this.$refs.usage) this.$refs.usage.code = this.usageCode;
-      },
-    },
-  },
-
-  mounted() {
-    this.$refs.usage.configList = this.configList;
-    this.$refs.usage.code = this.usageCode;
-  },
-
-  methods: {
-    onConfigChange(e) {
-      const { name, value } = e.detail;
-      this.$set(this.changedProps, name, value);
-    },
-    stringifyProp(name, value) {
-      if (value === true) return name; // 为 true 只展示 name
-      if (value === this.defaultProps[name]) return ''; // 为默认值不展示
-      if (value === undefined) return ''; // 为 undefined 不展示
-      if (typeof value === 'string') return `${name}="${value}"`;
-      return `:${name}="${value}"`;
-    },
-  },
+const stringifyProp = (name, value) => {
+  if (value === true) return name; // 为 true 只展示 name
+  if (value === defaultProps.value[name]) return ''; // 为默认值不展示
+  if (value === undefined) return ''; // 为 undefined 不展示
+  if (typeof value === 'string') return `${name}="${value}"`;
+  return `:${name}="${value}"`;
 };
+
+const props = defineProps({
+  code: String,
+  configList: Array,
+  panelList: Array,
+});
+
+const panel = ref(props.panelList[0].value);
+const usageRef = ref({});
+const changedProps = ref({});
+
+onMounted(() => {
+  usageRef.value.panelList = props.panelList;
+  usageRef.value.addEventListener('ConfigChange', onConfigChange);
+  usageRef.value.addEventListener('PanelChange', onPanelChange);
+});
+
+watchEffect(() => {
+  usageRef.value.configList = props.configList.filter((config) => config.name !== 'visible');
+});
+
+onBeforeUnmount(() => {
+  usageRef.value.removeEventListener('ConfigChange', onConfigChange);
+  usageRef.value.removeEventListener('PanelChange', onPanelChange);
+});
+
+const emit = defineEmits(['ConfigChange', 'PanelChange']);
+
+function onConfigChange(e) {
+  const { name, value } = e.detail;
+  set(changedProps.value, name, value); // 改变
+}
+
+function onPanelChange(e) {
+  const { value } = e.detail;
+  panel.value = value;
+  emit('PanelChange', panel.value);
+}
+
+const defaultProps = ref(
+  props.configList.reduce((prev, curr) => {
+    if (curr.defaultValue !== undefined) Object.assign(prev, { [curr.name]: curr.defaultValue });
+    return prev;
+  }, {}),
+);
+
+const usageCode = computed(() => {
+  const propsStrs = Object.keys(changedProps.value)
+    .map((name) => `${stringifyProp(name, changedProps.value[name])}`)
+    .filter(Boolean);
+  const tureCode = props.code.replace(/\s*v-bind="configProps"/g, () => propsStrs.length ? `\n  ${propsStrs.join('\n  ')}` : '');
+  usageRef.value.code = tureCode;
+  return tureCode;
+});
 </script>

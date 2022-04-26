@@ -1,16 +1,11 @@
 <!-- 该脚本为自动生成，如有需要请在 /script/generate-usage.js 中调整 -->
 <template>
   <base-usage :code="usageCode" :config-list="configList" :panel-list="panelList" @PanelChange="onPanelChange">
-    <template #dropdown="{ configProps }">
-      <t-dropdown
-        :options="[
-          { content: '操作一', value: 1 },
-          { content: '操作二', value: 2 },
-        ]"
+    <template #upload="{ configProps }">
+      <t-upload
+        action="https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo"
         v-bind="configProps"
-      >
-        <t-button>更多...</t-button>
-      </t-dropdown>
+      />
     </template>
   </base-usage>
 </template>
@@ -21,11 +16,11 @@ import { ref, onMounted } from '@vue/composition-api';
 import configJson from './props.json';
 
 const configList = ref(configJson);
-const panelList = [{ label: 'dropdown', value: 'dropdown' }];
+const panelList = [{ label: 'upload', value: 'upload' }];
 
 const usageCodeMap = {
-  dropdown:
-    '\n        <t-dropdown :options="[{ content: \'操作一\', value: 1 }, { content: \'操作二\', value: 2 }]" v-bind="configProps">\n          <t-button>更多...</t-button>\n        </t-dropdown>\n      ',
+  upload:
+    '<t-upload action="https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo" v-bind="configProps" />',
 };
 const usageCode = ref(`<template>${usageCodeMap[panelList[0].value].trim()}</template>`);
 

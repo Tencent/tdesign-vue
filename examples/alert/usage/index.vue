@@ -1,34 +1,24 @@
 <!-- 该脚本为自动生成，如有需要请在 /script/generate-usage.js 中调整 -->
 <template>
-  <base-usage :code="usageCode" :config-list="configList">
-    <template #default="{ configProps }">
+  <base-usage :code="usageCode" :config-list="configList" :panel-list="panelList" @PanelChange="onPanelChange">
+    <template #alert="{ configProps }">
       <t-alert message="这是一条信息" v-bind="configProps" />
     </template>
   </base-usage>
 </template>
 
-<script>
+<script setup lang="jsx">
 /* eslint-disable */
-import Vue from 'vue';
-import BaseUsage from '@site/src/components/base-usage.vue';
-import configList from './props.json';
-import { Alert as TAlert } from 'tdesign-vue';
-const components = { TAlert };
+import { ref, onMounted } from '@vue/composition-api';
+import configJson from './props.json';
 
-export default Vue.extend({
-  components: {
-    BaseUsage,
-    ...components,
-  },
-  data() {
-    return {
-      configList,
-      usageCode: `<t-alert
-  message="这是一条信息"
-  v-bind="configProps"
-/>
-`,
-    };
-  },
-});
+const configList = ref(configJson);
+const panelList = [{ label: 'alert', value: 'alert' }];
+
+const usageCodeMap = { alert: '<t-alert message="这是一条信息" v-bind="configProps" />' };
+const usageCode = ref(`<template>${usageCodeMap[panelList[0].value].trim()}</template>`);
+
+function onPanelChange(panel) {
+  usageCode.value = `<template>${usageCodeMap[panel].trim()}</template>`;
+}
 </script>

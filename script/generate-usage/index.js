@@ -2,38 +2,40 @@ const fs = require('fs');
 const path = require('path');
 const prettier = require('prettier');
 const config = require('./config.js');
+const prettierJson = require('../../.prettierrc.js');
 
 const renderUsageStr = (compStrMap) => `<!-- 该脚本为自动生成，如有需要请在 /script/generate-usage.js 中调整 -->
 <template>
-  <base-usage :code="usageCode" :config-list="configList">
-    <template #default="{ configProps }">
-      ${compStrMap.renderStr}
-    </template>
+  <base-usage :code="usageCode" :config-list="configList" :panel-list="panelList" @PanelChange="onPanelChange">
+    ${Object.keys(compStrMap.render)
+    .map((key) => `<template #${key}="{ configProps }">
+      ${compStrMap.render[key].trim()}
+    </template>`)
+    .join('\n')}
   </base-usage>
 </template>
 
-<script>
+<script setup lang="jsx">
 /* eslint-disable */
-import Vue from 'vue';
-import BaseUsage from '@site/src/components/base-usage.vue';
-${compStrMap.configStr}
-${compStrMap.importStr}
+import { ref, onMounted } from '@vue/composition-api';
+${compStrMap.importStr ? compStrMap.importStr.trim() : 'import configJson from \'./props.json\';'}
+${compStrMap.script ? compStrMap.script.trim() : ''}
 
-export default Vue.extend({
-  components: {
-    BaseUsage,
-    ...components,
-  },
-  data() {
-    return {
-      configList,
-      usageCode: \`${codeFormat(compStrMap.usageStr || compStrMap.renderStr, {
-    parser: 'html',
-    singleAttributePerLine: true,
-  })}\`,
-    };
-  },
-});
+${compStrMap.configStr ? compStrMap.configStr.trim() : 'const configList = ref(configJson);'}
+${compStrMap.panelStr ? compStrMap.panelStr.trim() : ''}
+
+const usageCodeMap = ${JSON.stringify(compStrMap.render)};
+const usageCode = ref(\`<template>\${usageCodeMap[panelList[0].value].trim()}</template>\`);
+
+${
+  compStrMap.panelChangeStr
+    ? compStrMap.panelChangeStr.trim()
+    : `
+  function onPanelChange(panel) {
+    usageCode.value = \`<template>\${usageCodeMap[panel].trim()}</template>\`;
+  }
+`
+}
 </script>
 `;
 
@@ -41,10 +43,10 @@ export default Vue.extend({
 function genUsage() {
   // eslint-disable-next-line no-restricted-syntax
   for (const name of Object.keys(config)) {
-    try {
-      const fileFolderPath = path.resolve(__dirname, `../../examples/${name}/usage`);
+    const fileFolderPath = path.resolve(__dirname, `../../examples/${name}/usage`);
+    if (!fs.existsSync(fileFolderPath)) {
       fs.mkdirSync(fileFolderPath);
-    } catch (e) { /* empty */ }
+    }
 
     try {
       const data = renderUsageStr(config[name]);
@@ -60,7 +62,7 @@ function genUsage() {
 // 格式化vue代码
 function codeFormat(code, options = {}) {
   return prettier.format(code, {
-    ...require('../../.prettierrc.js'),
+    ...prettierJson,
     parser: 'vue',
     ...options,
   });

@@ -1,7 +1,7 @@
 <!-- 该脚本为自动生成，如有需要请在 /script/generate-usage.js 中调整 -->
 <template>
-  <base-usage :code="usageCode" :config-list="configList">
-    <template #default="{ configProps }">
+  <base-usage :code="usageCode" :config-list="configList" :panel-list="panelList" @PanelChange="onPanelChange">
+    <template #anchor="{ configProps }">
       <t-anchor v-bind="configProps">
         <t-anchor-item href="#锚点一" title="基础锚点" />
         <t-anchor-item href="#锚点二" title="多级锚点" />
@@ -11,38 +11,21 @@
   </base-usage>
 </template>
 
-<script>
+<script setup lang="jsx">
 /* eslint-disable */
-import Vue from 'vue';
-import BaseUsage from '@site/src/components/base-usage.vue';
-import configList from './props.json';
-import { Anchor as TAnchor } from 'tdesign-vue';
-const components = { TAnchor };
+import { ref, onMounted } from '@vue/composition-api';
+import configJson from './props.json';
 
-export default Vue.extend({
-  components: {
-    BaseUsage,
-    ...components,
-  },
-  data() {
-    return {
-      configList,
-      usageCode: `<t-anchor v-bind="configProps">
-  <t-anchor-item
-    href="#锚点一"
-    title="基础锚点"
-  />
-  <t-anchor-item
-    href="#锚点二"
-    title="多级锚点"
-  />
-  <t-anchor-item
-    href="#锚点三"
-    title="指定容器锚点"
-  />
-</t-anchor>
-`,
-    };
-  },
-});
+const configList = ref(configJson);
+const panelList = [{ label: 'anchor', value: 'anchor' }];
+
+const usageCodeMap = {
+  anchor:
+    '\n        <t-anchor v-bind="configProps">\n          <t-anchor-item href="#锚点一" title="基础锚点" />\n          <t-anchor-item href="#锚点二" title="多级锚点" />\n          <t-anchor-item href="#锚点三" title="指定容器锚点" />\n        </t-anchor>\n      ',
+};
+const usageCode = ref(`<template>${usageCodeMap[panelList[0].value].trim()}</template>`);
+
+function onPanelChange(panel) {
+  usageCode.value = `<template>${usageCodeMap[panel].trim()}</template>`;
+}
 </script>

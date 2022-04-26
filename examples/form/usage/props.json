@@ -79,21 +79,6 @@
     "options": []
   },
   {
-    "name": "size",
-    "type": "enum",
-    "defaultValue": "medium",
-    "options": [
-      {
-        "label": "medium",
-        "value": "medium"
-      },
-      {
-        "label": "large",
-        "value": "large"
-      }
-    ]
-  },
-  {
     "name": "statusIcon",
     "type": "Boolean",
     "defaultValue": false,
