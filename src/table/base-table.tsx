@@ -283,8 +283,8 @@ export default defineComponent({
         style={this.tableContentStyles}
         onScroll={this.onInnerScroll}
       >
+        <div ref="resizeLineRef" class={this.tableBaseClass.resizeLine} style={this.resizeLineStyle}></div>
         {this.isVirtual && <div class={this.virtualScrollClasses.cursor} style={virtualStyle} />}
-
         <table ref="tableElmRef" class={this.tableElmClasses} style={this.tableElementStyles}>
           {colgroup}
           <THead
@@ -342,10 +342,8 @@ export default defineComponent({
           ) : (
             this.isFixedHeader && affixedHeader
           ))}
-        <div style="position: relative">
-          {!this.loading && <div ref="resizeLineRef" style={this.resizeLineStyle}></div>}
-          {loadingContent}
-        </div>
+
+        {loadingContent}
 
         {this.showRightDivider && (
           <div

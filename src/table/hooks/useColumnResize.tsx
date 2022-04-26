@@ -13,12 +13,7 @@ export default function useColumnResize(tableElmRef: any) {
   const resizeLineStyle = reactive({
     display: 'none',
     left: '10px',
-    position: 'absolute',
-    top: '0',
-    bottom: '0',
-    width: '0',
-    'border-left': '1px solid var(--td-component-border)',
-    'z-index': 80, // 冻结行的z-index为70，需要比70高
+    height: '10px',
   });
 
   // 表格列宽拖拽事件
@@ -62,6 +57,7 @@ export default function useColumnResize(tableElmRef: any) {
     if (resizeLineRef?.value) {
       resizeLineStyle.display = 'block';
       resizeLineStyle.left = `${resizeLinePos}px`;
+      resizeLineStyle.height = `${tableElmRef.value?.clientHeight}px`;
     }
 
     // 拖拽时鼠标可能会超出table范围，需要给docuemnt绑定拖拽相关事件
