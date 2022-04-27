@@ -139,9 +139,6 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
     simpleClass(): ClassName {
       return [`${name}__select`];
     },
-    isSimple(): boolean {
-      return this.theme === 'simple';
-    },
     pageCount(): number {
       const c: number = Math.ceil(this.total / this.pageSize);
       return c > 0 ? c : 1;
@@ -310,8 +307,8 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
           'totalContent',
           <div class={this.totalClass}>{this.t(this.global.total, { total: this.total })}</div>,
         )}
-        {/* select */}
-        {this.pageSizeOptions.length ? (
+        {/* 分页器 */}
+        {this.showPageSize && this.pageSizeOptions.length ? (
           <t-select
             size={this.size}
             value={this.pageSize}
@@ -336,8 +333,8 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
             <chevron-left-icon />
           </div>
         ) : null}
-        {/* 页数 */}
-        {!this.isSimple ? (
+        {/* 常规版 */}
+        {this.showPageNumber && this.theme === 'default' ? (
           <ul class={this.btnWrapClass}>
             {this.isFolded ? (
               <li class={this.getButtonClass(1)} onClick={() => this.toPage(min)}>
@@ -375,7 +372,9 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
               </li>
             ) : null}
           </ul>
-        ) : (
+        ) : null}
+        {/* 极简版 */}
+        {this.showPageNumber && this.theme === 'simple' ? (
           <t-select
             size={this.size}
             value={this.current}
@@ -384,7 +383,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
             onChange={this.toPage}
             options={this.pageCountOption}
           />
-        )}
+        ) : null}
         {/* 向后按钮 */}
         {this.showPreviousAndNextBtn ? (
           <div
