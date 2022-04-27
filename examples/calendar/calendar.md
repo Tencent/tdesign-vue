@@ -14,11 +14,13 @@ format | String | 'YYYY-MM-DD' | 用于格式化日期，决定事件参数 form
 head | String / Slot / Function | - | 头部插槽（左上角处，默认不显示任何内容）。TS 类型：`string | TNode<ControllerOptions>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 isShowWeekendDefault | Boolean | true | 默认是否显示周末 | N
 mode | String | month | 日历展示维度。可选项：month/year | N
+month | String | - | 控制当前面板展示月份，优先级高于 `controllerConfig.month` | N
 preventCellContextmenu | Boolean | false | 是否禁用单元格右键默认系统菜单 | N
 range | Array | - | 用于设置日历的年月份显示范围，[范围开始，范围结束]。TS 类型：`Array<CalendarValue>` | N
 theme | String | full | 日历风格。可选项：full/card | N
 value | String / Date | - | 当前高亮的日期。TS 类型：`CalendarValue` `type CalendarValue = string | Date`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/calendar/type.ts) | N
 week | Array / Slot / Function | - | 用于自定义日历星期呈现方式。CalendarWeek.day 表示当前是星期几。示例一：['周一', '周二', '周三', '周四', '周五', '星期六', '星期天']。示例二：`({ day }) => '周' + day`。TS 类型：`Array<string> | TNode<CalendarWeek>` `interface CalendarWeek { day: WeekDay }` `type WeekDay = 1 | 2 | 3 | 4 | 5 | 6 | 7`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/calendar/type.ts) | N
+year | String | - | 控制当前面板展示年份，优先级高于 `controllerConfig.year` | N
 onCellClick | Function |  | TS 类型：`(options: { cell: CalendarCell; e: MouseEvent }) => void`<br/>日历单元格点击时触发 | N
 onCellDoubleClick | Function |  | TS 类型：`(options: { cell: CalendarCell; e: MouseEvent }) => void`<br/>日历单元格双击时触发 | N
 onCellRightClick | Function |  | TS 类型：`(options: { cell: CalendarCell; e: MouseEvent }) => void`<br/>日历单元格右击时触发 | N
@@ -56,4 +58,4 @@ day | Number | - | 日期单元格对应的星期，值为 1~7，表示周一到
 formattedDate | String | - | 日历单元格日期字符串（输出日期的格式和 format 有关） | N
 isCurrent | Boolean | - | 日期单元格是否为当前高亮日期或高亮月份 | N
 weekOrder | Number | - | 日期在本月的第几周（日历展示维度是“月”时有值） | N
-ControllerOptions | - | - | 继承 `ControllerOptions` 中的全部 API | N
+`ControllerOptions` | - | - | 继承 `ControllerOptions` 中的全部 API | N
