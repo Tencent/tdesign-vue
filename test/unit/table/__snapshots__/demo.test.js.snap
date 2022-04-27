@@ -97,6 +97,10 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -455,6 +459,10 @@ exports[`Table Table baseVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -872,6 +880,10 @@ exports[`Table Table customCellVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -1202,6 +1214,10 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-auto"
       >
@@ -1641,6 +1657,10 @@ exports[`Table Table customColVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-auto"
       >
@@ -2067,6 +2087,10 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -2324,6 +2348,10 @@ exports[`Table Table customHeaderVue demo works fine 1`] = `
   <div
     class="t-table__content"
   >
+    <div
+      class="t-table__resize-line"
+      style="display: none; left: 10px; height: 10px;"
+    />
     <table
       class="t-table--layout-fixed"
     >
@@ -2475,6 +2503,10 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
+        <div
+          class="t-table__resize-line"
+          style="display: none; left: 10px; height: 10px;"
+        />
         <table
           class="t-table--layout-fixed"
         >
@@ -2792,6 +2824,10 @@ exports[`Table Table dragColSortVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
+        <div
+          class="t-table__resize-line"
+          style="display: none; left: 10px; height: 10px;"
+        />
         <table
           class="t-table--layout-fixed"
         >
@@ -3001,6 +3037,10 @@ exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
+        <div
+          class="t-table__resize-line"
+          style="display: none; left: 10px; height: 10px;"
+        />
         <table
           class="t-table--layout-fixed"
         >
@@ -3287,6 +3327,10 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
+        <div
+          class="t-table__resize-line"
+          style="display: none; left: 10px; height: 10px;"
+        />
         <table
           class="t-table--layout-fixed"
         >
@@ -3497,6 +3541,10 @@ exports[`Table Table emptyVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -3603,6 +3651,10 @@ exports[`Table Table emptyVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -3711,6 +3763,10 @@ exports[`Table Table emptyVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -3951,6 +4007,10 @@ exports[`Table Table expandableVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-auto"
         style="width: 1200px;"
@@ -4787,6 +4847,10 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -5310,6 +5374,10 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -5779,6 +5847,10 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
       class="t-table__content"
       style="max-height: 300px;"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -6978,6 +7050,10 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
       class="t-table__content"
       style="max-height: 300px;"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -7891,6 +7967,10 @@ exports[`Table Table lazyVue demo works fine 1`] = `
         class="t-table__content"
         style="height: 300px;"
       >
+        <div
+          class="t-table__resize-line"
+          style="display: none; left: 10px; height: 10px;"
+        />
         <table
           class="t-table--layout-fixed t-table--full-height"
         >
@@ -14989,6 +15069,10 @@ exports[`Table Table loadingVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
+        <div
+          class="t-table__resize-line"
+          style="display: none; left: 10px; height: 10px;"
+        />
         <table
           class="t-table--layout-fixed"
         >
@@ -15145,6 +15229,10 @@ exports[`Table Table loadingVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
+        <div
+          class="t-table__resize-line"
+          style="display: none; left: 10px; height: 10px;"
+        />
         <table
           class="t-table--layout-fixed"
         >
@@ -15290,6 +15378,10 @@ exports[`Table Table loadingVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
+        <div
+          class="t-table__resize-line"
+          style="display: none; left: 10px; height: 10px;"
+        />
         <table
           class="t-table--layout-fixed"
         >
@@ -15455,6 +15547,10 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
   <div
     class="t-table__content"
   >
+    <div
+      class="t-table__resize-line"
+      style="display: none; left: 10px; height: 10px;"
+    />
     <table
       class="t-table--layout-fixed"
     >
@@ -15814,6 +15910,10 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
       class="t-table__content"
       style="max-height: 380px;"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <div
         class="t-table__virtual-scroll-cursor"
         style="transform: translate(0, 30000px);"
@@ -16214,6 +16314,10 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
+        <div
+          class="t-table__resize-line"
+          style="display: none; left: 10px; height: 10px;"
+        />
         <table
           class="t-table--layout-fixed"
         >
@@ -16529,6 +16633,10 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
   <div
     class="t-table__content"
   >
+    <div
+      class="t-table__resize-line"
+      style="display: none; left: 10px; height: 10px;"
+    />
     <table
       class="t-table--layout-fixed"
     >
@@ -16746,6 +16854,10 @@ exports[`Table Table paginationVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -17201,6 +17313,10 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -17644,6 +17760,10 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -18077,6 +18197,10 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -18360,6 +18484,10 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -18731,6 +18859,10 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -19357,6 +19489,10 @@ exports[`Table Table treeVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
