@@ -8,7 +8,11 @@
       </t-radio-group>
     </div>
 
-    <div><t-checkbox v-model="fixedTopAndBottomRows">是否冻结首尾两行</t-checkbox></div>
+    <div>
+      <t-checkbox v-model="fixedTopAndBottomRows">是否冻结首尾两行</t-checkbox>
+      <!-- TODO：虚拟滚动开启与关闭支持动态响应 -->
+      <!-- <t-checkbox v-model="virtualScroll">开启虚拟滚动</t-checkbox> -->
+    </div>
 
     <!-- 如果希望表格列宽自适应，设置 `table-layout: auto` 即可。需同时设置 table-content-width -->
     <!-- fixedRows: [2, 2] 表示冻结表格的头两行和尾两行 -->
@@ -22,6 +26,7 @@
       :table-content-width="tableLayout === 'fixed' ? undefined : '1600px'"
       :max-height="fixedTopAndBottomRows ? 500 : 300"
       :fixedRows="fixedTopAndBottomRows ? [2, 2] : undefined"
+      :scroll="virtualScroll ? { type: 'virtual' } : undefined"
       bordered
     >
       <template #operation="slotProps">
@@ -31,27 +36,32 @@
   </div>
 </template>
 <script>
-const data = [];
-for (let i = 0; i < 20; i++) {
-  data.push({
-    index: i,
-    platform: i % 2 === 0 ? '共有' : '私有',
-    type: ['String', 'Number', 'Array', 'Object'][i % 4],
-    default: ['-', '0', '[]', '{}'][i % 4],
-    detail: {
-      position: `读取 ${i} 个数据的嵌套信息值`,
-      position1: `读取 ${i} 个数据的嵌套信息值`,
-    },
-    description: '数据源',
-    needed: i % 4 === 0 ? '是' : '否',
-  });
+function getData(count) {
+  const data = [];
+  for (let i = 0; i < count; i++) {
+    data.push({
+      index: i,
+      platform: i % 2 === 0 ? '共有' : '私有',
+      type: ['String', 'Number', 'Array', 'Object'][i % 4],
+      default: ['-', '0', '[]', '{}'][i % 4],
+      detail: {
+        position: `读取 ${i} 个数据的嵌套信息值`,
+        position1: `读取 ${i} 个数据的嵌套信息值`,
+      },
+      description: '数据源',
+      needed: i % 4 === 0 ? '是' : '否',
+    });
+  }
+  return data;
 }
+
 export default {
   data() {
     return {
+      virtualScroll: false,
       fixedTopAndBottomRows: false,
       tableLayout: 'fixed',
-      data,
+      data: getData(15),
       columns: [
         {
           align: 'center',
@@ -106,6 +116,11 @@ export default {
         },
       ],
     };
+  },
+  watch: {
+    virtualScroll(val) {
+      this.data = val ? getData(2000) : getData(15);
+    },
   },
   methods: {
     rehandleClickOp({ text, row }) {
