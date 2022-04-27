@@ -10,6 +10,7 @@
 
     <div>
       <t-checkbox v-model="fixedTopAndBottomRows">是否冻结首尾两行</t-checkbox>
+      <t-checkbox v-model="stripe">是否显示斑马纹</t-checkbox>
       <!-- TODO：虚拟滚动开启与关闭支持动态响应 -->
       <!-- <t-checkbox v-model="virtualScroll">开启虚拟滚动</t-checkbox> -->
     </div>
@@ -27,6 +28,7 @@
       :max-height="fixedTopAndBottomRows ? 500 : 300"
       :fixedRows="fixedTopAndBottomRows ? [2, 2] : undefined"
       :scroll="virtualScroll ? { type: 'virtual' } : undefined"
+      :stripe="stripe"
       bordered
       allowResizeColumnWidth
     >
@@ -61,8 +63,9 @@ export default {
     return {
       virtualScroll: false,
       fixedTopAndBottomRows: false,
+      stripe: false,
       tableLayout: 'fixed',
-      data: getData(15),
+      data: getData(14),
       columns: [
         {
           align: 'center',

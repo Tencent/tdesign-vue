@@ -6582,6 +6582,24 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
         是否冻结首尾两行
       </span>
     </label>
+     
+    <label
+      class="t-checkbox"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        是否显示斑马纹
+      </span>
+    </label>
   </div>
    
   <div
@@ -7365,54 +7383,6 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
               class=""
             >
               读取 13 个数据的嵌套信息值
-            </td>
-            <td
-              class=""
-            >
-              数据源
-            </td>
-            <td
-              class=""
-            >
-              否
-            </td>
-            <td
-              class=""
-            >
-              <a
-                class="link"
-              >
-                删除
-              </a>
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class="t-align-center"
-            >
-              14
-            </td>
-            <td
-              class=""
-            >
-              共有
-            </td>
-            <td
-              class=""
-            >
-              Array
-            </td>
-            <td
-              class=""
-            >
-              []
-            </td>
-            <td
-              class=""
-            >
-              读取 14 个数据的嵌套信息值
             </td>
             <td
               class=""

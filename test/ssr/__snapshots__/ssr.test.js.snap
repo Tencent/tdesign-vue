@@ -13998,7 +13998,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
-  <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否冻结首尾两行</span></label></div>
+  <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否冻结首尾两行</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否显示斑马纹</span></label></div>
   <div class="t-table t-table--bordered t-table--column-fixed" style="position:relative;">
     <div class="t-table__content" style="max-height:300px;">
       <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
@@ -14178,16 +14178,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td>Number</td>
             <td>0</td>
             <td>读取 13 个数据的嵌套信息值</td>
-            <td>数据源</td>
-            <td>否</td>
-            <td><a class="link">删除</a></td>
-          </tr>
-          <tr>
-            <td class="t-align-center">14</td>
-            <td>共有</td>
-            <td>Array</td>
-            <td>[]</td>
-            <td>读取 14 个数据的嵌套信息值</td>
             <td>数据源</td>
             <td>否</td>
             <td><a class="link">删除</a></td>
