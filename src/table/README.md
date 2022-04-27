@@ -15,6 +15,7 @@
 - hooks/useAsyncLoading 异步加载功能，PrimaryTable
 - hooks/useClassName 全部类名，BaseTable
 - hooks/useColumnController 自定义列配置，PrimaryTable
+- hooks/useColumnResize 列宽可拖动，BaseTable
 - hooks/useFilter 过滤/筛选，PrimaryTable
 - hooks/useFixed 固定表头/固定列/固定行，BaseTable
 - hooks/useMultiHeader 多级表头，BaseTable

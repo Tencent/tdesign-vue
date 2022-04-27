@@ -29,6 +29,8 @@ export default function useClassName() {
       scrollbarDivider: `${classPrefix.value}-table__scroll-bar-divider`,
       // 当用户设置 height 为固定高度，为保证行元素铺满 table，则需设置 table 元素高度为 100%
       fullHeight: `${classPrefix.value}-table--full-height`,
+      // 拖拽列时的标记线
+      resizeLine: `${classPrefix.value}-table__resize-line`,
     },
 
     tdAlignClasses: {

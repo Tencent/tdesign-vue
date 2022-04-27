@@ -25,6 +25,12 @@ export interface TheadProps {
     leafColumns: BaseTableCol<TableRowData>[];
   };
   thList: BaseTableCol<TableRowData>[][];
+  columnResizeParams: {
+    resizeLineRef: HTMLDivElement;
+    resizeLineStyle: Object;
+    onColumnMouseover: Function;
+    onColumnMousedown: Function;
+  };
 }
 
 export default defineComponent({
@@ -38,6 +44,7 @@ export default defineComponent({
     isMultipleHeader: Boolean,
     spansAndLeafNodes: Object as PropType<TheadProps['spansAndLeafNodes']>,
     thList: Array as PropType<TheadProps['thList']>,
+    columnResizeParams: Object as PropType<TheadProps['columnResizeParams']>,
   },
 
   setup(props: TheadProps, { slots }: SetupContext) {
@@ -53,6 +60,7 @@ export default defineComponent({
         [tableHeaderClasses.multipleHeader]: props.isMultipleHeader,
       },
     ]);
+    const { onColumnMouseover, onColumnMousedown } = props.columnResizeParams;
 
     return {
       ...classnames,
@@ -60,6 +68,8 @@ export default defineComponent({
       theadClasses,
       classPrefix,
       slots,
+      onColumnMouseover,
+      onColumnMousedown,
     };
   },
 
@@ -110,6 +120,8 @@ export default defineComponent({
               class={thClasses}
               style={styles}
               attrs={{ ...rowspanAndColspan }}
+              onmousemove={(e: MouseEvent) => this.onColumnMouseover(e)}
+              onmousedown={(e: MouseEvent) => this.onColumnMousedown(e, col)}
             >
               <div class={this.tableBaseClass.thCellInner}>
                 {col.ellipsis ? (
