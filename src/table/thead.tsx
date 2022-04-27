@@ -31,6 +31,7 @@ export interface TheadProps {
     onColumnMouseover: Function;
     onColumnMousedown: Function;
   };
+  allowResizeColumnWidth: Boolean;
 }
 
 export default defineComponent({
@@ -42,6 +43,7 @@ export default defineComponent({
     thWidthList: Object as PropType<TheadProps['thWidthList']>,
     bordered: Boolean,
     isMultipleHeader: Boolean,
+    allowResizeColumnWidth: Boolean,
     spansAndLeafNodes: Object as PropType<TheadProps['spansAndLeafNodes']>,
     thList: Array as PropType<TheadProps['thList']>,
     columnResizeParams: Object as PropType<TheadProps['columnResizeParams']>,
@@ -113,6 +115,12 @@ export default defineComponent({
           const width = withoutChildren && thWidthList?.[col.colKey] ? `${thWidthList?.[col.colKey]}px` : undefined;
           const styles = { ...(thStyles.style || {}), width };
           const innerTh = renderTitle(h, this.slots, col, index);
+          const resizeColumnListener = this.allowResizeColumnWidth
+            ? {
+              mousedown: (e: MouseEvent) => this.onColumnMousedown(e, col),
+              mousemove: (e: MouseEvent) => this.onColumnMouseover(e),
+            }
+            : {};
           return (
             <th
               key={col.colKey}
@@ -120,8 +128,7 @@ export default defineComponent({
               class={thClasses}
               style={styles}
               attrs={{ ...rowspanAndColspan }}
-              onmousemove={(e: MouseEvent) => this.onColumnMouseover(e)}
-              onmousedown={(e: MouseEvent) => this.onColumnMousedown(e, col)}
+              on={resizeColumnListener}
             >
               <div class={this.tableBaseClass.thCellInner}>
                 {col.ellipsis ? (

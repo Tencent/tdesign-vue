@@ -20,6 +20,11 @@ import { TNode, OptionData, SizeEnum, ClassName, HTMLElementAttributes } from '.
 
 export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
   /**
+   * 是否允许调整列宽
+   * @default false
+   */
+  allowResizeColumnWidth?: boolean;
+  /**
    * 是否显示表格边框
    * @default false
    */

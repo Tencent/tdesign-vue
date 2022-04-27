@@ -8,6 +8,8 @@ import { TdBaseTableProps } from '../table/type';
 import { PropType } from 'vue';
 
 export default {
+  /** 是否允许调整列宽 */
+  allowResizeColumnWidth: Boolean,
   /** 是否显示表格边框 */
   bordered: Boolean,
   /** 表格底部内容，可以用于自定义列设置等 */

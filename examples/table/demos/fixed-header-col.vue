@@ -28,6 +28,7 @@
       :fixedRows="fixedTopAndBottomRows ? [2, 2] : undefined"
       :scroll="virtualScroll ? { type: 'virtual' } : undefined"
       bordered
+      allowResizeColumnWidth
     >
       <template #operation="slotProps">
         <a class="link" @click="rehandleClickOp(slotProps)">删除</a>

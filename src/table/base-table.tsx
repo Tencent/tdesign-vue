@@ -75,13 +75,12 @@ export default defineComponent({
       refreshTable,
       updateHeaderScroll,
       setUseFixedTableElmRef,
-      onContentScrollEvent,
     } = useFixed(props, context);
     const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
     const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
 
     // 列宽拖拽逻辑
-    const columnResizeParams = useColumnResize(tableElmRef);
+    const columnResizeParams = useColumnResize(tableElmRef, refreshTable);
     const { resizeLineRef, resizeLineStyle } = columnResizeParams;
 
     const dynamicBaseTableClasses = computed(() => [
@@ -221,7 +220,6 @@ export default defineComponent({
       scrollbarWidth,
       isMultipleHeader,
       showRightDivider,
-      onContentScrollEvent,
       resizeLineRef,
       resizeLineStyle,
       columnResizeParams,
@@ -265,6 +263,7 @@ export default defineComponent({
             spansAndLeafNodes={this.spansAndLeafNodes}
             thList={this.thList}
             thWidthList={this.thWidthList}
+            allowResizeColumnWidth={this.allowResizeColumnWidth}
             columnResizeParams={this.columnResizeParams}
           />
         </table>
@@ -357,6 +356,7 @@ export default defineComponent({
             bordered={this.bordered}
             spansAndLeafNodes={this.spansAndLeafNodes}
             thList={this.thList}
+            allowResizeColumnWidth={this.allowResizeColumnWidth}
             columnResizeParams={this.columnResizeParams}
           />
           <TBody scopedSlots={this.$scopedSlots} props={tableBodyProps} on={on} />

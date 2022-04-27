@@ -1,7 +1,7 @@
-import { ref, reactive } from '@vue/composition-api';
+import { ref, Ref, reactive } from '@vue/composition-api';
 import { TableColumns } from './useMultiHeader';
 
-export default function useColumnResize(tableElmRef: any) {
+export default function useColumnResize(tableElmRef: Ref<HTMLTableElement>, refreshTable: () => void) {
   const resizeLineRef = ref<HTMLDivElement>();
 
   const resizeLineParams = {
@@ -53,14 +53,14 @@ export default function useColumnResize(tableElmRef: any) {
     resizeLineParams.isDragging = true;
     resizeLineParams.draggingStart = e.x;
 
-    // 初始化resizeline标记线
+    // 初始化 resizeLine 标记线
     if (resizeLineRef?.value) {
       resizeLineStyle.display = 'block';
       resizeLineStyle.left = `${resizeLinePos}px`;
       resizeLineStyle.height = `${tableElmRef.value?.clientHeight}px`;
     }
 
-    // 拖拽时鼠标可能会超出table范围，需要给docuemnt绑定拖拽相关事件
+    // 拖拽时鼠标可能会超出 table 范围，需要给 document 绑定拖拽相关事件
     const onDragEnd = () => {
       if (resizeLineParams.isDragging) {
         // 结束拖拽，更新列宽
@@ -80,6 +80,8 @@ export default function useColumnResize(tableElmRef: any) {
         document.onselectstart = null;
         document.ondragstart = null;
       }
+
+      refreshTable();
     };
 
     const onDragOver = (e: MouseEvent) => {
