@@ -1,4 +1,6 @@
 import {
+  PageFirstIcon,
+  PageLastIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
   ChevronRightDoubleIcon,
@@ -29,6 +31,8 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
   name: 'TPagination',
 
   components: {
+    PageFirstIcon,
+    PageLastIcon,
     ChevronLeftIcon,
     ChevronRightIcon,
     ChevronRightDoubleIcon,
@@ -320,10 +324,18 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
             ))}
           </t-select>
         ) : null}
+        {/* 首页按钮 */}
+        {this.showFirstAndLastPageBtn ? (
+          <div class={this.preBtnClass} onClick={() => this.toPage(1)} disabled={this.disabled || this.current === min}>
+            <page-first-icon />
+          </div>
+        ) : null}
         {/* 向前按钮 */}
-        <div class={this.preBtnClass} onClick={this.prevPage} disabled={this.disabled || this.current === min}>
-          <chevron-left-icon />
-        </div>
+        {this.showPreviousAndNextBtn ? (
+          <div class={this.preBtnClass} onClick={this.prevPage} disabled={this.disabled || this.current === min}>
+            <chevron-left-icon />
+          </div>
+        ) : null}
         {/* 页数 */}
         {!this.isSimple ? (
           <ul class={this.btnWrapClass}>
@@ -374,13 +386,25 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
           />
         )}
         {/* 向后按钮 */}
-        <div
-          class={this.nextBtnClass}
-          onClick={this.nextPage}
-          disabled={this.disabled || this.current === this.pageCount}
-        >
-          <chevron-right-icon />
-        </div>
+        {this.showPreviousAndNextBtn ? (
+          <div
+            class={this.nextBtnClass}
+            onClick={this.nextPage}
+            disabled={this.disabled || this.current === this.pageCount}
+          >
+            <chevron-right-icon />
+          </div>
+        ) : null}
+        {/* 尾页按钮 */}
+        {this.showFirstAndLastPageBtn ? (
+          <div
+            class={this.nextBtnClass}
+            onClick={() => this.toPage(this.pageCount)}
+            disabled={this.disabled || this.current === this.pageCount}
+          >
+            <page-last-icon />
+          </div>
+        ) : null}
         {/* 跳转 */}
         {this.showJumper ? (
           <div class={this.jumperClass}>
@@ -392,6 +416,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
               onEnter={this.onJumperChange}
               max={this.pageCount}
               min={min}
+              size={this.size}
               theme="normal"
               placeholder=""
             />
