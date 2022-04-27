@@ -168,7 +168,7 @@ export default defineComponent({
         paddingLeft += 16;
       }
 
-      const needRotate = this.mode === 'popup' && this.isNested;
+      const needRotate = this.mode === 'popup';
       const rippleVal = (this.keepAnimation as Record<AnimationType, boolean>).ripple ? this.rippleColor : false;
 
       const normalSubmenu = [
