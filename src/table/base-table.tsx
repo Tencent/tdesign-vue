@@ -8,6 +8,7 @@ import {
   nextTick,
   PropType,
   watch,
+  onMounted,
 } from '@vue/composition-api';
 import pick from 'lodash/pick';
 import props from './base-table-props';
@@ -46,7 +47,7 @@ export default defineComponent({
     const renderTNode = useTNodeJSX();
     const tableRef = ref<HTMLDivElement>();
     const tableElmRef = ref<HTMLTableElement>();
-    const tfootRef = ref<HTMLTableElement>();
+    const tableFootHeight = ref(0);
     const {
       virtualScrollClasses, tableLayoutClasses, tableBaseClass, tableColFixedClasses,
     } = useClassName();
@@ -71,9 +72,9 @@ export default defineComponent({
       showAffixFooter,
       rowAndColFixedPosition,
       refreshTable,
-      onTableContentScroll,
       updateHeaderScroll,
       setUseFixedTableElmRef,
+      onContentScrollEvent,
     } = useFixed(props, context);
     const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
     const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
@@ -152,25 +153,33 @@ export default defineComponent({
     provide('rowHeightRef', ref(rowHeight));
 
     let lastScrollY = -1;
-    const onInnerScroll = type === 'virtual'
-      ? (e: WheelEvent) => {
-        onTableContentScroll(e);
-        const target = (e.target || e.srcElement) as HTMLElement;
-        const top = target.scrollTop;
-        // 排除横向滚动出发的纵向虚拟滚动计算
-        if (Math.abs(lastScrollY - top) > 5) {
-          handleVirtualScroll();
-          lastScrollY = top;
-        } else {
-          lastScrollY = -1;
-        }
+    const onInnerVirtualScroll = (e: WheelEvent) => {
+      const target = (e.target || e.srcElement) as HTMLElement;
+      const top = target.scrollTop;
+      // 排除横向滚动出发的纵向虚拟滚动计算
+      if (Math.abs(lastScrollY - top) > 5) {
+        handleVirtualScroll();
+        lastScrollY = top;
+      } else {
+        lastScrollY = -1;
       }
-      : onTableContentScroll;
+    };
+
+    // used for top margin
+    const getTFootHeight = () => {
+      if (!tableElmRef.value) return;
+      tableFootHeight.value = tableElmRef.value.querySelector('tfoot')?.offsetHeight;
+    };
+
+    onMounted(() => {
+      getTFootHeight();
+    });
 
     return {
       thList,
       isVirtual,
       global,
+      tableFootHeight,
       virtualScrollHeaderPos,
       tableWidth,
       tableElmWidth,
@@ -202,21 +211,20 @@ export default defineComponent({
       translateY,
       affixHeaderRef,
       affixFooterRef,
-      tfootRef,
       showAffixHeader,
       showAffixFooter,
       scrollbarWidth,
       isMultipleHeader,
       showRightDivider,
       getListener,
-      onTableContentScroll,
+      onContentScrollEvent,
       renderPagination,
       renderTNode,
       handleRowMounted,
       onFixedChange,
       updateHeaderScroll,
-      onInnerScroll,
       refreshTable,
+      onInnerVirtualScroll,
     };
   },
 
@@ -254,16 +262,23 @@ export default defineComponent({
       </div>
     );
 
+    let marginScrollbarWidth = this.isWidthOverflow ? this.scrollbarWidth : 0;
+    if (this.bordered) {
+      marginScrollbarWidth += 1;
+    }
+    // Hack: Affix 组件，marginTop 临时使用 负 margin 定位位置
     const affixedFooter = Boolean(this.footerAffixedBottom && this.footData?.length && this.tableWidth) && (
       <Affix
         class={this.tableBaseClass.affixedFooterWrap}
         props={this.footerAffixProps}
         onFixedChange={this.onFixedChange}
+        offsetBottom={marginScrollbarWidth || 0}
+        style={{ marginTop: `${-1 * (this.tableFootHeight + marginScrollbarWidth)}px` }}
       >
         <div
           ref="affixFooterRef"
           style={{ width: `${this.tableWidth}px`, opacity: Number(this.showAffixFooter) }}
-          class={{ [this.tableBaseClass.affixedFooterElm]: this.footerAffixedBottom || this.isVirtual }}
+          class={['scrollbar', { [this.tableBaseClass.affixedFooterElm]: this.footerAffixedBottom || this.isVirtual }]}
         >
           <table class={this.tableElmClasses} style={{ ...this.tableElementStyles, width: `${this.tableElmWidth}px` }}>
             {colgroup}
@@ -313,12 +328,13 @@ export default defineComponent({
     };
     // Vue3 do not need getListener
     const on = this.getListener();
+    const scrollListener = this.isVirtual ? { scroll: this.onInnerVirtualScroll } : {};
     const tableContent = (
       <div
         ref="tableContentRef"
         class={this.tableBaseClass.content}
         style={this.tableContentStyles}
-        onScroll={this.onInnerScroll}
+        on={scrollListener}
       >
         {this.isVirtual && <div class={this.virtualScrollClasses.cursor} style={virtualStyle} />}
 
@@ -335,7 +351,6 @@ export default defineComponent({
           />
           <TBody scopedSlots={this.$scopedSlots} props={tableBodyProps} on={on} />
           <TFoot
-            ref={'tfootRef'}
             rowKey={this.rowKey}
             scopedSlots={this.$scopedSlots}
             isFixedHeader={this.isFixedHeader}

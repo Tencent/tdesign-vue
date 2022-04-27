@@ -16,7 +16,7 @@
 - hooks/useClassName 全部类名，BaseTable
 - hooks/useColumnController 自定义列配置，PrimaryTable
 - hooks/useFilter 过滤/筛选，PrimaryTable
-- hooks/useFixed 固定表头/固定列/固定行，BaseTable
+- hooks/useFixed 固定表头/固定列/固定行，表头吸顶，表尾吸顶，BaseTable
 - hooks/useMultiHeader 多级表头，BaseTable
 - hooks/usePagination 分页，BaseTable
 - hooks/useRowExpand 展开/收起行，PrimaryTable

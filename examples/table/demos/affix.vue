@@ -50,12 +50,12 @@ function getData(count) {
 export default {
   data() {
     return {
-      data: getData(20),
+      data: getData(8),
       // 如果在预渲染场景下，初次渲染的表格宽度和最终呈现宽度不一样，请异步设置表头吸顶
       headerAffixedTop: true,
       footerAffixedBottom: true,
-      fixedLeftColumn: false,
-      fixedRightColumn: false,
+      fixedLeftColumn: true,
+      fixedRightColumn: true,
       // 表尾有一行数据
       footData: [{ type: '全部类型', description: '-' }],
     };
@@ -126,19 +126,6 @@ export default {
         },
       ];
     },
-  },
-
-  created() {
-    this.$watch(
-      () => [this.headerAffixedTop, this.footerAffixedBottom],
-      () => {
-        if (this.headerAffixedTop || this.footerAffixedBottom) {
-          this.data = getData(20);
-        } else {
-          this.data = getData(5);
-        }
-      },
-    );
   },
 
   methods: {

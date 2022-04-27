@@ -1,13 +1,5 @@
 import {
-  ref,
-  Ref,
-  reactive,
-  watch,
-  toRefs,
-  SetupContext,
-  onMounted,
-  onUnmounted,
-  computed,
+  ref, reactive, watch, toRefs, SetupContext, onMounted, computed, onBeforeMount,
 } from '@vue/composition-api';
 import get from 'lodash/get';
 import log from '../../_common/js/log';
@@ -349,13 +341,38 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     }
   };
 
+  let lastFootScrollLeft = -1;
+  const updateScrollPositionByFootScrollbar = () => {
+    if (notNeedThWidthList.value) return;
+    const target = affixFooterRef.value;
+    const left = target.scrollLeft;
+    if (lastFootScrollLeft === left) return;
+    if (affixHeaderRef.value) {
+      lastFootScrollLeft = left;
+      affixHeaderRef.value.scrollLeft = left;
+    }
+    if (tableContentRef.value) {
+      lastFootScrollLeft = left;
+      tableContentRef.value.scrollLeft = left;
+    }
+  };
+
   // 为保证版本兼容，临时保留 onScrollX 和 onScrollY
-  const onTableContentScroll = (e: WheelEvent) => {
-    const target = (e.target || e.srcElement) as HTMLElement;
+  const onTableContentScroll = (params?: { e: WheelEvent; trigger: 'tfoot' | 'tbody' }) => {
+    // const target = (e.target || e.srcElement) as HTMLElement;
+    const target = tableContentRef.value;
     // 阴影更新
     updateColumnFixedShadow(target);
-    // 表头滚动位置更新
-    updateHeaderScroll(target);
+    if (params?.trigger === 'tfoot') {
+      updateScrollPositionByFootScrollbar();
+    } else {
+      // 表头和表尾滚动位置更新
+      updateHeaderScroll(target);
+    }
+    onContentScrollEvent(params.e);
+  };
+
+  const onContentScrollEvent = (e: WheelEvent) => {
     props.onScrollX?.({ e });
     // Vue3 ignore next line
     context.emit('scroll-x', { e });
@@ -533,29 +550,81 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
 
   const onResize = refreshTable;
 
+  const onFootScroll = (e: WheelEvent) => {
+    onTableContentScroll({ e, trigger: 'tfoot' });
+  };
+
+  const onFootMouseEnter = () => {
+    on(affixFooterRef.value, 'scroll', onFootScroll);
+  };
+
+  const onFootMouseLeave = () => {
+    off(affixFooterRef.value, 'scroll', onFootScroll);
+  };
+
+  watch(affixFooterRef, () => {
+    if (footerAffixedBottom.value && affixFooterRef.value) {
+      on(affixFooterRef.value, 'mouseenter', onFootMouseEnter);
+      on(affixFooterRef.value, 'mouseleave', onFootMouseLeave);
+    } else {
+      off(affixFooterRef.value, 'mouseenter', onFootMouseEnter);
+      off(affixFooterRef.value, 'mouseleave', onFootMouseLeave);
+    }
+  });
+
+  const onTableContentMouseEnter = () => {
+    on(tableContentRef.value, 'scroll', onTableContentScroll);
+  };
+
+  const onTableContentMouseLeave = () => {
+    off(tableContentRef.value, 'scroll', onTableContentScroll);
+  };
+
+  const addTableContentListener = () => {
+    // 只有吸顶/吸底/虚拟滚动等场景需要滚动事件监听，同步多个 table 元素的滚动距离
+    if (notNeedThWidthList.value || !tableContentRef.value) return;
+    on(tableContentRef.value, 'mouseenter', onTableContentMouseEnter);
+    on(tableContentRef.value, 'mouseleave', onTableContentMouseLeave);
+  };
+
+  const removeTableContentListener = () => {
+    off(tableContentRef.value, 'mouseenter', onTableContentMouseEnter);
+    off(tableContentRef.value, 'mouseleave', onTableContentMouseLeave);
+  };
+
+  watch(tableContentRef, () => {
+    addTableContentListener();
+  });
+
   onMounted(() => {
     const scrollWidth = getScrollbarWidth();
     scrollbarWidth.value = scrollWidth;
     const timer = setTimeout(() => {
       updateTableWidth();
-      if (headerAffixedTop || footerAffixedBottom) {
-        on(document, 'scroll', onDocumentScroll);
-      } else {
-        off(document, 'scroll', onDocumentScroll);
-      }
       clearTimeout(timer);
     });
+    if (headerAffixedTop.value || footerAffixedBottom.value) {
+      on(document, 'scroll', onDocumentScroll);
+    } else {
+      off(document, 'scroll', onDocumentScroll);
+    }
     if (isFixedColumn.value || isFixedHeader.value || !notNeedThWidthList.value) {
       on(window, 'resize', onResize);
     }
+    addTableContentListener();
   });
 
-  onUnmounted(() => {
+  onBeforeMount(() => {
     if (isFixedColumn.value || isFixedHeader.value || !notNeedThWidthList.value) {
       off(window, 'resize', onResize);
     }
     if (props.headerAffixedTop || props.footerAffixedBottom) {
       off(document, 'scroll', onDocumentScroll);
+      off(affixFooterRef.value, 'mouseenter', onFootMouseEnter);
+      off(affixFooterRef.value, 'mouseleave', onFootMouseLeave);
+    }
+    if (!notNeedThWidthList.value) {
+      removeTableContentListener();
     }
   });
 
