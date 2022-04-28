@@ -1,4 +1,6 @@
 import {
+  PageFirstIcon,
+  PageLastIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
   ChevronRightDoubleIcon,
@@ -29,6 +31,8 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
   name: 'TPagination',
 
   components: {
+    PageFirstIcon,
+    PageLastIcon,
     ChevronLeftIcon,
     ChevronRightIcon,
     ChevronRightDoubleIcon,
@@ -134,9 +138,6 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
     },
     simpleClass(): ClassName {
       return [`${name}__select`];
-    },
-    isSimple(): boolean {
-      return this.theme === 'simple';
     },
     pageCount(): number {
       const c: number = Math.ceil(this.total / this.pageSize);
@@ -306,8 +307,8 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
           'totalContent',
           <div class={this.totalClass}>{this.t(this.global.total, { total: this.total })}</div>,
         )}
-        {/* select */}
-        {this.pageSizeOptions.length ? (
+        {/* 分页器 */}
+        {this.showPageSize && this.pageSizeOptions.length ? (
           <t-select
             size={this.size}
             value={this.pageSize}
@@ -320,12 +321,20 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
             ))}
           </t-select>
         ) : null}
+        {/* 首页按钮 */}
+        {this.showFirstAndLastPageBtn ? (
+          <div class={this.preBtnClass} onClick={() => this.toPage(1)} disabled={this.disabled || this.current === min}>
+            <page-first-icon />
+          </div>
+        ) : null}
         {/* 向前按钮 */}
-        <div class={this.preBtnClass} onClick={this.prevPage} disabled={this.disabled || this.current === min}>
-          <chevron-left-icon />
-        </div>
-        {/* 页数 */}
-        {!this.isSimple ? (
+        {this.showPreviousAndNextBtn ? (
+          <div class={this.preBtnClass} onClick={this.prevPage} disabled={this.disabled || this.current === min}>
+            <chevron-left-icon />
+          </div>
+        ) : null}
+        {/* 常规版 */}
+        {this.showPageNumber && this.theme === 'default' ? (
           <ul class={this.btnWrapClass}>
             {this.isFolded ? (
               <li class={this.getButtonClass(1)} onClick={() => this.toPage(min)}>
@@ -363,7 +372,9 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
               </li>
             ) : null}
           </ul>
-        ) : (
+        ) : null}
+        {/* 极简版 */}
+        {this.showPageNumber && this.theme === 'simple' ? (
           <t-select
             size={this.size}
             value={this.current}
@@ -372,15 +383,27 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
             onChange={this.toPage}
             options={this.pageCountOption}
           />
-        )}
+        ) : null}
         {/* 向后按钮 */}
-        <div
-          class={this.nextBtnClass}
-          onClick={this.nextPage}
-          disabled={this.disabled || this.current === this.pageCount}
-        >
-          <chevron-right-icon />
-        </div>
+        {this.showPreviousAndNextBtn ? (
+          <div
+            class={this.nextBtnClass}
+            onClick={this.nextPage}
+            disabled={this.disabled || this.current === this.pageCount}
+          >
+            <chevron-right-icon />
+          </div>
+        ) : null}
+        {/* 尾页按钮 */}
+        {this.showFirstAndLastPageBtn ? (
+          <div
+            class={this.nextBtnClass}
+            onClick={() => this.toPage(this.pageCount)}
+            disabled={this.disabled || this.current === this.pageCount}
+          >
+            <page-last-icon />
+          </div>
+        ) : null}
         {/* 跳转 */}
         {this.showJumper ? (
           <div class={this.jumperClass}>
@@ -392,6 +415,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
               onEnter={this.onJumperChange}
               max={this.pageCount}
               min={min}
+              size={this.size}
               theme="normal"
               placeholder=""
             />

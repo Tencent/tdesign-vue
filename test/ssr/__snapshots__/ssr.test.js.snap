@@ -8471,13 +8471,31 @@ exports[`ssr snapshot test renders ./examples/message/demos/plugin.vue correctly
   <p>插件调用</p> <br>
   <div class="t-demo-message-duration"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">消息</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-success"><span class="t-button__text">
       成功
-    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-warning"><span class="t-button__text">警示</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-danger"><span class="t-button__text">
-      失败
-    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">询问</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">加载中</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">关闭所有</span></button></div> <br><br>
-  <p>函数式调用</p> <br>
-  <div class="t-demo-message-theme"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">消息</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-success"><span class="t-button__text">成功</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-warning"><span class="t-button__text">
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-warning"><span class="t-button__text">
       警示
-    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-danger"><span class="t-button__text">失败</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">询问</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">加载中</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">关闭所有</span></button></div> <br><br>
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-danger"><span class="t-button__text">
+      失败
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">
+      询问
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">
+      加载中
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">关闭所有</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">
+      设置默认位置
+    </span></button></div> <br><br>
+  <p>函数式调用</p> <br>
+  <div class="t-demo-message-theme"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">
+      消息
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-success"><span class="t-button__text">
+      成功
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-warning"><span class="t-button__text">
+      警示
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-danger"><span class="t-button__text">失败</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">
+      询问
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">
+      加载中
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">关闭所有</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">
+      设置默认位置
+    </span></button></div> <br><br>
 </div>
 `;
 
@@ -8859,6 +8877,9 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/base.vue correctl
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
+    <div class="t-pagination__btn t-pagination__btn-prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-page-first">
+        <path fill="currentColor" d="M12.4 4.46l-.91-.92L7.03 8l4.46 4.46.92-.92L8.86 8l3.55-3.54zM4.8 4v8h1.3V4H4.8z" fill-opacity="0.9"></path>
+      </svg></div>
     <div class="t-pagination__btn t-pagination__btn-prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
         <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
       </svg></div>
@@ -8870,6 +8891,9 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/base.vue correctl
     </ul>
     <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
+      </svg></div>
+    <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-page-last">
+        <path fill="currentColor" d="M3.6 11.54l.91.92L8.97 8 4.51 3.54l-.92.92L7.14 8l-3.55 3.54zm7.6.46V4H9.9v8h1.3z" fill-opacity="0.9"></path>
       </svg></div>
   </div>
 </div>
