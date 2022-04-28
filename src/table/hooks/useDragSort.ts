@@ -37,10 +37,6 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
   // 列拖拽排序，存储上一次的变化结果
   const lastColList = ref([]);
 
-  if (dragSort.value === 'col') {
-    log.error('Table', "dragSort='col' is going to be used as column drag, please use dragSort='row-handler' instead.");
-  }
-
   if (dragSort.value === 'drag-col') {
     log.error('Table', "dragSort='drag-col' is going to be deprecated, please use dragSort='col' instead.");
   }

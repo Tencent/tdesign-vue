@@ -11987,6 +11987,198 @@ exports[`ssr snapshot test renders ./examples/switch/demos/status.vue correctly 
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`] = `
+<div class="tdesign-demo-block-column-large tdesign-demo__table-affix" style="width:100%;">
+  <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表头吸顶</span></label> <label class="t-checkbox t-is-checked" style="margin-left:32px;"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表尾吸底</span></label> <label class="t-checkbox t-is-checked" style="margin-left:32px;"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定左侧列</span></label> <label class="t-checkbox t-is-checked" style="margin-left:32px;"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定右侧列</span></label></div>
+  <div class="t-table t-table--bordered t-table--affixed-header t-table--column-fixed" style="position:relative;">
+    <div offsetTop="0"></div>
+    <div class="t-table__content">
+      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
+      <table class="t-table--layout-auto" style="width:;">
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col style="width:80px;">
+        </colgroup>
+        <thead class="t-table__header">
+          <tr>
+            <th data-colkey="index" class="row t-table__th-index t-align-center">
+              <div class="t-table__th-cell-inner">序号</div>
+            </th>
+            <th data-colkey="platform" class="t-table__th-platform">
+              <div class="t-table__th-cell-inner">平台</div>
+            </th>
+            <th data-colkey="type" class="t-table__th-type">
+              <div class="t-table__th-cell-inner">类型</div>
+            </th>
+            <th data-colkey="expo" class="t-table__th-expo">
+              <div class="t-table__th-cell-inner">曝光</div>
+            </th>
+            <th data-colkey="click" class="t-table__th-click">
+              <div class="t-table__th-cell-inner">点击</div>
+            </th>
+            <th data-colkey="ctr" class="t-table__th-ctr">
+              <div class="t-table__th-cell-inner">点击率</div>
+            </th>
+            <th data-colkey="default" class="t-table__th-default">
+              <div class="t-table__th-cell-inner">默认值</div>
+            </th>
+            <th data-colkey="required" class="t-table__th-required">
+              <div class="t-table__th-cell-inner">是否必传</div>
+            </th>
+            <th data-colkey="detail.position" class="t-table__th-detail.position">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">详情信息</div>
+              </div>
+            </th>
+            <th data-colkey="operation" class="t-table__th-operation">
+              <div class="t-table__th-cell-inner">操作</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="t-table__body">
+          <tr class="t-tdesign__custom-body-tr">
+            <td class="row t-align-center">0</td>
+            <td>共有</td>
+            <td>String</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>是</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 0 个数据的嵌套信息值</div>
+            </td>
+            <td>查看</td>
+          </tr>
+          <tr class="t-tdesign__custom-body-tr">
+            <td class="row t-align-center">1</td>
+            <td>私有</td>
+            <td>Number</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>0</td>
+            <td>否</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 1 个数据的嵌套信息值</div>
+            </td>
+            <td>查看</td>
+          </tr>
+          <tr class="t-tdesign__custom-body-tr">
+            <td class="row t-align-center">2</td>
+            <td>共有</td>
+            <td>Array</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>[]</td>
+            <td>否</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 2 个数据的嵌套信息值</div>
+            </td>
+            <td>查看</td>
+          </tr>
+          <tr class="t-tdesign__custom-body-tr">
+            <td class="row t-align-center">3</td>
+            <td>私有</td>
+            <td>Object</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>{}</td>
+            <td>否</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 3 个数据的嵌套信息值</div>
+            </td>
+            <td>查看</td>
+          </tr>
+          <tr class="t-tdesign__custom-body-tr">
+            <td class="row t-align-center">4</td>
+            <td>共有</td>
+            <td>String</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>是</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 4 个数据的嵌套信息值</div>
+            </td>
+            <td>查看</td>
+          </tr>
+          <tr class="t-tdesign__custom-body-tr">
+            <td class="row t-align-center">5</td>
+            <td>私有</td>
+            <td>Number</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>0</td>
+            <td>否</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 5 个数据的嵌套信息值</div>
+            </td>
+            <td>查看</td>
+          </tr>
+          <tr class="t-tdesign__custom-body-tr">
+            <td class="row t-align-center">6</td>
+            <td>共有</td>
+            <td>Array</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>[]</td>
+            <td>否</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 6 个数据的嵌套信息值</div>
+            </td>
+            <td>查看</td>
+          </tr>
+          <tr class="t-tdesign__custom-body-tr">
+            <td class="row t-align-center">7</td>
+            <td>私有</td>
+            <td>Object</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>{}</td>
+            <td>否</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 7 个数据的嵌套信息值</div>
+            </td>
+            <td>查看</td>
+          </tr>
+        </tbody>
+        <tfoot class="t-table__footer">
+          <tr class="t-tdesign__custom-footer-tr">
+            <td><b style="color:rgb(0, 82, 217);">表尾</b></td>
+            <td><span>第 1 行</span></td>
+            <td>全部类型</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><span>空</span></td>
+            <td> 插槽渲染表尾 </td>
+            <td>
+              <div>渲染函数输出表尾信息</div>
+            </td>
+            <td>-</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
   <div>
@@ -13830,7 +14022,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
-  <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否冻结首尾两行</span></label></div>
+  <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否冻结首尾两行</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否显示斑马纹</span></label></div>
   <div class="t-table t-table--bordered t-table--column-fixed" style="position:relative;">
     <div class="t-table__content" style="max-height:300px;">
       <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
@@ -14010,66 +14202,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td>Number</td>
             <td>0</td>
             <td>读取 13 个数据的嵌套信息值</td>
-            <td>数据源</td>
-            <td>否</td>
-            <td><a class="link">删除</a></td>
-          </tr>
-          <tr>
-            <td class="t-align-center">14</td>
-            <td>共有</td>
-            <td>Array</td>
-            <td>[]</td>
-            <td>读取 14 个数据的嵌套信息值</td>
-            <td>数据源</td>
-            <td>否</td>
-            <td><a class="link">删除</a></td>
-          </tr>
-          <tr>
-            <td class="t-align-center">15</td>
-            <td>私有</td>
-            <td>Object</td>
-            <td>{}</td>
-            <td>读取 15 个数据的嵌套信息值</td>
-            <td>数据源</td>
-            <td>否</td>
-            <td><a class="link">删除</a></td>
-          </tr>
-          <tr>
-            <td class="t-align-center">16</td>
-            <td>共有</td>
-            <td>String</td>
-            <td>-</td>
-            <td>读取 16 个数据的嵌套信息值</td>
-            <td>数据源</td>
-            <td>是</td>
-            <td><a class="link">删除</a></td>
-          </tr>
-          <tr>
-            <td class="t-align-center">17</td>
-            <td>私有</td>
-            <td>Number</td>
-            <td>0</td>
-            <td>读取 17 个数据的嵌套信息值</td>
-            <td>数据源</td>
-            <td>否</td>
-            <td><a class="link">删除</a></td>
-          </tr>
-          <tr>
-            <td class="t-align-center">18</td>
-            <td>共有</td>
-            <td>Array</td>
-            <td>[]</td>
-            <td>读取 18 个数据的嵌套信息值</td>
-            <td>数据源</td>
-            <td>否</td>
-            <td><a class="link">删除</a></td>
-          </tr>
-          <tr>
-            <td class="t-align-center">19</td>
-            <td>私有</td>
-            <td>Object</td>
-            <td>{}</td>
-            <td>读取 19 个数据的嵌套信息值</td>
             <td>数据源</td>
             <td>否</td>
             <td><a class="link">删除</a></td>
