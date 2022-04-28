@@ -484,7 +484,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     },
     setCurSelectedYear(year?: TdCalendarProps['year']) {
       const curSelectedYear = year ? parseInt(`${year}`, 10) : createDefaultCurDate().year();
-      if (!isNaN(curSelectedYear)) {
+      if (!isNaN(curSelectedYear) && curSelectedYear > 0) {
         this.curSelectedYear = curSelectedYear;
       }
     },
