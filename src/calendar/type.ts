@@ -51,9 +51,8 @@ export interface TdCalendarProps {
   mode?: 'month' | 'year';
   /**
    * 控制当前面板展示月份，优先级高于 `controllerConfig.month`
-   * @default ''
    */
-  month?: string;
+  month?: string | number;
   /**
    * 是否禁用单元格右键默认系统菜单
    * @default false
@@ -78,9 +77,8 @@ export interface TdCalendarProps {
   week?: Array<string> | TNode<CalendarWeek>;
   /**
    * 控制当前面板展示年份，优先级高于 `controllerConfig.year`
-   * @default ''
    */
-  year?: string;
+  year?: string | number;
   /**
    * 日历单元格点击时触发
    */

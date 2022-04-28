@@ -59,8 +59,7 @@ export default {
   },
   /** 控制当前面板展示月份，优先级高于 `controllerConfig.month` */
   month: {
-    type: String,
-    default: '',
+    type: [String, Number] as PropType<TdCalendarProps['month']>,
   },
   /** 是否禁用单元格右键默认系统菜单 */
   preventCellContextmenu: Boolean,
@@ -87,8 +86,7 @@ export default {
   },
   /** 控制当前面板展示年份，优先级高于 `controllerConfig.year` */
   year: {
-    type: String,
-    default: '',
+    type: [String, Number] as PropType<TdCalendarProps['year']>,
   },
   /** 日历单元格点击时触发 */
   onCellClick: Function as PropType<TdCalendarProps['onCellClick']>,

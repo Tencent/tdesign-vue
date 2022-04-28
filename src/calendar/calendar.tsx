@@ -342,7 +342,19 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
   watch: {
     value: {
       handler(v: TdCalendarProps['value']) {
-        this.toCurrent(v);
+        this.setCurrentDate(v);
+      },
+      immediate: true,
+    },
+    year: {
+      handler(v: TdCalendarProps['year']) {
+        this.setCurSelectedYear(v);
+      },
+      immediate: true,
+    },
+    month: {
+      handler(v: TdCalendarProps['month']) {
+        this.setCurSelectedMonth(v);
       },
       immediate: true,
     },
@@ -464,11 +476,26 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
       }
       return re;
     },
-    // 显示当前月份\年份
-    toCurrent(value?: TdCalendarProps['value']): void {
+    // 回到“今天”
+    toToday(): void {
+      const currentSelectDate = createDefaultCurDate();
+      this.curSelectedYear = currentSelectDate.year();
+      this.curSelectedMonth = parseInt(currentSelectDate.format('M'), 10);
+    },
+    setCurSelectedYear(year?: TdCalendarProps['year']) {
+      const curSelectedYear = year ? parseInt(`${year}`, 10) : createDefaultCurDate().year();
+      if (!isNaN(curSelectedYear)) {
+        this.curSelectedYear = curSelectedYear;
+      }
+    },
+    setCurSelectedMonth(month?: TdCalendarProps['month']) {
+      const curSelectedMonth = month ? parseInt(`${month}`, 10) : parseInt(createDefaultCurDate().format('M'), 10);
+      if (!isNaN(curSelectedMonth) && curSelectedMonth > 0 && curSelectedMonth <= 12) {
+        this.curSelectedMonth = curSelectedMonth;
+      }
+    },
+    setCurrentDate(value?: TdCalendarProps['value']): void {
       this.curDate = value ? dayjs(value) : createDefaultCurDate();
-      this.curSelectedYear = this.curDate.year();
-      this.curSelectedMonth = parseInt(this.curDate.format('M'), 10);
     },
     checkMonthAndYearSelecterDisabled(year: number, month: number): boolean {
       let disabled = false;
@@ -564,7 +591,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                   size={this.controlSize}
                   disabled={this.isCurrentBtnDisabled}
                   onClick={() => {
-                    this.toCurrent();
+                    this.toToday();
                   }}
                   props={{ ...this.currentBtnVBind }}
                 >
