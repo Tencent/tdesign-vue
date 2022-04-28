@@ -8468,13 +8468,31 @@ exports[`ssr snapshot test renders ./examples/message/demos/plugin.vue correctly
   <p>插件调用</p> <br>
   <div class="t-demo-message-duration"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">消息</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-success"><span class="t-button__text">
       成功
-    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-warning"><span class="t-button__text">警示</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-danger"><span class="t-button__text">
-      失败
-    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">询问</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">加载中</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">关闭所有</span></button></div> <br><br>
-  <p>函数式调用</p> <br>
-  <div class="t-demo-message-theme"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">消息</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-success"><span class="t-button__text">成功</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-warning"><span class="t-button__text">
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-warning"><span class="t-button__text">
       警示
-    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-danger"><span class="t-button__text">失败</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">询问</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">加载中</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">关闭所有</span></button></div> <br><br>
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-danger"><span class="t-button__text">
+      失败
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">
+      询问
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">
+      加载中
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">关闭所有</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">
+      设置默认位置
+    </span></button></div> <br><br>
+  <p>函数式调用</p> <br>
+  <div class="t-demo-message-theme"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">
+      消息
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-success"><span class="t-button__text">
+      成功
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-warning"><span class="t-button__text">
+      警示
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-danger"><span class="t-button__text">失败</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">
+      询问
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">
+      加载中
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">关闭所有</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">
+      设置默认位置
+    </span></button></div> <br><br>
 </div>
 `;
 
