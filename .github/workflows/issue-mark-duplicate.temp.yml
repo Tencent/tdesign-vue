@@ -1,5 +1,5 @@
 # force copy from tencent/tdesign
-# 当在 issue 的 comment 回复类似 `Duplicate of #111` 这样的话，issue 将被自动打上 重复提交标签 并且 cloese
+# 当在 issue 的 comment 回复类似 `Duplicate of #111` 这样的话，issue 将被自动打上 重复提交标签 并且 close
 name: Issue Mark Duplicate
 
 on:

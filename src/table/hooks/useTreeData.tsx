@@ -6,12 +6,7 @@ import cloneDeep from 'lodash/cloneDeep';
 import get from 'lodash/get';
 import TableTreeStore from './tree-store';
 import {
-  TdEnhancedTableProps,
-  PrimaryTableCol,
-  PrimaryTableCellParams,
-  TableRowData,
-  TableRowValue,
-  TableRowState,
+  TdEnhancedTableProps, PrimaryTableCol, TableRowData, TableRowValue, TableRowState,
 } from '../type';
 import useClassName from './useClassName';
 import { renderCell } from '../tr';
@@ -30,19 +25,27 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
 
   watch(
     [data],
-    ([val]) => {
-      if (!val) return [];
+    ([data]) => {
+      if (!data) return [];
       // 如果没有树形解构，则不需要相关逻辑
       if (!props.tree || !Object.keys(props.tree).length) {
-        dataSource.value = val;
+        // @ts-ignore
+        dataSource.value = data;
         return;
       }
-      const newVal = cloneDeep(val);
+      const newVal = cloneDeep(data);
+      // @ts-ignore
       dataSource.value = newVal;
+      // @ts-ignore
       store.value.initialTreeStore(newVal, props.columns, rowDataKeys.value);
     },
     { immediate: true },
   );
+
+  // 不能启用这部分代码。如果启用，会导致选中树形结构子节点时数据被重置，全部节点收起
+  // watch([columns, rowDataKeys], ([columns, rowDataKeys]) => {
+  //   store.value.initialTreeStore(data.value, columns, rowDataKeys);
+  // });
 
   onUnmounted(() => {
     if (!props.tree || !Object.keys(props.tree).length) return;
@@ -65,8 +68,27 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     return { paddingLeft: `${level * indent || 1}px` };
   }
 
-  function toggleExpandData(p: PrimaryTableCellParams<TableRowData>) {
+  /**
+   * 组件实例方法，展开或收起某一行
+   * @param p 行数据
+   */
+  function toggleExpandData(p: { row: TableRowData; rowIndex: number; trigger?: 'inner' }) {
+    if (!props.tree) {
+      console.error('toggleExpandData can only be used in tree data.');
+      return;
+    }
     dataSource.value = store.value.toggleExpandData(p, dataSource.value, rowDataKeys.value);
+    if (p.trigger === 'inner') {
+      const rowValue = get(p.row, rowDataKeys.value.rowKey);
+      const params = {
+        row: p.row,
+        rowIndex: p.rowIndex,
+        rowState: store.value?.treeDataMap?.get(rowValue),
+      };
+      props.onTreeExpandChange?.(params);
+      // Vue3 ignore next line
+      context.emit('tree-expand-change', params);
+    }
   }
 
   function getTreeNodeColumnCol() {
@@ -97,7 +119,12 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
           : AddRectangleIcon;
         return (
           <div class={[tableTreeClasses.col, classes]} style={colStyle}>
-            {!!childrenNodes.length && <IconNode class={tableTreeClasses.icon} onClick={() => toggleExpandData(p)} />}
+            {!!childrenNodes.length && (
+              <IconNode
+                class={tableTreeClasses.icon}
+                onClick={() => toggleExpandData({ row: p.row, rowIndex: p.rowIndex, trigger: 'inner' })}
+              />
+            )}
             {cellInfo}
           </div>
         );
@@ -155,6 +182,13 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     dataSource.value = store.value.appendTo(key, newData, dataSource.value, rowDataKeys.value);
   }
 
+  /**
+   * 设置展开行层级
+   */
+  // function setExpandedLevel(level: 1 | 2 | 3 | 4 | 5) {
+  //   dataSource.value = store.value.setExpandedLevel(level, dataSource.value, rowDataKeys.value);
+  // }
+
   return {
     store,
     rowDataKeys,
@@ -164,5 +198,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     remove,
     appendTo,
     formatTreeColum,
+    toggleExpandData,
+    // setExpandedLevel,
   };
 }

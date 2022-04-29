@@ -7,10 +7,13 @@ import {
   provide,
   nextTick,
   PropType,
+  watch,
+  onMounted,
 } from '@vue/composition-api';
 import pick from 'lodash/pick';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
+import useColumnResize from './hooks/useColumnResize';
 import useFixed from './hooks/useFixed';
 import usePagination from './hooks/usePagination';
 import useVirtualScroll from '../hooks/useVirtualScroll';
@@ -38,11 +41,6 @@ export default defineComponent({
 
   props: {
     ...props,
-    /**
-     * 渲染展开行，非公开属性，请勿在业务中使用
-     */
-    isColDraggable: Boolean,
-    isRowDraggable: Boolean,
     renderExpandedRow: Function as PropType<BaseTableProps['renderExpandedRow']>,
   },
 
@@ -50,6 +48,7 @@ export default defineComponent({
     const renderTNode = useTNodeJSX();
     const tableRef = ref<HTMLDivElement>();
     const tableElmRef = ref<HTMLTableElement>();
+    const tableFootHeight = ref(0);
     const {
       virtualScrollClasses, tableLayoutClasses, tableBaseClass, tableColFixedClasses,
     } = useClassName();
@@ -59,9 +58,11 @@ export default defineComponent({
     // 固定表头和固定列逻辑
     const {
       affixHeaderRef,
+      affixFooterRef,
       scrollbarWidth,
       virtualScrollHeaderPos,
       tableWidth,
+      tableElmWidth,
       tableContentRef,
       isFixedHeader,
       isWidthOverflow,
@@ -69,13 +70,18 @@ export default defineComponent({
       thWidthList,
       showColumnShadow,
       showAffixHeader,
+      showAffixFooter,
       rowAndColFixedPosition,
       refreshTable,
-      onTableContentScroll,
       updateHeaderScroll,
+      setUseFixedTableElmRef,
     } = useFixed(props, context);
     const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
     const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
+
+    // 列宽拖拽逻辑
+    const columnResizeParams = useColumnResize(tableElmRef, refreshTable);
+    const { resizeLineRef, resizeLineStyle } = columnResizeParams;
 
     const dynamicBaseTableClasses = computed(() => [
       tableClasses.value,
@@ -94,7 +100,9 @@ export default defineComponent({
       { [tableBaseClass.fullHeight]: props.height },
     ]);
 
-    const isVirtual = computed(() => type === 'virtual' && props.data?.length > (props.scroll?.threshold || 100));
+    const isVirtual = computed(
+      () => props.scroll?.type === 'virtual' && props.data?.length > (props.scroll?.threshold || 100),
+    );
 
     const showRightDivider = computed(
       () => props.bordered
@@ -102,23 +110,28 @@ export default defineComponent({
         && ((isMultipleHeader.value && isWidthOverflow.value) || !isMultipleHeader.value),
     );
 
+    watch(tableElmRef, () => {
+      setUseFixedTableElmRef(tableElmRef.value);
+    });
+
     const onFixedChange = () => {
       nextTick(() => {
         updateHeaderScroll();
       });
     };
 
-    // Vue3 do not need getListenser
-    const getListenser = () => {
-      const listenser: TableListeners = {};
+    // Vue3 do not need getListener
+    const getListener = () => {
+      const listener: TableListeners = {};
       BASE_TABLE_ALL_EVENTS.forEach((key) => {
-        listenser[key] = (...args: any) => {
+        listener[key] = (...args: any) => {
           context.emit(key, ...args);
         };
       });
-      return listenser;
+      return listener;
     };
 
+    // TODO: 这种直接解析 props 的方式，是非响应式的，无法动态设置虚拟滚动，不可如此使用。待改正
     const {
       type, rowHeight, bufferSize = 20, isFixedRowHeight = false,
     } = props.scroll || {};
@@ -144,27 +157,36 @@ export default defineComponent({
     provide('rowHeightRef', ref(rowHeight));
 
     let lastScrollY = -1;
-    const onInnerScroll = type === 'virtual'
-      ? (e: WheelEvent) => {
-        onTableContentScroll(e);
-        const target = (e.target || e.srcElement) as HTMLElement;
-        const top = target.scrollTop;
-        // 排除横向滚动出发的纵向虚拟滚动计算
-        if (Math.abs(lastScrollY - top) > 5) {
-          handleVirtualScroll();
-          lastScrollY = top;
-        } else {
-          lastScrollY = -1;
-        }
+    const onInnerVirtualScroll = (e: WheelEvent) => {
+      const target = (e.target || e.srcElement) as HTMLElement;
+      const top = target.scrollTop;
+      // 排除横向滚动出发的纵向虚拟滚动计算
+      if (Math.abs(lastScrollY - top) > 5) {
+        handleVirtualScroll();
+        lastScrollY = top;
+      } else {
+        lastScrollY = -1;
       }
-      : onTableContentScroll;
+    };
+
+    // used for top margin
+    const getTFootHeight = () => {
+      if (!tableElmRef.value) return;
+      tableFootHeight.value = tableElmRef.value.querySelector('tfoot')?.offsetHeight;
+    };
+
+    onMounted(() => {
+      getTFootHeight();
+    });
 
     return {
       thList,
       isVirtual,
       global,
+      tableFootHeight,
       virtualScrollHeaderPos,
       tableWidth,
+      tableElmWidth,
       tableRef,
       tableElmRef,
       tableBaseClass,
@@ -192,19 +214,23 @@ export default defineComponent({
       visibleData,
       translateY,
       affixHeaderRef,
+      affixFooterRef,
       showAffixHeader,
+      showAffixFooter,
       scrollbarWidth,
       isMultipleHeader,
       showRightDivider,
-      getListenser,
-      onTableContentScroll,
+      resizeLineRef,
+      resizeLineStyle,
+      columnResizeParams,
+      getListener,
       renderPagination,
       renderTNode,
       handleRowMounted,
       onFixedChange,
       updateHeaderScroll,
-      onInnerScroll,
       refreshTable,
+      onInnerVirtualScroll,
     };
   },
 
@@ -212,10 +238,11 @@ export default defineComponent({
     const { rowAndColFixedPosition } = this;
     const data = this.isPaginateData ? this.dataSource : this.data;
 
+    const defaultColWidth = this.tableLayout === 'fixed' && this.isWidthOverflow ? '100px' : undefined;
     const colgroup = (
       <colgroup>
         {(this.spansAndLeafNodes?.leafColumns || this.columns).map((col) => (
-          <col key={col.colKey} style={{ width: formatCSSUnit(col.width) }}></col>
+          <col key={col.colKey} style={{ width: formatCSSUnit(col.width) || defaultColWidth }}></col>
         ))}
       </colgroup>
     );
@@ -225,7 +252,7 @@ export default defineComponent({
         style={{ width: `${this.tableWidth}px`, opacity: Number(this.showAffixHeader) }}
         class={{ [this.tableBaseClass.affixedHeaderElm]: this.headerAffixedTop || this.isVirtual }}
       >
-        <table class={this.tableElmClasses} style={{ ...this.tableElementStyles, width: `${this.tableWidth}px` }}>
+        <table class={this.tableElmClasses} style={{ ...this.tableElementStyles, width: `${this.tableElmWidth}px` }}>
           {colgroup}
           <THead
             scopedSlots={this.$scopedSlots}
@@ -236,9 +263,47 @@ export default defineComponent({
             spansAndLeafNodes={this.spansAndLeafNodes}
             thList={this.thList}
             thWidthList={this.thWidthList}
+            allowResizeColumnWidth={this.allowResizeColumnWidth}
+            columnResizeParams={this.columnResizeParams}
           />
         </table>
       </div>
+    );
+
+    let marginScrollbarWidth = this.isWidthOverflow ? this.scrollbarWidth : 0;
+    if (this.bordered) {
+      marginScrollbarWidth += 1;
+    }
+    // Hack: Affix 组件，marginTop 临时使用 负 margin 定位位置
+    const affixedFooter = Boolean(this.footerAffixedBottom && this.footData?.length && this.tableWidth) && (
+      <Affix
+        class={this.tableBaseClass.affixedFooterWrap}
+        props={this.footerAffixProps}
+        onFixedChange={this.onFixedChange}
+        offsetBottom={marginScrollbarWidth || 0}
+        style={{ marginTop: `${-1 * (this.tableFootHeight + marginScrollbarWidth)}px` }}
+      >
+        <div
+          ref="affixFooterRef"
+          style={{ width: `${this.tableWidth}px`, opacity: Number(this.showAffixFooter) }}
+          class={['scrollbar', { [this.tableBaseClass.affixedFooterElm]: this.footerAffixedBottom || this.isVirtual }]}
+        >
+          <table class={this.tableElmClasses} style={{ ...this.tableElementStyles, width: `${this.tableElmWidth}px` }}>
+            {colgroup}
+            <TFoot
+              rowKey={this.rowKey}
+              scopedSlots={this.$scopedSlots}
+              isFixedHeader={this.isFixedHeader}
+              rowAndColFixedPosition={rowAndColFixedPosition}
+              footData={this.footData}
+              columns={this.columns}
+              rowAttributes={this.rowAttributes}
+              rowClassName={this.rowClassName}
+              thWidthList={this.thWidthList}
+            ></TFoot>
+          </table>
+        </div>
+      </Affix>
     );
 
     const translate = `translate(0, ${this.scrollHeight}px)`;
@@ -263,21 +328,24 @@ export default defineComponent({
       rowHeight: this.rowHeight,
       trs: this.trs,
       bufferSize: this.bufferSize,
+      scroll: this.scroll,
+      tableContentElm: this.tableContentRef,
       handleRowMounted: this.handleRowMounted,
       renderExpandedRow: this.renderExpandedRow,
       ...pick(this.$props, extendTableProps),
     };
-    // Vue3 do not need getListenser
-    const on = this.getListenser();
+    // Vue3 do not need getListener
+    const on = this.getListener();
+    const scrollListener = this.isVirtual ? { scroll: this.onInnerVirtualScroll } : {};
     const tableContent = (
       <div
         ref="tableContentRef"
         class={this.tableBaseClass.content}
         style={this.tableContentStyles}
-        onScroll={this.onInnerScroll}
+        on={scrollListener}
       >
+        <div ref="resizeLineRef" class={this.tableBaseClass.resizeLine} style={this.resizeLineStyle}></div>
         {this.isVirtual && <div class={this.virtualScrollClasses.cursor} style={virtualStyle} />}
-
         <table ref="tableElmRef" class={this.tableElmClasses} style={this.tableElementStyles}>
           {colgroup}
           <THead
@@ -288,9 +356,12 @@ export default defineComponent({
             bordered={this.bordered}
             spansAndLeafNodes={this.spansAndLeafNodes}
             thList={this.thList}
+            allowResizeColumnWidth={this.allowResizeColumnWidth}
+            columnResizeParams={this.columnResizeParams}
           />
           <TBody scopedSlots={this.$scopedSlots} props={tableBodyProps} on={on} />
           <TFoot
+            rowKey={this.rowKey}
             scopedSlots={this.$scopedSlots}
             isFixedHeader={this.isFixedHeader}
             rowAndColFixedPosition={rowAndColFixedPosition}
@@ -318,6 +389,9 @@ export default defineComponent({
     );
 
     const topContent = this.renderTNode('topContent');
+    const bottomContent = this.renderTNode('bottomContent');
+    const pagination = this.renderPagination(h);
+    const bottom = !!bottomContent && <div class={this.tableBaseClass.bottomContent}>{bottomContent}</div>;
     return (
       <div ref="tableRef" class={this.dynamicBaseTableClasses} style="position: relative">
         {!!topContent && <div class={this.tableBaseClass.topContent}>{topContent}</div>}
@@ -333,6 +407,8 @@ export default defineComponent({
 
         {loadingContent}
 
+        {affixedFooter}
+
         {this.showRightDivider && (
           <div
             class={this.tableBaseClass.scrollbarDivider}
@@ -340,7 +416,8 @@ export default defineComponent({
           ></div>
         )}
 
-        {this.renderPagination(h)}
+        {bottom}
+        {pagination}
       </div>
     );
   },

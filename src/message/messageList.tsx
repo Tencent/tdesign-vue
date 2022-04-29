@@ -5,7 +5,7 @@ import { prefix } from '../config';
 import { MessageOptions } from './type';
 import { Styles } from '../common';
 
-export const DEFAULT_Z_INDEX = 6000;
+export const DEFAULT_Z_INDEX = 5000;
 
 const getUniqueId = (() => {
   let id = 0;

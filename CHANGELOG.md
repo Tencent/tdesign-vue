@@ -5,6 +5,109 @@ toc: false
 docClass: timeline
 ---
 
+## 0.41.0 `2022-04-24`
+
+### BREAKING CHANGES
+* Table: 拖拽排序修改为`drag=sort` 表示列拖拽排序，`drag=row` 表示行拖拽排序，`drag=row-handler` 表示行手柄列拖拽排序。如果您使用了 `drag="col"` 来实现行拖拽排序，请更为使用 `drag="row-handler"`，[pr #755](https://github.com/Tencent/tdesign-vue/pull/755)，[@chaishi](https://github.com/chaishi)
+
+### Bug Fixes
+* Table: 
+  - 修复 SSR 场景下使用报错的问题，[pr #744](https://github.com/Tencent/tdesign-vue/pull/744)，[@codenotkey](https://github.com/codenotkey)
+  - 修复表头吸顶时不对齐的问题
+  - 按需引入 Button 组件，避免业务按需引入 Table 组件时出现组件不存在报错的问题
+  - 修复无法使用插槽自定义过滤图标的问题
+  - 解决 `TdBaseTableProps ` 和 `TdPrimaryTableProps` 关于 `onCellClick` 的 TS 类型冲突
+* Alert: 修复 ts 类型错误，[pr #796](https://github.com/Tencent/tdesign-vue/pull/796)，[@pengYYYYY](https://github.com/pengYYYYY)
+* Cascader: [pr #751](https://github.com/Tencent/tdesign-vue/pull/751)，[@pengYYYYY](https://github.com/pengYYYYY) 
+  - 修复可过滤状态下的下拉面板拉起闪烁的问题
+  - 修复可过滤状态下的输入内容未被正常销毁的问题
+* Transfer: 修复 `Transfer` 设置 `targetSort` 后未按预期展示的问题，[#758](https://github.com/Tencent/tdesign-vue/pull/758)，[@BigLiao](https://github.com/BigLiao)
+* ConfigProvider: 修复 `ConfigProvider` 组件导出错误的问题，[pr #773](https://github.com/Tencent/tdesign-vue/pull/773)，[@xiaosansiji](https://github.com/xiaosansiji)
+* TreeSelect: [pr #781](https://github.com/Tencent/tdesign-vue/pull/781)，[@Godlike-meteor](https://github.com/Godlike-meteor)
+  - 修复 `value` 为数字0时，不渲染 `label` 的问题，[issue #722](https://github.com/Tencent/tdesign-vue/issues/722)
+  - 修复 `onBlur` 和 `onClear` 触发时，不会清除 filter function 的问题，[issue #635](https://github.com/Tencent/tdesign-vue/issues/635)
+### Features
+* Select: 去掉选中和下拉项中的 title 属性，[pr #777](https://github.com/Tencent/tdesign-vue/pull/777)，[@LoopZhou](https://github.com/LoopZhou) 
+* Table: 支持树形结构展示，行展开或收起时触发 `onTreeExpandChange` 事件
+* Collapse: 新增 Collapse 折叠面板组件，使用请参照 [官网](https://tdesign.tencent.com/vue/components/collapse)，[@asbstty](https://github.com/asbstty)
+* Tree: [pr #740](https://github.com/Tencent/tdesign-vue/pull/740)，[@TabSpace](https://github.com/TabSpace)
+  - Tree 组件实现嵌套结构渲染能力
+  - 部分属性改为不让 Vue 监听，一定程度上提升组件性能，减少对外部组件交互性能的影响
+
+## 0.40.3 `2022-04-15`
+
+### Bug Fixes
+
+* Timepicker: 修复手动清空 value 时异常的问题，[pr #731](https://github.com/Tencent/tdesign-vue/pull/731)，[@uyarn](https://github.com/uyarn)
+* Textarea: 修复输入数字零时显示异常的问题，[issue #727](https://github.com/Tencent/tdesign-vue/issues/727)，[@mokywu](https://github.com/mokywu)
+* Menu: 修复局部注册组件时报错的问题，[issue #696](https://github.com/Tencent/tdesign-vue/issues/696)，[@LeeJim](https://github.com/LeeJim)
+* Select: 修复可过滤的选择器提前换行的问题，[issue #726](https://github.com/Tencent/tdesign-vue/issues/726)，[@uyarn](https://github.com/uyarn)
+### Features
+
+* Form: 默认渲染 extra DOM 节点，[pr #730](https://github.com/Tencent/tdesign-vue/pull/730)，[@HQ-Lin](https://github.com/HQ-Lin)
+* Dialog: 新增 `showInAttachedElement` API 用于控制是否仅在挂载元素中显示弹窗，[pr #711](https://github.com/Tencent/tdesign-vue/pull/711)，[@zhaodanchun](https://github.com/zhaodanchun)
+* Card: 新增卡片组件，[pr #739](https://github.com/Tencent/tdesign-vue/pull/739)，[@uyarn](https://github.com/uyarn)，[@zhwachen](https://github.com/zhwachen)
+* Swiper: 新增轮播框组件，[pr #668](https://github.com/Tencent/tdesign-vue/pull/668)，[@start940315](https://github.com/start940315)
+
+## 0.40.2 `2022-04-08`
+
+### Bug Fixes
+
+* Form: 修复 FormItem slot label 未正常占位的问题，[pr #699](https://github.com/Tencent/tdesign-vue/pull/699)，[@HQ-Lin](https://github.com/HQ-Lin)
+* Slider: 修复设置 `inputnumberProps` 属性无效的问题，[issue #544](https://github.com/Tencent/tdesign-vue-next/issues/544)，[@uyarn](https://github.com/uyarn)
+* Upload: [pr #698](https://github.com/Tencent/tdesign-vue/pull/698)，[@uyarn](https://github.com/uyarn)
+  - 修复 `remove`、`selectChange` 事件回调异常的问题
+  - 修复取消上传逻辑异常
+### Features
+
+* Popup: content 尺寸变化后自动更新位置，[pr #694](https://github.com/Tencent/tdesign-vue/pull/694)，[@ikeq](https://github.com/ikeq)
+* Slider: `label` 为 function 时新增 `value` 和 `position` 参数，[pr #714](https://github.com/Tencent/tdesign-vue/pull/714)，[@uyarn](https://github.com/uyarn)
+* Upload: [pr #698](https://github.com/Tencent/tdesign-vue/pull/698)，[@uyarn](https://github.com/uyarn)
+  - 支持自定义上传文件列表
+  - 列表型上传支持展示 `errorMessage`
+* Checkbox: [pr #706](https://github.com/Tencent/tdesign-vue/pull/706)，[@chaishi](https://github.com/chaishi)
+  - onChange 事件新增参数 `option` 表示当前操作对象，`current` 表示当前操作对象的 value
+  - `type.ts` 新增 `modelValue`
+* Table: [pr #706](https://github.com/Tencent/tdesign-vue/pull/706)，[@chaishi](https://github.com/chaishi)
+  - 表格拖拽排序支持完全受控用法，[pr #694](https://github.com/Tencent/tdesign-vue/pull/694)，[@wangmerry](https://github.com/wangmerry)
+  - 列配置功能，`onColumnChange` 事件新增参数 e 和 currentColumn
+  - 列配置功能，新增 `buttonProps` ，用于支持完全自定义「列配置按钮」风格和内容
+  - 列配置功能，新增 `placement`，用于控制「列配置按钮 」相对于表格组件的位置，可选值：左上角、右上角、左下角、右下角
+  - 列配置功能，新增控制列配置弹窗显示或隐藏属性 `columnControllerVisible` 和 `onColumnControllerVisibleChange`，将主要应用于完全需要自定义列配置按钮的业务场景
+  - BaseTable/Primary/Table/EnhancedTable `新增 bottomContent`，用于设置表格底部内容
+  - 修复当数据量过少时，过滤浮层被隐藏的问题，修复 Safari 浏览器无法显示省略浮层问题
+  - 树形结构中，新增 `toggleExpandData` ，用于控制行展开，[issue#607](https://github.com/Tencent/tdesign-vue/issues/607)
+  - 树形结构中，无法获取到正确的 rowKey 时，抛出错误，提醒用户修改，[issue#682](https://github.com/Tencent/tdesign-vue/issues/682)
+  - `table-layout: fixed` 模式，且内容超出时，设置默认列宽为 `100`，避免出现列宽为 `0` 消失的情况
+  - 即使没有行选中列，依然支持 selectedRowKeys 添加类名，[issue#700](https://github.com/Tencent/tdesign-vue/issues/700)
+  - 行选中和行类名透传，同时存在时，自定义行类名透传失效问题
+  - 修复 tfoot>tr 类名透传失效问题
+
+## 0.40.1 `2022-03-31`
+
+### Bug Fixes
+
+* Table: 修复本地数据排序，异步加载数据时分页失效的问题，[pr #689](https://github.com/Tencent/tdesign-vue/pull/689)，[@chaishi](https://github.com/chaishi)
+
+## 0.40.0 `2022-03-31`
+### BREAKING CHANGES
+* Table: 表格行列拖拽排序功能重构，新用法请参考[官网 demo](https://tdesign.tencent.com/vue/components/table#%E5%8F%AF%E6%8B%96%E6%8B%BD%E6%8E%92%E5%BA%8F%E7%9A%84%E8%A1%A8%E6%A0%BC)，[pr #657](https://github.com/Tencent/tdesign-vue/pull/657)，[@wangmerry](https://github.com/wangmerry)
+* Form: label 为空时不再默认渲染宽度占位，需要手动设置样式保持表单对齐[pr #687](https://github.com/Tencent/tdesign-vue/pull/687)，[@HQ-Lin](https://github.com/HQ-Lin)
+### Bug Fixes
+
+* Popconfirm: 修复确认框中按钮默认大小，[pr #673](https://github.com/Tencent/tdesign-vue/pull/673)，[@pengYYYYY](https://github.com/pengYYYYY)
+* Upload:
+  - 修复上传中状态文案，[pr #678](https://github.com/Tencent/tdesign-vue/pull/678)，[@pengYYYYY](https://github.com/pengYYYYY)
+  - 修复上传模版问题，[issue #675](https://github.com/Tencent/tdesign-vue/issues/675)，[@YikaJ](https://github.com/YikaJ)
+* Popup: 修复 `hideEmptyPopup` 在动态改变内容时不生效的问题，[@LoopZhou](https://github.com/LoopZhou)
+* Table: 修复合并单元格边框样式问题，[issue #671](https://github.com/Tencent/tdesign-vue/issues/671)，[@chaishi](https://github.com/chaishi)
+* Datepicker: 修复区间时间选择时，月份/年份选择面板样式异常的问题，[issue #588](https://github.com/Tencent/tdesign-vue/issues/588)，[@HQ-Lin](https://github.com/HQ-Lin)
+* 修复 Table/SelectInput/TagInput 按需引入时出现 composition-api 相关报错的问题，[pr #688](https://github.com/Tencent/tdesign-vue/pull/688)，[@xiaosansiji](https://github.com/xiaosansiji)
+
+### Features
+
+* Table: 支持外部设置当前显示列，新增 API `displayColumns` `defaultDisplayColumns` `onDisplayColumnsChange` 和事件 `display-columns-change`，[pr #672](https://github.com/Tencent/tdesign-vue/pull/672)，[@chaishi](https://github.com/chaishi)
+
 ## 0.39.1 `2022-03-29`
 
 ### Bug Fixes
@@ -32,7 +135,7 @@ docClass: timeline
 Table 组件使用 `Composition API` 重构，[pr #365](https://github.com/Tencent/tdesign-vue/pull/365)，[@chaishi](https://github.com/chaishi)
 - BaseTable HTML 结构变更，写过 CSS 样式覆盖的同学需注意更新样式
 - 表头更为使用 `th` 标签，之前为 `td`，不符合语义
-- 事件 `row-db-click` 更为`row-dblclick` ，`onRowDbClick` 更为`rowDblclick`
+- 事件 `row-db-click` 更为`row-dblclick` ，`onRowDbClick` 更为`onRowDblclick`
 - 事件 `row-hover` 更为 `row-mouseover`, `onRowHover` 更为 `onRowMouseover`（本没有 rowHover 事件）
 - CSS 类名 `t-table__row-first-full-row` 更为 `t-table__first-full-row`，`t-table__row-last-full-row` 更为 `t-table__last-full-row`
 

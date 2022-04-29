@@ -14,7 +14,7 @@ export type SortMap = Record<string, SortInfo & { index: number }>;
 export default function useSorter(props: TdPrimaryTableProps, { emit, slots }: SetupContext) {
   const { sort, data } = toRefs(props);
   const originalData = ref();
-  // uncontroll and controll
+  // uncontrol and control
   const [tSortInfo, setTSortInfo] = useDefaultValue(sort, props.defaultSort, props.onSortChange, 'sort', 'sort-change');
   const [tData, setTData] = useDefaultValue(data, [], props.onDataChange, 'data', 'data-change');
   // 本地数据排序：用于记录哪些字段是自定义排序函数
@@ -62,12 +62,12 @@ export default function useSorter(props: TdPrimaryTableProps, { emit, slots }: S
       setTData(originalData.value, { trigger: 'sort' });
       return originalData.value;
     }
-    const formatedSort = sort instanceof Array ? sort : [sort];
+    const formattedSort = sort instanceof Array ? sort : [sort];
     // data 为受控属性，data.slice() 浅拷贝，防止 sort 导致原数据变异
     const newData: TableRowData[] = tData.value.slice().sort((a: TableRowData, b: TableRowData) => {
       let sortResult = 0;
-      for (let i = 0, len = formatedSort.length; i < len; i++) {
-        const item = formatedSort[i];
+      for (let i = 0, len = formattedSort.length; i < len; i++) {
+        const item = formattedSort[i];
         const sortFunc = sorterFuncMap.value[item.sortBy];
         // 上一个排序字段值相同时才会进行下一个字段的大小对比
         if (sortResult === 0 && sortFunc) {

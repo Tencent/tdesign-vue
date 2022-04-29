@@ -569,7 +569,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
             ? elWidth
             : Math.min(DEFAULT_MAX_OVERLAY_WIDTH, Math.max(elWidth, popupWidth));
           Vue.set(this.defaultProps, 'overlayStyle', { width: `${Math.ceil(width)}px` });
-          // issuse-549 弹出层出现滚动条时，需要加上滚动条宽度，否则会挤压宽度，导致出现省略号
+          // isuse-549 弹出层出现滚动条时，需要加上滚动条宽度，否则会挤压宽度，导致出现省略号
           if (this.checkScroll) {
             const timer = setTimeout(() => {
               const { scrollHeight, clientHeight } = this.getOverlayElm();
@@ -788,7 +788,6 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
                     disabled={tDisabled}
                     style="max-width: 100%;"
                     maxWidth="100%"
-                    title={get(item, realLabel)}
                     onClose={this.removeTag.bind(null, index)}
                   >
                     {get(item, realLabel)}
@@ -807,11 +806,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
                 {`+${selectedMultiple.length - this.minCollapsedNum}`}
               </tag>
             )}
-            {!multiple && !showPlaceholder && !showFilter && (
-              <span title={selectedSingle} class={`${name}__single`}>
-                {selectedSingle}
-              </span>
-            )}
+            {!multiple && !showPlaceholder && !showFilter && <span class={`${name}__single`}>{selectedSingle}</span>}
             {showFilter && (
               <t-input
                 ref="input"

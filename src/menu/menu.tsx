@@ -106,7 +106,7 @@ export default defineComponent({
     watch(() => props.value, updateActiveValues);
     watch(() => props.defaultValue, updateActiveValues);
 
-    // timelifes
+    // lifecycle
     onMounted(() => {
       activeValues.value = vMenu.select(activeValue.value);
     });

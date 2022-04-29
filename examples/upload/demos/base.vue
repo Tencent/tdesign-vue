@@ -9,10 +9,10 @@
     v-model="files"
     action="https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo"
     tips="上传文件大小在 5M 以内"
-    :sizeLimit="{ size: 5, unit: 'MB' }"
+    :sizeLimit="{ size: 5, unit: 'MB', message: '请上传文件大小在 5M 以内的文件' }"
     :format-response="formatResponse"
     @fail="handleFail"
-  ></t-upload>
+  />
 </template>
 <script>
 export default {
