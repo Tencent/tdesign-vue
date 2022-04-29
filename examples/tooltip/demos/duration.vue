@@ -1,36 +1,34 @@
 <template>
   <div>
-    <t-tooltip default-visible :content="`提示在 ${count} 秒后消失`" :duration="5000" :key="reset">
-      <t-button variant="text" disabled>定时消失</t-button>
+    <t-tooltip default-visible :content="`提示在 ${timeout} 秒后消失`" :duration="5000" :key="renderId">
+      <t-button variant="outline" :disabled="timeout" @click="renderId += 1">定时消失</t-button>
     </t-tooltip>
-    <t-button variant="outline" @click="setTimer" v-if="!count">点击再次查看</t-button>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      count: 0,
-      reset: true,
+      timeout: 0,
+      renderId: 0,
     };
   },
-  created() {
-    this.setTimer();
-  },
-  methods: {
-    setTimer() {
-      this.reset = !this.reset;
-      this.count = 5;
-      const timer = setInterval(() => {
-        this.count -= 1;
-        if (this.count <= 0) {
-          clearInterval(timer);
-        }
-      }, 1000);
-      this.$on('hook:beforeDestroy', () => {
-        clearInterval(timer);
-      });
+  watch: {
+    renderId: {
+      immediate: true,
+      handler() {
+        this.timeout = 5;
+        this.timer = setInterval(() => {
+          this.timeout -= 1;
+          if (this.timeout <= 0) {
+            clearInterval(this.timer);
+          }
+        }, 1000);
+      },
     },
+  },
+  destroyed() {
+    clearInterval(this.timer);
   },
 };
 </script>

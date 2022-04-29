@@ -161,7 +161,7 @@ exports[`Tooltip Tooltip baseVue demo works fine 1`] = `
 exports[`Tooltip Tooltip durationVue demo works fine 1`] = `
 <div>
   <button
-    class="t-button t-size-m t-button--variant-text t-button--theme-default t-is-disabled"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled"
     disabled="disabled"
     type="button"
     visible="visible"
@@ -172,8 +172,6 @@ exports[`Tooltip Tooltip durationVue demo works fine 1`] = `
       定时消失
     </span>
   </button>
-   
-  <!---->
 </div>
 `;
 
