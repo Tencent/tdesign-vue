@@ -2,7 +2,7 @@
 <template>
   <base-usage :code="usageCode" :config-list="configList" :panel-list="panelList" @PanelChange="onPanelChange">
     <template #popconfirm="{ configProps }">
-      <t-popconfirm v-bind="configProps" content="确认删除吗">
+      <t-popconfirm v-bind="configProps" :visible="true" content="确认删除吗">
         <t-button>删除</t-button>
       </t-popconfirm>
     </template>
@@ -19,7 +19,7 @@ const panelList = [{ label: 'popconfirm', value: 'popconfirm' }];
 
 const usageCodeMap = {
   popconfirm:
-    '\n        <t-popconfirm v-bind="configProps" content="确认删除吗">\n          <t-button>删除</t-button>\n        </t-popconfirm>\n      ',
+    '\n        <t-popconfirm v-bind="configProps" :visible="true" content="确认删除吗">\n          <t-button>删除</t-button>\n        </t-popconfirm>\n      ',
 };
 const usageCode = ref(`<template>${usageCodeMap[panelList[0].value].trim()}</template>`);
 

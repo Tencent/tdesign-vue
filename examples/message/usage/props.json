@@ -2,7 +2,7 @@
   {
     "name": "closeBtn",
     "type": "Boolean",
-    "defaultValue": true,
+    "defaultValue": false,
     "options": []
   },
   {

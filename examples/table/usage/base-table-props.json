@@ -1,5 +1,11 @@
 [
   {
+    "name": "allowResizeColumnWidth",
+    "type": "Boolean",
+    "defaultValue": false,
+    "options": []
+  },
+  {
     "name": "bordered",
     "type": "Boolean",
     "defaultValue": false,
@@ -12,7 +18,7 @@
     "options": []
   },
   {
-    "name": "footAffixedBottom",
+    "name": "footerAffixedBottom",
     "type": "Boolean",
     "defaultValue": false,
     "options": []

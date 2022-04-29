@@ -571,7 +571,7 @@ module.exports = {
     panelStr: `const panelList = [{label: 'popconfirm', value: 'popconfirm'}];`,
     render: {
       popconfirm: `
-        <t-popconfirm v-bind="configProps" content="确认删除吗">
+        <t-popconfirm v-bind="configProps" :visible="true" content="确认删除吗">
           <t-button>删除</t-button>
         </t-popconfirm>
       `,
@@ -584,6 +584,21 @@ module.exports = {
         <t-popup content="这是一个弹出框" v-bind="configProps">
           <t-button>按钮</t-button>
         </t-popup>
+      `,
+    },
+  },
+  collapse: {
+    panelStr: `const panelList = [{label: 'collapse', value: 'collapse'}];`,
+    render: {
+      collapse: `
+        <t-collapse v-bind="configProps">
+          <t-collapse-panel header="这是一个折叠标题">
+            这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
+          </t-collapse-panel>
+          <t-collapse-panel header="这是一个折叠标题">
+            这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
+          </t-collapse-panel>
+        </t-collapse>
       `,
     },
   },
