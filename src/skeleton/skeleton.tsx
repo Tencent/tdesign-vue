@@ -43,10 +43,37 @@ export default Vue.extend({
   props: { ...props },
 
   data() {
-    return {};
+    return {
+      delayShowLoading: this.delay <= 0 ? this.loading : false,
+      delayTimer: 0,
+    };
+  },
+
+  watch: {
+    loading: {
+      handler(val: boolean) {
+        if (this.delay <= 0) {
+          this.delayShowLoading = this.loading;
+          return;
+        }
+        this.handleDelay(val);
+      },
+      immediate: true,
+    },
   },
 
   methods: {
+    handleDelay(loading: boolean) {
+      if (loading) {
+        clearTimeout(this.delayTimer);
+        this.delayTimer = window.setTimeout(() => {
+          this.delayShowLoading = this.loading;
+        }, this.delay);
+      } else {
+        this.delayShowLoading = loading;
+      }
+    },
+
     renderCols(_cols: Number | SkeletonRowColObj | Array<SkeletonRowColObj>) {
       const getColItemClass = (obj: SkeletonRowColObj): ClassName => [
         `${name}__col`,
@@ -107,10 +134,10 @@ export default Vue.extend({
   render() {
     const content = renderContent(this, 'default', 'content');
 
-    if (this.$scopedSlots.default && !this.loading) {
+    if (this.$scopedSlots.default && !this.delayShowLoading) {
       return <div>{content}</div>;
     }
-    if (!this.loading) {
+    if (!this.delayShowLoading) {
       return;
     }
 
