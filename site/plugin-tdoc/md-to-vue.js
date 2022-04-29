@@ -111,7 +111,7 @@ export default function mdToVue(options) {
           }
 
           Prismjs.highlightAll();
-    
+
           this.$emit('loaded', () => {
             tdDocContent.pageStatus = 'show';
           });
