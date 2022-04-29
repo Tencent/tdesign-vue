@@ -1,7 +1,7 @@
-import Vue, { VNodeDirective } from 'vue';
+import Vue from 'vue';
 import { createPopper, Placement } from '@popperjs/core';
 import { prefix } from '../config';
-import CLASSNAMES from '../utils/classnames';
+import commonCls from '../utils/classnames';
 import { on, off, once } from '../utils/dom';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import { getIEVersion } from '../utils/helper';
@@ -10,7 +10,7 @@ import props from './props';
 import { PopupVisibleChangeContext, TdPopupProps } from './type';
 import Container from './container';
 
-const name = `${prefix}-popup`;
+const prefixCls = `${prefix}-popup`;
 const showTimeout = 250;
 const hideTimeout = 150;
 const triggers = ['click', 'hover', 'focus', 'context-menu'] as const;
@@ -47,7 +47,7 @@ export default Vue.extend({
       /** popperjs instance */
       popper: null as ReturnType<typeof createPopper>,
       /** timeout id */
-      timeout: null,
+      timeoutId: null,
       hasDocumentEvent: false,
       /** if a trusted action (opening or closing) is prevented, increase this flag */
       visibleState: 0,
@@ -61,13 +61,13 @@ export default Vue.extend({
     };
   },
   computed: {
-    overlayClasses(): any {
+    overlayCls(): any {
       return [
-        `${name}__content`,
+        `${prefixCls}__content`,
         {
-          [`${name}__content--text`]: this.content === 'string',
-          [`${name}__content--arrow`]: this.showArrow,
-          [CLASSNAMES.STATUS.disabled]: this.disabled,
+          [`${prefixCls}__content--text`]: typeof this.content === 'string',
+          [`${prefixCls}__content--arrow`]: this.showArrow,
+          [commonCls.STATUS.disabled]: this.disabled,
         },
         this.overlayClassName,
       ];
@@ -153,20 +153,20 @@ export default Vue.extend({
       });
     }
   },
-  updated() {
-    (this.$refs.container as any)?.updateContent();
-  },
   destroyed() {
     this.destroyPopper();
   },
   methods: {
-    createPopper() {
+    updatePopper() {
       const { $el: triggerEl } = this;
-      const popperEl = this.$refs.popper as HTMLElement;
+      const popperEl = this.$refs.popperEl as HTMLElement;
 
-      if (!popperEl) return;
+      if (!popperEl || !this.visible) return;
 
-      this.popper?.destroy();
+      if (this.popper) {
+        this.popper.update();
+        return;
+      }
 
       this.popper = createPopper(triggerEl, popperEl, {
         modifiers:
@@ -190,14 +190,6 @@ export default Vue.extend({
       });
     },
 
-    updatePopper() {
-      if (this.popper) {
-        this.popper.update();
-        return;
-      }
-      this.createPopper();
-    },
-
     updateOverlayStyle() {
       const { overlayStyle } = this;
       const triggerEl = this.$el as HTMLElement;
@@ -218,7 +210,7 @@ export default Vue.extend({
       this.popper?.destroy();
       this.popper = null;
       if (this.destroyOnClose) {
-        (this.$refs.container as any)?.unmountContent();
+        (this.$refs.containerRef as any)?.unmountContent();
       }
     },
 
@@ -226,21 +218,21 @@ export default Vue.extend({
       this.emitPopVisible(!this.visible, context);
     },
     handleOpen(context: Pick<PopupVisibleChangeContext, 'trigger'>) {
-      clearTimeout(this.timeout);
-      this.timeout = setTimeout(
+      clearTimeout(this.timeoutId);
+      this.timeoutId = setTimeout(
         () => {
           this.emitPopVisible(true, context);
         },
-        this.hasTrigger.click ? 0 : showTimeout,
+        this.hasTrigger.hover ? showTimeout : 0,
       );
     },
     handleClose(context: Pick<PopupVisibleChangeContext, 'trigger'>) {
-      clearTimeout(this.timeout);
-      this.timeout = setTimeout(
+      clearTimeout(this.timeoutId);
+      this.timeoutId = setTimeout(
         () => {
           this.emitPopVisible(false, context);
         },
-        this.hasTrigger.click ? 0 : hideTimeout,
+        this.hasTrigger.hover ? hideTimeout : 0,
       );
     },
     handleDocumentClick() {
@@ -284,16 +276,6 @@ export default Vue.extend({
         parent.onMouseLeave(ev);
       }
     },
-    onBeforeEnter() {
-      if (this.visible) {
-        this.updatePopper();
-      }
-    },
-    onAfterEnter() {
-      if (this.visible) {
-        this.updatePopper();
-      }
-    },
     preventClosing(preventing: boolean) {
       const parent = (this as any).popup;
       parent?.preventClosing(preventing);
@@ -315,7 +297,6 @@ export default Vue.extend({
     const {
       visible, destroyOnClose, hasTrigger, onScroll,
     } = this;
-    const ref = renderContent(this, 'default', 'triggerElement');
     const content = renderTNodeJSX(this, 'content');
     const hidePopup = this.hideEmptyPopup && ['', undefined, null].includes(content);
 
@@ -323,19 +304,12 @@ export default Vue.extend({
       ? h(
         'div',
         {
-          class: name,
-          ref: 'popper',
-          style: destroyOnClose && hidePopup ? { display: 'none' } : undefined,
-          directives: destroyOnClose
-            ? undefined
-            : [
-                    {
-                      name: 'show',
-                      rawName: 'v-show',
-                      value: visible && !hidePopup,
-                      expression: 'visible',
-                    } as VNodeDirective,
-            ],
+          class: prefixCls,
+          ref: 'popperEl',
+          style: hidePopup && { visibility: 'hidden', pointerEvents: 'none' },
+          ...(!destroyOnClose && {
+            directives: [{ name: 'show', value: visible && !hidePopup }],
+          }),
           on: {
             mousedown: () => {
               this.contentClicked = true;
@@ -357,17 +331,15 @@ export default Vue.extend({
           h(
             'div',
             {
-              class: this.overlayClasses,
+              class: this.overlayCls,
               ref: 'overlay',
-              on: onScroll
-                ? {
-                  scroll(e: WheelEvent) {
-                    onScroll({ e });
-                  },
-                }
-                : undefined,
+              ...(onScroll && {
+                onScroll(e: WheelEvent) {
+                  onScroll({ e });
+                },
+              }),
             },
-            [content, this.showArrow && h('div', { class: `${name}__arrow` })],
+            [content, this.showArrow && h('div', { class: `${prefixCls}__arrow` })],
           ),
         ],
       )
@@ -375,33 +347,29 @@ export default Vue.extend({
 
     return (
       <Container
-        ref="container"
+        ref="containerRef"
         onContentMounted={() => {
           if (visible) {
             this.updatePopper();
             this.updateOverlayStyle();
           }
         }}
-        onResize={() => {
-          if (visible) {
-            this.updatePopper();
-          }
-        }}
+        onResize={this.updatePopper}
         parent={this}
         visible={visible}
         attach={this.attach}
       >
         <transition
           slot="content"
-          name={this.expandAnimation ? `${name}--animation-expand` : `${name}--animation`}
+          name={this.expandAnimation ? `${prefixCls}--animation-expand` : `${prefixCls}--animation`}
           appear
-          onBeforeEnter={this.onBeforeEnter}
-          onAfterEnter={this.onAfterEnter}
+          onBeforeEnter={this.updatePopper}
+          onAfterEnter={this.updatePopper}
           onAfterLeave={this.destroyPopper}
         >
           {overlay}
         </transition>
-        {ref}
+        {renderContent(this, 'default', 'triggerElement')}
       </Container>
     );
   },

@@ -76,6 +76,9 @@ export default Vue.extend({
       }
     });
   },
+  updated() {
+    this.updateContent();
+  },
   destroyed() {
     this.unmountContent();
   },
