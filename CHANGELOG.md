@@ -1,3 +1,17 @@
+### 0.41.1 2022-04-29 
+### 🚀 Features
+- `Message`: 增加全局配置默认值能力 [@sommouns](https://github.com/sommouns) ([#795](https://github.com/Tencent/tdesign-vue/pull/795))
+- `Pagination`: 新增 `showFirstAndLastPageBtn`、`showPreviousAndNextBtn`、`showPageSize`、`showPageNumber` 属性 [@HQ-Lin](https://github.com/HQ-Lin) ([#808](https://github.com/Tencent/tdesign-vue/pull/808))
+- `Table`: 
+    - 支持表尾吸底及表尾滚动条吸底 [@chaishi](https://github.com/chaishi) ([#810](https://github.com/Tencent/tdesign-vue/pull/810))
+    - 支持表格列可以拖拽宽度 [@tinna3445](https://github.com/tinna3445) ([#757](https://github.com/Tencent/tdesign-vue/pull/757))
+### 🐞 Bug Fixes
+- `Form`: 修复 help 文本样式问题 [@HQ-Lin](https://github.com/HQ-Lin) ([#803](https://github.com/Tencent/tdesign-vue/pull/803))
+- `Dialog`: 修复 dialog 初始化时滚动穿透问题 [@mxj0808](https://github.com/mxj0808) ([#788](https://github.com/Tencent/tdesign-vue/pull/788))
+- `Table`:  表头吸顶时，`table` 元素宽度修正，之前为直接等于外层宽度，不合理 [@chaishi](https://github.com/chaishi) ([#810](https://github.com/Tencent/tdesign-vue/pull/810))
+- `Table`: 修复斑马纹 stripe 和固定表头同时存在时，样式问题，[issue#804](https://github.com/Tencent/tdesign-vue/issues/804) [@chaishi](https://github.com/chaishi) ([#810](https://github.com/Tencent/tdesign-vue/pull/810))
+- `DatePicker`:  修复DatePicker 点击快捷选择日期按钮左边面板日期时间不联动 [@yilaierwang](https://github.com/yilaierwang) ([#811](https://github.com/Tencent/tdesign-vue/pull/811))
+- 防止 `VueCompositionAPI` 重复注册 [@cong-min](https://github.com/cong-min) ([#809](https://github.com/Tencent/tdesign-vue/pull/809))
 ---
 title: 更新日志
 spline: explain
