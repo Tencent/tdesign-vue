@@ -261,7 +261,9 @@ export default mixins(getConfigReceiverMixins<TimePickerInstance, TimePickerConf
     handleTInputFocus() {
       // TODO: 待改成select-input后删除
       // hack 在input聚焦时马上blur 避免出现输入光标
-      (this.$refs.tInput as HTMLInputElement).blur();
+      this.$nextTick(() => {
+        (this.$refs.tInput as HTMLInputElement).blur();
+      });
     },
     renderInput() {
       const classes = [

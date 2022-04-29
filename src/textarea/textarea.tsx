@@ -184,7 +184,9 @@ export default Vue.extend({
           style={this.textareaStyle}
           ref="refTextareaElem"
         ></textarea>
-        {this.maxcharacter && <span class={TEXTAREA_LIMIT}>{`${this.characterNumber}/${this.maxcharacter}`}</span>}
+        {this.maxcharacter ? (
+          <span class={`${name}__limit`}>{`${this.characterNumber}/${this.maxcharacter}`}</span>
+        ) : null}
         {!this.maxcharacter && this.maxlength ? (
           <span class={TEXTAREA_LIMIT}>{`${this.value ? String(this.value)?.length : 0}/${this.maxlength}`}</span>
         ) : null}

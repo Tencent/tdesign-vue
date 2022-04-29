@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Input addon demo works fine 1`] = `
+exports[`Input Input addonVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column"
   style="max-width: 500px;"
@@ -87,7 +87,90 @@ exports[`Input addon demo works fine 1`] = `
 </div>
 `;
 
-exports[`Input base demo works fine 1`] = `
+exports[`Input Input alignVue demo works fine 1`] = `
+<div
+  class="tdesign-demo-block-column"
+  style="max-width: 300px;"
+>
+  <div
+    class="t-input__wrap"
+  >
+    <div
+      class="t-input t-size-m"
+    >
+      <input
+        autocomplete=""
+        class="t-input__inner"
+        placeholder="请输入"
+        type="text"
+        unselectable="off"
+      />
+    </div>
+  </div>
+   
+  <div
+    class="t-input__wrap"
+  >
+    <div
+      class="t-input t-size-m t-align-center"
+    >
+      <input
+        autocomplete=""
+        class="t-input__inner"
+        placeholder="请输入"
+        type="text"
+        unselectable="off"
+      />
+    </div>
+  </div>
+   
+  <div
+    class="t-input__wrap"
+  >
+    <div
+      class="t-input t-size-m t-align-right"
+    >
+      <input
+        autocomplete=""
+        class="t-input__inner"
+        placeholder="请输入"
+        type="text"
+        unselectable="off"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Input Input autoWidthVue demo works fine 1`] = `
+<div
+  class="tdesign-demo-block-column"
+  style="max-width: 500px;"
+>
+  <div
+    class="t-input__wrap"
+  >
+    <div
+      class="t-input t-size-m t-input--auto-width"
+    >
+      <input
+        autocomplete=""
+        class="t-input__inner"
+        placeholder="请输入"
+        type="text"
+        unselectable="off"
+      />
+      <span
+        class="t-input__input-pre"
+      >
+        宽度自适应
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Input Input baseVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column"
   style="max-width: 500px;"
@@ -152,7 +235,76 @@ exports[`Input base demo works fine 1`] = `
 </div>
 `;
 
-exports[`Input group demo works fine 1`] = `
+exports[`Input Input clearableVue demo works fine 1`] = `
+<div
+  class="tdesign-demo-block-column"
+  style="max-width: 500px;"
+>
+  <div
+    class="t-input__wrap"
+  >
+    <div
+      class="t-input t-size-m"
+    >
+      <input
+        autocomplete=""
+        class="t-input__inner"
+        placeholder="请输入"
+        type="text"
+        unselectable="off"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Input Input focusVue demo works fine 1`] = `
+<div
+  class="tdesign-demo-block-column"
+  style="max-width: 500px;"
+>
+  <div
+    class="t-input__wrap"
+  >
+    <div
+      class="t-input t-size-m"
+    >
+      <input
+        autocomplete=""
+        class="t-input__inner"
+        placeholder="请输入内容"
+        type="text"
+        unselectable="off"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Input Input formatVue demo works fine 1`] = `
+<div
+  class="tdesign-demo-block-column"
+  style="max-width: 500px;"
+>
+  <div
+    class="t-input__wrap"
+  >
+    <div
+      class="t-input t-size-m"
+    >
+      <input
+        autocomplete=""
+        class="t-input__inner"
+        placeholder="请输入数字"
+        type="text"
+        unselectable="off"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Input Input groupVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column"
   style="max-width: 500px;"
@@ -354,7 +506,36 @@ exports[`Input group demo works fine 1`] = `
 </div>
 `;
 
-exports[`Input password demo works fine 1`] = `
+exports[`Input Input maxLengthCountVue demo works fine 1`] = `
+<div
+  class="tdesign-demo-block-column"
+  style="max-width: 500px;"
+>
+  <div
+    class="t-input__wrap"
+  >
+    <div
+      class="t-input t-size-m t-input--suffix"
+    >
+      <input
+        autocomplete=""
+        class="t-input__inner"
+        maxlength="5"
+        placeholder="请输入"
+        type="text"
+        unselectable="off"
+      />
+      <div
+        class="t-input__suffix"
+      >
+        0/5
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Input Input passwordVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column"
   style="max-width: 500px;"
@@ -481,7 +662,7 @@ exports[`Input password demo works fine 1`] = `
 </div>
 `;
 
-exports[`Input size demo works fine 1`] = `
+exports[`Input Input sizeVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column"
   style="max-width: 500px;"
@@ -536,7 +717,7 @@ exports[`Input size demo works fine 1`] = `
 </div>
 `;
 
-exports[`Input status demo works fine 1`] = `
+exports[`Input Input statusVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column"
   style="max-width: 500px;"
@@ -725,6 +906,27 @@ exports[`Input status demo works fine 1`] = `
     >
       校验存在严重问题文本提示
     </div>
+  </div>
+</div>
+`;
+
+exports[`Input Input textareaVue demo works fine 1`] = `
+<div
+  class="tdesign-demo-block-column"
+  style="max-width: 500px;"
+>
+  <h5>
+    文本域输入框已抽离为单独组件，更多示例请参考 Textarea 组件
+  </h5>
+   
+  <div
+    class="t-textarea"
+  >
+    <textarea
+      class="t-textarea__inner"
+      placeholder="请输入内容"
+      unselectable="off"
+    />
   </div>
 </div>
 `;

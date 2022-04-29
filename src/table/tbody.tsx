@@ -30,6 +30,7 @@ export interface TableBodyProps extends BaseTableProps {
   rowHeight: number;
   trs: Map<number, object>;
   bufferSize: number;
+  tableContentElm: HTMLDivElement;
   handleRowMounted: () => void;
 }
 
@@ -44,6 +45,7 @@ export const extendTableProps = [
   'firstFullRow',
   'lastFullRow',
   'rowspanAndColspan',
+  'scroll',
   'onCellClick',
   'onPageChange',
   'onRowClick',
@@ -56,8 +58,6 @@ export const extendTableProps = [
   'onScroll',
   'onScrollX',
   'onScrollY',
-  'isColDraggable',
-  'isRowDraggable',
 ];
 
 export default defineComponent({
@@ -78,12 +78,12 @@ export default defineComponent({
     rowHeight: Number,
     trs: Map as PropType<TableBodyProps['trs']>,
     bufferSize: Number,
+    // eslint-disable-next-line
+    tableContentElm: {},
     handleRowMounted: Function as PropType<TableBodyProps['handleRowMounted']>,
     renderExpandedRow: Function as PropType<TableBodyProps['renderExpandedRow']>,
     firstFullRow: [String, Function] as PropType<TableBodyProps['firstFullRow']>,
     lastFullRow: [String, Function] as PropType<TableBodyProps['lastFullRow']>,
-    isColDraggable: Boolean,
-    isRowDraggable: Boolean,
     ...pick(baseTableProps, extendTableProps),
   },
 
@@ -91,15 +91,9 @@ export default defineComponent({
   setup(props: TableBodyProps, { emit }: SetupContext) {
     const renderTNode = useTNodeJSX();
     const { t, global } = useConfig('table');
-    const { tableFullRowClasses, tableBaseClass, tableDraggableClasses } = useClassName();
+    const { tableFullRowClasses, tableBaseClass } = useClassName();
 
-    const tbodyClasses = computed(() => [
-      tableBaseClass.body,
-      {
-        [tableDraggableClasses.bodyCol]: props.isColDraggable,
-        [tableDraggableClasses.bodyRow]: props.isRowDraggable,
-      },
-    ]);
+    const tbodyClasses = computed(() => [tableBaseClass.body]);
 
     const isFixedLeftColumn = computed(
       () => props.isWidthOverflow && !!props.columns.find((col) => col.fixed === 'left'),
@@ -197,6 +191,17 @@ export default defineComponent({
     // 每次渲染清空合并单元格信息
     skipSpansMap = new Map<any, boolean>();
 
+    const properties = [
+      'rowAndColFixedPosition',
+      'scroll',
+      'tableElm',
+      'tableContentElm',
+      'trs',
+      'bufferSize',
+      'isVirtual',
+      'rowHeight',
+      'scrollType',
+    ];
     this.data?.forEach((row, rowIndex) => {
       const trProps: TrProps = {
         ...pick(this.$props, TABLE_PROPS),
@@ -204,16 +209,10 @@ export default defineComponent({
         columns: this.columns,
         rowIndex,
         dataLength,
-        rowAndColFixedPosition: this.rowAndColFixedPosition,
         skipSpansMap,
+        ...pick(this.$props, properties),
         // 遍历的同时，计算后面的节点，是否会因为合并单元格跳过渲染
         onTrRowspanOrColspan,
-        isVirtual: this.isVirtual,
-        scrollType: this.scrollType,
-        rowHeight: this.rowHeight,
-        trs: this.trs,
-        bufferSize: this.bufferSize,
-        tableElm: this.tableElm,
       };
       if (this.onCellClick) {
         trProps.onCellClick = this.onCellClick;
@@ -264,11 +263,7 @@ export default defineComponent({
       '-webkit-transform': translate,
     };
     return (
-      <tbody
-        class={this.tbodyClasses}
-        style={this.isVirtual && { ...posStyle }}
-        ref={(this.isColDraggable || this.isRowDraggable) && 'tbodyDragRef'}
-      >
+      <tbody class={this.tbodyClasses} style={this.isVirtual && { ...posStyle }}>
         {isEmpty ? renderEmpty(h, this.columns) : list}
       </tbody>
     );

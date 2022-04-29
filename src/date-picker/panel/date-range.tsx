@@ -86,10 +86,8 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
   },
   watch: {
     value: {
-      handler(value) {
-        const [startValue = TODAY, endValue = TODAY] = value;
-        this.startValue = startValue;
-        this.endValue = endValue;
+      handler() {
+        this.initialPicker();
       },
       immediate: true,
     },
@@ -97,12 +95,6 @@ export default Vue.extend<DateRangeData, DateRangeMethods, DateRangeComputed, Da
       this.leftType = value;
       this.rightType = value;
     },
-  },
-  created() {
-    this.initialPicker();
-  },
-  beforeDestroy() {
-    this.initialPicker();
   },
   methods: {
     initialPicker() {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tag base demo works fine 1`] = `
+exports[`Tag Tag baseVue demo works fine 1`] = `
 <div>
   <div
     class="tag-demo"
@@ -109,7 +109,7 @@ exports[`Tag base demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tag delete demo works fine 1`] = `
+exports[`Tag Tag deleteVue demo works fine 1`] = `
 <div
   class="tag-demo"
 >
@@ -475,7 +475,25 @@ exports[`Tag delete demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tag icon demo works fine 1`] = `
+exports[`Tag Tag disabledVue demo works fine 1`] = `
+<div
+  class="tdesign-tag-disabled tag-demo"
+>
+  <span
+    class="check-tag t-tag t-tag--check t-tag--default t-size-m t-is-disabled t-tag--disabled"
+  >
+    失效标签
+  </span>
+   
+  <span
+    class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled"
+  >
+    失效标签
+  </span>
+</div>
+`;
+
+exports[`Tag Tag iconVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column"
 >
@@ -543,7 +561,7 @@ exports[`Tag icon demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tag long-text demo works fine 1`] = `
+exports[`Tag Tag longTextVue demo works fine 1`] = `
 <div
   class="tdesign-tag-ellipsis"
 >
@@ -561,7 +579,7 @@ exports[`Tag long-text demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tag plain demo works fine 1`] = `
+exports[`Tag Tag plainVue demo works fine 1`] = `
 <div
   class="tdesign-tag-outline"
 >
@@ -597,7 +615,7 @@ exports[`Tag plain demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tag selectable demo works fine 1`] = `
+exports[`Tag Tag selectableVue demo works fine 1`] = `
 <div
   class="tag-demo"
 >
@@ -625,7 +643,7 @@ exports[`Tag selectable demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tag shape demo works fine 1`] = `
+exports[`Tag Tag shapeVue demo works fine 1`] = `
 <div>
   <div
     class="tag-demo"
@@ -677,7 +695,7 @@ exports[`Tag shape demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tag size demo works fine 1`] = `
+exports[`Tag Tag sizeVue demo works fine 1`] = `
 <div
   class="tag-demo"
 >
@@ -698,5 +716,104 @@ exports[`Tag size demo works fine 1`] = `
   >
     大型标签
   </span>
+</div>
+`;
+
+exports[`Tag Tag themeVue demo works fine 1`] = `
+<div
+  class="tdesign-tag-theme"
+>
+  <div
+    class="tdesign-demo-block"
+  >
+    
+    深色
+    
+    <span
+      class="t-tag t-tag--primary t-size-m t-tag--dark"
+    >
+      标签一
+    </span>
+     
+    <span
+      class="t-tag t-tag--success t-size-m t-tag--dark"
+    >
+      标签二
+    </span>
+     
+    <span
+      class="t-tag t-tag--warning t-size-m t-tag--dark"
+    >
+      标签三
+    </span>
+     
+    <span
+      class="t-tag t-tag--danger t-size-m t-tag--dark"
+    >
+      标签四
+    </span>
+  </div>
+   
+  <div
+    class="tdesign-demo-block light"
+  >
+    
+    浅色
+    
+    <span
+      class="t-tag t-tag--primary t-size-m t-tag--light"
+    >
+      标签一
+    </span>
+     
+    <span
+      class="t-tag t-tag--success t-size-m t-tag--light"
+    >
+      标签二
+    </span>
+     
+    <span
+      class="t-tag t-tag--warning t-size-m t-tag--light"
+    >
+      标签三
+    </span>
+     
+    <span
+      class="t-tag t-tag--danger t-size-m t-tag--light"
+    >
+      标签四
+    </span>
+  </div>
+   
+  <div
+    class="tdesign-demo-block plain"
+  >
+    
+    朴素
+    
+    <span
+      class="t-tag t-tag--primary t-size-m t-tag--outline"
+    >
+      标签一
+    </span>
+     
+    <span
+      class="t-tag t-tag--success t-size-m t-tag--outline"
+    >
+      标签二
+    </span>
+     
+    <span
+      class="t-tag t-tag--warning t-size-m t-tag--outline"
+    >
+      标签三
+    </span>
+     
+    <span
+      class="t-tag t-tag--danger t-size-m t-tag--outline"
+    >
+      标签四
+    </span>
+  </div>
 </div>
 `;

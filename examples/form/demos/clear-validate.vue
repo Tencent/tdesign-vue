@@ -39,7 +39,7 @@
       <t-form-item label="个人网站" name="content.url">
         <t-input v-model="formData.content.url"></t-input>
       </t-form-item>
-      <t-form-item style="padding-top: 8px">
+      <t-form-item style="margin-left: 100px">
         <t-button theme="primary" type="submit" style="margin-right: 10px"> 提交 </t-button>
         <t-button theme="default" variant="base" type="reset" style="margin-right: 10px"> 重置 </t-button>
         <t-button theme="default" variant="base" @click="handleClear" style="margin-right: 10px">

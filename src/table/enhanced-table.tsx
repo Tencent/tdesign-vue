@@ -75,14 +75,14 @@ export default defineComponent({
 
   methods: {
     // support @row-click @page-change @row-hover .etc. events, Vue3 do not need this function
-    getListenser() {
-      const listenser: TableListeners = {};
+    getListener() {
+      const listeners: TableListeners = {};
       PRIMARY_ALL_EVENTS.forEach((key) => {
-        listenser[key] = (...args: any) => {
+        listeners[key] = (...args: any) => {
           this.$emit(key, ...args);
         };
       });
-      return listenser;
+      return listeners;
     },
   },
 
@@ -94,9 +94,9 @@ export default defineComponent({
       // 树形结构不允许本地数据分页
       disableDataPage: Boolean(this.tree && Object.keys(this.tree).length),
     };
-    // 事件，Vue3 do not need this.getListenser
+    // 事件，Vue3 do not need this.getListener
     const on: TableListeners = {
-      ...this.getListenser(),
+      ...this.getListener(),
       'select-change': this.onInnerSelectChange,
     };
     // replace `scopedSlots={this.$scopedSlots}` of `v-slots={this.$slots}` in Vue3

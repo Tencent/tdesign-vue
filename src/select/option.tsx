@@ -161,7 +161,6 @@ export default mixins(keepAnimationMixins).extend({
       <li
         v-show={show}
         class={classes}
-        title={labelText}
         onMouseenter={this.mouseEvent.bind(true)}
         onMouseleave={this.mouseEvent.bind(false)}
         onClick={this.select}

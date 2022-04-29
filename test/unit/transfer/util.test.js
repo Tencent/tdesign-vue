@@ -1,4 +1,4 @@
-import { getDataValues, cloneTreeWithFilter, getLeefCount } from '@/src/transfer/utils';
+import { getDataValues, cloneTreeWithFilter, getLeafCount } from '@/src/transfer/utils';
 
 describe('Transfer', () => {
   describe('utils', () => {
@@ -632,7 +632,7 @@ describe('Transfer', () => {
       });
     });
 
-    describe('getLeefCount', () => {
+    describe('getLeafCount', () => {
       it('result test 1', () => {
         const data = [
           {
@@ -654,7 +654,7 @@ describe('Transfer', () => {
             ],
           },
         ];
-        expect(getLeefCount(data)).toEqual(4);
+        expect(getLeafCount(data)).toEqual(4);
       });
 
       it('result test 2', () => {
@@ -722,7 +722,7 @@ describe('Transfer', () => {
           }],
         }];
 
-        expect(getLeefCount(sourceTree)).toEqual(10);
+        expect(getLeafCount(sourceTree)).toEqual(10);
       });
     });
   });

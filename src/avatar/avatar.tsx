@@ -69,12 +69,12 @@ export default (Vue as VueConstructor<AvatarInstance>).extend({
       this.$emit('error');
     },
     setScaleParams() {
-      const avater = this.$refs.avatar as HTMLElement;
-      const avaterChild = this.$refs.avatarChild as HTMLElement;
-      const avaterWidth = avater?.offsetWidth;
-      const avaterChildWidth = avaterChild?.offsetWidth;
-      if (this.gap * 2 < avaterWidth) {
-        this.scale = avaterChildWidth > avaterWidth - this.gap * 2 ? `scale(${(avaterWidth - this.gap * 2) / avaterChildWidth})` : 'scale(1)';
+      const avatar = this.$refs.avatar as HTMLElement;
+      const avatarChild = this.$refs.avatarChild as HTMLElement;
+      const avatarWidth = avatar?.offsetWidth;
+      const avatarChildWidth = avatarChild?.offsetWidth;
+      if (this.gap * 2 < avatarWidth) {
+        this.scale = avatarChildWidth > avatarWidth - this.gap * 2 ? `scale(${(avatarWidth - this.gap * 2) / avatarChildWidth})` : 'scale(1)';
       }
     },
     isCustomSize() {
