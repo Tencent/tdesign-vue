@@ -573,7 +573,9 @@ exports[`Message Message pluginVue demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        警示
+        
+      警示
+    
       </span>
     </button>
      
@@ -597,7 +599,9 @@ exports[`Message Message pluginVue demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        询问
+        
+      询问
+    
       </span>
     </button>
      
@@ -608,7 +612,9 @@ exports[`Message Message pluginVue demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        加载中
+        
+      加载中
+    
       </span>
     </button>
      
@@ -620,6 +626,19 @@ exports[`Message Message pluginVue demo works fine 1`] = `
         class="t-button__text"
       >
         关闭所有
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        
+      设置默认位置
+    
       </span>
     </button>
   </div>
@@ -643,7 +662,9 @@ exports[`Message Message pluginVue demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        消息
+        
+      消息
+    
       </span>
     </button>
      
@@ -654,7 +675,9 @@ exports[`Message Message pluginVue demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        成功
+        
+      成功
+    
       </span>
     </button>
      
@@ -689,7 +712,9 @@ exports[`Message Message pluginVue demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        询问
+        
+      询问
+    
       </span>
     </button>
      
@@ -700,7 +725,9 @@ exports[`Message Message pluginVue demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        加载中
+        
+      加载中
+    
       </span>
     </button>
      
@@ -712,6 +739,19 @@ exports[`Message Message pluginVue demo works fine 1`] = `
         class="t-button__text"
       >
         关闭所有
+      </span>
+    </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        
+      设置默认位置
+    
       </span>
     </button>
   </div>

@@ -90,7 +90,4 @@ export default Vue.extend({
   border-radius: 2px;
   overflow: hidden;
 }
-body {
-  width: 3000px;
-}
 </style>
