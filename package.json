@@ -120,7 +120,7 @@
     "autoprefixer": "^9.7.6",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.3",
-    "babel-jest": "^27.4.5",
+    "babel-jest": "^28.0.3",
     "babel-polyfill": "^6.26.0",
     "camelcase": "~6.3.0",
     "cli-color": "^2.0.0",
