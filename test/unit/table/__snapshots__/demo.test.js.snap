@@ -741,6 +741,9 @@ exports[`Table Table affixVue demo works fine 1`] = `
         </tfoot>
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
   </div>
 </div>
 `;
@@ -1047,6 +1050,9 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
   </div>
 </div>
 `;
@@ -1498,6 +1504,9 @@ exports[`Table Table baseVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-loading--center t-size-m t-loading"
+    />
+    <div
       class="t-table__pagination"
     >
       <div
@@ -1783,6 +1792,9 @@ exports[`Table Table customCellVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
   </div>
 </div>
 `;
@@ -2242,6 +2254,9 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-loading--center t-size-m t-loading"
+    />
+    <div
       class="t-table__pagination"
     >
       <div
@@ -2685,6 +2700,9 @@ exports[`Table Table customColVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-loading--center t-size-m t-loading"
+    />
+    <div
       class="t-table__pagination"
     >
       <div
@@ -3081,6 +3099,9 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
         </tfoot>
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
   </div>
 </div>
 `;
@@ -3203,6 +3224,9 @@ exports[`Table Table customHeaderVue demo works fine 1`] = `
       <!---->
     </table>
   </div>
+  <div
+    class="t-loading--center t-size-m t-loading"
+  />
 </div>
 `;
 
@@ -3550,6 +3574,9 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
           <!---->
         </table>
       </div>
+      <div
+        class="t-loading--center t-size-m t-loading"
+      />
     </div>
   </div>
 </div>
@@ -3763,6 +3790,9 @@ exports[`Table Table dragColSortVue demo works fine 1`] = `
           <!---->
         </table>
       </div>
+      <div
+        class="t-loading--center t-size-m t-loading"
+      />
     </div>
   </div>
 </div>
@@ -3772,6 +3802,26 @@ exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
 <div
   class="demo-container t-table-demo-sort"
 >
+  <div>
+    <label
+      class="t-checkbox"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        加载状态
+      </span>
+    </label>
+  </div>
+   
   <div
     class="item"
   >
@@ -4053,6 +4103,9 @@ exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
           <!---->
         </table>
       </div>
+      <div
+        class="t-loading--center t-size-m t-loading"
+      />
     </div>
   </div>
 </div>
@@ -4270,6 +4323,9 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
           <!---->
         </table>
       </div>
+      <div
+        class="t-loading--center t-size-m t-loading"
+      />
     </div>
   </div>
 </div>
@@ -4387,6 +4443,9 @@ exports[`Table Table emptyVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
   </div>
    
   <div
@@ -4499,6 +4558,9 @@ exports[`Table Table emptyVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
   </div>
    
   <div
@@ -4611,6 +4673,9 @@ exports[`Table Table emptyVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
   </div>
 </div>
 `;
@@ -5472,6 +5537,9 @@ exports[`Table Table expandableVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
   </div>
 </div>
 `;
@@ -5940,6 +6008,9 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
   </div>
 </div>
 `;
@@ -6507,6 +6578,9 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
   </div>
 </div>
 `;
@@ -7437,6 +7511,9 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
         </tfoot>
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
   </div>
 </div>
 `;
@@ -8408,6 +8485,9 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
         </tfoot>
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
   </div>
 </div>
 `;
@@ -15525,6 +15605,9 @@ exports[`Table Table lazyVue demo works fine 1`] = `
           <!---->
         </table>
       </div>
+      <div
+        class="t-loading--center t-size-m t-loading"
+      />
     </div>
   </div>
 </div>
@@ -15535,478 +15618,466 @@ exports[`Table Table loadingVue demo works fine 1`] = `
   class="tdesign-demo-block-column"
 >
   <div
-    class="t-table t-size-s"
+    class="t-table t-size-s t-table--loading"
     style="position: relative;"
   >
     <div
-      class="t-loading__parent"
+      class="t-table__content"
     >
       <div
-        class="t-table__content"
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
+      <table
+        class="t-table--layout-fixed"
       >
-        <div
-          class="t-table__resize-line"
-          style="display: none; left: 10px; height: 10px;"
-        />
-        <table
-          class="t-table--layout-fixed"
-        >
-          <colgroup>
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-          </colgroup>
-          <thead
-            class="t-table__header"
-          >
-            <tr>
-              <th
-                class="row t-table__th-type"
-                data-colkey="type"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    类型
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test t-table__th-platform"
-                data-colkey="platform"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    平台
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test2 t-table__th-property"
-                data-colkey="property"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    属性
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test4 t-table__th-default"
-                data-colkey="default"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    默认值
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test3 t-table__th-needed"
-                data-colkey="needed"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    是否必传
-                  </div>
-                </div>
-              </th>
-              <th
-                class="row t-table__th-description"
-                data-colkey="description"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    说明
-                  </div>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody
-            class="t-table__body"
+        <colgroup>
+          <col
+            style="width: 100px;"
           />
-          <!---->
-        </table>
-      </div>
-      <div
-        class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"
-      >
-        <svg
-          class="t-loading__gradient t-icon-loading"
-          height="1em"
-          size="medium"
-          version="1.1"
-          viewBox="0 0 14 14"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+        </colgroup>
+        <thead
+          class="t-table__header"
         >
-          <foreignobject
-            height="12"
-            width="12"
-            x="1"
-            y="1"
-          >
-            <div
-              class="t-loading__gradient-conic"
-            />
-          </foreignobject>
-        </svg>
-      </div>
+          <tr>
+            <th
+              class="row t-table__th-type"
+              data-colkey="type"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  类型
+                </div>
+              </div>
+            </th>
+            <th
+              class="test t-table__th-platform"
+              data-colkey="platform"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  平台
+                </div>
+              </div>
+            </th>
+            <th
+              class="test2 t-table__th-property"
+              data-colkey="property"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  属性
+                </div>
+              </div>
+            </th>
+            <th
+              class="test4 t-table__th-default"
+              data-colkey="default"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  默认值
+                </div>
+              </div>
+            </th>
+            <th
+              class="test3 t-table__th-needed"
+              data-colkey="needed"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  是否必传
+                </div>
+              </div>
+            </th>
+            <th
+              class="row t-table__th-description"
+              data-colkey="description"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  说明
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="t-table__body"
+        />
+        <!---->
+      </table>
+    </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    >
+      <svg
+        class="t-loading__gradient t-icon-loading"
+        height="1em"
+        size="medium"
+        version="1.1"
+        viewBox="0 0 14 14"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <foreignobject
+          height="12"
+          width="12"
+          x="1"
+          y="1"
+        >
+          <div
+            class="t-loading__gradient-conic"
+          />
+        </foreignobject>
+      </svg>
     </div>
   </div>
    
   <div
-    class="t-table t-size-s"
+    class="t-table t-size-s t-table--loading"
     style="position: relative;"
   >
     <div
-      class="t-loading__parent"
+      class="t-table__content"
     >
       <div
-        class="t-table__content"
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
+      <table
+        class="t-table--layout-fixed"
       >
-        <div
-          class="t-table__resize-line"
-          style="display: none; left: 10px; height: 10px;"
-        />
-        <table
-          class="t-table--layout-fixed"
-        >
-          <colgroup>
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-          </colgroup>
-          <thead
-            class="t-table__header"
-          >
-            <tr>
-              <th
-                class="row t-table__th-type"
-                data-colkey="type"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    类型
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test t-table__th-platform"
-                data-colkey="platform"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    平台
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test2 t-table__th-property"
-                data-colkey="property"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    属性
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test4 t-table__th-default"
-                data-colkey="default"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    默认值
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test3 t-table__th-needed"
-                data-colkey="needed"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    是否必传
-                  </div>
-                </div>
-              </th>
-              <th
-                class="row t-table__th-description"
-                data-colkey="description"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    说明
-                  </div>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody
-            class="t-table__body"
+        <colgroup>
+          <col
+            style="width: 100px;"
           />
-          <!---->
-        </table>
-      </div>
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+        </colgroup>
+        <thead
+          class="t-table__header"
+        >
+          <tr>
+            <th
+              class="row t-table__th-type"
+              data-colkey="type"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  类型
+                </div>
+              </div>
+            </th>
+            <th
+              class="test t-table__th-platform"
+              data-colkey="platform"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  平台
+                </div>
+              </div>
+            </th>
+            <th
+              class="test2 t-table__th-property"
+              data-colkey="property"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  属性
+                </div>
+              </div>
+            </th>
+            <th
+              class="test4 t-table__th-default"
+              data-colkey="default"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  默认值
+                </div>
+              </div>
+            </th>
+            <th
+              class="test3 t-table__th-needed"
+              data-colkey="needed"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  是否必传
+                </div>
+              </div>
+            </th>
+            <th
+              class="row t-table__th-description"
+              data-colkey="description"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  说明
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="t-table__body"
+        />
+        <!---->
+      </table>
+    </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    >
       <div
-        class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"
+        class="t-loading__text"
       >
         <div
-          class="t-loading__text"
+          class="t-table--loading-message"
         >
-          <div
-            class="t-table--loading-message"
-          >
-            😊 这里使用插槽自定义加载状态 😊
-          </div>
+          😊 这里使用插槽自定义加载状态 😊
         </div>
       </div>
     </div>
   </div>
    
   <div
-    class="t-table t-size-s"
+    class="t-table t-size-s t-table--loading"
     style="position: relative;"
   >
     <div
-      class="t-loading__parent"
+      class="t-table__content"
     >
       <div
-        class="t-table__content"
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
+      <table
+        class="t-table--layout-fixed"
       >
-        <div
-          class="t-table__resize-line"
-          style="display: none; left: 10px; height: 10px;"
-        />
-        <table
-          class="t-table--layout-fixed"
-        >
-          <colgroup>
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-          </colgroup>
-          <thead
-            class="t-table__header"
-          >
-            <tr>
-              <th
-                class="row t-table__th-type"
-                data-colkey="type"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    类型
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test t-table__th-platform"
-                data-colkey="platform"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    平台
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test2 t-table__th-property"
-                data-colkey="property"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    属性
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test4 t-table__th-default"
-                data-colkey="default"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    默认值
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test3 t-table__th-needed"
-                data-colkey="needed"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    是否必传
-                  </div>
-                </div>
-              </th>
-              <th
-                class="row t-table__th-description"
-                data-colkey="description"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    说明
-                  </div>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody
-            class="t-table__body"
+        <colgroup>
+          <col
+            style="width: 100px;"
           />
-          <!---->
-        </table>
-      </div>
-      <div
-        class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"
-      >
-        <svg
-          class="t-loading__gradient t-icon-loading"
-          height="1em"
-          size="medium"
-          version="1.1"
-          viewBox="0 0 14 14"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+        </colgroup>
+        <thead
+          class="t-table__header"
         >
-          <foreignobject
-            height="12"
-            width="12"
-            x="1"
-            y="1"
-          >
-            <div
-              class="t-loading__gradient-conic"
-            />
-          </foreignobject>
-        </svg>
-        <div
-          class="t-loading__text"
+          <tr>
+            <th
+              class="row t-table__th-type"
+              data-colkey="type"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  类型
+                </div>
+              </div>
+            </th>
+            <th
+              class="test t-table__th-platform"
+              data-colkey="platform"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  平台
+                </div>
+              </div>
+            </th>
+            <th
+              class="test2 t-table__th-property"
+              data-colkey="property"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  属性
+                </div>
+              </div>
+            </th>
+            <th
+              class="test4 t-table__th-default"
+              data-colkey="default"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  默认值
+                </div>
+              </div>
+            </th>
+            <th
+              class="test3 t-table__th-needed"
+              data-colkey="needed"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  是否必传
+                </div>
+              </div>
+            </th>
+            <th
+              class="row t-table__th-description"
+              data-colkey="description"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  说明
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="t-table__body"
+        />
+        <!---->
+      </table>
+    </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    >
+      <svg
+        class="t-loading__gradient t-icon-loading"
+        height="1em"
+        size="medium"
+        version="1.1"
+        viewBox="0 0 14 14"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <foreignobject
+          height="12"
+          width="12"
+          x="1"
+          y="1"
         >
           <div
-            class="t-table--loading-message"
-          >
-            这里使用渲染函数定义加载状态
-          </div>
+            class="t-loading__gradient-conic"
+          />
+        </foreignobject>
+      </svg>
+      <div
+        class="t-loading__text"
+      >
+        <div
+          class="t-table--loading-message"
+        >
+          这里使用渲染函数定义加载状态
         </div>
       </div>
     </div>
@@ -16241,6 +16312,9 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
       <!---->
     </table>
   </div>
+  <div
+    class="t-loading--center t-size-m t-loading"
+  />
 </div>
 `;
 
@@ -16754,6 +16828,9 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
   </div>
 </div>
 `;
@@ -17095,6 +17172,9 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
           <!---->
         </table>
       </div>
+      <div
+        class="t-loading--center t-size-m t-loading"
+      />
     </div>
   </div>
 </div>
@@ -17199,6 +17279,9 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
       <!---->
     </table>
   </div>
+  <div
+    class="t-loading--center t-size-m t-loading"
+  />
   <div
     class="t-table__pagination"
   >
@@ -17617,6 +17700,9 @@ exports[`Table Table paginationVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
     <div
       class="t-table__pagination"
     >
@@ -18222,6 +18308,9 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
   </div>
 </div>
 `;
@@ -18658,6 +18747,9 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
   </div>
 </div>
 `;
@@ -18937,6 +19029,9 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
   </div>
 </div>
 `;
@@ -19265,6 +19360,9 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
   </div>
 </div>
 `;
@@ -19924,6 +20022,9 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
   </div>
 </div>
 `;
@@ -20550,6 +20651,9 @@ exports[`Table Table treeVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    />
     <div
       class="t-table__pagination"
     >

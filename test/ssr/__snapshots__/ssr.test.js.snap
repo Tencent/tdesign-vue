@@ -3694,6 +3694,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div> <br><br>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
@@ -3776,6 +3777,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div> <br><br>
 </div>
 `;
@@ -12175,6 +12177,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`
         </tfoot>
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -12255,6 +12258,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -12357,6 +12361,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
     <div class="t-table__pagination">
       <div class="t-pagination t-size-m">
         <div class="t-pagination__total">共 28 项数据</div>
@@ -12440,6 +12445,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -12538,6 +12544,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
     <div class="t-table__pagination">
       <div class="t-pagination t-size-m">
         <div class="t-pagination__total">共 100 项数据</div>
@@ -12673,6 +12680,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col-button.vue 
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
     <div class="t-table__pagination">
       <div class="t-pagination t-size-m">
         <div class="t-pagination__total">共 100 项数据</div>
@@ -12788,6 +12796,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
         </tfoot>
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -12832,6 +12841,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-header.vue corr
       <!---->
     </table>
   </div>
+  <div class="t-loading--center t-size-m t-loading"></div>
 </div>
 `;
 
@@ -12929,6 +12939,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
           <!---->
         </table>
       </div>
+      <div class="t-loading--center t-size-m t-loading"></div>
     </div>
   </div>
 </div>
@@ -13008,6 +13019,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
           <!---->
         </table>
       </div>
+      <div class="t-loading--center t-size-m t-loading"></div>
     </div>
   </div>
 </div>
@@ -13087,6 +13099,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
           <!---->
         </table>
       </div>
+      <div class="t-loading--center t-size-m t-loading"></div>
     </div>
   </div>
 </div>
@@ -13094,6 +13107,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
 
 exports[`ssr snapshot test renders ./examples/table/demos/drag-sort-handler.vue correctly 1`] = `
 <div class="demo-container t-table-demo-sort">
+  <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">加载状态</span></label></div>
   <div class="item">
     <div class="t-table t-table--row-handler-draggable" style="position:relative;">
       <div class="t-table__content">
@@ -13182,6 +13196,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort-handler.vue 
           <!---->
         </table>
       </div>
+      <div class="t-loading--center t-size-m t-loading"></div>
     </div>
   </div>
 </div>
@@ -13233,6 +13248,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
@@ -13278,6 +13294,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
@@ -13323,6 +13340,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -13501,6 +13519,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -13619,6 +13638,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -13749,6 +13769,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -14011,6 +14032,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
         </tfoot>
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -14221,187 +14243,182 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
         </tfoot>
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
-  <div class="t-table t-size-s" style="position:relative;">
-    <div class="t-loading__parent">
-      <div class="t-table__content">
-        <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
-        <table class="t-table--layout-fixed" style="width:;">
-          <colgroup>
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-          </colgroup>
-          <thead class="t-table__header">
-            <tr>
-              <th data-colkey="type" class="row t-table__th-type">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">类型</div>
-                </div>
-              </th>
-              <th data-colkey="platform" class="test t-table__th-platform">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">平台</div>
-                </div>
-              </th>
-              <th data-colkey="property" class="test2 t-table__th-property">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">属性</div>
-                </div>
-              </th>
-              <th data-colkey="default" class="test4 t-table__th-default">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
-                </div>
-              </th>
-              <th data-colkey="needed" class="test3 t-table__th-needed">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
-                </div>
-              </th>
-              <th data-colkey="description" class="row t-table__th-description">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">说明</div>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody class="t-table__body"></tbody>
-          <!---->
-        </table>
-      </div>
-      <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
-          <foreignObject x="1" y="1" width="12" height="12">
-            <div class="t-loading__gradient-conic"></div>
-          </foreignObject>
-        </svg></div>
+  <div class="t-table t-size-s t-table--loading" style="position:relative;">
+    <div class="t-table__content">
+      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
+      <table class="t-table--layout-fixed" style="width:;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+        </colgroup>
+        <thead class="t-table__header">
+          <tr>
+            <th data-colkey="type" class="row t-table__th-type">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
+            </th>
+            <th data-colkey="platform" class="test t-table__th-platform">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
+            </th>
+            <th data-colkey="property" class="test2 t-table__th-property">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">属性</div>
+              </div>
+            </th>
+            <th data-colkey="default" class="test4 t-table__th-default">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
+            </th>
+            <th data-colkey="needed" class="test3 t-table__th-needed">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
+            </th>
+            <th data-colkey="description" class="row t-table__th-description">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="t-table__body"></tbody>
+        <!---->
+      </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+        <foreignObject x="1" y="1" width="12" height="12">
+          <div class="t-loading__gradient-conic"></div>
+        </foreignObject>
+      </svg></div>
   </div>
-  <div class="t-table t-size-s" style="position:relative;">
-    <div class="t-loading__parent">
-      <div class="t-table__content">
-        <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
-        <table class="t-table--layout-fixed" style="width:;">
-          <colgroup>
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-          </colgroup>
-          <thead class="t-table__header">
-            <tr>
-              <th data-colkey="type" class="row t-table__th-type">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">类型</div>
-                </div>
-              </th>
-              <th data-colkey="platform" class="test t-table__th-platform">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">平台</div>
-                </div>
-              </th>
-              <th data-colkey="property" class="test2 t-table__th-property">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">属性</div>
-                </div>
-              </th>
-              <th data-colkey="default" class="test4 t-table__th-default">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
-                </div>
-              </th>
-              <th data-colkey="needed" class="test3 t-table__th-needed">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
-                </div>
-              </th>
-              <th data-colkey="description" class="row t-table__th-description">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">说明</div>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody class="t-table__body"></tbody>
-          <!---->
-        </table>
-      </div>
-      <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay">
-        <div class="t-loading__text">
-          <div class="t-table--loading-message">😊 这里使用插槽自定义加载状态 😊</div>
-        </div>
+  <div class="t-table t-size-s t-table--loading" style="position:relative;">
+    <div class="t-table__content">
+      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
+      <table class="t-table--layout-fixed" style="width:;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+        </colgroup>
+        <thead class="t-table__header">
+          <tr>
+            <th data-colkey="type" class="row t-table__th-type">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
+            </th>
+            <th data-colkey="platform" class="test t-table__th-platform">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
+            </th>
+            <th data-colkey="property" class="test2 t-table__th-property">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">属性</div>
+              </div>
+            </th>
+            <th data-colkey="default" class="test4 t-table__th-default">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
+            </th>
+            <th data-colkey="needed" class="test3 t-table__th-needed">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
+            </th>
+            <th data-colkey="description" class="row t-table__th-description">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="t-table__body"></tbody>
+        <!---->
+      </table>
+    </div>
+    <div class="t-loading--center t-size-m t-loading">
+      <div class="t-loading__text">
+        <div class="t-table--loading-message">😊 这里使用插槽自定义加载状态 😊</div>
       </div>
     </div>
   </div>
-  <div class="t-table t-size-s" style="position:relative;">
-    <div class="t-loading__parent">
-      <div class="t-table__content">
-        <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
-        <table class="t-table--layout-fixed" style="width:;">
-          <colgroup>
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-          </colgroup>
-          <thead class="t-table__header">
-            <tr>
-              <th data-colkey="type" class="row t-table__th-type">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">类型</div>
-                </div>
-              </th>
-              <th data-colkey="platform" class="test t-table__th-platform">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">平台</div>
-                </div>
-              </th>
-              <th data-colkey="property" class="test2 t-table__th-property">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">属性</div>
-                </div>
-              </th>
-              <th data-colkey="default" class="test4 t-table__th-default">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
-                </div>
-              </th>
-              <th data-colkey="needed" class="test3 t-table__th-needed">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
-                </div>
-              </th>
-              <th data-colkey="description" class="row t-table__th-description">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">说明</div>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody class="t-table__body"></tbody>
-          <!---->
-        </table>
-      </div>
-      <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
-          <foreignObject x="1" y="1" width="12" height="12">
-            <div class="t-loading__gradient-conic"></div>
-          </foreignObject>
-        </svg>
-        <div class="t-loading__text">
-          <div class="t-table--loading-message">这里使用渲染函数定义加载状态</div>
-        </div>
+  <div class="t-table t-size-s t-table--loading" style="position:relative;">
+    <div class="t-table__content">
+      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
+      <table class="t-table--layout-fixed" style="width:;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+        </colgroup>
+        <thead class="t-table__header">
+          <tr>
+            <th data-colkey="type" class="row t-table__th-type">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
+            </th>
+            <th data-colkey="platform" class="test t-table__th-platform">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
+            </th>
+            <th data-colkey="property" class="test2 t-table__th-property">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">属性</div>
+              </div>
+            </th>
+            <th data-colkey="default" class="test4 t-table__th-default">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
+            </th>
+            <th data-colkey="needed" class="test3 t-table__th-needed">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
+            </th>
+            <th data-colkey="description" class="row t-table__th-description">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="t-table__body"></tbody>
+        <!---->
+      </table>
+    </div>
+    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+        <foreignObject x="1" y="1" width="12" height="12">
+          <div class="t-loading__gradient-conic"></div>
+        </foreignObject>
+      </svg>
+      <div class="t-loading__text">
+        <div class="t-table--loading-message">这里使用渲染函数定义加载状态</div>
       </div>
     </div>
   </div>
@@ -14476,6 +14493,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
       <!---->
     </table>
   </div>
+  <div class="t-loading--center t-size-m t-loading"></div>
 </div>
 `;
 
@@ -14605,6 +14623,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -14711,6 +14730,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
           <!---->
         </table>
       </div>
+      <div class="t-loading--center t-size-m t-loading"></div>
     </div>
   </div>
 </div>
@@ -14809,6 +14829,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
     <div class="t-table__pagination">
       <div class="t-pagination t-size-m">
         <div class="t-pagination__total">共 60 项数据</div>
@@ -14884,6 +14905,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
       <!---->
     </table>
   </div>
+  <div class="t-loading--center t-size-m t-loading"></div>
   <div class="t-table__pagination">
     <div class="t-pagination t-size-m">
       <div class="t-pagination__total">共 0 项数据</div>
@@ -15009,6 +15031,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -15111,6 +15134,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -15194,6 +15218,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue corre
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -15293,6 +15318,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -15426,6 +15452,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
     <div class="t-table__pagination">
       <div class="t-pagination t-size-m">
         <div class="t-pagination__total">共 100 项数据</div>
@@ -15581,6 +15608,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
         <!---->
       </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -15625,6 +15653,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/virtual-scroll.vue cor
           <!---->
         </table>
       </div>
+      <div class="t-loading--center t-size-m t-loading"></div>
     </div>
   </div>
 </div>

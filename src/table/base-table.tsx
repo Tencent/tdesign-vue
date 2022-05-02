@@ -379,7 +379,7 @@ export default defineComponent({
       <Loading
         loading={!!this.loading}
         text={customLoadingText ? () => customLoadingText : undefined}
-        attach={() => this.tableRef}
+        attach={this.tableRef ? () => this.tableRef : undefined}
         showOverlay
         props={this.loadingProps}
       ></Loading>
