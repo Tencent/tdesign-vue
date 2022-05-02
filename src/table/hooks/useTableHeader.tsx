@@ -3,12 +3,13 @@ import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
 import { CreateElement } from 'vue';
 import { TdBaseTableProps } from '../type';
-import { TableColumns, getThRowspanAndColspan, getThList } from './useMultiHeader';
+import { getThRowspanAndColspan, getThList } from './useMultiHeader';
+import { BaseTableColumns } from '../interface';
 import useClassName from './useClassName';
 import { TNodeReturnValue } from '../../common';
 
 // 渲染表头的通用方法
-export function renderTitle(h: CreateElement, slots: SetupContext['slots'], col: TableColumns[0], index: number) {
+export function renderTitle(h: CreateElement, slots: SetupContext['slots'], col: BaseTableColumns[0], index: number) {
   const params = { col, colIndex: index };
   if (isFunction(col.title)) {
     return col.title(h, params);

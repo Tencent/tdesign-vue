@@ -3,8 +3,8 @@ import {
 } from '@vue/composition-api';
 import isFunction from 'lodash/isFunction';
 import { CreateElement } from 'vue';
-import { RowAndColFixedPosition, getColumnFixedStyles } from './hooks/useFixed';
-import { TableColumns, ThRowspanAndColspan } from './hooks/useMultiHeader';
+import { getColumnFixedStyles } from './hooks/useFixed';
+import { RowAndColFixedPosition, BaseTableColumns, ThRowspanAndColspan } from './interface';
 import useClassName from './hooks/useClassName';
 import { useConfig } from '../config-provider/useConfig';
 import { BaseTableCol, TableRowData } from './type';
@@ -86,7 +86,7 @@ export default defineComponent({
       const thBorderMap = new Map<any, boolean>();
       const thRowspanAndColspan = this.spansAndLeafNodes.rowspanAndColspanMap;
       return this.thList.map((row, rowIndex) => {
-        const thRow = row.map((col: TableColumns[0], index: number) => {
+        const thRow = row.map((col: BaseTableColumns[0], index: number) => {
           const rowspanAndColspan = thRowspanAndColspan.get(col);
           if (index === 0 && rowspanAndColspan.rowspan > 1) {
             for (let j = rowIndex + 1; j < rowIndex + rowspanAndColspan.rowspan; j++) {
