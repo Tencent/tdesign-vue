@@ -3694,7 +3694,6 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div> <br><br>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
@@ -3777,7 +3776,6 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div> <br><br>
 </div>
 `;
@@ -12177,7 +12175,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`
         </tfoot>
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -12258,7 +12255,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -12361,7 +12357,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
     <div class="t-table__pagination">
       <div class="t-pagination t-size-m">
         <div class="t-pagination__total">共 28 项数据</div>
@@ -12445,7 +12440,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -12544,7 +12538,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
     <div class="t-table__pagination">
       <div class="t-pagination t-size-m">
         <div class="t-pagination__total">共 100 项数据</div>
@@ -12680,7 +12673,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col-button.vue 
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
     <div class="t-table__pagination">
       <div class="t-pagination t-size-m">
         <div class="t-pagination__total">共 100 项数据</div>
@@ -12796,7 +12788,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
         </tfoot>
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -12841,7 +12832,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-header.vue corr
       <!---->
     </table>
   </div>
-  <div class="t-loading--center t-size-m t-loading"></div>
 </div>
 `;
 
@@ -12939,7 +12929,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
           <!---->
         </table>
       </div>
-      <div class="t-loading--center t-size-m t-loading"></div>
     </div>
   </div>
 </div>
@@ -13019,7 +13008,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
           <!---->
         </table>
       </div>
-      <div class="t-loading--center t-size-m t-loading"></div>
     </div>
   </div>
 </div>
@@ -13099,7 +13087,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
           <!---->
         </table>
       </div>
-      <div class="t-loading--center t-size-m t-loading"></div>
     </div>
   </div>
 </div>
@@ -13248,7 +13235,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
@@ -13294,7 +13280,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
@@ -13340,7 +13325,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -13519,7 +13503,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -13638,7 +13621,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -13769,7 +13751,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -14032,7 +14013,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
         </tfoot>
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -14243,7 +14223,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
         </tfoot>
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -14493,7 +14472,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
       <!---->
     </table>
   </div>
-  <div class="t-loading--center t-size-m t-loading"></div>
 </div>
 `;
 
@@ -14623,7 +14601,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -14730,7 +14707,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
           <!---->
         </table>
       </div>
-      <div class="t-loading--center t-size-m t-loading"></div>
     </div>
   </div>
 </div>
@@ -14829,7 +14805,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
     <div class="t-table__pagination">
       <div class="t-pagination t-size-m">
         <div class="t-pagination__total">共 60 项数据</div>
@@ -15031,7 +15006,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -15134,7 +15108,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -15218,7 +15191,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue corre
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -15318,7 +15290,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -15452,7 +15423,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
     <div class="t-table__pagination">
       <div class="t-pagination t-size-m">
         <div class="t-pagination__total">共 100 项数据</div>
@@ -15608,7 +15578,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"></div>
   </div>
 </div>
 `;
@@ -15653,7 +15622,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/virtual-scroll.vue cor
           <!---->
         </table>
       </div>
-      <div class="t-loading--center t-size-m t-loading"></div>
     </div>
   </div>
 </div>

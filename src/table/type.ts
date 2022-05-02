@@ -98,8 +98,7 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   lastFullRow?: string | TNode;
   /**
-   * 加载中状态。值为 true 会显示默认加载中样式，可以通过 Function 和 插槽 自定义加载状态呈现内容和样式
-   * @default false
+   * 加载中状态。值为 `true` 会显示默认加载中样式，可以通过 Function 和 插槽 自定义加载状态呈现内容和样式。值为 `false` 则会取消加载状态
    */
   loading?: boolean | TNode;
   /**

@@ -741,9 +741,6 @@ exports[`Table Table affixVue demo works fine 1`] = `
         </tfoot>
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
   </div>
 </div>
 `;
@@ -1050,9 +1047,6 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
   </div>
 </div>
 `;
@@ -1504,9 +1498,6 @@ exports[`Table Table baseVue demo works fine 1`] = `
       </table>
     </div>
     <div
-      class="t-loading--center t-size-m t-loading"
-    />
-    <div
       class="t-table__pagination"
     >
       <div
@@ -1792,9 +1783,6 @@ exports[`Table Table customCellVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
   </div>
 </div>
 `;
@@ -2254,9 +2242,6 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
       </table>
     </div>
     <div
-      class="t-loading--center t-size-m t-loading"
-    />
-    <div
       class="t-table__pagination"
     >
       <div
@@ -2700,9 +2685,6 @@ exports[`Table Table customColVue demo works fine 1`] = `
       </table>
     </div>
     <div
-      class="t-loading--center t-size-m t-loading"
-    />
-    <div
       class="t-table__pagination"
     >
       <div
@@ -3099,9 +3081,6 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
         </tfoot>
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
   </div>
 </div>
 `;
@@ -3224,9 +3203,6 @@ exports[`Table Table customHeaderVue demo works fine 1`] = `
       <!---->
     </table>
   </div>
-  <div
-    class="t-loading--center t-size-m t-loading"
-  />
 </div>
 `;
 
@@ -3574,9 +3550,6 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
           <!---->
         </table>
       </div>
-      <div
-        class="t-loading--center t-size-m t-loading"
-      />
     </div>
   </div>
 </div>
@@ -3790,9 +3763,6 @@ exports[`Table Table dragColSortVue demo works fine 1`] = `
           <!---->
         </table>
       </div>
-      <div
-        class="t-loading--center t-size-m t-loading"
-      />
     </div>
   </div>
 </div>
@@ -4323,9 +4293,6 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
           <!---->
         </table>
       </div>
-      <div
-        class="t-loading--center t-size-m t-loading"
-      />
     </div>
   </div>
 </div>
@@ -4443,9 +4410,6 @@ exports[`Table Table emptyVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
   </div>
    
   <div
@@ -4558,9 +4522,6 @@ exports[`Table Table emptyVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
   </div>
    
   <div
@@ -4673,9 +4634,6 @@ exports[`Table Table emptyVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
   </div>
 </div>
 `;
@@ -5537,9 +5495,6 @@ exports[`Table Table expandableVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
   </div>
 </div>
 `;
@@ -6008,9 +5963,6 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
   </div>
 </div>
 `;
@@ -6578,9 +6530,6 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
   </div>
 </div>
 `;
@@ -7511,9 +7460,6 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
         </tfoot>
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
   </div>
 </div>
 `;
@@ -8485,9 +8431,6 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
         </tfoot>
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
   </div>
 </div>
 `;
@@ -15605,9 +15548,6 @@ exports[`Table Table lazyVue demo works fine 1`] = `
           <!---->
         </table>
       </div>
-      <div
-        class="t-loading--center t-size-m t-loading"
-      />
     </div>
   </div>
 </div>
@@ -16312,9 +16252,6 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
       <!---->
     </table>
   </div>
-  <div
-    class="t-loading--center t-size-m t-loading"
-  />
 </div>
 `;
 
@@ -16828,9 +16765,6 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
   </div>
 </div>
 `;
@@ -17172,9 +17106,6 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
           <!---->
         </table>
       </div>
-      <div
-        class="t-loading--center t-size-m t-loading"
-      />
     </div>
   </div>
 </div>
@@ -17700,9 +17631,6 @@ exports[`Table Table paginationVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
     <div
       class="t-table__pagination"
     >
@@ -18308,9 +18236,6 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
   </div>
 </div>
 `;
@@ -18747,9 +18672,6 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
   </div>
 </div>
 `;
@@ -19029,9 +18951,6 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
   </div>
 </div>
 `;
@@ -19360,9 +19279,6 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
   </div>
 </div>
 `;
@@ -20022,9 +19938,6 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
   </div>
 </div>
 `;
@@ -20651,9 +20564,6 @@ exports[`Table Table treeVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
-    <div
-      class="t-loading--center t-size-m t-loading"
-    />
     <div
       class="t-table__pagination"
     >
