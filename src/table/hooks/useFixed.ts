@@ -438,8 +438,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     }, 0);
   };
 
-  const onDocumentScroll = () => {
-    if (notNeedThWidthList.value) return;
+  const updateAffixHeaderOrFooter = () => {
     const pos = tableContentRef.value.getBoundingClientRect();
     if (props.headerAffixedTop || props.scroll?.type === 'virtual') {
       const r = affixHeaderRef.value?.offsetHeight - pos.top < pos.height;
@@ -449,6 +448,11 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
       showAffixFooter.value = pos.top + (affixFooterRef?.value?.clientHeight || 48) <= window.innerHeight
         && -1 * pos.top < (tableContentRef?.value?.parentNode as HTMLDivElement)?.clientHeight;
     }
+  };
+
+  const onDocumentScroll = () => {
+    if (notNeedThWidthList.value) return;
+    updateAffixHeaderOrFooter();
   };
 
   watch(
@@ -564,6 +568,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     const timer = setTimeout(() => {
       updateTableWidth();
       clearTimeout(timer);
+      updateAffixHeaderOrFooter();
     });
     if (headerAffixedTop.value || footerAffixedBottom.value) {
       on(document, 'scroll', onDocumentScroll);
