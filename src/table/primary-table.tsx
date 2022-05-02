@@ -2,6 +2,7 @@ import {
   computed, defineComponent, toRefs, h, onMounted, ref,
 } from '@vue/composition-api';
 import get from 'lodash/get';
+import omit from 'lodash/omit';
 import baseTableProps from './base-table-props';
 import primaryTableProps from './primary-table-props';
 import BaseTable, { BASE_TABLE_ALL_EVENTS, TableListeners } from './base-table';
@@ -19,6 +20,29 @@ import { PageInfo } from '../pagination';
 import useClassName from './hooks/useClassName';
 
 export { BASE_TABLE_ALL_EVENTS } from './base-table';
+
+const OMIT_PROPS = [
+  'dragSort',
+  'defaultExpandedRowKeys',
+  'columnController',
+  'filterRow',
+  'sortOnRowDraggable',
+  'expandOnRowClick',
+  'multipleSort',
+  'expandIcon',
+  'onChange',
+  'onAsyncLoadingClick',
+  'onChange',
+  'onColumnChange',
+  'onColumnControllerVisibleChange',
+  'onDataChange',
+  'onDisplayColumnsChange',
+  'onDragSort',
+  'onExpandChange',
+  'onFilterChange',
+  'onSelectChange',
+  'onSortChange',
+];
 
 export default defineComponent({
   name: 'TPrimaryTable',
@@ -209,7 +233,7 @@ export default defineComponent({
     const lastFullRow = this.formatNode('lastFullRow', this.renderAsyncLoading, !!this.asyncLoading);
 
     const props = {
-      ...this.$props,
+      ...omit(this.$props, OMIT_PROPS),
       rowClassName: this.tRowClassNames,
       rowAttributes: this.tRowAttributes,
       columns: this.tColumns,
