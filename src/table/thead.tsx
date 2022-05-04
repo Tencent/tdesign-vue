@@ -121,6 +121,7 @@ export default defineComponent({
               mousemove: (e: MouseEvent) => this.onColumnMouseover(e),
             }
             : {};
+          const content = isFunction(col.ellipsisTitle) ? col.ellipsisTitle(h, { col, colIndex: index }) : undefined;
           return (
             <th
               key={col.colKey}
@@ -132,7 +133,13 @@ export default defineComponent({
             >
               <div class={this.tableBaseClass.thCellInner}>
                 {col.ellipsis && col.ellipsisTitle !== false && col.ellipsisTitle !== null ? (
-                  <TEllipsis attach={this.theadRef ? () => this.theadRef : undefined}>{innerTh}</TEllipsis>
+                  <TEllipsis
+                    attach={this.theadRef ? () => this.theadRef : undefined}
+                    popupContent={content && (() => content)}
+                    popupProps={typeof col.ellipsisTitle === 'object' ? col.ellipsisTitle : undefined}
+                  >
+                    {innerTh}
+                  </TEllipsis>
                 ) : (
                   innerTh
                 )}

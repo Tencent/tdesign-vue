@@ -55,7 +55,7 @@ export default defineComponent({
   setup(props: TdPrimaryTableProps, context) {
     const renderTNode = useTNodeJSX();
     const { columns } = toRefs(props);
-    const primaryTableRef = ref(null);
+    const primaryTableRef = ref<HTMLDivElement>(null);
     const { tableDraggableClasses, tableBaseClass } = useClassName();
     // 自定义列配置功能
     const { tDisplayColumns, renderColumnController } = useColumnController(props, context);
@@ -131,7 +131,16 @@ export default defineComponent({
           item.title = (h, p) => {
             const sortIcon = item.sorter ? renderSortIcon(h, p) : null;
             const filterIcon = item.filter ? renderFilterIcon(h, p) : null;
-            return renderTitleWidthIcon(h, [titleContent, sortIcon, filterIcon], p.col, ellipsisTitle);
+            // @ts-ignore
+            const attach = primaryTableRef.value?.$refs?.tableContentRef;
+            return renderTitleWidthIcon(
+              h,
+              [titleContent, sortIcon, filterIcon],
+              p.col,
+              p.colIndex,
+              ellipsisTitle,
+              attach,
+            );
           };
           item.ellipsisTitle = false;
         }

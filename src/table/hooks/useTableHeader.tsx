@@ -1,4 +1,4 @@
-import { SetupContext, computed } from '@vue/composition-api';
+import { SetupContext, computed, getCurrentInstance } from '@vue/composition-api';
 import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
 import { CreateElement } from 'vue';
@@ -47,17 +47,26 @@ export default function useTableHeader(props: TdBaseTableProps) {
     h: CreateElement,
     [title, sortIcon, filterIcon]: TNodeReturnValue[],
     col: PrimaryTableCol<TableRowData>,
+    colIndex: number,
     ellipsisTitle: BaseTableCol['ellipsisTitle'],
+    attach: HTMLElement,
   ) => {
     const classes = {
       [tableSortClasses.sortable]: sortIcon,
       [tableFilterClasses.filterable]: filterIcon,
     };
+    const content = isFunction(ellipsisTitle) ? ellipsisTitle(h, { col, colIndex }) : undefined;
     return (
       <div class={classes}>
         <div class={tableSortClasses.title}>
           {col.ellipsis && ellipsisTitle !== false && ellipsisTitle !== null ? (
-            <TEllipsis>{title}</TEllipsis>
+            <TEllipsis
+              attach={attach ? () => attach : undefined}
+              popupContent={content && (() => content)}
+              popupProps={typeof ellipsisTitle === 'object' ? ellipsisTitle : undefined}
+            >
+              {title}
+            </TEllipsis>
           ) : (
             <div>{title}</div>
           )}
