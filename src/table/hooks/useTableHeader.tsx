@@ -1,4 +1,4 @@
-import { SetupContext, computed, getCurrentInstance } from '@vue/composition-api';
+import { SetupContext, computed } from '@vue/composition-api';
 import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
 import { CreateElement } from 'vue';
