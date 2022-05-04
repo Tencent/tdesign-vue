@@ -134,6 +134,7 @@ export default defineComponent({
               <div class={this.tableBaseClass.thCellInner}>
                 {col.ellipsis && col.ellipsisTitle !== false && col.ellipsisTitle !== null ? (
                   <TEllipsis
+                    placement="bottom"
                     attach={this.theadRef ? () => this.theadRef : undefined}
                     popupContent={content && (() => content)}
                     popupProps={typeof col.ellipsisTitle === 'object' ? col.ellipsisTitle : undefined}
