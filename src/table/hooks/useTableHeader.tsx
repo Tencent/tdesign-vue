@@ -2,11 +2,14 @@ import { SetupContext, computed } from '@vue/composition-api';
 import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
 import { CreateElement } from 'vue';
-import { TdBaseTableProps } from '../type';
+import {
+  BaseTableCol, PrimaryTableCol, TableRowData, TdBaseTableProps,
+} from '../type';
 import { getThRowspanAndColspan, getThList } from './useMultiHeader';
 import { BaseTableColumns } from '../interface';
 import useClassName from './useClassName';
 import { TNodeReturnValue } from '../../common';
+import TEllipsis from '../ellipsis';
 
 // 渲染表头的通用方法
 export function renderTitle(h: CreateElement, slots: SetupContext['slots'], col: BaseTableColumns[0], index: number) {
@@ -32,6 +35,7 @@ export function renderTitle(h: CreateElement, slots: SetupContext['slots'], col:
 
 export default function useTableHeader(props: TdBaseTableProps) {
   const { tableSortClasses, tableFilterClasses } = useClassName();
+
   // 一次性获取 colspan 和 rowspan 可以避免其他数据更新导致的重复计算
   const spansAndLeafNodes = computed(() => getThRowspanAndColspan(props.columns));
   // 表头二维数据
@@ -39,7 +43,12 @@ export default function useTableHeader(props: TdBaseTableProps) {
   const isMultipleHeader = computed(() => thList.value.length > 1);
 
   // eslint-disable-next-line
-  const renderTitleWidthIcon = (h: CreateElement, [title, sortIcon, filterIcon]: TNodeReturnValue[]) => {
+  const renderTitleWidthIcon = (
+    h: CreateElement,
+    [title, sortIcon, filterIcon]: TNodeReturnValue[],
+    col: PrimaryTableCol<TableRowData>,
+    ellipsisTitle: BaseTableCol['ellipsisTitle'],
+  ) => {
     const classes = {
       [tableSortClasses.sortable]: sortIcon,
       [tableFilterClasses.filterable]: filterIcon,
@@ -47,7 +56,11 @@ export default function useTableHeader(props: TdBaseTableProps) {
     return (
       <div class={classes}>
         <div class={tableSortClasses.title}>
-          <div>{title}</div>
+          {col.ellipsis && ellipsisTitle !== false && ellipsisTitle !== null ? (
+            <TEllipsis>{title}</TEllipsis>
+          ) : (
+            <div>{title}</div>
+          )}
           {Boolean(sortIcon || filterIcon) && (
             <div class={tableFilterClasses.iconWrap}>
               {sortIcon}

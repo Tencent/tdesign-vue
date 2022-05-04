@@ -127,11 +127,13 @@ export default defineComponent({
         // 添加排序图标和过滤图标
         if (item.sorter || item.filter) {
           const titleContent = renderTitle(h, context.slots, item, i);
+          const { ellipsisTitle } = item;
           item.title = (h, p) => {
             const sortIcon = item.sorter ? renderSortIcon(h, p) : null;
             const filterIcon = item.filter ? renderFilterIcon(h, p) : null;
-            return renderTitleWidthIcon(h, [titleContent, sortIcon, filterIcon]);
+            return renderTitleWidthIcon(h, [titleContent, sortIcon, filterIcon], p.col, ellipsisTitle);
           };
+          item.ellipsisTitle = false;
         }
         if (item.children?.length) {
           item.children = getColumns(item.children);
@@ -182,6 +184,7 @@ export default defineComponent({
       onInnerPageChange,
     };
   },
+
   methods: {
     // support @row-click @page-change @row-hover .etc. events, Vue3 do not need this function
     getListener() {
