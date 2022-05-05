@@ -28,7 +28,11 @@ export default Vue.extend({
       if (children?.length > this.max) {
         const content = this.setEllipsisContent(children);
         const outAvatar = children.slice(0, this.max);
-        outAvatar.push(<Avatar size={this.size} icon={this.isIcon() ? this.collapseAvatar : null}>{content}</Avatar>);
+        outAvatar.push(
+          <Avatar size={this.size} icon={this.isIcon() ? this.collapseAvatar : null}>
+            {content}
+          </Avatar>,
+        );
         // 隐藏的avatar通过popup展示
         // const hideAvatar = children.slice(this.max - children.length);
         // const popupContent = <t-popup props={{ ...this.popupProps, placement: this.placement }} >
@@ -72,9 +76,6 @@ export default Vue.extend({
     if (max && max >= 0) {
       content = [this.renderEllipsisAvatar(children)];
     }
-    return <div class={groupClass}>
-      {content}
-    </div>;
+    return <div class={groupClass}>{content}</div>;
   },
-
 });

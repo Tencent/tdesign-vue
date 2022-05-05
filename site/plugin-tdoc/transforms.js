@@ -65,7 +65,7 @@ export default {
       demoDefsStr,
       demoCodesDefsStr,
       demoInstallStr,
-      demoCodeInstallStr
+      demoCodeInstallStr,
     });
 
     return sfc;

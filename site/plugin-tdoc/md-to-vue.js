@@ -111,7 +111,7 @@ export default function mdToVue(options) {
           }
 
           Prismjs.highlightAll();
-    
+
           this.$emit('loaded', () => {
             tdDocContent.pageStatus = 'show';
           });
@@ -163,7 +163,6 @@ function customRender({ source, file, md }) {
     apiMd: '<td-doc-empty></td-doc-empty>',
     designMd: '<td-doc-empty></td-doc-empty>',
   };
-
 
   // 渲染 live demo
   if (pageData.usage && pageData.isComponent) {

@@ -76,7 +76,9 @@ const usageCode = computed(() => {
   const propsStrs = Object.keys(changedProps.value)
     .map((name) => `${stringifyProp(name, changedProps.value[name])}`)
     .filter(Boolean);
-  const tureCode = props.code.replace(/\s*v-bind="configProps"/g, () => propsStrs.length ? `\n  ${propsStrs.join('\n  ')}` : '');
+  const tureCode = props.code.replace(/\s*v-bind="configProps"/g, () =>
+    propsStrs.length ? `\n  ${propsStrs.join('\n  ')}` : '',
+  );
   usageRef.value.code = tureCode;
   return tureCode;
 });

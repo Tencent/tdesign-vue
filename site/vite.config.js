@@ -2,7 +2,7 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import { createVuePlugin } from 'vite-plugin-vue2';
 import { VitePWA } from 'vite-plugin-pwa';
-import ScriptSetup from 'unplugin-vue2-script-setup/vite'
+import ScriptSetup from 'unplugin-vue2-script-setup/vite';
 import tdocPlugin from './plugin-tdoc';
 import pwaConfig from './pwaConfig';
 
