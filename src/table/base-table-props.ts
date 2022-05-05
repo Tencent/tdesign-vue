@@ -68,10 +68,10 @@ export default {
   lastFullRow: {
     type: [String, Function] as PropType<TdBaseTableProps['lastFullRow']>,
   },
-  /** 加载中状态。值为 true 会显示默认加载中样式，可以通过 Function 和 插槽 自定义加载状态呈现内容和样式 */
+  /** 加载中状态。值为 `true` 会显示默认加载中样式，可以通过 Function 和 插槽 自定义加载状态呈现内容和样式。值为 `false` 则会取消加载状态 */
   loading: {
     type: [Boolean, Function] as PropType<TdBaseTableProps['loading']>,
-    default: false,
+    default: undefined,
   },
   /** 透传加载组件全部属性 */
   loadingProps: {

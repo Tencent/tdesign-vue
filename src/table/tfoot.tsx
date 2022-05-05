@@ -5,8 +5,9 @@ import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
 import get from 'lodash/get';
 import { BaseTableCellParams, TableRowData, TdBaseTableProps } from './type';
+import { RowAndColFixedPosition } from './interface';
 import { formatRowAttributes, formatRowClassNames } from './utils';
-import { getColumnFixedStyles, RowAndColFixedPosition } from './hooks/useFixed';
+import { getColumnFixedStyles } from './hooks/useFixed';
 import useClassName from './hooks/useClassName';
 import { Styles } from '../common';
 
