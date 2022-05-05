@@ -1,5 +1,750 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Table Table affixVue demo works fine 1`] = `
+<div
+  class="tdesign-demo-block-column-large tdesign-demo__table-affix"
+  style="width: 100%;"
+>
+  <div>
+    <label
+      class="t-checkbox t-is-checked"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        表头吸顶
+      </span>
+    </label>
+     
+    <label
+      class="t-checkbox t-is-checked"
+      style="margin-left: 32px;"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        表尾吸底
+      </span>
+    </label>
+     
+    <label
+      class="t-checkbox t-is-checked"
+      style="margin-left: 32px;"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        固定左侧列
+      </span>
+    </label>
+     
+    <label
+      class="t-checkbox t-is-checked"
+      style="margin-left: 32px;"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        固定右侧列
+      </span>
+    </label>
+  </div>
+   
+  <div
+    class="t-table t-table--bordered t-table--affixed-header t-table--column-fixed"
+    style="position: relative;"
+  >
+    <div
+      offsettop="0"
+    />
+    <div
+      class="t-table__content"
+    >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
+      <table
+        class="t-table--layout-auto"
+      >
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col
+            style="width: 80px;"
+          />
+        </colgroup>
+        <thead
+          class="t-table__header"
+        >
+          <tr>
+            <th
+              class="row t-table__th-index t-align-center"
+              data-colkey="index"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                序号
+              </div>
+            </th>
+            <th
+              class="t-table__th-platform"
+              data-colkey="platform"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                平台
+              </div>
+            </th>
+            <th
+              class="t-table__th-type"
+              data-colkey="type"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                类型
+              </div>
+            </th>
+            <th
+              class="t-table__th-expo"
+              data-colkey="expo"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                曝光
+              </div>
+            </th>
+            <th
+              class="t-table__th-click"
+              data-colkey="click"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                点击
+              </div>
+            </th>
+            <th
+              class="t-table__th-ctr"
+              data-colkey="ctr"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                点击率
+              </div>
+            </th>
+            <th
+              class="t-table__th-default"
+              data-colkey="default"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                默认值
+              </div>
+            </th>
+            <th
+              class="t-table__th-required"
+              data-colkey="required"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                是否必传
+              </div>
+            </th>
+            <th
+              class="t-table__th-detail.position"
+              data-colkey="detail.position"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  详情信息
+                </div>
+              </div>
+            </th>
+            <th
+              class="t-table__th-operation"
+              data-colkey="operation"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                操作
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="t-table__body"
+        >
+          <tr
+            class="t-tdesign__custom-body-tr"
+          >
+            <td
+              class="row t-align-center"
+            >
+              0
+            </td>
+            <td
+              class=""
+            >
+              共有
+            </td>
+            <td
+              class=""
+            >
+              String
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              是
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                读取 0 个数据的嵌套信息值
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              查看
+            </td>
+          </tr>
+          <tr
+            class="t-tdesign__custom-body-tr"
+          >
+            <td
+              class="row t-align-center"
+            >
+              1
+            </td>
+            <td
+              class=""
+            >
+              私有
+            </td>
+            <td
+              class=""
+            >
+              Number
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              0
+            </td>
+            <td
+              class=""
+            >
+              否
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                读取 1 个数据的嵌套信息值
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              查看
+            </td>
+          </tr>
+          <tr
+            class="t-tdesign__custom-body-tr"
+          >
+            <td
+              class="row t-align-center"
+            >
+              2
+            </td>
+            <td
+              class=""
+            >
+              共有
+            </td>
+            <td
+              class=""
+            >
+              Array
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              []
+            </td>
+            <td
+              class=""
+            >
+              否
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                读取 2 个数据的嵌套信息值
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              查看
+            </td>
+          </tr>
+          <tr
+            class="t-tdesign__custom-body-tr"
+          >
+            <td
+              class="row t-align-center"
+            >
+              3
+            </td>
+            <td
+              class=""
+            >
+              私有
+            </td>
+            <td
+              class=""
+            >
+              Object
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              {}
+            </td>
+            <td
+              class=""
+            >
+              否
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                读取 3 个数据的嵌套信息值
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              查看
+            </td>
+          </tr>
+          <tr
+            class="t-tdesign__custom-body-tr"
+          >
+            <td
+              class="row t-align-center"
+            >
+              4
+            </td>
+            <td
+              class=""
+            >
+              共有
+            </td>
+            <td
+              class=""
+            >
+              String
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              是
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                读取 4 个数据的嵌套信息值
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              查看
+            </td>
+          </tr>
+          <tr
+            class="t-tdesign__custom-body-tr"
+          >
+            <td
+              class="row t-align-center"
+            >
+              5
+            </td>
+            <td
+              class=""
+            >
+              私有
+            </td>
+            <td
+              class=""
+            >
+              Number
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              0
+            </td>
+            <td
+              class=""
+            >
+              否
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                读取 5 个数据的嵌套信息值
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              查看
+            </td>
+          </tr>
+          <tr
+            class="t-tdesign__custom-body-tr"
+          >
+            <td
+              class="row t-align-center"
+            >
+              6
+            </td>
+            <td
+              class=""
+            >
+              共有
+            </td>
+            <td
+              class=""
+            >
+              Array
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              []
+            </td>
+            <td
+              class=""
+            >
+              否
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                读取 6 个数据的嵌套信息值
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              查看
+            </td>
+          </tr>
+          <tr
+            class="t-tdesign__custom-body-tr"
+          >
+            <td
+              class="row t-align-center"
+            >
+              7
+            </td>
+            <td
+              class=""
+            >
+              私有
+            </td>
+            <td
+              class=""
+            >
+              Object
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              -
+            </td>
+            <td
+              class=""
+            >
+              {}
+            </td>
+            <td
+              class=""
+            >
+              否
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                读取 7 个数据的嵌套信息值
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              查看
+            </td>
+          </tr>
+        </tbody>
+        <tfoot
+          class="t-table__footer"
+        >
+          <tr
+            class="t-tdesign__custom-footer-tr"
+          >
+            <td>
+              <b
+                style="color: rgb(0, 82, 217);"
+              >
+                表尾
+              </b>
+            </td>
+            <td>
+              <span>
+                第 1 行
+              </span>
+            </td>
+            <td>
+              全部类型
+            </td>
+            <td>
+              -
+            </td>
+            <td>
+              -
+            </td>
+            <td>
+              -
+            </td>
+            <td>
+              <span>
+                空
+              </span>
+            </td>
+            <td>
+               插槽渲染表尾 
+            </td>
+            <td>
+              <div>
+                渲染函数输出表尾信息
+              </div>
+            </td>
+            <td>
+              -
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Table Table asyncLoadingVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large"
@@ -97,6 +842,10 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -455,6 +1204,10 @@ exports[`Table Table baseVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -769,7 +1522,6 @@ exports[`Table Table baseVue demo works fine 1`] = `
             </span>
             <span
               class="t-select__single"
-              title="5"
             >
               5
             </span>
@@ -873,6 +1625,10 @@ exports[`Table Table customCellVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -1203,6 +1959,10 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-auto"
       >
@@ -1506,7 +2266,6 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
             </span>
             <span
               class="t-select__single"
-              title="5"
             >
               5
             </span>
@@ -1643,6 +2402,10 @@ exports[`Table Table customColVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-auto"
       >
@@ -1946,7 +2709,6 @@ exports[`Table Table customColVue demo works fine 1`] = `
             </span>
             <span
               class="t-select__single"
-              title="5"
             >
               5
             </span>
@@ -2070,6 +2832,10 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -2327,6 +3093,10 @@ exports[`Table Table customHeaderVue demo works fine 1`] = `
   <div
     class="t-table__content"
   >
+    <div
+      class="t-table__resize-line"
+      style="display: none; left: 10px; height: 10px;"
+    />
     <table
       class="t-table--layout-fixed"
     >
@@ -2478,6 +3248,10 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
+        <div
+          class="t-table__resize-line"
+          style="display: none; left: 10px; height: 10px;"
+        />
         <table
           class="t-table--layout-fixed"
         >
@@ -2795,6 +3569,10 @@ exports[`Table Table dragColSortVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
+        <div
+          class="t-table__resize-line"
+          style="display: none; left: 10px; height: 10px;"
+        />
         <table
           class="t-table--layout-fixed"
         >
@@ -3004,6 +3782,10 @@ exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
+        <div
+          class="t-table__resize-line"
+          style="display: none; left: 10px; height: 10px;"
+        />
         <table
           class="t-table--layout-fixed"
         >
@@ -3290,6 +4072,10 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
+        <div
+          class="t-table__resize-line"
+          style="display: none; left: 10px; height: 10px;"
+        />
         <table
           class="t-table--layout-fixed"
         >
@@ -3500,6 +4286,10 @@ exports[`Table Table emptyVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -3606,6 +4396,10 @@ exports[`Table Table emptyVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -3714,6 +4508,10 @@ exports[`Table Table emptyVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -3954,6 +4752,10 @@ exports[`Table Table expandableVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-auto"
         style="width: 1200px;"
@@ -4790,6 +5592,10 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -5313,6 +6119,10 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -5772,6 +6582,24 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
         是否冻结首尾两行
       </span>
     </label>
+     
+    <label
+      class="t-checkbox"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        是否显示斑马纹
+      </span>
+    </label>
   </div>
    
   <div
@@ -5782,6 +6610,10 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
       class="t-table__content"
       style="max-height: 300px;"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -6572,294 +7404,6 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
               </a>
             </td>
           </tr>
-          <tr
-            class=""
-          >
-            <td
-              class="t-align-center"
-            >
-              14
-            </td>
-            <td
-              class=""
-            >
-              共有
-            </td>
-            <td
-              class=""
-            >
-              Array
-            </td>
-            <td
-              class=""
-            >
-              []
-            </td>
-            <td
-              class=""
-            >
-              读取 14 个数据的嵌套信息值
-            </td>
-            <td
-              class=""
-            >
-              数据源
-            </td>
-            <td
-              class=""
-            >
-              否
-            </td>
-            <td
-              class=""
-            >
-              <a
-                class="link"
-              >
-                删除
-              </a>
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class="t-align-center"
-            >
-              15
-            </td>
-            <td
-              class=""
-            >
-              私有
-            </td>
-            <td
-              class=""
-            >
-              Object
-            </td>
-            <td
-              class=""
-            >
-              {}
-            </td>
-            <td
-              class=""
-            >
-              读取 15 个数据的嵌套信息值
-            </td>
-            <td
-              class=""
-            >
-              数据源
-            </td>
-            <td
-              class=""
-            >
-              否
-            </td>
-            <td
-              class=""
-            >
-              <a
-                class="link"
-              >
-                删除
-              </a>
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class="t-align-center"
-            >
-              16
-            </td>
-            <td
-              class=""
-            >
-              共有
-            </td>
-            <td
-              class=""
-            >
-              String
-            </td>
-            <td
-              class=""
-            >
-              -
-            </td>
-            <td
-              class=""
-            >
-              读取 16 个数据的嵌套信息值
-            </td>
-            <td
-              class=""
-            >
-              数据源
-            </td>
-            <td
-              class=""
-            >
-              是
-            </td>
-            <td
-              class=""
-            >
-              <a
-                class="link"
-              >
-                删除
-              </a>
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class="t-align-center"
-            >
-              17
-            </td>
-            <td
-              class=""
-            >
-              私有
-            </td>
-            <td
-              class=""
-            >
-              Number
-            </td>
-            <td
-              class=""
-            >
-              0
-            </td>
-            <td
-              class=""
-            >
-              读取 17 个数据的嵌套信息值
-            </td>
-            <td
-              class=""
-            >
-              数据源
-            </td>
-            <td
-              class=""
-            >
-              否
-            </td>
-            <td
-              class=""
-            >
-              <a
-                class="link"
-              >
-                删除
-              </a>
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class="t-align-center"
-            >
-              18
-            </td>
-            <td
-              class=""
-            >
-              共有
-            </td>
-            <td
-              class=""
-            >
-              Array
-            </td>
-            <td
-              class=""
-            >
-              []
-            </td>
-            <td
-              class=""
-            >
-              读取 18 个数据的嵌套信息值
-            </td>
-            <td
-              class=""
-            >
-              数据源
-            </td>
-            <td
-              class=""
-            >
-              否
-            </td>
-            <td
-              class=""
-            >
-              <a
-                class="link"
-              >
-                删除
-              </a>
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class="t-align-center"
-            >
-              19
-            </td>
-            <td
-              class=""
-            >
-              私有
-            </td>
-            <td
-              class=""
-            >
-              Object
-            </td>
-            <td
-              class=""
-            >
-              {}
-            </td>
-            <td
-              class=""
-            >
-              读取 19 个数据的嵌套信息值
-            </td>
-            <td
-              class=""
-            >
-              数据源
-            </td>
-            <td
-              class=""
-            >
-              否
-            </td>
-            <td
-              class=""
-            >
-              <a
-                class="link"
-              >
-                删除
-              </a>
-            </td>
-          </tr>
         </tbody>
         <tfoot
           class="t-table__footer"
@@ -6981,6 +7525,10 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
       class="t-table__content"
       style="max-height: 300px;"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -7894,6 +8442,10 @@ exports[`Table Table lazyVue demo works fine 1`] = `
         class="t-table__content"
         style="height: 300px;"
       >
+        <div
+          class="t-table__resize-line"
+          style="display: none; left: 10px; height: 10px;"
+        />
         <table
           class="t-table--layout-fixed t-table--full-height"
         >
@@ -14992,6 +15544,10 @@ exports[`Table Table loadingVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
+        <div
+          class="t-table__resize-line"
+          style="display: none; left: 10px; height: 10px;"
+        />
         <table
           class="t-table--layout-fixed"
         >
@@ -15148,6 +15704,10 @@ exports[`Table Table loadingVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
+        <div
+          class="t-table__resize-line"
+          style="display: none; left: 10px; height: 10px;"
+        />
         <table
           class="t-table--layout-fixed"
         >
@@ -15293,6 +15853,10 @@ exports[`Table Table loadingVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
+        <div
+          class="t-table__resize-line"
+          style="display: none; left: 10px; height: 10px;"
+        />
         <table
           class="t-table--layout-fixed"
         >
@@ -15458,6 +16022,10 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
   <div
     class="t-table__content"
   >
+    <div
+      class="t-table__resize-line"
+      style="display: none; left: 10px; height: 10px;"
+    />
     <table
       class="t-table--layout-fixed"
     >
@@ -15817,6 +16385,10 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
       class="t-table__content"
       style="max-height: 380px;"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <div
         class="t-table__virtual-scroll-cursor"
         style="transform: translate(0, 30000px);"
@@ -16217,6 +16789,10 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
+        <div
+          class="t-table__resize-line"
+          style="display: none; left: 10px; height: 10px;"
+        />
         <table
           class="t-table--layout-fixed"
         >
@@ -16532,6 +17108,10 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
   <div
     class="t-table__content"
   >
+    <div
+      class="t-table__resize-line"
+      style="display: none; left: 10px; height: 10px;"
+    />
     <table
       class="t-table--layout-fixed"
     >
@@ -16644,7 +17224,6 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
           </span>
           <span
             class="t-select__single"
-            title="10"
           >
             10
           </span>
@@ -16750,6 +17329,10 @@ exports[`Table Table paginationVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -17059,7 +17642,6 @@ exports[`Table Table paginationVue demo works fine 1`] = `
             </span>
             <span
               class="t-select__single"
-              title="5"
             >
               5
             </span>
@@ -17206,6 +17788,10 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -17649,6 +18235,10 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -18082,6 +18672,10 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -18365,6 +18959,10 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -18736,6 +19334,10 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -19362,6 +19964,10 @@ exports[`Table Table treeVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -19969,7 +20575,6 @@ exports[`Table Table treeVue demo works fine 1`] = `
             </span>
             <span
               class="t-select__single"
-              title="10"
             >
               10
             </span>

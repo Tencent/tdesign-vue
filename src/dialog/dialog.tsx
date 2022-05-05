@@ -133,6 +133,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     if (this.draggable) {
       window.addEventListener('resize', throttle(this.resizeAdjustPosition, 1000));
     }
+    if (this.visible) {
+      addClass(document.body, lockClass);
+    }
   },
 
   beforeDestroy() {

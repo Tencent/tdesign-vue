@@ -87,7 +87,6 @@ exports[`Select Select collapsedVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="选项一"
       >
         <span
           class="t-tag--text"
@@ -112,7 +111,6 @@ exports[`Select Select collapsedVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%; display: none;"
-        title="选项三"
       >
         <span
           class="t-tag--text"
@@ -169,7 +167,6 @@ exports[`Select Select collapsedVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="选项一"
       >
         <span
           class="t-tag--text"
@@ -194,7 +191,6 @@ exports[`Select Select collapsedVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%; display: none;"
-        title="选项三"
       >
         <span
           class="t-tag--text"
@@ -251,7 +247,6 @@ exports[`Select Select collapsedVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="选项一"
       >
         <span
           class="t-tag--text"
@@ -276,7 +271,6 @@ exports[`Select Select collapsedVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%; display: none;"
-        title="选项三"
       >
         <span
           class="t-tag--text"
@@ -705,7 +699,6 @@ exports[`Select Select disabledVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-is-disabled t-tag--disabled"
         style="max-width: 100%;"
-        title="选项一"
       >
         <span
           class="t-tag--text"
@@ -717,7 +710,6 @@ exports[`Select Select disabledVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-is-disabled t-tag--disabled"
         style="max-width: 100%;"
-        title="选项二"
       >
         <span
           class="t-tag--text"
@@ -965,7 +957,6 @@ exports[`Select Select labelInValueVue demo works fine 1`] = `
       </span>
       <span
         class="t-select__single"
-        title="选项一"
       >
         选项一
       </span>
@@ -997,7 +988,6 @@ exports[`Select Select labelInValueVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="选项一"
       >
         <span
           class="t-tag--text"
@@ -1098,7 +1088,6 @@ exports[`Select Select multipleVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="区块链"
       >
         <span
           class="t-tag--text"
@@ -1123,7 +1112,6 @@ exports[`Select Select multipleVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="人工智能"
       >
         <span
           class="t-tag--text"
@@ -1181,7 +1169,6 @@ exports[`Select Select multipleVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="1"
       >
         <span
           class="t-tag--text"
@@ -1206,7 +1193,6 @@ exports[`Select Select multipleVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="2"
       >
         <span
           class="t-tag--text"
@@ -1231,7 +1217,6 @@ exports[`Select Select multipleVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="3"
       >
         <span
           class="t-tag--text"
@@ -1256,7 +1241,6 @@ exports[`Select Select multipleVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="4"
       >
         <span
           class="t-tag--text"
@@ -1281,7 +1265,6 @@ exports[`Select Select multipleVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="5"
       >
         <span
           class="t-tag--text"
@@ -1306,7 +1289,6 @@ exports[`Select Select multipleVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="6"
       >
         <span
           class="t-tag--text"
@@ -1364,7 +1346,6 @@ exports[`Select Select multipleVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="区块链"
       >
         <span
           class="t-tag--text"
@@ -1389,7 +1370,6 @@ exports[`Select Select multipleVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="人工智能"
       >
         <span
           class="t-tag--text"
@@ -1414,7 +1394,6 @@ exports[`Select Select multipleVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%; display: none;"
-        title="计算场景"
       >
         <span
           class="t-tag--text"
@@ -1439,7 +1418,6 @@ exports[`Select Select multipleVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%; display: none;"
-        title="大数据"
       >
         <span
           class="t-tag--text"
@@ -1503,7 +1481,6 @@ exports[`Select Select noborderVue demo works fine 1`] = `
       </span>
       <span
         class="t-select__single"
-        title="已选择的选项"
       >
         已选择的选项
       </span>
@@ -1620,7 +1597,6 @@ exports[`Select Select popupPropsVue demo works fine 1`] = `
       </span>
       <span
         class="t-select__single"
-        title="已选择的选项"
       >
         已选择的选项
       </span>
@@ -1657,7 +1633,6 @@ exports[`Select Select popupPropsVue demo works fine 1`] = `
       </span>
       <span
         class="t-select__single"
-        title="已选择的选项"
       >
         已选择的选项
       </span>

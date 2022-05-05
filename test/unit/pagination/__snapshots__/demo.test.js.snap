@@ -24,7 +24,6 @@ exports[`Pagination Pagination baseVue demo works fine 1`] = `
         </span>
         <span
           class="t-select__single"
-          title="5"
         >
           5
         </span>
@@ -150,7 +149,6 @@ exports[`Pagination Pagination baseVue demo works fine 1`] = `
         </span>
         <span
           class="t-select__single"
-          title="10"
         >
           10
         </span>
@@ -170,6 +168,23 @@ exports[`Pagination Pagination baseVue demo works fine 1`] = `
           />
         </svg>
       </div>
+    </div>
+    <div
+      class="t-pagination__btn t-pagination__btn-prev"
+    >
+      <svg
+        class="t-icon t-icon-page-first"
+        fill="none"
+        height="1em"
+        viewBox="0 0 16 16"
+        width="1em"
+      >
+        <path
+          d="M12.4 4.46l-.91-.92L7.03 8l4.46 4.46.92-.92L8.86 8l3.55-3.54zM4.8 4v8h1.3V4H4.8z"
+          fill="currentColor"
+          fill-opacity="0.9"
+        />
+      </svg>
     </div>
     <div
       class="t-pagination__btn t-pagination__btn-prev"
@@ -229,6 +244,23 @@ exports[`Pagination Pagination baseVue demo works fine 1`] = `
         />
       </svg>
     </div>
+    <div
+      class="t-pagination__btn t-pagination__btn-next"
+    >
+      <svg
+        class="t-icon t-icon-page-last"
+        fill="none"
+        height="1em"
+        viewBox="0 0 16 16"
+        width="1em"
+      >
+        <path
+          d="M3.6 11.54l.91.92L8.97 8 4.51 3.54l-.92.92L7.14 8l-3.55 3.54zm7.6.46V4H9.9v8h1.3z"
+          fill="currentColor"
+          fill-opacity="0.9"
+        />
+      </svg>
+    </div>
   </div>
 </div>
 `;
@@ -258,7 +290,6 @@ exports[`Pagination Pagination customizableVue demo works fine 1`] = `
         </span>
         <span
           class="t-select__single"
-          title="20"
         >
           20
         </span>
@@ -423,7 +454,6 @@ exports[`Pagination Pagination disabledVue demo works fine 1`] = `
         </span>
         <span
           class="t-select__single"
-          title="5"
         >
           5
         </span>
@@ -585,7 +615,6 @@ exports[`Pagination Pagination fewVue demo works fine 1`] = `
         </span>
         <span
           class="t-select__single"
-          title="10"
         >
           10
         </span>
@@ -697,7 +726,6 @@ exports[`Pagination Pagination jumpVue demo works fine 1`] = `
         </span>
         <span
           class="t-select__single"
-          title="20"
         >
           20
         </span>
@@ -841,7 +869,6 @@ exports[`Pagination Pagination miniVue demo works fine 1`] = `
         </span>
         <span
           class="t-select__single"
-          title="5"
         >
           5
         </span>
@@ -976,7 +1003,6 @@ exports[`Pagination Pagination moreVue demo works fine 1`] = `
         </span>
         <span
           class="t-select__single"
-          title="5"
         >
           5
         </span>
@@ -1133,7 +1159,6 @@ exports[`Pagination Pagination pageNumVue demo works fine 1`] = `
         </span>
         <span
           class="t-select__single"
-          title="30"
         >
           30
         </span>
@@ -1267,7 +1292,6 @@ exports[`Pagination Pagination simpleMiniVue demo works fine 1`] = `
       </span>
       <span
         class="t-select__single"
-        title="5"
       >
         5
       </span>
@@ -1320,7 +1344,6 @@ exports[`Pagination Pagination simpleMiniVue demo works fine 1`] = `
       </span>
       <span
         class="t-select__single"
-        title="1/20"
       >
         1/20
       </span>
@@ -1385,7 +1408,6 @@ exports[`Pagination Pagination simpleVue demo works fine 1`] = `
         </span>
         <span
           class="t-select__single"
-          title="5"
         >
           5
         </span>
@@ -1438,7 +1460,6 @@ exports[`Pagination Pagination simpleVue demo works fine 1`] = `
         </span>
         <span
           class="t-select__single"
-          title="1/20"
         >
           1/20
         </span>
@@ -1504,7 +1525,6 @@ exports[`Pagination Pagination totalVue demo works fine 1`] = `
         </span>
         <span
           class="t-select__single"
-          title="10"
         >
           10
         </span>

@@ -5,6 +5,50 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.41.1 `2022-04-29`
+### 🚀 Features
+- `Message`: 增加全局配置默认值能力 [@sommouns](https://github.com/sommouns) ([#795](https://github.com/Tencent/tdesign-vue/pull/795))
+- `Pagination`: 新增 `showFirstAndLastPageBtn`、`showPreviousAndNextBtn`、`showPageSize`、`showPageNumber` 属性 [@HQ-Lin](https://github.com/HQ-Lin) ([#808](https://github.com/Tencent/tdesign-vue/pull/808))
+- `Table`: 
+    - 支持表尾吸底及表尾滚动条吸底 [@chaishi](https://github.com/chaishi) ([#810](https://github.com/Tencent/tdesign-vue/pull/810))
+    - 支持表格列可以拖拽宽度 [@tinna3445](https://github.com/tinna3445) ([#757](https://github.com/Tencent/tdesign-vue/pull/757))
+### 🐞 Bug Fixes
+- `Form`: 修复 help 文本样式问题 [@HQ-Lin](https://github.com/HQ-Lin) ([#803](https://github.com/Tencent/tdesign-vue/pull/803))
+- `Dialog`: 修复 dialog 初始化时滚动穿透问题 [@mxj0808](https://github.com/mxj0808) ([#788](https://github.com/Tencent/tdesign-vue/pull/788))
+- `Table`:  表头吸顶时，`table` 元素宽度修正，之前为直接等于外层宽度，不合理 [@chaishi](https://github.com/chaishi) ([#810](https://github.com/Tencent/tdesign-vue/pull/810))
+- `Table`: 修复斑马纹 stripe 和固定表头同时存在时，样式问题，[issue#804](https://github.com/Tencent/tdesign-vue/issues/804) [@chaishi](https://github.com/chaishi) ([#810](https://github.com/Tencent/tdesign-vue/pull/810))
+- `DatePicker`:  修复DatePicker 点击快捷选择日期按钮左边面板日期时间不联动 [@yilaierwang](https://github.com/yilaierwang) ([#811](https://github.com/Tencent/tdesign-vue/pull/811))
+- 防止 `VueCompositionAPI` 重复注册 [@cong-min](https://github.com/cong-min) ([#809](https://github.com/Tencent/tdesign-vue/pull/809))
+
+## 0.41.0 `2022-04-24`
+
+### BREAKING CHANGES
+* Table: 拖拽排序修改为`drag=sort` 表示列拖拽排序，`drag=row` 表示行拖拽排序，`drag=row-handler` 表示行手柄列拖拽排序。如果您使用了 `drag="col"` 来实现行拖拽排序，请更为使用 `drag="row-handler"`，[pr #755](https://github.com/Tencent/tdesign-vue/pull/755)，[@chaishi](https://github.com/chaishi)
+
+### Bug Fixes
+* Table: 
+  - 修复 SSR 场景下使用报错的问题，[pr #744](https://github.com/Tencent/tdesign-vue/pull/744)，[@codenotkey](https://github.com/codenotkey)
+  - 修复表头吸顶时不对齐的问题
+  - 按需引入 Button 组件，避免业务按需引入 Table 组件时出现组件不存在报错的问题
+  - 修复无法使用插槽自定义过滤图标的问题
+  - 解决 `TdBaseTableProps ` 和 `TdPrimaryTableProps` 关于 `onCellClick` 的 TS 类型冲突
+* Alert: 修复 ts 类型错误，[pr #796](https://github.com/Tencent/tdesign-vue/pull/796)，[@pengYYYYY](https://github.com/pengYYYYY)
+* Cascader: [pr #751](https://github.com/Tencent/tdesign-vue/pull/751)，[@pengYYYYY](https://github.com/pengYYYYY) 
+  - 修复可过滤状态下的下拉面板拉起闪烁的问题
+  - 修复可过滤状态下的输入内容未被正常销毁的问题
+* Transfer: 修复 `Transfer` 设置 `targetSort` 后未按预期展示的问题，[#758](https://github.com/Tencent/tdesign-vue/pull/758)，[@BigLiao](https://github.com/BigLiao)
+* ConfigProvider: 修复 `ConfigProvider` 组件导出错误的问题，[pr #773](https://github.com/Tencent/tdesign-vue/pull/773)，[@xiaosansiji](https://github.com/xiaosansiji)
+* TreeSelect: [pr #781](https://github.com/Tencent/tdesign-vue/pull/781)，[@Godlike-meteor](https://github.com/Godlike-meteor)
+  - 修复 `value` 为数字0时，不渲染 `label` 的问题，[issue #722](https://github.com/Tencent/tdesign-vue/issues/722)
+  - 修复 `onBlur` 和 `onClear` 触发时，不会清除 filter function 的问题，[issue #635](https://github.com/Tencent/tdesign-vue/issues/635)
+### Features
+* Select: 去掉选中和下拉项中的 title 属性，[pr #777](https://github.com/Tencent/tdesign-vue/pull/777)，[@LoopZhou](https://github.com/LoopZhou) 
+* Table: 支持树形结构展示，行展开或收起时触发 `onTreeExpandChange` 事件
+* Collapse: 新增 Collapse 折叠面板组件，使用请参照 [官网](https://tdesign.tencent.com/vue/components/collapse)，[@asbstty](https://github.com/asbstty)
+* Tree: [pr #740](https://github.com/Tencent/tdesign-vue/pull/740)，[@TabSpace](https://github.com/TabSpace)
+  - Tree 组件实现嵌套结构渲染能力
+  - 部分属性改为不让 Vue 监听，一定程度上提升组件性能，减少对外部组件交互性能的影响
+
 ## 0.40.3 `2022-04-15`
 
 ### Bug Fixes
@@ -22,13 +66,12 @@ docClass: timeline
 
 ## 0.40.2 `2022-04-08`
 
-
 ### Bug Fixes
 
 * Form: 修复 FormItem slot label 未正常占位的问题，[pr #699](https://github.com/Tencent/tdesign-vue/pull/699)，[@HQ-Lin](https://github.com/HQ-Lin)
 * Slider: 修复设置 `inputnumberProps` 属性无效的问题，[issue #544](https://github.com/Tencent/tdesign-vue-next/issues/544)，[@uyarn](https://github.com/uyarn)
 * Upload: [pr #698](https://github.com/Tencent/tdesign-vue/pull/698)，[@uyarn](https://github.com/uyarn)
-  - 修复 `remove`、`selectChange` 时间回调异常的问题
+  - 修复 `remove`、`selectChange` 事件回调异常的问题
   - 修复取消上传逻辑异常
 ### Features
 

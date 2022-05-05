@@ -788,7 +788,6 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
                     disabled={tDisabled}
                     style="max-width: 100%;"
                     maxWidth="100%"
-                    title={get(item, realLabel)}
                     onClose={this.removeTag.bind(null, index)}
                   >
                     {get(item, realLabel)}
@@ -807,11 +806,7 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
                 {`+${selectedMultiple.length - this.minCollapsedNum}`}
               </tag>
             )}
-            {!multiple && !showPlaceholder && !showFilter && (
-              <span title={selectedSingle} class={`${name}__single`}>
-                {selectedSingle}
-              </span>
-            )}
+            {!multiple && !showPlaceholder && !showFilter && <span class={`${name}__single`}>{selectedSingle}</span>}
             {showFilter && (
               <t-input
                 ref="input"

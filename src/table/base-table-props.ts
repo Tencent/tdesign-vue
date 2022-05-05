@@ -8,6 +8,8 @@ import { TdBaseTableProps } from '../table/type';
 import { PropType } from 'vue';
 
 export default {
+  /** 是否允许调整列宽 */
+  allowResizeColumnWidth: Boolean,
   /** 是否显示表格边框 */
   bordered: Boolean,
   /** 表格底部内容，可以用于自定义列设置等 */
@@ -44,6 +46,12 @@ export default {
     type: Array as PropType<TdBaseTableProps['footData']>,
     default: (): TdBaseTableProps['footData'] => [],
   },
+  /** 表尾吸底 */
+  footerAffixedBottom: Boolean,
+  /** 表尾吸底基于 Affix 组件开发，透传全部 Affix 组件属性 */
+  footerAffixProps: {
+    type: Object as PropType<TdBaseTableProps['footerAffixProps']>,
+  },
   /** 表头吸顶 */
   headerAffixedTop: Boolean,
   /** 表头吸顶基于 Affix 组件开发，透传全部 Affix 组件属性 */
@@ -73,7 +81,7 @@ export default {
   maxHeight: {
     type: [String, Number] as PropType<TdBaseTableProps['maxHeight']>,
   },
-  /** 分页配置，值为空则不显示。具体 API 参考分页组件。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDataPage = true`。 */
+  /** 分页配置，值为空则不显示。具体 API 参考分页组件。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDataPage = true` */
   pagination: {
     type: Object as PropType<TdBaseTableProps['pagination']>,
   },

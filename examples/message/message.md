@@ -30,6 +30,16 @@
 
 {{ plugin }}
 
+### 全局方法
+还提供了全局配置方法
++  `this.$message.config(placement, attach, offset, zIndex)`
++  `MessagePlugin.config(placement, attach, offset, zIndex)`
+
+```javascript
+this.$message.config('top', 'body', [10, 20], 9999);
+MessagePlugin.config('top', 'body', [10, 20], 9999);
+```
+
 ## API
 ### Message Props
 
@@ -48,7 +58,7 @@ onDurationEnd | Function |  | TS 类型：`() => void`<br/>计时结束后触发
 名称 | 参数 | 描述
 -- | -- | --
 close-btn-click | `(context: { e: MouseEvent })` | 当关闭按钮存在时，用户点击关闭按钮触发
-duration-end | - | 计时结束后触发
+duration-end | \- | 计时结束后触发
 
 ### MessageOptions
 
@@ -58,7 +68,7 @@ attach | String / Function | 'body' | 指定弹框挂载的父节点。数据类
 offset | Array | - | 相对于 placement 的偏移量，示例：[-10, 20] 或 ['10em', '8rem']。TS 类型：`Array<string | number>` | N
 placement | String | top | 弹出消息位置。可选项：center/top/left/right/bottom/top-left/top-right/bottom-left/bottom-right。TS 类型：`MessagePlacementList` `type MessagePlacementList = 'center' | 'top' | 'left' | 'right' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/message/type.ts) | N
 zIndex | Number | 5000 | 消息层级 | N
-MessageProps | - | - | 继承 `MessageProps` 中的全部 API | N
+`MessageProps` | \- | - | 继承 `MessageProps` 中的全部 API | N
 
 ### MessagePlugin
 
@@ -70,8 +80,6 @@ theme | String | - | 必需。消息类型。TS 类型：`MessageThemeList`
 message | String / Object | - | 必需。消息内容。TS 类型：`string | MessageOptions`
 duration | Number | 3000 | 消息显示时长，单位：毫秒。值为 0 表示永久显示
 
-插件返回值：`Promise<MessageInstance>【interface MessageInstance { close: () => void }】`
-
 ### MessagePlugin.info
 
 同时也支持 `this.$message.info`。这是一个插件函数，参数形式为顺序参数（形如：(a, b, c)），而非对象参数（形如：({ a, b, c })）。顺序参数如下，
@@ -80,8 +88,6 @@ duration | Number | 3000 | 消息显示时长，单位：毫秒。值为 0 表�
 -- | -- | -- | --
 message | String / Object | - | 必需。消息内容。TS 类型：`string | MessageInfoOptions` `type MessageInfoOptions = Omit<MessageOptions, 'theme'>`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/message/type.ts)
 duration | Number | 3000 | 消息显示时长，单位：毫秒。值为 0 表示永久显示
-
-插件返回值：`Promise<MessageInstance>`
 
 ### MessagePlugin.error
 
@@ -92,8 +98,6 @@ duration | Number | 3000 | 消息显示时长，单位：毫秒。值为 0 表�
 message | String / Object | - | 必需。消息内容。TS 类型：`string | MessageInfoOptions`
 duration | Number | 3000 | 消息显示时长，单位：毫秒。值为 0 表示永久显示
 
-插件返回值：`Promise<MessageInstance>`
-
 ### MessagePlugin.warning
 
 同时也支持 `this.$message.warning`。这是一个插件函数，参数形式为顺序参数（形如：(a, b, c)），而非对象参数（形如：({ a, b, c })）。顺序参数如下，
@@ -102,8 +106,6 @@ duration | Number | 3000 | 消息显示时长，单位：毫秒。值为 0 表�
 -- | -- | -- | --
 message | String / Object | - | 必需。消息内容。TS 类型：`string | MessageInfoOptions`
 duration | Number | 3000 | 消息显示时长，单位：毫秒。值为 0 表示永久显示
-
-插件返回值：`Promise<MessageInstance>`
 
 ### MessagePlugin.success
 
@@ -114,8 +116,6 @@ duration | Number | 3000 | 消息显示时长，单位：毫秒。值为 0 表�
 message | String / Object | - | 必需。消息内容。TS 类型：`string | MessageInfoOptions`
 duration | Number | 3000 | 消息显示时长，单位：毫秒。值为 0 表示永久显示
 
-插件返回值：`Promise<MessageInstance>`
-
 ### MessagePlugin.loading
 
 同时也支持 `this.$message.loading`。这是一个插件函数，参数形式为顺序参数（形如：(a, b, c)），而非对象参数（形如：({ a, b, c })）。顺序参数如下，
@@ -125,8 +125,6 @@ duration | Number | 3000 | 消息显示时长，单位：毫秒。值为 0 表�
 message | String / Object | - | 必需。消息提醒内容。TS 类型：`string | MessageInfoOptions`
 duration | Number | 3000 | 消息显示时长，单位：毫秒。值为 0 表示永久显示
 
-插件返回值：`Promise<MessageInstance>`
-
 ### MessagePlugin.question
 
 同时也支持 `this.$message.question`。这是一个插件函数，参数形式为顺序参数（形如：(a, b, c)），而非对象参数（形如：({ a, b, c })）。顺序参数如下，
@@ -135,8 +133,6 @@ duration | Number | 3000 | 消息显示时长，单位：毫秒。值为 0 表�
 -- | -- | -- | --
 message | String / Object | - | 必需。消息内容。TS 类型：`string | MessageInfoOptions`
 duration | Number | 3000 | 消息显示时长，单位：毫秒。值为 0 表示永久显示
-
-插件返回值：`Promise<MessageInstance>`
 
 ### MessagePlugin.close
 
@@ -152,4 +148,15 @@ options | Object | - | 必需。该插件参数为 $Message.info() 等插件执�
 
 参数名称 | 参数类型 | 参数默认值 | 参数说明
 -- | -- | -- | --
--- | - | - | --。TS 类型：`--`
+\- | \- | - | \-
+
+### MessagePlugin.config
+
+同时也支持 `this.$message.config`。这是一个插件函数，参数形式为顺序参数（形如：(a, b, c)），而非对象参数（形如：({ a, b, c })）。顺序参数如下，
+
+参数名称 | 参数类型 | 参数默认值 | 参数说明
+-- | -- | -- | --
+placement | String | top | 弹出消息位置。可选项：center/top/left/right/bottom/top-left/top-right/bottom-left/bottom-right。TS 类型：`MessagePlacementList` `type MessagePlacementList = 'center' | 'top' | 'left' | 'right' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/message/type.ts)
+attach | String / Function | 'body' | 指定弹框挂载的父节点。数据类型为 String 时，会被当作选择器处理，进行节点查询。示例：'body' 或 () => document.body。TS 类型：`AttachNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)
+offset | Array | - | 相对于 placement 的偏移量，示例：[-10, 20] 或 ['10em', '8rem']。TS 类型：`Array<string | number>`
+zIndex | Number | 5000 | 消息层级

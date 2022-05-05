@@ -17,7 +17,7 @@
 
 <script>
 import merge from 'lodash/merge';
-import enConfig from 'tdesign-vue/locale/en_US';
+import enConfig from 'tdesign-vue/es/locale/en_US';
 // import dayjs from 'dayjs';
 
 // 全局特性配置，可以引入英文默认配置 enConfig，还可以在默认配置的基础上进行自定义配置
