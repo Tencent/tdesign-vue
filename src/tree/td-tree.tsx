@@ -106,6 +106,15 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     },
   },
   watch: {
+    // tdesign-vue-next 编译的代码导致了 dom 频繁刷新
+    // 怀疑是在 render 替换了 object 类型的属性导致
+    // 因此变更属性替换能力为 watch 形式
+    // @see https://github.com/Tencent/tdesign-vue-next/issues/445
+    keys(keys) {
+      this.store.setConfig({
+        keys,
+      });
+    },
     data(list) {
       this.rebuild(list);
     },
@@ -181,7 +190,6 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       if (!store) return;
       // 统一更新选项，然后在 store 统一识别属性更新
       const storeProps = pick(this, [
-        'keys',
         'expandAll',
         'expandLevel',
         'expandMutex',
@@ -221,7 +229,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     build() {
       let list = this.data;
       const {
-        actived, value, valueMode, filter,
+        actived, value, valueMode, filter, keys,
       } = this;
 
       const store = new TreeStore({
@@ -238,6 +246,9 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       // 初始化数据
       this.store = store;
       this.updateStoreConfig();
+      this.store.setConfig({
+        keys,
+      });
 
       if (!Array.isArray(list)) {
         list = [];
