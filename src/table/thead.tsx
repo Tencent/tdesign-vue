@@ -3,8 +3,8 @@ import {
 } from '@vue/composition-api';
 import isFunction from 'lodash/isFunction';
 import { CreateElement } from 'vue';
-import { RowAndColFixedPosition, getColumnFixedStyles } from './hooks/useFixed';
-import { TableColumns, ThRowspanAndColspan } from './hooks/useMultiHeader';
+import { getColumnFixedStyles } from './hooks/useFixed';
+import { RowAndColFixedPosition, BaseTableColumns, ThRowspanAndColspan } from './interface';
 import useClassName from './hooks/useClassName';
 import { useConfig } from '../config-provider/useConfig';
 import { BaseTableCol, TableRowData } from './type';
@@ -31,6 +31,7 @@ export interface TheadProps {
     onColumnMouseover: Function;
     onColumnMousedown: Function;
   };
+  allowResizeColumnWidth: Boolean;
 }
 
 export default defineComponent({
@@ -42,6 +43,7 @@ export default defineComponent({
     thWidthList: Object as PropType<TheadProps['thWidthList']>,
     bordered: Boolean,
     isMultipleHeader: Boolean,
+    allowResizeColumnWidth: Boolean,
     spansAndLeafNodes: Object as PropType<TheadProps['spansAndLeafNodes']>,
     thList: Array as PropType<TheadProps['thList']>,
     columnResizeParams: Object as PropType<TheadProps['columnResizeParams']>,
@@ -84,7 +86,7 @@ export default defineComponent({
       const thBorderMap = new Map<any, boolean>();
       const thRowspanAndColspan = this.spansAndLeafNodes.rowspanAndColspanMap;
       return this.thList.map((row, rowIndex) => {
-        const thRow = row.map((col: TableColumns[0], index: number) => {
+        const thRow = row.map((col: BaseTableColumns[0], index: number) => {
           const rowspanAndColspan = thRowspanAndColspan.get(col);
           if (index === 0 && rowspanAndColspan.rowspan > 1) {
             for (let j = rowIndex + 1; j < rowIndex + rowspanAndColspan.rowspan; j++) {
@@ -113,6 +115,13 @@ export default defineComponent({
           const width = withoutChildren && thWidthList?.[col.colKey] ? `${thWidthList?.[col.colKey]}px` : undefined;
           const styles = { ...(thStyles.style || {}), width };
           const innerTh = renderTitle(h, this.slots, col, index);
+          const resizeColumnListener = this.allowResizeColumnWidth
+            ? {
+              mousedown: (e: MouseEvent) => this.onColumnMousedown(e, col),
+              mousemove: (e: MouseEvent) => this.onColumnMouseover(e),
+            }
+            : {};
+          const content = isFunction(col.ellipsisTitle) ? col.ellipsisTitle(h, { col, colIndex: index }) : undefined;
           return (
             <th
               key={col.colKey}
@@ -120,12 +129,18 @@ export default defineComponent({
               class={thClasses}
               style={styles}
               attrs={{ ...rowspanAndColspan }}
-              onmousemove={(e: MouseEvent) => this.onColumnMouseover(e)}
-              onmousedown={(e: MouseEvent) => this.onColumnMousedown(e, col)}
+              on={resizeColumnListener}
             >
               <div class={this.tableBaseClass.thCellInner}>
-                {col.ellipsis ? (
-                  <TEllipsis attach={this.theadRef ? () => this.theadRef : undefined}>{innerTh}</TEllipsis>
+                {col.ellipsis && col.ellipsisTitle !== false && col.ellipsisTitle !== null ? (
+                  <TEllipsis
+                    placement="bottom"
+                    attach={this.theadRef ? () => this.theadRef : undefined}
+                    popupContent={content && (() => content)}
+                    popupProps={typeof col.ellipsisTitle === 'object' ? col.ellipsisTitle : undefined}
+                  >
+                    {innerTh}
+                  </TEllipsis>
                 ) : (
                   innerTh
                 )}

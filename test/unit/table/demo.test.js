@@ -5,6 +5,7 @@
 import { mount } from '@vue/test-utils';
 import MockDate from 'mockdate';
 
+import affixVue from '@/examples/table/demos/affix.vue';
 import asyncLoadingVue from '@/examples/table/demos/async-loading.vue';
 import baseVue from '@/examples/table/demos/base.vue';
 import customCellVue from '@/examples/table/demos/custom-cell.vue';
@@ -39,6 +40,7 @@ import treeVue from '@/examples/table/demos/tree.vue';
 MockDate.set('2020-12-28');
 
 const mapper = {
+  affixVue,
   asyncLoadingVue,
   baseVue,
   customCellVue,

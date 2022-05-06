@@ -16,6 +16,7 @@ export default function useClassName() {
       bordered: `${classPrefix.value}-table--bordered`,
       striped: `${classPrefix.value}-table--striped`,
       hover: `${classPrefix.value}-table--hoverable`,
+      loading: `${classPrefix.value}-table--loading`,
       rowspanAndColspan: `${classPrefix.value}-table--rowspan-colspan`,
       empty: `${classPrefix.value}-table__empty`,
       emptyRow: `${classPrefix.value}-table__empty-row`,
@@ -25,6 +26,8 @@ export default function useClassName() {
       multipleHeader: `${classPrefix.value}-table--multiple-header`,
       affixedHeader: `${classPrefix.value}-table--affixed-header`,
       affixedHeaderElm: `${classPrefix.value}-table__affixed-header-elm`,
+      affixedFooterElm: `${classPrefix.value}-table__affixed-footer-elm`,
+      affixedFooterWrap: `${classPrefix.value}-table__affixed-footer-wrap`,
       // 边框模式，固定表头，横向滚动时，右侧添加边线，分隔滚动条
       scrollbarDivider: `${classPrefix.value}-table__scroll-bar-divider`,
       // 当用户设置 height 为固定高度，为保证行元素铺满 table，则需设置 table 元素高度为 100%
