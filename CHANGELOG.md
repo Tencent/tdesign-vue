@@ -5,6 +5,23 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.41.2 `2022-05-07` 
+### 🚀 Features
+- `Table`: 新增 API `ellipsisTitle` 用于单独控制表头的超出省略 [@chaishi](https://github.com/chaishi) ([#832](https://github.com/Tencent/tdesign-vue/pull/832))
+- `Tooltip`: `placement` 新增 `mouse` 枚举值，用于支持基于鼠标位置定位 [@Hoofoo-WHU](https://github.com/Hoofoo-WHU) ([#843](https://github.com/Tencent/tdesign-vue/pull/843))
+### 🐞 Bug Fixes
+- `Table`: [@chaishi](https://github.com/chaishi) ([#832](https://github.com/Tencent/tdesign-vue/pull/832))
+  - 修复默认情况，表尾吸底显示与否计算遗漏的问题  [issue#833](https://github.com/Tencent/tdesign-vue/issues/833)，[commit#8323ea](https://github.com/Tencent/tdesign-vue/pull/832/commits/8323eaca98bf759555d7c90b60099ae82370e224)
+  - 修复加载状态会导致拖拽排序失效的问题，[tdesign-vue-next#648](https://github.com/Tencent/tdesign-vue-next/issues/648)，[commit#770d40](https://github.com/Tencent/tdesign-vue/pull/832/commits/770d406969da29ebf0e94aa81477aa41be984108)
+  - 修复表格 `sorter:true` 且 `ellipsis: true` 时样式冲突问题 [issue#778](https://github.com/Tencent/tdesign-vue/issues/778)，[commit#c92168](https://github.com/Tencent/tdesign-vue/pull/832/commits/c92168c9aaf51ac2a27b73dfc3867878ab7a8a48)
+  - TS 类型 TableColumns[0] 在严格模式下的使用问题
+- `Table`: `renderExpandedRow`改为非必填 [@uyarn](https://github.com/uyarn) ([#844](https://github.com/Tencent/tdesign-vue/pull/844))
+- 全局配置：修复`animation`属性`exclude`和`include`在TS中都必填的问题
+### 🚧 Others
+- `Table`: TS 类型全部移入 interface.ts 文件中，并导出 [@chaishi](https://github.com/chaishi) ([#832](https://github.com/Tencent/tdesign-vue/pull/832))
+- `Calendar`: 对 `value` 属性功能进行修正，新增 `month` 和 `year` 属性，用于控制日历面板展示所属年/月。 [@PsTiu](https://github.com/PsTiu) ([#813](https://github.com/Tencent/tdesign-vue/pull/813))
+- 官网: 上线组件 live demo 能力，请访问 [Button 组件文档](https://tdesign.tencent.com/vue/components/button) 体验，[@HQ-Lin](https://github.com/HQ-Lin) ([#695](https://github.com/Tencent/tdesign-vue/pull/695))
+
 ## 🌈 0.41.1 `2022-04-29`
 ### 🚀 Features
 - `Message`: 增加全局配置默认值能力 [@sommouns](https://github.com/sommouns) ([#795](https://github.com/Tencent/tdesign-vue/pull/795))
