@@ -10,6 +10,8 @@ export interface Affix extends Vue {
   scrollContainer: ScrollContainerElement;
   ticking: boolean;
   containerHeight: number;
+  affixed: boolean;
+  fixedTop: number;
 }
 
 export default (Vue as VueConstructor<Affix>).extend({
@@ -19,7 +21,7 @@ export default (Vue as VueConstructor<Affix>).extend({
   },
   data() {
     return {
-      fixedTop: false as false | number,
+      affixed: false,
       oldWidthHeight: { width: '0px', height: '0px' },
     };
   },
@@ -30,31 +32,56 @@ export default (Vue as VueConstructor<Affix>).extend({
     offsetBottom() {
       this.calcInitValue();
     },
-    fixedTop(val) {
-      this.$emit('fixedChange', val !== false, { top: val });
-      if (isFunction(this.onFixedChange)) this.onFixedChange(val !== false, { top: Number(val) });
+    zIndex() {
+      this.calcInitValue();
     },
   },
   methods: {
     handleScroll() {
+      const {
+        scrollContainer, containerHeight, offsetTop, offsetBottom,
+      } = this;
+      const { affixWrap, affix } = this.$refs as { affixWrap: HTMLElement; affix: HTMLElement };
       if (!this.ticking) {
         window.requestAnimationFrame(() => {
-          const { top } = this.$el.getBoundingClientRect(); // top = 节点到页面顶部的距离，包含 scroll 中的高度
+          const { top = 0 } = (affixWrap as HTMLElement).getBoundingClientRect(); // top = 节点到页面顶部的距离，包含 scroll 中的高度
+
           let containerTop = 0; // containerTop = 容器到页面顶部的距离
-          if (this.scrollContainer instanceof HTMLElement) {
-            containerTop = this.scrollContainer.getBoundingClientRect().top;
+          if (scrollContainer instanceof HTMLElement) {
+            containerTop = scrollContainer.getBoundingClientRect().top;
           }
+
+          let fixedTop: number | false;
           const calcTop = top - containerTop; // 节点顶部到 container 顶部的距离
-          const calcBottom = containerTop + this.containerHeight - this.offsetBottom; // 计算 bottom 相对应的 top 值
-          if (this.offsetTop !== undefined && calcTop <= this.offsetTop) {
+          const calcBottom = containerTop + containerHeight - offsetBottom; // 计算 bottom 相对应的 top 值
+
+          if (offsetTop !== undefined && calcTop <= offsetTop) {
             // top 的触发
-            this.fixedTop = containerTop + this.offsetTop;
-          } else if (this.offsetBottom !== undefined && top >= calcBottom) {
+            fixedTop = containerTop + offsetTop;
+          } else if (offsetBottom !== undefined && top >= calcBottom) {
             // bottom 的触发
-            this.fixedTop = calcBottom;
+            fixedTop = calcBottom;
           } else {
-            this.fixedTop = false;
+            fixedTop = false;
           }
+
+          if (affix) {
+            this.affixed = fixedTop !== false;
+
+            if (this.affixed) {
+              affix.className = name;
+              affix.style.top = `${fixedTop}px`;
+              affix.style.width = this.oldWidthHeight.width;
+              affix.style.zIndex = `${this.zIndex}`;
+            } else {
+              affix.removeAttribute('class');
+              affix.removeAttribute('style');
+            }
+
+            this.$emit('fixedChange', this.affixed, { top: fixedTop });
+            if (isFunction(this.onFixedChange)) this.onFixedChange(this.affixed, { top: Number(fixedTop) });
+          }
+
           this.ticking = false;
         });
         this.ticking = true;
@@ -67,46 +94,35 @@ export default (Vue as VueConstructor<Affix>).extend({
       // 需要减掉当前节点的高度，对比的高度应该从 border-top 比对开始
       this.containerHeight = containerHeight - this.$el.clientHeight;
       // 被包裹的子节点宽高
-      const { clientWidth, clientHeight } = this.$el.querySelector(`.${name}`) || this.$el;
+      const { clientWidth, clientHeight } = this.$refs.affixWrap as HTMLElement;
       this.oldWidthHeight = { width: `${clientWidth}px`, height: `${clientHeight}px` };
-
       this.handleScroll();
     },
   },
-  async mounted() {
-    await this.$nextTick();
-    this.scrollContainer = getScrollContainer(this.container);
-    this.calcInitValue();
-    on(this.scrollContainer, 'scroll', this.handleScroll);
-    on(window, 'resize', this.calcInitValue);
-    if (!(this.scrollContainer instanceof Window)) on(window, 'scroll', this.handleScroll);
+  mounted() {
+    this.$nextTick(() => {
+      this.scrollContainer = getScrollContainer(this.container);
+      this.calcInitValue();
+      on(this.scrollContainer, 'scroll', this.handleScroll);
+      on(window, 'resize', this.calcInitValue);
+    });
   },
   destroyed() {
     if (!this.scrollContainer) return;
     off(this.scrollContainer, 'scroll', this.handleScroll);
     off(window, 'resize', this.calcInitValue);
-    if (!(this.scrollContainer instanceof Window)) off(window, 'scroll', this.handleScroll);
   },
   render() {
     const {
       $slots: { default: children },
       oldWidthHeight,
-      fixedTop,
-      zIndex,
     } = this;
 
-    // false 0 -1 1 都用实际的意义
-    if (fixedTop !== false) {
-      return (
-        <div>
-          <div style={oldWidthHeight}></div>
-          <div class={name} style={{ zIndex, top: `${fixedTop}px`, width: oldWidthHeight.width }}>
-            {children}
-          </div>
-        </div>
-      );
-    }
-
-    return <div>{children}</div>;
+    return (
+      <div ref="affixWrap">
+        <div ref="affix">{children}</div>
+        {this.affixed ? <div style={oldWidthHeight}></div> : ''}
+      </div>
+    );
   },
 });
