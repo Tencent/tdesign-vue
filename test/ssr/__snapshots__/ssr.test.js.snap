@@ -16552,6 +16552,8 @@ exports[`ssr snapshot test renders ./examples/tooltip/demos/duration.vue correct
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/tooltip/demos/mouse.vue correctly 1`] = `<div class="tdesign-tooltip-demo"><a href="#">文案比较长...</a></div>`;
+
 exports[`ssr snapshot test renders ./examples/tooltip/demos/no-arrow.vue correctly 1`] = `<div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">不带箭头的文字提示</span></button></div>`;
 
 exports[`ssr snapshot test renders ./examples/tooltip/demos/theme.vue correctly 1`] = `<div class="tdesign-tooltip-demo"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">default</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">primary</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-success"><span class="t-button__text">success</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-danger"><span class="t-button__text">danger</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-warning"><span class="t-button__text">warning</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">light</span></button></div>`;
