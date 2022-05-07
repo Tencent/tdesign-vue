@@ -16,7 +16,8 @@ docClass: timeline
   - 修复表格 `sorter:true` 且 `ellipsis: true` 时样式冲突问题 [issue#778](https://github.com/Tencent/tdesign-vue/issues/778)，[commit#c92168](https://github.com/Tencent/tdesign-vue/pull/832/commits/c92168c9aaf51ac2a27b73dfc3867878ab7a8a48)
   - TS 类型 TableColumns[0] 在严格模式下的使用问题
 - `Table`: `renderExpandedRow`改为非必填 [@uyarn](https://github.com/uyarn) ([#844](https://github.com/Tencent/tdesign-vue/pull/844))
-- 全局配置：修复`animation`属性`exclude`和`include`在TS中都必填的问题
+- 全局配置：修复`animation`属性`exclude`和`include`在 TS 中都必填的问题
+- `Datepicker`: 修复 weekday 英文翻译的顺序问题 [@keifergu](https://github.com/keifergu) ([common #447](https://github.com/Tencent/tdesign-common/pull/447))
 ### 🚧 Others
 - `Table`: TS 类型全部移入 interface.ts 文件中，并导出 [@chaishi](https://github.com/chaishi) ([#832](https://github.com/Tencent/tdesign-vue/pull/832))
 - `Calendar`: 对 `value` 属性功能进行修正，新增 `month` 和 `year` 属性，用于控制日历面板展示所属年/月。 [@PsTiu](https://github.com/PsTiu) ([#813](https://github.com/Tencent/tdesign-vue/pull/813))
