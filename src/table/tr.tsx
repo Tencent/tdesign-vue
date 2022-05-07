@@ -17,7 +17,8 @@ import pick from 'lodash/pick';
 import get from 'lodash/get';
 import { CreateElement } from 'vue';
 import { formatRowAttributes, formatRowClassNames } from './utils';
-import { getRowFixedStyles, getColumnFixedStyles, RowAndColFixedPosition } from './hooks/useFixed';
+import { getRowFixedStyles, getColumnFixedStyles } from './hooks/useFixed';
+import { RowAndColFixedPosition } from './interface';
 import useClassName from './hooks/useClassName';
 import TEllipsis from './ellipsis';
 import {

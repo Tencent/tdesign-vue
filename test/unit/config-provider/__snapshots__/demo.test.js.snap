@@ -1504,7 +1504,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
           </div>
         </div>
         <div
-          class="t-input__extra"
+          class="t-input__help"
         />
       </div>
     </div>
@@ -1569,7 +1569,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
           </div>
         </div>
         <div
-          class="t-input__extra"
+          class="t-input__help"
         />
       </div>
     </div>
@@ -3348,6 +3348,10 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
@@ -3580,6 +3584,10 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
+      <div
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
       <table
         class="t-table--layout-fixed"
       >
