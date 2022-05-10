@@ -18959,12 +18959,34 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large demo-container"
 >
-  <p>
-    排序：{
+  <div>
+    <label
+      class="t-checkbox"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+         隐藏排序文本提示 
+      </span>
+    </label>
+     
+    <span
+      style="padding-left: 16px; vertical-align: top;"
+    >
+      排序：{
   "sortBy": "status",
   "descending": true
 }
-  </p>
+    </span>
+  </div>
    
   <div
     class="t-table t-table--bordered"
@@ -19507,24 +19529,28 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
                 class="t-table__tree-col"
                 style="padding-left: 1px;"
               >
-                <svg
-                  class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  width="1em"
+                <span
+                  class="t-table__tree-op-icon"
                 >
-                  <path
-                    d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                  <path
-                    d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                </svg>
+                  <svg
+                    class="t-icon t-icon-add-rectangle"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                    <path
+                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
                 JQTest0
               </div>
             </td>
@@ -19604,24 +19630,28 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
                 class="t-table__tree-col"
                 style="padding-left: 1px;"
               >
-                <svg
-                  class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  width="1em"
+                <span
+                  class="t-table__tree-op-icon"
                 >
-                  <path
-                    d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                  <path
-                    d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                </svg>
+                  <svg
+                    class="t-icon t-icon-add-rectangle"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                    <path
+                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
                 JQTest1
               </div>
             </td>
@@ -19700,24 +19730,28 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
                 class="t-table__tree-col"
                 style="padding-left: 1px;"
               >
-                <svg
-                  class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  width="1em"
+                <span
+                  class="t-table__tree-op-icon"
                 >
-                  <path
-                    d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                  <path
-                    d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                </svg>
+                  <svg
+                    class="t-icon t-icon-add-rectangle"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                    <path
+                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
                 JQTest2
               </div>
             </td>
@@ -19797,24 +19831,28 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
                 class="t-table__tree-col"
                 style="padding-left: 1px;"
               >
-                <svg
-                  class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  width="1em"
+                <span
+                  class="t-table__tree-op-icon"
                 >
-                  <path
-                    d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                  <path
-                    d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                </svg>
+                  <svg
+                    class="t-icon t-icon-add-rectangle"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                    <path
+                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
                 JQTest3
               </div>
             </td>
@@ -19893,24 +19931,28 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
                 class="t-table__tree-col"
                 style="padding-left: 1px;"
               >
-                <svg
-                  class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  width="1em"
+                <span
+                  class="t-table__tree-op-icon"
                 >
-                  <path
-                    d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                  <path
-                    d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                </svg>
+                  <svg
+                    class="t-icon t-icon-add-rectangle"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                    <path
+                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
                 JQTest4
               </div>
             </td>
@@ -19967,6 +20009,27 @@ exports[`Table Table treeVue demo works fine 1`] = `
         展开/收起可见行
       </span>
     </button>
+     
+    <label
+      class="t-checkbox"
+      style="margin-left: 16px; vertical-align: middle;"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        
+      自定义折叠/展开图标
+    
+      </span>
+    </label>
   </div>
    
   <br />
@@ -20170,24 +20233,28 @@ exports[`Table Table treeVue demo works fine 1`] = `
                   class="t-table__tree-col t-table__tree-col--inline"
                   style="padding-left: 1px;"
                 >
-                  <svg
-                    class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                    fill="none"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    width="1em"
+                  <span
+                    class="t-table__tree-op-icon"
                   >
-                    <path
-                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                    <path
-                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                  </svg>
+                    <svg
+                      class="t-icon t-icon-add-rectangle"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                      <path
+                        d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                  </span>
                   我是 1_1 号（第 1 页）
                 </div>
               </div>
@@ -20273,24 +20340,28 @@ exports[`Table Table treeVue demo works fine 1`] = `
                   class="t-table__tree-col t-table__tree-col--inline"
                   style="padding-left: 1px;"
                 >
-                  <svg
-                    class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                    fill="none"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    width="1em"
+                  <span
+                    class="t-table__tree-op-icon"
                   >
-                    <path
-                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                    <path
-                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                  </svg>
+                    <svg
+                      class="t-icon t-icon-add-rectangle"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                      <path
+                        d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                  </span>
                   我是 2_1 号（第 1 页）
                 </div>
               </div>
@@ -20376,24 +20447,28 @@ exports[`Table Table treeVue demo works fine 1`] = `
                   class="t-table__tree-col t-table__tree-col--inline"
                   style="padding-left: 1px;"
                 >
-                  <svg
-                    class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                    fill="none"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    width="1em"
+                  <span
+                    class="t-table__tree-op-icon"
                   >
-                    <path
-                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                    <path
-                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                  </svg>
+                    <svg
+                      class="t-icon t-icon-add-rectangle"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                      <path
+                        d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                  </span>
                   我是 3_1 号（第 1 页）
                 </div>
               </div>
@@ -20479,24 +20554,28 @@ exports[`Table Table treeVue demo works fine 1`] = `
                   class="t-table__tree-col t-table__tree-col--inline"
                   style="padding-left: 1px;"
                 >
-                  <svg
-                    class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                    fill="none"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    width="1em"
+                  <span
+                    class="t-table__tree-op-icon"
                   >
-                    <path
-                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                    <path
-                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                  </svg>
+                    <svg
+                      class="t-icon t-icon-add-rectangle"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                      <path
+                        d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                  </span>
                   我是 4_1 号（第 1 页）
                 </div>
               </div>
