@@ -1,5 +1,5 @@
 import { ref, Ref, reactive } from '@vue/composition-api';
-import { TableColumns } from './useMultiHeader';
+import { BaseTableColumns } from '../interface';
 
 export default function useColumnResize(tableElmRef: Ref<HTMLTableElement>, refreshTable: () => void) {
   const resizeLineRef = ref<HTMLDivElement>();
@@ -37,7 +37,7 @@ export default function useColumnResize(tableElmRef: Ref<HTMLTableElement>, refr
   };
 
   // 调整表格列宽
-  const onColumnMousedown = (e: MouseEvent, col: TableColumns[0]) => {
+  const onColumnMousedown = (e: MouseEvent, col: BaseTableColumns[0]) => {
     // 非resize的点击，不做处理
     if (!resizeLineParams.draggingCol) return;
 

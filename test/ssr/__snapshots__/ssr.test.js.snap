@@ -2215,103 +2215,129 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/slot-props-api.vue 
 `;
 
 exports[`ssr snapshot test renders ./examples/calendar/demos/value.vue correctly 1`] = `
-<div class="t-calendar t-calendar--full">
-  <div class="t-calendar__control">
-    <div class="t-calendar__title"></div>
-    <div class="t-calendar__control-section">
-      <div class="t-calendar__control-section-cell">
-        <div class="t-select__wrap">
-          <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span class="t-select__single">1998</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
-              <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-            </svg></div>
+<div>
+  <form class="t-form t-form-inline">
+    <div class="t-form__item t-form-item__ t-form__item-with-extra">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">自己指定年：</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input__wrap">
+            <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="1998" class="t-input__inner"></div>
+          </div>
         </div>
+        <div class="t-input__help"></div>
       </div>
-      <div class="t-calendar__control-section-cell">
-        <div class="t-select__wrap">
-          <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span class="t-select__single">11</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
-              <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-            </svg></div>
-        </div>
-      </div>
-      <div class="t-calendar__control-section-cell" style="height:auto;">
-        <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
-          <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
-        </div>
-      </div>
-      <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag">隐藏周末</span></div>
-      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
-  </div>
-  <div class="t-calendar__panel t-calendar__panel--month">
-    <table class="t-calendar__table">
-      <thead class="t-calendar__table-head">
-        <tr class="t-calendar__table-head-row">
-          <th class="t-calendar__table-head-cell"><span>一</span></th>
-          <th class="t-calendar__table-head-cell"><span>二</span></th>
-          <th class="t-calendar__table-head-cell"><span>三</span></th>
-          <th class="t-calendar__table-head-cell"><span>四</span></th>
-          <th class="t-calendar__table-head-cell"><span>五</span></th>
-          <th class="t-calendar__table-head-cell"><span>六</span></th>
-          <th class="t-calendar__table-head-cell"><span>日</span></th>
-        </tr>
-      </thead>
-      <tbody class="t-calendar__table-body">
-        <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-        </tr>
-        <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-        </tr>
-        <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-checked"><span><div class="t-calendar__table-body-cell-display">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-        </tr>
-        <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-        </tr>
-        <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-        </tr>
-        <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-        </tr>
-      </tbody>
-    </table>
+    <div class="t-form__item t-form-item__ t-form__item-with-extra">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">自己指定年月：</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input__wrap">
+            <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="11" class="t-input__inner"></div>
+          </div>
+        </div>
+        <div class="t-input__help"></div>
+      </div>
+    </div>
+  </form>
+  <div class="t-calendar t-calendar--full">
+    <div class="t-calendar__control">
+      <div class="t-calendar__title"></div>
+      <div class="t-calendar__control-section">
+        <div class="t-calendar__control-section-cell">
+          <div class="t-select__wrap">
+            <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span class="t-select__single">1998</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
+                <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+              </svg></div>
+          </div>
+        </div>
+        <div class="t-calendar__control-section-cell">
+          <div class="t-select__wrap">
+            <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span class="t-select__single">11</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
+                <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+              </svg></div>
+          </div>
+        </div>
+        <div class="t-calendar__control-section-cell" style="height:auto;">
+          <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
+            <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+          </div>
+        </div>
+        <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag">隐藏周末</span></div>
+        <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
+      </div>
+    </div>
+    <div class="t-calendar__panel t-calendar__panel--month">
+      <table class="t-calendar__table">
+        <thead class="t-calendar__table-head">
+          <tr class="t-calendar__table-head-row">
+            <th class="t-calendar__table-head-cell"><span>一</span></th>
+            <th class="t-calendar__table-head-cell"><span>二</span></th>
+            <th class="t-calendar__table-head-cell"><span>三</span></th>
+            <th class="t-calendar__table-head-cell"><span>四</span></th>
+            <th class="t-calendar__table-head-cell"><span>五</span></th>
+            <th class="t-calendar__table-head-cell"><span>六</span></th>
+            <th class="t-calendar__table-head-cell"><span>日</span></th>
+          </tr>
+        </thead>
+        <tbody class="t-calendar__table-body">
+          <tr class="t-calendar__table-body-row">
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          </tr>
+          <tr class="t-calendar__table-body-row">
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          </tr>
+          <tr class="t-calendar__table-body-row">
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-checked"><span><div class="t-calendar__table-body-cell-display">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          </tr>
+          <tr class="t-calendar__table-body-row">
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          </tr>
+          <tr class="t-calendar__table-body-row">
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          </tr>
+          <tr class="t-calendar__table-body-row">
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 `;
@@ -13094,6 +13120,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
 
 exports[`ssr snapshot test renders ./examples/table/demos/drag-sort-handler.vue correctly 1`] = `
 <div class="demo-container t-table-demo-sort">
+  <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">加载状态</span></label></div>
   <div class="item">
     <div class="t-table t-table--row-handler-draggable" style="position:relative;">
       <div class="t-table__content">
@@ -13182,6 +13209,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort-handler.vue 
           <!---->
         </table>
       </div>
+      <div class="t-loading--center t-size-m t-loading"></div>
     </div>
   </div>
 </div>
@@ -14227,181 +14255,175 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
 
 exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
-  <div class="t-table t-size-s" style="position:relative;">
-    <div class="t-loading__parent">
-      <div class="t-table__content">
-        <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
-        <table class="t-table--layout-fixed" style="width:;">
-          <colgroup>
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-          </colgroup>
-          <thead class="t-table__header">
-            <tr>
-              <th data-colkey="type" class="row t-table__th-type">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">类型</div>
-                </div>
-              </th>
-              <th data-colkey="platform" class="test t-table__th-platform">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">平台</div>
-                </div>
-              </th>
-              <th data-colkey="property" class="test2 t-table__th-property">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">属性</div>
-                </div>
-              </th>
-              <th data-colkey="default" class="test4 t-table__th-default">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
-                </div>
-              </th>
-              <th data-colkey="needed" class="test3 t-table__th-needed">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
-                </div>
-              </th>
-              <th data-colkey="description" class="row t-table__th-description">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">说明</div>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody class="t-table__body"></tbody>
-          <!---->
-        </table>
-      </div>
-      <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
-          <foreignObject x="1" y="1" width="12" height="12">
-            <div class="t-loading__gradient-conic"></div>
-          </foreignObject>
-        </svg></div>
+  <div class="t-table t-size-s t-table--loading" style="position:relative;">
+    <div class="t-table__content">
+      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
+      <table class="t-table--layout-fixed" style="width:;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+        </colgroup>
+        <thead class="t-table__header">
+          <tr>
+            <th data-colkey="type" class="row t-table__th-type">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
+            </th>
+            <th data-colkey="platform" class="test t-table__th-platform">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
+            </th>
+            <th data-colkey="property" class="test2 t-table__th-property">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">属性</div>
+              </div>
+            </th>
+            <th data-colkey="default" class="test4 t-table__th-default">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
+            </th>
+            <th data-colkey="needed" class="test3 t-table__th-needed">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
+            </th>
+            <th data-colkey="description" class="row t-table__th-description">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="t-table__body"></tbody>
+        <!---->
+      </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+        <foreignObject x="1" y="1" width="12" height="12">
+          <div class="t-loading__gradient-conic"></div>
+        </foreignObject>
+      </svg></div>
   </div>
-  <div class="t-table t-size-s" style="position:relative;">
-    <div class="t-loading__parent">
-      <div class="t-table__content">
-        <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
-        <table class="t-table--layout-fixed" style="width:;">
-          <colgroup>
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-          </colgroup>
-          <thead class="t-table__header">
-            <tr>
-              <th data-colkey="type" class="row t-table__th-type">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">类型</div>
-                </div>
-              </th>
-              <th data-colkey="platform" class="test t-table__th-platform">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">平台</div>
-                </div>
-              </th>
-              <th data-colkey="property" class="test2 t-table__th-property">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">属性</div>
-                </div>
-              </th>
-              <th data-colkey="default" class="test4 t-table__th-default">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
-                </div>
-              </th>
-              <th data-colkey="needed" class="test3 t-table__th-needed">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
-                </div>
-              </th>
-              <th data-colkey="description" class="row t-table__th-description">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">说明</div>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody class="t-table__body"></tbody>
-          <!---->
-        </table>
-      </div>
-      <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay">
-        <div class="t-loading__text">
-          <div class="t-table--loading-message">😊 这里使用插槽自定义加载状态 😊</div>
-        </div>
+  <div class="t-table t-size-s t-table--loading" style="position:relative;">
+    <div class="t-table__content">
+      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
+      <table class="t-table--layout-fixed" style="width:;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+        </colgroup>
+        <thead class="t-table__header">
+          <tr>
+            <th data-colkey="type" class="row t-table__th-type">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
+            </th>
+            <th data-colkey="platform" class="test t-table__th-platform">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
+            </th>
+            <th data-colkey="property" class="test2 t-table__th-property">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">属性</div>
+              </div>
+            </th>
+            <th data-colkey="default" class="test4 t-table__th-default">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
+            </th>
+            <th data-colkey="needed" class="test3 t-table__th-needed">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
+            </th>
+            <th data-colkey="description" class="row t-table__th-description">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="t-table__body"></tbody>
+        <!---->
+      </table>
+    </div>
+    <div class="t-loading--center t-size-m t-loading">
+      <div class="t-loading__text">
+        <div class="t-table--loading-message">😊 这里使用插槽自定义加载状态 😊</div>
       </div>
     </div>
   </div>
-  <div class="t-table t-size-s" style="position:relative;">
-    <div class="t-loading__parent">
-      <div class="t-table__content">
-        <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
-        <table class="t-table--layout-fixed" style="width:;">
-          <colgroup>
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-          </colgroup>
-          <thead class="t-table__header">
-            <tr>
-              <th data-colkey="type" class="row t-table__th-type">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">类型</div>
-                </div>
-              </th>
-              <th data-colkey="platform" class="test t-table__th-platform">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">平台</div>
-                </div>
-              </th>
-              <th data-colkey="property" class="test2 t-table__th-property">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">属性</div>
-                </div>
-              </th>
-              <th data-colkey="default" class="test4 t-table__th-default">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
-                </div>
-              </th>
-              <th data-colkey="needed" class="test3 t-table__th-needed">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
-                </div>
-              </th>
-              <th data-colkey="description" class="row t-table__th-description">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">说明</div>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody class="t-table__body"></tbody>
-          <!---->
-        </table>
-      </div>
-      <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
-          <foreignObject x="1" y="1" width="12" height="12">
-            <div class="t-loading__gradient-conic"></div>
-          </foreignObject>
-        </svg>
-        <div class="t-loading__text">
-          <div class="t-table--loading-message">这里使用渲染函数定义加载状态</div>
-        </div>
+  <div class="t-table t-size-s t-table--loading" style="position:relative;">
+    <div class="t-table__content">
+      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
+      <table class="t-table--layout-fixed" style="width:;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+        </colgroup>
+        <thead class="t-table__header">
+          <tr>
+            <th data-colkey="type" class="row t-table__th-type">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
+            </th>
+            <th data-colkey="platform" class="test t-table__th-platform">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
+            </th>
+            <th data-colkey="property" class="test2 t-table__th-property">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">属性</div>
+              </div>
+            </th>
+            <th data-colkey="default" class="test4 t-table__th-default">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
+            </th>
+            <th data-colkey="needed" class="test3 t-table__th-needed">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
+            </th>
+            <th data-colkey="description" class="row t-table__th-description">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="t-table__body"></tbody>
+        <!---->
+      </table>
+    </div>
+    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+        <foreignObject x="1" y="1" width="12" height="12">
+          <div class="t-loading__gradient-conic"></div>
+        </foreignObject>
+      </svg>
+      <div class="t-loading__text">
+        <div class="t-table--loading-message">这里使用渲染函数定义加载状态</div>
       </div>
     </div>
   </div>
@@ -14884,6 +14906,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
       <!---->
     </table>
   </div>
+  <div class="t-loading--center t-size-m t-loading"></div>
   <div class="t-table__pagination">
     <div class="t-pagination t-size-m">
       <div class="t-pagination__total">共 0 项数据</div>
@@ -16528,6 +16551,8 @@ exports[`ssr snapshot test renders ./examples/tooltip/demos/duration.vue correct
   <!---->
 </div>
 `;
+
+exports[`ssr snapshot test renders ./examples/tooltip/demos/mouse.vue correctly 1`] = `<div class="tdesign-tooltip-demo"><a href="#">文案比较长...</a></div>`;
 
 exports[`ssr snapshot test renders ./examples/tooltip/demos/no-arrow.vue correctly 1`] = `<div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">不带箭头的文字提示</span></button></div>`;
 
