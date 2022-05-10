@@ -21,7 +21,7 @@ export default function useColumnResize(tableElmRef: Ref<HTMLTableElement>, refr
   const onColumnMouseover = (e: MouseEvent) => {
     if (!resizeLineRef.value) return;
 
-    const target = e.target as HTMLElement;
+    const target = (e.target as HTMLElement).closest('th');
     const targetBoundRect = target.getBoundingClientRect();
     if (!resizeLineParams.isDragging) {
       // 最小宽度暂定为30，如果单元格小于30，则不能拖拽
@@ -41,7 +41,7 @@ export default function useColumnResize(tableElmRef: Ref<HTMLTableElement>, refr
     // 非resize的点击，不做处理
     if (!resizeLineParams.draggingCol) return;
 
-    const target = e.target as HTMLElement;
+    const target = (e.target as HTMLElement).closest('th');
     const targetBoundRect = target.getBoundingClientRect();
     const tableBoundRect = tableElmRef.value?.getBoundingClientRect();
     const resizeLinePos = targetBoundRect.right - tableBoundRect.left;
