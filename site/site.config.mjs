@@ -168,6 +168,12 @@ export default {
           component: () => import('@/examples/checkbox/checkbox.md'),
         },
         {
+          title: 'ColorPicker 颜色选择器',
+          name: 'color-picker',
+          path: '/vue/components/color-picker',
+          component: () => import('@/examples/color-picker/color-picker.md'),
+        },
+        {
           title: 'DatePicker 日期选择器',
           name: 'date-picker',
           path: '/vue/components/date-picker',

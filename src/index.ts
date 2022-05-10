@@ -1,5 +1,8 @@
-import { VueConstructor } from 'vue';
+import Vue, { VueConstructor } from 'vue';
+import VueCompositionApi from '@vue/composition-api';
 import * as components from './components';
+
+Vue.use(VueCompositionApi);
 
 function install(Vue: VueConstructor, config?: object) {
   Object.keys(components).forEach((key) => {
