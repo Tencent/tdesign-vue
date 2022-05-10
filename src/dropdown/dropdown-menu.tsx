@@ -81,7 +81,7 @@ export default (Vue as VueConstructor<DropdownMenuInstance>).extend({
       return (
         <div class={name}>
           <div
-            class={[`${name}__column`, 'narrow-scrollbar']}
+            class={[`${name}-column`, 'narrow-scrollbar']}
             style={{
               maxHeight: `${this.dropdown.maxHeight}px`,
               maxWidth: `${this.dropdown.maxColumnWidth}px`,
