@@ -275,10 +275,15 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     rowAndColFixedPosition.value = initialColumnMap;
   };
 
+  let shadowLastScrollLeft = 0;
   const updateColumnFixedShadow = (target: HTMLElement) => {
     if (!isFixedColumn.value) return;
-    const isShowRight = target.clientWidth + target.scrollLeft < target.scrollWidth;
-    showColumnShadow.left = target.scrollLeft > 0;
+    const { scrollLeft } = target;
+    // 只有左右滚动，需要更新固定列阴影
+    if (shadowLastScrollLeft === scrollLeft) return;
+    shadowLastScrollLeft = scrollLeft;
+    const isShowRight = target.clientWidth + scrollLeft < target.scrollWidth;
+    showColumnShadow.left = scrollLeft > 0;
     showColumnShadow.right = isShowRight;
   };
 
@@ -321,7 +326,6 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
 
   // 为保证版本兼容，临时保留 onScrollX 和 onScrollY
   const onTableContentScroll = (params?: { e: WheelEvent; trigger: 'tfoot' | 'tbody' }) => {
-    // const target = (e.target || e.srcElement) as HTMLElement;
     const target = tableContentRef.value;
     // 阴影更新
     updateColumnFixedShadow(target);
@@ -548,9 +552,10 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
 
   const addTableContentListener = () => {
     // 只有吸顶/吸底/虚拟滚动等场景需要滚动事件监听，同步多个 table 元素的滚动距离
-    if (notNeedThWidthList.value || !tableContentRef.value) return;
-    on(tableContentRef.value, 'mouseenter', onTableContentMouseEnter);
-    on(tableContentRef.value, 'mouseleave', onTableContentMouseLeave);
+    if ((!notNeedThWidthList.value && tableContentRef.value) || isFixedColumn.value) {
+      on(tableContentRef.value, 'mouseenter', onTableContentMouseEnter);
+      on(tableContentRef.value, 'mouseleave', onTableContentMouseLeave);
+    }
   };
 
   const removeTableContentListener = () => {
