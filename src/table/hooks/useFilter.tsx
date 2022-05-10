@@ -147,7 +147,9 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
   function renderFilterIcon(h: CreateElement, { col }: { col: PrimaryTableCol<TableRowData>; colIndex: number }) {
     return (
       <TableFilterController
+        scopedSlots={{ filterIcon: context.slots.filterIcon }}
         column={col}
+        filterIcon={props.filterIcon}
         tFilterValue={tFilterValue.value}
         innerFilterValue={innerFilterValue.value}
         tableFilterClasses={tableFilterClasses}

@@ -1,45 +1,37 @@
-import { mount } from '@vue/test-utils';
-import base from '@/examples/tree-select/demos/base.vue';
-import multiple from '@/examples/tree-select/demos/multiple.vue';
-import collapsed from '@/examples/tree-select/demos/collapsed.vue';
-import filterable from '@/examples/tree-select/demos/filterable.vue';
-import valuetype from '@/examples/tree-select/demos/valuetype.vue';
-import props from '@/examples/tree-select/demos/props.vue';
-import lazy from '@/examples/tree-select/demos/lazy.vue';
-import prefix from '@/examples/tree-select/demos/prefix.vue';
+/**
+ * 该文件为由脚本 `npm run test:demo` 自动生成，如需修改，执行脚本命令即可。请勿手写直接修改，否则会被覆盖
+ */
 
-// unit test for component in examples.
+import { mount } from '@vue/test-utils';
+import baseVue from '@/examples/tree-select/demos/base.vue';
+import collapsedVue from '@/examples/tree-select/demos/collapsed.vue';
+import dvalueVue from '@/examples/tree-select/demos/dvalue.vue';
+import filterableVue from '@/examples/tree-select/demos/filterable.vue';
+import lazyVue from '@/examples/tree-select/demos/lazy.vue';
+import multipleVue from '@/examples/tree-select/demos/multiple.vue';
+import prefixVue from '@/examples/tree-select/demos/prefix.vue';
+import propsVue from '@/examples/tree-select/demos/props.vue';
+import valuedisplayVue from '@/examples/tree-select/demos/valuedisplay.vue';
+import valuetypeVue from '@/examples/tree-select/demos/valuetype.vue';
+
+const mapper = {
+  baseVue,
+  collapsedVue,
+  dvalueVue,
+  filterableVue,
+  lazyVue,
+  multipleVue,
+  prefixVue,
+  propsVue,
+  valuedisplayVue,
+  valuetypeVue,
+};
+
 describe('TreeSelect', () => {
-  it('base demo works fine', () => {
-    const wrapper = mount(base);
-    expect(wrapper.element).toMatchSnapshot();
-  });
-  it('multiple demo works fine', () => {
-    const wrapper = mount(multiple);
-    expect(wrapper.element).toMatchSnapshot();
-  });
-  it('collapsed demo works fine', () => {
-    const wrapper = mount(collapsed);
-    expect(wrapper.element).toMatchSnapshot();
-  });
-  it('filterable demo works fine', () => {
-    const wrapper = mount(filterable);
-    expect(wrapper.element).toMatchSnapshot();
-  });
-  it('valuetype demo works fine', () => {
-    const wrapper = mount(valuetype);
-    expect(wrapper.element).toMatchSnapshot();
-  });
-  it('props demo works fine', () => {
-    const wrapper = mount(props);
-    expect(wrapper.element).toMatchSnapshot();
-  });
-  it('lazy demo works fine', () => {
-    const wrapper = mount(lazy);
-    expect(wrapper.element).toMatchSnapshot();
-  });
-  it('prefix demo works fine', () => {
-    const wrapper = mount(prefix);
-    expect(wrapper.element).toMatchSnapshot();
+  Object.keys(mapper).forEach((demoName) => {
+    it(`TreeSelect ${demoName} demo works fine`, () => {
+      const wrapper = mount(mapper[demoName]);
+      expect(wrapper.element).toMatchSnapshot();
+    });
   });
 });

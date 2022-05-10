@@ -66,7 +66,7 @@ npx jest --testPathPattern test/unit/button/* --config script/test/jest.unit.con
 可以加上`--testNamePattern=<regex>`参数跑指定用例，例如
 
 ```
-npx jest --testPathPattern test/unit/transfer/util --testNamePattern='getLeefCount result test 1' --config script/test/jest.unit.conf.js
+npx jest --testPathPattern test/unit/transfer/util --testNamePattern='getLeafCount result test 1' --config script/test/jest.unit.conf.js
 ```
 
 如果确认是预期的修改造成的 snapshot 变化，可以加上 -u 参数更新 snapshot:

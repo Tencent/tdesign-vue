@@ -17,7 +17,8 @@ import pick from 'lodash/pick';
 import get from 'lodash/get';
 import { CreateElement } from 'vue';
 import { formatRowAttributes, formatRowClassNames } from './utils';
-import { getRowFixedStyles, getColumnFixedStyles, RowAndColFixedPosition } from './hooks/useFixed';
+import { getRowFixedStyles, getColumnFixedStyles } from './hooks/useFixed';
+import { RowAndColFixedPosition } from './interface';
 import useClassName from './hooks/useClassName';
 import TEllipsis from './ellipsis';
 import {
@@ -64,17 +65,17 @@ export interface TrProps extends TrCommonProps {
   row: TableRowData;
   rowIndex: number;
   dataLength: number;
-  rowAndColFixedPosition: RowAndColFixedPosition;
+  rowAndColFixedPosition?: RowAndColFixedPosition;
   // 属性透传，引用传值，可内部改变
-  skipSpansMap: Map<any, boolean>;
-  tableElm: HTMLDivElement;
+  skipSpansMap?: Map<any, boolean>;
+  tableElm?: HTMLDivElement;
+  scrollType?: string;
+  isVirtual?: boolean;
+  rowHeight?: number;
+  trs?: Map<number, object>;
+  bufferSize?: number;
+  tableContentElm?: HTMLDivElement;
   onTrRowspanOrColspan?: (params: PrimaryTableCellParams<TableRowData>, cellSpans: RowspanColspan) => void;
-  scrollType: string;
-  isVirtual: boolean;
-  rowHeight: number;
-  trs: Map<number, object>;
-  bufferSize: number;
-  tableContentElm: HTMLDivElement;
 }
 
 export const ROW_LISTENERS = ['click', 'dblclick', 'mouseover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];

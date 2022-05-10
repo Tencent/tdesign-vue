@@ -1,7 +1,7 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'render-componnet',
+  name: 'render-component',
   functional: true,
   props: {
     render: Function,

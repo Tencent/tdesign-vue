@@ -1,10 +1,13 @@
-import Vue, { VueConstructor } from 'vue';
-import VueCompositionApi from '@vue/composition-api';
+import { VueConstructor } from 'vue';
+import VueCompositionAPI from '@vue/composition-api';
 import * as components from './components';
 
-Vue.use(VueCompositionApi);
+// Vue.use(VueCompositionApi);
 
 function install(Vue: VueConstructor, config?: object) {
+  if (Vue._installedPlugins.indexOf(VueCompositionAPI) === -1) {
+    Vue.use(VueCompositionAPI);
+  }
   Object.keys(components).forEach((key) => {
     if (components[key]) {
       /plugin/i.test(key) ? Vue.use(components[key]) : Vue.use(components[key], config);

@@ -10,12 +10,14 @@ import './style';
 export * from './type';
 export type InputProps = TdInputProps;
 export type InputBlurEventParams = Parameters<InputProps['onBlur']>;
-export type InputFocustEventParams = Parameters<InputProps['onFocus']>;
+export type InputFocusEventParams = Parameters<InputProps['onFocus']>;
 
 export const Addon = withInstall(_Addon);
-export const Input = withInstall(mapProps(['value'], {
-  model: { prop: 'value', event: 'change' },
-})(_Input));
+export const Input = withInstall(
+  mapProps(['value'], {
+    model: { prop: 'value', event: 'change' },
+  })(_Input),
+);
 export const InputGroup = withInstall(_InputGroup);
 
 export default Input;

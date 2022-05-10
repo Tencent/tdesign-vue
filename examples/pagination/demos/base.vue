@@ -8,10 +8,11 @@
       @page-size-change="onPageSizeChange"
       @change="onChange"
     />
-    <br/><br/>
+    <br /><br />
     <!-- :pageSizeOptions="[]" 表示隐藏分页器选项 -->
     <!-- 非受控用法，代码有效，勿删。 -->
     <t-pagination
+      showFirstAndLastPageBtn
       :total="36"
       :default-current="2"
       :default-page-size="10"

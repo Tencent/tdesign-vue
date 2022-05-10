@@ -1,22 +1,26 @@
+/**
+ * 该文件为由脚本 `npm run test:demo` 自动生成，如需修改，执行脚本命令即可。请勿手写直接修改，否则会被覆盖
+ */
+
 import { mount } from '@vue/test-utils';
-import extra from '@/examples/steps/demos/extra.vue';
-import icon from '@/examples/steps/demos/icon.vue';
-import NoSequence from '@/examples/steps/demos/no-sequence.vue';
-import options from '@/examples/steps/demos/options.vue';
-import sequence from '@/examples/steps/demos/sequence.vue';
-import status from '@/examples/steps/demos/status.vue';
-import VerticalNoSequence from '@/examples/steps/demos/vertical-no-sequence.vue';
-import VerticalSequence from '@/examples/steps/demos/vertical-sequence.vue';
+import extraVue from '@/examples/steps/demos/extra.vue';
+import iconVue from '@/examples/steps/demos/icon.vue';
+import noSequenceVue from '@/examples/steps/demos/no-sequence.vue';
+import optionsVue from '@/examples/steps/demos/options.vue';
+import sequenceVue from '@/examples/steps/demos/sequence.vue';
+import statusVue from '@/examples/steps/demos/status.vue';
+import verticalNoSequenceVue from '@/examples/steps/demos/vertical-no-sequence.vue';
+import verticalSequenceVue from '@/examples/steps/demos/vertical-sequence.vue';
 
 const mapper = {
-  extra,
-  icon,
-  NoSequence,
-  options,
-  sequence,
-  status,
-  VerticalNoSequence,
-  VerticalSequence,
+  extraVue,
+  iconVue,
+  noSequenceVue,
+  optionsVue,
+  sequenceVue,
+  statusVue,
+  verticalNoSequenceVue,
+  verticalSequenceVue,
 };
 
 describe('Steps', () => {

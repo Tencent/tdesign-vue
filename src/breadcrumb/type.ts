@@ -25,7 +25,7 @@ export interface TdBreadcrumbProps {
    * @default light
    */
   theme?: 'light';
-};
+}
 
 export interface TdBreadcrumbItemProps {
   /**
@@ -46,7 +46,7 @@ export interface TdBreadcrumbItemProps {
    */
   href?: string;
   /**
-   * 最大宽度，超出后会以省略号形式呈现。优先级高于 Breadcrum 中的 maxItemWidth
+   * 最大宽度，超出后会以省略号形式呈现。优先级高于 Breadcrumb 中的 maxItemWidth
    */
   maxWidth?: string;
   /**
@@ -67,8 +67,14 @@ export interface TdBreadcrumbItemProps {
    * 路由跳转目标，当且仅当 Router 存在时，该 API 有效
    */
   to?: Route;
-};
+}
 
-export interface Route { path?: string; name?: string; hash?: string; query?: RouteData; params?: RouteData };
+export interface Route {
+  path?: string;
+  name?: string;
+  hash?: string;
+  query?: RouteData;
+  params?: RouteData;
+}
 
 export type RouteData = { [key: string]: string | string[] };
