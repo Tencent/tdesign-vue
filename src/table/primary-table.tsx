@@ -120,7 +120,7 @@ export default defineComponent({
     const getColumns = (columns: PrimaryTableCol<TableRowData>[]) => {
       const arr: PrimaryTableCol<TableRowData>[] = [];
       for (let i = 0, len = columns.length; i < len; i++) {
-        let item = { ...columns[i] };
+        let item = columns[i];
         // 自定义列显示控制
         const isDisplayColumn = item.children?.length || tDisplayColumns.value?.includes(item.colKey);
         if (!isDisplayColumn && props.columnController) continue;

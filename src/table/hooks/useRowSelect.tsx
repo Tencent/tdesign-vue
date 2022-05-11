@@ -139,12 +139,18 @@ export default function useRowSelect(props: TdPrimaryTableProps) {
   function formatToRowSelectColumn(col: PrimaryTableCol) {
     const isSelection = ['multiple', 'single'].includes(col.type);
     if (!isSelection) return col;
-    return {
-      ...col,
-      width: col.width || 64,
+
+    !col.width
+      && Object.assign(col, {
+        width: 64,
+      });
+
+    const result = Object.assign(col, {
       cell: (h: CreateElement, p: PrimaryTableCellParams<TableRowData>) => renderSelectCell(h, p),
       title: col.type === 'multiple' ? getSelectedHeader(h) : '',
-    };
+    });
+
+    return result;
   }
 
   return {
