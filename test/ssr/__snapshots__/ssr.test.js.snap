@@ -15223,10 +15223,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue corre
 
 exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large demo-container">
-  <p>排序：{
-    &quot;sortBy&quot;: &quot;status&quot;,
-    &quot;descending&quot;: true
-    }</p>
+  <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"> 隐藏排序文本提示 </span></label> <span style="padding-left:16px;vertical-align:top;">排序：{
+  &quot;sortBy&quot;: &quot;status&quot;,
+  &quot;descending&quot;: true
+}</span></div>
   <div class="t-table t-table--bordered" style="position:relative;">
     <div class="t-table__content">
       <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
@@ -15322,7 +15322,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
 
 exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`] = `
 <div>
-  <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置数据</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-left:16px;"><span class="t-button__text">展开/收起可见行</span></button></div> <br>
+  <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置数据</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-left:16px;"><span class="t-button__text">展开/收起可见行</span></button> <label class="t-checkbox" style="margin-left:16px;vertical-align:middle;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">
+      自定义折叠/展开图标
+    </span></label></div> <br>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
       <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
@@ -15379,10 +15381,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">
-                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                    <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                    <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                  </svg>我是 1_1 号（第 1 页）</div>
+                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 1_1 号（第 1 页）</div>
               </div>
             </td>
             <td>私有</td>
@@ -15397,10 +15396,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">
-                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                    <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                    <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                  </svg>我是 2_1 号（第 1 页）</div>
+                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 2_1 号（第 1 页）</div>
               </div>
             </td>
             <td>共有</td>
@@ -15415,10 +15411,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">
-                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                    <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                    <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                  </svg>我是 3_1 号（第 1 页）</div>
+                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 3_1 号（第 1 页）</div>
               </div>
             </td>
             <td>私有</td>
@@ -15433,10 +15426,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">
-                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                    <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                    <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                  </svg>我是 4_1 号（第 1 页）</div>
+                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 4_1 号（第 1 页）</div>
               </div>
             </td>
             <td>共有</td>
@@ -15529,10 +15519,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
-              <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                  <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                  <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                </svg>JQTest0</div>
+              <div class="t-table__tree-col" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>JQTest0</div>
             </td>
             <td>
               <p class="status">健康</p>
@@ -15544,10 +15531,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
-              <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                  <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                  <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                </svg>JQTest1</div>
+              <div class="t-table__tree-col" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>JQTest1</div>
             </td>
             <td>
               <p class="status unhealth">异常</p>
@@ -15559,10 +15543,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
-              <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                  <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                  <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                </svg>JQTest2</div>
+              <div class="t-table__tree-col" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>JQTest2</div>
             </td>
             <td>
               <p class="status">健康</p>
@@ -15574,10 +15555,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
-              <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                  <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                  <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                </svg>JQTest3</div>
+              <div class="t-table__tree-col" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>JQTest3</div>
             </td>
             <td>
               <p class="status unhealth">异常</p>
@@ -15589,10 +15567,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
-              <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                  <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                  <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                </svg>JQTest4</div>
+              <div class="t-table__tree-col" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>JQTest4</div>
             </td>
             <td>
               <p class="status">健康</p>
