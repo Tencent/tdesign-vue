@@ -1149,7 +1149,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
                 <div class="item"><span class="error"></span>
                   错误事件
                 </div>
-                <div class="item"><span class="waring"></span>
+                <div class="item"><span class="warning"></span>
                   警告事件
                 </div>
                 <div class="item"><span class="success"></span>
@@ -2106,7 +2106,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/slot-props-api.vue 
           </div>
           <div class="t-calendar__table-body-cell">
             <div class="calendar-slot-props-api-demo"><span><div class="calendar-slot-props-api-demo-slot-wrapper"><div class="item"><span class="error"></span>错误事件</div>
-            <div class="item"><span class="waring"></span>警告事件</div>
+            <div class="item"><span class="warning"></span>警告事件</div>
             <div class="item"><span class="success"></span>正常事件</div>
           </div>
           <div class="shadow"></div></span>
@@ -2215,103 +2215,129 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/slot-props-api.vue 
 `;
 
 exports[`ssr snapshot test renders ./examples/calendar/demos/value.vue correctly 1`] = `
-<div class="t-calendar t-calendar--full">
-  <div class="t-calendar__control">
-    <div class="t-calendar__title"></div>
-    <div class="t-calendar__control-section">
-      <div class="t-calendar__control-section-cell">
-        <div class="t-select__wrap">
-          <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span class="t-select__single">1998</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
-              <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-            </svg></div>
+<div>
+  <form class="t-form t-form-inline">
+    <div class="t-form__item t-form-item__ t-form__item-with-extra">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">自己指定年：</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input__wrap">
+            <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="1998" class="t-input__inner"></div>
+          </div>
         </div>
+        <div class="t-input__help"></div>
       </div>
-      <div class="t-calendar__control-section-cell">
-        <div class="t-select__wrap">
-          <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span class="t-select__single">11</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
-              <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
-            </svg></div>
-        </div>
-      </div>
-      <div class="t-calendar__control-section-cell" style="height:auto;">
-        <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
-          <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
-        </div>
-      </div>
-      <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag">隐藏周末</span></div>
-      <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
     </div>
-  </div>
-  <div class="t-calendar__panel t-calendar__panel--month">
-    <table class="t-calendar__table">
-      <thead class="t-calendar__table-head">
-        <tr class="t-calendar__table-head-row">
-          <th class="t-calendar__table-head-cell"><span>一</span></th>
-          <th class="t-calendar__table-head-cell"><span>二</span></th>
-          <th class="t-calendar__table-head-cell"><span>三</span></th>
-          <th class="t-calendar__table-head-cell"><span>四</span></th>
-          <th class="t-calendar__table-head-cell"><span>五</span></th>
-          <th class="t-calendar__table-head-cell"><span>六</span></th>
-          <th class="t-calendar__table-head-cell"><span>日</span></th>
-        </tr>
-      </thead>
-      <tbody class="t-calendar__table-body">
-        <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-        </tr>
-        <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-        </tr>
-        <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-checked"><span><div class="t-calendar__table-body-cell-display">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-        </tr>
-        <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-        </tr>
-        <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-        </tr>
-        <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-          <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-        </tr>
-      </tbody>
-    </table>
+    <div class="t-form__item t-form-item__ t-form__item-with-extra">
+      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">自己指定年月：</label></div>
+      <div class="t-form__controls" style="margin-left:100px;">
+        <div class="t-form__controls-content">
+          <div class="t-input__wrap">
+            <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="11" class="t-input__inner"></div>
+          </div>
+        </div>
+        <div class="t-input__help"></div>
+      </div>
+    </div>
+  </form>
+  <div class="t-calendar t-calendar--full">
+    <div class="t-calendar__control">
+      <div class="t-calendar__title"></div>
+      <div class="t-calendar__control-section">
+        <div class="t-calendar__control-section-cell">
+          <div class="t-select__wrap">
+            <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span class="t-select__single">1998</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
+                <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+              </svg></div>
+          </div>
+        </div>
+        <div class="t-calendar__control-section-cell">
+          <div class="t-select__wrap">
+            <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display:none;">+0</span><span class="t-select__single">11</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill">
+                <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
+              </svg></div>
+          </div>
+        </div>
+        <div class="t-calendar__control-section-cell" style="height:auto;">
+          <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="month" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">月</span></label><label class="t-radio-button"><input type="radio" value="year" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">年</span></label>
+            <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+          </div>
+        </div>
+        <div class="t-calendar__control-section-cell"><span class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag">隐藏周末</span></div>
+        <div class="t-calendar__control-section-cell"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">今天</span></button></div>
+      </div>
+    </div>
+    <div class="t-calendar__panel t-calendar__panel--month">
+      <table class="t-calendar__table">
+        <thead class="t-calendar__table-head">
+          <tr class="t-calendar__table-head-row">
+            <th class="t-calendar__table-head-cell"><span>一</span></th>
+            <th class="t-calendar__table-head-cell"><span>二</span></th>
+            <th class="t-calendar__table-head-cell"><span>三</span></th>
+            <th class="t-calendar__table-head-cell"><span>四</span></th>
+            <th class="t-calendar__table-head-cell"><span>五</span></th>
+            <th class="t-calendar__table-head-cell"><span>六</span></th>
+            <th class="t-calendar__table-head-cell"><span>日</span></th>
+          </tr>
+        </thead>
+        <tbody class="t-calendar__table-body">
+          <tr class="t-calendar__table-body-row">
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">31</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          </tr>
+          <tr class="t-calendar__table-body-row">
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">07</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">08</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          </tr>
+          <tr class="t-calendar__table-body-row">
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">09</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">10</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-checked"><span><div class="t-calendar__table-body-cell-display">11</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">12</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">13</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">14</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">15</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          </tr>
+          <tr class="t-calendar__table-body-row">
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">16</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">17</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">18</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">19</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">20</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">21</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">22</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          </tr>
+          <tr class="t-calendar__table-body-row">
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">23</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">24</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">25</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">26</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">27</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">28</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">29</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          </tr>
+          <tr class="t-calendar__table-body-row">
+            <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">30</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">01</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">02</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">03</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">04</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">05</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+            <div class="t-calendar__table-body-cell t-is-disabled"><span><div class="t-calendar__table-body-cell-display">06</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 `;
@@ -8468,13 +8494,31 @@ exports[`ssr snapshot test renders ./examples/message/demos/plugin.vue correctly
   <p>插件调用</p> <br>
   <div class="t-demo-message-duration"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">消息</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-success"><span class="t-button__text">
       成功
-    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-warning"><span class="t-button__text">警示</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-danger"><span class="t-button__text">
-      失败
-    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">询问</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">加载中</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">关闭所有</span></button></div> <br><br>
-  <p>函数式调用</p> <br>
-  <div class="t-demo-message-theme"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">消息</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-success"><span class="t-button__text">成功</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-warning"><span class="t-button__text">
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-warning"><span class="t-button__text">
       警示
-    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-danger"><span class="t-button__text">失败</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">询问</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">加载中</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">关闭所有</span></button></div> <br><br>
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-danger"><span class="t-button__text">
+      失败
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">
+      询问
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">
+      加载中
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">关闭所有</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">
+      设置默认位置
+    </span></button></div> <br><br>
+  <p>函数式调用</p> <br>
+  <div class="t-demo-message-theme"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">
+      消息
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-success"><span class="t-button__text">
+      成功
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-warning"><span class="t-button__text">
+      警示
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-danger"><span class="t-button__text">失败</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">
+      询问
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-primary"><span class="t-button__text">
+      加载中
+    </span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">关闭所有</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">
+      设置默认位置
+    </span></button></div> <br><br>
 </div>
 `;
 
@@ -8856,6 +8900,9 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/base.vue correctl
           <path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path>
         </svg></div>
     </div>
+    <div class="t-pagination__btn t-pagination__btn-prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-page-first">
+        <path fill="currentColor" d="M12.4 4.46l-.91-.92L7.03 8l4.46 4.46.92-.92L8.86 8l3.55-3.54zM4.8 4v8h1.3V4H4.8z" fill-opacity="0.9"></path>
+      </svg></div>
     <div class="t-pagination__btn t-pagination__btn-prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
         <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
       </svg></div>
@@ -8867,6 +8914,9 @@ exports[`ssr snapshot test renders ./examples/pagination/demos/base.vue correctl
     </ul>
     <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
         <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
+      </svg></div>
+    <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-page-last">
+        <path fill="currentColor" d="M3.6 11.54l.91.92L8.97 8 4.51 3.54l-.92.92L7.14 8l-3.55 3.54zm7.6.46V4H9.9v8h1.3z" fill-opacity="0.9"></path>
       </svg></div>
   </div>
 </div>
@@ -11963,6 +12013,198 @@ exports[`ssr snapshot test renders ./examples/switch/demos/status.vue correctly 
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`] = `
+<div class="tdesign-demo-block-column-large tdesign-demo__table-affix" style="width:100%;">
+  <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表头吸顶</span></label> <label class="t-checkbox t-is-checked" style="margin-left:32px;"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表尾吸底</span></label> <label class="t-checkbox t-is-checked" style="margin-left:32px;"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定左侧列</span></label> <label class="t-checkbox t-is-checked" style="margin-left:32px;"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定右侧列</span></label></div>
+  <div class="t-table t-table--bordered t-table--affixed-header t-table--column-fixed" style="position:relative;">
+    <div offsetTop="0"></div>
+    <div class="t-table__content">
+      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
+      <table class="t-table--layout-auto" style="width:;">
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col style="width:80px;">
+        </colgroup>
+        <thead class="t-table__header">
+          <tr>
+            <th data-colkey="index" class="row t-table__th-index t-align-center">
+              <div class="t-table__th-cell-inner">序号</div>
+            </th>
+            <th data-colkey="platform" class="t-table__th-platform">
+              <div class="t-table__th-cell-inner">平台</div>
+            </th>
+            <th data-colkey="type" class="t-table__th-type">
+              <div class="t-table__th-cell-inner">类型</div>
+            </th>
+            <th data-colkey="expo" class="t-table__th-expo">
+              <div class="t-table__th-cell-inner">曝光</div>
+            </th>
+            <th data-colkey="click" class="t-table__th-click">
+              <div class="t-table__th-cell-inner">点击</div>
+            </th>
+            <th data-colkey="ctr" class="t-table__th-ctr">
+              <div class="t-table__th-cell-inner">点击率</div>
+            </th>
+            <th data-colkey="default" class="t-table__th-default">
+              <div class="t-table__th-cell-inner">默认值</div>
+            </th>
+            <th data-colkey="required" class="t-table__th-required">
+              <div class="t-table__th-cell-inner">是否必传</div>
+            </th>
+            <th data-colkey="detail.position" class="t-table__th-detail.position">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">详情信息</div>
+              </div>
+            </th>
+            <th data-colkey="operation" class="t-table__th-operation">
+              <div class="t-table__th-cell-inner">操作</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="t-table__body">
+          <tr class="t-tdesign__custom-body-tr">
+            <td class="row t-align-center">0</td>
+            <td>共有</td>
+            <td>String</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>是</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 0 个数据的嵌套信息值</div>
+            </td>
+            <td>查看</td>
+          </tr>
+          <tr class="t-tdesign__custom-body-tr">
+            <td class="row t-align-center">1</td>
+            <td>私有</td>
+            <td>Number</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>0</td>
+            <td>否</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 1 个数据的嵌套信息值</div>
+            </td>
+            <td>查看</td>
+          </tr>
+          <tr class="t-tdesign__custom-body-tr">
+            <td class="row t-align-center">2</td>
+            <td>共有</td>
+            <td>Array</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>[]</td>
+            <td>否</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 2 个数据的嵌套信息值</div>
+            </td>
+            <td>查看</td>
+          </tr>
+          <tr class="t-tdesign__custom-body-tr">
+            <td class="row t-align-center">3</td>
+            <td>私有</td>
+            <td>Object</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>{}</td>
+            <td>否</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 3 个数据的嵌套信息值</div>
+            </td>
+            <td>查看</td>
+          </tr>
+          <tr class="t-tdesign__custom-body-tr">
+            <td class="row t-align-center">4</td>
+            <td>共有</td>
+            <td>String</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>是</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 4 个数据的嵌套信息值</div>
+            </td>
+            <td>查看</td>
+          </tr>
+          <tr class="t-tdesign__custom-body-tr">
+            <td class="row t-align-center">5</td>
+            <td>私有</td>
+            <td>Number</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>0</td>
+            <td>否</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 5 个数据的嵌套信息值</div>
+            </td>
+            <td>查看</td>
+          </tr>
+          <tr class="t-tdesign__custom-body-tr">
+            <td class="row t-align-center">6</td>
+            <td>共有</td>
+            <td>Array</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>[]</td>
+            <td>否</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 6 个数据的嵌套信息值</div>
+            </td>
+            <td>查看</td>
+          </tr>
+          <tr class="t-tdesign__custom-body-tr">
+            <td class="row t-align-center">7</td>
+            <td>私有</td>
+            <td>Object</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>{}</td>
+            <td>否</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">读取 7 个数据的嵌套信息值</div>
+            </td>
+            <td>查看</td>
+          </tr>
+        </tbody>
+        <tfoot class="t-table__footer">
+          <tr class="t-tdesign__custom-footer-tr">
+            <td><b style="color:rgb(0, 82, 217);">表尾</b></td>
+            <td><span>第 1 行</span></td>
+            <td>全部类型</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td><span>空</span></td>
+            <td> 插槽渲染表尾 </td>
+            <td>
+              <div>渲染函数输出表尾信息</div>
+            </td>
+            <td>-</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
   <div>
@@ -12878,6 +13120,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
 
 exports[`ssr snapshot test renders ./examples/table/demos/drag-sort-handler.vue correctly 1`] = `
 <div class="demo-container t-table-demo-sort">
+  <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">加载状态</span></label></div>
   <div class="item">
     <div class="t-table t-table--row-handler-draggable" style="position:relative;">
       <div class="t-table__content">
@@ -12966,6 +13209,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort-handler.vue 
           <!---->
         </table>
       </div>
+      <div class="t-loading--center t-size-m t-loading"></div>
     </div>
   </div>
 </div>
@@ -13806,7 +14050,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
-  <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否冻结首尾两行</span></label></div>
+  <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否冻结首尾两行</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否显示斑马纹</span></label></div>
   <div class="t-table t-table--bordered t-table--column-fixed" style="position:relative;">
     <div class="t-table__content" style="max-height:300px;">
       <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
@@ -13990,66 +14234,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
             <td>否</td>
             <td><a class="link">删除</a></td>
           </tr>
-          <tr>
-            <td class="t-align-center">14</td>
-            <td>共有</td>
-            <td>Array</td>
-            <td>[]</td>
-            <td>读取 14 个数据的嵌套信息值</td>
-            <td>数据源</td>
-            <td>否</td>
-            <td><a class="link">删除</a></td>
-          </tr>
-          <tr>
-            <td class="t-align-center">15</td>
-            <td>私有</td>
-            <td>Object</td>
-            <td>{}</td>
-            <td>读取 15 个数据的嵌套信息值</td>
-            <td>数据源</td>
-            <td>否</td>
-            <td><a class="link">删除</a></td>
-          </tr>
-          <tr>
-            <td class="t-align-center">16</td>
-            <td>共有</td>
-            <td>String</td>
-            <td>-</td>
-            <td>读取 16 个数据的嵌套信息值</td>
-            <td>数据源</td>
-            <td>是</td>
-            <td><a class="link">删除</a></td>
-          </tr>
-          <tr>
-            <td class="t-align-center">17</td>
-            <td>私有</td>
-            <td>Number</td>
-            <td>0</td>
-            <td>读取 17 个数据的嵌套信息值</td>
-            <td>数据源</td>
-            <td>否</td>
-            <td><a class="link">删除</a></td>
-          </tr>
-          <tr>
-            <td class="t-align-center">18</td>
-            <td>共有</td>
-            <td>Array</td>
-            <td>[]</td>
-            <td>读取 18 个数据的嵌套信息值</td>
-            <td>数据源</td>
-            <td>否</td>
-            <td><a class="link">删除</a></td>
-          </tr>
-          <tr>
-            <td class="t-align-center">19</td>
-            <td>私有</td>
-            <td>Object</td>
-            <td>{}</td>
-            <td>读取 19 个数据的嵌套信息值</td>
-            <td>数据源</td>
-            <td>否</td>
-            <td><a class="link">删除</a></td>
-          </tr>
         </tbody>
         <tfoot class="t-table__footer">
           <tr>
@@ -14071,181 +14255,175 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
 
 exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
-  <div class="t-table t-size-s" style="position:relative;">
-    <div class="t-loading__parent">
-      <div class="t-table__content">
-        <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
-        <table class="t-table--layout-fixed" style="width:;">
-          <colgroup>
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-          </colgroup>
-          <thead class="t-table__header">
-            <tr>
-              <th data-colkey="type" class="row t-table__th-type">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">类型</div>
-                </div>
-              </th>
-              <th data-colkey="platform" class="test t-table__th-platform">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">平台</div>
-                </div>
-              </th>
-              <th data-colkey="property" class="test2 t-table__th-property">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">属性</div>
-                </div>
-              </th>
-              <th data-colkey="default" class="test4 t-table__th-default">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
-                </div>
-              </th>
-              <th data-colkey="needed" class="test3 t-table__th-needed">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
-                </div>
-              </th>
-              <th data-colkey="description" class="row t-table__th-description">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">说明</div>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody class="t-table__body"></tbody>
-          <!---->
-        </table>
-      </div>
-      <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
-          <foreignObject x="1" y="1" width="12" height="12">
-            <div class="t-loading__gradient-conic"></div>
-          </foreignObject>
-        </svg></div>
+  <div class="t-table t-size-s t-table--loading" style="position:relative;">
+    <div class="t-table__content">
+      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
+      <table class="t-table--layout-fixed" style="width:;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+        </colgroup>
+        <thead class="t-table__header">
+          <tr>
+            <th data-colkey="type" class="row t-table__th-type">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
+            </th>
+            <th data-colkey="platform" class="test t-table__th-platform">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
+            </th>
+            <th data-colkey="property" class="test2 t-table__th-property">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">属性</div>
+              </div>
+            </th>
+            <th data-colkey="default" class="test4 t-table__th-default">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
+            </th>
+            <th data-colkey="needed" class="test3 t-table__th-needed">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
+            </th>
+            <th data-colkey="description" class="row t-table__th-description">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="t-table__body"></tbody>
+        <!---->
+      </table>
     </div>
+    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+        <foreignObject x="1" y="1" width="12" height="12">
+          <div class="t-loading__gradient-conic"></div>
+        </foreignObject>
+      </svg></div>
   </div>
-  <div class="t-table t-size-s" style="position:relative;">
-    <div class="t-loading__parent">
-      <div class="t-table__content">
-        <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
-        <table class="t-table--layout-fixed" style="width:;">
-          <colgroup>
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-          </colgroup>
-          <thead class="t-table__header">
-            <tr>
-              <th data-colkey="type" class="row t-table__th-type">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">类型</div>
-                </div>
-              </th>
-              <th data-colkey="platform" class="test t-table__th-platform">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">平台</div>
-                </div>
-              </th>
-              <th data-colkey="property" class="test2 t-table__th-property">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">属性</div>
-                </div>
-              </th>
-              <th data-colkey="default" class="test4 t-table__th-default">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
-                </div>
-              </th>
-              <th data-colkey="needed" class="test3 t-table__th-needed">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
-                </div>
-              </th>
-              <th data-colkey="description" class="row t-table__th-description">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">说明</div>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody class="t-table__body"></tbody>
-          <!---->
-        </table>
-      </div>
-      <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay">
-        <div class="t-loading__text">
-          <div class="t-table--loading-message">😊 这里使用插槽自定义加载状态 😊</div>
-        </div>
+  <div class="t-table t-size-s t-table--loading" style="position:relative;">
+    <div class="t-table__content">
+      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
+      <table class="t-table--layout-fixed" style="width:;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+        </colgroup>
+        <thead class="t-table__header">
+          <tr>
+            <th data-colkey="type" class="row t-table__th-type">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
+            </th>
+            <th data-colkey="platform" class="test t-table__th-platform">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
+            </th>
+            <th data-colkey="property" class="test2 t-table__th-property">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">属性</div>
+              </div>
+            </th>
+            <th data-colkey="default" class="test4 t-table__th-default">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
+            </th>
+            <th data-colkey="needed" class="test3 t-table__th-needed">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
+            </th>
+            <th data-colkey="description" class="row t-table__th-description">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="t-table__body"></tbody>
+        <!---->
+      </table>
+    </div>
+    <div class="t-loading--center t-size-m t-loading">
+      <div class="t-loading__text">
+        <div class="t-table--loading-message">😊 这里使用插槽自定义加载状态 😊</div>
       </div>
     </div>
   </div>
-  <div class="t-table t-size-s" style="position:relative;">
-    <div class="t-loading__parent">
-      <div class="t-table__content">
-        <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
-        <table class="t-table--layout-fixed" style="width:;">
-          <colgroup>
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-            <col style="width:100px;">
-          </colgroup>
-          <thead class="t-table__header">
-            <tr>
-              <th data-colkey="type" class="row t-table__th-type">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">类型</div>
-                </div>
-              </th>
-              <th data-colkey="platform" class="test t-table__th-platform">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">平台</div>
-                </div>
-              </th>
-              <th data-colkey="property" class="test2 t-table__th-property">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">属性</div>
-                </div>
-              </th>
-              <th data-colkey="default" class="test4 t-table__th-default">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
-                </div>
-              </th>
-              <th data-colkey="needed" class="test3 t-table__th-needed">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
-                </div>
-              </th>
-              <th data-colkey="description" class="row t-table__th-description">
-                <div class="t-table__th-cell-inner">
-                  <div class="t-table__ellipsis t-text-ellipsis">说明</div>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody class="t-table__body"></tbody>
-          <!---->
-        </table>
-      </div>
-      <div class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
-          <foreignObject x="1" y="1" width="12" height="12">
-            <div class="t-loading__gradient-conic"></div>
-          </foreignObject>
-        </svg>
-        <div class="t-loading__text">
-          <div class="t-table--loading-message">这里使用渲染函数定义加载状态</div>
-        </div>
+  <div class="t-table t-size-s t-table--loading" style="position:relative;">
+    <div class="t-table__content">
+      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
+      <table class="t-table--layout-fixed" style="width:;">
+        <colgroup>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+        </colgroup>
+        <thead class="t-table__header">
+          <tr>
+            <th data-colkey="type" class="row t-table__th-type">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
+            </th>
+            <th data-colkey="platform" class="test t-table__th-platform">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
+            </th>
+            <th data-colkey="property" class="test2 t-table__th-property">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">属性</div>
+              </div>
+            </th>
+            <th data-colkey="default" class="test4 t-table__th-default">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
+            </th>
+            <th data-colkey="needed" class="test3 t-table__th-needed">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
+            </th>
+            <th data-colkey="description" class="row t-table__th-description">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="t-table__body"></tbody>
+        <!---->
+      </table>
+    </div>
+    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+        <foreignObject x="1" y="1" width="12" height="12">
+          <div class="t-loading__gradient-conic"></div>
+        </foreignObject>
+      </svg>
+      <div class="t-loading__text">
+        <div class="t-table--loading-message">这里使用渲染函数定义加载状态</div>
       </div>
     </div>
   </div>
@@ -14728,6 +14906,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
       <!---->
     </table>
   </div>
+  <div class="t-loading--center t-size-m t-loading"></div>
   <div class="t-table__pagination">
     <div class="t-pagination t-size-m">
       <div class="t-pagination__total">共 0 项数据</div>
@@ -15044,10 +15223,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue corre
 
 exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large demo-container">
-  <p>排序：{
-    &quot;sortBy&quot;: &quot;status&quot;,
-    &quot;descending&quot;: true
-    }</p>
+  <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"> 隐藏排序文本提示 </span></label> <span style="padding-left:16px;vertical-align:top;">排序：{
+  &quot;sortBy&quot;: &quot;status&quot;,
+  &quot;descending&quot;: true
+}</span></div>
   <div class="t-table t-table--bordered" style="position:relative;">
     <div class="t-table__content">
       <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
@@ -15143,7 +15322,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
 
 exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`] = `
 <div>
-  <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置数据</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-left:16px;"><span class="t-button__text">展开/收起可见行</span></button></div> <br>
+  <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置数据</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-left:16px;"><span class="t-button__text">展开/收起可见行</span></button> <label class="t-checkbox" style="margin-left:16px;vertical-align:middle;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">
+      自定义折叠/展开图标
+    </span></label></div> <br>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
       <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
@@ -15200,10 +15381,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">
-                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                    <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                    <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                  </svg>我是 1_1 号（第 1 页）</div>
+                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 1_1 号（第 1 页）</div>
               </div>
             </td>
             <td>私有</td>
@@ -15218,10 +15396,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">
-                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                    <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                    <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                  </svg>我是 2_1 号（第 1 页）</div>
+                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 2_1 号（第 1 页）</div>
               </div>
             </td>
             <td>共有</td>
@@ -15236,10 +15411,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">
-                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                    <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                    <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                  </svg>我是 3_1 号（第 1 页）</div>
+                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 3_1 号（第 1 页）</div>
               </div>
             </td>
             <td>私有</td>
@@ -15254,10 +15426,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">
-                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                    <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                    <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                  </svg>我是 4_1 号（第 1 页）</div>
+                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 4_1 号（第 1 页）</div>
               </div>
             </td>
             <td>共有</td>
@@ -15350,10 +15519,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
-              <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                  <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                  <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                </svg>JQTest0</div>
+              <div class="t-table__tree-col" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>JQTest0</div>
             </td>
             <td>
               <p class="status">健康</p>
@@ -15365,10 +15531,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
-              <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                  <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                  <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                </svg>JQTest1</div>
+              <div class="t-table__tree-col" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>JQTest1</div>
             </td>
             <td>
               <p class="status unhealth">异常</p>
@@ -15380,10 +15543,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
-              <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                  <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                  <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                </svg>JQTest2</div>
+              <div class="t-table__tree-col" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>JQTest2</div>
             </td>
             <td>
               <p class="status">健康</p>
@@ -15395,10 +15555,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
-              <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                  <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                  <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                </svg>JQTest3</div>
+              <div class="t-table__tree-col" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>JQTest3</div>
             </td>
             <td>
               <p class="status unhealth">异常</p>
@@ -15410,10 +15567,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
-              <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                  <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                  <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                </svg>JQTest4</div>
+              <div class="t-table__tree-col" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>JQTest4</div>
             </td>
             <td>
               <p class="status">健康</p>
@@ -16372,6 +16526,8 @@ exports[`ssr snapshot test renders ./examples/tooltip/demos/duration.vue correct
   <!---->
 </div>
 `;
+
+exports[`ssr snapshot test renders ./examples/tooltip/demos/mouse.vue correctly 1`] = `<div class="tdesign-tooltip-demo"><a href="#">文案比较长...</a></div>`;
 
 exports[`ssr snapshot test renders ./examples/tooltip/demos/no-arrow.vue correctly 1`] = `<div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">不带箭头的文字提示</span></button></div>`;
 

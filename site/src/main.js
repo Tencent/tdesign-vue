@@ -7,6 +7,7 @@ import App from './App.vue';
 
 import Codesandbox from './components/codesandbox/index.vue';
 import Stackblitz from './components/stackblitz/index.vue';
+import BaseUsage from './components/base-usage.vue';
 
 // import tdesign style;
 import 'tdesign-vue/style/index.js';
@@ -28,6 +29,7 @@ Vue.config.ignoredElements = [/^td-/];
 
 Vue.component('Codesandbox', Codesandbox);
 Vue.component('Stackblitz', Stackblitz);
+Vue.component('BaseUsage', BaseUsage);
 
 const router = new VueRouter({
   mode: 'history',

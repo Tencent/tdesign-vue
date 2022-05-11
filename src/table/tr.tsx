@@ -17,7 +17,8 @@ import pick from 'lodash/pick';
 import get from 'lodash/get';
 import { CreateElement } from 'vue';
 import { formatRowAttributes, formatRowClassNames } from './utils';
-import { getRowFixedStyles, getColumnFixedStyles, RowAndColFixedPosition } from './hooks/useFixed';
+import { getRowFixedStyles, getColumnFixedStyles } from './hooks/useFixed';
+import { RowAndColFixedPosition } from './interface';
 import useClassName from './hooks/useClassName';
 import TEllipsis from './ellipsis';
 import {
@@ -270,7 +271,7 @@ export default defineComponent({
     const {
       row, rowIndex, dataLength, rowAndColFixedPosition,
     } = this;
-    const columVNodeList = this.columns?.map((col, colIndex) => {
+    const columnVNodeList = this.columns?.map((col, colIndex) => {
       const cellSpans: RowspanColspan = {};
       const params = {
         row,
@@ -302,7 +303,7 @@ export default defineComponent({
         class={this.classes}
         on={this.getTrListeners(row, rowIndex)}
       >
-        {this.hasLazyLoadHolder ? [<td style={{ height: `${this.tRowHeight}px`, border: 'none' }} />] : columVNodeList}
+        {this.hasLazyLoadHolder ? [<td style={{ height: `${this.tRowHeight}px`, border: 'none' }} />] : columnVNodeList}
       </tr>
     );
   },

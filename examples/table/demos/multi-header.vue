@@ -15,7 +15,7 @@
 
     <!-- tableContentWidth 必须大于表格的外层宽度，否则请设置 width: 100% -->
     <!-- 多级表头中，如果要使用固定列功能，则必须设置 colKey 和 fixed -->
-    <!-- :scroll="{ type: 'virtual' }" -->
+    <!-- :scroll="{ type: 'virtual' }" 表示虚拟滚动 -->
     <t-table
       row-key="index"
       :data="data"

@@ -39,18 +39,23 @@ import {
   MessageQuestionMethod,
   MessageCloseMethod,
   MessageCloseAllMethod,
+  MessageConfigMethod,
 } from './type';
 import { AttachNodeReturnValue } from '../common';
 
 // 存储不同 attach 和 不同 placement 消息列表实例
 const instanceMap: Map<AttachNodeReturnValue, object> = new Map();
 
+const defaultMessageOptions: MessageOptions = {
+  duration: 3000,
+  attach: 'body',
+  zIndex: DEFAULT_Z_INDEX,
+  placement: 'top',
+};
+
 function handleParams(params: MessageOptions): MessageOptions {
   const options: MessageOptions = {
-    duration: 3000,
-    attach: 'body',
-    zIndex: DEFAULT_Z_INDEX,
-    placement: 'top',
+    ...defaultMessageOptions,
     ...params,
   };
   options.content = params.content;
@@ -99,6 +104,13 @@ const showThemeMessage: MessageMethod = (theme, params, duration) => {
   return MessageFunction(options);
 };
 
+const setMessageConfig: MessageConfigMethod = (placement, attach, offset, zIndex) => {
+  attach && (defaultMessageOptions.attach = attach);
+  offset && (defaultMessageOptions.offset = offset);
+  placement && (defaultMessageOptions.placement = placement);
+  zIndex && (defaultMessageOptions.zIndex = zIndex);
+};
+
 interface ExtraApi {
   info: MessageInfoMethod;
   success: MessageSuccessMethod;
@@ -108,6 +120,7 @@ interface ExtraApi {
   loading: MessageLoadingMethod;
   close: MessageCloseMethod;
   closeAll: MessageCloseAllMethod;
+  config: MessageConfigMethod;
 }
 
 const extraApi: ExtraApi = {
@@ -130,6 +143,7 @@ const extraApi: ExtraApi = {
       });
     }
   },
+  config: setMessageConfig,
 };
 
 export type MessagePluginType = Vue.PluginObject<undefined> & ExtraApi & MessageMethod;
