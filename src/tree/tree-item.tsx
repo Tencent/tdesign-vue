@@ -15,22 +15,30 @@ import ripple from '../utils/ripple';
 const keepAnimationMixins = getKeepAnimationMixins();
 
 export const TreeItemProps = {
+  nested: {
+    type: Boolean,
+    default: false,
+  },
   node: {
-    type: TreeNode,
+    type: Object,
   },
   treeScope: {
     type: Object,
   },
+  proxyScope: {
+    type: Object,
+  },
 };
 
-export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnimationMixins).extend({
+const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnimationMixins).extend({
   name: TREE_NODE_NAME,
   props: TreeItemProps,
   directives: { ripple },
   data() {
     return {
       data: null,
-      clicked: false,
+      $clicked: false,
+      $nodesMap: null,
     };
   },
   methods: {
@@ -40,7 +48,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
       return styles;
     },
     getClassList(): ClassName {
-      const { node } = this;
+      const { node, nested } = this;
       const list = [];
       list.push(CLASS_NAMES.treeNode);
       list.push({
@@ -48,16 +56,19 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
         [CLASS_NAMES.activated]: node.isActivable() ? node.activated : false,
         [CLASS_NAMES.disabled]: node.isDisabled(),
       });
-      if (node.visible) {
-        list.push(CLASS_NAMES.treeNodeVisible);
-      } else {
-        list.push(CLASS_NAMES.treeNodeHidden);
+      if (!nested) {
+        if (node.visible) {
+          list.push(CLASS_NAMES.treeNodeVisible);
+        } else {
+          list.push(CLASS_NAMES.treeNodeHidden);
+        }
       }
       return list;
     },
     renderLine(createElement: CreateElement): VNode {
-      const { node, treeScope } = this;
-      const { line, scopedSlots } = treeScope;
+      const { node, treeScope, proxyScope } = this;
+      const { line } = treeScope;
+      const { scopedSlots } = proxyScope;
       const iconVisible = !!treeScope.icon;
 
       let lineNode = null;
@@ -119,8 +130,9 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
       return <CaretRightSmallIcon />;
     },
     renderIcon(createElement: CreateElement): VNode {
-      const { node, treeScope } = this;
-      const { icon, scopedSlots } = treeScope;
+      const { node, treeScope, proxyScope } = this;
+      const { icon } = treeScope;
+      const { scopedSlots } = proxyScope;
       let isDefaultIcon = false;
 
       let iconNode = null;
@@ -157,8 +169,9 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
       return iconNode;
     },
     renderLabel(createElement: CreateElement): VNode {
-      const { node, treeScope } = this;
-      const { label, scopedSlots, disableCheck } = treeScope;
+      const { node, treeScope, proxyScope } = this;
+      const { label, disableCheck } = treeScope;
+      const { scopedSlots } = proxyScope;
       const checkProps = treeScope.checkProps || {};
 
       let labelNode = null;
@@ -179,7 +192,6 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
 
       const labelClasses = [
         CLASS_NAMES.treeLabel,
-        CLASS_NAMES.treeLabelStrictly,
         {
           [CLASS_NAMES.activated]: node.isActivable() ? node.activated : false,
         },
@@ -231,8 +243,9 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
       return labelNode;
     },
     renderOperations(createElement: CreateElement): VNode {
-      const { node, treeScope } = this;
-      const { operations, scopedSlots } = treeScope;
+      const { node, treeScope, proxyScope } = this;
+      const { operations } = treeScope;
+      const { scopedSlots } = proxyScope;
 
       let opNode = null;
       if (scopedSlots?.operations) {
@@ -283,10 +296,10 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
     handleClick(evt: MouseEvent) {
       // checkbox 上也有 emit click 事件
       // 用这个逻辑避免重复的 click 事件被触发
-      if (this.clicked) return;
-      this.clicked = true;
+      if (this.$clicked) return;
+      this.$clicked = true;
       setTimeout(() => {
-        this.clicked = false;
+        this.$clicked = false;
       });
 
       const { node } = this;
@@ -307,25 +320,86 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
       };
       this.$emit('change', state);
     },
+    proxyClick(state: TypeEventState) {
+      this.$emit('click', state);
+    },
+    proxyChange(state: TypeEventState) {
+      this.$emit('change', state);
+    },
+    // 创建单个 tree 节点
+    getNestedItem(node: TreeNode) {
+      const { nested, treeScope, proxyScope } = this;
+      const treeItem = (
+        <TreeItem
+          key={node.value}
+          node={node}
+          nested={nested}
+          treeScope={treeScope}
+          proxyScope={proxyScope}
+          onClick={this.proxyClick}
+          onChange={this.proxyChange}
+        />
+      );
+      return treeItem;
+    },
+    getChildNodes() {
+      const { node, $nodesMap } = this;
+      // 以嵌套形式渲染节点
+      let children: TreeNode[] = [];
+      if (Array.isArray(node.children)) {
+        children = node.children;
+      }
+
+      const curNodesMap = new Map();
+      const childrenNodes = children.map((child: TreeNode) => {
+        curNodesMap.set(child.value, 1);
+        let nodeView = $nodesMap.get(child.value);
+        if (!nodeView && child.visible) {
+          nodeView = this.getNestedItem(child);
+          $nodesMap.set(child.value, nodeView);
+        }
+        return nodeView;
+      });
+
+      // 移除不再使用的节点
+      this.$nextTick(() => {
+        const keys = [...$nodesMap.keys()];
+        keys.forEach((value: string) => {
+          if (!curNodesMap.get(value)) {
+            $nodesMap.delete(value);
+          }
+        });
+        curNodesMap.clear();
+      });
+
+      return childrenNodes;
+    },
   },
   created() {
-    if (this.node) {
-      this.data = this.node.data;
+    const { node } = this;
+    if (node) {
+      this.data = node.data;
     }
+    this.$nodesMap = new Map();
+    // console.log('item created', node.value);
   },
   destroyed() {
     this.data = null;
+    this.$nodesMap.clear();
   },
   render(createElement: CreateElement) {
-    const { node } = this;
+    const { node, nested } = this;
     const { tree, level, value } = node;
+
+    // 用于性能调试
+    // console.log('item render', node.value);
 
     if (!tree || !tree.nodeMap.get(value)) {
       this.$destroy();
     }
     const styles = this.getStyles();
     const classList = this.getClassList();
-    return (
+    const itemNode = (
       <div
         class={classList}
         data-value={value}
@@ -336,5 +410,53 @@ export default mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnim
         {this.renderItem(createElement)}
       </div>
     );
+
+    if (!nested) {
+      // 返回平铺列表形式节点
+      return itemNode;
+    }
+
+    const childNodes = this.getChildNodes();
+
+    const childrenClassList = [];
+    childrenClassList.push(CLASS_NAMES.treeChildren);
+    if (node.expanded) {
+      childrenClassList.push(CLASS_NAMES.treeChildrenVisible);
+    } else {
+      childrenClassList.push(CLASS_NAMES.treeChildrenHidden);
+    }
+
+    const allChildren = node.walk();
+    allChildren.shift();
+    const allExpandedChildren = allChildren.filter((node: TreeNode) => {
+      const parent = node.getParent();
+      if (!parent) return true;
+      return parent.expanded;
+    });
+    const childrenStyles = {
+      '--hscale': allExpandedChildren.length,
+    };
+
+    const childrenBox = (
+      <transition-group
+        tag="div"
+        class={childrenClassList}
+        style={childrenStyles}
+        enter-active-class={CLASS_NAMES.treeNodeEnter}
+        leave-active-class={CLASS_NAMES.treeNodeLeave}
+      >
+        {childNodes}
+      </transition-group>
+    );
+
+    const branchNode = (
+      <div class={CLASS_NAMES.treeBranch}>
+        {itemNode}
+        {childrenBox}
+      </div>
+    );
+    return branchNode;
   },
 });
+
+export default TreeItem;

@@ -32,7 +32,7 @@ function observeResize(elm: Element, cb: (rect: DOMRectReadOnly) => void) {
   };
 }
 
-const Ref = Vue.extend({
+const Trigger = Vue.extend({
   data() {
     return {
       contentRect: null as DOMRectReadOnly,
@@ -98,8 +98,8 @@ export default Vue.extend({
           if (content) {
             this.$on(
               'hook:destroyed',
-              observeResize(content, (ev) => {
-                parent.$emit('contentResize', ev);
+              observeResize(content, () => {
+                parent.$emit('resize');
               }),
             );
           }
@@ -120,6 +120,6 @@ export default Vue.extend({
     },
   },
   render() {
-    return <Ref onResize={(ev: DOMRectReadOnly) => this.$emit('refResize', ev)}>{this.$slots.default}</Ref>;
+    return <Trigger onResize={() => this.$emit('resize')}>{this.$slots.default}</Trigger>;
   },
 });

@@ -85,7 +85,7 @@ export interface TdTreeSelectProps<DataOption extends TreeOptionData = TreeOptio
    * 【讨论中】是否显示全选
    * @default false
    */
-  showCheckAlll?: boolean;
+  showCheckAll?: boolean;
   /**
    * 尺寸
    * @default medium

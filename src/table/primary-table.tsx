@@ -2,6 +2,7 @@ import {
   computed, defineComponent, toRefs, h, onMounted, ref,
 } from '@vue/composition-api';
 import get from 'lodash/get';
+import omit from 'lodash/omit';
 import baseTableProps from './base-table-props';
 import primaryTableProps from './primary-table-props';
 import BaseTable, { BASE_TABLE_ALL_EVENTS, TableListeners } from './base-table';
@@ -20,6 +21,29 @@ import useClassName from './hooks/useClassName';
 
 export { BASE_TABLE_ALL_EVENTS } from './base-table';
 
+const OMIT_PROPS = [
+  'dragSort',
+  'defaultExpandedRowKeys',
+  'columnController',
+  'filterRow',
+  'sortOnRowDraggable',
+  'expandOnRowClick',
+  'multipleSort',
+  'expandIcon',
+  'onChange',
+  'onAsyncLoadingClick',
+  'onChange',
+  'onColumnChange',
+  'onColumnControllerVisibleChange',
+  'onDataChange',
+  'onDisplayColumnsChange',
+  'onDragSort',
+  'onExpandChange',
+  'onFilterChange',
+  'onSelectChange',
+  'onSortChange',
+];
+
 export default defineComponent({
   name: 'TPrimaryTable',
 
@@ -31,7 +55,7 @@ export default defineComponent({
   setup(props: TdPrimaryTableProps, context) {
     const renderTNode = useTNodeJSX();
     const { columns } = toRefs(props);
-    const primaryTableRef = ref(null);
+    const primaryTableRef = ref<HTMLDivElement>(null);
     const { tableDraggableClasses, tableBaseClass } = useClassName();
     // 自定义列配置功能
     const { tDisplayColumns, renderColumnController } = useColumnController(props, context);
@@ -53,13 +77,19 @@ export default defineComponent({
     } = useFilter(props, context);
 
     // 拖拽排序功能
-    const { isColDraggable, isRowDraggable, setDragSortPrimaryTableRef } = useDragSort(props, context);
+    const {
+      isRowHandlerDraggable, isRowDraggable, isColDraggable, setDragSortPrimaryTableRef,
+    } = useDragSort(
+      props,
+      context,
+    );
 
     const { renderTitleWidthIcon } = useTableHeader(props);
     const { renderAsyncLoading } = useAsyncLoading(props, context);
 
     const primaryTableClasses = computed(() => ({
       [tableDraggableClasses.colDraggable]: isColDraggable.value,
+      [tableDraggableClasses.rowHandlerDraggable]: isRowHandlerDraggable.value,
       [tableDraggableClasses.rowDraggable]: isRowDraggable.value,
       [tableBaseClass.overflowVisible]: isTableOverflowHidden.value === false,
     }));
@@ -73,7 +103,7 @@ export default defineComponent({
     // 如果想给 TR 添加属性，请在这里补充，不要透传更多额外 Props 到 BaseTable
     const tRowAttributes = computed(() => {
       const tAttributes = [props.rowAttributes];
-      if (isColDraggable.value || isRowDraggable.value) {
+      if (isRowHandlerDraggable.value || isRowDraggable.value) {
         tAttributes.push(({ row }) => ({ 'data-id': get(row, props.rowKey || 'id') }));
       }
       return tAttributes.filter((v) => v);
@@ -97,11 +127,22 @@ export default defineComponent({
         // 添加排序图标和过滤图标
         if (item.sorter || item.filter) {
           const titleContent = renderTitle(h, context.slots, item, i);
+          const { ellipsisTitle } = item;
           item.title = (h, p) => {
             const sortIcon = item.sorter ? renderSortIcon(h, p) : null;
             const filterIcon = item.filter ? renderFilterIcon(h, p) : null;
-            return renderTitleWidthIcon(h, [titleContent, sortIcon, filterIcon]);
+            // @ts-ignore
+            const attach = primaryTableRef.value?.$refs?.tableContentRef;
+            return renderTitleWidthIcon(
+              h,
+              [titleContent, sortIcon, filterIcon],
+              p.col,
+              p.colIndex,
+              ellipsisTitle,
+              attach,
+            );
           };
+          item.ellipsisTitle = false;
         }
         if (item.children?.length) {
           item.children = getColumns(item.children);
@@ -152,6 +193,7 @@ export default defineComponent({
       onInnerPageChange,
     };
   },
+
   methods: {
     // support @row-click @page-change @row-hover .etc. events, Vue3 do not need this function
     getListener() {
@@ -203,7 +245,7 @@ export default defineComponent({
     const lastFullRow = this.formatNode('lastFullRow', this.renderAsyncLoading, !!this.asyncLoading);
 
     const props = {
-      ...this.$props,
+      ...omit(this.$props, OMIT_PROPS),
       rowClassName: this.tRowClassNames,
       rowAttributes: this.tRowAttributes,
       columns: this.tColumns,

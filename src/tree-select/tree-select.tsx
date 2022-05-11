@@ -17,7 +17,7 @@ import { emitEvent } from '../utils/event';
 import Popup, { PopupProps } from '../popup';
 import Tag from '../tag';
 import Tree, { TreeNodeModel, TreeNodeValue } from '../tree';
-import Input, { InputValue, InputBlurEventParams, InputFocustEventParams } from '../input';
+import Input, { InputValue, InputBlurEventParams, InputFocusEventParams } from '../input';
 import FakeArrow from '../common-components/fake-arrow';
 import CLASSNAMES from '../utils/classnames';
 import props from './props';
@@ -260,15 +260,17 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       this.change(defaultValue, null);
       this.activated = [];
       this.filterText = '';
+      this.filterByText = null;
       emitEvent<Parameters<TdTreeSelectProps['onClear']>>(this, 'clear', { e });
     },
-    focus(ctx: InputFocustEventParams[1]) {
+    focus(ctx: InputFocusEventParams[1]) {
       this.focusing = true;
       emitEvent<Parameters<TdTreeSelectProps['onFocus']>>(this, 'focus', { value: this.value, ...ctx });
     },
     blur(ctx: InputBlurEventParams[1]) {
       this.focusing = false;
       this.filterText = '';
+      this.filterByText = null;
       emitEvent<Parameters<TdTreeSelectProps['onBlur']>>(this, 'blur', { value: this.value, ...ctx });
     },
     remove(options: RemoveOptions<TreeOptionData>) {
@@ -325,7 +327,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     },
     async changeNodeInfo() {
       await this.value;
-      if (!this.multiple && this.value) {
+      if (!this.multiple && (this.value || this.value === 0)) {
         this.changeSingleNodeInfo();
       } else if (this.multiple && isArray(this.value)) {
         this.changeMultipleNodeInfo();
@@ -437,7 +439,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         placeholder={this.filterPlaceholder}
         onChange={this.onInputChange}
         onBlur={(value: InputValue, context: InputBlurEventParams[1]) => this.blur(context)}
-        onFocus={(value: InputValue, context: InputFocustEventParams[1]) => this.focus(context)}
+        onFocus={(value: InputValue, context: InputFocusEventParams[1]) => this.focus(context)}
       />
     );
     const tagItem = !isEmpty(this.tagList) && (this.valueDisplay || this.$scopedSlots.valueDisplay)

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Steps Steps base demo works fine 1`] = `
+exports[`Select Select baseVue demo works fine 1`] = `
 <div
   class="tdesign-demo-select-base"
 >
@@ -76,7 +76,7 @@ exports[`Steps Steps base demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps collapsed demo works fine 1`] = `
+exports[`Select Select collapsedVue demo works fine 1`] = `
 <div>
   <div
     class="t-select__wrap"
@@ -87,7 +87,6 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="选项一"
       >
         <span
           class="t-tag--text"
@@ -112,7 +111,6 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%; display: none;"
-        title="选项三"
       >
         <span
           class="t-tag--text"
@@ -169,7 +167,6 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="选项一"
       >
         <span
           class="t-tag--text"
@@ -194,7 +191,6 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%; display: none;"
-        title="选项三"
       >
         <span
           class="t-tag--text"
@@ -251,7 +247,6 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="选项一"
       >
         <span
           class="t-tag--text"
@@ -276,7 +271,6 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%; display: none;"
-        title="选项三"
       >
         <span
           class="t-tag--text"
@@ -326,7 +320,7 @@ exports[`Steps Steps collapsed demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps creatable demo works fine 1`] = `
+exports[`Select Select creatableVue demo works fine 1`] = `
 <div>
   <div
     class="t-select__wrap"
@@ -377,7 +371,7 @@ exports[`Steps Steps creatable demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps customOptions demo works fine 1`] = `
+exports[`Select Select customOptionsVue demo works fine 1`] = `
 <div
   class="tdesign-demo-select-options"
 >
@@ -456,7 +450,7 @@ exports[`Steps Steps customOptions demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps customSelected demo works fine 1`] = `
+exports[`Select Select customSelectedVue demo works fine 1`] = `
 <div>
   <div
     class="t-select__wrap"
@@ -657,7 +651,7 @@ exports[`Steps Steps customSelected demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps disabled demo works fine 1`] = `
+exports[`Select Select disabledVue demo works fine 1`] = `
 <div>
   <div
     class="t-select__wrap"
@@ -705,7 +699,6 @@ exports[`Steps Steps disabled demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-is-disabled t-tag--disabled"
         style="max-width: 100%;"
-        title="选项一"
       >
         <span
           class="t-tag--text"
@@ -717,7 +710,6 @@ exports[`Steps Steps disabled demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-is-disabled t-tag--disabled"
         style="max-width: 100%;"
-        title="选项二"
       >
         <span
           class="t-tag--text"
@@ -752,7 +744,7 @@ exports[`Steps Steps disabled demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps filterable demo works fine 1`] = `
+exports[`Select Select filterableVue demo works fine 1`] = `
 <div>
   <div
     class="t-select__wrap"
@@ -850,7 +842,7 @@ exports[`Steps Steps filterable demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps group demo works fine 1`] = `
+exports[`Select Select groupVue demo works fine 1`] = `
 <div
   class="tdesign-demo-select-base"
 >
@@ -948,7 +940,7 @@ exports[`Steps Steps group demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps labelInValue demo works fine 1`] = `
+exports[`Select Select labelInValueVue demo works fine 1`] = `
 <div>
   <div
     class="t-select__wrap"
@@ -965,7 +957,6 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
       </span>
       <span
         class="t-select__single"
-        title="选项一"
       >
         选项一
       </span>
@@ -997,7 +988,6 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="选项一"
       >
         <span
           class="t-tag--text"
@@ -1045,7 +1035,7 @@ exports[`Steps Steps labelInValue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps max demo works fine 1`] = `
+exports[`Select Select maxVue demo works fine 1`] = `
 <div>
   <div
     class="t-select__wrap"
@@ -1085,7 +1075,7 @@ exports[`Steps Steps max demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps multiple demo works fine 1`] = `
+exports[`Select Select multipleVue demo works fine 1`] = `
 <div
   class="tdesign-demo-select-base"
 >
@@ -1098,7 +1088,6 @@ exports[`Steps Steps multiple demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="区块链"
       >
         <span
           class="t-tag--text"
@@ -1123,7 +1112,6 @@ exports[`Steps Steps multiple demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="人工智能"
       >
         <span
           class="t-tag--text"
@@ -1181,7 +1169,6 @@ exports[`Steps Steps multiple demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="1"
       >
         <span
           class="t-tag--text"
@@ -1206,7 +1193,6 @@ exports[`Steps Steps multiple demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="2"
       >
         <span
           class="t-tag--text"
@@ -1231,7 +1217,6 @@ exports[`Steps Steps multiple demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="3"
       >
         <span
           class="t-tag--text"
@@ -1256,7 +1241,6 @@ exports[`Steps Steps multiple demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="4"
       >
         <span
           class="t-tag--text"
@@ -1281,7 +1265,6 @@ exports[`Steps Steps multiple demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="5"
       >
         <span
           class="t-tag--text"
@@ -1306,7 +1289,6 @@ exports[`Steps Steps multiple demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="6"
       >
         <span
           class="t-tag--text"
@@ -1364,7 +1346,6 @@ exports[`Steps Steps multiple demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="区块链"
       >
         <span
           class="t-tag--text"
@@ -1389,7 +1370,6 @@ exports[`Steps Steps multiple demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%;"
-        title="人工智能"
       >
         <span
           class="t-tag--text"
@@ -1414,7 +1394,6 @@ exports[`Steps Steps multiple demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%; display: none;"
-        title="计算场景"
       >
         <span
           class="t-tag--text"
@@ -1439,7 +1418,6 @@ exports[`Steps Steps multiple demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
         style="max-width: 100%; display: none;"
-        title="大数据"
       >
         <span
           class="t-tag--text"
@@ -1486,7 +1464,7 @@ exports[`Steps Steps multiple demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps noborder demo works fine 1`] = `
+exports[`Select Select noborderVue demo works fine 1`] = `
 <div>
   <div
     class="t-select__wrap"
@@ -1503,7 +1481,6 @@ exports[`Steps Steps noborder demo works fine 1`] = `
       </span>
       <span
         class="t-select__single"
-        title="已选择的选项"
       >
         已选择的选项
       </span>
@@ -1527,7 +1504,83 @@ exports[`Steps Steps noborder demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps popupProps demo works fine 1`] = `
+exports[`Select Select panelVue demo works fine 1`] = `
+<div
+  class="tdesign-demo-select-base"
+>
+  <div
+    class="t-select__wrap"
+  >
+    <div
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
+    >
+      <span
+        class="t-select__placeholder"
+      >
+         请选择云解决方案
+      </span>
+      <span
+        class="t-tag t-tag--default t-size-m t-tag--dark"
+        style="display: none;"
+      >
+        +0
+      </span>
+      <svg
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
+        fill="none"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+          stroke="black"
+          stroke-opacity="0.9"
+          stroke-width="1.3"
+        />
+      </svg>
+    </div>
+  </div>
+   
+  <div
+    class="t-select__wrap"
+  >
+    <div
+      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
+    >
+      <span
+        class="t-select__placeholder"
+      >
+         请选择云产品
+      </span>
+      <span
+        class="t-tag t-tag--default t-size-m t-tag--dark"
+        style="display: none;"
+      >
+        +0
+      </span>
+      <svg
+        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
+        fill="none"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+          stroke="black"
+          stroke-opacity="0.9"
+          stroke-width="1.3"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select Select popupPropsVue demo works fine 1`] = `
 <div>
   <div
     class="t-select__wrap"
@@ -1544,7 +1597,6 @@ exports[`Steps Steps popupProps demo works fine 1`] = `
       </span>
       <span
         class="t-select__single"
-        title="已选择的选项"
       >
         已选择的选项
       </span>
@@ -1581,7 +1633,6 @@ exports[`Steps Steps popupProps demo works fine 1`] = `
       </span>
       <span
         class="t-select__single"
-        title="已选择的选项"
       >
         已选择的选项
       </span>
@@ -1605,7 +1656,7 @@ exports[`Steps Steps popupProps demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps prefix demo works fine 1`] = `
+exports[`Select Select prefixVue demo works fine 1`] = `
 <div>
   <div
     class="t-select__wrap"
@@ -1656,7 +1707,7 @@ exports[`Steps Steps prefix demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps remoteSearch demo works fine 1`] = `
+exports[`Select Select remoteSearchVue demo works fine 1`] = `
 <div>
   <div
     class="t-select__wrap"
@@ -1754,7 +1805,7 @@ exports[`Steps Steps remoteSearch demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps size demo works fine 1`] = `
+exports[`Select Select sizeVue demo works fine 1`] = `
 <div>
   <div
     class="t-select__wrap"
@@ -1866,7 +1917,7 @@ exports[`Steps Steps size demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps status demo works fine 1`] = `
+exports[`Select Select statusVue demo works fine 1`] = `
 <div
   class="tdesign-demo-select-base"
 >

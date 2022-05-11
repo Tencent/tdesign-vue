@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Transfer base demo works fine 1`] = `
+exports[`Transfer Transfer baseVue demo works fine 1`] = `
 <div>
   <div
     class="t-transfer"
@@ -544,7 +544,7 @@ exports[`Transfer base demo works fine 1`] = `
 </div>
 `;
 
-exports[`Transfer checked demo works fine 1`] = `
+exports[`Transfer Transfer checkedVue demo works fine 1`] = `
 <div>
   <div
     class="t-transfer"
@@ -1088,7 +1088,7 @@ exports[`Transfer checked demo works fine 1`] = `
 </div>
 `;
 
-exports[`Transfer custom demo works fine 1`] = `
+exports[`Transfer Transfer customVue demo works fine 1`] = `
 <div>
   <p
     style="margin: 10px;"
@@ -2222,7 +2222,7 @@ exports[`Transfer custom demo works fine 1`] = `
 </div>
 `;
 
-exports[`Transfer disabled demo works fine 1`] = `
+exports[`Transfer Transfer disabledVue demo works fine 1`] = `
 <div>
   <div
     class="t-transfer"
@@ -2772,7 +2772,7 @@ exports[`Transfer disabled demo works fine 1`] = `
 </div>
 `;
 
-exports[`Transfer empty demo works fine 1`] = `
+exports[`Transfer Transfer emptyVue demo works fine 1`] = `
 <div>
   <p
     style="margin: 10px 0px;"
@@ -3054,7 +3054,7 @@ exports[`Transfer empty demo works fine 1`] = `
 </div>
 `;
 
-exports[`Transfer pagination demo works fine 1`] = `
+exports[`Transfer Transfer paginationVue demo works fine 1`] = `
 <div>
   <div
     checked-value=""
@@ -3339,7 +3339,6 @@ exports[`Transfer pagination demo works fine 1`] = `
               </span>
               <span
                 class="t-select__single"
-                title="1/2"
               >
                 1/2
               </span>
@@ -3473,7 +3472,7 @@ exports[`Transfer pagination demo works fine 1`] = `
 </div>
 `;
 
-exports[`Transfer search demo works fine 1`] = `
+exports[`Transfer Transfer searchVue demo works fine 1`] = `
 <div>
   <div
     checked-value=""
@@ -4086,7 +4085,7 @@ exports[`Transfer search demo works fine 1`] = `
 </div>
 `;
 
-exports[`Transfer target-value demo works fine 1`] = `
+exports[`Transfer Transfer targetValueVue demo works fine 1`] = `
 <div>
   <div
     class="t-transfer"
@@ -4625,7 +4624,7 @@ exports[`Transfer target-value demo works fine 1`] = `
 </div>
 `;
 
-exports[`Transfer tree demo works fine 1`] = `
+exports[`Transfer Transfer treeVue demo works fine 1`] = `
 <div>
   <div
     class="t-transfer t-transfer--with-tree"
@@ -4671,7 +4670,6 @@ exports[`Transfer tree demo works fine 1`] = `
               class="t-tree__list"
               enteractiveclass="t-tree__item--enter-active"
               leaveactiveclass="t-tree__item--leave-active"
-              name="t-tree-toggle"
               tag="div"
             >
               <div
@@ -4700,7 +4698,7 @@ exports[`Transfer tree demo works fine 1`] = `
                   </svg>
                 </span>
                 <label
-                  class="t-checkbox t-tree__label t-tree__label--strictly"
+                  class="t-checkbox t-tree__label"
                 >
                   <input
                     class="t-checkbox__former"
@@ -4730,7 +4728,7 @@ exports[`Transfer tree demo works fine 1`] = `
                   trigger="expand"
                 />
                 <label
-                  class="t-checkbox t-tree__label t-tree__label--strictly"
+                  class="t-checkbox t-tree__label"
                 >
                   <input
                     class="t-checkbox__former"
@@ -4774,7 +4772,7 @@ exports[`Transfer tree demo works fine 1`] = `
                   </svg>
                 </span>
                 <label
-                  class="t-checkbox t-tree__label t-tree__label--strictly"
+                  class="t-checkbox t-tree__label"
                 >
                   <input
                     class="t-checkbox__former"
@@ -4818,7 +4816,7 @@ exports[`Transfer tree demo works fine 1`] = `
                   </svg>
                 </span>
                 <label
-                  class="t-checkbox t-tree__label t-tree__label--strictly"
+                  class="t-checkbox t-tree__label"
                 >
                   <input
                     class="t-checkbox__former"
@@ -4848,7 +4846,7 @@ exports[`Transfer tree demo works fine 1`] = `
                   trigger="expand"
                 />
                 <label
-                  class="t-checkbox t-tree__label t-tree__label--strictly"
+                  class="t-checkbox t-tree__label"
                 >
                   <input
                     class="t-checkbox__former"
@@ -4878,7 +4876,7 @@ exports[`Transfer tree demo works fine 1`] = `
                   trigger="expand"
                 />
                 <label
-                  class="t-checkbox t-tree__label t-tree__label--strictly"
+                  class="t-checkbox t-tree__label"
                 >
                   <input
                     class="t-checkbox__former"
@@ -4922,7 +4920,7 @@ exports[`Transfer tree demo works fine 1`] = `
                   </svg>
                 </span>
                 <label
-                  class="t-checkbox t-tree__label t-tree__label--strictly"
+                  class="t-checkbox t-tree__label"
                 >
                   <input
                     class="t-checkbox__former"
@@ -4952,7 +4950,7 @@ exports[`Transfer tree demo works fine 1`] = `
                   trigger="expand"
                 />
                 <label
-                  class="t-checkbox t-tree__label t-tree__label--strictly"
+                  class="t-checkbox t-tree__label"
                 >
                   <input
                     class="t-checkbox__former"
@@ -4982,7 +4980,7 @@ exports[`Transfer tree demo works fine 1`] = `
                   trigger="expand"
                 />
                 <label
-                  class="t-checkbox t-tree__label t-tree__label--strictly"
+                  class="t-checkbox t-tree__label"
                 >
                   <input
                     class="t-checkbox__former"

@@ -23,7 +23,9 @@ import { ClassName } from '../../common';
 import log from '../../_common/js/log';
 
 export default function useRowSelect(props: TdPrimaryTableProps) {
-  const { selectedRowKeys, columns, data } = toRefs(props);
+  const {
+    selectedRowKeys, columns, data, rowKey,
+  } = toRefs(props);
   const { tableSelectedClasses } = useClassName();
   const selectedRowClassNames = ref();
   const [tSelectedRowKeys, setTSelectedRowKeys] = useDefaultValue(
@@ -42,7 +44,7 @@ export default function useRowSelect(props: TdPrimaryTableProps) {
   ));
 
   watch(
-    [data, columns, tSelectedRowKeys],
+    [data, columns, tSelectedRowKeys, selectColumn, rowKey],
     () => {
       const disabledRowFunc = (p: RowClassNameParams<TableRowData>): ClassName => selectColumn.value.disabled(p) ? tableSelectedClasses.disabled : '';
       const disabledRowClass = selectColumn.value?.disabled ? disabledRowFunc : undefined;
@@ -88,7 +90,7 @@ export default function useRowSelect(props: TdPrimaryTableProps) {
       },
       on: {
         click: (e: MouseEvent) => {
-          // 选中行功能中，点击 checkbo/radio 需阻止事件冒泡，避免触发不必要的 onRowClick
+          // 选中行功能中，点击 checkbox/radio 需阻止事件冒泡，避免触发不必要的 onRowClick
           e?.stopPropagation();
         },
         // radio 单选框可再点击一次关闭选择，input / change 事件无法监听

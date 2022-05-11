@@ -46,8 +46,8 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       // translate 偏移影响的 需要调整
       offsetX: 0,
       offsetY: 0,
-      diaglogW: 0,
-      diaglogH: 0,
+      dialogW: 0,
+      dialogH: 0,
       dLeft: 0,
       dTop: 0,
     };
@@ -71,7 +71,11 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       const dialogClass = [`${name}`, `${name}--default`, `${name}--${this.placement}`, `${name}__modal-${this.theme}`];
       if (['modeless', 'modal'].includes(this.mode)) {
         dialogClass.push(`${name}--fixed`);
+        if (this.isModal && this.showInAttachedElement) {
+          dialogClass.push(`${name}--absolute`);
+        }
       }
+
       return dialogClass;
     },
     dialogStyle(): Styles {
@@ -101,11 +105,13 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     visible(value) {
       if (value) {
         const { scrollWidth } = this;
-        if (scrollWidth > 0) {
-          const bodyCssText = `position: relative;width: calc(100% - ${scrollWidth}px);`;
-          document.body.style.cssText = bodyCssText;
+        if (this.isModal && !this.showInAttachedElement) {
+          if (scrollWidth > 0) {
+            const bodyCssText = `position: relative;width: calc(100% - ${scrollWidth}px);`;
+            document.body.style.cssText = bodyCssText;
+          }
+          addClass(document.body, lockClass);
         }
-        addClass(document.body, lockClass);
       } else {
         document.body.style.cssText = '';
         removeClass(document.body, lockClass);
@@ -126,6 +132,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     this.scrollWidth = window.innerWidth - document.body.offsetWidth;
     if (this.draggable) {
       window.addEventListener('resize', throttle(this.resizeAdjustPosition, 1000));
+    }
+    if (this.visible && this.isModal && this.preventScrollThrough) {
+      addClass(document.body, lockClass);
     }
   },
 
@@ -167,7 +176,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         });
       }
     },
-    closeBtnAcion(e: MouseEvent) {
+    closeBtnAction(e: MouseEvent) {
       emitEvent<Parameters<TdDialogProps['onCloseBtnClick']>>(this, 'close-btn-click', { e });
       this.emitCloseEvent({
         trigger: 'close-btn',
@@ -220,13 +229,13 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       };
       return icon[this.theme];
     },
-    mousedownHanler(targetEvent: MouseEvent) {
+    mousedownHandler(targetEvent: MouseEvent) {
       const target = this.$refs.dialog as HTMLElement;
       // 算出鼠标相对元素的位置
       this.disX = targetEvent.clientX - target.offsetLeft;
       this.disY = targetEvent.clientY - target.offsetTop;
-      this.diaglogW = target.offsetWidth;
-      this.diaglogH = target.offsetHeight;
+      this.dialogW = target.offsetWidth;
+      this.dialogH = target.offsetHeight;
       const [x, y] = this.getTranslateXY(target);
       this.offsetX = x;
       this.offsetY = y;
@@ -246,14 +255,14 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       const top = documentEvent.clientY - this.disY;
       // 移动当前元素
       // 临界判断
-      if (left + this.diaglogW - this.offsetX > this.windowInnerWidth) {
-        this.dLeft = this.windowInnerWidth - this.diaglogW + this.offsetX;
+      if (left + this.dialogW - this.offsetX > this.windowInnerWidth) {
+        this.dLeft = this.windowInnerWidth - this.dialogW + this.offsetX;
       } else {
         this.dLeft = target.offsetLeft < this.offsetX || left <= this.offsetX ? this.offsetX : left;
       }
       target.style.left = `${this.dLeft}px`;
-      if (top + this.diaglogH - this.offsetY > this.windowInnerHeight) {
-        this.dTop = this.windowInnerHeight - this.diaglogH + this.offsetY;
+      if (top + this.dialogH - this.offsetY > this.windowInnerHeight) {
+        this.dTop = this.windowInnerHeight - this.dialogH + this.offsetY;
       } else {
         this.dTop = top < this.offsetY ? this.offsetY : top;
       }
@@ -267,9 +276,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     initDragEvent(status: boolean) {
       const target = this.$refs.dialog as HTMLElement;
       if (status) {
-        target.addEventListener('mousedown', this.mousedownHanler);
+        target.addEventListener('mousedown', this.mousedownHandler);
       } else {
-        target.removeEventListener('mousedown', this.mousedownHanler);
+        target.removeEventListener('mousedown', this.mousedownHandler);
       }
     },
     /**
@@ -323,11 +332,11 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
             {renderTNodeJSX(this, 'header', defaultHeader)}
           </div>
           {this.closeBtn ? (
-            <span class={`${name}__close`} onClick={this.closeBtnAcion}>
+            <span class={`${name}__close`} onClick={this.closeBtnAction}>
               {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
             </span>
           ) : null}
-          {/* <span class={`${name}__close`} onClick={this.closeBtnAcion}>
+          {/* <span class={`${name}__close`} onClick={this.closeBtnAction}>
             {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
           </span> */}
           <div class={bodyClassName}>{body}</div>
@@ -342,7 +351,13 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     const dialogView = this.renderDialog();
     const view = [maskView, dialogView];
     const ctxStyle: any = { zIndex: this.zIndex };
-    const ctxClass = [`${name}__ctx`, { [`${prefix}-dialog__ctx--fixed`]: this.mode === 'modal' }];
+    const ctxClass = [
+      `${name}__ctx`,
+      {
+        [`${prefix}-dialog__ctx--fixed`]: this.mode === 'modal',
+        [`${prefix}-dialog__ctx--absolute`]: this.isModal && this.showInAttachedElement,
+      },
+    ];
     return (
       <transition
         duration={300}

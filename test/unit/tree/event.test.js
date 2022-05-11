@@ -207,7 +207,7 @@ describe('Tree:props:events', () => {
     it('onLoad 回调可触发', (done) => {
       const data = [
         {
-          lablel: '1',
+          label: '1',
           value: 't1',
           children: true,
         },

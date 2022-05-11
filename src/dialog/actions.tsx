@@ -6,13 +6,13 @@ import TButton, { ButtonProps } from '../button';
 import { PopconfirmConfig, DialogConfig, DrawerConfig } from '../config-provider';
 import { ClassName, TNode } from '../common';
 
-export type MixnsFooterButton = string | ButtonProps | TNode;
+export type MixinsFooterButton = string | ButtonProps | TNode;
 
 export interface MixinsConfirmBtn {
   theme?: MixinsThemeType;
   className?: ClassName;
   size?: ButtonProps['size'];
-  confirmBtn: MixnsFooterButton;
+  confirmBtn: MixinsFooterButton;
   globalConfirm: PopconfirmConfig['confirm'] | DrawerConfig['confirm'] | DialogConfig['confirm'];
   globalConfirmBtnTheme?: PopconfirmConfig['confirmBtnTheme'] | DialogConfig['confirmBtnTheme'];
 }
@@ -20,7 +20,7 @@ export interface MixinsConfirmBtn {
 export interface MixinsCancelBtn {
   className?: ClassName;
   size?: ButtonProps['size'];
-  cancelBtn: MixnsFooterButton;
+  cancelBtn: MixinsFooterButton;
   globalCancel: PopconfirmConfig['cancel'] | DrawerConfig['cancel'] | DialogConfig['cancel'];
 }
 

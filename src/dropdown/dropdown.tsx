@@ -21,17 +21,14 @@ export default Vue.extend({
   methods: {
     handleMenuClick(data: DropdownOption, context: { e: MouseEvent }) {
       if (this.hideAfterItemClick) {
-        const {
-          popupElem,
-        }: any = this.$refs;
+        const { popupElem }: any = this.$refs;
         popupElem.handleClose();
       }
       emitEvent(this, 'click', data, context);
     },
   },
   render() {
-    const trigger: VNode[] | VNode | string = this.$scopedSlots.default
-      ? this.$scopedSlots.default(null) : '';
+    const trigger: VNode[] | VNode | string = this.$scopedSlots.default ? this.$scopedSlots.default(null) : '';
     const contentSlot: VNode[] | VNode | string = this.$scopedSlots.dropdown ? this.$scopedSlots.dropdown(null) : '';
 
     const popupProps = {
@@ -41,16 +38,16 @@ export default Vue.extend({
         disabled: this.disabled,
         placement: this.placement,
         trigger: this.trigger,
-        overlayClassName: this.popupProps && this.popupProps.overlayClassName
-          ? [name, this.popupProps.overlayClassName]
-          : name,
+        overlayClassName:
+          this.popupProps && this.popupProps.overlayClassName ? [name, this.popupProps.overlayClassName] : name,
       },
+      ...this.popupProps,
       ref: 'popup',
     };
 
     return (
       <Popup {...popupProps} ref="popupElem" expandAnimation={true}>
-        <template slot='content' role='dropdown'>
+        <template slot="content" role="dropdown">
           {contentSlot || <DropdownMenu />}
         </template>
         {trigger}

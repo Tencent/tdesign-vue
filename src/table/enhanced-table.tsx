@@ -76,13 +76,13 @@ export default defineComponent({
   methods: {
     // support @row-click @page-change @row-hover .etc. events, Vue3 do not need this function
     getListener() {
-      const listenser: TableListeners = {};
+      const listeners: TableListeners = {};
       PRIMARY_ALL_EVENTS.forEach((key) => {
-        listenser[key] = (...args: any) => {
+        listeners[key] = (...args: any) => {
           this.$emit(key, ...args);
         };
       });
-      return listenser;
+      return listeners;
     },
   },
 

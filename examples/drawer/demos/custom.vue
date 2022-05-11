@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 使用插槽自定义 -->
-    <t-drawer :visible.sync="visible" closeBtn>
+    <t-drawer :visible.sync="visible" :closeBtn="true">
       <p>抽屉的内容</p>
       <template #header>
         <div>自定义头部</div>
@@ -13,7 +13,7 @@
     </t-drawer>
 
     <!-- 使用 props 自定义 -->
-    <t-drawer :visible.sync="visible2" :header="() => '抽屉标题'" :footer="renderFooter" closeBtn>
+    <t-drawer :visible.sync="visible2" :header="() => '抽屉标题'" :footer="renderFooter" :closeBtn="true">
       <p>抽屉的内容</p>
     </t-drawer>
 
@@ -26,7 +26,7 @@
         content: '确认',
         disabled: true,
       }"
-      closeBtn
+      :closeBtn="true"
     >
       <p>抽屉的内容</p>
     </t-drawer>
