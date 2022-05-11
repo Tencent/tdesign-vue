@@ -1,4 +1,5 @@
-name: Test GitHub Action
+# copy from tencent/tdesign
+name: pr-spell-check
 on: [pull_request]
 
 jobs:
@@ -6,6 +7,8 @@ jobs:
     name: Spell Check with Typos
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Check spelling
-      uses: crate-ci/typos@master
+      - uses: actions/checkout@v2
+      - name: Check spelling
+        uses: crate-ci/typos@master
+        with:
+          config: .github/workflows/typos-config.toml
