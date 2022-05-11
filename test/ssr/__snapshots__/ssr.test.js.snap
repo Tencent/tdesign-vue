@@ -1149,7 +1149,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
                 <div class="item"><span class="error"></span>
                   错误事件
                 </div>
-                <div class="item"><span class="waring"></span>
+                <div class="item"><span class="warning"></span>
                   警告事件
                 </div>
                 <div class="item"><span class="success"></span>
@@ -2106,7 +2106,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/slot-props-api.vue 
           </div>
           <div class="t-calendar__table-body-cell">
             <div class="calendar-slot-props-api-demo"><span><div class="calendar-slot-props-api-demo-slot-wrapper"><div class="item"><span class="error"></span>错误事件</div>
-            <div class="item"><span class="waring"></span>警告事件</div>
+            <div class="item"><span class="warning"></span>警告事件</div>
             <div class="item"><span class="success"></span>正常事件</div>
           </div>
           <div class="shadow"></div></span>

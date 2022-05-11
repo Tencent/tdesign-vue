@@ -1250,7 +1250,7 @@ CSS 类名规范:
 ### 🚀 Features
 
 - Tree-shaking: 组件库增加 `sideEffects` 设置，支持业务系统打包时按需加载组件库
-- Notification: `title` 新增支持插槽及 render funtion
+- Notification: `title` 新增支持插槽及 render function
 - Upload: 新增图片预览功能
 - Button 组件新增动画
 - Menu: 组件重构，全新 UI，修复问题如下：
