@@ -17,7 +17,7 @@ export interface TdColorPickerProps {
   closeBtn?: string | boolean | TNode;
   /**
    * 颜色模式选择。同时支持单色和渐变两种模式，可仅使用单色或者渐变其中一种模式，也可以同时使用。`monochrome` 表示单色，`linear-gradient` 表示渐变色
-   * @default ['monochrome', 'linear-gradient']
+   * @default ()=> ['monochrome', 'linear-gradient']
    */
   colorModes?: Array<'monochrome' | 'linear-gradient'>;
   /**
@@ -71,11 +71,6 @@ export interface TdColorPickerProps {
    * @default ''
    */
   value?: string;
-  /**
-   * 色值
-   * @default ''
-   */
-  modelValue?: string;
   /**
    * 色值，非受控属性
    * @default ''

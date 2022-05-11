@@ -45,13 +45,8 @@ export default defineComponent({
     const baseClassName = useBaseClassName();
     const { statusClassNames } = useCommonClassName();
     const { t, global } = useConfig('colorPicker');
-    const { value: inputValue, modelValue, recentColors } = toRefs(props);
-    const [innerValue, setInnerValue] = useVModel(
-      inputValue || modelValue,
-      props.defaultValue,
-      props.onChange,
-      'change',
-    );
+    const { value: inputValue, recentColors } = toRefs(props);
+    const [innerValue, setInnerValue] = useVModel(inputValue, props.defaultValue, props.onChange, 'change');
     const color = ref<Color>(new Color(innerValue.value || DEFAULT_COLOR));
     const updateColor = () => color.value.update(innerValue.value || DEFAULT_COLOR);
     const mode = ref<TdColorModes>(color.value.isGradient ? 'linear-gradient' : 'monochrome');

@@ -32,8 +32,8 @@ export default defineComponent({
     const visible = ref(false);
     const setVisible = (value: boolean) => (visible.value = value);
 
-    const { value, modelValue } = toRefs(props);
-    const [innerValue, setInnerValue] = useVModel(value || modelValue, props.defaultValue, props.onChange, 'change');
+    const { value } = toRefs(props);
+    const [innerValue, setInnerValue] = useVModel(value, props.defaultValue, props.onChange, 'change');
 
     const handleChange = (value: string, context: TdColorContext) => {
       setInnerValue(value, context);
