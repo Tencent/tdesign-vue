@@ -275,7 +275,6 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               </span>
               <span
                 class="t-select__single"
-                title="RGB"
               >
                 RGB
               </span>
@@ -1056,7 +1055,6 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               </span>
               <span
                 class="t-select__single"
-                title="RGB"
               >
                 RGB
               </span>
@@ -1816,7 +1814,6 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 </span>
                 <span
                   class="t-select__single"
-                  title="RGB"
                 >
                   RGB
                 </span>
@@ -2688,7 +2685,6 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 </span>
                 <span
                   class="t-select__single"
-                  title="RGB"
                 >
                   RGB
                 </span>
@@ -3456,7 +3452,6 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               </span>
               <span
                 class="t-select__single"
-                title="RGB"
               >
                 RGB
               </span>
@@ -4219,7 +4214,6 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                 </span>
                 <span
                   class="t-select__single"
-                  title="RGB"
                 >
                   RGB
                 </span>
@@ -4554,7 +4548,6 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                 </span>
                 <span
                   class="t-select__single"
-                  title="RGB"
                 >
                   RGB
                 </span>

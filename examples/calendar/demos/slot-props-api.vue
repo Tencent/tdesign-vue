@@ -22,7 +22,7 @@ export default {
           label: '错误事件',
         },
         {
-          value: 'waring',
+          value: 'warning',
           label: '警告事件',
         },
         {
@@ -93,7 +93,7 @@ export default {
   .error {
     background: #e34d59;
   }
-  .waring {
+  .warning {
     background: #ed7b2f;
   }
   .success {
