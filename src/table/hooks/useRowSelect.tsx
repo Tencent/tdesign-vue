@@ -65,11 +65,12 @@ export default function useRowSelect(props: TdPrimaryTableProps) {
 
   // eslint-disable-next-line
   function getSelectedHeader(h: CreateElement) {
-    const isIndeterminate = intersectionKeys.value.length > 0 && intersectionKeys.value.length < canSelectedRows.value.length;
     return () => (
       <Checkbox
         checked={intersectionKeys.value.length === canSelectedRows.value.length}
-        indeterminate={isIndeterminate}
+        indeterminate={
+          intersectionKeys.value.length > 0 && intersectionKeys.value.length < canSelectedRows.value.length
+        }
         disabled={!canSelectedRows.value.length}
         {...{ on: { change: handleSelectAll } }}
       />
@@ -139,18 +140,12 @@ export default function useRowSelect(props: TdPrimaryTableProps) {
   function formatToRowSelectColumn(col: PrimaryTableCol) {
     const isSelection = ['multiple', 'single'].includes(col.type);
     if (!isSelection) return col;
-
-    !col.width
-      && Object.assign(col, {
-        width: 64,
-      });
-
-    const result = Object.assign(col, {
+    return {
+      ...col,
+      width: col.width || 64,
       cell: (h: CreateElement, p: PrimaryTableCellParams<TableRowData>) => renderSelectCell(h, p),
       title: col.type === 'multiple' ? getSelectedHeader(h) : '',
-    });
-
-    return result;
+    };
   }
 
   return {
