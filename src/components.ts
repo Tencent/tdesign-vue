@@ -26,6 +26,7 @@ export * from './menu';
 export * from './pagination';
 export * from './popconfirm';
 export * from './radio';
+export * from './rate';
 export * from './select';
 export * from './slider';
 export * from './steps';

@@ -60,6 +60,12 @@ export default {
       type: 'component', // 组件文档
       children: [
         {
+          title: 'Rate 评分',
+          name: 'rate',
+          path: '/vue/components/rate',
+          component: () => import('@/examples/rate/rate.md'),
+        },
+        {
           title: 'Button 按钮',
           name: 'button',
           path: '/vue/components/button',
@@ -317,6 +323,12 @@ export default {
           path: '/vue/components/tree',
           component: () => import('@/examples/tree/tree.md'),
         },
+        // {
+        //   title: 'Rate 评分',
+        //   name: 'rate',
+        //   path: '/vue/components/rate',
+        //   component: () => import('@/examples/rate/rate.md'),
+        // }
       ],
     },
     {

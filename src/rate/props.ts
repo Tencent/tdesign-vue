@@ -15,6 +15,10 @@ export default {
   color: {
     type: [String, Array] as PropType<TdRateProps['color']>,
   },
+  index: {
+    type: Number,
+    default: 1000,
+  },
   /** 评分的数量 */
   count: {
     type: Number,
