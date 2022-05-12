@@ -314,10 +314,10 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         document.onmousemove = function (e) {
           e.preventDefault(); // 移动时禁用默认事件
           const screenWidth = document.body.clientWidth; // body当前宽度
-          const screenHeight = document.documentElement.clientHeight; // 可见区域高度(应为body高度，可某些环境下无法获取)
+          const screenHeight = document.documentElement.clientHeight;
 
           // 通过事件委托，计算移动的距离
-          const x = e.clientX - disX + (e.clientX - clientX); // 这里 由于elementUI的dialog控制居中的，所以水平拉伸效果是双倍
+          const x = e.clientX - disX + (e.clientX - clientX);
           const y = e.clientY - disY;
           // 比较是否小于最小宽高
           if (x > screenWidth) {
