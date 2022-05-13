@@ -26,7 +26,7 @@ export default function useColumnResize(tableElmRef: Ref<HTMLTableElement>, refr
     if (!resizeLineParams.isDragging) {
       // 最小宽度暂定为30，如果单元格小于30，则不能拖拽
       // 当离右边框的距离不超过8时，显示拖拽图标
-      if (targetBoundRect.width > 30 && targetBoundRect.right - e.pageX <= 8) {
+      if (targetBoundRect.width >= 30 && targetBoundRect.right - e.pageX <= 8) {
         target.style.cursor = 'col-resize';
         resizeLineParams.draggingCol = target;
       } else {

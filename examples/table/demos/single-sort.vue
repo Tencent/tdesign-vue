@@ -1,5 +1,10 @@
 <template>
   <div class="tdesign-demo-block-column-large demo-container">
+    <div>
+      <t-checkbox v-model="hideSortTips"> 隐藏排序文本提示 </t-checkbox>
+      <span style="padding-left: 16px; vertical-align: top">排序：{{ sort }}</span>
+    </div>
+
     <!-- 非受控用法：不需要传 sort，或者只需要传 defaultSort: { sortBy: 'status', descending: true }），defaultSort 仅第一次有效 -->
     <!-- 非受控用法，示例代码有效，勿删 -->
     <!-- <t-table rowKey="id" :columns="columns" :data="data" @sort-change="defaultSortChange">
@@ -10,13 +15,13 @@
       </template>
     </t-table> -->
 
-    <p>排序：{{ sort }}</p>
     <!-- 受控用法，示例代码有效，勿删 -->
     <t-table
       rowKey="id"
       :columns="columns"
       :data="data"
       :sort="sort"
+      :hideSortTips="hideSortTips"
       bordered
       @sort-change="sortChange"
       @change="onChange"
@@ -62,6 +67,7 @@ export default {
     return {
       data,
       columns,
+      hideSortTips: false,
       sort: {
         // 按照 status 字段进行排序
         sortBy: 'status',

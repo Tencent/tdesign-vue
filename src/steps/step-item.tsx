@@ -20,6 +20,7 @@ export default mixins(getConfigReceiverMixins<StepItemType, StepsConfig>('steps'
   name: 'TStepItem',
   props: {
     ...props,
+    index: Number,
   },
   components: {
     CheckIcon,
@@ -27,11 +28,6 @@ export default mixins(getConfigReceiverMixins<StepItemType, StepsConfig>('steps'
   },
   inject: {
     steps: { default: undefined },
-  },
-  data() {
-    return {
-      index: -1,
-    };
   },
   computed: {
     current(): string | number {
@@ -46,12 +42,6 @@ export default mixins(getConfigReceiverMixins<StepItemType, StepsConfig>('steps'
     canClick(): boolean {
       return this.status !== 'process' && !this.steps?.readonly;
     },
-  },
-  mounted() {
-    this.steps.addItem(this);
-  },
-  destroyed() {
-    this.steps.removeItem(this);
   },
   methods: {
     renderIcon() {
@@ -79,6 +69,7 @@ export default mixins(getConfigReceiverMixins<StepItemType, StepsConfig>('steps'
       return renderTNodeJSX(this, 'icon', defaultIcon);
     },
     onStepClick(e: MouseEvent) {
+      if (!this.canClick) return;
       const val = this.value === undefined ? this.index : this.value;
       this.steps.handleChange(val, this.current, e);
     },
