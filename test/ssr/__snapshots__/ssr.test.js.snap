@@ -9334,7 +9334,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="105.55751316061705  246.30086404143975" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="99.90264638415542  233.10617489636263" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9345,7 +9345,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--success" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info"></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="351.85837720205683  0" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="333.0088212805181  0" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9356,7 +9356,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--success" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info">75day</div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="175.92918860102841  175.92918860102841" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="166.50441064025904  166.50441064025904" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9371,7 +9371,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
               <path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="351.85837720205683  0" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="333.0088212805181  0" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9384,7 +9384,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
               <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="263.89378290154264  87.96459430051421" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="249.75661596038856  83.25220532012952" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9397,7 +9397,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
               <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="175.92918860102841  175.92918860102841" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="166.50441064025904  166.50441064025904" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9411,7 +9411,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--undefined" style="width:72px;height:72px;font-size:14px;">
           <div class="t-progress__info">30%</div><svg width="72" height="72" viewBox="0 0 72 72">
             <circle cx="36" cy="36" r="34" stroke-width="4" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="67.85840131753953  158.33626974092556" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="64.08849013323179  149.53981031087415" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9422,7 +9422,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="105.55751316061705  246.30086404143975" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="99.90264638415542  233.10617489636263" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9433,7 +9433,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--undefined" style="width:160px;height:160px;font-size:36px;">
           <div class="t-progress__info">75%</div><svg width="160" height="160" viewBox="0 0 160 160">
             <circle cx="80" cy="80" r="77" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="376.99111843077515  125.66370614359172" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="362.8539514896211  120.95131716320704" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9450,7 +9450,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
       <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
         <div class="t-progress__info"></div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="295.5610368497277  56.2973403523291" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="279.72740987563515  53.2814114048829" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -9478,7 +9478,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
       <div class="t-progress--circle t-progress--status--undefined" style="width:200px;height:200px;font-size:45px;">
         <div class="t-progress__info">30%</div><svg width="200" height="200" viewBox="0 0 200 200">
           <circle cx="100" cy="100" r="90" stroke-width="20" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="100" cy="100" r="90" stroke-width="20" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,200)" stroke-dasharray="188.4955592153876  439.822971502571" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="100" cy="100" r="90" stroke-width="20" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,200)" stroke-dasharray="169.64600329384882  395.8406743523139" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -9496,7 +9496,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
       <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
         <div class="t-progress__info">44%</div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="#aaa" fill="none" class="t-progress__circle-outer" style="stroke:#aaa;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="154.817685968905  197.04069123315185" class="t-progress__circle-inner" style="stroke:#52CC8D;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="146.52388136342796  186.48493991709014" class="t-progress__circle-inner" style="stroke:#52CC8D;"></circle>
         </svg>
       </div>
     </div>
@@ -9515,7 +9515,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
       <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
         <div class="t-progress__info">&lt;div&gt;45days&lt;/div&gt;</div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="154.817685968905  197.04069123315185" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="146.52388136342796  186.48493991709014" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -9684,7 +9684,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
         <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="105.55751316061705  246.30086404143975" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="99.90264638415542  233.10617489636263" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9696,7 +9696,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
               <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="263.89378290154264  87.96459430051421" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="249.75661596038856  83.25220532012952" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9708,7 +9708,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
               <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="175.92918860102841  175.92918860102841" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="166.50441064025904  166.50441064025904" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9720,7 +9720,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
               <path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="351.85837720205683  0" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="333.0088212805181  0" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9733,7 +9733,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
       <div class="t-progress--circle t-progress--status--undefined" style="width:72px;height:72px;font-size:14px;">
         <div class="t-progress__info">30%</div><svg width="72" height="72" viewBox="0 0 72 72">
           <circle cx="36" cy="36" r="34" stroke-width="4" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="67.85840131753953  158.33626974092556" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="64.08849013323179  149.53981031087415" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -9742,7 +9742,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
       <div class="t-progress--circle t-progress--status--undefined" style="width:160px;height:160px;font-size:36px;">
         <div class="t-progress__info">75%</div><svg width="160" height="160" viewBox="0 0 160 160">
           <circle cx="80" cy="80" r="77" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="376.99111843077515  125.66370614359172" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="362.8539514896211  120.95131716320704" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -9777,7 +9777,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
             <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
           </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="281.48670176164546  70.37167544041135" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="266.4070570244145  66.6017642561036" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -9807,7 +9807,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
             <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
           </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="281.48670176164546  70.37167544041135" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="266.4070570244145  66.6017642561036" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -9847,7 +9847,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
             <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
           </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="281.48670176164546  70.37167544041135" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="266.4070570244145  66.6017642561036" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
