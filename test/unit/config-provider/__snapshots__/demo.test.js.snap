@@ -2903,7 +2903,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
   <br />
    
   <div
-    class="t-steps t-steps--vertical t-steps--default-anchor t-steps--positive"
+    class="t-steps t-steps--vertical t-steps--positive t-steps--default-anchor t-steps--line-separator"
   >
     <div
       class="t-steps-item t-steps-item--finish"
@@ -3055,7 +3055,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
           <span
             class="t-steps-item__icon--number"
           >
-            0
+            4
           </span>
         </div>
         <div
