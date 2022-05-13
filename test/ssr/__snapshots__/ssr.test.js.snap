@@ -1149,7 +1149,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/cell.vue correctly 
                 <div class="item"><span class="error"></span>
                   错误事件
                 </div>
-                <div class="item"><span class="waring"></span>
+                <div class="item"><span class="warning"></span>
                   警告事件
                 </div>
                 <div class="item"><span class="success"></span>
@@ -2106,7 +2106,7 @@ exports[`ssr snapshot test renders ./examples/calendar/demos/slot-props-api.vue 
           </div>
           <div class="t-calendar__table-body-cell">
             <div class="calendar-slot-props-api-demo"><span><div class="calendar-slot-props-api-demo-slot-wrapper"><div class="item"><span class="error"></span>错误事件</div>
-            <div class="item"><span class="waring"></span>警告事件</div>
+            <div class="item"><span class="warning"></span>警告事件</div>
             <div class="item"><span class="success"></span>正常事件</div>
           </div>
           <div class="shadow"></div></span>
@@ -3560,7 +3560,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/others.vue c
       <div data-value="2" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right" style="font-size:18px;"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">Department B</span></span></div>
     </transition-group-stub>
   </div> <br><br> <br>
-  <div class="t-steps t-steps--vertical t-steps--default-anchor t-steps--positive">
+  <div class="t-steps t-steps--vertical t-steps--positive t-steps--default-anchor t-steps--line-separator">
     <div class="t-steps-item t-steps-item--finish">
       <div class="t-steps-item__inner t-steps-item--clickable">
         <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
@@ -3593,7 +3593,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/others.vue c
     </div>
     <div class="t-steps-item t-steps-item--default">
       <div class="t-steps-item__inner t-steps-item--clickable">
-        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
+        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">4</span></div>
         <div class="t-steps-item__content">
           <div class="t-steps-item__title">Last Step</div>
           <div class="t-steps-item__description">You haven't finish this step.</div>
@@ -9334,7 +9334,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="105.55751316061705  246.30086404143975" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="99.90264638415542  233.10617489636263" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9345,7 +9345,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--success" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info"></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="351.85837720205683  0" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="333.0088212805181  0" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9356,7 +9356,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--success" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info">75day</div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="175.92918860102841  175.92918860102841" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="166.50441064025904  166.50441064025904" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9371,7 +9371,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
               <path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="351.85837720205683  0" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="333.0088212805181  0" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9384,7 +9384,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
               <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="263.89378290154264  87.96459430051421" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="249.75661596038856  83.25220532012952" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9397,7 +9397,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
               <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="175.92918860102841  175.92918860102841" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="166.50441064025904  166.50441064025904" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9411,7 +9411,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--undefined" style="width:72px;height:72px;font-size:14px;">
           <div class="t-progress__info">30%</div><svg width="72" height="72" viewBox="0 0 72 72">
             <circle cx="36" cy="36" r="34" stroke-width="4" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="67.85840131753953  158.33626974092556" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="64.08849013323179  149.53981031087415" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9422,7 +9422,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="105.55751316061705  246.30086404143975" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="99.90264638415542  233.10617489636263" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9433,7 +9433,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/circle.vue correctl
         <div class="t-progress--circle t-progress--status--undefined" style="width:160px;height:160px;font-size:36px;">
           <div class="t-progress__info">75%</div><svg width="160" height="160" viewBox="0 0 160 160">
             <circle cx="80" cy="80" r="77" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="376.99111843077515  125.66370614359172" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="362.8539514896211  120.95131716320704" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9450,7 +9450,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
       <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
         <div class="t-progress__info"></div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="295.5610368497277  56.2973403523291" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="279.72740987563515  53.2814114048829" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -9478,7 +9478,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
       <div class="t-progress--circle t-progress--status--undefined" style="width:200px;height:200px;font-size:45px;">
         <div class="t-progress__info">30%</div><svg width="200" height="200" viewBox="0 0 200 200">
           <circle cx="100" cy="100" r="90" stroke-width="20" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="100" cy="100" r="90" stroke-width="20" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,200)" stroke-dasharray="188.4955592153876  439.822971502571" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="100" cy="100" r="90" stroke-width="20" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,200)" stroke-dasharray="169.64600329384882  395.8406743523139" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -9496,7 +9496,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
       <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
         <div class="t-progress__info">44%</div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="#aaa" fill="none" class="t-progress__circle-outer" style="stroke:#aaa;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="154.817685968905  197.04069123315185" class="t-progress__circle-inner" style="stroke:#52CC8D;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="146.52388136342796  186.48493991709014" class="t-progress__circle-inner" style="stroke:#52CC8D;"></circle>
         </svg>
       </div>
     </div>
@@ -9515,7 +9515,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
       <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
         <div class="t-progress__info">&lt;div&gt;45days&lt;/div&gt;</div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="154.817685968905  197.04069123315185" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="146.52388136342796  186.48493991709014" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -9684,7 +9684,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
         <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
           <div class="t-progress__info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="105.55751316061705  246.30086404143975" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="99.90264638415542  233.10617489636263" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9696,7 +9696,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
               <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="263.89378290154264  87.96459430051421" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="249.75661596038856  83.25220532012952" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9708,7 +9708,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
               <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="175.92918860102841  175.92918860102841" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="166.50441064025904  166.50441064025904" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9720,7 +9720,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
               <path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path>
             </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
             <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="351.85837720205683  0" class="t-progress__circle-inner" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="333.0088212805181  0" class="t-progress__circle-inner" style="stroke:;"></circle>
           </svg>
         </div>
       </div>
@@ -9733,7 +9733,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
       <div class="t-progress--circle t-progress--status--undefined" style="width:72px;height:72px;font-size:14px;">
         <div class="t-progress__info">30%</div><svg width="72" height="72" viewBox="0 0 72 72">
           <circle cx="36" cy="36" r="34" stroke-width="4" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="67.85840131753953  158.33626974092556" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="64.08849013323179  149.53981031087415" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -9742,7 +9742,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/size.vue correctly 
       <div class="t-progress--circle t-progress--status--undefined" style="width:160px;height:160px;font-size:36px;">
         <div class="t-progress__info">75%</div><svg width="160" height="160" viewBox="0 0 160 160">
           <circle cx="80" cy="80" r="77" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="376.99111843077515  125.66370614359172" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="362.8539514896211  120.95131716320704" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -9777,7 +9777,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
             <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
           </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="281.48670176164546  70.37167544041135" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="266.4070570244145  66.6017642561036" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -9807,7 +9807,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
             <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
           </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="281.48670176164546  70.37167544041135" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="266.4070570244145  66.6017642561036" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -9847,7 +9847,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
             <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
           </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
           <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="281.48670176164546  70.37167544041135" class="t-progress__circle-inner" style="stroke:;"></circle>
+          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="266.4070570244145  66.6017642561036" class="t-progress__circle-inner" style="stroke:;"></circle>
         </svg>
       </div>
     </div>
@@ -11245,7 +11245,7 @@ exports[`ssr snapshot test renders ./examples/slider/demos/vertical-marks.vue co
 `;
 
 exports[`ssr snapshot test renders ./examples/steps/demos/extra.vue correctly 1`] = `
-<div class="t-steps t-steps--vertical t-steps--default-anchor t-steps--positive">
+<div class="t-steps t-steps--vertical t-steps--positive t-steps--default-anchor t-steps--line-separator">
   <div class="t-steps-item t-steps-item--finish">
     <div class="t-steps-item__inner t-steps-item--clickable">
       <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
@@ -11260,7 +11260,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/extra.vue correctly 1`
   </div>
   <div class="t-steps-item t-steps-item--process">
     <div class="t-steps-item__inner ">
-      <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">0</span></div>
+      <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">2</span></div>
       <div class="t-steps-item__content">
         <div class="t-steps-item__title">步骤2</div>
         <div class="t-steps-item__description">这里是提示文字</div>
@@ -11270,7 +11270,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/extra.vue correctly 1`
   </div>
   <div class="t-steps-item t-steps-item--default">
     <div class="t-steps-item__inner t-steps-item--clickable">
-      <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
+      <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">3</span></div>
       <div class="t-steps-item__content">
         <div class="t-steps-item__title">步骤3</div>
         <div class="t-steps-item__description">这里是提示文字</div>
@@ -11280,7 +11280,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/extra.vue correctly 1`
   </div>
   <div class="t-steps-item t-steps-item--default">
     <div class="t-steps-item__inner t-steps-item--clickable">
-      <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
+      <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">4</span></div>
       <div class="t-steps-item__content">
         <div class="t-steps-item__title">步骤4</div>
         <div class="t-steps-item__description">这里是提示文字</div>
@@ -11292,7 +11292,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/extra.vue correctly 1`
 `;
 
 exports[`ssr snapshot test renders ./examples/steps/demos/icon.vue correctly 1`] = `
-<div class="t-steps t-steps--horizontal t-steps--default-anchor">
+<div class="t-steps t-steps--horizontal t-steps--positive t-steps--default-anchor t-steps--line-separator">
   <div class="t-steps-item t-steps-item--finish">
     <div class="t-steps-item__inner ">
       <div class="t-steps-item__icon t-steps-item--finish"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-login">
@@ -11347,7 +11347,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/icon.vue correctly 1`]
 `;
 
 exports[`ssr snapshot test renders ./examples/steps/demos/no-sequence.vue correctly 1`] = `
-<div class="t-steps t-steps--horizontal t-steps--dot-anchor">
+<div class="t-steps t-steps--horizontal t-steps--positive t-steps--dot-anchor t-steps--line-separator">
   <div class="t-steps-item t-steps-item--finish">
     <div class="t-steps-item__inner ">
       <div class="t-steps-item__icon t-steps-item--finish"></div>
@@ -11392,7 +11392,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/no-sequence.vue correc
 `;
 
 exports[`ssr snapshot test renders ./examples/steps/demos/options.vue correctly 1`] = `
-<div class="t-steps t-steps--horizontal t-steps--default-anchor">
+<div class="t-steps t-steps--horizontal t-steps--positive t-steps--default-anchor t-steps--line-separator">
   <div class="t-steps-item t-steps-item--finish">
     <div class="t-steps-item__inner t-steps-item--clickable">
       <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
@@ -11405,7 +11405,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/options.vue correctly 
   </div>
   <div class="t-steps-item t-steps-item--process">
     <div class="t-steps-item__inner ">
-      <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">0</span></div>
+      <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">2</span></div>
       <div class="t-steps-item__content">
         <div class="t-steps-item__title">步骤二</div>
         <div class="t-steps-item__description">这里是提示文字</div>
@@ -11415,7 +11415,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/options.vue correctly 
   </div>
   <div class="t-steps-item t-steps-item--default">
     <div class="t-steps-item__inner t-steps-item--clickable">
-      <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
+      <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">3</span></div>
       <div class="t-steps-item__content">
         <div class="t-steps-item__title">步骤三</div>
         <div class="t-steps-item__description">这里是提示文字</div>
@@ -11425,7 +11425,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/options.vue correctly 
   </div>
   <div class="t-steps-item t-steps-item--default">
     <div class="t-steps-item__inner t-steps-item--clickable">
-      <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
+      <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">4</span></div>
       <div class="t-steps-item__content">
         <div class="t-steps-item__title">步骤四</div>
         <div class="t-steps-item__description">这里是提示文字</div>
@@ -11438,7 +11438,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/options.vue correctly 
 
 exports[`ssr snapshot test renders ./examples/steps/demos/sequence.vue correctly 1`] = `
 <div>
-  <div class="t-steps t-steps--horizontal t-steps--default-anchor">
+  <div class="t-steps t-steps--horizontal t-steps--positive t-steps--default-anchor t-steps--line-separator">
     <div class="t-steps-item t-steps-item--finish">
       <div class="t-steps-item__inner t-steps-item--clickable">
         <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
@@ -11451,7 +11451,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/sequence.vue correctly
     </div>
     <div class="t-steps-item t-steps-item--process">
       <div class="t-steps-item__inner ">
-        <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">0</span></div>
+        <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">2</span></div>
         <div class="t-steps-item__content">
           <div class="t-steps-item__title">进行中的步骤</div>
           <div class="t-steps-item__description"></div>
@@ -11461,7 +11461,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/sequence.vue correctly
     </div>
     <div class="t-steps-item t-steps-item--default">
       <div class="t-steps-item__inner t-steps-item--clickable">
-        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
+        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">3</span></div>
         <div class="t-steps-item__content">
           <div class="t-steps-item__title">未进行的步骤</div>
           <div class="t-steps-item__description"></div>
@@ -11471,7 +11471,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/sequence.vue correctly
     </div>
     <div class="t-steps-item t-steps-item--default">
       <div class="t-steps-item__inner t-steps-item--clickable">
-        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
+        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">4</span></div>
         <div class="t-steps-item__content">
           <div class="t-steps-item__title">未进行的步骤</div>
           <div class="t-steps-item__description"></div>
@@ -11480,7 +11480,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/sequence.vue correctly
       </div>
     </div>
   </div> <br>
-  <div class="t-steps t-steps--horizontal t-steps--default-anchor">
+  <div class="t-steps t-steps--horizontal t-steps--positive t-steps--default-anchor t-steps--line-separator">
     <div class="t-steps-item t-steps-item--finish">
       <div class="t-steps-item__inner t-steps-item--clickable">
         <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
@@ -11503,7 +11503,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/sequence.vue correctly
     </div>
     <div class="t-steps-item t-steps-item--process">
       <div class="t-steps-item__inner ">
-        <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">0</span></div>
+        <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">3</span></div>
         <div class="t-steps-item__content">
           <div class="t-steps-item__title">进行中的步骤</div>
           <div class="t-steps-item__description">这是进行中的步骤</div>
@@ -11513,7 +11513,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/sequence.vue correctly
     </div>
     <div class="t-steps-item t-steps-item--default">
       <div class="t-steps-item__inner t-steps-item--clickable">
-        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
+        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">4</span></div>
         <div class="t-steps-item__content">
           <div class="t-steps-item__title">已完成的步骤</div>
           <div class="t-steps-item__description">点击切换步骤</div>
@@ -11527,7 +11527,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/sequence.vue correctly
 
 exports[`ssr snapshot test renders ./examples/steps/demos/status.vue correctly 1`] = `
 <div>
-  <div class="t-steps t-steps--horizontal t-steps--default-anchor">
+  <div class="t-steps t-steps--horizontal t-steps--positive t-steps--default-anchor t-steps--line-separator">
     <div class="t-steps-item t-steps-item--finish">
       <div class="t-steps-item__inner ">
         <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
@@ -11540,7 +11540,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/status.vue correctly 1
     </div>
     <div class="t-steps-item t-steps-item--process">
       <div class="t-steps-item__inner ">
-        <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">0</span></div>
+        <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">2</span></div>
         <div class="t-steps-item__content">
           <div class="t-steps-item__title">进行中的步骤</div>
           <div class="t-steps-item__description">这里是提示文字</div>
@@ -11550,7 +11550,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/status.vue correctly 1
     </div>
     <div class="t-steps-item t-steps-item--default">
       <div class="t-steps-item__inner ">
-        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
+        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">3</span></div>
         <div class="t-steps-item__content">
           <div class="t-steps-item__title">未进行的步骤</div>
           <div class="t-steps-item__description">这里是提示文字</div>
@@ -11560,7 +11560,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/status.vue correctly 1
     </div>
     <div class="t-steps-item t-steps-item--default">
       <div class="t-steps-item__inner ">
-        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
+        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">4</span></div>
         <div class="t-steps-item__content">
           <div class="t-steps-item__title">未进行的步骤</div>
           <div class="t-steps-item__description">这里是提示文字</div>
@@ -11570,7 +11570,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/status.vue correctly 1
     </div>
   </div>
   <div style="margin:16px 0;"></div>
-  <div class="t-steps t-steps--horizontal t-steps--default-anchor">
+  <div class="t-steps t-steps--horizontal t-steps--positive t-steps--default-anchor t-steps--line-separator">
     <div class="t-steps-item t-steps-item--finish">
       <div class="t-steps-item__inner ">
         <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
@@ -11603,7 +11603,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/status.vue correctly 1
     </div>
     <div class="t-steps-item t-steps-item--default">
       <div class="t-steps-item__inner ">
-        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
+        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">4</span></div>
         <div class="t-steps-item__content">
           <div class="t-steps-item__title">未进行的步骤</div>
           <div class="t-steps-item__description">这里是提示文字</div>
@@ -11618,7 +11618,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/status.vue correctly 1
 exports[`ssr snapshot test renders ./examples/steps/demos/vertical-no-sequence.vue correctly 1`] = `
 <div class="setps-demo">
   <div class="tdesign-demo-block">
-    <div class="t-steps t-steps--vertical t-steps--dot-anchor t-steps--positive">
+    <div class="t-steps t-steps--vertical t-steps--positive t-steps--dot-anchor t-steps--line-separator">
       <div class="t-steps-item t-steps-item--finish">
         <div class="t-steps-item__inner ">
           <div class="t-steps-item__icon t-steps-item--finish"></div>
@@ -11660,12 +11660,12 @@ exports[`ssr snapshot test renders ./examples/steps/demos/vertical-no-sequence.v
         </div>
       </div>
     </div>
-    <div class="t-steps t-steps--vertical t-steps--dot-anchor t-steps--reverse">
-      <div class="t-steps-item t-steps-item--finish">
+    <div class="t-steps t-steps--vertical t-steps--reverse t-steps--dot-anchor t-steps--line-separator">
+      <div class="t-steps-item t-steps-item--default">
         <div class="t-steps-item__inner ">
-          <div class="t-steps-item__icon t-steps-item--finish"></div>
+          <div class="t-steps-item__icon t-steps-item--default"></div>
           <div class="t-steps-item__content">
-            <div class="t-steps-item__title">已完成的步骤</div>
+            <div class="t-steps-item__title">未进行的步骤</div>
             <div class="t-steps-item__description">这里是提示文字</div>
             <div class="t-steps-item__extra"></div>
           </div>
@@ -11675,27 +11675,27 @@ exports[`ssr snapshot test renders ./examples/steps/demos/vertical-no-sequence.v
         <div class="t-steps-item__inner ">
           <div class="t-steps-item__icon t-steps-item--process"></div>
           <div class="t-steps-item__content">
+            <div class="t-steps-item__title">未进行的步骤</div>
+            <div class="t-steps-item__description">这里是提示文字</div>
+            <div class="t-steps-item__extra"></div>
+          </div>
+        </div>
+      </div>
+      <div class="t-steps-item t-steps-item--finish">
+        <div class="t-steps-item__inner ">
+          <div class="t-steps-item__icon t-steps-item--finish"></div>
+          <div class="t-steps-item__content">
             <div class="t-steps-item__title">进行中的步骤</div>
             <div class="t-steps-item__description">这里是提示文字</div>
             <div class="t-steps-item__extra"></div>
           </div>
         </div>
       </div>
-      <div class="t-steps-item t-steps-item--default">
+      <div class="t-steps-item t-steps-item--finish">
         <div class="t-steps-item__inner ">
-          <div class="t-steps-item__icon t-steps-item--default"></div>
+          <div class="t-steps-item__icon t-steps-item--finish"></div>
           <div class="t-steps-item__content">
-            <div class="t-steps-item__title">未进行的步骤</div>
-            <div class="t-steps-item__description">这里是提示文字</div>
-            <div class="t-steps-item__extra"></div>
-          </div>
-        </div>
-      </div>
-      <div class="t-steps-item t-steps-item--default">
-        <div class="t-steps-item__inner ">
-          <div class="t-steps-item__icon t-steps-item--default"></div>
-          <div class="t-steps-item__content">
-            <div class="t-steps-item__title">未进行的步骤</div>
+            <div class="t-steps-item__title">已完成的步骤</div>
             <div class="t-steps-item__description">这里是提示文字</div>
             <div class="t-steps-item__extra"></div>
           </div>
@@ -11709,7 +11709,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/vertical-no-sequence.v
 exports[`ssr snapshot test renders ./examples/steps/demos/vertical-sequence.vue correctly 1`] = `
 <div class="setps-demo">
   <div class="tdesign-demo-block">
-    <div class="t-steps t-steps--vertical t-steps--default-anchor t-steps--positive">
+    <div class="t-steps t-steps--vertical t-steps--positive t-steps--default-anchor t-steps--line-separator">
       <div class="t-steps-item t-steps-item--finish">
         <div class="t-steps-item__inner ">
           <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
@@ -11722,7 +11722,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/vertical-sequence.vue 
       </div>
       <div class="t-steps-item t-steps-item--process">
         <div class="t-steps-item__inner ">
-          <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">0</span></div>
+          <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">2</span></div>
           <div class="t-steps-item__content">
             <div class="t-steps-item__title">进行中的步骤</div>
             <div class="t-steps-item__description">这里是提示文字</div>
@@ -11732,7 +11732,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/vertical-sequence.vue 
       </div>
       <div class="t-steps-item t-steps-item--default">
         <div class="t-steps-item__inner ">
-          <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
+          <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">3</span></div>
           <div class="t-steps-item__content">
             <div class="t-steps-item__title">未进行的步骤</div>
             <div class="t-steps-item__description">这里是提示文字</div>
@@ -11742,7 +11742,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/vertical-sequence.vue 
       </div>
       <div class="t-steps-item t-steps-item--default">
         <div class="t-steps-item__inner ">
-          <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
+          <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">4</span></div>
           <div class="t-steps-item__content">
             <div class="t-steps-item__title">未进行的步骤</div>
             <div class="t-steps-item__description">这里是提示文字</div>
@@ -11752,12 +11752,12 @@ exports[`ssr snapshot test renders ./examples/steps/demos/vertical-sequence.vue 
       </div>
     </div>
     <div style="margin:16px 0;"></div>
-    <div class="t-steps t-steps--vertical t-steps--default-anchor t-steps--reverse">
-      <div class="t-steps-item t-steps-item--finish">
+    <div class="t-steps t-steps--vertical t-steps--reverse t-steps--default-anchor t-steps--line-separator">
+      <div class="t-steps-item t-steps-item--default">
         <div class="t-steps-item__inner ">
-          <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
+          <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">4</span></div>
           <div class="t-steps-item__content">
-            <div class="t-steps-item__title">已完成的步骤</div>
+            <div class="t-steps-item__title">未进行的步骤</div>
             <div class="t-steps-item__description">这里是提示文字</div>
             <div class="t-steps-item__extra"></div>
           </div>
@@ -11765,7 +11765,17 @@ exports[`ssr snapshot test renders ./examples/steps/demos/vertical-sequence.vue 
       </div>
       <div class="t-steps-item t-steps-item--process">
         <div class="t-steps-item__inner ">
-          <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">0</span></div>
+          <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">3</span></div>
+          <div class="t-steps-item__content">
+            <div class="t-steps-item__title">未进行的步骤</div>
+            <div class="t-steps-item__description">这里是提示文字</div>
+            <div class="t-steps-item__extra"></div>
+          </div>
+        </div>
+      </div>
+      <div class="t-steps-item t-steps-item--finish">
+        <div class="t-steps-item__inner ">
+          <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
           <div class="t-steps-item__content">
             <div class="t-steps-item__title">进行中的步骤</div>
             <div class="t-steps-item__description">这里是提示文字</div>
@@ -11773,21 +11783,11 @@ exports[`ssr snapshot test renders ./examples/steps/demos/vertical-sequence.vue 
           </div>
         </div>
       </div>
-      <div class="t-steps-item t-steps-item--default">
+      <div class="t-steps-item t-steps-item--finish">
         <div class="t-steps-item__inner ">
-          <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
+          <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
           <div class="t-steps-item__content">
-            <div class="t-steps-item__title">未进行的步骤</div>
-            <div class="t-steps-item__description">这里是提示文字</div>
-            <div class="t-steps-item__extra"></div>
-          </div>
-        </div>
-      </div>
-      <div class="t-steps-item t-steps-item--default">
-        <div class="t-steps-item__inner ">
-          <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">0</span></div>
-          <div class="t-steps-item__content">
-            <div class="t-steps-item__title">未进行的步骤</div>
+            <div class="t-steps-item__title">已完成的步骤</div>
             <div class="t-steps-item__description">这里是提示文字</div>
             <div class="t-steps-item__extra"></div>
           </div>
@@ -15223,10 +15223,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue corre
 
 exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large demo-container">
-  <p>排序：{
-    &quot;sortBy&quot;: &quot;status&quot;,
-    &quot;descending&quot;: true
-    }</p>
+  <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"> 隐藏排序文本提示 </span></label> <span style="padding-left:16px;vertical-align:top;">排序：{
+  &quot;sortBy&quot;: &quot;status&quot;,
+  &quot;descending&quot;: true
+}</span></div>
   <div class="t-table t-table--bordered" style="position:relative;">
     <div class="t-table__content">
       <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
@@ -15322,7 +15322,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
 
 exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`] = `
 <div>
-  <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置数据</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-left:16px;"><span class="t-button__text">展开/收起可见行</span></button></div> <br>
+  <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置数据</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-left:16px;"><span class="t-button__text">展开/收起可见行</span></button> <label class="t-checkbox" style="margin-left:16px;vertical-align:middle;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">
+      自定义折叠/展开图标
+    </span></label></div> <br>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
       <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
@@ -15379,10 +15381,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">
-                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                    <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                    <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                  </svg>我是 1_1 号（第 1 页）</div>
+                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 1_1 号（第 1 页）</div>
               </div>
             </td>
             <td>私有</td>
@@ -15397,10 +15396,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">
-                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                    <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                    <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                  </svg>我是 2_1 号（第 1 页）</div>
+                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 2_1 号（第 1 页）</div>
               </div>
             </td>
             <td>共有</td>
@@ -15415,10 +15411,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">
-                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                    <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                    <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                  </svg>我是 3_1 号（第 1 页）</div>
+                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 3_1 号（第 1 页）</div>
               </div>
             </td>
             <td>私有</td>
@@ -15433,10 +15426,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">
-                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                    <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                    <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                  </svg>我是 4_1 号（第 1 页）</div>
+                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 4_1 号（第 1 页）</div>
               </div>
             </td>
             <td>共有</td>
@@ -15529,10 +15519,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
-              <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                  <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                  <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                </svg>JQTest0</div>
+              <div class="t-table__tree-col" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>JQTest0</div>
             </td>
             <td>
               <p class="status">健康</p>
@@ -15544,10 +15531,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
-              <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                  <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                  <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                </svg>JQTest1</div>
+              <div class="t-table__tree-col" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>JQTest1</div>
             </td>
             <td>
               <p class="status unhealth">异常</p>
@@ -15559,10 +15543,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
-              <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                  <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                  <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                </svg>JQTest2</div>
+              <div class="t-table__tree-col" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>JQTest2</div>
             </td>
             <td>
               <p class="status">健康</p>
@@ -15574,10 +15555,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
-              <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                  <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                  <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                </svg>JQTest3</div>
+              <div class="t-table__tree-col" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>JQTest3</div>
             </td>
             <td>
               <p class="status unhealth">异常</p>
@@ -15589,10 +15567,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>
-              <div class="t-table__tree-col" style="padding-left:1px;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle t-table__tree-op-icon">
-                  <path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path>
-                  <path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path>
-                </svg>JQTest4</div>
+              <div class="t-table__tree-col" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>JQTest4</div>
             </td>
             <td>
               <p class="status">健康</p>

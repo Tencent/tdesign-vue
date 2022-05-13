@@ -125,7 +125,7 @@ export default Vue.extend({
       return this.strokeWidth ? Number(this.strokeWidth) : defaultWidth;
     },
     strokeDashArr(): string {
-      const radius = this.diameter / 2;
+      const radius = (this.diameter - this.circleStrokeWidth) / 2;
       const perimeter = Math.PI * 2 * radius;
       const percent = this.percentage / 100;
       return `${perimeter * percent}  ${perimeter * (1 - percent)}`;
