@@ -5,6 +5,24 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.41.3 `2022-05-13` 
+### 🚀 Features
+- `Icon`: 更新图标 新增`file-icon`图标 调整`file-excel`、`file-pdf`、`file-powerpoint`、`file-unknown`、`file-word`和`star-filled`图标的绘制路径 @uyarn ([#854](https://github.com/Tencent/tdesign-vue/pull/854))
+- `Dialog`: 支持`preventScrollThrough` API @uyarn ([#861](https://github.com/Tencent/tdesign-vue/pull/861))
+- `Tabl
+树形结构图标 `treeExpandAndFoldIcon`，同时支持全局配置此图标，[issue#717](https://github.com/Tencent/tdesign-vue-next/issues/717) @chaishi ([#863](https://github.com/Tencent/tdesign-vue/pull/863))
+- `Table`: 支持隐藏排序文本提示 `hideSortTips`，同时支持全局配置是否隐藏排序文本提示，[issue#736](https://github.com/Tencent/tdesign-vue-next/issues/736) @chaishi ([#863](https://github.com/Tencent/tdesign-vue/pull/863))
+- `Steps`: 新增 `separator` 属性，用于控制步骤条分隔符类型 @HQ-Lin ([#863](https://github.com/Tencent/tdesign-vue/pull/868))
+### 🐞 Bug Fixes
+- `Select`: 修复 `textarea` 作为 `panelContent` 时无法使用键盘事件的问题 @uyarn ([#851](https://github.com/Tencent/tdesign-vue/pull/851))
+- `Slider`: 修复`InputProps`属性传递布尔值时ts错误的问题 @uyarn ([#851](https://github.com/Tencent/tdesign-vue/pull/851))
+- `Table`: 固定列滚动阴影修复 [issue#858](https://github.com/Tencent/tdesign-vue/issues/858) @chaishi ([#860](https://github.com/Tencent/tdesign-vue/pull/860))
+- `Dropdown`: 插槽模式下 `maxHeight` 失效的问题 @uyarn ([#857](https://github.com/Tencent/tdesign-vue/pull/857))
+- `Dropdown`: 透传 popup 事件问题 @uyarn ([#857](https://github.com/Tencent/tdesign-vue/pull/857))
+- `Dialog`: 修复`normal`下加入lock导致页面无法滚动的问题 @uyarn ([#861](https://github.com/Tencent/tdesign-vue/pull/861))
+- `Table`: 修正拖拽列款的边界条件判断 @tinna3445 ([#866](https://github.com/Tencent/tdesign-vue/pull/866))
+- `Progress`: 修复环形进度条显示比例不准确 @LoopZhou ([#866](https://github.com/Tencent/tdesign-vue/pull/874))
+
 ## 🌈 0.41.2 `2022-05-07` 
 ### 🚀 Features
 - `Table`: 新增 API `ellipsisTitle` 用于单独控制表头的超出省略 [@chaishi](https://github.com/chaishi) ([#832](https://github.com/Tencent/tdesign-vue/pull/832))
