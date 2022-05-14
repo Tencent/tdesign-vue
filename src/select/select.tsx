@@ -463,7 +463,12 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     },
     keydownEvent(e: KeyboardEvent) {
       if (!this.hoverOptions.length) return;
-      const preventKeys = ['ArrowDown', 'ArrowUp', 'Enter', 'Escape', 'Tab'];
+      const textareaSupportKeys = ['ArrowDown', 'ArrowUp', 'Enter'];
+      const preventKeys = textareaSupportKeys.concat(['Escape', 'Tab']);
+
+      if ((e.target as HTMLElement).tagName?.toLowerCase() === 'textarea' && textareaSupportKeys.includes(e.code)) {
+        return;
+      }
       if (preventKeys.includes(e.code)) {
         e.preventDefault();
       }

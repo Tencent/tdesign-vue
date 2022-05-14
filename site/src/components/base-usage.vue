@@ -43,10 +43,6 @@ onMounted(() => {
   usageRef.value.addEventListener('PanelChange', onPanelChange);
 });
 
-watchEffect(() => {
-  usageRef.value.configList = props.configList.filter((config) => config.name !== 'visible');
-});
-
 onBeforeUnmount(() => {
   usageRef.value.removeEventListener('ConfigChange', onConfigChange);
   usageRef.value.removeEventListener('PanelChange', onPanelChange);
@@ -67,17 +63,24 @@ function onPanelChange(e) {
 
 const defaultProps = ref(
   props.configList.reduce((prev, curr) => {
+    if (curr.name === 'visible') return prev;
     if (curr.defaultValue !== undefined) Object.assign(prev, { [curr.name]: curr.defaultValue });
     return prev;
   }, {}),
 );
 
+watchEffect(() => {
+  usageRef.value.configList = props.configList.filter((config) => config.name !== 'visible');
+});
+
 const usageCode = computed(() => {
   const propsStrs = Object.keys(changedProps.value)
     .map((name) => `${stringifyProp(name, changedProps.value[name])}`)
     .filter(Boolean);
-  const tureCode = props.code.replace(/\s*v-bind="configProps"/g, () => propsStrs.length ? `\n  ${propsStrs.join('\n  ')}` : '');
-  usageRef.value.code = tureCode;
-  return tureCode;
+  const realCode = props.code.replace(/\s*v-bind="configProps"/g, () =>
+    propsStrs.length ? `\n  ${propsStrs.join('\n  ')}` : '',
+  );
+  usageRef.value.code = realCode;
+  return realCode;
 });
 </script>

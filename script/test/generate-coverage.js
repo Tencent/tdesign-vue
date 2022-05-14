@@ -8,7 +8,7 @@ const parser = new DomParser();
 const result = {};
 fs.readFile(utils.resolveCwd('test/unit/coverage/index.html'), 'utf8', (err, html) => {
   if (err) {
-    console.log('please execute npm run test:coverage frist!', err);
+    console.log('please execute npm run test:coverage first!', err);
     return;
   }
   if (!err) {
