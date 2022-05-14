@@ -9,9 +9,11 @@ const name = `${prefix}-affix`;
 export interface Affix extends Vue {
   scrollContainer: ScrollContainerElement;
   ticking: boolean;
-  containerHeight: number;
-  affixed: boolean;
-  fixedTop: number;
+  placeholderEL: HTMLElement;
+  $refs: {
+    affixWrapRef: HTMLElement;
+    affixRef: HTMLElement;
+  };
 }
 
 export default (Vue as VueConstructor<Affix>).extend({
@@ -19,32 +21,29 @@ export default (Vue as VueConstructor<Affix>).extend({
   props: {
     ...affixProps,
   },
-  data() {
-    return {
-      affixed: false,
-      oldWidthHeight: { width: '0px', height: '0px' },
-    };
-  },
   watch: {
     offsetTop() {
-      this.calcInitValue();
+      this.handleScroll();
     },
     offsetBottom() {
-      this.calcInitValue();
+      this.handleScroll();
     },
     zIndex() {
-      this.calcInitValue();
+      this.handleScroll();
     },
   },
   methods: {
     handleScroll() {
-      const {
-        scrollContainer, containerHeight, offsetTop, offsetBottom,
-      } = this;
-      const { affixWrap, affix } = this.$refs as { affixWrap: HTMLElement; affix: HTMLElement };
+      const { scrollContainer, offsetTop, offsetBottom } = this;
+      const { affixWrapRef, affixRef } = this.$refs;
       if (!this.ticking) {
         window.requestAnimationFrame(() => {
-          const { top = 0 } = (affixWrap as HTMLElement).getBoundingClientRect(); // top = 节点到页面顶部的距离，包含 scroll 中的高度
+          // top = 节点到页面顶部的距离，包含 scroll 中的高度
+          const {
+            top: wrapToTop,
+            width: wrapWidth,
+            height: wrapHeight,
+          } = affixWrapRef.getBoundingClientRect() ?? { top: 0, width: 0, height: 0 };
 
           let containerTop = 0; // containerTop = 容器到页面顶部的距离
           if (scrollContainer instanceof HTMLElement) {
@@ -52,34 +51,51 @@ export default (Vue as VueConstructor<Affix>).extend({
           }
 
           let fixedTop: number | false;
-          const calcTop = top - containerTop; // 节点顶部到 container 顶部的距离
+          const calcTop = wrapToTop - containerTop; // 节点顶部到 container 顶部的距离
+
+          const containerHeight = scrollContainer[scrollContainer instanceof Window ? 'innerHeight' : 'clientHeight'] - wrapHeight;
           const calcBottom = containerTop + containerHeight - offsetBottom; // 计算 bottom 相对应的 top 值
 
           if (offsetTop !== undefined && calcTop <= offsetTop) {
             // top 的触发
             fixedTop = containerTop + offsetTop;
-          } else if (offsetBottom !== undefined && top >= calcBottom) {
+          } else if (offsetBottom !== undefined && wrapToTop >= calcBottom) {
             // bottom 的触发
             fixedTop = calcBottom;
           } else {
             fixedTop = false;
           }
 
-          if (affix) {
-            this.affixed = fixedTop !== false;
+          if (affixRef) {
+            const affixed = fixedTop !== false;
+            const placeholderStatus = affixWrapRef.contains(this.placeholderEL);
 
-            if (this.affixed) {
-              affix.className = name;
-              affix.style.top = `${fixedTop}px`;
-              affix.style.width = this.oldWidthHeight.width;
-              affix.style.zIndex = `${this.zIndex}`;
+            if (affixed) {
+              affixRef.className = name;
+              affixRef.style.top = `${fixedTop}px`;
+              affixRef.style.width = `${wrapWidth}px`;
+              affixRef.style.height = `${wrapHeight}px`;
+
+              if (this.zIndex) {
+                affixRef.style.zIndex = `${this.zIndex}`;
+              }
+
+              // 插入占位节点
+              if (!placeholderStatus) {
+                this.placeholderEL.style.width = `${wrapWidth}px`;
+                this.placeholderEL.style.height = `${wrapHeight}px`;
+                affixWrapRef.appendChild(this.placeholderEL);
+              }
             } else {
-              affix.removeAttribute('class');
-              affix.removeAttribute('style');
+              affixRef.removeAttribute('class');
+              affixRef.removeAttribute('style');
+
+              // 删除占位节点
+              placeholderStatus && this.placeholderEL.remove();
             }
 
-            this.$emit('fixedChange', this.affixed, { top: fixedTop });
-            if (isFunction(this.onFixedChange)) this.onFixedChange(this.affixed, { top: Number(fixedTop) });
+            this.$emit('fixedChange', affixed, { top: fixedTop });
+            if (isFunction(this.onFixedChange)) this.onFixedChange(affixed, { top: Number(fixedTop) });
           }
 
           this.ticking = false;
@@ -87,41 +103,24 @@ export default (Vue as VueConstructor<Affix>).extend({
         this.ticking = true;
       }
     },
-    calcInitValue() {
-      const { scrollContainer } = this;
-      // 获取当前可视的高度
-      const containerHeight = scrollContainer[scrollContainer instanceof Window ? 'innerHeight' : 'clientHeight'];
-      // 需要减掉当前节点的高度，对比的高度应该从 border-top 比对开始
-      this.containerHeight = containerHeight - this.$el.clientHeight;
-      // 被包裹的子节点宽高
-      const { clientWidth, clientHeight } = this.$refs.affixWrap as HTMLElement;
-      this.oldWidthHeight = { width: `${clientWidth}px`, height: `${clientHeight}px` };
-      this.handleScroll();
-    },
   },
   mounted() {
+    this.placeholderEL = document.createElement('div');
     this.$nextTick(() => {
       this.scrollContainer = getScrollContainer(this.container);
-      this.calcInitValue();
       on(this.scrollContainer, 'scroll', this.handleScroll);
-      on(window, 'resize', this.calcInitValue);
+      on(window, 'resize', this.handleScroll);
     });
   },
   destroyed() {
     if (!this.scrollContainer) return;
     off(this.scrollContainer, 'scroll', this.handleScroll);
-    off(window, 'resize', this.calcInitValue);
+    off(window, 'resize', this.handleScroll);
   },
   render() {
-    const {
-      $slots: { default: children },
-      oldWidthHeight,
-    } = this;
-
     return (
-      <div ref="affixWrap">
-        <div ref="affix">{children}</div>
-        {this.affixed ? <div style={oldWidthHeight}></div> : ''}
+      <div ref="affixWrapRef">
+        <div ref="affixRef">{this.$slots.default}</div>
       </div>
     );
   },
