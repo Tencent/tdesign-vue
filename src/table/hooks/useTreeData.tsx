@@ -205,11 +205,18 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   }
 
   /**
-   * 设置展开行层级
+   * 展开所有节点
    */
-  // function setExpandedLevel(level: 1 | 2 | 3 | 4 | 5) {
-  //   dataSource.value = store.value.setExpandedLevel(level, dataSource.value, rowDataKeys.value);
-  // }
+  function expandAll() {
+    dataSource.value = store.value.expandAll();
+  }
+
+  /**
+   * 收起所有节点
+   */
+  function foldAll() {
+    dataSource.value = store.value.foldAll();
+  }
 
   return {
     store,
@@ -221,6 +228,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     appendTo,
     formatTreeColumn,
     toggleExpandData,
-    // setExpandedLevel,
+    expandAll,
+    foldAll,
   };
 }

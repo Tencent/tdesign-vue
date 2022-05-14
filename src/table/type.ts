@@ -526,6 +526,10 @@ export interface EnhancedTableInstanceFunctions<T extends TableRowData = TableRo
 
 export interface TableRowState<T extends TableRowData = TableRowData> {
   /**
+   * 节点唯一标识
+   */
+  id: string | number;
+  /**
    * 表格行是否禁用选中
    * @default false
    */
@@ -556,9 +560,17 @@ export interface TableRowState<T extends TableRowData = TableRowData> {
    */
   row: T;
   /**
-   * 表格行下标
+   * 表格行下标，值为 -1 表示未显示
    */
   rowIndex: number;
+  /**
+   * 全部展开时，树节点中的位置
+   */
+  treeIndex?: number;
+  /**
+   * 全部子节点
+   */
+  allChildren?: T[];
 }
 
 export interface TableColumnFilter {

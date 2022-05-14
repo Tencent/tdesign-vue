@@ -3,6 +3,7 @@
     <div>
       <t-button theme="default" @click="setData1">重置数据</t-button>
       <t-button theme="default" style="margin-left: 16px" @click="onRowToggle">展开/收起可见行</t-button>
+      <t-button theme="default" style="margin-left: 16px" @click="onExpandAllToggle">展开/收起全部</t-button>
       <t-checkbox v-model="customTreeExpandAndFoldIcon" style="margin-left: 16px; vertical-align: middle">
         自定义折叠/展开图标
       </t-checkbox>
@@ -14,9 +15,10 @@
     <t-enhanced-table
       ref="table"
       rowKey="key"
+      drag-sort="row-handler"
       :data="data"
       :columns="columns"
-      :tree="{ childrenKey: 'list', treeNodeColumnIndex: 1 }"
+      :tree="{ childrenKey: 'list', treeNodeColumnIndex: 2 }"
       :tree-expand-and-fold-icon="customTreeExpandAndFoldIcon ? treeExpandAndFoldIconRender : undefined"
       :pagination="pagination"
       @page-change="onPageChange"
@@ -38,12 +40,14 @@
 </template>
 <script lang="jsx">
 import { EnhancedTable } from 'tdesign-vue';
-import { ChevronRightIcon, ChevronDownIcon } from 'tdesign-icons-vue';
+import { ChevronRightIcon, ChevronDownIcon, MoveIcon } from 'tdesign-icons-vue';
+
+const TOTAL = 5;
 
 function getData(currentPage = 1) {
   const data = [];
   const pageInfo = `第 ${currentPage} 页`;
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < TOTAL; i++) {
     const obj = {
       id: i,
       key: `我是 ${i}_${currentPage} 号（${pageInfo}）`,
@@ -89,17 +93,26 @@ export default {
     return {
       customTreeExpandAndFoldIcon: false,
       data,
+      expandAll: false,
       pagination: {
         current: 1,
         pageSize: 10,
-        total: 100,
+        total: TOTAL,
       },
       defaultPagination: {
         defaultCurrent: 1,
         defaultPageSize: 10,
-        total: 100,
+        total: TOTAL,
       },
       columns: [
+        {
+          // 列拖拽排序必要参数
+          colKey: 'drag',
+          title: '排序',
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          cell: (h) => <MoveIcon />,
+          width: 80,
+        },
         {
           colKey: 'id',
           title: '编号',
@@ -216,6 +229,11 @@ export default {
     // eslint-disable-next-line
     treeExpandAndFoldIconRender(h, { type }) {
       return type === 'expand' ? <ChevronRightIcon /> : <ChevronDownIcon />;
+    },
+
+    onExpandAllToggle() {
+      this.expandAll = !this.expandAll;
+      this.expandAll ? this.$refs.table.expandAll() : this.$refs.table.foldAll();
     },
   },
 };
