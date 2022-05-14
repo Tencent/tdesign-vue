@@ -52,15 +52,15 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
       if (!data) return [];
       // 如果没有树形解构，则不需要相关逻辑
       if (!props.tree || !Object.keys(props.tree).length) {
-        // @ts-ignore
         dataSource.value = data;
         return;
       }
-      const newVal = cloneDeep(data);
-      // @ts-ignore
-      dataSource.value = newVal;
-      // @ts-ignore
+      let newVal = cloneDeep(data);
       store.value.initialTreeStore(newVal, props.columns, rowDataKeys.value);
+      if (props.tree?.defaultExpandAll) {
+        newVal = store.value.expandAll();
+      }
+      dataSource.value = newVal;
     },
     { immediate: true },
   );

@@ -2,7 +2,7 @@
   <div>
     <div>
       <t-button theme="default" @click="setData1">重置数据</t-button>
-      <t-button theme="default" style="margin-left: 16px" @click="onRowToggle">展开/收起可见行</t-button>
+      <t-button theme="default" style="margin-left: 16px" @click="onRowToggle">任意节点展开/收起</t-button>
       <t-button theme="default" style="margin-left: 16px" @click="onExpandAllToggle">展开/收起全部</t-button>
       <t-checkbox v-model="customTreeExpandAndFoldIcon" style="margin-left: 16px; vertical-align: middle">
         自定义折叠/展开图标
@@ -33,7 +33,7 @@
       :pagination="defaultPagination"
       :data="data"
       :columns="columns"
-      :tree="{ indent: 12, childrenKey: 'list' }"
+      :tree="{ indent: 12, childrenKey: 'list', defaultExpandAll: true }"
       @page-change="onPageChange"
     ></t-enhanced-table> -->
   </div>
@@ -129,10 +129,6 @@ export default {
           title: '平台',
         },
         {
-          colKey: 'type',
-          title: '类型',
-        },
-        {
           colKey: 'operate',
           width: 280,
           title: '操作',
@@ -159,6 +155,11 @@ export default {
       ],
     };
   },
+
+  // 默认展开全部。示例代码有效，勿删
+  // mounted() {
+  //   this.$refs.table.expandAll();
+  // },
 
   methods: {
     // 全新赋值

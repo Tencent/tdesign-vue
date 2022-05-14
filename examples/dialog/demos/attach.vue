@@ -78,7 +78,7 @@ export default Vue.extend({
   },
 });
 </script>
-<style>
+<style scoped>
 .t-button {
   margin-right: 20px;
 }
