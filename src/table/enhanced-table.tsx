@@ -1,11 +1,14 @@
 import {
   defineComponent, SetupContext, computed, ref,
 } from '@vue/composition-api';
+import get from 'lodash/get';
 import baseTableProps from './base-table-props';
 import primaryTableProps from './primary-table-props';
 import enhancedTableProps from './enhanced-table-props';
 import PrimaryTable, { BASE_TABLE_ALL_EVENTS } from './primary-table';
-import { TdEnhancedTableProps, PrimaryTableCol, TableRowData } from './type';
+import {
+  TdEnhancedTableProps, PrimaryTableCol, TableRowData, DragSortContext,
+} from './type';
 import useTreeData from './hooks/useTreeData';
 import useTreeSelect from './hooks/useTreeSelect';
 import { TableListeners } from './base-table';
@@ -17,7 +20,6 @@ const PRIMARY_B_EVENTS = [
   'filter-change',
   'sort-change',
   'data-change',
-  'drag-sort',
   'async-loading-click',
 ];
 
@@ -34,7 +36,7 @@ export default defineComponent({
 
   setup(props: TdEnhancedTableProps, context: SetupContext) {
     const {
-      store, dataSource, formatTreeColumn, ...treeInstanceFunctions
+      store, dataSource, formatTreeColumn, swapData, ...treeInstanceFunctions
     } = useTreeData(props, context);
 
     const treeDataMap = ref(store.value.treeDataMap);
@@ -64,10 +66,20 @@ export default defineComponent({
       return isTreeData ? props.columns : getColumns(props.columns);
     });
 
+    const onDragSortChange = (context: DragSortContext<TableRowData>) => {
+      swapData({
+        current: context.current,
+        target: context.target,
+        currentIndex: context.currentIndex,
+        targetIndex: context.targetIndex,
+      });
+    };
+
     return {
       store,
       dataSource,
       tColumns,
+      onDragSortChange,
       onInnerSelectChange,
       ...treeInstanceFunctions,
     };
@@ -98,6 +110,7 @@ export default defineComponent({
     const on: TableListeners = {
       ...this.getListener(),
       'select-change': this.onInnerSelectChange,
+      'drag-sort': this.onDragSortChange,
     };
     // replace `scopedSlots={this.$scopedSlots}` of `v-slots={this.$slots}` in Vue3
     return <PrimaryTable scopedSlots={this.$scopedSlots} props={props} on={on} {...this.$attrs} />;

@@ -203,7 +203,6 @@ parent | \- | - | 父节点。TS 类型：`TableRowState<T>` | N
 path | Array | - | 当前节点路径。TS 类型：`TableRowState<T>[]` | N
 row | \- | - | 必需。原始表格行数据。TS 类型：`T` | Y
 rowIndex | Number | - | 必需。表格行下标，值为 `-1` 标识当前行未展开显示 | Y
-treeIndex | Number | - | 表格行在树形结构全部展开后的下标，无论是否展开显示 | N
 
 ### TableColumnFilter
 

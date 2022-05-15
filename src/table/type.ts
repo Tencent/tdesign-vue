@@ -575,10 +575,6 @@ export interface TableRowState<T extends TableRowData = TableRowData> {
    * 表格行下标，值为 `-1` 标识当前行未展开显示
    */
   rowIndex: number;
-  /**
-   * 表格行在树形结构全部展开后的下标，无论是否展开显示
-   */
-  treeIndex?: number;
 }
 
 export interface TableColumnFilter {

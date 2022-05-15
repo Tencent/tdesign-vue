@@ -5,7 +5,7 @@ import { AddRectangleIcon, MinusRectangleIcon } from 'tdesign-icons-vue';
 import cloneDeep from 'lodash/cloneDeep';
 import get from 'lodash/get';
 import { CreateElement } from 'vue';
-import TableTreeStore from './tree-store';
+import TableTreeStore, { SwapParams } from './tree-store';
 import {
   TdEnhancedTableProps, PrimaryTableCol, TableRowData, TableRowValue, TableRowState,
 } from '../type';
@@ -58,7 +58,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
       let newVal = cloneDeep(data);
       store.value.initialTreeStore(newVal, props.columns, rowDataKeys.value);
       if (props.tree?.defaultExpandAll) {
-        newVal = store.value.expandAll();
+        newVal = store.value.expandAll(newVal, rowDataKeys.value);
       }
       dataSource.value = newVal;
     },
@@ -205,27 +205,51 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   }
 
   /**
+   * 当前节点之后，插入节点
+   */
+  function insertAfter<T>(rowValue: TableRowValue, newData: T) {
+    dataSource.value = store.value.insertAfter(rowValue, newData, dataSource.value, rowDataKeys.value);
+  }
+
+  /**
+   * 当前节点之后，插入节点
+   */
+  function insertBefore<T>(rowValue: TableRowValue, newData: T) {
+    dataSource.value = store.value.insertBefore(rowValue, newData, dataSource.value, rowDataKeys.value);
+  }
+
+  /**
    * 展开所有节点
    */
   function expandAll() {
-    dataSource.value = store.value.expandAll();
+    dataSource.value = store.value.expandAll(dataSource.value, rowDataKeys.value);
   }
 
   /**
    * 收起所有节点
    */
   function foldAll() {
-    dataSource.value = store.value.foldAll();
+    dataSource.value = store.value.foldAll(dataSource.value, rowDataKeys.value);
+  }
+
+  /**
+   * 交换行数据
+   */
+  function swapData(params: SwapParams<TableRowData>) {
+    dataSource.value = store.value.swapData(dataSource.value, params, rowDataKeys.value);
   }
 
   return {
     store,
     rowDataKeys,
     dataSource,
+    swapData,
     setData,
     getData,
     remove,
     appendTo,
+    insertAfter,
+    insertBefore,
     formatTreeColumn,
     toggleExpandData,
     expandAll,

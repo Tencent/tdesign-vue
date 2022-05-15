@@ -3,7 +3,9 @@
     <div>
       <t-button theme="default" @click="setData1">重置数据</t-button>
       <t-button theme="default" style="margin-left: 16px" @click="onRowToggle">任意节点展开/收起</t-button>
-      <t-button theme="default" style="margin-left: 16px" @click="onExpandAllToggle">展开/收起全部</t-button>
+      <t-button theme="default" style="margin-left: 16px" @click="onExpandAllToggle">{{
+        expandAll ? '收起全部' : '展开全部'
+      }}</t-button>
       <t-checkbox v-model="customTreeExpandAndFoldIcon" style="margin-left: 16px; vertical-align: middle">
         自定义折叠/展开图标
       </t-checkbox>
@@ -12,6 +14,7 @@
     <!-- 第一列展开树结点，缩进为 24px，子节点字段 childrenKey 默认为 children -->
     <!-- !!! 树形结构 EnhancedTable 才支持，普通 Table 不支持 !!! -->
     <!-- treeNodeColumnIndex 定义第几列作为树结点展开列，默认为第一列 -->
+    <!-- tree.defaultExpandAll: true 默认展开全部 -->
     <t-enhanced-table
       ref="table"
       rowKey="key"
@@ -117,6 +120,7 @@ export default {
           colKey: 'id',
           title: '编号',
           ellipsis: true,
+          width: 100,
         },
         {
           width: 220,
@@ -127,6 +131,14 @@ export default {
         {
           colKey: 'platform',
           title: '平台',
+          width: 80,
+          cell: (h, { row }) => row.platform === 'New' ? (
+              <t-tag size="small" theme="primary">
+                {row.platform}
+              </t-tag>
+          ) : (
+            row.platform
+          ),
         },
         {
           colKey: 'operate',
@@ -139,6 +151,12 @@ export default {
             <div class="tdesign-table-demo__table-operations">
               <t-button variant="text" onClick={() => this.appendTo(row)}>
                 插入
+              </t-button>
+              <t-button variant="text" onClick={() => this.insertBefore(row)}>
+                前插
+              </t-button>
+              <t-button variant="text" onClick={() => this.insertAfter(row)}>
+                后插
               </t-button>
               <t-button variant="text" onClick={() => this.onEditClick(row)}>
                 更新
@@ -193,10 +211,34 @@ export default {
       console.log(`${message}：`, allRowData);
     },
 
-    // 新增
+    // 新增子节点
     appendTo(row) {
       const randomKey = Math.round(Math.random() * Math.random() * 1000) + 10000;
       this.$refs.table.appendTo(row.key, {
+        id: randomKey,
+        key: `我是 ${randomKey} 号`,
+        platform: '私有',
+        type: 'Number',
+      });
+      this.$message.success(`已插入子节点我是 ${randomKey} 号，请展开查看`);
+    },
+
+    // 当前节点之前，新增兄弟节前
+    insertBefore(row) {
+      const randomKey = Math.round(Math.random() * Math.random() * 1000) + 10000;
+      this.$refs.table.insertBefore(row.key, {
+        id: randomKey,
+        key: `我是 ${randomKey} 号`,
+        platform: '私有',
+        type: 'Number',
+      });
+      this.$message.success(`已插入子节点我是 ${randomKey} 号，请展开查看`);
+    },
+
+    // 当前节点之后，新增兄弟节前
+    insertAfter(row) {
+      const randomKey = Math.round(Math.random() * Math.random() * 1000) + 10000;
+      this.$refs.table.insertAfter(row.key, {
         id: randomKey,
         key: `我是 ${randomKey} 号`,
         platform: '私有',
