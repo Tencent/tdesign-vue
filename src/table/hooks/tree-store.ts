@@ -300,13 +300,9 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
     params: SwapParams<T>,
     keys: KeysType,
   ): { dataSource: T[]; result: boolean; code?: number; reason?: string } {
-    let startIndex = params.currentIndex;
-    let endIndex = params.targetIndex;
+    const startIndex = params.currentIndex;
+    const endIndex = params.targetIndex;
     if (startIndex === endIndex) return { dataSource, result: true };
-    if (params.currentIndex > params.targetIndex) {
-      startIndex = params.targetIndex;
-      endIndex = params.currentIndex;
-    }
     const startRowValue = get(params.current, keys.rowKey);
     const endRowValue = get(params.target, keys.rowKey);
     const startState = this.treeDataMap.get(startRowValue);
@@ -319,23 +315,49 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
         reason: TABLE_TREE_ERROR_CODE_NOT_SAME_LEVEL.reason,
       };
     }
-    const startRowList = dataSource.slice(startIndex, startIndex + startState.expandChildrenLength + 1);
-    const endRowList = dataSource.slice(endIndex, endIndex + endState.expandChildrenLength + 1);
-    const middleRowList = dataSource.slice(startIndex + 1, endIndex);
-    let allSwapList = [];
-    if (params.currentIndex > params.targetIndex) {
-      allSwapList = endRowList.concat(startRowList, middleRowList);
+    const startLastIndex = startIndex + startState.expandChildrenLength + 1;
+    const endLastIndex = endIndex + endState.expandChildrenLength + 1;
+    const startRowList = dataSource.slice(startIndex, startLastIndex);
+    const endRowList = dataSource.slice(endIndex, endLastIndex);
+    if (startIndex > endIndex) {
+      const middleRowList = dataSource.slice(endLastIndex, startIndex);
+      const allSwapList = startRowList.concat(endRowList, middleRowList);
+      dataSource.splice(endIndex, allSwapList.length);
+      dataSource.splice(endIndex, 0, ...allSwapList);
+      updateRowIndex(this.treeDataMap, dataSource, {
+        rowKey: keys.rowKey,
+        minRowIndex: endIndex,
+        maxRowIndex: startIndex + 1,
+      });
     } else {
-      allSwapList = middleRowList.concat(endRowList, startRowList);
+      const middleRowList = dataSource.slice(startLastIndex, endIndex);
+      const allSwapList = middleRowList.concat(endRowList, startRowList);
+      dataSource.splice(startIndex, allSwapList.length);
+      dataSource.splice(startIndex, 0, ...allSwapList);
+      updateRowIndex(this.treeDataMap, dataSource, {
+        rowKey: keys.rowKey,
+        minRowIndex: startIndex,
+        maxRowIndex: endIndex + 1,
+      });
     }
-    dataSource.splice(startIndex, allSwapList.length);
-    dataSource.splice(startIndex, 0, ...allSwapList);
 
-    updateRowIndex(this.treeDataMap, dataSource, {
-      rowKey: keys.rowKey,
-      minRowIndex: startIndex,
-      maxRowIndex: endIndex + 1,
-    });
+    // 交换父元素中的两个元素位置
+    if (startState.parent) {
+      const children = startState.parent.row[keys.childrenKey];
+      let count = 0;
+      for (let i = 0, len = children.length; i < len; i++) {
+        if (get(children[i], keys.rowKey) === startRowValue) {
+          children[i] = params.target;
+          count += 1;
+        }
+        if (get(children[i], keys.rowKey) === endRowValue) {
+          children[i] = params.current;
+          count += 1;
+        }
+        if (count >= 2) break;
+      }
+    }
+
     return { dataSource, result: true };
   }
 
@@ -364,7 +386,7 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
         if (!parentExpanded) {
           newData.push(item);
         }
-        if (children?.length) {
+        if (children?.length && !originalExpanded) {
           // 同步更新父元素的展开数量
           let tmpParent = parent;
           while (tmpParent) {

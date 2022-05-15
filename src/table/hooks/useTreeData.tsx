@@ -96,12 +96,8 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
    * @param p 行数据
    */
   function toggleExpandData(p: { row: TableRowData; rowIndex: number; trigger?: 'inner' }) {
-    if (!props.tree) {
-      console.error('toggleExpandData can only be used in tree data.');
-      return;
-    }
     dataSource.value = store.value.toggleExpandData(p, dataSource.value, rowDataKeys.value);
-    if (p.trigger === 'inner') {
+    if (p?.trigger === 'inner') {
       const rowValue = get(p.row, rowDataKeys.value.rowKey);
       const params = {
         row: p.row,

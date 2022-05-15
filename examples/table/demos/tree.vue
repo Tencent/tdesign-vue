@@ -257,12 +257,7 @@ export default {
     },
 
     onRowToggle() {
-      const rowIds = [
-        '我是 1_1 号（第 1 页）',
-        '我是 2_1 号（第 1 页）',
-        '我是 3_1 号（第 1 页）',
-        '我是 4_1 号（第 1 页）',
-      ];
+      const rowIds = ['我是 1_1 号', '我是 2_1 号', '我是 3_1 号', '我是 4_1 号'];
       rowIds.forEach((id) => {
         // getData 参数为行唯一标识，lodash.get(row, rowKey)
         const rowData = this.$refs.table.getData(id);
@@ -291,6 +286,7 @@ export default {
     },
 
     // 应用于需要阻止拖拽排序的场景。如：当子节点存在时，则不允许调整顺序
+    // 返回值为 true，允许拖拽排序；返回值 为 false，则阻止拖拽排序
     beforeDragSort(params) {
       console.log(params);
       return true;
