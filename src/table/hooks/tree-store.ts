@@ -39,6 +39,8 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
   /** 树形结构 Map 存储 */
   treeDataMap: TableTreeDataMap = new Map();
 
+  expandAllRowIndex: 0;
+
   constructor() {
     this.treeDataMap = new Map();
   }
@@ -130,9 +132,6 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
       const siblings = get(rowState.parent.row, keys.childrenKey);
       const index = siblings.findIndex((item: T) => get(item, keys.rowKey) === rowValue);
       siblings[index] = newRowData;
-      // 更新全部资子元素数组
-      const currentNodeIndex = rowState.parent.allChildren.findIndex((t) => rowValue === get(t, keys.rowKey));
-      rowState.parent.allChildren[currentNodeIndex] = newRowData;
     }
 
     this.treeDataMap.set(newRowValue, rowState);
@@ -153,24 +152,12 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
       // 移除当前节点时，展开的节点的子节点需同步移除
       const removeNumber = (r.expandChildrenLength || 0) + 1;
       dataSource.splice(r.rowIndex, removeNumber);
-      const childrenKeys = r.allChildren.map((t) => get(t, keys.rowKey));
-      const allToRemovedKeys = [r.id].concat(childrenKeys);
 
       if (r.parent) {
         const siblings = get(r.parent.row, keys.childrenKey);
         const index = siblings.findIndex((item: TableRowData) => get(item, keys.rowKey) === key);
         siblings.splice(index, 1);
-        updateRowExpandLength(this.treeDataMap, r.parent.row, -1 * removeNumber, 'delete', {
-          rowKey: keys.rowKey,
-          childrenKey: keys.childrenKey,
-        });
-
-        // 父元素的 allChildren 也需要移除当前节点的所有子节点
-        let tmpParent = r.parent;
-        while (tmpParent) {
-          tmpParent.allChildren = tmpParent.allChildren.filter((t) => !allToRemovedKeys.includes(get(t, keys.rowKey)));
-          tmpParent = tmpParent.parent;
-        }
+        updateRowExpandLength(this.treeDataMap, r.parent.row, -1 * removeNumber, 'delete', keys);
       }
 
       this.treeDataMap.delete(key);
@@ -211,14 +198,12 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
       expandChildrenLength: 0,
       disabled: false,
       path: [...state.path],
-      allChildren: [] as T[],
       parent: state,
     };
     newState.path = newState.path.concat(newState);
     if (children?.length) {
       state.row[keys.childrenKey].push(newData);
     } else {
-      // @ts-ignore
       state.row[keys.childrenKey] = [newData];
       state.expanded = true;
     }
@@ -226,7 +211,7 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
     // 如果当前节点为展开状态，则需要继续处理
     if (isShowNewNode) {
       dataSource.splice(newState.rowIndex, 0, newData);
-      // 更新展开子节点数量
+      // 更新父元素及祖先元素展开子节点的数量
       updateRowExpandLength(this.treeDataMap, state.row, 1, 'insert', {
         rowKey: keys.rowKey,
         childrenKey: keys.childrenKey,
@@ -276,7 +261,6 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
       expandChildrenLength: 0,
       disabled: false,
       path: state.path.slice(0, -1),
-      allChildren: [] as T[],
       parent: state.parent,
     };
     newState.path = newState.path.concat(newState);
@@ -288,9 +272,7 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
         (t: TableRowData) => rowValue === get(t, keys.rowKey),
       );
       state.parent.row[keys.childrenKey].splice(childrenIndex + distance, 0, newData);
-      const index = state.parent.allChildren.findIndex((t) => get(t, keys.rowKey) === rowValue);
-      state.parent.allChildren.splice(index + distance, 0, newState);
-      state.parent.expandChildrenLength += 1;
+      updateRowExpandLength(this.treeDataMap, state.parent.row, 1, 'insert', keys);
     }
     this.treeDataMap.set(newRowValue, newState);
 
@@ -316,23 +298,42 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
   /**
    * 展开所有节点
    */
-  expandAll(dataSource: T[], keys: KeysType, index = 0, newData: T[] = []) {
-    for (let i = 0, len = dataSource.length; i < len; i++) {
-      const item = dataSource[i];
-      const rowValue = get(item, keys.rowKey);
-      const state = this.treeDataMap.get(rowValue);
-      const originalExpanded = state.expanded;
-      state.rowIndex = index;
-      state.expanded = true;
-      state.expandChildrenLength = state.allChildren?.length || 0;
-      index += 1;
-      newData.push(item);
-      const children = get(item, keys.childrenKey);
-      if (!originalExpanded && children?.length) {
-        this.expandAll(children, keys, index, newData);
+  expandAll(dataSource: T[], keys: KeysType) {
+    this.expandAllRowIndex = 0;
+    const expandLoop = (
+      dataSource: T[],
+      keys: KeysType,
+      newData: T[] = [],
+      parentExpanded = false,
+      parent: TableRowState = null,
+    ) => {
+      for (let i = 0, len = dataSource.length; i < len; i++) {
+        const item = dataSource[i];
+        const rowValue = get(item, keys.rowKey);
+        const state = this.treeDataMap.get(rowValue);
+        const children = get(item, keys.childrenKey);
+        const originalExpanded = state.expanded;
+        state.rowIndex = this.expandAllRowIndex;
+        state.expanded = true;
+        state.expandChildrenLength = children?.length || 0;
+        this.expandAllRowIndex += 1;
+        if (!parentExpanded) {
+          newData.push(item);
+        }
+        if (children?.length) {
+          // 同步更新父元素的展开数量
+          let tmpParent = parent;
+          while (tmpParent) {
+            tmpParent.expandChildrenLength += children.length;
+            tmpParent = tmpParent.parent;
+          }
+          // 继续子元素
+          expandLoop(children, keys, newData, originalExpanded, state);
+        }
       }
-    }
-    return newData;
+      return newData;
+    };
+    return expandLoop(dataSource, keys);
   }
 
   /**
@@ -387,25 +388,17 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
       const state: TableRowState = {
         id: rowValue,
         row: item,
-        rowIndex: i,
+        rowIndex: level === 0 ? i : -1,
         level,
         expanded: false,
         expandChildrenLength: 0,
         disabled: isRowSelectedDisabled(column, item, i),
-        allChildren: children || [],
         parent,
       };
       state.path = parent ? parent.path.concat(state) : [state];
-
       treeDataMap.set(rowValue, state);
-
       if (children?.length) {
         this.initialTreeDataMap(treeDataMap, children, column, keys, level + 1, state);
-        let tmpParent = parent;
-        while (tmpParent) {
-          tmpParent.allChildren = tmpParent.allChildren ? tmpParent.allChildren.concat(children) : children;
-          tmpParent = tmpParent.parent;
-        }
       }
     }
   }

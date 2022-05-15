@@ -534,10 +534,6 @@ export interface EnhancedTableInstanceFunctions<T extends TableRowData = TableRo
 
 export interface TableRowState<T extends TableRowData = TableRowData> {
   /**
-   * 当前行的所有子孙节点
-   */
-  allChildren?: T[];
-  /**
    * 表格行是否禁用选中
    * @default false
    */

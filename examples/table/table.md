@@ -193,7 +193,6 @@ toggleExpandData | `(p: { row: T,  rowIndex: number})` | \- | 必需。展开或
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
-allChildren | Array | - | 当前行的所有子孙节点。TS 类型：`T[]` | N
 disabled | Boolean | false | 表格行是否禁用选中 | N
 expandChildrenLength | Number | - | 当前节点展开的子节点数量 | N
 expanded | Boolean | false | 必需。表格行是否展开 | Y
