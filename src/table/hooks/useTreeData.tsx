@@ -187,7 +187,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
    */
   function remove(key: TableRowValue) {
     // 引用传值，可自动更新 dataSource。（dataSource 本是内部变量，可以在任何地方进行任何改变）
-    dataSource.value = store.value.remove(key, dataSource.value, rowDataKeys.value);
+    dataSource.value = [...store.value.remove(key, dataSource.value, rowDataKeys.value)];
   }
 
   /**
@@ -197,35 +197,35 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
    */
   function appendTo<T>(key: TableRowValue, newData: T) {
     // 引用传值，可自动更新 dataSource。（dataSource 本是内部变量，可以在任何地方进行任何改变）
-    dataSource.value = store.value.appendTo(key, newData, dataSource.value, rowDataKeys.value);
+    dataSource.value = [...store.value.appendTo(key, newData, dataSource.value, rowDataKeys.value)];
   }
 
   /**
    * 当前节点之后，插入节点
    */
   function insertAfter<T>(rowValue: TableRowValue, newData: T) {
-    dataSource.value = store.value.insertAfter(rowValue, newData, dataSource.value, rowDataKeys.value);
+    dataSource.value = [...store.value.insertAfter(rowValue, newData, dataSource.value, rowDataKeys.value)];
   }
 
   /**
    * 当前节点之后，插入节点
    */
   function insertBefore<T>(rowValue: TableRowValue, newData: T) {
-    dataSource.value = store.value.insertBefore(rowValue, newData, dataSource.value, rowDataKeys.value);
+    dataSource.value = [...store.value.insertBefore(rowValue, newData, dataSource.value, rowDataKeys.value)];
   }
 
   /**
    * 展开所有节点
    */
   function expandAll() {
-    dataSource.value = store.value.expandAll(dataSource.value, rowDataKeys.value);
+    dataSource.value = [...store.value.expandAll(dataSource.value, rowDataKeys.value)];
   }
 
   /**
    * 收起所有节点
    */
   function foldAll() {
-    dataSource.value = store.value.foldAll(dataSource.value, rowDataKeys.value);
+    dataSource.value = [...store.value.foldAll(dataSource.value, rowDataKeys.value)];
   }
 
   /**
@@ -234,7 +234,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   function swapData(params: SwapParams<TableRowData>) {
     const r = store.value.swapData(dataSource.value, params, rowDataKeys.value);
     if (r.result) {
-      dataSource.value = r.dataSource;
+      dataSource.value = [...r.dataSource];
     } else {
       const params = {
         code: r.code,
