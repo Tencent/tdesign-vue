@@ -60,12 +60,6 @@ export default {
       type: 'component', // 组件文档
       children: [
         {
-          title: 'Rate 评分',
-          name: 'rate',
-          path: '/vue/components/rate',
-          component: () => import('@/examples/rate/rate.md'),
-        },
-        {
           title: 'Button 按钮',
           name: 'button',
           path: '/vue/components/button',
@@ -202,6 +196,12 @@ export default {
           name: 'radio',
           path: '/vue/components/radio',
           component: () => import('@/examples/radio/radio.md'),
+        },
+        {
+          title: 'Rate 评分',
+          name: 'rate',
+          path: '/vue/components/rate',
+          component: () => import('@/examples/rate/rate.md'),
         },
         {
           title: 'Select 选择器',
