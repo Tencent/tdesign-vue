@@ -1,6 +1,6 @@
 <template>
   <div class="tdesign-demo-block-row">
-    <t-rate :value="value" :defaultValue="defaultValue"></t-rate>
+    <t-rate :value="value"></t-rate>
   </div>
 </template>
 <script>
@@ -10,7 +10,6 @@ export default Vue.extend({
   data() {
     return {
       value: 2,
-      defaultValue: 5,
     };
   },
 });

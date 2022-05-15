@@ -14,10 +14,11 @@ export default {
   /** 评分图标的颜色，样式中默认为 #ED7B2F。一个值表示设置选中高亮的五角星颜色，两个值表示分别设置 选中高亮的五角星颜色 和 未选中暗灰的五角星颜色。示例：['#ED7B2F', '#999999'] */
   color: {
     type: [String, Array] as PropType<TdRateProps['color']>,
+    required: false,
   },
   index: {
     type: Number,
-    default: 1000,
+    default: 0,
   },
   /** 评分的数量 */
   count: {
@@ -26,6 +27,8 @@ export default {
   },
   /** 是否禁用评分 */
   disabled: Boolean,
+  /** 是否是只读评分 */
+  readonly: Boolean,
   /** 评分图标的间距 */
   gap: {
     type: Number,
@@ -35,8 +38,8 @@ export default {
   showText: Boolean,
   /** 评分图标的大小，示例：`20` */
   size: {
-    type: String,
-    default: '',
+    type: Number,
+    default: 16,
   },
   /** 自定义评分等级对应的辅助文字。组件内置默认值为：['极差', '失望', '一般', '满意', '惊喜']。自定义值示例：['1分', '2分', '3分', '4分', '5分'] */
   texts: {
@@ -52,7 +55,19 @@ export default {
   defaultValue: {
     type: Number,
     default: 0,
-    required: true,
+    required: false,
+  },
+  /** 参与评分的人数 */
+  personCount: {
+    type: Number,
+    default: 0,
+    required: false,
+  },
+  /** 评分分数 */
+  score: {
+    type: Number,
+    default: 8.88,
+    required: false,
   },
   /** 形状类型，有描边类型和填充类型两种 */
   variant: {
