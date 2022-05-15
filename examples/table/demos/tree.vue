@@ -15,6 +15,7 @@
     <!-- !!! 树形结构 EnhancedTable 才支持，普通 Table 不支持 !!! -->
     <!-- treeNodeColumnIndex 定义第几列作为树结点展开列，默认为第一列 -->
     <!-- tree.defaultExpandAll: true 默认展开全部 -->
+    <!-- this.$refs.table.dataSource 查看树形结构平铺数据 -->
     <t-enhanced-table
       ref="table"
       rowKey="key"
@@ -24,7 +25,9 @@
       :tree="{ childrenKey: 'list', treeNodeColumnIndex: 2 }"
       :tree-expand-and-fold-icon="customTreeExpandAndFoldIcon ? treeExpandAndFoldIconRender : undefined"
       :pagination="pagination"
+      :beforeDragSort="beforeDragSort"
       @page-change="onPageChange"
+      @abnormal-drag-sort="onAbnormalDragSort"
     ></t-enhanced-table>
 
     <!-- 第二列展开树结点，缩进为 12px，示例代码有效，勿删 -->
@@ -277,6 +280,20 @@ export default {
     onExpandAllToggle() {
       this.expandAll = !this.expandAll;
       this.expandAll ? this.$refs.table.expandAll() : this.$refs.table.foldAll();
+    },
+
+    onAbnormalDragSort(params) {
+      console.log(params);
+      // this.$message.warning(params.reason);
+      if (params.code === 1001) {
+        this.$message.warning('不同层级的元素，不允许调整顺序');
+      }
+    },
+
+    // 应用于需要阻止拖拽排序的场景。如：当子节点存在时，则不允许调整顺序
+    beforeDragSort(params) {
+      console.log(params);
+      return true;
     },
   },
 };

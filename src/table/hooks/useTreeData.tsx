@@ -236,7 +236,18 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
    * 交换行数据
    */
   function swapData(params: SwapParams<TableRowData>) {
-    dataSource.value = store.value.swapData(dataSource.value, params, rowDataKeys.value);
+    const r = store.value.swapData(dataSource.value, params, rowDataKeys.value);
+    if (r.result) {
+      dataSource.value = r.dataSource;
+    } else {
+      const params = {
+        code: r.code,
+        reason: r.reason,
+      };
+      props.onAbnormalDragSort?.(params);
+      // Vue3 do not need next line
+      context.emit('abnormal-drag-sort', params);
+    }
   }
 
   return {

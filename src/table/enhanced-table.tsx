@@ -67,6 +67,7 @@ export default defineComponent({
     });
 
     const onDragSortChange = (context: DragSortContext<TableRowData>) => {
+      if (props.beforeDragSort && !props.beforeDragSort(context)) return;
       swapData({
         current: context.current,
         target: context.target,

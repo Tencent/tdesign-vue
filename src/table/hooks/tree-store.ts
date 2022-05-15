@@ -25,6 +25,11 @@ export interface SwapParams<T> {
   targetIndex: number;
 }
 
+export const TABLE_TREE_ERROR_CODE_NOT_SAME_LEVEL = {
+  code: 1001,
+  reason: 'The same level of rows can not be swapped.',
+};
+
 /**
  * 表格树形结构处理器
  * Vue 和 React 可以通用
@@ -288,11 +293,16 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
 
   /**
    * 交换数据行
+   * @returns 交换失败返回 false
    */
-  swapData(dataSource: T[], params: SwapParams<T>, keys: KeysType): T[] {
+  swapData(
+    dataSource: T[],
+    params: SwapParams<T>,
+    keys: KeysType,
+  ): { dataSource: T[]; result: boolean; code?: number; reason?: string } {
     let startIndex = params.currentIndex;
     let endIndex = params.targetIndex;
-    if (startIndex === endIndex) return dataSource;
+    if (startIndex === endIndex) return { dataSource, result: true };
     if (params.currentIndex > params.targetIndex) {
       startIndex = params.targetIndex;
       endIndex = params.currentIndex;
@@ -302,8 +312,12 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
     const startState = this.treeDataMap.get(startRowValue);
     const endState = this.treeDataMap.get(endRowValue);
     if (startState.level !== endState.level) {
-      console.warn('only same level row can be swapped.');
-      return dataSource;
+      return {
+        dataSource,
+        result: false,
+        code: TABLE_TREE_ERROR_CODE_NOT_SAME_LEVEL.code,
+        reason: TABLE_TREE_ERROR_CODE_NOT_SAME_LEVEL.reason,
+      };
     }
     const startRowList = dataSource.slice(startIndex, startIndex + startState.expandChildrenLength + 1);
     const endRowList = dataSource.slice(endIndex, endIndex + endState.expandChildrenLength + 1);
@@ -322,7 +336,7 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
       minRowIndex: startIndex,
       maxRowIndex: endIndex + 1,
     });
-    return dataSource;
+    return { dataSource, result: true };
   }
 
   /**
