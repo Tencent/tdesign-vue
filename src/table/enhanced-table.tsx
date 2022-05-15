@@ -73,6 +73,7 @@ export default defineComponent({
         currentIndex: context.currentIndex,
         targetIndex: context.targetIndex,
       });
+      props.onDragSort?.(context);
     };
 
     return {

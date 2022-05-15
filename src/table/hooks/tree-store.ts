@@ -289,9 +289,39 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
   /**
    * 交换数据行
    */
-  swapData(dataSource: T[], params: SwapParams<T>, keys: KeysType) {
-    // console.log(this.treeDataMap);
-    dataSource = this.remove(get(params.current, keys.rowKey), dataSource, keys);
+  swapData(dataSource: T[], params: SwapParams<T>, keys: KeysType): T[] {
+    let startIndex = params.currentIndex;
+    let endIndex = params.targetIndex;
+    if (startIndex === endIndex) return dataSource;
+    if (params.currentIndex > params.targetIndex) {
+      startIndex = params.targetIndex;
+      endIndex = params.currentIndex;
+    }
+    const startRowValue = get(params.current, keys.rowKey);
+    const endRowValue = get(params.target, keys.rowKey);
+    const startState = this.treeDataMap.get(startRowValue);
+    const endState = this.treeDataMap.get(endRowValue);
+    if (startState.level !== endState.level) {
+      console.warn('only same level row can be swapped.');
+      return dataSource;
+    }
+    const startRowList = dataSource.slice(startIndex, startIndex + startState.expandChildrenLength + 1);
+    const endRowList = dataSource.slice(endIndex, endIndex + endState.expandChildrenLength + 1);
+    const middleRowList = dataSource.slice(startIndex + 1, endIndex);
+    let allSwapList = [];
+    if (params.currentIndex > params.targetIndex) {
+      allSwapList = endRowList.concat(startRowList, middleRowList);
+    } else {
+      allSwapList = middleRowList.concat(endRowList, startRowList);
+    }
+    dataSource.splice(startIndex, allSwapList.length);
+    dataSource.splice(startIndex, 0, ...allSwapList);
+
+    updateRowIndex(this.treeDataMap, dataSource, {
+      rowKey: keys.rowKey,
+      minRowIndex: startIndex,
+      maxRowIndex: endIndex + 1,
+    });
     return dataSource;
   }
 
