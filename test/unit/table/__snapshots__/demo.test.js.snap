@@ -20068,13 +20068,13 @@ exports[`Table Table treeVue demo works fine 1`] = `
             style="width: 100px;"
           />
           <col
-            style="width: 220px;"
+            style="width: 180px;"
           />
           <col
             style="width: 80px;"
           />
           <col
-            style="width: 280px;"
+            style="width: 340px;"
           />
         </colgroup>
         <thead
@@ -20146,7 +20146,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
         >
           <tr
             class=""
-            data-id="我是 0_1 号（第 1 页）"
+            data-id="我是 0_1 号"
           >
             <td
               class="t-table__handle-draggable"
@@ -20184,7 +20184,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
                   class="t-table__tree-col t-table__tree-col--inline"
                   style="padding-left: 1px;"
                 >
-                  我是 0_1 号（第 1 页）
+                  我是 0_1 号
                 </div>
               </div>
             </td>
@@ -20264,7 +20264,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
           </tr>
           <tr
             class=""
-            data-id="我是 1_1 号（第 1 页）"
+            data-id="我是 1_1 号"
           >
             <td
               class="t-table__handle-draggable"
@@ -20324,7 +20324,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
                       />
                     </svg>
                   </span>
-                  我是 1_1 号（第 1 页）
+                  我是 1_1 号
                 </div>
               </div>
             </td>
@@ -20404,7 +20404,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
           </tr>
           <tr
             class=""
-            data-id="我是 2_1 号（第 1 页）"
+            data-id="我是 2_1 号"
           >
             <td
               class="t-table__handle-draggable"
@@ -20464,7 +20464,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
                       />
                     </svg>
                   </span>
-                  我是 2_1 号（第 1 页）
+                  我是 2_1 号
                 </div>
               </div>
             </td>
@@ -20544,7 +20544,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
           </tr>
           <tr
             class=""
-            data-id="我是 3_1 号（第 1 页）"
+            data-id="我是 3_1 号"
           >
             <td
               class="t-table__handle-draggable"
@@ -20604,7 +20604,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
                       />
                     </svg>
                   </span>
-                  我是 3_1 号（第 1 页）
+                  我是 3_1 号
                 </div>
               </div>
             </td>
@@ -20684,7 +20684,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
           </tr>
           <tr
             class=""
-            data-id="我是 4_1 号（第 1 页）"
+            data-id="我是 4_1 号"
           >
             <td
               class="t-table__handle-draggable"
@@ -20744,7 +20744,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
                       />
                     </svg>
                   </span>
-                  我是 4_1 号（第 1 页）
+                  我是 4_1 号
                 </div>
               </div>
             </td>

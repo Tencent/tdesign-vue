@@ -15332,9 +15332,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
         <colgroup>
           <col style="width:80px;">
           <col style="width:100px;">
-          <col style="width:220px;">
+          <col style="width:180px;">
           <col style="width:80px;">
-          <col style="width:280px;">
+          <col style="width:340px;">
         </colgroup>
         <thead class="t-table__header">
           <tr>
@@ -15360,7 +15360,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
           </tr>
         </thead>
         <tbody class="t-table__body">
-          <tr data-id="我是 0_1 号（第 1 页）">
+          <tr data-id="我是 0_1 号">
             <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
                 <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
               </svg></td>
@@ -15369,7 +15369,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">
-                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;">我是 0_1 号（第 1 页）</div>
+                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;">我是 0_1 号</div>
               </div>
             </td>
             <td>共有</td>
@@ -15377,7 +15377,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
               <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">前插</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">后插</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button></div>
             </td>
           </tr>
-          <tr data-id="我是 1_1 号（第 1 页）">
+          <tr data-id="我是 1_1 号">
             <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
                 <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
               </svg></td>
@@ -15386,7 +15386,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">
-                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 1_1 号（第 1 页）</div>
+                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 1_1 号</div>
               </div>
             </td>
             <td>私有</td>
@@ -15394,7 +15394,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
               <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">前插</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">后插</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button></div>
             </td>
           </tr>
-          <tr data-id="我是 2_1 号（第 1 页）">
+          <tr data-id="我是 2_1 号">
             <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
                 <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
               </svg></td>
@@ -15403,7 +15403,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">
-                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 2_1 号（第 1 页）</div>
+                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 2_1 号</div>
               </div>
             </td>
             <td>共有</td>
@@ -15411,7 +15411,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
               <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">前插</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">后插</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button></div>
             </td>
           </tr>
-          <tr data-id="我是 3_1 号（第 1 页）">
+          <tr data-id="我是 3_1 号">
             <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
                 <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
               </svg></td>
@@ -15420,7 +15420,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">
-                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 3_1 号（第 1 页）</div>
+                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 3_1 号</div>
               </div>
             </td>
             <td>私有</td>
@@ -15428,7 +15428,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
               <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">前插</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">后插</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button></div>
             </td>
           </tr>
-          <tr data-id="我是 4_1 号（第 1 页）">
+          <tr data-id="我是 4_1 号">
             <td class="t-table__handle-draggable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-move">
                 <path fill="currentColor" d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z" fill-opacity="0.9"></path>
               </svg></td>
@@ -15437,7 +15437,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
             </td>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">
-                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 4_1 号（第 1 页）</div>
+                <div class="t-table__tree-col t-table__tree-col--inline" style="padding-left:1px;"><span class="t-table__tree-op-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add-rectangle"><path fill="currentColor" d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z" fill-opacity="0.9"></path></svg></span>我是 4_1 号</div>
               </div>
             </td>
             <td>共有</td>

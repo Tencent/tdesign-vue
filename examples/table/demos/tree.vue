@@ -52,11 +52,11 @@ const TOTAL = 5;
 
 function getData(currentPage = 1) {
   const data = [];
-  const pageInfo = `第 ${currentPage} 页`;
+  // const pageInfo = `第 ${currentPage} 页`;
   for (let i = 0; i < TOTAL; i++) {
     const obj = {
       id: i,
-      key: `我是 ${i}_${currentPage} 号（${pageInfo}）`,
+      key: `我是 ${i}_${currentPage} 号`,
       platform: i % 2 === 0 ? '共有' : '私有',
       type: ['String', 'Number', 'Array', 'Object'][i % 4],
       default: ['-', '0', '[]', '{}'][i % 4],
@@ -74,14 +74,14 @@ function getData(currentPage = 1) {
         const secondObj = {
           ...obj,
           id: secondIndex,
-          key: `我是 ${secondIndex}_${currentPage} 号（${pageInfo}）`,
+          key: `我是 ${secondIndex}_${currentPage} 号`,
         };
         secondObj.list = new Array(3).fill(null).map((m, n) => {
           const thirdIndex = secondIndex * 1000 + 100 * m + (n + 1) * 10;
           return {
             ...obj,
             id: thirdIndex,
-            key: `我是 ${thirdIndex}_${currentPage} 号（${pageInfo}）`,
+            key: `我是 ${thirdIndex}_${currentPage} 号`,
           };
         });
         return secondObj;
@@ -126,7 +126,7 @@ export default {
           width: 100,
         },
         {
-          width: 220,
+          width: 180,
           colKey: 'key',
           title: '名称',
           ellipsis: true,
@@ -145,7 +145,7 @@ export default {
         },
         {
           colKey: 'operate',
-          width: 280,
+          width: 340,
           title: '操作',
           align: 'center',
           // 增、删、改、查 等操作
