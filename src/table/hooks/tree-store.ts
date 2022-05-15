@@ -327,7 +327,7 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
       updateRowIndex(this.treeDataMap, dataSource, {
         rowKey: keys.rowKey,
         minRowIndex: endIndex,
-        maxRowIndex: startIndex + 1,
+        maxRowIndex: startLastIndex,
       });
     } else {
       const middleRowList = dataSource.slice(startLastIndex, endIndex);
@@ -337,7 +337,7 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
       updateRowIndex(this.treeDataMap, dataSource, {
         rowKey: keys.rowKey,
         minRowIndex: startIndex,
-        maxRowIndex: endIndex + 1,
+        maxRowIndex: endLastIndex,
       });
     }
 
