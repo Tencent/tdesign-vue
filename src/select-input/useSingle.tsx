@@ -24,10 +24,6 @@ const COMMON_PROPERTIES = [
   'readonly',
   'suffix',
   'suffixIcon',
-  'onPaste',
-  'onEnter',
-  'onMouseenter',
-  'onMouseleave',
 ];
 
 const DEFAULT_KEYS = {
@@ -111,6 +107,18 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
           props.onFocus?.(value.value, { ...context, inputValue: val });
           instance.emit('focus', value.value, { ...context, tagInputValue: val });
           !popupVisible && setInputValue(getInputValue(value.value, keys.value), { ...context, trigger: 'input' }); // 聚焦时拿到value
+        }}
+        onPaste={(context: { e: ClipboardEvent; pasteValue: string }) => {
+          props.onPaste?.(context);
+          instance.emit('paste', context);
+        }}
+        onMouseenter={(context: { e: MouseEvent }) => {
+          props.onMouseenter?.(context);
+          instance.emit('mouseenter', context);
+        }}
+        onMouseleave={(context: { e: MouseEvent }) => {
+          props.onMouseleave?.(context);
+          instance.emit('mouseenter', context);
         }}
       />
     );

@@ -60,7 +60,7 @@ export default {
     },
     onInputChange(val, context) {
       // 过滤功能
-      console.log(val, context);
+      console.warn(val, context);
     },
   },
 };
