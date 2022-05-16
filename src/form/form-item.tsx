@@ -79,10 +79,27 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
         CLASS_NAMES.formItem,
         FORM_ITEM_CLASS_PREFIX + this.name,
         {
-          [CLASS_NAMES.formItemWithHelp]: this.help,
-          [CLASS_NAMES.formItemWithExtra]: this.renderTipsInfo(),
+          [CLASS_NAMES.formItemWithHelp]: this.helpNode,
+          [CLASS_NAMES.formItemWithExtra]: this.extraNode,
         },
       ];
+    },
+    helpNode() {
+      let helpVNode: VNode = null;
+      if (this.help) {
+        helpVNode = <div class={CLASS_NAMES.help}>{this.help}</div>;
+      }
+      return helpVNode;
+    },
+    extraNode() {
+      const list = this.errorList;
+      if (this.needErrorMessage && list && list[0] && list[0].message) {
+        return <div class={CLASS_NAMES.extra}>{list[0].message}</div>;
+      }
+      if (this.successList.length) {
+        return <div class={CLASS_NAMES.extra}>{this.successList[0].message}</div>;
+      }
+      return null;
     },
     labelClasses(): ClassName {
       const parent = this.form;
@@ -288,20 +305,6 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
         </div>
       );
     },
-    renderTipsInfo(): VNode {
-      let helpVNode: VNode = <div class={CLASS_NAMES.help}></div>;
-      if (this.help) {
-        helpVNode = <div class={CLASS_NAMES.help}>{this.help}</div>;
-      }
-      const list = this.errorList;
-      if (this.needErrorMessage && list && list[0] && list[0].message) {
-        return <div class={CLASS_NAMES.extra}>{list[0].message}</div>;
-      }
-      if (this.successList.length) {
-        return <div class={CLASS_NAMES.extra}>{this.successList[0].message}</div>;
-      }
-      return helpVNode;
-    },
     getDefaultIcon(): TNodeReturnValue {
       const resultIcon = (Icon: IconConstructor) => (
         <span class={CLASS_NAMES.status}>
@@ -403,7 +406,8 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
             {this.$slots.default}
             {this.getSuffixIcon()}
           </div>
-          {this.renderTipsInfo()}
+          {this.helpNode}
+          {this.extraNode}
         </div>
       </div>
     );
