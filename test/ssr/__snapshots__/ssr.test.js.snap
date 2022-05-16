@@ -2,7 +2,9 @@
 
 exports[`ssr snapshot test renders ./examples/affix/demos/base.vue correctly 1`] = `
 <div class="affix-base">
-  <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">固钉</span></button></div>
+  <div>
+    <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">固钉</span></button></div>
+  </div>
 </div>
 `;
 
@@ -10,7 +12,9 @@ exports[`ssr snapshot test renders ./examples/affix/demos/container.vue correctl
 <div class="affix-container">
   <div class="affix-container-demo1">
     <div class="background">
-      <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">FixedTop top:0</span></button></div>
+      <div>
+        <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Fixed open:0</span></button></div>
+      </div>
     </div>
   </div>
 </div>
@@ -240,17 +244,19 @@ exports[`ssr snapshot test renders ./examples/anchor/demos/base.vue correctly 1`
 <div style="display:flex;">
   <div style="flex:1;"></div>
   <div>
-    <div class="t-anchor t-size-m">
-      <div class="t-anchor__line">
-        <div class="t-anchor__line-cursor-wrapper">
-          <div class="t-anchor__line-cursor"></div>
+    <div>
+      <div class="t-anchor t-size-m">
+        <div class="t-anchor__line">
+          <div class="t-anchor__line-cursor-wrapper">
+            <div class="t-anchor__line-cursor"></div>
+          </div>
         </div>
+        <div class="t-anchor__item"><a href="#基础锚点" title="基础锚点" target="_self" class="t-anchor__item-link">基础锚点</a></div>
+        <div class="t-anchor__item"><a href="#多级锚点" title="多级锚点" target="_self" class="t-anchor__item-link">多级锚点</a></div>
+        <div class="t-anchor__item"><a href="#指定容器锚点" title="指定容器锚点" target="_self" class="t-anchor__item-link">指定容器锚点</a></div>
+        <div class="t-anchor__item"><a href="#特定交互锚点" title="特定交互锚点" target="_self" class="t-anchor__item-link">特定交互锚点</a></div>
+        <div class="t-anchor__item"><a href="#不同尺寸的锚点" title="不同尺寸的锚点" target="_self" class="t-anchor__item-link">不同尺寸的锚点</a></div>
       </div>
-      <div class="t-anchor__item"><a href="#基础锚点" title="基础锚点" target="_self" class="t-anchor__item-link">基础锚点</a></div>
-      <div class="t-anchor__item"><a href="#多级锚点" title="多级锚点" target="_self" class="t-anchor__item-link">多级锚点</a></div>
-      <div class="t-anchor__item"><a href="#指定容器锚点" title="指定容器锚点" target="_self" class="t-anchor__item-link">指定容器锚点</a></div>
-      <div class="t-anchor__item"><a href="#特定交互锚点" title="特定交互锚点" target="_self" class="t-anchor__item-link">特定交互锚点</a></div>
-      <div class="t-anchor__item"><a href="#不同尺寸的锚点" title="不同尺寸的锚点" target="_self" class="t-anchor__item-link">不同尺寸的锚点</a></div>
     </div>
   </div>
 </div>
@@ -12017,7 +12023,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`
 <div class="tdesign-demo-block-column-large tdesign-demo__table-affix" style="width:100%;">
   <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表头吸顶</span></label> <label class="t-checkbox t-is-checked" style="margin-left:32px;"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表尾吸底</span></label> <label class="t-checkbox t-is-checked" style="margin-left:32px;"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定左侧列</span></label> <label class="t-checkbox t-is-checked" style="margin-left:32px;"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定右侧列</span></label></div>
   <div class="t-table t-table--bordered t-table--affixed-header t-table--column-fixed" style="position:relative;">
-    <div offsetTop="0"></div>
+    <div offsetTop="0">
+      <div></div>
+    </div>
     <div class="t-table__content">
       <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-auto" style="width:;">

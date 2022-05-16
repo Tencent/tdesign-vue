@@ -88,7 +88,9 @@ exports[`Table Table affixVue demo works fine 1`] = `
   >
     <div
       offsettop="0"
-    />
+    >
+      <div />
+    </div>
     <div
       class="t-table__content"
     >
