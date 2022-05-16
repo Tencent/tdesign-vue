@@ -888,7 +888,7 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
     class="t-form"
   >
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -965,14 +965,11 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
             </button>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -1049,14 +1046,11 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
             </button>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -1132,14 +1126,11 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
             </button>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -1215,14 +1206,11 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
             </button>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -1298,14 +1286,11 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
             </button>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -1381,14 +1366,11 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
             </button>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -1469,14 +1451,11 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
             </button>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -1557,14 +1536,11 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
             </button>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -1645,14 +1621,11 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
             </button>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -1733,9 +1706,6 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
             </button>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
   </form>
