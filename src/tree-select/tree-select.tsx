@@ -216,10 +216,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     },
     realChildren(): string {
       const { treeProps } = this;
-      if (!isEmpty(treeProps) && !isEmpty(treeProps.keys)) {
-        return treeProps.keys.children || 'children';
-      }
-      return 'children';
+      return treeProps?.keys?.children || 'children';
     },
     tagList(): Array<TreeSelectValue> {
       if (this.nodeInfo && isArray(this.nodeInfo)) {
