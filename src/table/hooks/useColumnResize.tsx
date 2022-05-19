@@ -1,5 +1,5 @@
 import { ref, Ref, reactive } from '@vue/composition-api';
-import { TableColumns } from './useMultiHeader';
+import { BaseTableColumns } from '../interface';
 
 export default function useColumnResize(tableElmRef: Ref<HTMLTableElement>, refreshTable: () => void) {
   const resizeLineRef = ref<HTMLDivElement>();
@@ -21,12 +21,12 @@ export default function useColumnResize(tableElmRef: Ref<HTMLTableElement>, refr
   const onColumnMouseover = (e: MouseEvent) => {
     if (!resizeLineRef.value) return;
 
-    const target = e.target as HTMLElement;
+    const target = (e.target as HTMLElement).closest('th');
     const targetBoundRect = target.getBoundingClientRect();
     if (!resizeLineParams.isDragging) {
       // 最小宽度暂定为30，如果单元格小于30，则不能拖拽
       // 当离右边框的距离不超过8时，显示拖拽图标
-      if (targetBoundRect.width > 30 && targetBoundRect.right - e.pageX <= 8) {
+      if (targetBoundRect.width >= 30 && targetBoundRect.right - e.pageX <= 8) {
         target.style.cursor = 'col-resize';
         resizeLineParams.draggingCol = target;
       } else {
@@ -37,11 +37,11 @@ export default function useColumnResize(tableElmRef: Ref<HTMLTableElement>, refr
   };
 
   // 调整表格列宽
-  const onColumnMousedown = (e: MouseEvent, col: TableColumns[0]) => {
+  const onColumnMousedown = (e: MouseEvent, col: BaseTableColumns[0]) => {
     // 非resize的点击，不做处理
     if (!resizeLineParams.draggingCol) return;
 
-    const target = e.target as HTMLElement;
+    const target = (e.target as HTMLElement).closest('th');
     const targetBoundRect = target.getBoundingClientRect();
     const tableBoundRect = tableElmRef.value?.getBoundingClientRect();
     const resizeLinePos = targetBoundRect.right - tableBoundRect.left;

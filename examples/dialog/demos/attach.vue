@@ -78,13 +78,13 @@ export default Vue.extend({
   },
 });
 </script>
-<style>
+<style scoped>
 .t-button {
   margin-right: 20px;
 }
 .dialog-attach-wrap {
   position: relative;
-  height: 400px;
+  height: 240px;
   padding: 20px;
   border: 1px solid #ebedf0;
   border-radius: 2px;

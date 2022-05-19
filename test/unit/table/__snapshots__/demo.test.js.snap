@@ -88,7 +88,9 @@ exports[`Table Table affixVue demo works fine 1`] = `
   >
     <div
       offsettop="0"
-    />
+    >
+      <div />
+    </div>
     <div
       class="t-table__content"
     >
@@ -3772,6 +3774,26 @@ exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
 <div
   class="demo-container t-table-demo-sort"
 >
+  <div>
+    <label
+      class="t-checkbox"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        加载状态
+      </span>
+    </label>
+  </div>
+   
   <div
     class="item"
   >
@@ -4053,6 +4075,9 @@ exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
           <!---->
         </table>
       </div>
+      <div
+        class="t-loading--center t-size-m t-loading"
+      />
     </div>
   </div>
 </div>
@@ -15535,478 +15560,466 @@ exports[`Table Table loadingVue demo works fine 1`] = `
   class="tdesign-demo-block-column"
 >
   <div
-    class="t-table t-size-s"
+    class="t-table t-size-s t-table--loading"
     style="position: relative;"
   >
     <div
-      class="t-loading__parent"
+      class="t-table__content"
     >
       <div
-        class="t-table__content"
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
+      <table
+        class="t-table--layout-fixed"
       >
-        <div
-          class="t-table__resize-line"
-          style="display: none; left: 10px; height: 10px;"
-        />
-        <table
-          class="t-table--layout-fixed"
-        >
-          <colgroup>
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-          </colgroup>
-          <thead
-            class="t-table__header"
-          >
-            <tr>
-              <th
-                class="row t-table__th-type"
-                data-colkey="type"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    类型
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test t-table__th-platform"
-                data-colkey="platform"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    平台
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test2 t-table__th-property"
-                data-colkey="property"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    属性
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test4 t-table__th-default"
-                data-colkey="default"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    默认值
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test3 t-table__th-needed"
-                data-colkey="needed"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    是否必传
-                  </div>
-                </div>
-              </th>
-              <th
-                class="row t-table__th-description"
-                data-colkey="description"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    说明
-                  </div>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody
-            class="t-table__body"
+        <colgroup>
+          <col
+            style="width: 100px;"
           />
-          <!---->
-        </table>
-      </div>
-      <div
-        class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"
-      >
-        <svg
-          class="t-loading__gradient t-icon-loading"
-          height="1em"
-          size="medium"
-          version="1.1"
-          viewBox="0 0 14 14"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+        </colgroup>
+        <thead
+          class="t-table__header"
         >
-          <foreignobject
-            height="12"
-            width="12"
-            x="1"
-            y="1"
-          >
-            <div
-              class="t-loading__gradient-conic"
-            />
-          </foreignobject>
-        </svg>
-      </div>
+          <tr>
+            <th
+              class="row t-table__th-type"
+              data-colkey="type"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  类型
+                </div>
+              </div>
+            </th>
+            <th
+              class="test t-table__th-platform"
+              data-colkey="platform"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  平台
+                </div>
+              </div>
+            </th>
+            <th
+              class="test2 t-table__th-property"
+              data-colkey="property"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  属性
+                </div>
+              </div>
+            </th>
+            <th
+              class="test4 t-table__th-default"
+              data-colkey="default"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  默认值
+                </div>
+              </div>
+            </th>
+            <th
+              class="test3 t-table__th-needed"
+              data-colkey="needed"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  是否必传
+                </div>
+              </div>
+            </th>
+            <th
+              class="row t-table__th-description"
+              data-colkey="description"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  说明
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="t-table__body"
+        />
+        <!---->
+      </table>
+    </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    >
+      <svg
+        class="t-loading__gradient t-icon-loading"
+        height="1em"
+        size="medium"
+        version="1.1"
+        viewBox="0 0 14 14"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <foreignobject
+          height="12"
+          width="12"
+          x="1"
+          y="1"
+        >
+          <div
+            class="t-loading__gradient-conic"
+          />
+        </foreignobject>
+      </svg>
     </div>
   </div>
    
   <div
-    class="t-table t-size-s"
+    class="t-table t-size-s t-table--loading"
     style="position: relative;"
   >
     <div
-      class="t-loading__parent"
+      class="t-table__content"
     >
       <div
-        class="t-table__content"
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
+      <table
+        class="t-table--layout-fixed"
       >
-        <div
-          class="t-table__resize-line"
-          style="display: none; left: 10px; height: 10px;"
-        />
-        <table
-          class="t-table--layout-fixed"
-        >
-          <colgroup>
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-          </colgroup>
-          <thead
-            class="t-table__header"
-          >
-            <tr>
-              <th
-                class="row t-table__th-type"
-                data-colkey="type"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    类型
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test t-table__th-platform"
-                data-colkey="platform"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    平台
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test2 t-table__th-property"
-                data-colkey="property"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    属性
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test4 t-table__th-default"
-                data-colkey="default"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    默认值
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test3 t-table__th-needed"
-                data-colkey="needed"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    是否必传
-                  </div>
-                </div>
-              </th>
-              <th
-                class="row t-table__th-description"
-                data-colkey="description"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    说明
-                  </div>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody
-            class="t-table__body"
+        <colgroup>
+          <col
+            style="width: 100px;"
           />
-          <!---->
-        </table>
-      </div>
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+        </colgroup>
+        <thead
+          class="t-table__header"
+        >
+          <tr>
+            <th
+              class="row t-table__th-type"
+              data-colkey="type"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  类型
+                </div>
+              </div>
+            </th>
+            <th
+              class="test t-table__th-platform"
+              data-colkey="platform"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  平台
+                </div>
+              </div>
+            </th>
+            <th
+              class="test2 t-table__th-property"
+              data-colkey="property"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  属性
+                </div>
+              </div>
+            </th>
+            <th
+              class="test4 t-table__th-default"
+              data-colkey="default"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  默认值
+                </div>
+              </div>
+            </th>
+            <th
+              class="test3 t-table__th-needed"
+              data-colkey="needed"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  是否必传
+                </div>
+              </div>
+            </th>
+            <th
+              class="row t-table__th-description"
+              data-colkey="description"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  说明
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="t-table__body"
+        />
+        <!---->
+      </table>
+    </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    >
       <div
-        class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"
+        class="t-loading__text"
       >
         <div
-          class="t-loading__text"
+          class="t-table--loading-message"
         >
-          <div
-            class="t-table--loading-message"
-          >
-            😊 这里使用插槽自定义加载状态 😊
-          </div>
+          😊 这里使用插槽自定义加载状态 😊
         </div>
       </div>
     </div>
   </div>
    
   <div
-    class="t-table t-size-s"
+    class="t-table t-size-s t-table--loading"
     style="position: relative;"
   >
     <div
-      class="t-loading__parent"
+      class="t-table__content"
     >
       <div
-        class="t-table__content"
+        class="t-table__resize-line"
+        style="display: none; left: 10px; height: 10px;"
+      />
+      <table
+        class="t-table--layout-fixed"
       >
-        <div
-          class="t-table__resize-line"
-          style="display: none; left: 10px; height: 10px;"
-        />
-        <table
-          class="t-table--layout-fixed"
-        >
-          <colgroup>
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-            <col
-              style="width: 100px;"
-            />
-          </colgroup>
-          <thead
-            class="t-table__header"
-          >
-            <tr>
-              <th
-                class="row t-table__th-type"
-                data-colkey="type"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    类型
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test t-table__th-platform"
-                data-colkey="platform"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    平台
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test2 t-table__th-property"
-                data-colkey="property"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    属性
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test4 t-table__th-default"
-                data-colkey="default"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    默认值
-                  </div>
-                </div>
-              </th>
-              <th
-                class="test3 t-table__th-needed"
-                data-colkey="needed"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    是否必传
-                  </div>
-                </div>
-              </th>
-              <th
-                class="row t-table__th-description"
-                data-colkey="description"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    说明
-                  </div>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody
-            class="t-table__body"
+        <colgroup>
+          <col
+            style="width: 100px;"
           />
-          <!---->
-        </table>
-      </div>
-      <div
-        class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"
-      >
-        <svg
-          class="t-loading__gradient t-icon-loading"
-          height="1em"
-          size="medium"
-          version="1.1"
-          viewBox="0 0 14 14"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+        </colgroup>
+        <thead
+          class="t-table__header"
         >
-          <foreignobject
-            height="12"
-            width="12"
-            x="1"
-            y="1"
-          >
-            <div
-              class="t-loading__gradient-conic"
-            />
-          </foreignobject>
-        </svg>
-        <div
-          class="t-loading__text"
+          <tr>
+            <th
+              class="row t-table__th-type"
+              data-colkey="type"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  类型
+                </div>
+              </div>
+            </th>
+            <th
+              class="test t-table__th-platform"
+              data-colkey="platform"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  平台
+                </div>
+              </div>
+            </th>
+            <th
+              class="test2 t-table__th-property"
+              data-colkey="property"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  属性
+                </div>
+              </div>
+            </th>
+            <th
+              class="test4 t-table__th-default"
+              data-colkey="default"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  默认值
+                </div>
+              </div>
+            </th>
+            <th
+              class="test3 t-table__th-needed"
+              data-colkey="needed"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  是否必传
+                </div>
+              </div>
+            </th>
+            <th
+              class="row t-table__th-description"
+              data-colkey="description"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  说明
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="t-table__body"
+        />
+        <!---->
+      </table>
+    </div>
+    <div
+      class="t-loading--center t-size-m t-loading"
+    >
+      <svg
+        class="t-loading__gradient t-icon-loading"
+        height="1em"
+        size="medium"
+        version="1.1"
+        viewBox="0 0 14 14"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <foreignobject
+          height="12"
+          width="12"
+          x="1"
+          y="1"
         >
           <div
-            class="t-table--loading-message"
-          >
-            这里使用渲染函数定义加载状态
-          </div>
+            class="t-loading__gradient-conic"
+          />
+        </foreignobject>
+      </svg>
+      <div
+        class="t-loading__text"
+      >
+        <div
+          class="t-table--loading-message"
+        >
+          这里使用渲染函数定义加载状态
         </div>
       </div>
     </div>
@@ -17199,6 +17212,9 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
       <!---->
     </table>
   </div>
+  <div
+    class="t-loading--center t-size-m t-loading"
+  />
   <div
     class="t-table__pagination"
   >
@@ -18945,12 +18961,34 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large demo-container"
 >
-  <p>
-    排序：{
+  <div>
+    <label
+      class="t-checkbox"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+         隐藏排序文本提示 
+      </span>
+    </label>
+     
+    <span
+      style="padding-left: 16px; vertical-align: top;"
+    >
+      排序：{
   "sortBy": "status",
   "descending": true
 }
-  </p>
+    </span>
+  </div>
    
   <div
     class="t-table t-table--bordered"
@@ -19493,24 +19531,28 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
                 class="t-table__tree-col"
                 style="padding-left: 1px;"
               >
-                <svg
-                  class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  width="1em"
+                <span
+                  class="t-table__tree-op-icon"
                 >
-                  <path
-                    d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                  <path
-                    d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                </svg>
+                  <svg
+                    class="t-icon t-icon-add-rectangle"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                    <path
+                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
                 JQTest0
               </div>
             </td>
@@ -19590,24 +19632,28 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
                 class="t-table__tree-col"
                 style="padding-left: 1px;"
               >
-                <svg
-                  class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  width="1em"
+                <span
+                  class="t-table__tree-op-icon"
                 >
-                  <path
-                    d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                  <path
-                    d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                </svg>
+                  <svg
+                    class="t-icon t-icon-add-rectangle"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                    <path
+                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
                 JQTest1
               </div>
             </td>
@@ -19686,24 +19732,28 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
                 class="t-table__tree-col"
                 style="padding-left: 1px;"
               >
-                <svg
-                  class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  width="1em"
+                <span
+                  class="t-table__tree-op-icon"
                 >
-                  <path
-                    d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                  <path
-                    d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                </svg>
+                  <svg
+                    class="t-icon t-icon-add-rectangle"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                    <path
+                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
                 JQTest2
               </div>
             </td>
@@ -19783,24 +19833,28 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
                 class="t-table__tree-col"
                 style="padding-left: 1px;"
               >
-                <svg
-                  class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  width="1em"
+                <span
+                  class="t-table__tree-op-icon"
                 >
-                  <path
-                    d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                  <path
-                    d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                </svg>
+                  <svg
+                    class="t-icon t-icon-add-rectangle"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                    <path
+                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
                 JQTest3
               </div>
             </td>
@@ -19879,24 +19933,28 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
                 class="t-table__tree-col"
                 style="padding-left: 1px;"
               >
-                <svg
-                  class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  width="1em"
+                <span
+                  class="t-table__tree-op-icon"
                 >
-                  <path
-                    d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                  <path
-                    d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                </svg>
+                  <svg
+                    class="t-icon t-icon-add-rectangle"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                    <path
+                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
                 JQTest4
               </div>
             </td>
@@ -19950,15 +20008,48 @@ exports[`Table Table treeVue demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        展开/收起可见行
+        任意节点展开/收起
       </span>
     </button>
+     
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-default"
+      style="margin-left: 16px;"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        展开全部
+      </span>
+    </button>
+     
+    <label
+      class="t-checkbox"
+      style="margin-left: 16px; vertical-align: middle;"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        
+      自定义折叠/展开图标
+    
+      </span>
+    </label>
   </div>
    
   <br />
    
   <div
-    class="t-table"
+    class="t-table t-table--row-handler-draggable"
     style="position: relative;"
   >
     <div
@@ -19972,20 +20063,36 @@ exports[`Table Table treeVue demo works fine 1`] = `
         class="t-table--layout-fixed"
       >
         <colgroup>
-          <col />
           <col
-            style="width: 220px;"
+            style="width: 80px;"
           />
-          <col />
-          <col />
           <col
-            style="width: 280px;"
+            style="width: 100px;"
+          />
+          <col
+            style="width: 180px;"
+          />
+          <col
+            style="width: 80px;"
+          />
+          <col
+            style="width: 340px;"
           />
         </colgroup>
         <thead
           class="t-table__header"
         >
           <tr>
+            <th
+              class="t-table__th-drag"
+              data-colkey="drag"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                排序
+              </div>
+            </th>
             <th
               class="t-table__th-id"
               data-colkey="id"
@@ -20025,16 +20132,6 @@ exports[`Table Table treeVue demo works fine 1`] = `
               </div>
             </th>
             <th
-              class="t-table__th-type"
-              data-colkey="type"
-            >
-              <div
-                class="t-table__th-cell-inner"
-              >
-                类型
-              </div>
-            </th>
-            <th
               class="t-table__th-operate t-align-center"
               data-colkey="operate"
             >
@@ -20051,7 +20148,25 @@ exports[`Table Table treeVue demo works fine 1`] = `
         >
           <tr
             class=""
+            data-id="我是 0_1 号"
           >
+            <td
+              class="t-table__handle-draggable"
+            >
+              <svg
+                class="t-icon t-icon-move"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </td>
             <td
               class="t-table-td--ellipsis"
             >
@@ -20071,7 +20186,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
                   class="t-table__tree-col t-table__tree-col--inline"
                   style="padding-left: 1px;"
                 >
-                  我是 0_1 号（第 1 页）
+                  我是 0_1 号
                 </div>
               </div>
             </td>
@@ -20079,11 +20194,6 @@ exports[`Table Table treeVue demo works fine 1`] = `
               class=""
             >
               共有
-            </td>
-            <td
-              class=""
-            >
-              String
             </td>
             <td
               class="t-align-center"
@@ -20099,6 +20209,26 @@ exports[`Table Table treeVue demo works fine 1`] = `
                     class="t-button__text"
                   >
                     插入
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    前插
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    后插
                   </span>
                 </button>
                 <button
@@ -20136,7 +20266,25 @@ exports[`Table Table treeVue demo works fine 1`] = `
           </tr>
           <tr
             class=""
+            data-id="我是 1_1 号"
           >
+            <td
+              class="t-table__handle-draggable"
+            >
+              <svg
+                class="t-icon t-icon-move"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </td>
             <td
               class="t-table-td--ellipsis"
             >
@@ -20156,25 +20304,29 @@ exports[`Table Table treeVue demo works fine 1`] = `
                   class="t-table__tree-col t-table__tree-col--inline"
                   style="padding-left: 1px;"
                 >
-                  <svg
-                    class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                    fill="none"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    width="1em"
+                  <span
+                    class="t-table__tree-op-icon"
                   >
-                    <path
-                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                    <path
-                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                  </svg>
-                  我是 1_1 号（第 1 页）
+                    <svg
+                      class="t-icon t-icon-add-rectangle"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                      <path
+                        d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                  </span>
+                  我是 1_1 号
                 </div>
               </div>
             </td>
@@ -20182,11 +20334,6 @@ exports[`Table Table treeVue demo works fine 1`] = `
               class=""
             >
               私有
-            </td>
-            <td
-              class=""
-            >
-              Number
             </td>
             <td
               class="t-align-center"
@@ -20202,6 +20349,26 @@ exports[`Table Table treeVue demo works fine 1`] = `
                     class="t-button__text"
                   >
                     插入
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    前插
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    后插
                   </span>
                 </button>
                 <button
@@ -20239,7 +20406,25 @@ exports[`Table Table treeVue demo works fine 1`] = `
           </tr>
           <tr
             class=""
+            data-id="我是 2_1 号"
           >
+            <td
+              class="t-table__handle-draggable"
+            >
+              <svg
+                class="t-icon t-icon-move"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </td>
             <td
               class="t-table-td--ellipsis"
             >
@@ -20259,25 +20444,29 @@ exports[`Table Table treeVue demo works fine 1`] = `
                   class="t-table__tree-col t-table__tree-col--inline"
                   style="padding-left: 1px;"
                 >
-                  <svg
-                    class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                    fill="none"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    width="1em"
+                  <span
+                    class="t-table__tree-op-icon"
                   >
-                    <path
-                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                    <path
-                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                  </svg>
-                  我是 2_1 号（第 1 页）
+                    <svg
+                      class="t-icon t-icon-add-rectangle"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                      <path
+                        d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                  </span>
+                  我是 2_1 号
                 </div>
               </div>
             </td>
@@ -20285,11 +20474,6 @@ exports[`Table Table treeVue demo works fine 1`] = `
               class=""
             >
               共有
-            </td>
-            <td
-              class=""
-            >
-              Array
             </td>
             <td
               class="t-align-center"
@@ -20305,6 +20489,26 @@ exports[`Table Table treeVue demo works fine 1`] = `
                     class="t-button__text"
                   >
                     插入
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    前插
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    后插
                   </span>
                 </button>
                 <button
@@ -20342,7 +20546,25 @@ exports[`Table Table treeVue demo works fine 1`] = `
           </tr>
           <tr
             class=""
+            data-id="我是 3_1 号"
           >
+            <td
+              class="t-table__handle-draggable"
+            >
+              <svg
+                class="t-icon t-icon-move"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </td>
             <td
               class="t-table-td--ellipsis"
             >
@@ -20362,25 +20584,29 @@ exports[`Table Table treeVue demo works fine 1`] = `
                   class="t-table__tree-col t-table__tree-col--inline"
                   style="padding-left: 1px;"
                 >
-                  <svg
-                    class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                    fill="none"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    width="1em"
+                  <span
+                    class="t-table__tree-op-icon"
                   >
-                    <path
-                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                    <path
-                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                  </svg>
-                  我是 3_1 号（第 1 页）
+                    <svg
+                      class="t-icon t-icon-add-rectangle"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                      <path
+                        d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                  </span>
+                  我是 3_1 号
                 </div>
               </div>
             </td>
@@ -20388,11 +20614,6 @@ exports[`Table Table treeVue demo works fine 1`] = `
               class=""
             >
               私有
-            </td>
-            <td
-              class=""
-            >
-              Object
             </td>
             <td
               class="t-align-center"
@@ -20408,6 +20629,26 @@ exports[`Table Table treeVue demo works fine 1`] = `
                     class="t-button__text"
                   >
                     插入
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    前插
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    后插
                   </span>
                 </button>
                 <button
@@ -20445,7 +20686,25 @@ exports[`Table Table treeVue demo works fine 1`] = `
           </tr>
           <tr
             class=""
+            data-id="我是 4_1 号"
           >
+            <td
+              class="t-table__handle-draggable"
+            >
+              <svg
+                class="t-icon t-icon-move"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </td>
             <td
               class="t-table-td--ellipsis"
             >
@@ -20465,25 +20724,29 @@ exports[`Table Table treeVue demo works fine 1`] = `
                   class="t-table__tree-col t-table__tree-col--inline"
                   style="padding-left: 1px;"
                 >
-                  <svg
-                    class="t-icon t-icon-add-rectangle t-table__tree-op-icon"
-                    fill="none"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    width="1em"
+                  <span
+                    class="t-table__tree-op-icon"
                   >
-                    <path
-                      d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                    <path
-                      d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
-                      fill="currentColor"
-                      fill-opacity="0.9"
-                    />
-                  </svg>
-                  我是 4_1 号（第 1 页）
+                    <svg
+                      class="t-icon t-icon-add-rectangle"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                      <path
+                        d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                  </span>
+                  我是 4_1 号
                 </div>
               </div>
             </td>
@@ -20491,11 +20754,6 @@ exports[`Table Table treeVue demo works fine 1`] = `
               class=""
             >
               共有
-            </td>
-            <td
-              class=""
-            >
-              String
             </td>
             <td
               class="t-align-center"
@@ -20511,6 +20769,26 @@ exports[`Table Table treeVue demo works fine 1`] = `
                     class="t-button__text"
                   >
                     插入
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    前插
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    后插
                   </span>
                 </button>
                 <button
@@ -20559,7 +20837,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
         <div
           class="t-pagination__total"
         >
-          共 100 项数据
+          共 5 项数据
         </div>
         <div
           class="t-select__wrap t-pagination__select"
@@ -20621,54 +20899,10 @@ exports[`Table Table treeVue demo works fine 1`] = `
           >
             1
           </li>
-          <li
-            class="t-pagination__number"
-          >
-            2
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            3
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            4
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            5
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            6
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            7
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            8
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            9
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            10
-          </li>
         </ul>
         <div
-          class="t-pagination__btn t-pagination__btn-next"
+          class="t-pagination__btn t-pagination__btn-next t-is-disabled"
+          disabled="disabled"
         >
           <svg
             class="t-icon t-icon-chevron-right"

@@ -8,8 +8,8 @@ import pick from 'lodash/pick';
 import TrElement, { TrProps, ROW_LISTENERS, TABLE_PROPS } from './tr';
 import { useConfig } from '../config-provider/useConfig';
 import { RowspanColspan, TableRowData, BaseTableCellParams } from './type';
-import { BaseTableProps } from './interface';
-import { RowAndColFixedPosition } from './hooks/useFixed';
+import { BaseTableProps, RowAndColFixedPosition } from './interface';
+
 import { useTNodeJSX } from '../hooks/tnode';
 import useClassName from './hooks/useClassName';
 import baseTableProps from './base-table-props';

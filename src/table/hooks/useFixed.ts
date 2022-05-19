@@ -7,47 +7,9 @@ import { ClassName, Styles } from '../../common';
 import { BaseTableCol, TdBaseTableProps } from '../type';
 import getScrollbarWidth from '../../_common/js/utils/getScrollbarWidth';
 import { on, off } from '../../utils/dom';
-
-export interface ColumnStickyLeftAndRight {
-  left: number[];
-  right: number[];
-  top: number[];
-  bottom?: number[];
-}
-
-export interface TableColFixedClasses {
-  left: string;
-  right: string;
-  lastLeft: string;
-  firstRight: string;
-  leftShadow: string;
-  rightShadow: string;
-}
-
-export interface TableRowFixedClasses {
-  top: string;
-  bottom: string;
-  firstBottom: string;
-  withoutBorderBottom: string;
-}
-
-export interface FixedColumnInfo {
-  left?: number;
-  right?: number;
-  top?: number;
-  bottom?: number;
-  parent?: FixedColumnInfo;
-  children?: string[];
-  width?: number;
-  height?: number;
-  col?: BaseTableCol;
-  index?: number;
-  lastLeftFixedCol?: boolean;
-  firstRightFixedCol?: boolean;
-}
-
-// 固定表头和固定列 具体的固定位置（left/top/right/bottom）
-export type RowAndColFixedPosition = Map<string | number, FixedColumnInfo>;
+import {
+  FixedColumnInfo, TableRowFixedClasses, RowAndColFixedPosition, TableColFixedClasses,
+} from '../interface';
 
 // 固定列相关类名处理
 export function getColumnFixedStyles(
@@ -313,10 +275,15 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     rowAndColFixedPosition.value = initialColumnMap;
   };
 
+  let shadowLastScrollLeft = 0;
   const updateColumnFixedShadow = (target: HTMLElement) => {
     if (!isFixedColumn.value) return;
-    const isShowRight = target.clientWidth + target.scrollLeft < target.scrollWidth;
-    showColumnShadow.left = target.scrollLeft > 0;
+    const { scrollLeft } = target;
+    // 只有左右滚动，需要更新固定列阴影
+    if (shadowLastScrollLeft === scrollLeft) return;
+    shadowLastScrollLeft = scrollLeft;
+    const isShowRight = target.clientWidth + scrollLeft < target.scrollWidth;
+    showColumnShadow.left = scrollLeft > 0;
     showColumnShadow.right = isShowRight;
   };
 
@@ -359,7 +326,6 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
 
   // 为保证版本兼容，临时保留 onScrollX 和 onScrollY
   const onTableContentScroll = (params?: { e: WheelEvent; trigger: 'tfoot' | 'tbody' }) => {
-    // const target = (e.target || e.srcElement) as HTMLElement;
     const target = tableContentRef.value;
     // 阴影更新
     updateColumnFixedShadow(target);
@@ -476,8 +442,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     }, 0);
   };
 
-  const onDocumentScroll = () => {
-    if (notNeedThWidthList.value) return;
+  const updateAffixHeaderOrFooter = () => {
     const pos = tableContentRef.value.getBoundingClientRect();
     if (props.headerAffixedTop || props.scroll?.type === 'virtual') {
       const r = affixHeaderRef.value?.offsetHeight - pos.top < pos.height;
@@ -487,6 +452,11 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
       showAffixFooter.value = pos.top + (affixFooterRef?.value?.clientHeight || 48) <= window.innerHeight
         && -1 * pos.top < (tableContentRef?.value?.parentNode as HTMLDivElement)?.clientHeight;
     }
+  };
+
+  const onDocumentScroll = () => {
+    if (notNeedThWidthList.value) return;
+    updateAffixHeaderOrFooter();
   };
 
   watch(
@@ -582,9 +552,10 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
 
   const addTableContentListener = () => {
     // 只有吸顶/吸底/虚拟滚动等场景需要滚动事件监听，同步多个 table 元素的滚动距离
-    if (notNeedThWidthList.value || !tableContentRef.value) return;
-    on(tableContentRef.value, 'mouseenter', onTableContentMouseEnter);
-    on(tableContentRef.value, 'mouseleave', onTableContentMouseLeave);
+    if ((!notNeedThWidthList.value && tableContentRef.value) || isFixedColumn.value) {
+      on(tableContentRef.value, 'mouseenter', onTableContentMouseEnter);
+      on(tableContentRef.value, 'mouseleave', onTableContentMouseLeave);
+    }
   };
 
   const removeTableContentListener = () => {
@@ -602,6 +573,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     const timer = setTimeout(() => {
       updateTableWidth();
       clearTimeout(timer);
+      updateAffixHeaderOrFooter();
     });
     if (headerAffixedTop.value || footerAffixedBottom.value) {
       on(document, 'scroll', onDocumentScroll);
