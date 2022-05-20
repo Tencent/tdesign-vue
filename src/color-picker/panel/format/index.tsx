@@ -2,7 +2,7 @@ import {
   defineComponent, PropType, ref, watch,
 } from '@vue/composition-api';
 import upperCase from 'lodash/upperCase';
-import { TdColorHandler } from '@src/color-picker/interfaces';
+import { TdColorHandler } from '../../../color-picker/interfaces';
 import { TdColorPickerProps } from '../../type';
 import props from '../../props';
 import { FORMATS } from '../../const';

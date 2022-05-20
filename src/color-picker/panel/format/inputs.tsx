@@ -2,7 +2,7 @@ import {
   computed, defineComponent, PropType, reactive, watch,
 } from '@vue/composition-api';
 import throttle from 'lodash/throttle';
-import { TdColorHandler } from '@src/color-picker/interfaces';
+import { TdColorHandler } from '../../interfaces';
 import props from '../../props';
 import { Color } from '../../utils';
 import { Select as TSelect, Option as TOption } from '../../../select';

@@ -2,8 +2,6 @@ import { VueConstructor } from 'vue';
 import VueCompositionAPI from '@vue/composition-api';
 import * as components from './components';
 
-// Vue.use(VueCompositionApi);
-
 function install(Vue: VueConstructor, config?: object) {
   if (Vue._installedPlugins.indexOf(VueCompositionAPI) === -1) {
     Vue.use(VueCompositionAPI);

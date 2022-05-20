@@ -137,9 +137,9 @@ export default defineComponent({
                 this.handleClick(color);
               }}
             >
-              <div class={[`${swatchesClass}--item__color`, `${baseClassName}--bg-alpha`]}>
+              <div class={[`${swatchesClass}--color`, `${baseClassName}--bg-alpha`]}>
                 <span
-                  class={`${swatchesClass}--item__inner`}
+                  class={`${swatchesClass}--inner`}
                   style={{
                     background: color,
                   }}

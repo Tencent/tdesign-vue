@@ -23,7 +23,6 @@ export default defineComponent({
     ColorPanel,
     DefaultTrigger,
   },
-  inheritAttrs: false,
   props: {
     ...props,
   },
