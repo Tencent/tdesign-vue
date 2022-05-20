@@ -27,8 +27,7 @@ docClass: timeline
 ### 🚀 Features
 - `Icon`: 更新图标 新增`file-icon`图标 调整`file-excel`、`file-pdf`、`file-powerpoint`、`file-unknown`、`file-word`和`star-filled`图标的绘制路径 @uyarn ([#854](https://github.com/Tencent/tdesign-vue/pull/854))
 - `Dialog`: 支持`preventScrollThrough` API @uyarn ([#861](https://github.com/Tencent/tdesign-vue/pull/861))
-- `Tabl
-树形结构图标 `treeExpandAndFoldIcon`，同时支持全局配置此图标，[issue#717](https://github.com/Tencent/tdesign-vue-next/issues/717) @chaishi ([#863](https://github.com/Tencent/tdesign-vue/pull/863))
+- `Table`: 支持自定义树形结构图标 `treeExpandAndFoldIcon`，同时支持全局配置此图标，[issue#717](https://github.com/Tencent/tdesign-vue-next/issues/717) @chaishi ([#863](https://github.com/Tencent/tdesign-vue/pull/863))
 - `Table`: 支持隐藏排序文本提示 `hideSortTips`，同时支持全局配置是否隐藏排序文本提示，[issue#736](https://github.com/Tencent/tdesign-vue-next/issues/736) @chaishi ([#863](https://github.com/Tencent/tdesign-vue/pull/863))
 - `Steps`: 新增 `separator` 属性，用于控制步骤条分隔符类型 @HQ-Lin ([#863](https://github.com/Tencent/tdesign-vue/pull/868))
 ### 🐞 Bug Fixes
