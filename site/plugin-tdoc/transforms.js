@@ -10,31 +10,44 @@ let demoCodesImports = {};
 export default {
   before({ source, file }) {
     const resourceDir = path.dirname(file);
-    const reg = file.match(/examples\/(\w+-?\w+)\/(\w+-?\w+)\.md/);
-    const name = reg && reg[1];
+    const reg = file.match(/([\w-]+)\.?([\w-]+)?\.md/);
+    const fileName = reg && reg[0];
+    const componentName = reg && reg[1];
+    const localeName = reg && reg[2];
     demoImports = {};
     demoCodesImports = {};
 
     // 统一换成 common 公共文档内容
-    if (name && source.includes(':: BASE_DOC ::')) {
-      const docPath = path.resolve(__dirname, `../../src/_common/docs/web/api/${name}.md`);
-      if (fs.existsSync(docPath)) {
-        const baseDoc = fs.readFileSync(docPath, 'utf-8');
-        source = source.replace(':: BASE_DOC ::', baseDoc);
+    if (fileName && source.includes(':: BASE_DOC ::')) {
+      const localeDocPath = path.resolve(__dirname, `../../src/_common/docs/web/api/${fileName}`);
+      const defaultDocPath = path.resolve(__dirname, `../../src/_common/docs/web/api/${componentName}.md`);
+      let baseDoc = '';
+      if (fs.existsSync(localeDocPath)) {
+        // 优先载入语言版本
+        baseDoc = fs.readFileSync(localeDocPath, 'utf-8');
+      } else if (fs.existsSync(defaultDocPath)) {
+        // 回退中文默认版本
+        baseDoc = fs.readFileSync(defaultDocPath, 'utf-8');
       } else {
-        console.error(`未找到 ${docPath} 文件`);
+        console.error(`未找到 ${defaultDocPath} 文件`);
       }
+      source = source.replace(':: BASE_DOC ::', baseDoc);
     }
 
     // 替换成对应 demo 文件
     source = source.replace(/\{\{\s+(.+)\s+\}\}/g, (demoStr, demoFileName) => {
-      const demoPath = path.resolve(resourceDir, `./demos/${demoFileName}.vue`);
-      if (!fs.existsSync(demoPath)) {
-        console.log('\x1B[36m%s\x1B[0m', `${name} 组件需要实现 demos/${demoFileName}.vue 示例!`);
+      const defaultDemoPath = path.resolve(resourceDir, `./demos/${demoFileName}.vue`);
+      const localeDemoPath = path.resolve(resourceDir, `./demos/${demoFileName}.${localeName}.vue`);
+      // localeDemo 优先级最高
+      if (fs.existsSync(localeDemoPath))
+        return `\n::: demo demos/${demoFileName}.${localeName} ${componentName}\n:::\n`;
+
+      if (!fs.existsSync(defaultDemoPath)) {
+        console.log('\x1B[36m%s\x1B[0m', `${componentName} 组件需要实现 demos/${demoFileName}.vue 示例!`);
         return '\n<h3>DEMO (🚧建设中）...</h3>';
       }
 
-      return `\n::: demo demos/${demoFileName} ${name}\n:::\n`;
+      return `\n::: demo demos/${demoFileName} ${componentName}\n:::\n`;
     });
 
     source.replace(/:::\s*demo\s+([\\/.\w-]+)/g, (demoStr, relativeDemoPath) => {
@@ -65,7 +78,7 @@ export default {
       demoDefsStr,
       demoCodesDefsStr,
       demoInstallStr,
-      demoCodeInstallStr
+      demoCodeInstallStr,
     });
 
     return sfc;

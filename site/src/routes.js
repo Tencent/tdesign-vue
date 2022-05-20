@@ -1,7 +1,8 @@
 import config from '../site.config';
 import TdesignComponents from './components/page.vue';
 
-const { docs } = config;
+const { docs, enDocs } = config;
+console.log([...getDocsRoutes(docs), ...getDocsRoutes(enDocs)]);
 
 function getDocsRoutes(docs, type) {
   let docsRoutes = [];
@@ -9,16 +10,8 @@ function getDocsRoutes(docs, type) {
 
   docs.forEach((item) => {
     const docType = item.type || type;
+
     let { children } = item;
-    if (item.type === 'component') {
-      children = item.children.sort((a, b) => {
-        const nameA = a.name.toUpperCase();
-        const nameB = b.name.toUpperCase();
-        if (nameA < nameB) return -1;
-        if (nameA > nameB) return 1;
-        return 0;
-      });
-    }
     if (children) {
       docsRoutes = docsRoutes.concat(getDocsRoutes(children, docType));
     } else {
@@ -34,7 +27,7 @@ const routes = [
     path: '/vue',
     redirect: '/vue/overview',
     component: TdesignComponents,
-    children: getDocsRoutes(docs),
+    children: [...getDocsRoutes(docs), ...getDocsRoutes(enDocs)],
   },
   {
     path: '*',
