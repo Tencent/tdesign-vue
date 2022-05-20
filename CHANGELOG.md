@@ -14,6 +14,7 @@ docClass: timeline
     - 树形结构，支持拖拽排序，调整同层级顺序
     - 树形结构，支持在当前节点之前插入新节点 `insertBefore`
     - 树形结构，支持在当后节点之后插入新节点 `insertAfter`
+- Tree: label 支持多行文本展示，[issue# common 444](https://github.com/Tencent/tdesign-common/issues/444) @ccccpj ([#460](https://github.com/Tencent/tdesign-common/pull/460))
 ### 🐞 Bug Fixes
 - `Table`: 列拖动优化；修复选中行后列拖动距离被重置问题 @LoopZhou ([#870](https://github.com/Tencent/tdesign-vue/pull/870))
 - `Table`: 修复 多级表头 + 列配置 综合示例中，列数量超出一定限制时报错，[issue#713](https://github.com/Tencent/tdesign-vue-next/issues/713) @chaishi ([#875](https://github.com/Tencent/tdesign-vue/pull/875))
