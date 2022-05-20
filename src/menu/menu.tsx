@@ -31,14 +31,17 @@ export default defineComponent({
       { [`${prefix}-menu--scroll`]: mode.value !== 'popup' },
       'narrow-scrollbar',
     ]);
-    const styles = computed(() => {
+    const expandWidth = computed(() => {
       const { width } = props;
-      const expandWidth = typeof width === 'number' ? `${width}px` : width;
-      return {
-        height: '100%',
-        width: props.collapsed ? '64px' : expandWidth,
-      };
+      const format = (val: string | number) => (typeof val === 'number' ? `${val}px` : val);
+      if (Array.isArray(width)) return width.map((item) => format(item));
+
+      return [format(width), '64px'];
     });
+    const styles = computed(() => ({
+      height: '100%',
+      width: props.collapsed ? expandWidth.value[1] : expandWidth.value[0],
+    }));
     const activeValue = ref(props.defaultValue || props.value);
     const activeValues = ref([]);
     const expandValues = ref(props.expanded || []);
