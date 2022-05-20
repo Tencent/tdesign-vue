@@ -214,6 +214,10 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       }
       return 'value';
     },
+    realChildren(): string {
+      const { treeProps } = this;
+      return treeProps?.keys?.children || 'children';
+    },
     tagList(): Array<TreeSelectValue> {
       if (this.nodeInfo && isArray(this.nodeInfo)) {
         return this.nodeInfo.map((node) => node.label);
@@ -381,7 +385,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         if (data[i][this.realValue] === targetValue) {
           return { label: data[i][this.realLabel], value: data[i][this.realValue] };
         }
-        const childrenData = data[i]?.children;
+        const childrenData = data[i][this.realChildren];
         if (childrenData) {
           const data = Array.isArray(childrenData) ? childrenData : this.getTreeData();
           const result = this.getTreeNode(data, targetValue);

@@ -53,7 +53,8 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     },
     showClear(): boolean {
       return (
-        (this.value && !this.disabled && this.clearable && this.isHover && !this.readonly) || this.showClearIconOnEmpty
+        ((this.value && !this.disabled && this.clearable && !this.readonly) || this.showClearIconOnEmpty)
+        && this.isHover
       );
     },
     inputAttrs(): Record<string, any> {
@@ -200,8 +201,6 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     emitClear(e: MouseEvent) {
       emitEvent<Parameters<TdInputProps['onClear']>>(this, 'clear', { e });
       emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', '', { e });
-      this.focus();
-      this.emitFocus(e);
     },
     emitFocus(e: FocusEvent) {
       this.inputValue = this.value;
@@ -302,10 +301,10 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       <div
         class={classes}
         onClick={this.onRootClick}
+        {...{ attrs: wrapperAttrs, on: wrapperEvents }}
         onMouseenter={this.onInputMouseenter}
         onMouseleave={this.onInputMouseleave}
         onwheel={this.onHandleMousewheel}
-        {...{ attrs: wrapperAttrs, on: wrapperEvents }}
       >
         {prefixIcon ? <span class={[`${name}__prefix`, `${name}__prefix-icon`]}>{prefixIcon}</span> : null}
         {labelContent}

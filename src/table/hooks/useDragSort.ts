@@ -83,9 +83,9 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
         const { oldIndex: currentIndex, newIndex: targetIndex } = evt;
         const params: DragSortContext<TableRowData> = {
           currentIndex,
-          current: data[currentIndex],
+          current: props.data[currentIndex],
           targetIndex,
-          target: data[targetIndex],
+          target: props.data[targetIndex],
           currentData: swapDragArrayElement(props.data, currentIndex, targetIndex),
           e: evt,
           sort: 'row',
