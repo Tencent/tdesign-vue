@@ -1467,7 +1467,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
     class="t-form"
   >
     <div
-      class="t-form__item t-form-item__username t-form__item-with-extra"
+      class="t-form__item t-form-item__username"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -1503,14 +1503,11 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__password t-form__item-with-extra"
+      class="t-form__item t-form-item__password"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -1568,9 +1565,6 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
   </form>
@@ -2903,7 +2897,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
   <br />
    
   <div
-    class="t-steps t-steps--vertical t-steps--default-anchor t-steps--positive"
+    class="t-steps t-steps--vertical t-steps--positive t-steps--default-anchor t-steps--line-separator"
   >
     <div
       class="t-steps-item t-steps-item--finish"
@@ -3055,7 +3049,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
           <span
             class="t-steps-item__icon--number"
           >
-            0
+            4
           </span>
         </div>
         <div
