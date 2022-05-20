@@ -3201,124 +3201,124 @@ exports[`ssr snapshot test renders ./examples/color-picker/demos/enable-alpha.vu
           <h3 class="t-color-picker__swatches--title"><span>系统预设颜色</span></h3>
           <ul class="t-color-picker__swatches--items narrow-scrollbar">
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#ECF2FE;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#ECF2FE;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#D4E3FC;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#D4E3FC;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#BBD3FB;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#BBD3FB;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#96BBF8;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#96BBF8;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#699EF5;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#699EF5;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#4787F0;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#4787F0;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#266FE8;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#266FE8;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#0052D9;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#0052D9;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#0034B5;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#0034B5;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#001F97;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#001F97;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#FDECEE;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#FDECEE;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F9D7D9;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F9D7D9;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F8B9BE;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F8B9BE;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F78D94;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F78D94;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F36D78;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F36D78;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#E34D59;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#E34D59;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#C9353F;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#C9353F;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#B11F26;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#B11F26;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#951114;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#951114;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#680506;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#680506;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#FEF3E6;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#FEF3E6;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F9E0C7;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F9E0C7;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F7C797;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F7C797;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F2995F;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F2995F;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#ED7B2F;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#ED7B2F;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#D35A21;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#D35A21;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#BA431B;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#BA431B;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#9E3610;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#9E3610;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#842B0B;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#842B0B;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#5A1907;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#5A1907;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#E8F8F2;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#E8F8F2;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#BCEBDC;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#BCEBDC;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#85DBBE;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#85DBBE;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#48C79C;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#48C79C;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#00A870;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#00A870;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#078D5C;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#078D5C;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#067945;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#067945;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#056334;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#056334;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#044F2A;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#044F2A;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#033017;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#033017;"></span></div>
             </li>
           </ul>
         </div>
@@ -3388,124 +3388,124 @@ exports[`ssr snapshot test renders ./examples/color-picker/demos/panel.vue corre
           <h3 class="t-color-picker__swatches--title"><span>系统预设颜色</span></h3>
           <ul class="t-color-picker__swatches--items narrow-scrollbar">
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#ECF2FE;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#ECF2FE;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#D4E3FC;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#D4E3FC;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#BBD3FB;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#BBD3FB;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#96BBF8;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#96BBF8;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#699EF5;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#699EF5;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#4787F0;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#4787F0;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#266FE8;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#266FE8;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#0052D9;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#0052D9;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#0034B5;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#0034B5;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#001F97;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#001F97;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#FDECEE;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#FDECEE;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F9D7D9;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F9D7D9;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F8B9BE;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F8B9BE;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F78D94;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F78D94;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F36D78;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F36D78;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#E34D59;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#E34D59;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#C9353F;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#C9353F;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#B11F26;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#B11F26;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#951114;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#951114;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#680506;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#680506;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#FEF3E6;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#FEF3E6;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F9E0C7;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F9E0C7;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F7C797;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F7C797;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F2995F;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F2995F;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#ED7B2F;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#ED7B2F;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#D35A21;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#D35A21;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#BA431B;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#BA431B;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#9E3610;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#9E3610;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#842B0B;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#842B0B;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#5A1907;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#5A1907;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#E8F8F2;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#E8F8F2;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#BCEBDC;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#BCEBDC;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#85DBBE;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#85DBBE;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#48C79C;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#48C79C;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#00A870;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#00A870;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#078D5C;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#078D5C;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#067945;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#067945;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#056334;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#056334;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#044F2A;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#044F2A;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#033017;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#033017;"></span></div>
             </li>
           </ul>
         </div>
@@ -3573,28 +3573,28 @@ exports[`ssr snapshot test renders ./examples/color-picker/demos/recent-color.vu
             </h3>
             <ul class="t-color-picker__swatches--items narrow-scrollbar">
               <li class="t-color-picker__swatches--item t-is-active">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:red;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:red;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:green;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:green;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:yellow;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:yellow;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:blue;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:blue;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:purple;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:purple;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:linear-gradient(to right, #fa709a 0%, #fee140 100%);"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:linear-gradient(to right, #fa709a 0%, #fee140 100%);"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:linear-gradient(45deg, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:linear-gradient(45deg, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:linear-gradient(120deg, #fcc5e4 0%, #fda34b 15%, #ff7882 35%, #c8699e 52%, #7046aa 71%, #0c1db8 87%, #020f75 100%);"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:linear-gradient(120deg, #fcc5e4 0%, #fda34b 15%, #ff7882 35%, #c8699e 52%, #7046aa 71%, #0c1db8 87%, #020f75 100%);"></span></div>
               </li>
             </ul>
           </div>
@@ -3602,124 +3602,124 @@ exports[`ssr snapshot test renders ./examples/color-picker/demos/recent-color.vu
             <h3 class="t-color-picker__swatches--title"><span>系统预设颜色</span></h3>
             <ul class="t-color-picker__swatches--items narrow-scrollbar">
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#ECF2FE;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#ECF2FE;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#D4E3FC;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#D4E3FC;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#BBD3FB;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#BBD3FB;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#96BBF8;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#96BBF8;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#699EF5;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#699EF5;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#4787F0;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#4787F0;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#266FE8;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#266FE8;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#0052D9;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#0052D9;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#0034B5;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#0034B5;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#001F97;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#001F97;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#FDECEE;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#FDECEE;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F9D7D9;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F9D7D9;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F8B9BE;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F8B9BE;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F78D94;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F78D94;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F36D78;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F36D78;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#E34D59;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#E34D59;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#C9353F;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#C9353F;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#B11F26;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#B11F26;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#951114;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#951114;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#680506;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#680506;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#FEF3E6;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#FEF3E6;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F9E0C7;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F9E0C7;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F7C797;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F7C797;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F2995F;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F2995F;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#ED7B2F;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#ED7B2F;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#D35A21;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#D35A21;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#BA431B;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#BA431B;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#9E3610;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#9E3610;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#842B0B;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#842B0B;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#5A1907;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#5A1907;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#E8F8F2;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#E8F8F2;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#BCEBDC;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#BCEBDC;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#85DBBE;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#85DBBE;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#48C79C;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#48C79C;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#00A870;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#00A870;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#078D5C;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#078D5C;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#067945;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#067945;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#056334;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#056334;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#044F2A;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#044F2A;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#033017;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#033017;"></span></div>
               </li>
             </ul>
           </div>
@@ -3781,124 +3781,124 @@ exports[`ssr snapshot test renders ./examples/color-picker/demos/recent-color.vu
             <h3 class="t-color-picker__swatches--title"><span>系统预设颜色</span></h3>
             <ul class="t-color-picker__swatches--items narrow-scrollbar">
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#ECF2FE;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#ECF2FE;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#D4E3FC;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#D4E3FC;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#BBD3FB;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#BBD3FB;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#96BBF8;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#96BBF8;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#699EF5;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#699EF5;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#4787F0;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#4787F0;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#266FE8;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#266FE8;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#0052D9;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#0052D9;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#0034B5;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#0034B5;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#001F97;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#001F97;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#FDECEE;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#FDECEE;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F9D7D9;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F9D7D9;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F8B9BE;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F8B9BE;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F78D94;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F78D94;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F36D78;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F36D78;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#E34D59;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#E34D59;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#C9353F;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#C9353F;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#B11F26;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#B11F26;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#951114;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#951114;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#680506;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#680506;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#FEF3E6;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#FEF3E6;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F9E0C7;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F9E0C7;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F7C797;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F7C797;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F2995F;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F2995F;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#ED7B2F;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#ED7B2F;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#D35A21;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#D35A21;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#BA431B;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#BA431B;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#9E3610;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#9E3610;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#842B0B;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#842B0B;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#5A1907;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#5A1907;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#E8F8F2;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#E8F8F2;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#BCEBDC;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#BCEBDC;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#85DBBE;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#85DBBE;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#48C79C;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#48C79C;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#00A870;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#00A870;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#078D5C;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#078D5C;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#067945;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#067945;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#056334;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#056334;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#044F2A;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#044F2A;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#033017;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#033017;"></span></div>
               </li>
             </ul>
           </div>
@@ -3985,124 +3985,124 @@ exports[`ssr snapshot test renders ./examples/color-picker/demos/status-readonly
           <h3 class="t-color-picker__swatches--title"><span>系统预设颜色</span></h3>
           <ul class="t-color-picker__swatches--items narrow-scrollbar">
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#ECF2FE;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#ECF2FE;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#D4E3FC;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#D4E3FC;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#BBD3FB;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#BBD3FB;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#96BBF8;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#96BBF8;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#699EF5;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#699EF5;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#4787F0;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#4787F0;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#266FE8;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#266FE8;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#0052D9;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#0052D9;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#0034B5;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#0034B5;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#001F97;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#001F97;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#FDECEE;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#FDECEE;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F9D7D9;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F9D7D9;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F8B9BE;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F8B9BE;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F78D94;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F78D94;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F36D78;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F36D78;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#E34D59;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#E34D59;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#C9353F;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#C9353F;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#B11F26;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#B11F26;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#951114;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#951114;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#680506;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#680506;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#FEF3E6;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#FEF3E6;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F9E0C7;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F9E0C7;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F7C797;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F7C797;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#F2995F;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#F2995F;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#ED7B2F;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#ED7B2F;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#D35A21;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#D35A21;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#BA431B;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#BA431B;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#9E3610;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#9E3610;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#842B0B;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#842B0B;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#5A1907;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#5A1907;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#E8F8F2;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#E8F8F2;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#BCEBDC;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#BCEBDC;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#85DBBE;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#85DBBE;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#48C79C;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#48C79C;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#00A870;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#00A870;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#078D5C;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#078D5C;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#067945;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#067945;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#056334;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#056334;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#044F2A;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#044F2A;"></span></div>
             </li>
             <li class="t-color-picker__swatches--item">
-              <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:#033017;"></span></div>
+              <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:#033017;"></span></div>
             </li>
           </ul>
         </div>
@@ -4174,19 +4174,19 @@ exports[`ssr snapshot test renders ./examples/color-picker/demos/swatch-color.vu
             <h3 class="t-color-picker__swatches--title"><span>系统预设颜色</span></h3>
             <ul class="t-color-picker__swatches--items narrow-scrollbar">
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:red;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:red;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:green;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:green;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:yellow;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:yellow;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:blue;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:blue;"></span></div>
               </li>
               <li class="t-color-picker__swatches--item">
-                <div class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--item__inner" style="background:purple;"></span></div>
+                <div class="t-color-picker__swatches--color t-color-picker--bg-alpha"><span class="t-color-picker__swatches--inner" style="background:purple;"></span></div>
               </li>
             </ul>
           </div>

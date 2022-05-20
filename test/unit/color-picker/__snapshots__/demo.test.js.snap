@@ -465,10 +465,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(236, 242, 254);"
                 />
               </div>
@@ -477,10 +477,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(212, 227, 252);"
                 />
               </div>
@@ -489,10 +489,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(187, 211, 251);"
                 />
               </div>
@@ -501,10 +501,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(150, 187, 248);"
                 />
               </div>
@@ -513,10 +513,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(105, 158, 245);"
                 />
               </div>
@@ -525,10 +525,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(71, 135, 240);"
                 />
               </div>
@@ -537,10 +537,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(38, 111, 232);"
                 />
               </div>
@@ -549,10 +549,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(0, 82, 217);"
                 />
               </div>
@@ -561,10 +561,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(0, 52, 181);"
                 />
               </div>
@@ -573,10 +573,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(0, 31, 151);"
                 />
               </div>
@@ -585,10 +585,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(253, 236, 238);"
                 />
               </div>
@@ -597,10 +597,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(249, 215, 217);"
                 />
               </div>
@@ -609,10 +609,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(248, 185, 190);"
                 />
               </div>
@@ -621,10 +621,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(247, 141, 148);"
                 />
               </div>
@@ -633,10 +633,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(243, 109, 120);"
                 />
               </div>
@@ -645,10 +645,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(227, 77, 89);"
                 />
               </div>
@@ -657,10 +657,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(201, 53, 63);"
                 />
               </div>
@@ -669,10 +669,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(177, 31, 38);"
                 />
               </div>
@@ -681,10 +681,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(149, 17, 20);"
                 />
               </div>
@@ -693,10 +693,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(104, 5, 6);"
                 />
               </div>
@@ -705,10 +705,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(254, 243, 230);"
                 />
               </div>
@@ -717,10 +717,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(249, 224, 199);"
                 />
               </div>
@@ -729,10 +729,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(247, 199, 151);"
                 />
               </div>
@@ -741,10 +741,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(242, 153, 95);"
                 />
               </div>
@@ -753,10 +753,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(237, 123, 47);"
                 />
               </div>
@@ -765,10 +765,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(211, 90, 33);"
                 />
               </div>
@@ -777,10 +777,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(186, 67, 27);"
                 />
               </div>
@@ -789,10 +789,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(158, 54, 16);"
                 />
               </div>
@@ -801,10 +801,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(132, 43, 11);"
                 />
               </div>
@@ -813,10 +813,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(90, 25, 7);"
                 />
               </div>
@@ -825,10 +825,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(232, 248, 242);"
                 />
               </div>
@@ -837,10 +837,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(188, 235, 220);"
                 />
               </div>
@@ -849,10 +849,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(133, 219, 190);"
                 />
               </div>
@@ -861,10 +861,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(72, 199, 156);"
                 />
               </div>
@@ -873,10 +873,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(0, 168, 112);"
                 />
               </div>
@@ -885,10 +885,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(7, 141, 92);"
                 />
               </div>
@@ -897,10 +897,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(6, 121, 69);"
                 />
               </div>
@@ -909,10 +909,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(5, 99, 52);"
                 />
               </div>
@@ -921,10 +921,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(4, 79, 42);"
                 />
               </div>
@@ -933,10 +933,10 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(3, 48, 23);"
                 />
               </div>
@@ -1219,10 +1219,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(236, 242, 254);"
                 />
               </div>
@@ -1231,10 +1231,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(212, 227, 252);"
                 />
               </div>
@@ -1243,10 +1243,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(187, 211, 251);"
                 />
               </div>
@@ -1255,10 +1255,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(150, 187, 248);"
                 />
               </div>
@@ -1267,10 +1267,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(105, 158, 245);"
                 />
               </div>
@@ -1279,10 +1279,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(71, 135, 240);"
                 />
               </div>
@@ -1291,10 +1291,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(38, 111, 232);"
                 />
               </div>
@@ -1303,10 +1303,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(0, 82, 217);"
                 />
               </div>
@@ -1315,10 +1315,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(0, 52, 181);"
                 />
               </div>
@@ -1327,10 +1327,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(0, 31, 151);"
                 />
               </div>
@@ -1339,10 +1339,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(253, 236, 238);"
                 />
               </div>
@@ -1351,10 +1351,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(249, 215, 217);"
                 />
               </div>
@@ -1363,10 +1363,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(248, 185, 190);"
                 />
               </div>
@@ -1375,10 +1375,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(247, 141, 148);"
                 />
               </div>
@@ -1387,10 +1387,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(243, 109, 120);"
                 />
               </div>
@@ -1399,10 +1399,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(227, 77, 89);"
                 />
               </div>
@@ -1411,10 +1411,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(201, 53, 63);"
                 />
               </div>
@@ -1423,10 +1423,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(177, 31, 38);"
                 />
               </div>
@@ -1435,10 +1435,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(149, 17, 20);"
                 />
               </div>
@@ -1447,10 +1447,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(104, 5, 6);"
                 />
               </div>
@@ -1459,10 +1459,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(254, 243, 230);"
                 />
               </div>
@@ -1471,10 +1471,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(249, 224, 199);"
                 />
               </div>
@@ -1483,10 +1483,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(247, 199, 151);"
                 />
               </div>
@@ -1495,10 +1495,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(242, 153, 95);"
                 />
               </div>
@@ -1507,10 +1507,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(237, 123, 47);"
                 />
               </div>
@@ -1519,10 +1519,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(211, 90, 33);"
                 />
               </div>
@@ -1531,10 +1531,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(186, 67, 27);"
                 />
               </div>
@@ -1543,10 +1543,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(158, 54, 16);"
                 />
               </div>
@@ -1555,10 +1555,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(132, 43, 11);"
                 />
               </div>
@@ -1567,10 +1567,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(90, 25, 7);"
                 />
               </div>
@@ -1579,10 +1579,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(232, 248, 242);"
                 />
               </div>
@@ -1591,10 +1591,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(188, 235, 220);"
                 />
               </div>
@@ -1603,10 +1603,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(133, 219, 190);"
                 />
               </div>
@@ -1615,10 +1615,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(72, 199, 156);"
                 />
               </div>
@@ -1627,10 +1627,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(0, 168, 112);"
                 />
               </div>
@@ -1639,10 +1639,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(7, 141, 92);"
                 />
               </div>
@@ -1651,10 +1651,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(6, 121, 69);"
                 />
               </div>
@@ -1663,10 +1663,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(5, 99, 52);"
                 />
               </div>
@@ -1675,10 +1675,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(4, 79, 42);"
                 />
               </div>
@@ -1687,10 +1687,10 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(3, 48, 23);"
                 />
               </div>
@@ -1987,10 +1987,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item t-is-active"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: red;"
                   />
                 </div>
@@ -1999,10 +1999,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: green;"
                   />
                 </div>
@@ -2011,10 +2011,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: yellow;"
                   />
                 </div>
@@ -2023,10 +2023,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: blue;"
                   />
                 </div>
@@ -2035,10 +2035,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: purple;"
                   />
                 </div>
@@ -2047,10 +2047,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                   />
                 </div>
               </li>
@@ -2058,10 +2058,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                   />
                 </div>
               </li>
@@ -2069,10 +2069,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                   />
                 </div>
               </li>
@@ -2095,10 +2095,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(236, 242, 254);"
                   />
                 </div>
@@ -2107,10 +2107,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(212, 227, 252);"
                   />
                 </div>
@@ -2119,10 +2119,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(187, 211, 251);"
                   />
                 </div>
@@ -2131,10 +2131,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(150, 187, 248);"
                   />
                 </div>
@@ -2143,10 +2143,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(105, 158, 245);"
                   />
                 </div>
@@ -2155,10 +2155,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(71, 135, 240);"
                   />
                 </div>
@@ -2167,10 +2167,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(38, 111, 232);"
                   />
                 </div>
@@ -2179,10 +2179,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(0, 82, 217);"
                   />
                 </div>
@@ -2191,10 +2191,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(0, 52, 181);"
                   />
                 </div>
@@ -2203,10 +2203,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(0, 31, 151);"
                   />
                 </div>
@@ -2215,10 +2215,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(253, 236, 238);"
                   />
                 </div>
@@ -2227,10 +2227,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(249, 215, 217);"
                   />
                 </div>
@@ -2239,10 +2239,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(248, 185, 190);"
                   />
                 </div>
@@ -2251,10 +2251,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(247, 141, 148);"
                   />
                 </div>
@@ -2263,10 +2263,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(243, 109, 120);"
                   />
                 </div>
@@ -2275,10 +2275,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(227, 77, 89);"
                   />
                 </div>
@@ -2287,10 +2287,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(201, 53, 63);"
                   />
                 </div>
@@ -2299,10 +2299,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(177, 31, 38);"
                   />
                 </div>
@@ -2311,10 +2311,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(149, 17, 20);"
                   />
                 </div>
@@ -2323,10 +2323,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(104, 5, 6);"
                   />
                 </div>
@@ -2335,10 +2335,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(254, 243, 230);"
                   />
                 </div>
@@ -2347,10 +2347,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(249, 224, 199);"
                   />
                 </div>
@@ -2359,10 +2359,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(247, 199, 151);"
                   />
                 </div>
@@ -2371,10 +2371,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(242, 153, 95);"
                   />
                 </div>
@@ -2383,10 +2383,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(237, 123, 47);"
                   />
                 </div>
@@ -2395,10 +2395,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(211, 90, 33);"
                   />
                 </div>
@@ -2407,10 +2407,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(186, 67, 27);"
                   />
                 </div>
@@ -2419,10 +2419,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(158, 54, 16);"
                   />
                 </div>
@@ -2431,10 +2431,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(132, 43, 11);"
                   />
                 </div>
@@ -2443,10 +2443,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(90, 25, 7);"
                   />
                 </div>
@@ -2455,10 +2455,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(232, 248, 242);"
                   />
                 </div>
@@ -2467,10 +2467,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(188, 235, 220);"
                   />
                 </div>
@@ -2479,10 +2479,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(133, 219, 190);"
                   />
                 </div>
@@ -2491,10 +2491,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(72, 199, 156);"
                   />
                 </div>
@@ -2503,10 +2503,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(0, 168, 112);"
                   />
                 </div>
@@ -2515,10 +2515,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(7, 141, 92);"
                   />
                 </div>
@@ -2527,10 +2527,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(6, 121, 69);"
                   />
                 </div>
@@ -2539,10 +2539,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(5, 99, 52);"
                   />
                 </div>
@@ -2551,10 +2551,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(4, 79, 42);"
                   />
                 </div>
@@ -2563,10 +2563,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(3, 48, 23);"
                   />
                 </div>
@@ -2813,10 +2813,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(236, 242, 254);"
                   />
                 </div>
@@ -2825,10 +2825,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(212, 227, 252);"
                   />
                 </div>
@@ -2837,10 +2837,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(187, 211, 251);"
                   />
                 </div>
@@ -2849,10 +2849,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(150, 187, 248);"
                   />
                 </div>
@@ -2861,10 +2861,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(105, 158, 245);"
                   />
                 </div>
@@ -2873,10 +2873,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(71, 135, 240);"
                   />
                 </div>
@@ -2885,10 +2885,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(38, 111, 232);"
                   />
                 </div>
@@ -2897,10 +2897,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(0, 82, 217);"
                   />
                 </div>
@@ -2909,10 +2909,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(0, 52, 181);"
                   />
                 </div>
@@ -2921,10 +2921,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(0, 31, 151);"
                   />
                 </div>
@@ -2933,10 +2933,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(253, 236, 238);"
                   />
                 </div>
@@ -2945,10 +2945,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(249, 215, 217);"
                   />
                 </div>
@@ -2957,10 +2957,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(248, 185, 190);"
                   />
                 </div>
@@ -2969,10 +2969,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(247, 141, 148);"
                   />
                 </div>
@@ -2981,10 +2981,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(243, 109, 120);"
                   />
                 </div>
@@ -2993,10 +2993,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(227, 77, 89);"
                   />
                 </div>
@@ -3005,10 +3005,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(201, 53, 63);"
                   />
                 </div>
@@ -3017,10 +3017,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(177, 31, 38);"
                   />
                 </div>
@@ -3029,10 +3029,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(149, 17, 20);"
                   />
                 </div>
@@ -3041,10 +3041,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(104, 5, 6);"
                   />
                 </div>
@@ -3053,10 +3053,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(254, 243, 230);"
                   />
                 </div>
@@ -3065,10 +3065,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(249, 224, 199);"
                   />
                 </div>
@@ -3077,10 +3077,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(247, 199, 151);"
                   />
                 </div>
@@ -3089,10 +3089,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(242, 153, 95);"
                   />
                 </div>
@@ -3101,10 +3101,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(237, 123, 47);"
                   />
                 </div>
@@ -3113,10 +3113,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(211, 90, 33);"
                   />
                 </div>
@@ -3125,10 +3125,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(186, 67, 27);"
                   />
                 </div>
@@ -3137,10 +3137,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(158, 54, 16);"
                   />
                 </div>
@@ -3149,10 +3149,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(132, 43, 11);"
                   />
                 </div>
@@ -3161,10 +3161,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(90, 25, 7);"
                   />
                 </div>
@@ -3173,10 +3173,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(232, 248, 242);"
                   />
                 </div>
@@ -3185,10 +3185,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(188, 235, 220);"
                   />
                 </div>
@@ -3197,10 +3197,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(133, 219, 190);"
                   />
                 </div>
@@ -3209,10 +3209,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(72, 199, 156);"
                   />
                 </div>
@@ -3221,10 +3221,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(0, 168, 112);"
                   />
                 </div>
@@ -3233,10 +3233,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(7, 141, 92);"
                   />
                 </div>
@@ -3245,10 +3245,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(6, 121, 69);"
                   />
                 </div>
@@ -3257,10 +3257,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(5, 99, 52);"
                   />
                 </div>
@@ -3269,10 +3269,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(4, 79, 42);"
                   />
                 </div>
@@ -3281,10 +3281,10 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: rgb(3, 48, 23);"
                   />
                 </div>
@@ -3619,10 +3619,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(236, 242, 254);"
                 />
               </div>
@@ -3631,10 +3631,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(212, 227, 252);"
                 />
               </div>
@@ -3643,10 +3643,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(187, 211, 251);"
                 />
               </div>
@@ -3655,10 +3655,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(150, 187, 248);"
                 />
               </div>
@@ -3667,10 +3667,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(105, 158, 245);"
                 />
               </div>
@@ -3679,10 +3679,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(71, 135, 240);"
                 />
               </div>
@@ -3691,10 +3691,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(38, 111, 232);"
                 />
               </div>
@@ -3703,10 +3703,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(0, 82, 217);"
                 />
               </div>
@@ -3715,10 +3715,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(0, 52, 181);"
                 />
               </div>
@@ -3727,10 +3727,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(0, 31, 151);"
                 />
               </div>
@@ -3739,10 +3739,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(253, 236, 238);"
                 />
               </div>
@@ -3751,10 +3751,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(249, 215, 217);"
                 />
               </div>
@@ -3763,10 +3763,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(248, 185, 190);"
                 />
               </div>
@@ -3775,10 +3775,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(247, 141, 148);"
                 />
               </div>
@@ -3787,10 +3787,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(243, 109, 120);"
                 />
               </div>
@@ -3799,10 +3799,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(227, 77, 89);"
                 />
               </div>
@@ -3811,10 +3811,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(201, 53, 63);"
                 />
               </div>
@@ -3823,10 +3823,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(177, 31, 38);"
                 />
               </div>
@@ -3835,10 +3835,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(149, 17, 20);"
                 />
               </div>
@@ -3847,10 +3847,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(104, 5, 6);"
                 />
               </div>
@@ -3859,10 +3859,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(254, 243, 230);"
                 />
               </div>
@@ -3871,10 +3871,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(249, 224, 199);"
                 />
               </div>
@@ -3883,10 +3883,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(247, 199, 151);"
                 />
               </div>
@@ -3895,10 +3895,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(242, 153, 95);"
                 />
               </div>
@@ -3907,10 +3907,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(237, 123, 47);"
                 />
               </div>
@@ -3919,10 +3919,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(211, 90, 33);"
                 />
               </div>
@@ -3931,10 +3931,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(186, 67, 27);"
                 />
               </div>
@@ -3943,10 +3943,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(158, 54, 16);"
                 />
               </div>
@@ -3955,10 +3955,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(132, 43, 11);"
                 />
               </div>
@@ -3967,10 +3967,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(90, 25, 7);"
                 />
               </div>
@@ -3979,10 +3979,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(232, 248, 242);"
                 />
               </div>
@@ -3991,10 +3991,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(188, 235, 220);"
                 />
               </div>
@@ -4003,10 +4003,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(133, 219, 190);"
                 />
               </div>
@@ -4015,10 +4015,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(72, 199, 156);"
                 />
               </div>
@@ -4027,10 +4027,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(0, 168, 112);"
                 />
               </div>
@@ -4039,10 +4039,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(7, 141, 92);"
                 />
               </div>
@@ -4051,10 +4051,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(6, 121, 69);"
                 />
               </div>
@@ -4063,10 +4063,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(5, 99, 52);"
                 />
               </div>
@@ -4075,10 +4075,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(4, 79, 42);"
                 />
               </div>
@@ -4087,10 +4087,10 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-color-picker__swatches--item"
             >
               <div
-                class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                class="t-color-picker__swatches--color t-color-picker--bg-alpha"
               >
                 <span
-                  class="t-color-picker__swatches--item__inner"
+                  class="t-color-picker__swatches--inner"
                   style="background: rgb(3, 48, 23);"
                 />
               </div>
@@ -4378,10 +4378,10 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: red;"
                   />
                 </div>
@@ -4390,10 +4390,10 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: green;"
                   />
                 </div>
@@ -4402,10 +4402,10 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: yellow;"
                   />
                 </div>
@@ -4414,10 +4414,10 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: blue;"
                   />
                 </div>
@@ -4426,10 +4426,10 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                 class="t-color-picker__swatches--item"
               >
                 <div
-                  class="t-color-picker__swatches--item__color t-color-picker--bg-alpha"
+                  class="t-color-picker__swatches--color t-color-picker--bg-alpha"
                 >
                   <span
-                    class="t-color-picker__swatches--item__inner"
+                    class="t-color-picker__swatches--inner"
                     style="background: purple;"
                   />
                 </div>
