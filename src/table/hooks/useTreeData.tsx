@@ -28,6 +28,13 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     childrenKey: props.tree?.childrenKey || 'children',
   }));
 
+  const checkedColumn = computed(() => columns.value.find((col) => col.colKey === 'row-select'));
+
+  watch(checkedColumn, (column) => {
+    if (!store.value) return;
+    store.value.updateDisabledState(dataSource.value, column, rowDataKeys.value);
+  });
+
   function getFoldIcon(h: CreateElement) {
     const params = { type: 'fold' };
     const defaultFoldIcon = t(global.value.treeExpandAndFoldIcon, h, params) || <MinusRectangleIcon />;
@@ -95,19 +102,19 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
    * 组件实例方法，展开或收起某一行
    * @param p 行数据
    */
-  function toggleExpandData(p: { row: TableRowData; rowIndex: number; trigger?: 'inner' }) {
+  function toggleExpandData(p: { row: TableRowData; rowIndex: number }, trigger?: 'expand-fold-icon') {
     dataSource.value = store.value.toggleExpandData(p, dataSource.value, rowDataKeys.value);
-    if (p?.trigger === 'inner') {
-      const rowValue = get(p.row, rowDataKeys.value.rowKey);
-      const params = {
-        row: p.row,
-        rowIndex: p.rowIndex,
-        rowState: store.value?.treeDataMap?.get(rowValue),
-      };
-      props.onTreeExpandChange?.(params);
-      // Vue3 ignore next line
-      context.emit('tree-expand-change', params);
-    }
+    const rowValue = get(p.row, rowDataKeys.value.rowKey);
+    const rowState = store.value?.treeDataMap?.get(rowValue);
+    const params = {
+      row: p.row,
+      rowIndex: p.rowIndex,
+      rowState,
+      trigger,
+    };
+    props.onTreeExpandChange?.(params);
+    // Vue3 ignore next line
+    context.emit('tree-expand-change', params);
   }
 
   function getTreeNodeColumnCol() {
@@ -139,7 +146,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
         return (
           <div class={[tableTreeClasses.col, classes]} style={colStyle}>
             {!!childrenNodes.length && (
-              <span class={tableTreeClasses.icon} onClick={() => toggleExpandData({ ...p, trigger: 'inner' })}>
+              <span class={tableTreeClasses.icon} onClick={() => toggleExpandData(p, 'expand-fold-icon')}>
                 {iconNode}
               </span>
             )}
