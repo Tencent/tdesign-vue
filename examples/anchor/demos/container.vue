@@ -1,6 +1,6 @@
 <template>
   <div class="anchor-demo anchor-container-demo">
-    <t-anchor container="#anchor-container">
+    <t-anchor container="#anchor-container" @click="handleClick">
       <t-anchor-item href="#content-1" title="content-1"></t-anchor-item>
       <t-anchor-item href="#content-2" title="content-2"></t-anchor-item>
       <t-anchor-item href="#content-3" title="content-3"></t-anchor-item>
@@ -16,10 +16,16 @@
   </div>
 </template>
 <script>
-export default {};
-
+export default {
+  methods: {
+    handleClick({ e, href, title }) {
+      e.preventDefault();
+      console.log('click', href, title);
+    },
+  },
+};
 </script>
-<style lang='less' scoped>
+<style lang="less" scoped>
 .anchor-container-demo {
   display: flex;
 }
@@ -33,19 +39,19 @@ export default {};
     line-height: 100px;
   }
   .anchor-content-1 {
-    background: #ECF2FE;
+    background: #ecf2fe;
   }
   .anchor-content-2 {
-    background: #D4E3FC;
+    background: #d4e3fc;
   }
   .anchor-content-3 {
-    background: #BBD3FB;
+    background: #bbd3fb;
   }
   .anchor-content-4 {
-    background: #96BBF8;
+    background: #96bbf8;
   }
   .anchor-content-5 {
-    background: #699EF5;
+    background: #699ef5;
   }
 }
 </style>

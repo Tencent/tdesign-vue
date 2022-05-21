@@ -8348,7 +8348,7 @@ exports[`Calendar Calendar valueVue demo works fine 1`] = `
     class="t-form t-form-inline"
   >
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -8383,14 +8383,11 @@ exports[`Calendar Calendar valueVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -8425,9 +8422,6 @@ exports[`Calendar Calendar valueVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
   </form>

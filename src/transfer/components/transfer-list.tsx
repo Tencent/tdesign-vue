@@ -145,6 +145,14 @@ export default mixins(keepAnimationMixins).extend({
       return getLeafCount(this.dataSource);
     },
   },
+  watch: {
+    totalCount(val) {
+      if (val <= (this.currentPage - 1) * this.pageSize) {
+        const lastPage = Math.ceil(val / this.pageSize);
+        this.defaultCurrent = lastPage;
+      }
+    },
+  },
   methods: {
     handlePaginationChange(pageInfo: PageInfo): void {
       this.$emit('pageChange', pageInfo);

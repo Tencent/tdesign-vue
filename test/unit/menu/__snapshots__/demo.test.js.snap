@@ -34,14 +34,13 @@ exports[`Menu Menu closableSideVue demo works fine 1`] = `
           class="t-menu__content"
         >
           
-    仪表盘1
+    仪表盘
   
         </span>
       </li>
        
       <li
         class="t-submenu"
-        mode="popup"
       >
         <div
           class="t-menu__item"
@@ -64,7 +63,7 @@ exports[`Menu Menu closableSideVue demo works fine 1`] = `
             class="t-fake-arrow"
             fill="none"
             height="16"
-            style="transform: rotate(0deg);"
+            style="transform: rotate(-90deg);"
             viewBox="0 0 16 16"
             width="16"
             xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +150,7 @@ exports[`Menu Menu closableSideVue demo works fine 1`] = `
           class="t-menu__content"
         >
           
-    资源编辑
+    资源区
   
         </span>
       </li>
@@ -2743,66 +2742,181 @@ exports[`Menu Menu popupSideVue demo works fine 1`] = `
 
 exports[`Menu Menu sideMenuWidthVue demo works fine 1`] = `
 <div
-  class="t-default-menu t-menu--light"
-  height="550px"
-  style="height: 100%; width: 200px;"
+  class="wrapper"
 >
   <div
-    class="t-default-menu__inner"
+    class="t-default-menu t-menu--light"
+    height="550px"
+    style="height: 100%; width: 200px; margin-right: 20px;"
   >
     <div
-      class="t-menu__logo"
+      class="t-default-menu__inner"
     >
-      <img
-        alt="logo"
-        src="https://www.tencent.com/img/index/menu_logo_hover.png"
-        width="136"
-      />
+      <div
+        class="t-menu__logo"
+      >
+        <img
+          alt="logo"
+          src="https://www.tencent.com/img/index/menu_logo_hover.png"
+          width="136"
+        />
+      </div>
+      <ul
+        class="t-menu t-menu--scroll narrow-scrollbar"
+      >
+         
+        <li
+          class="t-menu__item t-menu__item--plain"
+        >
+          <span
+            class="t-menu__content"
+          >
+            仪表盘
+          </span>
+        </li>
+         
+        <li
+          class="t-menu__item t-is-active t-menu__item--plain"
+        >
+          <span
+            class="t-menu__content"
+          >
+            信息区
+          </span>
+        </li>
+         
+        <li
+          class="t-menu__item t-menu__item--plain"
+        >
+          <span
+            class="t-menu__content"
+          >
+            视频区
+          </span>
+        </li>
+         
+        <li
+          class="t-menu__item t-menu__item--plain"
+        >
+          <span
+            class="t-menu__content"
+          >
+            资源区
+          </span>
+        </li>
+      </ul>
     </div>
-    <ul
-      class="t-menu t-menu--scroll narrow-scrollbar"
+  </div>
+   
+  <div
+    class="t-default-menu t-menu--light"
+    height="550px"
+    style="height: 100%; width: 300px;"
+  >
+    <div
+      class="t-default-menu__inner"
     >
-       
-      <li
-        class="t-menu__item t-menu__item--plain"
+      <div
+        class="t-menu__logo"
       >
-        <span
-          class="t-menu__content"
-        >
-          菜单内容
-        </span>
-      </li>
-       
-      <li
-        class="t-menu__item t-is-active t-menu__item--plain"
+        <img
+          alt="logo"
+          src="https://www.tencent.com/img/index/menu_logo_hover.png"
+          width="136"
+        />
+      </div>
+      <ul
+        class="t-menu t-menu--scroll narrow-scrollbar"
       >
-        <span
-          class="t-menu__content"
+         
+        <li
+          class="t-menu__item"
         >
-          菜单内容
-        </span>
-      </li>
-       
-      <li
-        class="t-menu__item t-menu__item--plain"
+          <svg
+            class="t-icon t-icon-dashboard"
+          >
+            <use
+              href="#t-icon-dashboard"
+            />
+          </svg>
+          <span
+            class="t-menu__content"
+          >
+            
+      仪表盘
+    
+          </span>
+        </li>
+         
+        <li
+          class="t-menu__item"
+        >
+          <svg
+            class="t-icon t-icon-mail"
+          >
+            <use
+              href="#t-icon-mail"
+            />
+          </svg>
+          <span
+            class="t-menu__content"
+          >
+            
+      信息区
+    
+          </span>
+        </li>
+         
+        <li
+          class="t-menu__item"
+        >
+          <svg
+            class="t-icon t-icon-play-circle"
+          >
+            <use
+              href="#t-icon-play-circle"
+            />
+          </svg>
+          <span
+            class="t-menu__content"
+          >
+            
+      视频区
+    
+          </span>
+        </li>
+         
+        <li
+          class="t-menu__item t-is-disabled"
+        >
+          <svg
+            class="t-icon t-icon-edit-1"
+          >
+            <use
+              href="#t-icon-edit-1"
+            />
+          </svg>
+          <span
+            class="t-menu__content"
+          >
+            
+      资源区
+    
+          </span>
+        </li>
+      </ul>
+      <div
+        class="t-menu__operations"
       >
-        <span
-          class="t-menu__content"
+        <svg
+          class="t-menu__operations-icon t-icon t-icon-view-list"
         >
-          菜单内容
-        </span>
-      </li>
-       
-      <li
-        class="t-menu__item t-menu__item--plain"
-      >
-        <span
-          class="t-menu__content"
-        >
-          菜单内容
-        </span>
-      </li>
-    </ul>
+          <use
+            href="#t-icon-view-list"
+          />
+        </svg>
+      </div>
+    </div>
   </div>
 </div>
 `;
