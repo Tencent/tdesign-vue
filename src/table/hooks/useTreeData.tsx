@@ -28,6 +28,13 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     childrenKey: props.tree?.childrenKey || 'children',
   }));
 
+  const checkedColumn = computed(() => columns.value.find((col) => col.colKey === 'row-select'));
+
+  watch(checkedColumn, (column) => {
+    if (!store.value) return;
+    store.value.updateDisabledState(dataSource.value, column, rowDataKeys.value);
+  });
+
   function getFoldIcon(h: CreateElement) {
     const params = { type: 'fold' };
     const defaultFoldIcon = t(global.value.treeExpandAndFoldIcon, h, params) || <MinusRectangleIcon />;
