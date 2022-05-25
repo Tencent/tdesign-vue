@@ -34,6 +34,7 @@ export default defineComponent({
   props: { ...props },
   setup(props: TdOptionGroupProps, context: SetupContext) {
     const { divider } = toRefs(props);
+    const ulRef = ref<HTMLElement>(null);
     const visible = ref(true);
     const tSelect: any = inject('tSelect');
     const classes = computed<ClassName>(() => [
@@ -44,16 +45,19 @@ export default defineComponent({
       },
     ]);
     const childrenChange = () => {
-      visible.value = context.root.$children
-        && Array.isArray(context.root.$children)
-        && context.root.$children.some((option) => (option as any).show === true);
+      visible.value = [...(ulRef.value?.children || [])]?.some((liItem) => (liItem as any).__vue__.show === true);
     };
+    onMounted(() => {
+      // 首次载入的时候也更新一次
+      childrenChange();
+    });
     watch(tSelect.displayOptions, () => {
       childrenChange();
     });
     return {
       visible,
       classes,
+      ulRef,
     };
   },
   render() {
@@ -62,7 +66,7 @@ export default defineComponent({
     return (
       <li v-show={this.visible} class={this.classes}>
         <div class={`${name}__header`}>{this.label}</div>
-        <ul>{children}</ul>
+        <ul ref="ulRef">{children}</ul>
       </li>
     );
   },

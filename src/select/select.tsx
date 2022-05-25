@@ -17,6 +17,7 @@ import debounce from 'lodash/debounce';
 import get from 'lodash/get';
 import set from 'lodash/set';
 import { CloseCircleFilledIcon } from 'tdesign-icons-vue';
+import useDefaultValue from '../hooks/useDefaultValue';
 import { useTNodeJSX } from '../hooks/tnode';
 import { useConfig } from '../config-provider/useConfig';
 import {
@@ -62,11 +63,6 @@ export default defineComponent({
     FakeArrow,
     SelectPanel,
   },
-  // provide(): any {
-  //   return {
-  //     tSelect: this,
-  //   };
-  // },
   setup(props: TdSelectProps, context: SetupContext) {
     const instance = getCurrentInstance();
     const { t, global } = useConfig('select');
@@ -95,12 +91,19 @@ export default defineComponent({
       empty,
       loadingText,
       onSearch,
-      popupVisible,
+      inputValue,
+      minCollapsedNum,
     } = toRefs(props);
     const formDisabled = ref();
     const isHover = ref(false);
-    const visible = ref(false);
-    const searchInput = ref('');
+    const visible = ref(props.popupVisible ?? false);
+    const [tInputValue, setTInputValue] = useDefaultValue(
+      inputValue,
+      props.defaultInputValue,
+      props.onInputChange,
+      'inputValue',
+      'input-change',
+    );
     const showCreateOption = ref(false);
     const hasSlotOptions = ref(false);
     const defaultProps = ref({
@@ -118,6 +121,7 @@ export default defineComponent({
     const popupOpenTime = ref(250);
     const checkScroll = ref(true);
     const isInit = ref(false);
+    const selectInputRef = ref<HTMLElement>(null);
 
     const tDisabled = computed(() => formDisabled.value || disabled.value);
     const classes = computed(() => [
@@ -237,6 +241,13 @@ export default defineComponent({
       const firstOption = options.value?.[0];
       return !!(firstOption && 'group' in firstOption && 'children' in firstOption);
     });
+    const renderCollapsedItems = () => renderTNode('collapsedItems', {
+      params: {
+        value: selectedMultiple.value,
+        collapsedSelectedItems: selectedMultiple.value.slice(minCollapsedNum.value),
+        count: selectedMultiple.value.length - minCollapsedNum.value,
+      },
+    });
     const filterPlaceholder = computed(() => {
       if (multiple.value && Array.isArray(value.value) && value.value.length) {
         return '';
@@ -266,13 +277,14 @@ export default defineComponent({
     const showLoading = computed(() => loading.value && !tDisabled.value);
     const filterOptions = computed(() => {
       // filter优先级 filter方法>仅filterable
+      const inputText = tInputValue.value?.toString() || '';
       if (isFunction(props.filter)) {
-        return realOptions.value.filter((option) => props.filter(searchInput.value, option));
+        return realOptions.value.filter((option) => props.filter(inputText, option));
       }
       if (filterable.value) {
         // 仅有filterable属性时，默认不区分大小写过滤label
         return realOptions.value.filter(
-          (option) => option[realLabel.value].toString().toLowerCase().indexOf(searchInput.value.toString().toLowerCase()) !== -1,
+          (option) => option[realLabel.value].toString().toLowerCase().indexOf(inputText.toLowerCase()) !== -1,
         );
       }
       return [];
@@ -283,7 +295,7 @@ export default defineComponent({
         return realOptions.value;
       }
       if (canFilter.value && !creatable.value) {
-        if (searchInput.value === '') {
+        if (tInputValue.value === '') {
           return realOptions.value;
         }
         return filterOptions.value;
@@ -304,7 +316,7 @@ export default defineComponent({
         }
         return realOptions.value;
       }
-      const willCreateOption = [{ value: searchInput.value, label: searchInput.value }] as Array<TdOptionProps>;
+      const willCreateOption = [{ value: tInputValue.value, label: tInputValue.value }] as Array<TdOptionProps>;
       if (isFunction(props.filter) || filterable.value) {
         return willCreateOption.concat(filterOptions.value);
       }
@@ -312,7 +324,9 @@ export default defineComponent({
     });
 
     const doFocus = () => {
-      const input = context.refs.input as HTMLElement;
+      const input = (selectInputRef.value as any).$refs[multiple.value ? 'tagInputRef' : 'inputRef'].$el.querySelector(
+        'input',
+      );
       input?.focus();
       focusing.value = true;
     };
@@ -325,10 +339,10 @@ export default defineComponent({
     });
     // const debounceOnRemote = debounce((this: any) => {
     const debounceOnRemote = debounce(() => {
-      instance.emit('search', searchInput.value, context);
-      // emitEvent<Parameters<TdSelectProps['onSearch']>>(this, 'search', searchInput.value);
+      instance.emit('search', tInputValue.value, context);
+      // emitEvent<Parameters<TdSelectProps['onSearch']>>(this, 'search', tInputValue.value);
     }, 300);
-    watch(searchInput, (val) => {
+    watch(tInputValue, (val) => {
       if (!val && !visible.value) return;
       if (isFunction(props.onSearch) || context.listeners.search) {
         debounceOnRemote();
@@ -464,7 +478,7 @@ export default defineComponent({
         case 'Enter':
           if (hoverIndex.value === -1) return;
           if (showCreateOption.value && hoverIndex.value === 0) {
-            createOption(searchInput.value);
+            createOption(tInputValue.value.toString());
           }
           hoverOptions.value[hoverIndex.value]
             && onOptionClick(hoverOptions.value[hoverIndex.value][realValue.value], e);
@@ -474,9 +488,9 @@ export default defineComponent({
           visible.value = false;
           instance.emit('visible-change', false, context);
           // emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', false);
-          searchInput.value = '';
+          setTInputValue('');
           if (focusing.value) {
-            blur(searchInput.value, { e });
+            blur(tInputValue.value.toString(), { e });
           }
           break;
       }
@@ -499,8 +513,8 @@ export default defineComponent({
       // emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', val);
       instance.emit('visible-change', val, context);
       visible.value = val;
-      if (!val) {
-        searchInput.value = '';
+      if (val) {
+        setTInputValue('');
       }
       // val && monitorWidth();
       val && canFilter.value && doFocus();
@@ -531,11 +545,11 @@ export default defineComponent({
         }
       }
       if (!multiple.value) {
-        searchInput.value = '';
+        setTInputValue('');
         hideMenu();
       } else {
         if (!reserveKeyword.value) {
-          searchInput.value = '';
+          setTInputValue('');
         }
         canFilter.value && doFocus();
       }
@@ -558,6 +572,9 @@ export default defineComponent({
       visible.value = false;
       // emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', false);
       instance.emit('visible-change', false, context);
+    };
+    const handleTInputValueChange = (val: string) => {
+      setTInputValue(val);
     };
     const handleTagChange = (currentTags: SelectInputValue, context: SelectInputChangeContext) => {
       const { trigger, index, item } = context;
@@ -586,7 +603,7 @@ export default defineComponent({
         emitChange('');
       }
       focusing.value = false;
-      searchInput.value = '';
+      setTInputValue('');
       visible.value = false;
       // emitEvent<Parameters<TdSelectProps['onClear']>>(this, 'clear', { e });
       instance.emit('clear', { e }, context);
@@ -649,11 +666,11 @@ export default defineComponent({
     };
     const enter = (value: string, context: { e: KeyboardEvent }) => {
       // emitEvent<Parameters<TdSelectProps['onEnter']>>(this, 'enter', {
-      //   inputValue: searchInput,
+      //   inputValue: TInputValue,
       //   value: value,
       //   e: context?.e,
       // });
-      instance.emit('enter', { value, e: context?.e, inputValue: searchInput.value }, context);
+      instance.emit('enter', { value, e: context?.e, inputValue: tInputValue.value }, context);
     };
     const hoverEvent = (v: boolean) => {
       isHover.value = v;
@@ -786,7 +803,7 @@ export default defineComponent({
       size,
       creatable,
       isGroupOption,
-      searchInput,
+      tInputValue,
       canFilter,
       filterOptions,
       labelInValue,
@@ -799,12 +816,13 @@ export default defineComponent({
     });
 
     return {
+      selectInputRef,
       visible,
       // blur,
       realOptions,
       showCreateOption,
       renderValueDisplay,
-      // showFilter,
+      showFilter,
       tDisabled,
       // visible,
       // classes,
@@ -827,6 +845,7 @@ export default defineComponent({
       getPlaceholderText,
       visibleChange,
       // hoverEvent,
+      handleTInputValueChange,
       handleTagChange,
       removeTag,
       // selectedMultiple,
@@ -839,9 +858,10 @@ export default defineComponent({
       // selectedSingle,
       selectedValue,
       hasSlotOptions,
-      // searchInput,
+      tInputValue,
       isGroupOption,
       renderTNode,
+      renderCollapsedItems,
     };
   },
 
@@ -903,7 +923,7 @@ export default defineComponent({
     //     <div slot="content" class={`${name}__dropdown-inner`}>
     //       {renderTNodeJSX(this, 'panelTopContent')}
     //       <ul v-show={showCreateOption} class={[`${name}__create-option`, listName]}>
-    //         <t-option value={this.searchInput} label={this.searchInput} class={`${name}__create-option--special`} />
+    //         <t-option value={this.tInputValue} label={this.tInputValue} class={`${name}__create-option--special`} />
     //       </ul>
     //       {loading && <div class={this.tipsClass}>{loadingTextSlot}</div>}
     //       {!loading && !displayOptions.length && !showCreateOption && <div class={this.emptyClass}>{emptySlot}</div>}
@@ -938,7 +958,6 @@ export default defineComponent({
       autoWidth,
       bordered,
       readonly,
-      filterable,
       selectedValue,
       clearable,
       tDisabled,
@@ -956,13 +975,13 @@ export default defineComponent({
       size,
       // showPlaceholder,
       // multiple,
-      // showFilter,
+      showFilter,
       // filterPlaceholder,
       // realLabel,
       // visible,
       // minCollapsedNum,
       // collapsedItems,
-      // searchInput,
+      tInputValue,
       // showRightArrow,
       showLoading,
       loadingText,
@@ -980,23 +999,27 @@ export default defineComponent({
       visible,
       // popupVisible,
       // showClose,
+      handleTInputValueChange,
       handleTagChange,
+      renderCollapsedItems,
     } = this;
 
     const valueDisplay = this.renderValueDisplay(h);
     const placeholderText = this.getPlaceholderText();
     const prefixIcon = () => renderTNode('prefixIcon');
+    const collapsedItems = () => renderCollapsedItems();
     const { overlayClassName, ...restPopupProps } = popupProps || {};
 
     return (
       <div ref="select" class={`${name}__wrap`}>
         <SelectInput
-          // onPopupVisibleChange={visibleChange}
+          ref="selectInputRef"
           class={name}
           autoWidth={autoWidth}
           borderless={borderless || !bordered}
           readonly={readonly}
-          allowInput={multiple || filterable}
+          // allowInput={multiple || filterable}
+          allowInput={showFilter}
           multiple={multiple}
           value={selectedValue}
           valueDisplay={valueDisplay}
@@ -1005,7 +1028,7 @@ export default defineComponent({
           label={prefixIcon}
           suffixIcon={this.renderSuffixIcon}
           placeholder={placeholderText}
-          // inputValues={showPopup ? inputValue : ''} TODO
+          inputValue={tInputValue}
           tagInputProps={{
             ...tagInputProps,
           }}
@@ -1015,18 +1038,18 @@ export default defineComponent({
             ...inputProps,
           }}
           minCollapsedNum={minCollapsedNum}
-          // collapsedItems TODO
+          collapsedItems={collapsedItems}
+          // collapsedItems={collapsedItems ? () => collapsedItems : undefined}
           popupProps={{
             overlayClassName: [`${name}__dropdown`, ['narrow-scrollbar'], overlayClassName],
             ...restPopupProps,
           }}
           popupVisible={visible}
           on={{
+            'input-change': handleTInputValueChange,
             'popup-visible-change': visibleChange,
             'tag-change': handleTagChange,
           }}
-          // onTagChange={() => { }}
-          // popupVisible TODO
           // events todo
           {...selectInputProps}
         >
@@ -1095,7 +1118,7 @@ export default defineComponent({
       //       {showFilter && (
       //         <t-input
       //           ref="input"
-      //           v-model={searchInput}
+      //           v-model={tInputValue}
       //           size={size}
       //           placeholder={filterPlaceholder}
       //           disabled={tDisabled}

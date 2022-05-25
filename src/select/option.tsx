@@ -84,7 +84,7 @@ export default defineComponent({
         [`${prefix}-select-option__hover`]: hovering.value,
       },
     ]);
-    const isCreatedOption = computed(() => tSelect.creatable.value && value.value === tSelect.searchInput.value);
+    const isCreatedOption = computed(() => tSelect.creatable.value && value.value === tSelect.tInputValue.value);
     const show = computed(() => {
       /**
        * 此属性主要用于slots生成options时显示控制，直传options由select进行显示控制
@@ -93,7 +93,7 @@ export default defineComponent({
        */
       if (!tSelect) return false;
       if (isCreatedOption.value) return true;
-      if (tSelect.canFilter.value && tSelect.searchInput.value !== '') {
+      if (tSelect.canFilter.value && tSelect.tInputValue.value !== '') {
         return tSelect.filterOptions.value.some(
           (option: TdOptionProps) => get(option, tSelect.realValue.value) === value.value,
         );
