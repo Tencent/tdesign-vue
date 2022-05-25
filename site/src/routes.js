@@ -2,7 +2,6 @@ import config from '../site.config';
 import TdesignComponents from './components/page.vue';
 
 const { docs, enDocs } = config;
-console.log([...getDocsRoutes(docs), ...getDocsRoutes(enDocs)]);
 
 function getDocsRoutes(docs, type) {
   let docsRoutes = [];

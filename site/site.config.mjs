@@ -82,6 +82,7 @@ const docs = [
         name: 'divider',
         path: '/vue/components/divider',
         component: () => import('@/examples/divider/divider.md'),
+        componentEn: () => import('@/examples/divider/divider.en-US.md'),
       },
       {
         title: 'Icon 图标',
@@ -89,6 +90,7 @@ const docs = [
         name: 'icon',
         path: '/vue/components/icon',
         component: () => import('@/examples/icon/icon.md'),
+        componentEn: () => import('@/examples/icon/icon.en-US.md'),
       },
     ],
   },
@@ -103,6 +105,7 @@ const docs = [
         name: 'grid',
         path: '/vue/components/grid',
         component: () => import('@/examples/grid/grid.md'),
+        componentEn: () => import('@/examples/grid/grid.en-US.md'),
       },
       {
         title: 'Layout 布局',
@@ -110,6 +113,7 @@ const docs = [
         name: 'layout',
         path: '/vue/components/layout',
         component: () => import('@/examples/layout/layout.md'),
+        componentEn: () => import('@/examples/layout/layout.en-US.md'),
       },
     ],
   },
@@ -124,6 +128,7 @@ const docs = [
         name: 'affix',
         path: '/vue/components/affix',
         component: () => import('@/examples/affix/affix.md'),
+        componentEn: () => import('@/examples/affix/affix.en-US.md'),
       },
       {
         title: 'Anchor 锚点',
@@ -131,6 +136,7 @@ const docs = [
         name: 'anchor',
         path: '/vue/components/anchor',
         component: () => import('@/examples/anchor/anchor.md'),
+        componentEn: () => import('@/examples/anchor/anchor.en-US.md'),
       },
       {
         title: 'Breadcrumb 面包屑',
@@ -138,6 +144,7 @@ const docs = [
         name: 'breadcrumb',
         path: '/vue/components/breadcrumb',
         component: () => import('@/examples/breadcrumb/breadcrumb.md'),
+        componentEn: () => import('@/examples/breadcrumb/breadcrumb.en-US.md'),
       },
       {
         title: 'Dropdown 下拉菜单',
@@ -145,6 +152,7 @@ const docs = [
         name: 'dropdown',
         path: '/vue/components/dropdown',
         component: () => import('@/examples/dropdown/dropdown.md'),
+        componentEn: () => import('@/examples/dropdown/dropdown.en-US.md'),
       },
       {
         title: 'Menu 导航菜单',
@@ -152,6 +160,7 @@ const docs = [
         name: 'menu',
         path: '/vue/components/menu',
         component: () => import('@/examples/menu/menu.md'),
+        componentEn: () => import('@/examples/menu/menu.en-US.md'),
       },
       {
         title: 'Pagination 分页',
@@ -159,6 +168,7 @@ const docs = [
         name: 'pagination',
         path: '/vue/components/pagination',
         component: () => import('@/examples/pagination/pagination.md'),
+        componentEn: () => import('@/examples/pagination/pagination.en-US.md'),
       },
       {
         title: 'Steps 步骤条',
@@ -166,6 +176,7 @@ const docs = [
         name: 'steps',
         path: '/vue/components/steps',
         component: () => import('@/examples/steps/steps.md'),
+        componentEn: () => import('@/examples/steps/steps.en-US.md'),
       },
       {
         title: 'Tabs 选项卡',
@@ -173,6 +184,7 @@ const docs = [
         name: 'tabs',
         path: '/vue/components/tabs',
         component: () => import('@/examples/tabs/tabs.md'),
+        componentEn: () => import('@/examples/tabs/tabs.en-US.md'),
       },
     ],
   },
@@ -187,6 +199,7 @@ const docs = [
         name: 'cascader',
         path: '/vue/components/cascader',
         component: () => import('@/examples/cascader/cascader.md'),
+        componentEn: () => import('@/examples/cascader/cascader.en-US.md'),
       },
       {
         title: 'Checkbox 多选框',
@@ -194,6 +207,7 @@ const docs = [
         name: 'checkbox',
         path: '/vue/components/checkbox',
         component: () => import('@/examples/checkbox/checkbox.md'),
+        componentEn: () => import('@/examples/checkbox/checkbox.en-US.md'),
       },
       {
         title: 'DatePicker 日期选择器',
@@ -201,6 +215,7 @@ const docs = [
         name: 'date-picker',
         path: '/vue/components/date-picker',
         component: () => import('@/examples/date-picker/date-picker.md'),
+        componentEn: () => import('@/examples/date-picker/date-picker.en-US.md'),
       },
       {
         title: 'Form 表单',
@@ -208,6 +223,7 @@ const docs = [
         name: 'form',
         path: '/vue/components/form',
         component: () => import('@/examples/form/form.md'),
+        componentEn: () => import('@/examples/form/form.en-US.md'),
       },
       {
         title: 'Input 输入框',
@@ -215,6 +231,7 @@ const docs = [
         name: 'input',
         path: '/vue/components/input',
         component: () => import('@/examples/input/input.md'),
+        componentEn: () => import('@/examples/input/input.en-US.md'),
       },
       {
         title: 'InputNumber 数字输入框',
@@ -222,6 +239,7 @@ const docs = [
         name: 'input-number',
         path: '/vue/components/input-number',
         component: () => import('@/examples/input-number/input-number.md'),
+        componentEn: () => import('@/examples/input-number/input-number.en-US.md'),
       },
       {
         title: 'TagInput 标签输入框',
@@ -230,6 +248,7 @@ const docs = [
         docType: 'form',
         path: '/vue/components/tag-input',
         component: () => import('@/examples/tag-input/tag-input.md'),
+        componentEn: () => import('@/examples/tag-input/tag-input.en-US.md'),
       },
       {
         title: 'Radio 单选框',
@@ -237,6 +256,7 @@ const docs = [
         name: 'radio',
         path: '/vue/components/radio',
         component: () => import('@/examples/radio/radio.md'),
+        componentEn: () => import('@/examples/radio/radio.en-US.md'),
       },
       {
         title: 'Select 选择器',
@@ -244,6 +264,7 @@ const docs = [
         name: 'select',
         path: '/vue/components/select',
         component: () => import('@/examples/select/select.md'),
+        componentEn: () => import('@/examples/select/select.en-US.md'),
       },
       {
         title: 'SelectInput 筛选器输入框',
@@ -252,6 +273,7 @@ const docs = [
         docType: 'form',
         path: '/vue/components/select-input',
         component: () => import('@/examples/select-input/select-input.md'),
+        componentEn: () => import('@/examples/select-input/select-input.en-US.md'),
       },
       {
         title: 'Slider 滑块',
@@ -259,6 +281,7 @@ const docs = [
         name: 'slider',
         path: '/vue/components/slider',
         component: () => import('@/examples/slider/slider.md'),
+        componentEn: () => import('@/examples/slider/slider.en-US.md'),
       },
       {
         title: 'Switch 开关',
@@ -266,6 +289,7 @@ const docs = [
         name: 'switch',
         path: '/vue/components/switch',
         component: () => import('@/examples/switch/switch.md'),
+        componentEn: () => import('@/examples/switch/switch.en-US.md'),
       },
       {
         title: 'Textarea 多行文本框',
@@ -273,6 +297,7 @@ const docs = [
         name: 'textarea',
         path: '/vue/components/textarea',
         component: () => import('@/examples/textarea/textarea.md'),
+        componentEn: () => import('@/examples/textarea/textarea.en-US.md'),
       },
       {
         title: 'Transfer 穿梭框',
@@ -280,6 +305,7 @@ const docs = [
         name: 'transfer',
         path: '/vue/components/transfer',
         component: () => import('@/examples/transfer/transfer.md'),
+        componentEn: () => import('@/examples/transfer/transfer.en-US.md'),
       },
       {
         title: 'TimePicker 时间选择器',
@@ -287,6 +313,7 @@ const docs = [
         name: 'time-picker',
         path: '/vue/components/time-picker',
         component: () => import('@/examples/time-picker/time-picker.md'),
+        componentEn: () => import('@/examples/time-picker/time-picker.en-US.md'),
       },
       {
         title: 'TreeSelect 树选择',
@@ -294,6 +321,7 @@ const docs = [
         name: 'tree-select',
         path: '/vue/components/tree-select',
         component: () => import('@/examples/tree-select/tree-select.md'),
+        componentEn: () => import('@/examples/tree-select/tree-select.en-US.md'),
       },
       {
         title: 'Upload 上传',
@@ -301,6 +329,7 @@ const docs = [
         name: 'upload',
         path: '/vue/components/upload',
         component: () => import('@/examples/upload/upload.md'),
+        componentEn: () => import('@/examples/upload/upload.en-US.md'),
       },
     ],
   },
@@ -315,6 +344,7 @@ const docs = [
         name: 'avatar',
         path: '/vue/components/avatar',
         component: () => import('@/examples/avatar/avatar.md'),
+        componentEn: () => import('@/examples/avatar/avatar.en-US.md'),
       },
       {
         title: 'Badge 徽标',
@@ -322,6 +352,7 @@ const docs = [
         name: 'badge',
         path: '/vue/components/badge',
         component: () => import('@/examples/badge/badge.md'),
+        componentEn: () => import('@/examples/badge/badge.en-US.md'),
       },
       {
         title: 'Calendar 日历',
@@ -329,6 +360,7 @@ const docs = [
         name: 'calendar',
         path: '/vue/components/calendar',
         component: () => import('@/examples/calendar/calendar.md'),
+        componentEn: () => import('@/examples/calendar/calendar.en-US.md'),
       },
       {
         title: 'Card 卡片',
@@ -337,6 +369,7 @@ const docs = [
         docType: 'data',
         path: '/vue/components/card',
         component: () => import('@/examples/card/card.md'),
+        componentEn: () => import('@/examples/card/card.en-US.md'),
       },
       {
         title: 'Collapse 折叠面板',
@@ -344,7 +377,8 @@ const docs = [
         name: 'collapse',
         docType: 'data',
         path: '/vue/components/collapse',
-        component: () => import('@/examples/collapse/collapse.md')
+        component: () => import('@/examples/collapse/collapse.md'),
+        componentEn: () => import('@/examples/collapse/collapse.en-US.md')
       },
       {
         title: 'Comment 评论',
@@ -352,6 +386,7 @@ const docs = [
         name: 'comment',
         path: '/vue/components/comment',
         component: () => import('@/examples/comment/comment.md'),
+        componentEn: () => import('@/examples/comment/comment.en-US.md'),
       },
       {
         title: 'List 列表',
@@ -359,6 +394,7 @@ const docs = [
         name: 'list',
         path: '/vue/components/list',
         component: () => import('@/examples/list/list.md'),
+        componentEn: () => import('@/examples/list/list.en-US.md'),
       },
       {
         title: 'Loading 加载',
@@ -366,6 +402,7 @@ const docs = [
         name: 'loading',
         path: '/vue/components/loading',
         component: () => import('@/examples/loading/loading.md'),
+        componentEn: () => import('@/examples/loading/loading.en-US.md'),
       },
       {
         title: 'Progress 进度条',
@@ -373,6 +410,7 @@ const docs = [
         name: 'progress',
         path: '/vue/components/progress',
         component: () => import('@/examples/progress/progress.md'),
+        componentEn: () => import('@/examples/progress/progress.en-US.md'),
       },
       {
         title: 'Skeleton 骨架屏',
@@ -380,6 +418,7 @@ const docs = [
         name: 'skeleton',
         path: '/vue/components/skeleton',
         component: () => import('@/examples/skeleton/skeleton.md'),
+        componentEn: () => import('@/examples/skeleton/skeleton.en-US.md'),
       },
       {
         title: 'Swiper 轮播框',
@@ -387,6 +426,7 @@ const docs = [
         name: 'swiper',
         path: '/vue/components/swiper',
         component: () => import('@/examples/swiper/swiper.md'),
+        componentEn: () => import('@/examples/swiper/swiper.en-US.md'),
       },
       {
         title: 'Table 表格',
@@ -394,6 +434,7 @@ const docs = [
         name: 'table',
         path: '/vue/components/table',
         component: () => import('@/examples/table/table.md'),
+        componentEn: () => import('@/examples/table/table.en-US.md'),
       },
       {
         title: 'Tag 标签',
@@ -401,6 +442,7 @@ const docs = [
         name: 'tag',
         path: '/vue/components/tag',
         component: () => import('@/examples/tag/tag.md'),
+        componentEn: () => import('@/examples/tag/tag.en-US.md'),
       },
       {
         title: 'Tooltip 文字提示',
@@ -408,6 +450,7 @@ const docs = [
         name: 'tooltip',
         path: '/vue/components/tooltip',
         component: () => import('@/examples/tooltip/tooltip.md'),
+        componentEn: () => import('@/examples/tooltip/tooltip.en-US.md'),
       },
       {
         title: 'Tree 树',
@@ -415,6 +458,7 @@ const docs = [
         name: 'tree',
         path: '/vue/components/tree',
         component: () => import('@/examples/tree/tree.md'),
+        componentEn: () => import('@/examples/tree/tree.en-US.md'),
       },
     ],
   },
@@ -429,6 +473,7 @@ const docs = [
         name: 'alert',
         path: '/vue/components/alert',
         component: () => import('@/examples/alert/alert.md'),
+        componentEn: () => import('@/examples/alert/alert.en-US.md'),
       },
       {
         title: 'Dialog 对话框',
@@ -436,6 +481,7 @@ const docs = [
         name: 'dialog',
         path: '/vue/components/dialog',
         component: () => import('@/examples/dialog/dialog.md'),
+        componentEn: () => import('@/examples/dialog/dialog.en-US.md'),
       },
       {
         title: 'Drawer 抽屉',
@@ -443,6 +489,7 @@ const docs = [
         name: 'drawer',
         path: '/vue/components/drawer',
         component: () => import('@/examples/drawer/drawer.md'),
+        componentEn: () => import('@/examples/drawer/drawer.en-US.md'),
       },
       {
         title: 'Message 全局提示',
@@ -450,6 +497,7 @@ const docs = [
         name: 'message',
         path: '/vue/components/message',
         component: () => import('@/examples/message/message.md'),
+        componentEn: () => import('@/examples/message/message.en-US.md'),
       },
       {
         title: 'Notification 消息通知',
@@ -457,6 +505,7 @@ const docs = [
         name: 'notification',
         path: '/vue/components/notification',
         component: () => import('@/examples/notification/notification.md'),
+        componentEn: () => import('@/examples/notification/notification.en-US.md'),
       },
       {
         title: 'Popconfirm 气泡确认框',
@@ -464,6 +513,7 @@ const docs = [
         name: 'popconfirm',
         path: '/vue/components/popconfirm',
         component: () => import('@/examples/popconfirm/popconfirm.md'),
+        componentEn: () => import('@/examples/popconfirm/popconfirm.en-US.md'),
       },
       {
         title: 'Popup 弹出层',
@@ -471,6 +521,7 @@ const docs = [
         name: 'popup',
         path: '/vue/components/popup',
         component: () => import('@/examples/popup/popup.md'),
+        componentEn: () => import('@/examples/popup/popup.en-US.md'),
       },
     ],
   },
@@ -486,7 +537,7 @@ const enDocs = docs.map(doc => {
         name: `${child.name}-en`,
         path: `${child.path}-en`,
         meta: { lang: 'en' },
-        component: child.componentEn,
+        component: child.componentEn || child.component,
       }
     }),
   };
