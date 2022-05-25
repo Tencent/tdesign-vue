@@ -595,7 +595,7 @@ export default defineComponent({
       //   this.inputValue = '';
       // }
     };
-    const clearSelect = (e: MouseEvent) => {
+    const clearSelect = ({ e }: { e: MouseEvent }) => {
       e?.stopPropagation();
       if (multiple.value) {
         emitChange([]);
@@ -837,7 +837,7 @@ export default defineComponent({
       // enter,
       showLoading,
       // getOptions,
-      // clearSelect,
+      clearSelect,
       // global,
       // focus,
       realValue,
@@ -999,6 +999,7 @@ export default defineComponent({
       visible,
       // popupVisible,
       // showClose,
+      clearSelect,
       handleTInputValueChange,
       handleTagChange,
       renderCollapsedItems,
@@ -1046,6 +1047,7 @@ export default defineComponent({
           }}
           popupVisible={visible}
           on={{
+            clear: clearSelect,
             'input-change': handleTInputValueChange,
             'popup-visible-change': visibleChange,
             'tag-change': handleTagChange,
