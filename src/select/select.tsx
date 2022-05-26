@@ -559,7 +559,7 @@ export default defineComponent({
       }
       return r;
     };
-    const getPlaceholderText = () => (!multiple.value && visible.value && selectedValue.value) || placeholder.value || t(global.value.placeholder);
+    const getPlaceholderText = () => ((!multiple.value && visible.value && selectedValue.value) || placeholder.value) ?? t(global.value.placeholder);
     /**
      * Parse options from slots before popup, execute only once
      */

@@ -6,7 +6,7 @@ import { useTNodeJSX } from '../hooks/tnode';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { useConfig } from '../config-provider/useConfig';
 import {
-  TdSelectProps, SelectValue, TdOptionProps, SelectOptionGroup, SelectOption,
+  TdSelectProps, SelectValue, TdOptionProps, SelectOptionGroup,
 } from './type';
 import { name } from './select';
 import Option from './option';
@@ -75,9 +75,7 @@ export default defineComponent({
   ],
 
   setup(props: SelectPanelProps) {
-    const {
-      options, showCreateOption, value, multiple, max,
-    } = toRefs(props);
+    const { options, showCreateOption } = toRefs(props);
 
     const renderTNode = useTNodeJSX();
     const { t, global } = useConfig('select');
@@ -85,21 +83,11 @@ export default defineComponent({
 
     const isEmpty = computed(() => !options.value.length && !showCreateOption.value);
 
-    const multiLimitDisabled = (v: string | number) => {
-      if (multiple.value && max.value) {
-        if (Array.isArray(value.value) && value.value.indexOf(v) === -1 && max.value <= value.value.length) {
-          return true;
-        }
-      }
-      return false;
-    };
-
     return {
       t,
       global,
       isEmpty,
       renderTNode,
-      multiLimitDisabled,
       tSelect,
     };
   },
@@ -136,14 +124,13 @@ export default defineComponent({
           value={get(item, realValue as string)}
           label={get(item, realLabel as string)}
           content={item.content}
-          disabled={item.disabled || this.multiLimitDisabled(get(item, realValue as string) as string)}
+          disabled={item.disabled}
           key={index}
         ></t-option>
       ));
     },
-    renderOptionsContent(options: SelectOption[]) {
-      const { tSelect } = this;
-
+    renderOptionsContent() {
+      const { tSelect, options } = this;
       const children = renderTNodeJSX(this, 'default');
       // 自定义输出
       if (tSelect.hasSlotOptions.value) {
@@ -175,15 +162,16 @@ export default defineComponent({
 
   render() {
     const {
-      size, renderTNode, loading, isEmpty, options,
+      size, renderTNode, loading, isEmpty,
     } = this;
+
     return (
       <div class={`${name}__dropdown-inner ${name}__dropdown-inner--size-${sizeClassMap[size]}`}>
         {renderTNode('panelTopContent')}
         {isEmpty && this.renderEmptyContent()}
         {this.renderCreateOption()}
         {!isEmpty && loading && this.renderLoadingContent()}
-        {!isEmpty && !loading && this.renderOptionsContent(options)}
+        {!isEmpty && !loading && this.renderOptionsContent()}
         {renderTNode('panelBottomContent')}
       </div>
     );

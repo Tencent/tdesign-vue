@@ -63,18 +63,6 @@ export default defineComponent({
         }, tSelect.popupOpenTime.value); // 待popup弹出后再滚动到对应位置
       }
     });
-    // const reachMaxLimit = computed(() => {
-    //   if (tSelect && tSelect.multiple.value && tSelect.max.value) {
-    //     if (
-    //       tSelect.value.value instanceof Array
-    //       && tSelect.value.value.indexOf(value.value) === -1
-    //       && tSelect.max.value <= tSelect.value.value.length
-    //     ) {
-    //       return true;
-    //     }
-    //   }
-    //   return false;
-    // });
     const classes = computed(() => [
       `${prefix}-select-option`,
       {

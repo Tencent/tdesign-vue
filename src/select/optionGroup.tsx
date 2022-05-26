@@ -1,17 +1,7 @@
 import {
-  computed,
-  defineComponent,
-  ref,
-  SetupContext,
-  toRefs,
-  watch,
-  nextTick,
-  getCurrentInstance,
-  onMounted,
-  onUpdated,
-  inject,
+  computed, defineComponent, ref, toRefs, watch, onMounted, inject,
 } from '@vue/composition-api';
-import Vue, { VNode, VueConstructor } from 'vue';
+import Vue from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
@@ -32,7 +22,7 @@ export interface Select extends Vue {
 export default defineComponent({
   name: 'TOptionGroup',
   props: { ...props },
-  setup(props: TdOptionGroupProps, context: SetupContext) {
+  setup(props: TdOptionGroupProps) {
     const { divider } = toRefs(props);
     const ulRef = ref<HTMLElement>(null);
     const visible = ref(true);
