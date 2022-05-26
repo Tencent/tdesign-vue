@@ -63,22 +63,22 @@ export default defineComponent({
         }, tSelect.popupOpenTime.value); // 待popup弹出后再滚动到对应位置
       }
     });
-    const multiLimitDisabled = computed(() => {
-      if (tSelect && tSelect.multiple.value && tSelect.max.value) {
-        if (
-          tSelect.value.value instanceof Array
-          && tSelect.value.value.indexOf(value.value) === -1
-          && tSelect.max.value <= tSelect.value.value.length
-        ) {
-          return true;
-        }
-      }
-      return false;
-    });
+    // const reachMaxLimit = computed(() => {
+    //   if (tSelect && tSelect.multiple.value && tSelect.max.value) {
+    //     if (
+    //       tSelect.value.value instanceof Array
+    //       && tSelect.value.value.indexOf(value.value) === -1
+    //       && tSelect.max.value <= tSelect.value.value.length
+    //     ) {
+    //       return true;
+    //     }
+    //   }
+    //   return false;
+    // });
     const classes = computed(() => [
       `${prefix}-select-option`,
       {
-        [CLASSNAMES.STATUS.disabled]: tDisabled.value || multiLimitDisabled.value,
+        [CLASSNAMES.STATUS.disabled]: tDisabled.value || tSelect.reachMaxLimit.value,
         [CLASSNAMES.STATUS.selected]: selected.value,
         [CLASSNAMES.SIZE[tSelect && tSelect.size.value]]: tSelect && tSelect.value,
         [`${prefix}-select-option__hover`]: hovering.value,
@@ -119,10 +119,9 @@ export default defineComponent({
     });
     const select = (e: MouseEvent | KeyboardEvent) => {
       e.stopPropagation();
-      if (tDisabled.value || multiLimitDisabled.value) {
+      if (tDisabled.value || (!selected.value && tSelect.reachMaxLimit.value)) {
         return false;
       }
-      // const parent = context.root.$el.parentNode as HTMLElement;
       const parent = context.refs.optionNode as HTMLLIElement;
       if (parent && parent.className.indexOf(`${selectName}__create-option`) !== -1) {
         tSelect && tSelect.createOption(value.value.toString());
@@ -146,13 +145,12 @@ export default defineComponent({
       classes,
       tSelect,
       labelText,
-      multiLimitDisabled,
     };
   },
 
   render() {
     const {
-      classes, labelText, selected, disabled, multiLimitDisabled, show, tSelect,
+      classes, labelText, selected, disabled, show, tSelect,
     } = this;
     const children: ScopedSlotReturnValue = renderContent(this, 'default', 'content');
     const optionChild = children || labelText;
@@ -169,7 +167,7 @@ export default defineComponent({
         {tSelect && tSelect.multiple.value ? (
           <t-checkbox
             checked={selected}
-            disabled={disabled || multiLimitDisabled}
+            disabled={disabled || (!selected && tSelect.reachMaxLimit.value)}
             nativeOnClick={(e: MouseEvent) => {
               e.preventDefault();
             }}

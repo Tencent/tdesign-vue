@@ -1,16 +1,5 @@
 import {
-  computed,
-  defineComponent,
-  ref,
-  SetupContext,
-  toRefs,
-  watch,
-  nextTick,
-  getCurrentInstance,
-  onMounted,
-  onUpdated,
-  inject,
-  provide,
+  computed, defineComponent, toRefs, inject,
 } from '@vue/composition-api';
 import { get } from 'lodash';
 import { useTNodeJSX } from '../hooks/tnode';
@@ -85,7 +74,6 @@ export default defineComponent({
     'realLabel',
   ],
 
-  // setup(props: SelectPanelProps, context: SetupContext) {
   setup(props: SelectPanelProps) {
     const {
       options, showCreateOption, value, multiple, max,
