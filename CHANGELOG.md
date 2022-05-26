@@ -5,12 +5,30 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.41.5 `2022-05-20` 
+### 🚀 Features
+- `Form`:  支持 `help` 配置的表单项说明内容与错误提示同时展示，未配置 `help` 时不再默认占位 @HQ-Lin ([#884](https://github.com/Tencent/tdesign-vue/pull/884))
+- `Table`:  @chaishi (https://github.com/Tencent/tdesign-vue/pull/879))
+    - 树形结构，支持默认展开全部，`tree.defaultExpandAll`，[issue#852](https://github.com/Tencent/tdesign-vue/issues/852)
+    - 树形结构，支持自由控制展开全部，或收起全部 `expandAll()` `foldAll()` 
+    - 树形结构，支持拖拽排序，调整同层级顺序
+    - 树形结构，支持在当前节点之前插入新节点 `insertBefore`
+    - 树形结构，支持在当后节点之后插入新节点 `insertAfter`
+- `Tree`: label 支持多行文本展示，[issue# common 444](https://github.com/Tencent/tdesign-common/issues/444) @ccccpj ([#460](https://github.com/Tencent/tdesign-common/pull/460))
+### 🐞 Bug Fixes
+- `Table`: 列拖动优化；修复选中行后列拖动距离被重置问题 @LoopZhou ([#870](https://github.com/Tencent/tdesign-vue/pull/870))
+- `Table`: 修复 多级表头 + 列配置 综合示例中，列数量超出一定限制时报错，[issue#713](https://github.com/Tencent/tdesign-vue-next/issues/713) @chaishi ([#875](https://github.com/Tencent/tdesign-vue/pull/875))
+- `Transfer`: 修复列表数量变化时的页码展示问题 @BigLiao ([#893](https://github.com/Tencent/tdesign-vue/pull/893))
+- `Input`: 修复 `clear` 触发后的 `focus`, 修复外部传入`onMouseenter`, `onMouseleave`, `onwheel` 事件导致组件内对应`方法`未执行的问题 @pengYYYYY ([#894](https://github.com/Tencent/tdesign-vue/pull/894))
+- `TreeSelect`: 修复未支持 treeProps.keys.children 字段配置的问题 @LoopZhou ([#890](https://github.com/Tencent/tdesign-vue/pull/890))
+- `Menu`: 修复 `expandType=popup` 时箭头方向展示错误的问题，@fengxianqi ([#806](https://github.com/Tencent/tdesign-vue/pull/806))
+- `Menu`: 修复 width 不支持数组类型的问题，@LeeJim ([#897](https://github.com/Tencent/tdesign-vue/pull/897))
+
 ## 🌈 0.41.3 `2022-05-13` 
 ### 🚀 Features
 - `Icon`: 更新图标 新增`file-icon`图标 调整`file-excel`、`file-pdf`、`file-powerpoint`、`file-unknown`、`file-word`和`star-filled`图标的绘制路径 @uyarn ([#854](https://github.com/Tencent/tdesign-vue/pull/854))
 - `Dialog`: 支持`preventScrollThrough` API @uyarn ([#861](https://github.com/Tencent/tdesign-vue/pull/861))
-- `Tabl
-树形结构图标 `treeExpandAndFoldIcon`，同时支持全局配置此图标，[issue#717](https://github.com/Tencent/tdesign-vue-next/issues/717) @chaishi ([#863](https://github.com/Tencent/tdesign-vue/pull/863))
+- `Table`: 支持自定义树形结构图标 `treeExpandAndFoldIcon`，同时支持全局配置此图标，[issue#717](https://github.com/Tencent/tdesign-vue-next/issues/717) @chaishi ([#863](https://github.com/Tencent/tdesign-vue/pull/863))
 - `Table`: 支持隐藏排序文本提示 `hideSortTips`，同时支持全局配置是否隐藏排序文本提示，[issue#736](https://github.com/Tencent/tdesign-vue-next/issues/736) @chaishi ([#863](https://github.com/Tencent/tdesign-vue/pull/863))
 - `Steps`: 新增 `separator` 属性，用于控制步骤条分隔符类型 @HQ-Lin ([#863](https://github.com/Tencent/tdesign-vue/pull/868))
 ### 🐞 Bug Fixes
