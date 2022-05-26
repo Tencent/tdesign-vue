@@ -11,7 +11,7 @@ import {
   onUpdated,
   provide,
 } from '@vue/composition-api';
-import Vue, { CreateElement, VNode } from 'vue';
+import { CreateElement, VNode } from 'vue';
 import isFunction from 'lodash/isFunction';
 import debounce from 'lodash/debounce';
 import get from 'lodash/get';
@@ -21,17 +21,20 @@ import useDefaultValue from '../hooks/useDefaultValue';
 import { useTNodeJSX } from '../hooks/tnode';
 import { useConfig } from '../config-provider/useConfig';
 import {
-  TdSelectProps, SelectOption, TdOptionProps, SelectValue, SelectOptionGroup,
+  TdSelectProps, SelectOption, TdOptionProps, SelectValue,
 } from './type';
 import props from './props';
-import { renderTNodeJSX } from '../utils/render-tnode';
 import { prefix } from '../config';
 import TLoading from '../loading';
 import Popup from '../popup';
 import CLASSNAMES from '../utils/classnames';
 import TInput from '../input/index';
 import Tag from '../tag/index';
-import SelectInput, { SelectInputValue, SelectInputChangeContext } from '../select-input';
+import SelectInput, {
+  SelectInputValue,
+  SelectInputChangeContext,
+  SelectInputValueChangeContext,
+} from '../select-input';
 import FakeArrow from '../common-components/fake-arrow';
 import Option from './option';
 import SelectPanel from './select-panel';
@@ -39,12 +42,6 @@ import SelectPanel from './select-panel';
 export type OptionInstance = InstanceType<typeof Option>;
 
 export const name = `${prefix}-select`;
-const listName = `${name}__list`;
-// trigger元素不超过此宽度时，下拉选项的最大宽度（用户未设置overStyle width时）
-// 用户设置overStyle width时，以设置的为准
-const DEFAULT_MAX_OVERLAY_WIDTH = 500;
-// 默认垂直滚动条宽度 .narrow-scrollbar 8px
-const DEFAULT_SCROLLY_WIDTH = 8;
 
 export default defineComponent({
   name: 'TSelect',
@@ -81,25 +78,20 @@ export default defineComponent({
       filterable,
       options,
       placeholder,
-      clearable,
       valueDisplay,
-      showArrow,
       loading,
       creatable,
       max,
       reserveKeyword,
-      empty,
-      loadingText,
       onSearch,
       inputValue,
       minCollapsedNum,
     } = toRefs(props);
     const formDisabled = ref();
-    const isHover = ref(false);
     const visible = ref(props.popupVisible ?? false);
     const [tInputValue, setTInputValue] = useDefaultValue(
       inputValue,
-      props.defaultInputValue,
+      props.defaultInputValue || '',
       props.onInputChange,
       'inputValue',
       'input-change',
@@ -119,14 +111,12 @@ export default defineComponent({
     const realOptions = ref([] as Array<TdOptionProps>);
     const hoverIndex = ref(-1);
     const popupOpenTime = ref(250);
-    const checkScroll = ref(true);
     const isInit = ref(false);
     const selectInputRef = ref<HTMLElement>(null);
 
     const tDisabled = computed(() => formDisabled.value || disabled.value);
     const classes = computed(() => [
       `${name}`,
-      `${prefix}-select-polyfill`, // 基于select-input改造时需要移除，polyfill代码，同时移除common中此类名
       {
         [CLASSNAMES.STATUS.disabled]: tDisabled.value,
         [CLASSNAMES.STATUS.active]: visible.value,
@@ -257,34 +247,17 @@ export default defineComponent({
       }
       return placeholder.value;
     });
-    const showClose = computed(() => Boolean(
-      clearable.value
-          && isHover.value
-          && !tDisabled.value
-          && ((!multiple.value && (value.value || value.value === 0))
-            || (multiple.value && Array.isArray(value.value) && value.value.length)),
-    ));
-    const showRightArrow = computed(() => {
-      if (!showArrow.value) return false;
-      return (
-        !clearable.value
-        || !isHover.value
-        || tDisabled.value
-        || (!multiple.value && !value.value && value.value !== 0)
-        || (multiple.value && (!Array.isArray(value.value) || (Array.isArray(value.value) && !value.value.length)))
-      );
-    });
     const showLoading = computed(() => loading.value && !tDisabled.value);
     const filterOptions = computed(() => {
       // filter优先级 filter方法>仅filterable
-      const inputText = tInputValue.value?.toString() || '';
       if (isFunction(props.filter)) {
-        return realOptions.value.filter((option) => props.filter(inputText, option));
+        return realOptions.value.filter((option) => props.filter(tInputValue.value?.toString(), option));
       }
       if (filterable.value) {
         // 仅有filterable属性时，默认不区分大小写过滤label
         return realOptions.value.filter(
-          (option) => option[realLabel.value].toString().toLowerCase().indexOf(inputText.toLowerCase()) !== -1,
+          (option) => option[realLabel.value].toString().toLowerCase().indexOf(tInputValue.value?.toString().toLowerCase())
+            !== -1,
         );
       }
       return [];
@@ -342,18 +315,24 @@ export default defineComponent({
       instance.emit('search', tInputValue.value, context);
       // emitEvent<Parameters<TdSelectProps['onSearch']>>(this, 'search', tInputValue.value);
     }, 300);
-    watch(tInputValue, (val) => {
-      if (!val && !visible.value) return;
-      if (isFunction(props.onSearch) || context.listeners.search) {
-        debounceOnRemote();
-      }
-      if (canFilter.value && val && creatable.value) {
-        const tmp = realOptions.value.filter((item) => get(item, realLabel.value).toString() === val);
-        showCreateOption.value = !tmp.length;
-      } else {
-        showCreateOption.value = false;
-      }
-    });
+    watch(
+      tInputValue,
+      (val) => {
+        if (!val && !visible.value) return;
+        // 远程搜索逻辑
+        if (isFunction(props.onSearch) || context.listeners.search) {
+          debounceOnRemote();
+        }
+        // 创建条目逻辑
+        if (canFilter.value && val && creatable.value) {
+          const tmp = realOptions.value.filter((item) => get(item, realLabel.value).toString() === val);
+          showCreateOption.value = !tmp.length;
+        } else {
+          showCreateOption.value = false;
+        }
+      },
+      { flush: 'post' },
+    );
     const getRealOptions = (options: SelectOption[]): Array<TdOptionProps> => {
       let result = [];
       if (isGroupOption.value) {
@@ -499,16 +478,9 @@ export default defineComponent({
       val && document.addEventListener('keydown', keydownEvent);
       !val && document.removeEventListener('keydown', keydownEvent);
       !val && (showCreateOption.value = false);
+      !val && tInputValue.value && setTInputValue('');
     });
 
-    const multiLimitDisabled = (v: string | number) => {
-      if (multiple.value && max.value) {
-        if (Array.isArray(value.value) && value.value.indexOf(v) === -1 && max.value <= value.value.length) {
-          return true;
-        }
-      }
-      return false;
-    };
     const visibleChange = (val: boolean) => {
       // emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', val);
       instance.emit('visible-change', val, context);
@@ -516,7 +488,6 @@ export default defineComponent({
       if (val) {
         setTInputValue('');
       }
-      // val && monitorWidth();
       val && canFilter.value && doFocus();
     };
     const onOptionClick = (v: string | number, e: MouseEvent | KeyboardEvent) => {
@@ -573,27 +544,20 @@ export default defineComponent({
       // emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', false);
       instance.emit('visible-change', false, context);
     };
-    const handleTInputValueChange = (val: string) => {
+    const handleTInputValueChange = (val: string, context: SelectInputValueChangeContext) => {
+      if (context.trigger === 'blur') {
+        return;
+      }
       setTInputValue(val);
     };
     const handleTagChange = (currentTags: SelectInputValue, context: SelectInputChangeContext) => {
-      const { trigger, index, item } = context;
+      const { trigger, index } = context;
       if (trigger === 'clear') {
-        // value.value = [];
         emitChange([]);
       }
       if (['tag-remove', 'backspace'].includes(trigger)) {
-        // value.value.splice(index, 1);
         removeTag(index);
       }
-      // 如果允许创建新条目
-      // if (creatable.value && trigger === 'enter') {
-      //   const current = { label: item, value: item };
-      //   this.value.push(current);
-      //   const newOptions = this.options.concat(current);
-      //   this.options = newOptions;
-      //   this.inputValue = '';
-      // }
     };
     const clearSelect = ({ e }: { e: MouseEvent }) => {
       e?.stopPropagation();
@@ -672,57 +636,17 @@ export default defineComponent({
       // });
       instance.emit('enter', { value, e: context?.e, inputValue: tInputValue.value }, context);
     };
-    const hoverEvent = (v: boolean) => {
-      isHover.value = v;
-    };
     const getOverlayElm = (): HTMLElement => {
       let r;
       try {
-        r = (context.refs.popup as any).$refs.overlay
-          || ((context.refs.popup as any).$refs.component as any).$refs.overlay;
+        const popupRefs = (context.refs.selectInputRef as any).$refs.selectInputRef.$refs;
+        r = popupRefs.overlay || popupRefs.component.$refs.overlay;
       } catch (e) {
         console.warn('TDesign Warn:', e);
       }
       return r;
     };
-    // 打开浮层时，监听trigger元素和浮层宽度，取max
-    const monitorWidth = () => {
-      nextTick(() => {
-        let styles = (popupProps.value && popupProps.value.overlayStyle) || {};
-        if (popupProps.value && isFunction(popupProps.value.overlayStyle)) {
-          styles = popupProps.value.overlayStyle(context.refs.select as HTMLElement, context.refs.content as HTMLElement)
-            || {};
-        }
-        if (typeof styles === 'object' && !styles.width) {
-          const elWidth = (context.refs.select as HTMLElement).getBoundingClientRect().width;
-          const popupWidth = getOverlayElm().getBoundingClientRect().width;
-          const width = elWidth > DEFAULT_MAX_OVERLAY_WIDTH
-            ? elWidth
-            : Math.min(DEFAULT_MAX_OVERLAY_WIDTH, Math.max(elWidth, popupWidth));
-          Vue.set(defaultProps.value, 'overlayStyle', { width: `${Math.ceil(width)}px` });
-          // issues-549 弹出层出现滚动条时，需要加上滚动条宽度，否则会挤压宽度，导致出现省略号
-          if (checkScroll.value) {
-            const timer = setTimeout(() => {
-              const { scrollHeight, clientHeight } = getOverlayElm();
-              if (scrollHeight > clientHeight) {
-                Vue.set(defaultProps.value, 'overlayStyle', { width: `${Math.ceil(width) + DEFAULT_SCROLLY_WIDTH}px` });
-              }
-              checkScroll.value = false;
-              clearTimeout(timer);
-            }, popupOpenTime.value);
-          }
-        }
-      });
-    };
-    const getEmpty = () => {
-      const useLocale = !empty.value && !context.slots.empty;
-      return useLocale ? t(global.value.empty) : renderTNode('empty');
-    };
-    const getLoadingText = () => {
-      const useLocale = !loadingText && !context.slots.loadingText;
-      return useLocale ? t(global.value.loadingText) : renderTNode('loadingText');
-    };
-    const getPlaceholderText = () => placeholder.value || t(global.value.placeholder);
+    const getPlaceholderText = () => (!multiple.value && visible.value && selectedValue.value) || placeholder.value || t(global.value.placeholder);
     // const getCloseIcon = () => {
     //   // TODO 基于select-input改造时需要移除，polyfill代码，同时移除common中此类名
     //   const closeIconClass = [`${name}__right-icon`, `${name}__right-icon-clear`, `${name}__right-icon-polyfill`];
@@ -818,44 +742,24 @@ export default defineComponent({
     return {
       selectInputRef,
       visible,
-      // blur,
+      focus,
+      blur,
+      enter,
       realOptions,
       showCreateOption,
       renderValueDisplay,
       showFilter,
       tDisabled,
-      // visible,
-      // classes,
-      // popClass,
-      // tipsClass,
-      // emptyClass,
-      // showPlaceholder,
-      // filterPlaceholder,
-      // showClose,
-      // showRightArrow,
-      // destroyOptions,
-      // enter,
       showLoading,
-      // getOptions,
       clearSelect,
-      // global,
-      // focus,
       realValue,
       realLabel,
       getPlaceholderText,
       visibleChange,
-      // hoverEvent,
       handleTInputValueChange,
       handleTagChange,
       removeTag,
-      // selectedMultiple,
-      // popupObject,
-      // displayOptionsMap,
-      // multiLimitDisabled,
       displayOptions,
-      // getEmpty,
-      // getLoadingText,
-      // selectedSingle,
       selectedValue,
       hasSlotOptions,
       tInputValue,
@@ -951,7 +855,6 @@ export default defineComponent({
     },
   },
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   render(h): VNode {
     const {
       multiple,
@@ -962,27 +865,14 @@ export default defineComponent({
       clearable,
       tDisabled,
       borderless,
-      // prefixIcon,
       empty,
       showCreateOption,
       displayOptions,
       isGroupOption,
       options,
-      visibleChange,
-      // classes,
-      // popupObject,
-      // popClass,
       size,
-      // showPlaceholder,
-      // multiple,
       showFilter,
-      // filterPlaceholder,
-      // realLabel,
-      // visible,
-      // minCollapsedNum,
-      // collapsedItems,
       tInputValue,
-      // showRightArrow,
       showLoading,
       loadingText,
       tagInputProps,
@@ -995,13 +885,15 @@ export default defineComponent({
       value,
       realValue,
       realLabel,
-      renderTNode,
       visible,
-      // popupVisible,
-      // showClose,
+      focus,
+      blur,
+      enter,
+      visibleChange,
       clearSelect,
       handleTInputValueChange,
       handleTagChange,
+      renderTNode,
       renderCollapsedItems,
     } = this;
 
@@ -1019,7 +911,6 @@ export default defineComponent({
           autoWidth={autoWidth}
           borderless={borderless || !bordered}
           readonly={readonly}
-          // allowInput={multiple || filterable}
           allowInput={showFilter}
           multiple={multiple}
           value={selectedValue}
@@ -1030,29 +921,30 @@ export default defineComponent({
           suffixIcon={this.renderSuffixIcon}
           placeholder={placeholderText}
           inputValue={tInputValue}
-          tagInputProps={{
-            ...tagInputProps,
-          }}
-          tagProps={tagProps}
           inputProps={{
             size,
             ...inputProps,
           }}
+          tagInputProps={{
+            ...tagInputProps,
+          }}
+          tagProps={tagProps}
           minCollapsedNum={minCollapsedNum}
           collapsedItems={collapsedItems}
-          // collapsedItems={collapsedItems ? () => collapsedItems : undefined}
+          popupVisible={visible}
           popupProps={{
             overlayClassName: [`${name}__dropdown`, ['narrow-scrollbar'], overlayClassName],
             ...restPopupProps,
           }}
-          popupVisible={visible}
           on={{
+            focus,
+            blur,
+            enter,
             clear: clearSelect,
             'input-change': handleTInputValueChange,
             'popup-visible-change': visibleChange,
             'tag-change': handleTagChange,
           }}
-          // events todo
           {...selectInputProps}
         >
           <select-panel
@@ -1066,6 +958,7 @@ export default defineComponent({
             options={isGroupOption ? options : displayOptions}
             loadingText={loadingText}
             max={max}
+            inputValue={tInputValue}
             value={value}
             realLabel={realLabel}
             realValue={realValue}

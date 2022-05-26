@@ -58,7 +58,7 @@ export default defineComponent({
     watch(hovering, (val) => {
       if (val) {
         const timer = setTimeout(() => {
-          scrollSelectedIntoView(tSelect.getOverlayElm(), context.root.$el as HTMLElement);
+          scrollSelectedIntoView(tSelect.getOverlayElm(), context.refs.optionNode as HTMLElement);
           clearTimeout(timer);
         }, tSelect.popupOpenTime.value); // 待popup弹出后再滚动到对应位置
       }

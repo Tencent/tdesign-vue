@@ -39,6 +39,7 @@ interface SelectPanelProps
     | 'keys'
     | 'panelTopContent'
     | 'panelBottomContent'
+    | 'inputValue'
   > {
   onChange?: (value: SelectValue, context?: { label?: string | number; restData?: Record<string, any> }) => void;
   /**
@@ -49,6 +50,9 @@ interface SelectPanelProps
    * 控制popup展示的函数
    */
   setShowPopup: (show: boolean) => void;
+  /**
+   * 是否支持创建自定义option
+   */
   showCreateOption: boolean;
 }
 
@@ -66,6 +70,7 @@ export default defineComponent({
   },
 
   props: [
+    'inputValue',
     'panelTopContent',
     'size',
     'options',
@@ -80,7 +85,8 @@ export default defineComponent({
     'realLabel',
   ],
 
-  setup(props: SelectPanelProps, context: SetupContext) {
+  // setup(props: SelectPanelProps, context: SetupContext) {
+  setup(props: SelectPanelProps) {
     const {
       options, showCreateOption, value, multiple, max,
     } = toRefs(props);
@@ -89,7 +95,7 @@ export default defineComponent({
     const { t, global } = useConfig('select');
     const tSelect: any = inject('tSelect');
 
-    const isEmpty = !options.value.length && !showCreateOption;
+    const isEmpty = computed(() => !options.value.length && !showCreateOption.value);
 
     const multiLimitDisabled = (v: string | number) => {
       if (multiple.value && max.value) {
@@ -115,7 +121,7 @@ export default defineComponent({
       const { empty, t, global } = this;
       const useLocale = !empty && !this.$slots.empty;
       if (useLocale) {
-        return <div class={`${name}__empty`}>{t(global.empty)}</div>;
+        return <div class={`${name}__loading-tips`}>{t(global.empty)}</div>;
       }
       return renderTNodeJSX(this, 'empty');
     },
@@ -127,7 +133,27 @@ export default defineComponent({
       }
       return renderTNodeJSX(this, 'loadingText');
     },
-    renderOptions(options: SelectOption[]) {
+    renderCreateOption() {
+      const { showCreateOption, inputValue } = this;
+      return (
+        <ul v-show={showCreateOption} class={[`${name}__create-option`, `${name}__list`]}>
+          <t-option value={inputValue} label={inputValue} class={`${name}__create-option--special`} />
+        </ul>
+      );
+    },
+    renderSingleOption(options: OptionsType = []) {
+      const { realValue, realLabel } = this;
+      return options.map((item, index) => (
+        <t-option
+          value={get(item, realValue as string)}
+          label={get(item, realLabel as string)}
+          content={item.content}
+          disabled={item.disabled || this.multiLimitDisabled(get(item, realValue as string) as string)}
+          key={index}
+        ></t-option>
+      ));
+    },
+    renderOptionsContent(options: SelectOption[]) {
       const { tSelect } = this;
 
       const children = renderTNodeJSX(this, 'default');
@@ -147,31 +173,19 @@ export default defineComponent({
           const children = groupList.children.filter((item) => tSelect.displayOptionsMap.value.get(item));
           return (
             <t-option-group v-show={children.length} label={groupList.group} divider={groupList.divider}>
-              {this.renderSingleOptions(children)}
+              {this.renderSingleOption(children)}
             </t-option-group>
           );
         });
       } else {
         // 无分组
-        optionsContent = this.renderSingleOptions(options);
+        optionsContent = this.renderSingleOption(options);
       }
       return <ul class={`${name}__list`}>{optionsContent}</ul>;
     },
-    renderSingleOptions(options: OptionsType) {
-      const { realValue, realLabel } = this;
-      return options.map((item, index) => (
-        <t-option
-          value={get(item, realValue as string)}
-          label={get(item, realLabel as string)}
-          content={item.content}
-          disabled={item.disabled || this.multiLimitDisabled(get(item, realValue as string) as string)}
-          key={index}
-        ></t-option>
-      ));
-    },
   },
 
-  render(h) {
+  render() {
     const {
       size, renderTNode, loading, isEmpty, options,
     } = this;
@@ -179,8 +193,9 @@ export default defineComponent({
       <div class={`${name}__dropdown-inner ${name}__dropdown-inner--size-${sizeClassMap[size]}`}>
         {renderTNode('panelTopContent')}
         {isEmpty && this.renderEmptyContent()}
+        {this.renderCreateOption()}
         {!isEmpty && loading && this.renderLoadingContent()}
-        {!isEmpty && !loading && this.renderOptions(options)}
+        {!isEmpty && !loading && this.renderOptionsContent(options)}
         {renderTNode('panelBottomContent')}
       </div>
     );
