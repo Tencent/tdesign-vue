@@ -210,6 +210,12 @@ const docs = [
         componentEn: () => import('@/examples/checkbox/checkbox.en-US.md'),
       },
       {
+        title: 'ColorPicker 颜色选择器',
+        name: 'color-picker',
+        path: '/vue/components/color-picker',
+        component: () => import('@/examples/color-picker/color-picker.md'),
+      },
+      {
         title: 'DatePicker 日期选择器',
         titleEn: 'DatePicker',
         name: 'date-picker',
@@ -378,7 +384,7 @@ const docs = [
         docType: 'data',
         path: '/vue/components/collapse',
         component: () => import('@/examples/collapse/collapse.md'),
-        componentEn: () => import('@/examples/collapse/collapse.en-US.md')
+        componentEn: () => import('@/examples/collapse/collapse.en-US.md'),
       },
       {
         title: 'Comment 评论',
@@ -527,20 +533,20 @@ const docs = [
   },
 ];
 
-const enDocs = docs.map(doc => {
+const enDocs = docs.map((doc) => {
   return {
     ...doc,
     title: doc.titleEn,
-    children: doc?.children?.map(child => {
+    children: doc?.children?.map((child) => {
       return {
         title: child.titleEn,
         name: `${child.name}-en`,
         path: `${child.path}-en`,
         meta: { lang: 'en' },
         component: child.componentEn || child.component,
-      }
+      };
     }),
   };
-})
+});
 
 export default { docs, enDocs };
