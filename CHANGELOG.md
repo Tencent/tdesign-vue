@@ -5,6 +5,19 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.41.6 `2022-05-27` 
+
+### 🚀 Features
+- ColorPicker: 新增颜色选择器，使用请参照 [官网](https://tdesign.tencent.com/react/components/color-picker) @S-mohan ([#867](https://github.com/Tencent/tdesign-vue/pull/867))
+### 🐞 Bug Fixes
+- `Table`: 
+  - EnhancedTable，树形结构中，修复可选中表格禁用行勾选问题：动态设置选中列时，禁用失效 [issue#822](https://github.com/Tencent/tdesign-vue-next/issues/822) @chaishi ([#902](https://github.com/Tencent/tdesign-vue/pull/902))
+  - EnhancedTable，树形结构中，toggleExpandData 和 expandAll/FoldAll 混合使用时，树形结构展开有误 [issue#839](https://github.com/Tencent/tdesign-vue-next/issues/839) @chaishi ([#902](https://github.com/Tencent/tdesign-vue/pull/902))
+  - table初始化时，fixed的阴影效果没有出现 @LoopZhou ([#922](https://github.com/Tencent/tdesign-vue/pull/922))
+- `Tabs`: 修复选项卡新增和删除在normal风格下无效 ([issue #865](https://github.com/Tencent/tdesign-vue/issues/865)) @pengYYYYY ([#921](https://github.com/Tencent/tdesign-vue/pull/921))
+### 🚧 Others
+- 【官网】文档支持国际化 @HQ-Lin ([#896](https://github.com/Tencent/tdesign-vue/pull/896))
+
 ## 🌈 0.41.5 `2022-05-20` 
 ### 🚀 Features
 - `Form`:  支持 `help` 配置的表单项说明内容与错误提示同时展示，未配置 `help` 时不再默认占位 @HQ-Lin ([#884](https://github.com/Tencent/tdesign-vue/pull/884))
