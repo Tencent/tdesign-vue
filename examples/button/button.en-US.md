@@ -14,13 +14,13 @@ icon | Slot / Function | - | use it to set left icon in button。Typescript：`T
 loading | Boolean | false | set button to be loading state | N
 shape | String | rectangle | button shape。options：rectangle/square/round/circle | N
 size | String | medium | a button has three size。options：small/medium/large。Typescript：`SizeEnum`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-theme | String | undefined | button theme。options：default/primary/danger/warning/success | N
+theme | String | - | button theme。options：default/primary/danger/warning/success | N
 type | String | button | type of button element in html。options：submit/reset/button | N
 variant | String | base | variant of button。options：base/outline/dashed/text | N
-onClick | Function |  | `(e: MouseEvent<HTMLButtonElement>) => {}` | N
+onClick | Function |  | TS 类型：`(e: MouseEvent) => void`<br/> | N
 
 ### Button Events
 
 name | params | description
 -- | -- | --
-click | `(e: MouseEvent<HTMLButtonElement>)` | -
+click | `(e: MouseEvent)` | \-

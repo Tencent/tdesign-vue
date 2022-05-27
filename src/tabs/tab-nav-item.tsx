@@ -82,6 +82,9 @@ export default mixins(keepAnimationMixins).extend({
           >
             <span class={`${prefix}-tabs__nav-item-text-wrapper`}>{this.label}</span>
           </div>
+          {this.removable && !this.disabled ? (
+            <CloseIcon class="remove-btn" nativeOnClick={this.removeBtnClick} />
+          ) : null}
         </div>
       );
     },

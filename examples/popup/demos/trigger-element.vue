@@ -9,17 +9,14 @@
       </div>
       <div class="t-popup-demo-base-item">
         <t-popup content="我的触发元素通过插槽(triggerElement)渲染">
-          <t-button variant="outline" slot='triggerElement'>具名插槽定义触发元素</t-button>
+          <t-button variant="outline" slot="triggerElement">具名插槽定义触发元素</t-button>
         </t-popup>
       </div>
     </div>
-    <br>
+    <br />
     <div>
       <div class="t-popup-demo-base-item">
-        <t-popup
-          content="我的触发元素通过渲染函数 default 渲染"
-          :default="renderTriggerElement1"
-        ></t-popup>
+        <t-popup content="我的触发元素通过渲染函数 default 渲染" :default="renderTriggerElement1"></t-popup>
       </div>
       <div class="t-popup-demo-base-item">
         <t-popup
