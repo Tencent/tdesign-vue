@@ -275,7 +275,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     rowAndColFixedPosition.value = initialColumnMap;
   };
 
-  let shadowLastScrollLeft = 0;
+  let shadowLastScrollLeft: number;
   const updateColumnFixedShadow = (target: HTMLElement) => {
     if (!isFixedColumn.value) return;
     const { scrollLeft } = target;
