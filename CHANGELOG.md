@@ -15,7 +15,8 @@ docClass: timeline
   - EnhancedTable，树形结构中，toggleExpandData 和 expandAll/FoldAll 混合使用时，树形结构展开有误 [issue#839](https://github.com/Tencent/tdesign-vue-next/issues/839) @chaishi ([#902](https://github.com/Tencent/tdesign-vue/pull/902))
   - table初始化时，fixed的阴影效果没有出现 @LoopZhou ([#922](https://github.com/Tencent/tdesign-vue/pull/922))
 - `Tabs`: 修复选项卡新增和删除在normal风格下无效 ([issue #865](https://github.com/Tencent/tdesign-vue/issues/865)) @pengYYYYY ([#921](https://github.com/Tencent/tdesign-vue/pull/921))
-- Drawer:  修复 `Drawer` 使用按键关闭时 `contenteditable` 出现的边框 @pengYYYYY ([#921](https://github.com/Tencent/tdesign-common/pull/474))
+- Drawer: 修复 `Drawer` 使用按键关闭时 `contenteditable` 出现的边框 @pengYYYYY ([common #474](https://github.com/Tencent/tdesign-common/pull/474))
+- Layout: 去除 `Header` 额外高度设置 @pengYYYYY ([common #478](https://github.com/Tencent/tdesign-common/pull/478))
 ### 🚧 Others
 - 【官网】文档支持国际化 @HQ-Lin ([#896](https://github.com/Tencent/tdesign-vue/pull/896))
 
