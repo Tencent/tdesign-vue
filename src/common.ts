@@ -14,6 +14,9 @@ export type AttachNode = CSSSelector | ((triggerNode?: HTMLElement) => AttachNod
 export type ScrollContainerElement = Window | HTMLElement;
 export type ScrollContainer = (() => ScrollContainerElement) | CSSSelector;
 
+// 组件 TS 类型，暂定 any
+export type ComponentType = any;
+
 export type FormResetEvent = Event;
 // export type FormSubmitEvent = SubmitEvent; (for higher typescript version)
 export type FormSubmitEvent = Event;
