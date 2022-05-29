@@ -65,15 +65,17 @@ export default defineComponent({
       return isTreeData ? props.columns : getColumns(props.columns);
     });
 
-    const onDragSortChange = (context: DragSortContext<TableRowData>) => {
-      if (props.beforeDragSort && !props.beforeDragSort(context)) return;
+    const onDragSortChange = (params: DragSortContext<TableRowData>) => {
+      if (props.beforeDragSort && !props.beforeDragSort(params)) return;
       swapData({
-        current: context.current,
-        target: context.target,
-        currentIndex: context.currentIndex,
-        targetIndex: context.targetIndex,
+        current: params.current,
+        target: params.target,
+        currentIndex: params.currentIndex,
+        targetIndex: params.targetIndex,
       });
-      props.onDragSort?.(context);
+      props.onDragSort?.(params);
+      // Vue3 do not need next line
+      context.emit('drag-sort', params);
     };
 
     return {

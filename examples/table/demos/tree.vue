@@ -1,12 +1,17 @@
 <template>
   <div>
     <div>
-      <t-button theme="default" @click="setData1">重置数据</t-button>
+      <t-button @click="appendToRoot">添加根节点</t-button>
+      <t-button theme="default" style="margin-left: 16px" @click="setData1">重置数据</t-button>
       <t-button theme="default" style="margin-left: 16px" @click="onRowToggle">任意节点展开/收起</t-button>
       <t-button theme="default" style="margin-left: 16px" @click="onExpandAllToggle">{{
         expandAll ? '收起全部' : '展开全部'
       }}</t-button>
-      <t-checkbox v-model="customTreeExpandAndFoldIcon" style="margin-left: 16px; vertical-align: middle">
+      <t-button theme="default" style="margin-left: 16px" @click="getTreeNode">获取全部树形结构</t-button>
+    </div>
+    <br />
+    <div>
+      <t-checkbox v-model="customTreeExpandAndFoldIcon" style="vertical-align: middle">
         自定义折叠/展开图标
       </t-checkbox>
     </div>
@@ -28,6 +33,7 @@
       :beforeDragSort="beforeDragSort"
       @page-change="onPageChange"
       @abnormal-drag-sort="onAbnormalDragSort"
+      @drag-sort="onDragSort"
     ></t-enhanced-table>
 
     <!-- 第二列展开树结点，缩进为 12px，示例代码有效，勿删 -->
@@ -272,9 +278,31 @@ export default {
       return type === 'expand' ? <ChevronRightIcon /> : <ChevronDownIcon />;
     },
 
+    getTreeNode() {
+      const treeData = this.$refs.table.getTreeNode();
+      console.log(treeData);
+      this.$message.success('树形结构获取成功，请打开控制台查看');
+    },
+
     onExpandAllToggle() {
       this.expandAll = !this.expandAll;
       this.expandAll ? this.$refs.table.expandAll() : this.$refs.table.foldAll();
+    },
+
+    appendToRoot() {
+      const key = Math.round(Math.random() * 10010);
+      this.$refs.table.appendTo('', {
+        id: key,
+        key: `我是 ${key}_${1} 号`,
+        platform: key % 2 === 0 ? '共有' : '私有',
+        type: ['String', 'Number', 'Array', 'Object'][key % 4],
+        default: ['-', '0', '[]', '{}'][key % 4],
+        detail: {
+          position: `读取 ${key} 个数据的嵌套信息值`,
+        },
+        needed: key % 4 === 0 ? '是' : '否',
+        description: '数据源',
+      });
     },
 
     onAbnormalDragSort(params) {
@@ -285,10 +313,15 @@ export default {
       }
     },
 
+    // 拖拽排序成功后触发
+    onDragSort(params) {
+      console.log('onDragSort:', params);
+    },
+
     // 应用于需要阻止拖拽排序的场景。如：当子节点存在时，则不允许调整顺序
     // 返回值为 true，允许拖拽排序；返回值 为 false，则阻止拖拽排序
     beforeDragSort(params) {
-      console.log(params);
+      console.log('beforeDragSort:', params);
       return true;
     },
   },
