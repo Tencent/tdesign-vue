@@ -424,7 +424,7 @@ export default Vue.extend({
               </div>
             ) : null}
           </transition>
-          {this.theme === 'card' && this.addable ? (
+          {this.addable ? (
             <div class={this.addIconClass} onClick={this.handleAddTab}>
               <AddIcon />
             </div>
