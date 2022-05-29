@@ -202,7 +202,11 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
    * @param key 当前节点唯一标识
    * @param newData 待添加的新节点
    */
-  function appendTo<T>(key: TableRowValue, newData: T) {
+  function appendTo<T>(key: TableRowValue = '', newData: T) {
+    if (!key) {
+      dataSource.value = store.value.appendToRoot(newData, dataSource.value, rowDataKeys.value);
+      return;
+    }
     // 引用传值，可自动更新 dataSource。（dataSource 本是内部变量，可以在任何地方进行任何改变）
     dataSource.value = [...store.value.appendTo(key, newData, dataSource.value, rowDataKeys.value)];
   }
@@ -253,6 +257,14 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     }
   }
 
+  /**
+   * 获取全部数据的树形结构
+   * @param key 节点唯一标识
+   */
+  function getTreeNode() {
+    return store.value.getTreeNode(dataSource.value, rowDataKeys.value);
+  }
+
   return {
     store,
     rowDataKeys,
@@ -268,5 +280,6 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     toggleExpandData,
     expandAll,
     foldAll,
+    getTreeNode,
   };
 }
