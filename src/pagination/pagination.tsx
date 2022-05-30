@@ -8,6 +8,7 @@ import {
   EllipsisIcon,
 } from 'tdesign-icons-vue';
 import Vue from 'vue';
+import isFunction from 'lodash/isFunction';
 import { prefix } from '../config';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { PaginationConfig } from '../config-provider/config-receiver';
@@ -351,11 +352,14 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
                 {this.prevMore ? <chevron-left-double-icon /> : <ellipsis-icon />}
               </li>
             ) : null}
-            {this.pages.map((i) => (
-              <li class={this.getButtonClass(i)} key={i} onClick={() => this.toPage(i)}>
-                {i}
-              </li>
-            ))}
+            {this.pages.map((i) => {
+              const item = (
+                <li class={this.getButtonClass(i)} key={i} onClick={() => this.toPage(i)}>
+                  {i}
+                </li>
+              );
+              return isFunction(this.pageDisplayFilter) ? this.pageDisplayFilter(i) && item : item;
+            })}
             {this.isFolded && this.isNextMoreShow ? (
               <li
                 class={this.btnMoreClass}
