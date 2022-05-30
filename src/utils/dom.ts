@@ -8,9 +8,9 @@ import isString from 'lodash/isString';
 import { easeInOutCubic, EasingFunction } from './easing';
 import { ScrollContainer, ScrollContainerElement } from '../common';
 
-const isServer = Vue.prototype.$isServer || typeof window === 'undefined';
+export const isServer = Vue.prototype.$isServer || typeof window === 'undefined';
 
-const trim = (str: string): string => (str || '').replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, '');
+export const trim = (str: string): string => (str || '').replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, '');
 
 export const on = ((): any => {
   if (!isServer && document.addEventListener) {
