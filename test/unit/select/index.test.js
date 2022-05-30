@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import Vue from 'vue';
+// import Vue from 'vue';
 import { Select, OptionGroup, Option } from '@/src/select/index.ts';
 // const options = [{
 //   label: '苹果apple~~~~',
