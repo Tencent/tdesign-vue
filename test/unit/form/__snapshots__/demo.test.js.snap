@@ -870,34 +870,42 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             class="demo-select-base t-select__wrap"
           >
             <div
-              class="t-select t-select-polyfill t-size-m t-select__popup-reference"
+              class="t-input__wrap t-select-input--empty t-select"
             >
-              <span
-                class="t-select__placeholder"
+              <div
+                class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
               >
-                 请选择
-              </span>
-              <span
-                class="t-tag t-tag--default t-size-m t-tag--dark"
-                style="display: none;"
-              >
-                +0
-              </span>
-              <svg
-                class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-                fill="none"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                  stroke="black"
-                  stroke-opacity="0.9"
-                  stroke-width="1.3"
+                <div
+                  class="t-input__prefix"
                 />
-              </svg>
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -1371,34 +1379,42 @@ exports[`Form Form disabledVue demo works fine 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-select t-select-polyfill t-size-m t-select__popup-reference"
+              class="t-input__wrap t-select-input--empty t-select"
             >
-              <span
-                class="t-select__placeholder"
+              <div
+                class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
               >
-                 请选择
-              </span>
-              <span
-                class="t-tag t-tag--default t-size-m t-tag--dark"
-                style="display: none;"
-              >
-                +0
-              </span>
-              <svg
-                class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-                fill="none"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                  stroke="black"
-                  stroke-opacity="0.9"
-                  stroke-width="1.3"
+                <div
+                  class="t-input__prefix"
                 />
-              </svg>
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -2542,34 +2558,42 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             class="demo-select-base t-select__wrap"
           >
             <div
-              class="t-select t-select-polyfill t-size-m t-select__popup-reference"
+              class="t-input__wrap t-select-input--empty t-select"
             >
-              <span
-                class="t-select__placeholder"
+              <div
+                class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
               >
-                 请选择
-              </span>
-              <span
-                class="t-tag t-tag--default t-size-m t-tag--dark"
-                style="display: none;"
-              >
-                +0
-              </span>
-              <svg
-                class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-                fill="none"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                  stroke="black"
-                  stroke-opacity="0.9"
-                  stroke-width="1.3"
+                <div
+                  class="t-input__prefix"
                 />
-              </svg>
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -5627,45 +5651,41 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             class="demo-select-base t-select__wrap"
           >
             <div
-              class="t-select t-select-polyfill t-size-m t-select__popup-reference"
+              class="t-input__wrap t-select-input--empty t-select"
             >
-              <span
-                class="t-tag t-tag--default t-size-m t-tag--dark"
-                style="display: none;"
-              >
-                +0
-              </span>
               <div
-                class="t-input__wrap t-select__input"
+                class="t-input t-size-m t-input--prefix t-input--suffix"
               >
                 <div
-                  class="t-input t-size-m t-is-readonly"
-                >
-                  <input
-                    autocomplete=""
-                    class="t-input__inner"
-                    placeholder="请输入"
-                    readonly="readonly"
-                    type="text"
-                    unselectable="on"
-                  />
-                </div>
-              </div>
-              <svg
-                class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-                fill="none"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                  stroke="black"
-                  stroke-opacity="0.9"
-                  stroke-width="1.3"
+                  class="t-input__prefix"
                 />
-              </svg>
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  type="text"
+                  unselectable="off"
+                />
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>

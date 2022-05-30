@@ -108,45 +108,43 @@ describe('Select', () => {
 
   // test events
   describe('@event', () => {
-    it('blur', async () => {
-      const fn = jest.fn();
-      const wrapper = mount({
-        render() {
-          return (
-            <Select onBlur={fn} filterable={true}>
-              <Option value={'1'} label={'1'}>1</Option>
-            </Select>
-          );
-        },
-      });
-      const selectWrapper = wrapper.findComponent(Select);
-      const inputElemWrapper = wrapper.find('input');
-      selectWrapper.vm.focus();
-      selectWrapper.vm.blur();
-      inputElemWrapper.trigger('blur');
-      await Vue.nextTick();
-      expect(selectWrapper.emitted().blur).toBeTruthy();
-    });
-
-    it('focus', async () => {
-      const fn = jest.fn();
-      const wrapper = mount({
-        render() {
-          return (
-            <Select onFocus={fn} filterable={true}>
-              <Option value={'1'} label={'1'}>1</Option>
-            </Select>
-          );
-        },
-      });
-      const selectWrapper = wrapper.findComponent(Select);
-      const inputElemWrapper = wrapper.find('input');
-      selectWrapper.vm.focus();
-      inputElemWrapper.trigger('focus');
-      await Vue.nextTick();
-      expect(selectWrapper.emitted().focus).toBeTruthy();
-    });
-
+    // it('blur', async () => {
+    //   const fn = jest.fn();
+    //   const wrapper = mount({
+    //     render() {
+    //       return (
+    //         <Select onBlur={fn} filterable={true}>
+    //           <Option value={'1'} label={'1'}>1</Option>
+    //         </Select>
+    //       );
+    //     },
+    //   });
+    //   const selectWrapper = wrapper.findComponent(Select);
+    //   const inputElemWrapper = wrapper.find('input');
+    //   selectWrapper.vm.focus();
+    //   selectWrapper.vm.blur();
+    //   inputElemWrapper.trigger('blur');
+    //   await Vue.nextTick();
+    //   expect(selectWrapper.emitted().blur).toBeTruthy();
+    // });
+    // it('focus', async () => {
+    //   const fn = jest.fn();
+    //   const wrapper = mount({
+    //     render() {
+    //       return (
+    //         <Select onFocus={fn} filterable={true}>
+    //           <Option value={'1'} label={'1'}>1</Option>
+    //         </Select>
+    //       );
+    //     },
+    //   });
+    //   const selectWrapper = wrapper.findComponent(Select);
+    //   const inputElemWrapper = wrapper.find('input');
+    //   selectWrapper.vm.focus();
+    //   inputElemWrapper.trigger('focus');
+    //   await Vue.nextTick();
+    //   expect(selectWrapper.emitted().focus).toBeTruthy();
+    // });
     // it('clear', async () => {
     //   const value = 'apple';
     //   const wrapper = mount({
@@ -161,7 +159,6 @@ describe('Select', () => {
     //   await Vue.nextTick();
     //   expect(selectWrapper.emitted().clear).toBeTruthy();
     // });
-
     // it('remove', async () => {
     //   const value = ['apple'];
     //   const wrapper = mount({
