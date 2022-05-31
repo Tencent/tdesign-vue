@@ -1,6 +1,7 @@
 <template>
   <div>
     <router-view />
+    <tdesign-theme-generator />
   </div>
 </template>
 
