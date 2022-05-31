@@ -10615,7 +10615,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
   <div class="t-progress-domo-margin">
     <div>自定义颜色</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:30%;background:linear-gradient(to right, #7B7BE0 0%,#6392F7 100%);">
           <div class="t-progress__info">30%</div>
         </div>
@@ -10725,7 +10725,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/line.vue correctly 
   <div>
     <div class="t-progress-domo-margin">默认样式</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:30%;background:;">
           <div class="t-progress__info">30%</div>
         </div>
@@ -10733,7 +10733,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/line.vue correctly 
     </div>
     <div class="t-progress-domo-margin">进度0-10%时数字数字位置出现在目前进度的右边区域</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--under-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--under-ten" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:5%;background:;"></div>
         <div class="t-progress__info">5%</div>
       </div>
@@ -10747,7 +10747,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/plump.vue correctly
   <div>
     <div class="t-progress-domo-margin">默认样式</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:30%;background:;">
           <div class="t-progress__info">30%</div>
         </div>
@@ -10755,14 +10755,14 @@ exports[`ssr snapshot test renders ./examples/progress/demos/plump.vue correctly
     </div>
     <div class="t-progress-domo-margin">进度0-10%时数字数字位置出现在目前进度的右边区域</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--under-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--under-ten" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:5%;background:;"></div>
         <div class="t-progress__info">5%</div>
       </div>
     </div>
     <div class="t-progress-domo-margin">100%</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:100%;background:;">
           <div class="t-progress__info">100%</div>
         </div>
@@ -10770,7 +10770,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/plump.vue correctly
     </div>
     <div class="t-progress-domo-margin">进度完成</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:30%;background:;">
           <div class="t-progress__info">30%</div>
         </div>
@@ -10778,7 +10778,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/plump.vue correctly
     </div>
     <div class="t-progress-domo-margin">进度状态发生重大错误</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--error" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--error" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:30%;background:;">
           <div class="t-progress__info">30%</div>
         </div>
@@ -10786,7 +10786,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/plump.vue correctly
     </div>
     <div class="t-progress-domo-margin">进度被中断</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--warning" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--warning" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:30%;background:;">
           <div class="t-progress__info">30%</div>
         </div>
@@ -10794,7 +10794,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/plump.vue correctly
     </div>
     <div class="t-progress-domo-margin">渐变色</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--active" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--active" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:30%;background:linear-gradient(to right, #0052D9, #00A870);">
           <div class="t-progress__info">30%</div>
         </div>
@@ -10894,7 +10894,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
       </div>
     </div>
     <div class="t-progress-domo-margin t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:80%;background:;">
           <div class="t-progress__info">80%</div>
         </div>
@@ -10924,7 +10924,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
       </div>
     </div>
     <div class="t-progress-domo-margin t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--error" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--error" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:80%;background:;">
           <div class="t-progress__info">80%</div>
         </div>
@@ -10954,7 +10954,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
       </div>
     </div>
     <div class="t-progress-domo-margin t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--warning" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--warning" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:80%;background:;">
           <div class="t-progress__info">80%</div>
         </div>

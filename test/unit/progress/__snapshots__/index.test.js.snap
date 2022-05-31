@@ -250,7 +250,7 @@ exports[`Progress :props :theme :theme line and plump progress have t-progress__
 
 exports[`Progress :props :theme :theme line and plump progress have t-progress__inner class 2`] = `
 <div class="t-progress">
-  <div class="t-progress__bar t-progress--plump t-progress--under-ten" style="border-radius: undefinedpx;">
+  <div class="t-progress__bar t-progress--plump t-progress--under-ten">
     <div class="t-progress__inner" style="width: 0%;"></div>
     <div class="t-progress__info">0%</div>
   </div>
@@ -259,7 +259,7 @@ exports[`Progress :props :theme :theme line and plump progress have t-progress__
 
 exports[`Progress :props :theme :theme line and plump progress have t-progress__inner class 3`] = `
 <div class="t-progress">
-  <div class="t-progress__bar t-progress--plump t-progress--under-ten" style="border-radius: undefinedpx;">
+  <div class="t-progress__bar t-progress--plump t-progress--under-ten">
     <div class="t-progress__inner" style="width: 10%;"></div>
     <div class="t-progress__info">10%</div>
   </div>
@@ -268,7 +268,7 @@ exports[`Progress :props :theme :theme line and plump progress have t-progress__
 
 exports[`Progress :props :theme :theme line and plump progress have t-progress__inner class 4`] = `
 <div class="t-progress">
-  <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="border-radius: undefinedpx;">
+  <div class="t-progress__bar t-progress--plump t-progress--over-ten">
     <div class="t-progress__inner" style="width: 11%;">
       <div class="t-progress__info">11%</div>
     </div>
@@ -299,7 +299,7 @@ exports[`Progress :props :theme :theme:line 1`] = `
 
 exports[`Progress :props :theme :theme:plump 1`] = `
 <div class="t-progress">
-  <div class="t-progress__bar t-progress--plump t-progress--under-ten" style="border-radius: undefinedpx;">
+  <div class="t-progress__bar t-progress--plump t-progress--under-ten">
     <div class="t-progress__inner" style="width: 0%;"></div>
     <div class="t-progress__info">0%</div>
   </div>
