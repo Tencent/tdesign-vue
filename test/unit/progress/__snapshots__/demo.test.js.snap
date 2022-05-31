@@ -674,7 +674,6 @@ exports[`Progress Progress customVue demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1045,7 +1044,6 @@ exports[`Progress Progress lineVue demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1071,7 +1069,6 @@ exports[`Progress Progress lineVue demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--under-ten"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1102,7 +1099,6 @@ exports[`Progress Progress plumpVue demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1128,7 +1124,6 @@ exports[`Progress Progress plumpVue demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--under-ten"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1153,7 +1148,6 @@ exports[`Progress Progress plumpVue demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1179,7 +1173,6 @@ exports[`Progress Progress plumpVue demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1205,7 +1198,6 @@ exports[`Progress Progress plumpVue demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--error"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1231,7 +1223,6 @@ exports[`Progress Progress plumpVue demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--warning"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1257,7 +1248,6 @@ exports[`Progress Progress plumpVue demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--active"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1648,7 +1638,6 @@ exports[`Progress Progress statusVue demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1762,7 +1751,6 @@ exports[`Progress Progress statusVue demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--error"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1876,7 +1864,6 @@ exports[`Progress Progress statusVue demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--warning"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
