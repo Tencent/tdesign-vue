@@ -48,7 +48,7 @@ export default Vue.extend({
       let height = typeof strokeWidth === 'string' ? strokeWidth : `${strokeWidth}px`;
       const Plump = PRO_THEME.PLUMP;
       if (this.theme === Plump) {
-        height = strokeWidth;
+        height = strokeWidth as const;
       }
       return {
         height,
