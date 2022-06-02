@@ -325,7 +325,7 @@ export default Vue.extend({
         {
           class: name,
           ref: 'popper',
-          style: destroyOnClose && hidePopup ? { display: 'none' } : undefined,
+          style: [hidePopup && { visibility: 'hidden', pointerEvents: 'none' }, { zIndex: this.zIndex }],
           directives: destroyOnClose
             ? undefined
             : [
