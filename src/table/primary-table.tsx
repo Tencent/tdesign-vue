@@ -18,6 +18,7 @@ import useDragSort from './hooks/useDragSort';
 import useAsyncLoading from './hooks/useAsyncLoading';
 import { PageInfo } from '../pagination';
 import useClassName from './hooks/useClassName';
+import useEditableCell from './hooks/useEditableCell';
 
 export { BASE_TABLE_ALL_EVENTS } from './base-table';
 
@@ -88,6 +89,8 @@ export default defineComponent({
     const { renderTitleWidthIcon } = useTableHeader(props);
     const { renderAsyncLoading } = useAsyncLoading(props, context);
 
+    const { renderEditableCell } = useEditableCell(props, context);
+
     const primaryTableClasses = computed(() => ({
       [tableDraggableClasses.colDraggable]: isColDraggable.value,
       [tableDraggableClasses.rowHandlerDraggable]: isRowHandlerDraggable.value,
@@ -144,6 +147,11 @@ export default defineComponent({
             );
           };
           item.ellipsisTitle = false;
+        }
+        // 如果是单元格可编辑状态
+        if (item.edit?.component) {
+          const oldCell = item.cell;
+          item.cell = (h, p) => renderEditableCell(h, p, oldCell);
         }
         if (item.children?.length) {
           item.children = getColumns(item.children);

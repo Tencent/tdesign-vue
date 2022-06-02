@@ -45,7 +45,11 @@ export default Vue.extend({
     },
     trackBgStyle(): Styles {
       const { strokeWidth } = this;
-      const height = typeof strokeWidth === 'string' ? strokeWidth : `${strokeWidth}px`;
+      let height = typeof strokeWidth === 'string' ? strokeWidth : `${strokeWidth}px`;
+      const Plump = PRO_THEME.PLUMP;
+      if (this.theme === Plump) {
+        height = '';
+      }
       return {
         height,
         backgroundColor: this.trackColor,

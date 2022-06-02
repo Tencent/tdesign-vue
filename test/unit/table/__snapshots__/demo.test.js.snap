@@ -19990,7 +19990,19 @@ exports[`Table Table treeVue demo works fine 1`] = `
 <div>
   <div>
     <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        添加根节点
+      </span>
+    </button>
+     
+    <button
       class="t-button t-size-m t-button--variant-base t-button--theme-default"
+      style="margin-left: 16px;"
       type="button"
     >
       <span
@@ -20024,9 +20036,25 @@ exports[`Table Table treeVue demo works fine 1`] = `
       </span>
     </button>
      
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-default"
+      style="margin-left: 16px;"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        获取全部树形结构
+      </span>
+    </button>
+  </div>
+   
+  <br />
+   
+  <div>
     <label
       class="t-checkbox"
-      style="margin-left: 16px; vertical-align: middle;"
+      style="vertical-align: middle;"
     >
       <input
         class="t-checkbox__former"

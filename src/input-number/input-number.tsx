@@ -372,6 +372,7 @@ export default Vue.extend({
         <t-input
           {...this.inputAttrs}
           {...this.inputEvents}
+          props={this.inputProps}
           value={this.displayValue}
           onChange={(val: string, { e }: { e: InputEvent }) => this.handleInput(val, e)}
         />
