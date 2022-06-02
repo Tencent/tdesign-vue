@@ -1,7 +1,7 @@
 import Vue, { VNodeDirective } from 'vue';
 import { createPopper, Placement } from '@popperjs/core';
 import { prefix } from '../config';
-import CLASSNAMES from '../utils/classnames';
+import commonCls from '../utils/classnames';
 import { on, off, once } from '../utils/dom';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import { getIEVersion } from '../utils/helper';
@@ -10,13 +10,29 @@ import props from './props';
 import { PopupVisibleChangeContext, TdPopupProps } from './type';
 import Container from './container';
 
-const name = `${prefix}-popup`;
+const prefixCls = `${prefix}-popup`;
 const showTimeout = 250;
 const hideTimeout = 150;
 const triggers = ['click', 'hover', 'focus', 'context-menu'] as const;
 
 function getPopperPlacement(placement: TdPopupProps['placement']) {
   return placement.replace(/-(left|top)$/, '-start').replace(/-(right|bottom)$/, '-end') as Placement;
+}
+
+function attachListeners(elm: Element) {
+  const offs: Array<() => void> = [];
+  return {
+    add<K extends keyof HTMLElementEventMap>(type: K, listener: (ev: HTMLElementEventMap[K]) => void) {
+      on(elm, type, listener);
+      offs.push(() => {
+        off(elm, type, listener);
+      });
+    },
+    clean() {
+      offs.forEach((handler) => handler?.());
+      offs.length = 0;
+    },
+  };
 }
 
 export default Vue.extend({
@@ -43,7 +59,6 @@ export default Vue.extend({
 
   data() {
     return {
-      name,
       /** popperjs instance */
       popper: null as ReturnType<typeof createPopper>,
       /** timeout id */
@@ -63,11 +78,11 @@ export default Vue.extend({
   computed: {
     overlayClasses(): any {
       return [
-        `${name}__content`,
+        `${prefixCls}__content`,
         {
-          [`${name}__content--text`]: this.content === 'string',
-          [`${name}__content--arrow`]: this.showArrow,
-          [CLASSNAMES.STATUS.disabled]: this.disabled,
+          [`${prefixCls}__content--text`]: this.content === 'string',
+          [`${prefixCls}__content--arrow`]: this.showArrow,
+          [commonCls.STATUS.disabled]: this.disabled,
         },
         this.overlayClassName,
       ];
@@ -108,10 +123,13 @@ export default Vue.extend({
       }
     },
     overlayStyle() {
-      if (this.popper) {
-        this.popper.update();
-        this.updateOverlayStyle();
-      }
+      this.updateOverlayStyle();
+      this.updatePopper();
+    },
+    placement() {
+      this.popper?.destroy();
+      this.popper = null;
+      this.updatePopper();
     },
     // sync lock state recursively
     contentClicked(clicked) {
@@ -121,37 +139,42 @@ export default Vue.extend({
     },
   },
   mounted() {
-    const { hasTrigger, $el: triggerEl } = this;
-
-    if (hasTrigger.hover) {
-      on(triggerEl, 'mouseenter', () => this.handleOpen({ trigger: 'trigger-element-hover' }));
-      on(triggerEl, 'mouseleave', () => this.handleClose({ trigger: 'trigger-element-hover' }));
-    } else if (hasTrigger.focus) {
-      on(triggerEl, 'focusin', () => this.handleOpen({ trigger: 'trigger-element-focus' }));
-      on(triggerEl, 'focusout', () => this.handleClose({ trigger: 'trigger-element-blur' }));
-    } else if (hasTrigger.click) {
-      on(triggerEl, 'click', (e: MouseEvent) => {
-        // override nested popups with trigger hover due to higher priority
-        this.visibleState = 0;
-        this.handleToggle({ e, trigger: 'trigger-element-click' });
-        // ie9-10 trigger propagation
-        if (getIEVersion() < 11) {
-          this.handleDocumentClick();
-        }
-      });
-    } else if (hasTrigger['context-menu']) {
-      on(triggerEl, 'contextmenu', (e: MouseEvent) => {
-        e.preventDefault();
-        // MouseEvent.button
-        // 2: Secondary button pressed, usually the right button
-        e.button === 2 && this.handleToggle({ trigger: 'context-menu' });
-      });
-    }
-    if (!hasTrigger['context-menu']) {
-      on(triggerEl, 'click', () => {
-        this.triggerClicked = true;
-      });
-    }
+    const trigger = attachListeners(this.$el);
+    const updateTrigger = () => {
+      trigger.clean();
+      const { hasTrigger } = this;
+      if (hasTrigger.hover) {
+        trigger.add('mouseenter', () => this.handleOpen({ trigger: 'trigger-element-hover' }));
+        trigger.add('mouseleave', () => this.handleClose({ trigger: 'trigger-element-hover' }));
+      } else if (hasTrigger.focus) {
+        trigger.add('focusin', () => this.handleOpen({ trigger: 'trigger-element-focus' }));
+        trigger.add('focusout', () => this.handleClose({ trigger: 'trigger-element-blur' }));
+      } else if (hasTrigger.click) {
+        trigger.add('click', (e: MouseEvent) => {
+          // override nested popups with trigger hover due to higher priority
+          this.visibleState = 0;
+          this.handleToggle({ e, trigger: 'trigger-element-click' });
+          // ie9-10 trigger propagation
+          if (getIEVersion() < 11) {
+            this.handleDocumentClick();
+          }
+        });
+      } else if (hasTrigger['context-menu']) {
+        trigger.add('contextmenu', (e: MouseEvent) => {
+          e.preventDefault();
+          // MouseEvent.button
+          // 2: Secondary button pressed, usually the right button
+          e.button === 2 && this.handleToggle({ trigger: 'context-menu' });
+        });
+      }
+      if (!hasTrigger['context-menu']) {
+        trigger.add('click', () => {
+          this.triggerClicked = true;
+        });
+      }
+    };
+    updateTrigger();
+    this.$watch('trigger', updateTrigger);
   },
   updated() {
     (this.$refs.container as any)?.updateContent();
@@ -160,13 +183,15 @@ export default Vue.extend({
     this.destroyPopper();
   },
   methods: {
-    createPopper() {
+    updatePopper() {
       const { $el: triggerEl } = this;
       const popperEl = this.$refs.popper as HTMLElement;
 
-      if (!popperEl) return;
-
-      this.popper?.destroy();
+      if (!popperEl || !this.visible) return;
+      if (this.popper) {
+        this.popper.update();
+        return;
+      }
 
       this.popper = createPopper(triggerEl, popperEl, {
         modifiers:
@@ -190,14 +215,6 @@ export default Vue.extend({
       });
     },
 
-    updatePopper() {
-      if (this.popper) {
-        this.popper.update();
-        return;
-      }
-      this.createPopper();
-    },
-
     updateOverlayStyle() {
       const { overlayStyle } = this;
       const triggerEl = this.$el as HTMLElement;
@@ -215,8 +232,10 @@ export default Vue.extend({
      * destroy popper IF NEEDED
      */
     destroyPopper() {
-      this.popper?.destroy();
-      this.popper = null;
+      if (this.popper) {
+        this.popper.destroy();
+        this.popper = null;
+      }
       if (this.destroyOnClose) {
         (this.$refs.container as any)?.unmountContent();
       }
@@ -323,7 +342,7 @@ export default Vue.extend({
       ? h(
         'div',
         {
-          class: name,
+          class: prefixCls,
           ref: 'popper',
           style: [hidePopup && { visibility: 'hidden', pointerEvents: 'none' }, { zIndex: this.zIndex }],
           directives: destroyOnClose
@@ -367,7 +386,7 @@ export default Vue.extend({
                 }
                 : undefined,
             },
-            [content, this.showArrow && h('div', { class: `${name}__arrow` })],
+            [content, this.showArrow && h('div', { class: `${prefixCls}__arrow` })],
           ),
         ],
       )
@@ -393,7 +412,7 @@ export default Vue.extend({
       >
         <transition
           slot="content"
-          name={this.expandAnimation ? `${name}--animation-expand` : `${name}--animation`}
+          name={this.expandAnimation ? `${prefixCls}--animation-expand` : `${prefixCls}--animation`}
           appear
           onBeforeEnter={this.onBeforeEnter}
           onAfterEnter={this.onAfterEnter}
