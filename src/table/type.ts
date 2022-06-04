@@ -21,8 +21,8 @@ import { TNode, OptionData, SizeEnum, ClassName, HTMLElementAttributes, Componen
 
 export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
   /**
-   * 是否允许调整列宽
-   * @default false
+   * 是否允许调整列宽。请更为使用 `resizable`
+   * @deprecated
    */
   allowResizeColumnWidth?: boolean;
   /**
@@ -114,6 +114,11 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    * 分页配置，值为空则不显示。具体 API 参考分页组件。当 `data` 数据长度超过分页大小时，会自动对本地数据 `data` 进行排序，如果不希望对于 `data` 进行排序，可以设置 `disableDataPage = true`
    */
   pagination?: PaginationProps;
+  /**
+   * 是否允许调整列宽。如果想要配置宽度可调整的最小值和最大值，请使用 `column.resize`，示例：`columns: [{ resize: { minWidth: 120, maxWidth: 300 } }]`
+   * @default false
+   */
+  resizable?: boolean;
   /**
    * HTML 标签 `tr` 的属性。类型为 Function 时，参数说明：`params.row` 表示行数据；`params.rowIndex` 表示行下标；`params.type=body` 表示属性作用于 `tbody` 中的元素；`params.type=foot` 表示属性作用于 `tfoot` 中的元素。<br />示例一：{ draggable: true }，<br />示例二：[{ draggable: true }, { title: '超出省略显示' }]。<br /> 示例三：() => [{ draggable: true }]
    */
@@ -265,6 +270,10 @@ export interface BaseTableCol<T extends TableRowData = TableRowData> {
    * 自定义表头或单元格，泛型 T 指表格数据类型
    */
   render?: TNode<BaseTableRenderParams<T>>;
+  /**
+   * 限制拖拽调整的最小宽度和最大宽度。`resize.minWidth` 默认为 `80`，`resize.maxWidth` 默认为 `600`
+   */
+  resize?: TableColumnResizeConfig;
   /**
    * 自定义表头渲染。值类型为 Function 表示以函数形式渲染表头。值类型为 string 表示使用插槽渲染，插槽名称为 title 的值。优先级高于 render
    */
@@ -808,6 +817,11 @@ export interface BaseTableRenderParams<T> extends BaseTableCellParams<T> {
 }
 
 export type RenderType = 'cell' | 'title';
+
+export interface TableColumnResizeConfig {
+  minWidth: number;
+  maxWidth: number;
+}
 
 export type DataType = TableRowData;
 

@@ -35,6 +35,7 @@
       :data="data"
       :filter-value="filterValue"
       :bordered="bordered"
+      resizable
       @filter-change="onFilterChange"
       @change="onChange"
     />
