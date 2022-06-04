@@ -466,7 +466,7 @@ export interface PrimaryTableCol<T extends TableRowData = TableRowData>
    */
   edit?: TableEditableCellConfig<T>;
   /**
-   * 过滤规则，支持多选(multiple)、单选(single)、输入框(input) 等三种形式。想要自定义过滤组件，可通过 `filter.component` 实现，自定义过滤组件需要包含参数 value 和事件 change
+   * 过滤规则，支持多选(multiple)、单选(single)、输入框(input) 等三种形式。想要自定义过滤组件，可通过 `filter.component` 实现，自定义过滤组件需要包含参数 value 和事件 change。更多信息请查看当前页面中 `TableColumnFilter` 的详细文档
    */
   filter?: TableColumnFilter;
   /**
@@ -608,9 +608,13 @@ export interface TableRowState<T extends TableRowData = TableRowData> {
 
 export interface TableColumnFilter {
   /**
-   * 用于自定义筛选器，只要保证自定义筛选器包含 value 属性 和 change 事件，即可像内置筛选器一样正常使用
+   * 用于自定义筛选器，只要保证自定义筛选器包含 value 属性 和 change 事件，即可像内置筛选器一样正常使用。示例：`component: DatePicker`
    */
-  component?: TNode;
+  component?: ComponentType;
+  /**
+   * 哪些事件触发后会进行过滤搜索（确认按钮无需配置，会默认触发搜索）。输入框组件示例：`confirmEvents: ['onEnter']`
+   */
+  confirmEvents?: string[];
   /**
    * 用于配置当前筛选器可选值有哪些，仅当 `filter.type` 等于 `single` 或 `multiple` 时有效
    */

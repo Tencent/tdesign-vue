@@ -42,6 +42,8 @@
 </template>
 
 <script lang="jsx">
+import { DatePicker } from 'tdesign-vue';
+
 const data = new Array(5).fill(null).map((_, i) => ({
   key: String(i + 1),
   firstName: ['Eric', 'Gilberta', 'Heriberto', 'Lazarus', 'Zandra'][i % 4],
@@ -108,6 +110,8 @@ export default {
           filter: {
             type: 'input',
             resetValue: '@',
+            // 按下 Enter 键时也触发确认搜索
+            confirmEvents: ['onEnter'],
             props: {
               placeholder: '输入关键词过滤',
               clearable: true,
@@ -121,8 +125,15 @@ export default {
           colKey: 'createTime',
           // 自定义过滤组件：日期过滤配置，请确保自定义组件包含 value 和 onChange 属性
           filter: {
+            // this config is not recommended.
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            component: (h) => <t-date-picker clearable />,
+            // component: (h) => <t-date-picker clearable />,
+
+            // this config will be better.
+            component: DatePicker,
+            props: {
+              clearable: true,
+            },
           },
         },
       ];
