@@ -68,7 +68,7 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   footData?: Array<T>;
   /**
-   * 表尾吸底
+   * 表尾吸底。使用此向功能，需要非常注意表格是相对于哪一个父元素进行滚动，默认为整个窗口。如果表格滚动的父元素不是整个窗口，请通过 `footerAffixProps.container` 调整固钉的吸顶范围
    * @default false
    */
   footerAffixedBottom?: boolean;
@@ -77,7 +77,7 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   footerAffixProps?: AffixProps;
   /**
-   * 表头吸顶
+   * 表头吸顶。使用此向功能，需要非常注意表格是相对于哪一个父元素进行滚动，默认为整个窗口。如果表格滚动的父元素不是整个窗口，请通过 `headerAffixProps.container` 调整固钉的吸顶范围
    * @default false
    */
   headerAffixedTop?: boolean;

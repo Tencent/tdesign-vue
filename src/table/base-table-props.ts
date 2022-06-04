@@ -49,13 +49,13 @@ export default {
     type: Array as PropType<TdBaseTableProps['footData']>,
     default: (): TdBaseTableProps['footData'] => [],
   },
-  /** 表尾吸底 */
+  /** 表尾吸底。使用此向功能，需要非常注意表格是相对于哪一个父元素进行滚动，默认为整个窗口。如果表格滚动的父元素不是整个窗口，请通过 `footerAffixProps.container` 调整固钉的吸顶范围 */
   footerAffixedBottom: Boolean,
   /** 表尾吸底基于 Affix 组件开发，透传全部 Affix 组件属性 */
   footerAffixProps: {
     type: Object as PropType<TdBaseTableProps['footerAffixProps']>,
   },
-  /** 表头吸顶 */
+  /** 表头吸顶。使用此向功能，需要非常注意表格是相对于哪一个父元素进行滚动，默认为整个窗口。如果表格滚动的父元素不是整个窗口，请通过 `headerAffixProps.container` 调整固钉的吸顶范围 */
   headerAffixedTop: Boolean,
   /** 表头吸顶基于 Affix 组件开发，透传全部 Affix 组件属性 */
   headerAffixProps: {
