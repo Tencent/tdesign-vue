@@ -151,7 +151,8 @@ export default Vue.extend<DateData, DateMethods, DateComputed, DateProps>({
   },
   render() {
     return (
-      <div class={`${prefix}-date-picker__panel`}>
+      // 去除非必要的事件冒泡，方便外层处理相关交互。如：可编辑单元格的表格
+      <div class={`${prefix}-date-picker__panel`} onClick={(e: MouseEvent) => e.stopPropagation()}>
         <t-date-header
           year={this.year}
           month={this.month}

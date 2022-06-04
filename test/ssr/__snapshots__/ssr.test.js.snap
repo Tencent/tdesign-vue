@@ -10615,7 +10615,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/custom.vue correctl
   <div class="t-progress-domo-margin">
     <div>自定义颜色</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:30%;background:linear-gradient(to right, #7B7BE0 0%,#6392F7 100%);">
           <div class="t-progress__info">30%</div>
         </div>
@@ -10725,7 +10725,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/line.vue correctly 
   <div>
     <div class="t-progress-domo-margin">默认样式</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:30%;background:;">
           <div class="t-progress__info">30%</div>
         </div>
@@ -10733,7 +10733,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/line.vue correctly 
     </div>
     <div class="t-progress-domo-margin">进度0-10%时数字数字位置出现在目前进度的右边区域</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--under-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--under-ten" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:5%;background:;"></div>
         <div class="t-progress__info">5%</div>
       </div>
@@ -10747,7 +10747,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/plump.vue correctly
   <div>
     <div class="t-progress-domo-margin">默认样式</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:30%;background:;">
           <div class="t-progress__info">30%</div>
         </div>
@@ -10755,14 +10755,14 @@ exports[`ssr snapshot test renders ./examples/progress/demos/plump.vue correctly
     </div>
     <div class="t-progress-domo-margin">进度0-10%时数字数字位置出现在目前进度的右边区域</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--under-ten" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--under-ten" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:5%;background:;"></div>
         <div class="t-progress__info">5%</div>
       </div>
     </div>
     <div class="t-progress-domo-margin">100%</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:100%;background:;">
           <div class="t-progress__info">100%</div>
         </div>
@@ -10770,7 +10770,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/plump.vue correctly
     </div>
     <div class="t-progress-domo-margin">进度完成</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:30%;background:;">
           <div class="t-progress__info">30%</div>
         </div>
@@ -10778,7 +10778,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/plump.vue correctly
     </div>
     <div class="t-progress-domo-margin">进度状态发生重大错误</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--error" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--error" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:30%;background:;">
           <div class="t-progress__info">30%</div>
         </div>
@@ -10786,7 +10786,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/plump.vue correctly
     </div>
     <div class="t-progress-domo-margin">进度被中断</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--warning" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--warning" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:30%;background:;">
           <div class="t-progress__info">30%</div>
         </div>
@@ -10794,7 +10794,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/plump.vue correctly
     </div>
     <div class="t-progress-domo-margin">渐变色</div>
     <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--active" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--active" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:30%;background:linear-gradient(to right, #0052D9, #00A870);">
           <div class="t-progress__info">30%</div>
         </div>
@@ -10894,7 +10894,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
       </div>
     </div>
     <div class="t-progress-domo-margin t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:80%;background:;">
           <div class="t-progress__info">80%</div>
         </div>
@@ -10924,7 +10924,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
       </div>
     </div>
     <div class="t-progress-domo-margin t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--error" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--error" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:80%;background:;">
           <div class="t-progress__info">80%</div>
         </div>
@@ -10954,7 +10954,7 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
       </div>
     </div>
     <div class="t-progress-domo-margin t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--warning" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+      <div class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--warning" style="height:;background-color:;border-radius:;">
         <div class="t-progress__inner" style="width:80%;background:;">
           <div class="t-progress__info">80%</div>
         </div>
@@ -14346,6 +14346,193 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort-handler.vue 
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/table/demos/editable-cell.vue correctly 1`] = `
+<div>
+  <div class="t-table t-table--bordered" style="position:relative;">
+    <div class="t-table__content">
+      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
+      <table class="t-table--layout-fixed" style="width:;">
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
+        <thead class="t-table__header">
+          <tr>
+            <th data-colkey="firstName" class="t-table__th-firstName">
+              <div class="t-table__th-cell-inner">FirstName</div>
+            </th>
+            <th data-colkey="framework" class="t-table__th-framework">
+              <div class="t-table__th-cell-inner">Framework</div>
+            </th>
+            <th data-colkey="letters" class="t-table__th-letters">
+              <div class="t-table__th-cell-inner">Letters</div>
+            </th>
+            <th data-colkey="createTime" class="t-table__th-createTime">
+              <div class="t-table__th-cell-inner">Date</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="t-table__body">
+          <tr>
+            <td>
+              <div class="t-table__cell--editable">Eric<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+            <td>
+              <div class="t-table__cell--editable">Vue<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+            <td>
+              <div class="t-table__cell--editable">A<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+            <td>
+              <div class="t-table__cell--editable">2021-11-01<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="t-table__cell--editable">Gilberta<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+            <td>
+              <div class="t-table__cell--editable">React<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+            <td>
+              <div class="t-table__cell--editable">B、E<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+            <td>
+              <div class="t-table__cell--editable">2021-12-01<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="t-table__cell--editable">Heriberto<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+            <td>
+              <div class="t-table__cell--editable">Miniprogram<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+            <td>
+              <div class="t-table__cell--editable">C<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+            <td>
+              <div class="t-table__cell--editable">2022-01-01<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="t-table__cell--editable">Lazarus<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+            <td>
+              <div class="t-table__cell--editable">Flutter<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+            <td>
+              <div class="t-table__cell--editable">D、G、H<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+            <td>
+              <div class="t-table__cell--editable">2022-02-01<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="t-table__cell--editable">Eric<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+            <td>
+              <div class="t-table__cell--editable">Vue<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+            <td>
+              <div class="t-table__cell--editable">A<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+            <td>
+              <div class="t-table__cell--editable">2021-11-01<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
+                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
+                  </g>
+                </svg></div>
+            </td>
+          </tr>
+        </tbody>
+        <!---->
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
   <div class="t-table" style="position:relative;">
@@ -16453,7 +16640,8 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
 
 exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`] = `
 <div>
-  <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置数据</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-left:16px;"><span class="t-button__text">任意节点展开/收起</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-left:16px;"><span class="t-button__text">展开全部</span></button> <label class="t-checkbox" style="margin-left:16px;vertical-align:middle;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">
+  <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">添加根节点</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-left:16px;"><span class="t-button__text">重置数据</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-left:16px;"><span class="t-button__text">任意节点展开/收起</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-left:16px;"><span class="t-button__text">展开全部</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-left:16px;"><span class="t-button__text">获取全部树形结构</span></button></div> <br>
+  <div><label class="t-checkbox" style="vertical-align:middle;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">
       自定义折叠/展开图标
     </span></label></div> <br>
   <div class="t-table t-table--row-handler-draggable" style="position:relative;">
