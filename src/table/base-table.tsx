@@ -28,6 +28,7 @@ import { Affix } from '../affix';
 import { ROW_LISTENERS } from './tr';
 import THead from './thead';
 import TFoot from './tfoot';
+import log from '../_common/js/log';
 
 export const BASE_TABLE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY'];
 export const BASE_TABLE_ALL_EVENTS = ROW_LISTENERS.map((t) => `row-${t}`).concat(BASE_TABLE_EVENTS);
@@ -238,6 +239,10 @@ export default defineComponent({
     const { rowAndColFixedPosition } = this;
     const data = this.isPaginateData ? this.dataSource : this.data;
 
+    if (this.allowResizeColumnWidth) {
+      log.warn('Table', 'allowResizeColumnWidth is going to be deprecated, please use resizable instead.');
+    }
+    const columnResizable = this.allowResizeColumnWidth === undefined ? this.resizable : this.allowResizeColumnWidth;
     const defaultColWidth = this.tableLayout === 'fixed' && this.isWidthOverflow ? '100px' : undefined;
     const colgroup = (
       <colgroup>
@@ -263,7 +268,7 @@ export default defineComponent({
             spansAndLeafNodes={this.spansAndLeafNodes}
             thList={this.thList}
             thWidthList={this.thWidthList}
-            allowResizeColumnWidth={this.allowResizeColumnWidth}
+            resizable={columnResizable}
             columnResizeParams={this.columnResizeParams}
           />
         </table>
@@ -356,7 +361,7 @@ export default defineComponent({
             bordered={this.bordered}
             spansAndLeafNodes={this.spansAndLeafNodes}
             thList={this.thList}
-            allowResizeColumnWidth={this.allowResizeColumnWidth}
+            resizable={columnResizable}
             columnResizeParams={this.columnResizeParams}
           />
           <TBody scopedSlots={this.$scopedSlots} props={tableBodyProps} on={on} />
