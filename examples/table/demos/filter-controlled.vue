@@ -95,6 +95,7 @@ export default {
           // 多选过滤配置
           filter: {
             type: 'multiple',
+            resetValue: [],
             // 是否显示重置取消按钮，一般情况不需要显示
             showConfirmAndReset: true,
             list: [
@@ -110,7 +111,6 @@ export default {
           // 输入框过滤配置
           filter: {
             type: 'input',
-            resetValue: '@',
             // 按下 Enter 键时也触发确认搜索
             confirmEvents: ['onEnter'],
             props: {

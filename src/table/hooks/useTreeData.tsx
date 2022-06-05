@@ -31,7 +31,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   const checkedColumn = computed(() => columns.value.find((col) => col.colKey === 'row-select'));
 
   watch(checkedColumn, (column) => {
-    if (!store.value) return;
+    if (!store.value || !checkedColumn.value) return;
     store.value.updateDisabledState(dataSource.value, column, rowDataKeys.value);
   });
 
