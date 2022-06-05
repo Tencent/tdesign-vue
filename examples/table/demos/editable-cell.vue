@@ -52,6 +52,8 @@ export default {
               clearable: true,
               autofocus: true,
             },
+            // 除了点击非自身元素退出编辑态之外，还有哪些事件退出编辑态
+            abortEditOnEvent: ['onEnter'],
             // 编辑完成，退出编辑态后触发
             onEdited: (context) => {
               this.data.splice(context.rowIndex, 1, context.newRowData);
