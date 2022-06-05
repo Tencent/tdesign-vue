@@ -36,15 +36,6 @@ describe('Card', () => {
       expect(wrapper.find('.t-card__description').exists()).toBe(true);
       expect(wrapper.find('.t-card__description').text()).toBe('这是一段描述');
     });
-    it('description', () => {
-      const wrapper = mount({
-        render() {
-          return <Card description="这是一段描述"></Card>;
-        },
-      });
-      expect(wrapper.find('.t-card__description').exists()).toBe(true);
-      expect(wrapper.find('.t-card__description').text()).toBe('这是一段描述');
-    });
     it('avatar', () => {
       const wrapper = mount({
         render() {
