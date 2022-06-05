@@ -2,6 +2,7 @@ import { defineComponent, PropType, ref } from '@vue/composition-api';
 import { CreateElement } from 'vue';
 import { FilterIcon } from 'tdesign-icons-vue';
 import isEmpty from 'lodash/isEmpty';
+import lowerFirst from 'lodash/lowerFirst';
 import Popup from '../popup';
 import { CheckboxGroup } from '../checkbox';
 import { RadioGroup } from '../radio';
@@ -83,8 +84,8 @@ export default defineComponent({
         single: RadioGroup,
         multiple: CheckboxGroup,
         input: Input,
-      }[column.filter.type];
-      if (!component && !column?.filter?.component) return;
+      }[column.filter.type] || column.filter.component;
+      if (!component && !column.filter.component) return;
       const filterComponentProps: { [key: string]: any } = {
         options: ['single', 'multiple'].includes(column.filter.type) ? column.filter?.list : undefined,
         ...(column.filter?.props || {}),
@@ -102,27 +103,45 @@ export default defineComponent({
           this.$emit('inner-filter-change', val, column);
         },
       };
+      // 允许自定义触发确认搜索的事件
+      if (column.filter.confirmEvents) {
+        column.filter.confirmEvents.forEach((event) => {
+          const pureEvent = lowerFirst(event.replace('on', ''));
+          on[pureEvent] = () => {
+            this.$emit('confirm', column);
+            this.filterPopupVisible = false;
+          };
+        });
+      }
       const wrapperListeners: { click?: Function } = {};
       if (column.filter.showConfirmAndReset) {
         wrapperListeners.click = (e: MouseEvent) => e.stopPropagation();
       }
+
+      const renderComponent = () => {
+        if (!component) return null;
+        const isVueComponent = component.name === 'VueComponent';
+        if (typeof component === 'function' && !isVueComponent) {
+          return column?.filter?.component((v: FirstParams, b: SecondParams) => {
+            const tProps = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
+            return h(v, {
+              props: { ...filterComponentProps, ...tProps },
+              on,
+            });
+          });
+        }
+        return (
+          <component
+            value={this.innerFilterValue?.[column.colKey]}
+            props={{ ...filterComponentProps }}
+            on={{ ...on }}
+          ></component>
+        );
+      };
+
       return (
         <div class={this.tableFilterClasses.contentInner} on={wrapperListeners}>
-          {column?.filter?.component ? (
-            column?.filter?.component((v: FirstParams, b: SecondParams) => {
-              const tProps = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
-              return h(v, {
-                props: { ...filterComponentProps, ...tProps },
-                on,
-              });
-            })
-          ) : (
-            <component
-              value={this.innerFilterValue?.[column.colKey]}
-              props={{ ...filterComponentProps }}
-              on={{ ...on }}
-            ></component>
-          )}
+          {renderComponent()}
         </div>
       );
     };

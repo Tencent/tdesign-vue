@@ -24,6 +24,7 @@
       :size="size"
       :table-layout="tableLayout ? 'auto' : 'fixed'"
       :pagination="pagination"
+      resizable
     ></t-table>
   </div>
 </template>
