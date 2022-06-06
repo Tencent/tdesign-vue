@@ -426,7 +426,7 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   onDisplayColumnsChange?: (value: CheckboxGroupValue) => void;
   /**
-   * 拖拽排序时触发，`currentData` 表示拖拽排序结束后的新数据，`sort=row` 表示行拖拽事件触发，`sort=col` 表示列拖拽事件触发
+   * 拖拽排序时触发，`newData` 表示拖拽排序结束后的新数据，`sort=row` 表示行拖拽事件触发，`sort=col` 表示列拖拽事件触发
    */
   onDragSort?: (context: DragSortContext<T>) => void;
   /**
@@ -882,7 +882,9 @@ export interface DragSortContext<T> {
   current: T;
   targetIndex: number;
   target: T;
-  currentData: T[];
+  data: T[];
+  newData: T[];
+  currentData?: T[];
   e: SortableEvent;
   sort: 'row' | 'col';
 }

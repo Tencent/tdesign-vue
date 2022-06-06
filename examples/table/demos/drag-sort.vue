@@ -46,11 +46,12 @@ export default {
     };
   },
   methods: {
+    // currentData is going to be deprecated
     onDragSort({
-      currentIndex, current, targetIndex, target, currentData, e,
+      currentIndex, current, targetIndex, target, data, newData, e,
     }) {
-      console.log('重新排序', currentIndex, current, targetIndex, target, currentData, e);
-      this.data = currentData;
+      console.log('重新排序', currentIndex, current, targetIndex, target, data, newData, e);
+      this.data = newData;
     },
   },
 };
