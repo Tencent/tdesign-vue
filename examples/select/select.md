@@ -1,5 +1,9 @@
 :: BASE_DOC ::
 
+### 懒加载
+
+{{ lazy }}
+
 ## API
 ### Select Props
 

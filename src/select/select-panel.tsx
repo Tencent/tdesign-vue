@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, toRefs, inject,
+  computed, defineComponent, toRefs, inject, ref, Ref,
 } from '@vue/composition-api';
 import { get } from 'lodash';
 import { useTNodeJSX } from '../hooks/tnode';
@@ -75,8 +75,8 @@ export default defineComponent({
   ],
 
   setup(props: SelectPanelProps) {
+    const panelRef = ref(null);
     const { options, showCreateOption } = toRefs(props);
-
     const renderTNode = useTNodeJSX();
     const { t, global } = useConfig('select');
     const tSelect: any = inject('tSelect');
@@ -89,6 +89,7 @@ export default defineComponent({
       isEmpty,
       renderTNode,
       tSelect,
+      panelRef,
     };
   },
 
@@ -109,16 +110,17 @@ export default defineComponent({
       }
       return renderTNodeJSX(this, 'loadingText');
     },
-    renderCreateOption() {
+    renderCreateOption(panelRef: Ref<HTMLElement>) {
       const { showCreateOption, inputValue } = this;
       return (
         <ul v-show={showCreateOption} class={[`${name}__create-option`, `${name}__list`]}>
-          <t-option value={inputValue} label={inputValue} class={`${name}__create-option--special`} />
+          <t-option value={inputValue} label={inputValue} class={`${name}__create-option--special`} panelElement={panelRef}/>
         </ul>
       );
     },
     renderSingleOption(options: OptionsType = []) {
-      const { realValue, realLabel } = this;
+      const { realValue, realLabel, panelRef } = this;
+
       return options.map((item, index) => (
         <t-option
           value={get(item, realValue as string)}
@@ -126,6 +128,8 @@ export default defineComponent({
           content={item.content}
           disabled={item.disabled}
           key={index}
+          panelElement={panelRef}
+          rowIndex={index}
         ></t-option>
       ));
     },
@@ -162,16 +166,27 @@ export default defineComponent({
 
   render() {
     const {
-      size, renderTNode, loading, isEmpty,
+      size, renderTNode, loading, isEmpty, panelRef, realValue, realLabel,
     } = this;
-
     return (
-      <div class={`${name}__dropdown-inner ${name}__dropdown-inner--size-${sizeClassMap[size]}`}>
+      <div class={[`${name}__dropdown-inner`, `${name}__dropdown-inner--size-${sizeClassMap[size]}`]} ref="panelRef">
         {renderTNode('panelTopContent')}
         {isEmpty && this.renderEmptyContent()}
-        {this.renderCreateOption()}
+        {/* {this.renderCreateOption(panelRef)} */}
         {!isEmpty && loading && this.renderLoadingContent()}
-        {!isEmpty && !loading && this.renderOptionsContent()}
+        <ul class={`${name}__list`}>
+        {this.options.map((item, index) => (
+        <t-option
+          value={get(item, realValue as string)}
+          label={get(item, realLabel as string)}
+          content={item.content}
+          disabled={item.disabled}
+          key={index}
+          panelElement={panelRef}
+          rowIndex={index}
+        ></t-option>
+        ))}
+        </ul>
         {renderTNode('panelBottomContent')}
       </div>
     );
