@@ -35,11 +35,15 @@ import SelectInput, {
 import FakeArrow from '../common-components/fake-arrow';
 import Option from './option';
 import SelectPanel from './select-panel';
+import { TableScroll } from '../table/type';
 
 export type OptionInstance = InstanceType<typeof Option>;
 
 export const name = `${prefix}-select`;
 
+export interface SelectProps extends TdSelectProps {
+  scroll: TableScroll
+}
 export default defineComponent({
   name: 'TSelect',
   props: { ...props },
@@ -53,7 +57,7 @@ export default defineComponent({
     FakeArrow,
     SelectPanel,
   },
-  setup(props: TdSelectProps, context: SetupContext) {
+  setup(props: SelectProps, context: SetupContext) {
     const instance = getCurrentInstance();
     const { t, global } = useConfig('select');
     const renderTNode = useTNodeJSX();
@@ -627,6 +631,7 @@ export default defineComponent({
       destroyOptions,
       displayOptions,
       displayOptionsMap,
+
     });
 
     return {
@@ -713,14 +718,14 @@ export default defineComponent({
       handleTagChange,
       renderTNode,
       renderCollapsedItems,
+      // 虚拟滚动参数
+      scroll,
     } = this;
-
     const valueDisplay = this.renderValueDisplay(h);
     const placeholderText = this.getPlaceholderText();
     const prefixIcon = () => renderTNode('prefixIcon');
     const collapsedItems = () => renderCollapsedItems();
     const { overlayClassName, ...restPopupProps } = popupProps || {};
-
     return (
       <div ref="select" class={`${name}__wrap`}>
         <SelectInput
@@ -780,6 +785,7 @@ export default defineComponent({
             value={value}
             realLabel={realLabel}
             realValue={realValue}
+            scroll={scroll}
           />
         </SelectInput>
       </div>

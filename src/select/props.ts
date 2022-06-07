@@ -155,6 +155,9 @@ export default {
       return ['value', 'object'].includes(val);
     },
   },
+  scroll:{
+    type: Object as PropType<TdSelectProps['scroll']>,
+  },
   /** 输入框失去焦点时触发 */
   onBlur: Function as PropType<TdSelectProps['onBlur']>,
   /** 选中值变化时触发，`context. trigger` 表示触发变化的来源 */

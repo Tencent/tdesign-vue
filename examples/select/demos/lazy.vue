@@ -1,7 +1,7 @@
 <template>
   <div class="tdesign-demo-select-base">
     <!-- 方式一：使用 options 输出下拉选项。优先级高于 t-option-->
-    <t-select v-model="value1" :options="options" placeholder="请选择云解决方案" />
+    <t-select v-model="value1" :options="options" placeholder="请选择云解决方案" :scroll="{ type: 'virtual' }" :max="2"/>
   </div>
 </template>
 

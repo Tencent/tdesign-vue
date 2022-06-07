@@ -27,4 +27,8 @@ export default {
   value: {
     type: [String, Number] as PropType<TdOptionProps['value']>,
   },
+  rowIndex:Number,
+  trs: Map as PropType<TdOptionProps['trs']>,
+  scrollType: String,
+  isVirtual: Boolean
 };

@@ -36,6 +36,9 @@ export interface OptionProps extends TdOptionProps {
   panelElement: HTMLElement;
   scroll: TableScroll;
   rowIndex: number;
+  trs?: Map<number, object>;
+  scrollType?: string;
+  isVirtual: boolean
 }
 
 export default defineComponent({
@@ -58,7 +61,7 @@ export default defineComponent({
     const { hasLazyLoadHolder, tRowHeight } = useLazyLoad(
       panelElement,
       optionNode,
-      reactive({ type: 'lazy', bufferSize: 10, rowIndex: props.rowIndex }),
+      reactive({ type: 'virtual', bufferSize: 10, rowIndex: props.rowIndex }),
     );
     watch(value, () => {
       tSelect && tSelect.getOptions({ ...context, ...props });
@@ -141,6 +144,28 @@ export default defineComponent({
     onBeforeUnmount(() => {
       tSelect && tSelect.hasSlotOptions.value && tSelect.destroyOptions(context);
     });
+
+    onMounted(() => {
+      const {
+        trs, rowIndex, scrollType, isVirtual,
+      } = props;
+      console.log(rowIndex, 'rowIndex');
+
+      if (scrollType === 'virtual') {
+        if (isVirtual) {
+          trs.set(rowIndex, optionNode.value);
+          context.emit('onRowMounted');
+        }
+      }
+    });
+
+    onBeforeUnmount(() => {
+      if (props.isVirtual) {
+        const { trs, rowIndex } = props;
+        trs.delete(rowIndex);
+      }
+    });
+
     return {
       selected,
       show,
@@ -161,21 +186,7 @@ export default defineComponent({
     } = this;
     const children: ScopedSlotReturnValue = renderContent(this, 'default', 'content');
     const optionChild = children || labelText;
-    if (this.hasLazyLoadHolder) {
-      return (
-        <li
-          ref="optionNode"
-          v-show={show}
-          class={classes}
-          onMouseenter={this.mouseEvent.bind(true)}
-          onMouseleave={this.mouseEvent.bind(false)}
-          onClick={this.select}
-          v-ripple={(this.keepAnimation as any).ripple}
-        >
-          <span style={{ height: `${this.tRowHeight}px`, border: 'none' }}></span>
-        </li>
-      );
-    }
+
     return (
       <li
         ref="optionNode"
@@ -185,6 +196,7 @@ export default defineComponent({
         onMouseleave={this.mouseEvent.bind(false)}
         onClick={this.select}
         v-ripple={(this.keepAnimation as any).ripple}
+        style={this.hasLazyLoadHolder ? { height: `${this.tRowHeight}px`, border: 'none' } : null}
       >
         {tSelect && tSelect.multiple.value ? (
           <t-checkbox

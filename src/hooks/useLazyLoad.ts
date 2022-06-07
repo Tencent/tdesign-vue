@@ -4,7 +4,7 @@ import {
 import observe from '../_common/js/utils/observe';
 
 export type UseLazyLoadParams = UnwrapRef<{
-  type: 'lazy' | 'virtual';
+  type: 'lazy';
   rowIndex: number;
   rowHeight?: number;
   bufferSize?: number;
@@ -23,7 +23,6 @@ export default function useLazyLoad(
   const requestAnimationFrame = (typeof window === 'undefined' ? false : window.requestAnimationFrame) || ((cb) => setTimeout(cb, 16.6));
 
   const init = () => {
-    console.log(1, '1');
     if (!isInit.value) {
       requestAnimationFrame(() => {
         isInit.value = true;
