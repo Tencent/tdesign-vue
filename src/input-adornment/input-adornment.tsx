@@ -1,15 +1,13 @@
 import Vue, { VNode, CreateElement } from 'vue';
 import { prefix } from '../config';
 import { JsxNode } from '../common';
+import props from './props';
 
-const name = `${prefix}-addon`;
+const name = `${prefix}-input-adornment`;
 
 export default Vue.extend({
-  name: 'TAddon',
-  props: {
-    prepend: [String, Function],
-    append: [String, Function],
-  },
+  name: 'TInputAdornment',
+  props,
   methods: {
     renderAddon(h: CreateElement, type: string, addon: string | Function | undefined): JsxNode {
       let addonNode: JsxNode;
@@ -22,11 +20,7 @@ export default Vue.extend({
       } else {
         addonNode = null;
       }
-      return addonNode ? (
-        <span class={`${name}__${type}`}>
-          { addonNode }
-        </span>
-      ) : addonNode;
+      return addonNode ? <span class={`${name}__${type}`}>{addonNode}</span> : addonNode;
     },
   },
   render(h: CreateElement) {
@@ -47,9 +41,9 @@ export default Vue.extend({
 
     return (
       <div class={className}>
-        { prepend }
-        { defaultSlot[0] }
-        { append }
+        {prepend}
+        {defaultSlot[0]}
+        {append}
       </div>
     );
   },
