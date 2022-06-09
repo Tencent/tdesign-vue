@@ -40,6 +40,7 @@ export interface OptionProps extends TdOptionProps {
   trs?: Map<number, object>;
   scrollType?: 'lazy' | 'virtual';
   isVirtual: boolean;
+  bufferSize: number;
 }
 
 export default defineComponent({
@@ -50,6 +51,7 @@ export default defineComponent({
     trs: Map as PropType<OptionProps['trs']>,
     scrollType: String,
     isVirtual: Boolean,
+    bufferSize: Number,
   },
   components: {
     TCheckbox: Checkbox,
@@ -62,7 +64,7 @@ export default defineComponent({
     const formDisabled = ref(undefined);
 
     const {
-      value, label, disabled, panelElement, scrollType,
+      value, label, disabled, panelElement, scrollType, bufferSize,
     } = toRefs(props);
 
     const tSelect: any = inject('tSelect');
@@ -70,7 +72,7 @@ export default defineComponent({
     const { hasLazyLoadHolder = null, tRowHeight = null } = useLazyLoad(
       panelElement,
       optionNode,
-      reactive({ type: scrollType, bufferSize: 10, rowIndex: props.rowIndex }),
+      reactive({ type: scrollType, bufferSize, rowIndex: props.rowIndex }),
     );
     watch(value, () => {
       tSelect && tSelect.getOptions({ ...context, ...props });
@@ -196,6 +198,22 @@ export default defineComponent({
     } = this;
     const children: ScopedSlotReturnValue = renderContent(this, 'default', 'content');
     const optionChild = children || labelText;
+    if (this.hasLazyLoadHolder) {
+      return (
+        <li
+          ref="optionNode"
+          v-show={show}
+          class={classes}
+          onMouseenter={this.mouseEvent.bind(true)}
+          onMouseleave={this.mouseEvent.bind(false)}
+          onClick={this.select}
+          v-ripple={(this.keepAnimation as any).ripple}
+        >
+          {<span style={{ height: `${this.tRowHeight}px`, border: 'none' }}></span>}
+        </li>
+      );
+    }
+
     return (
       <li
         ref="optionNode"
@@ -205,7 +223,6 @@ export default defineComponent({
         onMouseleave={this.mouseEvent.bind(false)}
         onClick={this.select}
         v-ripple={(this.keepAnimation as any).ripple}
-        style={this.hasLazyLoadHolder ? { height: `${this.tRowHeight}px`, border: 'none' } : null}
       >
         {tSelect && tSelect.multiple.value ? (
           <t-checkbox

@@ -8,6 +8,9 @@
 export default {
   data() {
     const options = [];
+    for (let i = 0; i < 1000; i++) {
+      options.push({ label: `选项${i}`, value: String(i) });
+    }
     return {
       value: '',
       options,

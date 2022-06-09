@@ -90,7 +90,7 @@ export default defineComponent({
 
     const {
       type,
-      rowHeight = 30, // 默认 option 高度为 30
+      rowHeight = 28, // 默认每行高度28
       bufferSize = 20,
       isFixedRowHeight = false,
       threshold = 100,
@@ -161,6 +161,7 @@ export default defineComponent({
       scrollType: props.scroll?.type,
       handleRowMounted,
       bufferSize,
+      threshold,
     };
   },
 
@@ -183,7 +184,7 @@ export default defineComponent({
     },
     renderCreateOption() {
       const {
-        showCreateOption, inputValue, trs, scrollType, isVirtual, handleRowMounted,
+        showCreateOption, inputValue, trs, scrollType, isVirtual, handleRowMounted, bufferSize,
       } = this;
       const on = isVirtual ? { onRowMounted: handleRowMounted } : {};
 
@@ -196,6 +197,7 @@ export default defineComponent({
             trs={trs}
             scrollType={scrollType}
             isVirtual={isVirtual}
+            bufferSize={bufferSize}
             on={on}
           />
         </ul>
@@ -278,20 +280,37 @@ export default defineComponent({
       '-webkit-transform': cursorTranslate,
     };
 
-    return (
-      <div>
-        {isVirtual && <div style={{ ...cursorTranslateStyle }}></div>}
-        <div
-          class={[`${name}__dropdown-inner`, `${name}__dropdown-inner--size-${sizeClassMap[size]}`]}
-          style={virtualStyle}
-        >
-          {renderTNode('panelTopContent')}
-          {isEmpty && this.renderEmptyContent()}
-          {this.renderCreateOption()}
-          {!isEmpty && loading && this.renderLoadingContent()}
-          {!isEmpty && !loading && this.renderOptionsContent()}
-          {renderTNode('panelBottomContent')}
+    // 虚拟滚动渲染
+    if (isVirtual) {
+      return (
+        <div>
+          <div style={{ ...cursorTranslateStyle }}></div>
+          <div
+            class={[`${name}__dropdown-inner`, `${name}__dropdown-inner--size-${sizeClassMap[size]}`]}
+            style={virtualStyle}
+          >
+            {renderTNode('panelTopContent')}
+            {isEmpty && this.renderEmptyContent()}
+            {this.renderCreateOption()}
+            {!isEmpty && loading && this.renderLoadingContent()}
+            {!isEmpty && !loading && this.renderOptionsContent()}
+            {renderTNode('panelBottomContent')}
+          </div>
         </div>
+      );
+    }
+
+    return (
+      <div
+        class={[`${name}__dropdown-inner`, `${name}__dropdown-inner--size-${sizeClassMap[size]}`]}
+        style={virtualStyle}
+      >
+        {renderTNode('panelTopContent')}
+        {isEmpty && this.renderEmptyContent()}
+        {this.renderCreateOption()}
+        {!isEmpty && loading && this.renderLoadingContent()}
+        {!isEmpty && !loading && this.renderOptionsContent()}
+        {renderTNode('panelBottomContent')}
       </div>
     );
   },
