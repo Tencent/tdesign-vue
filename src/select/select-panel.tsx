@@ -86,13 +86,12 @@ export default defineComponent({
     const isEmpty = computed(() => !options.value.length && !showCreateOption.value);
     const panelContentRef = computed(() => tSelect.getOverlayElm());
 
-    // TODO: 非响应式的，无法动态设置虚拟滚动，待改正
     const {
       type,
-      rowHeight = 28, // 默认 option 高度为 28
+      rowHeight = 30, // 默认 option 高度为 30
       bufferSize = 20,
       isFixedRowHeight = false,
-      threshold,
+      threshold = 100,
     } = props.scroll || {};
 
     const {
@@ -129,12 +128,19 @@ export default defineComponent({
         lastScrollY = -1;
       }
     };
+
+    // 监听popup滚动 处理虚拟滚动时的virtualData变化
     onMounted(() => {
-      tSelect.getOverlayElm().addEventListener('scroll', onInnerVirtualScroll);
+      if (props.scroll.type === 'virtual') {
+        tSelect.getOverlayElm().addEventListener('scroll', onInnerVirtualScroll);
+      }
     });
 
+    // 卸载时取消监听
     onBeforeUnmount(() => {
-      tSelect.getOverlayElm().removeEventListener('scroll', onInnerVirtualScroll);
+      if (props.scroll.type === 'virtual') {
+        tSelect.getOverlayElm().removeEventListener('scroll', onInnerVirtualScroll);
+      }
     });
 
     return {

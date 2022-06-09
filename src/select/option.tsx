@@ -154,6 +154,7 @@ export default defineComponent({
       tSelect && tSelect.hasSlotOptions.value && tSelect.destroyOptions(context);
     });
 
+    // 处理虚拟滚动节点挂载
     onMounted(() => {
       const {
         trs, rowIndex, scrollType, isVirtual,
@@ -167,6 +168,7 @@ export default defineComponent({
       }
     });
 
+    // 处理虚拟滚动节点移除
     onBeforeUnmount(() => {
       if (props.isVirtual) {
         const { trs, rowIndex } = props;

@@ -42,7 +42,7 @@ export type OptionInstance = InstanceType<typeof Option>;
 export const name = `${prefix}-select`;
 
 export interface SelectProps extends TdSelectProps {
-  scroll: TableScroll
+  scroll: TableScroll;
 }
 export default defineComponent({
   name: 'TSelect',
@@ -519,7 +519,13 @@ export default defineComponent({
     const getOptions = (option: OptionInstance) => {
       // create option值不push到options里
       const { optionNode } = option.refs as any;
-      if (optionNode && optionNode.className && optionNode.className.indexOf(`${name}__create-option--special`) !== -1) return;
+      if (
+        optionNode
+        && optionNode.className
+        && optionNode.className.indexOf(`${name}__create-option--special`) !== -1
+      ) {
+        return;
+      }
       const tmp = realOptions.value.filter(
         (item) => get(item, realValue.value) === option.value && get(item, realLabel.value) === option.label,
       );
@@ -631,7 +637,6 @@ export default defineComponent({
       destroyOptions,
       displayOptions,
       displayOptionsMap,
-
     });
 
     return {
@@ -678,7 +683,7 @@ export default defineComponent({
     },
   },
 
-  render(h): VNode {
+  render(h) {
     const {
       multiple,
       autoWidth,
