@@ -25,8 +25,7 @@ import {
   BaseTableCellParams, TableRowData, RowspanColspan, TdPrimaryTableProps,
 } from './type';
 import baseTableProps from './base-table-props';
-import useLazyLoad from './hooks/useLazyLoad';
-import { SkipSpansValue } from './hooks/useRowspanAndColspan';
+import useLazyLoad from '../hooks/useLazyLoad';
 
 export interface RenderTdExtra {
   rowAndColFixedPosition: RowAndColFixedPosition;

@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, toRefs, inject, onMounted, onBeforeUnmount, watch,
+  computed, defineComponent, toRefs, inject, onMounted, onBeforeUnmount,
 } from '@vue/composition-api';
 import { get } from 'lodash';
 import { useTNodeJSX } from '../hooks/tnode';
@@ -236,7 +236,7 @@ export default defineComponent({
         });
       } else {
         // 无分组
-        optionsContent = this.renderSingleOption(visibleData);
+        optionsContent = this.renderSingleOption(visibleData || options);
       }
       return <ul class={`${name}__list`}>{optionsContent}</ul>;
     },
