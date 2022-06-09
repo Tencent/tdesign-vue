@@ -70,12 +70,12 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       return dialogClass;
     },
     positionClass(): ClassName {
-      const dialogClass = [`${name}__position`, !!this.top && `${name}--top`,  `${this.placement && !this.top ? `${name}--${this.placement}` : ''}`];
+      const dialogClass = [`${name}__position`, !!this.top && `${name}--top`, `${this.placement && !this.top ? `${name}--${this.placement}` : ''}`];
       return dialogClass;
     },
 
     positionStyle(): Styles {
-      let topStyle = {} as Styles;
+      const topStyle = {} as Styles;
 
       if (this.top !== undefined) {
         // 判断是否时数字
@@ -84,7 +84,6 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         } else {
           topStyle.paddingTop = this.top;
         }
-        
       }
       return topStyle;
     },
@@ -312,7 +311,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       );
       const bodyClassName = this.theme === 'default' ? `${name}__body` : `${name}__body__icon`;
       // 此处获取定位方式 top 优先级较高 存在时 默认使用top定位
-  
+
       return (
         // /* 非模态形态下draggable为true才允许拖拽 */
         <div class={`${name}__wrap`} onClick={this.overlayAction} >

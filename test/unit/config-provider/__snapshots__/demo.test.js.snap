@@ -1035,60 +1035,67 @@ exports[`ConfigProvider ConfigProvider dialogVue demo works fine 1`] = `
       class="t-dialog__ctx"
     >
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default"
-        style="max-height: calc(100% - 20%);"
+        class="t-dialog__wrap"
       >
         <div
-          class="t-dialog__header"
+          class="t-dialog__position t-dialog--top"
         >
-          Title
-        </div>
-        <span
-          class="t-dialog__close"
-        >
-          <svg
-            class="t-icon t-icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+          <div
+            class="t-dialog t-dialog--default t-dialog__modal-default"
           >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <div
-          class="t-dialog__body"
-        >
-          Would you like to be my friends？
-        </div>
-        <div
-          class="t-dialog__footer"
-        >
-          <div>
-            <button
-              class="t-button t-size-m t-button--variant-outline t-button--theme-default t-dialog__cancel"
-              type="button"
+            <div
+              class="t-dialog__header"
             >
-              <span
-                class="t-button__text"
-              >
-                cancel
-              </span>
-            </button>
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog__confirm"
-              type="button"
+              Title
+            </div>
+            <span
+              class="t-dialog__close"
             >
-              <span
-                class="t-button__text"
+              <svg
+                class="t-icon t-icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
               >
-                confirm
-              </span>
-            </button>
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+            <div
+              class="t-dialog__body"
+            >
+              Would you like to be my friends？
+            </div>
+            <div
+              class="t-dialog__footer"
+            >
+              <div>
+                <button
+                  class="t-button t-size-m t-button--variant-outline t-button--theme-default t-dialog__cancel"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    cancel
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    confirm
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1105,73 +1112,80 @@ exports[`ConfigProvider ConfigProvider dialogVue demo works fine 1`] = `
       class="t-dialog__ctx"
     >
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-info"
-        style="max-height: calc(100% - 20%);"
+        class="t-dialog__wrap"
       >
         <div
-          class="t-dialog__header"
+          class="t-dialog__position t-dialog--top"
         >
-          <svg
-            class="t-icon t-icon-info-circle-filled t-is-info"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+          <div
+            class="t-dialog t-dialog--default t-dialog__modal-info"
           >
-            <path
-              d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-          confirm
-        </div>
-        <span
-          class="t-dialog__close"
-        >
-          <svg
-            class="t-icon t-icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <div
-          class="t-dialog__body__icon"
-        >
-          Would you like to be my friends？
-        </div>
-        <div
-          class="t-dialog__footer"
-        >
-          <div>
-            <button
-              class="t-button t-size-m t-button--variant-outline t-button--theme-default t-dialog__cancel"
-              type="button"
+            <div
+              class="t-dialog__header"
             >
-              <span
-                class="t-button__text"
+              <svg
+                class="t-icon t-icon-info-circle-filled t-is-info"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
               >
-                cancel
-              </span>
-            </button>
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog__confirm"
-              type="button"
+                <path
+                  d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+              confirm
+            </div>
+            <span
+              class="t-dialog__close"
             >
-              <span
-                class="t-button__text"
+              <svg
+                class="t-icon t-icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
               >
-                confirm
-              </span>
-            </button>
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+            <div
+              class="t-dialog__body__icon"
+            >
+              Would you like to be my friends？
+            </div>
+            <div
+              class="t-dialog__footer"
+            >
+              <div>
+                <button
+                  class="t-button t-size-m t-button--variant-outline t-button--theme-default t-dialog__cancel"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    cancel
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    confirm
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1188,73 +1202,80 @@ exports[`ConfigProvider ConfigProvider dialogVue demo works fine 1`] = `
       class="t-dialog__ctx"
     >
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-warning"
-        style="max-height: calc(100% - 20%);"
+        class="t-dialog__wrap"
       >
         <div
-          class="t-dialog__header"
+          class="t-dialog__position t-dialog--top"
         >
-          <svg
-            class="t-icon t-icon-error-circle-filled t-is-warning"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+          <div
+            class="t-dialog t-dialog--default t-dialog__modal-warning"
           >
-            <path
-              d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-          confirm
-        </div>
-        <span
-          class="t-dialog__close"
-        >
-          <svg
-            class="t-icon t-icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <div
-          class="t-dialog__body__icon"
-        >
-          Would you like to be my friends？
-        </div>
-        <div
-          class="t-dialog__footer"
-        >
-          <div>
-            <button
-              class="t-button t-size-m t-button--variant-outline t-button--theme-default t-dialog__cancel"
-              type="button"
+            <div
+              class="t-dialog__header"
             >
-              <span
-                class="t-button__text"
+              <svg
+                class="t-icon t-icon-error-circle-filled t-is-warning"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
               >
-                cancel
-              </span>
-            </button>
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-warning t-dialog__confirm"
-              type="button"
+                <path
+                  d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+              confirm
+            </div>
+            <span
+              class="t-dialog__close"
             >
-              <span
-                class="t-button__text"
+              <svg
+                class="t-icon t-icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
               >
-                confirm
-              </span>
-            </button>
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+            <div
+              class="t-dialog__body__icon"
+            >
+              Would you like to be my friends？
+            </div>
+            <div
+              class="t-dialog__footer"
+            >
+              <div>
+                <button
+                  class="t-button t-size-m t-button--variant-outline t-button--theme-default t-dialog__cancel"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    cancel
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-base t-button--theme-warning t-dialog__confirm"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    confirm
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1271,73 +1292,80 @@ exports[`ConfigProvider ConfigProvider dialogVue demo works fine 1`] = `
       class="t-dialog__ctx"
     >
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-danger"
-        style="max-height: calc(100% - 20%);"
+        class="t-dialog__wrap"
       >
         <div
-          class="t-dialog__header"
+          class="t-dialog__position t-dialog--top"
         >
-          <svg
-            class="t-icon t-icon-error-circle-filled t-is-error"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+          <div
+            class="t-dialog t-dialog--default t-dialog__modal-danger"
           >
-            <path
-              d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-          confirm
-        </div>
-        <span
-          class="t-dialog__close"
-        >
-          <svg
-            class="t-icon t-icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <div
-          class="t-dialog__body__icon"
-        >
-          Would you like to be my friends？
-        </div>
-        <div
-          class="t-dialog__footer"
-        >
-          <div>
-            <button
-              class="t-button t-size-m t-button--variant-outline t-button--theme-default t-dialog__cancel"
-              type="button"
+            <div
+              class="t-dialog__header"
             >
-              <span
-                class="t-button__text"
+              <svg
+                class="t-icon t-icon-error-circle-filled t-is-error"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
               >
-                cancel
-              </span>
-            </button>
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-danger t-dialog__confirm"
-              type="button"
+                <path
+                  d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+              confirm
+            </div>
+            <span
+              class="t-dialog__close"
             >
-              <span
-                class="t-button__text"
+              <svg
+                class="t-icon t-icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
               >
-                confirm
-              </span>
-            </button>
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+            <div
+              class="t-dialog__body__icon"
+            >
+              Would you like to be my friends？
+            </div>
+            <div
+              class="t-dialog__footer"
+            >
+              <div>
+                <button
+                  class="t-button t-size-m t-button--variant-outline t-button--theme-default t-dialog__cancel"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    cancel
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-base t-button--theme-danger t-dialog__confirm"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    confirm
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1354,73 +1382,80 @@ exports[`ConfigProvider ConfigProvider dialogVue demo works fine 1`] = `
       class="t-dialog__ctx"
     >
       <div
-        class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-success"
-        style="max-height: calc(100% - 20%);"
+        class="t-dialog__wrap"
       >
         <div
-          class="t-dialog__header"
+          class="t-dialog__position t-dialog--top"
         >
-          <svg
-            class="t-icon t-icon-check-circle-filled t-is-success"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+          <div
+            class="t-dialog t-dialog--default t-dialog__modal-success"
           >
-            <path
-              d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-          confirm
-        </div>
-        <span
-          class="t-dialog__close"
-        >
-          <svg
-            class="t-icon t-icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <div
-          class="t-dialog__body__icon"
-        >
-          Would you like to be my friends？
-        </div>
-        <div
-          class="t-dialog__footer"
-        >
-          <div>
-            <button
-              class="t-button t-size-m t-button--variant-outline t-button--theme-default t-dialog__cancel"
-              type="button"
+            <div
+              class="t-dialog__header"
             >
-              <span
-                class="t-button__text"
+              <svg
+                class="t-icon t-icon-check-circle-filled t-is-success"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
               >
-                cancel
-              </span>
-            </button>
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-success t-dialog__confirm"
-              type="button"
+                <path
+                  d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+              confirm
+            </div>
+            <span
+              class="t-dialog__close"
             >
-              <span
-                class="t-button__text"
+              <svg
+                class="t-icon t-icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
               >
-                confirm
-              </span>
-            </button>
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+            <div
+              class="t-dialog__body__icon"
+            >
+              Would you like to be my friends？
+            </div>
+            <div
+              class="t-dialog__footer"
+            >
+              <div>
+                <button
+                  class="t-button t-size-m t-button--variant-outline t-button--theme-default t-dialog__cancel"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    cancel
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-base t-button--theme-success t-dialog__confirm"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    confirm
+                  </span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
