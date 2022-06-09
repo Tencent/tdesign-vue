@@ -4,7 +4,7 @@ import {
 import observe from '../_common/js/utils/observe';
 
 export type UseLazyLoadParams = UnwrapRef<{
-  type: 'lazy';
+  type: 'lazy' | 'virtual';
   rowIndex: number;
   rowHeight?: number;
   bufferSize?: number;

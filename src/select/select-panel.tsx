@@ -10,7 +10,9 @@ import { name, SelectProps } from './select';
 import Option from './option';
 import useVirtualScroll from '../hooks/useVirtualScroll';
 
-type OptionsType = TdOptionProps[];
+export interface OptionsType extends TdOptionProps {
+  $index?: number;
+}
 
 interface SelectPanelProps
   extends Pick<
@@ -150,6 +152,7 @@ export default defineComponent({
       translateY,
       scrollType: props.scroll?.type,
       handleRowMounted,
+      bufferSize,
     };
   },
 
@@ -188,9 +191,9 @@ export default defineComponent({
         </ul>
       );
     },
-    renderSingleOption(options: OptionsType = []) {
+    renderSingleOption(options: OptionsType[] = []) {
       const {
-        realValue, realLabel, trs, scrollType, isVirtual, handleRowMounted,
+        realValue, realLabel, trs, scrollType, isVirtual, handleRowMounted, bufferSize,
       } = this;
       return options.map((item, index) => (
         <t-option
@@ -198,11 +201,12 @@ export default defineComponent({
           label={get(item, realLabel as string)}
           content={item.content}
           disabled={item.disabled}
-          key={item.$index}
+          key={`${item.$index}_${index}`}
           rowIndex={item.$index}
           trs={trs}
           scrollType={scrollType}
           isVirtual={isVirtual}
+          bufferSize={bufferSize}
           on={{ onRowMounted: handleRowMounted }}
         ></t-option>
       ));
@@ -267,7 +271,7 @@ export default defineComponent({
         >
           {renderTNode('panelTopContent')}
           {isEmpty && this.renderEmptyContent()}
-          {/* {this.renderCreateOption()} */}
+          {this.renderCreateOption()}
           {!isEmpty && loading && this.renderLoadingContent()}
           {!isEmpty && !loading && this.renderOptionsContent()}
           {renderTNode('panelBottomContent')}

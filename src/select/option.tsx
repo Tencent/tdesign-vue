@@ -10,7 +10,8 @@ import {
   defineComponent,
   reactive,
 } from '@vue/composition-api';
-import Vue from 'vue';
+import Vue, { PropType } from 'vue';
+
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import get from 'lodash/get';
 import { renderContent } from '../utils/render-tnode';
@@ -37,13 +38,19 @@ export interface OptionProps extends TdOptionProps {
   scroll: TableScroll;
   rowIndex: number;
   trs?: Map<number, object>;
-  scrollType?: string;
-  isVirtual: boolean
+  scrollType?: 'lazy' | 'virtual';
+  isVirtual: boolean;
 }
 
 export default defineComponent({
   name: 'TOption',
-  props: { ...props },
+  props: {
+    ...props,
+    rowIndex: Number,
+    trs: Map as PropType<OptionProps['trs']>,
+    scrollType: String,
+    isVirtual: Boolean,
+  },
   components: {
     TCheckbox: Checkbox,
   },
@@ -53,15 +60,17 @@ export default defineComponent({
     const optionNode = ref(null);
     const isHover = ref(false);
     const formDisabled = ref(undefined);
+
     const {
-      value, label, disabled, panelElement,
+      value, label, disabled, panelElement, scrollType,
     } = toRefs(props);
 
     const tSelect: any = inject('tSelect');
-    const { hasLazyLoadHolder, tRowHeight } = useLazyLoad(
+
+    const { hasLazyLoadHolder = null, tRowHeight = null } = useLazyLoad(
       panelElement,
       optionNode,
-      reactive({ type: 'virtual', bufferSize: 10, rowIndex: props.rowIndex }),
+      reactive({ type: scrollType, bufferSize: 10, rowIndex: props.rowIndex }),
     );
     watch(value, () => {
       tSelect && tSelect.getOptions({ ...context, ...props });
@@ -149,7 +158,6 @@ export default defineComponent({
       const {
         trs, rowIndex, scrollType, isVirtual,
       } = props;
-      console.log(rowIndex, 'rowIndex');
 
       if (scrollType === 'virtual') {
         if (isVirtual) {
