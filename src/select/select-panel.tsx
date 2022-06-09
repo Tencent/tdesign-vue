@@ -5,8 +5,10 @@ import { get } from 'lodash';
 import { useTNodeJSX } from '../hooks/tnode';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { useConfig } from '../config-provider/useConfig';
-import { SelectValue, TdOptionProps, SelectOptionGroup } from './type';
-import { name, SelectProps } from './select';
+import {
+  SelectValue, TdOptionProps, SelectOptionGroup, TdSelectProps,
+} from './type';
+import { name } from './select';
 import Option from './option';
 import useVirtualScroll from '../hooks/useVirtualScroll';
 
@@ -16,7 +18,7 @@ export interface OptionsType extends TdOptionProps {
 
 interface SelectPanelProps
   extends Pick<
-    SelectProps,
+    TdSelectProps,
     | 'value'
     | 'size'
     | 'multiple'
@@ -131,14 +133,14 @@ export default defineComponent({
 
     // 监听popup滚动 处理虚拟滚动时的virtualData变化
     onMounted(() => {
-      if (props.scroll.type === 'virtual') {
+      if (props.scroll?.type === 'virtual') {
         tSelect.getOverlayElm().addEventListener('scroll', onInnerVirtualScroll);
       }
     });
 
     // 卸载时取消监听
     onBeforeUnmount(() => {
-      if (props.scroll.type === 'virtual') {
+      if (props.scroll?.type === 'virtual') {
         tSelect.getOverlayElm().removeEventListener('scroll', onInnerVirtualScroll);
       }
     });
@@ -183,6 +185,8 @@ export default defineComponent({
       const {
         showCreateOption, inputValue, trs, scrollType, isVirtual, handleRowMounted,
       } = this;
+      const on = isVirtual ? { onRowMounted: handleRowMounted } : {};
+
       return (
         <ul v-show={showCreateOption} class={[`${name}__create-option`, `${name}__list`]}>
           <t-option
@@ -192,7 +196,7 @@ export default defineComponent({
             trs={trs}
             scrollType={scrollType}
             isVirtual={isVirtual}
-            on={{ onRowMounted: handleRowMounted }}
+            on={on}
           />
         </ul>
       );
@@ -201,6 +205,8 @@ export default defineComponent({
       const {
         realValue, realLabel, trs, scrollType, isVirtual, handleRowMounted, bufferSize,
       } = this;
+
+      const on = isVirtual ? { onRowMounted: handleRowMounted } : {};
       return options.map((item, index) => (
         <t-option
           value={get(item, realValue as string)}
@@ -213,7 +219,7 @@ export default defineComponent({
           scrollType={scrollType}
           isVirtual={isVirtual}
           bufferSize={bufferSize}
-          on={{ onRowMounted: handleRowMounted }}
+          on={on}
         ></t-option>
       ));
     },
@@ -232,7 +238,7 @@ export default defineComponent({
       let optionsContent;
       if (tSelect.isGroupOption.value) {
         // 有分组
-        optionsContent = options.map((groupList: SelectOptionGroup) => {
+        optionsContent = (visibleData || options).map((groupList: SelectOptionGroup) => {
           const children = groupList.children.filter((item) => tSelect.displayOptionsMap.value.get(item));
           return (
             <t-option-group v-show={children.length} label={groupList.group} divider={groupList.divider}>
@@ -262,6 +268,10 @@ export default defineComponent({
 
     const cursorTranslate = `translate(0, ${scrollHeight}px)`;
     const cursorTranslateStyle = {
+      position: 'absolute',
+      width: '1px',
+      height: '1px',
+      transition: 'transform 0.2s',
       transform: cursorTranslate,
       '-ms-transform': cursorTranslate,
       '-moz-transform': cursorTranslate,
@@ -270,7 +280,7 @@ export default defineComponent({
 
     return (
       <div>
-        {isVirtual && <div class={'t-table__virtual-scroll-cursor'} style={cursorTranslateStyle}></div>}
+        {isVirtual && <div style={{ ...cursorTranslateStyle }}></div>}
         <div
           class={[`${name}__dropdown-inner`, `${name}__dropdown-inner--size-${sizeClassMap[size]}`]}
           style={virtualStyle}

@@ -35,15 +35,11 @@ import SelectInput, {
 import FakeArrow from '../common-components/fake-arrow';
 import Option from './option';
 import SelectPanel from './select-panel';
-import { TableScroll } from '../table/type';
 
 export type OptionInstance = InstanceType<typeof Option>;
 
 export const name = `${prefix}-select`;
 
-export interface SelectProps extends TdSelectProps {
-  scroll: TableScroll;
-}
 export default defineComponent({
   name: 'TSelect',
   props: { ...props },
@@ -57,7 +53,7 @@ export default defineComponent({
     FakeArrow,
     SelectPanel,
   },
-  setup(props: SelectProps, context: SetupContext) {
+  setup(props: TdSelectProps, context: SetupContext) {
     const instance = getCurrentInstance();
     const { t, global } = useConfig('select');
     const renderTNode = useTNodeJSX();
@@ -82,6 +78,7 @@ export default defineComponent({
       inputValue,
       minCollapsedNum,
     } = toRefs(props);
+
     const formDisabled = ref();
     const visible = ref(props.popupVisible ?? false);
     const [value, setValue] = useDefaultValue(valueProps, props.defaultValue, props.onChange, 'value', 'change');
@@ -139,6 +136,7 @@ export default defineComponent({
       }
       return canFilter.value;
     });
+
     const selectedSingle = computed<string>(() => {
       if (!multiple.value && (typeof value.value === 'string' || typeof value.value === 'number')) {
         let target: Array<TdOptionProps> = [];
@@ -160,6 +158,7 @@ export default defineComponent({
       }
       return '';
     });
+
     const selectedMultiple = computed<TdOptionProps[]>(() => {
       if (multiple.value && Array.isArray(value.value) && value.value.length) {
         return value.value.map((item: string | number | TdOptionProps) => {
@@ -175,12 +174,14 @@ export default defineComponent({
       }
       return [];
     });
+
     const selectedValue = computed(() => (multiple.value ? selectedMultiple.value : selectedSingle.value));
     const canFilter = computed(() => filterable.value || isFunction(props.filter));
     const isGroupOption = computed(() => {
       const firstOption = options.value?.[0];
       return !!(firstOption && 'group' in firstOption && 'children' in firstOption);
     });
+
     const renderCollapsedItems = () => renderTNode('collapsedItems', {
       params: {
         value: selectedMultiple.value,
@@ -188,6 +189,7 @@ export default defineComponent({
         count: selectedMultiple.value.length - minCollapsedNum.value,
       },
     });
+
     const showLoading = computed(() => loading.value && !tDisabled.value);
     const filterOptions = computed(() => {
       // filter优先级 filter方法>仅filterable
@@ -203,6 +205,7 @@ export default defineComponent({
       }
       return [];
     });
+
     const displayOptions = computed(() => {
       // 展示优先级，用户远程搜索传入>组件通过filter过滤>getOptions后的完整数据
       if (isFunction(onSearch.value) || context.listeners.search) {
@@ -216,6 +219,7 @@ export default defineComponent({
       }
       return realOptions.value;
     });
+
     const displayOptionsMap = computed(() => {
       const map = new Map();
       displayOptions.value.forEach((item) => {
@@ -223,6 +227,7 @@ export default defineComponent({
       });
       return map;
     });
+
     const hoverOptions = computed(() => {
       if (!showCreateOption.value) {
         if (isFunction(props.filter) || filterable.value) {
@@ -251,10 +256,12 @@ export default defineComponent({
         });
       }
     });
+
     const debounceOnRemote = debounce(() => {
       instance.emit('search', tInputValue.value, context);
       // emitEvent<Parameters<TdSelectProps['onSearch']>>(this, 'search', tInputValue.value);
     }, 300);
+
     watch(
       tInputValue,
       (val) => {
@@ -273,6 +280,7 @@ export default defineComponent({
       },
       { flush: 'post' },
     );
+
     const getRealOptions = (options: SelectOption[]): Array<TdOptionProps> => {
       let result = [];
       if (isGroupOption.value) {
@@ -305,6 +313,7 @@ export default defineComponent({
         immediate: true,
       },
     );
+
     const initHoverIndex = () => {
       const ableOptionIndex = Object.keys(hoverOptions.value).filter((i) => !hoverOptions.value[i].disabled);
       const ableIndex = ableOptionIndex.length ? ableOptionIndex[0] : '0';
@@ -467,9 +476,7 @@ export default defineComponent({
     };
 
     // 当前组件选中项是否已经达到最大数量 max 限制，若达到，option组件内会对点击事件不做响应，直接return
-    const reachMaxLimit = computed(
-      () => multiple.value && max.value && value.value instanceof Array && max.value <= value.value.length,
-    );
+    const reachMaxLimit = computed(() => Boolean(multiple.value && max.value && value.value instanceof Array && max.value <= value.value.length));
 
     const removeTag = (index: number, context?: { e?: MouseEvent | KeyboardEvent }) => {
       const { e } = context || {};
@@ -519,11 +526,7 @@ export default defineComponent({
     const getOptions = (option: OptionInstance) => {
       // create option值不push到options里
       const { optionNode } = option.refs as any;
-      if (
-        optionNode
-        && optionNode.className
-        && optionNode.className.indexOf(`${name}__create-option--special`) !== -1
-      ) {
+      if (optionNode?.className?.indexOf(`${name}__create-option--special`) !== -1) {
         return;
       }
       const tmp = realOptions.value.filter(
@@ -675,7 +678,7 @@ export default defineComponent({
         showLoading, showArrow, visible, tDisabled,
       } = this;
       if (showLoading) {
-        return <t-loading class={`${name}__right-icon ${name}__active-icon`} size="small" />;
+        return <t-loading class={[`${name}__right-icon`, `${name}__active-icon`]} size="small" />;
       }
       return showArrow ? (
         <fake-arrow overlayClassName={`${name}__right-icon`} isActive={visible && !tDisabled} />

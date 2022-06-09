@@ -1,6 +1,6 @@
 <template>
   <div class="tdesign-demo-select-base">
-    <t-select v-model="value" :options="options" placeholder="请选择" :scroll="{ type: 'virtual' }" :max="2" />
+    <t-select v-model="value" :options="options" placeholder="请选择" :scroll="{ type: 'virtual' }" />
   </div>
 </template>
 
@@ -8,9 +8,6 @@
 export default {
   data() {
     const options = [];
-    for (let i = 0; i < 2000; i++) {
-      options.push({ label: `选项${i}`, value: String(i) });
-    }
     return {
       value: '',
       options,

@@ -25,7 +25,7 @@ import { TdOptionProps } from './type';
 import Checkbox from '../checkbox/index';
 import { SelectInstance } from './instance';
 import useLazyLoad from '../hooks/useLazyLoad';
-import { TableScroll } from '../table/type';
+import { TScroll } from '../common';
 
 const selectName = `${prefix}-select`;
 const keepAnimationMixins = getKeepAnimationMixins();
@@ -35,7 +35,7 @@ export interface OptionInstance extends Vue {
 
 export interface OptionProps extends TdOptionProps {
   panelElement: HTMLElement;
-  scroll: TableScroll;
+  scroll: TScroll;
   rowIndex: number;
   trs?: Map<number, object>;
   scrollType?: 'lazy' | 'virtual';
@@ -196,7 +196,6 @@ export default defineComponent({
     } = this;
     const children: ScopedSlotReturnValue = renderContent(this, 'default', 'content');
     const optionChild = children || labelText;
-
     return (
       <li
         ref="optionNode"
