@@ -105,7 +105,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
               <div class={`${uploadName}__card-container ${uploadName}__card-box`}>
                 <AddIcon></AddIcon>
                 <p class={`${prefix}-size-s`}>
-                  {this.locale.triggerUploadText.image || this.global.triggerUploadText.image}
+                  {this.locale?.triggerUploadText?.image || this.global.triggerUploadText.image}
                 </p>
               </div>
             )}
