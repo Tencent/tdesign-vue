@@ -5,6 +5,22 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.41.7 `2022-06-02` 
+### 🚀 Features
+- `Table`: 
+  - `appendTo` 支持添加新节点到根节点，[tdesign-vue-next issue#849](https://github.com/Tencent/tdesign-vue-next/issues/849) @chaishi ([#931](https://github.com/Tencent/tdesign-vue/pull/931))
+  - 新增 `getTreeNode`，用于获取整个树形结构，[tdesign-vue-next issue#849](https://github.com/Tencent/tdesign-vue-next/issues/849) @chaishi ([#931](https://github.com/Tencent/tdesign-vue/pull/931))
+  - EnhancedTable 支持事件 `@drag-sort` @chaishi ([#931](https://github.com/Tencent/tdesign-vue/pull/931))
+  - 表格支持编辑单元格，[issue#853](https://github.com/Tencent/tdesign-vue/issues/853) @chaishi ([#932](https://github.com/Tencent/tdesign-vue/pull/932))
+- `InputNumber`: 通过 `inputProps` 透传 Input 组件全部特性，@jchalex ([#930](https://github.com/Tencent/tdesign-vue/pull/930))
+### 🐞 Bug Fixes
+- `Progress`: theme 由 circle 切换至 plump 后样式错乱 @Isabella327 ([#936](https://github.com/Tencent/tdesign-vue/pull/936))
+- `InputNumber`: 修复 `theme = column` 时设置 align 失效的问题 @jchalex ([common #481](https://github.com/Tencent/tdesign-common/pull/481))
+- `Table`: 修复表头多选框无法居中和居右展示的问题，[issue#912](https://github.com/Tencent/tdesign-vue/issues/912) @chaishi ([common #932](https://github.com/Tencent/tdesign-common/pull/485))
+- 修复无法在 SSR 场景下使用的问题 @uyarn ([#928](https://github.com/Tencent/tdesign-vue/pull/928))
+### 🚧 Others
+- 官网: 支持在线配置组件库主题 @uyarn ([#775](https://github.com/Tencent/tdesign-vue/pull/775))
+
 ## 🌈 0.41.6 `2022-05-27` 
 
 ### 🚀 Features

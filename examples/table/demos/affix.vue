@@ -19,7 +19,7 @@
       :footerAffixProps="{ offsetBottom: 0, zIndex: 1000 }"
       tableLayout="auto"
       bordered
-      allowResizeColumnWidth
+      resizable
     >
       <template #t-foot-required> 插槽渲染表尾 </template>
     </t-table>

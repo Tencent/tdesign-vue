@@ -1,70 +1,48 @@
-import Vue, { VNode } from 'vue';
+import {
+  computed,
+  defineComponent,
+  ref,
+  SetupContext,
+  toRefs,
+  watch,
+  nextTick,
+  getCurrentInstance,
+  onMounted,
+  onUpdated,
+  provide,
+} from '@vue/composition-api';
+import { CreateElement, VNode } from 'vue';
 import isFunction from 'lodash/isFunction';
 import debounce from 'lodash/debounce';
 import get from 'lodash/get';
 import set from 'lodash/set';
 import { CloseCircleFilledIcon } from 'tdesign-icons-vue';
-import TLoading from '../loading';
-import Popup, { PopupProps } from '../popup';
-import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { SelectConfig } from '../config-provider/config-receiver';
-import { renderTNodeJSX } from '../utils/render-tnode';
+import useDefaultValue from '../hooks/useDefaultValue';
+import { useTNodeJSX } from '../hooks/tnode';
+import { useConfig } from '../config-provider/useConfig';
+import { TdSelectProps, SelectOption, TdOptionProps } from './type';
+import props from './props';
 import { prefix } from '../config';
-import CLASSNAMES from '../utils/classnames';
+import TLoading from '../loading';
+import Popup, { PopupVisibleChangeContext } from '../popup';
 import TInput from '../input/index';
 import Tag from '../tag/index';
+import SelectInput, {
+  SelectInputValue,
+  SelectInputChangeContext,
+  SelectInputValueChangeContext,
+} from '../select-input';
 import FakeArrow from '../common-components/fake-arrow';
 import Option from './option';
-import props from './props';
-import {
-  SelectOption, TdOptionProps, SelectValue, TdSelectProps, SelectOptionGroup,
-} from './type';
-import { ClassName } from '../common';
-import { emitEvent } from '../utils/event';
+import SelectPanel from './select-panel';
 
 export type OptionInstance = InstanceType<typeof Option>;
 
-const name = `${prefix}-select`;
-const listName = `${name}__list`;
-// trigger元素不超过此宽度时，下拉选项的最大宽度（用户未设置overStyle width时）
-// 用户设置overStyle width时，以设置的为准
-const DEFAULT_MAX_OVERLAY_WIDTH = 500;
-// 默认垂直滚动条宽度 .narrow-scrollbar 8px
-const DEFAULT_SCROLLY_WIDTH = 8;
+export const name = `${prefix}-select`;
 
-export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).extend({
+export default defineComponent({
   name: 'TSelect',
-  model: {
-    prop: 'value',
-    event: 'change',
-  },
   props: { ...props },
-  data() {
-    return {
-      // Form 表单控制禁用态时的变量
-      formDisabled: undefined,
-      isHover: false,
-      visible: false,
-      searchInput: '',
-      showCreateOption: false,
-      hasSlotOptions: false, // select的slot是否有options组件
-      defaultProps: {
-        trigger: 'click',
-        placement: 'bottom-left' as string,
-        overlayClassName: '' as ClassName,
-        overlayStyle: {},
-      } as PopupProps,
-      focusing: false, // filterable时，输入框是否在focus中
-      labelInValue: this.valueType === 'object',
-      realValue: this.keys && this.keys.value ? this.keys.value : 'value',
-      realLabel: this.keys && this.keys.label ? this.keys.label : 'label',
-      realOptions: [] as Array<TdOptionProps>,
-      hoverIndex: -1,
-      popupOpenTime: 250, // popup打开弹出层的延迟时间
-      checkScroll: true, // 弹出层执行加宽事件（仅执行一次，且在有滚动条时执行）
-      isInited: false,
-    };
-  },
   components: {
     CloseCircleFilledIcon,
     TInput,
@@ -73,236 +51,239 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
     Popup,
     TOption: Option,
     FakeArrow,
+    SelectPanel,
   },
-  provide(): any {
-    return {
-      tSelect: this,
-    };
-  },
+  setup(props: TdSelectProps, context: SetupContext) {
+    const instance = getCurrentInstance();
+    const { t, global } = useConfig('select');
+    const renderTNode = useTNodeJSX();
 
-  computed: {
-    classes(): ClassName {
-      return [
-        `${name}`,
-        `${prefix}-select-polyfill`, // 基于select-input改造时需要移除，polyfill代码，同时移除common中此类名
-        {
-          [CLASSNAMES.STATUS.disabled]: this.tDisabled,
-          [CLASSNAMES.STATUS.active]: this.visible,
-          [CLASSNAMES.SIZE[this.size]]: this.size,
-          [`${prefix}-has-prefix`]: this.$scopedSlots.prefixIcon,
-          [`${prefix}-no-border`]: !this.bordered,
-        },
-      ];
-    },
-    popClass(): string {
-      const { popupObject } = this;
-      return `${popupObject.overlayClassName} ${name}__dropdown narrow-scrollbar`;
-    },
-    tipsClass(): ClassName {
-      return [
-        `${name}__loading-tips`,
-        {
-          [CLASSNAMES.SIZE[this.size]]: this.size,
-        },
-      ];
-    },
-    emptyClass(): ClassName {
-      return [
-        `${name}__empty`,
-        {
-          [CLASSNAMES.SIZE[this.size]]: this.size,
-        },
-      ];
-    },
-    tDisabled(): boolean {
-      return this.formDisabled || this.disabled;
-    },
-    showPlaceholder(): boolean {
-      if (
-        !this.showFilter
-        && ((!this.multiple && !this.selectedSingle)
-          || (!this.multiple && typeof this.value === 'object' && !this.selectedSingle)
-          || (this.multiple && !this.selectedMultiple.length)
-          || this.value === null
-          || this.value === undefined)
-      ) {
-        return true;
+    // init values
+    const {
+      valueType,
+      keys,
+      disabled,
+      size,
+      value: valueProps,
+      multiple,
+      filterable,
+      options,
+      placeholder,
+      valueDisplay,
+      loading,
+      creatable,
+      max,
+      reserveKeyword,
+      onSearch,
+      inputValue,
+      minCollapsedNum,
+    } = toRefs(props);
+
+    const formDisabled = ref();
+    const visible = ref(props.popupVisible ?? false);
+    const [value, setValue] = useDefaultValue(valueProps, props.defaultValue, props.onChange, 'value', 'change');
+    const [tInputValue, setTInputValue] = useDefaultValue(
+      inputValue,
+      props.defaultInputValue || '',
+      props.onInputChange,
+      'inputValue',
+      'input-change',
+    );
+    const showCreateOption = ref(false);
+    const hasSlotOptions = ref(false);
+    const focusing = ref(false);
+    const labelInValue = ref(valueType.value === 'object');
+    const realValue = ref(keys.value?.value || 'value');
+    const realLabel = ref(keys.value?.label || 'label');
+    const realOptions = ref([] as Array<TdOptionProps>);
+    const hoverIndex = ref(-1);
+    const popupOpenTime = ref(250);
+    const isInit = ref(false);
+    const selectInputRef = ref<HTMLElement>(null);
+
+    const tDisabled = computed(() => formDisabled.value || disabled.value);
+    const renderValueDisplay = (h: CreateElement) => {
+      const valueSlot = context.slots.valueDisplay;
+      const valueProps = valueDisplay.value;
+
+      if (!valueProps && !valueSlot) return '';
+
+      if (typeof valueProps === 'string') {
+        return valueProps;
       }
-      return false;
-    },
-    // 是否为分组选择器
-    isGroupOption(): boolean {
-      const firstOption = this.options?.[0];
-      return !!(firstOption && 'group' in firstOption && 'children' in firstOption);
-    },
-    filterPlaceholder(): string {
-      if (this.multiple && Array.isArray(this.value) && this.value.length) {
-        return '';
+      // 参数比slot优先
+      if (typeof valueProps === 'function') {
+        return () => valueProps(h, { value: selectedValue.value, onClose: (index: number) => removeTag(index) });
       }
-      if (!this.multiple && this.selectedSingle) {
-        return this.selectedSingle;
+      // 处理slot场景
+      if (valueSlot) {
+        if (multiple.value) {
+          return () => renderTNode('valueDisplay', {
+            params: { value: selectedValue.value, onClose: (index: number) => removeTag(index) },
+          });
+        }
+        return () => selectedValue.value
+          ? renderTNode('valueDisplay', {
+            params: { value: selectedValue.value, onClose: () => {} },
+          })
+          : '';
       }
-      return this.placeholder;
-    },
-    showClose(): boolean {
-      return Boolean(
-        this.clearable
-          && this.isHover
-          && !this.tDisabled
-          && ((!this.multiple && (this.value || this.value === 0))
-            || (this.multiple && Array.isArray(this.value) && this.value.length)),
-      );
-    },
-    showRightArrow(): boolean {
-      if (!this.showArrow) return false;
-      return (
-        !this.clearable
-        || !this.isHover
-        || this.tDisabled
-        || (!this.multiple && !this.value && this.value !== 0)
-        || (this.multiple && (!Array.isArray(this.value) || (Array.isArray(this.value) && !this.value.length)))
-      );
-    },
-    canFilter(): boolean {
-      return this.filterable || isFunction(this.filter);
-    },
-    showLoading(): boolean {
-      return this.loading && !this.tDisabled;
-    },
-    showFilter(): boolean {
-      if (this.tDisabled) return false;
-      if (!this.multiple && this.selectedSingle && this.canFilter) {
-        return this.visible;
+    };
+    const showFilter = computed(() => {
+      if (tDisabled.value) return false;
+      if (!multiple.value && selectedSingle.value && canFilter.value) {
+        return visible.value;
       }
-      return this.canFilter;
-    },
-    selectedSingle(): string {
-      if (!this.multiple && (typeof this.value === 'string' || typeof this.value === 'number')) {
+      return canFilter.value;
+    });
+
+    const selectedSingle = computed<string>(() => {
+      if (!multiple.value && (typeof value.value === 'string' || typeof value.value === 'number')) {
         let target: Array<TdOptionProps> = [];
-        if (this.realOptions && this.realOptions.length) {
-          target = this.realOptions.filter((item) => get(item, this.realValue) === this.value);
+        if (realOptions.value && realOptions.value.length) {
+          target = realOptions.value.filter((item) => get(item, realValue.value) === value.value);
         }
         if (target.length) {
-          if (get(target[target.length - 1], this.realLabel) === '') {
-            return get(target[target.length - 1], this.realValue);
+          if (get(target[target.length - 1], realLabel.value) === '') {
+            return get(target[target.length - 1], realValue.value);
           }
-          return get(target[target.length - 1], this.realLabel);
+          return get(target[target.length - 1], realLabel.value);
         }
-        return this.value.toString();
+        return value.value.toString();
       }
-      const showText = get(this.value, this.realLabel);
+      const showText = get(value.value, realLabel.value);
       // label为空时显示value值
-      if (!this.multiple && typeof this.value === 'object' && showText !== undefined) {
-        return showText === '' ? get(this.value, this.realValue) : showText;
+      if (!multiple.value && typeof value.value === 'object' && showText !== undefined) {
+        return showText === '' ? get(value.value, realValue.value) : showText;
       }
       return '';
-    },
-    selectedMultiple(): Array<TdOptionProps> {
-      if (this.multiple && Array.isArray(this.value) && this.value.length) {
-        return this.value.map((item: string | number | TdOptionProps) => {
+    });
+
+    const selectedMultiple = computed<TdOptionProps[]>(() => {
+      if (multiple.value && Array.isArray(value.value) && value.value.length) {
+        return value.value.map((item: string | number | TdOptionProps) => {
           if (typeof item === 'object') {
             return item;
           }
-          const tmp = this.realOptions.filter((op) => get(op, this.realValue) === item);
+          const tmp = realOptions.value.filter((op) => get(op, realValue.value) === item);
           const valueLabel = {};
-          set(valueLabel, this.realValue, item);
-          set(valueLabel, this.realLabel, tmp.length ? get(tmp[tmp.length - 1], this.realLabel) : item);
+          set(valueLabel, realValue.value, item);
+          set(valueLabel, realLabel.value, tmp.length ? get(tmp[tmp.length - 1], realLabel.value) : item);
           return tmp.length && tmp[tmp.length - 1].disabled ? { ...valueLabel, disabled: true } : valueLabel;
         });
       }
       return [];
-    },
-    popupObject(): PopupProps {
-      const propsObject = this.popupProps ? { ...this.defaultProps, ...this.popupProps } : this.defaultProps;
-      return propsObject;
-    },
-    filterOptions(): Array<TdOptionProps> {
+    });
+
+    const selectedValue = computed(() => (multiple.value ? selectedMultiple.value : selectedSingle.value));
+    const canFilter = computed(() => filterable.value || isFunction(props.filter));
+    const isGroupOption = computed(() => {
+      const firstOption = options.value?.[0];
+      return !!(firstOption && 'group' in firstOption && 'children' in firstOption);
+    });
+
+    const renderCollapsedItems = () => renderTNode('collapsedItems', {
+      params: {
+        value: selectedMultiple.value,
+        collapsedSelectedItems: selectedMultiple.value.slice(minCollapsedNum.value),
+        count: selectedMultiple.value.length - minCollapsedNum.value,
+      },
+    });
+
+    const showLoading = computed(() => loading.value && !tDisabled.value);
+    const filterOptions = computed(() => {
       // filter优先级 filter方法>仅filterable
-      if (isFunction(this.filter)) {
-        return this.realOptions.filter((option) => this.filter(this.searchInput, option));
+      if (isFunction(props.filter)) {
+        return realOptions.value.filter((option) => props.filter(tInputValue.value?.toString(), option));
       }
-      if (this.filterable) {
+      if (filterable.value) {
         // 仅有filterable属性时，默认不区分大小写过滤label
-        return this.realOptions.filter(
-          (option) => option[this.realLabel].toString().toLowerCase().indexOf(this.searchInput.toString().toLowerCase()) !== -1,
+        return realOptions.value.filter(
+          (option) => option[realLabel.value].toString().toLowerCase().indexOf(tInputValue.value?.toString().toLowerCase())
+            !== -1,
         );
       }
       return [];
-    },
-    displayOptions(): Array<TdOptionProps> {
+    });
+
+    const displayOptions = computed(() => {
       // 展示优先级，用户远程搜索传入>组件通过filter过滤>getOptions后的完整数据
-      if (isFunction(this.onSearch) || this.$listeners.search) {
-        return this.realOptions;
+      if (isFunction(onSearch.value) || context.listeners.search) {
+        return realOptions.value;
       }
-      if (this.canFilter && !this.creatable) {
-        if (this.searchInput === '') {
-          return this.realOptions;
+      if (canFilter.value && !creatable.value) {
+        if (tInputValue.value === '') {
+          return realOptions.value;
         }
-        return this.filterOptions;
+        return filterOptions.value;
       }
-      return this.realOptions;
-    },
-    displayOptionsMap(): Map<TdOptionProps, boolean> {
+      return realOptions.value;
+    });
+
+    const displayOptionsMap = computed(() => {
       const map = new Map();
-      this.displayOptions.forEach((item) => {
+      displayOptions.value.forEach((item) => {
         map.set(item, true);
       });
       return map;
-    },
-    hoverOptions(): Array<TdOptionProps> {
-      if (!this.showCreateOption) {
-        if (isFunction(this.filter) || this.filterable) {
-          return this.filterOptions;
+    });
+
+    const hoverOptions = computed(() => {
+      if (!showCreateOption.value) {
+        if (isFunction(props.filter) || filterable.value) {
+          return filterOptions.value;
         }
-        return this.realOptions;
+        return realOptions.value;
       }
-      const willCreateOption = [{ value: this.searchInput, label: this.searchInput }] as Array<TdOptionProps>;
-      if (isFunction(this.filter) || this.filterable) {
-        return willCreateOption.concat(this.filterOptions);
+      const willCreateOption = [{ value: tInputValue.value, label: tInputValue.value }] as Array<TdOptionProps>;
+      if (isFunction(props.filter) || filterable.value) {
+        return willCreateOption.concat(filterOptions.value);
       }
-      return willCreateOption.concat(this.realOptions);
-    },
-  },
-  watch: {
-    showFilter(val) {
-      if (val && this.selectedSingle) {
-        this.$nextTick(() => {
-          this.doFocus();
+      return willCreateOption.concat(realOptions.value);
+    });
+
+    const doFocus = () => {
+      const input = (selectInputRef.value as any).$refs[multiple.value ? 'tagInputRef' : 'inputRef'].$el.querySelector(
+        'input',
+      );
+      input?.focus();
+      focusing.value = true;
+    };
+    watch(showFilter, (val) => {
+      if (val && selectedSingle.value) {
+        nextTick(() => {
+          doFocus();
         });
       }
-    },
-    searchInput(val) {
-      if (!val && !this.visible) return;
-      if (isFunction(this.onSearch) || this.$listeners.search) {
-        this.debounceOnRemote();
-      }
-      if (this.canFilter && val && this.creatable) {
-        const tmp = this.realOptions.filter((item) => get(item, this.realLabel).toString() === val);
-        this.showCreateOption = !tmp.length;
-      } else {
-        this.showCreateOption = false;
-      }
-    },
-    options: {
-      immediate: true,
-      handler(options: SelectOption[]) {
-        if (Array.isArray(options)) {
-          this.realOptions = this.getRealOptions(options);
+    });
+
+    const debounceOnRemote = debounce(() => {
+      instance.emit('search', tInputValue.value, context);
+      // emitEvent<Parameters<TdSelectProps['onSearch']>>(this, 'search', tInputValue.value);
+    }, 300);
+
+    watch(
+      tInputValue,
+      (val) => {
+        if (!val && !visible.value) return;
+        // 远程搜索逻辑
+        if (isFunction(props.onSearch) || context.listeners.search) {
+          debounceOnRemote();
+        }
+        // 创建条目逻辑
+        if (canFilter.value && val && creatable.value) {
+          const tmp = realOptions.value.filter((item) => get(item, realLabel.value).toString() === val);
+          showCreateOption.value = !tmp.length;
         } else {
-          console.error('TDesign Select: options must be an array.');
+          showCreateOption.value = false;
         }
       },
-    },
-    visible() {
-      this.visible && document.addEventListener('keydown', this.keydownEvent);
-      !this.visible && document.removeEventListener('keydown', this.keydownEvent);
-      !this.visible && (this.showCreateOption = false);
-    },
-  },
-  methods: {
-    getRealOptions(options: SelectOption[]): Array<TdOptionProps> {
+      { flush: 'post' },
+    );
+
+    const getRealOptions = (options: SelectOption[]): Array<TdOptionProps> => {
       let result = [];
-      if (this.isGroupOption) {
+      if (isGroupOption.value) {
         let arr: TdOptionProps[] = [];
         options.forEach((item) => {
           if ('children' in item) {
@@ -318,401 +299,291 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
         if (typeof item !== 'object') return { label: item, value: item };
         return item;
       });
-    },
-    multiLimitDisabled(value: string | number) {
-      if (this.multiple && this.max) {
-        if (Array.isArray(this.value) && this.value.indexOf(value) === -1 && this.max <= this.value.length) {
-          return true;
-        }
-      }
-      return false;
-    },
-    visibleChange(val: boolean) {
-      emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', val);
-      this.visible = val;
-      if (!val) {
-        this.searchInput = '';
-      }
-      val && this.monitorWidth();
-      val && this.canFilter && this.doFocus();
-    },
-    onOptionClick(value: string | number, e: MouseEvent | KeyboardEvent) {
-      if (this.value !== value) {
-        if (this.multiple) {
-          const tempValue = Array.isArray(this.value) ? [].concat(this.value) : [];
-          if (this.labelInValue) {
-            const index = tempValue.map((item) => get(item, this.realValue)).indexOf(value);
-            if (index > -1) {
-              this.removeTag(index, { e });
-            } else {
-              tempValue.push(this.realOptions.filter((item) => get(item, this.realValue) === value)[0]);
-              this.emitChange(tempValue);
-            }
-          } else {
-            const index = tempValue.indexOf(value);
-            if (index > -1) {
-              this.removeTag(index, { e });
-            } else {
-              tempValue.push(value);
-              this.emitChange(tempValue);
-            }
-          }
-        } else {
-          this.emitChange(value);
-        }
-      }
-      if (!this.multiple) {
-        this.searchInput = '';
-        this.hideMenu();
-      } else {
-        if (!this.reserveKeyword) {
-          this.searchInput = '';
-        }
-        this.canFilter && this.doFocus();
-      }
-    },
-    removeTag(index: number, context?: { e?: MouseEvent | KeyboardEvent }) {
-      const { e } = context || {};
-      e?.stopPropagation();
-      if (this.tDisabled) {
-        return;
-      }
-      const val = this.value[index];
-      const removeOption = this.realOptions.filter((item) => get(item, this.realValue) === val);
-      const tempValue = Array.isArray(this.value) ? [].concat(this.value) : [];
-      tempValue.splice(index, 1);
-      this.emitChange(tempValue);
-      emitEvent<Parameters<TdSelectProps['onRemove']>>(this, 'remove', { value: val, data: removeOption[0], e });
-    },
-    hideMenu() {
-      this.visible = false;
-      emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', false);
-    },
-    clearSelect(e: MouseEvent) {
-      e?.stopPropagation();
-      if (this.multiple) {
-        this.emitChange([]);
-      } else {
-        this.emitChange('');
-      }
-      this.focusing = false;
-      this.searchInput = '';
-      this.visible = false;
-      emitEvent<Parameters<TdSelectProps['onClear']>>(this, 'clear', { e });
-    },
-    getOptions(option: OptionInstance) {
-      // create option值不push到options里
-      if (option.$el && option.$el.className && option.$el.className.indexOf(`${name}__create-option--special`) !== -1) return;
-      const tmp = this.realOptions.filter(
-        (item) => get(item, this.realValue) === option.value && get(item, this.realLabel) === option.label,
-      );
-      if (!tmp.length) {
-        this.hasSlotOptions = true;
-        const valueLabel = {};
-        set(valueLabel, this.realValue, option.value);
-        set(valueLabel, this.realLabel, option.label);
-        const valueLabelAble = option.disabled ? { ...valueLabel, disabled: true } : valueLabel;
-        this.realOptions.push(valueLabelAble);
-      }
-    },
-    destroyOptions(option: OptionInstance) {
-      this.realOptions.forEach((item, index) => {
-        if (item[this.realValue] === option.value && item[this.realLabel] === option.label) {
-          this.realOptions.splice(index, 1);
-        }
-      });
-    },
-    emitChange(val: SelectValue | Array<SelectValue>) {
-      let value: SelectValue | Array<SelectValue> | Array<TdOptionProps> | TdOptionProps;
-      if (this.labelInValue) {
+    };
+    watch(
+      options,
+      (val) => {
         if (Array.isArray(val)) {
-          if (!val.length) {
-            value = [];
-          } else {
-            value = val;
-          }
+          realOptions.value = getRealOptions(val);
         } else {
-          const target = this.realOptions.filter((item) => get(item, this.realValue) === val);
-          value = target.length ? target[0] : '';
+          console.error('TDesign Select: options must be an array.');
         }
-      } else {
-        value = val;
-      }
-      emitEvent<Parameters<TdSelectProps['onChange']>>(this, 'change', value);
-    },
-    createOption(value: string) {
-      emitEvent<Parameters<TdSelectProps['onCreate']>>(this, 'create', value);
-    },
-    debounceOnRemote: debounce(function (this: any) {
-      emitEvent<Parameters<TdSelectProps['onSearch']>>(this, 'search', this.searchInput);
-    }, 300),
-    focus(value: string, context: { e: FocusEvent }) {
-      this.focusing = true;
-      emitEvent<Parameters<TdSelectProps['onFocus']>>(this, 'focus', { value: this.value, e: context?.e });
-    },
-    blur(value: string, context: { e: FocusEvent | KeyboardEvent }) {
-      this.focusing = false;
-      emitEvent<Parameters<TdSelectProps['onBlur']>>(this, 'blur', { value: this.value, e: context?.e });
-    },
-    enter(value: string, context: { e: KeyboardEvent }) {
-      emitEvent<Parameters<TdSelectProps['onEnter']>>(this, 'enter', {
-        inputValue: this.searchInput,
-        value: this.value,
-        e: context?.e,
-      });
-    },
-    keydownEvent(e: KeyboardEvent) {
-      if (!this.hoverOptions.length) return;
-      const textareaSupportKeys = ['ArrowDown', 'ArrowUp', 'Enter'];
-      const preventKeys = textareaSupportKeys.concat(['Escape', 'Tab']);
+      },
+      {
+        immediate: true,
+      },
+    );
 
-      if ((e.target as HTMLElement).tagName?.toLowerCase() === 'textarea' && textareaSupportKeys.includes(e.code)) {
-        return;
+    const initHoverIndex = () => {
+      const ableOptionIndex = Object.keys(hoverOptions.value).filter((i) => !hoverOptions.value[i].disabled);
+      const ableIndex = ableOptionIndex.length ? ableOptionIndex[0] : '0';
+      if (!multiple.value && (typeof value.value === 'string' || typeof value.value === 'number')) {
+        const targetIndex = Object.keys(hoverOptions.value).filter(
+          (i) => get(hoverOptions.value[i], realValue.value) === value.value,
+        );
+        hoverIndex.value = targetIndex.length
+          ? parseInt(targetIndex[targetIndex.length - 1], 10)
+          : parseInt(ableIndex, 10);
+      } else if (multiple.value) {
+        hoverIndex.value = parseInt(ableIndex, 10);
+        Array.isArray(value.value)
+          && value.value.some((item: string | number | TdOptionProps) => {
+            const targetIndex = Object.keys(hoverOptions.value).filter(
+              (i) => (typeof item === 'object'
+                  && get(hoverOptions.value[i], realValue.value) === get(item, realValue.value))
+                || get(hoverOptions.value[i], realValue.value) === item,
+            );
+            hoverIndex.value = targetIndex.length
+              ? parseInt(targetIndex[targetIndex.length - 1], 10)
+              : parseInt(ableIndex, 10);
+            return hoverIndex.value !== -1;
+          });
       }
+    };
+    const arrowDownOption = () => {
+      let count = 0;
+      while (hoverIndex.value < hoverOptions.value.length) {
+        if (!hoverOptions.value[hoverIndex.value]?.disabled) {
+          break;
+        }
+        if (hoverIndex.value === hoverOptions.value.length - 1) {
+          hoverIndex.value = 0;
+        } else {
+          hoverIndex.value += 1;
+        }
+        count += 1;
+        if (count >= hoverOptions.value.length) break;
+      }
+    };
+    const arrowUpOption = () => {
+      let count = 0;
+      while (hoverIndex.value > -1) {
+        if (!hoverOptions.value[hoverIndex.value]?.disabled) {
+          break;
+        }
+        if (hoverIndex.value === 0) {
+          hoverIndex.value = hoverOptions.value.length - 1;
+        } else {
+          hoverIndex.value -= 1;
+        }
+        count += 1;
+        if (count >= hoverOptions.value.length) break;
+      }
+    };
+    const keydownEvent = (e: KeyboardEvent) => {
+      if (!hoverOptions.value.length) return;
+      const preventKeys = ['ArrowDown', 'ArrowUp', 'Enter', 'Escape', 'Tab'];
       if (preventKeys.includes(e.code)) {
         e.preventDefault();
       }
       switch (e.code) {
         case 'ArrowDown':
-          if (this.hoverIndex === -1) {
-            this.initHoverindex();
+          if (hoverIndex.value === -1) {
+            initHoverIndex();
             return;
           }
-          if (this.hoverIndex < this.hoverOptions.length - 1) {
-            this.hoverIndex += 1;
-            this.arrowDownOption();
+          if (hoverIndex.value < hoverOptions.value.length - 1) {
+            hoverIndex.value += 1;
+            arrowDownOption();
           } else {
-            this.hoverIndex = 0;
-            this.arrowDownOption();
+            hoverIndex.value = 0;
+            arrowDownOption();
           }
           break;
         case 'ArrowUp':
-          if (this.hoverIndex === -1) {
-            this.initHoverindex();
+          if (hoverIndex.value === -1) {
+            initHoverIndex();
             return;
           }
-          if (this.hoverIndex > 0) {
-            this.hoverIndex -= 1;
-            this.arrowUpOption();
+          if (hoverIndex.value > 0) {
+            hoverIndex.value -= 1;
+            arrowUpOption();
           } else {
-            this.hoverIndex = this.hoverOptions.length - 1;
-            this.arrowUpOption();
+            hoverIndex.value = hoverOptions.value.length - 1;
+            arrowUpOption();
           }
           break;
         case 'Enter':
-          if (this.hoverIndex === -1) return;
-          if (this.showCreateOption && this.hoverIndex === 0) {
-            this.createOption(this.searchInput);
+          if (hoverIndex.value === -1) return;
+          if (showCreateOption.value && hoverIndex.value === 0) {
+            createOption(tInputValue.value.toString());
           }
-          this.hoverOptions[this.hoverIndex]
-            && this.onOptionClick(this.hoverOptions[this.hoverIndex][this.realValue], e);
+          hoverOptions.value[hoverIndex.value]
+            && onOptionClick(hoverOptions.value[hoverIndex.value][realValue.value], e);
           break;
         case 'Escape':
         case 'Tab':
-          this.visible = false;
-          emitEvent<Parameters<TdSelectProps['onVisibleChange']>>(this, 'visible-change', false);
-          this.searchInput = '';
-          if (this.focusing) {
-            this.blur(this.searchInput, { e });
+          visible.value = false;
+          instance.emit('visible-change', false);
+          instance.emit('popup-visible-change', false, { trigger: 'keydown-esc', e });
+          setTInputValue('');
+          if (focusing.value) {
+            blur(tInputValue.value.toString(), { e });
           }
           break;
       }
-    },
-    arrowDownOption() {
-      let count = 0;
-      while (this.hoverIndex < this.hoverOptions.length) {
-        if (!this.hoverOptions[this.hoverIndex] || !this.hoverOptions[this.hoverIndex].disabled) {
-          break;
-        }
-        if (this.hoverIndex === this.hoverOptions.length - 1) {
-          this.hoverIndex = 0;
-        } else {
-          this.hoverIndex += 1;
-        }
-        count += 1;
-        if (count >= this.hoverOptions.length) break;
+    };
+    watch(visible, (val) => {
+      val && document.addEventListener('keydown', keydownEvent);
+      !val && document.removeEventListener('keydown', keydownEvent);
+      !val && (showCreateOption.value = false);
+      !val && tInputValue.value && setTInputValue('');
+    });
+
+    const handlePopupVisibleChange = (val: boolean, context: PopupVisibleChangeContext) => {
+      instance.emit('visible-change', val);
+      instance.emit('popup-visible-change', val, context);
+      visible.value = val;
+      if (val) {
+        setTInputValue('');
       }
-    },
-    arrowUpOption() {
-      let count = 0;
-      while (this.hoverIndex > -1) {
-        if (!this.hoverOptions[this.hoverIndex] || !this.hoverOptions[this.hoverIndex].disabled) {
-          break;
-        }
-        if (this.hoverIndex === 0) {
-          this.hoverIndex = this.hoverOptions.length - 1;
+      val && canFilter.value && doFocus();
+    };
+    const onOptionClick = (v: string | number, e: MouseEvent | KeyboardEvent) => {
+      if (value.value !== v) {
+        if (multiple.value) {
+          const tempValue = Array.isArray(value.value) ? [].concat(value.value) : [];
+          if (labelInValue.value) {
+            const index = tempValue.map((item) => get(item, realValue.value)).indexOf(v);
+            if (index > -1) {
+              removeTag(index, { e });
+            } else {
+              tempValue.push(realOptions.value.filter((item) => get(item, realValue.value) === v)[0]);
+              setValue(tempValue, { trigger: 'check', e });
+            }
+          } else {
+            const index = tempValue.indexOf(v);
+            if (index > -1) {
+              removeTag(index, { e });
+            } else {
+              tempValue.push(v);
+              setValue(tempValue, { trigger: 'check', e });
+            }
+          }
         } else {
-          this.hoverIndex -= 1;
+          setValue(v, { trigger: 'check', e });
         }
-        count += 1;
-        if (count >= this.hoverOptions.length) break;
       }
-    },
-    hoverEvent(v: boolean) {
-      this.isHover = v;
-    },
-    getOverlayElm(): HTMLElement {
+      if (!multiple.value) {
+        setTInputValue('');
+        hideMenu({ trigger: 'context-menu', e });
+      } else {
+        if (!reserveKeyword.value) {
+          setTInputValue('');
+        }
+        canFilter.value && doFocus();
+      }
+    };
+
+    // 当前组件选中项是否已经达到最大数量 max 限制，若达到，option组件内会对点击事件不做响应，直接return
+    const reachMaxLimit = computed(() => Boolean(multiple.value && max.value && value.value instanceof Array && max.value <= value.value.length));
+
+    const removeTag = (index: number, context?: { e?: MouseEvent | KeyboardEvent }) => {
+      const { e } = context || {};
+      e?.stopPropagation();
+      if (tDisabled.value) {
+        return;
+      }
+      const val = value.value[index];
+      const removeOption = realOptions.value.filter((item) => get(item, realValue.value) === val);
+      const tempValue = Array.isArray(value.value) ? [].concat(value.value) : [];
+      tempValue.splice(index, 1);
+      setValue(tempValue, { trigger: 'uncheck', e });
+      instance.emit('remove', { value: val, data: removeOption[0], e }, context);
+    };
+    const hideMenu = (context: PopupVisibleChangeContext) => {
+      visible.value = false;
+      instance.emit('visible-change', false);
+      instance.emit('popup-visible-change', false, context);
+    };
+    const handleTInputValueChange = (val: string, context: SelectInputValueChangeContext) => {
+      if (context.trigger === 'blur') {
+        return;
+      }
+      setTInputValue(val);
+    };
+    const handleTagChange = (currentTags: SelectInputValue, context: SelectInputChangeContext) => {
+      const { trigger, index, e } = context;
+      if (trigger === 'clear') {
+        setValue([], { trigger: 'tag-remove', e });
+      }
+      if (['tag-remove', 'backspace'].includes(trigger)) {
+        removeTag(index);
+      }
+    };
+    const clearSelect = ({ e }: { e: MouseEvent }) => {
+      e?.stopPropagation();
+      if (multiple.value) {
+        setValue([], { trigger: 'clear', e });
+      } else {
+        setValue('', { trigger: 'clear', e });
+      }
+      focusing.value = false;
+      setTInputValue('');
+      visible.value = false;
+      instance.emit('clear', { e }, context);
+    };
+    const getOptions = (option: OptionInstance) => {
+      // create option值不push到options里
+      const { optionNode } = option.refs as any;
+      if (optionNode?.className?.indexOf(`${name}__create-option--special`) !== -1) {
+        return;
+      }
+      const tmp = realOptions.value.filter(
+        (item) => get(item, realValue.value) === option.value && get(item, realLabel.value) === option.label,
+      );
+      if (!tmp.length) {
+        hasSlotOptions.value = true;
+        const valueLabel = {};
+        set(valueLabel, realValue.value, option.value);
+        set(valueLabel, realLabel.value, option.label);
+        const valueLabelAble = option.disabled ? { ...valueLabel, disabled: true } : valueLabel;
+        realOptions.value.push(valueLabelAble);
+      }
+    };
+    const destroyOptions = (option: OptionInstance) => {
+      realOptions.value.forEach((item, index) => {
+        if (item[realValue.value] === option.value && item[realLabel.value] === option.label) {
+          realOptions.value.splice(index, 1);
+        }
+      });
+    };
+    const createOption = (value: string) => {
+      instance.emit('create', value, context);
+    };
+    const focus = (value: string, context: { e: FocusEvent }) => {
+      focusing.value = true;
+      instance.emit('focus', { value, e: context?.e }, context);
+    };
+    const blur = (value: string, context: { e: FocusEvent | KeyboardEvent }) => {
+      focusing.value = false;
+      instance.emit('blur', { value, e: context?.e }, context);
+    };
+    const enter = (value: string, context: { e: KeyboardEvent }) => {
+      instance.emit('enter', { value, e: context?.e, inputValue: tInputValue.value }, context);
+    };
+    const getOverlayElm = (): HTMLElement => {
       let r;
       try {
-        r = (this.$refs.popup as any).$refs.overlay || (this.$refs.popup as any).$refs.component.$refs.overlay;
+        const popupRefs = (context.refs.selectInputRef as any).$refs.selectInputRef.$refs;
+        r = popupRefs.overlay || popupRefs.component.$refs.overlay;
       } catch (e) {
         console.warn('TDesign Warn:', e);
       }
       return r;
-    },
-    // 打开浮层时，监听trigger元素和浮层宽度，取max
-    monitorWidth() {
-      this.$nextTick(() => {
-        let styles = (this.popupProps && this.popupProps.overlayStyle) || {};
-        if (this.popupProps && isFunction(this.popupProps.overlayStyle)) {
-          styles = this.popupProps.overlayStyle(this.$refs.select as HTMLElement, this.$refs.content as HTMLElement) || {};
-        }
-        if (typeof styles === 'object' && !styles.width) {
-          const elWidth = (this.$refs.select as HTMLElement).getBoundingClientRect().width;
-          const popupWidth = this.getOverlayElm().getBoundingClientRect().width;
-          const width = elWidth > DEFAULT_MAX_OVERLAY_WIDTH
-            ? elWidth
-            : Math.min(DEFAULT_MAX_OVERLAY_WIDTH, Math.max(elWidth, popupWidth));
-          Vue.set(this.defaultProps, 'overlayStyle', { width: `${Math.ceil(width)}px` });
-          // isuse-549 弹出层出现滚动条时，需要加上滚动条宽度，否则会挤压宽度，导致出现省略号
-          if (this.checkScroll) {
-            const timer = setTimeout(() => {
-              const { scrollHeight, clientHeight } = this.getOverlayElm();
-              if (scrollHeight > clientHeight) {
-                Vue.set(this.defaultProps, 'overlayStyle', { width: `${Math.ceil(width) + DEFAULT_SCROLLY_WIDTH}px` });
-              }
-              this.checkScroll = false;
-              clearTimeout(timer);
-            }, this.popupOpenTime);
-          }
-        }
-      });
-    },
-    getEmpty() {
-      const useLocale = !this.empty && !this.$scopedSlots.empty;
-      return useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty');
-    },
-    getLoadingText() {
-      const useLocale = !this.loadingText && !this.$scopedSlots.loadingText;
-      return useLocale ? this.t(this.global.loadingText) : renderTNodeJSX(this, 'loadingText');
-    },
-    getPlaceholderText() {
-      return this.placeholder || this.t(this.global.placeholder);
-    },
-    getCloseIcon() {
-      // TODO 基于select-input改造时需要移除，polyfill代码，同时移除common中此类名
-      const closeIconClass = [`${name}__right-icon`, `${name}__right-icon-clear`, `${name}__right-icon-polyfill`];
-      if (isFunction(this.global.clearIcon)) {
-        return (
-          <span class={closeIconClass} onClick={this.clearSelect}>
-            {this.global.clearIcon(this.$createElement)}
-          </span>
-        );
-      }
-      return <CloseCircleFilledIcon class={closeIconClass} size={this.size} nativeOnClick={this.clearSelect} />;
-    },
-    doFocus() {
-      const input = this.$refs.input as HTMLElement;
-      input?.focus();
-      this.focusing = true;
-    },
-    renderGroupOptions(options: SelectOptionGroup[]) {
-      return (
-        <ul class={listName}>
-          {options.map((groupList: SelectOptionGroup) => {
-            const children = groupList.children.filter((item) => this.displayOptionsMap.get(item));
-            return (
-              <t-option-group v-show={children.length} label={groupList.group} divider={groupList.divider}>
-                {this.renderOptions(children)}
-              </t-option-group>
-            );
-          })}
-        </ul>
-      );
-    },
-    // options 直传时
-    renderOptions(options: SelectOption[]) {
-      return (
-        <ul class={listName}>
-          {options.map((item: TdOptionProps, index: number) => (
-            <t-option
-              value={get(item, this.realValue)}
-              label={get(item, this.realLabel)}
-              content={item.content}
-              disabled={item.disabled || this.multiLimitDisabled(get(item, this.realValue))}
-              key={index}
-            ></t-option>
-          ))}
-        </ul>
-      );
-    },
-    // 两类：普通选择器和分组选择器
-    renderDataWithOptions() {
-      return this.isGroupOption
-        ? this.renderGroupOptions(this.options as SelectOptionGroup[])
-        : this.renderOptions(this.displayOptions);
-    },
-    initHoverindex() {
-      const ableOptionIndex = Object.keys(this.hoverOptions).filter((i) => !this.hoverOptions[i].disabled);
-      const ableIndex = ableOptionIndex.length ? ableOptionIndex[0] : '0';
-      if (!this.multiple && (typeof this.value === 'string' || typeof this.value === 'number')) {
-        const targetIndex = Object.keys(this.hoverOptions).filter(
-          (i) => get(this.hoverOptions[i], this.realValue) === this.value,
-        );
-        this.hoverIndex = targetIndex.length
-          ? parseInt(targetIndex[targetIndex.length - 1], 10)
-          : parseInt(ableIndex, 10);
-      } else if (this.multiple) {
-        this.hoverIndex = parseInt(ableIndex, 10);
-        Array.isArray(this.value)
-          && this.value.some((item: string | number | TdOptionProps) => {
-            const targetIndex = Object.keys(this.hoverOptions).filter(
-              (i) => (typeof item === 'object' && get(this.hoverOptions[i], this.realValue) === get(item, this.realValue))
-                || get(this.hoverOptions[i], this.realValue) === item,
-            );
-            this.hoverIndex = targetIndex.length
-              ? parseInt(targetIndex[targetIndex.length - 1], 10)
-              : parseInt(ableIndex, 10);
-            return this.hoverIndex !== -1;
-          });
-      }
-    },
-
-    renderContent() {
-      const { loading, showCreateOption, displayOptions } = this;
-      const children = renderTNodeJSX(this, 'default');
-      const emptySlot = this.getEmpty();
-      const loadingTextSlot = this.getLoadingText();
-      return (
-        <div slot="content" class={`${name}__dropdown-inner`}>
-          {renderTNodeJSX(this, 'panelTopContent')}
-          <ul v-show={showCreateOption} class={[`${name}__create-option`, listName]}>
-            <t-option value={this.searchInput} label={this.searchInput} class={`${name}__create-option--special`} />
-          </ul>
-          {loading && <div class={this.tipsClass}>{loadingTextSlot}</div>}
-          {!loading && !displayOptions.length && !showCreateOption && <div class={this.emptyClass}>{emptySlot}</div>}
-          {!this.hasSlotOptions && displayOptions.length && !loading ? (
-            this.renderDataWithOptions()
-          ) : (
-            <ul v-show={!loading && displayOptions.length} class={[`${prefix}-select__groups`, listName]}>
-              {children}
-            </ul>
-          )}
-          {renderTNodeJSX(this, 'panelBottomContent')}
-        </div>
-      );
-    },
+    };
+    const getPlaceholderText = () => ((!multiple.value && visible.value && selectedValue.value) || placeholder.value) ?? t(global.value.placeholder);
     /**
      * Parse options from slots before popup, execute only once
      */
-    initOptions() {
-      if (this.realOptions.length || this.isInited) return;
+    const initOptions = () => {
+      if (realOptions.value.length || isInit.value) return;
 
-      const children = renderTNodeJSX(this, 'default');
+      const children = renderTNode('default');
       if (children) {
-        this.realOptions = parseOptions(children);
-        this.isInited = true;
-        this.hasSlotOptions = true;
+        realOptions.value = parseOptions(children);
+        isInit.value = true;
+        hasSlotOptions.value = true;
       }
 
       function parseOptions(vnodes: VNode[]): TdOptionProps[] {
@@ -735,112 +606,196 @@ export default mixins(getConfigReceiverMixins<Vue, SelectConfig>('select')).exte
           return options;
         }, []);
       }
+    };
+
+    onMounted(() => {
+      initOptions();
+    });
+    onUpdated(() => {
+      initOptions();
+    });
+
+    provide('tSelect', {
+      getOptions,
+      reachMaxLimit,
+      visible,
+      hoverOptions,
+      hoverIndex,
+      realValue,
+      getOverlayElm,
+      popupOpenTime,
+      multiple,
+      max,
+      value,
+      size,
+      creatable,
+      isGroupOption,
+      tInputValue,
+      canFilter,
+      filterOptions,
+      labelInValue,
+      createOption,
+      onOptionClick,
+      hasSlotOptions,
+      destroyOptions,
+      displayOptions,
+      displayOptionsMap,
+    });
+
+    return {
+      selectInputRef,
+      visible,
+      realOptions,
+      showCreateOption,
+      showFilter,
+      tDisabled,
+      showLoading,
+      realValue,
+      realLabel,
+      displayOptions,
+      selectedValue,
+      hasSlotOptions,
+      tInputValue,
+      isGroupOption,
+      focus,
+      blur,
+      enter,
+      clearSelect,
+      getPlaceholderText,
+      handlePopupVisibleChange,
+      handleTInputValueChange,
+      handleTagChange,
+      removeTag,
+      renderValueDisplay,
+      renderTNode,
+      renderCollapsedItems,
+    };
+  },
+
+  methods: {
+    renderSuffixIcon() {
+      const {
+        showLoading, showArrow, visible, tDisabled,
+      } = this;
+      if (showLoading) {
+        return <t-loading class={[`${name}__right-icon`, `${name}__active-icon`]} size="small" />;
+      }
+      return showArrow ? (
+        <fake-arrow overlayClassName={`${name}__right-icon`} isActive={visible && !tDisabled} />
+      ) : null;
     },
   },
 
-  mounted() {
-    this.initOptions();
-  },
-  updated() {
-    this.initOptions();
-  },
-
-  render(): VNode {
+  render(h) {
     const {
-      classes,
-      popupObject,
-      tDisabled,
-      popClass,
-      size,
-      showPlaceholder,
-      selectedMultiple,
       multiple,
+      autoWidth,
+      bordered,
+      readonly,
+      selectedValue,
+      clearable,
+      tDisabled,
+      borderless,
+      empty,
+      showCreateOption,
+      displayOptions,
+      isGroupOption,
+      options,
+      size,
       showFilter,
-      selectedSingle,
-      filterPlaceholder,
+      tInputValue,
+      showLoading,
+      loadingText,
+      tagInputProps,
+      tagProps,
+      inputProps,
+      minCollapsedNum,
+      popupProps,
+      selectInputProps,
+      max,
+      value,
+      realValue,
       realLabel,
+      visible,
+      focus,
+      blur,
+      enter,
+      handlePopupVisibleChange,
+      clearSelect,
+      handleTInputValueChange,
+      handleTagChange,
+      renderTNode,
+      renderCollapsedItems,
+      // 虚拟滚动参数
+      scroll,
     } = this;
-    const prefixIconSlot = renderTNodeJSX(this, 'prefixIcon');
+    const valueDisplay = this.renderValueDisplay(h);
     const placeholderText = this.getPlaceholderText();
+    const prefixIcon = () => renderTNode('prefixIcon');
+    const collapsedItems = () => renderCollapsedItems();
+    const { overlayClassName, ...restPopupProps } = popupProps || {};
     return (
       <div ref="select" class={`${name}__wrap`}>
-        <Popup
-          ref="popup"
-          visible={this.visible}
-          class={`${name}__popup-reference`}
+        <SelectInput
+          ref="selectInputRef"
+          class={name}
+          autoWidth={autoWidth}
+          borderless={borderless || !bordered}
+          readonly={readonly}
+          allowInput={showFilter}
+          multiple={multiple}
+          value={selectedValue}
+          valueDisplay={valueDisplay}
+          clearable={clearable}
           disabled={tDisabled}
-          on={{ 'visible-change': this.visibleChange }}
-          expandAnimation={true}
-          {...{ props: { ...popupObject, overlayClassName: popClass } }}
+          label={prefixIcon}
+          suffixIcon={this.renderSuffixIcon}
+          placeholder={placeholderText}
+          inputValue={tInputValue}
+          inputProps={{
+            size,
+            ...inputProps,
+          }}
+          tagInputProps={{
+            ...tagInputProps,
+          }}
+          tagProps={tagProps}
+          minCollapsedNum={minCollapsedNum}
+          collapsedItems={collapsedItems}
+          popupVisible={visible}
+          popupProps={{
+            overlayClassName: [`${name}__dropdown`, ['narrow-scrollbar'], overlayClassName],
+            ...restPopupProps,
+          }}
+          on={{
+            focus,
+            blur,
+            enter,
+            clear: clearSelect,
+            'input-change': handleTInputValueChange,
+            'popup-visible-change': handlePopupVisibleChange,
+            'tag-change': handleTagChange,
+          }}
+          {...selectInputProps}
         >
-          <div
-            class={classes}
-            onMouseenter={this.hoverEvent.bind(null, true)}
-            onMouseleave={this.hoverEvent.bind(null, false)}
-          >
-            {prefixIconSlot && <span class={`${name}__left-icon`}>{prefixIconSlot[0]}</span>}
-            {showPlaceholder && <span class={`${name}__placeholder`}> {placeholderText}</span>}
-            {this.valueDisplay || this.$scopedSlots.valueDisplay
-              ? renderTNodeJSX(this, 'valueDisplay', {
-                params: { value: selectedMultiple, onClose: (index: number) => this.removeTag(index) },
-              })
-              : selectedMultiple.map((item: TdOptionProps, index: number) => (
-                  <tag
-                    v-show={this.minCollapsedNum <= 0 || index < this.minCollapsedNum}
-                    key={index}
-                    size={size}
-                    closable={!item.disabled && !tDisabled}
-                    disabled={tDisabled}
-                    style="max-width: 100%;"
-                    maxWidth="100%"
-                    onClose={this.removeTag.bind(null, index)}
-                  >
-                    {get(item, realLabel)}
-                  </tag>
-              ))}
-            {this.collapsedItems || this.$scopedSlots.collapsedItems ? (
-              renderTNodeJSX(this, 'collapsedItems', {
-                params: {
-                  value: selectedMultiple,
-                  collapsedSelectedItems: selectedMultiple.slice(this.minCollapsedNum),
-                  count: selectedMultiple.length - this.minCollapsedNum,
-                },
-              })
-            ) : (
-              <tag v-show={this.minCollapsedNum > 0 && selectedMultiple.length > this.minCollapsedNum} size={size}>
-                {`+${selectedMultiple.length - this.minCollapsedNum}`}
-              </tag>
-            )}
-            {!multiple && !showPlaceholder && !showFilter && <span class={`${name}__single`}>{selectedSingle}</span>}
-            {showFilter && (
-              <t-input
-                ref="input"
-                v-model={this.searchInput}
-                size={size}
-                placeholder={filterPlaceholder}
-                disabled={tDisabled}
-                class={`${name}__input`}
-                readonly={!this.visible || !this.showFilter}
-                onFocus={this.focus}
-                onBlur={this.blur}
-                onEnter={this.enter}
-              />
-            )}
-            {this.showRightArrow && !this.showLoading && (
-              // TODO 基于select-input改造时需要移除，polyfill代码，同时移除common中此类名
-              <fake-arrow
-                overlayClassName={`${name}__right-icon ${name}__right-icon-polyfill`}
-                isActive={this.visible && !this.tDisabled}
-              />
-            )}
-            {this.showClose && !this.showLoading && this.getCloseIcon()}
-            {/* TODO 基于select-input改造时需要移除，polyfill代码，同时移除common中此类名 */}
-            {this.showLoading && (
-              <t-loading class={`${name}__right-icon ${name}__active-icon ${name}__right-icon-polyfill`} size="small" />
-            )}
-          </div>
-          {this.renderContent()}
-        </Popup>
+          <select-panel
+            slot="panel"
+            size={size}
+            multiple={multiple}
+            scopedSlots={this.$scopedSlots}
+            empty={empty}
+            loading={showLoading}
+            showCreateOption={showCreateOption}
+            options={isGroupOption ? options : displayOptions}
+            loadingText={loadingText}
+            max={max}
+            inputValue={tInputValue}
+            value={value}
+            realLabel={realLabel}
+            realValue={realValue}
+            scroll={scroll}
+          />
+        </SelectInput>
       </div>
     );
   },
