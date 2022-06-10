@@ -82,14 +82,17 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
         dragInstanceTmp?.sort(lastRowList.value);
         const { oldIndex: currentIndex, newIndex: targetIndex } = evt;
         const params: DragSortContext<TableRowData> = {
+          data: data.value,
           currentIndex,
           current: data.value[currentIndex],
           targetIndex,
           target: data.value[targetIndex],
-          currentData: swapDragArrayElement(props.data, currentIndex, targetIndex),
+          newData: swapDragArrayElement([...props.data], currentIndex, targetIndex),
           e: evt,
           sort: 'row',
         };
+        // currentData is going to be deprecated
+        params.currentData = params.newData;
         props.onDragSort?.(params);
         // Vue3 ignore next line
         context.emit('drag-sort', params);
@@ -126,14 +129,17 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
         dragInstanceTmp?.sort([...lastColList.value]);
         const { oldIndex: currentIndex, newIndex: targetIndex } = evt;
         const params: DragSortContext<TableRowData> = {
+          data: columns.value,
           currentIndex,
           current: columns.value[currentIndex],
           targetIndex,
           target: columns.value[targetIndex],
-          currentData: swapDragArrayElement(columns.value, currentIndex, targetIndex),
+          newData: swapDragArrayElement([...columns.value], currentIndex, targetIndex),
           e: evt,
           sort: 'col',
         };
+        // currentData is going to be deprecated
+        params.currentData = params.newData;
         props.onDragSort?.(params);
         // Vue3 ignore next line
         context.emit('drag-sort', params);
