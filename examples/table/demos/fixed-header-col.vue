@@ -30,7 +30,7 @@
       :scroll="virtualScroll ? { type: 'virtual' } : undefined"
       :stripe="stripe"
       bordered
-      allowResizeColumnWidth
+      resizable
     >
       <template #operation="slotProps">
         <a class="link" @click="rehandleClickOp(slotProps)">删除</a>

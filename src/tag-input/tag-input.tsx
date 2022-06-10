@@ -130,6 +130,7 @@ export default defineComponent({
         ref="tagInputRef"
         readonly={this.readonly}
         {...this.inputProps}
+        inputClass={this.inputProps?.inputClass} // 展开无效 需直接透传
         value={this.tInputValue}
         onChange={(val: InputValue, context?: { e?: InputEvent | MouseEvent }) => {
           this.setTInputValue(val, { ...context, trigger: 'input' });

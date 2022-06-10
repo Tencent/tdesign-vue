@@ -1,7 +1,7 @@
 import {
   ref, onMounted, computed, nextTick, Ref, UnwrapRef,
 } from '@vue/composition-api';
-import observe from '../../_common/js/utils/observe';
+import observe from '../_common/js/utils/observe';
 
 export type UseLazyLoadParams = UnwrapRef<{
   type: 'lazy' | 'virtual';
@@ -10,6 +10,7 @@ export type UseLazyLoadParams = UnwrapRef<{
   bufferSize?: number;
 }>;
 
+// 懒加载hooks
 export default function useLazyLoad(
   containerRef: Ref<HTMLElement>,
   childRef: Ref<HTMLTableRowElement>,
@@ -31,10 +32,11 @@ export default function useLazyLoad(
 
   onMounted(() => {
     if (params?.type !== 'lazy') return;
+
     nextTick(() => {
       const bufferSize = Math.max(10, params.bufferSize || 10);
       const height = tRowHeight.value * bufferSize;
-      observe(childRef.value, containerRef.value, init, height);
+      observe(childRef.value, containerRef?.value, init, height);
     });
   });
 
