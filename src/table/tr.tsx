@@ -25,8 +25,8 @@ import {
   BaseTableCellParams, TableRowData, RowspanColspan, TdPrimaryTableProps,
 } from './type';
 import baseTableProps from './base-table-props';
-import useLazyLoad from './hooks/useLazyLoad';
 import { SkipSpansValue } from './hooks/useRowspanAndColspan';
+import useLazyLoad from '../hooks/useLazyLoad';
 
 export interface RenderTdExtra {
   rowAndColFixedPosition: RowAndColFixedPosition;
@@ -156,7 +156,6 @@ export default defineComponent({
       trRef,
       reactive({ ...props.scroll, rowIndex: props.rowIndex }),
     );
-
     const getTrListeners = (row: TableRowData, rowIndex: number) => {
       const trListeners: { [eventName: string]: (e: MouseEvent) => void } = {};
       // add events to row
