@@ -5,7 +5,7 @@ toc: false
 docClass: timeline
 ---
 
-## 🌈 0.41.8 `2022-06-10` 
+## 🌈 0.42.0 `2022-06-10` 
 ### ❗️ BREAKING CHANGES
 - `Dialog`: 移除 transform 定位实现方案，如有覆盖 Dialog 组件样式的情况请注意 DOM 结构有变动 @huoyuhao ([#970](https://github.com/Tencent/tdesign-vue/pull/970))
 ### 🚀 Features
