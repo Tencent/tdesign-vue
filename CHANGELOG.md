@@ -5,6 +5,32 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.41.8 `2022-06-10` 
+### ❗️ BREAKING CHANGES
+- `Dialog`: 移除 transform 定位实现方案，如有覆盖 Dialog 组件样式的情况请注意 DOM 结构有变动 @huoyuhao ([#970](https://github.com/Tencent/tdesign-vue/pull/970))
+### 🚀 Features
+- `Table`: 
+  - 筛选对话框输入筛选内容之后按回触发筛选过滤，[issue#802](https://github.com/Tencent/tdesign-vue/issues/802) @chaishi ([#952](https://github.com/Tencent/tdesign-vue/pull/952))
+  - 筛选功能支持自定义组件方式，示例：`columns: [{ filter: { component: DatePicker, props: {} } }]` @chaishi ([#952](https://github.com/Tencent/tdesign-vue/pull/952))
+  - 拖拽调整宽度，支持设置最小宽度和最大宽度 `column.resize`， [issue#929](https://github.com/Tencent/tdesign-vue/issues/929) @chaishi ([#952](https://github.com/Tencent/tdesign-vue/pull/952))
+  - 拖拽排序事件，新增参数 `data` 和 `newData`，分别表示变更前后的数据 @chaishi ([#955](https://github.com/Tencent/tdesign-vue/pull/955))
+- `Popup`: 支持动态设置 trigger & placement @ikeq ([#950](https://github.com/Tencent/tdesign-vue/pull/950))
+- `Select`:
+  - select组件支持虚拟滚动 @uyarn ([#972](https://github.com/Tencent/tdesign-vue/pull/972))
+  - 重构为 composition API 实现，组件底层基于 SelectInput 实现 @skytt ([#905](https://github.com/Tencent/tdesign-vue/pull/905))
+- `Upload`: 图片上传文案支持自定义 @Isabella327 ([#971](https://github.com/Tencent/tdesign-vue/pull/971))
+- 新增 InputAdornment 组件 @HQ-Lin ([#962](https://github.com/Tencent/tdesign-vue/pull/962))
+### 🐞 Bug Fixes
+- `Popup`: 修复初始化 visible 为 true 时的定位抖动问题 @ikeq ([#950](https://github.com/Tencent/tdesign-vue/pull/950))
+- `Table`:
+  - 修复树形结构拖拽排序引起展开收起异常问题 @chaishi ([#955](https://github.com/Tencent/tdesign-vue/pull/955))
+  - 修复动态数据场景下合并单元格支持，[issue#973](https://github.com/Tencent/tdesign-vue/issues/973) @chaishi ([#975](https://github.com/Tencent/tdesign-vue/pull/975))
+- `Select`:
+  - 修复 `inputProps` 透传无效的问题 @skytt ([#905](https://github.com/Tencent/tdesign-vue/pull/905))
+  - 修复 `placeholder` 无法设置空字符串的问题 @skytt ([#905](https://github.com/Tencent/tdesign-vue/pull/905))
+  - 修复单选场景无法使用 `valueDisplay` 能力的问题 @skytt ([#905](https://github.com/Tencent/tdesign-vue/pull/905))
+- `Datepicker`: 修复 `popupProps` 传入无效的问题 @chiyu1996 ([#974](https://github.com/Tencent/tdesign-vue/pull/974))
+
 ## 🌈 0.41.7 `2022-06-02` 
 ### 🚀 Features
 - `Table`: 
