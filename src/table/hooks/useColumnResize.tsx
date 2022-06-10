@@ -1,5 +1,8 @@
 import { ref, Ref, reactive } from '@vue/composition-api';
-import { BaseTableColumns } from '../interface';
+import { BaseTableCol, TableRowData } from '../type';
+
+const DEFAULT_MIN_WIDTH = 80;
+const DEFAULT_MAX_WIDTH = 600;
 
 export default function useColumnResize(tableElmRef: Ref<HTMLTableElement>, refreshTable: () => void) {
   const resizeLineRef = ref<HTMLDivElement>();
@@ -18,15 +21,21 @@ export default function useColumnResize(tableElmRef: Ref<HTMLTableElement>, refr
 
   // 表格列宽拖拽事件
   // 只在表头显示拖拽图标
-  const onColumnMouseover = (e: MouseEvent) => {
+  const onColumnMouseover = (e: MouseEvent, col: BaseTableCol<TableRowData>) => {
     if (!resizeLineRef.value) return;
 
     const target = (e.target as HTMLElement).closest('th');
     const targetBoundRect = target.getBoundingClientRect();
     if (!resizeLineParams.isDragging) {
-      // 最小宽度暂定为30，如果单元格小于30，则不能拖拽
-      // 当离右边框的距离不超过8时，显示拖拽图标
-      if (targetBoundRect.width >= 30 && targetBoundRect.right - e.pageX <= 8) {
+      const minWidth = col.resize?.minWidth || DEFAULT_MIN_WIDTH;
+      const maxWidth = col.resize?.maxWidth || DEFAULT_MAX_WIDTH;
+      // 当离右边框的距离不超过 8 时，显示拖拽图标
+      const distance = 8;
+      if (
+        targetBoundRect.width >= minWidth
+        && targetBoundRect.width <= maxWidth
+        && targetBoundRect.right - e.pageX <= distance
+      ) {
         target.style.cursor = 'col-resize';
         resizeLineParams.draggingCol = target;
       } else {
@@ -37,8 +46,8 @@ export default function useColumnResize(tableElmRef: Ref<HTMLTableElement>, refr
   };
 
   // 调整表格列宽
-  const onColumnMousedown = (e: MouseEvent, col: BaseTableColumns[0]) => {
-    // 非resize的点击，不做处理
+  const onColumnMousedown = (e: MouseEvent, col: BaseTableCol<TableRowData>) => {
+    // 非 resize 的点击，不做处理
     if (!resizeLineParams.draggingCol) return;
 
     const target = (e.target as HTMLElement).closest('th');
@@ -46,8 +55,10 @@ export default function useColumnResize(tableElmRef: Ref<HTMLTableElement>, refr
     const tableBoundRect = tableElmRef.value?.getBoundingClientRect();
     const resizeLinePos = targetBoundRect.right - tableBoundRect.left;
     const colLeft = targetBoundRect.left - tableBoundRect.left;
-    const minColLen = 30;
+    const minColLen = col.resize?.minWidth || DEFAULT_MIN_WIDTH;
+    const maxColWidth = col.resize?.maxWidth || DEFAULT_MAX_WIDTH;
     const minResizeLineLeft = colLeft + minColLen;
+    const maxResizeLineLeft = colLeft + maxColWidth;
 
     // 开始拖拽，记录下鼠标起始位置
     resizeLineParams.isDragging = true;
@@ -87,8 +98,8 @@ export default function useColumnResize(tableElmRef: Ref<HTMLTableElement>, refr
     const onDragOver = (e: MouseEvent) => {
       // 计算新的列宽，新列宽不得小于最小列宽
       if (resizeLineParams.isDragging) {
-        // 更新resizeLine的位置
-        resizeLineStyle.left = `${Math.max(resizeLinePos + e.x - resizeLineParams.draggingStart, minResizeLineLeft)}px`;
+        const left = resizeLinePos + e.x - resizeLineParams.draggingStart;
+        resizeLineStyle.left = `${Math.min(Math.max(left, minResizeLineLeft), maxResizeLineLeft)}px`;
       }
     };
 

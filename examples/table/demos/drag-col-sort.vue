@@ -44,12 +44,13 @@ export default {
     };
   },
   methods: {
+    // currentData is going to be deprecated
     onDragSort({
-      currentIndex, current, targetIndex, target, currentData, e, sort,
+      currentIndex, current, targetIndex, target, data, newData, e, sort,
     }) {
-      console.log('重新排序', currentIndex, current, targetIndex, target, currentData, e, sort);
+      console.log('重新排序', currentIndex, current, targetIndex, target, data, newData, e, sort);
       if (sort === 'col') {
-        this.columns = currentData;
+        this.columns = newData;
       }
     },
   },

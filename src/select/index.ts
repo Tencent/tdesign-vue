@@ -1,3 +1,4 @@
+import VueCompositionAPI from '@vue/composition-api';
 import _Select from './select';
 import _Option from './option';
 import _OptionGroup from './optionGroup';
@@ -12,10 +13,13 @@ export type OptionProps = TdOptionProps;
 export type OptionGroupProps = TdOptionGroupProps;
 export * from './type';
 
-export const Select = withInstall(mapProps(['value'], {
-  model: { prop: 'value', event: 'change' },
-})(_Select));
+export const Select = withInstall(
+  mapProps(['value'], {
+    model: { prop: 'value', event: 'change' },
+  })(_Select),
+  VueCompositionAPI,
+);
 
-export const Option = withInstall(_Option);
+export const Option = withInstall(_Option, VueCompositionAPI);
 
-export const OptionGroup = withInstall(_OptionGroup);
+export const OptionGroup = withInstall(_OptionGroup, VueCompositionAPI);

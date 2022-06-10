@@ -31,7 +31,7 @@ export interface TheadProps {
     onColumnMouseover: Function;
     onColumnMousedown: Function;
   };
-  allowResizeColumnWidth: Boolean;
+  resizable: Boolean;
 }
 
 export default defineComponent({
@@ -43,7 +43,7 @@ export default defineComponent({
     thWidthList: Object as PropType<TheadProps['thWidthList']>,
     bordered: Boolean,
     isMultipleHeader: Boolean,
-    allowResizeColumnWidth: Boolean,
+    resizable: Boolean,
     spansAndLeafNodes: Object as PropType<TheadProps['spansAndLeafNodes']>,
     thList: Array as PropType<TheadProps['thList']>,
     columnResizeParams: Object as PropType<TheadProps['columnResizeParams']>,
@@ -115,10 +115,10 @@ export default defineComponent({
           const width = withoutChildren && thWidthList?.[col.colKey] ? `${thWidthList?.[col.colKey]}px` : undefined;
           const styles = { ...(thStyles.style || {}), width };
           const innerTh = renderTitle(h, this.slots, col, index);
-          const resizeColumnListener = this.allowResizeColumnWidth
+          const resizeColumnListener = this.resizable
             ? {
               mousedown: (e: MouseEvent) => this.onColumnMousedown(e, col),
-              mousemove: (e: MouseEvent) => this.onColumnMouseover(e),
+              mousemove: (e: MouseEvent) => this.onColumnMouseover(e, col),
             }
             : {};
           const content = isFunction(col.ellipsisTitle) ? col.ellipsisTitle(h, { col, colIndex: index }) : undefined;

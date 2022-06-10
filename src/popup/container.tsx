@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import raf from 'raf';
 import { getAttach, removeDom } from '../utils/dom';
 import props from './props';
 
@@ -68,7 +69,7 @@ export default Vue.extend({
   },
   mounted() {
     if (this.visible) {
-      this.mountContent();
+      raf(this.mountContent);
     }
     this.$watch('visible', (visible) => {
       if (visible) {
