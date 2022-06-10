@@ -14524,7 +14524,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort-handler.vue 
           <!---->
         </table>
       </div>
-      <div class="t-loading--center t-size-m t-loading"></div>
+      <div class="t-loading--center t-size-s t-loading"></div>
     </div>
   </div>
 </div>
@@ -15807,7 +15807,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+    <div class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
         <foreignObject x="1" y="1" width="12" height="12">
           <div class="t-loading__gradient-conic"></div>
         </foreignObject>
@@ -15863,7 +15863,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading">
+    <div class="t-loading--center t-size-s t-loading">
       <div class="t-loading__text">
         <div class="t-table--loading-message">😊 这里使用插槽自定义加载状态 😊</div>
       </div>
@@ -15919,7 +15919,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+    <div class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
         <foreignObject x="1" y="1" width="12" height="12">
           <div class="t-loading__gradient-conic"></div>
         </foreignObject>
@@ -16410,7 +16410,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
       <!---->
     </table>
   </div>
-  <div class="t-loading--center t-size-m t-loading"></div>
+  <div class="t-loading--center t-size-s t-loading"></div>
   <div class="t-table__pagination">
     <div class="t-pagination t-size-m">
       <div class="t-pagination__total">共 0 项数据</div>
