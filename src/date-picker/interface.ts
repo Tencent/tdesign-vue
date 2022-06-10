@@ -1,5 +1,6 @@
 import { Instance as popperInstance } from '@popperjs/core/lib/types';
 import dayjs from 'dayjs';
+import { PopupProps } from '@src/popup';
 import { DatePickerConfig } from '../config-provider/config-receiver';
 import { EPickerCols } from '../time-picker/interface';
 import { DateValue, TdDatePickerProps, TdDateRangePickerProps } from './type';
@@ -29,6 +30,7 @@ export interface DatePickerData {
   formDisabled: boolean;
   startTimeValue: dayjs.Dayjs;
   endTimeValue: dayjs.Dayjs;
+  defaultProps: PopupProps;
 }
 
 export interface DatePickerMethods {
@@ -73,6 +75,8 @@ export interface DatePickerComputed {
   classes: any;
   pickerStyles: any;
   tDisabled: boolean;
+  popClass: string;
+  popupObject: PopupProps;
 }
 
 export type DisableDate = Array<DateValue> | DisableDateObj | ((date: Date | string) => boolean);
