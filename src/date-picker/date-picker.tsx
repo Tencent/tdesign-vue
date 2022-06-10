@@ -185,21 +185,11 @@ export default mixins(
     tDisabled(): boolean {
       return this.formDisabled || this.disabled;
     },
-    popClass(): string {
+    popClass(): (string | ClassName)[] {
       const {
-        popupObject: { overlayClassName = '' },
+        popupObject: { overlayClassName },
       } = this;
-      let className = '';
-      if (typeof overlayClassName === 'string') {
-        className = overlayClassName;
-      } else if (Array.isArray(overlayClassName)) {
-        className = overlayClassName.join(' ');
-      } else if (typeof overlayClassName === 'object') {
-        className = Object.entries(overlayClassName)
-          .filter(([key, value]) => value)
-          .join(' ');
-      }
-      return `${className} ${name}`;
+      return [name, overlayClassName];
     },
     popupObject(): PopupProps {
       const propsObject = this.popupProps ? { ...this.defaultProps, ...this.popupProps } : this.defaultProps;

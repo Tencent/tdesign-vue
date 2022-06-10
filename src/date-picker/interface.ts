@@ -1,6 +1,7 @@
 import { Instance as popperInstance } from '@popperjs/core/lib/types';
 import dayjs from 'dayjs';
 import { PopupProps } from '@src/popup';
+import { ClassName } from '@src/common';
 import { DatePickerConfig } from '../config-provider/config-receiver';
 import { EPickerCols } from '../time-picker/interface';
 import { DateValue, TdDatePickerProps, TdDateRangePickerProps } from './type';
@@ -75,7 +76,7 @@ export interface DatePickerComputed {
   classes: any;
   pickerStyles: any;
   tDisabled: boolean;
-  popClass: string;
+  popClass: (string | ClassName)[];
   popupObject: PopupProps;
 }
 
