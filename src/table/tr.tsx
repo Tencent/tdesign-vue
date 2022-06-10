@@ -22,7 +22,7 @@ import { RowAndColFixedPosition } from './interface';
 import useClassName from './hooks/useClassName';
 import TEllipsis from './ellipsis';
 import {
-  BaseTableCellParams, TableRowData, RowspanColspan, TdPrimaryTableProps, PrimaryTableCellParams,
+  BaseTableCellParams, TableRowData, RowspanColspan, TdPrimaryTableProps,
 } from './type';
 import baseTableProps from './base-table-props';
 import useLazyLoad from './hooks/useLazyLoad';

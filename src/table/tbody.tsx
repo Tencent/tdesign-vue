@@ -1,5 +1,5 @@
 import {
-  defineComponent, computed, PropType, SetupContext, toRefs, watch,
+  defineComponent, computed, PropType, SetupContext, toRefs,
 } from '@vue/composition-api';
 import { CreateElement } from 'vue';
 import camelCase from 'lodash/camelCase';
