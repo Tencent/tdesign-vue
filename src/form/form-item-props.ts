@@ -36,7 +36,7 @@ export default {
   },
   /** 表单字段名称 */
   name: {
-    type: [String, Number, Array] as PropType<TdFormItemProps['name']>,
+    type: [String, Number] as PropType<TdFormItemProps['name']>,
   },
   /** 是否显示必填符号（*），优先级高于 Form.requiredMark */
   requiredMark: {

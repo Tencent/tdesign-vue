@@ -65,13 +65,15 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
       resetValidating: false as boolean,
       needResetField: false as boolean,
       initialValue: undefined as ValueType,
+      // 是否为自由控制是否显示错误信息
+      freeShowErrorMessage: undefined,
     };
   },
 
   computed: {
     needErrorMessage(): Boolean {
+      if (this.freeShowErrorMessage !== undefined) return this.freeShowErrorMessage;
       if (typeof this.showErrorMessage === 'boolean') return this.showErrorMessage;
-
       const parent = this.form;
       return parent?.showErrorMessage;
     },
@@ -172,8 +174,8 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
       const parent = this.form;
       if (this.rules?.length) return this.rules || [];
       if (!this.name) return [];
-      const index = this.name.lastIndexOf('.') || -1;
-      const pRuleName = this.name.slice(index + 1);
+      const index = String(this.name).lastIndexOf('.') || -1;
+      const pRuleName = String(this.name).slice(index + 1);
       return lodashGet(parent?.rules, this.name) || lodashGet(parent?.rules, pRuleName) || [];
     },
     errorMessages(): FormErrorMessage {
@@ -225,6 +227,7 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
         }
       });
     },
+
     // 设置表单错误信息
     setValidateMessage(validateMessage: FormItemValidateMessage[]) {
       if (!validateMessage || !Array.isArray(validateMessage)) return;
@@ -236,8 +239,14 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
       this.errorList = validateMessage;
       this.verifyStatus = VALIDATE_STATUS.FAIL;
     },
+
     // T 表示表单数据的类型
-    async validate<T>(trigger: ValidateTriggerType): Promise<FormItemValidateResult<T>> {
+    async validate<T>(
+      trigger: ValidateTriggerType,
+      showErrorMessage = true,
+      source: 'submit-function' | 'submit-event' = 'submit-event',
+    ): Promise<FormItemValidateResult<T>> {
+      this.freeShowErrorMessage = source === 'submit-function' ? showErrorMessage : undefined;
       this.resetValidating = true;
       // 过滤不需要校验的规则
       const rules = trigger === 'all' ? this.innerRules : this.innerRules.filter((item) => (item.trigger || 'change') === trigger);
@@ -276,6 +285,7 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
         [this.name]: errorList.length === 0 ? true : r,
       } as FormItemValidateResult<T>;
     },
+
     getLabelContent(): TNodeReturnValue {
       if (typeof this.label === 'function') {
         return this.label(this.$createElement);
@@ -285,6 +295,7 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
       }
       return this.label;
     },
+
     getLabel(): TNodeReturnValue {
       const parent = this.form;
       const labelWidth = isNil(this.labelWidth) ? parent?.labelWidth : this.labelWidth;

@@ -186,7 +186,7 @@ exports[`Form Form baseVue demo works fine 1`] = `
       class="t-form__item t-form-item__name"
     >
       <div
-        class="t-form__label t-form__label--colon t-form__label--right"
+        class="t-form__label t-form__label--required t-form__label--colon t-form__label--right"
         style="width: 100px;"
       >
         <label
@@ -442,7 +442,7 @@ exports[`Form Form baseVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item t-form-item__undefined"
       style="margin-left: 100px;"
     >
       <div
@@ -473,12 +473,36 @@ exports[`Form Form baseVue demo works fine 1`] = `
            
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            style="margin-right: 10px;"
             type="reset"
           >
             <span
               class="t-button__text"
             >
               重置
+            </span>
+          </button>
+           
+          <button
+            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            style="margin-right: 10px;"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              实例方法提交
+            </span>
+          </button>
+           
+          <button
+            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              实例方法重置
             </span>
           </button>
         </div>
@@ -991,7 +1015,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item t-form-item__undefined"
       style="margin-left: 100px;"
     >
       <div
@@ -1240,7 +1264,7 @@ exports[`Form Form customValidatorVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item t-form-item__undefined"
       style="margin-left: 100px;"
     >
       <div
@@ -2080,7 +2104,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item t-form-item__undefined"
       style="margin-left: 100px;"
     >
       <div
@@ -2688,7 +2712,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item t-form-item__undefined"
       style="margin-left: 100px;"
     >
       <div
@@ -3027,7 +3051,7 @@ exports[`Form Form loginVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item t-form-item__undefined"
       style="margin-left: 100px;"
     >
       <div
@@ -3272,7 +3296,7 @@ exports[`Form Form resetVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item t-form-item__undefined"
       style="margin-left: 100px;"
     >
       <div
@@ -3303,12 +3327,24 @@ exports[`Form Form resetVue demo works fine 1`] = `
            
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            style="margin-right: 10px;"
             type="reset"
           >
             <span
               class="t-button__text"
             >
               重置
+            </span>
+          </button>
+           
+          <button
+            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              只重置手机号码
             </span>
           </button>
         </div>
@@ -3373,6 +3409,7 @@ exports[`Form Form sizeVue demo works fine 1`] = `
    
   <form
     class="t-form"
+    size="medium"
   >
     <div
       class="t-form__item t-form-item__name"
@@ -3634,7 +3671,7 @@ exports[`Form Form sizeVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item t-form-item__undefined"
       style="margin-left: 100px;"
     >
       <div
@@ -4097,7 +4134,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
             </div>
              
             <div
-              class="t-form__item t-form-item__"
+              class="t-form__item t-form-item__undefined"
               style="margin-left: 100px;"
             >
               <div
@@ -4407,7 +4444,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
             </div>
              
             <div
-              class="t-form__item t-form-item__"
+              class="t-form__item t-form-item__undefined"
               style="margin-left: 100px;"
             >
               <div
@@ -4612,7 +4649,7 @@ exports[`Form Form validateMessageVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item t-form-item__undefined"
       style="margin-left: 100px;"
     >
       <div
@@ -5148,7 +5185,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item t-form-item__undefined"
       style="margin-left: 80px;"
     >
       <div
@@ -5957,7 +5994,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item t-form-item__undefined"
       style="margin-left: 100px;"
     >
       <div
