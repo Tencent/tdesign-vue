@@ -26,6 +26,7 @@ import { ClassName, TNodeReturnValue, Styles } from '../common';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { FormConfig } from '../config-provider/config-receiver';
 import log from '../_common/js/log';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 // type Result = ValidateResult<TdFormProps['data']>;
 
@@ -80,19 +81,12 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
     classes(): ClassName {
       return [
         CLASS_NAMES.formItem,
-        FORM_ITEM_CLASS_PREFIX + this.name,
+        FORM_ITEM_CLASS_PREFIX + (this.name || ''),
         {
-          [CLASS_NAMES.formItemWithHelp]: this.helpNode,
+          [CLASS_NAMES.formItemWithHelp]: this.help,
           [CLASS_NAMES.formItemWithExtra]: this.extraNode,
         },
       ];
-    },
-    helpNode() {
-      let helpVNode: VNode = null;
-      if (this.help) {
-        helpVNode = <div class={CLASS_NAMES.help}>{this.help}</div>;
-      }
-      return helpVNode;
     },
     extraNode() {
       const list = this.errorList;
@@ -174,8 +168,8 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
       const parent = this.form;
       if (this.rules?.length) return this.rules || [];
       if (!this.name) return [];
-      const index = String(this.name).lastIndexOf('.') || -1;
-      const pRuleName = String(this.name).slice(index + 1);
+      const index = String(this.name || '').lastIndexOf('.') || -1;
+      const pRuleName = String(this.name || '').slice(index + 1);
       return lodashGet(parent?.rules, this.name) || lodashGet(parent?.rules, pRuleName) || [];
     },
     errorMessages(): FormErrorMessage {
@@ -412,6 +406,7 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
   },
 
   render(): VNode {
+    const helpNode = renderTNodeJSX(this, 'help');
     return (
       <div class={this.classes}>
         {this.getLabel()}
@@ -420,7 +415,7 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
             {this.$slots.default}
             {this.getSuffixIcon()}
           </div>
-          {this.helpNode}
+          {helpNode && <div class={CLASS_NAMES.help}>{helpNode}</div>}
           {this.extraNode}
         </div>
       </div>
