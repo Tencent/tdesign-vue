@@ -8,6 +8,7 @@ import {
   FormValidateParams,
   AllValidateResult,
   FormValidateMessage,
+  FormResetParams,
 } from './type';
 import props from './props';
 import { FORM_ITEM_CLASS_PREFIX, CLASS_NAMES, FORM_CONTROL_COMPONENTS } from './const';
@@ -134,7 +135,9 @@ export default Vue.extend({
         e?.preventDefault();
         e?.stopPropagation();
       }
-      this.children.filter((child: any) => this.isFunction(child.resetField)).map((child: any) => child.resetField());
+      this.children
+        .filter((child: any) => this.isFunction(child.resetField))
+        .forEach((child: any) => child.resetField(this.resetType || 'initial'));
       emitEvent<Parameters<TdFormProps['onReset']>>(this, 'reset', { e });
     },
     clearValidate(fields?: Array<string>) {
@@ -144,10 +147,20 @@ export default Vue.extend({
         }
       });
     },
+
     // exposure function, If there is no reset button in form, this function can be used
-    reset() {
-      this.resetHandler();
+    // this function won't trigger reset event.
+    reset<T = FormData>(params: FormResetParams<T>) {
+      this.children
+        .filter((child: any) => this.isFunction(child.resetField))
+        .forEach((child: any) => {
+          const resetType = params.type || this.resetType || 'initial';
+          if (!params.fields || (params.fields && params.fields.includes(child.name))) {
+            child.resetField(resetType);
+          }
+        });
     },
+
     // exposure function, If there is no submit button in form, this function can be used
     submit<T extends Data = Data>() {
       this.submitHandler<T>();

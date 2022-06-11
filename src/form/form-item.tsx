@@ -25,6 +25,7 @@ import Form from './form';
 import { ClassName, TNodeReturnValue, Styles } from '../common';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { FormConfig } from '../config-provider/config-receiver';
+import log from '../_common/js/log';
 
 // type Result = ValidateResult<TdFormProps['data']>;
 
@@ -370,15 +371,17 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
       }
       return emptyValue;
     },
-    resetField(): void {
+    resetField(resetType: 'empty' | 'initial' = 'initial') {
       const parent = this.form;
-      if (!this.name) {
+      if (!this.name && this.label) {
+        log.warn('Form', 'name is required for validating.');
         return;
       }
-      if (parent.resetType === 'empty') {
+      const tResetType = resetType || parent.resetType;
+      if (tResetType === 'empty') {
         lodashSet(parent.data, this.name, this.getEmptyValue());
       }
-      if (parent.resetType === 'initial') {
+      if (tResetType === 'initial') {
         lodashSet(parent.data, this.name, this.initialValue);
       }
       Vue.nextTick(() => {
