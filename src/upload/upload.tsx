@@ -666,6 +666,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
             max={this.max}
             onImgPreview={this.handlePreviewImg}
             disabled={this.tDisabled}
+            locale={this.locale}
           ></ImageCard>
         )}
         {this.showUploadList && (

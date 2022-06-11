@@ -1273,10 +1273,10 @@ exports[`Tree Tree controlledVue demo works fine 1`] = `
     class="tdesign-demo-block-column"
   >
     <div
-      class="t-addon t-addon--prepend"
+      class="t-input-adornment t-input-adornment--prepend"
     >
       <span
-        class="t-addon__prepend"
+        class="t-input-adornment__prepend"
       >
         checked:
       </span>
@@ -1298,10 +1298,10 @@ exports[`Tree Tree controlledVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-addon t-addon--prepend"
+      class="t-input-adornment t-input-adornment--prepend"
     >
       <span
-        class="t-addon__prepend"
+        class="t-input-adornment__prepend"
       >
         expanded:
       </span>
@@ -1323,10 +1323,10 @@ exports[`Tree Tree controlledVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-addon t-addon--prepend"
+      class="t-input-adornment t-input-adornment--prepend"
     >
       <span
-        class="t-addon__prepend"
+        class="t-input-adornment__prepend"
       >
         actived:
       </span>
@@ -3937,10 +3937,10 @@ exports[`Tree Tree filterVue demo works fine 1`] = `
   class="tdesign-demo-block-column-large"
 >
   <div
-    class="t-addon t-addon--prepend"
+    class="t-input-adornment t-input-adornment--prepend"
   >
     <span
-      class="t-addon__prepend"
+      class="t-input-adornment__prepend"
     >
       filter:
     </span>
@@ -7109,10 +7109,10 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
     class="operations"
   >
     <div
-      class="t-addon t-addon--prepend"
+      class="t-input-adornment t-input-adornment--prepend"
     >
       <span
-        class="t-addon__prepend"
+        class="t-input-adornment__prepend"
       >
         filter:
       </span>
@@ -7460,10 +7460,10 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
     class="operations"
   >
     <div
-      class="t-addon t-addon--prepend"
+      class="t-input-adornment t-input-adornment--prepend"
     >
       <span
-        class="t-addon__prepend"
+        class="t-input-adornment__prepend"
       >
         插入节点数量:
       </span>
@@ -8078,10 +8078,10 @@ exports[`Tree Tree syncVue demo works fine 1`] = `
     class="tdesign-demo-block-column"
   >
     <div
-      class="t-addon t-addon--prepend"
+      class="t-input-adornment t-input-adornment--prepend"
     >
       <span
-        class="t-addon__prepend"
+        class="t-input-adornment__prepend"
       >
         checked:
       </span>
@@ -8103,10 +8103,10 @@ exports[`Tree Tree syncVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-addon t-addon--prepend"
+      class="t-input-adornment t-input-adornment--prepend"
     >
       <span
-        class="t-addon__prepend"
+        class="t-input-adornment__prepend"
       >
         expanded:
       </span>
@@ -8128,10 +8128,10 @@ exports[`Tree Tree syncVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-addon t-addon--prepend"
+      class="t-input-adornment t-input-adornment--prepend"
     >
       <span
-        class="t-addon__prepend"
+        class="t-input-adornment__prepend"
       >
         actived:
       </span>
@@ -8561,10 +8561,10 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
     class="operations"
   >
     <div
-      class="t-addon t-addon--prepend"
+      class="t-input-adornment t-input-adornment--prepend"
     >
       <span
-        class="t-addon__prepend"
+        class="t-input-adornment__prepend"
       >
         插入节点数量:
       </span>

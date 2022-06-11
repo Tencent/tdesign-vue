@@ -8,8 +8,10 @@ import {
   inject,
   onBeforeUnmount,
   defineComponent,
+  reactive,
 } from '@vue/composition-api';
-import Vue from 'vue';
+import Vue, { PropType } from 'vue';
+
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import get from 'lodash/get';
 import { renderContent } from '../utils/render-tnode';
@@ -22,6 +24,8 @@ import props from './option-props';
 import { TdOptionProps } from './type';
 import Checkbox from '../checkbox/index';
 import { SelectInstance } from './instance';
+import useLazyLoad from '../hooks/useLazyLoad';
+import { TScroll } from '../common';
 
 const selectName = `${prefix}-select`;
 const keepAnimationMixins = getKeepAnimationMixins();
@@ -29,21 +33,47 @@ export interface OptionInstance extends Vue {
   tSelect: SelectInstance;
 }
 
+export interface OptionProps extends TdOptionProps {
+  panelElement: HTMLElement;
+  scroll: TScroll;
+  rowIndex: number;
+  trs?: Map<number, object>;
+  scrollType?: 'lazy' | 'virtual';
+  isVirtual: boolean;
+  bufferSize: number;
+}
+
 export default defineComponent({
   name: 'TOption',
-  props: { ...props },
+  props: {
+    ...props,
+    rowIndex: Number,
+    trs: Map as PropType<OptionProps['trs']>,
+    scrollType: String,
+    isVirtual: Boolean,
+    bufferSize: Number,
+  },
   components: {
     TCheckbox: Checkbox,
   },
   mixins: [keepAnimationMixins],
   directives: { Ripple },
-  setup(props: TdOptionProps, context: SetupContext) {
+  setup(props: OptionProps, context: SetupContext) {
+    const optionNode = ref(null);
     const isHover = ref(false);
     const formDisabled = ref(undefined);
-    const { value, label, disabled } = toRefs(props);
+
+    const {
+      value, label, disabled, panelElement, scrollType, bufferSize,
+    } = toRefs(props);
 
     const tSelect: any = inject('tSelect');
 
+    const { hasLazyLoadHolder = null, tRowHeight = null } = useLazyLoad(
+      panelElement,
+      optionNode,
+      reactive({ type: scrollType, bufferSize, rowIndex: props.rowIndex }),
+    );
     watch(value, () => {
       tSelect && tSelect.getOptions({ ...context, ...props });
     });
@@ -58,7 +88,7 @@ export default defineComponent({
     watch(hovering, (val) => {
       if (val) {
         const timer = setTimeout(() => {
-          scrollSelectedIntoView(tSelect.getOverlayElm(), context.refs.optionNode as HTMLElement);
+          scrollSelectedIntoView(tSelect.getOverlayElm(), optionNode.value as HTMLElement);
           clearTimeout(timer);
         }, tSelect.popupOpenTime.value); // 待popup弹出后再滚动到对应位置
       }
@@ -125,6 +155,29 @@ export default defineComponent({
     onBeforeUnmount(() => {
       tSelect && tSelect.hasSlotOptions.value && tSelect.destroyOptions(context);
     });
+
+    // 处理虚拟滚动节点挂载
+    onMounted(() => {
+      const {
+        trs, rowIndex, scrollType, isVirtual,
+      } = props;
+
+      if (scrollType === 'virtual') {
+        if (isVirtual) {
+          trs.set(rowIndex, optionNode.value);
+          context.emit('onRowMounted');
+        }
+      }
+    });
+
+    // 处理虚拟滚动节点移除
+    onBeforeUnmount(() => {
+      if (props.isVirtual) {
+        const { trs, rowIndex } = props;
+        trs.delete(rowIndex);
+      }
+    });
+
     return {
       selected,
       show,
@@ -133,6 +186,9 @@ export default defineComponent({
       classes,
       tSelect,
       labelText,
+      optionNode,
+      tRowHeight,
+      hasLazyLoadHolder,
     };
   },
 
@@ -142,6 +198,22 @@ export default defineComponent({
     } = this;
     const children: ScopedSlotReturnValue = renderContent(this, 'default', 'content');
     const optionChild = children || labelText;
+    if (this.hasLazyLoadHolder) {
+      return (
+        <li
+          ref="optionNode"
+          v-show={show}
+          class={classes}
+          onMouseenter={this.mouseEvent.bind(true)}
+          onMouseleave={this.mouseEvent.bind(false)}
+          onClick={this.select}
+          v-ripple={(this.keepAnimation as any).ripple}
+        >
+          {<span style={{ height: `${this.tRowHeight}px`, border: 'none' }}></span>}
+        </li>
+      );
+    }
+
     return (
       <li
         ref="optionNode"

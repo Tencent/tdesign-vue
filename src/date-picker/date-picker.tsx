@@ -7,7 +7,7 @@ import { TdDatePickerProps } from './type';
 import CLASSNAMES from '../utils/classnames';
 import { Button as TButton } from '../button';
 import { Input as TInput } from '../input';
-import TPopup from '../popup';
+import TPopup, { PopupProps } from '../popup';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { DatePickerConfig } from '../config-provider/config-receiver';
 import CalendarPresets from './calendar-presets';
@@ -19,7 +19,7 @@ import { firstUpperCase, extractTimeFormat } from '../_common/js/date-picker/uti
 import { TimePickerPanelInstance } from '../time-picker';
 import { DatePickerInstance, DateValue, PickContext } from './interface';
 import { renderTNodeJSX } from '../utils/render-tnode';
-import { ClassName } from '../common';
+import { ClassName, AttachNode } from '../common';
 
 dayjs.extend(isBetween);
 
@@ -61,6 +61,14 @@ export default mixins(
       formDisabled: undefined,
       startTimeValue: dayjs(),
       endTimeValue: dayjs(),
+      defaultProps: {
+        attach: 'body' as AttachNode,
+        trigger: 'click' as string,
+        placement: 'bottom-left' as string,
+        overlayClassName: '' as ClassName,
+        overlayStyle: {},
+        expandAnimation: true as boolean,
+      } as PopupProps,
     };
   },
   computed: {
@@ -176,6 +184,16 @@ export default mixins(
     },
     tDisabled(): boolean {
       return this.formDisabled || this.disabled;
+    },
+    popClass(): (string | ClassName)[] {
+      const {
+        popupObject: { overlayClassName },
+      } = this;
+      return [name, overlayClassName];
+    },
+    popupObject(): PopupProps {
+      const propsObject = this.popupProps ? { ...this.defaultProps, ...this.popupProps } : this.defaultProps;
+      return propsObject;
     },
   },
   mounted() {
@@ -580,7 +598,8 @@ export default mixins(
   },
   render() {
     const {
-      popupProps,
+      popupObject,
+      popClass,
       tDisabled,
       clearable,
       allowInput,
@@ -679,16 +698,12 @@ export default mixins(
         <t-popup
           ref="popup"
           class={`${name}__popup-reference`}
-          trigger="click"
-          placement="bottom-left"
           disabled={tDisabled}
           showArrow={false}
           visible={isOpen}
-          popupProps={popupProps}
-          overlayClassName={name}
           content={popupContent}
-          expandAnimation={true}
           on={{ 'visible-change': this.onPopupVisibleChange }}
+          {...{ props: { ...popupObject, overlayClassName: popClass } }}
         >
           <div class={inputClassNames} onClick={this.toggle}>
             <t-input

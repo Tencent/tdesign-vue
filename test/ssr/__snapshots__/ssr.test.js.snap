@@ -5334,7 +5334,8 @@ exports[`ssr snapshot test renders ./examples/dialog/demos/modal.vue correctly 1
 exports[`ssr snapshot test renders ./examples/dialog/demos/plugin.vue correctly 1`] = `<div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">dialog</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">handleDialogNode</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">confirm</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">alert</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">DialogPlugin.confirm</span></button></div>`;
 
 exports[`ssr snapshot test renders ./examples/dialog/demos/position.vue correctly 1`] = `
-<div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">默认位置</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">垂直居中</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">自定义top</span></button>
+<div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">默认位置</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">垂直居中</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">自定义top</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">文本溢出</span></button>
+  <div duration="300" name="t-dialog-zoom__vue"></div>
   <div duration="300" name="t-dialog-zoom__vue"></div>
   <div duration="300" name="t-dialog-zoom__vue"></div>
   <div duration="300" name="t-dialog-zoom__vue"></div>
@@ -7299,20 +7300,20 @@ exports[`ssr snapshot test renders ./examples/icon/demos/single.vue correctly 1`
 
 exports[`ssr snapshot test renders ./examples/input/demos/addon.vue correctly 1`] = `
 <div class="tdesign-demo-block-column" style="max-width:500px;">
-  <div class="t-addon t-addon--prepend"><span class="t-addon__prepend">http://</span>
+  <div class="t-input-adornment t-input-adornment--prepend"><span class="t-input-adornment__prepend">http://</span>
     <div class="t-input__wrap">
       <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入内容" type="text" unselectable="off" class="t-input__inner"></div>
     </div>
   </div>
-  <div class="t-addon t-addon--append">
+  <div class="t-input-adornment t-input-adornment--append">
     <div class="t-input__wrap">
       <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入内容" type="text" unselectable="off" class="t-input__inner"></div>
-    </div><span class="t-addon__append">.com</span>
+    </div><span class="t-input-adornment__append">.com</span>
   </div>
-  <div class="t-addon t-addon--prepend t-addon--append"><span class="t-addon__prepend">http://</span>
+  <div class="t-input-adornment t-input-adornment--prepend t-input-adornment--append"><span class="t-input-adornment__prepend">http://</span>
     <div class="t-input__wrap">
       <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入内容" type="text" unselectable="off" class="t-input__inner"></div>
-    </div><span class="t-addon__append">.com</span>
+    </div><span class="t-input-adornment__append">.com</span>
   </div>
 </div>
 `;
@@ -7509,6 +7510,61 @@ exports[`ssr snapshot test renders ./examples/input/demos/textarea.vue correctly
 <div class="tdesign-demo-block-column" style="max-width:500px;">
   <h5>文本域输入框已抽离为单独组件，更多示例请参考 Textarea 组件</h5>
   <div class="t-textarea"><textarea placeholder="请输入内容" unselectable="off" class="t-textarea__inner"></textarea></div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/input-adornment/demos/select.vue correctly 1`] = `
+<div class="tdesign-demo-block-column" style="max-width:500px;">
+  <div class="t-input-adornment t-input-adornment--prepend"><span class="t-input-adornment__prepend"><div class="t-select__wrap"><div class="t-input__wrap t-select-input--borderless t-select"><div class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"><div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="http://" class="t-input__inner"><span class="t-input__input-pre">http://</span><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span></div>
+</div>
+</div></span>
+<div class="t-input__wrap">
+  <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入内容" type="text" unselectable="off" class="t-input__inner"></div>
+</div>
+</div>
+<div class="t-input-adornment t-input-adornment--append">
+  <div class="t-input__wrap t-tag-input">
+    <div class="t-input t-size-m t-input--prefix">
+      <div class="t-input__prefix"></div><input autocomplete="" placeholder="请输入内容" type="text" unselectable="off" class="t-input__inner">
+    </div>
+  </div><span class="t-input-adornment__append"><div class="t-select__wrap"><div class="t-input__wrap t-select-input--borderless t-select"><div class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"><div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value=".cn" class="t-input__inner"><span class="t-input__input-pre">.cn</span><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+</div>
+</div>
+</div></span></div>
+<div class="t-input-adornment t-input-adornment--prepend t-input-adornment--append"><span class="t-input-adornment__prepend"><div class="t-select__wrap"><div class="t-input__wrap t-select-input--borderless t-select"><div class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"><div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="http://" class="t-input__inner"><span class="t-input__input-pre">http://</span><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span></div>
+</div>
+</div></span>
+<div class="t-select__wrap">
+  <div class="t-input__wrap t-select">
+    <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
+      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="tencent" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+    </div>
+  </div>
+</div><span class="t-input-adornment__append"><div class="t-select__wrap"><div class="t-input__wrap t-select-input--borderless t-select"><div class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"><div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value=".cn" class="t-input__inner"><span class="t-input__input-pre">.cn</span><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span></div>
+</div>
+</div></span></div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/input-adornment/demos/text.vue correctly 1`] = `
+<div class="tdesign-demo-block-column" style="max-width:500px;">
+  <div class="t-input-adornment t-input-adornment--prepend"><span class="t-input-adornment__prepend">http://</span>
+    <div class="t-input__wrap">
+      <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入内容" type="text" unselectable="off" class="t-input__inner"></div>
+    </div>
+  </div>
+  <div class="t-input-adornment t-input-adornment--append">
+    <div class="t-input__wrap t-tag-input">
+      <div class="t-input t-size-m t-input--prefix">
+        <div class="t-input__prefix"></div><input autocomplete="" placeholder="请输入内容" type="text" unselectable="off" class="t-input__inner">
+      </div>
+    </div><span class="t-input-adornment__append">.com</span>
+  </div>
+  <div class="t-input-adornment t-input-adornment--prepend t-input-adornment--append"><span class="t-input-adornment__prepend">http://</span>
+    <div class="t-input__wrap">
+      <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入内容" type="text" unselectable="off" class="t-input__inner"></div>
+    </div><span class="t-input-adornment__append">.com</span>
+  </div>
 </div>
 `;
 
@@ -11496,6 +11552,18 @@ exports[`ssr snapshot test renders ./examples/select/demos/status.vue correctly 
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/select/demos/virtual-scroll.vue correctly 1`] = `
+<div class="tdesign-demo-select-base">
+  <div class="t-select__wrap">
+    <div class="t-input__wrap t-select-input--empty t-select">
+      <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/select-input/demos/autocomplete.vue correctly 1`] = `
 <div>
   <div class="t-input__wrap t-select-input--empty" style="width:300px;">
@@ -14456,7 +14524,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort-handler.vue 
           <!---->
         </table>
       </div>
-      <div class="t-loading--center t-size-m t-loading"></div>
+      <div class="t-loading--center t-size-s t-loading"></div>
     </div>
   </div>
 </div>
@@ -15739,7 +15807,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+    <div class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
         <foreignObject x="1" y="1" width="12" height="12">
           <div class="t-loading__gradient-conic"></div>
         </foreignObject>
@@ -15795,7 +15863,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading">
+    <div class="t-loading--center t-size-s t-loading">
       <div class="t-loading__text">
         <div class="t-table--loading-message">😊 这里使用插槽自定义加载状态 😊</div>
       </div>
@@ -15851,7 +15919,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
         <!---->
       </table>
     </div>
-    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+    <div class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
         <foreignObject x="1" y="1" width="12" height="12">
           <div class="t-loading__gradient-conic"></div>
         </foreignObject>
@@ -16342,7 +16410,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
       <!---->
     </table>
   </div>
-  <div class="t-loading--center t-size-m t-loading"></div>
+  <div class="t-loading--center t-size-s t-loading"></div>
   <div class="t-table__pagination">
     <div class="t-pagination t-size-m">
       <div class="t-pagination__total">共 0 项数据</div>
@@ -18492,17 +18560,17 @@ exports[`ssr snapshot test renders ./examples/tree/demos/checkable.vue correctly
 exports[`ssr snapshot test renders ./examples/tree/demos/controlled.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
   <div class="tdesign-demo-block-column">
-    <div class="t-addon t-addon--prepend"><span class="t-addon__prepend">checked:</span>
+    <div class="t-input-adornment t-input-adornment--prepend"><span class="t-input-adornment__prepend">checked:</span>
       <div class="t-input__wrap">
         <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="1.1.1.1, 1.1.1.2" class="t-input__inner"></div>
       </div>
     </div>
-    <div class="t-addon t-addon--prepend"><span class="t-addon__prepend">expanded:</span>
+    <div class="t-input-adornment t-input-adornment--prepend"><span class="t-input-adornment__prepend">expanded:</span>
       <div class="t-input__wrap">
         <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="1, 1.1, 1.1.1, 2" class="t-input__inner"></div>
       </div>
     </div>
-    <div class="t-addon t-addon--prepend"><span class="t-addon__prepend">actived:</span>
+    <div class="t-input-adornment t-input-adornment--prepend"><span class="t-input-adornment__prepend">actived:</span>
       <div class="t-input__wrap">
         <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="2" class="t-input__inner"></div>
       </div>
@@ -18786,7 +18854,7 @@ exports[`ssr snapshot test renders ./examples/tree/demos/expand-mutex.vue correc
 
 exports[`ssr snapshot test renders ./examples/tree/demos/filter.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
-  <div class="t-addon t-addon--prepend"><span class="t-addon__prepend">filter:</span>
+  <div class="t-input-adornment t-input-adornment--prepend"><span class="t-input-adornment__prepend">filter:</span>
     <div class="t-input__wrap">
       <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="" class="t-input__inner"></div>
     </div>
@@ -19195,7 +19263,7 @@ exports[`ssr snapshot test renders ./examples/tree/demos/operations.vue correctl
     </form>
   </div>
   <div class="operations">
-    <div class="t-addon t-addon--prepend"><span class="t-addon__prepend">filter:</span>
+    <div class="t-input-adornment t-input-adornment--prepend"><span class="t-input-adornment__prepend">filter:</span>
       <div class="t-input__wrap">
         <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="" class="t-input__inner"></div>
       </div>
@@ -19216,7 +19284,7 @@ exports[`ssr snapshot test renders ./examples/tree/demos/operations.vue correctl
 exports[`ssr snapshot test renders ./examples/tree/demos/performance.vue correctly 1`] = `
 <div class="tdesign-tree-demo tdesign-demo-performance">
   <div class="operations">
-    <div class="t-addon t-addon--prepend"><span class="t-addon__prepend">插入节点数量:</span>
+    <div class="t-input-adornment t-input-adornment--prepend"><span class="t-input-adornment__prepend">插入节点数量:</span>
       <div class="t-input__wrap">
         <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="1" class="t-input__inner"></div>
       </div>
@@ -19284,17 +19352,17 @@ exports[`ssr snapshot test renders ./examples/tree/demos/state.vue correctly 1`]
 exports[`ssr snapshot test renders ./examples/tree/demos/sync.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
   <div class="tdesign-demo-block-column">
-    <div class="t-addon t-addon--prepend"><span class="t-addon__prepend">checked:</span>
+    <div class="t-input-adornment t-input-adornment--prepend"><span class="t-input-adornment__prepend">checked:</span>
       <div class="t-input__wrap">
         <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="{1.1.1.1}, {1.1.1.2}" class="t-input__inner"></div>
       </div>
     </div>
-    <div class="t-addon t-addon--prepend"><span class="t-addon__prepend">expanded:</span>
+    <div class="t-input-adornment t-input-adornment--prepend"><span class="t-input-adornment__prepend">expanded:</span>
       <div class="t-input__wrap">
         <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="{1}, {1.1}, {1.1.1}, {2}" class="t-input__inner"></div>
       </div>
     </div>
-    <div class="t-addon t-addon--prepend"><span class="t-addon__prepend">actived:</span>
+    <div class="t-input-adornment t-input-adornment--prepend"><span class="t-input-adornment__prepend">actived:</span>
       <div class="t-input__wrap">
         <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="{2}" class="t-input__inner"></div>
       </div>

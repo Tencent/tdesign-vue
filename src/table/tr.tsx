@@ -22,10 +22,11 @@ import { RowAndColFixedPosition } from './interface';
 import useClassName from './hooks/useClassName';
 import TEllipsis from './ellipsis';
 import {
-  BaseTableCellParams, TableRowData, RowspanColspan, TdPrimaryTableProps, PrimaryTableCellParams,
+  BaseTableCellParams, TableRowData, RowspanColspan, TdPrimaryTableProps,
 } from './type';
 import baseTableProps from './base-table-props';
-import useLazyLoad from './hooks/useLazyLoad';
+import { SkipSpansValue } from './hooks/useRowspanAndColspan';
+import useLazyLoad from '../hooks/useLazyLoad';
 
 export interface RenderTdExtra {
   rowAndColFixedPosition: RowAndColFixedPosition;
@@ -66,8 +67,7 @@ export interface TrProps extends TrCommonProps {
   rowIndex: number;
   dataLength: number;
   rowAndColFixedPosition?: RowAndColFixedPosition;
-  // 属性透传，引用传值，可内部改变
-  skipSpansMap?: Map<any, boolean>;
+  skipSpansMap?: Map<string, SkipSpansValue>;
   tableElm?: HTMLDivElement;
   scrollType?: string;
   isVirtual?: boolean;
@@ -75,7 +75,6 @@ export interface TrProps extends TrCommonProps {
   trs?: Map<number, object>;
   bufferSize?: number;
   tableContentElm?: HTMLDivElement;
-  onTrRowspanOrColspan?: (params: PrimaryTableCellParams<TableRowData>, cellSpans: RowspanColspan) => void;
 }
 
 export const ROW_LISTENERS = ['click', 'dblclick', 'mouseover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];
@@ -108,8 +107,6 @@ export default defineComponent({
     rowAndColFixedPosition: Map as PropType<RowAndColFixedPosition>,
     // 合并单元格，是否跳过渲染
     skipSpansMap: Map as PropType<TrProps['skipSpansMap']>,
-    // 扫描到 rowspan 或者 colspan 时触发
-    onTrRowspanOrColspan: Function as PropType<TrProps['onTrRowspanOrColspan']>,
     ...pick(baseTableProps, TABLE_PROPS),
     scrollType: String,
     rowHeight: Number,
@@ -159,7 +156,6 @@ export default defineComponent({
       trRef,
       reactive({ ...props.scroll, rowIndex: props.rowIndex }),
     );
-
     const getTrListeners = (row: TableRowData, rowIndex: number) => {
       const trListeners: { [eventName: string]: (e: MouseEvent) => void } = {};
       // add events to row
@@ -279,14 +275,10 @@ export default defineComponent({
         rowIndex,
         colIndex,
       };
-      if (isFunction(this.rowspanAndColspan)) {
-        const o = this.rowspanAndColspan(params);
-        o?.rowspan > 1 && (cellSpans.rowspan = o.rowspan);
-        o?.colspan > 1 && (cellSpans.colspan = o.colspan);
-        this.onTrRowspanOrColspan?.(params, cellSpans);
-      }
-      const skipped = this.skipSpansMap?.get([rowIndex, colIndex].join());
-      if (skipped) return null;
+      const spanState = this.skipSpansMap.get([rowIndex, colIndex].join()) || {};
+      spanState?.rowspan > 1 && (cellSpans.rowspan = spanState.rowspan);
+      spanState?.colspan > 1 && (cellSpans.colspan = spanState.colspan);
+      if (spanState.skipped) return null;
       return this.renderTd(h, params, {
         dataLength,
         rowAndColFixedPosition,

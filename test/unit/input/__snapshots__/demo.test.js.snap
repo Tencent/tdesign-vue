@@ -6,10 +6,10 @@ exports[`Input Input addonVue demo works fine 1`] = `
   style="max-width: 500px;"
 >
   <div
-    class="t-addon t-addon--prepend"
+    class="t-input-adornment t-input-adornment--prepend"
   >
     <span
-      class="t-addon__prepend"
+      class="t-input-adornment__prepend"
     >
       http://
     </span>
@@ -31,7 +31,7 @@ exports[`Input Input addonVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-addon t-addon--append"
+    class="t-input-adornment t-input-adornment--append"
   >
     <div
       class="t-input__wrap"
@@ -49,17 +49,17 @@ exports[`Input Input addonVue demo works fine 1`] = `
       </div>
     </div>
     <span
-      class="t-addon__append"
+      class="t-input-adornment__append"
     >
       .com
     </span>
   </div>
    
   <div
-    class="t-addon t-addon--prepend t-addon--append"
+    class="t-input-adornment t-input-adornment--prepend t-input-adornment--append"
   >
     <span
-      class="t-addon__prepend"
+      class="t-input-adornment__prepend"
     >
       http://
     </span>
@@ -79,7 +79,7 @@ exports[`Input Input addonVue demo works fine 1`] = `
       </div>
     </div>
     <span
-      class="t-addon__append"
+      class="t-input-adornment__append"
     >
       .com
     </span>

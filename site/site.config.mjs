@@ -240,6 +240,14 @@ const docs = [
         componentEn: () => import('@/examples/input/input.en-US.md'),
       },
       {
+        title: 'InputAdornment 输入装饰器',
+        titleEn: 'InputAdornment',
+        name: 'input-adornment',
+        path: '/vue/components/input-adornment',
+        component: () => import('@/examples/input-adornment/input-adornment.md'),
+        componentEn: () => import('@/examples/input-adornment/input-adornment.en-US.md'),
+      },
+      {
         title: 'InputNumber 数字输入框',
         titleEn: 'InputNumber',
         name: 'input-number',
