@@ -13,10 +13,12 @@
       :columns="columns"
       :foot-data="footData"
       :rowClassName="rowClassName"
+      :pagination="{ defaultCurrent: 1, defaultPageSize: 5, total: TOTAL }"
       :headerAffixedTop="headerAffixedTop"
       :footerAffixedBottom="footerAffixedBottom"
       :headerAffixProps="{ offsetTop: 87, zIndex: 1000 }"
       :footerAffixProps="{ offsetBottom: 0, zIndex: 1000 }"
+      :paginationAffixedBottom="false"
       tableLayout="auto"
       bordered
       resizable
@@ -48,10 +50,13 @@ function getData(count) {
   return data;
 }
 
+const TOTAL = 8;
+
 export default {
   data() {
     return {
-      data: getData(8),
+      data: getData(TOTAL),
+      TOTAL,
       // 如果在预渲染场景下，初次渲染的表格宽度和最终呈现宽度不一样，请异步设置表头吸顶
       headerAffixedTop: true,
       footerAffixedBottom: true,

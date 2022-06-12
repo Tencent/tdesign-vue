@@ -29,6 +29,7 @@ import { ROW_LISTENERS } from './tr';
 import THead from './thead';
 import TFoot from './tfoot';
 import log from '../_common/js/log';
+import useAffix from './hooks/useAffix';
 
 export const BASE_TABLE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY'];
 export const BASE_TABLE_ALL_EVENTS = ROW_LISTENERS.map((t) => `row-${t}`).concat(BASE_TABLE_EVENTS);
@@ -58,8 +59,6 @@ export default defineComponent({
     const { global } = useConfig('table');
     // 固定表头和固定列逻辑
     const {
-      affixHeaderRef,
-      affixFooterRef,
       scrollbarWidth,
       virtualScrollHeaderPos,
       tableWidth,
@@ -70,13 +69,20 @@ export default defineComponent({
       isFixedColumn,
       thWidthList,
       showColumnShadow,
-      showAffixHeader,
-      showAffixFooter,
       rowAndColFixedPosition,
       refreshTable,
-      updateHeaderScroll,
       setUseFixedTableElmRef,
     } = useFixed(props, context);
+
+    const {
+      affixHeaderRef,
+      affixFooterRef,
+      horizontalScrollbarRef,
+      showAffixHeader,
+      showAffixFooter,
+      updateHeaderScroll,
+    } = useAffix(props);
+
     const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
     const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
 
@@ -224,6 +230,7 @@ export default defineComponent({
       resizeLineRef,
       resizeLineStyle,
       columnResizeParams,
+      horizontalScrollbarRef,
       getListener,
       renderPagination,
       renderTNode,
@@ -413,6 +420,7 @@ export default defineComponent({
 
         {affixedFooter}
 
+        {/* 调整列宽时的指示线 */}
         {this.showRightDivider && (
           <div
             class={this.tableBaseClass.scrollbarDivider}
@@ -421,7 +429,27 @@ export default defineComponent({
         )}
 
         {bottom}
-        {pagination}
+
+        {/* 吸底的滚动条 */}
+        {props.horizontalScrollAffixedBottom && (
+          <Affix offsetBottom={0}>
+            <div
+              ref="horizontalScrollbarRef"
+              class="scrollbar"
+              style={{
+                width: `${this.tableWidth}px`,
+                overflow: 'auto',
+                opacity: Number(this.showAffixFooter),
+                marginBottom: '2px',
+              }}
+            >
+              <div style={{ width: `${this.tableElmWidth}px`, height: '14px' }}></div>
+            </div>
+          </Affix>
+        )}
+
+        {/* 吸底的分页器 */}
+        {this.paginationAffixedBottom ? <Affix offsetBottom={0}>{pagination}</Affix> : pagination}
       </div>
     );
   },

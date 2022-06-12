@@ -30,6 +30,7 @@
       :expanded-row="expandedRow"
       :expandIcon="expandIcon"
       :expandOnRowClick="expandOnRowClick"
+      :horizontalScrollAffixedBottom="true"
       table-layout="auto"
       tableContentWidth="1200"
       @expand-change="rehandleExpandChange"
@@ -84,7 +85,7 @@ const getColumns = (isFixedColumn) => [
   },
 ];
 
-const data = new Array(5).fill(null).map((item, index) => ({
+const data = new Array(50).fill(null).map((item, index) => ({
   id: index + 100,
   instance: `JQTest${index + 1}`,
   status: index % 2,
