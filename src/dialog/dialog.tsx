@@ -174,7 +174,8 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       if (this.mode !== 'modal') return;
       emitEvent<Parameters<TdDialogProps['onOverlayClick']>>(this, 'overlay-click', { e });
       // 根据closeOnClickOverlay判断点击蒙层时是否触发close事件
-      if (this.closeOnOverlayClick) {
+      // 根据当前点击元素和绑定元素判断是否是点击mask
+      if (e.target === e.currentTarget && this.closeOnOverlayClick) {
         this.emitCloseEvent({
           trigger: 'overlay',
           e,
@@ -325,15 +326,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       // 此处获取定位方式 top 优先级较高 存在时 默认使用top定位
       return (
         // /* 非模态形态下draggable为true才允许拖拽 */
-        <div class={this.wrapClass} onClick={this.overlayAction}>
-          <div class={this.positionClass} style={this.positionStyle}>
-            <div
-              key="dialog"
-              ref="dialog"
-              class={this.dialogClass}
-              style={this.dialogStyle}
-              onClick={(e: MouseEvent) => e.stopPropagation()}
-            >
+        <div class={this.wrapClass}>
+          <div class={this.positionClass} style={this.positionStyle} onClick={this.overlayAction}>
+            <div key="dialog" ref="dialog" class={this.dialogClass} style={this.dialogStyle}>
               <div class={`${name}__header`}>
                 {this.getIcon()}
                 {renderTNodeJSX(this, 'header', defaultHeader)}
@@ -360,11 +355,15 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     const dialogView = this.renderDialog();
     const view = [maskView, dialogView];
     const ctxStyle: any = { zIndex: this.zIndex };
+    // dialog__ctx--fixed 绝对定位
+    // dialog__ctx--absolute 挂载在attach元素上 相对定位
+    // __ctx--modeless modeless 点击穿透
     const ctxClass = [
       `${name}__ctx`,
       {
         [`${prefix}-dialog__ctx--fixed`]: this.mode === 'modal',
         [`${prefix}-dialog__ctx--absolute`]: this.isModal && this.showInAttachedElement,
+        [`${name}__ctx--modeless`]: this.isModeLess,
       },
     ];
     return (

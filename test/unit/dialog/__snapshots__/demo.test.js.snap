@@ -1790,7 +1790,7 @@ exports[`Dialog Dialog dragVue demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog__ctx"
+      class="t-dialog__ctx t-dialog__ctx--modeless"
       style="display: none;"
     >
       <div
@@ -1870,7 +1870,7 @@ exports[`Dialog Dialog dragVue demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog__ctx"
+      class="t-dialog__ctx t-dialog__ctx--modeless"
       style="display: none;"
     >
       <div
@@ -2457,7 +2457,7 @@ exports[`Dialog Dialog modalVue demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog__ctx"
+      class="t-dialog__ctx t-dialog__ctx--modeless"
       style="display: none;"
     >
       <div
@@ -2537,7 +2537,7 @@ exports[`Dialog Dialog modalVue demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog__ctx"
+      class="t-dialog__ctx t-dialog__ctx--modeless"
       style="display: none;"
     >
       <div
@@ -2617,7 +2617,7 @@ exports[`Dialog Dialog modalVue demo works fine 1`] = `
     name="t-dialog-zoom__vue"
   >
     <div
-      class="t-dialog__ctx"
+      class="t-dialog__ctx t-dialog__ctx--modeless"
       style="display: none;"
     >
       <div
