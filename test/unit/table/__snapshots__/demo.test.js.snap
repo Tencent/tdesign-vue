@@ -1517,7 +1517,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -1530,6 +1530,11 @@ exports[`Table Table baseVue demo works fine 1`] = `
                 type="text"
                 unselectable="on"
               />
+              <span
+                class="t-input__input-pre"
+              >
+                5
+              </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
               >
@@ -2269,7 +2274,7 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -2282,6 +2287,11 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
                 type="text"
                 unselectable="on"
               />
+              <span
+                class="t-input__input-pre"
+              >
+                5
+              </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
               >
@@ -2720,7 +2730,7 @@ exports[`Table Table customColVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -2733,6 +2743,11 @@ exports[`Table Table customColVue demo works fine 1`] = `
                 type="text"
                 unselectable="on"
               />
+              <span
+                class="t-input__input-pre"
+              >
+                5
+              </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
               >
@@ -4100,7 +4115,7 @@ exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
         </table>
       </div>
       <div
-        class="t-loading--center t-size-m t-loading"
+        class="t-loading--center t-size-s t-loading"
       />
     </div>
   </div>
@@ -15714,12 +15729,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
       </table>
     </div>
     <div
-      class="t-loading--center t-size-m t-loading"
+      class="t-loading--center t-size-s t-loading"
     >
       <svg
         class="t-loading__gradient t-icon-loading"
         height="1em"
-        size="medium"
+        size="small"
         version="1.1"
         viewBox="0 0 14 14"
         width="1em"
@@ -15870,7 +15885,7 @@ exports[`Table Table loadingVue demo works fine 1`] = `
       </table>
     </div>
     <div
-      class="t-loading--center t-size-m t-loading"
+      class="t-loading--center t-size-s t-loading"
     >
       <div
         class="t-loading__text"
@@ -16015,12 +16030,12 @@ exports[`Table Table loadingVue demo works fine 1`] = `
       </table>
     </div>
     <div
-      class="t-loading--center t-size-m t-loading"
+      class="t-loading--center t-size-s t-loading"
     >
       <svg
         class="t-loading__gradient t-icon-loading"
         height="1em"
-        size="medium"
+        size="small"
         version="1.1"
         viewBox="0 0 14 14"
         width="1em"
@@ -17237,7 +17252,7 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
     </table>
   </div>
   <div
-    class="t-loading--center t-size-m t-loading"
+    class="t-loading--center t-size-s t-loading"
   />
   <div
     class="t-table__pagination"
@@ -17257,7 +17272,7 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
           class="t-input__wrap t-select"
         >
           <div
-            class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+            class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
           >
             <div
               class="t-input__prefix"
@@ -17270,6 +17285,11 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
               type="text"
               unselectable="on"
             />
+            <span
+              class="t-input__input-pre"
+            >
+              10
+            </span>
             <span
               class="t-input__suffix t-input__suffix-icon"
             >
@@ -17683,7 +17703,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -17696,6 +17716,11 @@ exports[`Table Table paginationVue demo works fine 1`] = `
                 type="text"
                 unselectable="on"
               />
+              <span
+                class="t-input__input-pre"
+              >
+                5
+              </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
               >
@@ -20914,7 +20939,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -20927,6 +20952,11 @@ exports[`Table Table treeVue demo works fine 1`] = `
                 type="text"
                 unselectable="on"
               />
+              <span
+                class="t-input__input-pre"
+              >
+                10
+              </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
               >
