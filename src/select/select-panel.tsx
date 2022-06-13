@@ -243,7 +243,7 @@ export default defineComponent({
         optionsContent = (visibleData || options).map((groupList: SelectOptionGroup) => {
           const children = groupList.children.filter((item) => tSelect.displayOptionsMap.value.get(item));
           return (
-            <t-option-group v-show={children.length} label={groupList.group} divider={groupList.divider}>
+            <t-option-group label={groupList.group} divider={groupList.divider}>
               {this.renderSingleOption(children)}
             </t-option-group>
           );

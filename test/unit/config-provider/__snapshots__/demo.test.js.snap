@@ -3170,7 +3170,7 @@ exports[`ConfigProvider ConfigProvider paginationVue demo works fine 1`] = `
       class="t-input__wrap t-select"
     >
       <div
-        class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+        class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
       >
         <div
           class="t-input__prefix"
@@ -3183,6 +3183,11 @@ exports[`ConfigProvider ConfigProvider paginationVue demo works fine 1`] = `
           type="text"
           unselectable="on"
         />
+        <span
+          class="t-input__input-pre"
+        >
+          10
+        </span>
         <span
           class="t-input__suffix t-input__suffix-icon"
         >
