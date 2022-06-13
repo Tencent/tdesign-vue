@@ -5684,7 +5684,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/base.vue correctly 1`] 
 <div>
   <form class="t-form">
     <div class="t-form__item t-form-item__name">
-      <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">姓名</label></div>
+      <div class="t-form__label t-form__label--required t-form__label--colon t-form__label--right" style="width:100px;"><label for="">姓名</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
           <div class="t-input__wrap">
@@ -5732,7 +5732,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/base.vue correctly 1`] 
     <div class="t-form__item t-form-item__" style="margin-left:100px;">
       <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
       <div class="t-form__controls">
-        <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button></div>
+        <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-right:10px;"><span class="t-button__text">重置</span></button></div>
       </div>
     </div>
   </form>
@@ -6254,7 +6254,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/reset.vue correctly 1`]
     <div class="t-form__item t-form-item__" style="margin-left:100px;">
       <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
       <div class="t-form__controls">
-        <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">重置</span></button></div>
+        <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary" style="margin-right:10px;"><span class="t-button__text">提交</span></button> <button type="reset" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-right:10px;"><span class="t-button__text">重置</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">只重置手机号码</span></button></div>
       </div>
     </div>
   </form>
@@ -6268,7 +6268,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/size.vue correctly 1`] 
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div> <br><br>
-  <form class="t-form">
+  <form size="medium" class="t-form">
     <div class="t-form__item t-form-item__name">
       <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">姓名</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
