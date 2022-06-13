@@ -11421,8 +11421,8 @@ exports[`ssr snapshot test renders ./examples/select/demos/noborder.vue correctl
 <div>
   <div class="t-select__wrap" style="width:200px;">
     <div class="t-input__wrap t-select-input--borderless t-select">
-      <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="-请选择-" type="text" unselectable="on" value="已选择的选项" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      <div class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="-请选择-" type="text" unselectable="on" value="已选择的选项" class="t-input__inner"><span class="t-input__input-pre">已选择的选项</span><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
       </div>
     </div>
   </div>
