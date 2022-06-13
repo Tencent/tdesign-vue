@@ -1522,6 +1522,7 @@ exports[`Select Select prefixVue demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-browse"
+            style="margin-right: 8px;"
           >
             <use
               href="#t-icon-browse"
