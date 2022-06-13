@@ -81,6 +81,7 @@ export default defineComponent({
       showAffixHeader,
       showAffixFooter,
       updateHeaderScroll,
+      setTableContentRef,
     } = useAffix(props);
 
     const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
@@ -184,6 +185,7 @@ export default defineComponent({
 
     onMounted(() => {
       getTFootHeight();
+      setTableContentRef(tableContentRef.value);
     });
 
     return {

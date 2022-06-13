@@ -1,5 +1,5 @@
 import {
-  computed, onMounted, ref, watch, onBeforeMount,
+  computed, ref, watch, onBeforeMount,
 } from '@vue/composition-api';
 import { TdBaseTableProps } from '../type';
 import { on, off } from '../../utils/dom';
@@ -79,6 +79,7 @@ export default function useAffix(props: TdBaseTableProps) {
 
   const setTableContentRef = (tableContent: HTMLDivElement) => {
     tableContentRef.value = tableContent;
+    addScrollListener();
   };
 
   const onDocumentScroll = () => {
@@ -144,15 +145,18 @@ export default function useAffix(props: TdBaseTableProps) {
   };
 
   const addScrollListener = () => {
-    if (isAffixed.value) {
-      on(document, 'scroll', onDocumentScroll);
-      on(tableContentRef.value, 'mouseenter', onTableContentMouseEnter);
-      on(tableContentRef.value, 'mouseleave', onTableContentMouseLeave);
-    } else {
-      off(document, 'scroll', onDocumentScroll);
-      off(tableContentRef.value, 'mouseenter', onTableContentMouseEnter);
-      off(tableContentRef.value, 'mouseleave', onTableContentMouseLeave);
-    }
+    const timer = setTimeout(() => {
+      if (isAffixed.value) {
+        on(document, 'scroll', onDocumentScroll);
+        on(tableContentRef.value, 'mouseenter', onTableContentMouseEnter);
+        on(tableContentRef.value, 'mouseleave', onTableContentMouseLeave);
+      } else {
+        off(document, 'scroll', onDocumentScroll);
+        off(tableContentRef.value, 'mouseenter', onTableContentMouseEnter);
+        off(tableContentRef.value, 'mouseleave', onTableContentMouseLeave);
+      }
+      clearTimeout(timer);
+    });
   };
 
   watch(
@@ -164,10 +168,6 @@ export default function useAffix(props: TdBaseTableProps) {
     ],
     addScrollListener,
   );
-
-  onMounted(() => {
-    addScrollListener();
-  });
 
   onBeforeMount(() => {
     off(document, 'scroll', onDocumentScroll);
