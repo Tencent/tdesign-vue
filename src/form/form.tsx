@@ -91,6 +91,18 @@ export default Vue.extend({
       return fields.indexOf(name) !== -1;
     },
 
+    formatValidateResult<T>(arr: Awaited<FormItemValidateResult<T>>[]) {
+      const r = arr.reduce((r, err) => Object.assign(r || {}, err));
+      Object.keys(r).forEach((key) => {
+        if (r[key] === true) {
+          delete r[key];
+        } else {
+          r[key] = r[key].filter((fr: AllValidateResult) => fr.result === false);
+        }
+      });
+      return isEmpty(r) ? true : r;
+    },
+
     // 对外方法，showErrorMessage = true 时，该方法会触发表单组件错误信息显示
     async validate<T = Record<string, any>>(
       param: FormValidateParams = { showErrorMessage: true },
@@ -101,19 +113,24 @@ export default Vue.extend({
         .filter((child) => this.isFunction(child.validate) && this.needValidate(String(child.name), fields))
         .map((child) => child.validate<T>(trigger, param.showErrorMessage, source));
       const arr = await Promise.all(list);
-      const r = arr.reduce((r, err) => Object.assign(r || {}, err));
-      Object.keys(r).forEach((key) => {
-        if (r[key] === true) {
-          delete r[key];
-        } else {
-          r[key] = r[key].filter((fr: AllValidateResult) => fr.result === false);
-        }
-      });
-      const result = isEmpty(r) ? true : r;
+      const result = this.formatValidateResult(arr);
       emitEvent<Parameters<TdFormProps['onValidate']>>(this, 'validate', {
         validateResult: result,
         firstError: this.getFirstError<T>(result),
       });
+      return result;
+    },
+
+    // 对外方法，仅返回校验结果，不改动任何变量
+    async validateOnly<T = Record<string, any>>(
+      param: Pick<FormValidateParams, 'fields' | 'trigger'>,
+    ): Promise<FormValidateResult<T>> {
+      const { fields, trigger = 'all' } = param || {};
+      const list = this.children
+        .filter((child) => this.isFunction(child.validate) && this.needValidate(String(child.name), fields))
+        .map((child) => child.validateOnly<T>(trigger));
+      const arr = await Promise.all(list);
+      const result = this.formatValidateResult(arr);
       return result;
     },
 

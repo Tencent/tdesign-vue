@@ -25,7 +25,8 @@
         <!-- type = reset，表单中的重置按钮，原生行为 -->
         <t-button theme="default" variant="base" type="reset" style="margin-right: 10px">重置</t-button>
         <t-button theme="default" style="margin-right: 10px" @click="submitForm">实例方法提交</t-button>
-        <t-button theme="default" variant="base" @click="resetForm">实例方法重置</t-button>
+        <t-button theme="default" variant="base" style="margin-right: 10px" @click="resetForm">实例方法重置</t-button>
+        <t-button theme="default" variant="base" @click="validateOnly">校验</t-button>
       </t-form-item>
     </t-form>
   </div>
@@ -92,6 +93,13 @@ export default {
       //       this.$message.warning(firstError);
       //     }
       //   });
+    },
+
+    validateOnly() {
+      this.$refs.form.validateOnly().then((result) => {
+        this.$message.success('打开控制台查看校验结果');
+        console.log(result);
+      });
     },
   },
 };

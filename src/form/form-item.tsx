@@ -242,11 +242,41 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
     ): Promise<FormItemValidateResult<T>> {
       this.freeShowErrorMessage = source === 'submit-function' ? showErrorMessage : undefined;
       this.resetValidating = true;
+      const {
+        errorList, resultList, successList, rules,
+      } = await this.analysisValidateResult(trigger);
+      this.errorList = errorList;
+      // 仅有自定义校验方法才会存在 successList
+      this.successList = successList;
+      // 根据校验结果设置校验状态
+      if (rules.length) {
+        this.verifyStatus = errorList.length ? VALIDATE_STATUS.FAIL : VALIDATE_STATUS.SUCCESS;
+      } else {
+        this.verifyStatus = VALIDATE_STATUS.TO_BE_VALIDATED;
+      }
+      // 重置处理
+      if (this.needResetField) {
+        this.resetHandler();
+      }
+      this.resetValidating = false;
+      return {
+        [this.name]: errorList.length === 0 ? true : resultList,
+      } as FormItemValidateResult<T>;
+    },
+
+    async validateOnly<T>(trigger: ValidateTriggerType) {
+      const { errorList, resultList } = await this.analysisValidateResult(trigger);
+      return {
+        [this.name]: errorList.length === 0 ? true : resultList,
+      } as FormItemValidateResult<T>;
+    },
+
+    async analysisValidateResult(trigger: ValidateTriggerType) {
       // 过滤不需要校验的规则
       const rules = trigger === 'all' ? this.innerRules : this.innerRules.filter((item) => (item.trigger || 'change') === trigger);
       // 校验结果，包含正确的校验信息
-      const r = await validate(this.value, rules);
-      const errorList = r
+      const resultList = await validate(this.value, rules);
+      const errorList = resultList
         .filter((item) => item.result !== true)
         .map((item) => {
           Object.keys(item).forEach((key) => {
@@ -261,23 +291,14 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
           });
           return item;
         });
-      this.errorList = errorList;
       // 仅有自定义校验方法才会存在 successList
-      this.successList = r.filter((item) => item.result === true && item.message && item.type === 'success');
-      // 根据校验结果设置校验状态
-      if (rules.length) {
-        this.verifyStatus = errorList.length ? VALIDATE_STATUS.FAIL : VALIDATE_STATUS.SUCCESS;
-      } else {
-        this.verifyStatus = VALIDATE_STATUS.TO_BE_VALIDATED;
-      }
-      // 重置处理
-      if (this.needResetField) {
-        this.resetHandler();
-      }
-      this.resetValidating = false;
+      const successList = resultList.filter((item) => item.result === true && item.message && item.type === 'success');
       return {
-        [this.name]: errorList.length === 0 ? true : r,
-      } as FormItemValidateResult<T>;
+        resultList,
+        errorList,
+        successList,
+        rules,
+      };
     },
 
     getLabelContent(): TNodeReturnValue {
