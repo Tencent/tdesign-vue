@@ -482,29 +482,6 @@ exports[`Form Form baseVue demo works fine 1`] = `
               重置
             </span>
           </button>
-           
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default"
-            style="margin-right: 10px;"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              实例方法提交
-            </span>
-          </button>
-           
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              实例方法重置
-            </span>
-          </button>
         </div>
       </div>
     </div>

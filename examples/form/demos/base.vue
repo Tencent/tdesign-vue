@@ -24,9 +24,11 @@
         <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
         <!-- type = reset，表单中的重置按钮，原生行为 -->
         <t-button theme="default" variant="base" type="reset" style="margin-right: 10px">重置</t-button>
-        <t-button theme="default" style="margin-right: 10px" @click="submitForm">实例方法提交</t-button>
+
+        <!-- 下方示例代码，有效，勿删 -->
+        <!-- <t-button theme="default" style="margin-right: 10px" @click="submitForm">实例方法提交</t-button>
         <t-button theme="default" variant="base" style="margin-right: 10px" @click="resetForm">实例方法重置</t-button>
-        <t-button theme="default" variant="base" @click="validateOnly">校验</t-button>
+        <t-button theme="default" variant="base" @click="validateOnly">校验</t-button> -->
       </t-form-item>
     </t-form>
   </div>
