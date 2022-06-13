@@ -315,6 +315,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
             disabled={this.disabled}
             class={this.sizerClass}
             onChange={this.onSelectorChange}
+            autoWidth={true}
           >
             {this.sizeOptions.map((item, index) => (
               <t-option value={item.value} label={item.label} key={index} />
@@ -382,6 +383,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
             class={this.simpleClass}
             onChange={this.toPage}
             options={this.pageCountOption}
+            autoWidth={true}
           />
         ) : null}
         {/* 向后按钮 */}
