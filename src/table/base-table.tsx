@@ -70,8 +70,11 @@ export default defineComponent({
       thWidthList,
       showColumnShadow,
       rowAndColFixedPosition,
+      setData,
       refreshTable,
+      emitScrollEvent,
       setUseFixedTableElmRef,
+      updateColumnFixedShadow,
     } = useFixed(props, context);
 
     const {
@@ -80,7 +83,7 @@ export default defineComponent({
       horizontalScrollbarRef,
       showAffixHeader,
       showAffixFooter,
-      updateHeaderScroll,
+      onHorizontalScroll,
       setTableContentRef,
     } = useAffix(props);
 
@@ -122,9 +125,13 @@ export default defineComponent({
       setUseFixedTableElmRef(tableElmRef.value);
     });
 
+    watch([dataSource], (dataSource) => {
+      setData(dataSource);
+    });
+
     const onFixedChange = () => {
       nextTick(() => {
-        updateHeaderScroll();
+        onHorizontalScroll();
       });
     };
 
@@ -164,17 +171,19 @@ export default defineComponent({
     provide('tableContentRef', tableContentRef);
     provide('rowHeightRef', ref(rowHeight));
 
-    let lastScrollY = -1;
+    let lastScrollY = 0;
     const onInnerVirtualScroll = (e: WheelEvent) => {
       const target = (e.target || e.srcElement) as HTMLElement;
       const top = target.scrollTop;
       // 排除横向滚动出发的纵向虚拟滚动计算
-      if (Math.abs(lastScrollY - top) > 5) {
-        handleVirtualScroll();
-        lastScrollY = top;
+      if (lastScrollY !== top) {
+        isVirtual.value && handleVirtualScroll();
       } else {
-        lastScrollY = -1;
+        lastScrollY = 0;
+        updateColumnFixedShadow(target);
       }
+      lastScrollY = top;
+      emitScrollEvent(e);
     };
 
     // used for top margin
@@ -238,7 +247,7 @@ export default defineComponent({
       renderTNode,
       handleRowMounted,
       onFixedChange,
-      updateHeaderScroll,
+      onHorizontalScroll,
       refreshTable,
       onInnerVirtualScroll,
     };
@@ -349,14 +358,13 @@ export default defineComponent({
       ...pick(this.$props, extendTableProps),
     };
     // Vue3 do not need getListener
-    const on = this.getListener();
-    const scrollListener = this.isVirtual ? { scroll: this.onInnerVirtualScroll } : {};
+    const tBodyListener = this.getListener();
     const tableContent = (
       <div
         ref="tableContentRef"
         class={this.tableBaseClass.content}
         style={this.tableContentStyles}
-        on={scrollListener}
+        on={{ scroll: this.onInnerVirtualScroll }}
       >
         <div ref="resizeLineRef" class={this.tableBaseClass.resizeLine} style={this.resizeLineStyle}></div>
         {this.isVirtual && <div class={this.virtualScrollClasses.cursor} style={virtualStyle} />}
@@ -373,7 +381,7 @@ export default defineComponent({
             resizable={columnResizable}
             columnResizeParams={this.columnResizeParams}
           />
-          <TBody scopedSlots={this.$scopedSlots} props={tableBodyProps} on={on} />
+          <TBody scopedSlots={this.$scopedSlots} props={tableBodyProps} on={tBodyListener} />
           <TFoot
             rowKey={this.rowKey}
             scopedSlots={this.$scopedSlots}
@@ -433,19 +441,18 @@ export default defineComponent({
         {bottom}
 
         {/* 吸底的滚动条 */}
-        {props.horizontalScrollAffixedBottom && (
-          <Affix offsetBottom={0}>
+        {this.horizontalScrollAffixedBottom && (
+          <Affix offsetBottom={0} style={{ marginTop: `-${marginScrollbarWidth * 2}px` }}>
             <div
               ref="horizontalScrollbarRef"
-              class="scrollbar"
+              class={['scrollbar', this.tableBaseClass.obviousScrollbar]}
               style={{
                 width: `${this.tableWidth}px`,
                 overflow: 'auto',
                 opacity: Number(this.showAffixFooter),
-                marginBottom: '2px',
               }}
             >
-              <div style={{ width: `${this.tableElmWidth}px`, height: '14px' }}></div>
+              <div style={{ width: `${this.tableElmWidth}px`, height: '6px' }}></div>
             </div>
           </Affix>
         )}

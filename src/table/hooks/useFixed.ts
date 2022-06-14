@@ -4,7 +4,7 @@ import {
 import get from 'lodash/get';
 import log from '../../_common/js/log';
 import { ClassName, Styles } from '../../common';
-import { BaseTableCol, TdBaseTableProps } from '../type';
+import { BaseTableCol, TableRowData, TdBaseTableProps } from '../type';
 import getScrollbarWidth from '../../_common/js/utils/getScrollbarWidth';
 import { on, off } from '../../utils/dom';
 import {
@@ -68,7 +68,6 @@ export function getRowFixedStyles(
 
 export default function useFixed(props: TdBaseTableProps, context: SetupContext) {
   const {
-    data,
     columns,
     tableLayout,
     tableContentWidth,
@@ -80,6 +79,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     footerAffixedBottom,
     bordered,
   } = toRefs(props);
+  const data = ref<TableRowData[]>([]);
   const tableContentRef = ref<HTMLDivElement>();
   const isFixedHeader = ref(false);
   const isWidthOverflow = ref(false);
@@ -336,15 +336,6 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     }, 0);
   };
 
-  const updateFixedColumnHandler = () => {
-    const timer = setTimeout(() => {
-      if (isFixedColumn.value) {
-        updateColumnFixedShadow(tableContentRef.value);
-      }
-      clearTimeout(timer);
-    }, 0);
-  };
-
   const updateTableWidth = () => {
     const rect = tableContentRef.value?.getBoundingClientRect();
     // 存在纵向滚动条，且固定表头时，需去除滚动条宽度
@@ -407,7 +398,18 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     { immediate: true },
   );
 
-  watch([isFixedColumn, columns], updateFixedColumnHandler, { immediate: true });
+  watch(
+    [isFixedColumn, columns],
+    () => {
+      const timer = setTimeout(() => {
+        if (isFixedColumn.value) {
+          updateColumnFixedShadow(tableContentRef.value);
+        }
+        clearTimeout(timer);
+      }, 0);
+    },
+    { immediate: true },
+  );
 
   watch([maxHeight, data, columns, bordered], updateFixedHeader, { immediate: true });
 
@@ -442,10 +444,6 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
 
   const onResize = refreshTable;
 
-  watch(tableContentRef, () => {
-    // addTableContentListener();
-  });
-
   onMounted(() => {
     const scrollWidth = getScrollbarWidth();
     scrollbarWidth.value = scrollWidth;
@@ -456,7 +454,6 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     if (isFixedColumn.value || isFixedHeader.value || !notNeedThWidthList.value) {
       on(window, 'resize', onResize);
     }
-    // addTableContentListener();
   });
 
   onBeforeMount(() => {
@@ -464,6 +461,10 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
       off(window, 'resize', onResize);
     }
   });
+
+  const setData = (dataSource: TableRowData[]) => {
+    data.value = dataSource;
+  };
 
   return {
     tableWidth,
@@ -477,6 +478,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     rowAndColFixedPosition,
     virtualScrollHeaderPos,
     scrollbarWidth,
+    setData,
     refreshTable,
     emitScrollEvent,
     updateThWidthListHandler,

@@ -28,52 +28,57 @@ export default function useAffix(props: TdBaseTableProps) {
       props.headerAffixedTop
         || props.footerAffixedBottom
         || props.horizontalScrollAffixedBottom
-        || props.paginationAffixedBottom
-        || (props.scroll.type === 'virtual' && props.scroll.threshold < props.data.length)
+        || (props.scroll && props.scroll.type === 'virtual' && props.scroll.threshold < props.data.length)
     ),
   );
 
-  let lastScrollLeft = -1;
-  const updateHeaderScroll = (target?: HTMLElement) => {
-    if (!target) {
-      lastScrollLeft = -1;
+  let lastScrollLeft = 0;
+  const onHorizontalScroll = (scrollElement?: HTMLElement) => {
+    if (!isAffixed.value) return;
+    let target = scrollElement;
+    if (!target && tableContentRef.value) {
+      lastScrollLeft = 0;
+      target = tableContentRef.value;
     }
-    const newTarget = target || tableContentRef.value;
-    if (!newTarget) return;
-    // 固定列左右滚动时，更新吸顶表头滚动
-    const left = newTarget.scrollLeft;
+    if (!target) return;
+    const left = target.scrollLeft;
+    // 如果 lastScrollLeft 等于 left，说明不是横向滚动，不需要更新横向滚动距离
     if (lastScrollLeft === left) return;
     lastScrollLeft = left;
-    if (affixHeaderRef.value) {
-      affixHeaderRef.value.scrollLeft = left;
-    }
-    if (affixFooterRef.value) {
-      affixFooterRef.value.scrollLeft = left;
-    }
-    if (horizontalScrollbarRef.value) {
-      horizontalScrollbarRef.value.scrollLeft = left;
+    // 表格内容、吸顶表头、吸底表尾、吸底横向滚动更新
+    const toUpdateScrollElement = [
+      tableContentRef.value,
+      affixHeaderRef.value,
+      affixFooterRef.value,
+      horizontalScrollbarRef.value,
+    ];
+    for (let i = 0, len = toUpdateScrollElement.length; i < len; i++) {
+      if (toUpdateScrollElement[i] && scrollElement !== toUpdateScrollElement[i]) {
+        toUpdateScrollElement[i].scrollLeft = left;
+      }
     }
   };
 
   // 吸底的元素（footer、横向滚动条、分页器）是否显示
-  const isAffixedBottomElementShow = (elementRect: DOMRect, headerRect: DOMRect, tableRect: DOMRect) => tableRect.top + (headerRect?.height || 0) < elementRect.top && elementRect.top > elementRect.height;
+  const isAffixedBottomElementShow = (elementRect: DOMRect, tableRect: DOMRect, headerHeight: number) => tableRect.top + headerHeight < elementRect.top && elementRect.top > elementRect.height;
 
   const updateAffixHeaderOrFooter = () => {
+    if (!isAffixed.value) return;
     const pos = tableContentRef.value?.getBoundingClientRect();
-    const headerRect = affixHeaderRef.value?.getBoundingClientRect();
+    const headerHeight = tableContentRef.value?.querySelector('thead').offsetHeight || 0;
     if ((props.headerAffixedTop || props.scroll?.type === 'virtual') && affixHeaderRef.value) {
       const offsetTop = props.headerAffixProps?.offsetTop || 0;
       const footerHeight = affixFooterRef?.value?.offsetHeight || 0;
-      const r = Math.abs(pos.top) < pos.height - headerRect.height - offsetTop - footerHeight;
+      const r = Math.abs(pos.top) < pos.height - headerHeight - offsetTop - footerHeight;
       showAffixHeader.value = r;
     }
     // 底部内容吸底 和 底部滚动条吸底，不可能同时存在，二选一即可
     if (props.footerAffixedBottom && affixFooterRef?.value) {
       const footerRect = affixFooterRef.value.getBoundingClientRect();
-      showAffixFooter.value = isAffixedBottomElementShow(footerRect, headerRect, pos);
-    } else if (horizontalScrollbarRef?.value) {
+      showAffixFooter.value = isAffixedBottomElementShow(footerRect, pos, headerHeight);
+    } else if (props.horizontalScrollAffixedBottom && horizontalScrollbarRef?.value) {
       const horizontalScrollbarRect = horizontalScrollbarRef.value.getBoundingClientRect();
-      showAffixFooter.value = isAffixedBottomElementShow(horizontalScrollbarRect, headerRect, pos);
+      showAffixFooter.value = isAffixedBottomElementShow(horizontalScrollbarRect, pos, headerHeight);
     }
   };
 
@@ -86,18 +91,16 @@ export default function useAffix(props: TdBaseTableProps) {
     updateAffixHeaderOrFooter();
   };
 
-  const onTableContentScroll = (params?: { e: WheelEvent; trigger: 'tfoot' | 'tbody' }) => {
-    const target = tableContentRef.value;
-    if (params?.trigger === 'tfoot') {
-      updateHeaderScroll(affixFooterRef.value);
-    } else {
-      // 表头和表尾滚动位置更新
-      updateHeaderScroll(target);
-    }
+  const onFootScroll = () => {
+    onHorizontalScroll(affixFooterRef.value);
   };
 
-  const onFootScroll = (e: WheelEvent) => {
-    onTableContentScroll({ e, trigger: 'tfoot' });
+  const horizontalScrollbarScroll = () => {
+    onHorizontalScroll(horizontalScrollbarRef.value);
+  };
+
+  const onTableContentScroll = () => {
+    onHorizontalScroll(tableContentRef.value);
   };
 
   const onFootMouseEnter = () => {
@@ -109,11 +112,19 @@ export default function useAffix(props: TdBaseTableProps) {
   };
 
   const onScrollbarMouseEnter = () => {
-    on(horizontalScrollbarRef.value, 'scroll', onFootScroll);
+    on(horizontalScrollbarRef.value, 'scroll', horizontalScrollbarScroll);
   };
 
-  const onFootScrollbarMouseLeave = () => {
-    off(horizontalScrollbarRef.value, 'scroll', onFootScroll);
+  const onScrollbarMouseLeave = () => {
+    off(horizontalScrollbarRef.value, 'scroll', horizontalScrollbarScroll);
+  };
+
+  const onTableContentMouseEnter = () => {
+    on(tableContentRef.value, 'scroll', onTableContentScroll);
+  };
+
+  const onTableContentMouseLeave = () => {
+    off(tableContentRef.value, 'scroll', onTableContentScroll);
   };
 
   watch(affixFooterRef, () => {
@@ -129,49 +140,43 @@ export default function useAffix(props: TdBaseTableProps) {
   watch(horizontalScrollbarRef, () => {
     if (props.horizontalScrollAffixedBottom && horizontalScrollbarRef.value) {
       on(horizontalScrollbarRef.value, 'mouseenter', onScrollbarMouseEnter);
-      on(horizontalScrollbarRef.value, 'mouseleave', onFootScrollbarMouseLeave);
+      on(horizontalScrollbarRef.value, 'mouseleave', onScrollbarMouseLeave);
     } else {
       off(horizontalScrollbarRef.value, 'mouseenter', onScrollbarMouseEnter);
-      off(horizontalScrollbarRef.value, 'mouseleave', onFootScrollbarMouseLeave);
+      off(horizontalScrollbarRef.value, 'mouseleave', onScrollbarMouseLeave);
     }
   });
 
-  const onTableContentMouseEnter = () => {
-    on(tableContentRef.value, 'scroll', onTableContentScroll);
-  };
-
-  const onTableContentMouseLeave = () => {
-    off(tableContentRef.value, 'scroll', onTableContentScroll);
-  };
+  watch(tableContentRef, () => {
+    if (isAffixed.value) {
+      on(tableContentRef.value, 'mouseenter', onTableContentMouseEnter);
+      on(tableContentRef.value, 'mouseleave', onTableContentMouseLeave);
+    } else {
+      off(tableContentRef.value, 'mouseenter', onTableContentMouseEnter);
+      off(tableContentRef.value, 'mouseleave', onTableContentMouseLeave);
+    }
+  });
 
   const addScrollListener = () => {
+    if (!isAffixed.value && !props.paginationAffixedBottom) return;
     const timer = setTimeout(() => {
-      if (isAffixed.value) {
+      if (isAffixed.value || props.paginationAffixedBottom) {
         on(document, 'scroll', onDocumentScroll);
-        on(tableContentRef.value, 'mouseenter', onTableContentMouseEnter);
-        on(tableContentRef.value, 'mouseleave', onTableContentMouseLeave);
       } else {
         off(document, 'scroll', onDocumentScroll);
-        off(tableContentRef.value, 'mouseenter', onTableContentMouseEnter);
-        off(tableContentRef.value, 'mouseleave', onTableContentMouseLeave);
       }
       clearTimeout(timer);
     });
   };
 
-  watch(
-    () => [
-      props.headerAffixedTop,
-      props.footerAffixedBottom,
-      props.horizontalScrollAffixedBottom,
-      props.paginationAffixedBottom,
-    ],
-    addScrollListener,
-  );
+  watch(isAffixed, addScrollListener);
+
+  watch([affixFooterRef, tableContentRef, horizontalScrollbarRef], () => {
+    updateAffixHeaderOrFooter();
+  });
 
   onBeforeMount(() => {
     off(document, 'scroll', onDocumentScroll);
-    // if (props.headerAffixedTop || props.footerAffixedBottom) {
     if (affixFooterRef.value) {
       off(affixFooterRef.value, 'mouseenter', onFootMouseEnter);
       off(affixFooterRef.value, 'mouseleave', onFootMouseLeave);
@@ -179,6 +184,10 @@ export default function useAffix(props: TdBaseTableProps) {
     if (tableContentRef.value) {
       off(tableContentRef.value, 'mouseenter', onTableContentMouseEnter);
       off(tableContentRef.value, 'mouseleave', onTableContentMouseLeave);
+    }
+    if (horizontalScrollbarRef.value) {
+      off(horizontalScrollbarRef.value, 'mouseenter', onScrollbarMouseEnter);
+      off(horizontalScrollbarRef.value, 'mouseleave', onScrollbarMouseLeave);
     }
   });
 
@@ -188,7 +197,7 @@ export default function useAffix(props: TdBaseTableProps) {
     affixHeaderRef,
     affixFooterRef,
     horizontalScrollbarRef,
-    updateHeaderScroll,
+    onHorizontalScroll,
     setTableContentRef,
   };
 }
