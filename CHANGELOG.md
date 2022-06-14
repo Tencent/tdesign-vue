@@ -5,6 +5,29 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.42.1 `2022-06-14` 
+### 🚀 Features
+- `Form`: @chaishi ([#983](https://github.com/Tencent/tdesign-vue/pull/983))
+  - 实例方法 `reset` 支持重置指定字段，新增参数 `{ type: 'initial' | 'empty', fields: number[] }`
+  - 实例方法 `validate` 支持值校验而不显示每个组件的错误信息文本，新增参数 `{ showErrorMessage }`
+  - FormItem 支持自定义 `help` 内容，插槽和渲染函数均可
+  - 新增纯净的校验方法 `validateOnly`，专门用作校验，不带任何副作用，[issue#981](https://github.com/Tencent/tdesign-vue/issues/981)
+  - 修复`TagInput` 组件按下 Enter 时触发 `submit` 事件，不再触发，[issue#963](https://github.com/Tencent/tdesign-vue/issues/963)
+- `Dialog`: 优化动画初始位置 @huoyuhao ([#1000](https://github.com/Tencent/tdesign-vue/pull/1000))
+### 🐞 Bug Fixes
+- `Table`:
+  - 修复table透传loading size为枚举无效的问题 @uyarn ([#979](https://github.com/Tencent/tdesign-vue/pull/979))
+  - 优化吸顶和吸底的位置，支持带有 `offsetBottom` 和 `offsetTop` 特性的位置定位，[issue#987](https://github.com/Tencent/tdesign-vue/issues/987) @chaishi ([#985](https://github.com/Tencent/tdesign-vue/pull/985))
+- `Select`: @skytt @uyarn ([#991](https://github.com/Tencent/tdesign-vue/pull/991))
+  - 修复t-option异步加载问题
+  - 修复分组为空未展示分组名称的问题
+  - 优化虚拟滚动示例、修复pagination分页数量宽度问题
+- `Dialog`: @huoyuhao ([#994](https://github.com/Tencent/tdesign-vue/pull/994))
+  - 修复普通对话框不脱离文档流的问题
+  - 修复点击对话框后对话框会隐藏问题，[issue#993](https://github.com/Tencent/tdesign-vue/issues/993)
+  - 修复 `modeless` 模式下背景样式点击透传的问题
+  - 修复 attach 挂载 showInAttachedElement 定位问题
+
 ## 🌈 0.42.0 `2022-06-10` 
 ### ❗️ BREAKING CHANGES
 - `Dialog`: 移除 transform 定位实现方案，如有覆盖 Dialog 组件样式的情况请注意 DOM 结构有变动 @huoyuhao ([#970](https://github.com/Tencent/tdesign-vue/pull/970))
