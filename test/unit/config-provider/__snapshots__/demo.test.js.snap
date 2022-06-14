@@ -1051,10 +1051,10 @@ exports[`ConfigProvider ConfigProvider dialogVue demo works fine 1`] = `
       class="t-dialog__ctx"
     >
       <div
-        class="t-dialog__wrap"
+        class=""
       >
         <div
-          class="t-dialog__position t-dialog--top"
+          class=""
         >
           <div
             class="t-dialog t-dialog--default t-dialog__modal-default"
@@ -1128,10 +1128,10 @@ exports[`ConfigProvider ConfigProvider dialogVue demo works fine 1`] = `
       class="t-dialog__ctx"
     >
       <div
-        class="t-dialog__wrap"
+        class=""
       >
         <div
-          class="t-dialog__position t-dialog--top"
+          class=""
         >
           <div
             class="t-dialog t-dialog--default t-dialog__modal-info"
@@ -1218,10 +1218,10 @@ exports[`ConfigProvider ConfigProvider dialogVue demo works fine 1`] = `
       class="t-dialog__ctx"
     >
       <div
-        class="t-dialog__wrap"
+        class=""
       >
         <div
-          class="t-dialog__position t-dialog--top"
+          class=""
         >
           <div
             class="t-dialog t-dialog--default t-dialog__modal-warning"
@@ -1308,10 +1308,10 @@ exports[`ConfigProvider ConfigProvider dialogVue demo works fine 1`] = `
       class="t-dialog__ctx"
     >
       <div
-        class="t-dialog__wrap"
+        class=""
       >
         <div
-          class="t-dialog__position t-dialog--top"
+          class=""
         >
           <div
             class="t-dialog t-dialog--default t-dialog__modal-danger"
@@ -1398,10 +1398,10 @@ exports[`ConfigProvider ConfigProvider dialogVue demo works fine 1`] = `
       class="t-dialog__ctx"
     >
       <div
-        class="t-dialog__wrap"
+        class=""
       >
         <div
-          class="t-dialog__position t-dialog--top"
+          class=""
         >
           <div
             class="t-dialog t-dialog--default t-dialog__modal-success"
