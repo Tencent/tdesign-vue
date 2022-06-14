@@ -26,6 +26,21 @@ function getCSSValue(v: string | number) {
   return isNaN(Number(v)) ? v : `${Number(v)}px`;
 }
 
+let mousePosition: { x: number; y: number } | null;
+const getClickPosition = (e: MouseEvent) => {
+  mousePosition = {
+    x: e.clientX,
+    y: e.clientY,
+  };
+  setTimeout(() => {
+    mousePosition = null;
+  }, 100);
+};
+
+if (typeof window !== 'undefined' && window.document && window.document.documentElement) {
+  document.documentElement.addEventListener('click', getClickPosition, true);
+}
+
 export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('dialog')).extend({
   name: 'TDialog',
 
@@ -114,6 +129,14 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
             document.body.style.cssText = bodyCssText;
           }
           addClass(document.body, lockClass);
+          this.$nextTick(() => {
+            const target = this.$refs.dialog as HTMLElement;
+            if (mousePosition && target) {
+              target.style.transformOrigin = `${mousePosition.x - target.offsetLeft}px ${
+                mousePosition.y - target.offsetTop
+              }px`;
+            }
+          });
         }
       } else {
         document.body.style.cssText = '';
