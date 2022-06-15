@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, ref, toRefs, watch, onMounted, inject,
+  computed, defineComponent, ref, toRefs, inject,
 } from '@vue/composition-api';
 import Vue from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
@@ -25,7 +25,6 @@ export default defineComponent({
   setup(props: TdOptionGroupProps) {
     const { divider } = toRefs(props);
     const ulRef = ref<HTMLElement>(null);
-    const visible = ref(true);
     const tSelect: any = inject('tSelect');
     const classes = computed<ClassName>(() => [
       name,
@@ -34,18 +33,7 @@ export default defineComponent({
         [`${name}__divider`]: divider,
       },
     ]);
-    const childrenChange = () => {
-      visible.value = [...(ulRef.value?.children || [])]?.some((liItem) => (liItem as any).__vue__.show === true);
-    };
-    onMounted(() => {
-      // 首次载入的时候也更新一次
-      childrenChange();
-    });
-    watch(tSelect.displayOptions, () => {
-      childrenChange();
-    });
     return {
-      visible,
       classes,
       ulRef,
     };
@@ -54,9 +42,11 @@ export default defineComponent({
     const renderTNode = useTNodeJSX();
     const children: ScopedSlotReturnValue = renderTNode('default');
     return (
-      <li v-show={this.visible} class={this.classes}>
+      <li class={this.classes}>
         <div class={`${name}__header`}>{this.label}</div>
-        <ul ref="ulRef">{children}</ul>
+        <ul class={`${prefix}-select__list`} ref="ulRef">
+          {children}
+        </ul>
       </li>
     );
   },

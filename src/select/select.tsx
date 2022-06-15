@@ -579,7 +579,8 @@ export default defineComponent({
     const initOptions = () => {
       if (realOptions.value.length || isInit.value) return;
 
-      const children = renderTNode('default');
+      // 这里直接使用 context.slots 没办法拿到后续渲染赋进来的 default slots，采用如下方法动态获取
+      const children = getCurrentInstance().vnode.componentInstance.$scopedSlots.default?.({});
       if (children) {
         realOptions.value = parseOptions(children);
         isInit.value = true;
