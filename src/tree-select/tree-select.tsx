@@ -274,7 +274,6 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     blur(ctx: InputBlurEventParams[1]) {
       this.focusing = false;
       this.filterText = '';
-      this.filterByText = null;
       emitEvent<Parameters<TdTreeSelectProps['onBlur']>>(this, 'blur', { value: this.value, ...ctx });
     },
     remove(options: RemoveOptions<TreeOptionData>) {
