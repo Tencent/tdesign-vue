@@ -7252,6 +7252,20 @@ exports[`ssr snapshot test renders ./examples/icon/demos/enhanced.vue correctly 
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/icon/demos/icon-select.vue correctly 1`] = `
+<div class="t-select__wrap" style="width:400px;">
+  <div class="t-input__wrap t-select">
+    <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
+      <div class="t-input__prefix">
+        <div><svg class="t-icon t-icon-edit-1" style="margin-right:8px;">
+            <use href="#t-icon-edit-1"></use>
+          </svg>edit-1</div>
+      </div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/icon/demos/iconfont.vue correctly 1`] = `
 <div class="t-demo-iconfont">
   <div class="t-demo-row"><i class="t-icon t-icon-loading"></i> <i class="t-icon t-icon-close"></i> <i class="t-icon t-icon-check-circle-filled"></i></div> <br>
