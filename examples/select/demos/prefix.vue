@@ -1,16 +1,7 @@
 <template>
   <div>
-    <t-select
-      v-model="value"
-      style="width: 200px;"
-      :options="options"
-      clearable
-      placeholder="-请选择-"
-    >
-      <icon
-        name="browse"
-        slot="prefixIcon"
-      />
+    <t-select v-model="value" style="width: 200px" :options="options" clearable placeholder="-请选择-">
+      <icon name="browse" slot="prefixIcon" style="margin-right: 8px" />
     </t-select>
   </div>
 </template>

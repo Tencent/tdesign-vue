@@ -444,13 +444,17 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
 
   const updateAffixHeaderOrFooter = () => {
     const pos = tableContentRef.value.getBoundingClientRect();
-    if (props.headerAffixedTop || props.scroll?.type === 'virtual') {
-      const r = affixHeaderRef.value?.offsetHeight - pos.top < pos.height;
+    if ((props.headerAffixedTop || props.scroll?.type === 'virtual') && affixHeaderRef.value) {
+      const headerRect = affixHeaderRef.value.getBoundingClientRect();
+      const offsetTop = props.headerAffixProps?.offsetTop || 0;
+      const footerHeight = affixFooterRef?.value?.offsetHeight || 0;
+      const r = Math.abs(pos.top) < pos.height - headerRect.height - offsetTop - footerHeight;
       showAffixHeader.value = r;
     }
-    if (props.footerAffixedBottom) {
-      showAffixFooter.value = pos.top + (affixFooterRef?.value?.clientHeight || 48) <= window.innerHeight
-        && -1 * pos.top < (tableContentRef?.value?.parentNode as HTMLDivElement)?.clientHeight;
+    if (props.footerAffixedBottom && affixFooterRef?.value) {
+      const footerRect = affixFooterRef.value.getBoundingClientRect();
+      const headerHeight = affixHeaderRef?.value?.offsetHeight || 0;
+      showAffixFooter.value = pos.top + headerHeight < footerRect.top && footerRect.top > footerRect.height;
     }
   };
 
