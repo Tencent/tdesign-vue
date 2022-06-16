@@ -4,6 +4,8 @@
     <div>
       <t-checkbox v-model="headerAffixedTop">表头吸顶</t-checkbox>
       <t-checkbox v-model="footerAffixedBottom" style="margin-left: 32px">表尾吸底</t-checkbox>
+      <t-checkbox v-model="horizontalScrollAffixedBottom" style="margin-left: 32px">滚动条吸底</t-checkbox>
+      <t-checkbox v-model="paginationAffixedBottom" style="margin-left: 32px">分页器吸底</t-checkbox>
       <t-checkbox v-model="fixedLeftColumn" style="margin-left: 32px">固定左侧列</t-checkbox>
       <t-checkbox v-model="fixedRightColumn" style="margin-left: 32px">固定右侧列</t-checkbox>
     </div>
@@ -11,14 +13,17 @@
       rowKey="index"
       :data="data"
       :columns="columns"
-      :foot-data="footData"
+      :footData="footData"
       :rowClassName="rowClassName"
       :pagination="{ defaultCurrent: 1, defaultPageSize: 5, total: TOTAL }"
-      :headerAffixedTop="headerAffixedTop"
-      :footerAffixedBottom="footerAffixedBottom"
-      :headerAffixProps="{ offsetTop: 87, zIndex: 1000 }"
-      :footerAffixProps="{ offsetBottom: 0, zIndex: 1000 }"
-      :paginationAffixedBottom="false"
+      :headerAffixedTop="{ offsetTop: 87, zIndex: 1000 }"
+      :footerAffixedBottom="
+        footerAffixedBottom ? { offsetBottom: paginationAffixedBottom ? 60 : 0, zIndex: 1000 } : false
+      "
+      :horizontalScrollAffixedBottom="
+        horizontalScrollAffixedBottom ? { offsetBottom: paginationAffixedBottom ? 60 : 0, zIndex: 1000 } : false
+      "
+      :paginationAffixedBottom="paginationAffixedBottom"
       tableLayout="auto"
       bordered
       resizable
@@ -62,6 +67,8 @@ export default {
       footerAffixedBottom: true,
       fixedLeftColumn: true,
       fixedRightColumn: true,
+      horizontalScrollAffixedBottom: false,
+      paginationAffixedBottom: false,
       // 表尾有一行数据
       footData: [{ type: '全部类型', description: '-' }],
     };
@@ -131,6 +138,17 @@ export default {
           fixed: this.fixedRightColumn ? 'right' : undefined,
         },
       ];
+    },
+  },
+
+  watch: {
+    // 底部滚动条 和 Footer 无需同时出现，二选一即可
+    horizontalScrollAffixedBottom(val) {
+      val && (this.footerAffixedBottom = false);
+    },
+    // 底部滚动条 和 Footer 无需同时出现，二选一即可
+    footerAffixedBottom(val) {
+      val && (this.horizontalScrollAffixedBottom = false);
     },
   },
 

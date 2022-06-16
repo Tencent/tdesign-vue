@@ -30,6 +30,7 @@ import THead from './thead';
 import TFoot from './tfoot';
 import log from '../_common/js/log';
 import useAffix from './hooks/useAffix';
+import { getAffixProps } from './utils';
 
 export const BASE_TABLE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY'];
 export const BASE_TABLE_ALL_EVENTS = ROW_LISTENERS.map((t) => `row-${t}`).concat(BASE_TABLE_EVENTS);
@@ -50,6 +51,7 @@ export default defineComponent({
     const renderTNode = useTNodeJSX();
     const tableRef = ref<HTMLDivElement>();
     const tableElmRef = ref<HTMLTableElement>();
+    const tableBodyRef = ref<HTMLTableElement>();
     const tableFootHeight = ref(0);
     const {
       virtualScrollClasses, tableLayoutClasses, tableBaseClass, tableColFixedClasses,
@@ -57,6 +59,7 @@ export default defineComponent({
     // 表格基础样式类
     const { tableClasses, tableContentStyles, tableElementStyles } = useStyle(props);
     const { global } = useConfig('table');
+
     // 固定表头和固定列逻辑
     const {
       scrollbarWidth,
@@ -77,12 +80,15 @@ export default defineComponent({
       updateColumnFixedShadow,
     } = useFixed(props, context);
 
+    // 1. 表头吸顶；2. 表尾吸底；3. 底部滚动条吸底；4. 分页器吸底
     const {
       affixHeaderRef,
       affixFooterRef,
       horizontalScrollbarRef,
+      paginationRef,
       showAffixHeader,
       showAffixFooter,
+      showAffixPagination,
       onHorizontalScroll,
       setTableContentRef,
     } = useAffix(props);
@@ -233,6 +239,7 @@ export default defineComponent({
       translateY,
       affixHeaderRef,
       affixFooterRef,
+      paginationRef,
       showAffixHeader,
       showAffixFooter,
       scrollbarWidth,
@@ -242,6 +249,8 @@ export default defineComponent({
       resizeLineStyle,
       columnResizeParams,
       horizontalScrollbarRef,
+      tableBodyRef,
+      showAffixPagination,
       getListener,
       renderPagination,
       renderTNode,
@@ -301,7 +310,7 @@ export default defineComponent({
     const affixedFooter = Boolean(this.footerAffixedBottom && this.footData?.length && this.tableWidth) && (
       <Affix
         class={this.tableBaseClass.affixedFooterWrap}
-        props={this.footerAffixProps}
+        props={getAffixProps(this.footerAffixedBottom, this.footerAffixProps)}
         onFixedChange={this.onFixedChange}
         offsetBottom={marginScrollbarWidth || 0}
         style={{ marginTop: `${-1 * (this.tableFootHeight + marginScrollbarWidth)}px` }}
@@ -381,7 +390,7 @@ export default defineComponent({
             resizable={columnResizable}
             columnResizeParams={this.columnResizeParams}
           />
-          <TBody scopedSlots={this.$scopedSlots} props={tableBodyProps} on={tBodyListener} />
+          <TBody ref="tableBodyRef" scopedSlots={this.$scopedSlots} props={tableBodyProps} on={tBodyListener} />
           <TFoot
             rowKey={this.rowKey}
             scopedSlots={this.$scopedSlots}
@@ -409,7 +418,11 @@ export default defineComponent({
 
     const topContent = this.renderTNode('topContent');
     const bottomContent = this.renderTNode('bottomContent');
-    const pagination = this.renderPagination(h);
+    const pagination = (
+      <div ref="paginationRef" style={{ opacity: Number(this.showAffixPagination) }}>
+        {this.renderPagination(h)}
+      </div>
+    );
     const bottom = !!bottomContent && <div class={this.tableBaseClass.bottomContent}>{bottomContent}</div>;
     return (
       <div ref="tableRef" class={this.dynamicBaseTableClasses} style="position: relative">
@@ -417,7 +430,11 @@ export default defineComponent({
 
         {!!(this.isVirtual || this.headerAffixedTop)
           && (this.headerAffixedTop ? (
-            <Affix offsetTop={0} props={this.headerAffixProps} onFixedChange={this.onFixedChange}>
+            <Affix
+              offsetTop={0}
+              props={getAffixProps(this.headerAffixedTop, this.headerAffixProps)}
+              onFixedChange={this.onFixedChange}
+            >
               {affixedHeader}
             </Affix>
           ) : (
@@ -442,7 +459,11 @@ export default defineComponent({
 
         {/* 吸底的滚动条 */}
         {this.horizontalScrollAffixedBottom && (
-          <Affix offsetBottom={0} style={{ marginTop: `-${marginScrollbarWidth * 2}px` }}>
+          <Affix
+            offsetBottom={0}
+            props={getAffixProps(this.horizontalScrollAffixedBottom)}
+            style={{ marginTop: `-${this.scrollbarWidth * 2}px` }}
+          >
             <div
               ref="horizontalScrollbarRef"
               class={['scrollbar', this.tableBaseClass.obviousScrollbar]}
@@ -452,7 +473,7 @@ export default defineComponent({
                 opacity: Number(this.showAffixFooter),
               }}
             >
-              <div style={{ width: `${this.tableElmWidth}px`, height: '6px' }}></div>
+              <div style={{ width: `${this.tableElmWidth}px`, height: '5px' }}></div>
             </div>
           </Affix>
         )}
