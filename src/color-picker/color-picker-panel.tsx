@@ -1,7 +1,7 @@
 import { defineComponent } from '@vue/composition-api';
 import props from './props';
 import ColorPanel from './panel';
-import { usePrefixClass } from '../config-provider';
+import { usePrefixClass } from '../config-provider/useConfig';
 
 export default defineComponent({
   name: 'TColorPickerPanel',

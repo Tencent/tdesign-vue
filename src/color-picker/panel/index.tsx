@@ -1,7 +1,7 @@
 import {
   defineComponent, ref, toRefs, watch,
 } from '@vue/composition-api';
-import { useConfig } from '../../config-provider';
+import { useConfig } from '../../hooks/useConfig';
 import useCommonClassName from '../../hooks/useCommonClassName';
 import props from '../props';
 import {
