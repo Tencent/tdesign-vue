@@ -79,6 +79,7 @@ export default {
   /** 范围输入框的值，非受控属性 */
   defaultValue: {
     type: Array as PropType<TdRangeInputProps['defaultValue']>,
+    default: (): TdRangeInputProps['defaultValue'] => [],
   },
   /** 范围输入框失去焦点时触发 */
   onBlur: Function as PropType<TdRangeInputProps['onBlur']>,

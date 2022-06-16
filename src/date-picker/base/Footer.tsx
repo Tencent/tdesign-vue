@@ -20,7 +20,10 @@ export default defineComponent({
     const footerClass = computed(() => [COMPONENT_NAME.value, `${COMPONENT_NAME.value}--${props.presetsPlacement}`]);
 
     return {
-      footerClass, presetsClass, global, t,
+      footerClass,
+      presetsClass,
+      global,
+      t,
     };
   },
   render() {
@@ -47,10 +50,14 @@ export default defineComponent({
         }
         {this.enableTimePicker && (
           <TButton
-            disabled={!this.selectedValue}
-            size="small"
-            theme="primary"
-            onClick={(e: MouseEvent) => this.onConfirmClick?.({ e })}
+            {...{
+              props: {
+                size: 'small',
+                theme: 'primary',
+                disabled: !this.selectedValue,
+                onClick: (e: MouseEvent) => this.onConfirmClick?.({ e }),
+              },
+            }}
           >
             {t(global.confirm)}
           </TButton>

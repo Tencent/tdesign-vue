@@ -148,32 +148,40 @@ export default defineComponent({
           {showMonthPicker && (
             <TSelect
               class={`${COMPONENT_NAME}-controller--month`}
-              value={this.month}
-              options={monthOptions}
-              onChange={(val: number) => this.onMonthChange?.(val)}
-              popupProps={{ attach: (triggerNode: HTMLDivElement) => triggerNode.parentElement }}
+              {...{
+                props: {
+                  value: this.month,
+                  options: monthOptions,
+                  onChange: (val: number) => this.onMonthChange?.(val),
+                  popupProps: { attach: (triggerNode: HTMLDivElement) => triggerNode.parentElement },
+                },
+              }}
             />
           )}
           <TSelect
             class={`${COMPONENT_NAME}-controller--year`}
-            value={this.mode === 'year' ? nearestYear : this.year}
-            options={yearOptions}
-            onChange={(val: number) => this.onYearChange?.(val)}
-            popupProps={{ attach: (triggerNode: HTMLDivElement) => triggerNode.parentElement }}
-            panelTopContent={() => (
-              <div class={`${classPrefix}-select-option`} onClick={handlePanelTopClick}>
-                ...
-              </div>
-            )}
-            panelBottomContent={() => (
-              <div class={`${classPrefix}-select-option`} onClick={handlePanelBottomClick}>
-                ...
-              </div>
-            )}
+            {...{
+              props: {
+                value: this.mode === 'year' ? nearestYear : this.year,
+                options: yearOptions,
+                onChange: (val: number) => this.onYearChange?.(val),
+                popupProps: { attach: (triggerNode: HTMLDivElement) => triggerNode.parentElement },
+                panelTopContent: () => (
+                  <div class={`${classPrefix}-select-option`} onClick={handlePanelTopClick}>
+                    ...
+                  </div>
+                ),
+                panelBottomContent: () => (
+                  <div class={`${classPrefix}-select-option`} onClick={handlePanelBottomClick}>
+                    ...
+                  </div>
+                ),
+              },
+            }}
           />
         </div>
 
-        <TJumper {...{ props: labelMap[this.mode] }} size="small" onJumperClick={this.onJumperClick} />
+        <TJumper {...{ props: { ...labelMap[this.mode], onJumperClick: this.onJumperClick, size: 'small' } }} />
       </div>
     );
   },

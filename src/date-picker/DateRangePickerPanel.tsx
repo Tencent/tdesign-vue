@@ -24,8 +24,8 @@ export default defineComponent({
     } = useRangeValue(props);
 
     const { formatDate, isValidDate, format } = useFormat({
+      value: value.value,
       mode: props.mode,
-      value: props.value,
       enableTimePicker: props.enableTimePicker,
       format: props.format,
       valueType: props.valueType,
@@ -298,6 +298,6 @@ export default defineComponent({
   },
   render() {
     const { panelProps } = this;
-    return <TRangePanel {...panelProps} />;
+    return <TRangePanel {...{ props: panelProps }} />;
   },
 });

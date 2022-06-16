@@ -20,12 +20,16 @@ export default defineComponent({
     const { showPanelFooter } = this;
     return showPanelFooter ? (
       <TDateFooter
-        presets={this.presets}
-        onPresetClick={this.onPresetClick}
-        enableTimePicker={this.enableTimePicker}
-        onConfirmClick={this.onConfirmClick}
-        presetsPlacement={this.presetsPlacement}
-        selectedValue={this.selectedValue}
+        {...{
+          props: {
+            presets: this.presets,
+            onPresetClick: this.onPresetClick,
+            enableTimePicker: this.enableTimePicker,
+            onConfirmClick: this.onConfirmClick,
+            presetsPlacement: this.presetsPlacement,
+            selectedValue: this.selectedValue,
+          },
+        }}
       />
     ) : null;
   },

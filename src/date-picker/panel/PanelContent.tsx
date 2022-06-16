@@ -52,23 +52,30 @@ export default defineComponent({
       <div class={`${COMPONENT_NAME}--content`}>
         <div class={`${COMPONENT_NAME}--${this.mode}`}>
           <TDateHeader
-            mode={this.mode}
-            year={this.year}
-            month={this.month}
-            onMonthChange={(val: number) => this.onMonthChange?.(val, { partial: this.partial })}
-            onYearChange={(val: number) => this.onYearChange?.(val, { partial: this.partial })}
-            onJumperClick={(val: number) => this.onJumperClick?.(val, { partial: this.partial })}
+            {...{
+              props: {
+                mode: this.mode,
+                year: this.year,
+                month: this.month,
+                onMonthChange: (val: number) => this.onMonthChange?.(val, { partial: this.partial }),
+                onYearChange: (val: number) => this.onYearChange?.(val, { partial: this.partial }),
+                onJumperClick: (val: number) => this.onJumperClick?.(val, { partial: this.partial }),
+              },
+            }}
           />
 
           <TDateTable
-            mode={this.mode}
-            data={this.tableData}
-            time={this.time}
-            firstDayOfWeek={this.firstDayOfWeek}
-            onCellClick={(date: Date, { e }: { e: MouseEvent }) => this.onCellClick?.(date, { e, partial: this.partial })
-            }
-            onCellMouseEnter={(date: Date) => this.onCellMouseEnter?.(date, { partial: this.partial })}
-            onCellMouseLeave={this.onCellMouseLeave}
+            {...{
+              props: {
+                mode: this.mode,
+                data: this.tableData,
+                time: this.time,
+                firstDayOfWeek: this.firstDayOfWeek,
+                onCellClick: (date: Date, { e }: { e: MouseEvent }) => this.onCellClick?.(date, { e, partial: this.partial }),
+                onCellMouseEnter: (date: Date) => this.onCellMouseEnter?.(date, { partial: this.partial }),
+                onCellMouseLeave: this.onCellMouseLeave,
+              },
+            }}
           />
         </div>
 

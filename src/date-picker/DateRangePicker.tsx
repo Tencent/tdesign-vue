@@ -324,7 +324,7 @@ export default defineComponent({
           popupProps={dateRangePickerPopupProps}
           rangeInputProps={{ suffixIcon: () => <CalendarIcon />, ...dateRangePickerRangeInputProps }}
           popupVisible={popupVisible}
-          panel={() => <TRangePanel {...panelProps} />}
+          panel={() => <TRangePanel {...{ props: panelProps }} />}
         />
       </div>
     );

@@ -181,6 +181,6 @@ export default defineComponent({
   },
   render() {
     const { panelProps } = this;
-    return <TSinglePanel {...panelProps} />;
+    return <TSinglePanel {...{ props: panelProps }} />;
   },
 });

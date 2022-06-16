@@ -38,6 +38,7 @@ export default defineComponent({
   },
   render() {
     const { COMPONENT_NAME, weekArr } = this;
+
     return (
       <div class={COMPONENT_NAME} onMouseleave={(e: MouseEvent) => this.onCellMouseLeave?.({ e })}>
         <table>
@@ -55,11 +56,15 @@ export default defineComponent({
               <tr key={i}>
                 {row.map((col: any, j: number) => (
                   <TDatePickerCell
-                    {...{ props: col }}
                     key={j}
-                    time={this.time}
-                    onClick={this.onCellClick}
-                    onMouseEnter={this.onCellMouseEnter}
+                    {...{
+                      props: {
+                        time: this.time,
+                        onClick: this.onCellClick,
+                        onMouseEnter: this.onCellMouseEnter,
+                        ...col,
+                      },
+                    }}
                   />
                 ))}
               </tr>

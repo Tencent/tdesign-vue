@@ -1,6 +1,6 @@
 <template>
   <div class="tdesign-demo-block-column">
-    <!-- <div class="date-picker-panel-border">
+    <div class="date-picker-panel-border">
       <t-date-picker-panel :on-change="handleChange" />
     </div>
     <div class="date-picker-panel-border">
@@ -12,7 +12,7 @@
     </div>
     <div class="date-picker-panel-border">
       <t-date-range-picker-panel enable-time-picker :on-change="handleChange" />
-    </div> -->
+    </div>
   </div>
 </template>
 

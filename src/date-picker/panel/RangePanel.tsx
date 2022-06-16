@@ -99,7 +99,10 @@ export default defineComponent({
     }));
 
     return {
-      COMPONENT_NAME, startTableData, endTableData, panelContentProps,
+      COMPONENT_NAME,
+      startTableData,
+      endTableData,
+      panelContentProps,
     };
   },
   render() {
@@ -118,12 +121,16 @@ export default defineComponent({
       >
         {['top', 'left'].includes(this.presetsPlacement) ? (
           <TExtraContent
-            presets={this.presets}
-            selectedValue={this.value[this.activeIndex]}
-            enableTimePicker={this.enableTimePicker}
-            onPresetClick={this.onPresetClick}
-            onConfirmClick={this.onConfirmClick}
-            presetsPlacement={this.presetsPlacement}
+            {...{
+              props: {
+                presets: this.presets,
+                selectedValue: this.value[this.activeIndex],
+                enableTimePicker: this.enableTimePicker,
+                onPresetClick: this.onPresetClick,
+                onConfirmClick: this.onConfirmClick,
+                presetsPlacement: this.presetsPlacement,
+              },
+            }}
           />
         ) : null}
         <div class={`${COMPONENT_NAME}--content-wrapper`}>
@@ -131,43 +138,59 @@ export default defineComponent({
             [
               <TPanelContent
                 key="startPanel"
-                partial="start"
-                year={this.year[0]}
-                month={this.month[0]}
-                time={this.time[0]}
-                tableData={startTableData}
-                {...panelContentProps}
+                {...{
+                  props: {
+                    partial: 'start',
+                    year: this.year[0],
+                    month: this.month[0],
+                    time: this.time[0],
+                    tableData: startTableData,
+                    ...panelContentProps,
+                  },
+                }}
               />,
               <TPanelContent
                 key="endPanel"
-                partial="end"
-                year={this.year[1]}
-                month={this.month[1]}
-                time={this.time[1]}
-                tableData={endTableData}
-                {...panelContentProps}
+                {...{
+                  props: {
+                    partial: 'end',
+                    year: this.year[1],
+                    month: this.month[1],
+                    time: this.time[1],
+                    tableData: endTableData,
+                    ...panelContentProps,
+                  },
+                }}
               />,
             ]
           ) : (
             <TPanelContent
               key="start"
-              partial={this.activeIndex ? 'end' : 'start'}
-              year={this.activeIndex ? this.year[1] : this.year[0]}
-              month={this.activeIndex ? this.month[1] : this.month[0]}
-              time={this.activeIndex ? this.time[1] : this.time[0]}
-              tableData={this.activeIndex ? endTableData : startTableData}
-              {...panelContentProps}
+              {...{
+                props: {
+                  partial: this.activeIndex ? 'end' : 'start',
+                  year: this.activeIndex ? this.year[1] : this.year[0],
+                  month: this.activeIndex ? this.month[1] : this.month[0],
+                  time: this.activeIndex ? this.time[1] : this.time[0],
+                  tableData: this.activeIndex ? endTableData : startTableData,
+                  ...panelContentProps,
+                },
+              }}
             />
           )}
         </div>
         {['bottom', 'right'].includes(this.presetsPlacement) ? (
           <TExtraContent
-            presets={this.presets}
-            selectedValue={this.value[this.activeIndex]}
-            enableTimePicker={this.enableTimePicker}
-            onPresetClick={this.onPresetClick}
-            onConfirmClick={this.onConfirmClick}
-            presetsPlacement={this.presetsPlacement}
+            {...{
+              props: {
+                presets: this.presets,
+                selectedValue: this.value[this.activeIndex],
+                enableTimePicker: this.enableTimePicker,
+                onPresetClick: this.onPresetClick,
+                onConfirmClick: this.onConfirmClick,
+                presetsPlacement: this.presetsPlacement,
+              },
+            }}
           />
         ) : null}
       </div>
