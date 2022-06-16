@@ -193,12 +193,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       }
     },
     overlayAction(e: MouseEvent) {
-      // 如果不是modal模式 默认没有mask 也就没有相关点击事件
-      if (this.mode !== 'modal') return;
-      emitEvent<Parameters<TdDialogProps['onOverlayClick']>>(this, 'overlay-click', { e });
       // 根据closeOnClickOverlay判断点击蒙层时是否触发close事件
-      // 根据当前点击元素和绑定元素判断是否是点击mask
-      if (e.target === e.currentTarget && this.closeOnOverlayClick) {
+      if (this.closeOnOverlayClick) {
+        emitEvent<Parameters<TdDialogProps['onOverlayClick']>>(this, 'overlay-click', { e });
         this.emitCloseEvent({
           trigger: 'overlay',
           e,
@@ -350,7 +347,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       return (
         // /* 非模态形态下draggable为true才允许拖拽 */
         <div class={this.wrapClass}>
-          <div class={this.positionClass} style={this.positionStyle} onClick={this.overlayAction}>
+          <div class={this.positionClass} style={this.positionStyle}>
             <div key="dialog" ref="dialog" class={this.dialogClass} style={this.dialogStyle}>
               <div class={`${name}__header`}>
                 {this.getIcon()}
@@ -374,7 +371,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
   },
 
   render() {
-    const maskView = this.isModal && <div key="mask" class={this.maskClass}></div>;
+    const maskView = this.isModal && <div key="mask" class={this.maskClass} onClick={this.overlayAction}></div>;
     const dialogView = this.renderDialog();
     const view = [maskView, dialogView];
     const ctxStyle: any = { zIndex: this.zIndex };
