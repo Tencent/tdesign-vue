@@ -281,7 +281,7 @@ export default defineComponent({
     const affixedHeader = Boolean((this.headerAffixedTop || this.isVirtual) && this.tableWidth) && (
       <div
         ref="affixHeaderRef"
-        style={{ width: `${this.tableWidth}px`, opacity: Number(this.showAffixHeader) }}
+        style={{ width: `${this.tableWidth}px`, opacity: this.headerAffixedTop ? Number(this.showAffixHeader) : 1 }}
         class={{ [this.tableBaseClass.affixedHeaderElm]: this.headerAffixedTop || this.isVirtual }}
       >
         <table class={this.tableElmClasses} style={{ ...this.tableElementStyles, width: `${this.tableElmWidth}px` }}>
