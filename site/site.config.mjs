@@ -273,6 +273,14 @@ const docs = [
         componentEn: () => import('@/examples/radio/radio.en-US.md'),
       },
       {
+        title: 'RangeInput 范围输入框',
+        titleEn: 'RangeInput',
+        name: 'range-input',
+        path: '/vue/components/range-input',
+        component: () => import('@/examples/range-input/range-input.md'),
+        componentEn: () => import('@/examples/range-input/range-input.en-US.md'),
+      },
+      {
         title: 'Select 选择器',
         titleEn: 'Select',
         name: 'select',

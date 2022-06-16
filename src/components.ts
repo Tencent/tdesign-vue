@@ -25,6 +25,7 @@ export * from './date-picker';
 export * from './form';
 export * from './input-adornment';
 export * from './input';
+export * from './range-input';
 export * from './input-number';
 export * from './radio';
 export * from './select';

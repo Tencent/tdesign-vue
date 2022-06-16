@@ -1,35 +1,7 @@
 <template>
-  <div>
-    <div class="tdesign-demo-item--datepicker">
-      <t-date-picker v-model="selectedDates" v-bind:presets="presetsRange" theme="primary" mode="date" range>
-        <template v-slot:default="{ trigger }">
-          <t-button
-            v-for="(value, key) in presetsRange"
-            v-bind:key="key"
-            theme="primary"
-            variant="text"
-            v-on:click="trigger('click', value, true)"
-          >
-            {{ key }}
-          </t-button>
-        </template>
-      </t-date-picker>
-    </div>
-    <div class="tdesign-demo-item--datepicker">
-      <t-date-picker v-model="selectedDate" v-bind:presets="presets" theme="primary" mode="date">
-        <template v-slot:default="{ trigger }">
-          <t-button
-            v-for="(value, key) in presets"
-            v-bind:key="key"
-            theme="primary"
-            variant="text"
-            v-on:click="trigger('click', value, true)"
-          >
-            {{ key }}
-          </t-button>
-        </template>
-      </t-date-picker>
-    </div>
+  <div class="tdesign-demo-block-column">
+    <t-date-range-picker v-model="range1" :presets="presets" />
+    <t-date-range-picker v-model="range2" :presets="presets" enable-time-picker />
   </div>
 </template>
 
@@ -39,24 +11,14 @@ import dayjs from 'dayjs';
 export default {
   data() {
     return {
-      presetsRange: {
+      presets: {
         最近7天: [dayjs().subtract(6, 'day'), dayjs()],
         最近3天: [dayjs().subtract(2, 'day'), dayjs()],
-        今天: [dayjs()],
+        今天: [dayjs(), dayjs()],
       },
-      presets: {
-        '7天前': dayjs().subtract(6, 'day'),
-        今天: dayjs(),
-      },
-      dateText: '日期',
-      selectedDates: [dayjs().toISOString(), dayjs().toISOString()],
-      selectedDate: dayjs().toISOString(),
+      range1: ['2022-01-01', '2022-08-08'],
+      range2: ['2022-01-01 11:11:11', '2022-08-08 12:12:12'],
     };
   },
 };
 </script>
-<style scoped>
-.tdesign-demo-item--datepicker {
-  margin-bottom: 12px;
-}
-</style>
