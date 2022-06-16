@@ -148,27 +148,31 @@ export default defineComponent({
         placeholder={this.tagInputPlaceholder}
         suffix={this.suffix}
         suffixIcon={() => suffixIconNode}
-        onEnter={this.onInputEnter}
-        onKeyup={this.onInputBackspaceKeyUp}
-        onMouseenter={(context: { e: MouseEvent }) => {
-          this.addHover(context);
-          this.scrollToRightOnEnter();
-        }}
-        onMouseleave={(context: { e: MouseEvent }) => {
-          this.cancelHover(context);
-          this.scrollToLeftOnLeave();
-        }}
-        onFocus={(inputValue: InputValue, context: { e: MouseEvent }) => {
-          this.onFocus?.(this.tagValue, { e: context.e, inputValue });
-          this.$emit('focus', this.tagValue, { e: context.e, inputValue });
-        }}
-        onBlur={(inputValue: InputValue, context: { e: MouseEvent }) => {
-          this.onBlur?.(this.tagValue, { e: context.e, inputValue });
-          this.$emit('blur', this.tagValue, { e: context.e, inputValue });
-        }}
-        onPaste={(context: { e: ClipboardEvent; pasteValue: string }) => {
-          this.onPaste?.(context);
-          this.$emit('paste', context);
+        {...{
+          props: {
+            onEnter: this.onInputEnter,
+            onKeyup: this.onInputBackspaceKeyUp,
+            onMouseenter: (context: { e: MouseEvent }) => {
+              this.addHover(context);
+              this.scrollToRightOnEnter();
+            },
+            onMouseleave: (context: { e: MouseEvent }) => {
+              this.cancelHover(context);
+              this.scrollToLeftOnLeave();
+            },
+            onFocus: (inputValue: InputValue, context: { e: MouseEvent }) => {
+              this.onFocus?.(this.tagValue, { e: context.e, inputValue });
+              this.$emit('focus', this.tagValue, { e: context.e, inputValue });
+            },
+            onBlur: (inputValue: InputValue, context: { e: MouseEvent }) => {
+              this.onBlur?.(this.tagValue, { e: context.e, inputValue });
+              this.$emit('blur', this.tagValue, { e: context.e, inputValue });
+            },
+            onPaste: (context: { e: ClipboardEvent; pasteValue: string }) => {
+              this.onPaste?.(context);
+              this.$emit('paste', context);
+            },
+          },
         }}
       />
     );
