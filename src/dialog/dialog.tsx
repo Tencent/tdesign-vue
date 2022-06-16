@@ -371,9 +371,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
   },
 
   render() {
-    const maskView = this.isModal && this.showOverlay && (
-      <div key="mask" class={this.maskClass} onClick={this.overlayAction}></div>
-    );
+    const maskView = this.isModal && <div key="mask" class={this.maskClass} onClick={this.overlayAction}></div>;
     const dialogView = this.renderDialog();
     const view = [maskView, dialogView];
     const ctxStyle: any = { zIndex: this.zIndex };
