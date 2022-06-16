@@ -528,6 +528,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                   v-model={this.curSelectedYear}
                   size={this.controlSize}
                   disabled={this.isYearDisabled}
+                  autoWidth={true}
                   props={{ ...this.controllerConfigData.year.selectProps }}
                 >
                   {this.yearSelectOptionList.map((item) => (
@@ -544,6 +545,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                   v-model={this.curSelectedMonth}
                   size={this.controlSize}
                   disabled={this.isMonthDisabled}
+                  autoWidth={true}
                   props={{ ...this.controllerConfigData.month.selectProps }}
                 >
                   {this.monthSelectOptionList.map((item) => (
