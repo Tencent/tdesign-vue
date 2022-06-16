@@ -32,14 +32,8 @@ export default function getConfigReceiverMixins<BasicComponent extends Vue, C ex
 
     computed: {
       global(): C {
-        const defaultData = defaultGlobalConfig[componentName];
-        if (this.globalConfig && this.globalConfig[componentName]) {
-          return {
-            ...defaultData,
-            ...this.globalConfig[componentName],
-          };
-        }
-        return defaultData;
+        const data = this.globalConfig || defaultGlobalConfig;
+        return data[componentName];
       },
     },
 

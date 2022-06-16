@@ -12001,6 +12001,22 @@ exports[`ssr snapshot test renders ./examples/skeleton/demos/base.vue correctly 
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/skeleton/demos/delay.vue correctly 1`] = `
+<div class="t-skeleton-demo-delay">
+  <div class="header"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">无 delay 属性快速加载数据（会闪屏）</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">有 delay 属性快速加载数据（无闪屏）</span></button></div>
+  <div class="content">
+    <div>
+      <div class="t-skeleton-demo-paragraph">
+        <p>
+          骨架屏组件，是指当网络较慢时，在页面真实数据加载之前，给用户展示出页面的大致结构。
+          一方面让用户对页面有一定的心理预期，另一方面可以改善长期停留在空白屏给用户带来的枯燥和不适感。它可以为用户提供更好视觉效果和使用体验。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/skeleton/demos/theme.vue correctly 1`] = `
 <div class="t-skeleton-demo t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
   <div class="t-col t-col-12" style="padding-left:0px;padding-right:0px;">

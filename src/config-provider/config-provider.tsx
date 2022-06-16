@@ -1,5 +1,7 @@
 import Vue, { PropType, VNode } from 'vue';
+import cloneDeep from 'lodash/cloneDeep';
 import { GlobalConfigProvider } from './type';
+import { defaultGlobalConfig, mergeWidth } from './context';
 
 const ConfigProvider = Vue.extend({
   name: 'TConfigProvider',
@@ -8,10 +10,21 @@ const ConfigProvider = Vue.extend({
     globalConfig: Object as PropType<GlobalConfigProvider>,
   },
 
+  data() {
+    return {
+      defaultData: cloneDeep(defaultGlobalConfig),
+    };
+  },
   provide(): { globalConfig: GlobalConfigProvider } {
     return {
-      globalConfig: this.globalConfig,
+      globalConfig: this.mergedGlobalConfig,
     };
+  },
+  computed: {
+    mergedGlobalConfig() {
+      const mergedGlobalConfig = mergeWidth(this.defaultData, this.globalConfig);
+      return mergedGlobalConfig;
+    },
   },
 
   render(): VNode {
