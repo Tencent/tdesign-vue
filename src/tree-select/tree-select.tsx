@@ -269,6 +269,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     },
     focus(ctx: InputFocusEventParams[1]) {
       this.focusing = true;
+      this.filterByText = null;
       emitEvent<Parameters<TdTreeSelectProps['onFocus']>>(this, 'focus', { value: this.value, ...ctx });
     },
     blur(ctx: InputBlurEventParams[1]) {
