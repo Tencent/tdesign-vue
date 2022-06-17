@@ -265,7 +265,7 @@ export default defineComponent({
 
   render(h) {
     const { rowAndColFixedPosition } = this;
-    const data = this.dataSource;
+    const data = this.pagination ? this.dataSource : this.data;
 
     if (this.allowResizeColumnWidth) {
       log.warn('Table', 'allowResizeColumnWidth is going to be deprecated, please use resizable instead.');
