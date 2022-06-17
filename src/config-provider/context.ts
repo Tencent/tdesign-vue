@@ -21,7 +21,7 @@ export * from './type';
 export const configProviderInjectKey: InjectionKey<ComputedRef<GlobalConfigProvider>> = Symbol('configProvide');
 
 // deal with https://github.com/lodash/lodash/issues/1313
-export const mergeWidth = (defaultGlobalConfig: GlobalConfigProvider, injectConfig: GlobalConfigProvider) => _mergeWith(defaultGlobalConfig, injectConfig, (objValue, srcValue) => {
+export const mergeWith = (defaultGlobalConfig: GlobalConfigProvider, injectConfig: GlobalConfigProvider) => _mergeWith(defaultGlobalConfig, injectConfig, (objValue, srcValue) => {
   if (Array.isArray(objValue)) {
     return srcValue;
   }

@@ -2,7 +2,7 @@ import Vue, { PropType, VNode } from 'vue';
 import cloneDeep from 'lodash/cloneDeep';
 import { provide, computed } from '@vue/composition-api';
 import { GlobalConfigProvider } from './type';
-import { configProviderInjectKey, defaultGlobalConfig, mergeWidth } from './context';
+import { configProviderInjectKey, defaultGlobalConfig, mergeWith } from './context';
 
 const ConfigProvider = Vue.extend({
   name: 'TConfigProvider',
@@ -24,7 +24,7 @@ const ConfigProvider = Vue.extend({
 
   computed: {
     mergedGlobalConfig() {
-      const mergedGlobalConfig = mergeWidth(this.defaultData, this.globalConfig);
+      const mergedGlobalConfig = mergeWith(this.defaultData, this.globalConfig);
       return mergedGlobalConfig;
     },
   },
@@ -33,7 +33,7 @@ const ConfigProvider = Vue.extend({
     const defaultData = cloneDeep(defaultGlobalConfig);
     provide(
       configProviderInjectKey,
-      computed(() => mergeWidth(defaultData, props.globalConfig)),
+      computed(() => mergeWith(defaultData, props.globalConfig)),
     );
   },
 
