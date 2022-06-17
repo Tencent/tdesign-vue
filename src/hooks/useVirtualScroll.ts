@@ -60,7 +60,7 @@ const useVirtualScroll = ({
       const average = maxScrollY / cachedHeight.length; // 平均高度
       return maxScrollY + (data.value.length - cachedHeight.length) * average; // 预估总高度
     }
-    
+
     return isVirtual.value ? data.value.length * lineHeight : 0;
   });
 
@@ -173,7 +173,7 @@ const useVirtualScroll = ({
     // if (revising) {
     //   return false; // 修正滚动条时，暂停滚动逻辑
     // }
-    if(!container.value) return;
+    if (!container.value) return;
     const { scrollTop } = container.value;
     let distance = scrollTop - beforeScrollTop; // 滚动差值
     beforeScrollTop = scrollTop;

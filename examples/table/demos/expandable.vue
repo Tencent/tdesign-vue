@@ -30,6 +30,7 @@
       :expanded-row="expandedRow"
       :expandIcon="expandIcon"
       :expandOnRowClick="expandOnRowClick"
+      :horizontalScrollAffixedBottom="true"
       table-layout="auto"
       tableContentWidth="1200"
       @expand-change="rehandleExpandChange"

@@ -27,6 +27,8 @@ export default function useStyle(props: TdBaseTableProps) {
       [tableBaseClass.loading]: props.loading,
       [tableBaseClass.affixedHeader]: props.headerAffixedTop,
       [tableBaseClass.rowspanAndColspan]: props.rowspanAndColspan,
+      [tableBaseClass.horizontalBarAffixed]: props.horizontalScrollAffixedBottom,
+      [tableBaseClass.footerAffixed]: props.footerAffixedBottom,
       [tableAlignClasses[verticalAlign.value]]: verticalAlign.value !== 'middle',
     },
   ]);

@@ -4,6 +4,8 @@
     <div>
       <t-checkbox v-model="headerAffixedTop">表头吸顶</t-checkbox>
       <t-checkbox v-model="footerAffixedBottom" style="margin-left: 32px">表尾吸底</t-checkbox>
+      <t-checkbox v-model="horizontalScrollAffixedBottom" style="margin-left: 32px">滚动条吸底</t-checkbox>
+      <t-checkbox v-model="paginationAffixedBottom" style="margin-left: 32px">分页器吸底</t-checkbox>
       <t-checkbox v-model="fixedLeftColumn" style="margin-left: 32px">固定左侧列</t-checkbox>
       <t-checkbox v-model="fixedRightColumn" style="margin-left: 32px">固定右侧列</t-checkbox>
     </div>
@@ -11,12 +13,17 @@
       rowKey="index"
       :data="data"
       :columns="columns"
-      :foot-data="footData"
+      :footData="footData"
       :rowClassName="rowClassName"
-      :headerAffixedTop="headerAffixedTop"
-      :footerAffixedBottom="footerAffixedBottom"
-      :headerAffixProps="{ offsetTop: 87, zIndex: 1000 }"
-      :footerAffixProps="{ offsetBottom: 0, zIndex: 1000 }"
+      :pagination="{ defaultCurrent: 1, defaultPageSize: 5, total: TOTAL }"
+      :headerAffixedTop="{ offsetTop: 87, zIndex: 1000 }"
+      :footerAffixedBottom="
+        footerAffixedBottom ? { offsetBottom: paginationAffixedBottom ? 60 : 0, zIndex: 1000 } : false
+      "
+      :horizontalScrollAffixedBottom="
+        horizontalScrollAffixedBottom ? { offsetBottom: paginationAffixedBottom ? 60 : 0, zIndex: 1000 } : false
+      "
+      :paginationAffixedBottom="paginationAffixedBottom"
       tableLayout="auto"
       bordered
       resizable
@@ -48,15 +55,20 @@ function getData(count) {
   return data;
 }
 
+const TOTAL = 8;
+
 export default {
   data() {
     return {
-      data: getData(8),
+      data: getData(TOTAL),
+      TOTAL,
       // 如果在预渲染场景下，初次渲染的表格宽度和最终呈现宽度不一样，请异步设置表头吸顶
       headerAffixedTop: true,
       footerAffixedBottom: true,
       fixedLeftColumn: true,
       fixedRightColumn: true,
+      horizontalScrollAffixedBottom: false,
+      paginationAffixedBottom: false,
       // 表尾有一行数据
       footData: [{ type: '全部类型', description: '-' }],
     };
@@ -129,6 +141,17 @@ export default {
     },
   },
 
+  watch: {
+    // 底部滚动条 和 Footer 无需同时出现，二选一即可
+    horizontalScrollAffixedBottom(val) {
+      val && (this.footerAffixedBottom = false);
+    },
+    // 底部滚动条 和 Footer 无需同时出现，二选一即可
+    footerAffixedBottom(val) {
+      val && (this.horizontalScrollAffixedBottom = false);
+    },
+  },
+
   methods: {
     // type 可选值：foot 和 body
     rowClassName({ type }) {
@@ -148,7 +171,7 @@ export default {
  * 如果不设置，列多了之后会挤在一起
  * **/
 .tdesign-demo__table-affix table {
-  width: 1000px;
+  width: 1200px;
 }
 
 .tdesign-demo__table-affix .t-table {

@@ -177,7 +177,6 @@ export default Vue.extend({
     },
 
     // exposure function, If there is no reset button in form, this function can be used
-    // this function won't trigger reset event.
     reset<T = FormData>(params: FormResetParams<T> = {}) {
       this.children
         .filter((child) => this.isFunction(child.resetField))
@@ -187,11 +186,17 @@ export default Vue.extend({
             child.resetField(resetType);
           }
         });
+      emitEvent<Parameters<TdFormProps['onReset']>>(this, 'reset', { e: undefined });
     },
 
     // exposure function, If there is no submit button in form, this function can be used
     submit<T extends Data = Data>(params?: { showErrorMessage?: boolean }) {
-      this.validate<T>({ showErrorMessage: params?.showErrorMessage }, 'submit-function');
+      this.validate<T>({ showErrorMessage: params?.showErrorMessage }, 'submit-function').then((r) => {
+        emitEvent<Parameters<TdFormProps['onSubmit']>>(this, 'submit', {
+          validateResult: r,
+          firstError: this.getFirstError<T>(r),
+        });
+      });
     },
   },
 

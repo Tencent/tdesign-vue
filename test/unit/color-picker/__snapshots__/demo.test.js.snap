@@ -268,7 +268,7 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -281,6 +281,11 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
                   type="text"
                   unselectable="on"
                 />
+                <span
+                  class="t-input__input-pre"
+                >
+                  RGB
+                </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
                 >
@@ -1056,7 +1061,7 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -1069,6 +1074,11 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
                   type="text"
                   unselectable="on"
                 />
+                <span
+                  class="t-input__input-pre"
+                >
+                  RGB
+                </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
                 >
@@ -1823,7 +1833,7 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-input__wrap t-select"
               >
                 <div
-                  class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -1836,6 +1846,11 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                     type="text"
                     unselectable="on"
                   />
+                  <span
+                    class="t-input__input-pre"
+                  >
+                    RGB
+                  </span>
                   <span
                     class="t-input__suffix t-input__suffix-icon"
                   >
@@ -2702,7 +2717,7 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 class="t-input__wrap t-select"
               >
                 <div
-                  class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -2715,6 +2730,11 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                     type="text"
                     unselectable="on"
                   />
+                  <span
+                    class="t-input__input-pre"
+                  >
+                    RGB
+                  </span>
                   <span
                     class="t-input__suffix t-input__suffix-icon"
                   >
@@ -3477,7 +3497,7 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -3490,6 +3510,11 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
                   type="text"
                   unselectable="on"
                 />
+                <span
+                  class="t-input__input-pre"
+                >
+                  RGB
+                </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
                 >
@@ -4247,7 +4272,7 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                 class="t-input__wrap t-select"
               >
                 <div
-                  class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -4260,6 +4285,11 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                     type="text"
                     unselectable="on"
                   />
+                  <span
+                    class="t-input__input-pre"
+                  >
+                    RGB
+                  </span>
                   <span
                     class="t-input__suffix t-input__suffix-icon"
                   >
@@ -4589,7 +4619,7 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                 class="t-input__wrap t-select"
               >
                 <div
-                  class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -4602,6 +4632,11 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                     type="text"
                     unselectable="on"
                   />
+                  <span
+                    class="t-input__input-pre"
+                  >
+                    RGB
+                  </span>
                   <span
                     class="t-input__suffix t-input__suffix-icon"
                   >

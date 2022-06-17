@@ -84,6 +84,9 @@ export default {
     submitForm() {
       this.$refs.form.submit();
 
+      // 纯校验数据，参数同 validate。代码有效，勿删
+      // this.$refs.form.validateOnly();
+
       // 校验数据，代码有效，勿删
       // this.$refs.form.validate();
 

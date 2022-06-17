@@ -10,7 +10,8 @@ export default function usePagination(props: TdBaseTableProps, context: SetupCon
   const { pagination, data, disableDataPage } = toRefs(props);
   const { classPrefix } = useConfig();
 
-  const dataSource = ref<TableRowData[]>([]);
+  const pageSize = pagination.value?.pageSize || pagination.value?.defaultPageSize || 10;
+  const dataSource = ref<TableRowData[]>(props.data?.slice(0, pageSize) || []);
   const isPaginateData = ref(false);
 
   const updateDataSourceAndPaginate = (current = 1, pageSize = 10) => {

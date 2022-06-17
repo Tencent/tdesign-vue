@@ -9,7 +9,7 @@ import { InputValue } from '../input';
 import TagInput, { TagInputValue, InputValueChangeContext } from '../tag-input';
 import Loading from '../loading';
 import useDefaultValue from '../hooks/useDefaultValue';
-import { usePrefixClass } from '../config-provider';
+import { usePrefixClass } from '../hooks/useConfig';
 
 export interface RenderSelectMultipleParams {
   commonInputProps: SelectInputCommonProperties;
@@ -60,7 +60,6 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
       ...props.tagInputProps,
       ...p.commonInputProps,
       tagProps: props.tagProps,
-      readonly: !props.allowInput,
       label: props.label,
       autoWidth: props.autoWidth,
       placeholder: tPlaceholder.value,
@@ -75,6 +74,7 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
         inputClass: {
           [`${classPrefix.value}-input--focused`]: p.popupVisible,
         },
+        ...props.inputProps,
       },
       suffixIcon: !props.disabled && props.loading ? () => <Loading loading size="small" /> : props.suffixIcon,
     };
