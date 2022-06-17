@@ -426,9 +426,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
       footerAffixedBottom,
       tableContentWidth,
     ],
-    () => {
-      updateThWidthListHandler();
-    },
+    updateThWidthListHandler,
     { immediate: true },
   );
 
