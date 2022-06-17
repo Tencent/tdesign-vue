@@ -29,6 +29,8 @@ import { ROW_LISTENERS } from './tr';
 import THead from './thead';
 import TFoot from './tfoot';
 import log from '../_common/js/log';
+import useAffix from './hooks/useAffix';
+import { getAffixProps } from './utils';
 
 export const BASE_TABLE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY'];
 export const BASE_TABLE_ALL_EVENTS = ROW_LISTENERS.map((t) => `row-${t}`).concat(BASE_TABLE_EVENTS);
@@ -49,6 +51,7 @@ export default defineComponent({
     const renderTNode = useTNodeJSX();
     const tableRef = ref<HTMLDivElement>();
     const tableElmRef = ref<HTMLTableElement>();
+    const tableBodyRef = ref<HTMLTableElement>();
     const tableFootHeight = ref(0);
     const {
       virtualScrollClasses, tableLayoutClasses, tableBaseClass, tableColFixedClasses,
@@ -56,10 +59,9 @@ export default defineComponent({
     // 表格基础样式类
     const { tableClasses, tableContentStyles, tableElementStyles } = useStyle(props);
     const { global } = useConfig('table');
+
     // 固定表头和固定列逻辑
     const {
-      affixHeaderRef,
-      affixFooterRef,
       scrollbarWidth,
       virtualScrollHeaderPos,
       tableWidth,
@@ -70,13 +72,27 @@ export default defineComponent({
       isFixedColumn,
       thWidthList,
       showColumnShadow,
+      rowAndColFixedPosition,
+      setData,
+      refreshTable,
+      emitScrollEvent,
+      setUseFixedTableElmRef,
+      updateColumnFixedShadow,
+    } = useFixed(props, context);
+
+    // 1. 表头吸顶；2. 表尾吸底；3. 底部滚动条吸底；4. 分页器吸底
+    const {
+      affixHeaderRef,
+      affixFooterRef,
+      horizontalScrollbarRef,
+      paginationRef,
       showAffixHeader,
       showAffixFooter,
-      rowAndColFixedPosition,
-      refreshTable,
-      updateHeaderScroll,
-      setUseFixedTableElmRef,
-    } = useFixed(props, context);
+      showAffixPagination,
+      onHorizontalScroll,
+      setTableContentRef,
+    } = useAffix(props);
+
     const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
     const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
 
@@ -115,9 +131,16 @@ export default defineComponent({
       setUseFixedTableElmRef(tableElmRef.value);
     });
 
+    watch(
+      () => [props.data, dataSource],
+      () => {
+        setData(isPaginateData.value ? dataSource.value : props.data);
+      },
+    );
+
     const onFixedChange = () => {
       nextTick(() => {
-        updateHeaderScroll();
+        onHorizontalScroll();
       });
     };
 
@@ -157,17 +180,20 @@ export default defineComponent({
     provide('tableContentRef', tableContentRef);
     provide('rowHeightRef', ref(rowHeight));
 
-    let lastScrollY = -1;
+    let lastScrollY = 0;
     const onInnerVirtualScroll = (e: WheelEvent) => {
       const target = (e.target || e.srcElement) as HTMLElement;
       const top = target.scrollTop;
       // 排除横向滚动出发的纵向虚拟滚动计算
-      if (Math.abs(lastScrollY - top) > 5) {
-        handleVirtualScroll();
-        lastScrollY = top;
+      if (lastScrollY !== top) {
+        isVirtual.value && handleVirtualScroll();
       } else {
-        lastScrollY = -1;
+        lastScrollY = 0;
+        updateColumnFixedShadow(target);
+        onHorizontalScroll(target);
       }
+      lastScrollY = top;
+      emitScrollEvent(e);
     };
 
     // used for top margin
@@ -178,6 +204,7 @@ export default defineComponent({
 
     onMounted(() => {
       getTFootHeight();
+      setTableContentRef(tableContentRef.value);
     });
 
     return {
@@ -216,6 +243,7 @@ export default defineComponent({
       translateY,
       affixHeaderRef,
       affixFooterRef,
+      paginationRef,
       showAffixHeader,
       showAffixFooter,
       scrollbarWidth,
@@ -224,12 +252,15 @@ export default defineComponent({
       resizeLineRef,
       resizeLineStyle,
       columnResizeParams,
+      horizontalScrollbarRef,
+      tableBodyRef,
+      showAffixPagination,
       getListener,
       renderPagination,
       renderTNode,
       handleRowMounted,
       onFixedChange,
-      updateHeaderScroll,
+      onHorizontalScroll,
       refreshTable,
       onInnerVirtualScroll,
     };
@@ -254,7 +285,7 @@ export default defineComponent({
     const affixedHeader = Boolean((this.headerAffixedTop || this.isVirtual) && this.tableWidth) && (
       <div
         ref="affixHeaderRef"
-        style={{ width: `${this.tableWidth}px`, opacity: Number(this.showAffixHeader) }}
+        style={{ width: `${this.tableWidth}px`, opacity: this.headerAffixedTop ? Number(this.showAffixHeader) : 1 }}
         class={{ [this.tableBaseClass.affixedHeaderElm]: this.headerAffixedTop || this.isVirtual }}
       >
         <table class={this.tableElmClasses} style={{ ...this.tableElementStyles, width: `${this.tableElmWidth}px` }}>
@@ -283,7 +314,7 @@ export default defineComponent({
     const affixedFooter = Boolean(this.footerAffixedBottom && this.footData?.length && this.tableWidth) && (
       <Affix
         class={this.tableBaseClass.affixedFooterWrap}
-        props={this.footerAffixProps}
+        props={getAffixProps(this.footerAffixedBottom, this.footerAffixProps)}
         onFixedChange={this.onFixedChange}
         offsetBottom={marginScrollbarWidth || 0}
         style={{ marginTop: `${-1 * (this.tableFootHeight + marginScrollbarWidth)}px` }}
@@ -340,14 +371,13 @@ export default defineComponent({
       ...pick(this.$props, extendTableProps),
     };
     // Vue3 do not need getListener
-    const on = this.getListener();
-    const scrollListener = this.isVirtual ? { scroll: this.onInnerVirtualScroll } : {};
+    const tBodyListener = this.getListener();
     const tableContent = (
       <div
         ref="tableContentRef"
         class={this.tableBaseClass.content}
         style={this.tableContentStyles}
-        on={scrollListener}
+        on={{ scroll: this.onInnerVirtualScroll }}
       >
         <div ref="resizeLineRef" class={this.tableBaseClass.resizeLine} style={this.resizeLineStyle}></div>
         {this.isVirtual && <div class={this.virtualScrollClasses.cursor} style={virtualStyle} />}
@@ -364,7 +394,7 @@ export default defineComponent({
             resizable={columnResizable}
             columnResizeParams={this.columnResizeParams}
           />
-          <TBody scopedSlots={this.$scopedSlots} props={tableBodyProps} on={on} />
+          <TBody ref="tableBodyRef" scopedSlots={this.$scopedSlots} props={tableBodyProps} on={tBodyListener} />
           <TFoot
             rowKey={this.rowKey}
             scopedSlots={this.$scopedSlots}
@@ -392,7 +422,11 @@ export default defineComponent({
 
     const topContent = this.renderTNode('topContent');
     const bottomContent = this.renderTNode('bottomContent');
-    const pagination = this.renderPagination(h);
+    const pagination = (
+      <div ref="paginationRef" style={{ opacity: Number(this.showAffixPagination) }}>
+        {this.renderPagination(h)}
+      </div>
+    );
     const bottom = !!bottomContent && <div class={this.tableBaseClass.bottomContent}>{bottomContent}</div>;
     return (
       <div ref="tableRef" class={this.dynamicBaseTableClasses} style="position: relative">
@@ -400,7 +434,11 @@ export default defineComponent({
 
         {!!(this.isVirtual || this.headerAffixedTop)
           && (this.headerAffixedTop ? (
-            <Affix offsetTop={0} props={this.headerAffixProps} onFixedChange={this.onFixedChange}>
+            <Affix
+              offsetTop={0}
+              props={getAffixProps(this.headerAffixedTop, this.headerAffixProps)}
+              onFixedChange={this.onFixedChange}
+            >
               {affixedHeader}
             </Affix>
           ) : (
@@ -413,6 +451,7 @@ export default defineComponent({
 
         {affixedFooter}
 
+        {/* 调整列宽时的指示线 */}
         {this.showRightDivider && (
           <div
             class={this.tableBaseClass.scrollbarDivider}
@@ -421,7 +460,30 @@ export default defineComponent({
         )}
 
         {bottom}
-        {pagination}
+
+        {/* 吸底的滚动条 */}
+        {this.horizontalScrollAffixedBottom && (
+          <Affix
+            offsetBottom={0}
+            props={getAffixProps(this.horizontalScrollAffixedBottom)}
+            style={{ marginTop: `-${this.scrollbarWidth * 2}px` }}
+          >
+            <div
+              ref="horizontalScrollbarRef"
+              class={['scrollbar', this.tableBaseClass.obviousScrollbar]}
+              style={{
+                width: `${this.tableWidth}px`,
+                overflow: 'auto',
+                opacity: Number(this.showAffixFooter),
+              }}
+            >
+              <div style={{ width: `${this.tableElmWidth}px`, height: '5px' }}></div>
+            </div>
+          </Affix>
+        )}
+
+        {/* 吸底的分页器 */}
+        {this.paginationAffixedBottom ? <Affix offsetBottom={0}>{pagination}</Affix> : pagination}
       </div>
     );
   },
