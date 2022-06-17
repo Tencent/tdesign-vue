@@ -3654,6 +3654,9 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
   </div>
    
   <br />
@@ -4008,6 +4011,9 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
   </div>
    
   <br />
