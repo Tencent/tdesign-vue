@@ -1,5 +1,6 @@
 import { ref, watch, Ref } from '@vue/composition-api';
 import get from 'lodash/get';
+import log from '../../_common/js/log';
 import {
   BaseTableCellParams, BaseTableCol, TableRowData, TableRowspanAndColspanFunc,
 } from '../type';
@@ -12,6 +13,9 @@ export interface SkipSpansValue {
 
 export function getCellKey(row: TableRowData, rowKey: string, colKey: string, colIndex: number) {
   const rowValue = get(row, rowKey);
+  if (rowValue === undefined) {
+    log.error('Table', 'rowKey is wrong, can not get unique identifier of row.');
+  }
   return [rowValue, colKey || colIndex].join('_');
 }
 
