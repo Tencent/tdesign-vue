@@ -277,16 +277,16 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     const labelContent = label ? <div class={`${name}__prefix`}>{label}</div> : null;
     const suffixContent = suffix ? <div class={`${name}__suffix`}>{suffix}</div> : null;
 
-    if (this.showClear) {
-      suffixIcon = <CloseCircleFilledIcon class={`${name}__suffix-clear`} nativeOnClick={this.emitClear} />;
-    }
-
     if (this.type === 'password') {
       if (this.renderType === 'password') {
         suffixIcon = <BrowseOffIcon class={`${name}__suffix-clear`} nativeOnClick={this.emitPassword} />;
       } else if (this.renderType === 'text') {
         suffixIcon = <BrowseIcon class={`${name}__suffix-clear`} nativeOnClick={this.emitPassword} />;
       }
+    }
+
+    if (this.showClear) {
+      suffixIcon = <CloseCircleFilledIcon class={`${name}__suffix-clear`} nativeOnClick={this.emitClear} />;
     }
 
     const classes = [

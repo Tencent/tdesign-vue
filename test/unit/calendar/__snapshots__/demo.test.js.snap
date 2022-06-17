@@ -23,7 +23,7 @@ exports[`Calendar Calendar baseVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -36,6 +36,11 @@ exports[`Calendar Calendar baseVue demo works fine 1`] = `
                 type="text"
                 unselectable="on"
               />
+              <span
+                class="t-input__input-pre"
+              >
+                2020
+              </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
               >
@@ -69,7 +74,7 @@ exports[`Calendar Calendar baseVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -82,6 +87,11 @@ exports[`Calendar Calendar baseVue demo works fine 1`] = `
                 type="text"
                 unselectable="on"
               />
+              <span
+                class="t-input__input-pre"
+              >
+                12
+              </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
               >
@@ -864,7 +874,7 @@ exports[`Calendar Calendar cardVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -877,6 +887,11 @@ exports[`Calendar Calendar cardVue demo works fine 1`] = `
                   type="text"
                   unselectable="on"
                 />
+                <span
+                  class="t-input__input-pre"
+                >
+                  2020
+                </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
                 >
@@ -910,7 +925,7 @@ exports[`Calendar Calendar cardVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -923,6 +938,11 @@ exports[`Calendar Calendar cardVue demo works fine 1`] = `
                   type="text"
                   unselectable="on"
                 />
+                <span
+                  class="t-input__input-pre"
+                >
+                  12
+                </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
                 >
@@ -1603,7 +1623,7 @@ exports[`Calendar Calendar cellAppendVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -1616,6 +1636,11 @@ exports[`Calendar Calendar cellAppendVue demo works fine 1`] = `
                 type="text"
                 unselectable="on"
               />
+              <span
+                class="t-input__input-pre"
+              >
+                2020
+              </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
               >
@@ -1649,7 +1674,7 @@ exports[`Calendar Calendar cellAppendVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -1662,6 +1687,11 @@ exports[`Calendar Calendar cellAppendVue demo works fine 1`] = `
                 type="text"
                 unselectable="on"
               />
+              <span
+                class="t-input__input-pre"
+              >
+                12
+              </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
               >
@@ -2374,7 +2404,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -2387,6 +2417,11 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
                 type="text"
                 unselectable="on"
               />
+              <span
+                class="t-input__input-pre"
+              >
+                2020
+              </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
               >
@@ -2420,7 +2455,7 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -2433,6 +2468,11 @@ exports[`Calendar Calendar cellVue demo works fine 1`] = `
                 type="text"
                 unselectable="on"
               />
+              <span
+                class="t-input__input-pre"
+              >
+                12
+              </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
               >
@@ -3450,7 +3490,7 @@ exports[`Calendar Calendar controllerConfigVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-s t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-size-s t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -3463,6 +3503,11 @@ exports[`Calendar Calendar controllerConfigVue demo works fine 1`] = `
                   type="text"
                   unselectable="on"
                 />
+                <span
+                  class="t-input__input-pre"
+                >
+                  2020
+                </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
                 >
@@ -3496,7 +3541,7 @@ exports[`Calendar Calendar controllerConfigVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-s t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-size-s t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -3509,6 +3554,11 @@ exports[`Calendar Calendar controllerConfigVue demo works fine 1`] = `
                   type="text"
                   unselectable="on"
                 />
+                <span
+                  class="t-input__input-pre"
+                >
+                  12
+                </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
                 >
@@ -4216,7 +4266,7 @@ exports[`Calendar Calendar eventsVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -4229,6 +4279,11 @@ exports[`Calendar Calendar eventsVue demo works fine 1`] = `
                   type="text"
                   unselectable="on"
                 />
+                <span
+                  class="t-input__input-pre"
+                >
+                  2020
+                </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
                 >
@@ -4262,7 +4317,7 @@ exports[`Calendar Calendar eventsVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -4275,6 +4330,11 @@ exports[`Calendar Calendar eventsVue demo works fine 1`] = `
                   type="text"
                   unselectable="on"
                 />
+                <span
+                  class="t-input__input-pre"
+                >
+                  12
+                </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
                 >
@@ -5030,7 +5090,7 @@ exports[`Calendar Calendar firstDayOfWeekVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -5043,6 +5103,11 @@ exports[`Calendar Calendar firstDayOfWeekVue demo works fine 1`] = `
                   type="text"
                   unselectable="on"
                 />
+                <span
+                  class="t-input__input-pre"
+                >
+                  2020
+                </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
                 >
@@ -5076,7 +5141,7 @@ exports[`Calendar Calendar firstDayOfWeekVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -5089,6 +5154,11 @@ exports[`Calendar Calendar firstDayOfWeekVue demo works fine 1`] = `
                   type="text"
                   unselectable="on"
                 />
+                <span
+                  class="t-input__input-pre"
+                >
+                  12
+                </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
                 >
@@ -5900,7 +5970,7 @@ exports[`Calendar Calendar headVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -5913,6 +5983,11 @@ exports[`Calendar Calendar headVue demo works fine 1`] = `
                 type="text"
                 unselectable="on"
               />
+              <span
+                class="t-input__input-pre"
+              >
+                2020
+              </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
               >
@@ -5946,7 +6021,7 @@ exports[`Calendar Calendar headVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -5959,6 +6034,11 @@ exports[`Calendar Calendar headVue demo works fine 1`] = `
                 type="text"
                 unselectable="on"
               />
+              <span
+                class="t-input__input-pre"
+              >
+                12
+              </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
               >
@@ -6713,7 +6793,7 @@ exports[`Calendar Calendar modeVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -6726,6 +6806,11 @@ exports[`Calendar Calendar modeVue demo works fine 1`] = `
                   type="text"
                   unselectable="on"
                 />
+                <span
+                  class="t-input__input-pre"
+                >
+                  2020
+                </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
                 >
@@ -7033,7 +7118,7 @@ exports[`Calendar Calendar rangeVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -7046,6 +7131,11 @@ exports[`Calendar Calendar rangeVue demo works fine 1`] = `
                 type="text"
                 unselectable="on"
               />
+              <span
+                class="t-input__input-pre"
+              >
+                2020
+              </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
               >
@@ -7079,7 +7169,7 @@ exports[`Calendar Calendar rangeVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -7092,6 +7182,11 @@ exports[`Calendar Calendar rangeVue demo works fine 1`] = `
                 type="text"
                 unselectable="on"
               />
+              <span
+                class="t-input__input-pre"
+              >
+                12
+              </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
               >
@@ -7798,7 +7893,7 @@ exports[`Calendar Calendar slotPropsApiVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -7811,6 +7906,11 @@ exports[`Calendar Calendar slotPropsApiVue demo works fine 1`] = `
                 type="text"
                 unselectable="on"
               />
+              <span
+                class="t-input__input-pre"
+              >
+                2020
+              </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
               >
@@ -7844,7 +7944,7 @@ exports[`Calendar Calendar slotPropsApiVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -7857,6 +7957,11 @@ exports[`Calendar Calendar slotPropsApiVue demo works fine 1`] = `
                 type="text"
                 unselectable="on"
               />
+              <span
+                class="t-input__input-pre"
+              >
+                12
+              </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
               >
@@ -8640,7 +8745,7 @@ exports[`Calendar Calendar valueVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -8653,6 +8758,11 @@ exports[`Calendar Calendar valueVue demo works fine 1`] = `
                   type="text"
                   unselectable="on"
                 />
+                <span
+                  class="t-input__input-pre"
+                >
+                  1998
+                </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
                 >
@@ -8686,7 +8796,7 @@ exports[`Calendar Calendar valueVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -8699,6 +8809,11 @@ exports[`Calendar Calendar valueVue demo works fine 1`] = `
                   type="text"
                   unselectable="on"
                 />
+                <span
+                  class="t-input__input-pre"
+                >
+                  11
+                </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
                 >
@@ -9514,7 +9629,7 @@ exports[`Calendar Calendar weekVue demo works fine 1`] = `
                 class="t-input__wrap t-select"
               >
                 <div
-                  class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -9527,6 +9642,11 @@ exports[`Calendar Calendar weekVue demo works fine 1`] = `
                     type="text"
                     unselectable="on"
                   />
+                  <span
+                    class="t-input__input-pre"
+                  >
+                    2020
+                  </span>
                   <span
                     class="t-input__suffix t-input__suffix-icon"
                   >
@@ -9560,7 +9680,7 @@ exports[`Calendar Calendar weekVue demo works fine 1`] = `
                 class="t-input__wrap t-select"
               >
                 <div
-                  class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -9573,6 +9693,11 @@ exports[`Calendar Calendar weekVue demo works fine 1`] = `
                     type="text"
                     unselectable="on"
                   />
+                  <span
+                    class="t-input__input-pre"
+                  >
+                    12
+                  </span>
                   <span
                     class="t-input__suffix t-input__suffix-icon"
                   >
@@ -10281,7 +10406,7 @@ exports[`Calendar Calendar weekVue demo works fine 1`] = `
                 class="t-input__wrap t-select"
               >
                 <div
-                  class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -10294,6 +10419,11 @@ exports[`Calendar Calendar weekVue demo works fine 1`] = `
                     type="text"
                     unselectable="on"
                   />
+                  <span
+                    class="t-input__input-pre"
+                  >
+                    2020
+                  </span>
                   <span
                     class="t-input__suffix t-input__suffix-icon"
                   >
@@ -10327,7 +10457,7 @@ exports[`Calendar Calendar weekVue demo works fine 1`] = `
                 class="t-input__wrap t-select"
               >
                 <div
-                  class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -10340,6 +10470,11 @@ exports[`Calendar Calendar weekVue demo works fine 1`] = `
                     type="text"
                     unselectable="on"
                   />
+                  <span
+                    class="t-input__input-pre"
+                  >
+                    12
+                  </span>
                   <span
                     class="t-input__suffix t-input__suffix-icon"
                   >
@@ -11034,7 +11169,7 @@ exports[`Calendar Calendar weekVue demo works fine 1`] = `
                 class="t-input__wrap t-select"
               >
                 <div
-                  class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -11047,6 +11182,11 @@ exports[`Calendar Calendar weekVue demo works fine 1`] = `
                     type="text"
                     unselectable="on"
                   />
+                  <span
+                    class="t-input__input-pre"
+                  >
+                    2020
+                  </span>
                   <span
                     class="t-input__suffix t-input__suffix-icon"
                   >
@@ -11080,7 +11220,7 @@ exports[`Calendar Calendar weekVue demo works fine 1`] = `
                 class="t-input__wrap t-select"
               >
                 <div
-                  class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -11093,6 +11233,11 @@ exports[`Calendar Calendar weekVue demo works fine 1`] = `
                     type="text"
                     unselectable="on"
                   />
+                  <span
+                    class="t-input__input-pre"
+                  >
+                    12
+                  </span>
                   <span
                     class="t-input__suffix t-input__suffix-icon"
                   >
