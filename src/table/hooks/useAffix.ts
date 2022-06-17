@@ -189,6 +189,13 @@ export default function useAffix(props: TdBaseTableProps) {
     updateAffixHeaderOrFooter();
   });
 
+  watch(
+    () => [props.data, props.columns],
+    () => {
+      onHorizontalScroll(tableContentRef.value);
+    },
+  );
+
   onBeforeMount(() => {
     off(document, 'scroll', onDocumentScroll);
     if (affixFooterRef.value) {

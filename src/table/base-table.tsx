@@ -131,9 +131,12 @@ export default defineComponent({
       setUseFixedTableElmRef(tableElmRef.value);
     });
 
-    watch([dataSource], (dataSource) => {
-      setData(dataSource);
-    });
+    watch(
+      () => [props.data, dataSource],
+      () => {
+        setData(isPaginateData.value ? dataSource.value : props.data);
+      },
+    );
 
     const onFixedChange = () => {
       nextTick(() => {
