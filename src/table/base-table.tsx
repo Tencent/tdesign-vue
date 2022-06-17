@@ -187,6 +187,7 @@ export default defineComponent({
       } else {
         lastScrollY = 0;
         updateColumnFixedShadow(target);
+        onHorizontalScroll(target);
       }
       lastScrollY = top;
       emitScrollEvent(e);

@@ -168,10 +168,7 @@ export default function useAffix(props: TdBaseTableProps) {
   };
 
   watch([affixFooterRef, horizontalScrollbarRef, tableContentRef], () => {
-    const timer = setTimeout(() => {
-      addScrollListeners();
-      clearTimeout(timer);
-    }, 0);
+    addScrollListeners();
   });
 
   const addScrollListener = () => {
