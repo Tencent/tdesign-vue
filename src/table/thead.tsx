@@ -28,8 +28,8 @@ export interface TheadProps {
   columnResizeParams: {
     resizeLineRef: HTMLDivElement;
     resizeLineStyle: Object;
-    onColumnMouseover: Function;
-    onColumnMousedown: Function;
+    onColumnMouseover: (e: MouseEvent, col: BaseTableCol<TableRowData>) => void;
+    onColumnMousedown: (e: MouseEvent, col: BaseTableCol<TableRowData>) => void;
   };
   resizable: Boolean;
 }
@@ -62,7 +62,6 @@ export default defineComponent({
         [tableHeaderClasses.multipleHeader]: props.isMultipleHeader,
       },
     ]);
-    const { onColumnMouseover, onColumnMousedown } = props.columnResizeParams;
 
     return {
       ...classnames,
@@ -70,8 +69,6 @@ export default defineComponent({
       theadClasses,
       classPrefix,
       slots,
-      onColumnMouseover,
-      onColumnMousedown,
     };
   },
 
@@ -117,8 +114,8 @@ export default defineComponent({
           const innerTh = renderTitle(h, this.slots, col, index);
           const resizeColumnListener = this.resizable
             ? {
-              mousedown: (e: MouseEvent) => this.onColumnMousedown(e, col),
-              mousemove: (e: MouseEvent) => this.onColumnMouseover(e, col),
+              mousedown: (e: MouseEvent) => this.columnResizeParams?.onColumnMousedown?.(e, col),
+              mousemove: (e: MouseEvent) => this.columnResizeParams?.onColumnMouseover?.(e, col),
             }
             : {};
           const content = isFunction(col.ellipsisTitle) ? col.ellipsisTitle(h, { col, colIndex: index }) : undefined;
