@@ -190,7 +190,6 @@ export default defineComponent({
       } else {
         lastScrollY = 0;
         updateColumnFixedShadow(target);
-        onHorizontalScroll(target);
       }
       lastScrollY = top;
       emitScrollEvent(e);
@@ -199,8 +198,14 @@ export default defineComponent({
     // used for top margin
     const getTFootHeight = () => {
       if (!tableElmRef.value) return;
-      tableFootHeight.value = tableElmRef.value.querySelector('tfoot')?.offsetHeight;
+      tableFootHeight.value = tableElmRef.value.querySelector('tfoot')?.getBoundingClientRect().height;
     };
+
+    watch(tableContentRef, () => {
+      setTableContentRef(tableContentRef.value);
+    });
+
+    watch(tableElmRef, getTFootHeight);
 
     onMounted(() => {
       getTFootHeight();
@@ -282,11 +287,24 @@ export default defineComponent({
         ))}
       </colgroup>
     );
+
+    // onlyVirtualScrollBordered 用于浏览器兼容性处理，只有 chrome 需要调整 bordered，FireFox 和 Safari 不需要
+    const onlyVirtualScrollBordered = !!(this.isVirtual && !this.headerAffixedTop && this.bordered) && /Chrome/.test(navigator?.userAgent);
+    const borderWidth = this.bordered && onlyVirtualScrollBordered ? 1 : 0;
+    const affixHeaderWrapHeight = (this.affixHeaderRef?.getBoundingClientRect().height || 0) - this.scrollbarWidth - borderWidth;
+    /** 两类场景：1. 虚拟滚动，永久显示表头，直到表头消失在可视区域； 2. 表头吸顶，根据滚动情况判断是否显示吸顶表头 */
+    const headerOpacity = props.headerAffixedTop ? Number(this.showAffixHeader) : 1;
+    const affixHeaderWrapHeightStyle = {
+      width: `${this.tableWidth}px`,
+      height: `${affixHeaderWrapHeight}px`,
+      opacity: headerOpacity,
+      marginTop: onlyVirtualScrollBordered ? `${borderWidth}px` : 0,
+    };
     const affixedHeader = Boolean((this.headerAffixedTop || this.isVirtual) && this.tableWidth) && (
       <div
         ref="affixHeaderRef"
-        style={{ width: `${this.tableWidth}px`, opacity: this.headerAffixedTop ? Number(this.showAffixHeader) : 1 }}
-        class={{ [this.tableBaseClass.affixedHeaderElm]: this.headerAffixedTop || this.isVirtual }}
+        style={{ width: `${this.tableWidth}px`, opacity: headerOpacity }}
+        class={['scrollbar', { [this.tableBaseClass.affixedHeaderElm]: this.headerAffixedTop || this.isVirtual }]}
       >
         <table class={this.tableElmClasses} style={{ ...this.tableElementStyles, width: `${this.tableElmWidth}px` }}>
           {colgroup}
@@ -303,6 +321,14 @@ export default defineComponent({
             columnResizeParams={this.columnResizeParams}
           />
         </table>
+      </div>
+    );
+
+    // 添加这一层，是为了隐藏表头的横向滚动条。如果以后不需要照顾 IE 10 以下的项目，则可直接移除这一层
+    // 彼时，可更为使用 CSS 样式中的 .hideScrollbar()
+    const affixHeaderWithWrap = (
+      <div class="t-table__affixed-header-elm-wrap" style={affixHeaderWrapHeightStyle}>
+        {affixedHeader}
       </div>
     );
 
@@ -379,7 +405,6 @@ export default defineComponent({
         style={this.tableContentStyles}
         on={{ scroll: this.onInnerVirtualScroll }}
       >
-        <div ref="resizeLineRef" class={this.tableBaseClass.resizeLine} style={this.resizeLineStyle}></div>
         {this.isVirtual && <div class={this.virtualScrollClasses.cursor} style={virtualStyle} />}
         <table ref="tableElmRef" class={this.tableElmClasses} style={this.tableElementStyles}>
           {colgroup}
@@ -439,23 +464,26 @@ export default defineComponent({
               props={getAffixProps(this.headerAffixedTop, this.headerAffixProps)}
               onFixedChange={this.onFixedChange}
             >
-              {affixedHeader}
+              {affixHeaderWithWrap}
             </Affix>
           ) : (
-            this.isFixedHeader && affixedHeader
+            this.isFixedHeader && affixHeaderWithWrap
           ))}
 
         {tableContent}
 
-        {loadingContent}
-
         {affixedFooter}
 
-        {/* 调整列宽时的指示线 */}
+        {loadingContent}
+
+        {/* 右侧滚动条分隔线 */}
         {this.showRightDivider && (
           <div
             class={this.tableBaseClass.scrollbarDivider}
-            style={{ right: `${this.scrollbarWidth}px`, height: `${this.tableContentRef.offsetHeight}px` }}
+            style={{
+              right: `${this.scrollbarWidth}px`,
+              height: `${this.tableContentRef?.getBoundingClientRect().height}px`,
+            }}
           ></div>
         )}
 
@@ -484,6 +512,9 @@ export default defineComponent({
 
         {/* 吸底的分页器 */}
         {this.paginationAffixedBottom ? <Affix offsetBottom={0}>{pagination}</Affix> : pagination}
+
+        {/* 调整列宽时的指示线 */}
+        <div ref="resizeLineRef" class={this.tableBaseClass.resizeLine} style={this.resizeLineStyle}></div>
       </div>
     );
   },
