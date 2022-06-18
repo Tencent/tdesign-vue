@@ -17,6 +17,7 @@ import useColumnResize from './hooks/useColumnResize';
 import useFixed from './hooks/useFixed';
 import usePagination from './hooks/usePagination';
 import useVirtualScroll from '../hooks/useVirtualScroll';
+import useAffix from './hooks/useAffix';
 import Loading from '../loading';
 import TBody, { extendTableProps } from './tbody';
 import { BaseTableProps } from './interface';
@@ -29,7 +30,6 @@ import { ROW_LISTENERS } from './tr';
 import THead from './thead';
 import TFoot from './tfoot';
 import log from '../_common/js/log';
-import useAffix from './hooks/useAffix';
 import { getAffixProps } from './utils';
 
 export const BASE_TABLE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY'];
@@ -45,7 +45,7 @@ export default defineComponent({
   props: {
     ...props,
     renderExpandedRow: Function as PropType<BaseTableProps['renderExpandedRow']>,
-    onLeafColumnsChange: Function,
+    onLeafColumnsChange: Function as PropType<BaseTableProps['onLeafColumnsChange']>,
   },
 
   setup(props: BaseTableProps, context: SetupContext) {
@@ -140,8 +140,9 @@ export default defineComponent({
     );
 
     watch(spansAndLeafNodes, () => {
-      context.emit('LeafColumnsChange', spansAndLeafNodes.value.leafColumns);
       props.onLeafColumnsChange?.(spansAndLeafNodes.value.leafColumns);
+      // Vue3 do not need next line
+      context.emit('LeafColumnsChange', spansAndLeafNodes.value.leafColumns);
     });
 
     const onFixedChange = () => {
@@ -294,11 +295,14 @@ export default defineComponent({
       </colgroup>
     );
 
+    /**
+     * Affixed Header
+     */
     // onlyVirtualScrollBordered 用于浏览器兼容性处理，只有 chrome 需要调整 bordered，FireFox 和 Safari 不需要
     const onlyVirtualScrollBordered = !!(this.isVirtual && !this.headerAffixedTop && this.bordered) && /Chrome/.test(navigator?.userAgent);
     const borderWidth = this.bordered && onlyVirtualScrollBordered ? 1 : 0;
     const affixHeaderWrapHeight = (this.affixHeaderRef?.getBoundingClientRect().height || 0) - this.scrollbarWidth - borderWidth;
-    /** 两类场景：1. 虚拟滚动，永久显示表头，直到表头消失在可视区域； 2. 表头吸顶，根据滚动情况判断是否显示吸顶表头 */
+    // 两类场景：1. 虚拟滚动，永久显示表头，直到表头消失在可视区域； 2. 表头吸顶，根据滚动情况判断是否显示吸顶表头
     const headerOpacity = props.headerAffixedTop ? Number(this.showAffixHeader) : 1;
     const affixHeaderWrapHeightStyle = {
       width: `${this.tableWidth}px`,
@@ -338,6 +342,9 @@ export default defineComponent({
       </div>
     );
 
+    /**
+     * Affixed Footer
+     */
     let marginScrollbarWidth = this.isWidthOverflow ? this.scrollbarWidth : 0;
     if (this.bordered) {
       marginScrollbarWidth += 1;
@@ -459,6 +466,7 @@ export default defineComponent({
       </div>
     );
     const bottom = !!bottomContent && <div class={this.tableBaseClass.bottomContent}>{bottomContent}</div>;
+
     return (
       <div ref="tableRef" class={this.dynamicBaseTableClasses} style="position: relative">
         {!!topContent && <div class={this.tableBaseClass.topContent}>{topContent}</div>}

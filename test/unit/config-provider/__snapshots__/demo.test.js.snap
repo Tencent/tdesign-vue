@@ -3440,10 +3440,6 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -3667,6 +3663,10 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
     <div
       style="opacity: 1;"
     />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
    
   <br />
@@ -3679,10 +3679,6 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -4023,6 +4019,10 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
     </div>
     <div
       style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
     />
   </div>
    

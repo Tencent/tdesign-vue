@@ -15,13 +15,13 @@
       :columns="columns"
       :footData="footData"
       :rowClassName="rowClassName"
-      :pagination="{ defaultCurrent: 1, defaultPageSize: 5, total: TOTAL }"
+      :pagination="{ defaultCurrent: 1, defaultPageSize: 38, total: TOTAL }"
       :headerAffixedTop="{ offsetTop: 87, zIndex: 1000 }"
       :footerAffixedBottom="
         footerAffixedBottom ? { offsetBottom: paginationAffixedBottom ? 60 : 0, zIndex: 1000 } : false
       "
       :horizontalScrollAffixedBottom="
-        horizontalScrollAffixedBottom ? { offsetBottom: paginationAffixedBottom ? 60 : 0, zIndex: 1000 } : false
+        horizontalScrollAffixedBottom ? { offsetBottom: paginationAffixedBottom ? 61 : 0, zIndex: 1000 } : false
       "
       :paginationAffixedBottom="paginationAffixedBottom"
       tableLayout="auto"
@@ -32,10 +32,6 @@
     >
       <template #t-foot-required> 插槽渲染表尾 </template>
     </t-table>
-    <!-- <t-affix :offsetBottom="100">
-      <div>456</div>
-    </t-affix> -->
-    <!-- <div style="height: 200px;"></div> -->
   </div>
 </template>
 <script lang="jsx">
@@ -151,6 +147,7 @@ export default {
     footerAffixedBottom(val) {
       val && (this.horizontalScrollAffixedBottom = false);
     },
+    // 左侧固定列发生变化时
     fixedLeftColumn: {
       handler(val) {
         this.columns = getColumns(this.$createElement, {
@@ -160,6 +157,7 @@ export default {
       },
       immediate: true,
     },
+    // 右侧固定列发生变化时
     fixedRightColumn(val) {
       this.columns = getColumns(this.$createElement, {
         fixedLeftColumn: this.fixedLeftColumn,
