@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, toRefs, h, onMounted, ref,
+  computed, defineComponent, toRefs, h, onMounted, ref, watch,
 } from '@vue/composition-api';
 import get from 'lodash/get';
 import omit from 'lodash/omit';
@@ -80,11 +80,8 @@ export default defineComponent({
 
     // 拖拽排序功能
     const {
-      isRowHandlerDraggable, isRowDraggable, isColDraggable, setDragSortPrimaryTableRef,
-    } = useDragSort(
-      props,
-      context,
-    );
+      isRowHandlerDraggable, isRowDraggable, isColDraggable, setDragSortPrimaryTableRef, setDragSortColumns,
+    } = useDragSort(props, context);
 
     const { renderTitleWidthIcon } = useTableHeader(props);
     const { renderAsyncLoading } = useAsyncLoading(props, context);
@@ -115,6 +112,12 @@ export default defineComponent({
 
     // 多个 Hook 共用 primaryTableRef
     onMounted(() => {
+      setFilterPrimaryTableRef(primaryTableRef.value);
+      setDragSortPrimaryTableRef(primaryTableRef.value);
+      setDragSortColumns(props.columns);
+    });
+
+    watch(primaryTableRef, () => {
       setFilterPrimaryTableRef(primaryTableRef.value);
       setDragSortPrimaryTableRef(primaryTableRef.value);
     });
@@ -200,6 +203,7 @@ export default defineComponent({
       renderFirstFilterRow,
       renderAsyncLoading,
       onInnerPageChange,
+      setDragSortColumns,
     };
   },
 
@@ -273,6 +277,7 @@ export default defineComponent({
     if (this.expandOnRowClick) {
       on['row-click'] = this.onInnerExpandRowClick;
     }
+    on.LeafColumnsChange = this.setDragSortColumns;
     // replace `scopedSlots={this.$scopedSlots}` of `v-slots={this.$slots}` in Vue3
     return (
       <BaseTable

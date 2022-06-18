@@ -25,8 +25,10 @@
       "
       :paginationAffixedBottom="paginationAffixedBottom"
       tableLayout="auto"
+      dragSort="col"
       bordered
       resizable
+      @drag-sort="onDragSortChange"
     >
       <template #t-foot-required> 插槽渲染表尾 </template>
     </t-table>
@@ -50,19 +52,84 @@ function getData(count) {
       },
       required: i % 4 === 0 ? '是' : '否',
       description: '数据源',
+      expo: 235245,
+      click: 1653,
+      ctr: '12%',
     });
   }
   return data;
 }
 
-const TOTAL = 8;
+const TOTAL = 38;
+
+function getColumns(h, { fixedLeftColumn, fixedRightColumn }) {
+  return [
+    {
+      align: 'center',
+      className: 'row',
+      colKey: 'index',
+      title: '序号',
+      foot: () => <b style="color: rgb(0, 82, 217)">表尾</b>,
+      fixed: fixedLeftColumn ? 'left' : undefined,
+    },
+    {
+      colKey: 'platform',
+      title: '平台',
+      foot: (h, { rowIndex }) => <span>第 {rowIndex + 1} 行</span>,
+    },
+    {
+      colKey: 'type',
+      title: '类型',
+    },
+    {
+      colKey: 'expo',
+      title: '曝光',
+      foot: '-',
+    },
+    {
+      colKey: 'click',
+      title: '点击',
+      foot: '-',
+    },
+    {
+      colKey: 'ctr',
+      title: '点击率',
+      foot: '-',
+    },
+    {
+      colKey: 'default',
+      title: '默认值',
+      foot: (h, { row }) => <span>{row.default || '空'}</span>,
+    },
+    {
+      colKey: 'required',
+      title: '是否必传',
+      // 使用插槽渲染，插槽名称为 't-foot-required'
+      foot: 't-foot-required',
+    },
+    {
+      colKey: 'detail.position',
+      title: '详情信息',
+      ellipsis: true,
+      foot: () => <div>渲染函数输出表尾信息</div>,
+    },
+    {
+      colKey: 'operation',
+      title: '操作',
+      cell: () => '查看',
+      width: 80,
+      foot: '-',
+      fixed: fixedRightColumn ? 'right' : undefined,
+    },
+  ];
+}
 
 export default {
   data() {
     return {
       data: getData(TOTAL),
       TOTAL,
-      // 如果在预渲染场景下，初次渲染的表格宽度和最终呈现宽度不一样，请异步设置表头吸顶
+      // 重要：如果在预渲染场景下，初次渲染的表格宽度和最终呈现宽度不一样，请异步设置表头吸顶
       headerAffixedTop: true,
       footerAffixedBottom: true,
       fixedLeftColumn: true,
@@ -71,74 +138,8 @@ export default {
       paginationAffixedBottom: false,
       // 表尾有一行数据
       footData: [{ type: '全部类型', description: '-' }],
+      columns: [],
     };
-  },
-
-  computed: {
-    columns() {
-      return [
-        {
-          align: 'center',
-          className: 'row',
-          colKey: 'index',
-          title: '序号',
-          foot: () => <b style="color: rgb(0, 82, 217)">表尾</b>,
-          fixed: this.fixedLeftColumn ? 'left' : undefined,
-        },
-        {
-          colKey: 'platform',
-          title: '平台',
-          foot: (h, { rowIndex }) => <span>第 {rowIndex + 1} 行</span>,
-        },
-        {
-          colKey: 'type',
-          title: '类型',
-        },
-        {
-          colKey: 'expo',
-          title: '曝光',
-          cell: () => '-',
-          foot: '-',
-        },
-        {
-          colKey: 'click',
-          title: '点击',
-          cell: () => '-',
-          foot: '-',
-        },
-        {
-          colKey: 'ctr',
-          title: '点击率',
-          cell: () => '-',
-          foot: '-',
-        },
-        {
-          colKey: 'default',
-          title: '默认值',
-          foot: (h, { row }) => <span>{row.default || '空'}</span>,
-        },
-        {
-          colKey: 'required',
-          title: '是否必传',
-          // 使用插槽渲染，插槽名称为 't-foot-required'
-          foot: 't-foot-required',
-        },
-        {
-          colKey: 'detail.position',
-          title: '详情信息',
-          ellipsis: true,
-          foot: () => <div>渲染函数输出表尾信息</div>,
-        },
-        {
-          colKey: 'operation',
-          title: '操作',
-          cell: () => '查看',
-          width: 80,
-          foot: '-',
-          fixed: this.fixedRightColumn ? 'right' : undefined,
-        },
-      ];
-    },
   },
 
   watch: {
@@ -150,6 +151,21 @@ export default {
     footerAffixedBottom(val) {
       val && (this.horizontalScrollAffixedBottom = false);
     },
+    fixedLeftColumn: {
+      handler(val) {
+        this.columns = getColumns(this.$createElement, {
+          fixedLeftColumn: val,
+          fixedRightColumn: this.fixedRightColumn,
+        });
+      },
+      immediate: true,
+    },
+    fixedRightColumn(val) {
+      this.columns = getColumns(this.$createElement, {
+        fixedLeftColumn: this.fixedLeftColumn,
+        fixedRightColumn: val,
+      });
+    },
   },
 
   methods: {
@@ -160,6 +176,9 @@ export default {
     },
     getContainer() {
       return document.body;
+    },
+    onDragSortChange({ newData }) {
+      this.columns = newData;
     },
   },
 };

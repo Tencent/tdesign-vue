@@ -45,6 +45,7 @@ export default defineComponent({
   props: {
     ...props,
     renderExpandedRow: Function as PropType<BaseTableProps['renderExpandedRow']>,
+    onLeafColumnsChange: Function,
   },
 
   setup(props: BaseTableProps, context: SetupContext) {
@@ -137,6 +138,11 @@ export default defineComponent({
         setData(isPaginateData.value ? dataSource.value : props.data);
       },
     );
+
+    watch(spansAndLeafNodes, () => {
+      context.emit('LeafColumnsChange', spansAndLeafNodes.value.leafColumns);
+      props.onLeafColumnsChange?.(spansAndLeafNodes.value.leafColumns);
+    });
 
     const onFixedChange = () => {
       nextTick(() => {
