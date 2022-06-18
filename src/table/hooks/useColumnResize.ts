@@ -4,7 +4,7 @@ import { BaseTableCol, TableRowData } from '../type';
 const DEFAULT_MIN_WIDTH = 80;
 const DEFAULT_MAX_WIDTH = 600;
 
-export default function useColumnResize(tableElmRef: Ref<HTMLTableElement>, refreshTable: () => void) {
+export default function useColumnResize(tableContentRef: Ref<HTMLDivElement>, refreshTable: () => void) {
   const resizeLineRef = ref<HTMLDivElement>();
 
   const resizeLineParams = {
@@ -15,8 +15,9 @@ export default function useColumnResize(tableElmRef: Ref<HTMLTableElement>, refr
 
   const resizeLineStyle = reactive({
     display: 'none',
-    left: '10px',
     height: '10px',
+    left: '10px',
+    bottom: '0',
   });
 
   // 表格列宽拖拽事件
@@ -52,7 +53,7 @@ export default function useColumnResize(tableElmRef: Ref<HTMLTableElement>, refr
 
     const target = (e.target as HTMLElement).closest('th');
     const targetBoundRect = target.getBoundingClientRect();
-    const tableBoundRect = tableElmRef.value?.getBoundingClientRect();
+    const tableBoundRect = tableContentRef.value?.getBoundingClientRect();
     const resizeLinePos = targetBoundRect.right - tableBoundRect.left;
     const colLeft = targetBoundRect.left - tableBoundRect.left;
     const minColLen = col.resize?.minWidth || DEFAULT_MIN_WIDTH;
@@ -67,8 +68,10 @@ export default function useColumnResize(tableElmRef: Ref<HTMLTableElement>, refr
     // 初始化 resizeLine 标记线
     if (resizeLineRef?.value) {
       resizeLineStyle.display = 'block';
+      resizeLineStyle.height = `${tableBoundRect.bottom - targetBoundRect.top}px`;
       resizeLineStyle.left = `${resizeLinePos}px`;
-      resizeLineStyle.height = `${tableElmRef.value?.clientHeight}px`;
+      const parent = tableContentRef.value.parentElement.getBoundingClientRect();
+      resizeLineStyle.bottom = `${parent.bottom - tableBoundRect.bottom}px`;
     }
 
     // 拖拽时鼠标可能会超出 table 范围，需要给 document 绑定拖拽相关事件

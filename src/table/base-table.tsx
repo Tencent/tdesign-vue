@@ -98,7 +98,7 @@ export default defineComponent({
     const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
 
     // 列宽拖拽逻辑
-    const columnResizeParams = useColumnResize(tableElmRef, refreshTable);
+    const columnResizeParams = useColumnResize(tableContentRef, refreshTable);
     const { resizeLineRef, resizeLineStyle } = columnResizeParams;
 
     const dynamicBaseTableClasses = computed(() => [
@@ -519,7 +519,7 @@ export default defineComponent({
         {/* 吸底的分页器 */}
         {this.paginationAffixedBottom ? <Affix offsetBottom={0}>{pagination}</Affix> : pagination}
 
-        {/* 调整列宽时的指示线 */}
+        {/* 调整列宽时的指示线。由于层级需要比较高，因而放在根节点，避免被吸顶表头覆盖。非必要情况，请勿调整辅助线位置 */}
         <div ref="resizeLineRef" class={this.tableBaseClass.resizeLine} style={this.resizeLineStyle}></div>
       </div>
     );
