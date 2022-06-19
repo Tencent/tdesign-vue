@@ -100,11 +100,6 @@ export default function useAffix(props: TdBaseTableProps) {
     }
   };
 
-  const setTableContentRef = (tableContent: HTMLDivElement) => {
-    tableContentRef.value = tableContent;
-    addVerticalScrollListener();
-  };
-
   const onDocumentScroll = () => {
     updateAffixHeaderOrFooter();
   };
@@ -235,6 +230,11 @@ export default function useAffix(props: TdBaseTableProps) {
     off(document, 'scroll', onDocumentScroll);
     removeHorizontalScrollListeners();
   });
+
+  const setTableContentRef = (tableContent: HTMLDivElement) => {
+    tableContentRef.value = tableContent;
+    addVerticalScrollListener();
+  };
 
   return {
     showAffixHeader,

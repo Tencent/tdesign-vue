@@ -15,7 +15,7 @@
       :columns="columns"
       :footData="footData"
       :rowClassName="rowClassName"
-      :pagination="{ defaultCurrent: 1, defaultPageSize: 38, total: TOTAL }"
+      :pagination="{ defaultCurrent: 1, defaultPageSize: 5, total: TOTAL }"
       :headerAffixedTop="{ offsetTop: 87, zIndex: 1000 }"
       :footerAffixedBottom="
         footerAffixedBottom ? { offsetBottom: paginationAffixedBottom ? 60 : 0, zIndex: 1000 } : false
@@ -171,9 +171,6 @@ export default {
     rowClassName({ type }) {
       if (type === 'foot') return 't-tdesign__custom-footer-tr';
       return 't-tdesign__custom-body-tr';
-    },
-    getContainer() {
-      return document.body;
     },
     onDragSortChange({ newData }) {
       this.columns = newData;

@@ -64,7 +64,6 @@ export default defineComponent({
     // 固定表头和固定列逻辑
     const {
       scrollbarWidth,
-      virtualScrollHeaderPos,
       tableWidth,
       tableElmWidth,
       tableContentRef,
@@ -133,7 +132,7 @@ export default defineComponent({
     });
 
     watch(
-      () => [props.data, dataSource],
+      () => [props.data, dataSource, isPaginateData],
       () => {
         setData(isPaginateData.value ? dataSource.value : props.data);
       },
@@ -224,7 +223,6 @@ export default defineComponent({
       isVirtual,
       global,
       tableFootHeight,
-      virtualScrollHeaderPos,
       tableWidth,
       tableElmWidth,
       tableRef,
@@ -337,7 +335,7 @@ export default defineComponent({
     // 添加这一层，是为了隐藏表头的横向滚动条。如果以后不需要照顾 IE 10 以下的项目，则可直接移除这一层
     // 彼时，可更为使用 CSS 样式中的 .hideScrollbar()
     const affixHeaderWithWrap = (
-      <div class="t-table__affixed-header-elm-wrap" style={affixHeaderWrapHeightStyle}>
+      <div class={this.tableBaseClass.affixedHeaderWrap} style={affixHeaderWrapHeightStyle}>
         {affixedHeader}
       </div>
     );
@@ -353,9 +351,9 @@ export default defineComponent({
     const affixedFooter = Boolean(this.footerAffixedBottom && this.footData?.length && this.tableWidth) && (
       <Affix
         class={this.tableBaseClass.affixedFooterWrap}
-        props={getAffixProps(this.footerAffixedBottom, this.footerAffixProps)}
         onFixedChange={this.onFixedChange}
         offsetBottom={marginScrollbarWidth || 0}
+        props={getAffixProps(this.footerAffixedBottom, this.footerAffixProps)}
         style={{ marginTop: `${-1 * (this.tableFootHeight + marginScrollbarWidth)}px` }}
       >
         <div
@@ -394,6 +392,7 @@ export default defineComponent({
       data: this.isVirtual ? this.visibleData : data,
       columns: this.spansAndLeafNodes.leafColumns,
       tableElm: this.tableRef,
+      tableContentElm: this.tableContentRef,
       tableWidth: this.tableWidth,
       isWidthOverflow: this.isWidthOverflow,
       // 虚拟滚动相关属性
@@ -404,7 +403,6 @@ export default defineComponent({
       trs: this.trs,
       bufferSize: this.bufferSize,
       scroll: this.scroll,
-      tableContentElm: this.tableContentRef,
       handleRowMounted: this.handleRowMounted,
       renderExpandedRow: this.renderExpandedRow,
       ...pick(this.$props, extendTableProps),
