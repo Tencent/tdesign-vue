@@ -131,10 +131,10 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
         let { oldIndex: currentIndex, newIndex: targetIndex } = evt;
         const current = columns.value[currentIndex];
         const target = columns.value[targetIndex];
-        if (!current.colKey) {
+        if (!current || !current.colKey) {
           log.error('Table', `colKey is missing in ${JSON.stringify(current)}`);
         }
-        if (!target.colKey) {
+        if (!target || !target.colKey) {
           log.error('Table', `colKey is missing in ${JSON.stringify(target)}`);
         }
         // 寻找外部数据 props.columns 中的真正下标
