@@ -1,9 +1,10 @@
 // 表格 行拖拽 + 列拖拽功能
 import {
-  SetupContext, computed, toRefs, ref, watch,
+  SetupContext, computed, toRefs, ref, watch, h,
 } from '@vue/composition-api';
 import Sortable, { SortableEvent, SortableOptions } from 'sortablejs';
 import get from 'lodash/get';
+import isFunction from 'lodash/isFunction';
 import {
   TableRowData, TdPrimaryTableProps, DragSortContext, PrimaryTableCol,
 } from '../type';
@@ -81,7 +82,11 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
       onEnd(evt: SortableEvent) {
         // 处理受控：拖拽列表恢复原始排序
         dragInstanceTmp?.sort(lastRowList.value);
-        const { oldIndex: currentIndex, newIndex: targetIndex } = evt;
+        let { oldIndex: currentIndex, newIndex: targetIndex } = evt;
+        if ((isFunction(props.firstFullRow) && props.firstFullRow(h)) || context.slots.firstFullRow) {
+          currentIndex -= 1;
+          targetIndex -= 1;
+        }
         const params: DragSortContext<TableRowData> = {
           data: data.value,
           currentIndex,
