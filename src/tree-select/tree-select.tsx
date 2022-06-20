@@ -241,6 +241,8 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
   methods: {
     async popupVisibleChange(visible: boolean) {
       await (this.visible = visible);
+      this.filterText = '';
+      this.filterByText = null;
       if (this.showFilter && this.visible) {
         const searchInput = this.$refs.input as HTMLElement;
         searchInput?.focus();
@@ -273,8 +275,6 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     },
     blur(ctx: InputBlurEventParams[1]) {
       this.focusing = false;
-      this.filterText = '';
-      this.filterByText = null;
       emitEvent<Parameters<TdTreeSelectProps['onBlur']>>(this, 'blur', { value: this.value, ...ctx });
     },
     remove(options: RemoveOptions<TreeOptionData>) {

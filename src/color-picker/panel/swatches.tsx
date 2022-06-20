@@ -6,7 +6,7 @@ import { cloneDeep } from 'lodash';
 import { Select as TSelect, Option as TOption } from '../../select';
 import { Color } from '../utils';
 import { useBaseClassName } from '../hooks';
-import { useConfig, usePrefixClass } from '../../config-provider';
+import { useConfig, usePrefixClass } from '../../hooks/useConfig';
 import useCommonClassName from '../../hooks/useCommonClassName';
 import baseProps from './base-props';
 import { Button as TButton } from '../../button';

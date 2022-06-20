@@ -44,6 +44,44 @@ exports[`Table Table affixVue demo works fine 1`] = `
     </label>
      
     <label
+      class="t-checkbox"
+      style="margin-left: 32px;"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        滚动条吸底
+      </span>
+    </label>
+     
+    <label
+      class="t-checkbox"
+      style="margin-left: 32px;"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        分页器吸底
+      </span>
+    </label>
+     
+    <label
       class="t-checkbox t-is-checked"
       style="margin-left: 32px;"
     >
@@ -83,21 +121,22 @@ exports[`Table Table affixVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-table--bordered t-table--affixed-header t-table--column-fixed"
+    class="t-table t-table--bordered t-table--affixed-header t-table--footer-affixed t-table--column-fixed t-table--col-draggable"
     style="position: relative;"
   >
     <div
       offsettop="0"
     >
-      <div />
+      <div>
+        <div
+          class="t-table__affixed-header-elm-wrap"
+          style="width: 0px; height: -6px; opacity: 1; margin-top: 0px;"
+        />
+      </div>
     </div>
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-auto"
       >
@@ -249,17 +288,17 @@ exports[`Table Table affixVue demo works fine 1`] = `
             <td
               class=""
             >
-              -
+              235245
             </td>
             <td
               class=""
             >
-              -
+              1653
             </td>
             <td
               class=""
             >
-              -
+              12%
             </td>
             <td
               class=""
@@ -307,17 +346,17 @@ exports[`Table Table affixVue demo works fine 1`] = `
             <td
               class=""
             >
-              -
+              235245
             </td>
             <td
               class=""
             >
-              -
+              1653
             </td>
             <td
               class=""
             >
-              -
+              12%
             </td>
             <td
               class=""
@@ -365,17 +404,17 @@ exports[`Table Table affixVue demo works fine 1`] = `
             <td
               class=""
             >
-              -
+              235245
             </td>
             <td
               class=""
             >
-              -
+              1653
             </td>
             <td
               class=""
             >
-              -
+              12%
             </td>
             <td
               class=""
@@ -423,17 +462,17 @@ exports[`Table Table affixVue demo works fine 1`] = `
             <td
               class=""
             >
-              -
+              235245
             </td>
             <td
               class=""
             >
-              -
+              1653
             </td>
             <td
               class=""
             >
-              -
+              12%
             </td>
             <td
               class=""
@@ -481,17 +520,17 @@ exports[`Table Table affixVue demo works fine 1`] = `
             <td
               class=""
             >
-              -
+              235245
             </td>
             <td
               class=""
             >
-              -
+              1653
             </td>
             <td
               class=""
             >
-              -
+              12%
             </td>
             <td
               class=""
@@ -510,180 +549,6 @@ exports[`Table Table affixVue demo works fine 1`] = `
                 class="t-table__ellipsis t-text-ellipsis"
               >
                 读取 4 个数据的嵌套信息值
-              </div>
-            </td>
-            <td
-              class=""
-            >
-              查看
-            </td>
-          </tr>
-          <tr
-            class="t-tdesign__custom-body-tr"
-          >
-            <td
-              class="row t-align-center"
-            >
-              5
-            </td>
-            <td
-              class=""
-            >
-              私有
-            </td>
-            <td
-              class=""
-            >
-              Number
-            </td>
-            <td
-              class=""
-            >
-              -
-            </td>
-            <td
-              class=""
-            >
-              -
-            </td>
-            <td
-              class=""
-            >
-              -
-            </td>
-            <td
-              class=""
-            >
-              0
-            </td>
-            <td
-              class=""
-            >
-              否
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 5 个数据的嵌套信息值
-              </div>
-            </td>
-            <td
-              class=""
-            >
-              查看
-            </td>
-          </tr>
-          <tr
-            class="t-tdesign__custom-body-tr"
-          >
-            <td
-              class="row t-align-center"
-            >
-              6
-            </td>
-            <td
-              class=""
-            >
-              共有
-            </td>
-            <td
-              class=""
-            >
-              Array
-            </td>
-            <td
-              class=""
-            >
-              -
-            </td>
-            <td
-              class=""
-            >
-              -
-            </td>
-            <td
-              class=""
-            >
-              -
-            </td>
-            <td
-              class=""
-            >
-              []
-            </td>
-            <td
-              class=""
-            >
-              否
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 6 个数据的嵌套信息值
-              </div>
-            </td>
-            <td
-              class=""
-            >
-              查看
-            </td>
-          </tr>
-          <tr
-            class="t-tdesign__custom-body-tr"
-          >
-            <td
-              class="row t-align-center"
-            >
-              7
-            </td>
-            <td
-              class=""
-            >
-              私有
-            </td>
-            <td
-              class=""
-            >
-              Object
-            </td>
-            <td
-              class=""
-            >
-              -
-            </td>
-            <td
-              class=""
-            >
-              -
-            </td>
-            <td
-              class=""
-            >
-              -
-            </td>
-            <td
-              class=""
-            >
-              {}
-            </td>
-            <td
-              class=""
-            >
-              否
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                读取 7 个数据的嵌套信息值
               </div>
             </td>
             <td
@@ -743,6 +608,153 @@ exports[`Table Table affixVue demo works fine 1`] = `
         </tfoot>
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    >
+      <div
+        class="t-table__pagination"
+      >
+        <div
+          class="t-pagination t-size-m"
+        >
+          <div
+            class="t-pagination__total"
+          >
+            共 38 项数据
+          </div>
+          <div
+            class="t-select__wrap t-pagination__select"
+          >
+            <div
+              class="t-input__wrap t-select"
+            >
+              <div
+                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              >
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
+                >
+                  5
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
+            disabled="disabled"
+          >
+            <svg
+              class="t-icon t-icon-chevron-left"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </div>
+          <ul
+            class="t-pagination__pager"
+          >
+            <li
+              class="t-pagination__number t-is-current"
+            >
+              1
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              2
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              3
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              4
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              5
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              6
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              7
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              8
+            </li>
+          </ul>
+          <div
+            class="t-pagination__btn t-pagination__btn-next"
+          >
+            <svg
+              class="t-icon t-icon-chevron-right"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -844,10 +856,6 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -1012,12 +1020,12 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
                     class="t-table__async-loading t-is-loading"
                   >
                     <div
-                      class="t-loading--center t-size-m t-loading"
+                      class="t-loading--center t-size-s t-loading"
                     >
                       <svg
                         class="t-loading__gradient t-icon-loading"
                         height="1em"
-                        size="medium"
+                        size="small"
                         version="1.1"
                         viewBox="0 0 14 14"
                         width="1em"
@@ -1049,6 +1057,13 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -1206,10 +1221,6 @@ exports[`Table Table baseVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -1500,133 +1511,141 @@ exports[`Table Table baseVue demo works fine 1`] = `
       </table>
     </div>
     <div
-      class="t-table__pagination"
+      style="opacity: 1;"
     >
       <div
-        class="t-pagination t-size-m"
+        class="t-table__pagination"
       >
         <div
-          class="t-pagination__total"
-        >
-          共 28 项数据
-        </div>
-        <div
-          class="t-select__wrap t-pagination__select"
+          class="t-pagination t-size-m"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-pagination__total"
+          >
+            共 28 项数据
+          </div>
+          <div
+            class="t-select__wrap t-pagination__select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-select"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
-                5
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  5
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="t-pagination__btn t-pagination__btn-prev"
-        >
-          <svg
-            class="t-icon t-icon-chevron-left"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+          <div
+            class="t-pagination__btn t-pagination__btn-prev"
           >
-            <path
-              d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </div>
-        <ul
-          class="t-pagination__pager"
-        >
-          <li
-            class="t-pagination__number"
+            <svg
+              class="t-icon t-icon-chevron-left"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </div>
+          <ul
+            class="t-pagination__pager"
           >
-            1
-          </li>
-          <li
-            class="t-pagination__number t-is-current"
+            <li
+              class="t-pagination__number"
+            >
+              1
+            </li>
+            <li
+              class="t-pagination__number t-is-current"
+            >
+              2
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              3
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              4
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              5
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              6
+            </li>
+          </ul>
+          <div
+            class="t-pagination__btn t-pagination__btn-next"
           >
-            2
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            3
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            4
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            5
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            6
-          </li>
-        </ul>
-        <div
-          class="t-pagination__btn t-pagination__btn-next"
-        >
-          <svg
-            class="t-icon t-icon-chevron-right"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
+            <svg
+              class="t-icon t-icon-chevron-right"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -1640,10 +1659,6 @@ exports[`Table Table customCellVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -1798,6 +1813,13 @@ exports[`Table Table customCellVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -1932,7 +1954,7 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-table--bordered t-table--striped"
+    class="t-table t-table--bordered t-table--striped t-table--col-draggable"
     style="position: relative;"
   >
     <div
@@ -1974,10 +1996,6 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-auto"
       >
@@ -2257,151 +2275,159 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
       </table>
     </div>
     <div
-      class="t-table__pagination"
+      style="opacity: 1;"
     >
       <div
-        class="t-pagination t-size-m"
+        class="t-table__pagination"
       >
         <div
-          class="t-pagination__total"
-        >
-          共 100 项数据
-        </div>
-        <div
-          class="t-select__wrap t-pagination__select"
+          class="t-pagination t-size-m"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-pagination__total"
+          >
+            共 100 项数据
+          </div>
+          <div
+            class="t-select__wrap t-pagination__select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-select"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
-                5
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  5
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-          disabled="disabled"
-        >
-          <svg
-            class="t-icon t-icon-chevron-left"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </div>
-        <ul
-          class="t-pagination__pager"
-        >
-          <li
-            class="t-pagination__number t-is-current"
-          >
-            1
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            2
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            3
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            4
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            5
-          </li>
-          <li
-            class="t-pagination__number t-pagination__number--more"
+          <div
+            class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
+            disabled="disabled"
           >
             <svg
-              class="t-icon t-icon-ellipsis"
+              class="t-icon t-icon-chevron-left"
               fill="none"
               height="1em"
               viewBox="0 0 16 16"
               width="1em"
             >
               <path
-                d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+                d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
                 fill="currentColor"
                 fill-opacity="0.9"
               />
             </svg>
-          </li>
-          <li
-            class="t-pagination__number"
+          </div>
+          <ul
+            class="t-pagination__pager"
           >
-            20
-          </li>
-        </ul>
-        <div
-          class="t-pagination__btn t-pagination__btn-next"
-        >
-          <svg
-            class="t-icon t-icon-chevron-right"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+            <li
+              class="t-pagination__number t-is-current"
+            >
+              1
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              2
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              3
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              4
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              5
+            </li>
+            <li
+              class="t-pagination__number t-pagination__number--more"
+            >
+              <svg
+                class="t-icon t-icon-ellipsis"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              20
+            </li>
+          </ul>
+          <div
+            class="t-pagination__btn t-pagination__btn-next"
           >
-            <path
-              d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
+            <svg
+              class="t-icon t-icon-chevron-right"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -2430,10 +2456,6 @@ exports[`Table Table customColVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-auto"
       >
@@ -2713,151 +2735,159 @@ exports[`Table Table customColVue demo works fine 1`] = `
       </table>
     </div>
     <div
-      class="t-table__pagination"
+      style="opacity: 1;"
     >
       <div
-        class="t-pagination t-size-m"
+        class="t-table__pagination"
       >
         <div
-          class="t-pagination__total"
-        >
-          共 100 项数据
-        </div>
-        <div
-          class="t-select__wrap t-pagination__select"
+          class="t-pagination t-size-m"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-pagination__total"
+          >
+            共 100 项数据
+          </div>
+          <div
+            class="t-select__wrap t-pagination__select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-select"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
-                5
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  5
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-          disabled="disabled"
-        >
-          <svg
-            class="t-icon t-icon-chevron-left"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </div>
-        <ul
-          class="t-pagination__pager"
-        >
-          <li
-            class="t-pagination__number t-is-current"
-          >
-            1
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            2
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            3
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            4
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            5
-          </li>
-          <li
-            class="t-pagination__number t-pagination__number--more"
+          <div
+            class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
+            disabled="disabled"
           >
             <svg
-              class="t-icon t-icon-ellipsis"
+              class="t-icon t-icon-chevron-left"
               fill="none"
               height="1em"
               viewBox="0 0 16 16"
               width="1em"
             >
               <path
-                d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+                d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
                 fill="currentColor"
                 fill-opacity="0.9"
               />
             </svg>
-          </li>
-          <li
-            class="t-pagination__number"
+          </div>
+          <ul
+            class="t-pagination__pager"
           >
-            20
-          </li>
-        </ul>
-        <div
-          class="t-pagination__btn t-pagination__btn-next"
-        >
-          <svg
-            class="t-icon t-icon-chevron-right"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+            <li
+              class="t-pagination__number t-is-current"
+            >
+              1
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              2
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              3
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              4
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              5
+            </li>
+            <li
+              class="t-pagination__number t-pagination__number--more"
+            >
+              <svg
+                class="t-icon t-icon-ellipsis"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              20
+            </li>
+          </ul>
+          <div
+            class="t-pagination__btn t-pagination__btn-next"
           >
-            <path
-              d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
+            <svg
+              class="t-icon t-icon-chevron-right"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -2873,10 +2903,6 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -3122,6 +3148,13 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
         </tfoot>
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -3134,10 +3167,6 @@ exports[`Table Table customHeaderVue demo works fine 1`] = `
   <div
     class="t-table__content"
   >
-    <div
-      class="t-table__resize-line"
-      style="display: none; left: 10px; height: 10px;"
-    />
     <table
       class="t-table--layout-fixed"
     >
@@ -3244,6 +3273,13 @@ exports[`Table Table customHeaderVue demo works fine 1`] = `
       <!---->
     </table>
   </div>
+  <div
+    style="opacity: 1;"
+  />
+  <div
+    class="t-table__resize-line"
+    style="display: none; height: 10px; left: 10px; bottom: 0px;"
+  />
 </div>
 `;
 
@@ -3289,10 +3325,6 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
-        <div
-          class="t-table__resize-line"
-          style="display: none; left: 10px; height: 10px;"
-        />
         <table
           class="t-table--layout-fixed"
         >
@@ -3591,6 +3623,13 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
           <!---->
         </table>
       </div>
+      <div
+        style="opacity: 1;"
+      />
+      <div
+        class="t-table__resize-line"
+        style="display: none; height: 10px; left: 10px; bottom: 0px;"
+      />
     </div>
   </div>
 </div>
@@ -3610,10 +3649,6 @@ exports[`Table Table dragColSortVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
-        <div
-          class="t-table__resize-line"
-          style="display: none; left: 10px; height: 10px;"
-        />
         <table
           class="t-table--layout-fixed"
         >
@@ -3804,6 +3839,13 @@ exports[`Table Table dragColSortVue demo works fine 1`] = `
           <!---->
         </table>
       </div>
+      <div
+        style="opacity: 1;"
+      />
+      <div
+        class="t-table__resize-line"
+        style="display: none; height: 10px; left: 10px; bottom: 0px;"
+      />
     </div>
   </div>
 </div>
@@ -3843,10 +3885,6 @@ exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
-        <div
-          class="t-table__resize-line"
-          style="display: none; left: 10px; height: 10px;"
-        />
         <table
           class="t-table--layout-fixed"
         >
@@ -4117,6 +4155,13 @@ exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
       <div
         class="t-loading--center t-size-s t-loading"
       />
+      <div
+        style="opacity: 1;"
+      />
+      <div
+        class="t-table__resize-line"
+        style="display: none; height: 10px; left: 10px; bottom: 0px;"
+      />
     </div>
   </div>
 </div>
@@ -4136,10 +4181,6 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
-        <div
-          class="t-table__resize-line"
-          style="display: none; left: 10px; height: 10px;"
-        />
         <table
           class="t-table--layout-fixed"
         >
@@ -4334,6 +4375,13 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
           <!---->
         </table>
       </div>
+      <div
+        style="opacity: 1;"
+      />
+      <div
+        class="t-table__resize-line"
+        style="display: none; height: 10px; left: 10px; bottom: 0px;"
+      />
     </div>
   </div>
 </div>
@@ -4350,10 +4398,6 @@ exports[`Table Table emptyVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -4451,6 +4495,13 @@ exports[`Table Table emptyVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
    
   <div
@@ -4460,10 +4511,6 @@ exports[`Table Table emptyVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -4563,6 +4610,13 @@ exports[`Table Table emptyVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
    
   <div
@@ -4572,10 +4626,6 @@ exports[`Table Table emptyVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -4675,6 +4725,13 @@ exports[`Table Table emptyVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -4810,16 +4867,12 @@ exports[`Table Table expandableVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table"
+    class="t-table t-table--horizontal-bar-affixed"
     style="position: relative;"
   >
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-auto"
         style="width: 1200px;"
@@ -5536,6 +5589,27 @@ exports[`Table Table expandableVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      style="margin-top: -12px;"
+    >
+      <div>
+        <div
+          class="scrollbar t-table__scrollbar--obvious"
+          style="width: 0px; overflow: auto; opacity: 1;"
+        >
+          <div
+            style="width: 0px; height: 5px;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -5656,10 +5730,6 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -6004,6 +6074,13 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -6183,10 +6260,6 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -6571,6 +6644,13 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -6674,10 +6754,6 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
       class="t-table__content"
       style="max-height: 300px;"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -7501,6 +7577,13 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
         </tfoot>
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -7589,10 +7672,6 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
       class="t-table__content"
       style="max-height: 300px;"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -8472,6 +8551,13 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
         </tfoot>
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -8506,10 +8592,6 @@ exports[`Table Table lazyVue demo works fine 1`] = `
         class="t-table__content"
         style="height: 300px;"
       >
-        <div
-          class="t-table__resize-line"
-          style="display: none; left: 10px; height: 10px;"
-        />
         <table
           class="t-table--layout-fixed t-table--full-height"
         >
@@ -15589,6 +15671,13 @@ exports[`Table Table lazyVue demo works fine 1`] = `
           <!---->
         </table>
       </div>
+      <div
+        style="opacity: 1;"
+      />
+      <div
+        class="t-table__resize-line"
+        style="display: none; height: 10px; left: 10px; bottom: 0px;"
+      />
     </div>
   </div>
 </div>
@@ -15605,10 +15694,6 @@ exports[`Table Table loadingVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -15752,6 +15837,13 @@ exports[`Table Table loadingVue demo works fine 1`] = `
         </foreignobject>
       </svg>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
    
   <div
@@ -15761,10 +15853,6 @@ exports[`Table Table loadingVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -15897,6 +15985,13 @@ exports[`Table Table loadingVue demo works fine 1`] = `
         </div>
       </div>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
    
   <div
@@ -15906,10 +16001,6 @@ exports[`Table Table loadingVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -16062,6 +16153,13 @@ exports[`Table Table loadingVue demo works fine 1`] = `
         </div>
       </div>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -16074,10 +16172,6 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
   <div
     class="t-table__content"
   >
-    <div
-      class="t-table__resize-line"
-      style="display: none; left: 10px; height: 10px;"
-    />
     <table
       class="t-table--layout-fixed"
     >
@@ -16293,6 +16387,13 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
       <!---->
     </table>
   </div>
+  <div
+    style="opacity: 1;"
+  />
+  <div
+    class="t-table__resize-line"
+    style="display: none; height: 10px; left: 10px; bottom: 0px;"
+  />
 </div>
 `;
 
@@ -16437,10 +16538,6 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
       class="t-table__content"
       style="max-height: 380px;"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <div
         class="t-table__virtual-scroll-cursor"
         style="transform: translate(0, 30000px);"
@@ -16806,6 +16903,13 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -16841,10 +16945,6 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
       <div
         class="t-table__content"
       >
-        <div
-          class="t-table__resize-line"
-          style="display: none; left: 10px; height: 10px;"
-        />
         <table
           class="t-table--layout-fixed"
         >
@@ -17147,6 +17247,13 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
           <!---->
         </table>
       </div>
+      <div
+        style="opacity: 1;"
+      />
+      <div
+        class="t-table__resize-line"
+        style="display: none; height: 10px; left: 10px; bottom: 0px;"
+      />
     </div>
   </div>
 </div>
@@ -17160,10 +17267,6 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
   <div
     class="t-table__content"
   >
-    <div
-      class="t-table__resize-line"
-      style="display: none; left: 10px; height: 10px;"
-    />
     <table
       class="t-table--layout-fixed"
     >
@@ -17255,136 +17358,144 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
     class="t-loading--center t-size-s t-loading"
   />
   <div
-    class="t-table__pagination"
+    style="opacity: 1;"
   >
     <div
-      class="t-pagination t-size-m"
+      class="t-table__pagination"
     >
       <div
-        class="t-pagination__total"
-      >
-        共 0 项数据
-      </div>
-      <div
-        class="t-select__wrap t-pagination__select"
+        class="t-pagination t-size-m"
       >
         <div
-          class="t-input__wrap t-select"
+          class="t-pagination__total"
         >
-          <div
-            class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
-          >
-            <div
-              class="t-input__prefix"
-            />
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder="请选择"
-              readonly="readonly"
-              type="text"
-              unselectable="on"
-            />
-            <span
-              class="t-input__input-pre"
-            >
-              10
-            </span>
-            <span
-              class="t-input__suffix t-input__suffix-icon"
-            >
-              <svg
-                class="t-fake-arrow t-select__right-icon"
-                fill="none"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                  stroke="black"
-                  stroke-opacity="0.9"
-                  stroke-width="1.3"
-                />
-              </svg>
-            </span>
-          </div>
+          共 0 项数据
         </div>
-      </div>
-      <div
-        class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-        disabled="disabled"
-      >
-        <svg
-          class="t-icon t-icon-chevron-left"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </div>
-      <ul
-        class="t-pagination__pager"
-      >
-        <li
-          class="t-pagination__number t-is-current"
-        >
-          1
-        </li>
-      </ul>
-      <div
-        class="t-pagination__btn t-pagination__btn-next t-is-disabled"
-        disabled="disabled"
-      >
-        <svg
-          class="t-icon t-icon-chevron-right"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </div>
-      <div
-        class="t-pagination__jump"
-      >
-        跳至
         <div
-          class="t-input-number t-size-m t-input-number--normal t-pagination__input"
+          class="t-select__wrap t-pagination__select"
         >
           <div
-            class="t-input__wrap"
+            class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-m"
-              ref="refInputElem"
+              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
-              <input
-                autocomplete="off"
-                class="t-input__inner"
-                placeholder=""
-                type="text"
-                unselectable="off"
+              <div
+                class="t-input__prefix"
               />
+              <input
+                autocomplete=""
+                class="t-input__inner"
+                placeholder="请选择"
+                readonly="readonly"
+                type="text"
+                unselectable="on"
+              />
+              <span
+                class="t-input__input-pre"
+              >
+                10
+              </span>
+              <span
+                class="t-input__suffix t-input__suffix-icon"
+              >
+                <svg
+                  class="t-fake-arrow t-select__right-icon"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
+                  />
+                </svg>
+              </span>
             </div>
           </div>
         </div>
-        页
+        <div
+          class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
+          disabled="disabled"
+        >
+          <svg
+            class="t-icon t-icon-chevron-left"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </div>
+        <ul
+          class="t-pagination__pager"
+        >
+          <li
+            class="t-pagination__number t-is-current"
+          >
+            1
+          </li>
+        </ul>
+        <div
+          class="t-pagination__btn t-pagination__btn-next t-is-disabled"
+          disabled="disabled"
+        >
+          <svg
+            class="t-icon t-icon-chevron-right"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </div>
+        <div
+          class="t-pagination__jump"
+        >
+          跳至
+          <div
+            class="t-input-number t-size-m t-input-number--normal t-pagination__input"
+          >
+            <div
+              class="t-input__wrap"
+            >
+              <div
+                class="t-input t-size-m"
+                ref="refInputElem"
+              >
+                <input
+                  autocomplete="off"
+                  class="t-input__inner"
+                  placeholder=""
+                  type="text"
+                  unselectable="off"
+                />
+              </div>
+            </div>
+          </div>
+          页
+        </div>
       </div>
     </div>
   </div>
+  <div
+    class="t-table__resize-line"
+    style="display: none; height: 10px; left: 10px; bottom: 0px;"
+  />
 </div>
 `;
 
@@ -17397,10 +17508,6 @@ exports[`Table Table paginationVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -17686,176 +17793,184 @@ exports[`Table Table paginationVue demo works fine 1`] = `
       </table>
     </div>
     <div
-      class="t-table__pagination"
+      style="opacity: 1;"
     >
       <div
-        class="t-pagination t-size-m"
+        class="t-table__pagination"
       >
         <div
-          class="t-pagination__total"
-        >
-          共 60 项数据
-        </div>
-        <div
-          class="t-select__wrap t-pagination__select"
+          class="t-pagination t-size-m"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-pagination__total"
+          >
+            共 60 项数据
+          </div>
+          <div
+            class="t-select__wrap t-pagination__select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-select"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
-                5
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  5
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="t-pagination__btn t-pagination__btn-prev"
-        >
-          <svg
-            class="t-icon t-icon-chevron-left"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </div>
-        <ul
-          class="t-pagination__pager"
-        >
-          <li
-            class="t-pagination__number"
-          >
-            1
-          </li>
-          <li
-            class="t-pagination__number t-is-current"
-          >
-            2
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            3
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            4
-          </li>
-          <li
-            class="t-pagination__number"
-          >
-            5
-          </li>
-          <li
-            class="t-pagination__number t-pagination__number--more"
+          <div
+            class="t-pagination__btn t-pagination__btn-prev"
           >
             <svg
-              class="t-icon t-icon-ellipsis"
+              class="t-icon t-icon-chevron-left"
               fill="none"
               height="1em"
               viewBox="0 0 16 16"
               width="1em"
             >
               <path
-                d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+                d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
                 fill="currentColor"
                 fill-opacity="0.9"
               />
             </svg>
-          </li>
-          <li
-            class="t-pagination__number"
+          </div>
+          <ul
+            class="t-pagination__pager"
           >
-            12
-          </li>
-        </ul>
-        <div
-          class="t-pagination__btn t-pagination__btn-next"
-        >
-          <svg
-            class="t-icon t-icon-chevron-right"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </div>
-        <div
-          class="t-pagination__jump"
-        >
-          跳至
+            <li
+              class="t-pagination__number"
+            >
+              1
+            </li>
+            <li
+              class="t-pagination__number t-is-current"
+            >
+              2
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              3
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              4
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              5
+            </li>
+            <li
+              class="t-pagination__number t-pagination__number--more"
+            >
+              <svg
+                class="t-icon t-icon-ellipsis"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </li>
+            <li
+              class="t-pagination__number"
+            >
+              12
+            </li>
+          </ul>
           <div
-            class="t-input-number t-size-m t-input-number--normal t-pagination__input"
+            class="t-pagination__btn t-pagination__btn-next"
           >
+            <svg
+              class="t-icon t-icon-chevron-right"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-pagination__jump"
+          >
+            跳至
             <div
-              class="t-input__wrap"
+              class="t-input-number t-size-m t-input-number--normal t-pagination__input"
             >
               <div
-                class="t-input t-size-m"
-                ref="refInputElem"
+                class="t-input__wrap"
               >
-                <input
-                  autocomplete="off"
-                  class="t-input__inner"
-                  placeholder=""
-                  type="text"
-                  unselectable="off"
-                />
+                <div
+                  class="t-input t-size-m"
+                  ref="refInputElem"
+                >
+                  <input
+                    autocomplete="off"
+                    class="t-input__inner"
+                    placeholder=""
+                    type="text"
+                    unselectable="off"
+                  />
+                </div>
               </div>
             </div>
+            页
           </div>
-          页
         </div>
       </div>
     </div>
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -17869,10 +17984,6 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -18303,12 +18414,57 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
 
 exports[`Table Table selectSingleVue demo works fine 1`] = `
 <div>
+  <div>
+    <label
+      class="t-checkbox"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        高亮行选中
+      </span>
+    </label>
+     
+    <label
+      class="t-checkbox"
+    >
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        整行选中
+      </span>
+    </label>
+  </div>
+   
   <div
     class="t-table"
     style="position: relative;"
@@ -18316,10 +18472,6 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -18739,6 +18891,13 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -18753,10 +18912,6 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -19018,6 +19173,13 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -19062,10 +19224,6 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -19368,6 +19526,13 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -19437,10 +19602,6 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -20047,6 +20208,13 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;
@@ -20148,10 +20316,6 @@ exports[`Table Table treeVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -20922,110 +21086,118 @@ exports[`Table Table treeVue demo works fine 1`] = `
       </table>
     </div>
     <div
-      class="t-table__pagination"
+      style="opacity: 1;"
     >
       <div
-        class="t-pagination t-size-m"
+        class="t-table__pagination"
       >
         <div
-          class="t-pagination__total"
-        >
-          共 5 项数据
-        </div>
-        <div
-          class="t-select__wrap t-pagination__select"
+          class="t-pagination t-size-m"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-pagination__total"
+          >
+            共 5 项数据
+          </div>
+          <div
+            class="t-select__wrap t-pagination__select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-select"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
-                10
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  10
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-          disabled="disabled"
-        >
-          <svg
-            class="t-icon t-icon-chevron-left"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+          <div
+            class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
+            disabled="disabled"
           >
-            <path
-              d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </div>
-        <ul
-          class="t-pagination__pager"
-        >
-          <li
-            class="t-pagination__number t-is-current"
+            <svg
+              class="t-icon t-icon-chevron-left"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </div>
+          <ul
+            class="t-pagination__pager"
           >
-            1
-          </li>
-        </ul>
-        <div
-          class="t-pagination__btn t-pagination__btn-next t-is-disabled"
-          disabled="disabled"
-        >
-          <svg
-            class="t-icon t-icon-chevron-right"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+            <li
+              class="t-pagination__number t-is-current"
+            >
+              1
+            </li>
+          </ul>
+          <div
+            class="t-pagination__btn t-pagination__btn-next t-is-disabled"
+            disabled="disabled"
           >
-            <path
-              d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
+            <svg
+              class="t-icon t-icon-chevron-right"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
 </div>
 `;

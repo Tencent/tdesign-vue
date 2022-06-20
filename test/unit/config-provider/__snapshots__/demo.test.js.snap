@@ -24,7 +24,7 @@ exports[`ConfigProvider ConfigProvider calendarVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-s t-is-readonly t-input--prefix t-input--suffix"
+              class="t-input t-size-s t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -37,6 +37,11 @@ exports[`ConfigProvider ConfigProvider calendarVue demo works fine 1`] = `
                 type="text"
                 unselectable="on"
               />
+              <span
+                class="t-input__input-pre"
+              >
+                2020
+              </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
               >
@@ -70,7 +75,7 @@ exports[`ConfigProvider ConfigProvider calendarVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-s t-is-readonly t-input--prefix t-input--suffix"
+              class="t-input t-size-s t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -83,6 +88,11 @@ exports[`ConfigProvider ConfigProvider calendarVue demo works fine 1`] = `
                 type="text"
                 unselectable="on"
               />
+              <span
+                class="t-input__input-pre"
+              >
+                12
+              </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
               >
@@ -3430,10 +3440,6 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -3654,6 +3660,13 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
    
   <br />
@@ -3666,10 +3679,6 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
     <div
       class="t-table__content"
     >
-      <div
-        class="t-table__resize-line"
-        style="display: none; left: 10px; height: 10px;"
-      />
       <table
         class="t-table--layout-fixed"
       >
@@ -4008,6 +4017,13 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
         <!---->
       </table>
     </div>
+    <div
+      style="opacity: 1;"
+    />
+    <div
+      class="t-table__resize-line"
+      style="display: none; height: 10px; left: 10px; bottom: 0px;"
+    />
   </div>
    
   <br />

@@ -1,7 +1,7 @@
 {
   "name": "tdesign-vue",
   "purename": "tdesign",
-  "version": "0.42.1",
+  "version": "0.42.2",
   "description": "tdesign-vue",
   "title": "tdesign-vue",
   "keywords": [
@@ -30,6 +30,17 @@
     "es/**/style/**",
     "esm/**/style/**"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tencent/tdesign-vue.git"
+  },
+  "homepage": "https://github.com/Tencent/tdesign-vue/blob/develop/README.md",
+  "bugs": {
+    "url": "https://github.com/Tencent/tdesign-vue/issues"
+  },
   "scripts": {
     "update:coverage-badge": "node script/test/generate-coverage.js",
     "cypress": "cypress run --config-file script/test/cypress.json",
