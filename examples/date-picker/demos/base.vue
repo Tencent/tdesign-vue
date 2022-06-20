@@ -6,13 +6,14 @@
       <t-radio-button value="time-stamp">time-stamp</t-radio-button>
     </t-radio-group>
 
-    <t-date-picker v-model="date2" :value-type="valueType" />
+    <t-date-picker v-model="date2" :value-type="valueType" @change="handleChange" />
     <t-date-picker
       v-model="date"
       placeholder="可清除、可输入的日期选择器"
       :value-type="valueType"
       clearable
       allow-input
+      @change="handleChange"
     />
   </div>
 </template>
@@ -25,6 +26,11 @@ export default {
       date2: '',
       valueType: 'YYYY-MM-DD',
     };
+  },
+  methods: {
+    handleChange(v) {
+      console.log('value:', v);
+    },
   },
 };
 </script>

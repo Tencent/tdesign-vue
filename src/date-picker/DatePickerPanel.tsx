@@ -17,7 +17,7 @@ import TSinglePanel from './panel/SinglePanel';
 export default defineComponent({
   name: 'TDatePickerPanel',
   props,
-  setup(props: TdDatePickerPanelProps) {
+  setup(props: TdDatePickerPanelProps, { emit }) {
     const {
       cacheValue, value, year, month, time, onChange,
     } = useSingleValue(props);
@@ -33,6 +33,7 @@ export default defineComponent({
     // 日期点击
     function onCellClick(date: Date, { e }: { e: MouseEvent }) {
       props.onCellClick?.({ date, e });
+      emit('cell-click', { date, e });
 
       // date 模式自动切换年月
       if (props.mode === 'date') {
@@ -78,9 +79,19 @@ export default defineComponent({
           date: dayjs(value.value).toDate(),
           trigger: flag === 0 ? 'today' : (`year-${triggerMap[flag]}` as DatePickerYearChangeTrigger),
         });
+        emit('year-change', {
+          year: nextYear,
+          date: dayjs(value.value).toDate(),
+          trigger: flag === 0 ? 'today' : (`year-${triggerMap[flag]}` as DatePickerYearChangeTrigger),
+        });
       }
       if (month.value !== nextMonth) {
         props.onMonthChange?.({
+          month: nextMonth,
+          date: dayjs(value.value).toDate(),
+          trigger: flag === 0 ? 'today' : (`month-${triggerMap[flag]}` as DatePickerMonthChangeTrigger),
+        });
+        emit('month-change', {
           month: nextMonth,
           date: dayjs(value.value).toDate(),
           trigger: flag === 0 ? 'today' : (`month-${triggerMap[flag]}` as DatePickerMonthChangeTrigger),
@@ -115,6 +126,11 @@ export default defineComponent({
         date: dayjs(value.value).toDate(),
         trigger: 'time-hour',
       });
+      emit('time-change', {
+        time: val,
+        date: dayjs(value.value).toDate(),
+        trigger: 'time-hour',
+      });
     }
 
     // 确定
@@ -124,6 +140,7 @@ export default defineComponent({
         trigger: 'confirm',
       });
       props.onConfirm?.({ date: dayjs(cacheValue.value as string).toDate(), e });
+      emit('confirm', { date: dayjs(cacheValue.value as string).toDate(), e });
     }
 
     // 预设
@@ -134,6 +151,7 @@ export default defineComponent({
         trigger: 'preset',
       });
       props.onPresetClick?.({ e, preset });
+      emit('preset-click', { e, preset });
     }
 
     function onYearChange(nextYear: number) {
@@ -144,12 +162,22 @@ export default defineComponent({
         date: dayjs(value.value).toDate(),
         trigger: 'year-select',
       });
+      emit('year-change', {
+        year: year.value,
+        date: dayjs(value.value).toDate(),
+        trigger: 'year-select',
+      });
     }
 
     function onMonthChange(nextMonth: number) {
       month.value = nextMonth;
 
       props.onMonthChange?.({
+        month: month.value,
+        date: dayjs(value.value).toDate(),
+        trigger: 'month-select',
+      });
+      emit('month-change', {
         month: month.value,
         date: dayjs(value.value).toDate(),
         trigger: 'month-select',

@@ -34,7 +34,10 @@ export default function useFormat(props: formatProps) {
 
     if (Array.isArray(newDate)) {
       result = formatRange({
-        newDate, format, targetFormat, sortType,
+        newDate,
+        format,
+        targetFormat,
+        sortType,
       });
       // 格式化失败提示
       if (result.some((r) => r === 'Invalid Date')) {
@@ -63,11 +66,11 @@ export default function useFormat(props: formatProps) {
 
     if (Array.isArray(value)) {
       if (realFormat === 'time-stamp') return value.every((v) => dayjs(v).isValid());
-      return value.every((v) => dayjs(v, realFormat).isValid() || dayjs(v).isValid());
+      return value.every((v) => dayjs(v).isValid() || dayjs(v, realFormat).isValid());
     }
 
     if (realFormat === 'time-stamp') return dayjs(value).isValid();
-    return dayjs(value, realFormat).isValid() || dayjs(value).isValid();
+    return dayjs(value).isValid() || dayjs(value, realFormat).isValid();
   }
 
   function formatTime(value: DateValue | DateValue[]) {

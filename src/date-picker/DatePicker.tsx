@@ -15,7 +15,7 @@ import TSinglePanel from './panel/SinglePanel';
 export default defineComponent({
   name: 'TDatePicker',
   props,
-  setup(props) {
+  setup(props, { emit }) {
     const COMPONENT_NAME = usePrefixClass('date-picker');
 
     const {
@@ -31,7 +31,7 @@ export default defineComponent({
       time,
       inputRef,
       onChange,
-    } = useSingle(props);
+    } = useSingle(props, { emit });
 
     const { formatTime, formatDate, format } = useFormat({
       mode: props.mode,
@@ -82,6 +82,7 @@ export default defineComponent({
       }
 
       props.onPick?.(date);
+      emit('pick', date);
     }
 
     // 头部快速切换
@@ -134,6 +135,7 @@ export default defineComponent({
       inputValue.value = formatDate(nextDate);
 
       props.onPick?.(nextDate);
+      emit('pick', nextDate);
     }
 
     // 确定
@@ -193,7 +195,12 @@ export default defineComponent({
     }));
 
     return {
-      COMPONENT_NAME, inputValue, datePickerPopupProps, datePickerInputProps, popupVisible, panelProps,
+      COMPONENT_NAME,
+      inputValue,
+      datePickerPopupProps,
+      datePickerInputProps,
+      popupVisible,
+      panelProps,
     };
   },
   render() {

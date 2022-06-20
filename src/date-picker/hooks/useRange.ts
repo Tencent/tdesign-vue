@@ -8,7 +8,7 @@ import useRangeValue from './useRangeValue';
 
 export const PARTIAL_MAP = { first: 'start', second: 'end' };
 
-export default function useRange(props: TdDateRangePickerProps) {
+export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
   const COMPONENT_NAME = usePrefixClass('date-range-picker');
   const { global } = useConfig('datePicker');
 
@@ -57,16 +57,27 @@ export default function useRange(props: TdDateRangePickerProps) {
     },
     onBlur: (newVal: string[], { e, position }: any) => {
       props.onBlur?.({ value: newVal, partial: PARTIAL_MAP[position], e });
+      emit('blur', { value: newVal, partial: PARTIAL_MAP[position], e });
     },
     onFocus: (newVal: string[], { e, position }: any) => {
       props.onFocus?.({ value: newVal, partial: PARTIAL_MAP[position], e });
+      emit('focus', { value: newVal, partial: PARTIAL_MAP[position], e });
       activeIndex.value = position === 'first' ? 0 : 1;
     },
     onChange: (newVal: string[], { e, position }: any) => {
       const index = position === 'first' ? 0 : 1;
 
       props.onInput?.({
-        input: newVal[index], value: value.value, partial: PARTIAL_MAP[position], e,
+        input: newVal[index],
+        value: value.value,
+        partial: PARTIAL_MAP[position],
+        e,
+      });
+      emit('input', {
+        input: newVal[index],
+        value: value.value,
+        partial: PARTIAL_MAP[position],
+        e,
       });
       inputValue.value = newVal;
 

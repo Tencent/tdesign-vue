@@ -6,7 +6,7 @@ import { TdDatePickerProps, DateValue } from '../type';
 import useFormat from './useFormat';
 import useSingleValue from './useSingleValue';
 
-export default function useSingle(props: TdDatePickerProps) {
+export default function useSingle(props: TdDatePickerProps, { emit }: any) {
   const COMPONENT_NAME = usePrefixClass('date-picker');
   const { global } = useConfig('datePicker');
 
@@ -49,12 +49,15 @@ export default function useSingle(props: TdDatePickerProps) {
     },
     onBlur: (val: string, context: { e: FocusEvent }) => {
       props.onBlur?.({ value: val, e: context.e });
+      emit('blur', { value: val, e: context.e });
     },
     onFocus: (_: string, { e }: { e: FocusEvent }) => {
       props.onFocus?.({ value: value.value, e });
+      emit('focus', { value: value.value, e });
     },
     onChange: (val: string, context: { e: InputEvent }) => {
       props.onInput?.({ input: val, value: value.value, e: context.e });
+      emit('input', { input: val, value: value.value, e: context.e });
 
       // 输入事件
       inputValue.value = val;

@@ -18,7 +18,7 @@ import { subtractMonth, addMonth, extractTimeObj } from '../_common/js/date-pick
 export default defineComponent({
   name: 'TDateRangePickerPanel',
   props,
-  setup(props: TdDateRangePickerPanelProps) {
+  setup(props: TdDateRangePickerPanelProps, { emit }) {
     const {
       value, year, month, time, cacheValue, isFirstValueSelected, onChange,
     } = useRangeValue(props);
@@ -60,18 +60,6 @@ export default defineComponent({
       nextValue[activeIndex.value] = formatDate(date) as string;
       cacheValue.value = nextValue;
 
-      // date 模式自动切换年月
-      if (props.mode === 'date') {
-        // 选择了不属于面板中展示月份的日期
-        const partialIndex = partial === 'start' ? 0 : 1;
-        const isAdditional = dayjs(date).month() !== month[partialIndex];
-        if (isAdditional) {
-          // 保证左侧时间小于右侧
-          if (activeIndex.value === 0) month.value = [dayjs(date).month(), Math.min(dayjs(date).month() + 1, 11)];
-          if (activeIndex.value === 1) month.value = [Math.max(dayjs(date).month() - 1, 0), dayjs(date).month()];
-        }
-      }
-
       // 有时间选择器走 confirm 逻辑
       if (props.enableTimePicker) return;
 
@@ -87,6 +75,7 @@ export default defineComponent({
       }
 
       props.onCellClick?.({ e, partial, date: value.value.map((v: string) => dayjs(v).toDate()) });
+      emit('cell-click', { e, partial, date: value.value.map((v: string) => dayjs(v).toDate()) });
     }
 
     // 头部快速切换
@@ -140,9 +129,21 @@ export default defineComponent({
           date: value.value.map((v: string) => dayjs(v).toDate()),
           trigger: flag === 0 ? 'today' : (`year-${triggerMap[flag]}` as DatePickerYearChangeTrigger),
         });
+        emit('year-change', {
+          partial,
+          year: nextYear[partialIndex],
+          date: value.value.map((v: string) => dayjs(v).toDate()),
+          trigger: flag === 0 ? 'today' : (`year-${triggerMap[flag]}` as DatePickerYearChangeTrigger),
+        });
       }
       if (month.value.some((m) => !nextMonth.includes(m))) {
         props.onMonthChange?.({
+          partial,
+          month: nextMonth[partialIndex],
+          date: value.value.map((v: string) => dayjs(v).toDate()),
+          trigger: flag === 0 ? 'today' : (`month-${triggerMap[flag]}` as DatePickerMonthChangeTrigger),
+        });
+        emit('month-change', {
           partial,
           month: nextMonth[partialIndex],
           date: value.value.map((v: string) => dayjs(v).toDate()),
@@ -187,6 +188,12 @@ export default defineComponent({
         partial: activeIndex.value ? 'end' : 'start',
         trigger: 'time-hour',
       });
+      emit('time-change', {
+        time: val,
+        date: value.value.map((v: string) => dayjs(v).toDate()),
+        partial: activeIndex.value ? 'end' : 'start',
+        trigger: 'time-hour',
+      });
     }
 
     // 确定
@@ -209,6 +216,7 @@ export default defineComponent({
       }
 
       props.onConfirm?.({ date: value.value.map((v: string) => dayjs(v).toDate()), e });
+      emit('confirm', { date: value.value.map((v: string) => dayjs(v).toDate()), e });
     }
 
     // 预设
@@ -245,6 +253,12 @@ export default defineComponent({
         date: value.value.map((v: string) => dayjs(v).toDate()),
         trigger: 'year-select',
       });
+      emit('year-change', {
+        partial,
+        year: nextYear[partialIndex],
+        date: value.value.map((v: string) => dayjs(v).toDate()),
+        trigger: 'year-select',
+      });
     }
 
     function onMonthChange(nextVal: number, { partial }: { partial: DateRangePickerPartial }) {
@@ -262,6 +276,12 @@ export default defineComponent({
       month.value = nextMonth;
 
       props.onMonthChange?.({
+        partial,
+        month: nextMonth[partialIndex],
+        date: value.value.map((v: string) => dayjs(v).toDate()),
+        trigger: 'month-select',
+      });
+      emit('month-change', {
         partial,
         month: nextMonth[partialIndex],
         date: value.value.map((v: string) => dayjs(v).toDate()),

@@ -17,7 +17,7 @@ import { subtractMonth, addMonth, extractTimeObj } from '../_common/js/date-pick
 export default defineComponent({
   name: 'TDateRangePicker',
   props,
-  setup(props) {
+  setup(props, { emit }) {
     const COMPONENT_NAME = usePrefixClass('date-range-picker');
 
     const {
@@ -34,7 +34,7 @@ export default defineComponent({
       isHoverCell,
       isFirstValueSelected,
       onChange,
-    } = useRange(props);
+    } = useRange(props, { emit });
 
     const {
       formatTime, formatDate, isValidDate, format, timeFormat,
@@ -85,6 +85,7 @@ export default defineComponent({
     // 日期点击
     function onCellClick(date: Date, { e, partial }: { e: MouseEvent; partial: DateRangePickerPartial }) {
       props.onPick?.(date, { e, partial });
+      emit('pick', date, { e, partial });
 
       isHoverCell.value = false;
       isSelected.value = true;
