@@ -58,12 +58,10 @@ export default {
   /** 选中值 */
   value: {
     type: String,
-    default: '',
   },
   /** 选中值，非受控属性 */
   defaultValue: {
     type: String,
-    default: '',
   },
   /** 当输入框失去焦点时触发，value 表示组件当前有效值 */
   onBlur: Function as PropType<TdTimePickerProps['onBlur']>,

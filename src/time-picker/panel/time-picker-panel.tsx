@@ -14,15 +14,13 @@ dayjs.extend(customParseFormat);
 
 export default defineComponent({
   name: 'TimePickerPanel',
-
   props: {
     ...panelProps(),
     handleConfirmClick: Function,
     onChange: Function,
     disableTime: Function,
   },
-
-  setup(props) {
+  setup(props, ctx) {
     const panelClassName = usePrefixClass('time-picker__panel');
     const triggerScroll = ref(false);
     const { global } = useConfig('timePicker');
@@ -49,6 +47,10 @@ export default defineComponent({
       triggerScroll.value = false;
     };
 
+    const handleChange = (v: string) => {
+      props.onChange?.(v);
+      ctx.emit('change', v);
+    };
     // 渲染后执行update 使面板滚动至当前时间位置
     onMounted(() => {
       panelColUpdate();
@@ -60,14 +62,18 @@ export default defineComponent({
         panelColUpdate();
       },
     );
+
     return {
+      showNowTimeBtn,
       panelClassName,
       triggerScroll,
       resetTriggerScroll,
       defaultValue,
       global,
+      handleChange,
     };
   },
+
   render() {
     return (
       <div class={this.panelClassName}>
@@ -75,13 +81,13 @@ export default defineComponent({
           <SinglePanel
             {...{
               props: {
+                value: this.value,
+                onChange: this.handleChange,
                 format: this.format || DEFAULT_FORMAT,
                 steps: this.steps || DEFAULT_STEPS,
-                value: this.value,
                 triggerScroll: this.triggerScroll,
-                onChange: this.onChange,
-                resetTriggerScroll: this.resetTriggerScroll,
                 disableTime: this.disableTime,
+                resetTriggerScroll: this.resetTriggerScroll,
               },
             }}
           />
