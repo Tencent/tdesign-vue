@@ -2726,7 +2726,6 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
   >
     <div
       class="t-input__wrap t-select-input--empty"
-      classname="t-time-picker__group,[object Object]"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"

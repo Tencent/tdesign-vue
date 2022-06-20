@@ -3,27 +3,14 @@ import dayjs from 'dayjs';
 
 import * as Props from '../props';
 
-// 布尔类型
-const BooleanType = {
-  type: Boolean,
-  default: true,
-  validator(v: boolean): boolean {
-    return typeof v === 'boolean';
-  },
-};
-
 export const panelProps = () => ({
   disabled: {
-    ...BooleanType,
-    ...{
-      default: false,
-    },
+    type: Boolean,
+    default: false,
   },
   isFocus: {
-    ...BooleanType,
-    ...{
-      default: false,
-    },
+    type: Boolean,
+    default: false,
   },
   value: {
     type: String,
@@ -38,16 +25,11 @@ export const panelProps = () => ({
     default: () => [1, 1, 1],
   },
   isShowPanel: {
-    ...BooleanType,
-    ...{
-      default: false,
-    },
+    type: Boolean,
+    default: false,
   },
   hideDisabledTime: {
     ...Props.default.hideDisabledTime,
-  },
-  disableTime: {
-    type: Function,
   },
   isFooterDisplay: {
     type: Boolean,
@@ -64,21 +46,11 @@ export const panelColProps = () => ({
     type: String,
     default: '',
   },
-  range: {
-    type: Array as PropType<Array<dayjs.Dayjs>>,
-    default: () => [] as Array<dayjs.Dayjs>,
-  },
   steps: {
     type: Array as PropType<Array<string | number>>,
     default: () => [1, 1, 1],
   },
   hideDisabledTime: {
     ...Props.default.hideDisabledTime,
-  },
-  disableTime: {
-    type: Function,
-  },
-  localeMeridiems: {
-    type: Array as PropType<Array<string>>,
   },
 });

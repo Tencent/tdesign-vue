@@ -33,7 +33,6 @@ export default defineComponent({
     resetTriggerScroll: Function,
     disableTime: Function,
   },
-
   setup(props, ctx) {
     const {
       steps, value, format, position, triggerScroll,

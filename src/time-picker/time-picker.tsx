@@ -9,20 +9,18 @@ import TimePickerPanel from './panel/time-picker-panel';
 import TSelectInput from '../select-input';
 import { formatInputValue, validateInputValue } from '../_common/js/time-picker/utils';
 
-import props from './props';
-
 // hooks
 import useVModel from '../hooks/useVModel';
 import { useConfig, usePrefixClass } from '../hooks/useConfig';
+
+import props from './props';
 
 dayjs.extend(customParseFormat);
 
 export default defineComponent({
   name: 'TTimePicker',
-
   props: { ...props },
-
-  setup(props) {
+  setup(props, ctx) {
     const { classPrefix } = useConfig('classPrefix');
     const componentName = usePrefixClass('time-picker');
 
@@ -42,7 +40,13 @@ export default defineComponent({
 
     const handleShowPopup = (visible: boolean, context: { e: MouseEvent }) => {
       isShowPanel.value = visible;
-      visible ? props.onOpen?.(context) : props.onClose?.(context); // trigger on-open and on-close
+      if (visible) {
+        props.onOpen?.(context);
+        ctx.emit('open', context);
+      } else {
+        props.onClose?.(context);
+        ctx.emit('close', context);
+      }
     };
 
     const handleClear = (context: { e: MouseEvent }) => {
@@ -64,6 +68,7 @@ export default defineComponent({
         }
       }
       props.onBlur?.({ value, e });
+      ctx.emit('blur', { value, e });
     };
 
     const handleClickConfirm = () => {
@@ -78,6 +83,7 @@ export default defineComponent({
 
     const handleOnFocus = (context: { value: string; e: FocusEvent }) => {
       props.onFocus?.(context);
+      ctx.emit('focus', context);
     };
 
     watch(
@@ -107,42 +113,46 @@ export default defineComponent({
     return (
       <div class={this.componentName}>
         <TSelectInput
-          onFocus={this.handleOnFocus}
-          onClear={this.handleClear}
-          disabled={this.disabled}
-          clearable={this.clearable}
-          allowInput={this.allowInput}
-          className={this.inputClasses}
-          suffixIcon={() => <TimeIcon />}
-          popupVisible={this.isShowPanel}
-          onInputChange={this.handleInputChange}
-          onBlur={this.handleInputBlur}
-          placeholder={!this.innerValue ? this.placeholder || this.global.placeholder : undefined}
-          value={this.isShowPanel ? this.currentValue : this.innerValue ?? undefined}
-          inputValue={this.isShowPanel ? this.currentValue : this.innerValue ?? undefined}
-          inputProps={this.inputProps}
-          popupProps={{
-            overlayStyle: { width: 'auto' },
-            onVisibleChange: this.handleShowPopup,
-            ...(this.popupProps as object),
+          {...{
+            props: {
+              onFocus: this.handleOnFocus,
+              onClear: this.handleClear,
+              onBlur: this.handleInputBlur,
+              onInputChange: this.handleInputChange,
+              disabled: this.disabled,
+              clearable: this.clearable,
+              allowInput: this.allowInput,
+              class: this.inputClasses,
+              suffixIcon: () => <TimeIcon />,
+              popupVisible: this.isShowPanel,
+              placeholder: !this.innerValue ? this.placeholder || this.global.placeholder : undefined,
+              value: this.isShowPanel ? this.currentValue : this.innerValue ?? undefined,
+              inputValue: this.isShowPanel ? this.currentValue : this.innerValue ?? undefined,
+              inputProps: this.inputProps,
+              panel: () => (
+                <TimePickerPanel
+                  {...{
+                    props: {
+                      steps: this.steps,
+                      format: this.format,
+                      value: this.currentValue,
+                      isFooterDisplay: true,
+                      isShowPanel: this.isShowPanel,
+                      disableTime: this.disableTime,
+                      onChange: this.handlePanelChange,
+                      hideDisabledTime: this.hideDisabledTime,
+                      handleConfirmClick: this.handleClickConfirm,
+                    },
+                  }}
+                />
+              ),
+              popupProps: {
+                overlayStyle: { width: 'auto' },
+                onVisibleChange: this.handleShowPopup,
+                ...(this.popupProps as object),
+              },
+            },
           }}
-          panel={() => (
-            <TimePickerPanel
-              {...{
-                props: {
-                  steps: this.steps,
-                  format: this.format,
-                  value: this.currentValue,
-                  isFooterDisplay: true,
-                  isShowPanel: this.isShowPanel,
-                  disableTime: this.disableTime,
-                  onChange: this.handlePanelChange,
-                  hideDisabledTime: this.hideDisabledTime,
-                  handleConfirmClick: this.handleClickConfirm,
-                },
-              }}
-            />
-          )}
         />
       </div>
     );
