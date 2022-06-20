@@ -9,7 +9,7 @@ exports[`TagInput TagInput autoWidthVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input"
   >
     <div
-      class="t-input t-size-m t-input--auto-width t-input--prefix"
+      class="t-input t-size-m t-is-default t-input--auto-width t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -75,7 +75,7 @@ exports[`TagInput TagInput baseVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input"
   >
     <div
-      class="t-input t-size-m t-input--prefix"
+      class="t-input t-size-m t-is-default t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -131,7 +131,7 @@ exports[`TagInput TagInput baseVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input"
   >
     <div
-      class="t-input t-size-m t-input--prefix"
+      class="t-input t-size-m t-is-default t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -192,7 +192,7 @@ exports[`TagInput TagInput baseVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input"
   >
     <div
-      class="t-input t-size-m t-input--prefix"
+      class="t-input t-size-m t-is-default t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -260,7 +260,7 @@ exports[`TagInput TagInput collapsedVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input"
   >
     <div
-      class="t-input t-size-m t-input--prefix"
+      class="t-input t-size-m t-is-default t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -303,7 +303,7 @@ exports[`TagInput TagInput collapsedVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input"
   >
     <div
-      class="t-input t-size-m t-input--prefix"
+      class="t-input t-size-m t-is-default t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -364,7 +364,7 @@ exports[`TagInput TagInput collapsedVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input"
   >
     <div
-      class="t-input t-size-m t-input--prefix"
+      class="t-input t-size-m t-is-default t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -450,7 +450,7 @@ exports[`TagInput TagInput customTagVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input"
   >
     <div
-      class="t-input t-size-m t-input--prefix"
+      class="t-input t-size-m t-is-default t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -528,7 +528,7 @@ exports[`TagInput TagInput customTagVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input"
   >
     <div
-      class="t-input t-size-m t-input--prefix"
+      class="t-input t-size-m t-is-default t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -633,7 +633,7 @@ exports[`TagInput TagInput excessVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input"
   >
     <div
-      class="t-input t-size-m t-input--prefix"
+      class="t-input t-size-m t-is-default t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -694,7 +694,7 @@ exports[`TagInput TagInput excessVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input t-tag-input--break-line"
   >
     <div
-      class="t-input t-size-m t-input--prefix"
+      class="t-input t-size-m t-is-default t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -761,7 +761,7 @@ exports[`TagInput TagInput maxVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input"
   >
     <div
-      class="t-input t-size-m t-input--prefix"
+      class="t-input t-size-m t-is-default t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -787,7 +787,7 @@ exports[`TagInput TagInput sizeVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input"
   >
     <div
-      class="t-input t-size-s t-input--prefix"
+      class="t-input t-size-s t-is-default t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -843,7 +843,7 @@ exports[`TagInput TagInput sizeVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input"
   >
     <div
-      class="t-input t-size-m t-input--prefix"
+      class="t-input t-size-m t-is-default t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -899,7 +899,7 @@ exports[`TagInput TagInput sizeVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input"
   >
     <div
-      class="t-input t-size-l t-input--prefix"
+      class="t-input t-size-l t-is-default t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -969,7 +969,7 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
       class="t-input__wrap t-tag-input"
     >
       <div
-        class="t-input t-size-m t-is-disabled t-input--prefix"
+        class="t-input t-size-m t-is-disabled t-is-default t-input--prefix"
       >
         <div
           class="t-input__prefix"
@@ -1013,7 +1013,7 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
       class="t-input__wrap t-tag-input"
     >
       <div
-        class="t-input t-size-m t-is-readonly t-input--prefix"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix"
       >
         <div
           class="t-input__prefix"
@@ -1044,7 +1044,7 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
         />
       </div>
       <div
-        class="t-input__tips t-input__tips--normal"
+        class="t-input__tips t-input__tips--default"
       >
         这是普通文本提示
       </div>
@@ -1323,7 +1323,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input"
   >
     <div
-      class="t-input t-size-m t-input--prefix"
+      class="t-input t-size-m t-is-default t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -1397,7 +1397,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input"
   >
     <div
-      class="t-input t-size-m t-input--prefix"
+      class="t-input t-size-m t-is-default t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -1471,7 +1471,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input"
   >
     <div
-      class="t-input t-size-m t-input--prefix"
+      class="t-input t-size-m t-is-default t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -1545,7 +1545,7 @@ exports[`TagInput TagInput themeVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input"
   >
     <div
-      class="t-input t-size-m t-input--prefix"
+      class="t-input t-size-m t-is-default t-input--prefix"
     >
       <div
         class="t-input__prefix"
