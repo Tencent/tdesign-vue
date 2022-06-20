@@ -1,5 +1,4 @@
 import { PropType } from 'vue';
-import dayjs from 'dayjs';
 
 import * as Props from '../props';
 

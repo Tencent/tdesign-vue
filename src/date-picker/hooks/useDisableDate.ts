@@ -13,7 +13,10 @@ export interface disableDateProps {
 export default function useDisableDate(props: disableDateProps) {
   return {
     disableDate: (value: Date) => !isEnabled({
-      disableDate: props.disableDate, format: props.format, mode: props.mode, value,
+      disableDate: props.disableDate,
+      format: props.format,
+      mode: props.mode,
+      value,
     }),
     minDate:
       isObject(props.disableDate) && 'before' in props.disableDate ? new Date(props.disableDate.before) : props.start,
@@ -34,8 +37,8 @@ function isEnabled(props: any): boolean {
   // 禁用日期，示例：['A', 'B'] 表示日期 A 和日期 B 会被禁用。
   if (Array.isArray(props.disableDate)) {
     let isIncludes = false;
-    const formatedDisabledDate = props.disableDate.map((item: string) => dayjs(item, props.format));
-    formatedDisabledDate.forEach((item: any) => {
+    const formattedDisabledDate = props.disableDate.map((item: string) => dayjs(item, props.format));
+    formattedDisabledDate.forEach((item: any) => {
       if (item.isSame(dayjs(props.value))) {
         isIncludes = true;
       }
