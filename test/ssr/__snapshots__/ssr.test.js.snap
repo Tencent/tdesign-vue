@@ -13600,7 +13600,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
               <div>
                 <div class="t-table__row-full-element">
                   <div class="t-table__async-loading t-is-loading">
-                    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+                    <div class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
                         <foreignObject x="1" y="1" width="12" height="12">
                           <div class="t-loading__gradient-conic"></div>
                         </foreignObject>
