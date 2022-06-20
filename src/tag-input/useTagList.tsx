@@ -34,6 +34,7 @@ export default function useTagList(props: TdTagInputProps) {
 
   // 按下 Enter 键，新增标签
   const onInnerEnter = (value: InputValue, context: { e: KeyboardEvent }) => {
+    if (!value) return;
     const valueStr = String(value).trim();
     if (!valueStr) return;
     const isLimitExceeded = max && tagValue.value?.length >= max.value;
