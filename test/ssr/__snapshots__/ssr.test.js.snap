@@ -4924,7 +4924,6 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
 <div style="padding:16px;">
   <div class="t-table t-table--bordered" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col>
@@ -4987,10 +4986,10 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
       </table>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div> <br><br>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:64px;">
@@ -5070,6 +5069,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
       </table>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div> <br><br>
 </div>
 `;
@@ -13360,12 +13360,13 @@ exports[`ssr snapshot test renders ./examples/switch/demos/status.vue correctly 
 exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large tdesign-demo__table-affix" style="width:100%;">
   <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表头吸顶</span></label> <label class="t-checkbox t-is-checked" style="margin-left:32px;"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表尾吸底</span></label> <label class="t-checkbox" style="margin-left:32px;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">滚动条吸底</span></label> <label class="t-checkbox" style="margin-left:32px;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">分页器吸底</span></label> <label class="t-checkbox t-is-checked" style="margin-left:32px;"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定左侧列</span></label> <label class="t-checkbox t-is-checked" style="margin-left:32px;"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定右侧列</span></label></div>
-  <div class="t-table t-table--bordered t-table--affixed-header t-table--footer-affixed t-table--column-fixed" style="position:relative;">
+  <div class="t-table t-table--bordered t-table--affixed-header t-table--footer-affixed t-table--column-fixed t-table--col-draggable" style="position:relative;">
     <div offsetTop="0">
-      <div></div>
+      <div>
+        <div class="t-table__affixed-header-elm-wrap" style="width:0px;height:-6px;opacity:1;margin-top:0;"></div>
+      </div>
     </div>
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-auto" style="width:;">
         <colgroup>
           <col>
@@ -13420,9 +13421,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`
             <td class="row t-align-center">0</td>
             <td>共有</td>
             <td>String</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            <td>235245</td>
+            <td>1653</td>
+            <td>12%</td>
             <td>-</td>
             <td>是</td>
             <td class="t-table-td--ellipsis">
@@ -13434,9 +13435,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`
             <td class="row t-align-center">1</td>
             <td>私有</td>
             <td>Number</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            <td>235245</td>
+            <td>1653</td>
+            <td>12%</td>
             <td>0</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
@@ -13448,9 +13449,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`
             <td class="row t-align-center">2</td>
             <td>共有</td>
             <td>Array</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            <td>235245</td>
+            <td>1653</td>
+            <td>12%</td>
             <td>[]</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
@@ -13462,9 +13463,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`
             <td class="row t-align-center">3</td>
             <td>私有</td>
             <td>Object</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            <td>235245</td>
+            <td>1653</td>
+            <td>12%</td>
             <td>{}</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
@@ -13476,9 +13477,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`
             <td class="row t-align-center">4</td>
             <td>共有</td>
             <td>String</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            <td>235245</td>
+            <td>1653</td>
+            <td>12%</td>
             <td>-</td>
             <td>是</td>
             <td class="t-table-td--ellipsis">
@@ -13508,7 +13509,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`
     <div style="opacity:1;">
       <div class="t-table__pagination">
         <div class="t-pagination t-size-m">
-          <div class="t-pagination__total">共 8 项数据</div>
+          <div class="t-pagination__total">共 38 项数据</div>
           <div class="t-select__wrap t-pagination__select">
             <div class="t-input__wrap t-select">
               <div class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix">
@@ -13522,6 +13523,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`
           <ul class="t-pagination__pager">
             <li class="t-pagination__number t-is-current">1</li>
             <li class="t-pagination__number">2</li>
+            <li class="t-pagination__number">3</li>
+            <li class="t-pagination__number">4</li>
+            <li class="t-pagination__number">5</li>
+            <li class="t-pagination__number">6</li>
+            <li class="t-pagination__number">7</li>
+            <li class="t-pagination__number">8</li>
           </ul>
           <div class="t-pagination__btn t-pagination__btn-next"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right">
               <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
@@ -13529,6 +13536,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`
         </div>
       </div>
     </div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -13542,7 +13550,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
   </div>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:100px;">
@@ -13610,6 +13617,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
       </table>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -13623,7 +13631,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
   </div>
   <div class="t-table t-table--bordered t-table--striped" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:100px;">
@@ -13740,6 +13747,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
         </div>
       </div>
     </div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -13748,7 +13756,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
 <div>
   <div class="t-table t-vertical-align-top" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col>
@@ -13800,6 +13807,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
       </table>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -13809,7 +13817,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
   <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">显示列配置弹窗</span></button></div>
   <div class="t-table t-table--striped" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-auto" style="width:;">
         <colgroup>
           <col>
@@ -13929,6 +13936,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
         </div>
       </div>
     </div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -13940,7 +13948,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col-button.vue 
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div> <br><br> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否显示边框</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">自定义列配置按钮</span></label>
   </div>
-  <div class="t-table t-table--bordered t-table--striped" style="position:relative;">
+  <div class="t-table t-table--bordered t-table--striped t-table--col-draggable" style="position:relative;">
     <div class="t-table__top-content">
       <div class="t-table__column-controller-trigger t-align-top-right"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-setting">
             <path fill="currentColor" d="M11 8a3 3 0 11-6 0 3 3 0 016 0zm-1 0a2 2 0 10-4 0 2 2 0 004 0z" fill-opacity="0.9"></path>
@@ -13948,7 +13956,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col-button.vue 
           </svg><span class="t-button__text">列配置</span></button></div>
     </div>
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-auto" style="width:;">
         <colgroup>
           <col>
@@ -14068,6 +14075,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col-button.vue 
         </div>
       </div>
     </div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -14076,7 +14084,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
 <div class="tdesign-demo-block-column-large">
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:100px;">
@@ -14157,6 +14164,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
       </table>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -14164,7 +14172,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
 exports[`ssr snapshot test renders ./examples/table/demos/custom-header.vue correctly 1`] = `
 <div class="t-table" style="position:relative;">
   <div class="t-table__content">
-    <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
     <table class="t-table--layout-fixed" style="width:;">
       <colgroup>
         <col>
@@ -14202,6 +14209,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-header.vue corr
     </table>
   </div>
   <div style="opacity:1;"></div>
+  <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
 </div>
 `;
 
@@ -14212,7 +14220,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
     <div style="margin:16px;">排序：{&quot;sortBy&quot;:&quot;status&quot;,&quot;descending&quot;:true}</div>
     <div class="t-table" style="position:relative;">
       <div class="t-table__content">
-        <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
         <table class="t-table--layout-fixed" style="width:;">
           <colgroup>
             <col style="width:150px;">
@@ -14300,6 +14307,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
         </table>
       </div>
       <div style="opacity:1;"></div>
+      <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
     </div>
   </div>
 </div>
@@ -14310,7 +14318,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
   <div class="item">
     <div class="t-table t-table--col-draggable" style="position:relative;">
       <div class="t-table__content">
-        <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
         <table class="t-table--layout-fixed" style="width:;">
           <colgroup>
             <col style="width:150px;">
@@ -14380,6 +14387,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
         </table>
       </div>
       <div style="opacity:1;"></div>
+      <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
     </div>
   </div>
 </div>
@@ -14390,7 +14398,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
   <div class="item">
     <div class="t-table t-table--row-draggable" style="position:relative;">
       <div class="t-table__content">
-        <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
         <table class="t-table--layout-fixed" style="width:;">
           <colgroup>
             <col style="width:150px;">
@@ -14460,6 +14467,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
         </table>
       </div>
       <div style="opacity:1;"></div>
+      <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
     </div>
   </div>
 </div>
@@ -14471,7 +14479,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort-handler.vue 
   <div class="item">
     <div class="t-table t-table--row-handler-draggable" style="position:relative;">
       <div class="t-table__content">
-        <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
         <table class="t-table--layout-fixed" style="width:;">
           <colgroup>
             <col style="width:80px;">
@@ -14558,6 +14565,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort-handler.vue 
       </div>
       <div class="t-loading--center t-size-s t-loading"></div>
       <div style="opacity:1;"></div>
+      <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
     </div>
   </div>
 </div>
@@ -14567,7 +14575,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/editable-cell.vue corr
 <div>
   <div class="t-table t-table--bordered" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col>
@@ -14747,6 +14754,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/editable-cell.vue corr
       </table>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -14755,7 +14763,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
 <div class="tdesign-demo-block-column-large">
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col>
@@ -14798,10 +14805,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
       </table>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col>
@@ -14844,10 +14851,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
       </table>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col>
@@ -14890,6 +14897,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
       </table>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -14904,7 +14912,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
   <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">允许点击行之后展开/收起</span></label> <label class="t-checkbox" style="margin-left:32px;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定列</span></label> <label class="t-checkbox" style="margin-left:32px;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">空数据</span></label></div>
   <div class="t-table t-table--horizontal-bar-affixed" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-auto" style="width:1200px;">
         <colgroup>
           <col style="width:64px;">
@@ -15076,6 +15083,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
       </div>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -15090,7 +15098,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
   <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否显示表格边框</span></label></div>
   <div class="t-table t-table--bordered" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col>
@@ -15195,6 +15202,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
       </table>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -15218,7 +15226,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
   </div>
   <div class="t-table t-table--bordered t-table--column-fixed" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:80px;">
@@ -15326,6 +15333,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
       </table>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -15340,7 +15348,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
   <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否冻结首尾两行</span></label></div> <br><br>
   <div class="t-table t-table--bordered" style="position:relative;">
     <div class="t-table__content" style="max-height:300px;">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:120px;">
@@ -15589,6 +15596,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
       </table>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -15603,7 +15611,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
   <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否冻结首尾两行</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否显示斑马纹</span></label></div>
   <div class="t-table t-table--bordered t-table--column-fixed" style="position:relative;">
     <div class="t-table__content" style="max-height:300px;">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:100px;">
@@ -15800,6 +15807,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
       </table>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -15808,7 +15816,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
 <div class="tdesign-demo-block-column">
   <div class="t-table t-size-s t-table--loading" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:100px;">
@@ -15862,10 +15869,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
         </foreignObject>
       </svg></div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
   <div class="t-table t-size-s t-table--loading" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:100px;">
@@ -15919,10 +15926,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
       </div>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
   <div class="t-table t-size-s t-table--loading" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:100px;">
@@ -15980,6 +15987,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
       </div>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -15987,7 +15995,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
 exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correctly 1`] = `
 <div class="t-table t-size-s t-table--bordered t-table--rowspan-colspan" style="position:relative;">
   <div class="t-table__content">
-    <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
     <table class="t-table--layout-fixed" style="width:;">
       <colgroup>
         <col style="width:100px;">
@@ -16053,6 +16060,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
     </table>
   </div>
   <div style="opacity:1;"></div>
+  <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
 </div>
 `;
 
@@ -16067,7 +16075,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
           </svg><span class="t-button__text">列配置</span></button></div>
     </div>
     <div class="t-table__content" style="max-height:380px;">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <div class="t-table__virtual-scroll-cursor" style="transform:translate(0, 30000px);-ms-transform:translate(0, 30000px);-moz-transform:translate(0, 30000px);-webkit-transform:translate(0, 30000px);"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -16183,6 +16190,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
       </table>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -16202,7 +16210,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
       ]</p> <br>
     <div class="t-table" style="position:relative;">
       <div class="t-table__content">
-        <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
         <table class="t-table--layout-fixed" style="width:;">
           <colgroup>
             <col style="width:150px;">
@@ -16290,6 +16297,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
         </table>
       </div>
       <div style="opacity:1;"></div>
+      <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
     </div>
   </div>
 </div>
@@ -16299,7 +16307,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
 <div>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:100px;">
@@ -16424,6 +16431,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
         </div>
       </div>
     </div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -16431,7 +16439,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
 exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue correctly 1`] = `
 <div class="t-table t-table--bordered t-table--striped" style="position:relative;">
   <div class="t-table__content">
-    <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
     <table class="t-table--layout-fixed" style="width:;">
       <colgroup>
         <col style="width:200px;">
@@ -16496,6 +16503,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
       </div>
     </div>
   </div>
+  <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
 </div>
 `;
 
@@ -16503,7 +16511,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
 <div>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:64px;">
@@ -16598,6 +16605,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
       </table>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -16607,7 +16615,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
   <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">高亮行选中</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">整行选中</span></label></div>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:64px;">
@@ -16702,6 +16709,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
       </table>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -16710,7 +16718,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue corre
 <div>
   <div show-columns="" class="t-table" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:150px;">
@@ -16786,6 +16793,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue corre
       </table>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -16798,7 +16806,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
 }</span></div>
   <div class="t-table t-table--bordered" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:150px;">
@@ -16886,6 +16893,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
       </table>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -16898,7 +16906,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
     </span></label></div> <br>
   <div class="t-table t-table--row-handler-draggable" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:80px;">
@@ -17043,6 +17050,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
         </div>
       </div>
     </div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -17058,7 +17066,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
   </div> <br>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
-      <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:64px;">
@@ -17156,6 +17163,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
       </table>
     </div>
     <div style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
 `;
@@ -17165,7 +17173,6 @@ exports[`ssr snapshot test renders ./examples/table/demos/virtual-scroll.vue cor
   <div class="item">
     <div class="t-table" style="position:relative;">
       <div class="t-table__content" style="height:300px;">
-        <div class="t-table__resize-line" style="display:none;left:10px;height:10px;"></div>
         <div class="t-table__virtual-scroll-cursor" style="transform:translate(0, 28800px);-ms-transform:translate(0, 28800px);-moz-transform:translate(0, 28800px);-webkit-transform:translate(0, 28800px);"></div>
         <table class="t-table--layout-fixed t-table--full-height" style="width:;">
           <colgroup>
@@ -17201,6 +17208,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/virtual-scroll.vue cor
         </table>
       </div>
       <div style="opacity:1;"></div>
+      <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
     </div>
   </div>
 </div>
