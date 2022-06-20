@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, ref, watch, toRefs, onMounted, reactive, nextTick,
+  computed, defineComponent, ref, watch, toRefs, onMounted, nextTick,
 } from '@vue/composition-api';
 import debounce from 'lodash/debounce';
 import range from 'lodash/range';
@@ -31,9 +31,10 @@ export default defineComponent({
     triggerScroll: Boolean,
     onChange: Function,
     resetTriggerScroll: Function,
+    disableTime: Function,
   },
 
-  setup(props) {
+  setup(props, ctx) {
     const {
       steps, value, format, position, triggerScroll,
     } = toRefs(props);
@@ -45,10 +46,6 @@ export default defineComponent({
     const cols = ref<Array<EPickerCols>>([]);
     const bodyRef = ref();
     const maskRef = ref(null);
-    // 每个滚动列的ref 顺序不定 所以只要有5列标识即可
-    const colsRef = reactive({
-      0: null, 1: null, 2: null, 3: null, 4: null, 5: null,
-    });
 
     const dayjsValue = computed(() => {
       const isStepsSet = !!steps.value.filter((v) => v > 1).length;
@@ -152,9 +149,10 @@ export default defineComponent({
     };
 
     const getScrollDistance = (col: EPickerCols, time: number | string) => {
-      if (col === EPickerCols.hour && /[h]{1}/.test(format.value))
-      // eslint-disable-next-line no-param-reassign
-      { (time as number) %= 12; } // 一定是数字，直接cast
+      if (col === EPickerCols.hour && /[h]{1}/.test(format.value)) {
+        // eslint-disable-next-line no-param-reassign
+        (time as number) %= 12;
+      } // 一定是数字，直接cast
 
       const itemIdx = getColList(col).indexOf(padStart(String(time), 2, '0'));
       const timeItemTotalHeight = getItemHeight();
@@ -162,10 +160,11 @@ export default defineComponent({
       return distance;
     };
 
-    const handleScroll = (col: EPickerCols, idx: number) => {
+    const handleScroll = (col: EPickerCols) => {
       let val: number | string;
       let formattedVal: string;
-      const scrollTop = colsRef[idx]?.scrollTop;
+
+      const scrollTop = (ctx.refs as any)[`${col}Col`]?.scrollTop;
 
       let colStep = Math.abs(Math.round(scrollTop / getItemHeight() + 0.5));
       const meridiem = MERIDIEM_LIST[Math.min(colStep - 1, 1)].toLowerCase(); // 处理PM、AM与am、pm
@@ -189,10 +188,7 @@ export default defineComponent({
           // 如果是十二小时制需要再判断
           val = Number(val) + 12;
         }
-      }
-
-      // meridiem columns
-      else val = meridiem;
+      } else val = meridiem;
 
       const distance = getScrollDistance(col, val);
 
@@ -210,7 +206,7 @@ export default defineComponent({
         }
         props.onChange?.(formattedVal);
 
-        const scrollCtrl = colsRef[cols.value.indexOf(col)];
+        const scrollCtrl = (ctx.refs as any)[`${col}Col`];
 
         if (!distance || !scrollCtrl || scrollCtrl.scrollTop === distance) return;
 
@@ -228,9 +224,9 @@ export default defineComponent({
       behavior: 'auto' | 'smooth' = 'auto',
     ) => {
       const distance = getScrollDistance(col, time);
-      const scrollCtrl = colsRef[idx];
-      if (!distance || !scrollCtrl || scrollCtrl.scrollTop === distance || !timeItemCanUsed(col, time)) return;
+      const scrollCtrl = (ctx.refs as any)[`${col}Col`];
 
+      if (!distance || !scrollCtrl || scrollCtrl.scrollTop === distance || !timeItemCanUsed(col, time)) return;
       scrollCtrl.scrollTo({
         top: distance,
         behavior,
@@ -265,6 +261,7 @@ export default defineComponent({
     const updateTimeScrollPos = (isAutoScroll = false) => {
       const behavior = value.value && !isAutoScroll ? 'smooth' : 'auto';
       const isStepsSet = !!steps.value.filter((v) => v > 1).length;
+
       nextTick(() => {
         cols.value.forEach((col: EPickerCols, idx: number) => {
           if (!isStepsSet || (isStepsSet && value.value)) {
@@ -303,19 +300,18 @@ export default defineComponent({
       isCurrent,
       bodyRef,
       maskRef,
-      panelClassName,
       global,
+      classPrefix,
+      panelClassName,
+      cols,
+      timeItemCanUsed,
       handleScroll,
       handleTimeItemClick,
-      timeItemCanUsed,
     };
-  },
-  methods: {
-
   },
   render() {
     return (
-      <div class={`${this.panelClassName}-body`} ref={this.bodyRef}>
+      <div class={`${this.panelClassName}-body`} ref="bodyRef">
         <div class={`${this.panelClassName}-body-active-mask`} ref="maskRef">
           {/* 渲染遮罩层 */}
           {this.cols.map?.((col, idx) => (
@@ -326,9 +322,9 @@ export default defineComponent({
         {this.cols.map?.((col, idx) => (
           <ul
             key={`${col}_${idx}`}
-            ref={(el: any) => (this.colsRef[idx] = el)}
+            ref={`${col}Col`}
             class={`${this.panelClassName}-body-scroll`}
-            onScroll={debounce(() => this.handleScroll(col, idx), 50)}
+            onScroll={debounce(() => this.handleScroll(col), 50)}
           >
             {this.getColList(col).map((el) => (
               <li

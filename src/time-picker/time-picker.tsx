@@ -76,7 +76,7 @@ export default defineComponent({
       currentValue.value = v;
     };
 
-    const handleOnFocus = (context: {value: string, e: FocusEvent}) => {
+    const handleOnFocus = (context: { value: string; e: FocusEvent }) => {
       props.onFocus?.(context);
     };
 
@@ -100,6 +100,7 @@ export default defineComponent({
       innerValue,
       isShowPanel,
       global,
+      currentValue,
     };
   },
   render() {
@@ -120,15 +121,13 @@ export default defineComponent({
           value={this.isShowPanel ? this.currentValue : this.innerValue ?? undefined}
           inputValue={this.isShowPanel ? this.currentValue : this.innerValue ?? undefined}
           inputProps={this.inputProps}
-          popupProps={{ overlayStyle: { width: 'auto' }, onVisibleChange: this.handleShowPopup, ...(this.popupProps as object) }}
+          popupProps={{
+            overlayStyle: { width: 'auto' },
+            onVisibleChange: this.handleShowPopup,
+            ...(this.popupProps as object),
+          }}
           panel={() => (
             <TimePickerPanel
-              steps={this.steps}
-              format={this.format}
-              value={this.currentValue}
-              isFooterDisplay={true}
-              isShowPanel={this.isShowPanel}
-              disableTime={this.disableTime}
               {...{
                 props: {
                   steps: this.steps,

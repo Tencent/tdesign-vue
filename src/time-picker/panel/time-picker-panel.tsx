@@ -16,13 +16,15 @@ export default defineComponent({
   name: 'TimePickerPanel',
 
   props: {
-    ...panelProps(), handleConfirmClick: Function, onChange: Function,
+    ...panelProps(),
+    handleConfirmClick: Function,
+    onChange: Function,
+    disableTime: Function,
   },
 
   setup(props) {
     const panelClassName = usePrefixClass('time-picker__panel');
     const triggerScroll = ref(false);
-    const panelRef = ref();
     const { global } = useConfig('timePicker');
     const showNowTimeBtn = computed(() => !!props.steps.filter((v) => v > 1).length);
 
@@ -60,7 +62,6 @@ export default defineComponent({
     );
     return {
       panelClassName,
-      panelRef,
       triggerScroll,
       resetTriggerScroll,
       defaultValue,
@@ -72,13 +73,17 @@ export default defineComponent({
       <div class={this.panelClassName}>
         <div class={`${this.panelClassName}-section-body`}>
           <SinglePanel
-            ref={this.panelRef}
-            format={this.format || DEFAULT_FORMAT}
-            steps={this.steps || DEFAULT_STEPS}
-            value={this.value}
-            triggerScroll={this.triggerScroll}
-            onChange={this.onChange}
-            resetTriggerScroll={this.resetTriggerScroll}
+            {...{
+              props: {
+                format: this.format || DEFAULT_FORMAT,
+                steps: this.steps || DEFAULT_STEPS,
+                value: this.value,
+                triggerScroll: this.triggerScroll,
+                onChange: this.onChange,
+                resetTriggerScroll: this.resetTriggerScroll,
+                disableTime: this.disableTime,
+              },
+            }}
           />
         </div>
         {this.isFooterDisplay ? (

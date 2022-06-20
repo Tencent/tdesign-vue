@@ -1,3 +1,4 @@
+import VueCompositionAPI from '@vue/composition-api';
 import _DatePicker from './DatePicker';
 import _DatePickerPanel from './DatePickerPanel';
 import _DateRangePicker from './DateRangePicker';
@@ -15,9 +16,9 @@ export type DatePickerPanelProps = TdDatePickerPanelProps;
 export type DateRangePickerProps = TdDateRangePickerProps;
 export type DateRangePickerPanelProps = TdDateRangePickerPanelProps;
 
-export const DatePicker = withInstall(_DatePicker);
-export const DatePickerPanel = withInstall(_DatePickerPanel);
-export const DateRangePicker = withInstall(_DateRangePicker);
-export const DateRangePickerPanel = withInstall(_DateRangePickerPanel);
+export const DatePicker = withInstall(_DatePicker, VueCompositionAPI);
+export const DatePickerPanel = withInstall(_DatePickerPanel, VueCompositionAPI);
+export const DateRangePicker = withInstall(_DateRangePicker, VueCompositionAPI);
+export const DateRangePickerPanel = withInstall(_DateRangePickerPanel, VueCompositionAPI);
 
 export default DatePicker;

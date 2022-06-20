@@ -24,7 +24,11 @@ dayjs.extend(customParseFormat);
 export default defineComponent({
   name: 'TTimeRangePicker',
 
-  props: { ...props, rangeInputProps: Object, popupProps: Object },
+  props: {
+    ...props,
+    rangeInputProps: Object,
+    popupProps: Object,
+  },
 
   setup(props) {
     const componentName = usePrefixClass('time-range-picker');
@@ -128,8 +132,8 @@ export default defineComponent({
       handleTimeChange,
     };
   },
-  render(): any {
-    return () => (
+  render() {
+    return (
       <div class={this.componentName}>
         <RangeInputPopup
           disabled={this.disabled}
@@ -148,7 +152,7 @@ export default defineComponent({
             clearable: this.clearable,
             class: this.inputClasses,
             value: this.isShowPanel ? this.currentValue : this.innerValue ?? undefined,
-            placeholder: props.placeholder || [this.global.placeholder, this.global.placeholder],
+            placeholder: this.placeholder || [this.global.placeholder, this.global.placeholder],
             suffixIcon: () => <TimeIcon />,
             onClear: this.handleClear,
             onClick: this.handleClick,
@@ -160,16 +164,20 @@ export default defineComponent({
           }}
           panel={() => (
             <TimePickerPanel
-              steps={this.steps}
-              format={this.format}
-              isShowPanel={this.isShowPanel}
-              disableTime={this.disableTime}
-              hideDisabledTime={this.hideDisabledTime}
-              isFooterDisplay={true}
-              value={this.currentValue[this.currentPanelIdx || 0]}
-              onChange={this.handleTimeChange}
-              handleConfirmClick={this.handleClickConfirm}
-              position={this.currentPanelIdx === 0 ? 'start' : 'end'}
+              {...{
+                props: {
+                  steps: this.steps,
+                  format: this.format,
+                  isShowPanel: this.isShowPanel,
+                  disableTime: this.disableTime,
+                  hideDisabledTime: this.hideDisabledTime,
+                  isFooterDisplay: true,
+                  value: this.currentValue[this.currentPanelIdx || 0],
+                  onChange: this.handleTimeChange,
+                  handleConfirmClick: this.handleClickConfirm,
+                  position: this.currentPanelIdx === 0 ? 'start' : 'end',
+                },
+              }}
             />
           )}
         />

@@ -9,7 +9,8 @@
     </div>
 
     <t-form :data="formData" :labelAlign="formData.labelAlign" :labelWidth="60">
-      <t-form-item label="姓名" name="name">
+      <t-form-item name="name">
+        <template #label>姓名</template>
         <t-input v-model="formData.name"></t-input>
       </t-form-item>
       <t-form-item label="密码" name="password">
