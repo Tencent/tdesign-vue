@@ -9,7 +9,7 @@ import { InputValue } from '../input';
 import TagInput, { TagInputValue, InputValueChangeContext } from '../tag-input';
 import Loading from '../loading';
 import useDefaultValue from '../hooks/useDefaultValue';
-import { usePrefixClass } from '../config-provider';
+import { usePrefixClass } from '../hooks/useConfig';
 
 export interface RenderSelectMultipleParams {
   commonInputProps: SelectInputCommonProperties;

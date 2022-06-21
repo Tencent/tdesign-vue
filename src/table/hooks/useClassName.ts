@@ -26,6 +26,8 @@ export default function useClassName() {
       columnFixed: `${classPrefix.value}-table--column-fixed`,
       widthOverflow: `${classPrefix.value}-table--width-overflow`,
       multipleHeader: `${classPrefix.value}-table--multiple-header`,
+      footerAffixed: `${classPrefix.value}-table--footer-affixed`,
+      horizontalBarAffixed: `${classPrefix.value}-table--horizontal-bar-affixed`,
       affixedHeader: `${classPrefix.value}-table--affixed-header`,
       affixedHeaderElm: `${classPrefix.value}-table__affixed-header-elm`,
       affixedFooterElm: `${classPrefix.value}-table__affixed-footer-elm`,
@@ -36,6 +38,8 @@ export default function useClassName() {
       fullHeight: `${classPrefix.value}-table--full-height`,
       // 拖拽列时的标记线
       resizeLine: `${classPrefix.value}-table__resize-line`,
+      obviousScrollbar: `${classPrefix.value}-table__scrollbar--obvious`,
+      affixedHeaderWrap: `${classPrefix.value}-table__affixed-header-elm-wrap`,
     },
 
     tdAlignClasses: {

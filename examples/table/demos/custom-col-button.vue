@@ -33,6 +33,8 @@
       :bordered="bordered"
       tableLayout="auto"
       stripe
+      drag-sort="col"
+      @drag-sort="onDragSortChange"
       @column-change="onColumnChange"
     ></t-table>
 
@@ -109,6 +111,9 @@ export default {
   methods: {
     onColumnChange(params) {
       console.log(params);
+    },
+    onDragSortChange({ newData }) {
+      this.columns = newData;
     },
   },
 };

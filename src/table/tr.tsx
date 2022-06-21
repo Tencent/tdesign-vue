@@ -25,7 +25,7 @@ import {
   BaseTableCellParams, TableRowData, RowspanColspan, TdPrimaryTableProps,
 } from './type';
 import baseTableProps from './base-table-props';
-import { SkipSpansValue } from './hooks/useRowspanAndColspan';
+import { getCellKey, SkipSpansValue } from './hooks/useRowspanAndColspan';
 import useLazyLoad from '../hooks/useLazyLoad';
 
 export interface RenderTdExtra {
@@ -275,10 +275,14 @@ export default defineComponent({
         rowIndex,
         colIndex,
       };
-      const spanState = this.skipSpansMap.get([rowIndex, colIndex].join()) || {};
-      spanState?.rowspan > 1 && (cellSpans.rowspan = spanState.rowspan);
-      spanState?.colspan > 1 && (cellSpans.colspan = spanState.colspan);
-      if (spanState.skipped) return null;
+      const cellKey = getCellKey(row, this.rowKey, col.colKey, colIndex);
+      let spanState = null;
+      if (this.skipSpansMap.size) {
+        spanState = this.skipSpansMap.get(cellKey) || {};
+        spanState?.rowspan > 1 && (cellSpans.rowspan = spanState.rowspan);
+        spanState?.colspan > 1 && (cellSpans.colspan = spanState.colspan);
+        if (spanState.skipped) return null;
+      }
       return this.renderTd(h, params, {
         dataLength,
         rowAndColFixedPosition,

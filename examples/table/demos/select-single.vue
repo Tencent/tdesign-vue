@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div>
+      <t-checkbox v-model="highlightSelectedRow">高亮行选中</t-checkbox>
+      <t-checkbox v-model="selectedOnRowClick">整行选中</t-checkbox>
+    </div>
+
     <!-- 支持非受控属性 default-selected-row-keys -->
     <!-- 支持语法糖 selected-row-keys.sync -->
     <t-table
@@ -7,7 +12,9 @@
       :columns="columns"
       :data="data"
       :selected-row-keys="selectedRowKeys"
+      :class="highlightSelectedRow ? 'tdesign-demo__select-single' : ''"
       @select-change="rehandleSelectChange"
+      @row-click="onRowClick"
     >
       <template #status="{ row }">
         <p v-if="row.status === 0" class="status">健康</p>
@@ -31,9 +38,13 @@ const data = new Array(5).fill(null).map((item, index) => ({
   description: 'test',
 }));
 
+const disabledFunc = ({ rowIndex }) => rowIndex === 1 || rowIndex === 3;
+
 export default {
   data() {
     return {
+      highlightSelectedRow: false,
+      selectedOnRowClick: false,
       selectedRowKeys: [102],
       columns: [
         {
@@ -45,7 +56,7 @@ export default {
 
           // 禁用行选中方式一：使用 disabled 禁用行（示例代码有效，勿删，随时需要测试）。disabled 参数：{row: RowData; rowIndex: number })
           // 这种方式禁用行选中，当前行会添加行类名 t-table__row--disabled，禁用行文字变灰
-          disabled: ({ rowIndex }) => rowIndex === 1 || rowIndex === 3,
+          disabled: disabledFunc,
 
           // 禁用行选中方式二：使用 checkProps 禁用行（示例代码有效，勿删，随时需要测试）
           // 这种方式禁用行选中，行文本不会变灰
@@ -75,13 +86,41 @@ export default {
     rehandleClickOp({ text, row }) {
       console.log(text, row);
     },
+
     rehandleSelectChange(value, { selectedRowData }) {
       this.selectedRowKeys = value;
       console.log(value, selectedRowData);
     },
+
+    // 整行选中示例
+    onRowClick({ row, index }) {
+      if (this.selectedOnRowClick && !disabledFunc({ row, rowIndex: index })) {
+        this.selectedRowKeys = [row.id];
+      }
+    },
   },
 };
 </script>
+
+<style lang="less">
+/** 此处示范 如何设置行高亮 */
+.tdesign-demo__select-single {
+  /** 背景色示范 */
+  .t-table__row--selected {
+    background-color: #ecf2fe;
+  }
+  /** 最右侧选中图标示范 */
+  .t-table__row--selected > td:last-child::after {
+    content: '✅';
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 60px;
+    height: 35px;
+  }
+}
+</style>
 
 <style lang="less" scoped>
 .link {
