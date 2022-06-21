@@ -6,6 +6,7 @@
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
 autoWidth | Boolean | false | 宽度随内容自适应 | N
+adornmentWidth | Boolean | false | 宽度随输入装饰器自适应 | N
 bordered | Boolean | true | 是否有边框 | N
 borderless | Boolean | false | 无边框模式 | N
 clearable | Boolean | false | 是否可以清空选项 | N

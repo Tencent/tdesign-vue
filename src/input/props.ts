@@ -26,6 +26,8 @@ export default {
   autofocus: Boolean,
   /** 宽度随内容自适应 */
   autoWidth: Boolean,
+  /* 宽度随输入装饰器自适应 */
+  adornmentWidth: Boolean,
   /** 是否可清空 */
   clearable: Boolean,
   /** 是否禁用输入框 */

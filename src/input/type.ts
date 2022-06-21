@@ -28,6 +28,11 @@ export interface TdInputProps {
    */
   autoWidth?: boolean;
   /**
+   * 宽度随输入装饰器自适应
+   * @default false
+   */
+  adornmentWidth?: boolean;
+  /**
    * 是否可清空
    * @default false
    */

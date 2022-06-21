@@ -23,6 +23,11 @@ export interface TdSelectInputProps {
    */
   autoWidth?: boolean;
   /**
+   * 宽度随输入装饰器自适应
+   * @default false
+   */
+  adornmentWidth?: boolean;
+  /**
    * 无边框模式
    * @default false
    */

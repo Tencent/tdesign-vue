@@ -24,7 +24,7 @@ export default {
       protocolSelect: () => (
         <t-select
           bordered={false}
-          autoWidth
+          adornmentWidth
           options={['http://', 'https://'].map((value) => ({ label: value, value }))}
           defaultValue="http://"
         />

@@ -21,6 +21,11 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
    */
   autoWidth?: boolean;
   /**
+   * 宽度随输入装饰器适应
+   * @default false
+   */
+  adornmentWidth: Boolean;
+  /**
    * 是否有边框
    * @default true
    */

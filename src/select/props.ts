@@ -10,6 +10,8 @@ import { PropType } from 'vue';
 export default {
   /** 宽度随内容自适应 */
   autoWidth: Boolean,
+  /** 宽度随输入装饰器适应 */
+  adornmentWidth: Boolean,
   /** 是否有边框 */
   bordered: {
     type: Boolean,

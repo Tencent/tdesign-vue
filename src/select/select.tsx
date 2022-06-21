@@ -691,6 +691,7 @@ export default defineComponent({
     const {
       multiple,
       autoWidth,
+      adornmentWidth,
       bordered,
       readonly,
       selectedValue,
@@ -735,12 +736,14 @@ export default defineComponent({
     const prefixIcon = () => renderTNode('prefixIcon');
     const collapsedItems = () => renderCollapsedItems();
     const { overlayClassName, ...restPopupProps } = popupProps || {};
+
     return (
       <div ref="select" class={`${name}__wrap`}>
         <SelectInput
           ref="selectInputRef"
           class={name}
           autoWidth={autoWidth}
+          adornmentWidth={adornmentWidth}
           borderless={borderless || !bordered}
           readonly={readonly}
           allowInput={showFilter}

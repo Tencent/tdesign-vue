@@ -82,7 +82,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
           [`${prefix}-is-disabled`]: this.tDisabled,
           [`${prefix}-is-readonly`]: this.readonly,
           [`${name}--focused`]: this.focused,
-          [`${name}--auto-width`]: this.autoWidth,
+          [`${name}--auto-width`]: this.autoWidth || this.adornmentWidth,
         },
       ];
     },
@@ -108,7 +108,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
 
   created() {
     this.composing = false;
-    if (this.autoWidth) {
+    if (this.autoWidth || this.adornmentWidth) {
       this.addListeners();
     }
   },
@@ -117,10 +117,10 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       this.$watch(
         () => this.value + this.placeholder,
         () => {
-          if (!this.autoWidth) return;
-          this.$nextTick(() => {
-            this.updateInputWidth();
-          });
+          (this.autoWidth || this.adornmentWidth)
+            && this.$nextTick(() => {
+              this.updateInputWidth();
+            });
         },
         { immediate: true },
       );
@@ -316,7 +316,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
           onInput={this.handleInput}
           onCompositionend={this.compositionendHandler}
         />
-        {this.autoWidth && (
+        {(this.autoWidth || this.adornmentWidth) && (
           <span ref="inputPreRef" class={`${prefix}-input__input-pre`}>
             {this.value || this.tPlaceholder}
           </span>

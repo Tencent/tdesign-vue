@@ -12,6 +12,8 @@ export default {
   allowInput: Boolean,
   /** 宽度随内容自适应 */
   autoWidth: Boolean,
+  /** 宽度随输入装饰器自适应 */
+  adornmentWidth: Boolean,
   /** 无边框模式 */
   borderless: Boolean,
   /** 是否可清空 */

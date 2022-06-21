@@ -13,16 +13,29 @@ const MAX_POPUP_WIDTH = 1000;
 export default function useOverlayStyle(props: TdSelectInputProps) {
   const instance = getCurrentInstance();
 
-  const { popupProps, autoWidth } = toRefs(props);
+  const { popupProps, autoWidth, adornmentWidth } = toRefs(props);
   const innerPopupVisible = ref(false);
   const tOverlayStyle = ref<TdPopupProps['overlayStyle']>();
 
   const macthWidthFunc = (triggerElement: HTMLElement, popupElement: HTMLElement) => {
+    // 父级元素的父级元素
+    const isInputAdornment = triggerElement?.parentElement?.parentElement?.className;
+    // 触发元素的宽
+    let triggerWidth = triggerElement.offsetWidth;
+    // 如果嵌套在输入装饰器里
+    if (
+      isInputAdornment?.includes('t-input-adornment__prepend')
+      || isInputAdornment?.includes('t-input-adornment__append')
+    ) {
+      // 根据装饰器宽度自适应
+      triggerWidth = triggerElement.parentElement.parentElement.offsetWidth;
+      // 由于装饰器元素有12px内边距，因此t-popup自动右移了12px，此处通过位移t-popup__content修正下拉框位置
+      const popupContent = popupElement;
+      popupContent.style.transform = 'translateX(-12px)';
+    }
     // 避免因滚动条出现文本省略，预留宽度 8
     const SCROLLBAR_WIDTH = popupElement.scrollHeight > popupElement.offsetHeight ? 8 : 0;
-    const width = popupElement.offsetWidth + SCROLLBAR_WIDTH >= triggerElement.offsetWidth
-      ? popupElement.offsetWidth
-      : triggerElement.offsetWidth;
+    const width = popupElement.offsetWidth + SCROLLBAR_WIDTH >= triggerWidth ? popupElement.offsetWidth : triggerWidth;
     let otherOverlayStyle: Styles = {};
     if (popupProps.value && typeof popupProps.value.overlayStyle === 'object' && !popupProps.value.overlayStyle.width) {
       otherOverlayStyle = popupProps.value.overlayStyle;
@@ -48,7 +61,7 @@ export default function useOverlayStyle(props: TdSelectInputProps) {
     const overlayStyle = popupProps.value?.overlayStyle || {};
     if (isFunction(overlayStyle) || (isObject(overlayStyle) && overlayStyle.width)) {
       result = overlayStyle;
-    } else if (!autoWidth.value) {
+    } else if (!autoWidth.value || adornmentWidth.value) {
       result = macthWidthFunc;
     }
     tOverlayStyle.value = result;
