@@ -198,7 +198,7 @@ exports[`Tabs additional function panel default slot:function | panel slot:funct
       <div class="t-tabs__nav-container t-is-top">
         <div class="t-tabs__nav-scroll">
           <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate(0px, 0);">
-            <div class="t-tabs__bar t-is-top" style="left: 0px; width: 0px;"></div>
+            <div class="t-tabs__bar t-is-top"></div>
             <div class="t-tabs__nav-item t-size-m">
               <div class="t-tabs__nav-item-wrapper"><span class="t-tabs__nav-item-text-wrapper">1</span></div>
             </div>
@@ -230,7 +230,7 @@ exports[`Tabs additional function panel:default && panel:panel 1`] = `
       <div class="t-tabs__nav-container t-is-top">
         <div class="t-tabs__nav-scroll">
           <div class="t-tabs__nav-wrap t-is-smooth" style="transform: translate(0px, 0);">
-            <div class="t-tabs__bar t-is-top" style="left: 0px; width: 0px;"></div>
+            <div class="t-tabs__bar t-is-top"></div>
             <div class="t-tabs__nav-item t-size-m">
               <div class="t-tabs__nav-item-wrapper"><span class="t-tabs__nav-item-text-wrapper">1</span></div>
             </div>
