@@ -90,6 +90,7 @@ export default defineComponent({
       showAffixFooter,
       showAffixPagination,
       onHorizontalScroll,
+      updateAffixHeaderOrFooter,
       setTableContentRef,
     } = useAffix(props);
 
@@ -147,6 +148,7 @@ export default defineComponent({
     const onFixedChange = () => {
       nextTick(() => {
         onHorizontalScroll();
+        updateAffixHeaderOrFooter();
       });
     };
 
@@ -271,6 +273,7 @@ export default defineComponent({
       handleRowMounted,
       onFixedChange,
       onHorizontalScroll,
+      updateAffixHeaderOrFooter,
       refreshTable,
       onInnerVirtualScroll,
     };
@@ -299,7 +302,8 @@ export default defineComponent({
     // onlyVirtualScrollBordered 用于浏览器兼容性处理，只有 chrome 需要调整 bordered，FireFox 和 Safari 不需要
     const onlyVirtualScrollBordered = !!(this.isVirtual && !this.headerAffixedTop && this.bordered) && /Chrome/.test(navigator?.userAgent);
     const borderWidth = this.bordered && onlyVirtualScrollBordered ? 1 : 0;
-    const affixHeaderWrapHeight = (this.affixHeaderRef?.getBoundingClientRect().height || 0) - this.scrollbarWidth - borderWidth;
+    const barWidth = this.isWidthOverflow ? this.scrollbarWidth : 0;
+    const affixHeaderWrapHeight = (this.affixHeaderRef?.getBoundingClientRect().height || 0) - barWidth - borderWidth;
     // 两类场景：1. 虚拟滚动，永久显示表头，直到表头消失在可视区域； 2. 表头吸顶，根据滚动情况判断是否显示吸顶表头
     const headerOpacity = props.headerAffixedTop ? Number(this.showAffixHeader) : 1;
     const affixHeaderWrapHeightStyle = {
@@ -343,7 +347,7 @@ export default defineComponent({
     /**
      * Affixed Footer
      */
-    let marginScrollbarWidth = this.isWidthOverflow ? this.scrollbarWidth : 0;
+    let marginScrollbarWidth = barWidth;
     if (this.bordered) {
       marginScrollbarWidth += 1;
     }
