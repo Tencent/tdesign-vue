@@ -5,6 +5,37 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.42.2 `2022-06-20` 
+### 🚀 Features
+- `Skeleton`: 增加 `delay` 属性防止抖动 @Wonder233 ([#1003](https://github.com/Tencent/tdesign-vue/pull/1003))
+- `Table`:
+  - 支持底部滚动条吸底和分页器吸底能力 @chaishi ([#1023](https://github.com/Tencent/tdesign-vue/pull/1023))
+  - 支持通过吸顶表头进行列拖拽排序，[issue#1014](https://github.com/Tencent/tdesign-vue/issues/1014) @chaishi ([#1029](https://github.com/Tencent/tdesign-vue/pull/1029))
+  - 吸顶表头支持拖拽调整列宽
+  - 自定义列配置场景支持列拖拽排序，[issue#1015](https://github.com/Tencent/tdesign-vue/issues/1015) @chaishi ([#1029](https://github.com/Tencent/tdesign-vue/pull/1029))
+### 🐞 Bug Fixes
+- `Form`: 实例方法 `submit` 和 `reset` 恢复事件（0.42.1 中去除的） @chaishi ([#1013](https://github.com/Tencent/tdesign-vue/pull/1013))
+- `Input`: 修复 `type = password` 时 `clearable` 不生效的问题 @uyarn ([#1017](https://github.com/Tencent/tdesign-vue/pull/1017))
+- `Select`:
+  - 修复多选情况下 `clearable` 失效的问题 @uyarn ([#1016](https://github.com/Tencent/tdesign-vue/pull/1016))
+  - 修复 t-option 方式渲染时，内部数组的清除逻辑 @skytt ([#1028](https://github.com/Tencent/tdesign-vue/pull/1028))
+- `TagInput`:
+  - 修复 `inputProps`` 未透传的问题 @uyarn ([#1016](https://github.com/Tencent/tdesign-vue/pull/1016))
+  - 修复事件透传失效的问题 @skytt ([#1007](https://github.com/Tencent/tdesign-vue/pull/1007))
+- `ConfigProvider`: @pengYYYYY ([#1024](https://github.com/Tencent/tdesign-vue/pull/1024))
+  - 修复 `useConfig` 意外注册的问题
+  - 修复因为深拷贝配置文件导致的性能问题
+- `Table`:
+  - 修复虚拟滚动表头会在滚动到中间一定程度时消失的问题 @chaishi ([#1023](https://github.com/Tencent/tdesign-vue/pull/1023))
+  - 修复合并单元格不支持动态数据的问题，[issue#992](https://github.com/Tencent/tdesign-vue/issues/992) @chaishi ([#1029](https://github.com/Tencent/tdesign-vue/pull/1029))
+  - 修复 `firstFullRow` 存在时，拖拽排序的顺序不正确问题 @chaishi ([#1029](https://github.com/Tencent/tdesign-vue/pull/1029))
+  - 修复加载更多的加载组件尺寸异常问题 @uyarn ([#1035](https://github.com/Tencent/tdesign-vue/pull/1035))
+- `TreeSelect`: 修复过滤后无法选中的问题 @chiyu1996 ([#1027](https://github.com/Tencent/tdesign-vue/pull/1027))
+- `Calendar/ColorPicker`: 修复组件内部 Select 选择框宽度不能自适应的问题 @xiaosansiji ([#1006](https://github.com/Tencent/tdesign-vue/pull/1006))
+- `Dialog`:
+  - 修复 mask 点击事件失效的问题 @HQ-Lin ([#1019](https://github.com/Tencent/tdesign-vue/pull/1019))
+  - 修复 `placement = top` 场景下弹出框位置偏移的问题 @huoyuhao ([common#544](https://github.com/Tencent/tdesign-common/pull/544))
+
 ## 🌈 0.42.1 `2022-06-14` 
 ### 🚀 Features
 - `Form`: @chaishi ([#983](https://github.com/Tencent/tdesign-vue/pull/983))

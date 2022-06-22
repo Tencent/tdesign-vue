@@ -153,7 +153,7 @@ export default defineComponent({
       tSelect && tSelect.getOptions({ ...context, ...props });
     });
     onBeforeUnmount(() => {
-      tSelect && tSelect.hasSlotOptions.value && tSelect.destroyOptions(context);
+      tSelect && tSelect.hasSlotOptions.value && tSelect.destroyOptions({ ...props });
     });
 
     // 处理虚拟滚动节点挂载

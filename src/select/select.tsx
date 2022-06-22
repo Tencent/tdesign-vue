@@ -11,7 +11,7 @@ import {
   onUpdated,
   provide,
 } from '@vue/composition-api';
-import { CreateElement, VNode } from 'vue';
+import { CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
 import debounce from 'lodash/debounce';
 import get from 'lodash/get';
@@ -35,6 +35,7 @@ import SelectInput, {
 import FakeArrow from '../common-components/fake-arrow';
 import Option from './option';
 import SelectPanel from './select-panel';
+import { parseOptions } from './util';
 
 export type OptionInstance = InstanceType<typeof Option>;
 
@@ -258,8 +259,7 @@ export default defineComponent({
     });
 
     const debounceOnRemote = debounce(() => {
-      instance.emit('search', tInputValue.value, context);
-      // emitEvent<Parameters<TdSelectProps['onSearch']>>(this, 'search', tInputValue.value);
+      instance.emit('search', tInputValue.value);
     }, 300);
 
     watch(
@@ -489,7 +489,7 @@ export default defineComponent({
       const tempValue = Array.isArray(value.value) ? [].concat(value.value) : [];
       tempValue.splice(index, 1);
       setValue(tempValue, { trigger: 'uncheck', e });
-      instance.emit('remove', { value: val, data: removeOption[0], e }, context);
+      instance.emit('remove', { value: val, data: removeOption[0], e });
     };
     const hideMenu = (context: PopupVisibleChangeContext) => {
       visible.value = false;
@@ -521,7 +521,7 @@ export default defineComponent({
       focusing.value = false;
       setTInputValue('');
       visible.value = false;
-      instance.emit('clear', { e }, context);
+      instance.emit('clear', { e });
     };
     const getOptions = (option: OptionInstance) => {
       // create option值不push到options里
@@ -549,18 +549,18 @@ export default defineComponent({
       });
     };
     const createOption = (value: string) => {
-      instance.emit('create', value, context);
+      instance.emit('create', value);
     };
     const focus = (value: string, context: { e: FocusEvent }) => {
       focusing.value = true;
-      instance.emit('focus', { value, e: context?.e }, context);
+      instance.emit('focus', { value, e: context?.e });
     };
     const blur = (value: string, context: { e: FocusEvent | KeyboardEvent }) => {
       focusing.value = false;
-      instance.emit('blur', { value, e: context?.e }, context);
+      instance.emit('blur', { value, e: context?.e });
     };
     const enter = (value: string, context: { e: KeyboardEvent }) => {
-      instance.emit('enter', { value, e: context?.e, inputValue: tInputValue.value }, context);
+      instance.emit('enter', { value, e: context?.e, inputValue: tInputValue.value });
     };
     const getOverlayElm = (): HTMLElement => {
       let r;
@@ -585,27 +585,6 @@ export default defineComponent({
         realOptions.value = parseOptions(children);
         isInit.value = true;
         hasSlotOptions.value = true;
-      }
-
-      function parseOptions(vnodes: VNode[]): TdOptionProps[] {
-        if (!vnodes) return [];
-        return vnodes.reduce((options, vnode) => {
-          const { componentOptions } = vnode;
-          if (componentOptions?.tag === 't-option') {
-            const propsData = componentOptions.propsData as any;
-            return options.concat({
-              label: propsData.label,
-              value: propsData.value,
-              disabled: propsData.disabled,
-              content: componentOptions.children ? () => componentOptions.children : propsData.content,
-              default: propsData.default,
-            });
-          }
-          if (componentOptions?.tag === 't-option-group') {
-            return options.concat(parseOptions(componentOptions.children));
-          }
-          return options;
-        }, []);
       }
     };
 
