@@ -61,7 +61,7 @@ export default defineComponent({
       let renderSeparator: any = separator;
       if (typeof separator === 'function') renderSeparator = separator(h);
       // filter last child
-      const showSeparator = index + 1 !== childCount && separator;
+      const showSeparator = index + 1 !== childCount && renderSeparator;
 
       return [
           <div class={`${COMPONENT_NAME}-item`}>{child}</div>,
