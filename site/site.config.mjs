@@ -77,14 +77,6 @@ const docs = [
         componentEn: () => import('@/examples/button/button.en-US.md'),
       },
       {
-        title: 'Divider 分割线',
-        titleEn: 'Divider',
-        name: 'divider',
-        path: '/vue/components/divider',
-        component: () => import('@/examples/divider/divider.md'),
-        componentEn: () => import('@/examples/divider/divider.en-US.md'),
-      },
-      {
         title: 'Icon 图标',
         titleEn: 'Icon',
         name: 'icon',
@@ -100,6 +92,14 @@ const docs = [
     type: 'component',
     children: [
       {
+        title: 'Divider 分割线',
+        titleEn: 'Divider',
+        name: 'divider',
+        path: '/vue/components/divider',
+        component: () => import('@/examples/divider/divider.md'),
+        componentEn: () => import('@/examples/divider/divider.en-US.md'),
+      },
+      {
         title: 'Grid 栅格',
         titleEn: 'Grid',
         name: 'grid',
@@ -114,6 +114,14 @@ const docs = [
         path: '/vue/components/layout',
         component: () => import('@/examples/layout/layout.md'),
         componentEn: () => import('@/examples/layout/layout.en-US.md'),
+      },
+      {
+        title: 'Space 间距',
+        titleEn: 'Space',
+        name: 'space',
+        path: '/vue/components/space',
+        component: () => import('@/examples/space/space.md'),
+        componentEn: () => import('@/examples/space/space.en-US.md'),
       },
     ],
   },
