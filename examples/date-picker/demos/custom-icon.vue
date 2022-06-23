@@ -1,12 +1,9 @@
 <template>
   <div class="tdesign-demo-item--datepicker">
-    <t-date-picker
-      theme="primary"
-      mode="date"
-      clearable
-      :prefixIcon="() => renderPrefixIcon"
-    >
-      <lock-on-icon slot="suffixIcon"></lock-on-icon>
+    <t-date-picker clearable :prefix-icon="renderPrefixIcon">
+      <template #suffixIcon>
+        <lock-on-icon />
+      </template>
     </t-date-picker>
   </div>
 </template>
@@ -17,10 +14,10 @@ export default {
   components: {
     LockOnIcon,
   },
-  methods: {
-    renderPrefixIcon() {
-      return <BrowseIcon></BrowseIcon>;
-    },
+  data() {
+    return {
+      renderPrefixIcon: () => <BrowseIcon />,
+    };
   },
 };
 </script>

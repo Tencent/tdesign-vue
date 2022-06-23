@@ -13,6 +13,7 @@
       @fail="handleFail"
       @success="handleSuccess"
       @progress="onProgress"
+      @dragenter="onDrop"
     >
       <template v-slot="params">
         <ul v-if="files && files.length">
@@ -41,6 +42,13 @@ export default {
     };
   },
   methods: {
+    onDrop(e) {
+      const file = e.e.dataTransfer.items;
+      console.log(file, 'file');
+      for (let i = 0; i < file.length; i++) {
+        console.log(file[i].type, 'type');
+      }
+    },
     handleFail({ file }) {
       this.$message.error(`文件 ${file.name} 上传失败`);
     },
