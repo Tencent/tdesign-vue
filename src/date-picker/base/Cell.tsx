@@ -1,6 +1,6 @@
 import { defineComponent, computed } from '@vue/composition-api';
 import { usePrefixClass } from '../../hooks/useConfig';
-import { extractTimeObj } from '../../_common/js/date-picker/utils-new';
+import { extractTimeObj } from '../../_common/js/date-picker/utils';
 
 export default defineComponent({
   name: 'TDatePickerCell',
@@ -81,7 +81,10 @@ export default defineComponent({
     }
 
     return {
-      cellClass, COMPONENT_NAME, handleClick, handleMouseEnter,
+      cellClass,
+      COMPONENT_NAME,
+      handleClick,
+      handleMouseEnter,
     };
   },
   render() {
