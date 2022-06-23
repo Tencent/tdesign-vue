@@ -98,7 +98,7 @@ exports[`Select Select collapsedVue demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-input__wrap t-tag-input t-select-input--multiple t-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -167,7 +167,7 @@ exports[`Select Select collapsedVue demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-input__wrap t-tag-input t-select-input--multiple t-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -236,7 +236,7 @@ exports[`Select Select collapsedVue demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-input__wrap t-tag-input t-select-input--multiple t-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -451,7 +451,7 @@ exports[`Select Select customSelectedVue demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-input__wrap t-tag-input t-select-input--multiple t-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -551,7 +551,7 @@ exports[`Select Select customSelectedVue demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-input__wrap t-tag-input t-select-input--multiple t-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -724,7 +724,7 @@ exports[`Select Select disabledVue demo works fine 1`] = `
     style="width: 200px; display: inline-block;"
   >
     <div
-      class="t-input__wrap t-tag-input t-select-input--multiple t-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
     >
       <div
         class="t-input t-size-m t-is-disabled t-is-default t-input--prefix t-input--suffix"
@@ -826,7 +826,7 @@ exports[`Select Select filterableVue demo works fine 1`] = `
     style="width: 400px; display: inline-block;"
   >
     <div
-      class="t-input__wrap t-tag-input t-select-input--multiple t-select-input--empty t-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-select"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -1007,7 +1007,7 @@ exports[`Select Select labelInValueVue demo works fine 1`] = `
     style="width: 200px; display: inline-block;"
   >
     <div
-      class="t-input__wrap t-tag-input t-select-input--multiple t-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -1073,7 +1073,7 @@ exports[`Select Select maxVue demo works fine 1`] = `
     style="width: 200px;"
   >
     <div
-      class="t-input__wrap t-tag-input t-select-input--multiple t-select-input--empty t-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-select"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -1121,7 +1121,7 @@ exports[`Select Select multipleVue demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-input__wrap t-tag-input t-select-input--multiple t-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -1203,7 +1203,7 @@ exports[`Select Select multipleVue demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-input__wrap t-tag-input t-select-input--multiple t-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -1357,7 +1357,7 @@ exports[`Select Select multipleVue demo works fine 1`] = `
     class="t-select__wrap"
   >
     <div
-      class="t-input__wrap t-tag-input t-select-input--multiple t-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -1783,7 +1783,7 @@ exports[`Select Select remoteSearchVue demo works fine 1`] = `
     style="width: 400px; display: inline-block;"
   >
     <div
-      class="t-input__wrap t-tag-input t-select-input--multiple t-select-input--empty t-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-select"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"

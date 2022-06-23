@@ -47,7 +47,7 @@ exports[`SelectInput SelectInput autowidthMultipleVue demo works fine 1`] = `
   style="width: 100%;"
 >
   <div
-    class="t-input__wrap t-tag-input t-select-input--multiple"
+    class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
   >
     <div
       class="t-input t-size-m t-is-default t-input--auto-width t-input--prefix t-input--suffix"
@@ -162,7 +162,7 @@ exports[`SelectInput SelectInput borderlessMultipleVue demo works fine 1`] = `
   style="width: 100%;"
 >
   <div
-    class="t-input__wrap t-tag-input t-select-input--borderless t-select-input--multiple"
+    class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--borderless t-select-input--multiple"
     style="width: 250px;"
   >
     <div
@@ -240,7 +240,7 @@ exports[`SelectInput SelectInput collapsedItemsVue demo works fine 1`] = `
   <br />
    
   <div
-    class="t-input__wrap t-tag-input t-select-input--multiple"
+    class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
   >
     <div
       class="t-input t-size-m t-is-default t-input--prefix"
@@ -287,7 +287,7 @@ exports[`SelectInput SelectInput collapsedItemsVue demo works fine 1`] = `
   <br />
    
   <div
-    class="t-input__wrap t-tag-input t-select-input--multiple"
+    class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
   >
     <div
       class="t-input t-size-m t-is-default t-input--prefix"
@@ -352,7 +352,7 @@ exports[`SelectInput SelectInput collapsedItemsVue demo works fine 1`] = `
   <br />
    
   <div
-    class="t-input__wrap t-tag-input t-select-input--multiple"
+    class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
   >
     <div
       class="t-input t-size-m t-is-default t-input--prefix"
@@ -482,7 +482,7 @@ exports[`SelectInput SelectInput customTagVue demo works fine 1`] = `
   <br />
    
   <div
-    class="t-input__wrap t-tag-input t-select-input--multiple"
+    class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
   >
     <div
       class="t-input t-size-m t-is-default t-input--prefix"
@@ -581,7 +581,7 @@ exports[`SelectInput SelectInput customTagVue demo works fine 1`] = `
   <br />
    
   <div
-    class="t-input__wrap t-tag-input t-select-input--multiple"
+    class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
   >
     <div
       class="t-input t-size-m t-is-default t-input--prefix"
