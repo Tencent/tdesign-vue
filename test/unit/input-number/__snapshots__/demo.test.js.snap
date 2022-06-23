@@ -32,7 +32,7 @@ exports[`InputNumber InputNumber alignVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m"
+          class="t-input t-size-m t-is-default"
           ref="refInputElem"
         >
           <input
@@ -89,7 +89,7 @@ exports[`InputNumber InputNumber alignVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-align-center"
+          class="t-input t-size-m t-is-default t-align-center"
           ref="refInputElem"
         >
           <input
@@ -146,7 +146,7 @@ exports[`InputNumber InputNumber alignVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-align-right"
+          class="t-input t-size-m t-is-default t-align-right"
           ref="refInputElem"
         >
           <input
@@ -189,7 +189,7 @@ exports[`InputNumber InputNumber alignVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m"
+          class="t-input t-size-m t-is-default"
           ref="refInputElem"
         >
           <input
@@ -210,7 +210,7 @@ exports[`InputNumber InputNumber alignVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-align-center"
+          class="t-input t-size-m t-is-default t-align-center"
           ref="refInputElem"
         >
           <input
@@ -231,7 +231,7 @@ exports[`InputNumber InputNumber alignVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-align-right"
+          class="t-input t-size-m t-is-default t-align-right"
           ref="refInputElem"
         >
           <input
@@ -275,7 +275,7 @@ exports[`InputNumber InputNumber autoWidthVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-align-center t-input--auto-width"
+        class="t-input t-size-m t-is-default t-align-center t-input--auto-width"
         ref="refInputElem"
       >
         <input
@@ -341,7 +341,7 @@ exports[`InputNumber InputNumber centerVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-align-center"
+        class="t-input t-size-m t-is-default t-align-center"
         ref="refInputElem"
       >
         <input
@@ -402,7 +402,7 @@ exports[`InputNumber InputNumber defaultVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-align-center"
+        class="t-input t-size-m t-is-default t-align-center"
         ref="refInputElem"
       >
         <input
@@ -463,7 +463,7 @@ exports[`InputNumber InputNumber disabledVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-disabled t-align-center"
+        class="t-input t-size-m t-is-disabled t-is-default t-align-center"
         ref="refInputElem"
       >
         <input
@@ -525,7 +525,7 @@ exports[`InputNumber InputNumber emptyVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-align-center"
+        class="t-input t-size-m t-is-default t-align-center"
         ref="refInputElem"
       >
         <input
@@ -586,7 +586,7 @@ exports[`InputNumber InputNumber formatVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-align-center"
+        class="t-input t-size-m t-is-default t-align-center"
         ref="refInputElem"
       >
         <input
@@ -647,7 +647,7 @@ exports[`InputNumber InputNumber leftVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m"
+        class="t-input t-size-m t-is-default"
         ref="refInputElem"
       >
         <input
@@ -690,7 +690,7 @@ exports[`InputNumber InputNumber normalVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m"
+        class="t-input t-size-m t-is-default"
         ref="refInputElem"
       >
         <input
@@ -733,7 +733,7 @@ exports[`InputNumber InputNumber sizeVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-align-center"
+        class="t-input t-size-m t-is-default t-align-center"
         ref="refInputElem"
       >
         <input
@@ -791,7 +791,7 @@ exports[`InputNumber InputNumber sizeVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-align-center"
+        class="t-input t-size-m t-is-default t-align-center"
         ref="refInputElem"
       >
         <input
@@ -848,7 +848,7 @@ exports[`InputNumber InputNumber sizeVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-align-center"
+        class="t-input t-size-m t-is-default t-align-center"
         ref="refInputElem"
       >
         <input
@@ -932,7 +932,7 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
               class="t-input__wrap"
             >
               <div
-                class="t-input t-size-m t-is-disabled t-align-center"
+                class="t-input t-size-m t-is-disabled t-is-default t-align-center"
                 ref="refInputElem"
               >
                 <input
@@ -1013,7 +1013,7 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
               class="t-input__wrap"
             >
               <div
-                class="t-input t-size-m t-align-center t-is-readonly"
+                class="t-input t-size-m t-is-default t-align-center t-is-readonly"
                 ref="refInputElem"
               >
                 <input
@@ -1094,7 +1094,7 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
               class="t-input__wrap"
             >
               <div
-                class="t-input t-size-m t-align-center"
+                class="t-input t-size-m t-is-default t-align-center"
                 ref="refInputElem"
               >
                 <input
@@ -1414,7 +1414,7 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
               class="t-input__wrap"
             >
               <div
-                class="t-input t-size-m t-align-center"
+                class="t-input t-size-m t-is-default t-align-center"
                 ref="refInputElem"
               >
                 <input
@@ -1426,7 +1426,7 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
                 />
               </div>
               <div
-                class="t-input__tips t-input__tips--normal"
+                class="t-input__tips t-input__tips--default"
               >
                 这是普通文本提示
               </div>
@@ -1739,7 +1739,7 @@ exports[`InputNumber InputNumber stepVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-align-center"
+        class="t-input t-size-m t-is-default t-align-center"
         ref="refInputElem"
       >
         <input

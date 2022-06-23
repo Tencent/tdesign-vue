@@ -3332,7 +3332,7 @@ exports[`Transfer Transfer paginationVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-s t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input t-size-s t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -3530,7 +3530,7 @@ exports[`Transfer Transfer searchVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -4053,7 +4053,7 @@ exports[`Transfer Transfer searchVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--suffix"
             >
               <input
                 autocomplete=""

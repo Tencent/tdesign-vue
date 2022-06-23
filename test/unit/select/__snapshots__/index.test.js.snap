@@ -3,7 +3,7 @@
 exports[`Select :props :bordered 1`] = `
 <div class="t-select__wrap">
   <div class="t-input__wrap t-select-input--empty t-select">
-    <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
+    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
       <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
     </div>
   </div>
@@ -13,7 +13,7 @@ exports[`Select :props :bordered 1`] = `
 exports[`Select :props :clearable 1`] = `
 <div class="t-select__wrap">
   <div class="t-input__wrap t-select-input--empty t-select">
-    <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
+    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
       <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
     </div>
   </div>
@@ -23,7 +23,7 @@ exports[`Select :props :clearable 1`] = `
 exports[`Select :props :creatable 1`] = `
 <div class="t-select__wrap">
   <div class="t-input__wrap t-select-input--empty t-select">
-    <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
+    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
       <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
     </div>
   </div>
@@ -33,7 +33,7 @@ exports[`Select :props :creatable 1`] = `
 exports[`Select :props :disabled 1`] = `
 <div class="t-select__wrap">
   <div class="t-input__wrap t-select-input--empty t-select">
-    <div class="t-input t-size-m t-is-disabled t-is-readonly t-input--prefix t-input--suffix">
+    <div class="t-input t-size-m t-is-disabled t-is-default t-is-readonly t-input--prefix t-input--suffix">
       <div class="t-input__prefix"></div><input disabled="disabled" readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
     </div>
   </div>
@@ -43,7 +43,7 @@ exports[`Select :props :disabled 1`] = `
 exports[`Select :props :labelInValue 1`] = `
 <div class="t-select__wrap">
   <div class="t-input__wrap t-select-input--empty t-select">
-    <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
+    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
       <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
     </div>
   </div>
@@ -53,7 +53,7 @@ exports[`Select :props :labelInValue 1`] = `
 exports[`Select :props :loading 1`] = `
 <div class="t-select__wrap">
   <div class="t-input__wrap t-select-input--empty t-select">
-    <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
+    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
       <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><div class="t-loading--center t-size-s t-loading t-select__right-icon t-select__active-icon"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" class="t-loading__gradient t-icon-loading" size="small"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></div></span>
     </div>
   </div>
@@ -62,8 +62,8 @@ exports[`Select :props :loading 1`] = `
 
 exports[`Select :props :multiple 1`] = `
 <div class="t-select__wrap">
-  <div class="t-input__wrap t-tag-input t-select-input--multiple t-select-input--empty t-select">
-    <div class="t-input t-size-m t-input--prefix t-input--suffix">
+  <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-select">
+    <div class="t-input t-size-m t-is-default t-input--prefix t-input--suffix">
       <div class="t-input__prefix"></div><input autocomplete="" placeholder="请选择" type="text" unselectable="off" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
     </div>
   </div>
@@ -73,7 +73,7 @@ exports[`Select :props :multiple 1`] = `
 exports[`Select :props :placeholder 1`] = `
 <div class="t-select__wrap">
   <div class="t-input__wrap t-select-input--empty t-select">
-    <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
+    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
       <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="please select" type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
     </div>
   </div>
@@ -83,7 +83,7 @@ exports[`Select :props :placeholder 1`] = `
 exports[`Select :props :remote 1`] = `
 <div class="t-select__wrap" remote="true">
   <div class="t-input__wrap t-select-input--empty t-select">
-    <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
+    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
       <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
     </div>
   </div>
@@ -93,7 +93,7 @@ exports[`Select :props :remote 1`] = `
 exports[`Select :props :reserveKeyword 1`] = `
 <div class="t-select__wrap">
   <div class="t-input__wrap t-select-input--empty t-select">
-    <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
+    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
       <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
     </div>
   </div>
@@ -103,7 +103,7 @@ exports[`Select :props :reserveKeyword 1`] = `
 exports[`Select :props :size 1`] = `
 <div class="t-select__wrap">
   <div class="t-input__wrap t-select-input--empty t-select">
-    <div class="t-input t-size-l t-is-readonly t-input--prefix t-input--suffix">
+    <div class="t-input t-size-l t-is-default t-is-readonly t-input--prefix t-input--suffix">
       <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
     </div>
   </div>
@@ -113,7 +113,7 @@ exports[`Select :props :size 1`] = `
 exports[`Select Option :props :disabled 1`] = `
 <div class="t-select__wrap">
   <div class="t-input__wrap t-select">
-    <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
+    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
       <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
     </div>
   </div>
@@ -123,7 +123,7 @@ exports[`Select Option :props :disabled 1`] = `
 exports[`Select Option :props :label 1`] = `
 <div class="t-select__wrap">
   <div class="t-input__wrap t-select">
-    <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
+    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
       <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
     </div>
   </div>
@@ -133,7 +133,7 @@ exports[`Select Option :props :label 1`] = `
 exports[`Select Option :props :value 1`] = `
 <div class="t-select__wrap">
   <div class="t-input__wrap t-select">
-    <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
+    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
       <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
     </div>
   </div>
@@ -143,7 +143,7 @@ exports[`Select Option :props :value 1`] = `
 exports[`Select OptionGroup :props :value 1`] = `
 <div class="t-select__wrap">
   <div class="t-input__wrap t-select">
-    <div class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix">
+    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
       <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
     </div>
   </div>

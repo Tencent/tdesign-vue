@@ -13,7 +13,6 @@ export default function useVModel<T, P extends any[]>(
 
   const internalValue = ref<T>();
   internalValue.value = defaultValue;
-
   // 受控模式
   if (typeof value.value !== 'undefined') {
     return [

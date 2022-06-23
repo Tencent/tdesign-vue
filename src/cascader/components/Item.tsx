@@ -96,7 +96,7 @@ export default mixins(keepAnimationMixins).extend({
           doms.push(<span key={index}>{texts[index]}</span>);
           if (index === texts.length - 1) break;
           doms.push(
-            <span key={`${index}filter`} className={`${name}-label--filter`}>
+            <span key={`${index}filter`} class={`${name}-label--filter`}>
               {inputVal}
             </span>,
           );

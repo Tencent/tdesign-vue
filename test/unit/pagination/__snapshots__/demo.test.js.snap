@@ -17,7 +17,7 @@ exports[`Pagination Pagination baseVue demo works fine 1`] = `
         class="t-input__wrap t-select"
       >
         <div
-          class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+          class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
         >
           <div
             class="t-input__prefix"
@@ -155,7 +155,7 @@ exports[`Pagination Pagination baseVue demo works fine 1`] = `
         class="t-input__wrap t-select"
       >
         <div
-          class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+          class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
         >
           <div
             class="t-input__prefix"
@@ -309,7 +309,7 @@ exports[`Pagination Pagination customizableVue demo works fine 1`] = `
         class="t-input__wrap t-select"
       >
         <div
-          class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+          class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
         >
           <div
             class="t-input__prefix"
@@ -449,7 +449,7 @@ exports[`Pagination Pagination customizableVue demo works fine 1`] = `
           class="t-input__wrap"
         >
           <div
-            class="t-input t-size-m"
+            class="t-input t-size-m t-is-default"
             ref="refInputElem"
           >
             <input
@@ -486,7 +486,7 @@ exports[`Pagination Pagination disabledVue demo works fine 1`] = `
         class="t-input__wrap t-select"
       >
         <div
-          class="t-input t-size-m t-is-disabled t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+          class="t-input t-size-m t-is-disabled t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
         >
           <div
             class="t-input__prefix"
@@ -625,7 +625,7 @@ exports[`Pagination Pagination disabledVue demo works fine 1`] = `
           class="t-input__wrap"
         >
           <div
-            class="t-input t-size-m"
+            class="t-input t-size-m t-is-default"
             ref="refInputElem"
           >
             <input
@@ -661,7 +661,7 @@ exports[`Pagination Pagination fewVue demo works fine 1`] = `
         class="t-input__wrap t-select"
       >
         <div
-          class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+          class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
         >
           <div
             class="t-input__prefix"
@@ -785,7 +785,7 @@ exports[`Pagination Pagination jumpVue demo works fine 1`] = `
         class="t-input__wrap t-select"
       >
         <div
-          class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+          class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
         >
           <div
             class="t-input__prefix"
@@ -905,7 +905,7 @@ exports[`Pagination Pagination jumpVue demo works fine 1`] = `
           class="t-input__wrap"
         >
           <div
-            class="t-input t-size-m"
+            class="t-input t-size-m t-is-default"
             ref="refInputElem"
           >
             <input
@@ -941,7 +941,7 @@ exports[`Pagination Pagination miniVue demo works fine 1`] = `
         class="t-input__wrap t-select"
       >
         <div
-          class="t-input t-size-s t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+          class="t-input t-size-s t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
         >
           <div
             class="t-input__prefix"
@@ -1088,7 +1088,7 @@ exports[`Pagination Pagination moreVue demo works fine 1`] = `
         class="t-input__wrap t-select"
       >
         <div
-          class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+          class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
         >
           <div
             class="t-input__prefix"
@@ -1257,7 +1257,7 @@ exports[`Pagination Pagination pageNumVue demo works fine 1`] = `
         class="t-input__wrap t-select"
       >
         <div
-          class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+          class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
         >
           <div
             class="t-input__prefix"
@@ -1403,7 +1403,7 @@ exports[`Pagination Pagination simpleMiniVue demo works fine 1`] = `
       class="t-input__wrap t-select"
     >
       <div
-        class="t-input t-size-s t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+        class="t-input t-size-s t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
       >
         <div
           class="t-input__prefix"
@@ -1468,7 +1468,7 @@ exports[`Pagination Pagination simpleMiniVue demo works fine 1`] = `
       class="t-input__wrap t-select"
     >
       <div
-        class="t-input t-size-s t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+        class="t-input t-size-s t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
       >
         <div
           class="t-input__prefix"
@@ -1545,7 +1545,7 @@ exports[`Pagination Pagination simpleVue demo works fine 1`] = `
         class="t-input__wrap t-select"
       >
         <div
-          class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+          class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
         >
           <div
             class="t-input__prefix"
@@ -1610,7 +1610,7 @@ exports[`Pagination Pagination simpleVue demo works fine 1`] = `
         class="t-input__wrap t-select"
       >
         <div
-          class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+          class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
         >
           <div
             class="t-input__prefix"
@@ -1688,7 +1688,7 @@ exports[`Pagination Pagination totalVue demo works fine 1`] = `
         class="t-input__wrap t-select"
       >
         <div
-          class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+          class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
         >
           <div
             class="t-input__prefix"
