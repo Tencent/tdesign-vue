@@ -130,7 +130,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
       <div>
         <div
           class="t-table__affixed-header-elm-wrap"
-          style="width: 0px; height: -6px; opacity: 1; margin-top: 0px;"
+          style="width: 0px; height: 0px; opacity: 1; margin-top: 0px;"
         />
       </div>
     </div>

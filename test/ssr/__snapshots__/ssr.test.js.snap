@@ -13549,7 +13549,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`
   <div class="t-table t-table--bordered t-table--affixed-header t-table--footer-affixed t-table--column-fixed t-table--col-draggable" style="position:relative;">
     <div offsetTop="0">
       <div>
-        <div class="t-table__affixed-header-elm-wrap" style="width:0px;height:-6px;opacity:1;margin-top:0;"></div>
+        <div class="t-table__affixed-header-elm-wrap" style="width:0px;height:0px;opacity:1;margin-top:0;"></div>
       </div>
     </div>
     <div class="t-table__content">
