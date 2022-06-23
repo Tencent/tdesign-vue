@@ -19,20 +19,18 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
     value, onChange, time, month, year, cacheValue, isFirstValueSelected,
   } = useRangeValue(props);
 
-  const {
-    isValidDate, timeFormat, formatDate, formatTime,
-  } = useFormat({
+  const formatRef = computed(() => useFormat({
     mode: props.mode,
     value: props.value,
     format: props.format,
     valueType: props.valueType,
     enableTimePicker: props.enableTimePicker,
-  });
+  }));
 
   const popupVisible = ref(false);
   const isHoverCell = ref(false);
   const activeIndex = ref(0); // 确定当前选中的输入框序号
-  const inputValue = ref(formatDate(props.value)); // 未真正选中前可能不断变更输入框的内容
+  const inputValue = ref(formatRef.value.formatDate(props.value)); // 未真正选中前可能不断变更输入框的内容
 
   // input 设置
   const rangeInputProps = computed(() => ({
@@ -82,30 +80,30 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
       inputValue.value = newVal;
 
       // 跳过不符合格式化的输入框内容
-      if (!isValidDate(newVal)) return;
+      if (!formatRef.value.isValidDate(newVal)) return;
       const newYear: Array<number> = [];
       const newMonth: Array<number> = [];
       const newTime: Array<string> = [];
       newVal.forEach((v, i) => {
         newYear.push(dayjs(v).year() || year.value[i]);
         newMonth.push(dayjs(v).month() || month.value[i]);
-        newTime.push(dayjs(v).format(timeFormat) || time.value[i]);
+        newTime.push(dayjs(v).format(formatRef.value.timeFormat) || time.value[i]);
       });
       year.value = newYear;
       month.value = newMonth;
       time.value = newTime;
     },
     onEnter: (newVal: string[]) => {
-      if (!isValidDate(newVal) && !isValidDate(value.value)) return;
+      if (!formatRef.value.isValidDate(newVal) && !formatRef.value.isValidDate(value.value)) return;
 
       popupVisible.value = false;
-      if (isValidDate(newVal)) {
-        onChange?.(formatDate(newVal, { formatType: 'valueType' }) as DateValue[], {
+      if (formatRef.value.isValidDate(newVal)) {
+        onChange?.(formatRef.value.formatDate(newVal, { formatType: 'valueType' }) as DateValue[], {
           dayjsValue: newVal.map((v) => dayjs(v)),
           trigger: 'enter',
         });
-      } else if (isValidDate(value.value)) {
-        inputValue.value = formatDate(value.value);
+      } else if (formatRef.value.isValidDate(value.value)) {
+        inputValue.value = formatRef.value.formatDate(value.value);
       } else {
         inputValue.value = [];
       }
@@ -131,7 +129,7 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
         isFirstValueSelected.value = false;
       } else {
         isHoverCell.value = false;
-        inputValue.value = formatDate(value.value);
+        inputValue.value = formatRef.value.formatDate(value.value);
       }
 
       popupVisible.value = visible;
@@ -143,14 +141,14 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
     if (!value.value) {
       inputValue.value = [];
       cacheValue.value = [];
-      time.value = [dayjs().format(timeFormat), dayjs().format(timeFormat)];
+      time.value = [dayjs().format(formatRef.value.timeFormat), dayjs().format(formatRef.value.timeFormat)];
       return;
     }
-    if (!isValidDate(value.value, 'valueType')) return;
+    if (!formatRef.value.isValidDate(value.value, 'valueType')) return;
 
-    inputValue.value = formatDate(value.value);
-    cacheValue.value = formatDate(value.value);
-    time.value = formatTime(value.value) as string[];
+    inputValue.value = formatRef.value.formatDate(value.value);
+    cacheValue.value = formatRef.value.formatDate(value.value);
+    time.value = formatRef.value.formatTime(value.value) as string[];
   });
 
   // activeIndex 变化自动 focus 对应输入框

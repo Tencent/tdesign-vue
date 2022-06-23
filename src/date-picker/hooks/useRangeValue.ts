@@ -33,7 +33,7 @@ function initYearMonthTime(value: DateValue[], mode = 'date', format: string, ti
   };
 }
 
-export default function useRange(props: TdDateRangePickerProps) {
+export default function useRangeValue(props: TdDateRangePickerProps) {
   const { value: valueFromProps } = toRefs(props);
 
   const [value, onChange] = useVModel(valueFromProps, props.defaultValue, props.onChange, 'change');

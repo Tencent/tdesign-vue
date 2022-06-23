@@ -16,18 +16,18 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
     value, onChange, time, month, year, cacheValue,
   } = useSingleValue(props);
 
-  const { isValidDate, formatDate, formatTime } = useFormat({
+  const formatRef = computed(() => useFormat({
     value: value.value,
     mode: props.mode,
     format: props.format,
     valueType: props.valueType,
     enableTimePicker: props.enableTimePicker,
-  });
+  }));
 
   const popupVisible = ref(false);
   const isHoverCell = ref(false);
   // 未真正选中前可能不断变更输入框的内容
-  const inputValue = ref(formatDate(value.value));
+  const inputValue = ref(formatRef.value.formatDate(value.value));
 
   // input 设置
   const inputProps = computed(() => ({
@@ -63,25 +63,25 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
       inputValue.value = val;
 
       // 跳过不符合格式化的输入框内容
-      if (!isValidDate(val)) return;
+      if (!formatRef.value.isValidDate(val)) return;
       const newMonth = dayjs(val).month();
       const newYear = dayjs(val).year();
-      const newTime = formatTime(val);
+      const newTime = formatRef.value.formatTime(val);
       !Number.isNaN(newYear) && (year.value = newYear);
       !Number.isNaN(newMonth) && (month.value = newMonth);
       !Number.isNaN(newTime) && (time.value = newTime);
     },
     onEnter: (val: string) => {
-      if (!isValidDate(val) && !isValidDate(value.value)) return;
+      if (!formatRef.value.isValidDate(val) && !formatRef.value.isValidDate(value.value)) return;
 
       popupVisible.value = false;
-      if (isValidDate(val)) {
-        onChange?.(formatDate(val, { formatType: 'valueType' }) as DateValue, {
+      if (formatRef.value.isValidDate(val)) {
+        onChange?.(formatRef.value.formatDate(val, { formatType: 'valueType' }) as DateValue, {
           dayjsValue: dayjs(val),
           trigger: 'enter',
         });
-      } else if (isValidDate(value.value)) {
-        inputValue.value = formatDate(value.value);
+      } else if (formatRef.value.isValidDate(value.value)) {
+        inputValue.value = formatRef.value.formatDate(value.value);
       } else {
         inputValue.value = '';
       }
@@ -98,7 +98,7 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
       popupVisible.value = visible;
       if (!visible) {
         isHoverCell.value = false;
-        inputValue.value = formatDate(value.value);
+        inputValue.value = formatRef.value.formatDate(value.value);
       }
     },
   }));
@@ -108,9 +108,9 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
       inputValue.value = '';
       return;
     }
-    if (!isValidDate(value.value, 'valueType')) return;
+    if (!formatRef.value.isValidDate(value.value, 'valueType')) return;
 
-    inputValue.value = formatDate(value.value);
+    inputValue.value = formatRef.value.formatDate(value.value);
   });
 
   return {
