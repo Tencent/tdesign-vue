@@ -146,11 +146,7 @@ export default defineComponent({
     const labelContent = renderTNodeJSX('label');
     const prefixIconContent = renderTNodeJSX('prefixIcon');
     const suffixContent = renderTNodeJSX('suffix');
-    const suffixIconContent = renderTNodeJSX('suffixIcon', {
-      defaultNode: isShowClearIcon ? (
-        <CloseCircleFilledIcon class={`${COMPONENT_NAME}__suffix-clear`} onClick={handleClear} />
-      ) : null,
-    });
+    const suffixIconContent = renderTNodeJSX('suffixIcon');
 
     return (
       <div
@@ -162,8 +158,8 @@ export default defineComponent({
             [STATUS.focused]: focused,
           },
         ]}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        onMouseenter={handleMouseEnter}
+        onMouseleave={handleMouseLeave}
       >
         <div class={`${COMPONENT_NAME}__inner`}>
           {prefixIconContent}
@@ -237,7 +233,13 @@ export default defineComponent({
           />
           {suffixContent ? <div class={`${COMPONENT_NAME}__suffix`}>{suffixContent}</div> : null}
           {suffixIconContent && (
-            <span class={`${COMPONENT_NAME}__suffix ${COMPONENT_NAME}__suffix-icon`}>{suffixIconContent}</span>
+            <span class={`${COMPONENT_NAME}__suffix ${COMPONENT_NAME}__suffix-icon`}>
+              {isShowClearIcon ? (
+                <CloseCircleFilledIcon class={`${COMPONENT_NAME}__suffix-clear`} onClick={handleClear} />
+              ) : (
+                suffixIconContent
+              )}
+            </span>
           )}
         </div>
         {this.tips && <div class={`${COMPONENT_NAME}__tips`}>{this.tips}</div>}
