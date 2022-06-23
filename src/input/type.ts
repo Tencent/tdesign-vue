@@ -121,7 +121,7 @@ export interface TdInputProps {
   /**
    * 输入框值发生变化时触发
    */
-  onChange?: (value: InputValue, context?: { e?: InputEvent | MouseEvent }) => void;
+  onChange?: (value: InputValue, context?: { e?: InputEvent | MouseEvent | CompositionEvent }) => void;
   /**
    * 清空按钮点击时触发
    */

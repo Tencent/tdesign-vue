@@ -42,6 +42,8 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       focused: false,
       renderType: this.type,
       inputValue: this.value,
+      composingRef: false,
+      composingRefValue: '',
     };
   },
   computed: {
@@ -215,16 +217,33 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       this.focused = false;
       emitEvent<Parameters<TdInputProps['onBlur']>>(this, 'blur', this.value, { e });
     },
-    compositionendHandler(e: InputEvent) {
-      this.inputValueChangeHandle(e);
+    compositionstartHandler(e: CompositionEvent) {
+      this.composingRef = true;
+      const {
+        currentTarget: { value },
+      }: any = e;
+      this?.onCompositionstart?.(value, { e });
+    },
+    compositionendHandler(e: CompositionEvent) {
+      const {
+        currentTarget: { value },
+      }: any = e;
+      if (this.composingRef) {
+        this.composingRef = false;
+        this.inputValueChangeHandle(e);
+      }
+      this.composingRefValue = '';
+      this?.onCompositionend?.(value, { e });
     },
     onRootClick(e: MouseEvent) {
       (this.$refs.inputRef as HTMLInputElement)?.focus();
       this.$emit('click', e);
     },
-    inputValueChangeHandle(e: InputEvent) {
-      const { target } = e;
-      let val = (target as HTMLInputElement).value;
+    inputValueChangeHandle(e: InputEvent | CompositionEvent) {
+      let {
+        currentTarget: { value: val },
+      }: any = e;
+      this.composingRefValue = val;
       if (this.maxcharacter && this.maxcharacter >= 0) {
         const stringInfo = getCharacterLength(val, this.maxcharacter);
         val = typeof stringInfo === 'object' && stringInfo.characters;
@@ -312,8 +331,9 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
           {...{ attrs: this.inputAttrs, on: inputEvents }}
           ref="inputRef"
           class={`${name}__inner`}
-          value={this.inputValue}
+          value={this.composingRef ? this.composingRefValue : this.inputValue ?? ''}
           onInput={this.handleInput}
+          onCompositionstart={this.compositionstartHandler}
           onCompositionend={this.compositionendHandler}
         />
         {this.autoWidth && (
