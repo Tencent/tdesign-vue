@@ -108,6 +108,7 @@ export default (Vue as VueConstructor<Affix>).extend({
     this.placeholderEL = document.createElement('div');
     this.$nextTick(() => {
       this.scrollContainer = getScrollContainer(this.container);
+      this.handleScroll();
       on(this.scrollContainer, 'scroll', this.handleScroll);
       on(window, 'resize', this.handleScroll);
     });
