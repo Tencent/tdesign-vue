@@ -43,7 +43,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       renderType: this.type,
       inputValue: this.value,
       composingRef: false,
-      composingRefValue: '',
+      composingRefValue: this.value,
     };
   },
   computed: {
@@ -162,13 +162,6 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       const input = this.$refs.inputRef as HTMLInputElement;
       input?.blur();
     },
-    handleInput(e: InputEvent): void {
-      // 中文输入的时候inputType是insertCompositionText所以中文输入的时候禁止触发。
-      const isCheckInputType = e.inputType && e.inputType === 'insertCompositionText';
-      if (e.isComposing || isCheckInputType) return;
-      this.inputValueChangeHandle(e);
-    },
-
     handleKeydown(e: KeyboardEvent) {
       if (this.tDisabled) return;
       const code = e.code || e.key;
@@ -222,6 +215,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       const {
         currentTarget: { value },
       }: any = e;
+      this.composingRefValue = this.inputValue;
       this?.onCompositionstart?.(value, { e });
     },
     compositionendHandler(e: CompositionEvent) {
@@ -230,7 +224,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       }: any = e;
       if (this.composingRef) {
         this.composingRef = false;
-        this.inputValueChangeHandle(e);
+        this.handleInput(e);
       }
       this.composingRefValue = '';
       this?.onCompositionend?.(value, { e });
@@ -239,18 +233,23 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       (this.$refs.inputRef as HTMLInputElement)?.focus();
       this.$emit('click', e);
     },
-    inputValueChangeHandle(e: InputEvent | CompositionEvent) {
+    handleInput(e: InputEvent | CompositionEvent) {
       let {
         currentTarget: { value: val },
       }: any = e;
-      this.composingRefValue = val;
-      if (this.maxcharacter && this.maxcharacter >= 0) {
-        const stringInfo = getCharacterLength(val, this.maxcharacter);
-        val = typeof stringInfo === 'object' && stringInfo.characters;
+      if (this.composingRef) {
+        this.composingRefValue = val;
+      } else {
+        if (this.maxcharacter && this.maxcharacter >= 0) {
+          const stringInfo = getCharacterLength(val, this.maxcharacter);
+          val = typeof stringInfo === 'object' && stringInfo.characters;
+        }
+        emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e });
+        // 受控，重要，勿删
+        this.$nextTick(() => {
+          this.setInputValue(val);
+        });
       }
-      emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e });
-      // 受控，重要，勿删
-      this.$nextTick(() => this.setInputValue(this.value));
     },
 
     onInputMouseenter(e: MouseEvent) {
