@@ -247,7 +247,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e });
         // 受控，重要，勿删
         this.$nextTick(() => {
-          this.setInputValue(val);
+          this.setInputValue(this.value);
         });
       }
     },
