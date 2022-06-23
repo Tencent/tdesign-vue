@@ -22,7 +22,11 @@ export default defineComponent({
     ]);
 
     return {
-      COMPONENT_NAME, tOverlayStyle, innerPopupVisible, onInnerPopupVisibleChange, popupClasses,
+      COMPONENT_NAME,
+      tOverlayStyle,
+      innerPopupVisible,
+      onInnerPopupVisibleChange,
+      popupClasses,
     };
   },
 
@@ -41,6 +45,7 @@ export default defineComponent({
           visible={this.popupVisible || innerPopupVisible}
           {...{
             props: {
+              disabled: this.disabled,
               overlayStyle: tOverlayStyle,
               onVisibleChange: onInnerPopupVisibleChange,
               ...(this.popupProps as Object),
@@ -53,6 +58,7 @@ export default defineComponent({
               props: {
                 value: this.inputValue,
                 onChange: this.onInputChange,
+                disabled: this.disabled,
                 ...(this.rangeInputProps as Object),
               },
             }}
