@@ -330,7 +330,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
           {...{ attrs: this.inputAttrs, on: inputEvents }}
           ref="inputRef"
           class={`${name}__inner`}
-          value={this.composingRef ? this.composingRefValue : this.inputValue ?? ''}
+          value={this.composingRef ? this.composingRefValue : this.inputValue}
           onInput={this.handleInput}
           onCompositionstart={this.compositionstartHandler}
           onCompositionend={this.compositionendHandler}
