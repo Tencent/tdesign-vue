@@ -24,7 +24,7 @@ export default {
 
 <style scoped>
 .tdesign-demo-select-base {
-  width: 450px;
+  width: 800px;
   display: flex;
 }
 
