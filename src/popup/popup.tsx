@@ -55,6 +55,9 @@ export default Vue.extend({
     expandAnimation: {
       type: Boolean,
     },
+    updateScrollTop: {
+      type: Function,
+    },
   },
 
   data() {
@@ -114,6 +117,9 @@ export default Vue.extend({
             }
           });
         }
+        this.$nextTick(() => {
+          this.popupMounted();
+        });
       } else {
         this.preventClosing(false);
         // destruction is delayed until after animation ends
@@ -215,6 +221,14 @@ export default Vue.extend({
       });
     },
 
+    // popup弹出第一次初始化暴露事件
+    popupMounted() {
+      // 用于select定位事件
+      const overlayEl = this.$refs?.overlay as HTMLElement;
+      if (overlayEl) {
+        this.updateScrollTop?.(overlayEl);
+      }
+    },
     updateOverlayStyle() {
       const { overlayStyle } = this;
       const triggerEl = this.$el as HTMLElement;
