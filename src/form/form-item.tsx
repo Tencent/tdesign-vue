@@ -20,7 +20,9 @@ import {
   FormItemValidateMessage,
 } from './type';
 import props from './form-item-props';
-import { AnalysisValidateResult, CLASS_NAMES, ErrorListType, FORM_ITEM_CLASS_PREFIX, SuccessListType } from './const';
+import {
+  AnalysisValidateResult, CLASS_NAMES, ErrorListType, FORM_ITEM_CLASS_PREFIX, SuccessListType,
+} from './const';
 import Form from './form';
 import { ClassName, TNodeReturnValue, Styles } from '../common';
 import mixins from '../utils/mixins';
@@ -301,7 +303,7 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
           Object.keys(item).forEach((key) => {
             if (typeof item.message === 'undefined' && this.errorMessages[key]) {
               const compiled = lodashTemplate(this.errorMessages[key]);
-              const name = typeof props.label === 'string' ? props.label : props.name;
+              const name = typeof this.label === 'string' ? this.label : this.name;
               // eslint-disable-next-line no-param-reassign
               item.message = compiled({
                 name,
