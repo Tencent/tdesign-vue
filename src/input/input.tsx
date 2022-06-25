@@ -165,19 +165,31 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     handleKeydown(e: KeyboardEvent) {
       if (this.tDisabled) return;
       const code = e.code || e.key;
+      const {
+        currentTarget: { value },
+      }: any = e;
       if (code === 'Enter' || code === 'NumpadEnter') {
-        emitEvent<Parameters<TdInputProps['onEnter']>>(this, 'enter', this.value, { e });
+        emitEvent<Parameters<TdInputProps['onEnter']>>(this, 'enter', value, { e });
       } else {
-        emitEvent<Parameters<TdInputProps['onKeydown']>>(this, 'keydown', this.value, { e });
+        emitEvent<Parameters<TdInputProps['onKeydown']>>(this, 'keydown', value, { e });
       }
     },
     handleKeyUp(e: KeyboardEvent) {
       if (this.tDisabled) return;
-      emitEvent<Parameters<TdInputProps['onKeyup']>>(this, 'keyup', this.value, { e });
+      const {
+        currentTarget: { value },
+      }: any = e;
+      if (e.key === 'Process') {
+        return;
+      }
+      emitEvent<Parameters<TdInputProps['onKeyup']>>(this, 'keyup', value, { e });
     },
     handleKeypress(e: KeyboardEvent) {
       if (this.tDisabled) return;
-      emitEvent<Parameters<TdInputProps['onKeypress']>>(this, 'keypress', this.value, { e });
+      const {
+        currentTarget: { value },
+      }: any = e;
+      emitEvent<Parameters<TdInputProps['onKeypress']>>(this, 'keypress', value, { e });
     },
     onHandlePaste(e: ClipboardEvent) {
       if (this.tDisabled) return;
@@ -215,7 +227,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       const {
         currentTarget: { value },
       }: any = e;
-      this.composingRefValue = this.inputValue;
+      this.composingRefValue = value;
       this?.onCompositionstart?.(value, { e });
     },
     compositionendHandler(e: CompositionEvent) {
