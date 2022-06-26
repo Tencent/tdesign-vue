@@ -107,9 +107,22 @@ exports[`Select Select collapsedVue demo works fine 1`] = `
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
             选项一
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </span>
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark"
@@ -166,9 +179,22 @@ exports[`Select Select collapsedVue demo works fine 1`] = `
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
             选项一
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </span>
           <span
             style="color: rgb(237, 123, 47);"
@@ -225,9 +251,22 @@ exports[`Select Select collapsedVue demo works fine 1`] = `
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
             选项一
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </span>
           <span>
              
@@ -1000,9 +1039,22 @@ exports[`Select Select labelInValueVue demo works fine 1`] = `
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
             选项一
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </span>
         </div>
         <input
@@ -1109,14 +1161,40 @@ exports[`Select Select multipleVue demo works fine 1`] = `
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
             区块链
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
             人工智能
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </span>
         </div>
         <input
@@ -1168,34 +1246,112 @@ exports[`Select Select multipleVue demo works fine 1`] = `
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
             1
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
             2
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
             3
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
             4
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
             5
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
             6
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </span>
         </div>
         <input
@@ -1247,14 +1403,40 @@ exports[`Select Select multipleVue demo works fine 1`] = `
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
             区块链
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
             人工智能
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </span>
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark"
