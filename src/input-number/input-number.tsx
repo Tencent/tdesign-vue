@@ -278,7 +278,7 @@ export default Vue.extend({
       emitEvent<Parameters<TdInputNumberProps['onKeyup']>>(this, 'keyup', value, ctx);
     },
     handleKeypress(value: number, ctx: { e: KeyboardEvent }) {
-      emitEvent<Parameters<TdInputNumberProps['onKeypress']>>(this, 'keypress', this.value, ctx);
+      emitEvent<Parameters<TdInputNumberProps['onKeypress']>>(this, 'keypress', value, ctx);
       this.handlePressKey(value, ctx);
     },
     handlePressKey(value: number, ctx: { e: KeyboardEvent }) {
