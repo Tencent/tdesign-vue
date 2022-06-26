@@ -1,17 +1,17 @@
 <template>
-  <div>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value" filterable clearable placeholder='请选择'></t-cascader>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value2" filterable clearable multiple placeholder='请选择' :minCollapsedNum="2"></t-cascader>
+  <div class="tdesign-demo-block-row">
+    <t-cascader v-model="value" :options="options" filterable clearable />
+    <t-cascader v-model="value2" :options="options" filterable clearable multiple :min-collapsed-num="2" />
+    <t-cascader v-model="value3" :filter="filterMethod" :options="options" clearable :min-collapsed-num="2" />
   </div>
 </template>
-
 <script>
 export default {
   data() {
     return {
       options: [
         {
-          label: '选项一',
+          label: '当选项一数据展示文本过长时',
           value: '1',
           children: [
             {
@@ -23,7 +23,7 @@ export default {
               value: '1.2',
             },
             {
-              label: '子选项三',
+              label: '当选项数据展示文本过长时',
               value: '1.3',
             },
           ],
@@ -37,7 +37,7 @@ export default {
               value: '2.1',
             },
             {
-              label: '子选项二',
+              label: '当选项数据展示文本过长时',
               value: '2.2',
             },
           ],
@@ -45,12 +45,14 @@ export default {
       ],
       value: '',
       value2: ['1.1'],
+      value3: '',
     };
+  },
+  methods: {
+    filterMethod(search, node) {
+      console.log('filter:', search, node.label);
+      return node.label.indexOf(search) !== -1;
+    },
   },
 };
 </script>
-<style scoped>
-.t-demo-cascader + .t-demo-cascader {
-  margin-top: 16px;
-}
-</style>

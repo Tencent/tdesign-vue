@@ -1,5 +1,5 @@
 import {
-  ref, toRefs, watch, getCurrentInstance,
+  ref, toRefs, computed, getCurrentInstance,
 } from '@vue/composition-api';
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
@@ -20,7 +20,6 @@ export default function useOverlayStyle(props: overlayStyleProps) {
 
   const { popupProps, autoWidth } = toRefs(props);
   const innerPopupVisible = ref(false);
-  const tOverlayStyle = ref<TdPopupProps['overlayStyle']>();
 
   const macthWidthFunc = (triggerElement: HTMLElement, popupElement: HTMLElement) => {
     // 避免因滚动条出现文本省略，预留宽度 8
@@ -47,8 +46,7 @@ export default function useOverlayStyle(props: overlayStyleProps) {
     instance.emit('popup-visible-change', newVisible, context);
   };
 
-  watch([innerPopupVisible, popupProps], () => {
-    if (tOverlayStyle.value) return;
+  const tOverlayStyle = computed(() => {
     let result: TdPopupProps['overlayStyle'] = {};
     const overlayStyle = popupProps.value?.overlayStyle || {};
     if (isFunction(overlayStyle) || (isObject(overlayStyle) && overlayStyle.width)) {
@@ -56,7 +54,7 @@ export default function useOverlayStyle(props: overlayStyleProps) {
     } else if (!autoWidth.value) {
       result = macthWidthFunc;
     }
-    tOverlayStyle.value = result;
+    return result;
   });
 
   return {

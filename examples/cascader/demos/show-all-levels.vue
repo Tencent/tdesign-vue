@@ -1,9 +1,8 @@
 <template>
   <div>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value" :show-all-levels="false" placeholder='请选择'></t-cascader>
+    <t-cascader v-model="value" :options="options" :show-all-levels="false" />
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -47,8 +46,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.t-demo-cascader + .t-demo-cascader {
-  margin-top: 16px;
-}
-</style>

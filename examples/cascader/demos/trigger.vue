@@ -1,10 +1,9 @@
 <template>
-  <div>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value" trigger="click" placeholder='请选择'></t-cascader>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value" trigger="hover" placeholder='请选择'></t-cascader>
+  <div class="tdesign-demo-block-row">
+    <t-cascader v-model="value" :options="options" trigger="click" />
+    <t-cascader v-model="value" :options="options" trigger="hover" />
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -48,8 +47,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.t-demo-cascader + .t-demo-cascader {
-  margin-top: 16px;
-}
-</style>

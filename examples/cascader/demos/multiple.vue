@@ -1,9 +1,8 @@
 <template>
-  <div>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value" multiple clearable/>
+  <div class="t-cascader-demo">
+    <t-cascader v-model="value" :options="options" multiple clearable />
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -52,11 +51,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.t-demo-cascader-title {
-  margin: 10px 0;
-}
-.t-demo-cascader + .t-demo-cascader {
-  margin-top: 16px;
-}
-</style>

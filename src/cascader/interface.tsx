@@ -1,4 +1,5 @@
 import { TdCascaderProps, CascaderValue, CascaderChangeSource } from './type';
+import { TdSelectInputProps } from '../select-input/type';
 import TreeStore from '../_common/js/tree/tree-store';
 import TreeNode from '../_common/js/tree/tree-node';
 import { TreeNodeModel, TreeNodeValue } from '../_common/js/tree/types';
@@ -15,27 +16,23 @@ export interface CascaderContextType
     | 'lazy'
     | 'multiple'
     | 'filterable'
+    | 'filter'
     | 'clearable'
     | 'checkProps'
     | 'showAllLevels'
     | 'max'
     | 'value'
     | 'minCollapsedNum'
-    | 'loading'
     | 'valueType'
   > {
   treeStore: TreeStore;
-  inputWidth: number;
-  setInputWidth: (val: number) => void;
   setValue: (val: CascaderValue, source: CascaderChangeSource, node?: TreeNodeModel) => void;
   visible: boolean;
-  setVisible: (val: boolean) => void;
+  setVisible: TdSelectInputProps['onPopupVisibleChange'];
   treeNodes: TreeNode[];
   setTreeNodes: (val: CascaderValue) => void;
-  filterActive: boolean;
-  setFilterActive: (val: boolean) => void;
-  inputVal: string;
-  setInputVal: (val: string) => void;
+  inputVal: TdSelectInputProps['inputValue'];
+  setInputVal: (val: TdSelectInputProps['inputValue']) => void;
   setExpend: (val: TreeNodeValue[]) => void;
 }
 
@@ -57,6 +54,12 @@ export interface InputContentProps {
   collapsedItems: TdCascaderProps['collapsedItems'];
 }
 
+export interface ContentProps {
+  cascaderContext: CascaderContextType;
+  placeholder: TdCascaderProps['placeholder'];
+  listeners: InputContentProps['listeners'];
+  isHover: boolean;
+}
 export interface CascaderItemPropsType {
   node: TreeNode;
   cascaderContext: CascaderContextType;
@@ -70,5 +73,6 @@ export { TreeNode } from '../_common/js/tree/tree-node';
 export type { TreeNodeValue } from '../_common/js/tree/types';
 export type { TreeOptionData } from '../_common/js/common';
 export type { TreeNodeModel } from '../tree';
+export type { TdSelectInputProps } from '../select-input/type';
 
 export const EVENT_NAME_WITH_KEBAB = ['remove', 'blur', 'focus'];

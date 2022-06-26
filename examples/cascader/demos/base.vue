@@ -1,17 +1,8 @@
 <template>
   <div>
-    <t-cascader
-      v-model="value"
-      :options="options"
-      clearable
-      size="medium"
-      placeholder='请选择'
-      class="t-demo-cascader"
-      @change="onChange"
-    ></t-cascader>
+    <t-cascader v-model="value" :options="options" clearable @change="onChange" />
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -61,11 +52,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.t-demo-cascader-title {
-  margin: 10px 0;
-}
-.t-demo-cascader + .t-demo-cascader {
-  margin-top: 16px;
-}
-</style>
