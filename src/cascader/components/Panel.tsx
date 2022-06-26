@@ -53,13 +53,13 @@ export default defineComponent({
           props: {
             node,
             cascaderContext,
-            onClick: (node: TreeNode) => {
+            onClick: () => {
               handleExpand(node, 'click');
             },
-            onMouseenter: (node: TreeNode) => {
+            onMouseenter: () => {
               handleExpand(node, 'hover');
             },
-            onChange: (node: TreeNode) => {
+            onChange: () => {
               valueChangeEffect(node, cascaderContext);
             },
           },

@@ -35,7 +35,7 @@ export default defineComponent({
 
     const inputPlaceholder = computed(
       () => (cascaderContext.value.visible && !props.multiple && getSingleContent(cascaderContext.value))
-        || global.value.placeholder,
+        || (props.placeholder ?? global.value.placeholder),
     );
 
     return {
@@ -112,7 +112,7 @@ export default defineComponent({
             tagInputProps: { size: this.size },
             onInputChange: (value: InputValue) => {
               if (!isFilterable) return;
-              setInputVal(value);
+              setInputVal(`${value}`);
             },
             onTagChange: (val: CascaderValue, ctx: SelectInputChangeContext) => {
               handleRemoveTagEffect(cascaderContext, ctx.index, this.onRemove);
