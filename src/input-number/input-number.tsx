@@ -246,21 +246,21 @@ export default Vue.extend({
     handleBlur(value: number, ctx: { e: FocusEvent }) {
       this.handleEndInput(ctx.e);
       this.clearFilterValue();
-      emitEvent<Parameters<TdInputNumberProps['onBlur']>>(this, 'blur', value, ctx);
+      emitEvent<Parameters<TdInputNumberProps['onBlur']>>(this, 'blur', this.value, ctx);
     },
     handleFocus(value: number, ctx: { e: FocusEvent }) {
       this.handleStartInput();
-      emitEvent<Parameters<TdInputNumberProps['onFocus']>>(this, 'focus', value, ctx);
+      emitEvent<Parameters<TdInputNumberProps['onFocus']>>(this, 'focus', this.value, ctx);
     },
     handleKeypressEnter(value: number, ctx: { e: KeyboardEvent }) {
       this.handleEndInput(ctx.e);
-      emitEvent<Parameters<TdInputNumberProps['onEnter']>>(this, 'enter', value, ctx);
+      emitEvent<Parameters<TdInputNumberProps['onEnter']>>(this, 'enter', this.value, ctx);
       this.inputting = true;
       this.enter = true;
       this.filterValue = String(this.value);
     },
     handleKeydown(value: number, ctx: { e: KeyboardEvent }) {
-      emitEvent<Parameters<TdInputNumberProps['onKeydown']>>(this, 'keydown', value, ctx);
+      emitEvent<Parameters<TdInputNumberProps['onKeydown']>>(this, 'keydown', this.value, ctx);
       this.handleDownKey(ctx.e);
     },
     handleDownKey(e: KeyboardEvent) {
@@ -274,11 +274,11 @@ export default Vue.extend({
       }
     },
     handleKeyup(value: number, ctx: { e: KeyboardEvent }) {
+      emitEvent<Parameters<TdInputNumberProps['onKeyup']>>(this, 'keyup', this.value, ctx);
       this.enter = false;
-      emitEvent<Parameters<TdInputNumberProps['onKeyup']>>(this, 'keyup', value, ctx);
     },
     handleKeypress(value: number, ctx: { e: KeyboardEvent }) {
-      emitEvent<Parameters<TdInputNumberProps['onKeypress']>>(this, 'keypress', value, ctx);
+      emitEvent<Parameters<TdInputNumberProps['onKeypress']>>(this, 'keypress', this.value, ctx);
       this.handlePressKey(value, ctx);
     },
     handlePressKey(value: number, ctx: { e: KeyboardEvent }) {
@@ -386,7 +386,7 @@ export default Vue.extend({
         <t-input
           {...this.inputAttrs}
           {...this.inputEvents}
-          // props={this.inputProps}
+          props={this.inputProps}
           value={this.displayValue}
           onChange={(val: string, { e }: { e: InputEvent }) => this.handleInput(val, e)}
         />
