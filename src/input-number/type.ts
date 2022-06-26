@@ -116,7 +116,7 @@ export interface TdInputNumberProps {
 
 export interface ChangeContext {
   type: ChangeSource;
-  e: InputEvent | MouseEvent | FocusEvent;
+  e: InputEvent | MouseEvent | FocusEvent | KeyboardEvent;
 }
 
 export type ChangeSource = 'add' | 'reduce' | 'input' | '';
