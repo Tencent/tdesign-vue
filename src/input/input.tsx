@@ -256,7 +256,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
           const stringInfo = getCharacterLength(val, this.maxcharacter);
           val = typeof stringInfo === 'object' && stringInfo.characters;
         }
-        emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e });
+        emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e } as { e: MouseEvent | InputEvent });
         // 受控，重要，勿删
         this.$nextTick(() => {
           this.setInputValue(this.value);
