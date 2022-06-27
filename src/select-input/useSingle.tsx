@@ -84,6 +84,7 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
       showClearIconOnEmpty: Boolean(props.clearable && (inputValue.value || displayedValue)),
       inputClass: {
         [`${classPrefix.value}-input--focused`]: popupVisible,
+        [`${classPrefix.value}-is-focused`]: popupVisible,
       },
       ...props.inputProps,
     };
