@@ -64,7 +64,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         autofocus: this.autofocus,
         disabled: this.tDisabled,
         readonly: this.readonly,
-        autocomplete: this.global.autocomplete ?? this.autocomplete,
+        autocomplete: this.autocomplete ?? this.global.autocomplete,
         placeholder: this.tPlaceholder,
         maxlength: this.maxlength,
         name: this.name || undefined,
