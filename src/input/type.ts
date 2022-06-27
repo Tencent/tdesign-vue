@@ -19,7 +19,6 @@ export interface TdInputProps {
   allowInputOverMax?: boolean;
   /**
    * 是否开启自动填充功能，HTML5 原生属性，[点击查看详情](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete)
-   * @default ''
    */
   autocomplete?: string;
   /**
@@ -127,7 +126,7 @@ export interface TdInputProps {
   /**
    * 输入框值发生变化时触发
    */
-  onChange?: (value: InputValue, context?: { e?: InputEvent | MouseEvent | CompositionEvent }) => void;
+  onChange?: (value: InputValue, context?: { e?: InputEvent | MouseEvent }) => void;
   /**
    * 清空按钮点击时触发
    */

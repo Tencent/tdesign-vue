@@ -177,7 +177,7 @@ export default defineComponent({
     });
 
     const selectedValue = computed(() => (multiple.value ? selectedMultiple.value : selectedSingle.value));
-    const canFilter = computed(() => Boolean((global.value.filterable ?? props.filterable) || isFunction(props.filter)));
+    const canFilter = computed(() => Boolean(props.filterable || global.value.filterable || isFunction(props.filter)));
     const isGroupOption = computed(() => {
       const firstOption = options.value?.[0];
       return !!(firstOption && 'group' in firstOption && 'children' in firstOption);
