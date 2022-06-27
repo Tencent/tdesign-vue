@@ -113,6 +113,7 @@ export default {
   word-wrap: normal;
   overflow: hidden;
   text-overflow: ellipsis;
+  box-sizing: border-box;
 }
 
 .tdesign-demo__select-input-ul-label-suffix > li:hover {
