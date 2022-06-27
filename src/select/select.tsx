@@ -460,6 +460,8 @@ export default defineComponent({
               setValue(tempValue, { trigger: 'check', e });
             }
           }
+        } else if (labelInValue.value) {
+          setValue(realOptions.value.filter((item) => get(item, realValue.value) === v)[0], { trigger: 'check', e });
         } else {
           setValue(v, { trigger: 'check', e });
         }
