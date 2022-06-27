@@ -2451,7 +2451,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       <input
         autocomplete=""
         class="t-input__inner"
-        placeholder="select cascader data"
+        placeholder="select without data in Cascader"
         readonly="readonly"
         type="text"
         unselectable="on"

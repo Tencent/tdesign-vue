@@ -5383,7 +5383,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
               <input
                 autocomplete=""
                 class="t-input__inner"
-                placeholder="请选择"
+                placeholder="请选择籍贯"
                 type="text"
                 unselectable="off"
               />
