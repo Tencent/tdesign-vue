@@ -1,16 +1,8 @@
-import {
-  ComponentPublicInstance,
-  defineComponent,
-  onBeforeUnmount,
-  onMounted,
-  ref,
-  toRefs,
-} from '@vue/composition-api';
+import { defineComponent, ref, toRefs } from '@vue/composition-api';
 import useVModel from '../hooks/useVModel';
 import { renderTNodeJSXDefault } from '../utils/render-tnode';
 import props from './props';
 import { Popup as TPopup } from '../popup';
-import { useClickOutsider } from './utils/click-outsider';
 import ColorPanel from './panel';
 import DefaultTrigger from './trigger';
 import { TdColorContext } from './interfaces';
@@ -42,21 +34,10 @@ export default defineComponent({
       props.onPaletteBarChange(context);
     };
 
-    const refTrigger = ref<HTMLElement>();
-    const refColorPanel = ref<ComponentPublicInstance>();
-
-    const { addClickOutsider, removeClickOutsider } = useClickOutsider();
-    onMounted(() => addClickOutsider([refTrigger.value, refColorPanel.value], () => setVisible(false)));
-    onBeforeUnmount(() => {
-      removeClickOutsider();
-    });
-
     return {
       baseClassName,
       innerValue,
       visible,
-      refTrigger,
-      refColorPanel,
       setVisible,
       setInnerValue,
       handleChange,
@@ -97,6 +78,16 @@ export default defineComponent({
       overlayStyle: {
         padding: 0,
       },
+      onVisibleChange: (
+        visible: boolean,
+        context: {
+          trigger: string;
+        },
+      ) => {
+        if (context.trigger === 'document') {
+          this.setVisible(false);
+        }
+      },
     };
     return (
       <t-popup
@@ -107,7 +98,7 @@ export default defineComponent({
         }}
         content={renderPopupContent}
       >
-        <div class={`${baseClassName}__trigger`} onClick={() => setVisible(!this.visible)} ref="refTrigger">
+        <div class={`${baseClassName}__trigger`} onClick={() => setVisible(!this.visible)}>
           {renderTNodeJSXDefault(
             this,
             'default',

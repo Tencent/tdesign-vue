@@ -324,10 +324,7 @@ export default defineComponent({
     };
 
     return (
-      <div
-        class={[`${baseClassName}__panel`, this.disabled ? statusClassNames.disabled : false]}
-        onClick={(e: MouseEvent) => e.stopPropagation()}
-      >
+      <div class={[`${baseClassName}__panel`, this.disabled ? statusClassNames.disabled : false]}>
         <panel-header
           {...{
             props: {
