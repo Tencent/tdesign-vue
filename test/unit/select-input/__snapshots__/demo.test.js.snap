@@ -50,7 +50,7 @@ exports[`SelectInput SelectInput autowidthMultipleVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
   >
     <div
-      class="t-input t-size-m t-is-default t-input--auto-width t-input--prefix t-input--suffix"
+      class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -85,9 +85,6 @@ exports[`SelectInput SelectInput autowidthMultipleVue demo works fine 1`] = `
         placeholder=""
         type="text"
         unselectable="off"
-      />
-      <span
-        class="t-input__input-pre"
       />
       <span
         class="t-input__suffix t-input__suffix-icon"
@@ -485,7 +482,7 @@ exports[`SelectInput SelectInput customTagVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
   >
     <div
-      class="t-input t-size-m t-is-default t-input--prefix"
+      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -567,13 +564,6 @@ exports[`SelectInput SelectInput customTagVue demo works fine 1`] = `
           </svg>
         </span>
       </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
     </div>
   </div>
    
@@ -584,7 +574,7 @@ exports[`SelectInput SelectInput customTagVue demo works fine 1`] = `
     class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
   >
     <div
-      class="t-input t-size-m t-is-default t-input--prefix"
+      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix"
     >
       <div
         class="t-input__prefix"
@@ -710,13 +700,6 @@ exports[`SelectInput SelectInput customTagVue demo works fine 1`] = `
           </svg>
         </span>
       </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
     </div>
   </div>
 </div>

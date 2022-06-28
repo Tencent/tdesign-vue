@@ -739,6 +739,7 @@ export default defineComponent({
             ...inputProps,
           }}
           tagInputProps={{
+            autoWidth: true,
             ...tagInputProps,
           }}
           tagProps={tagProps}

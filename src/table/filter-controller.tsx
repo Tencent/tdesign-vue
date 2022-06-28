@@ -120,9 +120,9 @@ export default defineComponent({
 
       const renderComponent = () => {
         if (!component) return null;
-        const isVueComponent = component.name === 'VueComponent';
+        const isVueComponent = component.install && component.component;
         if (typeof component === 'function' && !isVueComponent) {
-          return column?.filter?.component((v: FirstParams, b: SecondParams) => {
+          return component((v: FirstParams, b: SecondParams) => {
             const tProps = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
             return h(v, {
               props: { ...filterComponentProps, ...tProps },
