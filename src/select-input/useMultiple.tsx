@@ -61,7 +61,6 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
       ...p.commonInputProps,
       tagProps: props.tagProps,
       label: props.label,
-      autoWidth: props.autoWidth,
       placeholder: tPlaceholder.value,
       minCollapsedNum: props.minCollapsedNum,
       collapsedItems: props.collapsedItems,
@@ -78,7 +77,6 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
       },
       suffixIcon: !props.disabled && props.loading ? () => <Loading loading size="small" /> : props.suffixIcon,
     };
-
     return (
       <TagInput
         ref="tagInputRef"
