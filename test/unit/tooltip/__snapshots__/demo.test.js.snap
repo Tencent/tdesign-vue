@@ -283,7 +283,7 @@ exports[`Tooltip Tooltip triggerVue demo works fine 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m"
+      class="t-input t-size-m t-is-default"
     >
       <input
         autocomplete=""

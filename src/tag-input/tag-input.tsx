@@ -1,5 +1,5 @@
 import {
-  defineComponent, computed, toRefs, nextTick,
+  defineComponent, computed, toRefs, ref, nextTick,
 } from '@vue/composition-api';
 
 import { CloseCircleFilledIcon } from 'tdesign-icons-vue';
@@ -25,6 +25,8 @@ export default defineComponent({
 
   setup(props: TdTagInputProps, context) {
     const { inputValue } = toRefs(props);
+    const { inputProps } = props;
+    const isCompositionRef = ref(false);
     const [tInputValue, setTInputValue] = useDefaultValue(
       inputValue,
       props.defaultInputValue,
@@ -67,13 +69,24 @@ export default defineComponent({
           && (tagValue.value?.length || tInputValue.value),
     ));
 
+    const onInputCompositionstart = (value: InputValue, context: { e: CompositionEvent }) => {
+      isCompositionRef.value = true;
+      inputProps?.onCompositionstart?.(value, context);
+    };
+
+    const onInputCompositionend = (value: InputValue, context: { e: CompositionEvent }) => {
+      isCompositionRef.value = false;
+      inputProps?.onCompositionend?.(value, context);
+    };
+
     const onInputEnter = (value: InputValue, context: { e: KeyboardEvent }) => {
       // 阻止 Enter 默认行为，避免在 Form 中触发 submit 事件
       context.e?.preventDefault();
       setTInputValue('', { e: context.e, trigger: 'enter' });
-      onInnerEnter(value, context);
+      !isCompositionRef.value && onInnerEnter(value, context);
       nextTick(() => {
         scrollToRight();
+        isCompositionRef.value = false;
       });
     };
 
@@ -109,6 +122,8 @@ export default defineComponent({
       onClearClick,
       onClose,
       classes,
+      onInputCompositionstart,
+      onInputCompositionend,
     };
   },
 
@@ -130,13 +145,15 @@ export default defineComponent({
     return (
       <TInput
         ref="tagInputRef"
-        readonly={this.readonly}
         {...this.inputProps}
+        readonly={this.inputProps?.readonly}
         inputClass={this.inputProps?.inputClass} // 展开无效 需直接透传
         value={this.tInputValue}
         onChange={(val: InputValue, context?: { e?: InputEvent | MouseEvent }) => {
           this.setTInputValue(val, { ...context, trigger: 'input' });
         }}
+        showInput={!this.inputProps?.readonly}
+        keepWrapperWidth={true}
         onMousewheel={this.onWheel}
         autoWidth={this.autoWidth}
         size={this.size}
@@ -174,6 +191,8 @@ export default defineComponent({
             },
           },
         }}
+        onCompositionstart={this.onInputCompositionstart}
+        onCompositionend={this.onInputCompositionend}
       />
     );
   },

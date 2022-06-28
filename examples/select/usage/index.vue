@@ -4,7 +4,7 @@
     <template #select="{ configProps }">
       <t-select v-bind="configProps">
         <t-option key="apple" label="Apple" value="apple" />
-        <t-option key="orange" label="Orange" value="orange">Orange</t-option>
+        <t-option key="orange" value="orange">Orange</t-option>
         <t-option key="banana" label="Banana" value="banana" />
       </t-select>
     </template>

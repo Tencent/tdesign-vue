@@ -107,7 +107,7 @@ export default defineComponent({
         }}
         content={renderPopupContent}
       >
-        <div className={`${baseClassName}__trigger`} onClick={() => setVisible(!this.visible)} ref="refTrigger">
+        <div class={`${baseClassName}__trigger`} onClick={() => setVisible(!this.visible)} ref="refTrigger">
           {renderTNodeJSXDefault(
             this,
             'default',

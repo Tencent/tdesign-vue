@@ -7,10 +7,15 @@ import { TdPopupProps, PopupVisibleChangeContext } from '../popup';
 import { TdSelectInputProps } from './type';
 import { Styles } from '../common';
 
+export type overlayStyleProps = Pick<
+  TdSelectInputProps,
+  'popupProps' | 'autoWidth' | 'readonly' | 'onPopupVisibleChange' | 'disabled'
+>;
+
 // 单位：px
 const MAX_POPUP_WIDTH = 1000;
 
-export default function useOverlayStyle(props: TdSelectInputProps) {
+export default function useOverlayStyle(props: overlayStyleProps) {
   const instance = getCurrentInstance();
 
   const { popupProps, autoWidth } = toRefs(props);

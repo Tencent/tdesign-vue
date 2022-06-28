@@ -186,8 +186,10 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
           start = this.current - this.curPageLeftCount;
           end = this.current + this.curPageRightCount;
         } else {
-          start = this.isPrevMoreShow ? this.pageCount - this.foldedMaxPageBtn + 1 : 2;
-          end = this.isPrevMoreShow ? this.pageCount - 1 : this.foldedMaxPageBtn;
+          const foldedStart = this.isMidEllipsis ? 2 : 1;
+          const foldedEnd = this.isMidEllipsis ? this.pageCount - 1 : this.pageCount;
+          start = this.isPrevMoreShow ? this.pageCount - this.foldedMaxPageBtn + 1 : foldedStart;
+          end = this.isPrevMoreShow ? foldedEnd : this.foldedMaxPageBtn;
         }
       } else {
         start = 1;
@@ -202,6 +204,9 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
 
     isFolded(): boolean {
       return this.pageCount > this.maxPageBtn;
+    },
+    isMidEllipsis(): boolean {
+      return this.pageEllipsisMode === 'mid';
     },
   },
 
@@ -337,12 +342,12 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
         {/* 常规版 */}
         {this.showPageNumber && this.theme === 'default' ? (
           <ul class={this.btnWrapClass}>
-            {this.isFolded ? (
+            {this.isFolded && this.isMidEllipsis ? (
               <li class={this.getButtonClass(1)} onClick={() => this.toPage(min)}>
                 {min}
               </li>
             ) : null}
-            {this.isFolded && this.isPrevMoreShow ? (
+            {this.isFolded && this.isPrevMoreShow && this.isMidEllipsis ? (
               <li
                 class={this.btnMoreClass}
                 onClick={this.prevMorePage}
@@ -357,7 +362,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
                 {i}
               </li>
             ))}
-            {this.isFolded && this.isNextMoreShow ? (
+            {this.isFolded && this.isNextMoreShow && this.isMidEllipsis ? (
               <li
                 class={this.btnMoreClass}
                 onClick={this.nextMorePage}
@@ -367,7 +372,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
                 {this.nextMore ? <chevron-right-double-icon /> : <ellipsis-icon />}
               </li>
             ) : null}
-            {this.isFolded ? (
+            {this.isFolded && this.isMidEllipsis ? (
               <li class={this.getButtonClass(this.pageCount)} onClick={() => this.toPage(this.pageCount)}>
                 {this.pageCount}
               </li>

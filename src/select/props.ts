@@ -130,11 +130,11 @@ export default {
       return ['small', 'medium', 'large'].includes(val);
     },
   },
-  /** 【开发中】透传 TagInput 标签输入框组件的全部属性 */
+  /** 透传 TagInput 标签输入框组件的全部属性 */
   tagInputProps: {
     type: Object as PropType<TdSelectProps['tagInputProps']>,
   },
-  /** 【开发中】透传 Tag 标签组件全部属性 */
+  /** 透传 Tag 标签组件全部属性 */
   tagProps: {
     type: Object as PropType<TdSelectProps['tagProps']>,
   },
