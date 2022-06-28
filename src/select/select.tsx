@@ -589,6 +589,8 @@ export default defineComponent({
       }
     };
     const updateScrollTop = (content: HTMLDivElement) => {
+      // 虚拟滚动不支持移动定位到选中项
+      if (props.scroll?.type === 'virtual') return;
       const overlayEl = getOverlayElm();
       if (!overlayEl) return;
       const firstSelectedNode: HTMLDivElement = overlayEl?.querySelector(`.${classPrefix.value}-is-selected`);
