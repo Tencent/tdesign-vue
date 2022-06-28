@@ -1,10 +1,6 @@
 <template>
-  <div class="tdesign-demo-item--datepicker">
-    <t-date-picker
-      mode="date"
-      format="YYYY-MM-DD HH:mm:ss"
-      enableTimePicker
-      defaultValue="2021-05-01 11:30:20"
-    />
-  </div>
+  <t-space direction="vertical">
+    <t-date-picker enable-time-picker allow-input clearable />
+    <t-date-picker enable-time-picker allow-input clearable format="YYYY-MM-DD a hh:mm:ss" />
+  </t-space>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-view />
-    <tdesign-theme-generator />
+    <td-theme-generator />
   </div>
 </template>
 

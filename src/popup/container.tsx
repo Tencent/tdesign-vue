@@ -110,7 +110,8 @@ export default Vue.extend({
           removeDom(elm);
         },
       });
-      getAttach(this.attach).appendChild(elm);
+      // @ts-ignore
+      getAttach(this.attach, this.$refs?.triggerRef?.$el).appendChild(elm);
       this.content.$mount(elm.children[0]);
     },
     unmountContent() {
@@ -121,6 +122,10 @@ export default Vue.extend({
     },
   },
   render() {
-    return <Trigger onResize={() => this.$emit('resize')}>{this.$slots.default}</Trigger>;
+    return (
+      <Trigger ref="triggerRef" onResize={() => this.$emit('resize')}>
+        {this.$slots.default}
+      </Trigger>
+    );
   },
 });

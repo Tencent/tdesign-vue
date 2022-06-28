@@ -145,13 +145,15 @@ export default defineComponent({
     return (
       <TInput
         ref="tagInputRef"
-        readonly={this.readonly}
         {...this.inputProps}
+        readonly={this.inputProps?.readonly}
         inputClass={this.inputProps?.inputClass} // 展开无效 需直接透传
         value={this.tInputValue}
         onChange={(val: InputValue, context?: { e?: InputEvent | MouseEvent }) => {
           this.setTInputValue(val, { ...context, trigger: 'input' });
         }}
+        showInput={!this.inputProps?.readonly}
+        keepWrapperWidth={true}
         onMousewheel={this.onWheel}
         autoWidth={this.autoWidth}
         size={this.size}

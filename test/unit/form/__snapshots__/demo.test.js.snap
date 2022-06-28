@@ -94,11 +94,12 @@ exports[`Form Form alignVue demo works fine 1`] = `
         <div
           class="t-form__controls-content"
         >
+           
           <div
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -137,7 +138,7 @@ exports[`Form Form alignVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -206,7 +207,7 @@ exports[`Form Form baseVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -245,7 +246,7 @@ exports[`Form Form baseVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -518,7 +519,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -562,7 +563,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -606,7 +607,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -667,7 +668,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -874,7 +875,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
               class="t-input__wrap t-select-input--empty t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -937,7 +938,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -976,7 +977,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -1093,7 +1094,7 @@ exports[`Form Form customValidatorVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -1132,7 +1133,7 @@ exports[`Form Form customValidatorVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -1198,7 +1199,7 @@ exports[`Form Form customValidatorVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -1341,7 +1342,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -1383,7 +1384,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
               class="t-input__wrap t-select-input--empty t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -1464,7 +1465,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
                 style="display: none;"
               >
                 <div
-                  class="t-input t-size-m"
+                  class="t-input t-size-m t-is-default"
                 >
                   <input
                     autocomplete=""
@@ -1605,43 +1606,42 @@ exports[`Form Form disabledVue demo works fine 1`] = `
           class="t-form__controls-content"
         >
           <div
-            class="t-date-picker t-size-m"
+            class="t-date-picker"
           >
             <div
-              class="t-form-controls t-date-picker__popup-reference"
+              class="t-input__wrap t-select-input--empty"
             >
               <div
-                class="t-input__wrap"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
-                  allowinput="0"
-                  class="t-input t-size-m t-input--suffix"
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择日期"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
                 >
-                  <input
-                    autocomplete=""
-                    class="t-input__inner"
-                    placeholder="请选择日期"
-                    type="text"
-                    unselectable="off"
-                  />
-                  <span
-                    class="t-input__suffix t-input__suffix-icon"
+                  <svg
+                    class="t-icon t-icon-calendar"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
                   >
-                    <svg
-                      class="t-icon t-icon-calendar"
-                      fill="none"
-                      height="1em"
-                      viewBox="0 0 16 16"
-                      width="1em"
-                    >
-                      <path
-                        d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
-                        fill="currentColor"
-                        fill-opacity="0.9"
-                      />
-                    </svg>
-                  </span>
-                </div>
+                    <path
+                      d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
               </div>
             </div>
           </div>
@@ -1894,7 +1894,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
               class="t-input__wrap"
             >
               <div
-                class="t-input t-size-m"
+                class="t-input t-size-m t-is-default"
                 ref="refInputElem"
               >
                 <input
@@ -2215,7 +2215,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -2259,7 +2259,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -2303,7 +2303,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -2364,7 +2364,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -2571,7 +2571,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
               class="t-input__wrap t-select-input--empty t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -2634,7 +2634,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -2673,7 +2673,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -2825,7 +2825,7 @@ exports[`Form Form layoutVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -2863,7 +2863,7 @@ exports[`Form Form layoutVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -2923,7 +2923,7 @@ exports[`Form Form loginVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--prefix"
+              class="t-input t-size-m t-is-default t-input--prefix"
             >
               <span
                 class="t-input__prefix t-input__prefix-icon"
@@ -2968,7 +2968,7 @@ exports[`Form Form loginVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
             >
               <span
                 class="t-input__prefix t-input__prefix-icon"
@@ -3136,7 +3136,7 @@ exports[`Form Form resetVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -3175,7 +3175,7 @@ exports[`Form Form resetVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -3412,7 +3412,7 @@ exports[`Form Form sizeVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -3451,7 +3451,7 @@ exports[`Form Form sizeVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -3875,7 +3875,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                     class="t-input__wrap"
                   >
                     <div
-                      class="t-input t-size-m"
+                      class="t-input t-size-m t-is-default"
                     >
                       <input
                         autocomplete=""
@@ -4186,7 +4186,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                     class="t-input__wrap"
                   >
                     <div
-                      class="t-input t-size-m"
+                      class="t-input t-size-m t-is-default"
                     >
                       <input
                         autocomplete=""
@@ -4500,7 +4500,7 @@ exports[`Form Form validateMessageVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -4544,7 +4544,7 @@ exports[`Form Form validateMessageVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -4588,7 +4588,7 @@ exports[`Form Form validateMessageVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -4766,7 +4766,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -4805,7 +4805,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -4844,7 +4844,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -4883,7 +4883,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -4922,7 +4922,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -4961,7 +4961,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -5000,7 +5000,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -5072,7 +5072,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -5123,7 +5123,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -5237,7 +5237,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -5302,7 +5302,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
               class="t-input__wrap"
             >
               <div
-                class="t-input t-size-m t-align-center"
+                class="t-input t-size-m t-is-default t-align-center"
                 ref="refInputElem"
               >
                 <input
@@ -5409,7 +5409,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -5470,7 +5470,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -5677,7 +5677,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
               class="t-input__wrap t-select-input--empty t-select"
             >
               <div
-                class="t-input t-size-m t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -5736,43 +5736,42 @@ exports[`Form Form validatorVue demo works fine 1`] = `
           class="t-form__controls-content"
         >
           <div
-            class="t-date-picker t-size-m t-date-picker--month-picker"
+            class="t-date-picker"
           >
             <div
-              class="t-form-controls t-date-picker__popup-reference"
+              class="t-input__wrap t-select-input--empty"
             >
               <div
-                class="t-input__wrap"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
-                  allowinput="0"
-                  class="t-input t-size-m t-input--suffix"
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择日期"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
                 >
-                  <input
-                    autocomplete=""
-                    class="t-input__inner"
-                    placeholder="请选择月份"
-                    type="text"
-                    unselectable="off"
-                  />
-                  <span
-                    class="t-input__suffix t-input__suffix-icon"
+                  <svg
+                    class="t-icon t-icon-calendar"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
                   >
-                    <svg
-                      class="t-icon t-icon-calendar"
-                      fill="none"
-                      height="1em"
-                      viewBox="0 0 16 16"
-                      width="1em"
-                    >
-                      <path
-                        d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
-                        fill="currentColor"
-                        fill-opacity="0.9"
-                      />
-                    </svg>
-                  </span>
-                </div>
+                    <path
+                      d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
               </div>
             </div>
           </div>
@@ -5804,7 +5803,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -5898,7 +5897,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
                 class="t-input__wrap t-select__input"
               >
                 <div
-                  class="t-input t-size-m"
+                  class="t-input t-size-m t-is-default"
                 >
                   <input
                     autocomplete=""

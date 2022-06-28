@@ -177,7 +177,7 @@ export default defineComponent({
     });
 
     const selectedValue = computed(() => (multiple.value ? selectedMultiple.value : selectedSingle.value));
-    const canFilter = computed(() => filterable.value || isFunction(props.filter));
+    const canFilter = computed(() => Boolean(props.filterable || global.value.filterable || isFunction(props.filter)));
     const isGroupOption = computed(() => {
       const firstOption = options.value?.[0];
       return !!(firstOption && 'group' in firstOption && 'children' in firstOption);
@@ -460,6 +460,8 @@ export default defineComponent({
               setValue(tempValue, { trigger: 'check', e });
             }
           }
+        } else if (labelInValue.value) {
+          setValue(realOptions.value.filter((item) => get(item, realValue.value) === v)[0], { trigger: 'check', e });
         } else {
           setValue(v, { trigger: 'check', e });
         }
@@ -737,6 +739,7 @@ export default defineComponent({
             ...inputProps,
           }}
           tagInputProps={{
+            autoWidth: true,
             ...tagInputProps,
           }}
           tagProps={tagProps}

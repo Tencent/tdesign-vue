@@ -130,7 +130,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
       <div>
         <div
           class="t-table__affixed-header-elm-wrap"
-          style="width: 0px; height: -6px; opacity: 1; margin-top: 0px;"
+          style="width: 0px; height: 0px; opacity: 1; margin-top: 0px;"
         />
       </div>
     </div>
@@ -629,7 +629,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -1531,7 +1531,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -2295,7 +2295,7 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -2755,7 +2755,7 @@ exports[`Table Table customColVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -17378,7 +17378,7 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
             class="t-input__wrap t-select"
           >
             <div
-              class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
             >
               <div
                 class="t-input__prefix"
@@ -17474,7 +17474,7 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
               class="t-input__wrap"
             >
               <div
-                class="t-input t-size-m"
+                class="t-input t-size-m t-is-default"
                 ref="refInputElem"
               >
                 <input
@@ -17813,7 +17813,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -17949,7 +17949,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
                 class="t-input__wrap"
               >
                 <div
-                  class="t-input t-size-m"
+                  class="t-input t-size-m t-is-default"
                   ref="refInputElem"
                 >
                   <input
@@ -21106,7 +21106,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"

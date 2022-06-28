@@ -136,10 +136,10 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
                 style="width: 80%;"
               >
                 <div
-                  class="t-input__wrap t-tag-input"
+                  class="t-input__wrap t-tag-input t-tag-input--break-line"
                 >
                   <div
-                    class="t-input t-size-m t-input--prefix"
+                    class="t-input t-size-m t-is-default t-input--prefix"
                   >
                     <div
                       class="t-input__prefix"
@@ -192,10 +192,10 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
                 </div>
                  
                 <div
-                  class="t-input__wrap t-tag-input"
+                  class="t-input__wrap t-tag-input t-tag-input--break-line"
                 >
                   <div
-                    class="t-input t-size-m t-input--prefix"
+                    class="t-input t-size-m t-is-default t-input--prefix"
                   >
                     <div
                       class="t-input__prefix"
@@ -253,10 +253,10 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
                 </div>
                  
                 <div
-                  class="t-input__wrap t-tag-input"
+                  class="t-input__wrap t-tag-input t-tag-input--break-line"
                 >
                   <div
-                    class="t-input t-size-m t-input--prefix"
+                    class="t-input t-size-m t-is-default t-input--prefix"
                   >
                     <div
                       class="t-input__prefix"

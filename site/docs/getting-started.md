@@ -38,6 +38,25 @@ Vue.use(TDesign);
 
 npm package 中提供了多种构建产物，可以阅读 [这里](https://github.com/Tencent/tdesign/blob/main/docs/develop-install.md) 了解不同目录下产物的差别。
 
+#### reset 样式
+
+`0.43.0` 版本开始我们不再引入 `reset.less`，影响最大的是移除了原先全局盒子模型的设定：
+
+```css
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+```
+
+如果你的项目开发依赖于原先的 `reset` 样式，可以从 `dist` 目录中单独引入它：
+
+```js
+import 'tdesign-vue/dist/reset.css';
+```
+
+
 ### 自动引入
 
 故名思义，就是可以直接使用 TDesign 的组件，而不需要手动引入：
