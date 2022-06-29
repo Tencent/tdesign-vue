@@ -18,15 +18,15 @@ type InputNumberEvent = {
   on: {
     input?: (e: InputEvent) => void;
     click?: (e: MouseEvent) => void;
-    blur?: (e: FocusEvent) => void;
-    focus?: (e: FocusEvent) => void;
-    keydown?: (e: KeyboardEvent) => void;
-    keyup?: (e: KeyboardEvent) => void;
-    keypress?: (e: KeyboardEvent) => void;
+    blur?: (value: number, ctx: { e: FocusEvent }) => void;
+    focus?: (value: number, ctx: { e: FocusEvent }) => void;
+    keydown?: (value: number, ctx: { e: KeyboardEvent }) => void;
+    keyup?: (value: number, ctx: { e: KeyboardEvent }) => void;
+    keypress?: (value: number, ctx: { e: KeyboardEvent }) => void;
   };
 };
 
-type ChangeContextEvent = InputEvent | MouseEvent | FocusEvent;
+type ChangeContextEvent = InputEvent | MouseEvent | FocusEvent | KeyboardEvent;
 
 type InputNumberAttr = {
   attrs: {
@@ -62,6 +62,7 @@ export default Vue.extend({
       filterValue: null,
       isError: false,
       inputting: false,
+      enter: false,
     };
   },
   computed: {
@@ -172,7 +173,7 @@ export default Vue.extend({
     },
     displayValue(): string | number {
       // inputting
-      if (this.inputting && this.userInput !== null) {
+      if (this.inputting && !this.enter && this.userInput !== null) {
         return this.filterValue;
       }
       if (this.value === undefined || this.value === null) return '';
@@ -242,47 +243,60 @@ export default Vue.extend({
       this.updateValue(value);
       emitEvent<Parameters<TdInputNumberProps['onChange']>>(this, 'change', value, ctx);
     },
-    async handleBlur(e: FocusEvent) {
-      await this.handleEndInput(e);
+    handleBlur(value: number, ctx: { e: FocusEvent }) {
+      this.handleEndInput(ctx.e);
       this.clearFilterValue();
-      emitEvent<Parameters<TdInputNumberProps['onBlur']>>(this, 'blur', this.value, { e });
+      emitEvent<Parameters<TdInputNumberProps['onBlur']>>(this, 'blur', this.value, ctx);
     },
-    handleFocus(e: FocusEvent) {
+    handleFocus(value: number, ctx: { e: FocusEvent }) {
       this.handleStartInput();
-      emitEvent<Parameters<TdInputNumberProps['onFocus']>>(this, 'focus', this.value, { e });
+      emitEvent<Parameters<TdInputNumberProps['onFocus']>>(this, 'focus', this.value, ctx);
     },
-    handleKeydownEnter(e: KeyboardEvent) {
-      if (!['Enter', 'NumpadEnter'].includes(e.code || e.key)) return;
-      emitEvent<Parameters<TdInputNumberProps['onEnter']>>(this, 'enter', this.value, { e });
+    handleKeypressEnter(value: number, ctx: { e: KeyboardEvent }) {
+      this.handleEndInput(ctx.e);
+      emitEvent<Parameters<TdInputNumberProps['onEnter']>>(this, 'enter', this.value, ctx);
+      this.inputting = true;
+      this.enter = true;
+      this.filterValue = String(this.value);
     },
-    handleKeydown(e: KeyboardEvent) {
-      emitEvent<Parameters<TdInputNumberProps['onKeydown']>>(this, 'keydown', this.value, { e });
-      this.handleKey(e);
+    handleKeydown(value: number, ctx: { e: KeyboardEvent }) {
+      emitEvent<Parameters<TdInputNumberProps['onKeydown']>>(this, 'keydown', this.value, ctx);
+      this.handleDownKey(ctx.e);
     },
-    handleKey(e: KeyboardEvent) {
+    handleDownKey(e: KeyboardEvent) {
       const keyEvent = {
         ArrowUp: this.handleAdd,
         ArrowDown: this.handleReduce,
-        Enter: this.handleKeydownEnter,
-        NumpadEnter: this.handleKeydownEnter,
       };
       const code = e.code || e.key;
       if (keyEvent[code] !== undefined) {
         keyEvent[code](e);
       }
     },
-    handleKeyup(e: KeyboardEvent) {
-      emitEvent<Parameters<TdInputNumberProps['onKeyup']>>(this, 'keyup', this.value, { e });
+    handleKeyup(value: number, ctx: { e: KeyboardEvent }) {
+      emitEvent<Parameters<TdInputNumberProps['onKeyup']>>(this, 'keyup', this.value, ctx);
+      this.enter = false;
     },
-    handleKeypress(e: KeyboardEvent) {
-      emitEvent<Parameters<TdInputNumberProps['onKeypress']>>(this, 'keypress', this.value, { e });
+    handleKeypress(value: number, ctx: { e: KeyboardEvent }) {
+      emitEvent<Parameters<TdInputNumberProps['onKeypress']>>(this, 'keypress', this.value, ctx);
+      this.handlePressKey(value, ctx);
+    },
+    handlePressKey(value: number, ctx: { e: KeyboardEvent }) {
+      const keyEvent = {
+        Enter: this.handleKeypressEnter,
+        NumpadEnter: this.handleKeypressEnter,
+      };
+      const code = ctx.e.code || ctx.e.key;
+      if (keyEvent[code] !== undefined) {
+        keyEvent[code](value, ctx);
+      }
     },
     handleStartInput() {
       this.inputting = true;
       if (this.value === undefined || this.value === null) return;
       this.filterValue = this.value.toFixed(this.digitsNum);
     },
-    handleEndInput(e: FocusEvent) {
+    handleEndInput(e: FocusEvent | KeyboardEvent) {
       this.inputting = false;
       let value = this.toValidNumber(this.filterValue);
       if (value !== undefined) {

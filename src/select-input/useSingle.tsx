@@ -75,7 +75,6 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
     const prefixContent = [singleValueDisplay, renderTNode('label')];
     const inputProps = {
       ...commonInputProps.value,
-      ...props.inputProps,
       value: singleValueDisplay ? undefined : displayedValue,
       label: prefixContent.length ? () => prefixContent : undefined,
       autoWidth: props.autoWidth,
@@ -85,7 +84,9 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
       showClearIconOnEmpty: Boolean(props.clearable && (inputValue.value || displayedValue)),
       inputClass: {
         [`${classPrefix.value}-input--focused`]: popupVisible,
+        [`${classPrefix.value}-is-focused`]: popupVisible,
       },
+      ...props.inputProps,
     };
 
     return (

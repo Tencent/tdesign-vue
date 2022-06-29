@@ -8,8 +8,6 @@ import MockDate from 'mockdate';
 import baseVue from '@/examples/date-picker/demos/base.vue';
 import customIconVue from '@/examples/date-picker/demos/custom-icon.vue';
 import datePresetsAltVue from '@/examples/date-picker/demos/date-presets-alt.vue';
-import datePresetsTimeVue from '@/examples/date-picker/demos/date-presets-time.vue';
-import datePresetsVue from '@/examples/date-picker/demos/date-presets.vue';
 import dateRangeVue from '@/examples/date-picker/demos/date-range.vue';
 import dateTimeVue from '@/examples/date-picker/demos/date-time.vue';
 import disableDateVue from '@/examples/date-picker/demos/disable-date.vue';
@@ -23,8 +21,6 @@ const mapper = {
   baseVue,
   customIconVue,
   datePresetsAltVue,
-  datePresetsTimeVue,
-  datePresetsVue,
   dateRangeVue,
   dateTimeVue,
   disableDateVue,

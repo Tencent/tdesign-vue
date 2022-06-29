@@ -42,7 +42,7 @@ exports[`Slider [marks] render right 1`] = `
           <path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path>
         </svg></button>
       <div class="t-input__wrap">
-        <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="" type="text" unselectable="off" class="t-input__inner"></div>
+        <div ref="refInputElem" class="t-input t-size-m t-is-default"><input autocomplete="off" placeholder="" type="text" unselectable="off" class="t-input__inner"></div>
       </div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-up t-size-m">
           <path fill="currentColor" d="M12.46 9.54l-.92.92L8 6.92l-3.54 3.54-.92-.92L8 5.08l4.46 4.46z" fill-opacity="0.9"></path>
         </svg></button>
