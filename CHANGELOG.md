@@ -5,6 +5,14 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.43.1 `2022-06-29` 
+### 🚀 Features
+- `Select`: 列表展开时定位置选中项 @huoyuhao ([#1072](https://github.com/Tencent/tdesign-vue/pull/1072))
+### 🐞 Bug Fixes
+- `Select`:
+    - 修复多选模式下展示placeholder的异常 @uyarn ([#1091](https://github.com/Tencent/tdesign-vue/pull/1091))
+    - 修复可筛选换行高度异常的问题 @uyarn ([#1091](https://github.com/Tencent/tdesign-vue/pull/1091))
+
 ## 🌈 0.43.0 `2022-06-28` 
 ### ❗️ BREAKING CHANGES
 - 默认移除全局 reset 样式引入，可从 `tdesign-vue/dist/reset.css` 中单独引入 @xiaosansiji ([#1079](https://github.com/Tencent/tdesign-vue/pull/1079))

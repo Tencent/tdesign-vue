@@ -152,7 +152,7 @@ export default defineComponent({
         onChange={(val: InputValue, context?: { e?: InputEvent | MouseEvent }) => {
           this.setTInputValue(val, { ...context, trigger: 'input' });
         }}
-        showInput={!this.inputProps?.readonly}
+        showInput={!this.inputProps?.readonly || !this.tagValue || !this.tagValue?.length}
         keepWrapperWidth={true}
         onMousewheel={this.onWheel}
         autoWidth={this.autoWidth}

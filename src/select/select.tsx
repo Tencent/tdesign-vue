@@ -58,6 +58,7 @@ export default defineComponent({
     const instance = getCurrentInstance();
     const { t, global } = useConfig('select');
     const renderTNode = useTNodeJSX();
+    const { classPrefix } = useConfig();
 
     // init values
     const {
@@ -589,7 +590,27 @@ export default defineComponent({
         hasSlotOptions.value = true;
       }
     };
-
+    const updateScrollTop = (content: HTMLDivElement) => {
+      // 虚拟滚动不支持移动定位到选中项
+      if (props.scroll?.type === 'virtual') return;
+      const overlayEl = getOverlayElm();
+      if (!overlayEl) return;
+      const firstSelectedNode: HTMLDivElement = overlayEl?.querySelector(`.${classPrefix.value}-is-selected`);
+      nextTick(() => {
+        if (firstSelectedNode && content) {
+          const { paddingBottom } = getComputedStyle(firstSelectedNode);
+          const { marginBottom } = getComputedStyle(content);
+          const elementBottomHeight = parseInt(paddingBottom, 10) + parseInt(marginBottom, 10);
+          // 小于0时不需要特殊处理，会被设为0
+          const updateValue = firstSelectedNode.offsetTop
+            - content.offsetTop
+            - (content.clientHeight - firstSelectedNode.clientHeight)
+            + elementBottomHeight;
+          // eslint-disable-next-line no-param-reassign
+          content.scrollTop = updateValue;
+        }
+      });
+    };
     onMounted(() => {
       initOptions();
     });
@@ -651,6 +672,7 @@ export default defineComponent({
       renderValueDisplay,
       renderTNode,
       renderCollapsedItems,
+      updateScrollTop,
     };
   },
 
@@ -708,6 +730,7 @@ export default defineComponent({
       handleTagChange,
       renderTNode,
       renderCollapsedItems,
+      updateScrollTop,
       // 虚拟滚动参数
       scroll,
     } = this;
@@ -760,6 +783,7 @@ export default defineComponent({
             'tag-change': handleTagChange,
           }}
           {...selectInputProps}
+          updateScrollTop={updateScrollTop}
         >
           <select-panel
             slot="panel"
