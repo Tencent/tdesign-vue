@@ -60,7 +60,7 @@ export default defineComponent({
                 month: this.month,
                 onMonthChange: (val: number) => this.onMonthChange?.(val, { partial: this.partial }),
                 onYearChange: (val: number) => this.onYearChange?.(val, { partial: this.partial }),
-                onJumperClick: (val: number) => this.onJumperClick?.(val, { partial: this.partial }),
+                onJumperClick: ({ trigger }: { trigger: string }) => this.onJumperClick?.({ trigger, partial: this.partial }),
               },
             }}
           />
