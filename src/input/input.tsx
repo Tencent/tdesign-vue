@@ -106,7 +106,8 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       handler(val) {
         if (val === true) {
           this.$nextTick(() => {
-            (this.$refs.inputRef as HTMLInputElement).focus();
+            const input = this.$refs.inputRef as HTMLInputElement;
+            input?.focus();
           });
         }
       },
@@ -290,7 +291,9 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       const pre = this.$refs.inputPreRef as HTMLSpanElement;
       if (!pre) return;
       const width = pre.offsetWidth;
-      (this.$refs.inputRef as HTMLInputElement).style.width = `${width}px`;
+      if (this.$refs.inputRef) {
+        (this.$refs.inputRef as HTMLInputElement).style.width = `${width}px`;
+      }
     },
   },
 
