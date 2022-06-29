@@ -170,7 +170,7 @@ export default defineComponent({
       month.value = nextMonth;
     }
 
-    const panelProps = computed(() => ({
+    const panelProps: any = computed(() => ({
       value: cacheValue.value as string,
       year: year.value,
       month: month.value,
@@ -214,7 +214,7 @@ export default defineComponent({
           disabled={this.disabled}
           value={inputValue}
           popupProps={datePickerPopupProps}
-          inputProps={{ suffixIcon: () => <CalendarIcon />, ...datePickerInputProps }}
+          inputProps={{ suffixIcon: this.suffixIcon || (() => <CalendarIcon />), ...datePickerInputProps }}
           popupVisible={popupVisible}
           panel={() => <TSinglePanel {...{ props: panelProps }} />}
         />
