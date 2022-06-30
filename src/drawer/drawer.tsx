@@ -275,14 +275,14 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
     },
     handleWrapperClick(e: MouseEvent) {
       emitEvent<Parameters<TdDrawerProps['onOverlayClick']>>(this, 'overlay-click', { e });
-      if (this.closeOnOverlayClick || this.global.closeOnOverlayClick) {
+      if (this.closeOnOverlayClick ?? this.global.closeOnOverlayClick) {
         this.closeDrawer({ trigger: 'overlay', e });
       }
     },
     onKeyDown(e: KeyboardEvent) {
       if (e.key === 'Escape') {
         emitEvent<Parameters<TdDrawerProps['onEscKeydown']>>(this, 'esc-keydown', { e });
-        if (this.closeOnEscKeydown || this.global.closeOnEscKeydown) {
+        if (this.closeOnEscKeydown ?? this.global.closeOnEscKeydown) {
           this.closeDrawer({ trigger: 'esc', e });
         }
       }

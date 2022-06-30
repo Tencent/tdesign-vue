@@ -158,6 +158,7 @@ export default {
       rules: {
         account: [
           { required: true, message: '姓名必填', type: 'error' },
+          { whitespace: true, message: '姓名不能为空' },
           { min: 2, message: '至少需要两个字符，一个中文等于两个字符', type: 'warning' },
           { max: 10, message: '姓名字符长度超出', type: 'warning' },
         ],

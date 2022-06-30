@@ -24,9 +24,6 @@ exports[`Drawer Drawer attachParentVue demo works fine 1`] = `
           抽屉标题
         </div>
         <div
-          class="t-drawer__close-btn"
-        />
-        <div
           class="t-drawer__body"
         >
           <p>
@@ -320,11 +317,7 @@ exports[`Drawer Drawer customVue demo works fine 1`] = `
     >
       <div
         class="t-drawer__header"
-      >
-        <div>
-          自定义头部
-        </div>
-      </div>
+      />
       <div
         class="t-drawer__close-btn"
       >
@@ -590,9 +583,6 @@ exports[`Drawer Drawer noMaskVue demo works fine 1`] = `
         抽屉标题
       </div>
       <div
-        class="t-drawer__close-btn"
-      />
-      <div
         class="t-drawer__body"
       >
         <p>
@@ -661,9 +651,6 @@ exports[`Drawer Drawer operationVue demo works fine 1`] = `
       >
         抽屉标题
       </div>
-      <div
-        class="t-drawer__close-btn"
-      />
       <div
         class="t-drawer__body"
       >
@@ -801,9 +788,6 @@ exports[`Drawer Drawer placementVue demo works fine 1`] = `
       >
         抽屉标题
       </div>
-      <div
-        class="t-drawer__close-btn"
-      />
       <div
         class="t-drawer__body"
       >
@@ -1028,9 +1012,6 @@ exports[`Drawer Drawer sizeVue demo works fine 1`] = `
       >
         抽屉标题
       </div>
-      <div
-        class="t-drawer__close-btn"
-      />
       <div
         class="t-drawer__body"
       >

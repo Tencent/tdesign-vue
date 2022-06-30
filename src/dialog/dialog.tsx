@@ -184,7 +184,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       if (e.code === 'Escape') {
         emitEvent<Parameters<TdDialogProps['onEscKeydown']>>(this, 'esc-keydown', { e });
         // 根据 closeOnEscKeydown 判断按下ESC时是否触发close事件
-        if (this.closeOnEscKeydown || this.global.closeOnEscKeydown) {
+        if (this.closeOnEscKeydown ?? this.global.closeOnEscKeydown) {
           this.emitCloseEvent({
             trigger: 'esc',
             e,
@@ -194,7 +194,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     },
     overlayAction(e: MouseEvent) {
       // 根据closeOnClickOverlay判断点击蒙层时是否触发close事件
-      if (this.closeOnOverlayClick || this.global.closeOnOverlayClick) {
+      if (this.closeOnOverlayClick ?? this.global.closeOnOverlayClick) {
         emitEvent<Parameters<TdDialogProps['onOverlayClick']>>(this, 'overlay-click', { e });
         this.emitCloseEvent({
           trigger: 'overlay',
