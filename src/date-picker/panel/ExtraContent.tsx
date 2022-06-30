@@ -1,4 +1,4 @@
-import { defineComponent, PropType } from '@vue/composition-api';
+import { defineComponent, PropType, computed } from '@vue/composition-api';
 import TDateFooter from '../base/Footer';
 import type { TdDatePickerProps, TdDateRangePickerProps, DateValue } from '../type';
 
@@ -13,11 +13,12 @@ export default defineComponent({
     selectedValue: String as PropType<DateValue>,
   },
   setup(props) {
-    const showPanelFooter = props.enableTimePicker || props.presets;
+    const showPanelFooter = computed(() => props.enableTimePicker || props.presets);
     return { showPanelFooter };
   },
   render() {
     const { showPanelFooter } = this;
+
     return showPanelFooter ? (
       <TDateFooter
         {...{
