@@ -5,11 +5,11 @@
     </template>
     <t-menu-item value="item1">
       <template #icon>
-        <icon name="dashboard"/>
+        <icon name="dashboard" />
       </template>
-      仪表盘1
+      仪表盘
     </t-menu-item>
-    <t-submenu value="2" mode="popup">
+    <t-submenu value="2">
       <template #icon>
         <icon name="mail" />
       </template>
@@ -28,7 +28,7 @@
       <template #icon>
         <icon name="edit-1" />
       </template>
-      资源编辑
+      资源区
     </t-menu-item>
     <template #operations>
       <icon class="t-menu__operations-icon" :name="iconName" @click.native="changeCollapsed" />

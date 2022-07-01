@@ -1,25 +1,25 @@
-import { mount } from '@vue/test-utils';
-import base from '@/examples/radio/demos/base.vue';
-import group from '@/examples/radio/demos/group.vue';
-import type from '@/examples/radio/demos/type.vue';
-import size from '@/examples/radio/demos/size.vue';
+/**
+ * 该文件为由脚本 `npm run test:demo` 自动生成，如需修改，执行脚本命令即可。请勿手写直接修改，否则会被覆盖
+ */
 
-// unit test for component in examples.
+import { mount } from '@vue/test-utils';
+import baseVue from '@/examples/radio/demos/base.vue';
+import groupVue from '@/examples/radio/demos/group.vue';
+import sizeVue from '@/examples/radio/demos/size.vue';
+import typeVue from '@/examples/radio/demos/type.vue';
+
+const mapper = {
+  baseVue,
+  groupVue,
+  sizeVue,
+  typeVue,
+};
+
 describe('Radio', () => {
-  it('base demo works fine', () => {
-    const wrapper = mount(base);
-    expect(wrapper.element).toMatchSnapshot();
-  });
-  it('radio group demo works fine', () => {
-    const wrapper = mount(group);
-    expect(wrapper.element).toMatchSnapshot();
-  });
-  it('radio type demo works fine', () => {
-    const wrapper = mount(type);
-    expect(wrapper.element).toMatchSnapshot();
-  });
-  it('radio button size demo works fine', () => {
-    const wrapper = mount(size);
-    expect(wrapper.element).toMatchSnapshot();
+  Object.keys(mapper).forEach((demoName) => {
+    it(`Radio ${demoName} demo works fine`, () => {
+      const wrapper = mount(mapper[demoName]);
+      expect(wrapper.element).toMatchSnapshot();
+    });
   });
 });

@@ -40,7 +40,6 @@ export default Vue.extend({
       const dialogNode = this.$dialog({
         header: 'Dialog-Plugin',
         body: '通过 update 更新弹框内容',
-
       });
       // 更新弹框内容
       dialogNode.update({
@@ -83,7 +82,7 @@ export default Vue.extend({
           theme: 'danger',
         },
         onConfirm: ({ e }) => {
-          console.log('confrim e: ', e);
+          console.log('confirm e: ', e);
           alertDia.hide();
         },
         onClose: ({ e, trigger }) => {

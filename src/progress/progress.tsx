@@ -45,7 +45,11 @@ export default Vue.extend({
     },
     trackBgStyle(): Styles {
       const { strokeWidth } = this;
-      const height = typeof strokeWidth === 'string' ? strokeWidth : `${strokeWidth}px`;
+      let height = typeof strokeWidth === 'string' ? strokeWidth : `${strokeWidth}px`;
+      const Plump = PRO_THEME.PLUMP;
+      if (this.theme === Plump) {
+        height = '';
+      }
       return {
         height,
         backgroundColor: this.trackColor,
@@ -125,7 +129,7 @@ export default Vue.extend({
       return this.strokeWidth ? Number(this.strokeWidth) : defaultWidth;
     },
     strokeDashArr(): string {
-      const radius = this.diameter / 2;
+      const radius = (this.diameter - this.circleStrokeWidth) / 2;
       const perimeter = Math.PI * 2 * radius;
       const percent = this.percentage / 100;
       return `${perimeter * percent}  ${perimeter * (1 - percent)}`;

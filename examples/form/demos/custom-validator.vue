@@ -14,7 +14,7 @@
       <t-form-item label="确认密码" name="rePassword" help="自定义异步校验方法">
         <t-input type="password" v-model="formData.rePassword"></t-input>
       </t-form-item>
-      <t-form-item style="padding-top: 8px">
+      <t-form-item style="margin-left: 100px">
         <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
         <t-button theme="default" variant="base" type="reset">重置</t-button>
       </t-form-item>

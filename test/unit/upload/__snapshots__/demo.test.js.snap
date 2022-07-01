@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Upload base comp works fine 1`] = `
+exports[`Upload Upload baseVue demo works fine 1`] = `
 <div
   class="t-upload"
 >
@@ -45,10 +45,15 @@ exports[`Upload base comp works fine 1`] = `
       </button>
     </div>
   </div>
+  <small
+    class="t-upload__tips t-size-s"
+  >
+    上传文件大小在 5M 以内
+  </small>
 </div>
 `;
 
-exports[`Upload base customDrag works fine 1`] = `
+exports[`Upload Upload customDragVue demo works fine 1`] = `
 <div
   class="tdesign-demo-upload t-upload"
 >
@@ -129,44 +134,53 @@ exports[`Upload base customDrag works fine 1`] = `
           class="t-dialog__mask"
         />
         <div
-          class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
-          style="width: auto; top: 10%; transform: translate(-50%, 0); transform-origin: 25% 25%; max-height: calc(100% - 10%);"
+          class="t-dialog__wrap"
         >
           <div
-            class="t-dialog__header"
-          />
-          <span
-            class="t-dialog__close"
-          >
-            <svg
-              class="t-icon t-icon-close"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-          </span>
-          <div
-            class="t-dialog__body"
+            class="t-dialog__position t-dialog--top"
+            style="padding-top: 10%;"
           >
             <div
-              class="t__dialog-body-img-box"
+              class="t-dialog t-dialog--default t-dialog__modal-default"
+              style="width: auto;"
             >
-              <img
-                alt=""
-                src=""
+              <div
+                class="t-dialog__header"
+              />
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+              <div
+                class="t-dialog__body"
+              >
+                <div
+                  class="t__dialog-body-img-box"
+                >
+                  <img
+                    alt=""
+                    src=""
+                  />
+                </div>
+              </div>
+              <div
+                class="t-dialog__footer"
               />
             </div>
           </div>
-          <div
-            class="t-dialog__footer"
-          />
         </div>
       </div>
     </transition-stub>
@@ -174,7 +188,7 @@ exports[`Upload base customDrag works fine 1`] = `
 </div>
 `;
 
-exports[`Upload base draggable works fine 1`] = `
+exports[`Upload Upload draggableVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large"
 >
@@ -274,105 +288,7 @@ exports[`Upload base draggable works fine 1`] = `
 </div>
 `;
 
-exports[`Upload base fileFlowList works fine 1`] = `
-<div
-  class="t-upload__file-flow-demo"
->
-  <div
-    class="t-upload"
-  >
-    <input
-      accept=""
-      hidden="hidden"
-      multiple="multiple"
-      type="file"
-    />
-    <div
-      class="t-upload__flow t-upload__flow-file-flow"
-    >
-      <div
-        class="t-upload__flow-op"
-      >
-        <div
-          class="t-upload__trigger"
-        >
-          <button
-            class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              选择文件
-            </span>
-          </button>
-        </div>
-        <small
-          class="t-size-s t-upload__flow-placeholder"
-        >
-          支持批量上传文件，文件格式不限，最多只能上传 10 份文件
-        </small>
-      </div>
-      <table
-        class="t-upload__flow-table"
-      >
-        <tr>
-          <th>
-            文件名
-          </th>
-          <th>
-            大小
-          </th>
-          <th>
-            状态
-          </th>
-          <th>
-            操作
-          </th>
-        </tr>
-        <tr>
-          <td
-            colspan="4"
-          >
-            <div
-              class="t-upload__flow-empty"
-            >
-              点击上方“选择文件”或将文件拖拽到此区域
-            </div>
-          </td>
-        </tr>
-      </table>
-      <div
-        class="t-upload__flow-bottom"
-      >
-        <button
-          class="t-button t-size-m t-button--variant-base t-button--theme-default"
-          type="button"
-        >
-          <span
-            class="t-button__text"
-          >
-            取消
-          </span>
-        </button>
-        <button
-          class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"
-          disabled="disabled"
-          type="button"
-        >
-          <span
-            class="t-button__text"
-          >
-            开始上传
-          </span>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Upload base fileFlowListBatchUpload works fine 1`] = `
+exports[`Upload Upload fileFlowListBatchUploadVue demo works fine 1`] = `
 <div
   class="t-upload__file-flow-demo"
 >
@@ -419,7 +335,7 @@ exports[`Upload base fileFlowListBatchUpload works fine 1`] = `
             文件名
           </th>
           <th>
-            大小
+            文件大小
           </th>
           <th>
             状态
@@ -450,7 +366,7 @@ exports[`Upload base fileFlowListBatchUpload works fine 1`] = `
           <span
             class="t-button__text"
           >
-            取消
+            取消上传
           </span>
         </button>
         <button
@@ -461,7 +377,7 @@ exports[`Upload base fileFlowListBatchUpload works fine 1`] = `
           <span
             class="t-button__text"
           >
-            开始上传
+            点击上传
           </span>
         </button>
       </div>
@@ -470,7 +386,7 @@ exports[`Upload base fileFlowListBatchUpload works fine 1`] = `
 </div>
 `;
 
-exports[`Upload base fileFlowListDuplicate works fine 1`] = `
+exports[`Upload Upload fileFlowListDuplicateVue demo works fine 1`] = `
 <div
   class="t-upload__file-flow-demo"
 >
@@ -531,7 +447,7 @@ exports[`Upload base fileFlowListDuplicate works fine 1`] = `
             文件名
           </th>
           <th>
-            大小
+            文件大小
           </th>
           <th>
             状态
@@ -562,7 +478,7 @@ exports[`Upload base fileFlowListDuplicate works fine 1`] = `
           <span
             class="t-button__text"
           >
-            取消
+            取消上传
           </span>
         </button>
         <button
@@ -573,7 +489,7 @@ exports[`Upload base fileFlowListDuplicate works fine 1`] = `
           <span
             class="t-button__text"
           >
-            开始上传
+            点击上传
           </span>
         </button>
       </div>
@@ -582,7 +498,105 @@ exports[`Upload base fileFlowListDuplicate works fine 1`] = `
 </div>
 `;
 
-exports[`Upload base image works fine 1`] = `
+exports[`Upload Upload fileFlowListVue demo works fine 1`] = `
+<div
+  class="t-upload__file-flow-demo"
+>
+  <div
+    class="t-upload"
+  >
+    <input
+      accept=""
+      hidden="hidden"
+      multiple="multiple"
+      type="file"
+    />
+    <div
+      class="t-upload__flow t-upload__flow-file-flow"
+    >
+      <div
+        class="t-upload__flow-op"
+      >
+        <div
+          class="t-upload__trigger"
+        >
+          <button
+            class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              选择文件
+            </span>
+          </button>
+        </div>
+        <small
+          class="t-size-s t-upload__flow-placeholder"
+        >
+          支持批量上传文件，文件格式不限，最多只能上传 5 份文件
+        </small>
+      </div>
+      <table
+        class="t-upload__flow-table"
+      >
+        <tr>
+          <th>
+            文件名
+          </th>
+          <th>
+            文件大小
+          </th>
+          <th>
+            状态
+          </th>
+          <th>
+            操作
+          </th>
+        </tr>
+        <tr>
+          <td
+            colspan="4"
+          >
+            <div
+              class="t-upload__flow-empty"
+            >
+              点击上方“选择文件”或将文件拖拽到此区域
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div
+        class="t-upload__flow-bottom"
+      >
+        <button
+          class="t-button t-size-m t-button--variant-base t-button--theme-default"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            取消上传
+          </span>
+        </button>
+        <button
+          class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"
+          disabled="disabled"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            点击上传
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Upload Upload imageVue demo works fine 1`] = `
 <div
   class="tdesign-demo-upload"
 >
@@ -641,44 +655,53 @@ exports[`Upload base image works fine 1`] = `
             class="t-dialog__mask"
           />
           <div
-            class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
-            style="width: auto; top: 10%; transform: translate(-50%, 0); transform-origin: 25% 25%; max-height: calc(100% - 10%);"
+            class="t-dialog__wrap"
           >
             <div
-              class="t-dialog__header"
-            />
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
-            <div
-              class="t-dialog__body"
+              class="t-dialog__position t-dialog--top"
+              style="padding-top: 10%;"
             >
               <div
-                class="t__dialog-body-img-box"
+                class="t-dialog t-dialog--default t-dialog__modal-default"
+                style="width: auto;"
               >
-                <img
-                  alt=""
-                  src=""
+                <div
+                  class="t-dialog__header"
+                />
+                <span
+                  class="t-dialog__close"
+                >
+                  <svg
+                    class="t-icon t-icon-close"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
+                <div
+                  class="t-dialog__body"
+                >
+                  <div
+                    class="t__dialog-body-img-box"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                  </div>
+                </div>
+                <div
+                  class="t-dialog__footer"
                 />
               </div>
             </div>
-            <div
-              class="t-dialog__footer"
-            />
           </div>
         </div>
       </transition-stub>
@@ -745,44 +768,53 @@ exports[`Upload base image works fine 1`] = `
             class="t-dialog__mask"
           />
           <div
-            class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
-            style="width: auto; top: 10%; transform: translate(-50%, 0); transform-origin: 25% 25%; max-height: calc(100% - 10%);"
+            class="t-dialog__wrap"
           >
             <div
-              class="t-dialog__header"
-            />
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
-            <div
-              class="t-dialog__body"
+              class="t-dialog__position t-dialog--top"
+              style="padding-top: 10%;"
             >
               <div
-                class="t__dialog-body-img-box"
+                class="t-dialog t-dialog--default t-dialog__modal-default"
+                style="width: auto;"
               >
-                <img
-                  alt=""
-                  src=""
+                <div
+                  class="t-dialog__header"
+                />
+                <span
+                  class="t-dialog__close"
+                >
+                  <svg
+                    class="t-icon t-icon-close"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
+                <div
+                  class="t-dialog__body"
+                >
+                  <div
+                    class="t__dialog-body-img-box"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                  </div>
+                </div>
+                <div
+                  class="t-dialog__footer"
                 />
               </div>
             </div>
-            <div
-              class="t-dialog__footer"
-            />
           </div>
         </div>
       </transition-stub>
@@ -849,44 +881,53 @@ exports[`Upload base image works fine 1`] = `
             class="t-dialog__mask"
           />
           <div
-            class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
-            style="width: auto; top: 10%; transform: translate(-50%, 0); transform-origin: 25% 25%; max-height: calc(100% - 10%);"
+            class="t-dialog__wrap"
           >
             <div
-              class="t-dialog__header"
-            />
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
-            <div
-              class="t-dialog__body"
+              class="t-dialog__position t-dialog--top"
+              style="padding-top: 10%;"
             >
               <div
-                class="t__dialog-body-img-box"
+                class="t-dialog t-dialog--default t-dialog__modal-default"
+                style="width: auto;"
               >
-                <img
-                  alt=""
-                  src=""
+                <div
+                  class="t-dialog__header"
+                />
+                <span
+                  class="t-dialog__close"
+                >
+                  <svg
+                    class="t-icon t-icon-close"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
+                <div
+                  class="t-dialog__body"
+                >
+                  <div
+                    class="t__dialog-body-img-box"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                  </div>
+                </div>
+                <div
+                  class="t-dialog__footer"
                 />
               </div>
             </div>
-            <div
-              class="t-dialog__footer"
-            />
           </div>
         </div>
       </transition-stub>
@@ -954,44 +995,53 @@ exports[`Upload base image works fine 1`] = `
             class="t-dialog__mask"
           />
           <div
-            class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
-            style="width: auto; top: 10%; transform: translate(-50%, 0); transform-origin: 25% 25%; max-height: calc(100% - 10%);"
+            class="t-dialog__wrap"
           >
             <div
-              class="t-dialog__header"
-            />
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
-            <div
-              class="t-dialog__body"
+              class="t-dialog__position t-dialog--top"
+              style="padding-top: 10%;"
             >
               <div
-                class="t__dialog-body-img-box"
+                class="t-dialog t-dialog--default t-dialog__modal-default"
+                style="width: auto;"
               >
-                <img
-                  alt=""
-                  src=""
+                <div
+                  class="t-dialog__header"
+                />
+                <span
+                  class="t-dialog__close"
+                >
+                  <svg
+                    class="t-icon t-icon-close"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
+                <div
+                  class="t-dialog__body"
+                >
+                  <div
+                    class="t__dialog-body-img-box"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                  </div>
+                </div>
+                <div
+                  class="t-dialog__footer"
                 />
               </div>
             </div>
-            <div
-              class="t-dialog__footer"
-            />
           </div>
         </div>
       </transition-stub>
@@ -1005,7 +1055,7 @@ exports[`Upload base image works fine 1`] = `
 </div>
 `;
 
-exports[`Upload base imgFlowList works fine 1`] = `
+exports[`Upload Upload imgFlowListVue demo works fine 1`] = `
 <div
   class="t-upload__img-flow-demo"
 >
@@ -1063,7 +1113,7 @@ exports[`Upload base imgFlowList works fine 1`] = `
           <span
             class="t-button__text"
           >
-            取消
+            取消上传
           </span>
         </button>
         <button
@@ -1074,7 +1124,7 @@ exports[`Upload base imgFlowList works fine 1`] = `
           <span
             class="t-button__text"
           >
-            开始上传
+            点击上传
           </span>
         </button>
       </div>
@@ -1092,44 +1142,53 @@ exports[`Upload base imgFlowList works fine 1`] = `
           class="t-dialog__mask"
         />
         <div
-          class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
-          style="width: auto; top: 10%; transform: translate(-50%, 0); transform-origin: 25% 25%; max-height: calc(100% - 10%);"
+          class="t-dialog__wrap"
         >
           <div
-            class="t-dialog__header"
-          />
-          <span
-            class="t-dialog__close"
-          >
-            <svg
-              class="t-icon t-icon-close"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-          </span>
-          <div
-            class="t-dialog__body"
+            class="t-dialog__position t-dialog--top"
+            style="padding-top: 10%;"
           >
             <div
-              class="t__dialog-body-img-box"
+              class="t-dialog t-dialog--default t-dialog__modal-default"
+              style="width: auto;"
             >
-              <img
-                alt=""
-                src=""
+              <div
+                class="t-dialog__header"
+              />
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+              <div
+                class="t-dialog__body"
+              >
+                <div
+                  class="t__dialog-body-img-box"
+                >
+                  <img
+                    alt=""
+                    src=""
+                  />
+                </div>
+              </div>
+              <div
+                class="t-dialog__footer"
               />
             </div>
           </div>
-          <div
-            class="t-dialog__footer"
-          />
         </div>
       </div>
     </transition-stub>
@@ -1137,7 +1196,7 @@ exports[`Upload base imgFlowList works fine 1`] = `
 </div>
 `;
 
-exports[`Upload base listType works fine 1`] = `
+exports[`Upload Upload listTypeVue demo works fine 1`] = `
 <section
   class="tdesign-demo-upload"
 >
@@ -1203,7 +1262,7 @@ exports[`Upload base listType works fine 1`] = `
 </section>
 `;
 
-exports[`Upload base requestMethod works fine 1`] = `
+exports[`Upload Upload requestMethodVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large"
 >
@@ -1308,7 +1367,7 @@ exports[`Upload base requestMethod works fine 1`] = `
 </div>
 `;
 
-exports[`Upload base singleCustom works fine 1`] = `
+exports[`Upload Upload singleCustomVue demo works fine 1`] = `
 <div
   class="tdesign-demo-upload"
 >
@@ -1349,44 +1408,53 @@ exports[`Upload base singleCustom works fine 1`] = `
             class="t-dialog__mask"
           />
           <div
-            class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
-            style="width: auto; top: 10%; transform: translate(-50%, 0); transform-origin: 25% 25%; max-height: calc(100% - 10%);"
+            class="t-dialog__wrap"
           >
             <div
-              class="t-dialog__header"
-            />
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
-            <div
-              class="t-dialog__body"
+              class="t-dialog__position t-dialog--top"
+              style="padding-top: 10%;"
             >
               <div
-                class="t__dialog-body-img-box"
+                class="t-dialog t-dialog--default t-dialog__modal-default"
+                style="width: auto;"
               >
-                <img
-                  alt=""
-                  src=""
+                <div
+                  class="t-dialog__header"
+                />
+                <span
+                  class="t-dialog__close"
+                >
+                  <svg
+                    class="t-icon t-icon-close"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
+                <div
+                  class="t-dialog__body"
+                >
+                  <div
+                    class="t__dialog-body-img-box"
+                  >
+                    <img
+                      alt=""
+                      src=""
+                    />
+                  </div>
+                </div>
+                <div
+                  class="t-dialog__footer"
                 />
               </div>
             </div>
-            <div
-              class="t-dialog__footer"
-            />
           </div>
         </div>
       </transition-stub>
@@ -1402,7 +1470,7 @@ exports[`Upload base singleCustom works fine 1`] = `
 </div>
 `;
 
-exports[`Upload base singleInput works fine 1`] = `
+exports[`Upload Upload singleInputVue demo works fine 1`] = `
 <div
   class="tdesign-demo-upload"
 >
@@ -1458,7 +1526,7 @@ exports[`Upload base singleInput works fine 1`] = `
 </div>
 `;
 
-exports[`Upload base table works fine 1`] = `
+exports[`Upload Upload tableVue demo works fine 1`] = `
 <section
   class="tdesign-demo-upload-multiple"
   style="width: 570px;"

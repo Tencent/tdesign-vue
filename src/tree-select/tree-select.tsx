@@ -17,7 +17,7 @@ import { emitEvent } from '../utils/event';
 import Popup, { PopupProps } from '../popup';
 import Tag from '../tag';
 import Tree, { TreeNodeModel, TreeNodeValue } from '../tree';
-import Input, { InputValue, InputBlurEventParams, InputFocustEventParams } from '../input';
+import Input, { InputValue, InputBlurEventParams, InputFocusEventParams } from '../input';
 import FakeArrow from '../common-components/fake-arrow';
 import CLASSNAMES from '../utils/classnames';
 import props from './props';
@@ -214,6 +214,10 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       }
       return 'value';
     },
+    realChildren(): string {
+      const { treeProps } = this;
+      return treeProps?.keys?.children || 'children';
+    },
     tagList(): Array<TreeSelectValue> {
       if (this.nodeInfo && isArray(this.nodeInfo)) {
         return this.nodeInfo.map((node) => node.label);
@@ -237,6 +241,8 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
   methods: {
     async popupVisibleChange(visible: boolean) {
       await (this.visible = visible);
+      this.filterText = '';
+      this.filterByText = null;
       if (this.showFilter && this.visible) {
         const searchInput = this.$refs.input as HTMLElement;
         searchInput?.focus();
@@ -260,15 +266,15 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       this.change(defaultValue, null);
       this.actived = [];
       this.filterText = '';
+      this.filterByText = null;
       emitEvent<Parameters<TdTreeSelectProps['onClear']>>(this, 'clear', { e });
     },
-    focus(ctx: InputFocustEventParams[1]) {
+    focus(ctx: InputFocusEventParams[1]) {
       this.focusing = true;
       emitEvent<Parameters<TdTreeSelectProps['onFocus']>>(this, 'focus', { value: this.value, ...ctx });
     },
     blur(ctx: InputBlurEventParams[1]) {
       this.focusing = false;
-      this.filterText = '';
       emitEvent<Parameters<TdTreeSelectProps['onBlur']>>(this, 'blur', { value: this.value, ...ctx });
     },
     remove(options: RemoveOptions<TreeOptionData>) {
@@ -290,21 +296,21 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       if (this.multiple) {
         return;
       }
-      let current: TreeSelectValue = value;
-      if (this.isObjectValue) {
-        const nodeValue = isEmpty(value) ? '' : value[0];
-        current = this.getTreeNode(this.data, nodeValue);
-      } else {
-        current = isEmpty(value) ? '' : value[0];
-      }
-      this.change(current, context.node);
-      this.actived = value;
+
+      const triggerValue = this.isObjectValue ? context.node.data : context.node.data[this.realValue];
+      // 参照 Select 下点击即选中
+      this.change(triggerValue, context.node);
+      this.actived = [triggerValue];
       this.visible = false;
     },
     treeNodeExpand(value: Array<TreeNodeValue>) {
       this.expanded = value;
     },
     onInputChange() {
+      if (!this.filterText) {
+        this.filterByText = null;
+        return null;
+      }
       this.filterByText = (node: TreeNodeModel<TreeOptionData>) => {
         if (isFunction(this.filter)) {
           const filter: boolean | Promise<boolean> = this.filter(this.filterText, node);
@@ -319,40 +325,67 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
     // get tree data, even load async load
     getTreeData() {
       return ((this.$refs.tree as TreeInstanceFunctions)?.getItems() || []).map((item) => ({
-        label: item.data[this.realLabel],
-        value: item.data[this.realValue],
+        [this.realLabel]: item.data[this.realLabel],
+        [this.realValue]: item.data[this.realValue],
       }));
     },
     async changeNodeInfo() {
       await this.value;
+      if (!this.multiple && (this.value || this.value === 0)) {
+        this.changeSingleNodeInfo();
+      } else if (this.multiple && isArray(this.value)) {
+        this.changeMultipleNodeInfo();
+      } else {
+        this.nodeInfo = null;
+      }
+    },
+    changeSingleNodeInfo() {
+      const { tree } = this.$refs;
+      const nodeValue = this.isObjectValue ? (this.value as NodeOptions).value : this.value;
 
-      if (!this.multiple && this.value) {
-        const nodeValue = this.isObjectValue ? (this.value as NodeOptions).value : this.value;
+      if (tree && this.treeProps?.load) {
+        if (!isEmpty(this.data)) {
+          const node = (tree as any).getItem(nodeValue);
+          if (!node) return;
+          this.nodeInfo = { label: node.data[this.realLabel], value: node.data[this.realValue] };
+        } else {
+          this.nodeInfo = { label: nodeValue, value: nodeValue };
+        }
+      } else {
         const node = this.getTreeNode(this.data, nodeValue);
         if (!node) {
           this.nodeInfo = { label: nodeValue, value: nodeValue };
         } else {
           this.nodeInfo = node;
         }
-      } else if (this.multiple && isArray(this.value)) {
-        this.nodeInfo = this.value.map((value) => {
-          const nodeValue = this.isObjectValue ? (value as NodeOptions).value : value;
-          const node = this.getTreeNode(this.data, nodeValue);
-          if (!node) {
-            return { label: nodeValue, value: nodeValue };
-          }
-          return node;
-        });
-      } else {
-        this.nodeInfo = null;
       }
+    },
+    changeMultipleNodeInfo() {
+      const { tree } = this.$refs;
+
+      this.nodeInfo = (this.value as Array<TreeSelectValue>).map((value) => {
+        const nodeValue = this.isObjectValue ? (value as NodeOptions).value : value;
+        if (tree && this.treeProps?.load) {
+          if (!isEmpty(this.data)) {
+            const node = (tree as any).getItem(nodeValue);
+            if (!node) return;
+            return { label: node.data[this.realLabel], value: node.data[this.realValue] };
+          }
+          return { label: nodeValue, value: nodeValue };
+        }
+        const node = this.getTreeNode(this.data, nodeValue);
+        if (!node) {
+          return { label: nodeValue, value: nodeValue };
+        }
+        return node;
+      });
     },
     getTreeNode(data: Array<TreeOptionData>, targetValue: TreeSelectValue): TreeSelectNodeValue | null {
       for (let i = 0, len = data.length; i < len; i++) {
         if (data[i][this.realValue] === targetValue) {
           return { label: data[i][this.realLabel], value: data[i][this.realValue] };
         }
-        const childrenData = data[i]?.children;
+        const childrenData = data[i][this.realChildren];
         if (childrenData) {
           const data = Array.isArray(childrenData) ? childrenData : this.getTreeData();
           const result = this.getTreeNode(data, targetValue);
@@ -410,7 +443,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         placeholder={this.filterPlaceholder}
         onChange={this.onInputChange}
         onBlur={(value: InputValue, context: InputBlurEventParams[1]) => this.blur(context)}
-        onFocus={(value: InputValue, context: InputFocustEventParams[1]) => this.focus(context)}
+        onFocus={(value: InputValue, context: InputFocusEventParams[1]) => this.focus(context)}
       />
     );
     const tagItem = !isEmpty(this.tagList) && (this.valueDisplay || this.$scopedSlots.valueDisplay)

@@ -41,7 +41,7 @@
       <t-form-item label="性别" name="gender">
         <t-radio-group v-model="formData.gender">
           <t-radio value="male">男</t-radio>
-          <t-radio value="femal">女</t-radio>
+          <t-radio value="female">女</t-radio>
         </t-radio-group>
       </t-form-item>
       <t-form-item label="课程" name="course">
@@ -64,7 +64,7 @@
       <t-form-item label="个人网站" name="content.url">
         <t-input v-model="formData.content.url"></t-input>
       </t-form-item>
-      <t-form-item style="padding-top: 8px">
+      <t-form-item style="margin-left: 100px">
         <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
         <t-button theme="default" variant="base" type="reset" style="margin-right: 10px">重置</t-button>
         <t-button theme="default" variant="base" @click="handleClear">清空校验结果</t-button>

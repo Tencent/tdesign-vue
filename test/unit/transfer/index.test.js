@@ -344,6 +344,13 @@ describe('Transfer', () => {
 
         wrapper.vm.$el.querySelectorAll('.t-transfer__operations button')[0].click();
         expect(wrapper.vm.$data.targetValue).toEqual(['1', '2', '5']);
+
+        await wrapper.vm.$nextTick();
+        const targetColumn = wrapper.vm.$el.querySelectorAll(
+          '.t-transfer__list-target .t-transfer__list-item input[type=checkbox]',
+        );
+        const targetColumnValues = Array.prototype.map.call(targetColumn, (item) => item.value);
+        expect(targetColumnValues).toEqual(['1', '2', '5']);
       });
 
       it('push', async () => {
@@ -365,6 +372,13 @@ describe('Transfer', () => {
 
         wrapper.vm.$el.querySelectorAll('.t-transfer__operations button')[0].click();
         expect(wrapper.vm.$data.targetValue).toEqual(['1', '5', '2']);
+
+        await wrapper.vm.$nextTick();
+        const targetColumn = wrapper.vm.$el.querySelectorAll(
+          '.t-transfer__list-target .t-transfer__list-item input[type=checkbox]',
+        );
+        const targetColumnValues = Array.prototype.map.call(targetColumn, (item) => item.value);
+        expect(targetColumnValues).toEqual(['1', '5', '2']);
       });
 
       it('unshift', async () => {
@@ -386,6 +400,13 @@ describe('Transfer', () => {
 
         wrapper.vm.$el.querySelectorAll('.t-transfer__operations button')[0].click();
         expect(wrapper.vm.$data.targetValue).toEqual(['2', '1', '5']);
+
+        await wrapper.vm.$nextTick();
+        const targetColumn = wrapper.vm.$el.querySelectorAll(
+          '.t-transfer__list-target .t-transfer__list-item input[type=checkbox]',
+        );
+        const targetColumnValues = Array.prototype.map.call(targetColumn, (item) => item.value);
+        expect(targetColumnValues).toEqual(['2', '1', '5']);
       });
     });
 

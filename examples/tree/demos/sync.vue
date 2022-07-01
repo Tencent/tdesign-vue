@@ -1,15 +1,15 @@
 <template>
   <div class="tdesign-demo-block-column-large">
     <div class="tdesign-demo-block-column">
-      <t-addon prepend="checked:">
+      <t-input-adornment prepend="checked:">
         <t-input :value="allChecked" @change="onAllCheckedInput" />
-      </t-addon>
-      <t-addon prepend="expanded:">
+      </t-input-adornment>
+      <t-input-adornment prepend="expanded:">
         <t-input :value="allExpanded" @change="onAllExpandedInput" />
-      </t-addon>
-      <t-addon prepend="actived:">
+      </t-input-adornment>
+      <t-input-adornment prepend="actived:">
         <t-input :value="allActived" @change="onAllActivedInput" />
-      </t-addon>
+      </t-input-adornment>
     </div>
     <t-tree
       :data="items"

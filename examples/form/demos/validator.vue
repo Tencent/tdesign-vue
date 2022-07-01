@@ -58,7 +58,7 @@
         ></t-tree-select>
       </t-form-item>
 
-      <t-form-item style="padding-top: 8px">
+      <t-form-item style="margin-left: 100px">
         <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
         <t-button theme="default" variant="base" type="reset" style="margin-right: 10px">重置</t-button>
         <t-button theme="default" variant="base" @click="handleClear">清空校验结果</t-button>
@@ -158,6 +158,7 @@ export default {
       rules: {
         account: [
           { required: true, message: '姓名必填', type: 'error' },
+          { whitespace: true, message: '姓名不能为空' },
           { min: 2, message: '至少需要两个字符，一个中文等于两个字符', type: 'warning' },
           { max: 10, message: '姓名字符长度超出', type: 'warning' },
         ],

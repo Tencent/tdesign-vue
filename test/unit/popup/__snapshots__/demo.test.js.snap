@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Progress base demo works fine 1`] = `
+exports[`Popup Popup baseVue demo works fine 1`] = `
 <div>
   <div
     class="t-popup-demo-base-item"
@@ -50,7 +50,7 @@ exports[`Progress base demo works fine 1`] = `
 </div>
 `;
 
-exports[`Progress container demo works fine 1`] = `
+exports[`Popup Popup containerVue demo works fine 1`] = `
 <div>
   <div
     class="t-popup-demo-block"
@@ -89,7 +89,7 @@ exports[`Progress container demo works fine 1`] = `
 </div>
 `;
 
-exports[`Progress destroy demo works fine 1`] = `
+exports[`Popup Popup destroyVue demo works fine 1`] = `
 <div>
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
@@ -104,7 +104,7 @@ exports[`Progress destroy demo works fine 1`] = `
 </div>
 `;
 
-exports[`Progress disabled demo works fine 1`] = `
+exports[`Popup Popup disabledVue demo works fine 1`] = `
 <div>
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled"
@@ -120,7 +120,7 @@ exports[`Progress disabled demo works fine 1`] = `
 </div>
 `;
 
-exports[`Progress placement demo works fine 1`] = `
+exports[`Popup Popup placementVue demo works fine 1`] = `
 <div
   class="container"
 >
@@ -260,7 +260,7 @@ exports[`Progress placement demo works fine 1`] = `
 </div>
 `;
 
-exports[`Progress style demo works fine 1`] = `
+exports[`Popup Popup styleVue demo works fine 1`] = `
 <div>
   <div
     class="t-popup-demo-base-item"
@@ -324,62 +324,7 @@ exports[`Progress style demo works fine 1`] = `
 </div>
 `;
 
-exports[`Progress trigger demo works fine 1`] = `
-<div
-  class="popup-demo-container"
->
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      悬浮时触发（默认）
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      点击时触发
-    </span>
-  </button>
-   
-  <div
-    class="t-input__wrap"
-  >
-    <div
-      class="t-input t-size-m"
-    >
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder="获得焦点时触发"
-        type="text"
-        unselectable="off"
-      />
-    </div>
-  </div>
-   
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      右击时触发
-    </span>
-  </button>
-</div>
-`;
-
-exports[`Progress triggerElement demo works fine 1`] = `
+exports[`Popup Popup triggerElementVue demo works fine 1`] = `
 <div>
   <div>
     <div
@@ -449,7 +394,62 @@ exports[`Progress triggerElement demo works fine 1`] = `
 </div>
 `;
 
-exports[`Progress visible demo works fine 1`] = `
+exports[`Popup Popup triggerVue demo works fine 1`] = `
+<div
+  class="popup-demo-container"
+>
+  <button
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      悬浮时触发（默认）
+    </span>
+  </button>
+   
+  <button
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      点击时触发
+    </span>
+  </button>
+   
+  <div
+    class="t-input__wrap"
+  >
+    <div
+      class="t-input t-size-m t-is-default"
+    >
+      <input
+        autocomplete=""
+        class="t-input__inner"
+        placeholder="获得焦点时触发"
+        type="text"
+        unselectable="off"
+      />
+    </div>
+  </div>
+   
+  <button
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      右击时触发
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Popup Popup visibleVue demo works fine 1`] = `
 <div>
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"

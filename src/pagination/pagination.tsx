@@ -1,4 +1,6 @@
 import {
+  PageFirstIcon,
+  PageLastIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
   ChevronRightDoubleIcon,
@@ -29,6 +31,8 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
   name: 'TPagination',
 
   components: {
+    PageFirstIcon,
+    PageLastIcon,
     ChevronLeftIcon,
     ChevronRightIcon,
     ChevronRightDoubleIcon,
@@ -135,9 +139,6 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
     simpleClass(): ClassName {
       return [`${name}__select`];
     },
-    isSimple(): boolean {
-      return this.theme === 'simple';
-    },
     pageCount(): number {
       const c: number = Math.ceil(this.total / this.pageSize);
       return c > 0 ? c : 1;
@@ -185,8 +186,10 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
           start = this.current - this.curPageLeftCount;
           end = this.current + this.curPageRightCount;
         } else {
-          start = this.isPrevMoreShow ? this.pageCount - this.foldedMaxPageBtn + 1 : 2;
-          end = this.isPrevMoreShow ? this.pageCount - 1 : this.foldedMaxPageBtn;
+          const foldedStart = this.isMidEllipsis ? 2 : 1;
+          const foldedEnd = this.isMidEllipsis ? this.pageCount - 1 : this.pageCount;
+          start = this.isPrevMoreShow ? this.pageCount - this.foldedMaxPageBtn + 1 : foldedStart;
+          end = this.isPrevMoreShow ? foldedEnd : this.foldedMaxPageBtn;
         }
       } else {
         start = 1;
@@ -201,6 +204,9 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
 
     isFolded(): boolean {
       return this.pageCount > this.maxPageBtn;
+    },
+    isMidEllipsis(): boolean {
+      return this.pageEllipsisMode === 'mid';
     },
   },
 
@@ -306,33 +312,42 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
           'totalContent',
           <div class={this.totalClass}>{this.t(this.global.total, { total: this.total })}</div>,
         )}
-        {/* select */}
-        {this.pageSizeOptions.length ? (
+        {/* 分页器 */}
+        {this.showPageSize && this.pageSizeOptions.length ? (
           <t-select
             size={this.size}
             value={this.pageSize}
             disabled={this.disabled}
             class={this.sizerClass}
             onChange={this.onSelectorChange}
+            autoWidth={true}
           >
             {this.sizeOptions.map((item, index) => (
               <t-option value={item.value} label={item.label} key={index} />
             ))}
           </t-select>
         ) : null}
+        {/* 首页按钮 */}
+        {this.showFirstAndLastPageBtn ? (
+          <div class={this.preBtnClass} onClick={() => this.toPage(1)} disabled={this.disabled || this.current === min}>
+            <page-first-icon />
+          </div>
+        ) : null}
         {/* 向前按钮 */}
-        <div class={this.preBtnClass} onClick={this.prevPage} disabled={this.disabled || this.current === min}>
-          <chevron-left-icon />
-        </div>
-        {/* 页数 */}
-        {!this.isSimple ? (
+        {this.showPreviousAndNextBtn ? (
+          <div class={this.preBtnClass} onClick={this.prevPage} disabled={this.disabled || this.current === min}>
+            <chevron-left-icon />
+          </div>
+        ) : null}
+        {/* 常规版 */}
+        {this.showPageNumber && this.theme === 'default' ? (
           <ul class={this.btnWrapClass}>
-            {this.isFolded ? (
+            {this.isFolded && this.isMidEllipsis ? (
               <li class={this.getButtonClass(1)} onClick={() => this.toPage(min)}>
                 {min}
               </li>
             ) : null}
-            {this.isFolded && this.isPrevMoreShow ? (
+            {this.isFolded && this.isPrevMoreShow && this.isMidEllipsis ? (
               <li
                 class={this.btnMoreClass}
                 onClick={this.prevMorePage}
@@ -347,7 +362,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
                 {i}
               </li>
             ))}
-            {this.isFolded && this.isNextMoreShow ? (
+            {this.isFolded && this.isNextMoreShow && this.isMidEllipsis ? (
               <li
                 class={this.btnMoreClass}
                 onClick={this.nextMorePage}
@@ -357,13 +372,15 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
                 {this.nextMore ? <chevron-right-double-icon /> : <ellipsis-icon />}
               </li>
             ) : null}
-            {this.isFolded ? (
+            {this.isFolded && this.isMidEllipsis ? (
               <li class={this.getButtonClass(this.pageCount)} onClick={() => this.toPage(this.pageCount)}>
                 {this.pageCount}
               </li>
             ) : null}
           </ul>
-        ) : (
+        ) : null}
+        {/* 极简版 */}
+        {this.showPageNumber && this.theme === 'simple' ? (
           <t-select
             size={this.size}
             value={this.current}
@@ -371,16 +388,29 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
             class={this.simpleClass}
             onChange={this.toPage}
             options={this.pageCountOption}
+            autoWidth={true}
           />
-        )}
+        ) : null}
         {/* 向后按钮 */}
-        <div
-          class={this.nextBtnClass}
-          onClick={this.nextPage}
-          disabled={this.disabled || this.current === this.pageCount}
-        >
-          <chevron-right-icon />
-        </div>
+        {this.showPreviousAndNextBtn ? (
+          <div
+            class={this.nextBtnClass}
+            onClick={this.nextPage}
+            disabled={this.disabled || this.current === this.pageCount}
+          >
+            <chevron-right-icon />
+          </div>
+        ) : null}
+        {/* 尾页按钮 */}
+        {this.showFirstAndLastPageBtn ? (
+          <div
+            class={this.nextBtnClass}
+            onClick={() => this.toPage(this.pageCount)}
+            disabled={this.disabled || this.current === this.pageCount}
+          >
+            <page-last-icon />
+          </div>
+        ) : null}
         {/* 跳转 */}
         {this.showJumper ? (
           <div class={this.jumperClass}>
@@ -392,7 +422,9 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
               onEnter={this.onJumperChange}
               max={this.pageCount}
               min={min}
+              size={this.size}
               theme="normal"
+              placeholder=""
             />
             {this.t(this.global.page)}
           </div>

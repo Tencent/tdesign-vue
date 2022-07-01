@@ -1,176 +1,233 @@
-import Vue, { VNode } from 'vue';
+import {
+  computed,
+  ref,
+  SetupContext,
+  toRefs,
+  watch,
+  onMounted,
+  inject,
+  onBeforeUnmount,
+  defineComponent,
+  reactive,
+} from '@vue/composition-api';
+import Vue, { PropType } from 'vue';
+
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import get from 'lodash/get';
 import { renderContent } from '../utils/render-tnode';
-import mixins from '../utils/mixins';
 import { scrollSelectedIntoView } from '../utils/dom';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
-import ripple from '../utils/ripple';
+import Ripple from '../utils/ripple';
+import { getKeepAnimationMixins } from '../config-provider/config-receiver';
 import props from './option-props';
 import { TdOptionProps } from './type';
 import Checkbox from '../checkbox/index';
 import { SelectInstance } from './instance';
-import { ClassName } from '../common';
-import { getKeepAnimationMixins } from '../config-provider/config-receiver';
-
-const keepAnimationMixins = getKeepAnimationMixins<OptionInstance>();
+import useLazyLoad from '../hooks/useLazyLoad';
+import { TScroll } from '../common';
 
 const selectName = `${prefix}-select`;
+const keepAnimationMixins = getKeepAnimationMixins();
 export interface OptionInstance extends Vue {
   tSelect: SelectInstance;
 }
 
-export default mixins(keepAnimationMixins).extend({
+export interface OptionProps extends TdOptionProps {
+  panelElement: HTMLElement;
+  scroll: TScroll;
+  rowIndex: number;
+  trs?: Map<number, object>;
+  scrollType?: 'lazy' | 'virtual';
+  isVirtual: boolean;
+  bufferSize: number;
+}
+
+export default defineComponent({
   name: 'TOption',
-  data() {
-    return {
-      isHover: false,
-      formDisabled: undefined,
-    };
+  props: {
+    ...props,
+    rowIndex: Number,
+    trs: Map as PropType<OptionProps['trs']>,
+    scrollType: String,
+    isVirtual: Boolean,
+    bufferSize: Number,
   },
-  props: { ...props },
   components: {
     TCheckbox: Checkbox,
   },
-  directives: { ripple },
-  inject: {
-    tSelect: {
-      default: undefined,
-    },
-  },
-  watch: {
-    value() {
-      this.tSelect && this.tSelect.getOptions(this);
-    },
-    label() {
-      this.tSelect && this.tSelect.getOptions(this);
-    },
-    hovering() {
-      if (this.hovering) {
+  mixins: [keepAnimationMixins],
+  directives: { Ripple },
+  setup(props: OptionProps, context: SetupContext) {
+    const optionNode = ref(null);
+    const isHover = ref(false);
+    const formDisabled = ref(undefined);
+
+    const {
+      value, label, disabled, panelElement, scrollType, bufferSize,
+    } = toRefs(props);
+
+    const tSelect: any = inject('tSelect');
+
+    const { hasLazyLoadHolder = null, tRowHeight = null } = useLazyLoad(
+      panelElement,
+      optionNode,
+      reactive({ type: scrollType, bufferSize, rowIndex: props.rowIndex }),
+    );
+    watch(value, () => {
+      tSelect && tSelect.getOptions({ ...context, ...props });
+    });
+
+    const tDisabled = computed(() => formDisabled.value || disabled.value);
+    const hovering = computed(
+      () => tSelect
+        && tSelect.visible.value
+        && tSelect.hoverOptions.value[tSelect.hoverIndex.value]
+        && tSelect.hoverOptions.value[tSelect.hoverIndex.value][tSelect.realValue.value] === value.value,
+    );
+    watch(hovering, (val) => {
+      if (val) {
         const timer = setTimeout(() => {
-          scrollSelectedIntoView(this.tSelect.getOverlayElm(), this.$el as HTMLElement);
+          scrollSelectedIntoView(tSelect.getOverlayElm(), optionNode.value as HTMLElement);
           clearTimeout(timer);
-        }, this.tSelect.popupOpenTime); // 待popup弹出后再滚动到对应位置
+        }, tSelect.popupOpenTime.value); // 待popup弹出后再滚动到对应位置
       }
-    },
-  },
-  computed: {
-    tDisabled(): boolean {
-      return this.formDisabled || this.disabled;
-    },
-    // 键盘上下按键选中hover样式的选项
-    hovering(): boolean {
-      return (
-        this.tSelect
-        && this.tSelect.visible
-        && this.tSelect.hoverOptions[this.tSelect.hoverIndex]
-        && this.tSelect.hoverOptions[this.tSelect.hoverIndex][this.tSelect.realValue] === this.value
-      );
-    },
-    multiLimitDisabled(): boolean {
-      if (this.tSelect && this.tSelect.multiple && this.tSelect.max) {
-        if (
-          this.tSelect.value instanceof Array
-          && this.tSelect.value.indexOf(this.value) === -1
-          && this.tSelect.max <= this.tSelect.value.length
-        ) {
-          return true;
-        }
-      }
-      return false;
-    },
-    classes(): ClassName {
-      return [
-        `${prefix}-select-option`,
-        {
-          [CLASSNAMES.STATUS.disabled]: this.tDisabled || this.multiLimitDisabled,
-          [CLASSNAMES.STATUS.selected]: this.selected,
-          [CLASSNAMES.SIZE[this.tSelect && this.tSelect.size]]: this.tSelect && this.tSelect.size,
-          [`${prefix}-select-option__hover`]: this.hovering,
-        },
-      ];
-    },
-    isCreatedOption(): boolean {
-      return this.tSelect.creatable && this.value === this.tSelect.searchInput;
-    },
-    show(): boolean {
+    });
+    const classes = computed(() => [
+      `${prefix}-select-option`,
+      {
+        [CLASSNAMES.STATUS.disabled]: tDisabled.value || tSelect.reachMaxLimit.value,
+        [CLASSNAMES.STATUS.selected]: selected.value,
+        [CLASSNAMES.SIZE[tSelect && tSelect.size.value]]: tSelect && tSelect.value,
+        [`${prefix}-select-option__hover`]: hovering.value,
+      },
+    ]);
+    const isCreatedOption = computed(() => tSelect.creatable.value && value.value === tSelect.tInputValue.value);
+    const show = computed(() => {
       /**
        * 此属性主要用于slots生成options时显示控制，直传options由select进行显示控制
        * create的option，始终显示
        * canFilter只显示待匹配的选项
        */
-      if (!this.tSelect) return false;
-      if (this.isCreatedOption) return true;
-      if (this.tSelect.canFilter && this.tSelect.searchInput !== '') {
-        return this.tSelect.filterOptions.some(
-          (option: TdOptionProps) => get(option, this.tSelect.realValue) === this.value,
+      if (!tSelect) return false;
+      if (isCreatedOption.value) return true;
+      if (tSelect.canFilter.value && tSelect.tInputValue.value !== '') {
+        return tSelect.filterOptions.value.some(
+          (option: TdOptionProps) => get(option, tSelect.realValue.value) === value.value,
         );
       }
       return true;
-    },
-    labelText(): string | number {
-      return this.label || this.value;
-    },
-    selected(): boolean {
+    });
+    const labelText = computed(() => label.value || value.value);
+    const selected = computed(() => {
       let flag = false;
-      if (!this.tSelect) return false;
-      if (this.tSelect.value instanceof Array) {
-        if (this.tSelect.labelInValue) {
-          flag = this.tSelect.value.map((item) => get(item, this.tSelect.realValue)).indexOf(this.value) !== -1;
+      if (!tSelect) return false;
+      if (tSelect.value.value instanceof Array) {
+        if (tSelect.labelInValue.value) {
+          flag = tSelect.value.value.map((item: any) => get(item, tSelect.realValue.value)).indexOf(value.value) !== -1;
         } else {
-          flag = this.tSelect.value.indexOf(this.value) !== -1;
+          flag = tSelect.value.value.indexOf(value.value) !== -1;
         }
-      } else if (typeof this.tSelect.value === 'object') {
-        flag = get(this.tSelect.value, this.tSelect.realValue) === this.value;
+      } else if (typeof tSelect.value.value === 'object') {
+        flag = get(tSelect.value.value, tSelect.realValue.value) === value.value;
       } else {
-        flag = this.tSelect.value === this.value;
+        flag = tSelect.value.value === value.value;
       }
       return flag;
-    },
-  },
-  methods: {
-    select(e: MouseEvent | KeyboardEvent) {
+    });
+    const select = (e: MouseEvent | KeyboardEvent) => {
       e.stopPropagation();
-      if (this.tDisabled || this.multiLimitDisabled) {
+      if (tDisabled.value || (!selected.value && tSelect.reachMaxLimit.value)) {
         return false;
       }
-      const parent = this.$el.parentNode as HTMLElement;
+      const parent = context.refs.optionNode as HTMLLIElement;
       if (parent && parent.className.indexOf(`${selectName}__create-option`) !== -1) {
-        this.tSelect && this.tSelect.createOption(this.value.toString());
+        tSelect && tSelect.createOption(value.value.toString());
       }
-      this.tSelect && this.tSelect.onOptionClick(this.value, e);
-    },
-    mouseEvent(v: boolean) {
-      this.isHover = v;
-    },
+      tSelect && tSelect.onOptionClick(value.value, e);
+    };
+    const mouseEvent = (v: boolean) => {
+      isHover.value = v;
+    };
+    onMounted(() => {
+      tSelect && tSelect.getOptions({ ...context, ...props });
+    });
+    onBeforeUnmount(() => {
+      tSelect && tSelect.hasSlotOptions.value && tSelect.destroyOptions({ ...props });
+    });
+
+    // 处理虚拟滚动节点挂载
+    onMounted(() => {
+      const {
+        trs, rowIndex, scrollType, isVirtual,
+      } = props;
+
+      if (scrollType === 'virtual') {
+        if (isVirtual) {
+          trs.set(rowIndex, optionNode.value);
+          context.emit('onRowMounted');
+        }
+      }
+    });
+
+    // 处理虚拟滚动节点移除
+    onBeforeUnmount(() => {
+      if (props.isVirtual) {
+        const { trs, rowIndex } = props;
+        trs.delete(rowIndex);
+      }
+    });
+
+    return {
+      selected,
+      show,
+      mouseEvent,
+      select,
+      classes,
+      tSelect,
+      labelText,
+      optionNode,
+      tRowHeight,
+      hasLazyLoadHolder,
+    };
   },
-  mounted() {
-    this.tSelect && this.tSelect.getOptions(this);
-  },
-  beforeDestroy() {
-    this.tSelect && this.tSelect.hasSlotOptions && this.tSelect.destroyOptions(this);
-  },
-  render(): VNode {
+
+  render() {
     const {
-      classes, labelText, selected, disabled, multiLimitDisabled, show,
+      classes, labelText, selected, disabled, show, tSelect,
     } = this;
     const children: ScopedSlotReturnValue = renderContent(this, 'default', 'content');
     const optionChild = children || labelText;
+    if (this.hasLazyLoadHolder) {
+      return (
+        <li
+          ref="optionNode"
+          v-show={show}
+          class={classes}
+          onMouseenter={this.mouseEvent.bind(true)}
+          onMouseleave={this.mouseEvent.bind(false)}
+          onClick={this.select}
+          v-ripple={(this.keepAnimation as any).ripple}
+        >
+          {<span style={{ height: `${this.tRowHeight}px`, border: 'none' }}></span>}
+        </li>
+      );
+    }
+
     return (
       <li
+        ref="optionNode"
         v-show={show}
         class={classes}
-        title={labelText}
         onMouseenter={this.mouseEvent.bind(true)}
         onMouseleave={this.mouseEvent.bind(false)}
         onClick={this.select}
-        v-ripple={this.keepAnimation.ripple}
+        v-ripple={(this.keepAnimation as any).ripple}
       >
-        {this.tSelect && this.tSelect.multiple ? (
+        {tSelect && tSelect.multiple.value ? (
           <t-checkbox
             checked={selected}
-            disabled={disabled || multiLimitDisabled}
+            disabled={disabled || (!selected && tSelect.reachMaxLimit.value)}
             nativeOnClick={(e: MouseEvent) => {
               e.preventDefault();
             }}

@@ -1,3 +1,5 @@
+import VueCompositionAPI from '@vue/composition-api';
+
 import _TagInput from './tag-input';
 import withInstall from '../utils/withInstall';
 import { TdTagInputProps } from './type';
@@ -7,6 +9,6 @@ import './style';
 export * from './type';
 export type TagInputProps = TdTagInputProps;
 
-export const TagInput = withInstall(_TagInput);
+export const TagInput = withInstall(_TagInput, VueCompositionAPI);
 
 export default TagInput;

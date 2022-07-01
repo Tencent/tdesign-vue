@@ -8,9 +8,9 @@ import isString from 'lodash/isString';
 import { easeInOutCubic, EasingFunction } from './easing';
 import { ScrollContainer, ScrollContainerElement } from '../common';
 
-const isServer = Vue.prototype.$isServer || typeof window === 'undefined';
+export const isServer = Vue.prototype.$isServer || typeof window === 'undefined';
 
-const trim = (str: string): string => (str || '').replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, '');
+export const trim = (str: string): string => (str || '').replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, '');
 
 export const on = ((): any => {
   if (!isServer && document.addEventListener) {
@@ -103,8 +103,8 @@ export function removeClass(el: Element, cls: string): any {
   }
 }
 
-export const getAttach = (node: any): HTMLElement => {
-  const attachNode = typeof node === 'function' ? node() : node;
+export const getAttach = (node: any, triggerNode?: any): HTMLElement => {
+  const attachNode = typeof node === 'function' ? node(triggerNode) : node;
   if (!attachNode) {
     return document.body;
   }
@@ -234,12 +234,8 @@ export const clickOut = (els: Vue | Element | Iterable<any> | ArrayLike<any>, cb
 
 // 用于判断节点内容是否溢出
 export const isNodeOverflow = (ele: Vue | Element | (Vue | Element)[]): boolean => {
-  const { clientWidth = 0, scrollWidth = 0 } = ele as Element & { clientWidth: number; scrollWidth: number };
-
-  if (scrollWidth > clientWidth) {
-    return true;
-  }
-  return false;
+  const { clientWidth = 0, scrollWidth = 0 } = ele as Element;
+  return scrollWidth > clientWidth;
 };
 
 // 将子元素selected滚动到父元素parentEle的可视范围内

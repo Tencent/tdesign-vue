@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tabs ban demo works fine 1`] = `
+exports[`Tabs Tabs banVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large"
 >
@@ -118,7 +118,7 @@ exports[`Tabs ban demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tabs base demo works fine 1`] = `
+exports[`Tabs Tabs baseVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large"
 >
@@ -179,7 +179,7 @@ exports[`Tabs base demo works fine 1`] = `
           <p
             style="padding: 25px;"
           >
-            选项卡1的内容，使用 t-tab-pannel 渲染
+            选项卡1的内容，使用 t-tab-panel 渲染
           </p>
         </div>
          
@@ -190,7 +190,7 @@ exports[`Tabs base demo works fine 1`] = `
           <p
             style="padding: 25px;"
           >
-            选项卡2的内容，使用 t-tab-pannel 渲染
+            选项卡2的内容，使用 t-tab-panel 渲染
           </p>
         </div>
          
@@ -263,7 +263,7 @@ exports[`Tabs base demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tabs combination demo works fine 1`] = `
+exports[`Tabs Tabs combinationVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large"
   style="width: 100%;"
@@ -397,7 +397,7 @@ exports[`Tabs combination demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tabs custom demo works fine 1`] = `
+exports[`Tabs Tabs customVue demo works fine 1`] = `
 <div
   class="t-tabs"
   style="width: 100%;"
@@ -475,7 +475,7 @@ exports[`Tabs custom demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tabs icon demo works fine 1`] = `
+exports[`Tabs Tabs iconVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large"
 >
@@ -594,7 +594,7 @@ exports[`Tabs icon demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tabs operation demo works fine 1`] = `
+exports[`Tabs Tabs operationVue demo works fine 1`] = `
 <div
   class="t-tabs"
 >
@@ -671,7 +671,7 @@ exports[`Tabs operation demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tabs position demo works fine 1`] = `
+exports[`Tabs Tabs positionVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large"
 >
@@ -827,7 +827,7 @@ exports[`Tabs position demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tabs size demo works fine 1`] = `
+exports[`Tabs Tabs sizeVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large"
 >
@@ -939,6 +939,140 @@ exports[`Tabs size demo works fine 1`] = `
                   class="t-tabs__bar t-is-top"
                 />
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-tabs__content"
+      >
+        <div
+          class="t-tab-panel"
+        >
+          <p
+            style="padding: 25px;"
+          >
+            选项卡1
+          </p>
+        </div>
+         
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tabs Tabs themeVue demo works fine 1`] = `
+<div
+  class="tdesign-demo-block-column-large"
+>
+  <div
+    class="tdesign-demo-block-column"
+  >
+    <div
+      class="t-tabs"
+    >
+      <div
+        class="t-tabs__header t-is-top"
+      >
+        <div
+          class="t-tabs__nav"
+        >
+          <div
+            class="t-tabs__operations t-tabs__operations--left"
+          >
+            <transition-stub
+              appear="true"
+              mode="out-in"
+              name="fade"
+            />
+          </div>
+          <div
+            class="t-tabs__operations t-tabs__operations--right"
+          >
+            <transition-stub
+              appear="true"
+              mode="out-in"
+              name="fade"
+            />
+          </div>
+          <div
+            class="t-tabs__nav-container t-is-top"
+          >
+            <div
+              class="t-tabs__nav-scroll"
+            >
+              <div
+                class="t-tabs__nav-wrap t-is-smooth"
+                style="transform: translate(0px, 0);"
+              >
+                <div
+                  class="t-tabs__bar t-is-top"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-tabs__content"
+      >
+        <div
+          class="t-tab-panel"
+        >
+          <p
+            style="padding: 25px;"
+          >
+            选项卡1
+          </p>
+        </div>
+         
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="t-tabs"
+    >
+      <div
+        class="t-tabs__header t-is-top"
+      >
+        <div
+          class="t-tabs__nav"
+        >
+          <div
+            class="t-tabs__operations t-tabs__operations--left"
+          >
+            <transition-stub
+              appear="true"
+              mode="out-in"
+              name="fade"
+            />
+          </div>
+          <div
+            class="t-tabs__operations t-tabs__operations--right"
+          >
+            <transition-stub
+              appear="true"
+              mode="out-in"
+              name="fade"
+            />
+          </div>
+          <div
+            class="t-tabs__nav-container t-tabs__nav--card t-is-top"
+          >
+            <div
+              class="t-tabs__nav-scroll"
+            >
+              <div
+                class="t-tabs__nav-wrap t-is-smooth"
+                style="transform: translate(0px, 0);"
+              />
             </div>
           </div>
         </div>

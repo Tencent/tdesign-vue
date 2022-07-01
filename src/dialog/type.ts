@@ -5,7 +5,7 @@
  * */
 
 import { ButtonProps } from '../button';
-import { TNode, AttachNode } from '../common';
+import { TNode, Styles, AttachNode } from '../common';
 
 export interface TdDialogProps {
   /**
@@ -22,7 +22,7 @@ export interface TdDialogProps {
    * 取消按钮，可自定义。值为 null 则不显示取消按钮。值类型为字符串，则表示自定义按钮文本，值类型为 Object 则表示透传 Button 组件属性。使用 TNode 自定义按钮时，需自行控制取消事件
    * @default ''
    */
-  cancelBtn?: string | ButtonProps | TNode;
+  cancelBtn?: string | ButtonProps | TNode | null;
   /**
    * 关闭按钮，可以自定义。值为 true 显示默认关闭按钮，值为 false 不显示关闭按钮。值类型为 string 则直接显示值，如：“关闭”。值类型为 TNode，则表示呈现自定义按钮示例
    * @default true
@@ -30,12 +30,10 @@ export interface TdDialogProps {
   closeBtn?: string | boolean | TNode;
   /**
    * 按下 ESC 时是否触发对话框关闭事件
-   * @default true
    */
   closeOnEscKeydown?: boolean;
   /**
    * 点击蒙层时是否触发关闭事件
-   * @default true
    */
   closeOnOverlayClick?: boolean;
   /**
@@ -82,6 +80,11 @@ export interface TdDialogProps {
    * @default true
    */
   preventScrollThrough?: boolean;
+  /**
+   * 【开发中】仅在挂载元素中显示抽屉，默认在浏览器可视区域显示。父元素需要有定位属性，如：position: relative
+   * @default false
+   */
+  showInAttachedElement?: boolean;
   /**
    * 是否显示遮罩层
    * @default true
@@ -156,9 +159,8 @@ export interface DialogOptions extends Omit<TdDialogProps, 'attach'> {
   className?: string;
   /**
    * 弹框 style 属性，输入 [CSSStyleDeclaration.cssText](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/cssText)
-   * @default ''
    */
-  style?: string;
+  style?: string | Styles;
 }
 
 export interface DialogInstance {
@@ -191,4 +193,4 @@ export type DialogMethod = (options?: DialogOptions) => DialogInstance;
 
 export type DialogConfirmMethod = (options?: DialogOptions) => DialogInstance;
 
-export type DialogAlertMethod = (options?: Omit<DialogOptions, 'confirmBtn'>) => DialogInstance;
+export type DialogAlertMethod = (options?: Omit<DialogOptions, 'cancelBtn'>) => DialogInstance;

@@ -66,7 +66,7 @@ export default {
     type: Function as PropType<TdTreeSelectProps['prefixIcon']>,
   },
   /** 【讨论中】是否显示全选 */
-  showCheckAlll: Boolean,
+  showCheckAll: Boolean,
   /** 尺寸 */
   size: {
     type: String as PropType<TdTreeSelectProps['size']>,

@@ -5,7 +5,7 @@ exports[`InputNumber :props :defaultValue, default value 6 1`] = `
       <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
     </svg></button>
   <div class="t-input__wrap">
-    <div ref="refInputElem" class="t-input t-size-m t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+    <div ref="refInputElem" class="t-input t-size-m t-is-default t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
   </div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
       <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
     </svg></button>
@@ -17,7 +17,7 @@ exports[`InputNumber :props :disabled, function can not be call 1`] = `
       <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
     </svg></button>
   <div class="t-input__wrap">
-    <div ref="refInputElem" class="t-input t-size-m t-is-disabled t-align-center"><input disabled="disabled" autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+    <div ref="refInputElem" class="t-input t-size-m t-is-disabled t-is-default t-align-center"><input disabled="disabled" autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
   </div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
       <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
     </svg></button>
@@ -29,7 +29,7 @@ exports[`InputNumber :props :format, with 6% 1`] = `
       <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
     </svg></button>
   <div class="t-input__wrap">
-    <div ref="refInputElem" class="t-input t-size-m t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+    <div ref="refInputElem" class="t-input t-size-m t-is-default t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
   </div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
       <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
     </svg></button>
@@ -41,7 +41,7 @@ exports[`InputNumber :props :max, value 6 < max 10 1`] = `
       <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
     </svg></button>
   <div class="t-input__wrap">
-    <div ref="refInputElem" class="t-input t-size-m t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+    <div ref="refInputElem" class="t-input t-size-m t-is-default t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
   </div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
       <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
     </svg></button>
@@ -77,7 +77,7 @@ exports[`InputNumber :props :min, value 6 > min 1 1`] = `
       <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
     </svg></button>
   <div class="t-input__wrap">
-    <div ref="refInputElem" class="t-input t-size-m t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+    <div ref="refInputElem" class="t-input t-size-m t-is-default t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
   </div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
       <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
     </svg></button>
@@ -89,7 +89,7 @@ exports[`InputNumber :props :mode, without class t-is-controls-right 1`] = `
       <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
     </svg></button>
   <div class="t-input__wrap">
-    <div ref="refInputElem" class="t-input t-size-m t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+    <div ref="refInputElem" class="t-input t-size-m t-is-default t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
   </div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
       <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
     </svg></button>
@@ -101,7 +101,7 @@ exports[`InputNumber :props :mode:column, with class t-is-controls-right 1`] = `
       <path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path>
     </svg></button>
   <div class="t-input__wrap">
-    <div ref="refInputElem" class="t-input t-size-m"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+    <div ref="refInputElem" class="t-input t-size-m t-is-default"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
   </div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-up t-size-m">
       <path fill="currentColor" d="M12.46 9.54l-.92.92L8 6.92l-3.54 3.54-.92-.92L8 5.08l4.46 4.46z" fill-opacity="0.9"></path>
     </svg></button>
@@ -113,7 +113,7 @@ exports[`InputNumber :props :mode:row, without class t-is-controls-right 1`] = `
       <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
     </svg></button>
   <div class="t-input__wrap">
-    <div ref="refInputElem" class="t-input t-size-m t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+    <div ref="refInputElem" class="t-input t-size-m t-is-default t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
   </div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
       <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
     </svg></button>
@@ -125,7 +125,7 @@ exports[`InputNumber :props :size:large, with class t-size-l 1`] = `
       <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
     </svg></button>
   <div class="t-input__wrap">
-    <div ref="refInputElem" class="t-input t-size-m t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+    <div ref="refInputElem" class="t-input t-size-m t-is-default t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
   </div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-l">
       <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
     </svg></button>
@@ -137,7 +137,7 @@ exports[`InputNumber :props :size:medium, with class t-size-m 1`] = `
       <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
     </svg></button>
   <div class="t-input__wrap">
-    <div ref="refInputElem" class="t-input t-size-m t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+    <div ref="refInputElem" class="t-input t-size-m t-is-default t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
   </div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
       <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
     </svg></button>
@@ -149,7 +149,7 @@ exports[`InputNumber :props :size:small, with class t-size-s 1`] = `
       <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
     </svg></button>
   <div class="t-input__wrap">
-    <div ref="refInputElem" class="t-input t-size-m t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+    <div ref="refInputElem" class="t-input t-size-m t-is-default t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
   </div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-s">
       <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
     </svg></button>
@@ -161,7 +161,7 @@ exports[`InputNumber :props :step, 2 1`] = `
       <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
     </svg></button>
   <div class="t-input__wrap">
-    <div ref="refInputElem" class="t-input t-size-m t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+    <div ref="refInputElem" class="t-input t-size-m t-is-default t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
   </div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
       <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
     </svg></button>
@@ -173,7 +173,7 @@ exports[`InputNumber :props :value, 6 1`] = `
       <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
     </svg></button>
   <div class="t-input__wrap">
-    <div ref="refInputElem" class="t-input t-size-m t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+    <div ref="refInputElem" class="t-input t-size-m t-is-default t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
   </div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
       <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
     </svg></button>
@@ -185,7 +185,7 @@ exports[`InputNumber :props :value, 6.55 1`] = `
       <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
     </svg></button>
   <div class="t-input__wrap">
-    <div ref="refInputElem" class="t-input t-size-m t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+    <div ref="refInputElem" class="t-input t-size-m t-is-default t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
   </div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
       <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
     </svg></button>
@@ -197,7 +197,7 @@ exports[`InputNumber :props class, with class t-input-number 1`] = `
       <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
     </svg></button>
   <div class="t-input__wrap">
-    <div ref="refInputElem" class="t-input t-size-m t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+    <div ref="refInputElem" class="t-input t-size-m t-is-default t-align-center"><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
   </div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-add t-size-m">
       <path fill="currentColor" d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z" fill-opacity="0.9"></path>
     </svg></button>

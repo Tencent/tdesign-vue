@@ -1,9 +1,5 @@
 <template>
-  <t-calendar
-    :head="renderHead"
-    :cell="renderCell"
-  >
-  </t-calendar>
+  <t-calendar :head="renderHead" :cell="renderCell"> </t-calendar>
 </template>
 
 <script lang="jsx">
@@ -20,22 +16,27 @@ export default {
       return <div>{title}</div>;
     },
     renderCell(h, params) {
-      const dataList = [{
-        value: 'error',
-        label: '错误事件',
-      }, {
-        value: 'waring',
-        label: '警告事件',
-      }, {
-        value: 'success',
-        label: '正常事件',
-      }];
-      return <div class="calendar-slot-props-api-demo">
-        {(params.mode === 'month'
-          ? dayjs(params.formattedDate).date() === 15
-          : dayjs(params.formattedDate).month() === 7) && (
+      const dataList = [
+        {
+          value: 'error',
+          label: '错误事件',
+        },
+        {
+          value: 'warning',
+          label: '警告事件',
+        },
+        {
+          value: 'success',
+          label: '正常事件',
+        },
+      ];
+      return (
+        <div class="calendar-slot-props-api-demo">
+          {(params.mode === 'month'
+            ? dayjs(params.formattedDate).date() === 15
+            : dayjs(params.formattedDate).month() === 7) && (
             <span>
-              <div class="calendar-slot-props-api-demo-slot-warrper">
+              <div class="calendar-slot-props-api-demo-slot-wrapper">
                 {dataList.map((item) => (
                   <div class="item">
                     <span class={item.value}></span>
@@ -45,11 +46,12 @@ export default {
               </div>
               <div class="shadow" />
             </span>
-        )}
-        <div class="number">
-          {params.mode === 'year' ? dayjs(params.formattedDate).month() : dayjs(params.formattedDate).date()}
+          )}
+          <div class="number">
+            {params.mode === 'year' ? dayjs(params.formattedDate).month() : dayjs(params.formattedDate).date()}
+          </div>
         </div>
-      </div>;
+      );
     },
   },
 };
@@ -91,14 +93,14 @@ export default {
   .error {
     background: #e34d59;
   }
-  .waring {
+  .warning {
     background: #ed7b2f;
   }
   .success {
     background: #00a870;
   }
 }
-.calendar-slot-props-api-demo-slot-warrper {
+.calendar-slot-props-api-demo-slot-wrapper {
   position: absolute;
   bottom: 2px;
   left: 5px;

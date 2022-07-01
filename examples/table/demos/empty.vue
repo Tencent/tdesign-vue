@@ -1,24 +1,24 @@
 <template>
-  <div>
-    <t-table
-      :data="data"
-      :columns="columns"
-      :rowKey="rowKey"
-    ></t-table>
-    <br/><br/>
-    <t-table
-      :data="data"
-      :columns="columns"
-      :empty="empty"
-      :rowKey="rowKey"
-    ></t-table>
+  <div class="tdesign-demo-block-column-large">
+    <!-- 默认空内容 -->
+    <t-table :data="[]" :columns="columns" :rowKey="rowKey"></t-table>
+
+    <!-- 使用插槽自定义的空内容 -->
+
+    <t-table :data="[]" :columns="columns" :rowKey="rowKey">
+      <template #empty>
+        <span>😊 使用插槽自定义的空内容 😊</span>
+      </template>
+    </t-table>
+
+    <!-- 使用渲染函数自定义的空内容 -->
+    <t-table :data="[]" :columns="columns" :empty="empty" :rowKey="rowKey"></t-table>
   </div>
 </template>
 <script lang="jsx">
 export default {
   data() {
     return {
-      data: [],
       columns: [
         {
           colKey: 'type',
@@ -46,11 +46,7 @@ export default {
         },
       ],
       rowKey: 'property',
-      empty: () => (
-        <span style="display:flex;align-items:center;justify-content:center;height:100px;">
-          😊 我是自定义的空内容 😊
-        </span>
-      ),
+      empty: () => <span>😊 使用渲染函数自定义的空内容 😊</span>,
     };
   },
 };

@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import raf from 'raf';
 import { getAttach, removeDom } from '../utils/dom';
 import props from './props';
 
@@ -10,33 +11,41 @@ function isContentRectChanged(rect1: DOMRectReadOnly, rect2: DOMRectReadOnly) {
   return false;
 }
 
-const Ref = Vue.extend({
+function observeResize(elm: Element, cb: (rect: DOMRectReadOnly) => void) {
+  if (!window?.ResizeObserver || !elm) return;
+  let prevContentRect = null as DOMRectReadOnly;
+  const ro = new ResizeObserver((entries = []) => {
+    const { contentRect } = entries[0] || {};
+    if (isContentRectChanged(contentRect, prevContentRect)) {
+      prevContentRect = contentRect;
+      cb(contentRect);
+      return;
+    }
+    // omit initial change
+    if (!prevContentRect) {
+      prevContentRect = contentRect;
+    }
+  });
+
+  ro.observe(elm);
+  return function () {
+    ro.unobserve(elm);
+  };
+}
+
+const Trigger = Vue.extend({
   data() {
     return {
       contentRect: null as DOMRectReadOnly,
     };
   },
   mounted() {
-    if (window?.ResizeObserver && this.$el) {
-      const el = this.$el;
-      const vm = this as any;
-      const ro = new ResizeObserver((entries = []) => {
-        const { contentRect } = entries[0] || {};
-        if (isContentRectChanged(contentRect, vm.contentRect)) {
-          vm.contentRect = contentRect;
-          vm.$emit('resize', { ...contentRect });
-          return;
-        }
-        // omit initial change
-        if (!vm.contentRect) {
-          vm.contentRect = contentRect;
-        }
-      });
-      ro.observe(el);
-      this.$on('hook:destroyed', () => {
-        ro.unobserve(el);
-      });
-    }
+    this.$on(
+      'hook:destroyed',
+      observeResize(this.$el, (ev) => {
+        this.$emit('resize', ev);
+      }),
+    );
   },
   render() {
     const children = this.$slots.default || [];
@@ -60,7 +69,7 @@ export default Vue.extend({
   },
   mounted() {
     if (this.visible) {
-      this.mountContent();
+      raf(this.mountContent);
     }
     this.$watch('visible', (visible) => {
       if (visible) {
@@ -85,14 +94,24 @@ export default Vue.extend({
           return <div>{parent.$slots.content}</div>;
         },
         mounted() {
-          parent.$emit('mounted');
+          parent.$emit('contentMounted');
+          const content = this.$el.children[0];
+          if (content) {
+            this.$on(
+              'hook:destroyed',
+              observeResize(content, () => {
+                parent.$emit('resize');
+              }),
+            );
+          }
         },
         destroyed() {
           parent.content = null;
           removeDom(elm);
         },
       });
-      getAttach(this.attach).appendChild(elm);
+      // @ts-ignore
+      getAttach(this.attach, this.$refs?.triggerRef?.$el).appendChild(elm);
       this.content.$mount(elm.children[0]);
     },
     unmountContent() {
@@ -103,6 +122,10 @@ export default Vue.extend({
     },
   },
   render() {
-    return <Ref onResize={(ev: DOMRectReadOnly) => this.$emit('refResize', ev)}>{this.$slots.default}</Ref>;
+    return (
+      <Trigger ref="triggerRef" onResize={() => this.$emit('resize')}>
+        {this.$slots.default}
+      </Trigger>
+    );
   },
 });

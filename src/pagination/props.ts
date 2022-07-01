@@ -2,7 +2,6 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-19 10:44:26
  * */
 
 import { TdPaginationProps } from './type';
@@ -31,6 +30,15 @@ export default {
     type: Number,
     default: 10,
   },
+  /** 页码数量超出时，前后省略模式, `mid`表示中间省略, `both-ends` 表示两端省略 */
+  pageEllipsisMode: {
+    type: String as PropType<TdPaginationProps['pageEllipsisMode']>,
+    default: 'mid' as TdPaginationProps['pageEllipsisMode'],
+    validator(val: TdPaginationProps['pageEllipsisMode']): boolean {
+      if (!val) return true;
+      return ['mid', 'both-ends'].includes(val);
+    },
+  },
   /** 分页总页数 */
   pageSize: {
     type: Number,
@@ -46,13 +54,31 @@ export default {
     type: Array as PropType<TdPaginationProps['pageSizeOptions']>,
     default: () => [5, 10, 20, 50],
   },
+  /** 是否显示跳转首页尾页页码控制器 */
+  showFirstAndLastPageBtn: Boolean,
   /** 是否显示跳转页码控制器 */
   showJumper: Boolean,
+  /** 是否显示页码控制器 */
+  showPageNumber: {
+    type: Boolean,
+    default: true,
+  },
+  /** 是否显示分页数量控制器 */
+  showPageSize: {
+    type: Boolean,
+    default: true,
+  },
+  /** 是否显示跳转前后页页码控制器 */
+  showPreviousAndNextBtn: {
+    type: Boolean,
+    default: true,
+  },
   /** 分页组件尺寸 */
   size: {
     type: String as PropType<TdPaginationProps['size']>,
     default: 'medium' as TdPaginationProps['size'],
     validator(val: TdPaginationProps['size']): boolean {
+      if (!val) return true;
       return ['small', 'medium'].includes(val);
     },
   },
@@ -61,6 +87,7 @@ export default {
     type: String as PropType<TdPaginationProps['theme']>,
     default: 'default' as TdPaginationProps['theme'],
     validator(val: TdPaginationProps['theme']): boolean {
+      if (!val) return true;
       return ['default', 'simple'].includes(val);
     },
   },

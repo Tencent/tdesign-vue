@@ -151,7 +151,7 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
    */
   defaultValue?: Array<TreeNodeValue>;
   /**
-   * 选中值模式。all 表示父节点和子节点全部会出现在选中值里面；parentFirst 表示当子节点全部选中时，仅父节点在选中值里面；onlyLeaft 表示无论什么情况，选中值仅呈现叶子节点
+   * 选中值模式。all 表示父节点和子节点全部会出现在选中值里面；parentFirst 表示当子节点全部选中时，仅父节点在选中值里面；onlyLeaf 表示无论什么情况，选中值仅呈现叶子节点
    * @default onlyLeaf
    */
   valueMode?: 'onlyLeaf' | 'parentFirst' | 'all';
@@ -175,7 +175,7 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
    * 异步加载后触发，泛型 `T` 表示树节点 TS 类型
    */
   onLoad?: (context: { node: TreeNodeModel<T> }) => void;
-};
+}
 
 /** 组件实例方法 */
 export interface TreeInstanceFunctions<T extends TreeOptionData = TreeOptionData> {
@@ -285,7 +285,7 @@ export interface TreeNodeState {
    * @default false
    */
   visible?: boolean;
-};
+}
 
 export interface TreeNodeModel<T extends TreeOptionData = TreeOptionData> extends TreeNodeState {
   /**
@@ -376,8 +376,12 @@ export interface TreeNodeModel<T extends TreeOptionData = TreeOptionData> extend
    * 设置当前节点数据，数据变化可自动刷新页面，泛型 `T` 表示树节点 TS 类型
    */
   setData: (data: T) => void;
-};
+}
 
-export interface TreeKeysType { value?: string; label?: string; children?: string };
+export interface TreeKeysType {
+  value?: string;
+  label?: string;
+  children?: string;
+}
 
 export type TreeNodeValue = string | number;

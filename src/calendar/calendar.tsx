@@ -53,12 +53,12 @@ const getDefaultControllerConfigData = (visible = true): Record<string, any> => 
   // 年份选择框组件相关设置
   year: {
     visible: true, // 是否显示
-    selecteProps: {}, // 用于透传props给该select组件
+    selectProps: {}, // 用于透传props给该select组件
   },
   // 年份选择框组件相关设置
   month: {
     visible: true, // 是否显示（“year”模式下本身是不显示该组件的）
-    selecteProps: {}, // 用于透传props给该select组件
+    selectProps: {}, // 用于透传props给该select组件
   },
   // 隐藏\显示周末按钮组件相关设置
   weekend: {
@@ -312,10 +312,10 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
       return this.checkControllerDisabled('mode', 'radioGroupProps');
     },
     isYearDisabled(): boolean {
-      return this.checkControllerDisabled('year', 'selecteProps');
+      return this.checkControllerDisabled('year', 'selectProps');
     },
     isMonthDisabled(): boolean {
-      return this.checkControllerDisabled('month', 'selecteProps');
+      return this.checkControllerDisabled('month', 'selectProps');
     },
     isWeekendToggleDisabled(): boolean {
       const p = this.isShowWeekend ? 'hideWeekendButtonProps' : 'showWeekendButtonProps';
@@ -342,7 +342,19 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
   watch: {
     value: {
       handler(v: TdCalendarProps['value']) {
-        this.toCurrent(v);
+        this.setCurrentDate(v);
+      },
+      immediate: true,
+    },
+    year: {
+      handler(v: TdCalendarProps['year']) {
+        this.setCurSelectedYear(v);
+      },
+      immediate: true,
+    },
+    month: {
+      handler(v: TdCalendarProps['month']) {
+        this.setCurSelectedMonth(v);
       },
       immediate: true,
     },
@@ -464,11 +476,26 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
       }
       return re;
     },
-    // 显示当前月份\年份
-    toCurrent(value?: TdCalendarProps['value']): void {
+    // 回到“今天”
+    toToday(): void {
+      const currentSelectDate = createDefaultCurDate();
+      this.curSelectedYear = currentSelectDate.year();
+      this.curSelectedMonth = parseInt(currentSelectDate.format('M'), 10);
+    },
+    setCurSelectedYear(year?: TdCalendarProps['year']) {
+      const curSelectedYear = year ? parseInt(`${year}`, 10) : createDefaultCurDate().year();
+      if (!isNaN(curSelectedYear) && curSelectedYear > 0) {
+        this.curSelectedYear = curSelectedYear;
+      }
+    },
+    setCurSelectedMonth(month?: TdCalendarProps['month']) {
+      const curSelectedMonth = month ? parseInt(`${month}`, 10) : parseInt(createDefaultCurDate().format('M'), 10);
+      if (!isNaN(curSelectedMonth) && curSelectedMonth > 0 && curSelectedMonth <= 12) {
+        this.curSelectedMonth = curSelectedMonth;
+      }
+    },
+    setCurrentDate(value?: TdCalendarProps['value']): void {
       this.curDate = value ? dayjs(value) : createDefaultCurDate();
-      this.curSelectedYear = this.curDate.year();
-      this.curSelectedMonth = parseInt(this.curDate.format('M'), 10);
     },
     checkMonthAndYearSelecterDisabled(year: number, month: number): boolean {
       let disabled = false;
@@ -501,7 +528,8 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                   v-model={this.curSelectedYear}
                   size={this.controlSize}
                   disabled={this.isYearDisabled}
-                  props={{ ...this.controllerConfigData.year.selecteProps }}
+                  autoWidth={true}
+                  props={{ ...this.controllerConfigData.year.selectProps }}
                 >
                   {this.yearSelectOptionList.map((item) => (
                     <t-option key={item.value} value={item.value} label={item.label} disabled={item.disabled}>
@@ -517,7 +545,8 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                   v-model={this.curSelectedMonth}
                   size={this.controlSize}
                   disabled={this.isMonthDisabled}
-                  props={{ ...this.controllerConfigData.month.selecteProps }}
+                  autoWidth={true}
+                  props={{ ...this.controllerConfigData.month.selectProps }}
                 >
                   {this.monthSelectOptionList.map((item) => (
                     <t-option key={item.value} value={item.value} label={item.label} disabled={item.disabled}>
@@ -564,7 +593,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                   size={this.controlSize}
                   disabled={this.isCurrentBtnDisabled}
                   onClick={() => {
-                    this.toCurrent();
+                    this.toToday();
                   }}
                   props={{ ...this.currentBtnVBind }}
                 >

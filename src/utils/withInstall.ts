@@ -1,4 +1,4 @@
-import { VueConstructor, PluginObject } from 'vue';
+import Vue, { VueConstructor, PluginObject } from 'vue';
 import capitalize from 'lodash/capitalize';
 
 export function withInstall<T>(comp: T, dep?: PluginObject<any>) {
@@ -16,11 +16,11 @@ export function withInstall<T>(comp: T, dep?: PluginObject<any>) {
     componentName = capitalize(installConfig.prefix) + componentName;
 
     Vue.component(componentName, comp);
-
-    if (dep && Vue?._installedPlugins.indexOf(dep) === -1) {
-      Vue.use(dep);
-    }
   };
+
+  if (dep && Vue?._installedPlugins?.indexOf(dep) === -1) {
+    Vue.use(dep);
+  }
 
   return comp as T & PluginObject<T>;
 }

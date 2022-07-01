@@ -12,7 +12,9 @@ module.exports = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '^tdesign-vue/lib/(.*)$': '<rootDir>/src/$1',
+    '^tdesign-vue/es': '<rootDir>/src',
     '^tdesign-vue$': '<rootDir>/src/index.ts',
+    '^tdesign-vue(.*)': '<rootDir>/src/$1',
     '^vue$': '<rootDir>/node_modules/vue/dist/vue.js',
     '^tdesign-icons-vue$': '<rootDir>/node_modules/tdesign-icons-vue/dist/index.js',
   },

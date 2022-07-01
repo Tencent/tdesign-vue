@@ -1,64 +1,97 @@
 <template>
   <div>
     <div>
-      <t-button theme="default" @click="setData1">设置为全新的数据</t-button>&nbsp;&nbsp;
-      <t-button theme="default" @click="setData2">单独设置某行数据</t-button>
+      <t-button @click="appendToRoot">添加根节点</t-button>
+      <t-button theme="default" style="margin-left: 16px" @click="setData1">重置数据</t-button>
+      <t-button theme="default" style="margin-left: 16px" @click="onRowToggle">任意节点展开/收起</t-button>
+      <t-button theme="default" style="margin-left: 16px" @click="onExpandAllToggle">{{
+        expandAll ? '收起全部' : '展开全部'
+      }}</t-button>
+      <t-button theme="default" style="margin-left: 16px" @click="getTreeNode">获取全部树形结构</t-button>
+    </div>
+    <br />
+    <div>
+      <t-checkbox v-model="customTreeExpandAndFoldIcon" style="vertical-align: middle">
+        自定义折叠/展开图标
+      </t-checkbox>
     </div>
     <br />
     <!-- 第一列展开树结点，缩进为 24px，子节点字段 childrenKey 默认为 children -->
-    <!-- !!! EnhancedTable 才支持，普通 Table 不支持 !!! -->
+    <!-- !!! 树形结构 EnhancedTable 才支持，普通 Table 不支持 !!! -->
+    <!-- treeNodeColumnIndex 定义第几列作为树结点展开列，默认为第一列 -->
+    <!-- tree.defaultExpandAll: true 默认展开全部 -->
+    <!-- this.$refs.table.dataSource 查看树形结构平铺数据 -->
     <t-enhanced-table
       ref="table"
       rowKey="key"
+      drag-sort="row-handler"
       :data="data"
       :columns="columns"
-      :tree="{ childrenKey: 'list' }"
+      :tree="{ childrenKey: 'list', treeNodeColumnIndex: 2 }"
+      :tree-expand-and-fold-icon="customTreeExpandAndFoldIcon ? treeExpandAndFoldIconRender : undefined"
       :pagination="pagination"
+      :beforeDragSort="beforeDragSort"
       @page-change="onPageChange"
+      @abnormal-drag-sort="onAbnormalDragSort"
+      @drag-sort="onDragSort"
     ></t-enhanced-table>
 
     <!-- 第二列展开树结点，缩进为 12px，示例代码有效，勿删 -->
-    <!-- indent 定义缩进距离；treeNodeColumnIndex 定义第几列作为树结点展开列 -->
+    <!-- indent 定义缩进距离 -->
     <!-- 如果子结点字段不是 'children'，可以使用 childrenKey 定义字段别名，如 `:tree="{ childrenKey: 'list' }"` -->
     <!-- <t-enhanced-table
       ref="table"
       rowKey="key"
+      :pagination="defaultPagination"
       :data="data"
       :columns="columns"
-      :tree="{ indent: 12, treeNodeColumnIndex: 1, childrenKey: 'list' }"
+      :tree="{ indent: 12, childrenKey: 'list', defaultExpandAll: true }"
+      @page-change="onPageChange"
     ></t-enhanced-table> -->
   </div>
 </template>
 <script lang="jsx">
 import { EnhancedTable } from 'tdesign-vue';
+import { ChevronRightIcon, ChevronDownIcon, MoveIcon } from 'tdesign-icons-vue';
+
+const TOTAL = 5;
 
 function getData(currentPage = 1) {
   const data = [];
-  const pageInfo = `第 ${currentPage} 页`;
-  for (let i = 0; i < 5; i++) {
+  // const pageInfo = `第 ${currentPage} 页`;
+  for (let i = 0; i < TOTAL; i++) {
     const obj = {
-      key: `我是 ${i} 号（${pageInfo}）`,
+      id: i,
+      key: `我是 ${i}_${currentPage} 号`,
       platform: i % 2 === 0 ? '共有' : '私有',
       type: ['String', 'Number', 'Array', 'Object'][i % 4],
       default: ['-', '0', '[]', '{}'][i % 4],
       detail: {
-        postion: `读取 ${i} 个数据的嵌套信息值`,
+        position: `读取 ${i} 个数据的嵌套信息值`,
       },
       needed: i % 4 === 0 ? '是' : '否',
       description: '数据源',
     };
-    obj.list = new Array(2).fill(null).map((t, j) => {
-      const secondIndex = 100 * j + (i + 1) * 10;
-      const secondObj = {
-        ...obj,
-        key: `我是 ${secondIndex} 号（${pageInfo}）`,
-      };
-      secondObj.list = new Array(3).fill(null).map((m, n) => ({
-        ...obj,
-        key: `我是 ${secondIndex * 1000 + 100 * m + (n + 1) * 10} 号（${pageInfo}）`,
-      }));
-      return secondObj;
-    });
+    // 第一行不设置子节点
+    obj.list = i === 0
+      ? []
+      : new Array(2).fill(null).map((t, j) => {
+        const secondIndex = 100 * j + (i + 1) * 10;
+        const secondObj = {
+          ...obj,
+          id: secondIndex,
+          key: `我是 ${secondIndex}_${currentPage} 号`,
+        };
+        secondObj.list = new Array(3).fill(null).map((m, n) => {
+          const thirdIndex = secondIndex * 1000 + 100 * m + (n + 1) * 10;
+          return {
+            ...obj,
+            id: thirdIndex,
+            key: `我是 ${thirdIndex}_${currentPage} 号`,
+          };
+        });
+        return secondObj;
+      });
     data.push(obj);
   }
   return data;
@@ -70,31 +103,55 @@ export default {
   components: { TEnhancedTable: EnhancedTable },
   data() {
     return {
+      customTreeExpandAndFoldIcon: false,
       data,
+      expandAll: false,
       pagination: {
         current: 1,
         pageSize: 10,
-        total: 100,
+        total: TOTAL,
+      },
+      defaultPagination: {
+        defaultCurrent: 1,
+        defaultPageSize: 10,
+        total: TOTAL,
       },
       columns: [
         {
-          width: 200,
-          className: 'row',
-          colKey: 'key',
+          // 列拖拽排序必要参数
+          colKey: 'drag',
+          title: '排序',
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          cell: (h) => <MoveIcon />,
+          width: 80,
+        },
+        {
+          colKey: 'id',
           title: '编号',
+          ellipsis: true,
+          width: 100,
+        },
+        {
+          width: 180,
+          colKey: 'key',
+          title: '名称',
           ellipsis: true,
         },
         {
           colKey: 'platform',
           title: '平台',
-        },
-        {
-          colKey: 'type',
-          title: '类型',
+          width: 80,
+          cell: (h, { row }) => row.platform === 'New' ? (
+              <t-tag size="small" theme="primary">
+                {row.platform}
+              </t-tag>
+          ) : (
+            row.platform
+          ),
         },
         {
           colKey: 'operate',
-          width: 300,
+          width: 340,
           title: '操作',
           align: 'center',
           // 增、删、改、查 等操作
@@ -103,6 +160,12 @@ export default {
             <div class="tdesign-table-demo__table-operations">
               <t-button variant="text" onClick={() => this.appendTo(row)}>
                 插入
+              </t-button>
+              <t-button variant="text" onClick={() => this.insertBefore(row)}>
+                前插
+              </t-button>
+              <t-button variant="text" onClick={() => this.insertAfter(row)}>
+                后插
               </t-button>
               <t-button variant="text" onClick={() => this.onEditClick(row)}>
                 更新
@@ -120,30 +183,18 @@ export default {
     };
   },
 
+  // 默认展开全部。示例代码有效，勿删
+  // mounted() {
+  //   this.$refs.table.expandAll();
+  // },
+
   methods: {
-    // 使用 this.$set 或 Vue.set 重置整个表格数据。
-    // 这类数据变化，组件内部如果检测新增、删除、变更等，消耗较大，因此这种方式只会重置表格
+    // 全新赋值
     setData1() {
-      this.$set(this.data, 0, {
-        key: '我是 999 号',
-        platform: '私有',
-        type: 'Number',
-        default: 0,
-        needed: '否',
-        description: '全新数据源',
-        list: data[0].list,
-      });
+      this.data = getData();
     },
 
-    // 使用实例方法 setData(key, newData) 重置单行数据
-    setData2() {
-      this.$refs.table.setData('我是 110 号', {
-        ...data[0].list[1],
-        platform: 'New',
-        key: '我是 8888 号',
-      });
-    },
-
+    // 更新
     onEditClick(row) {
       const newData = {
         ...row,
@@ -155,11 +206,13 @@ export default {
       this.$message.success('数据已更新');
     },
 
+    // 删除
     onDeleteConfirm(row) {
       this.$refs.table.remove(row.key);
       this.$message.success('删除成功');
     },
 
+    // 查看数据
     onLookUp(row) {
       const allRowData = this.$refs.table.getData(row.key);
       const message = '当前行全部数据，包含节点路径、父节点、子节点、是否展开、是否禁用等';
@@ -167,9 +220,35 @@ export default {
       console.log(`${message}：`, allRowData);
     },
 
+    // 新增子节点
     appendTo(row) {
       const randomKey = Math.round(Math.random() * Math.random() * 1000) + 10000;
       this.$refs.table.appendTo(row.key, {
+        id: randomKey,
+        key: `我是 ${randomKey} 号`,
+        platform: '私有',
+        type: 'Number',
+      });
+      this.$message.success(`已插入子节点我是 ${randomKey} 号，请展开查看`);
+    },
+
+    // 当前节点之前，新增兄弟节前
+    insertBefore(row) {
+      const randomKey = Math.round(Math.random() * Math.random() * 1000) + 10000;
+      this.$refs.table.insertBefore(row.key, {
+        id: randomKey,
+        key: `我是 ${randomKey} 号`,
+        platform: '私有',
+        type: 'Number',
+      });
+      this.$message.success(`已插入子节点我是 ${randomKey} 号，请展开查看`);
+    },
+
+    // 当前节点之后，新增兄弟节前
+    insertAfter(row) {
+      const randomKey = Math.round(Math.random() * Math.random() * 1000) + 10000;
+      this.$refs.table.insertAfter(row.key, {
+        id: randomKey,
         key: `我是 ${randomKey} 号`,
         platform: '私有',
         type: 'Number',
@@ -178,11 +257,72 @@ export default {
     },
 
     onPageChange(pageInfo) {
-      this.pagination = {
-        ...this.pagination,
-        ...pageInfo,
-      };
+      this.pagination.current = pageInfo.current;
+      this.pagination.pageSize = pageInfo.pageSize;
       this.data = getData(pageInfo.current);
+    },
+
+    onRowToggle() {
+      const rowIds = ['我是 1_1 号', '我是 2_1 号', '我是 3_1 号', '我是 4_1 号'];
+      rowIds.forEach((id) => {
+        // getData 参数为行唯一标识，lodash.get(row, rowKey)
+        const rowData = this.$refs.table.getData(id);
+        this.$refs.table.toggleExpandData(rowData);
+        // 或者
+        // this.$refs.table.toggleExpandData({ rowIndex: rowData.rowIndex, row: rowData.row });
+      });
+    },
+
+    // eslint-disable-next-line
+    treeExpandAndFoldIconRender(h, { type }) {
+      return type === 'expand' ? <ChevronRightIcon /> : <ChevronDownIcon />;
+    },
+
+    getTreeNode() {
+      const treeData = this.$refs.table.getTreeNode();
+      console.log(treeData);
+      this.$message.success('树形结构获取成功，请打开控制台查看');
+    },
+
+    onExpandAllToggle() {
+      this.expandAll = !this.expandAll;
+      this.expandAll ? this.$refs.table.expandAll() : this.$refs.table.foldAll();
+    },
+
+    appendToRoot() {
+      const key = Math.round(Math.random() * 10010);
+      this.$refs.table.appendTo('', {
+        id: key,
+        key: `我是 ${key}_${1} 号`,
+        platform: key % 2 === 0 ? '共有' : '私有',
+        type: ['String', 'Number', 'Array', 'Object'][key % 4],
+        default: ['-', '0', '[]', '{}'][key % 4],
+        detail: {
+          position: `读取 ${key} 个数据的嵌套信息值`,
+        },
+        needed: key % 4 === 0 ? '是' : '否',
+        description: '数据源',
+      });
+    },
+
+    onAbnormalDragSort(params) {
+      console.log(params);
+      // this.$message.warning(params.reason);
+      if (params.code === 1001) {
+        this.$message.warning('不同层级的元素，不允许调整顺序');
+      }
+    },
+
+    // 拖拽排序成功后触发
+    onDragSort(params) {
+      console.log('onDragSort:', params);
+    },
+
+    // 应用于需要阻止拖拽排序的场景。如：当子节点存在时，则不允许调整顺序
+    // 返回值为 true，允许拖拽排序；返回值 为 false，则阻止拖拽排序
+    beforeDragSort(params) {
+      console.log('beforeDragSort:', params);
+      return true;
     },
   },
 };

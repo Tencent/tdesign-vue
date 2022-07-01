@@ -8,6 +8,9 @@
   <a href="https://github.com/Tencent/tdesign-vue/blob/main/LICENSE">
     <img src="https://img.shields.io/npm/l/tdesign-vue.svg?sanitize=true" alt="License">
   </a>
+  <a href="https://app.codecov.io/gh/Tencent/tdesign-vue">
+    <img src="https://img.shields.io/codecov/c/github/Tencent/tdesign-vue/develop.svg?style=flat-square" alt="codecov">
+  </a>
   <a href="https://www.npmjs.com/package/tdesign-vue">
     <img src="https://img.shields.io/npm/v/tdesign-vue.svg?sanitize=true" alt="Version">
   </a>
@@ -21,7 +24,7 @@ TDesign 适配桌面端的组件库，适合在 vue 2.x 技术栈项目中使用
 # 🎉 特性
 
 - 适配桌面端交互
-- 基于 Vue 2.0
+- 基于 Vue 2.0 (Vue2.6.x及以下)
 - 与其他框架实现版本（React/Angular 等） API、UI 保持一致
 - 支持暗黑模式及其他主题定制
 - 支持按需加载

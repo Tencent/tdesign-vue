@@ -1,12 +1,22 @@
 <template>
-  <div class="tdesign-demo-block-column">
-    <t-form labelWidth="150" style="max-width: 500px">
-      <t-addon prepend="插入节点数量:">
-        <t-input v-model="insertCount"/>
-      </t-addon>
+  <div class="tdesign-tree-demo tdesign-demo-performance">
+    <div class="operations">
+      <t-input-adornment prepend="插入节点数量:">
+        <t-input v-model="insertCount" />
+      </t-input-adornment>
+    </div>
+    <div class="operations">
       <t-button @click="append()">插入根节点</t-button>
+    </div>
+    <t-form labelWidth="150" style="max-width: 500px">
       <t-form-item label="展开动画">
-        <t-switch v-model="transition"/>
+        <t-switch v-model="transition" />
+      </t-form-item>
+      <t-form-item label="显示连线">
+        <t-switch v-model="showLine" />
+      </t-form-item>
+      <t-form-item label="显示图标">
+        <t-switch v-model="showIcon" />
       </t-form-item>
     </t-form>
 
@@ -17,11 +27,12 @@
       checkable
       :transition="transition"
       :expand-on-click-node="false"
-      line
+      :line="showLine"
+      :icon="showIcon"
       :label="label"
       ref="tree"
     >
-      <template #operations="{node}">
+      <template #operations="{ node }">
         <div class="tdesign-demo-block-row">
           <t-button size="small" variant="base" @click="append(node)">添加子节点</t-button>
           <t-button size="small" variant="base" theme="danger" @click="remove(node)">删除</t-button>
@@ -32,7 +43,6 @@
 </template>
 
 <script>
-
 const allLevels = [3, 3, 3];
 
 let cacheIndex = 0;
@@ -72,6 +82,8 @@ export default {
       insertCount: 1,
       useActived: false,
       expandParent: true,
+      showLine: true,
+      showIcon: true,
       items,
     };
   },
@@ -106,3 +118,24 @@ export default {
   },
 };
 </script>
+
+<style>
+.tdesign-tree-demo .t-tree {
+  margin-bottom: 20px;
+}
+.tdesign-tree-demo .title {
+  margin-bottom: 10px;
+}
+.tdesign-tree-demo .tips {
+  margin-bottom: 10px;
+}
+.tdesign-tree-demo .operations {
+  margin-bottom: 10px;
+}
+.tdesign-tree-demo .t-form__item {
+  margin-bottom: 5px;
+}
+.tdesign-tree-demo .t-button {
+  margin: 0 10px 10px 0;
+}
+</style>

@@ -20,7 +20,7 @@ import {
   TypeTreeInstance,
   TypeTargetNode,
 } from './interface';
-import { CLASS_NAMES, FX } from './constants';
+import { CLASS_NAMES } from './constants';
 import { getMark, getNode, emitEvent } from './util';
 
 export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tree')).extend({
@@ -31,25 +31,34 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
   },
   props,
   data() {
-    const {
-      checkProps, empty, icon, label, line, operations,
-    } = this;
-
+    // 添加 $ 前缀的属性，不会被 vue 监听，初始化时无法取得 data 中定义的值
+    // 写在 data 中是为了通过 ts 语法检测，应当在 created 生命周期初始化
     return {
+      // 数据源
       store: null,
-      nodesMap: null,
-      mouseEvent: null,
-      treeNodes: [],
+      // 视图列表
+      treeNodeViews: [],
+      // 混合配置对象
+      // 传递给子节点，一起监听属性
+      // 便于同步传递给 tree 的状态
       treeScope: {
-        checkProps,
-        empty,
-        icon,
-        label,
-        line,
-        operations,
-        scopedSlots: null,
+        checkProps: null,
+        disableCheck: false,
+        empty: null,
+        icon: null,
+        label: null,
+        line: null,
+        operations: null,
       },
-      transitionCD: null,
+      // 缓存节点
+      $cacheMap: null,
+      // 缓存鼠标事件
+      $mouseEvent: null,
+      // 用于禁止绑定监听的 scope 对象，例如 scopedSlots
+      // 如果 scopedSlots 放在可监听属性如 treeScope 中
+      // 会导致外部关联组件如 input value 更新时，同步触发了所有子节点 render 方法
+      // 因此单独提供此对象解锁关联
+      $proxyScope: null,
     };
   },
   computed: {
@@ -75,6 +84,26 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       }
       return list;
     },
+    // 单个节点高度(px)
+    itemMaxHeight(): number {
+      return 42;
+    },
+    // tree 高度限制格式化
+    maxHeight(): number {
+      return 0;
+    },
+    // 是否使用虚拟滚动
+    vScrollEnable(): boolean {
+      return !!this.maxHeight;
+    },
+    // 是否启用嵌套布局
+    nested(): boolean {
+      let nested = !!this.maxHeight;
+      // 暂时仅使用平铺布局
+      // 嵌套布局还需要进一步提升渲染性能
+      nested = false;
+      return nested;
+    },
   },
   watch: {
     data(list) {
@@ -93,56 +122,57 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
   methods: {
     // 创建单个 tree 节点
     renderItem(node: TreeNode) {
-      const { treeScope } = this;
+      const { nested, treeScope, $proxyScope } = this;
       const treeItem = (
         <TreeItem
           key={node.value}
           node={node}
+          nested={nested}
           treeScope={treeScope}
+          proxyScope={$proxyScope}
           onClick={this.handleClick}
           onChange={this.handleChange}
         />
       );
       return treeItem;
     },
-    // 获取视图节点映射关系
-    getNodesMap() {
-      let { nodesMap } = this;
-      if (!nodesMap) {
-        nodesMap = new Map();
-        this.nodesMap = nodesMap;
-      }
-      return nodesMap;
-    },
     // 刷新树的视图状态
     refresh() {
-      const { store } = this;
-      const nodesMap = this.getNodesMap();
-      const allNodes = store.getNodes();
-      const curNodesMap = new Map();
-      this.treeNodes = allNodes.map((node: TreeNode) => {
-        curNodesMap.set(node.value, 1);
-        // 维持住已经渲染的节点，不进行dom的增删
-        let nodeView = nodesMap.get(node.value);
-        // 如果需要展示，生成新的vnode
+      const { store, nested } = this;
+      let nodes = [];
+      if (nested) {
+        // 渲染为嵌套结构
+        nodes = store.getChildren();
+      } else {
+        // 渲染为平铺列表
+        nodes = store.getNodes();
+      }
+      // 默认取全部可显示节点
+      this.renderTreeNodeViews(nodes);
+    },
+    // 记录要渲染的节点
+    renderTreeNodeViews(nodes: TreeNode[]) {
+      const { store, $cacheMap } = this;
+      this.treeNodeViews = nodes.map((node: TreeNode) => {
+        // 如果节点已经存在，则使用缓存节点
+        let nodeView = $cacheMap.get(node.value);
+        // 如果节点未曾创建，则临时创建
         if (!nodeView && node.visible) {
           // 初次仅渲染可显示的节点
           // 不存在节点视图，则创建该节点视图并插入到当前位置
           nodeView = this.renderItem(node);
-          nodesMap.set(node.value, nodeView);
+          $cacheMap.set(node.value, nodeView);
         }
         return nodeView;
       });
 
       // 更新缓存后，被删除的节点要移除掉，避免内存泄露
       this.$nextTick(() => {
-        const keys = [...nodesMap.keys()];
-        keys.forEach((value: string) => {
-          if (!curNodesMap.get(value)) {
-            nodesMap.delete(value);
+        $cacheMap.forEach((view: VNode, value: string) => {
+          if (!store.getNode(value)) {
+            $cacheMap.delete(value);
           }
         });
-        curNodesMap.clear();
       });
     },
     // 同步 Store 选项
@@ -223,6 +253,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         store.setChecked(value);
       }
 
+      // 更新节点展开状态
       this.updateExpanded();
 
       // 初始化激活状态
@@ -234,19 +265,20 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       this.refresh();
     },
     rebuild(list: TdTreeProps['data']) {
-      this.getNodesMap().clear();
-      this.treeNodes.length = 0;
+      this.$cacheMap.clear();
       const { store, value, actived } = this;
       store.reload(list);
       // 初始化选中状态
       if (Array.isArray(value)) {
         store.setChecked(value);
       }
+      // 更新展开状态
       this.updateExpanded();
       // 初始化激活状态
       if (Array.isArray(actived)) {
         store.setActived(actived);
       }
+      // 刷新节点状态
       store.refreshState();
     },
     toggleActived(item: TypeTargetNode): TreeNodeValue[] {
@@ -256,10 +288,10 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     setActived(item: TypeTargetNode, isActived: boolean) {
       const node = getNode(this.store, item);
       const actived = node.setActived(isActived);
-      const { mouseEvent } = this;
+      const { $mouseEvent } = this;
       const ctx = {
         node: node.getModel(),
-        e: mouseEvent,
+        e: $mouseEvent,
       };
       emitEvent<Parameters<TypeTdTreeProps['onActive']>>(this, 'active', actived, ctx);
       return actived;
@@ -271,10 +303,10 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     setExpanded(item: TypeTargetNode, isExpanded: boolean): TreeNodeValue[] {
       const node = getNode(this.store, item);
       const expanded = node.setExpanded(isExpanded);
-      const { mouseEvent } = this;
+      const { $mouseEvent } = this;
       const ctx = {
         node: node.getModel(),
-        e: mouseEvent,
+        e: $mouseEvent,
       };
       emitEvent<Parameters<TypeTdTreeProps['onExpand']>>(this, 'expand', expanded, ctx);
       return expanded;
@@ -318,7 +350,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         return;
       }
 
-      this.mouseEvent = mouseEvent;
+      this.$mouseEvent = mouseEvent;
 
       let shouldExpand = expandOnClickNode;
       let shouldActive = true;
@@ -352,7 +384,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       };
       emitEvent<Parameters<TypeTdTreeProps['onClick']>>(this, 'click', ctx);
 
-      this.mouseEvent = null;
+      this.$mouseEvent = null;
     },
     handleChange(state: TypeEventState): void {
       const { disabled } = this;
@@ -361,6 +393,11 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         return;
       }
       this.toggleChecked(node);
+    },
+    updateTreeScope(): void {
+      const { treeScope } = this;
+      const scopedProps = pick(this, ['checkProps', 'disableCheck', 'empty', 'icon', 'label', 'line', 'operations']);
+      Object.assign(treeScope, scopedProps);
     },
 
     // -------- 公共方法 start --------
@@ -387,6 +424,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       return nodes.map((node: TreeNode) => node.getModel());
     },
     appendTo(para?: TreeNodeValue, item?: TreeOptionData | TreeOptionData[]) {
+      const { store } = this;
       let list = [];
       if (Array.isArray(item)) {
         list = item;
@@ -395,30 +433,32 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       }
       list.forEach((item) => {
         const val = item?.value || '';
-        const node = getNode(this.store, val);
+        const node = getNode(store, val);
         if (node) {
-          this.store.appendNodes(para, node);
+          store.appendNodes(para, node);
         } else {
-          this.store.appendNodes(para, item);
+          store.appendNodes(para, item);
         }
       });
     },
     insertBefore(value: TreeNodeValue, item: TreeOptionData) {
+      const { store } = this;
       const val = item?.value || '';
-      const node = getNode(this.store, val);
+      const node = getNode(store, val);
       if (node) {
-        this.store.insertBefore(value, node);
+        store.insertBefore(value, node);
       } else {
-        this.store.insertBefore(value, item);
+        store.insertBefore(value, item);
       }
     },
     insertAfter(value: TreeNodeValue, item: TreeOptionData) {
+      const { store } = this;
       const val = item?.value || '';
-      const node = getNode(this.store, val);
+      const node = getNode(store, val);
       if (node) {
-        this.store.insertAfter(value, node);
+        store.insertAfter(value, node);
       } else {
-        this.store.insertAfter(value, item);
+        store.insertAfter(value, item);
       }
     },
     remove(value?: TreeNodeValue) {
@@ -446,45 +486,47 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     // -------- 公共方法 end --------
   },
   created() {
+    this.$cacheMap = new Map();
+    this.$mouseEvent = null;
+    this.$proxyScope = {};
+    this.updateTreeScope();
+
     this.build();
   },
   render(): VNode {
-    const {
-      classList,
-      treeNodes,
-      // 用于同步 slot 属性
-      treeScope,
-      $scopedSlots: scopedSlots,
-    } = this;
+    const { classList, $proxyScope, treeNodeViews } = this;
 
-    const scopeProps = pick(this, ['checkProps', 'disableCheck', 'icon', 'label', 'line', 'operations']);
+    // 用于性能调试
+    // console.log('tree render');
 
+    // 一些选项的变化，要传递到子节点去
     this.updateStoreConfig();
-    Object.assign(treeScope, scopeProps);
-    treeScope.scopedSlots = scopedSlots;
+    this.updateTreeScope();
 
+    // 更新 scopedSlots
+    $proxyScope.scopedSlots = this.$scopedSlots;
+
+    // 空数据判定
     let emptyNode: TNodeReturnValue = null;
-    let treeNodeList = null;
-
-    if (treeNodes.length <= 0) {
+    if (treeNodeViews.length <= 0) {
       const useLocale = !this.empty && !this.$scopedSlots.empty;
-      emptyNode = (
-        <div class={CLASS_NAMES.treeEmpty}>{useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty')}</div>
-      );
+      const emptyContent = useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty');
+      emptyNode = <div class={CLASS_NAMES.treeEmpty}>{emptyContent}</div>;
     }
 
-    treeNodeList = (
+    // 构造列表
+    const treeNodeList = (
       <transition-group
-        name={FX.treeNode}
         tag="div"
         class={CLASS_NAMES.treeList}
         enter-active-class={CLASS_NAMES.treeNodeEnter}
         leave-active-class={CLASS_NAMES.treeNodeLeave}
       >
-        {treeNodes}
+        {treeNodeViews}
       </transition-group>
     );
 
-    return <div class={classList}>{emptyNode || treeNodeList}</div>;
+    const treeNode = <div class={classList}>{emptyNode || treeNodeList}</div>;
+    return treeNode;
   },
 });

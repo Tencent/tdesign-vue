@@ -8,7 +8,7 @@
       </t-popup>
     </div>
     <div class="t-popup-demo-block" id="second-popup">
-      <t-popup content="触发元素的父元素是组件跟元素，通过 Funnction 定义" :attach="getAttach">
+      <t-popup content="触发元素的父元素是组件跟元素，通过 Function 定义" :attach="getAttach">
         <t-button variant="outline">父元素为其他元素</t-button>
       </t-popup>
     </div>

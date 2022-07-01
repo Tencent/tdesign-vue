@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Progress circle demo works fine 1`] = `
+exports[`Progress Progress circleVue demo works fine 1`] = `
 <div>
   <div>
     默认
@@ -50,7 +50,7 @@ exports[`Progress circle demo works fine 1`] = `
               cy="56"
               fill="none"
               r="53"
-              stroke-dasharray="105.55751316061705  246.30086404143975"
+              stroke-dasharray="99.90264638415542  233.10617489636263"
               stroke-linecap="round"
               stroke-width="6"
               transform="matrix(0,-1,1,0,0,112)"
@@ -99,7 +99,7 @@ exports[`Progress circle demo works fine 1`] = `
               cy="56"
               fill="none"
               r="53"
-              stroke-dasharray="351.85837720205683  0"
+              stroke-dasharray="333.0088212805181  0"
               stroke-linecap="round"
               stroke-width="6"
               transform="matrix(0,-1,1,0,0,112)"
@@ -150,7 +150,7 @@ exports[`Progress circle demo works fine 1`] = `
               cy="56"
               fill="none"
               r="53"
-              stroke-dasharray="175.92918860102841  175.92918860102841"
+              stroke-dasharray="166.50441064025904  166.50441064025904"
               stroke-linecap="round"
               stroke-width="6"
               transform="matrix(0,-1,1,0,0,112)"
@@ -217,7 +217,7 @@ exports[`Progress circle demo works fine 1`] = `
               cy="56"
               fill="none"
               r="53"
-              stroke-dasharray="351.85837720205683  0"
+              stroke-dasharray="333.0088212805181  0"
               stroke-linecap="round"
               stroke-width="6"
               transform="matrix(0,-1,1,0,0,112)"
@@ -280,7 +280,7 @@ exports[`Progress circle demo works fine 1`] = `
               cy="56"
               fill="none"
               r="53"
-              stroke-dasharray="263.89378290154264  87.96459430051421"
+              stroke-dasharray="249.75661596038856  83.25220532012952"
               stroke-linecap="round"
               stroke-width="6"
               transform="matrix(0,-1,1,0,0,112)"
@@ -343,7 +343,7 @@ exports[`Progress circle demo works fine 1`] = `
               cy="56"
               fill="none"
               r="53"
-              stroke-dasharray="175.92918860102841  175.92918860102841"
+              stroke-dasharray="166.50441064025904  166.50441064025904"
               stroke-linecap="round"
               stroke-width="6"
               transform="matrix(0,-1,1,0,0,112)"
@@ -402,7 +402,7 @@ exports[`Progress circle demo works fine 1`] = `
               cy="36"
               fill="none"
               r="34"
-              stroke-dasharray="67.85840131753953  158.33626974092556"
+              stroke-dasharray="64.08849013323179  149.53981031087415"
               stroke-linecap="round"
               stroke-width="4"
               transform="matrix(0,-1,1,0,0,72)"
@@ -453,7 +453,7 @@ exports[`Progress circle demo works fine 1`] = `
               cy="56"
               fill="none"
               r="53"
-              stroke-dasharray="105.55751316061705  246.30086404143975"
+              stroke-dasharray="99.90264638415542  233.10617489636263"
               stroke-linecap="round"
               stroke-width="6"
               transform="matrix(0,-1,1,0,0,112)"
@@ -505,7 +505,7 @@ exports[`Progress circle demo works fine 1`] = `
               cy="80"
               fill="none"
               r="77"
-              stroke-dasharray="376.99111843077515  125.66370614359172"
+              stroke-dasharray="362.8539514896211  120.95131716320704"
               stroke-linecap="round"
               stroke-width="6"
               transform="matrix(0,-1,1,0,0,160)"
@@ -518,7 +518,7 @@ exports[`Progress circle demo works fine 1`] = `
 </div>
 `;
 
-exports[`Progress custom demo works fine 1`] = `
+exports[`Progress Progress customVue demo works fine 1`] = `
 <div>
   <div>
     <div>
@@ -555,7 +555,7 @@ exports[`Progress custom demo works fine 1`] = `
             cy="56"
             fill="none"
             r="53"
-            stroke-dasharray="295.5610368497277  56.2973403523291"
+            stroke-dasharray="279.72740987563515  53.2814114048829"
             stroke-linecap="round"
             stroke-width="6"
             transform="matrix(0,-1,1,0,0,112)"
@@ -652,7 +652,7 @@ exports[`Progress custom demo works fine 1`] = `
             cy="100"
             fill="none"
             r="90"
-            stroke-dasharray="188.4955592153876  439.822971502571"
+            stroke-dasharray="169.64600329384882  395.8406743523139"
             stroke-linecap="round"
             stroke-width="20"
             transform="matrix(0,-1,1,0,0,200)"
@@ -674,7 +674,6 @@ exports[`Progress custom demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -722,7 +721,7 @@ exports[`Progress custom demo works fine 1`] = `
             cy="56"
             fill="none"
             r="53"
-            stroke-dasharray="154.817685968905  197.04069123315185"
+            stroke-dasharray="146.52388136342796  186.48493991709014"
             stroke-linecap="round"
             stroke-width="6"
             style="stroke: #52CC8D;"
@@ -795,7 +794,7 @@ exports[`Progress custom demo works fine 1`] = `
             cy="56"
             fill="none"
             r="53"
-            stroke-dasharray="154.817685968905  197.04069123315185"
+            stroke-dasharray="146.52388136342796  186.48493991709014"
             stroke-linecap="round"
             stroke-width="6"
             transform="matrix(0,-1,1,0,0,112)"
@@ -807,7 +806,7 @@ exports[`Progress custom demo works fine 1`] = `
 </div>
 `;
 
-exports[`Progress line demo works fine 1`] = `
+exports[`Progress Progress lineVue demo works fine 1`] = `
 <div>
   <h3>
     
@@ -1045,7 +1044,6 @@ exports[`Progress line demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1071,7 +1069,6 @@ exports[`Progress line demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--under-ten"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1088,7 +1085,7 @@ exports[`Progress line demo works fine 1`] = `
 </div>
 `;
 
-exports[`Progress plump demo works fine 1`] = `
+exports[`Progress Progress plumpVue demo works fine 1`] = `
 <div>
   <div>
     <div
@@ -1102,7 +1099,6 @@ exports[`Progress plump demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1128,7 +1124,6 @@ exports[`Progress plump demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--under-ten"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1153,7 +1148,6 @@ exports[`Progress plump demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1179,7 +1173,6 @@ exports[`Progress plump demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1205,7 +1198,6 @@ exports[`Progress plump demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--error"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1231,7 +1223,6 @@ exports[`Progress plump demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--warning"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1257,7 +1248,6 @@ exports[`Progress plump demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--active"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1275,7 +1265,7 @@ exports[`Progress plump demo works fine 1`] = `
 </div>
 `;
 
-exports[`Progress size demo works fine 1`] = `
+exports[`Progress Progress sizeVue demo works fine 1`] = `
 <div>
   <div>
     默认
@@ -1319,7 +1309,7 @@ exports[`Progress size demo works fine 1`] = `
               cy="56"
               fill="none"
               r="53"
-              stroke-dasharray="105.55751316061705  246.30086404143975"
+              stroke-dasharray="99.90264638415542  233.10617489636263"
               stroke-linecap="round"
               stroke-width="6"
               transform="matrix(0,-1,1,0,0,112)"
@@ -1376,7 +1366,7 @@ exports[`Progress size demo works fine 1`] = `
               cy="56"
               fill="none"
               r="53"
-              stroke-dasharray="263.89378290154264  87.96459430051421"
+              stroke-dasharray="249.75661596038856  83.25220532012952"
               stroke-linecap="round"
               stroke-width="6"
               transform="matrix(0,-1,1,0,0,112)"
@@ -1433,7 +1423,7 @@ exports[`Progress size demo works fine 1`] = `
               cy="56"
               fill="none"
               r="53"
-              stroke-dasharray="175.92918860102841  175.92918860102841"
+              stroke-dasharray="166.50441064025904  166.50441064025904"
               stroke-linecap="round"
               stroke-width="6"
               transform="matrix(0,-1,1,0,0,112)"
@@ -1490,7 +1480,7 @@ exports[`Progress size demo works fine 1`] = `
               cy="56"
               fill="none"
               r="53"
-              stroke-dasharray="351.85837720205683  0"
+              stroke-dasharray="333.0088212805181  0"
               stroke-linecap="round"
               stroke-width="6"
               transform="matrix(0,-1,1,0,0,112)"
@@ -1544,7 +1534,7 @@ exports[`Progress size demo works fine 1`] = `
             cy="36"
             fill="none"
             r="34"
-            stroke-dasharray="67.85840131753953  158.33626974092556"
+            stroke-dasharray="64.08849013323179  149.53981031087415"
             stroke-linecap="round"
             stroke-width="4"
             transform="matrix(0,-1,1,0,0,72)"
@@ -1589,7 +1579,7 @@ exports[`Progress size demo works fine 1`] = `
             cy="80"
             fill="none"
             r="77"
-            stroke-dasharray="376.99111843077515  125.66370614359172"
+            stroke-dasharray="362.8539514896211  120.95131716320704"
             stroke-linecap="round"
             stroke-width="6"
             transform="matrix(0,-1,1,0,0,160)"
@@ -1601,7 +1591,7 @@ exports[`Progress size demo works fine 1`] = `
 </div>
 `;
 
-exports[`Progress status demo works fine 1`] = `
+exports[`Progress Progress statusVue demo works fine 1`] = `
 <div>
   <div>
     <div>
@@ -1648,7 +1638,6 @@ exports[`Progress status demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--success"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1707,7 +1696,7 @@ exports[`Progress status demo works fine 1`] = `
             cy="56"
             fill="none"
             r="53"
-            stroke-dasharray="281.48670176164546  70.37167544041135"
+            stroke-dasharray="266.4070570244145  66.6017642561036"
             stroke-linecap="round"
             stroke-width="6"
             transform="matrix(0,-1,1,0,0,112)"
@@ -1762,7 +1751,6 @@ exports[`Progress status demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--error"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1821,7 +1809,7 @@ exports[`Progress status demo works fine 1`] = `
             cy="56"
             fill="none"
             r="53"
-            stroke-dasharray="281.48670176164546  70.37167544041135"
+            stroke-dasharray="266.4070570244145  66.6017642561036"
             stroke-linecap="round"
             stroke-width="6"
             transform="matrix(0,-1,1,0,0,112)"
@@ -1876,7 +1864,6 @@ exports[`Progress status demo works fine 1`] = `
     >
       <div
         class="t-progress__bar t-progress--plump t-progress--over-ten t-progress--status--warning"
-        style="border-radius: undefinedpx;"
       >
         <div
           class="t-progress__inner"
@@ -1970,7 +1957,7 @@ exports[`Progress status demo works fine 1`] = `
             cy="56"
             fill="none"
             r="53"
-            stroke-dasharray="281.48670176164546  70.37167544041135"
+            stroke-dasharray="266.4070570244145  66.6017642561036"
             stroke-linecap="round"
             stroke-width="6"
             transform="matrix(0,-1,1,0,0,112)"

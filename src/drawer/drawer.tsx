@@ -52,13 +52,15 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
     },
     sizeValue(): string {
       if (this.draggedSizeValue) return this.draggedSizeValue;
-      const defaultSize = isNaN(Number(this.size)) ? this.size : `${this.size}px`;
+
+      const size = this.size ?? this.global.size;
+      const defaultSize = isNaN(Number(size)) ? size : `${size}px`;
       return (
         {
           small: '300px',
           medium: '500px',
           large: '760px',
-        }[this.size] || defaultSize
+        }[size] || defaultSize
       );
     },
     wrapperStyles(): Styles {
@@ -273,14 +275,14 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
     },
     handleWrapperClick(e: MouseEvent) {
       emitEvent<Parameters<TdDrawerProps['onOverlayClick']>>(this, 'overlay-click', { e });
-      if (this.closeOnOverlayClick) {
+      if (this.closeOnOverlayClick ?? this.global.closeOnOverlayClick) {
         this.closeDrawer({ trigger: 'overlay', e });
       }
     },
     onKeyDown(e: KeyboardEvent) {
       if (e.key === 'Escape') {
         emitEvent<Parameters<TdDrawerProps['onEscKeydown']>>(this, 'esc-keydown', { e });
-        if (this.closeOnEscKeydown) {
+        if (this.closeOnEscKeydown ?? this.global.closeOnEscKeydown) {
           this.closeDrawer({ trigger: 'esc', e });
         }
       }

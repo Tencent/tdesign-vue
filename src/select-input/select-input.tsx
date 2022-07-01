@@ -17,7 +17,12 @@ const BASE_CLASS_EMPTY = `${prefix}-select-input--empty`;
 export default defineComponent({
   name: 'TSelectInput',
 
-  props: { ...props },
+  props: {
+    ...props,
+    updateScrollTop: {
+      type: Function,
+    },
+  },
 
   setup(props: TdSelectInputProps, context: SetupContext) {
     const selectInputRef = ref();
@@ -72,6 +77,7 @@ export default defineComponent({
           'visible-change': this.onInnerPopupVisibleChange,
         }}
         props={{ ...this.popupProps, overlayStyle: this.tOverlayStyle }}
+        updateScrollTop={this.updateScrollTop}
       >
         {this.multiple
           ? this.renderSelectMultiple(
