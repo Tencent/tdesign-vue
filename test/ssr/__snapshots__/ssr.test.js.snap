@@ -13571,7 +13571,7 @@ exports[`ssr snapshot test renders ./examples/steps/demos/vertical-sequence.vue 
 `;
 
 exports[`ssr snapshot test renders ./examples/swiper/demos/base.vue correctly 1`] = `
-<div class="tdesign-demo-block--swiper-new">
+<div class="tdesign-demo-block--swiper">
   <div class="t-swiper">
     <div class="t-swiper__wrap t-swiper--inside">
       <div class="t-swiper__content">
@@ -13584,7 +13584,7 @@ exports[`ssr snapshot test renders ./examples/swiper/demos/base.vue correctly 1`
 `;
 
 exports[`ssr snapshot test renders ./examples/swiper/demos/card.vue correctly 1`] = `
-<div class="tdesign-demo-block--swiper-new">
+<div class="tdesign-demo-block--swiper">
   <div class="t-swiper">
     <div class="t-swiper__wrap t-swiper--inside">
       <div class="t-swiper__content t-swiper-card">
@@ -13597,7 +13597,7 @@ exports[`ssr snapshot test renders ./examples/swiper/demos/card.vue correctly 1`
 `;
 
 exports[`ssr snapshot test renders ./examples/swiper/demos/current.vue correctly 1`] = `
-<div class="tdesign-demo-block--swiper-new">
+<div class="tdesign-demo-block--swiper">
   <div class="t-swiper">
     <div class="t-swiper__wrap t-swiper--inside">
       <div class="t-swiper__content">
@@ -13613,7 +13613,7 @@ exports[`ssr snapshot test renders ./examples/swiper/demos/current.vue correctly
 `;
 
 exports[`ssr snapshot test renders ./examples/swiper/demos/fade.vue correctly 1`] = `
-<div class="tdesign-demo-block--swiper-new">
+<div class="tdesign-demo-block--swiper">
   <div class="t-swiper">
     <div class="t-swiper__wrap t-swiper--inside">
       <div class="t-swiper__content t-swiper-fade">
@@ -13626,7 +13626,7 @@ exports[`ssr snapshot test renders ./examples/swiper/demos/fade.vue correctly 1`
 `;
 
 exports[`ssr snapshot test renders ./examples/swiper/demos/fraction.vue correctly 1`] = `
-<div class="tdesign-demo-block--swiper-new">
+<div class="tdesign-demo-block--swiper">
   <div class="t-swiper">
     <div class="t-swiper__wrap t-swiper--inside">
       <div class="t-swiper__content">
@@ -13649,7 +13649,7 @@ exports[`ssr snapshot test renders ./examples/swiper/demos/fraction.vue correctl
 `;
 
 exports[`ssr snapshot test renders ./examples/swiper/demos/placement.vue correctly 1`] = `
-<div class="tdesign-demo-block--swiper-new">
+<div class="tdesign-demo-block--swiper">
   <div class="t-swiper">
     <div class="t-swiper__wrap t-swiper--outside">
       <div class="t-swiper__content">
@@ -13663,7 +13663,7 @@ exports[`ssr snapshot test renders ./examples/swiper/demos/placement.vue correct
 
 exports[`ssr snapshot test renders ./examples/swiper/demos/size.vue correctly 1`] = `
 <div>
-  <div class="tdesign-demo-block--swiper-new" style="width:1000px;">
+  <div class="tdesign-demo-block--swiper" style="width:1000px;">
     <h3>large</h3>
     <div class="t-swiper">
       <div class="t-swiper__wrap t-swiper--inside t-swiper--large">
@@ -13689,7 +13689,7 @@ exports[`ssr snapshot test renders ./examples/swiper/demos/size.vue correctly 1`
 `;
 
 exports[`ssr snapshot test renders ./examples/swiper/demos/vertical.vue correctly 1`] = `
-<div class="tdesign-demo-block--swiper-new">
+<div class="tdesign-demo-block--swiper">
   <div class="t-swiper">
     <div class="t-swiper__wrap t-swiper--inside t-swiper--vertical">
       <div class="t-swiper__content">
