@@ -26,7 +26,8 @@
       @submit="onSubmit"
       scrollToFirstError="smooth"
     >
-      <t-form-item label="用户名" help="这是用户名字段帮助说明" name="account">
+      <!-- !!!注意：当 FormItem 的 label 属性为 Function 时，errorMessage 模板中的 ${name} 会被替换为 FormItem.name 属性值 -->
+      <t-form-item :label="renderAccountLabel" help="这是用户名字段帮助说明" name="account">
         <t-input v-model="formData.account"></t-input>
       </t-form-item>
       <t-form-item label="个人简介" help="一句话介绍自己" name="description">
@@ -149,6 +150,9 @@ export default {
   },
 
   methods: {
+    renderAccountLabel() {
+      return '用户名';
+    },
     onReset() {
       this.$message.success('重置成功');
     },
