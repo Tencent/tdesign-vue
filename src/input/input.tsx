@@ -12,6 +12,7 @@ import { emitEvent } from '../utils/event';
 import { prefix } from '../config';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import FormItem from '../form/form-item';
 
 const name = `${prefix}-input`;
 const INPUT_WRAP_CLASS = `${prefix}-input__wrap`;
@@ -29,6 +30,7 @@ function getValidAttrs(obj: object): object {
 
 interface InputInstance extends Vue {
   composing: boolean;
+  tFormItem: InstanceType<typeof FormItem>;
 }
 
 export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input')).extend({
@@ -233,6 +235,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         this.inputValue = this.format(this.value);
       }
       this.focused = false;
+      this.tFormItem?.validate('blur');
       emitEvent<Parameters<TdInputProps['onBlur']>>(this, 'blur', this.value, { e });
     },
     compositionstartHandler(e: CompositionEvent) {

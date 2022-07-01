@@ -32,7 +32,6 @@ docClass: timeline
   - 修复仅有`firstFullRow`不渲染的问题 @uyarn ([#1056](https://github.com/Tencent/tdesign-vue/pull/1056))
   - 修复paginationAffixedBottom 透传Affix 参数不生效 @LoopZhou ([#1055](https://github.com/Tencent/tdesign-vue/pull/1055))
   - 修复0.41.7版本后过滤功能构建后异常的问题 @chaishi ([#1081](https://github.com/Tencent/tdesign-vue/pull/1081))
-  - 修复0.41.7版本后过滤功能构建后异常的问题 @chaishi ([#1081](https://github.com/Tencent/tdesign-vue/pull/1081))
 - `Select`: 
   - `option`数量小于`threshold`时不开启虚拟滚动 @uyarn ([#1063](https://github.com/Tencent/tdesign-vue/pull/1063))
   - 单选下 valueType 为 object 时, onChange返回值类型修复 @skytt ([#1076](https://github.com/Tencent/tdesign-vue/pull/1076))
