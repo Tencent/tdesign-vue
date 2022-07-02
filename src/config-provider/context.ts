@@ -1,4 +1,3 @@
-import { InjectionKey, ComputedRef } from '@vue/composition-api';
 import merge from 'lodash/merge';
 import _mergeWith from 'lodash/mergeWith';
 import defaultConfig from '../_common/js/global-config/default-config';

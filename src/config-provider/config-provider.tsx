@@ -1,6 +1,5 @@
 import Vue, { PropType, VNode } from 'vue';
 import cloneDeep from 'lodash/cloneDeep';
-import { provide, computed } from '@vue/composition-api';
 import { GlobalConfigProvider } from './type';
 import { defaultGlobalConfig, mergeWith } from './context';
 
