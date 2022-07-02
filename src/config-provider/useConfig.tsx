@@ -1,5 +1,5 @@
 import { computed, inject, h } from '@vue/composition-api';
-import { GlobalConfigProvider, defaultGlobalConfig, configProviderInjectKey } from './context';
+import { GlobalConfigProvider, defaultGlobalConfig } from './context';
 
 /**
  * component global config
@@ -8,8 +8,8 @@ import { GlobalConfigProvider, defaultGlobalConfig, configProviderInjectKey } fr
  * useConfig('pagination')
  */
 export function useConfig<T extends keyof GlobalConfigProvider>(componentName?: T) {
-  const injectGlobalConfig = inject(configProviderInjectKey, null);
-  const mergedGlobalConfig = computed(() => injectGlobalConfig?.value || defaultGlobalConfig);
+  const injectGlobalConfig = inject<GlobalConfigProvider>('globalConfig', null);
+  const mergedGlobalConfig = computed(() => injectGlobalConfig || defaultGlobalConfig);
   const global = computed(() => mergedGlobalConfig.value[componentName]);
 
   const classPrefix = computed(() => mergedGlobalConfig.value.classPrefix);
