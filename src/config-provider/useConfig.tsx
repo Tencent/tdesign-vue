@@ -9,7 +9,7 @@ import { GlobalConfigProvider, defaultGlobalConfig } from './context';
  */
 export function useConfig<T extends keyof GlobalConfigProvider>(componentName?: T) {
   const injectGlobalConfig = inject<GlobalConfigProvider>('globalConfig', null);
-  const mergedGlobalConfig = computed(() => injectGlobalConfig?.value || defaultGlobalConfig);
+  const mergedGlobalConfig = computed(() => injectGlobalConfig || defaultGlobalConfig);
   const global = computed(() => mergedGlobalConfig.value[componentName]);
 
   const classPrefix = computed(() => mergedGlobalConfig.value.classPrefix);
