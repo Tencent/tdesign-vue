@@ -24,7 +24,7 @@ function getValidAttrs(obj: object): object {
 }
 export interface Textarea extends Vue {
   tFormItem: {
-    validate(trigger: string): Promise<any>
+    validate(trigger: string): Promise<any>;
   };
 }
 

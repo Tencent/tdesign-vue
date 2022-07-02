@@ -1,6 +1,4 @@
-import {
-  ref, Ref, watch, getCurrentInstance,
-} from '@vue/composition-api';
+import { ref, Ref, getCurrentInstance } from '@vue/composition-api';
 
 export type ChangeHandler<T, P extends any[]> = (value: T, ...args: P) => void;
 
@@ -12,33 +10,28 @@ export default function useDefaultValue<T, P extends any[]>(
   propsName: string,
   eventName: string,
 ): [Ref<T>, ChangeHandler<T, P>] {
-  const { emit, attrs } = getCurrentInstance();
+  const { emit } = getCurrentInstance();
 
   const internalValue = ref();
   internalValue.value = defaultValue;
 
+  // 受控模式
   if (typeof value.value !== 'undefined') {
-    // 受控模式 v-model:propName
-    internalValue.value = value.value;
+    return [
+      value,
+      (newValue, ...args) => {
+        emit(`update:${propsName}`, newValue, ...args);
+        onChange?.(newValue, ...args);
+        emit(eventName, newValue, ...args);
+      },
+    ];
   }
 
-  // 监听value变化
-  watch(value, (newVal) => {
-    internalValue.value = newVal;
-  });
-
+  // 非受控模式
   return [
     internalValue,
     (newValue, ...args) => {
-      if (attrs[`onUpdate:${propsName}`]) {
-        // 受控模式 v-model:propName
-        emit?.(`update:${propsName}`, newValue, ...args);
-      }
-
-      if (typeof value.value === 'undefined') {
-        internalValue.value = newValue;
-      }
-
+      internalValue.value = newValue;
       emit(eventName, newValue, ...args);
       onChange?.(newValue, ...args);
     },
