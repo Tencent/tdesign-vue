@@ -184,7 +184,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       if (e.code === 'Escape') {
         emitEvent<Parameters<TdDialogProps['onEscKeydown']>>(this, 'esc-keydown', { e });
         // 根据 closeOnEscKeydown 判断按下ESC时是否触发close事件
-        if (this.closeOnEscKeydown || this.global.closeOnEscKeydown) {
+        if (this.closeOnEscKeydown ?? this.global.closeOnEscKeydown) {
           this.emitCloseEvent({
             trigger: 'esc',
             e,
@@ -194,7 +194,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     },
     overlayAction(e: MouseEvent) {
       // 根据closeOnClickOverlay判断点击蒙层时是否触发close事件
-      if (this.closeOnOverlayClick || this.global.closeOnOverlayClick) {
+      if (this.showOverlay && (this.closeOnOverlayClick ?? this.global.closeOnOverlayClick)) {
         emitEvent<Parameters<TdDialogProps['onOverlayClick']>>(this, 'overlay-click', { e });
         this.emitCloseEvent({
           trigger: 'overlay',
@@ -346,9 +346,15 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       // 此处获取定位方式 top 优先级较高 存在时 默认使用top定位
       return (
         // /* 非模态形态下draggable为true才允许拖拽 */
-        <div class={this.wrapClass}>
+        <div class={this.wrapClass} onClick={this.overlayAction}>
           <div class={this.positionClass} style={this.positionStyle}>
-            <div key="dialog" ref="dialog" class={this.dialogClass} style={this.dialogStyle}>
+            <div
+              key="dialog"
+              ref="dialog"
+              class={this.dialogClass}
+              style={this.dialogStyle}
+              onClick={(e: MouseEvent) => e.stopPropagation()}
+            >
               <div class={`${name}__header`}>
                 {this.getIcon()}
                 {renderTNodeJSX(this, 'header', defaultHeader)}
@@ -371,7 +377,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
   },
 
   render() {
-    const maskView = this.isModal && <div key="mask" class={this.maskClass} onClick={this.overlayAction}></div>;
+    const maskView = this.isModal && <div key="mask" class={this.maskClass}></div>;
     const dialogView = this.renderDialog();
     const view = [maskView, dialogView];
     const ctxStyle: any = { zIndex: this.zIndex };

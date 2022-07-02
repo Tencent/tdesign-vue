@@ -157,9 +157,27 @@ export default {
       // FormItem.rules 优先级大于 Form.rules
       rules: {
         account: [
+          {
+            required: true,
+            message: '姓名必填',
+            type: 'error',
+            trigger: 'blur',
+          },
+          // trigger 默认为 'change'
           { required: true, message: '姓名必填', type: 'error' },
-          { min: 2, message: '至少需要两个字符，一个中文等于两个字符', type: 'warning' },
-          { max: 10, message: '姓名字符长度超出', type: 'warning' },
+          { whitespace: true, message: '姓名不能为空' },
+          {
+            min: 2,
+            message: '至少需要两个字符，一个中文等于两个字符',
+            type: 'warning',
+            trigger: 'blur',
+          },
+          {
+            max: 10,
+            message: '姓名字符长度超出',
+            type: 'warning',
+            trigger: 'blur',
+          },
         ],
         description: [
           {

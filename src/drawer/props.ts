@@ -25,14 +25,16 @@ export default {
   /** 关闭按钮，可以自定义。值为 true 显示默认关闭按钮，值为 false 不显示关闭按钮。值类型为 string 则直接显示值，如：“关闭”。值类型为 TNode，则表示呈现自定义按钮示例 */
   closeBtn: {
     type: [String, Boolean, Function] as PropType<TdDrawerProps['closeBtn']>,
-    default: undefined,
   },
   /** 按下 ESC 时是否触发抽屉关闭事件 */
-  closeOnEscKeydown: Boolean,
+  closeOnEscKeydown: {
+    type: Boolean,
+    default: undefined,
+  },
   /** 点击蒙层时是否触发抽屉关闭事件 */
   closeOnOverlayClick: {
     type: Boolean,
-    default: true,
+    default: undefined,
   },
   /** 确认按钮。值类型为字符串，则表示自定义按钮文本，值类型为 Object 则表示透传 Button 组件属性。使用 TNode 自定义按钮时，需自行控制确认事件 */
   confirmBtn: {
@@ -53,7 +55,7 @@ export default {
   /** 头部内容。值为 true 显示空白头部，值为 false 不显示头部，值类型为 string 则直接显示值，值类型为 TNode 表示自定义头部内容 */
   header: {
     type: [String, Boolean, Function] as PropType<TdDrawerProps['header']>,
-    default: undefined,
+    default: true,
   },
   /** 展开方式，有两种：直接展示在内容上方 和 推开内容区域 */
   mode: {
