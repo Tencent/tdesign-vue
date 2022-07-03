@@ -111,7 +111,7 @@ export default defineComponent({
             inputProps: { size: this.size },
             tagInputProps: { size: this.size },
             onInputChange: (value: InputValue) => {
-              if (!isFilterable) return;
+              if (!visible) return;
               setInputVal(`${value}`);
             },
             onTagChange: (val: CascaderValue, ctx: SelectInputChangeContext) => {

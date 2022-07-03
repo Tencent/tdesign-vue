@@ -194,11 +194,12 @@ export const useCascaderContext = (props: TdCascaderProps) => {
 
       if (isValueInvalid(innerValue.value, cascaderContext.value)) {
         setValue(multiple ? [] : '', 'invalid-value');
-        console.warn('TDesign Cascader Warn:', 'cascader props value invalid, v-model automatic calibration');
       }
 
       if (!isEmptyValues(innerValue)) {
         statusContext.scopeVal = getCascaderValue(innerValue.value, valueType, multiple);
+      } else {
+        statusContext.scopeVal = multiple ? [] : '';
       }
 
       if (!statusContext.treeStore) return;

@@ -61,6 +61,8 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
       ...p.commonInputProps,
       tagProps: props.tagProps,
       label: props.label,
+      autoWidth: props.autoWidth,
+      readonly: props.readonly,
       placeholder: tPlaceholder.value,
       minCollapsedNum: props.minCollapsedNum,
       collapsedItems: props.collapsedItems,
