@@ -123,7 +123,7 @@ export default function useTreeSelect(props: TdEnhancedTableProps, treeDataMap: 
     childrenKey: props.tree?.childrenKey || 'children',
   }));
 
-  watch([tree, treeDataMap, data], ([tree, treeDataMap]) => {
+  watch([tree, treeDataMap, data, tSelectedRowKeys], ([tree, treeDataMap]) => {
     if (!tree || !treeDataMap.size || tree.checkStrictly) return;
     updateIndeterminateState();
   });
