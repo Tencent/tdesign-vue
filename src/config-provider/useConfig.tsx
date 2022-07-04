@@ -11,7 +11,6 @@ export function useConfig<T extends keyof GlobalConfigProvider>(componentName?: 
   const injectGlobalConfig = inject<GlobalConfigProvider>('globalConfig', null);
   const mergedGlobalConfig = computed(() => injectGlobalConfig || defaultGlobalConfig);
   const global = computed(() => mergedGlobalConfig.value[componentName]);
-
   const classPrefix = computed(() => mergedGlobalConfig.value.classPrefix);
 
   // 处理正则表达式
@@ -42,7 +41,6 @@ export function useConfig<T extends keyof GlobalConfigProvider>(componentName?: 
     classPrefix,
   };
 }
-
 export function usePrefixClass(componentName?: string) {
   const { classPrefix } = useConfig('classPrefix');
   return computed(() => (componentName ? `${classPrefix.value}-${componentName}` : classPrefix.value));
