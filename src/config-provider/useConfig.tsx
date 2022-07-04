@@ -1,4 +1,4 @@
-import { inject, h } from '@vue/composition-api';
+import { inject, h, ref } from '@vue/composition-api';
 import { GlobalConfigProvider, defaultGlobalConfig } from './context';
 
 // 处理正则表达式
@@ -32,13 +32,9 @@ const t = function <T> (pattern: T, ...args: any[]) {
 export function useConfig<T extends keyof GlobalConfigProvider>(componentName?: T) {
   const injectGlobalConfig = inject<GlobalConfigProvider>('globalConfig', null);
   const mergedGlobalConfig = injectGlobalConfig || defaultGlobalConfig;
-  const global = {
-    value: mergedGlobalConfig[componentName],
-  };
 
-  const classPrefix = {
-    value: mergedGlobalConfig.classPrefix,
-  };
+  const global = ref(mergedGlobalConfig[componentName]);
+  const classPrefix = ref(mergedGlobalConfig.classPrefix);
 
   return {
     t,
@@ -49,7 +45,5 @@ export function useConfig<T extends keyof GlobalConfigProvider>(componentName?: 
 
 export function usePrefixClass(componentName?: string) {
   const { classPrefix } = useConfig('classPrefix');
-  return {
-    value: componentName ? `${classPrefix.value}-${componentName}` : classPrefix.value,
-  };
+  return ref(componentName ? `${classPrefix.value}-${componentName}` : classPrefix.value);
 }
