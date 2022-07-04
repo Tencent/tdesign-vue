@@ -52,6 +52,7 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
       e.stopPropagation();
       popupVisible.value = false;
       onChange?.([], { dayjsValue: [], trigger: 'clear' });
+      emit('clear', [], { dayjsValue: [], trigger: 'clear' });
     },
     onBlur: (newVal: string[], { e, position }: any) => {
       props.onBlur?.({ value: newVal, partial: PARTIAL_MAP[position], e });
@@ -66,12 +67,6 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
       const index = position === 'first' ? 0 : 1;
 
       props.onInput?.({
-        input: newVal[index],
-        value: value.value,
-        partial: PARTIAL_MAP[position],
-        e,
-      });
-      emit('input', {
         input: newVal[index],
         value: value.value,
         partial: PARTIAL_MAP[position],
