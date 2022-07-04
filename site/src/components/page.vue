@@ -68,7 +68,7 @@ export default {
           const options = [];
           Object.keys(res.versions).forEach((v) => {
             const nums = v.split('.');
-            if ((nums[0] === '0' && nums[1] < 32) || v.indexOf('alpha') > -1) return false;
+            if ((nums[0] === '0' && nums[1] < 32) || v.indexOf('alpha') > -1 || v.indexOf('patch') > -1) return false;
             options.unshift({ label: v, value: v.replace(/\./g, '_') });
           });
           this.options.push(...options);
