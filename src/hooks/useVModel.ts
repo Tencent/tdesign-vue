@@ -1,6 +1,4 @@
-import {
-  Ref, ref, getCurrentInstance, watch,
-} from '@vue/composition-api';
+import { Ref, ref, getCurrentInstance } from '@vue/composition-api';
 
 export type ChangeHandler<T, P extends any[]> = (value: T, ...args: P) => void;
 
@@ -14,27 +12,27 @@ export default function useVModel<T, P extends any[]>(
   const { emit } = getCurrentInstance();
 
   const internalValue = ref<T>();
-  // 非受控模式, defaultValue 只消费一次
   internalValue.value = defaultValue;
-
+  // 受控模式
   if (typeof value.value !== 'undefined') {
-    // v-model 受控模式，同步 value 的初值
-    internalValue.value = value.value;
+    return [
+      value,
+      (newValue, ...args) => {
+        // input 事件为 v-model 语法糖
+        emit?.('input', newValue, ...args);
+        onChange?.(newValue, ...args);
+        if (eventName && eventName !== 'input') {
+          emit?.(eventName, newValue, ...args);
+        }
+      },
+    ];
   }
 
-  // 监听 value 的变化
-  watch(value, (newVal) => {
-    internalValue.value = newVal;
-  });
-
+  // 非受控模式
   return [
     internalValue,
     (newValue, ...args) => {
-      // input 事件为 v-model 语法糖
-      emit?.('input', newValue, ...args);
-      if (typeof value.value === 'undefined') {
-        internalValue.value = newValue;
-      }
+      internalValue.value = newValue;
       onChange?.(newValue, ...args);
       if (eventName && eventName !== 'input') {
         emit?.(eventName, newValue, ...args);

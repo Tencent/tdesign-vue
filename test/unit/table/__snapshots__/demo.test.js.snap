@@ -19835,11 +19835,10 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
               class=""
             >
               <label
-                class="t-checkbox t-is-disabled"
+                class="t-checkbox"
               >
                 <input
                   class="t-checkbox__former"
-                  disabled="disabled"
                   type="checkbox"
                   value=""
                 />
@@ -20036,11 +20035,10 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
               class=""
             >
               <label
-                class="t-checkbox t-is-disabled"
+                class="t-checkbox"
               >
                 <input
                   class="t-checkbox__former"
-                  disabled="disabled"
                   type="checkbox"
                   value=""
                 />

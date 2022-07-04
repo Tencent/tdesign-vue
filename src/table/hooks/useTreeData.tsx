@@ -53,16 +53,17 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     });
   }
 
+  const uniqueKeys = computed(() => store.value?.getAllUniqueKeys(data.value, rowDataKeys.value)?.join() || '');
+
   watch(
-    [data],
-    ([data]) => {
-      if (!data) return [];
-      // 如果没有树形解构，则不需要相关逻辑
-      if (!props.tree || !Object.keys(props.tree).length) {
-        dataSource.value = data;
+    [uniqueKeys],
+    () => {
+      if (!data.value) return [];
+      if (!props.tree) {
+        dataSource.value = data.value;
         return;
       }
-      let newVal = cloneDeep(data);
+      let newVal = cloneDeep(data.value);
       store.value.initialTreeStore(newVal, props.columns, rowDataKeys.value);
       if (props.tree?.defaultExpandAll) {
         newVal = store.value.expandAll(newVal, rowDataKeys.value);
@@ -78,7 +79,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   // });
 
   onUnmounted(() => {
-    if (!props.tree || !Object.keys(props.tree).length) return;
+    if (!props.tree) return;
     store.value.treeDataMap?.clear();
     store.value = null;
   });
@@ -93,9 +94,9 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
 
   function getTreeNodeStyle(level: number) {
     if (level === undefined) return;
-    const indent = props.tree?.indent || 24;
+    const indent = props.tree?.indent === undefined ? 24 : props.tree?.indent;
     // 默认 1px 是为了临界省略
-    return { paddingLeft: `${level * indent || 1}px` };
+    return indent ? { paddingLeft: `${level * indent || 1}px` } : {};
   }
 
   /**
@@ -131,7 +132,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   }
 
   function formatTreeColumn(col: PrimaryTableCol): PrimaryTableCol {
-    if (!props.tree || !Object.keys(props.tree).length || col.colKey !== treeNodeCol.value.colKey) return col;
+    if (!props.tree || col.colKey !== treeNodeCol.value.colKey) return col;
     const newCol = { ...treeNodeCol.value };
     newCol.cell = (h, p) => {
       const cellInfo = renderCell({ ...p, col: { ...treeNodeCol.value } }, context.slots);
