@@ -5128,7 +5128,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/date-presets-alt
   <div class="t-space-item">
     <div class="t-date-range-picker">
       <div class="t-range-input-popup">
-        <div class="t-range-input t-range-input-popup">
+        <div class="t-range-input">
           <div class="t-range-input__inner">
             <div class="t-input__wrap t-range-input__inner-left">
               <div class="t-input t-size-m t-is-default t-is-readonly"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="2022-01-01" class="t-input__inner"></div>
@@ -5146,7 +5146,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/date-presets-alt
   <div class="t-space-item">
     <div class="t-date-range-picker">
       <div class="t-range-input-popup">
-        <div class="t-range-input t-range-input-popup">
+        <div class="t-range-input">
           <div class="t-range-input__inner">
             <div class="t-input__wrap t-range-input__inner-left">
               <div class="t-input t-size-m t-is-default t-is-readonly"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="2022-01-01 11:11:11" class="t-input__inner"></div>
@@ -5168,7 +5168,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/date-range.vue c
   <div class="t-space-item">
     <div class="t-date-range-picker">
       <div class="t-range-input-popup">
-        <div class="t-range-input t-range-input-popup">
+        <div class="t-range-input">
           <div class="t-range-input__inner">
             <div class="t-input__wrap t-range-input__inner-left">
               <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请选择日期" type="text" unselectable="off" class="t-input__inner"></div>
@@ -5186,7 +5186,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/date-range.vue c
   <div class="t-space-item">
     <div class="t-date-range-picker">
       <div class="t-range-input-popup">
-        <div class="t-range-input t-range-input-popup">
+        <div class="t-range-input">
           <div class="t-range-input__inner">
             <div class="t-input__wrap t-range-input__inner-left">
               <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请选择日期" type="text" unselectable="off" class="t-input__inner"></div>
@@ -5282,7 +5282,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/disable-date.vue
   <div class="t-space-item">
     <div class="t-date-range-picker">
       <div class="t-range-input-popup">
-        <div class="t-range-input t-range-input-popup">
+        <div class="t-range-input">
           <div class="t-range-input__inner">
             <div class="t-input__wrap t-range-input__inner-left">
               <div class="t-input t-size-m t-is-default t-is-readonly"><input readonly="readonly" autocomplete="" placeholder="禁用最近 5 天外的日期" type="text" unselectable="on" class="t-input__inner"></div>
@@ -5334,7 +5334,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/month.vue correc
   <div class="t-space-item">
     <div class="t-date-range-picker">
       <div class="t-range-input-popup">
-        <div class="t-range-input t-range-input-popup">
+        <div class="t-range-input">
           <div class="t-range-input__inner">
             <div class="t-input__wrap t-range-input__inner-left">
               <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请选择月份" type="text" unselectable="off" class="t-input__inner"></div>
@@ -5366,7 +5366,7 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/year.vue correct
   <div class="t-space-item">
     <div class="t-date-range-picker">
       <div class="t-range-input-popup">
-        <div class="t-range-input t-range-input-popup">
+        <div class="t-range-input">
           <div class="t-range-input__inner">
             <div class="t-input__wrap t-range-input__inner-left">
               <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请选择年份" type="text" unselectable="off" class="t-input__inner"></div>
@@ -11369,7 +11369,7 @@ exports[`ssr snapshot test renders ./examples/range-input/demos/base.vue correct
 
 exports[`ssr snapshot test renders ./examples/range-input/demos/popup.vue correctly 1`] = `
 <div class="t-range-input-popup">
-  <div class="t-range-input t-range-input-popup">
+  <div class="t-range-input">
     <div class="t-range-input__inner">
       <div class="t-input__wrap t-range-input__inner-left">
         <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
@@ -18513,7 +18513,7 @@ exports[`ssr snapshot test renders ./examples/time-picker/demos/range.vue correc
 <div class="tdesign-demo-block">
   <div class="demos t-time-range-picker">
     <div class="t-range-input-popup">
-      <div class="t-range-input t-range-input-popup">
+      <div class="t-range-input">
         <div class="t-range-input__inner">
           <div class="t-input__wrap t-range-input__inner-left">
             <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="选择时间" type="text" unselectable="off" value="00:00:00" class="t-input__inner"></div>
