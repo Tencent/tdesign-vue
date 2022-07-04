@@ -706,6 +706,7 @@ export function updateRowIndex<T>(
     minRowIndex?: number;
     maxRowIndex?: number;
     type?: 'add' | 'remove';
+    count?: number;
   },
 ) {
   const start = extra.minRowIndex || 0;
@@ -716,6 +717,6 @@ export function updateRowIndex<T>(
     if (!state) {
       log.warn('Table', 'tree map went wrong');
     }
-    state.rowIndex = rowIndex;
+    state.rowIndex = rowIndex + (extra?.count || 1) - 1;
   }
 }
