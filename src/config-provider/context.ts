@@ -1,4 +1,3 @@
-import merge from 'lodash/merge';
 import _mergeWith from 'lodash/mergeWith';
 import defaultConfig from '../_common/js/global-config/default-config';
 import defaultZhCN from '../_common/js/global-config/locale/zh_CN';
@@ -10,7 +9,10 @@ export enum EAnimationType {
   fade = 'fade',
 }
 
-export const defaultGlobalConfig: GlobalConfigProvider = merge(defaultConfig, defaultZhCN);
+export const defaultGlobalConfig: GlobalConfigProvider = {
+  ...defaultConfig,
+  ...defaultZhCN,
+};
 
 export type Locale = typeof defaultZhCN;
 

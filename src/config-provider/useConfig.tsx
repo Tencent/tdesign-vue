@@ -1,4 +1,6 @@
-import { computed, inject, h } from '@vue/composition-api';
+import {
+  computed, inject, h, ref,
+} from '@vue/composition-api';
 import { GlobalConfigProvider, defaultGlobalConfig } from './context';
 
 /**
@@ -9,10 +11,9 @@ import { GlobalConfigProvider, defaultGlobalConfig } from './context';
  */
 export function useConfig<T extends keyof GlobalConfigProvider>(componentName?: T) {
   const injectGlobalConfig = inject<GlobalConfigProvider>('globalConfig', null);
-  const mergedGlobalConfig = computed(() => injectGlobalConfig || defaultGlobalConfig);
-  const global = computed(() => mergedGlobalConfig.value[componentName]);
-
-  const classPrefix = computed(() => mergedGlobalConfig.value.classPrefix);
+  const mergedGlobalConfig = ref(injectGlobalConfig || defaultGlobalConfig);
+  const global = ref(mergedGlobalConfig.value[componentName]);
+  const classPrefix = ref(mergedGlobalConfig.value.classPrefix);
 
   // 处理正则表达式
   const t = function <T> (pattern: T, ...args: any[]) {
