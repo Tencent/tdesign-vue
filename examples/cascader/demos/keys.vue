@@ -1,9 +1,16 @@
 <template>
-  <div>
+  <div class="tdesign-demo-block-row">
     <t-cascader
       v-model="value"
       :keys="{ label: 'name', value: 'code', children: 'items' }"
       :options="options"
+      clearable
+    />
+    <t-cascader
+      v-model="value2"
+      :keys="{ label: 'name', value: 'code', children: 'items' }"
+      :options="options"
+      multiple
       clearable
     />
   </div>
@@ -47,6 +54,7 @@ export default {
         },
       ],
       value: '1.1',
+      value2: ['1.1'],
     };
   },
 };

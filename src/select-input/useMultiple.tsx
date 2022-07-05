@@ -97,8 +97,7 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
           p.onInnerClear;
         }}
         onBlur={(val: TagInputValue, context: { inputValue: InputValue; e: FocusEvent }) => {
-          // 筛选器统一特性：失去焦点时，清空输入内容
-          setTInputValue('', { ...context, trigger: 'blur' });
+          props.onBlur?.(props.value, { ...context, tagInputValue: val });
           instance.emit('blur', props.value, { ...context, tagInputValue: val });
         }}
         onFocus={(val: TagInputValue, context: { inputValue: InputValue; e: FocusEvent }) => {

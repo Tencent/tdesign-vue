@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="tdesign-demo-block-row">
     <t-cascader v-model="value" :options="options" :show-all-levels="false" />
+    <t-cascader v-model="value2" :options="options" :show-all-levels="false" multiple />
   </div>
 </template>
 <script>
@@ -42,6 +43,7 @@ export default {
         },
       ],
       value: '',
+      value2: [],
     };
   },
 };

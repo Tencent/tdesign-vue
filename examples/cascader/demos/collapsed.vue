@@ -2,7 +2,7 @@
   <div class="tdesign-demo-block-row">
     <t-cascader v-model="value" :options="options" :on-remove="handleBlur" multiple :min-collapsed-num="1" />
     <t-cascader v-model="value" :options="options" :collapsed-items="collapsedItems" multiple :min-collapsed-num="1" />
-    <t-cascader v-model="value" class="t-demo-cascader" :options="options" multiple clearable :min-collapsed-num="1">
+    <t-cascader v-model="value" :options="options" multiple clearable :min-collapsed-num="1">
       <template #collapsedItems="{ collapsedSelectedItems, count }">
         <t-popup>
           <template #content>
@@ -59,9 +59,8 @@ export default {
     };
   },
   methods: {
-    collapsedItems(h, { value, count, collapsedSelectedItems }) {
+    collapsedItems(h, { value, count }) {
       if (!(value instanceof Array) || !count) return;
-      console.log('collapsedItems: ', value, collapsedSelectedItems, count);
       // hover展示全部已选项
       return (
         <t-popup>

@@ -111,7 +111,6 @@ export default defineComponent({
             inputProps: { size: this.size },
             tagInputProps: { size: this.size },
             onInputChange: (value: InputValue) => {
-              if (!visible) return;
               setInputVal(`${value}`);
             },
             onTagChange: (val: CascaderValue, ctx: SelectInputChangeContext) => {
@@ -141,7 +140,6 @@ export default defineComponent({
           panel: () => (
             <Panel
               empty={this.empty}
-              visible={visible}
               trigger={this.trigger}
               cascaderContext={cascaderContext}
               scopedSlots={{ empty: slots.empty }}

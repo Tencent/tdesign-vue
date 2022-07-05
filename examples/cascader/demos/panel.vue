@@ -1,9 +1,11 @@
 <template>
   <div class="tdesign-demo-block-row">
-    {{ value }}
-    <t-cascader v-model="value" :options="options" value-type="full" />
-    {{ value2 }}
-    <t-cascader v-model="value2" multiple :options="options" value-type="full" />
+    <div class="cascader-demo-panel-container">
+      <t-cascader-panel v-model="value" :options="options" />
+    </div>
+    <div class="cascader-demo-panel-container">
+      <t-cascader-panel v-model="value2" :options="options" multiple />
+    </div>
   </div>
 </template>
 <script>
@@ -44,12 +46,15 @@ export default {
           ],
         },
       ],
-      value: ['1', '1.1'],
-      value2: [
-        ['1', '1.1'],
-        ['1', '1.2'],
-      ],
+      value: '',
+      value2: [],
     };
   },
 };
 </script>
+<style>
+.cascader-demo-panel-container {
+  border: 1px solid #eee;
+  width: 100%;
+}
+</style>
