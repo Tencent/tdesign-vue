@@ -89,10 +89,10 @@ export default mixins(keepAnimationMixins).extend({
     // this.defaultCurrent 属于分页组件抛出的事件参数，非受控的情况也会有该事件触发
     // this.pagination.defaultCurrent 为表格组件传入的非受控属性
     currentPage(): number {
-      return this.pagination.current || this.defaultCurrent || this.pagination.defaultCurrent;
+      return this.pagination?.current ?? this.defaultCurrent ?? this.pagination?.defaultCurrent;
     },
     pageSize(): number {
-      return this.pagination.pageSize || this.defaultPageSize || this.pagination.defaultPageSize;
+      return this.pagination?.pageSize ?? this.defaultPageSize ?? this.pagination?.defaultPageSize;
     },
     pageTotal(): number {
       return (this.filteredData && this.filteredData.length) || 0;
