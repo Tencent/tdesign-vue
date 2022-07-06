@@ -5264,11 +5264,11 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/date-presets-alt
         <div class="t-range-input">
           <div class="t-range-input__inner">
             <div class="t-input__wrap t-range-input__inner-left">
-              <div class="t-input t-size-m t-is-default t-is-readonly"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="2022-01-01 11:11:11" class="t-input__inner"></div>
+              <div class="t-input t-size-m t-is-default t-is-readonly"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="2022-01-01 00:00:00" class="t-input__inner"></div>
             </div>
             <div class="t-range-input__inner-separator">-</div>
             <div class="t-input__wrap t-range-input__inner-right">
-              <div class="t-input t-size-m t-is-default t-is-readonly"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="2022-08-08 12:12:12" class="t-input__inner"></div>
+              <div class="t-input t-size-m t-is-default t-is-readonly"><input readonly="readonly" autocomplete="" placeholder="请选择日期" type="text" unselectable="on" value="2022-08-08 23:59:59" class="t-input__inner"></div>
             </div><span class="t-range-input__suffix t-range-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span>
           </div>
         </div>

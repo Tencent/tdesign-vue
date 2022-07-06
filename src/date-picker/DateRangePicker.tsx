@@ -273,7 +273,7 @@ export default defineComponent({
       month.value = nextMonth;
     }
 
-    const panelProps = computed(() => ({
+    const panelProps: any = computed(() => ({
       hoverValue: (isHoverCell.value ? inputValue.value : []) as string[],
       value: (isSelected.value ? cacheValue.value : value.value) as string[],
       isFirstValueSelected: isFirstValueSelected.value,
@@ -289,6 +289,8 @@ export default defineComponent({
       timePickerProps: props.timePickerProps,
       enableTimePicker: props.enableTimePicker,
       presetsPlacement: props.presetsPlacement,
+      panelPreselection: props.panelPreselection,
+      popupVisible: popupVisible.value,
       onCellClick,
       onCellMouseEnter,
       onCellMouseLeave,
