@@ -108,8 +108,9 @@ export default defineComponent({
                 (this.popupProps as TdCascaderProps['popupProps'])?.overlayClassName,
               ],
             },
-            inputProps: { size: this.size },
-            tagInputProps: { size: this.size },
+            inputProps: { size: this.size, ...(this.inputProps as TdCascaderProps['inputProps']) },
+            tagInputProps: { size: this.size, ...(this.tagInputProps as TdCascaderProps['tagInputProps']) },
+            tagProps: { ...(this.tagProps as TdCascaderProps['tagProps']) },
             onInputChange: (value: InputValue) => {
               setInputVal(`${value}`);
             },
