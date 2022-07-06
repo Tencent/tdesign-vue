@@ -14,10 +14,10 @@
     </t-drawer>
     <div class="tdesign-radio-button">
       <t-radio-group :defaultValue="placement" v-model="placement">
-        <t-radio-button value="left">抽屉在左侧</t-radio-button>
-        <t-radio-button value="right">抽屉在右侧</t-radio-button>
-        <t-radio-button value="top">抽屉在上方</t-radio-button>
-        <t-radio-button value="bottom">抽屉在下方</t-radio-button>
+        <t-radio-button value="left">从左侧拖拽抽屉</t-radio-button>
+        <t-radio-button value="right">从右侧拖拽抽屉</t-radio-button>
+        <t-radio-button value="top">从上方拖拽抽屉</t-radio-button>
+        <t-radio-button value="bottom">从下方拖拽抽屉</t-radio-button>
       </t-radio-group>
     </div>
     <t-button variant="outline" @click="visible = true" class="btn-top-margin">打开抽屉</t-button>
