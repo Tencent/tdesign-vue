@@ -5080,13 +5080,11 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/base.vue correct
   <div class="t-space-item">
     <h3>valueType:</h3>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="YYYY-MM-DD" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">YYYY-MM-DD</span></label> <label class="t-radio-button"><input type="radio" value="time-stamp" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">time-stamp</span></label>
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="t-date-picker">
       <div class="t-input__wrap t-select-input--empty">
@@ -5096,7 +5094,6 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/base.vue correct
       </div>
     </div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="t-date-picker">
       <div class="t-input__wrap t-select-input--empty">
@@ -5142,7 +5139,6 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/date-presets-alt
       </div>
     </div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="t-date-range-picker">
       <div class="t-range-input-popup">
@@ -5182,7 +5178,6 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/date-range.vue c
       </div>
     </div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="t-date-range-picker">
       <div class="t-range-input-popup">
@@ -5214,7 +5209,6 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/date-time.vue co
       </div>
     </div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="t-date-picker">
       <div class="t-input__wrap t-select-input--empty">
@@ -5238,7 +5232,6 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/disable-date.vue
       </div>
     </div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="t-date-picker">
       <div class="t-input__wrap t-select-input--empty">
@@ -5248,7 +5241,6 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/disable-date.vue
       </div>
     </div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="t-date-picker">
       <div class="t-input__wrap t-select-input--empty">
@@ -5258,7 +5250,6 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/disable-date.vue
       </div>
     </div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="t-date-picker">
       <div class="t-input__wrap t-select-input--empty">
@@ -5268,7 +5259,6 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/disable-date.vue
       </div>
     </div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="t-date-picker">
       <div class="t-input__wrap t-select-input--empty">
@@ -5278,7 +5268,6 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/disable-date.vue
       </div>
     </div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="t-date-range-picker">
       <div class="t-range-input-popup">
@@ -5306,7 +5295,6 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/first-day-of-wee
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="t-date-picker">
       <div class="t-input__wrap t-select-input--empty">
@@ -5330,7 +5318,6 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/month.vue correc
       </div>
     </div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="t-date-range-picker">
       <div class="t-range-input-popup">
@@ -5362,7 +5349,6 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/year.vue correct
       </div>
     </div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="t-date-range-picker">
       <div class="t-range-input-popup">
@@ -12837,51 +12823,40 @@ exports[`ssr snapshot test renders ./examples/space/demos/align.vue correctly 1`
       <div class="t-space-item">
         <div>start</div>
       </div>
-      <div class="t-space-item"> </div>
       <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
-      <div class="t-space-item"> </div>
       <div class="t-space-item">
         <div class="space-block"></div>
       </div>
     </div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="space-border t-space t-space-align-center t-space-horizontal" style="gap:16px;">
       <div class="t-space-item">
         <div>center</div>
       </div>
-      <div class="t-space-item"> </div>
       <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
-      <div class="t-space-item"> </div>
       <div class="t-space-item">
         <div class="space-block"></div>
       </div>
     </div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="space-border t-space t-space-align-end t-space-horizontal" style="gap:16px;">
       <div class="t-space-item">
         <div>end</div>
       </div>
-      <div class="t-space-item"> </div>
       <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
-      <div class="t-space-item"> </div>
       <div class="t-space-item">
         <div class="space-block"></div>
       </div>
     </div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="space-border t-space t-space-align-baseline t-space-horizontal" style="gap:16px;">
       <div class="t-space-item">
         <div>baseline</div>
       </div>
-      <div class="t-space-item"> </div>
       <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
-      <div class="t-space-item"> </div>
       <div class="t-space-item">
         <div class="space-block"></div>
       </div>
@@ -12893,9 +12868,7 @@ exports[`ssr snapshot test renders ./examples/space/demos/align.vue correctly 1`
 exports[`ssr snapshot test renders ./examples/space/demos/base.vue correctly 1`] = `
 <div class="t-space t-space-horizontal" style="gap:16px;">
   <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
 </div>
 `;
@@ -12903,23 +12876,14 @@ exports[`ssr snapshot test renders ./examples/space/demos/base.vue correctly 1`]
 exports[`ssr snapshot test renders ./examples/space/demos/break-line.vue correctly 1`] = `
 <div class="t-space t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
   <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
 </div>
 `;
@@ -12930,15 +12894,7 @@ exports[`ssr snapshot test renders ./examples/space/demos/separator.vue correctl
   <div class="t-space-item-separator">
     <div class="t-divider t-divider--vertical"></div>
   </div>
-  <div class="t-space-item"> </div>
-  <div class="t-space-item-separator">
-    <div class="t-divider t-divider--vertical"></div>
-  </div>
   <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">Text</span></button></div>
-  <div class="t-space-item-separator">
-    <div class="t-divider t-divider--vertical"></div>
-  </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item-separator">
     <div class="t-divider t-divider--vertical"></div>
   </div>
@@ -12960,11 +12916,8 @@ exports[`ssr snapshot test renders ./examples/space/demos/size.vue correctly 1`]
   </div> <br>
   <div class="t-space t-space-horizontal" style="gap:8px;">
     <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
-    <div class="t-space-item"> </div>
     <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
-    <div class="t-space-item"> </div>
     <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
-    <div class="t-space-item"> </div>
     <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">Button</span></button></div>
   </div>
 </div>
@@ -12985,7 +12938,6 @@ exports[`ssr snapshot test renders ./examples/space/demos/vertical.vue correctly
       </div>
     </div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="t-card t-card--bordered t-card--shadow-hover">
       <div class="t-card__header">
@@ -12999,7 +12951,6 @@ exports[`ssr snapshot test renders ./examples/space/demos/vertical.vue correctly
       </div>
     </div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="t-card t-card--bordered t-card--shadow-hover">
       <div class="t-card__header">
