@@ -8,15 +8,16 @@
       :onOverlayClick="() => (visible = false)"
       :onConfirm="() => (visible = false)"
       :placement="placement"
+      :sizeDraggable="true"
     >
       <p>抽屉的内容</p>
     </t-drawer>
     <div class="tdesign-radio-button">
       <t-radio-group :defaultValue="placement" v-model="placement">
-        <t-radio-button value="left">左侧</t-radio-button>
-        <t-radio-button value="right">右侧</t-radio-button>
-        <t-radio-button value="top">上方</t-radio-button>
-        <t-radio-button value="bottom">下方</t-radio-button>
+        <t-radio-button value="left">抽屉在左侧</t-radio-button>
+        <t-radio-button value="right">抽屉在右侧</t-radio-button>
+        <t-radio-button value="top">抽屉在上方</t-radio-button>
+        <t-radio-button value="bottom">抽屉在下方</t-radio-button>
       </t-radio-group>
     </div>
     <t-button variant="outline" @click="visible = true" class="btn-top-margin">打开抽屉</t-button>
