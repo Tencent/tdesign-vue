@@ -5789,7 +5789,6 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/placement.vue correct
       <div class="t-drawer__footer">
         <div style="display:flex;justify-content:flex-start;"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"><span class="t-button__text">确认</span></button><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"><span class="t-button__text">取消</span></button></div>
       </div>
-      <div style="z-index:1;position:absolute;background:transparent;left:0;width:16px;height:100%;cursor:col-resize;"></div>
     </div>
   </div>
   <div class="tdesign-radio-button">
@@ -5835,6 +5834,27 @@ exports[`ssr snapshot test renders ./examples/drawer/demos/size.vue correctly 1`
   </div>
   <div class="tdesign-radio-button">
     <div class="btn-top-margin t-radio-group t-size-m t-radio-group__outline"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="small" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">小</span></label> <label class="t-radio-button"><input type="radio" value="medium" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">中</span></label> <label class="t-radio-button"><input type="radio" value="large" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">大</span></label> <label class="t-radio-button"><input type="radio" value="200" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">200</span></label> <label class="t-radio-button"><input type="radio" value="400px" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">400px</span></label> <label class="t-radio-button"><input type="radio" value="50%" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">50%</span></label></div>
+  </div> <button type="button" class="btn-top-margin t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">打开抽屉</span></button>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/drawer/demos/size-draggable.vue correctly 1`] = `
+<div>
+  <div tabindex="0" class="t-drawer t-drawer--right">
+    <div class="t-drawer__mask"></div>
+    <div class="t-drawer__content-wrapper t-drawer__content-wrapper--right" style="width:300px;height:;">
+      <div class="t-drawer__header">抽屉标题</div>
+      <div class="t-drawer__body">
+        <p>抽屉的内容</p>
+      </div>
+      <div class="t-drawer__footer">
+        <div style="display:flex;justify-content:flex-start;"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"><span class="t-button__text">确认</span></button><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"><span class="t-button__text">取消</span></button></div>
+      </div>
+      <div style="z-index:1;position:absolute;background:transparent;left:0;width:16px;height:100%;cursor:col-resize;"></div>
+    </div>
+  </div>
+  <div class="tdesign-radio-button">
+    <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio-button"><input type="radio" value="left" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">从左侧拖拽抽屉</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="right" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">从右侧拖拽抽屉</span></label> <label class="t-radio-button"><input type="radio" value="top" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">从上方拖拽抽屉</span></label> <label class="t-radio-button"><input type="radio" value="bottom" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">从下方拖拽抽屉</span></label></div>
   </div> <button type="button" class="btn-top-margin t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">打开抽屉</span></button>
 </div>
 `;
