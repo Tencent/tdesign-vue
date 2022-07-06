@@ -103,7 +103,7 @@ export default defineComponent({
       scrollHeight = null,
       translateY = null,
       handleRowMounted = null,
-    } = type === 'virtual' && options.value.length > threshold
+    } = type === 'virtual'
       ? useVirtualScroll({
         container: panelContentRef,
         data: options,
