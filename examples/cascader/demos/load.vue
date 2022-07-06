@@ -1,9 +1,8 @@
 <template>
   <div>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value" clearable :load="load" />
+    <t-cascader v-model="value" :options="options" clearable :load="load" />
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -32,11 +31,11 @@ export default {
             nodes = [
               {
                 label: `${node.label}.1`,
-                children: node.level < 2,
+                children: node.level < 1,
               },
               {
                 label: `${node.label}.2`,
-                children: node.level < 2,
+                children: node.level < 1,
               },
             ];
           }
@@ -47,8 +46,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.t-demo-cascader + .t-demo-cascader {
-  margin-top: 16px;
-}
-</style>

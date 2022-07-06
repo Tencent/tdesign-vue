@@ -1,8 +1,11 @@
 <template>
   <div class="tdesign-demo-block-row">
-    <t-cascader v-model="value1" :options="options" multiple value-mode="onlyLeaf" />
-    <t-cascader v-model="value2" :options="options" multiple value-mode="parentFirst" />
-    <t-cascader v-model="value3" :options="options" multiple value-mode="all" />
+    <div class="cascader-demo-panel-container">
+      <t-cascader-panel v-model="value" :options="options" />
+    </div>
+    <div class="cascader-demo-panel-container">
+      <t-cascader-panel v-model="value2" :options="options" multiple />
+    </div>
   </div>
 </template>
 <script>
@@ -43,10 +46,15 @@ export default {
           ],
         },
       ],
-      value1: [],
+      value: '',
       value2: [],
-      value3: [],
     };
   },
 };
 </script>
+<style>
+.cascader-demo-panel-container {
+  border: 1px solid #eee;
+  width: 100%;
+}
+</style>

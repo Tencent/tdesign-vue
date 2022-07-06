@@ -2,12 +2,16 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2022-01-04 14:59:22
  * */
 
 import { CheckboxProps } from '../checkbox';
+import { InputProps } from '../input';
 import { PopupProps } from '../popup';
+import { SelectInputProps } from '../select-input';
+import { TagInputProps } from '../tag-input';
+import { TagProps } from '../tag';
 import { TreeNodeModel } from '../tree';
+import { PopupVisibleChangeContext } from '../popup';
 import { TNode, TreeOptionData, SizeEnum } from '../common';
 
 export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOptionData> {
@@ -39,10 +43,18 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    */
   empty?: string | TNode;
   /**
+   * 自定义过滤方法，用于对现有数据进行搜索过滤，判断是否过滤某一项数据
+   */
+  filter?: (filterWords: string, node: TreeNodeModel) => boolean | Promise<boolean>;
+  /**
    * 是否可搜索
    * @default false
    */
   filterable?: boolean;
+  /**
+   * 透传 Input 输入框组件的全部属性
+   */
+  inputProps?: InputProps;
   /**
    * 用来定义 value / label / children 在 `options` 中对应的字段别名
    */
@@ -95,6 +107,19 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    */
   popupProps?: PopupProps;
   /**
+   * 是否显示下拉框
+   */
+  popupVisible?: boolean;
+  /**
+   * 只读状态，值为真会隐藏输入框，且无法打开下拉框
+   * @default false
+   */
+  readonly?: boolean;
+  /**
+   * 透传 SelectInput 筛选器输入框组件的全部属性
+   */
+  selectInputProps?: SelectInputProps;
+  /**
    * 选中值使用完整路径，输入框在单选时也显示完整路径
    * @default true
    */
@@ -104,6 +129,14 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    * @default medium
    */
   size?: SizeEnum;
+  /**
+   * 透传 TagInput 标签输入框组件的全部属性
+   */
+  tagInputProps?: TagInputProps;
+  /**
+   * 透传 Tag 标签组件全部属性
+   */
+  tagProps?: TagProps;
   /**
    * 展开下一层级的方式
    * @default click
@@ -142,6 +175,10 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    */
   onFocus?: (context: { value: CascaderValue<CascaderOption>; e: FocusEvent }) => void;
   /**
+   * 下拉框显示或隐藏时触发
+   */
+  onPopupVisibleChange?: (visible: boolean, context: PopupVisibleChangeContext) => void;
+  /**
    * 多选模式下，选中数据被移除时触发
    */
   onRemove?: (context: RemoveContext<CascaderOption>) => void;
@@ -150,7 +187,7 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
 export interface CascaderKeysType {
   value?: string;
   label?: string;
-  children?: string;
+  children?: string | boolean;
 }
 
 export type CascaderValue<T extends TreeOptionData = TreeOptionData> = string | number | T | Array<CascaderValue<T>>;
@@ -160,7 +197,7 @@ export interface CascaderChangeContext<CascaderOption> {
   source: CascaderChangeSource;
 }
 
-export type CascaderChangeSource = 'invalid-value' | 'checked' | 'clear' | 'unchecked';
+export type CascaderChangeSource = 'invalid-value' | 'check' | 'clear' | 'uncheck';
 
 export interface RemoveContext<T> {
   value: CascaderValue<T>;

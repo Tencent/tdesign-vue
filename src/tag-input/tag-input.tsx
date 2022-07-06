@@ -167,6 +167,7 @@ export default defineComponent({
         suffixIcon={() => suffixIconNode}
         {...{
           props: {
+            ...this.inputProps,
             onEnter: this.onInputEnter,
             onKeyup: this.onInputBackspaceKeyUp,
             onMouseenter: (context: { e: MouseEvent }) => {
