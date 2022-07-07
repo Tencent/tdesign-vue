@@ -39,6 +39,11 @@ export default {
       return ['year', 'month', 'date'].includes(val);
     },
   },
+  /** 在开始日期选中之前，面板是否显示预选状态，即是否高亮预选日期 */
+  panelPreselection: {
+    type: Boolean,
+    default: true,
+  },
   /** 占位符，值为数组表示可分别为开始日期和结束日期设置占位符 */
   placeholder: {
     type: [String, Array] as PropType<TdDateRangePickerProps['placeholder']>,
@@ -84,7 +89,7 @@ export default {
   /** 选中值 */
   value: {
     type: Array as PropType<TdDateRangePickerProps['value']>,
-    default: undefined,
+    default: (): TdDateRangePickerProps['value'] => [],
   },
   /** 选中值，非受控属性 */
   defaultValue: {
