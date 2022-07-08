@@ -30,6 +30,10 @@ export default defineComponent({
     enableTimePicker: Boolean,
     firstDayOfWeek: Number,
     panelPreselection: Boolean,
+    hidePreselection: {
+      type: Boolean,
+      defaultValue: true,
+    },
     popupVisible: Boolean,
     year: Array as PropType<Array<number>>,
     month: Array as PropType<Array<number>>,
