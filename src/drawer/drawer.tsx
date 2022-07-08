@@ -153,7 +153,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
       >
         {this.showOverlay && <div class={`${name}__mask`} onClick={this.handleWrapperClick} />}
         <div class={this.wrapperClasses} style={this.wrapperStyles}>
-          {this.header !== false ? <div class={`${name}__header`}>{renderTNodeJSX(this, 'header')}</div> : null}
+          {this.header !== false ? (
+            <div class={`${name}__header`}>{renderTNodeJSX(this, 'header', <div></div>)}</div>
+          ) : null}
           {this.closeBtn !== false ? (
             <div class={`${name}__close-btn`} onClick={this.handleCloseBtnClick}>
               {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
