@@ -317,7 +317,11 @@ exports[`Drawer Drawer customVue demo works fine 1`] = `
     >
       <div
         class="t-drawer__header"
-      />
+      >
+        <div>
+          自定义头部
+        </div>
+      </div>
       <div
         class="t-drawer__close-btn"
       >
