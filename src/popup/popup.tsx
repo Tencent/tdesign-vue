@@ -14,6 +14,7 @@ const prefixCls = `${prefix}-popup`;
 const showTimeout = 250;
 const hideTimeout = 150;
 const triggers = ['click', 'hover', 'focus', 'context-menu'] as const;
+const injectionKey = '__T_POPUP';
 
 function getPopperPlacement(placement: TdPopupProps['placement']) {
   return placement.replace(/-(left|top)$/, '-start').replace(/-(right|bottom)$/, '-end') as Placement;
@@ -40,12 +41,13 @@ export default Vue.extend({
 
   provide(this: any) {
     return {
-      popup: this,
+      [injectionKey]: this,
     };
   },
 
   inject: {
     popup: {
+      from: injectionKey,
       default: undefined,
     },
   },
