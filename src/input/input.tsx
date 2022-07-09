@@ -121,6 +121,12 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       },
       immediate: true,
     },
+    type: {
+      handler(val) {
+        this.renderType = val;
+      },
+      immediate: true,
+    },
   },
 
   created() {
