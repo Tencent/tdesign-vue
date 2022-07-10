@@ -65,12 +65,14 @@ export default function useRowSelect(props: TdPrimaryTableProps) {
 
   // eslint-disable-next-line
   function getSelectedHeader(h: CreateElement) {
+    const isIndeterminate = intersectionKeys.value.length > 0 && intersectionKeys.value.length < canSelectedRows.value.length;
+    const isChecked = intersectionKeys.value.length !== 0
+      && canSelectedRows.value.length !== 0
+      && intersectionKeys.value.length === canSelectedRows.value.length;
     return () => (
       <Checkbox
-        checked={intersectionKeys.value.length === canSelectedRows.value.length}
-        indeterminate={
-          intersectionKeys.value.length > 0 && intersectionKeys.value.length < canSelectedRows.value.length
-        }
+        checked={isChecked}
+        indeterminate={isIndeterminate}
         disabled={!canSelectedRows.value.length}
         {...{ on: { change: handleSelectAll } }}
       />
