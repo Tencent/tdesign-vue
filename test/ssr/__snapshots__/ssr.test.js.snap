@@ -8226,7 +8226,6 @@ exports[`ssr snapshot test renders ./examples/jumper/demos/size.vue correctly 1`
           <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
         </svg></button></div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="t-jumper"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
           <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
@@ -8236,7 +8235,6 @@ exports[`ssr snapshot test renders ./examples/jumper/demos/size.vue correctly 1`
           <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
         </svg></button></div>
   </div>
-  <div class="t-space-item"> </div>
   <div class="t-space-item">
     <div class="t-jumper"><button type="button" class="t-button t-size-l t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__prev"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-left">
           <path fill="currentColor" d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z" fill-opacity="0.9"></path>
