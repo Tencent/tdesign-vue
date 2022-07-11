@@ -1,16 +1,9 @@
 <template>
-  <div>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value1" placeholder='请选择' check-strictly></t-cascader>
-    <t-cascader
-      class="t-demo-cascader"
-      :options="options"
-      v-model="value2"
-      check-strictly
-      multiple
-    ></t-cascader>
+  <div class="tdesign-demo-block-row">
+    <t-cascader v-model="value1" :options="options" check-strictly />
+    <t-cascader v-model="value2" :options="options" check-strictly multiple />
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -111,8 +104,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.t-demo-cascader + .t-demo-cascader {
-  margin-top: 16px;
-}
-</style>

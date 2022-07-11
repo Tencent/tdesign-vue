@@ -29,6 +29,12 @@ export default defineComponent({
     presets: Object as PropType<TdDateRangePickerProps['presets']>,
     enableTimePicker: Boolean,
     firstDayOfWeek: Number,
+    panelPreselection: Boolean,
+    hidePreselection: {
+      type: Boolean,
+      defaultValue: true,
+    },
+    popupVisible: Boolean,
     year: Array as PropType<Array<number>>,
     month: Array as PropType<Array<number>>,
     time: Array as PropType<Array<string>>,
@@ -53,26 +59,34 @@ export default defineComponent({
       enableTimePicker: props.enableTimePicker,
     });
 
+    // 兼容数据格式不标准场景 YYYY-MM-D
+    const formatDate = (newDate: string, format: string) => dayjs(newDate).isValid() ? dayjs(newDate).toDate() : dayjs(newDate, format).toDate();
+
+    // 是否隐藏预选状态,只有 value 有值的时候需要隐藏
+    const hidePreselection = !props.panelPreselection && props.value.length === 2;
+
     const disableDateOptions = computed(() => useDisableDate({
       format,
       mode: props.mode,
       disableDate: props.disableDate,
       start:
           props.isFirstValueSelected && props.activeIndex === 1
-            ? dayjs(props.value[0] as string, format).toDate()
+            ? formatDate(props.value[0] as string, format)
             : undefined,
       end:
           props.isFirstValueSelected && props.activeIndex === 0
-            ? dayjs(props.value[1] as string, format).toDate()
+            ? formatDate(props.value[1] as string, format)
             : undefined,
     }));
 
     const startTableData = computed(() => useTableData({
       isRange: true,
-      start: props.value[0] ? dayjs(props.value[0] as string, format).toDate() : undefined,
-      end: props.value[1] ? dayjs(props.value[1] as string, format).toDate() : undefined,
-      hoverStart: props.hoverValue[0] ? dayjs(props.hoverValue[0] as string).toDate() : undefined,
-      hoverEnd: props.hoverValue[1] ? dayjs(props.hoverValue[1] as string).toDate() : undefined,
+      start: props.value[0] ? formatDate(props.value[0] as string, format) : undefined,
+      end: props.value[1] ? formatDate(props.value[1] as string, format) : undefined,
+      hoverStart:
+          !hidePreselection && props.hoverValue[0] ? formatDate(props.hoverValue[0] as string, format) : undefined,
+      hoverEnd:
+          !hidePreselection && props.hoverValue[1] ? formatDate(props.hoverValue[1] as string, format) : undefined,
       year: props.year[0],
       month: props.month[0],
       mode: props.mode,
@@ -82,10 +96,12 @@ export default defineComponent({
 
     const endTableData = computed(() => useTableData({
       isRange: true,
-      start: props.value[0] ? dayjs(props.value[0] as string, format).toDate() : undefined,
-      end: props.value[1] ? dayjs(props.value[1] as string, format).toDate() : undefined,
-      hoverStart: props.hoverValue[0] ? dayjs(props.hoverValue[0] as string).toDate() : undefined,
-      hoverEnd: props.hoverValue[1] ? dayjs(props.hoverValue[1] as string).toDate() : undefined,
+      start: props.value[0] ? formatDate(props.value[0] as string, format) : undefined,
+      end: props.value[1] ? formatDate(props.value[1] as string, format) : undefined,
+      hoverStart:
+          !hidePreselection && props.hoverValue[0] ? formatDate(props.hoverValue[0] as string, format) : undefined,
+      hoverEnd:
+          !hidePreselection && props.hoverValue[1] ? formatDate(props.hoverValue[1] as string, format) : undefined,
       year: props.year[1],
       month: props.month[1],
       mode: props.mode,
@@ -98,6 +114,7 @@ export default defineComponent({
       mode: props.mode,
       firstDayOfWeek: props.firstDayOfWeek || global.value.firstDayOfWeek,
 
+      popupVisible: props.popupVisible,
       enableTimePicker: props.enableTimePicker,
       timePickerProps: props.timePickerProps,
       onMonthChange: props.onMonthChange,

@@ -56,9 +56,7 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
       props.onFocus?.({ value: value.value, e });
       emit('focus', { value: value.value, e });
     },
-    onChange: (val: string, context: { e: InputEvent }) => {
-      props.onInput?.({ input: val, value: value.value, e: context.e });
-
+    onChange: (val: string) => {
       // 输入事件
       inputValue.value = val;
 

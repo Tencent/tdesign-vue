@@ -87,6 +87,9 @@ exports[`SelectInput SelectInput autowidthMultipleVue demo works fine 1`] = `
         unselectable="off"
       />
       <span
+        class="t-input__input-pre"
+      />
+      <span
         class="t-input__suffix t-input__suffix-icon"
       >
         <svg

@@ -1,9 +1,20 @@
 <template>
-  <div>
-    <t-cascader class="t-demo-cascader" :keys="{ label: 'name', value: 'code', children: 'items' }" :options="options" v-model="value" clearable placeholder='请选择'></t-cascader>
+  <div class="tdesign-demo-block-row">
+    <t-cascader
+      v-model="value"
+      :keys="{ label: 'name', value: 'code', children: 'items' }"
+      :options="options"
+      clearable
+    />
+    <t-cascader
+      v-model="value2"
+      :keys="{ label: 'name', value: 'code', children: 'items' }"
+      :options="options"
+      multiple
+      clearable
+    />
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -43,12 +54,8 @@ export default {
         },
       ],
       value: '1.1',
+      value2: ['1.1'],
     };
   },
 };
 </script>
-<style scoped>
-.t-demo-cascader + .t-demo-cascader {
-  margin-top: 16px;
-}
-</style>

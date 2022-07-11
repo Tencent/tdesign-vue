@@ -1,11 +1,5 @@
 [
   {
-    "name": "allowResizeColumnWidth",
-    "type": "Boolean",
-    "defaultValue": false,
-    "options": []
-  },
-  {
     "name": "bordered",
     "type": "Boolean",
     "defaultValue": false,
@@ -30,6 +24,12 @@
     "options": []
   },
   {
+    "name": "horizontalScrollAffixedBottom",
+    "type": "Boolean",
+    "defaultValue": false,
+    "options": []
+  },
+  {
     "name": "hover",
     "type": "Boolean",
     "defaultValue": false,
@@ -37,6 +37,18 @@
   },
   {
     "name": "loading",
+    "type": "Boolean",
+    "defaultValue": false,
+    "options": []
+  },
+  {
+    "name": "paginationAffixedBottom",
+    "type": "Boolean",
+    "defaultValue": false,
+    "options": []
+  },
+  {
+    "name": "resizable",
     "type": "Boolean",
     "defaultValue": false,
     "options": []

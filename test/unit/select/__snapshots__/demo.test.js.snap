@@ -131,9 +131,6 @@ exports[`Select Select collapsedVue demo works fine 1`] = `
           </span>
         </div>
         <span
-          class="t-input__input-pre"
-        />
-        <span
           class="t-input__suffix t-input__suffix-icon"
         >
           <svg
@@ -195,9 +192,6 @@ exports[`Select Select collapsedVue demo works fine 1`] = `
             +1
           </span>
         </div>
-        <span
-          class="t-input__input-pre"
-        />
         <span
           class="t-input__suffix t-input__suffix-icon"
         >
@@ -263,9 +257,6 @@ exports[`Select Select collapsedVue demo works fine 1`] = `
             </span>
           </span>
         </div>
-        <span
-          class="t-input__input-pre"
-        />
         <span
           class="t-input__suffix t-input__suffix-icon"
         >
@@ -503,9 +494,6 @@ exports[`Select Select customSelectedVue demo works fine 1`] = `
           </span>
         </div>
         <span
-          class="t-input__input-pre"
-        />
-        <span
           class="t-input__suffix t-input__suffix-icon"
         >
           <svg
@@ -625,9 +613,6 @@ exports[`Select Select customSelectedVue demo works fine 1`] = `
           </span>
         </div>
         <span
-          class="t-input__input-pre"
-        />
-        <span
           class="t-input__suffix t-input__suffix-icon"
         >
           <svg
@@ -724,9 +709,6 @@ exports[`Select Select disabledVue demo works fine 1`] = `
           </span>
         </div>
         <span
-          class="t-input__input-pre"
-        />
-        <span
           class="t-input__suffix t-input__suffix-icon"
         >
           <svg
@@ -816,11 +798,6 @@ exports[`Select Select filterableVue demo works fine 1`] = `
           type="text"
           unselectable="off"
         />
-        <span
-          class="t-input__input-pre"
-        >
-          -请选择-
-        </span>
         <span
           class="t-input__suffix t-input__suffix-icon"
         >
@@ -1015,9 +992,6 @@ exports[`Select Select labelInValueVue demo works fine 1`] = `
           </span>
         </div>
         <span
-          class="t-input__input-pre"
-        />
-        <span
           class="t-input__suffix t-input__suffix-icon"
         >
           <svg
@@ -1065,11 +1039,6 @@ exports[`Select Select maxVue demo works fine 1`] = `
           type="text"
           unselectable="on"
         />
-        <span
-          class="t-input__input-pre"
-        >
-          -请选择-
-        </span>
         <span
           class="t-input__suffix t-input__suffix-icon"
         >
@@ -1148,9 +1117,6 @@ exports[`Select Select multipleVue demo works fine 1`] = `
             </svg>
           </span>
         </div>
-        <span
-          class="t-input__input-pre"
-        />
         <span
           class="t-input__suffix t-input__suffix-icon"
         >
@@ -1299,9 +1265,6 @@ exports[`Select Select multipleVue demo works fine 1`] = `
           </span>
         </div>
         <span
-          class="t-input__input-pre"
-        />
-        <span
           class="t-input__suffix t-input__suffix-icon"
         >
           <svg
@@ -1381,9 +1344,6 @@ exports[`Select Select multipleVue demo works fine 1`] = `
             +2
           </span>
         </div>
-        <span
-          class="t-input__input-pre"
-        />
         <span
           class="t-input__suffix t-input__suffix-icon"
         >
@@ -1768,11 +1728,6 @@ exports[`Select Select remoteSearchVue demo works fine 1`] = `
           type="text"
           unselectable="off"
         />
-        <span
-          class="t-input__input-pre"
-        >
-          请输入搜索
-        </span>
         <span
           class="t-input__suffix t-input__suffix-icon"
         >

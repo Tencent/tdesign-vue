@@ -22,6 +22,7 @@ export default defineComponent({
     month: Number,
     tableData: Array,
     time: String,
+    popupVisible: Boolean,
     firstDayOfWeek: Number,
     partial: String,
     onYearChange: Function,
@@ -85,9 +86,11 @@ export default defineComponent({
             <TTimePickerPanel
               {...{
                 props: {
+                  key: this.partial,
                   format: timeFormat,
                   value: this.time,
                   onChange: this.onTimePickerChange,
+                  showPanel: this.popupVisible,
                   ...this.timePickerProps,
                 },
               }}

@@ -313,6 +313,7 @@ export default defineComponent({
       timePickerProps: props.timePickerProps,
       enableTimePicker: props.enableTimePicker,
       presetsPlacement: props.presetsPlacement,
+      panelPreselection: props.panelPreselection,
       onCellClick,
       onCellMouseEnter,
       onCellMouseLeave,
