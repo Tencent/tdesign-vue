@@ -201,7 +201,7 @@ export default defineComponent({
       if (filterable.value) {
         // 仅有filterable属性时，默认不区分大小写过滤label
         return realOptions.value.filter(
-          (option) => option[realLabel.value].toString().toLowerCase().indexOf(tInputValue.value?.toString().toLowerCase())
+          (option) => option[realLabel.value]?.toString().toLowerCase().indexOf(tInputValue.value?.toString().toLowerCase())
             !== -1,
         );
       }
@@ -261,6 +261,7 @@ export default defineComponent({
 
     const debounceOnRemote = debounce(() => {
       instance.emit('search', tInputValue.value);
+      props.onSearch?.(tInputValue.value.toString());
     }, 300);
 
     watch(
@@ -525,6 +526,7 @@ export default defineComponent({
       setTInputValue('');
       visible.value = false;
       instance.emit('clear', { e });
+      props.onClear?.({ e });
     };
     const getOptions = (option: OptionInstance) => {
       // create option值不push到options里
@@ -553,17 +555,21 @@ export default defineComponent({
     };
     const createOption = (value: string) => {
       instance.emit('create', value);
+      props.onCreate?.(value);
     };
     const focus = (value: string, context: { e: FocusEvent }) => {
       focusing.value = true;
       instance.emit('focus', { value, e: context?.e });
+      props.onFocus?.({ value, e: context?.e });
     };
     const blur = (value: string, context: { e: FocusEvent | KeyboardEvent }) => {
       focusing.value = false;
       instance.emit('blur', { value, e: context?.e });
+      props.onBlur?.({ value, e: context?.e });
     };
     const enter = (value: string, context: { e: KeyboardEvent }) => {
       instance.emit('enter', { value, e: context?.e, inputValue: tInputValue.value });
+      props.onEnter?.({ value, e: context?.e, inputValue: tInputValue.value.toString() });
     };
     const getOverlayElm = (): HTMLElement => {
       let r;

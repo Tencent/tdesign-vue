@@ -29,10 +29,7 @@ export default {
     },
   },
   /** 用于格式化日期，全局配置默认为：'YYYY-MM-DD'，[详细文档](https://day.js.org/docs/en/display/format) */
-  format: {
-    type: String,
-    default: '',
-  },
+  format: String,
   /** 透传给输入框（Input）组件的参数 */
   inputProps: {
     type: Object as PropType<TdDatePickerProps['inputProps']>,
@@ -101,8 +98,6 @@ export default {
   onChange: Function as PropType<TdDatePickerProps['onChange']>,
   /** 输入框获得焦点时触发 */
   onFocus: Function as PropType<TdDatePickerProps['onFocus']>,
-  /** 输入框数据发生变化时触发，参数 input 表示输入内容，value 表示组件当前有效值 */
-  onInput: Function as PropType<TdDatePickerProps['onInput']>,
   /** 面板选中值后触发 */
   onPick: Function as PropType<TdDatePickerProps['onPick']>,
 };

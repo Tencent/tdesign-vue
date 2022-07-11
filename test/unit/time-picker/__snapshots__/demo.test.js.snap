@@ -697,7 +697,7 @@ exports[`TimePicker TimePicker rangeVue demo works fine 1`] = `
       class="t-range-input-popup"
     >
       <div
-        class="t-range-input t-range-input-popup"
+        class="t-range-input"
       >
         <div
           class="t-range-input__inner"

@@ -108,9 +108,10 @@ export default function useTagList(props: TdTagInputProps) {
       const len = tagValue.value.length - newList.length;
       const more = renderTNode('collapsedItems', {
         params: {
-          value: tagValue,
+          value: tagValue.value,
           count: tagValue.value.length,
           collapsedTags: tagValue.value.slice(minCollapsedNum.value, tagValue.value.length),
+          collapsedSelectedItems: tagValue.value.slice(minCollapsedNum.value, tagValue.value.length),
         },
       });
       list.push(more ?? <Tag key="more">+{len}</Tag>);

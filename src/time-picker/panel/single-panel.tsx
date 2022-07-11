@@ -62,7 +62,7 @@ export default defineComponent({
     watch(
       () => dayjsValue.value,
       () => {
-        if (dayjsValue.value) updateTimeScrollPos();
+        if (dayjsValue.value) updateTimeScrollPos(true);
       },
     );
 
@@ -232,7 +232,7 @@ export default defineComponent({
       });
     };
 
-    const handleTimeItemClick = (col: EPickerCols, el: string | number) => {
+    const handleTimeItemClick = (col: EPickerCols, el: string | number, idx: number) => {
       if (!timeItemCanUsed(col, el)) return;
       if (timeArr.includes(col)) {
         if (
@@ -243,9 +243,11 @@ export default defineComponent({
           // eslint-disable-next-line no-param-reassign
           el = Number(el) + 12;
         }
-        value.value
-          ? props.onChange?.(dayjsValue.value[col]?.(el).format(format.value))
-          : props.onChange?.(dayjsValue.value[col]?.(el).format(format.value));
+        scrollToTime(col, el, idx, 'smooth');
+
+        setTimeout(() => {
+          props.onChange(dayjsValue.value[col]?.(el).format(format.value));
+        }, 100);
       } else {
         const currentHour = dayjsValue.value.hour();
         if (el === AM && currentHour >= 12) {
@@ -335,7 +337,7 @@ export default defineComponent({
                     [`${this.classPrefix}-is-current`]: this.isCurrent(col, el),
                   },
                 ]}
-                onClick={() => this.handleTimeItemClick(col, el)}
+                onClick={() => this.handleTimeItemClick(col, el, idx)}
               >
                 {/* eslint-disable-next-line no-nested-ternary */}
                 {timeArr.includes(col)

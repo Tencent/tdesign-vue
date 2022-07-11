@@ -46,6 +46,7 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
       context?.e?.stopPropagation();
       popupVisible.value = false;
       onChange?.('', { dayjsValue: dayjs(''), trigger: 'clear' });
+      emit('clear', '', { dayjsValue: dayjs(''), trigger: 'clear' });
     },
     onBlur: (val: string, context: { e: FocusEvent }) => {
       props.onBlur?.({ value: val, e: context.e });
@@ -55,10 +56,7 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
       props.onFocus?.({ value: value.value, e });
       emit('focus', { value: value.value, e });
     },
-    onChange: (val: string, context: { e: InputEvent }) => {
-      props.onInput?.({ input: val, value: value.value, e: context.e });
-      emit('input', { input: val, value: value.value, e: context.e });
-
+    onChange: (val: string) => {
       // 输入事件
       inputValue.value = val;
 

@@ -52,6 +52,7 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
       e.stopPropagation();
       popupVisible.value = false;
       onChange?.([], { dayjsValue: [], trigger: 'clear' });
+      emit('clear', [], { dayjsValue: [], trigger: 'clear' });
     },
     onBlur: (newVal: string[], { e, position }: any) => {
       props.onBlur?.({ value: newVal, partial: PARTIAL_MAP[position], e });
@@ -62,21 +63,8 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
       emit('focus', { value: newVal, partial: PARTIAL_MAP[position], e });
       activeIndex.value = position === 'first' ? 0 : 1;
     },
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     onChange: (newVal: string[], { e, position }: any) => {
-      const index = position === 'first' ? 0 : 1;
-
-      props.onInput?.({
-        input: newVal[index],
-        value: value.value,
-        partial: PARTIAL_MAP[position],
-        e,
-      });
-      emit('input', {
-        input: newVal[index],
-        value: value.value,
-        partial: PARTIAL_MAP[position],
-        e,
-      });
       inputValue.value = newVal;
 
       // 跳过不符合格式化的输入框内容

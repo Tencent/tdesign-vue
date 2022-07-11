@@ -58,7 +58,7 @@ export default defineComponent({
         ) as string[];
 
         // 确保右侧面板月份比左侧大 避免两侧面板月份一致
-        if (value.value.length === 2) {
+        if (value.value.length === 2 && !props.enableTimePicker) {
           const nextMonth = value.value.map((v: string) => dayjs(v).month());
           if (year[0] === year[1] && nextMonth[0] === nextMonth[1]) {
             nextMonth[0] === 11 ? (nextMonth[0] -= 1) : (nextMonth[1] += 1);
@@ -273,7 +273,7 @@ export default defineComponent({
       month.value = nextMonth;
     }
 
-    const panelProps = computed(() => ({
+    const panelProps: any = computed(() => ({
       hoverValue: (isHoverCell.value ? inputValue.value : []) as string[],
       value: (isSelected.value ? cacheValue.value : value.value) as string[],
       isFirstValueSelected: isFirstValueSelected.value,
@@ -288,6 +288,9 @@ export default defineComponent({
       firstDayOfWeek: props.firstDayOfWeek,
       timePickerProps: props.timePickerProps,
       enableTimePicker: props.enableTimePicker,
+      presetsPlacement: props.presetsPlacement,
+      panelPreselection: props.panelPreselection,
+      popupVisible: popupVisible.value,
       onCellClick,
       onCellMouseEnter,
       onCellMouseLeave,

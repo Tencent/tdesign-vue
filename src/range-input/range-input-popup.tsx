@@ -32,11 +32,11 @@ export default defineComponent({
 
   render() {
     const {
-      COMPONENT_NAME, tOverlayStyle, innerPopupVisible, onInnerPopupVisibleChange, popupClasses,
+      tOverlayStyle, innerPopupVisible, onInnerPopupVisibleChange, popupClasses,
     } = this;
 
     return (
-      <div class={COMPONENT_NAME}>
+      <div class={popupClasses}>
         <Popup
           hideEmptyPopup
           content={this.panel}
@@ -51,7 +51,6 @@ export default defineComponent({
               ...(this.popupProps as Object),
             },
           }}
-          class={popupClasses}
         >
           <RangeInput
             {...{

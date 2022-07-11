@@ -53,9 +53,26 @@ module.exports = {
     },
   },
   'date-picker': {
-    panelStr: `const panelList = [{label: 'datePicker', value: 'datePicker'}];`,
+    importStr: `
+      import datePickerConfigJson from './date-picker-props.json';\n
+      import dateRangePickerConfigJson from './date-range-picker-props.json';\n
+    `,
+    configStr: `const configList = ref(datePickerConfigJson);`,
+    panelStr: `
+      const panelList = [
+        {label: 'datePicker', value: 'datePicker', config: datePickerConfigJson},
+        {label: 'dateRangePicker', value: 'dateRangePicker', config: dateRangePickerConfigJson}
+      ];
+    `,
+    panelChangeStr: `
+      function onPanelChange(panel) {
+        configList.value = panelList.find(item => item.value === panel).config;
+        usageCode.value = \`<template>\${usageCodeMap[panel].trim()}</template>\`;
+      }
+    `,
     render: {
       datePicker: `<t-date-picker v-bind="configProps" />`,
+      dateRangePicker: `<t-date-range-picker v-bind="configProps" />`,
     },
   },
   dropdown: {
@@ -143,19 +160,23 @@ module.exports = {
   table: {
     importStr: `
       import baseConfigJson from './base-table-props.json';\n
-      import primaryConfigJson from './primary-table-props.json';\n
     `,
     configStr: `const configList = ref(baseConfigJson);`,
     script: `
-      const visible = ref(false);
-      const handleClick = () => {
-        visible.value = !visible.value;
-      };
+      const data = ref(Array(30).fill(0).map((_, i) => ({
+        index: i,
+        platform: '公有',
+        description: '数据源',
+      })));
+      const columns = ref([
+        {colKey: 'index', title: 'index'},
+        {colKey: 'platform', title: '平台'},
+        {colKey: 'description', title: '说明'},
+      ]);
     `,
     panelStr: `
       const panelList = [
-        {label: 'baseTable', value: 'baseTable', config: baseConfigJson},
-        {label: 'primaryTable', value: 'primaryTable', config: primaryConfigJson}
+        {label: 'baseTable', value: 'baseTable', config: baseConfigJson}
       ];
     `,
     panelChangeStr: `
@@ -168,41 +189,11 @@ module.exports = {
       baseTable: `<t-table
         v-bind="configProps"
         row-key="index"
-        :data="[{index:1,platform:'公用'},{index:2,platform:'私有'}]"
-        :columns="[{
-          align: 'center',
-          width: '100',
-          colKey: 'index',
-          title: '序号',
-        },
-        {
-          width: 100,
-          colKey: 'platform',
-          title: '平台',
-        }]"
+        :maxHeight="140"
+        :pagination="{ total: 30 }"
+        :data="data"
+        :columns="columns"
       />`,
-      primaryTable: `
-        <div>
-          <t-button @click="visible = true">列配置</t-button>
-          <t-table
-            v-bind="configProps"
-            row-key="index"
-            :columnControllerVisible.sync="visible"
-            :data="[{index:1,platform:'公用'},{index:2,platform:'私有'}]"
-            :columns="[{
-              align: 'center',
-              width: '100',
-              colKey: 'index',
-              title: '序号',
-            },
-            {
-              width: 100,
-              colKey: 'platform',
-              title: '平台',
-            }]"
-          />
-        </div>
-      `,
     },
   },
   tabs: {

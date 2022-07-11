@@ -185,21 +185,17 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         emitEvent<Parameters<TdDialogProps['onEscKeydown']>>(this, 'esc-keydown', { e });
         // 根据 closeOnEscKeydown 判断按下ESC时是否触发close事件
         if (this.closeOnEscKeydown ?? this.global.closeOnEscKeydown) {
-          this.emitCloseEvent({
-            trigger: 'esc',
-            e,
-          });
+          this.emitCloseEvent({ e, trigger: 'esc' });
         }
       }
     },
     overlayAction(e: MouseEvent) {
       // 根据closeOnClickOverlay判断点击蒙层时是否触发close事件
       if (this.showOverlay && (this.closeOnOverlayClick ?? this.global.closeOnOverlayClick)) {
-        emitEvent<Parameters<TdDialogProps['onOverlayClick']>>(this, 'overlay-click', { e });
-        this.emitCloseEvent({
-          trigger: 'overlay',
-          e,
-        });
+        if (e.target === this.$refs.dialogPosition) {
+          emitEvent<Parameters<TdDialogProps['onOverlayClick']>>(this, 'overlay-click', { e });
+          this.emitCloseEvent({ e, trigger: 'overlay' });
+        }
       }
     },
     closeBtnAction(e: MouseEvent) {
@@ -345,16 +341,10 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       const bodyClassName = this.theme === 'default' ? `${name}__body` : `${name}__body__icon`;
       // 此处获取定位方式 top 优先级较高 存在时 默认使用top定位
       return (
-        // /* 非模态形态下draggable为true才允许拖拽 */
-        <div class={this.wrapClass} onClick={this.overlayAction}>
-          <div class={this.positionClass} style={this.positionStyle}>
-            <div
-              key="dialog"
-              ref="dialog"
-              class={this.dialogClass}
-              style={this.dialogStyle}
-              onClick={(e: MouseEvent) => e.stopPropagation()}
-            >
+        // 非模态形态下draggable为true才允许拖拽
+        <div class={this.wrapClass}>
+          <div class={this.positionClass} style={this.positionStyle} onClick={this.overlayAction} ref="dialogPosition">
+            <div key="dialog" ref="dialog" class={this.dialogClass} style={this.dialogStyle}>
               <div class={`${name}__header`}>
                 {this.getIcon()}
                 {renderTNodeJSX(this, 'header', defaultHeader)}

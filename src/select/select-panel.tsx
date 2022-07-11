@@ -103,7 +103,7 @@ export default defineComponent({
       scrollHeight = null,
       translateY = null,
       handleRowMounted = null,
-    } = type === 'virtual' && options.value.length > threshold
+    } = type === 'virtual'
       ? useVirtualScroll({
         container: panelContentRef,
         data: options,
@@ -120,6 +120,9 @@ export default defineComponent({
 
     let lastScrollY = -1;
     const onInnerVirtualScroll = (e: WheelEvent) => {
+      if (!isVirtual.value) {
+        return;
+      }
       const target = (e.target || e.srcElement) as HTMLElement;
       const top = target.scrollTop;
       // 排除横向滚动出发的纵向虚拟滚动计算
@@ -226,7 +229,9 @@ export default defineComponent({
       ));
     },
     renderOptionsContent() {
-      const { tSelect, options, visibleData } = this;
+      const {
+        tSelect, options, visibleData, isVirtual,
+      } = this;
       const children = renderTNodeJSX(this, 'default');
       // 自定义输出
       if (tSelect.hasSlotOptions.value) {
@@ -240,7 +245,7 @@ export default defineComponent({
       let optionsContent;
       if (tSelect.isGroupOption.value) {
         // 有分组
-        optionsContent = (visibleData || options).map((groupList: SelectOptionGroup) => {
+        optionsContent = (isVirtual && visibleData ? visibleData : options).map((groupList: SelectOptionGroup) => {
           const children = groupList.children.filter((item) => tSelect.displayOptionsMap.value.get(item));
           return (
             <t-option-group label={groupList.group} divider={groupList.divider}>
@@ -250,7 +255,7 @@ export default defineComponent({
         });
       } else {
         // 无分组
-        optionsContent = this.renderSingleOption(visibleData || options);
+        optionsContent = this.renderSingleOption(isVirtual && visibleData ? visibleData : options);
       }
       return <ul class={`${name}__list`}>{optionsContent}</ul>;
     },
