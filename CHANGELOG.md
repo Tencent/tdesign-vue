@@ -5,6 +5,38 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.43.3 `2022-07-11` 
+### 🚀 Features
+- `Cascader`: @pengYYYYY ([#1074](https://github.com/Tencent/tdesign-vue/pull/1074))
+  - 基于 `select-input` 重构, 文本过长省略使用原生 title 展示全文本，不再使用 `tooltip` 组件
+  - 增加 `popupVisible`， `readonly`， `selectInputProps`， `onPopupVisibleChange` 属性
+- `CheckBox`: 增加 `title` 属性透传  @pengYYYYY ([#1074](https://github.com/Tencent/tdesign-vue/pull/1074))
+- `DatePicker`:
+  - 新增 `panelPreselection api` by @HQ-Lin ([#1134](https://github.com/Tencent/tdesign-vue/pull/1134))
+  - 优化面板月份展示 @HQ-Lin ([#1140](https://github.com/Tencent/tdesign-vue/pull/1140))
+- `Drawer`: 优化抽屉拖拽体验([#793](https://github.com/Tencent/tdesign-vue/issues/793)) @uyarn ([#1135](https://github.com/Tencent/tdesign-vue/pull/1135))
+### 🐞 Bug Fixes
+- `Space`:  过滤无效的节点 @pengYYYYY ([#1124](https://github.com/Tencent/tdesign-vue/pull/1124))
+- `Cascader`: @pengYYYYY ([#1074](https://github.com/Tencent/tdesign-vue/pull/1074))
+  - 修复多选时，文本过长未处理的问题 ([issue #907](https://github.com/Tencent/tdesign-vue/issues/907))
+  - 修复选中内容过多时，再点击选择器后的闪动问题 ([issue #949](https://github.com/Tencent/tdesign-vue/issues/949))
+- `SelectInput`: 修复 `overlayStyle ` 响应式无法更新的问题 @pengYYYYY ([#1074](https://github.com/Tencent/tdesign-vue/pull/1074))
+- `TagInput`: 修复 `inputProps ` 属性透传无效 @pengYYYYY ([#1074](https://github.com/Tencent/tdesign-vue/pull/1074))
+- `Transfer`: 修复穿梭框进行穿梭时报错的问题 @BigLiao ([#1132](https://github.com/Tencent/tdesign-vue/pull/1132))
+- `Table`: 树形结构支持懒加载 @chaishi ([#1128](https://github.com/Tencent/tdesign-vue/pull/1128))
+- `Dialog`: 修复打开对话框时出现滚动条的问题 ([#1163](https://github.com/Tencent/tdesign-vue-next/issues/1163)) @pengYYYYY ([#1074](https://github.com/Tencent/tdesign-vue/pull/1074))
+- `DatePicker`: 修复日期格式化问题 by @HQ-Lin ([#1134](https://github.com/Tencent/tdesign-vue/pull/1134))
+- `TimePicker`: by @uyarn ([#1134](https://github.com/Tencent/tdesign-vue/pull/1134))
+  - 优化允许输入滚动的使用体验
+  - `TimeRangePicker` 修复允许输入的缺陷
+- `Select`:
+  - 修复远程搜索动态生成选项失败的缺陷 by @uyarn ([#1134](https://github.com/Tencent/tdesign-vue/pull/1134))
+  - 虚拟滚动支持远程搜索场景 @skytt ([#1133](https://github.com/Tencent/tdesign-vue/pull/1133))
+- `Dialog`: 修复阻止冒泡导致 popup 无法正常关闭 @HQ-Lin ([#1139](https://github.com/Tencent/tdesign-vue/pull/1139))
+- `Drawer`: 修复头部渲染异常问题 @HQ-Lin ([#1144](https://github.com/Tencent/tdesign-vue/pull/1144))
+- `Input`: 修复Input 组件 切换 type 后不生效的问题 @qdzhaoxiaodao ([#1148](https://github.com/Tencent/tdesign-vue/pull/1148))
+- 全局配置: 修复 useConfig computed 属性计算导致列表渲染卡顿问题 @brianzhang ([#1122](https://github.com/Tencent/tdesign-vue/pull/1122))
+
 ## 🌈 0.43.2 `2022-07-04` 
 ### 🚀 Features
 - `Form`:
