@@ -80,7 +80,7 @@ export default {
   /** 选中值 */
   value: {
     type: [String, Number, Array, Date] as PropType<TdDatePickerProps['value']>,
-    default: '',
+    default: undefined,
   },
   /** 选中值，非受控属性 */
   defaultValue: {
