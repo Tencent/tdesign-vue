@@ -8,8 +8,9 @@ spline: explain
   <svg fill="none" viewBox="0 0 16 16" width="16px" height="16px" style="margin-right: 5px">
     <path fill="#00a870" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fillopacity="0.9"></path>
   </svg>
-  由于vue2.7存在于tdesign-vue依赖的第三方包不兼容的情况 请暂时保证您的vue版本在2.7以下，未来我们将支持在vue2.7中使用。
+  由于 vue2.7 与 tdesign-vue 的其他依赖不兼容，请暂时保证您的 vue 版本在 2.7 以下，未来将支持在 vue2.7 中使用。
 </div>
+
 ### 安装
 
 #### 使用 npm 安装
@@ -62,7 +63,6 @@ npm package 中提供了多种构建产物，可以阅读 [这里](https://githu
 import 'tdesign-vue/dist/reset.css';
 ```
 
-
 ### 自动引入
 
 故名思义，就是可以直接使用 TDesign 的组件，而不需要手动引入：
@@ -76,7 +76,7 @@ import 'tdesign-vue/dist/reset.css';
   // import { Button as TButton } from 'tdesign-vue' // 组件的引入可以省略
   export default {
     // components: { TButton }, // 对应的组件注册也可以省略
-  }
+  };
 </script>
 ```
 
@@ -137,12 +137,10 @@ module.exports = {
 ### 浏览器兼容性
 
 | [<img src="https://tdesign.gtimg.com/docs/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/> IE / Edge | [<img src="https://tdesign.gtimg.com/docs/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Firefox | [<img src="https://tdesign.gtimg.com/docs/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://tdesign.gtimg.com/docs/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Safari |
-| --- | --- | --- | --- |
-| Edge >=84 | Firefox >=83 | Chrome >=84 | Safari >=14.1 |
-
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Edge >=84                                                                                                                                                                 | Firefox >=83                                                                                                                                                            | Chrome >=84                                                                                                                                                          | Safari >=14.1                                                                                                                                                        |
 
 详情参见[桌面端组件库浏览器兼容性说明](https://github.com/Tencent/tdesign/wiki/%E6%A1%8C%E9%9D%A2%E7%AB%AF%E7%BB%84%E4%BB%B6%E5%BA%93%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7%E8%AF%B4%E6%98%8E)
-
 
 ### FAQ
 
