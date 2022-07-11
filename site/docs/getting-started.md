@@ -4,6 +4,12 @@ description: TDesign 适配桌面端的组件库，适合在 vue 2 技术栈项�
 spline: explain
 ---
 
+<div style="background: rgba(0, 168, 112, .1); display: flex; align-items: center; line-height: 20px; padding: 14px 24px; border-radius: 3px; color: #555a65">
+  <svg fill="none" viewBox="0 0 16 16" width="16px" height="16px" style="margin-right: 5px">
+    <path fill="#00a870" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fillopacity="0.9"></path>
+  </svg>
+  由于vue2.7存在于tdesign-vue依赖的第三方包不兼容的情况 请暂时保证您的vue版本在2.7以下，未来我们将支持在vue2.7中使用。
+</div>
 ### 安装
 
 #### 使用 npm 安装
