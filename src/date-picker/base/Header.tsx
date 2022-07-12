@@ -1,7 +1,7 @@
 import {
   defineComponent, PropType, ref, computed,
 } from '@vue/composition-api';
-import TJumper from '../../pagination/jumper';
+import TJumper from '../../jumper/jumper';
 import TSelect from '../../select/select';
 import { useConfig, usePrefixClass } from '../../hooks/useConfig';
 import type { TdDatePickerProps } from '../type';
@@ -86,19 +86,19 @@ export default defineComponent({
     // hover title
     const labelMap = {
       year: {
-        prevTitle: global.value.preDecade,
-        currentTitle: global.value.now,
-        nextTitle: global.value.nextDecade,
+        prev: global.value.preDecade,
+        current: global.value.now,
+        next: global.value.nextDecade,
       },
       month: {
-        prevTitle: global.value.preYear,
-        currentTitle: global.value.now,
-        nextTitle: global.value.nextYear,
+        prev: global.value.preYear,
+        current: global.value.now,
+        next: global.value.nextYear,
       },
       date: {
-        prevTitle: global.value.preMonth,
-        currentTitle: global.value.now,
-        nextTitle: global.value.nextMonth,
+        prev: global.value.preMonth,
+        current: global.value.now,
+        next: global.value.nextMonth,
       },
     };
 
@@ -181,7 +181,7 @@ export default defineComponent({
           />
         </div>
 
-        <TJumper {...{ props: { ...labelMap[this.mode], onJumperClick: this.onJumperClick, size: 'small' } }} />
+        <TJumper {...{ props: { tips: labelMap[this.mode], onChange: this.onJumperClick, size: 'small' } }} />
       </div>
     );
   },
