@@ -65,6 +65,7 @@ export default defineComponent({
   props: [
     'inputValue',
     'panelTopContent',
+    'panelBottomContent',
     'size',
     'options',
     'empty',
