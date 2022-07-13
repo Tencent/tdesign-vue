@@ -308,7 +308,7 @@ export default defineComponent({
     const headerOpacity = props.headerAffixedTop ? Number(this.showAffixHeader) : 1;
     const affixHeaderWrapHeightStyle = {
       width: `${this.tableWidth}px`,
-      height: `${affixHeaderWrapHeight}px`,
+      height: `${barWidth === 12 ? affixHeaderWrapHeight - 4 : affixHeaderWrapHeight}px`,
       opacity: headerOpacity,
       marginTop: onlyVirtualScrollBordered ? `${borderWidth}px` : 0,
     };
