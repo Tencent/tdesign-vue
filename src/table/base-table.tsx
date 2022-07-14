@@ -307,10 +307,11 @@ export default defineComponent({
     const affixHeaderWrapHeight = (this.affixHeaderRef?.getBoundingClientRect().height || 0) - barWidth - borderWidth;
     // 两类场景：1. 虚拟滚动，永久显示表头，直到表头消失在可视区域； 2. 表头吸顶，根据滚动情况判断是否显示吸顶表头
     const headerOpacity = props.headerAffixedTop ? Number(this.showAffixHeader) : 1;
+    // IE浏览器需要遮挡header吸顶滚动条，要减去getBoundingClientRect.height的滚动条高度4像素
+    const IEHeaderWrap = 4;
     const affixHeaderWrapHeightStyle = {
       width: `${this.tableWidth}px`,
-      // IE浏览器需要遮挡header吸顶滚动条，要减去getBoundingClientRect.height的滚动条高度4像素
-      height: `${getIEVersion() <= 11 ? affixHeaderWrapHeight - 4 : affixHeaderWrapHeight}px`,
+      height: `${getIEVersion() <= 11 ? affixHeaderWrapHeight - IEHeaderWrap : affixHeaderWrapHeight}px`,
       opacity: headerOpacity,
       marginTop: onlyVirtualScrollBordered ? `${borderWidth}px` : 0,
     };
