@@ -306,12 +306,13 @@ export default defineComponent({
     const barWidth = this.isWidthOverflow ? this.scrollbarWidth : 0;
     // IE浏览器需要遮挡header吸顶滚动条，要减去getBoundingClientRect.height的滚动条高度4像素
     const IEHeaderWrap = getIEVersion() <= 11 ? 4 : 0;
-    const affixHeaderWrapHeight = (this.affixHeaderRef?.getBoundingClientRect().height || 0) - barWidth - borderWidth;
+    const affixHeaderHeight = (this.affixHeaderRef?.getBoundingClientRect().height || 0) - IEHeaderWrap;
+    const affixHeaderWrapHeight = affixHeaderHeight - barWidth - borderWidth;
     // 两类场景：1. 虚拟滚动，永久显示表头，直到表头消失在可视区域； 2. 表头吸顶，根据滚动情况判断是否显示吸顶表头
     const headerOpacity = props.headerAffixedTop ? Number(this.showAffixHeader) : 1;
     const affixHeaderWrapHeightStyle = {
       width: `${this.tableWidth}px`,
-      height: `${affixHeaderWrapHeight - IEHeaderWrap}px`,
+      height: `${affixHeaderWrapHeight}px`,
       opacity: headerOpacity,
       marginTop: onlyVirtualScrollBordered ? `${borderWidth}px` : 0,
     };
