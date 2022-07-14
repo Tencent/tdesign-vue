@@ -30,6 +30,7 @@ import { ROW_LISTENERS } from './tr';
 import THead from './thead';
 import TFoot from './tfoot';
 import log from '../_common/js/log';
+import { getIEVersion } from '../_common/js/utils/helper';
 import { getAffixProps } from './utils';
 
 export const BASE_TABLE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY'];
@@ -308,7 +309,8 @@ export default defineComponent({
     const headerOpacity = props.headerAffixedTop ? Number(this.showAffixHeader) : 1;
     const affixHeaderWrapHeightStyle = {
       width: `${this.tableWidth}px`,
-      height: `${barWidth === 12 ? affixHeaderWrapHeight - 4 : affixHeaderWrapHeight}px`,
+      // IE浏览器需要遮挡header吸顶滚动条，要减去getBoundingClientRect.height的滚动条高度4像素
+      height: `${getIEVersion() <= 11 ? affixHeaderWrapHeight - 4 : affixHeaderWrapHeight}px`,
       opacity: headerOpacity,
       marginTop: onlyVirtualScrollBordered ? `${borderWidth}px` : 0,
     };
