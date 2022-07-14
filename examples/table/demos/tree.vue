@@ -95,6 +95,7 @@ function getData(currentPage = 1) {
             ...obj,
             id: thirdIndex,
             key: `我是 ${thirdIndex}_${currentPage} 号`,
+            list: true,
           };
         });
         return secondObj;
@@ -285,7 +286,7 @@ export default {
           type: 'Number',
         },
       ];
-      this.$refs.table.appendTo(row.key, newData);
+      this.$refs.table.appendTo(row?.key, newData);
       MessagePlugin.success(`已插入子节点我是 ${randomKey1} 和 ${randomKey2} 号，请展开查看`);
     },
 
@@ -387,6 +388,9 @@ export default {
         needed: key % 4 === 0 ? '是' : '否',
         description: '数据源',
       });
+
+      // 同时添加多个元素，示例代码有效勿删
+      // this.appendMultipleDataTo();
     },
 
     onAbnormalDragSort(params) {
