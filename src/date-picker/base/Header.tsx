@@ -147,7 +147,7 @@ export default defineComponent({
         <div class={`${COMPONENT_NAME}-controller`}>
           {showMonthPicker && (
             <TSelect
-              class={`${COMPONENT_NAME}-controller--month`}
+              class={`${COMPONENT_NAME}-controller-month`}
               {...{
                 props: {
                   value: this.month,
@@ -159,7 +159,7 @@ export default defineComponent({
             />
           )}
           <TSelect
-            class={`${COMPONENT_NAME}-controller--year`}
+            class={`${COMPONENT_NAME}-controller-year`}
             {...{
               props: {
                 value: this.mode === 'year' ? nearestYear : this.year,
