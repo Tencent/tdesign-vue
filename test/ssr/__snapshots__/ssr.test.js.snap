@@ -7522,8 +7522,8 @@ exports[`ssr snapshot test renders ./examples/icon/demos/iconfont.vue correctly 
 
 exports[`ssr snapshot test renders ./examples/icon/demos/iconfont-enhanced.vue correctly 1`] = `
 <div class="t-demo-iconfont">
-  <div><i class="t-icon cps-icon cps-icon-home-sheep"></i> <i class="t-icon cps-icon cps-icon-home-sheep t-size-m"></i> <i class="t-icon cps-icon cps-icon-home-sheep t-size-l"></i> <i class="t-icon cps-icon cps-icon-home-sheep" style="font-size:25px;"></i> <i class="t-icon cps-icon cps-icon-home-sheep" style="font-size:2em;"></i></div><br>
-  <div><i class="t-icon cps-icon cps-icon-home-sheep" style="color:red;"></i> <i class="t-icon cps-icon cps-icon-home-sheep" style="color:green;"></i> <i class="t-icon cps-icon cps-icon-home-sheep" style="color:orange;"></i> <i class="t-icon t-icon-home"></i></div> <br>
+  <div><i class="cps-icon cps-icon-home-sheep"></i> <i class="cps-icon cps-icon-home-sheep t-size-m"></i> <i class="cps-icon cps-icon-home-sheep t-size-l"></i> <i class="cps-icon cps-icon-home-sheep" style="font-size:25px;"></i> <i class="cps-icon cps-icon-home-sheep" style="font-size:2em;"></i></div><br>
+  <div><i class="cps-icon cps-icon-home-sheep" style="color:red;"></i> <i class="cps-icon cps-icon-home-sheep" style="color:green;"></i> <i class="cps-icon cps-icon-home-sheep" style="color:orange;"></i> <i class="t-icon-home t-icon"></i></div> <br>
 </div>
 `;
 
