@@ -11,7 +11,9 @@ import useColumnController from './hooks/useColumnController';
 import useRowExpand from './hooks/useRowExpand';
 import useTableHeader, { renderTitle } from './hooks/useTableHeader';
 import useRowSelect from './hooks/useRowSelect';
-import { TdPrimaryTableProps, PrimaryTableCol, TableRowData } from './type';
+import {
+  TdPrimaryTableProps, PrimaryTableCol, TableRowData, PrimaryTableCellParams,
+} from './type';
 import useSorter from './hooks/useSorter';
 import useFilter from './hooks/useFilter';
 import useDragSort from './hooks/useDragSort';
@@ -19,6 +21,8 @@ import useAsyncLoading from './hooks/useAsyncLoading';
 import { PageInfo } from '../pagination';
 import useClassName from './hooks/useClassName';
 import useEditableCell from './hooks/useEditableCell';
+import useEditableRow from './hooks/useEditableRow';
+import { EditableCellProps } from './editable-cell';
 
 export { BASE_TABLE_ALL_EVENTS } from './base-table';
 
@@ -26,6 +30,7 @@ const OMIT_PROPS = [
   'hideSortTips',
   'dragSort',
   'defaultExpandedRowKeys',
+  'defaultSelectedRowKeys',
   'columnController',
   'filterRow',
   'sortOnRowDraggable',
@@ -57,7 +62,7 @@ export default defineComponent({
   setup(props: TdPrimaryTableProps, context) {
     const renderTNode = useTNodeJSX();
     const { columns } = toRefs(props);
-    const primaryTableRef = ref<HTMLDivElement>(null);
+    const primaryTableRef = ref(null);
     const { tableDraggableClasses, tableBaseClass } = useClassName();
     // 自定义列配置功能
     const { tDisplayColumns, renderColumnController } = useColumnController(props, context);
@@ -87,12 +92,22 @@ export default defineComponent({
     const { renderAsyncLoading } = useAsyncLoading(props, context);
 
     const { renderEditableCell } = useEditableCell(props, context);
+    const {
+      errorListMap,
+      editableKeysMap,
+      validateRowData,
+      onRuleChange,
+      clearValidateData,
+      onPrimaryTableRowValidate,
+      onPrimaryTableRowEdit,
+    } = useEditableRow(props, context);
 
     const primaryTableClasses = computed(() => ({
       [tableDraggableClasses.colDraggable]: isColDraggable.value,
       [tableDraggableClasses.rowHandlerDraggable]: isRowHandlerDraggable.value,
       [tableDraggableClasses.rowDraggable]: isRowDraggable.value,
       [tableBaseClass.overflowVisible]: isTableOverflowHidden.value === false,
+      [tableBaseClass.tableRowEdit]: props.editableRowKeys,
     }));
 
     // 如果想给 TR 添加类名，请在这里补充，不要透传更多额外 Props 到 BaseTable
@@ -154,7 +169,24 @@ export default defineComponent({
         // 如果是单元格可编辑状态
         if (item.edit?.component) {
           const oldCell = item.cell;
-          item.cell = (h, p) => renderEditableCell(h, p, oldCell);
+          item.cell = (h, p) => {
+            const cellProps: EditableCellProps = {
+              ...p,
+              oldCell,
+              tableBaseClass,
+              onChange: onPrimaryTableRowEdit,
+              onValidate: onPrimaryTableRowValidate,
+              onRuleChange,
+            };
+            if (props.editableRowKeys) {
+              const rowValue = get(p.row, props.rowKey || 'id');
+              cellProps.editable = editableKeysMap.value[rowValue] || false;
+              const key = [rowValue, p.col.colKey].join();
+              const errorList = errorListMap.value?.[key];
+              errorList && (cellProps.errors = errorList);
+            }
+            return renderEditableCell(h, cellProps);
+          };
         }
         if (item.children?.length) {
           item.children = getColumns(item.children);
@@ -196,6 +228,8 @@ export default defineComponent({
       primaryTableRef,
       tRowAttributes,
       primaryTableClasses,
+      validateRowData,
+      clearValidateData,
       renderTNode,
       renderColumnController,
       renderExpandedRow,
