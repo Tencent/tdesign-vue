@@ -118,12 +118,12 @@ export default defineComponent({
         ],
         trigger,
       };
-      if (!col.value.edit?.rules) {
+      if (!col.value.edit || !col.value.edit.rules) {
           props.onValidate?.(params);
           resolve(true);
           return;
       }
-      validate(editValue.value, col.value.edit?.rules).then((result) => {
+      validate(editValue.value, col.value.edit.rules).then((result) => {
         const list = result?.filter((t) => !t.result);
         params.result[0].errorList = list;
           props.onValidate?.(params);
