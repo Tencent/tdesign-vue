@@ -119,20 +119,20 @@ export default defineComponent({
         trigger,
       };
       if (!col.value.edit || !col.value.edit.rules) {
-          props.onValidate?.(params);
-          resolve(true);
-          return;
+        props.onValidate?.(params);
+        resolve(true);
+        return;
       }
       validate(editValue.value, col.value.edit.rules).then((result) => {
         const list = result?.filter((t) => !t.result);
         params.result[0].errorList = list;
-          props.onValidate?.(params);
-          if (!list || !list.length) {
-            resolve(true);
-          } else {
-            errorList.value = list;
-            resolve(list);
-          }
+        props.onValidate?.(params);
+        if (!list || !list.length) {
+          resolve(true);
+        } else {
+          errorList.value = list;
+          resolve(list);
+        }
       });
     });
 
