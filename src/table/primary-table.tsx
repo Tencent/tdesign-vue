@@ -11,9 +11,7 @@ import useColumnController from './hooks/useColumnController';
 import useRowExpand from './hooks/useRowExpand';
 import useTableHeader, { renderTitle } from './hooks/useTableHeader';
 import useRowSelect from './hooks/useRowSelect';
-import {
-  TdPrimaryTableProps, PrimaryTableCol, TableRowData, PrimaryTableCellParams,
-} from './type';
+import { TdPrimaryTableProps, PrimaryTableCol, TableRowData } from './type';
 import useSorter from './hooks/useSorter';
 import useFilter from './hooks/useFilter';
 import useDragSort from './hooks/useDragSort';
