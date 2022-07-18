@@ -19,7 +19,7 @@ docClass: timeline
 - `SelectInput`: 修复透传 disabled 失效问题 @HQ-Lin ([#1159](https://github.com/Tencent/tdesign-vue/pull/1159))
 - `Icon`: 修复 iconfont 高级用法由于 `t-icon的` 干扰导致渲染异常的情况 @uyarn ([#1164](https://github.com/Tencent/tdesign-vue/pull/1164))
 - `Select`:
-  - 修复 `panelTopContent`、`panelBottomContent`` 透传失效的问题 @HQ-Lin ([#1165](https://github.com/Tencent/tdesign-vue/pull/1165))
+  - 修复 `panelTopContent`、`panelBottomContent` 透传失效的问题 @HQ-Lin ([#1165](https://github.com/Tencent/tdesign-vue/pull/1165))
   - 修复监听事件未正常移除的问题（issue#1170） @skytt ([#1187](https://github.com/Tencent/tdesign-vue/pull/1187))
   - 修复 keys 透传失效导致 multiple 场景下 keys 无效的问题 @skytt ([#1184](https://github.com/Tencent/tdesign-vue/pull/1184))
 - `Table`: 
