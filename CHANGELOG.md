@@ -17,7 +17,6 @@ docClass: timeline
   - 新增可编辑行的表格；新增 showEditIcon，用于控制是否显示编辑图标 @chaishi ([#1182](https://github.com/Tencent/tdesign-vue/pull/1182))
 ### 🐞 Bug Fixes
 - `SelectInput`: 修复透传 disabled 失效问题 @HQ-Lin ([#1159](https://github.com/Tencent/tdesign-vue/pull/1159))
-- `table`: 表格列宽拖拽到最大或最小时，有可能无法二次拖拽 @tinna3445 ([#1157](https://github.com/Tencent/tdesign-vue/pull/1157))
 - `Icon`: 修复 iconfont 高级用法由于 `t-icon的` 干扰导致渲染异常的情况 @uyarn ([#1164](https://github.com/Tencent/tdesign-vue/pull/1164))
 - `Select`:
   - 修复 `panelTopContent`、`panelBottomContent`` 透传失效的问题 @HQ-Lin ([#1165](https://github.com/Tencent/tdesign-vue/pull/1165))
@@ -29,6 +28,7 @@ docClass: timeline
   - 兼容IE滚动条高度计算覆盖不全问题 @brianzhang ([#1171](https://github.com/Tencent/tdesign-vue/pull/1171))
   - 修复树形结构懒加载顺序问题，[issue#1122](https://github.com/Tencent/tdesign-vue-next/issues/1122) @chaishi ([#1176](https://github.com/Tencent/tdesign-vue/pull/1176))
   - 可编辑单元格，修复 `onEnter` 无法触发 `onEdited` 问题；修复校验不通过时，无法退出编辑态的问题 @chaishi ([#1182](https://github.com/Tencent/tdesign-vue/pull/1182))
+  - 修复表格列宽拖拽到最大或最小时，有可能无法二次拖拽的问题 @tinna3445 ([#1157](https://github.com/Tencent/tdesign-vue/pull/1157))
 
 ## 🌈 0.43.3 `2022-07-11` 
 ### 🚀 Features
