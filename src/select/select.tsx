@@ -9,6 +9,7 @@ import {
   getCurrentInstance,
   onMounted,
   onUpdated,
+  onUnmounted,
   provide,
 } from '@vue/composition-api';
 import { CreateElement } from 'vue';
@@ -95,8 +96,8 @@ export default defineComponent({
     const hasSlotOptions = ref(false);
     const focusing = ref(false);
     const labelInValue = ref(valueType.value === 'object');
-    const realValue = ref(keys.value?.value || 'value');
-    const realLabel = ref(keys.value?.label || 'label');
+    const realValue = computed(() => keys.value?.value || 'value');
+    const realLabel = computed(() => keys.value?.label || 'label');
     const realOptions = ref([] as Array<TdOptionProps>);
     const hoverIndex = ref(-1);
     const popupOpenTime = ref(250);
@@ -623,6 +624,10 @@ export default defineComponent({
     onUpdated(() => {
       initOptions();
     });
+    onUnmounted(() => {
+      // fix: https://github.com/Tencent/tdesign-vue/issues/1170
+      !visible.value && document.removeEventListener('keydown', keydownEvent);
+    });
 
     provide('tSelect', {
       getOptions,
@@ -699,6 +704,7 @@ export default defineComponent({
   render(h) {
     const {
       multiple,
+      keys,
       autoWidth,
       bordered,
       readonly,
@@ -755,6 +761,7 @@ export default defineComponent({
           readonly={readonly}
           allowInput={showFilter}
           multiple={multiple}
+          keys={keys}
           value={selectedValue}
           valueDisplay={valueDisplay}
           clearable={clearable}
