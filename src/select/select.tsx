@@ -9,7 +9,6 @@ import {
   getCurrentInstance,
   onMounted,
   onUpdated,
-  onUnmounted,
   provide,
 } from '@vue/composition-api';
 import { CreateElement } from 'vue';
@@ -426,9 +425,20 @@ export default defineComponent({
           break;
       }
     };
+
+    // 为 eventListener 加单独的 sync watch，以防组件在卸载的时候未能正常清除监听 (https://github.com/Tencent/tdesign-vue/issues/1170)
+    watch(
+      visible,
+      (val) => {
+        val && document.addEventListener('keydown', keydownEvent);
+        !val && document.removeEventListener('keydown', keydownEvent);
+      },
+      {
+        flush: 'sync',
+      },
+    );
+    // 其余逻辑使用默认 pre watch
     watch(visible, (val) => {
-      val && document.addEventListener('keydown', keydownEvent);
-      !val && document.removeEventListener('keydown', keydownEvent);
       !val && (showCreateOption.value = false);
       !val && tInputValue.value && setTInputValue('');
     });
@@ -624,11 +634,6 @@ export default defineComponent({
     onUpdated(() => {
       initOptions();
     });
-    onUnmounted(() => {
-      // fix: https://github.com/Tencent/tdesign-vue/issues/1170
-      !visible.value && document.removeEventListener('keydown', keydownEvent);
-    });
-
     provide('tSelect', {
       getOptions,
       reachMaxLimit,
