@@ -5,6 +5,31 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.44.0 `2022-07-18` 
+### ❗️ BREAKING CHANGES
+- `DatePicker`: 部分样式类命名调整，更符合 BEM 规范，如有覆盖日期选择器样式的小伙伴请注意调整，其他同学可以忽略 @HQ-Lin ([#1180](https://github.com/Tencent/tdesign-vue/pull/1180/files)
+### 🚀 Features
+- `Jumper`: 新增 jumper 组件 @HQ-Lin ([#1086](https://github.com/Tencent/tdesign-vue/pull/1086))
+- `Icon`: 新增`mirror`和`rotation`图标 @uyarn ([#1164](https://github.com/Tencent/tdesign-vue/pull/1164))
+- `DatePicker`: 支持面板年月动态响应 value 变化 @HQ-Lin ([#1166](https://github.com/Tencent/tdesign-vue/pull/1166))
+- `Table`:
+  - 树形结构支持同时添加多个根节点 @chaishi ([#1176](https://github.com/Tencent/tdesign-vue/pull/1176))
+  - 新增可编辑行的表格；新增 showEditIcon，用于控制是否显示编辑图标 @chaishi ([#1182](https://github.com/Tencent/tdesign-vue/pull/1182))
+### 🐞 Bug Fixes
+- `SelectInput`: 修复透传 disabled 失效问题 @HQ-Lin ([#1159](https://github.com/Tencent/tdesign-vue/pull/1159))
+- `Icon`: 修复 iconfont 高级用法由于 `t-icon的` 干扰导致渲染异常的情况 @uyarn ([#1164](https://github.com/Tencent/tdesign-vue/pull/1164))
+- `Select`:
+  - 修复 `panelTopContent`、`panelBottomContent` 透传失效的问题 @HQ-Lin ([#1165](https://github.com/Tencent/tdesign-vue/pull/1165))
+  - 修复监听事件未正常移除的问题（issue#1170） @skytt ([#1187](https://github.com/Tencent/tdesign-vue/pull/1187))
+  - 修复 keys 透传失效导致 multiple 场景下 keys 无效的问题 @skytt ([#1184](https://github.com/Tencent/tdesign-vue/pull/1184))
+- `Table`: 
+  - 修复多级表头表格中，列配置全选功能选不全的问题 @LoopZhou ([#1167](https://github.com/Tencent/tdesign-vue/pull/1167))
+  - 修复可选中行 `table` 组件，`data` 为空数据时，默认全选按钮会选中的问题 @qdzhaoxiaodao ([#1172](https://github.com/Tencent/tdesign-vue/pull/1172))
+  - 兼容IE滚动条高度计算覆盖不全问题 @brianzhang ([#1171](https://github.com/Tencent/tdesign-vue/pull/1171))
+  - 修复树形结构懒加载顺序问题，[issue#1122](https://github.com/Tencent/tdesign-vue-next/issues/1122) @chaishi ([#1176](https://github.com/Tencent/tdesign-vue/pull/1176))
+  - 可编辑单元格，修复 `onEnter` 无法触发 `onEdited` 问题；修复校验不通过时，无法退出编辑态的问题 @chaishi ([#1182](https://github.com/Tencent/tdesign-vue/pull/1182))
+  - 修复表格列宽拖拽到最大或最小时，有可能无法二次拖拽的问题 @tinna3445 ([#1157](https://github.com/Tencent/tdesign-vue/pull/1157))
+
 ## 🌈 0.43.3 `2022-07-11` 
 ### 🚀 Features
 - `Cascader`: @pengYYYYY ([#1074](https://github.com/Tencent/tdesign-vue/pull/1074))

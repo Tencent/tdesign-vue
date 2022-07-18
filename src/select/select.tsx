@@ -95,8 +95,8 @@ export default defineComponent({
     const hasSlotOptions = ref(false);
     const focusing = ref(false);
     const labelInValue = ref(valueType.value === 'object');
-    const realValue = ref(keys.value?.value || 'value');
-    const realLabel = ref(keys.value?.label || 'label');
+    const realValue = computed(() => keys.value?.value || 'value');
+    const realLabel = computed(() => keys.value?.label || 'label');
     const realOptions = ref([] as Array<TdOptionProps>);
     const hoverIndex = ref(-1);
     const popupOpenTime = ref(250);
@@ -425,9 +425,20 @@ export default defineComponent({
           break;
       }
     };
+
+    // 为 eventListener 加单独的 sync watch，以防组件在卸载的时候未能正常清除监听 (https://github.com/Tencent/tdesign-vue/issues/1170)
+    watch(
+      visible,
+      (val) => {
+        val && document.addEventListener('keydown', keydownEvent);
+        !val && document.removeEventListener('keydown', keydownEvent);
+      },
+      {
+        flush: 'sync',
+      },
+    );
+    // 其余逻辑使用默认 pre watch
     watch(visible, (val) => {
-      val && document.addEventListener('keydown', keydownEvent);
-      !val && document.removeEventListener('keydown', keydownEvent);
       !val && (showCreateOption.value = false);
       !val && tInputValue.value && setTInputValue('');
     });
@@ -623,7 +634,6 @@ export default defineComponent({
     onUpdated(() => {
       initOptions();
     });
-
     provide('tSelect', {
       getOptions,
       reachMaxLimit,
@@ -699,6 +709,7 @@ export default defineComponent({
   render(h) {
     const {
       multiple,
+      keys,
       autoWidth,
       bordered,
       readonly,
@@ -755,6 +766,7 @@ export default defineComponent({
           readonly={readonly}
           allowInput={showFilter}
           multiple={multiple}
+          keys={keys}
           value={selectedValue}
           valueDisplay={valueDisplay}
           clearable={clearable}
@@ -807,6 +819,8 @@ export default defineComponent({
             realLabel={realLabel}
             realValue={realValue}
             scroll={scroll}
+            panelTopContent={this.panelTopContent}
+            panelBottomContent={this.panelBottomContent}
           />
         </SelectInput>
       </div>

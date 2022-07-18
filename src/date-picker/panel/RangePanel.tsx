@@ -161,7 +161,7 @@ export default defineComponent({
             }}
           />
         ) : null}
-        <div class={`${COMPONENT_NAME}--content-wrapper`}>
+        <div class={`${COMPONENT_NAME}-content-wrapper`}>
           {!this.enableTimePicker ? (
             [
               <TPanelContent

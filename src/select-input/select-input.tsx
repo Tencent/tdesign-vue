@@ -73,6 +73,7 @@ export default defineComponent({
         content={this.panel}
         scopedSlots={{ ...this.$scopedSlots, content: this.$scopedSlots.panel }}
         hideEmptyPopup={true}
+        disabled={this.disabled}
         on={{
           'visible-change': this.onInnerPopupVisibleChange,
         }}

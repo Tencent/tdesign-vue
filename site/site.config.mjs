@@ -163,6 +163,14 @@ const docs = [
         componentEn: () => import('@/examples/dropdown/dropdown.en-US.md'),
       },
       {
+        title: 'Jumper 跳转',
+        titleEn: 'Jumper',
+        name: 'jumper',
+        path: '/vue/components/jumper',
+        component: () => import('@/examples/jumper/jumper.md'),
+        componentEn: () => import('@/examples/jumper/jumper.en-US.md'),
+      },
+      {
         title: 'Menu 导航菜单',
         titleEn: 'Menu',
         name: 'menu',
