@@ -21,7 +21,7 @@ export default function useOverlayStyle(props: overlayStyleProps) {
   const { popupProps, autoWidth } = toRefs(props);
   const innerPopupVisible = ref(false);
 
-  const macthWidthFunc = (triggerElement: HTMLElement, popupElement: HTMLElement) => {
+  const matchWidthFunc = (triggerElement: HTMLElement, popupElement: HTMLElement) => {
     // 避免因滚动条出现文本省略，预留宽度 8
     const SCROLLBAR_WIDTH = popupElement.scrollHeight > popupElement.offsetHeight ? 8 : 0;
     const width = popupElement.offsetWidth + SCROLLBAR_WIDTH >= triggerElement.offsetWidth
@@ -52,7 +52,7 @@ export default function useOverlayStyle(props: overlayStyleProps) {
     if (isFunction(overlayStyle) || (isObject(overlayStyle) && overlayStyle.width)) {
       result = overlayStyle;
     } else if (!autoWidth.value) {
-      result = macthWidthFunc;
+      result = matchWidthFunc;
     }
     return result;
   });
