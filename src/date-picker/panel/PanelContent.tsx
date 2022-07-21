@@ -85,12 +85,12 @@ export default defineComponent({
             <div class={`${COMPONENT_NAME}-time-viewer`}>{this.time || defaultTimeValue}</div>
             <TTimePickerPanel
               {...{
+                key: this.partial,
                 props: {
-                  key: this.partial,
                   format: timeFormat,
                   value: this.time,
                   onChange: this.onTimePickerChange,
-                  showPanel: this.popupVisible,
+                  isShowPanel: this.popupVisible,
                   ...this.timePickerProps,
                 },
               }}
