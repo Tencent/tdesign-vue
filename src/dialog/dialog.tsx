@@ -124,11 +124,11 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       if (value) {
         const { scrollWidth } = this;
         if (this.isModal && !this.showInAttachedElement) {
-          if (scrollWidth > 0) {
+          if (scrollWidth > 0 && this.preventScrollThrough) {
             const bodyCssText = `position: relative;width: calc(100% - ${scrollWidth}px);`;
             document.body.style.cssText = bodyCssText;
           }
-          addClass(document.body, lockClass);
+          this.preventScrollThrough && addClass(document.body, lockClass);
           this.$nextTick(() => {
             const target = this.$refs.dialog as HTMLElement;
             if (mousePosition && target) {
