@@ -5,6 +5,19 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.44.1 `2022-07-25` 
+### 🚀 Features
+- 支持通过CSS Token配置组件圆角 @mingrutough1 ([common#648](https://github.com/Tencent/tdesign-common/pull/648))
+
+### 🐞 Bug Fixes
+- `DatePicker`:
+  - 修复重置日期后面板月份未重置问题 @HQ-Lin ([#1190](https://github.com/Tencent/tdesign-vue/pull/1190))
+  - 修复时间选择器滚动错误@HQ-Lin ([#1194](https://github.com/Tencent/tdesign-vue/pull/1194))
+- `Table`: 修复可选中行table组件，data为空数据时，默认全选按钮会选中的问题 @qdzhaoxiaodao ([#1150](https://github.com/Tencent/tdesign-vue/pull/1150))
+- `Dialog`:
+  - 修复 `preventScrollThrough` 未实现的问题 @huoyuhao ([#1150](https://github.com/Tencent/tdesign-vue/pull/1150))
+  - 修复出现对于滚动条的问题 @huoyuhao ([#1199](https://github.com/Tencent/tdesign-vue/pull/1199))
+
 ## 🌈 0.44.0 `2022-07-18` 
 ### ❗️ BREAKING CHANGES
 - `DatePicker`: 部分样式类命名调整，更符合 BEM 规范，如有覆盖日期选择器样式的小伙伴请注意调整，其他同学可以忽略 @HQ-Lin ([#1180](https://github.com/Tencent/tdesign-vue/pull/1180/files)
