@@ -218,6 +218,8 @@ export default defineComponent({
           popupProps={datePickerPopupProps}
           inputProps={{ suffixIcon: this.suffixIcon || (() => <CalendarIcon />), ...datePickerInputProps }}
           popupVisible={popupVisible}
+          clearable={this.clearable}
+          allowInput={this.allowInput}
           panel={() => <TSinglePanel {...{ props: panelProps }} />}
         />
       </div>
