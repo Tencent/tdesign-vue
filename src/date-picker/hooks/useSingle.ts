@@ -92,12 +92,17 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
     ...props.popupProps,
     overlayStyle: props.popupProps?.overlayStyle ?? { width: 'auto' },
     overlayClassName: [props.popupProps?.overlayClassName, `${COMPONENT_NAME.value}__panel-container`],
-    onVisibleChange: (visible: boolean) => {
-      popupVisible.value = visible;
+    onVisibleChange: (visible: boolean, context: any) => {
+      // 输入框点击不关闭面板
+      if (context.trigger === 'trigger-element-click') {
+        popupVisible.value = true;
+        return;
+      }
       if (!visible) {
         isHoverCell.value = false;
         inputValue.value = formatRef.value.formatDate(value.value);
       }
+      popupVisible.value = visible;
     },
   }));
 

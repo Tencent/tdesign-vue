@@ -63,8 +63,7 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
       emit('focus', { value: newVal, partial: PARTIAL_MAP[position], e });
       activeIndex.value = position === 'first' ? 0 : 1;
     },
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    onChange: (newVal: string[], { e, position }: any) => {
+    onChange: (newVal: string[]) => {
       inputValue.value = newVal;
 
       // 跳过不符合格式化的输入框内容
@@ -112,10 +111,7 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
         popupVisible.value = true;
         return;
       }
-      if (visible) {
-        // 展开后重置点击次数
-        isFirstValueSelected.value = false;
-      } else {
+      if (!visible) {
         isHoverCell.value = false;
         inputValue.value = formatRef.value.formatDate(value.value);
       }
