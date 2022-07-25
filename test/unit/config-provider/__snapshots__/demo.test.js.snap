@@ -2494,6 +2494,9 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
         see empty data in TreeSelect
       </span>
       <span
+        class="t-tree-select t-tag-prefix"
+      />
+      <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
       >
@@ -2589,6 +2592,9 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
         see loading text in TreeSelect
       </span>
       <span
+        class="t-tree-select t-tag-prefix"
+      />
+      <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
       >
@@ -2667,6 +2673,9 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       >
         tree select
       </span>
+      <span
+        class="t-tree-select t-tag-prefix"
+      />
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
