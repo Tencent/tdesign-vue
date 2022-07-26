@@ -121,6 +121,8 @@ export default defineComponent({
       );
     });
     const footerSummary = this.renderTNode('footer-summary');
+    // 都不存在，则不需要渲染 footer
+    if (!footerSummary && (!this.footData || !this.footData.length)) return null;
     return (
       <tfoot ref="tFooterRef" class={theadClasses}>
         {footerSummary && (

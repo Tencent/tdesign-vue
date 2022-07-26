@@ -14066,18 +14066,18 @@ exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`
         </tbody>
         <tfoot class="t-table__footer">
           <tr class="t-tdesign__custom-footer-tr">
-            <td><b style="color:rgb(0, 82, 217);">表尾</b></td>
-            <td><span>第 1 行</span></td>
-            <td>全部类型</td>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
-            <td><span>空</span></td>
-            <td> 插槽渲染表尾 </td>
-            <td>
+            <td key="index"><b style="color:rgb(0, 82, 217);">表尾</b></td>
+            <td key="platform"><span>第 1 行</span></td>
+            <td key="type">全部类型</td>
+            <td key="expo">-</td>
+            <td key="click">-</td>
+            <td key="ctr">-</td>
+            <td key="default"><span>空</span></td>
+            <td key="required"> 插槽渲染表尾 </td>
+            <td key="detail.position">
               <div>渲染函数输出表尾信息</div>
             </td>
-            <td>-</td>
+            <td key="operation">-</td>
           </tr>
         </tfoot>
       </table>
@@ -14658,7 +14658,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col-button.vue 
 
 exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large">
-  <div class="t-table" style="position:relative;">
+  <div>
+    <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="normal" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">普通表尾</span></label> <label class="t-radio-button"><input type="radio" value="full" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">通栏表尾</span></label> <label class="t-radio-button"><input type="radio" value="custom" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">自定义表尾合并列</span></label>
+      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+    </div>
+  </div>
+  <div class="t-table t-table--bordered" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
@@ -14727,12 +14732,14 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
         </tbody>
         <tfoot class="t-table__footer">
           <tr class="t-tdesign__custom-footer-tr">
-            <td><b style="color:rgb(0, 82, 217);">表尾</b></td>
-            <td><span>第 1 行</span></td>
-            <td>全部类型</td>
-            <td><span>空</span></td>
-            <td> 插槽渲染表尾 </td>
-            <td>
+            <td key="index"><b style="color:rgb(0, 82, 217);">表尾</b></td>
+            <td key="platform">
+              <div style="width:100%;text-align:center;">第 1 行</div>
+            </td>
+            <td key="type">全部类型</td>
+            <td key="default"><span>空</span></td>
+            <td key="required"><b>必传(插槽)</b></td>
+            <td key="detail.position">
               <div>渲染函数输出表尾信息</div>
             </td>
           </tr>
@@ -16316,12 +16323,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
         </tbody>
         <tfoot class="t-table__footer">
           <tr>
-            <td>汇总</td>
-            <td>Number(5)</td>
-            <td>-</td>
-            <td>否(6)</td>
-            <td>-</td>
-            <td>数据(10)</td>
+            <td key="platform">汇总</td>
+            <td key="type">Number(5)</td>
+            <td key="default">-</td>
+            <td key="needed">否(6)</td>
+            <td key="detail.position">-</td>
+            <td key="description">数据(10)</td>
           </tr>
         </tfoot>
       </table>
@@ -16525,14 +16532,14 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
         </tbody>
         <tfoot class="t-table__footer">
           <tr>
-            <td>总述</td>
-            <td>公有(5)</td>
-            <td>Number(5)</td>
-            <td>-</td>
-            <td>-</td>
-            <td>数据(10)</td>
-            <td>否(6)</td>
-            <td></td>
+            <td key="index">总述</td>
+            <td key="platform">公有(5)</td>
+            <td key="type">Number(5)</td>
+            <td key="default">-</td>
+            <td key="detail.position">-</td>
+            <td key="description">数据(10)</td>
+            <td key="needed">否(6)</td>
+            <td key="operation"></td>
           </tr>
         </tfoot>
       </table>
