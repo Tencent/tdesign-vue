@@ -717,7 +717,6 @@ export default defineComponent({
       clearable,
       tDisabled,
       borderless,
-      empty,
       showCreateOption,
       displayOptions,
       isGroupOption,
@@ -754,6 +753,8 @@ export default defineComponent({
     const valueDisplay = this.renderValueDisplay(h);
     const placeholderText = this.getPlaceholderText();
     const prefixIcon = () => renderTNode('prefixIcon');
+    const empty = renderTNode('empty');
+
     const collapsedItems = () => renderCollapsedItems();
     const { overlayClassName, ...restPopupProps } = popupProps || {};
     return (
