@@ -383,6 +383,7 @@ export default defineComponent({
               rowAttributes={this.rowAttributes}
               rowClassName={this.rowClassName}
               thWidthList={this.thWidthList}
+              rowspanAndColspanInFooter={this.rowspanAndColspanInFooter}
             ></TFoot>
           </table>
         </div>
@@ -451,6 +452,7 @@ export default defineComponent({
             columns={columns}
             rowAttributes={this.rowAttributes}
             rowClassName={this.rowClassName}
+            rowspanAndColspanInFooter={this.rowspanAndColspanInFooter}
           ></TFoot>
         </table>
       </div>

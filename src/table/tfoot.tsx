@@ -1,14 +1,17 @@
 import {
-  SetupContext, h, defineComponent, PropType,
+  SetupContext, h, defineComponent, PropType, toRefs,
 } from '@vue/composition-api';
 import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
 import get from 'lodash/get';
-import { BaseTableCellParams, TableRowData, TdBaseTableProps } from './type';
+import {
+  BaseTableCellParams, RowspanColspan, TableRowData, TdBaseTableProps,
+} from './type';
 import { RowAndColFixedPosition } from './interface';
 import { formatRowAttributes, formatRowClassNames } from './utils';
 import { getColumnFixedStyles } from './hooks/useFixed';
 import { useTNodeJSX } from '../hooks/tnode';
+import useRowspanAndColspan, { getCellKey } from './hooks/useRowspanAndColspan';
 import useClassName from './hooks/useClassName';
 import { Styles } from '../common';
 
@@ -24,6 +27,7 @@ export interface TFootProps {
   rowClassName: TdBaseTableProps['rowClassName'];
   // 表尾吸底内容宽度
   thWidthList?: { [colKey: string]: number };
+  rowspanAndColspanInFooter: TdBaseTableProps['rowspanAndColspanInFooter'];
 }
 
 export default defineComponent({
@@ -38,12 +42,18 @@ export default defineComponent({
     rowAttributes: [Array, Object, Function] as PropType<TFootProps['rowAttributes']>,
     rowClassName: [Array, String, Object, Function] as PropType<TFootProps['rowClassName']>,
     thWidthList: [Object] as PropType<TFootProps['thWidthList']>,
+    rowspanAndColspanInFooter: Function as PropType<TFootProps['rowspanAndColspanInFooter']>,
   },
 
   // eslint-disable-next-line
   setup(props: TFootProps, context: SetupContext) {
     const renderTNode = useTNodeJSX();
     const classnames = useClassName();
+    const {
+      footData, columns, rowKey, rowspanAndColspanInFooter,
+    } = toRefs(props);
+    const { skipSpansMap } = useRowspanAndColspan(footData, columns, rowKey, rowspanAndColspanInFooter);
+
     const renderTFootCell = (p: BaseTableCellParams<TableRowData>) => {
       const { col, row } = p;
       if (isFunction(col.foot)) {
@@ -56,6 +66,7 @@ export default defineComponent({
     };
 
     return {
+      skipSpansMap,
       ...classnames,
       renderTFootCell,
       renderTNode,
@@ -76,6 +87,15 @@ export default defineComponent({
       return (
         <tr key={rowIndex} attrs={trAttributes} class={customClasses}>
           {this.columns.map((col, colIndex) => {
+            const cellSpans: RowspanColspan = {};
+            const cellKey = getCellKey(row, this.rowKey, col.colKey, colIndex);
+            let spanState = null;
+            if (this.skipSpansMap.size) {
+              spanState = this.skipSpansMap.get(cellKey) || {};
+              spanState?.rowspan > 1 && (cellSpans.rowspan = spanState.rowspan);
+              spanState?.colspan > 1 && (cellSpans.colspan = spanState.colspan);
+              if (spanState.skipped) return null;
+            }
             const tdStyles = getColumnFixedStyles(
               col,
               colIndex,
@@ -87,7 +107,7 @@ export default defineComponent({
               style.width = `${this.thWidthList[col.colKey]}px`;
             }
             return (
-              <td key={col.colKey} class={tdStyles.classes} style={style}>
+              <td attrs={{ key: col.colKey, ...cellSpans }} class={tdStyles.classes} style={style}>
                 {this.renderTFootCell({
                   row,
                   rowIndex,
