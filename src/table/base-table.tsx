@@ -396,6 +396,7 @@ export default defineComponent({
       '-moz-transform': translate,
       '-webkit-transform': translate,
     };
+    const columns = this.spansAndLeafNodes.leafColumns;
     const tableBodyProps = {
       rowAndColFixedPosition,
       showColumnShadow: this.showColumnShadow,

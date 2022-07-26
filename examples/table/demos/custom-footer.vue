@@ -1,8 +1,23 @@
 <template>
   <div class="tdesign-demo-block-column-large">
+    <div>
+      <t-radio-group v-model="footerType" variant="default-filled">
+        <t-radio-button value="normal">普通表尾</t-radio-button>
+        <t-radio-button value="full">通栏表尾</t-radio-button>
+      </t-radio-group>
+    </div>
     <!-- rowClassName="tdesign-demo__row-custom-name" -->
-    <t-table rowKey="index" :data="data" :columns="columns" :foot-data="footData" :rowClassName="rowClassName">
-      <template #t-foot-required> 插槽渲染表尾 </template>
+    <t-table
+      rowKey="index"
+      :data="data"
+      :columns="columns"
+      :foot-data="footerType === 'normal' ? footData : []"
+      :rowClassName="rowClassName"
+    >
+      <template #footer-summary>
+        <div class="t-table__row-filter-inner" v-if="footerType === 'full'">通栏总结行信息</div>
+      </template>
+      <template #t-foot-required> <b>必传(插槽)</b> </template>
     </t-table>
   </div>
 </template>
@@ -25,8 +40,11 @@ export default {
   data() {
     return {
       data,
+      footerType: 'normal',
       // 表尾有一行数据
-      footData: [{ type: '全部类型', description: '-' }],
+      footData: [{
+        index: '123', type: '全部类型', default: '', description: '-',
+      }],
       columns: [
         {
           align: 'center',

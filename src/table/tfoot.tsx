@@ -8,6 +8,7 @@ import { BaseTableCellParams, TableRowData, TdBaseTableProps } from './type';
 import { RowAndColFixedPosition } from './interface';
 import { formatRowAttributes, formatRowClassNames } from './utils';
 import { getColumnFixedStyles } from './hooks/useFixed';
+import { useTNodeJSX } from '../hooks/tnode';
 import useClassName from './hooks/useClassName';
 import { Styles } from '../common';
 
@@ -41,6 +42,7 @@ export default defineComponent({
 
   // eslint-disable-next-line
   setup(props: TFootProps, context: SetupContext) {
+    const renderTNode = useTNodeJSX();
     const classnames = useClassName();
     const renderTFootCell = (p: BaseTableCellParams<TableRowData>) => {
       const { col, row } = p;
@@ -56,49 +58,59 @@ export default defineComponent({
     return {
       ...classnames,
       renderTFootCell,
+      renderTNode,
     };
   },
 
   render() {
-    if (!this.footData || !this.footData.length || !this.columns) return null;
+    if (!this.columns) return null;
     const theadClasses = [this.tableFooterClasses.footer, { [this.tableFooterClasses.fixed]: this.isFixedHeader }];
-    return (
-      <tfoot ref="tFooterRef" class={theadClasses}>
-        {this.footData.map((row, rowIndex) => {
-          const trAttributes = formatRowAttributes(this.rowAttributes, { row, rowIndex, type: 'foot' });
-          // 自定义行类名
-          const customClasses = formatRowClassNames(
-            this.rowClassName,
-            { row, rowIndex, type: 'foot' },
-            this.rowKey || 'id',
-          );
-          return (
-            <tr key={rowIndex} attrs={trAttributes} class={customClasses}>
-              {this.columns.map((col, colIndex) => {
-                const tdStyles = getColumnFixedStyles(
+    const footerDomList = this.footData.map((row, rowIndex) => {
+      const trAttributes = formatRowAttributes(this.rowAttributes, { row, rowIndex, type: 'foot' });
+      // 自定义行类名
+      const customClasses = formatRowClassNames(
+        this.rowClassName,
+        { row, rowIndex, type: 'foot' },
+        this.rowKey || 'id',
+      );
+      return (
+        <tr key={rowIndex} attrs={trAttributes} class={customClasses}>
+          {this.columns.map((col, colIndex) => {
+            const tdStyles = getColumnFixedStyles(
+              col,
+              colIndex,
+              this.rowAndColFixedPosition,
+              this.tableColFixedClasses,
+            );
+            const style: Styles = { ...tdStyles.style };
+            if (this.thWidthList?.[col.colKey]) {
+              style.width = `${this.thWidthList[col.colKey]}px`;
+            }
+            return (
+              <td key={col.colKey} class={tdStyles.classes} style={style}>
+                {this.renderTFootCell({
+                  row,
+                  rowIndex,
                   col,
                   colIndex,
-                  this.rowAndColFixedPosition,
-                  this.tableColFixedClasses,
-                );
-                const style: Styles = { ...tdStyles.style };
-                if (this.thWidthList?.[col.colKey]) {
-                  style.width = `${this.thWidthList[col.colKey]}px`;
-                }
-                return (
-                  <td key={col.colKey} class={tdStyles.classes} style={style}>
-                    {this.renderTFootCell({
-                      row,
-                      rowIndex,
-                      col,
-                      colIndex,
-                    })}
-                  </td>
-                );
-              })}
-            </tr>
-          );
-        })}
+                })}
+              </td>
+            );
+          })}
+        </tr>
+      );
+    });
+    const footerSummary = this.renderTNode('footer-summary');
+    return (
+      <tfoot ref="tFooterRef" class={theadClasses}>
+        {footerSummary && (
+          <tr class={this.tableFullRowClasses.base}>
+            <td colspan={this.columns.length}>
+              <div class={this.tableFullRowClasses.innerFullElement}>{footerSummary}</div>
+            </td>
+          </tr>
+        )}
+        {footerDomList}
       </tfoot>
     );
   },
