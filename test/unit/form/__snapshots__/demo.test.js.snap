@@ -1455,6 +1455,9 @@ exports[`Form Form disabledVue demo works fine 1`] = `
                 请选择
               </span>
               <span
+                class="t-tree-select t-tag-prefix"
+              />
+              <span
                 class="t-tag t-tag--default t-size-m t-tag--dark"
                 style="display: none;"
               >
@@ -5914,6 +5917,9 @@ exports[`Form Form validatorVue demo works fine 1`] = `
               >
                 请选择你的兴趣爱好
               </span>
+              <span
+                class="t-tree-select t-tag-prefix"
+              />
               <span
                 class="t-tag t-tag--default t-size-m t-tag--dark"
                 style="display: none;"

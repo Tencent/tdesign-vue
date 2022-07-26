@@ -472,7 +472,10 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         params: { value: this.nodeInfo || { [this.realLabel]: '', [this.realValue]: '' } },
       })
     ) : (
-        <span title={this.selectedSingle} class={`${prefix}-select__single`}>
+        <span
+          title={this.selectedSingle}
+          class={`${prefix}-select__single ${prefix}-tree-select ${prefix}-single-suffix`}
+        >
           {this.selectedSingle}
         </span>
     );
@@ -510,7 +513,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
             <span v-show={this.showPlaceholder} class={`${prefix}-select__placeholder`}>
               {this.placeholder || this.global.placeholder}
             </span>
-            {tagItem}
+            <span class={`${prefix}-tree-select ${prefix}-tag-prefix`}>{tagItem}</span>
             {collapsedItem}
             {!this.multiple && !this.showPlaceholder && !this.showFilter && selectedSingle}
             {searchInput}
