@@ -85,6 +85,7 @@ ellipsis | Boolean / Object / Slot / Function | false | ellipsis cell content。
 ellipsisTitle | Boolean / Object / Slot / Function | undefined | ellipsis title content。Typescript：`boolean | TNode<BaseTableColParams<T>> | PopupProps` `interface BaseTableColParams<T> { col: BaseTableCol<T>; colIndex: number }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 fixed | String | left | fixed current column to left or right。options：left/right | N
 foot | String / Function | - | tfoot content。Typescript：`string | TNode<{ col: BaseTableCol; colIndex: number }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+minWidth | String / Number | - | add CSS property `min-width` to HTML Element `<col>` | N
 render | Function | - | render function can be used to render cell or head。Typescript：`TNode<BaseTableRenderParams<T>>` `interface BaseTableRenderParams<T> extends BaseTableCellParams<T> { type: RenderType }` `type RenderType = 'cell' | 'title'`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 resize | Object | - | Typescript：`TableColumnResizeConfig` `interface TableColumnResizeConfig { minWidth: number; maxWidth: number }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 title | String / Function | - | th content。Typescript：`string | TNode<{ col: BaseTableCol; colIndex: number }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
@@ -211,6 +212,7 @@ getTreeNode | \- | `T[]` | required
 insertAfter | `(key: TableRowValue, newData: T)` | \- | required
 insertBefore | `(key: TableRowValue, newData: T)` | \- | required
 remove | `(key: TableRowValue)` | \- | required
+resetData | `(newData: T[])` | \- | required
 setData | `(key: TableRowValue, newRowData: T)` | \- | required
 swapData | `(params: SwapParams<T>)` | \- | required。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts)。<br/>`interface SwapParams<T> { current: T; target: T; currentIndex: number; targetIndex: number }`<br/>
 toggleExpandData | `(p: { row: T,  rowIndex: number})` | \- | required

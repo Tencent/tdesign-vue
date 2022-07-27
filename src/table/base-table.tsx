@@ -32,6 +32,7 @@ import TFoot from './tfoot';
 import log from '../_common/js/log';
 import { getIEVersion } from '../_common/js/utils/helper';
 import { getAffixProps } from './utils';
+import { Styles } from '../common';
 
 export const BASE_TABLE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY'];
 export const BASE_TABLE_ALL_EVENTS = ROW_LISTENERS.map((t) => `row-${t}`).concat(BASE_TABLE_EVENTS);
@@ -293,9 +294,13 @@ export default defineComponent({
     const defaultColWidth = this.tableLayout === 'fixed' && this.isWidthOverflow ? '100px' : undefined;
     const colgroup = (
       <colgroup>
-        {columns.map((col) => (
-          <col key={col.colKey} style={{ width: formatCSSUnit(col.width) || defaultColWidth }}></col>
-        ))}
+        {columns.map((col) => {
+          const style: Styles = { width: formatCSSUnit(col.width) || defaultColWidth };
+          if (col.minWidth) {
+            style.minWidth = formatCSSUnit(col.minWidth);
+          }
+          return <col key={col.colKey} style={style}></col>;
+        })}
       </colgroup>
     );
 
@@ -397,7 +402,6 @@ export default defineComponent({
       '-moz-transform': translate,
       '-webkit-transform': translate,
     };
-    const columns = this.spansAndLeafNodes.leafColumns;
     const tableBodyProps = {
       rowAndColFixedPosition,
       showColumnShadow: this.showColumnShadow,

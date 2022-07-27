@@ -281,6 +281,10 @@ export interface BaseTableCol<T extends TableRowData = TableRowData> {
    */
   foot?: string | TNode<{ col: BaseTableCol; colIndex: number }>;
   /**
+   * 透传 CSS 属性 `min-width` 到 `<col>` 元素。⚠️ 仅少部分浏览器支持，如使用 [TablesNG](https://docs.google.com/document/d/16PFD1GtMI9Zgwu0jtPaKZJ75Q2wyZ9EZnVbBacOfiNA/preview)  渲染的 Chrome 浏览器支持 `minWidth`
+   */
+  minWidth?: string | number;
+  /**
    * 自定义表头或单元格，泛型 T 指表格数据类型
    */
   render?: TNode<BaseTableRenderParams<T>>;
@@ -293,7 +297,7 @@ export interface BaseTableCol<T extends TableRowData = TableRowData> {
    */
   title?: string | TNode<{ col: BaseTableCol; colIndex: number }>;
   /**
-   * 列宽，可以作为最小宽度使用。当列宽总和小于 `table` 元素时，浏览器根据宽度设置情况自动分配宽度；当列宽总和大于 `table` 元素，表现为定宽。可以同时调整 `table` 元素的宽度来达到自己想要的效果
+   * 列宽，可以作为最小宽度使用。当列宽总和小于 `table` 元素时，浏览器根据宽度设置情况等比例分配宽度；当列宽总和大于 `table` 元素，表现为定宽。可以同时调整 `table` 元素的宽度来达到自己想要的效果
    */
   width?: string | number;
 }
@@ -600,6 +604,10 @@ export interface EnhancedTableInstanceFunctions<T extends TableRowData = TableRo
    * 树形结构中，移除指定节点
    */
   remove: (key: TableRowValue) => void;
+  /**
+   * 重置或更新整个表格数据
+   */
+  resetData: (newData: T[]) => void;
   /**
    * 树形结构中，用于更新行数据。泛型 `T` 表示行数据类型
    */
