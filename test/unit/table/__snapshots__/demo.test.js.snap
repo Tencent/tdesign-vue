@@ -20239,7 +20239,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        重置数据
+        重置/更新数据
       </span>
     </button>
      
