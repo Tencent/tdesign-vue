@@ -17,6 +17,7 @@ fixedRows | Array | - | Typescript：`Array<number>` | N
 footData | Array | [] | table foot data。Typescript：`Array<T>` | N
 footerAffixProps | Object | - | `deprecated`。affix props。Typescript：`AffixProps` | N
 footerAffixedBottom | Boolean / Object | false | affix foot to viewport bottom。Typescript：`boolean | AffixProps` | N
+footerSummary | String / Slot / Function | - | footer summary content。Typescript：`string | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 headerAffixProps | Object | - | `deprecated`。affix props。Typescript：`AffixProps`，[Affix API Documents](./affix?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 headerAffixedTop | Boolean / Object | false | affix header to viewport top。Typescript：`boolean | AffixProps` | N
 height | String / Number | - | table height | N

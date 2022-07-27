@@ -78,6 +78,10 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   footerAffixedBottom?: boolean | AffixProps;
   /**
+   * 表尾总结行
+   */
+  footerSummary?: string | TNode;
+  /**
    * 请更为使用 `headerAffixedTop`。表头吸顶基于 Affix 组件开发，透传全部 Affix 组件属性
    * @deprecated
    */
@@ -281,7 +285,7 @@ export interface BaseTableCol<T extends TableRowData = TableRowData> {
    */
   foot?: string | TNode<{ col: BaseTableCol; colIndex: number }>;
   /**
-   * 透传 CSS 属性 `min-width` 到 `<col>` 元素。⚠️ 仅少部分浏览器支持，如使用 [TablesNG](https://docs.google.com/document/d/16PFD1GtMI9Zgwu0jtPaKZJ75Q2wyZ9EZnVbBacOfiNA/preview)  渲染的 Chrome 浏览器支持 `minWidth`
+   * 透传 CSS 属性 `min-width` 到 `<col>` 元素。⚠️ 仅少部分浏览器支持，如：使用 [TablesNG](https://docs.google.com/document/d/16PFD1GtMI9Zgwu0jtPaKZJ75Q2wyZ9EZnVbBacOfiNA/preview)  渲染的 Chrome 浏览器支持 `minWidth`
    */
   minWidth?: string | number;
   /**

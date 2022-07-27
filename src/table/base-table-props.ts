@@ -58,6 +58,10 @@ export default {
     type: [Boolean, Object] as PropType<TdBaseTableProps['footerAffixedBottom']>,
     default: false,
   },
+  /** 表尾总结行 */
+  footerSummary: {
+    type: [String, Function] as PropType<TdBaseTableProps['footerSummary']>,
+  },
   /** 已废弃。请更为使用 `headerAffixedTop`。表头吸顶基于 Affix 组件开发，透传全部 Affix 组件属性 */
   headerAffixProps: {
     type: Object as PropType<TdBaseTableProps['headerAffixProps']>,
