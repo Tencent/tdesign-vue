@@ -284,6 +284,7 @@ export default defineComponent({
   render(h) {
     const { rowAndColFixedPosition } = this;
     const data = this.isPaginateData ? this.dataSource : this.data;
+    const columns = this.spansAndLeafNodes?.leafColumns || this.columns;
 
     if (this.allowResizeColumnWidth) {
       log.warn('Table', 'allowResizeColumnWidth is going to be deprecated, please use resizable instead.');
@@ -292,7 +293,7 @@ export default defineComponent({
     const defaultColWidth = this.tableLayout === 'fixed' && this.isWidthOverflow ? '100px' : undefined;
     const colgroup = (
       <colgroup>
-        {(this.spansAndLeafNodes?.leafColumns || this.columns).map((col) => (
+        {columns.map((col) => (
           <col key={col.colKey} style={{ width: formatCSSUnit(col.width) || defaultColWidth }}></col>
         ))}
       </colgroup>
@@ -378,7 +379,7 @@ export default defineComponent({
               isFixedHeader={this.isFixedHeader}
               rowAndColFixedPosition={rowAndColFixedPosition}
               footData={this.footData}
-              columns={this.columns}
+              columns={columns}
               rowAttributes={this.rowAttributes}
               rowClassName={this.rowClassName}
               thWidthList={this.thWidthList}
@@ -399,7 +400,7 @@ export default defineComponent({
       rowAndColFixedPosition,
       showColumnShadow: this.showColumnShadow,
       data: this.isVirtual ? this.visibleData : data,
-      columns: this.spansAndLeafNodes.leafColumns,
+      columns,
       tableElm: this.tableRef,
       tableContentElm: this.tableContentRef,
       tableWidth: this.tableWidth,
@@ -446,7 +447,7 @@ export default defineComponent({
             isFixedHeader={this.isFixedHeader}
             rowAndColFixedPosition={rowAndColFixedPosition}
             footData={this.footData}
-            columns={this.columns}
+            columns={columns}
             rowAttributes={this.rowAttributes}
             rowClassName={this.rowClassName}
           ></TFoot>
