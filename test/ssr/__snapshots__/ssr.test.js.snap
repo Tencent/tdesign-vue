@@ -16556,12 +16556,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col style="width:100px;min-width:100px;">
+          <col style="width:100px;min-width:100px;">
+          <col style="width:100px;min-width:100px;">
+          <col style="width:100px;min-width:100px;">
+          <col style="width:100px;min-width:100px;">
+          <col style="width:100px;min-width:100px;">
         </colgroup>
         <thead class="t-table__header">
           <tr>
@@ -16613,12 +16613,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col style="width:100px;min-width:100px;">
+          <col style="width:100px;min-width:100px;">
+          <col style="width:100px;min-width:100px;">
+          <col style="width:100px;min-width:100px;">
+          <col style="width:100px;min-width:100px;">
+          <col style="width:100px;min-width:100px;">
         </colgroup>
         <thead class="t-table__header">
           <tr>
@@ -16670,12 +16670,12 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col style="width:100px;min-width:100px;">
+          <col style="width:100px;min-width:100px;">
+          <col style="width:100px;min-width:100px;">
+          <col style="width:100px;min-width:100px;">
+          <col style="width:100px;min-width:100px;">
+          <col style="width:100px;min-width:100px;">
         </colgroup>
         <thead class="t-table__header">
           <tr>
@@ -16735,11 +16735,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
   <div class="t-table__content">
     <table class="t-table--layout-fixed" style="width:;">
       <colgroup>
-        <col style="width:100px;">
-        <col style="width:100px;">
-        <col style="width:100px;">
-        <col style="width:100px;">
-        <col style="width:100px;">
+        <col style="width:100px;min-width:100px;">
+        <col style="width:100px;min-width:100px;">
+        <col style="width:100px;min-width:100px;">
+        <col style="width:100px;min-width:100px;">
+        <col style="width:100px;min-width:100px;">
       </colgroup>
       <thead class="t-table__header">
         <tr>
