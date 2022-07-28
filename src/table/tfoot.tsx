@@ -88,9 +88,9 @@ export default defineComponent({
         <tr key={rowIndex} attrs={trAttributes} class={customClasses}>
           {this.columns.map((col, colIndex) => {
             const cellSpans: RowspanColspan = {};
-            const cellKey = getCellKey(row, this.rowKey, col.colKey, colIndex);
             let spanState = null;
             if (this.skipSpansMap.size) {
+              const cellKey = getCellKey(row, this.rowKey, col.colKey, colIndex);
               spanState = this.skipSpansMap.get(cellKey) || {};
               spanState?.rowspan > 1 && (cellSpans.rowspan = spanState.rowspan);
               spanState?.colspan > 1 && (cellSpans.colspan = spanState.colspan);

@@ -15830,22 +15830,22 @@ exports[`Table Table loadingVue demo works fine 1`] = `
       >
         <colgroup>
           <col
-            style="width: 100px; min-width: 100px;"
+            style="width: 100px;"
           />
           <col
-            style="width: 100px; min-width: 100px;"
+            style="width: 100px;"
           />
           <col
-            style="width: 100px; min-width: 100px;"
+            style="width: 100px;"
           />
           <col
-            style="width: 100px; min-width: 100px;"
+            style="width: 100px;"
           />
           <col
-            style="width: 100px; min-width: 100px;"
+            style="width: 100px;"
           />
           <col
-            style="width: 100px; min-width: 100px;"
+            style="width: 100px;"
           />
         </colgroup>
         <thead
@@ -15989,22 +15989,22 @@ exports[`Table Table loadingVue demo works fine 1`] = `
       >
         <colgroup>
           <col
-            style="width: 100px; min-width: 100px;"
+            style="width: 100px;"
           />
           <col
-            style="width: 100px; min-width: 100px;"
+            style="width: 100px;"
           />
           <col
-            style="width: 100px; min-width: 100px;"
+            style="width: 100px;"
           />
           <col
-            style="width: 100px; min-width: 100px;"
+            style="width: 100px;"
           />
           <col
-            style="width: 100px; min-width: 100px;"
+            style="width: 100px;"
           />
           <col
-            style="width: 100px; min-width: 100px;"
+            style="width: 100px;"
           />
         </colgroup>
         <thead
@@ -16137,22 +16137,22 @@ exports[`Table Table loadingVue demo works fine 1`] = `
       >
         <colgroup>
           <col
-            style="width: 100px; min-width: 100px;"
+            style="width: 100px;"
           />
           <col
-            style="width: 100px; min-width: 100px;"
+            style="width: 100px;"
           />
           <col
-            style="width: 100px; min-width: 100px;"
+            style="width: 100px;"
           />
           <col
-            style="width: 100px; min-width: 100px;"
+            style="width: 100px;"
           />
           <col
-            style="width: 100px; min-width: 100px;"
+            style="width: 100px;"
           />
           <col
-            style="width: 100px; min-width: 100px;"
+            style="width: 100px;"
           />
         </colgroup>
         <thead
@@ -16308,19 +16308,19 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
     >
       <colgroup>
         <col
-          style="width: 100px; min-width: 100px;"
+          style="width: 100px;"
         />
         <col
-          style="width: 100px; min-width: 100px;"
+          style="width: 100px;"
         />
         <col
-          style="width: 100px; min-width: 100px;"
+          style="width: 100px;"
         />
         <col
-          style="width: 100px; min-width: 100px;"
+          style="width: 100px;"
         />
         <col
-          style="width: 100px; min-width: 100px;"
+          style="width: 100px;"
         />
       </colgroup>
       <thead

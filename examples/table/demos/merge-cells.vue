@@ -27,7 +27,6 @@ export default {
         {
           align: 'left',
           width: '100',
-          minWidth: '100',
           className: 'test',
           colKey: 'platform',
           title: '平台',
@@ -35,7 +34,6 @@ export default {
         {
           align: 'left',
           width: '100',
-          minWidth: '100',
           className: 'row',
           colKey: 'type',
           title: '类型',
@@ -43,7 +41,6 @@ export default {
         {
           align: 'left',
           width: '100',
-          minWidth: '100',
           className: 'test4',
           colKey: 'default',
           title: '默认值',
@@ -51,7 +48,6 @@ export default {
         {
           align: 'left',
           width: '100',
-          minWidth: '100',
           className: 'test3',
           colKey: 'needed',
           title: '是否必传',
@@ -59,7 +55,6 @@ export default {
         {
           align: 'left',
           width: '100',
-          minWidth: '100',
           className: 'row',
           colKey: 'description',
           title: '说明',
