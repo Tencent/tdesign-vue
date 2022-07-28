@@ -2,6 +2,7 @@ import {
   ref, reactive, watch, toRefs, SetupContext, onMounted, computed, onBeforeMount,
 } from '@vue/composition-api';
 import get from 'lodash/get';
+import { isNumber } from 'lodash';
 import log from '../../_common/js/log';
 import { ClassName, Styles } from '../../common';
 import { BaseTableCol, TableRowData, TdBaseTableProps } from '../type';
@@ -101,6 +102,8 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   const isFixedColumn = ref(false);
   const isFixedRightColumn = ref(false);
   const isFixedLeftColumn = ref(false);
+
+  const dragingCols = ref<string[]>([]);
 
   // 没有表头吸顶，没有虚拟滚动，则不需要表头宽度计算
   const notNeedThWidthList = computed(
@@ -383,6 +386,73 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     context.emit('scroll', { e });
   };
 
+  const setThWidthListByColumnDrag = (
+    dragCol: BaseTableCol<TableRowData>,
+    dragWidth: number,
+    nearCol: BaseTableCol<TableRowData>,
+    minWidth: number,
+  ) => {
+    if (!thWidthList.value) {
+      thWidthList.value = {};
+    }
+
+    const propColWidth = isNumber(dragCol.width) ? dragCol.width : parseFloat(dragCol.width);
+    const propNearColWidth = isNumber(nearCol.width) ? nearCol.width : parseFloat(nearCol.width);
+    const oldWidth = thWidthList.value[dragCol.colKey] || propColWidth;
+    const oldNearWidth = thWidthList.value[nearCol.colKey] || propNearColWidth;
+
+    thWidthList.value[dragCol.colKey] = dragWidth;
+    thWidthList.value[nearCol.colKey] = Math.max(minWidth, oldWidth + oldNearWidth - dragWidth);
+    dragingCols.value = [dragCol.colKey, nearCol.colKey];
+  };
+
+  const recalculateColWidth = (columns: BaseTableCol<TableRowData>[]) => {
+    let actualWidth = 0;
+    const missingWidthCols: BaseTableCol<TableRowData>[] = [];
+
+    columns.forEach((col) => {
+      if (!thWidthList.value[col.colKey]) {
+        thWidthList.value[col.colKey] = isNumber(col.width) ? col.width : parseFloat(col.width);
+      }
+      const originWidth = thWidthList.value[col.colKey];
+      if (originWidth) {
+        actualWidth += originWidth;
+      } else {
+        missingWidthCols.push(col);
+      }
+    });
+
+    if (tableElmWidth.value > 0 && actualWidth < tableElmWidth.value) {
+      if (missingWidthCols.length) {
+        const widthDiff = tableElmWidth.value - actualWidth;
+        const avgWidth = widthDiff / missingWidthCols.length;
+        missingWidthCols.forEach((col) => {
+          thWidthList.value[col.colKey] = avgWidth;
+        });
+      } else {
+        if (dragingCols.value.length) {
+          let sum = 0;
+          dragingCols.value.forEach((colKey) => {
+            sum += thWidthList.value[colKey];
+          });
+          actualWidth -= sum;
+          tableElmWidth.value -= sum;
+        }
+        columns.forEach((col) => {
+          if (dragingCols.value.includes(col.colKey)) return;
+          thWidthList.value[col.colKey] = (thWidthList.value[col.colKey] / actualWidth) * tableElmWidth.value;
+        });
+      }
+    } else {
+      missingWidthCols.forEach((col) => {
+        const originWidth = thWidthList.value[col.colKey] || col.width || 100;
+        thWidthList.value[col.colKey] = isNumber(originWidth) ? originWidth : parseFloat(originWidth);
+      });
+    }
+
+    dragingCols.value = [];
+  };
+
   watch(
     [
       data,
@@ -487,5 +557,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     updateThWidthListHandler,
     updateColumnFixedShadow,
     setUseFixedTableElmRef,
+    setThWidthListByColumnDrag,
+    recalculateColWidth,
   };
 }

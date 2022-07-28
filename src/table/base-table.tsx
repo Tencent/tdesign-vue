@@ -11,6 +11,7 @@ import {
   onMounted,
 } from '@vue/composition-api';
 import pick from 'lodash/pick';
+import { isNumber } from 'lodash';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
 import useColumnResize from './hooks/useColumnResize';
@@ -32,6 +33,7 @@ import TFoot from './tfoot';
 import log from '../_common/js/log';
 import { getIEVersion } from '../_common/js/utils/helper';
 import { getAffixProps } from './utils';
+import { BaseTableCol, TableRowData } from './type';
 
 export const BASE_TABLE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY'];
 export const BASE_TABLE_ALL_EVENTS = ROW_LISTENERS.map((t) => `row-${t}`).concat(BASE_TABLE_EVENTS);
@@ -79,6 +81,8 @@ export default defineComponent({
       emitScrollEvent,
       setUseFixedTableElmRef,
       updateColumnFixedShadow,
+      setThWidthListByColumnDrag,
+      recalculateColWidth,
     } = useFixed(props, context);
 
     // 1. 表头吸顶；2. 表尾吸底；3. 底部滚动条吸底；4. 分页器吸底
@@ -99,7 +103,7 @@ export default defineComponent({
     const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
 
     // 列宽拖拽逻辑
-    const columnResizeParams = useColumnResize(tableContentRef, refreshTable);
+    const columnResizeParams = useColumnResize(tableContentRef, refreshTable, setThWidthListByColumnDrag);
     const { resizeLineRef, resizeLineStyle } = columnResizeParams;
 
     const dynamicBaseTableClasses = computed(() => [
@@ -278,6 +282,7 @@ export default defineComponent({
       updateAffixHeaderOrFooter,
       refreshTable,
       onInnerVirtualScroll,
+      recalculateColWidth,
     };
   },
 
@@ -291,10 +296,16 @@ export default defineComponent({
     }
     const columnResizable = this.allowResizeColumnWidth === undefined ? this.resizable : this.allowResizeColumnWidth;
     const defaultColWidth = this.tableLayout === 'fixed' && this.isWidthOverflow ? '100px' : undefined;
+    if (this.resizable) {
+      this.recalculateColWidth(columns);
+    }
     const colgroup = (
       <colgroup>
         {columns.map((col) => (
-          <col key={col.colKey} style={{ width: formatCSSUnit(col.width) || defaultColWidth }}></col>
+          <col
+            key={col.colKey}
+            style={{ width: formatCSSUnit(this.thWidthList[col.colKey] || col.width) || defaultColWidth }}
+          ></col>
         ))}
       </colgroup>
     );

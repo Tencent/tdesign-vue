@@ -4,7 +4,16 @@ import { BaseTableCol, TableRowData } from '../type';
 const DEFAULT_MIN_WIDTH = 80;
 const DEFAULT_MAX_WIDTH = 600;
 
-export default function useColumnResize(tableContentRef: Ref<HTMLDivElement>, refreshTable: () => void) {
+export default function useColumnResize(
+  tableContentRef: Ref<HTMLDivElement>,
+  refreshTable: () => void,
+  setThWidthListByColumnDrag: (
+    dragCol: BaseTableCol<TableRowData>,
+    dragWidth: number,
+    nearCol: BaseTableCol<TableRowData>,
+    minWidth: number,
+  ) => void,
+) {
   const resizeLineRef = ref<HTMLDivElement>();
 
   const resizeLineParams = {
@@ -32,11 +41,7 @@ export default function useColumnResize(tableContentRef: Ref<HTMLDivElement>, re
       const maxWidth = col.resize?.maxWidth || DEFAULT_MAX_WIDTH;
       // 当离右边框的距离不超过 8 时，显示拖拽图标
       const distance = 8;
-      if (
-        targetBoundRect.width >= minWidth
-        && targetBoundRect.width <= maxWidth
-        && targetBoundRect.right - e.pageX <= distance
-      ) {
+      if (targetBoundRect.right - e.pageX <= distance) {
         target.style.cursor = 'col-resize';
         resizeLineParams.draggingCol = target;
       } else {
@@ -47,7 +52,7 @@ export default function useColumnResize(tableContentRef: Ref<HTMLDivElement>, re
   };
 
   // 调整表格列宽
-  const onColumnMousedown = (e: MouseEvent, col: BaseTableCol<TableRowData>) => {
+  const onColumnMousedown = (e: MouseEvent, col: BaseTableCol<TableRowData>, nearCol: BaseTableCol<TableRowData>) => {
     // 非 resize 的点击，不做处理
     if (!resizeLineParams.draggingCol) return;
 
@@ -86,7 +91,8 @@ export default function useColumnResize(tableContentRef: Ref<HTMLDivElement>, re
           width = maxColWidth;
         }
         // eslint-disable-next-line
-        col.width = `${width}px`;
+        // col.width = `${width}px`;
+        setThWidthListByColumnDrag(col, width, nearCol, nearCol.resize?.minWidth || DEFAULT_MIN_WIDTH);
 
         // 恢复设置
         resizeLineParams.isDragging = false;
