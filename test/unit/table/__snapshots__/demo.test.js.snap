@@ -565,44 +565,64 @@ exports[`Table Table affixVue demo works fine 1`] = `
           <tr
             class="t-tdesign__custom-footer-tr"
           >
-            <td>
+            <td
+              key="index"
+            >
               <b
                 style="color: rgb(0, 82, 217);"
               >
                 表尾
               </b>
             </td>
-            <td>
+            <td
+              key="platform"
+            >
               <span>
                 第 1 行
               </span>
             </td>
-            <td>
+            <td
+              key="type"
+            >
               全部类型
             </td>
-            <td>
+            <td
+              key="expo"
+            >
               -
             </td>
-            <td>
+            <td
+              key="click"
+            >
               -
             </td>
-            <td>
+            <td
+              key="ctr"
+            >
               -
             </td>
-            <td>
+            <td
+              key="default"
+            >
               <span>
                 空
               </span>
             </td>
-            <td>
+            <td
+              key="required"
+            >
                插槽渲染表尾 
             </td>
-            <td>
+            <td
+              key="detail.position"
+            >
               <div>
                 渲染函数输出表尾信息
               </div>
             </td>
-            <td>
+            <td
+              key="operation"
+            >
               -
             </td>
           </tr>
@@ -2897,8 +2917,75 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large"
 >
+  <div>
+    <div
+      class="t-radio-group t-size-m t-radio-group--filled"
+    >
+      <label
+        class="t-radio-button t-is-checked"
+      >
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="normal"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          普通表尾
+        </span>
+      </label>
+       
+      <label
+        class="t-radio-button"
+      >
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="full"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          通栏表尾
+        </span>
+      </label>
+       
+      <label
+        class="t-radio-button"
+      >
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="custom"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          自定义表尾合并列
+        </span>
+      </label>
+      <div
+        class="t-radio-group__bg-block"
+        style="width: 0px; left: 0px;"
+      />
+    </div>
+  </div>
+   
   <div
-    class="t-table"
+    class="t-table t-table--bordered"
     style="position: relative;"
   >
     <div
@@ -3117,30 +3204,46 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
           <tr
             class="t-tdesign__custom-footer-tr"
           >
-            <td>
+            <td
+              key="index"
+            >
               <b
                 style="color: rgb(0, 82, 217);"
               >
                 表尾
               </b>
             </td>
-            <td>
-              <span>
+            <td
+              key="platform"
+            >
+              <div
+                style="width: 100%; text-align: center;"
+              >
                 第 1 行
-              </span>
+              </div>
             </td>
-            <td>
+            <td
+              key="type"
+            >
               全部类型
             </td>
-            <td>
+            <td
+              key="default"
+            >
               <span>
                 空
               </span>
             </td>
-            <td>
-               插槽渲染表尾 
+            <td
+              key="required"
+            >
+              <b>
+                必传(插槽)
+              </b>
             </td>
-            <td>
+            <td
+              key="detail.position"
+            >
               <div>
                 渲染函数输出表尾信息
               </div>
@@ -7552,28 +7655,44 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
           <tr
             class=""
           >
-            <td>
+            <td
+              key="index"
+            >
               总述
             </td>
-            <td>
+            <td
+              key="platform"
+            >
               公有(5)
             </td>
-            <td>
+            <td
+              key="type"
+            >
               Number(5)
             </td>
-            <td>
+            <td
+              key="default"
+            >
               -
             </td>
-            <td>
+            <td
+              key="detail.position"
+            >
               -
             </td>
-            <td>
+            <td
+              key="description"
+            >
               数据(10)
             </td>
-            <td>
+            <td
+              key="needed"
+            >
               否(6)
             </td>
-            <td />
+            <td
+              key="operation"
+            />
           </tr>
         </tfoot>
       </table>
@@ -8530,22 +8649,34 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
           <tr
             class=""
           >
-            <td>
+            <td
+              key="platform"
+            >
               汇总
             </td>
-            <td>
+            <td
+              key="type"
+            >
               Number(5)
             </td>
-            <td>
+            <td
+              key="default"
+            >
               -
             </td>
-            <td>
+            <td
+              key="needed"
+            >
               否(6)
             </td>
-            <td>
+            <td
+              key="detail.position"
+            >
               -
             </td>
-            <td>
+            <td
+              key="description"
+            >
               数据(10)
             </td>
           </tr>

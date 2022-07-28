@@ -32,6 +32,7 @@ import TFoot from './tfoot';
 import log from '../_common/js/log';
 import { getIEVersion } from '../_common/js/utils/helper';
 import { getAffixProps } from './utils';
+import { Styles } from '../common';
 
 export const BASE_TABLE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY'];
 export const BASE_TABLE_ALL_EVENTS = ROW_LISTENERS.map((t) => `row-${t}`).concat(BASE_TABLE_EVENTS);
@@ -301,12 +302,13 @@ export default defineComponent({
     const defaultColWidth = this.tableLayout === 'fixed' && this.isWidthOverflow ? '100px' : undefined;
     const colgroup = (
       <colgroup>
-        {columns.map((col) => (
-          <col
-            key={col.colKey}
-            style={{ width: formatCSSUnit(this.thWidthList[col.colKey] || col.width) || defaultColWidth }}
-          ></col>
-        ))}
+        {columns.map((col) => {
+          const style: Styles = { width: formatCSSUnit(this.thWidthList[col.colKey] || col.width) || defaultColWidth };
+          if (col.minWidth) {
+            style.minWidth = formatCSSUnit(col.minWidth);
+          }
+          return <col key={col.colKey} style={style}></col>;
+        })}
       </colgroup>
     );
 
@@ -394,6 +396,7 @@ export default defineComponent({
               rowAttributes={this.rowAttributes}
               rowClassName={this.rowClassName}
               thWidthList={this.thWidthList}
+              rowspanAndColspanInFooter={this.rowspanAndColspanInFooter}
             ></TFoot>
           </table>
         </div>
@@ -462,6 +465,7 @@ export default defineComponent({
             columns={columns}
             rowAttributes={this.rowAttributes}
             rowClassName={this.rowClassName}
+            rowspanAndColspanInFooter={this.rowspanAndColspanInFooter}
           ></TFoot>
         </table>
       </div>
