@@ -37,8 +37,6 @@ export default function useColumnResize(
     const target = (e.target as HTMLElement).closest('th');
     const targetBoundRect = target.getBoundingClientRect();
     if (!resizeLineParams.isDragging) {
-      const minWidth = col.resize?.minWidth || DEFAULT_MIN_WIDTH;
-      const maxWidth = col.resize?.maxWidth || DEFAULT_MAX_WIDTH;
       // 当离右边框的距离不超过 8 时，显示拖拽图标
       const distance = 8;
       if (targetBoundRect.right - e.pageX <= distance) {

@@ -103,7 +103,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   const isFixedRightColumn = ref(false);
   const isFixedLeftColumn = ref(false);
 
-  const dragingCols = ref<string[]>([]);
+  const draggingCols = ref<string[]>([]);
 
   // 没有表头吸顶，没有虚拟滚动，则不需要表头宽度计算
   const notNeedThWidthList = computed(
@@ -403,7 +403,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
 
     thWidthList.value[dragCol.colKey] = dragWidth;
     thWidthList.value[nearCol.colKey] = Math.max(minWidth, oldWidth + oldNearWidth - dragWidth);
-    dragingCols.value = [dragCol.colKey, nearCol.colKey];
+    draggingCols.value = [dragCol.colKey, nearCol.colKey];
   };
 
   const recalculateColWidth = (columns: BaseTableCol<TableRowData>[]) => {
@@ -430,16 +430,16 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
           thWidthList.value[col.colKey] = avgWidth;
         });
       } else {
-        if (dragingCols.value.length) {
+        if (draggingCols.value.length) {
           let sum = 0;
-          dragingCols.value.forEach((colKey) => {
+          draggingCols.value.forEach((colKey) => {
             sum += thWidthList.value[colKey];
           });
           actualWidth -= sum;
           tableElmWidth.value -= sum;
         }
         columns.forEach((col) => {
-          if (dragingCols.value.includes(col.colKey)) return;
+          if (draggingCols.value.includes(col.colKey)) return;
           thWidthList.value[col.colKey] = (thWidthList.value[col.colKey] / actualWidth) * tableElmWidth.value;
         });
       }
@@ -450,7 +450,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
       });
     }
 
-    dragingCols.value = [];
+    draggingCols.value = [];
   };
 
   watch(
