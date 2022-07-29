@@ -293,6 +293,9 @@ export default defineComponent({
       log.warn('Table', 'allowResizeColumnWidth is going to be deprecated, please use resizable instead.');
     }
     const columnResizable = this.allowResizeColumnWidth === undefined ? this.resizable : this.allowResizeColumnWidth;
+    if (columnResizable && this.tableLayout === 'auto') {
+      log.warn('Table', 'table-layout can not be `auto` for resizable column table, set `table-layout: fixed` please.');
+    }
     const defaultColWidth = this.tableLayout === 'fixed' && this.isWidthOverflow ? '100px' : undefined;
     if (columnResizable) {
       this.recalculateColWidth(columns);
@@ -446,6 +449,7 @@ export default defineComponent({
             bordered={this.bordered}
             spansAndLeafNodes={this.spansAndLeafNodes}
             thList={this.thList}
+            thWidthList={this.thWidthList}
             resizable={columnResizable}
             columnResizeParams={this.columnResizeParams}
           />

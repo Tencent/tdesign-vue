@@ -79,6 +79,8 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     headerAffixedTop,
     footerAffixedBottom,
     bordered,
+    resizable,
+    allowResizeColumnWidth,
   } = toRefs(props);
   const data = ref<TableRowData[]>([]);
   const tableContentRef = ref<HTMLDivElement>();
@@ -351,6 +353,8 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   };
 
   const updateThWidthList = (trList: HTMLCollection) => {
+    const columnResizable = resizable.value || allowResizeColumnWidth.value || false;
+    if (columnResizable) return;
     const widthMap: { [colKey: string]: number } = {};
     for (let i = 0, len = trList.length; i < len; i++) {
       const thList = trList[i].children;
@@ -422,13 +426,33 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
       }
     });
 
-    if (tableElmWidth.value > 0 && actualWidth < tableElmWidth.value) {
+    let tableWidth = tableElmWidth.value;
+    let needUpdate = false;
+    if (tableWidth > 0) {
       if (missingWidthCols.length) {
-        const widthDiff = tableElmWidth.value - actualWidth;
-        const avgWidth = widthDiff / missingWidthCols.length;
-        missingWidthCols.forEach((col) => {
-          thWidthList.value[col.colKey] = avgWidth;
-        });
+        if (actualWidth < tableWidth) {
+          const widthDiff = tableWidth - actualWidth;
+          const avgWidth = widthDiff / missingWidthCols.length;
+          missingWidthCols.forEach((col) => {
+            thWidthList.value[col.colKey] = avgWidth;
+          });
+        } else if (tableLayout.value === 'fixed') {
+          missingWidthCols.forEach((col) => {
+            const originWidth = thWidthList.value[col.colKey] || 100;
+            thWidthList.value[col.colKey] = isNumber(originWidth) ? originWidth : parseFloat(originWidth);
+          });
+        } else {
+          const extraWidth = missingWidthCols.length * 100;
+          const totalWidth = extraWidth + actualWidth;
+          columns.forEach((col) => {
+            if (!thWidthList.value[col.colKey]) {
+              thWidthList.value[col.colKey] = (100 / totalWidth) * tableWidth;
+            } else {
+              thWidthList.value[col.colKey] = (thWidthList.value[col.colKey] / totalWidth) * tableWidth;
+            }
+          });
+        }
+        needUpdate = true;
       } else {
         if (draggingCols.value.length) {
           let sum = 0;
@@ -436,21 +460,45 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
             sum += thWidthList.value[colKey];
           });
           actualWidth -= sum;
-          tableElmWidth.value -= sum;
+          tableWidth -= sum;
         }
-        columns.forEach((col) => {
-          if (draggingCols.value.includes(col.colKey)) return;
-          thWidthList.value[col.colKey] = (thWidthList.value[col.colKey] / actualWidth) * tableElmWidth.value;
-        });
+
+        if (actualWidth !== tableWidth || draggingCols.value.length) {
+          columns.forEach((col) => {
+            if (draggingCols.value.includes(col.colKey)) return;
+            thWidthList.value[col.colKey] = (thWidthList.value[col.colKey] / actualWidth) * tableWidth;
+          });
+          needUpdate = true;
+        }
       }
     } else {
       missingWidthCols.forEach((col) => {
-        const originWidth = thWidthList.value[col.colKey] || col.width || 100;
+        const originWidth = thWidthList.value[col.colKey] || 100;
         thWidthList.value[col.colKey] = isNumber(originWidth) ? originWidth : parseFloat(originWidth);
       });
+
+      needUpdate = true;
     }
 
-    draggingCols.value = [];
+    // 列宽转为整数
+    if (needUpdate) {
+      let addon = 0;
+      Object.keys(thWidthList.value).forEach((key) => {
+        const width = thWidthList.value[key];
+        addon += width - Math.floor(width);
+        thWidthList.value[key] = Math.floor(width) + (addon > 1 ? 1 : 0);
+        if (addon > 1) {
+          addon -= 1;
+        }
+      });
+      if (addon > 0.5) {
+        thWidthList.value[columns[0].colKey] += 1;
+      }
+    }
+
+    if (draggingCols.value.length) {
+      draggingCols.value = [];
+    }
   };
 
   watch(
