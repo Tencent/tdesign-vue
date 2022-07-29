@@ -28,7 +28,7 @@ export interface TheadProps {
   columnResizeParams: {
     resizeLineRef: HTMLDivElement;
     resizeLineStyle: Object;
-    onColumnMouseover: (e: MouseEvent, col: BaseTableCol<TableRowData>) => void;
+    onColumnMouseover: (e: MouseEvent) => void;
     onColumnMousedown: (e: MouseEvent, col: BaseTableCol<TableRowData>, nearCol: BaseTableCol<TableRowData>) => void;
   };
   resizable: Boolean;
@@ -119,7 +119,7 @@ export default defineComponent({
                 col,
                 index < row.length - 1 ? row[index + 1] : row[index - 1],
               ),
-              mousemove: (e: MouseEvent) => this.columnResizeParams?.onColumnMouseover?.(e, col),
+              mousemove: (e: MouseEvent) => this.columnResizeParams?.onColumnMouseover?.(e),
             }
             : {};
           const content = isFunction(col.ellipsisTitle) ? col.ellipsisTitle(h, { col, colIndex: index }) : undefined;

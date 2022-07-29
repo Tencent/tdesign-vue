@@ -31,7 +31,7 @@ export default function useColumnResize(
 
   // 表格列宽拖拽事件
   // 只在表头显示拖拽图标
-  const onColumnMouseover = (e: MouseEvent, col: BaseTableCol<TableRowData>) => {
+  const onColumnMouseover = (e: MouseEvent) => {
     if (!resizeLineRef.value) return;
 
     const target = (e.target as HTMLElement).closest('th');
