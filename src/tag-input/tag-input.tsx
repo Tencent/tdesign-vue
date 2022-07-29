@@ -8,9 +8,9 @@ import { TdTagInputProps } from './type';
 import props from './props';
 import { prefix } from '../config';
 import { renderTNodeJSX } from '../utils/render-tnode';
-import useTagScroll from './useTagScroll';
+import useTagScroll from './hooks/useTagScroll';
 import useTagList from './useTagList';
-import useHover from './useHover';
+import useHover from './hooks/useHover';
 import useDefaultValue from '../hooks/useDefaultValue';
 import useDragSorter from './hooks/useDragSorter';
 
