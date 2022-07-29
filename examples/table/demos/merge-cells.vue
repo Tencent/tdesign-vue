@@ -6,6 +6,7 @@
     :columns="columns"
     :size="size"
     :rowspanAndColspan="rowspanAndColspan"
+    table-layout="fixed"
     resizable
   >
   </t-table>

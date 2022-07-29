@@ -24,7 +24,7 @@
         horizontalScrollAffixedBottom ? { offsetBottom: paginationAffixedBottom ? 61 : 0, zIndex: 1000 } : false
       "
       :paginationAffixedBottom="paginationAffixedBottom"
-      tableLayout="auto"
+      table-ayout="fixed"
       dragSort="col"
       bordered
       resizable
