@@ -296,7 +296,7 @@ export default defineComponent({
     }
     const columnResizable = this.allowResizeColumnWidth === undefined ? this.resizable : this.allowResizeColumnWidth;
     const defaultColWidth = this.tableLayout === 'fixed' && this.isWidthOverflow ? '100px' : undefined;
-    if (this.resizable) {
+    if (columnResizable) {
       this.recalculateColWidth(columns);
     }
     const colgroup = (
