@@ -141,15 +141,33 @@ exports[`Table Table affixVue demo works fine 1`] = `
         class="t-table--layout-auto"
       >
         <colgroup>
-          <col />
-          <col />
-          <col />
-          <col />
-          <col />
-          <col />
-          <col />
-          <col />
-          <col />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
           <col
             style="width: 80px;"
           />
@@ -1231,9 +1249,15 @@ exports[`Table Table baseVue demo works fine 1`] = `
           <col
             style="width: 100px;"
           />
-          <col />
-          <col />
-          <col />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
           <col
             style="width: 200px;"
           />
@@ -5734,10 +5758,18 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
         class="t-table--layout-fixed"
       >
         <colgroup>
-          <col />
-          <col />
-          <col />
-          <col />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
+          <col
+            style="width: 100px;"
+          />
         </colgroup>
         <thead
           class="t-table__header"
@@ -6273,7 +6305,9 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
           <col
             style="width: 150px;"
           />
-          <col />
+          <col
+            style="width: 100px;"
+          />
           <col
             style="width: 100px;"
           />

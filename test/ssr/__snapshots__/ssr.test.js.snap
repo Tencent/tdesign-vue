@@ -13945,15 +13945,15 @@ exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`
     <div class="t-table__content">
       <table class="t-table--layout-auto" style="width:;">
         <colgroup>
-          <col>
-          <col>
-          <col>
-          <col>
-          <col>
-          <col>
-          <col>
-          <col>
-          <col>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
           <col style="width:80px;">
         </colgroup>
         <thead class="t-table__header">
@@ -14211,9 +14211,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
         <colgroup>
           <col style="width:100px;">
           <col style="width:100px;">
-          <col>
-          <col>
-          <col>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
           <col style="width:200px;">
         </colgroup>
         <thead class="t-table__header">
@@ -15831,10 +15831,10 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
-          <col>
-          <col>
-          <col>
-          <col>
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
+          <col style="width:100px;">
         </colgroup>
         <thead class="t-table__header">
           <tr>
@@ -15962,7 +15962,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
           <col style="width:80px;">
           <col style="width:100px;">
           <col style="width:150px;">
-          <col>
+          <col style="width:100px;">
           <col style="width:100px;">
           <col style="width:150px;">
           <col style="width:100px;">
