@@ -622,6 +622,5 @@ export default function useFixed(
     updateColumnFixedShadow,
     setUseFixedTableElmRef,
     setThWidthListByColumnDrag,
-    recalculateColWidth,
   };
 }

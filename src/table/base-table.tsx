@@ -82,7 +82,6 @@ export default defineComponent({
       setUseFixedTableElmRef,
       updateColumnFixedShadow,
       setThWidthListByColumnDrag,
-      recalculateColWidth,
     } = useFixed(props, context, finalColumns);
 
     // 1. 表头吸顶；2. 表尾吸底；3. 底部滚动条吸底；4. 分页器吸底
@@ -281,7 +280,6 @@ export default defineComponent({
       updateAffixHeaderOrFooter,
       refreshTable,
       onInnerVirtualScroll,
-      recalculateColWidth,
     };
   },
 
