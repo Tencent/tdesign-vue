@@ -88,8 +88,6 @@ export default function useColumnResize(
         } else if (width >= maxColWidth) {
           width = maxColWidth;
         }
-        // eslint-disable-next-line
-        // col.width = `${width}px`;
         setThWidthListByColumnDrag(col, width, nearCol, nearCol.resize?.minWidth || DEFAULT_MIN_WIDTH);
 
         // 恢复设置

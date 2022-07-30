@@ -2,7 +2,7 @@ import {
   ref, reactive, watch, toRefs, SetupContext, onMounted, computed, onBeforeMount,
 } from '@vue/composition-api';
 import get from 'lodash/get';
-import { isNumber } from 'lodash';
+import isNumber from 'lodash/isNumber';
 import log from '../../_common/js/log';
 import { ClassName, Styles } from '../../common';
 import { BaseTableCol, TableRowData, TdBaseTableProps } from '../type';
