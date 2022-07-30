@@ -1,5 +1,13 @@
 import {
-  ref, reactive, watch, toRefs, SetupContext, onMounted, computed, onBeforeMount,
+  ref,
+  reactive,
+  watch,
+  toRefs,
+  SetupContext,
+  onMounted,
+  computed,
+  onBeforeMount,
+  ComputedRef,
 } from '@vue/composition-api';
 import get from 'lodash/get';
 import isNumber from 'lodash/isNumber';
@@ -67,7 +75,11 @@ export function getRowFixedStyles(
   };
 }
 
-export default function useFixed(props: TdBaseTableProps, context: SetupContext) {
+export default function useFixed(
+  props: TdBaseTableProps,
+  context: SetupContext,
+  finalColumns: ComputedRef<BaseTableCol<TableRowData>[]>,
+) {
   const {
     columns,
     tableLayout,
@@ -106,6 +118,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   const isFixedLeftColumn = ref(false);
 
   const draggingCols = ref<string[]>([]);
+  const columnResizable = computed(() => resizable.value || allowResizeColumnWidth.value || false);
 
   // 没有表头吸顶，没有虚拟滚动，则不需要表头宽度计算
   const notNeedThWidthList = computed(
@@ -353,8 +366,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   };
 
   const updateThWidthList = (trList: HTMLCollection) => {
-    const columnResizable = resizable.value || allowResizeColumnWidth.value || false;
-    if (columnResizable) return;
+    if (columnResizable.value) return;
     const widthMap: { [colKey: string]: number } = {};
     for (let i = 0, len = trList.length; i < len; i++) {
       const thList = trList[i].children;
@@ -368,6 +380,9 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   };
 
   const updateThWidthListHandler = () => {
+    if (columnResizable.value) {
+      recalculateColWidth(finalColumns.value);
+    }
     if (notNeedThWidthList.value) return;
     const timer = setTimeout(() => {
       updateTableWidth();
@@ -554,9 +569,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   const refreshTable = () => {
     updateTableWidth();
     updateFixedHeader();
-    if (!notNeedThWidthList.value) {
-      updateThWidthListHandler();
-    }
+    updateThWidthListHandler();
     if (isFixedColumn.value || isFixedHeader.value) {
       updateFixedStatus();
       updateColumnFixedShadow(tableContentRef.value);
@@ -570,6 +583,9 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     scrollbarWidth.value = scrollWidth;
     const timer = setTimeout(() => {
       updateTableWidth();
+      if (columnResizable.value) {
+        recalculateColWidth(finalColumns.value);
+      }
       clearTimeout(timer);
     });
     if (isFixedColumn.value || isFixedHeader.value || !notNeedThWidthList.value) {

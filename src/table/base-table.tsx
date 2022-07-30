@@ -61,6 +61,8 @@ export default defineComponent({
     // 表格基础样式类
     const { tableClasses, tableContentStyles, tableElementStyles } = useStyle(props);
     const { global } = useConfig('table');
+    const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
+    const finalColumns = computed(() => spansAndLeafNodes.value?.leafColumns || props.columns);
 
     // 固定表头和固定列逻辑
     const {
@@ -81,7 +83,7 @@ export default defineComponent({
       updateColumnFixedShadow,
       setThWidthListByColumnDrag,
       recalculateColWidth,
-    } = useFixed(props, context);
+    } = useFixed(props, context, finalColumns);
 
     // 1. 表头吸顶；2. 表尾吸底；3. 底部滚动条吸底；4. 分页器吸底
     const {
@@ -97,7 +99,6 @@ export default defineComponent({
       setTableContentRef,
     } = useAffix(props);
 
-    const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
     const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
 
     // 列宽拖拽逻辑
@@ -297,9 +298,6 @@ export default defineComponent({
       log.warn('Table', 'table-layout can not be `auto` for resizable column table, set `table-layout: fixed` please.');
     }
     const defaultColWidth = this.tableLayout === 'fixed' && this.isWidthOverflow ? '100px' : undefined;
-    if (columnResizable) {
-      this.recalculateColWidth(columns);
-    }
     const colgroup = (
       <colgroup>
         {columns.map((col) => (
