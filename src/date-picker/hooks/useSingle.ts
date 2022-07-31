@@ -33,9 +33,7 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
   const inputProps = computed(() => ({
     ...props.inputProps,
     ref: inputRef,
-    clearable: props.clearable,
     prefixIcon: props.prefixIcon,
-    readonly: !props.allowInput,
     placeholder: props.placeholder || global.value.placeholder[props.mode],
     class: [
       {
@@ -56,9 +54,7 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
       props.onFocus?.({ value: value.value, e });
       emit('focus', { value: value.value, e });
     },
-    onChange: (val: string, context: { e: InputEvent }) => {
-      props.onInput?.({ input: val, value: value.value, e: context.e });
-
+    onChange: (val: string) => {
       // 输入事件
       inputValue.value = val;
 
@@ -94,12 +90,17 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
     ...props.popupProps,
     overlayStyle: props.popupProps?.overlayStyle ?? { width: 'auto' },
     overlayClassName: [props.popupProps?.overlayClassName, `${COMPONENT_NAME.value}__panel-container`],
-    onVisibleChange: (visible: boolean) => {
-      popupVisible.value = visible;
+    onVisibleChange: (visible: boolean, context: any) => {
+      // 输入框点击不关闭面板
+      if (context.trigger === 'trigger-element-click') {
+        popupVisible.value = true;
+        return;
+      }
       if (!visible) {
         isHoverCell.value = false;
         inputValue.value = formatRef.value.formatDate(value.value);
       }
+      popupVisible.value = visible;
     },
   }));
 

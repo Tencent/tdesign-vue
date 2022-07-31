@@ -2,7 +2,7 @@ name: Auto Release
 
 on:
   pull_request:
-    branches: [develop]
+    branches: [develop, feature]
     types: [opened, synchronize, reopened, closed]
     paths:
       - "package.json"

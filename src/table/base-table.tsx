@@ -30,6 +30,7 @@ import { ROW_LISTENERS } from './tr';
 import THead from './thead';
 import TFoot from './tfoot';
 import log from '../_common/js/log';
+import { getIEVersion } from '../_common/js/utils/helper';
 import { getAffixProps } from './utils';
 
 export const BASE_TABLE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY'];
@@ -110,6 +111,7 @@ export default defineComponent({
         [tableBaseClass.multipleHeader]: isMultipleHeader.value,
         [tableColFixedClasses.leftShadow]: showColumnShadow.left,
         [tableColFixedClasses.rightShadow]: showColumnShadow.right,
+        [tableBaseClass.columnResizableTable]: props.resizable,
       },
     ]);
 
@@ -282,6 +284,7 @@ export default defineComponent({
   render(h) {
     const { rowAndColFixedPosition } = this;
     const data = this.isPaginateData ? this.dataSource : this.data;
+    const columns = this.spansAndLeafNodes?.leafColumns || this.columns;
 
     if (this.allowResizeColumnWidth) {
       log.warn('Table', 'allowResizeColumnWidth is going to be deprecated, please use resizable instead.');
@@ -290,7 +293,7 @@ export default defineComponent({
     const defaultColWidth = this.tableLayout === 'fixed' && this.isWidthOverflow ? '100px' : undefined;
     const colgroup = (
       <colgroup>
-        {(this.spansAndLeafNodes?.leafColumns || this.columns).map((col) => (
+        {columns.map((col) => (
           <col key={col.colKey} style={{ width: formatCSSUnit(col.width) || defaultColWidth }}></col>
         ))}
       </colgroup>
@@ -303,7 +306,10 @@ export default defineComponent({
     const onlyVirtualScrollBordered = !!(this.isVirtual && !this.headerAffixedTop && this.bordered) && /Chrome/.test(navigator?.userAgent);
     const borderWidth = this.bordered && onlyVirtualScrollBordered ? 1 : 0;
     const barWidth = this.isWidthOverflow ? this.scrollbarWidth : 0;
-    const affixHeaderWrapHeight = (this.affixHeaderRef?.getBoundingClientRect().height || 0) - barWidth - borderWidth;
+    // IE浏览器需要遮挡header吸顶滚动条，要减去getBoundingClientRect.height的滚动条高度4像素
+    const IEHeaderWrap = getIEVersion() <= 11 ? 4 : 0;
+    const affixHeaderHeight = (this.affixHeaderRef?.getBoundingClientRect().height || 0) - IEHeaderWrap;
+    const affixHeaderWrapHeight = affixHeaderHeight - barWidth - borderWidth;
     // 两类场景：1. 虚拟滚动，永久显示表头，直到表头消失在可视区域； 2. 表头吸顶，根据滚动情况判断是否显示吸顶表头
     const headerOpacity = props.headerAffixedTop ? Number(this.showAffixHeader) : 1;
     const affixHeaderWrapHeightStyle = {
@@ -315,7 +321,7 @@ export default defineComponent({
     const affixedHeader = Boolean((this.headerAffixedTop || this.isVirtual) && this.tableWidth) && (
       <div
         ref="affixHeaderRef"
-        style={{ width: `${this.tableWidth}px`, opacity: headerOpacity }}
+        style={{ width: `${this.tableWidth - 1}px`, opacity: headerOpacity }}
         class={['scrollbar', { [this.tableBaseClass.affixedHeaderElm]: this.headerAffixedTop || this.isVirtual }]}
       >
         <table class={this.tableElmClasses} style={{ ...this.tableElementStyles, width: `${this.tableElmWidth}px` }}>
@@ -373,7 +379,7 @@ export default defineComponent({
               isFixedHeader={this.isFixedHeader}
               rowAndColFixedPosition={rowAndColFixedPosition}
               footData={this.footData}
-              columns={this.columns}
+              columns={columns}
               rowAttributes={this.rowAttributes}
               rowClassName={this.rowClassName}
               thWidthList={this.thWidthList}
@@ -394,7 +400,7 @@ export default defineComponent({
       rowAndColFixedPosition,
       showColumnShadow: this.showColumnShadow,
       data: this.isVirtual ? this.visibleData : data,
-      columns: this.spansAndLeafNodes.leafColumns,
+      columns,
       tableElm: this.tableRef,
       tableContentElm: this.tableContentRef,
       tableWidth: this.tableWidth,
@@ -441,7 +447,7 @@ export default defineComponent({
             isFixedHeader={this.isFixedHeader}
             rowAndColFixedPosition={rowAndColFixedPosition}
             footData={this.footData}
-            columns={this.columns}
+            columns={columns}
             rowAttributes={this.rowAttributes}
             rowClassName={this.rowClassName}
           ></TFoot>

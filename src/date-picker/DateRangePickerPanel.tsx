@@ -82,7 +82,7 @@ export default defineComponent({
     }
 
     // 头部快速切换
-    function onJumperClick(flag: number, { partial }: { partial: DateRangePickerPartial }) {
+    function onJumperClick({ trigger, partial }: { trigger: string; partial: DateRangePickerPartial }) {
       const partialIndex = partial === 'start' ? 0 : 1;
 
       const triggerMap = {
@@ -94,11 +94,11 @@ export default defineComponent({
       const current = new Date(year.value[partialIndex], month.value[partialIndex]);
 
       let next = null;
-      if (flag === -1) {
+      if (trigger === 'prev') {
         next = subtractMonth(current, monthCount);
-      } else if (flag === 0) {
+      } else if (trigger === 'current') {
         next = new Date();
-      } else if (flag === 1) {
+      } else if (trigger === 'next') {
         next = addMonth(current, monthCount);
       }
 
@@ -130,13 +130,13 @@ export default defineComponent({
           partial,
           year: nextYear[partialIndex],
           date: value.value.map((v: string) => dayjs(v).toDate()),
-          trigger: flag === 0 ? 'today' : (`year-${triggerMap[flag]}` as DatePickerYearChangeTrigger),
+          trigger: trigger === 'current' ? 'today' : (`year-${triggerMap[trigger]}` as DatePickerYearChangeTrigger),
         });
         emit('year-change', {
           partial,
           year: nextYear[partialIndex],
           date: value.value.map((v: string) => dayjs(v).toDate()),
-          trigger: flag === 0 ? 'today' : (`year-${triggerMap[flag]}` as DatePickerYearChangeTrigger),
+          trigger: trigger === 'current' ? 'today' : (`year-${triggerMap[trigger]}` as DatePickerYearChangeTrigger),
         });
       }
       if (month.value.some((m) => !nextMonth.includes(m))) {
@@ -144,13 +144,13 @@ export default defineComponent({
           partial,
           month: nextMonth[partialIndex],
           date: value.value.map((v: string) => dayjs(v).toDate()),
-          trigger: flag === 0 ? 'today' : (`month-${triggerMap[flag]}` as DatePickerMonthChangeTrigger),
+          trigger: trigger === 'current' ? 'today' : (`month-${triggerMap[trigger]}` as DatePickerMonthChangeTrigger),
         });
         emit('month-change', {
           partial,
           month: nextMonth[partialIndex],
           date: value.value.map((v: string) => dayjs(v).toDate()),
-          trigger: flag === 0 ? 'today' : (`month-${triggerMap[flag]}` as DatePickerMonthChangeTrigger),
+          trigger: trigger === 'current' ? 'today' : (`month-${triggerMap[trigger]}` as DatePickerMonthChangeTrigger),
         });
       }
 
@@ -313,6 +313,7 @@ export default defineComponent({
       timePickerProps: props.timePickerProps,
       enableTimePicker: props.enableTimePicker,
       presetsPlacement: props.presetsPlacement,
+      panelPreselection: props.panelPreselection,
       onCellClick,
       onCellMouseEnter,
       onCellMouseLeave,

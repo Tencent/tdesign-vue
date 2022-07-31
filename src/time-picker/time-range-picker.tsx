@@ -45,7 +45,7 @@ export default defineComponent({
         [`${classPrefix.value}-is-focused`]: isShowPanel.value,
       },
     ]);
-    const { value, allowInput, format } = toRefs(props);
+    const { value, format } = toRefs(props);
     const [innerValue, setInnerValue] = useVModel(value, props.defaultValue, props.onChange, 'change');
 
     const handleShowPopup = (visible: boolean, context: any) => {
@@ -77,7 +77,7 @@ export default defineComponent({
     };
 
     const handleInputBlur = (value: TimeRangeValue, { e }: { e: FocusEvent }) => {
-      if (allowInput.value) {
+      if (props.allowInput) {
         const isValidTime = validateInputValue(currentValue.value[currentPanelIdx.value], format.value);
         if (isValidTime) {
           const formattedVal = formatInputValue(currentValue.value[currentPanelIdx.value], format.value);
@@ -136,50 +136,54 @@ export default defineComponent({
     return (
       <div class={this.componentName}>
         <RangeInputPopup
-          disabled={this.disabled}
-          popupVisible={this.isShowPanel}
-          popupProps={{
-            overlayStyle: {
-              width: 'auto',
-            },
-            onVisibleChange: this.handleShowPopup,
-            ...this.popupProps,
-          }}
-          onInputChange={this.handleInputChange}
-          inputValue={this.isShowPanel ? this.currentValue : this.innerValue ?? TIME_PICKER_EMPTY}
-          rangeInputProps={{
-            size: this.size,
-            clearable: this.clearable,
-            class: this.inputClasses,
-            value: this.isShowPanel ? this.currentValue : this.innerValue ?? undefined,
-            placeholder: this.placeholder || [this.global.placeholder, this.global.placeholder],
-            suffixIcon: () => <TimeIcon />,
-            onClear: this.handleClear,
-            onClick: this.handleClick,
-            onFocus: this.handleFocus,
-            onBlur: this.handleInputBlur,
-            readonly: !this.allowInput,
-            activeIndex: this.currentPanelIdx,
-            ...this.rangeInputProps,
-          }}
-          panel={() => (
-            <TimePickerPanel
-              {...{
-                props: {
-                  steps: this.steps,
-                  format: this.format,
-                  isShowPanel: this.isShowPanel,
-                  disableTime: this.disableTime,
-                  hideDisabledTime: this.hideDisabledTime,
-                  isFooterDisplay: true,
-                  value: this.currentValue[this.currentPanelIdx || 0],
-                  onChange: this.handleTimeChange,
-                  handleConfirmClick: this.handleClickConfirm,
-                  position: this.currentPanelIdx === 0 ? 'start' : 'end',
+          {...{
+            props: {
+              onInputChange: this.handleInputChange,
+              disabled: this.disabled,
+              popupVisible: this.isShowPanel,
+              inputValue: this.isShowPanel ? this.currentValue : this.innerValue ?? TIME_PICKER_EMPTY,
+              popupProps: {
+                overlayStyle: {
+                  width: 'auto',
                 },
-              }}
-            />
-          )}
+                onVisibleChange: this.handleShowPopup,
+                ...this.popupProps,
+              },
+              rangeInputProps: {
+                size: this.size,
+                clearable: this.clearable,
+                class: this.inputClasses,
+                // value: this.isShowPanel ? this.currentValue : this.innerValue ?? undefined,
+                placeholder: this.placeholder || [this.global.placeholder, this.global.placeholder],
+                suffixIcon: () => <TimeIcon />,
+                onClear: this.handleClear,
+                onClick: this.handleClick,
+                onFocus: this.handleFocus,
+                onBlur: this.handleInputBlur,
+                readonly: !this.allowInput,
+                activeIndex: this.currentPanelIdx,
+                ...this.rangeInputProps,
+              },
+              panel: () => (
+                <TimePickerPanel
+                  {...{
+                    props: {
+                      steps: this.steps,
+                      format: this.format,
+                      isShowPanel: this.isShowPanel,
+                      disableTime: this.disableTime,
+                      hideDisabledTime: this.hideDisabledTime,
+                      isFooterDisplay: true,
+                      value: this.currentValue[this.currentPanelIdx || 0],
+                      onChange: this.handleTimeChange,
+                      handleConfirmClick: this.handleClickConfirm,
+                      position: this.currentPanelIdx === 0 ? 'start' : 'end',
+                    },
+                  }}
+                />
+              ),
+            },
+          }}
         />
       </div>
     );

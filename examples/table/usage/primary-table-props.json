@@ -18,6 +18,12 @@
     "options": []
   },
   {
+    "name": "hideSortTips",
+    "type": "Boolean",
+    "defaultValue": false,
+    "options": []
+  },
+  {
     "name": "multipleSort",
     "type": "Boolean",
     "defaultValue": false,

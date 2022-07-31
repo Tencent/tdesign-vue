@@ -57,13 +57,20 @@ export default defineComponent({
           value.value || [dayjs().format(formatRef.value.timeFormat), dayjs().format(formatRef.value.timeFormat)],
         ) as string[];
 
-        // 确保右侧面板月份比左侧大 避免两侧面板月份一致
-        if (value.value.length === 2) {
-          const nextMonth = value.value.map((v: string) => dayjs(v).month());
-          if (year[0] === year[1] && nextMonth[0] === nextMonth[1]) {
+        // 空数据重置为当前年月
+        if (!value.value.length) {
+          year.value = [dayjs().year(), dayjs().year()];
+          month.value = [dayjs().month(), dayjs().month() + 1];
+        } else if (value.value.length === 2 && !props.enableTimePicker) {
+          // 确保右侧面板月份比左侧大 避免两侧面板月份一致
+          const nextMonth = value.value.map((v: string) => dayjs(v || new Date()).month());
+          if (year.value[0] === year.value[1] && nextMonth[0] === nextMonth[1]) {
             nextMonth[0] === 11 ? (nextMonth[0] -= 1) : (nextMonth[1] += 1);
           }
           month.value = nextMonth;
+        } else {
+          year.value = value.value.map((v: string) => dayjs(v || new Date()).year());
+          month.value = value.value.map((v: string) => dayjs(v || new Date()).month());
         }
       }
     });
@@ -99,7 +106,7 @@ export default defineComponent({
       if (props.mode === 'date') {
         // 选择了不属于面板中展示月份的日期
         const partialIndex = partial === 'start' ? 0 : 1;
-        const isAdditional = dayjs(date).month() !== month[partialIndex];
+        const isAdditional = dayjs(date).month() !== month.value[partialIndex];
         if (isAdditional) {
           // 保证左侧时间小于右侧
           if (activeIndex.value === 0) month.value = [dayjs(date).month(), Math.min(dayjs(date).month() + 1, 11)];
@@ -131,7 +138,7 @@ export default defineComponent({
     }
 
     // 头部快速切换
-    function onJumperClick(flag: number, { partial }: { partial: DateRangePickerPartial }) {
+    function onJumperClick({ trigger, partial }: { trigger: string; partial: DateRangePickerPartial }) {
       const partialIndex = partial === 'start' ? 0 : 1;
 
       const monthCountMap = { date: 1, month: 12, year: 120 };
@@ -139,11 +146,11 @@ export default defineComponent({
       const current = new Date(year.value[partialIndex], month.value[partialIndex]);
 
       let next = null;
-      if (flag === -1) {
+      if (trigger === 'prev') {
         next = subtractMonth(current, monthCount);
-      } else if (flag === 0) {
+      } else if (trigger === 'current') {
         next = new Date();
-      } else if (flag === 1) {
+      } else if (trigger === 'next') {
         next = addMonth(current, monthCount);
       }
 
@@ -273,7 +280,7 @@ export default defineComponent({
       month.value = nextMonth;
     }
 
-    const panelProps = computed(() => ({
+    const panelProps: any = computed(() => ({
       hoverValue: (isHoverCell.value ? inputValue.value : []) as string[],
       value: (isSelected.value ? cacheValue.value : value.value) as string[],
       isFirstValueSelected: isFirstValueSelected.value,
@@ -289,6 +296,8 @@ export default defineComponent({
       timePickerProps: props.timePickerProps,
       enableTimePicker: props.enableTimePicker,
       presetsPlacement: props.presetsPlacement,
+      panelPreselection: props.panelPreselection,
+      popupVisible: popupVisible.value,
       onCellClick,
       onCellMouseEnter,
       onCellMouseLeave,

@@ -73,9 +73,11 @@ export default {
     default: (): TdDateRangePickerProps['defaultValue'] => [],
   },
   /** 用于格式化日期，默认为：'YYYY-MM-DD'，可选值：'date/time-stamp/YYY-MM-DD' 等，[更多可选值见 Dayjs 详细文档](https://day.js.org/docs/en/display/format)。<br /> 其中 `valueType=date` 表示 `value` 数据类型为 `Date`；`valueType='time-stamp'` 表示 `value` 数据类型为时间戳 */
-  valueType: {
-    type: String,
-    default: '',
+  valueType: String,
+  /** 在开始日期选中之前，面板是否显示预选状态，即是否高亮预选日期 */
+  panelPreselection: {
+    type: Boolean,
+    default: true,
   },
   /** 点击日期单元格时触发 */
   onCellClick: Function as PropType<TdDateRangePickerPanelProps['onCellClick']>,
@@ -87,6 +89,8 @@ export default {
   onMonthChange: Function as PropType<TdDateRangePickerPanelProps['onMonthChange']>,
   /** 点击面板时触发 */
   onPanelClick: Function as PropType<TdDateRangePickerPanelProps['onPanelClick']>,
+  /** 如果存在“确认”按钮，则点击“确认”按钮时触发 */
+  onPresetClick: Function as PropType<TdDateRangePickerPanelProps['onPresetClick']>,
   /** 时间切换发生变化时触发 */
   onTimeChange: Function as PropType<TdDateRangePickerPanelProps['onTimeChange']>,
   /** 年份切换发生变化时触发 */
