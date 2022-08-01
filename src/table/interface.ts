@@ -69,7 +69,7 @@ export interface FixedColumnInfo {
 // 固定表头和固定列 具体的固定位置（left/top/right/bottom）
 export type RowAndColFixedPosition = Map<string | number, FixedColumnInfo>;
 
-// 允许修改行宽时重新计算各列宽度
+// 允许修改列宽时，重新计算各列宽度的函数声明
 export interface RecalculateColumnWidthFunc {
   (
     columns: BaseTableCol<TableRowData>[],
