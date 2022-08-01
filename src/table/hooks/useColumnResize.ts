@@ -1,4 +1,5 @@
 import { ref, Ref, reactive } from '@vue/composition-api';
+import isNumber from 'lodash/isNumber';
 import { BaseTableCol, TableRowData } from '../type';
 
 const DEFAULT_MIN_WIDTH = 80;
@@ -7,12 +8,8 @@ const DEFAULT_MAX_WIDTH = 600;
 export default function useColumnResize(
   tableContentRef: Ref<HTMLDivElement>,
   refreshTable: () => void,
-  setThWidthListByColumnDrag: (
-    dragCol: BaseTableCol<TableRowData>,
-    dragWidth: number,
-    nearCol: BaseTableCol<TableRowData>,
-    minWidth: number,
-  ) => void,
+  getThWidthList: () => { [colKeys: string]: number },
+  setThWidthList: (data: { [colKeys: string]: number }) => void,
 ) {
   const resizeLineRef = ref<HTMLDivElement>();
 
@@ -77,6 +74,24 @@ export default function useColumnResize(
       resizeLineStyle.bottom = `${parent.bottom - tableBoundRect.bottom}px`;
     }
 
+    const setThWidthListByColumnDrag = (
+      dragCol: BaseTableCol<TableRowData>,
+      dragWidth: number,
+      nearCol: BaseTableCol<TableRowData>,
+    ) => {
+      const thWidthList = getThWidthList();
+
+      const propColWidth = isNumber(dragCol.width) ? dragCol.width : parseFloat(dragCol.width);
+      const propNearColWidth = isNumber(nearCol.width) ? nearCol.width : parseFloat(nearCol.width);
+      const oldWidth = thWidthList[dragCol.colKey] || propColWidth;
+      const oldNearWidth = thWidthList[nearCol.colKey] || propNearColWidth;
+
+      setThWidthList({
+        [dragCol.colKey]: dragWidth,
+        [nearCol.colKey]: Math.max(nearCol.resize?.minWidth || DEFAULT_MIN_WIDTH, oldWidth + oldNearWidth - dragWidth),
+      });
+    };
+
     // 拖拽时鼠标可能会超出 table 范围，需要给 document 绑定拖拽相关事件
     const onDragEnd = () => {
       if (resizeLineParams.isDragging) {
@@ -88,7 +103,8 @@ export default function useColumnResize(
         } else if (width >= maxColWidth) {
           width = maxColWidth;
         }
-        setThWidthListByColumnDrag(col, width, nearCol, nearCol.resize?.minWidth || DEFAULT_MIN_WIDTH);
+        // 更新列宽
+        setThWidthListByColumnDrag(col, width, nearCol);
 
         // 恢复设置
         resizeLineParams.isDragging = false;

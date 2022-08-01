@@ -405,24 +405,28 @@ export default function useFixed(
     context.emit('scroll', { e });
   };
 
-  const setThWidthListByColumnDrag = (
-    dragCol: BaseTableCol<TableRowData>,
-    dragWidth: number,
-    nearCol: BaseTableCol<TableRowData>,
-    minWidth: number,
-  ) => {
+  const getThWidthList = () => {
+    if (!thWidthList.value) {
+      thWidthList.value = {};
+    }
+    return thWidthList.value;
+  };
+
+  const setDraggingCols = (colKeys: string[]) => {
+    draggingCols.value = colKeys;
+  };
+
+  const setThWidthList = (data: { [colKey: string]: number }) => {
     if (!thWidthList.value) {
       thWidthList.value = {};
     }
 
-    const propColWidth = isNumber(dragCol.width) ? dragCol.width : parseFloat(dragCol.width);
-    const propNearColWidth = isNumber(nearCol.width) ? nearCol.width : parseFloat(nearCol.width);
-    const oldWidth = thWidthList.value[dragCol.colKey] || propColWidth;
-    const oldNearWidth = thWidthList.value[nearCol.colKey] || propNearColWidth;
-
-    thWidthList.value[dragCol.colKey] = dragWidth;
-    thWidthList.value[nearCol.colKey] = Math.max(minWidth, oldWidth + oldNearWidth - dragWidth);
-    draggingCols.value = [dragCol.colKey, nearCol.colKey];
+    const draggingCols: string[] = [];
+    Object.entries(data).forEach(([colKey, width]) => {
+      thWidthList.value[colKey] = width;
+      draggingCols.push(colKey);
+    });
+    setDraggingCols(draggingCols);
   };
 
   const recalculateColWidth = (columns: BaseTableCol<TableRowData>[]) => {
@@ -621,6 +625,7 @@ export default function useFixed(
     updateThWidthListHandler,
     updateColumnFixedShadow,
     setUseFixedTableElmRef,
-    setThWidthListByColumnDrag,
+    getThWidthList,
+    setThWidthList,
   };
 }
