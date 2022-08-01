@@ -27,9 +27,9 @@ export interface TdInputNumberProps {
    */
   disabled?: boolean;
   /**
-   * 指定输入框展示值的格式。如果组件包含参数 `decimalPlaces`，参数会包含小数位数格式化之后的数据 `context.fixedNumber`
+   * 指定输入框展示值的格式
    */
-  format?: (value: InputNumberValue, context?: { fixedNumber?: InputNumberValue }) => InputNumberValue;
+  format?: (value: InputNumberValue) => InputNumberValue;
   /**
    * 透传 Input 输入框组件全部属性
    */

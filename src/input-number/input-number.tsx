@@ -41,7 +41,7 @@ export default defineComponent({
           placeholder={this.placeholder}
           unselectable={this.readonly ? 'on' : 'off'}
           autoWidth={this.autoWidth}
-          align={this.align || this.theme === 'row' ? 'center' : undefined}
+          align={this.align || (this.theme === 'row' ? 'center' : undefined)}
           status={this.isError ? 'error' : this.status}
           on={this.listeners}
           scopedSlots={this.$scopedSlots}
@@ -59,7 +59,9 @@ export default defineComponent({
           />
         )}
         {this.tips && (
-          <div class={`${this.classPrefix}-input__tips ${this.classPrefix}-input__tips--error`}>{this.tips}</div>
+          <div class={`${this.classPrefix}-input__tips ${this.classPrefix}-input__tips--${this.status}`}>
+            {this.tips}
+          </div>
         )}
       </div>
     );

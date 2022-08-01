@@ -252,7 +252,6 @@ exports[`Slider Slider inputNumberVerticalVue demo works fine 1`] = `
           >
             <div
               class="t-input t-size-m t-is-default"
-              ref="refInputElem"
             >
               <input
                 autocomplete="off"
@@ -360,7 +359,6 @@ exports[`Slider Slider inputNumberVerticalVue demo works fine 1`] = `
           >
             <div
               class="t-input t-size-m t-is-default"
-              ref="refInputElem"
             >
               <input
                 autocomplete="off"
@@ -419,7 +417,6 @@ exports[`Slider Slider inputNumberVerticalVue demo works fine 1`] = `
           >
             <div
               class="t-input t-size-m t-is-default"
-              ref="refInputElem"
             >
               <input
                 autocomplete="off"
@@ -523,7 +520,6 @@ exports[`Slider Slider inputNumberVue demo works fine 1`] = `
             >
               <div
                 class="t-input t-size-m t-is-default t-input--auto-width"
-                ref="refInputElem"
               >
                 <input
                   autocomplete="off"
@@ -635,7 +631,6 @@ exports[`Slider Slider inputNumberVue demo works fine 1`] = `
             >
               <div
                 class="t-input t-size-m t-is-default t-input--auto-width"
-                ref="refInputElem"
               >
                 <input
                   autocomplete="off"
@@ -699,7 +694,6 @@ exports[`Slider Slider inputNumberVue demo works fine 1`] = `
             >
               <div
                 class="t-input t-size-m t-is-default t-input--auto-width"
-                ref="refInputElem"
               >
                 <input
                   autocomplete="off"
