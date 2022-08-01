@@ -25,7 +25,7 @@ export default {
   },
   /** 禁用组件 */
   disabled: Boolean,
-  /** 指定输入框展示值的格式 */
+  /** 指定输入框展示值的格式。如果组件包含参数 `decimalPlaces`，参数会包含小数位数格式化之后的数据 `context.fixedNumber` */
   format: {
     type: Function as PropType<TdInputNumberProps['format']>,
   },
@@ -33,14 +33,16 @@ export default {
   inputProps: {
     type: Object as PropType<TdInputNumberProps['inputProps']>,
   },
-  /** 最大值 */
+  /** 是否作为大数使用。JS 支持的最大数字位数是 16 位，超过 16 位的数字需作为字符串大数处理。此时，数据类型必须保持为字符串，否则会丢失数据 */
+  largeNumber: Boolean,
+  /** 最大值。如果是大数，请传入字符串 */
   max: {
-    type: Number,
+    type: [String, Number] as PropType<TdInputNumberProps['max']>,
     default: Infinity,
   },
-  /** 最小值 */
+  /** 最小值。如果是大数，请传入字符串 */
   min: {
-    type: Number,
+    type: [String, Number] as PropType<TdInputNumberProps['min']>,
     default: -Infinity,
   },
   /** 占位符 */
@@ -67,9 +69,9 @@ export default {
       return ['success', 'warning', 'error'].includes(val);
     },
   },
-  /** 数值改变步数，可以是小数 */
+  /** 数值改变步数，可以是小数。如果是大数，请保证数据类型为字符串 */
   step: {
-    type: Number,
+    type: [String, Number] as PropType<TdInputNumberProps['step']>,
     default: 1,
   },
   /** 按钮布局 */
@@ -87,12 +89,12 @@ export default {
   },
   /** 值 */
   value: {
-    type: Number,
+    type: [String, Number] as PropType<TdInputNumberProps['value']>,
     default: undefined,
   },
   /** 值，非受控属性 */
   defaultValue: {
-    type: Number,
+    type: [String, Number] as PropType<TdInputNumberProps['defaultValue']>,
     default: undefined,
   },
   /** 失去焦点时触发 */
@@ -109,4 +111,6 @@ export default {
   onKeypress: Function as PropType<TdInputNumberProps['onKeypress']>,
   /** 释放键盘时触发 */
   onKeyup: Function as PropType<TdInputNumberProps['onKeyup']>,
+  /** 最大值或最小值校验结束后触发，`exceed-maximum` 表示超出最大值，`below-minimum` 表示小于最小值 */
+  onValidate: Function as PropType<TdInputNumberProps['onValidate']>,
 };
