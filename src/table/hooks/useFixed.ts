@@ -1,5 +1,13 @@
 import {
-  ref, reactive, watch, toRefs, SetupContext, onMounted, computed, onBeforeMount,
+  ref,
+  reactive,
+  watch,
+  toRefs,
+  SetupContext,
+  onMounted,
+  computed,
+  onBeforeMount,
+  ComputedRef,
 } from '@vue/composition-api';
 import get from 'lodash/get';
 import log from '../../_common/js/log';
@@ -8,7 +16,11 @@ import { BaseTableCol, TableRowData, TdBaseTableProps } from '../type';
 import getScrollbarWidth from '../../_common/js/utils/getScrollbarWidth';
 import { on, off } from '../../utils/dom';
 import {
-  FixedColumnInfo, TableRowFixedClasses, RowAndColFixedPosition, TableColFixedClasses,
+  FixedColumnInfo,
+  TableRowFixedClasses,
+  RowAndColFixedPosition,
+  TableColFixedClasses,
+  RecalculateColumnWidthFunc,
 } from '../interface';
 
 // 固定列相关类名处理
@@ -66,7 +78,11 @@ export function getRowFixedStyles(
   };
 }
 
-export default function useFixed(props: TdBaseTableProps, context: SetupContext) {
+export default function useFixed(
+  props: TdBaseTableProps,
+  context: SetupContext,
+  finalColumns: ComputedRef<BaseTableCol<TableRowData>[]>,
+) {
   const {
     columns,
     tableLayout,
@@ -78,6 +94,8 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     headerAffixedTop,
     footerAffixedBottom,
     bordered,
+    resizable,
+    allowResizeColumnWidth,
   } = toRefs(props);
   const data = ref<TableRowData[]>([]);
   const tableContentRef = ref<HTMLDivElement>();
@@ -102,6 +120,8 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   const isFixedRightColumn = ref(false);
   const isFixedLeftColumn = ref(false);
 
+  const columnResizable = computed(() => resizable.value || allowResizeColumnWidth.value || false);
+
   // 没有表头吸顶，没有虚拟滚动，则不需要表头宽度计算
   const notNeedThWidthList = computed(
     () => !(
@@ -112,8 +132,14 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     ),
   );
 
+  const recalculateColWidth = ref<RecalculateColumnWidthFunc>(() => {});
+
   function setUseFixedTableElmRef(val: HTMLTableElement) {
     tableElmRef.value = val;
+  }
+
+  function setRecalculateColWidthFuncRef(val: RecalculateColumnWidthFunc) {
+    recalculateColWidth.value = val;
   }
 
   function getColumnMap(
@@ -347,20 +373,33 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     tableElmWidth.value = elmRect?.width;
   };
 
-  const updateThWidthList = (trList: HTMLCollection) => {
-    const widthMap: { [colKey: string]: number } = {};
-    for (let i = 0, len = trList.length; i < len; i++) {
-      const thList = trList[i].children;
-      for (let j = 0, thLen = thList.length; j < thLen; j++) {
-        const th = thList[j] as HTMLElement;
-        const colKey = th.dataset.colkey;
-        widthMap[colKey] = th.getBoundingClientRect().width;
+  const updateThWidthList = (trList: HTMLCollection | { [colKey: string]: number }) => {
+    if (trList instanceof HTMLCollection) {
+      if (columnResizable.value) return;
+      const widthMap: { [colKey: string]: number } = {};
+      for (let i = 0, len = trList.length; i < len; i++) {
+        const thList = trList[i].children;
+        for (let j = 0, thLen = thList.length; j < thLen; j++) {
+          const th = thList[j] as HTMLElement;
+          const colKey = th.dataset.colkey;
+          widthMap[colKey] = th.getBoundingClientRect().width;
+        }
       }
+      thWidthList.value = widthMap;
+    } else {
+      if (!thWidthList.value) {
+        thWidthList.value = {};
+      }
+      Object.entries(trList).forEach(([colKey, width]) => {
+        thWidthList.value[colKey] = width;
+      });
     }
-    thWidthList.value = widthMap;
   };
 
   const updateThWidthListHandler = () => {
+    if (columnResizable.value) {
+      recalculateColWidth.value(finalColumns.value, thWidthList.value, tableLayout.value, tableElmWidth.value);
+    }
     if (notNeedThWidthList.value) return;
     const timer = setTimeout(() => {
       updateTableWidth();
@@ -381,6 +420,13 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     props.onScroll?.({ e });
     // Vue3 ignore next line
     context.emit('scroll', { e });
+  };
+
+  const getThWidthList = () => {
+    if (!thWidthList.value) {
+      thWidthList.value = {};
+    }
+    return thWidthList.value;
   };
 
   watch(
@@ -436,9 +482,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   const refreshTable = () => {
     updateTableWidth();
     updateFixedHeader();
-    if (!notNeedThWidthList.value) {
-      updateThWidthListHandler();
-    }
+    updateThWidthListHandler();
     if (isFixedColumn.value || isFixedHeader.value) {
       updateFixedStatus();
       updateColumnFixedShadow(tableContentRef.value);
@@ -452,6 +496,9 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     scrollbarWidth.value = scrollWidth;
     const timer = setTimeout(() => {
       updateTableWidth();
+      if (columnResizable.value) {
+        recalculateColWidth.value(finalColumns.value, thWidthList.value, tableLayout.value, tableElmWidth.value);
+      }
       clearTimeout(timer);
     });
     if (isFixedColumn.value || isFixedHeader.value || !notNeedThWidthList.value) {
@@ -487,5 +534,8 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     updateThWidthListHandler,
     updateColumnFixedShadow,
     setUseFixedTableElmRef,
+    getThWidthList,
+    updateThWidthList,
+    setRecalculateColWidthFuncRef,
   };
 }

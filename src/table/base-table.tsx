@@ -61,6 +61,8 @@ export default defineComponent({
     // 表格基础样式类
     const { tableClasses, tableContentStyles, tableElementStyles } = useStyle(props);
     const { global } = useConfig('table');
+    const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
+    const finalColumns = computed(() => spansAndLeafNodes.value?.leafColumns || props.columns);
 
     // 固定表头和固定列逻辑
     const {
@@ -79,7 +81,10 @@ export default defineComponent({
       emitScrollEvent,
       setUseFixedTableElmRef,
       updateColumnFixedShadow,
-    } = useFixed(props, context);
+      getThWidthList,
+      updateThWidthList,
+      setRecalculateColWidthFuncRef,
+    } = useFixed(props, context, finalColumns);
 
     // 1. 表头吸顶；2. 表尾吸底；3. 底部滚动条吸底；4. 分页器吸底
     const {
@@ -95,12 +100,12 @@ export default defineComponent({
       setTableContentRef,
     } = useAffix(props);
 
-    const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
     const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
 
     // 列宽拖拽逻辑
-    const columnResizeParams = useColumnResize(tableContentRef, refreshTable);
-    const { resizeLineRef, resizeLineStyle } = columnResizeParams;
+    const columnResizeParams = useColumnResize(tableContentRef, refreshTable, getThWidthList, updateThWidthList);
+    const { resizeLineRef, resizeLineStyle, recalculateColWidth } = columnResizeParams;
+    setRecalculateColWidthFuncRef(recalculateColWidth);
 
     const dynamicBaseTableClasses = computed(() => [
       tableClasses.value,
@@ -290,11 +295,17 @@ export default defineComponent({
       log.warn('Table', 'allowResizeColumnWidth is going to be deprecated, please use resizable instead.');
     }
     const columnResizable = this.allowResizeColumnWidth === undefined ? this.resizable : this.allowResizeColumnWidth;
+    if (columnResizable && this.tableLayout === 'auto') {
+      log.warn('Table', 'table-layout can not be `auto` for resizable column table, set `table-layout: fixed` please.');
+    }
     const defaultColWidth = this.tableLayout === 'fixed' && this.isWidthOverflow ? '100px' : undefined;
     const colgroup = (
       <colgroup>
         {columns.map((col) => (
-          <col key={col.colKey} style={{ width: formatCSSUnit(col.width) || defaultColWidth }}></col>
+          <col
+            key={col.colKey}
+            style={{ width: formatCSSUnit(this.thWidthList[col.colKey] || col.width) || defaultColWidth }}
+          ></col>
         ))}
       </colgroup>
     );
@@ -437,6 +448,7 @@ export default defineComponent({
             bordered={this.bordered}
             spansAndLeafNodes={this.spansAndLeafNodes}
             thList={this.thList}
+            thWidthList={this.thWidthList}
             resizable={columnResizable}
             columnResizeParams={this.columnResizeParams}
           />

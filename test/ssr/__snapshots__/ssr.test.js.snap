@@ -13936,14 +13936,14 @@ exports[`ssr snapshot test renders ./examples/switch/demos/status.vue correctly 
 exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large tdesign-demo__table-affix" style="width:100%;">
   <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表头吸顶</span></label> <label class="t-checkbox t-is-checked" style="margin-left:32px;"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表尾吸底</span></label> <label class="t-checkbox" style="margin-left:32px;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">滚动条吸底</span></label> <label class="t-checkbox" style="margin-left:32px;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">分页器吸底</span></label> <label class="t-checkbox t-is-checked" style="margin-left:32px;"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定左侧列</span></label> <label class="t-checkbox t-is-checked" style="margin-left:32px;"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定右侧列</span></label></div>
-  <div class="t-table t-table--bordered t-table--affixed-header t-table--footer-affixed t-table--column-fixed t-table--column-resizable t-table--col-draggable" style="position:relative;">
+  <div table-ayout="fixed" class="t-table t-table--bordered t-table--affixed-header t-table--footer-affixed t-table--column-fixed t-table--column-resizable t-table--col-draggable" style="position:relative;">
     <div offsetTop="0">
       <div>
         <div class="t-table__affixed-header-elm-wrap" style="width:0px;height:0px;opacity:1;margin-top:0;"></div>
       </div>
     </div>
     <div class="t-table__content">
-      <table class="t-table--layout-auto" style="width:;">
+      <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col>
           <col>

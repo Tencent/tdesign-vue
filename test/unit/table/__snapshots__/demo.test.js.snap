@@ -123,6 +123,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
   <div
     class="t-table t-table--bordered t-table--affixed-header t-table--footer-affixed t-table--column-fixed t-table--column-resizable t-table--col-draggable"
     style="position: relative;"
+    table-ayout="fixed"
   >
     <div
       offsettop="0"
@@ -138,7 +139,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
       class="t-table__content"
     >
       <table
-        class="t-table--layout-auto"
+        class="t-table--layout-fixed"
       >
         <colgroup>
           <col />
