@@ -1912,7 +1912,6 @@ exports[`Form Form disabledVue demo works fine 1`] = `
             >
               <div
                 class="t-input t-size-m t-is-default"
-                ref="refInputElem"
               >
                 <input
                   autocomplete="off"
@@ -5298,7 +5297,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             class="t-input-number t-size-m t-input-number--row"
           >
             <button
-              class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"
               type="button"
             >
               <svg
@@ -5320,7 +5319,6 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             >
               <div
                 class="t-input t-size-m t-is-default t-align-center"
-                ref="refInputElem"
               >
                 <input
                   autocomplete="off"
@@ -5332,7 +5330,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
               </div>
             </div>
             <button
-              class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase t-is-disabled"
               type="button"
             >
               <svg

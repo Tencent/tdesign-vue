@@ -1,59 +1,35 @@
+import Vue from 'vue';
 import {
-  computed, ref, SetupContext, toRefs, watch,
+  computed, onMounted, ref, SetupContext, toRefs, watch,
 } from '@vue/composition-api';
 import useCommonClassName from '../hooks/useCommonClassName';
 import useVModel from '../hooks/useVModel';
-import { TdInputNumberProps } from './type';
+import { InputNumberValue, TdInputNumberProps } from './type';
 // 计算逻辑，统一到 common 中，方便各框架复用（如超过 16 位的大数处理）
 import {
   canAddNumber,
+  canInputNumber,
   canReduceNumber,
   formatToNumber,
   getMaxOrMinValidateResult,
   getStepValue,
 } from '../_common/js/input-number/number';
-import { isInputNumber } from '../_common/js/input-number/large-number';
 
 /**
  * 独立一个组件 Hook 方便用户直接使用相关逻辑 自定义任何样式的数字输入框
  */
 export default function useInputNumber(props: TdInputNumberProps, context: SetupContext) {
   const { classPrefix, sizeClassNames, statusClassNames } = useCommonClassName();
-  const { value } = toRefs(props);
+  const { value, max, min } = toRefs(props);
   // 统一处理受控、非受控、语法糖 v-model 等
   const [tValue, setTValue] = useVModel(value, props.defaultValue, props.onChange, 'change');
-
+  const inputRef = ref<Vue>();
   const userInput = ref('');
   const displayValue = ref();
-  const tDisabled = ref(false);
+
+  const tDisabled = computed(() => props.disabled);
 
   const isError = ref<'exceed-maximum' | 'below-minimum'>();
-
-  watch(
-    tValue,
-    (val) => {
-      userInput.value = String(val);
-    },
-    { immediate: true },
-  );
-
-  watch(
-    () => [tValue, props.max, props.min],
-    () => {
-      // 没有输入完成，则无需校验
-      if (tValue.value === '-') return;
-      const error = getMaxOrMinValidateResult({
-        number: tValue.value,
-        largeNumber: props.largeNumber,
-        max: props.max,
-        min: props.min,
-      });
-      isError.value = error;
-      props.onValidate?.({ error });
-      context.emit('validate', { error });
-    },
-    { immediate: true },
-  );
 
   const disabledReduce = computed(
     () => tDisabled.value || !canReduceNumber(tValue.value, props.min, props.largeNumber),
@@ -82,6 +58,45 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     { [statusClassNames.disabled]: disabledAdd.value },
   ]);
 
+  const getUserInput = (value: InputNumberValue) => {
+    if (!value) return '';
+    if (props.format && !inputRef.value?.$el?.contains(document.activeElement)) {
+      return String(props.format(value));
+    }
+    return String(value);
+  };
+
+  watch(
+    tValue,
+    (val) => {
+      const inputValue = [undefined, null].includes(val) ? '' : String(val);
+      userInput.value = getUserInput(inputValue);
+    },
+    { immediate: true },
+  );
+
+  onMounted(() => {
+    userInput.value = getUserInput(tValue.value);
+  });
+
+  watch(
+    [tValue, max, min],
+    () => {
+      // @ts-ignore 没有输入完成，则无需校验
+      if ([undefined, '', null].includes(tValue.value)) return;
+      const error = getMaxOrMinValidateResult({
+        value: tValue.value,
+        largeNumber: props.largeNumber,
+        max: props.max,
+        min: props.min,
+      });
+      isError.value = error;
+      props.onValidate?.({ error });
+      context.emit('validate', { error });
+    },
+    { immediate: true },
+  );
+
   const handleStepValue = (op: 'add' | 'reduce') => getStepValue({
     op,
     step: props.step,
@@ -104,32 +119,33 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     setTValue(newValue, { type: 'add', e });
   };
 
-  const onInnerInputChange = (val: string, e: InputEvent) => {
+  const onInnerInputChange = (val: string, ctx: { e: InputEvent }) => {
+    if (!canInputNumber(val, props.largeNumber)) return;
     userInput.value = val;
     // 大数-字符串；普通数-数字
-    let newVal = props.largeNumber || isNaN(Number(val)) || !val ? val : Number(val);
-    newVal = isInputNumber(val) ? newVal : tValue.value;
-    if (newVal !== tValue.value && val !== '-') {
-      setTValue(newVal, { type: 'input', e });
+    const newVal = props.largeNumber || !val ? val : Number(val);
+    if (newVal !== tValue.value && !['-', '.', 'e', 'E'].includes(val.slice(-1))) {
+      setTValue(newVal, { type: 'input', e: ctx.e });
     }
   };
 
   const handleBlur = (value: string, ctx: { e: FocusEvent }) => {
+    userInput.value = getUserInput(value);
     const newValue = formatToNumber(value, {
       decimalPlaces: props.decimalPlaces,
       largeNumber: props.largeNumber,
-      format: props.format,
     });
     if (newValue !== value && String(newValue) !== value) {
       setTValue(newValue, { type: 'blur', e: ctx.e });
-      props.onBlur?.(newValue, ctx);
-      context.emit('blur', newValue, ctx);
     }
+    props.onBlur?.(newValue, ctx);
+    context.emit('blur', newValue, ctx);
   };
 
   const handleFocus = (value: string, ctx: { e: FocusEvent }) => {
-    props.onBlur?.(tValue.value, ctx);
-    context.emit('blur', tValue.value, ctx);
+    userInput.value = String(tValue.value);
+    props.onFocus?.(tValue.value, ctx);
+    context.emit('focus', tValue.value, ctx);
   };
 
   const handleKeydown = (value: string, ctx: { e: KeyboardEvent }) => {
@@ -147,8 +163,8 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
   };
 
   const handleKeyup = (value: string, ctx: { e: KeyboardEvent }) => {
-    props.onKeydown?.(tValue.value, ctx);
-    context.emit('keydown', tValue.value, ctx);
+    props.onKeyup?.(tValue.value, ctx);
+    context.emit('keyup', tValue.value, ctx);
   };
 
   const handleKeypress = (value: string, ctx: { e: KeyboardEvent }) => {
@@ -157,16 +173,16 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
   };
 
   const handleEnter = (value: string, ctx: { e: KeyboardEvent }) => {
+    userInput.value = getUserInput(value);
     const newValue = formatToNumber(value, {
       decimalPlaces: props.decimalPlaces,
       largeNumber: props.largeNumber,
-      format: props.format,
     });
     if (newValue !== value && String(newValue) !== value) {
-      setTValue(newValue, { type: 'blur', e: ctx.e });
-      props.onEnter?.(newValue, ctx);
-      context.emit('enter', newValue, ctx);
+      setTValue(newValue, { type: 'enter', e: ctx.e });
     }
+    props.onEnter?.(newValue, ctx);
+    context.emit('enter', newValue, ctx);
   };
 
   const listeners = {
@@ -189,6 +205,7 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     listeners,
     userInput,
     tValue,
+    inputRef,
     handleReduce,
     handleAdd,
     onInnerInputChange,

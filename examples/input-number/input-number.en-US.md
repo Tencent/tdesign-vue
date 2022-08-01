@@ -9,7 +9,7 @@ align | String | - | options：left/center/right | N
 autoWidth | Boolean | false | \- | N
 decimalPlaces | Number | undefined | \- | N
 disabled | Boolean | false | \- | N
-format | Function | - | Typescript：`(value: InputNumberValue, context?: { fixedNumber?: InputNumberValue }) => InputNumberValue` | N
+format | Function | - | Typescript：`(value: InputNumberValue) => InputNumberValue` | N
 inputProps | Object | - | Typescript：`InputProps`，[Input API Documents](./input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/input-number/type.ts) | N
 largeNumber | Boolean | false | \- | N
 max | String / Number | Infinity | Typescript：`InputNumberValue` | N

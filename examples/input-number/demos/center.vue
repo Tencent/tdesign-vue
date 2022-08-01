@@ -1,10 +1,13 @@
 <template>
   <div class="tdesign-demo-block-column-large tdesign-demo__input-number-center">
     <div>
+      <t-input-number v-model="value1" :step="0.1" :max="5" autoWidth />
+    </div>
+
+    <div>
       <t-input-number
-        v-model="value"
+        v-model="value2"
         theme="row"
-        size="medium"
         :max="15"
         :min="-2"
         :disabled="false"
@@ -12,6 +15,9 @@
         autoWidth
         @change="handleChange"
         @validate="onValidate"
+        @blur="handleBlur"
+        @focus="handleFocus"
+        @enter="handleEnter"
       ></t-input-number>
     </div>
 
@@ -25,9 +31,11 @@
 export default {
   data() {
     return {
-      error: undefined,
-      value: 3,
+      // 如果希望默认显示为空，请使用 ''，切勿使用 undefined
+      value1: '',
+      value2: 3,
       decimalValue: 3.41,
+      error: undefined,
     };
   },
   computed: {
@@ -50,9 +58,6 @@ export default {
     handleBlur(v, ctx) {
       console.info('blur', v, ctx);
     },
-    handleKeydownEnter(v, ctx) {
-      console.info('enter', v, ctx);
-    },
     handleKeydown(v, ctx) {
       console.info('keydown', v, ctx);
     },
@@ -61,6 +66,9 @@ export default {
     },
     handleKeypress(v, ctx) {
       console.info('keypress', v, ctx);
+    },
+    handleEnter(v, ctx) {
+      console.info('enter', v, ctx);
     },
   },
 };
