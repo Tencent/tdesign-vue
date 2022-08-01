@@ -142,33 +142,15 @@ exports[`Table Table affixVue demo works fine 1`] = `
         class="t-table--layout-fixed"
       >
         <colgroup>
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
+          <col />
           <col
             style="width: 80px;"
           />
@@ -180,7 +162,6 @@ exports[`Table Table affixVue demo works fine 1`] = `
             <th
               class="row t-table__th-index t-align-center"
               data-colkey="index"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -191,7 +172,6 @@ exports[`Table Table affixVue demo works fine 1`] = `
             <th
               class="t-table__th-platform"
               data-colkey="platform"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -202,7 +182,6 @@ exports[`Table Table affixVue demo works fine 1`] = `
             <th
               class="t-table__th-type"
               data-colkey="type"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -213,7 +192,6 @@ exports[`Table Table affixVue demo works fine 1`] = `
             <th
               class="t-table__th-expo"
               data-colkey="expo"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -224,7 +202,6 @@ exports[`Table Table affixVue demo works fine 1`] = `
             <th
               class="t-table__th-click"
               data-colkey="click"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -235,7 +212,6 @@ exports[`Table Table affixVue demo works fine 1`] = `
             <th
               class="t-table__th-ctr"
               data-colkey="ctr"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -246,7 +222,6 @@ exports[`Table Table affixVue demo works fine 1`] = `
             <th
               class="t-table__th-default"
               data-colkey="default"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -257,7 +232,6 @@ exports[`Table Table affixVue demo works fine 1`] = `
             <th
               class="t-table__th-required"
               data-colkey="required"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -268,7 +242,6 @@ exports[`Table Table affixVue demo works fine 1`] = `
             <th
               class="t-table__th-detail.position"
               data-colkey="detail.position"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -283,7 +256,6 @@ exports[`Table Table affixVue demo works fine 1`] = `
             <th
               class="t-table__th-operation"
               data-colkey="operation"
-              style="width: 80px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -1260,15 +1232,9 @@ exports[`Table Table baseVue demo works fine 1`] = `
           <col
             style="width: 100px;"
           />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
+          <col />
+          <col />
+          <col />
           <col
             style="width: 200px;"
           />
@@ -1280,7 +1246,6 @@ exports[`Table Table baseVue demo works fine 1`] = `
             <th
               class="custom-column-class-name t-table__th-index t-align-center"
               data-colkey="index"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -1291,7 +1256,6 @@ exports[`Table Table baseVue demo works fine 1`] = `
             <th
               class="t-table__th-platform"
               data-colkey="platform"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -1302,7 +1266,6 @@ exports[`Table Table baseVue demo works fine 1`] = `
             <th
               class="t-table__th-type"
               data-colkey="type"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -1313,7 +1276,6 @@ exports[`Table Table baseVue demo works fine 1`] = `
             <th
               class="t-table__th-default"
               data-colkey="default"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -1324,7 +1286,6 @@ exports[`Table Table baseVue demo works fine 1`] = `
             <th
               class="t-table__th-needed"
               data-colkey="needed"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -1335,7 +1296,6 @@ exports[`Table Table baseVue demo works fine 1`] = `
             <th
               class="t-table__th-detail.position"
               data-colkey="detail.position"
-              style="width: 200px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -5775,18 +5735,10 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
         class="t-table--layout-fixed"
       >
         <colgroup>
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
+          <col />
+          <col />
+          <col />
+          <col />
         </colgroup>
         <thead
           class="t-table__header"
@@ -5795,7 +5747,6 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
             <th
               class="t-table__th-firstName"
               data-colkey="firstName"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -5837,7 +5788,6 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
             <th
               class="t-table__th-lastName"
               data-colkey="lastName"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -5917,7 +5867,6 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
             <th
               class="t-table__th-email"
               data-colkey="email"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -5959,7 +5908,6 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
             <th
               class="t-table__th-createTime"
               data-colkey="createTime"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -6326,9 +6274,7 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
           <col
             style="width: 150px;"
           />
-          <col
-            style="width: 100px;"
-          />
+          <col />
           <col
             style="width: 100px;"
           />
@@ -6349,7 +6295,6 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
             <th
               class="t-table__th-index t-align-center"
               data-colkey="index"
-              style="width: 80px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -6360,7 +6305,6 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
             <th
               class="t-table__th-platform"
               data-colkey="platform"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -6371,7 +6315,6 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
             <th
               class="t-table__th-type"
               data-colkey="type"
-              style="width: 150px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -6382,7 +6325,6 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
             <th
               class="t-table__th-default"
               data-colkey="default"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -6393,7 +6335,6 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
             <th
               class="t-table__th-description"
               data-colkey="description"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -6404,7 +6345,6 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
             <th
               class="t-table__th-needed"
               data-colkey="needed"
-              style="width: 150px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -6415,7 +6355,6 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
             <th
               class="t-table__th-operation"
               data-colkey="operation"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -6426,7 +6365,6 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
             <th
               class="t-table__th-detail.position"
               data-colkey="detail.position"
-              style="width: 120px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -6853,7 +6791,6 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             <th
               class="t-table__th-index t-align-center"
               data-colkey="index"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -6864,7 +6801,6 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             <th
               class="t-table__th-platform"
               data-colkey="platform"
-              style="width: 120px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -6875,7 +6811,6 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             <th
               class="t-table__th-type"
               data-colkey="type"
-              style="width: 120px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -6886,7 +6821,6 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             <th
               class="t-table__th-default"
               data-colkey="default"
-              style="width: 150px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -6897,7 +6831,6 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             <th
               class="t-table__th-detail.position"
               data-colkey="detail.position"
-              style="width: 250px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -6908,7 +6841,6 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             <th
               class="t-table__th-description"
               data-colkey="description"
-              style="width: 120px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -6919,7 +6851,6 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             <th
               class="t-table__th-needed"
               data-colkey="needed"
-              style="width: 120px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -6930,7 +6861,6 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
             <th
               class="t-table__th-operation"
               data-colkey="operation"
-              style="width: 100px;"
             >
               <div
                 class="t-table__th-cell-inner"
@@ -16270,7 +16200,6 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
           <th
             class="test t-table__th-platform"
             data-colkey="platform"
-            style="width: 100px;"
           >
             <div
               class="t-table__th-cell-inner"
@@ -16281,7 +16210,6 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
           <th
             class="row t-table__th-type"
             data-colkey="type"
-            style="width: 100px;"
           >
             <div
               class="t-table__th-cell-inner"
@@ -16292,7 +16220,6 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
           <th
             class="test4 t-table__th-default"
             data-colkey="default"
-            style="width: 100px;"
           >
             <div
               class="t-table__th-cell-inner"
@@ -16303,7 +16230,6 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
           <th
             class="test3 t-table__th-needed"
             data-colkey="needed"
-            style="width: 100px;"
           >
             <div
               class="t-table__th-cell-inner"
@@ -16314,7 +16240,6 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
           <th
             class="row t-table__th-description"
             data-colkey="description"
-            style="width: 100px;"
           >
             <div
               class="t-table__th-cell-inner"

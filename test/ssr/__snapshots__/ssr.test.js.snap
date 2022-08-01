@@ -13945,49 +13945,49 @@ exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
           <col style="width:80px;">
         </colgroup>
         <thead class="t-table__header">
           <tr>
-            <th data-colkey="index" class="row t-table__th-index t-align-center" style="width:100px;">
+            <th data-colkey="index" class="row t-table__th-index t-align-center">
               <div class="t-table__th-cell-inner">序号</div>
             </th>
-            <th data-colkey="platform" class="t-table__th-platform" style="width:100px;">
+            <th data-colkey="platform" class="t-table__th-platform">
               <div class="t-table__th-cell-inner">平台</div>
             </th>
-            <th data-colkey="type" class="t-table__th-type" style="width:100px;">
+            <th data-colkey="type" class="t-table__th-type">
               <div class="t-table__th-cell-inner">类型</div>
             </th>
-            <th data-colkey="expo" class="t-table__th-expo" style="width:100px;">
+            <th data-colkey="expo" class="t-table__th-expo">
               <div class="t-table__th-cell-inner">曝光</div>
             </th>
-            <th data-colkey="click" class="t-table__th-click" style="width:100px;">
+            <th data-colkey="click" class="t-table__th-click">
               <div class="t-table__th-cell-inner">点击</div>
             </th>
-            <th data-colkey="ctr" class="t-table__th-ctr" style="width:100px;">
+            <th data-colkey="ctr" class="t-table__th-ctr">
               <div class="t-table__th-cell-inner">点击率</div>
             </th>
-            <th data-colkey="default" class="t-table__th-default" style="width:100px;">
+            <th data-colkey="default" class="t-table__th-default">
               <div class="t-table__th-cell-inner">默认值</div>
             </th>
-            <th data-colkey="required" class="t-table__th-required" style="width:100px;">
+            <th data-colkey="required" class="t-table__th-required">
               <div class="t-table__th-cell-inner">是否必传</div>
             </th>
-            <th data-colkey="detail.position" class="t-table__th-detail.position" style="width:100px;">
+            <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__ellipsis t-text-ellipsis">详情信息</div>
               </div>
             </th>
-            <th data-colkey="operation" class="t-table__th-operation" style="width:80px;">
+            <th data-colkey="operation" class="t-table__th-operation">
               <div class="t-table__th-cell-inner">操作</div>
             </th>
           </tr>
@@ -14211,29 +14211,29 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
         <colgroup>
           <col style="width:100px;">
           <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col>
+          <col>
+          <col>
           <col style="width:200px;">
         </colgroup>
         <thead class="t-table__header">
           <tr>
-            <th data-colkey="index" class="custom-column-class-name t-table__th-index t-align-center" style="width:100px;">
+            <th data-colkey="index" class="custom-column-class-name t-table__th-index t-align-center">
               <div class="t-table__th-cell-inner">序号</div>
             </th>
-            <th data-colkey="platform" class="t-table__th-platform" style="width:100px;">
+            <th data-colkey="platform" class="t-table__th-platform">
               <div class="t-table__th-cell-inner">平台</div>
             </th>
-            <th data-colkey="type" class="t-table__th-type" style="width:100px;">
+            <th data-colkey="type" class="t-table__th-type">
               <div class="t-table__th-cell-inner">类型</div>
             </th>
-            <th data-colkey="default" class="t-table__th-default" style="width:100px;">
+            <th data-colkey="default" class="t-table__th-default">
               <div class="t-table__th-cell-inner">默认值</div>
             </th>
-            <th data-colkey="needed" class="t-table__th-needed" style="width:100px;">
+            <th data-colkey="needed" class="t-table__th-needed">
               <div class="t-table__th-cell-inner">是否必传</div>
             </th>
-            <th data-colkey="detail.position" class="t-table__th-detail.position" style="width:200px;">
+            <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__ellipsis t-text-ellipsis">详情信息</div>
               </div>
@@ -15831,14 +15831,14 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
-          <col style="width:100px;">
+          <col>
+          <col>
+          <col>
+          <col>
         </colgroup>
         <thead class="t-table__header">
           <tr>
-            <th data-colkey="firstName" class="t-table__th-firstName" style="width:100px;">
+            <th data-colkey="firstName" class="t-table__th-firstName">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__cell--filterable">
                   <div class="t-table__cell--title">
@@ -15852,7 +15852,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
                 </div>
               </div>
             </th>
-            <th data-colkey="lastName" class="t-table__th-lastName" style="width:100px;">
+            <th data-colkey="lastName" class="t-table__th-lastName">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__cell--sortable t-table__cell--filterable">
                   <div class="t-table__cell--title">
@@ -15867,7 +15867,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
                 </div>
               </div>
             </th>
-            <th data-colkey="email" class="t-table__th-email" style="width:100px;">
+            <th data-colkey="email" class="t-table__th-email">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__cell--filterable">
                   <div class="t-table__cell--title">
@@ -15881,7 +15881,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
                 </div>
               </div>
             </th>
-            <th data-colkey="createTime" class="t-table__th-createTime" style="width:100px;">
+            <th data-colkey="createTime" class="t-table__th-createTime">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__cell--filterable">
                   <div class="t-table__cell--title">
@@ -15962,7 +15962,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
           <col style="width:80px;">
           <col style="width:100px;">
           <col style="width:150px;">
-          <col style="width:100px;">
+          <col>
           <col style="width:100px;">
           <col style="width:150px;">
           <col style="width:100px;">
@@ -15970,28 +15970,28 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
         </colgroup>
         <thead class="t-table__header">
           <tr>
-            <th data-colkey="index" class="t-table__th-index t-align-center" style="width:80px;">
+            <th data-colkey="index" class="t-table__th-index t-align-center">
               <div class="t-table__th-cell-inner">序号</div>
             </th>
-            <th data-colkey="platform" class="t-table__th-platform" style="width:100px;">
+            <th data-colkey="platform" class="t-table__th-platform">
               <div class="t-table__th-cell-inner">平台</div>
             </th>
-            <th data-colkey="type" class="t-table__th-type" style="width:150px;">
+            <th data-colkey="type" class="t-table__th-type">
               <div class="t-table__th-cell-inner">类型</div>
             </th>
-            <th data-colkey="default" class="t-table__th-default" style="width:100px;">
+            <th data-colkey="default" class="t-table__th-default">
               <div class="t-table__th-cell-inner">默认值</div>
             </th>
-            <th data-colkey="description" class="t-table__th-description" style="width:100px;">
+            <th data-colkey="description" class="t-table__th-description">
               <div class="t-table__th-cell-inner">说明</div>
             </th>
-            <th data-colkey="needed" class="t-table__th-needed" style="width:150px;">
+            <th data-colkey="needed" class="t-table__th-needed">
               <div class="t-table__th-cell-inner">是否必传</div>
             </th>
-            <th data-colkey="operation" class="t-table__th-operation" style="width:100px;">
+            <th data-colkey="operation" class="t-table__th-operation">
               <div class="t-table__th-cell-inner">操作</div>
             </th>
-            <th data-colkey="detail.position" class="t-table__th-detail.position" style="width:120px;">
+            <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__ellipsis t-text-ellipsis">详情信息</div>
               </div>
@@ -16355,28 +16355,28 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
         </colgroup>
         <thead class="t-table__header">
           <tr>
-            <th data-colkey="index" class="t-table__th-index t-align-center" style="width:100px;">
+            <th data-colkey="index" class="t-table__th-index t-align-center">
               <div class="t-table__th-cell-inner">序号</div>
             </th>
-            <th data-colkey="platform" class="t-table__th-platform" style="width:120px;">
+            <th data-colkey="platform" class="t-table__th-platform">
               <div class="t-table__th-cell-inner">平台</div>
             </th>
-            <th data-colkey="type" class="t-table__th-type" style="width:120px;">
+            <th data-colkey="type" class="t-table__th-type">
               <div class="t-table__th-cell-inner">类型</div>
             </th>
-            <th data-colkey="default" class="t-table__th-default" style="width:150px;">
+            <th data-colkey="default" class="t-table__th-default">
               <div class="t-table__th-cell-inner">默认值</div>
             </th>
-            <th data-colkey="detail.position" class="t-table__th-detail.position" style="width:250px;">
+            <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">详情信息</div>
             </th>
-            <th data-colkey="description" class="t-table__th-description" style="width:120px;">
+            <th data-colkey="description" class="t-table__th-description">
               <div class="t-table__th-cell-inner">说明</div>
             </th>
-            <th data-colkey="needed" class="t-table__th-needed" style="width:120px;">
+            <th data-colkey="needed" class="t-table__th-needed">
               <div class="t-table__th-cell-inner">必传</div>
             </th>
-            <th data-colkey="operation" class="t-table__th-operation" style="width:100px;">
+            <th data-colkey="operation" class="t-table__th-operation">
               <div class="t-table__th-cell-inner">操作</div>
             </th>
           </tr>
@@ -16736,19 +16736,19 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
       </colgroup>
       <thead class="t-table__header">
         <tr>
-          <th data-colkey="platform" class="test t-table__th-platform" style="width:100px;">
+          <th data-colkey="platform" class="test t-table__th-platform">
             <div class="t-table__th-cell-inner">平台</div>
           </th>
-          <th data-colkey="type" class="row t-table__th-type" style="width:100px;">
+          <th data-colkey="type" class="row t-table__th-type">
             <div class="t-table__th-cell-inner">类型</div>
           </th>
-          <th data-colkey="default" class="test4 t-table__th-default" style="width:100px;">
+          <th data-colkey="default" class="test4 t-table__th-default">
             <div class="t-table__th-cell-inner">默认值</div>
           </th>
-          <th data-colkey="needed" class="test3 t-table__th-needed" style="width:100px;">
+          <th data-colkey="needed" class="test3 t-table__th-needed">
             <div class="t-table__th-cell-inner">是否必传</div>
           </th>
-          <th data-colkey="description" class="row t-table__th-description" style="width:100px;">
+          <th data-colkey="description" class="row t-table__th-description">
             <div class="t-table__th-cell-inner">说明</div>
           </th>
         </tr>
