@@ -1,27 +1,23 @@
 <template>
-  <div>
-    <t-input-number
-      v-model="value"
-      theme="row"
-      size="medium"
-      :max="15"
-      :min="-2"
-      :disabled="false"
-      :on-change="onChange"
-      :on-focus="onFocus"
-      :on-blur="onBlur"
-      :on-enter="onKeydownEnter"
-      :on-keydown="onKeydown"
-      :on-keyup="onKeyup"
-      :on-keypress="onKeypress"
-      @change="handleChange"
-      @focus="handleFocus"
-      @blur="handleBlur"
-      @enter="handleKeydownEnter"
-      @keydown="handleKeydown"
-      @keyup="handleKeyup"
-      @keypress="handleKeypress"
-    ></t-input-number>
+  <div class="tdesign-demo-block-column-large tdesign-demo__input-number-center">
+    <div>
+      <t-input-number
+        v-model="value"
+        theme="row"
+        size="medium"
+        :max="15"
+        :min="-2"
+        :disabled="false"
+        :tips="tips"
+        autoWidth
+        @change="handleChange"
+        @validate="onValidate"
+      ></t-input-number>
+    </div>
+
+    <div>
+      <t-input-number v-model="decimalValue" :step="0.1" :max="5" autoWidth />
+    </div>
   </div>
 </template>
 
@@ -29,33 +25,24 @@
 export default {
   data() {
     return {
+      error: undefined,
       value: 3,
-      onChange: (v, ctx) => {
-        console.info('onChange', v, ctx);
-      },
-      onFocus: (v, ctx) => {
-        console.info('onFocus', v, ctx);
-      },
-      onBlur: (v, ctx) => {
-        console.info('onBlur', v, ctx);
-      },
-      onKeydownEnter: (v, ctx) => {
-        console.info('onEnter', v, ctx);
-      },
-      onKeydown: (v, ctx) => {
-        console.info('onKeydown', v, ctx);
-      },
-      onKeyup: (v, ctx) => {
-        console.info('onKeyup', v, ctx);
-      },
-      onKeypress: (v, ctx) => {
-        console.info('onKeypress', v, ctx);
-      },
+      decimalValue: 3.41,
     };
+  },
+  computed: {
+    tips() {
+      if (this.error === 'exceed-maximum') return 'number can not be exceed maximum';
+      if (this.error === 'below-minimum') return 'number can not be below minimum';
+      return undefined;
+    },
   },
   methods: {
     handleChange(v, ctx) {
       console.info('change', v, ctx);
+    },
+    onValidate({ error }) {
+      this.error = error;
     },
     handleFocus(v, ctx) {
       console.info('focus', v, ctx);
@@ -78,3 +65,10 @@ export default {
   },
 };
 </script>
+
+<style>
+/** 数字输入框过短换行时，则通过 CSS 调整宽度 */
+.tdesign-demo__input-number-center .t-input__tips {
+  width: 300px;
+}
+</style>
