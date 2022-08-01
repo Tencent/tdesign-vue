@@ -25,7 +25,7 @@ export default {
   },
   /** 禁用组件 */
   disabled: Boolean,
-  /** 指定输入框展示值的格式 */
+  /** 格式化输入框展示值。第二个事件参数 `context.fixedNumber` 表示处理过小数位数 `decimalPlaces` 的数字 */
   format: {
     type: Function as PropType<TdInputNumberProps['format']>,
   },
