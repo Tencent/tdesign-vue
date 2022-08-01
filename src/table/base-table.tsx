@@ -82,7 +82,8 @@ export default defineComponent({
       setUseFixedTableElmRef,
       updateColumnFixedShadow,
       getThWidthList,
-      setThWidthList,
+      updateThWidthList,
+      setRecalculateColWidthFuncRef,
     } = useFixed(props, context, finalColumns);
 
     // 1. 表头吸顶；2. 表尾吸底；3. 底部滚动条吸底；4. 分页器吸底
@@ -102,8 +103,9 @@ export default defineComponent({
     const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
 
     // 列宽拖拽逻辑
-    const columnResizeParams = useColumnResize(tableContentRef, refreshTable, getThWidthList, setThWidthList);
-    const { resizeLineRef, resizeLineStyle } = columnResizeParams;
+    const columnResizeParams = useColumnResize(tableContentRef, refreshTable, getThWidthList, updateThWidthList);
+    const { resizeLineRef, resizeLineStyle, recalculateColWidth } = columnResizeParams;
+    setRecalculateColWidthFuncRef(recalculateColWidth);
 
     const dynamicBaseTableClasses = computed(() => [
       tableClasses.value,

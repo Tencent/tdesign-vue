@@ -9,9 +9,10 @@ export default function useColumnResize(
   tableContentRef: Ref<HTMLDivElement>,
   refreshTable: () => void,
   getThWidthList: () => { [colKeys: string]: number },
-  setThWidthList: (data: { [colKeys: string]: number }) => void,
+  updateThWidthList: (data: { [colKeys: string]: number }) => void,
 ) {
   const resizeLineRef = ref<HTMLDivElement>();
+  const notCalculateWidthCols = ref<string[]>([]);
 
   const resizeLineParams = {
     isDragging: false,
@@ -25,6 +26,10 @@ export default function useColumnResize(
     left: '10px',
     bottom: '0',
   });
+
+  const setNotCalculateWidthCols = (colKeys: string[]) => {
+    notCalculateWidthCols.value = colKeys;
+  };
 
   // 表格列宽拖拽事件
   // 只在表头显示拖拽图标
@@ -86,10 +91,12 @@ export default function useColumnResize(
       const oldWidth = thWidthList[dragCol.colKey] || propColWidth;
       const oldNearWidth = thWidthList[nearCol.colKey] || propNearColWidth;
 
-      setThWidthList({
+      updateThWidthList({
         [dragCol.colKey]: dragWidth,
         [nearCol.colKey]: Math.max(nearCol.resize?.minWidth || DEFAULT_MIN_WIDTH, oldWidth + oldNearWidth - dragWidth),
       });
+
+      setNotCalculateWidthCols([dragCol.colKey, nearCol.colKey]);
     };
 
     // 拖拽时鼠标可能会超出 table 范围，需要给 document 绑定拖拽相关事件
@@ -137,10 +144,112 @@ export default function useColumnResize(
     document.ondragstart = () => false;
   };
 
+  const recalculateColWidth = (
+    columns: BaseTableCol<TableRowData>[],
+    thWidthList: { [colKey: string]: number },
+    tableLayout: string,
+    tableElmWidth: number,
+  ) => {
+    let actualWidth = 0;
+    const missingWidthCols: BaseTableCol<TableRowData>[] = [];
+    const thMap: { [colKey: string]: number } = {};
+
+    columns.forEach((col) => {
+      if (!thWidthList[col.colKey]) {
+        thMap[col.colKey] = isNumber(col.width) ? col.width : parseFloat(col.width);
+      } else {
+        thMap[col.colKey] = thWidthList[col.colKey];
+      }
+      const originWidth = thMap[col.colKey];
+      if (originWidth) {
+        actualWidth += originWidth;
+      } else {
+        missingWidthCols.push(col);
+      }
+    });
+
+    let tableWidth = tableElmWidth;
+    let needUpdate = false;
+    if (tableWidth > 0) {
+      if (missingWidthCols.length) {
+        if (actualWidth < tableWidth) {
+          const widthDiff = tableWidth - actualWidth;
+          const avgWidth = widthDiff / missingWidthCols.length;
+          missingWidthCols.forEach((col) => {
+            thMap[col.colKey] = avgWidth;
+          });
+        } else if (tableLayout === 'fixed') {
+          missingWidthCols.forEach((col) => {
+            const originWidth = thMap[col.colKey] || 100;
+            thMap[col.colKey] = isNumber(originWidth) ? originWidth : parseFloat(originWidth);
+          });
+        } else {
+          const extraWidth = missingWidthCols.length * 100;
+          const totalWidth = extraWidth + actualWidth;
+          columns.forEach((col) => {
+            if (!thMap[col.colKey]) {
+              thMap[col.colKey] = (100 / totalWidth) * tableWidth;
+            } else {
+              thMap[col.colKey] = (thMap[col.colKey] / totalWidth) * tableWidth;
+            }
+          });
+        }
+        needUpdate = true;
+      } else {
+        if (notCalculateWidthCols.value.length) {
+          let sum = 0;
+          notCalculateWidthCols.value.forEach((colKey) => {
+            sum += thMap[colKey];
+          });
+          actualWidth -= sum;
+          tableWidth -= sum;
+        }
+
+        if (actualWidth !== tableWidth || notCalculateWidthCols.value.length) {
+          columns.forEach((col) => {
+            if (notCalculateWidthCols.value.includes(col.colKey)) return;
+            thMap[col.colKey] = (thMap[col.colKey] / actualWidth) * tableWidth;
+          });
+          needUpdate = true;
+        }
+      }
+    } else {
+      missingWidthCols.forEach((col) => {
+        const originWidth = thMap[col.colKey] || 100;
+        thMap[col.colKey] = isNumber(originWidth) ? originWidth : parseFloat(originWidth);
+      });
+
+      needUpdate = true;
+    }
+
+    // 列宽转为整数
+    if (needUpdate) {
+      let addon = 0;
+      Object.keys(thMap).forEach((key) => {
+        const width = thMap[key];
+        addon += width - Math.floor(width);
+        thMap[key] = Math.floor(width) + (addon > 1 ? 1 : 0);
+        if (addon > 1) {
+          addon -= 1;
+        }
+      });
+      if (addon > 0.5) {
+        thMap[columns[0].colKey] += 1;
+      }
+    }
+
+    updateThWidthList(thMap);
+
+    if (notCalculateWidthCols.value.length) {
+      notCalculateWidthCols.value = [];
+    }
+  };
+
   return {
     resizeLineRef,
     resizeLineStyle,
     onColumnMouseover,
     onColumnMousedown,
+    recalculateColWidth,
   };
 }
