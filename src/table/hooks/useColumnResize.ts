@@ -1,5 +1,6 @@
 import { ref, Ref, reactive } from '@vue/composition-api';
 import isNumber from 'lodash/isNumber';
+import { RecalculateColumnWidthFunc } from '../interface';
 import { BaseTableCol, TableRowData } from '../type';
 
 const DEFAULT_MIN_WIDTH = 80;
@@ -144,12 +145,12 @@ export default function useColumnResize(
     document.ondragstart = () => false;
   };
 
-  const recalculateColWidth = (
+  const recalculateColWidth: RecalculateColumnWidthFunc = (
     columns: BaseTableCol<TableRowData>[],
     thWidthList: { [colKey: string]: number },
     tableLayout: string,
     tableElmWidth: number,
-  ) => {
+  ): void => {
     let actualWidth = 0;
     const missingWidthCols: BaseTableCol<TableRowData>[] = [];
     const thMap: { [colKey: string]: number } = {};

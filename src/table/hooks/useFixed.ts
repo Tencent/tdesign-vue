@@ -16,7 +16,11 @@ import { BaseTableCol, TableRowData, TdBaseTableProps } from '../type';
 import getScrollbarWidth from '../../_common/js/utils/getScrollbarWidth';
 import { on, off } from '../../utils/dom';
 import {
-  FixedColumnInfo, TableRowFixedClasses, RowAndColFixedPosition, TableColFixedClasses,
+  FixedColumnInfo,
+  TableRowFixedClasses,
+  RowAndColFixedPosition,
+  TableColFixedClasses,
+  RecalculateColumnWidthFunc,
 } from '../interface';
 
 // 固定列相关类名处理
@@ -128,27 +132,13 @@ export default function useFixed(
     ),
   );
 
-  const recalculateColWidth = ref<(
-    columns: BaseTableCol<TableRowData>[],
-    thWidthList: { [colKey: string]: number },
-    tableLayout: string,
-    tableElmWidth: number,
-  ) => void
-    >(() => {},
-    );
+  const recalculateColWidth = ref<RecalculateColumnWidthFunc>(() => {});
 
   function setUseFixedTableElmRef(val: HTMLTableElement) {
     tableElmRef.value = val;
   }
 
-  function setRecalculateColWidthFuncRef(
-    val: (
-      columns: BaseTableCol<TableRowData>[],
-      thWidthList: { [colKey: string]: number },
-      tableLayout: string,
-      tableElmWidth: number,
-    ) => void,
-  ) {
+  function setRecalculateColWidthFuncRef(val: RecalculateColumnWidthFunc) {
     recalculateColWidth.value = val;
   }
 
