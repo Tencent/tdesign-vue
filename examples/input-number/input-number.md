@@ -9,7 +9,7 @@ align | String | - | 文本内容位置，居左/居中/居右。可选项：lef
 autoWidth | Boolean | false | 宽度随内容自适应 | N
 decimalPlaces | Number | undefined | [小数位数](https://en.wiktionary.org/wiki/decimal_place) | N
 disabled | Boolean | false | 禁用组件 | N
-format | Function | - | 指定输入框展示值的格式。TS 类型：`(value: InputNumberValue) => InputNumberValue` | N
+format | Function | - | 格式化输入框展示值。第二个事件参数 `context.fixedNumber` 表示处理过小数位数 `decimalPlaces` 的数字。TS 类型：`(value: InputNumberValue, context?: { fixedNumber?: InputNumberValue }) => InputNumberValue` | N
 inputProps | Object | - | 透传 Input 输入框组件全部属性。TS 类型：`InputProps`，[Input API Documents](./input?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/input-number/type.ts) | N
 largeNumber | Boolean | false | 是否作为大数使用。JS 支持的最大数字位数是 16 位，超过 16 位的数字需作为字符串大数处理。此时，数据类型必须保持为字符串，否则会丢失数据 | N
 max | String / Number | Infinity | 最大值。如果是大数，请传入字符串。TS 类型：`InputNumberValue` | N

@@ -60,10 +60,19 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
 
   const getUserInput = (value: InputNumberValue) => {
     if (!value) return '';
-    if (props.format && !inputRef.value?.$el?.contains(document.activeElement)) {
-      return String(props.format(value));
+    let inputStr = String(value);
+    if (!inputRef.value?.$el?.contains(document.activeElement)) {
+      inputStr = String(
+        formatToNumber(inputStr, {
+          decimalPlaces: props.decimalPlaces,
+          largeNumber: props.largeNumber,
+        }),
+      );
+      if (props.format) {
+        inputStr = String(props.format(value, { fixedNumber: inputStr }));
+      }
     }
-    return String(value);
+    return inputStr;
   };
 
   watch(
@@ -104,7 +113,6 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     min: props.min,
     lastValue: tValue.value,
     largeNumber: props.largeNumber,
-    decimalPlaces: props.decimalPlaces,
   });
 
   const handleReduce = (e: KeyboardEvent | MouseEvent) => {
@@ -130,7 +138,7 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
   };
 
   const handleBlur = (value: string, ctx: { e: FocusEvent }) => {
-    userInput.value = getUserInput(value);
+    userInput.value = getUserInput(tValue.value);
     const newValue = formatToNumber(value, {
       decimalPlaces: props.decimalPlaces,
       largeNumber: props.largeNumber,
