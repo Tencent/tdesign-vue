@@ -7923,7 +7923,7 @@ exports[`ssr snapshot test renders ./examples/input-number/demos/center.vue corr
     </div>
   </div>
   <div>
-    <div suffix="个" class="t-input-number t-size-m t-input-number--row" style="width:160px;"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
+    <div class="t-input-number t-size-m t-input-number--row" style="width:160px;"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
           <path fill="currentColor" d="M3.5 7.35h9v1.3h-9v-1.3z" fill-opacity="0.9"></path>
         </svg></button>
       <div class="t-input__wrap">
@@ -8046,7 +8046,7 @@ exports[`ssr snapshot test renders ./examples/input-number/demos/left.vue correc
         <path fill="currentColor" d="M12.46 9.54l-.92.92L8 6.92l-3.54 3.54-.92-.92L8 5.08l4.46 4.46z" fill-opacity="0.9"></path>
       </svg></button>
   </div>
-  <div label="数字" class="t-input-number t-size-m t-is-controls-right t-input-number--column" style="width:150px;"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down t-size-m">
+  <div class="t-input-number t-size-m t-is-controls-right t-input-number--column" style="width:150px;"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down t-size-m">
         <path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path>
       </svg></button>
     <div class="t-input__wrap">
@@ -8075,7 +8075,7 @@ exports[`ssr snapshot test renders ./examples/input-number/demos/normal.vue corr
       </div>
     </div>
   </div>
-  <div label="机器：" suffix="台" class="t-input-number t-size-m t-input-number--normal" style="width:130px;">
+  <div class="t-input-number t-size-m t-input-number--normal" style="width:130px;">
     <div class="t-input__wrap">
       <div class="t-input t-size-m t-is-default t-align-right t-input--prefix t-input--suffix">
         <div class="t-input__prefix">机器：</div><input autocomplete="off" placeholder="请输入" type="text" unselectable="off" value="3" class="t-input__inner">

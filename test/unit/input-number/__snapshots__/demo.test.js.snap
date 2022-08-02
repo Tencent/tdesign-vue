@@ -441,7 +441,6 @@ exports[`InputNumber InputNumber centerVue demo works fine 1`] = `
     <div
       class="t-input-number t-size-m t-input-number--row"
       style="width: 160px;"
-      suffix="个"
     >
       <button
         class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
@@ -879,7 +878,6 @@ exports[`InputNumber InputNumber leftVue demo works fine 1`] = `
    
   <div
     class="t-input-number t-size-m t-is-controls-right t-input-number--column"
-    label="数字"
     style="width: 150px;"
   >
     <button
@@ -1003,9 +1001,7 @@ exports[`InputNumber InputNumber normalVue demo works fine 1`] = `
    
   <div
     class="t-input-number t-size-m t-input-number--normal"
-    label="机器："
     style="width: 130px;"
-    suffix="台"
   >
     <div
       class="t-input__wrap"
