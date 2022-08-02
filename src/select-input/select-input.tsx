@@ -60,7 +60,6 @@ export default defineComponent({
 
   render(h) {
     // 浮层显示的受控与非受控
-    // 浮层显示的受控与非受控
     const visibleProps = { visible: this.popupVisible ?? this.innerPopupVisible };
 
     const mainContent = (

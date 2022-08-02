@@ -68,12 +68,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
         dataSource.value = data.value;
         return;
       }
-      let newVal = cloneDeep(data.value);
-      store.value.initialTreeStore(newVal, props.columns, rowDataKeys.value);
-      if (props.tree?.defaultExpandAll) {
-        newVal = store.value.expandAll(newVal, rowDataKeys.value);
-      }
-      dataSource.value = newVal;
+      resetData(data.value);
     },
     { immediate: true },
   );
@@ -96,6 +91,15 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     },
     { immediate: true },
   );
+
+  function resetData(data: TableRowData[]) {
+    let newVal = cloneDeep(data);
+    store.value.initialTreeStore(newVal, props.columns, rowDataKeys.value);
+    if (props.tree?.defaultExpandAll) {
+      newVal = store.value.expandAll(newVal, rowDataKeys.value);
+    }
+    dataSource.value = newVal;
+  }
 
   function getTreeNodeStyle(level: number) {
     if (level === undefined) return;
@@ -287,5 +291,6 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     expandAll,
     foldAll,
     getTreeNode,
+    resetData,
   };
 }

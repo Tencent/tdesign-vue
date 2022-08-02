@@ -67,12 +67,14 @@ export default function useRowSelect(
 
   // eslint-disable-next-line
   function getSelectedHeader(h: CreateElement) {
-    const isChecked = intersectionKeys.value.length !== 0
-      && canSelectedRows.value.length !== 0
-      && intersectionKeys.value.length === canSelectedRows.value.length;
+    // 判断条件直接写在jsx中，防止变量被computed捕获，选中行重新计算了columns
     return () => (
       <Checkbox
-        checked={isChecked}
+        checked={
+          intersectionKeys.value.length !== 0
+          && canSelectedRows.value.length !== 0
+          && intersectionKeys.value.length === canSelectedRows.value.length
+        }
         indeterminate={
           intersectionKeys.value.length > 0 && intersectionKeys.value.length < canSelectedRows.value.length
         }

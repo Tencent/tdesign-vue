@@ -8,10 +8,11 @@ import { TdTagInputProps } from './type';
 import props from './props';
 import { prefix } from '../config';
 import { renderTNodeJSX } from '../utils/render-tnode';
-import useTagScroll from './useTagScroll';
+import useTagScroll from './hooks/useTagScroll';
 import useTagList from './useTagList';
-import useHover from './useHover';
+import useHover from './hooks/useHover';
 import useDefaultValue from '../hooks/useDefaultValue';
+import useDragSorter from './hooks/useDragSorter';
 
 // constants class
 const NAME_CLASS = `${prefix}-tag-input`;
@@ -44,13 +45,30 @@ export default defineComponent({
       onMouseenter: props.onMouseenter,
       onMouseleave: props.onMouseleave,
     });
+
+    // 这里不需要响应式，因此直接传递参数
+    const { getDragProps } = useDragSorter(
+      {
+        ...props,
+        sortOnDraggable: props.dragSort,
+        onDragOverCheck: {
+          x: true,
+          targetClassNameRegExp: new RegExp(`^${prefix}-tag`),
+        },
+      },
+      context,
+    );
+
     const {
       scrollToRight, onWheel, scrollToRightOnEnter, scrollToLeftOnLeave, tagInputRef,
     } = useTagScroll(props);
     // handle tag add and remove
     const {
       tagValue, onInnerEnter, onInputBackspaceKeyUp, clearAll, renderLabel, onClose,
-    } = useTagList(props);
+    } = useTagList(
+      props,
+      getDragProps,
+    );
 
     const classes = computed(() => [
       NAME_CLASS,

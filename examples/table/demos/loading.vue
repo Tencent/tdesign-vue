@@ -28,7 +28,6 @@ export default {
         {
           align: 'left',
           width: '100',
-          minWidth: '100',
           className: 'row',
           ellipsis: true,
           colKey: 'type',
@@ -37,7 +36,6 @@ export default {
         {
           align: 'left',
           width: '100',
-          minWidth: '100',
           className: 'test',
           ellipsis: true,
           colKey: 'platform',
@@ -46,7 +44,6 @@ export default {
         {
           align: 'left',
           width: '100',
-          minWidth: '100',
           className: 'test2',
           ellipsis: true,
           colKey: 'property',
@@ -55,7 +52,6 @@ export default {
         {
           align: 'left',
           width: '100',
-          minWidth: '100',
           className: 'test4',
           ellipsis: true,
           colKey: 'default',
@@ -64,7 +60,6 @@ export default {
         {
           align: 'left',
           width: '100',
-          minWidth: '100',
           className: 'test3',
           ellipsis: true,
           colKey: 'needed',
@@ -73,7 +68,6 @@ export default {
         {
           align: 'left',
           width: '100',
-          minWidth: '100',
           className: 'row',
           ellipsis: true,
           colKey: 'description',

@@ -2,7 +2,7 @@
   <div>
     <div>
       <t-button @click="appendToRoot">添加根节点</t-button>
-      <t-button theme="default" style="margin-left: 16px" @click="setData1">重置数据</t-button>
+      <t-button theme="default" style="margin-left: 16px" @click="resetData">重置/更新数据</t-button>
       <t-button theme="default" style="margin-left: 16px" @click="onRowToggle">任意节点展开/收起</t-button>
       <t-button theme="default" style="margin-left: 16px" @click="onExpandAllToggle">{{
         expandAll ? '收起全部' : '展开全部'
@@ -224,8 +224,9 @@ export default {
 
   methods: {
     // 全新赋值
-    setData1() {
+    resetData() {
       this.data = getData();
+      this.$refs.table.resetData(this.data);
     },
 
     // 更新

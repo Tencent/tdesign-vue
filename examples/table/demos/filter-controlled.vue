@@ -37,6 +37,7 @@
       :filter-value="filterValue"
       :bordered="bordered"
       resizable
+      table-layout="fixed"
       @filter-change="onFilterChange"
       @change="onChange"
     />

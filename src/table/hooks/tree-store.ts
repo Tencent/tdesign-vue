@@ -145,6 +145,19 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
       });
       return;
     }
+
+    // 懒加载处理：children 为 true，则需清空子元素在 map 中的值，而后方便重新加载
+    if (get(newRowData, keys.childrenKey) === true) {
+      const oldChildren = get(rowState.row, keys.childrenKey);
+      if (oldChildren?.length) {
+        for (let i = 0, len = oldChildren.length; i < len; i++) {
+          const rowValue = get(oldChildren[i], keys.rowKey);
+          const state = this.treeDataMap.get(rowValue);
+          state && this.treeDataMap.delete(rowValue);
+        }
+      }
+    }
+
     const currentRowIndex = rowState.rowIndex;
     rowState.row = newRowData;
     rowState.id = newRowValue;
@@ -448,7 +461,9 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
         const children = get(item, keys.childrenKey);
         const originalExpanded = state.expanded;
         state.rowIndex = this.expandAllRowIndex;
-        state.expanded = true;
+        if (children !== true && children?.length) {
+          state.expanded = true;
+        }
         state.expandChildrenLength = children?.length || 0;
         this.expandAllRowIndex += 1;
         if (!parentExpanded) {

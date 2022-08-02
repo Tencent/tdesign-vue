@@ -1,8 +1,29 @@
 <template>
   <div class="tdesign-demo-block-column-large">
-    <!-- rowClassName="tdesign-demo__row-custom-name" -->
-    <t-table rowKey="index" :data="data" :columns="columns" :foot-data="footData" :rowClassName="rowClassName">
-      <template #t-foot-required> 插槽渲染表尾 </template>
+    <div>
+      <!-- 表尾有 3 种方式 -->
+      <t-radio-group v-model="footerType" variant="default-filled">
+        <t-radio-button value="normal">普通表尾</t-radio-button>
+        <t-radio-button value="full">通栏表尾</t-radio-button>
+        <t-radio-button value="custom">自定义表尾合并列</t-radio-button>
+      </t-radio-group>
+    </div>
+    <!-- footData 之所以是数组，是为了支持多行表尾数据 -->
+    <t-table
+      rowKey="index"
+      bordered
+      :data="data"
+      :columns="columns"
+      :foot-data="['normal', 'custom'].includes(footerType) ? footData : []"
+      :rowClassName="rowClassName"
+      :rowspanAndColspanInFooter="footerType === 'custom' ? rowspanAndColspanInFooter : undefined"
+    >
+      <!-- 如果是通栏表尾，只需设置 footer-summary，支持同名 Props 属性 footerSummary -->
+      <!-- 通栏表尾和普通表尾，允许同时存在 -->
+      <template #footer-summary>
+        <div class="t-table__row-filter-inner" v-if="footerType === 'full'">通栏总结行信息</div>
+      </template>
+      <template #t-foot-required> <b>必传(插槽)</b> </template>
     </t-table>
   </div>
 </template>
@@ -25,8 +46,16 @@ export default {
   data() {
     return {
       data,
+      footerType: 'normal',
       // 表尾有一行数据
-      footData: [{ type: '全部类型', description: '-' }],
+      footData: [
+        {
+          index: '123',
+          type: '全部类型',
+          default: '',
+          description: '-',
+        },
+      ],
       columns: [
         {
           align: 'center',
@@ -40,7 +69,7 @@ export default {
           width: 100,
           colKey: 'platform',
           title: '平台',
-          foot: (h, { rowIndex }) => <span>第 {rowIndex + 1} 行</span>,
+          foot: (h, { rowIndex }) => <div style="width: 100%; text-align: center">第 {rowIndex + 1} 行</div>,
         },
         {
           colKey: 'type',
@@ -74,6 +103,12 @@ export default {
     rowClassName({ type }) {
       if (type === 'foot') return 't-tdesign__custom-footer-tr';
       return 't-tdesign__custom-body-tr';
+    },
+
+    rowspanAndColspanInFooter({ rowIndex, colIndex }) {
+      // 中间列合并，收尾两列不合并
+      if (rowIndex === 0 && colIndex === 1) return { colspan: this.columns.length - 2 };
+      return {};
     },
   },
 };

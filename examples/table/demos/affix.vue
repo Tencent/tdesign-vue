@@ -24,7 +24,7 @@
         horizontalScrollAffixedBottom ? { offsetBottom: paginationAffixedBottom ? 61 : 0, zIndex: 1000 } : false
       "
       :paginationAffixedBottom="paginationAffixedBottom"
-      tableLayout="auto"
+      table-ayout="fixed"
       dragSort="col"
       bordered
       resizable
@@ -133,7 +133,7 @@ export default {
       horizontalScrollAffixedBottom: false,
       paginationAffixedBottom: false,
       // 表尾有一行数据
-      footData: [{ type: '全部类型', description: '-' }],
+      footData: [{ index: 'footer-row-1', type: '全部类型', description: '-' }],
       columns: [],
     };
   },

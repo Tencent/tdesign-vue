@@ -5,6 +5,30 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.45.0 `2022-08-01` 
+
+### ❗️ BREAKING CHANGES
+- 调整全局 `border-radius` 样式 token，`@border-radius` 改名为 `@border-radius-default`，支持更多圆角 token。 使用 esm 包修改 less token 的业务需要注意 @mingrutough1 [common #666](https://github.com/Tencent/tdesign-common/pull/666)，组件库中各组件实现圆角也做了统一调整，详情参见 https://github.com/Tencent/tdesign/discussions/158
+
+### 🚀 Features
+- `SelectInput`: SelectInput 及相关的 Select/Cascader/TreeSelect 组件交互调整，再次点击输入框时也可以收起下拉框 @xiaosansiji ([#1215](https://github.com/Tencent/tdesign-vue/pull/1215))
+- `Table`: @chaishi ([#1217](https://github.com/Tencent/tdesign-vue/pull/1217))
+  - 支持使用插槽 `footer-summary` 定义通栏表尾，同时支持同名属性 Props `footer-summary` 渲染通栏表尾
+  - 支持使用 `rowspanAndColspanInFooter` 定义表尾行数据合并单元格，使用方法同 `rowspanAndColspan`
+  - 支持 `min-width` 透传到元素 `<col>`，[issues#708]
+### 🐞 Bug Fixes
+- `Select`: 修复 `empty` slot 用法不生效的问题 @xiaosansiji ([#1214](https://github.com/Tencent/tdesign-vue/pull/1214))
+- `Table`: @chaishi ([#1216](https://github.com/Tencent/tdesign-vue/pull/1216))
+  - 树形结构，修复无法更新或重置数据问题 `resetData`
+  - 树形结构，修复懒加载节点重置时（即调用 setData）没有清空子节点信息问题
+  - 树形结构，展开全部功能，不应该展开懒加载节点
+  - 修复吸顶的多级表头左侧边线缺失问题
+  - 修复多级表头时，表尾显示不同步的问题，[issue#1149](https://github.com/Tencent/tdesign-vue/issues/1149)
+  - 列拖动后，选择行导致拖动后的距离被重置 @LoopZhou ([#1224](https://github.com/Tencent/tdesign-vue/pull/1224))
+- `Datepicker`: 修复单独配置 clearable 失效问题 @HQ-Lin ([#1209](https://github.com/Tencent/tdesign-vue/pull/1209))
+- `TreeSelect`: 修复输入项过长时，操作区域图标被遮挡的问题 @Godlike-meteor ([#1211](https://github.com/Tencent/tdesign-vue/pull/1211))
+- `Cascader`: 修复在异步获取 option 的情况下，参数校验导致用户行为异常的问题 @pengYYYYY ([#1228](https://github.com/Tencent/tdesign-vue/pull/1228))
+
 ## 🌈 0.44.1 `2022-07-25` 
 ### 🚀 Features
 - 支持通过CSS Token配置组件圆角 @mingrutough1 ([common#648](https://github.com/Tencent/tdesign-common/pull/648))
