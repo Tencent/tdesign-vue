@@ -11,6 +11,7 @@ decimalPlaces | Number | undefined | [小数位数](https://en.wiktionary.org/wi
 disabled | Boolean | false | 禁用组件 | N
 format | Function | - | 格式化输入框展示值。第二个事件参数 `context.fixedNumber` 表示处理过小数位数 `decimalPlaces` 的数字。TS 类型：`(value: InputNumberValue, context?: { fixedNumber?: InputNumberValue }) => InputNumberValue` | N
 inputProps | Object | - | 透传 Input 输入框组件全部属性。TS 类型：`InputProps`，[Input API Documents](./input?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/input-number/type.ts) | N
+label | String / Slot / Function | - | 左侧文本。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 largeNumber | Boolean | false | 是否作为大数使用。JS 支持的最大数字位数是 16 位，超过 16 位的数字需作为字符串大数处理。此时，数据类型必须保持为字符串，否则会丢失数据 | N
 max | String / Number | Infinity | 最大值。如果是大数，请传入字符串。TS 类型：`InputNumberValue` | N
 min | String / Number | -Infinity | 最小值。如果是大数，请传入字符串。TS 类型：`InputNumberValue` | N
@@ -19,6 +20,7 @@ readonly | Boolean | false | 只读状态 | N
 size | String | medium | 组件尺寸。可选项：small/medium/large | N
 status | String | - | 文本框状态。可选项：success/warning/error | N
 step | String / Number | 1 | 数值改变步数，可以是小数。如果是大数，请保证数据类型为字符串。TS 类型：`InputNumberValue` | N
+suffix | String / Slot / Function | - | 后置内容。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 theme | String | row | 按钮布局。可选项：column/row/normal | N
 tips | String / Slot / Function | - | 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 value | String / Number | undefined | 值。支持语法糖 `v-model`。TS 类型：`InputNumberValue` `type InputNumberValue = number | string`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/input-number/type.ts) | N

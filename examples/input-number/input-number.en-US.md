@@ -11,6 +11,7 @@ decimalPlaces | Number | undefined | \- | N
 disabled | Boolean | false | \- | N
 format | Function | - | Typescript：`(value: InputNumberValue, context?: { fixedNumber?: InputNumberValue }) => InputNumberValue` | N
 inputProps | Object | - | Typescript：`InputProps`，[Input API Documents](./input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/input-number/type.ts) | N
+label | String / Slot / Function | - | Typescript：`string | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 largeNumber | Boolean | false | \- | N
 max | String / Number | Infinity | Typescript：`InputNumberValue` | N
 min | String / Number | -Infinity | Typescript：`InputNumberValue` | N
@@ -19,6 +20,7 @@ readonly | Boolean | false | \- | N
 size | String | medium | options：small/medium/large | N
 status | String | - | options：success/warning/error | N
 step | String / Number | 1 | Typescript：`InputNumberValue` | N
+suffix | String / Slot / Function | - | Typescript：`string | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 theme | String | row | options：column/row/normal | N
 tips | String / Slot / Function | - | Typescript：`string | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 value | String / Number | undefined | `v-model` is supported。Typescript：`InputNumberValue` `type InputNumberValue = number | string`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/input-number/type.ts) | N

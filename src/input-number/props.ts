@@ -33,6 +33,10 @@ export default {
   inputProps: {
     type: Object as PropType<TdInputNumberProps['inputProps']>,
   },
+  /** 左侧文本 */
+  label: {
+    type: [String, Function] as PropType<TdInputNumberProps['label']>,
+  },
   /** 是否作为大数使用。JS 支持的最大数字位数是 16 位，超过 16 位的数字需作为字符串大数处理。此时，数据类型必须保持为字符串，否则会丢失数据 */
   largeNumber: Boolean,
   /** 最大值。如果是大数，请传入字符串 */
@@ -73,6 +77,10 @@ export default {
   step: {
     type: [String, Number] as PropType<TdInputNumberProps['step']>,
     default: 1,
+  },
+  /** 后置内容 */
+  suffix: {
+    type: [String, Function] as PropType<TdInputNumberProps['suffix']>,
   },
   /** 按钮布局 */
   theme: {

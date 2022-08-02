@@ -5,6 +5,10 @@
     </div>
 
     <div>
+      <t-input-number v-model="decimalValue" :step="0.18" :max="5" autoWidth />
+    </div>
+
+    <div>
       <t-input-number
         v-model="value2"
         theme="row"
@@ -12,17 +16,14 @@
         :min="-2"
         :disabled="false"
         :tips="tips"
-        autoWidth
+        suffix="个"
+        style="width: 160px"
         @change="handleChange"
         @validate="onValidate"
         @blur="handleBlur"
         @focus="handleFocus"
         @enter="handleEnter"
       ></t-input-number>
-    </div>
-
-    <div>
-      <t-input-number v-model="decimalValue" :step="0.18" :max="5" autoWidth />
     </div>
   </div>
 </template>
@@ -33,7 +34,7 @@ export default {
     return {
       // 如果希望默认显示为空，请使用 ''，切勿使用 undefined
       value1: '',
-      value2: -3,
+      value2: 100,
       decimalValue: 3.41,
       error: undefined,
     };

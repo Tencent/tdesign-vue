@@ -45,6 +45,8 @@ export default defineComponent({
           autoWidth={this.autoWidth}
           align={this.align || (this.theme === 'row' ? 'center' : undefined)}
           status={status}
+          label={this.label}
+          suffix={this.suffix}
           on={this.listeners}
           scopedSlots={this.$scopedSlots}
           props={this.inputProps}

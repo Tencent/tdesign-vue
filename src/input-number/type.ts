@@ -35,6 +35,10 @@ export interface TdInputNumberProps {
    */
   inputProps?: InputProps;
   /**
+   * 左侧文本
+   */
+  label?: string | TNode;
+  /**
    * 是否作为大数使用。JS 支持的最大数字位数是 16 位，超过 16 位的数字需作为字符串大数处理。此时，数据类型必须保持为字符串，否则会丢失数据
    * @default false
    */
@@ -72,6 +76,10 @@ export interface TdInputNumberProps {
    * @default 1
    */
   step?: InputNumberValue;
+  /**
+   * 后置内容
+   */
+  suffix?: string | TNode;
   /**
    * 按钮布局
    * @default row
