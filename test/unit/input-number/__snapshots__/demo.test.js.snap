@@ -379,7 +379,7 @@ exports[`InputNumber InputNumber centerVue demo works fine 1`] = `
       class="t-input-number t-size-m t-input-number--row t-input-number--auto-width"
     >
       <button
-        class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
+        class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"
         type="button"
       >
         <svg
@@ -400,7 +400,7 @@ exports[`InputNumber InputNumber centerVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-is-default t-align-center t-input--auto-width"
+          class="t-input t-size-m t-is-error t-align-center t-input--auto-width"
         >
           <input
             autocomplete="off"
@@ -412,7 +412,7 @@ exports[`InputNumber InputNumber centerVue demo works fine 1`] = `
           <span
             class="t-input__input-pre"
           >
-            3
+            -3
           </span>
         </div>
       </div>
@@ -568,7 +568,8 @@ exports[`InputNumber InputNumber disabledVue demo works fine 1`] = `
     class="t-input-number t-size-m t-is-disabled t-input-number--row"
   >
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled t-button--shape-square t-input-number__decrease t-is-disabled"
+      disabled="disabled"
       type="button"
     >
       <svg
@@ -602,7 +603,8 @@ exports[`InputNumber InputNumber disabledVue demo works fine 1`] = `
       </div>
     </div>
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase t-is-disabled"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled t-button--shape-square t-input-number__increase t-is-disabled"
+      disabled="disabled"
       type="button"
     >
       <svg
@@ -629,7 +631,7 @@ exports[`InputNumber InputNumber emptyVue demo works fine 1`] = `
     class="t-input-number t-size-m t-input-number--row"
   >
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
       type="button"
     >
       <svg
@@ -662,7 +664,7 @@ exports[`InputNumber InputNumber emptyVue demo works fine 1`] = `
       </div>
     </div>
     <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase t-is-disabled"
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
       type="button"
     >
       <svg
