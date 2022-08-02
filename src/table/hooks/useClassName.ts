@@ -59,6 +59,7 @@ export default function useClassName() {
 
     tableFooterClasses: {
       footer: `${classPrefix.value}-table__footer`,
+      footerSummary: `${classPrefix.value}-table__footer-summary`,
       fixed: `${classPrefix.value}-table__footer--fixed`,
     },
 
