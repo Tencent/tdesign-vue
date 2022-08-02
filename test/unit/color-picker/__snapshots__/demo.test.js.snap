@@ -328,7 +328,6 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -354,7 +353,6 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -380,7 +378,6 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -406,7 +403,6 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -1121,7 +1117,6 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -1147,7 +1142,6 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -1173,7 +1167,6 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -1893,7 +1886,6 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -1919,7 +1911,6 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -1945,7 +1936,6 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -2777,7 +2767,6 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -2803,7 +2792,6 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -2829,7 +2817,6 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -3557,7 +3544,6 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-disabled t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -3584,7 +3570,6 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-disabled t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -3611,7 +3596,6 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-disabled t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -4332,7 +4316,6 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -4358,7 +4341,6 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -4384,7 +4366,6 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -4679,7 +4660,6 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -4705,7 +4685,6 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -4731,7 +4710,6 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"

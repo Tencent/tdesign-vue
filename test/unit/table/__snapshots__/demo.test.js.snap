@@ -17607,7 +17607,6 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
             >
               <div
                 class="t-input t-size-m t-is-default"
-                ref="refInputElem"
               >
                 <input
                   autocomplete="off"
@@ -18082,7 +18081,6 @@ exports[`Table Table paginationVue demo works fine 1`] = `
               >
                 <div
                   class="t-input t-size-m t-is-default"
-                  ref="refInputElem"
                 >
                   <input
                     autocomplete="off"
