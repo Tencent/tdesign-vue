@@ -22,7 +22,7 @@
     </div>
 
     <div>
-      <t-input-number v-model="decimalValue" :step="0.1" :max="5" autoWidth />
+      <t-input-number v-model="decimalValue" :step="0.18" :max="5" autoWidth />
     </div>
   </div>
 </template>
@@ -33,7 +33,7 @@ export default {
     return {
       // 如果希望默认显示为空，请使用 ''，切勿使用 undefined
       value1: '',
-      value2: 3,
+      value2: -3,
       decimalValue: 3.41,
       error: undefined,
     };

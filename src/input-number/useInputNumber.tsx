@@ -14,6 +14,7 @@ import {
   getMaxOrMinValidateResult,
   getStepValue,
 } from '../_common/js/input-number/number';
+import useFormDisabled from '../hooks/useFormDisabled';
 
 /**
  * 独立一个组件 Hook 方便用户直接使用相关逻辑 自定义任何样式的数字输入框
@@ -27,7 +28,8 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
   const userInput = ref('');
   const displayValue = ref();
 
-  const tDisabled = computed(() => props.disabled);
+  const { formDisabled } = useFormDisabled();
+  const tDisabled = computed(() => props.disabled || formDisabled.value);
 
   const isError = ref<'exceed-maximum' | 'below-minimum'>();
 
@@ -59,7 +61,7 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
   ]);
 
   const getUserInput = (value: InputNumberValue) => {
-    if (!value) return '';
+    if (!value && value !== 0) return '';
     let inputStr = String(value);
     if (!inputRef.value?.$el?.contains(document.activeElement)) {
       inputStr = String(
@@ -151,7 +153,7 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
   };
 
   const handleFocus = (value: string, ctx: { e: FocusEvent }) => {
-    userInput.value = String(tValue.value);
+    userInput.value = tValue.value || tValue.value === 0 ? String(tValue.value) : '';
     props.onFocus?.(tValue.value, ctx);
     context.emit('focus', tValue.value, ctx);
   };
@@ -214,6 +216,7 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     userInput,
     tValue,
     inputRef,
+    formDisabled,
     handleReduce,
     handleAdd,
     onInnerInputChange,

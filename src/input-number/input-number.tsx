@@ -22,11 +22,13 @@ export default defineComponent({
   render() {
     const reduceIcon = this.theme === 'column' ? <ChevronDownIcon size={this.size} /> : <RemoveIcon size={this.size} />;
     const addIcon = this.theme === 'column' ? <ChevronUpIcon size={this.size} /> : <AddIcon size={this.size} />;
+    const status = this.isError ? 'error' : this.status;
     return (
       <div class={this.wrapClasses}>
         {this.theme !== 'normal' && (
           <TButton
             class={this.reduceClasses}
+            disabled={this.tDisabled}
             onClick={this.handleReduce}
             variant="outline"
             shape="square"
@@ -42,7 +44,7 @@ export default defineComponent({
           unselectable={this.readonly ? 'on' : 'off'}
           autoWidth={this.autoWidth}
           align={this.align || (this.theme === 'row' ? 'center' : undefined)}
-          status={this.isError ? 'error' : this.status}
+          status={status}
           on={this.listeners}
           scopedSlots={this.$scopedSlots}
           props={this.inputProps}
@@ -52,6 +54,7 @@ export default defineComponent({
         {this.theme !== 'normal' && (
           <TButton
             class={this.addClasses}
+            disabled={this.tDisabled}
             onClick={this.handleAdd}
             variant="outline"
             shape="square"
@@ -59,9 +62,7 @@ export default defineComponent({
           />
         )}
         {this.tips && (
-          <div class={`${this.classPrefix}-input__tips ${this.classPrefix}-input__tips--${this.status}`}>
-            {this.tips}
-          </div>
+          <div class={`${this.classPrefix}-input__tips ${this.classPrefix}-input__tips--${status}`}>{this.tips}</div>
         )}
       </div>
     );
