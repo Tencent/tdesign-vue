@@ -91,7 +91,7 @@ exports[`ConfigProvider ConfigProvider calendarVue demo works fine 1`] = `
               <span
                 class="t-input__input-pre"
               >
-                12
+                December
               </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
@@ -3223,7 +3223,7 @@ exports[`ConfigProvider ConfigProvider paginationVue demo works fine 1`] = `
         <span
           class="t-input__input-pre"
         >
-          10
+          10 / page
         </span>
         <span
           class="t-input__suffix t-input__suffix-icon"

@@ -4,9 +4,19 @@
       v-model="value"
       creatable
       filterable
-      placeholder="支持自定义创建"
+      placeholder="单选支持自定义创建"
       :options="options"
-      style="width: 200px;"
+      style="width: 200px; display: inline-block; margin: 0 20px 20px 0"
+      @create="createOptions"
+    />
+    <t-select
+      v-model="value2"
+      creatable
+      filterable
+      multiple
+      placeholder="多选支持自定义创建"
+      :options="options"
+      style="width: 400px; display: inline-block"
       @create="createOptions"
     />
   </div>
@@ -22,6 +32,7 @@ export default {
         { label: '选项三', value: '3' },
       ],
       value: '',
+      value2: [],
     };
   },
   methods: {
