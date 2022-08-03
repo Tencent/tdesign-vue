@@ -1,46 +1,7 @@
 :: BASE_DOC ::
 
-### 关闭全局提示
-
-#### 带关闭按钮的全局提示
-
-{{ close }}
-
-#### 使用关闭函数控制全局提示
-
-如果不希望通过计时关闭，或者用户点击按钮关闭，也可以使用关闭函数。
-
-{{ toggle }}
-
-#### 关闭多条全局提示
-
-{{ close-all }}
-
-### 控制全局提示显示位置
-
-全局提示显示位置可控制，`placement` 用于控制大概位置，`offset` 用于设置相对于 `placement` 所在位置的偏移
-
-{{ placement }}
-
-### 插件调用与函数式调用
-
-支持插件式调用 `this.$message` 和函数式调用 `MessagePlugin` 两种方式，两种方式参数完全一样。
-
-示例：`MessagePlugin.warning('请输入信息')` 或 `this.$message.warning('请输入信息')`
-
-{{ plugin }}
-
-### 全局方法
-还提供了全局配置方法
-+  `this.$message.config(placement, attach, offset, zIndex)`
-+  `MessagePlugin.config(placement, attach, offset, zIndex)`
-
-```javascript
-this.$message.config('top', 'body', [10, 20], 9999);
-MessagePlugin.config('top', 'body', [10, 20], 9999);
-```
-
 ## API
+
 ### Message Props
 
 名称 | 类型 | 默认值 | 说明 | 必传
@@ -156,7 +117,4 @@ options | Object | - | 必需。该插件参数为 $Message.info() 等插件执�
 
 参数名称 | 参数类型 | 参数默认值 | 参数说明
 -- | -- | -- | --
-placement | String | top | 弹出消息位置。可选项：center/top/left/right/bottom/top-left/top-right/bottom-left/bottom-right。TS 类型：`MessagePlacementList` `type MessagePlacementList = 'center' | 'top' | 'left' | 'right' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/message/type.ts)
-attach | String / Function | 'body' | 指定弹框挂载的父节点。数据类型为 String 时，会被当作选择器处理，进行节点查询。示例：'body' 或 () => document.body。TS 类型：`AttachNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)
-offset | Array | - | 相对于 placement 的偏移量，示例：[-10, 20] 或 ['10em', '8rem']。TS 类型：`Array<string | number>`
-zIndex | Number | 5000 | 消息层级
+message | Object | - | 必需。消息内容。TS 类型：`MessageOptions`
