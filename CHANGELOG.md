@@ -5,7 +5,7 @@ toc: false
 docClass: timeline
 ---
 
-## 🌈 0.45.0 `2022-08-01` 
+## 🌈 0.45.1 `2022-08-03` 
 
 ### ❗️ BREAKING CHANGES
 - 调整全局 `border-radius` 样式 token，`@border-radius` 改名为 `@border-radius-default`，支持更多圆角 token。 使用 esm 包修改 less token 的业务需要注意 @mingrutough1 [common #666](https://github.com/Tencent/tdesign-common/pull/666)，组件库中各组件实现圆角也做了统一调整，详情参见 https://github.com/Tencent/tdesign/discussions/158
