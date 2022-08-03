@@ -7,20 +7,17 @@ import {
   watch,
   nextTick,
   getCurrentInstance,
-  onMounted,
-  onUpdated,
   provide,
 } from '@vue/composition-api';
-import { CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
 import debounce from 'lodash/debounce';
 import get from 'lodash/get';
-import set from 'lodash/set';
 import { CloseCircleFilledIcon } from 'tdesign-icons-vue';
+import cloneDeep from 'lodash/cloneDeep';
 import useDefaultValue from '../hooks/useDefaultValue';
 import { useTNodeJSX } from '../hooks/tnode';
 import { useConfig } from '../config-provider/useConfig';
-import { TdSelectProps, SelectOption, TdOptionProps } from './type';
+import { TdSelectProps, SelectValue } from './type';
 import props from './props';
 import { prefix } from '../config';
 import TLoading from '../loading';
@@ -35,7 +32,8 @@ import SelectInput, {
 import FakeArrow from '../common-components/fake-arrow';
 import Option from './option';
 import SelectPanel from './select-panel';
-import { parseOptions } from './util';
+import { getSingleContent, getMultipleContent, getNewMultipleValue } from './util';
+import { useSelectOptions } from './hooks';
 
 export type OptionInstance = InstanceType<typeof Option>;
 
@@ -55,35 +53,61 @@ export default defineComponent({
     SelectPanel,
   },
   setup(props: TdSelectProps, context: SetupContext) {
-    const instance = getCurrentInstance();
     const { t, global } = useConfig('select');
-    const renderTNode = useTNodeJSX();
     const { classPrefix } = useConfig();
+    const renderTNode = useTNodeJSX();
+    const instance = getCurrentInstance();
+    const selectInputRef = ref<HTMLElement>(null);
+    const popupOpenTime = ref(250);
+    const formDisabled = ref();
 
-    // init values
     const {
       valueType,
-      keys,
       disabled,
       size,
       value: valueProps,
       multiple,
-      filterable,
-      options,
       placeholder,
-      valueDisplay,
       loading,
-      creatable,
       max,
       reserveKeyword,
-      onSearch,
       inputValue,
+      popupVisible,
       minCollapsedNum,
     } = toRefs(props);
 
-    const formDisabled = ref();
-    const visible = ref(props.popupVisible ?? false);
+    const keys = computed(() => ({
+      label: props.keys?.label || 'label',
+      value: props.keys?.value || 'value',
+    }));
+    const { options: innerOptions, optionsMap, optionsList } = useSelectOptions(props, context, keys);
+
     const [value, setValue] = useDefaultValue(valueProps, props.defaultValue, props.onChange, 'value', 'change');
+    const innerValue = computed(() => {
+      if (valueType.value === 'object') {
+        return multiple.value
+          ? (value.value as SelectValue[]).map((option) => option[keys.value.value])
+          : value.value[keys.value.value];
+      }
+      return value.value;
+    });
+    const setInnerValue: TdSelectProps['onChange'] = (newVal: SelectValue | SelectValue[], e) => {
+      if (valueType.value === 'object') {
+        const { value, label } = keys.value;
+        const getOption = (val: SelectValue) => {
+          const option = optionsMap.value.get(val);
+          return {
+            [value]: get(option, value),
+            [label]: get(option, label),
+          };
+        };
+        // eslint-disable-next-line no-param-reassign
+        newVal = multiple.value ? (newVal as SelectValue[]).map((val) => getOption(val)) : getOption(newVal);
+      }
+      if (newVal === value.value) return;
+      setValue(newVal, e);
+    };
+
     const [tInputValue, setTInputValue] = useDefaultValue(
       inputValue,
       props.defaultInputValue || '',
@@ -91,497 +115,134 @@ export default defineComponent({
       'inputValue',
       'input-change',
     );
-    const showCreateOption = ref(false);
-    const hasSlotOptions = ref(false);
-    const focusing = ref(false);
-    const labelInValue = ref(valueType.value === 'object');
-    const realValue = computed(() => keys.value?.value || 'value');
-    const realLabel = computed(() => keys.value?.label || 'label');
-    const realOptions = ref([] as Array<TdOptionProps>);
-    const hoverIndex = ref(-1);
-    const popupOpenTime = ref(250);
-    const isInit = ref(false);
-    const selectInputRef = ref<HTMLElement>(null);
 
-    const tDisabled = computed(() => formDisabled.value || disabled.value);
-    const renderValueDisplay = (h: CreateElement) => {
-      const valueSlot = context.slots.valueDisplay;
-      const valueProps = valueDisplay.value;
-
-      if (!valueProps && !valueSlot) return '';
-
-      if (typeof valueProps === 'string') {
-        return valueProps;
-      }
-      // 参数比slot优先
-      if (typeof valueProps === 'function') {
-        return () => valueProps(h, { value: selectedValue.value, onClose: (index: number) => removeTag(index) });
-      }
-      // 处理slot场景
-      if (valueSlot) {
-        if (multiple.value) {
-          return () => renderTNode('valueDisplay', {
-            params: { value: selectedValue.value, onClose: (index: number) => removeTag(index) },
-          });
-        }
-        return () => selectedValue.value
-          ? renderTNode('valueDisplay', {
-            params: { value: selectedValue.value, onClose: () => {} },
-          })
-          : '';
-      }
-    };
-    const showFilter = computed(() => {
-      if (tDisabled.value) return false;
-      if (!multiple.value && selectedSingle.value && canFilter.value) {
-        return visible.value;
-      }
-      return canFilter.value;
-    });
-
-    const selectedSingle = computed<string>(() => {
-      if (!multiple.value && (typeof value.value === 'string' || typeof value.value === 'number')) {
-        let target: Array<TdOptionProps> = [];
-        if (realOptions.value && realOptions.value.length) {
-          target = realOptions.value.filter((item) => get(item, realValue.value) === value.value);
-        }
-        if (target.length) {
-          if (get(target[target.length - 1], realLabel.value) === '') {
-            return get(target[target.length - 1], realValue.value);
-          }
-          return get(target[target.length - 1], realLabel.value);
-        }
-        return value.value.toString();
-      }
-      const showText = get(value.value, realLabel.value);
-      // label为空时显示value值
-      if (!multiple.value && typeof value.value === 'object' && showText !== undefined) {
-        return showText === '' ? get(value.value, realValue.value) : showText;
-      }
-      return '';
-    });
-
-    const selectedMultiple = computed<TdOptionProps[]>(() => {
-      if (multiple.value && Array.isArray(value.value) && value.value.length) {
-        return value.value.map((item: string | number | TdOptionProps) => {
-          if (typeof item === 'object') {
-            return item;
-          }
-          const tmp = realOptions.value.filter((op) => get(op, realValue.value) === item);
-          const valueLabel = {};
-          set(valueLabel, realValue.value, item);
-          set(valueLabel, realLabel.value, tmp.length ? get(tmp[tmp.length - 1], realLabel.value) : item);
-          return tmp.length && tmp[tmp.length - 1].disabled ? { ...valueLabel, disabled: true } : valueLabel;
-        });
-      }
-      return [];
-    });
-
-    const selectedValue = computed(() => (multiple.value ? selectedMultiple.value : selectedSingle.value));
-    const canFilter = computed(() => Boolean(props.filterable || global.value.filterable || isFunction(props.filter)));
-    const isGroupOption = computed(() => {
-      const firstOption = options.value?.[0];
-      return !!(firstOption && 'group' in firstOption && 'children' in firstOption);
-    });
-
-    const renderCollapsedItems = () => renderTNode('collapsedItems', {
-      params: {
-        value: selectedMultiple.value,
-        collapsedSelectedItems: selectedMultiple.value.slice(minCollapsedNum.value),
-        count: selectedMultiple.value.length - minCollapsedNum.value,
+    const [innerPopupVisible, setInnerPopupVisible] = useDefaultValue(
+      popupVisible,
+      false,
+      (visible: boolean, context: PopupVisibleChangeContext) => {
+        props.onPopupVisibleChange?.(visible, context);
+        props.onVisibleChange?.(visible);
+        instance.emit('visible-change', visible);
       },
-    });
-
-    const showLoading = computed(() => loading.value && !tDisabled.value);
-    const filterOptions = computed(() => {
-      // filter优先级 filter方法>仅filterable
-      if (isFunction(props.filter)) {
-        return realOptions.value.filter((option) => props.filter(tInputValue.value?.toString(), option));
-      }
-      if (filterable.value) {
-        // 仅有filterable属性时，默认不区分大小写过滤label
-        return realOptions.value.filter(
-          (option) => option[realLabel.value]?.toString().toLowerCase().indexOf(tInputValue.value?.toString().toLowerCase())
-            !== -1,
-        );
-      }
-      return [];
-    });
-
-    const displayOptions = computed(() => {
-      // 展示优先级，用户远程搜索传入>组件通过filter过滤>getOptions后的完整数据
-      if (isFunction(onSearch.value) || context.listeners.search) {
-        return realOptions.value;
-      }
-      if (canFilter.value && !creatable.value) {
-        if (tInputValue.value === '') {
-          return realOptions.value;
-        }
-        return filterOptions.value;
-      }
-      return realOptions.value;
-    });
-
-    const displayOptionsMap = computed(() => {
-      const map = new Map();
-      displayOptions.value.forEach((item) => {
-        map.set(item, true);
-      });
-      return map;
-    });
-
-    const hoverOptions = computed(() => {
-      if (!showCreateOption.value) {
-        if (isFunction(props.filter) || filterable.value) {
-          return filterOptions.value;
-        }
-        return realOptions.value;
-      }
-      const willCreateOption = [{ value: tInputValue.value, label: tInputValue.value }] as Array<TdOptionProps>;
-      if (isFunction(props.filter) || filterable.value) {
-        return willCreateOption.concat(filterOptions.value);
-      }
-      return willCreateOption.concat(realOptions.value);
-    });
-
-    const doFocus = () => {
-      const input = (selectInputRef.value as any).$refs[multiple.value ? 'tagInputRef' : 'inputRef'].$el.querySelector(
-        'input',
-      );
-      input?.focus();
-      focusing.value = true;
-    };
-    watch(showFilter, (val) => {
-      if (val && selectedSingle.value) {
-        nextTick(() => {
-          doFocus();
-        });
-      }
-    });
-
-    const debounceOnRemote = debounce(() => {
-      instance.emit('search', tInputValue.value);
-      props.onSearch?.(tInputValue.value.toString());
-    }, 300);
-
-    watch(
-      tInputValue,
-      (val) => {
-        if (!val && !visible.value) return;
-        // 远程搜索逻辑
-        if (isFunction(props.onSearch) || context.listeners.search) {
-          debounceOnRemote();
-        }
-        // 创建条目逻辑
-        if (canFilter.value && val && creatable.value) {
-          const tmp = realOptions.value.filter((item) => get(item, realLabel.value).toString() === val);
-          showCreateOption.value = !tmp.length;
-        } else {
-          showCreateOption.value = false;
-        }
-      },
-      { flush: 'post' },
+      'popupVisible',
+      'popup-visible-change',
     );
 
-    const getRealOptions = (options: SelectOption[]): Array<TdOptionProps> => {
-      let result = [];
-      if (isGroupOption.value) {
-        let arr: TdOptionProps[] = [];
-        options.forEach((item) => {
-          if ('children' in item) {
-            arr = arr.concat(item.children);
-          }
-        });
-        result = arr;
-      } else {
-        result = [...options];
-      }
-      // support ['A', 'B', 'C'] this type of options
-      return result.map((item) => {
-        if (typeof item !== 'object') return { label: item, value: item };
-        return item;
-      });
-    };
-    watch(
-      options,
-      (val) => {
-        if (Array.isArray(val)) {
-          realOptions.value = getRealOptions(val);
-        } else {
-          console.error('TDesign Select: options must be an array.');
-        }
-      },
-      {
-        immediate: true,
-      },
+    const isDisabled = computed(() => formDisabled.value || disabled.value);
+    const isLoading = computed(() => loading.value && !isDisabled.value);
+    // 是否支持筛选
+    const isFilterable = computed(() => Boolean(props.filterable || global.value.filterable || isFunction(props.filter)));
+    // 选中项是否已达最大数量 max 限制
+    const isReachMaxLimit = computed(
+      () => multiple.value && max.value !== 0 && max.value <= (innerValue.value as SelectValue[]).length,
     );
 
-    const initHoverIndex = () => {
-      const ableOptionIndex = Object.keys(hoverOptions.value).filter((i) => !hoverOptions.value[i].disabled);
-      const ableIndex = ableOptionIndex.length ? ableOptionIndex[0] : '0';
-      if (!multiple.value && (typeof value.value === 'string' || typeof value.value === 'number')) {
-        const targetIndex = Object.keys(hoverOptions.value).filter(
-          (i) => get(hoverOptions.value[i], realValue.value) === value.value,
-        );
-        hoverIndex.value = targetIndex.length
-          ? parseInt(targetIndex[targetIndex.length - 1], 10)
-          : parseInt(ableIndex, 10);
-      } else if (multiple.value) {
-        hoverIndex.value = parseInt(ableIndex, 10);
-        Array.isArray(value.value)
-          && value.value.some((item: string | number | TdOptionProps) => {
-            const targetIndex = Object.keys(hoverOptions.value).filter(
-              (i) => (typeof item === 'object'
-                  && get(hoverOptions.value[i], realValue.value) === get(item, realValue.value))
-                || get(hoverOptions.value[i], realValue.value) === item,
-            );
-            hoverIndex.value = targetIndex.length
-              ? parseInt(targetIndex[targetIndex.length - 1], 10)
-              : parseInt(ableIndex, 10);
-            return hoverIndex.value !== -1;
-          });
-      }
-    };
-    const arrowDownOption = () => {
-      let count = 0;
-      while (hoverIndex.value < hoverOptions.value.length) {
-        if (!hoverOptions.value[hoverIndex.value]?.disabled) {
-          break;
-        }
-        if (hoverIndex.value === hoverOptions.value.length - 1) {
-          hoverIndex.value = 0;
-        } else {
-          hoverIndex.value += 1;
-        }
-        count += 1;
-        if (count >= hoverOptions.value.length) break;
-      }
-    };
-    const arrowUpOption = () => {
-      let count = 0;
-      while (hoverIndex.value > -1) {
-        if (!hoverOptions.value[hoverIndex.value]?.disabled) {
-          break;
-        }
-        if (hoverIndex.value === 0) {
-          hoverIndex.value = hoverOptions.value.length - 1;
-        } else {
-          hoverIndex.value -= 1;
-        }
-        count += 1;
-        if (count >= hoverOptions.value.length) break;
-      }
-    };
-    const keydownEvent = (e: KeyboardEvent) => {
-      if (!hoverOptions.value.length) return;
-      const preventKeys = ['ArrowDown', 'ArrowUp', 'Enter', 'Escape', 'Tab'];
-      if (preventKeys.includes(e.code)) {
-        e.preventDefault();
-      }
-      switch (e.code) {
-        case 'ArrowDown':
-          if (hoverIndex.value === -1) {
-            initHoverIndex();
-            return;
-          }
-          if (hoverIndex.value < hoverOptions.value.length - 1) {
-            hoverIndex.value += 1;
-            arrowDownOption();
-          } else {
-            hoverIndex.value = 0;
-            arrowDownOption();
-          }
-          break;
-        case 'ArrowUp':
-          if (hoverIndex.value === -1) {
-            initHoverIndex();
-            return;
-          }
-          if (hoverIndex.value > 0) {
-            hoverIndex.value -= 1;
-            arrowUpOption();
-          } else {
-            hoverIndex.value = hoverOptions.value.length - 1;
-            arrowUpOption();
-          }
-          break;
-        case 'Enter':
-          if (hoverIndex.value === -1) return;
-          if (showCreateOption.value && hoverIndex.value === 0) {
-            createOption(tInputValue.value.toString());
-          }
-          hoverOptions.value[hoverIndex.value]
-            && onOptionClick(hoverOptions.value[hoverIndex.value][realValue.value], e);
-          break;
-        case 'Escape':
-        case 'Tab':
-          visible.value = false;
-          instance.emit('visible-change', false);
-          instance.emit('popup-visible-change', false, { trigger: 'keydown-esc', e });
-          setTInputValue('');
-          if (focusing.value) {
-            blur(tInputValue.value.toString(), { e });
-          }
-          break;
-      }
-    };
-
-    // 为 eventListener 加单独的 sync watch，以防组件在卸载的时候未能正常清除监听 (https://github.com/Tencent/tdesign-vue/issues/1170)
-    watch(
-      visible,
-      (val) => {
-        val && document.addEventListener('keydown', keydownEvent);
-        !val && document.removeEventListener('keydown', keydownEvent);
-      },
-      {
-        flush: 'sync',
-      },
+    const placeholderText = computed(
+      () => ((!multiple.value && innerPopupVisible.value && getSingleContent(innerValue.value, optionsList.value))
+          || placeholder.value)
+        ?? t(global.value.placeholder),
     );
-    // 其余逻辑使用默认 pre watch
-    watch(visible, (val) => {
-      !val && (showCreateOption.value = false);
-      !val && tInputValue.value && setTInputValue('');
+
+    const displayText = computed(() => multiple.value
+      ? getMultipleContent(innerValue.value as SelectValue[], optionsList.value)
+      : getSingleContent(innerValue.value, optionsList.value));
+
+    const valueDisplayParams = computed(() => {
+      const val = multiple.value
+        ? (innerValue.value as SelectValue[]).map((value) => ({
+          value,
+          label: optionsMap.value.get(value)?.label,
+        }))
+        : innerValue.value;
+      return {
+        value: val,
+        onClose: multiple.value ? (index: number) => removeTag(index) : () => {},
+      };
     });
 
-    const handlePopupVisibleChange = (val: boolean, context: PopupVisibleChangeContext) => {
-      instance.emit('visible-change', val);
-      instance.emit('popup-visible-change', val, context);
-      visible.value = val;
-      if (val) {
-        setTInputValue('');
+    const collapsedItemsParams = computed(() => multiple.value
+      ? {
+        value: innerValue.value,
+        collapsedSelectedItems: innerValue.value.slice(minCollapsedNum.value),
+        count: innerValue.value.length - minCollapsedNum.value,
       }
-      val && canFilter.value && doFocus();
-    };
-    const onOptionClick = (v: string | number, e: MouseEvent | KeyboardEvent) => {
-      if (value.value !== v) {
-        if (multiple.value) {
-          const tempValue = Array.isArray(value.value) ? [].concat(value.value) : [];
-          if (labelInValue.value) {
-            const index = tempValue.map((item) => get(item, realValue.value)).indexOf(v);
-            if (index > -1) {
-              removeTag(index, { e });
-            } else {
-              tempValue.push(realOptions.value.filter((item) => get(item, realValue.value) === v)[0]);
-              setValue(tempValue, { trigger: 'check', e });
-            }
-          } else {
-            const index = tempValue.indexOf(v);
-            if (index > -1) {
-              removeTag(index, { e });
-            } else {
-              tempValue.push(v);
-              setValue(tempValue, { trigger: 'check', e });
-            }
-          }
-        } else if (labelInValue.value) {
-          setValue(realOptions.value.filter((item) => get(item, realValue.value) === v)[0], { trigger: 'check', e });
-        } else {
-          setValue(v, { trigger: 'check', e });
-        }
-      }
-      if (!multiple.value) {
-        setTInputValue('');
-        hideMenu({ trigger: 'context-menu', e });
-      } else {
-        if (!reserveKeyword.value) {
-          setTInputValue('');
-        }
-        canFilter.value && doFocus();
-      }
-    };
-
-    // 当前组件选中项是否已经达到最大数量 max 限制，若达到，option组件内会对点击事件不做响应，直接return
-    const reachMaxLimit = computed(() => Boolean(multiple.value && max.value && value.value instanceof Array && max.value <= value.value.length));
+      : {});
 
     const removeTag = (index: number, context?: { e?: MouseEvent | KeyboardEvent }) => {
       const { e } = context || {};
       e?.stopPropagation();
-      if (tDisabled.value) {
+      if (isDisabled.value) {
         return;
       }
-      const val = value.value[index];
-      const removeOption = realOptions.value.filter((item) => get(item, realValue.value) === val);
-      const tempValue = Array.isArray(value.value) ? [].concat(value.value) : [];
-      tempValue.splice(index, 1);
-      setValue(tempValue, { trigger: 'uncheck', e });
-      instance.emit('remove', { value: val, data: removeOption[0], e });
+      const selectValue = cloneDeep(innerValue.value) as SelectValue[];
+      const value = selectValue[index];
+      selectValue.splice(index, 1);
+      setInnerValue(selectValue, { e, trigger: 'tag-remove' });
+      const evtObj = {
+        value: value as string | number,
+        data: optionsMap.value.get(value),
+        e,
+      };
+      instance.emit('remove', evtObj);
+      props.onRemove?.(evtObj);
     };
-    const hideMenu = (context: PopupVisibleChangeContext) => {
-      visible.value = false;
-      instance.emit('visible-change', false);
-      instance.emit('popup-visible-change', false, context);
+
+    const handleCreate = () => {
+      if (!tInputValue.value) return;
+      const createVal = tInputValue.value;
+      setTInputValue('');
+      instance.emit('create', createVal);
+      props.onCreate?.(createVal);
     };
+
+    const handleClear = ({ e }: { e: MouseEvent }) => {
+      e?.stopPropagation();
+      if (multiple.value) {
+        setInnerValue([], { trigger: 'clear', e });
+      } else {
+        setInnerValue('', { trigger: 'clear', e });
+      }
+      instance.emit('clear', { e });
+      props.onClear?.({ e });
+    };
+
     const handleTInputValueChange = (val: string, context: SelectInputValueChangeContext) => {
-      if (context.trigger === 'blur') {
-        return;
-      }
+      if (context.trigger === 'blur' || !innerPopupVisible.value) return;
       setTInputValue(val);
+      debounceSearch();
     };
+
     const handleTagChange = (currentTags: SelectInputValue, context: SelectInputChangeContext) => {
       const { trigger, index, e } = context;
       if (trigger === 'clear') {
-        setValue([], { trigger: 'tag-remove', e });
+        setInnerValue([], { trigger: 'tag-remove', e });
       }
       if (['tag-remove', 'backspace'].includes(trigger)) {
         removeTag(index);
       }
     };
-    const clearSelect = ({ e }: { e: MouseEvent }) => {
-      e?.stopPropagation();
-      if (multiple.value) {
-        setValue([], { trigger: 'clear', e });
-      } else {
-        setValue('', { trigger: 'clear', e });
-      }
-      focusing.value = false;
-      setTInputValue('');
-      visible.value = false;
-      instance.emit('clear', { e });
-      props.onClear?.({ e });
-    };
-    const getOptions = (option: OptionInstance) => {
-      // create option值不push到options里
-      const { optionNode } = option.refs as any;
-      if (optionNode?.className?.indexOf(`${name}__create-option--special`) !== -1) {
-        return;
-      }
-      const tmp = realOptions.value.filter(
-        (item) => get(item, realValue.value) === option.value && get(item, realLabel.value) === option.label,
-      );
-      if (!tmp.length) {
-        hasSlotOptions.value = true;
-        const valueLabel = {};
-        set(valueLabel, realValue.value, option.value);
-        set(valueLabel, realLabel.value, option.label);
-        const valueLabelAble = option.disabled ? { ...valueLabel, disabled: true } : valueLabel;
-        realOptions.value.push(valueLabelAble);
-      }
-    };
-    const destroyOptions = (option: OptionInstance) => {
-      realOptions.value.forEach((item, index) => {
-        if (item[realValue.value] === option.value && item[realLabel.value] === option.label) {
-          realOptions.value.splice(index, 1);
-        }
-      });
-    };
-    const createOption = (value: string) => {
-      instance.emit('create', value);
-      props.onCreate?.(value);
-    };
-    const focus = (value: string, context: { e: FocusEvent }) => {
-      focusing.value = true;
+
+    const handleFocus = (value: string, context: { e: FocusEvent }) => {
       instance.emit('focus', { value, e: context?.e });
       props.onFocus?.({ value, e: context?.e });
     };
-    const blur = (value: string, context: { e: FocusEvent | KeyboardEvent }) => {
-      focusing.value = false;
+
+    const handleBlur = (value: string, context: { e: FocusEvent | KeyboardEvent }) => {
       instance.emit('blur', { value, e: context?.e });
       props.onBlur?.({ value, e: context?.e });
     };
-    const enter = (value: string, context: { e: KeyboardEvent }) => {
+
+    const handleEnter = (value: string, context: { e: KeyboardEvent }) => {
       instance.emit('enter', { value, e: context?.e, inputValue: tInputValue.value });
       props.onEnter?.({ value, e: context?.e, inputValue: tInputValue.value.toString() });
+      handleCreate();
     };
+
+    const debounceSearch = debounce(() => {
+      instance.emit('search', tInputValue.value);
+      props.onSearch?.(tInputValue.value.toString());
+    }, 300);
+
     const getOverlayElm = (): HTMLElement => {
       let r;
       try {
@@ -592,21 +253,7 @@ export default defineComponent({
       }
       return r;
     };
-    const getPlaceholderText = () => ((!multiple.value && visible.value && selectedValue.value) || placeholder.value) ?? t(global.value.placeholder);
-    /**
-     * Parse options from slots before popup, execute only once
-     */
-    const initOptions = () => {
-      if (realOptions.value.length || isInit.value) return;
 
-      // 这里直接使用 context.slots 没办法拿到后续渲染赋进来的 default slots，采用如下方法动态获取
-      const children = getCurrentInstance().vnode.componentInstance.$scopedSlots.default?.({});
-      if (children) {
-        realOptions.value = parseOptions(children);
-        isInit.value = true;
-        hasSlotOptions.value = true;
-      }
-    };
     const updateScrollTop = (content: HTMLDivElement) => {
       // 虚拟滚动不支持移动定位到选中项
       if (props.scroll?.type === 'virtual') return;
@@ -628,66 +275,154 @@ export default defineComponent({
         }
       });
     };
-    onMounted(() => {
-      initOptions();
+
+    // 键盘操作逻辑相关
+    const hoverIndex = ref(-1);
+    const keydownEvent = (e: KeyboardEvent) => {
+      const optionsListLength = optionsList.value.length;
+      const arrowDownOption = () => {
+        let count = 0;
+        while (hoverIndex.value < optionsListLength) {
+          if (!optionsList.value[hoverIndex.value]?.disabled) {
+            break;
+          }
+          if (hoverIndex.value === optionsListLength - 1) {
+            hoverIndex.value = 0;
+          } else {
+            hoverIndex.value += 1;
+          }
+          count += 1;
+          if (count >= optionsListLength) break;
+        }
+      };
+      const arrowUpOption = () => {
+        let count = 0;
+        while (hoverIndex.value > -1) {
+          if (!optionsList.value[hoverIndex.value]?.disabled) {
+            break;
+          }
+          if (hoverIndex.value === 0) {
+            hoverIndex.value = optionsListLength - 1;
+          } else {
+            hoverIndex.value -= 1;
+          }
+          count += 1;
+          if (count >= optionsListLength) break;
+        }
+      };
+      if (optionsListLength === 0) return;
+      const preventKeys = ['ArrowDown', 'ArrowUp', 'Enter', 'Escape', 'Tab'];
+      if (preventKeys.includes(e.code)) {
+        e.preventDefault();
+      }
+      switch (e.code) {
+        case 'ArrowDown':
+          if (hoverIndex.value === -1) {
+            hoverIndex.value = 0;
+            return;
+          }
+          if (hoverIndex.value < optionsListLength - 1) {
+            hoverIndex.value += 1;
+            arrowDownOption();
+          } else {
+            hoverIndex.value = 0;
+            arrowDownOption();
+          }
+          break;
+        case 'ArrowUp':
+          if (hoverIndex.value === -1) {
+            hoverIndex.value = 0;
+            return;
+          }
+          if (hoverIndex.value > 0) {
+            hoverIndex.value -= 1;
+            arrowUpOption();
+          } else {
+            hoverIndex.value = optionsListLength - 1;
+            arrowUpOption();
+          }
+          break;
+        case 'Enter':
+          if (hoverIndex.value === -1) return;
+          if (!multiple.value) {
+            setInnerValue(optionsList.value[hoverIndex.value].value, {
+              e,
+              trigger: 'check',
+            });
+            setInnerPopupVisible(false, { e });
+          } else {
+            if (hoverIndex.value === -1) return;
+            const optionValue = optionsList.value[hoverIndex.value]?.value;
+            if (!optionValue) return;
+            const newValue = getNewMultipleValue(innerValue.value, optionValue);
+            setInnerValue(newValue.value, { e, trigger: newValue.isCheck ? 'check' : 'uncheck' });
+          }
+          break;
+        case 'Escape':
+        case 'Tab':
+          setInnerPopupVisible(false, { trigger: 'keydown-esc', e });
+          setTInputValue('');
+          break;
+      }
+    };
+
+    // 为 eventListener 加单独的 sync watch，以防组件在卸载的时候未能正常清除监听 (https://github.com/Tencent/tdesign-vue/issues/1170)
+    watch(
+      innerPopupVisible,
+      (val) => {
+        val && document.addEventListener('keydown', keydownEvent);
+        !val && document.removeEventListener('keydown', keydownEvent);
+      },
+      {
+        flush: 'sync',
+      },
+    );
+    // 其余逻辑使用默认 pre watch
+    watch(innerPopupVisible, (value) => {
+      if (value) {
+        // 显示 popup 的时候重置 hover 选项下标
+        hoverIndex.value = -1;
+      } else {
+        tInputValue.value && setTInputValue('');
+      }
     });
-    onUpdated(() => {
-      initOptions();
-    });
+
     provide('tSelect', {
-      getOptions,
-      reachMaxLimit,
-      visible,
-      hoverOptions,
-      hoverIndex,
-      realValue,
-      getOverlayElm,
-      popupOpenTime,
-      multiple,
-      max,
-      value,
       size,
-      creatable,
-      isGroupOption,
-      tInputValue,
-      canFilter,
-      filterOptions,
-      labelInValue,
-      createOption,
-      onOptionClick,
-      hasSlotOptions,
-      destroyOptions,
-      displayOptions,
-      displayOptionsMap,
+      multiple,
+      popupOpenTime,
+      hoverIndex,
+      selectValue: innerValue,
+      reserveKeyword,
+      isReachMaxLimit,
+      getOverlayElm,
+      handleCreate,
+      handleValueChange: setInnerValue,
+      handlerInputChange: setTInputValue,
+      handlePopupVisibleChange: setInnerPopupVisible,
     });
 
     return {
+      isFilterable,
+      isDisabled,
+      isLoading,
+      innerOptions,
+      placeholderText,
       selectInputRef,
-      visible,
-      realOptions,
-      showCreateOption,
-      showFilter,
-      tDisabled,
-      showLoading,
-      realValue,
-      realLabel,
-      displayOptions,
-      selectedValue,
-      hasSlotOptions,
+      innerPopupVisible,
+      displayText,
       tInputValue,
-      isGroupOption,
-      focus,
-      blur,
-      enter,
-      clearSelect,
-      getPlaceholderText,
-      handlePopupVisibleChange,
-      handleTInputValueChange,
+      collapsedItemsParams,
+      valueDisplayParams,
+      handleFocus,
+      handleBlur,
+      handleEnter,
+      handleClear,
       handleTagChange,
+      handleTInputValueChange,
+      setInnerPopupVisible,
       removeTag,
-      renderValueDisplay,
       renderTNode,
-      renderCollapsedItems,
       updateScrollTop,
     };
   },
@@ -695,36 +430,34 @@ export default defineComponent({
   methods: {
     renderSuffixIcon() {
       const {
-        showLoading, showArrow, visible, tDisabled,
+        isLoading, showArrow, innerPopupVisible, isDisabled,
       } = this;
-      if (showLoading) {
+      if (isLoading) {
         return <t-loading class={[`${name}__right-icon`, `${name}__active-icon`]} size="small" />;
       }
       return showArrow ? (
-        <fake-arrow overlayClassName={`${name}__right-icon`} isActive={visible && !tDisabled} />
+        <fake-arrow overlayClassName={`${name}__right-icon`} isActive={innerPopupVisible && !isDisabled} />
       ) : null;
     },
   },
 
-  render(h) {
+  render() {
     const {
+      valueDisplayParams,
+      placeholderText,
       multiple,
       keys,
       autoWidth,
       bordered,
       readonly,
-      selectedValue,
+      displayText,
       clearable,
-      tDisabled,
+      isDisabled,
       borderless,
-      showCreateOption,
-      displayOptions,
-      isGroupOption,
-      options,
       size,
-      showFilter,
+      isFilterable,
       tInputValue,
-      showLoading,
+      isLoading,
       loadingText,
       tagInputProps,
       tagProps,
@@ -732,31 +465,26 @@ export default defineComponent({
       minCollapsedNum,
       popupProps,
       selectInputProps,
-      max,
       value,
-      realValue,
-      realLabel,
-      visible,
-      focus,
-      blur,
-      enter,
-      handlePopupVisibleChange,
-      clearSelect,
+      innerPopupVisible,
+      filter,
+      setInnerPopupVisible,
       handleTInputValueChange,
-      handleTagChange,
       renderTNode,
-      renderCollapsedItems,
+      collapsedItemsParams,
       updateScrollTop,
+      innerOptions,
+      creatable,
       // 虚拟滚动参数
       scroll,
     } = this;
-    const valueDisplay = this.renderValueDisplay(h);
-    const placeholderText = this.getPlaceholderText();
-    const prefixIcon = () => renderTNode('prefixIcon');
-    const empty = renderTNode('empty');
 
-    const collapsedItems = () => renderCollapsedItems();
+    const prefixIcon = () => renderTNode('prefixIcon');
+    const valueDisplay = () => renderTNode('valueDisplay', { params: valueDisplayParams });
+    const collapsedItems = () => renderTNode('collapsedItems', { params: collapsedItemsParams });
+
     const { overlayClassName, ...restPopupProps } = popupProps || {};
+
     return (
       <div ref="select" class={`${name}__wrap`}>
         <SelectInput
@@ -765,13 +493,13 @@ export default defineComponent({
           autoWidth={autoWidth}
           borderless={borderless || !bordered}
           readonly={readonly}
-          allowInput={showFilter}
+          allowInput={isFilterable}
           multiple={multiple}
           keys={keys}
-          value={selectedValue}
+          value={displayText}
           valueDisplay={valueDisplay}
           clearable={clearable}
-          disabled={tDisabled}
+          disabled={isDisabled}
           label={prefixIcon}
           suffixIcon={this.renderSuffixIcon}
           placeholder={placeholderText}
@@ -787,41 +515,40 @@ export default defineComponent({
           tagProps={tagProps}
           minCollapsedNum={minCollapsedNum}
           collapsedItems={collapsedItems}
-          popupVisible={visible}
+          popupVisible={innerPopupVisible}
           popupProps={{
             overlayClassName: [`${name}__dropdown`, ['narrow-scrollbar'], overlayClassName],
             ...restPopupProps,
           }}
           on={{
-            focus,
-            blur,
-            enter,
-            clear: clearSelect,
+            focus: this.handleFocus,
+            blur: this.handleBlur,
+            enter: this.handleEnter,
+            clear: this.handleClear,
             'input-change': handleTInputValueChange,
-            'popup-visible-change': handlePopupVisibleChange,
-            'tag-change': handleTagChange,
+            'popup-visible-change': setInnerPopupVisible,
+            'tag-change': this.handleTagChange,
           }}
           {...selectInputProps}
           updateScrollTop={updateScrollTop}
         >
           <select-panel
             slot="panel"
-            size={size}
-            multiple={multiple}
             scopedSlots={this.$scopedSlots}
-            empty={empty}
-            loading={showLoading}
-            showCreateOption={showCreateOption}
-            options={isGroupOption ? options : displayOptions}
-            loadingText={loadingText}
-            max={max}
-            inputValue={tInputValue}
+            options={innerOptions}
             value={value}
-            realLabel={realLabel}
-            realValue={realValue}
+            inputValue={tInputValue}
+            multiple={multiple}
+            filter={filter}
+            filterable={isFilterable}
+            size={size}
+            empty={this.empty}
+            loading={isLoading}
+            loadingText={loadingText}
             scroll={scroll}
             panelTopContent={this.panelTopContent}
             panelBottomContent={this.panelBottomContent}
+            creatable={creatable}
           />
         </SelectInput>
       </div>

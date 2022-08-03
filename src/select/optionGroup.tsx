@@ -7,7 +7,7 @@ import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import props from './option-group-props';
 import { ClassName } from '../common';
-import { TdOptionProps, TdOptionGroupProps } from './type';
+import { TdOptionGroupProps } from './type';
 import { useTNodeJSX } from '../hooks/tnode';
 
 const name = `${prefix}-select-option-group`;
@@ -15,7 +15,6 @@ const name = `${prefix}-select-option-group`;
 export interface Select extends Vue {
   tSelect: {
     size: string;
-    displayOptions: Array<TdOptionProps>;
   };
 }
 
