@@ -5457,6 +5457,68 @@ exports[`ssr snapshot test renders ./examples/date-picker/demos/month.vue correc
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/date-picker/demos/quarter.vue correctly 1`] = `
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-date-picker">
+      <div class="t-input__wrap t-select-input--empty">
+        <div class="t-input t-size-m t-is-default t-input--prefix t-input--suffix">
+          <div class="t-input__prefix"></div><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-date-range-picker">
+      <div class="t-range-input-popup">
+        <div class="t-range-input">
+          <div class="t-range-input__inner">
+            <div class="t-input__wrap t-range-input__inner-left">
+              <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+            </div>
+            <div class="t-range-input__inner-separator">-</div>
+            <div class="t-input__wrap t-range-input__inner-right">
+              <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+            </div><span class="t-range-input__suffix t-range-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/date-picker/demos/week.vue correctly 1`] = `
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-date-picker">
+      <div class="t-input__wrap t-select-input--empty">
+        <div class="t-input t-size-m t-is-default t-input--prefix t-input--suffix">
+          <div class="t-input__prefix"></div><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-date-range-picker">
+      <div class="t-range-input-popup">
+        <div class="t-range-input">
+          <div class="t-range-input__inner">
+            <div class="t-input__wrap t-range-input__inner-left">
+              <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+            </div>
+            <div class="t-range-input__inner-separator">-</div>
+            <div class="t-input__wrap t-range-input__inner-right">
+              <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
+            </div><span class="t-range-input__suffix t-range-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-calendar"><path fill="currentColor" d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z" fill-opacity="0.9"></path></svg></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/date-picker/demos/year.vue correctly 1`] = `
 <div class="t-space t-space-vertical" style="gap:16px;">
   <div class="t-space-item">

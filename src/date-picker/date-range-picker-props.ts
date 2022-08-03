@@ -36,7 +36,7 @@ export default {
     default: 'date' as TdDateRangePickerProps['mode'],
     validator(val: TdDateRangePickerProps['mode']): boolean {
       if (!val) return true;
-      return ['year', 'month', 'date'].includes(val);
+      return ['year', 'quarter', 'month', 'week', 'date'].includes(val);
     },
   },
   /** 在开始日期选中之前，面板是否显示预选状态，即是否高亮预选日期 */
