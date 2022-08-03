@@ -117,7 +117,4 @@ name | params | default | description
 
 name | params | default | description
 -- | -- | -- | --
-placement | String | top | options：center/top/left/right/bottom/top-left/top-right/bottom-left/bottom-right。Typescript：`MessagePlacementList` `type MessagePlacementList = 'center' | 'top' | 'left' | 'right' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/message/type.ts)
-attach | String / Function | 'body' | Typescript：`AttachNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)
-offset | Array | - | Typescript：`Array<string | number>`
-zIndex | Number | 5000 | \-
+message | Object | - | required。Typescript：`MessageOptions`

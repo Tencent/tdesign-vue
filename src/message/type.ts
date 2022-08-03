@@ -115,9 +115,4 @@ export type MessageCloseMethod = (options: Promise<MessageInstance>) => void;
 
 export type MessageCloseAllMethod = () => void;
 
-export type MessageConfigMethod = (
-  placement?: MessagePlacementList,
-  attach?: AttachNode,
-  offset?: Array<string | number>,
-  zIndex?: number,
-) => void;
+export type MessageConfigMethod = (message: MessageOptions) => void;
