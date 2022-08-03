@@ -44,8 +44,8 @@ export const useSelectOptions = (props: TdSelectProps, context: SetupContext, ke
 
     // 处理 slots 中 t-option 与 t-option-group
     const currentSlots = context.parent.$slots.default || [];
-    const optionsSlots = currentSlots.filter((item) => item.tag.endsWith('TOption'));
-    const groupSlots = currentSlots.filter((item) => item.tag.endsWith('TOptionGroup'));
+    const optionsSlots = currentSlots.filter((item) => item.tag?.endsWith('TOption'));
+    const groupSlots = currentSlots.filter((item) => item.tag?.endsWith('TOptionGroup'));
     if (isArray(groupSlots)) {
       groupSlots.forEach((group) => {
         const groupOption = {

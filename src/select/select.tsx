@@ -14,6 +14,7 @@ import debounce from 'lodash/debounce';
 import get from 'lodash/get';
 import { CloseCircleFilledIcon } from 'tdesign-icons-vue';
 import cloneDeep from 'lodash/cloneDeep';
+import isArray from 'lodash/isArray';
 import useDefaultValue from '../hooks/useDefaultValue';
 import { useTNodeJSX } from '../hooks/tnode';
 import { useConfig } from '../config-provider/useConfig';
@@ -366,6 +367,25 @@ export default defineComponent({
       }
     };
 
+    const checkValueInvalid = () => {
+      // 参数类型检测与修复
+      if (!multiple.value && isArray(value.value)) {
+        value.value = '';
+      }
+      if (multiple.value && !isArray(value.value)) {
+        value.value = [];
+      }
+    };
+
+    watch(
+      value,
+      () => {
+        checkValueInvalid();
+      },
+      {
+        immediate: true,
+      },
+    );
     // 为 eventListener 加单独的 sync watch，以防组件在卸载的时候未能正常清除监听 (https://github.com/Tencent/tdesign-vue/issues/1170)
     watch(
       innerPopupVisible,
