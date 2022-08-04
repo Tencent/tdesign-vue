@@ -1,5 +1,5 @@
 import {
-  ref, toRefs, watch, getCurrentInstance,
+  ref, toRefs, computed, getCurrentInstance,
 } from '@vue/composition-api';
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
@@ -20,9 +20,8 @@ export default function useOverlayStyle(props: overlayStyleProps) {
 
   const { popupProps, autoWidth } = toRefs(props);
   const innerPopupVisible = ref(false);
-  const tOverlayStyle = ref<TdPopupProps['overlayStyle']>();
 
-  const macthWidthFunc = (triggerElement: HTMLElement, popupElement: HTMLElement) => {
+  const matchWidthFunc = (triggerElement: HTMLElement, popupElement: HTMLElement) => {
     // 避免因滚动条出现文本省略，预留宽度 8
     const SCROLLBAR_WIDTH = popupElement.scrollHeight > popupElement.offsetHeight ? 8 : 0;
     const width = popupElement.offsetWidth + SCROLLBAR_WIDTH >= triggerElement.offsetWidth
@@ -40,23 +39,20 @@ export default function useOverlayStyle(props: overlayStyleProps) {
 
   const onInnerPopupVisibleChange = (visible: boolean, context: PopupVisibleChangeContext) => {
     if (props.disabled || props.readonly) return;
-    // 如果点击触发元素（输入框），则永久显示下拉框
-    const newVisible = context.trigger === 'trigger-element-click' ? true : visible;
-    innerPopupVisible.value = newVisible;
-    props.onPopupVisibleChange?.(newVisible, context);
-    instance.emit('popup-visible-change', newVisible, context);
+    innerPopupVisible.value = visible;
+    props.onPopupVisibleChange?.(visible, context);
+    instance.emit('popup-visible-change', visible, context);
   };
 
-  watch([innerPopupVisible, popupProps], () => {
-    if (tOverlayStyle.value) return;
+  const tOverlayStyle = computed(() => {
     let result: TdPopupProps['overlayStyle'] = {};
     const overlayStyle = popupProps.value?.overlayStyle || {};
     if (isFunction(overlayStyle) || (isObject(overlayStyle) && overlayStyle.width)) {
       result = overlayStyle;
     } else if (!autoWidth.value) {
-      result = macthWidthFunc;
+      result = matchWidthFunc;
     }
-    tOverlayStyle.value = result;
+    return result;
   });
 
   return {

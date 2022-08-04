@@ -84,7 +84,7 @@ export default Vue.extend({
 }
 .dialog-attach-wrap {
   position: relative;
-  height: 240px;
+  height: 300px;
   padding: 20px;
   border: 1px solid #ebedf0;
   border-radius: 2px;

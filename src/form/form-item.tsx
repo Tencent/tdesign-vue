@@ -20,7 +20,9 @@ import {
   FormItemValidateMessage,
 } from './type';
 import props from './form-item-props';
-import { CLASS_NAMES, FORM_ITEM_CLASS_PREFIX } from './const';
+import {
+  AnalysisValidateResult, CLASS_NAMES, ErrorListType, FORM_ITEM_CLASS_PREFIX, SuccessListType,
+} from './const';
 import Form from './form';
 import { ClassName, TNodeReturnValue, Styles } from '../common';
 import mixins from '../utils/mixins';
@@ -53,6 +55,12 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
 
   inject: {
     form: { default: undefined },
+  },
+
+  provide(): { tFormItem: any } {
+    return {
+      tFormItem: this,
+    };
   },
 
   data() {
@@ -243,11 +251,13 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
       this.freeShowErrorMessage = source === 'submit-function' ? showErrorMessage : undefined;
       this.resetValidating = true;
       const {
-        errorList, resultList, successList, rules,
+        errorList, resultList, successList, rules, allowSetValue,
       } = await this.analysisValidateResult(trigger);
-      this.errorList = errorList;
-      // 仅有自定义校验方法才会存在 successList
-      this.successList = successList;
+      if (allowSetValue) {
+        this.errorList = errorList;
+        // 仅有自定义校验方法才会存在 successList
+        this.successList = successList;
+      }
       // 根据校验结果设置校验状态
       if (rules.length) {
         this.verifyStatus = errorList.length ? VALIDATE_STATUS.FAIL : VALIDATE_STATUS.SUCCESS;
@@ -272,19 +282,31 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
     },
 
     async analysisValidateResult(trigger: ValidateTriggerType) {
+      const result: AnalysisValidateResult = {
+        successList: [],
+        errorList: [],
+        rules: [],
+        resultList: [],
+        allowSetValue: false,
+      };
       // 过滤不需要校验的规则
-      const rules = trigger === 'all' ? this.innerRules : this.innerRules.filter((item) => (item.trigger || 'change') === trigger);
+      result.rules = trigger === 'all' ? this.innerRules : this.innerRules.filter((item) => (item.trigger || 'change') === trigger);
+      if (this.innerRules.length && !result.rules.length) {
+        return result;
+      }
       // 校验结果，包含正确的校验信息
-      const resultList = await validate(this.value, rules);
-      const errorList = resultList
+      result.allowSetValue = true;
+      result.resultList = await validate(this.value, result.rules);
+      result.errorList = result.resultList
         .filter((item) => item.result !== true)
-        .map((item) => {
+        .map((item: ErrorListType) => {
           Object.keys(item).forEach((key) => {
             if (typeof item.message === 'undefined' && this.errorMessages[key]) {
               const compiled = lodashTemplate(this.errorMessages[key]);
+              const name = typeof this.label === 'string' ? this.label : this.name;
               // eslint-disable-next-line no-param-reassign
               item.message = compiled({
-                name: this.label,
+                name,
                 validate: item[key],
               });
             }
@@ -292,13 +314,10 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
           return item;
         });
       // 仅有自定义校验方法才会存在 successList
-      const successList = resultList.filter((item) => item.result === true && item.message && item.type === 'success');
-      return {
-        resultList,
-        errorList,
-        successList,
-        rules,
-      };
+      result.successList = result.resultList.filter(
+        (item) => item.result === true && item.message && item.type === 'success',
+      ) as SuccessListType[];
+      return result;
     },
 
     getLabelContent(): TNodeReturnValue {

@@ -26,15 +26,23 @@
   {
     "name": "mode",
     "type": "enum",
-    "defaultValue": "month",
+    "defaultValue": "date",
     "options": [
       {
         "label": "year",
         "value": "year"
       },
       {
+        "label": "quarter",
+        "value": "quarter"
+      },
+      {
         "label": "month",
         "value": "month"
+      },
+      {
+        "label": "week",
+        "value": "week"
       },
       {
         "label": "date",
@@ -64,11 +72,5 @@
         "value": "bottom"
       }
     ]
-  },
-  {
-    "name": "range",
-    "type": "Boolean",
-    "defaultValue": false,
-    "options": []
   }
 ]

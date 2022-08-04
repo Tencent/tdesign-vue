@@ -12,12 +12,12 @@ export default {
   allowInput: Boolean,
   /** 是否显示清除按钮 */
   clearable: Boolean,
-  /** 是否禁用组件 */
-  disabled: Boolean,
   /** 禁用日期，示例：['A', 'B'] 表示日期 A 和日期 B 会被禁用。`{ from: 'A', to: 'B' }` 表示在 A 到 B 之间的日期会被禁用。`{ before: 'A', after: 'B' }` 表示在 A 之前和在 B 之后的日期都会被禁用。其中 A = '2021-01-01'，B = '2021-02-01'。值类型为 Function 则表示返回值为 true 的日期会被禁用 */
   disableDate: {
     type: [Object, Array, Function] as PropType<TdDatePickerProps['disableDate']>,
   },
+  /** 是否禁用组件 */
+  disabled: Boolean,
   /** 是否显示时间选择 */
   enableTimePicker: Boolean,
   /** 第一天从星期几开始 */
@@ -29,10 +29,7 @@ export default {
     },
   },
   /** 用于格式化日期，全局配置默认为：'YYYY-MM-DD'，[详细文档](https://day.js.org/docs/en/display/format) */
-  format: {
-    type: String,
-    default: '',
-  },
+  format: String,
   /** 透传给输入框（Input）组件的参数 */
   inputProps: {
     type: Object as PropType<TdDatePickerProps['inputProps']>,
@@ -43,7 +40,7 @@ export default {
     default: 'date' as TdDatePickerProps['mode'],
     validator(val: TdDatePickerProps['mode']): boolean {
       if (!val) return true;
-      return ['year', 'month', 'date'].includes(val);
+      return ['year', 'quarter', 'month', 'week', 'date'].includes(val);
     },
   },
   /** 占位符 */
@@ -101,8 +98,6 @@ export default {
   onChange: Function as PropType<TdDatePickerProps['onChange']>,
   /** 输入框获得焦点时触发 */
   onFocus: Function as PropType<TdDatePickerProps['onFocus']>,
-  /** 输入框数据发生变化时触发，参数 input 表示输入内容，value 表示组件当前有效值 */
-  onInput: Function as PropType<TdDatePickerProps['onInput']>,
   /** 面板选中值后触发 */
   onPick: Function as PropType<TdDatePickerProps['onPick']>,
 };

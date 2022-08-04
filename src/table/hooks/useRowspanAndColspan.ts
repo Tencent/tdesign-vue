@@ -23,7 +23,7 @@ export default function useRowspanAndColspan(
   data: Ref<TableRowData[]>,
   columns: Ref<BaseTableCol<TableRowData>[]>,
   rowKey: Ref<string>,
-  rowspanAndColspan: TableRowspanAndColspanFunc<TableRowData>,
+  rowspanAndColspan: Ref<TableRowspanAndColspanFunc<TableRowData>>,
 ) {
   const skipSpansMap = ref(new Map<string, SkipSpansValue>());
 
@@ -36,6 +36,7 @@ export default function useRowspanAndColspan(
     for (let i = rowIndex; i < maxRowIndex; i++) {
       for (let j = colIndex; j < maxColIndex; j++) {
         if (i !== rowIndex || j !== colIndex) {
+          if (!data.value[i] || !columns.value[j]) return;
           const cellKey = getCellKey(data.value[i], rowKey.value, columns.value[j].colKey, j);
           const state = skipSpansMap.value.get(cellKey) || {};
           state.skipped = true;
@@ -51,6 +52,7 @@ export default function useRowspanAndColspan(
     columns: BaseTableCol<TableRowData>[],
     rowspanAndColspan: TableRowspanAndColspanFunc<TableRowData>,
   ) => {
+    skipSpansMap.value?.clear();
     if (!data || !rowspanAndColspan) return;
     for (let i = 0, len = data.length; i < len; i++) {
       const row = data[i];
@@ -65,9 +67,9 @@ export default function useRowspanAndColspan(
         const cellKey = getCellKey(row, rowKey.value, col.colKey, j);
         const state = skipSpansMap.value.get(cellKey) || {};
         const o = rowspanAndColspan(params) || {};
-        if (o.rowspan > 1 || o.colspan > 1 || state.rowspan || state.colspan) {
-          o.rowspan > 1 && (state.rowspan = o.rowspan);
-          o.colspan > 1 && (state.colspan = o.colspan);
+        if (o.rowspan || o.colspan || state.rowspan || state.colspan) {
+          o.rowspan && (state.rowspan = o.rowspan);
+          o.colspan && (state.colspan = o.colspan);
           skipSpansMap.value.set(cellKey, state);
         }
         onTrRowspanOrColspan?.(params, state);
@@ -76,12 +78,12 @@ export default function useRowspanAndColspan(
   };
 
   watch(
-    () => [data.value, columns.value],
+    () => [data.value, columns.value, rowspanAndColspan],
     () => {
-      updateSkipSpansMap(data.value, columns.value, rowspanAndColspan);
+      updateSkipSpansMap(data.value, columns.value, rowspanAndColspan?.value);
     },
     { immediate: true },
   );
 
-  return { skipSpansMap, updateSkipSpansMap };
+  return { skipSpansMap };
 }

@@ -1,5 +1,7 @@
 import { ref, toRefs } from '@vue/composition-api';
-import { TagInputValue, TdTagInputProps, TagInputChangeContext } from './type';
+import {
+  TagInputValue, TagInputChangeContext, TdTagInputProps, DragProps,
+} from './type';
 import { InputValue } from '../input';
 import Tag from '../tag';
 import { prefix } from '../config';
@@ -9,7 +11,7 @@ import { useTNodeJSX } from '../hooks/tnode';
 export type ChangeParams = [TagInputChangeContext];
 
 // handle tag add and remove
-export default function useTagList(props: TdTagInputProps) {
+export default function useTagList(props: TdTagInputProps, getDragProps: DragProps) {
   const renderTNode = useTNodeJSX();
   const {
     value, onRemove, max, minCollapsedNum, size, disabled, readonly, tagProps,
@@ -83,7 +85,7 @@ export default function useTagList(props: TdTagInputProps) {
       ? [displayNode]
       : newList?.map((item, index) => {
         const tagContent = renderTNode('tag', { params: { value: item } });
-        return (
+        const TagNode = (
             <Tag
               key={index}
               size={size.value}
@@ -94,6 +96,22 @@ export default function useTagList(props: TdTagInputProps) {
             >
               {tagContent ?? item}
             </Tag>
+        );
+        const itemDrag = getDragProps?.(index, item);
+
+        return itemDrag && itemDrag.draggable ? (
+            <span
+              class={`${prefix}-tag-input__drag_wrapper`}
+              draggable={true}
+              onDragstart={itemDrag.onDragstart}
+              onDragover={itemDrag.onDragover}
+              onDragend={itemDrag.onDragend}
+              onDrop={itemDrag.onDrop}
+            >
+              {TagNode}
+            </span>
+        ) : (
+          TagNode
         );
       });
     if (![null, undefined, ''].includes(label)) {
@@ -108,9 +126,10 @@ export default function useTagList(props: TdTagInputProps) {
       const len = tagValue.value.length - newList.length;
       const more = renderTNode('collapsedItems', {
         params: {
-          value: tagValue,
+          value: tagValue.value,
           count: tagValue.value.length,
           collapsedTags: tagValue.value.slice(minCollapsedNum.value, tagValue.value.length),
+          collapsedSelectedItems: tagValue.value.slice(minCollapsedNum.value, tagValue.value.length),
         },
       });
       list.push(more ?? <Tag key="more">+{len}</Tag>);

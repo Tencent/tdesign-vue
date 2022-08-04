@@ -69,11 +69,5 @@
         "value": "error"
       }
     ]
-  },
-  {
-    "name": "value",
-    "type": "Boolean",
-    "defaultValue": false,
-    "options": []
   }
 ]

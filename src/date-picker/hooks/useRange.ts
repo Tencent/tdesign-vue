@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 import { usePrefixClass, useConfig } from '../../hooks/useConfig';
 
 import { TdDateRangePickerProps, DateValue } from '../type';
-import useFormat from './useFormat';
+import { isValidDate, formatDate, getDefaultFormat } from './useFormat';
 import useRangeValue from './useRangeValue';
 
 export const PARTIAL_MAP = { first: 'start', second: 'end' };
@@ -19,9 +19,8 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
     value, onChange, time, month, year, cacheValue, isFirstValueSelected,
   } = useRangeValue(props);
 
-  const formatRef = computed(() => useFormat({
+  const formatRef = computed(() => getDefaultFormat({
     mode: props.mode,
-    value: props.value,
     format: props.format,
     valueType: props.valueType,
     enableTimePicker: props.enableTimePicker,
@@ -30,7 +29,9 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
   const popupVisible = ref(false);
   const isHoverCell = ref(false);
   const activeIndex = ref(0); // 确定当前选中的输入框序号
-  const inputValue = ref(formatRef.value.formatDate(props.value)); // 未真正选中前可能不断变更输入框的内容
+  const inputValue = ref(
+    formatDate(props.value, { format: formatRef.value.format, targetFormat: formatRef.value.format }),
+  ); // 未真正选中前可能不断变更输入框的内容
 
   // input 设置
   const rangeInputProps = computed(() => ({
@@ -52,6 +53,7 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
       e.stopPropagation();
       popupVisible.value = false;
       onChange?.([], { dayjsValue: [], trigger: 'clear' });
+      emit('clear', [], { dayjsValue: [], trigger: 'clear' });
     },
     onBlur: (newVal: string[], { e, position }: any) => {
       props.onBlur?.({ value: newVal, partial: PARTIAL_MAP[position], e });
@@ -62,25 +64,11 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
       emit('focus', { value: newVal, partial: PARTIAL_MAP[position], e });
       activeIndex.value = position === 'first' ? 0 : 1;
     },
-    onChange: (newVal: string[], { e, position }: any) => {
-      const index = position === 'first' ? 0 : 1;
-
-      props.onInput?.({
-        input: newVal[index],
-        value: value.value,
-        partial: PARTIAL_MAP[position],
-        e,
-      });
-      emit('input', {
-        input: newVal[index],
-        value: value.value,
-        partial: PARTIAL_MAP[position],
-        e,
-      });
+    onChange: (newVal: string[]) => {
       inputValue.value = newVal;
 
       // 跳过不符合格式化的输入框内容
-      if (!formatRef.value.isValidDate(newVal)) return;
+      if (!isValidDate(newVal, formatRef.value.format)) return;
       const newYear: Array<number> = [];
       const newMonth: Array<number> = [];
       const newTime: Array<string> = [];
@@ -94,16 +82,25 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
       time.value = newTime;
     },
     onEnter: (newVal: string[]) => {
-      if (!formatRef.value.isValidDate(newVal) && !formatRef.value.isValidDate(value.value)) return;
+      if (!isValidDate(newVal, formatRef.value.format) && !isValidDate(value.value, formatRef.value.format)) return;
 
       popupVisible.value = false;
-      if (formatRef.value.isValidDate(newVal)) {
-        onChange?.(formatRef.value.formatDate(newVal, { formatType: 'valueType' }) as DateValue[], {
-          dayjsValue: newVal.map((v) => dayjs(v)),
-          trigger: 'enter',
+      if (isValidDate(newVal, formatRef.value.format)) {
+        onChange?.(
+          formatDate(newVal, {
+            format: formatRef.value.format,
+            targetFormat: formatRef.value.valueType,
+          }) as DateValue[],
+          {
+            dayjsValue: newVal.map((v) => dayjs(v)),
+            trigger: 'enter',
+          },
+        );
+      } else if (isValidDate(value.value, formatRef.value.format)) {
+        inputValue.value = formatDate(value.value, {
+          format: formatRef.value.format,
+          targetFormat: formatRef.value.format,
         });
-      } else if (formatRef.value.isValidDate(value.value)) {
-        inputValue.value = formatRef.value.formatDate(value.value);
       } else {
         inputValue.value = [];
       }
@@ -124,12 +121,12 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
         popupVisible.value = true;
         return;
       }
-      if (visible) {
-        // 展开后重置点击次数
-        isFirstValueSelected.value = false;
-      } else {
+      if (!visible) {
         isHoverCell.value = false;
-        inputValue.value = formatRef.value.formatDate(value.value);
+        inputValue.value = formatDate(value.value, {
+          format: formatRef.value.format,
+          targetFormat: formatRef.value.format,
+        });
       }
 
       popupVisible.value = visible;
@@ -140,15 +137,14 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
   watchEffect(() => {
     if (!value.value) {
       inputValue.value = [];
-      cacheValue.value = [];
-      time.value = [dayjs().format(formatRef.value.timeFormat), dayjs().format(formatRef.value.timeFormat)];
       return;
     }
-    if (!formatRef.value.isValidDate(value.value, 'valueType')) return;
+    if (!isValidDate(value.value, 'valueType')) return;
 
-    inputValue.value = formatRef.value.formatDate(value.value);
-    cacheValue.value = formatRef.value.formatDate(value.value);
-    time.value = formatRef.value.formatTime(value.value) as string[];
+    inputValue.value = formatDate(value.value, {
+      format: formatRef.value.format,
+      targetFormat: formatRef.value.format,
+    });
   });
 
   // activeIndex 变化自动 focus 对应输入框

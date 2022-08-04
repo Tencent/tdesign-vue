@@ -14,6 +14,7 @@ const prefixCls = `${prefix}-popup`;
 const showTimeout = 250;
 const hideTimeout = 150;
 const triggers = ['click', 'hover', 'focus', 'context-menu'] as const;
+const injectionKey = '__T_POPUP';
 
 function getPopperPlacement(placement: TdPopupProps['placement']) {
   return placement.replace(/-(left|top)$/, '-start').replace(/-(right|bottom)$/, '-end') as Placement;
@@ -40,12 +41,13 @@ export default Vue.extend({
 
   provide(this: any) {
     return {
-      popup: this,
+      [injectionKey]: this,
     };
   },
 
   inject: {
     popup: {
+      from: injectionKey,
       default: undefined,
     },
   },
@@ -54,6 +56,9 @@ export default Vue.extend({
     ...props,
     expandAnimation: {
       type: Boolean,
+    },
+    updateScrollTop: {
+      type: Function,
     },
   },
 
@@ -114,6 +119,9 @@ export default Vue.extend({
             }
           });
         }
+        this.$nextTick(() => {
+          this.popupMounted();
+        });
       } else {
         this.preventClosing(false);
         // destruction is delayed until after animation ends
@@ -215,6 +223,14 @@ export default Vue.extend({
       });
     },
 
+    // popup弹出第一次初始化暴露事件
+    popupMounted() {
+      // 用于select定位事件
+      const overlayEl = this.$refs?.overlay as HTMLElement;
+      if (overlayEl) {
+        this.updateScrollTop?.(overlayEl);
+      }
+    },
     updateOverlayStyle() {
       const { overlayStyle } = this;
       const triggerEl = this.$el as HTMLElement;

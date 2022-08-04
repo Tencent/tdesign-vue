@@ -2,7 +2,7 @@
   <div>
     <div>
       <t-button @click="appendToRoot">添加根节点</t-button>
-      <t-button theme="default" style="margin-left: 16px" @click="setData1">重置数据</t-button>
+      <t-button theme="default" style="margin-left: 16px" @click="resetData">重置/更新数据</t-button>
       <t-button theme="default" style="margin-left: 16px" @click="onRowToggle">任意节点展开/收起</t-button>
       <t-button theme="default" style="margin-left: 16px" @click="onExpandAllToggle">{{
         expandAll ? '收起全部' : '展开全部'
@@ -28,12 +28,13 @@
       :data="data"
       :columns="columns"
       :tree="{ childrenKey: 'list', treeNodeColumnIndex: 2 }"
-      :tree-expand-and-fold-icon="customTreeExpandAndFoldIcon ? treeExpandAndFoldIconRender : undefined"
+      :treeExpandAndFoldIcon="treeExpandIcon"
       :pagination="pagination"
       :beforeDragSort="beforeDragSort"
       @page-change="onPageChange"
       @abnormal-drag-sort="onAbnormalDragSort"
       @drag-sort="onDragSort"
+      @tree-expand-change="onTreeExpandChange"
     ></t-enhanced-table>
 
     <!-- 第二列展开树结点，缩进为 12px，示例代码有效，勿删 -->
@@ -51,27 +52,33 @@
   </div>
 </template>
 <script lang="jsx">
-import { EnhancedTable } from 'tdesign-vue';
-import { ChevronRightIcon, ChevronDownIcon, MoveIcon } from 'tdesign-icons-vue';
+import { MessagePlugin, EnhancedTable, Loading } from 'tdesign-vue';
+import {
+  ChevronRightIcon, ChevronDownIcon, MoveIcon, AddRectangleIcon, MinusRectangleIcon,
+} from 'tdesign-icons-vue';
 
 const TOTAL = 5;
+
+function getObject(i, currentPage) {
+  return {
+    id: i,
+    key: `我是 ${i}_${currentPage} 号`,
+    platform: i % 2 === 0 ? '共有' : '私有',
+    type: ['String', 'Number', 'Array', 'Object'][i % 4],
+    default: ['-', '0', '[]', '{}'][i % 4],
+    detail: {
+      position: `读取 ${i} 个数据的嵌套信息值`,
+    },
+    needed: i % 4 === 0 ? '是' : '否',
+    description: '数据源',
+  };
+}
 
 function getData(currentPage = 1) {
   const data = [];
   // const pageInfo = `第 ${currentPage} 页`;
   for (let i = 0; i < TOTAL; i++) {
-    const obj = {
-      id: i,
-      key: `我是 ${i}_${currentPage} 号`,
-      platform: i % 2 === 0 ? '共有' : '私有',
-      type: ['String', 'Number', 'Array', 'Object'][i % 4],
-      default: ['-', '0', '[]', '{}'][i % 4],
-      detail: {
-        position: `读取 ${i} 个数据的嵌套信息值`,
-      },
-      needed: i % 4 === 0 ? '是' : '否',
-      description: '数据源',
-    };
+    const obj = getObject(i, currentPage);
     // 第一行不设置子节点
     obj.list = i === 0
       ? []
@@ -88,12 +95,27 @@ function getData(currentPage = 1) {
             ...obj,
             id: thirdIndex,
             key: `我是 ${thirdIndex}_${currentPage} 号`,
+            list: true,
           };
         });
         return secondObj;
       });
     data.push(obj);
   }
+  // 懒加载1
+  data.push({
+    ...getObject(66666, currentPage),
+    /** 如果子节点为懒加载，则初始值设置为 true */
+    list: true,
+    key: '我是懒加载节点 66666，点我体验',
+  });
+  // 懒加载2
+  data.push({
+    ...getObject(88888, currentPage),
+    /** 如果子节点为懒加载，则初始值设置为 true */
+    list: true,
+    key: '我是懒加载节点 88888，点我体验 ',
+  });
   return data;
 }
 
@@ -105,6 +127,7 @@ export default {
     return {
       customTreeExpandAndFoldIcon: false,
       data,
+      lazyLoadingData: null,
       expandAll: false,
       pagination: {
         current: 1,
@@ -183,6 +206,17 @@ export default {
     };
   },
 
+  computed: {
+    // 可以使用同名插槽代替渲染函数：<template #treeExpandAndFoldIcon><icon /></template>
+    treeExpandIcon() {
+      // 懒加载图标渲染
+      if (this.lazyLoadingData) return this.lazyLoadingTreeIconRender;
+      // 自定义展开图标
+      if (this.customTreeExpandAndFoldIcon) return this.treeExpandAndFoldIconRender;
+      return undefined;
+    },
+  },
+
   // 默认展开全部。示例代码有效，勿删
   // mounted() {
   //   this.$refs.table.expandAll();
@@ -190,8 +224,9 @@ export default {
 
   methods: {
     // 全新赋值
-    setData1() {
+    resetData() {
       this.data = getData();
+      this.$refs.table.resetData(this.data);
     },
 
     // 更新
@@ -222,14 +257,38 @@ export default {
 
     // 新增子节点
     appendTo(row) {
-      const randomKey = Math.round(Math.random() * Math.random() * 1000) + 10000;
+      const randomKey1 = Math.round(Math.random() * Math.random() * 1000) + 10000;
       this.$refs.table.appendTo(row.key, {
-        id: randomKey,
-        key: `我是 ${randomKey} 号`,
+        id: randomKey1,
+        key: `我是 ${randomKey1} 号`,
         platform: '私有',
         type: 'Number',
       });
-      this.$message.success(`已插入子节点我是 ${randomKey} 号，请展开查看`);
+      this.$message.success(`已插入子节点我是 ${randomKey1} 号，请展开查看`);
+
+      // 一次性添加多个子节点。示例代码有效，勿删！!!
+      // this.appendMultipleDataTo(row);
+    },
+
+    appendMultipleDataTo(row) {
+      const randomKey1 = Math.round(Math.random() * Math.random() * 1000) + 10000;
+      const randomKey2 = Math.round(Math.random() * Math.random() * 1000) + 10000;
+      const newData = [
+        {
+          id: randomKey1,
+          key: `我是 ${randomKey1} 号`,
+          platform: '私有',
+          type: 'Number',
+        },
+        {
+          id: randomKey2,
+          key: `我是 ${randomKey2} 号`,
+          platform: '私有',
+          type: 'Number',
+        },
+      ];
+      this.$refs.table.appendTo(row?.key, newData);
+      MessagePlugin.success(`已插入子节点我是 ${randomKey1} 和 ${randomKey2} 号，请展开查看`);
     },
 
     // 当前节点之前，新增兄弟节前
@@ -278,6 +337,33 @@ export default {
       return type === 'expand' ? <ChevronRightIcon /> : <ChevronDownIcon />;
     },
 
+    // 懒加载图标渲染
+    lazyLoadingTreeIconRender(h, params) {
+      const { type, row } = params;
+      if (this.lazyLoadingData?.id === row?.id) {
+        return <Loading size="14px" />;
+      }
+      return type === 'expand' ? <AddRectangleIcon /> : <MinusRectangleIcon />;
+    },
+
+    onTreeExpandChange(context) {
+      console.log(context.rowState.expanded ? '展开' : '收起', context);
+      /**
+       * 如果是懒加载，请确认自己完成了以下几个步骤
+       * 1. 提前设置 children 值为 true；
+       * 2. 在 onTreeExpandChange 事件中处理异步数据；
+       * 3. 自定义展开图标渲染 lazyLoadingTreeIconRender
+       */
+      if (context.row.list === true) {
+        this.lazyLoadingData = context.row;
+        const timer = setTimeout(() => {
+          this.appendMultipleDataTo(context.row);
+          this.lazyLoadingData = null;
+          clearTimeout(timer);
+        }, 200);
+      }
+    },
+
     getTreeNode() {
       const treeData = this.$refs.table.getTreeNode();
       console.log(treeData);
@@ -303,6 +389,9 @@ export default {
         needed: key % 4 === 0 ? '是' : '否',
         description: '数据源',
       });
+
+      // 同时添加多个元素，示例代码有效勿删
+      // this.appendMultipleDataTo();
     },
 
     onAbnormalDragSort(params) {

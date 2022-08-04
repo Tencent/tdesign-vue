@@ -37,6 +37,7 @@
       :filter-value="filterValue"
       :bordered="bordered"
       resizable
+      table-layout="fixed"
       @filter-change="onFilterChange"
       @change="onChange"
     />
@@ -44,7 +45,10 @@
 </template>
 
 <script lang="jsx">
-import { DatePicker } from 'tdesign-vue';
+import {
+  DateRangePickerPanel,
+  // Textarea,
+} from 'tdesign-vue';
 
 const data = new Array(5).fill(null).map((_, i) => ({
   key: String(i + 1),
@@ -112,6 +116,10 @@ export default {
           // 输入框过滤配置
           filter: {
             type: 'input',
+
+            // 如果是文本域搜索，可以使用 Textarea
+            // component: Textarea,
+
             // 按下 Enter 键时也触发确认搜索
             confirmEvents: ['onEnter'],
             props: {
@@ -127,15 +135,14 @@ export default {
           colKey: 'createTime',
           // 自定义过滤组件：日期过滤配置，请确保自定义组件包含 value 和 onChange 属性
           filter: {
-            // this config is not recommended.
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            // component: (h) => <t-date-picker clearable />,
-
-            // this config will be better.
-            component: DatePicker,
+            component: DateRangePickerPanel,
             props: {
-              clearable: true,
+              firstDayOfWeek: 7,
             },
+            // 是否显示重置取消按钮，一般情况不需要显示
+            showConfirmAndReset: true,
+            // 日期范围是一个组件，重置时需赋值为 []
+            resetValue: [],
           },
         },
       ];

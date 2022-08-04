@@ -17,7 +17,12 @@ const BASE_CLASS_EMPTY = `${prefix}-select-input--empty`;
 export default defineComponent({
   name: 'TSelectInput',
 
-  props: { ...props },
+  props: {
+    ...props,
+    updateScrollTop: {
+      type: Function,
+    },
+  },
 
   setup(props: TdSelectInputProps, context: SetupContext) {
     const selectInputRef = ref();
@@ -55,7 +60,6 @@ export default defineComponent({
 
   render(h) {
     // 浮层显示的受控与非受控
-    // 浮层显示的受控与非受控
     const visibleProps = { visible: this.popupVisible ?? this.innerPopupVisible };
 
     const mainContent = (
@@ -68,10 +72,12 @@ export default defineComponent({
         content={this.panel}
         scopedSlots={{ ...this.$scopedSlots, content: this.$scopedSlots.panel }}
         hideEmptyPopup={true}
+        disabled={this.disabled}
         on={{
           'visible-change': this.onInnerPopupVisibleChange,
         }}
         props={{ ...this.popupProps, overlayStyle: this.tOverlayStyle }}
+        updateScrollTop={this.updateScrollTop}
       >
         {this.multiple
           ? this.renderSelectMultiple(

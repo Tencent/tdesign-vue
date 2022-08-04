@@ -90,10 +90,12 @@ export default defineComponent({
   // eslint-disable-next-line
   setup(props: TableBodyProps, { emit }: SetupContext) {
     const renderTNode = useTNodeJSX();
-    const { data, columns, rowKey } = toRefs(props);
+    const {
+      data, columns, rowKey, rowspanAndColspan,
+    } = toRefs(props);
     const { t, global } = useConfig('table');
     const { tableFullRowClasses, tableBaseClass } = useClassName();
-    const { skipSpansMap } = useRowspanAndColspan(data, columns, rowKey, props.rowspanAndColspan);
+    const { skipSpansMap } = useRowspanAndColspan(data, columns, rowKey, rowspanAndColspan);
 
     const tbodyClasses = computed(() => [tableBaseClass.body]);
 
@@ -235,7 +237,7 @@ export default defineComponent({
       trNodeList,
       getFullRow(h, columnLength, 'last-full-row'),
     ];
-    const isEmpty = !this.data?.length && !this.loading && !this.firstFullRow && !this.$lastFullRow;
+    const isEmpty = !this.data?.length && !this.loading && !this.firstFullRow && !this.lastFullRow;
 
     const translate = `translate(0, ${this.translateY}px)`;
     const posStyle = {

@@ -2,7 +2,7 @@
 
 exports[`Swiper Swiper baseVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block--swiper-new"
+  class="tdesign-demo-block--swiper"
 >
   <div
     class="t-swiper"
@@ -28,7 +28,7 @@ exports[`Swiper Swiper baseVue demo works fine 1`] = `
 
 exports[`Swiper Swiper cardVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block--swiper-new"
+  class="tdesign-demo-block--swiper"
 >
   <div
     class="t-swiper"
@@ -54,7 +54,7 @@ exports[`Swiper Swiper cardVue demo works fine 1`] = `
 
 exports[`Swiper Swiper currentVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block--swiper-new"
+  class="tdesign-demo-block--swiper"
 >
   <div
     class="t-swiper"
@@ -97,7 +97,7 @@ exports[`Swiper Swiper currentVue demo works fine 1`] = `
 
 exports[`Swiper Swiper fadeVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block--swiper-new"
+  class="tdesign-demo-block--swiper"
 >
   <div
     class="t-swiper"
@@ -123,7 +123,7 @@ exports[`Swiper Swiper fadeVue demo works fine 1`] = `
 
 exports[`Swiper Swiper fractionVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block--swiper-new"
+  class="tdesign-demo-block--swiper"
 >
   <div
     class="t-swiper"
@@ -193,7 +193,7 @@ exports[`Swiper Swiper fractionVue demo works fine 1`] = `
 
 exports[`Swiper Swiper placementVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block--swiper-new"
+  class="tdesign-demo-block--swiper"
 >
   <div
     class="t-swiper"
@@ -220,7 +220,7 @@ exports[`Swiper Swiper placementVue demo works fine 1`] = `
 exports[`Swiper Swiper sizeVue demo works fine 1`] = `
 <div>
   <div
-    class="tdesign-demo-block--swiper-new"
+    class="tdesign-demo-block--swiper"
     style="width: 1000px;"
   >
     <h3>
@@ -281,7 +281,7 @@ exports[`Swiper Swiper sizeVue demo works fine 1`] = `
 
 exports[`Swiper Swiper verticalVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block--swiper-new"
+  class="tdesign-demo-block--swiper"
 >
   <div
     class="t-swiper"

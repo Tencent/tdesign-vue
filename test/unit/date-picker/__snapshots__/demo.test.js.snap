@@ -15,11 +15,6 @@ exports[`DatePicker DatePicker baseVue demo works fine 1`] = `
   <div
     class="t-space-item"
   >
-     
-  </div>
-  <div
-    class="t-space-item"
-  >
     <div
       class="t-radio-group t-size-m t-radio-group--filled"
     >
@@ -69,11 +64,6 @@ exports[`DatePicker DatePicker baseVue demo works fine 1`] = `
   <div
     class="t-space-item"
   >
-     
-  </div>
-  <div
-    class="t-space-item"
-  >
     <div
       class="t-date-picker"
     >
@@ -114,11 +104,6 @@ exports[`DatePicker DatePicker baseVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-  </div>
-  <div
-    class="t-space-item"
-  >
-     
   </div>
   <div
     class="t-space-item"
@@ -255,7 +240,7 @@ exports[`DatePicker DatePicker datePresetsAltVue demo works fine 1`] = `
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input t-range-input-popup"
+          class="t-range-input"
         >
           <div
             class="t-range-input__inner"
@@ -322,11 +307,6 @@ exports[`DatePicker DatePicker datePresetsAltVue demo works fine 1`] = `
   <div
     class="t-space-item"
   >
-     
-  </div>
-  <div
-    class="t-space-item"
-  >
     <div
       class="t-date-range-picker"
     >
@@ -334,7 +314,7 @@ exports[`DatePicker DatePicker datePresetsAltVue demo works fine 1`] = `
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input t-range-input-popup"
+          class="t-range-input"
         >
           <div
             class="t-range-input__inner"
@@ -416,7 +396,7 @@ exports[`DatePicker DatePicker dateRangeVue demo works fine 1`] = `
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input t-range-input-popup"
+          class="t-range-input"
         >
           <div
             class="t-range-input__inner"
@@ -481,11 +461,6 @@ exports[`DatePicker DatePicker dateRangeVue demo works fine 1`] = `
   <div
     class="t-space-item"
   >
-     
-  </div>
-  <div
-    class="t-space-item"
-  >
     <div
       class="t-date-range-picker"
     >
@@ -493,7 +468,7 @@ exports[`DatePicker DatePicker dateRangeVue demo works fine 1`] = `
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input t-range-input-popup"
+          class="t-range-input"
         >
           <div
             class="t-range-input__inner"
@@ -609,11 +584,6 @@ exports[`DatePicker DatePicker dateTimeVue demo works fine 1`] = `
   <div
     class="t-space-item"
   >
-     
-  </div>
-  <div
-    class="t-space-item"
-  >
     <div
       class="t-date-picker"
     >
@@ -709,11 +679,6 @@ exports[`DatePicker DatePicker disableDateVue demo works fine 1`] = `
   <div
     class="t-space-item"
   >
-     
-  </div>
-  <div
-    class="t-space-item"
-  >
     <div
       class="t-date-picker"
     >
@@ -754,11 +719,6 @@ exports[`DatePicker DatePicker disableDateVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-  </div>
-  <div
-    class="t-space-item"
-  >
-     
   </div>
   <div
     class="t-space-item"
@@ -807,11 +767,6 @@ exports[`DatePicker DatePicker disableDateVue demo works fine 1`] = `
   <div
     class="t-space-item"
   >
-     
-  </div>
-  <div
-    class="t-space-item"
-  >
     <div
       class="t-date-picker"
     >
@@ -852,11 +807,6 @@ exports[`DatePicker DatePicker disableDateVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-  </div>
-  <div
-    class="t-space-item"
-  >
-     
   </div>
   <div
     class="t-space-item"
@@ -905,11 +855,6 @@ exports[`DatePicker DatePicker disableDateVue demo works fine 1`] = `
   <div
     class="t-space-item"
   >
-     
-  </div>
-  <div
-    class="t-space-item"
-  >
     <div
       class="t-date-range-picker"
     >
@@ -917,7 +862,7 @@ exports[`DatePicker DatePicker disableDateVue demo works fine 1`] = `
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input t-range-input-popup"
+          class="t-range-input"
         >
           <div
             class="t-range-input__inner"
@@ -1130,11 +1075,6 @@ exports[`DatePicker DatePicker firstDayOfWeekVue demo works fine 1`] = `
   <div
     class="t-space-item"
   >
-     
-  </div>
-  <div
-    class="t-space-item"
-  >
     <div
       class="t-date-picker"
     >
@@ -1230,11 +1170,6 @@ exports[`DatePicker DatePicker monthVue demo works fine 1`] = `
   <div
     class="t-space-item"
   >
-     
-  </div>
-  <div
-    class="t-space-item"
-  >
     <div
       class="t-date-range-picker"
     >
@@ -1242,7 +1177,7 @@ exports[`DatePicker DatePicker monthVue demo works fine 1`] = `
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input t-range-input-popup"
+          class="t-range-input"
         >
           <div
             class="t-range-input__inner"
@@ -1358,11 +1293,6 @@ exports[`DatePicker DatePicker yearVue demo works fine 1`] = `
   <div
     class="t-space-item"
   >
-     
-  </div>
-  <div
-    class="t-space-item"
-  >
     <div
       class="t-date-range-picker"
     >
@@ -1370,7 +1300,7 @@ exports[`DatePicker DatePicker yearVue demo works fine 1`] = `
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input t-range-input-popup"
+          class="t-range-input"
         >
           <div
             class="t-range-input__inner"

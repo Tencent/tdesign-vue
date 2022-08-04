@@ -54,7 +54,7 @@ export default defineComponent({
       COMPONENT_NAME, spaceClassNames, renderStyle, slots, separator,
     } = this;
 
-    const children = slots.default();
+    const children = slots.default().filter((child) => child.tag !== undefined);
     const childCount = children.length;
 
     const renderChildren = () => children.map((child, index) => {

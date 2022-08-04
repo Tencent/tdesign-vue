@@ -67,7 +67,7 @@ export default (Vue as VueConstructor<CheckboxInstance>).extend({
 
   render(): VNode {
     return (
-      <label class={this.labelClasses}>
+      <label class={this.labelClasses} title={this.$attrs.title}>
         <input
           type="checkbox"
           on={{ ...omit(this.$listeners, ['checked', 'change']) }}

@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue, { VueConstructor } from 'vue';
 import isFunction from 'lodash/isFunction';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
@@ -22,10 +22,19 @@ function getValidAttrs(obj: object): object {
   });
   return newObj;
 }
-export default Vue.extend({
+export interface Textarea extends Vue {
+  tFormItem: {
+    validate(trigger: string): Promise<any>;
+  };
+}
+
+export default (Vue as VueConstructor<Textarea>).extend({
   name: 'TTextarea',
   props: {
     ...props,
+  },
+  inject: {
+    tFormItem: { default: undefined },
   },
   data() {
     return {
@@ -151,6 +160,7 @@ export default Vue.extend({
     },
     emitBlur(e: FocusEvent) {
       this.focused = false;
+      this.tFormItem?.validate('blur');
       this.emitEvent('blur', this.value, { e });
     },
   },

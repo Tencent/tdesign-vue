@@ -121,8 +121,9 @@ exports[`Table Table affixVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-table--bordered t-table--affixed-header t-table--footer-affixed t-table--column-fixed t-table--col-draggable"
+    class="t-table t-table--bordered t-table--affixed-header t-table--footer-affixed t-table--column-fixed t-table--column-resizable t-table--col-draggable"
     style="position: relative;"
+    table-ayout="fixed"
   >
     <div
       offsettop="0"
@@ -138,7 +139,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
       class="t-table__content"
     >
       <table
-        class="t-table--layout-auto"
+        class="t-table--layout-fixed"
       >
         <colgroup>
           <col />
@@ -564,44 +565,64 @@ exports[`Table Table affixVue demo works fine 1`] = `
           <tr
             class="t-tdesign__custom-footer-tr"
           >
-            <td>
+            <td
+              key="index"
+            >
               <b
                 style="color: rgb(0, 82, 217);"
               >
                 表尾
               </b>
             </td>
-            <td>
+            <td
+              key="platform"
+            >
               <span>
                 第 1 行
               </span>
             </td>
-            <td>
+            <td
+              key="type"
+            >
               全部类型
             </td>
-            <td>
+            <td
+              key="expo"
+            >
               -
             </td>
-            <td>
+            <td
+              key="click"
+            >
               -
             </td>
-            <td>
+            <td
+              key="ctr"
+            >
               -
             </td>
-            <td>
+            <td
+              key="default"
+            >
               <span>
                 空
               </span>
             </td>
-            <td>
+            <td
+              key="required"
+            >
                插槽渲染表尾 
             </td>
-            <td>
+            <td
+              key="detail.position"
+            >
               <div>
                 渲染函数输出表尾信息
               </div>
             </td>
-            <td>
+            <td
+              key="operation"
+            >
               -
             </td>
           </tr>
@@ -1215,7 +1236,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-table--bordered t-table--striped"
+    class="t-table t-table--bordered t-table--striped t-table--column-resizable"
     style="position: relative;"
   >
     <div
@@ -2896,8 +2917,75 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large"
 >
+  <div>
+    <div
+      class="t-radio-group t-size-m t-radio-group--filled"
+    >
+      <label
+        class="t-radio-button t-is-checked"
+      >
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="normal"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          普通表尾
+        </span>
+      </label>
+       
+      <label
+        class="t-radio-button"
+      >
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="full"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          通栏表尾
+        </span>
+      </label>
+       
+      <label
+        class="t-radio-button"
+      >
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="custom"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          自定义表尾合并列
+        </span>
+      </label>
+      <div
+        class="t-radio-group__bg-block"
+        style="width: 0px; left: 0px;"
+      />
+    </div>
+  </div>
+   
   <div
-    class="t-table"
+    class="t-table t-table--bordered"
     style="position: relative;"
   >
     <div
@@ -3116,30 +3204,46 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
           <tr
             class="t-tdesign__custom-footer-tr"
           >
-            <td>
+            <td
+              key="index"
+            >
               <b
                 style="color: rgb(0, 82, 217);"
               >
                 表尾
               </b>
             </td>
-            <td>
-              <span>
+            <td
+              key="platform"
+            >
+              <div
+                style="width: 100%; text-align: center;"
+              >
                 第 1 行
-              </span>
+              </div>
             </td>
-            <td>
+            <td
+              key="type"
+            >
               全部类型
             </td>
-            <td>
+            <td
+              key="default"
+            >
               <span>
                 空
               </span>
             </td>
-            <td>
-               插槽渲染表尾 
+            <td
+              key="required"
+            >
+              <b>
+                必传(插槽)
+              </b>
             </td>
-            <td>
+            <td
+              key="detail.position"
+            >
               <div>
                 渲染函数输出表尾信息
               </div>
@@ -5724,7 +5828,7 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-table--bordered"
+    class="t-table t-table--bordered t-table--column-resizable"
     style="position: relative;"
   >
     <div
@@ -6254,7 +6358,7 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-table--bordered t-table--column-fixed"
+    class="t-table t-table--bordered t-table--column-fixed t-table--column-resizable"
     style="position: relative;"
   >
     <div
@@ -6747,7 +6851,7 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-table--bordered t-table--column-fixed"
+    class="t-table t-table--bordered t-table--column-fixed t-table--column-resizable"
     style="position: relative;"
   >
     <div
@@ -7551,28 +7655,44 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
           <tr
             class=""
           >
-            <td>
+            <td
+              key="index"
+            >
               总述
             </td>
-            <td>
+            <td
+              key="platform"
+            >
               公有(5)
             </td>
-            <td>
+            <td
+              key="type"
+            >
               Number(5)
             </td>
-            <td>
+            <td
+              key="default"
+            >
               -
             </td>
-            <td>
+            <td
+              key="detail.position"
+            >
               -
             </td>
-            <td>
+            <td
+              key="description"
+            >
               数据(10)
             </td>
-            <td>
+            <td
+              key="needed"
+            >
               否(6)
             </td>
-            <td />
+            <td
+              key="operation"
+            />
           </tr>
         </tfoot>
       </table>
@@ -8529,22 +8649,34 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
           <tr
             class=""
           >
-            <td>
+            <td
+              key="platform"
+            >
               汇总
             </td>
-            <td>
+            <td
+              key="type"
+            >
               Number(5)
             </td>
-            <td>
+            <td
+              key="default"
+            >
               -
             </td>
-            <td>
+            <td
+              key="needed"
+            >
               否(6)
             </td>
-            <td>
+            <td
+              key="detail.position"
+            >
               -
             </td>
-            <td>
+            <td
+              key="description"
+            >
               数据(10)
             </td>
           </tr>
@@ -16166,7 +16298,7 @@ exports[`Table Table loadingVue demo works fine 1`] = `
 
 exports[`Table Table mergeCellsVue demo works fine 1`] = `
 <div
-  class="t-table t-size-s t-table--bordered t-table--rowspan-colspan"
+  class="t-table t-size-s t-table--bordered t-table--rowspan-colspan t-table--column-resizable"
   style="position: relative;"
 >
   <div
@@ -18008,7 +18140,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
         >
           <tr>
             <th
-              class="demo-multiple-select-cell t-table__th-row-select"
+              class="t-table__cell-check t-table__th-row-select"
               data-colkey="row-select"
             >
               <div
@@ -18092,7 +18224,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="demo-multiple-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-checkbox"
@@ -18156,7 +18288,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="demo-multiple-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-checkbox t-is-disabled"
@@ -18221,7 +18353,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="demo-multiple-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-checkbox"
@@ -18285,7 +18417,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="demo-multiple-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-checkbox t-is-disabled"
@@ -18350,7 +18482,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="demo-multiple-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-checkbox"
@@ -18496,7 +18628,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
         >
           <tr>
             <th
-              class="demo-single-select-cell t-table__th-row-select"
+              class="t-table__cell-check t-table__th-row-select"
               data-colkey="row-select"
             >
               <div
@@ -18564,7 +18696,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="demo-single-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-radio"
@@ -18629,7 +18761,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             class="t-table__row--disabled"
           >
             <td
-              class="demo-single-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-radio t-is-disabled"
@@ -18695,7 +18827,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             class="t-table__row--selected"
           >
             <td
-              class="demo-single-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-radio t-is-checked"
@@ -18760,7 +18892,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             class="t-table__row--disabled"
           >
             <td
-              class="demo-single-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-radio t-is-disabled"
@@ -18826,7 +18958,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="demo-single-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-radio"
@@ -19634,7 +19766,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
               />
             </th>
             <th
-              class="t-table__th-row-select"
+              class="t-table__cell-check t-table__th-row-select"
               data-colkey="row-select"
             >
               <div
@@ -19732,7 +19864,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
               </span>
             </td>
             <td
-              class=""
+              class="t-table__cell-check"
             >
               <label
                 class="t-checkbox"
@@ -19832,14 +19964,13 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
               </span>
             </td>
             <td
-              class=""
+              class="t-table__cell-check"
             >
               <label
-                class="t-checkbox t-is-disabled"
+                class="t-checkbox"
               >
                 <input
                   class="t-checkbox__former"
-                  disabled="disabled"
                   type="checkbox"
                   value=""
                 />
@@ -19933,7 +20064,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
               </span>
             </td>
             <td
-              class=""
+              class="t-table__cell-check"
             >
               <label
                 class="t-checkbox"
@@ -20033,14 +20164,13 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
               </span>
             </td>
             <td
-              class=""
+              class="t-table__cell-check"
             >
               <label
-                class="t-checkbox t-is-disabled"
+                class="t-checkbox"
               >
                 <input
                   class="t-checkbox__former"
-                  disabled="disabled"
                   type="checkbox"
                   value=""
                 />
@@ -20134,7 +20264,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
               </span>
             </td>
             <td
-              class=""
+              class="t-table__cell-check"
             >
               <label
                 class="t-checkbox"
@@ -20241,7 +20371,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        重置数据
+        重置/更新数据
       </span>
     </button>
      
@@ -21004,6 +21134,286 @@ exports[`Table Table treeVue demo works fine 1`] = `
                     </svg>
                   </span>
                   我是 4_1 号
+                </div>
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              共有
+            </td>
+            <td
+              class="t-align-center"
+            >
+              <div
+                class="tdesign-table-demo__table-operations"
+              >
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    插入
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    前插
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    后插
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    更新
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    查看
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    删除
+                  </span>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class=""
+            data-id="我是懒加载节点 66666，点我体验"
+          >
+            <td
+              class="t-table__handle-draggable"
+            >
+              <svg
+                class="t-icon t-icon-move"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                66666
+              </div>
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                <div
+                  class="t-table__tree-col t-table__tree-col--inline"
+                  style="padding-left: 1px;"
+                >
+                  <span
+                    class="t-table__tree-op-icon"
+                  >
+                    <svg
+                      class="t-icon t-icon-add-rectangle"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                      <path
+                        d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                  </span>
+                  我是懒加载节点 66666，点我体验
+                </div>
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              共有
+            </td>
+            <td
+              class="t-align-center"
+            >
+              <div
+                class="tdesign-table-demo__table-operations"
+              >
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    插入
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    前插
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    后插
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    更新
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    查看
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-text t-button--theme-default"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    删除
+                  </span>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class=""
+            data-id="我是懒加载节点 88888，点我体验 "
+          >
+            <td
+              class="t-table__handle-draggable"
+            >
+              <svg
+                class="t-icon t-icon-move"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M5 1a1 1 0 100 2 1 1 0 000-2zM11 1a1 1 0 100 2 1 1 0 000-2zM4 6a1 1 0 112 0 1 1 0 01-2 0zM11 5a1 1 0 100 2 1 1 0 000-2zM4 10a1 1 0 112 0 1 1 0 01-2 0zM5 13a1 1 0 100 2 1 1 0 000-2zM10 10a1 1 0 112 0 1 1 0 01-2 0zM11 13a1 1 0 100 2 1 1 0 000-2z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                88888
+              </div>
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                <div
+                  class="t-table__tree-col t-table__tree-col--inline"
+                  style="padding-left: 1px;"
+                >
+                  <span
+                    class="t-table__tree-op-icon"
+                  >
+                    <svg
+                      class="t-icon t-icon-add-rectangle"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M7.5 11V8.5H5v-1h2.5V5h1v2.5H11v1H8.5V11h-1z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                      <path
+                        d="M3 14a1 1 0 01-1-1V3a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1H3zm0-1h10V3H3v10z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                  </span>
+                  我是懒加载节点 88888，点我体验 
                 </div>
               </div>
             </td>

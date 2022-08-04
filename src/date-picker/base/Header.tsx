@@ -1,7 +1,7 @@
 import {
   defineComponent, PropType, ref, computed,
 } from '@vue/composition-api';
-import TJumper from '../../pagination/jumper';
+import TJumper from '../../jumper/jumper';
 import TSelect from '../../select/select';
 import { useConfig, usePrefixClass } from '../../hooks/useConfig';
 import type { TdDatePickerProps } from '../type';
@@ -25,7 +25,7 @@ export default defineComponent({
     const { global } = useConfig('datePicker');
 
     const yearOptions = ref(initOptions(props.year));
-    const showMonthPicker = props.mode === 'date';
+    const showMonthPicker = props.mode === 'date' || props.mode === 'week';
 
     // 年份选择展示区间
     const nearestYear = computed(
@@ -86,19 +86,19 @@ export default defineComponent({
     // hover title
     const labelMap = {
       year: {
-        prevTitle: global.value.preDecade,
-        currentTitle: global.value.now,
-        nextTitle: global.value.nextDecade,
+        prev: global.value.preDecade,
+        current: global.value.now,
+        next: global.value.nextDecade,
       },
       month: {
-        prevTitle: global.value.preYear,
-        currentTitle: global.value.now,
-        nextTitle: global.value.nextYear,
+        prev: global.value.preYear,
+        current: global.value.now,
+        next: global.value.nextYear,
       },
       date: {
-        prevTitle: global.value.preMonth,
-        currentTitle: global.value.now,
-        nextTitle: global.value.nextMonth,
+        prev: global.value.preMonth,
+        current: global.value.now,
+        next: global.value.nextMonth,
       },
     };
 
@@ -147,7 +147,7 @@ export default defineComponent({
         <div class={`${COMPONENT_NAME}-controller`}>
           {showMonthPicker && (
             <TSelect
-              class={`${COMPONENT_NAME}-controller--month`}
+              class={`${COMPONENT_NAME}-controller-month`}
               {...{
                 props: {
                   value: this.month,
@@ -159,7 +159,7 @@ export default defineComponent({
             />
           )}
           <TSelect
-            class={`${COMPONENT_NAME}-controller--year`}
+            class={`${COMPONENT_NAME}-controller-year`}
             {...{
               props: {
                 value: this.mode === 'year' ? nearestYear : this.year,
@@ -181,7 +181,7 @@ export default defineComponent({
           />
         </div>
 
-        <TJumper {...{ props: { ...labelMap[this.mode], onJumperClick: this.onJumperClick, size: 'small' } }} />
+        <TJumper {...{ props: { tips: labelMap[this.mode], onChange: this.onJumperClick, size: 'small' } }} />
       </div>
     );
   },

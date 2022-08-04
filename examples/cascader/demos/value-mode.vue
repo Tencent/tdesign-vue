@@ -1,11 +1,10 @@
 <template>
-  <div>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value1" placeholder='请选择' multiple value-mode="onlyLeaf"></t-cascader>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value2" placeholder='请选择' multiple value-mode="parentFirst"></t-cascader>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value3" placeholder='请选择' multiple value-mode="all" ></t-cascader>
+  <div class="tdesign-demo-block-row">
+    <t-cascader v-model="value1" :options="options" multiple value-mode="onlyLeaf" />
+    <t-cascader v-model="value2" :options="options" multiple value-mode="parentFirst" />
+    <t-cascader v-model="value3" :options="options" multiple value-mode="all" />
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -51,8 +50,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.t-demo-cascader + .t-demo-cascader {
-  margin-top: 16px;
-}
-</style>
