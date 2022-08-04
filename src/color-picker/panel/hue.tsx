@@ -26,6 +26,7 @@ export default defineComponent({
         value={this.color.hue}
         handleChange={this.handleChange}
         disabled={this.disabled}
+        type="hue"
       />
     );
   },
