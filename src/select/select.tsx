@@ -34,7 +34,7 @@ import FakeArrow from '../common-components/fake-arrow';
 import Option from './option';
 import SelectPanel from './select-panel';
 import { getSingleContent, getMultipleContent, getNewMultipleValue } from './util';
-import { useSelectOptions } from './hooks';
+import useSelectOptions from './hooks/useSelectOptions';
 
 export type OptionInstance = InstanceType<typeof Option>;
 

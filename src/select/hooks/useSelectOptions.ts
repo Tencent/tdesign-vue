@@ -6,15 +6,14 @@ import get from 'lodash/get';
 import isArray from 'lodash/isArray';
 import {
   TdSelectProps, SelectKeysType, TdOptionProps, SelectOptionGroup, SelectValue,
-} from './type';
+} from '../type';
 
 type UniOption = (TdOptionProps | SelectOptionGroup) & {
   index?: number;
   slots?: () => VNode;
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export const useSelectOptions = (props: TdSelectProps, context: SetupContext, keys: Ref<SelectKeysType>) => {
+export default function useSelectOptions(props: TdSelectProps, context: SetupContext, keys: Ref<SelectKeysType>) {
   const options = ref<UniOption[]>([]);
 
   const getOptions = () => {
@@ -117,4 +116,4 @@ export const useSelectOptions = (props: TdSelectProps, context: SetupContext, ke
     optionsMap,
     optionsList,
   };
-};
+}
