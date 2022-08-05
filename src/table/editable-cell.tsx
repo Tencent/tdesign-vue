@@ -170,7 +170,9 @@ export default defineComponent({
       const outsideAbortEvent = edit?.onEdited;
       edit.abortEditOnEvent.forEach((itemEvent) => {
         if (itemEvent === 'onChange') return;
-        tListeners[itemEvent] = (...args: any) => {
+        // Vue2 的事件监听不需要前缀 on，如：onEnter -> enter
+        const eventName = itemEvent.slice(2, 3).toLocaleLowerCase() + itemEvent.slice(3);
+        tListeners[eventName] = (...args: any) => {
           updateAndSaveAbort(
             outsideAbortEvent,
             {
