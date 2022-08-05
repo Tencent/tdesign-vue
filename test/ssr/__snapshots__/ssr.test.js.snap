@@ -5157,7 +5157,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
         <!---->
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div> <br><br>
   <div class="t-table" style="position:relative;">
@@ -5240,7 +5240,7 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/table.vue co
         <!---->
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div> <br><br>
 </div>
@@ -14196,7 +14196,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`
         </tfoot>
       </table>
     </div>
-    <div style="opacity:1;">
+    <div class="t-table__pagination-wrap" style="opacity:1;">
       <div class="t-table__pagination">
         <div class="t-pagination t-size-m">
           <div class="t-pagination__total">共 38 项数据</div>
@@ -14306,7 +14306,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
         <!---->
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
@@ -14409,7 +14409,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
         <!---->
       </table>
     </div>
-    <div style="opacity:1;">
+    <div class="t-table__pagination-wrap" style="opacity:1;">
       <div class="t-table__pagination">
         <div class="t-pagination t-size-m">
           <div class="t-pagination__total">共 28 项数据</div>
@@ -14496,7 +14496,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
         <!---->
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
@@ -14595,7 +14595,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
         <!---->
       </table>
     </div>
-    <div style="opacity:1;">
+    <div class="t-table__pagination-wrap" style="opacity:1;">
       <div class="t-table__pagination">
         <div class="t-pagination t-size-m">
           <div class="t-pagination__total">共 100 项数据</div>
@@ -14636,7 +14636,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col-button.vue 
   <div>
     <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button"><input type="radio" value="top-left" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左上角</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="top-right" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右上角</span></label> <label class="t-radio-button"><input type="radio" value="bottom-left" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左下角</span></label> <label class="t-radio-button"><input type="radio" value="bottom-right" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右下角</span></label>
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
-    </div> <br><br> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否显示边框</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">自定义列配置按钮</span></label>
+    </div> <br><br> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否显示边框</span></label> <label class="t-checkbox" style="margin-left:16px;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">自定义列配置按钮</span></label>
   </div>
   <div class="t-table t-table--bordered t-table--striped t-table--col-draggable" style="position:relative;">
     <div class="t-table__top-content">
@@ -14734,7 +14734,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col-button.vue 
         <!---->
       </table>
     </div>
-    <div style="opacity:1;">
+    <div class="t-table__pagination-wrap" style="opacity:1;">
       <div class="t-table__pagination">
         <div class="t-pagination t-size-m">
           <div class="t-pagination__total">共 100 项数据</div>
@@ -14860,7 +14860,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue corr
         </tfoot>
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
@@ -14905,7 +14905,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-header.vue corr
       <!---->
     </table>
   </div>
-  <div style="opacity:1;"></div>
+  <div class="t-table__pagination-wrap" style="opacity:1;"></div>
   <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
 </div>
 `;
@@ -15003,7 +15003,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
           <!---->
         </table>
       </div>
-      <div style="opacity:1;"></div>
+      <div class="t-table__pagination-wrap" style="opacity:1;"></div>
       <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
     </div>
   </div>
@@ -15083,7 +15083,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
           <!---->
         </table>
       </div>
-      <div style="opacity:1;"></div>
+      <div class="t-table__pagination-wrap" style="opacity:1;"></div>
       <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
     </div>
   </div>
@@ -15163,7 +15163,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
           <!---->
         </table>
       </div>
-      <div style="opacity:1;"></div>
+      <div class="t-table__pagination-wrap" style="opacity:1;"></div>
       <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
     </div>
   </div>
@@ -15261,7 +15261,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort-handler.vue 
         </table>
       </div>
       <div class="t-loading--center t-size-s t-loading"></div>
-      <div style="opacity:1;"></div>
+      <div class="t-table__pagination-wrap" style="opacity:1;"></div>
       <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
     </div>
   </div>
@@ -15450,7 +15450,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/editable-cell.vue corr
         <!---->
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
@@ -15605,7 +15605,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/editable-row.vue corre
         <!---->
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
@@ -15656,7 +15656,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
         <!---->
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
   <div class="t-table" style="position:relative;">
@@ -15702,7 +15702,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
         <!---->
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
   <div class="t-table" style="position:relative;">
@@ -15748,7 +15748,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
         <!---->
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
@@ -15934,7 +15934,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
         </div>
       </div>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
@@ -16053,7 +16053,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
         <!---->
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
@@ -16184,7 +16184,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue corre
         <!---->
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
@@ -16447,7 +16447,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
         </tfoot>
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
@@ -16658,7 +16658,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue c
         </tfoot>
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
@@ -16720,7 +16720,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
           <div class="t-loading__gradient-conic"></div>
         </foreignObject>
       </svg></div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
   <div class="t-table t-size-s t-table--loading" style="position:relative;">
@@ -16777,7 +16777,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
         <div class="t-table--loading-message">😊 这里使用插槽自定义加载状态 😊</div>
       </div>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
   <div class="t-table t-size-s t-table--loading" style="position:relative;">
@@ -16838,7 +16838,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/loading.vue correctly 
         <div class="t-table--loading-message">这里使用渲染函数定义加载状态</div>
       </div>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
@@ -16911,7 +16911,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
       <!---->
     </table>
   </div>
-  <div style="opacity:1;"></div>
+  <div class="t-table__pagination-wrap" style="opacity:1;"></div>
   <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
 </div>
 `;
@@ -17041,7 +17041,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue corre
         <!---->
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
@@ -17148,7 +17148,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/multiple-sort.vue corr
           <!---->
         </table>
       </div>
-      <div style="opacity:1;"></div>
+      <div class="t-table__pagination-wrap" style="opacity:1;"></div>
       <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
     </div>
   </div>
@@ -17247,7 +17247,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination.vue correct
         <!---->
       </table>
     </div>
-    <div style="opacity:1;">
+    <div class="t-table__pagination-wrap" style="opacity:1;">
       <div class="t-table__pagination">
         <div class="t-pagination t-size-m">
           <div class="t-pagination__total">共 60 项数据</div>
@@ -17327,7 +17327,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
     </table>
   </div>
   <div class="t-loading--center t-size-s t-loading"></div>
-  <div style="opacity:1;">
+  <div class="t-table__pagination-wrap" style="opacity:1;">
     <div class="t-table__pagination">
       <div class="t-pagination t-size-m">
         <div class="t-pagination__total">共 0 项数据</div>
@@ -17456,7 +17456,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
         <!---->
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
@@ -17560,7 +17560,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
         <!---->
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
@@ -17644,7 +17644,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/show-columns.vue corre
         <!---->
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
@@ -17744,7 +17744,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/single-sort.vue correc
         <!---->
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
@@ -17913,7 +17913,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree.vue correctly 1`]
         <!---->
       </table>
     </div>
-    <div style="opacity:1;">
+    <div class="t-table__pagination-wrap" style="opacity:1;">
       <div class="t-table__pagination">
         <div class="t-pagination t-size-m">
           <div class="t-pagination__total">共 5 项数据</div>
@@ -18048,7 +18048,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/tree-select.vue correc
         <!---->
       </table>
     </div>
-    <div style="opacity:1;"></div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
     <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
   </div>
 </div>
@@ -18093,7 +18093,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/virtual-scroll.vue cor
           <!---->
         </table>
       </div>
-      <div style="opacity:1;"></div>
+      <div class="t-table__pagination-wrap" style="opacity:1;"></div>
       <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
     </div>
   </div>
