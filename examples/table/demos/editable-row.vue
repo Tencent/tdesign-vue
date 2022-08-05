@@ -82,6 +82,7 @@ export default {
             component: Select,
             // props, 透传全部属性到 Select 组件
             props: {
+              clearable: true,
               options: [
                 { label: 'Vue', value: 'Vue' },
                 { label: 'React', value: 'React' },
@@ -89,6 +90,8 @@ export default {
                 { label: 'Flutter', value: 'Flutter' },
               ],
             },
+            // 校验规则，此处同 Form 表单
+            rules: [{ required: true, message: '不能为空' }],
             showEditIcon: false,
           },
         },

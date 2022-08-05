@@ -51,7 +51,7 @@ export default function useRowEdit(props: PrimaryTableProps, context: SetupConte
       if (rules) {
         const index = rules.findIndex((t) => t.col.colKey === context.col.colKey);
         if (index === -1) {
-          rules.concat(context);
+          rules.push(context);
         } else {
           rules[index].value = context.value;
         }
