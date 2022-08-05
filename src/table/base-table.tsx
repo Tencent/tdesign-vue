@@ -485,7 +485,11 @@ export default defineComponent({
     const topContent = this.renderTNode('topContent');
     const bottomContent = this.renderTNode('bottomContent');
     const pagination = (
-      <div ref="paginationRef" style={{ opacity: Number(this.showAffixPagination) }}>
+      <div
+        ref="paginationRef"
+        class={this.tableBaseClass.paginationWrap}
+        style={{ opacity: Number(this.showAffixPagination) }}
+      >
         {this.renderPagination(h)}
       </div>
     );
