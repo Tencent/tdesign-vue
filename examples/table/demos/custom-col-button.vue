@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column-large">
+  <div class="tdesign-demo-block-column-large tdesign-demo__table">
     <!-- 按钮操作区域 -->
     <div>
       <t-radio-group v-model="placement" variant="default-filled">

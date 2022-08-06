@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tdesign-demo__table">
     <t-table :data="data" :columns="columns" rowKey="property" verticalAlign="top">
       <!-- 插槽方式 自定义单元格：cell 的值为插槽名称，参数有：{col, colIndex, row, rowIndex}  -->
       <template #type-slot-name="{ col, row }"> 自定义插槽名称：{{ row[col.colKey] }} </template>

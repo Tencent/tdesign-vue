@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-container t-table-demo-sort">
+  <div class="demo-container t-table-demo-sort tdesign-demo__table">
     <div class="item">
       <t-table rowKey="id" :columns="columns" :data="data" dragSort="col" @drag-sort="onDragSort">
         <template #status="{ row }">

@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-container t-table-demo-sort">
+  <div class="demo-container t-table-demo-sort tdesign-demo__table">
     <div>
       <t-checkbox v-model="loading">加载状态</t-checkbox>
     </div>

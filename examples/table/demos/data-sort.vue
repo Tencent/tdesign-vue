@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-container t-table-demo-sort">
+  <div class="demo-container t-table-demo-sort tdesign-demo__table">
     <!-- t-locale-provider 一般用于全局配置某个组件的特性，此代码示例 示范了如何对表格排序图标进行统一配置 -->
     <t-config-provider :globalConfig="globalLocale">
       <div class="item">

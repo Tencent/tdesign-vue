@@ -35,6 +35,11 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   bottomContent?: string | TNode;
   /**
+   * 单元格数据为空，呈现的内容
+   * @default ''
+   */
+  cellEmptyContent?: string | TNode<BaseTableCellParams<T>>;
+  /**
    * 列配置，泛型 T 指表格数据类型
    * @default []
    */

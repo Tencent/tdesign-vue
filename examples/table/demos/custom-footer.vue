@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column-large">
+  <div class="tdesign-demo-block-column-large tdesign-demo__table">
     <div>
       <!-- 表尾有 3 种方式 -->
       <t-radio-group v-model="footerType" variant="default-filled">

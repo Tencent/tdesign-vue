@@ -15458,6 +15458,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/editable-cell.vue corr
 
 exports[`ssr snapshot test renders ./examples/table/demos/editable-row.vue correctly 1`] = `
 <div class="t-table-demo__editable-row">
+  <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">校验全部</span></button></div> <br>
   <div class="t-table t-table--bordered t-vertical-align-top t-table--row-edit" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">

@@ -173,6 +173,7 @@ export default defineComponent({
               ...p,
               oldCell,
               tableBaseClass,
+              cellEmptyContent: props.cellEmptyContent,
               onChange: onPrimaryTableRowEdit,
               onValidate: onPrimaryTableRowValidate,
               onRuleChange,
