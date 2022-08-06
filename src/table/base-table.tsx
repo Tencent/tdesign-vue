@@ -331,10 +331,12 @@ export default defineComponent({
       opacity: headerOpacity,
       marginTop: onlyVirtualScrollBordered ? `${borderWidth}px` : 0,
     };
+    // 多级表头左边线缺失
+    const affixedMultipleHeaderLeftBorder = this.bordered && this.isMultipleHeader ? 1 : 0;
     const affixedHeader = Boolean((this.headerAffixedTop || this.isVirtual) && this.tableWidth) && (
       <div
         ref="affixHeaderRef"
-        style={{ width: `${this.tableWidth - 1}px`, opacity: headerOpacity }}
+        style={{ width: `${this.tableWidth - affixedMultipleHeaderLeftBorder}px`, opacity: headerOpacity }}
         class={['scrollbar', { [this.tableBaseClass.affixedHeaderElm]: this.headerAffixedTop || this.isVirtual }]}
       >
         <table class={this.tableElmClasses} style={{ ...this.tableElementStyles, width: `${this.tableElmWidth}px` }}>

@@ -14048,7 +14048,7 @@ exports[`ssr snapshot test renders ./examples/switch/demos/status.vue correctly 
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`] = `
-<div class="tdesign-demo-block-column-large tdesign-demo__table-affix" style="width:100%;">
+<div class="tdesign-demo-block-column-large tdesign-demo__table tdesign-demo__table-affix" style="width:100%;">
   <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表头吸顶</span></label> <label class="t-checkbox t-is-checked" style="margin-left:32px;"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表尾吸底</span></label> <label class="t-checkbox" style="margin-left:32px;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">滚动条吸底</span></label> <label class="t-checkbox" style="margin-left:32px;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">分页器吸底</span></label> <label class="t-checkbox t-is-checked" style="margin-left:32px;"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定左侧列</span></label> <label class="t-checkbox t-is-checked" style="margin-left:32px;"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定右侧列</span></label></div>
   <div table-ayout="fixed" class="t-table t-table--bordered t-table--affixed-header t-table--footer-affixed t-table--column-fixed t-table--column-resizable t-table--col-draggable" style="position:relative;">
     <div offsetTop="0">
@@ -14232,7 +14232,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/affix.vue correctly 1`
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue correctly 1`] = `
-<div class="tdesign-demo-block-column-large">
+<div class="tdesign-demo-block-column-large tdesign-demo__table">
   <div>
     <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button"><input type="radio" value="load-more" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">加载更多</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="loading" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">加载中</span></label> <label class="t-radio-button"><input type="radio" value="loading-custom" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">自定义加载更多</span></label> <label class="t-radio-button"><input type="radio" value="" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">加载完成</span></label>
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
@@ -14313,7 +14313,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/async-loading.vue corr
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`] = `
-<div class="tdesign-demo-block-column-large">
+<div class="tdesign-demo-block-column-large tdesign-demo__table">
   <div>
     <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button"><input type="radio" value="small" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">小尺寸</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="medium" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">中尺寸</span></label> <label class="t-radio-button"><input type="radio" value="large" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">大尺寸</span></label>
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
@@ -14379,7 +14379,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             <td data-id="first-column" class="custom-column-class-name t-align-center">7</td>
             <td>私有</td>
             <td>Object</td>
-            <td>{}</td>
+            <td>-</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">读取 7 个数据的嵌套信息值</div>
@@ -14399,7 +14399,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
             <td data-id="first-column" class="custom-column-class-name t-align-center">9</td>
             <td>私有</td>
             <td>Number</td>
-            <td>0</td>
+            <td>-</td>
             <td>否</td>
             <td class="t-table-td--ellipsis">
               <div class="t-table__ellipsis t-text-ellipsis">读取 9 个数据的嵌套信息值</div>
@@ -14443,7 +14443,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/base.vue correctly 1`]
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correctly 1`] = `
-<div>
+<div class="tdesign-demo__table">
   <div class="t-table t-vertical-align-top" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
@@ -14503,7 +14503,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-cell.vue correc
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correctly 1`] = `
-<div class="tdesign-demo-block-column-large">
+<div class="tdesign-demo-block-column-large tdesign-demo__table">
   <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">显示列配置弹窗</span></button></div>
   <div class="t-table t-table--striped" style="position:relative;">
     <div class="t-table__content">
@@ -14632,7 +14632,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col.vue correct
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/custom-col-button.vue correctly 1`] = `
-<div class="tdesign-demo-block-column-large">
+<div class="tdesign-demo-block-column-large tdesign-demo__table">
   <div>
     <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button"><input type="radio" value="top-left" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左上角</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="top-right" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右上角</span></label> <label class="t-radio-button"><input type="radio" value="bottom-left" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左下角</span></label> <label class="t-radio-button"><input type="radio" value="bottom-right" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右下角</span></label>
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
@@ -14771,7 +14771,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-col-button.vue 
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/custom-footer.vue correctly 1`] = `
-<div class="tdesign-demo-block-column-large">
+<div class="tdesign-demo-block-column-large tdesign-demo__table">
   <div>
     <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="normal" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">普通表尾</span></label> <label class="t-radio-button"><input type="radio" value="full" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">通栏表尾</span></label> <label class="t-radio-button"><input type="radio" value="custom" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">自定义表尾合并列</span></label>
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
@@ -14911,7 +14911,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/custom-header.vue corr
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctly 1`] = `
-<div class="demo-container t-table-demo-sort">
+<div class="demo-container t-table-demo-sort tdesign-demo__table">
   <div class="item">
     <div style="margin:16px;"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否允许多字段排序</span></label></div>
     <div style="margin:16px;">排序：{&quot;sortBy&quot;:&quot;status&quot;,&quot;descending&quot;:true}</div>
@@ -15011,7 +15011,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/data-sort.vue correctl
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue correctly 1`] = `
-<div class="demo-container t-table-demo-sort">
+<div class="demo-container t-table-demo-sort tdesign-demo__table">
   <div class="item">
     <div class="t-table t-table--col-draggable" style="position:relative;">
       <div class="t-table__content">
@@ -15091,7 +15091,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-col-sort.vue corr
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctly 1`] = `
-<div class="demo-container t-table-demo-sort">
+<div class="demo-container t-table-demo-sort tdesign-demo__table">
   <div class="item">
     <div class="t-table t-table--row-draggable" style="position:relative;">
       <div class="t-table__content">
@@ -15171,7 +15171,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/drag-sort.vue correctl
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/drag-sort-handler.vue correctly 1`] = `
-<div class="demo-container t-table-demo-sort">
+<div class="demo-container t-table-demo-sort tdesign-demo__table">
   <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">加载状态</span></label></div>
   <div class="item">
     <div class="t-table t-table--row-handler-draggable" style="position:relative;">
@@ -15756,7 +15756,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/empty.vue correctly 1`
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correctly 1`] = `
-<div class="tdesign-demo-block-column" style="width:100%;">
+<div class="tdesign-demo-block-column tdesign-demo__table" style="width:100%;">
   <div>
     <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="true" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">显示展开图标</span></label> <label class="t-radio-button"><input type="radio" value="false" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">隐藏展开图标</span></label> <label class="t-radio-button"><input type="radio" value="custom" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">自定义展开图标</span></label>
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
@@ -15942,7 +15942,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/expandable.vue correct
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue correctly 1`] = `
-<div class="tdesign-demo-block-column">
+<div class="tdesign-demo-block-column tdesign-demo__table">
   <div>
     <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="left" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左对齐</span></label> <label class="t-radio-button"><input type="radio" value="center" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">居中对齐</span></label> <label class="t-radio-button"><input type="radio" value="right" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右对齐</span></label>
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
@@ -16061,7 +16061,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/filter-controlled.vue 
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/fixed-column.vue correctly 1`] = `
-<div class="tdesign-demo-block-column" style="max-width:1200px;">
+<div class="tdesign-demo-block-column tdesign-demo__table" style="max-width:1200px;">
   <div>
     <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button"><input type="radio" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左侧固定一列</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左侧固定两列</span></label>
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
@@ -16455,7 +16455,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/fixed-header.vue corre
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/fixed-header-col.vue correctly 1`] = `
-<div class="tdesign-demo-block-column" style="width:100%;">
+<div class="tdesign-demo-block-column tdesign-demo__table" style="width:100%;">
   <div>
     <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="fixed" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">table-layout: fixed</span></label> <label class="t-radio-button"><input type="radio" value="auto" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">table-layout: auto</span></label>
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
@@ -16918,7 +16918,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue correctly 1`] = `
-<div class="tdesign-demo-block-column-large tdesign-demo-table-multi-header" style="width:100%;">
+<div class="tdesign-demo-block-column-large tdesign-demo-table-multi-heade tdesign-demo__tabler" style="width:100%;">
   <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示表格边框</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示固定表头</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定左侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定右侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表头吸顶</span></label></div>
   <div class="t-table t-table--bordered t-table--multiple-header" style="position:relative;">
     <div class="t-table__top-content">
@@ -17464,7 +17464,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
 `;
 
 exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue correctly 1`] = `
-<div>
+<div class="tdesign-demo__table">
   <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">高亮行选中</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">整行选中</span></label></div>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
