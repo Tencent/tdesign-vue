@@ -19,8 +19,10 @@ popupProps | Object | - | 透传给 popup 组件的参数。TS 类型：`PopupPr
 prefixIcon | Slot / Function | - | 用于自定义组件前置图标。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 presets | Object | - | 预设快捷日期选择，示例：`{ '元旦': '2021-01-01', '昨天':  dayjs().subtract(1, 'day').format('YYYY-MM-DD'), '特定日期': () => ['2021-02-01'] }`。TS 类型：`PresetDate` `interface PresetDate { [name: string]: DateValue | (() => DateValue) }`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 presetsPlacement | String | bottom | 预设面板展示区域（包含确定按钮）。可选项：left/top/right/bottom | N
+status | String | - | 输入框状态。可选项：success/warning/error/default | N
 suffixIcon | Slot / Function | - | 用于自定义组件后置图标。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 timePickerProps | Object | - | 透传 TimePicker 组件属性。TS 类型：`TimePickerProps`，[TimePicker API Documents](./time-picker?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
+tips | String / Slot / Function | - | 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 value | String / Number / Array / Date | '' | 选中值。支持语法糖 `v-model`。TS 类型：`DateValue` `type DateValue = string | number | Date`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 defaultValue | String / Number / Array / Date | '' | 选中值。非受控属性。TS 类型：`DateValue` `type DateValue = string | number | Date`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 valueType | String | - | 用于格式化日期，默认为：'YYYY-MM-DD'，可选值：'date/time-stamp/YYY-MM-DD' 等，[更多可选值见 Dayjs 详细文档](https://day.js.org/docs/en/display/format)。<br /> 其中 `valueType=date` 表示 `value` 数据类型为 `Date`；`valueType='time-stamp'` 表示 `value` 数据类型为时间戳 | N

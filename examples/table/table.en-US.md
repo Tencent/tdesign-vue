@@ -86,7 +86,7 @@ ellipsis | Boolean / Object / Slot / Function | false | ellipsis cell content。
 ellipsisTitle | Boolean / Object / Slot / Function | undefined | ellipsis title content。Typescript：`boolean | TNode<BaseTableColParams<T>> | PopupProps` `interface BaseTableColParams<T> { col: BaseTableCol<T>; colIndex: number }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 fixed | String | left | fixed current column to left or right。options：left/right | N
 foot | String / Function | - | tfoot content。Typescript：`string | TNode<{ col: BaseTableCol; colIndex: number }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-minWidth | String / Number | - | add CSS property `min-width` to HTML Element `<col>` | N
+minWidth | String / Number | - | add CSS property `min-width` to HTML Element `<col>`，Browsers with [TablesNG](https://docs.google.com/document/d/16PFD1GtMI9Zgwu0jtPaKZJ75Q2wyZ9EZnVbBacOfiNA/preview)  support `minWidth` | N
 render | Function | - | render function can be used to render cell or head。Typescript：`TNode<BaseTableRenderParams<T>>` `interface BaseTableRenderParams<T> extends BaseTableCellParams<T> { type: RenderType }` `type RenderType = 'cell' | 'title'`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 resize | Object | - | Typescript：`TableColumnResizeConfig` `interface TableColumnResizeConfig { minWidth: number; maxWidth: number }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 title | String / Function | - | th content。Typescript：`string | TNode<{ col: BaseTableCol; colIndex: number }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
@@ -136,9 +136,10 @@ onDragSort | Function |  | TS 类型：`(context: DragSortContext<T>) => void`<b
 onExpandChange | Function |  | TS 类型：`(expandedRowKeys: Array<string | number>, options: ExpandOptions<T>) => void`<br/>trigger on expand row keys changing。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts)。<br/>`interface ExpandOptions<T> { expandedRowData: Array<T> }`<br/> | N
 onFilterChange | Function |  | TS 类型：`(filterValue: FilterValue, context: { col?: PrimaryTableCol<T> }) => void`<br/>trigger on filter value changing | N
 onRowEdit | Function |  | TS 类型：`(context: PrimaryTableRowEditContext<T>) => void`<br/>trigger on row data is editing。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts)。<br/>`type PrimaryTableRowEditContext<T> = PrimaryTableCellParams<T> & { value: any }`<br/> | N
-onRowValidate | Function |  | TS 类型：`(context: PrimaryTableRowValidateContext<T>) => void`<br/>trigger after row data validated。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts)。<br/>`type PrimaryTableRowValidateContext<T> = { result: TableRowValidateResult<T>[]; trigger: 'self' | 'parent' }`<br/><br/>`export type TableRowValidateResult<T> = PrimaryTableCellParams<T> & { errorList: AllValidateResult[]; value: any }`<br/> | N
+onRowValidate | Function |  | TS 类型：`(context: PrimaryTableRowValidateContext<T>) => void`<br/>trigger after row data validated。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts)。<br/>`type PrimaryTableRowValidateContext<T> = { result: TableRowValidateResult<T>[]; trigger: TableValidateTrigger }`<br/><br/>`type TableValidateTrigger = 'self' | 'parent'`<br/><br/>`export type TableRowValidateResult<T> = PrimaryTableCellParams<T> & { errorList: AllValidateResult[]; value: any }`<br/> | N
 onSelectChange | Function |  | TS 类型：`(selectedRowKeys: Array<string | number>, options: SelectOptions<T>) => void`<br/>trigger on select changing。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts)。<br/>`interface SelectOptions<T> { selectedRowData: Array<T>; type: 'uncheck' | 'check'; currentRowKey?: string; currentRowData?: T }`<br/> | N
 onSortChange | Function |  | TS 类型：`(sort: TableSort, options: SortOptions<T>) => void`<br/>trigger on sort changing。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts)。<br/>`interface SortOptions<T> { currentDataSource?: Array<T>; col: PrimaryTableCol }`<br/> | N
+onValidate | Function |  | TS 类型：`(context: PrimaryTableValidateContext) => void`<br/>trigger after row data validated。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts)。<br/>`interface PrimaryTableValidateContext { result: TableErrorListMap }`<br/><br/>`type TableErrorListMap = { [key: string]: AllValidateResult[] }`<br/> | N
 
 ### PrimaryTable Events
 
@@ -155,15 +156,17 @@ drag-sort | `(context: DragSortContext<T>)` | trigger on drag sort。[see more t
 expand-change | `(expandedRowKeys: Array<string | number>, options: ExpandOptions<T>)` | trigger on expand row keys changing。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts)。<br/>`interface ExpandOptions<T> { expandedRowData: Array<T> }`<br/>
 filter-change | `(filterValue: FilterValue, context: { col?: PrimaryTableCol<T> })` | trigger on filter value changing
 row-edit | `(context: PrimaryTableRowEditContext<T>)` | trigger on row data is editing。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts)。<br/>`type PrimaryTableRowEditContext<T> = PrimaryTableCellParams<T> & { value: any }`<br/>
-row-validate | `(context: PrimaryTableRowValidateContext<T>)` | trigger after row data validated。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts)。<br/>`type PrimaryTableRowValidateContext<T> = { result: TableRowValidateResult<T>[]; trigger: 'self' | 'parent' }`<br/><br/>`export type TableRowValidateResult<T> = PrimaryTableCellParams<T> & { errorList: AllValidateResult[]; value: any }`<br/>
+row-validate | `(context: PrimaryTableRowValidateContext<T>)` | trigger after row data validated。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts)。<br/>`type PrimaryTableRowValidateContext<T> = { result: TableRowValidateResult<T>[]; trigger: TableValidateTrigger }`<br/><br/>`type TableValidateTrigger = 'self' | 'parent'`<br/><br/>`export type TableRowValidateResult<T> = PrimaryTableCellParams<T> & { errorList: AllValidateResult[]; value: any }`<br/>
 select-change | `(selectedRowKeys: Array<string | number>, options: SelectOptions<T>)` | trigger on select changing。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts)。<br/>`interface SelectOptions<T> { selectedRowData: Array<T>; type: 'uncheck' | 'check'; currentRowKey?: string; currentRowData?: T }`<br/>
 sort-change | `(sort: TableSort, options: SortOptions<T>)` | trigger on sort changing。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts)。<br/>`interface SortOptions<T> { currentDataSource?: Array<T>; col: PrimaryTableCol }`<br/>
+validate | `(context: PrimaryTableValidateContext)` | trigger after row data validated。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts)。<br/>`interface PrimaryTableValidateContext { result: TableErrorListMap }`<br/><br/>`type TableErrorListMap = { [key: string]: AllValidateResult[] }`<br/>
 
 ### PrimaryTableInstanceFunctions 组件实例方法
 
 name | params | return | description
 -- | -- | -- | --
 validateRowData | `(rowValue: any)` | \- | required
+validateTableData | \- | \- | required
 
 ### PrimaryTableCol
 

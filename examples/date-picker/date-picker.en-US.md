@@ -19,8 +19,10 @@ popupProps | Object | - | Typescript：`PopupProps`，[Popup API Documents](./po
 prefixIcon | Slot / Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 presets | Object | - | Typescript：`PresetDate` `interface PresetDate { [name: string]: DateValue | (() => DateValue) }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 presetsPlacement | String | bottom | options：left/top/right/bottom | N
+status | String | - | options：success/warning/error/default | N
 suffixIcon | Slot / Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 timePickerProps | Object | - | Typescript：`TimePickerProps`，[TimePicker API Documents](./time-picker?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
+tips | String / Slot / Function | - | Typescript：`string | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 value | String / Number / Array / Date | '' | `v-model` is supported。Typescript：`DateValue` `type DateValue = string | number | Date`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 defaultValue | String / Number / Array / Date | '' | uncontrolled property。Typescript：`DateValue` `type DateValue = string | number | Date`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 valueType | String | - | \- | N

@@ -94,6 +94,7 @@ export default defineComponent({
       errorListMap,
       editableKeysMap,
       validateRowData,
+      validateTableData,
       onRuleChange,
       clearValidateData,
       onPrimaryTableRowValidate,
@@ -179,7 +180,7 @@ export default defineComponent({
             if (props.editableRowKeys) {
               const rowValue = get(p.row, props.rowKey || 'id');
               cellProps.editable = editableKeysMap.value[rowValue] || false;
-              const key = [rowValue, p.col.colKey].join();
+              const key = [rowValue, p.col.colKey].join('__');
               const errorList = errorListMap.value?.[key];
               errorList && (cellProps.errors = errorList);
             }
@@ -226,7 +227,9 @@ export default defineComponent({
       primaryTableRef,
       tRowAttributes,
       primaryTableClasses,
+      errorListMap,
       validateRowData,
+      validateTableData,
       clearValidateData,
       renderTNode,
       renderColumnController,

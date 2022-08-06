@@ -76,6 +76,10 @@ export interface TdDatePickerProps {
    */
   presetsPlacement?: 'left' | 'top' | 'right' | 'bottom';
   /**
+   * 输入框状态
+   */
+  status?: 'success' | 'warning' | 'error' | 'default';
+  /**
    * 用于自定义组件后置图标
    */
   suffixIcon?: TNode;
@@ -83,6 +87,10 @@ export interface TdDatePickerProps {
    * 透传 TimePicker 组件属性
    */
   timePickerProps?: TimePickerProps;
+  /**
+   * 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式
+   */
+  tips?: string | TNode;
   /**
    * 选中值
    * @default ''

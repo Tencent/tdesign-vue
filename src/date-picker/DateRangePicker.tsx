@@ -378,6 +378,8 @@ export default defineComponent({
       <div class={COMPONENT_NAME}>
         <TRangeInputPopup
           disabled={this.disabled}
+          status={this.status}
+          tips={this.tips}
           inputValue={inputValue as string[]}
           popupProps={dateRangePickerPopupProps}
           rangeInputProps={{ suffixIcon: () => <CalendarIcon />, ...dateRangePickerRangeInputProps }}

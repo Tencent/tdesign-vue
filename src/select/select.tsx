@@ -767,6 +767,8 @@ export default defineComponent({
           readonly={readonly}
           allowInput={showFilter}
           multiple={multiple}
+          status={this.status}
+          tips={this.tips}
           keys={keys}
           value={selectedValue}
           valueDisplay={valueDisplay}

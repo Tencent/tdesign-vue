@@ -255,6 +255,8 @@ export default defineComponent({
         <TSelectInput
           disabled={this.disabled}
           value={inputValue}
+          status={this.status}
+          tips={this.tips}
           popupProps={datePickerPopupProps}
           inputProps={{ suffixIcon: this.suffixIcon || (() => <CalendarIcon />), ...datePickerInputProps }}
           popupVisible={popupVisible}

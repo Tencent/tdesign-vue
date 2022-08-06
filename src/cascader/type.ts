@@ -130,6 +130,10 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    */
   size?: SizeEnum;
   /**
+   * 输入框状态
+   */
+  status?: 'success' | 'warning' | 'error' | 'default';
+  /**
    * 透传 TagInput 标签输入框组件的全部属性
    */
   tagInputProps?: TagInputProps;
@@ -138,18 +142,20 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    */
   tagProps?: TagProps;
   /**
+   * 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式
+   */
+  tips?: string | TNode;
+  /**
    * 展开下一层级的方式
    * @default click
    */
   trigger?: 'click' | 'hover';
   /**
    * 选中项的值
-   * @default []
    */
   value?: CascaderValue<CascaderOption>;
   /**
    * 选中项的值，非受控属性
-   * @default []
    */
   defaultValue?: CascaderValue<CascaderOption>;
   /**
