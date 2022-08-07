@@ -15,6 +15,7 @@ export default {
   /** 输入框的值 */
   inputValue: {
     type: Array as PropType<TdRangeInputPopupProps['inputValue']>,
+    default: undefined,
   },
   /** 输入框的值，非受控属性 */
   defaultInputValue: {

@@ -1,12 +1,11 @@
 :: BASE_DOC ::
 
 ## API
-
 ### RangeInput Props
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
-activeIndex | Number | 0 | 输入框高亮状态序号 | N
+activeIndex | Number | - | 输入框高亮状态序号 | N
 clearable | Boolean | false | 是否可清空 | N
 disabled | Boolean | false | 是否禁用范围输入框，值为数组表示可分别控制某一个输入框是否禁用 | N
 format | Array / Function | - | 指定输入框展示值的格式。TS 类型：`InputFormatType | Array<InputFormatType>` | N
@@ -22,8 +21,8 @@ status | String | - | 输入框状态。可选项：success/warning/error | N
 suffix | String / Slot / Function | - | 后置图标前的后置内容。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 suffixIcon | Slot / Function | - | 组件后置图标。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 tips | String / Slot / Function | - | 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式。TS 类型：`string | TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-value | Array | - | 范围输入框的值。支持语法糖 `v-model`。TS 类型：`RangeInputValue` `type RangeInputValue = Array<InputValue>`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/range-input/type.ts) | N
-defaultValue | Array | - | 范围输入框的值。非受控属性。TS 类型：`RangeInputValue` `type RangeInputValue = Array<InputValue>`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/range-input/type.ts) | N
+value | Array | [] | 范围输入框的值。支持语法糖 `v-model`。TS 类型：`RangeInputValue` `type RangeInputValue = Array<InputValue>`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/range-input/type.ts) | N
+defaultValue | Array | [] | 范围输入框的值。非受控属性。TS 类型：`RangeInputValue` `type RangeInputValue = Array<InputValue>`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/range-input/type.ts) | N
 onBlur | Function |  | TS 类型：`(value: RangeInputValue, context?: { e?: FocusEvent; position?: RangeInputPosition }) => void`<br/>范围输入框失去焦点时触发 | N
 onChange | Function |  | TS 类型：`(value: RangeInputValue, context?: { e?: InputEvent | MouseEvent; position?: RangeInputPosition; trigger?: 'input' | 'clear' })    => void`<br/>范围输入框值发生变化时触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/range-input/type.ts)。<br/>`type RangeInputPosition = 'first' | 'second' | 'all'`<br/> | N
 onClear | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/>清空按钮点击时触发 | N

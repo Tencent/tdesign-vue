@@ -112,7 +112,7 @@ export default {
     type: String as PropType<TdCascaderProps['status']>,
     validator(val: TdCascaderProps['status']): boolean {
       if (!val) return true;
-      return ['success', 'warning', 'error', 'default'].includes(val);
+      return ['default', 'success', 'warning', 'error'].includes(val);
     },
   },
   /** 透传 TagInput 标签输入框组件的全部属性 */
@@ -144,7 +144,7 @@ export default {
   /** 选中项的值，非受控属性 */
   defaultValue: {
     type: [String, Number, Array] as PropType<TdCascaderProps['defaultValue']>,
-    default: undefined,
+    default: (): TdCascaderProps['defaultValue'] => [],
   },
   /** 选中值模式。all 表示父节点和子节点全部会出现在选中值里面；parentFirst 表示当子节点全部选中时，仅父节点在选中值里面；onlyLeaf 表示无论什么情况，选中值仅呈现叶子节点 */
   valueMode: {

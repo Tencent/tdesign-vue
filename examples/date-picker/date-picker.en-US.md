@@ -11,7 +11,7 @@ disableDate | Object / Array / Function | - | Typescript：`DisableDate` `type D
 disabled | Boolean | false | make DatePicker to be disabled | N
 enableTimePicker | Boolean | false | \- | N
 firstDayOfWeek | Number | - | options：1/2/3/4/5/6/7 | N
-format | String | - | \- | N
+format | String | undefined | \- | N
 inputProps | Object | - | Typescript：`InputProps`，[Input API Documents](./input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 mode | String | date | options：year/quarter/month/week/date | N
 placeholder | String / Array | undefined | Typescript：`string` | N
@@ -19,7 +19,7 @@ popupProps | Object | - | Typescript：`PopupProps`，[Popup API Documents](./po
 prefixIcon | Slot / Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 presets | Object | - | Typescript：`PresetDate` `interface PresetDate { [name: string]: DateValue | (() => DateValue) }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 presetsPlacement | String | bottom | options：left/top/right/bottom | N
-status | String | - | options：success/warning/error/default | N
+status | String | - | options：default/success/warning/error | N
 suffixIcon | Slot / Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 timePickerProps | Object | - | Typescript：`TimePickerProps`，[TimePicker API Documents](./time-picker?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 tips | String / Slot / Function | - | Typescript：`string | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
@@ -60,8 +60,10 @@ presets | Object | - | Typescript：`PresetRange` `interface PresetRange { [rang
 presetsPlacement | String | bottom | options：left/top/right/bottom | N
 rangeInputProps | Object | - | Typescript：`RangeInputProps`，[RangeInput API Documents](./range-input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 separator | String | - | \- | N
+status | String | - | options：default/success/warning/error | N
 suffixIcon | Slot / Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 timePickerProps | Object | - | Typescript：`TimePickerProps`，[TimePicker API Documents](./time-picker?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
+tips | String / Slot / Function | - | Typescript：`string | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 value | Array | [] | `v-model` is supported。Typescript：`DateRangeValue` `type DateRangeValue = Array<DateValue>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 defaultValue | Array | [] | uncontrolled property。Typescript：`DateRangeValue` `type DateRangeValue = Array<DateValue>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 valueType | String | - | \- | N

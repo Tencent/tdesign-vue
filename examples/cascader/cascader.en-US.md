@@ -30,13 +30,13 @@ readonly | Boolean | false | \- | N
 selectInputProps | Object | - | Typescript：`SelectInputProps`，[SelectInput API Documents](./select-input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/cascader/type.ts) | N
 showAllLevels | Boolean | true | \- | N
 size | String | medium | options：large/medium/small。Typescript：`SizeEnum`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-status | String | - | options：success/warning/error/default | N
+status | String | - | options：default/success/warning/error | N
 tagInputProps | Object | - | Typescript：`TagInputProps`，[TagInput API Documents](./tag-input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/cascader/type.ts) | N
 tagProps | Object | - | Typescript：`TagProps`，[Tag API Documents](./tag?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/cascader/type.ts) | N
 tips | String / Slot / Function | - | tips at the bottom of cascader。Typescript：`string | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 trigger | String | click | options：click/hover | N
-value | String / Number / Array | undefined | `v-model` is supported。Typescript：`CascaderValue<CascaderOption>` `type CascaderValue<T extends TreeOptionData = TreeOptionData> = string | number | T | Array<CascaderValue<T>>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/cascader/type.ts) | N
-defaultValue | String / Number / Array | undefined | uncontrolled property。Typescript：`CascaderValue<CascaderOption>` `type CascaderValue<T extends TreeOptionData = TreeOptionData> = string | number | T | Array<CascaderValue<T>>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/cascader/type.ts) | N
+value | String / Number / Array | [] | `v-model` is supported。Typescript：`CascaderValue<CascaderOption>` `type CascaderValue<T extends TreeOptionData = TreeOptionData> = string | number | T | Array<CascaderValue<T>>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/cascader/type.ts) | N
+defaultValue | String / Number / Array | [] | uncontrolled property。Typescript：`CascaderValue<CascaderOption>` `type CascaderValue<T extends TreeOptionData = TreeOptionData> = string | number | T | Array<CascaderValue<T>>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/cascader/type.ts) | N
 valueMode | String | onlyLeaf | options：onlyLeaf/parentFirst/all | N
 valueType | String | single | options：single/full | N
 onBlur | Function |  | TS 类型：`(context: { value: CascaderValue<CascaderOption>; e: FocusEvent }) => void`<br/> | N

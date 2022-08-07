@@ -31,7 +31,7 @@ export default {
   /** 用于格式化日期，全局配置默认为：'YYYY-MM-DD'，[详细文档](https://day.js.org/docs/en/display/format) */
   format: {
     type: String,
-    default: '',
+    default: undefined,
   },
   /** 透传给输入框（Input）组件的参数 */
   inputProps: {
@@ -77,7 +77,7 @@ export default {
     type: String as PropType<TdDatePickerProps['status']>,
     validator(val: TdDatePickerProps['status']): boolean {
       if (!val) return true;
-      return ['success', 'warning', 'error', 'default'].includes(val);
+      return ['default', 'success', 'warning', 'error'].includes(val);
     },
   },
   /** 用于自定义组件后置图标 */

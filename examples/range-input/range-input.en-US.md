@@ -1,14 +1,13 @@
 :: BASE_DOC ::
 
 ## API
-
 ### RangeInput Props
 
 name | type | default | description | required
 -- | -- | -- | -- | --
-activeIndex | Number | 0 | \- | N
+activeIndex | Number | - | \- | N
 clearable | Boolean | false | \- | N
-disabled | Boolean / Array | false | Typescript：`boolean | Array<boolean>` | N
+disabled | Boolean | false | \- | N
 format | Array / Function | - | Typescript：`InputFormatType | Array<InputFormatType>` | N
 inputProps | Object / Array | - | Typescript：`InputProps | Array<InputProps>`，[Input API Documents](./input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/range-input/type.ts) | N
 label | String / Slot / Function | - | Typescript：`string | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
@@ -22,8 +21,8 @@ status | String | - | options：success/warning/error | N
 suffix | String / Slot / Function | - | Typescript：`string | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 suffixIcon | Slot / Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 tips | String / Slot / Function | - | Typescript：`string | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-value | Array | - | `v-model` is supported。Typescript：`RangeInputValue` `type RangeInputValue = Array<InputValue>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/range-input/type.ts) | N
-defaultValue | Array | - | uncontrolled property。Typescript：`RangeInputValue` `type RangeInputValue = Array<InputValue>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/range-input/type.ts) | N
+value | Array | [] | `v-model` is supported。Typescript：`RangeInputValue` `type RangeInputValue = Array<InputValue>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/range-input/type.ts) | N
+defaultValue | Array | [] | uncontrolled property。Typescript：`RangeInputValue` `type RangeInputValue = Array<InputValue>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/range-input/type.ts) | N
 onBlur | Function |  | TS 类型：`(value: RangeInputValue, context?: { e?: FocusEvent; position?: RangeInputPosition }) => void`<br/> | N
 onChange | Function |  | TS 类型：`(value: RangeInputValue, context?: { e?: InputEvent | MouseEvent; position?: RangeInputPosition; trigger?: 'input' | 'clear' })    => void`<br/>[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/range-input/type.ts)。<br/>`type RangeInputPosition = 'first' | 'second' | 'all'`<br/> | N
 onClear | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/> | N
@@ -59,7 +58,7 @@ select | `(options?: {position?: RangeInputPosition})` | \- | \-
 name | type | default | description | required
 -- | -- | -- | -- | --
 autoWidth | Boolean | false | \- | N
-disabled | Boolean / Array | false | Typescript：`boolean | Array<boolean>` | N
+disabled | Boolean | false | \- | N
 inputValue | Array | - | `.sync` is supported。Typescript：`RangeInputValue` | N
 defaultInputValue | Array | - | uncontrolled property。Typescript：`RangeInputValue` | N
 panel | Slot / Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
