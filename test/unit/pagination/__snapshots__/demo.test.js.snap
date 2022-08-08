@@ -33,7 +33,7 @@ exports[`Pagination Pagination baseVue demo works fine 1`] = `
           <span
             class="t-input__input-pre"
           >
-            5
+            5 条/页
           </span>
           <span
             class="t-input__suffix t-input__suffix-icon"
@@ -171,7 +171,7 @@ exports[`Pagination Pagination baseVue demo works fine 1`] = `
           <span
             class="t-input__input-pre"
           >
-            10
+            10 条/页
           </span>
           <span
             class="t-input__suffix t-input__suffix-icon"
@@ -325,7 +325,7 @@ exports[`Pagination Pagination customizableVue demo works fine 1`] = `
           <span
             class="t-input__input-pre"
           >
-            20
+            20 条/页
           </span>
           <span
             class="t-input__suffix t-input__suffix-icon"
@@ -511,7 +511,7 @@ exports[`Pagination Pagination disabledVue demo works fine 1`] = `
           <span
             class="t-input__input-pre"
           >
-            5
+            5 条/页
           </span>
           <span
             class="t-input__suffix t-input__suffix-icon"
@@ -693,7 +693,7 @@ exports[`Pagination Pagination fewVue demo works fine 1`] = `
           <span
             class="t-input__input-pre"
           >
-            10
+            10 条/页
           </span>
           <span
             class="t-input__suffix t-input__suffix-icon"
@@ -817,7 +817,7 @@ exports[`Pagination Pagination jumpVue demo works fine 1`] = `
           <span
             class="t-input__input-pre"
           >
-            20
+            20 条/页
           </span>
           <span
             class="t-input__suffix t-input__suffix-icon"
@@ -981,7 +981,7 @@ exports[`Pagination Pagination miniVue demo works fine 1`] = `
           <span
             class="t-input__input-pre"
           >
-            5
+            5 条/页
           </span>
           <span
             class="t-input__suffix t-input__suffix-icon"
@@ -1132,7 +1132,7 @@ exports[`Pagination Pagination moreVue demo works fine 1`] = `
           <span
             class="t-input__input-pre"
           >
-            5
+            5 条/页
           </span>
           <span
             class="t-input__suffix t-input__suffix-icon"
@@ -1300,7 +1300,7 @@ exports[`Pagination Pagination moreVue demo works fine 1`] = `
           <span
             class="t-input__input-pre"
           >
-            5
+            5 条/页
           </span>
           <span
             class="t-input__suffix t-input__suffix-icon"
@@ -1425,7 +1425,7 @@ exports[`Pagination Pagination pageNumVue demo works fine 1`] = `
           <span
             class="t-input__input-pre"
           >
-            30
+            每页 30 条
           </span>
           <span
             class="t-input__suffix t-input__suffix-icon"
@@ -1571,7 +1571,7 @@ exports[`Pagination Pagination simpleMiniVue demo works fine 1`] = `
         <span
           class="t-input__input-pre"
         >
-          5
+          5 条/页
         </span>
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -1700,7 +1700,7 @@ exports[`Pagination Pagination simpleVue demo works fine 1`] = `
           <span
             class="t-input__input-pre"
           >
-            5
+            5 条/页
           </span>
           <span
             class="t-input__suffix t-input__suffix-icon"
@@ -1830,7 +1830,7 @@ exports[`Pagination Pagination totalVue demo works fine 1`] = `
           <span
             class="t-input__input-pre"
           >
-            10
+            10 条/页
           </span>
           <span
             class="t-input__suffix t-input__suffix-icon"

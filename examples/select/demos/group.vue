@@ -28,7 +28,10 @@ export default {
       options: [
         {
           group: '分组一',
-          children: [],
+          children: [
+            { label: '选项一', value: 1 },
+            { label: '选项二', value: 2 },
+          ],
         },
         {
           group: '分组二',
