@@ -79,7 +79,7 @@ export default Vue.extend({
     return (
       <div class={`${prefix}-transfer__operations`}>
         <TButton
-          variant={rightDisabled ? 'outline' : 'base'}
+          variant="outline"
           key={rightDisabled ? 'right-outline' : 'right-base'}
           disabled={rightDisabled}
           onClick={this.moveToRight}
@@ -88,7 +88,7 @@ export default Vue.extend({
           {this._renderButton(h, 'right')}
         </TButton>
         <TButton
-          variant={leftDisabled ? 'outline' : 'base'}
+          variant="outline"
           key={leftDisabled ? 'left-outline' : 'left-base'}
           disabled={leftDisabled}
           onClick={this.moveToLeft}
