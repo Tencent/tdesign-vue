@@ -13,7 +13,7 @@ import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { PaginationConfig } from '../config-provider/config-receiver';
 import TInputNumber from '../input-number';
 import { Select, Option } from '../select';
-import InputAdornment from '../input-adornment';
+import TInputAdornment from '../input-adornment';
 import CLASSNAMES from '../utils/classnames';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import props from './props';
@@ -40,6 +40,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
     ChevronLeftDoubleIcon,
     EllipsisIcon,
     TInputNumber,
+    TInputAdornment,
     TSelect: Select,
     TOption: Option,
   },
