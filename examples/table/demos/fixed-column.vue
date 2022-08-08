@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column" style="max-width: 1200px">
+  <div class="tdesign-demo-block-column tdesign-demo__table" style="max-width: 1200px">
     <div>
       <t-radio-group v-model="leftFixedColumn" variant="default-filled">
         <t-radio-button :value="1">左侧固定一列</t-radio-button>

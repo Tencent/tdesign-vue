@@ -1335,7 +1335,7 @@ exports[`SelectInput SelectInput statusVue demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-input__tips t-input__tips--normal"
+        class="t-input__tips t-input__tips--default"
       >
         这是禁用状态文本提示
       </div>
@@ -1372,7 +1372,7 @@ exports[`SelectInput SelectInput statusVue demo works fine 1`] = `
         </div>
       </div>
       <div
-        class="t-input__tips t-input__tips--normal"
+        class="t-input__tips t-input__tips--default"
       >
         这是普通状态的文本提示
       </div>

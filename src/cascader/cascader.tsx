@@ -99,6 +99,8 @@ export default defineComponent({
             placeholder: inputPlaceholder,
             multiple: this.multiple,
             loading: this.loading,
+            status: this.status,
+            tips: this.tips,
             suffixIcon: () => renderSuffixIcon(),
             popupProps: {
               ...(this.popupProps as TdCascaderProps['popupProps']),

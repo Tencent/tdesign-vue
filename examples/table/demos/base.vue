@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column-large">
+  <div class="tdesign-demo-block-column-large tdesign-demo__table">
     <!-- 按钮操作区域 -->
     <div>
       <t-radio-group v-model="size" variant="default-filled">
@@ -14,6 +14,7 @@
       <t-checkbox v-model="tableLayout">宽度自适应</t-checkbox>
     </div>
 
+    <!-- 当数据为空需要占位时，会显示 cellEmptyContent -->
     <t-table
       rowKey="index"
       :data="data"
@@ -24,6 +25,7 @@
       :size="size"
       :table-layout="tableLayout ? 'auto' : 'fixed'"
       :pagination="pagination"
+      cellEmptyContent="-"
       resizable
     ></t-table>
   </div>
@@ -36,7 +38,7 @@ for (let i = 0; i < total; i++) {
     index: i,
     platform: i % 2 === 0 ? '共有' : '私有',
     type: ['String', 'Number', 'Array', 'Object'][i % 4],
-    default: ['-', '0', '[]', '{}'][i % 4],
+    default: ['0', '[]'][i % 5],
     detail: {
       position: `读取 ${i} 个数据的嵌套信息值`,
     },
@@ -119,3 +121,10 @@ export default {
   },
 };
 </script>
+
+<style>
+/* 不要改成 scope，就是要全局间距 */
+.tdesign-demo__table .t-checkbox + .t-checkbox {
+  margin-left: 16px;
+}
+</style>

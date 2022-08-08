@@ -1,5 +1,9 @@
 <template>
   <div class="t-table-demo__editable-row">
+    <div>
+      <t-button @click="onValidateTableData">校验全部</t-button>
+    </div>
+    <br />
     <!-- 当前示例包含：输入框、单选、多选、日期 等场景 -->
     <t-table
       ref="tableRef"
@@ -11,6 +15,7 @@
       bordered
       @row-edit="onRowEdit"
       @row-validate="onRowValidate"
+      @validate="onValidate"
     />
   </div>
 </template>
@@ -19,6 +24,7 @@
 import {
   Input, Select, DatePicker, MessagePlugin, Button,
 } from 'tdesign-vue';
+import dayjs from 'dayjs';
 
 const initData = new Array(5).fill(null).map((_, i) => ({
   key: String(i + 1),
@@ -82,6 +88,7 @@ export default {
             component: Select,
             // props, 透传全部属性到 Select 组件
             props: {
+              clearable: true,
               options: [
                 { label: 'Vue', value: 'Vue' },
                 { label: 'React', value: 'React' },
@@ -89,6 +96,8 @@ export default {
                 { label: 'Flutter', value: 'Flutter' },
               ],
             },
+            // 校验规则，此处同 Form 表单
+            rules: [{ required: true, message: '不能为空' }],
             showEditIcon: false,
           },
         },
@@ -119,6 +128,8 @@ export default {
                 ].filter((t) => (t.show === undefined ? true : t.show())),
               };
             },
+            // 校验规则，此处同 Form 表单
+            rules: [{ validator: (val) => val && val.length < 3, message: '数量不能超过 2 个' }],
             showEditIcon: false,
           },
         },
@@ -130,6 +141,13 @@ export default {
           edit: {
             component: DatePicker,
             showEditIcon: false,
+            // 校验规则，此处同 Form 表单
+            rules: [
+              {
+                validator: (val) => dayjs(val).isAfter(dayjs()),
+                message: '只能选择今天以后日期',
+              },
+            ],
           },
         },
         {
@@ -179,6 +197,7 @@ export default {
       this.updateEditState(id);
       this.$refs.tableRef.clearValidateData();
     },
+
     onSave(e) {
       const { id } = e.currentTarget.dataset;
       this.currentSaveId = id;
@@ -186,8 +205,9 @@ export default {
       this.$refs.tableRef.validateRowData(id);
     },
 
+    // 行校验反馈事件，this.$refs.tableRef.validateRowData 执行结束后触发
     onRowValidate(params) {
-      console.log('validate:', params);
+      console.log('row-validate:', params);
       if (params.result.length) {
         const r = params.result[0];
         MessagePlugin.error(`${r.col.title} ${r.errorList[0].message}`);
@@ -201,6 +221,21 @@ export default {
           MessagePlugin.success('保存成功');
         }
         this.updateEditState(this.currentSaveId);
+      }
+    },
+
+    onValidateTableData() {
+      // 执行结束后触发事件 validate
+      this.$refs.tableRef.validateTableData();
+    },
+
+    // 表格全量数据校验反馈事件，this.$refs.tableRef.validateTableData() 执行结束后触发
+    onValidate(params) {
+      console.log('validate:', params);
+      const cellKeys = Object.keys(params.result);
+      const firstError = params.result[cellKeys[0]];
+      if (firstError) {
+        MessagePlugin.warning(firstError[0].message);
       }
     },
 

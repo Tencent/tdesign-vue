@@ -3697,6 +3697,7 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -4054,6 +4055,7 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div

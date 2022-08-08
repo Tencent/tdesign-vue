@@ -481,6 +481,8 @@ export default defineComponent({
           allowInput={this.isFilterable}
           multiple={this.multiple}
           keys={this.keys}
+          status={this.status}
+          tips={this.tips}
           value={this.displayText}
           valueDisplay={valueDisplay}
           clearable={this.clearable}

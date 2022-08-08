@@ -45,6 +45,7 @@ export default {
   /** 输入框的值 */
   inputValue: {
     type: [String, Number] as PropType<TdSelectProps['inputValue']>,
+    default: undefined,
   },
   /** 输入框的值，非受控属性 */
   defaultInputValue: {
@@ -130,6 +131,14 @@ export default {
       return ['small', 'medium', 'large'].includes(val);
     },
   },
+  /** 输入框状态 */
+  status: {
+    type: String as PropType<TdSelectProps['status']>,
+    validator(val: TdSelectProps['status']): boolean {
+      if (!val) return true;
+      return ['default', 'success', 'warning', 'error'].includes(val);
+    },
+  },
   /** 透传 TagInput 标签输入框组件的全部属性 */
   tagInputProps: {
     type: Object as PropType<TdSelectProps['tagInputProps']>,
@@ -138,9 +147,14 @@ export default {
   tagProps: {
     type: Object as PropType<TdSelectProps['tagProps']>,
   },
+  /** 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式 */
+  tips: {
+    type: [String, Function] as PropType<TdSelectProps['tips']>,
+  },
   /** 选中值 */
   value: {
     type: [String, Number, Object, Array] as PropType<TdSelectProps['value']>,
+    default: undefined,
   },
   /** 选中值，非受控属性 */
   defaultValue: {

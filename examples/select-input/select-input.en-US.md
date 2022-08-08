@@ -1,7 +1,6 @@
 :: BASE_DOC ::
 
 ## API
-
 ### SelectInput Props
 
 name | type | default | description | required
@@ -38,7 +37,7 @@ onBlur | Function |  | TS 类型：`(value: SelectInputValue, context: SelectInp
 onClear | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/> | N
 onEnter | Function |  | TS 类型：`(value: SelectInputValue, context: { e: KeyboardEvent; inputValue: InputValue }) => void`<br/> | N
 onFocus | Function |  | TS 类型：`(value: SelectInputValue, context: SelectInputFocusContext) => void`<br/>trigger on focus。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/select-input/type.ts)。<br/>`interface SelectInputFocusContext { inputValue: InputValue; tagInputValue?: TagInputValue; e: FocusEvent }`<br/> | N
-onInputChange | Function |  | TS 类型：`(value: InputValue, context?: SelectInputValueChangeContext) => void`<br/>[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/select-input/type.ts)。<br/>`interface SelectInputValueChangeContext { e?: InputEvent | MouseEvent | FocusEvent | KeyboardEvent; trigger: 'input' | 'clear' }`<br/> | N
+onInputChange | Function |  | TS 类型：`(value: InputValue, context?: SelectInputValueChangeContext) => void`<br/>[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/select-input/type.ts)。<br/>`interface SelectInputValueChangeContext { e?: InputEvent | MouseEvent | FocusEvent | KeyboardEvent; trigger: 'input' | 'clear' | 'blur' }`<br/> | N
 onMouseenter | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/>trigger on mouseenter | N
 onMouseleave | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/>trigger on mouseleave | N
 onPaste | Function |  | TS 类型：`(context: { e: ClipboardEvent; pasteValue: string }) => void`<br/> | N
@@ -53,7 +52,7 @@ blur | `(value: SelectInputValue, context: SelectInputFocusContext)` | trigger o
 clear | `(context: { e: MouseEvent })` | \-
 enter | `(value: SelectInputValue, context: { e: KeyboardEvent; inputValue: InputValue })` | \-
 focus | `(value: SelectInputValue, context: SelectInputFocusContext)` | trigger on focus。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/select-input/type.ts)。<br/>`interface SelectInputFocusContext { inputValue: InputValue; tagInputValue?: TagInputValue; e: FocusEvent }`<br/>
-input-change | `(value: InputValue, context?: SelectInputValueChangeContext)` | [see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/select-input/type.ts)。<br/>`interface SelectInputValueChangeContext { e?: InputEvent | MouseEvent | FocusEvent | KeyboardEvent; trigger: 'input' | 'clear' }`<br/>
+input-change | `(value: InputValue, context?: SelectInputValueChangeContext)` | [see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/select-input/type.ts)。<br/>`interface SelectInputValueChangeContext { e?: InputEvent | MouseEvent | FocusEvent | KeyboardEvent; trigger: 'input' | 'clear' | 'blur' }`<br/>
 mouseenter | `(context: { e: MouseEvent })` | trigger on mouseenter
 mouseleave | `(context: { e: MouseEvent })` | trigger on mouseleave
 paste | `(context: { e: ClipboardEvent; pasteValue: string })` | \-

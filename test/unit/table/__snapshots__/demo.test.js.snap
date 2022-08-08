@@ -2,7 +2,7 @@
 
 exports[`Table Table affixVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large tdesign-demo__table-affix"
+  class="tdesign-demo-block-column-large tdesign-demo__table tdesign-demo__table-affix"
   style="width: 100%;"
 >
   <div>
@@ -630,6 +630,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     >
       <div
@@ -782,7 +783,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
 
 exports[`Table Table asyncLoadingVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large"
+  class="tdesign-demo-block-column-large tdesign-demo__table"
 >
   <div>
     <div
@@ -1079,6 +1080,7 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -1091,7 +1093,7 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
 
 exports[`Table Table baseVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large"
+  class="tdesign-demo-block-column-large tdesign-demo__table"
 >
   <div>
     <div
@@ -1432,7 +1434,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
             <td
               class=""
             >
-              {}
+              -
             </td>
             <td
               class=""
@@ -1510,7 +1512,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
             <td
               class=""
             >
-              0
+              -
             </td>
             <td
               class=""
@@ -1532,6 +1534,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     >
       <div
@@ -1672,7 +1675,9 @@ exports[`Table Table baseVue demo works fine 1`] = `
 `;
 
 exports[`Table Table customCellVue demo works fine 1`] = `
-<div>
+<div
+  class="tdesign-demo__table"
+>
   <div
     class="t-table t-vertical-align-top"
     style="position: relative;"
@@ -1835,6 +1840,7 @@ exports[`Table Table customCellVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -1847,7 +1853,7 @@ exports[`Table Table customCellVue demo works fine 1`] = `
 
 exports[`Table Table customColButtonVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large"
+  class="tdesign-demo-block-column-large tdesign-demo__table"
 >
   <div>
     <div
@@ -1957,6 +1963,7 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
      
     <label
       class="t-checkbox"
+      style="margin-left: 16px;"
     >
       <input
         class="t-checkbox__former"
@@ -2296,6 +2303,7 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     >
       <div
@@ -2455,7 +2463,7 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
 
 exports[`Table Table customColVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large"
+  class="tdesign-demo-block-column-large tdesign-demo__table"
 >
   <div>
     <button
@@ -2756,6 +2764,7 @@ exports[`Table Table customColVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     >
       <div
@@ -2915,7 +2924,7 @@ exports[`Table Table customColVue demo works fine 1`] = `
 
 exports[`Table Table customFooterVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large"
+  class="tdesign-demo-block-column-large tdesign-demo__table"
 >
   <div>
     <div
@@ -3253,6 +3262,7 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -3378,6 +3388,7 @@ exports[`Table Table customHeaderVue demo works fine 1`] = `
     </table>
   </div>
   <div
+    class="t-table__pagination-wrap"
     style="opacity: 1;"
   />
   <div
@@ -3389,7 +3400,7 @@ exports[`Table Table customHeaderVue demo works fine 1`] = `
 
 exports[`Table Table dataSortVue demo works fine 1`] = `
 <div
-  class="demo-container t-table-demo-sort"
+  class="demo-container t-table-demo-sort tdesign-demo__table"
 >
   <div
     class="item"
@@ -3728,6 +3739,7 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
         </table>
       </div>
       <div
+        class="t-table__pagination-wrap"
         style="opacity: 1;"
       />
       <div
@@ -3741,7 +3753,7 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
 
 exports[`Table Table dragColSortVue demo works fine 1`] = `
 <div
-  class="demo-container t-table-demo-sort"
+  class="demo-container t-table-demo-sort tdesign-demo__table"
 >
   <div
     class="item"
@@ -3944,6 +3956,7 @@ exports[`Table Table dragColSortVue demo works fine 1`] = `
         </table>
       </div>
       <div
+        class="t-table__pagination-wrap"
         style="opacity: 1;"
       />
       <div
@@ -3957,7 +3970,7 @@ exports[`Table Table dragColSortVue demo works fine 1`] = `
 
 exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
 <div
-  class="demo-container t-table-demo-sort"
+  class="demo-container t-table-demo-sort tdesign-demo__table"
 >
   <div>
     <label
@@ -4260,6 +4273,7 @@ exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
         class="t-loading--center t-size-s t-loading"
       />
       <div
+        class="t-table__pagination-wrap"
         style="opacity: 1;"
       />
       <div
@@ -4273,7 +4287,7 @@ exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
 
 exports[`Table Table dragSortVue demo works fine 1`] = `
 <div
-  class="demo-container t-table-demo-sort"
+  class="demo-container t-table-demo-sort tdesign-demo__table"
 >
   <div
     class="item"
@@ -4480,6 +4494,7 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
         </table>
       </div>
       <div
+        class="t-table__pagination-wrap"
         style="opacity: 1;"
       />
       <div
@@ -4600,6 +4615,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -4715,6 +4731,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -4830,6 +4847,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -4842,7 +4860,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
 
 exports[`Table Table expandableVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column"
+  class="tdesign-demo-block-column tdesign-demo__table"
   style="width: 100%;"
 >
   <div>
@@ -5708,6 +5726,7 @@ exports[`Table Table expandableVue demo works fine 1`] = `
       </div>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -5720,7 +5739,7 @@ exports[`Table Table expandableVue demo works fine 1`] = `
 
 exports[`Table Table filterControlledVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column"
+  class="tdesign-demo-block-column tdesign-demo__table"
 >
   <div>
     <div
@@ -6179,6 +6198,7 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -6191,7 +6211,7 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
 
 exports[`Table Table fixedColumnVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column"
+  class="tdesign-demo-block-column tdesign-demo__table"
   style="max-width: 1200px;"
 >
   <div>
@@ -6749,6 +6769,7 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -6761,7 +6782,7 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
 
 exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column"
+  class="tdesign-demo-block-column tdesign-demo__table"
   style="width: 100%;"
 >
   <div>
@@ -7698,6 +7719,7 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -8684,6 +8706,7 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -15804,6 +15827,7 @@ exports[`Table Table lazyVue demo works fine 1`] = `
         </table>
       </div>
       <div
+        class="t-table__pagination-wrap"
         style="opacity: 1;"
       />
       <div
@@ -15970,6 +15994,7 @@ exports[`Table Table loadingVue demo works fine 1`] = `
       </svg>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -16118,6 +16143,7 @@ exports[`Table Table loadingVue demo works fine 1`] = `
       </div>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -16286,6 +16312,7 @@ exports[`Table Table loadingVue demo works fine 1`] = `
       </div>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -16520,6 +16547,7 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
     </table>
   </div>
   <div
+    class="t-table__pagination-wrap"
     style="opacity: 1;"
   />
   <div
@@ -16531,7 +16559,7 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
 
 exports[`Table Table multiHeaderVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large tdesign-demo-table-multi-header"
+  class="tdesign-demo-block-column-large tdesign-demo-table-multi-heade tdesign-demo__tabler"
   style="width: 100%;"
 >
   <div>
@@ -17036,6 +17064,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -17380,6 +17409,7 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
         </table>
       </div>
       <div
+        class="t-table__pagination-wrap"
         style="opacity: 1;"
       />
       <div
@@ -17490,6 +17520,7 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
     class="t-loading--center t-size-s t-loading"
   />
   <div
+    class="t-table__pagination-wrap"
     style="opacity: 1;"
   >
     <div
@@ -17933,6 +17964,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     >
       <div
@@ -18563,6 +18595,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -18574,7 +18607,9 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
 `;
 
 exports[`Table Table selectSingleVue demo works fine 1`] = `
-<div>
+<div
+  class="tdesign-demo__table"
+>
   <div>
     <label
       class="t-checkbox"
@@ -19040,6 +19075,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -19322,6 +19358,7 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -19675,6 +19712,7 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -20355,6 +20393,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -21512,6 +21551,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     >
       <div

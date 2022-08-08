@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column-large">
+  <div class="tdesign-demo-block-column-large tdesign-demo__table">
     <!-- 按钮操作区域 -->
     <div>
       <t-button @click="columnControllerVisible = true">显示列配置弹窗</t-button>
