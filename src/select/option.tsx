@@ -3,7 +3,6 @@ import {
   ref,
   SetupContext,
   toRefs,
-  watch,
   onMounted,
   inject,
   onBeforeUnmount,
@@ -13,21 +12,19 @@ import {
 import Vue, { PropType } from 'vue';
 
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import get from 'lodash/get';
 import { renderContent } from '../utils/render-tnode';
-import { scrollSelectedIntoView } from '../utils/dom';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import Ripple from '../utils/ripple';
 import { getKeepAnimationMixins } from '../config-provider/config-receiver';
 import props from './option-props';
-import { TdOptionProps } from './type';
+import { SelectValue, TdOptionProps } from './type';
 import Checkbox from '../checkbox/index';
 import { SelectInstance } from './instance';
 import useLazyLoad from '../hooks/useLazyLoad';
 import { TScroll } from '../common';
+import { getNewMultipleValue } from './util';
 
-const selectName = `${prefix}-select`;
 const keepAnimationMixins = getKeepAnimationMixins();
 export interface OptionInstance extends Vue {
   tSelect: SelectInstance;
@@ -41,17 +38,23 @@ export interface OptionProps extends TdOptionProps {
   scrollType?: 'lazy' | 'virtual';
   isVirtual: boolean;
   bufferSize: number;
+  multiple: Boolean;
+  isCreatedOption: Boolean;
+  index: Number;
 }
 
 export default defineComponent({
   name: 'TOption',
   props: {
     ...props,
+    isCreatedOption: Boolean,
+    multiple: Boolean,
     rowIndex: Number,
     trs: Map as PropType<OptionProps['trs']>,
     scrollType: String,
     isVirtual: Boolean,
     bufferSize: Number,
+    index: Number,
   },
   components: {
     TCheckbox: Checkbox,
@@ -59,102 +62,64 @@ export default defineComponent({
   mixins: [keepAnimationMixins],
   directives: { Ripple },
   setup(props: OptionProps, context: SetupContext) {
+    const selectProvider: any = inject('tSelect');
     const optionNode = ref(null);
-    const isHover = ref(false);
-    const formDisabled = ref(undefined);
 
     const {
-      value, label, disabled, panelElement, scrollType, bufferSize,
+      value, label, disabled, panelElement, scrollType, bufferSize, index, multiple, isCreatedOption,
     } = toRefs(props);
-
-    const tSelect: any = inject('tSelect');
 
     const { hasLazyLoadHolder = null, tRowHeight = null } = useLazyLoad(
       panelElement,
       optionNode,
       reactive({ type: scrollType, bufferSize, rowIndex: props.rowIndex }),
     );
-    watch(value, () => {
-      tSelect && tSelect.getOptions({ ...context, ...props });
-    });
 
-    const tDisabled = computed(() => formDisabled.value || disabled.value);
-    const hovering = computed(
-      () => tSelect
-        && tSelect.visible.value
-        && tSelect.hoverOptions.value[tSelect.hoverIndex.value]
-        && tSelect.hoverOptions.value[tSelect.hoverIndex.value][tSelect.realValue.value] === value.value,
-    );
-    watch(hovering, (val) => {
-      if (val) {
-        const timer = setTimeout(() => {
-          scrollSelectedIntoView(tSelect.getOverlayElm(), optionNode.value as HTMLElement);
-          clearTimeout(timer);
-        }, tSelect.popupOpenTime.value); // 待popup弹出后再滚动到对应位置
-      }
-    });
-    const classes = computed(() => [
-      `${prefix}-select-option`,
-      {
-        [CLASSNAMES.STATUS.disabled]: tDisabled.value || tSelect.reachMaxLimit.value,
-        [CLASSNAMES.STATUS.selected]: selected.value,
-        [CLASSNAMES.SIZE[tSelect && tSelect.size.value]]: tSelect && tSelect.value,
-        [`${prefix}-select-option__hover`]: hovering.value,
-      },
-    ]);
-    const isCreatedOption = computed(() => tSelect.creatable.value && value.value === tSelect.tInputValue.value);
-    const show = computed(() => {
-      /**
-       * 此属性主要用于slots生成options时显示控制，直传options由select进行显示控制
-       * create的option，始终显示
-       * canFilter只显示待匹配的选项
-       */
-      if (!tSelect) return false;
-      if (isCreatedOption.value) return true;
-      if (tSelect.canFilter.value && tSelect.tInputValue.value !== '') {
-        return tSelect.filterOptions.value.some(
-          (option: TdOptionProps) => get(option, tSelect.realValue.value) === value.value,
-        );
-      }
-      return true;
-    });
-    const labelText = computed(() => label.value || value.value);
-    const selected = computed(() => {
-      let flag = false;
-      if (!tSelect) return false;
-      if (tSelect.value.value instanceof Array) {
-        if (tSelect.labelInValue.value) {
-          flag = tSelect.value.value.map((item: any) => get(item, tSelect.realValue.value)).indexOf(value.value) !== -1;
-        } else {
-          flag = tSelect.value.value.indexOf(value.value) !== -1;
-        }
-      } else if (typeof tSelect.value.value === 'object') {
-        flag = get(tSelect.value.value, tSelect.realValue.value) === value.value;
-      } else {
-        flag = tSelect.value.value === value.value;
-      }
-      return flag;
-    });
-    const select = (e: MouseEvent | KeyboardEvent) => {
-      e.stopPropagation();
-      if (tDisabled.value || (!selected.value && tSelect.reachMaxLimit.value)) {
-        return false;
-      }
-      const parent = context.refs.optionNode as HTMLLIElement;
-      if (parent && parent.className.indexOf(`${selectName}__create-option`) !== -1) {
-        tSelect && tSelect.createOption(value.value.toString());
-      }
-      tSelect && tSelect.onOptionClick(value.value, e);
-    };
+    const isHover = ref(false);
+    const formDisabled = ref(undefined);
+    const isDisabled = computed(() => formDisabled.value || disabled.value || selectProvider.isReachMaxLimit.value);
+    const isSelected = computed(() => multiple.value
+      ? (selectProvider.selectValue.value as SelectValue[]).includes(props.value)
+      : selectProvider.selectValue.value === props.value);
     const mouseEvent = (v: boolean) => {
       isHover.value = v;
     };
-    onMounted(() => {
-      tSelect && tSelect.getOptions({ ...context, ...props });
-    });
-    onBeforeUnmount(() => {
-      tSelect && tSelect.hasSlotOptions.value && tSelect.destroyOptions({ ...props });
-    });
+
+    const labelText = computed(() => label.value || value.value);
+    const classes = computed(() => [
+      `${prefix}-select-option`,
+      CLASSNAMES.SIZE[selectProvider && selectProvider.size.value],
+      {
+        [CLASSNAMES.STATUS.disabled]: isDisabled.value,
+        [CLASSNAMES.STATUS.selected]: isSelected.value,
+        [`${prefix}-select-option__hover`]:
+          (isHover.value || selectProvider.hoverIndex.value === index.value) && !isDisabled.value && !isSelected.value,
+      },
+    ]);
+
+    const handleClick = (e: MouseEvent | KeyboardEvent) => {
+      if (multiple.value || isDisabled.value) return;
+      e.stopPropagation();
+
+      if (isCreatedOption.value) {
+        selectProvider.handleCreate?.(value.value);
+        if (selectProvider.multiple.value) {
+          const newValue = getNewMultipleValue(selectProvider.selectValue.value as SelectValue[], value.value);
+          selectProvider.handleValueChange(newValue.value, { e, trigger: 'check' });
+          return;
+        }
+      }
+      selectProvider.handleValueChange(value.value, { e, trigger: 'check' });
+      selectProvider.handlePopupVisibleChange(false, { e });
+    };
+
+    const handleCheckboxClick = (val: boolean, context: { e: MouseEvent | KeyboardEvent }) => {
+      const newValue = getNewMultipleValue(selectProvider.selectValue.value as SelectValue[], value.value);
+      selectProvider.handleValueChange(newValue.value, { e: context.e, trigger: val ? 'check' : 'uncheck' });
+      if (!selectProvider.reserveKeyword.value) {
+        selectProvider.handlerInputChange('');
+      }
+    };
 
     // 处理虚拟滚动节点挂载
     onMounted(() => {
@@ -179,34 +144,34 @@ export default defineComponent({
     });
 
     return {
-      selected,
-      show,
+      isHover,
+      isSelected,
       mouseEvent,
-      select,
       classes,
-      tSelect,
+      selectProvider,
       labelText,
       optionNode,
       tRowHeight,
       hasLazyLoadHolder,
+      handleClick,
+      handleCheckboxClick,
     };
   },
 
   render() {
     const {
-      classes, labelText, selected, disabled, show, tSelect,
+      classes, multiple, labelText, isSelected, disabled, selectProvider, handleCheckboxClick, mouseEvent,
     } = this;
     const children: ScopedSlotReturnValue = renderContent(this, 'default', 'content');
-    const optionChild = children || labelText;
+    const optionChild = children || <span>{labelText}</span>;
     if (this.hasLazyLoadHolder) {
       return (
         <li
           ref="optionNode"
-          v-show={show}
           class={classes}
-          onMouseenter={this.mouseEvent.bind(true)}
-          onMouseleave={this.mouseEvent.bind(false)}
-          onClick={this.select}
+          onMouseenter={() => mouseEvent(true)}
+          onMouseleave={() => mouseEvent(false)}
+          onClick={this.handleClick}
           v-ripple={(this.keepAnimation as any).ripple}
         >
           {<span style={{ height: `${this.tRowHeight}px`, border: 'none' }}></span>}
@@ -217,25 +182,22 @@ export default defineComponent({
     return (
       <li
         ref="optionNode"
-        v-show={show}
         class={classes}
-        onMouseenter={this.mouseEvent.bind(true)}
-        onMouseleave={this.mouseEvent.bind(false)}
-        onClick={this.select}
+        onMouseenter={() => mouseEvent(true)}
+        onMouseleave={() => mouseEvent(false)}
+        onClick={this.handleClick}
         v-ripple={(this.keepAnimation as any).ripple}
       >
-        {tSelect && tSelect.multiple.value ? (
+        {multiple ? (
           <t-checkbox
-            checked={selected}
-            disabled={disabled || (!selected && tSelect.reachMaxLimit.value)}
-            nativeOnClick={(e: MouseEvent) => {
-              e.preventDefault();
-            }}
+            checked={isSelected}
+            disabled={disabled || (!isSelected && selectProvider.isReachMaxLimit.value)}
+            onChange={handleCheckboxClick}
           >
             {optionChild}
           </t-checkbox>
         ) : (
-          <span>{optionChild}</span>
+          optionChild
         )}
       </li>
     );

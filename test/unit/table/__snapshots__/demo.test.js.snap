@@ -667,7 +667,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
                 <span
                   class="t-input__input-pre"
                 >
-                  5
+                  5 条/页
                 </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
@@ -1571,7 +1571,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
                 <span
                   class="t-input__input-pre"
                 >
-                  5
+                  5 条/页
                 </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
@@ -2340,7 +2340,7 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
                 <span
                   class="t-input__input-pre"
                 >
-                  5
+                  5 条/页
                 </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
@@ -2801,7 +2801,7 @@ exports[`Table Table customColVue demo works fine 1`] = `
                 <span
                   class="t-input__input-pre"
                 >
-                  5
+                  5 条/页
                 </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
@@ -17557,7 +17557,7 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
               <span
                 class="t-input__input-pre"
               >
-                10
+                10 条/页
               </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
@@ -17631,26 +17631,34 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
         >
           跳至
           <div
-            class="t-input-number t-size-m t-input-number--normal t-pagination__input"
+            class="t-input-adornment t-input-adornment--append"
           >
             <div
-              class="t-input__wrap"
+              class="t-input-number t-size-m t-input-number--normal t-pagination__input"
             >
               <div
-                class="t-input t-size-m t-is-default"
-                ref="refInputElem"
+                class="t-input__wrap"
               >
-                <input
-                  autocomplete="off"
-                  class="t-input__inner"
-                  placeholder=""
-                  type="text"
-                  unselectable="off"
-                />
+                <div
+                  class="t-input t-size-m t-is-default"
+                  ref="refInputElem"
+                >
+                  <input
+                    autocomplete="off"
+                    class="t-input__inner"
+                    placeholder=""
+                    type="text"
+                    unselectable="off"
+                  />
+                </div>
               </div>
             </div>
+            <span
+              class="t-input-adornment__append"
+            >
+              / 1 页
+            </span>
           </div>
-          页
         </div>
       </div>
     </div>
@@ -17993,7 +18001,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
                 <span
                   class="t-input__input-pre"
                 >
-                  5
+                  5 条/页
                 </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
@@ -18107,26 +18115,34 @@ exports[`Table Table paginationVue demo works fine 1`] = `
           >
             跳至
             <div
-              class="t-input-number t-size-m t-input-number--normal t-pagination__input"
+              class="t-input-adornment t-input-adornment--append"
             >
               <div
-                class="t-input__wrap"
+                class="t-input-number t-size-m t-input-number--normal t-pagination__input"
               >
                 <div
-                  class="t-input t-size-m t-is-default"
-                  ref="refInputElem"
+                  class="t-input__wrap"
                 >
-                  <input
-                    autocomplete="off"
-                    class="t-input__inner"
-                    placeholder=""
-                    type="text"
-                    unselectable="off"
-                  />
+                  <div
+                    class="t-input t-size-m t-is-default"
+                    ref="refInputElem"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="t-input__inner"
+                      placeholder=""
+                      type="text"
+                      unselectable="off"
+                    />
+                  </div>
                 </div>
               </div>
+              <span
+                class="t-input-adornment__append"
+              >
+                / 12 页
+              </span>
             </div>
-            页
           </div>
         </div>
       </div>
@@ -21572,7 +21588,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
                 <span
                   class="t-input__input-pre"
                 >
-                  10
+                  10 条/页
                 </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
