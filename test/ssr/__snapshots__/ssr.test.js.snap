@@ -12292,7 +12292,7 @@ exports[`ssr snapshot test renders ./examples/select-input/demos/status.vue corr
           <div class="t-input__prefix"></div><input disabled="disabled" readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner">
         </div>
       </div>
-      <div class="t-input__tips t-input__tips--normal">这是禁用状态文本提示</div>
+      <div class="t-input__tips t-input__tips--default">这是禁用状态文本提示</div>
     </div>
   </div> <br>
   <div><span>只读状态：</span>
@@ -12302,7 +12302,7 @@ exports[`ssr snapshot test renders ./examples/select-input/demos/status.vue corr
           <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="Please Select" type="text" unselectable="on" value="TDesign" class="t-input__inner">
         </div>
       </div>
-      <div class="t-input__tips t-input__tips--normal">这是普通状态的文本提示</div>
+      <div class="t-input__tips t-input__tips--default">这是普通状态的文本提示</div>
     </div>
   </div> <br><br>
   <div><span>成功状态：</span>
