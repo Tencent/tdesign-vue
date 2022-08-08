@@ -163,7 +163,7 @@ export default defineComponent({
       classes, multiple, labelText, isSelected, disabled, selectProvider, handleCheckboxClick, mouseEvent,
     } = this;
     const children: ScopedSlotReturnValue = renderContent(this, 'default', 'content');
-    const optionChild = children || labelText;
+    const optionChild = children || <span>{labelText}</span>;
     if (this.hasLazyLoadHolder) {
       return (
         <li
@@ -197,7 +197,7 @@ export default defineComponent({
             {optionChild}
           </t-checkbox>
         ) : (
-          <span>{optionChild}</span>
+          optionChild
         )}
       </li>
     );

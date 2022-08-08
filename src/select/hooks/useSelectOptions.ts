@@ -72,6 +72,10 @@ export default function useSelectOptions(props: TdSelectProps, context: SetupCon
     if (isArray(optionsSlots)) {
       optionsSlots.forEach((child) => {
         innerOptions.push({
+          // 单独处理 style 和 class 参数的透传
+          class: child.data.staticClass,
+          style: child.data.staticStyle,
+          // 透传其他常规参数
           ...child.componentOptions.propsData,
           slots: () => child.componentOptions.children,
           index: dynamicIndex,

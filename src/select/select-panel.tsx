@@ -234,35 +234,51 @@ export default defineComponent({
 
       return (
         <ul class={`${name}__list`}>
-          {options.map((item: SelectOptionGroup & TdOptionProps & { slots: VNode } & OptionsType, index) => {
-            if (item.group) {
-              return (
-                <t-option-group label={item.group} divider={item.divider}>
-                  {this.renderOptionsContent(item.children)}
-                </t-option-group>
-              );
-            }
-
-            const scrollProps = isVirtual
-              ? {
-                rowIndex: item.$index,
-                trs,
-                scrollType,
-                isVirtual,
-                bufferSize,
+          {options.map(
+            (
+              item: SelectOptionGroup &
+                TdOptionProps & {
+                  slots: VNode;
+                  class: string | undefined;
+                  style: { [key: string]: string } | undefined;
+                } & OptionsType,
+              index,
+            ) => {
+              if (item.group) {
+                return (
+                  <t-option-group label={item.group} divider={item.divider}>
+                    {this.renderOptionsContent(item.children)}
+                  </t-option-group>
+                );
               }
-              : { key: index };
-            // replace `scopedSlots` of `v-slots` in Vue3
-            return (
-              <t-option
-                {...{ props: { ...item, ...scrollProps } }}
-                multiple={multiple}
-                scopedSlots={{ default: item.slots }}
-                key={`${item.$index || ''}_${index}`}
-                on={on}
-              />
-            );
-          })}
+
+              const scrollProps = isVirtual
+                ? {
+                  rowIndex: item.$index,
+                  trs,
+                  scrollType,
+                  isVirtual,
+                  bufferSize,
+                }
+                : { key: index };
+              // replace `scopedSlots` of `v-slots` in Vue3
+              return (
+                <t-option
+                  // 透传 class
+                  class={item.class}
+                  // 透传 style
+                  style={item.style}
+                  // 透传其余参数
+                  {...{ props: { ...item, ...scrollProps } }}
+                  // t-option 自身逻辑所需属性
+                  multiple={multiple}
+                  scopedSlots={{ default: item.slots }}
+                  key={`${item.$index || ''}_${index}`}
+                  on={on}
+                />
+              );
+            },
+          )}
         </ul>
       );
     },
