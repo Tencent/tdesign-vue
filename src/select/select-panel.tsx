@@ -19,7 +19,6 @@ export interface OptionsType extends TdOptionProps {
 
 type SelectPanelProps = Pick<
   TdSelectProps,
-  | 'value'
   | 'size'
   | 'multiple'
   | 'empty'
@@ -61,7 +60,6 @@ export default defineComponent({
     'loading',
     'loadingText',
     'multiple',
-    'value',
     'scroll',
     'creatable',
     'filterable',

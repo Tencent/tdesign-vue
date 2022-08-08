@@ -7,14 +7,15 @@ import {
 export const getSingleContent = (value: TdSelectProps['value'], options: SelectOption[]): string => {
   for (const option of options) {
     if ((option as TdOptionProps).value === value) {
-      return option?.label;
+      // 保底使用 value 作为显示
+      return option?.label || String((option as TdOptionProps).value);
     }
   }
   return value as string;
 };
 
 export const getMultipleContent = (value: SelectValue[], options: SelectOption[]) => {
-  const res = [];
+  const res: string[] = [];
   for (const iterator of value) {
     const resLabel = getSingleContent(iterator, options);
     if (resLabel) {

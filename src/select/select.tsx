@@ -462,80 +462,45 @@ export default defineComponent({
   },
 
   render() {
-    const {
-      valueDisplayParams,
-      placeholderText,
-      multiple,
-      keys,
-      autoWidth,
-      bordered,
-      readonly,
-      displayText,
-      clearable,
-      isDisabled,
-      borderless,
-      size,
-      isFilterable,
-      tInputValue,
-      isLoading,
-      loadingText,
-      tagInputProps,
-      tagProps,
-      inputProps,
-      minCollapsedNum,
-      popupProps,
-      selectInputProps,
-      value,
-      innerPopupVisible,
-      filter,
-      setInnerPopupVisible,
-      handleTInputValueChange,
-      renderTNode,
-      collapsedItemsParams,
-      updateScrollTop,
-      innerOptions,
-      creatable,
-      // 虚拟滚动参数
-      scroll,
-    } = this;
+    const { renderTNode } = this;
 
     const prefixIcon = () => renderTNode('prefixIcon');
-    const valueDisplay = () => renderTNode('valueDisplay', { params: valueDisplayParams });
-    const collapsedItems = () => renderTNode('collapsedItems', { params: collapsedItemsParams });
+    const valueDisplay = () => renderTNode('valueDisplay', { params: this.valueDisplayParams });
+    const collapsedItems = () => renderTNode('collapsedItems', { params: this.collapsedItemsParams });
 
-    const { overlayClassName, ...restPopupProps } = popupProps || {};
+    const { overlayClassName, ...restPopupProps } = this.popupProps || {};
 
     return (
       <div ref="select" class={`${name}__wrap`}>
         <SelectInput
           ref="selectInputRef"
           class={name}
-          autoWidth={autoWidth}
-          borderless={borderless || !bordered}
-          readonly={readonly}
-          allowInput={isFilterable}
-          multiple={multiple}
-          keys={keys}
-          value={displayText}
+          autoWidth={this.autoWidth}
+          borderless={this.borderless || !this.bordered}
+          readonly={this.readonly}
+          allowInput={this.isFilterable}
+          multiple={this.multiple}
+          keys={this.keys}
+          value={this.displayText}
           valueDisplay={valueDisplay}
-          clearable={clearable}
-          disabled={isDisabled}
+          clearable={this.clearable}
+          disabled={this.isDisabled}
           label={prefixIcon}
           suffixIcon={this.renderSuffixIcon}
-          placeholder={placeholderText}
-          inputValue={tInputValue}
+          placeholder={this.placeholderText}
+          inputValue={this.tInputValue}
           inputProps={{
-            size,
-            ...inputProps,
+            size: this.size,
+            ...this.inputProps,
           }}
           tagInputProps={{
             autoWidth: true,
-            ...tagInputProps,
+            ...this.tagInputProps,
           }}
-          tagProps={tagProps}
-          minCollapsedNum={minCollapsedNum}
+          tagProps={this.tagProps}
+          minCollapsedNum={this.minCollapsedNum}
           collapsedItems={collapsedItems}
-          popupVisible={innerPopupVisible}
+          popupVisible={this.innerPopupVisible}
           popupProps={{
             overlayClassName: [`${name}__dropdown`, ['narrow-scrollbar'], overlayClassName],
             ...restPopupProps,
@@ -545,30 +510,29 @@ export default defineComponent({
             blur: this.handleBlur,
             enter: this.handleEnter,
             clear: this.handleClear,
-            'input-change': handleTInputValueChange,
-            'popup-visible-change': setInnerPopupVisible,
+            'input-change': this.handleTInputValueChange,
+            'popup-visible-change': this.setInnerPopupVisible,
             'tag-change': this.handleTagChange,
           }}
-          {...selectInputProps}
-          updateScrollTop={updateScrollTop}
+          {...this.selectInputProps}
+          updateScrollTop={this.updateScrollTop}
         >
           <select-panel
             slot="panel"
             scopedSlots={this.$scopedSlots}
-            options={innerOptions}
-            value={value}
-            inputValue={tInputValue}
-            multiple={multiple}
-            filter={filter}
-            filterable={isFilterable}
-            size={size}
+            size={this.size}
+            options={this.innerOptions}
+            inputValue={this.tInputValue}
+            multiple={this.multiple}
             empty={this.empty}
-            loading={isLoading}
-            loadingText={loadingText}
-            scroll={scroll}
+            filter={this.filter}
+            filterable={this.isFilterable}
+            creatable={this.creatable}
+            scroll={this.scroll}
+            loading={this.isLoading}
+            loadingText={this.loadingText}
             panelTopContent={this.panelTopContent}
             panelBottomContent={this.panelBottomContent}
-            creatable={creatable}
           />
         </SelectInput>
       </div>
