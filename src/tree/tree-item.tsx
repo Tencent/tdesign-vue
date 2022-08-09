@@ -43,9 +43,11 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
   },
   methods: {
     getStyles(): string {
-      const { level } = this.node;
-      const styles = `--level: ${level};`;
-      return styles;
+      const { level, visible } = this.node;
+      const levelStyle = `--level: ${level};`;
+      const hiddenStyle = 'display:none;';
+      if (visible) return levelStyle;
+      return `${hiddenStyle} ${levelStyle}`;
     },
     getClassList(): ClassName {
       const { node, nested } = this;
@@ -381,7 +383,6 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
       this.data = node.data;
     }
     this.$nodesMap = new Map();
-    // console.log('item created', node.value);
   },
   destroyed() {
     this.data = null;
@@ -390,9 +391,6 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
   render(createElement: CreateElement) {
     const { node, nested } = this;
     const { tree, level, value } = node;
-
-    // 用于性能调试
-    // console.log('item render', node.value);
 
     if (!tree || !tree.nodeMap.get(value)) {
       this.$destroy();
