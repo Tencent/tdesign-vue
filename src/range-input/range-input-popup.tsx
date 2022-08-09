@@ -58,6 +58,8 @@ export default defineComponent({
                 value: this.inputValue,
                 onChange: this.onInputChange,
                 disabled: this.disabled,
+                status: this.status,
+                tips: this.tips,
                 ...(this.rangeInputProps as Object),
               },
             }}

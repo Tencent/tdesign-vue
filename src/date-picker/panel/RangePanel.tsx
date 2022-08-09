@@ -1,10 +1,9 @@
 import { defineComponent, PropType, computed } from '@vue/composition-api';
-import dayjs from 'dayjs';
 import { useConfig, usePrefixClass } from '../../hooks/useConfig';
 import TPanelContent from './PanelContent';
 import TExtraContent from './ExtraContent';
 import { TdDateRangePickerProps } from '../type';
-import { getDefaultFormat } from '../hooks/useFormat';
+import { getDefaultFormat, parseToDayjs } from '../hooks/useFormat';
 import useTableData from '../hooks/useTableData';
 import useDisableDate from '../hooks/useDisableDate';
 
@@ -59,9 +58,6 @@ export default defineComponent({
       enableTimePicker: props.enableTimePicker,
     });
 
-    // 兼容数据格式不标准场景 YYYY-MM-D
-    const formatDate = (newDate: string, format: string) => dayjs(newDate).isValid() ? dayjs(newDate).toDate() : dayjs(newDate, format).toDate();
-
     // 是否隐藏预选状态,只有 value 有值的时候需要隐藏
     const hidePreselection = !props.panelPreselection && props.value.length === 2;
 
@@ -71,22 +67,26 @@ export default defineComponent({
       disableDate: props.disableDate,
       start:
           props.isFirstValueSelected && props.activeIndex === 1
-            ? formatDate(props.value[0] as string, format)
+            ? new Date(parseToDayjs(props.value[0], format, 'start').toDate().setHours(0, 0, 0))
             : undefined,
       end:
           props.isFirstValueSelected && props.activeIndex === 0
-            ? formatDate(props.value[1] as string, format)
+            ? new Date(parseToDayjs(props.value[1], format).toDate().setHours(23, 59, 59))
             : undefined,
     }));
 
     const startTableData = computed(() => useTableData({
       isRange: true,
-      start: props.value[0] ? formatDate(props.value[0] as string, format) : undefined,
-      end: props.value[1] ? formatDate(props.value[1] as string, format) : undefined,
+      start: props.value[0] ? parseToDayjs(props.value[0] as string, format).toDate() : undefined,
+      end: props.value[1] ? parseToDayjs(props.value[1] as string, format).toDate() : undefined,
       hoverStart:
-          !hidePreselection && props.hoverValue[0] ? formatDate(props.hoverValue[0] as string, format) : undefined,
+          !hidePreselection && props.hoverValue[0]
+            ? parseToDayjs(props.hoverValue[0] as string, format).toDate()
+            : undefined,
       hoverEnd:
-          !hidePreselection && props.hoverValue[1] ? formatDate(props.hoverValue[1] as string, format) : undefined,
+          !hidePreselection && props.hoverValue[1]
+            ? parseToDayjs(props.hoverValue[1] as string, format).toDate()
+            : undefined,
       year: props.year[0],
       month: props.month[0],
       mode: props.mode,
@@ -96,12 +96,16 @@ export default defineComponent({
 
     const endTableData = computed(() => useTableData({
       isRange: true,
-      start: props.value[0] ? formatDate(props.value[0] as string, format) : undefined,
-      end: props.value[1] ? formatDate(props.value[1] as string, format) : undefined,
+      start: props.value[0] ? parseToDayjs(props.value[0] as string, format).toDate() : undefined,
+      end: props.value[1] ? parseToDayjs(props.value[1] as string, format).toDate() : undefined,
       hoverStart:
-          !hidePreselection && props.hoverValue[0] ? formatDate(props.hoverValue[0] as string, format) : undefined,
+          !hidePreselection && props.hoverValue[0]
+            ? parseToDayjs(props.hoverValue[0] as string, format).toDate()
+            : undefined,
       hoverEnd:
-          !hidePreselection && props.hoverValue[1] ? formatDate(props.hoverValue[1] as string, format) : undefined,
+          !hidePreselection && props.hoverValue[1]
+            ? parseToDayjs(props.hoverValue[1] as string, format).toDate()
+            : undefined,
       year: props.year[1],
       month: props.month[1],
       mode: props.mode,
@@ -172,6 +176,7 @@ export default defineComponent({
                     year: this.year[0],
                     month: this.month[0],
                     time: this.time[0],
+                    value: this.value,
                     tableData: startTableData,
                     ...panelContentProps,
                   },
@@ -185,6 +190,7 @@ export default defineComponent({
                     year: this.year[1],
                     month: this.month[1],
                     time: this.time[1],
+                    value: this.value,
                     tableData: endTableData,
                     ...panelContentProps,
                   },
@@ -200,6 +206,7 @@ export default defineComponent({
                   year: this.activeIndex ? this.year[1] : this.year[0],
                   month: this.activeIndex ? this.month[1] : this.month[0],
                   time: this.activeIndex ? this.time[1] : this.time[0],
+                  value: this.value,
                   tableData: this.activeIndex ? endTableData : startTableData,
                   ...panelContentProps,
                 },

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tdesign-demo__table">
     <div>
       <t-checkbox v-model="highlightSelectedRow">高亮行选中</t-checkbox>
       <t-checkbox v-model="selectedOnRowClick">整行选中</t-checkbox>

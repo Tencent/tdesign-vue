@@ -9,7 +9,9 @@ import { PropType } from 'vue';
 
 export default {
   /** 输入框高亮状态序号 */
-  activeIndex: Number,
+  activeIndex: {
+    type: Number,
+  },
   /** 是否可清空 */
   clearable: Boolean,
   /** 是否禁用范围输入框，值为数组表示可分别控制某一个输入框是否禁用 */
@@ -75,6 +77,7 @@ export default {
   /** 范围输入框的值 */
   value: {
     type: Array as PropType<TdRangeInputProps['value']>,
+    default: undefined,
   },
   /** 范围输入框的值，非受控属性 */
   defaultValue: {

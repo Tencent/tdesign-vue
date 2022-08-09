@@ -2,7 +2,7 @@ import { defineComponent, computed } from '@vue/composition-api';
 import dayjs from 'dayjs';
 
 import useSingleValue from './hooks/useSingleValue';
-import useFormat from './hooks/useFormat';
+import { formatDate, getDefaultFormat } from './hooks/useFormat';
 import { subtractMonth, addMonth, extractTimeObj } from '../_common/js/date-picker/utils';
 import type {
   DateValue,
@@ -10,20 +10,35 @@ import type {
   DatePickerYearChangeTrigger,
   DatePickerMonthChangeTrigger,
 } from './type';
-import props from './date-picker-panel-props';
+
+import datePickerPanelProps from './date-picker-panel-props';
+import datePickerProps from './props';
 
 import TSinglePanel from './panel/SinglePanel';
 
 export default defineComponent({
   name: 'TDatePickerPanel',
-  props,
+  props: {
+    value: datePickerProps.value,
+    defaultValue: datePickerProps.defaultValue,
+    valueType: datePickerProps.valueType,
+    disabled: datePickerProps.disabled,
+    disableDate: datePickerProps.disableDate,
+    enableTimePicker: datePickerProps.enableTimePicker,
+    firstDayOfWeek: datePickerProps.firstDayOfWeek,
+    format: datePickerProps.format,
+    mode: datePickerProps.mode,
+    presets: datePickerProps.presets,
+    presetsPlacement: datePickerProps.presetsPlacement,
+    timePickerProps: datePickerProps.timePickerProps,
+    ...datePickerPanelProps,
+  },
   setup(props: TdDatePickerPanelProps, { emit }) {
     const {
       cacheValue, value, year, month, time, onChange,
     } = useSingleValue(props);
 
-    const formatRef = computed(() => useFormat({
-      value: value.value,
+    const formatRef = computed(() => getDefaultFormat({
       mode: props.mode,
       format: props.format,
       valueType: props.valueType,
@@ -41,12 +56,15 @@ export default defineComponent({
         month.value = date.getMonth();
       }
       if (props.enableTimePicker) {
-        cacheValue.value = formatRef.value.formatDate(date);
+        cacheValue.value = formatDate(date, { format: formatRef.value.format, targetFormat: formatRef.value.format });
       } else {
-        onChange?.(formatRef.value.formatDate(date, { formatType: 'valueType' }) as DateValue, {
-          dayjsValue: dayjs(date),
-          trigger: 'pick',
-        });
+        onChange?.(
+          formatDate(date, { format: formatRef.value.format, targetFormat: formatRef.value.valueType }) as DateValue,
+          {
+            dayjsValue: dayjs(date),
+            trigger: 'pick',
+          },
+        );
       }
     }
 
@@ -56,7 +74,13 @@ export default defineComponent({
         prev: 'arrow-previous',
         next: 'arrow-next',
       };
-      const monthCountMap = { date: 1, month: 12, year: 120 };
+      const monthCountMap = {
+        date: 1,
+        week: 1,
+        month: 12,
+        quarter: 12,
+        year: 120,
+      };
       const monthCount = monthCountMap[props.mode] || 0;
 
       const current = new Date(year.value, month.value);
@@ -119,7 +143,7 @@ export default defineComponent({
         : dayjs(cacheValue.value as string, formatRef.value.format);
       const nextDate = currentDate.hour(nextHours).minute(minutes).second(seconds).millisecond(milliseconds)
         .toDate();
-      cacheValue.value = formatRef.value.formatDate(nextDate);
+      cacheValue.value = formatDate(nextDate, { format: formatRef.value.format, targetFormat: formatRef.value.format });
 
       props.onTimeChange?.({
         time: val,
@@ -135,10 +159,16 @@ export default defineComponent({
 
     // 确定
     function onConfirmClick({ e }: { e: MouseEvent }) {
-      onChange?.(formatRef.value.formatDate(cacheValue.value, { formatType: 'valueType' }) as DateValue, {
-        dayjsValue: dayjs(cacheValue.value as string),
-        trigger: 'confirm',
-      });
+      onChange?.(
+        formatDate(cacheValue.value, {
+          format: formatRef.value.format,
+          targetFormat: formatRef.value.valueType,
+        }) as DateValue,
+        {
+          dayjsValue: dayjs(cacheValue.value as string),
+          trigger: 'confirm',
+        },
+      );
       props.onConfirm?.({ date: dayjs(cacheValue.value as string).toDate(), e });
       emit('confirm', { date: dayjs(cacheValue.value as string).toDate(), e });
     }
@@ -146,10 +176,13 @@ export default defineComponent({
     // 预设
     function onPresetClick(presetValue: DateValue | (() => DateValue), { e, preset }: any) {
       const presetVal = typeof presetValue === 'function' ? presetValue() : presetValue;
-      onChange?.(formatRef.value.formatDate(presetVal, { formatType: 'valueType' }) as DateValue, {
-        dayjsValue: dayjs(presetVal),
-        trigger: 'preset',
-      });
+      onChange?.(
+        formatDate(presetVal, { format: formatRef.value.format, targetFormat: formatRef.value.valueType }) as DateValue,
+        {
+          dayjsValue: dayjs(presetVal),
+          trigger: 'preset',
+        },
+      );
       props.onPresetClick?.({ e, preset });
       emit('preset-click', { e, preset });
     }

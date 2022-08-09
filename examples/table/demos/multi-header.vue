@@ -1,6 +1,6 @@
 <template>
   <!-- 注意控制父元素宽度 -->
-  <div style="width: 100%" class="tdesign-demo-block-column-large tdesign-demo-table-multi-header">
+  <div style="width: 100%" class="tdesign-demo-block-column-large tdesign-demo-table-multi-heade tdesign-demo__tabler">
     <!-- 按钮操作区域 -->
     <div>
       <t-checkbox v-model="bordered">显示表格边框</t-checkbox>

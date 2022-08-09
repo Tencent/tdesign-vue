@@ -7,12 +7,12 @@ import get from 'lodash/get';
 import pick from 'lodash/pick';
 import TrElement, { TrProps, ROW_LISTENERS, TABLE_PROPS } from './tr';
 import { useConfig } from '../config-provider/useConfig';
-import { BaseTableProps, RowAndColFixedPosition } from './interface';
-
 import { useTNodeJSX } from '../hooks/tnode';
 import useClassName from './hooks/useClassName';
 import baseTableProps from './base-table-props';
 import useRowspanAndColspan from './hooks/useRowspanAndColspan';
+import { BaseTableProps, RowAndColFixedPosition } from './interface';
+import { TdBaseTableProps } from './type';
 
 export const ROW_AND_TD_LISTENERS = ROW_LISTENERS.concat('cell-click');
 export interface TableBodyProps extends BaseTableProps {
@@ -31,6 +31,7 @@ export interface TableBodyProps extends BaseTableProps {
   trs: Map<number, object>;
   bufferSize: number;
   tableContentElm: HTMLDivElement;
+  cellEmptyContent: TdBaseTableProps['cellEmptyContent'];
   handleRowMounted: () => void;
 }
 
@@ -46,6 +47,7 @@ export const extendTableProps = [
   'lastFullRow',
   'rowspanAndColspan',
   'scroll',
+  'cellEmptyContent',
   'onCellClick',
   'onPageChange',
   'onRowClick',

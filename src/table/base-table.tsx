@@ -331,10 +331,12 @@ export default defineComponent({
       opacity: headerOpacity,
       marginTop: onlyVirtualScrollBordered ? `${borderWidth}px` : 0,
     };
+    // 多级表头左边线缺失
+    const affixedMultipleHeaderLeftBorder = this.bordered && this.isMultipleHeader ? 1 : 0;
     const affixedHeader = Boolean((this.headerAffixedTop || this.isVirtual) && this.tableWidth) && (
       <div
         ref="affixHeaderRef"
-        style={{ width: `${this.tableWidth - 1}px`, opacity: headerOpacity }}
+        style={{ width: `${this.tableWidth - affixedMultipleHeaderLeftBorder}px`, opacity: headerOpacity }}
         class={['scrollbar', { [this.tableBaseClass.affixedHeaderElm]: this.headerAffixedTop || this.isVirtual }]}
       >
         <table class={this.tableElmClasses} style={{ ...this.tableElementStyles, width: `${this.tableElmWidth}px` }}>
@@ -427,6 +429,7 @@ export default defineComponent({
       trs: this.trs,
       bufferSize: this.bufferSize,
       scroll: this.scroll,
+      cellEmptyContent: this.cellEmptyContent,
       handleRowMounted: this.handleRowMounted,
       renderExpandedRow: this.renderExpandedRow,
       ...pick(this.$props, extendTableProps),
@@ -485,7 +488,11 @@ export default defineComponent({
     const topContent = this.renderTNode('topContent');
     const bottomContent = this.renderTNode('bottomContent');
     const pagination = (
-      <div ref="paginationRef" style={{ opacity: Number(this.showAffixPagination) }}>
+      <div
+        ref="paginationRef"
+        class={this.tableBaseClass.paginationWrap}
+        style={{ opacity: Number(this.showAffixPagination) }}
+      >
         {this.renderPagination(h)}
       </div>
     );

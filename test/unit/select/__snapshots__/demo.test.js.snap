@@ -286,7 +286,7 @@ exports[`Select Select creatableVue demo works fine 1`] = `
 <div>
   <div
     class="t-select__wrap"
-    style="width: 200px;"
+    style="width: 200px; display: inline-block; margin: 0px 20px 20px 0px;"
   >
     <div
       class="t-input__wrap t-select-input--empty t-select"
@@ -300,7 +300,50 @@ exports[`Select Select creatableVue demo works fine 1`] = `
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder="支持自定义创建"
+          placeholder="单选支持自定义创建"
+          type="text"
+          unselectable="off"
+        />
+        <span
+          class="t-input__suffix t-input__suffix-icon"
+        >
+          <svg
+            class="t-fake-arrow t-select__right-icon"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+              stroke="black"
+              stroke-opacity="0.9"
+              stroke-width="1.3"
+            />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="t-select__wrap"
+    style="width: 400px; display: inline-block;"
+  >
+    <div
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-select"
+    >
+      <div
+        class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
+      >
+        <div
+          class="t-input__prefix"
+        />
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder="多选支持自定义创建"
           type="text"
           unselectable="off"
         />
@@ -647,7 +690,7 @@ exports[`Select Select disabledVue demo works fine 1`] = `
       class="t-input__wrap t-select-input--empty t-select"
     >
       <div
-        class="t-input t-size-m t-is-disabled t-is-default t-is-readonly t-input--prefix t-input--suffix"
+        class="t-input t-size-m t-is-disabled t-is-default t-input--prefix t-input--suffix"
       >
         <div
           class="t-input__prefix"
@@ -657,9 +700,8 @@ exports[`Select Select disabledVue demo works fine 1`] = `
           class="t-input__inner"
           disabled="disabled"
           placeholder="-请选择-"
-          readonly="readonly"
           type="text"
-          unselectable="on"
+          unselectable="off"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -1158,7 +1200,7 @@ exports[`Select Select multipleVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            1
+            云服务器
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -1176,7 +1218,7 @@ exports[`Select Select multipleVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            2
+            云数据库
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -1194,7 +1236,7 @@ exports[`Select Select multipleVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            3
+            域名注册
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -1212,7 +1254,7 @@ exports[`Select Select multipleVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            4
+            网站备案
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -1230,7 +1272,7 @@ exports[`Select Select multipleVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            5
+            对象存储
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -1248,7 +1290,7 @@ exports[`Select Select multipleVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            6
+            低代码平台
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -1754,7 +1796,9 @@ exports[`Select Select remoteSearchVue demo works fine 1`] = `
 `;
 
 exports[`Select Select sizeVue demo works fine 1`] = `
-<div>
+<div
+  class="tdesign-select-size-demo"
+>
   <div
     class="t-select__wrap"
     style="width: 200px; display: inline-block; margin-right: 20px;"

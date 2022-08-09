@@ -13,6 +13,7 @@ import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { PaginationConfig } from '../config-provider/config-receiver';
 import TInputNumber from '../input-number';
 import { Select, Option } from '../select';
+import TInputAdornment from '../input-adornment';
 import CLASSNAMES from '../utils/classnames';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import props from './props';
@@ -39,6 +40,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
     ChevronLeftDoubleIcon,
     EllipsisIcon,
     TInputNumber,
+    TInputAdornment,
     TSelect: Select,
     TOption: Option,
   },
@@ -304,6 +306,25 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
   },
 
   render() {
+    const Jumper = (
+      <div class={this.jumperClass}>
+        {this.t(this.global.jumpTo)}
+        <t-input-adornment append={`/ ${this.pageCount} ${this.t(this.global.page)}`}>
+          <t-input-number
+            class={this.jumperInputClass}
+            v-model={this.jumpIndex}
+            onBlur={this.onJumperChange}
+            onEnter={this.onJumperChange}
+            max={this.pageCount}
+            min={min}
+            size={this.size}
+            theme="normal"
+            placeholder=""
+          />
+        </t-input-adornment>
+      </div>
+    );
+
     return (
       <div class={this.paginationClass}>
         {/* 数据统计区 */}
@@ -380,17 +401,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
           </ul>
         ) : null}
         {/* 极简版 */}
-        {this.showPageNumber && this.theme === 'simple' ? (
-          <t-select
-            size={this.size}
-            value={this.current}
-            disabled={this.disabled}
-            class={this.simpleClass}
-            onChange={this.toPage}
-            options={this.pageCountOption}
-            autoWidth={true}
-          />
-        ) : null}
+        {this.theme === 'simple' && Jumper}
         {/* 向后按钮 */}
         {this.showPreviousAndNextBtn ? (
           <div
@@ -411,24 +422,8 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
             <page-last-icon />
           </div>
         ) : null}
-        {/* 跳转 */}
-        {this.showJumper ? (
-          <div class={this.jumperClass}>
-            {this.t(this.global.jumpTo)}
-            <t-input-number
-              class={this.jumperInputClass}
-              v-model={this.jumpIndex}
-              onBlur={this.onJumperChange}
-              onEnter={this.onJumperChange}
-              max={this.pageCount}
-              min={min}
-              size={this.size}
-              theme="normal"
-              placeholder=""
-            />
-            {this.t(this.global.page)}
-          </div>
-        ) : null}
+        {/* 快速跳转 */}
+        {this.theme === 'default' && this.showJumper && Jumper}
       </div>
     );
   },

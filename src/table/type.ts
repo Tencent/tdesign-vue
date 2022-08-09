@@ -35,6 +35,11 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   bottomContent?: string | TNode;
   /**
+   * 单元格数据为空，呈现的内容
+   * @default ''
+   */
+  cellEmptyContent?: string | TNode<BaseTableCellParams<T>>;
+  /**
    * 列配置，泛型 T 指表格数据类型
    * @default []
    */
@@ -285,7 +290,7 @@ export interface BaseTableCol<T extends TableRowData = TableRowData> {
    */
   foot?: string | TNode<{ col: BaseTableCol; colIndex: number }>;
   /**
-   * 透传 CSS 属性 `min-width` 到 `<col>` 元素。⚠️ 仅少部分浏览器支持，如：使用 [TablesNG](https://docs.google.com/document/d/16PFD1GtMI9Zgwu0jtPaKZJ75Q2wyZ9EZnVbBacOfiNA/preview)  渲染的 Chrome 浏览器支持 `minWidth`
+   * 透传 CSS 属性 `min-width` 到 `<col>` 元素。⚠️ 仅少部分浏览器支持，如：使用 [TablesNG](https://docs.google.com/document/d/16PFD1GtMI9Zgwu0jtPaKZJ75Q2wyZ9EZnVbBacOfiNA/preview) 渲染的 Chrome 浏览器支持 `minWidth`
    */
   minWidth?: string | number;
   /**
@@ -301,7 +306,7 @@ export interface BaseTableCol<T extends TableRowData = TableRowData> {
    */
   title?: string | TNode<{ col: BaseTableCol; colIndex: number }>;
   /**
-   * 列宽，可以作为最小宽度使用。当列宽总和小于 `table` 元素时，浏览器根据宽度设置情况等比例分配宽度；当列宽总和大于 `table` 元素，表现为定宽。可以同时调整 `table` 元素的宽度来达到自己想要的效果
+   * 列宽，可以作为最小宽度使用。当列宽总和小于 `table` 元素时，浏览器根据宽度设置情况自动分配宽度；当列宽总和大于 `table` 元素，表现为定宽。可以同时调整 `table` 元素的宽度来达到自己想要的效果
    */
   width?: string | number;
 }
@@ -474,7 +479,7 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   onRowEdit?: (context: PrimaryTableRowEditContext<T>) => void;
   /**
-   * 行编辑校验完成后触发。`result` 表示校验结果，`trigger=self` 表示编辑组件内部触发的校验，`trigger='parent'` 表示表格父组件触发的校验
+   * 行编辑校验完成后触发，即组件实例方法 `validateRowData` 执行结束后触发。`result` 表示校验结果，`trigger=self` 表示编辑组件内部触发的校验，`trigger='parent'` 表示表格父组件触发的校验
    */
   onRowValidate?: (context: PrimaryTableRowValidateContext<T>) => void;
   /**
@@ -485,14 +490,22 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    * 排序发生变化时触发。其中 sortBy 表示当前排序的字段，sortType 表示排序的方式，currentDataSource 表示 sorter 排序后的结果，col 表示列配置。sort 值类型为数组时表示多字段排序
    */
   onSortChange?: (sort: TableSort, options: SortOptions<T>) => void;
+  /**
+   * 可编辑行表格，全部数据校验完成后触发。即组件实例方法 `validateTableData` 执行结束后触发
+   */
+  onValidate?: (context: PrimaryTableValidateContext) => void;
 }
 
 /** 组件实例方法 */
 export interface PrimaryTableInstanceFunctions<T extends TableRowData = TableRowData> {
   /**
-   * 校验行信息，校验完成后，会触发事件 `onRowEdit`。参数 `rowValue` 表示行唯一标识的值
+   * 校验行信息，校验完成后，会触发事件 `onRowValidate`。参数 `rowValue` 表示行唯一标识的值
    */
   validateRowData: (rowValue: any) => void;
+  /**
+   * 校验表格全部数据，校验完成后，会触发事件 `onValidate`
+   */
+  validateTableData: () => void;
 }
 
 export interface PrimaryTableCol<T extends TableRowData = TableRowData>
@@ -952,7 +965,9 @@ export interface ExpandOptions<T> {
 
 export type PrimaryTableRowEditContext<T> = PrimaryTableCellParams<T> & { value: any };
 
-export type PrimaryTableRowValidateContext<T> = { result: TableRowValidateResult<T>[]; trigger: 'self' | 'parent' };
+export type PrimaryTableRowValidateContext<T> = { result: TableRowValidateResult<T>[]; trigger: TableValidateTrigger };
+
+export type TableValidateTrigger = 'self' | 'parent';
 
 export type TableRowValidateResult<T> = PrimaryTableCellParams<T> & { errorList: AllValidateResult[]; value: any };
 
@@ -967,6 +982,12 @@ export interface SortOptions<T> {
   currentDataSource?: Array<T>;
   col: PrimaryTableCol;
 }
+
+export interface PrimaryTableValidateContext {
+  result: TableErrorListMap;
+}
+
+export type TableErrorListMap = { [key: string]: AllValidateResult[] };
 
 export interface PrimaryTableCellParams<T> {
   row: T;

@@ -107,6 +107,14 @@ export default {
       return ['large', 'medium', 'small'].includes(val);
     },
   },
+  /** 输入框状态 */
+  status: {
+    type: String as PropType<TdCascaderProps['status']>,
+    validator(val: TdCascaderProps['status']): boolean {
+      if (!val) return true;
+      return ['default', 'success', 'warning', 'error'].includes(val);
+    },
+  },
   /** 透传 TagInput 标签输入框组件的全部属性 */
   tagInputProps: {
     type: Object as PropType<TdCascaderProps['tagInputProps']>,
@@ -114,6 +122,10 @@ export default {
   /** 透传 Tag 标签组件全部属性 */
   tagProps: {
     type: Object as PropType<TdCascaderProps['tagProps']>,
+  },
+  /** 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式 */
+  tips: {
+    type: [String, Function] as PropType<TdCascaderProps['tips']>,
   },
   /** 展开下一层级的方式 */
   trigger: {
@@ -132,7 +144,7 @@ export default {
   /** 选中项的值，非受控属性 */
   defaultValue: {
     type: [String, Number, Array] as PropType<TdCascaderProps['defaultValue']>,
-    default: undefined,
+    default: (): TdCascaderProps['defaultValue'] => [],
   },
   /** 选中值模式。all 表示父节点和子节点全部会出现在选中值里面；parentFirst 表示当子节点全部选中时，仅父节点在选中值里面；onlyLeaf 表示无论什么情况，选中值仅呈现叶子节点 */
   valueMode: {

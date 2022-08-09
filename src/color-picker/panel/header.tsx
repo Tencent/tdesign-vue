@@ -32,9 +32,6 @@ export default defineComponent({
   setup(props) {
     const baseClassName = useBaseClassName();
     const modeValue = ref(props.mode);
-    const handleClosePopup = () => {
-      props.togglePopup?.(false);
-    };
     watch(
       () => props.mode,
       (v) => {
@@ -44,10 +41,12 @@ export default defineComponent({
     return {
       baseClassName,
       modeValue,
-      handleClosePopup,
     };
   },
   render() {
+    if (this.colorModes?.length === 1) {
+      return null;
+    }
     const { baseClassName } = this;
     return (
       <div class={`${baseClassName}__head`}>
@@ -69,15 +68,6 @@ export default defineComponent({
             </t-radio-group>
           )}
         </div>
-        {this.closeBtn ? (
-          <span
-            role="button"
-            class={[`${baseClassName}__icon`, `${baseClassName}__close`]}
-            onClick={this.handleClosePopup}
-          >
-            <close-icon />
-          </span>
-        ) : null}
       </div>
     );
   },

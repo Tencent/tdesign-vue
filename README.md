@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/npm/v/tdesign-vue.svg?sanitize=true" alt="Version">
   </a>
   <a href="https://www.npmjs.com/package/tdesign-vue">
-    <img src="https://img.shields.io/npm/dt/tdesign-vue" alt="Downloads">
+    <img src="https://img.shields.io/npm/dm/tdesign-vue" alt="Downloads">
   </a>
 </p>
 

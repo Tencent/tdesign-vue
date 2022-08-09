@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-container t-table-demo-sort">
+  <div class="demo-container t-table-demo-sort tdesign-demo__table">
     <div class="item">
       <!-- 拖拽排序涉及到 data 的变更，相对比较慎重，因此仅支持受控用法 -->
 

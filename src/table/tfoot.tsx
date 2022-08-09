@@ -120,7 +120,7 @@ export default defineComponent({
         </tr>
       );
     });
-    const footerSummary = this.renderTNode('footer-summary');
+    const footerSummary = this.renderTNode('footerSummary');
     // 都不存在，则不需要渲染 footer
     if (!footerSummary && (!this.footData || !this.footData.length)) return null;
     return (
