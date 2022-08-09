@@ -496,9 +496,6 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
   render(): VNode {
     const { classList, $proxyScope, treeNodeViews } = this;
 
-    // 用于性能调试
-    // console.log('tree render');
-
     // 一些选项的变化，要传递到子节点去
     this.updateStoreConfig();
     this.updateTreeScope();

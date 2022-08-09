@@ -12077,7 +12077,7 @@ exports[`ssr snapshot test renders ./examples/select/demos/remote-search.vue cor
 `;
 
 exports[`ssr snapshot test renders ./examples/select/demos/size.vue correctly 1`] = `
-<div>
+<div class="tdesign-select-size-demo">
   <div class="t-select__wrap" style="width:200px;display:inline-block;margin-right:20px;">
     <div class="t-input__wrap t-select-input--empty t-select">
       <div class="t-input t-size-s t-is-default t-is-readonly t-input--prefix t-input--suffix">

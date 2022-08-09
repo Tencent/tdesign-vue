@@ -1,19 +1,14 @@
 <template>
-  <div>
+  <div class="tdesign-select-size-demo">
     <t-select
       size="small"
       v-model="value1"
       :popupProps="popupProps"
       placeholder="请选择"
-      style="width: 200px;display: inline-block;margin-right: 20px;"
+      style="width: 200px; display: inline-block; margin-right: 20px"
       clearable
     >
-      <t-option
-        v-for="(item, index) in options"
-        :value="item.value"
-        :label="item.label"
-        :key="index"
-      >
+      <t-option v-for="(item, index) in options" :value="item.value" :label="item.label" :key="index">
         {{ item.label }}
       </t-option>
     </t-select>
@@ -22,14 +17,14 @@
       placeholder="请选择"
       :options="options"
       size="medium"
-      style="width: 200px;display: inline-block;margin-right: 20px;"
+      style="width: 200px; display: inline-block; margin-right: 20px"
     />
     <t-select
       v-model="value2"
       placeholder="请选择"
       :options="options"
       size="large"
-      style="width: 200px;display: inline-block;"
+      style="width: 200px; display: inline-block"
     />
   </div>
 </template>
@@ -55,3 +50,9 @@ export default {
   },
 };
 </script>
+<style scoped>
+.tdesign-select-size-demo {
+  display: flex;
+  align-items: center;
+}
+</style>
