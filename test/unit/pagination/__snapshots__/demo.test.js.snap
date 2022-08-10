@@ -450,7 +450,6 @@ exports[`Pagination Pagination customizableVue demo works fine 1`] = `
         >
           <div
             class="t-input t-size-m t-is-default"
-            ref="refInputElem"
           >
             <input
               autocomplete="off"
@@ -626,7 +625,6 @@ exports[`Pagination Pagination disabledVue demo works fine 1`] = `
         >
           <div
             class="t-input t-size-m t-is-default"
-            ref="refInputElem"
           >
             <input
               autocomplete="off"
@@ -906,7 +904,6 @@ exports[`Pagination Pagination jumpVue demo works fine 1`] = `
         >
           <div
             class="t-input t-size-m t-is-default"
-            ref="refInputElem"
           >
             <input
               autocomplete="off"

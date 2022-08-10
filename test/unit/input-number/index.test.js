@@ -221,7 +221,7 @@ describe('InputNumber', () => {
       const fn = jest.fn();
       const wrapper = mount({
         render() {
-          return <InputNumber onBlur={fn} />;
+          return <InputNumber on={{ blur: fn }} />;
         },
       });
       const inputWrapper = wrapper.findComponent(InputNumber);
@@ -234,7 +234,7 @@ describe('InputNumber', () => {
       const fn = jest.fn();
       const wrapper = mount({
         render() {
-          return <InputNumber onKeydown={fn} />;
+          return <InputNumber on={{ keydown: fn }} />;
         },
       });
       const inputWrapper = wrapper.findComponent(InputNumber);
@@ -247,7 +247,7 @@ describe('InputNumber', () => {
       const fn = jest.fn();
       const wrapper = mount({
         render() {
-          return <InputNumber onKeyup={fn} />;
+          return <InputNumber on={{ keyup: fn }} />;
         },
       });
       const inputWrapper = wrapper.findComponent(InputNumber);
@@ -260,7 +260,7 @@ describe('InputNumber', () => {
       const fn = jest.fn();
       const wrapper = mount({
         render() {
-          return <InputNumber onKeypress={fn} />;
+          return <InputNumber on={{ keypress: fn }} />;
         },
       });
       const inputWrapper = wrapper.findComponent(InputNumber);
