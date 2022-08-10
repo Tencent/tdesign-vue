@@ -18,8 +18,8 @@ docClass: timeline
 - `ColorPicker`: 优化组件样式 @S-mohan ([#1250](https://github.com/Tencent/tdesign-vue/pull/1250))
 - `Select`
   - 修复开启虚拟滚动配合自定义面板使用卡顿的问题 @skytt ([#1247](https://github.com/Tencent/tdesign-vue/pull/1247))
-  - 修复使用 `t-opiton` 自定义选项无法动态筛选问题 @skytt ([#1247](https://github.com/Tencent/tdesign-vue/pull/1247))
-  - 修复 `t-opiton` 配合远程搜索使用异常的问题 @skytt ([#1247](https://github.com/Tencent/tdesign-vue/pull/1247))
+  - 修复使用 `t-option` 自定义选项无法动态筛选问题 @skytt ([#1247](https://github.com/Tencent/tdesign-vue/pull/1247))
+  - 修复 `t-option` 配合远程搜索使用异常的问题 @skytt ([#1247](https://github.com/Tencent/tdesign-vue/pull/1247))
   - 修复 `empty` 与 `loadingText` 在传参为 `string` 类型时，包裹元素消失的问题 @skytt ([#1247](https://github.com/Tencent/tdesign-vue/pull/1247))
   - 修复 `loadingText` slot 失效的问题 @skytt ([#1247](https://github.com/Tencent/tdesign-vue/pull/1247))
   - 处理 group-option 下 style 和 class 的透传 @skytt ([#1258](https://github.com/Tencent/tdesign-vue/pull/1258))
