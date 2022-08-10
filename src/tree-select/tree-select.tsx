@@ -520,7 +520,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
             {this.showArrow && !this.showLoading && (
               <FakeArrow
                 overlayClassName={`${prefix}-select__right-icon ${prefix}-select__right-icon-polyfill`}
-                overlayInnerStyle={iconStyle}
+                overlayStyle={iconStyle}
                 isActive={this.visible && !this.tDisabled}
               />
             )}
