@@ -3,7 +3,7 @@ import { AllValidateResult, FormRule, ValidateResultType } from '../form/type';
 // 允许 Form 统一控制的表单
 export const FORM_CONTROL_COMPONENTS = [
   'TInput',
-  'TInputNumber',
+  // 'TInputNumber', 组件已重构为 composition-api，这里的设置已失效，故而去除
   'TTextarea',
   'TCascader',
   'TSelect',

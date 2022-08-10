@@ -3321,7 +3321,6 @@ exports[`ConfigProvider ConfigProvider paginationVue demo works fine 1`] = `
         >
           <div
             class="t-input t-size-m t-is-default"
-            ref="refInputElem"
           >
             <input
               autocomplete="off"
