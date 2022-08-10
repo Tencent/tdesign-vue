@@ -45,7 +45,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
         trigger: 'click',
         placement: 'bottom-left',
         overlayClassName: '',
-        overlayStyle: (trigger) => ({
+        overlayInnerStyle: (trigger) => ({
           width: `${trigger.offsetWidth}px`,
         }),
       } as PopupProps,
@@ -503,7 +503,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
           disabled={this.tDisabled}
           placement={popupObject.placement}
           trigger={popupObject.trigger}
-          overlayStyle={popupObject.overlayStyle}
+          overlayInnerStyle={popupObject.overlayInnerStyle}
           overlayClassName={popupClass}
           on={{ 'visible-change': this.popupVisibleChange }}
           expandAnimation={true}
@@ -520,7 +520,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
             {this.showArrow && !this.showLoading && (
               <FakeArrow
                 overlayClassName={`${prefix}-select__right-icon ${prefix}-select__right-icon-polyfill`}
-                overlayStyle={iconStyle}
+                overlayInnerStyle={iconStyle}
                 isActive={this.visible && !this.tDisabled}
               />
             )}

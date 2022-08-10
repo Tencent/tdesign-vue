@@ -102,7 +102,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
       showTooltip: true,
       trigger: 'hover',
       showArrow: true,
-      overlayStyle: undefined,
+      overlayInnerStyle: undefined,
       overlayClassName: undefined,
       attach: 'body',
       destroyOnClose: null,
@@ -133,7 +133,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
     setTooltipProps() {
       if (this.tooltipProps instanceof Object) {
         const {
-          trigger, destroyOnClose, showArrow, overlayStyle, overlayClassName, attach,
+          trigger, destroyOnClose, showArrow, overlayInnerStyle, overlayClassName, attach,
         } = this.tooltipProps;
         if (!this.empty(trigger)) {
           this.trigger = trigger;
@@ -143,7 +143,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
           this.showArrow = showArrow;
         }
 
-        this.overlayStyle = overlayStyle;
+        this.overlayInnerStyle = overlayInnerStyle;
         this.overlayClassName = overlayClassName;
         if (!this.empty(attach)) {
           this.attach = attach as string;

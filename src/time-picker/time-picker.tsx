@@ -147,7 +147,7 @@ export default defineComponent({
                 />
               ),
               popupProps: {
-                overlayStyle: { width: 'auto' },
+                overlayInnerStyle: { width: 'auto' },
                 onVisibleChange: this.handleShowPopup,
                 ...(this.popupProps as object),
               },

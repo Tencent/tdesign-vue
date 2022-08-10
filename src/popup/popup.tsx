@@ -89,7 +89,6 @@ export default Vue.extend({
           [`${prefixCls}__content--arrow`]: this.showArrow,
           [commonCls.STATUS.disabled]: this.disabled,
         },
-        this.overlayClassName,
       ];
     },
     hasTrigger(): Record<typeof triggers[number], boolean> {
@@ -130,8 +129,8 @@ export default Vue.extend({
         this.mouseInRange = false;
       }
     },
-    overlayStyle() {
-      this.updateOverlayStyle();
+    overlayInnerStyle() {
+      this.updateOverlayInnerStyle();
       this.updatePopper();
     },
     placement() {
@@ -216,7 +215,7 @@ export default Vue.extend({
                 },
               },
             ],
-        placement: getPopperPlacement(this.placement),
+        placement: getPopperPlacement(this.placement as TdPopupProps['placement']),
         onFirstUpdate: () => {
           this.$nextTick(this.updatePopper);
         },
@@ -231,16 +230,28 @@ export default Vue.extend({
         this.updateScrollTop?.(overlayEl);
       }
     },
-    updateOverlayStyle() {
+    getOverlayStyle() {
       const { overlayStyle } = this;
       const triggerEl = this.$el as HTMLElement;
       const overlayEl = this.$refs?.overlay as HTMLElement;
 
       if (!triggerEl || !overlayEl) return;
       if (typeof overlayStyle === 'function') {
-        setStyle(overlayEl, overlayStyle(triggerEl, overlayEl));
-      } else if (typeof overlayStyle === 'object') {
-        setStyle(overlayEl, overlayStyle);
+        return overlayStyle(triggerEl, overlayEl);
+      } if (typeof overlayStyle === 'object') {
+        return overlayStyle;
+      }
+    },
+    updateOverlayInnerStyle() {
+      const { overlayInnerStyle } = this;
+      const triggerEl = this.$el as HTMLElement;
+      const overlayEl = this.$refs?.overlay as HTMLElement;
+
+      if (!triggerEl || !overlayEl) return;
+      if (typeof overlayInnerStyle === 'function') {
+        setStyle(overlayEl, overlayInnerStyle(triggerEl, overlayEl));
+      } else if (typeof overlayInnerStyle === 'object') {
+        setStyle(overlayEl, overlayInnerStyle);
       }
     },
 
@@ -358,9 +369,13 @@ export default Vue.extend({
       ? h(
         'div',
         {
-          class: prefixCls,
+          class: [prefixCls, this.overlayClassName],
           ref: 'popper',
-          style: [hidePopup && { visibility: 'hidden', pointerEvents: 'none' }, { zIndex: this.zIndex }],
+          style: [
+            hidePopup && { visibility: 'hidden', pointerEvents: 'none' },
+            { zIndex: this.zIndex },
+            this.getOverlayStyle(),
+          ],
           directives: destroyOnClose
             ? undefined
             : [
@@ -414,7 +429,7 @@ export default Vue.extend({
         onContentMounted={() => {
           if (visible) {
             this.updatePopper();
-            this.updateOverlayStyle();
+            this.updateOverlayInnerStyle();
           }
         }}
         onResize={() => {
