@@ -3,7 +3,7 @@ import Popup from '../popup';
 import { usePrefixClass } from '../hooks/useConfig';
 import RangeInput from './range-input';
 import props from './range-input-popup-props';
-import useOverlayStyle from '../select-input/useOverlayStyle';
+import useOverlayInnerStyle from '../select-input/useOverlayInnerStyle';
 
 export default defineComponent({
   name: 'TRangeInputPopup',
@@ -12,7 +12,7 @@ export default defineComponent({
   setup(props) {
     const COMPONENT_NAME = usePrefixClass('range-input-popup');
 
-    const { tOverlayStyle, innerPopupVisible, onInnerPopupVisibleChange } = useOverlayStyle(props);
+    const { tOverlayInnerStyle, innerPopupVisible, onInnerPopupVisibleChange } = useOverlayInnerStyle(props);
 
     const popupClasses = computed(() => [
       COMPONENT_NAME.value,
@@ -23,7 +23,7 @@ export default defineComponent({
 
     return {
       COMPONENT_NAME,
-      tOverlayStyle,
+      tOverlayInnerStyle,
       innerPopupVisible,
       onInnerPopupVisibleChange,
       popupClasses,
@@ -32,7 +32,7 @@ export default defineComponent({
 
   render() {
     const {
-      tOverlayStyle, innerPopupVisible, onInnerPopupVisibleChange, popupClasses,
+      tOverlayInnerStyle, innerPopupVisible, onInnerPopupVisibleChange, popupClasses,
     } = this;
 
     return (
@@ -46,7 +46,7 @@ export default defineComponent({
           {...{
             props: {
               disabled: this.disabled,
-              overlayStyle: tOverlayStyle,
+              overlayInnerStyle: tOverlayInnerStyle,
               onVisibleChange: onInnerPopupVisibleChange,
               ...(this.popupProps as Object),
             },

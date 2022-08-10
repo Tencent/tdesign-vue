@@ -29,17 +29,17 @@ export default Vue.extend({
     tooltipOverlayClassName(): ClassName {
       return [`${prefix}-tooltip`, { [`${prefix}-tooltip--${this.theme}`]: this.theme }, this.overlayClassName];
     },
-    tooltipOverlayStyle(): PopupProps['overlayStyle'] {
+    tooltipOverlayInnerStyle(): PopupProps['overlayInnerStyle'] {
       if (this.placement !== 'mouse' || this.offsetX === 0) {
-        return this.overlayStyle;
+        return this.overlayInnerStyle;
       }
       const offsetStyle = (triggerEl: HTMLElement) => ({
         transform: `translateX(${this.offsetX - triggerEl.getBoundingClientRect().left}px)`,
       });
-      if (this.overlayStyle) {
+      if (this.overlayInnerStyle) {
         return (triggerEl: HTMLElement, popupEl: HTMLElement) => ({
           ...offsetStyle(triggerEl),
-          ...(isFunction(this.overlayStyle) ? this.overlayStyle(triggerEl, popupEl) : this.overlayStyle),
+          ...(isFunction(this.overlayInnerStyle) ? this.overlayInnerStyle(triggerEl, popupEl) : this.overlayInnerStyle),
         });
       }
       return offsetStyle;
@@ -89,7 +89,7 @@ export default Vue.extend({
         content: () => renderTNodeJSX(this, 'content'),
         default: () => renderContent(this, 'default', 'triggerElement'),
         overlayClassName: this.tooltipOverlayClassName,
-        overlayStyle: this.tooltipOverlayStyle,
+        overlayInnerStyle: this.tooltipOverlayInnerStyle,
       };
       // delete r.visible;
       return r;

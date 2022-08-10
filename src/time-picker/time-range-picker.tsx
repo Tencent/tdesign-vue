@@ -143,7 +143,7 @@ export default defineComponent({
               popupVisible: this.isShowPanel,
               inputValue: this.isShowPanel ? this.currentValue : this.innerValue ?? TIME_PICKER_EMPTY,
               popupProps: {
-                overlayStyle: {
+                overlayInnerStyle: {
                   width: 'auto',
                 },
                 onVisibleChange: this.handleShowPopup,
