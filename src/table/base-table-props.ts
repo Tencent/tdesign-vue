@@ -19,10 +19,9 @@ export default {
   bottomContent: {
     type: [String, Function] as PropType<TdBaseTableProps['bottomContent']>,
   },
-  /** 单元格数据为空，呈现的内容 */
+  /** 单元格数据为空时呈现的内容 */
   cellEmptyContent: {
     type: [String, Function] as PropType<TdBaseTableProps['cellEmptyContent']>,
-    default: '',
   },
   /** 列配置，泛型 T 指表格数据类型 */
   columns: {
