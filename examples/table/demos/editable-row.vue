@@ -202,50 +202,65 @@ export default {
       const { id } = e.currentTarget.dataset;
       this.currentSaveId = id;
       // 触发内部校验，而后在 onRowValidate 中接收异步校验结果
-      this.$refs.tableRef.validateRowData(id);
+      this.$refs.tableRef.validateRowData(id).then((params) => {
+        console.log('Event Table Promise Validate:', params);
+        if (params.result.length) {
+          const r = params.result[0];
+          MessagePlugin.error(`${r.col.title} ${r.errorList[0].message}`);
+          return;
+        }
+        // 如果是 table 的父组件主动触发校验
+        if (params.trigger === 'parent' && !params.result.length) {
+          const current = this.editMap[this.currentSaveId];
+          if (current) {
+            this.data.splice(current.rowIndex, 1, current.editedRow);
+            MessagePlugin.success('保存成功');
+          }
+          this.updateEditState(this.currentSaveId);
+        }
+      });
     },
 
     // 行校验反馈事件，this.$refs.tableRef.validateRowData 执行结束后触发
     onRowValidate(params) {
-      console.log('row-validate:', params);
-      if (params.result.length) {
-        const r = params.result[0];
-        MessagePlugin.error(`${r.col.title} ${r.errorList[0].message}`);
-        return;
-      }
-      // 如果是 table 的父组件主动触发校验
-      if (params.trigger === 'parent' && !params.result.length) {
-        const current = this.editMap[this.currentSaveId];
-        if (current) {
-          this.data.splice(current.rowIndex, 1, current.editedRow);
-          MessagePlugin.success('保存成功');
-        }
-        this.updateEditState(this.currentSaveId);
-      }
+      console.log('Event Table Row Validate:', params);
     },
 
     onValidateTableData() {
       // 执行结束后触发事件 validate
-      this.$refs.tableRef.validateTableData();
+      this.$refs.tableRef.validateTableData().then((params) => {
+        console.log('Promise Table Data Validate:', params);
+        const cellKeys = Object.keys(params.result);
+        const firstError = params.result[cellKeys[0]];
+        if (firstError) {
+          MessagePlugin.warning(firstError[0].message);
+        }
+      });
     },
 
     // 表格全量数据校验反馈事件，this.$refs.tableRef.validateTableData() 执行结束后触发
     onValidate(params) {
-      console.log('validate:', params);
-      const cellKeys = Object.keys(params.result);
-      const firstError = params.result[cellKeys[0]];
-      if (firstError) {
-        MessagePlugin.warning(firstError[0].message);
-      }
+      console.log('Event Table Data Validate:', params);
     },
 
     onRowEdit(params) {
-      const { row, col, value } = params;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const {
+        row, rowIndex, col, value,
+      } = params;
       const oldRowData = this.editMap[row.key]?.editedRow || row;
+      const editedRow = { ...oldRowData, [col.colKey]: value };
       this.editMap[row.key] = {
         ...params,
-        editedRow: { ...oldRowData, [col.colKey]: value },
+        editedRow,
       };
+
+      // ⚠️ 重要：以下内容应用于全量数据校验（单独的行校验不需要）
+      // const newData = [...this.data];
+      // newData[rowIndex] = editedRow;
+      // this.data = newData;
+      // 或者
+      // this.$set(this.data, rowIndex, editedRow);
     },
   },
 };
