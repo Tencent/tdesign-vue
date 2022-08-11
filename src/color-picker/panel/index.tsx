@@ -1,5 +1,5 @@
 import {
-  defineComponent, ref, toRefs, watch,
+  computed, defineComponent, ref, toRefs, watch,
 } from '@vue/composition-api';
 import { useConfig } from '../../hooks/useConfig';
 import useCommonClassName from '../../hooks/useCommonClassName';
@@ -256,6 +256,9 @@ export default defineComponent({
       emitColorChange();
     };
 
+    // 预览颜色
+    const previewColorStyle = computed(() => mode.value === 'linear-gradient' ? color.value.linearGradient : color.value.rgba);
+
     return {
       baseClassName,
       statusClassNames,
@@ -265,6 +268,7 @@ export default defineComponent({
       mode,
       formatModel,
       recentlyUsedColors,
+      previewColorStyle,
       addRecentlyUsedColor,
       handleModeChange,
       handleSatAndValueChange,
@@ -279,7 +283,7 @@ export default defineComponent({
   },
   render() {
     const {
-      baseClassName, statusClassNames, t, global, recentColors, swatchColors,
+      baseClassName, statusClassNames, t, global, recentColors, swatchColors, previewColorStyle,
     } = this;
 
     const showUsedColors = recentColors !== null && recentColors !== false;
@@ -352,7 +356,7 @@ export default defineComponent({
               <span
                 class={`${baseClassName}__sliders-preview-inner`}
                 style={{
-                  background: isGradient ? this.color.linearGradient : this.color.rgba,
+                  background: previewColorStyle,
                 }}
               />
             </div>
