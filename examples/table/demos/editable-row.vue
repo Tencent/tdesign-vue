@@ -246,7 +246,11 @@ export default {
     onRowEdit(params) {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const {
-        row, rowIndex, col, value,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        row,
+        rowIndex,
+        col,
+        value,
       } = params;
       const oldRowData = this.editMap[row.key]?.editedRow || row;
       const editedRow = { ...oldRowData, [col.colKey]: value };
