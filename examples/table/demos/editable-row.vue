@@ -246,8 +246,8 @@ export default {
     onRowEdit(params) {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         row,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         rowIndex,
         col,
         value,
