@@ -504,7 +504,7 @@ export default defineComponent({
           collapsedItems={collapsedItems}
           popupVisible={this.innerPopupVisible}
           popupProps={{
-            overlayClassName: [`${name}__dropdown`, ['narrow-scrollbar'], overlayClassName],
+            overlayClassName: [`${name}__dropdown`, overlayClassName],
             ...restPopupProps,
           }}
           on={{
