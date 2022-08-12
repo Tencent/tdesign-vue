@@ -163,10 +163,7 @@ export default defineComponent({
                   value: this.month,
                   options: monthOptions,
                   onChange: (val: number) => this.onMonthChange?.(val),
-                  popupProps: {
-                    onScroll: this.handleScroll,
-                    overlayClassName: `${COMPONENT_NAME}-controller-month-popup`,
-                  },
+                  popupProps: { overlayClassName: `${COMPONENT_NAME}-controller-month-popup` },
                 },
               }}
             />
