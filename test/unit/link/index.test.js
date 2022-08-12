@@ -1,6 +1,5 @@
 import { mount } from '@vue/test-utils';
-import { vi } from 'vitest';
-import Link from '@/src/link/index';
+import Link from '@/src/link/index.ts';
 
 // every component needs four parts: props/events/slots/functions.
 describe('Link', () => {
@@ -12,7 +11,7 @@ describe('Link', () => {
           return <Link size={'large'}>text</Link>;
         },
       });
-      expect(wrapper.element).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
     it(':theme', () => {
       const wrapper = mount({
@@ -20,7 +19,7 @@ describe('Link', () => {
           return <Link theme={'primary'}>text</Link>;
         },
       });
-      expect(wrapper.element).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
     it(':hover', () => {
       const wrapper = mount({
@@ -28,7 +27,7 @@ describe('Link', () => {
           return <Link hover={'color'}>text</Link>;
         },
       });
-      expect(wrapper.element).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
     it(':underline', () => {
       const wrapper = mount({
@@ -36,10 +35,10 @@ describe('Link', () => {
           return <Link underline={true}>text</Link>;
         },
       });
-      expect(wrapper.element).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
     it(':disabled', () => {
-      const fn = vi.fn();
+      const fn = jest.fn();
       const wrapper = mount({
         render() {
           return (
@@ -51,7 +50,7 @@ describe('Link', () => {
       });
       wrapper.trigger('click');
       expect(fn).not.toHaveBeenCalled();
-      expect(wrapper.element).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
     it(':content', () => {
       const renderContent = function () {
@@ -70,14 +69,14 @@ describe('Link', () => {
           );
         },
       });
-      expect(wrapper.element).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
   });
 
   // test events
   describe('@event', () => {
     it('Event passthrough ', () => {
-      const fn = vi.fn();
+      const fn = jest.fn();
       const wrapper = mount({
         render() {
           return <Link onClick={fn}>text</Link>;
@@ -92,11 +91,11 @@ describe('Link', () => {
   describe('<slot>', () => {
     it('<icon>', () => {
       const wrapper = mount(Link, {
-        slots: {
+        scopedSlots: {
           icon: '<div></div>',
         },
       });
-      expect(wrapper.element).toMatchSnapshot();
+      expect(wrapper).toMatchSnapshot();
     });
   });
 });

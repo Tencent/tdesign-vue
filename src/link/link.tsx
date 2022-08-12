@@ -9,6 +9,12 @@ const name = `${prefix}-link`;
 export default Vue.extend({
   name: 'TLink',
   props,
+  methods: {
+    handleClick(): void {
+      if (this.disabled) return;
+      this.$emit('click');
+    },
+  },
   render(): VNode {
     const linkContent = renderContent(this, 'default', 'content');
     const prefixContent = renderTNodeJSX(this, 'prefixIcon');
@@ -24,15 +30,13 @@ export default Vue.extend({
       },
     ];
 
-    const on = { ...this.$listeners };
-    if (typeof this.onClick === 'function') {
-      if (!this.disabled) {
-        on.click = this.onClick;
-      }
-    }
-
     return (
-      <a class={linkClass} href={this.disabled || !this.href ? undefined : this.href} target={this.target} {...{ on }}>
+      <a
+        class={linkClass}
+        href={this.disabled || !this.href ? undefined : this.href}
+        target={this.target}
+        onClick={this.handleClick}
+      >
         {prefixContent && <span class={`${name}__prefix-icon`}>{prefixContent}</span>}
         {linkContent}
         {suffixContent && <span class={`${name}__suffix-icon`}>{suffixContent}</span>}
