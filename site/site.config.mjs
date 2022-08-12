@@ -84,6 +84,14 @@ const docs = [
         component: () => import('@/examples/icon/icon.md'),
         componentEn: () => import('@/examples/icon/icon.en-US.md'),
       },
+      {
+        title: 'Link 链接',
+        titleEn: 'Icon',
+        name: 'icon',
+        path: '/vue/components/link',
+        component: () => import('@/examples/link/link.md'),
+        componentEn: () => import('@/examples/link/link.en-US.md'),
+      },
     ],
   },
   {
