@@ -374,6 +374,15 @@ export default defineComponent({
       popupVisible,
       panelProps,
     } = this;
+
+    const renderSuffixIcon = () => {
+      if (this.suffixIcon) return this.suffixIcon;
+      if (this.$scopedSlots.suffixIcon) return this.$scopedSlots.suffixIcon;
+      if (this.$scopedSlots['suffix-icon']) return this.$scopedSlots['suffix-icon'];
+
+      return () => <CalendarIcon />;
+    };
+
     return (
       <div class={COMPONENT_NAME}>
         <TRangeInputPopup
@@ -382,7 +391,10 @@ export default defineComponent({
           tips={this.tips}
           inputValue={inputValue as string[]}
           popupProps={dateRangePickerPopupProps}
-          rangeInputProps={{ suffixIcon: () => <CalendarIcon />, ...dateRangePickerRangeInputProps }}
+          rangeInputProps={{
+            suffixIcon: renderSuffixIcon(),
+            ...dateRangePickerRangeInputProps,
+          }}
           popupVisible={popupVisible}
           panel={() => <TRangePanel {...{ props: panelProps }} />}
         />
