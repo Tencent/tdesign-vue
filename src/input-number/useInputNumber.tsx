@@ -196,11 +196,11 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
   };
 
   const focus = () => {
-    (inputRef.value.$el as HTMLElement).focus();
+    (inputRef.value as any).focus();
   };
 
   const blur = () => {
-    (inputRef.value.$el as HTMLElement).blur();
+    (inputRef.value as any).blur();
   };
 
   const listeners = {
