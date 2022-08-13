@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <t-space>
     <t-input-number v-model="value" theme="column"></t-input-number>
 
     <t-input-number
@@ -11,7 +11,7 @@
       label="数字"
       style="width: 150px"
     ></t-input-number>
-  </div>
+  </t-space>
 </template>
 
 <script>

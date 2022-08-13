@@ -154,8 +154,8 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
 
   const handleFocus = (value: string, ctx: { e: FocusEvent }) => {
     userInput.value = tValue.value || tValue.value === 0 ? String(tValue.value) : '';
-    props.onFocus?.(tValue.value, ctx);
-    context.emit('focus', tValue.value, ctx);
+    props.onFocus?.(value, ctx);
+    context.emit('focus', value, ctx);
   };
 
   const handleKeydown = (value: string, ctx: { e: KeyboardEvent }) => {
@@ -168,18 +168,18 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     if (keyEvent[code] !== undefined) {
       keyEvent[code](e);
     }
-    props.onKeydown?.(tValue.value, ctx);
-    context.emit('keydown', tValue.value, ctx);
+    props.onKeydown?.(value, ctx);
+    context.emit('keydown', value, ctx);
   };
 
   const handleKeyup = (value: string, ctx: { e: KeyboardEvent }) => {
-    props.onKeyup?.(tValue.value, ctx);
-    context.emit('keyup', tValue.value, ctx);
+    props.onKeyup?.(value, ctx);
+    context.emit('keyup', value, ctx);
   };
 
   const handleKeypress = (value: string, ctx: { e: KeyboardEvent }) => {
-    props.onKeypress?.(tValue.value, ctx);
-    context.emit('keypress', tValue.value, ctx);
+    props.onKeypress?.(value, ctx);
+    context.emit('keypress', value, ctx);
   };
 
   const handleEnter = (value: string, ctx: { e: KeyboardEvent }) => {
@@ -195,6 +195,14 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     context.emit('enter', newValue, ctx);
   };
 
+  const focus = () => {
+    (inputRef.value.$el as HTMLElement).focus();
+  };
+
+  const blur = () => {
+    (inputRef.value.$el as HTMLElement).blur();
+  };
+
   const listeners = {
     blur: handleBlur,
     focus: handleFocus,
@@ -202,6 +210,7 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     keyup: handleKeyup,
     keypress: handleKeypress,
     enter: handleEnter,
+    click: focus,
   };
 
   return {
@@ -217,6 +226,8 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     tValue,
     inputRef,
     formDisabled,
+    focus,
+    blur,
     handleReduce,
     handleAdd,
     onInnerInputChange,
