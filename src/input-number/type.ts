@@ -7,7 +7,7 @@
 import { InputProps } from '../input';
 import { TNode } from '../common';
 
-export interface TdInputNumberProps {
+export interface TdInputNumberProps<T = InputNumberValue> {
   /**
    * 文本内容位置，居左/居中/居右
    */
@@ -23,7 +23,6 @@ export interface TdInputNumberProps {
   decimalPlaces?: number;
   /**
    * 禁用组件
-   * @default false
    */
   disabled?: boolean;
   /**
@@ -70,7 +69,7 @@ export interface TdInputNumberProps {
   /**
    * 文本框状态
    */
-  status?: 'success' | 'warning' | 'error';
+  status?: 'default' | 'success' | 'warning' | 'error';
   /**
    * 数值改变步数，可以是小数。如果是大数，请保证数据类型为字符串
    * @default 1
@@ -90,13 +89,13 @@ export interface TdInputNumberProps {
    */
   tips?: string | TNode;
   /**
-   * 值
+   * 数字输入框的值。当值为 '' 时，输入框显示为空
    */
-  value?: InputNumberValue;
+  value?: T;
   /**
-   * 值，非受控属性
+   * 数字输入框的值。当值为 '' 时，输入框显示为空，非受控属性
    */
-  defaultValue?: InputNumberValue;
+  defaultValue?: T;
   /**
    * 失去焦点时触发
    */
@@ -104,7 +103,7 @@ export interface TdInputNumberProps {
   /**
    * 值变化时触发
    */
-  onChange?: (value: InputNumberValue, context: ChangeContext) => void;
+  onChange?: (value: T, context: ChangeContext) => void;
   /**
    * 回车键按下时触发
    */

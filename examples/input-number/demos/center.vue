@@ -1,31 +1,25 @@
 <template>
-  <div class="tdesign-demo-block-column-large tdesign-demo__input-number-center">
-    <div>
-      <t-input-number v-model="value1" :step="0.1" :max="5" autoWidth />
-    </div>
+  <t-space direction="vertical">
+    <t-input-number v-model="value1" :step="0.1" :max="5" autoWidth />
 
-    <div>
-      <t-input-number v-model="decimalValue" :step="0.18" :max="5" autoWidth />
-    </div>
+    <t-input-number v-model="decimalValue" :step="0.18" :max="5" autoWidth />
 
-    <div>
-      <t-input-number
-        v-model="value2"
-        theme="row"
-        :max="15"
-        :min="-2"
-        :disabled="false"
-        :tips="tips"
-        suffix="个"
-        style="width: 160px"
-        @change="handleChange"
-        @validate="onValidate"
-        @blur="handleBlur"
-        @focus="handleFocus"
-        @enter="handleEnter"
-      ></t-input-number>
-    </div>
-  </div>
+    <t-input-number
+      v-model="value2"
+      theme="row"
+      :max="15"
+      :min="-2"
+      :disabled="false"
+      :tips="tips"
+      suffix="个"
+      style="width: 160px"
+      @change="handleChange"
+      @validate="onValidate"
+      @blur="handleBlur"
+      @focus="handleFocus"
+      @enter="handleEnter"
+    ></t-input-number>
+  </t-space>
 </template>
 
 <script>

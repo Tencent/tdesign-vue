@@ -70,7 +70,7 @@ export default {
     type: String as PropType<TdInputNumberProps['status']>,
     validator(val: TdInputNumberProps['status']): boolean {
       if (!val) return true;
-      return ['success', 'warning', 'error'].includes(val);
+      return ['default', 'success', 'warning', 'error'].includes(val);
     },
   },
   /** 数值改变步数，可以是小数。如果是大数，请保证数据类型为字符串 */
@@ -95,15 +95,14 @@ export default {
   tips: {
     type: [String, Function] as PropType<TdInputNumberProps['tips']>,
   },
-  /** 值 */
+  /** 数字输入框的值。当值为 '' 时，输入框显示为空 */
   value: {
     type: [String, Number] as PropType<TdInputNumberProps['value']>,
     default: undefined,
   },
-  /** 值，非受控属性 */
+  /** 数字输入框的值。当值为 '' 时，输入框显示为空，非受控属性 */
   defaultValue: {
     type: [String, Number] as PropType<TdInputNumberProps['defaultValue']>,
-    default: undefined,
   },
   /** 失去焦点时触发 */
   onBlur: Function as PropType<TdInputNumberProps['onBlur']>,
