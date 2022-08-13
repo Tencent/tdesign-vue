@@ -136,6 +136,12 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     }
   },
   methods: {
+    focus() {
+      (this.$refs.inputRef as HTMLInputElement).focus();
+    },
+    blur() {
+      (this.$refs.inputRef as HTMLInputElement).blur();
+    },
     addListeners() {
       this.$watch(
         () => this.value + this.placeholder,
