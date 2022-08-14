@@ -14,10 +14,15 @@ export const trim = (str: string): string => (str || '').replace(/^[\s\uFEFF]+|[
 
 export const on = ((): any => {
   if (!isServer && document.addEventListener) {
-    return (element: Node, event: string, handler: EventListenerOrEventListenerObject): any => {
+    return (
+      element: Node,
+      event: string,
+      handler: EventListenerOrEventListenerObject,
+      options?: boolean | AddEventListenerOptions,
+    ): any => {
       if (element && event && handler) {
-        element.addEventListener(event, handler, false);
-        return () => off(element, event, handler);
+        element.addEventListener(event, handler, options);
+        return () => off(element, event, handler, options);
       }
     };
   }
@@ -31,9 +36,14 @@ export const on = ((): any => {
 
 export const off = ((): any => {
   if (!isServer && document.removeEventListener) {
-    return (element: Node, event: string, handler: EventListenerOrEventListenerObject): any => {
+    return (
+      element: Node,
+      event: string,
+      handler: EventListenerOrEventListenerObject,
+      options?: boolean | AddEventListenerOptions,
+    ): any => {
       if (element && event) {
-        element.removeEventListener(event, handler, false);
+        element.removeEventListener(event, handler, options);
       }
     };
   }
@@ -44,14 +54,19 @@ export const off = ((): any => {
   };
 })();
 
-export function once(element: Node, event: string, handler: EventListenerOrEventListenerObject) {
+export function once(
+  element: Node,
+  event: string,
+  handler: EventListenerOrEventListenerObject,
+  options?: boolean | AddEventListenerOptions,
+) {
   const handlerFn = typeof handler === 'function' ? handler : handler.handleEvent;
   const callback = (evt: any) => {
     handlerFn(evt);
-    off(element, event, callback);
+    off(element, event, callback, options);
   };
 
-  on(element, event, callback);
+  on(element, event, callback, options);
 }
 
 export function hasClass(el: Element, cls: string): any {
