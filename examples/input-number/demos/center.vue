@@ -2,7 +2,7 @@
   <t-space direction="vertical">
     <t-input-number v-model="value1" :step="0.1" :max="5" autoWidth />
 
-    <t-input-number v-model="decimalValue" :step="0.18" :max="5" autoWidth />
+    <t-input-number v-model="decimalValue" :step="0.18" :max="5" style="width: 200px" />
 
     <t-input-number
       v-model="value2"
@@ -12,7 +12,7 @@
       :disabled="false"
       :tips="tips"
       suffix="个"
-      style="width: 160px"
+      style="width: 250px"
       @change="handleChange"
       @validate="onValidate"
       @blur="handleBlur"
