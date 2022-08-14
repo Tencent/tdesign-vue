@@ -1,11 +1,11 @@
 import Vue from 'vue';
-import { prefix } from '../config';
 import props from './avatar-group-props';
 import { TNodeReturnValue } from '../common';
 import Avatar from './avatar';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
 
-const name = `${prefix}-avatar-group`;
+const classPrefixMixins = getClassPrefixMixins('avatar');
 
 export default Vue.extend({
   name: 'TAvatarGroup',
@@ -15,8 +15,9 @@ export default Vue.extend({
 
   props: {
     ...props,
+    componentName: String,
   },
-
+  mixins: [classPrefixMixins],
   provide(): Record<string, any> {
     return {
       avatarGroup: this,
@@ -65,10 +66,10 @@ export default Vue.extend({
     const children: TNodeReturnValue = $scopedSlots.default && $scopedSlots.default(null);
     const { cascading, max } = this.$props;
     const groupClass = [
-      `${name}`,
+      `${this.componentName}-group`,
       {
-        [`${prefix}-avatar--offset-right`]: cascading === 'right-up',
-        [`${prefix}-avatar--offset-left`]: cascading === 'left-up',
+        [`${this.componentName}--offset-right`]: cascading === 'right-up',
+        [`${this.componentName}--offset-left`]: cascading === 'left-up',
       },
     ];
     let content = [children];

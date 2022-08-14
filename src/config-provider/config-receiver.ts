@@ -18,7 +18,7 @@ export interface ConfigComponent extends Vue {
   globalConfig: GlobalConfigProvider;
 }
 
-export default function getConfigReceiverMixins<BasicComponent extends Vue, C extends ComponentConfigType>(
+export default function getConfigReceiverMixins<BasicComponent extends Vue, C extends ComponentConfigType = null>(
   componentName: string,
 ) {
   // eslint-disable-line
@@ -35,14 +35,21 @@ export default function getConfigReceiverMixins<BasicComponent extends Vue, C ex
         const data = this.globalConfig || defaultGlobalConfig;
         return data[componentName];
       },
+      classPrefix(): string {
+        return this.globalConfig?.classPrefix || defaultGlobalConfig?.classPrefix;
+      },
+      componentName(): string {
+        const classPrefix = this.globalConfig?.classPrefix || defaultGlobalConfig?.classPrefix;
+        return `${classPrefix}-${componentName}`;
+      },
     },
 
     methods: {
       t<T>(pattern: T, placement?: Placement): string {
         if (typeof pattern === 'string') {
           if (!placement) return pattern;
-          const regx = /\{\s*([\w-]+)\s*\}/g;
-          const translated = pattern.replace(regx, (match, key) => {
+          const regexp = /\{\s*([\w-]+)\s*\}/g;
+          const translated = pattern.replace(regexp, (match, key) => {
             if (placement) {
               return String(placement[key]);
             }
@@ -87,6 +94,27 @@ export function getKeepAnimationMixins<BasicComponent extends Vue>() {
           expand: isKeep('expand'),
           fade: isKeep('fade'),
         };
+      },
+    },
+  });
+}
+
+// 用于非composition api组件使用来自config provider注入的classPrefix使用
+export function getClassPrefixMixins(componentName: string) {
+  return (Vue as VueConstructor<ConfigComponent>).extend({
+    name: 'TClassPrefixProvider',
+    inject: {
+      globalConfig: {
+        default: undefined,
+      },
+    },
+    computed: {
+      classPrefix(): string {
+        return this.globalConfig?.classPrefix || defaultGlobalConfig.classPrefix;
+      },
+      componentName(): string {
+        const classPrefix = this.globalConfig?.classPrefix || defaultGlobalConfig.classPrefix;
+        return `${classPrefix}-${componentName}`;
       },
     },
   });

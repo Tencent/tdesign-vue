@@ -1,12 +1,12 @@
 import Vue, { VueConstructor } from 'vue';
-import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import props from './props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import { AvatarGroupInstance } from './instance';
 import { Styles } from '../common';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
 
-const name = `${prefix}-avatar`;
+const classPrefixMixins = getClassPrefixMixins('avatar');
 
 export interface AvatarInstance extends Vue {
   avatarGroup: AvatarGroupInstance;
@@ -17,8 +17,9 @@ export default (Vue as VueConstructor<AvatarInstance>).extend({
 
   props: {
     ...props,
+    componentName: String,
   },
-
+  mixins: [classPrefixMixins],
   data() {
     return {
       isImgExist: true,
@@ -50,7 +51,7 @@ export default (Vue as VueConstructor<AvatarInstance>).extend({
         }
         : {};
     },
-    customCharaSize(): Styles {
+    customCharacterSize(): Styles {
       return {
         transform: this.scale,
       };
@@ -98,16 +99,16 @@ export default (Vue as VueConstructor<AvatarInstance>).extend({
     const isIconOnly = icon && !content;
     const { shape, image, alt } = this.$props;
     const avatarClass = [
-      `${name}`,
+      this.componentName,
       CLASSNAMES.SIZE[this.sizeValue],
       {
-        [`${name}--circle`]: shape === 'circle',
-        [`${name}--round`]: shape === 'round',
-        [`${name}__icon`]: !!isIconOnly,
+        [`${this.componentName}--circle`]: shape === 'circle',
+        [`${this.componentName}--round`]: shape === 'round',
+        [`${this.componentName}__icon`]: !!isIconOnly,
       },
     ];
     content = (
-      <span ref="avatarChild" style={{ ...this.customCharaSize }}>
+      <span ref="avatarChild" style={{ ...this.customCharacterSize }}>
         {content}
       </span>
     );

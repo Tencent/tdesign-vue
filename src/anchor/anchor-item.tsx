@@ -3,22 +3,23 @@ import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import CLASSNAMES from '../utils/classnames';
 import { ANCHOR_SHARP_REGEXP } from './utils';
 import props from './anchor-item-props';
-import { COMPONENT_NAME } from './constant';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
 
-const CLASSNAME_PREFIX = `${COMPONENT_NAME}__item`;
+const classPrefixMixins = getClassPrefixMixins('anchor');
+
 export interface Anchor extends Vue {
   tAnchor: {
     active: string;
     handleScrollTo(target: string): void;
     registerLink(href: string): void;
     unregisterLink(href: string): void;
-    handleLinkClick(link: { href: string; title: string; e: MouseEvent}): void;
+    handleLinkClick(link: { href: string; title: string; e: MouseEvent }): void;
   };
 }
 
 export default (Vue as VueConstructor<Anchor>).extend({
   name: 'TAnchorItem',
-
+  mixins: [classPrefixMixins],
   props: {
     ...props,
     href: {
@@ -28,6 +29,7 @@ export default (Vue as VueConstructor<Anchor>).extend({
         return ANCHOR_SHARP_REGEXP.test(v);
       },
     },
+    componentName: String,
   },
 
   inject: {
@@ -92,11 +94,11 @@ export default (Vue as VueConstructor<Anchor>).extend({
     const titleAttr = typeof title === 'string' ? title : null;
     const isActive = tAnchor.active === href;
     const wrapperClass = {
-      [CLASSNAME_PREFIX]: true,
+      [`${this.componentName}__item`]: true,
       [CLASSNAMES.STATUS.active]: isActive,
     };
     const titleClass = {
-      [`${CLASSNAME_PREFIX}-link`]: true,
+      [`${this.componentName}__item-link`]: true,
     };
     return (
       <div class={wrapperClass}>
