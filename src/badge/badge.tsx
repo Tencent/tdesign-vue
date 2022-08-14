@@ -1,15 +1,14 @@
-import Vue from 'vue';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
 const classPrefixMixins = getClassPrefixMixins('badge');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TBadge',
 
-  props: { ...props, classPrefix: String, componentName: String },
-  mixins: [classPrefixMixins],
+  props: { ...props },
   methods: {
     getContent() {
       if (this.dot) return '';

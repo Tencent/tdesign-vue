@@ -1,5 +1,4 @@
 import { VNode } from 'vue';
-import { prefix } from '../config';
 import props from './props';
 import TStepItem from './step-item';
 import { ClassName } from '../common';
@@ -8,7 +7,6 @@ import getConfigReceiverMixins from '../config-provider/config-receiver';
 import { TdStepsProps, TdStepItemProps } from './type';
 import { emitEvent } from '../utils/event';
 
-const name = `${prefix}-steps`;
 export default mixins(getConfigReceiverMixins('steps')).extend({
   name: 'TSteps',
   components: {
@@ -41,11 +39,11 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
   computed: {
     baseClass(): ClassName {
       return [
-        name,
-        `${name}--${this.layout}`,
-        `${name}--${this.sequence}`,
-        `${name}--${this.handleTheme()}-anchor`,
-        `${name}--${this.separator}-separator`,
+        this.componentName,
+        `${this.componentName}--${this.layout}`,
+        `${this.componentName}--${this.sequence}`,
+        `${this.componentName}--${this.handleTheme()}-anchor`,
+        `${this.componentName}--${this.separator}-separator`,
       ];
     },
   },

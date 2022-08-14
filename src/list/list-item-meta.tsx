@@ -1,12 +1,13 @@
-import Vue, { VNode } from 'vue';
+import { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import { prefix } from '../config';
 import props from './list-item-meta-props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-list-item__meta`;
+const classPrefixMixins = getClassPrefixMixins('list-item__meta');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TListItemMeta',
   props,
   methods: {
@@ -18,12 +19,12 @@ export default Vue.extend({
       if (!thumbnail) return;
       if (typeof thumbnail === 'string') {
         return (
-          <div class={`${name}-avatar`}>
+          <div class={`${this.componentName}-avatar`}>
             <img src={thumbnail}></img>
           </div>
         );
       }
-      return <div class={`${name}-avatar`}>{thumbnail}</div>;
+      return <div class={`${this.componentName}-avatar`}>{thumbnail}</div>;
     },
   },
   render(): VNode {
@@ -32,12 +33,12 @@ export default Vue.extend({
 
     const listItemMetaContent: ScopedSlotReturnValue = [
       this.renderAvatar(),
-      <div class={`${name}-content`}>
-        {propsTitleContent && <h3 class={`${name}-title`}>{propsTitleContent}</h3>}
-        {propsDescriptionContent && <p class={`${name}-description`}>{propsDescriptionContent}</p>}
+      <div class={`${this.componentName}-content`}>
+        {propsTitleContent && <h3 class={`${this.componentName}-title`}>{propsTitleContent}</h3>}
+        {propsDescriptionContent && <p class={`${this.componentName}-description`}>{propsDescriptionContent}</p>}
       </div>,
     ];
 
-    return <div class={name}>{listItemMetaContent}</div>;
+    return <div class={this.componentName}>{listItemMetaContent}</div>;
   },
 });

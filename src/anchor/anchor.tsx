@@ -1,6 +1,5 @@
 import Vue, { VueConstructor } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import CLASSNAMES from '../utils/classnames';
 import { ANCHOR_SHARP_REGEXP, ANCHOR_CONTAINER, getOffsetTop } from './utils';
 import {
   on, off, getScroll, scrollTo, getScrollContainer,
@@ -8,6 +7,7 @@ import {
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
 import Affix from '../affix';
 
@@ -18,15 +18,12 @@ export interface Anchor extends Vue {
   // 执行scrollTo设置的flag, 用来禁止执行handleScroll
   handleScrollLock: boolean;
 }
-export default (Vue as VueConstructor<Anchor>).extend({
+export default mixins(Vue as VueConstructor<Anchor>, classPrefixMixins).extend({
   name: 'TAnchor',
 
   props: {
     ...props,
-    classPrefix: String,
-    componentName: String,
   },
-  mixins: [classPrefixMixins],
   provide(): any {
     return {
       tAnchor: this,
@@ -116,7 +113,7 @@ export default (Vue as VueConstructor<Anchor>).extend({
      * 当前active-item的top + height, 以及ANCHOR_ITEM_PADDING修正
      */
     updateActiveLine(): void {
-      const ele = this.$el.querySelector(`.${CLASSNAMES.STATUS.active}>a`) as HTMLAnchorElement;
+      const ele = this.$el.querySelector(`.${this.commonStatusClassName.active}>a`) as HTMLAnchorElement;
       if (!ele) {
         this.activeLineStyle = false;
         return;
@@ -225,7 +222,7 @@ export default (Vue as VueConstructor<Anchor>).extend({
       affixProps,
       activeLineStyle,
     } = this;
-    const className = [this.componentName, CLASSNAMES.SIZE[size]];
+    const className = [this.componentName, this.commonSizeClassName[size]];
     const content = (
       <div class={className}>
         <div class={`${this.componentName}__line`}>

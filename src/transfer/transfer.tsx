@@ -1,5 +1,4 @@
 import pick from 'lodash/pick';
-import { prefix } from '../config';
 import TransferList from './components/transfer-list';
 import TransferOperations from './components/transfer-operations';
 import {
@@ -229,11 +228,11 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
     return (
       <div
         class={[
-          `${prefix}-transfer`,
-          this.showSearch ? `${prefix}-transfer__search` : '',
-          this.hasFooter ? `${prefix}-transfer__footer` : '',
-          this.showPagination ? `${prefix}-transfer__pagination` : '',
-          this.isTreeMode ? `${prefix}-transfer--with-tree` : '',
+          this.componentName,
+          this.showSearch ? `${this.componentName}__search` : '',
+          this.hasFooter ? `${this.componentName}__footer` : '',
+          this.showPagination ? `${this.componentName}__pagination` : '',
+          this.isTreeMode ? `${this.componentName}--with-tree` : '',
         ]}
       >
         {this.renderTransferList(SOURCE)}

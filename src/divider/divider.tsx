@@ -1,11 +1,11 @@
-import Vue from 'vue';
-import { prefix } from '../config';
 import props from './props';
 import { renderContent } from '../utils/render-tnode';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-divider`;
+const classPrefixMixins = getClassPrefixMixins('divider');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TDivider',
 
   props: { ...props },
@@ -16,20 +16,19 @@ export default Vue.extend({
       console.warn('TDesign Divider Warn: `theme` is going to be deprecated, please use `layout` instead.');
     }
     const dividerClassNames = [
-      `${name}`,
-      [`${name}--${this.layout || this.theme || 'horizontal'}`],
+      `${this.componentName}`,
+      [`${this.componentName}--${this.layout || this.theme || 'horizontal'}`],
       {
-        [`${name}--dashed`]: !!this.dashed,
-        [`${name}--with-text`]: !!children,
-        [`${name}--with-text-${this.align}`]: !!children,
+        [`${this.componentName}--dashed`]: !!this.dashed,
+        [`${this.componentName}--with-text`]: !!children,
+        [`${this.componentName}--with-text-${this.align}`]: !!children,
       },
     ];
 
     return (
       <div class={dividerClassNames}>
-          {children && <span class={`${name}__inner-text`}>{children}</span>}
+        {children && <span class={`${this.componentName}__inner-text`}>{children}</span>}
       </div>
     );
   },
-
 });

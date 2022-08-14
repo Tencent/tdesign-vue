@@ -1,9 +1,9 @@
 import Vue, { VueConstructor } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import CLASSNAMES from '../utils/classnames';
 import { ANCHOR_SHARP_REGEXP } from './utils';
 import props from './anchor-item-props';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
 const classPrefixMixins = getClassPrefixMixins('anchor');
 
@@ -17,9 +17,8 @@ export interface Anchor extends Vue {
   };
 }
 
-export default (Vue as VueConstructor<Anchor>).extend({
+export default mixins(Vue as VueConstructor<Anchor>, classPrefixMixins).extend({
   name: 'TAnchorItem',
-  mixins: [classPrefixMixins],
   props: {
     ...props,
     href: {
@@ -29,7 +28,6 @@ export default (Vue as VueConstructor<Anchor>).extend({
         return ANCHOR_SHARP_REGEXP.test(v);
       },
     },
-    componentName: String,
   },
 
   inject: {
@@ -95,7 +93,7 @@ export default (Vue as VueConstructor<Anchor>).extend({
     const isActive = tAnchor.active === href;
     const wrapperClass = {
       [`${this.componentName}__item`]: true,
-      [CLASSNAMES.STATUS.active]: isActive,
+      [this.commonStatusClassName.active]: isActive,
     };
     const titleClass = {
       [`${this.componentName}__item-link`]: true,

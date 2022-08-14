@@ -1,9 +1,11 @@
-import Vue from 'vue';
-import { prefix } from '../config';
 import props from './footer-props';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-export default Vue.extend({
+const classPrefixMixins = getClassPrefixMixins('footer');
+
+export default mixins(classPrefixMixins).extend({
   name: 'TFooter',
 
   props: { ...props },
@@ -21,7 +23,7 @@ export default Vue.extend({
       }
       : {};
     return (
-      <footer class={`${prefix}-layout__footer`} style={styles}>
+      <footer class={`${this.classPrefix}-layout__footer`} style={styles}>
         {renderTNodeJSX(this, 'default')}
       </footer>
     );

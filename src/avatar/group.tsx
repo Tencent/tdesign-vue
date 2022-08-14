@@ -4,10 +4,11 @@ import { TNodeReturnValue } from '../common';
 import Avatar from './avatar';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
 const classPrefixMixins = getClassPrefixMixins('avatar');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TAvatarGroup',
   components: {
     Avatar,
@@ -15,9 +16,7 @@ export default Vue.extend({
 
   props: {
     ...props,
-    componentName: String,
   },
-  mixins: [classPrefixMixins],
   provide(): Record<string, any> {
     return {
       avatarGroup: this,

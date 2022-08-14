@@ -42,6 +42,36 @@ export default function getConfigReceiverMixins<BasicComponent extends Vue, C ex
         const classPrefix = this.globalConfig?.classPrefix || defaultGlobalConfig?.classPrefix;
         return `${classPrefix}-${componentName}`;
       },
+      commonSizeClassName(): Record<string, string> {
+        return {
+          small: `${this.classPrefix}-size-s`,
+          medium: `${this.classPrefix}-size-m`,
+          large: `${this.classPrefix}-size-l`,
+          default: '',
+          xs: `${this.classPrefix}-size-xs`,
+          xl: `${this.classPrefix}-size-xl`,
+          block: `${this.classPrefix}-size-full-width`,
+        };
+      },
+      commonStatusClassName(): Record<string, string> {
+        return {
+          loading: `${this.classPrefix}-is-loading`,
+          loadMore: `${this.classPrefix}-is-load-more`,
+          disabled: `${this.classPrefix}-is-disabled`,
+          focused: `${this.classPrefix}-is-focused`,
+          success: `${this.classPrefix}-is-success`,
+          error: `${this.classPrefix}-is-error`,
+          warning: `${this.classPrefix}-is-warning`,
+          selected: `${this.classPrefix}-is-selected`,
+          active: `${this.classPrefix}-is-active`,
+          checked: `${this.classPrefix}-is-checked`,
+          current: `${this.classPrefix}-is-current`,
+          hidden: `${this.classPrefix}-is-hidden`,
+          visible: `${this.classPrefix}-is-visible`,
+          expanded: `${this.classPrefix}-is-expanded`,
+          indeterminate: `${this.classPrefix}-is-indeterminate`,
+        };
+      },
     },
 
     methods: {
@@ -99,7 +129,7 @@ export function getKeepAnimationMixins<BasicComponent extends Vue>() {
   });
 }
 
-// 用于非composition api组件使用来自config provider注入的classPrefix使用
+// 用于非composition api的组件使用来自config provider注入的classPrefix使用
 export function getClassPrefixMixins(componentName: string) {
   return (Vue as VueConstructor<ConfigComponent>).extend({
     name: 'TClassPrefixProvider',
@@ -115,6 +145,36 @@ export function getClassPrefixMixins(componentName: string) {
       componentName(): string {
         const classPrefix = this.globalConfig?.classPrefix || defaultGlobalConfig.classPrefix;
         return `${classPrefix}-${componentName}`;
+      },
+      commonSizeClassName(): Record<string, string> {
+        return {
+          small: `${this.classPrefix}-size-s`,
+          medium: `${this.classPrefix}-size-m`,
+          large: `${this.classPrefix}-size-l`,
+          default: '',
+          xs: `${this.classPrefix}-size-xs`,
+          xl: `${this.classPrefix}-size-xl`,
+          block: `${this.classPrefix}-size-full-width`,
+        };
+      },
+      commonStatusClassName(): Record<string, string> {
+        return {
+          loading: `${this.classPrefix}-is-loading`,
+          loadMore: `${this.classPrefix}-is-load-more`,
+          disabled: `${this.classPrefix}-is-disabled`,
+          focused: `${this.classPrefix}-is-focused`,
+          success: `${this.classPrefix}-is-success`,
+          error: `${this.classPrefix}-is-error`,
+          warning: `${this.classPrefix}-is-warning`,
+          selected: `${this.classPrefix}-is-selected`,
+          active: `${this.classPrefix}-is-active`,
+          checked: `${this.classPrefix}-is-checked`,
+          current: `${this.classPrefix}-is-current`,
+          hidden: `${this.classPrefix}-is-hidden`,
+          visible: `${this.classPrefix}-is-visible`,
+          expanded: `${this.classPrefix}-is-expanded`,
+          indeterminate: `${this.classPrefix}-is-indeterminate`,
+        };
       },
     },
   });

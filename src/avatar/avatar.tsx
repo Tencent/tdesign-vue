@@ -1,10 +1,10 @@
 import Vue, { VueConstructor } from 'vue';
-import CLASSNAMES from '../utils/classnames';
 import props from './props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import { AvatarGroupInstance } from './instance';
 import { Styles } from '../common';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
 const classPrefixMixins = getClassPrefixMixins('avatar');
 
@@ -12,14 +12,12 @@ export interface AvatarInstance extends Vue {
   avatarGroup: AvatarGroupInstance;
 }
 
-export default (Vue as VueConstructor<AvatarInstance>).extend({
+export default mixins(Vue as VueConstructor<AvatarInstance>, classPrefixMixins).extend({
   name: 'TAvatar',
 
   props: {
     ...props,
-    componentName: String,
   },
-  mixins: [classPrefixMixins],
   data() {
     return {
       isImgExist: true,
@@ -85,7 +83,7 @@ export default (Vue as VueConstructor<AvatarInstance>).extend({
       }
     },
     isCustomSize() {
-      return this.sizeValue && !CLASSNAMES.SIZE[this.sizeValue];
+      return this.sizeValue && !this.commonSizeClassName[this.sizeValue];
     },
   },
   updated() {
@@ -100,7 +98,7 @@ export default (Vue as VueConstructor<AvatarInstance>).extend({
     const { shape, image, alt } = this.$props;
     const avatarClass = [
       this.componentName,
-      CLASSNAMES.SIZE[this.sizeValue],
+      this.commonSizeClassName[this.sizeValue],
       {
         [`${this.componentName}--circle`]: shape === 'circle',
         [`${this.componentName}--round`]: shape === 'round',

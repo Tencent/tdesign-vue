@@ -1,12 +1,12 @@
 import {
   defineComponent, ref, computed, watchEffect, provide, watch, onMounted,
 } from '@vue/composition-api';
-import { prefix } from '../config';
 import props from './props';
 import { MenuValue } from './type';
 import { TdMenuInterface, TdOpenType } from './const';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import VMenu from './v-menu';
+import { usePrefixClass } from '../hooks/useConfig';
 
 export default defineComponent({
   name: 'TMenu',
@@ -19,16 +19,18 @@ export default defineComponent({
     const mode = ref(props.expandType);
     const theme = computed(() => props.theme);
     const isMutex = computed(() => props.expandMutex);
+    const classPrefix = usePrefixClass();
+
     const menuClass = computed(() => [
-      `${prefix}-default-menu`,
-      `${prefix}-menu--${props.theme}`,
+      `${classPrefix.value}-default-menu`,
+      `${classPrefix.value}-menu--${props.theme}`,
       {
-        [`${prefix}-is-collapsed`]: props.collapsed,
+        [`${classPrefix.value}-is-collapsed`]: props.collapsed,
       },
     ]);
     const innerClasses = computed(() => [
-      `${prefix}-menu`,
-      { [`${prefix}-menu--scroll`]: mode.value !== 'popup' },
+      `${classPrefix.value}-menu`,
+      { [`${classPrefix.value}-menu--scroll`]: mode.value !== 'popup' },
       'narrow-scrollbar',
     ]);
     const expandWidth = computed(() => {
@@ -121,6 +123,7 @@ export default defineComponent({
       activeValue,
       activeValues,
       expandValues,
+      classPrefix,
     };
   },
   render() {
@@ -131,10 +134,10 @@ export default defineComponent({
     const logo = renderTNodeJSX(this, 'logo');
     return (
       <div class={this.menuClass} style={this.styles}>
-        <div class={`${prefix}-default-menu__inner`}>
-          {logo && <div class={`${prefix}-menu__logo`}>{logo}</div>}
+        <div class={`${this.classPrefix}-default-menu__inner`}>
+          {logo && <div class={`${this.classPrefix}-menu__logo`}>{logo}</div>}
           <ul class={this.innerClasses}>{renderContent(this, 'default', 'content')}</ul>
-          {operations && <div class={`${prefix}-menu__operations`}>{operations}</div>}
+          {operations && <div class={`${this.classPrefix}-menu__operations`}>{operations}</div>}
         </div>
       </div>
     );

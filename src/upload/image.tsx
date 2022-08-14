@@ -4,7 +4,6 @@ import { UploadFile } from './type';
 import TLoading from '../loading';
 import { UploadRemoveOptions } from './interface';
 import props from './props';
-import CLASSNAMES from '../utils/classnames';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { UploadConfig } from '../config-provider/config-receiver';
 
@@ -90,7 +89,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
               `${this.componentName}__card-item`,
               `${this.classPrefix}-is--background`,
               {
-                [CLASSNAMES.STATUS.disabled]: this.disabled,
+                [this.commonStatusClassName.disabled]: this.disabled,
               },
             ]}
             onClick={this.trigger}

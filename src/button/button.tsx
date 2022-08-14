@@ -1,5 +1,4 @@
 import { VNode } from 'vue';
-import CLASSNAMES from '../utils/classnames';
 import TLoading from '../loading';
 import props from './props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
@@ -39,15 +38,15 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
 
     const buttonClass = [
       `${this.componentName}`,
-      CLASSNAMES.SIZE[this.size],
+      this.commonSizeClassName[this.size],
       `${this.componentName}--variant-${this.variant}`,
       `${this.componentName}--theme-${theme}`,
       {
-        [CLASSNAMES.STATUS.disabled]: disabled,
-        [CLASSNAMES.STATUS.loading]: this.loading,
+        [this.commonStatusClassName.disabled]: disabled,
+        [this.commonStatusClassName.loading]: this.loading,
         [`${this.componentName}--shape-${this.shape}`]: this.shape !== 'rectangle',
         [`${this.componentName}--ghost`]: this.ghost,
-        [CLASSNAMES.SIZE.block]: this.block,
+        [this.commonSizeClassName.block]: this.block,
       },
     ];
 

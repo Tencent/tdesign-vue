@@ -1,9 +1,12 @@
-import Vue, { VNode } from 'vue';
+import { VNode } from 'vue';
 import { PLACEMENT_OFFSET } from './const';
 import TMessage from './message';
-import { prefix } from '../config';
 import { MessageOptions } from './type';
 import { Styles } from '../common';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
+
+const classPrefixMixins = getClassPrefixMixins('message__list');
 
 export const DEFAULT_Z_INDEX = 5000;
 
@@ -15,10 +18,8 @@ const getUniqueId = (() => {
   };
 })();
 
-const name = `${prefix}-message__list`;
-
-export const MessageList = Vue.extend({
-  name,
+export const MessageList = mixins(classPrefixMixins).extend({
+  name: 'TMessageList',
   components: { TMessage },
   props: {
     zIndex: Number,
@@ -76,7 +77,7 @@ export const MessageList = Vue.extend({
   render(): VNode {
     if (!this.list.length) return;
     return (
-      <div class={name} style={this.styles}>
+      <div class={this.componentName} style={this.styles}>
         {this.list.map((item, index) => (
           <t-message
             key={item.key}

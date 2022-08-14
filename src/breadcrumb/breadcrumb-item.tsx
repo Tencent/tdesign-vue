@@ -114,7 +114,7 @@ export default mixins(classPrefixMixins).extend({
     );
 
     if (href && !disabled) {
-      textClass.push(`${this.classPrefix}`);
+      textClass.push(`${this.classPrefix}-link`);
       itemContent = (
         <a class={textClass} href={href} target={target} {...{ on: this.$listeners }}>
           {textContent}

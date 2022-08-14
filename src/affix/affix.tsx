@@ -4,6 +4,7 @@ import { on, off, getScrollContainer } from '../utils/dom';
 import affixProps from './props';
 import { ScrollContainerElement } from '../common';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
 const classMixins = getClassPrefixMixins('affix');
 export interface Affix extends Vue {
@@ -16,14 +17,11 @@ export interface Affix extends Vue {
   };
 }
 
-export default (Vue as VueConstructor<Affix>).extend({
+export default mixins(Vue as VueConstructor<Affix>, classMixins).extend({
   name: 'TAffix',
   props: {
     ...affixProps,
-    classPrefix: String,
-    componentName: String,
   },
-  mixins: [classMixins],
 
   watch: {
     offsetTop() {

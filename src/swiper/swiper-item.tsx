@@ -1,6 +1,9 @@
-import Vue, { VNode } from 'vue';
-import { prefix } from '../config';
+import { VNode } from 'vue';
 import props from './props';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
+
+const classPrefixMixins = getClassPrefixMixins('swiper');
 
 const swiperItemProps = {
   index: {
@@ -24,7 +27,7 @@ const swiperItemProps = {
 const CARD_SCALE = 210 / 332; // 缩放比例
 const itemWidth = 0.415; // 依据设计稿使用t-swiper__card控制每个swiper的宽度为41.5%
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TSwiperItem',
 
   props: {
@@ -103,11 +106,11 @@ export default Vue.extend({
     return (
       <div
         class={[
-          `${prefix}-swiper__container__item`,
+          `${this.classPrefix}-swiper__container__item`,
           {
-            [`${prefix}-swiper__card`]: this.type === 'card',
-            [`${prefix}-is-active`]: this.type === 'card' && this.active,
-            [`${prefix}-swiper__fade`]: this.animation === 'fade',
+            [`${this.classPrefix}-swiper__card`]: this.type === 'card',
+            [`${this.classPrefix}-is-active`]: this.type === 'card' && this.active,
+            [`${this.classPrefix}-swiper__fade`]: this.animation === 'fade',
           },
         ]}
         style={this.itemStyle}
