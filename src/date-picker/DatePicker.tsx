@@ -1,4 +1,4 @@
-import { defineComponent, watchEffect, computed } from '@vue/composition-api';
+import { defineComponent, watch, computed } from '@vue/composition-api';
 import dayjs from 'dayjs';
 import { CalendarIcon } from 'tdesign-icons-vue';
 import { usePrefixClass } from '../hooks/useConfig';
@@ -42,9 +42,9 @@ export default defineComponent({
       enableTimePicker: props.enableTimePicker,
     }));
 
-    watchEffect(() => {
+    watch(popupVisible, (visible) => {
       // 面板展开重置数据
-      if (popupVisible.value) {
+      if (visible) {
         year.value = parseToDayjs(value.value || new Date(), formatRef.value.format).year();
         month.value = parseToDayjs(value.value || new Date(), formatRef.value.format).month();
         time.value = formatTime(value.value || new Date(), formatRef.value.timeFormat);
