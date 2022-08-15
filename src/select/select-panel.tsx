@@ -70,7 +70,6 @@ export default defineComponent({
     const { t, global } = useConfig('select');
     const selectProvider: any = inject('tSelect');
     const COMPONENT_NAME = usePrefixClass('select');
-    const { classPrefix } = useConfig('classPrefix');
 
     const panelContentRef = computed(() => selectProvider.getOverlayElm());
 
