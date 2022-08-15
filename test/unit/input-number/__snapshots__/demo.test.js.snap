@@ -410,7 +410,8 @@ exports[`InputNumber InputNumber centerVue demo works fine 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input-number t-size-m t-input-number--row t-input-number--auto-width"
+      class="t-input-number t-size-m t-input-number--row"
+      style="width: 200px;"
     >
       <button
         class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
@@ -434,7 +435,7 @@ exports[`InputNumber InputNumber centerVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-is-default t-align-center t-input--auto-width"
+          class="t-input t-size-m t-is-default t-align-center"
         >
           <input
             autocomplete="off"
@@ -443,11 +444,6 @@ exports[`InputNumber InputNumber centerVue demo works fine 1`] = `
             type="text"
             unselectable="off"
           />
-          <span
-            class="t-input__input-pre"
-          >
-            3.41
-          </span>
         </div>
       </div>
       <button
@@ -475,7 +471,7 @@ exports[`InputNumber InputNumber centerVue demo works fine 1`] = `
   >
     <div
       class="t-input-number t-size-m t-input-number--row"
-      style="width: 160px;"
+      style="width: 250px;"
     >
       <button
         class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
