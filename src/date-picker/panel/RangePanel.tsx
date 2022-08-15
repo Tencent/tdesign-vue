@@ -172,7 +172,7 @@ export default defineComponent({
                 key="startPanel"
                 {...{
                   props: {
-                    partial: this.activeIndex ? 'end' : 'start',
+                    partial: 'start',
                     year: this.year[0],
                     month: this.month[0],
                     time: this.time[0],
@@ -186,7 +186,7 @@ export default defineComponent({
                 key="endPanel"
                 {...{
                   props: {
-                    partial: this.activeIndex ? 'end' : 'start',
+                    partial: 'end',
                     year: this.year[1],
                     month: this.month[1],
                     time: this.time[1],

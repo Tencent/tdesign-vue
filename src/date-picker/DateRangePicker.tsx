@@ -113,8 +113,8 @@ export default defineComponent({
       // 不开启时间选择时 结束时间默认重置为 23:59:59
       if (activeIndex.value && !props.enableTimePicker) date.setHours(23, 59, 59);
 
-      props.onPick?.(date, { e, partial });
-      emit('pick', date, { e, partial });
+      props.onPick?.(date, { e, partial: activeIndex.value ? 'end' : 'start' });
+      emit('pick', date, { e, partial: activeIndex.value ? 'end' : 'start' });
 
       isHoverCell.value = false;
       isSelected.value = true;
