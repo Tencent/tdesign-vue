@@ -1,12 +1,12 @@
-import Vue, { VNode } from 'vue';
-import { prefix } from '../config';
+import { VNode } from 'vue';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
-import CLASSNAMES from '../utils/classnames';
 import props from './props';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-link`;
+const classPrefixMixins = getClassPrefixMixins('link');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TLink',
   props,
   methods: {
@@ -21,13 +21,13 @@ export default Vue.extend({
     const prefixContent = renderTNodeJSX(this, 'prefixIcon');
     const suffixContent = renderTNodeJSX(this, 'suffixIcon');
     const linkClass = [
-      `${name}`,
-      CLASSNAMES.SIZE[this.size],
-      `${name}--theme-${this.theme}`,
+      this.componentName,
+      this.commonSizeClassName[this.size],
+      `${this.componentName}--theme-${this.theme}`,
       {
-        [CLASSNAMES.STATUS.disabled]: this.disabled,
-        [`${prefix}-is-underline`]: this.underline,
-        [`${name}--hover-${this.hover}`]: !this.disabled,
+        [this.commonStatusClassName.disabled]: this.disabled,
+        [`${this.classPrefix}-is-underline`]: this.underline,
+        [`${this.componentName}--hover-${this.hover}`]: !this.disabled,
       },
     ];
 
@@ -38,9 +38,9 @@ export default Vue.extend({
         target={this.target}
         onClick={this.handleClick}
       >
-        {prefixContent && <span class={`${name}__prefix-icon`}>{prefixContent}</span>}
+        {prefixContent && <span class={`${this.componentName}__prefix-icon`}>{prefixContent}</span>}
         {linkContent}
-        {suffixContent && <span class={`${name}__suffix-icon`}>{suffixContent}</span>}
+        {suffixContent && <span class={`${this.componentName}__suffix-icon`}>{suffixContent}</span>}
       </a>
     );
   },
