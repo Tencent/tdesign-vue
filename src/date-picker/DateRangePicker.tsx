@@ -87,7 +87,11 @@ export default defineComponent({
     });
 
     // 日期 hover
-    function onCellMouseEnter(date: Date) {
+    function onCellMouseEnter(nextDate: Date) {
+      const date = nextDate;
+      // 不开启时间选择时 结束时间默认重置为 23:59:59
+      if (activeIndex.value && !props.enableTimePicker) date.setHours(23, 59, 59);
+
       isHoverCell.value = true;
       const nextValue = [...(inputValue.value as string[])];
       nextValue[activeIndex.value] = formatDate(date, {
@@ -104,7 +108,11 @@ export default defineComponent({
     }
 
     // 日期点击
-    function onCellClick(date: Date, { e, partial }: { e: MouseEvent; partial: DateRangePickerPartial }) {
+    function onCellClick(nextDate: Date, { e, partial }: { e: MouseEvent; partial: DateRangePickerPartial }) {
+      const date = nextDate;
+      // 不开启时间选择时 结束时间默认重置为 23:59:59
+      if (activeIndex.value && !props.enableTimePicker) date.setHours(23, 59, 59);
+
       props.onPick?.(date, { e, partial });
       emit('pick', date, { e, partial });
 

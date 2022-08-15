@@ -1,5 +1,4 @@
-import { defineComponent, PropType, computed } from '@vue/composition-api';
-import dayjs from 'dayjs';
+import { defineComponent, PropType } from '@vue/composition-api';
 import { usePrefixClass } from '../../hooks/useConfig';
 import type { TdDatePickerProps } from '../type';
 
@@ -43,7 +42,7 @@ export default defineComponent({
       enableTimePicker: props.enableTimePicker,
     });
 
-    const defaultTimeValue = computed(() => dayjs().format(timeFormat));
+    const defaultTimeValue = '00:00:00';
 
     return { COMPONENT_NAME, defaultTimeValue, timeFormat };
   },
@@ -91,7 +90,7 @@ export default defineComponent({
                 key: this.partial,
                 props: {
                   format: timeFormat,
-                  value: this.time,
+                  value: this.time || defaultTimeValue,
                   onChange: this.onTimePickerChange,
                   isShowPanel: this.popupVisible,
                   ...this.timePickerProps,
