@@ -1,5 +1,5 @@
 import {
-  defineComponent, watchEffect, computed, ref,
+  defineComponent, watch, computed, ref,
 } from '@vue/composition-api';
 import dayjs from 'dayjs';
 import { CalendarIcon } from 'tdesign-icons-vue';
@@ -49,9 +49,9 @@ export default defineComponent({
     // 记录面板是否选中过
     const isSelected = ref(false);
 
-    watchEffect(() => {
+    watch(popupVisible, (visible) => {
       // 面板展开重置数据
-      if (popupVisible.value) {
+      if (visible) {
         isSelected.value = false;
         isFirstValueSelected.value = false;
         cacheValue.value = formatDate(value.value || [], {
@@ -113,8 +113,8 @@ export default defineComponent({
       // 不开启时间选择时 结束时间默认重置为 23:59:59
       if (activeIndex.value && !props.enableTimePicker) date.setHours(23, 59, 59);
 
-      props.onPick?.(date, { e, partial });
-      emit('pick', date, { e, partial });
+      props.onPick?.(date, { e, partial: activeIndex.value ? 'end' : 'start' });
+      emit('pick', date, { e, partial: activeIndex.value ? 'end' : 'start' });
 
       isHoverCell.value = false;
       isSelected.value = true;
