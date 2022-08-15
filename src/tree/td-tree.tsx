@@ -121,7 +121,9 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
   methods: {
     // 创建单个 tree 节点
     renderItem(node: TreeNode) {
-      const { nested, treeScope, $proxyScope } = this;
+      const {
+        nested, treeScope, $proxyScope, expandOnClickNode,
+      } = this;
       const treeItem = (
         <TreeItem
           key={node.value}
@@ -131,6 +133,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
           proxyScope={$proxyScope}
           onClick={this.handleClick}
           onChange={this.handleChange}
+          expandOnClickNode={expandOnClickNode}
         />
       );
       return treeItem;
