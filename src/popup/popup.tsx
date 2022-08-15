@@ -74,10 +74,6 @@ export default Vue.extend({
       mouseInRange: false,
       /** mark popup as clicked when mousedown, reset after mouseup */
       contentClicked: false,
-      /**
-       * mark trigger element as clicked when click,
-       * reset after click event bubbles to document */
-      triggerClicked: false,
     };
   },
   computed: {
@@ -107,7 +103,7 @@ export default Vue.extend({
       if (visible) {
         this.preventClosing(true);
         if (!this.hasDocumentEvent) {
-          on(document, 'click', this.handleDocumentClick);
+          on(document, 'click', this.handleDocumentClick, true);
           this.hasDocumentEvent = true;
         }
         // focus trigger esc 隐藏浮层
@@ -124,7 +120,7 @@ export default Vue.extend({
       } else {
         this.preventClosing(false);
         // destruction is delayed until after animation ends
-        off(document, 'click', this.handleDocumentClick);
+        off(document, 'click', this.handleDocumentClick, true);
         this.hasDocumentEvent = false;
         this.mouseInRange = false;
       }
@@ -158,8 +154,6 @@ export default Vue.extend({
         trigger.add('focusout', () => this.handleClose({ trigger: 'trigger-element-blur' }));
       } else if (hasTrigger.click) {
         trigger.add('click', (e: MouseEvent) => {
-          // override nested popups with trigger hover due to higher priority
-          this.visibleState = 0;
           this.handleToggle({ e, trigger: 'trigger-element-click' });
           // ie9-10 trigger propagation
           if (getIEVersion() < 11) {
@@ -174,11 +168,6 @@ export default Vue.extend({
           e.button === 2 && this.handleToggle({ trigger: 'context-menu' });
         });
       }
-      if (!hasTrigger['context-menu']) {
-        trigger.add('click', () => {
-          this.triggerClicked = true;
-        });
-      }
     };
     updateTrigger();
     this.$watch('trigger', updateTrigger);
@@ -186,8 +175,10 @@ export default Vue.extend({
   updated() {
     (this.$refs.container as any)?.updateContent();
   },
-  destroyed() {
+  beforeDestroy() {
+    (this as any).popup?.preventClosing(false);
     this.destroyPopper();
+    off(document, 'click', this.handleDocumentClick, true);
   },
   methods: {
     updatePopper() {
@@ -238,7 +229,8 @@ export default Vue.extend({
       if (!triggerEl || !overlayEl) return;
       if (typeof overlayStyle === 'function') {
         return overlayStyle(triggerEl, overlayEl);
-      } if (typeof overlayStyle === 'object') {
+      }
+      if (typeof overlayStyle === 'object') {
         return overlayStyle;
       }
     },
@@ -289,15 +281,17 @@ export default Vue.extend({
         this.hasTrigger.click ? 0 : hideTimeout,
       );
     },
-    handleDocumentClick() {
-      if (this.contentClicked || this.triggerClicked) {
-        this.triggerClicked = false;
-        // clear the flag if mouseup handler is failed
+    handleDocumentClick(ev?: MouseEvent) {
+      if (this.contentClicked) {
+        // clear the flag after mousedown
         setTimeout(() => {
           this.contentClicked = false;
         });
         return;
       }
+      const triggerEl = this.$el as HTMLElement;
+      // ignore document event when clicking trigger element
+      if (triggerEl.contains(ev.target as Node)) return;
       this.visibleState = 0;
       this.emitPopVisible(false, { trigger: 'document' });
     },
@@ -389,13 +383,6 @@ export default Vue.extend({
           on: {
             mousedown: () => {
               this.contentClicked = true;
-            },
-            mouseup: () => {
-              // make sure to execute after document click is triggered
-              setTimeout(() => {
-                // clear the flag which was set by mousedown
-                this.contentClicked = false;
-              });
             },
             ...(hasTrigger.hover && {
               mouseenter: this.onMouseEnter,
