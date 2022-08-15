@@ -10,9 +10,10 @@ export default Vue.extend({
   name: 'TLink',
   props,
   methods: {
-    handleClick(): void {
+    handleClick(e: MouseEvent): void {
       if (this.disabled) return;
-      this.$emit('click');
+      this.$emit('click', e);
+      this.onClick?.(e);
     },
   },
   render(): VNode {

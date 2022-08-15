@@ -3,7 +3,7 @@
     <t-link theme="default" disabled @click="clickLink"> 跳转链接 </t-link>
     <t-link theme="primary" underline disabled @click="clickLink"> 跳转链接 </t-link>
     <t-link theme="danger" hover="color" disabled @click="clickLink"> 跳转链接 </t-link>
-    <t-link theme="warning" hover="underline" disabled @click="clickLink"> 跳转链接 </t-link>
+    <t-link theme="warning" hover="underline" disabled :onClick="clickLink"> 跳转链接 </t-link>
     <t-link theme="success" disabled @click="clickLink">
       <jump-icon slot="suffixIcon" />
       跳转链接
