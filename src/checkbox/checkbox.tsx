@@ -1,27 +1,28 @@
 import Vue, { VNode, VueConstructor } from 'vue';
 import { renderContent } from '../utils/render-tnode';
-import { prefix } from '../config';
-import CLASSNAMES from '../utils/classnames';
 import checkboxProps from './props';
 import Group from './group';
 import { omit } from '../utils/helper';
 import { ClassName } from '../common';
 import { emitEvent } from '../utils/event';
 import { TdCheckboxProps } from './type';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-checkbox`;
+const classPrefixMixins = getClassPrefixMixins('checkbox');
+
+export type CheckboxGroupInstance = InstanceType<typeof Group>;
 
 interface CheckboxInstance extends Vue {
-  checkboxGroup: InstanceType<typeof Group>;
+  checkboxGroup: CheckboxGroupInstance;
 }
 
-export default (Vue as VueConstructor<CheckboxInstance>).extend({
+export default mixins(classPrefixMixins, Vue as VueConstructor<CheckboxInstance>).extend({
   name: 'TCheckbox',
 
   inheritAttrs: false,
 
   props: { ...checkboxProps },
-
   inject: {
     checkboxGroup: { default: undefined },
   },
@@ -36,11 +37,11 @@ export default (Vue as VueConstructor<CheckboxInstance>).extend({
   computed: {
     labelClasses(): ClassName {
       return [
-        `${name}`,
+        `${this.componentName}`,
         {
-          [CLASSNAMES.STATUS.checked]: this.checked$,
-          [CLASSNAMES.STATUS.disabled]: this.disabled$,
-          [CLASSNAMES.STATUS.indeterminate]: this.indeterminate$,
+          [this.commonStatusClassName.checked]: this.checked$,
+          [this.commonStatusClassName.disabled]: this.disabled$,
+          [this.commonStatusClassName.indeterminate]: this.indeterminate$,
         },
       ];
     },
@@ -71,7 +72,7 @@ export default (Vue as VueConstructor<CheckboxInstance>).extend({
         <input
           type="checkbox"
           on={{ ...omit(this.$listeners, ['checked', 'change']) }}
-          class={`${name}__former`}
+          class={`${this.componentName}__former`}
           disabled={this.disabled$}
           readonly={this.readonly}
           indeterminate={this.indeterminate$}
@@ -80,14 +81,14 @@ export default (Vue as VueConstructor<CheckboxInstance>).extend({
           checked={this.checked$}
           onChange={this.handleChange}
         ></input>
-        <span class={`${name}__input`}></span>
-        <span class={`${name}__label`}>{renderContent(this, 'default', 'label')}</span>
+        <span class={`${this.componentName}__input`}></span>
+        <span class={`${this.componentName}__label`}>{renderContent(this, 'default', 'label')}</span>
       </label>
     );
   },
 
   methods: {
-    handleChange(e: Event) {
+    handleChange(e: Event): void {
       const value = !this.checked$;
       emitEvent<Parameters<TdCheckboxProps['onChange']>>(this, 'change', value, { e });
       e.stopPropagation();

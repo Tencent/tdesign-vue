@@ -13,11 +13,7 @@ import useTagList from './useTagList';
 import useHover from './hooks/useHover';
 import useDefaultValue from '../hooks/useDefaultValue';
 import useDragSorter from './hooks/useDragSorter';
-
-// constants class
-const NAME_CLASS = `${prefix}-tag-input`;
-const CLEAR_CLASS = `${prefix}-tag-input__suffix-clear`;
-const BREAK_LINE_CLASS = `${prefix}-tag-input--break-line`;
+import { usePrefixClass } from '../config-provider/useConfig';
 
 export default defineComponent({
   name: 'TTagInput',
@@ -28,6 +24,8 @@ export default defineComponent({
     const { inputValue } = toRefs(props);
     const { inputProps } = props;
     const isCompositionRef = ref(false);
+    const COMPONENT_NAME = usePrefixClass('tag-input');
+
     const [tInputValue, setTInputValue] = useDefaultValue(
       inputValue,
       props.defaultInputValue,
@@ -71,9 +69,9 @@ export default defineComponent({
     );
 
     const classes = computed(() => [
-      NAME_CLASS,
+      COMPONENT_NAME.value,
       {
-        [BREAK_LINE_CLASS]: excessTagsDisplayType.value === 'break-line',
+        [`${COMPONENT_NAME.value}--break-line`]: excessTagsDisplayType.value === 'break-line',
       },
     ]);
 
@@ -142,12 +140,13 @@ export default defineComponent({
       classes,
       onInputCompositionstart,
       onInputCompositionend,
+      componentName: COMPONENT_NAME,
     };
   },
 
   render(h) {
     const suffixIconNode = this.showClearIcon ? (
-      <CloseCircleFilledIcon class={CLEAR_CLASS} onClick={this.onClearClick} />
+      <CloseCircleFilledIcon class={`${this.componentName}__suffix-clear`} onClick={this.onClearClick} />
     ) : (
       renderTNodeJSX(this, 'suffixIcon')
     );

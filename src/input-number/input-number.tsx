@@ -1,4 +1,4 @@
-import Vue, { VNode } from 'vue';
+import { VNode } from 'vue';
 import {
   AddIcon, RemoveIcon, ChevronDownIcon, ChevronUpIcon,
 } from 'tdesign-icons-vue';
@@ -6,13 +6,13 @@ import {
 import TButton from '../button';
 import TInput from '../input';
 import { emitEvent } from '../utils/event';
-import { prefix } from '../config';
-import CLASSNAMES from '../utils/classnames';
 import props from './props';
 import { ChangeSource, TdInputNumberProps } from './type';
 import { ClassName, TNodeReturnValue } from '../common';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-input-number`;
+const classPrefixMixins = getClassPrefixMixins('input-number');
 
 type InputNumberEvent = {
   on: {
@@ -43,7 +43,7 @@ type InputNumberAttr = {
   };
 };
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TInputNumber',
   props: { ...props },
   components: {
@@ -99,9 +99,9 @@ export default Vue.extend({
     reduceClasses(): ClassName {
       return {
         class: [
-          `${name}__decrease`,
+          `${this.componentName}__decrease`,
           {
-            [CLASSNAMES.STATUS.disabled]: this.disabledReduce,
+            [this.commonStatusClassName.disabled]: this.disabledReduce,
           },
         ],
       };
@@ -116,9 +116,9 @@ export default Vue.extend({
     addClasses(): ClassName {
       return {
         class: [
-          `${name}__increase`,
+          `${this.componentName}__increase`,
           {
-            [CLASSNAMES.STATUS.disabled]: this.disabledAdd,
+            [this.commonStatusClassName.disabled]: this.disabledAdd,
           },
         ],
       };
@@ -133,13 +133,13 @@ export default Vue.extend({
     cmptWrapClasses(): ClassName {
       return {
         class: [
-          name,
-          CLASSNAMES.SIZE[this.size],
+          this.componentName,
+          this.commonSizeClassName[this.size],
           {
-            [CLASSNAMES.STATUS.disabled]: this.tDisabled,
-            [`${prefix}-is-controls-right`]: this.theme === 'column',
-            [`${name}--${this.theme}`]: this.theme,
-            [`${name}--auto-width`]: this.autoWidth,
+            [this.commonStatusClassName.disabled]: this.tDisabled,
+            [`${this.classPrefix}-is-controls-right`]: this.theme === 'column',
+            [`${this.componentName}--${this.theme}`]: this.theme,
+            [`${this.componentName}--auto-width`]: this.autoWidth,
           },
         ],
       };

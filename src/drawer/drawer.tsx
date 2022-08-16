@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import { CloseIcon } from 'tdesign-icons-vue';
 
-import { prefix } from '../config';
 import { Button as TButton } from '../button';
 import props from './props';
 import { FooterButton, DrawerCloseContext, TdDrawerProps } from './type';
@@ -15,9 +14,6 @@ import { ClassName, Styles } from '../common';
 import ActionMixin from '../dialog/actions';
 
 type FooterButtonType = 'confirm' | 'cancel';
-
-const name = `${prefix}-drawer`;
-const lockClass = `${prefix}-drawer--lock`;
 
 export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('drawer')).extend({
   name: 'TDrawer',
@@ -41,12 +37,12 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
   computed: {
     drawerClasses(): ClassName {
       return [
-        name,
-        `${name}--${this.placement}`,
+        this.componentName,
+        `${this.componentName}--${this.placement}`,
         {
-          [`${name}--open`]: this.visible,
-          [`${name}--attach`]: this.showInAttachedElement,
-          [`${name}--without-mask`]: !this.showOverlay,
+          [`${this.componentName}--open`]: this.visible,
+          [`${this.componentName}--attach`]: this.showInAttachedElement,
+          [`${this.componentName}--without-mask`]: !this.showOverlay,
         },
       ];
     },
@@ -72,7 +68,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
       };
     },
     wrapperClasses(): ClassName {
-      return [`${name}__content-wrapper`, `${name}__content-wrapper--${this.placement}`];
+      return [`${this.componentName}__content-wrapper`, `${this.componentName}__content-wrapper--${this.placement}`];
     },
     parentNode(): HTMLElement {
       return this.$el && (this.$el.parentNode as HTMLElement);
@@ -139,7 +135,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
 
   render() {
     if (this.destroyOnClose && !this.visible) return;
-    const defaultCloseBtn = <close-icon class={`${prefix}-submenu-icon`}></close-icon>;
+    const defaultCloseBtn = <close-icon class={`${this.classPrefix}-submenu-icon`}></close-icon>;
     const body = renderContent(this, 'default', 'body');
     const defaultFooter = this.getDefaultFooter();
     return (
@@ -151,19 +147,19 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
         ref="drawerContainer"
         tabindex={0}
       >
-        {this.showOverlay && <div class={`${name}__mask`} onClick={this.handleWrapperClick} />}
+        {this.showOverlay && <div class={`${this.componentName}__mask`} onClick={this.handleWrapperClick} />}
         <div class={this.wrapperClasses} style={this.wrapperStyles}>
           {this.header !== false ? (
-            <div class={`${name}__header`}>{renderTNodeJSX(this, 'header', <div></div>)}</div>
+            <div class={`${this.componentName}__header`}>{renderTNodeJSX(this, 'header', <div></div>)}</div>
           ) : null}
           {this.closeBtn !== false ? (
-            <div class={`${name}__close-btn`} onClick={this.handleCloseBtnClick}>
+            <div class={`${this.componentName}__close-btn`} onClick={this.handleCloseBtnClick}>
               {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
             </div>
           ) : null}
-          <div class={`${name}__body`}>{body}</div>
+          <div class={`${this.componentName}__body`}>{body}</div>
           {this.footer !== false ? (
-            <div class={`${name}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
+            <div class={`${this.componentName}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
           ) : null}
           {this.sizeDraggable && <div style={this.draggableLineStyles} onMousedown={this.enableDrag}></div>}
         </div>
@@ -202,9 +198,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
     handleScrollThrough(visible: boolean) {
       if (!document || !document.body || !this.preventScrollThrough) return;
       if (visible && !this.showInAttachedElement) {
-        this.preventScrollThrough && addClass(document.body, lockClass);
+        this.preventScrollThrough && addClass(document.body, `${this.componentName}--lock`);
       } else {
-        this.preventScrollThrough && removeClass(document.body, lockClass);
+        this.preventScrollThrough && removeClass(document.body, `${this.componentName}--lock`);
       }
     },
     handlePushMode() {
@@ -236,7 +232,12 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
       const theme = isCancel ? 'default' : 'primary';
       const isApiObject = typeof btnApi === 'object';
       return (
-        <t-button theme={theme} onClick={clickAction} props={isApiObject ? btnApi : {}} class={`${name}-${btnType}`}>
+        <t-button
+          theme={theme}
+          onClick={clickAction}
+          props={isApiObject ? btnApi : {}}
+          class={`${this.componentName}-${btnType}`}
+        >
           {btnApi && typeof btnApi === 'object' ? btnApi.content : btnApi}
         </t-button>
       );
@@ -251,13 +252,13 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
       const confirmBtn = this.getConfirmBtn({
         confirmBtn: this.confirmBtn,
         globalConfirm: this.global.confirm,
-        className: `${prefix}-drawer__confirm`,
+        className: `${this.componentName}__confirm`,
       });
       // this.getCancelBtn is a function of ActionMixin
       const cancelBtn = this.getCancelBtn({
         cancelBtn: this.cancelBtn,
         globalCancel: this.global.cancel,
-        className: `${prefix}-drawer__cancel`,
+        className: `${this.componentName}__cancel`,
       });
       return (
         <div style={this.footerStyle}>

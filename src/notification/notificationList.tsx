@@ -1,11 +1,13 @@
-import Vue from 'vue';
 import Notification from './notification';
-import { prefix } from '../config';
 import { TdNotificationProps, NotificationOptions } from './type';
 import { DEFAULT_Z_INDEX, PLACEMENT_OFFSET, DISTANCE } from './const';
 import { Styles } from '../common';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-export default Vue.extend({
+const classPrefixMixins = getClassPrefixMixins('notification');
+
+export default mixins(classPrefixMixins).extend({
   components: { Notification },
   props: {
     placement: {
@@ -66,7 +68,7 @@ export default Vue.extend({
   render() {
     if (!this.list.length) return;
     return (
-      <div class={`${prefix}-notification__show--${this.placement}`} style={this.styles}>
+      <div class={`${this.componentName}__show--${this.placement}`} style={this.styles}>
         {this.list.map((item, index) => (
           <t-notification
             key={item.id}

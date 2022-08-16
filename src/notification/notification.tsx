@@ -1,14 +1,15 @@
-import Vue, { CreateElement } from 'vue';
+import { CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
 import { InfoCircleFilledIcon, CheckCircleFilledIcon, CloseIcon } from 'tdesign-icons-vue';
-import { prefix } from '../config';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import props from './props';
 import { TNodeReturnValue } from '../common';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-notification`;
+const classPrefixMixins = getClassPrefixMixins('notification');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TNotification',
   components: {
     InfoCircleFilledIcon,
@@ -43,24 +44,24 @@ export default Vue.extend({
         icon = this.$scopedSlots.icon(null);
       } else if (this.theme) {
         const iconType = this.theme === 'success' ? (
-            <check-circle-filled-icon class={`${prefix}-is-${this.theme}`} />
+            <check-circle-filled-icon class={`${this.classPrefix}-is-${this.theme}`} />
         ) : (
-            <info-circle-filled-icon class={`${prefix}-is-${this.theme}`} />
+            <info-circle-filled-icon class={`${this.classPrefix}-is-${this.theme}`} />
         );
-        icon = <div class={`${name}__icon`}>{iconType}</div>;
+        icon = <div class={`${this.componentName}__icon`}>{iconType}</div>;
       }
       return icon;
     },
     renderClose() {
       const defaultClose = <close-icon />;
       return (
-        <span class={`${prefix}-message__close`} onClick={this.close}>
+        <span class={`${this.classPrefix}-message__close`} onClick={this.close}>
           {renderTNodeJSX(this, 'closeBtn', defaultClose)}
         </span>
       );
     },
     renderContent() {
-      return <div class={`${name}__content`}>{renderContent(this, 'default', 'content')}</div>;
+      return <div class={`${this.componentName}__content`}>{renderContent(this, 'default', 'content')}</div>;
     },
   },
   render(h: CreateElement) {
@@ -71,11 +72,11 @@ export default Vue.extend({
     const title = renderTNodeJSX(this, 'title');
 
     return (
-      <div class={`${name}`}>
+      <div class={`${this.componentName}`}>
         {icon}
-        <div class={`${name}__main`}>
-          <div class={`${name}__title__wrap`}>
-            <span class={`${name}__title`}>{title}</span>
+        <div class={`${this.componentName}__main`}>
+          <div class={`${this.componentName}__title__wrap`}>
+            <span class={`${this.componentName}__title`}>{title}</span>
             {close}
           </div>
           {content}

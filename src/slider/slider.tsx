@@ -2,13 +2,15 @@ import Vue, { VNode } from 'vue';
 import { emitEvent } from '../utils/event';
 import { TNode, ClassName } from '../common';
 import props from './props';
-import { prefix } from '../config';
 import InputNumber from '../input-number/index';
 import TSliderMark from './slider-mark';
 import { SliderValue, TdSliderProps } from './type';
 import TSliderButton from './slider-button';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-slider`;
+const classPrefixMixins = getClassPrefixMixins('slider');
+
 export interface MarkItem {
   point: number;
   position: number;
@@ -18,7 +20,7 @@ interface SliderButtonType extends Vue {
   setPosition: (param: number) => {};
 }
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TSlider',
   model: {
     prop: 'value',
@@ -57,25 +59,28 @@ export default Vue.extend({
       return this.formDisabled || this.disabled;
     },
     containerClass(): ClassName {
-      return [`${name}__container`, { 'is-vertical': this.vertical }];
+      return [`${this.componentName}__container`, { 'is-vertical': this.vertical }];
     },
     sliderClass(): ClassName {
       return [
-        `${name}`,
+        `${this.componentName}`,
         {
           'is-vertical': this.vertical,
-          [`${name}--with-input`]: this.inputNumberProps,
-          [`${name}--vertical`]: this.vertical,
-          [`${prefix}-is-disabled`]: this.tDisabled,
+          [`${this.componentName}--with-input`]: this.inputNumberProps,
+          [`${this.componentName}--vertical`]: this.vertical,
+          [`${this.classPrefix}-is-disabled`]: this.tDisabled,
         },
       ];
     },
     sliderRailClass(): ClassName {
-      return [`${name}__rail`, { 'show-input': this.inputNumberProps, [`${prefix}-is-disabled`]: this.tDisabled }];
+      return [
+        `${this.componentName}__rail`,
+        { 'show-input': this.inputNumberProps, [`${this.classPrefix}-is-disabled`]: this.tDisabled },
+      ];
     },
     sliderNumberClass(): ClassName {
       return [
-        `${name}__input`,
+        `${this.componentName}__input`,
         {
           'is-vertical': this.vertical,
         },
@@ -344,13 +349,13 @@ export default Vue.extend({
             <div>
               {this.markList.map((item, index) => (
                 <div
-                  class={[`${name}__stop`, `${name}__mark-stop`]}
+                  class={[`${this.componentName}__stop`, `${this.componentName}__mark-stop`]}
                   style={this.getStopStyle(item.position)}
                   key={index}
                 ></div>
               ))}
             </div>
-            <div class={`${name}__mark`}>
+            <div class={`${this.componentName}__mark`}>
               {this.markList.map((item, key) => (
                 <t-slider-mark
                   mark={item.mark}
@@ -372,7 +377,7 @@ export default Vue.extend({
       return (
         <div
           class={[
-            `${name}__input-container`,
+            `${this.componentName}__input-container`,
             {
               'is-vertical': this.vertical,
             },
@@ -393,7 +398,7 @@ export default Vue.extend({
               props={this.calcInputNumberProps}
             ></t-input-number>
           }
-          {range && <div class={`${name}__center-line`} />}
+          {range && <div class={`${this.componentName}__center-line`} />}
           {range && (
             <t-input-number
               class={this.sliderNumberClass}
@@ -428,7 +433,7 @@ export default Vue.extend({
           tooltip-props={this.tooltipProps}
         >
           <div class={this.sliderRailClass} style={this.runwayStyle} onClick={this.onSliderClick} ref="slider">
-            <div class={`${name}__track`} style={this.barStyle}></div>
+            <div class={`${this.componentName}__track`} style={this.barStyle}></div>
             <TSliderButton
               vertical={vertical}
               value={range ? this.firstValue : this.prevValue}
@@ -458,7 +463,7 @@ export default Vue.extend({
             {this.showSteps && (
               <div>
                 {this.steps.map((item, key) => (
-                  <div class={`${name}__stop`} key={key} style={this.getStopStyle(item)}></div>
+                  <div class={`${this.componentName}__stop`} key={key} style={this.getStopStyle(item)}></div>
                 ))}
               </div>
             )}
