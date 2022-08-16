@@ -101,14 +101,7 @@ export default {
 };
 </script>
 <style scoped>
-.t-form__item {
-  margin-bottom: 0;
-}
-
 .t-input-number {
   width: 300px;
-}
-.tdesign-demo-item--input-number .t-input-number {
-  margin-bottom: 16px;
 }
 </style>
