@@ -36,7 +36,7 @@ export default mixins(classPrefixMixins).extend({
 
   computed: {
     checkedClassName(): string {
-      return `.${this.componentName}-button.${this.commonStatusClassName.checked}`;
+      return `.${this.classPrefix}-radio-button.${this.commonStatusClassName.checked}`;
     },
   },
 
