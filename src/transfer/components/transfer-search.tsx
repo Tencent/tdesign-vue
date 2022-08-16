@@ -1,12 +1,14 @@
-import Vue, { PropType, VNode } from 'vue';
-import { SearchIcon } from 'tdesign-icons-vue';
+import { PropType, VNode } from 'vue';
+import { SearchIcon as TdSearchIcon } from 'tdesign-icons-vue';
 import { prefix } from '../../config';
 import { SearchOption } from '../interface';
 import TInput from '../../input';
 
-export default Vue.extend({
+import mixins from '../../utils/mixins';
+import { getGlobalIconMixins } from '../../config-provider/config-receiver';
+
+export default mixins(getGlobalIconMixins()).extend({
   name: 'TTransferSearch',
-  functional: true,
   model: {
     prop: 'searchValue',
     event: 'change',
@@ -21,29 +23,29 @@ export default Vue.extend({
     },
     placeholder: String,
   },
-  render(_, context): VNode {
-    const { searchValue, search, placeholder } = context.props;
+  render(): VNode {
+    const { SearchIcon } = this.useGlobalIcon({ SearchIcon: TdSearchIcon });
+    4;
+    const { searchValue, search, placeholder } = this;
     const inputProps = typeof search === 'object'
       ? search
       : {
         clearable: true,
       };
-    const handleChange = function (value: string, changeCtx: any) {
-      context.listeners.change && (context.listeners.change as Function)(value);
-      context.listeners.search
-        && (context.listeners.search as Function)({
-          value,
-          trigger: 'input',
-          e: changeCtx.e,
-        });
+    const handleChange = (value: string, changeCtx: any) => {
+      this.$emit('change', value);
+      this.$emit('search', {
+        value,
+        trigger: 'input',
+        e: changeCtx.e,
+      });
     };
-    const handleEnter = function (value: string, changeCtx: any) {
-      context.listeners.search
-        && (context.listeners.search as Function)({
-          value,
-          trigger: 'input',
-          e: changeCtx.e,
-        });
+    const handleEnter = (value: string, changeCtx: any) => {
+      this.$emit('search', {
+        value,
+        trigger: 'input',
+        e: changeCtx.e,
+      });
     };
     return (
       <div class={`${prefix}-transfer__search-wrapper`}>

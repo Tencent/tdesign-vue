@@ -1,12 +1,12 @@
-import Vue, { VNode } from 'vue';
+import { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import {
-  CloseCircleFilledIcon,
-  CheckCircleFilledIcon,
-  ErrorCircleFilledIcon,
-  ErrorIcon,
-  CloseIcon,
-  CheckIcon,
+  CloseCircleFilledIcon as TdCloseCircleFilledIcon,
+  CheckCircleFilledIcon as TdCheckCircleFilledIcon,
+  ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
+  CloseIcon as TdCloseIcon,
+  CheckIcon as TdCheckIcon,
+  ErrorIcon as TdErrorIcon,
 } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import { getBackgroundColor } from '../utils/helper';
@@ -17,9 +17,12 @@ import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { Styles } from '../common';
 
+import mixins from '../utils/mixins';
+import { getGlobalIconMixins } from '../config-provider/config-receiver';
+
 const name = `${prefix}-progress`;
 
-export default Vue.extend({
+export default mixins(getGlobalIconMixins()).extend({
   name: 'TProgress',
 
   props: { ...props },
@@ -142,6 +145,16 @@ export default Vue.extend({
 
   methods: {
     getIconMap() {
+      const {
+        CloseCircleFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon, CloseIcon, CheckIcon, ErrorIcon,
+      } = this.useGlobalIcon({
+        CloseCircleFilledIcon: TdCloseCircleFilledIcon,
+        CheckCircleFilledIcon: TdCheckCircleFilledIcon,
+        ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
+        CloseIcon: TdCloseIcon,
+        CheckIcon: TdCheckIcon,
+        ErrorIcon: TdErrorIcon,
+      });
       const CIRCLE_ICONS = {
         success: CheckIcon,
         warning: ErrorIcon,

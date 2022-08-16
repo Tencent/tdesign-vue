@@ -1,8 +1,12 @@
 import Vue, { VNode, CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
-import { CaretRightSmallIcon } from 'tdesign-icons-vue';
+import { CaretRightSmallIcon as TdCaretRightSmallIcon } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { TreeConfig, getKeepAnimationMixins } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, {
+  TreeConfig,
+  getKeepAnimationMixins,
+  getGlobalIconMixins,
+} from '../config-provider/config-receiver';
 import TCheckBox from '../checkbox';
 import TLoading from '../loading';
 import TreeNode from '../_common/js/tree/tree-node';
@@ -30,7 +34,11 @@ export const TreeItemProps = {
   },
 };
 
-const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnimationMixins).extend({
+const TreeItem = mixins(
+  getConfigReceiverMixins<Vue, TreeConfig>('tree'),
+  keepAnimationMixins,
+  getGlobalIconMixins(),
+).extend({
   name: TREE_NODE_NAME,
   props: TreeItemProps,
   directives: { ripple },
@@ -129,6 +137,9 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
       if (isFunction(this.global.folderIcon)) {
         return this.global.folderIcon(this.$createElement);
       }
+      const { CaretRightSmallIcon } = this.useGlobalIcon({
+        CaretRightSmallIcon: TdCaretRightSmallIcon,
+      });
       return <CaretRightSmallIcon />;
     },
     renderIcon(createElement: CreateElement): VNode {

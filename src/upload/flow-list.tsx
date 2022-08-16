@@ -1,10 +1,10 @@
 import Vue, { VNode, PropType } from 'vue';
 import {
-  TimeFilledIcon,
-  CheckCircleFilledIcon,
-  ErrorCircleFilledIcon,
-  DeleteIcon,
-  BrowseIcon,
+  TimeFilledIcon as TdTimeFilledIcon,
+  CheckCircleFilledIcon as TdCheckCircleFilledIcon,
+  ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
+  DeleteIcon as TdDeleteIcon,
+  BrowseIcon as TdBrowseIcon,
 } from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import { UploadFile } from './type';
@@ -14,21 +14,16 @@ import { returnFileSize, abridgeName } from '../_common/js/upload/utils';
 import { FlowRemoveContext } from './interface';
 import props from './props';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { UploadConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { UploadConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 
 const uploadName = `${prefix}-upload`;
 
-export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).extend({
+export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getGlobalIconMixins()).extend({
   name: 'TUploadFlowList',
 
   components: {
     TButton,
     TLoading,
-    TimeFilledIcon,
-    CheckCircleFilledIcon,
-    ErrorCircleFilledIcon,
-    DeleteIcon,
-    BrowseIcon,
   },
 
   props: {
@@ -112,6 +107,11 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
   methods: {
     renderStatus(file: UploadFile) {
       let status = null;
+      const { TimeFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon } = this.useGlobalIcon({
+        TimeFilledIcon: TdTimeFilledIcon,
+        CheckCircleFilledIcon: TdCheckCircleFilledIcon,
+        ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
+      });
       switch (file.status) {
         case 'success':
           status = (
@@ -263,6 +263,11 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     },
 
     renderImgList() {
+      const { ErrorCircleFilledIcon, DeleteIcon, BrowseIcon } = this.useGlobalIcon({
+        ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
+        DeleteIcon: TdDeleteIcon,
+        BrowseIcon: TdBrowseIcon,
+      });
       return (
         <div class={`${uploadName}__flow-card-area`}>
           {this.showInitial && this.renderDragger()}

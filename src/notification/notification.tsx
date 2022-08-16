@@ -1,20 +1,22 @@
-import Vue, { CreateElement } from 'vue';
+import { CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
-import { InfoCircleFilledIcon, CheckCircleFilledIcon, CloseIcon } from 'tdesign-icons-vue';
+import {
+  InfoCircleFilledIcon as TdInfoCircleFilledIcon,
+  CheckCircleFilledIcon as TdCheckCircleFilledIcon,
+  CloseIcon as TdCloseIcon,
+} from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import props from './props';
 import { TNodeReturnValue } from '../common';
 
+import mixins from '../utils/mixins';
+import { getGlobalIconMixins } from '../config-provider/config-receiver';
+
 const name = `${prefix}-notification`;
 
-export default Vue.extend({
+export default mixins(getGlobalIconMixins()).extend({
   name: 'TNotification',
-  components: {
-    InfoCircleFilledIcon,
-    CheckCircleFilledIcon,
-    CloseIcon,
-  },
   props: { ...props },
   mounted() {
     if (this.duration > 0) {
@@ -42,17 +44,24 @@ export default Vue.extend({
       } else if (this.$scopedSlots.icon) {
         icon = this.$scopedSlots.icon(null);
       } else if (this.theme) {
+        const { InfoCircleFilledIcon, CheckCircleFilledIcon } = this.useGlobalIcon({
+          InfoCircleFilledIcon: TdInfoCircleFilledIcon,
+          CheckCircleFilledIcon: TdCheckCircleFilledIcon,
+        });
         const iconType = this.theme === 'success' ? (
-            <check-circle-filled-icon class={`${prefix}-is-${this.theme}`} />
+            <CheckCircleFilledIcon class={`${prefix}-is-${this.theme}`} />
         ) : (
-            <info-circle-filled-icon class={`${prefix}-is-${this.theme}`} />
+            <InfoCircleFilledIcon class={`${prefix}-is-${this.theme}`} />
         );
         icon = <div class={`${name}__icon`}>{iconType}</div>;
       }
       return icon;
     },
     renderClose() {
-      const defaultClose = <close-icon />;
+      const { CloseIcon } = this.useGlobalIcon({
+        CloseIcon: TdCloseIcon,
+      });
+      const defaultClose = <CloseIcon />;
       return (
         <span class={`${prefix}-message__close`} onClick={this.close}>
           {renderTNodeJSX(this, 'closeBtn', defaultClose)}

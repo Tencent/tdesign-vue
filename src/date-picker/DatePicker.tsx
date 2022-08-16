@@ -1,8 +1,9 @@
 import { defineComponent, watch, computed } from '@vue/composition-api';
 import dayjs from 'dayjs';
-import { CalendarIcon } from 'tdesign-icons-vue';
-import { usePrefixClass } from '../hooks/useConfig';
+import { CalendarIcon as TdCalendarIcon } from 'tdesign-icons-vue';
 
+import { usePrefixClass } from '../hooks/useConfig';
+import { useGlobalIcon } from '../hooks/useGlobalIcon';
 import useSingle from './hooks/useSingle';
 import {
   parseToDayjs, getDefaultFormat, formatTime, formatDate,
@@ -19,6 +20,7 @@ export default defineComponent({
   props,
   setup(props, { emit }) {
     const COMPONENT_NAME = usePrefixClass('date-picker');
+    const { CalendarIcon } = useGlobalIcon({ CalendarIcon: TdCalendarIcon });
 
     const {
       inputValue,
@@ -243,11 +245,18 @@ export default defineComponent({
       datePickerInputProps,
       popupVisible,
       panelProps,
+      CalendarIcon,
     };
   },
   render() {
     const {
-      COMPONENT_NAME, inputValue, datePickerPopupProps, datePickerInputProps, popupVisible, panelProps,
+      COMPONENT_NAME,
+      inputValue,
+      datePickerPopupProps,
+      datePickerInputProps,
+      popupVisible,
+      panelProps,
+      CalendarIcon,
     } = this;
 
     return (

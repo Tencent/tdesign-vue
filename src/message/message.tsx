@@ -1,10 +1,9 @@
-import Vue from 'vue';
 import {
-  InfoCircleFilledIcon,
-  CheckCircleFilledIcon,
-  ErrorCircleFilledIcon,
-  HelpCircleFilledIcon,
-  CloseIcon,
+  InfoCircleFilledIcon as TdInfoCircleFilledIcon,
+  CheckCircleFilledIcon as TdCheckCircleFilledIcon,
+  ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
+  HelpCircleFilledIcon as TdHelpCircleFilledIcon,
+  CloseIcon as TdCloseIcon,
 } from 'tdesign-icons-vue';
 import Loading from '../loading';
 import { prefix } from '../config';
@@ -14,19 +13,13 @@ import props from './props';
 import { ClassName } from '../common';
 import { fadeIn, fadeOut } from './animation';
 
+import mixins from '../utils/mixins';
+import { getGlobalIconMixins } from '../config-provider/config-receiver';
+
 const name = `${prefix}-message`;
 
-export default Vue.extend({
+export default mixins(getGlobalIconMixins()).extend({
   name: 'TMessage',
-
-  components: {
-    InfoCircleFilledIcon,
-    CheckCircleFilledIcon,
-    ErrorCircleFilledIcon,
-    HelpCircleFilledIcon,
-    CloseIcon,
-    Loading,
-  },
 
   props: {
     ...props,
@@ -92,7 +85,10 @@ export default Vue.extend({
       }
     },
     renderClose() {
-      const defaultClose = <close-icon />;
+      const { CloseIcon } = this.useGlobalIcon({
+        CloseIcon: TdCloseIcon,
+      });
+      const defaultClose = <CloseIcon />;
       return (
         <span class={`${name}__close`} onClick={this.close}>
           {renderTNodeJSX(this, 'closeBtn', defaultClose)}
@@ -105,6 +101,14 @@ export default Vue.extend({
       if (this.$scopedSlots.icon) {
         return this.$scopedSlots.icon(null);
       }
+      const {
+        InfoCircleFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon, HelpCircleFilledIcon,
+      } = this.useGlobalIcon({
+        InfoCircleFilledIcon: TdInfoCircleFilledIcon,
+        CheckCircleFilledIcon: TdCheckCircleFilledIcon,
+        ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
+        HelpCircleFilledIcon: TdHelpCircleFilledIcon,
+      });
       const component = {
         info: InfoCircleFilledIcon,
         success: CheckCircleFilledIcon,

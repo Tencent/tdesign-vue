@@ -1,9 +1,10 @@
 import Vue from 'vue';
 import isFunction from 'lodash/isFunction';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import { CheckIcon, CloseIcon } from 'tdesign-icons-vue';
+import { CheckIcon as TdCheckIcon, CloseIcon as TdCloseIcon } from 'tdesign-icons-vue';
+
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { StepsConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { StepsConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import { prefix } from '../config';
 import props from './step-item-props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
@@ -12,19 +13,17 @@ import { ClassName } from '../common';
 
 const name = `${prefix}-steps-item`;
 
+export type StepInstance = InstanceType<typeof Steps>;
+
 export interface StepItemType extends Vue {
-  steps: InstanceType<typeof Steps>;
+  steps: StepInstance;
 }
 
-export default mixins(getConfigReceiverMixins<StepItemType, StepsConfig>('steps')).extend({
+export default mixins(getConfigReceiverMixins<StepItemType, StepsConfig>('steps'), getGlobalIconMixins()).extend({
   name: 'TStepItem',
   props: {
     ...props,
     index: Number,
-  },
-  components: {
-    CheckIcon,
-    CloseIcon,
   },
   inject: {
     steps: { default: undefined },
@@ -48,15 +47,16 @@ export default mixins(getConfigReceiverMixins<StepItemType, StepsConfig>('steps'
       let defaultIcon;
       if (this.steps.theme === 'default') {
         let icon: ScopedSlotReturnValue = '';
+        const { CheckIcon, CloseIcon } = this.useGlobalIcon({ CheckIcon: TdCheckIcon, CloseIcon: TdCloseIcon });
         switch (this.status) {
           case 'finish':
-            icon = <check-icon />;
+            icon = <CheckIcon />;
             break;
           case 'error':
             if (isFunction(this.global.errorIcon)) {
               icon = this.global.errorIcon(this.$createElement);
             } else {
-              icon = <close-icon />;
+              icon = <CloseIcon />;
             }
             break;
           // default 包含 case 'process' 的情况

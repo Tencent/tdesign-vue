@@ -1,5 +1,5 @@
 import Vue, { PropType } from 'vue';
-import { AddIcon, DeleteIcon, BrowseIcon } from 'tdesign-icons-vue';
+import { AddIcon as TdAddIcon, DeleteIcon as TdDeleteIcon, BrowseIcon as TdBrowseIcon } from 'tdesign-icons-vue';
 import { UploadFile } from './type';
 import TLoading from '../loading';
 import { UploadRemoveOptions } from './interface';
@@ -7,17 +7,14 @@ import props from './props';
 import { prefix } from '../config';
 import CLASSNAMES from '../utils/classnames';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { UploadConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { UploadConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 
 export const uploadName = `${prefix}-upload`;
 
-export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).extend({
+export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getGlobalIconMixins()).extend({
   name: 'TImageUpload',
 
   components: {
-    AddIcon,
-    DeleteIcon,
-    BrowseIcon,
     TLoading,
   },
   props: {
@@ -59,6 +56,12 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
   },
 
   render() {
+    const { AddIcon, DeleteIcon, BrowseIcon } = this.useGlobalIcon({
+      AddIcon: TdAddIcon,
+      DeleteIcon: TdDeleteIcon,
+      BrowseIcon: TdBrowseIcon,
+    });
+
     return (
       <ul class={`${uploadName}__card`}>
         {this.files

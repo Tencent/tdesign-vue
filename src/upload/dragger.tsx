@@ -1,5 +1,8 @@
 import Vue, { PropType, VNode } from 'vue';
-import { CheckCircleFilledIcon, ErrorCircleFilledIcon } from 'tdesign-icons-vue';
+import {
+  CheckCircleFilledIcon as TdCheckCircleFilledIcon,
+  ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
+} from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import { UploadFile } from './type';
 import TLoading from '../loading';
@@ -8,19 +11,17 @@ import { returnFileSize, getCurrentDate, abridgeName } from '../_common/js/uploa
 import { ClassName } from '../common';
 import props from './props';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { UploadConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { UploadConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 
 const uploadName = `${prefix}-upload`;
 const name = `${uploadName}-dragger`;
 
-export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).extend({
+export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getGlobalIconMixins()).extend({
   name,
 
   components: {
     TLoading,
     TButton,
-    CheckCircleFilledIcon,
-    ErrorCircleFilledIcon,
   },
 
   props: {
@@ -127,6 +128,9 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
     renderUploading() {
       if (this.loadingFile.status === 'fail') {
+        const { ErrorCircleFilledIcon } = this.useGlobalIcon({
+          ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
+        });
         return <ErrorCircleFilledIcon />;
       }
       if (this.loadingFile.status === 'progress' && this.showUploadProgress) {
@@ -145,6 +149,10 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     },
 
     renderProgress() {
+      const { CheckCircleFilledIcon } = this.useGlobalIcon({
+        CheckCircleFilledIcon: TdCheckCircleFilledIcon,
+      });
+
       return (
         <div class={`${uploadName}__dragger-progress`}>
           {this.isImage && this.renderImage()}

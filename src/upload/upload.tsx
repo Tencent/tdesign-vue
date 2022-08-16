@@ -4,9 +4,9 @@ import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import findIndex from 'lodash/findIndex';
 import isFunction from 'lodash/isFunction';
 import without from 'lodash/without';
-import { UploadIcon } from 'tdesign-icons-vue';
+import { UploadIcon as TdUploadIcon } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { UploadConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { UploadConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import { prefix } from '../config';
 import Dragger from './dragger';
 import ImageCard from './image';
@@ -40,7 +40,7 @@ import {
 
 const name = `${prefix}-upload`;
 
-export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).extend({
+export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getGlobalIconMixins()).extend({
   name: 'TUpload',
 
   components: {
@@ -568,6 +568,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       if (this.theme === 'file-input' || this.showUploadList) {
         return <TButton variant="outline">{this.uploadListTriggerText}</TButton>;
       }
+      const { UploadIcon } = this.useGlobalIcon({ UploadIcon: TdUploadIcon });
       return (
         <TButton variant="outline">
           <UploadIcon slot="icon" />

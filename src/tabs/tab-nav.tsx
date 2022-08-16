@@ -1,6 +1,10 @@
-import Vue, { VNode } from 'vue';
+import { VNode } from 'vue';
 import debounce from 'lodash/debounce';
-import { ChevronLeftIcon, ChevronRightIcon, AddIcon } from 'tdesign-icons-vue';
+import {
+  ChevronLeftIcon as TdChevronLeftIcon,
+  ChevronRightIcon as TdChevronRightIcon,
+  AddIcon as TdAddIcon,
+} from 'tdesign-icons-vue';
 import { prefix } from '../config';
 import TTabPanel from './tab-panel';
 import TTabNavItem from './tab-nav-item';
@@ -10,6 +14,9 @@ import { TdTabsProps, TdTabPanelProps } from './type';
 import tabProps from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { TabPanelProps } from '.';
+
+import mixins from '../utils/mixins';
+import { getGlobalIconMixins } from '../config-provider/config-receiver';
 
 const getDomWidth = (dom: HTMLElement): number => dom?.offsetWidth || 0;
 
@@ -61,13 +68,10 @@ const getRightCoverWidth = (o: GetRightCoverWidth) => {
   return rightOperationsZoneWidth;
 };
 
-export default Vue.extend({
+export default mixins(getGlobalIconMixins()).extend({
   name: 'TTabNav',
   components: {
     TTabNavItem,
-    ChevronLeftIcon,
-    ChevronRightIcon,
-    AddIcon,
   },
   props: {
     theme: tabProps.theme,
@@ -406,6 +410,12 @@ export default Vue.extend({
     },
 
     renderArrows() {
+      const { ChevronLeftIcon, ChevronRightIcon, AddIcon } = this.useGlobalIcon({
+        ChevronLeftIcon: TdChevronLeftIcon,
+        ChevronRightIcon: TdChevronRightIcon,
+        AddIcon: TdAddIcon,
+      });
+
       return [
         <div ref="leftOperationsZone" class={[`${prefix}-tabs__operations`, `${prefix}-tabs__operations--left`]}>
           <transition name="fade" mode="out-in" appear>

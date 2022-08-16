@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { ChevronRightIcon } from 'tdesign-icons-vue';
+import { ChevronRightIcon as TdChevronRightIcon } from 'tdesign-icons-vue';
 import TDivider from '../divider';
 import { prefix } from '../config';
 import itemProps from './dropdown-item-props';
@@ -10,7 +10,7 @@ import { renderContent } from '../utils/render-tnode';
 import { emitEvent } from '../utils/event';
 import ripple from '../utils/ripple';
 import mixins from '../utils/mixins';
-import { getKeepAnimationMixins } from '../config-provider/config-receiver';
+import { getKeepAnimationMixins, getGlobalIconMixins } from '../config-provider/config-receiver';
 
 import { TNodeReturnValue } from '../common';
 
@@ -24,10 +24,9 @@ export interface DropdownItemInstance extends Vue {
   };
 }
 
-export default mixins(keepAnimationMixins).extend({
+export default mixins(keepAnimationMixins, getGlobalIconMixins()).extend({
   name: 'TDropdownItem',
   components: {
-    ChevronRightIcon,
     TDivider,
   },
   directives: { ripple },
@@ -54,6 +53,7 @@ export default mixins(keepAnimationMixins).extend({
   },
   methods: {
     renderSuffix(): TNodeReturnValue {
+      const { ChevronRightIcon } = this.useGlobalIcon({ ChevronRightIcon: TdChevronRightIcon });
       return this.hasChildren ? <ChevronRightIcon class={`${name}-icon`} /> : null;
     },
     handleItemClick(e: MouseEvent): void {

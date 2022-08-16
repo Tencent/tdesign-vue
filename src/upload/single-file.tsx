@@ -1,6 +1,10 @@
-import Vue, { PropType } from 'vue';
+import { PropType } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import { CloseCircleFilledIcon, ErrorCircleFilledIcon, CheckCircleFilledIcon } from 'tdesign-icons-vue';
+import {
+  CloseCircleFilledIcon as TdCloseCircleFilledIcon,
+  ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
+  CheckCircleFilledIcon as TdCheckCircleFilledIcon,
+} from 'tdesign-icons-vue';
 import Loading from '../loading';
 import { prefix } from '../config';
 import { UploadFile } from './type';
@@ -9,15 +13,15 @@ import { abridgeName } from '../_common/js/upload/utils';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import props from './props';
 
+import mixins from '../utils/mixins';
+import { getGlobalIconMixins } from '../config-provider/config-receiver';
+
 const uploadName = `${prefix}-upload`;
 
-export default Vue.extend({
+export default mixins(getGlobalIconMixins()).extend({
   name: 'TUploadSingleFile',
 
   components: {
-    CloseCircleFilledIcon,
-    ErrorCircleFilledIcon,
-    CheckCircleFilledIcon,
     Loading,
   },
 
@@ -77,6 +81,9 @@ export default Vue.extend({
   methods: {
     renderProgress() {
       if (this.loadingFile.status === 'fail') {
+        const { ErrorCircleFilledIcon } = this.useGlobalIcon({
+          ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
+        });
         return <ErrorCircleFilledIcon />;
       }
       if (this.showUploadProgress) {
@@ -91,9 +98,15 @@ export default Vue.extend({
 
     renderResult() {
       if (!!this.loadingFile && this.loadingFile.status === 'fail') {
+        const { ErrorCircleFilledIcon } = this.useGlobalIcon({
+          ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
+        });
         return <ErrorCircleFilledIcon />;
       }
       if (this.file && this.file.name && !this.loadingFile) {
+        const { CheckCircleFilledIcon } = this.useGlobalIcon({
+          CheckCircleFilledIcon: TdCheckCircleFilledIcon,
+        });
         return <CheckCircleFilledIcon />;
       }
       return '';
@@ -102,6 +115,9 @@ export default Vue.extend({
     renderFilePreviewAsText() {
       if (!this.inputName) return;
       const fileListDisplay: ScopedSlotReturnValue = renderTNodeJSX(this, 'fileListDisplay');
+      const { CloseCircleFilledIcon } = this.useGlobalIcon({
+        CloseCircleFilledIcon: TdCloseCircleFilledIcon,
+      });
       return (
         <div class={[`${uploadName}__single-display-text`, `${uploadName}__display-text--margin`]}>
           {fileListDisplay || <span class={`${uploadName}__single-name`}>{this.inputName}</span>}

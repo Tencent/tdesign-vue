@@ -1,16 +1,16 @@
 import {
-  PageFirstIcon,
-  PageLastIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  ChevronRightDoubleIcon,
-  ChevronLeftDoubleIcon,
-  EllipsisIcon,
+  PageFirstIcon as TdPageFirstIcon,
+  PageLastIcon as TdPageLastIcon,
+  ChevronLeftIcon as TdChevronLeftIcon,
+  ChevronRightIcon as TdChevronRightIcon,
+  ChevronLeftDoubleIcon as TdChevronLeftDoubleIcon,
+  ChevronRightDoubleIcon as TdChevronRightDoubleIcon,
+  EllipsisIcon as TdEllipsisIcon,
 } from 'tdesign-icons-vue';
 import Vue from 'vue';
 import { prefix } from '../config';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { PaginationConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { PaginationConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import TInputNumber from '../input-number';
 import { Select, Option } from '../select';
 import TInputAdornment from '../input-adornment';
@@ -28,17 +28,10 @@ export type PageSizeChangeParams = Parameters<TdPaginationProps['onPageSizeChang
 export type CurrentChangeParams = Parameters<TdPaginationProps['onCurrentChange']>;
 export type ChangeEventParams = Parameters<TdPaginationProps['onChange']>;
 
-export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination')).extend({
+export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination'), getGlobalIconMixins()).extend({
   name: 'TPagination',
 
   components: {
-    PageFirstIcon,
-    PageLastIcon,
-    ChevronLeftIcon,
-    ChevronRightIcon,
-    ChevronRightDoubleIcon,
-    ChevronLeftDoubleIcon,
-    EllipsisIcon,
     TInputNumber,
     TInputAdornment,
     TSelect: Select,
@@ -306,6 +299,24 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
   },
 
   render() {
+    const {
+      PageFirstIcon,
+      PageLastIcon,
+      ChevronLeftIcon,
+      ChevronRightIcon,
+      ChevronLeftDoubleIcon,
+      ChevronRightDoubleIcon,
+      EllipsisIcon,
+    } = this.useGlobalIcon({
+      PageFirstIcon: TdPageFirstIcon,
+      PageLastIcon: TdPageLastIcon,
+      ChevronLeftIcon: TdChevronLeftIcon,
+      ChevronRightIcon: TdChevronRightIcon,
+      ChevronLeftDoubleIcon: TdChevronLeftDoubleIcon,
+      ChevronRightDoubleIcon: TdChevronRightDoubleIcon,
+      EllipsisIcon: TdEllipsisIcon,
+    });
+
     const Jumper = (
       <div class={this.jumperClass}>
         {this.t(this.global.jumpTo)}
@@ -351,13 +362,13 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
         {/* 首页按钮 */}
         {this.showFirstAndLastPageBtn ? (
           <div class={this.preBtnClass} onClick={() => this.toPage(1)} disabled={this.disabled || this.current === min}>
-            <page-first-icon />
+            <PageFirstIcon />
           </div>
         ) : null}
         {/* 向前按钮 */}
         {this.showPreviousAndNextBtn ? (
           <div class={this.preBtnClass} onClick={this.prevPage} disabled={this.disabled || this.current === min}>
-            <chevron-left-icon />
+            <ChevronLeftIcon />
           </div>
         ) : null}
         {/* 常规版 */}
@@ -375,7 +386,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
                 onMouseover={() => (this.prevMore = true)}
                 onMouseout={() => (this.prevMore = false)}
               >
-                {this.prevMore ? <chevron-left-double-icon /> : <ellipsis-icon />}
+                {this.prevMore ? <ChevronLeftDoubleIcon /> : <EllipsisIcon />}
               </li>
             ) : null}
             {this.pages.map((i) => (
@@ -390,7 +401,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
                 onMouseover={() => (this.nextMore = true)}
                 onMouseout={() => (this.nextMore = false)}
               >
-                {this.nextMore ? <chevron-right-double-icon /> : <ellipsis-icon />}
+                {this.nextMore ? <ChevronRightDoubleIcon /> : <EllipsisIcon />}
               </li>
             ) : null}
             {this.isFolded && this.isMidEllipsis ? (
@@ -409,7 +420,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
             onClick={this.nextPage}
             disabled={this.disabled || this.current === this.pageCount}
           >
-            <chevron-right-icon />
+            <ChevronRightIcon />
           </div>
         ) : null}
         {/* 尾页按钮 */}
@@ -419,7 +430,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
             onClick={() => this.toPage(this.pageCount)}
             disabled={this.disabled || this.current === this.pageCount}
           >
-            <page-last-icon />
+            <PageLastIcon />
           </div>
         ) : null}
         {/* 快速跳转 */}

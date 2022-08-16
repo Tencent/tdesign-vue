@@ -4,7 +4,11 @@ import cloneDeep from 'lodash/cloneDeep';
 import lodashGet from 'lodash/get';
 import lodashSet from 'lodash/set';
 import isNil from 'lodash/isNil';
-import { CheckCircleFilledIcon, ErrorCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+import {
+  CheckCircleFilledIcon as TdCheckCircleFilledIcon,
+  CloseCircleFilledIcon as TdCloseCircleFilledIcon,
+  ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
+} from 'tdesign-icons-vue';
 import lodashTemplate from 'lodash/template';
 import { prefix } from '../config';
 import { validate } from './form-model';
@@ -26,13 +30,13 @@ import {
 import Form from './form';
 import { ClassName, TNodeReturnValue, Styles } from '../common';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { FormConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { FormConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import log from '../_common/js/log';
 import { renderTNodeJSX } from '../utils/render-tnode';
 
 // type Result = ValidateResult<TdFormProps['data']>;
 
-export type IconConstructor = typeof ErrorCircleFilledIcon;
+export type IconConstructor = typeof TdErrorCircleFilledIcon;
 
 export type FormInstance = InstanceType<typeof Form>;
 
@@ -48,7 +52,7 @@ export interface FormItemConstructor extends Vue {
   form: FormInstance;
 }
 
-export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('form')).extend({
+export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('form'), getGlobalIconMixins()).extend({
   name: 'TFormItem',
 
   props: { ...props },
@@ -358,6 +362,11 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
         </span>
       );
       const list = this.errorList;
+      const { CheckCircleFilledIcon, CloseCircleFilledIcon, ErrorCircleFilledIcon } = this.useGlobalIcon({
+        CheckCircleFilledIcon: TdCheckCircleFilledIcon,
+        CloseCircleFilledIcon: TdCloseCircleFilledIcon,
+        ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
+      });
       if (this.verifyStatus === VALIDATE_STATUS.SUCCESS) {
         return resultIcon(CheckCircleFilledIcon);
       }

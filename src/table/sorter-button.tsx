@@ -1,10 +1,11 @@
 import { computed, defineComponent, PropType } from '@vue/composition-api';
-import { ChevronDownIcon } from 'tdesign-icons-vue';
+import { ChevronDownIcon as TdChevronDownIcon } from 'tdesign-icons-vue';
 import useClassName from './hooks/useClassName';
 import { SortType } from './type';
 import Tooltip, { TooltipProps } from '../tooltip';
 import { useConfig } from '../config-provider/useConfig';
 import { useTNodeDefault } from '../hooks/tnode';
+import { useGlobalIcon } from '../hooks/useGlobalIcon';
 import { TNode } from '../common';
 
 type SortTypeEnums = Array<'desc' | 'asc'>;
@@ -28,6 +29,7 @@ export default defineComponent({
     const { tableSortClasses, negativeRotate180 } = useClassName();
     const renderTNode = useTNodeDefault();
     const { t, global } = useConfig('table');
+    const { ChevronDownIcon } = useGlobalIcon({ ChevronDownIcon: TdChevronDownIcon });
 
     const allowSortTypes = computed<SortTypeEnums>(() => props.sortType === 'all' ? ['asc', 'desc'] : [props.sortType]);
 
@@ -38,6 +40,7 @@ export default defineComponent({
     return {
       t,
       global,
+      ChevronDownIcon,
       tableSortClasses,
       negativeRotate180,
       allowSortTypes,
@@ -48,6 +51,7 @@ export default defineComponent({
 
   methods: {
     getSortIcon(direction: string, activeClass: string) {
+      const { ChevronDownIcon } = this;
       const defaultIcon = this.t(this.global.sortIcon) || <ChevronDownIcon />;
       const icon = this.renderTNode('sortIcon', defaultIcon);
       const sortClassName = [

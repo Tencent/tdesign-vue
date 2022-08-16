@@ -8,10 +8,10 @@ import isBoolean from 'lodash/isBoolean';
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
 import isNil from 'lodash/isNil';
-import { CloseCircleFilledIcon } from 'tdesign-icons-vue';
+import { CloseCircleFilledIcon as TdCloseCircleFilledIcon } from 'tdesign-icons-vue';
 import Loading from '../loading';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { TreeSelectConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { TreeSelectConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { emitEvent } from '../utils/event';
 import Popup, { PopupProps } from '../popup';
@@ -27,7 +27,7 @@ import { prefix } from '../config';
 import { RemoveOptions, NodeOptions } from './interface';
 import { TreeInstanceFunctions } from '../tree/type';
 
-export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect')).extend({
+export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect'), getGlobalIconMixins()).extend({
   name: 'TTreeSelect',
   model: {
     prop: 'value',
@@ -405,6 +405,10 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       treeProps, popupObject, classes, popupClass, treeKey,
     } = this;
     const iconStyle = { 'font-size': this.size };
+    const { CloseCircleFilledIcon } = this.useGlobalIcon({
+      CloseCircleFilledIcon: TdCloseCircleFilledIcon,
+    });
+
     const treeItem = (
       <Tree
         ref="tree"

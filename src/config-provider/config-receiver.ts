@@ -1,7 +1,7 @@
 import Vue, { VueConstructor } from 'vue';
 import mergeWith from 'lodash/mergeWith';
 import { defaultGlobalConfig } from './context';
-import { GlobalConfigProvider, AnimationType } from './type';
+import { GlobalConfigProvider, AnimationType, IconConfig } from './type';
 
 export type ValueOf<T> = T[keyof T];
 
@@ -54,6 +54,28 @@ export default function getConfigReceiverMixins<BasicComponent extends Vue, C ex
           return pattern(placement);
         }
         return '';
+      },
+    },
+  });
+}
+
+export function getGlobalIconMixins<BasicComponent extends Vue>() {
+  return (Vue as VueConstructor<ConfigComponent & BasicComponent>).extend({
+    name: 'TGlobalIcon',
+    inject: {
+      globalConfig: {
+        default: undefined,
+      },
+    },
+    methods: {
+      useGlobalIcon(tdIcon: Record<string, any>) {
+        const iconGlobalData = (this.globalConfig || defaultGlobalConfig).icon;
+
+        const resultIcon: IconConfig = {};
+        Object.keys(tdIcon).forEach((key) => {
+          resultIcon[key] = iconGlobalData?.[key] || tdIcon[key];
+        });
+        return resultIcon;
       },
     },
   });

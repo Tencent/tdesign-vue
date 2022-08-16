@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { CloseIcon } from 'tdesign-icons-vue';
+import { CloseIcon as TdCloseIcon } from 'tdesign-icons-vue';
 
 import { prefix } from '../config';
 import { Button as TButton } from '../button';
@@ -7,7 +7,7 @@ import props from './props';
 import { FooterButton, DrawerCloseContext, TdDrawerProps } from './type';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { DrawerConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { DrawerConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
 import { addClass, removeClass } from '../utils/dom';
@@ -19,11 +19,10 @@ type FooterButtonType = 'confirm' | 'cancel';
 const name = `${prefix}-drawer`;
 const lockClass = `${prefix}-drawer--lock`;
 
-export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('drawer')).extend({
+export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('drawer'), getGlobalIconMixins()).extend({
   name: 'TDrawer',
 
   components: {
-    CloseIcon,
     TButton,
   },
 
@@ -139,7 +138,10 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
 
   render() {
     if (this.destroyOnClose && !this.visible) return;
-    const defaultCloseBtn = <close-icon class={`${prefix}-submenu-icon`}></close-icon>;
+    const { CloseIcon } = this.useGlobalIcon({
+      CloseIcon: TdCloseIcon,
+    });
+    const defaultCloseBtn = <CloseIcon class={`${prefix}-submenu-icon`}></CloseIcon>;
     const body = renderContent(this, 'default', 'body');
     const defaultFooter = this.getDefaultFooter();
     return (

@@ -2,8 +2,9 @@ import {
   defineComponent, watch, computed, ref,
 } from '@vue/composition-api';
 import dayjs from 'dayjs';
-import { CalendarIcon } from 'tdesign-icons-vue';
+import { CalendarIcon as TdCalendarIcon } from 'tdesign-icons-vue';
 import { usePrefixClass } from '../hooks/useConfig';
+import { useGlobalIcon } from '../hooks/useGlobalIcon';
 
 import props from './date-range-picker-props';
 import { DateValue, DateRangePickerPartial } from './type';
@@ -22,6 +23,7 @@ export default defineComponent({
   props,
   setup(props, { emit }) {
     const COMPONENT_NAME = usePrefixClass('date-range-picker');
+    const { CalendarIcon } = useGlobalIcon({ CalendarIcon: TdCalendarIcon });
 
     const {
       inputValue,
@@ -371,6 +373,7 @@ export default defineComponent({
       dateRangePickerRangeInputProps,
       popupVisible,
       panelProps,
+      CalendarIcon,
     };
   },
   render() {
@@ -381,6 +384,7 @@ export default defineComponent({
       dateRangePickerRangeInputProps,
       popupVisible,
       panelProps,
+      CalendarIcon,
     } = this;
     return (
       <div class={COMPONENT_NAME}>

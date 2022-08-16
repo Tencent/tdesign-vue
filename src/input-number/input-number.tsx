@@ -1,6 +1,9 @@
-import Vue, { VNode } from 'vue';
+import { VNode } from 'vue';
 import {
-  AddIcon, RemoveIcon, ChevronDownIcon, ChevronUpIcon,
+  AddIcon as TdAddIcon,
+  RemoveIcon as TdRemoveIcon,
+  ChevronDownIcon as TdChevronDownIcon,
+  ChevronUpIcon as TdChevronUpIcon,
 } from 'tdesign-icons-vue';
 
 import TButton from '../button';
@@ -11,6 +14,9 @@ import CLASSNAMES from '../utils/classnames';
 import props from './props';
 import { ChangeSource, TdInputNumberProps } from './type';
 import { ClassName, TNodeReturnValue } from '../common';
+
+import mixins from '../utils/mixins';
+import { getGlobalIconMixins } from '../config-provider/config-receiver';
 
 const name = `${prefix}-input-number`;
 
@@ -43,14 +49,10 @@ type InputNumberAttr = {
   };
 };
 
-export default Vue.extend({
+export default mixins(getGlobalIconMixins()).extend({
   name: 'TInputNumber',
   props: { ...props },
   components: {
-    AddIcon,
-    RemoveIcon,
-    ChevronDownIcon,
-    ChevronUpIcon,
     TButton,
     TInput,
   },
@@ -183,10 +185,18 @@ export default Vue.extend({
   },
   methods: {
     decreaseIcon(): TNodeReturnValue {
-      return this.theme === 'column' ? <chevron-down-icon size={this.size} /> : <remove-icon size={this.size} />;
+      const { RemoveIcon, ChevronDownIcon } = this.useGlobalIcon({
+        RemoveIcon: TdRemoveIcon,
+        ChevronDownIcon: TdChevronDownIcon,
+      });
+      return this.theme === 'column' ? <ChevronDownIcon size={this.size} /> : <RemoveIcon size={this.size} />;
     },
     increaseIcon(): TNodeReturnValue {
-      return this.theme === 'column' ? <chevron-up-icon size={this.size} /> : <add-icon size={this.size} />;
+      const { AddIcon, ChevronUpIcon } = this.useGlobalIcon({
+        AddIcon: TdAddIcon,
+        ChevronUpIcon: TdChevronUpIcon,
+      });
+      return this.theme === 'column' ? <ChevronUpIcon size={this.size} /> : <AddIcon size={this.size} />;
     },
     handleAdd(e: MouseEvent) {
       if (this.disabledAdd || this.readonly) return;

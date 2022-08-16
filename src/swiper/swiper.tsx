@@ -1,12 +1,16 @@
-import Vue, { VNode, VueConstructor, VNodeComponentOptions } from 'vue';
-import { ChevronLeftIcon, ChevronRightIcon } from 'tdesign-icons-vue';
+import Vue, { VNode, VNodeComponentOptions } from 'vue';
+import { ChevronLeftIcon as TdChevronLeftIcon, ChevronRightIcon as TdChevronRightIcon } from 'tdesign-icons-vue';
 import kebabCase from 'lodash/kebabCase';
+
 import props from './props';
 import { prefix } from '../config';
 import { TdSwiperProps, SwiperNavigation, SwiperChangeSource } from './type';
 import TSwiperItem from './swiper-item';
 import { isVNode } from '../hooks/render-tnode';
 import { emitEvent } from '../utils/event';
+
+import mixins from '../utils/mixins';
+import { getGlobalIconMixins } from '../config-provider/config-receiver';
 
 export interface SwiperVue extends Vue {
   swiperTimer: number;
@@ -20,7 +24,7 @@ const defaultNavigation: SwiperNavigation = {
   type: 'bars',
 };
 
-export default (Vue as VueConstructor<SwiperVue>).extend({
+export default mixins(getGlobalIconMixins<SwiperVue>()).extend({
   name: 'TSwiper',
 
   components: {
@@ -220,6 +224,10 @@ export default (Vue as VueConstructor<SwiperVue>).extend({
     },
     renderPagination() {
       const fractionIndex = this.currentIndex + 1 > this.swiperItemLength ? 1 : this.currentIndex + 1;
+      const { ChevronLeftIcon, ChevronRightIcon } = this.useGlobalIcon({
+        ChevronLeftIcon: TdChevronLeftIcon,
+        ChevronRightIcon: TdChevronRightIcon,
+      });
       return (
         <div class={`${prefix}-swiper__arrow`}>
           <div class={`${prefix}-swiper__arrow-left`} onClick={() => this.goPrevious({ source: 'click' })}>
@@ -236,6 +244,10 @@ export default (Vue as VueConstructor<SwiperVue>).extend({
     },
     renderArrow() {
       if (!this.showArrow) return null;
+      const { ChevronLeftIcon, ChevronRightIcon } = this.useGlobalIcon({
+        ChevronLeftIcon: TdChevronLeftIcon,
+        ChevronRightIcon: TdChevronRightIcon,
+      });
       return (
         <div class={[`${prefix}-swiper__arrow`, `${prefix}-swiper__arrow--default`]}>
           <div class={`${prefix}-swiper__arrow-left`} onClick={() => this.goPrevious({ source: 'click' })}>

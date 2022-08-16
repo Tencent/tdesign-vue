@@ -2,7 +2,10 @@ import Vue from 'vue';
 import isNumber from 'lodash/isNumber';
 import throttle from 'lodash/throttle';
 import {
-  CloseIcon, InfoCircleFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon,
+  CloseIcon as TdCloseIcon,
+  InfoCircleFilledIcon as TdInfoCircleFilledIcon,
+  CheckCircleFilledIcon as TdCheckCircleFilledIcon,
+  ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
 } from 'tdesign-icons-vue';
 
 import { prefix } from '../config';
@@ -12,7 +15,7 @@ import { DialogCloseContext, TdDialogProps } from './type';
 import props from './props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { DialogConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { DialogConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
 import { addClass, removeClass } from '../utils/dom';
@@ -41,14 +44,10 @@ if (typeof window !== 'undefined' && window.document && window.document.document
   document.documentElement.addEventListener('click', getClickPosition, true);
 }
 
-export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('dialog')).extend({
+export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('dialog'), getGlobalIconMixins()).extend({
   name: 'TDialog',
 
   components: {
-    CloseIcon,
-    InfoCircleFilledIcon,
-    CheckCircleFilledIcon,
-    ErrorCircleFilledIcon,
     TButton,
   },
 
@@ -250,6 +249,11 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     },
 
     getIcon() {
+      const { InfoCircleFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon } = this.useGlobalIcon({
+        InfoCircleFilledIcon: TdInfoCircleFilledIcon,
+        CheckCircleFilledIcon: TdCheckCircleFilledIcon,
+        ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
+      });
       const icon = {
         info: <InfoCircleFilledIcon class={`${prefix}-is-info`} />,
         warning: <ErrorCircleFilledIcon class={`${prefix}-is-warning`} />,
@@ -316,9 +320,12 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       }
     },
     renderDialog() {
+      const { CloseIcon } = this.useGlobalIcon({
+        CloseIcon: TdCloseIcon,
+      });
       // header 值为 true 显示空白头部
       const defaultHeader = <h5 class="title"></h5>;
-      const defaultCloseBtn = <close-icon />;
+      const defaultCloseBtn = <CloseIcon />;
       const body = renderContent(this, 'default', 'body');
       // this.getConfirmBtn is a function of ActionMixin
       // this.getCancelBtn is a function of ActionMixin
