@@ -36,6 +36,7 @@ import FakeArrow from '../common-components/fake-arrow';
 import Option from './option';
 import SelectPanel from './select-panel';
 import { parseOptions } from './util';
+import useFormDisabled from '../hooks/useFormDisabled';
 
 export type OptionInstance = InstanceType<typeof Option>;
 
@@ -81,7 +82,7 @@ export default defineComponent({
       minCollapsedNum,
     } = toRefs(props);
 
-    const formDisabled = ref();
+    const { formDisabled } = useFormDisabled();
     const visible = ref(props.popupVisible ?? false);
     const [value, setValue] = useDefaultValue(valueProps, props.defaultValue, props.onChange, 'value', 'change');
     const [tInputValue, setTInputValue] = useDefaultValue(

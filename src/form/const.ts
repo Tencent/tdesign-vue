@@ -32,7 +32,7 @@ export const FORM_CONTROL_COMPONENTS = [
   // 'TInputNumber', 组件已重构为 composition-api，这里的设置已失效，故而去除
   'TTextarea',
   'TCascader',
-  'TSelect',
+  // 'TSelect',
   'TOption',
   'TSwitch',
   'TCheckbox',
