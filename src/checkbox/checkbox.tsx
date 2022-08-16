@@ -22,7 +22,8 @@ export default mixins(classPrefixMixins, Vue as VueConstructor<CheckboxInstance>
 
   inheritAttrs: false,
 
-  props: { ...checkboxProps },
+  props: { ...checkboxProps, stopLabelTrigger: Boolean },
+
   inject: {
     checkboxGroup: { default: undefined },
   },
@@ -81,14 +82,21 @@ export default mixins(classPrefixMixins, Vue as VueConstructor<CheckboxInstance>
           checked={this.checked$}
           onChange={this.handleChange}
         ></input>
+
         <span class={`${this.componentName}__input`}></span>
-        <span class={`${this.componentName}__label`}>{renderContent(this, 'default', 'label')}</span>
+        <span class={`${this.componentName}__label`} onClick={this.handleLabelClick}>
+          {renderContent(this, 'default', 'label')}
+        </span>
       </label>
     );
   },
 
   methods: {
-    handleChange(e: Event): void {
+    handleLabelClick(e: Event) {
+      // 在tree等组件中使用  阻止label触发checked 与expand冲突
+      if (this.stopLabelTrigger) e.preventDefault();
+    },
+    handleChange(e: Event) {
       const value = !this.checked$;
       emitEvent<Parameters<TdCheckboxProps['onChange']>>(this, 'change', value, { e });
       e.stopPropagation();

@@ -27,6 +27,9 @@ export const TreeItemProps = {
   proxyScope: {
     type: Object,
   },
+  expandOnClickNode: {
+    type: Boolean,
+  },
 };
 
 const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnimationMixins).extend({
@@ -174,7 +177,9 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
       return iconNode;
     },
     renderLabel(createElement: CreateElement): VNode {
-      const { node, treeScope, proxyScope } = this;
+      const {
+        node, treeScope, proxyScope, expandOnClickNode,
+      } = this;
       const { label, disableCheck } = treeScope;
       const { scopedSlots } = proxyScope;
       const checkProps = treeScope.checkProps || {};
@@ -225,7 +230,8 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
             indeterminate={node.indeterminate}
             disabled={node.isDisabled()}
             name={String(node.value)}
-            onChange={() => this.handleChange()}
+            onChange={this.handleChange}
+            stopLabelTrigger={expandOnClickNode && node.children?.length > 0}
             ignore="expand,active"
             {...{ props: itemCheckProps }}
           >
@@ -299,9 +305,13 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
       return itemNodes;
     },
     handleClick(evt: MouseEvent) {
+      const srcTarget = evt.target as HTMLElement;
+      const isBranchTrigger = this.node.children
+        && this.expandOnClickNode
+        && (srcTarget.className === `${this.classPrefix}-checkbox__input` || srcTarget.tagName.toLowerCase() === 'input');
       // checkbox 上也有 emit click 事件
       // 用这个逻辑避免重复的 click 事件被触发
-      if (this.$clicked) return;
+      if (this.$clicked || isBranchTrigger) return;
       this.$clicked = true;
       setTimeout(() => {
         this.$clicked = false;
