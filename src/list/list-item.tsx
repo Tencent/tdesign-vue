@@ -1,11 +1,12 @@
-import Vue, { VNode } from 'vue';
-import { prefix } from '../config';
+import { VNode } from 'vue';
 import props from './list-item-props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-list-item`;
+const classPrefixMixins = getClassPrefixMixins('list-item');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TListItem',
   props,
   render(): VNode {
@@ -13,10 +14,10 @@ export default Vue.extend({
     const propsActionContent = renderTNodeJSX(this, 'action');
 
     return (
-      <li class={name}>
-        <div class={`${name}-main`}>
-          <div class={`${name}__content`}>{content}</div>
-          {propsActionContent && <li class={`${name}__action`}>{propsActionContent}</li>}
+      <li class={this.componentName}>
+        <div class={`${this.componentName}-main`}>
+          <div class={`${this.componentName}__content`}>{content}</div>
+          {propsActionContent && <li class={`${this.componentName}__action`}>{propsActionContent}</li>}
         </div>
       </li>
     );

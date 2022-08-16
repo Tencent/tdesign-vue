@@ -1,70 +1,57 @@
 <template>
-  <div>
+  <t-space direction="vertical">
+    <t-input-number v-model="value1" :step="0.1" :max="5" autoWidth />
+
+    <t-input-number v-model="decimalValue" :step="0.18" :max="5" style="width: 200px" />
+
     <t-input-number
-      v-model="value"
+      v-model="value2"
       theme="row"
-      size="medium"
       :max="15"
       :min="-2"
       :disabled="false"
-      :on-change="onChange"
-      :on-focus="onFocus"
-      :on-blur="onBlur"
-      :on-enter="onKeydownEnter"
-      :on-keydown="onKeydown"
-      :on-keyup="onKeyup"
-      :on-keypress="onKeypress"
+      :tips="tips"
+      suffix="个"
+      style="width: 250px"
       @change="handleChange"
-      @focus="handleFocus"
+      @validate="onValidate"
       @blur="handleBlur"
-      @enter="handleKeydownEnter"
-      @keydown="handleKeydown"
-      @keyup="handleKeyup"
-      @keypress="handleKeypress"
+      @focus="handleFocus"
+      @enter="handleEnter"
     ></t-input-number>
-  </div>
+  </t-space>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      value: 3,
-      onChange: (v, ctx) => {
-        console.info('onChange', v, ctx);
-      },
-      onFocus: (v, ctx) => {
-        console.info('onFocus', v, ctx);
-      },
-      onBlur: (v, ctx) => {
-        console.info('onBlur', v, ctx);
-      },
-      onKeydownEnter: (v, ctx) => {
-        console.info('onEnter', v, ctx);
-      },
-      onKeydown: (v, ctx) => {
-        console.info('onKeydown', v, ctx);
-      },
-      onKeyup: (v, ctx) => {
-        console.info('onKeyup', v, ctx);
-      },
-      onKeypress: (v, ctx) => {
-        console.info('onKeypress', v, ctx);
-      },
+      // 如果希望默认显示为空，请使用 ''，切勿使用 undefined
+      value1: '',
+      value2: 100,
+      decimalValue: 3.41,
+      error: undefined,
     };
+  },
+  computed: {
+    tips() {
+      if (this.error === 'exceed-maximum') return 'number can not be exceed maximum';
+      if (this.error === 'below-minimum') return 'number can not be below minimum';
+      return undefined;
+    },
   },
   methods: {
     handleChange(v, ctx) {
       console.info('change', v, ctx);
+    },
+    onValidate({ error }) {
+      this.error = error;
     },
     handleFocus(v, ctx) {
       console.info('focus', v, ctx);
     },
     handleBlur(v, ctx) {
       console.info('blur', v, ctx);
-    },
-    handleKeydownEnter(v, ctx) {
-      console.info('enter', v, ctx);
     },
     handleKeydown(v, ctx) {
       console.info('keydown', v, ctx);
@@ -75,6 +62,16 @@ export default {
     handleKeypress(v, ctx) {
       console.info('keypress', v, ctx);
     },
+    handleEnter(v, ctx) {
+      console.info('enter', v, ctx);
+    },
   },
 };
 </script>
+
+<style>
+/** 数字输入框过短换行时，则通过 CSS 调整宽度 */
+.tdesign-demo__input-number-center .t-input__tips {
+  width: 300px;
+}
+</style>

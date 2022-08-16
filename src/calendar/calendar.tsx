@@ -11,7 +11,7 @@ import { getIEVersion } from '../_common/js/utils/helper';
 
 // 组件的一些常量
 import {
-  COMPONENT_NAME, MIN_YEAR, FIRST_MONTH_OF_YEAR, LAST_MONTH_OF_YEAR, DEFAULT_YEAR_CELL_NUMINROW,
+  MIN_YEAR, FIRST_MONTH_OF_YEAR, LAST_MONTH_OF_YEAR, DEFAULT_YEAR_CELL_NUMINROW,
 } from './const';
 
 // 子组件
@@ -121,11 +121,11 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     },
     // 组件最外层的class名（除去前缀，class名和theme参数一致）
     calendarCls(): Record<string, any> {
-      return [`${COMPONENT_NAME}`, `${COMPONENT_NAME}--${this.theme}`];
+      return [`${this.componentName}`, `${this.componentName}--${this.theme}`];
     },
 
     calendarPanelCls(): Record<string, any> {
-      return [`${COMPONENT_NAME}__panel`, `${COMPONENT_NAME}__panel--${this.curSelectedMode}`];
+      return [`${this.componentName}__panel`, `${this.componentName}__panel--${this.curSelectedMode}`];
     },
 
     isWeekRender(): boolean {
@@ -515,15 +515,15 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     renderControl() {
       const { controllerOptions } = this;
       return (
-        <div class={`${COMPONENT_NAME}__control`}>
-          <div class={`${COMPONENT_NAME}__title`}>
+        <div class={`${this.componentName}__control`}>
+          <div class={`${this.componentName}__title`}>
             {renderTNodeJSX(this, 'head', {
               params: controllerOptions,
             })}
           </div>
-          <div class={`${COMPONENT_NAME}__control-section`}>
+          <div class={`${this.componentName}__control-section`}>
             {this.isYearVisible && (
-              <div class={`${COMPONENT_NAME}__control-section-cell`}>
+              <div class={`${this.componentName}__control-section-cell`}>
                 <t-select
                   v-model={this.curSelectedYear}
                   size={this.controlSize}
@@ -540,7 +540,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
               </div>
             )}
             {this.curSelectedMode === 'month' && this.isMonthVisible && (
-              <div class={`${COMPONENT_NAME}__control-section-cell`}>
+              <div class={`${this.componentName}__control-section-cell`}>
                 <t-select
                   v-model={this.curSelectedMonth}
                   size={this.controlSize}
@@ -557,7 +557,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
               </div>
             )}
             {this.isModeVisible && (
-              <div class={`${COMPONENT_NAME}__control-section-cell`} style="height: auto">
+              <div class={`${this.componentName}__control-section-cell`} style="height: auto">
                 <t-radio-group
                   v-model={this.curSelectedMode}
                   variant="default-filled"
@@ -575,9 +575,9 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
               </div>
             )}
             {this.theme === 'full' && this.curSelectedMode === 'month' && this.isWeekendToggleVisible && (
-              <div class={`${COMPONENT_NAME}__control-section-cell`}>
+              <div class={`${this.componentName}__control-section-cell`}>
                 <t-check-tag
-                  class={`${COMPONENT_NAME}__control-tag`}
+                  class={`${this.componentName}__control-tag`}
                   defaultChecked={!this.isShowWeekend}
                   disabled={this.isWeekendToggleDisabled}
                   onClick={this.onWeekendToggleClick}
@@ -588,7 +588,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
               </div>
             )}
             {this.theme === 'full' && this.isCurrentBtnVisible && (
-              <div class={`${COMPONENT_NAME}__control-section-cell`}>
+              <div class={`${this.componentName}__control-section-cell`}>
                 <t-button
                   size={this.controlSize}
                   disabled={this.isCurrentBtnDisabled}
@@ -612,12 +612,12 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     } = this;
 
     const monthBody = () => (
-      <table class={`${COMPONENT_NAME}__table`}>
-        <thead class={`${COMPONENT_NAME}__table-head`}>
-          <tr class={`${COMPONENT_NAME}__table-head-row`}>
+      <table class={`${this.componentName}__table`}>
+        <thead class={`${this.componentName}__table-head`}>
+          <tr class={`${this.componentName}__table-head-row`}>
             {cellColHeaders.map(
               (item, index) => checkMonthCellColHeaderVisibled(item) && (
-                  <th class={`${COMPONENT_NAME}__table-head-cell`}>
+                  <th class={`${this.componentName}__table-head-cell`}>
                     {Array.isArray(this.week)
                       ? this.week[index]
                       : renderTNodeJSXDefault(this, 'week', {
@@ -630,9 +630,9 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
           </tr>
         </thead>
 
-        <tbody class={`${COMPONENT_NAME}__table-body`}>
+        <tbody class={`${this.componentName}__table-body`}>
           {this.monthCellsData.map((week, weekIndex) => (
-            <tr class={`${COMPONENT_NAME}__table-body-row`}>
+            <tr class={`${this.componentName}__table-body-row`}>
               {week.map(
                 (item, itemIndex) => this.checkMonthCellItemShowed(item) && (
                     <calendar-cell-item
@@ -657,10 +657,10 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     );
 
     const yearBody = () => (
-      <table class={`${COMPONENT_NAME}__table`}>
-        <tbody class={`${COMPONENT_NAME}__table-body`}>
+      <table class={`${this.componentName}__table`}>
+        <tbody class={`${this.componentName}__table-body`}>
           {this.yearCellsData.map((cell, cellIndex) => (
-            <tr class={`${COMPONENT_NAME}__table-body-row`}>
+            <tr class={`${this.componentName}__table-body-row`}>
               {cell.map((item, itemIndex) => (
                 <calendar-cell-item
                   key={`m-${cellIndex}-${itemIndex}`}

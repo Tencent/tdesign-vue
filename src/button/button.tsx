@@ -1,16 +1,13 @@
 import { VNode } from 'vue';
-import { prefix } from '../config';
-import CLASSNAMES from '../utils/classnames';
 import TLoading from '../loading';
 import props from './props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import ripple from '../utils/ripple';
-import { getKeepAnimationMixins } from '../config-provider/config-receiver';
+import { getKeepAnimationMixins, getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
 
-const name = `${prefix}-button`;
-
 const keepAnimationMixins = getKeepAnimationMixins();
+const classPrefixMixins = getClassPrefixMixins('button');
 export interface ButtonHTMLAttributes {
   attrs?: {
     disabled?: boolean;
@@ -18,7 +15,7 @@ export interface ButtonHTMLAttributes {
   };
 }
 
-export default mixins(keepAnimationMixins).extend({
+export default mixins(keepAnimationMixins, classPrefixMixins).extend({
   name: 'TButton',
 
   props,
@@ -40,20 +37,20 @@ export default mixins(keepAnimationMixins).extend({
     }
 
     const buttonClass = [
-      `${name}`,
-      CLASSNAMES.SIZE[this.size],
-      `${name}--variant-${this.variant}`,
-      `${name}--theme-${theme}`,
+      `${this.componentName}`,
+      this.commonSizeClassName[this.size],
+      `${this.componentName}--variant-${this.variant}`,
+      `${this.componentName}--theme-${theme}`,
       {
-        [CLASSNAMES.STATUS.disabled]: disabled,
-        [CLASSNAMES.STATUS.loading]: this.loading,
-        [`${name}--shape-${this.shape}`]: this.shape !== 'rectangle',
-        [`${name}--ghost`]: this.ghost,
-        [CLASSNAMES.SIZE.block]: this.block,
+        [this.commonStatusClassName.disabled]: disabled,
+        [this.commonStatusClassName.loading]: this.loading,
+        [`${this.componentName}--shape-${this.shape}`]: this.shape !== 'rectangle',
+        [`${this.componentName}--ghost`]: this.ghost,
+        [this.commonSizeClassName.block]: this.block,
       },
     ];
 
-    buttonContent = buttonContent ? <span class={`${name}__text`}>{buttonContent}</span> : '';
+    buttonContent = buttonContent ? <span class={`${this.componentName}__text`}>{buttonContent}</span> : '';
     if (icon) {
       buttonContent = [icon, buttonContent];
     }

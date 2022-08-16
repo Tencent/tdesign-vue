@@ -1,6 +1,5 @@
 import Vue, { VNode } from 'vue';
 import isEmpty from 'lodash/isEmpty';
-import { prefix } from '../config';
 import {
   Data,
   FormValidateResult,
@@ -11,16 +10,18 @@ import {
   FormResetParams,
 } from './type';
 import props from './props';
-import { FORM_ITEM_CLASS_PREFIX, CLASS_NAMES, FORM_CONTROL_COMPONENTS } from './const';
+import { FORM_CONTROL_COMPONENTS } from './const';
 import { emitEvent } from '../utils/event';
 import FormItem, { FormItemValidateResult } from './form-item';
 import { FormResetEvent, FormSubmitEvent, ClassName } from '../common';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
+
+const classPrefixMixins = getClassPrefixMixins('form');
 
 type FormItemInstance = InstanceType<typeof FormItem>;
 
-const name = `${prefix}-form`;
-
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TForm',
 
   props: { ...props },
@@ -40,9 +41,9 @@ export default Vue.extend({
   computed: {
     formClass(): ClassName {
       return [
-        CLASS_NAMES.form,
+        this.componentName,
         {
-          [`${name}-inline`]: this.layout === 'inline',
+          [`${this.componentName}-inline`]: this.layout === 'inline',
         },
       ];
     },
@@ -70,7 +71,7 @@ export default Vue.extend({
       if (r === true) return;
       const [firstKey] = Object.keys(r);
       if (this.scrollToFirstError) {
-        this.scrollTo(`.${FORM_ITEM_CLASS_PREFIX + firstKey}`);
+        this.scrollTo(`.${this.componentName}-item__${firstKey}`);
       }
       return r[firstKey][0].message;
     },

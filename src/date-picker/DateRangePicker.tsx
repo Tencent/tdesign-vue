@@ -1,5 +1,5 @@
 import {
-  defineComponent, watchEffect, computed, ref,
+  defineComponent, watch, computed, ref,
 } from '@vue/composition-api';
 import dayjs from 'dayjs';
 import { CalendarIcon } from 'tdesign-icons-vue';
@@ -49,9 +49,9 @@ export default defineComponent({
     // 记录面板是否选中过
     const isSelected = ref(false);
 
-    watchEffect(() => {
+    watch(popupVisible, (visible) => {
       // 面板展开重置数据
-      if (popupVisible.value) {
+      if (visible) {
         isSelected.value = false;
         isFirstValueSelected.value = false;
         cacheValue.value = formatDate(value.value || [], {
@@ -87,7 +87,11 @@ export default defineComponent({
     });
 
     // 日期 hover
-    function onCellMouseEnter(date: Date) {
+    function onCellMouseEnter(nextDate: Date) {
+      const date = nextDate;
+      // 不开启时间选择时 结束时间默认重置为 23:59:59
+      if (activeIndex.value && !props.enableTimePicker) date.setHours(23, 59, 59);
+
       isHoverCell.value = true;
       const nextValue = [...(inputValue.value as string[])];
       nextValue[activeIndex.value] = formatDate(date, {
@@ -104,9 +108,13 @@ export default defineComponent({
     }
 
     // 日期点击
-    function onCellClick(date: Date, { e, partial }: { e: MouseEvent; partial: DateRangePickerPartial }) {
-      props.onPick?.(date, { e, partial });
-      emit('pick', date, { e, partial });
+    function onCellClick(nextDate: Date, { e, partial }: { e: MouseEvent; partial: DateRangePickerPartial }) {
+      const date = nextDate;
+      // 不开启时间选择时 结束时间默认重置为 23:59:59
+      if (activeIndex.value && !props.enableTimePicker) date.setHours(23, 59, 59);
+
+      props.onPick?.(date, { e, partial: activeIndex.value ? 'end' : 'start' });
+      emit('pick', date, { e, partial: activeIndex.value ? 'end' : 'start' });
 
       isHoverCell.value = false;
       isSelected.value = true;
@@ -374,6 +382,15 @@ export default defineComponent({
       popupVisible,
       panelProps,
     } = this;
+
+    const renderSuffixIcon = () => {
+      if (this.suffixIcon) return this.suffixIcon;
+      if (this.$scopedSlots.suffixIcon) return this.$scopedSlots.suffixIcon;
+      if (this.$scopedSlots['suffix-icon']) return this.$scopedSlots['suffix-icon'];
+
+      return () => <CalendarIcon />;
+    };
+
     return (
       <div class={COMPONENT_NAME}>
         <TRangeInputPopup
@@ -382,7 +399,10 @@ export default defineComponent({
           tips={this.tips}
           inputValue={inputValue as string[]}
           popupProps={dateRangePickerPopupProps}
-          rangeInputProps={{ suffixIcon: () => <CalendarIcon />, ...dateRangePickerRangeInputProps }}
+          rangeInputProps={{
+            suffixIcon: renderSuffixIcon(),
+            ...dateRangePickerRangeInputProps,
+          }}
           popupVisible={popupVisible}
           panel={() => <TRangePanel {...{ props: panelProps }} />}
         />

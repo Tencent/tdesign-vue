@@ -23,11 +23,14 @@ npm i tdesign-vue
 
 #### 浏览器引入
 
-目前可以通过 [unpkg.com/tdesign-vue](https://unpkg.com/tdesign-vue) 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。
+目前可以通过 [unpkg.com/tdesign-vue](https://unpkg.com/tdesign-vue) 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。由于部分组件依赖了`@vue/composition-api`，除了像其他 vue2 版本的组件库一样需要引入`vue`，还需要额外手动引入`@vue/composition-api`。
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/tdesign-vue/dist/tdesign.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.js"></script>
+<script src="https://unpkg.com/@vue/composition-api@1.7.0/dist/vue-composition-api.prod.js"></script>
 <script src="https://unpkg.com/tdesign-vue/dist/tdesign.min.js"></script>
+
 ```
 
 ### 基础使用

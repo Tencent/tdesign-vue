@@ -1,6 +1,5 @@
 import Vue, { VNode, PropType, VueConstructor } from 'vue';
-import { Styles } from '@src/common';
-import { prefix } from '../config';
+import { Styles } from '../common';
 import Slider from './slider';
 import Tooltip from '../tooltip/index';
 import ITooltip from '../tooltip/tooltip';
@@ -8,16 +7,19 @@ import { getIEVersion } from '../_common/js/utils/helper';
 import { TdSliderProps } from './type';
 import { TdTooltipProps } from '../tooltip/type';
 import { renderTNodeJSXDefault } from '../utils/render-tnode';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-slider-button`;
+const classPrefixMixins = getClassPrefixMixins('slider__button');
+
 interface SliderInstanceType extends Vue {
   slider: InstanceType<typeof Slider>;
 }
 
 type TooltipInstanceType = InstanceType<typeof ITooltip>;
 
-export default (Vue as VueConstructor<SliderInstanceType>).extend({
-  name,
+export default mixins(classPrefixMixins, Vue as VueConstructor<SliderInstanceType>).extend({
+  name: 'TSliderButton',
   props: {
     value: {
       type: [Number, String] as PropType<TdSliderProps['value']>,
@@ -102,7 +104,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
       showTooltip: true,
       trigger: 'hover',
       showArrow: true,
-      overlayStyle: undefined,
+      overlayInnerStyle: undefined,
       overlayClassName: undefined,
       attach: 'body',
       destroyOnClose: null,
@@ -133,7 +135,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
     setTooltipProps() {
       if (this.tooltipProps instanceof Object) {
         const {
-          trigger, destroyOnClose, showArrow, overlayStyle, overlayClassName, attach,
+          trigger, destroyOnClose, showArrow, overlayInnerStyle, overlayClassName, attach,
         } = this.tooltipProps;
         if (!this.empty(trigger)) {
           this.trigger = trigger;
@@ -143,7 +145,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
           this.showArrow = showArrow;
         }
 
-        this.overlayStyle = overlayStyle;
+        this.overlayInnerStyle = overlayInnerStyle;
         this.overlayClassName = overlayClassName;
         if (!this.empty(attach)) {
           this.attach = attach as string;
@@ -315,7 +317,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
     return (
       <div
         ref="button"
-        class={`${prefix}-slider__button-wrapper`}
+        class={`${this.componentName}-wrapper`}
         style={this.wrapperStyle}
         tabindex="0"
         show-tooltip={this.showTooltip}
@@ -333,7 +335,7 @@ export default (Vue as VueConstructor<SliderInstanceType>).extend({
           visible={this.label && this.visible}
           content={this.getTooltipContent}
         >
-          <div class={[`${prefix}-slider__button`, { [`${prefix}-slider__button--dragging`]: this.dragging }]} />
+          <div class={[this.componentName, { [`${this.componentName}--dragging`]: this.dragging }]} />
         </Tooltip>
       </div>
     );

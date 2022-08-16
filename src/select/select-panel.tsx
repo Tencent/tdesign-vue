@@ -5,11 +5,10 @@ import isFunction from 'lodash/isFunction';
 import { VNode } from 'vue';
 import { useTNodeJSX } from '../hooks/tnode';
 import { renderTNodeJSXDefault } from '../utils/render-tnode';
-import { useConfig } from '../config-provider/useConfig';
+import { useConfig, usePrefixClass } from '../config-provider/useConfig';
 import {
   TdOptionProps, SelectOptionGroup, TdSelectProps, SelectOption,
 } from './type';
-import { name } from './select';
 import Option from './option';
 import useVirtualScroll from '../hooks/useVirtualScroll';
 
@@ -70,6 +69,7 @@ export default defineComponent({
     const renderTNode = useTNodeJSX();
     const { t, global } = useConfig('select');
     const selectProvider: any = inject('tSelect');
+    const COMPONENT_NAME = usePrefixClass('select');
 
     const panelContentRef = computed(() => selectProvider.getOverlayElm());
 
@@ -179,6 +179,7 @@ export default defineComponent({
       bufferSize,
       threshold,
       displayOptions,
+      componentName: COMPONENT_NAME,
     };
   },
 
@@ -186,19 +187,19 @@ export default defineComponent({
     renderEmptyContent() {
       const { empty, t, global } = this;
       if (empty && typeof empty === 'string') {
-        return <div class={`${name}__empty`}>{empty}</div>;
+        return <div class={`${this.componentName}__empty`}>{empty}</div>;
       }
-      return renderTNodeJSXDefault(this, 'empty', <div class={`${name}__empty`}>{t(global.empty)}</div>);
+      return renderTNodeJSXDefault(this, 'empty', <div class={`${this.componentName}__empty`}>{t(global.empty)}</div>);
     },
     renderLoadingContent() {
       const { loadingText, t, global } = this;
       if (loadingText && typeof loadingText === 'string') {
-        return <div class={`${name}__loading-tips`}>{loadingText}</div>;
+        return <div class={`${this.componentName}__loading-tips`}>{loadingText}</div>;
       }
       return renderTNodeJSXDefault(
         this,
         'loadingText',
-        <div class={`${name}__loading-tips`}>{t(global.loadingText)}</div>,
+        <div class={`${this.componentName}__loading-tips`}>{t(global.loadingText)}</div>,
       );
     },
     renderCreateOption() {
@@ -208,12 +209,12 @@ export default defineComponent({
       const on = isVirtual ? { onRowMounted: handleRowMounted } : {};
 
       return (
-        <ul class={[`${name}__create-option`, `${name}__list`]}>
+        <ul class={[`${this.componentName}__create-option`, `${this.componentName}__list`]}>
           <t-option
             isCreatedOption={true}
             value={inputValue}
             label={inputValue}
-            class={`${name}__create-option--special`}
+            class={`${this.componentName}__create-option--special`}
             trs={trs}
             scrollType={scrollType}
             isVirtual={isVirtual}
@@ -233,7 +234,7 @@ export default defineComponent({
       const on = isVirtual ? { onRowMounted: handleRowMounted } : {};
 
       return (
-        <ul class={`${name}__list`}>
+        <ul class={`${this.componentName}__list`}>
           {options.map(
             (
               item: SelectOptionGroup &
@@ -289,7 +290,10 @@ export default defineComponent({
       } = this;
       return (
         <div
-          class={[`${name}__dropdown-inner`, `${name}__dropdown-inner--size-${sizeClassMap[size]}`]}
+          class={[
+            `${this.componentName}__dropdown-inner`,
+            `${this.componentName}__dropdown-inner--size-${sizeClassMap[size]}`,
+          ]}
           style={innerStyle}
         >
           {renderTNode('panelTopContent')}

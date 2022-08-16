@@ -1,6 +1,5 @@
 import Vue, { PropType, VNode } from 'vue';
 import { CheckCircleFilledIcon, ErrorCircleFilledIcon } from 'tdesign-icons-vue';
-import { prefix } from '../config';
 import { UploadFile } from './type';
 import TLoading from '../loading';
 import TButton from '../button';
@@ -10,11 +9,8 @@ import props from './props';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { UploadConfig } from '../config-provider/config-receiver';
 
-const uploadName = `${prefix}-upload`;
-const name = `${uploadName}-dragger`;
-
 export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).extend({
-  name,
+  name: 'TUploadDragger',
 
   components: {
     TLoading,
@@ -66,9 +62,9 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     },
     classes(): ClassName {
       return [
-        `${uploadName}__dragger`,
-        { [`${uploadName}__dragger-center`]: !this.loadingFile && !this.file },
-        { [`${uploadName}__dragger-error`]: this.loadingFile && this.loadingFile.status === 'fail' },
+        `${this.componentName}__dragger`,
+        { [`${this.componentName}__dragger-center`]: !this.loadingFile && !this.file },
+        { [`${this.componentName}__dragger-error`]: this.loadingFile && this.loadingFile.status === 'fail' },
       ];
     },
     size(): number {
@@ -109,7 +105,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     renderDefaultDragElement(): VNode {
       const unActiveElement = (
         <div>
-          <span class={`${prefix}-upload--highlight`}>{this.global.triggerUploadText.normal}</span>
+          <span class={`${this.componentName}--highlight`}>{this.global.triggerUploadText.normal}</span>
           <span>&nbsp;&nbsp;/&nbsp;&nbsp;{this.global.dragger.draggingText}</span>
         </div>
       );
@@ -119,7 +115,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
     renderImage() {
       return (
-        <div class={`${uploadName}__dragger-img-wrap`}>
+        <div class={`${this.componentName}__dragger-img-wrap`}>
           {this.imageUrl && <img src={this.imageUrl || 'default.png'}></img>}
         </div>
       );
@@ -131,9 +127,9 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       }
       if (this.loadingFile.status === 'progress' && this.showUploadProgress) {
         return (
-          <div class={`${uploadName}__single-progress`}>
+          <div class={`${this.componentName}__single-progress`}>
             <TLoading />
-            <span class={`${uploadName}__single-percent`}>{Math.min(this.loadingFile.percent, 99)}%</span>
+            <span class={`${this.componentName}__single-percent`}>{Math.min(this.loadingFile.percent, 99)}%</span>
           </div>
         );
       }
@@ -146,26 +142,26 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
     renderProgress() {
       return (
-        <div class={`${uploadName}__dragger-progress`}>
+        <div class={`${this.componentName}__dragger-progress`}>
           {this.isImage && this.renderImage()}
-          <div class={`${uploadName}__dragger-progress-info`}>
-            <div class={`${uploadName}__dragger-text`}>
-              <span class={`${uploadName}__single-name`}>{abridgeName(this.inputName)}</span>
+          <div class={`${this.componentName}__dragger-progress-info`}>
+            <div class={`${this.componentName}__dragger-text`}>
+              <span class={`${this.componentName}__single-name`}>{abridgeName(this.inputName)}</span>
               {this.loadingFile && this.renderUploading()}
               {!this.loadingFile && !!this.file && <CheckCircleFilledIcon />}
             </div>
-            <small class={`${prefix}-size-s`}>
+            <small class={`${this.classPrefix}-size-s`}>
               {this.global.file.fileSizeText}：{returnFileSize(this.size)}
             </small>
-            <small class={`${prefix}-size-s`}>
+            <small class={`${this.classPrefix}-size-s`}>
               {this.global.file.fileOperationDateText}：{getCurrentDate()}
             </small>
-            <div class={`${uploadName}__dragger-btns`}>
+            <div class={`${this.componentName}__dragger-btns`}>
               {['progress', 'waiting'].includes(this.loadingFile?.status) && (
                 <TButton
                   theme="primary"
                   variant="text"
-                  class={`${uploadName}__dragger-progress-cancel`}
+                  class={`${this.componentName}__dragger-progress-cancel`}
                   onClick={this.cancel}
                 >
                   {this.global.cancelUploadText}
@@ -182,11 +178,11 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
               )}
             </div>
             {this.showResultOperate && (
-              <div class={`${uploadName}__dragger-btns`}>
+              <div class={`${this.componentName}__dragger-btns`}>
                 <TButton
                   theme="primary"
                   variant="text"
-                  class={`${uploadName}__dragger-progress-cancel`}
+                  class={`${this.componentName}__dragger-progress-cancel`}
                   onClick={this.reUpload}
                 >
                   {this.global.triggerUploadText.reupload}
@@ -208,7 +204,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       content = this.renderProgress();
     } else {
       content = (
-        <div class={`${uploadName}__trigger`} onClick={this.trigger}>
+        <div class={`${this.componentName}__trigger`} onClick={this.trigger}>
           {(this.$scopedSlots.default && this.$scopedSlots.default(null)) || this.renderDefaultDragElement()}
         </div>
       );

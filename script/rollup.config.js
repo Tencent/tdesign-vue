@@ -183,7 +183,7 @@ const cjsConfig = {
 /** @type {import('rollup').RollupOptions} */
 const umdConfig = {
   input,
-  external: externalPeerDeps,
+  external: externalPeerDeps.concat([/@vue\/composition-api/]),
   plugins: getPlugins({
     env: 'development',
     extractOneCss: true,
@@ -202,7 +202,7 @@ const umdConfig = {
 /** @type {import('rollup').RollupOptions} */
 const umdMinConfig = {
   input,
-  external: externalPeerDeps,
+  external: externalPeerDeps.concat([/@vue\/composition-api/]),
   plugins: getPlugins({
     isProd: true,
     extractOneCss: true,

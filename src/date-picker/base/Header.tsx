@@ -103,7 +103,7 @@ export default defineComponent({
     };
 
     function handlePanelTopClick(e: MouseEvent) {
-      e.stopPropagation();
+      e?.stopPropagation?.();
 
       const firstYear = yearOptions.value[0].value;
       const options = loadMoreYear(firstYear, 'reduce');
@@ -111,11 +111,20 @@ export default defineComponent({
     }
 
     function handlePanelBottomClick(e: MouseEvent) {
-      e.stopPropagation();
+      e?.stopPropagation?.();
 
       const lastYear = yearOptions.value.slice(-1)[0].value;
       const options = loadMoreYear(lastYear, 'add');
       yearOptions.value = [...yearOptions.value, ...options];
+    }
+
+    // 滚动顶部底部自动加载
+    function handleScroll({ e }: any) {
+      if (e.target.scrollTop === 0) {
+        handlePanelTopClick(e);
+      } else if (e.target.scrollTop === e.target.scrollHeight - e.target.clientHeight) {
+        handlePanelBottomClick(e);
+      }
     }
 
     return {
@@ -126,6 +135,7 @@ export default defineComponent({
       monthOptions,
       yearOptions,
       showMonthPicker,
+      handleScroll,
       handlePanelTopClick,
       handlePanelBottomClick,
     };
@@ -153,7 +163,7 @@ export default defineComponent({
                   value: this.month,
                   options: monthOptions,
                   onChange: (val: number) => this.onMonthChange?.(val),
-                  popupProps: { attach: (triggerNode: HTMLDivElement) => triggerNode.parentElement },
+                  popupProps: { overlayClassName: `${COMPONENT_NAME}-controller-month-popup` },
                 },
               }}
             />
@@ -165,7 +175,10 @@ export default defineComponent({
                 value: this.mode === 'year' ? nearestYear : this.year,
                 options: yearOptions,
                 onChange: (val: number) => this.onYearChange?.(val),
-                popupProps: { attach: (triggerNode: HTMLDivElement) => triggerNode.parentElement },
+                popupProps: {
+                  onScroll: this.handleScroll,
+                  overlayClassName: `${COMPONENT_NAME}-controller-year-popup`,
+                },
                 panelTopContent: () => (
                   <div class={`${classPrefix}-select-option`} onClick={handlePanelTopClick}>
                     ...
