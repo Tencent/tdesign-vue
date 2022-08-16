@@ -169,13 +169,11 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         input.value = sV;
       }
     },
-    focus(): void {
-      const input = this.$refs.inputRef as HTMLInputElement;
-      input?.focus();
+    focus() {
+      (this.$refs.inputRef as HTMLInputElement).focus();
     },
-    blur(): void {
-      const input = this.$refs.inputRef as HTMLInputElement;
-      input?.blur();
+    blur() {
+      (this.$refs.inputRef as HTMLInputElement).blur();
     },
     handleKeydown(e: KeyboardEvent) {
       if (this.tDisabled) return;

@@ -28,10 +28,10 @@ export default defineComponent({
     const { classPrefix } = useConfig('classPrefix');
 
     const classes = computed<ClassName>(() => [
-      `${COMPONENT_NAME}-option-group`,
+      `${COMPONENT_NAME.value}-option-group`,
       {
         [sizeClassNames[tSelect.size]]: tSelect && tSelect.size,
-        [`${COMPONENT_NAME}-option-group__divider`]: divider,
+        [`${COMPONENT_NAME.value}-option-group__divider`]: divider,
       },
     ]);
     return {

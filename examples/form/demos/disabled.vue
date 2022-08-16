@@ -44,7 +44,7 @@
         <t-checkbox-group v-model="formData.course" :options="courseOptions" />
       </t-form-item>
       <t-form-item label="绩点" name="gradePoint">
-        <t-input-number v-model="formData.gradePoint" theme="normal" placeholder="数字" />
+        <t-input-number v-model="formData.gradePoint" placeholder="数字" />
       </t-form-item>
       <t-form-item label="头像" name="avatar">
         <t-upload
