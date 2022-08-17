@@ -1,15 +1,13 @@
 <template>
-  <div>
-    <t-select
-      v-model="value"
-      :bordered="false"
-      style="width: 200px"
-      placeholder="-请选择-"
-      clearable
-      auto-width
-      :options="options"
-    />
-  </div>
+  <t-select
+    v-model="value"
+    :bordered="false"
+    style="width: 200px"
+    placeholder="-请选择-"
+    clearable
+    auto-width
+    :options="options"
+  />
 </template>
 
 <script>

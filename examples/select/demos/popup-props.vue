@@ -1,20 +1,20 @@
 <template>
-  <div>
+  <t-space>
     <t-select
       v-model="value"
       placeholder="-请选择-"
       :options="options"
       :popupProps="popupProps"
-      style="width: 200px;display: inline-block;"
+      style="width: 200px; display: inline-block"
     />
     <t-select
       v-model="value"
       placeholder="-请选择-"
       :options="options"
       :popupProps="popupProps2"
-      style="width: 200px;display: inline-block;margin-left: 20px;"
+      style="width: 200px; display: inline-block; margin-left: 20px"
     />
-  </div>
+  </t-space>
 </template>
 
 <script>
