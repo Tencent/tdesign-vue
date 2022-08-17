@@ -324,7 +324,7 @@ export default defineComponent({
     const affixHeaderHeight = (this.affixHeaderRef?.getBoundingClientRect().height || 0) - IEHeaderWrap;
     const affixHeaderWrapHeight = affixHeaderHeight - barWidth - borderWidth;
     // 两类场景：1. 虚拟滚动，永久显示表头，直到表头消失在可视区域； 2. 表头吸顶，根据滚动情况判断是否显示吸顶表头
-    const headerOpacity = props.headerAffixedTop ? Number(this.showAffixHeader) : 1;
+    const headerOpacity = this.headerAffixedTop ? Number(this.showAffixHeader) : 1;
     const affixHeaderWrapHeightStyle = {
       width: `${this.tableWidth}px`,
       height: `${affixHeaderWrapHeight}px`,
@@ -332,11 +332,11 @@ export default defineComponent({
       marginTop: onlyVirtualScrollBordered ? `${borderWidth}px` : 0,
     };
     // 多级表头左边线缺失
-    const affixedMultipleHeaderLeftBorder = this.bordered && this.isMultipleHeader ? 1 : 0;
+    const affixedLeftBorder = this.bordered ? 1 : 0;
     const affixedHeader = Boolean((this.headerAffixedTop || this.isVirtual) && this.tableWidth) && (
       <div
         ref="affixHeaderRef"
-        style={{ width: `${this.tableWidth - affixedMultipleHeaderLeftBorder}px`, opacity: headerOpacity }}
+        style={{ width: `${this.tableWidth - affixedLeftBorder}px`, opacity: headerOpacity }}
         class={['scrollbar', { [this.tableBaseClass.affixedHeaderElm]: this.headerAffixedTop || this.isVirtual }]}
       >
         <table class={this.tableElmClasses} style={{ ...this.tableElementStyles, width: `${this.tableElmWidth}px` }}>
@@ -383,7 +383,7 @@ export default defineComponent({
       >
         <div
           ref="affixFooterRef"
-          style={{ width: `${this.tableWidth}px`, opacity: Number(this.showAffixFooter) }}
+          style={{ width: `${this.tableWidth - affixedLeftBorder}px`, opacity: Number(this.showAffixFooter) }}
           class={['scrollbar', { [this.tableBaseClass.affixedFooterElm]: this.footerAffixedBottom || this.isVirtual }]}
         >
           <table class={this.tableElmClasses} style={{ ...this.tableElementStyles, width: `${this.tableElmWidth}px` }}>
