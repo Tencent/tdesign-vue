@@ -1,14 +1,7 @@
 <template>
-  <div>
+  <t-space direction="vertical">
     <!-- 选项过多时，可折叠 -->
-    <t-select
-      v-model="value"
-      placeholder="请选择"
-      multiple
-      :minCollapsedNum="minCollapsedNum"
-      :options="options"
-    />
-    <br/><br/>
+    <t-select v-model="value" placeholder="请选择" multiple :minCollapsedNum="minCollapsedNum" :options="options" />
 
     <!-- 自定义折叠项内容，collapsedItems 为渲染函数 (value, count, collapsedSelectedItems) -->
     <t-select
@@ -19,33 +12,22 @@
       :collapsedItems="collapsedItems"
       :options="options"
     />
-    <br/><br/>
 
     <!-- 自定义折叠项内容，collapsedItems 为 插槽(slot) { value, count, collapsedSelectedItems }-->
-    <t-select
-      v-model="value"
-      placeholder="请选择"
-      multiple
-      :minCollapsedNum="minCollapsedNum"
-      :options="options"
-    >
+    <t-select v-model="value" placeholder="请选择" multiple :minCollapsedNum="minCollapsedNum" :options="options">
       <!-- hover展示折叠部分的已选项 -->
       <template #collapsedItems="{ collapsedSelectedItems, count }">
         <t-popup>
           <template #content>
-            <p
-              v-for="(item, index) in collapsedSelectedItems"
-              :key="index"
-              style="padding: 10px;"
-            >
-              {{item.label}}
+            <p v-for="(item, index) in collapsedSelectedItems" :key="index" style="padding: 10px">
+              {{ item.label }}
             </p>
           </template>
-          <span v-show="count > 0" style="color: #00A870;">+{{count}}</span>
+          <span v-show="count > 0" style="color: #00a870">+{{ count }}</span>
         </t-popup>
       </template>
     </t-select>
-  </div>
+  </t-space>
 </template>
 
 <script lang="jsx">
@@ -69,11 +51,9 @@ export default {
       return (
         <t-popup>
           <div slot="content">
-          {
-            value.map((item) => (
+            {value.map((item) => (
               <p style="padding: 10px;">{item.label}</p>
-            ))
-          }
+            ))}
           </div>
           <span v-show={count > 0} style="color: #ED7B2F;">
             +{count}
