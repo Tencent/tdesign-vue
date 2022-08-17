@@ -8,12 +8,6 @@ import mixins from '../utils/mixins';
 
 const keepAnimationMixins = getKeepAnimationMixins();
 const classPrefixMixins = getClassPrefixMixins('button');
-export interface ButtonHTMLAttributes {
-  attrs?: {
-    disabled?: boolean;
-    type?: string;
-  };
-}
 
 export default mixins(keepAnimationMixins, classPrefixMixins).extend({
   name: 'TButton',
@@ -61,11 +55,10 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
       on.click = this.onClick;
     }
 
-    const buttonAttrs: ButtonHTMLAttributes = {
-      attrs: {
-        type: this.type,
-        disabled,
-      },
+    const buttonAttrs = {
+      type: this.type,
+      disabled,
+      href: this.href,
     };
 
     const renderTag = () => {
