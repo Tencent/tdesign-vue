@@ -1,4 +1,4 @@
-import { VNode } from 'vue';
+import { VNode, CreateElement } from 'vue';
 import TLoading from '../loading';
 import props from './props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
@@ -22,10 +22,11 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
 
   directives: { ripple },
 
-  render(): VNode {
+  render(h: CreateElement): VNode {
     let buttonContent = renderContent(this, 'default', 'content');
     const icon = this.loading ? <TLoading inheritColor={true} /> : renderTNodeJSX(this, 'icon');
     const disabled = this.disabled || this.loading;
+
     let { theme } = this;
 
     if (!this.theme) {
@@ -67,10 +68,20 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
       },
     };
 
-    return (
-      <button v-ripple={this.keepAnimation.ripple} class={buttonClass} {...buttonAttrs} {...{ on }}>
-        {buttonContent}
-      </button>
+    const renderTag = () => {
+      if (!this.tag && this.href) return 'a';
+      return this.tag || 'button';
+    };
+
+    return h(
+      renderTag(),
+      {
+        class: buttonClass,
+        attrs: buttonAttrs,
+        on,
+        directives: [{ name: 'ripple', value: this.keepAnimation.ripple }],
+      },
+      [buttonContent],
     );
   },
 });
