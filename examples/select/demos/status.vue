@@ -1,11 +1,11 @@
 <template>
-  <div class="tdesign-demo-select-base">
+  <t-space>
     <t-select v-model="value1" :options="options" placeholder="请选择云解决方案" />
 
     <t-select v-model="value2" :options="options" disabled placeholder="请选择云解决方案" />
 
     <t-select v-model="value3" :options="options" loading placeholder="请选择云解决方案" />
-  </div>
+  </t-space>
 </template>
 
 <script>
@@ -28,14 +28,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.tdesign-demo-select-base {
-  width: 680px;
-  display: flex;
-}
-
-.tdesign-demo-select-base .t-select__wrap + .t-select__wrap {
-  margin-left: 36px;
-}
-</style>
