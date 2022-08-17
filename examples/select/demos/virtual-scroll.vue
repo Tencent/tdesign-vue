@@ -6,7 +6,7 @@
       :options="options"
       placeholder="请选择"
       :scroll="{ type: 'virtual' }"
-      :popup-props="{ overlayStyle: { height: '300px' } }"
+      :popup-props="{ overlayInnerStyle: { height: '300px' } }"
     />
   </div>
 </template>
