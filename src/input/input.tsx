@@ -11,16 +11,10 @@ import { getCharacterLength, omit } from '../utils/helper';
 import getConfigReceiverMixins, { InputConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
 import { ClassName } from '../common';
-import CLASSNAMES from '../utils/classnames';
 import { emitEvent } from '../utils/event';
-import { prefix } from '../config';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import FormItem from '../form/form-item';
-
-const name = `${prefix}-input`;
-const INPUT_WRAP_CLASS = `${prefix}-input__wrap`;
-const INPUT_TIPS_CLASS = `${prefix}-input__tips`;
 
 function getValidAttrs(obj: object): object {
   const newObj = {};
@@ -92,17 +86,17 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     },
     inputClasses(): ClassName {
       return [
-        name,
-        CLASSNAMES.SIZE[this.size] || '',
+        this.componentName,
+        this.commonSizeClassName[this.size] || '',
         {
-          [CLASSNAMES.STATUS.disabled]: this.tDisabled,
-          [CLASSNAMES.STATUS.focused]: this.focused,
-          [`${prefix}-is-${this.status}`]: this.status,
-          [`${prefix}-align-${this.align}`]: this.align !== 'left',
-          [`${prefix}-is-disabled`]: this.tDisabled,
-          [`${prefix}-is-readonly`]: this.readonly,
-          [`${name}--focused`]: this.focused,
-          [`${name}--auto-width`]: this.autoWidth && !this.keepWrapperWidth,
+          [this.commonStatusClassName.disabled]: this.tDisabled,
+          [this.commonStatusClassName.focused]: this.focused,
+          [`${this.classPrefix}-is-${this.status}`]: this.status,
+          [`${this.classPrefix}-align-${this.align}`]: this.align !== 'left',
+          [`${this.classPrefix}-is-disabled`]: this.tDisabled,
+          [`${this.classPrefix}-is-readonly`]: this.readonly,
+          [`${this.componentName}--focused`]: this.focused,
+          [`${this.componentName}--auto-width`]: this.autoWidth && !this.keepWrapperWidth,
         },
       ];
     },
@@ -179,13 +173,11 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         input.value = sV;
       }
     },
-    focus(): void {
-      const input = this.$refs.inputRef as HTMLInputElement;
-      input?.focus();
+    focus() {
+      (this.$refs.inputRef as HTMLInputElement).focus();
     },
-    blur(): void {
-      const input = this.$refs.inputRef as HTMLInputElement;
-      input?.blur();
+    blur() {
+      (this.$refs.inputRef as HTMLInputElement).blur();
     },
     handleKeydown(e: KeyboardEvent) {
       if (this.tDisabled) return;
@@ -332,8 +324,8 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     const label = renderTNodeJSX(this, 'label');
     const suffix = renderTNodeJSX(this, 'suffix');
 
-    const labelContent = label ? <div class={`${name}__prefix`}>{label}</div> : null;
-    const suffixContent = suffix ? <div class={`${name}__suffix`}>{suffix}</div> : null;
+    const labelContent = label ? <div class={`${this.componentName}__prefix`}>{label}</div> : null;
+    const suffixContent = suffix ? <div class={`${this.componentName}__suffix`}>{suffix}</div> : null;
 
     const { BrowseIcon, BrowseOffIcon, CloseCircleFilledIcon } = this.useGlobalIcon({
       BrowseIcon: TdBrowseIcon,
@@ -343,22 +335,24 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
 
     if (this.type === 'password') {
       if (this.renderType === 'password') {
-        suffixIcon = <BrowseOffIcon class={`${name}__suffix-clear`} nativeOnClick={this.emitPassword} />;
+        suffixIcon = <BrowseOffIcon class={`${this.componentName}__suffix-clear`} nativeOnClick={this.emitPassword} />;
       } else if (this.renderType === 'text') {
-        suffixIcon = <BrowseIcon class={`${name}__suffix-clear`} nativeOnClick={this.emitPassword} />;
+        suffixIcon = <BrowseIcon class={`${this.componentName}__suffix-clear`} nativeOnClick={this.emitPassword} />;
       }
     }
 
     if (this.showClear) {
-      suffixIcon = <CloseCircleFilledIcon class={`${name}__suffix-clear`} nativeOnClick={this.emitClear} />;
+      suffixIcon = (
+        <CloseCircleFilledIcon class={`${this.componentName}__suffix-clear`} nativeOnClick={this.emitClear} />
+      );
     }
 
     const classes = [
       this.inputClasses,
       this.inputClass,
       {
-        [`${name}--prefix`]: prefixIcon || labelContent,
-        [`${name}--suffix`]: suffixIcon || suffixContent,
+        [`${this.componentName}--prefix`]: prefixIcon || labelContent,
+        [`${this.componentName}--suffix`]: suffixIcon || suffixContent,
       },
     ];
     const inputNode = (
@@ -370,13 +364,15 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         onMouseleave={this.onInputMouseleave}
         onwheel={this.onHandleMousewheel}
       >
-        {prefixIcon ? <span class={[`${name}__prefix`, `${name}__prefix-icon`]}>{prefixIcon}</span> : null}
+        {prefixIcon ? (
+          <span class={[`${this.componentName}__prefix`, `${this.componentName}__prefix-icon`]}>{prefixIcon}</span>
+        ) : null}
         {labelContent}
         {this.showInput && (
           <input
             {...{ attrs: this.inputAttrs, on: inputEvents }}
             ref="inputRef"
-            class={`${name}__inner`}
+            class={`${this.componentName}__inner`}
             value={this.composingRef ? this.composingRefValue : this.inputValue}
             onInput={this.handleInput}
             onCompositionstart={this.compositionstartHandler}
@@ -384,13 +380,19 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
           />
         )}
         {this.autoWidth && (
-          <span ref="inputPreRef" class={`${prefix}-input__input-pre`}>
+          <span ref="inputPreRef" class={`${this.classPrefix}-input__input-pre`}>
             {this.value || this.tPlaceholder}
           </span>
         )}
         {suffixContent}
         {suffixIcon ? (
-          <span class={[`${name}__suffix`, `${name}__suffix-icon`, { [`${name}__clear`]: this.showClear }]}>
+          <span
+            class={[
+              `${this.componentName}__suffix`,
+              `${this.componentName}__suffix-icon`,
+              { [`${this.componentName}__clear`]: this.showClear },
+            ]}
+          >
             {suffixIcon}
           </span>
         ) : null}
@@ -399,9 +401,13 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
 
     const tips = renderTNodeJSX(this, 'tips');
     return (
-      <div class={INPUT_WRAP_CLASS}>
+      <div class={`${this.componentName}__wrap`}>
         {inputNode}
-        {tips && <div class={`${INPUT_TIPS_CLASS} ${prefix}-input__tips--${this.status || 'normal'}`}>{tips}</div>}
+        {tips && (
+          <div class={`${this.componentName}__tips ${this.componentName}__tips--${this.status || 'normal'}`}>
+            {tips}
+          </div>
+        )}
       </div>
     );
   },

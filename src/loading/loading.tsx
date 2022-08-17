@@ -1,23 +1,15 @@
-import Vue from 'vue';
 import GradientIcon from './icon/gradient';
-import { prefix } from '../config';
-import { SIZE_CLASSNAMES } from '../utils/classnames';
 import { addClass, removeClass } from '../utils/dom';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import TransferDom from '../utils/transfer-dom';
 import props from './props';
 import { ClassName, Styles } from '../common';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-loading`;
-const centerClass = `${prefix}-loading--center`;
-const fullscreenClass = `${prefix}-loading__fullscreen`;
-const lockClass = `${prefix}-loading--lock`;
-const overlayClass = `${prefix}-loading__overlay`;
-const relativeClass = `${prefix}-loading__parent`;
-const fullClass = `${prefix}-loading--full`;
-const inheritColorClass = `${prefix}-loading--inherit-color`;
+const classPrefixMixins = getClassPrefixMixins('loading');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TLoading',
 
   props: {
@@ -43,9 +35,9 @@ export default Vue.extend({
       handler(value) {
         if (value) {
           this.countDelay();
-          this.lockFullscreen && addClass(document.body, lockClass);
+          this.lockFullscreen && addClass(document.body, `${this.componentName}--lock`);
         } else {
-          this.lockFullscreen && removeClass(document.body, lockClass);
+          this.lockFullscreen && removeClass(document.body, `${this.componentName}--lock`);
         }
       },
       immediate: true,
@@ -67,28 +59,41 @@ export default Vue.extend({
       return Boolean(this.text || this.$scopedSlots.text);
     },
     baseClasses(): ClassName {
-      return [centerClass, SIZE_CLASSNAMES[this.size], { [inheritColorClass]: this.inheritColor }];
+      return [
+        `${this.componentName}--center`,
+        this.commonSizeClassName[this.size],
+        { [`${this.componentName}--inherit-color`]: this.inheritColor },
+      ];
     },
     hasContent(): boolean {
       return Boolean(this.default || this.$scopedSlots.default || this.content || this.$scopedSlots.content);
     },
     withContentClasses(): ClassName {
       return this.baseClasses.concat([
-        name,
-        fullClass,
+        this.componentName,
+        `${this.componentName}--full`,
         {
-          [overlayClass]: this.showOverlay,
+          [`${this.componentName}__overlay`]: this.showOverlay,
         },
       ]);
     },
     fullScreenClasses(): ClassName {
-      return [name, fullscreenClass, centerClass, overlayClass];
+      return [
+        this.componentName,
+        `${this.componentName}__fullscreen`,
+        `${this.componentName}--center`,
+        `${this.componentName}__overlay`,
+      ];
     },
     attachClasses(): ClassName {
-      return this.baseClasses.concat([name, fullClass, { [overlayClass]: this.showOverlay }]);
+      return this.baseClasses.concat([
+        this.componentName,
+        `${this.componentName}--full`,
+        { [`${this.componentName}__overlay`]: this.showOverlay },
+      ]);
     },
     normalClasses(): ClassName {
-      return this.baseClasses.concat([name]);
+      return this.baseClasses.concat([this.componentName]);
     },
     lockFullscreen(): boolean {
       return this.preventScrollThrough && this.fullscreen;
@@ -121,7 +126,7 @@ export default Vue.extend({
   render() {
     const defaultIndicator = <GradientIcon size={this.size} />;
     const indicator = this.loading && renderTNodeJSX(this, 'indicator', defaultIndicator);
-    const text = this.showText && <div class={`${prefix}-loading__text`}>{renderTNodeJSX(this, 'text')}</div>;
+    const text = this.showText && <div class={`${this.classPrefix}-loading__text`}>{renderTNodeJSX(this, 'text')}</div>;
 
     // full screen loading
     if (this.fullscreen) {
@@ -139,7 +144,7 @@ export default Vue.extend({
     // Loading is wrapping a HTMLElement.
     if (this.hasContent) {
       return (
-        <div class={relativeClass}>
+        <div class={`${this.componentName}__parent`}>
           {renderContent(this, 'default', 'content')}
           {this.showWrapLoading && (
             <div class={this.withContentClasses} style={this.styles}>

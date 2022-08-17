@@ -8,7 +8,6 @@ import {
   CheckIcon as TdCheckIcon,
   ErrorIcon as TdErrorIcon,
 } from 'tdesign-icons-vue';
-import { prefix } from '../config';
 import { getBackgroundColor } from '../utils/helper';
 import {
   PRO_THEME, CIRCLE_SIZE, CIRCLE_SIZE_PX, STATUS_ICON, CIRCLE_FONT_SIZE_RATIO,
@@ -16,22 +15,16 @@ import {
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { Styles } from '../common';
-
+import { getClassPrefixMixins, getGlobalIconMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
-import { getGlobalIconMixins } from '../config-provider/config-receiver';
 
-const name = `${prefix}-progress`;
+const classPrefixMixins = getClassPrefixMixins('progress');
 
-export default mixins(getGlobalIconMixins()).extend({
+export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
   name: 'TProgress',
 
   props: { ...props },
 
-  data() {
-    return {
-      name,
-    };
-  },
   computed: {
     statusStyle(): string {
       if (this.percentage >= 100) {
@@ -174,7 +167,7 @@ export default mixins(getGlobalIconMixins()).extend({
         const components = this.getIconMap();
         const component = components[status];
         if (component) {
-          labelContent = <component class={[`${name}__icon`]}></component>;
+          labelContent = <component class={[`${this.componentName}__icon`]}></component>;
         }
       }
       return labelContent;
@@ -182,16 +175,18 @@ export default mixins(getGlobalIconMixins()).extend({
   },
 
   render() {
-    const labelContent = <div class={`${name}__info`}>{renderTNodeJSX(this, 'label', this.getLabelContent())}</div>;
+    const labelContent = (
+      <div class={`${this.componentName}__info`}>{renderTNodeJSX(this, 'label', this.getLabelContent())}</div>
+    );
     // 进度大于 10 ，进度百分比显示在内部；进度百分比小于 10 进度显示在外部
     const PLUMP_SEPARATE = 10;
-    const separateClasses = this.percentage > PLUMP_SEPARATE ? `${name}--over-ten` : `${name}--under-ten`;
+    const separateClasses = this.percentage > PLUMP_SEPARATE ? `${this.componentName}--over-ten` : `${this.componentName}--under-ten`;
     return (
-      <div class={name}>
+      <div class={this.componentName}>
         {this.theme === PRO_THEME.LINE && (
-          <div class={`${name}--thin ${name}--status--${this.statusStyle}`}>
-            <div class={`${name}__bar`} style={this.trackBgStyle}>
-              <div class={`${name}__inner`} style={this.barStyle}></div>
+          <div class={`${this.componentName}--thin ${this.componentName}--status--${this.statusStyle}`}>
+            <div class={`${this.componentName}__bar`} style={this.trackBgStyle}>
+              <div class={`${this.componentName}__inner`} style={this.barStyle}></div>
             </div>
             {labelContent}
           </div>
@@ -200,12 +195,12 @@ export default mixins(getGlobalIconMixins()).extend({
         {this.theme === PRO_THEME.PLUMP && (
           <div
             class={[
-              `${name}__bar ${name}--plump ${separateClasses}`,
-              { [`${name}--status--${this.statusStyle}`]: this.statusStyle },
+              `${this.componentName}__bar ${this.componentName}--plump ${separateClasses}`,
+              { [`${this.componentName}--status--${this.statusStyle}`]: this.statusStyle },
             ]}
             style={this.trackBgStyle}
           >
-            <div class={`${name}__inner`} style={this.barStyle}>
+            <div class={`${this.componentName}__inner`} style={this.barStyle}>
               {this.percentage > PLUMP_SEPARATE && labelContent}
             </div>
             {this.percentage <= PLUMP_SEPARATE && labelContent}
@@ -213,7 +208,10 @@ export default mixins(getGlobalIconMixins()).extend({
         )}
 
         {this.theme === PRO_THEME.CIRCLE && (
-          <div class={`${name}--circle ${name}--status--${this.statusStyle}`} style={this.circleStyle}>
+          <div
+            class={`${this.componentName}--circle ${this.componentName}--status--${this.statusStyle}`}
+            style={this.circleStyle}
+          >
             {labelContent}
             <svg width={this.diameter} height={this.diameter} viewBox={`0 0 ${this.diameter} ${this.diameter}`}>
               <circle
@@ -223,7 +221,7 @@ export default mixins(getGlobalIconMixins()).extend({
                 stroke-width={this.circleStrokeWidth}
                 stroke={this.trackColor}
                 fill="none"
-                class={`${name}__circle-outer`}
+                class={`${this.componentName}__circle-outer`}
                 style={this.circleStrokeStyle}
               />
               {this.percentage > 0 && (
@@ -234,7 +232,7 @@ export default mixins(getGlobalIconMixins()).extend({
                   stroke-width={this.circleStrokeWidth}
                   fill="none"
                   stroke-linecap="round"
-                  class={`${name}__circle-inner`}
+                  class={`${this.componentName}__circle-inner`}
                   transform={`matrix(0,-1,1,0,0,${this.diameter})`}
                   stroke-dasharray={this.strokeDashArr}
                   style={this.circlePathStyle}

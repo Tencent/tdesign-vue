@@ -4,16 +4,10 @@ import Tooltip from '../tooltip/index';
 import props from './breadcrumb-item-props';
 import { isNodeOverflow } from '../utils/dom';
 import { TNodeReturnValue } from '../common';
+import { getClassPrefixMixins, getGlobalIconMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
-import { getGlobalIconMixins } from '../config-provider/config-receiver';
 
-const name = `${prefix}-breadcrumb__item`;
-const separatorClass = `${prefix}-breadcrumb__separator`;
-const disableClass = `${prefix}-is-disabled`;
-const linkClass = `${prefix}-link`;
-const maxLengthClass = `${prefix}-breadcrumb__inner`;
-const textFlowClass = `${prefix}-breadcrumb--text-overflow`;
-const gestureClass = `${prefix}-gestureClass`;
+const classPrefixMixins = getClassPrefixMixins('breadcrumb');
 
 export interface LocalTBreadcrumb {
   separator: Function | string;
@@ -29,7 +23,7 @@ const localTBreadcrumbOrigin: LocalTBreadcrumb = {
   $slots: { separator: '' },
   maxItemWidth: undefined,
 };
-export default mixins(getGlobalIconMixins()).extend({
+export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
   name: 'TBreadcrumbItem',
 
   props: {
@@ -98,20 +92,20 @@ export default mixins(getGlobalIconMixins()).extend({
     const separatorSlot = localTBreadcrumb.$slots.separator;
     const separatorPropContent = typeof separator === 'function' ? separator() : separator;
     const separatorContent = separatorPropContent || separatorSlot || <ChevronRightIcon />;
-    const itemClass = [name, this.themeClassName];
-    const textClass = [textFlowClass];
+    const itemClass = [`${this.componentName}__item`, this.themeClassName];
+    const textClass = [`${this.componentName}--text-overflow`];
 
     if (disabled) {
-      textClass.push(disableClass);
+      textClass.push(`${this.classPrefix}-is-disabled`);
     }
 
     if (this.$listeners.click) {
-      textClass.push(gestureClass);
+      textClass.push(`${this.classPrefix}-gestureClass`);
     }
 
     const clickEvent = to && !disabled ? { on: { click: this.bindEvent } } : {};
     const textContent = (
-      <span ref="breadcrumbText" class={maxLengthClass} style={this.maxWithStyle}>
+      <span ref="breadcrumbText" class={`${this.componentName}__inner`} style={this.maxWithStyle}>
         {this.$slots.default}
       </span>
     );
@@ -122,7 +116,7 @@ export default mixins(getGlobalIconMixins()).extend({
     );
 
     if (href && !disabled) {
-      textClass.push(linkClass);
+      textClass.push(`${this.classPrefix}-link`);
       itemContent = (
         <a class={textClass} href={href} target={target} {...{ on: this.$listeners }}>
           {textContent}
@@ -132,7 +126,7 @@ export default mixins(getGlobalIconMixins()).extend({
     return (
       <div class={itemClass}>
         {this.isCutOff ? <Tooltip content={() => this.$slots.default}>{itemContent}</Tooltip> : itemContent}
-        <span class={separatorClass}>{separatorContent}</span>
+        <span class={`${this.componentName}__separator`}>{separatorContent}</span>
       </div>
     );
   },

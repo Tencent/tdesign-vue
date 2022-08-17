@@ -16,10 +16,9 @@ import cloneDeep from 'lodash/cloneDeep';
 import isArray from 'lodash/isArray';
 import useDefaultValue from '../hooks/useDefaultValue';
 import { useTNodeJSX } from '../hooks/tnode';
-import { useConfig } from '../config-provider/useConfig';
+import { useConfig, usePrefixClass } from '../config-provider/useConfig';
 import { TdSelectProps, SelectValue } from './type';
 import props from './props';
-import { prefix } from '../config';
 import TLoading from '../loading';
 import Popup, { PopupVisibleChangeContext } from '../popup';
 import TInput from '../input/index';
@@ -37,8 +36,6 @@ import useSelectOptions from './hooks/useSelectOptions';
 
 export type OptionInstance = InstanceType<typeof Option>;
 
-export const name = `${prefix}-select`;
-
 export default defineComponent({
   name: 'TSelect',
   props: { ...props },
@@ -53,12 +50,13 @@ export default defineComponent({
   },
   setup(props: TdSelectProps, context: SetupContext) {
     const { t, global } = useConfig('select');
-    const { classPrefix } = useConfig();
     const renderTNode = useTNodeJSX();
     const instance = getCurrentInstance();
     const selectInputRef = ref<HTMLElement>(null);
     const popupOpenTime = ref(250);
     const formDisabled = ref();
+    const COMPONENT_NAME = usePrefixClass('select');
+    const { classPrefix } = useConfig('classPrefix');
 
     const {
       valueType,
@@ -442,6 +440,7 @@ export default defineComponent({
       removeTag,
       renderTNode,
       updateScrollTop,
+      componentName: COMPONENT_NAME,
     };
   },
 
@@ -451,10 +450,15 @@ export default defineComponent({
         isLoading, showArrow, innerPopupVisible, isDisabled,
       } = this;
       if (isLoading) {
-        return <t-loading class={[`${name}__right-icon`, `${name}__active-icon`]} size="small" />;
+        return (
+          <t-loading class={[`${this.componentName}__right-icon`, `${this.componentName}__active-icon`]} size="small" />
+        );
       }
       return showArrow ? (
-        <fake-arrow overlayClassName={`${name}__right-icon`} isActive={innerPopupVisible && !isDisabled} />
+        <fake-arrow
+          overlayClassName={`${this.componentName}__right-icon`}
+          isActive={innerPopupVisible && !isDisabled}
+        />
       ) : null;
     },
   },
@@ -469,10 +473,10 @@ export default defineComponent({
     const { overlayClassName, ...restPopupProps } = this.popupProps || {};
 
     return (
-      <div ref="select" class={`${name}__wrap`}>
+      <div ref="select" class={`${this.componentName}__wrap`}>
         <SelectInput
           ref="selectInputRef"
-          class={name}
+          class={this.componentName}
           autoWidth={this.autoWidth}
           borderless={this.borderless || !this.bordered}
           readonly={this.readonly}
@@ -502,7 +506,7 @@ export default defineComponent({
           collapsedItems={collapsedItems}
           popupVisible={this.innerPopupVisible}
           popupProps={{
-            overlayClassName: [`${name}__dropdown`, overlayClassName],
+            overlayClassName: [`${this.componentName}__dropdown`, overlayClassName],
             ...restPopupProps,
           }}
           on={{

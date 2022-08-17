@@ -1,16 +1,16 @@
-import Vue, { VNode, VNodeComponentOptions } from 'vue';
+import Vue, { VNode, VNodeComponentOptions, VueConstructor } from 'vue';
 import { ChevronLeftIcon as TdChevronLeftIcon, ChevronRightIcon as TdChevronRightIcon } from 'tdesign-icons-vue';
 import kebabCase from 'lodash/kebabCase';
 
 import props from './props';
-import { prefix } from '../config';
 import { TdSwiperProps, SwiperNavigation, SwiperChangeSource } from './type';
 import TSwiperItem from './swiper-item';
 import { isVNode } from '../hooks/render-tnode';
 import { emitEvent } from '../utils/event';
-
+import { getClassPrefixMixins, getGlobalIconMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
-import { getGlobalIconMixins } from '../config-provider/config-receiver';
+
+const classPrefixMixins = getClassPrefixMixins('swiper');
 
 export interface SwiperVue extends Vue {
   swiperTimer: number;
@@ -24,7 +24,7 @@ const defaultNavigation: SwiperNavigation = {
   type: 'bars',
 };
 
-export default mixins(getGlobalIconMixins<SwiperVue>()).extend({
+export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGlobalIconMixins()).extend({
   name: 'TSwiper',
 
   components: {
@@ -66,12 +66,12 @@ export default mixins(getGlobalIconMixins<SwiperVue>()).extend({
     },
     swiperWrapClass(): any {
       return {
-        [`${prefix}-swiper__wrap`]: true,
-        [`${prefix}-swiper--inside`]: this.navigationConfig.placement === 'inside',
-        [`${prefix}-swiper--outside`]: this.navigationConfig.placement === 'outside',
-        [`${prefix}-swiper--vertical`]: this.direction === 'vertical',
-        [`${prefix}-swiper--large`]: this.navigationConfig.size === 'large',
-        [`${prefix}-swiper--small`]: this.navigationConfig.size === 'small',
+        [`${this.componentName}__wrap`]: true,
+        [`${this.componentName}--inside`]: this.navigationConfig.placement === 'inside',
+        [`${this.componentName}--outside`]: this.navigationConfig.placement === 'outside',
+        [`${this.componentName}--vertical`]: this.direction === 'vertical',
+        [`${this.componentName}--large`]: this.navigationConfig.size === 'large',
+        [`${this.componentName}--small`]: this.navigationConfig.size === 'small',
       };
     },
     containerStyle(): any {
@@ -152,7 +152,7 @@ export default mixins(getGlobalIconMixins<SwiperVue>()).extend({
       const originalChildren = this.$scopedSlots.default?.({}) || [];
       const swiperItemList = originalChildren
         .map((swiper: VNode) => swiper.componentOptions)
-        .filter((swiper) => kebabCase(swiper?.tag).endsWith(`${prefix}-swiper-item`));
+        .filter((swiper) => kebabCase(swiper?.tag).endsWith(`${this.componentName}-item`));
       const isUnchange = swiperItemList.length === this.swiperItemList.length
         && this.swiperItemList.every((swiperItem, index) => swiperItem === swiperItemList[index]);
       if (isUnchange) return;
@@ -229,14 +229,14 @@ export default mixins(getGlobalIconMixins<SwiperVue>()).extend({
         ChevronRightIcon: TdChevronRightIcon,
       });
       return (
-        <div class={`${prefix}-swiper__arrow`}>
-          <div class={`${prefix}-swiper__arrow-left`} onClick={() => this.goPrevious({ source: 'click' })}>
+        <div class={`${this.componentName}__arrow`}>
+          <div class={`${this.componentName}__arrow-left`} onClick={() => this.goPrevious({ source: 'click' })}>
             <ChevronLeftIcon />
           </div>
-          <div class={`${prefix}-swiper__navigation-text-fraction`}>
+          <div class={`${this.componentName}__navigation-text-fraction`}>
             {fractionIndex}/{this.swiperItemLength}
           </div>
-          <div class={`${prefix}-swiper__arrow-right`} onClick={() => this.goNext({ source: 'click' })}>
+          <div class={`${this.componentName}__arrow-right`} onClick={() => this.goNext({ source: 'click' })}>
             <ChevronRightIcon />
           </div>
         </div>
@@ -249,11 +249,11 @@ export default mixins(getGlobalIconMixins<SwiperVue>()).extend({
         ChevronRightIcon: TdChevronRightIcon,
       });
       return (
-        <div class={[`${prefix}-swiper__arrow`, `${prefix}-swiper__arrow--default`]}>
-          <div class={`${prefix}-swiper__arrow-left`} onClick={() => this.goPrevious({ source: 'click' })}>
+        <div class={[`${this.componentName}__arrow`, `${this.componentName}__arrow--default`]}>
+          <div class={`${this.componentName}__arrow-left`} onClick={() => this.goPrevious({ source: 'click' })}>
             <ChevronLeftIcon />
           </div>
-          <div class={`${prefix}-swiper__arrow-right`} onClick={() => this.goNext({ source: 'click' })}>
+          <div class={`${this.componentName}__arrow-right`} onClick={() => this.goNext({ source: 'click' })}>
             <ChevronRightIcon />
           </div>
         </div>
@@ -263,7 +263,7 @@ export default mixins(getGlobalIconMixins<SwiperVue>()).extend({
       if (isVNode(this.navigation as VNode)) return this.navigation;
       if (this.navigationConfig.type === 'fraction') {
         return (
-          <div class={[`${prefix}-swiper__navigation`, `${prefix}-swiper__navigation--fraction`]}>
+          <div class={[`${this.componentName}__navigation`, `${this.componentName}__navigation--fraction`]}>
             {this.renderPagination()}
           </div>
         );
@@ -272,9 +272,9 @@ export default mixins(getGlobalIconMixins<SwiperVue>()).extend({
       return (
         <ul
           class={[
-            `${prefix}-swiper__navigation`,
+            `${this.componentName}__navigation`,
             {
-              [`${prefix}-swiper__navigation-bars`]: this.navigationConfig.type === 'bars',
+              [`${this.componentName}__navigation-bars`]: this.navigationConfig.type === 'bars',
             },
           ]}
         >
@@ -282,9 +282,9 @@ export default mixins(getGlobalIconMixins<SwiperVue>()).extend({
             <li
               key={i}
               class={[
-                `${prefix}-swiper__navigation-item`,
+                `${this.componentName}__navigation-item`,
                 {
-                  [`${prefix}-is-active`]: i === this.currentIndex,
+                  [`${this.componentName}-is-active`]: i === this.currentIndex,
                 },
               ]}
               onMouseenter={() => this.onMouseEnterNavigationItem(i)}
@@ -304,7 +304,7 @@ export default mixins(getGlobalIconMixins<SwiperVue>()).extend({
   render() {
     return (
       <div
-        class={[`${prefix}-swiper`]}
+        class={this.componentName}
         onMouseenter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
         ref="swiperWrap"
@@ -312,14 +312,14 @@ export default mixins(getGlobalIconMixins<SwiperVue>()).extend({
         <div class={this.swiperWrapClass}>
           <div
             class={[
-              `${prefix}-swiper__content`,
+              `${this.componentName}__content`,
               {
-                [`${prefix}-swiper-fade`]: this.animation === 'fade',
-                [`${prefix}-swiper-card`]: this.type === 'card',
+                [`${this.componentName}-fade`]: this.animation === 'fade',
+                [`${this.componentName}-card`]: this.type === 'card',
               },
             ]}
           >
-            <div class={`${prefix}-swiper__container`} style={this.containerStyle}>
+            <div class={`${this.componentName}__container`} style={this.containerStyle}>
               {this.renderSwiperItems()}
             </div>
           </div>

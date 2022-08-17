@@ -1,11 +1,13 @@
-import Vue from 'vue';
-import { prefix } from '../config';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-export default Vue.extend({
+const classPrefixMixins = getClassPrefixMixins('content');
+
+export default mixins(classPrefixMixins).extend({
   name: 'TContent',
 
   render() {
-    return <main class={`${prefix}-layout__content`}>{renderTNodeJSX(this, 'default')}</main>;
+    return <main class={`${this.classPrefix}-layout__content`}>{renderTNodeJSX(this, 'default')}</main>;
   },
 });

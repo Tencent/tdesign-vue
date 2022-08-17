@@ -1,19 +1,19 @@
-import Vue, { VNode, CreateElement } from 'vue';
+import { VNode, CreateElement } from 'vue';
 import isString from 'lodash/isString';
 import isNumber from 'lodash/isNumber';
 import props from './radio-group-props';
 import {
   TdRadioGroupProps, RadioOptionObj, RadioOption, RadioValue,
 } from './type';
-import { prefix } from '../config';
-import Radio, { radioBtnName } from './radio';
+import Radio from './radio';
 import { TNodeReturnValue } from '../common';
-import CLASSNAMES, { SIZE_CLASSNAMES } from '../utils/classnames';
 import { emitEvent } from '../utils/event';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-radio-group`;
+const classPrefixMixins = getClassPrefixMixins('radio-group');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TRadioGroup',
   props: { ...props },
 
@@ -35,8 +35,8 @@ export default Vue.extend({
   },
 
   computed: {
-    checkedClassName() {
-      return `.${radioBtnName}.${CLASSNAMES.STATUS.checked}`;
+    checkedClassName(): string {
+      return `.${this.classPrefix}-radio-button.${this.commonStatusClassName.checked}`;
     },
   },
 
@@ -66,16 +66,16 @@ export default Vue.extend({
     }
 
     const groupClass = [
-      `${name}`,
-      SIZE_CLASSNAMES[this.size],
+      `${this.componentName}`,
+      this.commonSizeClassName[this.size],
       {
-        [`${name}__outline`]: this.variant === 'outline',
-        [`${name}--filled`]: this.variant.includes('filled'),
-        [`${name}--primary-filled`]: this.variant === 'primary-filled',
+        [`${this.componentName}__outline`]: this.variant === 'outline',
+        [`${this.componentName}--filled`]: this.variant.includes('filled'),
+        [`${this.componentName}--primary-filled`]: this.variant === 'primary-filled',
       },
     ];
     if (this.variant.includes('filled')) {
-      children && children.push(<div style={this.barStyle} class={`${name}__bg-block`}></div>);
+      children && children.push(<div style={this.barStyle} class={`${this.componentName}__bg-block`}></div>);
     }
 
     return <div class={groupClass}>{children}</div>;
@@ -103,10 +103,10 @@ export default Vue.extend({
   },
 
   methods: {
-    handleRadioChange(value: RadioValue, context: { e: Event }) {
+    handleRadioChange(value: RadioValue, context: { e: Event }): void {
       emitEvent<Parameters<TdRadioGroupProps['onChange']>>(this, 'change', value, context);
     },
-    calcDefaultBarStyle() {
+    calcDefaultBarStyle(): void {
       const defaultNode = this.$el.cloneNode(true);
       const div = document.createElement('div');
       div.setAttribute('style', 'position: absolute; visibility: hidden;');
@@ -118,7 +118,7 @@ export default Vue.extend({
       this.barStyle = { width: `${offsetWidth}px`, left: `${offsetLeft}px` };
       document.body.removeChild(div);
     },
-    calcBarStyle() {
+    calcBarStyle(): void {
       if (this.variant === 'outline') return;
 
       const checkedRadio: HTMLElement = this.$el.querySelector(this.checkedClassName);

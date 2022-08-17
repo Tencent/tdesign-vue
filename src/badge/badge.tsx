@@ -1,15 +1,14 @@
-import Vue from 'vue';
-import { prefix } from '../config';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-badge`;
+const classPrefixMixins = getClassPrefixMixins('badge');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TBadge',
 
   props: { ...props },
-
   methods: {
     getContent() {
       if (this.dot) return '';
@@ -50,11 +49,11 @@ export default Vue.extend({
     const { xOffset, yOffset } = this.getOffset();
     const badgeClassNames = [
       {
-        [`${name}--dot`]: !!dot,
-        [`${name}--circle`]: !dot && shape === 'circle',
-        [`${name}--round`]: shape === 'round',
-        [`${name}--ribbon`]: shape === 'ribbon',
-        [`${prefix}-size-s`]: this.isSmall(),
+        [`${this.componentName}--dot`]: !!dot,
+        [`${this.componentName}--circle`]: !dot && shape === 'circle',
+        [`${this.componentName}--round`]: shape === 'round',
+        [`${this.componentName}--ribbon`]: shape === 'ribbon',
+        [`${this.classPrefix}-size-s`]: this.isSmall(),
       },
     ];
     const inlineStyle = {
@@ -64,7 +63,7 @@ export default Vue.extend({
     };
 
     return (
-      <div class={name}>
+      <div class={this.componentName}>
         {children || null}
         {isHidden ? null : (
           <sup class={badgeClassNames} style={inlineStyle}>

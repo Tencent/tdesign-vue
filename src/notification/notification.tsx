@@ -9,13 +9,12 @@ import { prefix } from '../config';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import props from './props';
 import { TNodeReturnValue } from '../common';
-
+import { getClassPrefixMixins, getGlobalIconMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
-import { getGlobalIconMixins } from '../config-provider/config-receiver';
 
-const name = `${prefix}-notification`;
+const classPrefixMixins = getClassPrefixMixins('notification');
 
-export default mixins(getGlobalIconMixins()).extend({
+export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
   name: 'TNotification',
   props: { ...props },
   mounted() {
@@ -49,11 +48,11 @@ export default mixins(getGlobalIconMixins()).extend({
           CheckCircleFilledIcon: TdCheckCircleFilledIcon,
         });
         const iconType = this.theme === 'success' ? (
-            <CheckCircleFilledIcon class={`${prefix}-is-${this.theme}`} />
+            <CheckCircleFilledIcon class={`${this.classPrefix}-is-${this.theme}`} />
         ) : (
-            <InfoCircleFilledIcon class={`${prefix}-is-${this.theme}`} />
+            <InfoCircleFilledIcon class={`${this.classPrefix}-is-${this.theme}`} />
         );
-        icon = <div class={`${name}__icon`}>{iconType}</div>;
+        icon = <div class={`${this.componentName}__icon`}>{iconType}</div>;
       }
       return icon;
     },
@@ -63,13 +62,13 @@ export default mixins(getGlobalIconMixins()).extend({
       });
       const defaultClose = <CloseIcon />;
       return (
-        <span class={`${prefix}-message__close`} onClick={this.close}>
+        <span class={`${this.classPrefix}-message__close`} onClick={this.close}>
           {renderTNodeJSX(this, 'closeBtn', defaultClose)}
         </span>
       );
     },
     renderContent() {
-      return <div class={`${name}__content`}>{renderContent(this, 'default', 'content')}</div>;
+      return <div class={`${this.componentName}__content`}>{renderContent(this, 'default', 'content')}</div>;
     },
   },
   render(h: CreateElement) {
@@ -80,11 +79,11 @@ export default mixins(getGlobalIconMixins()).extend({
     const title = renderTNodeJSX(this, 'title');
 
     return (
-      <div class={`${name}`}>
+      <div class={`${this.componentName}`}>
         {icon}
-        <div class={`${name}__main`}>
-          <div class={`${name}__title__wrap`}>
-            <span class={`${name}__title`}>{title}</span>
+        <div class={`${this.componentName}__main`}>
+          <div class={`${this.componentName}__title__wrap`}>
+            <span class={`${this.componentName}__title`}>{title}</span>
             {close}
           </div>
           {content}

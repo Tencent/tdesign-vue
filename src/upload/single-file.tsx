@@ -6,19 +6,15 @@ import {
   CheckCircleFilledIcon as TdCheckCircleFilledIcon,
 } from 'tdesign-icons-vue';
 import Loading from '../loading';
-import { prefix } from '../config';
 import { UploadFile } from './type';
 import { ClassName } from '../common';
 import { abridgeName } from '../_common/js/upload/utils';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import props from './props';
-
 import mixins from '../utils/mixins';
-import { getGlobalIconMixins } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { UploadConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 
-const uploadName = `${prefix}-upload`;
-
-export default mixins(getGlobalIconMixins()).extend({
+export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getGlobalIconMixins()).extend({
   name: 'TUploadSingleFile',
 
   components: {
@@ -71,10 +67,10 @@ export default mixins(getGlobalIconMixins()).extend({
       return this.inputName || this.placeholder;
     },
     inputTextClass(): ClassName {
-      return [`${prefix}-input__inner`, { [`${uploadName}__placeholder`]: !this.inputName }];
+      return [`${this.classPrefix}-input__inner`, { [`${this.componentName}__placeholder`]: !this.inputName }];
     },
     classes(): ClassName {
-      return [`${uploadName}__single`, `${uploadName}__single-${this.display}`];
+      return [`${this.componentName}__single`, `${this.componentName}__single-${this.display}`];
     },
   },
 
@@ -88,9 +84,9 @@ export default mixins(getGlobalIconMixins()).extend({
       }
       if (this.showUploadProgress) {
         return (
-          <div class={`${uploadName}__single-progress`}>
+          <div class={`${this.componentName}__single-progress`}>
             <Loading />
-            <span class={`${uploadName}__single-percent`}>{Math.min(this.loadingFile.percent, 99)}%</span>
+            <span class={`${this.componentName}__single-percent`}>{Math.min(this.loadingFile.percent, 99)}%</span>
           </div>
         );
       }
@@ -119,13 +115,13 @@ export default mixins(getGlobalIconMixins()).extend({
         CloseCircleFilledIcon: TdCloseCircleFilledIcon,
       });
       return (
-        <div class={[`${uploadName}__single-display-text`, `${uploadName}__display-text--margin`]}>
-          {fileListDisplay || <span class={`${uploadName}__single-name`}>{this.inputName}</span>}
+        <div class={[`${this.componentName}__single-display-text`, `${this.componentName}__display-text--margin`]}>
+          {fileListDisplay || <span class={`${this.componentName}__single-name`}>{this.inputName}</span>}
           {this.showProgress ? (
             this.renderProgress()
           ) : (
             <CloseCircleFilledIcon
-              class={`${uploadName}__icon-delete`}
+              class={`${this.componentName}__icon-delete`}
               nativeOnClick={(e: MouseEvent) => this.remove(e)}
             />
           )}
@@ -135,9 +131,9 @@ export default mixins(getGlobalIconMixins()).extend({
     // 输入框型预览
     renderFilePreviewAsInput() {
       return (
-        <div class={`${uploadName}__single-input-preview ${prefix}-input`}>
+        <div class={`${this.componentName}__single-input-preview ${this.classPrefix}-input`}>
           <div class={this.inputTextClass}>
-            {<span class={`${uploadName}__single-input-text`}>{abridgeName(this.inputText, 4, 6)}</span>}
+            {<span class={`${this.componentName}__single-input-text`}>{abridgeName(this.inputText, 4, 6)}</span>}
             {this.showProgress && this.renderProgress()}
             {this.renderResult()}
           </div>
@@ -153,7 +149,7 @@ export default mixins(getGlobalIconMixins()).extend({
         {this.$scopedSlots.default && this.$scopedSlots.default(null)}
         {this.showTextPreview && this.renderFilePreviewAsText()}
         {this.showInput && this.showDelete && (
-          <span class={`${uploadName}__single-input-delete`} onClick={(e: MouseEvent) => this.remove(e)}>
+          <span class={`${this.componentName}__single-input-delete`} onClick={(e: MouseEvent) => this.remove(e)}>
             删除
           </span>
         )}

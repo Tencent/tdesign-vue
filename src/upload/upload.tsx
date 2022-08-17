@@ -7,7 +7,6 @@ import without from 'lodash/without';
 import { UploadIcon as TdUploadIcon } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { UploadConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
-import { prefix } from '../config';
 import Dragger from './dragger';
 import ImageCard from './image';
 import FlowList from './flow-list';
@@ -37,8 +36,6 @@ import {
   RequestMethodResponse,
   SizeLimitObj,
 } from './type';
-
-const name = `${prefix}-upload`;
 
 export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getGlobalIconMixins()).extend({
   name: 'TUpload',
@@ -113,10 +110,10 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
       return !!this.errorMsg;
     },
     tipsClasses(): ClassName {
-      return [`${name}__tips`, `${prefix}-size-s`];
+      return [`${this.componentName}__tips`, `${this.classPrefix}-size-s`];
     },
     errorClasses(): ClassName {
-      return this.tipsClasses.concat(`${name}__tips-error`);
+      return this.tipsClasses.concat(`${this.componentName}__tips-error`);
     },
     uploadInOneRequest(): boolean {
       return this.multiple && this.uploadAllFilesInOneRequest;
@@ -602,7 +599,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
           placeholder={this.placeholder}
           fileListDisplay={this.fileListDisplay}
         >
-          <div class={`${name}__trigger`} onclick={this.triggerUpload}>
+          <div class={`${this.componentName}__trigger`} onclick={this.triggerUpload}>
             {triggerElement}
           </div>
         </SingleFile>
@@ -641,7 +638,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
       return this.draggable ? (
         this.renderDraggerTrigger()
       ) : (
-        <div class={`${name}__trigger`} onclick={this.triggerUpload}>
+        <div class={`${this.componentName}__trigger`} onclick={this.triggerUpload}>
           {triggerElement}
         </div>
       );
@@ -651,7 +648,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
   render(): VNode {
     const triggerElement = this.renderTrigger();
     return (
-      <div class={name}>
+      <div class={this.componentName}>
         {this.renderInput()}
         {this.showCustomDisplay && this.renderCustom(triggerElement)}
         {this.showSingleDisplay && this.renderSingleDisplay(triggerElement)}
@@ -689,7 +686,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
             onDragenter={this.handleDragenter}
             onDragleave={this.handleDragleave}
           >
-            <div class={`${name}__trigger`} onclick={this.triggerUpload}>
+            <div class={`${this.componentName}__trigger`} onclick={this.triggerUpload}>
               {triggerElement}
             </div>
           </FlowList>
@@ -700,12 +697,12 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
             showOverlay
             width="auto"
             top="10%"
-            class={`${name}__dialog`}
+            class={`${this.componentName}__dialog`}
             footer={false}
             header={false}
             onClose={this.cancelPreviewImgDialog}
           >
-            <div class={`${prefix}__dialog-body-img-box`}>
+            <div class={`${this.classPrefix}__dialog-body-img-box`}>
               <img src={this.showImageViewUrl} alt="" />
             </div>
           </TDialog>

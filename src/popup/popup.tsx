@@ -1,7 +1,5 @@
-import Vue, { VNodeDirective } from 'vue';
+import { VNodeDirective } from 'vue';
 import { createPopper, Placement } from '@popperjs/core';
-import { prefix } from '../config';
-import commonCls from '../utils/classnames';
 import { on, off, once } from '../utils/dom';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import { getIEVersion } from '../utils/helper';
@@ -9,8 +7,11 @@ import setStyle from '../_common/js/utils/set-style';
 import props from './props';
 import { PopupVisibleChangeContext, TdPopupProps } from './type';
 import Container from './container';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const prefixCls = `${prefix}-popup`;
+const classPrefixMixins = getClassPrefixMixins('popup');
+
 const showTimeout = 250;
 const hideTimeout = 150;
 const triggers = ['click', 'hover', 'focus', 'context-menu'] as const;
@@ -36,7 +37,7 @@ function attachListeners(elm: Element) {
   };
 }
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TPopup',
 
   provide(this: any) {
@@ -79,11 +80,11 @@ export default Vue.extend({
   computed: {
     overlayClasses(): any {
       return [
-        `${prefixCls}__content`,
+        `${this.componentName}__content`,
         {
-          [`${prefixCls}__content--text`]: this.content === 'string',
-          [`${prefixCls}__content--arrow`]: this.showArrow,
-          [commonCls.STATUS.disabled]: this.disabled,
+          [`${this.componentName}__content--text`]: this.content === 'string',
+          [`${this.componentName}__content--arrow`]: this.showArrow,
+          [this.commonStatusClassName.disabled]: this.disabled,
         },
       ];
     },
@@ -363,7 +364,7 @@ export default Vue.extend({
       ? h(
         'div',
         {
-          class: [prefixCls, this.overlayClassName],
+          class: [this.componentName, this.overlayClassName],
           ref: 'popper',
           style: [
             hidePopup && { visibility: 'hidden', pointerEvents: 'none' },
@@ -404,7 +405,7 @@ export default Vue.extend({
                 }
                 : undefined,
             },
-            [content, this.showArrow && h('div', { class: `${prefixCls}__arrow` })],
+            [content, this.showArrow && h('div', { class: `${this.componentName}__arrow` })],
           ),
         ],
       )
@@ -430,7 +431,7 @@ export default Vue.extend({
       >
         <transition
           slot="content"
-          name={this.expandAnimation ? `${prefixCls}--animation-expand` : `${prefixCls}--animation`}
+          name={this.expandAnimation ? `${this.componentName}--animation-expand` : `${this.componentName}--animation`}
           appear
           onBeforeEnter={this.onBeforeEnter}
           onAfterEnter={this.onAfterEnter}

@@ -259,6 +259,14 @@ export default defineComponent({
       CalendarIcon,
     } = this;
 
+    const renderSuffixIcon = () => {
+      if (this.suffixIcon) return this.suffixIcon;
+      if (this.$scopedSlots.suffixIcon) return this.$scopedSlots.suffixIcon;
+      if (this.$scopedSlots['suffix-icon']) return this.$scopedSlots['suffix-icon'];
+
+      return () => <CalendarIcon />;
+    };
+
     return (
       <div class={COMPONENT_NAME}>
         <TSelectInput
@@ -267,7 +275,7 @@ export default defineComponent({
           status={this.status}
           tips={this.tips}
           popupProps={datePickerPopupProps}
-          inputProps={{ suffixIcon: this.suffixIcon || (() => <CalendarIcon />), ...datePickerInputProps }}
+          inputProps={{ suffixIcon: renderSuffixIcon(), ...datePickerInputProps }}
           popupVisible={popupVisible}
           clearable={this.clearable}
           allowInput={this.allowInput}
