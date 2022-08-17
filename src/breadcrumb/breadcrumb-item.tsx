@@ -1,5 +1,4 @@
 import { ChevronRightIcon as TdChevronRightIcon } from 'tdesign-icons-vue';
-import { prefix } from '../config';
 import Tooltip from '../tooltip/index';
 import props from './breadcrumb-item-props';
 import { isNodeOverflow } from '../utils/dom';

@@ -1,4 +1,3 @@
-import { VNode } from 'vue';
 import {
   AddIcon as TdAddIcon,
   RemoveIcon as TdRemoveIcon,
@@ -30,7 +29,11 @@ export default defineComponent({
       ChevronUpIcon: TdChevronUpIcon,
     });
     return {
-      ...p, AddIcon, RemoveIcon, ChevronDownIcon, ChevronUpIcon,
+      ...p,
+      AddIcon,
+      RemoveIcon,
+      ChevronDownIcon,
+      ChevronUpIcon,
     };
   },
 

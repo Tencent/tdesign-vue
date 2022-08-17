@@ -3,7 +3,6 @@ import {
   CheckCircleFilledIcon as TdCheckCircleFilledIcon,
   ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
 } from 'tdesign-icons-vue';
-import { prefix } from '../config';
 import { UploadFile } from './type';
 import TLoading from '../loading';
 import TButton from '../button';
