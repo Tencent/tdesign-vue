@@ -13,6 +13,7 @@ import { InputValue } from '../input';
 import { closeIconClickEffect, handleRemoveTagEffect } from './core/effect';
 import { getPanels, getSingleContent, getMultipleContent } from './core/helper';
 import { getFakeArrowIconClass } from './core/className';
+import useFormDisabled from '../hooks/useFormDisabled';
 
 export default defineComponent({
   name: 'TCascader',
@@ -38,6 +39,9 @@ export default defineComponent({
         || (props.placeholder ?? global.value.placeholder),
     );
 
+    const { formDisabled } = useFormDisabled();
+    const tDisabled = computed(() => formDisabled.value || cascaderContext.value.disabled);
+
     return {
       COMPONENT_NAME,
       overlayClassName,
@@ -49,6 +53,7 @@ export default defineComponent({
       classPrefix,
       cascaderContext,
       slots,
+      tDisabled,
       emit,
     };
   },
@@ -64,6 +69,7 @@ export default defineComponent({
       classPrefix,
       cascaderContext,
       slots,
+      tDisabled,
       emit,
     } = this;
     const renderSuffixIcon = () => {
@@ -94,7 +100,7 @@ export default defineComponent({
             minCollapsedNum: this.minCollapsedNum,
             collapsedItems: this.collapsedItems,
             readonly: this.readonly,
-            disabled: this.disabled,
+            disabled: tDisabled,
             clearable: this.clearable,
             placeholder: inputPlaceholder,
             multiple: this.multiple,
