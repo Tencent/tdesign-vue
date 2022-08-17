@@ -312,6 +312,14 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
       // checkbox 上也有 emit click 事件
       // 用这个逻辑避免重复的 click 事件被触发
       if (this.$clicked || isBranchTrigger) return;
+
+      // 处理expandOnClickNode时与checkbox的选中的逻辑冲突
+      if (
+        srcTarget.className.indexOf(`${this.classPrefix}-tree__label`) !== -1
+        && this.expandOnClickNode
+        && this.node.children
+      ) evt.preventDefault();
+
       this.$clicked = true;
       setTimeout(() => {
         this.$clicked = false;
