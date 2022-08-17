@@ -1,14 +1,14 @@
-import Vue, { VNode } from 'vue';
-import { prefix } from '../config';
-import CLASSNAMES from '../utils/classnames';
+import { VNode } from 'vue';
 import Loading from '../loading';
 import { SwitchValue } from './type';
 import props from './props';
 import { ClassName, TNodeReturnValue } from '../common';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-switch`;
+const classPrefixMixins = getClassPrefixMixins('switch');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TSwitch',
 
   props: { ...props },
@@ -28,30 +28,30 @@ export default Vue.extend({
   computed: {
     classes(): ClassName {
       return [
-        `${name}`,
-        CLASSNAMES.SIZE[this.size],
+        `${this.componentName}`,
+        this.commonSizeClassName[this.size],
         {
-          [CLASSNAMES.STATUS.disabled]: this.tDisabled,
-          [CLASSNAMES.STATUS.loading]: this.loading,
-          [CLASSNAMES.STATUS.checked]: this.value === this.activeValue,
+          [this.commonStatusClassName.disabled]: this.tDisabled,
+          [this.commonStatusClassName.loading]: this.loading,
+          [this.commonStatusClassName.checked]: this.value === this.activeValue,
         },
       ];
     },
     nodeClasses(): ClassName {
       return [
-        `${name}__handle`,
+        `${this.componentName}__handle`,
         {
-          [CLASSNAMES.STATUS.disabled]: this.tDisabled,
-          [CLASSNAMES.STATUS.loading]: this.loading,
+          [this.commonStatusClassName.disabled]: this.tDisabled,
+          [this.commonStatusClassName.loading]: this.loading,
         },
       ];
     },
     contentClasses(): ClassName {
       return [
-        `${name}__content`,
-        CLASSNAMES.SIZE[this.size],
+        `${this.componentName}__content`,
+        this.commonSizeClassName[this.size],
         {
-          [CLASSNAMES.STATUS.disabled]: this.tDisabled,
+          [this.commonStatusClassName.disabled]: this.tDisabled,
         },
       ];
     },

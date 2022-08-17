@@ -1,10 +1,13 @@
-import Vue, { PropType, CreateElement } from 'vue';
+import { PropType, CreateElement } from 'vue';
 import { ChevronRightIcon, ChevronLeftIcon } from 'tdesign-icons-vue';
 import TButton from '../../button';
-import { prefix } from '../../config';
 import { TNode } from '../../common';
+import mixins from '../../utils/mixins';
+import { getClassPrefixMixins } from '../../config-provider/config-receiver';
 
-export default Vue.extend({
+const classPrefixMixins = getClassPrefixMixins('transfer');
+
+export default mixins(classPrefixMixins).extend({
   name: 'TTransferOperations',
   props: {
     // 控制左按钮的禁用与否
@@ -77,9 +80,9 @@ export default Vue.extend({
   render(h) {
     const { leftDisabled, rightDisabled } = this.$props;
     return (
-      <div class={`${prefix}-transfer__operations`}>
+      <div class={`${this.componentName}__operations`}>
         <TButton
-          variant={rightDisabled ? 'outline' : 'base'}
+          variant="outline"
           key={rightDisabled ? 'right-outline' : 'right-base'}
           disabled={rightDisabled}
           onClick={this.moveToRight}
@@ -88,7 +91,7 @@ export default Vue.extend({
           {this._renderButton(h, 'right')}
         </TButton>
         <TButton
-          variant={leftDisabled ? 'outline' : 'base'}
+          variant="outline"
           key={leftDisabled ? 'left-outline' : 'left-base'}
           disabled={leftDisabled}
           onClick={this.moveToLeft}

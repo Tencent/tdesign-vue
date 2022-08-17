@@ -5,17 +5,23 @@ export default function useClassName() {
   const classNames = {
     tableBaseClass: {
       table: `${classPrefix.value}-table`,
+      columnResizableTable: `${classPrefix.value}-table--column-resizable`,
       overflowVisible: `${classPrefix.value}-table--overflow-visible`,
       body: `${classPrefix.value}-table__body`,
       content: `${classPrefix.value}-table__content`,
       topContent: `${classPrefix.value}-table__top-content`,
       bottomContent: `${classPrefix.value}-table__bottom-content`,
+      paginationWrap: `${classPrefix.value}-table__pagination-wrap`,
       tdLastRow: `${classPrefix.value}-table__td-last-row`,
       tdFirstCol: `${classPrefix.value}-table__td-first-col`,
       thCellInner: `${classPrefix.value}-table__th-cell-inner`,
+      tableRowEdit: `${classPrefix.value}-table--row-edit`,
+      cellEditable: `${classPrefix.value}-table__cell--editable`,
+      cellEditWrap: `${classPrefix.value}-table__cell-wrap`,
       bordered: `${classPrefix.value}-table--bordered`,
       striped: `${classPrefix.value}-table--striped`,
       hover: `${classPrefix.value}-table--hoverable`,
+      loading: `${classPrefix.value}-table--loading`,
       rowspanAndColspan: `${classPrefix.value}-table--rowspan-colspan`,
       empty: `${classPrefix.value}-table__empty`,
       emptyRow: `${classPrefix.value}-table__empty-row`,
@@ -23,6 +29,8 @@ export default function useClassName() {
       columnFixed: `${classPrefix.value}-table--column-fixed`,
       widthOverflow: `${classPrefix.value}-table--width-overflow`,
       multipleHeader: `${classPrefix.value}-table--multiple-header`,
+      footerAffixed: `${classPrefix.value}-table--footer-affixed`,
+      horizontalBarAffixed: `${classPrefix.value}-table--horizontal-bar-affixed`,
       affixedHeader: `${classPrefix.value}-table--affixed-header`,
       affixedHeaderElm: `${classPrefix.value}-table__affixed-header-elm`,
       affixedFooterElm: `${classPrefix.value}-table__affixed-footer-elm`,
@@ -33,6 +41,8 @@ export default function useClassName() {
       fullHeight: `${classPrefix.value}-table--full-height`,
       // 拖拽列时的标记线
       resizeLine: `${classPrefix.value}-table__resize-line`,
+      obviousScrollbar: `${classPrefix.value}-table__scrollbar--obvious`,
+      affixedHeaderWrap: `${classPrefix.value}-table__affixed-header-elm-wrap`,
     },
 
     tdAlignClasses: {
@@ -50,6 +60,7 @@ export default function useClassName() {
 
     tableFooterClasses: {
       footer: `${classPrefix.value}-table__footer`,
+      footerSummary: `${classPrefix.value}-table__footer-summary`,
       fixed: `${classPrefix.value}-table__footer--fixed`,
     },
 
@@ -120,6 +131,7 @@ export default function useClassName() {
     tableSelectedClasses: {
       selected: `${classPrefix.value}-table__row--selected`,
       disabled: `${classPrefix.value}-table__row--disabled`,
+      checkCell: `${classPrefix.value}-table__cell-check`,
     },
 
     // 过滤功能，全部类名
@@ -170,3 +182,5 @@ export default function useClassName() {
 
   return classNames;
 }
+
+export type TableClassName = ReturnType<typeof useClassName>;

@@ -1,5 +1,6 @@
 <template>
-  <div class="tdesign-demo-item--datepicker">
-    <t-date-picker mode="month" format="YYYY-MM"></t-date-picker>
-  </div>
+  <t-space direction="vertical">
+    <t-date-picker mode="month" clearable allow-input />
+    <t-date-range-picker mode="month" clearable allow-input />
+  </t-space>
 </template>

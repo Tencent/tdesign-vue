@@ -1,8 +1,11 @@
-import Vue, { PropType } from 'vue';
-import { prefix } from '../config';
+import { PropType } from 'vue';
 import { TdSliderProps } from './type';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-export default Vue.extend({
+const classPrefixMixins = getClassPrefixMixins('slider');
+
+export default mixins(classPrefixMixins).extend({
   name: 'TSliderMark',
   props: {
     mark: {
@@ -21,7 +24,7 @@ export default Vue.extend({
   render() {
     const label = this.mark;
     return (
-      <div class={`${prefix}-slider__mark-text`} onClick={this.changeValue}>
+      <div class={`${this.componentName}__mark-text`} onClick={this.changeValue}>
         {label}
       </div>
     );

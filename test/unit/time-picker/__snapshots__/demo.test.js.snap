@@ -5,20 +5,24 @@ exports[`TimePicker TimePicker baseVue demo works fine 1`] = `
   class="tdesign-demo-block"
 >
   <div
-    class="demos t-time-picker__group t-time-picker t-size-m"
+    class="demos t-time-picker"
   >
     <div
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-input--suffix"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
+        <div
+          class="t-input__prefix"
+        />
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder=" "
+          placeholder=""
+          readonly="readonly"
           type="text"
-          unselectable="off"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -43,55 +47,28 @@ exports[`TimePicker TimePicker baseVue demo works fine 1`] = `
           </svg>
         </span>
       </div>
-    </div>
-    <div
-      class="t-time-picker__input"
-      size="medium"
-    >
-      <span
-        class="t-time-picker__input-item"
-      >
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
     </div>
   </div>
    
   <div
-    class="demos t-time-picker__group t-time-picker t-size-m"
+    class="demos t-time-picker"
   >
     <div
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-input--suffix"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
+        <div
+          class="t-input__prefix"
+        />
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder=" "
+          placeholder=""
+          readonly="readonly"
           type="text"
-          unselectable="off"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -116,37 +93,6 @@ exports[`TimePicker TimePicker baseVue demo works fine 1`] = `
           </svg>
         </span>
       </div>
-    </div>
-    <div
-      class="t-time-picker__input"
-      size="medium"
-    >
-      <span
-        class="t-time-picker__input-item"
-      >
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
     </div>
   </div>
 </div>
@@ -161,20 +107,24 @@ exports[`TimePicker TimePicker clearableVue demo works fine 1`] = `
   </h3>
    
   <div
-    class="t-time-picker__group t-time-picker t-size-m"
+    class="t-time-picker"
   >
     <div
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-input--suffix"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
+        <div
+          class="t-input__prefix"
+        />
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder=" "
+          placeholder=""
+          readonly="readonly"
           type="text"
-          unselectable="off"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -199,37 +149,6 @@ exports[`TimePicker TimePicker clearableVue demo works fine 1`] = `
           </svg>
         </span>
       </div>
-    </div>
-    <div
-      class="t-time-picker__input"
-      size="medium"
-    >
-      <span
-        class="t-time-picker__input-item"
-      >
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
     </div>
   </div>
    
@@ -238,20 +157,24 @@ exports[`TimePicker TimePicker clearableVue demo works fine 1`] = `
   </h3>
    
   <div
-    class="t-time-picker__group t-time-picker t-size-m"
+    class="t-time-picker"
   >
     <div
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-input--suffix"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
+        <div
+          class="t-input__prefix"
+        />
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder=" "
+          placeholder=""
+          readonly="readonly"
           type="text"
-          unselectable="off"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -276,37 +199,6 @@ exports[`TimePicker TimePicker clearableVue demo works fine 1`] = `
           </svg>
         </span>
       </div>
-    </div>
-    <div
-      class="t-time-picker__input"
-      size="medium"
-    >
-      <span
-        class="t-time-picker__input-item"
-      >
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
     </div>
   </div>
 </div>
@@ -316,22 +208,32 @@ exports[`TimePicker TimePicker disabledVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block"
 >
+  <h3>
+    禁用整个选择器
+  </h3>
+   
+  <br />
+   
   <div
-    class="t-time-picker__group t-time-picker t-size-m"
+    class="t-time-picker"
   >
     <div
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-disabled t-input--suffix"
+        class="t-input t-size-m t-is-disabled t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
+        <div
+          class="t-input__prefix"
+        />
         <input
           autocomplete=""
           class="t-input__inner"
           disabled="disabled"
-          placeholder=" "
+          placeholder=""
+          readonly="readonly"
           type="text"
-          unselectable="off"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -357,36 +259,61 @@ exports[`TimePicker TimePicker disabledVue demo works fine 1`] = `
         </span>
       </div>
     </div>
+  </div>
+   
+  <br />
+   
+  <br />
+   
+  <h3>
+    禁用指定时间
+  </h3>
+   
+  <br />
+   
+  <div
+    class="t-time-picker"
+  >
     <div
-      class="t-time-picker__input"
-      size="medium"
+      class="t-input__wrap t-select-input--empty"
     >
-      <span
-        class="t-time-picker__input-item t-time-picker__input-item-disabled"
+      <div
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
+        <div
+          class="t-input__prefix"
         />
-      </span>
-      <span
-        class="t-time-picker__input-item t-time-picker__input-item-disabled"
-      >
-        :
         <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
+          autocomplete=""
+          class="t-input__inner"
+          placeholder="选择时间"
+          readonly="readonly"
+          type="text"
+          unselectable="on"
         />
-      </span>
-      <span
-        class="t-time-picker__input-item t-time-picker__input-item-disabled"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
+        <span
+          class="t-input__suffix t-input__suffix-icon"
+        >
+          <svg
+            class="t-icon t-icon-time"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+            <path
+              d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </span>
+      </div>
     </div>
   </div>
 </div>
@@ -397,20 +324,24 @@ exports[`TimePicker TimePicker formatVue demo works fine 1`] = `
   class="tdesign-demo-block"
 >
   <div
-    class="demos t-time-picker__group t-time-picker t-size-m"
+    class="demos t-time-picker"
   >
     <div
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-input--suffix"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
+        <div
+          class="t-input__prefix"
+        />
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder=" "
+          placeholder=""
+          readonly="readonly"
           type="text"
-          unselectable="off"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -435,46 +366,6 @@ exports[`TimePicker TimePicker formatVue demo works fine 1`] = `
           </svg>
         </span>
       </div>
-    </div>
-    <div
-      class="t-time-picker__input"
-      size="medium"
-    >
-      <span
-        class="t-time-picker__input-item"
-      >
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        <input
-          class="t-time-picker__input-item-input t-time-picker__input-item-input-meridiem"
-          disabled="disabled"
-          readonly="readonly"
-        />
-      </span>
     </div>
   </div>
 </div>
@@ -489,20 +380,24 @@ exports[`TimePicker TimePicker hideClearButtonVue demo works fine 1`] = `
   </h3>
    
   <div
-    class="t-time-picker__group t-time-picker t-size-m"
+    class="t-time-picker"
   >
     <div
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-input--suffix"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
+        <div
+          class="t-input__prefix"
+        />
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder=" "
+          placeholder=""
+          readonly="readonly"
           type="text"
-          unselectable="off"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -527,37 +422,6 @@ exports[`TimePicker TimePicker hideClearButtonVue demo works fine 1`] = `
           </svg>
         </span>
       </div>
-    </div>
-    <div
-      class="t-time-picker__input"
-      size="medium"
-    >
-      <span
-        class="t-time-picker__input-item"
-      >
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
     </div>
   </div>
    
@@ -566,20 +430,24 @@ exports[`TimePicker TimePicker hideClearButtonVue demo works fine 1`] = `
   </h3>
    
   <div
-    class="t-time-picker__group t-time-picker t-size-m"
+    class="t-time-picker"
   >
     <div
-      class="t-input__wrap"
+      class="t-input__wrap t-select-input--empty"
     >
       <div
-        class="t-input t-size-m t-input--suffix"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
+        <div
+          class="t-input__prefix"
+        />
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder=" "
+          placeholder="选择时间"
+          readonly="readonly"
           type="text"
-          unselectable="off"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -604,16 +472,6 @@ exports[`TimePicker TimePicker hideClearButtonVue demo works fine 1`] = `
           </svg>
         </span>
       </div>
-    </div>
-    <div
-      class="t-time-picker__input"
-      size="medium"
-    >
-      <span
-        class="t-time-picker__input-placeholder"
-      >
-        选择时间
-      </span>
     </div>
   </div>
 </div>
@@ -623,21 +481,31 @@ exports[`TimePicker TimePicker hmVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block"
 >
+  <h3>
+    时分选择
+  </h3>
+   
+  <br />
+   
   <div
-    class="t-time-picker__group t-time-picker t-size-m"
+    class="t-time-picker"
   >
     <div
-      class="t-input__wrap"
+      class="t-input__wrap t-select-input--empty"
     >
       <div
-        class="t-input t-size-m t-input--suffix"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
+        <div
+          class="t-input__prefix"
+        />
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder=" "
+          placeholder="选择时间"
+          readonly="readonly"
           type="text"
-          unselectable="off"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -663,15 +531,61 @@ exports[`TimePicker TimePicker hmVue demo works fine 1`] = `
         </span>
       </div>
     </div>
+  </div>
+   
+  <br />
+   
+  <br />
+   
+  <h3>
+    毫秒选择
+  </h3>
+   
+  <br />
+   
+  <div
+    class="t-time-picker"
+  >
     <div
-      class="t-time-picker__input"
-      size="medium"
+      class="t-input__wrap"
     >
-      <span
-        class="t-time-picker__input-placeholder"
+      <div
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
-        选择时间
-      </span>
+        <div
+          class="t-input__prefix"
+        />
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder=""
+          readonly="readonly"
+          type="text"
+          unselectable="on"
+        />
+        <span
+          class="t-input__suffix t-input__suffix-icon"
+        >
+          <svg
+            class="t-icon t-icon-time"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+            <path
+              d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </span>
+      </div>
     </div>
   </div>
 </div>
@@ -682,20 +596,24 @@ exports[`TimePicker TimePicker hmsVue demo works fine 1`] = `
   class="tdesign-demo-block"
 >
   <div
-    class="t-time-picker__group t-time-picker t-size-m"
+    class="t-time-picker"
   >
     <div
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-input--suffix"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
+        <div
+          class="t-input__prefix"
+        />
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder=" "
+          placeholder=""
+          readonly="readonly"
           type="text"
-          unselectable="off"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -720,37 +638,6 @@ exports[`TimePicker TimePicker hmsVue demo works fine 1`] = `
           </svg>
         </span>
       </div>
-    </div>
-    <div
-      class="t-time-picker__input"
-      size="medium"
-    >
-      <span
-        class="t-time-picker__input-item"
-      >
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
     </div>
   </div>
 </div>
@@ -765,18 +652,21 @@ exports[`TimePicker TimePicker keyboardVue demo works fine 1`] = `
   </h3>
    
   <div
-    class="t-time-picker__group t-time-picker t-size-m"
+    class="t-time-picker"
   >
     <div
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-input--suffix"
+        class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
       >
+        <div
+          class="t-input__prefix"
+        />
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder=" "
+          placeholder=""
           type="text"
           unselectable="off"
         />
@@ -803,34 +693,6 @@ exports[`TimePicker TimePicker keyboardVue demo works fine 1`] = `
           </svg>
         </span>
       </div>
-    </div>
-    <div
-      class="t-time-picker__input"
-      size="medium"
-    >
-      <span
-        class="t-time-picker__input-item"
-      >
-        <input
-          class="t-time-picker__input-item-input"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-        />
-      </span>
     </div>
   </div>
    
@@ -839,20 +701,24 @@ exports[`TimePicker TimePicker keyboardVue demo works fine 1`] = `
   </h3>
    
   <div
-    class="t-time-picker__group t-time-picker t-size-m"
+    class="t-time-picker"
   >
     <div
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-input--suffix"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
+        <div
+          class="t-input__prefix"
+        />
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder=" "
+          placeholder=""
+          readonly="readonly"
           type="text"
-          unselectable="off"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -877,37 +743,6 @@ exports[`TimePicker TimePicker keyboardVue demo works fine 1`] = `
           </svg>
         </span>
       </div>
-    </div>
-    <div
-      class="t-time-picker__input"
-      size="medium"
-    >
-      <span
-        class="t-time-picker__input-item"
-      >
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
     </div>
   </div>
 </div>
@@ -918,96 +753,76 @@ exports[`TimePicker TimePicker rangeVue demo works fine 1`] = `
   class="tdesign-demo-block"
 >
   <div
-    class="demos t-time-picker__group t-time-picker t-size-m"
+    class="demos t-time-range-picker"
   >
     <div
-      class="t-input__wrap"
+      class="t-range-input-popup"
     >
       <div
-        class="t-input t-size-m t-input--suffix"
+        class="t-range-input"
       >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder=" "
-          type="text"
-          unselectable="off"
-        />
-        <span
-          class="t-input__suffix t-input__suffix-icon"
+        <div
+          class="t-range-input__inner"
         >
-          <svg
-            class="t-icon t-icon-time"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+          <div
+            class="t-input__wrap t-range-input__inner-left"
           >
-            <path
-              d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-            <path
-              d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
+            <div
+              class="t-input t-size-m t-is-default"
+            >
+              <input
+                autocomplete=""
+                class="t-input__inner"
+                placeholder="选择时间"
+                type="text"
+                unselectable="off"
+              />
+            </div>
+          </div>
+          <div
+            class="t-range-input__inner-separator"
+          >
+            -
+          </div>
+          <div
+            class="t-input__wrap t-range-input__inner-right"
+          >
+            <div
+              class="t-input t-size-m t-is-default"
+            >
+              <input
+                autocomplete=""
+                class="t-input__inner"
+                placeholder="选择时间"
+                type="text"
+                unselectable="off"
+              />
+            </div>
+          </div>
+          <span
+            class="t-range-input__suffix t-range-input__suffix-icon"
+          >
+            <svg
+              class="t-icon t-icon-time"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+              <path
+                d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+        </div>
       </div>
-    </div>
-    <div
-      class="t-time-picker__input"
-      size="medium"
-    >
-      <span
-        class="t-time-picker__input-item"
-      >
-        <input
-          class="t-time-picker__input-item-input"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-        />
-      </span>
-      -
-      <span
-        class="t-time-picker__input-item"
-      >
-        <input
-          class="t-time-picker__input-item-input"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-        />
-      </span>
     </div>
   </div>
 </div>
@@ -1018,20 +833,24 @@ exports[`TimePicker TimePicker showStepsVue demo works fine 1`] = `
   class="tdesign-demo-block"
 >
   <div
-    class="t-time-picker__group t-time-picker t-size-m"
+    class="t-time-picker"
   >
     <div
-      class="t-input__wrap"
+      class="t-input__wrap t-select-input--empty"
     >
       <div
-        class="t-input t-size-m t-input--suffix"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
+        <div
+          class="t-input__prefix"
+        />
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder=" "
+          placeholder="选择时间"
+          readonly="readonly"
           type="text"
-          unselectable="off"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -1056,16 +875,6 @@ exports[`TimePicker TimePicker showStepsVue demo works fine 1`] = `
           </svg>
         </span>
       </div>
-    </div>
-    <div
-      class="t-time-picker__input"
-      size="medium"
-    >
-      <span
-        class="t-time-picker__input-placeholder"
-      >
-        选择时间
-      </span>
     </div>
   </div>
 </div>
@@ -1076,20 +885,24 @@ exports[`TimePicker TimePicker stepVue demo works fine 1`] = `
   class="tdesign-demo-block"
 >
   <div
-    class="t-time-picker__group t-time-picker t-size-m"
+    class="t-time-picker"
   >
     <div
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-input--suffix"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
+        <div
+          class="t-input__prefix"
+        />
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder=" "
+          placeholder=""
+          readonly="readonly"
           type="text"
-          unselectable="off"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -1114,37 +927,6 @@ exports[`TimePicker TimePicker stepVue demo works fine 1`] = `
           </svg>
         </span>
       </div>
-    </div>
-    <div
-      class="t-time-picker__input"
-      size="medium"
-    >
-      <span
-        class="t-time-picker__input-item"
-      >
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
     </div>
   </div>
 </div>
@@ -1155,20 +937,24 @@ exports[`TimePicker TimePicker twelveHourMeridianVue demo works fine 1`] = `
   class="tdesign-demo-block"
 >
   <div
-    class="t-time-picker__group t-time-picker t-size-m"
+    class="t-time-picker"
   >
     <div
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-input--suffix"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
+        <div
+          class="t-input__prefix"
+        />
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder=" "
+          placeholder=""
+          readonly="readonly"
           type="text"
-          unselectable="off"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -1193,46 +979,6 @@ exports[`TimePicker TimePicker twelveHourMeridianVue demo works fine 1`] = `
           </svg>
         </span>
       </div>
-    </div>
-    <div
-      class="t-time-picker__input"
-      size="medium"
-    >
-      <span
-        class="t-time-picker__input-item"
-      >
-        <input
-          class="t-time-picker__input-item-input t-time-picker__input-item-input-meridiem"
-          disabled="disabled"
-          readonly="readonly"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
     </div>
   </div>
 </div>
@@ -1243,20 +989,24 @@ exports[`TimePicker TimePicker twelveHourVue demo works fine 1`] = `
   class="tdesign-demo-block"
 >
   <div
-    class="t-time-picker__group t-time-picker t-size-m"
+    class="t-time-picker"
   >
     <div
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-input--suffix"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
+        <div
+          class="t-input__prefix"
+        />
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder=" "
+          placeholder=""
+          readonly="readonly"
           type="text"
-          unselectable="off"
+          unselectable="on"
         />
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -1281,46 +1031,6 @@ exports[`TimePicker TimePicker twelveHourVue demo works fine 1`] = `
           </svg>
         </span>
       </div>
-    </div>
-    <div
-      class="t-time-picker__input"
-      size="medium"
-    >
-      <span
-        class="t-time-picker__input-item"
-      >
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        :
-        <input
-          class="t-time-picker__input-item-input"
-          disabled="disabled"
-        />
-      </span>
-      <span
-        class="t-time-picker__input-item"
-      >
-        <input
-          class="t-time-picker__input-item-input t-time-picker__input-item-input-meridiem"
-          disabled="disabled"
-          readonly="readonly"
-        />
-      </span>
     </div>
   </div>
 </div>

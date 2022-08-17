@@ -51,6 +51,7 @@ const useVirtualScroll = ({
   const scrollHeight = computed(() => {
     const { cachedHeight } = state;
     const { length } = cachedHeight;
+
     if (length) {
       const maxScrollY = cachedHeight.reduce((sum, v) => sum + v || lineHeight, 0); // 当前总高度
       if (cachedHeight.length === data.value.length) {
@@ -59,8 +60,10 @@ const useVirtualScroll = ({
       const average = maxScrollY / cachedHeight.length; // 平均高度
       return maxScrollY + (data.value.length - cachedHeight.length) * average; // 预估总高度
     }
+
     return isVirtual.value ? data.value.length * lineHeight : 0;
   });
+
   const translateY = computed(() => {
     const { visibleData } = state;
     const firstRow = visibleData[0];
@@ -170,6 +173,7 @@ const useVirtualScroll = ({
     // if (revising) {
     //   return false; // 修正滚动条时，暂停滚动逻辑
     // }
+    if (!container.value) return;
     const { scrollTop } = container.value;
     let distance = scrollTop - beforeScrollTop; // 滚动差值
     beforeScrollTop = scrollTop;

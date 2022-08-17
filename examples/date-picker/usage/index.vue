@@ -4,21 +4,33 @@
     <template #datePicker="{ configProps }">
       <t-date-picker v-bind="configProps" />
     </template>
+    <template #dateRangePicker="{ configProps }">
+      <t-date-range-picker v-bind="configProps" />
+    </template>
   </base-usage>
 </template>
 
 <script setup lang="jsx">
 /* eslint-disable */
 import { ref, onMounted } from '@vue/composition-api';
-import configJson from './props.json';
+import datePickerConfigJson from './date-picker-props.json';
 
-const configList = ref(configJson);
-const panelList = [{ label: 'datePicker', value: 'datePicker' }];
+import dateRangePickerConfigJson from './date-range-picker-props.json';
 
-const usageCodeMap = { datePicker: '<t-date-picker v-bind="configProps" />' };
+const configList = ref(datePickerConfigJson);
+const panelList = [
+  { label: 'datePicker', value: 'datePicker', config: datePickerConfigJson },
+  { label: 'dateRangePicker', value: 'dateRangePicker', config: dateRangePickerConfigJson },
+];
+
+const usageCodeMap = {
+  datePicker: '<t-date-picker v-bind="configProps" />',
+  dateRangePicker: '<t-date-range-picker v-bind="configProps" />',
+};
 const usageCode = ref(`<template>${usageCodeMap[panelList[0].value].trim()}</template>`);
 
 function onPanelChange(panel) {
+  configList.value = panelList.find((item) => item.value === panel).config;
   usageCode.value = `<template>${usageCodeMap[panel].trim()}</template>`;
 }
 </script>

@@ -2,7 +2,7 @@
   <div>
     <!--
       - 组件实例，关闭某一条信息
-      - 组件实例：MessageInstance = this.$dialog(options)
+      - 组件实例：MessageInstance = this.$message(options)
       - 组件实例：MessageInstance = MessagePlugin(options)
       - 组件实例方法-关闭提示信息：MessageInstance.close()
     -->

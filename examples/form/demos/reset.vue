@@ -11,19 +11,20 @@
     <br /><br />
 
     <!-- colon 表示，是否统一显示 label 冒号 -->
-    <t-form :data="formData" :resetType="resetType" colon @reset="onReset" @submit="onSubmit">
+    <t-form ref="form" :data="formData" :resetType="resetType" colon @reset="onReset" @submit="onSubmit">
       <t-form-item label="姓名" name="name">
-        <t-input v-model="formData.name" placeholder="请输入内容"></t-input>
+        <t-input v-model="formData.name" placeholder="请输入内容" @enter="onEnter"></t-input>
       </t-form-item>
       <t-form-item label="手机号码" name="tel">
-        <t-input v-model="formData.tel" placeholder="请输入内容"></t-input>
+        <t-input v-model="formData.tel" placeholder="请输入内容" @enter="onEnter"></t-input>
       </t-form-item>
       <t-form-item label="课程" name="course">
         <t-checkbox-group v-model="formData.course" :options="courseOptions"></t-checkbox-group>
       </t-form-item>
       <t-form-item style="margin-left: 100px">
         <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
-        <t-button theme="default" variant="base" type="reset">重置</t-button>
+        <t-button theme="default" variant="base" type="reset" style="margin-right: 10px">重置</t-button>
+        <t-button theme="default" variant="base" @click="resetPhoneNumber">只重置手机号码</t-button>
       </t-form-item>
     </t-form>
   </div>
@@ -60,6 +61,16 @@ export default {
         console.log('Errors: ', validateResult);
         this.$message.warning(firstError);
       }
+    },
+
+    // 禁用 Input 组件，按下 Enter 键时，触发 submit 事件
+    onEnter(_, { e }) {
+      e.preventDefault();
+    },
+
+    // 重置指定字段：手机号码
+    resetPhoneNumber() {
+      this.$refs.form.reset({ fields: ['tel'] });
     },
   },
 };

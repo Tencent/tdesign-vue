@@ -6,7 +6,6 @@ import lodashSet from 'lodash/set';
 import isNil from 'lodash/isNil';
 import { CheckCircleFilledIcon, ErrorCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 import lodashTemplate from 'lodash/template';
-import { prefix } from '../config';
 import { validate } from './form-model';
 import {
   Data,
@@ -20,11 +19,13 @@ import {
   FormItemValidateMessage,
 } from './type';
 import props from './form-item-props';
-import { CLASS_NAMES, FORM_ITEM_CLASS_PREFIX } from './const';
+import { AnalysisValidateResult, ErrorListType, SuccessListType } from './const';
 import Form from './form';
 import { ClassName, TNodeReturnValue, Styles } from '../common';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { FormConfig } from '../config-provider/config-receiver';
+import log from '../_common/js/log';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 // type Result = ValidateResult<TdFormProps['data']>;
 
@@ -40,17 +41,23 @@ export const enum VALIDATE_STATUS {
   FAIL = 'fail',
 }
 
-export interface FormItemContructor extends Vue {
+export interface FormItemConstructor extends Vue {
   form: FormInstance;
 }
 
-export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('form')).extend({
+export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('form')).extend({
   name: 'TFormItem',
 
   props: { ...props },
 
   inject: {
     form: { default: undefined },
+  },
+
+  provide(): { tFormItem: any } {
+    return {
+      tFormItem: this,
+    };
   },
 
   data() {
@@ -64,25 +71,37 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       resetValidating: false as boolean,
       needResetField: false as boolean,
       initialValue: undefined as ValueType,
+      // 是否为自由控制是否显示错误信息
+      freeShowErrorMessage: undefined,
     };
   },
 
   computed: {
     needErrorMessage(): Boolean {
+      if (this.freeShowErrorMessage !== undefined) return this.freeShowErrorMessage;
       if (typeof this.showErrorMessage === 'boolean') return this.showErrorMessage;
-
       const parent = this.form;
       return parent?.showErrorMessage;
     },
     classes(): ClassName {
       return [
-        CLASS_NAMES.formItem,
-        FORM_ITEM_CLASS_PREFIX + this.name,
+        `${this.componentName}__item`,
+        `${this.componentName}-item__${this.name || ''}`,
         {
-          [CLASS_NAMES.formItemWithHelp]: this.help,
-          [CLASS_NAMES.formItemWithExtra]: this.renderTipsInfo(),
+          [`${this.componentName}__item-with-help`]: this.help,
+          [`${this.componentName}__item-with-extra`]: this.extraNode,
         },
       ];
+    },
+    extraNode() {
+      const list = this.errorList;
+      if (this.needErrorMessage && list && list[0] && list[0].message) {
+        return <div class={`${this.classPrefix}-input__extra`}>{list[0].message}</div>;
+      }
+      if (this.successList.length) {
+        return <div class={`${this.classPrefix}-input__extra`}>{this.successList[0].message}</div>;
+      }
+      return null;
     },
     labelClasses(): ClassName {
       const parent = this.form;
@@ -90,25 +109,27 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       const labelWidth = isNil(this.labelWidth) ? parent?.labelWidth : this.labelWidth;
 
       return [
-        CLASS_NAMES.label,
+        `${this.componentName}__label`,
         {
-          [`${prefix}-form__label--required`]: this.needRequiredMark,
-          [`${prefix}-form__label--colon`]: this.hasColon,
-          [`${prefix}-form__label--top`]: labelAlign === 'top' || !labelWidth,
-          [`${prefix}-form__label--left`]: labelAlign === 'left' && labelWidth,
-          [`${prefix}-form__label--right`]: labelAlign === 'right' && labelWidth,
+          [`${this.componentName}__label--required`]: this.needRequiredMark,
+          [`${this.componentName}__label--colon`]: this.hasColon,
+          [`${this.componentName}__label--top`]: labelAlign === 'top' || !labelWidth,
+          [`${this.componentName}__label--left`]: labelAlign === 'left' && labelWidth,
+          [`${this.componentName}__label--right`]: labelAlign === 'right' && labelWidth,
         },
       ];
     },
     errorClasses(): string {
       if (!this.needErrorMessage) return '';
       if (this.verifyStatus === VALIDATE_STATUS.SUCCESS) {
-        return this.successBorder ? [CLASS_NAMES.success, CLASS_NAMES.successBorder].join(' ') : CLASS_NAMES.success;
+        return this.successBorder
+          ? [this.commonStatusClassName.success, `${this.componentName}--success-border`].join(' ')
+          : this.commonStatusClassName.success;
       }
       const list = this.errorList;
       if (!list.length) return;
       const type = list[0].type || 'error';
-      return type === 'error' ? CLASS_NAMES.error : CLASS_NAMES.warning;
+      return type === 'error' ? this.commonStatusClassName.error : this.commonStatusClassName.warning;
     },
 
     disabled(): boolean {
@@ -117,7 +138,7 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
 
     contentClasses(): ClassName {
       const getErrorClass: string = this.errorClasses;
-      return [CLASS_NAMES.controls, getErrorClass];
+      return [`${this.componentName}__controls`, getErrorClass];
     },
     contentStyle(): Styles {
       const parent = this.form;
@@ -154,8 +175,8 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       const parent = this.form;
       if (this.rules?.length) return this.rules || [];
       if (!this.name) return [];
-      const index = this.name.lastIndexOf('.') || -1;
-      const pRuleName = this.name.slice(index + 1);
+      const index = String(this.name || '').lastIndexOf('.') || -1;
+      const pRuleName = String(this.name || '').slice(index + 1);
       return lodashGet(parent?.rules, this.name) || lodashGet(parent?.rules, pRuleName) || [];
     },
     errorMessages(): FormErrorMessage {
@@ -207,6 +228,7 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
         }
       });
     },
+
     // 设置表单错误信息
     setValidateMessage(validateMessage: FormItemValidateMessage[]) {
       if (!validateMessage || !Array.isArray(validateMessage)) return;
@@ -218,31 +240,23 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       this.errorList = validateMessage;
       this.verifyStatus = VALIDATE_STATUS.FAIL;
     },
+
     // T 表示表单数据的类型
-    async validate<T>(trigger: ValidateTriggerType): Promise<FormItemValidateResult<T>> {
+    async validate<T>(
+      trigger: ValidateTriggerType,
+      showErrorMessage = true,
+      source: 'submit-function' | 'submit-event' = 'submit-event',
+    ): Promise<FormItemValidateResult<T>> {
+      this.freeShowErrorMessage = source === 'submit-function' ? showErrorMessage : undefined;
       this.resetValidating = true;
-      // 过滤不需要校验的规则
-      const rules = trigger === 'all' ? this.innerRules : this.innerRules.filter((item) => (item.trigger || 'change') === trigger);
-      // 校验结果，包含正确的校验信息
-      const r = await validate(this.value, rules);
-      const errorList = r
-        .filter((item) => item.result !== true)
-        .map((item) => {
-          Object.keys(item).forEach((key) => {
-            if (typeof item.message === 'undefined' && this.errorMessages[key]) {
-              const compiled = lodashTemplate(this.errorMessages[key]);
-              // eslint-disable-next-line no-param-reassign
-              item.message = compiled({
-                name: this.label,
-                validate: item[key],
-              });
-            }
-          });
-          return item;
-        });
-      this.errorList = errorList;
-      // 仅有自定义校验方法才会存在 successList
-      this.successList = r.filter((item) => item.result === true && item.message && item.type === 'success');
+      const {
+        errorList, resultList, successList, rules, allowSetValue,
+      } = await this.analysisValidateResult(trigger);
+      if (allowSetValue) {
+        this.errorList = errorList;
+        // 仅有自定义校验方法才会存在 successList
+        this.successList = successList;
+      }
       // 根据校验结果设置校验状态
       if (rules.length) {
         this.verifyStatus = errorList.length ? VALIDATE_STATUS.FAIL : VALIDATE_STATUS.SUCCESS;
@@ -255,9 +269,56 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       }
       this.resetValidating = false;
       return {
-        [this.name]: errorList.length === 0 ? true : r,
+        [this.name]: errorList.length === 0 ? true : resultList,
       } as FormItemValidateResult<T>;
     },
+
+    async validateOnly<T>(trigger: ValidateTriggerType) {
+      const { errorList, resultList } = await this.analysisValidateResult(trigger);
+      return {
+        [this.name]: errorList.length === 0 ? true : resultList,
+      } as FormItemValidateResult<T>;
+    },
+
+    async analysisValidateResult(trigger: ValidateTriggerType) {
+      const result: AnalysisValidateResult = {
+        successList: [],
+        errorList: [],
+        rules: [],
+        resultList: [],
+        allowSetValue: false,
+      };
+      // 过滤不需要校验的规则
+      result.rules = trigger === 'all' ? this.innerRules : this.innerRules.filter((item) => (item.trigger || 'change') === trigger);
+      if (this.innerRules.length && !result.rules.length) {
+        return result;
+      }
+      // 校验结果，包含正确的校验信息
+      result.allowSetValue = true;
+      result.resultList = await validate(this.value, result.rules);
+      result.errorList = result.resultList
+        .filter((item) => item.result !== true)
+        .map((item: ErrorListType) => {
+          Object.keys(item).forEach((key) => {
+            if (typeof item.message === 'undefined' && this.errorMessages[key]) {
+              const compiled = lodashTemplate(this.errorMessages[key]);
+              const name = typeof this.label === 'string' ? this.label : this.name;
+              // eslint-disable-next-line no-param-reassign
+              item.message = compiled({
+                name,
+                validate: item[key],
+              });
+            }
+          });
+          return item;
+        });
+      // 仅有自定义校验方法才会存在 successList
+      result.successList = result.resultList.filter(
+        (item) => item.result === true && item.message && item.type === 'success',
+      ) as SuccessListType[];
+      return result;
+    },
+
     getLabelContent(): TNodeReturnValue {
       if (typeof this.label === 'function') {
         return this.label(this.$createElement);
@@ -267,6 +328,7 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       }
       return this.label;
     },
+
     getLabel(): TNodeReturnValue {
       const parent = this.form;
       const labelWidth = isNil(this.labelWidth) ? parent?.labelWidth : this.labelWidth;
@@ -288,23 +350,9 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
         </div>
       );
     },
-    renderTipsInfo(): VNode {
-      let helpVNode: VNode = <div class={CLASS_NAMES.help}></div>;
-      if (this.help) {
-        helpVNode = <div class={CLASS_NAMES.help}>{this.help}</div>;
-      }
-      const list = this.errorList;
-      if (this.needErrorMessage && list && list[0] && list[0].message) {
-        return <div class={CLASS_NAMES.extra}>{list[0].message}</div>;
-      }
-      if (this.successList.length) {
-        return <div class={CLASS_NAMES.extra}>{this.successList[0].message}</div>;
-      }
-      return helpVNode;
-    },
     getDefaultIcon(): TNodeReturnValue {
       const resultIcon = (Icon: IconConstructor) => (
-        <span class={CLASS_NAMES.status}>
+        <span class={`${this.componentName}__status`}>
           <Icon></Icon>
         </span>
       );
@@ -327,7 +375,9 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       slotStatusIcon: NormalizedScopedSlot,
       props?: TdFormItemProps,
     ): TNodeReturnValue {
-      const resultIcon = (otherContent?: TNodeReturnValue) => <span class={CLASS_NAMES.status}>{otherContent}</span>;
+      const resultIcon = (otherContent?: TNodeReturnValue) => (
+        <span class={`${this.componentName}__status`}>{otherContent}</span>
+      );
       if (statusIcon === true) {
         return this.getDefaultIcon();
       }
@@ -367,15 +417,17 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
       }
       return emptyValue;
     },
-    resetField(): void {
+    resetField(resetType: 'empty' | 'initial' = 'initial') {
       const parent = this.form;
-      if (!this.name) {
+      if (!this.name && this.label) {
+        log.warn('Form', 'name is required for validating.');
         return;
       }
-      if (parent.resetType === 'empty') {
+      const tResetType = resetType || parent.resetType;
+      if (tResetType === 'empty') {
         lodashSet(parent.data, this.name, this.getEmptyValue());
       }
-      if (parent.resetType === 'initial') {
+      if (tResetType === 'initial') {
         lodashSet(parent.data, this.name, this.initialValue);
       }
       Vue.nextTick(() => {
@@ -395,15 +447,17 @@ export default mixins(getConfigReceiverMixins<FormItemContructor, FormConfig>('f
   },
 
   render(): VNode {
+    const helpNode = renderTNodeJSX(this, 'help');
     return (
       <div class={this.classes}>
         {this.getLabel()}
         <div class={this.contentClasses} style={this.contentStyle}>
-          <div class={CLASS_NAMES.controlsContent}>
+          <div class={`${this.componentName}__controls-content`}>
             {this.$slots.default}
             {this.getSuffixIcon()}
           </div>
-          {this.renderTipsInfo()}
+          {helpNode && <div class={`${this.classPrefix}-input__help`}>{helpNode}</div>}
+          {this.extraNode}
         </div>
       </div>
     );

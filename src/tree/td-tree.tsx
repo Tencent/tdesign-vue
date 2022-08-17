@@ -20,7 +20,6 @@ import {
   TypeTreeInstance,
   TypeTargetNode,
 } from './interface';
-import { CLASS_NAMES } from './constants';
 import { getMark, getNode, emitEvent } from './util';
 
 export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tree')).extend({
@@ -63,24 +62,24 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
   },
   computed: {
     classList(): ClassName {
-      const list: Array<string> = [CLASS_NAMES.tree];
+      const list: Array<string> = [this.componentName];
       const {
         disabled, hover, transition, checkable, expandOnClickNode,
       } = this;
       if (disabled) {
-        list.push(CLASS_NAMES.disabled);
+        list.push(`${this.classPrefix}-is-disabled`);
       }
       if (hover) {
-        list.push(CLASS_NAMES.treeHoverable);
+        list.push(`${this.componentName}--hoverable`);
       }
       if (checkable) {
-        list.push(CLASS_NAMES.treeCheckable);
+        list.push(`${this.componentName}--checkable`);
       }
       if (transition) {
-        list.push(CLASS_NAMES.treeTransition);
+        list.push(`${this.componentName}--transition`);
       }
       if (expandOnClickNode) {
-        list.push(CLASS_NAMES.treeBlockNode);
+        list.push(`${this.componentName}--block-node`);
       }
       return list;
     },
@@ -131,7 +130,9 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
   methods: {
     // 创建单个 tree 节点
     renderItem(node: TreeNode) {
-      const { nested, treeScope, $proxyScope } = this;
+      const {
+        nested, treeScope, $proxyScope, expandOnClickNode,
+      } = this;
       const treeItem = (
         <TreeItem
           key={node.value}
@@ -141,6 +142,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
           proxyScope={$proxyScope}
           onClick={this.handleClick}
           onChange={this.handleChange}
+          expandOnClickNode={expandOnClickNode}
         />
       );
       return treeItem;
@@ -507,9 +509,6 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
   render(): VNode {
     const { classList, $proxyScope, treeNodeViews } = this;
 
-    // 用于性能调试
-    // console.log('tree render');
-
     // 一些选项的变化，要传递到子节点去
     this.updateStoreConfig();
     this.updateTreeScope();
@@ -522,16 +521,16 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     if (treeNodeViews.length <= 0) {
       const useLocale = !this.empty && !this.$scopedSlots.empty;
       const emptyContent = useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty');
-      emptyNode = <div class={CLASS_NAMES.treeEmpty}>{emptyContent}</div>;
+      emptyNode = <div class={`${this.componentName}__empty`}>{emptyContent}</div>;
     }
 
     // 构造列表
     const treeNodeList = (
       <transition-group
         tag="div"
-        class={CLASS_NAMES.treeList}
-        enter-active-class={CLASS_NAMES.treeNodeEnter}
-        leave-active-class={CLASS_NAMES.treeNodeLeave}
+        class={`${this.componentName}__list`}
+        enter-active-class={`${this.componentName}__item--enter-active`}
+        leave-active-class={`${this.componentName}__item--leave-active`}
       >
         {treeNodeViews}
       </transition-group>

@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-container t-table-demo-sort">
+  <div class="demo-container t-table-demo-sort tdesign-demo__table">
     <div class="item">
       <t-table rowKey="id" :columns="columns" :data="data" dragSort="col" @drag-sort="onDragSort">
         <template #status="{ row }">
@@ -44,12 +44,13 @@ export default {
     };
   },
   methods: {
+    // currentData is going to be deprecated
     onDragSort({
-      currentIndex, current, targetIndex, target, currentData, e, sort,
+      currentIndex, current, targetIndex, target, data, newData, e, sort,
     }) {
-      console.log('重新排序', currentIndex, current, targetIndex, target, currentData, e, sort);
+      console.log('重新排序', currentIndex, current, targetIndex, target, data, newData, e, sort);
       if (sort === 'col') {
-        this.columns = currentData;
+        this.columns = newData;
       }
     },
   },

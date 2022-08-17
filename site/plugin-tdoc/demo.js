@@ -4,11 +4,11 @@ import path from 'path';
 export default function renderDemo(md, container) {
   md.use(container, 'demo', {
     validate(params) {
-      return params.trim().match(/^demo\s+([\\/.\w-]+)(\s+(.+?))?(\s+--dev)?$/);
+      return params.trim().match(/^demo\s+([\\/.\w-]+)(\s+(.+?))?$/);
     },
     render(tokens, idx) {
       if (tokens[idx].nesting === 1) {
-        const match = tokens[idx].info.trim().match(/^demo\s+([\\/.\w-]+)(\s+(.+?))?(\s+--dev)?$/);
+        const match = tokens[idx].info.trim().match(/^demo\s+([\\/.\w-\.]+)(\s+(.+?))?$/);
         const [, demoPath, componentName = ''] = match;
         const demoPathOnlyLetters = demoPath.replace(/[^a-zA-Z\d]/g, '');
         const demoName = path.basename(demoPath);

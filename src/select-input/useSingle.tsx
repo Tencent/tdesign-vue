@@ -11,7 +11,7 @@ import Input, { InputValue } from '../input';
 import Loading from '../loading';
 
 import { useTNodeJSX } from '../hooks/tnode';
-import { usePrefixClass } from '../config-provider';
+import { usePrefixClass } from '../hooks/useConfig';
 import useDefaultValue from '../hooks/useDefaultValue';
 
 // single 和 multiple 共有特性
@@ -24,10 +24,6 @@ const COMMON_PROPERTIES = [
   'readonly',
   'suffix',
   'suffixIcon',
-  'onPaste',
-  'onEnter',
-  'onMouseenter',
-  'onMouseleave',
 ];
 
 const DEFAULT_KEYS = {
@@ -79,17 +75,18 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
     const prefixContent = [singleValueDisplay, renderTNode('label')];
     const inputProps = {
       ...commonInputProps.value,
-      ...props.inputProps,
       value: singleValueDisplay ? undefined : displayedValue,
       label: prefixContent.length ? () => prefixContent : undefined,
       autoWidth: props.autoWidth,
       readonly: !props.allowInput,
       placeholder: singleValueDisplay ? '' : props.placeholder,
       suffixIcon: !props.disabled && props.loading ? () => <Loading loading size="small" /> : props.suffixIcon,
-      showClearIconOnEmpty: Boolean(props.clearable && inputValue.value),
+      showClearIconOnEmpty: Boolean(!props.disabled && props.clearable && (inputValue.value || displayedValue)),
       inputClass: {
         [`${classPrefix.value}-input--focused`]: popupVisible,
+        [`${classPrefix.value}-is-focused`]: popupVisible,
       },
+      ...props.inputProps,
     };
 
     return (
@@ -111,6 +108,18 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
           props.onFocus?.(value.value, { ...context, inputValue: val });
           instance.emit('focus', value.value, { ...context, tagInputValue: val });
           !popupVisible && setInputValue(getInputValue(value.value, keys.value), { ...context, trigger: 'input' }); // 聚焦时拿到value
+        }}
+        onPaste={(context: { e: ClipboardEvent; pasteValue: string }) => {
+          props.onPaste?.(context);
+          instance.emit('paste', context);
+        }}
+        onMouseenter={(context: { e: MouseEvent }) => {
+          props.onMouseenter?.(context);
+          instance.emit('mouseenter', context);
+        }}
+        onMouseleave={(context: { e: MouseEvent }) => {
+          props.onMouseleave?.(context);
+          instance.emit('mouseenter', context);
         }}
       />
     );

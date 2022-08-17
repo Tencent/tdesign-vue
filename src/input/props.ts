@@ -17,10 +17,12 @@ export default {
       return ['left', 'center', 'right'].includes(val);
     },
   },
+  /** 超出maxlength或maxcharacter之后是否还允许输入 */
+  allowInputOverMax: Boolean,
   /** 是否开启自动填充功能，HTML5 原生属性，[点击查看详情](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) */
   autocomplete: {
     type: String,
-    default: '',
+    default: undefined,
   },
   /** 自动聚焦 */
   autofocus: Boolean,
@@ -80,9 +82,10 @@ export default {
   /** 输入框状态 */
   status: {
     type: String as PropType<TdInputProps['status']>,
+    default: 'default' as TdInputProps['status'],
     validator(val: TdInputProps['status']): boolean {
       if (!val) return true;
-      return ['success', 'warning', 'error'].includes(val);
+      return ['default', 'success', 'warning', 'error'].includes(val);
     },
   },
   /** 后置图标前的后置内容 */

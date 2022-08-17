@@ -1,9 +1,19 @@
 <template>
-  <div class="demo-container t-table-demo-sort">
+  <div class="demo-container t-table-demo-sort tdesign-demo__table">
+    <div>
+      <t-checkbox v-model="loading">加载状态</t-checkbox>
+    </div>
     <div class="item">
       <!-- 拖拽排序涉及到 data 的变更，相对比较慎重，因此仅支持受控用法 -->
 
-      <t-table rowKey="id" :columns="columns" :data="data" dragSort="row-handler" @drag-sort="onDragSort">
+      <t-table
+        rowKey="id"
+        :columns="columns"
+        :data="data"
+        :loading="loading"
+        dragSort="row-handler"
+        @drag-sort="onDragSort"
+      >
         <template #status="{ row }">
           <p class="status" :class="['', 'warning', 'unhealth'][row.status]">
             {{ ['健康', '警告', '异常'][row.status] }}
@@ -48,16 +58,18 @@ const initialData = new Array(4).fill(5).map((_, i) => ({
 export default {
   data() {
     return {
+      loading: false,
       data: [...initialData],
       columns,
     };
   },
   methods: {
+    // currentData is going to be deprecated
     onDragSort({
-      currentIndex, current, targetIndex, target, currentData, e,
+      currentIndex, current, targetIndex, target, data, newData, e,
     }) {
-      console.log('交换行', currentIndex, current, targetIndex, target, currentData, e);
-      this.data = currentData;
+      console.log('交换行', currentIndex, current, targetIndex, target, data, newData, e);
+      this.data = newData;
     },
   },
 };

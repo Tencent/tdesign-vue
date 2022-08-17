@@ -1,13 +1,14 @@
 import Vue from 'vue';
-import { prefix } from '../config';
 import props from './avatar-group-props';
 import { TNodeReturnValue } from '../common';
 import Avatar from './avatar';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-avatar-group`;
+const classPrefixMixins = getClassPrefixMixins('avatar');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TAvatarGroup',
   components: {
     Avatar,
@@ -16,7 +17,6 @@ export default Vue.extend({
   props: {
     ...props,
   },
-
   provide(): Record<string, any> {
     return {
       avatarGroup: this,
@@ -28,7 +28,11 @@ export default Vue.extend({
       if (children?.length > this.max) {
         const content = this.setEllipsisContent(children);
         const outAvatar = children.slice(0, this.max);
-        outAvatar.push(<Avatar size={this.size} icon={this.isIcon() ? this.collapseAvatar : null}>{content}</Avatar>);
+        outAvatar.push(
+          <Avatar size={this.size} icon={this.isIcon() ? this.collapseAvatar : null}>
+            {content}
+          </Avatar>,
+        );
         // 隐藏的avatar通过popup展示
         // const hideAvatar = children.slice(this.max - children.length);
         // const popupContent = <t-popup props={{ ...this.popupProps, placement: this.placement }} >
@@ -61,10 +65,10 @@ export default Vue.extend({
     const children: TNodeReturnValue = $scopedSlots.default && $scopedSlots.default(null);
     const { cascading, max } = this.$props;
     const groupClass = [
-      `${name}`,
+      `${this.componentName}-group`,
       {
-        [`${prefix}-avatar--offset-right`]: cascading === 'right-up',
-        [`${prefix}-avatar--offset-left`]: cascading === 'left-up',
+        [`${this.componentName}--offset-right`]: cascading === 'right-up',
+        [`${this.componentName}--offset-left`]: cascading === 'left-up',
       },
     ];
     let content = [children];
@@ -72,9 +76,6 @@ export default Vue.extend({
     if (max && max >= 0) {
       content = [this.renderEllipsisAvatar(children)];
     }
-    return <div class={groupClass}>
-      {content}
-    </div>;
+    return <div class={groupClass}>{content}</div>;
   },
-
 });

@@ -24,9 +24,6 @@ exports[`Drawer Drawer attachParentVue demo works fine 1`] = `
           抽屉标题
         </div>
         <div
-          class="t-drawer__close-btn"
-        />
-        <div
           class="t-drawer__body"
         >
           <p>
@@ -590,9 +587,6 @@ exports[`Drawer Drawer noMaskVue demo works fine 1`] = `
         抽屉标题
       </div>
       <div
-        class="t-drawer__close-btn"
-      />
-      <div
         class="t-drawer__body"
       >
         <p>
@@ -662,9 +656,6 @@ exports[`Drawer Drawer operationVue demo works fine 1`] = `
         抽屉标题
       </div>
       <div
-        class="t-drawer__close-btn"
-      />
-      <div
         class="t-drawer__body"
       >
         <div
@@ -678,7 +669,7 @@ exports[`Drawer Drawer operationVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -702,7 +693,7 @@ exports[`Drawer Drawer operationVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -726,7 +717,7 @@ exports[`Drawer Drawer operationVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -802,9 +793,6 @@ exports[`Drawer Drawer placementVue demo works fine 1`] = `
         抽屉标题
       </div>
       <div
-        class="t-drawer__close-btn"
-      />
-      <div
         class="t-drawer__body"
       >
         <p>
@@ -839,9 +827,6 @@ exports[`Drawer Drawer placementVue demo works fine 1`] = `
           </button>
         </div>
       </div>
-      <div
-        style="z-index: 1; position: absolute; background: transparent; left: 0px; width: 16px; height: 100%; cursor: col-resize;"
-      />
     </div>
   </div>
    
@@ -1028,9 +1013,6 @@ exports[`Drawer Drawer sizeVue demo works fine 1`] = `
       >
         抽屉标题
       </div>
-      <div
-        class="t-drawer__close-btn"
-      />
       <div
         class="t-drawer__body"
       >

@@ -13,8 +13,12 @@ export interface TdInputProps {
    */
   align?: 'left' | 'center' | 'right';
   /**
+   * 超出maxlength或maxcharacter之后是否还允许输入
+   * @default false
+   */
+  allowInputOverMax?: boolean;
+  /**
    * 是否开启自动填充功能，HTML5 原生属性，[点击查看详情](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete)
-   * @default ''
    */
   autocomplete?: string;
   /**
@@ -40,7 +44,7 @@ export interface TdInputProps {
   /**
    * 【开发中】指定输入框展示值的格式
    */
-  format?: (value: InputValue) => number | string;
+  format?: InputFormatType;
   /**
    * t-input 同级类名，示例：'name1 name2 name3' 或 `['name1', 'name2']` 或 `[{ 'name1': true }]`
    */
@@ -87,8 +91,9 @@ export interface TdInputProps {
   size?: SizeEnum;
   /**
    * 输入框状态
+   * @default default
    */
-  status?: 'success' | 'warning' | 'error';
+  status?: 'default' | 'success' | 'warning' | 'error';
   /**
    * 后置图标前的后置内容
    */
@@ -171,5 +176,7 @@ export interface TdInputProps {
    */
   onWheel?: (context: { e: WheelEvent }) => void;
 }
+
+export type InputFormatType = (value: InputValue) => number | string;
 
 export type InputValue = string | number;

@@ -1,63 +1,55 @@
-import Vue, { VNode, VueConstructor } from 'vue';
+import {
+  computed, defineComponent, ref, toRefs, inject,
+} from '@vue/composition-api';
+import Vue from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import { renderTNodeJSX } from '../utils/render-tnode';
-import { prefix } from '../config';
-import CLASSNAMES from '../utils/classnames';
 import props from './option-group-props';
 import { ClassName } from '../common';
-import { TdOptionProps } from './type';
-
-const name = `${prefix}-select-option-group`;
+import { TdOptionGroupProps } from './type';
+import { useTNodeJSX } from '../hooks/tnode';
+import { usePrefixClass, useConfig } from '../config-provider/useConfig';
+import useCommonClassName from '../hooks/useCommonClassName';
 
 export interface Select extends Vue {
   tSelect: {
     size: string;
-    displayOptions: Array<TdOptionProps>;
   };
 }
 
-export default (Vue as VueConstructor<Select>).extend({
+export default defineComponent({
   name: 'TOptionGroup',
   props: { ...props },
-  inject: {
-    tSelect: {
-      default: undefined,
-    },
-  },
-  computed: {
-    classes(): ClassName {
-      return [
-        name,
-        {
-          [CLASSNAMES.SIZE[this.tSelect.size]]: this.tSelect && this.tSelect.size,
-          [`${name}__divider`]: this.divider,
-        },
-      ];
-    },
-  },
-  watch: {
-    'tSelect.displayOptions': function () {
-      this.childrenChange();
-    },
-  },
-  data() {
+  setup(props: TdOptionGroupProps) {
+    const { divider } = toRefs(props);
+    const ulRef = ref<HTMLElement>(null);
+    const tSelect: any = inject('tSelect');
+    const { sizeClassNames } = useCommonClassName();
+    const COMPONENT_NAME = usePrefixClass('select');
+    const { classPrefix } = useConfig('classPrefix');
+
+    const classes = computed<ClassName>(() => [
+      `${COMPONENT_NAME.value}-option-group`,
+      {
+        [sizeClassNames[tSelect.size]]: tSelect && tSelect.size,
+        [`${COMPONENT_NAME.value}-option-group__divider`]: divider,
+      },
+    ]);
     return {
-      visible: true,
+      classes,
+      ulRef,
+      classPrefix,
+      componentName: COMPONENT_NAME,
     };
   },
-  methods: {
-    childrenChange() {
-      this.visible = this.$children
-        && Array.isArray(this.$children)
-        && this.$children.some((option) => (option as any).show === true);
-    },
-  },
-  render(): VNode {
-    const children: ScopedSlotReturnValue = renderTNodeJSX(this, 'default');
+  render() {
+    const renderTNode = useTNodeJSX();
+    const children: ScopedSlotReturnValue = renderTNode('default');
     return (
-      <li v-show={this.visible} class={this.classes}>
-        <div class={`${name}__header`}>{this.label}</div>
-        <ul>{children}</ul>
+      <li class={this.classes}>
+        <div class={`${this.componentName}-option-group__header`}>{this.label}</div>
+        <ul class={`${this.classPrefix}-select__list`} ref="ulRef">
+          {children}
+        </ul>
       </li>
     );
   },

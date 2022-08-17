@@ -66,18 +66,14 @@ export interface TdFormProps<FormData extends Data = Data> {
   rules?: { [field in keyof FormData]: Array<FormRule> };
   /**
    * 表单校验不通过时，是否自动滚动到第一个校验不通过的字段，平滑滚动或是瞬间直达。值为空则表示不滚动
+   * @default ''
    */
-  scrollToFirstError?: 'smooth' | 'auto';
+  scrollToFirstError?: '' | 'smooth' | 'auto';
   /**
    * 校验不通过时，是否显示错误提示信息，统一控制全部表单项。如果希望控制单个表单项，请给 FormItem 设置该属性
    * @default true
    */
   showErrorMessage?: boolean;
-  /**
-   * 表单尺寸
-   * @default medium
-   */
-  size?: 'medium' | 'large';
   /**
    * 校验状态图标，值为 `true` 显示默认图标，默认图标有 成功、失败、警告 等，不同的状态图标不同。`statusIcon` 值为 `false`，不显示图标。`statusIcon` 值类型为渲染函数，则可以自定义右侧状态图标
    */
@@ -92,7 +88,7 @@ export interface TdFormProps<FormData extends Data = Data> {
    */
   onReset?: (context: { e?: FormResetEvent }) => void;
   /**
-   * 表单提交时触发。其中 context.validateResult 表示校验结果，context .firstError 表示校验不通过的第一个规则提醒。context.validateResult 值为 true 表示校验通过；如果校验不通过，context.validateResult 值为校验结果列表
+   * 表单提交时触发。其中 `context.validateResult` 表示校验结果，`context.firstError` 表示校验不通过的第一个规则提醒。`context.validateResult` 值为 `true` 表示校验通过；如果校验不通过，`context.validateResult` 值为校验结果列表。<br />【注意】⚠️ 默认情况，输入框按下 Enter 键会自动触发提交事件，如果希望禁用这个默认行为，可以给输入框添加  enter 事件，并在事件中设置 `e.preventDefault()`
    */
   onSubmit?: (context: SubmitContext<FormData>) => void;
   /**
@@ -108,21 +104,25 @@ export interface FormInstanceFunctions<FormData extends Data = Data> {
    */
   clearValidate?: (fields?: Array<keyof FormData>) => void;
   /**
-   * 重置表单，表单里面没有重置按钮`<button type="reset" />`时可以使用该方法，默认重置全部字段为空，此方法不会触发 `reset` 事件。<br />如果表单属性 `resetType='empty'` 或者 `reset.type='empty'` 会重置为空；<br />如果表单属性 `resetType='initial'` 或者 `reset.type='initial'` 会重置为表单初始值。<br />`reset.fields` 用于设置具体重置哪些字段，示例：`reset({ type: 'initial', fields: ['name', 'age'] })`
+   * 重置表单，表单里面没有重置按钮`<button type="reset" />`时可以使用该方法，默认重置全部字段为空，该方法会触发 `reset` 事件。<br />如果表单属性 `resetType='empty'` 或者 `reset.type='empty'` 会重置为空；<br />如果表单属性 `resetType='initial'` 或者 `reset.type='initial'` 会重置为表单初始值。<br />`reset.fields` 用于设置具体重置哪些字段，示例：`reset({ type: 'initial', fields: ['name', 'age'] })`
    */
-  reset?: (params?: FormResetParams) => void;
+  reset?: (params?: FormResetParams<FormData>) => void;
   /**
    * 设置自定义校验结果，如远程校验信息直接呈现。注意需要在组件挂载结束后使用该方法。`FormData` 指表单数据泛型
    */
   setValidateMessage?: (message: FormValidateMessage<FormData>) => void;
   /**
-   * 提交表单，表单里面没有提交按钮`<button type="submit" />`时可以使用该方法，此方法不会触发 `submit` 事件
+   * 提交表单，表单里面没有提交按钮`<button type="submit" />`时可以使用该方法。`showErrorMessage` 表示是否在提交校验不通过时显示校验不通过的原因，默认显示。该方法会触发 `submit` 事件
    */
-  submit?: () => void;
+  submit?: (params?: { showErrorMessage?: boolean }) => void;
   /**
-   * 校验函数，泛型 `FormData` 表示表单数据 TS 类型。<br/>【关于参数】`params.fields` 表示校验字段，如果设置了 `fields`，本次校验将仅对这些字段进行校验。`params.trigger` 表示本次触发校验的范围，'blur' 表示只触发校验规则设定为 trigger='blur' 的字段，'change' 表示只触发校验规则设定为 trigger='change' 的字段，默认触发全范围校验。<br />【关于返回值】返回值为 true 表示校验通过；如果校验不通过，返回值为校验结果列表
+   * 校验函数，包含错误文本提示等功能。泛型 `FormData` 表示表单数据 TS 类型。<br/>【关于参数】`params.fields` 表示校验字段，如果设置了 `fields`，本次校验将仅对这些字段进行校验。`params.trigger` 表示本次触发校验的范围，'params.trigger = blur' 表示只触发校验规则设定为 trigger='blur' 的字段，'params.trigger = change' 表示只触发校验规则设定为 trigger='change' 的字段，默认触发全范围校验。`params.showErrorMessage` 表示校验结束后是否显示错误文本提示，默认显示。<br />【关于返回值】返回值为 true 表示校验通过；如果校验不通过，返回值为校验结果列表
    */
-  validate?: (params?: FormValidateParams) => FormValidateResult<FormData>;
+  validate?: (params?: FormValidateParams) => Promise<FormValidateResult<FormData>>;
+  /**
+   * 纯净的校验函数，仅返回校验结果，不对组件进行任何操作。泛型 `FormData` 表示表单数据 TS 类型。参数和返回值含义同 `validate` 方法
+   */
+  validateOnly?: (params?: Pick<FormValidateParams, 'fields' | 'trigger'>) => Promise<FormValidateResult<FormData>>;
 }
 
 export interface TdFormItemProps {
@@ -133,9 +133,8 @@ export interface TdFormItemProps {
   for?: string;
   /**
    * 表单项说明内容
-   * @default ''
    */
-  help?: string;
+  help?: string | TNode;
   /**
    * 字段标签名称
    * @default ''
@@ -151,9 +150,8 @@ export interface TdFormItemProps {
   labelWidth?: string | number;
   /**
    * 表单字段名称
-   * @default ''
    */
-  name?: string;
+  name?: string | number;
   /**
    * 是否显示必填符号（*），优先级高于 Form.requiredMark
    */
@@ -344,8 +342,8 @@ export type ErrorList = Array<FormRule>;
 
 export type ValidateResultContext<T> = Omit<SubmitContext<T>, 'e'>;
 
-export interface FormResetParams {
-  type: 'initial' | 'empty';
+export interface FormResetParams<FormData> {
+  type?: 'initial' | 'empty';
   fields?: Array<keyof FormData>;
 }
 
@@ -358,6 +356,7 @@ export interface FormItemValidateMessage {
 
 export interface FormValidateParams {
   fields?: Array<string>;
+  showErrorMessage?: boolean;
   trigger?: ValidateTriggerType;
 }
 

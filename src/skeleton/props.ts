@@ -32,4 +32,9 @@ export default {
       return ['text', 'avatar', 'paragraph', 'avatar-text', 'tab', 'article'].includes(val);
     },
   },
+  /** 延迟显示加载效果的事件，用于放置请求速度过快引起的家在闪烁，单位：毫秒 */
+  delay: {
+    type: Number,
+    default: 0,
+  },
 };

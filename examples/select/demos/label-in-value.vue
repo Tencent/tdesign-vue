@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <t-space>
     <t-select
       v-model="value"
       valueType="object"
       clearable
       placeholder="-请选择-"
       :options="options"
-      style="width: 200px;display: inline-block;margin-right: 20px;"
+      style="width: 200px; display: inline-block; margin-right: 20px"
       @change="handleChange"
     />
     <t-select
@@ -16,10 +16,10 @@
       multiple
       placeholder="-请选择-"
       :options="options"
-      style="width: 200px;display: inline-block;"
+      style="width: 200px; display: inline-block"
       @change="handleChange"
     />
-  </div>
+  </t-space>
 </template>
 
 <script>
@@ -36,8 +36,8 @@ export default {
     };
   },
   methods: {
-    handleChange(value) {
-      console.log('handleChange:', value);
+    handleChange(value, context) {
+      console.log('handleChange:', value, context);
     },
   },
 };

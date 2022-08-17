@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-container t-table-demo-sort">
+  <div class="demo-container t-table-demo-sort tdesign-demo__table">
     <div class="item">
       <!-- 拖拽排序涉及到 data 的变更，相对比较慎重，因此仅支持受控用法 -->
 
@@ -46,11 +46,12 @@ export default {
     };
   },
   methods: {
+    // currentData is going to be deprecated
     onDragSort({
-      currentIndex, current, targetIndex, target, currentData, e,
+      currentIndex, current, targetIndex, target, data, newData, e,
     }) {
-      console.log('重新排序', currentIndex, current, targetIndex, target, currentData, e);
-      this.data = currentData;
+      console.log('重新排序', currentIndex, current, targetIndex, target, data, newData, e);
+      this.data = newData;
     },
   },
 };

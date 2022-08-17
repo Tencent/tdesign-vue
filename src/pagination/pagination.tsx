@@ -8,19 +8,17 @@ import {
   EllipsisIcon,
 } from 'tdesign-icons-vue';
 import Vue from 'vue';
-import { prefix } from '../config';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { PaginationConfig } from '../config-provider/config-receiver';
 import TInputNumber from '../input-number';
 import { Select, Option } from '../select';
-import CLASSNAMES from '../utils/classnames';
+import TInputAdornment from '../input-adornment';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import props from './props';
 import { ClassName } from '../common';
 import { emitEvent } from '../utils/event';
 import { TdPaginationProps } from './type';
 
-const name = `${prefix}-pagination`;
 const min = 1;
 
 export type PageSizeChangeParams = Parameters<TdPaginationProps['onPageSizeChange']>;
@@ -39,6 +37,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
     ChevronLeftDoubleIcon,
     EllipsisIcon,
     TInputNumber,
+    TInputAdornment,
     TSelect: Select,
     TOption: Option,
   },
@@ -87,57 +86,57 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
      */
     paginationClass(): ClassName {
       return [
-        `${name}`,
-        CLASSNAMES.SIZE[this.size],
+        `${this.componentName}`,
+        this.commonSizeClassName[this.size],
         {
-          [CLASSNAMES.STATUS.disabled]: this.disabled,
+          [this.commonStatusClassName.disabled]: this.disabled,
         },
       ];
     },
     totalClass(): ClassName {
-      return [`${name}__total`];
+      return [`${this.componentName}__total`];
     },
     sizerClass(): ClassName {
-      return [`${name}__select`];
+      return [`${this.componentName}__select`];
     },
     preBtnClass(): ClassName {
       return [
-        `${name}__btn`,
-        `${name}__btn-prev`,
+        `${this.componentName}__btn`,
+        `${this.componentName}__btn-prev`,
         {
-          [CLASSNAMES.STATUS.disabled]: this.disabled || this.current === 1,
+          [this.commonStatusClassName.disabled]: this.disabled || this.current === 1,
         },
       ];
     },
     nextBtnClass(): ClassName {
       return [
-        `${name}__btn`,
-        `${name}__btn-next`,
+        `${this.componentName}__btn`,
+        `${this.componentName}__btn-next`,
         {
-          [CLASSNAMES.STATUS.disabled]: this.disabled || this.current === this.pageCount,
+          [this.commonStatusClassName.disabled]: this.disabled || this.current === this.pageCount,
         },
       ];
     },
     btnWrapClass(): ClassName {
-      return [`${name}__pager`];
+      return [`${this.componentName}__pager`];
     },
     btnMoreClass(): ClassName {
       return [
-        `${name}__number`,
-        `${name}__number--more`,
+        `${this.componentName}__number`,
+        `${this.componentName}__number--more`,
         {
-          [CLASSNAMES.STATUS.disabled]: this.disabled,
+          [this.commonStatusClassName.disabled]: this.disabled,
         },
       ];
     },
     jumperClass(): ClassName {
-      return [`${name}__jump`];
+      return [`${this.componentName}__jump`];
     },
     jumperInputClass(): ClassName {
-      return [`${name}__input`];
+      return [`${this.componentName}__input`];
     },
     simpleClass(): ClassName {
-      return [`${name}__select`];
+      return [`${this.componentName}__select`];
     },
     pageCount(): number {
       const c: number = Math.ceil(this.total / this.pageSize);
@@ -186,8 +185,10 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
           start = this.current - this.curPageLeftCount;
           end = this.current + this.curPageRightCount;
         } else {
-          start = this.isPrevMoreShow ? this.pageCount - this.foldedMaxPageBtn + 1 : 2;
-          end = this.isPrevMoreShow ? this.pageCount - 1 : this.foldedMaxPageBtn;
+          const foldedStart = this.isMidEllipsis ? 2 : 1;
+          const foldedEnd = this.isMidEllipsis ? this.pageCount - 1 : this.pageCount;
+          start = this.isPrevMoreShow ? this.pageCount - this.foldedMaxPageBtn + 1 : foldedStart;
+          end = this.isPrevMoreShow ? foldedEnd : this.foldedMaxPageBtn;
         }
       } else {
         start = 1;
@@ -202,6 +203,9 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
 
     isFolded(): boolean {
       return this.pageCount > this.maxPageBtn;
+    },
+    isMidEllipsis(): boolean {
+      return this.pageEllipsisMode === 'mid';
     },
   },
 
@@ -248,10 +252,10 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
 
     getButtonClass(index: number): ClassName {
       return [
-        `${name}__number`,
+        `${this.componentName}__number`,
         {
-          [CLASSNAMES.STATUS.disabled]: this.disabled,
-          [CLASSNAMES.STATUS.current]: this.current === index,
+          [this.commonStatusClassName.disabled]: this.disabled,
+          [this.commonStatusClassName.current]: this.current === index,
         },
       ];
     },
@@ -299,6 +303,25 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
   },
 
   render() {
+    const Jumper = (
+      <div class={this.jumperClass}>
+        {this.t(this.global.jumpTo)}
+        <t-input-adornment append={`/ ${this.pageCount} ${this.t(this.global.page)}`}>
+          <t-input-number
+            class={this.jumperInputClass}
+            v-model={this.jumpIndex}
+            onBlur={this.onJumperChange}
+            onEnter={this.onJumperChange}
+            max={this.pageCount}
+            min={min}
+            size={this.size}
+            theme="normal"
+            placeholder=""
+          />
+        </t-input-adornment>
+      </div>
+    );
+
     return (
       <div class={this.paginationClass}>
         {/* 数据统计区 */}
@@ -315,6 +338,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
             disabled={this.disabled}
             class={this.sizerClass}
             onChange={this.onSelectorChange}
+            autoWidth={true}
           >
             {this.sizeOptions.map((item, index) => (
               <t-option value={item.value} label={item.label} key={index} />
@@ -336,12 +360,12 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
         {/* 常规版 */}
         {this.showPageNumber && this.theme === 'default' ? (
           <ul class={this.btnWrapClass}>
-            {this.isFolded ? (
+            {this.isFolded && this.isMidEllipsis ? (
               <li class={this.getButtonClass(1)} onClick={() => this.toPage(min)}>
                 {min}
               </li>
             ) : null}
-            {this.isFolded && this.isPrevMoreShow ? (
+            {this.isFolded && this.isPrevMoreShow && this.isMidEllipsis ? (
               <li
                 class={this.btnMoreClass}
                 onClick={this.prevMorePage}
@@ -356,7 +380,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
                 {i}
               </li>
             ))}
-            {this.isFolded && this.isNextMoreShow ? (
+            {this.isFolded && this.isNextMoreShow && this.isMidEllipsis ? (
               <li
                 class={this.btnMoreClass}
                 onClick={this.nextMorePage}
@@ -366,7 +390,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
                 {this.nextMore ? <chevron-right-double-icon /> : <ellipsis-icon />}
               </li>
             ) : null}
-            {this.isFolded ? (
+            {this.isFolded && this.isMidEllipsis ? (
               <li class={this.getButtonClass(this.pageCount)} onClick={() => this.toPage(this.pageCount)}>
                 {this.pageCount}
               </li>
@@ -374,16 +398,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
           </ul>
         ) : null}
         {/* 极简版 */}
-        {this.showPageNumber && this.theme === 'simple' ? (
-          <t-select
-            size={this.size}
-            value={this.current}
-            disabled={this.disabled}
-            class={this.simpleClass}
-            onChange={this.toPage}
-            options={this.pageCountOption}
-          />
-        ) : null}
+        {this.theme === 'simple' && Jumper}
         {/* 向后按钮 */}
         {this.showPreviousAndNextBtn ? (
           <div
@@ -404,24 +419,8 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
             <page-last-icon />
           </div>
         ) : null}
-        {/* 跳转 */}
-        {this.showJumper ? (
-          <div class={this.jumperClass}>
-            {this.t(this.global.jumpTo)}
-            <t-input-number
-              class={this.jumperInputClass}
-              v-model={this.jumpIndex}
-              onBlur={this.onJumperChange}
-              onEnter={this.onJumperChange}
-              max={this.pageCount}
-              min={min}
-              size={this.size}
-              theme="normal"
-              placeholder=""
-            />
-            {this.t(this.global.page)}
-          </div>
-        ) : null}
+        {/* 快速跳转 */}
+        {this.theme === 'default' && this.showJumper && Jumper}
       </div>
     );
   },

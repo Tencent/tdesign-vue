@@ -2,6 +2,7 @@ import { defineComponent, PropType, ref } from '@vue/composition-api';
 import { CreateElement } from 'vue';
 import { FilterIcon } from 'tdesign-icons-vue';
 import isEmpty from 'lodash/isEmpty';
+import lowerFirst from 'lodash/lowerFirst';
 import Popup from '../popup';
 import { CheckboxGroup } from '../checkbox';
 import { RadioGroup } from '../radio';
@@ -10,6 +11,7 @@ import TButton from '../button';
 import { useTNodeDefault } from '../hooks/tnode';
 import { PrimaryTableCol, FilterValue } from './type';
 import { useConfig } from '../config-provider/useConfig';
+import log from '../_common/js/log';
 
 type Params = Parameters<CreateElement>;
 type FirstParams = Params[0];
@@ -72,19 +74,19 @@ export default defineComponent({
     const getFilterContent = (h: CreateElement, column: PrimaryTableCol) => {
       const types = ['single', 'multiple', 'input'];
       if (column.type && !types.includes(column.filter.type)) {
-        console.error(`TDesign Table Error: column.filter.type must be the following: ${JSON.stringify(types)}`);
+        log.error('Table', `filter.type must be the following: ${JSON.stringify(types)}`);
         return;
       }
-      if (column?.filter?.component && typeof column?.filter?.component !== 'function') {
-        console.error('TDesign Table Error: column.filter.component must be a function');
+      if (!column.filter.type && !column.filter.component) {
+        log.error('Table', 'both filter.type and filter.component can not be empty.');
         return;
       }
       const component = {
         single: RadioGroup,
         multiple: CheckboxGroup,
         input: Input,
-      }[column.filter.type];
-      if (!component && !column?.filter?.component) return;
+      }[column.filter.type] || column.filter.component;
+      if (!component && !column.filter.component) return;
       const filterComponentProps: { [key: string]: any } = {
         options: ['single', 'multiple'].includes(column.filter.type) ? column.filter?.list : undefined,
         ...(column.filter?.props || {}),
@@ -102,27 +104,45 @@ export default defineComponent({
           this.$emit('inner-filter-change', val, column);
         },
       };
+      // 允许自定义触发确认搜索的事件
+      if (column.filter.confirmEvents) {
+        column.filter.confirmEvents.forEach((event) => {
+          const pureEvent = lowerFirst(event.replace('on', ''));
+          on[pureEvent] = () => {
+            this.$emit('confirm', column);
+            this.filterPopupVisible = false;
+          };
+        });
+      }
       const wrapperListeners: { click?: Function } = {};
       if (column.filter.showConfirmAndReset) {
         wrapperListeners.click = (e: MouseEvent) => e.stopPropagation();
       }
+
+      const renderComponent = () => {
+        if (!component) return null;
+        const isVueComponent = component.install && component.component;
+        if (typeof component === 'function' && !isVueComponent) {
+          return component((v: FirstParams, b: SecondParams) => {
+            const tProps = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
+            return h(v, {
+              props: { ...filterComponentProps, ...tProps },
+              on,
+            });
+          });
+        }
+        return (
+          <component
+            value={this.innerFilterValue?.[column.colKey]}
+            props={{ ...filterComponentProps }}
+            on={{ ...on }}
+          ></component>
+        );
+      };
+
       return (
         <div class={this.tableFilterClasses.contentInner} on={wrapperListeners}>
-          {column?.filter?.component ? (
-            column?.filter?.component((v: FirstParams, b: SecondParams) => {
-              const tProps = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
-              return h(v, {
-                props: { ...filterComponentProps, ...tProps },
-                on,
-              });
-            })
-          ) : (
-            <component
-              value={this.innerFilterValue?.[column.colKey]}
-              props={{ ...filterComponentProps }}
-              on={{ ...on }}
-            ></component>
-          )}
+          {renderComponent()}
         </div>
       );
     };

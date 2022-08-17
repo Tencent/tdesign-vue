@@ -1,26 +1,21 @@
 <template>
-  <div>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value" :onRemove="handleBlur" multiple :minCollapsedNum="1" />
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value" :collapsedItems="collapsedItems" multiple :minCollapsedNum="1" />
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value" multiple clearable :minCollapsedNum="1">
+  <div class="tdesign-demo-block-row">
+    <t-cascader v-model="value" :options="options" :on-remove="handleBlur" multiple :min-collapsed-num="1" />
+    <t-cascader v-model="value" :options="options" :collapsed-items="collapsedItems" multiple :min-collapsed-num="1" />
+    <t-cascader v-model="value" :options="options" multiple clearable :min-collapsed-num="1">
       <template #collapsedItems="{ collapsedSelectedItems, count }">
         <t-popup>
           <template #content>
-            <p
-              v-for="(item, index) in collapsedSelectedItems"
-              :key="index"
-              style="padding: 10px;"
-            >
-              {{item.label}}
+            <p v-for="(item, index) in collapsedSelectedItems" :key="index" style="padding: 10px">
+              {{ item.label }}
             </p>
           </template>
-          <span v-show="count > 0" style="color: #00A870;">+{{count}}</span>
+          <span v-show="count > 0" style="color: #00a870">+{{ count - 1 }}</span>
         </t-popup>
       </template>
     </t-cascader>
   </div>
 </template>
-
 <script lang="jsx">
 export default {
   data() {
@@ -64,21 +59,18 @@ export default {
     };
   },
   methods: {
-    collapsedItems(h, { value, count, collapsedSelectedItems }) {
+    collapsedItems(h, { value, count }) {
       if (!(value instanceof Array) || !count) return;
-      console.log('collapsedItems: ', value, collapsedSelectedItems, count);
       // hover展示全部已选项
       return (
         <t-popup>
           <div slot="content">
-          {
-            value.map((item) => (
+            {value.map((item) => (
               <p style="padding: 10px;">{item.label}</p>
-            ))
-          }
+            ))}
           </div>
           <span v-show={count > 0} style="color: #ED7B2F;">
-            +{count}
+            +{count - 1}
           </span>
         </t-popup>
       );
@@ -89,8 +81,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.t-demo-cascader + .t-demo-cascader {
-  margin-top: 16px;
-}
-</style>

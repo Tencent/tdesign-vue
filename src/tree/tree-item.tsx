@@ -8,7 +8,6 @@ import TLoading from '../loading';
 import TreeNode from '../_common/js/tree/tree-node';
 import { getTNode } from './util';
 import { TypeEventState } from './interface';
-import { TREE_NODE_NAME, CLASS_NAMES } from './constants';
 import { ClassName } from '../common';
 import ripple from '../utils/ripple';
 
@@ -28,10 +27,13 @@ export const TreeItemProps = {
   proxyScope: {
     type: Object,
   },
+  expandOnClickNode: {
+    type: Boolean,
+  },
 };
 
 const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnimationMixins).extend({
-  name: TREE_NODE_NAME,
+  name: 'TTreeItem',
   props: TreeItemProps,
   directives: { ripple },
   data() {
@@ -43,24 +45,26 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
   },
   methods: {
     getStyles(): string {
-      const { level } = this.node;
-      const styles = `--level: ${level};`;
-      return styles;
+      const { level, visible } = this.node;
+      const levelStyle = `--level: ${level};`;
+      const hiddenStyle = 'display:none;';
+      if (visible) return levelStyle;
+      return `${hiddenStyle} ${levelStyle}`;
     },
     getClassList(): ClassName {
       const { node, nested } = this;
       const list = [];
-      list.push(CLASS_NAMES.treeNode);
+      list.push(`${this.componentName}__item`);
       list.push({
-        [CLASS_NAMES.treeNodeOpen]: node.expanded,
-        [CLASS_NAMES.actived]: node.isActivable() ? node.actived : false,
-        [CLASS_NAMES.disabled]: node.isDisabled(),
+        [`${this.componentName}__item--open`]: node.expanded,
+        [`${this.classPrefix}-is-active`]: node.isActivable() ? node.actived : false,
+        [`${this.classPrefix}-is-disabled`]: node.isDisabled(),
       });
       if (!nested) {
         if (node.visible) {
-          list.push(CLASS_NAMES.treeNodeVisible);
+          list.push(`${this.componentName}__item--visible`);
         } else {
-          list.push(CLASS_NAMES.treeNodeHidden);
+          list.push(`${this.componentName}__item--hidden`);
         }
       }
       return list;
@@ -83,18 +87,18 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
           const lineClasses = [];
 
           // 每个节点绘制抵达上一层级的折线
-          lineClasses.push(CLASS_NAMES.line);
+          lineClasses.push(`${this.componentName}__line`);
 
           // 叶子节点，折线宽度延长，因为没有 icon 呈现
           // 任意节点，icon 不呈现时也是要延长折线宽度
           if (vmIsLeaf || !iconVisible) {
-            lineClasses.push(CLASS_NAMES.lineIsLeaf);
+            lineClasses.push(`${this.componentName}__line--leaf`);
           }
 
           // 分支首节点，到上一节点的折线高度要缩短，让位给 icon 呈现
           // 如果 icon 隐藏了，则不必缩短折线高度
           if (vmIsFirst && iconVisible) {
-            lineClasses.push(CLASS_NAMES.lineIsFirst);
+            lineClasses.push(`${this.componentName}__line--first`);
           }
 
           // 如果节点的父节点，不是最后的节点
@@ -159,7 +163,11 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
 
       iconNode = (
         <span
-          class={[CLASS_NAMES.treeIcon, CLASS_NAMES.folderIcon, isDefaultIcon ? CLASS_NAMES.treeIconDefault : '']}
+          class={[
+            `${this.componentName}__icon`,
+            `${this.classPrefix}-folder-icon`,
+            isDefaultIcon ? `${this.componentName}__icon--default` : '',
+          ]}
           trigger="expand"
           ignore="active"
         >
@@ -169,7 +177,9 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
       return iconNode;
     },
     renderLabel(createElement: CreateElement): VNode {
-      const { node, treeScope, proxyScope } = this;
+      const {
+        node, treeScope, proxyScope, expandOnClickNode,
+      } = this;
       const { label, disableCheck } = treeScope;
       const { scopedSlots } = proxyScope;
       const checkProps = treeScope.checkProps || {};
@@ -191,9 +201,9 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
       }
 
       const labelClasses = [
-        CLASS_NAMES.treeLabel,
+        `${this.componentName}__label`,
         {
-          [CLASS_NAMES.actived]: node.isActivable() ? node.actived : false,
+          [`${this.classPrefix}-is-active`]: node.isActivable() ? node.actived : false,
         },
       ];
 
@@ -220,7 +230,8 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
             indeterminate={node.indeterminate}
             disabled={node.isDisabled()}
             name={String(node.value)}
-            onChange={() => this.handleChange()}
+            onChange={this.handleChange}
+            stopLabelTrigger={expandOnClickNode && node.children?.length > 0}
             ignore="expand,active"
             {...{ props: itemCheckProps }}
           >
@@ -260,7 +271,7 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
       }
       if (opNode) {
         opNode = (
-          <span class={CLASS_NAMES.treeOperations} ignore="active,expand">
+          <span class={`${this.componentName}__operations`} ignore="active,expand">
             {opNode}
           </span>
         );
@@ -294,9 +305,21 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
       return itemNodes;
     },
     handleClick(evt: MouseEvent) {
+      const srcTarget = evt.target as HTMLElement;
+      const isBranchTrigger = this.node.children
+        && this.expandOnClickNode
+        && (srcTarget.className === `${this.classPrefix}-checkbox__input` || srcTarget.tagName.toLowerCase() === 'input');
       // checkbox 上也有 emit click 事件
       // 用这个逻辑避免重复的 click 事件被触发
-      if (this.$clicked) return;
+      if (this.$clicked || isBranchTrigger) return;
+
+      // 处理expandOnClickNode时与checkbox的选中的逻辑冲突
+      if (
+        srcTarget.className.indexOf(`${this.classPrefix}-tree__label`) !== -1
+        && this.expandOnClickNode
+        && this.node.children
+      ) evt.preventDefault();
+
       this.$clicked = true;
       setTimeout(() => {
         this.$clicked = false;
@@ -381,7 +404,6 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
       this.data = node.data;
     }
     this.$nodesMap = new Map();
-    // console.log('item created', node.value);
   },
   destroyed() {
     this.data = null;
@@ -390,9 +412,6 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
   render(createElement: CreateElement) {
     const { node, nested } = this;
     const { tree, level, value } = node;
-
-    // 用于性能调试
-    // console.log('item render', node.value);
 
     if (!tree || !tree.nodeMap.get(value)) {
       this.$destroy();
@@ -419,11 +438,11 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
     const childNodes = this.getChildNodes();
 
     const childrenClassList = [];
-    childrenClassList.push(CLASS_NAMES.treeChildren);
+    childrenClassList.push(`${this.componentName}__children`);
     if (node.expanded) {
-      childrenClassList.push(CLASS_NAMES.treeChildrenVisible);
+      childrenClassList.push(`${this.componentName}__children--visible`);
     } else {
-      childrenClassList.push(CLASS_NAMES.treeChildrenHidden);
+      childrenClassList.push(`${this.componentName}__children--hidden`);
     }
 
     const allChildren = node.walk();
@@ -442,15 +461,15 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
         tag="div"
         class={childrenClassList}
         style={childrenStyles}
-        enter-active-class={CLASS_NAMES.treeNodeEnter}
-        leave-active-class={CLASS_NAMES.treeNodeLeave}
+        enter-active-class={`${this.componentName}__item--enter-active`}
+        leave-active-class={`${this.componentName}__item--leave-active`}
       >
         {childNodes}
       </transition-group>
     );
 
     const branchNode = (
-      <div class={CLASS_NAMES.treeBranch}>
+      <div class={`${this.componentName}__branch`}>
         {itemNode}
         {childrenBox}
       </div>

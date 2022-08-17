@@ -22,6 +22,9 @@ import 'tdesign-site-components/lib/styles/prism-theme-dark.less';
 // import icons webcomponents
 import 'tdesign-icons-view';
 
+// 主题生成器挂件
+import 'tdesign-theme-generator';
+
 Vue.use(TDesign);
 Vue.use(VueRouter);
 

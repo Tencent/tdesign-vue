@@ -99,12 +99,7 @@
     "@typescript-eslint/no-empty-function": 0,
     "@typescript-eslint/ban-ts-comment": 0,
     "@typescript-eslint/semi": ["error"],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": true
-      }
-    ],
+    "import/no-extraneous-dependencies": 0,
     "import/no-dynamic-require": 0,
     "global-require": 0,
     "no-constant-condition": [

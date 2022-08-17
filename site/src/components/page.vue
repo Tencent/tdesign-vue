@@ -19,7 +19,12 @@ import siteConfig from '../../site.config';
 import packageJson from '@/package.json';
 
 const currentVersion = packageJson.version.replace(/\./g, '_');
-const { docs: routerList } = JSON.parse(JSON.stringify(siteConfig).replace(/component:.+/g, ''));
+const { docs, enDocs } = JSON.parse(JSON.stringify(siteConfig).replace(/component:.+/g, ''));
+
+const docsMap = {
+  zh: docs,
+  en: enDocs,
+};
 
 const registryUrl = 'https://mirrors.tencent.com/npm/tdesign-vue';
 
@@ -37,11 +42,14 @@ export default {
       const { loaded } = this;
       return { visibility: loaded ? 'visible' : 'hidden' };
     },
+    lang() {
+      return this.$route?.meta?.lang || 'zh';
+    },
   },
 
   mounted() {
     this.$refs.tdHeader.framework = 'vue';
-    this.$refs.tdDocAside.routerList = routerList;
+    this.$refs.tdDocAside.routerList = docsMap[this.lang];
     this.$refs.tdDocAside.onchange = ({ detail }) => {
       if (this.$route.path === detail) return;
       this.loaded = false;
@@ -60,7 +68,7 @@ export default {
           const options = [];
           Object.keys(res.versions).forEach((v) => {
             const nums = v.split('.');
-            if ((nums[0] === '0' && nums[1] < 32) || v.indexOf('alpha') > -1) return false;
+            if ((nums[0] === '0' && nums[1] < 32) || v.indexOf('alpha') > -1 || v.indexOf('patch') > -1) return false;
             options.unshift({ label: v, value: v.replace(/\./g, '_') });
           });
           this.options.push(...options);

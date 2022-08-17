@@ -40,7 +40,7 @@ export default {
   defaultDisplayColumns: {
     type: Array as PropType<TdPrimaryTableProps['defaultDisplayColumns']>,
   },
-  /** 拖拽排序方式，值为 `row` 表示行拖拽排序，这种方式无法进行文本复制，慎用。值为`row-handler` 表示通过专门的 拖拽手柄 进行 行拖拽排序。值为 `col` 表示列顺序拖拽，列拖拽功能开发中。`drag-col` 已废弃，请勿使用 */
+  /** 拖拽排序方式，值为 `row` 表示行拖拽排序，这种方式无法进行文本复制，慎用。值为`row-handler` 表示通过专门的 拖拽手柄 进行 行拖拽排序。值为 `col` 表示列顺序拖拽。`drag-col` 已废弃，请勿使用 */
   dragSort: {
     type: String as PropType<TdPrimaryTableProps['dragSort']>,
     validator(val: TdPrimaryTableProps['dragSort']): boolean {
@@ -52,6 +52,17 @@ export default {
   dragSortOptions: {
     type: Object as PropType<TdPrimaryTableProps['dragSortOptions']>,
   },
+  /** 处于编辑状态的行 */
+  editableRowKeys: {
+    type: Array as PropType<TdPrimaryTableProps['editableRowKeys']>,
+  },
+  /** 用于控制是否显示「展开图标列」，值为 `false` 则不会显示。可以精确到某一行是否显示，还可以自定义展开图标内容。`expandedRow` 存在时，该参数有效。支持全局配置 `GlobalConfigProvider` */
+  expandIcon: {
+    type: [Boolean, Function] as PropType<TdPrimaryTableProps['expandIcon']>,
+    default: true,
+  },
+  /** 是否允许点击行展开 */
+  expandOnRowClick: Boolean,
   /** 展开行内容，泛型 T 指表格数据类型 */
   expandedRow: {
     type: [String, Function] as PropType<TdPrimaryTableProps['expandedRow']>,
@@ -66,13 +77,6 @@ export default {
     type: Array as PropType<TdPrimaryTableProps['defaultExpandedRowKeys']>,
     default: (): TdPrimaryTableProps['defaultExpandedRowKeys'] => [],
   },
-  /** 用于控制是否显示「展开图标列」，值为 false 则不会显示。可以精确到某一行是否显示，还可以自定义展开图标内容，示例：`(h, { index }) => index === 0 ? false : <icon class='custom-icon' />`。expandedRow 存在时，该参数有效。支持全局配置 `GlobalConfigProvider` */
-  expandIcon: {
-    type: [Boolean, Function] as PropType<TdPrimaryTableProps['expandIcon']>,
-    default: true,
-  },
-  /** 是否允许点击行展开 */
-  expandOnRowClick: Boolean,
   /** 自定义过滤图标，支持全局配置 `GlobalConfigProvider` */
   filterIcon: {
     type: Function as PropType<TdPrimaryTableProps['filterIcon']>,
@@ -90,16 +94,23 @@ export default {
   defaultFilterValue: {
     type: Object as PropType<TdPrimaryTableProps['defaultFilterValue']>,
   },
+  /** 隐藏排序文本提示，支持全局配置 `GlobalConfigProvider`，默认全局配置值为 `false` */
+  hideSortTips: Boolean,
+  /** 半选状态行。选中行请更为使用 `selectedRowKeys` 控制 */
+  indeterminateSelectedRowKeys: {
+    type: Array as PropType<TdPrimaryTableProps['indeterminateSelectedRowKeys']>,
+  },
   /** 是否支持多列排序 */
   multipleSort: Boolean,
-  /** 选中的行，控制属性 */
+  /** 选中行，控制属性。半选状态行请更为使用 `indeterminateSelectedRowKeys` 控制 */
   selectedRowKeys: {
     type: Array as PropType<TdPrimaryTableProps['selectedRowKeys']>,
     default: undefined,
   },
-  /** 选中的行，控制属性，非受控属性 */
+  /** 选中行，控制属性。半选状态行请更为使用 `indeterminateSelectedRowKeys` 控制，非受控属性 */
   defaultSelectedRowKeys: {
     type: Array as PropType<TdPrimaryTableProps['defaultSelectedRowKeys']>,
+    default: (): TdPrimaryTableProps['defaultSelectedRowKeys'] => [],
   },
   /** 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序 */
   sort: {
@@ -114,7 +125,7 @@ export default {
   sortIcon: {
     type: Function as PropType<TdPrimaryTableProps['sortIcon']>,
   },
-  /** 已废弃。允许表格行拖拽时排序。请更为使用 `dragSort="row"` */
+  /** 已废弃。允许表格行拖拽时排序。请更为使用 `dragSort=\"row\"` */
   sortOnRowDraggable: Boolean,
   /** 异步加载区域被点击时触发 */
   onAsyncLoadingClick: Function as PropType<TdPrimaryTableProps['onAsyncLoadingClick']>,
@@ -130,14 +141,20 @@ export default {
   onDataChange: Function as PropType<TdPrimaryTableProps['onDataChange']>,
   /** 确认列配置时触发 */
   onDisplayColumnsChange: Function as PropType<TdPrimaryTableProps['onDisplayColumnsChange']>,
-  /** 拖拽排序时触发，`currentData` 表示拖拽排序结束后的新数据，`sort=row` 表示行拖拽事件触发，`sort=col` 表示列拖拽事件触发 */
+  /** 拖拽排序时触发，`data` 表示排序前的数据，`newData` 表示拖拽排序结束后的新数据，`sort=row` 表示行拖拽事件触发，`sort=col` 表示列拖拽事件触发 */
   onDragSort: Function as PropType<TdPrimaryTableProps['onDragSort']>,
   /** 展开行发生变化时触发，泛型 T 指表格数据类型 */
   onExpandChange: Function as PropType<TdPrimaryTableProps['onExpandChange']>,
   /** 过滤参数发生变化时触发，泛型 T 指表格数据类型 */
   onFilterChange: Function as PropType<TdPrimaryTableProps['onFilterChange']>,
+  /** 行编辑时触发 */
+  onRowEdit: Function as PropType<TdPrimaryTableProps['onRowEdit']>,
+  /** 行编辑校验完成后触发，即组件实例方法 `validateRowData` 执行结束后触发。`result` 表示校验结果，`trigger=self` 表示编辑组件内部触发的校验，`trigger='parent'` 表示表格父组件触发的校验 */
+  onRowValidate: Function as PropType<TdPrimaryTableProps['onRowValidate']>,
   /** 选中行发生变化时触发，泛型 T 指表格数据类型。两个参数，第一个参数为选中行 keys，第二个参数为更多参数，具体如下：`type = uncheck` 表示当前行操作为「取消行选中」；`type = check` 表示当前行操作为「行选中」； `currentRowKey` 表示当前操作行的 rowKey 值； `currentRowData` 表示当前操作行的行数据 */
   onSelectChange: Function as PropType<TdPrimaryTableProps['onSelectChange']>,
   /** 排序发生变化时触发。其中 sortBy 表示当前排序的字段，sortType 表示排序的方式，currentDataSource 表示 sorter 排序后的结果，col 表示列配置。sort 值类型为数组时表示多字段排序 */
   onSortChange: Function as PropType<TdPrimaryTableProps['onSortChange']>,
+  /** 可编辑行表格，全部数据校验完成后触发。即组件实例方法 `validateTableData` 执行结束后触发 */
+  onValidate: Function as PropType<TdPrimaryTableProps['onValidate']>,
 };

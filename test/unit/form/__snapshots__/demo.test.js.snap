@@ -75,7 +75,7 @@ exports[`Form Form alignVue demo works fine 1`] = `
     class="t-form"
   >
     <div
-      class="t-form__item t-form-item__name t-form__item-with-extra"
+      class="t-form__item t-form-item__name"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -94,11 +94,12 @@ exports[`Form Form alignVue demo works fine 1`] = `
         <div
           class="t-form__controls-content"
         >
+           
           <div
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -110,14 +111,11 @@ exports[`Form Form alignVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__password t-form__item-with-extra"
+      class="t-form__item t-form-item__password"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -140,7 +138,7 @@ exports[`Form Form alignVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -174,9 +172,6 @@ exports[`Form Form alignVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
   </form>
@@ -189,10 +184,10 @@ exports[`Form Form baseVue demo works fine 1`] = `
     class="t-form"
   >
     <div
-      class="t-form__item t-form-item__name t-form__item-with-extra"
+      class="t-form__item t-form-item__name"
     >
       <div
-        class="t-form__label t-form__label--colon t-form__label--right"
+        class="t-form__label t-form__label--required t-form__label--colon t-form__label--right"
         style="width: 100px;"
       >
         <label
@@ -212,7 +207,7 @@ exports[`Form Form baseVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -224,14 +219,11 @@ exports[`Form Form baseVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__tel t-form__item-with-extra"
+      class="t-form__item t-form-item__tel"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -254,7 +246,7 @@ exports[`Form Form baseVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -266,14 +258,11 @@ exports[`Form Form baseVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__status t-form__item-with-extra"
+      class="t-form__item t-form-item__status"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -303,14 +292,11 @@ exports[`Form Form baseVue demo works fine 1`] = `
             />
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__gender t-form__item-with-extra"
+      class="t-form__item t-form-item__gender"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -371,14 +357,11 @@ exports[`Form Form baseVue demo works fine 1`] = `
             </label>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__course t-form__item-with-extra"
+      class="t-form__item t-form-item__course"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -456,14 +439,11 @@ exports[`Form Form baseVue demo works fine 1`] = `
             </label>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
       style="margin-left: 100px;"
     >
       <div
@@ -494,6 +474,7 @@ exports[`Form Form baseVue demo works fine 1`] = `
            
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            style="margin-right: 10px;"
             type="reset"
           >
             <span
@@ -503,9 +484,6 @@ exports[`Form Form baseVue demo works fine 1`] = `
             </span>
           </button>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
   </form>
@@ -518,7 +496,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
     class="t-form"
   >
     <div
-      class="t-form__item t-form-item__account t-form__item-with-help t-form__item-with-extra"
+      class="t-form__item t-form-item__account t-form__item-with-help"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -541,7 +519,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -562,7 +540,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__description t-form__item-with-help t-form__item-with-extra"
+      class="t-form__item t-form-item__description t-form__item-with-help"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -585,7 +563,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -606,7 +584,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__password t-form__item-with-extra"
+      class="t-form__item t-form-item__password"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -629,7 +607,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -663,14 +641,11 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__email t-form__item-with-extra"
+      class="t-form__item t-form-item__email"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -693,7 +668,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -705,14 +680,11 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__gender t-form__item-with-extra"
+      class="t-form__item t-form-item__gender"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -773,14 +745,11 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             </label>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__course t-form__item-with-extra"
+      class="t-form__item t-form-item__course"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -876,14 +845,11 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             </label>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__college t-form__item-with-extra"
+      class="t-form__item t-form-item__college"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -906,45 +872,50 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             class="demo-select-base t-select__wrap"
           >
             <div
-              class="t-select t-select-polyfill t-size-m t-select__popup-reference"
+              class="t-input__wrap t-select-input--empty t-select"
             >
-              <span
-                class="t-select__placeholder"
+              <div
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                 请选择
-              </span>
-              <span
-                class="t-tag t-tag--default t-size-m t-tag--dark"
-                style="display: none;"
-              >
-                +0
-              </span>
-              <svg
-                class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-                fill="none"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                  stroke="black"
-                  stroke-opacity="0.9"
-                  stroke-width="1.3"
+                <div
+                  class="t-input__prefix"
                 />
-              </svg>
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__date t-form__item-with-extra"
+      class="t-form__item t-form-item__date"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -967,7 +938,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -979,14 +950,11 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__content.url t-form__item-with-extra"
+      class="t-form__item t-form-item__content.url"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -1009,7 +977,7 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -1021,14 +989,11 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
       style="margin-left: 100px;"
     >
       <div
@@ -1094,9 +1059,6 @@ exports[`Form Form clearValidateVue demo works fine 1`] = `
             </span>
           </button>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
   </form>
@@ -1109,7 +1071,7 @@ exports[`Form Form customValidatorVue demo works fine 1`] = `
     class="t-form"
   >
     <div
-      class="t-form__item t-form-item__account t-form__item-with-extra"
+      class="t-form__item t-form-item__account"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -1132,7 +1094,7 @@ exports[`Form Form customValidatorVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -1144,14 +1106,11 @@ exports[`Form Form customValidatorVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__password t-form__item-with-help t-form__item-with-extra"
+      class="t-form__item t-form-item__password t-form__item-with-help"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -1174,7 +1133,7 @@ exports[`Form Form customValidatorVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -1217,7 +1176,7 @@ exports[`Form Form customValidatorVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__rePassword t-form__item-with-help t-form__item-with-extra"
+      class="t-form__item t-form-item__rePassword t-form__item-with-help"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -1240,7 +1199,7 @@ exports[`Form Form customValidatorVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -1283,7 +1242,7 @@ exports[`Form Form customValidatorVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
       style="margin-left: 100px;"
     >
       <div
@@ -1323,9 +1282,6 @@ exports[`Form Form customValidatorVue demo works fine 1`] = `
             </span>
           </button>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
   </form>
@@ -1363,7 +1319,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
     class="t-form"
   >
     <div
-      class="t-form__item t-form-item__name t-form__item-with-extra"
+      class="t-form__item t-form-item__name"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -1386,7 +1342,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -1398,14 +1354,11 @@ exports[`Form Form disabledVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__college t-form__item-with-extra"
+      class="t-form__item t-form-item__college"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -1428,45 +1381,50 @@ exports[`Form Form disabledVue demo works fine 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-select t-select-polyfill t-size-m t-select__popup-reference"
+              class="t-input__wrap t-select-input--empty t-select"
             >
-              <span
-                class="t-select__placeholder"
+              <div
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                 请选择
-              </span>
-              <span
-                class="t-tag t-tag--default t-size-m t-tag--dark"
-                style="display: none;"
-              >
-                +0
-              </span>
-              <svg
-                class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-                fill="none"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                  stroke="black"
-                  stroke-opacity="0.9"
-                  stroke-width="1.3"
+                <div
+                  class="t-input__prefix"
                 />
-              </svg>
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__address1 t-form__item-with-extra"
+      class="t-form__item t-form-item__address1"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -1497,6 +1455,9 @@ exports[`Form Form disabledVue demo works fine 1`] = `
                 请选择
               </span>
               <span
+                class="t-tree-select t-tag-prefix"
+              />
+              <span
                 class="t-tag t-tag--default t-size-m t-tag--dark"
                 style="display: none;"
               >
@@ -1507,7 +1468,7 @@ exports[`Form Form disabledVue demo works fine 1`] = `
                 style="display: none;"
               >
                 <div
-                  class="t-input t-size-m"
+                  class="t-input t-size-m t-is-default"
                 >
                   <input
                     autocomplete=""
@@ -1576,14 +1537,11 @@ exports[`Form Form disabledVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__address2 t-form__item-with-extra"
+      class="t-form__item t-form-item__address2"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -1603,38 +1561,49 @@ exports[`Form Form disabledVue demo works fine 1`] = `
           class="t-form__controls-content"
         >
           <div
-            class="t-cascader t-size-m t-cascader__popup"
+            class="t-input__wrap t-select-input--empty t-cascader"
           >
-            <span
-              class="t-cascader__placeholder"
+            <div
+              class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
             >
-              请选择
-            </span>
-            <svg
-              class="t-fake-arrow t-cascader__icon"
-              fill="none"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                stroke="black"
-                stroke-opacity="0.9"
-                stroke-width="1.3"
+              <div
+                class="t-input__prefix"
               />
-            </svg>
+              <input
+                autocomplete=""
+                class="t-input__inner"
+                placeholder="请选择"
+                readonly="readonly"
+                type="text"
+                unselectable="on"
+              />
+              <span
+                class="t-input__suffix t-input__suffix-icon"
+              >
+                <svg
+                  class="t-fake-arrow t-cascader__icon"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
+                  />
+                </svg>
+              </span>
+            </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__date t-form__item-with-extra"
+      class="t-form__item t-form-item__date"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -1654,55 +1623,51 @@ exports[`Form Form disabledVue demo works fine 1`] = `
           class="t-form__controls-content"
         >
           <div
-            class="t-date-picker t-size-m"
+            class="t-date-picker"
           >
             <div
-              class="t-form-controls t-date-picker__popup-reference"
+              class="t-input__wrap t-select-input--empty"
             >
               <div
-                class="t-input__wrap"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
-                  allowinput="0"
-                  class="t-input t-size-m t-input--suffix"
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择日期"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
                 >
-                  <input
-                    autocomplete=""
-                    class="t-input__inner"
-                    placeholder="请选择日期"
-                    type="text"
-                    unselectable="off"
-                  />
-                  <span
-                    class="t-input__suffix t-input__suffix-icon"
+                  <svg
+                    class="t-icon t-icon-calendar"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
                   >
-                    <svg
-                      class="t-icon t-icon-calendar"
-                      fill="none"
-                      height="1em"
-                      viewBox="0 0 16 16"
-                      width="1em"
-                    >
-                      <path
-                        d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
-                        fill="currentColor"
-                        fill-opacity="0.9"
-                      />
-                    </svg>
-                  </span>
-                </div>
+                    <path
+                      d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
               </div>
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__personalProfile t-form__item-with-extra"
+      class="t-form__item t-form-item__personalProfile"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -1733,14 +1698,11 @@ exports[`Form Form disabledVue demo works fine 1`] = `
             />
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__message t-form__item-with-extra"
+      class="t-form__item t-form-item__message"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -1772,14 +1734,11 @@ exports[`Form Form disabledVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__gender t-form__item-with-extra"
+      class="t-form__item t-form-item__gender"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -1840,14 +1799,11 @@ exports[`Form Form disabledVue demo works fine 1`] = `
             </label>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__course t-form__item-with-extra"
+      class="t-form__item t-form-item__course"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -1925,14 +1881,11 @@ exports[`Form Form disabledVue demo works fine 1`] = `
             </label>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__gradePoint t-form__item-with-extra"
+      class="t-form__item t-form-item__gradePoint"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -1952,34 +1905,69 @@ exports[`Form Form disabledVue demo works fine 1`] = `
           class="t-form__controls-content"
         >
           <div
-            class="t-input-number t-size-m t-input-number--normal"
+            class="t-input-number t-size-m t-is-disabled t-input-number--row"
           >
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled t-button--shape-square t-input-number__decrease t-is-disabled"
+              disabled="disabled"
+              type="button"
+            >
+              <svg
+                class="t-icon t-icon-remove t-size-m"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M3.5 7.35h9v1.3h-9v-1.3z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </button>
             <div
               class="t-input__wrap"
             >
               <div
-                class="t-input t-size-m"
-                ref="refInputElem"
+                class="t-input t-size-m t-is-disabled t-is-default t-align-center"
               >
                 <input
                   autocomplete="off"
                   class="t-input__inner"
+                  disabled="disabled"
                   placeholder="数字"
                   type="text"
                   unselectable="off"
                 />
               </div>
             </div>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled t-button--shape-square t-input-number__increase t-is-disabled"
+              disabled="disabled"
+              type="button"
+            >
+              <svg
+                class="t-icon t-icon-add t-size-m"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </button>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__avatar t-form__item-with-extra"
+      class="t-form__item t-form-item__avatar"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -2087,44 +2075,53 @@ exports[`Form Form disabledVue demo works fine 1`] = `
                   class="t-dialog__mask"
                 />
                 <div
-                  class="t-dialog t-dialog--default t-dialog--top t-dialog__modal-default t-dialog--fixed"
-                  style="width: auto; top: 10%; transform: translate(-50%, 0); transform-origin: 25% 25%; max-height: calc(100% - 10%);"
+                  class="t-dialog__wrap"
                 >
                   <div
-                    class="t-dialog__header"
-                  />
-                  <span
-                    class="t-dialog__close"
-                  >
-                    <svg
-                      class="t-icon t-icon-close"
-                      fill="none"
-                      height="1em"
-                      viewBox="0 0 16 16"
-                      width="1em"
-                    >
-                      <path
-                        d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                        fill="currentColor"
-                        fill-opacity="0.9"
-                      />
-                    </svg>
-                  </span>
-                  <div
-                    class="t-dialog__body"
+                    class="t-dialog__position t-dialog--top"
+                    style="padding-top: 10%;"
                   >
                     <div
-                      class="t__dialog-body-img-box"
+                      class="t-dialog t-dialog--default t-dialog__modal-default"
+                      style="width: auto;"
                     >
-                      <img
-                        alt=""
-                        src=""
+                      <div
+                        class="t-dialog__header"
+                      />
+                      <span
+                        class="t-dialog__close"
+                      >
+                        <svg
+                          class="t-icon t-icon-close"
+                          fill="none"
+                          height="1em"
+                          viewBox="0 0 16 16"
+                          width="1em"
+                        >
+                          <path
+                            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                            fill="currentColor"
+                            fill-opacity="0.9"
+                          />
+                        </svg>
+                      </span>
+                      <div
+                        class="t-dialog__body"
+                      >
+                        <div
+                          class="t__dialog-body-img-box"
+                        >
+                          <img
+                            alt=""
+                            src=""
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="t-dialog__footer"
                       />
                     </div>
                   </div>
-                  <div
-                    class="t-dialog__footer"
-                  />
                 </div>
               </div>
             </transition-stub>
@@ -2135,14 +2132,11 @@ exports[`Form Form disabledVue demo works fine 1`] = `
             </small>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
       style="margin-left: 100px;"
     >
       <div
@@ -2182,9 +2176,6 @@ exports[`Form Form disabledVue demo works fine 1`] = `
             </span>
           </button>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
   </form>
@@ -2256,7 +2247,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
     class="t-form"
   >
     <div
-      class="t-form__item t-form-item__account t-form__item-with-help t-form__item-with-extra"
+      class="t-form__item t-form-item__account t-form__item-with-help"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -2279,7 +2270,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -2300,7 +2291,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__description t-form__item-with-help t-form__item-with-extra"
+      class="t-form__item t-form-item__description t-form__item-with-help"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -2323,7 +2314,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -2344,7 +2335,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__password t-form__item-with-extra"
+      class="t-form__item t-form-item__password"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -2367,7 +2358,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -2401,14 +2392,11 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__email t-form__item-with-extra"
+      class="t-form__item t-form-item__email"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -2431,7 +2419,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -2443,14 +2431,11 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__gender t-form__item-with-extra"
+      class="t-form__item t-form-item__gender"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -2511,14 +2496,11 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             </label>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__course t-form__item-with-extra"
+      class="t-form__item t-form-item__course"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -2614,14 +2596,11 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             </label>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__college t-form__item-with-extra"
+      class="t-form__item t-form-item__college"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -2644,45 +2623,50 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             class="demo-select-base t-select__wrap"
           >
             <div
-              class="t-select t-select-polyfill t-size-m t-select__popup-reference"
+              class="t-input__wrap t-select-input--empty t-select"
             >
-              <span
-                class="t-select__placeholder"
+              <div
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                 请选择
-              </span>
-              <span
-                class="t-tag t-tag--default t-size-m t-tag--dark"
-                style="display: none;"
-              >
-                +0
-              </span>
-              <svg
-                class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-                fill="none"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                  stroke="black"
-                  stroke-opacity="0.9"
-                  stroke-width="1.3"
+                <div
+                  class="t-input__prefix"
                 />
-              </svg>
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__date t-form__item-with-extra"
+      class="t-form__item t-form-item__date"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -2705,7 +2689,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -2717,14 +2701,11 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__content.url t-form__item-with-extra"
+      class="t-form__item t-form-item__content.url"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -2747,7 +2728,7 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -2759,14 +2740,11 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
       style="margin-left: 100px;"
     >
       <div
@@ -2818,9 +2796,6 @@ exports[`Form Form errorMessageVue demo works fine 1`] = `
             </span>
           </button>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
   </form>
@@ -2883,7 +2858,7 @@ exports[`Form Form layoutVue demo works fine 1`] = `
     class="t-form t-form-inline"
   >
     <div
-      class="t-form__item t-form-item__name t-form__item-with-extra"
+      class="t-form__item t-form-item__name"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -2905,7 +2880,7 @@ exports[`Form Form layoutVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -2917,14 +2892,11 @@ exports[`Form Form layoutVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__password t-form__item-with-extra"
+      class="t-form__item t-form-item__password"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -2946,7 +2918,7 @@ exports[`Form Form layoutVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -2980,9 +2952,6 @@ exports[`Form Form layoutVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
   </form>
@@ -2997,7 +2966,7 @@ exports[`Form Form loginVue demo works fine 1`] = `
     class="t-form"
   >
     <div
-      class="t-form__item t-form-item__account t-form__item-with-extra"
+      class="t-form__item t-form-item__account"
     >
       <div
         class="t-form__controls"
@@ -3009,7 +2978,7 @@ exports[`Form Form loginVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--prefix"
+              class="t-input t-size-m t-is-default t-input--prefix"
             >
               <span
                 class="t-input__prefix t-input__prefix-icon"
@@ -3038,14 +3007,11 @@ exports[`Form Form loginVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__password t-form__item-with-extra"
+      class="t-form__item t-form-item__password"
     >
       <div
         class="t-form__controls"
@@ -3057,7 +3023,7 @@ exports[`Form Form loginVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--prefix t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
             >
               <span
                 class="t-input__prefix t-input__prefix-icon"
@@ -3113,14 +3079,11 @@ exports[`Form Form loginVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
       style="margin-left: 100px;"
     >
       <div
@@ -3140,9 +3103,6 @@ exports[`Form Form loginVue demo works fine 1`] = `
             </span>
           </button>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
   </form>
@@ -3208,7 +3168,7 @@ exports[`Form Form resetVue demo works fine 1`] = `
     class="t-form"
   >
     <div
-      class="t-form__item t-form-item__name t-form__item-with-extra"
+      class="t-form__item t-form-item__name"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -3231,7 +3191,7 @@ exports[`Form Form resetVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -3243,14 +3203,11 @@ exports[`Form Form resetVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__tel t-form__item-with-extra"
+      class="t-form__item t-form-item__tel"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -3273,7 +3230,7 @@ exports[`Form Form resetVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -3285,14 +3242,11 @@ exports[`Form Form resetVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__course t-form__item-with-extra"
+      class="t-form__item t-form-item__course"
     >
       <div
         class="t-form__label t-form__label--colon t-form__label--right"
@@ -3370,14 +3324,11 @@ exports[`Form Form resetVue demo works fine 1`] = `
             </label>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
       style="margin-left: 100px;"
     >
       <div
@@ -3408,6 +3359,7 @@ exports[`Form Form resetVue demo works fine 1`] = `
            
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            style="margin-right: 10px;"
             type="reset"
           >
             <span
@@ -3416,10 +3368,18 @@ exports[`Form Form resetVue demo works fine 1`] = `
               重置
             </span>
           </button>
+           
+          <button
+            class="t-button t-size-m t-button--variant-base t-button--theme-default"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              只重置手机号码
+            </span>
+          </button>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
   </form>
@@ -3481,9 +3441,10 @@ exports[`Form Form sizeVue demo works fine 1`] = `
    
   <form
     class="t-form"
+    size="medium"
   >
     <div
-      class="t-form__item t-form-item__name t-form__item-with-extra"
+      class="t-form__item t-form-item__name"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -3506,7 +3467,7 @@ exports[`Form Form sizeVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -3518,14 +3479,11 @@ exports[`Form Form sizeVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__tel t-form__item-with-extra"
+      class="t-form__item t-form-item__tel"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -3548,7 +3506,7 @@ exports[`Form Form sizeVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -3560,14 +3518,11 @@ exports[`Form Form sizeVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__status t-form__item-with-extra"
+      class="t-form__item t-form-item__status"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -3597,14 +3552,11 @@ exports[`Form Form sizeVue demo works fine 1`] = `
             />
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__gender t-form__item-with-extra"
+      class="t-form__item t-form-item__gender"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -3665,14 +3617,11 @@ exports[`Form Form sizeVue demo works fine 1`] = `
             </label>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__course t-form__item-with-extra"
+      class="t-form__item t-form-item__course"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -3750,14 +3699,11 @@ exports[`Form Form sizeVue demo works fine 1`] = `
             </label>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
       style="margin-left: 100px;"
     >
       <div
@@ -3797,9 +3743,6 @@ exports[`Form Form sizeVue demo works fine 1`] = `
             </span>
           </button>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
   </form>
@@ -3813,7 +3756,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
     style="max-width: 100%;"
   >
     <div
-      class="t-form__item t-form-item__school t-form__item-with-extra"
+      class="t-form__item t-form-item__school"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -3891,9 +3834,6 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
             </label>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
@@ -3967,7 +3907,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
             style="padding: 24px 24px 24px 0px;"
           >
             <div
-              class="t-form__item t-form-item__students[0].name t-form__item-with-extra"
+              class="t-form__item t-form-item__students[0].name"
             >
               <div
                 class="t-form__label t-form__label--required t-form__label--right"
@@ -3990,7 +3930,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                     class="t-input__wrap"
                   >
                     <div
-                      class="t-input t-size-m"
+                      class="t-input t-size-m t-is-default"
                     >
                       <input
                         autocomplete=""
@@ -4002,14 +3942,11 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                     </div>
                   </div>
                 </div>
-                <div
-                  class="t-input__help"
-                />
               </div>
             </div>
              
             <div
-              class="t-form__item t-form-item__students[0].courseType t-form__item-with-extra"
+              class="t-form__item t-form-item__students[0].courseType"
             >
               <div
                 class="t-form__label t-form__label--required t-form__label--right"
@@ -4070,14 +4007,11 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                     </label>
                   </div>
                 </div>
-                <div
-                  class="t-input__help"
-                />
               </div>
             </div>
              
             <div
-              class="t-form__item t-form-item__students[0].course t-form__item-with-extra"
+              class="t-form__item t-form-item__students[0].course"
             >
               <div
                 class="t-form__label t-form__label--required t-form__label--right"
@@ -4228,14 +4162,11 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                     </label>
                   </div>
                 </div>
-                <div
-                  class="t-input__help"
-                />
               </div>
             </div>
              
             <div
-              class="t-form__item t-form-item__ t-form__item-with-extra"
+              class="t-form__item t-form-item__"
               style="margin-left: 100px;"
             >
               <div
@@ -4275,9 +4206,6 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                     </span>
                   </button>
                 </div>
-                <div
-                  class="t-input__help"
-                />
               </div>
             </div>
           </div>
@@ -4290,7 +4218,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
             style="padding: 24px 24px 24px 0px;"
           >
             <div
-              class="t-form__item t-form-item__students[1].name t-form__item-with-extra"
+              class="t-form__item t-form-item__students[1].name"
             >
               <div
                 class="t-form__label t-form__label--required t-form__label--right"
@@ -4313,7 +4241,7 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                     class="t-input__wrap"
                   >
                     <div
-                      class="t-input t-size-m"
+                      class="t-input t-size-m t-is-default"
                     >
                       <input
                         autocomplete=""
@@ -4325,14 +4253,11 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                     </div>
                   </div>
                 </div>
-                <div
-                  class="t-input__help"
-                />
               </div>
             </div>
              
             <div
-              class="t-form__item t-form-item__students[1].courseType t-form__item-with-extra"
+              class="t-form__item t-form-item__students[1].courseType"
             >
               <div
                 class="t-form__label t-form__label--required t-form__label--right"
@@ -4393,14 +4318,11 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                     </label>
                   </div>
                 </div>
-                <div
-                  class="t-input__help"
-                />
               </div>
             </div>
              
             <div
-              class="t-form__item t-form-item__students[1].course t-form__item-with-extra"
+              class="t-form__item t-form-item__students[1].course"
             >
               <div
                 class="t-form__label t-form__label--required t-form__label--right"
@@ -4550,14 +4472,11 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                     </label>
                   </div>
                 </div>
-                <div
-                  class="t-input__help"
-                />
               </div>
             </div>
              
             <div
-              class="t-form__item t-form-item__ t-form__item-with-extra"
+              class="t-form__item t-form-item__"
               style="margin-left: 100px;"
             >
               <div
@@ -4597,9 +4516,6 @@ exports[`Form Form validateComplicatedDataVue demo works fine 1`] = `
                     </span>
                   </button>
                 </div>
-                <div
-                  class="t-input__help"
-                />
               </div>
             </div>
           </div>
@@ -4616,7 +4532,7 @@ exports[`Form Form validateMessageVue demo works fine 1`] = `
     class="t-form"
   >
     <div
-      class="t-form__item t-form-item__account t-form__item-with-help t-form__item-with-extra"
+      class="t-form__item t-form-item__account t-form__item-with-help"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -4639,7 +4555,7 @@ exports[`Form Form validateMessageVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -4660,7 +4576,7 @@ exports[`Form Form validateMessageVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__description t-form__item-with-help t-form__item-with-extra"
+      class="t-form__item t-form-item__description t-form__item-with-help"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -4683,7 +4599,7 @@ exports[`Form Form validateMessageVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -4704,7 +4620,7 @@ exports[`Form Form validateMessageVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__password t-form__item-with-extra"
+      class="t-form__item t-form-item__password"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -4727,7 +4643,7 @@ exports[`Form Form validateMessageVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -4761,14 +4677,11 @@ exports[`Form Form validateMessageVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
       style="margin-left: 100px;"
     >
       <div
@@ -4820,9 +4733,6 @@ exports[`Form Form validateMessageVue demo works fine 1`] = `
             </span>
           </button>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
   </form>
@@ -4888,7 +4798,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
     class="t-form"
   >
     <div
-      class="t-form__item t-form-item__fail t-form__item-with-extra"
+      class="t-form__item t-form-item__fail"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -4911,7 +4821,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -4923,14 +4833,11 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__warning t-form__item-with-extra"
+      class="t-form__item t-form-item__warning"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -4953,7 +4860,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -4965,14 +4872,11 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__success t-form__item-with-extra"
+      class="t-form__item t-form-item__success"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -4995,7 +4899,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -5007,14 +4911,11 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__success t-form__item-with-extra"
+      class="t-form__item t-form-item__success"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -5037,7 +4938,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -5049,14 +4950,11 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__failB t-form__item-with-extra"
+      class="t-form__item t-form-item__failB"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -5079,7 +4977,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -5091,14 +4989,11 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__warningB t-form__item-with-extra"
+      class="t-form__item t-form-item__warningB"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -5121,7 +5016,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -5133,14 +5028,11 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__loading t-form__item-with-extra"
+      class="t-form__item t-form-item__loading"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -5163,7 +5055,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -5208,14 +5100,11 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             </div>
           </span>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__help t-form__item-with-extra"
+      class="t-form__item t-form-item__help"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -5238,7 +5127,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -5262,14 +5151,11 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             </svg>
           </span>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__add0 t-form__item-with-extra"
+      class="t-form__item t-form-item__add0"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -5292,7 +5178,7 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -5327,14 +5213,11 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             </button>
           </span>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
       style="margin-left: 80px;"
     >
       <div
@@ -5374,9 +5257,6 @@ exports[`Form Form validatorStatusVue demo works fine 1`] = `
             </span>
           </button>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
   </form>
@@ -5389,7 +5269,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
     class="t-form"
   >
     <div
-      class="t-form__item t-form-item__account t-form__item-with-help t-form__item-with-extra"
+      class="t-form__item t-form-item__account t-form__item-with-help"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -5412,7 +5292,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -5433,7 +5313,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__age t-form__item-with-extra"
+      class="t-form__item t-form-item__age"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -5477,8 +5357,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
               class="t-input__wrap"
             >
               <div
-                class="t-input t-size-m t-align-center"
-                ref="refInputElem"
+                class="t-input t-size-m t-is-default t-align-center"
               >
                 <input
                   autocomplete="off"
@@ -5509,14 +5388,11 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             </button>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__region t-form__item-with-extra"
+      class="t-form__item t-form-item__region"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -5536,38 +5412,48 @@ exports[`Form Form validatorVue demo works fine 1`] = `
           class="t-form__controls-content"
         >
           <div
-            class="t-cascader t-size-m t-cascader__popup"
+            class="t-input__wrap t-select-input--empty t-cascader"
           >
-            <span
-              class="t-cascader__placeholder"
+            <div
+              class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
             >
-              请选择籍贯
-            </span>
-            <svg
-              class="t-fake-arrow t-cascader__icon"
-              fill="none"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                stroke="black"
-                stroke-opacity="0.9"
-                stroke-width="1.3"
+              <div
+                class="t-input__prefix"
               />
-            </svg>
+              <input
+                autocomplete=""
+                class="t-input__inner"
+                placeholder="请选择籍贯"
+                type="text"
+                unselectable="off"
+              />
+              <span
+                class="t-input__suffix t-input__suffix-icon"
+              >
+                <svg
+                  class="t-fake-arrow t-cascader__icon"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
+                  />
+                </svg>
+              </span>
+            </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__password t-form__item-with-extra"
+      class="t-form__item t-form-item__password"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -5590,7 +5476,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-input--suffix"
+              class="t-input t-size-m t-is-default t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -5624,14 +5510,11 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__email t-form__item-with-extra"
+      class="t-form__item t-form-item__email"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -5654,7 +5537,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -5666,14 +5549,11 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__gender t-form__item-with-extra"
+      class="t-form__item t-form-item__gender"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -5734,14 +5614,11 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             </label>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__course t-form__item-with-extra"
+      class="t-form__item t-form-item__course"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -5837,14 +5714,11 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             </label>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__college t-form__item-with-extra"
+      class="t-form__item t-form-item__college"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -5867,56 +5741,49 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             class="demo-select-base t-select__wrap"
           >
             <div
-              class="t-select t-select-polyfill t-size-m t-select__popup-reference"
+              class="t-input__wrap t-select-input--empty t-select"
             >
-              <span
-                class="t-tag t-tag--default t-size-m t-tag--dark"
-                style="display: none;"
-              >
-                +0
-              </span>
               <div
-                class="t-input__wrap t-select__input"
+                class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
               >
                 <div
-                  class="t-input t-size-m t-is-readonly"
-                >
-                  <input
-                    autocomplete=""
-                    class="t-input__inner"
-                    placeholder="请输入"
-                    readonly="readonly"
-                    type="text"
-                    unselectable="on"
-                  />
-                </div>
-              </div>
-              <svg
-                class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-                fill="none"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                  stroke="black"
-                  stroke-opacity="0.9"
-                  stroke-width="1.3"
+                  class="t-input__prefix"
                 />
-              </svg>
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  type="text"
+                  unselectable="off"
+                />
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__date t-form__item-with-extra"
+      class="t-form__item t-form-item__date"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -5936,55 +5803,51 @@ exports[`Form Form validatorVue demo works fine 1`] = `
           class="t-form__controls-content"
         >
           <div
-            class="t-date-picker t-size-m t-date-picker--month-picker"
+            class="t-date-picker"
           >
             <div
-              class="t-form-controls t-date-picker__popup-reference"
+              class="t-input__wrap t-select-input--empty"
             >
               <div
-                class="t-input__wrap"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
-                  allowinput="0"
-                  class="t-input t-size-m t-input--suffix"
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择日期"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
                 >
-                  <input
-                    autocomplete=""
-                    class="t-input__inner"
-                    placeholder="请选择月份"
-                    type="text"
-                    unselectable="off"
-                  />
-                  <span
-                    class="t-input__suffix t-input__suffix-icon"
+                  <svg
+                    class="t-icon t-icon-calendar"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
                   >
-                    <svg
-                      class="t-icon t-icon-calendar"
-                      fill="none"
-                      height="1em"
-                      viewBox="0 0 16 16"
-                      width="1em"
-                    >
-                      <path
-                        d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
-                        fill="currentColor"
-                        fill-opacity="0.9"
-                      />
-                    </svg>
-                  </span>
-                </div>
+                    <path
+                      d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
               </div>
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__content.url t-form__item-with-extra"
+      class="t-form__item t-form-item__content.url"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -6007,7 +5870,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m"
+              class="t-input t-size-m t-is-default"
             >
               <input
                 autocomplete=""
@@ -6019,14 +5882,11 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__description t-form__item-with-help t-form__item-with-extra"
+      class="t-form__item t-form-item__description t-form__item-with-help"
     >
       <div
         class="t-form__label t-form__label--right"
@@ -6063,7 +5923,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
     </div>
      
     <div
-      class="t-form__item t-form-item__hobby t-form__item-with-extra"
+      class="t-form__item t-form-item__hobby"
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -6095,6 +5955,9 @@ exports[`Form Form validatorVue demo works fine 1`] = `
                 请选择你的兴趣爱好
               </span>
               <span
+                class="t-tree-select t-tag-prefix"
+              />
+              <span
                 class="t-tag t-tag--default t-size-m t-tag--dark"
                 style="display: none;"
               >
@@ -6104,7 +5967,7 @@ exports[`Form Form validatorVue demo works fine 1`] = `
                 class="t-input__wrap t-select__input"
               >
                 <div
-                  class="t-input t-size-m"
+                  class="t-input t-size-m t-is-default"
                 >
                   <input
                     autocomplete=""
@@ -6173,14 +6036,11 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
      
     <div
-      class="t-form__item t-form-item__ t-form__item-with-extra"
+      class="t-form__item t-form-item__"
       style="margin-left: 100px;"
     >
       <div
@@ -6232,9 +6092,6 @@ exports[`Form Form validatorVue demo works fine 1`] = `
             </span>
           </button>
         </div>
-        <div
-          class="t-input__help"
-        />
       </div>
     </div>
   </form>

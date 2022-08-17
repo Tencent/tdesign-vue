@@ -1,11 +1,11 @@
-import Vue from 'vue';
-import { prefix } from '../config';
 import { ClassName } from '../common';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-layout`;
+const classPrefixMixins = getClassPrefixMixins('layout');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TLayout',
 
   data() {
@@ -29,9 +29,9 @@ export default Vue.extend({
   computed: {
     classes(): ClassName {
       return [
-        name,
+        this.componentName,
         {
-          [`${name}--with-sider`]: this.hasSider,
+          [`${this.componentName}--with-sider`]: this.hasSider,
         },
       ];
     },

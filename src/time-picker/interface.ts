@@ -16,14 +16,14 @@ export enum KeyboardDirection {
   left = 37,
   up = 38,
   right = 39,
-  down = 40
+  down = 40,
 }
 
 export enum EPickerCols {
   hour = 'hour',
   minute = 'minute',
   second = 'second',
-  meridiem = 'meridiem'
+  meridiem = 'meridiem',
 }
 
 export interface InputTime {
@@ -45,7 +45,6 @@ export interface TimePickerInstance extends Vue {
   setInputValue: TimePickerSetInputValue;
   dayjs2InputTime: TimePickerDayjs2InputTime;
   formatString: string;
-  formatedValue: string;
 }
 
 export interface PickerData {
@@ -87,7 +86,7 @@ export interface TimePickerPanelInstance extends Vue {
   panel: Instance;
   isFooterDisplay: boolean;
   localeMeridiems: Array<string>;
-  showNowTime: boolean
+  showNowTime: boolean;
 }
 
 export interface TimePickerPanelColInstance extends Vue {

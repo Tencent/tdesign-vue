@@ -175,7 +175,7 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
    * 异步加载后触发，泛型 `T` 表示树节点 TS 类型
    */
   onLoad?: (context: { node: TreeNodeModel<T> }) => void;
-};
+}
 
 /** 组件实例方法 */
 export interface TreeInstanceFunctions<T extends TreeOptionData = TreeOptionData> {
@@ -285,7 +285,7 @@ export interface TreeNodeState {
    * @default false
    */
   visible?: boolean;
-};
+}
 
 export interface TreeNodeModel<T extends TreeOptionData = TreeOptionData> extends TreeNodeState {
   /**
@@ -376,8 +376,12 @@ export interface TreeNodeModel<T extends TreeOptionData = TreeOptionData> extend
    * 设置当前节点数据，数据变化可自动刷新页面，泛型 `T` 表示树节点 TS 类型
    */
   setData: (data: T) => void;
-};
+}
 
-export interface TreeKeysType { value?: string; label?: string; children?: string };
+export interface TreeKeysType {
+  value?: string;
+  label?: string;
+  children?: string;
+}
 
 export type TreeNodeValue = string | number;

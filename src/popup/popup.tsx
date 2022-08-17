@@ -1,7 +1,5 @@
-import Vue, { VNodeDirective } from 'vue';
+import { VNodeDirective } from 'vue';
 import { createPopper, Placement } from '@popperjs/core';
-import { prefix } from '../config';
-import CLASSNAMES from '../utils/classnames';
 import { on, off, once } from '../utils/dom';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import { getIEVersion } from '../utils/helper';
@@ -9,27 +7,48 @@ import setStyle from '../_common/js/utils/set-style';
 import props from './props';
 import { PopupVisibleChangeContext, TdPopupProps } from './type';
 import Container from './container';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-popup`;
+const classPrefixMixins = getClassPrefixMixins('popup');
+
 const showTimeout = 250;
 const hideTimeout = 150;
 const triggers = ['click', 'hover', 'focus', 'context-menu'] as const;
+const injectionKey = '__T_POPUP';
 
 function getPopperPlacement(placement: TdPopupProps['placement']) {
   return placement.replace(/-(left|top)$/, '-start').replace(/-(right|bottom)$/, '-end') as Placement;
 }
 
-export default Vue.extend({
+function attachListeners(elm: Element) {
+  const offs: Array<() => void> = [];
+  return {
+    add<K extends keyof HTMLElementEventMap>(type: K, listener: (ev: HTMLElementEventMap[K]) => void) {
+      on(elm, type, listener);
+      offs.push(() => {
+        off(elm, type, listener);
+      });
+    },
+    clean() {
+      offs.forEach((handler) => handler?.());
+      offs.length = 0;
+    },
+  };
+}
+
+export default mixins(classPrefixMixins).extend({
   name: 'TPopup',
 
   provide(this: any) {
     return {
-      popup: this,
+      [injectionKey]: this,
     };
   },
 
   inject: {
     popup: {
+      from: injectionKey,
       default: undefined,
     },
   },
@@ -39,11 +58,13 @@ export default Vue.extend({
     expandAnimation: {
       type: Boolean,
     },
+    updateScrollTop: {
+      type: Function,
+    },
   },
 
   data() {
     return {
-      name,
       /** popperjs instance */
       popper: null as ReturnType<typeof createPopper>,
       /** timeout id */
@@ -54,22 +75,17 @@ export default Vue.extend({
       mouseInRange: false,
       /** mark popup as clicked when mousedown, reset after mouseup */
       contentClicked: false,
-      /**
-       * mark trigger element as clicked when click,
-       * reset after click event bubbles to document */
-      triggerClicked: false,
     };
   },
   computed: {
     overlayClasses(): any {
       return [
-        `${name}__content`,
+        `${this.componentName}__content`,
         {
-          [`${name}__content--text`]: this.content === 'string',
-          [`${name}__content--arrow`]: this.showArrow,
-          [CLASSNAMES.STATUS.disabled]: this.disabled,
+          [`${this.componentName}__content--text`]: this.content === 'string',
+          [`${this.componentName}__content--arrow`]: this.showArrow,
+          [this.commonStatusClassName.disabled]: this.disabled,
         },
-        this.overlayClassName,
       ];
     },
     hasTrigger(): Record<typeof triggers[number], boolean> {
@@ -88,7 +104,7 @@ export default Vue.extend({
       if (visible) {
         this.preventClosing(true);
         if (!this.hasDocumentEvent) {
-          on(document, 'click', this.handleDocumentClick);
+          on(document, 'click', this.handleDocumentClick, true);
           this.hasDocumentEvent = true;
         }
         // focus trigger esc 隐藏浮层
@@ -99,19 +115,25 @@ export default Vue.extend({
             }
           });
         }
+        this.$nextTick(() => {
+          this.popupMounted();
+        });
       } else {
         this.preventClosing(false);
         // destruction is delayed until after animation ends
-        off(document, 'click', this.handleDocumentClick);
+        off(document, 'click', this.handleDocumentClick, true);
         this.hasDocumentEvent = false;
         this.mouseInRange = false;
       }
     },
-    overlayStyle() {
-      if (this.popper) {
-        this.popper.update();
-        this.updateOverlayStyle();
-      }
+    overlayInnerStyle() {
+      this.updateOverlayInnerStyle();
+      this.updatePopper();
+    },
+    placement() {
+      this.popper?.destroy();
+      this.popper = null;
+      this.updatePopper();
     },
     // sync lock state recursively
     contentClicked(clicked) {
@@ -121,52 +143,54 @@ export default Vue.extend({
     },
   },
   mounted() {
-    const { hasTrigger, $el: triggerEl } = this;
-
-    if (hasTrigger.hover) {
-      on(triggerEl, 'mouseenter', () => this.handleOpen({ trigger: 'trigger-element-hover' }));
-      on(triggerEl, 'mouseleave', () => this.handleClose({ trigger: 'trigger-element-hover' }));
-    } else if (hasTrigger.focus) {
-      on(triggerEl, 'focusin', () => this.handleOpen({ trigger: 'trigger-element-focus' }));
-      on(triggerEl, 'focusout', () => this.handleClose({ trigger: 'trigger-element-blur' }));
-    } else if (hasTrigger.click) {
-      on(triggerEl, 'click', (e: MouseEvent) => {
-        // override nested popups with trigger hover due to higher priority
-        this.visibleState = 0;
-        this.handleToggle({ e, trigger: 'trigger-element-click' });
-        // ie9-10 trigger propagation
-        if (getIEVersion() < 11) {
-          this.handleDocumentClick();
-        }
-      });
-    } else if (hasTrigger['context-menu']) {
-      on(triggerEl, 'contextmenu', (e: MouseEvent) => {
-        e.preventDefault();
-        // MouseEvent.button
-        // 2: Secondary button pressed, usually the right button
-        e.button === 2 && this.handleToggle({ trigger: 'context-menu' });
-      });
-    }
-    if (!hasTrigger['context-menu']) {
-      on(triggerEl, 'click', () => {
-        this.triggerClicked = true;
-      });
-    }
+    const trigger = attachListeners(this.$el);
+    const updateTrigger = () => {
+      trigger.clean();
+      const { hasTrigger } = this;
+      if (hasTrigger.hover) {
+        trigger.add('mouseenter', () => this.handleOpen({ trigger: 'trigger-element-hover' }));
+        trigger.add('mouseleave', () => this.handleClose({ trigger: 'trigger-element-hover' }));
+      } else if (hasTrigger.focus) {
+        trigger.add('focusin', () => this.handleOpen({ trigger: 'trigger-element-focus' }));
+        trigger.add('focusout', () => this.handleClose({ trigger: 'trigger-element-blur' }));
+      } else if (hasTrigger.click) {
+        trigger.add('click', (e: MouseEvent) => {
+          this.handleToggle({ e, trigger: 'trigger-element-click' });
+          // ie9-10 trigger propagation
+          if (getIEVersion() < 11) {
+            this.handleDocumentClick();
+          }
+        });
+      } else if (hasTrigger['context-menu']) {
+        trigger.add('contextmenu', (e: MouseEvent) => {
+          e.preventDefault();
+          // MouseEvent.button
+          // 2: Secondary button pressed, usually the right button
+          e.button === 2 && this.handleToggle({ trigger: 'context-menu' });
+        });
+      }
+    };
+    updateTrigger();
+    this.$watch('trigger', updateTrigger);
   },
   updated() {
     (this.$refs.container as any)?.updateContent();
   },
-  destroyed() {
+  beforeDestroy() {
+    (this as any).popup?.preventClosing(false);
     this.destroyPopper();
+    off(document, 'click', this.handleDocumentClick, true);
   },
   methods: {
-    createPopper() {
+    updatePopper() {
       const { $el: triggerEl } = this;
       const popperEl = this.$refs.popper as HTMLElement;
 
-      if (!popperEl) return;
-
-      this.popper?.destroy();
+      if (!popperEl || !this.visible) return;
+      if (this.popper) {
+        this.popper.update();
+        return;
+      }
 
       this.popper = createPopper(triggerEl, popperEl, {
         modifiers:
@@ -183,31 +207,44 @@ export default Vue.extend({
                 },
               },
             ],
-        placement: getPopperPlacement(this.placement),
+        placement: getPopperPlacement(this.placement as TdPopupProps['placement']),
         onFirstUpdate: () => {
           this.$nextTick(this.updatePopper);
         },
       });
     },
 
-    updatePopper() {
-      if (this.popper) {
-        this.popper.update();
-        return;
+    // popup弹出第一次初始化暴露事件
+    popupMounted() {
+      // 用于select定位事件
+      const overlayEl = this.$refs?.overlay as HTMLElement;
+      if (overlayEl) {
+        this.updateScrollTop?.(overlayEl);
       }
-      this.createPopper();
     },
-
-    updateOverlayStyle() {
+    getOverlayStyle() {
       const { overlayStyle } = this;
       const triggerEl = this.$el as HTMLElement;
       const overlayEl = this.$refs?.overlay as HTMLElement;
 
       if (!triggerEl || !overlayEl) return;
       if (typeof overlayStyle === 'function') {
-        setStyle(overlayEl, overlayStyle(triggerEl, overlayEl));
-      } else if (typeof overlayStyle === 'object') {
-        setStyle(overlayEl, overlayStyle);
+        return overlayStyle(triggerEl, overlayEl);
+      }
+      if (typeof overlayStyle === 'object') {
+        return overlayStyle;
+      }
+    },
+    updateOverlayInnerStyle() {
+      const { overlayInnerStyle } = this;
+      const triggerEl = this.$el as HTMLElement;
+      const overlayEl = this.$refs?.overlay as HTMLElement;
+
+      if (!triggerEl || !overlayEl) return;
+      if (typeof overlayInnerStyle === 'function') {
+        setStyle(overlayEl, overlayInnerStyle(triggerEl, overlayEl));
+      } else if (typeof overlayInnerStyle === 'object') {
+        setStyle(overlayEl, overlayInnerStyle);
       }
     },
 
@@ -215,8 +252,10 @@ export default Vue.extend({
      * destroy popper IF NEEDED
      */
     destroyPopper() {
-      this.popper?.destroy();
-      this.popper = null;
+      if (this.popper) {
+        this.popper.destroy();
+        this.popper = null;
+      }
       if (this.destroyOnClose) {
         (this.$refs.container as any)?.unmountContent();
       }
@@ -243,15 +282,17 @@ export default Vue.extend({
         this.hasTrigger.click ? 0 : hideTimeout,
       );
     },
-    handleDocumentClick() {
-      if (this.contentClicked || this.triggerClicked) {
-        this.triggerClicked = false;
-        // clear the flag if mouseup handler is failed
+    handleDocumentClick(ev?: MouseEvent) {
+      if (this.contentClicked) {
+        // clear the flag after mousedown
         setTimeout(() => {
           this.contentClicked = false;
         });
         return;
       }
+      const triggerEl = this.$el as HTMLElement;
+      // ignore document event when clicking trigger element
+      if (triggerEl.contains(ev.target as Node)) return;
       this.visibleState = 0;
       this.emitPopVisible(false, { trigger: 'document' });
     },
@@ -323,9 +364,13 @@ export default Vue.extend({
       ? h(
         'div',
         {
-          class: name,
+          class: [this.componentName, this.overlayClassName],
           ref: 'popper',
-          style: destroyOnClose && hidePopup ? { display: 'none' } : undefined,
+          style: [
+            hidePopup && { visibility: 'hidden', pointerEvents: 'none' },
+            { zIndex: this.zIndex },
+            this.getOverlayStyle(),
+          ],
           directives: destroyOnClose
             ? undefined
             : [
@@ -339,13 +384,6 @@ export default Vue.extend({
           on: {
             mousedown: () => {
               this.contentClicked = true;
-            },
-            mouseup: () => {
-              // make sure to execute after document click is triggered
-              setTimeout(() => {
-                // clear the flag which was set by mousedown
-                this.contentClicked = false;
-              });
             },
             ...(hasTrigger.hover && {
               mouseenter: this.onMouseEnter,
@@ -367,7 +405,7 @@ export default Vue.extend({
                 }
                 : undefined,
             },
-            [content, this.showArrow && h('div', { class: `${name}__arrow` })],
+            [content, this.showArrow && h('div', { class: `${this.componentName}__arrow` })],
           ),
         ],
       )
@@ -379,7 +417,7 @@ export default Vue.extend({
         onContentMounted={() => {
           if (visible) {
             this.updatePopper();
-            this.updateOverlayStyle();
+            this.updateOverlayInnerStyle();
           }
         }}
         onResize={() => {
@@ -393,7 +431,7 @@ export default Vue.extend({
       >
         <transition
           slot="content"
-          name={this.expandAnimation ? `${name}--animation-expand` : `${name}--animation`}
+          name={this.expandAnimation ? `${this.componentName}--animation-expand` : `${this.componentName}--animation`}
           appear
           onBeforeEnter={this.onBeforeEnter}
           onAfterEnter={this.onAfterEnter}

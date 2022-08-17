@@ -1,28 +1,27 @@
-import Vue from 'vue';
-import { prefix } from '../config';
 import props from './check-tag-props';
 import { renderContent } from '../utils/render-tnode';
 import { TNodeReturnValue } from '../common';
-import CLASSNAMES from '../utils/classnames';
 import { TdCheckTagProps } from './type';
 import { emitEvent } from '../utils/event';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-tag`;
+const classPrefixMixins = getClassPrefixMixins('tag');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TCheckTag',
   props: { ...props },
   computed: {
     tagClass(): Array<any> {
       return [
-        `${name}`,
-        `${name}--check`,
-        `${name}--default`,
-        CLASSNAMES.SIZE[this.size],
+        `${this.componentName}`,
+        `${this.componentName}--check`,
+        `${this.componentName}--default`,
+        this.commonSizeClassName[this.size],
         {
-          [`${name}--checked`]: !this.disabled && this.checked,
-          [`${prefix}-is-disabled`]: this.disabled,
-          [`${name}--disabled`]: this.disabled,
+          [`${this.componentName}--checked`]: !this.disabled && this.checked,
+          [`${this.classPrefix}-is-disabled`]: this.disabled,
+          [`${this.componentName}--disabled`]: this.disabled,
         },
       ];
     },

@@ -1,102 +1,70 @@
-import { PropType } from 'vue';
+import { defineComponent, PropType, computed } from '@vue/composition-api';
 import { ChevronRightIcon } from 'tdesign-icons-vue';
-import { prefix } from '../../config';
+import { getFullPathLabel } from '../core/helper';
+import { getCascaderItemClass, getCascaderItemIconClass } from '../core/className';
 
 // utils
-import CLASSNAMES from '../../utils/classnames';
-import ripple from '../../utils/ripple';
-import mixins from '../../utils/mixins';
-
-// common logic
-import { getFullPathLabel } from '../utils/helper';
-import { getCascaderItemClass, getCascaderItemIconClass, getLabelIsEllipsis } from '../utils/item';
-import { getKeepAnimationMixins } from '../../config-provider/config-receiver';
-
-// component
-import Loading from '../../loading';
-import Checkbox, { CheckboxProps } from '../../checkbox/index';
-import Tooltip from '../../tooltip/index';
+import Checkbox from '../../checkbox/index';
+import TLoading from '../../loading';
 
 // type
-import { ClassName } from '../../common';
-import {
-  ContextType, CascaderContextType, CascaderItemPropsType, TreeNodeValue, TreeNode,
-} from '../interface';
-
-const name = `${prefix}-cascader-item`;
-const ComponentClassName = `${prefix}-cascader__item`;
+import { getKeepAnimationMixins } from '../../config-provider/config-receiver';
+import { CascaderContextType, TreeNodeValue, TreeNode } from '../interface';
+import { usePrefixClass, useCommonClassName } from '../../hooks/useConfig';
+import Ripple from '../../utils/ripple';
 
 const keepAnimationMixins = getKeepAnimationMixins();
 
-export default mixins(keepAnimationMixins).extend({
-  name,
-
-  directives: { ripple },
-  components: {
-    Tooltip,
-  },
-  props: {
-    node: {
-      type: Object as PropType<CascaderItemPropsType['node']>,
-      default() {
-        return {} as TreeNode;
-      },
-    },
-    cascaderContext: {
-      type: Object as PropType<CascaderItemPropsType['cascaderContext']>,
+const props = {
+  node: {
+    type: Object as PropType<TreeNode>,
+    default() {
+      return {};
     },
   },
+  cascaderContext: {
+    type: Object as PropType<CascaderContextType>,
+  },
+  onChange: Function as PropType<() => void>,
+  onClick: Function as PropType<() => void>,
+  onMouseenter: Function as PropType<() => void>,
+};
 
-  computed: {
-    itemClass(): ClassName {
-      return getCascaderItemClass(prefix, this.node, CLASSNAMES, this.cascaderContext);
-    },
-    iconClass(): ClassName {
-      return getCascaderItemIconClass(prefix, this.node, CLASSNAMES, this.cascaderContext);
-    },
+export default defineComponent({
+  mixins: [keepAnimationMixins],
+  directives: { Ripple },
+  props: { ...props },
+  setup(props) {
+    const COMPONENT_NAME = usePrefixClass('cascader__item');
+    const classPrefix = usePrefixClass();
+    const { STATUS, SIZE } = useCommonClassName();
+
+    const itemClass = computed(() => getCascaderItemClass(classPrefix.value, props.node, SIZE.value, STATUS.value, props.cascaderContext));
+
+    const iconClass = computed(() => getCascaderItemIconClass(classPrefix.value, props.node, STATUS.value, props.cascaderContext));
+
+    return {
+      COMPONENT_NAME,
+      iconClass,
+      itemClass,
+    };
   },
   render() {
     const {
-      node, itemClass, iconClass, cascaderContext,
+      iconClass, cascaderContext, itemClass, node, COMPONENT_NAME, onChange,
     } = this;
 
-    const handleClick = (e: Event) => {
-      e.stopPropagation();
-      const ctx: ContextType = {
-        e,
-        node,
-      };
-      this.$emit('click', ctx);
-    };
-
-    const handleChange: CheckboxProps['onChange'] = (e) => {
-      const ctx = {
-        e,
-        node,
-      };
-      this.$emit('change', ctx);
-    };
-
-    const handleMouseenter = (e: Event) => {
-      e.stopPropagation();
-      const ctx: ContextType = {
-        e,
-        node,
-      };
-      this.$emit('mouseenter', ctx);
-    };
-
     function RenderLabelInner(node: TreeNode, cascaderContext: CascaderContextType) {
-      const { filterActive, inputVal } = cascaderContext;
-      const labelText = filterActive ? getFullPathLabel(node) : node.label;
-      if (filterActive) {
-        const texts = labelText.split(inputVal);
+      const { inputVal } = cascaderContext;
+      const labelText = inputVal ? getFullPathLabel(node) : node.label;
+      if (inputVal) {
+        const texts = labelText.split(inputVal as string);
         const doms = [];
         for (let index = 0; index < texts.length; index++) {
           doms.push(<span key={index}>{texts[index]}</span>);
           if (index === texts.length - 1) break;
           doms.push(
-            <span key={`${index}filter`} className={`${name}-label--filter`}>
+            <span key={`${index}filter`} class={`${COMPONENT_NAME}-label--filter`}>
               {inputVal}
             </span>,
           );
@@ -108,29 +76,23 @@ export default mixins(keepAnimationMixins).extend({
 
     function RenderLabelContent(node: TreeNode, cascaderContext: CascaderContextType) {
       const label = RenderLabelInner(node, cascaderContext);
-      const isEllipsis = getLabelIsEllipsis(node, cascaderContext.size);
-      const labelNode = (
-        <span class={[`${ComponentClassName}-label`]} role="label">
+
+      const labelCont = (
+        <span
+          title={cascaderContext.inputVal ? getFullPathLabel(node) : node.label}
+          class={[`${COMPONENT_NAME}-label`, `${COMPONENT_NAME}-label--ellipsis`]}
+          role="label"
+        >
           {label}
         </span>
       );
-      if (isEllipsis) {
-        return (
-          <Tooltip content={node.label} placement="top-left">
-            {labelNode}
-          </Tooltip>
-        );
-      }
-      return labelNode;
+
+      return labelCont;
     }
 
-    function RenderCheckBox(
-      node: TreeNode,
-      cascaderContext: CascaderContextType,
-      handleChange: CheckboxProps['onChange'],
-    ) {
+    function RenderCheckBox(node: TreeNode, cascaderContext: CascaderContextType) {
       const {
-        checkProps, value, max, size,
+        checkProps, value, max, inputVal,
       } = cascaderContext;
       const label = RenderLabelInner(node, cascaderContext);
       return (
@@ -139,8 +101,11 @@ export default mixins(keepAnimationMixins).extend({
           indeterminate={node.indeterminate}
           disabled={node.isDisabled() || ((value as TreeNodeValue[]).length >= max && max !== 0)}
           name={node.value}
-          size={size}
-          onChange={handleChange}
+          title={inputVal ? getFullPathLabel(node) : node.label}
+          onChange={(vale: boolean, { e }: { e: MouseEvent }) => {
+            e.stopPropagation();
+            onChange();
+          }}
           {...checkProps}
         >
           {label}
@@ -149,12 +114,20 @@ export default mixins(keepAnimationMixins).extend({
     }
 
     return (
-      <li v-ripple={this.keepAnimation.ripple} class={itemClass} onClick={handleClick} onMouseenter={handleMouseenter}>
-        {cascaderContext.multiple
-          ? RenderCheckBox(node, cascaderContext, handleChange)
-          : RenderLabelContent(node, cascaderContext)}
+      <li
+        class={itemClass}
+        onClick={(e: Event) => {
+          e.stopPropagation();
+          this.onClick();
+        }}
+        onMouseenter={(e: Event) => {
+          e.stopPropagation();
+          this.onMouseenter();
+        }}
+      >
+        {cascaderContext.multiple ? RenderCheckBox(node, cascaderContext) : RenderLabelContent(node, cascaderContext)}
         {node.children
-          && (node.loading ? <Loading class={iconClass} size="small" /> : <ChevronRightIcon class={iconClass} />)}
+          && (node.loading ? <TLoading class={iconClass} size="small" /> : <ChevronRightIcon class={iconClass} />)}
       </li>
     );
   },

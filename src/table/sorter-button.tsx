@@ -21,6 +21,7 @@ export default defineComponent({
     },
     sortIcon: Function as PropType<TNode>,
     tooltipProps: Object as PropType<TooltipProps>,
+    hideSortTips: Boolean,
   },
 
   setup(props, context) {
@@ -74,6 +75,7 @@ export default defineComponent({
       const activeClass = direction === this.sortOrder ? tableSortClasses.iconActive : tableSortClasses.iconDefault;
       const cancelTips = this.global.sortCancelOperationText;
       const tips = direction === this.sortOrder ? cancelTips : tooltips[direction];
+      if (this.hideSortTips ?? this.global.hideSortTips) return this.getSortIcon(direction, activeClass);
       return (
         <Tooltip
           content={tips}

@@ -1,12 +1,12 @@
-import Vue from 'vue';
 import isNumber from 'lodash/isNumber';
-import { prefix } from '../config';
 import { renderContent } from '../utils/render-tnode';
 import props from './props';
 import { SkeletonRowCol, SkeletonRowColObj, TdSkeletonProps } from './type';
 import { ClassName, Styles } from '../common';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-skeleton`;
+const classPrefixMixins = getClassPrefixMixins('skeleton');
 
 const ThemeMap: Record<TdSkeletonProps['theme'], SkeletonRowCol> = {
   text: [1],
@@ -37,21 +37,48 @@ const ThemeMap: Record<TdSkeletonProps['theme'], SkeletonRowCol> = {
   ],
 };
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TSkeleton',
 
   props: { ...props },
 
   data() {
-    return {};
+    return {
+      delayShowLoading: this.delay <= 0 ? this.loading : false,
+      delayTimer: 0,
+    };
+  },
+
+  watch: {
+    loading: {
+      handler(val: boolean) {
+        if (this.delay <= 0) {
+          this.delayShowLoading = this.loading;
+          return;
+        }
+        this.handleDelay(val);
+      },
+      immediate: true,
+    },
   },
 
   methods: {
+    handleDelay(loading: boolean) {
+      if (loading) {
+        clearTimeout(this.delayTimer);
+        this.delayTimer = window.setTimeout(() => {
+          this.delayShowLoading = this.loading;
+        }, this.delay);
+      } else {
+        this.delayShowLoading = loading;
+      }
+    },
+
     renderCols(_cols: Number | SkeletonRowColObj | Array<SkeletonRowColObj>) {
       const getColItemClass = (obj: SkeletonRowColObj): ClassName => [
-        `${name}__col`,
-        `${name}--type-${obj.type || 'text'}`,
-        { [`${name}--animation-${this.animation}`]: this.animation },
+        `${this.componentName}__col`,
+        `${this.componentName}--type-${obj.type || 'text'}`,
+        { [`${this.componentName}--animation-${this.animation}`]: this.animation },
       ];
 
       const getColItemStyle = (obj: SkeletonRowColObj): Styles => {
@@ -98,7 +125,7 @@ export default Vue.extend({
     renderRowCol(_rowCol?: SkeletonRowCol) {
       const rowCol: SkeletonRowCol = _rowCol || this.rowCol;
 
-      const getBlockClass = (): ClassName => [`${name}__row`];
+      const getBlockClass = (): ClassName => [`${this.componentName}__row`];
 
       return rowCol.map((item) => <div class={getBlockClass()}>{this.renderCols(item)}</div>);
     },
@@ -107,10 +134,10 @@ export default Vue.extend({
   render() {
     const content = renderContent(this, 'default', 'content');
 
-    if (this.$scopedSlots.default && !this.loading) {
+    if (this.$scopedSlots.default && !this.delayShowLoading) {
       return <div>{content}</div>;
     }
-    if (!this.loading) {
+    if (!this.delayShowLoading) {
       return;
     }
 
@@ -126,6 +153,6 @@ export default Vue.extend({
       children.push(this.renderRowCol([1, 1, 1, { width: '70%' }]));
     }
 
-    return <div class={name}>{children}</div>;
+    return <div class={this.componentName}>{children}</div>;
   },
 });

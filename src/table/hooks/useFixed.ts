@@ -1,53 +1,27 @@
 import {
-  ref, reactive, watch, toRefs, SetupContext, onMounted, computed, onBeforeMount,
+  ref,
+  reactive,
+  watch,
+  toRefs,
+  SetupContext,
+  onMounted,
+  computed,
+  onBeforeMount,
+  ComputedRef,
 } from '@vue/composition-api';
 import get from 'lodash/get';
 import log from '../../_common/js/log';
 import { ClassName, Styles } from '../../common';
-import { BaseTableCol, TdBaseTableProps } from '../type';
+import { BaseTableCol, TableRowData, TdBaseTableProps } from '../type';
 import getScrollbarWidth from '../../_common/js/utils/getScrollbarWidth';
 import { on, off } from '../../utils/dom';
-
-export interface ColumnStickyLeftAndRight {
-  left: number[];
-  right: number[];
-  top: number[];
-  bottom?: number[];
-}
-
-export interface TableColFixedClasses {
-  left: string;
-  right: string;
-  lastLeft: string;
-  firstRight: string;
-  leftShadow: string;
-  rightShadow: string;
-}
-
-export interface TableRowFixedClasses {
-  top: string;
-  bottom: string;
-  firstBottom: string;
-  withoutBorderBottom: string;
-}
-
-export interface FixedColumnInfo {
-  left?: number;
-  right?: number;
-  top?: number;
-  bottom?: number;
-  parent?: FixedColumnInfo;
-  children?: string[];
-  width?: number;
-  height?: number;
-  col?: BaseTableCol;
-  index?: number;
-  lastLeftFixedCol?: boolean;
-  firstRightFixedCol?: boolean;
-}
-
-// 固定表头和固定列 具体的固定位置（left/top/right/bottom）
-export type RowAndColFixedPosition = Map<string | number, FixedColumnInfo>;
+import {
+  FixedColumnInfo,
+  TableRowFixedClasses,
+  RowAndColFixedPosition,
+  TableColFixedClasses,
+  RecalculateColumnWidthFunc,
+} from '../interface';
 
 // 固定列相关类名处理
 export function getColumnFixedStyles(
@@ -104,9 +78,12 @@ export function getRowFixedStyles(
   };
 }
 
-export default function useFixed(props: TdBaseTableProps, context: SetupContext) {
+export default function useFixed(
+  props: TdBaseTableProps,
+  context: SetupContext,
+  finalColumns: ComputedRef<BaseTableCol<TableRowData>[]>,
+) {
   const {
-    data,
     columns,
     tableLayout,
     tableContentWidth,
@@ -117,17 +94,14 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     headerAffixedTop,
     footerAffixedBottom,
     bordered,
+    resizable,
+    allowResizeColumnWidth,
   } = toRefs(props);
+  const data = ref<TableRowData[]>([]);
   const tableContentRef = ref<HTMLDivElement>();
   const isFixedHeader = ref(false);
   const isWidthOverflow = ref(false);
-  const affixHeaderRef = ref<HTMLDivElement>();
-  const affixFooterRef = ref<HTMLDivElement>();
   const tableElmRef = ref<HTMLTableElement>();
-  // 当表格完全滚动消失在视野时，需要隐藏吸顶表头
-  const showAffixHeader = ref(true);
-  // 当表格完全滚动消失在视野时，需要隐藏吸底尾部
-  const showAffixFooter = ref(true);
   // CSS 样式设置了固定 6px
   const scrollbarWidth = ref(6);
   // 固定列、固定表头、固定表尾等内容的位置信息
@@ -146,13 +120,26 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
   const isFixedRightColumn = ref(false);
   const isFixedLeftColumn = ref(false);
 
+  const columnResizable = computed(() => resizable.value || allowResizeColumnWidth.value || false);
+
   // 没有表头吸顶，没有虚拟滚动，则不需要表头宽度计算
   const notNeedThWidthList = computed(
-    () => !(props.headerAffixedTop || props.footerAffixedBottom || props.scroll?.type === 'virtual'),
+    () => !(
+      props.headerAffixedTop
+        || props.footerAffixedBottom
+        || props.horizontalScrollAffixedBottom
+        || props.scroll?.type === 'virtual'
+    ),
   );
+
+  const recalculateColWidth = ref<RecalculateColumnWidthFunc>(() => {});
 
   function setUseFixedTableElmRef(val: HTMLTableElement) {
     tableElmRef.value = val;
+  }
+
+  function setRecalculateColWidthFuncRef(val: RecalculateColumnWidthFunc) {
+    recalculateColWidth.value = val;
   }
 
   function getColumnMap(
@@ -302,6 +289,7 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
 
   const updateRowAndColFixedPosition = (tableContentElm: HTMLElement, initialColumnMap: RowAndColFixedPosition) => {
     rowAndColFixedPosition.value.clear();
+    if (!tableContentElm) return;
     const thead = tableContentElm.querySelector('thead');
     // 处理固定列
     thead && setFixedColPosition(thead.children, initialColumnMap);
@@ -313,75 +301,16 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     rowAndColFixedPosition.value = initialColumnMap;
   };
 
+  let shadowLastScrollLeft: number;
   const updateColumnFixedShadow = (target: HTMLElement) => {
-    if (!isFixedColumn.value) return;
-    const isShowRight = target.clientWidth + target.scrollLeft < target.scrollWidth;
-    showColumnShadow.left = target.scrollLeft > 0;
+    if (!isFixedColumn.value || !target) return;
+    const { scrollLeft } = target;
+    // 只有左右滚动，需要更新固定列阴影
+    if (shadowLastScrollLeft === scrollLeft) return;
+    shadowLastScrollLeft = scrollLeft;
+    const isShowRight = target.clientWidth + scrollLeft < target.scrollWidth;
+    showColumnShadow.left = scrollLeft > 0;
     showColumnShadow.right = isShowRight;
-  };
-
-  let lastScrollLeft = -1;
-  const updateHeaderScroll = (target?: HTMLElement) => {
-    if (notNeedThWidthList.value) return;
-    if (!target) {
-      lastScrollLeft = -1;
-    }
-    const newTarget = target || tableContentRef.value;
-    if (notNeedThWidthList.value || !newTarget) return;
-    // 固定列左右滚动时，更新吸顶表头滚动
-    const left = newTarget.scrollLeft;
-    if (lastScrollLeft === left) return;
-    if (affixHeaderRef.value) {
-      lastScrollLeft = left;
-      affixHeaderRef.value.scrollLeft = left;
-    }
-    if (affixFooterRef.value) {
-      lastScrollLeft = left;
-      affixFooterRef.value.scrollLeft = left;
-    }
-  };
-
-  let lastFootScrollLeft = -1;
-  const updateScrollPositionByFootScrollbar = () => {
-    if (notNeedThWidthList.value) return;
-    const target = affixFooterRef.value;
-    const left = target.scrollLeft;
-    if (lastFootScrollLeft === left) return;
-    if (affixHeaderRef.value) {
-      lastFootScrollLeft = left;
-      affixHeaderRef.value.scrollLeft = left;
-    }
-    if (tableContentRef.value) {
-      lastFootScrollLeft = left;
-      tableContentRef.value.scrollLeft = left;
-    }
-  };
-
-  // 为保证版本兼容，临时保留 onScrollX 和 onScrollY
-  const onTableContentScroll = (params?: { e: WheelEvent; trigger: 'tfoot' | 'tbody' }) => {
-    // const target = (e.target || e.srcElement) as HTMLElement;
-    const target = tableContentRef.value;
-    // 阴影更新
-    updateColumnFixedShadow(target);
-    if (params?.trigger === 'tfoot') {
-      updateScrollPositionByFootScrollbar();
-    } else {
-      // 表头和表尾滚动位置更新
-      updateHeaderScroll(target);
-    }
-    onContentScrollEvent(params.e);
-  };
-
-  const onContentScrollEvent = (e: WheelEvent) => {
-    props.onScrollX?.({ e });
-    // Vue3 ignore next line
-    context.emit('scroll-x', { e });
-    props.onScrollY?.({ e });
-    // Vue3 ignore next line
-    context.emit('scroll-y', { e });
-    props.onScroll?.({ e });
-    // Vue3 ignore next line
-    context.emit('scroll', { e });
   };
 
   // 多级表头场景较为复杂：为了滚动的阴影效果，需要知道哪些列是边界列，左侧固定列的最后一列，右侧固定列的第一列，每一层表头都需要兼顾
@@ -434,17 +363,9 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     }, 0);
   };
 
-  const updateFixedColumnHandler = () => {
-    const timer = setTimeout(() => {
-      if (isFixedColumn.value) {
-        updateColumnFixedShadow(tableContentRef.value);
-      }
-      clearTimeout(timer);
-    }, 0);
-  };
-
   const updateTableWidth = () => {
     const rect = tableContentRef.value?.getBoundingClientRect();
+    if (!rect) return;
     // 存在纵向滚动条，且固定表头时，需去除滚动条宽度
     const reduceWidth = isFixedHeader.value ? scrollbarWidth.value : 0;
     tableWidth.value = rect.width - reduceWidth - (props.bordered ? 1 : 0);
@@ -452,41 +373,60 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     tableElmWidth.value = elmRect?.width;
   };
 
-  const updateThWidthList = (trList: HTMLCollection) => {
-    const widthMap: { [colKey: string]: number } = {};
-    for (let i = 0, len = trList.length; i < len; i++) {
-      const thList = trList[i].children;
-      for (let j = 0, thLen = thList.length; j < thLen; j++) {
-        const th = thList[j] as HTMLElement;
-        const colKey = th.dataset.colkey;
-        widthMap[colKey] = th.getBoundingClientRect().width;
+  const updateThWidthList = (trList: HTMLCollection | { [colKey: string]: number }) => {
+    if (trList instanceof HTMLCollection) {
+      if (columnResizable.value) return;
+      const widthMap: { [colKey: string]: number } = {};
+      for (let i = 0, len = trList.length; i < len; i++) {
+        const thList = trList[i].children;
+        for (let j = 0, thLen = thList.length; j < thLen; j++) {
+          const th = thList[j] as HTMLElement;
+          const colKey = th.dataset.colkey;
+          widthMap[colKey] = th.getBoundingClientRect().width;
+        }
       }
+      thWidthList.value = widthMap;
+    } else {
+      if (!thWidthList.value) {
+        thWidthList.value = {};
+      }
+      Object.entries(trList).forEach(([colKey, width]) => {
+        thWidthList.value[colKey] = width;
+      });
     }
-    thWidthList.value = widthMap;
-    updateHeaderScroll();
   };
 
   const updateThWidthListHandler = () => {
+    if (columnResizable.value) {
+      recalculateColWidth.value(finalColumns.value, thWidthList.value, tableLayout.value, tableElmWidth.value);
+    }
     if (notNeedThWidthList.value) return;
     const timer = setTimeout(() => {
       updateTableWidth();
-      const thead = tableContentRef.value.querySelector('thead');
+      const thead = tableContentRef.value?.querySelector('thead');
+      if (!thead) return;
       updateThWidthList(thead.children);
       clearTimeout(timer);
     }, 0);
   };
 
-  const onDocumentScroll = () => {
-    if (notNeedThWidthList.value) return;
-    const pos = tableContentRef.value.getBoundingClientRect();
-    if (props.headerAffixedTop || props.scroll?.type === 'virtual') {
-      const r = affixHeaderRef.value?.offsetHeight - pos.top < pos.height;
-      showAffixHeader.value = r;
+  const emitScrollEvent = (e: WheelEvent) => {
+    props.onScrollX?.({ e });
+    // Vue3 ignore next line
+    context.emit('scroll-x', { e });
+    props.onScrollY?.({ e });
+    // Vue3 ignore next line
+    context.emit('scroll-y', { e });
+    props.onScroll?.({ e });
+    // Vue3 ignore next line
+    context.emit('scroll', { e });
+  };
+
+  const getThWidthList = () => {
+    if (!thWidthList.value) {
+      thWidthList.value = {};
     }
-    if (props.footerAffixedBottom) {
-      showAffixFooter.value = pos.top + (affixFooterRef?.value?.clientHeight || 48) <= window.innerHeight
-        && -1 * pos.top < (tableContentRef?.value?.parentNode as HTMLDivElement)?.clientHeight;
-    }
+    return thWidthList.value;
   };
 
   watch(
@@ -507,7 +447,18 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     { immediate: true },
   );
 
-  watch([isFixedColumn, columns], updateFixedColumnHandler, { immediate: true });
+  watch(
+    [isFixedColumn, columns],
+    () => {
+      const timer = setTimeout(() => {
+        if (isFixedColumn.value) {
+          updateColumnFixedShadow(tableContentRef.value);
+        }
+        clearTimeout(timer);
+      }, 0);
+    },
+    { immediate: true },
+  );
 
   watch([maxHeight, data, columns, bordered], updateFixedHeader, { immediate: true });
 
@@ -528,20 +479,10 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     { immediate: true },
   );
 
-  watch([headerAffixedTop, footerAffixedBottom], ([headerAffixedTop, footerAffixedBottom]) => {
-    if (headerAffixedTop || footerAffixedBottom) {
-      on(document, 'scroll', onDocumentScroll);
-    } else {
-      off(document, 'scroll', onDocumentScroll);
-    }
-  });
-
   const refreshTable = () => {
     updateTableWidth();
     updateFixedHeader();
-    if (!notNeedThWidthList.value) {
-      updateThWidthListHandler();
-    }
+    updateThWidthListHandler();
     if (isFixedColumn.value || isFixedHeader.value) {
       updateFixedStatus();
       updateColumnFixedShadow(tableContentRef.value);
@@ -550,83 +491,30 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
 
   const onResize = refreshTable;
 
-  const onFootScroll = (e: WheelEvent) => {
-    onTableContentScroll({ e, trigger: 'tfoot' });
-  };
-
-  const onFootMouseEnter = () => {
-    on(affixFooterRef.value, 'scroll', onFootScroll);
-  };
-
-  const onFootMouseLeave = () => {
-    off(affixFooterRef.value, 'scroll', onFootScroll);
-  };
-
-  watch(affixFooterRef, () => {
-    if (footerAffixedBottom.value && affixFooterRef.value) {
-      on(affixFooterRef.value, 'mouseenter', onFootMouseEnter);
-      on(affixFooterRef.value, 'mouseleave', onFootMouseLeave);
-    } else {
-      off(affixFooterRef.value, 'mouseenter', onFootMouseEnter);
-      off(affixFooterRef.value, 'mouseleave', onFootMouseLeave);
-    }
-  });
-
-  const onTableContentMouseEnter = () => {
-    on(tableContentRef.value, 'scroll', onTableContentScroll);
-  };
-
-  const onTableContentMouseLeave = () => {
-    off(tableContentRef.value, 'scroll', onTableContentScroll);
-  };
-
-  const addTableContentListener = () => {
-    // 只有吸顶/吸底/虚拟滚动等场景需要滚动事件监听，同步多个 table 元素的滚动距离
-    if (notNeedThWidthList.value || !tableContentRef.value) return;
-    on(tableContentRef.value, 'mouseenter', onTableContentMouseEnter);
-    on(tableContentRef.value, 'mouseleave', onTableContentMouseLeave);
-  };
-
-  const removeTableContentListener = () => {
-    off(tableContentRef.value, 'mouseenter', onTableContentMouseEnter);
-    off(tableContentRef.value, 'mouseleave', onTableContentMouseLeave);
-  };
-
-  watch(tableContentRef, () => {
-    addTableContentListener();
-  });
-
   onMounted(() => {
     const scrollWidth = getScrollbarWidth();
     scrollbarWidth.value = scrollWidth;
     const timer = setTimeout(() => {
       updateTableWidth();
+      if (columnResizable.value) {
+        recalculateColWidth.value(finalColumns.value, thWidthList.value, tableLayout.value, tableElmWidth.value);
+      }
       clearTimeout(timer);
     });
-    if (headerAffixedTop.value || footerAffixedBottom.value) {
-      on(document, 'scroll', onDocumentScroll);
-    } else {
-      off(document, 'scroll', onDocumentScroll);
-    }
     if (isFixedColumn.value || isFixedHeader.value || !notNeedThWidthList.value) {
       on(window, 'resize', onResize);
     }
-    addTableContentListener();
   });
 
   onBeforeMount(() => {
     if (isFixedColumn.value || isFixedHeader.value || !notNeedThWidthList.value) {
       off(window, 'resize', onResize);
     }
-    if (props.headerAffixedTop || props.footerAffixedBottom) {
-      off(document, 'scroll', onDocumentScroll);
-      off(affixFooterRef.value, 'mouseenter', onFootMouseEnter);
-      off(affixFooterRef.value, 'mouseleave', onFootMouseLeave);
-    }
-    if (!notNeedThWidthList.value) {
-      removeTableContentListener();
-    }
   });
+
+  const setData = (dataSource: TableRowData[]) => {
+    data.value = dataSource;
+  };
 
   return {
     tableWidth,
@@ -635,19 +523,19 @@ export default function useFixed(props: TdBaseTableProps, context: SetupContext)
     isFixedHeader,
     isWidthOverflow,
     tableContentRef,
-    showAffixHeader,
-    showAffixFooter,
     isFixedColumn,
     showColumnShadow,
     rowAndColFixedPosition,
     virtualScrollHeaderPos,
-    affixHeaderRef,
-    affixFooterRef,
     scrollbarWidth,
+    setData,
     refreshTable,
+    emitScrollEvent,
     updateThWidthListHandler,
-    updateHeaderScroll,
-    onTableContentScroll,
+    updateColumnFixedShadow,
     setUseFixedTableElmRef,
+    getThWidthList,
+    updateThWidthList,
+    setRecalculateColWidthFuncRef,
   };
 }

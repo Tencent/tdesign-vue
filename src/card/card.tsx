@@ -1,6 +1,6 @@
 import { defineComponent, computed } from '@vue/composition-api';
 
-import { usePrefixClass } from '../config-provider';
+import { usePrefixClass } from '../config-provider/useConfig';
 import useCommonClassName from '../hooks/useCommonClassName';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 

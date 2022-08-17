@@ -26,6 +26,11 @@ export interface TdSkeletonProps {
    * @default text
    */
   theme?: 'text' | 'avatar' | 'paragraph' | 'avatar-text' | 'tab' | 'article';
+  /**
+   * 延迟显示加载效果的事件，用于放置请求速度过快引起的家在闪烁，单位：毫秒
+   * @default 0
+   */
+  delay?: number;
 }
 
 export type SkeletonRowCol = Array<Number | SkeletonRowColObj | Array<SkeletonRowColObj>>;

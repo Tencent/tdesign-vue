@@ -9,7 +9,7 @@ import { InputValue } from '../input';
 import TagInput, { TagInputValue, InputValueChangeContext } from '../tag-input';
 import Loading from '../loading';
 import useDefaultValue from '../hooks/useDefaultValue';
-import { usePrefixClass } from '../config-provider';
+import { usePrefixClass } from '../hooks/useConfig';
 
 export interface RenderSelectMultipleParams {
   commonInputProps: SelectInputCommonProperties;
@@ -60,9 +60,9 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
       ...props.tagInputProps,
       ...p.commonInputProps,
       tagProps: props.tagProps,
-      readonly: !props.allowInput,
       label: props.label,
       autoWidth: props.autoWidth,
+      readonly: props.readonly,
       placeholder: tPlaceholder.value,
       minCollapsedNum: props.minCollapsedNum,
       collapsedItems: props.collapsedItems,
@@ -75,10 +75,10 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
         inputClass: {
           [`${classPrefix.value}-input--focused`]: p.popupVisible,
         },
+        ...props.inputProps,
       },
       suffixIcon: !props.disabled && props.loading ? () => <Loading loading size="small" /> : props.suffixIcon,
     };
-
     return (
       <TagInput
         ref="tagInputRef"
@@ -97,8 +97,7 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
           p.onInnerClear;
         }}
         onBlur={(val: TagInputValue, context: { inputValue: InputValue; e: FocusEvent }) => {
-          // 筛选器统一特性：失去焦点时，清空输入内容
-          setTInputValue('', { ...context, trigger: 'blur' });
+          props.onBlur?.(props.value, { ...context, tagInputValue: val });
           instance.emit('blur', props.value, { ...context, tagInputValue: val });
         }}
         onFocus={(val: TagInputValue, context: { inputValue: InputValue; e: FocusEvent }) => {

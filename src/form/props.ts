@@ -77,24 +77,16 @@ export default {
   /** 表单校验不通过时，是否自动滚动到第一个校验不通过的字段，平滑滚动或是瞬间直达。值为空则表示不滚动 */
   scrollToFirstError: {
     type: String as PropType<TdFormProps['scrollToFirstError']>,
+    default: '' as TdFormProps['scrollToFirstError'],
     validator(val: TdFormProps['scrollToFirstError']): boolean {
       if (!val) return true;
-      return ['smooth', 'auto'].includes(val);
+      return ['', 'smooth', 'auto'].includes(val);
     },
   },
   /** 校验不通过时，是否显示错误提示信息，统一控制全部表单项。如果希望控制单个表单项，请给 FormItem 设置该属性 */
   showErrorMessage: {
     type: Boolean,
     default: true,
-  },
-  /** 表单尺寸 */
-  size: {
-    type: String as PropType<TdFormProps['size']>,
-    default: 'medium' as TdFormProps['size'],
-    validator(val: TdFormProps['size']): boolean {
-      if (!val) return true;
-      return ['medium', 'large'].includes(val);
-    },
   },
   /** 校验状态图标，值为 `true` 显示默认图标，默认图标有 成功、失败、警告 等，不同的状态图标不同。`statusIcon` 值为 `false`，不显示图标。`statusIcon` 值类型为渲染函数，则可以自定义右侧状态图标 */
   statusIcon: {
@@ -105,7 +97,7 @@ export default {
   submitWithWarningMessage: Boolean,
   /** 表单重置时触发 */
   onReset: Function as PropType<TdFormProps['onReset']>,
-  /** 表单提交时触发。其中 context.validateResult 表示校验结果，context .firstError 表示校验不通过的第一个规则提醒。context.validateResult 值为 true 表示校验通过；如果校验不通过，context.validateResult 值为校验结果列表 */
+  /** 表单提交时触发。其中 `context.validateResult` 表示校验结果，`context.firstError` 表示校验不通过的第一个规则提醒。`context.validateResult` 值为 `true` 表示校验通过；如果校验不通过，`context.validateResult` 值为校验结果列表。<br />【注意】⚠️ 默认情况，输入框按下 Enter 键会自动触发提交事件，如果希望禁用这个默认行为，可以给输入框添加  enter 事件，并在事件中设置 `e.preventDefault()` */
   onSubmit: Function as PropType<TdFormProps['onSubmit']>,
   /** 校验结束后触发，result 值为 true 表示校验通过；如果校验不通过，result 值为校验结果列表 */
   onValidate: Function as PropType<TdFormProps['onValidate']>,

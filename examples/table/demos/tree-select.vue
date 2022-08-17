@@ -86,7 +86,7 @@ export default {
 
           // 禁用行选中方式二：使用 checkProps 禁用行（示例代码有效，勿删）
           // 这种方式禁用行选中，行文本不会变灰
-          checkProps: ({ row }) => ({ disabled: row.status !== 0 }),
+          checkProps: ({ row }) => ({ disabled: !row.childrenList && row.status !== 0 }),
           // 自由调整宽度，如果发现元素看不见，请加大宽度
           width: 20,
         },

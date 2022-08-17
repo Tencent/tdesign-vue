@@ -10,10 +10,8 @@ export default function useVModel<T, P extends any[]>(
   eventName?: string,
 ): [Ref<T>, ChangeHandler<T, P>] {
   const { emit } = getCurrentInstance();
-
   const internalValue = ref<T>();
   internalValue.value = defaultValue;
-
   // 受控模式
   if (typeof value.value !== 'undefined') {
     return [

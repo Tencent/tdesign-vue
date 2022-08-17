@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-select-base">
+  <t-space>
     <!-- 自定义面板顶部内容：如自定义搜索框。同时支持插槽和 Props(this,panelTopContent) -->
     <t-select v-model="value1" :options="options1" clearable placeholder="请选择云解决方案">
       <div slot="panelTopContent">
@@ -21,7 +21,7 @@
         </div>
       </div>
     </t-select>
-  </div>
+  </t-space>
 </template>
 
 <script lang="jsx">
@@ -71,15 +71,6 @@ export default {
 </script>
 
 <style scoped>
-.tdesign-demo-select-base {
-  width: 450px;
-  display: flex;
-}
-
-.tdesign-demo-select-base .t-select__wrap + .t-select__wrap {
-  margin-left: 36px;
-}
-
 .select-panel-footer {
   border-top: 1px solid var(--td-border-level-2-color);
   margin-top: 8px;

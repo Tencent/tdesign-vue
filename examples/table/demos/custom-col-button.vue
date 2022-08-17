@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column-large">
+  <div class="tdesign-demo-block-column-large tdesign-demo__table">
     <!-- 按钮操作区域 -->
     <div>
       <t-radio-group v-model="placement" variant="default-filled">
@@ -10,7 +10,7 @@
       </t-radio-group>
       <br /><br />
       <t-checkbox v-model="bordered">是否显示边框</t-checkbox>
-      <t-checkbox v-model="customText">自定义列配置按钮</t-checkbox>
+      <t-checkbox v-model="customText" style="margin-left: 16px">自定义列配置按钮</t-checkbox>
     </div>
 
     <!-- 1. defaultDisplayColumns = ['platform'] 设置默认显示哪些列，仅第一次有效 -->
@@ -33,6 +33,8 @@
       :bordered="bordered"
       tableLayout="auto"
       stripe
+      drag-sort="col"
+      @drag-sort="onDragSortChange"
       @column-change="onColumnChange"
     ></t-table>
 
@@ -109,6 +111,9 @@ export default {
   methods: {
     onColumnChange(params) {
       console.log(params);
+    },
+    onDragSortChange({ newData }) {
+      this.columns = newData;
     },
   },
 };

@@ -8,7 +8,6 @@
       :onOverlayClick="() => (visible = false)"
       :onConfirm="() => (visible = false)"
       :placement="placement"
-      :sizeDraggable="true"
     >
       <p>抽屉的内容</p>
     </t-drawer>

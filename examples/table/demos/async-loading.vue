@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column-large">
+  <div class="tdesign-demo-block-column-large tdesign-demo__table">
     <div>
       <t-radio-group v-model="asyncLoading" variant="default-filled">
         <t-radio-button value="load-more">加载更多</t-radio-button>

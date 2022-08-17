@@ -145,7 +145,7 @@ function customRender({ source, file, md }) {
   };
 
   // md filename
-  const reg = file.match(/examples\/(\w+-?\w+)\/(\w+-?\w+)\.md/);
+  const reg = file.match(/([\w-]+)\.?([\w-]+)?\.md/);
   const componentName = reg && reg[1];
 
   // split md
@@ -164,13 +164,12 @@ function customRender({ source, file, md }) {
     designMd: '<td-doc-empty></td-doc-empty>',
   };
 
-
   // 渲染 live demo
   if (pageData.usage && pageData.isComponent) {
     const usageObj = compileUsage({
       componentName,
       usage: pageData.usage,
-      demoPath: path.resolve(__dirname, `../../examples/${componentName}/usage/index.vue`),
+      demoPath: path.posix.resolve(__dirname, `../../examples/${componentName}/usage/index.vue`),
     });
     if (usageObj) {
       mdSegment.usage = usageObj;

@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <t-cascader class="t-demo-cascader" :options="options" v-model="value" :show-all-levels="false" placeholder='请选择'></t-cascader>
+  <div class="tdesign-demo-block-row">
+    <t-cascader v-model="value" :options="options" :show-all-levels="false" />
+    <t-cascader v-model="value2" :options="options" :show-all-levels="false" multiple />
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -43,12 +43,8 @@ export default {
         },
       ],
       value: '',
+      value2: [],
     };
   },
 };
 </script>
-<style scoped>
-.t-demo-cascader + .t-demo-cascader {
-  margin-top: 16px;
-}
-</style>

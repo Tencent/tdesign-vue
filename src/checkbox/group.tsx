@@ -1,18 +1,19 @@
-import Vue, { VNode } from 'vue';
+import { VNode } from 'vue';
 import intersection from 'lodash/intersection';
-import { prefix } from '../config';
 import Checkbox from './checkbox';
 import checkboxGroupProps from './checkbox-group-props';
 import { emitEvent } from '../utils/event';
 import {
   CheckboxOptionObj, TdCheckboxProps, CheckboxGroupValue, TdCheckboxGroupProps,
 } from './type';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
+
+const classPrefixMixins = getClassPrefixMixins('checkbox');
 
 type CheckedChangeType = Parameters<TdCheckboxGroupProps['onChange']>;
 
-const name = `${prefix}-checkbox-group`;
-
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TCheckboxGroup',
 
   components: {
@@ -118,7 +119,7 @@ export default Vue.extend({
       children = nodes;
     }
     return (
-      <div class={name} onClick={(e: MouseEvent) => this.$emit('click', e)}>
+      <div class={`${this.componentName}-group`} onClick={(e: MouseEvent) => this.$emit('click', e)}>
         {children}
       </div>
     );

@@ -1,8 +1,8 @@
 <template>
   <div class="tdesign-demo-block-column-large">
-    <t-addon prepend="filter:">
+    <t-input-adornment prepend="filter:">
       <t-input v-model="filterText" @change="onInput" />
-    </t-addon>
+    </t-input-adornment>
 
     <t-tree :data="items" expand-on-click-node :default-expanded="expanded" :filter="filterByText" hover line />
   </div>

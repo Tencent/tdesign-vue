@@ -1,25 +1,24 @@
 import Vue, { VueConstructor } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import CLASSNAMES from '../utils/classnames';
 import { ANCHOR_SHARP_REGEXP, ANCHOR_CONTAINER, getOffsetTop } from './utils';
 import {
   on, off, getScroll, scrollTo, getScrollContainer,
 } from '../utils/dom';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
 import Affix from '../affix';
-import { COMPONENT_NAME } from './constant';
 
-const ANCHOR_LINE_CLASSNAME = `${COMPONENT_NAME}__line` as const;
-const ANCHOR_LINE_CURSOR_CLASSNAME = `${COMPONENT_NAME}__line-cursor` as const;
+const classPrefixMixins = getClassPrefixMixins('anchor');
 
 export interface Anchor extends Vue {
   scrollContainer: ANCHOR_CONTAINER;
   // 执行scrollTo设置的flag, 用来禁止执行handleScroll
   handleScrollLock: boolean;
 }
-export default (Vue as VueConstructor<Anchor>).extend({
+export default mixins(Vue as VueConstructor<Anchor>, classPrefixMixins).extend({
   name: 'TAnchor',
 
   props: {
@@ -34,7 +33,7 @@ export default (Vue as VueConstructor<Anchor>).extend({
     return {
       links: [] as string[],
       active: '',
-      activeLineStyle: false as boolean | { top: string; height: string; opacity: number; },
+      activeLineStyle: false as boolean | { top: string; height: string; opacity: number },
     };
   },
   watch: {
@@ -114,7 +113,7 @@ export default (Vue as VueConstructor<Anchor>).extend({
      * 当前active-item的top + height, 以及ANCHOR_ITEM_PADDING修正
      */
     updateActiveLine(): void {
-      const ele = this.$el.querySelector(`.${CLASSNAMES.STATUS.active}>a`) as HTMLAnchorElement;
+      const ele = this.$el.querySelector(`.${this.commonStatusClassName.active}>a`) as HTMLAnchorElement;
       if (!ele) {
         this.activeLineStyle = false;
         return;
@@ -198,7 +197,7 @@ export default (Vue as VueConstructor<Anchor>).extend({
     },
     renderCursor() {
       const titleContent: ScopedSlotReturnValue = renderTNodeJSX(this, 'cursor');
-      return titleContent || <div class={ANCHOR_LINE_CURSOR_CLASSNAME}></div>;
+      return titleContent || <div class={`${this.componentName}__line-cursor`}></div>;
     },
   },
 
@@ -223,11 +222,11 @@ export default (Vue as VueConstructor<Anchor>).extend({
       affixProps,
       activeLineStyle,
     } = this;
-    const className = [COMPONENT_NAME, CLASSNAMES.SIZE[size]];
+    const className = [this.componentName, this.commonSizeClassName[size]];
     const content = (
       <div class={className}>
-        <div class={ANCHOR_LINE_CLASSNAME}>
-          <div class={`${ANCHOR_LINE_CURSOR_CLASSNAME}-wrapper`} style={activeLineStyle}>
+        <div class={`${this.componentName}__line`}>
+          <div class={`${this.componentName}__line-cursor-wrapper`} style={activeLineStyle}>
             {this.renderCursor()}
           </div>
         </div>

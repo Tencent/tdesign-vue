@@ -1,7 +1,8 @@
 import {
-  computed, defineComponent, toRefs, h, onMounted, ref,
+  computed, defineComponent, toRefs, h, onMounted, ref, watch,
 } from '@vue/composition-api';
 import get from 'lodash/get';
+import omit from 'lodash/omit';
 import baseTableProps from './base-table-props';
 import primaryTableProps from './primary-table-props';
 import BaseTable, { BASE_TABLE_ALL_EVENTS, TableListeners } from './base-table';
@@ -17,8 +18,36 @@ import useDragSort from './hooks/useDragSort';
 import useAsyncLoading from './hooks/useAsyncLoading';
 import { PageInfo } from '../pagination';
 import useClassName from './hooks/useClassName';
+import useEditableCell from './hooks/useEditableCell';
+import useEditableRow from './hooks/useEditableRow';
+import { EditableCellProps } from './editable-cell';
 
 export { BASE_TABLE_ALL_EVENTS } from './base-table';
+
+const OMIT_PROPS = [
+  'hideSortTips',
+  'dragSort',
+  'defaultExpandedRowKeys',
+  'defaultSelectedRowKeys',
+  'columnController',
+  'filterRow',
+  'sortOnRowDraggable',
+  'expandOnRowClick',
+  'multipleSort',
+  'expandIcon',
+  'onChange',
+  'onAsyncLoadingClick',
+  'onChange',
+  'onColumnChange',
+  'onColumnControllerVisibleChange',
+  'onDataChange',
+  'onDisplayColumnsChange',
+  'onDragSort',
+  'onExpandChange',
+  'onFilterChange',
+  'onSelectChange',
+  'onSortChange',
+];
 
 export default defineComponent({
   name: 'TPrimaryTable',
@@ -32,7 +61,7 @@ export default defineComponent({
     const renderTNode = useTNodeJSX();
     const { columns } = toRefs(props);
     const primaryTableRef = ref(null);
-    const { tableDraggableClasses, tableBaseClass } = useClassName();
+    const { tableDraggableClasses, tableBaseClass, tableSelectedClasses } = useClassName();
     // 自定义列配置功能
     const { tDisplayColumns, renderColumnController } = useColumnController(props, context);
     // 展开/收起行功能
@@ -42,7 +71,7 @@ export default defineComponent({
     // 排序功能
     const { renderSortIcon } = useSorter(props, context);
     // 行选中功能
-    const { formatToRowSelectColumn, selectedRowClassNames } = useRowSelect(props);
+    const { formatToRowSelectColumn, selectedRowClassNames } = useRowSelect(props, tableSelectedClasses);
     // 过滤功能
     const {
       hasEmptyCondition,
@@ -54,20 +83,30 @@ export default defineComponent({
 
     // 拖拽排序功能
     const {
-      isRowHandlerDraggable, isRowDraggable, isColDraggable, setDragSortPrimaryTableRef,
-    } = useDragSort(
-      props,
-      context,
-    );
+      isRowHandlerDraggable, isRowDraggable, isColDraggable, setDragSortPrimaryTableRef, setDragSortColumns,
+    } = useDragSort(props, context);
 
     const { renderTitleWidthIcon } = useTableHeader(props);
     const { renderAsyncLoading } = useAsyncLoading(props, context);
+
+    const { renderEditableCell } = useEditableCell(props, context);
+    const {
+      errorListMap,
+      editableKeysMap,
+      validateRowData,
+      validateTableData,
+      onRuleChange,
+      clearValidateData,
+      onPrimaryTableRowValidate,
+      onPrimaryTableRowEdit,
+    } = useEditableRow(props, context);
 
     const primaryTableClasses = computed(() => ({
       [tableDraggableClasses.colDraggable]: isColDraggable.value,
       [tableDraggableClasses.rowHandlerDraggable]: isRowHandlerDraggable.value,
       [tableDraggableClasses.rowDraggable]: isRowDraggable.value,
       [tableBaseClass.overflowVisible]: isTableOverflowHidden.value === false,
+      [tableBaseClass.tableRowEdit]: props.editableRowKeys,
     }));
 
     // 如果想给 TR 添加类名，请在这里补充，不要透传更多额外 Props 到 BaseTable
@@ -89,6 +128,12 @@ export default defineComponent({
     onMounted(() => {
       setFilterPrimaryTableRef(primaryTableRef.value);
       setDragSortPrimaryTableRef(primaryTableRef.value);
+      setDragSortColumns(props.columns);
+    });
+
+    watch(primaryTableRef, () => {
+      setFilterPrimaryTableRef(primaryTableRef.value);
+      setDragSortPrimaryTableRef(primaryTableRef.value);
     });
 
     // 1. 影响列数量的因素有：自定义列配置、展开/收起行、多级表头；2. 影响表头内容的因素有：排序图标、筛选图标
@@ -103,10 +148,44 @@ export default defineComponent({
         // 添加排序图标和过滤图标
         if (item.sorter || item.filter) {
           const titleContent = renderTitle(h, context.slots, item, i);
+          const { ellipsisTitle } = item;
           item.title = (h, p) => {
             const sortIcon = item.sorter ? renderSortIcon(h, p) : null;
             const filterIcon = item.filter ? renderFilterIcon(h, p) : null;
-            return renderTitleWidthIcon(h, [titleContent, sortIcon, filterIcon]);
+            // @ts-ignore
+            const attach = primaryTableRef.value?.$refs?.tableContentRef;
+            return renderTitleWidthIcon(
+              h,
+              [titleContent, sortIcon, filterIcon],
+              p.col,
+              p.colIndex,
+              ellipsisTitle,
+              attach,
+            );
+          };
+          item.ellipsisTitle = false;
+        }
+        // 如果是单元格可编辑状态
+        if (item.edit?.component) {
+          const oldCell = item.cell;
+          item.cell = (h, p) => {
+            const cellProps: EditableCellProps = {
+              ...p,
+              oldCell,
+              tableBaseClass,
+              cellEmptyContent: props.cellEmptyContent,
+              onChange: onPrimaryTableRowEdit,
+              onValidate: onPrimaryTableRowValidate,
+              onRuleChange,
+            };
+            if (props.editableRowKeys) {
+              const rowValue = get(p.row, props.rowKey || 'id');
+              cellProps.editable = editableKeysMap.value[rowValue] || false;
+              const key = [rowValue, p.col.colKey].join('__');
+              const errorList = errorListMap.value?.[key];
+              errorList && (cellProps.errors = errorList);
+            }
+            return renderEditableCell(h, cellProps);
           };
         }
         if (item.children?.length) {
@@ -149,6 +228,10 @@ export default defineComponent({
       primaryTableRef,
       tRowAttributes,
       primaryTableClasses,
+      errorListMap,
+      validateRowData,
+      validateTableData,
+      clearValidateData,
       renderTNode,
       renderColumnController,
       renderExpandedRow,
@@ -156,8 +239,10 @@ export default defineComponent({
       renderFirstFilterRow,
       renderAsyncLoading,
       onInnerPageChange,
+      setDragSortColumns,
     };
   },
+
   methods: {
     // support @row-click @page-change @row-hover .etc. events, Vue3 do not need this function
     getListener() {
@@ -209,7 +294,7 @@ export default defineComponent({
     const lastFullRow = this.formatNode('lastFullRow', this.renderAsyncLoading, !!this.asyncLoading);
 
     const props = {
-      ...this.$props,
+      ...omit(this.$props, OMIT_PROPS),
       rowClassName: this.tRowClassNames,
       rowAttributes: this.tRowAttributes,
       columns: this.tColumns,
@@ -228,6 +313,7 @@ export default defineComponent({
     if (this.expandOnRowClick) {
       on['row-click'] = this.onInnerExpandRowClick;
     }
+    on.LeafColumnsChange = this.setDragSortColumns;
     // replace `scopedSlots={this.$scopedSlots}` of `v-slots={this.$slots}` in Vue3
     return (
       <BaseTable

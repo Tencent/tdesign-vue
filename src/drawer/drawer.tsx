@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import { CloseIcon } from 'tdesign-icons-vue';
 
-import { prefix } from '../config';
 import { Button as TButton } from '../button';
 import props from './props';
 import { FooterButton, DrawerCloseContext, TdDrawerProps } from './type';
@@ -15,9 +14,6 @@ import { ClassName, Styles } from '../common';
 import ActionMixin from '../dialog/actions';
 
 type FooterButtonType = 'confirm' | 'cancel';
-
-const name = `${prefix}-drawer`;
-const lockClass = `${prefix}-drawer--lock`;
 
 export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('drawer')).extend({
   name: 'TDrawer',
@@ -41,24 +37,26 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
   computed: {
     drawerClasses(): ClassName {
       return [
-        name,
-        `${name}--${this.placement}`,
+        this.componentName,
+        `${this.componentName}--${this.placement}`,
         {
-          [`${name}--open`]: this.visible,
-          [`${name}--attach`]: this.showInAttachedElement,
-          [`${name}--without-mask`]: !this.showOverlay,
+          [`${this.componentName}--open`]: this.visible,
+          [`${this.componentName}--attach`]: this.showInAttachedElement,
+          [`${this.componentName}--without-mask`]: !this.showOverlay,
         },
       ];
     },
     sizeValue(): string {
       if (this.draggedSizeValue) return this.draggedSizeValue;
-      const defaultSize = isNaN(Number(this.size)) ? this.size : `${this.size}px`;
+
+      const size = this.size ?? this.global.size;
+      const defaultSize = isNaN(Number(size)) ? size : `${size}px`;
       return (
         {
           small: '300px',
           medium: '500px',
           large: '760px',
-        }[this.size] || defaultSize
+        }[size] || defaultSize
       );
     },
     wrapperStyles(): Styles {
@@ -70,7 +68,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
       };
     },
     wrapperClasses(): ClassName {
-      return [`${name}__content-wrapper`, `${name}__content-wrapper--${this.placement}`];
+      return [`${this.componentName}__content-wrapper`, `${this.componentName}__content-wrapper--${this.placement}`];
     },
     parentNode(): HTMLElement {
       return this.$el && (this.$el.parentNode as HTMLElement);
@@ -137,7 +135,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
 
   render() {
     if (this.destroyOnClose && !this.visible) return;
-    const defaultCloseBtn = <close-icon class={`${prefix}-submenu-icon`}></close-icon>;
+    const defaultCloseBtn = <close-icon class={`${this.classPrefix}-submenu-icon`}></close-icon>;
     const body = renderContent(this, 'default', 'body');
     const defaultFooter = this.getDefaultFooter();
     return (
@@ -149,27 +147,21 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
         ref="drawerContainer"
         tabindex={0}
       >
-        {this.showOverlay && <div class={`${name}__mask`} onClick={this.handleWrapperClick} />}
+        {this.showOverlay && <div class={`${this.componentName}__mask`} onClick={this.handleWrapperClick} />}
         <div class={this.wrapperClasses} style={this.wrapperStyles}>
-          {this.header !== false ? <div class={`${name}__header`}>{renderTNodeJSX(this, 'header')}</div> : null}
+          {this.header !== false ? (
+            <div class={`${this.componentName}__header`}>{renderTNodeJSX(this, 'header', <div></div>)}</div>
+          ) : null}
           {this.closeBtn !== false ? (
-            <div class={`${name}__close-btn`} onClick={this.handleCloseBtnClick}>
+            <div class={`${this.componentName}__close-btn`} onClick={this.handleCloseBtnClick}>
               {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
             </div>
           ) : null}
-          <div class={`${name}__body`}>{body}</div>
+          <div class={`${this.componentName}__body`}>{body}</div>
           {this.footer !== false ? (
-            <div class={`${name}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
+            <div class={`${this.componentName}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
           ) : null}
-          {this.sizeDraggable && (
-            <div
-              style={this.draggableLineStyles}
-              onMousedown={this.enableDrag}
-              onMousemove={this.handleMousemove}
-              onMouseup={this.disableDrag}
-              onMouseleave={this.disableDrag}
-            ></div>
-          )}
+          {this.sizeDraggable && <div style={this.draggableLineStyles} onMousedown={this.enableDrag}></div>}
         </div>
       </div>
     );
@@ -177,7 +169,14 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
 
   methods: {
     enableDrag() {
+      document.addEventListener('mouseup', this.handleMouseup, true);
+      document.addEventListener('mousemove', this.handleMousemove, true);
       this.isSizeDragging = true;
+    },
+    handleMouseup() {
+      document.removeEventListener('mouseup', this.handleMouseup, true);
+      document.removeEventListener('mousemove', this.handleMousemove, true);
+      this.isSizeDragging = false;
     },
     handleMousemove(e: MouseEvent) {
       const { x, y } = e;
@@ -196,15 +195,12 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
         }
       }
     },
-    disableDrag() {
-      this.isSizeDragging = false;
-    },
     handleScrollThrough(visible: boolean) {
       if (!document || !document.body || !this.preventScrollThrough) return;
       if (visible && !this.showInAttachedElement) {
-        this.preventScrollThrough && addClass(document.body, lockClass);
+        this.preventScrollThrough && addClass(document.body, `${this.componentName}--lock`);
       } else {
-        this.preventScrollThrough && removeClass(document.body, lockClass);
+        this.preventScrollThrough && removeClass(document.body, `${this.componentName}--lock`);
       }
     },
     handlePushMode() {
@@ -236,7 +232,12 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
       const theme = isCancel ? 'default' : 'primary';
       const isApiObject = typeof btnApi === 'object';
       return (
-        <t-button theme={theme} onClick={clickAction} props={isApiObject ? btnApi : {}} class={`${name}-${btnType}`}>
+        <t-button
+          theme={theme}
+          onClick={clickAction}
+          props={isApiObject ? btnApi : {}}
+          class={`${this.componentName}-${btnType}`}
+        >
           {btnApi && typeof btnApi === 'object' ? btnApi.content : btnApi}
         </t-button>
       );
@@ -251,13 +252,13 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
       const confirmBtn = this.getConfirmBtn({
         confirmBtn: this.confirmBtn,
         globalConfirm: this.global.confirm,
-        className: `${prefix}-drawer__confirm`,
+        className: `${this.componentName}__confirm`,
       });
       // this.getCancelBtn is a function of ActionMixin
       const cancelBtn = this.getCancelBtn({
         cancelBtn: this.cancelBtn,
         globalCancel: this.global.cancel,
-        className: `${prefix}-drawer__cancel`,
+        className: `${this.componentName}__cancel`,
       });
       return (
         <div style={this.footerStyle}>
@@ -273,14 +274,14 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
     },
     handleWrapperClick(e: MouseEvent) {
       emitEvent<Parameters<TdDrawerProps['onOverlayClick']>>(this, 'overlay-click', { e });
-      if (this.closeOnOverlayClick) {
+      if (this.closeOnOverlayClick ?? this.global.closeOnOverlayClick) {
         this.closeDrawer({ trigger: 'overlay', e });
       }
     },
     onKeyDown(e: KeyboardEvent) {
       if (e.key === 'Escape') {
         emitEvent<Parameters<TdDrawerProps['onEscKeydown']>>(this, 'esc-keydown', { e });
-        if (this.closeOnEscKeydown) {
+        if (this.closeOnEscKeydown ?? this.global.closeOnEscKeydown) {
           this.closeDrawer({ trigger: 'esc', e });
         }
       }

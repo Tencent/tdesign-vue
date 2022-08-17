@@ -1,13 +1,15 @@
 // 通用库
 import dayjs from 'dayjs';
-import Vue, { VNode, PropType } from 'vue';
-import { prefix } from '../config';
+import { VNode, PropType } from 'vue';
 // 组件的一些常量
-import { COMPONENT_NAME } from './const';
 
 // 组件相关的自定义类型
 import { CalendarCell, TdCalendarProps } from './type';
 import { renderTNodeJSXDefault, renderTNodeJSX } from '../utils/render-tnode';
+import mixins from '../utils/mixins';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+
+const classPrefixMixins = getClassPrefixMixins('calendar');
 
 const clickTypeEmitEventMap = {
   click: 'click',
@@ -15,8 +17,8 @@ const clickTypeEmitEventMap = {
   contextmenu: 'rightclick',
 };
 
-export default Vue.extend({
-  name: `${COMPONENT_NAME}-cell`,
+export default mixins(classPrefixMixins).extend({
+  name: 'TCalendarCell',
   props: {
     item: {
       type: Object as PropType<CalendarCell>,
@@ -56,11 +58,11 @@ export default Vue.extend({
       } = this.item;
       const isNow = mode === 'year' ? new Date().getMonth() === date.getMonth() : formattedDate === dayjs().format('YYYY-MM-DD');
       return [
-        `${prefix}-calendar__table-body-cell`,
+        `${this.componentName}__table-body-cell`,
         {
-          [`${prefix}-is-disabled`]: this.disabled,
-          [`${prefix}-is-checked`]: isCurrent,
-          [`${prefix}-calendar__table-body-cell--now`]: isNow,
+          [`${this.classPrefix}-is-disabled`]: this.disabled,
+          [`${this.classPrefix}-is-checked`]: isCurrent,
+          [`${this.componentName}__table-body-cell--now`]: isNow,
         },
       ];
     },
@@ -78,8 +80,8 @@ export default Vue.extend({
 
     const defaultNode = () => (
       <span>
-        <div class={`${prefix}-calendar__table-body-cell-display`}>{valueDisplay}</div>
-        <div class={`${prefix}-calendar__table-body-cell-content`}>
+        <div class={`${this.componentName}__table-body-cell-display`}>{valueDisplay}</div>
+        <div class={`${this.componentName}__table-body-cell-content`}>
           {allowSlot
             && renderTNodeJSX(this, 'cellAppend', {
               params: item,

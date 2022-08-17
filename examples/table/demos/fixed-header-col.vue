@@ -1,6 +1,6 @@
 <template>
   <!-- 父元素宽度不能超过 100% -->
-  <div class="tdesign-demo-block-column" style="width: 100%">
+  <div class="tdesign-demo-block-column tdesign-demo__table" style="width: 100%">
     <div>
       <t-radio-group v-model="tableLayout" variant="default-filled">
         <t-radio-button value="fixed">table-layout: fixed</t-radio-button>
@@ -30,7 +30,7 @@
       :scroll="virtualScroll ? { type: 'virtual' } : undefined"
       :stripe="stripe"
       bordered
-      allowResizeColumnWidth
+      resizable
     >
       <template #operation="slotProps">
         <a class="link" @click="rehandleClickOp(slotProps)">删除</a>

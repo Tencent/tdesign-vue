@@ -1,7 +1,6 @@
-import Vue, { VNode } from 'vue';
+import { VNode } from 'vue';
 import debounce from 'lodash/debounce';
 import { ChevronLeftIcon, ChevronRightIcon, AddIcon } from 'tdesign-icons-vue';
-import { prefix } from '../config';
 import TTabPanel from './tab-panel';
 import TTabNavItem from './tab-nav-item';
 import { emitEvent } from '../utils/event';
@@ -10,6 +9,10 @@ import { TdTabsProps, TdTabPanelProps } from './type';
 import tabProps from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { TabPanelProps } from '.';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
+
+const classPrefixMixins = getClassPrefixMixins('tab__nav');
 
 const getDomWidth = (dom: HTMLElement): number => dom?.offsetWidth || 0;
 
@@ -61,7 +64,7 @@ const getRightCoverWidth = (o: GetRightCoverWidth) => {
   return rightOperationsZoneWidth;
 };
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TTabNav',
   components: {
     TTabNavItem,
@@ -123,52 +126,52 @@ export default Vue.extend({
     },
     iconBaseClass(): { [key: string]: boolean } {
       return {
-        [`${prefix}-tabs__btn`]: true,
-        [`${prefix}-size-m`]: this.size === 'medium',
-        [`${prefix}-size-l`]: this.size === 'large',
+        [`${this.classPrefix}-tabs__btn`]: true,
+        [`${this.classPrefix}-size-m`]: this.size === 'medium',
+        [`${this.classPrefix}-size-l`]: this.size === 'large',
       };
     },
     leftIconClass(): { [key: string]: boolean } {
       return {
-        [`${prefix}-tabs__btn--left`]: true,
+        [`${this.classPrefix}-tabs__btn--left`]: true,
         ...this.iconBaseClass,
       };
     },
     rightIconClass(): { [key: string]: boolean } {
       return {
-        [`${prefix}-tabs__btn--right`]: true,
+        [`${this.classPrefix}-tabs__btn--right`]: true,
         ...this.iconBaseClass,
       };
     },
     addIconClass(): { [key: string]: boolean } {
       return {
-        [`${prefix}-tabs__add-btn`]: true,
+        [`${this.classPrefix}-tabs__add-btn`]: true,
         ...this.iconBaseClass,
       };
     },
     navContainerClass(): { [key: string]: boolean } {
       return {
-        [`${prefix}-tabs__nav-container`]: true,
-        [`${prefix}-tabs__nav--card`]: this.theme === 'card',
-        [`${prefix}-is-${this.placement}`]: true,
-        [`${prefix}-is-addable`]: this.theme === 'card' && this.addable,
+        [`${this.classPrefix}-tabs__nav-container`]: true,
+        [`${this.classPrefix}-tabs__nav--card`]: this.theme === 'card',
+        [`${this.classPrefix}-is-${this.placement}`]: true,
+        [`${this.classPrefix}-is-addable`]: this.theme === 'card' && this.addable,
       };
     },
     navScrollContainerClass(): { [key: string]: boolean } {
       return {
-        [`${prefix}-tabs__nav-scroll`]: true,
-        [`${prefix}-is-scrollable`]: this.canToLeft || this.canToRight,
+        [`${this.classPrefix}-tabs__nav-scroll`]: true,
+        [`${this.classPrefix}-is-scrollable`]: this.canToLeft || this.canToRight,
       };
     },
     navsWrapClass(): Array<string | { [key: string]: boolean }> {
       return [
-        `${prefix}-tabs__nav-wrap`,
-        `${prefix}-is-smooth`,
-        { [`${prefix}-is-vertical`]: this.placement === 'left' || this.placement === 'right' },
+        `${this.classPrefix}-tabs__nav-wrap`,
+        `${this.classPrefix}-is-smooth`,
+        { [`${this.classPrefix}-is-vertical`]: this.placement === 'left' || this.placement === 'right' },
       ];
     },
     navBarClass(): Array<string> {
-      return [`${prefix}-tabs__bar`, `${prefix}-is-${this.placement}`];
+      return [`${this.classPrefix}-tabs__bar`, `${this.classPrefix}-is-${this.placement}`];
     },
     navsContainerStyle(): object {
       return this.addable ? { 'min-height': '48px' } : null;
@@ -407,7 +410,10 @@ export default Vue.extend({
 
     renderArrows() {
       return [
-        <div ref="leftOperationsZone" class={[`${prefix}-tabs__operations`, `${prefix}-tabs__operations--left`]}>
+        <div
+          ref="leftOperationsZone"
+          class={[`${this.classPrefix}-tabs__operations`, `${this.classPrefix}-tabs__operations--left`]}
+        >
           <transition name="fade" mode="out-in" appear>
             {this.canToLeft ? (
               <div ref="leftIcon" class={this.leftIconClass} onClick={this.handleScrollToLeft}>
@@ -416,7 +422,10 @@ export default Vue.extend({
             ) : null}
           </transition>
         </div>,
-        <div ref="rightOperationsZone" class={[`${prefix}-tabs__operations`, `${prefix}-tabs__operations--right`]}>
+        <div
+          ref="rightOperationsZone"
+          class={[`${this.classPrefix}-tabs__operations`, `${this.classPrefix}-tabs__operations--right`]}
+        >
           <transition name="fade" mode="out-in" appear>
             {this.canToRight ? (
               <div ref="rightIcon" class={this.rightIconClass} onClick={this.handleScrollToRight}>
@@ -424,7 +433,7 @@ export default Vue.extend({
               </div>
             ) : null}
           </transition>
-          {this.theme === 'card' && this.addable ? (
+          {this.addable ? (
             <div class={this.addIconClass} onClick={this.handleAddTab}>
               <AddIcon />
             </div>
@@ -458,7 +467,7 @@ export default Vue.extend({
   },
   render() {
     return (
-      <div ref="navsContainer" class={[`${prefix}-tabs__nav`]} style={this.navsContainerStyle}>
+      <div ref="navsContainer" class={[`${this.classPrefix}-tabs__nav`]} style={this.navsContainerStyle}>
         {this.renderArrows()}
         {this.renderNavs()}
       </div>

@@ -1,4 +1,4 @@
-import Vue, { VNode } from 'vue';
+import { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import {
   CloseCircleFilledIcon,
@@ -8,7 +8,6 @@ import {
   CloseIcon,
   CheckIcon,
 } from 'tdesign-icons-vue';
-import { prefix } from '../config';
 import { getBackgroundColor } from '../utils/helper';
 import {
   PRO_THEME, CIRCLE_SIZE, CIRCLE_SIZE_PX, STATUS_ICON, CIRCLE_FONT_SIZE_RATIO,
@@ -16,19 +15,16 @@ import {
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { Styles } from '../common';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-progress`;
+const classPrefixMixins = getClassPrefixMixins('progress');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TProgress',
 
   props: { ...props },
 
-  data() {
-    return {
-      name,
-    };
-  },
   computed: {
     statusStyle(): string {
       if (this.percentage >= 100) {
@@ -45,7 +41,11 @@ export default Vue.extend({
     },
     trackBgStyle(): Styles {
       const { strokeWidth } = this;
-      const height = typeof strokeWidth === 'string' ? strokeWidth : `${strokeWidth}px`;
+      let height = typeof strokeWidth === 'string' ? strokeWidth : `${strokeWidth}px`;
+      const Plump = PRO_THEME.PLUMP;
+      if (this.theme === Plump) {
+        height = '';
+      }
       return {
         height,
         backgroundColor: this.trackColor,
@@ -125,7 +125,7 @@ export default Vue.extend({
       return this.strokeWidth ? Number(this.strokeWidth) : defaultWidth;
     },
     strokeDashArr(): string {
-      const radius = this.diameter / 2;
+      const radius = (this.diameter - this.circleStrokeWidth) / 2;
       const perimeter = Math.PI * 2 * radius;
       const percent = this.percentage / 100;
       return `${perimeter * percent}  ${perimeter * (1 - percent)}`;
@@ -157,7 +157,7 @@ export default Vue.extend({
         const components = this.getIconMap();
         const component = components[status];
         if (component) {
-          labelContent = <component class={[`${name}__icon`]}></component>;
+          labelContent = <component class={[`${this.componentName}__icon`]}></component>;
         }
       }
       return labelContent;
@@ -165,16 +165,18 @@ export default Vue.extend({
   },
 
   render() {
-    const labelContent = <div class={`${name}__info`}>{renderTNodeJSX(this, 'label', this.getLabelContent())}</div>;
+    const labelContent = (
+      <div class={`${this.componentName}__info`}>{renderTNodeJSX(this, 'label', this.getLabelContent())}</div>
+    );
     // 进度大于 10 ，进度百分比显示在内部；进度百分比小于 10 进度显示在外部
     const PLUMP_SEPARATE = 10;
-    const separateClasses = this.percentage > PLUMP_SEPARATE ? `${name}--over-ten` : `${name}--under-ten`;
+    const separateClasses = this.percentage > PLUMP_SEPARATE ? `${this.componentName}--over-ten` : `${this.componentName}--under-ten`;
     return (
-      <div class={name}>
+      <div class={this.componentName}>
         {this.theme === PRO_THEME.LINE && (
-          <div class={`${name}--thin ${name}--status--${this.statusStyle}`}>
-            <div class={`${name}__bar`} style={this.trackBgStyle}>
-              <div class={`${name}__inner`} style={this.barStyle}></div>
+          <div class={`${this.componentName}--thin ${this.componentName}--status--${this.statusStyle}`}>
+            <div class={`${this.componentName}__bar`} style={this.trackBgStyle}>
+              <div class={`${this.componentName}__inner`} style={this.barStyle}></div>
             </div>
             {labelContent}
           </div>
@@ -183,12 +185,12 @@ export default Vue.extend({
         {this.theme === PRO_THEME.PLUMP && (
           <div
             class={[
-              `${name}__bar ${name}--plump ${separateClasses}`,
-              { [`${name}--status--${this.statusStyle}`]: this.statusStyle },
+              `${this.componentName}__bar ${this.componentName}--plump ${separateClasses}`,
+              { [`${this.componentName}--status--${this.statusStyle}`]: this.statusStyle },
             ]}
             style={this.trackBgStyle}
           >
-            <div class={`${name}__inner`} style={this.barStyle}>
+            <div class={`${this.componentName}__inner`} style={this.barStyle}>
               {this.percentage > PLUMP_SEPARATE && labelContent}
             </div>
             {this.percentage <= PLUMP_SEPARATE && labelContent}
@@ -196,7 +198,10 @@ export default Vue.extend({
         )}
 
         {this.theme === PRO_THEME.CIRCLE && (
-          <div class={`${name}--circle ${name}--status--${this.statusStyle}`} style={this.circleStyle}>
+          <div
+            class={`${this.componentName}--circle ${this.componentName}--status--${this.statusStyle}`}
+            style={this.circleStyle}
+          >
             {labelContent}
             <svg width={this.diameter} height={this.diameter} viewBox={`0 0 ${this.diameter} ${this.diameter}`}>
               <circle
@@ -206,7 +211,7 @@ export default Vue.extend({
                 stroke-width={this.circleStrokeWidth}
                 stroke={this.trackColor}
                 fill="none"
-                class={`${name}__circle-outer`}
+                class={`${this.componentName}__circle-outer`}
                 style={this.circleStrokeStyle}
               />
               {this.percentage > 0 && (
@@ -217,7 +222,7 @@ export default Vue.extend({
                   stroke-width={this.circleStrokeWidth}
                   fill="none"
                   stroke-linecap="round"
-                  class={`${name}__circle-inner`}
+                  class={`${this.componentName}__circle-inner`}
                   transform={`matrix(0,-1,1,0,0,${this.diameter})`}
                   stroke-dasharray={this.strokeDashArr}
                   style={this.circlePathStyle}

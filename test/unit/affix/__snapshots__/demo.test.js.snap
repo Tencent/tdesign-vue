@@ -5,16 +5,18 @@ exports[`Affix Affix baseVue demo works fine 1`] = `
   class="affix-base"
 >
   <div>
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
+    <div>
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
       >
-        固钉
-      </span>
-    </button>
+        <span
+          class="t-button__text"
+        >
+          固钉
+        </span>
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -30,16 +32,18 @@ exports[`Affix Affix containerVue demo works fine 1`] = `
       class="background"
     >
       <div>
-        <button
-          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-          type="button"
-        >
-          <span
-            class="t-button__text"
+        <div>
+          <button
+            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            type="button"
           >
-            FixedTop top:0
-          </span>
-        </button>
+            <span
+              class="t-button__text"
+            >
+              Fixed open:0
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>

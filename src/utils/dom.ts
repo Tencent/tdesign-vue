@@ -8,16 +8,21 @@ import isString from 'lodash/isString';
 import { easeInOutCubic, EasingFunction } from './easing';
 import { ScrollContainer, ScrollContainerElement } from '../common';
 
-const isServer = Vue.prototype.$isServer || typeof window === 'undefined';
+export const isServer = Vue.prototype.$isServer || typeof window === 'undefined';
 
-const trim = (str: string): string => (str || '').replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, '');
+export const trim = (str: string): string => (str || '').replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, '');
 
 export const on = ((): any => {
   if (!isServer && document.addEventListener) {
-    return (element: Node, event: string, handler: EventListenerOrEventListenerObject): any => {
+    return (
+      element: Node,
+      event: string,
+      handler: EventListenerOrEventListenerObject,
+      options?: boolean | AddEventListenerOptions,
+    ): any => {
       if (element && event && handler) {
-        element.addEventListener(event, handler, false);
-        return () => off(element, event, handler);
+        element.addEventListener(event, handler, options);
+        return () => off(element, event, handler, options);
       }
     };
   }
@@ -31,9 +36,14 @@ export const on = ((): any => {
 
 export const off = ((): any => {
   if (!isServer && document.removeEventListener) {
-    return (element: Node, event: string, handler: EventListenerOrEventListenerObject): any => {
+    return (
+      element: Node,
+      event: string,
+      handler: EventListenerOrEventListenerObject,
+      options?: boolean | AddEventListenerOptions,
+    ): any => {
       if (element && event) {
-        element.removeEventListener(event, handler, false);
+        element.removeEventListener(event, handler, options);
       }
     };
   }
@@ -44,14 +54,19 @@ export const off = ((): any => {
   };
 })();
 
-export function once(element: Node, event: string, handler: EventListenerOrEventListenerObject) {
+export function once(
+  element: Node,
+  event: string,
+  handler: EventListenerOrEventListenerObject,
+  options?: boolean | AddEventListenerOptions,
+) {
   const handlerFn = typeof handler === 'function' ? handler : handler.handleEvent;
   const callback = (evt: any) => {
     handlerFn(evt);
-    off(element, event, callback);
+    off(element, event, callback, options);
   };
 
-  on(element, event, callback);
+  on(element, event, callback, options);
 }
 
 export function hasClass(el: Element, cls: string): any {
@@ -103,8 +118,8 @@ export function removeClass(el: Element, cls: string): any {
   }
 }
 
-export const getAttach = (node: any): HTMLElement => {
-  const attachNode = typeof node === 'function' ? node() : node;
+export const getAttach = (node: any, triggerNode?: any): HTMLElement => {
+  const attachNode = typeof node === 'function' ? node(triggerNode) : node;
   if (!attachNode) {
     return document.body;
   }
@@ -236,28 +251,6 @@ export const clickOut = (els: Vue | Element | Iterable<any> | ArrayLike<any>, cb
 export const isNodeOverflow = (ele: Vue | Element | (Vue | Element)[]): boolean => {
   const { clientWidth = 0, scrollWidth = 0 } = ele as Element;
   return scrollWidth > clientWidth;
-};
-
-// 将子元素selected滚动到父元素parentEle的可视范围内
-export const scrollSelectedIntoView = (parentEle: HTMLElement, selected: HTMLElement) => {
-  // 服务端不处理
-  if (Vue.prototype.$isServer) return;
-  // selected不存在或selected父元素不为parentEle则不处理
-  if (!selected || selected.offsetParent !== parentEle) {
-    parentEle.scrollTop = 0;
-    return;
-  }
-  const selectedTop = selected.offsetTop;
-  const selectedBottom = selectedTop + selected.offsetHeight;
-  const parentScrollTop = parentEle.scrollTop;
-  const parentViewBottom = parentScrollTop + parentEle.clientHeight;
-  if (selectedTop < parentScrollTop) {
-    // selected元素滚动过了，则将其向下滚动到可视范围顶部
-    parentEle.scrollTop = selectedTop;
-  } else if (selectedBottom > parentViewBottom) {
-    // selected元素未滚动到，则将其向上滚动到可视范围底部
-    parentEle.scrollTop = selectedBottom - parentEle.clientHeight;
-  }
 };
 
 export const removeDom = (el: HTMLElement) => {

@@ -1,9 +1,9 @@
 <template>
   <div class="tdesign-tree-demo tdesign-demo-performance">
     <div class="operations">
-      <t-addon prepend="插入节点数量:">
+      <t-input-adornment prepend="插入节点数量:">
         <t-input v-model="insertCount" />
-      </t-addon>
+      </t-input-adornment>
     </div>
     <div class="operations">
       <t-button @click="append()">插入根节点</t-button>
