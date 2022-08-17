@@ -315,9 +315,9 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
 
       // 处理expandOnClickNode时与checkbox的选中的逻辑冲突
       if (
-        srcTarget.className.indexOf(`${this.classPrefix}-tree__label`) !== -1
-        && this.expandOnClickNode
+        this.expandOnClickNode
         && this.node.children
+        && srcTarget.className?.indexOf?.(`${this.classPrefix}-tree__label`) !== -1
       ) evt.preventDefault();
 
       this.$clicked = true;
