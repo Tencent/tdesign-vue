@@ -5,6 +5,7 @@ import { DropdownOption } from './type';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { pxCompat } from '../utils/helper';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
 const classPrefixMixins = getClassPrefixMixins('dropdown');
 
@@ -17,17 +18,13 @@ export interface DropdownMenuInstance extends Vue {
   };
 }
 
-export default (Vue as VueConstructor<DropdownMenuInstance>).extend({
+export default mixins(Vue as VueConstructor<DropdownMenuInstance>, classPrefixMixins).extend({
   name: 'TDropdownMenu',
   inject: {
     dropdown: {
       default: undefined,
     },
   },
-  props: {
-    componentName: String,
-  },
-  mixins: [classPrefixMixins],
   data() {
     return {
       path: '', // 当前选中路径，形如{/id1/id2/id3}
