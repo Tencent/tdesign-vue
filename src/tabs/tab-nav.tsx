@@ -1,6 +1,10 @@
 import { VNode } from 'vue';
 import debounce from 'lodash/debounce';
-import { ChevronLeftIcon, ChevronRightIcon, AddIcon } from 'tdesign-icons-vue';
+import {
+  ChevronLeftIcon as TdChevronLeftIcon,
+  ChevronRightIcon as TdChevronRightIcon,
+  AddIcon as TdAddIcon,
+} from 'tdesign-icons-vue';
 import TTabPanel from './tab-panel';
 import TTabNavItem from './tab-nav-item';
 import { emitEvent } from '../utils/event';
@@ -9,7 +13,7 @@ import { TdTabsProps, TdTabPanelProps } from './type';
 import tabProps from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { TabPanelProps } from '.';
-import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import { getClassPrefixMixins, getGlobalIconMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
 
 const classPrefixMixins = getClassPrefixMixins('tab__nav');
@@ -64,13 +68,10 @@ const getRightCoverWidth = (o: GetRightCoverWidth) => {
   return rightOperationsZoneWidth;
 };
 
-export default mixins(classPrefixMixins).extend({
+export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
   name: 'TTabNav',
   components: {
     TTabNavItem,
-    ChevronLeftIcon,
-    ChevronRightIcon,
-    AddIcon,
   },
   props: {
     theme: tabProps.theme,
@@ -409,6 +410,12 @@ export default mixins(classPrefixMixins).extend({
     },
 
     renderArrows() {
+      const { ChevronLeftIcon, ChevronRightIcon, AddIcon } = this.useGlobalIcon({
+        ChevronLeftIcon: TdChevronLeftIcon,
+        ChevronRightIcon: TdChevronRightIcon,
+        AddIcon: TdAddIcon,
+      });
+
       return [
         <div
           ref="leftOperationsZone"

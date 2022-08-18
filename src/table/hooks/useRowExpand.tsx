@@ -1,5 +1,5 @@
 import { computed, SetupContext, toRefs } from '@vue/composition-api';
-import { ChevronRightCircleIcon } from 'tdesign-icons-vue';
+import { ChevronRightCircleIcon as TdChevronRightCircleIcon } from 'tdesign-icons-vue';
 import get from 'lodash/get';
 import { CreateElement } from 'vue';
 import {
@@ -14,11 +14,13 @@ import useClassName from './useClassName';
 import { useTNodeJSX } from '../../hooks/tnode';
 import useDefaultValue from '../../hooks/useDefaultValue';
 import { useConfig } from '../../config-provider/useConfig';
+import { useGlobalIcon } from '../../hooks/useGlobalIcon';
 
 export default function useRowExpand(props: TdPrimaryTableProps, context: SetupContext) {
   const { expandedRowKeys } = toRefs(props);
   const renderTNode = useTNodeJSX();
   const { t, global } = useConfig('table');
+  const { ChevronRightCircleIcon } = useGlobalIcon({ ChevronRightCircleIcon: TdChevronRightCircleIcon });
   const { tableExpandClasses, positiveRotate90, tableFullRowClasses } = useClassName();
   // controlled and uncontrolled
   const [tExpandedRowKeys, setTExpandedRowKeys] = useDefaultValue(

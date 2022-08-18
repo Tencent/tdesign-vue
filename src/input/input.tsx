@@ -1,10 +1,14 @@
 import Vue, { CreateElement, VNode } from 'vue';
-import { BrowseIcon, BrowseOffIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+import {
+  BrowseIcon as TdBrowseIcon,
+  BrowseOffIcon as TdBrowseOffIcon,
+  CloseCircleFilledIcon as TdCloseCircleFilledIcon,
+} from 'tdesign-icons-vue';
 import camelCase from 'lodash/camelCase';
 import kebabCase from 'lodash/kebabCase';
 import { InputValue, TdInputProps } from './type';
 import { getCharacterLength, omit } from '../utils/helper';
-import getConfigReceiverMixins, { InputConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { InputConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
 import { ClassName } from '../common';
 import { emitEvent } from '../utils/event';
@@ -27,7 +31,7 @@ interface InputInstance extends Vue {
   tFormItem: InstanceType<typeof FormItem>;
 }
 
-export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input')).extend({
+export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input'), getGlobalIconMixins()).extend({
   name: 'TInput',
   inheritAttrs: false,
   props: {
@@ -322,6 +326,12 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
 
     const labelContent = label ? <div class={`${this.componentName}__prefix`}>{label}</div> : null;
     const suffixContent = suffix ? <div class={`${this.componentName}__suffix`}>{suffix}</div> : null;
+
+    const { BrowseIcon, BrowseOffIcon, CloseCircleFilledIcon } = this.useGlobalIcon({
+      BrowseIcon: TdBrowseIcon,
+      BrowseOffIcon: TdBrowseOffIcon,
+      CloseCircleFilledIcon: TdCloseCircleFilledIcon,
+    });
 
     if (this.type === 'password') {
       if (this.renderType === 'password') {

@@ -12,7 +12,6 @@ import {
 import isFunction from 'lodash/isFunction';
 import debounce from 'lodash/debounce';
 import get from 'lodash/get';
-import { CloseCircleFilledIcon } from 'tdesign-icons-vue';
 import cloneDeep from 'lodash/cloneDeep';
 import isArray from 'lodash/isArray';
 import useDefaultValue from '../hooks/useDefaultValue';
@@ -41,7 +40,6 @@ export default defineComponent({
   name: 'TSelect',
   props: { ...props },
   components: {
-    CloseCircleFilledIcon,
     TInput,
     TLoading,
     Tag,

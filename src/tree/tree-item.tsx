@@ -1,8 +1,12 @@
 import Vue, { VNode, CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
-import { CaretRightSmallIcon } from 'tdesign-icons-vue';
+import { CaretRightSmallIcon as TdCaretRightSmallIcon } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { TreeConfig, getKeepAnimationMixins } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, {
+  TreeConfig,
+  getKeepAnimationMixins,
+  getGlobalIconMixins,
+} from '../config-provider/config-receiver';
 import TCheckBox from '../checkbox';
 import TLoading from '../loading';
 import TreeNode from '../_common/js/tree/tree-node';
@@ -32,7 +36,11 @@ export const TreeItemProps = {
   },
 };
 
-const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnimationMixins).extend({
+const TreeItem = mixins(
+  getConfigReceiverMixins<Vue, TreeConfig>('tree'),
+  keepAnimationMixins,
+  getGlobalIconMixins(),
+).extend({
   name: 'TTreeItem',
   props: TreeItemProps,
   directives: { ripple },
@@ -131,6 +139,9 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
       if (isFunction(this.global.folderIcon)) {
         return this.global.folderIcon(this.$createElement);
       }
+      const { CaretRightSmallIcon } = this.useGlobalIcon({
+        CaretRightSmallIcon: TdCaretRightSmallIcon,
+      });
       return <CaretRightSmallIcon />;
     },
     renderIcon(createElement: CreateElement): VNode {
@@ -312,6 +323,14 @@ const TreeItem = mixins(getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAn
       // checkbox 上也有 emit click 事件
       // 用这个逻辑避免重复的 click 事件被触发
       if (this.$clicked || isBranchTrigger) return;
+
+      // 处理expandOnClickNode时与checkbox的选中的逻辑冲突
+      if (
+        this.expandOnClickNode
+        && this.node.children
+        && srcTarget.className?.indexOf?.(`${this.classPrefix}-tree__label`) !== -1
+      ) evt.preventDefault();
+
       this.$clicked = true;
       setTimeout(() => {
         this.$clicked = false;

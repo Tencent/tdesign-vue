@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-select-base">
+  <t-space>
     <!-- 方式一：使用 options 输出下拉选项。优先级高于 t-option-->
     <t-select v-model="value1" :options="options1" placeholder="请选择云解决方案" />
 
@@ -7,7 +7,7 @@
     <t-select v-model="value2" placeholder="请选择云产品">
       <t-option v-for="item in options2" :value="item.value" :label="item.label" :key="item.value"></t-option>
     </t-select>
-  </div>
+  </t-space>
 </template>
 
 <script lang="jsx">
@@ -44,14 +44,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.tdesign-demo-select-base {
-  width: 450px;
-  display: flex;
-}
-
-.tdesign-demo-select-base .t-select__wrap + .t-select__wrap {
-  margin-left: 36px;
-}
-</style>

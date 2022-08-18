@@ -1,11 +1,12 @@
 <template>
-  <div class="tdesign-demo-select-options">
+  <t-space>
     <!-- 方式一：使用 options 自定义下拉选项内容 -->
     <t-select
       v-model="value1"
       :options="optionsData"
       :popupProps="{ overlayClassName: 'tdesign-demo-select__overlay-option' }"
       placeholder="请选择"
+      style="width: 300px"
     />
     <br /><br />
 
@@ -14,6 +15,7 @@
       v-model="value2"
       placeholder="请选择"
       :popupProps="{ overlayClassName: 'tdesign-demo-select__overlay-option' }"
+      style="width: 300px"
     >
       <t-option v-for="item in options" :value="item.value" :label="item.label" :key="item.value">
         <div class="tdesign-demo__user-option">
@@ -25,7 +27,7 @@
         </div>
       </t-option>
     </t-select>
-  </div>
+  </t-space>
 </template>
 
 <script lang="jsx">

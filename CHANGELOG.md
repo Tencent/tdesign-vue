@@ -5,6 +5,19 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.46.1 `2022-08-18` 
+### 🚀 Features
+- `ConfigProvider`: 支持自定义全局 `icon` @zhangpaopao0609 
+- `Button`: 支持 href 和 tag 属性 @zhangpaopao0609 
+### 🐞 Bug Fixes
+- `Table`
+    - 修复吸顶表头末尾有 1px 未对齐的问题 @chaishi 
+    - 固定列阴影样式不能随窗口放大缩小而变化 @chaishi 
+- `Select`: 优化部分样式 @guoaihua
+- `Tree`: 修复expandOnClickNode下点击tree的label会触发checkbox选中的问题 @uyarn 
+- `Dropdown`: 修复控制台告警 @uyarn 
+
+
 ## 🌈 0.46.0 `2022-08-16` 
 
 ### ❗️ BREAKING CHANGES

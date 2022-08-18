@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <t-space>
     <t-select
       v-model="value"
       placeholder="-请选择-"
       disabled
       filterable
-      style="width: 200px;display: inline-block;margin-right: 20px;"
+      style="width: 200px; display: inline-block; margin-right: 20px"
       :options="options"
     />
     <t-select
@@ -13,10 +13,10 @@
       placeholder="-请选择-"
       multiple
       disabled
-      style="width: 200px;display: inline-block;"
+      style="width: 200px; display: inline-block"
       :options="options"
     />
-  </div>
+  </t-space>
 </template>
 
 <script>

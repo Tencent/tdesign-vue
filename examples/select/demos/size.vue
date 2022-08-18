@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-select-size-demo">
+  <t-space align="center">
     <t-select
       size="small"
       v-model="value1"
@@ -26,7 +26,7 @@
       size="large"
       style="width: 200px; display: inline-block"
     />
-  </div>
+  </t-space>
 </template>
 
 <script>
@@ -50,9 +50,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.tdesign-select-size-demo {
-  display: flex;
-  align-items: center;
-}
-</style>

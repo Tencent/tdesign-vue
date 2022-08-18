@@ -1,12 +1,13 @@
 import {
   computed, defineComponent, PropType, ref,
 } from '@vue/composition-api';
-import { DeleteIcon, AddIcon } from 'tdesign-icons-vue';
+import { DeleteIcon as TdDeleteIcon, AddIcon as TdAddIcon } from 'tdesign-icons-vue';
 import { cloneDeep } from 'lodash';
 import { Select as TSelect, Option as TOption } from '../../select';
 import { Color } from '../utils';
 import { useBaseClassName } from '../hooks';
 import { useConfig, usePrefixClass } from '../../hooks/useConfig';
+import { useGlobalIcon } from '../../hooks/useGlobalIcon';
 import useCommonClassName from '../../hooks/useCommonClassName';
 import baseProps from './base-props';
 import { Button as TButton } from '../../button';
@@ -47,6 +48,8 @@ export default defineComponent({
     const { t, global } = useConfig('colorPicker');
     const { global: confirmGlobal } = useConfig('popconfirm');
     const classPrefix = usePrefixClass();
+    const { DeleteIcon, AddIcon } = useGlobalIcon({ DeleteIcon: TdDeleteIcon, AddIcon: TdAddIcon });
+
     const { statusClassNames } = useCommonClassName();
     const visiblePopConfirm = ref<boolean>(false);
     const colorInstance = computed(() => cloneDeep(props.color));
@@ -82,6 +85,8 @@ export default defineComponent({
       global,
       confirmGlobal,
       classPrefix,
+      DeleteIcon,
+      AddIcon,
       baseClassName,
       statusClassNames,
       selectedColorIndex,
@@ -94,7 +99,7 @@ export default defineComponent({
   },
   render() {
     const {
-      baseClassName, statusClassNames, title, editable,
+      baseClassName, statusClassNames, title, editable, DeleteIcon, AddIcon,
     } = this;
     const swatchesClass = `${baseClassName}__swatches`;
 

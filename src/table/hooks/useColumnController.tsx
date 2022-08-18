@@ -4,7 +4,7 @@
 import {
   computed, ref, SetupContext, toRefs, h, watch,
 } from '@vue/composition-api';
-import { SettingIcon } from 'tdesign-icons-vue';
+import { SettingIcon as TdSettingIcon } from 'tdesign-icons-vue';
 import intersection from 'lodash/intersection';
 import { CreateElement } from 'vue';
 import Checkbox, {
@@ -20,6 +20,7 @@ import {
 } from '../type';
 import { useConfig } from '../../config-provider/useConfig';
 import useDefaultValue from '../../hooks/useDefaultValue';
+import { useGlobalIcon } from '../../hooks/useGlobalIcon';
 import { getCurrentRowByKey } from '../utils';
 import { DialogInstance } from '../../dialog';
 import TButton from '../../button';
@@ -37,6 +38,7 @@ export function getColumnKeys(columns: PrimaryTableCol[], keys = new Set<string>
 
 export default function useColumnController(props: TdPrimaryTableProps, context: SetupContext) {
   const { classPrefix, global } = useConfig('table');
+  const { SettingIcon } = useGlobalIcon({ SettingIcon: TdSettingIcon });
   const {
     columns, columnController, displayColumns, columnControllerVisible,
   } = toRefs(props);
