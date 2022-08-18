@@ -27,10 +27,13 @@ npm i tdesign-vue
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/tdesign-vue/dist/tdesign.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.js"></script>
+<script src="https://unpkg.com/vue@2.6/dist/vue.js"></script>
 <script src="https://unpkg.com/@vue/composition-api@1.7.0/dist/vue-composition-api.prod.js"></script>
 <script src="https://unpkg.com/tdesign-vue/dist/tdesign.min.js"></script>
-
+...
+<script>
+  Vue.use(TDesign);
+</script>
 ```
 
 ### 基础使用
@@ -130,6 +133,8 @@ module.exports = {
   ],
 };
 ```
+由于部分组件依赖了`@vue/composition-api`，在以上配置之外，自动引入的方式仍需要您手动引入`@vue/composition-api`来保证组件的正常运行。
+
 
 > `TDesignResolver` 支持的配置，可以点击此[链接](https://github.com/antfu/unplugin-vue-components/blob/main/src/core/resolvers/tdesign.ts#L4)。
 
