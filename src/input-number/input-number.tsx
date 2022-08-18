@@ -1,5 +1,8 @@
 import {
-  AddIcon, RemoveIcon, ChevronDownIcon, ChevronUpIcon,
+  AddIcon as TdAddIcon,
+  RemoveIcon as TdRemoveIcon,
+  ChevronDownIcon as TdChevronDownIcon,
+  ChevronUpIcon as TdChevronUpIcon,
 } from 'tdesign-icons-vue';
 import { defineComponent, SetupContext } from '@vue/composition-api';
 import TButton from '../button';
@@ -7,6 +10,7 @@ import TInput from '../input';
 import props from './props';
 import { TdInputNumberProps } from './type';
 import useInputNumber from './useInputNumber';
+import { useGlobalIcon } from '../hooks/useGlobalIcon';
 
 export default defineComponent({
   name: 'TInputNumber',
@@ -16,10 +20,27 @@ export default defineComponent({
   // 保持纯净（逻辑和节点渲染分开）
   setup(props: TdInputNumberProps, context: SetupContext) {
     const p = useInputNumber(props, context);
-    return { ...p };
+    const {
+      AddIcon, RemoveIcon, ChevronDownIcon, ChevronUpIcon,
+    } = useGlobalIcon({
+      AddIcon: TdAddIcon,
+      RemoveIcon: TdRemoveIcon,
+      ChevronDownIcon: TdChevronDownIcon,
+      ChevronUpIcon: TdChevronUpIcon,
+    });
+    return {
+      ...p,
+      AddIcon,
+      RemoveIcon,
+      ChevronDownIcon,
+      ChevronUpIcon,
+    };
   },
 
   render() {
+    const {
+      AddIcon, RemoveIcon, ChevronDownIcon, ChevronUpIcon,
+    } = this;
     const reduceIcon = this.theme === 'column' ? <ChevronDownIcon size={this.size} /> : <RemoveIcon size={this.size} />;
     const addIcon = this.theme === 'column' ? <ChevronUpIcon size={this.size} /> : <AddIcon size={this.size} />;
     const status = this.isError ? 'error' : this.status;

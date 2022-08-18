@@ -1,12 +1,13 @@
-import Vue, { VNode, VueConstructor, VNodeComponentOptions } from 'vue';
-import { ChevronLeftIcon, ChevronRightIcon } from 'tdesign-icons-vue';
+import Vue, { VNode, VNodeComponentOptions, VueConstructor } from 'vue';
+import { ChevronLeftIcon as TdChevronLeftIcon, ChevronRightIcon as TdChevronRightIcon } from 'tdesign-icons-vue';
 import kebabCase from 'lodash/kebabCase';
+
 import props from './props';
 import { TdSwiperProps, SwiperNavigation, SwiperChangeSource } from './type';
 import TSwiperItem from './swiper-item';
 import { isVNode } from '../hooks/render-tnode';
 import { emitEvent } from '../utils/event';
-import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import { getClassPrefixMixins, getGlobalIconMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
 
 const classPrefixMixins = getClassPrefixMixins('swiper');
@@ -23,7 +24,7 @@ const defaultNavigation: SwiperNavigation = {
   type: 'bars',
 };
 
-export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins).extend({
+export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGlobalIconMixins()).extend({
   name: 'TSwiper',
 
   components: {
@@ -223,6 +224,10 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins).exten
     },
     renderPagination() {
       const fractionIndex = this.currentIndex + 1 > this.swiperItemLength ? 1 : this.currentIndex + 1;
+      const { ChevronLeftIcon, ChevronRightIcon } = this.useGlobalIcon({
+        ChevronLeftIcon: TdChevronLeftIcon,
+        ChevronRightIcon: TdChevronRightIcon,
+      });
       return (
         <div class={`${this.componentName}__arrow`}>
           <div class={`${this.componentName}__arrow-left`} onClick={() => this.goPrevious({ source: 'click' })}>
@@ -239,6 +244,10 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins).exten
     },
     renderArrow() {
       if (!this.showArrow) return null;
+      const { ChevronLeftIcon, ChevronRightIcon } = this.useGlobalIcon({
+        ChevronLeftIcon: TdChevronLeftIcon,
+        ChevronRightIcon: TdChevronRightIcon,
+      });
       return (
         <div class={[`${this.componentName}__arrow`, `${this.componentName}__arrow--default`]}>
           <div class={`${this.componentName}__arrow-left`} onClick={() => this.goPrevious({ source: 'click' })}>

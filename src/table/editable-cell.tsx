@@ -4,7 +4,7 @@ import {
 import get from 'lodash/get';
 import set from 'lodash/set';
 import isFunction from 'lodash/isFunction';
-import { Edit1Icon } from 'tdesign-icons-vue';
+import { Edit1Icon as TdEdit1Icon } from 'tdesign-icons-vue';
 import {
   TableRowData,
   PrimaryTableCol,
@@ -13,6 +13,7 @@ import {
   TdBaseTableProps,
 } from './type';
 import { TableClassName } from './hooks/useClassName';
+import { useGlobalIcon } from '../hooks/useGlobalIcon';
 import { renderCell } from './tr';
 import { validate } from '../form/form-model';
 import log from '../_common/js/log';
@@ -63,6 +64,8 @@ export default defineComponent({
     const isEdit = ref(false);
     const editValue = ref();
     const errorList = ref<AllValidateResult[]>();
+
+    const { Edit1Icon } = useGlobalIcon({ Edit1Icon: TdEdit1Icon });
 
     const currentRow = computed(() => {
       const newRow = { ...row.value };
@@ -302,12 +305,14 @@ export default defineComponent({
       tableEditableCellRef,
       errorList,
       onEditChange,
+      Edit1Icon,
     };
   },
 
   render() {
     // props.editable = undefined 表示由组件内部控制编辑状态
     if ((this.editable === undefined && !this.isEdit) || this.editable === false) {
+      const { Edit1Icon } = this;
       return (
         <div
           class={this.tableBaseClass?.cellEditable}

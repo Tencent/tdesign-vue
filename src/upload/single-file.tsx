@@ -1,6 +1,10 @@
-import Vue, { PropType } from 'vue';
+import { PropType } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import { CloseCircleFilledIcon, ErrorCircleFilledIcon, CheckCircleFilledIcon } from 'tdesign-icons-vue';
+import {
+  CloseCircleFilledIcon as TdCloseCircleFilledIcon,
+  ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
+  CheckCircleFilledIcon as TdCheckCircleFilledIcon,
+} from 'tdesign-icons-vue';
 import Loading from '../loading';
 import { UploadFile } from './type';
 import { ClassName } from '../common';
@@ -8,15 +12,12 @@ import { abridgeName } from '../_common/js/upload/utils';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import props from './props';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { UploadConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { UploadConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 
-export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).extend({
+export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getGlobalIconMixins()).extend({
   name: 'TUploadSingleFile',
 
   components: {
-    CloseCircleFilledIcon,
-    ErrorCircleFilledIcon,
-    CheckCircleFilledIcon,
     Loading,
   },
 
@@ -76,6 +77,9 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
   methods: {
     renderProgress() {
       if (this.loadingFile.status === 'fail') {
+        const { ErrorCircleFilledIcon } = this.useGlobalIcon({
+          ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
+        });
         return <ErrorCircleFilledIcon />;
       }
       if (this.showUploadProgress) {
@@ -90,9 +94,15 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
     renderResult() {
       if (!!this.loadingFile && this.loadingFile.status === 'fail') {
+        const { ErrorCircleFilledIcon } = this.useGlobalIcon({
+          ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
+        });
         return <ErrorCircleFilledIcon />;
       }
       if (this.file && this.file.name && !this.loadingFile) {
+        const { CheckCircleFilledIcon } = this.useGlobalIcon({
+          CheckCircleFilledIcon: TdCheckCircleFilledIcon,
+        });
         return <CheckCircleFilledIcon />;
       }
       return '';
@@ -101,6 +111,9 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     renderFilePreviewAsText() {
       if (!this.inputName) return;
       const fileListDisplay: ScopedSlotReturnValue = renderTNodeJSX(this, 'fileListDisplay');
+      const { CloseCircleFilledIcon } = this.useGlobalIcon({
+        CloseCircleFilledIcon: TdCloseCircleFilledIcon,
+      });
       return (
         <div class={[`${this.componentName}__single-display-text`, `${this.componentName}__display-text--margin`]}>
           {fileListDisplay || <span class={`${this.componentName}__single-name`}>{this.inputName}</span>}

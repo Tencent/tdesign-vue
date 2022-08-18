@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <t-space>
     <t-select
       v-model="value"
       creatable
@@ -19,7 +19,7 @@
       style="width: 400px; display: inline-block"
       @create="createOptions"
     />
-  </div>
+  </t-space>
 </template>
 
 <script>

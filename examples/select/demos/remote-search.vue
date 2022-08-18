@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <t-space>
     <t-select
       v-model="value"
       filterable
@@ -20,7 +20,7 @@
       reserveKeyword
       style="width: 400px; display: inline-block"
     />
-  </div>
+  </t-space>
 </template>
 
 <script>

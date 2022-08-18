@@ -1,22 +1,19 @@
 import { VNode } from 'vue';
-import { CloseIcon } from 'tdesign-icons-vue';
+import { CloseIcon as TdCloseIcon } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import { TdTabsProps } from './type';
 import { emitEvent } from '../utils/event';
 import ripple from '../utils/ripple';
 import tabProps from './props';
 import tabPanelProps from './tab-panel-props';
-import { getKeepAnimationMixins, getClassPrefixMixins } from '../config-provider/config-receiver';
+import { getKeepAnimationMixins, getClassPrefixMixins, getGlobalIconMixins } from '../config-provider/config-receiver';
 
 const classPrefixMixins = getClassPrefixMixins('tab-nav__item');
 
 const keepAnimationMixins = getKeepAnimationMixins();
 
-export default mixins(keepAnimationMixins, classPrefixMixins).extend({
+export default mixins(keepAnimationMixins, classPrefixMixins, getGlobalIconMixins()).extend({
   name: 'TTabNavItem',
-  components: {
-    CloseIcon,
-  },
 
   directives: { ripple },
 
@@ -59,6 +56,8 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
       emitEvent<Parameters<(e: MouseEvent) => void>>(this, 'click', e);
     },
     renderCardItem(): VNode {
+      const { CloseIcon } = this.useGlobalIcon({ CloseIcon: TdCloseIcon });
+
       return (
         <div class={this.navItemClass} onClick={this.onClickNav} v-ripple={this.keepAnimation.ripple}>
           <span class={`${this.classPrefix}-tabs__nav-item-text-wrapper`}>{this.label}</span>
@@ -69,6 +68,8 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
       );
     },
     renderNormalItem(): VNode {
+      const { CloseIcon } = this.useGlobalIcon({ CloseIcon: TdCloseIcon });
+
       return (
         <div class={this.navItemClass} onClick={this.onClickNav}>
           <div
