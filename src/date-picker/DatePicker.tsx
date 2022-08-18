@@ -11,6 +11,7 @@ import props from './props';
 
 import TSelectInput from '../select-input';
 import TSinglePanel from './panel/SinglePanel';
+import useFormDisabled from '../hooks/useFormDisabled';
 
 export default defineComponent({
   name: 'TDatePicker',
@@ -40,6 +41,9 @@ export default defineComponent({
       valueType: props.valueType,
       enableTimePicker: props.enableTimePicker,
     }));
+
+    const { formDisabled } = useFormDisabled();
+    const tDisabled = computed(() => formDisabled.value || props.disabled);
 
     watchEffect(() => {
       // 面板展开重置数据
@@ -203,17 +207,24 @@ export default defineComponent({
       datePickerInputProps,
       popupVisible,
       panelProps,
+      tDisabled,
     };
   },
   render() {
     const {
-      COMPONENT_NAME, inputValue, datePickerPopupProps, datePickerInputProps, popupVisible, panelProps,
+      COMPONENT_NAME,
+      inputValue,
+      datePickerPopupProps,
+      datePickerInputProps,
+      popupVisible,
+      panelProps,
+      tDisabled,
     } = this;
 
     return (
       <div class={COMPONENT_NAME}>
         <TSelectInput
-          disabled={this.disabled}
+          disabled={tDisabled}
           value={inputValue}
           popupProps={datePickerPopupProps}
           inputProps={{ suffixIcon: this.suffixIcon || (() => <CalendarIcon />), ...datePickerInputProps }}

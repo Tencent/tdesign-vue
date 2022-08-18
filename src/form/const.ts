@@ -40,7 +40,7 @@ export const FORM_CONTROL_COMPONENTS = [
   'TRadio',
   'TRadioGroup',
   'TTreeSelect',
-  'TDatePicker',
+  // 'TDatePicker',
   'TTimePicker',
   'TUpload',
   'TTransfer',
