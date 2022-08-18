@@ -686,6 +686,12 @@ exports[`ssr snapshot test renders ./examples/button/demos/block.vue correctly 1
 </div>
 `;
 
+exports[`ssr snapshot test renders ./examples/button/demos/custom-element.vue correctly 1`] = `
+<div class="tdesign-demo-block-row">
+  <div type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">div</span></div> <a type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">a</span></a> <a type="button" href="#" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">a:href</span></a>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./examples/button/demos/ghost.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
   <div class="tdesign-demo-block-row"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--ghost"><span class="t-button__text">幽灵按钮</span></button> <button type="button" class="t-button t-size-m t-button--variant-dashed t-button--theme-default t-button--ghost"><span class="t-button__text">幽灵按钮</span></button> <button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--ghost"><span class="t-button__text">幽灵按钮</span></button></div>
