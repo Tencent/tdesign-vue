@@ -3,7 +3,7 @@ import { defineComponent, computed } from '@vue/composition-api';
 import Item from './Item';
 import { TreeNode, CascaderContextType } from '../interface';
 import CascaderProps from '../props';
-import { usePrefixClass, useConfig } from '../../hooks/useConfig';
+import { usePrefixClass, useConfig, useCommonClassName } from '../../hooks/useConfig';
 import { useTNodeDefault } from '../../hooks/tnode';
 
 import { getPanels } from '../core/helper';
@@ -23,6 +23,7 @@ export default defineComponent({
     const renderTNodeJSXDefault = useTNodeDefault();
     const COMPONENT_NAME = usePrefixClass('cascader');
     const { global } = useConfig('cascader');
+    const { SIZE } = useCommonClassName();
 
     const panels = computed(() => getPanels(props.cascaderContext.treeNodes));
 
@@ -37,11 +38,12 @@ export default defineComponent({
       handleExpand,
       renderTNodeJSXDefault,
       COMPONENT_NAME,
+      SIZE,
     };
   },
   render() {
     const {
-      global, COMPONENT_NAME, handleExpand, renderTNodeJSXDefault, cascaderContext, panels,
+      global, COMPONENT_NAME, handleExpand, renderTNodeJSXDefault, cascaderContext, panels, SIZE,
     } = this;
 
     const renderItem = (node: TreeNode) => (
@@ -76,6 +78,7 @@ export default defineComponent({
             [`${COMPONENT_NAME}__menu--segment`]: segment,
             [`${COMPONENT_NAME}__menu--filter`]: isFilter,
           },
+          SIZE[cascaderContext.size],
         ]}
         key={key}
       >
