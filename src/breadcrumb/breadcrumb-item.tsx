@@ -1,9 +1,9 @@
-import { ChevronRightIcon } from 'tdesign-icons-vue';
+import { ChevronRightIcon as TdChevronRightIcon } from 'tdesign-icons-vue';
 import Tooltip from '../tooltip/index';
 import props from './breadcrumb-item-props';
 import { isNodeOverflow } from '../utils/dom';
 import { TNodeReturnValue } from '../common';
-import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import { getClassPrefixMixins, getGlobalIconMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
 
 const classPrefixMixins = getClassPrefixMixins('breadcrumb');
@@ -22,7 +22,7 @@ const localTBreadcrumbOrigin: LocalTBreadcrumb = {
   $slots: { separator: '' },
   maxItemWidth: undefined,
 };
-export default mixins(classPrefixMixins).extend({
+export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
   name: 'TBreadcrumbItem',
 
   props: {
@@ -86,6 +86,7 @@ export default mixins(classPrefixMixins).extend({
     const {
       localTBreadcrumb, href, target, to, disabled,
     } = this;
+    const { ChevronRightIcon } = this.useGlobalIcon({ ChevronRightIcon: TdChevronRightIcon });
     const { separator } = localTBreadcrumb;
     const separatorSlot = localTBreadcrumb.$slots.separator;
     const separatorPropContent = typeof separator === 'function' ? separator() : separator;

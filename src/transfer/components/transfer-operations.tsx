@@ -1,13 +1,13 @@
 import { PropType, CreateElement } from 'vue';
-import { ChevronRightIcon, ChevronLeftIcon } from 'tdesign-icons-vue';
+import { ChevronRightIcon as TdChevronRightIcon, ChevronLeftIcon as TdChevronLeftIcon } from 'tdesign-icons-vue';
 import TButton from '../../button';
 import { TNode } from '../../common';
 import mixins from '../../utils/mixins';
-import { getClassPrefixMixins } from '../../config-provider/config-receiver';
+import { getClassPrefixMixins, getGlobalIconMixins } from '../../config-provider/config-receiver';
 
 const classPrefixMixins = getClassPrefixMixins('transfer');
 
-export default mixins(classPrefixMixins).extend({
+export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
   name: 'TTransferOperations',
   props: {
     // 控制左按钮的禁用与否
@@ -34,9 +34,11 @@ export default mixins(classPrefixMixins).extend({
       this.$emit('moveToLeft');
     },
     getIconRight() {
+      const { ChevronRightIcon } = this.useGlobalIcon({ ChevronRightIcon: TdChevronRightIcon });
       return <ChevronRightIcon />;
     },
     getIconLeft() {
+      const { ChevronLeftIcon } = this.useGlobalIcon({ ChevronLeftIcon: TdChevronLeftIcon });
       return <ChevronLeftIcon />;
     },
     getIcon(direction: 'left' | 'right') {

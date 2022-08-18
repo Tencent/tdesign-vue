@@ -1,16 +1,19 @@
 import Vue, { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import {
-  InfoCircleFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon, CloseIcon,
+  InfoCircleFilledIcon as TdInfoCircleFilledIcon,
+  CheckCircleFilledIcon as TdCheckCircleFilledIcon,
+  ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
+  CloseIcon as TdCloseIcon,
 } from 'tdesign-icons-vue';
 
 import { on, off, addClass } from '../utils/dom';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { AlertConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { AlertConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 
-export default mixins(getConfigReceiverMixins<Vue, AlertConfig>('alert')).extend({
+export default mixins(getConfigReceiverMixins<Vue, AlertConfig>('alert'), getGlobalIconMixins()).extend({
   name: 'TAlert',
   data() {
     return {
@@ -51,18 +54,25 @@ export default mixins(getConfigReceiverMixins<Vue, AlertConfig>('alert')).extend
       } else if (this.$scopedSlots.icon) {
         iconContent = this.$scopedSlots.icon && this.$scopedSlots.icon(null)[0];
       } else {
+        const { InfoCircleFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon } = this.useGlobalIcon({
+          InfoCircleFilledIcon: TdInfoCircleFilledIcon,
+          CheckCircleFilledIcon: TdCheckCircleFilledIcon,
+          ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
+        });
         const component = {
           info: InfoCircleFilledIcon,
           success: CheckCircleFilledIcon,
           warning: ErrorCircleFilledIcon,
           error: ErrorCircleFilledIcon,
         }[this.theme];
+
         iconContent = <component></component>;
       }
       return iconContent ? <div class={`${this.componentName}__icon`}>{iconContent}</div> : null;
     },
 
     renderClose(): VNode {
+      const { CloseIcon } = this.useGlobalIcon({ CloseIcon: TdCloseIcon });
       let closeContent: ScopedSlotReturnValue = null;
       if (this.close === true || this.close === '') {
         closeContent = <CloseIcon />;

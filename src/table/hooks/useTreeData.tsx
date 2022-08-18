@@ -1,7 +1,7 @@
 import {
   SetupContext, ref, watch, toRefs, onUnmounted, computed,
 } from '@vue/composition-api';
-import { AddRectangleIcon, MinusRectangleIcon } from 'tdesign-icons-vue';
+import { AddRectangleIcon as TdAddRectangleIcon, MinusRectangleIcon as TdMinusRectangleIcon } from 'tdesign-icons-vue';
 import cloneDeep from 'lodash/cloneDeep';
 import get from 'lodash/get';
 import { CreateElement } from 'vue';
@@ -18,10 +18,15 @@ import useClassName from './useClassName';
 import { renderCell } from '../tr';
 import { useConfig } from '../../config-provider/useConfig';
 import { useTNodeDefault } from '../../hooks/tnode';
+import { useGlobalIcon } from '../../hooks/useGlobalIcon';
 
 export default function useTreeData(props: TdEnhancedTableProps, context: SetupContext) {
   const { data, columns } = toRefs(props);
   const { t, global } = useConfig('table');
+  const { AddRectangleIcon, MinusRectangleIcon } = useGlobalIcon({
+    AddRectangleIcon: TdAddRectangleIcon,
+    MinusRectangleIcon: TdMinusRectangleIcon,
+  });
   const store = ref(new TableTreeStore() as InstanceType<typeof TableTreeStore>);
   const treeNodeCol = ref<PrimaryTableCol>();
   const dataSource = ref<TdEnhancedTableProps['data']>([]);

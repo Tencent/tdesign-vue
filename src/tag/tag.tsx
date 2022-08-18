@@ -1,15 +1,15 @@
 import Vue from 'vue';
-import { CloseIcon } from 'tdesign-icons-vue';
+import { CloseIcon as TdCloseIcon } from 'tdesign-icons-vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import props from './props';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { TagConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { TagConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import { TdTagProps } from './type';
 import { emitEvent } from '../utils/event';
 import { TNodeReturnValue, ClassName, Styles } from '../common';
 
-export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag')).extend({
+export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalIconMixins()).extend({
   name: 'TTag',
 
   props: { ...props },
@@ -60,6 +60,8 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag')).extend({
           });
         });
       }
+      const { CloseIcon } = this.useGlobalIcon({ CloseIcon: TdCloseIcon });
+
       return <CloseIcon nativeOnClick={this.handleClose} class={iconClassName} />;
     },
   },

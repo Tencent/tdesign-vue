@@ -1,13 +1,14 @@
 import {
   defineComponent, ref, toRefs, computed, getCurrentInstance,
 } from '@vue/composition-api';
-import { CloseCircleFilledIcon } from 'tdesign-icons-vue';
+import { CloseCircleFilledIcon as TdCloseCircleFilledIcon } from 'tdesign-icons-vue';
 import Input from '../input';
 import props from './props';
 import { RangeInputValue, RangeInputPosition } from './type';
 
 // hooks
 import useVModel from '../hooks/useVModel';
+import { useGlobalIcon } from '../hooks/useGlobalIcon';
 import { usePrefixClass, useCommonClassName } from '../hooks/useConfig';
 import { useTNodeJSX } from '../hooks/tnode';
 
@@ -27,6 +28,7 @@ export default defineComponent({
     const { value } = toRefs(props);
     const { STATUS, SIZE } = useCommonClassName();
     const classPrefix = usePrefixClass();
+    const { CloseCircleFilledIcon } = useGlobalIcon({ CloseCircleFilledIcon: TdCloseCircleFilledIcon });
     const COMPONENT_NAME = usePrefixClass('range-input');
     const renderTNodeJSX = useTNodeJSX();
 
@@ -118,6 +120,7 @@ export default defineComponent({
       setInnerValue,
       renderTNodeJSX,
       handleClear,
+      CloseCircleFilledIcon,
     };
   },
   render() {
@@ -141,6 +144,7 @@ export default defineComponent({
       calcPlaceholder,
       innerValue,
       isShowClearIcon,
+      CloseCircleFilledIcon,
     } = this;
 
     const labelContent = renderTNodeJSX('label');

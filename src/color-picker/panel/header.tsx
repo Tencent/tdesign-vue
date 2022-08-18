@@ -1,7 +1,6 @@
 import {
   defineComponent, PropType, ref, watch,
 } from '@vue/composition-api';
-import { CloseIcon } from 'tdesign-icons-vue';
 import props from '../props';
 import { COLOR_MODES } from '../const';
 import { RadioGroup as TRadioGroup, RadioButton as TRadioButton } from '../../radio';
@@ -11,7 +10,6 @@ import { useBaseClassName } from '../hooks';
 export default defineComponent({
   name: 'PanelHeader',
   components: {
-    CloseIcon,
     TRadioGroup,
     TRadioButton,
   },

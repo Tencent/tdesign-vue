@@ -2,7 +2,7 @@ import {
   defineComponent, computed, toRefs, ref, nextTick,
 } from '@vue/composition-api';
 
-import { CloseCircleFilledIcon } from 'tdesign-icons-vue';
+import { CloseCircleFilledIcon as TdCloseCircleFilledIcon } from 'tdesign-icons-vue';
 import TInput, { InputValue } from '../input';
 import { TdTagInputProps } from './type';
 import props from './props';
@@ -13,6 +13,7 @@ import useTagList from './useTagList';
 import useHover from './hooks/useHover';
 import useDefaultValue from '../hooks/useDefaultValue';
 import useDragSorter from './hooks/useDragSorter';
+import { useGlobalIcon } from '../hooks/useGlobalIcon';
 import { usePrefixClass } from '../config-provider/useConfig';
 
 export default defineComponent({
@@ -67,6 +68,8 @@ export default defineComponent({
       props,
       getDragProps,
     );
+
+    const { CloseCircleFilledIcon } = useGlobalIcon({ CloseCircleFilledIcon: TdCloseCircleFilledIcon });
 
     const classes = computed(() => [
       COMPONENT_NAME.value,
@@ -141,10 +144,12 @@ export default defineComponent({
       onInputCompositionstart,
       onInputCompositionend,
       componentName: COMPONENT_NAME,
+      CloseCircleFilledIcon,
     };
   },
 
   render(h) {
+    const { CloseCircleFilledIcon } = this;
     const suffixIconNode = this.showClearIcon ? (
       <CloseCircleFilledIcon class={`${this.componentName}__suffix-clear`} onClick={this.onClearClick} />
     ) : (
