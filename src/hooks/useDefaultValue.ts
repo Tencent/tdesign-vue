@@ -17,10 +17,8 @@ export default function useDefaultValue<T, P extends any[]>(
   const internalValue = ref();
   internalValue.value = typeof value.value !== 'undefined' ? value.value : defaultValue;
 
-  watch(value, () => {
-    if (value.value !== internalValue.value) {
-      internalValue.value = value.value;
-    }
+  watch(value, (newVal) => {
+    internalValue.value = newVal;
   });
 
   return [

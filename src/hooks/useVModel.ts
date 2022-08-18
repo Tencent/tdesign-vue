@@ -16,10 +16,8 @@ export default function useVModel<T, P extends any[]>(
   const internalValue = ref<T>();
   internalValue.value = typeof value.value !== 'undefined' ? value.value : defaultValue;
 
-  watch(value, () => {
-    if (value.value !== internalValue.value) {
-      internalValue.value = value.value;
-    }
+  watch(value, (newVal) => {
+    internalValue.value = newVal;
   });
 
   return [
