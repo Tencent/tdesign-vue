@@ -101,7 +101,7 @@ export default defineComponent({
             collapsedItems: this.collapsedItems,
             readonly: this.readonly,
             disabled: tDisabled,
-            clearable: this.clearable,
+            clearable: this.clearable && !tDisabled,
             placeholder: inputPlaceholder,
             multiple: this.multiple,
             loading: this.loading,

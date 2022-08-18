@@ -771,7 +771,7 @@ export default defineComponent({
           keys={keys}
           value={selectedValue}
           valueDisplay={valueDisplay}
-          clearable={clearable}
+          clearable={clearable && !tDisabled}
           disabled={tDisabled}
           label={prefixIcon}
           suffixIcon={this.renderSuffixIcon}
