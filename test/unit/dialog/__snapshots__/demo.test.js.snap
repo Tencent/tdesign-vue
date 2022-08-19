@@ -123,49 +123,67 @@ exports[`Dialog Dialog attachVue demo works fine 1`] = `
 <div
   class="dialog-attach-wrap"
 >
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
+  <div
+    class="t-space t-space-horizontal"
+    style="gap: 16px; flex-wrap: wrap;"
   >
-    <span
-      class="t-button__text"
+    <div
+      class="t-space-item"
     >
-      挂载在body
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          挂载在body
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
     >
-      挂载特定元素
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          挂载特定元素
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
     >
-      挂载函数返回节点
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          挂载函数返回节点
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
     >
-      展示在挂载元素区域
-    </span>
-  </button>
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          展示在挂载元素区域
+        </span>
+      </button>
+    </div>
+  </div>
    
   <transition-stub
     duration="300"
@@ -462,38 +480,53 @@ exports[`Dialog Dialog custom demo works fine 1`] = `
   <br />
    
   <div>
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
+    <div
+      class="t-space t-space-horizontal"
+      style="gap: 16px; flex-wrap: wrap;"
     >
-      <span
-        class="t-button__text"
+      <div
+        class="t-space-item"
       >
-        隐藏标题
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
+        <button
+          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            隐藏标题
+          </span>
+        </button>
+      </div>
+      <div
+        class="t-space-item"
       >
-        渲染函数定义内容
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
+        <button
+          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            渲染函数定义内容
+          </span>
+        </button>
+      </div>
+      <div
+        class="t-space-item"
       >
-        插槽方式定义内容
-      </span>
-    </button>
+        <button
+          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            插槽方式定义内容
+          </span>
+        </button>
+      </div>
+    </div>
      
     <transition-stub
       duration="300"
@@ -756,49 +789,67 @@ exports[`Dialog Dialog custom demo works fine 1`] = `
    
   <br />
    
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
+  <div
+    class="t-space t-space-horizontal"
+    style="gap: 16px; flex-wrap: wrap;"
   >
-    <span
-      class="t-button__text"
+    <div
+      class="t-space-item"
     >
-      按钮文字
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          按钮文字
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
     >
-      按钮属性
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          按钮属性
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
     >
-      渲染函数按钮
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          渲染函数按钮
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
     >
-      隐藏底部
-    </span>
-  </button>
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          隐藏底部
+        </span>
+      </button>
+    </div>
+  </div>
    
   <transition-stub
     duration="300"
@@ -1110,38 +1161,53 @@ exports[`Dialog Dialog customVue demo works fine 1`] = `
   <br />
    
   <div>
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
+    <div
+      class="t-space t-space-horizontal"
+      style="gap: 16px; flex-wrap: wrap;"
     >
-      <span
-        class="t-button__text"
+      <div
+        class="t-space-item"
       >
-        隐藏标题
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
+        <button
+          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            隐藏标题
+          </span>
+        </button>
+      </div>
+      <div
+        class="t-space-item"
       >
-        渲染函数定义内容
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
+        <button
+          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            渲染函数定义内容
+          </span>
+        </button>
+      </div>
+      <div
+        class="t-space-item"
       >
-        插槽方式定义内容
-      </span>
-    </button>
+        <button
+          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            插槽方式定义内容
+          </span>
+        </button>
+      </div>
+    </div>
      
     <transition-stub
       duration="300"
@@ -1404,49 +1470,67 @@ exports[`Dialog Dialog customVue demo works fine 1`] = `
    
   <br />
    
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
+  <div
+    class="t-space t-space-horizontal"
+    style="gap: 16px; flex-wrap: wrap;"
   >
-    <span
-      class="t-button__text"
+    <div
+      class="t-space-item"
     >
-      按钮文字
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          按钮文字
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
     >
-      按钮属性
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          按钮属性
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
     >
-      渲染函数按钮
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          渲染函数按钮
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
     >
-      隐藏底部
-    </span>
-  </button>
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          隐藏底部
+        </span>
+      </button>
+    </div>
+  </div>
    
   <transition-stub
     duration="300"
@@ -1751,38 +1835,53 @@ exports[`Dialog Dialog customVue demo works fine 1`] = `
 
 exports[`Dialog Dialog dragVue demo works fine 1`] = `
 <div>
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
+  <div
+    class="t-space t-space-horizontal"
+    style="gap: 16px; flex-wrap: wrap;"
   >
-    <span
-      class="t-button__text"
+    <div
+      class="t-space-item"
     >
-      非模态对话框-可拖拽
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          非模态对话框-可拖拽
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
     >
-      非模态对话框-不可拖拽
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          非模态对话框-不可拖拽
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
     >
-      模态对话框-不支持拖拽
-    </span>
-  </button>
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          模态对话框-不支持拖拽
+        </span>
+      </button>
+    </div>
+  </div>
    
   <br />
    
@@ -2409,49 +2508,67 @@ exports[`Dialog Dialog iconVue demo works fine 1`] = `
 
 exports[`Dialog Dialog modalVue demo works fine 1`] = `
 <div>
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
+  <div
+    class="t-space t-space-horizontal"
+    style="gap: 16px; flex-wrap: wrap;"
   >
-    <span
-      class="t-button__text"
+    <div
+      class="t-space-item"
     >
-      模态对话框
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          模态对话框
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
     >
-      非模态对话框
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          非模态对话框
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
     >
-      模态对话框-不可拖拽
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          模态对话框-不可拖拽
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
     >
-      普通对话框-不可拖拽
-    </span>
-  </button>
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          普通对话框-不可拖拽
+        </span>
+      </button>
+    </div>
+  </div>
    
   <transition-stub
     duration="300"
@@ -2863,109 +2980,146 @@ exports[`Dialog Dialog modalVue demo works fine 1`] = `
 `;
 
 exports[`Dialog Dialog pluginVue demo works fine 1`] = `
-<div>
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 16px; flex-wrap: wrap;"
+>
+  <div
+    class="t-space-item"
   >
-    <span
-      class="t-button__text"
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
     >
-      dialog
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
+      <span
+        class="t-button__text"
+      >
+        dialog
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
   >
-    <span
-      class="t-button__text"
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
     >
-      handleDialogNode
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
+      <span
+        class="t-button__text"
+      >
+        handleDialogNode
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
   >
-    <span
-      class="t-button__text"
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
     >
-      confirm
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
+      <span
+        class="t-button__text"
+      >
+        confirm
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
   >
-    <span
-      class="t-button__text"
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
     >
-      alert
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
+      <span
+        class="t-button__text"
+      >
+        alert
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
   >
-    <span
-      class="t-button__text"
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
     >
-      DialogPlugin.confirm
-    </span>
-  </button>
+      <span
+        class="t-button__text"
+      >
+        DialogPlugin.confirm
+      </span>
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Dialog Dialog positionVue demo works fine 1`] = `
 <div>
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
+  <div
+    class="t-space t-space-horizontal"
+    style="gap: 16px; flex-wrap: wrap;"
   >
-    <span
-      class="t-button__text"
+    <div
+      class="t-space-item"
     >
-      默认位置
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          默认位置
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
     >
-      垂直居中
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          垂直居中
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
     >
-      自定义top
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          自定义top
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
     >
-      文本溢出
-    </span>
-  </button>
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          文本溢出
+        </span>
+      </button>
+    </div>
+  </div>
    
   <transition-stub
     duration="300"
@@ -3468,16 +3622,81 @@ exports[`Dialog Dialog positionVue demo works fine 1`] = `
 
 exports[`Dialog Dialog warningVue demo works fine 1`] = `
 <div>
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
+  <div
+    class="t-space t-space-horizontal"
+    style="gap: 16px; flex-wrap: wrap;"
   >
-    <span
-      class="t-button__text"
+    <div
+      class="t-space-item"
     >
-      提示反馈
-    </span>
-  </button>
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          提示反馈
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
+    >
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          成功反馈
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
+    >
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          警示反馈
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
+    >
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          错误反馈
+        </span>
+      </button>
+    </div>
+    <div
+      class="t-space-item"
+    >
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          自定义图标
+        </span>
+      </button>
+    </div>
+  </div>
    
   <transition-stub
     duration="300"
@@ -3571,17 +3790,6 @@ exports[`Dialog Dialog warningVue demo works fine 1`] = `
     </div>
   </transition-stub>
    
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      成功反馈
-    </span>
-  </button>
-   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -3674,17 +3882,6 @@ exports[`Dialog Dialog warningVue demo works fine 1`] = `
     </div>
   </transition-stub>
    
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      警示反馈
-    </span>
-  </button>
-   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -3767,17 +3964,6 @@ exports[`Dialog Dialog warningVue demo works fine 1`] = `
     </div>
   </transition-stub>
    
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      错误反馈
-    </span>
-  </button>
-   
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
@@ -3859,17 +4045,6 @@ exports[`Dialog Dialog warningVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      自定义图标
-    </span>
-  </button>
    
   <transition-stub
     duration="300"
