@@ -52,11 +52,9 @@
 <script>
 import Vue from 'vue';
 import { Icon } from 'tdesign-icons-vue';
-import TSpace from '../../../src/space/space';
 
 export default Vue.extend({
   components: {
-    TSpace,
     Icon,
   },
   data() {

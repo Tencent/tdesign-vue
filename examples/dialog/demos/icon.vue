@@ -36,19 +36,18 @@
       :onConfirm="close4"
     />
     <br />
-    <t-space break-line>
-      <t-button v-if="!visible1" theme="primary" @click="visible1 = true">theme: info</t-button>
-      <t-button v-if="!visible2" theme="primary" @click="visible2 = true">theme: warning</t-button>
-      <t-button v-if="!visible3" theme="primary" @click="visible3 = true">theme: danger</t-button>
-      <t-button v-if="!visible4" theme="primary" @click="visible4 = true">theme: success</t-button>
-    </t-space>
+
+    <t-button v-if="!visible1" theme="primary" @click="visible1 = true">theme: info</t-button>
+    <t-button v-if="!visible2" theme="primary" @click="visible2 = true">theme: warning</t-button>
+    <t-button v-if="!visible3" theme="primary" @click="visible3 = true">theme: danger</t-button>
+    <t-button v-if="!visible4" theme="primary" @click="visible4 = true">theme: success</t-button>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      visible1: true,
+      visible1: false,
       visible2: true,
       visible3: true,
       visible4: true,

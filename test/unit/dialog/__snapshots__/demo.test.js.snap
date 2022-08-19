@@ -2142,6 +2142,7 @@ exports[`Dialog Dialog iconVue demo works fine 1`] = `
   >
     <div
       class="t-dialog__ctx"
+      style="display: none;"
     >
       <div
         class=""
@@ -2496,7 +2497,16 @@ exports[`Dialog Dialog iconVue demo works fine 1`] = `
    
   <br />
    
-  <!---->
+  <button
+    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      theme: info
+    </span>
+  </button>
    
   <!---->
    
