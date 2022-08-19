@@ -20,7 +20,7 @@
     >
       <t-button theme="primary" @click="visible1 = true">弹窗二</t-button>
     </t-dialog>
-    <t-dialog header="对话框标题二" body="对话框内容二" :visible.sync="visible1"> </t-dialog>
+    <t-dialog header="对话框标题二" body="对话框内容二" :visible.sync="visible1" />
   </div>
 </template>
 <script>
