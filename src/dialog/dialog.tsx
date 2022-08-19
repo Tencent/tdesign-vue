@@ -20,6 +20,7 @@ import { emitEvent } from '../utils/event';
 import { addClass, removeClass } from '../utils/dom';
 import { ClassName, Styles } from '../common';
 import { updateElement } from '../hooks/useDestroyOnClose';
+import stack from './stack';
 
 function getCSSValue(v: string | number) {
   return isNaN(Number(v)) ? v : `${Number(v)}px`;
@@ -49,6 +50,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
 
   data() {
     return {
+      uid: 0,
       scrollWidth: 0,
       disX: 0,
       disY: 0,
@@ -137,10 +139,14 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
             }
           });
         }
+        // 清除鼠标焦点 避免entry事件多次触发（按钮弹出弹窗 不移除焦点 立即按Entry按键 会造成弹窗关闭再弹出）
+        (document.activeElement as HTMLElement).blur();
       } else {
         document.body.style.cssText = '';
         removeClass(document.body, `${this.componentName}--lock`);
       }
+      // 多个dialog同时存在时使用esc关闭异常 (#1209)
+      this.storeUid(value);
       this.addKeyboardEvent(value);
       if (this.isModeLess && this.draggable) {
         this.initDragEvent(value);
@@ -161,6 +167,8 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     if (this.visible && this.isModal && this.preventScrollThrough) {
       addClass(document.body, `${this.componentName}--lock`);
     }
+    // @ts-ignore 用于获取组件uid
+    this.uid = this._uid;
   },
 
   beforeDestroy() {
@@ -172,20 +180,36 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
   },
 
   methods: {
+    storeUid(flag: boolean) {
+      if (flag) {
+        stack.push(this.uid);
+      } else {
+        stack.pop();
+      }
+    },
     addKeyboardEvent(status: boolean) {
       if (status) {
         document.addEventListener('keydown', this.keyboardEvent);
+        this.confirmOnEnter && document.addEventListener('keydown', this.keyboardEnterEvent);
       } else {
         document.removeEventListener('keydown', this.keyboardEvent);
+        this.confirmOnEnter && document.removeEventListener('keydown', this.keyboardEnterEvent);
       }
     },
     keyboardEvent(e: KeyboardEvent) {
-      if (e.code === 'Escape') {
+      if (e.code === 'Escape' && stack.top === this.uid) {
         emitEvent<Parameters<TdDialogProps['onEscKeydown']>>(this, 'esc-keydown', { e });
         // 根据 closeOnEscKeydown 判断按下ESC时是否触发close事件
         if (this.closeOnEscKeydown ?? this.global.closeOnEscKeydown) {
           this.emitCloseEvent({ e, trigger: 'esc' });
         }
+      }
+    },
+    // 回车出发确认事件
+    keyboardEnterEvent(e: KeyboardEvent) {
+      const { code } = e;
+      if ((code === 'Enter' || code === 'NumpadEnter') && stack.top === this.uid) {
+        emitEvent<Parameters<TdDialogProps['onConfirm']>>(this, 'confirm', { e });
       }
     },
     overlayAction(e: MouseEvent) {
