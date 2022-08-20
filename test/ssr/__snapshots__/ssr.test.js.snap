@@ -689,9 +689,10 @@ exports[`ssr snapshot test renders ./examples/button/demos/base.vue correctly 1`
 
 exports[`ssr snapshot test renders ./examples/button/demos/block.vue correctly 1`] = `
 <div class="t-space t-space-align-center t-space-vertical" style="gap:16px;">
-  <div class="t-space-item">
-    <div class="tdesign-demo-block-column" style="min-width:320px;max-width:640px;"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-size-full-width"><span class="t-button__text">填充按钮</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-size-full-width"><span class="t-button__text">描边按钮</span></button> <button type="button" class="t-button t-size-m t-button--variant-dashed t-button--theme-default t-size-full-width"><span class="t-button__text">虚框按钮</span></button> <button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-size-full-width"><span class="t-button__text">文字按钮</span></button></div>
-  </div>
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-size-full-width"><span class="t-button__text">填充按钮</span></button></div>
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-size-full-width"><span class="t-button__text">描边按钮</span></button></div>
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-dashed t-button--theme-default t-size-full-width"><span class="t-button__text">虚框按钮</span></button></div>
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-size-full-width"><span class="t-button__text">文字按钮</span></button></div>
 </div>
 `;
 
@@ -911,13 +912,16 @@ exports[`ssr snapshot test renders ./examples/button/demos/size.vue correctly 1`
 `;
 
 exports[`ssr snapshot test renders ./examples/button/demos/status.vue correctly 1`] = `
-<t-sapce><button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"><span class="t-button__text">填充按钮</span></button> <button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled t-is-loading">
-    <div class="t-loading--center t-size-m t-loading--inherit-color t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
-        <foreignObject x="1" y="1" width="12" height="12">
-          <div class="t-loading__gradient-conic"></div>
-        </foreignObject>
-      </svg></div><span class="t-button__text">加载中</span>
-  </button></t-sapce>
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item"><button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"><span class="t-button__text">填充按钮</span></button></div>
+  <div class="t-space-item"><button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled t-is-loading">
+      <div class="t-loading--center t-size-m t-loading--inherit-color t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+          <foreignObject x="1" y="1" width="12" height="12">
+            <div class="t-loading__gradient-conic"></div>
+          </foreignObject>
+        </svg></div><span class="t-button__text">加载中</span>
+    </button></div>
+</div>
 `;
 
 exports[`ssr snapshot test renders ./examples/button/demos/theme.vue correctly 1`] = `

@@ -72,54 +72,58 @@ exports[`Button Button blockVue demo works fine 1`] = `
   <div
     class="t-space-item"
   >
-    <div
-      class="tdesign-demo-block-column"
-      style="min-width: 320px; max-width: 640px;"
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary t-size-full-width"
+      type="button"
     >
-      <button
-        class="t-button t-size-m t-button--variant-base t-button--theme-primary t-size-full-width"
-        type="button"
+      <span
+        class="t-button__text"
       >
-        <span
-          class="t-button__text"
-        >
-          填充按钮
-        </span>
-      </button>
-       
-      <button
-        class="t-button t-size-m t-button--variant-outline t-button--theme-default t-size-full-width"
-        type="button"
+        填充按钮
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-size-full-width"
+      type="button"
+    >
+      <span
+        class="t-button__text"
       >
-        <span
-          class="t-button__text"
-        >
-          描边按钮
-        </span>
-      </button>
-       
-      <button
-        class="t-button t-size-m t-button--variant-dashed t-button--theme-default t-size-full-width"
-        type="button"
+        描边按钮
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <button
+      class="t-button t-size-m t-button--variant-dashed t-button--theme-default t-size-full-width"
+      type="button"
+    >
+      <span
+        class="t-button__text"
       >
-        <span
-          class="t-button__text"
-        >
-          虚框按钮
-        </span>
-      </button>
-       
-      <button
-        class="t-button t-size-m t-button--variant-text t-button--theme-default t-size-full-width"
-        type="button"
+        虚框按钮
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <button
+      class="t-button t-size-m t-button--variant-text t-button--theme-default t-size-full-width"
+      type="button"
+    >
+      <span
+        class="t-button__text"
       >
-        <span
-          class="t-button__text"
-        >
-          文字按钮
-        </span>
-      </button>
-    </div>
+        文字按钮
+      </span>
+    </button>
   </div>
 </div>
 `;
@@ -1189,55 +1193,65 @@ exports[`Button Button sizeVue demo works fine 1`] = `
 `;
 
 exports[`Button Button statusVue demo works fine 1`] = `
-<t-sapce>
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"
-    disabled="disabled"
-    type="button"
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
   >
-    <span
-      class="t-button__text"
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled"
+      disabled="disabled"
+      type="button"
     >
-      填充按钮
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled t-is-loading"
-    disabled="disabled"
-    type="button"
-  >
-    <div
-      class="t-loading--center t-size-m t-loading--inherit-color t-loading"
-    >
-      <svg
-        class="t-loading__gradient t-icon-loading"
-        height="1em"
-        size="medium"
-        version="1.1"
-        viewBox="0 0 14 14"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
+      <span
+        class="t-button__text"
       >
-        <foreignobject
-          height="12"
-          width="12"
-          x="1"
-          y="1"
-        >
-          <div
-            class="t-loading__gradient-conic"
-          />
-        </foreignobject>
-      </svg>
-    </div>
-    <span
-      class="t-button__text"
+        填充按钮
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled t-is-loading"
+      disabled="disabled"
+      type="button"
     >
-      加载中
-    </span>
-  </button>
-</t-sapce>
+      <div
+        class="t-loading--center t-size-m t-loading--inherit-color t-loading"
+      >
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 14 14"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="1"
+            y="1"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
+      </div>
+      <span
+        class="t-button__text"
+      >
+        加载中
+      </span>
+    </button>
+  </div>
+</div>
 `;
 
 exports[`Button Button themeVue demo works fine 1`] = `
