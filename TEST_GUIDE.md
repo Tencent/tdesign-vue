@@ -5,6 +5,7 @@
 ### 1.1 主要 script 命令
 
 ```
+
 # 运行全部测试
 npm run test
 
