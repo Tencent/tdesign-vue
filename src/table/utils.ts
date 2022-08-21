@@ -159,3 +159,27 @@ export function getEditableKeysMap(keys: Array<string | number>, list: any[], ro
   }
   return map;
 }
+
+export function getColumnDataByKey(columns: any[], colKey: string): any {
+  for (let i = 0, len = columns.length; i < len; i++) {
+    if (columns[i].colKey === colKey) return columns[i];
+    if (columns[i].children?.length) {
+      const t = getColumnDataByKey(columns[i].children, colKey);
+      if (t) return t;
+    }
+  }
+  return null;
+}
+
+export function getColumnIndexByKey(columns: any[], colKey: string): number {
+  for (let i = 0, len = columns.length; i < len; i++) {
+    if (columns[i].colKey === colKey) {
+      return i;
+    }
+    if (columns[i].children?.length) {
+      const t = getColumnDataByKey(columns[i].children, colKey);
+      if (t) return i;
+    }
+  }
+  return -1;
+}

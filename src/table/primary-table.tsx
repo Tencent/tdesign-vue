@@ -128,7 +128,6 @@ export default defineComponent({
     onMounted(() => {
       setFilterPrimaryTableRef(primaryTableRef.value);
       setDragSortPrimaryTableRef(primaryTableRef.value);
-      setDragSortColumns(props.columns);
     });
 
     watch(primaryTableRef, () => {

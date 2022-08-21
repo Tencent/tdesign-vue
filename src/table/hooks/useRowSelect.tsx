@@ -20,7 +20,6 @@ import Checkbox from '../../checkbox';
 import Radio from '../../radio';
 import { ClassName } from '../../common';
 import log from '../../_common/js/log';
-import { PrimaryTableProps } from '../interface';
 
 export default function useRowSelect(
   props: TdPrimaryTableProps,
