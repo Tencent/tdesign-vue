@@ -70,14 +70,6 @@ export function formatRowClassNames(
   return customClasses;
 }
 
-export function filterDataByIds(
-  data: Array<object> = [],
-  ids: Array<string | number> = [],
-  byId = 'id',
-): Array<object> {
-  return data.filter((d: Record<string, any> = {}) => ids.includes(d[byId]));
-}
-
 export const INNER_PRE_NAME = '@@inner-';
 
 export enum SCROLL_DIRECTION {
