@@ -104,7 +104,7 @@ defaultColumnControllerVisible | Boolean | undefined | uncontrolled property | N
 columns | Array | [] | table column configs。Typescript：`Array<PrimaryTableCol<T>>` | N
 displayColumns | Array | - | `.sync` is supported。Typescript：`CheckboxGroupValue` | N
 defaultDisplayColumns | Array | - | uncontrolled property。Typescript：`CheckboxGroupValue` | N
-dragSort | String | - | dag sort。options：row/row-handler/col/drag-col | N
+dragSort | String | - | dag sort。options：row/row-handler/col/row-handler-col/drag-col | N
 dragSortOptions | Object | - | drag sort params。Typescript：`SortableOptions` | N
 editableRowKeys | Array | - | editable row keys, row key value is from data[rowKey]。Typescript：`Array<string | number>` | N
 expandIcon | Boolean / Slot / Function | true | to show expand icon. expand icon is set in first column。Typescript：`boolean | TNode<ExpandArrowRenderParams<T>>` `interface ExpandArrowRenderParams<T> { row: T; index: number }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N

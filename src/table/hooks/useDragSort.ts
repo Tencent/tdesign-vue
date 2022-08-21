@@ -15,12 +15,7 @@ import swapDragArrayElement from '../../_common/js/utils/swapDragArrayElement';
 
 /**
  * TODO:
- * 1. 同时支持行拖拽和列拖拽，此时 dragSort 扩展为支持数组即可
  * 2. 多极表头场景下的列拖拽排序
- * 3. 优化列拖拽排序样式（优先级不高，可以慢慢来）
- * @param props
- * @param context
- * @returns
  */
 export default function useDragSort(props: TdPrimaryTableProps, context: SetupContext) {
   const { sortOnRowDraggable, dragSort, data } = toRefs(props);
@@ -32,9 +27,11 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
   // 行拖拽判断条件
   const isRowDraggable = computed(() => sortOnRowDraggable.value || dragSort.value === 'row');
   // 行手柄列拖拽判断条件
-  const isRowHandlerDraggable = computed(() => ['drag-col', 'row-handler'].includes(dragSort.value) && !!dragCol.value);
-  // 列拖拽排序，待开发
-  const isColDraggable = computed(() => dragSort.value === 'col');
+  const isRowHandlerDraggable = computed(
+    () => ['drag-col', 'row-handler', 'row-handler-col'].includes(dragSort.value) && !!dragCol.value,
+  );
+  // 列拖拽排序
+  const isColDraggable = computed(() => ['col', 'row-handler-col'].includes(dragSort.value));
   // 行拖拽排序，存储上一次的变化结果
   const lastRowList = ref([]);
   // 列拖拽排序，存储上一次的变化结果

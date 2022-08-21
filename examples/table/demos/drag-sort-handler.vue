@@ -66,7 +66,7 @@ export default {
   methods: {
     // currentData is going to be deprecated
     onDragSort({
-      currentIndex, current, targetIndex, target, data, newData, e,
+      currentIndex, current, targetIndex, target, data, newData, e, sort,
     }) {
       console.log('交换行', currentIndex, current, targetIndex, target, data, newData, e);
       this.data = newData;
