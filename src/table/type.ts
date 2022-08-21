@@ -960,6 +960,7 @@ export interface DragSortContext<T> {
 
 export interface ExpandOptions<T> {
   expandedRowData: Array<T>;
+  currentRowData: T;
 }
 
 export type PrimaryTableRowEditContext<T> = PrimaryTableCellParams<T> & { value: any };
