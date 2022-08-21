@@ -15518,44 +15518,28 @@ exports[`ssr snapshot test renders ./examples/table/demos/editable-cell.vue corr
         <tbody class="t-table__body">
           <tr>
             <td>
-              <div class="t-table__cell--editable">Eric<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
-                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
-                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
-                  </g>
-                </svg></div>
+              <div>Eric</div>
             </td>
             <td>
-              <div class="t-table__cell--editable">Vue<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
-                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
-                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
-                  </g>
-                </svg></div>
+              <div>Vue Framework</div>
             </td>
             <td>
-              <div class="t-table__cell--editable">A<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
-                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
-                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
-                  </g>
-                </svg></div>
+              <div>A</div>
             </td>
             <td>
-              <div class="t-table__cell--editable">2021-11-01<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
-                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
-                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
-                  </g>
-                </svg></div>
+              <div>2021-11-01</div>
             </td>
           </tr>
           <tr>
             <td>
-              <div class="t-table__cell--editable">Gilberta<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
-                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
-                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
-                  </g>
-                </svg></div>
+              <div class="t-table__cell-wrap">
+                <div class="t-input__wrap">
+                  <div class="t-input t-size-m t-is-default"><input autofocus="autofocus" autocomplete="" placeholder="请输入" type="text" unselectable="off" value="Gilberta" class="t-input__inner"></div>
+                </div>
+              </div>
             </td>
             <td>
-              <div class="t-table__cell--editable">React<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+              <div class="t-table__cell--editable">React Framework<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
                   <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
                     <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
                   </g>
@@ -15578,14 +15562,14 @@ exports[`ssr snapshot test renders ./examples/table/demos/editable-cell.vue corr
           </tr>
           <tr>
             <td>
-              <div class="t-table__cell--editable">Heriberto<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
-                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
-                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
-                  </g>
-                </svg></div>
+              <div class="t-table__cell-wrap">
+                <div class="t-input__wrap">
+                  <div class="t-input t-size-m t-is-default"><input autofocus="autofocus" autocomplete="" placeholder="请输入" type="text" unselectable="off" value="Heriberto" class="t-input__inner"></div>
+                </div>
+              </div>
             </td>
             <td>
-              <div class="t-table__cell--editable">Miniprogram<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+              <div class="t-table__cell--editable">Miniprogram Framework<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
                   <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
                     <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
                   </g>
@@ -15608,14 +15592,14 @@ exports[`ssr snapshot test renders ./examples/table/demos/editable-cell.vue corr
           </tr>
           <tr>
             <td>
-              <div class="t-table__cell--editable">Lazarus<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
-                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
-                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
-                  </g>
-                </svg></div>
+              <div class="t-table__cell-wrap">
+                <div class="t-input__wrap">
+                  <div class="t-input t-size-m t-is-default"><input autofocus="autofocus" autocomplete="" placeholder="请输入" type="text" unselectable="off" value="Lazarus" class="t-input__inner"></div>
+                </div>
+              </div>
             </td>
             <td>
-              <div class="t-table__cell--editable">Flutter<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+              <div class="t-table__cell--editable">Flutter Framework<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
                   <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
                     <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
                   </g>
@@ -15638,14 +15622,14 @@ exports[`ssr snapshot test renders ./examples/table/demos/editable-cell.vue corr
           </tr>
           <tr>
             <td>
-              <div class="t-table__cell--editable">Eric<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
-                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
-                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
-                  </g>
-                </svg></div>
+              <div class="t-table__cell-wrap">
+                <div class="t-input__wrap">
+                  <div class="t-input t-size-m t-is-default"><input autofocus="autofocus" autocomplete="" placeholder="请输入" type="text" unselectable="off" value="Eric" class="t-input__inner"></div>
+                </div>
+              </div>
             </td>
             <td>
-              <div class="t-table__cell--editable">Vue<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+              <div class="t-table__cell--editable">Vue Framework<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
                   <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
                     <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
                   </g>
