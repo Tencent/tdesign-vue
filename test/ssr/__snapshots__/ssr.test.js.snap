@@ -17517,6 +17517,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
   <div class="t-table__content">
     <table class="t-table--layout-fixed" style="width:;">
       <colgroup>
+        <col style="width:64px;">
         <col style="width:200px;">
         <col style="width:200px;">
         <col style="width:200px;">
@@ -17524,6 +17525,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
       </colgroup>
       <thead class="t-table__header">
         <tr>
+          <th data-colkey="row-select" class="t-table__cell-check t-table__th-row-select">
+            <div class="t-table__th-cell-inner"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></div>
+          </th>
           <th data-colkey="name" class="t-table__th-name">
             <div class="t-table__th-cell-inner">UNKNOWN_USER</div>
           </th>
@@ -17542,7 +17546,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
       </thead>
       <tbody class="t-table__body">
         <tr class="t-table__empty-row">
-          <td colspan="4">
+          <td colspan="5">
             <div class="t-table__empty">暂无数据</div>
           </td>
         </tr>
@@ -17593,11 +17597,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:64px;">
-          <col style="width:150px;">
+          <col style="width:120px;">
           <col style="width:100px;">
           <col>
           <col>
-          <col style="width:200px;">
+          <col style="width:150px;">
         </colgroup>
         <thead class="t-table__header">
           <tr>
@@ -17697,11 +17701,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:64px;">
-          <col style="width:150px;">
+          <col style="width:120px;">
           <col style="width:100px;">
           <col>
           <col>
-          <col style="width:200px;">
+          <col style="width:150px;">
         </colgroup>
         <thead class="t-table__header">
           <tr>

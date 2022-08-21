@@ -17434,6 +17434,9 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
     >
       <colgroup>
         <col
+          style="width: 64px;"
+        />
+        <col
           style="width: 200px;"
         />
         <col
@@ -17450,6 +17453,31 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
         class="t-table__header"
       >
         <tr>
+          <th
+            class="t-table__cell-check t-table__th-row-select"
+            data-colkey="row-select"
+          >
+            <div
+              class="t-table__th-cell-inner"
+            >
+              <label
+                class="t-checkbox t-is-disabled"
+              >
+                <input
+                  class="t-checkbox__former"
+                  disabled="disabled"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="t-checkbox__input"
+                />
+                <span
+                  class="t-checkbox__label"
+                />
+              </label>
+            </div>
+          </th>
           <th
             class="t-table__th-name"
             data-colkey="name"
@@ -17503,7 +17531,7 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
           class="t-table__empty-row"
         >
           <td
-            colspan="4"
+            colspan="5"
           >
             <div
               class="t-table__empty"
@@ -18170,7 +18198,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             style="width: 64px;"
           />
           <col
-            style="width: 150px;"
+            style="width: 120px;"
           />
           <col
             style="width: 100px;"
@@ -18178,7 +18206,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
           <col />
           <col />
           <col
-            style="width: 200px;"
+            style="width: 150px;"
           />
         </colgroup>
         <thead
@@ -18661,7 +18689,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             style="width: 64px;"
           />
           <col
-            style="width: 150px;"
+            style="width: 120px;"
           />
           <col
             style="width: 100px;"
@@ -18669,7 +18697,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
           <col />
           <col />
           <col
-            style="width: 200px;"
+            style="width: 150px;"
           />
         </colgroup>
         <thead
