@@ -106,6 +106,7 @@ displayColumns | Array | - | `.sync` is supported。Typescript：`CheckboxGroupV
 defaultDisplayColumns | Array | - | uncontrolled property。Typescript：`CheckboxGroupValue` | N
 dragSort | String | - | dag sort。options：row/row-handler/col/row-handler-col/drag-col | N
 dragSortOptions | Object | - | drag sort params。Typescript：`SortableOptions` | N
+editableCellState | Function | - | Typescript：`EditableCellType<T>` `type EditableCellType<T> = (params: PrimaryTableCellParams<T>) => boolean`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 editableRowKeys | Array | - | editable row keys, row key value is from data[rowKey]。Typescript：`Array<string | number>` | N
 expandIcon | Boolean / Slot / Function | true | to show expand icon. expand icon is set in first column。Typescript：`boolean | TNode<ExpandArrowRenderParams<T>>` `interface ExpandArrowRenderParams<T> { row: T; index: number }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 expandOnRowClick | Boolean | - | expand row on click | N
@@ -276,6 +277,7 @@ name | type | default | description | required
 -- | -- | -- | -- | --
 abortEditOnEvent | Array | - | Typescript：`string[]` | N
 component | \- | - | component definition。Typescript：`ComponentType`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+defaultEditable | Boolean | false | set default editable once | N
 onEdited | Function | - | trigger on finishing editing。Typescript：`(context: { trigger: string; newRowData: T; rowIndex: number }) => void` | N
 props | Object | - | props of `edit.component`。Typescript：`TableEditableCellProps<T>` `type TableEditableCellProps<T> = TablePlainObject | ((params: TableEditableCellPropsParams<T>) => TablePlainObject)` `interface TableEditableCellPropsParams<T> extends PrimaryTableCellParams<T> { editedRow: T }` `interface TablePlainObject{ [key: string]: any }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 rules | Array | - | form rules。Typescript：`FormRule[]`，[Form API Documents](./form?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
