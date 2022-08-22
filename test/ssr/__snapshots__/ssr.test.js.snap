@@ -21226,3 +21226,45 @@ exports[`ssr snapshot test renders ./examples/upload/demos/table.vue correctly 1
   <div class="tdesign-demo-upload-bottom"><button class="t-button t-button--line">取消</button> <button class="t-button t-button--primary">开始上传</button></div>
 </section>
 `;
+
+exports[`ssr snapshot test renders ./examples/watermark/demos/base.vue correctly 1`] = `
+<div class="t-watermark" style="position:relative;overflow:hidden;width:100%;">
+  <div style="height:300px;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:330px;pointer-events:none;background-repeat:repeat;background-image:url('');animation:watermark infinite 200s;"></div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/watermark/demos/graylevel.vue correctly 1`] = `
+<div class="t-watermark" style="position:relative;overflow:hidden;width:100%;">
+  <div style="height:300px;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:258px;pointer-events:none;background-repeat:repeat;background-image:url('');animation:watermark infinite 200s;"></div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/watermark/demos/image.vue correctly 1`] = `
+<div class="t-watermark" style="position:relative;overflow:hidden;width:100%;">
+  <div style="height:300px;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:194px;pointer-events:none;background-repeat:repeat;background-image:url('');animation:watermark infinite 200s;"></div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/watermark/demos/movingImage.vue correctly 1`] = `
+<div class="t-watermark" style="position:relative;overflow:hidden;width:100%;">
+  <div style="height:300px;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:158px;pointer-events:none;background-repeat:no-repeat;background-image:url('');animation:watermark infinite 200s;"></div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/watermark/demos/movingText.vue correctly 1`] = `
+<div class="t-watermark" style="position:relative;overflow:hidden;width:100%;">
+  <div style="height:300px;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:120px;pointer-events:none;background-repeat:no-repeat;background-image:url('');animation:watermark infinite 200s;"></div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/watermark/demos/multiline.vue correctly 1`] = `
+<div class="t-watermark" style="position:relative;overflow:hidden;width:100%;">
+  <div style="height:300px;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:258px;pointer-events:none;background-repeat:repeat;background-image:url('');animation:watermark infinite 200s;"></div>
+</div>
+`;

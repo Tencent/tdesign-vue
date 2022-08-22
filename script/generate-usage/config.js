@@ -508,6 +508,25 @@ module.exports = {
       `,
     },
   },
+  watermark: {
+    panelStr: `const panelList = [{label: 'watermark', value: 'watermark'}];`,
+    render: {
+      watermark: `
+        <t-watermark
+          v-bind="configProps"
+          :watermark-content="{
+            text: '文字水印',
+          }"
+          :width="120"
+          :height="60"
+          :y="200"
+          :x="210"
+        >
+          <div style="height: 200px" />
+        </t-watermark>
+      `,
+    },
+  },
   dialog: {
     panelStr: `const panelList = [{label: 'dialog', value: 'dialog'}];`,
     script: `

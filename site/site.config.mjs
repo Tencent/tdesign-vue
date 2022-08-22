@@ -506,6 +506,14 @@ const docs = [
         component: () => import('@/examples/tree/tree.md'),
         componentEn: () => import('@/examples/tree/tree.en-US.md'),
       },
+      {
+        title: 'Watermark 水印',
+        titleEn: 'Watermark',
+        name: 'watermark',
+        path: '/vue/components/watermark',
+        component: () => import('@/examples/watermark/watermark.md'),
+        componentEn: () => import('@/examples/watermark/watermark.en-US.md'),
+      },
     ],
   },
   {
