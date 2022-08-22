@@ -147,11 +147,15 @@ export default defineComponent({
       },
     );
 
-    watch(spansAndLeafNodes, () => {
-      props.onLeafColumnsChange?.(spansAndLeafNodes.value.leafColumns);
-      // Vue3 do not need next line
-      context.emit('LeafColumnsChange', spansAndLeafNodes.value.leafColumns);
-    });
+    watch(
+      spansAndLeafNodes,
+      () => {
+        props.onLeafColumnsChange?.(spansAndLeafNodes.value.leafColumns);
+        // Vue3 do not need next line
+        context.emit('LeafColumnsChange', spansAndLeafNodes.value.leafColumns);
+      },
+      { immediate: true },
+    );
 
     const onFixedChange = () => {
       nextTick(() => {

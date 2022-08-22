@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column">
+  <t-space direction="vertical">
     <div class="tdesign-demo-block-row">
       <t-switch size="large" v-model="slotChecked">
         <template v-slot:label="slotProps">{{slotProps.value?'开':'关'}}</template>
@@ -30,7 +30,7 @@
       <t-switch size="large" v-model="renderChecked2" :label="renderContent"></t-switch>
       <t-switch size="large" :label="renderContent"></t-switch>
     </div>
-  </div>
+  </t-space>
 </template>
 <script lang="jsx">
 

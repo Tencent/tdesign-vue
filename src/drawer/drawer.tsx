@@ -182,18 +182,27 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
     },
     handleMousemove(e: MouseEvent) {
       const { x, y } = e;
+      const maxHeight = document.documentElement.clientHeight;
+      const maxWidth = document.documentElement.clientWidth;
+      const offsetHeight = 8;
+      const offsetWidth = 8;
+
       if (this.isSizeDragging && this.sizeDraggable) {
         if (this.placement === 'right') {
-          this.draggedSizeValue = `${document.documentElement.clientWidth - x + 8}px`;
+          const moveLeft = Math.min(Math.max(maxWidth - x + offsetWidth, offsetWidth), maxWidth);
+          this.draggedSizeValue = `${moveLeft}px`;
         }
         if (this.placement === 'left') {
-          this.draggedSizeValue = `${x + 8}px`;
+          const moveRight = Math.min(Math.max(x + offsetWidth, offsetWidth), maxWidth);
+          this.draggedSizeValue = `${moveRight}px`;
         }
         if (this.placement === 'top') {
-          this.draggedSizeValue = `${y + 8}px`;
+          const moveBottom = Math.min(Math.max(y + offsetHeight, offsetHeight), maxHeight);
+          this.draggedSizeValue = `${moveBottom}px`;
         }
         if (this.placement === 'bottom') {
-          this.draggedSizeValue = `${document.documentElement.clientHeight - y + 8}px`;
+          const moveTop = Math.min(Math.max(maxHeight - y + offsetHeight, offsetHeight), maxHeight);
+          this.draggedSizeValue = `${moveTop}px`;
         }
       }
     },
