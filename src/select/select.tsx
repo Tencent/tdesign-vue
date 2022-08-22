@@ -17,7 +17,7 @@ import isArray from 'lodash/isArray';
 import useDefaultValue from '../hooks/useDefaultValue';
 import { useTNodeJSX } from '../hooks/tnode';
 import { useConfig, usePrefixClass } from '../config-provider/useConfig';
-import { TdSelectProps, SelectValue } from './type';
+import { TdSelectProps, SelectValue, TdOptionProps } from './type';
 import props from './props';
 import TLoading from '../loading';
 import Popup, { PopupVisibleChangeContext } from '../popup';
@@ -90,12 +90,21 @@ export default defineComponent({
     });
     const setInnerValue: TdSelectProps['onChange'] = (newVal: SelectValue | SelectValue[], e) => {
       if (valueType.value === 'object') {
-        const { value, label } = keys.value;
+        const { value: valueOfKeys, label: labelOfKeys } = keys.value;
+
+        // 若为多选情况，将历史 value 加入 option 待取列表，兼容远程搜索改变 options 数组后旧选项无法找到的问题
+        const oldValueMap = new Map<SelectValue, TdOptionProps>();
+        if (multiple.value) {
+          (value.value as TdOptionProps[]).forEach((option) => {
+            oldValueMap.set(option[valueOfKeys], option);
+          });
+        }
+
         const getOption = (val: SelectValue) => {
-          const option = optionsMap.value.get(val);
+          const option = optionsMap.value.get(val) || oldValueMap.get(val);
           return {
-            [value]: get(option, value),
-            [label]: get(option, label),
+            [valueOfKeys]: get(option, valueOfKeys),
+            [labelOfKeys]: get(option, labelOfKeys),
           };
         };
         // eslint-disable-next-line no-param-reassign
@@ -135,14 +144,26 @@ export default defineComponent({
     );
 
     const placeholderText = computed(
-      () => ((!multiple.value && innerPopupVisible.value && getSingleContent(innerValue.value, optionsList.value))
+      () => ((!multiple.value
+          && innerPopupVisible.value
+          && ((valueType.value === 'object' && value.value[keys.value.label])
+            || getSingleContent(innerValue.value, optionsList.value)))
           || placeholder.value)
         ?? t(global.value.placeholder),
     );
 
-    const displayText = computed(() => multiple.value
-      ? getMultipleContent(innerValue.value as SelectValue[], optionsList.value)
-      : getSingleContent(innerValue.value, optionsList.value));
+    const displayText = computed(() => {
+      if (multiple.value) {
+        if (valueType.value === 'object') {
+          return (value.value as SelectValue[]).map((v) => v[keys.value.label]);
+        }
+        return getMultipleContent(innerValue.value as SelectValue[], optionsList.value);
+      }
+      if (valueType.value === 'object' && value.value[keys.value.label]) {
+        return value.value[keys.value.label];
+      }
+      return getSingleContent(innerValue.value, optionsList.value);
+    });
 
     const valueDisplayParams = computed(() => {
       const val = multiple.value
