@@ -629,15 +629,19 @@ exports[`ssr snapshot test renders ./examples/breadcrumb/demos/dropdown.vue corr
 `;
 
 exports[`ssr snapshot test renders ./examples/breadcrumb/demos/href.vue correctly 1`] = `
-<div>
-  <div class="t-breadcrumb">
-    <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-overflow"><span class="t-breadcrumb__inner" style="max-width:120px;">首页</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
-    <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-overflow"><span class="t-breadcrumb__inner" style="max-width:120px;">页面1(覆盖路由)</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
-    <div class="t-breadcrumb__item light"><a href="http://tdesign.tencent.com/" target="_blank" class="t-breadcrumb--text-overflow t-link"><span class="t-breadcrumb__inner" style="max-width:120px;">页面2</span></a><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
-    <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-overflow t-is-disabled"><span class="t-breadcrumb__inner" style="max-width:120px;">页面3(disabled)</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
-    <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-overflow t-gestureClass"><span class="t-breadcrumb__inner" style="max-width:120px;">页面4自定义点击</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-breadcrumb">
+      <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-overflow"><span class="t-breadcrumb__inner" style="max-width:120px;">首页</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-overflow"><span class="t-breadcrumb__inner" style="max-width:120px;">页面1(覆盖路由)</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-breadcrumb__item light"><a href="http://tdesign.tencent.com/" target="_blank" class="t-breadcrumb--text-overflow t-link"><span class="t-breadcrumb__inner" style="max-width:120px;">页面2</span></a><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-overflow t-is-disabled"><span class="t-breadcrumb__inner" style="max-width:120px;">页面3(disabled)</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
+      <div class="t-breadcrumb__item light"><span class="t-breadcrumb--text-overflow t-gestureClass"><span class="t-breadcrumb__inner" style="max-width:120px;">页面4自定义点击</span></span><span class="t-breadcrumb__separator"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span></div>
+    </div>
   </div>
-  <div style="margin-top:20px;">点击计数器：0</div>
+  <div class="t-space-item">
+    <div style="margin-top:20px;">点击计数器：0</div>
+  </div>
 </div>
 `;
 
@@ -5759,46 +5763,80 @@ exports[`ssr snapshot test renders ./examples/dialog/demos/warning.vue correctly
 `;
 
 exports[`ssr snapshot test renders ./examples/divider/demos/base.vue correctly 1`] = `
-<div>
-  <p>
-    这是第一种类型的内容元素或信息数据，通过分割线进行分割。分割线方便用户清晰明确的读取和预览，减少信息符合，提高用户使用效率。避免大段内容的聚集、信息负荷过多，导致信息获取或内容操作效率降低。
-  </p>
-  <div class="t-divider t-divider--horizontal"></div>
-  <p>
-    这是第二种类型的内容元素或信息数据，通过分割线进行分割。分割线方便用户清晰明确的读取和预览，减少信息符合，提高用户使用效率。避免大段内容的聚集、信息负荷过多，导致信息获取或内容操作效率降低。
-  </p>
-  <div class="t-divider t-divider--horizontal t-divider--dashed"></div>
-  <p>
-    这是第三种类型的内容元素或信息数据，通过分割线进行分割。分割线方便用户清晰明确的读取和预览，减少信息符合，提高用户使用效率。避免大段内容的聚集、信息负荷过多，导致信息获取或内容操作效率降低。
-  </p>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <p>
+      这是第一种类型的内容元素或信息数据，通过分割线进行分割。分割线方便用户清晰明确的读取和预览，减少信息符合，提高用户使用效率。避免大段内容的聚集、信息负荷过多，导致信息获取或内容操作效率降低。
+    </p>
+  </div>
+  <div class="t-space-item">
+    <div class="t-divider t-divider--horizontal"></div>
+  </div>
+  <div class="t-space-item">
+    <p>
+      这是第二种类型的内容元素或信息数据，通过分割线进行分割。分割线方便用户清晰明确的读取和预览，减少信息符合，提高用户使用效率。避免大段内容的聚集、信息负荷过多，导致信息获取或内容操作效率降低。
+    </p>
+  </div>
+  <div class="t-space-item">
+    <div class="t-divider t-divider--horizontal t-divider--dashed"></div>
+  </div>
+  <div class="t-space-item">
+    <p>
+      这是第三种类型的内容元素或信息数据，通过分割线进行分割。分割线方便用户清晰明确的读取和预览，减少信息符合，提高用户使用效率。避免大段内容的聚集、信息负荷过多，导致信息获取或内容操作效率降低。
+    </p>
+  </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/divider/demos/text.vue correctly 1`] = `
-<div>
-  <p>
-    这是第一种类型的内容元素或信息数据，通过分割线进行分割。分割线方便用户清晰明确的读取和预览，减少信息符合，提高用户使用效率。避免大段内容的聚集、信息负荷过多，导致信息获取或内容操作效率降低。
-  </p>
-  <div class="t-divider t-divider--horizontal t-divider--with-text t-divider--with-text-left"><span class="t-divider__inner-text">TDesign</span></div>
-  <p>
-    这是第二种类型的内容元素或信息数据，通过分割线进行分割。分割线方便用户清晰明确的读取和预览，减少信息符合，提高用户使用效率。避免大段内容的聚集、信息负荷过多，导致信息获取或内容操作效率降低。
-  </p>
-  <div class="t-divider t-divider--horizontal t-divider--dashed t-divider--with-text t-divider--with-text-center"><span class="t-divider__inner-text">TDesign</span></div>
-  <p>
-    这是第三种类型的内容元素或信息数据，通过分割线进行分割。分割线方便用户清晰明确的读取和预览，减少信息符合，提高用户使用效率。避免大段内容的聚集、信息负荷过多，导致信息获取或内容操作效率降低。
-  </p>
-  <div class="t-divider t-divider--horizontal t-divider--dashed t-divider--with-text t-divider--with-text-right"><span class="t-divider__inner-text">TDesign</span></div>
-  <p>
-    这是第四种类型的内容元素或信息数据，通过分割线进行分割。分割线方便用户清晰明确的读取和预览，减少信息符合，提高用户使用效率。避免大段内容的聚集、信息负荷过多，导致信息获取或内容操作效率降低。
-  </p>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <p>
+      这是第一种类型的内容元素或信息数据，通过分割线进行分割。分割线方便用户清晰明确的读取和预览，减少信息符合，提高用户使用效率。避免大段内容的聚集、信息负荷过多，导致信息获取或内容操作效率降低。
+    </p>
+  </div>
+  <div class="t-space-item">
+    <div class="t-divider t-divider--horizontal t-divider--with-text t-divider--with-text-left"><span class="t-divider__inner-text">TDesign</span></div>
+  </div>
+  <div class="t-space-item">
+    <p>
+      这是第二种类型的内容元素或信息数据，通过分割线进行分割。分割线方便用户清晰明确的读取和预览，减少信息符合，提高用户使用效率。避免大段内容的聚集、信息负荷过多，导致信息获取或内容操作效率降低。
+    </p>
+  </div>
+  <div class="t-space-item">
+    <div class="t-divider t-divider--horizontal t-divider--dashed t-divider--with-text t-divider--with-text-center"><span class="t-divider__inner-text">TDesign</span></div>
+  </div>
+  <div class="t-space-item">
+    <p>
+      这是第三种类型的内容元素或信息数据，通过分割线进行分割。分割线方便用户清晰明确的读取和预览，减少信息符合，提高用户使用效率。避免大段内容的聚集、信息负荷过多，导致信息获取或内容操作效率降低。
+    </p>
+  </div>
+  <div class="t-space-item">
+    <div class="t-divider t-divider--horizontal t-divider--dashed t-divider--with-text t-divider--with-text-right"><span class="t-divider__inner-text">TDesign</span></div>
+  </div>
+  <div class="t-space-item">
+    <p>
+      这是第四种类型的内容元素或信息数据，通过分割线进行分割。分割线方便用户清晰明确的读取和预览，减少信息符合，提高用户使用效率。避免大段内容的聚集、信息负荷过多，导致信息获取或内容操作效率降低。
+    </p>
+  </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/divider/demos/vertical.vue correctly 1`] = `
-<div><span>正直</span>
-  <div class="t-divider t-divider--vertical"></div> <span>进取</span>
-  <div class="t-divider t-divider--vertical"></div> <span>协作</span>
-  <div class="t-divider t-divider--vertical t-divider--dashed"></div> <span>创造</span>
+<div class="t-space t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
+  <div class="t-space-item"><span>正直</span></div>
+  <div class="t-space-item">
+    <div class="t-divider t-divider--vertical"></div>
+  </div>
+  <div class="t-space-item"><span>进取</span></div>
+  <div class="t-space-item">
+    <div class="t-divider t-divider--vertical"></div>
+  </div>
+  <div class="t-space-item"><span>协作</span></div>
+  <div class="t-space-item">
+    <div class="t-divider t-divider--vertical t-divider--dashed"></div>
+  </div>
+  <div class="t-space-item"><span>创造</span></div>
 </div>
 `;
 
@@ -7623,59 +7661,95 @@ exports[`ssr snapshot test renders ./examples/grid/demos/valign.vue correctly 1`
 `;
 
 exports[`ssr snapshot test renders ./examples/icon/demos/base.vue correctly 1`] = `
-<div class="t-demo-iconfont">
-  <div class="t-demo-row"><svg class="t-icon t-icon-loading" style="color:#999999;">
-      <use href="#t-icon-loading"></use>
-    </svg> <svg class="t-icon t-icon-close">
-      <use href="#t-icon-close"></use>
-    </svg> <svg class="t-icon t-icon-check-circle-filled">
-      <use href="#t-icon-check-circle-filled"></use>
-    </svg></div> <br>
-  <div class="t-demo-row"><svg class="t-icon t-icon-check-circle-filled t-size-s">
-      <use href="#t-icon-check-circle-filled"></use>
-    </svg> <svg class="t-icon t-icon-check-circle-filled">
-      <use href="#t-icon-check-circle-filled"></use>
-    </svg> <svg class="t-icon t-icon-check-circle-filled t-size-m">
-      <use href="#t-icon-check-circle-filled"></use>
-    </svg> <svg class="t-icon t-icon-check-circle-filled t-size-l">
-      <use href="#t-icon-check-circle-filled"></use>
-    </svg> <svg class="t-icon t-icon-check-circle-filled" style="font-size:25px;">
-      <use href="#t-icon-check-circle-filled"></use>
-    </svg> <svg class="t-icon t-icon-check-circle-filled" style="font-size:2em;">
-      <use href="#t-icon-check-circle-filled"></use>
-    </svg></div> <br>
-  <div class="t-demo-row"><svg class="t-icon t-icon-check-circle-filled" style="color:red;">
-      <use href="#t-icon-check-circle-filled"></use>
-    </svg> <svg class="t-icon t-icon-check-circle-filled" style="color:green;">
-      <use href="#t-icon-check-circle-filled"></use>
-    </svg> <svg class="t-icon t-icon-check-circle-filled" style="color:orange;">
-      <use href="#t-icon-check-circle-filled"></use>
-    </svg></div>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
+      <div class="t-space-item"><svg class="t-icon t-icon-loading" style="color:#999999;">
+          <use href="#t-icon-loading"></use>
+        </svg></div>
+      <div class="t-space-item"><svg class="t-icon t-icon-close">
+          <use href="#t-icon-close"></use>
+        </svg></div>
+      <div class="t-space-item"><svg class="t-icon t-icon-check-circle-filled">
+          <use href="#t-icon-check-circle-filled"></use>
+        </svg></div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-align-center t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
+      <div class="t-space-item"><svg class="t-icon t-icon-check-circle-filled t-size-s">
+          <use href="#t-icon-check-circle-filled"></use>
+        </svg></div>
+      <div class="t-space-item"><svg class="t-icon t-icon-check-circle-filled">
+          <use href="#t-icon-check-circle-filled"></use>
+        </svg></div>
+      <div class="t-space-item"><svg class="t-icon t-icon-check-circle-filled t-size-m">
+          <use href="#t-icon-check-circle-filled"></use>
+        </svg></div>
+      <div class="t-space-item"><svg class="t-icon t-icon-check-circle-filled t-size-l">
+          <use href="#t-icon-check-circle-filled"></use>
+        </svg></div>
+      <div class="t-space-item"><svg class="t-icon t-icon-check-circle-filled" style="font-size:25px;">
+          <use href="#t-icon-check-circle-filled"></use>
+        </svg></div>
+      <div class="t-space-item"><svg class="t-icon t-icon-check-circle-filled" style="font-size:2em;">
+          <use href="#t-icon-check-circle-filled"></use>
+        </svg></div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
+      <div class="t-space-item"><svg class="t-icon t-icon-check-circle-filled" style="color:red;">
+          <use href="#t-icon-check-circle-filled"></use>
+        </svg></div>
+      <div class="t-space-item"><svg class="t-icon t-icon-check-circle-filled" style="color:green;">
+          <use href="#t-icon-check-circle-filled"></use>
+        </svg></div>
+      <div class="t-space-item"><svg class="t-icon t-icon-check-circle-filled" style="color:orange;">
+          <use href="#t-icon-check-circle-filled"></use>
+        </svg></div>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/icon/demos/enhanced.vue correctly 1`] = `
-<div class="t-demo-iconfont">
-  <div><svg class="t-icon cps-icon-home-sheep">
-      <use href="#cps-icon-home-sheep"></use>
-    </svg> <svg class="t-icon cps-icon-home-sheep t-size-m">
-      <use href="#cps-icon-home-sheep"></use>
-    </svg> <svg class="t-icon cps-icon-home-sheep t-size-l">
-      <use href="#cps-icon-home-sheep"></use>
-    </svg> <svg class="t-icon cps-icon-home-sheep" style="font-size:25px;">
-      <use href="#cps-icon-home-sheep"></use>
-    </svg> <svg class="t-icon cps-icon-home-sheep" style="font-size:2em;">
-      <use href="#cps-icon-home-sheep"></use>
-    </svg></div><br>
-  <div><svg class="t-icon cps-icon-home-sheep" style="color:red;">
-      <use href="#cps-icon-home-sheep"></use>
-    </svg> <svg class="t-icon cps-icon-home-sheep" style="color:green;">
-      <use href="#cps-icon-home-sheep"></use>
-    </svg> <svg class="t-icon cps-icon-home-sheep" style="color:orange;">
-      <use href="#cps-icon-home-sheep"></use>
-    </svg> <svg class="t-icon t-icon-home">
-      <use href="#t-icon-home"></use>
-    </svg></div>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-space t-space-align-center t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
+      <div class="t-space-item"><svg class="t-icon cps-icon-home-sheep">
+          <use href="#cps-icon-home-sheep"></use>
+        </svg></div>
+      <div class="t-space-item"><svg class="t-icon cps-icon-home-sheep t-size-m">
+          <use href="#cps-icon-home-sheep"></use>
+        </svg></div>
+      <div class="t-space-item"><svg class="t-icon cps-icon-home-sheep t-size-l">
+          <use href="#cps-icon-home-sheep"></use>
+        </svg></div>
+      <div class="t-space-item"><svg class="t-icon cps-icon-home-sheep" style="font-size:25px;">
+          <use href="#cps-icon-home-sheep"></use>
+        </svg></div>
+      <div class="t-space-item"><svg class="t-icon cps-icon-home-sheep" style="font-size:2em;">
+          <use href="#cps-icon-home-sheep"></use>
+        </svg></div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-align-center t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
+      <div class="t-space-item"><svg class="t-icon cps-icon-home-sheep" style="color:red;">
+          <use href="#cps-icon-home-sheep"></use>
+        </svg></div>
+      <div class="t-space-item"><svg class="t-icon cps-icon-home-sheep" style="color:green;">
+          <use href="#cps-icon-home-sheep"></use>
+        </svg></div>
+      <div class="t-space-item"><svg class="t-icon cps-icon-home-sheep" style="color:orange;">
+          <use href="#cps-icon-home-sheep"></use>
+        </svg></div>
+      <div class="t-space-item"><svg class="t-icon t-icon-home">
+          <use href="#t-icon-home"></use>
+        </svg></div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -7694,49 +7768,107 @@ exports[`ssr snapshot test renders ./examples/icon/demos/icon-select.vue correct
 `;
 
 exports[`ssr snapshot test renders ./examples/icon/demos/iconfont.vue correctly 1`] = `
-<div class="t-demo-iconfont">
-  <div class="t-demo-row"><i class="t-icon t-icon-loading"></i> <i class="t-icon t-icon-close"></i> <i class="t-icon t-icon-check-circle-filled"></i></div> <br>
-  <div class="t-demo-row"><i class="t-icon t-icon-check-circle-filled t-size-s"></i> <i class="t-icon t-icon-check-circle-filled"></i> <i class="t-icon t-icon-check-circle-filled t-size-m"></i> <i class="t-icon t-icon-check-circle-filled t-size-l"></i> <i class="t-icon t-icon-check-circle-filled" style="font-size:25px;"></i> <i class="t-icon t-icon-check-circle-filled" style="font-size:2em;"></i></div> <br>
-  <div class="t-demo-row"><i class="t-icon t-icon-check-circle-filled" style="color:red;"></i> <i class="t-icon t-icon-check-circle-filled" style="color:green;"></i> <i class="t-icon t-icon-check-circle-filled" style="color:orange;"></i></div>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
+      <div class="t-space-item"><i class="t-icon t-icon-loading"></i></div>
+      <div class="t-space-item"><i class="t-icon t-icon-close"></i></div>
+      <div class="t-space-item"><i class="t-icon t-icon-check-circle-filled"></i></div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-align-center t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
+      <div class="t-space-item"><i class="t-icon t-icon-check-circle-filled t-size-s"></i></div>
+      <div class="t-space-item"><i class="t-icon t-icon-check-circle-filled"></i></div>
+      <div class="t-space-item"><i class="t-icon t-icon-check-circle-filled t-size-m"></i></div>
+      <div class="t-space-item"><i class="t-icon t-icon-check-circle-filled t-size-l"></i></div>
+      <div class="t-space-item"><i class="t-icon t-icon-check-circle-filled" style="font-size:25px;"></i></div>
+      <div class="t-space-item"><i class="t-icon t-icon-check-circle-filled" style="font-size:2em;"></i></div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-align-center t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
+      <div class="t-space-item"><i class="t-icon t-icon-check-circle-filled" style="color:red;"></i></div>
+      <div class="t-space-item"><i class="t-icon t-icon-check-circle-filled" style="color:green;"></i></div>
+      <div class="t-space-item"><i class="t-icon t-icon-check-circle-filled" style="color:orange;"></i></div>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/icon/demos/iconfont-enhanced.vue correctly 1`] = `
-<div class="t-demo-iconfont">
-  <div><i class="cps-icon cps-icon-home-sheep"></i> <i class="cps-icon cps-icon-home-sheep t-size-m"></i> <i class="cps-icon cps-icon-home-sheep t-size-l"></i> <i class="cps-icon cps-icon-home-sheep" style="font-size:25px;"></i> <i class="cps-icon cps-icon-home-sheep" style="font-size:2em;"></i></div><br>
-  <div><i class="cps-icon cps-icon-home-sheep" style="color:red;"></i> <i class="cps-icon cps-icon-home-sheep" style="color:green;"></i> <i class="cps-icon cps-icon-home-sheep" style="color:orange;"></i> <i class="t-icon-home t-icon"></i></div> <br>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-space t-space-align-center t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
+      <div class="t-space-item"><i class="cps-icon cps-icon-home-sheep"></i></div>
+      <div class="t-space-item"><i class="cps-icon cps-icon-home-sheep t-size-m"></i></div>
+      <div class="t-space-item"><i class="cps-icon cps-icon-home-sheep t-size-l"></i></div>
+      <div class="t-space-item"><i class="cps-icon cps-icon-home-sheep" style="font-size:25px;"></i></div>
+      <div class="t-space-item"><i class="cps-icon cps-icon-home-sheep" style="font-size:2em;"></i></div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-align-center t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
+      <div class="t-space-item"><i class="cps-icon cps-icon-home-sheep" style="color:red;"></i></div>
+      <div class="t-space-item"><i class="cps-icon cps-icon-home-sheep" style="color:green;"></i></div>
+      <div class="t-space-item"><i class="cps-icon cps-icon-home-sheep" style="color:orange;"></i></div>
+      <div class="t-space-item"><i class="t-icon-home t-icon"></i></div>
+    </div>
+  </div>
+  <div class="t-space-item"><br></div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/icon/demos/single.vue correctly 1`] = `
-<div class="t-demo-iconfont">
-  <div class="t-demo-row"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-loading">
-      <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
-    </svg> <svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close">
-      <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
-    </svg> <svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled">
-      <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
-    </svg></div> <br>
-  <div class="t-demo-row"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled t-size-s">
-      <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
-    </svg> <svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled">
-      <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
-    </svg> <svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled t-size-m">
-      <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
-    </svg> <svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled t-size-l">
-      <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
-    </svg> <svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled" style="font-size:25px;">
-      <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
-    </svg> <svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled" style="font-size:2em;">
-      <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
-    </svg></div> <br>
-  <div class="t-demo-row"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled" style="color:red;">
-      <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
-    </svg> <svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled" style="color:green;">
-      <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
-    </svg> <svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled" style="color:orange;">
-      <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
-    </svg></div>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-space t-space-align-center t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
+      <div class="t-space-item"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-loading">
+          <path fill="currentColor" d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-space-item"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close">
+          <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-space-item"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
+        </svg></div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-align-center t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
+      <div class="t-space-item"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled t-size-s">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-space-item"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-space-item"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled t-size-m">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-space-item"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled t-size-l">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-space-item"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled" style="font-size:25px;">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-space-item"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled" style="font-size:2em;">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
+        </svg></div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-align-center t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
+      <div class="t-space-item"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled" style="color:red;">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-space-item"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled" style="color:green;">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-space-item"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled" style="color:orange;">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
+        </svg></div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -12249,7 +12381,7 @@ exports[`ssr snapshot test renders ./examples/select/demos/remote-search.vue cor
     <div class="t-select__wrap" style="width:200px;display:inline-block;margin:0 20px 20px 0;">
       <div class="t-input__wrap t-select-input--empty t-select">
         <div class="t-input t-size-m t-is-default t-input--prefix t-input--suffix">
-          <div class="t-input__prefix"></div><input autocomplete="" placeholder="请选择" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+          <div class="t-input__prefix"></div><input autocomplete="" placeholder="请选择" type="text" unselectable="off" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
         </div>
       </div>
     </div>
@@ -14184,85 +14316,109 @@ exports[`ssr snapshot test renders ./examples/swiper/demos/vertical.vue correctl
 `;
 
 exports[`ssr snapshot test renders ./examples/switch/demos/base.vue correctly 1`] = `
-<div class="tdesign-demo-block-row">
-  <div class="t-switch t-size-l"><span class="t-switch__handle"></span>
-    <div class="t-switch__content t-size-l"></div>
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-switch t-size-l"><span class="t-switch__handle"></span>
+      <div class="t-switch__content t-size-l"></div>
+    </div>
   </div>
-  <div class="t-switch t-size-l t-is-checked"><span class="t-switch__handle"></span>
-    <div class="t-switch__content t-size-l"></div>
+  <div class="t-space-item">
+    <div class="t-switch t-size-l t-is-checked"><span class="t-switch__handle"></span>
+      <div class="t-switch__content t-size-l"></div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/switch/demos/describe.vue correctly 1`] = `
-<div class="tdesign-demo-block-column">
-  <div class="tdesign-demo-block-row">
-    <div class="t-switch t-size-l t-is-checked"><span class="t-switch__handle"></span>
-      <div class="t-switch__content t-size-l"></div>
-    </div>
-    <div class="t-switch t-size-l"><span class="t-switch__handle"></span>
-      <div class="t-switch__content t-size-l"></div>
-    </div>
-  </div>
-  <div class="tdesign-demo-block-row">
-    <div class="t-switch t-size-l t-is-checked"><span class="t-switch__handle"></span>
-      <div class="t-switch__content t-size-l">开</div>
-    </div>
-    <div class="t-switch t-size-l"><span class="t-switch__handle"></span>
-      <div class="t-switch__content t-size-l">关</div>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="tdesign-demo-block-row">
+      <div class="t-switch t-size-l t-is-checked"><span class="t-switch__handle"></span>
+        <div class="t-switch__content t-size-l"></div>
+      </div>
+      <div class="t-switch t-size-l"><span class="t-switch__handle"></span>
+        <div class="t-switch__content t-size-l"></div>
+      </div>
     </div>
   </div>
-  <div class="tdesign-demo-block-row">
-    <div class="t-switch t-size-l t-is-checked"><span class="t-switch__handle"></span>
-      <div class="t-switch__content t-size-l"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check">
-          <path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path>
-        </svg></div>
-    </div>
-    <div class="t-switch t-size-l"><span class="t-switch__handle"></span>
-      <div class="t-switch__content t-size-l"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close">
-          <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
-        </svg></div>
+  <div class="t-space-item">
+    <div class="tdesign-demo-block-row">
+      <div class="t-switch t-size-l t-is-checked"><span class="t-switch__handle"></span>
+        <div class="t-switch__content t-size-l">开</div>
+      </div>
+      <div class="t-switch t-size-l"><span class="t-switch__handle"></span>
+        <div class="t-switch__content t-size-l">关</div>
+      </div>
     </div>
   </div>
-  <div class="tdesign-demo-block-row">
-    <div class="t-switch t-size-l t-is-checked"><span class="t-switch__handle"></span>
-      <div class="t-switch__content t-size-l"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check">
-          <path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path>
-        </svg></div>
+  <div class="t-space-item">
+    <div class="tdesign-demo-block-row">
+      <div class="t-switch t-size-l t-is-checked"><span class="t-switch__handle"></span>
+        <div class="t-switch__content t-size-l"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check">
+            <path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path>
+          </svg></div>
+      </div>
+      <div class="t-switch t-size-l"><span class="t-switch__handle"></span>
+        <div class="t-switch__content t-size-l"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close">
+            <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+          </svg></div>
+      </div>
     </div>
-    <div class="t-switch t-size-l"><span class="t-switch__handle"></span>
-      <div class="t-switch__content t-size-l"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close">
-          <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
-        </svg></div>
+  </div>
+  <div class="t-space-item">
+    <div class="tdesign-demo-block-row">
+      <div class="t-switch t-size-l t-is-checked"><span class="t-switch__handle"></span>
+        <div class="t-switch__content t-size-l"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check">
+            <path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path>
+          </svg></div>
+      </div>
+      <div class="t-switch t-size-l"><span class="t-switch__handle"></span>
+        <div class="t-switch__content t-size-l"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close">
+            <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+          </svg></div>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/switch/demos/size.vue correctly 1`] = `
-<div class="tdesign-demo-block-row">
-  <div class="t-switch t-size-l t-is-checked"><span class="t-switch__handle"></span>
-    <div class="t-switch__content t-size-l"></div>
+<div class="t-space t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
+  <div class="t-space-item">
+    <div class="t-switch t-size-l t-is-checked"><span class="t-switch__handle"></span>
+      <div class="t-switch__content t-size-l"></div>
+    </div>
   </div>
-  <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
-    <div class="t-switch__content t-size-m"></div>
+  <div class="t-space-item">
+    <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
+      <div class="t-switch__content t-size-m"></div>
+    </div>
   </div>
-  <div class="t-switch t-size-s"><span class="t-switch__handle"></span>
-    <div class="t-switch__content t-size-s"></div>
+  <div class="t-space-item">
+    <div class="t-switch t-size-s"><span class="t-switch__handle"></span>
+      <div class="t-switch__content t-size-s"></div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/switch/demos/status.vue correctly 1`] = `
-<div class="tdesign-demo-block-row">
-  <div class="t-switch t-size-l t-is-checked"><span class="t-switch__handle"></span>
-    <div class="t-switch__content t-size-l"></div>
+<div class="t-space t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
+  <div class="t-space-item">
+    <div class="t-switch t-size-l t-is-checked"><span class="t-switch__handle"></span>
+      <div class="t-switch__content t-size-l"></div>
+    </div>
   </div>
-  <div class="t-switch t-size-l t-is-loading t-is-checked"><span class="t-switch__handle t-is-loading"><div class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></div></span>
-    <div class="t-switch__content t-size-l"></div>
+  <div class="t-space-item">
+    <div class="t-switch t-size-l t-is-loading t-is-checked"><span class="t-switch__handle t-is-loading"><div class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></div></span>
+      <div class="t-switch__content t-size-l"></div>
+    </div>
   </div>
-  <div disabled="disabled" class="t-switch t-size-l t-is-disabled"><span class="t-switch__handle t-is-disabled"></span>
-    <div class="t-switch__content t-size-l t-is-disabled"></div>
+  <div class="t-space-item">
+    <div disabled="disabled" class="t-switch t-size-l t-is-disabled"><span class="t-switch__handle t-is-disabled"></span>
+      <div class="t-switch__content t-size-l t-is-disabled"></div>
+    </div>
   </div>
 </div>
 `;
@@ -15518,44 +15674,28 @@ exports[`ssr snapshot test renders ./examples/table/demos/editable-cell.vue corr
         <tbody class="t-table__body">
           <tr>
             <td>
-              <div class="t-table__cell--editable">Eric<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
-                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
-                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
-                  </g>
-                </svg></div>
+              <div>Eric</div>
             </td>
             <td>
-              <div class="t-table__cell--editable">Vue<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
-                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
-                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
-                  </g>
-                </svg></div>
+              <div>Vue Framework</div>
             </td>
             <td>
-              <div class="t-table__cell--editable">A<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
-                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
-                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
-                  </g>
-                </svg></div>
+              <div>A</div>
             </td>
             <td>
-              <div class="t-table__cell--editable">2021-11-01<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
-                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
-                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
-                  </g>
-                </svg></div>
+              <div>2021-11-01</div>
             </td>
           </tr>
           <tr>
             <td>
-              <div class="t-table__cell--editable">Gilberta<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
-                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
-                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
-                  </g>
-                </svg></div>
+              <div class="t-table__cell-wrap">
+                <div class="t-input__wrap">
+                  <div class="t-input t-size-m t-is-default"><input autofocus="autofocus" autocomplete="" placeholder="请输入" type="text" unselectable="off" value="Gilberta" class="t-input__inner"></div>
+                </div>
+              </div>
             </td>
             <td>
-              <div class="t-table__cell--editable">React<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+              <div class="t-table__cell--editable">React Framework<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
                   <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
                     <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
                   </g>
@@ -15578,14 +15718,14 @@ exports[`ssr snapshot test renders ./examples/table/demos/editable-cell.vue corr
           </tr>
           <tr>
             <td>
-              <div class="t-table__cell--editable">Heriberto<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
-                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
-                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
-                  </g>
-                </svg></div>
+              <div class="t-table__cell-wrap">
+                <div class="t-input__wrap">
+                  <div class="t-input t-size-m t-is-default"><input autofocus="autofocus" autocomplete="" placeholder="请输入" type="text" unselectable="off" value="Heriberto" class="t-input__inner"></div>
+                </div>
+              </div>
             </td>
             <td>
-              <div class="t-table__cell--editable">Miniprogram<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+              <div class="t-table__cell--editable">Miniprogram Framework<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
                   <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
                     <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
                   </g>
@@ -15608,14 +15748,14 @@ exports[`ssr snapshot test renders ./examples/table/demos/editable-cell.vue corr
           </tr>
           <tr>
             <td>
-              <div class="t-table__cell--editable">Lazarus<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
-                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
-                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
-                  </g>
-                </svg></div>
+              <div class="t-table__cell-wrap">
+                <div class="t-input__wrap">
+                  <div class="t-input t-size-m t-is-default"><input autofocus="autofocus" autocomplete="" placeholder="请输入" type="text" unselectable="off" value="Lazarus" class="t-input__inner"></div>
+                </div>
+              </div>
             </td>
             <td>
-              <div class="t-table__cell--editable">Flutter<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+              <div class="t-table__cell--editable">Flutter Framework<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
                   <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
                     <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
                   </g>
@@ -15638,14 +15778,14 @@ exports[`ssr snapshot test renders ./examples/table/demos/editable-cell.vue corr
           </tr>
           <tr>
             <td>
-              <div class="t-table__cell--editable">Eric<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
-                  <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
-                    <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
-                  </g>
-                </svg></div>
+              <div class="t-table__cell-wrap">
+                <div class="t-input__wrap">
+                  <div class="t-input t-size-m t-is-default"><input autofocus="autofocus" autocomplete="" placeholder="请输入" type="text" unselectable="off" value="Eric" class="t-input__inner"></div>
+                </div>
+              </div>
             </td>
             <td>
-              <div class="t-table__cell--editable">Vue<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
+              <div class="t-table__cell--editable">Vue Framework<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-edit-1" style="font-size:12px;">
                   <g fill="currentColor" opacity="0.9" fill-opacity="0.9">
                     <path d="M14.13 4.95L10.9 1.71l.7-.71 3.25 3.24-.7.71zM5.97 13.11l-3.61.72a.3.3 0 01-.35-.35l.72-3.61 7.3-7.3 3.24 3.24-7.3 7.3zm5.89-7.3l-1.83-1.83-6.38 6.38-.46 2.29 2.29-.46 6.38-6.38zM15 11h-4v1h4v-1zM15 13H8.5v1H15v-1z"></path>
                   </g>
@@ -17140,7 +17280,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/merge-cells.vue correc
 exports[`ssr snapshot test renders ./examples/table/demos/multi-header.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large tdesign-demo-table-multi-heade tdesign-demo__tabler" style="width:100%;">
   <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示表格边框</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示固定表头</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定左侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定右侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表头吸顶</span></label></div>
-  <div class="t-table t-table--bordered t-table--multiple-header" style="position:relative;">
+  <div class="t-table t-table--bordered t-table--multiple-header t-table--col-draggable" style="position:relative;">
     <div class="t-table__top-content">
       <div class="t-table__column-controller-trigger t-align-top-right"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-setting">
             <path fill="currentColor" d="M11 8a3 3 0 11-6 0 3 3 0 016 0zm-1 0a2 2 0 10-4 0 2 2 0 004 0z" fill-opacity="0.9"></path>
@@ -17517,6 +17657,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
   <div class="t-table__content">
     <table class="t-table--layout-fixed" style="width:;">
       <colgroup>
+        <col style="width:64px;">
         <col style="width:200px;">
         <col style="width:200px;">
         <col style="width:200px;">
@@ -17524,6 +17665,9 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
       </colgroup>
       <thead class="t-table__header">
         <tr>
+          <th data-colkey="row-select" class="t-table__cell-check t-table__th-row-select">
+            <div class="t-table__th-cell-inner"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></div>
+          </th>
           <th data-colkey="name" class="t-table__th-name">
             <div class="t-table__th-cell-inner">UNKNOWN_USER</div>
           </th>
@@ -17542,7 +17686,7 @@ exports[`ssr snapshot test renders ./examples/table/demos/pagination-ajax.vue co
       </thead>
       <tbody class="t-table__body">
         <tr class="t-table__empty-row">
-          <td colspan="4">
+          <td colspan="5">
             <div class="t-table__empty">暂无数据</div>
           </td>
         </tr>
@@ -17593,11 +17737,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-multiple.vue co
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:64px;">
-          <col style="width:150px;">
+          <col style="width:120px;">
           <col style="width:100px;">
           <col>
           <col>
-          <col style="width:200px;">
+          <col style="width:150px;">
         </colgroup>
         <thead class="t-table__header">
           <tr>
@@ -17697,11 +17841,11 @@ exports[`ssr snapshot test renders ./examples/table/demos/select-single.vue corr
       <table class="t-table--layout-fixed" style="width:;">
         <colgroup>
           <col style="width:64px;">
-          <col style="width:150px;">
+          <col style="width:120px;">
           <col style="width:100px;">
           <col>
           <col>
-          <col style="width:200px;">
+          <col style="width:150px;">
         </colgroup>
         <thead class="t-table__header">
           <tr>
