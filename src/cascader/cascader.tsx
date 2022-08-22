@@ -78,7 +78,7 @@ export default defineComponent({
       emit,
     } = this;
     const renderSuffixIcon = () => {
-      const { visible, disabled } = cascaderContext;
+      const { visible } = cascaderContext;
       return (
         <FakeArrow
           overlayClassName={getFakeArrowIconClass(classPrefix, STATUS, cascaderContext)}
