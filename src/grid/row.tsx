@@ -44,6 +44,7 @@ export default mixins(classPrefixMixins).extend({
         this.componentName,
         {
           [`${this.componentName}--${justify}`]: justify,
+          [`${this.componentName}--${align}`]: align,
           [`${this.componentName}--align-${align}`]: align,
         },
       ];
