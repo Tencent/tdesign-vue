@@ -166,9 +166,9 @@ export default {
     rehandleClickOp(data) {
       console.log(data);
     },
-    rehandleExpandChange(value, { expandedRowData }) {
+    rehandleExpandChange(value, params) {
       this.expandedRowKeys = value;
-      console.log('rehandleExpandChange', value, expandedRowData);
+      console.log('rehandleExpandChange', params);
     },
   },
 };

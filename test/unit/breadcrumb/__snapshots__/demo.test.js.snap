@@ -260,177 +260,187 @@ exports[`Breadcrumb Breadcrumb dropdownVue demo works fine 1`] = `
 `;
 
 exports[`Breadcrumb Breadcrumb hrefVue demo works fine 1`] = `
-<div>
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
   <div
-    class="t-breadcrumb"
+    class="t-space-item"
   >
     <div
-      class="t-breadcrumb__item light"
+      class="t-breadcrumb"
     >
-      <span
-        class="t-breadcrumb--text-overflow"
+      <div
+        class="t-breadcrumb__item light"
       >
         <span
-          class="t-breadcrumb__inner"
-          style="max-width: 120px;"
+          class="t-breadcrumb--text-overflow"
         >
-          首页
+          <span
+            class="t-breadcrumb__inner"
+            style="max-width: 120px;"
+          >
+            首页
+          </span>
         </span>
-      </span>
-      <span
-        class="t-breadcrumb__separator"
-      >
-        <svg
-          class="t-icon t-icon-chevron-right"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
+        <span
+          class="t-breadcrumb__separator"
         >
-          <path
-            d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </span>
-    </div>
-     
-    <div
-      class="t-breadcrumb__item light"
-    >
-      <span
-        class="t-breadcrumb--text-overflow"
+          <svg
+            class="t-icon t-icon-chevron-right"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </span>
+      </div>
+       
+      <div
+        class="t-breadcrumb__item light"
       >
         <span
-          class="t-breadcrumb__inner"
-          style="max-width: 120px;"
+          class="t-breadcrumb--text-overflow"
         >
-          页面1(覆盖路由)
+          <span
+            class="t-breadcrumb__inner"
+            style="max-width: 120px;"
+          >
+            页面1(覆盖路由)
+          </span>
         </span>
-      </span>
-      <span
-        class="t-breadcrumb__separator"
-      >
-        <svg
-          class="t-icon t-icon-chevron-right"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
+        <span
+          class="t-breadcrumb__separator"
         >
-          <path
-            d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </span>
-    </div>
-     
-    <div
-      class="t-breadcrumb__item light"
-    >
-      <a
-        class="t-breadcrumb--text-overflow t-link"
-        href="http://tdesign.tencent.com/"
-        target="_blank"
+          <svg
+            class="t-icon t-icon-chevron-right"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </span>
+      </div>
+       
+      <div
+        class="t-breadcrumb__item light"
+      >
+        <a
+          class="t-breadcrumb--text-overflow t-link"
+          href="http://tdesign.tencent.com/"
+          target="_blank"
+        >
+          <span
+            class="t-breadcrumb__inner"
+            style="max-width: 120px;"
+          >
+            页面2
+          </span>
+        </a>
+        <span
+          class="t-breadcrumb__separator"
+        >
+          <svg
+            class="t-icon t-icon-chevron-right"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </span>
+      </div>
+       
+      <div
+        class="t-breadcrumb__item light"
       >
         <span
-          class="t-breadcrumb__inner"
-          style="max-width: 120px;"
+          class="t-breadcrumb--text-overflow t-is-disabled"
         >
-          页面2
+          <span
+            class="t-breadcrumb__inner"
+            style="max-width: 120px;"
+          >
+            页面3(disabled)
+          </span>
         </span>
-      </a>
-      <span
-        class="t-breadcrumb__separator"
-      >
-        <svg
-          class="t-icon t-icon-chevron-right"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
+        <span
+          class="t-breadcrumb__separator"
         >
-          <path
-            d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </span>
-    </div>
-     
-    <div
-      class="t-breadcrumb__item light"
-    >
-      <span
-        class="t-breadcrumb--text-overflow t-is-disabled"
+          <svg
+            class="t-icon t-icon-chevron-right"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </span>
+      </div>
+       
+      <div
+        class="t-breadcrumb__item light"
       >
         <span
-          class="t-breadcrumb__inner"
-          style="max-width: 120px;"
+          class="t-breadcrumb--text-overflow t-gestureClass"
         >
-          页面3(disabled)
+          <span
+            class="t-breadcrumb__inner"
+            style="max-width: 120px;"
+          >
+            页面4自定义点击
+          </span>
         </span>
-      </span>
-      <span
-        class="t-breadcrumb__separator"
-      >
-        <svg
-          class="t-icon t-icon-chevron-right"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </span>
-    </div>
-     
-    <div
-      class="t-breadcrumb__item light"
-    >
-      <span
-        class="t-breadcrumb--text-overflow t-gestureClass"
-      >
         <span
-          class="t-breadcrumb__inner"
-          style="max-width: 120px;"
+          class="t-breadcrumb__separator"
         >
-          页面4自定义点击
+          <svg
+            class="t-icon t-icon-chevron-right"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
         </span>
-      </span>
-      <span
-        class="t-breadcrumb__separator"
-      >
-        <svg
-          class="t-icon t-icon-chevron-right"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </span>
+      </div>
     </div>
   </div>
-   
   <div
-    style="margin-top: 20px;"
+    class="t-space-item"
   >
-    点击计数器：0
+    <div
+      style="margin-top: 20px;"
+    >
+      点击计数器：0
+    </div>
   </div>
 </div>
 `;

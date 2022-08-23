@@ -297,10 +297,10 @@ export default defineComponent({
           style={innerStyle}
         >
           {renderTNode('panelTopContent')}
-          {isEmpty && this.renderEmptyContent()}
           {isCreateOptionShown && this.renderCreateOption()}
-          {!isEmpty && loading && this.renderLoadingContent()}
-          {!isEmpty && !loading && this.renderOptionsContent(isVirtual && visibleData ? visibleData : displayOptions)}
+          {loading && this.renderLoadingContent()}
+          {!loading && isEmpty && this.renderEmptyContent()}
+          {!loading && !isEmpty && this.renderOptionsContent(isVirtual && visibleData ? visibleData : displayOptions)}
           {renderTNode('panelBottomContent')}
         </div>
       );
