@@ -1,17 +1,14 @@
 <template>
   <div>
-    <t-button theme="primary" @click="visible = true">默认位置</t-button>
-    <t-button theme="primary" @click="visibleCenter = true">垂直居中</t-button>
-    <t-button theme="primary" @click="visibleTop = true">自定义top</t-button>
-    <t-button theme="primary" @click="visibleOverflow = true">文本溢出</t-button>
-    <t-dialog header="对话框标题" body="对话框内容" :visible="visible" :onClose="close1" :onConfirm="close1"></t-dialog>
-    <t-dialog
-      placement="center"
-      header="对话框标题"
-      :visible="visibleCenter"
-      :onConfirm="close2"
-      :onClose="close2"
-    >
+    <t-space break-line>
+      <t-button theme="primary" @click="visible = true">默认位置</t-button>
+      <t-button theme="primary" @click="visibleCenter = true">垂直居中</t-button>
+      <t-button theme="primary" @click="visibleTop = true">自定义top</t-button>
+      <t-button theme="primary" @click="visibleOverflow = true">文本溢出</t-button>
+    </t-space>
+    <t-dialog header="对话框标题" body="对话框内容" :visible="visible" :onClose="close1" :onConfirm="close1" />
+
+    <t-dialog placement="center" header="对话框标题" :visible="visibleCenter" :onConfirm="close2" :onClose="close2">
       <p>水平居中显示的对话框</p>
     </t-dialog>
     <t-dialog
@@ -22,7 +19,7 @@
       :visible="visibleTop"
       :onConfirm="close3"
       :onClose="close3"
-    ></t-dialog>
+    />
     <t-dialog
       placement="center"
       header="文本溢出对话框标题"
@@ -108,8 +105,3 @@ export default Vue.extend({
   },
 });
 </script>
-<style scoped>
-.t-button {
-  margin-right: 20px;
-}
-</style>

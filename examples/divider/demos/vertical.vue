@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <t-space break-line>
     <span>正直</span>
     <t-divider layout="vertical" />
     <span>进取</span>
@@ -7,5 +7,5 @@
     <span>协作</span>
     <t-divider layout="vertical" dashed />
     <span>创造</span>
-  </div>
+  </t-space>
 </template>

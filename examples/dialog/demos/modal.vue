@@ -1,9 +1,11 @@
 <template>
   <div>
-    <t-button theme="primary" @click="visibleModal = true">模态对话框</t-button>
-    <t-button theme="primary" @click="visibleModelessDrag = true">非模态对话框</t-button>
-    <t-button theme="primary" @click="visibleModeless = true">模态对话框-不可拖拽</t-button>
-    <t-button theme="primary" @click="visibleNormal = true">普通对话框-不可拖拽</t-button>
+    <t-space break-line>
+      <t-button theme="primary" @click="visibleModal = true">模态对话框</t-button>
+      <t-button theme="primary" @click="visibleModelessDrag = true">非模态对话框</t-button>
+      <t-button theme="primary" @click="visibleModeless = true">模态对话框-不可拖拽</t-button>
+      <t-button theme="primary" @click="visibleNormal = true">普通对话框-不可拖拽</t-button>
+    </t-space>
 
     <t-dialog
       header="模态对话框"
@@ -77,8 +79,3 @@ export default {
   methods: {},
 };
 </script>
-<style scoped>
-.t-button {
-  margin-right: 20px;
-}
-</style>
