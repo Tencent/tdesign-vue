@@ -107,15 +107,6 @@ export default defineComponent({
       menu?.vMenu?.add({ value: props.value, parent: submenu?.value });
       const instance = getCurrentInstance();
       isNested.value = /submenu/i.test(instance.parent.vnode?.tag);
-
-      // adjust popup height
-      if (ctx.refs.popup) {
-        const rect = (ctx.refs.popupInner as HTMLElement).getBoundingClientRect();
-        const $popup = ctx.refs.popup;
-
-        ($popup as HTMLElement).style.setProperty('--popup-max-height', `${rect.height}px`);
-        ($popup as HTMLElement).style.setProperty('--popup-width', `${rect.width}px`);
-      }
     });
 
     return {
