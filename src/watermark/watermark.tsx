@@ -112,7 +112,7 @@ export default defineComponent({
             pointerEvents: 'none',
             backgroundRepeat: this.backgroundRepeat,
             backgroundImage: `url('${this.backgroundImage}')`,
-            animation: props.movable ? `watermark infinite ${(this.moveInterval * 4) / 60}s` : 'none',
+            animation: this.movable ? `watermark infinite ${(this.moveInterval * 4) / 60}s` : 'none',
           }}
         />
       </div>
