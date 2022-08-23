@@ -21374,21 +21374,21 @@ exports[`ssr snapshot test renders ./examples/upload/demos/table.vue correctly 1
 exports[`ssr snapshot test renders ./examples/watermark/demos/base.vue correctly 1`] = `
 <div class="t-watermark" style="position:relative;overflow:hidden;width:100%;">
   <div style="height:300px;"></div>
-  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:330px;pointer-events:none;background-repeat:repeat;background-image:url('');animation:watermark infinite 200s;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:200px;pointer-events:none;background-repeat:repeat;background-image:url('');animation:none;"></div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/watermark/demos/graylevel.vue correctly 1`] = `
 <div class="t-watermark" style="position:relative;overflow:hidden;width:100%;">
   <div style="height:300px;"></div>
-  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:258px;pointer-events:none;background-repeat:repeat;background-image:url('');animation:watermark infinite 200s;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:258px;pointer-events:none;background-repeat:repeat;background-image:url('');animation:none;"></div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/watermark/demos/image.vue correctly 1`] = `
 <div class="t-watermark" style="position:relative;overflow:hidden;width:100%;">
   <div style="height:300px;"></div>
-  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:194px;pointer-events:none;background-repeat:repeat;background-image:url('');animation:watermark infinite 200s;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:194px;pointer-events:none;background-repeat:repeat;background-image:url('');animation:none;"></div>
 </div>
 `;
 
@@ -21409,6 +21409,6 @@ exports[`ssr snapshot test renders ./examples/watermark/demos/movingText.vue cor
 exports[`ssr snapshot test renders ./examples/watermark/demos/multiline.vue correctly 1`] = `
 <div class="t-watermark" style="position:relative;overflow:hidden;width:100%;">
   <div style="height:300px;"></div>
-  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:258px;pointer-events:none;background-repeat:repeat;background-image:url('');animation:watermark infinite 200s;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:258px;pointer-events:none;background-repeat:repeat;background-image:url('');animation:none;"></div>
 </div>
 `;
