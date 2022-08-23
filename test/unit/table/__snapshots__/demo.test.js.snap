@@ -3512,7 +3512,7 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
                             </svg>
                           </span>
                           <span
-                            class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc t-table-sort-desc"
+                            class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"
                           >
                             <svg
                               class="t-icon t-icon-caret-down-small"
@@ -5353,7 +5353,7 @@ exports[`Table Table expandableVue demo works fine 1`] = `
               class="t-table__expandable-icon-cell"
             >
               <span
-                class="t-table__expand-box t-table__row--expanded t-positive-rotate-90"
+                class="t-table__expand-box t-table__row--collapsed"
               >
                 <svg
                   class="t-icon t-icon-chevron-right-circle"
@@ -5445,64 +5445,6 @@ exports[`Table Table expandableVue demo works fine 1`] = `
               >
                 删除
               </a>
-            </td>
-          </tr>
-          <tr
-            class="t-table__expanded-row"
-          >
-            <td
-              colspan="12"
-            >
-              <div
-                class="t-table__expanded-row-inner"
-              >
-                <div
-                  class="t-table__row-full-element"
-                >
-                  <div
-                    class="more-detail"
-                  >
-                    <p
-                      class="title"
-                    >
-                      <b>
-                        集群名称:
-                      </b>
-                    </p>
-                    <p
-                      class="content"
-                    >
-                      JQTest3
-                    </p>
-                    <br />
-                    <p
-                      class="title"
-                    >
-                      <b>
-                        管理员:
-                      </b>
-                    </p>
-                    <p
-                      class="content"
-                    >
-                      jenny;peter
-                    </p>
-                    <br />
-                    <p
-                      class="title"
-                    >
-                      <b>
-                        描述:
-                      </b>
-                    </p>
-                    <p
-                      class="content"
-                    >
-                      description
-                    </p>
-                  </div>
-                </div>
-              </div>
             </td>
           </tr>
           <tr
@@ -17177,7 +17119,7 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
                             </svg>
                           </span>
                           <span
-                            class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc t-table-sort-desc"
+                            class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"
                           >
                             <svg
                               class="t-icon t-icon-chevron-down"
@@ -17222,7 +17164,7 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
                           class="t-table__cell--sort-trigger t-table__double-icons"
                         >
                           <span
-                            class="t-table__sort-icon--active t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"
+                            class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"
                           >
                             <svg
                               class="t-icon t-icon-chevron-down"
@@ -18901,13 +18843,13 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             </td>
           </tr>
           <tr
-            class="t-table__row--selected"
+            class=""
           >
             <td
               class="t-table__cell-check"
             >
               <label
-                class="t-radio t-is-checked"
+                class="t-radio"
               >
                 <input
                   class="t-radio__former"
@@ -19506,7 +19448,7 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
                           </svg>
                         </span>
                         <span
-                          class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc t-table-sort-desc"
+                          class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"
                         >
                           <svg
                             class="t-icon t-icon-chevron-down"
