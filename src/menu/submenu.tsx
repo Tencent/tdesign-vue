@@ -29,7 +29,7 @@ export default defineComponent({
     ripple: Ripple,
   },
   props,
-  setup(props, ctx) {
+  setup(props) {
     const menu = inject<TdMenuInterface>('TdMenu');
     const {
       theme, activeValues, expandValues, mode, isHead, open,
