@@ -1,8 +1,8 @@
 <template>
-  <div class="tdesign-demo-block-column">
+  <t-space direction="vertical">
     <div class="tdesign-demo-block-row">
       <t-switch size="large" v-model="slotChecked">
-        <template v-slot:label="slotProps">{{slotProps.value?'开':'关'}}</template>
+        <template v-slot:label="slotProps">{{ slotProps.value ? '开' : '关' }}</template>
       </t-switch>
       <t-switch size="large">
         <template v-slot:label="slotProps">
@@ -30,10 +30,9 @@
       <t-switch size="large" v-model="renderChecked2" :label="renderContent"></t-switch>
       <t-switch size="large" :label="renderContent"></t-switch>
     </div>
-  </div>
+  </t-space>
 </template>
 <script lang="jsx">
-
 import { CloseIcon, CheckIcon } from 'tdesign-icons-vue';
 
 export default {
@@ -51,13 +50,13 @@ export default {
       console.log(val);
     },
     renderActiveContent() {
-      return (<CheckIcon />);
+      return <CheckIcon />;
     },
     renderInactiveContent() {
-      return (<CloseIcon />);
+      return <CloseIcon />;
     },
     renderContent(h, data) {
-      return data.value ? (<CheckIcon />) : (<CloseIcon />);
+      return data.value ? <CheckIcon /> : <CloseIcon />;
     },
   },
 };
