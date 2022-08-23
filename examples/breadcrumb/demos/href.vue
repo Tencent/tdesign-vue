@@ -9,7 +9,7 @@
       >
       <t-breadcrumbItem @click="onClickItem">页面4自定义点击</t-breadcrumbItem>
     </t-breadcrumb>
-    <div style="margin-top:20px;">点击计数器：{{ count }}</div>
+    <div style="margin-top: 20px">点击计数器：{{ count }}</div>
   </t-space>
 </template>
 <script>
