@@ -1,4 +1,6 @@
-import { Ref, ref, getCurrentInstance } from '@vue/composition-api';
+import {
+  Ref, ref, getCurrentInstance, watch,
+} from '@vue/composition-api';
 
 export type ChangeHandler<T, P extends any[]> = (value: T, ...args: P) => void;
 
@@ -12,30 +14,31 @@ export default function useVModel<T, P extends any[]>(
   const { emit } = getCurrentInstance();
   const internalValue = ref<T>();
   internalValue.value = defaultValue;
-  // 受控模式
+
+  // 受控模式 v-model
   if (typeof value.value !== 'undefined') {
-    return [
-      value,
-      (newValue, ...args) => {
-        // input 事件为 v-model 语法糖
-        emit?.('input', newValue, ...args);
-        onChange?.(newValue, ...args);
-        if (eventName && eventName !== 'input') {
-          emit?.(eventName, newValue, ...args);
-        }
-      },
-    ];
+    internalValue.value = value.value;
   }
 
-  // 非受控模式
+  // 受控模式 v-model 监听 value 变化
+  watch(value, (newVal) => {
+    internalValue.value = newVal;
+  });
+
   return [
     internalValue,
     (newValue, ...args) => {
-      internalValue.value = newValue;
-      onChange?.(newValue, ...args);
+      if (typeof value.value !== 'undefined') {
+        // 受控模式
+        emit?.('input', newValue, ...args);
+      } else {
+        // 非受控模式
+        internalValue.value = newValue;
+      }
       if (eventName && eventName !== 'input') {
         emit?.(eventName, newValue, ...args);
       }
+      onChange?.(newValue, ...args);
     },
   ];
 }
