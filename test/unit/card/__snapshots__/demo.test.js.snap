@@ -121,7 +121,7 @@ exports[`Card Card footerActionsVue demo works fine 1`] = `
         class="t-card__footer-wrapper"
       >
         <div
-          class="t-row t-row--center t-row--middle"
+          class="t-row t-row--center t-row--align-middle"
           style="margin-left: 0px; margin-right: 0px;"
         >
           <div
@@ -600,7 +600,7 @@ exports[`Card Card footerVue demo works fine 1`] = `
       class="t-card__footer-wrapper"
     >
       <div
-        class="t-row t-row--center t-row--middle"
+        class="t-row t-row--center t-row--align-middle"
         style="margin-left: 0px; margin-right: 0px;"
       >
         <div
@@ -919,7 +919,7 @@ exports[`Card Card headerFooterActionsVue demo works fine 1`] = `
       class="t-card__footer-wrapper"
     >
       <div
-        class="t-row t-row--center t-row--middle"
+        class="t-row t-row--center t-row--align-middle"
         style="margin-left: 0px; margin-right: 0px;"
       >
         <div
@@ -1098,7 +1098,7 @@ exports[`Card Card headerSubtitleFooterActionsVue demo works fine 1`] = `
       class="t-card__footer-wrapper"
     >
       <div
-        class="t-row t-row--center t-row--middle"
+        class="t-row t-row--center t-row--align-middle"
         style="margin-left: 0px; margin-right: 0px;"
       >
         <div

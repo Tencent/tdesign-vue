@@ -5,6 +5,40 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.46.2 `2022-08-24` 
+### 🚀 Features
+- `Table`: @chaishi ([#1341](https://github.com/Tencent/tdesign-vue/pull/1341))
+  - 支持行拖拽排序和列拖拽排序同时存在，[issue#1290](https://github.com/Tencent/tdesign-vue/issues/1290)
+  - 可编辑单元格/行功能，新增 `editableCellState` 用于控制单元格是否可编辑，[issue#1387](https://github.com/Tencent/tdesign-vue-next/issues/1387)
+  - 可编辑单元格/行功能，新增 `edit.defaultEditable` 用于设置初始状态是否为编辑态
+  - 行展开功能，新增事件参数 `currentRowData`，表示当前展开行
+  - 多级表头的拖拽排序，表头的任意层级调整影响较大，需求面较小，完善拖拽事件参数，业务侧根据参数自由调整自己想要的表头关系，[issue#1177](https://github.com/Tencent/tdesign-vue/issues/1177)
+- `Select`: @skytt ([#1318](https://github.com/Tencent/tdesign-vue/pull/1318))
+  - 远程搜索场景增加 label 回显能力
+  - 调整loading态显示优先于empty属性
+- Dialog: @huoyuhao ([#1325](https://github.com/Tencent/tdesign-vue/pull/1325))
+  - 支持回车键确认弹框，`onConfirm` 事件参数 `e` 或为键盘事件
+  - 支持多个弹框同时存在时，通过 `ESC` 键盘逐个关闭
+  - `confirmBtn` 支持数据类型 `null`
+- `Collapse/Comment/Cascader`: 组件样式优化 [issue#155](https://github.com/Tencent/tdesign/issues/155)、[issue#152](https://github.com/Tencent/tdesign/issues/152)、[issue#145](https://github.com/Tencent/tdesign/issues/145) @zhangpaopao0609 ([#1322](https://github.com/Tencent/tdesign-vue/pull/1322))
+-  `Upload`:  `locale` API 支持upload组件全部文案的配置 @uyarn ([#1362](https://github.com/Tencent/tdesign-vue/pull/1362))
+### 🐞 Bug Fixes
+- `Drawer`: 修复拖拽改变抽屉高度时可超出屏幕的问题 @sechi747 ([#1330](https://github.com/Tencent/tdesign-vue/pull/1330))
+- `Table`:
+  - 修复可编辑行，联动数据校验问题，([issue#1444](https://github.com/Tencent/tdesign-vue-next/issues/1444)) @chaishi ([#1341](https://github.com/Tencent/tdesign-vue/pull/1341))
+  - 允许在表头分割线一定范围内触发列宽调整逻辑 @ZTao-z ([#1337](https://github.com/Tencent/tdesign-vue/pull/1337))
+  - 修复行选中功能，多选，分页数据异步加载，`onSelectChange` 参数 `selectedRowData` 数据不完整问题 @chaishi ([#1341](https://github.com/Tencent/tdesign-vue/pull/1341))
+- `Cascader`: @pengYYYYY ([#1345](https://github.com/Tencent/tdesign-vue/pull/1345))
+  - 修复异步获取 `options` 后的懒加载无效 ([issue #1448](https://github.com/Tencent/tdesign-vue-next/issues/1448)) ([issue #1223](https://github.com/Tencent/tdesign-vue/issues/1223))
+  - 修复 `value` 不是 options 的健值会报错的问题 ([issue #1293](https://github.com/Tencent/tdesign-react/issues/1293))
+- `Menu`: 修复侧边栏弹出子菜单宽度计算错误的问题 @xiaosansiji ([#1357](https://github.com/Tencent/tdesign-vue/pull/1357))
+- `Drawer`: 修复拖拽改变抽屉高度时可超出屏幕的问题 @sechi747 ([#1330](https://github.com/Tencent/tdesign-vue/pull/1330))
+- `upload`: @uyarn ([#1362](https://github.com/Tencent/tdesign-vue/pull/1362))
+   -  修复`displayFileList` slot失效的问题
+   - 修复`theme`为`file`时，onRemove回调没有返回file的问题
+   - 修复`theme`为`file`，删除文案不可配置的问题
+
+
 ## 🌈 0.46.1 `2022-08-18` 
 ### 🚀 Features
 - `ConfigProvider`: 支持自定义全局 `icon` @zhangpaopao0609 
