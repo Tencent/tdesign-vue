@@ -10,13 +10,13 @@ export default function useDefaultValue<T, P extends any[]>(
   propsName: string,
   eventName: string,
 ): [Ref<T>, ChangeHandler<T, P>] {
-  const { emit } = getCurrentInstance();
+  const { emit, vnode } = getCurrentInstance();
 
   const internalValue = ref();
   internalValue.value = defaultValue;
 
   // 受控模式
-  if (typeof value.value !== 'undefined') {
+  if (Object.prototype.hasOwnProperty.call(vnode.componentOptions.propsData, propsName)) {
     return [
       value,
       (newValue, ...args) => {
