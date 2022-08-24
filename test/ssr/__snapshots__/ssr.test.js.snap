@@ -2628,7 +2628,7 @@ exports[`ssr snapshot test renders ./examples/card/demos/footer.vue correctly 1`
   <div class="t-card__cover"><img src="https://tdesign.gtimg.com/site/source/card-demo.png"></div>
   <div class="t-card__footer">
     <div class="t-card__footer-wrapper">
-      <div class="t-row t-row--center t-row--middle" style="margin-left:0px;margin-right:0px;">
+      <div class="t-row t-row--center t-row--align-middle" style="margin-left:0px;margin-right:0px;">
         <div class="t-col t-col-12" style="flex:auto;padding-left:0px;padding-right:0px;"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-size-full-width"><span class="t-button__text"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-thumb-up" style="font-size:24;"><path fill="currentColor" d="M10 6h3.22a1 1 0 01.97 1.24l-1.5 6a1 1 0 01-.97.76H3a1 1 0 01-1-1V8a1 1 0 011-1h2l2-5h2a1 1 0 011 1v3zM6 7.2V13h5.72l1.5-6H9V3H7.68L6 7.2zM5 8H3v5h2V8z" fill-opacity="0.9"></path></svg></span></button></div>
         <div class="t-col t-col-12" style="flex:none;padding-left:0px;padding-right:0px;">
           <div class="t-divider t-divider--vertical"></div>
@@ -2650,7 +2650,7 @@ exports[`ssr snapshot test renders ./examples/card/demos/footer-actions.vue corr
     <div class="t-card__cover"><img src="https://tdesign.gtimg.com/site/source/card-demo.png"></div>
     <div class="t-card__footer">
       <div class="t-card__footer-wrapper">
-        <div class="t-row t-row--center t-row--middle" style="margin-left:0px;margin-right:0px;">
+        <div class="t-row t-row--center t-row--align-middle" style="margin-left:0px;margin-right:0px;">
           <div class="t-col t-col-12" style="flex:auto;padding-left:0px;padding-right:0px;"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square t-size-full-width"><span class="t-button__text"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-thumb-up" style="font-size:24;"><path fill="currentColor" d="M10 6h3.22a1 1 0 01.97 1.24l-1.5 6a1 1 0 01-.97.76H3a1 1 0 01-1-1V8a1 1 0 011-1h2l2-5h2a1 1 0 011 1v3zM6 7.2V13h5.72l1.5-6H9V3H7.68L6 7.2zM5 8H3v5h2V8z" fill-opacity="0.9"></path></svg></span></button></div>
           <div class="t-col t-col-12" style="flex:none;padding-left:0px;padding-right:0px;">
             <div class="t-divider t-divider--vertical"></div>
@@ -2809,7 +2809,7 @@ exports[`ssr snapshot test renders ./examples/card/demos/header-footer-actions.v
   <div class="t-card__cover"><img src="https://tdesign.gtimg.com/site/source/card-demo.png"></div>
   <div class="t-card__footer">
     <div class="t-card__footer-wrapper">
-      <div class="t-row t-row--center t-row--middle" style="margin-left:0px;margin-right:0px;">
+      <div class="t-row t-row--center t-row--align-middle" style="margin-left:0px;margin-right:0px;">
         <div class="t-col t-col-12" style="flex:auto;padding-left:0px;padding-right:0px;"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-size-full-width"><span class="t-button__text"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-thumb-up" style="font-size:24;"><path fill="currentColor" d="M10 6h3.22a1 1 0 01.97 1.24l-1.5 6a1 1 0 01-.97.76H3a1 1 0 01-1-1V8a1 1 0 011-1h2l2-5h2a1 1 0 011 1v3zM6 7.2V13h5.72l1.5-6H9V3H7.68L6 7.2zM5 8H3v5h2V8z" fill-opacity="0.9"></path></svg></span></button></div>
         <div class="t-col t-col-12" style="flex:none;padding-left:0px;padding-right:0px;">
           <div class="t-divider t-divider--vertical"></div>
@@ -2852,7 +2852,7 @@ exports[`ssr snapshot test renders ./examples/card/demos/header-subtitle-footer-
   <div class="t-card__cover"><img src="https://tdesign.gtimg.com/site/source/card-demo.png"></div>
   <div class="t-card__footer">
     <div class="t-card__footer-wrapper">
-      <div class="t-row t-row--center t-row--middle" style="margin-left:0px;margin-right:0px;">
+      <div class="t-row t-row--center t-row--align-middle" style="margin-left:0px;margin-right:0px;">
         <div class="t-col t-col-12" style="flex:auto;padding-left:0px;padding-right:0px;"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default t-size-full-width"><span class="t-button__text"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-thumb-up" style="font-size:24;"><path fill="currentColor" d="M10 6h3.22a1 1 0 01.97 1.24l-1.5 6a1 1 0 01-.97.76H3a1 1 0 01-1-1V8a1 1 0 011-1h2l2-5h2a1 1 0 011 1v3zM6 7.2V13h5.72l1.5-6H9V3H7.68L6 7.2zM5 8H3v5h2V8z" fill-opacity="0.9"></path></svg></span></button></div>
         <div class="t-col t-col-12" style="flex:none;padding-left:0px;padding-right:0px;">
           <div class="t-divider t-divider--vertical"></div>
@@ -7378,7 +7378,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/validator-status.vue co
 
 exports[`ssr snapshot test renders ./examples/grid/demos/base.vue correctly 1`] = `
 <div class="tdesign-demo-item--grid">
-  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-1" style="padding-left:0px;padding-right:0px;">
       <div>1</div>
     </div>
@@ -7416,7 +7416,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/base.vue correctly 1`] 
       <div>1</div>
     </div>
   </div>
-  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-2" style="padding-left:0px;padding-right:0px;">
       <div>2</div>
     </div>
@@ -7436,7 +7436,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/base.vue correctly 1`] 
       <div>2</div>
     </div>
   </div>
-  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-3" style="padding-left:0px;padding-right:0px;">
       <div>3</div>
     </div>
@@ -7450,7 +7450,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/base.vue correctly 1`] 
       <div>3</div>
     </div>
   </div>
-  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-4" style="padding-left:0px;padding-right:0px;">
       <div>4</div>
     </div>
@@ -7461,7 +7461,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/base.vue correctly 1`] 
       <div>4</div>
     </div>
   </div>
-  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-6" style="padding-left:0px;padding-right:0px;">
       <div>6</div>
     </div>
@@ -7469,7 +7469,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/base.vue correctly 1`] 
       <div>6</div>
     </div>
   </div>
-  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-12" style="padding-left:0px;padding-right:0px;">
       <div>12</div>
     </div>
@@ -7479,7 +7479,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/base.vue correctly 1`] 
 
 exports[`ssr snapshot test renders ./examples/grid/demos/flex.vue correctly 1`] = `
 <div class="tdesign-demo-item--grid">
-  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-12" style="flex:2 2 0;padding-left:0px;padding-right:0px;">
       <div>2 / 5</div>
     </div>
@@ -7487,7 +7487,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/flex.vue correctly 1`] 
       <div>3 / 5</div>
     </div>
   </div>
-  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-12" style="flex:0 0 100px;padding-left:0px;padding-right:0px;">
       <div>100px</div>
     </div>
@@ -7495,7 +7495,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/flex.vue correctly 1`] 
       <div>auto</div>
     </div>
   </div>
-  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-12" style="flex:1 1 200px;padding-left:0px;padding-right:0px;">
       <div>1 1 200px</div>
     </div>
@@ -7503,7 +7503,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/flex.vue correctly 1`] 
       <div>0 1 300px</div>
     </div>
   </div>
-  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-12" style="flex:none;padding-left:0px;padding-right:0px;">
       <div style="padding:0 16px;">none</div>
     </div>
@@ -7516,7 +7516,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/flex.vue correctly 1`] 
 
 exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`] = `
 <div class="tdesign-demo-block-column"><span>水平 gutter 为固定值</span>
-  <div class="t-row t-row--start t-row--top" style="margin-left:-8px;margin-right:-8px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:-8px;margin-right:-8px;">
     <div class="t-col t-col-3" style="padding-left:8px;padding-right:8px;">
       <div>col-3</div>
     </div>
@@ -7530,7 +7530,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`
       <div>col-3</div>
     </div>
   </div> <span>水平 gutter 为响应式</span>
-  <div class="t-row t-row--start t-row--top" style="margin-left:-12px;margin-right:-12px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:-12px;margin-right:-12px;">
     <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
@@ -7544,7 +7544,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`
       <div>col-3</div>
     </div>
   </div> <span>水平和垂直 gutter 均为固定值</span>
-  <div class="t-row t-row--start t-row--top" style="margin-left:-8px;margin-right:-8px;row-gap:24px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:-8px;margin-right:-8px;row-gap:24px;">
     <div class="t-col t-col-3" style="padding-left:8px;padding-right:8px;">
       <div>col-3</div>
     </div>
@@ -7570,7 +7570,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`
       <div>col-3</div>
     </div>
   </div> <span>水平 gutter 响应式，垂直 gutter固定值 </span>
-  <div class="t-row t-row--start t-row--top" style="row-gap:24px;margin-left:-12px;margin-right:-12px;">
+  <div class="t-row t-row--start t-row--align-top" style="row-gap:24px;margin-left:-12px;margin-right:-12px;">
     <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
@@ -7596,7 +7596,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`
       <div>col-3</div>
     </div>
   </div> <span>水平和垂直 gutter 均为响应式</span>
-  <div class="t-row t-row--start t-row--top" style="margin-left:-12px;margin-right:-12px;row-gap:24px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:-12px;margin-right:-12px;row-gap:24px;">
     <div class="t-col t-col-3" style="padding-left:12px;padding-right:12px;">
       <div>col-3</div>
     </div>
@@ -7627,7 +7627,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/gutter.vue correctly 1`
 
 exports[`ssr snapshot test renders ./examples/grid/demos/halign.vue correctly 1`] = `
 <div class="tdesign-demo-block-column"><span>align left</span>
-  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-2" style="padding-left:0px;padding-right:0px;">
       <div>col-2</div>
     </div>
@@ -7641,7 +7641,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/halign.vue correctly 1`
       <div>col-2</div>
     </div>
   </div> <span>align center</span>
-  <div class="t-row t-row--center t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--center t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-2" style="padding-left:0px;padding-right:0px;">
       <div>col-2</div>
     </div>
@@ -7655,7 +7655,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/halign.vue correctly 1`
       <div>col-2</div>
     </div>
   </div> <span>align right</span>
-  <div class="t-row t-row--end t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--end t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-2" style="padding-left:0px;padding-right:0px;">
       <div>col-2</div>
     </div>
@@ -7669,7 +7669,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/halign.vue correctly 1`
       <div>col-2</div>
     </div>
   </div> <span>space-between</span>
-  <div class="t-row t-row--space-between t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--space-between t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-2" style="padding-left:0px;padding-right:0px;">
       <div>col-2</div>
     </div>
@@ -7683,7 +7683,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/halign.vue correctly 1`
       <div>col-2</div>
     </div>
   </div> <span>space-around</span>
-  <div class="t-row t-row--space-around t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--space-around t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-2" style="padding-left:0px;padding-right:0px;">
       <div>col-2</div>
     </div>
@@ -7702,7 +7702,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/halign.vue correctly 1`
 
 exports[`ssr snapshot test renders ./examples/grid/demos/offset.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
-  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-4" style="padding-left:0px;padding-right:0px;">
       <div>col-4</div>
     </div>
@@ -7710,7 +7710,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/offset.vue correctly 1`
       <div>col-4 col-offset-4</div>
     </div>
   </div>
-  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-3 t-col-offset-3" style="padding-left:0px;padding-right:0px;">
       <div>col-3 col-offset-3</div>
     </div>
@@ -7718,7 +7718,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/offset.vue correctly 1`
       <div>col-3 col-offset-3</div>
     </div>
   </div>
-  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-6 t-col-offset-3" style="padding-left:0px;padding-right:0px;">
       <div>col-6 col-offset-3</div>
     </div>
@@ -7728,7 +7728,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/offset.vue correctly 1`
 
 exports[`ssr snapshot test renders ./examples/grid/demos/order.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
-  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-3 t-col-order-4" style="padding-left:0px;padding-right:0px;">
       <div>1 col-3-order-4</div>
     </div>
@@ -7747,7 +7747,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/order.vue correctly 1`]
 
 exports[`ssr snapshot test renders ./examples/grid/demos/responsive.vue correctly 1`] = `
 <div class="tdesign-demo-block-column"><span>宽度响应式</span>
-  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-12 t-col-xs-2 t-col-sm-4 t-col-md-6 t-col-lg-8 t-col-xl-10" style="padding-left:0px;padding-right:0px;">
       <div>Col</div>
     </div>
@@ -7755,7 +7755,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/responsive.vue correctl
       <div>Col</div>
     </div>
   </div> <span>其他属性响应式（支持span，offset，order，pull，push）</span>
-  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-12 t-col-xs-3 t-col-xs-offset-0 t-col-sm-3 t-col-sm-offset-2 t-col-md-3 t-col-md-offset-4 t-col-lg-3 t-col-lg-offset-6 t-col-xl-3 t-col-xl-offset-8" style="padding-left:0px;padding-right:0px;">
       <div>Col</div>
     </div>
@@ -7765,7 +7765,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/responsive.vue correctl
 
 exports[`ssr snapshot test renders ./examples/grid/demos/sort.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
-  <div class="t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-9 t-col-push-3" style="padding-left:0px;padding-right:0px;">
       <div>col-9 col-pull-3</div>
     </div>
@@ -7779,7 +7779,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/sort.vue correctly 1`] 
 exports[`ssr snapshot test renders ./examples/grid/demos/valign.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
   <p>align top</p>
-  <div class="t-row t-row--center t-row--top" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--center t-row--align-top" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-3" style="padding-left:0px;padding-right:0px;">
       <div style="height:100px;">col-3</div>
     </div>
@@ -7794,7 +7794,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/valign.vue correctly 1`
     </div>
   </div>
   <p>align middle</p>
-  <div class="t-row t-row--space-around t-row--middle" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--space-around t-row--align-middle" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-3" style="padding-left:0px;padding-right:0px;">
       <div style="height:100px;">col-3</div>
     </div>
@@ -7809,7 +7809,7 @@ exports[`ssr snapshot test renders ./examples/grid/demos/valign.vue correctly 1`
     </div>
   </div>
   <p>align bottom</p>
-  <div class="t-row t-row--space-between t-row--bottom" style="margin-left:0px;margin-right:0px;">
+  <div class="t-row t-row--space-between t-row--align-bottom" style="margin-left:0px;margin-right:0px;">
     <div class="t-col t-col-3" style="padding-left:0px;padding-right:0px;">
       <div style="height:100px;">col-3</div>
     </div>
@@ -12990,7 +12990,7 @@ exports[`ssr snapshot test renders ./examples/skeleton/demos/advance.vue correct
 `;
 
 exports[`ssr snapshot test renders ./examples/skeleton/demos/animation.vue correctly 1`] = `
-<div class="t-skeleton-demo t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+<div class="t-skeleton-demo t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
   <div class="t-col t-col-12" style="padding-left:0px;padding-right:0px;">
     <section class="t-skeleton-demo-card">
       <div class="header">
@@ -13081,7 +13081,7 @@ exports[`ssr snapshot test renders ./examples/skeleton/demos/delay.vue correctly
 `;
 
 exports[`ssr snapshot test renders ./examples/skeleton/demos/theme.vue correctly 1`] = `
-<div class="t-skeleton-demo t-row t-row--start t-row--top" style="margin-left:0px;margin-right:0px;">
+<div class="t-skeleton-demo t-row t-row--start t-row--align-top" style="margin-left:0px;margin-right:0px;">
   <div class="t-col t-col-12" style="padding-left:0px;padding-right:0px;">
     <section class="t-skeleton-demo-card">
       <div class="header">
