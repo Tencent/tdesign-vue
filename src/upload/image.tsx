@@ -101,7 +101,8 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
               <div class={`${this.componentName}__card-container ${this.componentName}__card-box`}>
                 <TLoading />
                 <p>
-                  {this.global.progress.uploadingText} {Math.min(this.loadingFile.percent, 99)}%
+                  {this.locale?.progress?.uploadingText || this.global.progress.uploadingText}{' '}
+                  {Math.min(this.loadingFile.percent, 99)}%
                 </p>
               </div>
             ) : (

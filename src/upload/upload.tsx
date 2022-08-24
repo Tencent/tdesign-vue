@@ -16,7 +16,7 @@ import { formatFiles, isOverSizeLimit } from '../_common/js/upload/utils';
 import TButton from '../button';
 import TDialog from '../dialog';
 import SingleFile from './single-file';
-import { renderContent } from '../utils/render-tnode';
+import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import props from './props';
 import { ClassName } from '../common';
 import { emitEvent } from '../utils/event';
@@ -121,13 +121,14 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
     canBatchUpload(): boolean {
       return this.uploadInOneRequest && this.isBatchUpload;
     },
+
     uploadListTriggerText(): string {
-      let uploadText = this.global.triggerUploadText.fileInput;
+      let uploadText = this.locale?.triggerUploadText?.fileInput || this.global.triggerUploadText.fileInput;
       if (this.toUploadFiles?.length > 0 || this.files?.length > 0) {
         if (this.theme === 'file-input' || (this.files?.length > 0 && this.canBatchUpload)) {
-          uploadText = this.global.triggerUploadText.reupload;
+          uploadText = this.locale?.triggerUploadText?.reupload || this.global.triggerUploadText.reupload;
         } else {
-          uploadText = this.global.triggerUploadText.continueUpload;
+          uploadText = this.locale?.triggerUploadText?.continueUpload || this.global.triggerUploadText.continueUpload;
         }
       }
       return uploadText;
@@ -172,18 +173,12 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
       );
     },
 
-    handleSingleRemove(e: MouseEvent) {
+    handleSingleRemove({ e, file }: { e: MouseEvent; file: File }) {
       const changeCtx = { trigger: 'remove' };
       if (this.loadingFile) this.loadingFile = null;
       this.errorMsg = '';
       this.emitChangeEvent([], changeCtx);
-      this.emitRemoveEvent({ e });
-    },
-
-    handleFileInputRemove(e: MouseEvent) {
-      // prevent trigger upload
-      e?.stopPropagation();
-      this.handleSingleRemove(e);
+      this.emitRemoveEvent({ e, file });
     },
 
     handleMultipleRemove(options: UploadRemoveOptions) {
@@ -566,14 +561,21 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
         return <TButton variant="outline">{this.uploadListTriggerText}</TButton>;
       }
       const { UploadIcon } = this.useGlobalIcon({ UploadIcon: TdUploadIcon });
+      const reuploadText = this.locale?.triggerUploadText?.reupload || this.global.triggerUploadText.reupload;
+      const normalText = this.locale?.triggerUploadText?.normal || this.global.triggerUploadText.normal;
+
       return (
         <TButton variant="outline">
           <UploadIcon slot="icon" />
-          {this.files?.length ? this.global.triggerUploadText.reupload : this.global.triggerUploadText.normal}
+          {this.files?.length ? reuploadText : normalText}
         </TButton>
       );
     },
 
+    renderFileListDisplay() {
+      const fileListDisplay = renderTNodeJSX(this, 'fileListDisplay');
+      return fileListDisplay;
+    },
     renderInput() {
       return (
         <input
@@ -597,7 +599,8 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
           remove={this.handleSingleRemove}
           showUploadProgress={this.showUploadProgress}
           placeholder={this.placeholder}
-          fileListDisplay={this.fileListDisplay}
+          fileListDisplay={this.renderFileListDisplay}
+          locale={this.locale}
         >
           <div class={`${this.componentName}__trigger`} onclick={this.triggerUpload}>
             {triggerElement}
@@ -625,6 +628,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
           remove={this.handleSingleRemove}
           upload={this.upload}
           autoUpload={this.autoUpload}
+          locale={this.locale}
         >
           {triggerElement}
         </Dragger>
@@ -685,6 +689,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
             onChange={this.handleDragChange}
             onDragenter={this.handleDragenter}
             onDragleave={this.handleDragleave}
+            locale={this.locale}
           >
             <div class={`${this.componentName}__trigger`} onclick={this.triggerUpload}>
               {triggerElement}

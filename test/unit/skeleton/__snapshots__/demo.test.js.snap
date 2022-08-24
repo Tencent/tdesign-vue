@@ -254,7 +254,7 @@ exports[`Skeleton Skeleton advanceVue demo works fine 1`] = `
 
 exports[`Skeleton Skeleton animationVue demo works fine 1`] = `
 <div
-  class="t-skeleton-demo t-row t-row--start t-row--top"
+  class="t-skeleton-demo t-row t-row--start t-row--align-top"
   style="margin-left: 0px; margin-right: 0px;"
 >
   <div
@@ -421,7 +421,7 @@ exports[`Skeleton Skeleton baseVue demo works fine 1`] = `
 
 exports[`Skeleton Skeleton themeVue demo works fine 1`] = `
 <div
-  class="t-skeleton-demo t-row t-row--start t-row--top"
+  class="t-skeleton-demo t-row t-row--start t-row--align-top"
   style="margin-left: 0px; margin-right: 0px;"
 >
   <div

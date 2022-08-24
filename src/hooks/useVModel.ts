@@ -9,11 +9,12 @@ export default function useVModel<T, P extends any[]>(
   // eventName 不是 input 时，需要单独传入 eventName 用于事件输出
   eventName?: string,
 ): [Ref<T>, ChangeHandler<T, P>] {
-  const { emit } = getCurrentInstance();
+  const { emit, vnode } = getCurrentInstance();
   const internalValue = ref<T>();
   internalValue.value = defaultValue;
+
   // 受控模式
-  if (typeof value.value !== 'undefined') {
+  if (Object.prototype.hasOwnProperty.call(vnode.componentOptions.propsData, 'value')) {
     return [
       value,
       (newValue, ...args) => {
