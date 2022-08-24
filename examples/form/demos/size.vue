@@ -1,12 +1,9 @@
 <template>
-  <div>
-    <div>
-      <t-radio-group v-model="size" variant="default-filled">
-        <t-radio-button value="medium">中尺寸（默认）</t-radio-button>
-        <t-radio-button value="large">大尺寸</t-radio-button>
-      </t-radio-group>
-    </div>
-    <br /><br />
+  <t-space direction="vertical" size="32px">
+    <t-radio-group v-model="size" variant="default-filled">
+      <t-radio-button value="medium">中尺寸（默认）</t-radio-button>
+      <t-radio-button value="large">大尺寸</t-radio-button>
+    </t-radio-group>
 
     <!-- 开发中 -->
     <t-form :data="formData" :size="size" @reset="onReset" @submit="onSubmit">
@@ -29,11 +26,13 @@
         <t-checkbox-group v-model="formData.course" :options="courseOptions"></t-checkbox-group>
       </t-form-item>
       <t-form-item style="margin-left: 100px">
-        <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
-        <t-button theme="default" variant="base" type="reset">重置</t-button>
+        <t-space size="10px">
+          <t-button theme="primary" type="submit">提交</t-button>
+          <t-button theme="default" variant="base" type="reset">重置</t-button>
+        </t-space>
       </t-form-item>
     </t-form>
-  </div>
+  </t-space>
 </template>
 <script>
 const INITIAL_DATA = {

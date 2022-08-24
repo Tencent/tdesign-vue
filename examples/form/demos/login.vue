@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 350px">
+  <t-space style="width: 350px">
     <t-form :data="formData" ref="form" @reset="onReset" @submit="onSubmit" :colon="true" :labelWidth="0">
       <t-form-item name="account">
         <t-input clearable v-model="formData.account" placeholder="请输入账户名">
@@ -15,7 +15,7 @@
         <t-button theme="primary" type="submit" block>登录</t-button>
       </t-form-item>
     </t-form>
-  </div>
+  </t-space>
 </template>
 <script>
 import { DesktopIcon, LockOnIcon } from 'tdesign-icons-vue';

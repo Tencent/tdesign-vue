@@ -1,14 +1,11 @@
 <template>
-  <div>
-    <div>
-      <t-radio-group v-model="resetType" variant="default-filled">
-        <t-radio-button value="empty">重置为空</t-radio-button>
-        <t-radio-button value="initial">
-          <t-popup content="改变表单数据后，点击重置按钮，观察数据重置情况"> 重置为初始值 </t-popup>
-        </t-radio-button>
-      </t-radio-group>
-    </div>
-    <br /><br />
+  <t-space direction="vertical" size="32px">
+    <t-radio-group v-model="resetType" variant="default-filled">
+      <t-radio-button value="empty">重置为空</t-radio-button>
+      <t-radio-button value="initial">
+        <t-popup content="改变表单数据后，点击重置按钮，观察数据重置情况"> 重置为初始值 </t-popup>
+      </t-radio-button>
+    </t-radio-group>
 
     <!-- colon 表示，是否统一显示 label 冒号 -->
     <t-form ref="form" :data="formData" :resetType="resetType" colon @reset="onReset" @submit="onSubmit">
@@ -22,12 +19,14 @@
         <t-checkbox-group v-model="formData.course" :options="courseOptions"></t-checkbox-group>
       </t-form-item>
       <t-form-item style="margin-left: 100px">
-        <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
-        <t-button theme="default" variant="base" type="reset" style="margin-right: 10px">重置</t-button>
-        <t-button theme="default" variant="base" @click="resetPhoneNumber">只重置手机号码</t-button>
+        <t-space size="10px">
+          <t-button theme="primary" type="submit">提交</t-button>
+          <t-button theme="default" variant="base" type="reset">重置</t-button>
+          <t-button theme="default" variant="base" @click="resetPhoneNumber">只重置手机号码</t-button>
+        </t-space>
       </t-form-item>
     </t-form>
-  </div>
+  </t-space>
 </template>
 <script>
 // 这是初始值，数据变化后可以设置表单重置为这个初始值

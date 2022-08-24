@@ -1,70 +1,70 @@
 <template>
-  <div>
-    <!--  scrollToFirstError="smooth" -->
-    <t-form :data="formData" :rules="rules" ref="form" @reset="onReset" @submit="onSubmit">
-      <t-form-item label="用户名" help="这是用户名字段帮助说明" name="account">
-        <t-input v-model="formData.account"></t-input>
-      </t-form-item>
-      <t-form-item label="年龄" name="age">
-        <t-input-number v-model="formData.age" placeholder="年龄" />
-      </t-form-item>
-      <t-form-item label="籍贯" name="region">
-        <t-cascader v-model="formData.region" placeholder="请选择籍贯" :options="regionOptions" clearable filterable />
-      </t-form-item>
-      <t-form-item label="密码" name="password">
-        <t-input type="password" v-model="formData.password"></t-input>
-      </t-form-item>
-      <t-form-item label="邮箱" name="email">
-        <t-input v-model="formData.email"></t-input>
-      </t-form-item>
-      <t-form-item label="性别" name="gender">
-        <t-radio-group v-model="formData.gender">
-          <t-radio value="male">男</t-radio>
-          <t-radio value="female">女</t-radio>
-        </t-radio-group>
-      </t-form-item>
-      <t-form-item label="课程" name="course">
-        <t-checkbox-group v-model="formData.course" :options="courseOptions"></t-checkbox-group>
-      </t-form-item>
-      <t-form-item label="学院" name="college">
-        <t-select v-model="formData.college" class="demo-select-base" clearable filterable>
-          <t-option v-for="(item, index) in options" :value="item.value" :label="item.label" :key="index">
-            {{ item.label }}
-          </t-option>
-        </t-select>
-      </t-form-item>
-      <t-form-item
-        label="入学时间"
-        name="date"
-        :rules="[
-          { required: true, message: '此项必填' },
-          { date: { delimiters: ['/', '-', '.'] }, message: '日期格式有误' },
-        ]"
-      >
-        <t-date-picker v-model="formData.date"></t-date-picker>
-      </t-form-item>
-      <t-form-item label="个人网站" name="content.url">
-        <t-input v-model="formData.content.url"></t-input>
-      </t-form-item>
-      <t-form-item label="个人简介" help="一句话介绍自己" name="description">
-        <t-textarea v-model="formData.description"></t-textarea>
-      </t-form-item>
-      <t-form-item label="兴趣爱好" name="hobby">
-        <t-tree-select
-          v-model="formData.hobby"
-          filterable
-          :data="hobbyOptions"
-          placeholder="请选择你的兴趣爱好"
-        ></t-tree-select>
-      </t-form-item>
+  <!--  scrollToFirstError="smooth" -->
+  <t-form :data="formData" :rules="rules" ref="form" @reset="onReset" @submit="onSubmit">
+    <t-form-item label="用户名" help="这是用户名字段帮助说明" name="account">
+      <t-input v-model="formData.account"></t-input>
+    </t-form-item>
+    <t-form-item label="年龄" name="age">
+      <t-input-number v-model="formData.age" placeholder="年龄" />
+    </t-form-item>
+    <t-form-item label="籍贯" name="region">
+      <t-cascader v-model="formData.region" placeholder="请选择籍贯" :options="regionOptions" clearable filterable />
+    </t-form-item>
+    <t-form-item label="密码" name="password">
+      <t-input type="password" v-model="formData.password"></t-input>
+    </t-form-item>
+    <t-form-item label="邮箱" name="email">
+      <t-input v-model="formData.email"></t-input>
+    </t-form-item>
+    <t-form-item label="性别" name="gender">
+      <t-radio-group v-model="formData.gender">
+        <t-radio value="male">男</t-radio>
+        <t-radio value="female">女</t-radio>
+      </t-radio-group>
+    </t-form-item>
+    <t-form-item label="课程" name="course">
+      <t-checkbox-group v-model="formData.course" :options="courseOptions"></t-checkbox-group>
+    </t-form-item>
+    <t-form-item label="学院" name="college">
+      <t-select v-model="formData.college" class="demo-select-base" clearable filterable>
+        <t-option v-for="(item, index) in options" :value="item.value" :label="item.label" :key="index">
+          {{ item.label }}
+        </t-option>
+      </t-select>
+    </t-form-item>
+    <t-form-item
+      label="入学时间"
+      name="date"
+      :rules="[
+        { required: true, message: '此项必填' },
+        { date: { delimiters: ['/', '-', '.'] }, message: '日期格式有误' },
+      ]"
+    >
+      <t-date-picker v-model="formData.date"></t-date-picker>
+    </t-form-item>
+    <t-form-item label="个人网站" name="content.url">
+      <t-input v-model="formData.content.url"></t-input>
+    </t-form-item>
+    <t-form-item label="个人简介" help="一句话介绍自己" name="description">
+      <t-textarea v-model="formData.description"></t-textarea>
+    </t-form-item>
+    <t-form-item label="兴趣爱好" name="hobby">
+      <t-tree-select
+        v-model="formData.hobby"
+        filterable
+        :data="hobbyOptions"
+        placeholder="请选择你的兴趣爱好"
+      ></t-tree-select>
+    </t-form-item>
 
-      <t-form-item style="margin-left: 100px">
-        <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
-        <t-button theme="default" variant="base" type="reset" style="margin-right: 10px">重置</t-button>
+    <t-form-item style="margin-left: 100px">
+      <t-space size="10px">
+        <t-button theme="primary" type="submit">提交</t-button>
+        <t-button theme="default" variant="base" type="reset">重置</t-button>
         <t-button theme="default" variant="base" @click="handleClear">清空校验结果</t-button>
-      </t-form-item>
-    </t-form>
-  </div>
+      </t-space>
+    </t-form-item>
+  </t-form>
 </template>
 <script>
 const INITIAL_DATA = {
