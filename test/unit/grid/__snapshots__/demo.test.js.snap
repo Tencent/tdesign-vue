@@ -5,7 +5,7 @@ exports[`Grid Grid baseVue demo works fine 1`] = `
   class="tdesign-demo-item--grid"
 >
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -106,7 +106,7 @@ exports[`Grid Grid baseVue demo works fine 1`] = `
     </div>
   </div>
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -159,7 +159,7 @@ exports[`Grid Grid baseVue demo works fine 1`] = `
     </div>
   </div>
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -196,7 +196,7 @@ exports[`Grid Grid baseVue demo works fine 1`] = `
     </div>
   </div>
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -225,7 +225,7 @@ exports[`Grid Grid baseVue demo works fine 1`] = `
     </div>
   </div>
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -246,7 +246,7 @@ exports[`Grid Grid baseVue demo works fine 1`] = `
     </div>
   </div>
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -266,7 +266,7 @@ exports[`Grid Grid flexVue demo works fine 1`] = `
   class="tdesign-demo-item--grid"
 >
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -289,7 +289,7 @@ exports[`Grid Grid flexVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -312,7 +312,7 @@ exports[`Grid Grid flexVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -335,7 +335,7 @@ exports[`Grid Grid flexVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -370,7 +370,7 @@ exports[`Grid Grid gutterVue demo works fine 1`] = `
   </span>
    
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: -8px; margin-right: -8px;"
   >
     <div
@@ -415,7 +415,7 @@ exports[`Grid Grid gutterVue demo works fine 1`] = `
   </span>
    
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: -12px; margin-right: -12px;"
   >
     <div
@@ -460,7 +460,7 @@ exports[`Grid Grid gutterVue demo works fine 1`] = `
   </span>
    
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: -8px; margin-right: -8px; row-gap: 24px;"
   >
     <div
@@ -534,7 +534,7 @@ exports[`Grid Grid gutterVue demo works fine 1`] = `
   </span>
    
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="row-gap: 24px; margin-left: -12px; margin-right: -12px;"
   >
     <div
@@ -608,7 +608,7 @@ exports[`Grid Grid gutterVue demo works fine 1`] = `
   </span>
    
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: -12px; margin-right: -12px; row-gap: 24px;"
   >
     <div
@@ -688,7 +688,7 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
   </span>
    
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -733,7 +733,7 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
   </span>
    
   <div
-    class="t-row t-row--center t-row--top"
+    class="t-row t-row--center t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -778,7 +778,7 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
   </span>
    
   <div
-    class="t-row t-row--end t-row--top"
+    class="t-row t-row--end t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -823,7 +823,7 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
   </span>
    
   <div
-    class="t-row t-row--space-between t-row--top"
+    class="t-row t-row--space-between t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -868,7 +868,7 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
   </span>
    
   <div
-    class="t-row t-row--space-around t-row--top"
+    class="t-row t-row--space-around t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -915,7 +915,7 @@ exports[`Grid Grid offsetVue demo works fine 1`] = `
   class="tdesign-demo-block-column"
 >
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -938,7 +938,7 @@ exports[`Grid Grid offsetVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -961,7 +961,7 @@ exports[`Grid Grid offsetVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -981,7 +981,7 @@ exports[`Grid Grid orderVue demo works fine 1`] = `
   class="tdesign-demo-block-column"
 >
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -1032,7 +1032,7 @@ exports[`Grid Grid responsiveVue demo works fine 1`] = `
   </span>
    
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -1059,7 +1059,7 @@ exports[`Grid Grid responsiveVue demo works fine 1`] = `
   </span>
    
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -1079,7 +1079,7 @@ exports[`Grid Grid sortVue demo works fine 1`] = `
   class="tdesign-demo-block-column"
 >
   <div
-    class="t-row t-row--start t-row--top"
+    class="t-row t-row--start t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -1112,7 +1112,7 @@ exports[`Grid Grid valignVue demo works fine 1`] = `
   </p>
    
   <div
-    class="t-row t-row--center t-row--top"
+    class="t-row t-row--center t-row--align-top"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -1161,7 +1161,7 @@ exports[`Grid Grid valignVue demo works fine 1`] = `
   </p>
    
   <div
-    class="t-row t-row--space-around t-row--middle"
+    class="t-row t-row--space-around t-row--align-middle"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
@@ -1210,7 +1210,7 @@ exports[`Grid Grid valignVue demo works fine 1`] = `
   </p>
    
   <div
-    class="t-row t-row--space-between t-row--bottom"
+    class="t-row t-row--space-between t-row--align-bottom"
     style="margin-left: 0px; margin-right: 0px;"
   >
     <div
