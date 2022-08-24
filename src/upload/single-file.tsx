@@ -1,5 +1,4 @@
 import { PropType } from 'vue';
-import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import {
   CloseCircleFilledIcon as TdCloseCircleFilledIcon,
   ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
@@ -9,7 +8,6 @@ import Loading from '../loading';
 import { UploadFile } from './type';
 import { ClassName } from '../common';
 import { abridgeName } from '../_common/js/upload/utils';
-import { renderTNodeJSX } from '../utils/render-tnode';
 import props from './props';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { UploadConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
@@ -29,7 +27,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
     showUploadProgress: props.showUploadProgress,
     file: Object as PropType<UploadFile>,
     loadingFile: Object as PropType<UploadFile>,
-    remove: Function as PropType<(e: MouseEvent) => void>,
+    remove: Function as PropType<({ e, file }: { e: MouseEvent; file: UploadFile }) => void>,
     placeholder: String,
     display: {
       type: String as PropType<'file' | 'file-input'>,
@@ -37,6 +35,10 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
         return ['file', 'file-input'].includes(val);
       },
     },
+    fileListDisplay: {
+      type: Function,
+    },
+    locale: props.locale,
   },
 
   computed: {
@@ -110,19 +112,18 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
     // 文本型预览
     renderFilePreviewAsText() {
       if (!this.inputName) return;
-      const fileListDisplay: ScopedSlotReturnValue = renderTNodeJSX(this, 'fileListDisplay');
       const { CloseCircleFilledIcon } = this.useGlobalIcon({
         CloseCircleFilledIcon: TdCloseCircleFilledIcon,
       });
       return (
         <div class={[`${this.componentName}__single-display-text`, `${this.componentName}__display-text--margin`]}>
-          {fileListDisplay || <span class={`${this.componentName}__single-name`}>{this.inputName}</span>}
+          {this.fileListDisplay() || <span class={`${this.componentName}__single-name`}>{this.inputName}</span>}
           {this.showProgress ? (
             this.renderProgress()
           ) : (
             <CloseCircleFilledIcon
               class={`${this.componentName}__icon-delete`}
-              nativeOnClick={(e: MouseEvent) => this.remove(e)}
+              nativeOnClick={(e: MouseEvent) => this.remove({ e, file: this.file })}
             />
           )}
         </div>
@@ -149,8 +150,11 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
         {this.$scopedSlots.default && this.$scopedSlots.default(null)}
         {this.showTextPreview && this.renderFilePreviewAsText()}
         {this.showInput && this.showDelete && (
-          <span class={`${this.componentName}__single-input-delete`} onClick={(e: MouseEvent) => this.remove(e)}>
-            删除
+          <span
+            class={`${this.componentName}__single-input-delete`}
+            onClick={(e: MouseEvent) => this.remove({ e, file: this.file })}
+          >
+            {this.locale?.triggerUploadText?.delete || this.t(this.global.triggerUploadText.delete)}
           </span>
         )}
       </div>
