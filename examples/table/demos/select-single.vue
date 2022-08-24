@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tdesign-demo__table">
     <div>
       <t-checkbox v-model="highlightSelectedRow">高亮行选中</t-checkbox>
       <t-checkbox v-model="selectedOnRowClick">整行选中</t-checkbox>
@@ -63,7 +63,7 @@ export default {
           // checkProps: ({ rowIndex }) => ({ disabled: rowIndex % 2 !== 0 }),
           width: 64,
         },
-        { colKey: 'instance', title: '集群名称', width: 150 },
+        { colKey: 'instance', title: '集群名称', width: 120 },
         {
           colKey: 'status',
           title: '状态',
@@ -74,7 +74,7 @@ export default {
         { colKey: 'description', title: '描述' },
         {
           colKey: 'op',
-          width: 200,
+          width: 150,
           title: 'op-column',
           cell: 'op',
         },

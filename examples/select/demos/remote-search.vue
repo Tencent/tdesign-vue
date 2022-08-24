@@ -1,7 +1,10 @@
 <template>
-  <div>
+  <!-- 远程搜索场景会改变 options 数组，导致无法检索历史选项，可通过将 valueType 改为 `object` 以从 value 中读取 `label`，解决无法回显的问题 -->
+
+  <t-space>
     <t-select
       v-model="value"
+      value-type="object"
       filterable
       placeholder="请选择"
       :onSearch="remoteMethod"
@@ -11,6 +14,7 @@
     />
     <t-select
       v-model="value2"
+      value-type="object"
       multiple
       filterable
       placeholder="请输入搜索"
@@ -20,7 +24,7 @@
       reserveKeyword
       style="width: 400px; display: inline-block"
     />
-  </div>
+  </t-space>
 </template>
 
 <script>
@@ -33,7 +37,7 @@ export default {
         { label: '选项三', value: '3' },
       ],
       options2: [],
-      value: '',
+      value: {},
       value2: [],
       loading: false,
       loading2: false,
@@ -50,15 +54,15 @@ export default {
         this.loading = false;
         this.options = [
           {
-            value: `${search}test1`,
+            value: `${search}1`,
             label: `${search}test1`,
           },
           {
-            value: `${search}test2`,
+            value: `${search}2`,
             label: `${search}test2`,
           },
           {
-            value: `${search}test3`,
+            value: `${search}3`,
             label: `${search}test3`,
           },
         ];
@@ -71,15 +75,15 @@ export default {
         this.loading2 = false;
         this.options2 = [
           {
-            value: `${search}test1`,
+            value: `${search}1`,
             label: `${search}test1`,
           },
           {
-            value: `${search}test2`,
+            value: `${search}2`,
             label: `${search}test2`,
           },
           {
-            value: `${search}test3`,
+            value: `${search}3`,
             label: `${search}test3`,
           },
         ];

@@ -1,13 +1,14 @@
-import Vue, { VNode } from 'vue';
+import { VNode } from 'vue';
 import isObject from 'lodash/isObject';
-import { prefix } from '../config';
 import props from './row-props';
 import { ClassName, Styles } from '../common';
 import { calcSize } from '../utils/responsive';
 import { TdRowProps } from './type';
 import { getIEVersion } from '../_common/js/utils/helper';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-row`;
+const classPrefixMixins = getClassPrefixMixins('row');
 
 export interface RowHTMLTagAttributes {
   class: ClassName;
@@ -17,7 +18,7 @@ export interface RowHTMLTagAttributes {
   };
 }
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TRow',
 
   props: { ...props },
@@ -40,10 +41,10 @@ export default Vue.extend({
     classes(): ClassName {
       const { justify, align } = this;
       return [
-        name,
+        this.componentName,
         {
-          [`${name}--${justify}`]: justify,
-          [`${name}--${align}`]: align,
+          [`${this.componentName}--${justify}`]: justify,
+          [`${this.componentName}--align-${align}`]: align,
         },
       ];
     },

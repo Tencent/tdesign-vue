@@ -8,7 +8,7 @@
       theme="info"
       :onConfirm="close1"
     />
-    <br>
+    <br />
     <t-dialog
       :visible.sync="visible2"
       header="温馨提示"
@@ -17,7 +17,7 @@
       theme="warning"
       :onConfirm="close2"
     />
-    <br>
+    <br />
     <t-dialog
       :visible.sync="visible3"
       header="推送失败"
@@ -26,7 +26,7 @@
       theme="danger"
       :onConfirm="close3"
     />
-    <br>
+    <br />
     <t-dialog
       :visible.sync="visible4"
       header="操作成功"
@@ -35,7 +35,8 @@
       theme="success"
       :onConfirm="close4"
     />
-    <br>
+    <br />
+
     <t-button v-if="!visible1" theme="primary" @click="visible1 = true">theme: info</t-button>
     <t-button v-if="!visible2" theme="primary" @click="visible2 = true">theme: warning</t-button>
     <t-button v-if="!visible3" theme="primary" @click="visible3 = true">theme: danger</t-button>
@@ -46,7 +47,7 @@
 export default {
   data() {
     return {
-      visible1: true,
+      visible1: false,
       visible2: true,
       visible3: true,
       visible4: true,
@@ -65,12 +66,6 @@ export default {
     close4() {
       this.visible4 = false;
     },
-
   },
 };
 </script>
-<style scoped>
-.t-button {
-  margin-right: 20px;
-}
-</style>

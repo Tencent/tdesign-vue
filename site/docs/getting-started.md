@@ -4,6 +4,13 @@ description: TDesign 适配桌面端的组件库，适合在 vue 2 技术栈项�
 spline: explain
 ---
 
+<div style="background: rgba(0, 168, 112, .1); display: flex; align-items: center; line-height: 20px; padding: 14px 24px; border-radius: 3px; color: #555a65">
+  <svg fill="none" viewBox="0 0 16 16" width="16px" height="16px" style="margin-right: 5px">
+    <path fill="#00a870" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fillopacity="0.9"></path>
+  </svg>
+  由于 vue2.7 与 tdesign-vue 的其他依赖不兼容，请暂时保证您的 vue 版本在 2.7 以下，未来将支持在 vue2.7 中使用。
+</div>
+
 ### 安装
 
 #### 使用 npm 安装
@@ -16,11 +23,17 @@ npm i tdesign-vue
 
 #### 浏览器引入
 
-目前可以通过 [unpkg.com/tdesign-vue](https://unpkg.com/tdesign-vue) 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。
+目前可以通过 [unpkg.com/tdesign-vue](https://unpkg.com/tdesign-vue) 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。由于部分组件依赖了`@vue/composition-api`，除了像其他 vue2 版本的组件库一样需要引入`vue`，还需要额外手动引入`@vue/composition-api`。
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/tdesign-vue/dist/tdesign.min.css" />
+<script src="https://unpkg.com/vue@2.6/dist/vue.js"></script>
+<script src="https://unpkg.com/@vue/composition-api@1.7.0/dist/vue-composition-api.prod.js"></script>
 <script src="https://unpkg.com/tdesign-vue/dist/tdesign.min.js"></script>
+...
+<script>
+  Vue.use(TDesign);
+</script>
 ```
 
 ### 基础使用
@@ -56,7 +69,6 @@ npm package 中提供了多种构建产物，可以阅读 [这里](https://githu
 import 'tdesign-vue/dist/reset.css';
 ```
 
-
 ### 自动引入
 
 故名思义，就是可以直接使用 TDesign 的组件，而不需要手动引入：
@@ -70,7 +82,7 @@ import 'tdesign-vue/dist/reset.css';
   // import { Button as TButton } from 'tdesign-vue' // 组件的引入可以省略
   export default {
     // components: { TButton }, // 对应的组件注册也可以省略
-  }
+  };
 </script>
 ```
 
@@ -121,6 +133,8 @@ module.exports = {
   ],
 };
 ```
+由于部分组件依赖了`@vue/composition-api`，在以上配置之外，自动引入的方式仍需要您手动引入`@vue/composition-api`来保证组件的正常运行。
+
 
 > `TDesignResolver` 支持的配置，可以点击此[链接](https://github.com/antfu/unplugin-vue-components/blob/main/src/core/resolvers/tdesign.ts#L4)。
 
@@ -131,12 +145,10 @@ module.exports = {
 ### 浏览器兼容性
 
 | [<img src="https://tdesign.gtimg.com/docs/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/> IE / Edge | [<img src="https://tdesign.gtimg.com/docs/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Firefox | [<img src="https://tdesign.gtimg.com/docs/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://tdesign.gtimg.com/docs/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Safari |
-| --- | --- | --- | --- |
-| Edge >=84 | Firefox >=83 | Chrome >=84 | Safari >=14.1 |
-
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Edge >=84                                                                                                                                                                 | Firefox >=83                                                                                                                                                            | Chrome >=84                                                                                                                                                          | Safari >=14.1                                                                                                                                                        |
 
 详情参见[桌面端组件库浏览器兼容性说明](https://github.com/Tencent/tdesign/wiki/%E6%A1%8C%E9%9D%A2%E7%AB%AF%E7%BB%84%E4%BB%B6%E5%BA%93%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7%E8%AF%B4%E6%98%8E)
-
 
 ### FAQ
 

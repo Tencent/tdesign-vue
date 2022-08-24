@@ -5,6 +5,8 @@ import {
 } from 'vue/types/umd';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 // import isObject from 'lodash/isObject';
+import camelCase from 'lodash/camelCase';
+import kebabCase from 'lodash/kebabCase';
 import { TNode } from '../common';
 
 // 组件render属性的ts类型
@@ -23,6 +25,17 @@ enum RenderWay {
 }
 
 export type VmType = Vue | ComponentRenderProxy;
+
+// 同时支持驼峰命名和中划线命名的插槽，示例：value-display 和 valueDisplay
+export function handleSlots(vm: VmType, params: Record<string, any>, name: string) {
+  // 检查是否存在 驼峰命名 的插槽
+  let node = vm.$scopedSlots[camelCase(name)]?.(params);
+  if (node) return node;
+  // 检查是否存在 中划线命名 的插槽
+  node = vm.$scopedSlots[kebabCase(name)]?.(params);
+  if (node) return node;
+  return null;
+}
 
 /**
  * 根据传入的值（对象），判断渲染该值（对象）的方式
@@ -97,11 +110,14 @@ export const renderTNodeJSX = (vm: VmType, name: string, options?: ScopedSlotRet
   const propsNode = vm[name];
   if (propsNode === false) return;
   if (propsNode === true && defaultNode) {
-    return vm.$scopedSlots[name] ? vm.$scopedSlots[name](params) : defaultNode;
+    return handleSlots(vm, params, name) || defaultNode;
   }
   if (typeof propsNode === 'function') return propsNode(vm.$createElement, params);
   const isPropsEmpty = [undefined, params, ''].includes(propsNode);
-  if (isPropsEmpty && vm.$scopedSlots[name]) return vm.$scopedSlots[name](params);
+  // Props 为空，但插槽存在
+  if (isPropsEmpty && (vm.$scopedSlots[camelCase(name)] || vm.$scopedSlots[kebabCase(name)])) {
+    return handleSlots(vm, params, name);
+  }
   return propsNode;
 };
 

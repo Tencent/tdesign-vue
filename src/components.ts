@@ -1,6 +1,7 @@
 // 基础
 export * from './button';
 export * from './icon';
+export * from './link';
 
 // 布局
 export * from './grid';
@@ -13,6 +14,7 @@ export * from './affix';
 export * from './anchor';
 export * from './breadcrumb';
 export * from './dropdown';
+export * from './jumper';
 export * from './menu';
 export * from './pagination';
 export * from './steps';

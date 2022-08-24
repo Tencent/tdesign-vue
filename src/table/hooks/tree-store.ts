@@ -145,6 +145,19 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
       });
       return;
     }
+
+    // 懒加载处理：children 为 true，则需清空子元素在 map 中的值，而后方便重新加载
+    if (get(newRowData, keys.childrenKey) === true) {
+      const oldChildren = get(rowState.row, keys.childrenKey);
+      if (oldChildren?.length) {
+        for (let i = 0, len = oldChildren.length; i < len; i++) {
+          const rowValue = get(oldChildren[i], keys.rowKey);
+          const state = this.treeDataMap.get(rowValue);
+          state && this.treeDataMap.delete(rowValue);
+        }
+      }
+    }
+
     const currentRowIndex = rowState.rowIndex;
     rowState.row = newRowData;
     rowState.id = newRowValue;
@@ -261,35 +274,39 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
       });
       // 更新 rowIndex 之后的下标
       updateRowIndex(this.treeDataMap, dataSource, {
-        minRowIndex: firstNewChildrenIndex,
+        minRowIndex: firstNewChildrenIndex + newChildrenData.length - 1,
         rowKey: keys.rowKey,
         type: 'add',
-        count: newChildrenData.length,
+        count: 1,
       });
     }
 
     return dataSource;
   }
 
-  appendToRoot(newData: T, dataSource: T[], keys: KeysType) {
-    const rowValue = get(newData, keys.rowKey);
-    if (!rowValue) {
-      log.error('Table', '`rowKey` could be wrong, can not get rowValue from `data` by `rowKey`.');
-      return;
+  appendToRoot(newData: T | T[], dataSource: T[], keys: KeysType) {
+    const newDataSource = dataSource.concat(newData);
+    const tmpNewData = newData instanceof Array ? newData : [newData];
+    const dataSourceLen = dataSource.length;
+    for (let i = 0, len = tmpNewData.length; i < len; i++) {
+      const rowValue = get(tmpNewData[i], keys.rowKey);
+      if (!rowValue) {
+        log.error('Table', '`rowKey` could be wrong, can not get rowValue from `data` by `rowKey`.');
+        continue;
+      }
+      const state: TableRowState = {
+        id: rowValue,
+        row: tmpNewData[i],
+        rowIndex: dataSourceLen + i,
+        level: 0,
+        expanded: false,
+        expandChildrenLength: 0,
+        disabled: false,
+      };
+      state.path = [state];
+      this.treeDataMap.set(rowValue, state);
     }
-    dataSource.push(newData);
-    const state: TableRowState = {
-      id: rowValue,
-      row: newData,
-      rowIndex: dataSource.length - 1,
-      level: 0,
-      expanded: false,
-      expandChildrenLength: 0,
-      disabled: false,
-    };
-    state.path = [state];
-    this.treeDataMap.set(rowValue, state);
-    return dataSource;
+    return newDataSource;
   }
 
   /**
@@ -444,7 +461,9 @@ class TableTreeStore<T extends TableRowData = TableRowData> {
         const children = get(item, keys.childrenKey);
         const originalExpanded = state.expanded;
         state.rowIndex = this.expandAllRowIndex;
-        state.expanded = true;
+        if (children !== true && children?.length) {
+          state.expanded = true;
+        }
         state.expandChildrenLength = children?.length || 0;
         this.expandAllRowIndex += 1;
         if (!parentExpanded) {

@@ -1,6 +1,5 @@
 import { VNode, PropType } from 'vue';
 import mixins from '../../utils/mixins';
-import { prefix } from '../../config';
 import {
   EmptyType,
   SearchEvent,
@@ -16,11 +15,13 @@ import { findTopNode, getLeafCount, getDataValues } from '../utils';
 import ripple from '../../utils/ripple';
 import Search from './transfer-search';
 import { renderTNodeJSXDefault } from '../../utils/render-tnode';
-import { getKeepAnimationMixins } from '../../config-provider/config-receiver';
+import { getKeepAnimationMixins, getClassPrefixMixins } from '../../config-provider/config-receiver';
+
+const classPrefixMixins = getClassPrefixMixins('transfer');
 
 const keepAnimationMixins = getKeepAnimationMixins();
 
-export default mixins(keepAnimationMixins).extend({
+export default mixins(keepAnimationMixins, classPrefixMixins).extend({
   name: 'TTransferList',
   components: {
     Search,
@@ -200,7 +201,7 @@ export default mixins(keepAnimationMixins).extend({
             <TCheckbox
               disabled={this.disabled || item.disabled}
               value={item.value}
-              class={[`${prefix}-transfer__list-item`]}
+              class={[`${this.componentName}__list-item`]}
               key={item.key}
               v-ripple={this.keepAnimation.ripple}
               {...{ props: this.checkboxProps }}
@@ -215,7 +216,7 @@ export default mixins(keepAnimationMixins).extend({
       );
 
       return (
-        <div class={`${prefix}-transfer__list-content narrow-scrollbar`} onScroll={this.scroll}>
+        <div class={`${this.componentName}__list-content narrow-scrollbar`} onScroll={this.scroll}>
           {renderTNodeJSXDefault(rootNode, 'tree', {
             defaultNode,
             params: {
@@ -231,7 +232,7 @@ export default mixins(keepAnimationMixins).extend({
       const empty = this.empty || this.t(this.global.empty);
       const defaultNode: VNode = typeof empty === 'string' ? <span>{empty}</span> : null;
       return (
-        <div class={`${prefix}-transfer__empty`}>
+        <div class={`${this.componentName}__empty`}>
           {renderTNodeJSXDefault(this, 'empty', {
             defaultNode,
             params: {
@@ -242,7 +243,7 @@ export default mixins(keepAnimationMixins).extend({
       );
     },
     renderFooter() {
-      const defaultNode = typeof this.footer === 'string' ? <div class={`${prefix}-transfer__footer`}>{this.footer}</div> : null;
+      const defaultNode = typeof this.footer === 'string' ? <div class={`${this.componentName}__footer`}>{this.footer}</div> : null;
       return renderTNodeJSXDefault(this, 'footer', {
         defaultNode,
         params: {
@@ -253,8 +254,8 @@ export default mixins(keepAnimationMixins).extend({
   },
   render() {
     return (
-      <div class={`${prefix}-transfer__list ${prefix}-transfer__list-${this.listType}`}>
-        <div class={`${prefix}-transfer__list-header`}>
+      <div class={`${this.componentName}__list ${this.componentName}__list-${this.listType}`}>
+        <div class={`${this.componentName}__list-header`}>
           <div>
             {this.checkAll && (
               <TCheckbox
@@ -273,7 +274,9 @@ export default mixins(keepAnimationMixins).extend({
           </div>
           {this.renderTitle()}
         </div>
-        <div class={[`${prefix}-transfer__list-body`, this.search ? `${prefix}-transfer__list--with-search` : '']}>
+        <div
+          class={[`${this.componentName}__list-body`, this.search ? `${this.componentName}__list--with-search` : '']}
+        >
           {this.search && (
             <search
               searchValue={this.filterValue}
@@ -282,12 +285,13 @@ export default mixins(keepAnimationMixins).extend({
               disabled={this.disabled}
               search={this.search}
               onSearch={this.handleSearch}
+              classPrefix={this.classPrefix}
             />
           )}
           {this.curPageData.length > 0 ? this.renderContent() : this.renderEmpty()}
         </div>
         {this.pagination && this.pageSize > 0 && this.pageTotal > 0 && (
-          <div class={`${prefix}-transfer__list-pagination`}>
+          <div class={`${this.componentName}__list-pagination`}>
             <TPagination props={this.paginationProps} onChange={this.handlePaginationChange} />
           </div>
         )}

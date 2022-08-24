@@ -1,7 +1,8 @@
 import { defineComponent, computed, ref } from '@vue/composition-api';
 import dayjs from 'dayjs';
 
-import props from './date-range-picker-panel-props';
+import dateRangePickerPanelProps from './date-range-picker-panel-props';
+import dateRangePickerProps from './date-range-picker-props';
 import {
   DateValue,
   DateRangePickerPartial,
@@ -12,19 +13,33 @@ import {
 
 import TRangePanel from './panel/RangePanel';
 import useRangeValue from './hooks/useRangeValue';
-import useFormat from './hooks/useFormat';
+import { formatDate, getDefaultFormat } from './hooks/useFormat';
 import { subtractMonth, addMonth, extractTimeObj } from '../_common/js/date-picker/utils';
 
 export default defineComponent({
   name: 'TDateRangePickerPanel',
-  props,
+  props: {
+    value: dateRangePickerProps.value,
+    defaultValue: dateRangePickerProps.defaultValue,
+    valueType: dateRangePickerProps.valueType,
+    disabled: dateRangePickerProps.disabled,
+    disableDate: dateRangePickerProps.disableDate,
+    enableTimePicker: dateRangePickerProps.enableTimePicker,
+    firstDayOfWeek: dateRangePickerProps.firstDayOfWeek,
+    format: dateRangePickerProps.format,
+    mode: dateRangePickerProps.mode,
+    presets: dateRangePickerProps.presets,
+    presetsPlacement: dateRangePickerProps.presetsPlacement,
+    timePickerProps: dateRangePickerProps.timePickerProps,
+    panelPreselection: dateRangePickerProps.panelPreselection,
+    ...dateRangePickerPanelProps,
+  },
   setup(props: TdDateRangePickerPanelProps, { emit }) {
     const {
       value, year, month, time, cacheValue, isFirstValueSelected, onChange,
     } = useRangeValue(props);
 
-    const formatRef = computed(() => useFormat({
-      value: value.value,
+    const formatRef = computed(() => getDefaultFormat({
       mode: props.mode,
       enableTimePicker: props.enableTimePicker,
       format: props.format,
@@ -41,7 +56,10 @@ export default defineComponent({
     function onCellMouseEnter(date: Date) {
       isHoverCell.value = true;
       const nextValue = [...(hoverValue.value as string[])];
-      nextValue[activeIndex.value] = formatRef.value.formatDate(date) as string;
+      nextValue[activeIndex.value] = formatDate(date, {
+        format: formatRef.value.format,
+        targetFormat: formatRef.value.format,
+      }) as string;
       hoverValue.value = nextValue;
     }
 
@@ -57,7 +75,10 @@ export default defineComponent({
       isSelected.value = true;
 
       const nextValue = [...(cacheValue.value as string[])];
-      nextValue[activeIndex.value] = formatRef.value.formatDate(date) as string;
+      nextValue[activeIndex.value] = formatDate(date, {
+        format: formatRef.value.format,
+        targetFormat: formatRef.value.format,
+      }) as string;
       cacheValue.value = nextValue;
 
       // 有时间选择器走 confirm 逻辑
@@ -66,7 +87,10 @@ export default defineComponent({
       // 首次点击不关闭、确保两端都有有效值并且无时间选择器时点击后自动关闭
       if (nextValue.length === 2 && !props.enableTimePicker && isFirstValueSelected.value) {
         onChange?.(
-          formatRef.value.formatDate(nextValue, { formatType: 'valueType', sortType: 'swap' }) as DateValue[],
+          formatDate(nextValue, {
+            format: formatRef.value.format,
+            targetFormat: formatRef.value.valueType,
+          }) as DateValue[],
           {
             dayjsValue: nextValue.map((v) => dayjs(v)),
             trigger: 'pick',
@@ -82,23 +106,23 @@ export default defineComponent({
     }
 
     // 头部快速切换
-    function onJumperClick(flag: number, { partial }: { partial: DateRangePickerPartial }) {
+    function onJumperClick({ trigger, partial }: { trigger: string; partial: DateRangePickerPartial }) {
       const partialIndex = partial === 'start' ? 0 : 1;
 
       const triggerMap = {
-        '-1': 'arrow-previous',
-        1: 'arrow-next',
+        prev: 'arrow-previous',
+        next: 'arrow-next',
       };
       const monthCountMap = { date: 1, month: 12, year: 120 };
       const monthCount = monthCountMap[props.mode] || 0;
       const current = new Date(year.value[partialIndex], month.value[partialIndex]);
 
       let next = null;
-      if (flag === -1) {
+      if (trigger === 'prev') {
         next = subtractMonth(current, monthCount);
-      } else if (flag === 0) {
+      } else if (trigger === 'current') {
         next = new Date();
-      } else if (flag === 1) {
+      } else if (trigger === 'next') {
         next = addMonth(current, monthCount);
       }
 
@@ -130,13 +154,13 @@ export default defineComponent({
           partial,
           year: nextYear[partialIndex],
           date: value.value.map((v: string) => dayjs(v).toDate()),
-          trigger: flag === 0 ? 'today' : (`year-${triggerMap[flag]}` as DatePickerYearChangeTrigger),
+          trigger: trigger === 'current' ? 'today' : (`year-${triggerMap[trigger]}` as DatePickerYearChangeTrigger),
         });
         emit('year-change', {
           partial,
           year: nextYear[partialIndex],
           date: value.value.map((v: string) => dayjs(v).toDate()),
-          trigger: flag === 0 ? 'today' : (`year-${triggerMap[flag]}` as DatePickerYearChangeTrigger),
+          trigger: trigger === 'current' ? 'today' : (`year-${triggerMap[trigger]}` as DatePickerYearChangeTrigger),
         });
       }
       if (month.value.some((m) => !nextMonth.includes(m))) {
@@ -144,13 +168,13 @@ export default defineComponent({
           partial,
           month: nextMonth[partialIndex],
           date: value.value.map((v: string) => dayjs(v).toDate()),
-          trigger: flag === 0 ? 'today' : (`month-${triggerMap[flag]}` as DatePickerMonthChangeTrigger),
+          trigger: trigger === 'current' ? 'today' : (`month-${triggerMap[trigger]}` as DatePickerMonthChangeTrigger),
         });
         emit('month-change', {
           partial,
           month: nextMonth[partialIndex],
           date: value.value.map((v: string) => dayjs(v).toDate()),
-          trigger: flag === 0 ? 'today' : (`month-${triggerMap[flag]}` as DatePickerMonthChangeTrigger),
+          trigger: trigger === 'current' ? 'today' : (`month-${triggerMap[trigger]}` as DatePickerMonthChangeTrigger),
         });
       }
 
@@ -183,7 +207,10 @@ export default defineComponent({
       time.value = nextTime;
 
       isSelected.value = true;
-      cacheValue.value = formatRef.value.formatDate(nextInputValue);
+      cacheValue.value = formatDate(nextInputValue, {
+        format: formatRef.value.format,
+        targetFormat: formatRef.value.format,
+      });
 
       props.onTimeChange?.({
         time: val,
@@ -203,12 +230,13 @@ export default defineComponent({
     function onConfirmClick({ e }: { e: MouseEvent }) {
       const nextValue = [...(cacheValue.value as string[])];
 
-      const notValidIndex = nextValue.findIndex((v) => !v || !formatRef.value.isValidDate(v));
-
       // 首次点击不关闭、确保两端都有有效值并且无时间选择器时点击后自动关闭
-      if (notValidIndex === -1 && nextValue.length === 2 && isFirstValueSelected.value) {
+      if (nextValue.length === 2 && isFirstValueSelected.value) {
         onChange?.(
-          formatRef.value.formatDate(nextValue, { formatType: 'valueType', sortType: 'swap' }) as DateValue[],
+          formatDate(nextValue, {
+            format: formatRef.value.format,
+            targetFormat: formatRef.value.valueType,
+          }) as DateValue[],
           {
             dayjsValue: nextValue.map((v) => dayjs(v)),
             trigger: 'confirm',
@@ -235,7 +263,10 @@ export default defineComponent({
         console.error(`preset: ${preset} 预设值必须是数组!`);
       } else {
         onChange?.(
-          formatRef.value.formatDate(presetValue, { formatType: 'valueType', sortType: 'swap' }) as DateValue[],
+          formatDate(presetValue, {
+            format: formatRef.value.format,
+            targetFormat: formatRef.value.valueType,
+          }) as DateValue[],
           {
             dayjsValue: presetValue.map((p) => dayjs(p)),
             trigger: 'preset',

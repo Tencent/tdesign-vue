@@ -2,25 +2,25 @@ import Vue from 'vue';
 import isNumber from 'lodash/isNumber';
 import throttle from 'lodash/throttle';
 import {
-  CloseIcon, InfoCircleFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon,
+  CloseIcon as TdCloseIcon,
+  InfoCircleFilledIcon as TdInfoCircleFilledIcon,
+  CheckCircleFilledIcon as TdCheckCircleFilledIcon,
+  ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
 } from 'tdesign-icons-vue';
 
-import { prefix } from '../config';
 import TButton from '../button';
 import ActionMixin from './actions';
 import { DialogCloseContext, TdDialogProps } from './type';
 import props from './props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { DialogConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { DialogConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
 import { addClass, removeClass } from '../utils/dom';
 import { ClassName, Styles } from '../common';
 import { updateElement } from '../hooks/useDestroyOnClose';
-
-const name = `${prefix}-dialog`;
-const lockClass = `${prefix}-dialog--lock`;
+import stack from './stack';
 
 function getCSSValue(v: string | number) {
   return isNaN(Number(v)) ? v : `${Number(v)}px`;
@@ -41,19 +41,16 @@ if (typeof window !== 'undefined' && window.document && window.document.document
   document.documentElement.addEventListener('click', getClickPosition, true);
 }
 
-export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('dialog')).extend({
+export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('dialog'), getGlobalIconMixins()).extend({
   name: 'TDialog',
 
   components: {
-    CloseIcon,
-    InfoCircleFilledIcon,
-    CheckCircleFilledIcon,
-    ErrorCircleFilledIcon,
     TButton,
   },
 
   data() {
     return {
+      uid: 0,
       scrollWidth: 0,
       disX: 0,
       disY: 0,
@@ -82,23 +79,27 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       return this.mode === 'normal';
     },
     maskClass(): ClassName {
-      return [`${name}__mask`, !this.showOverlay && `${prefix}-is-hidden`];
+      return [`${this.componentName}__mask`, !this.showOverlay && `${this.classPrefix}-is-hidden`];
     },
     dialogClass(): ClassName {
-      const dialogClass = [`${name}`, `${name}--default`, `${name}__modal-${this.theme}`];
+      const dialogClass = [
+        `${this.componentName}`,
+        `${this.componentName}--default`,
+        `${this.componentName}__modal-${this.theme}`,
+      ];
       return dialogClass;
     },
     positionClass(): ClassName {
       if (this.isNormal) return [];
       const dialogClass = [
-        `${name}__position`,
-        !!this.top && `${name}--top`,
-        `${this.placement && !this.top ? `${name}--${this.placement}` : ''}`,
+        `${this.componentName}__position`,
+        !!this.top && `${this.componentName}--top`,
+        `${this.placement && !this.top ? `${this.componentName}--${this.placement}` : ''}`,
       ];
       return dialogClass;
     },
     wrapClass(): ClassName {
-      return [!this.isNormal && `${name}__wrap`];
+      return [!this.isNormal && `${this.componentName}__wrap`];
     },
 
     positionStyle(): Styles {
@@ -124,11 +125,11 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       if (value) {
         const { scrollWidth } = this;
         if (this.isModal && !this.showInAttachedElement) {
-          if (scrollWidth > 0) {
+          if (scrollWidth > 0 && this.preventScrollThrough) {
             const bodyCssText = `position: relative;width: calc(100% - ${scrollWidth}px);`;
             document.body.style.cssText = bodyCssText;
           }
-          addClass(document.body, lockClass);
+          this.preventScrollThrough && addClass(document.body, `${this.componentName}--lock`);
           this.$nextTick(() => {
             const target = this.$refs.dialog as HTMLElement;
             if (mousePosition && target) {
@@ -138,10 +139,14 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
             }
           });
         }
+        // 清除鼠标焦点 避免entry事件多次触发（按钮弹出弹窗 不移除焦点 立即按Entry按键 会造成弹窗关闭再弹出）
+        (document.activeElement as HTMLElement).blur();
       } else {
         document.body.style.cssText = '';
-        removeClass(document.body, lockClass);
+        removeClass(document.body, `${this.componentName}--lock`);
       }
+      // 多个dialog同时存在时使用esc关闭异常 (#1209)
+      this.storeUid(value);
       this.addKeyboardEvent(value);
       if (this.isModeLess && this.draggable) {
         this.initDragEvent(value);
@@ -160,8 +165,10 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       window.addEventListener('resize', throttle(this.resizeAdjustPosition, 1000));
     }
     if (this.visible && this.isModal && this.preventScrollThrough) {
-      addClass(document.body, lockClass);
+      addClass(document.body, `${this.componentName}--lock`);
     }
+    // @ts-ignore 用于获取组件uid
+    this.uid = this._uid;
   },
 
   beforeDestroy() {
@@ -173,20 +180,36 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
   },
 
   methods: {
+    storeUid(flag: boolean) {
+      if (flag) {
+        stack.push(this.uid);
+      } else {
+        stack.pop();
+      }
+    },
     addKeyboardEvent(status: boolean) {
       if (status) {
         document.addEventListener('keydown', this.keyboardEvent);
+        this.confirmOnEnter && document.addEventListener('keydown', this.keyboardEnterEvent);
       } else {
         document.removeEventListener('keydown', this.keyboardEvent);
+        this.confirmOnEnter && document.removeEventListener('keydown', this.keyboardEnterEvent);
       }
     },
     keyboardEvent(e: KeyboardEvent) {
-      if (e.code === 'Escape') {
+      if (e.code === 'Escape' && stack.top === this.uid) {
         emitEvent<Parameters<TdDialogProps['onEscKeydown']>>(this, 'esc-keydown', { e });
         // 根据 closeOnEscKeydown 判断按下ESC时是否触发close事件
         if (this.closeOnEscKeydown ?? this.global.closeOnEscKeydown) {
           this.emitCloseEvent({ e, trigger: 'esc' });
         }
+      }
+    },
+    // 回车出发确认事件
+    keyboardEnterEvent(e: KeyboardEvent) {
+      const { code } = e;
+      if ((code === 'Enter' || code === 'NumpadEnter') && stack.top === this.uid) {
+        emitEvent<Parameters<TdDialogProps['onConfirm']>>(this, 'confirm', { e });
       }
     },
     overlayAction(e: MouseEvent) {
@@ -250,11 +273,16 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     },
 
     getIcon() {
+      const { InfoCircleFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon } = this.useGlobalIcon({
+        InfoCircleFilledIcon: TdInfoCircleFilledIcon,
+        CheckCircleFilledIcon: TdCheckCircleFilledIcon,
+        ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
+      });
       const icon = {
-        info: <InfoCircleFilledIcon class={`${prefix}-is-info`} />,
-        warning: <ErrorCircleFilledIcon class={`${prefix}-is-warning`} />,
-        danger: <ErrorCircleFilledIcon class={`${prefix}-is-error`} />,
-        success: <CheckCircleFilledIcon class={`${prefix}-is-success`} />,
+        info: <InfoCircleFilledIcon class={`${this.classPrefix}-is-info`} />,
+        warning: <ErrorCircleFilledIcon class={`${this.classPrefix}-is-warning`} />,
+        danger: <ErrorCircleFilledIcon class={`${this.classPrefix}-is-error`} />,
+        success: <CheckCircleFilledIcon class={`${this.classPrefix}-is-success`} />,
       };
       return icon[this.theme];
     },
@@ -316,9 +344,12 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       }
     },
     renderDialog() {
+      const { CloseIcon } = this.useGlobalIcon({
+        CloseIcon: TdCloseIcon,
+      });
       // header 值为 true 显示空白头部
       const defaultHeader = <h5 class="title"></h5>;
-      const defaultCloseBtn = <close-icon />;
+      const defaultCloseBtn = <CloseIcon />;
       const body = renderContent(this, 'default', 'body');
       // this.getConfirmBtn is a function of ActionMixin
       // this.getCancelBtn is a function of ActionMixin
@@ -327,38 +358,35 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
           {this.getCancelBtn({
             cancelBtn: this.cancelBtn,
             globalCancel: this.global.cancel,
-            className: `${prefix}-dialog__cancel`,
+            className: `${this.componentName}__cancel`,
           })}
           {this.getConfirmBtn({
             theme: this.theme,
             confirmBtn: this.confirmBtn,
             globalConfirm: this.global.confirm,
             globalConfirmBtnTheme: this.global.confirmBtnTheme,
-            className: `${prefix}-dialog__confirm`,
+            className: `${this.componentName}__confirm`,
           })}
         </div>
       );
-      const bodyClassName = this.theme === 'default' ? `${name}__body` : `${name}__body__icon`;
+      const bodyClassName = this.theme === 'default' ? `${this.componentName}__body` : `${this.componentName}__body__icon`;
       // 此处获取定位方式 top 优先级较高 存在时 默认使用top定位
       return (
         // 非模态形态下draggable为true才允许拖拽
         <div class={this.wrapClass}>
           <div class={this.positionClass} style={this.positionStyle} onClick={this.overlayAction} ref="dialogPosition">
             <div key="dialog" ref="dialog" class={this.dialogClass} style={this.dialogStyle}>
-              <div class={`${name}__header`}>
+              <div class={`${this.componentName}__header`}>
                 {this.getIcon()}
                 {renderTNodeJSX(this, 'header', defaultHeader)}
               </div>
               {this.closeBtn ? (
-                <span class={`${name}__close`} onClick={this.closeBtnAction}>
+                <span class={`${this.componentName}__close`} onClick={this.closeBtnAction}>
                   {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
                 </span>
               ) : null}
-              {/* <span class={`${name}__close`} onClick={this.closeBtnAction}>
-                {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
-              </span> */}
               <div class={bodyClassName}>{body}</div>
-              <div class={`${name}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
+              <div class={`${this.componentName}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
             </div>
           </div>
         </div>
@@ -375,17 +403,17 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     // dialog__ctx--absolute 挂载在attach元素上 相对定位
     // __ctx--modeless modeless 点击穿透
     const ctxClass = [
-      `${name}__ctx`,
+      `${this.componentName}__ctx`,
       {
-        [`${prefix}-dialog__ctx--fixed`]: this.mode === 'modal',
-        [`${prefix}-dialog__ctx--absolute`]: this.isModal && this.showInAttachedElement,
-        [`${name}__ctx--modeless`]: this.isModeLess,
+        [`${this.classPrefix}-dialog__ctx--fixed`]: this.mode === 'modal',
+        [`${this.classPrefix}-dialog__ctx--absolute`]: this.isModal && this.showInAttachedElement,
+        [`${this.componentName}__ctx--modeless`]: this.isModeLess,
       },
     ];
     return (
       <transition
         duration={300}
-        name={`${name}-zoom__vue`}
+        name={`${this.componentName}-zoom__vue`}
         onAfterEnter={this.afterEnter}
         onAfterLeave={this.afterLeave}
       >

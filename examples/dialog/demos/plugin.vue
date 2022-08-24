@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <t-space break-line>
     <t-button theme="primary" @click="showDialog">dialog</t-button>
     <t-button theme="primary" @click="handleDN">handleDialogNode</t-button>
     <t-button theme="primary" @click="onConfirm">confirm</t-button>
     <t-button theme="primary" @click="onAlert">alert</t-button>
     <t-button theme="primary" @click="onDialogPluginConfirm">DialogPlugin.confirm</t-button>
-  </div>
+  </t-space>
 </template>
 <script>
 import Vue from 'vue';
@@ -115,9 +115,6 @@ export default Vue.extend({
 });
 </script>
 <style scoped>
-.t-button {
-  margin-right: 20px;
-}
 p {
   line-height: 25px;
 }

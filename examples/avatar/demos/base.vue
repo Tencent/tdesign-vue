@@ -1,14 +1,14 @@
 <template>
-  <div class="demo-avatar">
-    <t-avatar :image="image" :hideOnLoadFailed='false'></t-avatar>
-    <t-avatar >W</t-avatar>
+  <t-space size="large">
+    <t-avatar :image="image" :hideOnLoadFailed="false"></t-avatar>
+    <t-avatar>W</t-avatar>
     <t-avatar :icon="icon"></t-avatar>
     <t-avatar>
       <template #icon>
-        <user-icon/>
+        <user-icon />
       </template>
     </t-avatar>
-  </div>
+  </t-space>
 </template>
 <script lang="jsx">
 import { UserIcon } from 'tdesign-icons-vue';
@@ -29,10 +29,3 @@ export default {
   },
 };
 </script>
-<style lang="less" scoped>
-  .demo-avatar{
-    .t-avatar {
-      margin-right: 40px;
-    }
-  }
-</style>

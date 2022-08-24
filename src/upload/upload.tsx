@@ -4,10 +4,9 @@ import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import findIndex from 'lodash/findIndex';
 import isFunction from 'lodash/isFunction';
 import without from 'lodash/without';
-import { UploadIcon } from 'tdesign-icons-vue';
+import { UploadIcon as TdUploadIcon } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { UploadConfig } from '../config-provider/config-receiver';
-import { prefix } from '../config';
+import getConfigReceiverMixins, { UploadConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import Dragger from './dragger';
 import ImageCard from './image';
 import FlowList from './flow-list';
@@ -17,7 +16,7 @@ import { formatFiles, isOverSizeLimit } from '../_common/js/upload/utils';
 import TButton from '../button';
 import TDialog from '../dialog';
 import SingleFile from './single-file';
-import { renderContent } from '../utils/render-tnode';
+import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import props from './props';
 import { ClassName } from '../common';
 import { emitEvent } from '../utils/event';
@@ -38,9 +37,7 @@ import {
   SizeLimitObj,
 } from './type';
 
-const name = `${prefix}-upload`;
-
-export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).extend({
+export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getGlobalIconMixins()).extend({
   name: 'TUpload',
 
   components: {
@@ -113,10 +110,10 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       return !!this.errorMsg;
     },
     tipsClasses(): ClassName {
-      return [`${name}__tips`, `${prefix}-size-s`];
+      return [`${this.componentName}__tips`, `${this.classPrefix}-size-s`];
     },
     errorClasses(): ClassName {
-      return this.tipsClasses.concat(`${name}__tips-error`);
+      return this.tipsClasses.concat(`${this.componentName}__tips-error`);
     },
     uploadInOneRequest(): boolean {
       return this.multiple && this.uploadAllFilesInOneRequest;
@@ -124,13 +121,14 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     canBatchUpload(): boolean {
       return this.uploadInOneRequest && this.isBatchUpload;
     },
+
     uploadListTriggerText(): string {
-      let uploadText = this.global.triggerUploadText.fileInput;
+      let uploadText = this.locale?.triggerUploadText?.fileInput || this.global.triggerUploadText.fileInput;
       if (this.toUploadFiles?.length > 0 || this.files?.length > 0) {
         if (this.theme === 'file-input' || (this.files?.length > 0 && this.canBatchUpload)) {
-          uploadText = this.global.triggerUploadText.reupload;
+          uploadText = this.locale?.triggerUploadText?.reupload || this.global.triggerUploadText.reupload;
         } else {
-          uploadText = this.global.triggerUploadText.continueUpload;
+          uploadText = this.locale?.triggerUploadText?.continueUpload || this.global.triggerUploadText.continueUpload;
         }
       }
       return uploadText;
@@ -175,18 +173,12 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       );
     },
 
-    handleSingleRemove(e: MouseEvent) {
+    handleSingleRemove({ e, file }: { e: MouseEvent; file: File }) {
       const changeCtx = { trigger: 'remove' };
       if (this.loadingFile) this.loadingFile = null;
       this.errorMsg = '';
       this.emitChangeEvent([], changeCtx);
-      this.emitRemoveEvent({ e });
-    },
-
-    handleFileInputRemove(e: MouseEvent) {
-      // prevent trigger upload
-      e?.stopPropagation();
-      this.handleSingleRemove(e);
+      this.emitRemoveEvent({ e, file });
     },
 
     handleMultipleRemove(options: UploadRemoveOptions) {
@@ -568,14 +560,22 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       if (this.theme === 'file-input' || this.showUploadList) {
         return <TButton variant="outline">{this.uploadListTriggerText}</TButton>;
       }
+      const { UploadIcon } = this.useGlobalIcon({ UploadIcon: TdUploadIcon });
+      const reuploadText = this.locale?.triggerUploadText?.reupload || this.global.triggerUploadText.reupload;
+      const normalText = this.locale?.triggerUploadText?.normal || this.global.triggerUploadText.normal;
+
       return (
         <TButton variant="outline">
           <UploadIcon slot="icon" />
-          {this.files?.length ? this.global.triggerUploadText.reupload : this.global.triggerUploadText.normal}
+          {this.files?.length ? reuploadText : normalText}
         </TButton>
       );
     },
 
+    renderFileListDisplay() {
+      const fileListDisplay = renderTNodeJSX(this, 'fileListDisplay');
+      return fileListDisplay;
+    },
     renderInput() {
       return (
         <input
@@ -599,9 +599,10 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
           remove={this.handleSingleRemove}
           showUploadProgress={this.showUploadProgress}
           placeholder={this.placeholder}
-          fileListDisplay={this.fileListDisplay}
+          fileListDisplay={this.renderFileListDisplay}
+          locale={this.locale}
         >
-          <div class={`${name}__trigger`} onclick={this.triggerUpload}>
+          <div class={`${this.componentName}__trigger`} onclick={this.triggerUpload}>
             {triggerElement}
           </div>
         </SingleFile>
@@ -627,6 +628,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
           remove={this.handleSingleRemove}
           upload={this.upload}
           autoUpload={this.autoUpload}
+          locale={this.locale}
         >
           {triggerElement}
         </Dragger>
@@ -640,7 +642,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       return this.draggable ? (
         this.renderDraggerTrigger()
       ) : (
-        <div class={`${name}__trigger`} onclick={this.triggerUpload}>
+        <div class={`${this.componentName}__trigger`} onclick={this.triggerUpload}>
           {triggerElement}
         </div>
       );
@@ -650,7 +652,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
   render(): VNode {
     const triggerElement = this.renderTrigger();
     return (
-      <div class={name}>
+      <div class={this.componentName}>
         {this.renderInput()}
         {this.showCustomDisplay && this.renderCustom(triggerElement)}
         {this.showSingleDisplay && this.renderSingleDisplay(triggerElement)}
@@ -687,8 +689,9 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
             onChange={this.handleDragChange}
             onDragenter={this.handleDragenter}
             onDragleave={this.handleDragleave}
+            locale={this.locale}
           >
-            <div class={`${name}__trigger`} onclick={this.triggerUpload}>
+            <div class={`${this.componentName}__trigger`} onclick={this.triggerUpload}>
               {triggerElement}
             </div>
           </FlowList>
@@ -699,12 +702,12 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
             showOverlay
             width="auto"
             top="10%"
-            class={`${name}__dialog`}
+            class={`${this.componentName}__dialog`}
             footer={false}
             header={false}
             onClose={this.cancelPreviewImgDialog}
           >
-            <div class={`${prefix}__dialog-body-img-box`}>
+            <div class={`${this.classPrefix}__dialog-body-img-box`}>
               <img src={this.showImageViewUrl} alt="" />
             </div>
           </TDialog>

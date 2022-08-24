@@ -1,16 +1,18 @@
-import Vue from 'vue';
 import isFunction from 'lodash/isFunction';
-import { prefix } from '../config';
 import props from './props';
 import popupProps from '../popup/props';
 import Popup from '../popup/popup';
 import { PopupProps, PopupVisibleChangeContext } from '../popup';
 import { ClassName } from '../common';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
+
+const classPrefixMixins = getClassPrefixMixins('tooltip');
 
 type PopupInstanceType = InstanceType<typeof Popup>;
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TTooltip',
   components: { Popup },
   props: {
@@ -27,19 +29,19 @@ export default Vue.extend({
   },
   computed: {
     tooltipOverlayClassName(): ClassName {
-      return [`${prefix}-tooltip`, { [`${prefix}-tooltip--${this.theme}`]: this.theme }, this.overlayClassName];
+      return [this.componentName, { [`${this.componentName}--${this.theme}`]: this.theme }, this.overlayClassName];
     },
-    tooltipOverlayStyle(): PopupProps['overlayStyle'] {
+    tooltipOverlayInnerStyle(): PopupProps['overlayInnerStyle'] {
       if (this.placement !== 'mouse' || this.offsetX === 0) {
-        return this.overlayStyle;
+        return this.overlayInnerStyle;
       }
       const offsetStyle = (triggerEl: HTMLElement) => ({
         transform: `translateX(${this.offsetX - triggerEl.getBoundingClientRect().left}px)`,
       });
-      if (this.overlayStyle) {
+      if (this.overlayInnerStyle) {
         return (triggerEl: HTMLElement, popupEl: HTMLElement) => ({
           ...offsetStyle(triggerEl),
-          ...(isFunction(this.overlayStyle) ? this.overlayStyle(triggerEl, popupEl) : this.overlayStyle),
+          ...(isFunction(this.overlayInnerStyle) ? this.overlayInnerStyle(triggerEl, popupEl) : this.overlayInnerStyle),
         });
       }
       return offsetStyle;
@@ -89,7 +91,7 @@ export default Vue.extend({
         content: () => renderTNodeJSX(this, 'content'),
         default: () => renderContent(this, 'default', 'triggerElement'),
         overlayClassName: this.tooltipOverlayClassName,
-        overlayStyle: this.tooltipOverlayStyle,
+        overlayInnerStyle: this.tooltipOverlayInnerStyle,
       };
       // delete r.visible;
       return r;

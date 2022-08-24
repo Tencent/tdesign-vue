@@ -1,20 +1,14 @@
 import Vue from 'vue';
-import { FileCopyIcon } from 'tdesign-icons-vue';
+import { FileCopyIcon as TdFileCopyIcon } from 'tdesign-icons-vue';
 import copyText from '../utils/clipboard';
 import Message from '../message/plugin';
 import props from './anchor-target-props';
 import TPopup from '../popup';
-import { COMPONENT_NAME } from './constant';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { AnchorConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { AnchorConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 
-export default mixins(getConfigReceiverMixins<Vue, AnchorConfig>('anchor')).extend({
+export default mixins(getConfigReceiverMixins<Vue, AnchorConfig>('anchor'), getGlobalIconMixins()).extend({
   name: 'TAnchorTarget',
-
-  components: {
-    TPopup,
-    FileCopyIcon,
-  },
 
   props: { ...props },
 
@@ -37,14 +31,15 @@ export default mixins(getConfigReceiverMixins<Vue, AnchorConfig>('anchor')).exte
       $scopedSlots: { default: children },
       id,
     } = this;
-    const className = [`${COMPONENT_NAME}__target`];
-    const iconClassName = `${COMPONENT_NAME}__copy`;
+    const { FileCopyIcon } = this.useGlobalIcon({ FileCopyIcon: TdFileCopyIcon });
+    const className = [`${this.componentName}__target`];
+    const iconClassName = `${this.componentName}__copy`;
     return (
       <Tag id={id} class={className}>
         {children && children(null)}
-        <t-popup content={this.global.copyText} placement="top" showArrow class={iconClassName}>
-          <file-copy-icon nativeOnClick={this.copyText} />
-        </t-popup>
+        <TPopup content={this.global.copyText} placement="top" showArrow class={iconClassName}>
+          <FileCopyIcon nativeOnClick={this.copyText} />
+        </TPopup>
       </Tag>
     );
   },

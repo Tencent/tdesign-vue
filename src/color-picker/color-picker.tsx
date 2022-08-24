@@ -75,7 +75,7 @@ export default defineComponent({
       attach: 'body',
       overlayClassName: [baseClassName],
       visible: this.visible,
-      overlayStyle: {
+      overlayInnerStyle: {
         padding: 0,
       },
       onVisibleChange: (

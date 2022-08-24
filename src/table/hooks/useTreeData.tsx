@@ -1,7 +1,7 @@
 import {
   SetupContext, ref, watch, toRefs, onUnmounted, computed,
 } from '@vue/composition-api';
-import { AddRectangleIcon, MinusRectangleIcon } from 'tdesign-icons-vue';
+import { AddRectangleIcon as TdAddRectangleIcon, MinusRectangleIcon as TdMinusRectangleIcon } from 'tdesign-icons-vue';
 import cloneDeep from 'lodash/cloneDeep';
 import get from 'lodash/get';
 import { CreateElement } from 'vue';
@@ -18,10 +18,15 @@ import useClassName from './useClassName';
 import { renderCell } from '../tr';
 import { useConfig } from '../../config-provider/useConfig';
 import { useTNodeDefault } from '../../hooks/tnode';
+import { useGlobalIcon } from '../../hooks/useGlobalIcon';
 
 export default function useTreeData(props: TdEnhancedTableProps, context: SetupContext) {
   const { data, columns } = toRefs(props);
   const { t, global } = useConfig('table');
+  const { AddRectangleIcon, MinusRectangleIcon } = useGlobalIcon({
+    AddRectangleIcon: TdAddRectangleIcon,
+    MinusRectangleIcon: TdMinusRectangleIcon,
+  });
   const store = ref(new TableTreeStore() as InstanceType<typeof TableTreeStore>);
   const treeNodeCol = ref<PrimaryTableCol>();
   const dataSource = ref<TdEnhancedTableProps['data']>([]);
@@ -68,12 +73,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
         dataSource.value = data.value;
         return;
       }
-      let newVal = cloneDeep(data.value);
-      store.value.initialTreeStore(newVal, props.columns, rowDataKeys.value);
-      if (props.tree?.defaultExpandAll) {
-        newVal = store.value.expandAll(newVal, rowDataKeys.value);
-      }
-      dataSource.value = newVal;
+      resetData(data.value);
     },
     { immediate: true },
   );
@@ -96,6 +96,15 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     },
     { immediate: true },
   );
+
+  function resetData(data: TableRowData[]) {
+    let newVal = cloneDeep(data);
+    store.value.initialTreeStore(newVal, props.columns, rowDataKeys.value);
+    if (props.tree?.defaultExpandAll) {
+      newVal = store.value.expandAll(newVal, rowDataKeys.value);
+    }
+    dataSource.value = newVal;
+  }
 
   function getTreeNodeStyle(level: number) {
     if (level === undefined) return;
@@ -140,7 +149,9 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     if (!props.tree || col.colKey !== treeNodeCol.value.colKey) return col;
     const newCol = { ...treeNodeCol.value };
     newCol.cell = (h, p) => {
-      const cellInfo = renderCell({ ...p, col: { ...treeNodeCol.value } }, context.slots);
+      const cellInfo = renderCell({ ...p, col: { ...treeNodeCol.value } }, context.slots, {
+        cellEmptyContent: props.cellEmptyContent,
+      });
       const currentState = store.value.treeDataMap.get(get(p.row, rowDataKeys.value.rowKey));
       const colStyle = getTreeNodeStyle(currentState?.level);
       const classes = { [tableTreeClasses.inlineCol]: !!col.ellipsis };
@@ -287,5 +298,6 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     expandAll,
     foldAll,
     getTreeNode,
+    resetData,
   };
 }

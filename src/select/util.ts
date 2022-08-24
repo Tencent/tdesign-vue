@@ -1,24 +1,40 @@
-import { VNode } from 'vue';
-import { TdOptionProps } from './type';
+/* eslint-disable no-restricted-syntax */
+import cloneDeep from 'lodash/cloneDeep';
+import {
+  SelectOption, SelectValue, TdOptionProps, TdSelectProps,
+} from './type';
 
-// eslint-disable-next-line import/prefer-default-export
-export function parseOptions(vnodes: VNode[]): TdOptionProps[] {
-  if (!vnodes) return [];
-  return vnodes.reduce((options, vnode) => {
-    const { componentOptions } = vnode;
-    if (componentOptions?.tag === 't-option') {
-      const propsData = componentOptions.propsData as any;
-      return options.concat({
-        label: propsData.label,
-        value: propsData.value,
-        disabled: propsData.disabled,
-        content: componentOptions.children ? () => componentOptions.children : propsData.content,
-        default: propsData.default,
-      });
+export const getSingleContent = (value: TdSelectProps['value'], options: SelectOption[]): string => {
+  for (const option of options) {
+    if ((option as TdOptionProps).value === value) {
+      // 保底使用 value 作为显示
+      return option?.label || String((option as TdOptionProps).value);
     }
-    if (componentOptions?.tag === 't-option-group') {
-      return options.concat(parseOptions(componentOptions.children));
+  }
+  return value !== undefined ? String(value) : undefined;
+};
+
+export const getMultipleContent = (value: SelectValue[], options: SelectOption[]) => {
+  const res: string[] = [];
+  for (const iterator of value) {
+    const resLabel = getSingleContent(iterator, options);
+    if (resLabel) {
+      res.push(resLabel);
     }
-    return options;
-  }, []);
-}
+  }
+  return res;
+};
+
+export const getNewMultipleValue = (innerValue: SelectValue[], optionValue: SelectValue) => {
+  const value = cloneDeep(innerValue) as SelectValue[];
+  const valueIndex = value.indexOf(optionValue);
+  if (valueIndex < 0) {
+    value.push(optionValue);
+  } else {
+    value.splice(valueIndex, 1);
+  }
+  return {
+    value,
+    isCheck: valueIndex < 0,
+  };
+};

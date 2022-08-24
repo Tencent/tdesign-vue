@@ -1,7 +1,7 @@
 import {
   defineComponent, PropType, ref, computed,
 } from '@vue/composition-api';
-import TJumper from '../../pagination/jumper';
+import TJumper from '../../jumper/jumper';
 import TSelect from '../../select/select';
 import { useConfig, usePrefixClass } from '../../hooks/useConfig';
 import type { TdDatePickerProps } from '../type';
@@ -25,7 +25,7 @@ export default defineComponent({
     const { global } = useConfig('datePicker');
 
     const yearOptions = ref(initOptions(props.year));
-    const showMonthPicker = props.mode === 'date';
+    const showMonthPicker = props.mode === 'date' || props.mode === 'week';
 
     // 年份选择展示区间
     const nearestYear = computed(
@@ -86,24 +86,24 @@ export default defineComponent({
     // hover title
     const labelMap = {
       year: {
-        prevTitle: global.value.preDecade,
-        currentTitle: global.value.now,
-        nextTitle: global.value.nextDecade,
+        prev: global.value.preDecade,
+        current: global.value.now,
+        next: global.value.nextDecade,
       },
       month: {
-        prevTitle: global.value.preYear,
-        currentTitle: global.value.now,
-        nextTitle: global.value.nextYear,
+        prev: global.value.preYear,
+        current: global.value.now,
+        next: global.value.nextYear,
       },
       date: {
-        prevTitle: global.value.preMonth,
-        currentTitle: global.value.now,
-        nextTitle: global.value.nextMonth,
+        prev: global.value.preMonth,
+        current: global.value.now,
+        next: global.value.nextMonth,
       },
     };
 
     function handlePanelTopClick(e: MouseEvent) {
-      e.stopPropagation();
+      e?.stopPropagation?.();
 
       const firstYear = yearOptions.value[0].value;
       const options = loadMoreYear(firstYear, 'reduce');
@@ -111,11 +111,20 @@ export default defineComponent({
     }
 
     function handlePanelBottomClick(e: MouseEvent) {
-      e.stopPropagation();
+      e?.stopPropagation?.();
 
       const lastYear = yearOptions.value.slice(-1)[0].value;
       const options = loadMoreYear(lastYear, 'add');
       yearOptions.value = [...yearOptions.value, ...options];
+    }
+
+    // 滚动顶部底部自动加载
+    function handleScroll({ e }: any) {
+      if (e.target.scrollTop === 0) {
+        handlePanelTopClick(e);
+      } else if (e.target.scrollTop === e.target.scrollHeight - e.target.clientHeight) {
+        handlePanelBottomClick(e);
+      }
     }
 
     return {
@@ -126,6 +135,7 @@ export default defineComponent({
       monthOptions,
       yearOptions,
       showMonthPicker,
+      handleScroll,
       handlePanelTopClick,
       handlePanelBottomClick,
     };
@@ -147,25 +157,28 @@ export default defineComponent({
         <div class={`${COMPONENT_NAME}-controller`}>
           {showMonthPicker && (
             <TSelect
-              class={`${COMPONENT_NAME}-controller--month`}
+              class={`${COMPONENT_NAME}-controller-month`}
               {...{
                 props: {
                   value: this.month,
                   options: monthOptions,
                   onChange: (val: number) => this.onMonthChange?.(val),
-                  popupProps: { attach: (triggerNode: HTMLDivElement) => triggerNode.parentElement },
+                  popupProps: { overlayClassName: `${COMPONENT_NAME}-controller-month-popup` },
                 },
               }}
             />
           )}
           <TSelect
-            class={`${COMPONENT_NAME}-controller--year`}
+            class={`${COMPONENT_NAME}-controller-year`}
             {...{
               props: {
                 value: this.mode === 'year' ? nearestYear : this.year,
                 options: yearOptions,
                 onChange: (val: number) => this.onYearChange?.(val),
-                popupProps: { attach: (triggerNode: HTMLDivElement) => triggerNode.parentElement },
+                popupProps: {
+                  onScroll: this.handleScroll,
+                  overlayClassName: `${COMPONENT_NAME}-controller-year-popup`,
+                },
                 panelTopContent: () => (
                   <div class={`${classPrefix}-select-option`} onClick={handlePanelTopClick}>
                     ...
@@ -181,7 +194,7 @@ export default defineComponent({
           />
         </div>
 
-        <TJumper {...{ props: { ...labelMap[this.mode], onJumperClick: this.onJumperClick, size: 'small' } }} />
+        <TJumper {...{ props: { tips: labelMap[this.mode], onChange: this.onJumperClick, size: 'small' } }} />
       </div>
     );
   },

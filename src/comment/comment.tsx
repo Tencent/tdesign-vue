@@ -1,23 +1,24 @@
-import Vue, { VNode } from 'vue';
+import { VNode } from 'vue';
 import { ScopedSlotReturnValue, ScopedSlotReturnArray } from 'vue/types/vnode';
-import { prefix } from '../config';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const preName = `${prefix}-comment`;
+const classPrefixMixins = getClassPrefixMixins('comment');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TComment',
   props,
   methods: {
     renderReply() {
       const reply = renderTNodeJSX(this, 'reply');
-      return reply ? <div class={`${preName}__reply`}>{reply}</div> : null;
+      return reply ? <div class={`${this.componentName}__reply`}>{reply}</div> : null;
     },
     renderActions() {
       const actions: ScopedSlotReturnArray = renderTNodeJSX(this, 'actions');
       return actions && actions.length ? (
-        <ul class={`${preName}__actions`}>
+        <ul class={`${this.componentName}__actions`}>
           {actions.map((action: ScopedSlotReturnValue, index: number) => (
             <li key={`action-${index}`}>{action}</li>
           ))}
@@ -27,7 +28,7 @@ export default Vue.extend({
 
     renderQuote() {
       const quote = renderTNodeJSX(this, 'quote');
-      return quote ? <div class={`${preName}__quote`}>{quote}</div> : null;
+      return quote ? <div class={`${this.componentName}__quote`}>{quote}</div> : null;
     },
 
     renderAuthorDatetime() {
@@ -36,9 +37,9 @@ export default Vue.extend({
 
       return (
         (author || datetime) && (
-          <div class={`${preName}__author`}>
-            {author && <span class={`${preName}__name`}>{author}</span>}
-            {datetime && <span class={`${preName}__time`}>{datetime}</span>}
+          <div class={`${this.componentName}__author`}>
+            {author && <span class={`${this.componentName}__name`}>{author}</span>}
+            {datetime && <span class={`${this.componentName}__time`}>{datetime}</span>}
           </div>
         )
       );
@@ -46,9 +47,9 @@ export default Vue.extend({
 
     renderContent() {
       return (
-        <div class={`${preName}__content`}>
+        <div class={`${this.componentName}__content`}>
           {this.renderAuthorDatetime()}
-          <div class={`${preName}__detail`}>{renderTNodeJSX(this, 'content')}</div>
+          <div class={`${this.componentName}__detail`}>{renderTNodeJSX(this, 'content')}</div>
           {this.renderQuote()}
           {this.renderActions()}
         </div>
@@ -58,8 +59,12 @@ export default Vue.extend({
     renderAvatar() {
       const avatar = renderTNodeJSX(this, 'avatar');
       return avatar ? (
-        <div class={`${preName}__avatar`}>
-          {typeof avatar === 'string' ? <img src={avatar} alt="" class={`${preName}__avatar-image`} /> : avatar}
+        <div class={`${this.componentName}__avatar`}>
+          {typeof avatar === 'string' ? (
+            <img src={avatar} alt="" class={`${this.componentName}__avatar-image`} />
+          ) : (
+            avatar
+          )}
         </div>
       ) : null;
     },
@@ -67,8 +72,8 @@ export default Vue.extend({
 
   render(): VNode {
     return (
-      <div class={preName}>
-        <div class={`${preName}__inner`}>
+      <div class={this.componentName}>
+        <div class={`${this.componentName}__inner`}>
           {this.renderAvatar()}
           {this.renderContent()}
         </div>

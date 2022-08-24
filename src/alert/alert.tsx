@@ -1,19 +1,19 @@
 import Vue, { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import {
-  InfoCircleFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon, CloseIcon,
+  InfoCircleFilledIcon as TdInfoCircleFilledIcon,
+  CheckCircleFilledIcon as TdCheckCircleFilledIcon,
+  ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
+  CloseIcon as TdCloseIcon,
 } from 'tdesign-icons-vue';
 
-import { prefix } from '../config';
 import { on, off, addClass } from '../utils/dom';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { AlertConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { AlertConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 
-const name = `${prefix}-alert`;
-
-export default mixins(getConfigReceiverMixins<Vue, AlertConfig>('alert')).extend({
+export default mixins(getConfigReceiverMixins<Vue, AlertConfig>('alert'), getGlobalIconMixins()).extend({
   name: 'TAlert',
   data() {
     return {
@@ -26,10 +26,10 @@ export default mixins(getConfigReceiverMixins<Vue, AlertConfig>('alert')).extend
   props: { ...props },
   render(): VNode {
     const compClass = [
-      name,
-      `${name}--${this.theme}`,
+      this.componentName,
+      `${this.componentName}--${this.theme}`,
       {
-        [`${prefix}-is-hidden`]: !this.visible,
+        [`${this.classPrefix}-is-hidden`]: !this.visible,
       },
     ];
     return (
@@ -54,18 +54,25 @@ export default mixins(getConfigReceiverMixins<Vue, AlertConfig>('alert')).extend
       } else if (this.$scopedSlots.icon) {
         iconContent = this.$scopedSlots.icon && this.$scopedSlots.icon(null)[0];
       } else {
+        const { InfoCircleFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon } = this.useGlobalIcon({
+          InfoCircleFilledIcon: TdInfoCircleFilledIcon,
+          CheckCircleFilledIcon: TdCheckCircleFilledIcon,
+          ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
+        });
         const component = {
           info: InfoCircleFilledIcon,
           success: CheckCircleFilledIcon,
           warning: ErrorCircleFilledIcon,
           error: ErrorCircleFilledIcon,
         }[this.theme];
+
         iconContent = <component></component>;
       }
-      return iconContent ? <div class={`${name}__icon`}>{iconContent}</div> : null;
+      return iconContent ? <div class={`${this.componentName}__icon`}>{iconContent}</div> : null;
     },
 
     renderClose(): VNode {
+      const { CloseIcon } = this.useGlobalIcon({ CloseIcon: TdCloseIcon });
       let closeContent: ScopedSlotReturnValue = null;
       if (this.close === true || this.close === '') {
         closeContent = <CloseIcon />;
@@ -78,7 +85,7 @@ export default mixins(getConfigReceiverMixins<Vue, AlertConfig>('alert')).extend
       }
 
       return closeContent ? (
-        <div class={`${name}__close`} onClick={this.handleClose}>
+        <div class={`${this.componentName}__close`} onClick={this.handleClose}>
           {closeContent}
         </div>
       ) : null;
@@ -86,7 +93,7 @@ export default mixins(getConfigReceiverMixins<Vue, AlertConfig>('alert')).extend
 
     renderContent(): VNode {
       return (
-        <div class={`${name}__content`}>
+        <div class={`${this.componentName}__content`}>
           {this.renderTitle()}
           {this.renderMessage()}
         </div>
@@ -95,15 +102,15 @@ export default mixins(getConfigReceiverMixins<Vue, AlertConfig>('alert')).extend
 
     renderTitle(): VNode {
       const titleContent: ScopedSlotReturnValue = renderTNodeJSX(this, 'title');
-      return titleContent ? <div class={`${name}__title`}> {titleContent}</div> : null;
+      return titleContent ? <div class={`${this.componentName}__title`}> {titleContent}</div> : null;
     },
 
     renderMessage(): VNode {
       const operationContent: ScopedSlotReturnValue = renderTNodeJSX(this, 'operation');
       return (
-        <div class={`${name}__message`}>
+        <div class={`${this.componentName}__message`}>
           {this.renderDescription()}
-          {operationContent ? <div class={`${name}__operation`}>{operationContent}</div> : null}
+          {operationContent ? <div class={`${this.componentName}__operation`}>{operationContent}</div> : null}
         </div>
       );
     },
@@ -126,13 +133,13 @@ export default mixins(getConfigReceiverMixins<Vue, AlertConfig>('alert')).extend
 
       // 如果需要折叠，则元素之间补<br/>；否则不补
       return (
-        <div class={`${name}__description`}>
+        <div class={`${this.componentName}__description`}>
           {hasCollapse
             ? (messageContent as Array<string | VNode>).map((content) => <div>{content}</div>)
             : messageContent}
           {hasCollapse ? (
             <div
-              class={`${name}__collapse`}
+              class={`${this.componentName}__collapse`}
               onClick={() => {
                 this.collapsed = !this.collapsed;
               }}
@@ -149,7 +156,7 @@ export default mixins(getConfigReceiverMixins<Vue, AlertConfig>('alert')).extend
       if (this.onClose) {
         this.onClose({ e });
       }
-      addClass(this.$el, `${name}--closing`);
+      addClass(this.$el, `${this.componentName}--closing`);
     },
 
     handleCloseEnd(e: TransitionEvent) {

@@ -3,10 +3,11 @@
     <p>弹窗内容自定义</p>
     <br />
     <div>
-      <t-button theme="primary" @click="bodyVisible1 = true">隐藏标题</t-button>
-      <t-button theme="primary" @click="bodyVisible2 = true">渲染函数定义内容</t-button>
-      <t-button theme="primary" @click="bodyVisible3 = true">插槽方式定义内容</t-button>
-
+      <t-space break-line>
+        <t-button theme="primary" @click="bodyVisible1 = true">隐藏标题</t-button>
+        <t-button theme="primary" @click="bodyVisible2 = true">渲染函数定义内容</t-button>
+        <t-button theme="primary" @click="bodyVisible3 = true">插槽方式定义内容</t-button>
+      </t-space>
       <!-- :onClose="onClose" 和 @close="onClose" 等效 -->
       <!-- :onConfirm="onConfirm" 和 @confirm="onConfirm" 等效 -->
       <t-dialog
@@ -15,7 +16,7 @@
         :visible="bodyVisible1"
         :onClose="bodyClose1"
         :onConfirm="bodyClose1"
-      ></t-dialog>
+      />
 
       <t-dialog
         :visible="bodyVisible2"
@@ -42,11 +43,12 @@
       来自定义控制
     </p>
     <br />
-    <t-button theme="primary" @click="visible1 = true">按钮文字</t-button>
-    <t-button theme="primary" @click="visible2 = true">按钮属性</t-button>
-    <t-button theme="primary" @click="visible3 = true">渲染函数按钮</t-button>
-    <t-button theme="primary" @click="visible4 = true">隐藏底部</t-button>
-
+    <t-space break-line>
+      <t-button theme="primary" @click="visible1 = true">按钮文字</t-button>
+      <t-button theme="primary" @click="visible2 = true">按钮属性</t-button>
+      <t-button theme="primary" @click="visible3 = true">渲染函数按钮</t-button>
+      <t-button theme="primary" @click="visible4 = true">隐藏底部</t-button>
+    </t-space>
     <t-dialog
       :visible.sync="visible1"
       header="提示"
@@ -55,8 +57,7 @@
       cancelBtn="关闭"
       :onConfirm="onConfirm"
       :onClose="close1"
-    >
-    </t-dialog>
+    />
 
     <!-- 透传 ButtonProps，以自定义按钮样式 -->
     <t-dialog
@@ -73,7 +74,7 @@
         variant: 'outline',
       }"
       :onClose="close2"
-    ></t-dialog>
+    />
 
     <!-- cancelBtn 和 confirmBtn 值为 null 时，隐藏按钮 -->
     <!-- confirmBtn 可以作为渲染函数输出按钮 -->
@@ -84,7 +85,7 @@
       :confirmBtn="getConfirmBtn"
       :cancelBtn="null"
       :onClose="close3"
-    ></t-dialog>
+    />
 
     <t-dialog
       :visible="visible4"
@@ -93,7 +94,7 @@
       :footer="false"
       :onClose="close4"
       :onConfirm="close4"
-    ></t-dialog>
+    />
   </div>
 </template>
 <script lang="jsx">
@@ -164,8 +165,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.t-button {
-  margin-right: 20px;
-}
-</style>

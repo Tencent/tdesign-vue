@@ -2,7 +2,7 @@
 
 exports[`Table Table affixVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large tdesign-demo__table-affix"
+  class="tdesign-demo-block-column-large tdesign-demo__table tdesign-demo__table-affix"
   style="width: 100%;"
 >
   <div>
@@ -121,8 +121,9 @@ exports[`Table Table affixVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-table--bordered t-table--affixed-header t-table--footer-affixed t-table--column-fixed t-table--col-draggable"
+    class="t-table t-table--bordered t-table--affixed-header t-table--footer-affixed t-table--column-fixed t-table--column-resizable t-table--col-draggable"
     style="position: relative;"
+    table-ayout="fixed"
   >
     <div
       offsettop="0"
@@ -138,7 +139,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
       class="t-table__content"
     >
       <table
-        class="t-table--layout-auto"
+        class="t-table--layout-fixed"
       >
         <colgroup>
           <col />
@@ -564,44 +565,64 @@ exports[`Table Table affixVue demo works fine 1`] = `
           <tr
             class="t-tdesign__custom-footer-tr"
           >
-            <td>
+            <td
+              key="index"
+            >
               <b
                 style="color: rgb(0, 82, 217);"
               >
                 表尾
               </b>
             </td>
-            <td>
+            <td
+              key="platform"
+            >
               <span>
                 第 1 行
               </span>
             </td>
-            <td>
+            <td
+              key="type"
+            >
               全部类型
             </td>
-            <td>
+            <td
+              key="expo"
+            >
               -
             </td>
-            <td>
+            <td
+              key="click"
+            >
               -
             </td>
-            <td>
+            <td
+              key="ctr"
+            >
               -
             </td>
-            <td>
+            <td
+              key="default"
+            >
               <span>
                 空
               </span>
             </td>
-            <td>
+            <td
+              key="required"
+            >
                插槽渲染表尾 
             </td>
-            <td>
+            <td
+              key="detail.position"
+            >
               <div>
                 渲染函数输出表尾信息
               </div>
             </td>
-            <td>
+            <td
+              key="operation"
+            >
               -
             </td>
           </tr>
@@ -609,6 +630,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     >
       <div
@@ -645,7 +667,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
                 <span
                   class="t-input__input-pre"
                 >
-                  5
+                  5 条/页
                 </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
@@ -761,7 +783,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
 
 exports[`Table Table asyncLoadingVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large"
+  class="tdesign-demo-block-column-large tdesign-demo__table"
 >
   <div>
     <div
@@ -1058,6 +1080,7 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -1070,7 +1093,7 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
 
 exports[`Table Table baseVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large"
+  class="tdesign-demo-block-column-large tdesign-demo__table"
 >
   <div>
     <div
@@ -1215,7 +1238,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-table--bordered t-table--striped"
+    class="t-table t-table--bordered t-table--striped t-table--column-resizable"
     style="position: relative;"
   >
     <div
@@ -1411,7 +1434,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
             <td
               class=""
             >
-              {}
+              -
             </td>
             <td
               class=""
@@ -1489,7 +1512,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
             <td
               class=""
             >
-              0
+              -
             </td>
             <td
               class=""
@@ -1511,6 +1534,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     >
       <div
@@ -1547,7 +1571,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
                 <span
                   class="t-input__input-pre"
                 >
-                  5
+                  5 条/页
                 </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
@@ -1651,7 +1675,9 @@ exports[`Table Table baseVue demo works fine 1`] = `
 `;
 
 exports[`Table Table customCellVue demo works fine 1`] = `
-<div>
+<div
+  class="tdesign-demo__table"
+>
   <div
     class="t-table t-vertical-align-top"
     style="position: relative;"
@@ -1814,6 +1840,7 @@ exports[`Table Table customCellVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -1826,7 +1853,7 @@ exports[`Table Table customCellVue demo works fine 1`] = `
 
 exports[`Table Table customColButtonVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large"
+  class="tdesign-demo-block-column-large tdesign-demo__table"
 >
   <div>
     <div
@@ -1936,6 +1963,7 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
      
     <label
       class="t-checkbox"
+      style="margin-left: 16px;"
     >
       <input
         class="t-checkbox__former"
@@ -2275,6 +2303,7 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     >
       <div
@@ -2311,7 +2340,7 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
                 <span
                   class="t-input__input-pre"
                 >
-                  5
+                  5 条/页
                 </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
@@ -2434,7 +2463,7 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
 
 exports[`Table Table customColVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large"
+  class="tdesign-demo-block-column-large tdesign-demo__table"
 >
   <div>
     <button
@@ -2735,6 +2764,7 @@ exports[`Table Table customColVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     >
       <div
@@ -2771,7 +2801,7 @@ exports[`Table Table customColVue demo works fine 1`] = `
                 <span
                   class="t-input__input-pre"
                 >
-                  5
+                  5 条/页
                 </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
@@ -2894,10 +2924,77 @@ exports[`Table Table customColVue demo works fine 1`] = `
 
 exports[`Table Table customFooterVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large"
+  class="tdesign-demo-block-column-large tdesign-demo__table"
 >
+  <div>
+    <div
+      class="t-radio-group t-size-m t-radio-group--filled"
+    >
+      <label
+        class="t-radio-button t-is-checked"
+      >
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="normal"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          普通表尾
+        </span>
+      </label>
+       
+      <label
+        class="t-radio-button"
+      >
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="full"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          通栏表尾
+        </span>
+      </label>
+       
+      <label
+        class="t-radio-button"
+      >
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="custom"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          自定义表尾合并列
+        </span>
+      </label>
+      <div
+        class="t-radio-group__bg-block"
+        style="width: 0px; left: 0px;"
+      />
+    </div>
+  </div>
+   
   <div
-    class="t-table"
+    class="t-table t-table--bordered"
     style="position: relative;"
   >
     <div
@@ -3116,30 +3213,46 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
           <tr
             class="t-tdesign__custom-footer-tr"
           >
-            <td>
+            <td
+              key="index"
+            >
               <b
                 style="color: rgb(0, 82, 217);"
               >
                 表尾
               </b>
             </td>
-            <td>
-              <span>
+            <td
+              key="platform"
+            >
+              <div
+                style="width: 100%; text-align: center;"
+              >
                 第 1 行
-              </span>
+              </div>
             </td>
-            <td>
+            <td
+              key="type"
+            >
               全部类型
             </td>
-            <td>
+            <td
+              key="default"
+            >
               <span>
                 空
               </span>
             </td>
-            <td>
-               插槽渲染表尾 
+            <td
+              key="required"
+            >
+              <b>
+                必传(插槽)
+              </b>
             </td>
-            <td>
+            <td
+              key="detail.position"
+            >
               <div>
                 渲染函数输出表尾信息
               </div>
@@ -3149,6 +3262,7 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -3274,6 +3388,7 @@ exports[`Table Table customHeaderVue demo works fine 1`] = `
     </table>
   </div>
   <div
+    class="t-table__pagination-wrap"
     style="opacity: 1;"
   />
   <div
@@ -3285,7 +3400,7 @@ exports[`Table Table customHeaderVue demo works fine 1`] = `
 
 exports[`Table Table dataSortVue demo works fine 1`] = `
 <div
-  class="demo-container t-table-demo-sort"
+  class="demo-container t-table-demo-sort tdesign-demo__table"
 >
   <div
     class="item"
@@ -3624,6 +3739,7 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
         </table>
       </div>
       <div
+        class="t-table__pagination-wrap"
         style="opacity: 1;"
       />
       <div
@@ -3637,7 +3753,7 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
 
 exports[`Table Table dragColSortVue demo works fine 1`] = `
 <div
-  class="demo-container t-table-demo-sort"
+  class="demo-container t-table-demo-sort tdesign-demo__table"
 >
   <div
     class="item"
@@ -3840,6 +3956,7 @@ exports[`Table Table dragColSortVue demo works fine 1`] = `
         </table>
       </div>
       <div
+        class="t-table__pagination-wrap"
         style="opacity: 1;"
       />
       <div
@@ -3853,7 +3970,7 @@ exports[`Table Table dragColSortVue demo works fine 1`] = `
 
 exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
 <div
-  class="demo-container t-table-demo-sort"
+  class="demo-container t-table-demo-sort tdesign-demo__table"
 >
   <div>
     <label
@@ -4156,6 +4273,7 @@ exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
         class="t-loading--center t-size-s t-loading"
       />
       <div
+        class="t-table__pagination-wrap"
         style="opacity: 1;"
       />
       <div
@@ -4169,7 +4287,7 @@ exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
 
 exports[`Table Table dragSortVue demo works fine 1`] = `
 <div
-  class="demo-container t-table-demo-sort"
+  class="demo-container t-table-demo-sort tdesign-demo__table"
 >
   <div
     class="item"
@@ -4376,6 +4494,7 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
         </table>
       </div>
       <div
+        class="t-table__pagination-wrap"
         style="opacity: 1;"
       />
       <div
@@ -4496,6 +4615,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -4611,6 +4731,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -4726,6 +4847,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -4738,7 +4860,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
 
 exports[`Table Table expandableVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column"
+  class="tdesign-demo-block-column tdesign-demo__table"
   style="width: 100%;"
 >
   <div>
@@ -5604,6 +5726,7 @@ exports[`Table Table expandableVue demo works fine 1`] = `
       </div>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -5616,7 +5739,7 @@ exports[`Table Table expandableVue demo works fine 1`] = `
 
 exports[`Table Table filterControlledVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column"
+  class="tdesign-demo-block-column tdesign-demo__table"
 >
   <div>
     <div
@@ -5724,7 +5847,7 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-table--bordered"
+    class="t-table t-table--bordered t-table--column-resizable"
     style="position: relative;"
   >
     <div
@@ -6075,6 +6198,7 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -6087,7 +6211,7 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
 
 exports[`Table Table fixedColumnVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column"
+  class="tdesign-demo-block-column tdesign-demo__table"
   style="max-width: 1200px;"
 >
   <div>
@@ -6254,7 +6378,7 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-table--bordered t-table--column-fixed"
+    class="t-table t-table--bordered t-table--column-fixed t-table--column-resizable"
     style="position: relative;"
   >
     <div
@@ -6645,6 +6769,7 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -6657,7 +6782,7 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
 
 exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column"
+  class="tdesign-demo-block-column tdesign-demo__table"
   style="width: 100%;"
 >
   <div>
@@ -6747,7 +6872,7 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-table--bordered t-table--column-fixed"
+    class="t-table t-table--bordered t-table--column-fixed t-table--column-resizable"
     style="position: relative;"
   >
     <div
@@ -7551,33 +7676,50 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
           <tr
             class=""
           >
-            <td>
+            <td
+              key="index"
+            >
               总述
             </td>
-            <td>
+            <td
+              key="platform"
+            >
               公有(5)
             </td>
-            <td>
+            <td
+              key="type"
+            >
               Number(5)
             </td>
-            <td>
+            <td
+              key="default"
+            >
               -
             </td>
-            <td>
+            <td
+              key="detail.position"
+            >
               -
             </td>
-            <td>
+            <td
+              key="description"
+            >
               数据(10)
             </td>
-            <td>
+            <td
+              key="needed"
+            >
               否(6)
             </td>
-            <td />
+            <td
+              key="operation"
+            />
           </tr>
         </tfoot>
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -8529,22 +8671,34 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
           <tr
             class=""
           >
-            <td>
+            <td
+              key="platform"
+            >
               汇总
             </td>
-            <td>
+            <td
+              key="type"
+            >
               Number(5)
             </td>
-            <td>
+            <td
+              key="default"
+            >
               -
             </td>
-            <td>
+            <td
+              key="needed"
+            >
               否(6)
             </td>
-            <td>
+            <td
+              key="detail.position"
+            >
               -
             </td>
-            <td>
+            <td
+              key="description"
+            >
               数据(10)
             </td>
           </tr>
@@ -8552,6 +8706,7 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -15672,6 +15827,7 @@ exports[`Table Table lazyVue demo works fine 1`] = `
         </table>
       </div>
       <div
+        class="t-table__pagination-wrap"
         style="opacity: 1;"
       />
       <div
@@ -15838,6 +15994,7 @@ exports[`Table Table loadingVue demo works fine 1`] = `
       </svg>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -15986,6 +16143,7 @@ exports[`Table Table loadingVue demo works fine 1`] = `
       </div>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -16154,6 +16312,7 @@ exports[`Table Table loadingVue demo works fine 1`] = `
       </div>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -16166,7 +16325,7 @@ exports[`Table Table loadingVue demo works fine 1`] = `
 
 exports[`Table Table mergeCellsVue demo works fine 1`] = `
 <div
-  class="t-table t-size-s t-table--bordered t-table--rowspan-colspan"
+  class="t-table t-size-s t-table--bordered t-table--rowspan-colspan t-table--column-resizable"
   style="position: relative;"
 >
   <div
@@ -16388,6 +16547,7 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
     </table>
   </div>
   <div
+    class="t-table__pagination-wrap"
     style="opacity: 1;"
   />
   <div
@@ -16399,7 +16559,7 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
 
 exports[`Table Table multiHeaderVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large tdesign-demo-table-multi-header"
+  class="tdesign-demo-block-column-large tdesign-demo-table-multi-heade tdesign-demo__tabler"
   style="width: 100%;"
 >
   <div>
@@ -16495,7 +16655,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-table--bordered t-table--multiple-header"
+    class="t-table t-table--bordered t-table--multiple-header t-table--col-draggable"
     style="position: relative;"
   >
     <div
@@ -16904,6 +17064,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -17248,6 +17409,7 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
         </table>
       </div>
       <div
+        class="t-table__pagination-wrap"
         style="opacity: 1;"
       />
       <div
@@ -17272,6 +17434,9 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
     >
       <colgroup>
         <col
+          style="width: 64px;"
+        />
+        <col
           style="width: 200px;"
         />
         <col
@@ -17288,6 +17453,31 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
         class="t-table__header"
       >
         <tr>
+          <th
+            class="t-table__cell-check t-table__th-row-select"
+            data-colkey="row-select"
+          >
+            <div
+              class="t-table__th-cell-inner"
+            >
+              <label
+                class="t-checkbox t-is-disabled"
+              >
+                <input
+                  class="t-checkbox__former"
+                  disabled="disabled"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="t-checkbox__input"
+                />
+                <span
+                  class="t-checkbox__label"
+                />
+              </label>
+            </div>
+          </th>
           <th
             class="t-table__th-name"
             data-colkey="name"
@@ -17341,7 +17531,7 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
           class="t-table__empty-row"
         >
           <td
-            colspan="4"
+            colspan="5"
           >
             <div
               class="t-table__empty"
@@ -17358,6 +17548,7 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
     class="t-loading--center t-size-s t-loading"
   />
   <div
+    class="t-table__pagination-wrap"
     style="opacity: 1;"
   >
     <div
@@ -17394,7 +17585,7 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
               <span
                 class="t-input__input-pre"
               >
-                10
+                10 条/页
               </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
@@ -17468,26 +17659,33 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
         >
           跳至
           <div
-            class="t-input-number t-size-m t-input-number--normal t-pagination__input"
+            class="t-input-adornment t-input-adornment--append"
           >
             <div
-              class="t-input__wrap"
+              class="t-input-number t-size-m t-input-number--normal t-pagination__input"
             >
               <div
-                class="t-input t-size-m t-is-default"
-                ref="refInputElem"
+                class="t-input__wrap"
               >
-                <input
-                  autocomplete="off"
-                  class="t-input__inner"
-                  placeholder=""
-                  type="text"
-                  unselectable="off"
-                />
+                <div
+                  class="t-input t-size-m t-is-default"
+                >
+                  <input
+                    autocomplete="off"
+                    class="t-input__inner"
+                    placeholder=""
+                    type="text"
+                    unselectable="off"
+                  />
+                </div>
               </div>
             </div>
+            <span
+              class="t-input-adornment__append"
+            >
+              / 1 页
+            </span>
           </div>
-          页
         </div>
       </div>
     </div>
@@ -17793,6 +17991,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     >
       <div
@@ -17829,7 +18028,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
                 <span
                   class="t-input__input-pre"
                 >
-                  5
+                  5 条/页
                 </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
@@ -17943,26 +18142,33 @@ exports[`Table Table paginationVue demo works fine 1`] = `
           >
             跳至
             <div
-              class="t-input-number t-size-m t-input-number--normal t-pagination__input"
+              class="t-input-adornment t-input-adornment--append"
             >
               <div
-                class="t-input__wrap"
+                class="t-input-number t-size-m t-input-number--normal t-pagination__input"
               >
                 <div
-                  class="t-input t-size-m t-is-default"
-                  ref="refInputElem"
+                  class="t-input__wrap"
                 >
-                  <input
-                    autocomplete="off"
-                    class="t-input__inner"
-                    placeholder=""
-                    type="text"
-                    unselectable="off"
-                  />
+                  <div
+                    class="t-input t-size-m t-is-default"
+                  >
+                    <input
+                      autocomplete="off"
+                      class="t-input__inner"
+                      placeholder=""
+                      type="text"
+                      unselectable="off"
+                    />
+                  </div>
                 </div>
               </div>
+              <span
+                class="t-input-adornment__append"
+              >
+                / 12 页
+              </span>
             </div>
-            页
           </div>
         </div>
       </div>
@@ -17992,7 +18198,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             style="width: 64px;"
           />
           <col
-            style="width: 150px;"
+            style="width: 120px;"
           />
           <col
             style="width: 100px;"
@@ -18000,7 +18206,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
           <col />
           <col />
           <col
-            style="width: 200px;"
+            style="width: 150px;"
           />
         </colgroup>
         <thead
@@ -18008,7 +18214,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
         >
           <tr>
             <th
-              class="demo-multiple-select-cell t-table__th-row-select"
+              class="t-table__cell-check t-table__th-row-select"
               data-colkey="row-select"
             >
               <div
@@ -18092,7 +18298,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="demo-multiple-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-checkbox"
@@ -18156,7 +18362,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="demo-multiple-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-checkbox t-is-disabled"
@@ -18221,7 +18427,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="demo-multiple-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-checkbox"
@@ -18285,7 +18491,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="demo-multiple-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-checkbox t-is-disabled"
@@ -18350,7 +18556,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="demo-multiple-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-checkbox"
@@ -18415,6 +18621,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -18426,7 +18633,9 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
 `;
 
 exports[`Table Table selectSingleVue demo works fine 1`] = `
-<div>
+<div
+  class="tdesign-demo__table"
+>
   <div>
     <label
       class="t-checkbox"
@@ -18480,7 +18689,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             style="width: 64px;"
           />
           <col
-            style="width: 150px;"
+            style="width: 120px;"
           />
           <col
             style="width: 100px;"
@@ -18488,7 +18697,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
           <col />
           <col />
           <col
-            style="width: 200px;"
+            style="width: 150px;"
           />
         </colgroup>
         <thead
@@ -18496,7 +18705,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
         >
           <tr>
             <th
-              class="demo-single-select-cell t-table__th-row-select"
+              class="t-table__cell-check t-table__th-row-select"
               data-colkey="row-select"
             >
               <div
@@ -18564,7 +18773,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="demo-single-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-radio"
@@ -18629,7 +18838,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             class="t-table__row--disabled"
           >
             <td
-              class="demo-single-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-radio t-is-disabled"
@@ -18695,7 +18904,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             class="t-table__row--selected"
           >
             <td
-              class="demo-single-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-radio t-is-checked"
@@ -18760,7 +18969,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             class="t-table__row--disabled"
           >
             <td
-              class="demo-single-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-radio t-is-disabled"
@@ -18826,7 +19035,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="demo-single-select-cell"
+              class="t-table__cell-check"
             >
               <label
                 class="t-radio"
@@ -18892,6 +19101,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -19174,6 +19384,7 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -19527,6 +19738,7 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -19634,7 +19846,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
               />
             </th>
             <th
-              class="t-table__th-row-select"
+              class="t-table__cell-check t-table__th-row-select"
               data-colkey="row-select"
             >
               <div
@@ -19732,7 +19944,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
               </span>
             </td>
             <td
-              class=""
+              class="t-table__cell-check"
             >
               <label
                 class="t-checkbox"
@@ -19832,7 +20044,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
               </span>
             </td>
             <td
-              class=""
+              class="t-table__cell-check"
             >
               <label
                 class="t-checkbox"
@@ -19932,7 +20144,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
               </span>
             </td>
             <td
-              class=""
+              class="t-table__cell-check"
             >
               <label
                 class="t-checkbox"
@@ -20032,7 +20244,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
               </span>
             </td>
             <td
-              class=""
+              class="t-table__cell-check"
             >
               <label
                 class="t-checkbox"
@@ -20132,7 +20344,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
               </span>
             </td>
             <td
-              class=""
+              class="t-table__cell-check"
             >
               <label
                 class="t-checkbox"
@@ -20207,6 +20419,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -20239,7 +20452,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        重置数据
+        重置/更新数据
       </span>
     </button>
      
@@ -21364,6 +21577,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     >
       <div
@@ -21400,7 +21614,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
                 <span
                   class="t-input__input-pre"
                 >
-                  10
+                  10 条/页
                 </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"

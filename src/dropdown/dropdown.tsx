@@ -1,14 +1,15 @@
-import Vue, { VNode } from 'vue';
-import { prefix } from '../config';
+import { VNode } from 'vue';
 import Popup from '../popup';
 import DropdownMenu from './dropdown-menu';
 import { emitEvent } from '../utils/event';
 import { DropdownOption } from './type';
 import props from './props';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-dropdown`;
+const classPrefixMixins = getClassPrefixMixins('dropdown');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TDropdown',
   props: {
     ...props,
@@ -39,7 +40,9 @@ export default Vue.extend({
         placement: this.placement,
         trigger: this.trigger,
         overlayClassName:
-          this.popupProps && this.popupProps.overlayClassName ? [name, this.popupProps.overlayClassName] : name,
+          this.popupProps && this.popupProps.overlayClassName
+            ? [this.componentName, this.popupProps.overlayClassName]
+            : this.componentName,
       },
       ...this.popupProps,
       ref: 'popup',

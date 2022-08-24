@@ -99,10 +99,12 @@ export default defineComponent({
             placeholder: inputPlaceholder,
             multiple: this.multiple,
             loading: this.loading,
+            status: this.status,
+            tips: this.tips,
             suffixIcon: () => renderSuffixIcon(),
             popupProps: {
               ...(this.popupProps as TdCascaderProps['popupProps']),
-              overlayStyle: panels.length ? { width: 'auto' } : '',
+              overlayInnerStyle: panels.length ? { width: 'auto' } : '',
               overlayClassName: [
                 overlayClassName,
                 (this.popupProps as TdCascaderProps['popupProps'])?.overlayClassName,

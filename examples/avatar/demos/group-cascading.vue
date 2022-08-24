@@ -1,21 +1,21 @@
 <template>
-  <div class="demo-avatar">
-    <div class="demo-avatar-block">
+  <t-space direction="vertical">
+    <t-space break-line>
       <t-avatar-group>
-        <t-avatar :image="image" ></t-avatar>
-        <t-avatar >W</t-avatar>
+        <t-avatar :image="image"></t-avatar>
+        <t-avatar>W</t-avatar>
         <t-avatar :icon="icon"></t-avatar>
       </t-avatar-group>
-    </div>
+    </t-space>
 
-    <div class="demo-avatar-block">
-      <t-avatar-group cascading='left-up'>
-        <t-avatar :image="image" ></t-avatar>
-        <t-avatar >W</t-avatar>
+    <t-space break-line>
+      <t-avatar-group cascading="left-up">
+        <t-avatar :image="image"></t-avatar>
+        <t-avatar>W</t-avatar>
         <t-avatar :icon="icon"></t-avatar>
       </t-avatar-group>
-    </div>
-  </div>
+    </t-space>
+  </t-space>
 </template>
 <script lang="jsx">
 import { UserIcon } from 'tdesign-icons-vue';
@@ -28,16 +28,8 @@ export default {
   },
   computed: {
     icon() {
-      return () => <UserIcon/>;
+      return () => <UserIcon />;
     },
   },
 };
 </script>
-<style lang="less" scoped>
-   .demo-avatar{
-    .demo-avatar-block:first-child{
-      margin-bottom: 40px;
-    }
-  }
-
-</style>

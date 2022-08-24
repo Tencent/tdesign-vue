@@ -84,6 +84,14 @@ const docs = [
         component: () => import('tdesign-vue/icon/icon.md'),
         componentEn: () => import('tdesign-vue/icon/icon.en-US.md'),
       },
+      {
+        title: 'Link 链接',
+        titleEn: 'Icon',
+        name: 'icon',
+        path: '/vue/components/link',
+        component: () => import('@/examples/link/link.md'),
+        componentEn: () => import('@/examples/link/link.en-US.md'),
+      },
     ],
   },
   {
@@ -161,6 +169,14 @@ const docs = [
         path: '/vue/components/dropdown',
         component: () => import('tdesign-vue/dropdown/dropdown.md'),
         componentEn: () => import('tdesign-vue/dropdown/dropdown.en-US.md'),
+      },
+      {
+        title: 'Jumper 跳转',
+        titleEn: 'Jumper',
+        name: 'jumper',
+        path: '/vue/components/jumper',
+        component: () => import('@/examples/jumper/jumper.md'),
+        componentEn: () => import('@/examples/jumper/jumper.en-US.md'),
       },
       {
         title: 'Menu 导航菜单',

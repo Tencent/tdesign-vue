@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <t-space>
     <t-select
       v-model="value"
       valueType="object"
@@ -19,7 +19,7 @@
       style="width: 200px; display: inline-block"
       @change="handleChange"
     />
-  </div>
+  </t-space>
 </template>
 
 <script>

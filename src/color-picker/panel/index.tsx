@@ -1,5 +1,5 @@
 import {
-  defineComponent, ref, toRefs, watch,
+  computed, defineComponent, ref, toRefs, watch,
 } from '@vue/composition-api';
 import { useConfig } from '../../hooks/useConfig';
 import useCommonClassName from '../../hooks/useCommonClassName';
@@ -256,6 +256,9 @@ export default defineComponent({
       emitColorChange();
     };
 
+    // 预览颜色
+    const previewColorStyle = computed(() => mode.value === 'linear-gradient' ? color.value.linearGradient : color.value.rgba);
+
     return {
       baseClassName,
       statusClassNames,
@@ -265,6 +268,7 @@ export default defineComponent({
       mode,
       formatModel,
       recentlyUsedColors,
+      previewColorStyle,
       addRecentlyUsedColor,
       handleModeChange,
       handleSatAndValueChange,
@@ -279,7 +283,7 @@ export default defineComponent({
   },
   render() {
     const {
-      baseClassName, statusClassNames, t, global, recentColors, swatchColors,
+      baseClassName, statusClassNames, t, global, recentColors, swatchColors, previewColorStyle,
     } = this;
 
     const showUsedColors = recentColors !== null && recentColors !== false;
@@ -323,6 +327,8 @@ export default defineComponent({
       );
     };
 
+    const isGradient = this.mode === 'linear-gradient';
+
     return (
       <div class={[`${baseClassName}__panel`, this.disabled ? statusClassNames.disabled : false]}>
         <panel-header
@@ -335,14 +341,27 @@ export default defineComponent({
           handleModeChange={this.handleModeChange}
         />
         <div class={[`${baseClassName}__body`]}>
-          {this.mode === 'linear-gradient' ? (
+          {isGradient ? (
             <linear-gradient color={this.color} disabled={this.disabled} handleChange={this.handleGradientChange} />
           ) : null}
           <saturation-panel color={this.color} disabled={this.disabled} handleChange={this.handleSatAndValueChange} />
-          <hue-slider color={this.color} disabled={this.disabled} handleChange={this.handleHueChange} />
-          {this.enableAlpha ? (
-            <alpha-slider color={this.color} disabled={this.disabled} handleChange={this.handleAlphaChange} />
-          ) : null}
+          <div class={[`${baseClassName}__sliders-wrapper`]}>
+            <div class={[`${baseClassName}__sliders`]}>
+              <hue-slider color={this.color} disabled={this.disabled} handleChange={this.handleHueChange} />
+              {this.enableAlpha ? (
+                <alpha-slider color={this.color} disabled={this.disabled} handleChange={this.handleAlphaChange} />
+              ) : null}
+            </div>
+            <div class={[`${baseClassName}__sliders-preview`, `${baseClassName}--bg-alpha`]}>
+              <span
+                class={`${baseClassName}__sliders-preview-inner`}
+                style={{
+                  background: previewColorStyle,
+                }}
+              />
+            </div>
+          </div>
+
           <format-panel
             {...{
               props: {

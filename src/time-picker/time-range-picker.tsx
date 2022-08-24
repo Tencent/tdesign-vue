@@ -3,7 +3,7 @@ import {
 } from '@vue/composition-api';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
-import { TimeIcon } from 'tdesign-icons-vue';
+import { TimeIcon as TdTimeIcon } from 'tdesign-icons-vue';
 
 import { RangeInputPopup, RangeInputPosition } from '../range-input';
 import TimePickerPanel from './panel/time-picker-panel';
@@ -18,6 +18,7 @@ import { TimeRangeValue } from './interface';
 // hooks
 import useVModel from '../hooks/useVModel';
 import { useConfig, usePrefixClass } from '../hooks/useConfig';
+import { useGlobalIcon } from '../hooks/useGlobalIcon';
 
 dayjs.extend(customParseFormat);
 
@@ -34,6 +35,7 @@ export default defineComponent({
     const componentName = usePrefixClass('time-range-picker');
     const { global } = useConfig('timePicker');
     const { classPrefix } = useConfig('classPrefix');
+    const { TimeIcon } = useGlobalIcon({ TimeIcon: TdTimeIcon });
 
     const currentPanelIdx = ref(undefined);
     const currentValue = ref<Array<string>>(TIME_PICKER_EMPTY);
@@ -130,9 +132,12 @@ export default defineComponent({
       handleClick,
       handleInputBlur,
       handleTimeChange,
+      TimeIcon,
     };
   },
   render() {
+    const { TimeIcon } = this;
+
     return (
       <div class={this.componentName}>
         <RangeInputPopup
@@ -143,7 +148,7 @@ export default defineComponent({
               popupVisible: this.isShowPanel,
               inputValue: this.isShowPanel ? this.currentValue : this.innerValue ?? TIME_PICKER_EMPTY,
               popupProps: {
-                overlayStyle: {
+                overlayInnerStyle: {
                   width: 'auto',
                 },
                 onVisibleChange: this.handleShowPopup,

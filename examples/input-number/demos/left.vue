@@ -1,19 +1,25 @@
 <template>
-  <div>
+  <t-space>
+    <t-input-number v-model="value1" theme="column"></t-input-number>
+
     <t-input-number
-      v-model="value"
+      v-model="value2"
       theme="column"
+      align="center"
       :max="15"
       :min="-2"
+      label="数字"
+      style="width: 150px"
     ></t-input-number>
-  </div>
+  </t-space>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      value: 3,
+      value1: 3,
+      value2: 3,
     };
   },
 };
