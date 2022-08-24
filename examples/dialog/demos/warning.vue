@@ -1,6 +1,12 @@
 <template>
   <div>
-    <t-button theme="primary" @click="visible1 = true">提示反馈</t-button>
+    <t-space break-line>
+      <t-button theme="primary" @click="visible1 = true">提示反馈</t-button>
+      <t-button theme="primary" @click="visible2 = true">成功反馈</t-button>
+      <t-button theme="primary" @click="visible3 = true">警示反馈</t-button>
+      <t-button theme="primary" @click="visible4 = true">错误反馈</t-button>
+      <t-button theme="primary" @click="visible5 = true">自定义图标</t-button>
+    </t-space>
     <t-dialog
       theme="info"
       header="提示"
@@ -8,10 +14,7 @@
       :visible.sync="visible1"
       @confirm="onConfirm"
       :onClose="close1"
-    >
-    </t-dialog>
-
-    <t-button theme="primary" @click="visible2 = true">成功反馈</t-button>
+    />
     <t-dialog
       theme="success"
       header="成功"
@@ -19,10 +22,7 @@
       :visible.sync="visible2"
       @confirm="onConfirm"
       :onClose="close2"
-    >
-    </t-dialog>
-
-    <t-button theme="primary" @click="visible3 = true">警示反馈</t-button>
+    />
     <t-dialog
       theme="warning"
       header="警示"
@@ -31,10 +31,7 @@
       @confirm="onConfirm"
       :onClose="close3"
       :cancelBtn="null"
-    >
-    </t-dialog>
-
-    <t-button theme="primary" @click="visible4 = true">错误反馈</t-button>
+    />
     <t-dialog
       theme="danger"
       header="错误"
@@ -43,10 +40,7 @@
       @confirm="onConfirm"
       :onClose="close4"
       :cancelBtn="null"
-    >
-    </t-dialog>
-
-    <t-button theme="primary" @click="visible5 = true">自定义图标</t-button>
+    />
     <t-dialog body="对话框内容" :closeBtn="false" :visible.sync="visible5" @confirm="onConfirm" :onClose="close5">
       <div slot="header">
         <icon name="check-circle-filled" color="orange" />
@@ -106,8 +100,3 @@ export default Vue.extend({
   },
 });
 </script>
-<style scoped>
-.t-button {
-  margin-right: 20px;
-}
-</style>

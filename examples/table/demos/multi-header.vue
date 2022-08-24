@@ -27,6 +27,8 @@
       :filterRow="() => null"
       :headerAffixedTop="headerAffixedTop ? { offsetTop: 87 } : false"
       :scroll="{ type: 'virtual' }"
+      drag-sort="col"
+      @drag-sort="onDragSort"
       @data-change="onDataChange"
       @filter-change="onFilterChange"
     ></t-table>
@@ -219,6 +221,9 @@ export default {
     },
     onFilterChange(filterValue) {
       this.data = data.filter((t) => !filterValue.property || filterValue.property === t.property);
+    },
+    onDragSort(params) {
+      console.log('拖拽排序事件参数：', params);
     },
   },
 };

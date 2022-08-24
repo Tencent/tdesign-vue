@@ -78,7 +78,6 @@ exports[`Menu Menu closableSideVue demo works fine 1`] = `
         </div>
         <div
           class="t-menu__popup t-is-vertical"
-          style="--popup-max-height: 0px; --popup-width: 0px;"
         >
           <ul
             class="t-menu__popup-wrapper"
@@ -2023,7 +2022,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
           </div>
           <div
             class="t-menu__popup"
-            style="--popup-max-height: 0px; --popup-width: 0px;"
           >
             <ul
               class="t-menu__popup-wrapper"
@@ -2055,7 +2053,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
                 </div>
                 <div
                   class="t-menu__popup"
-                  style="--popup-max-height: 0px; --popup-width: 0px;"
                 >
                   <ul
                     class="t-menu__popup-wrapper"
@@ -2149,7 +2146,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
                 </div>
                 <div
                   class="t-menu__popup"
-                  style="--popup-max-height: 0px; --popup-width: 0px;"
                 >
                   <ul
                     class="t-menu__popup-wrapper"
@@ -2216,7 +2212,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
           </div>
           <div
             class="t-menu__popup"
-            style="--popup-max-height: 0px; --popup-width: 0px;"
           >
             <ul
               class="t-menu__popup-wrapper"
@@ -2356,7 +2351,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
           </div>
           <div
             class="t-menu__popup"
-            style="--popup-max-height: 0px; --popup-width: 0px;"
           >
             <ul
               class="t-menu__popup-wrapper"
@@ -2423,7 +2417,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
           </div>
           <div
             class="t-menu__popup"
-            style="--popup-max-height: 0px; --popup-width: 0px;"
           >
             <ul
               class="t-menu__popup-wrapper"

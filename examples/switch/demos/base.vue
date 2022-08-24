@@ -1,12 +1,11 @@
 <template>
-  <div class="tdesign-demo-block-row">
+  <t-space>
     <t-switch size="large"></t-switch>
     <t-switch size="large" v-model="checked" @change="onChange"></t-switch>
-  </div>
+  </t-space>
 </template>
 
 <script>
-
 export default {
   data() {
     return {

@@ -36,9 +36,10 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
     },
     cancel: Function as PropType<(e: MouseEvent) => void>,
     trigger: Function as PropType<(e: MouseEvent) => void>,
-    remove: Function as PropType<(e: MouseEvent) => void>,
+    remove: Function as PropType<({ e, file }: { e: MouseEvent; file: UploadFile }) => void>,
     upload: Function as PropType<(file: UploadFile, e: MouseEvent) => void>,
     autoUpload: Boolean,
+    locale: props.locale,
   },
 
   data() {
@@ -106,11 +107,13 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
     renderDefaultDragElement(): VNode {
       const unActiveElement = (
         <div>
-          <span class={`${this.componentName}--highlight`}>{this.global.triggerUploadText.normal}</span>
-          <span>&nbsp;&nbsp;/&nbsp;&nbsp;{this.global.dragger.draggingText}</span>
+          <span class={`${this.componentName}--highlight`}>
+            {this.locale?.triggerUploadText?.normal || this.global.triggerUploadText.normal}
+          </span>
+          <span>&nbsp;&nbsp;/&nbsp;&nbsp;{this.locale?.dragger?.draggingText || this.global.dragger.draggingText}</span>
         </div>
       );
-      const activeElement = <div>{this.global.dragger.dragDropText}</div>;
+      const activeElement = <div>{this.locale?.dragger?.dragDropText || this.global.dragger.dragDropText}</div>;
       return this.dragActive ? activeElement : unActiveElement;
     },
 
@@ -140,7 +143,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
     },
 
     reUpload(e: MouseEvent) {
-      this.remove(e);
+      this.remove({ e, file: this.file });
       this.trigger(e);
     },
 
@@ -159,10 +162,10 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
               {!this.loadingFile && !!this.file && <CheckCircleFilledIcon />}
             </div>
             <small class={`${this.classPrefix}-size-s`}>
-              {this.global.file.fileSizeText}：{returnFileSize(this.size)}
+              {this.locale?.file?.fileSizeText || this.global.file.fileSizeText}：{returnFileSize(this.size)}
             </small>
             <small class={`${this.classPrefix}-size-s`}>
-              {this.global.file.fileOperationDateText}：{getCurrentDate()}
+              {this.locale?.file?.fileOperationDateText || this.global.file.fileOperationDateText}：{getCurrentDate()}
             </small>
             <div class={`${this.componentName}__dragger-btns`}>
               {['progress', 'waiting'].includes(this.loadingFile?.status) && (
@@ -172,7 +175,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
                   class={`${this.componentName}__dragger-progress-cancel`}
                   onClick={this.cancel}
                 >
-                  {this.global.cancelUploadText}
+                  {this.locale?.cancelUploadText || this.global.cancelUploadText}
                 </TButton>
               )}
               {!this.autoUpload && this.loadingFile?.status === 'waiting' && (
@@ -181,7 +184,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
                   variant="text"
                   onClick={(e: MouseEvent) => this.upload({ ...this.loadingFile }, e)}
                 >
-                  {this.global.triggerUploadText.normal}
+                  {this.locale?.triggerUploadText?.normal || this.global.triggerUploadText.normal}
                 </TButton>
               )}
             </div>
@@ -193,10 +196,10 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
                   class={`${this.componentName}__dragger-progress-cancel`}
                   onClick={this.reUpload}
                 >
-                  {this.global.triggerUploadText.reupload}
+                  {this.locale?.triggerUploadText?.reupload || this.global.triggerUploadText.reupload}
                 </TButton>
                 <TButton theme="primary" variant="text" onClick={this.remove}>
-                  {this.global.triggerUploadText.delete}
+                  {this.locale?.triggerUploadText?.delete || this.global.triggerUploadText.delete}
                 </TButton>
               </div>
             )}

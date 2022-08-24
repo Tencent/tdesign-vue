@@ -8,13 +8,11 @@
       :confirmBtn="{
         content: '保存中...',
         theme: 'primary',
-        loading: true
+        loading: true,
       }"
       :onConfirm="onConfirm"
       :onClose="close"
-    >
-    </t-dialog>
-
+    />
   </div>
 </template>
 <script>
@@ -33,6 +31,5 @@ export default {
       this.visible = false;
     },
   },
-
 };
 </script>
