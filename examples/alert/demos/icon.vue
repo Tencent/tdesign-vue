@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block">
+  <t-space direction="vertical">
     <t-alert theme="info" message="这是一条普通的消息提示" />
     <t-alert theme="warning" message="这是一条警示消息提示" />
     <t-alert theme="error" message="高危操作/出错信息提示" />
@@ -9,7 +9,7 @@
         <icon name="error-circle-filled" />
       </template>
     </t-alert>
-  </div>
+  </t-space>
 </template>
 <script lang="jsx">
 import { Icon } from 'tdesign-icons-vue';
