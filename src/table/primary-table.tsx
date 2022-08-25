@@ -185,7 +185,7 @@ export default defineComponent({
               errorList && (cellProps.errors = errorList);
             }
             if (props.editableCellState) {
-              cellProps.readonly = props.editableCellState(p);
+              cellProps.readonly = !props.editableCellState(p);
             }
             return renderEditableCell(h, cellProps);
           };
