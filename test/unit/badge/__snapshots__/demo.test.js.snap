@@ -1,9 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Badge Badge baseVue demo works fine 1`] = `
-<div>
+<div
+  class="t-space t-space-align-center t-space-horizontal"
+  style="gap: 32px;"
+>
   <div
-    class="demo-badge-block"
+    class="t-space-item"
   >
     <div
       class="t-badge"
@@ -15,18 +18,22 @@ exports[`Badge Badge baseVue demo works fine 1`] = `
         class="t-badge--dot"
       />
     </div>
-     
+  </div>
+  <div
+    class="t-space-item"
+  >
     <div
       class="t-badge"
     >
-      
       解锁新徽章
-    
       <sup
         class="t-badge--dot"
       />
     </div>
-     
+  </div>
+  <div
+    class="t-space-item"
+  >
     <div
       class="t-badge"
     >
@@ -51,297 +58,419 @@ exports[`Badge Badge baseVue demo works fine 1`] = `
 `;
 
 exports[`Badge Badge customVue demo works fine 1`] = `
-<div>
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 32px;"
+>
   <div
-    class="t-badge"
+    class="t-space-item"
   >
     <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--dot"
-    />
-  </div>
-   
-  <div
-    class="t-badge"
-  >
-    <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle"
+      class="t-badge"
     >
-      new
-    </sup>
+      <div
+        class="badge-block"
+      />
+      <sup
+        class="t-badge--dot"
+      />
+    </div>
   </div>
-   
   <div
-    class="t-badge"
+    class="t-space-item"
   >
     <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle"
-      style="background: rgb(0, 168, 112);"
+      class="t-badge"
     >
-      99
-    </sup>
+      <div
+        class="badge-block"
+      />
+      <sup
+        class="t-badge--circle"
+      >
+        new
+      </sup>
+    </div>
   </div>
-   
   <div
-    class="t-badge"
+    class="t-space-item"
   >
     <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--round"
-      style="background: rgb(0, 82, 217);"
+      class="t-badge"
     >
-      99+
-    </sup>
+      <div
+        class="badge-block"
+      />
+      <sup
+        class="t-badge--circle"
+        style="background: rgb(0, 168, 112);"
+      >
+        99
+      </sup>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-badge"
+    >
+      <div
+        class="badge-block"
+      />
+      <sup
+        class="t-badge--round"
+        style="background: rgb(0, 82, 217);"
+      >
+        99+
+      </sup>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Badge Badge numberVue demo works fine 1`] = `
-<div>
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 32px;"
+>
   <div
-    class="t-badge"
+    class="t-space-item"
   >
     <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle"
+      class="t-badge"
     >
-      2
-    </sup>
+      <div
+        class="badge-block"
+      />
+      <sup
+        class="t-badge--circle"
+      >
+        2
+      </sup>
+    </div>
   </div>
-   
   <div
-    class="t-badge"
+    class="t-space-item"
   >
     <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle"
+      class="t-badge"
     >
-      0
-    </sup>
+      <div
+        class="badge-block"
+      />
+      <sup
+        class="t-badge--circle"
+      >
+        0
+      </sup>
+    </div>
   </div>
-   
   <div
-    class="t-badge"
+    class="t-space-item"
   >
     <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle"
+      class="t-badge"
     >
-      99+
-    </sup>
+      <div
+        class="badge-block"
+      />
+      <sup
+        class="t-badge--circle"
+      >
+        99+
+      </sup>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Badge Badge offsetVue demo works fine 1`] = `
-<div>
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 24px;"
+>
   <div
-    class="t-badge"
+    class="t-space-item"
   >
     <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle"
+      class="t-badge"
     >
-      2
-    </sup>
+      <div
+        class="badge-block"
+      />
+      <sup
+        class="t-badge--circle"
+      >
+        2
+      </sup>
+    </div>
   </div>
-   
   <div
-    class="t-badge"
+    class="t-space-item"
   >
     <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle"
-      style="right: 10px; top: 10px;"
+      class="t-badge"
     >
-      2
-    </sup>
+      <div
+        class="badge-block"
+      />
+      <sup
+        class="t-badge--circle"
+        style="right: 10px; top: 10px;"
+      >
+        2
+      </sup>
+    </div>
   </div>
-   
   <div
-    class="t-badge"
+    class="t-space-item"
   >
     <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle"
-      style="right: -10px; top: 10px;"
+      class="t-badge"
     >
-      2
-    </sup>
+      <div
+        class="badge-block"
+      />
+      <sup
+        class="t-badge--circle"
+        style="right: -10px; top: 10px;"
+      >
+        2
+      </sup>
+    </div>
   </div>
-   
   <div
-    class="t-badge"
+    class="t-space-item"
   >
     <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle"
-      style="right: -10px; top: -10px;"
+      class="t-badge"
     >
-      2
-    </sup>
+      <div
+        class="badge-block"
+      />
+      <sup
+        class="t-badge--circle"
+        style="right: -10px; top: -10px;"
+      >
+        2
+      </sup>
+    </div>
   </div>
-   
   <div
-    class="t-badge"
+    class="t-space-item"
   >
     <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle"
-      style="right: 10px; top: -10px;"
+      class="t-badge"
     >
-      2
-    </sup>
+      <div
+        class="badge-block"
+      />
+      <sup
+        class="t-badge--circle"
+        style="right: 10px; top: -10px;"
+      >
+        2
+      </sup>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Badge Badge shapeVue demo works fine 1`] = `
-<div>
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 32px;"
+>
   <div
-    class="t-badge"
+    class="t-space-item"
   >
     <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle"
+      class="t-badge"
     >
-      2
-    </sup>
+      <div
+        class="badge-block"
+      />
+      <sup
+        class="t-badge--circle"
+      >
+        2
+      </sup>
+    </div>
   </div>
-   
   <div
-    class="t-badge"
+    class="t-space-item"
   >
     <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--round"
+      class="t-badge"
     >
-      99
-    </sup>
+      <div
+        class="badge-block"
+      />
+      <sup
+        class="t-badge--round"
+      >
+        99
+      </sup>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Badge Badge sizeVue demo works fine 1`] = `
-<div>
-  <h3
-    class="demo-t-badge-title"
-  >
-    1.默认大小
-  </h3>
-   
+<div
+  class="t-space t-space-vertical"
+  style="gap: 20px;"
+>
   <div
-    class="t-badge"
+    class="t-space-item"
   >
     <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle"
+      class="t-space t-space-vertical"
+      style="gap: 20px;"
     >
-      2
-    </sup>
+      <div
+        class="t-space-item"
+      >
+        <h3
+          class="demo-t-badge-title"
+        >
+          1.默认大小
+        </h3>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-space t-space-horizontal"
+          style="gap: 24px;"
+        >
+          <div
+            class="t-space-item"
+          >
+            <div
+              class="t-badge"
+            >
+              <div
+                class="badge-block"
+              />
+              <sup
+                class="t-badge--circle"
+              >
+                2
+              </sup>
+            </div>
+          </div>
+          <div
+            class="t-space-item"
+          >
+            <div
+              class="t-badge"
+            >
+              <div
+                class="badge-block"
+              />
+              <sup
+                class="t-badge--circle"
+              >
+                99
+              </sup>
+            </div>
+          </div>
+          <div
+            class="t-space-item"
+          >
+            <div
+              class="t-badge"
+            >
+              <div
+                class="badge-block"
+              />
+              <sup
+                class="t-badge--circle"
+              >
+                99+
+              </sup>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-   
   <div
-    class="t-badge"
+    class="t-space-item"
   >
     <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle"
+      class="t-space t-space-vertical"
+      style="gap: 20px;"
     >
-      99
-    </sup>
-  </div>
-   
-  <div
-    class="t-badge"
-  >
-    <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle"
-    >
-      99+
-    </sup>
-  </div>
-   
-  <h3
-    class="demo-t-badge-title"
-  >
-    2.小
-  </h3>
-   
-  <div
-    class="t-badge"
-  >
-    <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle t-size-s"
-    >
-      2
-    </sup>
-  </div>
-   
-  <div
-    class="t-badge"
-  >
-    <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle t-size-s"
-    >
-      99
-    </sup>
-  </div>
-   
-  <div
-    class="t-badge"
-  >
-    <div
-      class="badge-block"
-    />
-    <sup
-      class="t-badge--circle t-size-s"
-    >
-      99+
-    </sup>
+      <div
+        class="t-space-item"
+      >
+        <h3
+          class="demo-t-badge-title"
+        >
+          2.小
+        </h3>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-space t-space-horizontal"
+          style="gap: 24px;"
+        >
+          <div
+            class="t-space-item"
+          >
+            <div
+              class="t-badge"
+            >
+              <div
+                class="badge-block"
+              />
+              <sup
+                class="t-badge--circle t-size-s"
+              >
+                2
+              </sup>
+            </div>
+          </div>
+          <div
+            class="t-space-item"
+          >
+            <div
+              class="t-badge"
+            >
+              <div
+                class="badge-block"
+              />
+              <sup
+                class="t-badge--circle t-size-s"
+              >
+                99
+              </sup>
+            </div>
+          </div>
+          <div
+            class="t-space-item"
+          >
+            <div
+              class="t-badge"
+            >
+              <div
+                class="badge-block"
+              />
+              <sup
+                class="t-badge--circle t-size-s"
+              >
+                99+
+              </sup>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
