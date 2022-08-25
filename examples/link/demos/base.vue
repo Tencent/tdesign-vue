@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <t-space>
     <t-link theme="primary">跳转链接</t-link>
-  </div>
+  </t-space>
 </template>
