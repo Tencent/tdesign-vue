@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column" style="width: 100%">
+  <div class="tdesign-demo-block-column tdesign-demo__table" style="width: 100%">
     <!-- t-config-provider 一般用于全局配置某个组件的特性，此代码示例 示范了如何对表格扩展图标进行统一配置 -->
     <!-- `globalLocale.table.expandIcon` 可用于自定义展开箭头图标 -->
     <!-- <t-config-provider :globalLocale="globalLocale"> -->
@@ -166,9 +166,9 @@ export default {
     rehandleClickOp(data) {
       console.log(data);
     },
-    rehandleExpandChange(value, { expandedRowData }) {
+    rehandleExpandChange(value, params) {
       this.expandedRowKeys = value;
-      console.log('rehandleExpandChange', value, expandedRowData);
+      console.log('rehandleExpandChange', params);
     },
   },
 };

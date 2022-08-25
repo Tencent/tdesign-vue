@@ -1,20 +1,18 @@
 import Vue from 'vue';
-import { ChevronRightIcon } from 'tdesign-icons-vue';
+import { ChevronRightIcon as TdChevronRightIcon } from 'tdesign-icons-vue';
 import TDivider from '../divider';
-import { prefix } from '../config';
 import itemProps from './dropdown-item-props';
-import { STATUS_CLASSNAMES } from '../utils/classnames';
 import { DropdownOption } from './type';
 
 import { renderContent } from '../utils/render-tnode';
 import { emitEvent } from '../utils/event';
 import ripple from '../utils/ripple';
 import mixins from '../utils/mixins';
-import { getKeepAnimationMixins } from '../config-provider/config-receiver';
+import { getKeepAnimationMixins, getClassPrefixMixins, getGlobalIconMixins } from '../config-provider/config-receiver';
 
 import { TNodeReturnValue } from '../common';
 
-const name = `${prefix}-dropdown__item`;
+const classPrefixMixins = getClassPrefixMixins('dropdown');
 
 const keepAnimationMixins = getKeepAnimationMixins<DropdownItemInstance>();
 
@@ -24,10 +22,9 @@ export interface DropdownItemInstance extends Vue {
   };
 }
 
-export default mixins(keepAnimationMixins).extend({
+export default mixins(keepAnimationMixins, classPrefixMixins, getGlobalIconMixins()).extend({
   name: 'TDropdownItem',
   components: {
-    ChevronRightIcon,
     TDivider,
   },
   directives: { ripple },
@@ -54,7 +51,8 @@ export default mixins(keepAnimationMixins).extend({
   },
   methods: {
     renderSuffix(): TNodeReturnValue {
-      return this.hasChildren ? <ChevronRightIcon class={`${name}-icon`} /> : null;
+      const { ChevronRightIcon } = this.useGlobalIcon({ ChevronRightIcon: TdChevronRightIcon });
+      return this.hasChildren ? <ChevronRightIcon class={`${this.componentName}__item-icon`} /> : null;
     },
     handleItemClick(e: MouseEvent): void {
       if (!this.hasChildren && !this.disabled) {
@@ -75,11 +73,11 @@ export default mixins(keepAnimationMixins).extend({
   },
   render() {
     const classes = [
-      name,
+      `${this.componentName}__item`,
       {
-        [`${prefix}-dropdown--suffix`]: this.hasChildren,
-        [STATUS_CLASSNAMES.disabled]: this.disabled,
-        [STATUS_CLASSNAMES.active]: this.active,
+        [`${this.componentName}--suffix`]: this.hasChildren,
+        [this.commonStatusClassName.disabled]: this.disabled,
+        [this.commonStatusClassName.active]: this.active,
       },
     ];
     return (
@@ -90,8 +88,8 @@ export default mixins(keepAnimationMixins).extend({
           onClick={this.handleItemClick}
           onMouseover={this.handleMouseover}
         >
-          <div class={`${name}-content`}>
-            <span class={`${name}-text`}>{renderContent(this, 'content', 'default')}</span>
+          <div class={`${this.componentName}__item-content`}>
+            <span class={`${this.componentName}__item-text`}>{renderContent(this, 'content', 'default')}</span>
           </div>
           {this.renderSuffix()}
         </div>

@@ -606,4 +606,12 @@ module.exports = {
       `,
     },
   },
+  jumper: {
+    panelStr: `const panelList = [{label: 'jumper', value: 'jumper'}];`,
+    render: {
+      jumper: `
+        <t-jumper v-bind="configProps"></t-jumper>
+      `,
+    },
+  },
 };

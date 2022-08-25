@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-select-base">
+  <t-space>
     <!-- 方式一：直接传 options 数据，比插槽的方式更简单 -->
     <t-select v-model="value1" :options="options" placeholder="请选择" filterable />
 
@@ -16,7 +16,7 @@
         </t-option>
       </t-option-group>
     </t-select>
-  </div>
+  </t-space>
 </template>
 
 <script>
@@ -28,7 +28,10 @@ export default {
       options: [
         {
           group: '分组一',
-          children: [],
+          children: [
+            { label: '选项一', value: 1 },
+            { label: '选项二', value: 2 },
+          ],
         },
         {
           group: '分组二',
@@ -52,14 +55,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.tdesign-demo-select-base {
-  width: 450px;
-  display: flex;
-}
-
-.tdesign-demo-select-base .t-select__wrap + .t-select__wrap {
-  margin-left: 36px;
-}
-</style>

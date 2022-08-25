@@ -1,11 +1,11 @@
-import Vue from 'vue';
-import { prefix } from '../config';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-fake-arrow`;
+const classPrefixMixins = getClassPrefixMixins('fake-arrow');
 
 // 统一使用的翻转箭头组件
-export default Vue.extend({
-  name,
+export default mixins(classPrefixMixins).extend({
+  name: 'TFakeArrow',
   props: {
     // 是否active状态 active状态下箭头向上翻转
     isActive: {
@@ -22,9 +22,9 @@ export default Vue.extend({
   computed: {
     classes(): Array<string | object> {
       return [
-        name,
+        this.componentName,
         {
-          [`${name}--active`]: this.isActive,
+          [`${this.componentName}--active`]: this.isActive,
         },
         this.overlayClassName,
       ];

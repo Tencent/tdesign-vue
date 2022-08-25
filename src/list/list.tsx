@@ -1,16 +1,16 @@
-import Vue, { VNode } from 'vue';
+import { VNode } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import Loading from '../loading';
-import { prefix } from '../config';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
-import CLASSNAMES from '../utils/classnames';
 import { LOAD_MORE, LOADING } from './const';
 import { ClassName } from '../common';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-list`;
+const classPrefixMixins = getClassPrefixMixins('list');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TList',
   props: {
     ...props,
@@ -18,18 +18,18 @@ export default Vue.extend({
   computed: {
     listClass(): ClassName {
       return [
-        `${name}`,
-        CLASSNAMES.SIZE[this.size],
+        `${this.componentName}`,
+        this.commonSizeClassName[this.size],
         {
-          [`${name}--split`]: this.split,
-          [`${name}--stripe`]: this.stripe,
-          [`${name}--vertical-action`]: this.layout === 'vertical',
+          [`${this.componentName}--split`]: this.split,
+          [`${this.componentName}--stripe`]: this.stripe,
+          [`${this.componentName}--vertical-action`]: this.layout === 'vertical',
         },
       ];
     },
     loadingClass(): ClassName {
-      if (this.asyncLoading === 'loading') return CLASSNAMES.STATUS.loading;
-      if (this.asyncLoading === 'load-more') return CLASSNAMES.STATUS.loadMore;
+      if (this.asyncLoading === 'loading') return this.commonStatusClassName.loading;
+      if (this.asyncLoading === 'load-more') return this.commonStatusClassName.loadMore;
       return '';
     },
   },
@@ -78,9 +78,9 @@ export default Vue.extend({
       const propsFooterContent = renderTNodeJSX(this, 'footer');
 
       return [
-        propsHeaderContent && <div class={`${name}__header`}>{propsHeaderContent}</div>,
-        <ul class={`${name}__inner`}>{renderTNodeJSX(this, 'default')}</ul>,
-        propsFooterContent && <div class={`${name}__footer`}>{propsFooterContent}</div>,
+        propsHeaderContent && <div class={`${this.componentName}__header`}>{propsHeaderContent}</div>,
+        <ul class={`${this.componentName}__inner`}>{renderTNodeJSX(this, 'default')}</ul>,
+        propsFooterContent && <div class={`${this.componentName}__footer`}>{propsFooterContent}</div>,
       ];
     },
   },
@@ -89,7 +89,7 @@ export default Vue.extend({
 
     listContent = [
       listContent,
-      <div class={`${name}__load`} onClick={this.handleLoadMore}>
+      <div class={`${this.componentName}__load`} onClick={this.handleLoadMore}>
         {this.renderLoading()}
       </div>,
     ];

@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column">
+  <div class="tdesign-demo-block-column tdesign-demo__table">
     <!-- 是否显示表格边框 和 对齐方式都决定着 排序图标 和 筛选图标的排列位置 -->
     <div>
       <t-radio-group v-model="align" variant="default-filled">
@@ -37,6 +37,7 @@
       :filter-value="filterValue"
       :bordered="bordered"
       resizable
+      table-layout="fixed"
       @filter-change="onFilterChange"
       @change="onChange"
     />

@@ -1,12 +1,11 @@
-import Vue from 'vue';
-import { prefix } from '../../config';
 import circleAdapter from '../../_common/js/loading/circle-adapter';
+import { getClassPrefixMixins } from '../../config-provider/config-receiver';
+import mixins from '../../utils/mixins';
 
-const name = `${prefix}-loading__gradient`;
-const classname = `${prefix}-icon-loading`;
+const classPrefixMixins = getClassPrefixMixins('loading');
 
-export default Vue.extend({
-  name,
+export default mixins(classPrefixMixins).extend({
+  name: 'TLoadingGradient',
   mounted() {
     this.$nextTick(() => {
       this.updateColor();
@@ -17,12 +16,13 @@ export default Vue.extend({
   },
   methods: {
     updateColor() {
+      // @ts-ignore
       const circleElem = this.$refs.circle as HTMLElement;
       circleAdapter(circleElem);
     },
   },
   render() {
-    const classes = [name, classname];
+    const classes = [`${this.classPrefix}-loading__gradient`, `${this.classPrefix}-icon-loading`];
     return (
       <svg
         class={classes}
@@ -33,7 +33,7 @@ export default Vue.extend({
         xmlns="http://www.w3.org/2000/svg"
       >
         <foreignObject x="1" y="1" width="12" height="12">
-          <div class={`${name}-conic`} ref="circle" />
+          <div class={`${this.classPrefix}-loading__gradient-conic`} ref="circle" />
         </foreignObject>
       </svg>
     );

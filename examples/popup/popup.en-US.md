@@ -1,7 +1,6 @@
 :: BASE_DOC ::
 
 ## API
-
 ### Popup Props
 
 name | type | default | description | required
@@ -13,6 +12,7 @@ destroyOnClose | Boolean | false | \- | N
 disabled | Boolean | false | \- | N
 hideEmptyPopup | Boolean | false | \- | N
 overlayClassName | String / Object / Array | - | Typescript：`ClassName`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+overlayInnerStyle | Boolean / Object / Function | - | Typescript：`Styles | ((triggerElement: HTMLElement, popupElement: HTMLElement) => Styles)`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 overlayStyle | Boolean / Object / Function | - | Typescript：`Styles | ((triggerElement: HTMLElement, popupElement: HTMLElement) => Styles)`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 placement | String | top | Typescript：`PopupPlacement` `type PopupPlacement = 'top'|'left'|'right'|'bottom'|'top-left'|'top-right'|'bottom-left'|'bottom-right'|'left-top'|'left-bottom'|'right-top'|'right-bottom'`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/popup/type.ts) | N
 showArrow | Boolean | false | \- | N
@@ -21,8 +21,8 @@ triggerElement | String / Slot / Function | - | Typescript：`string | TNode`。
 visible | Boolean | false | `v-model` is supported。Typescript：`boolean` | N
 defaultVisible | Boolean | false | uncontrolled property。Typescript：`boolean` | N
 zIndex | Number | - | \- | N
-onScroll | Function |  | TS 类型：`(context: { e: WheelEvent }) => void`<br/> | N
-onVisibleChange | Function |  | TS 类型：`(visible: boolean, context: PopupVisibleChangeContext) => void`<br/>[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/popup/type.ts)。<br/>`interface PopupVisibleChangeContext { e?: PopupTriggerEvent; trigger?: PopupTriggerSource }`<br/><br/>`type PopupTriggerEvent = MouseEvent | FocusEvent | KeyboardEvent`<br/><br/>`type PopupTriggerSource = 'document' | 'trigger-element-click' | 'trigger-element-hover' | 'trigger-element-blur' | 'trigger-element-focus' | 'context-menu' | 'keydown-esc'`<br/> | N
+onScroll | Function |  | Typescript：`(context: { e: WheelEvent }) => void`<br/> | N
+onVisibleChange | Function |  | Typescript：`(visible: boolean, context: PopupVisibleChangeContext) => void`<br/>[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/popup/type.ts)。<br/>`interface PopupVisibleChangeContext { e?: PopupTriggerEvent; trigger?: PopupTriggerSource }`<br/><br/>`type PopupTriggerEvent = MouseEvent | FocusEvent | KeyboardEvent`<br/><br/>`type PopupTriggerSource = 'document' | 'trigger-element-click' | 'trigger-element-hover' | 'trigger-element-blur' | 'trigger-element-focus' | 'context-menu' | 'keydown-esc'`<br/> | N
 
 ### Popup Events
 

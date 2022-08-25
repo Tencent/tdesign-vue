@@ -91,7 +91,7 @@ exports[`ConfigProvider ConfigProvider calendarVue demo works fine 1`] = `
               <span
                 class="t-input__input-pre"
               >
-                12
+                December
               </span>
               <span
                 class="t-input__suffix t-input__suffix-icon"
@@ -1488,31 +1488,60 @@ exports[`ConfigProvider ConfigProvider dialogVue demo works fine 1`] = `
 `;
 
 exports[`ConfigProvider ConfigProvider globalVue demo works fine 1`] = `
-<div>
-  <div>
-    使用
-    <code>
-      t-config-provider
-    </code>
-    包裹业务功能的最外层组件，点击下方图标查看示例代码
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <p>
+      使用
+      <code>
+        t-config-provider
+      </code>
+      包裹业务功能的最外层组件，点击下方图标查看示例代码
+    </p>
   </div>
-   
-  <br />
-   
-  <div>
-    英文语言包引入路径：
-    <code>
-      import enConfig from 'tdesign-vue/es/locale/en_US';
-    </code>
+  <div
+    class="t-space-item"
+  >
+    <p>
+      英文语言包引入路径：
+      <code>
+        import enConfig from 'tdesign-vue/es/locale/en_US';
+      </code>
+    </p>
   </div>
-   
-  <br />
-   
-  <div>
-    中文语言包引入路径：
-    <code>
-      import enConfig from 'tdesign-vue/es/locale/zh_CN';
-    </code>
+  <div
+    class="t-space-item"
+  >
+    <p>
+      中文语言包引入路径：
+      <code>
+        import zhConfig from 'tdesign-vue/es/locale/zh_CN';
+      </code>
+    </p>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <p>
+      日文语言包引入路径：
+      <code>
+        import jpConfig from 'tdesign-react/es/locale/ja_JP';
+      </code>
+    </p>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <p>
+      韩文语言包引入路径：
+      <code>
+        import koConfig from 'tdesign-react/es/locale/ko_KR';
+      </code>
+    </p>
   </div>
 </div>
 `;
@@ -2494,6 +2523,9 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
         see empty data in TreeSelect
       </span>
       <span
+        class="t-tree-select t-tag-prefix"
+      />
+      <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
       >
@@ -2589,6 +2621,9 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
         see loading text in TreeSelect
       </span>
       <span
+        class="t-tree-select t-tag-prefix"
+      />
+      <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
       >
@@ -2667,6 +2702,9 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       >
         tree select
       </span>
+      <span
+        class="t-tree-select t-tag-prefix"
+      />
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
@@ -3214,7 +3252,7 @@ exports[`ConfigProvider ConfigProvider paginationVue demo works fine 1`] = `
         <span
           class="t-input__input-pre"
         >
-          10
+          10 / page
         </span>
         <span
           class="t-input__suffix t-input__suffix-icon"
@@ -3302,24 +3340,32 @@ exports[`ConfigProvider ConfigProvider paginationVue demo works fine 1`] = `
   >
     jump to
     <div
-      class="t-input-number t-size-m t-input-number--normal t-pagination__input"
+      class="t-input-adornment t-input-adornment--append"
     >
       <div
-        class="t-input__wrap"
+        class="t-input-number t-size-m t-input-number--normal t-pagination__input"
       >
         <div
-          class="t-input t-size-m t-is-default"
-          ref="refInputElem"
+          class="t-input__wrap"
         >
-          <input
-            autocomplete="off"
-            class="t-input__inner"
-            placeholder=""
-            type="text"
-            unselectable="off"
-          />
+          <div
+            class="t-input t-size-m t-is-default"
+          >
+            <input
+              autocomplete="off"
+              class="t-input__inner"
+              placeholder=""
+              type="text"
+              unselectable="off"
+            />
+          </div>
         </div>
       </div>
+      <span
+        class="t-input-adornment__append"
+      >
+        / 4 
+      </span>
     </div>
   </div>
 </div>
@@ -3679,6 +3725,7 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div
@@ -4036,6 +4083,7 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
       </table>
     </div>
     <div
+      class="t-table__pagination-wrap"
       style="opacity: 1;"
     />
     <div

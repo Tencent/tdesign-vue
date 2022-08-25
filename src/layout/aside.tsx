@@ -1,14 +1,17 @@
 import Vue, { VueConstructor } from 'vue';
-import { prefix } from '../config';
 import props from './aside-props';
 import Layout from './layout';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
+
+const classPrefixMixins = getClassPrefixMixins('aside');
 
 export interface AsideInstance extends Vue {
   layout: InstanceType<typeof Layout>;
 }
 
-export default (Vue as VueConstructor<AsideInstance>).extend({
+export default mixins(Vue as VueConstructor<AsideInstance>, classPrefixMixins).extend({
   name: 'TAside',
   props: { ...props },
   data() {
@@ -31,7 +34,7 @@ export default (Vue as VueConstructor<AsideInstance>).extend({
   render() {
     const styles = this.width ? { width: this.width } : {};
     return (
-      <aside class={`${prefix}-layout__sider`} style={styles}>
+      <aside class={`${this.classPrefix}-layout__sider`} style={styles}>
         {renderTNodeJSX(this, 'default')}
       </aside>
     );

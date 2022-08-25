@@ -6,7 +6,7 @@
 import {
   onMounted, onUnmounted, ref, toRefs,
 } from '@vue/composition-api';
-import { TdTagInputProps } from './type';
+import { TdTagInputProps } from '../type';
 
 export default function useTagScroll(props: TdTagInputProps) {
   const tagInputRef = ref();

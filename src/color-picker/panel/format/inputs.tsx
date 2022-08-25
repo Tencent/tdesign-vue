@@ -150,6 +150,7 @@ export default defineComponent({
               <t-input
                 {...inputProps}
                 align="center"
+                size="small"
                 disabled={this.disabled}
                 v-model={this.modelValues[config.key]}
                 maxlength={this.format === 'HEX' ? 9 : undefined}
@@ -162,6 +163,7 @@ export default defineComponent({
                 {...inputProps}
                 align="center"
                 theme="normal"
+                size="small"
                 disabled={this.disabled}
                 v-model={this.modelValues[config.key]}
                 title={this.modelValues[config.key]}

@@ -1,6 +1,6 @@
 <template>
   <!-- 注意组件父元素的宽度 -->
-  <div class="tdesign-demo-block-column-large tdesign-demo__table-affix" style="width: 100%">
+  <div class="tdesign-demo-block-column-large tdesign-demo__table tdesign-demo__table-affix" style="width: 100%">
     <div>
       <t-checkbox v-model="headerAffixedTop">表头吸顶</t-checkbox>
       <t-checkbox v-model="footerAffixedBottom" style="margin-left: 32px">表尾吸底</t-checkbox>
@@ -24,7 +24,7 @@
         horizontalScrollAffixedBottom ? { offsetBottom: paginationAffixedBottom ? 61 : 0, zIndex: 1000 } : false
       "
       :paginationAffixedBottom="paginationAffixedBottom"
-      tableLayout="auto"
+      table-ayout="fixed"
       dragSort="col"
       bordered
       resizable
@@ -133,7 +133,7 @@ export default {
       horizontalScrollAffixedBottom: false,
       paginationAffixedBottom: false,
       // 表尾有一行数据
-      footData: [{ type: '全部类型', description: '-' }],
+      footData: [{ index: 'footer-row-1', type: '全部类型', description: '-' }],
       columns: [],
     };
   },

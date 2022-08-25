@@ -8,11 +8,12 @@ name | type | default | description | required
 -- | -- | -- | -- | --
 attach | String / Function | '' | Typescript：`AttachNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 body | String / Slot / Function | '' | Typescript：`string | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-cancelBtn | String / Object / Slot / Function | '' | Typescript：`string | ButtonProps | TNode`，[Button API Documents](./button?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/dialog/type.ts) | N
+cancelBtn | String / Object / Slot / Function | '' | Typescript：`string | ButtonProps | TNode | null`，[Button API Documents](./button?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/dialog/type.ts) | N
 closeBtn | String / Boolean / Slot / Function | true | Typescript：`string | boolean | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-closeOnEscKeydown | Boolean | true | \- | N
-closeOnOverlayClick | Boolean | true | \- | N
-confirmBtn | String / Object / Slot / Function | '' | Typescript：`string | ButtonProps | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+closeOnEscKeydown | Boolean | undefined | \- | N
+closeOnOverlayClick | Boolean | undefined | \- | N
+confirmBtn | String / Object / Slot / Function | '' | Typescript：`string | ButtonProps | TNode | null`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+confirmOnEnter | Boolean | - | confirm on enter | N
 default | String / Slot / Function | - | Typescript：`string | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 destroyOnClose | Boolean | false | \- | N
 draggable | Boolean | false | \- | N
@@ -28,14 +29,14 @@ top | String / Number | - | \- | N
 visible | Boolean | false | \- | N
 width | String / Number | - | \- | N
 zIndex | Number | - | \- | N
-onCancel | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/> | N
-onClose | Function |  | TS 类型：`(context: DialogCloseContext) => void`<br/>[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/dialog/type.ts)。<br/>`type DialogEventSource = 'esc' | 'close-btn' | 'cancel' | 'overlay'`<br/><br/>`interface DialogCloseContext { trigger: DialogEventSource; e: MouseEvent | KeyboardEvent }`<br/> | N
-onCloseBtnClick | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/> | N
-onClosed | Function |  | TS 类型：`() => void`<br/> | N
-onConfirm | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/> | N
-onEscKeydown | Function |  | TS 类型：`(context: { e: KeyboardEvent }) => void`<br/> | N
-onOpened | Function |  | TS 类型：`() => void`<br/> | N
-onOverlayClick | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/> | N
+onCancel | Function |  | Typescript：`(context: { e: MouseEvent }) => void`<br/> | N
+onClose | Function |  | Typescript：`(context: DialogCloseContext) => void`<br/>[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/dialog/type.ts)。<br/>`type DialogEventSource = 'esc' | 'close-btn' | 'cancel' | 'overlay'`<br/><br/>`interface DialogCloseContext { trigger: DialogEventSource; e: MouseEvent | KeyboardEvent }`<br/> | N
+onCloseBtnClick | Function |  | Typescript：`(context: { e: MouseEvent }) => void`<br/> | N
+onClosed | Function |  | Typescript：`() => void`<br/> | N
+onConfirm | Function |  | Typescript：`(context: { e: MouseEvent | KeyboardEvent }) => void`<br/> | N
+onEscKeydown | Function |  | Typescript：`(context: { e: KeyboardEvent }) => void`<br/> | N
+onOpened | Function |  | Typescript：`() => void`<br/> | N
+onOverlayClick | Function |  | Typescript：`(context: { e: MouseEvent }) => void`<br/> | N
 
 ### Dialog Events
 
@@ -45,7 +46,7 @@ cancel | `(context: { e: MouseEvent })` | \-
 close | `(context: DialogCloseContext)` | [see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/dialog/type.ts)。<br/>`type DialogEventSource = 'esc' | 'close-btn' | 'cancel' | 'overlay'`<br/><br/>`interface DialogCloseContext { trigger: DialogEventSource; e: MouseEvent | KeyboardEvent }`<br/>
 close-btn-click | `(context: { e: MouseEvent })` | \-
 closed | \- | \-
-confirm | `(context: { e: MouseEvent })` | \-
+confirm | `(context: { e: MouseEvent | KeyboardEvent })` | \-
 esc-keydown | `(context: { e: KeyboardEvent })` | \-
 opened | \- | \-
 overlay-click | `(context: { e: MouseEvent })` | \-

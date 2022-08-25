@@ -1,12 +1,14 @@
 import Vue, { VueConstructor } from 'vue';
 import DropdownItem from './dropdown-item';
-import { prefix } from '../config';
 import { TNodeReturnValue } from '../common';
 import { DropdownOption } from './type';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { pxCompat } from '../utils/helper';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-dropdown__menu`;
+const classPrefixMixins = getClassPrefixMixins('dropdown');
+
 export interface DropdownMenuInstance extends Vue {
   dropdown: {
     options: DropdownOption[];
@@ -16,7 +18,7 @@ export interface DropdownMenuInstance extends Vue {
   };
 }
 
-export default (Vue as VueConstructor<DropdownMenuInstance>).extend({
+export default mixins(Vue as VueConstructor<DropdownMenuInstance>, classPrefixMixins).extend({
   name: 'TDropdownMenu',
   inject: {
     dropdown: {
@@ -39,11 +41,11 @@ export default (Vue as VueConstructor<DropdownMenuInstance>).extend({
     handleHoverItem(path: string) {
       this.path = path;
     },
-    handleItemClick(data: DropdownOption, context: { e: MouseEvent }, idx: number) {
+    handleItemClick(data: DropdownOption, context: { e: MouseEvent }, idx: number): void {
       this.dropdown.options[idx].onClick?.(data, context);
     },
     renderMenuColumn(children: Array<DropdownOption>, showSubmenu: boolean, pathPrefix: string): TNodeReturnValue {
-      const menuClass = [`${name}-column`, 'narrow-scrollbar', { submenu__visible: showSubmenu }];
+      const menuClass = [`${this.componentName}__menu-column`, 'narrow-scrollbar', { submenu__visible: showSubmenu }];
       const { maxHeight, maxColumnWidth, minColumnWidth } = this.dropdown;
       return (
         <div
@@ -79,9 +81,9 @@ export default (Vue as VueConstructor<DropdownMenuInstance>).extend({
     let pathPrefix = '';
     if (this.$scopedSlots.default) {
       return (
-        <div class={name}>
+        <div class={`${this.componentName}__menu`}>
           <div
-            class={[`${name}-column`, 'narrow-scrollbar']}
+            class={[`${this.componentName}__menu-column`, 'narrow-scrollbar']}
             style={{
               maxHeight: `${this.dropdown.maxHeight}px`,
               maxWidth: `${this.dropdown.maxColumnWidth}px`,
@@ -107,6 +109,6 @@ export default (Vue as VueConstructor<DropdownMenuInstance>).extend({
         menuItems = [];
       }
     }
-    return <div class={name}>{columns}</div>;
+    return <div class={`${this.componentName}__menu`}>{columns}</div>;
   },
 });

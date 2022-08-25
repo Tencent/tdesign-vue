@@ -1,5 +1,4 @@
-import { defineComponent, PropType, computed } from '@vue/composition-api';
-import dayjs from 'dayjs';
+import { defineComponent, PropType } from '@vue/composition-api';
 import { usePrefixClass } from '../../hooks/useConfig';
 import type { TdDatePickerProps } from '../type';
 
@@ -18,6 +17,7 @@ export default defineComponent({
       type: Object as PropType<TdDatePickerProps['timePickerProps']>,
       default: () => ({}),
     },
+    value: [String, Number, Array, Date],
     year: Number,
     month: Number,
     tableData: Array,
@@ -42,7 +42,7 @@ export default defineComponent({
       enableTimePicker: props.enableTimePicker,
     });
 
-    const defaultTimeValue = computed(() => dayjs().format(timeFormat));
+    const defaultTimeValue = '00:00:00';
 
     return { COMPONENT_NAME, defaultTimeValue, timeFormat };
   },
@@ -50,8 +50,8 @@ export default defineComponent({
     const { COMPONENT_NAME, defaultTimeValue, timeFormat } = this;
 
     return (
-      <div class={`${COMPONENT_NAME}--content`}>
-        <div class={`${COMPONENT_NAME}--${this.mode}`}>
+      <div class={`${COMPONENT_NAME}-content`}>
+        <div class={`${COMPONENT_NAME}-${this.mode}`}>
           <TDateHeader
             {...{
               props: {
@@ -60,7 +60,7 @@ export default defineComponent({
                 month: this.month,
                 onMonthChange: (val: number) => this.onMonthChange?.(val, { partial: this.partial }),
                 onYearChange: (val: number) => this.onYearChange?.(val, { partial: this.partial }),
-                onJumperClick: (val: number) => this.onJumperClick?.(val, { partial: this.partial }),
+                onJumperClick: ({ trigger }: { trigger: string }) => this.onJumperClick?.({ trigger, partial: this.partial }),
               },
             }}
           />
@@ -71,6 +71,8 @@ export default defineComponent({
                 mode: this.mode,
                 data: this.tableData,
                 time: this.time,
+                value: this.value,
+                format: this.format,
                 firstDayOfWeek: this.firstDayOfWeek,
                 onCellClick: (date: Date, { e }: { e: MouseEvent }) => this.onCellClick?.(date, { e, partial: this.partial }),
                 onCellMouseEnter: (date: Date) => this.onCellMouseEnter?.(date, { partial: this.partial }),
@@ -81,16 +83,16 @@ export default defineComponent({
         </div>
 
         {this.enableTimePicker && (
-          <div class={`${COMPONENT_NAME}--time`}>
-            <div class={`${COMPONENT_NAME}--time-viewer`}>{this.time || defaultTimeValue}</div>
+          <div class={`${COMPONENT_NAME}-time`}>
+            <div class={`${COMPONENT_NAME}-time-viewer`}>{this.time || defaultTimeValue}</div>
             <TTimePickerPanel
               {...{
+                key: this.partial,
                 props: {
-                  key: this.partial,
                   format: timeFormat,
-                  value: this.time,
+                  value: this.time || defaultTimeValue,
                   onChange: this.onTimePickerChange,
-                  showPanel: this.popupVisible,
+                  isShowPanel: this.popupVisible,
                   ...this.timePickerProps,
                 },
               }}

@@ -1,15 +1,23 @@
 <template>
-  <div>
+  <t-space>
     <t-select
       v-model="value"
       :bordered="false"
       style="width: 200px"
       placeholder="-请选择-"
       clearable
-      auto-width
       :options="options"
     />
-  </div>
+    <t-select
+      v-model="value2"
+      :bordered="false"
+      placeholder="-请选择-"
+      clearable
+      auto-width
+      :options="options"
+      multiple
+    />
+  </t-space>
 </template>
 
 <script>
@@ -31,6 +39,7 @@ export default {
         },
       ],
       value: '1',
+      value2: [],
     };
   },
 };

@@ -1,10 +1,12 @@
-import Vue, { PropType, VNode } from 'vue';
-import { prefix } from '../config';
+import { PropType, VNode } from 'vue';
 import { ClassName } from '../common';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-input-group`;
-export default Vue.extend({
+const classPrefixMixins = getClassPrefixMixins('input-group');
+
+export default mixins(classPrefixMixins).extend({
   name: 'TInputGroup',
   props: {
     separate: {
@@ -15,18 +17,14 @@ export default Vue.extend({
   computed: {
     classes(): ClassName {
       return [
-        name,
+        this.componentName,
         {
-          [`${name}--separate`]: this.separate,
+          [`${this.componentName}--separate`]: this.separate,
         },
       ];
     },
   },
   render(): VNode {
-    return (
-      <div class={this.classes}>
-        {renderTNodeJSX(this, 'default')}
-      </div>
-    );
+    return <div class={this.classes}>{renderTNodeJSX(this, 'default')}</div>;
   },
 });

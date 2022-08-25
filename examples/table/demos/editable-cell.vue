@@ -1,7 +1,14 @@
 <template>
   <div>
     <!-- 当前示例包含：输入框、单选、多选、日期 等场景 -->
-    <t-table row-key="key" :columns="columns" :data="data" bordered />
+    <t-table
+      row-key="key"
+      :columns="columns"
+      :data="data"
+      :editable-cell-state="editableCellState"
+      bordered
+      @row-validate="onRowValidate"
+    />
   </div>
 </template>
 
@@ -24,6 +31,13 @@ const initData = new Array(5).fill(null).map((_, i) => ({
   letters: [['A'], ['B', 'E'], ['C'], ['D', 'G', 'H']][i % 4],
   createTime: ['2021-11-01', '2021-12-01', '2022-01-01', '2022-02-01', '2022-03-01'][i % 4],
 }));
+
+const FRAMEWORK_OPTIONS = [
+  { label: 'Vue Framework', value: 'Vue' },
+  { label: 'React Framework', value: 'React' },
+  { label: 'Miniprogram Framework', value: 'Miniprogram' },
+  { label: 'Flutter Framework', value: 'Flutter' },
+];
 
 export default {
   name: 'TTableEditableCell',
@@ -65,22 +79,20 @@ export default {
               { required: true, message: '不能为空' },
               { max: 10, message: '字符数量不能超过 10', type: 'warning' },
             ],
+            // 默认是否为编辑状态
+            defaultEditable: true,
           },
         },
         {
           title: 'Framework',
           colKey: 'framework',
+          cell: (h, { row }) => FRAMEWORK_OPTIONS.find((t) => t.value === row.framework).label,
           edit: {
             component: Select,
             // props, 透传全部属性到 Select 组件
             props: {
               clearable: true,
-              options: [
-                { label: 'Vue', value: 'Vue' },
-                { label: 'React', value: 'React' },
-                { label: 'Miniprogram', value: 'Miniprogram' },
-                { label: 'Flutter', value: 'Flutter' },
-              ],
+              options: FRAMEWORK_OPTIONS,
             },
             // 除了点击非自身元素退出编辑态之外，还有哪些事件退出编辑态
             abortEditOnEvent: ['onChange'],
@@ -146,6 +158,16 @@ export default {
           },
         },
       ];
+    },
+  },
+
+  methods: {
+    editableCellState(cellParams) {
+      // 第一行不允许编辑
+      return cellParams.rowIndex !== 0;
+    },
+    onRowValidate(params) {
+      console.log('validate:', params);
     },
   },
 };

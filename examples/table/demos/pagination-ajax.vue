@@ -5,8 +5,10 @@
     :rowKey="rowKey"
     :loading="isLoading"
     :pagination="pagination"
+    :selected-row-keys="selectedRowKeys"
     @change="rehandleChange"
     @page-change="onPageChange"
+    @select-change="onSelectChange"
     bordered
     stripe
   >
@@ -19,7 +21,13 @@ export default {
     return {
       data: [],
       isLoading: false,
+      selectedRowKeys: [],
       columns: [
+        {
+          colKey: 'row-select',
+          type: 'multiple',
+          width: 64,
+        },
         {
           width: 200,
           colKey: 'name',
@@ -99,6 +107,11 @@ export default {
       this.pagination.current = pageInfo.current;
       this.pagination.pageSize = pageInfo.pageSize;
       await this.fetchData(pageInfo);
+    },
+
+    onSelectChange(value, { selectedRowData }) {
+      this.selectedRowKeys = value;
+      console.log(value, selectedRowData);
     },
   },
 };

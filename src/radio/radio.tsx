@@ -1,22 +1,21 @@
 import Vue, { VueConstructor, VNode } from 'vue';
-import { prefix } from '../config';
-import CLASSNAMES from '../utils/classnames';
 import { omit } from '../utils/helper';
 import { renderContent } from '../utils/render-tnode';
 import props from './props';
 import { RadioGroupInstance, RadioButtonInstance } from './instance';
 import { emitEvent } from '../utils/event';
 import { TdRadioProps } from './type';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-radio`;
-export const radioBtnName = `${prefix}-radio-button`;
+const classPrefixMixins = getClassPrefixMixins('radio');
 
 interface RadioInstance extends Vue {
   radioGroup: RadioGroupInstance;
   radioButton: RadioButtonInstance;
 }
 
-export default (Vue as VueConstructor<RadioInstance>).extend({
+export default mixins(Vue as VueConstructor<RadioInstance>, classPrefixMixins).extend({
   name: 'TRadio',
 
   inheritAttrs: false,
@@ -57,13 +56,13 @@ export default (Vue as VueConstructor<RadioInstance>).extend({
       inputProps.name = radioGroup.name;
     }
 
-    const prefixCls = radioButton ? radioBtnName : name;
+    const prefixCls = radioButton ? `${this.componentName}-button` : this.componentName;
 
     const inputClass = [
       `${prefixCls}`,
       {
-        [CLASSNAMES.STATUS.checked]: inputProps.checked,
-        [CLASSNAMES.STATUS.disabled]: inputProps.disabled,
+        [this.commonStatusClassName.checked]: inputProps.checked,
+        [this.commonStatusClassName.disabled]: inputProps.disabled,
       },
     ];
 

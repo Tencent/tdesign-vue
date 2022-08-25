@@ -225,35 +225,62 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
         <span
           class="t-color-picker__thumb"
           role="slider"
-          style="color: rgb(255, 0, 0); left: 248px; top: 0px;"
+          style="color: rgb(255, 0, 0); left: 230px; top: 0px;"
           tabindex="0"
         />
       </div>
       <div
-        class="t-color-picker__slider t-color-picker__hue"
+        class="t-color-picker__sliders-wrapper"
       >
         <div
-          class="t-color-picker__rail"
-        />
-        <span
-          class="t-color-picker__thumb"
-          role="slider"
-          style="left: 0px; color: rgb(255, 0, 0);"
-          tabindex="0"
-        />
-      </div>
-      <div
-        class="t-color-picker__slider t-color-picker__alpha t-color-picker--bg-alpha"
-      >
+          class="t-color-picker__sliders"
+        >
+          <div
+            class="t-color-picker__slider-wrapper t-color-picker__slider-wrapper--hue-type t-color-picker__hue"
+          >
+            <div
+              class="t-color-picker__slider"
+            >
+              <div
+                class="t-color-picker__rail"
+              />
+              <span
+                class="t-color-picker__thumb"
+                role="slider"
+                style="left: 0px; color: rgb(255, 0, 0);"
+                tabindex="0"
+              />
+            </div>
+          </div>
+          <div
+            class="t-color-picker__slider-wrapper t-color-picker__slider-wrapper--alpha-type t-color-picker__alpha t-color-picker--bg-alpha"
+          >
+            <div
+              class="t-color-picker__slider-padding"
+            />
+            <div
+              class="t-color-picker__slider"
+            >
+              <div
+                class="t-color-picker__rail"
+              />
+              <span
+                class="t-color-picker__thumb"
+                role="slider"
+                style="left: 186px; color: rgb(255, 0, 0);"
+                tabindex="0"
+              />
+            </div>
+          </div>
+        </div>
         <div
-          class="t-color-picker__rail"
-        />
-        <span
-          class="t-color-picker__thumb"
-          role="slider"
-          style="left: 248px; color: rgb(255, 0, 0);"
-          tabindex="0"
-        />
+          class="t-color-picker__sliders-preview t-color-picker--bg-alpha"
+        >
+          <span
+            class="t-color-picker__sliders-preview-inner"
+            style="background: rgb(255, 0, 0);"
+          />
+        </div>
       </div>
       <div
         class="t-color-picker__format"
@@ -262,13 +289,13 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
           class="t-color-picker__format--item"
         >
           <div
-            class="t-select__wrap"
+            class="t-select__wrap t-color-picker__format-mode-select"
           >
             <div
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input t-size-s t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -281,11 +308,6 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
                   type="text"
                   unselectable="on"
                 />
-                <span
-                  class="t-input__input-pre"
-                >
-                  RGB
-                </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
                 >
@@ -320,7 +342,7 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               style="flex: 1;"
             >
               <div
-                class="t-input-number t-size-m t-input-number--normal"
+                class="t-input-number t-size-s t-input-number--normal"
                 title="255"
               >
                 <div
@@ -328,7 +350,6 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -346,7 +367,7 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               style="flex: 1;"
             >
               <div
-                class="t-input-number t-size-m t-input-number--normal"
+                class="t-input-number t-size-s t-input-number--normal"
                 title="0"
               >
                 <div
@@ -354,7 +375,6 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -372,7 +392,7 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               style="flex: 1;"
             >
               <div
-                class="t-input-number t-size-m t-input-number--normal"
+                class="t-input-number t-size-s t-input-number--normal"
                 title="0"
               >
                 <div
@@ -380,7 +400,6 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -398,7 +417,7 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
               style="flex: 1.15;"
             >
               <div
-                class="t-input-number t-size-m t-input-number--normal"
+                class="t-input-number t-size-s t-input-number--normal"
                 title="100"
               >
                 <div
@@ -406,7 +425,6 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -1031,22 +1049,42 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
         <span
           class="t-color-picker__thumb"
           role="slider"
-          style="color: rgb(0, 82, 217); left: 248px; top: 21px;"
+          style="color: rgb(0, 82, 217); left: 230px; top: 25px;"
           tabindex="0"
         />
       </div>
       <div
-        class="t-color-picker__slider t-color-picker__hue"
+        class="t-color-picker__sliders-wrapper"
       >
         <div
-          class="t-color-picker__rail"
-        />
-        <span
-          class="t-color-picker__thumb"
-          role="slider"
-          style="left: 150px; color: rgb(0, 82, 217);"
-          tabindex="0"
-        />
+          class="t-color-picker__sliders"
+        >
+          <div
+            class="t-color-picker__slider-wrapper t-color-picker__slider-wrapper--hue-type t-color-picker__hue"
+          >
+            <div
+              class="t-color-picker__slider"
+            >
+              <div
+                class="t-color-picker__rail"
+              />
+              <span
+                class="t-color-picker__thumb"
+                role="slider"
+                style="left: 112px; color: rgb(0, 82, 217);"
+                tabindex="0"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="t-color-picker__sliders-preview t-color-picker--bg-alpha"
+        >
+          <span
+            class="t-color-picker__sliders-preview-inner"
+            style="background: rgb(0, 82, 217);"
+          />
+        </div>
       </div>
       <div
         class="t-color-picker__format"
@@ -1055,13 +1093,13 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
           class="t-color-picker__format--item"
         >
           <div
-            class="t-select__wrap"
+            class="t-select__wrap t-color-picker__format-mode-select"
           >
             <div
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input t-size-s t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -1074,11 +1112,6 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
                   type="text"
                   unselectable="on"
                 />
-                <span
-                  class="t-input__input-pre"
-                >
-                  RGB
-                </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
                 >
@@ -1113,7 +1146,7 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               style="flex: 1;"
             >
               <div
-                class="t-input-number t-size-m t-input-number--normal"
+                class="t-input-number t-size-s t-input-number--normal"
                 title="0"
               >
                 <div
@@ -1121,7 +1154,6 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -1139,7 +1171,7 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               style="flex: 1;"
             >
               <div
-                class="t-input-number t-size-m t-input-number--normal"
+                class="t-input-number t-size-s t-input-number--normal"
                 title="82"
               >
                 <div
@@ -1147,7 +1179,6 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -1165,7 +1196,7 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
               style="flex: 1;"
             >
               <div
-                class="t-input-number t-size-m t-input-number--normal"
+                class="t-input-number t-size-s t-input-number--normal"
                 title="217"
               >
                 <div
@@ -1173,7 +1204,6 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -1803,22 +1833,42 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
           <span
             class="t-color-picker__thumb"
             role="slider"
-            style="color: rgb(255, 0, 0); left: 248px; top: 0px;"
+            style="color: rgb(255, 0, 0); left: 230px; top: 0px;"
             tabindex="0"
           />
         </div>
         <div
-          class="t-color-picker__slider t-color-picker__hue"
+          class="t-color-picker__sliders-wrapper"
         >
           <div
-            class="t-color-picker__rail"
-          />
-          <span
-            class="t-color-picker__thumb"
-            role="slider"
-            style="left: 0px; color: rgb(255, 0, 0);"
-            tabindex="0"
-          />
+            class="t-color-picker__sliders"
+          >
+            <div
+              class="t-color-picker__slider-wrapper t-color-picker__slider-wrapper--hue-type t-color-picker__hue"
+            >
+              <div
+                class="t-color-picker__slider"
+              >
+                <div
+                  class="t-color-picker__rail"
+                />
+                <span
+                  class="t-color-picker__thumb"
+                  role="slider"
+                  style="left: 0px; color: rgb(255, 0, 0);"
+                  tabindex="0"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-color-picker__sliders-preview t-color-picker--bg-alpha"
+          >
+            <span
+              class="t-color-picker__sliders-preview-inner"
+              style="background: rgb(255, 0, 0);"
+            />
+          </div>
         </div>
         <div
           class="t-color-picker__format"
@@ -1827,13 +1877,13 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
             class="t-color-picker__format--item"
           >
             <div
-              class="t-select__wrap"
+              class="t-select__wrap t-color-picker__format-mode-select"
             >
               <div
                 class="t-input__wrap t-select"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                  class="t-input t-size-s t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -1846,11 +1896,6 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                     type="text"
                     unselectable="on"
                   />
-                  <span
-                    class="t-input__input-pre"
-                  >
-                    RGB
-                  </span>
                   <span
                     class="t-input__suffix t-input__suffix-icon"
                   >
@@ -1885,7 +1930,7 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 style="flex: 1;"
               >
                 <div
-                  class="t-input-number t-size-m t-input-number--normal"
+                  class="t-input-number t-size-s t-input-number--normal"
                   title="255"
                 >
                   <div
@@ -1893,7 +1938,6 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -1911,7 +1955,7 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 style="flex: 1;"
               >
                 <div
-                  class="t-input-number t-size-m t-input-number--normal"
+                  class="t-input-number t-size-s t-input-number--normal"
                   title="0"
                 >
                   <div
@@ -1919,7 +1963,6 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -1937,7 +1980,7 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 style="flex: 1;"
               >
                 <div
-                  class="t-input-number t-size-m t-input-number--normal"
+                  class="t-input-number t-size-s t-input-number--normal"
                   title="0"
                 >
                   <div
@@ -1945,7 +1988,6 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -2687,22 +2729,42 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
           <span
             class="t-color-picker__thumb"
             role="slider"
-            style="color: rgb(255, 0, 0); left: 248px; top: 0px;"
+            style="color: rgb(255, 0, 0); left: 230px; top: 0px;"
             tabindex="0"
           />
         </div>
         <div
-          class="t-color-picker__slider t-color-picker__hue"
+          class="t-color-picker__sliders-wrapper"
         >
           <div
-            class="t-color-picker__rail"
-          />
-          <span
-            class="t-color-picker__thumb"
-            role="slider"
-            style="left: 0px; color: rgb(255, 0, 0);"
-            tabindex="0"
-          />
+            class="t-color-picker__sliders"
+          >
+            <div
+              class="t-color-picker__slider-wrapper t-color-picker__slider-wrapper--hue-type t-color-picker__hue"
+            >
+              <div
+                class="t-color-picker__slider"
+              >
+                <div
+                  class="t-color-picker__rail"
+                />
+                <span
+                  class="t-color-picker__thumb"
+                  role="slider"
+                  style="left: 0px; color: rgb(255, 0, 0);"
+                  tabindex="0"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-color-picker__sliders-preview t-color-picker--bg-alpha"
+          >
+            <span
+              class="t-color-picker__sliders-preview-inner"
+              style="background: rgb(255, 0, 0);"
+            />
+          </div>
         </div>
         <div
           class="t-color-picker__format"
@@ -2711,13 +2773,13 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
             class="t-color-picker__format--item"
           >
             <div
-              class="t-select__wrap"
+              class="t-select__wrap t-color-picker__format-mode-select"
             >
               <div
                 class="t-input__wrap t-select"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                  class="t-input t-size-s t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -2730,11 +2792,6 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                     type="text"
                     unselectable="on"
                   />
-                  <span
-                    class="t-input__input-pre"
-                  >
-                    RGB
-                  </span>
                   <span
                     class="t-input__suffix t-input__suffix-icon"
                   >
@@ -2769,7 +2826,7 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 style="flex: 1;"
               >
                 <div
-                  class="t-input-number t-size-m t-input-number--normal"
+                  class="t-input-number t-size-s t-input-number--normal"
                   title="255"
                 >
                   <div
@@ -2777,7 +2834,6 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -2795,7 +2851,7 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 style="flex: 1;"
               >
                 <div
-                  class="t-input-number t-size-m t-input-number--normal"
+                  class="t-input-number t-size-s t-input-number--normal"
                   title="0"
                 >
                   <div
@@ -2803,7 +2859,6 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -2821,7 +2876,7 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                 style="flex: 1;"
               >
                 <div
-                  class="t-input-number t-size-m t-input-number--normal"
+                  class="t-input-number t-size-s t-input-number--normal"
                   title="0"
                 >
                   <div
@@ -2829,7 +2884,6 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -3467,22 +3521,42 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
         <span
           class="t-color-picker__thumb"
           role="slider"
-          style="color: rgb(0, 82, 217); left: 248px; top: 21px;"
+          style="color: rgb(0, 82, 217); left: 230px; top: 25px;"
           tabindex="0"
         />
       </div>
       <div
-        class="t-color-picker__slider t-color-picker__hue"
+        class="t-color-picker__sliders-wrapper"
       >
         <div
-          class="t-color-picker__rail"
-        />
-        <span
-          class="t-color-picker__thumb"
-          role="slider"
-          style="left: 150px; color: rgb(0, 82, 217);"
-          tabindex="0"
-        />
+          class="t-color-picker__sliders"
+        >
+          <div
+            class="t-color-picker__slider-wrapper t-color-picker__slider-wrapper--hue-type t-color-picker__hue"
+          >
+            <div
+              class="t-color-picker__slider"
+            >
+              <div
+                class="t-color-picker__rail"
+              />
+              <span
+                class="t-color-picker__thumb"
+                role="slider"
+                style="left: 112px; color: rgb(0, 82, 217);"
+                tabindex="0"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="t-color-picker__sliders-preview t-color-picker--bg-alpha"
+        >
+          <span
+            class="t-color-picker__sliders-preview-inner"
+            style="background: rgb(0, 82, 217);"
+          />
+        </div>
       </div>
       <div
         class="t-color-picker__format"
@@ -3491,13 +3565,13 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
           class="t-color-picker__format--item"
         >
           <div
-            class="t-select__wrap"
+            class="t-select__wrap t-color-picker__format-mode-select"
           >
             <div
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input t-size-s t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -3510,11 +3584,6 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
                   type="text"
                   unselectable="on"
                 />
-                <span
-                  class="t-input__input-pre"
-                >
-                  RGB
-                </span>
                 <span
                   class="t-input__suffix t-input__suffix-icon"
                 >
@@ -3549,7 +3618,7 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               style="flex: 1;"
             >
               <div
-                class="t-input-number t-size-m t-is-disabled t-input-number--normal"
+                class="t-input-number t-size-s t-is-disabled t-input-number--normal"
                 title="0"
               >
                 <div
@@ -3557,7 +3626,6 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-disabled t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -3576,7 +3644,7 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               style="flex: 1;"
             >
               <div
-                class="t-input-number t-size-m t-is-disabled t-input-number--normal"
+                class="t-input-number t-size-s t-is-disabled t-input-number--normal"
                 title="82"
               >
                 <div
@@ -3584,7 +3652,6 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-disabled t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -3603,7 +3670,7 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
               style="flex: 1;"
             >
               <div
-                class="t-input-number t-size-m t-is-disabled t-input-number--normal"
+                class="t-input-number t-size-s t-is-disabled t-input-number--normal"
                 title="217"
               >
                 <div
@@ -3611,7 +3678,6 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
                 >
                   <div
                     class="t-input t-size-m t-is-disabled t-is-default t-align-center"
-                    ref="refInputElem"
                   >
                     <input
                       autocomplete="off"
@@ -4242,22 +4308,42 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
           <span
             class="t-color-picker__thumb"
             role="slider"
-            style="color: rgb(0, 82, 217); left: 248px; top: 21px;"
+            style="color: rgb(0, 82, 217); left: 230px; top: 25px;"
             tabindex="0"
           />
         </div>
         <div
-          class="t-color-picker__slider t-color-picker__hue"
+          class="t-color-picker__sliders-wrapper"
         >
           <div
-            class="t-color-picker__rail"
-          />
-          <span
-            class="t-color-picker__thumb"
-            role="slider"
-            style="left: 150px; color: rgb(0, 82, 217);"
-            tabindex="0"
-          />
+            class="t-color-picker__sliders"
+          >
+            <div
+              class="t-color-picker__slider-wrapper t-color-picker__slider-wrapper--hue-type t-color-picker__hue"
+            >
+              <div
+                class="t-color-picker__slider"
+              >
+                <div
+                  class="t-color-picker__rail"
+                />
+                <span
+                  class="t-color-picker__thumb"
+                  role="slider"
+                  style="left: 112px; color: rgb(0, 82, 217);"
+                  tabindex="0"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-color-picker__sliders-preview t-color-picker--bg-alpha"
+          >
+            <span
+              class="t-color-picker__sliders-preview-inner"
+              style="background: rgb(0, 82, 217);"
+            />
+          </div>
         </div>
         <div
           class="t-color-picker__format"
@@ -4266,13 +4352,13 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
             class="t-color-picker__format--item"
           >
             <div
-              class="t-select__wrap"
+              class="t-select__wrap t-color-picker__format-mode-select"
             >
               <div
                 class="t-input__wrap t-select"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                  class="t-input t-size-s t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -4285,11 +4371,6 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                     type="text"
                     unselectable="on"
                   />
-                  <span
-                    class="t-input__input-pre"
-                  >
-                    RGB
-                  </span>
                   <span
                     class="t-input__suffix t-input__suffix-icon"
                   >
@@ -4324,7 +4405,7 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                 style="flex: 1;"
               >
                 <div
-                  class="t-input-number t-size-m t-input-number--normal"
+                  class="t-input-number t-size-s t-input-number--normal"
                   title="0"
                 >
                   <div
@@ -4332,7 +4413,6 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -4350,7 +4430,7 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                 style="flex: 1;"
               >
                 <div
-                  class="t-input-number t-size-m t-input-number--normal"
+                  class="t-input-number t-size-s t-input-number--normal"
                   title="82"
                 >
                   <div
@@ -4358,7 +4438,6 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -4376,7 +4455,7 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                 style="flex: 1;"
               >
                 <div
-                  class="t-input-number t-size-m t-input-number--normal"
+                  class="t-input-number t-size-s t-input-number--normal"
                   title="217"
                 >
                   <div
@@ -4384,7 +4463,6 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -4589,22 +4667,42 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
           <span
             class="t-color-picker__thumb"
             role="slider"
-            style="color: rgb(0, 82, 217); left: 248px; top: 21px;"
+            style="color: rgb(0, 82, 217); left: 230px; top: 25px;"
             tabindex="0"
           />
         </div>
         <div
-          class="t-color-picker__slider t-color-picker__hue"
+          class="t-color-picker__sliders-wrapper"
         >
           <div
-            class="t-color-picker__rail"
-          />
-          <span
-            class="t-color-picker__thumb"
-            role="slider"
-            style="left: 150px; color: rgb(0, 82, 217);"
-            tabindex="0"
-          />
+            class="t-color-picker__sliders"
+          >
+            <div
+              class="t-color-picker__slider-wrapper t-color-picker__slider-wrapper--hue-type t-color-picker__hue"
+            >
+              <div
+                class="t-color-picker__slider"
+              >
+                <div
+                  class="t-color-picker__rail"
+                />
+                <span
+                  class="t-color-picker__thumb"
+                  role="slider"
+                  style="left: 112px; color: rgb(0, 82, 217);"
+                  tabindex="0"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-color-picker__sliders-preview t-color-picker--bg-alpha"
+          >
+            <span
+              class="t-color-picker__sliders-preview-inner"
+              style="background: rgb(0, 82, 217);"
+            />
+          </div>
         </div>
         <div
           class="t-color-picker__format"
@@ -4613,13 +4711,13 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
             class="t-color-picker__format--item"
           >
             <div
-              class="t-select__wrap"
+              class="t-select__wrap t-color-picker__format-mode-select"
             >
               <div
                 class="t-input__wrap t-select"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                  class="t-input t-size-s t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -4632,11 +4730,6 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                     type="text"
                     unselectable="on"
                   />
-                  <span
-                    class="t-input__input-pre"
-                  >
-                    RGB
-                  </span>
                   <span
                     class="t-input__suffix t-input__suffix-icon"
                   >
@@ -4671,7 +4764,7 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                 style="flex: 1;"
               >
                 <div
-                  class="t-input-number t-size-m t-input-number--normal"
+                  class="t-input-number t-size-s t-input-number--normal"
                   title="0"
                 >
                   <div
@@ -4679,7 +4772,6 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -4697,7 +4789,7 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                 style="flex: 1;"
               >
                 <div
-                  class="t-input-number t-size-m t-input-number--normal"
+                  class="t-input-number t-size-s t-input-number--normal"
                   title="82"
                 >
                   <div
@@ -4705,7 +4797,6 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"
@@ -4723,7 +4814,7 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                 style="flex: 1;"
               >
                 <div
-                  class="t-input-number t-size-m t-input-number--normal"
+                  class="t-input-number t-size-s t-input-number--normal"
                   title="217"
                 >
                   <div
@@ -4731,7 +4822,6 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                   >
                     <div
                       class="t-input t-size-m t-is-default t-align-center"
-                      ref="refInputElem"
                     >
                       <input
                         autocomplete="off"

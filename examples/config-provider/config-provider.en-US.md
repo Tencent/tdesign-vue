@@ -1,7 +1,6 @@
 :: BASE_DOC ::
 
 ## API
-
 ### GlobalConfigProvider
 
 name | type | default | description | required
@@ -35,6 +34,7 @@ upload | Object | - | Upload global configs。Typescript：`UploadConfig` | N
 
 name | type | default | description | required
 -- | -- | -- | -- | --
+autocomplete | String | - | \- | N
 placeholder | String | - | \- | N
 
 ### PaginationConfig
@@ -116,8 +116,9 @@ now | String | - | now text | N
 placeholder | Object | - | Typescript：`{ date?: string; month?: string; year?: string }` | N
 preDecade | String | - | pre decade text | N
 preMonth | String | - | pre month text | N
-presets | Object | - | Typescript：`ConfigPresetDate` `interface ConfigPresetDate { [name: string]: DateConfigValue | (() => DateConfigValue) }` `type DateConfigValue = string | Date | Array<DateConfigValue>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
 preYear | String | - | pre year text | N
+presets | Object | - | Typescript：`ConfigPresetDate` `interface ConfigPresetDate { [name: string]: DateConfigValue | (() => DateConfigValue) }` `type DateConfigValue = string | Date | Array<DateConfigValue>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
+quarters | Array | - | Typescript：`string[]` | N
 rangeSeparator | String | - | range separator text | N
 selectDate | String | - | select date text | N
 selectTime | String | - | select time text | N
@@ -130,6 +131,8 @@ yearAriaLabel | String | - | year text | N
 name | type | default | description | required
 -- | -- | -- | -- | --
 cancel | Object | - | Typescript：`string | ButtonProps`，[Button API Documents](./button?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
+closeOnEscKeydown | Boolean | true | \- | N
+closeOnOverlayClick | Boolean | true | \- | N
 confirm | Object | - | Typescript：`string | ButtonProps` | N
 confirmBtnTheme | Object | - | Typescript：`{ default: string; info: string; warning: string; danger: string; success: string; }` | N
 
@@ -138,7 +141,10 @@ confirmBtnTheme | Object | - | Typescript：`{ default: string; info: string; wa
 name | type | default | description | required
 -- | -- | -- | -- | --
 cancel | String | - | Typescript：`string | ButtonProps` | N
+closeOnEscKeydown | Boolean | true | \- | N
+closeOnOverlayClick | Boolean | true | \- | N
 confirm | String | - | Typescript：`string | ButtonProps` | N
+size | String | small | \- | N
 
 ### PopconfirmConfig
 
@@ -179,6 +185,7 @@ name | type | default | description | required
 -- | -- | -- | -- | --
 clearIcon | Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 empty | String | - | \- | N
+filterable | Boolean | false | \- | N
 loadingText | String | - | \- | N
 placeholder | String | - | placeholder text | N
 

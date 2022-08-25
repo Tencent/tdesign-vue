@@ -1,27 +1,23 @@
 <template>
-  <div class='tdesign-demo-select-options'>
-
+  <t-space>
     <!-- 方式一：使用 options 自定义下拉选项内容 -->
     <t-select
       v-model="value1"
       :options="optionsData"
       :popupProps="{ overlayClassName: 'tdesign-demo-select__overlay-option' }"
       placeholder="请选择"
+      style="width: 300px"
     />
-    <br/><br/>
+    <br /><br />
 
     <!-- 方式二：使用插槽自定义下拉选项内容 -->
     <t-select
       v-model="value2"
       placeholder="请选择"
       :popupProps="{ overlayClassName: 'tdesign-demo-select__overlay-option' }"
+      style="width: 300px"
     >
-      <t-option
-        v-for="item in options"
-        :value="item.value"
-        :label="item.label"
-        :key="item.value"
-      >
+      <t-option v-for="item in options" :value="item.value" :label="item.label" :key="item.value">
         <div class="tdesign-demo__user-option">
           <img src="https://tdesign.gtimg.com/site/avatar.jpg" />
           <div class="tdesign-demo__user-option-info">
@@ -31,15 +27,15 @@
         </div>
       </t-option>
     </t-select>
-  </div>
+  </t-space>
 </template>
 
 <script lang="jsx">
 export default {
   data() {
     return {
-      value1: [],
-      value2: [],
+      value1: '',
+      value2: '',
       options: [
         { label: '用户一', value: '1', description: '这是一段用户描述信息，可自定义内容' },
         { label: '用户二', value: '2', description: '这是一段用户描述信息，可自定义内容' },
@@ -79,7 +75,6 @@ export default {
 </script>
 
 <style>
-
 .tdesign-demo__user-option {
   display: flex;
 }
@@ -101,5 +96,4 @@ export default {
 .tdesign-demo-select__overlay-option .t-select-option {
   height: 60px;
 }
-
 </style>

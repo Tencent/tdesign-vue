@@ -28,8 +28,13 @@ export interface TheadProps {
   columnResizeParams: {
     resizeLineRef: HTMLDivElement;
     resizeLineStyle: Object;
-    onColumnMouseover: (e: MouseEvent, col: BaseTableCol<TableRowData>) => void;
-    onColumnMousedown: (e: MouseEvent, col: BaseTableCol<TableRowData>) => void;
+    onColumnMouseover: (e: MouseEvent) => void;
+    onColumnMousedown: (
+      e: MouseEvent,
+      col: BaseTableCol<TableRowData>,
+      effectNextCol: BaseTableCol<TableRowData>,
+      effectPrevCol: BaseTableCol<TableRowData>,
+    ) => void;
   };
   resizable: Boolean;
 }
@@ -114,8 +119,13 @@ export default defineComponent({
           const innerTh = renderTitle(h, this.slots, col, index);
           const resizeColumnListener = this.resizable
             ? {
-              mousedown: (e: MouseEvent) => this.columnResizeParams?.onColumnMousedown?.(e, col),
-              mousemove: (e: MouseEvent) => this.columnResizeParams?.onColumnMouseover?.(e, col),
+              mousedown: (e: MouseEvent) => this.columnResizeParams?.onColumnMousedown?.(
+                e,
+                col,
+                index < row.length - 1 ? row[index + 1] : row[index - 1],
+                index > 0 ? row[index - 1] : row[index + 1],
+              ),
+              mousemove: (e: MouseEvent) => this.columnResizeParams?.onColumnMouseover?.(e),
             }
             : {};
           const content = isFunction(col.ellipsisTitle) ? col.ellipsisTitle(h, { col, colIndex: index }) : undefined;
@@ -133,8 +143,8 @@ export default defineComponent({
                   <TEllipsis
                     placement="bottom"
                     attach={this.theadRef ? () => this.theadRef : undefined}
-                    popupContent={content && (() => content)}
-                    popupProps={typeof col.ellipsisTitle === 'object' ? col.ellipsisTitle : undefined}
+                    tooltipContent={content && (() => content)}
+                    tooltipProps={typeof col.ellipsisTitle === 'object' ? col.ellipsisTitle : undefined}
                   >
                     {innerTh}
                   </TEllipsis>

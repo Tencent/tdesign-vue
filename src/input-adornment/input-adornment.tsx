@@ -1,11 +1,12 @@
-import Vue, { VNode, CreateElement } from 'vue';
-import { prefix } from '../config';
+import { VNode, CreateElement } from 'vue';
 import { JsxNode } from '../common';
 import props from './props';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-input-adornment`;
+const classPrefixMixins = getClassPrefixMixins('input-adornment');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TInputAdornment',
   props,
   methods: {
@@ -20,7 +21,7 @@ export default Vue.extend({
       } else {
         addonNode = null;
       }
-      return addonNode ? <span class={`${name}__${type}`}>{addonNode}</span> : addonNode;
+      return addonNode ? <span class={`${this.componentName}__${type}`}>{addonNode}</span> : addonNode;
     },
   },
   render(h: CreateElement) {
@@ -28,10 +29,10 @@ export default Vue.extend({
     const append = this.renderAddon(h, 'append', this.append);
     const defaultSlot: VNode[] = this.$scopedSlots.default ? this.$scopedSlots.default(null) : [null];
     const className = [
-      name,
+      this.componentName,
       {
-        [`${name}--prepend`]: prepend,
-        [`${name}--append`]: append,
+        [`${this.componentName}--prepend`]: prepend,
+        [`${this.componentName}--append`]: append,
       },
     ];
 
