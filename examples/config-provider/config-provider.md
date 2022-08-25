@@ -8,6 +8,7 @@ TDesign 的组件前缀统一为`t`，在一些业务场景中，有需要改变
 ```js
 import Vue from 'vue'
 import TDesign from 'tdesign-vue/esm'
+import 'tdesign-vue/esm/style/index.js'
 
 Vue.use(TDesign);
 
