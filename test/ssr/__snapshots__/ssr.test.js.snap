@@ -6869,7 +6869,7 @@ exports[`ssr snapshot test renders ./examples/form/demos/login.vue correctly 1`]
           </div>
         </div>
       </div>
-      <div class="t-form__item t-form-item__" style="margin-left:100px;">
+      <div class="t-form__item t-form-item__">
         <div class="t-form__controls">
           <div class="t-form__controls-content"><button type="submit" class="t-button t-size-m t-button--variant-base t-button--theme-primary t-size-full-width"><span class="t-button__text">登录</span></button></div>
         </div>

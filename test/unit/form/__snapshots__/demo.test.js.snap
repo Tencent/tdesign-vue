@@ -3169,7 +3169,6 @@ exports[`Form Form loginVue demo works fine 1`] = `
        
       <div
         class="t-form__item t-form-item__"
-        style="margin-left: 100px;"
       >
         <div
           class="t-form__controls"

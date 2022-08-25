@@ -11,7 +11,7 @@
           <lock-on-icon slot="prefix-icon"></lock-on-icon>
         </t-input>
       </t-form-item>
-      <t-form-item style="margin-left: 100px">
+      <t-form-item>
         <t-button theme="primary" type="submit" block>登录</t-button>
       </t-form-item>
     </t-form>
