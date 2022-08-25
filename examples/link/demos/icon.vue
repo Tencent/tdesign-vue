@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-row">
+  <t-space>
     <t-link theme="default" :prefix-icon="renderPrefixIcon" :onClick="clickLink"> 跳转链接 </t-link>
     <t-link theme="primary" underline href="https://tdesign.tencent.com/" target="_self">
       <link-icon slot="prefix-icon"></link-icon>
@@ -10,7 +10,7 @@
       跳转链接
     </t-link>
     <t-link theme="warning" :suffixIcon="renderSuffixIcon" disabled> 跳转链接 </t-link>
-  </div>
+  </t-space>
 </template>
 
 <script lang="jsx">
