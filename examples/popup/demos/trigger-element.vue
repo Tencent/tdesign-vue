@@ -1,31 +1,30 @@
 <template>
-  <div>
+  <t-space direction="vertical">
     <!-- 总共四种自定义触发元素的方式 -->
-    <div>
-      <div class="t-popup-demo-base-item">
+    <t-space>
+      <t-space>
         <t-popup content="我的触发元素通过默认插槽渲染">
           <t-button variant="outline">默认插槽定义触发元素</t-button>
         </t-popup>
-      </div>
-      <div class="t-popup-demo-base-item">
+      </t-space>
+      <t-space>
         <t-popup content="我的触发元素通过插槽(triggerElement)渲染">
           <t-button variant="outline" slot="triggerElement">具名插槽定义触发元素</t-button>
         </t-popup>
-      </div>
-    </div>
-    <br />
-    <div>
-      <div class="t-popup-demo-base-item">
+      </t-space>
+    </t-space>
+    <t-space>
+      <t-space>
         <t-popup content="我的触发元素通过渲染函数 default 渲染" :default="renderTriggerElement1"></t-popup>
-      </div>
-      <div class="t-popup-demo-base-item">
+      </t-space>
+      <t-space>
         <t-popup
           content="我的触发元素通过渲染函数 triggerElement 渲染"
           :triggerElement="renderTriggerElement2"
         ></t-popup>
-      </div>
-    </div>
-  </div>
+      </t-space>
+    </t-space>
+  </t-space>
 </template>
 
 <script lang="jsx">
