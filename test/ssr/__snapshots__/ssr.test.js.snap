@@ -50,9 +50,7 @@ exports[`ssr snapshot test renders ./src/alert/_example/base.vue correctly 1`] =
       </svg></div>
     <div class="t-alert__content">
       <div class="t-alert__message">
-        <div class="t-alert__description">
-          这是一条警示信息
-        </div>
+        <div class="t-alert__description"> 这是一条警示信息 </div>
       </div>
     </div>
   </div>
@@ -62,9 +60,7 @@ exports[`ssr snapshot test renders ./src/alert/_example/base.vue correctly 1`] =
       </svg></div>
     <div class="t-alert__content">
       <div class="t-alert__message">
-        <div class="t-alert__description">
-          这是一条失败信息提示
-        </div>
+        <div class="t-alert__description"> 这是一条失败信息提示 </div>
       </div>
     </div>
   </div>
@@ -117,9 +113,7 @@ exports[`ssr snapshot test renders ./src/alert/_example/close.vue correctly 1`] 
         <div class="t-alert__description">高危操作/出错信息提示</div>
       </div>
     </div>
-    <div class="t-alert__close">
-      Slot Close
-    </div>
+    <div class="t-alert__close"> Slot Close </div>
   </div>
 </div>
 `;
@@ -1994,9 +1988,7 @@ exports[`ssr snapshot test renders ./src/calendar/_example/head.vue correctly 1`
 <div class="t-calendar t-calendar--full">
   <div class="t-calendar__control">
     <div class="t-calendar__title">
-      <div>
-        🗓 TDesign开发计划
-      </div>
+      <div>🗓 TDesign开发计划</div>
     </div>
     <div class="t-calendar__control-section">
       <div class="t-calendar__control-section-cell">
@@ -3241,11 +3233,9 @@ exports[`ssr snapshot test renders ./src/checkbox/_example/group.vue correctly 1
 
 exports[`ssr snapshot test renders ./src/checkbox/_example/link.vue correctly 1`] = `
 <div>
-  <div class="demo-checkbox-row-desc">
-    选中值: [
+  <div class="demo-checkbox-row-desc">选中值: [
     &quot;选项二&quot;
-    ]
-  </div>
+    ]</div>
   <div class="demo-checkbox-row">
     <div class="t-checkbox-group"><label class="t-checkbox"><input type="checkbox" name="city" value="选项一" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">选项一</span></label><label class="t-checkbox t-is-checked"><input type="checkbox" name="city" value="选项二" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">选项二</span></label><label class="t-checkbox"><input type="checkbox" name="city" value="选项三" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">选项三</span></label></div>
   </div>
@@ -8924,40 +8914,31 @@ exports[`ssr snapshot test renders ./src/layout/_example/aside.vue correctly 1`]
           <ul class="t-menu t-menu--scroll narrow-scrollbar">
             <li class="t-menu__item t-is-active"><svg class="t-icon t-icon-dashboard">
                 <use href="#t-icon-dashboard"></use>
-              </svg><span class="t-menu__content">仪表盘
-        </span></li>
+              </svg><span class="t-menu__content">仪表盘 </span></li>
             <li class="t-menu__item"><svg class="t-icon t-icon-server">
                 <use href="#t-icon-server"></use>
-              </svg><span class="t-menu__content">资源列表
-        </span></li>
+              </svg><span class="t-menu__content">资源列表 </span></li>
             <li class="t-menu__item"><svg class="t-icon t-icon-root-list">
                 <use href="#t-icon-root-list"></use>
-              </svg><span class="t-menu__content">根目录
-        </span></li>
+              </svg><span class="t-menu__content">根目录 </span></li>
             <li class="t-menu__item"><svg class="t-icon t-icon-control-platform">
                 <use href="#t-icon-control-platform"></use>
-              </svg><span class="t-menu__content">调度平台
-        </span></li>
+              </svg><span class="t-menu__content">调度平台 </span></li>
             <li class="t-menu__item"><svg class="t-icon t-icon-precise-monitor">
                 <use href="#t-icon-precise-monitor"></use>
-              </svg><span class="t-menu__content">精准监控
-        </span></li>
+              </svg><span class="t-menu__content">精准监控 </span></li>
             <li class="t-menu__item"><svg class="t-icon t-icon-mail">
                 <use href="#t-icon-mail"></use>
-              </svg><span class="t-menu__content">消息区
-        </span></li>
+              </svg><span class="t-menu__content">消息区 </span></li>
             <li class="t-menu__item"><svg class="t-icon t-icon-user-circle">
                 <use href="#t-icon-user-circle"></use>
-              </svg><span class="t-menu__content">个人中心
-        </span></li>
+              </svg><span class="t-menu__content">个人中心 </span></li>
             <li class="t-menu__item"><svg class="t-icon t-icon-play-circle">
                 <use href="#t-icon-play-circle"></use>
-              </svg><span class="t-menu__content">视频区
-        </span></li>
+              </svg><span class="t-menu__content">视频区 </span></li>
             <li class="t-menu__item"><svg class="t-icon t-icon-edit-1">
                 <use href="#t-icon-edit-1"></use>
-              </svg><span class="t-menu__content">资源编辑
-        </span></li>
+              </svg><span class="t-menu__content">资源编辑 </span></li>
           </ul>
         </div>
       </div>
@@ -9044,40 +9025,31 @@ exports[`ssr snapshot test renders ./src/layout/_example/combine.vue correctly 1
             <ul class="t-menu t-menu--scroll narrow-scrollbar">
               <li class="t-menu__item t-is-active"><svg class="t-icon t-icon-dashboard">
                   <use href="#t-icon-dashboard"></use>
-                </svg><span class="t-menu__content">仪表盘
-          </span></li>
+                </svg><span class="t-menu__content">仪表盘 </span></li>
               <li class="t-menu__item"><svg class="t-icon t-icon-server">
                   <use href="#t-icon-server"></use>
-                </svg><span class="t-menu__content">资源列表
-          </span></li>
+                </svg><span class="t-menu__content">资源列表 </span></li>
               <li class="t-menu__item"><svg class="t-icon t-icon-root-list">
                   <use href="#t-icon-root-list"></use>
-                </svg><span class="t-menu__content">根目录
-          </span></li>
+                </svg><span class="t-menu__content">根目录 </span></li>
               <li class="t-menu__item"><svg class="t-icon t-icon-control-platform">
                   <use href="#t-icon-control-platform"></use>
-                </svg><span class="t-menu__content">调度平台
-          </span></li>
+                </svg><span class="t-menu__content">调度平台 </span></li>
               <li class="t-menu__item"><svg class="t-icon t-icon-precise-monitor">
                   <use href="#t-icon-precise-monitor"></use>
-                </svg><span class="t-menu__content">精准监控
-          </span></li>
+                </svg><span class="t-menu__content">精准监控 </span></li>
               <li class="t-menu__item"><svg class="t-icon t-icon-mail">
                   <use href="#t-icon-mail"></use>
-                </svg><span class="t-menu__content">消息区
-          </span></li>
+                </svg><span class="t-menu__content">消息区 </span></li>
               <li class="t-menu__item"><svg class="t-icon t-icon-user-circle">
                   <use href="#t-icon-user-circle"></use>
-                </svg><span class="t-menu__content">个人中心
-          </span></li>
+                </svg><span class="t-menu__content">个人中心 </span></li>
               <li class="t-menu__item"><svg class="t-icon t-icon-play-circle">
                   <use href="#t-icon-play-circle"></use>
-                </svg><span class="t-menu__content">视频区
-          </span></li>
+                </svg><span class="t-menu__content">视频区 </span></li>
               <li class="t-menu__item"><svg class="t-icon t-icon-edit-1">
                   <use href="#t-icon-edit-1"></use>
-                </svg><span class="t-menu__content">资源编辑
-          </span></li>
+                </svg><span class="t-menu__content">资源编辑 </span></li>
             </ul>
           </div>
         </div>
@@ -9119,9 +9091,7 @@ exports[`ssr snapshot test renders ./src/layout/_example/top.vue correctly 1`] =
     <main class="t-layout__content">
       <div>Content</div>
     </main>
-    <footer class="t-layout__footer">
-      Copyright @ 2019-2021 Tencent. All Rights Reserved
-    </footer>
+    <footer class="t-layout__footer"> Copyright @ 2019-2021 Tencent. All Rights Reserved </footer>
   </section>
 </div>
 `;
@@ -10109,9 +10079,7 @@ exports[`ssr snapshot test renders ./src/menu/_example/group-side.vue correctly 
     <ul class="t-menu t-menu--scroll narrow-scrollbar">
       <div class="t-menu-group">
         <div class="t-menu-group__title">分组类型1</div>
-        <li class="t-menu__item t-menu__item--plain"><span class="t-menu__content">
-      菜单内容
-    </span></li>
+        <li class="t-menu__item t-menu__item--plain"><span class="t-menu__content"> 菜单内容 </span></li>
       </div>
       <div class="t-menu-group">
         <div class="t-menu-group__title">分组类型2</div>
@@ -10785,7 +10753,9 @@ exports[`ssr snapshot test renders ./src/message/_example/close.vue correctly 1`
 <div class="t-demo-message">
   <div class="t-message t-is-info t-is-closable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled">
       <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-    </svg>点击关闭按钮触发事件 close-btn-click <span class="t-message__close"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div>
+    </svg>点击关闭按钮触发事件 close-btn-click
+    <span class="t-message__close"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span>
+  </div>
   <div class="t-message t-is-info t-is-closable"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled">
       <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
     </svg>自定义关闭按钮（文字）<span class="t-message__close">关闭</span></div>
@@ -10876,11 +10846,7 @@ exports[`ssr snapshot test renders ./src/message/_example/plugin.vue correctly 1
 </div>
 `;
 
-exports[`ssr snapshot test renders ./src/message/_example/toggle.vue correctly 1`] = `
-<div id="t-demo-message-toggle"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">
-    自由控制关闭时机（打开）
-  </span></button></div>
-`;
+exports[`ssr snapshot test renders ./src/message/_example/toggle.vue correctly 1`] = `<div id="t-demo-message-toggle"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> 自由控制关闭时机（打开） </span></button></div>`;
 
 exports[`ssr snapshot test renders ./src/message/_example/type.vue correctly 1`] = `
 <div class="t-demo-message">
@@ -11986,9 +11952,7 @@ exports[`ssr snapshot test renders ./src/progress/_example/custom.vue correctly 
 
 exports[`ssr snapshot test renders ./src/progress/_example/line.vue correctly 1`] = `
 <div>
-  <h3>
-    默认在线形外展示进度和状态
-  </h3>
+  <h3>默认在线形外展示进度和状态</h3>
   <div>
     <div class="t-progress-domo-margin">默认样式</div>
     <div class="t-progress">
@@ -12051,9 +12015,7 @@ exports[`ssr snapshot test renders ./src/progress/_example/line.vue correctly 1`
       </div>
     </div>
   </div>
-  <h3>
-    可以在线形内展示进度信息
-  </h3>
+  <h3>可以在线形内展示进度信息</h3>
   <div>
     <div class="t-progress-domo-margin">默认样式</div>
     <div class="t-progress">
@@ -20823,7 +20785,9 @@ exports[`ssr snapshot test renders ./src/tree/_example/lazy.vue correctly 1`] = 
 <div class="tdesign-tree-demo">
   <h3 class="title">数据延迟加载</h3>
   <p class="tips">默认为点击加载数据。</p>
-  <p class="tips">valueMode 默认为 'onlyLeaf'。选中父节点时，子节点由于未加载，无法更新和获取选中状态，导致无法更新父节点的状态。</p>
+  <p class="tips">
+    valueMode 默认为 'onlyLeaf'。选中父节点时，子节点由于未加载，无法更新和获取选中状态，导致无法更新父节点的状态。
+  </p>
   <p class="tips">所以使用延迟加载时，推荐 valueMode 设置为 'all' 或者 'parentFirst'。</p>
   <div class="operations">
     <form class="t-form">
@@ -21583,8 +21547,7 @@ exports[`ssr snapshot test renders ./src/upload/_example/custom-drag.vue correct
 <div class="tdesign-demo-upload t-upload"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-cloud-upload">
       <path fill="currentColor" d="M4.73 6.26l-.71.09A2.32 2.32 0 002 8.67c0 1.2.89 2.18 2 2.31v1a3.31 3.31 0 01-3-3.31 3.32 3.32 0 012.9-3.32A4.2 4.2 0 018 2c2 0 3.69 1.43 4.1 3.35 1.63.2 2.9 1.6 2.9 3.32a3.31 3.31 0 01-3 3.32v-1c1.11-.14 2-1.11 2-2.32 0-1.22-.9-2.2-2.02-2.32l-.71-.09-.15-.7A3.2 3.2 0 008 3a3.2 3.2 0 00-3.12 2.56l-.15.7z" fill-opacity="0.9"></path>
       <path fill="currentColor" d="M6.14 10.72L7.5 9.39l.03 5.12 1.01-.01-.03-5.1 1.37 1.34.72-.7-2.26-2.2a.5.5 0 00-.7 0l-2.22 2.18.72.7z" fill-opacity="0.9"></path>
-    </svg><span class="t-button__text">点击上传
-  </span></button> <br><br>
+    </svg><span class="t-button__text">点击上传 </span></button> <br><br>
   <div class="t-upload"><input type="file" accept="" hidden="hidden">
     <div class="t-upload__dragger t-upload__dragger-center">
       <div class="t-upload__trigger"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">自定义拖拽区域</span></button>
