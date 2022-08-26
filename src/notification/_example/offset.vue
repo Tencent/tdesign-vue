@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <t-space :size="10">
     <t-button variant="outline" @click="showInOffset">偏移的信息</t-button>
     <t-button variant="outline" @click="showInOffset2">偏移的信息</t-button>
-  </div>
+  </t-space>
 </template>
 
 <script>
@@ -34,9 +34,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.t-button + .t-button {
-  margin-left: 10px;
-}
-</style>

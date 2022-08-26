@@ -1,15 +1,20 @@
 <template>
-  <div>
-    <div class="t-message-offset">
+  <t-space direction="vertical">
+    <t-space direction="vertical">
       <t-input placeholder="请输入横向偏移量" v-model="offsetX"></t-input>
       <t-input placeholder="请输入纵向偏移量" v-model="offsetY"></t-input>
-    </div>
-    <t-button variant="outline" @click="$notify.info(infoList[0])">左上角</t-button>
-    <t-button variant="outline" @click="$notify.info(infoList[1])">右上角</t-button>
-    <br /><br />
-    <t-button variant="outline" @click="$notify.info(infoList[2])">左下角</t-button>
-    <t-button variant="outline" @click="$notify.info(infoList[3])">右下角</t-button>
-  </div>
+    </t-space>
+    <t-space :size="30">
+      <t-space direction="vertical" :size="30">
+        <t-button variant="outline" @click="$notify.info(infoList[0])">左上角</t-button>
+        <t-button variant="outline" @click="$notify.info(infoList[2])">左下角</t-button>
+      </t-space>
+      <t-space direction="vertical" :size="30">
+        <t-button variant="outline" @click="$notify.info(infoList[1])">右上角</t-button>
+        <t-button variant="outline" @click="$notify.info(infoList[3])">右下角</t-button>
+      </t-space>
+    </t-space>
+  </t-space>
 </template>
 
 <script>
@@ -38,21 +43,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.t-button {
-  margin-right: 16px;
-  margin-bottom: 16px;
-}
-
-.t-message-offset .t-input {
-  width: 130px;
-  display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 36px;
-}
-
-.t-button + .t-button {
-  margin-left: 10px;
-}
-</style>

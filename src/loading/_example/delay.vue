@@ -1,21 +1,21 @@
 <template>
-  <div class="tdesign-demo-block-column">
-    <div>
+  <t-space direction="vertical">
+    <t-space>
       <t-loading v-if="loading" :delay="delay" size="small"></t-loading>
       <div v-if="data">loading 作为独立元素：{{ data }}</div>
-    </div>
+    </t-space>
 
-    <div class="wrap">
-      <t-loading :loading="loading" :delay="delay" size="small">
-        <div class="wrap">{{ data ? `loading 作为包裹元素：${data}` : '' }}</div>
+    <div>
+      <t-loading :loading="loading" :delay="delay" size="small" showOverlay>
+        <div>{{ data ? `loading 作为包裹元素：${data}` : '' }}</div>
       </t-loading>
     </div>
 
-    <div class="tdesign-demo-block-row">
+    <t-space>
       <t-button @click="loadingData" size="small">快速重新加载数据（无loading）</t-button>
       <t-button @click="() => loadingData(1000)" size="small">慢速重新加载数据</t-button>
-    </div>
-  </div>
+    </t-space>
+  </t-space>
 </template>
 <script>
 export default {

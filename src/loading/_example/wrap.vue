@@ -1,18 +1,19 @@
 <template>
-  <div class="loading-wrap-demo">
-    <t-loading size="small" :loading="loading" showOverlay>
-      <div>this is loading component</div>
-      <div>this is loading component</div>
-      <div>this is loading component</div>
-      <div>this is loading component</div>
-      <div>this is loading component</div>
-    </t-loading>
-    <br />
-    <div>
+  <t-space size="large" direction="vertical">
+    <t-space>
+      <t-loading size="small" :loading="loading" showOverlay>
+        <div>this is loading component</div>
+        <div>this is loading component</div>
+        <div>this is loading component</div>
+        <div>this is loading component</div>
+        <div>this is loading component</div>
+      </t-loading>
+    </t-space>
+    <t-space :size="24">
       <t-button @click="loading = true" size="small">加载中</t-button>
       <t-button @click="loading = false" size="small">加载完成</t-button>
-    </div>
-  </div>
+    </t-space>
+  </t-space>
 </template>
 
 <script>
@@ -24,11 +25,4 @@ export default {
   },
 };
 </script>
-<style scoped>
-.loading-wrap-demo {
-  width: 170px;
-}
-.loading-wrap-demo .t-button + .t-button {
-  margin-left: 24px;
-}
-</style>
+<style scoped></style>

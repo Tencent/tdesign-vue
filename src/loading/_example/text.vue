@@ -1,5 +1,5 @@
 <template>
-  <div class="t-loading-demo">
+  <t-space :size="100">
     <!-- 使用 props 实现自定义 -->
     <t-loading text="静态文字加载中..." :indicator="false"></t-loading>
     <!-- 使用 props 实现自定义 -->
@@ -8,7 +8,7 @@
       <!-- 使用插槽实现自定义 -->
       <template #text>插槽文字加载中...</template>
     </t-loading>
-  </div>
+  </t-space>
 </template>
 <script lang="jsx">
 export default {
@@ -20,9 +20,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.t-loading-demo .t-loading + .t-loading {
-  margin-left: 100px;
-}
-</style>
