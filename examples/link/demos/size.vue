@@ -1,6 +1,6 @@
 <template>
-  <div class="tdesign-demo-block-column">
-    <div class="tdesign-demo-block-row">
+  <t-space direction="vertical">
+    <t-space>
       <t-link theme="default" size="small"> 跳转链接 </t-link>
       <t-link theme="primary" size="small"> 跳转链接 </t-link>
       <t-link theme="danger" size="small"> 跳转链接 </t-link>
@@ -9,8 +9,8 @@
         <jump-icon slot="suffix-icon" />
         跳转链接
       </t-link>
-    </div>
-    <div class="tdesign-demo-block-row">
+    </t-space>
+    <t-space>
       <t-link theme="default" size="medium"> 跳转链接 </t-link>
       <t-link theme="primary" size="medium"> 跳转链接 </t-link>
       <t-link theme="danger" size="medium"> 跳转链接 </t-link>
@@ -19,8 +19,8 @@
         <jump-icon slot="suffix-icon" />
         跳转链接
       </t-link>
-    </div>
-    <div class="tdesign-demo-block-row">
+    </t-space>
+    <t-space>
       <t-link theme="default" size="large"> 跳转链接 </t-link>
       <t-link theme="primary" size="large"> 跳转链接 </t-link>
       <t-link theme="danger" size="large"> 跳转链接 </t-link>
@@ -29,8 +29,8 @@
         <jump-icon slot="suffix-icon" />
         跳转链接
       </t-link>
-    </div>
-  </div>
+    </t-space>
+  </t-space>
 </template>
 
 <script lang="jsx">

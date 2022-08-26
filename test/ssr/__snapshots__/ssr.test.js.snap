@@ -5011,10 +5011,22 @@ exports[`ssr snapshot test renders ./examples/config-provider/demos/dialog.vue c
 `;
 
 exports[`ssr snapshot test renders ./examples/config-provider/demos/global.vue correctly 1`] = `
-<div>
-  <div>使用<code>t-config-provider</code>包裹业务功能的最外层组件，点击下方图标查看示例代码</div> <br>
-  <div>英文语言包引入路径：<code>import enConfig from 'tdesign-vue/es/locale/en_US';</code></div> <br>
-  <div>中文语言包引入路径：<code>import enConfig from 'tdesign-vue/es/locale/zh_CN';</code></div>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <p>使用<code>t-config-provider</code>包裹业务功能的最外层组件，点击下方图标查看示例代码</p>
+  </div>
+  <div class="t-space-item">
+    <p>英文语言包引入路径：<code>import enConfig from 'tdesign-vue/es/locale/en_US';</code></p>
+  </div>
+  <div class="t-space-item">
+    <p>中文语言包引入路径：<code>import zhConfig from 'tdesign-vue/es/locale/zh_CN';</code></p>
+  </div>
+  <div class="t-space-item">
+    <p>日文语言包引入路径：<code>import jpConfig from 'tdesign-react/es/locale/ja_JP';</code></p>
+  </div>
+  <div class="t-space-item">
+    <p>韩文语言包引入路径：<code>import koConfig from 'tdesign-react/es/locale/ko_KR';</code></p>
+  </div>
 </div>
 `;
 
@@ -8979,47 +8991,126 @@ exports[`ssr snapshot test renders ./examples/layout/demos/top.vue correctly 1`]
 </div>
 `;
 
-exports[`ssr snapshot test renders ./examples/link/demos/base.vue correctly 1`] = `<div><a target="" class="t-link t-size-m t-link--theme-primary t-link--hover-underline">跳转链接</a></div>`;
+exports[`ssr snapshot test renders ./examples/link/demos/base.vue correctly 1`] = `
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-primary t-link--hover-underline">跳转链接</a></div>
+</div>
+`;
 
 exports[`ssr snapshot test renders ./examples/link/demos/disabled.vue correctly 1`] = `
-<div class="tdesign-demo-block-row"><a target="" class="t-link t-size-m t-link--theme-default t-is-disabled"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-primary t-is-disabled t-is-underline"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-danger t-is-disabled"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-warning t-is-disabled"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-success t-is-disabled">
-    跳转链接
-    <span class="t-link__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-jump"><path fill="currentColor" d="M2.3 13.7a1 1 0 00.7.3h10a1 1 0 001-1V8.5h-1V13H3V3h4.5V2H3a1 1 0 00-1 1v10c0 .27.1.52.3.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M9 3V2h4.5c.28 0 .5.22.5.5V7h-1V3.7L8.7 8 8 7.3 12.3 3H9z" fill-opacity="0.9"></path></svg></span></a></div>
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-default t-is-disabled"> 跳转链接 </a></div>
+  <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-primary t-is-disabled t-is-underline"> 跳转链接 </a></div>
+  <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-danger t-is-disabled"> 跳转链接 </a></div>
+  <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-warning t-is-disabled"> 跳转链接 </a></div>
+  <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-success t-is-disabled">
+      跳转链接
+      <span class="t-link__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-jump"><path fill="currentColor" d="M2.3 13.7a1 1 0 00.7.3h10a1 1 0 001-1V8.5h-1V13H3V3h4.5V2H3a1 1 0 00-1 1v10c0 .27.1.52.3.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M9 3V2h4.5c.28 0 .5.22.5.5V7h-1V3.7L8.7 8 8 7.3 12.3 3H9z" fill-opacity="0.9"></path></svg></span></a></div>
+</div>
 `;
 
 exports[`ssr snapshot test renders ./examples/link/demos/hover.vue correctly 1`] = `
-<div class="tdesign-demo-block-column">
-  <div class="tdesign-demo-block-row"><a target="" class="t-link t-size-m t-link--theme-default t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-primary t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-danger t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-warning t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-success t-link--hover-underline"> 跳转链接 </a></div>
-  <div class="tdesign-demo-block-row"><a target="" class="t-link t-size-m t-link--theme-default t-link--hover-color"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-primary t-link--hover-color"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-danger t-link--hover-color"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-warning t-link--hover-color"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-success t-link--hover-color"> 跳转链接 </a></div>
-  <div class="tdesign-demo-block-row"><a target="" class="t-link t-size-m t-link--theme-default t-is-underline t-link--hover-color"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-primary t-is-underline t-link--hover-color"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-danger t-is-underline t-link--hover-color"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-warning t-is-underline t-link--hover-color"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-success t-is-underline t-link--hover-color"> 跳转链接 </a></div>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-default t-link--hover-underline"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-primary t-link--hover-underline"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-danger t-link--hover-underline"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-warning t-link--hover-underline"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-success t-link--hover-underline"> 跳转链接 </a></div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-default t-link--hover-color"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-primary t-link--hover-color"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-danger t-link--hover-color"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-warning t-link--hover-color"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-success t-link--hover-color"> 跳转链接 </a></div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-default t-is-underline t-link--hover-color"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-primary t-is-underline t-link--hover-color"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-danger t-is-underline t-link--hover-color"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-warning t-is-underline t-link--hover-color"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-success t-is-underline t-link--hover-color"> 跳转链接 </a></div>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/link/demos/icon.vue correctly 1`] = `
-<div class="tdesign-demo-block-row"><a target="" class="t-link t-size-m t-link--theme-default t-link--hover-underline"><span class="t-link__prefix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-link"><path fill="currentColor" d="M6.23 11.89l2.12-2.12.71.7-2.12 2.13A2.5 2.5 0 013.4 9.06l2.13-2.12.7.7-2.12 2.13a1.5 1.5 0 002.12 2.12zM10.47 9.06l-.7-.7 2.12-2.13a1.5 1.5 0 10-2.12-2.12L7.65 6.23l-.71-.7L9.06 3.4a2.5 2.5 0 013.54 3.54l-2.13 2.12z" fill-opacity="0.9"></path><path fill="currentColor" d="M9.06 6.23L6.23 9.06l.71.7 2.83-2.82-.7-.7z" fill-opacity="0.9"></path></svg></span> 跳转链接 </a> <a href="https://tdesign.tencent.com/" target="_self" class="t-link t-size-m t-link--theme-primary t-is-underline t-link--hover-underline"><span class="t-link__prefix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-link"><path fill="currentColor" d="M6.23 11.89l2.12-2.12.71.7-2.12 2.13A2.5 2.5 0 013.4 9.06l2.13-2.12.7.7-2.12 2.13a1.5 1.5 0 002.12 2.12zM10.47 9.06l-.7-.7 2.12-2.13a1.5 1.5 0 10-2.12-2.12L7.65 6.23l-.71-.7L9.06 3.4a2.5 2.5 0 013.54 3.54l-2.13 2.12z" fill-opacity="0.9"></path><path fill="currentColor" d="M9.06 6.23L6.23 9.06l.71.7 2.83-2.82-.7-.7z" fill-opacity="0.9"></path></svg></span>
-    跳转链接
-  </a> <a href="https://tdesign.tencent.com/" target="_blank" class="t-link t-size-m t-link--theme-danger t-link--hover-color">
-    跳转链接
-    <span class="t-link__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-jump"><path fill="currentColor" d="M2.3 13.7a1 1 0 00.7.3h10a1 1 0 001-1V8.5h-1V13H3V3h4.5V2H3a1 1 0 00-1 1v10c0 .27.1.52.3.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M9 3V2h4.5c.28 0 .5.22.5.5V7h-1V3.7L8.7 8 8 7.3 12.3 3H9z" fill-opacity="0.9"></path></svg></span></a> <a target="" class="t-link t-size-m t-link--theme-warning t-is-disabled"> 跳转链接 <span class="t-link__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-jump"><path fill="currentColor" d="M2.3 13.7a1 1 0 00.7.3h10a1 1 0 001-1V8.5h-1V13H3V3h4.5V2H3a1 1 0 00-1 1v10c0 .27.1.52.3.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M9 3V2h4.5c.28 0 .5.22.5.5V7h-1V3.7L8.7 8 8 7.3 12.3 3H9z" fill-opacity="0.9"></path></svg></span></a></div>
-`;
-
-exports[`ssr snapshot test renders ./examples/link/demos/size.vue correctly 1`] = `
-<div class="tdesign-demo-block-column">
-  <div class="tdesign-demo-block-row"><a target="" class="t-link t-size-s t-link--theme-default t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-s t-link--theme-primary t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-s t-link--theme-danger t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-s t-link--theme-warning t-is-disabled">跳转链接</a> <a target="" class="t-link t-size-s t-link--theme-success t-link--hover-underline">
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-default t-link--hover-underline"><span class="t-link__prefix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-link"><path fill="currentColor" d="M6.23 11.89l2.12-2.12.71.7-2.12 2.13A2.5 2.5 0 013.4 9.06l2.13-2.12.7.7-2.12 2.13a1.5 1.5 0 002.12 2.12zM10.47 9.06l-.7-.7 2.12-2.13a1.5 1.5 0 10-2.12-2.12L7.65 6.23l-.71-.7L9.06 3.4a2.5 2.5 0 013.54 3.54l-2.13 2.12z" fill-opacity="0.9"></path><path fill="currentColor" d="M9.06 6.23L6.23 9.06l.71.7 2.83-2.82-.7-.7z" fill-opacity="0.9"></path></svg></span> 跳转链接 </a></div>
+  <div class="t-space-item"><a href="https://tdesign.tencent.com/" target="_self" class="t-link t-size-m t-link--theme-primary t-is-underline t-link--hover-underline"><span class="t-link__prefix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-link"><path fill="currentColor" d="M6.23 11.89l2.12-2.12.71.7-2.12 2.13A2.5 2.5 0 013.4 9.06l2.13-2.12.7.7-2.12 2.13a1.5 1.5 0 002.12 2.12zM10.47 9.06l-.7-.7 2.12-2.13a1.5 1.5 0 10-2.12-2.12L7.65 6.23l-.71-.7L9.06 3.4a2.5 2.5 0 013.54 3.54l-2.13 2.12z" fill-opacity="0.9"></path><path fill="currentColor" d="M9.06 6.23L6.23 9.06l.71.7 2.83-2.82-.7-.7z" fill-opacity="0.9"></path></svg></span>
+      跳转链接
+    </a></div>
+  <div class="t-space-item"><a href="https://tdesign.tencent.com/" target="_blank" class="t-link t-size-m t-link--theme-danger t-link--hover-color">
       跳转链接
       <span class="t-link__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-jump"><path fill="currentColor" d="M2.3 13.7a1 1 0 00.7.3h10a1 1 0 001-1V8.5h-1V13H3V3h4.5V2H3a1 1 0 00-1 1v10c0 .27.1.52.3.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M9 3V2h4.5c.28 0 .5.22.5.5V7h-1V3.7L8.7 8 8 7.3 12.3 3H9z" fill-opacity="0.9"></path></svg></span></a></div>
-  <div class="tdesign-demo-block-row"><a target="" class="t-link t-size-m t-link--theme-default t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-primary t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-danger t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-warning t-is-disabled">跳转链接</a> <a target="" class="t-link t-size-m t-link--theme-success t-link--hover-underline">
-      跳转链接
-      <span class="t-link__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-jump"><path fill="currentColor" d="M2.3 13.7a1 1 0 00.7.3h10a1 1 0 001-1V8.5h-1V13H3V3h4.5V2H3a1 1 0 00-1 1v10c0 .27.1.52.3.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M9 3V2h4.5c.28 0 .5.22.5.5V7h-1V3.7L8.7 8 8 7.3 12.3 3H9z" fill-opacity="0.9"></path></svg></span></a></div>
-  <div class="tdesign-demo-block-row"><a target="" class="t-link t-size-l t-link--theme-default t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-l t-link--theme-primary t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-l t-link--theme-danger t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-l t-link--theme-warning t-is-disabled">跳转链接</a> <a target="" class="t-link t-size-l t-link--theme-success t-link--hover-underline">
-      跳转链接
-      <span class="t-link__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-jump"><path fill="currentColor" d="M2.3 13.7a1 1 0 00.7.3h10a1 1 0 001-1V8.5h-1V13H3V3h4.5V2H3a1 1 0 00-1 1v10c0 .27.1.52.3.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M9 3V2h4.5c.28 0 .5.22.5.5V7h-1V3.7L8.7 8 8 7.3 12.3 3H9z" fill-opacity="0.9"></path></svg></span></a></div>
+  <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-warning t-is-disabled"> 跳转链接 <span class="t-link__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-jump"><path fill="currentColor" d="M2.3 13.7a1 1 0 00.7.3h10a1 1 0 001-1V8.5h-1V13H3V3h4.5V2H3a1 1 0 00-1 1v10c0 .27.1.52.3.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M9 3V2h4.5c.28 0 .5.22.5.5V7h-1V3.7L8.7 8 8 7.3 12.3 3H9z" fill-opacity="0.9"></path></svg></span></a></div>
 </div>
 `;
 
-exports[`ssr snapshot test renders ./examples/link/demos/theme.vue correctly 1`] = `<div class="tdesign-demo-block-row"><a target="" class="t-link t-size-m t-link--theme-default t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-primary t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-danger t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-warning t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-success t-link--hover-underline"> 跳转链接 </a></div>`;
+exports[`ssr snapshot test renders ./examples/link/demos/size.vue correctly 1`] = `
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item"><a target="" class="t-link t-size-s t-link--theme-default t-link--hover-underline"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-s t-link--theme-primary t-link--hover-underline"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-s t-link--theme-danger t-link--hover-underline"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-s t-link--theme-warning t-is-disabled">跳转链接</a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-s t-link--theme-success t-link--hover-underline">
+          跳转链接
+          <span class="t-link__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-jump"><path fill="currentColor" d="M2.3 13.7a1 1 0 00.7.3h10a1 1 0 001-1V8.5h-1V13H3V3h4.5V2H3a1 1 0 00-1 1v10c0 .27.1.52.3.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M9 3V2h4.5c.28 0 .5.22.5.5V7h-1V3.7L8.7 8 8 7.3 12.3 3H9z" fill-opacity="0.9"></path></svg></span></a></div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-default t-link--hover-underline"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-primary t-link--hover-underline"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-danger t-link--hover-underline"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-warning t-is-disabled">跳转链接</a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-success t-link--hover-underline">
+          跳转链接
+          <span class="t-link__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-jump"><path fill="currentColor" d="M2.3 13.7a1 1 0 00.7.3h10a1 1 0 001-1V8.5h-1V13H3V3h4.5V2H3a1 1 0 00-1 1v10c0 .27.1.52.3.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M9 3V2h4.5c.28 0 .5.22.5.5V7h-1V3.7L8.7 8 8 7.3 12.3 3H9z" fill-opacity="0.9"></path></svg></span></a></div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item"><a target="" class="t-link t-size-l t-link--theme-default t-link--hover-underline"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-l t-link--theme-primary t-link--hover-underline"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-l t-link--theme-danger t-link--hover-underline"> 跳转链接 </a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-l t-link--theme-warning t-is-disabled">跳转链接</a></div>
+      <div class="t-space-item"><a target="" class="t-link t-size-l t-link--theme-success t-link--hover-underline">
+          跳转链接
+          <span class="t-link__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-jump"><path fill="currentColor" d="M2.3 13.7a1 1 0 00.7.3h10a1 1 0 001-1V8.5h-1V13H3V3h4.5V2H3a1 1 0 00-1 1v10c0 .27.1.52.3.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M9 3V2h4.5c.28 0 .5.22.5.5V7h-1V3.7L8.7 8 8 7.3 12.3 3H9z" fill-opacity="0.9"></path></svg></span></a></div>
+    </div>
+  </div>
+</div>
+`;
 
-exports[`ssr snapshot test renders ./examples/link/demos/underline.vue correctly 1`] = `<div class="tdesign-demo-block-row"><a target="" class="t-link t-size-m t-link--theme-default t-is-underline t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-primary t-is-underline t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-danger t-is-underline t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-warning t-is-underline t-link--hover-underline"> 跳转链接 </a> <a target="" class="t-link t-size-m t-link--theme-success t-is-underline t-link--hover-underline"> 跳转链接 </a></div>`;
+exports[`ssr snapshot test renders ./examples/link/demos/theme.vue correctly 1`] = `
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-default t-link--hover-underline"> 跳转链接 </a></div>
+  <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-primary t-link--hover-underline"> 跳转链接 </a></div>
+  <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-danger t-link--hover-underline"> 跳转链接 </a></div>
+  <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-warning t-link--hover-underline"> 跳转链接 </a></div>
+  <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-success t-link--hover-underline"> 跳转链接 </a></div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/link/demos/underline.vue correctly 1`] = `
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-default t-is-underline t-link--hover-underline"> 跳转链接 </a></div>
+  <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-primary t-is-underline t-link--hover-underline"> 跳转链接 </a></div>
+  <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-danger t-is-underline t-link--hover-underline"> 跳转链接 </a></div>
+  <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-warning t-is-underline t-link--hover-underline"> 跳转链接 </a></div>
+  <div class="t-space-item"><a target="" class="t-link t-size-m t-link--theme-success t-is-underline t-link--hover-underline"> 跳转链接 </a></div>
+</div>
+`;
 
 exports[`ssr snapshot test renders ./examples/list/demos/base.vue correctly 1`] = `
 <div class="t-list t-size-m">
@@ -11460,19 +11551,39 @@ exports[`ssr snapshot test renders ./examples/popconfirm/demos/inherit.vue corre
 `;
 
 exports[`ssr snapshot test renders ./examples/popup/demos/base.vue correctly 1`] = `
-<div>
-  <div class="t-popup-demo-base-item"><button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled"><span class="t-button__text">禁用状态</span></button></div>
-  <div class="t-popup-demo-base-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">触发元素</span></button></div>
-  <div class="t-popup-demo-base-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">浮层内容</span></button></div>
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item"><button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled"><span class="t-button__text">禁用状态</span></button></div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">触发元素</span></button></div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">浮层内容</span></button></div>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/popup/demos/container.vue correctly 1`] = `
-<div>
-  <div class="t-popup-demo-block">
-    <div id="myPopup"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">父元素为组件本身</span></button></div>
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item">
+        <div id="myPopup"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">父元素为组件本身</span></button></div>
+      </div>
+    </div>
   </div>
-  <div id="second-popup" class="t-popup-demo-block"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">父元素为其他元素</span></button></div>
+  <div class="t-space-item">
+    <div id="second-popup" class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">父元素为其他元素</span></button></div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -11483,31 +11594,56 @@ exports[`ssr snapshot test renders ./examples/popup/demos/disabled.vue correctly
 exports[`ssr snapshot test renders ./examples/popup/demos/placement.vue correctly 1`] = `<div class="container"><button type="button" class="placement top center t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> top </span></button> <button type="button" class="placement top left t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> top-left </span></button> <button type="button" class="placement top right t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> top-right </span></button> <button type="button" class="placement bottom center t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> bottom </span></button> <button type="button" class="placement bottom left t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> bottom-left </span></button> <button type="button" class="placement bottom right t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> bottom-right </span></button> <button type="button" class="placement align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> left </span></button> <button type="button" class="placement top-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> left-top </span></button> <button type="button" class="placement bottom-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> left-bottom </span></button> <button type="button" class="placement right-full align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> right </span></button> <button type="button" destroy-on-hide="" class="placement right-full top-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> right-top </span></button> <button type="button" destroy-on-hide="" class="placement right-full bottom-align t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text"> right-bottom </span></button></div>`;
 
 exports[`ssr snapshot test renders ./examples/popup/demos/style.vue correctly 1`] = `
-<div>
-  <div class="t-popup-demo-base-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">自定义浮层类名</span></button></div>
-  <div class="t-popup-demo-base-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">固定浮层宽度</span></button></div>
-  <div class="t-popup-demo-base-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">浮层最大宽度</span></button></div>
-  <div class="t-popup-demo-base-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">浮层和触发元素同宽</span></button></div>
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">自定义浮层类名</span></button></div>
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">固定浮层宽度</span></button></div>
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">浮层最大宽度</span></button></div>
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">浮层和触发元素同宽</span></button></div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/popup/demos/trigger.vue correctly 1`] = `
-<div class="popup-demo-container"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">悬浮时触发（默认）</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">点击时触发</span></button>
-  <div class="t-input__wrap">
-    <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="获得焦点时触发" type="text" unselectable="off" class="t-input__inner"></div>
-  </div> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">右击时触发</span></button>
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">悬浮时触发（默认）</span></button></div>
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">点击时触发</span></button></div>
+  <div class="t-space-item">
+    <div class="t-input__wrap">
+      <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="获得焦点时触发" type="text" unselectable="off" class="t-input__inner"></div>
+    </div>
+  </div>
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">右击时触发</span></button></div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/popup/demos/trigger-element.vue correctly 1`] = `
-<div>
-  <div>
-    <div class="t-popup-demo-base-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">默认插槽定义触发元素</span></button></div>
-    <div class="t-popup-demo-base-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">具名插槽定义触发元素</span></button></div>
-  </div> <br>
-  <div>
-    <div class="t-popup-demo-base-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">渲染函数定义触发元素1</span></button></div>
-    <div class="t-popup-demo-base-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">渲染函数定义触发元素2</span></button></div>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item">
+        <div class="t-space t-space-horizontal" style="gap:16px;">
+          <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">默认插槽定义触发元素</span></button></div>
+        </div>
+      </div>
+      <div class="t-space-item">
+        <div class="t-space t-space-horizontal" style="gap:16px;">
+          <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">具名插槽定义触发元素</span></button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item">
+        <div class="t-space t-space-horizontal" style="gap:16px;">
+          <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">渲染函数定义触发元素1</span></button></div>
+        </div>
+      </div>
+      <div class="t-space-item">
+        <div class="t-space t-space-horizontal" style="gap:16px;">
+          <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">渲染函数定义触发元素2</span></button></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -12045,54 +12181,103 @@ exports[`ssr snapshot test renders ./examples/progress/demos/status.vue correctl
 </div>
 `;
 
-exports[`ssr snapshot test renders ./examples/radio/demos/base.vue correctly 1`] = `<div class="tdesign-demo-block-row"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">未选中项</span></label> <label class="t-radio t-is-checked"><input type="radio" checked="checked" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选中项</span></label> <label class="t-radio t-is-checked t-is-disabled"><input type="radio" checked="checked" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选中禁用态</span></label> <label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">未选中禁用态</span></label></div>`;
+exports[`ssr snapshot test renders ./examples/radio/demos/base.vue correctly 1`] = `
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">未选中项</span></label></div>
+  <div class="t-space-item"><label class="t-radio t-is-checked"><input type="radio" checked="checked" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选中项</span></label></div>
+  <div class="t-space-item"><label class="t-radio t-is-checked t-is-disabled"><input type="radio" checked="checked" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选中禁用态</span></label></div>
+  <div class="t-space-item"><label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">未选中禁用态</span></label></div>
+</div>
+`;
 
 exports[`ssr snapshot test renders ./examples/radio/demos/group.vue correctly 1`] = `
-<div class="tdesign-demo-block-column">
-  <div>
-    <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio"><input type="radio" value="1" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项一</span></label><label class="t-radio"><input type="radio" value="2" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项二</span></label><label class="t-radio"><input type="radio" value="3" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项三</span></label><label class="t-radio"><input type="radio" value="4" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项四</span></label></div>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item">
+        <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio"><input type="radio" value="1" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项一</span></label><label class="t-radio"><input type="radio" value="2" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项二</span></label><label class="t-radio"><input type="radio" value="3" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项三</span></label><label class="t-radio"><input type="radio" value="4" name="city" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项四</span></label></div>
+      </div>
+    </div>
   </div>
-  <div>
-    <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项一</span></label> <label class="t-radio"><input type="radio" value="2" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项二</span></label> <label class="t-radio"><input type="radio" value="3" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项三</span></label> <label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" value="4" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项四</span></label></div>
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item">
+        <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项一</span></label> <label class="t-radio"><input type="radio" value="2" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项二</span></label> <label class="t-radio"><input type="radio" value="3" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项三</span></label> <label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" value="4" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">选项四</span></label></div>
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/radio/demos/size.vue correctly 1`] = `
-<div class="tdesign-demo-block-column">
-  <div class="t-radio-group t-size-s t-radio-group__outline"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label></div>
-  <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio-button"><input type="radio" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label></div>
-  <div class="t-radio-group t-size-l t-radio-group__outline"><label class="t-radio-button"><input type="radio" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label></div>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-radio-group t-size-s t-radio-group__outline"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label></div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio-button"><input type="radio" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label></div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-radio-group t-size-l t-radio-group__outline"><label class="t-radio-button"><input type="radio" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label></div>
+  </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./examples/radio/demos/type.vue correctly 1`] = `
-<div class="tdesign-demo-block-column-large">
-  <div class="tdesign-demo-block-column">
-    <h5>边框型单选按钮</h5>
-    <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label> <label class="t-radio-button"><input type="radio" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项五</span></label></div>
-    <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button t-is-checked t-is-disabled"><input type="radio" checked="checked" disabled="disabled" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选中禁用态</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">未选中禁用态</span></label></div>
+<div class="t-space t-space-vertical" style="gap:36px;">
+  <div class="t-space-item">
+    <div class="t-space t-space-vertical" style="gap:16px;">
+      <div class="t-space-item">
+        <h5>边框型单选按钮</h5>
+      </div>
+      <div class="t-space-item">
+        <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label> <label class="t-radio-button"><input type="radio" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项五</span></label></div>
+      </div>
+      <div class="t-space-item">
+        <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button t-is-checked t-is-disabled"><input type="radio" checked="checked" disabled="disabled" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选中禁用态</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">未选中禁用态</span></label></div>
+      </div>
+    </div>
   </div>
-  <div class="tdesign-demo-block-column">
-    <h5>填充型单选按钮</h5>
-    <div>
-      <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label> <label class="t-radio-button"><input type="radio" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项五</span></label>
-        <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+  <div class="t-space-item">
+    <div class="t-space t-space-vertical" style="gap:16px;">
+      <div class="t-space-item">
+        <h5>填充型单选按钮</h5>
       </div>
-    </div>
-    <div>
-      <div class="t-radio-group t-size-m t-radio-group--filled t-radio-group--primary-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label> <label class="t-radio-button"><input type="radio" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项五</span></label>
-        <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+      <div class="t-space-item">
+        <div class="t-space t-space-horizontal" style="gap:16px;">
+          <div class="t-space-item">
+            <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label> <label class="t-radio-button"><input type="radio" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项五</span></label>
+              <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div>
-      <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button t-is-checked t-is-disabled"><input type="radio" checked="checked" disabled="disabled" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选中禁用态</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">未选中禁用态</span></label>
-        <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+      <div class="t-space-item">
+        <div class="t-space t-space-horizontal" style="gap:16px;">
+          <div class="t-space-item">
+            <div class="t-radio-group t-size-m t-radio-group--filled t-radio-group--primary-filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button"><input type="radio" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button"><input type="radio" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button"><input type="radio" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项四</span></label> <label class="t-radio-button"><input type="radio" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项五</span></label>
+              <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div>
-      <div class="t-radio-group t-size-m t-radio-group--filled t-radio-group--primary-filled"><label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button t-is-checked t-is-disabled"><input type="radio" checked="checked" disabled="disabled" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选中禁用态</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">未选中禁用态</span></label>
-        <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+      <div class="t-space-item">
+        <div class="t-space t-space-horizontal" style="gap:16px;">
+          <div class="t-space-item">
+            <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button t-is-checked t-is-disabled"><input type="radio" checked="checked" disabled="disabled" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选中禁用态</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">未选中禁用态</span></label>
+              <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="t-space-item">
+        <div class="t-space t-space-horizontal" style="gap:16px;">
+          <div class="t-space-item">
+            <div class="t-radio-group t-size-m t-radio-group--filled t-radio-group--primary-filled"><label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="1" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项一</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="2" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项二</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="3" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选项三</span></label> <label class="t-radio-button t-is-checked t-is-disabled"><input type="radio" checked="checked" disabled="disabled" value="4" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">选中禁用态</span></label> <label class="t-radio-button t-is-disabled"><input type="radio" disabled="disabled" value="5" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">未选中禁用态</span></label>
+              <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -12474,10 +12659,23 @@ exports[`ssr snapshot test renders ./examples/select/demos/multiple.vue correctl
 `;
 
 exports[`ssr snapshot test renders ./examples/select/demos/noborder.vue correctly 1`] = `
-<div class="t-select__wrap" style="width:200px;">
-  <div class="t-input__wrap t-select-input--borderless t-select">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="-请选择-" type="text" unselectable="on" value="已选择的选项" class="t-input__inner"><span class="t-input__input-pre">已选择的选项</span><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-select__wrap" style="width:200px;">
+      <div class="t-input__wrap t-select-input--borderless t-select">
+        <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="-请选择-" type="text" unselectable="on" value="已选择的选项" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-select__wrap">
+      <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--borderless t-select-input--multiple t-select-input--empty t-select">
+        <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="-请选择-" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__input-pre">-请选择-</span><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -21535,4 +21733,46 @@ exports[`ssr snapshot test renders ./examples/upload/demos/table.vue correctly 1
   </div>
   <div class="tdesign-demo-upload-bottom"><button class="t-button t-button--line">取消</button> <button class="t-button t-button--primary">开始上传</button></div>
 </section>
+`;
+
+exports[`ssr snapshot test renders ./examples/watermark/demos/base.vue correctly 1`] = `
+<div class="t-watermark" style="position:relative;overflow:hidden;width:100%;">
+  <div style="height:300px;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:200px;pointer-events:none;background-repeat:repeat;background-image:url('');animation:none;"></div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/watermark/demos/graylevel.vue correctly 1`] = `
+<div class="t-watermark" style="position:relative;overflow:hidden;width:100%;">
+  <div style="height:300px;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:258px;pointer-events:none;background-repeat:repeat;background-image:url('');animation:none;"></div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/watermark/demos/image.vue correctly 1`] = `
+<div class="t-watermark" style="position:relative;overflow:hidden;width:100%;">
+  <div style="height:300px;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:194px;pointer-events:none;background-repeat:repeat;background-image:url('');animation:none;"></div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/watermark/demos/movingImage.vue correctly 1`] = `
+<div class="t-watermark" style="position:relative;overflow:hidden;width:100%;">
+  <div style="height:300px;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:158px;pointer-events:none;background-repeat:no-repeat;background-image:url('');animation:watermark infinite 200s;"></div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/watermark/demos/movingText.vue correctly 1`] = `
+<div class="t-watermark" style="position:relative;overflow:hidden;width:100%;">
+  <div style="height:300px;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:120px;pointer-events:none;background-repeat:no-repeat;background-image:url('');animation:watermark infinite 200s;"></div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./examples/watermark/demos/multiline.vue correctly 1`] = `
+<div class="t-watermark" style="position:relative;overflow:hidden;width:100%;">
+  <div style="height:300px;"></div>
+  <div style="position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background-size:258px;pointer-events:none;background-repeat:repeat;background-image:url('');animation:none;"></div>
+</div>
 `;

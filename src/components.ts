@@ -56,6 +56,7 @@ export * from './table';
 export * from './tag';
 export * from './tooltip';
 export * from './tree';
+export * from './watermark';
 export * from './collapse';
 
 // 消息提醒
