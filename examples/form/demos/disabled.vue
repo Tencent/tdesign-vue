@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <div style="margin-left: 36px">
+  <t-space direction="vertical" size="32px">
+    <t-space style="margin-left: 36px">
       <t-checkbox v-model="formDisabled" variant="default-filled"> 是否禁用表单 </t-checkbox>
-    </div>
-    <br /><br />
+    </t-space>
+
     <t-form
       :data="formData"
       ref="form"
@@ -56,11 +56,13 @@
         ></t-upload>
       </t-form-item>
       <t-form-item style="margin-left: 100px">
-        <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
-        <t-button theme="default" variant="base" type="reset">重置</t-button>
+        <t-space size="10px">
+          <t-button theme="primary" type="submit">提交</t-button>
+          <t-button theme="default" variant="base" type="reset">重置</t-button>
+        </t-space>
       </t-form-item>
     </t-form>
-  </div>
+  </t-space>
 </template>
 <script>
 const INITIAL_DATA = {

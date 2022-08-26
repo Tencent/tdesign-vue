@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-form-status">
+  <t-space direction="vertical" size="32px" class="tdesign-demo-form-status">
     <!--
       1. statusIcon 值为 true，显示默认图标。默认图标有 成功、失败、警告 等，不同的状态图标不同
       2. statusIcon 值为 false，不显示图标
@@ -7,13 +7,11 @@
       4. statusIcon 为 slot(插槽)，可自定义右侧状态图标
     -->
 
-    <div>
-      <t-radio-group v-model="formStatusIcon" variant="default-filled">
-        <t-radio-button :value="true">显示校验图标</t-radio-button>
-        <t-radio-button :value="false">隐藏校验图标</t-radio-button>
-      </t-radio-group>
-    </div>
-    <br /><br />
+    <t-radio-group v-model="formStatusIcon" variant="default-filled">
+      <t-radio-button :value="true">显示校验图标</t-radio-button>
+      <t-radio-button :value="false">隐藏校验图标</t-radio-button>
+    </t-radio-group>
+
     <t-form
       :data="formData"
       :rules="rules"
@@ -72,11 +70,13 @@
       </t-form-item>
 
       <t-form-item :statusIcon="false" style="margin-left: 80px">
-        <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
-        <t-button theme="default" variant="base" type="reset">重置</t-button>
+        <t-space size="10px">
+          <t-button theme="primary" type="submit">提交</t-button>
+          <t-button theme="default" variant="base" type="reset">重置</t-button>
+        </t-space>
       </t-form-item>
     </t-form>
-  </div>
+  </t-space>
 </template>
 <script lang="jsx">
 import { Icon } from 'tdesign-icons-vue';

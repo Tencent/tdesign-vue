@@ -1,23 +1,23 @@
 <template>
-  <div>
-    <!-- error-message 非必需 -->
-    <t-form :data="formData" :rules="rules" ref="form" @reset="onReset" @submit="onSubmit" scrollToFirstError="smooth">
-      <t-form-item label="用户名" help="这是用户名字段帮助说明" name="account">
-        <t-input v-model="formData.account"></t-input>
-      </t-form-item>
-      <t-form-item label="个人简介" help="一句话介绍自己" name="description">
-        <t-input v-model="formData.description"></t-input>
-      </t-form-item>
-      <t-form-item label="密码" name="password">
-        <t-input type="password" v-model="formData.password"></t-input>
-      </t-form-item>
-      <t-form-item style="margin-left: 100px">
-        <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
-        <t-button theme="default" variant="base" type="reset" style="margin-right: 10px">重置</t-button>
+  <!-- error-message 非必需 -->
+  <t-form :data="formData" :rules="rules" ref="form" @reset="onReset" @submit="onSubmit" scrollToFirstError="smooth">
+    <t-form-item label="用户名" help="这是用户名字段帮助说明" name="account">
+      <t-input v-model="formData.account"></t-input>
+    </t-form-item>
+    <t-form-item label="个人简介" help="一句话介绍自己" name="description">
+      <t-input v-model="formData.description"></t-input>
+    </t-form-item>
+    <t-form-item label="密码" name="password">
+      <t-input type="password" v-model="formData.password"></t-input>
+    </t-form-item>
+    <t-form-item style="margin-left: 100px">
+      <t-space size="10px">
+        <t-button theme="primary" type="submit">提交</t-button>
+        <t-button theme="default" variant="base" type="reset">重置</t-button>
         <t-button theme="default" variant="base" @click="handleValidateMessage">设置校验信息提示</t-button>
-      </t-form-item>
-    </t-form>
-  </div>
+      </t-space>
+    </t-form-item>
+  </t-form>
 </template>
 <script>
 /* eslint-disable no-template-curly-in-string */
@@ -76,9 +76,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.demo-select-base {
-  width: 300px;
-}
-</style>
