@@ -4,8 +4,7 @@
 
 通过 `width` 设置侧边导航的宽度。
 
-::: demo demos/side-menu-width menu
-:::
+{{ side-menu-width }}
 
 ## API
 ### Menu Props

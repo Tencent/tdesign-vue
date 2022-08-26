@@ -2,12 +2,10 @@
 
 ### 模拟原生title
 
-::: demo demos/mouse
-:::
+{{ mouse }}
 
 ### 定时消失
-::: demo demos/duration 
-:::
+{{ duration }}
 
 ## API
 ### Tooltip Props

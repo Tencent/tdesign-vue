@@ -2,8 +2,7 @@
 
 ### 输入框文件上传
 
-::: demo demos/single-input
-:::
+{{ single-input }}
 
 ## API
 ### Upload Props

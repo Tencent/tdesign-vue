@@ -5,8 +5,7 @@
 
 注：被挂载元素（loading的父元素）需设置：`position: relative;`
 
-::: demo demos/attach loading
-:::
+{{ attach }}
 
 ## API
 ### Loading Props
