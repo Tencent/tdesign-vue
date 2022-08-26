@@ -38,9 +38,9 @@ comps.forEach(async (comp) => {
   // usage
   // await gitMv(comp, `examples/${comp}/usage/`, `src/${comp}/_usage`);
   // md
-  await gitMv(comp, `examples/${comp}/`, `src/${comp}/`);
+  // await gitMv(comp, `examples/${comp}/*.md`, `src/${comp}/`);
   // unit
-  // await gitMv(comp, `test/unit/${comp}/`, `src/${comp}/_tests_`);
+  await gitMv(comp, `test/unit/${comp}/`, `src/${comp}/_tests_`);
 });
 
 // git clean -fd
