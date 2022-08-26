@@ -670,9 +670,7 @@ exports[`Menu Menu groupSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      菜单内容
-    
+             菜单内容 
           </span>
         </li>
       </div>

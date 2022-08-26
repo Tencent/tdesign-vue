@@ -163,7 +163,8 @@ exports[`Message Message closeVue demo works fine 1`] = `
         fill-opacity="0.9"
       />
     </svg>
-    点击关闭按钮触发事件 close-btn-click 
+    点击关闭按钮触发事件 close-btn-click
+  
     <span
       class="t-message__close"
     >
@@ -772,9 +773,7 @@ exports[`Message Message toggleVue demo works fine 1`] = `
     <span
       class="t-button__text"
     >
-      
-    自由控制关闭时机（打开）
-  
+       自由控制关闭时机（打开） 
     </span>
   </button>
 </div>

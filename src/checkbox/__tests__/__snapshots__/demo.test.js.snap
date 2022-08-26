@@ -592,11 +592,9 @@ exports[`Checkbox Checkbox linkVue demo works fine 1`] = `
   <div
     class="demo-checkbox-row-desc"
   >
-    
     选中值: [
   "选项二"
 ]
-  
   </div>
    
   <div

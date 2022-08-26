@@ -4654,7 +4654,9 @@ exports[`Tree Tree lazyVue demo works fine 1`] = `
   <p
     class="tips"
   >
+    
     valueMode 默认为 'onlyLeaf'。选中父节点时，子节点由于未加载，无法更新和获取选中状态，导致无法更新父节点的状态。
+  
   </p>
    
   <p

@@ -105,9 +105,7 @@ exports[`Alert Alert baseVue demo works fine 1`] = `
         <div
           class="t-alert__description"
         >
-          
-      这是一条警示信息
-    
+           这是一条警示信息 
         </div>
       </div>
     </div>
@@ -142,9 +140,7 @@ exports[`Alert Alert baseVue demo works fine 1`] = `
         <div
           class="t-alert__description"
         >
-          
-    这是一条失败信息提示
-  
+           这是一条失败信息提示 
         </div>
       </div>
     </div>
@@ -324,9 +320,7 @@ exports[`Alert Alert closeVue demo works fine 1`] = `
     <div
       class="t-alert__close"
     >
-      
-      Slot Close
-    
+       Slot Close 
     </div>
   </div>
 </div>

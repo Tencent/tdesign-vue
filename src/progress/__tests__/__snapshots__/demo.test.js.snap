@@ -809,9 +809,7 @@ exports[`Progress Progress customVue demo works fine 1`] = `
 exports[`Progress Progress lineVue demo works fine 1`] = `
 <div>
   <h3>
-    
     默认在线形外展示进度和状态
-  
   </h3>
    
   <div>
@@ -1027,9 +1025,7 @@ exports[`Progress Progress lineVue demo works fine 1`] = `
   </div>
    
   <h3>
-    
     可以在线形内展示进度信息
-  
   </h3>
    
   <div>

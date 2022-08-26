@@ -82,8 +82,7 @@ exports[`Upload Upload customDragVue demo works fine 1`] = `
     <span
       class="t-button__text"
     >
-      点击上传
-  
+      点击上传 
     </span>
   </button>
    

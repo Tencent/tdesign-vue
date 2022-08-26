@@ -5952,9 +5952,7 @@ exports[`Calendar Calendar headVue demo works fine 1`] = `
       class="t-calendar__title"
     >
       <div>
-        
-    🗓 TDesign开发计划
-  
+        🗓 TDesign开发计划
       </div>
     </div>
     <div
