@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <div class="controls">
-      <t-radio-group v-model="formData.labelAlign" variant="default-filled">
-        <t-radio-button value="left">左对齐</t-radio-button>
-        <t-radio-button value="right">右对齐</t-radio-button>
-        <t-radio-button value="top">顶部对齐</t-radio-button>
-      </t-radio-group>
-    </div>
+  <t-space direction="vertical" size="32px">
+    <t-radio-group v-model="formData.labelAlign" variant="default-filled">
+      <t-radio-button value="left">左对齐</t-radio-button>
+      <t-radio-button value="right">右对齐</t-radio-button>
+      <t-radio-button value="top">顶部对齐</t-radio-button>
+    </t-radio-group>
 
     <t-form :data="formData" :labelAlign="formData.labelAlign" :labelWidth="60">
       <t-form-item name="name">
@@ -17,7 +15,7 @@
         <t-input v-model="formData.password" type="password"></t-input>
       </t-form-item>
     </t-form>
-  </div>
+  </t-space>
 </template>
 <script>
 const INITIAL_DATA = {
@@ -33,9 +31,3 @@ export default {
   },
 };
 </script>
-
-<style lang="less" scoped>
-.controls {
-  margin-bottom: 32px;
-}
-</style>

@@ -1,11 +1,10 @@
 <template>
-  <div>
-    <div class="controls">
-      <t-radio-group v-model="formData.layout" variant="default-filled">
-        <t-radio-button value="vertical">纵向布局</t-radio-button>
-        <t-radio-button value="inline">行内布局</t-radio-button>
-      </t-radio-group>
-    </div>
+  <t-space direction="vertical" size="32px">
+    <t-radio-group v-model="formData.layout" variant="default-filled">
+      <t-radio-button value="vertical">纵向布局</t-radio-button>
+      <t-radio-button value="inline">行内布局</t-radio-button>
+    </t-radio-group>
+
     <t-form
       :data="formData"
       labelWidth="calc(2em + 24px)"
@@ -15,17 +14,16 @@
       @submit="onSubmit"
       scrollToFirstError="smooth"
     >
-      <t-form-item label="名字" name='name'>
+      <t-form-item label="名字" name="name">
         <t-input v-model="formData.name"></t-input>
       </t-form-item>
-      <t-form-item label="密码" name='password'>
+      <t-form-item label="密码" name="password">
         <t-input v-model="formData.password" type="password"></t-input>
       </t-form-item>
     </t-form>
-  </div>
+  </t-space>
 </template>
 <script>
-
 const INITIAL_DATA = {
   layout: 'inline',
   name: '',
@@ -52,9 +50,3 @@ export default {
   },
 };
 </script>
-
-<style lang="less" scoped>
-.controls {
-  margin-bottom: 32px;
-}
-</style>

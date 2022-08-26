@@ -1,25 +1,21 @@
 <template>
-  <div>
+  <t-space :size="32">
     <t-badge shape="circle" count="2">
       <div class="badge-block"></div>
     </t-badge>
     <t-badge shape="round" count="99">
       <div class="badge-block"></div>
     </t-badge>
-  </div>
+  </t-space>
 </template>
 
 <style scoped>
 .badge-block {
   width: 40px;
   height: 40px;
-  background: #EEEEEE;
-  border: 1px solid #DCDCDC;
+  background: #eeeeee;
+  border: 1px solid #dcdcdc;
   box-sizing: border-box;
   border-radius: 3px;
-}
-
-.t-badge + .t-badge {
-  margin-left: 32px;
 }
 </style>

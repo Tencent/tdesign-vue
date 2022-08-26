@@ -1,57 +1,57 @@
 <template>
-  <div>
-    <t-form
-      :data="formData"
-      :rules="rules"
-      resetType="initial"
-      ref="form"
-      style="max-width: 100%"
-      @reset="onReset"
-      @submit="onSubmit"
+  <t-form
+    :data="formData"
+    :rules="rules"
+    resetType="initial"
+    ref="form"
+    style="max-width: 100%"
+    @reset="onReset"
+    @submit="onSubmit"
+  >
+    <t-form-item label="学校" name="school">
+      <t-radio-group v-model="formData.school" :options="SCHOOL_OPTIONS" />
+    </t-form-item>
+    <t-tabs
+      v-model="studentTab"
+      theme="card"
+      addable
+      @add="onAddStudent"
+      style="margin-left: 30px; border: 1px solid var(--td-component-stroke)"
     >
-      <t-form-item label="学校" name="school">
-        <t-radio-group v-model="formData.school" :options="SCHOOL_OPTIONS" />
-      </t-form-item>
-      <t-tabs
-        v-model="studentTab"
-        theme="card"
-        addable
-        @add="onAddStudent"
-        style="margin-left: 30px; border: 1px solid var(--td-component-stroke)"
+      <t-tab-panel
+        v-for="(student, index) in formData.students"
+        :key="student.id"
+        :value="student.id"
+        :label="student.label"
+        :destroyOnHide="false"
       >
-        <t-tab-panel
-          v-for="(student, index) in formData.students"
-          :key="student.id"
-          :value="student.id"
-          :label="student.label"
-          :destroyOnHide="false"
-        >
-          <div style="padding: 24px 24px 24px 0">
-            <!-- 重点阅读：数组里面，注意 name 定义，用于区分不同的字段 -->
-            <t-form-item label="姓名" :name="`students[${index}].name`" :label-width="80">
-              <t-input v-model="formData.students[index].name" placeholder="请输入内容"></t-input>
-            </t-form-item>
+        <t-space direction="vertical" size="24px" style="padding: 24px 24px 24px 0">
+          <!-- 重点阅读：数组里面，注意 name 定义，用于区分不同的字段 -->
+          <t-form-item label="姓名" :name="`students[${index}].name`" :label-width="80">
+            <t-input v-model="formData.students[index].name" placeholder="请输入内容"></t-input>
+          </t-form-item>
 
-            <t-form-item label="选科" :name="`students[${index}].courseType`" :label-width="80">
-              <t-radio-group v-model="formData.students[index].courseType">
-                <t-radio value="wenke">文科</t-radio>
-                <t-radio value="like">理科</t-radio>
-              </t-radio-group>
-            </t-form-item>
+          <t-form-item label="选科" :name="`students[${index}].courseType`" :label-width="80">
+            <t-radio-group v-model="formData.students[index].courseType">
+              <t-radio value="wenke">文科</t-radio>
+              <t-radio value="like">理科</t-radio>
+            </t-radio-group>
+          </t-form-item>
 
-            <t-form-item label="课程" :name="`students[${index}].course`" :label-width="80">
-              <t-checkbox-group v-model="formData.students[index].course" :options="courseOptions"></t-checkbox-group>
-            </t-form-item>
+          <t-form-item label="课程" :name="`students[${index}].course`" :label-width="80">
+            <t-checkbox-group v-model="formData.students[index].course" :options="courseOptions"></t-checkbox-group>
+          </t-form-item>
 
-            <t-form-item style="margin-left: 100px" :label-width="80">
-              <t-button theme="primary" type="submit" style="margin-right: 10px">提交</t-button>
+          <t-form-item style="margin-left: 100px" :label-width="80">
+            <t-space size="10px">
+              <t-button theme="primary" type="submit">提交</t-button>
               <t-button theme="default" variant="base" type="reset">重置</t-button>
-            </t-form-item>
-          </div>
-        </t-tab-panel>
-      </t-tabs>
-    </t-form>
-  </div>
+            </t-space>
+          </t-form-item>
+        </t-space>
+      </t-tab-panel>
+    </t-tabs>
+  </t-form>
 </template>
 
 <script>
