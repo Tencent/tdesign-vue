@@ -1,23 +1,18 @@
 <template>
-  <div class="tdesign-demo-block-column">
-    <div>
-      <t-radio-group
-        name="city"
-        v-model="value"
-        :options="options"
-        @change="onChange"
-      ></t-radio-group>
-    </div>
+  <t-space direction="vertical">
+    <t-space>
+      <t-radio-group name="city" v-model="value" :options="options" @change="onChange"></t-radio-group>
+    </t-space>
 
-    <div>
+    <t-space>
       <t-radio-group default-value="1" @change="onChange">
         <t-radio value="1">选项一</t-radio>
         <t-radio value="2">选项二</t-radio>
         <t-radio value="3">选项三</t-radio>
         <t-radio value="4" disabled>选项四</t-radio>
       </t-radio-group>
-    </div>
-  </div>
+    </t-space>
+  </t-space>
 </template>
 
 <script>

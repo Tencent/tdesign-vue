@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-row">
+  <t-space>
     <t-link theme="default" disabled @click="clickLink"> 跳转链接 </t-link>
     <t-link theme="primary" underline disabled @click="clickLink"> 跳转链接 </t-link>
     <t-link theme="danger" hover="color" disabled @click="clickLink"> 跳转链接 </t-link>
@@ -8,7 +8,7 @@
       <jump-icon slot="suffixIcon" />
       跳转链接
     </t-link>
-  </div>
+  </t-space>
 </template>
 
 <script lang="jsx">

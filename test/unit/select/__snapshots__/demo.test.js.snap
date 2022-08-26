@@ -1503,50 +1503,105 @@ exports[`Select Select multipleVue demo works fine 1`] = `
 
 exports[`Select Select noborderVue demo works fine 1`] = `
 <div
-  class="t-select__wrap"
-  style="width: 200px;"
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
 >
   <div
-    class="t-input__wrap t-select-input--borderless t-select"
+    class="t-space-item"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+      class="t-select__wrap"
+      style="width: 200px;"
     >
       <div
-        class="t-input__prefix"
-      />
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder="-请选择-"
-        readonly="readonly"
-        type="text"
-        unselectable="on"
-      />
-      <span
-        class="t-input__input-pre"
+        class="t-input__wrap t-select-input--borderless t-select"
       >
-        已选择的选项
-      </span>
-      <span
-        class="t-input__suffix t-input__suffix-icon"
-      >
-        <svg
-          class="t-fake-arrow t-select__right-icon"
-          fill="none"
-          height="16"
-          viewBox="0 0 16 16"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
+        <div
+          class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
         >
-          <path
-            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-            stroke="black"
-            stroke-opacity="0.9"
-            stroke-width="1.3"
+          <div
+            class="t-input__prefix"
           />
-        </svg>
-      </span>
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="-请选择-"
+            readonly="readonly"
+            type="text"
+            unselectable="on"
+          />
+          <span
+            class="t-input__suffix t-input__suffix-icon"
+          >
+            <svg
+              class="t-fake-arrow t-select__right-icon"
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-select__wrap"
+    >
+      <div
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--borderless t-select-input--multiple t-select-input--empty t-select"
+      >
+        <div
+          class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+        >
+          <div
+            class="t-input__prefix"
+          />
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="-请选择-"
+            readonly="readonly"
+            type="text"
+            unselectable="on"
+          />
+          <span
+            class="t-input__input-pre"
+          >
+            -请选择-
+          </span>
+          <span
+            class="t-input__suffix t-input__suffix-icon"
+          >
+            <svg
+              class="t-fake-arrow t-select__right-icon"
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </div>

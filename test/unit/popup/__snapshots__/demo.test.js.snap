@@ -1,90 +1,138 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Popup Popup baseVue demo works fine 1`] = `
-<div>
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
+>
   <div
-    class="t-popup-demo-base-item"
+    class="t-space-item"
   >
-    <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled"
-      disabled="disabled"
-      type="button"
+    <div
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
     >
-      <span
-        class="t-button__text"
+      <div
+        class="t-space-item"
       >
-        禁用状态
-      </span>
-    </button>
+        <button
+          class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled"
+          disabled="disabled"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            禁用状态
+          </span>
+        </button>
+      </div>
+    </div>
   </div>
-   
   <div
-    class="t-popup-demo-base-item"
+    class="t-space-item"
   >
-    <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-      type="button"
+    <div
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
     >
-      <span
-        class="t-button__text"
+      <div
+        class="t-space-item"
       >
-        触发元素
-      </span>
-    </button>
+        <button
+          class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            触发元素
+          </span>
+        </button>
+      </div>
+    </div>
   </div>
-   
   <div
-    class="t-popup-demo-base-item"
+    class="t-space-item"
   >
-    <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-      type="button"
+    <div
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
     >
-      <span
-        class="t-button__text"
+      <div
+        class="t-space-item"
       >
-        浮层内容
-      </span>
-    </button>
+        <button
+          class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            浮层内容
+          </span>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Popup Popup containerVue demo works fine 1`] = `
-<div>
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
+>
   <div
-    class="t-popup-demo-block"
+    class="t-space-item"
   >
     <div
-      id="myPopup"
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
     >
-      <button
-        class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-        type="button"
+      <div
+        class="t-space-item"
       >
-        <span
-          class="t-button__text"
+        <div
+          id="myPopup"
         >
-          父元素为组件本身
-        </span>
-      </button>
+          <button
+            class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              父元素为组件本身
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
-   
   <div
-    class="t-popup-demo-block"
-    id="second-popup"
+    class="t-space-item"
   >
-    <button
-      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-      type="button"
+    <div
+      class="t-space t-space-horizontal"
+      id="second-popup"
+      style="gap: 16px;"
     >
-      <span
-        class="t-button__text"
+      <div
+        class="t-space-item"
       >
-        父元素为其他元素
-      </span>
-    </button>
+        <button
+          class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            父元素为其他元素
+          </span>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -261,9 +309,12 @@ exports[`Popup Popup placementVue demo works fine 1`] = `
 `;
 
 exports[`Popup Popup styleVue demo works fine 1`] = `
-<div>
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
+>
   <div
-    class="t-popup-demo-base-item"
+    class="t-space-item"
   >
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default"
@@ -276,9 +327,8 @@ exports[`Popup Popup styleVue demo works fine 1`] = `
       </span>
     </button>
   </div>
-   
   <div
-    class="t-popup-demo-base-item"
+    class="t-space-item"
   >
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default"
@@ -291,9 +341,8 @@ exports[`Popup Popup styleVue demo works fine 1`] = `
       </span>
     </button>
   </div>
-   
   <div
-    class="t-popup-demo-base-item"
+    class="t-space-item"
   >
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default"
@@ -306,9 +355,8 @@ exports[`Popup Popup styleVue demo works fine 1`] = `
       </span>
     </button>
   </div>
-   
   <div
-    class="t-popup-demo-base-item"
+    class="t-space-item"
   >
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default"
@@ -325,70 +373,118 @@ exports[`Popup Popup styleVue demo works fine 1`] = `
 `;
 
 exports[`Popup Popup triggerElementVue demo works fine 1`] = `
-<div>
-  <div>
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
     <div
-      class="t-popup-demo-base-item"
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
     >
-      <button
-        class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-        type="button"
+      <div
+        class="t-space-item"
       >
-        <span
-          class="t-button__text"
+        <div
+          class="t-space t-space-horizontal"
+          style="gap: 16px;"
         >
-          默认插槽定义触发元素
-        </span>
-      </button>
-    </div>
-     
-    <div
-      class="t-popup-demo-base-item"
-    >
-      <button
-        class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-        type="button"
+          <div
+            class="t-space-item"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                默认插槽定义触发元素
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-space-item"
       >
-        <span
-          class="t-button__text"
+        <div
+          class="t-space t-space-horizontal"
+          style="gap: 16px;"
         >
-          具名插槽定义触发元素
-        </span>
-      </button>
+          <div
+            class="t-space-item"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                具名插槽定义触发元素
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-   
-  <br />
-   
-  <div>
+  <div
+    class="t-space-item"
+  >
     <div
-      class="t-popup-demo-base-item"
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
     >
-      <button
-        class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-        type="button"
+      <div
+        class="t-space-item"
       >
-        <span
-          class="t-button__text"
+        <div
+          class="t-space t-space-horizontal"
+          style="gap: 16px;"
         >
-          渲染函数定义触发元素1
-        </span>
-      </button>
-    </div>
-     
-    <div
-      class="t-popup-demo-base-item"
-    >
-      <button
-        class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-        type="button"
+          <div
+            class="t-space-item"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                渲染函数定义触发元素1
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-space-item"
       >
-        <span
-          class="t-button__text"
+        <div
+          class="t-space t-space-horizontal"
+          style="gap: 16px;"
         >
-          渲染函数定义触发元素2
-        </span>
-      </button>
+          <div
+            class="t-space-item"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                渲染函数定义触发元素2
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -396,56 +492,70 @@ exports[`Popup Popup triggerElementVue demo works fine 1`] = `
 
 exports[`Popup Popup triggerVue demo works fine 1`] = `
 <div
-  class="popup-demo-container"
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
 >
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      悬浮时触发（默认）
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      点击时触发
-    </span>
-  </button>
-   
   <div
-    class="t-input__wrap"
+    class="t-space-item"
+  >
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        悬浮时触发（默认）
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        点击时触发
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
   >
     <div
-      class="t-input t-size-m t-is-default"
+      class="t-input__wrap"
     >
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder="获得焦点时触发"
-        type="text"
-        unselectable="off"
-      />
+      <div
+        class="t-input t-size-m t-is-default"
+      >
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder="获得焦点时触发"
+          type="text"
+          unselectable="off"
+        />
+      </div>
     </div>
   </div>
-   
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
+  <div
+    class="t-space-item"
   >
-    <span
-      class="t-button__text"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
     >
-      右击时触发
-    </span>
-  </button>
+      <span
+        class="t-button__text"
+      >
+        右击时触发
+      </span>
+    </button>
+  </div>
 </div>
 `;
 
