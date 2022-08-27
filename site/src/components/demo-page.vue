@@ -10,12 +10,12 @@
 </template>
 
 <script>
-const demoReq = import.meta.globEager('../../../examples/**/demos/*.vue');
+const demoReq = import.meta.globEager('../../../src/**/_example/*.vue');
 
 const demoObject = {};
 const demoList = {};
 Object.keys(demoReq).forEach((key) => {
-  const match = key.match(/([\w-]+).demos.([\w-]+).vue/);
+  const match = key.match(/([\w-]+)._example.([\w-]+).vue/);
   const [, componentName, demoName] = match;
 
   demoObject[`${componentName}-${demoName}`] = demoReq[key].default;

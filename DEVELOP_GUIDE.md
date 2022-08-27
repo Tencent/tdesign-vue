@@ -158,9 +158,8 @@ npm run init button
 文档 demo 排列与 common 仓库中的 UI demo 展示一致
 
 ```markdown
-::: demo <demo 路径如：demos/base> [demo 标题][--dev 是否只在开发环境插入]
+{{ base }}
 [demo 描述（可不填）]
-:::
 ```
 
 ### demo 调试
