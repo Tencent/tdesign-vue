@@ -1,12 +1,12 @@
 <template>
-  <div class="tdesign-demo-block">
+  <t-space direction="vertical">
     <t-alert theme="info" :message="infoMessage" />
     <t-alert theme="success" message="这是一条成功的消息提示" />
     <t-alert theme="warning">
       <template #message> 这是一条警示信息 </template>
     </t-alert>
     <t-alert theme="error"> 这是一条失败信息提示 </t-alert>
-  </div>
+  </t-space>
 </template>
 <script lang="jsx">
 export default {
