@@ -1,7 +1,13 @@
 <template>
   <div class="tdesign-demo-block-row">
     <div class="cascader-demo-panel-container">
-      <t-cascader-panel v-model="value" :options="options" />
+      <t-cascader-panel
+        v-model="value"
+        :options="options"
+        :onClick="clickHandle1"
+        @click="clickHandle"
+        @change="changeHandle"
+      />
     </div>
     <div class="cascader-demo-panel-container">
       <t-cascader-panel v-model="value2" :options="options" multiple />
@@ -49,6 +55,17 @@ export default {
       value: '',
       value2: [],
     };
+  },
+  methods: {
+    clickHandle(e, node) {
+      console.log('click trigger, args: ', e, node);
+    },
+    clickHandle1(e) {
+      console.log('click1 trigger, args: ', e);
+    },
+    changeHandle(e, ctx) {
+      console.log('change trigger, args: ', e, ctx);
+    },
   },
 };
 </script>

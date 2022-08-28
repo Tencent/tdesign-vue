@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import Cascader from '@/src/cascader/index.ts';
+import Cascader, { CascaderPanel } from '@/src/cascader/index.ts';
 
 const options = [
   {
@@ -69,6 +69,24 @@ describe('Cascader', () => {
         },
       });
       expect(wrapper.find('.t-is-disabled').exists()).toBe(true);
+    });
+  });
+
+  describe('CascaderPanel', () => {
+    describe('@event', () => {
+      it('click', async () => {
+        const fn = jest.fn();
+        const wrapper = mount({
+          render() {
+            return <CascaderPanel options={options} onClick={fn} />;
+          },
+        }).findComponent(CascaderPanel);
+        const firstItem = wrapper.find('.t-cascader__item');
+        firstItem.trigger('click');
+        await wrapper.vm.$nextTick();
+
+        expect(fn).toBeCalled();
+      });
     });
   });
 });
