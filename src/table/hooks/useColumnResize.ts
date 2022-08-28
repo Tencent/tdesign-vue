@@ -99,24 +99,102 @@ export default function useColumnResize(
       resizeLineStyle.bottom = `${parent.bottom - tableBoundRect.bottom}px`;
     }
 
+    const findAllChildren = (col: BaseTableCol<TableRowData>) => {
+      const loopQue: BaseTableCol<TableRowData>[] = [];
+      const result: BaseTableCol<TableRowData>[] = [];
+      if (col.children) {
+        col.children.forEach((child) => loopQue.push(child));
+        while (loopQue.length) {
+          const child = loopQue.shift();
+          if (!child.children || !child.children.length) {
+            result.push(child);
+          } else {
+            child.children.forEach((child) => loopQue.push(child));
+          }
+        }
+      }
+      return result;
+    };
+
     const setThWidthListByColumnDrag = (
       dragCol: BaseTableCol<TableRowData>,
       dragWidth: number,
-      nearCol: BaseTableCol<TableRowData>,
+      effectCol: BaseTableCol<TableRowData>,
     ) => {
       const thWidthList = getThWidthList();
 
-      const propColWidth = isNumber(dragCol.width) ? dragCol.width : parseFloat(dragCol.width);
-      const propNearColWidth = isNumber(nearCol.width) ? nearCol.width : parseFloat(nearCol.width);
-      const oldWidth = thWidthList[dragCol.colKey] || propColWidth;
-      const oldNearWidth = thWidthList[nearCol.colKey] || propNearColWidth;
+      // 检测是否有多级表头
+      const dragChildrenCols = findAllChildren(dragCol);
+      const effectChildrenCols = findAllChildren(effectCol);
 
-      updateThWidthList({
-        [dragCol.colKey]: dragWidth,
-        [nearCol.colKey]: Math.max(nearCol.resize?.minWidth || DEFAULT_MIN_WIDTH, oldWidth + oldNearWidth - dragWidth),
-      });
+      // 若有
+      if (dragChildrenCols.length || effectChildrenCols.length) {
+        let oldWidth = 0;
+        let oldEffectWidth = 0;
+        const notCalculateCols: string[] = [];
+        let effectColsMinWidth = 0;
+        const updateMap: { [key: string]: number } = {};
 
-      setNotCalculateWidthCols([dragCol.colKey, nearCol.colKey]);
+        // 将没有多级表头的列添加到列表中方便后续计算
+        if (!dragChildrenCols.length) {
+          dragChildrenCols.push(dragCol);
+        }
+
+        if (!effectChildrenCols.length) {
+          effectChildrenCols.push(effectCol);
+        }
+
+        // 根据多级表头的叶节点计算实际宽度（拖动列）
+        dragChildrenCols.forEach((child) => {
+          oldWidth += thWidthList[child.colKey] || (isNumber(child.width) ? child.width : parseFloat(child.width));
+          notCalculateCols.push(child.colKey);
+        });
+
+        // 根据多级表头的叶节点计算实际宽度（受影响的列）
+        effectChildrenCols.forEach((child) => {
+          oldEffectWidth
+            += thWidthList[child.colKey] || (isNumber(child.width) ? child.width : parseFloat(child.width));
+          notCalculateCols.push(child.colKey);
+          effectColsMinWidth += child.resize?.minWidth || DEFAULT_MIN_WIDTH;
+        });
+
+        // 按比例划分新宽度（拖动列）
+        dragChildrenCols.forEach((child) => {
+          updateMap[child.colKey] = (thWidthList[child.colKey] / oldWidth) * dragWidth;
+        });
+
+        // 按比例划分新宽度（受影响的列）
+        const remainWidth = Math.max(
+          effectColsMinWidth,
+          oldWidth + oldEffectWidth - dragWidth,
+          effectCol.resize?.minWidth || DEFAULT_MIN_WIDTH,
+        );
+        effectChildrenCols.forEach((child) => {
+          updateMap[child.colKey] = Math.max(
+            child.resize?.minWidth || DEFAULT_MIN_WIDTH,
+            (thWidthList[child.colKey] / oldEffectWidth) * remainWidth,
+          );
+        });
+
+        // 更新各列宽度
+        updateThWidthList(updateMap);
+        setNotCalculateWidthCols(notCalculateCols);
+      } else {
+        const propColWidth = isNumber(dragCol.width) ? dragCol.width : parseFloat(dragCol.width);
+        const propEffectColWidth = isNumber(effectCol.width) ? effectCol.width : parseFloat(effectCol.width);
+        const oldWidth = thWidthList[dragCol.colKey] || propColWidth;
+        const oldEffectWidth = thWidthList[effectCol.colKey] || propEffectColWidth;
+
+        updateThWidthList({
+          [dragCol.colKey]: dragWidth,
+          [effectCol.colKey]: Math.max(
+            effectCol.resize?.minWidth || DEFAULT_MIN_WIDTH,
+            oldWidth + oldEffectWidth - dragWidth,
+          ),
+        });
+
+        setNotCalculateWidthCols([dragCol.colKey, effectCol.colKey]);
+      }
     };
 
     // 拖拽时鼠标可能会超出 table 范围，需要给 document 绑定拖拽相关事件

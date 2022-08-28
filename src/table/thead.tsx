@@ -68,12 +68,35 @@ export default defineComponent({
       },
     ]);
 
+    const effectColMap: { [colKey: string]: { prev: BaseTableCol<TableRowData>; next: BaseTableCol<TableRowData> } } = {};
+    const { thList } = props;
+    const cols = thList[0];
+
+    // 递归查找列宽度变化后，受影响的相关列
+    const setEffectColMap = (nodes: BaseTableCol<TableRowData>[], parent: BaseTableCol<TableRowData> | null) => {
+      if (!nodes) return;
+      nodes.forEach((n, index) => {
+        const parentPrevCol = parent ? effectColMap[parent.colKey].prev : nodes[index + 1];
+        const parentNextCol = parent ? effectColMap[parent.colKey].next : nodes[index - 1];
+        const prev = index === 0 ? parentPrevCol : nodes[index - 1];
+        const next = index === nodes.length - 1 ? parentNextCol : nodes[index + 1];
+        effectColMap[n.colKey] = {
+          prev,
+          next,
+        };
+        setEffectColMap(n.children, n);
+      });
+    };
+
+    setEffectColMap(cols, null);
+
     return {
       ...classnames,
       theadRef,
       theadClasses,
       classPrefix,
       slots,
+      effectColMap,
     };
   },
 
@@ -122,8 +145,8 @@ export default defineComponent({
               mousedown: (e: MouseEvent) => this.columnResizeParams?.onColumnMousedown?.(
                 e,
                 col,
-                index < row.length - 1 ? row[index + 1] : row[index - 1],
-                index > 0 ? row[index - 1] : row[index + 1],
+                this.effectColMap[col.colKey].next,
+                this.effectColMap[col.colKey].prev,
               ),
               mousemove: (e: MouseEvent) => this.columnResizeParams?.onColumnMouseover?.(e),
             }
