@@ -28,6 +28,8 @@
       :headerAffixedTop="headerAffixedTop ? { offsetTop: 87 } : false"
       :scroll="{ type: 'virtual' }"
       drag-sort="col"
+      resizable
+      :table-layout="'fixed'"
       @drag-sort="onDragSort"
       @data-change="onDataChange"
       @filter-change="onFilterChange"
