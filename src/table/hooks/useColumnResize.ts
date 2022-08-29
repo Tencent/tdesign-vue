@@ -15,6 +15,23 @@ export default function useColumnResize(
 ) {
   const resizeLineRef = ref<HTMLDivElement>();
   const notCalculateWidthCols = ref<string[]>([]);
+  const effectColMap = ref<{ [colKey: string]: any }>({});
+
+  // 递归查找列宽度变化后，受影响的相关列
+  const setEffectColMap = (nodes: BaseTableCol<TableRowData>[], parent: BaseTableCol<TableRowData> | null) => {
+    if (!nodes) return;
+    nodes.forEach((n, index) => {
+      const parentPrevCol = parent ? effectColMap.value[parent.colKey].prev : nodes[index + 1];
+      const parentNextCol = parent ? effectColMap.value[parent.colKey].next : nodes[index - 1];
+      const prev = index === 0 ? parentPrevCol : nodes[index - 1];
+      const next = index === nodes.length - 1 ? parentNextCol : nodes[index + 1];
+      effectColMap.value[n.colKey] = {
+        prev,
+        next,
+      };
+      setEffectColMap(n.children, n);
+    });
+  };
 
   const resizeLineParams = {
     isDragging: false,
@@ -68,12 +85,7 @@ export default function useColumnResize(
   };
 
   // 调整表格列宽
-  const onColumnMousedown = (
-    e: MouseEvent,
-    col: BaseTableCol<TableRowData>,
-    effectNextCol: BaseTableCol<TableRowData>,
-    effectPrevCol: BaseTableCol<TableRowData>,
-  ) => {
+  const onColumnMousedown = (e: MouseEvent, col: BaseTableCol<TableRowData>) => {
     // 非 resize 的点击，不做处理
     if (!resizeLineParams.draggingCol) return;
 
@@ -86,6 +98,9 @@ export default function useColumnResize(
     const maxColWidth = col.resize?.maxWidth || DEFAULT_MAX_WIDTH;
     const minResizeLineLeft = colLeft + minColWidth;
     const maxResizeLineLeft = colLeft + maxColWidth;
+
+    const effectNextCol = effectColMap.value[col.colKey].next;
+    const effectPrevCol = effectColMap.value[col.colKey].prev;
 
     // 开始拖拽，记录下鼠标起始位置
     resizeLineParams.isDragging = true;
@@ -195,5 +210,6 @@ export default function useColumnResize(
     onColumnMouseover,
     onColumnMousedown,
     recalculateColWidth,
+    setEffectColMap,
   };
 }
