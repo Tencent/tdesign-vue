@@ -1,18 +1,18 @@
 <template>
-  <div class="tdesign-tree-demo">
-    <div class="operations">
+  <t-space direction="vertical" :size="10">
+    <t-space>
       <t-form labelWidth="120">
-        <t-form-item label="节点可高亮">
+        <t-form-item label="节点可高亮" style="margin-bottom: 5px">
           <t-switch v-model="activable" />
         </t-form-item>
-        <t-form-item label="节点可多选高亮">
+        <t-form-item label="节点可多选高亮" style="margin-bottom: 5px">
           <t-switch v-model="activeMultiple" />
         </t-form-item>
-        <t-form-item label="整个节点可点击">
+        <t-form-item label="整个节点可点击" style="margin-bottom: 5px">
           <t-switch v-model="expandOnClickNode" />
         </t-form-item>
       </t-form>
-    </div>
+    </t-space>
     <t-tree
       :data="items"
       expand-all
@@ -24,7 +24,7 @@
       :onActive="propOnActive"
       hover
     />
-  </div>
+  </t-space>
 </template>
 
 <script>
@@ -82,24 +82,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.tdesign-tree-demo .t-tree {
-  margin-bottom: 20px;
-}
-.tdesign-tree-demo .title {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .tips {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .operations {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .t-form__item {
-  margin-bottom: 5px;
-}
-.tdesign-tree-demo .t-button {
-  margin: 0 10px 10px 0;
-}
-</style>

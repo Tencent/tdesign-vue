@@ -1,11 +1,11 @@
 <template>
-  <div class="tdesign-demo-block-column-large">
+  <t-space direction="vertical">
     <t-input-adornment prepend="filter:">
       <t-input v-model="filterText" @change="onInput" />
     </t-input-adornment>
 
     <t-tree :data="items" expand-on-click-node :default-expanded="expanded" :filter="filterByText" hover line />
-  </div>
+  </t-space>
 </template>
 
 <script>

@@ -1,13 +1,12 @@
 <template>
-  <div class="tdesign-tree-demo">
-    <t-tree :data="[]" /><br />
-    <t-tree :data="[]" empty="😊 空数据（string）" /><br />
-    <t-tree :data="[]" :empty="empty" /><br />
-    <t-tree :data="[]"
-    ><br />
+  <t-space direction="vertical" :size="20">
+    <t-tree :data="[]" />
+    <t-tree :data="[]" empty="😊 空数据（string）" />
+    <t-tree :data="[]" :empty="empty" />
+    <t-tree :data="[]">
       <div slot="empty">😊 空数据（slot）</div>
     </t-tree>
-  </div>
+  </t-space>
 </template>
 
 <script lang="jsx">
@@ -22,24 +21,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.tdesign-tree-demo .t-tree {
-  margin-bottom: 20px;
-}
-.tdesign-tree-demo .title {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .tips {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .operations {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .t-form__item {
-  margin-bottom: 5px;
-}
-.tdesign-tree-demo .t-button {
-  margin: 0 10px 10px 0;
-}
-</style>

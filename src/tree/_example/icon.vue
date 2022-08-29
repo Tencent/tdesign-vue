@@ -1,9 +1,9 @@
 <template>
-  <div class="tdesign-tree-demo">
+  <t-space direction="vertical" :size="0">
     <h3>render:</h3>
-    <t-tree :data="items" hover expand-all :load="load" :icon="icon" />
+    <t-tree :data="items" hover expand-all :load="load" :icon="icon" style="margin-bottom: 20px" />
     <h3>scope slot:</h3>
-    <t-tree :data="items" hover lazy :load="load">
+    <t-tree :data="items" hover lazy :load="load" style="margin-bottom: 20px">
       <template #icon="{ node }">
         <icon v-if="node.getChildren() && !node.expanded" name="caret-right" />
         <icon v-else-if="node.getChildren() && node.expanded && node.loading" name="loading" />
@@ -11,7 +11,7 @@
         <icon v-else name="attach" />
       </template>
     </t-tree>
-  </div>
+  </t-space>
 </template>
 
 <script lang="jsx">
@@ -74,24 +74,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.tdesign-tree-demo .t-tree {
-  margin-bottom: 20px;
-}
-.tdesign-tree-demo .title {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .tips {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .operations {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .t-form__item {
-  margin-bottom: 5px;
-}
-.tdesign-tree-demo .t-button {
-  margin: 0 10px 10px 0;
-}
-</style>

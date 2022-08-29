@@ -1,7 +1,7 @@
 <template>
-  <div class="tdesign-tree-demo">
+  <t-space>
     <t-tree :data="items" activable hover transition />
-  </div>
+  </t-space>
 </template>
 
 <script>
@@ -58,24 +58,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.tdesign-tree-demo .t-tree {
-  margin-bottom: 20px;
-}
-.tdesign-tree-demo .title {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .tips {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .operations {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .t-form__item {
-  margin-bottom: 5px;
-}
-.tdesign-tree-demo .t-button {
-  margin: 0 10px 10px 0;
-}
-</style>

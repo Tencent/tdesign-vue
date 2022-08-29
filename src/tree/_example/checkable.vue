@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column-large">
+  <t-space direction="vertical">
     <t-form>
       <t-form-item label="可选" style="margin-bottom: 16px">
         <t-switch v-model="checkable" />
@@ -25,7 +25,7 @@
       @change="onChange"
       @click="onClick"
     />
-  </div>
+  </t-space>
 </template>
 
 <script>

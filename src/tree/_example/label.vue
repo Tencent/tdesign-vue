@@ -1,14 +1,14 @@
 <template>
-  <div class="tdesign-tree-demo">
+  <t-space direction="vertical" :size="20">
     <h3>render:</h3>
-    <t-tree :data="items" expand-all :label="label"></t-tree>
+    <t-tree :data="items" expand-all :label="label" style="margin-bottom: 20px"></t-tree>
     <h3>scope slot:</h3>
-    <t-tree :data="items" expand-all checkable>
+    <t-tree :data="items" expand-all checkable style="margin-bottom: 20px">
       <template #label="{ node }">
         <font color="blue">label: {{ node.label }}, value: {{ node.value }}</font>
       </template>
     </t-tree>
-  </div>
+  </t-space>
 </template>
 
 <script>
@@ -50,24 +50,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.tdesign-tree-demo .t-tree {
-  margin-bottom: 20px;
-}
-.tdesign-tree-demo .title {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .tips {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .operations {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .t-form__item {
-  margin-bottom: 5px;
-}
-.tdesign-tree-demo .t-button {
-  margin: 0 10px 10px 0;
-}
-</style>

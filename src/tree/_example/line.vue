@@ -1,15 +1,16 @@
 <template>
-  <div class="tdesign-demo-block-column-large tdesign-tree-demo tdesign-tree-line">
+  <t-space class="tdesign-tree-line" direction="vertical">
     <t-form>
-      <t-form-item label="显示连线" style="margin-bottom: 16px">
-        <t-switch v-model="showLine" />
-      </t-form-item>
-      <t-form-item label="显示图标" style="margin-bottom: 16px">
-        <t-switch v-model="showIcon" />
-      </t-form-item>
+      <t-space direction="vertical" :size="5">
+        <t-form-item label="显示连线">
+          <t-switch v-model="showLine" />
+        </t-form-item>
+        <t-form-item label="显示图标">
+          <t-switch v-model="showIcon" />
+        </t-form-item>
+      </t-space>
     </t-form>
-
-    <div class="tdesign-demo-block-column">
+    <t-space direction="vertical">
       <t-tree :data="items" :line="showLine" :icon="showIcon" expand-all />
       <h3>render</h3>
       <t-tree :data="items" :icon="showIcon" expand-all :line="renderLine" />
@@ -30,8 +31,8 @@
           </div>
         </template>
       </t-tree>
-    </div>
-  </div>
+    </t-space>
+  </t-space>
 </template>
 
 <script lang="jsx">
