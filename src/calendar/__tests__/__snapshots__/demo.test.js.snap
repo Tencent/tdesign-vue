@@ -3485,6 +3485,7 @@ exports[`Calendar Calendar controllerConfigVue demo works fine 1`] = `
         >
           <div
             class="t-select__wrap"
+            size="medium"
           >
             <div
               class="t-input__wrap t-select"
@@ -3536,6 +3537,7 @@ exports[`Calendar Calendar controllerConfigVue demo works fine 1`] = `
         >
           <div
             class="t-select__wrap"
+            size="medium"
           >
             <div
               class="t-input__wrap t-select"

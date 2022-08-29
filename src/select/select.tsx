@@ -78,7 +78,7 @@ export default defineComponent({
       label: props.keys?.label || 'label',
       value: props.keys?.value || 'value',
     }));
-    const { options: innerOptions, optionsMap, optionsList } = useSelectOptions(props, context, keys);
+    const { options: innerOptions, optionsMap, optionsList } = useSelectOptions(props, instance, keys);
 
     const [value, setValue] = useVModel(valueProps, props.defaultValue, props.onChange, 'change');
     const innerValue = computed(() => {
