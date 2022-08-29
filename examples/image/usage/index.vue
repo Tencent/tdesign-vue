@@ -1,0 +1,24 @@
+<!-- 该脚本为自动生成，如有需要请在 /script/generate-usage.js 中调整 -->
+<template>
+  <base-usage :code="usageCode" :config-list="configList" :panel-list="panelList" @PanelChange="onPanelChange">
+    <template #image="{ configProps }">
+      <t-image v-bind="configProps"></t-image>
+    </template>
+  </base-usage>
+</template>
+
+<script setup lang="jsx">
+/* eslint-disable */
+import { ref, onMounted } from '@vue/composition-api';
+import configJson from './props.json';
+
+const configList = ref(configJson);
+const panelList = [{ label: 'image', value: 'image' }];
+
+const usageCodeMap = { image: '\n        <t-image v-bind="configProps"></t-image>\n      ' };
+const usageCode = ref(`<template>${usageCodeMap[panelList[0].value].trim()}</template>`);
+
+function onPanelChange(panel) {
+  usageCode.value = `<template>${usageCodeMap[panel].trim()}</template>`;
+}
+</script>

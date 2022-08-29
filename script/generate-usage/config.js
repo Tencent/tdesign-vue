@@ -614,4 +614,12 @@ module.exports = {
       `,
     },
   },
+  image: {
+    panelStr: `const panelList = [{label: 'image', value: 'image'}];`,
+    render: {
+      image: `
+        <t-image v-bind="configProps"></t-image>
+      `,
+    },
+  },
 };
