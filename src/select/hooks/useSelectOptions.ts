@@ -1,5 +1,5 @@
 import {
-  ref, Ref, SetupContext, computed, onBeforeUpdate,
+  ref, Ref, SetupContext, computed, onBeforeUpdate, onMounted,
 } from '@vue/composition-api';
 import { VNode } from 'vue';
 import get from 'lodash/get';
@@ -42,7 +42,7 @@ export default function useSelectOptions(props: TdSelectProps, context: SetupCon
     });
 
     // 处理 slots 中 t-option 与 t-option-group
-    const currentSlots = context.parent.$slots.default || [];
+    const currentSlots = context.slots.default?.() || [];
     const optionsSlots = currentSlots.filter((item) => item.tag?.endsWith('TOption'));
     const groupSlots = currentSlots.filter((item) => item.tag?.endsWith('TOptionGroup'));
     if (isArray(groupSlots)) {
@@ -114,7 +114,9 @@ export default function useSelectOptions(props: TdSelectProps, context: SetupCon
     return res;
   });
 
-  getOptions();
+  onMounted(() => {
+    getOptions();
+  });
   onBeforeUpdate(() => {
     getOptions();
   });

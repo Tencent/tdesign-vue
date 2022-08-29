@@ -15,6 +15,7 @@ import get from 'lodash/get';
 import cloneDeep from 'lodash/cloneDeep';
 import isArray from 'lodash/isArray';
 import useDefaultValue from '../hooks/useDefaultValue';
+import useVModel from '../hooks/useVModel';
 import { useTNodeJSX } from '../hooks/tnode';
 import { useConfig, usePrefixClass } from '../config-provider/useConfig';
 import { TdSelectProps, SelectValue, TdOptionProps } from './type';
@@ -79,7 +80,7 @@ export default defineComponent({
     }));
     const { options: innerOptions, optionsMap, optionsList } = useSelectOptions(props, context, keys);
 
-    const [value, setValue] = useDefaultValue(valueProps, props.defaultValue, props.onChange, 'value', 'change');
+    const [value, setValue] = useVModel(valueProps, props.defaultValue, props.onChange, 'change');
     const innerValue = computed(() => {
       if (valueType.value === 'object') {
         return multiple.value
