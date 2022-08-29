@@ -183,6 +183,8 @@ export default defineComponent({
                       onChange: this.handleTimeChange,
                       handleConfirmClick: this.handleClickConfirm,
                       position: this.currentPanelIdx === 0 ? 'start' : 'end',
+                      activeIndex: this.currentPanelIdx,
+                      presets: this.presets,
                     },
                   }}
                 />

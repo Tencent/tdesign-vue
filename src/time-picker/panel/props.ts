@@ -1,5 +1,6 @@
 import { PropType } from 'vue';
 
+import { TdTimePickerProps } from '@src/time-picker';
 import * as Props from '../props';
 
 export const panelProps = () => ({
@@ -26,6 +27,12 @@ export const panelProps = () => ({
   isShowPanel: {
     type: Boolean,
     default: false,
+  },
+  activeIndex: {
+    type: Number,
+  },
+  presets: {
+    type: Object as PropType<TdTimePickerProps['presets']>,
   },
   hideDisabledTime: {
     ...Props.default.hideDisabledTime,

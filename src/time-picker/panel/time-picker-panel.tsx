@@ -4,6 +4,7 @@ import {
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
+import { TimePickerValue } from '@src/time-picker';
 import { DEFAULT_STEPS, DEFAULT_FORMAT } from '../../_common/js/time-picker/const';
 import { panelProps } from './props';
 import SinglePanel from './single-panel';
@@ -51,6 +52,18 @@ export default defineComponent({
       props.onChange?.(v);
       ctx.emit('change', v);
     };
+    const handlePresetClick = (presetValue: TimePickerValue | (() => TimePickerValue)) => {
+      const presetVal = typeof presetValue === 'function' ? presetValue() : presetValue;
+      if (typeof props.activeIndex === 'number') {
+        if (Array.isArray(presetVal)) {
+          props.onChange(presetVal[props.activeIndex]);
+        } else {
+          console.error(`preset: ${props.presets} 预设值必须是数组!`);
+        }
+      } else {
+        props.onChange(presetVal);
+      }
+    };
     // 渲染后执行update 使面板滚动至当前时间位置
     onMounted(() => {
       panelColUpdate();
@@ -71,6 +84,7 @@ export default defineComponent({
       defaultValue,
       global,
       handleChange,
+      handlePresetClick,
     };
   },
 
@@ -102,16 +116,30 @@ export default defineComponent({
             >
               {this.global.confirm}
             </TButton>
-            {!this.showNowTimeBtn ? (
-              <TButton
-                theme="primary"
-                variant="text"
-                size="small"
-                onClick={() => this.onChange(dayjs().format(this.format))}
-              >
-                {this.global.now}
-              </TButton>
-            ) : null}
+            <div>
+              {!this.showNowTimeBtn ? (
+                <TButton
+                  theme="primary"
+                  variant="text"
+                  size="small"
+                  onClick={() => this.onChange(dayjs().format(this.format))}
+                >
+                  {this.global.now}
+                </TButton>
+              ) : null}
+              {this.presets
+                && Object.keys(this.presets).map((key: string) => (
+                  <TButton
+                    key={key}
+                    theme="primary"
+                    size="small"
+                    variant="text"
+                    onClick={() => this.handlePresetClick?.(this.presets[key])}
+                  >
+                    {key}
+                  </TButton>
+                ))}
+            </div>
           </div>
         ) : null}
       </div>
