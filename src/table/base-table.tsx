@@ -109,7 +109,6 @@ export default defineComponent({
       resizeLineRef, resizeLineStyle, recalculateColWidth, setEffectColMap,
     } = columnResizeParams;
     setRecalculateColWidthFuncRef(recalculateColWidth);
-    setEffectColMap(thList.value[0], null);
 
     const dynamicBaseTableClasses = computed(() => [
       tableClasses.value,
