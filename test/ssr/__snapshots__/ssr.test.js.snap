@@ -20923,7 +20923,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/lazy.vue correctly 1`] = 
 `;
 
 exports[`ssr snapshot test renders ./src/tree/_example/line.vue correctly 1`] = `
-<div class=" tdesign-tree-line t-space t-space-vertical" style="gap:16px;">
+<div class="tdesign-tree-line t-space t-space-vertical" style="gap:16px;">
   <div class="t-space-item">
     <form class="t-form">
       <div class="t-space t-space-vertical" style="gap:5px;">
