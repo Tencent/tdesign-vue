@@ -1,9 +1,8 @@
 import { ref, Ref, reactive } from '@vue/composition-api';
-import isNumber from 'lodash/isNumber';
 import { RecalculateColumnWidthFunc } from '../interface';
 import { BaseTableCol, TableRowData } from '../type';
-import { setThWidthListByColumnDrag } from '../../_common/js/table/set-column-width-by-drag';
-import { recalculateColumnWidth } from '../../_common/js/table/recalculate-column-width';
+import setThWidthListByColumnDrag from '../../_common/js/table/set-column-width-by-drag';
+import recalculateColumnWidth from '../../_common/js/table/recalculate-column-width';
 
 const DEFAULT_MIN_WIDTH = 80;
 const DEFAULT_MAX_WIDTH = 600;
