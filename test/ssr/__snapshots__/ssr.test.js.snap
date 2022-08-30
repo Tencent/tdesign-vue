@@ -8009,7 +8009,7 @@ exports[`ssr snapshot test renders ./examples/input/demos/group.vue correctly 1`
 exports[`ssr snapshot test renders ./examples/input/demos/max-length-count.vue correctly 1`] = `
 <div class="tdesign-demo-block-column" style="max-width:500px;">
   <div class="t-input__wrap">
-    <div class="t-input t-size-m t-is-default t-input--suffix"><input autocomplete="" placeholder="请输入" maxlength="5" type="text" unselectable="off" value="" class="t-input__inner">
+    <div class="t-input t-size-m t-is-default t-input--suffix"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="" class="t-input__inner">
       <div class="t-input__suffix">0/5</div>
     </div>
   </div>
@@ -19180,7 +19180,7 @@ exports[`ssr snapshot test renders ./examples/textarea/demos/events.vue correctl
 
 exports[`ssr snapshot test renders ./examples/textarea/demos/maxlength.vue correctly 1`] = `
 <div>
-  <div class="t-textarea"><textarea placeholder="请输入描述文案，文本长度最多20，maxlength=20" maxlength="20" unselectable="off" class="t-textarea__inner"></textarea><span class="t-textarea__limit">0/20</span></div> <br>
+  <div class="t-textarea"><textarea placeholder="请输入描述文案，文本长度最多20，maxlength=20" unselectable="off" class="t-textarea__inner"></textarea><span class="t-textarea__limit">0/20</span></div> <br>
   <div class="t-textarea"><textarea placeholder="请输入描述文案，最多20字符（一个汉字占两个字符长度），maxcharacter=20" unselectable="off" class="t-textarea__inner"></textarea><span class="t-textarea__limit">0/20</span></div>
 </div>
 `;

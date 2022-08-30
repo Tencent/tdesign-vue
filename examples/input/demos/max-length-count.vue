@@ -12,7 +12,7 @@ export default {
   },
   computed: {
     suffix() {
-      return `${this.input.length}/5`;
+      return `${[...this.input].length}/5`;
     },
   },
 };
