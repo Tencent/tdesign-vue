@@ -21,7 +21,7 @@ spline: explain
 npm i tdesign-vue
 ```
 
-#### 浏览器引入
+#### 通过 浏览器引入 安装
 
 目前可以通过 [unpkg.com/tdesign-vue](https://unpkg.com/tdesign-vue) 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。由于部分组件依赖了`@vue/composition-api`，除了像其他 vue2 版本的组件库一样需要引入`vue`，还需要额外手动引入`@vue/composition-api`。
 
@@ -36,9 +36,9 @@ npm i tdesign-vue
 </script>
 ```
 
-### 基础使用
+### 使用
 
-推荐使用 Webpack 或 Rollup 等支持 tree-shaking 特性的构建工具，无需额外配置即可实现组件按需引入：
+#### 基础使用
 
 ```js
 import Vue from 'vue';
@@ -51,25 +51,7 @@ Vue.use(TDesign);
 
 npm package 中提供了多种构建产物，可以阅读 [这里](https://github.com/Tencent/tdesign/blob/main/docs/develop-install.md) 了解不同目录下产物的差别。
 
-#### reset 样式
-
-`0.43.0` 版本开始我们不再引入 `reset.less`，影响最大的是移除了原先全局盒子模型的设定：
-
-```css
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-```
-
-如果你的项目开发依赖于原先的 `reset` 样式，可以从 `dist` 目录中单独引入它：
-
-```js
-import 'tdesign-vue/dist/reset.css';
-```
-
-### 自动引入
+#### 自动引入使用
 
 故名思义，就是可以直接使用 TDesign 的组件，而不需要手动引入：
 
@@ -94,7 +76,7 @@ npm install -D unplugin-vue-components unplugin-auto-import
 
 然后在 Webpack 或 Vite 对应的配置文件添加上述插件。
 
-#### Vite
+##### Vite
 
 ```js
 import AutoImport from 'unplugin-auto-import/vite';
@@ -114,7 +96,7 @@ export default {
 };
 ```
 
-#### Webpack
+##### Webpack
 
 ```js
 const AutoImport = require('unplugin-auto-import/webpack');
@@ -133,8 +115,7 @@ module.exports = {
   ],
 };
 ```
-由于部分组件依赖了`@vue/composition-api`，在以上配置之外，自动引入的方式仍需要您手动引入`@vue/composition-api`来保证组件的正常运行。
-
+> 由于部分组件依赖了`@vue/composition-api`，在以上配置之外，自动引入的方式仍需要您手动引入`@vue/composition-api`来保证组件的正常运行。
 
 > `TDesignResolver` 支持的配置，可以点击此[链接](https://github.com/antfu/unplugin-vue-components/blob/main/src/core/resolvers/tdesign.ts#L4)。
 
@@ -163,4 +144,23 @@ import VueCompositionAPI from '@vue/composition-api';
 
 Vue.use(VueCompositionAPI); // 必须是第一个 use
 Vue.use(otherPlugin);
+```
+
+
+Q: 是否内置reset样式统一页面元素的默认样式 ？
+
+A: `0.43.0` 版本开始我们不再引入 `reset.less`，影响最大的是移除了原先全局盒子模型的设定：
+
+```css
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+```
+
+如果你的项目开发依赖于原先的 `reset` 样式，可以从 `dist` 目录中单独引入它：
+
+```js
+import 'tdesign-vue/dist/reset.css';
 ```

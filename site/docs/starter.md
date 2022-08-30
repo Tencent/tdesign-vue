@@ -11,7 +11,6 @@ spline: explain
 </a>
 </p>
 <p>
-  <a href="https://npmjs.com/package/vite"><img src="https://img.shields.io/npm/v/vite.svg" alt="npm package"></a>&nbsp;
   <a href="https://nodejs.org/en/about/releases/"><img src="https://img.shields.io/node/v/vite.svg" alt="node compatibility"></a>
 </p>
 <p>

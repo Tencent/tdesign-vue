@@ -36,18 +36,18 @@ export default {
 
     // 替换成对应 demo 文件
     source = source.replace(/\{\{\s+(.+)\s+\}\}/g, (demoStr, demoFileName) => {
-      const defaultDemoPath = path.resolve(resourceDir, `./demos/${demoFileName}.vue`);
-      const localeDemoPath = path.resolve(resourceDir, `./demos/${demoFileName}.${localeName}.vue`);
+      const defaultDemoPath = path.resolve(resourceDir, `./_example/${demoFileName}.vue`);
+      const localeDemoPath = path.resolve(resourceDir, `../_example/${demoFileName}.${localeName}.vue`);
       // localeDemo 优先级最高
       if (fs.existsSync(localeDemoPath))
-        return `\n::: demo demos/${demoFileName}.${localeName} ${componentName}\n:::\n`;
+        return `\n::: demo _example/${demoFileName}.${localeName} ${componentName}\n:::\n`;
 
       if (!fs.existsSync(defaultDemoPath)) {
-        console.log('\x1B[36m%s\x1B[0m', `${componentName} 组件需要实现 demos/${demoFileName}.vue 示例!`);
+        console.log('\x1B[36m%s\x1B[0m', `${componentName} 组件需要实现 _example/${demoFileName}.vue 示例!`);
         return '\n<h3>DEMO (🚧建设中）...</h3>';
       }
 
-      return `\n::: demo demos/${demoFileName} ${componentName}\n:::\n`;
+      return `\n::: demo _example/${demoFileName} ${componentName}\n:::\n`;
     });
 
     source.replace(/:::\s*demo\s+([\\/.\w-]+)/g, (demoStr, relativeDemoPath) => {

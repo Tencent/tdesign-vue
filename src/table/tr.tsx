@@ -240,8 +240,8 @@ export default defineComponent({
         <TEllipsis
           placement={placement}
           attach={this.tableElm ? () => this.tableElm : undefined}
-          popupContent={content && (() => content)}
-          popupProps={typeof col.ellipsis === 'object' ? col.ellipsis : undefined}
+          tooltipContent={content && (() => content)}
+          tooltipProps={typeof col.ellipsis === 'object' ? col.ellipsis : undefined}
         >
           {cellNode}
         </TEllipsis>

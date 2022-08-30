@@ -158,7 +158,7 @@ export default mixins(classPrefixMixins).extend({
           this.handleToggle({ e, trigger: 'trigger-element-click' });
           // ie9-10 trigger propagation
           if (getIEVersion() < 11) {
-            this.handleDocumentClick();
+            this.handleDocumentClick(e);
           }
         });
       } else if (hasTrigger['context-menu']) {
