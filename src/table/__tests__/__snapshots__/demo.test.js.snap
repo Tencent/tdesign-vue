@@ -18277,7 +18277,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
   </div>
    
   <div
-    class="t-table t-table--bordered t-table--multiple-header t-table--col-draggable"
+    class="t-table t-table--bordered t-table--multiple-header t-table--column-resizable t-table--col-draggable"
     style="position: relative;"
   >
     <div

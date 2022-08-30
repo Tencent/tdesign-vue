@@ -1715,7 +1715,7 @@ exports[`ssr snapshot test renders ./src/calendar/_example/controller-config.vue
       <div class="t-calendar__title"></div>
       <div class="t-calendar__control-section">
         <div class="t-calendar__control-section-cell">
-          <div class="t-select__wrap">
+          <div size="medium" class="t-select__wrap">
             <div class="t-input__wrap t-select">
               <div class="t-input t-size-s t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix">
                 <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="2021 年" class="t-input__inner"><span class="t-input__input-pre">2021 年</span><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
@@ -1724,7 +1724,7 @@ exports[`ssr snapshot test renders ./src/calendar/_example/controller-config.vue
           </div>
         </div>
         <div class="t-calendar__control-section-cell">
-          <div class="t-select__wrap">
+          <div size="medium" class="t-select__wrap">
             <div class="t-input__wrap t-select">
               <div class="t-input t-size-s t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix">
                 <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="12 月" class="t-input__inner"><span class="t-input__input-pre">12 月</span><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
@@ -4929,7 +4929,7 @@ exports[`ssr snapshot test renders ./src/config-provider/_example/calendar.vue c
     <div class="t-calendar__title"></div>
     <div class="t-calendar__control-section">
       <div class="t-calendar__control-section-cell">
-        <div class="t-select__wrap">
+        <div size="medium" class="t-select__wrap">
           <div class="t-input__wrap t-select">
             <div class="t-input t-size-s t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix">
               <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="2021" class="t-input__inner"><span class="t-input__input-pre">2021</span><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
@@ -4938,7 +4938,7 @@ exports[`ssr snapshot test renders ./src/config-provider/_example/calendar.vue c
         </div>
       </div>
       <div class="t-calendar__control-section-cell">
-        <div class="t-select__wrap">
+        <div size="medium" class="t-select__wrap">
           <div class="t-input__wrap t-select">
             <div class="t-input t-size-s t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix">
               <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="December" class="t-input__inner"><span class="t-input__input-pre">December</span><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-select__right-icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
@@ -9801,14 +9801,18 @@ exports[`ssr snapshot test renders ./src/list/_example/stripe.vue correctly 1`] 
 `;
 
 exports[`ssr snapshot test renders ./src/loading/_example/attach.vue correctly 1`] = `
-<div class="tdesign-demo-block-column">
-  <div id="alice" class="loading-attach-demo__title">Hello, I'm Alice. I'm going to be a front-end developer.</div>
-  <div class="t-loading--center t-size-s t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
-      <foreignObject x="1" y="1" width="12" height="12">
-        <div class="t-loading__gradient-conic"></div>
-      </foreignObject>
-    </svg></div>
-  <div>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div id="alice" class="loading-attach-demo__title">Hello, I'm Alice. I'm going to be a front-end developer.</div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-loading--center t-size-s t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+        <foreignObject x="1" y="1" width="12" height="12">
+          <div class="t-loading__gradient-conic"></div>
+        </foreignObject>
+      </svg></div>
+  </div>
+  <div class="t-space-item">
     <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
       <div class="t-switch__content t-size-m">显示</div>
     </div>
@@ -9817,149 +9821,222 @@ exports[`ssr snapshot test renders ./src/loading/_example/attach.vue correctly 1
 `;
 
 exports[`ssr snapshot test renders ./src/loading/_example/base.vue correctly 1`] = `
-<div class="t-loading-demo">
-  <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
-      <foreignObject x="1" y="1" width="12" height="12">
-        <div class="t-loading__gradient-conic"></div>
-      </foreignObject>
-    </svg></div>
-</div>
-`;
-
-exports[`ssr snapshot test renders ./src/loading/_example/delay.vue correctly 1`] = `
-<div class="tdesign-demo-block-column">
-  <div>
-    <div class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
         <foreignObject x="1" y="1" width="12" height="12">
           <div class="t-loading__gradient-conic"></div>
         </foreignObject>
       </svg></div>
-    <!---->
   </div>
-  <div class="wrap">
-    <div class="t-loading__parent">
-      <div class="wrap"></div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./src/loading/_example/delay.vue correctly 1`] = `
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item">
+        <div class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+            <foreignObject x="1" y="1" width="12" height="12">
+              <div class="t-loading__gradient-conic"></div>
+            </foreignObject>
+          </svg></div>
+      </div>
     </div>
   </div>
-  <div class="tdesign-demo-block-row"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">快速重新加载数据（无loading）</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">慢速重新加载数据</span></button></div>
+  <div class="t-space-item">
+    <div>
+      <div class="t-loading__parent">
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">快速重新加载数据（无loading）</span></button></div>
+      <div class="t-space-item"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">慢速重新加载数据</span></button></div>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/loading/_example/fullscreen.vue correctly 1`] = `
-<div class="tdesign-demo-block-column">
-  <!---->
-  <div>
-    全局加载开关（开启加载1秒后自动归位）：
-    <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
-      <div class="t-switch__content t-size-m"></div>
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item">
+    <!---->
+  </div>
+  <div class="t-space-item">
+    <div>
+      全局加载开关（开启加载1秒后自动归位）：
+      <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
+        <div class="t-switch__content t-size-m"></div>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/loading/_example/icon-text.vue correctly 1`] = `
-<div>
-  <div class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
-      <foreignObject x="1" y="1" width="12" height="12">
-        <div class="t-loading__gradient-conic"></div>
-      </foreignObject>
-    </svg>
-    <div class="t-loading__text">加载中...</div>
-  </div>
-</div>
-`;
-
-exports[`ssr snapshot test renders ./src/loading/_example/service.vue correctly 1`] = `
-<div class="tdesign-demo-block-column">
-  <div id="loading-service-demo" class="loading-service-demo">Loading 挂载容器</div>
-  <p>this.$loading(true)</p>
-  <p>this.$loading({ attach: '#loading-service-demo', showOverlay: true })</p>
-  <div class="tdesign-demo-block-row"><button type="button" class="t-loading__btn t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">插件方式加载（局部）</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">插件方式加载（全屏）</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">插件方式加载（全屏-滚动穿透）</span></button></div>
-  <p>LoadingPlugin(true)</p>
-  <p>LoadingPlugin({ attach: '#loading-service-demo', showOverlay: true })</p>
-  <div class="tdesign-demo-block-row"><button type="button" class="t-loading__btn t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">函数方式加载（局部）</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">函数方式加载（全屏）</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">函数方式加载（全屏-滚动穿透）</span></button></div>
-</div>
-`;
-
-exports[`ssr snapshot test renders ./src/loading/_example/size.vue correctly 1`] = `
-<div class="tdesign-demo-block-column-large">
-  <div>
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item">
     <div class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
         <foreignObject x="1" y="1" width="12" height="12">
           <div class="t-loading__gradient-conic"></div>
         </foreignObject>
       </svg>
-      <div class="t-loading__text">加载中(小)...</div>
+      <div class="t-loading__text">加载中...</div>
     </div>
   </div>
-  <div>
-    <div class="t-loading--center t-loading" style="font-size:26px;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="26px" class="t-loading__gradient t-icon-loading">
-        <foreignObject x="1" y="1" width="12" height="12">
-          <div class="t-loading__gradient-conic"></div>
-        </foreignObject>
-      </svg>
-      <div class="t-loading__text">加载中(size=26px)...</div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./src/loading/_example/service.vue correctly 1`] = `
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div id="loading-service-demo" class="loading-service-demo">Loading 挂载容器</div>
+  </div>
+  <div class="t-space-item">
+    <p>this.$loading({ attach: '#loading-service-demo', showOverlay: true })</p>
+  </div>
+  <div class="t-space-item">
+    <p>this.$loading(true)</p>
+  </div>
+  <div class="t-space-item">
+    <p>this.$loading({ fullscreen: true, attach: 'body', preventScrollThrough: false })</p>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">插件方式加载（局部）</span></button></div>
+      <div class="t-space-item"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">插件方式加载（全屏）</span></button></div>
+      <div class="t-space-item"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">插件方式加载（全屏-滚动穿透）</span></button></div>
     </div>
   </div>
-  <div>
-    <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
-        <foreignObject x="1" y="1" width="12" height="12">
-          <div class="t-loading__gradient-conic"></div>
-        </foreignObject>
-      </svg>
-      <div class="t-loading__text">加载中(中)...</div>
+  <div class="t-space-item">
+    <p>LoadingPlugin({ attach: '#loading-service-demo', showOverlay: true })</p>
+  </div>
+  <div class="t-space-item">
+    <p>LoadingPlugin(true)</p>
+  </div>
+  <div class="t-space-item">
+    <p>LoadingPlugin({ fullscreen: true, attach: 'body', preventScrollThrough: false })</p>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">函数方式加载（局部）</span></button></div>
+      <div class="t-space-item"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">函数方式加载（全屏）</span></button></div>
+      <div class="t-space-item"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">函数方式加载（全屏-滚动穿透）</span></button></div>
     </div>
   </div>
-  <div>
-    <div class="t-loading--center t-size-m t-loading" style="font-size:46px;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
-        <foreignObject x="1" y="1" width="12" height="12">
-          <div class="t-loading__gradient-conic"></div>
-        </foreignObject>
-      </svg>
-      <div class="t-loading__text">加载中(样式定义)...</div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./src/loading/_example/size.vue correctly 1`] = `
+<div class="t-space t-space-vertical" style="gap:24px;">
+  <div class="t-space-item">
+    <div>
+      <div class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+          <foreignObject x="1" y="1" width="12" height="12">
+            <div class="t-loading__gradient-conic"></div>
+          </foreignObject>
+        </svg>
+        <div class="t-loading__text">加载中(小)...</div>
+      </div>
     </div>
   </div>
-  <div>
-    <div class="t-loading--center t-size-l t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="large" class="t-loading__gradient t-icon-loading">
-        <foreignObject x="1" y="1" width="12" height="12">
-          <div class="t-loading__gradient-conic"></div>
-        </foreignObject>
-      </svg>
-      <div class="t-loading__text">加载中(大)...</div>
+  <div class="t-space-item">
+    <div>
+      <div class="t-loading--center t-loading" style="font-size:26px;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="26px" class="t-loading__gradient t-icon-loading">
+          <foreignObject x="1" y="1" width="12" height="12">
+            <div class="t-loading__gradient-conic"></div>
+          </foreignObject>
+        </svg>
+        <div class="t-loading__text">加载中(size=26px)...</div>
+      </div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div>
+      <div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+          <foreignObject x="1" y="1" width="12" height="12">
+            <div class="t-loading__gradient-conic"></div>
+          </foreignObject>
+        </svg>
+        <div class="t-loading__text">加载中(中)...</div>
+      </div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div>
+      <div class="t-loading--center t-size-m t-loading" style="font-size:46px;"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading">
+          <foreignObject x="1" y="1" width="12" height="12">
+            <div class="t-loading__gradient-conic"></div>
+          </foreignObject>
+        </svg>
+        <div class="t-loading__text">加载中(样式定义)...</div>
+      </div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div>
+      <div class="t-loading--center t-size-l t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="large" class="t-loading__gradient t-icon-loading">
+          <foreignObject x="1" y="1" width="12" height="12">
+            <div class="t-loading__gradient-conic"></div>
+          </foreignObject>
+        </svg>
+        <div class="t-loading__text">加载中(大)...</div>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/loading/_example/text.vue correctly 1`] = `
-<div class="t-loading-demo">
-  <div class="t-loading--center t-size-m t-loading">
-    <div class="t-loading__text">静态文字加载中...</div>
+<div class="t-space t-space-horizontal" style="gap:100px;">
+  <div class="t-space-item">
+    <div class="t-loading--center t-size-m t-loading">
+      <div class="t-loading__text">静态文字加载中...</div>
+    </div>
   </div>
-  <div class="t-loading--center t-size-m t-loading">
-    <div class="t-loading__text"><span>变量文字加载中...</span></div>
+  <div class="t-space-item">
+    <div class="t-loading--center t-size-m t-loading">
+      <div class="t-loading__text"><span>变量文字加载中...</span></div>
+    </div>
   </div>
-  <div class="t-loading--center t-size-m t-loading">
-    <div class="t-loading__text">插槽文字加载中...</div>
+  <div class="t-space-item">
+    <div class="t-loading--center t-size-m t-loading">
+      <div class="t-loading__text">插槽文字加载中...</div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/loading/_example/wrap.vue correctly 1`] = `
-<div class="loading-wrap-demo">
-  <div class="t-loading__parent">
-    <div>this is loading component</div>
-    <div>this is loading component</div>
-    <div>this is loading component</div>
-    <div>this is loading component</div>
-    <div>this is loading component</div>
-    <div class="t-loading--center t-size-s t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
-        <foreignObject x="1" y="1" width="12" height="12">
-          <div class="t-loading__gradient-conic"></div>
-        </foreignObject>
-      </svg></div>
-  </div> <br>
-  <div><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">加载中</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">加载完成</span></button></div>
+<div class="t-space t-space-vertical" style="gap:24px;">
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:16px;">
+      <div class="t-space-item">
+        <div class="t-loading__parent">
+          <div>this is loading component</div>
+          <div>this is loading component</div>
+          <div>this is loading component</div>
+          <div>this is loading component</div>
+          <div>this is loading component</div>
+          <div class="t-loading--center t-size-s t-loading t-loading--full t-loading__overlay"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
+              <foreignObject x="1" y="1" width="12" height="12">
+                <div class="t-loading__gradient-conic"></div>
+              </foreignObject>
+            </svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:24px;">
+      <div class="t-space-item"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">加载中</span></button></div>
+      <div class="t-space-item"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">加载完成</span></button></div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -10908,26 +10985,29 @@ exports[`ssr snapshot test renders ./src/message/_example/type.vue correctly 1`]
 `;
 
 exports[`ssr snapshot test renders ./src/notification/_example/base.vue correctly 1`] = `
-<div>
-  <div class="t-notification">
-    <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
-        <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-      </svg></div>
-    <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">标题名称</span><span class="t-message__close"></span></div>
-      <div class="t-notification__content">这是一条消息通知</div>
+<div class="t-space t-space-vertical" style="gap:20px;">
+  <div class="t-space-item">
+    <div class="t-notification">
+      <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-notification__main">
+        <div class="t-notification__title__wrap"><span class="t-notification__title">标题名称</span><span class="t-message__close"></span></div>
+        <div class="t-notification__content">这是一条消息通知</div>
+      </div>
     </div>
   </div>
-  <div class="t-notification">
-    <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
-        <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-      </svg></div>
-    <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">标题名称</span><span class="t-message__close"></span></div>
-      <div class="t-notification__content">这是一条消息通知（展示 5 秒后消失）</div>
+  <div class="t-space-item">
+    <div class="t-notification">
+      <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-notification__main">
+        <div class="t-notification__title__wrap"><span class="t-notification__title">标题名称</span><span class="t-message__close"></span></div>
+        <div class="t-notification__content">这是一条消息通知（展示 5 秒后消失）</div>
+      </div>
     </div>
   </div>
-  <!---->
 </div>
 `;
 
@@ -10974,37 +11054,48 @@ exports[`ssr snapshot test renders ./src/notification/_example/close.vue correct
 </div>
 `;
 
-exports[`ssr snapshot test renders ./src/notification/_example/close-all.vue correctly 1`] = `<div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">点击打开多个通知</span></button> <button type="button" id="t-demo-msg-close-all" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">点击关闭所有通知</span></button></div>`;
+exports[`ssr snapshot test renders ./src/notification/_example/close-all.vue correctly 1`] = `
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">点击打开多个通知</span></button></div>
+  <div class="t-space-item"><button type="button" id="t-demo-msg-close-all" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">点击关闭所有通知</span></button></div>
+</div>
+`;
 
 exports[`ssr snapshot test renders ./src/notification/_example/content.vue correctly 1`] = `
-<div>
-  <div class="t-notification">
-    <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
-        <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-      </svg></div>
-    <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义内容(字符串)</span><span class="t-message__close"></span></div>
-      <div class="t-notification__content">这是一条消息通知</div>
-    </div>
-  </div>
-  <div class="t-notification">
-    <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
-        <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-      </svg></div>
-    <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义内容(函数)</span><span class="t-message__close"></span></div>
-      <div class="t-notification__content">
-        <div>这是一条消息通知</div>
+<div class="t-space t-space-vertical" style="gap:20px;">
+  <div class="t-space-item">
+    <div class="t-notification">
+      <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-notification__main">
+        <div class="t-notification__title__wrap"><span class="t-notification__title">自定义内容(字符串)</span><span class="t-message__close"></span></div>
+        <div class="t-notification__content">这是一条消息通知</div>
       </div>
     </div>
   </div>
-  <div class="t-notification">
-    <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
-        <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-      </svg></div>
-    <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">自定义内容(插槽)</span><span class="t-message__close"></span></div>
-      <div class="t-notification__content"><span>这是一条消息通知</span></div>
+  <div class="t-space-item">
+    <div class="t-notification">
+      <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-notification__main">
+        <div class="t-notification__title__wrap"><span class="t-notification__title">自定义内容(函数)</span><span class="t-message__close"></span></div>
+        <div class="t-notification__content">
+          <div>这是一条消息通知</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-notification">
+      <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-notification__main">
+        <div class="t-notification__title__wrap"><span class="t-notification__title">自定义内容(插槽)</span><span class="t-message__close"></span></div>
+        <div class="t-notification__content"><span>这是一条消息通知</span></div>
+      </div>
     </div>
   </div>
 </div>
@@ -11036,145 +11127,222 @@ exports[`ssr snapshot test renders ./src/notification/_example/footer.vue correc
 `;
 
 exports[`ssr snapshot test renders ./src/notification/_example/icon.vue correctly 1`] = `
-<div>
-  <div class="t-notification">
-    <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
-        <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-      </svg></div>
-    <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">普通通知</span><span class="t-message__close"></span></div>
-      <div class="t-notification__content">这是一条普通的消息通知</div>
+<div class="t-space t-space-vertical" style="gap:20px;">
+  <div class="t-space-item">
+    <div class="t-notification">
+      <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-notification__main">
+        <div class="t-notification__title__wrap"><span class="t-notification__title">普通通知</span><span class="t-message__close"></span></div>
+        <div class="t-notification__content">这是一条普通的消息通知</div>
+      </div>
     </div>
   </div>
-  <div class="t-notification">
-    <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-error">
-        <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-      </svg></div>
-    <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">危险通知</span><span class="t-message__close"></span></div>
-      <div class="t-notification__content">这是一条危险的消息通知</div>
+  <div class="t-space-item">
+    <div class="t-notification">
+      <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-error">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-notification__main">
+        <div class="t-notification__title__wrap"><span class="t-notification__title">危险通知</span><span class="t-message__close"></span></div>
+        <div class="t-notification__content">这是一条危险的消息通知</div>
+      </div>
     </div>
   </div>
-  <div class="t-notification">
-    <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-warning">
-        <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-      </svg></div>
-    <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">告警通知</span><span class="t-message__close"></span></div>
-      <div class="t-notification__content">这是一条告警的消息通知</div>
+  <div class="t-space-item">
+    <div class="t-notification">
+      <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-warning">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-notification__main">
+        <div class="t-notification__title__wrap"><span class="t-notification__title">告警通知</span><span class="t-message__close"></span></div>
+        <div class="t-notification__content">这是一条告警的消息通知</div>
+      </div>
     </div>
   </div>
-  <div class="t-notification">
-    <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled t-is-success">
-        <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
-      </svg></div>
-    <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">成功通知</span><span class="t-message__close"></span></div>
-      <div class="t-notification__content">这是一条成功的消息通知</div>
+  <div class="t-space-item">
+    <div class="t-notification">
+      <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled t-is-success">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-notification__main">
+        <div class="t-notification__title__wrap"><span class="t-notification__title">成功通知</span><span class="t-message__close"></span></div>
+        <div class="t-notification__content">这是一条成功的消息通知</div>
+      </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`ssr snapshot test renders ./src/notification/_example/offset.vue correctly 1`] = `<div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">偏移的信息</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">偏移的信息</span></button></div>`;
+exports[`ssr snapshot test renders ./src/notification/_example/offset.vue correctly 1`] = `
+<div class="t-space t-space-horizontal" style="gap:10px;">
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">偏移的信息</span></button></div>
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">偏移的信息</span></button></div>
+</div>
+`;
 
 exports[`ssr snapshot test renders ./src/notification/_example/operation.vue correctly 1`] = `
-<div>
-  <div class="t-notification">
-    <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
-        <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-      </svg></div>
-    <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">超出的文本省略号显示</span><span class="t-message__close"></span></div>
-      <div class="t-notification__content">文案不限长度，但在实际使用时建议文案显示内容不易过多，建议最大展示行数数量以三行为宜，最后一行折行末尾处超出文本建议会变为省略号显示。</div>
-      <div class="t-notification__detail"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-primary t-notification__detail-item"><span class="t-button__text">查看详情</span></button></div>
+<div class="t-space t-space-vertical" style="gap:24px;">
+  <div class="t-space-item">
+    <div class="t-notification">
+      <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-notification__main">
+        <div class="t-notification__title__wrap"><span class="t-notification__title">超出的文本省略号显示</span><span class="t-message__close"></span></div>
+        <div class="t-notification__content">文案不限长度，但在实际使用时建议文案显示内容不易过多，建议最大展示行数数量以三行为宜，最后一行折行末尾处超出文本建议会变为省略号显示。</div>
+        <div class="t-notification__detail"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-primary t-notification__detail-item"><span class="t-button__text">查看详情</span></button></div>
+      </div>
     </div>
   </div>
-  <div class="t-notification">
-    <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
-        <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-      </svg></div>
-    <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">带关闭按钮</span><span class="t-message__close"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div>
-      <div class="t-notification__content">这是一条消息通知</div>
+  <div class="t-space-item">
+    <div class="t-notification">
+      <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-notification__main">
+        <div class="t-notification__title__wrap"><span class="t-notification__title">带关闭按钮</span><span class="t-message__close"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div>
+        <div class="t-notification__content">这是一条消息通知</div>
+      </div>
     </div>
   </div>
-  <div class="t-notification">
-    <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
-        <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-      </svg></div>
-    <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">消息通知标题</span><span class="t-message__close"></span></div>
-      <div class="t-notification__content">使用 function 自定义底部内容</div>
-      <div class="t-notification__detail"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-primary t-notification__detail-item"><span class="t-button__text">查看详情</span></button></div>
+  <div class="t-space-item">
+    <div class="t-notification">
+      <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-notification__main">
+        <div class="t-notification__title__wrap"><span class="t-notification__title">消息通知标题</span><span class="t-message__close"></span></div>
+        <div class="t-notification__content">使用 function 自定义底部内容</div>
+        <div class="t-notification__detail"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-primary t-notification__detail-item"><span class="t-button__text">查看详情</span></button></div>
+      </div>
     </div>
   </div>
-  <div class="t-notification">
-    <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
-        <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-      </svg></div>
-    <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title"><div>消息通知标题 <small>消息通知副标题</small></div></span><span class="t-message__close"></span></div>
-      <div class="t-notification__content">1. 使用插槽自定义标题 2. 使用插槽自定义底部内容</div>
-      <div class="t-notification__detail"><button type="button" class="t-notification__detail-item t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">取消</span></button> <button type="button" class="t-notification__detail-item t-button t-size-m t-button--variant-text t-button--theme-primary"><span class="t-button__text">
+  <div class="t-space-item">
+    <div class="t-notification">
+      <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-notification__main">
+        <div class="t-notification__title__wrap"><span class="t-notification__title"><div>消息通知标题 <small>消息通知副标题</small></div></span><span class="t-message__close"></span></div>
+        <div class="t-notification__content">1. 使用插槽自定义标题 2. 使用插槽自定义底部内容</div>
+        <div class="t-notification__detail"><button type="button" class="t-notification__detail-item t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">取消</span></button> <button type="button" class="t-notification__detail-item t-button t-size-m t-button--variant-text t-button--theme-primary"><span class="t-button__text">
           稍后提醒我(10s)
         </span></button></div>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/notification/_example/placement.vue correctly 1`] = `
-<div>
-  <div class="t-message-offset">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请输入横向偏移量" type="text" unselectable="off" value="" class="t-input__inner"></div>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-space t-space-vertical" style="gap:16px;">
+      <div class="t-space-item">
+        <div class="t-input__wrap">
+          <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请输入横向偏移量" type="text" unselectable="off" value="" class="t-input__inner"></div>
+        </div>
+      </div>
+      <div class="t-space-item">
+        <div class="t-input__wrap">
+          <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请输入纵向偏移量" type="text" unselectable="off" value="" class="t-input__inner"></div>
+        </div>
+      </div>
     </div>
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请输入纵向偏移量" type="text" unselectable="off" value="" class="t-input__inner"></div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-horizontal" style="gap:30px;">
+      <div class="t-space-item">
+        <div class="t-space t-space-vertical" style="gap:30px;">
+          <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">左上角</span></button></div>
+          <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">左下角</span></button></div>
+        </div>
+      </div>
+      <div class="t-space-item">
+        <div class="t-space t-space-vertical" style="gap:30px;">
+          <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">右上角</span></button></div>
+          <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">右下角</span></button></div>
+        </div>
+      </div>
     </div>
-  </div> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">左上角</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">右上角</span></button> <br><br> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">左下角</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">右下角</span></button>
+  </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/notification/_example/plugin.vue correctly 1`] = `
-<div>
-  <p>插件调用</p> <br>
-  <div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">1000s</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">2000s</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">默认时长</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">
-      永久显示
-    </span></button></div> <br><br>
-  <p>函数调用</p> <br>
-  <div class="t-demo-message-theme"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">info</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">success</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">warning</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">error</span></button></div> <br><br>
+<div class="t-space t-space-vertical" style="gap:42px;">
+  <div class="t-space-item">
+    <div class="t-space t-space-vertical" style="gap:16px;">
+      <div class="t-space-item">
+        <p>插件调用</p>
+      </div>
+      <div class="t-space-item">
+        <div class="t-space t-space-horizontal" style="gap:16px;">
+          <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">1000ms</span></button></div>
+          <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">2000ms</span></button></div>
+          <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">默认时长</span></button></div>
+          <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">
+        永久显示
+      </span></button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-vertical" style="gap:16px;">
+      <div class="t-space-item">
+        <p>函数调用</p>
+      </div>
+      <div class="t-space-item">
+        <div class="t-space t-space-horizontal" style="gap:16px;">
+          <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">info</span></button></div>
+          <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">success</span></button></div>
+          <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">warning</span></button></div>
+          <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">error</span></button></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/notification/_example/size.vue correctly 1`] = `
-<div>
-  <div class="t-notification">
-    <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
-        <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-      </svg></div>
-    <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">宽度固定400px</span><span class="t-message__close"></span></div>
-      <div class="t-notification__content">这是一条消息通知</div>
+<div class="t-space t-space-vertical" style="gap:20px;">
+  <div class="t-space-item">
+    <div class="t-notification">
+      <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-notification__main">
+        <div class="t-notification__title__wrap"><span class="t-notification__title">宽度固定400px</span><span class="t-message__close"></span></div>
+        <div class="t-notification__content">这是一条消息通知</div>
+      </div>
     </div>
   </div>
-  <div class="t-notification">
-    <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
-        <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-      </svg></div>
-    <div class="t-notification__main">
-      <div class="t-notification__title__wrap"><span class="t-notification__title">文本内容最多支持三行</span><span class="t-message__close"></span></div>
-      <div class="t-notification__content">这是一条内容为******************************
-        ****************************************************
-        ****************************************************
-        *********************的消息通知</div>
+  <div class="t-space-item">
+    <div class="t-notification">
+      <div class="t-notification__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled t-is-info">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-notification__main">
+        <div class="t-notification__title__wrap"><span class="t-notification__title">文本内容最多支持三行</span><span class="t-message__close"></span></div>
+        <div class="t-notification__content">这是一条内容为******************************
+          ****************************************************
+          ****************************************************
+          *********************的消息通知</div>
+      </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`ssr snapshot test renders ./src/notification/_example/toggle.vue correctly 1`] = `<div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">自由控制关闭时机（打开）</span></button></div>`;
+exports[`ssr snapshot test renders ./src/notification/_example/toggle.vue correctly 1`] = `
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">自由控制关闭时机（打开）</span></button></div>
+</div>
+`;
 
 exports[`ssr snapshot test renders ./src/notification/_example/type.vue correctly 1`] = `
 <div>
@@ -11217,7 +11385,14 @@ exports[`ssr snapshot test renders ./src/notification/_example/type.vue correctl
 </div>
 `;
 
-exports[`ssr snapshot test renders ./src/notification/_example/type4Fn.vue correctly 1`] = `<div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">信息</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">成功</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">警告</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">错误</span></button></div>`;
+exports[`ssr snapshot test renders ./src/notification/_example/type4Fn.vue correctly 1`] = `
+<div class="t-space t-space-horizontal" style="gap:10px;">
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">信息</span></button></div>
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">成功</span></button></div>
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">警告</span></button></div>
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">错误</span></button></div>
+</div>
+`;
 
 exports[`ssr snapshot test renders ./src/pagination/_example/base.vue correctly 1`] = `
 <div>
@@ -11784,116 +11959,180 @@ exports[`ssr snapshot test renders ./src/popup/_example/trigger-element.vue corr
 exports[`ssr snapshot test renders ./src/popup/_example/visible.vue correctly 1`] = `<div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">点击控制浮层显示</span></button></div>`;
 
 exports[`ssr snapshot test renders ./src/progress/_example/circle.vue correctly 1`] = `
-<div>
-  <div>默认</div>
-  <div class="t-progress-demo-box">
-    <div class="t-progress-demo-inner">
-      <div class="t-progress-demo-margin">默认样式</div>
-      <div class="t-progress">
-        <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
-          <div class="t-progress__info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
-            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="99.90264638415542  233.10617489636263" class="t-progress__circle-inner" style="stroke:;"></circle>
-          </svg>
+<div class="t-space t-space-vertical" style="gap:36px;">
+  <div class="t-space-item">
+    <div>默认</div>
+  </div>
+  <div class="t-space-item">
+    <div class="ml-36px t-space t-space-horizontal" style="gap:78px;">
+      <div class="t-space-item">
+        <div class="t-space t-space-align-center t-space-vertical" style="gap:10px;">
+          <div class="t-space-item">
+            <div>默认样式</div>
+          </div>
+          <div class="t-space-item">
+            <div class="t-progress">
+              <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
+                <div class="t-progress__info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
+                  <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
+                  <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="99.90264638415542  233.10617489636263" class="t-progress__circle-inner" style="stroke:;"></circle>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="t-progress-demo-inner">
-      <div class="t-progress-demo-margin">不显示数字</div>
-      <div class="t-progress">
-        <div class="t-progress--circle t-progress--status--success" style="width:112px;height:112px;font-size:20px;">
-          <div class="t-progress__info"></div><svg width="112" height="112" viewBox="0 0 112 112">
-            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="333.0088212805181  0" class="t-progress__circle-inner" style="stroke:;"></circle>
-          </svg>
+      <div class="t-space-item">
+        <div class="t-space t-space-align-center t-space-vertical" style="gap:10px;">
+          <div class="t-space-item">
+            <div>不显示数字</div>
+          </div>
+          <div class="t-space-item">
+            <div class="t-progress">
+              <div class="t-progress--circle t-progress--status--success" style="width:112px;height:112px;font-size:20px;">
+                <div class="t-progress__info"></div><svg width="112" height="112" viewBox="0 0 112 112">
+                  <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
+                  <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="333.0088212805181  0" class="t-progress__circle-inner" style="stroke:;"></circle>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="t-progress-demo-inner">
-      <div class="t-progress-demo-margin">自定义内容</div>
-      <div class="t-progress">
-        <div class="t-progress--circle t-progress--status--success" style="width:112px;height:112px;font-size:20px;">
-          <div class="t-progress__info">75day</div><svg width="112" height="112" viewBox="0 0 112 112">
-            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="166.50441064025904  166.50441064025904" class="t-progress__circle-inner" style="stroke:;"></circle>
-          </svg>
+      <div class="t-space-item">
+        <div class="t-space t-space-align-center t-space-vertical" style="gap:10px;">
+          <div class="t-space-item">
+            <div>自定义内容</div>
+          </div>
+          <div class="t-space-item">
+            <div class="t-progress">
+              <div class="t-progress--circle t-progress--status--success" style="width:112px;height:112px;font-size:20px;">
+                <div class="t-progress__info">75day</div><svg width="112" height="112" viewBox="0 0 112 112">
+                  <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
+                  <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="166.50441064025904  166.50441064025904" class="t-progress__circle-inner" style="stroke:;"></circle>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="t-progress-demo-box">
-    <div class="t-progress-demo-inner">
-      <div class="t-progress-demo-margin">进度完成</div>
-      <div class="t-progress">
-        <div class="t-progress--circle t-progress--status--success" style="width:112px;height:112px;font-size:20px;">
-          <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check t-progress__icon">
-              <path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path>
-            </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
-            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="333.0088212805181  0" class="t-progress__circle-inner" style="stroke:;"></circle>
-          </svg>
+  <div class="t-space-item">
+    <div class="ml-36px t-space t-space-horizontal" style="gap:78px;">
+      <div class="t-space-item">
+        <div class="t-space t-space-align-center t-space-vertical" style="gap:10px;">
+          <div class="t-space-item">
+            <div>进度完成</div>
+          </div>
+          <div class="t-space-item">
+            <div class="t-progress">
+              <div class="t-progress--circle t-progress--status--success" style="width:112px;height:112px;font-size:20px;">
+                <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check t-progress__icon">
+                    <path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path>
+                  </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
+                  <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
+                  <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="333.0088212805181  0" class="t-progress__circle-inner" style="stroke:;"></circle>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="t-progress-demo-inner">
-      <div class="t-progress-demo-margin">进度状态发生重大错误</div>
-      <div class="t-progress">
-        <div class="t-progress--circle t-progress--status--error" style="width:112px;height:112px;font-size:20px;">
-          <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-progress__icon">
-              <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
-            </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
-            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="249.75661596038856  83.25220532012952" class="t-progress__circle-inner" style="stroke:;"></circle>
-          </svg>
+      <div class="t-space-item">
+        <div class="t-space t-space-align-center t-space-vertical" style="gap:10px;">
+          <div class="t-space-item">
+            <div>进度状态发生错误</div>
+          </div>
+          <div class="t-space-item">
+            <div class="t-progress">
+              <div class="t-progress--circle t-progress--status--error" style="width:112px;height:112px;font-size:20px;">
+                <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-progress__icon">
+                    <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+                  </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
+                  <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
+                  <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="249.75661596038856  83.25220532012952" class="t-progress__circle-inner" style="stroke:;"></circle>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="t-progress-demo-inner">
-      <div class="t-progress-demo-margin">进度被中断</div>
-      <div class="t-progress">
-        <div class="t-progress--circle t-progress--status--warning" style="width:112px;height:112px;font-size:20px;">
-          <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error t-progress__icon">
-              <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
-            </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
-            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="166.50441064025904  166.50441064025904" class="t-progress__circle-inner" style="stroke:;"></circle>
-          </svg>
+      <div class="t-space-item">
+        <div class="t-space t-space-align-center t-space-vertical" style="gap:10px;">
+          <div class="t-space-item">
+            <div>进度被中断</div>
+          </div>
+          <div class="t-space-item">
+            <div class="t-progress">
+              <div class="t-progress--circle t-progress--status--warning" style="width:112px;height:112px;font-size:20px;">
+                <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error t-progress__icon">
+                    <path fill="currentColor" d="M8.5 2h-1v9h1V2zm.1 10.8H7.4V14h1.2v-1.2z" fill-opacity="0.9"></path>
+                  </svg></div><svg width="112" height="112" viewBox="0 0 112 112">
+                  <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
+                  <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="166.50441064025904  166.50441064025904" class="t-progress__circle-inner" style="stroke:;"></circle>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div>默认不同尺寸</div>
-  <div class="t-progress-demo-box">
-    <div class="t-progress-demo-inner">
-      <div class="t-progress-demo-margin">小尺寸</div>
-      <div class="t-progress">
-        <div class="t-progress--circle t-progress--status--undefined" style="width:72px;height:72px;font-size:14px;">
-          <div class="t-progress__info">30%</div><svg width="72" height="72" viewBox="0 0 72 72">
-            <circle cx="36" cy="36" r="34" stroke-width="4" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="64.08849013323179  149.53981031087415" class="t-progress__circle-inner" style="stroke:;"></circle>
-          </svg>
+  <div class="t-space-item">
+    <div>默认不同尺寸</div>
+  </div>
+  <div class="t-space-item">
+    <div class="ml-44px t-space t-space-horizontal" style="gap:110px;">
+      <div class="t-space-item">
+        <div class="t-space t-space-align-center t-space-vertical" style="gap:10px;">
+          <div class="t-space-item">
+            <div>小尺寸</div>
+          </div>
+          <div class="t-space-item">
+            <div class="t-progress">
+              <div class="t-progress--circle t-progress--status--undefined" style="width:72px;height:72px;font-size:14px;">
+                <div class="t-progress__info">30%</div><svg width="72" height="72" viewBox="0 0 72 72">
+                  <circle cx="36" cy="36" r="34" stroke-width="4" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
+                  <circle cx="36" cy="36" r="34" stroke-width="4" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,72)" stroke-dasharray="64.08849013323179  149.53981031087415" class="t-progress__circle-inner" style="stroke:;"></circle>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="t-progress-demo-inner">
-      <div class="t-progress-demo-margin">默认尺寸</div>
-      <div class="t-progress">
-        <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
-          <div class="t-progress__info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
-            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="99.90264638415542  233.10617489636263" class="t-progress__circle-inner" style="stroke:;"></circle>
-          </svg>
+      <div class="t-space-item">
+        <div class="t-space t-space-align-center t-space-vertical" style="gap:10px;">
+          <div class="t-space-item">
+            <div>默认尺寸</div>
+          </div>
+          <div class="t-space-item">
+            <div class="t-progress">
+              <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
+                <div class="t-progress__info">30%</div><svg width="112" height="112" viewBox="0 0 112 112">
+                  <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
+                  <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="99.90264638415542  233.10617489636263" class="t-progress__circle-inner" style="stroke:;"></circle>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="t-progress-demo-inner" style="margin-left:60px;">
-      <div class="t-progress-demo-margin">大尺寸</div>
-      <div class="t-progress">
-        <div class="t-progress--circle t-progress--status--undefined" style="width:160px;height:160px;font-size:36px;">
-          <div class="t-progress__info">75%</div><svg width="160" height="160" viewBox="0 0 160 160">
-            <circle cx="80" cy="80" r="77" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-            <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="362.8539514896211  120.95131716320704" class="t-progress__circle-inner" style="stroke:;"></circle>
-          </svg>
+      <div class="t-space-item">
+        <div class="t-space t-space-align-center t-space-vertical" style="gap:10px;">
+          <div class="t-space-item">
+            <div>大尺寸</div>
+          </div>
+          <div class="t-space-item">
+            <div class="t-progress">
+              <div class="t-progress--circle t-progress--status--undefined" style="width:160px;height:160px;font-size:36px;">
+                <div class="t-progress__info">75%</div><svg width="160" height="160" viewBox="0 0 160 160">
+                  <circle cx="80" cy="80" r="77" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
+                  <circle cx="80" cy="80" r="77" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,160)" stroke-dasharray="362.8539514896211  120.95131716320704" class="t-progress__circle-inner" style="stroke:;"></circle>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -11902,80 +12141,88 @@ exports[`ssr snapshot test renders ./src/progress/_example/circle.vue correctly 
 `;
 
 exports[`ssr snapshot test renders ./src/progress/_example/custom.vue correctly 1`] = `
-<div>
-  <div>
-    <div>不显示标签</div>
-    <div class="t-progress">
-      <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
-        <div class="t-progress__info"></div><svg width="112" height="112" viewBox="0 0 112 112">
-          <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="279.72740987563515  53.2814114048829" class="t-progress__circle-inner" style="stroke:;"></circle>
-        </svg>
-      </div>
-    </div>
-    <div class="t-progress">
-      <div class="t-progress--thin t-progress--status--undefined">
-        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress__inner" style="width:84%;background:;"></div>
+<div class="t-space t-space-vertical" style="gap:20px;">
+  <div class="t-space-item">
+    <div>
+      <div>不显示标签</div>
+      <div class="t-progress">
+        <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
+          <div class="t-progress__info"></div><svg width="112" height="112" viewBox="0 0 112 112">
+            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="279.72740987563515  53.2814114048829" class="t-progress__circle-inner" style="stroke:;"></circle>
+          </svg>
         </div>
-        <div class="t-progress__info"></div>
+      </div>
+      <div class="t-progress">
+        <div class="t-progress--thin t-progress--status--undefined">
+          <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+            <div class="t-progress__inner" style="width:84%;background:;"></div>
+          </div>
+          <div class="t-progress__info"></div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="t-progress-domo-margin">
-    <div>自定义高度</div>
-    <div class="t-progress">
-      <div class="t-progress--thin t-progress--status--undefined">
-        <div class="t-progress__bar" style="height:30px;background-color:;border-radius:30px;">
-          <div class="t-progress__inner" style="width:30%;background:linear-gradient( 90deg,#FFC86E,#E66A72 );"></div>
-        </div>
-        <div class="t-progress__info">30%</div>
-      </div>
-    </div>
-    <div>自定义尺寸</div>
-    <div class="t-progress">
-      <div class="t-progress--circle t-progress--status--undefined" style="width:200px;height:200px;font-size:45px;">
-        <div class="t-progress__info">30%</div><svg width="200" height="200" viewBox="0 0 200 200">
-          <circle cx="100" cy="100" r="90" stroke-width="20" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="100" cy="100" r="90" stroke-width="20" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,200)" stroke-dasharray="169.64600329384882  395.8406743523139" class="t-progress__circle-inner" style="stroke:;"></circle>
-        </svg>
-      </div>
-    </div>
-  </div>
-  <div class="t-progress-domo-margin">
-    <div>自定义颜色</div>
-    <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="height:;background-color:;border-radius:;">
-        <div class="t-progress__inner" style="width:30%;background:linear-gradient(to right, #7B7BE0 0%,#6392F7 100%);">
+  <div class="t-space-item">
+    <div>
+      <div>自定义高度</div>
+      <div class="t-progress">
+        <div class="t-progress--thin t-progress--status--undefined">
+          <div class="t-progress__bar" style="height:30px;background-color:;border-radius:30px;">
+            <div class="t-progress__inner" style="width:30%;background:linear-gradient( 90deg,#FFC86E,#E66A72 );"></div>
+          </div>
           <div class="t-progress__info">30%</div>
         </div>
       </div>
-    </div>
-    <div class="t-progress">
-      <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
-        <div class="t-progress__info">44%</div><svg width="112" height="112" viewBox="0 0 112 112">
-          <circle cx="56" cy="56" r="53" stroke-width="6" stroke="#aaa" fill="none" class="t-progress__circle-outer" style="stroke:#aaa;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="146.52388136342796  186.48493991709014" class="t-progress__circle-inner" style="stroke:#52CC8D;"></circle>
-        </svg>
+      <div>自定义尺寸</div>
+      <div class="t-progress">
+        <div class="t-progress--circle t-progress--status--undefined" style="width:200px;height:200px;font-size:45px;">
+          <div class="t-progress__info">30%</div><svg width="200" height="200" viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="90" stroke-width="20" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
+            <circle cx="100" cy="100" r="90" stroke-width="20" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,200)" stroke-dasharray="169.64600329384882  395.8406743523139" class="t-progress__circle-inner" style="stroke:;"></circle>
+          </svg>
+        </div>
       </div>
     </div>
   </div>
-  <div class="t-progress-domo-margin">
-    <div>自定义内容</div>
-    <div class="t-progress">
-      <div class="t-progress--thin t-progress--status--undefined">
-        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress__inner" style="width:30%;background:;"></div>
+  <div class="t-space-item">
+    <div>
+      <div>自定义颜色</div>
+      <div class="t-progress">
+        <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="height:;background-color:;border-radius:;">
+          <div class="t-progress__inner" style="width:30%;background:linear-gradient(to right, #7B7BE0 0%,#6392F7 100%);">
+            <div class="t-progress__info">30%</div>
+          </div>
         </div>
-        <div class="t-progress__info">&lt;div&gt;45days&lt;/div&gt;</div>
+      </div>
+      <div class="t-progress">
+        <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
+          <div class="t-progress__info">44%</div><svg width="112" height="112" viewBox="0 0 112 112">
+            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="#aaa" fill="none" class="t-progress__circle-outer" style="stroke:#aaa;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="146.52388136342796  186.48493991709014" class="t-progress__circle-inner" style="stroke:#52CC8D;"></circle>
+          </svg>
+        </div>
       </div>
     </div>
-    <div class="t-progress">
-      <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
-        <div class="t-progress__info">&lt;div&gt;45days&lt;/div&gt;</div><svg width="112" height="112" viewBox="0 0 112 112">
-          <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
-          <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="146.52388136342796  186.48493991709014" class="t-progress__circle-inner" style="stroke:;"></circle>
-        </svg>
+  </div>
+  <div class="t-space-item">
+    <div>
+      <div>自定义内容</div>
+      <div class="t-progress">
+        <div class="t-progress--thin t-progress--status--undefined">
+          <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+            <div class="t-progress__inner" style="width:30%;background:;"></div>
+          </div>
+          <div class="t-progress__info">&lt;div&gt;45days&lt;/div&gt;</div>
+        </div>
+      </div>
+      <div class="t-progress">
+        <div class="t-progress--circle t-progress--status--undefined" style="width:112px;height:112px;font-size:20px;">
+          <div class="t-progress__info">&lt;div&gt;45days&lt;/div&gt;</div><svg width="112" height="112" viewBox="0 0 112 112">
+            <circle cx="56" cy="56" r="53" stroke-width="6" stroke="" fill="none" class="t-progress__circle-outer" style="stroke:;"></circle>
+            <circle cx="56" cy="56" r="53" stroke-width="6" fill="none" stroke-linecap="round" transform="matrix(0,-1,1,0,0,112)" stroke-dasharray="146.52388136342796  186.48493991709014" class="t-progress__circle-inner" style="stroke:;"></circle>
+          </svg>
+        </div>
       </div>
     </div>
   </div>
@@ -11983,85 +12230,93 @@ exports[`ssr snapshot test renders ./src/progress/_example/custom.vue correctly 
 `;
 
 exports[`ssr snapshot test renders ./src/progress/_example/line.vue correctly 1`] = `
-<div>
-  <h3>默认在线形外展示进度和状态</h3>
-  <div>
-    <div class="t-progress-domo-margin">默认样式</div>
-    <div class="t-progress">
-      <div class="t-progress--thin t-progress--status--undefined">
-        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress__inner" style="width:30%;background:;"></div>
-        </div>
-        <div class="t-progress__info">30%</div>
-      </div>
-    </div>
-    <div class="t-progress-domo-margin">100%</div>
-    <div class="t-progress">
-      <div class="t-progress--thin t-progress--status--success">
-        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress__inner" style="width:100%;background:;"></div>
-        </div>
-        <div class="t-progress__info">100%</div>
-      </div>
-    </div>
-    <div class="t-progress-domo-margin">进度完成</div>
-    <div class="t-progress">
-      <div class="t-progress--thin t-progress--status--success">
-        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress__inner" style="width:60%;background:;"></div>
-        </div>
-        <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled t-progress__icon">
-            <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
-          </svg></div>
-      </div>
-    </div>
-    <div class="t-progress-domo-margin">进度状态发生重大错误</div>
-    <div class="t-progress">
-      <div class="t-progress--thin t-progress--status--error">
-        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress__inner" style="width:60%;background:;"></div>
-        </div>
-        <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-progress__icon">
-            <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
-          </svg></div>
-      </div>
-    </div>
-    <div class="t-progress-domo-margin">进度被中断</div>
-    <div class="t-progress">
-      <div class="t-progress--thin t-progress--status--warning">
-        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress__inner" style="width:60%;background:;"></div>
-        </div>
-        <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error-circle-filled t-progress__icon">
-            <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z" fill-opacity="0.9"></path>
-          </svg></div>
-      </div>
-    </div>
-    <div class="t-progress-domo-margin">渐变色</div>
-    <div class="t-progress">
-      <div class="t-progress--thin t-progress--status--active">
-        <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
-          <div class="t-progress__inner" style="width:60%;background:linear-gradient(to right, #0052D9, #00A870);"></div>
-        </div>
-        <div class="t-progress__info">60%</div>
-      </div>
-    </div>
+<div class="t-space t-space-vertical" style="gap:24px;">
+  <div class="t-space-item">
+    <h3>默认在线形外展示进度和状态</h3>
   </div>
-  <h3>可以在线形内展示进度信息</h3>
-  <div>
-    <div class="t-progress-domo-margin">默认样式</div>
-    <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="height:;background-color:;border-radius:;">
-        <div class="t-progress__inner" style="width:30%;background:;">
+  <div class="t-space-item">
+    <div>
+      <div class="t-progress-domo-margin">默认样式</div>
+      <div class="t-progress">
+        <div class="t-progress--thin t-progress--status--undefined">
+          <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+            <div class="t-progress__inner" style="width:30%;background:;"></div>
+          </div>
           <div class="t-progress__info">30%</div>
         </div>
       </div>
+      <div class="t-progress-domo-margin">100%</div>
+      <div class="t-progress">
+        <div class="t-progress--thin t-progress--status--success">
+          <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+            <div class="t-progress__inner" style="width:100%;background:;"></div>
+          </div>
+          <div class="t-progress__info">100%</div>
+        </div>
+      </div>
+      <div class="t-progress-domo-margin">进度完成</div>
+      <div class="t-progress">
+        <div class="t-progress--thin t-progress--status--success">
+          <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+            <div class="t-progress__inner" style="width:60%;background:;"></div>
+          </div>
+          <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check-circle-filled t-progress__icon">
+              <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z" fill-opacity="0.9"></path>
+            </svg></div>
+        </div>
+      </div>
+      <div class="t-progress-domo-margin">进度状态发生重大错误</div>
+      <div class="t-progress">
+        <div class="t-progress--thin t-progress--status--error">
+          <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+            <div class="t-progress__inner" style="width:60%;background:;"></div>
+          </div>
+          <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close-circle-filled t-progress__icon">
+              <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z" fill-opacity="0.9"></path>
+            </svg></div>
+        </div>
+      </div>
+      <div class="t-progress-domo-margin">进度被中断</div>
+      <div class="t-progress">
+        <div class="t-progress--thin t-progress--status--warning">
+          <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+            <div class="t-progress__inner" style="width:60%;background:;"></div>
+          </div>
+          <div class="t-progress__info"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-error-circle-filled t-progress__icon">
+              <path fill="currentColor" d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z" fill-opacity="0.9"></path>
+            </svg></div>
+        </div>
+      </div>
+      <div class="t-progress-domo-margin">渐变色</div>
+      <div class="t-progress">
+        <div class="t-progress--thin t-progress--status--active">
+          <div class="t-progress__bar" style="height:undefinedpx;background-color:;border-radius:undefinedpx;">
+            <div class="t-progress__inner" style="width:60%;background:linear-gradient(to right, #0052D9, #00A870);"></div>
+          </div>
+          <div class="t-progress__info">60%</div>
+        </div>
+      </div>
     </div>
-    <div class="t-progress-domo-margin">进度0-10%时数字数字位置出现在目前进度的右边区域</div>
-    <div class="t-progress">
-      <div class="t-progress__bar t-progress--plump t-progress--under-ten" style="height:;background-color:;border-radius:;">
-        <div class="t-progress__inner" style="width:5%;background:;"></div>
-        <div class="t-progress__info">5%</div>
+  </div>
+  <div class="t-space-item">
+    <h3>可以在线形内展示进度信息</h3>
+  </div>
+  <div class="t-space-item">
+    <div>
+      <div class="t-progress-domo-margin">默认样式</div>
+      <div class="t-progress">
+        <div class="t-progress__bar t-progress--plump t-progress--over-ten" style="height:;background-color:;border-radius:;">
+          <div class="t-progress__inner" style="width:30%;background:;">
+            <div class="t-progress__info">30%</div>
+          </div>
+        </div>
+      </div>
+      <div class="t-progress-domo-margin">进度0-10%时数字位置出现在目前进度的右边区域</div>
+      <div class="t-progress">
+        <div class="t-progress__bar t-progress--plump t-progress--under-ten" style="height:;background-color:;border-radius:;">
+          <div class="t-progress__inner" style="width:5%;background:;"></div>
+          <div class="t-progress__info">5%</div>
+        </div>
       </div>
     </div>
   </div>
@@ -14153,7 +14408,12 @@ exports[`ssr snapshot test renders ./src/steps/_example/extra.vue correctly 1`] 
       <div class="t-steps-item__content">
         <div class="t-steps-item__title">步骤3</div>
         <div class="t-steps-item__description">这里是提示文字</div>
-        <div class="t-steps-item__extra"><button type="button" class="t-button t-size-s t-button--variant-text t-button--theme-default"><span class="t-button__text">上一步</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">下一步</span></button></div>
+        <div class="t-steps-item__extra">
+          <div class="t-space t-space-horizontal" style="gap:8px;">
+            <div class="t-space-item"><button type="button" class="t-button t-size-s t-button--variant-text t-button--theme-default"><span class="t-button__text">上一步</span></button></div>
+            <div class="t-space-item"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">下一步</span></button></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -14316,87 +14576,91 @@ exports[`ssr snapshot test renders ./src/steps/_example/options.vue correctly 1`
 `;
 
 exports[`ssr snapshot test renders ./src/steps/_example/sequence.vue correctly 1`] = `
-<div>
-  <div class="t-steps t-steps--horizontal t-steps--positive t-steps--default-anchor t-steps--line-separator">
-    <div class="t-steps-item t-steps-item--finish">
-      <div class="t-steps-item__inner t-steps-item--clickable">
-        <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
-        <div class="t-steps-item__content">
-          <div class="t-steps-item__title">已完成的步骤</div>
-          <div class="t-steps-item__description"></div>
-          <div class="t-steps-item__extra"></div>
+<div class="t-space t-space-vertical" style="gap:24px;">
+  <div class="t-space-item">
+    <div class="t-steps t-steps--horizontal t-steps--positive t-steps--default-anchor t-steps--line-separator">
+      <div class="t-steps-item t-steps-item--finish">
+        <div class="t-steps-item__inner t-steps-item--clickable">
+          <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
+          <div class="t-steps-item__content">
+            <div class="t-steps-item__title">已完成的步骤</div>
+            <div class="t-steps-item__description"></div>
+            <div class="t-steps-item__extra"></div>
+          </div>
+        </div>
+      </div>
+      <div class="t-steps-item t-steps-item--process">
+        <div class="t-steps-item__inner ">
+          <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">2</span></div>
+          <div class="t-steps-item__content">
+            <div class="t-steps-item__title">进行中的步骤</div>
+            <div class="t-steps-item__description"></div>
+            <div class="t-steps-item__extra"></div>
+          </div>
+        </div>
+      </div>
+      <div class="t-steps-item t-steps-item--default">
+        <div class="t-steps-item__inner t-steps-item--clickable">
+          <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">3</span></div>
+          <div class="t-steps-item__content">
+            <div class="t-steps-item__title">未进行的步骤</div>
+            <div class="t-steps-item__description"></div>
+            <div class="t-steps-item__extra"></div>
+          </div>
+        </div>
+      </div>
+      <div class="t-steps-item t-steps-item--default">
+        <div class="t-steps-item__inner t-steps-item--clickable">
+          <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">4</span></div>
+          <div class="t-steps-item__content">
+            <div class="t-steps-item__title">未进行的步骤</div>
+            <div class="t-steps-item__description"></div>
+            <div class="t-steps-item__extra"></div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="t-steps-item t-steps-item--process">
-      <div class="t-steps-item__inner ">
-        <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">2</span></div>
-        <div class="t-steps-item__content">
-          <div class="t-steps-item__title">进行中的步骤</div>
-          <div class="t-steps-item__description"></div>
-          <div class="t-steps-item__extra"></div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-steps t-steps--horizontal t-steps--positive t-steps--default-anchor t-steps--line-separator">
+      <div class="t-steps-item t-steps-item--finish">
+        <div class="t-steps-item__inner t-steps-item--clickable">
+          <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
+          <div class="t-steps-item__content">
+            <div class="t-steps-item__title">已完成的步骤</div>
+            <div class="t-steps-item__description">点击切换步骤</div>
+            <div class="t-steps-item__extra"></div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="t-steps-item t-steps-item--default">
-      <div class="t-steps-item__inner t-steps-item--clickable">
-        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">3</span></div>
-        <div class="t-steps-item__content">
-          <div class="t-steps-item__title">未进行的步骤</div>
-          <div class="t-steps-item__description"></div>
-          <div class="t-steps-item__extra"></div>
+      <div class="t-steps-item t-steps-item--finish">
+        <div class="t-steps-item__inner t-steps-item--clickable">
+          <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
+          <div class="t-steps-item__content">
+            <div class="t-steps-item__title">进行中的步骤</div>
+            <div class="t-steps-item__description">点击切换步骤</div>
+            <div class="t-steps-item__extra"></div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="t-steps-item t-steps-item--default">
-      <div class="t-steps-item__inner t-steps-item--clickable">
-        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">4</span></div>
-        <div class="t-steps-item__content">
-          <div class="t-steps-item__title">未进行的步骤</div>
-          <div class="t-steps-item__description"></div>
-          <div class="t-steps-item__extra"></div>
+      <div class="t-steps-item t-steps-item--process">
+        <div class="t-steps-item__inner ">
+          <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">3</span></div>
+          <div class="t-steps-item__content">
+            <div class="t-steps-item__title">进行中的步骤</div>
+            <div class="t-steps-item__description">这是进行中的步骤</div>
+            <div class="t-steps-item__extra"></div>
+          </div>
         </div>
       </div>
-    </div>
-  </div> <br>
-  <div class="t-steps t-steps--horizontal t-steps--positive t-steps--default-anchor t-steps--line-separator">
-    <div class="t-steps-item t-steps-item--finish">
-      <div class="t-steps-item__inner t-steps-item--clickable">
-        <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
-        <div class="t-steps-item__content">
-          <div class="t-steps-item__title">已完成的步骤</div>
-          <div class="t-steps-item__description">点击切换步骤</div>
-          <div class="t-steps-item__extra"></div>
-        </div>
-      </div>
-    </div>
-    <div class="t-steps-item t-steps-item--finish">
-      <div class="t-steps-item__inner t-steps-item--clickable">
-        <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
-        <div class="t-steps-item__content">
-          <div class="t-steps-item__title">进行中的步骤</div>
-          <div class="t-steps-item__description">点击切换步骤</div>
-          <div class="t-steps-item__extra"></div>
-        </div>
-      </div>
-    </div>
-    <div class="t-steps-item t-steps-item--process">
-      <div class="t-steps-item__inner ">
-        <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">3</span></div>
-        <div class="t-steps-item__content">
-          <div class="t-steps-item__title">进行中的步骤</div>
-          <div class="t-steps-item__description">这是进行中的步骤</div>
-          <div class="t-steps-item__extra"></div>
-        </div>
-      </div>
-    </div>
-    <div class="t-steps-item t-steps-item--default">
-      <div class="t-steps-item__inner t-steps-item--clickable">
-        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">4</span></div>
-        <div class="t-steps-item__content">
-          <div class="t-steps-item__title">已完成的步骤</div>
-          <div class="t-steps-item__description">点击切换步骤</div>
-          <div class="t-steps-item__extra"></div>
+      <div class="t-steps-item t-steps-item--default">
+        <div class="t-steps-item__inner t-steps-item--clickable">
+          <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">4</span></div>
+          <div class="t-steps-item__content">
+            <div class="t-steps-item__title">已完成的步骤</div>
+            <div class="t-steps-item__description">点击切换步骤</div>
+            <div class="t-steps-item__extra"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -14405,88 +14669,91 @@ exports[`ssr snapshot test renders ./src/steps/_example/sequence.vue correctly 1
 `;
 
 exports[`ssr snapshot test renders ./src/steps/_example/status.vue correctly 1`] = `
-<div>
-  <div class="t-steps t-steps--horizontal t-steps--positive t-steps--default-anchor t-steps--line-separator">
-    <div class="t-steps-item t-steps-item--finish">
-      <div class="t-steps-item__inner ">
-        <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
-        <div class="t-steps-item__content">
-          <div class="t-steps-item__title">已完成的步骤</div>
-          <div class="t-steps-item__description">这里是提示文字</div>
-          <div class="t-steps-item__extra"></div>
+<div class="t-space t-space-vertical" style="gap:24px;">
+  <div class="t-space-item">
+    <div class="t-steps t-steps--horizontal t-steps--positive t-steps--default-anchor t-steps--line-separator">
+      <div class="t-steps-item t-steps-item--finish">
+        <div class="t-steps-item__inner ">
+          <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
+          <div class="t-steps-item__content">
+            <div class="t-steps-item__title">已完成的步骤</div>
+            <div class="t-steps-item__description">这里是提示文字</div>
+            <div class="t-steps-item__extra"></div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="t-steps-item t-steps-item--process">
-      <div class="t-steps-item__inner ">
-        <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">2</span></div>
-        <div class="t-steps-item__content">
-          <div class="t-steps-item__title">进行中的步骤</div>
-          <div class="t-steps-item__description">这里是提示文字</div>
-          <div class="t-steps-item__extra"></div>
+      <div class="t-steps-item t-steps-item--process">
+        <div class="t-steps-item__inner ">
+          <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">2</span></div>
+          <div class="t-steps-item__content">
+            <div class="t-steps-item__title">进行中的步骤</div>
+            <div class="t-steps-item__description">这里是提示文字</div>
+            <div class="t-steps-item__extra"></div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="t-steps-item t-steps-item--default">
-      <div class="t-steps-item__inner ">
-        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">3</span></div>
-        <div class="t-steps-item__content">
-          <div class="t-steps-item__title">未进行的步骤</div>
-          <div class="t-steps-item__description">这里是提示文字</div>
-          <div class="t-steps-item__extra"></div>
+      <div class="t-steps-item t-steps-item--default">
+        <div class="t-steps-item__inner ">
+          <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">3</span></div>
+          <div class="t-steps-item__content">
+            <div class="t-steps-item__title">未进行的步骤</div>
+            <div class="t-steps-item__description">这里是提示文字</div>
+            <div class="t-steps-item__extra"></div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="t-steps-item t-steps-item--default">
-      <div class="t-steps-item__inner ">
-        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">4</span></div>
-        <div class="t-steps-item__content">
-          <div class="t-steps-item__title">未进行的步骤</div>
-          <div class="t-steps-item__description">这里是提示文字</div>
-          <div class="t-steps-item__extra"></div>
+      <div class="t-steps-item t-steps-item--default">
+        <div class="t-steps-item__inner ">
+          <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">4</span></div>
+          <div class="t-steps-item__content">
+            <div class="t-steps-item__title">未进行的步骤</div>
+            <div class="t-steps-item__description">这里是提示文字</div>
+            <div class="t-steps-item__extra"></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div style="margin:16px 0;"></div>
-  <div class="t-steps t-steps--horizontal t-steps--positive t-steps--default-anchor t-steps--line-separator">
-    <div class="t-steps-item t-steps-item--finish">
-      <div class="t-steps-item__inner ">
-        <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
-        <div class="t-steps-item__content">
-          <div class="t-steps-item__title">已完成的步骤</div>
-          <div class="t-steps-item__description">这里是提示文字</div>
-          <div class="t-steps-item__extra"></div>
+  <div class="t-space-item">
+    <div class="t-steps t-steps--horizontal t-steps--positive t-steps--default-anchor t-steps--line-separator">
+      <div class="t-steps-item t-steps-item--finish">
+        <div class="t-steps-item__inner ">
+          <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
+          <div class="t-steps-item__content">
+            <div class="t-steps-item__title">已完成的步骤</div>
+            <div class="t-steps-item__description">这里是提示文字</div>
+            <div class="t-steps-item__extra"></div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="t-steps-item t-steps-item--finish">
-      <div class="t-steps-item__inner ">
-        <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
-        <div class="t-steps-item__content">
-          <div class="t-steps-item__title">已完成的步骤</div>
-          <div class="t-steps-item__description">这里是提示文字</div>
-          <div class="t-steps-item__extra"></div>
+      <div class="t-steps-item t-steps-item--finish">
+        <div class="t-steps-item__inner ">
+          <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
+          <div class="t-steps-item__content">
+            <div class="t-steps-item__title">已完成的步骤</div>
+            <div class="t-steps-item__description">这里是提示文字</div>
+            <div class="t-steps-item__extra"></div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="t-steps-item t-steps-item--error">
-      <div class="t-steps-item__inner ">
-        <div class="t-steps-item__icon t-steps-item--error"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div>
-        <div class="t-steps-item__content">
-          <div class="t-steps-item__title">错误的步骤</div>
-          <div class="t-steps-item__description">这里是错误提示文字</div>
-          <div class="t-steps-item__extra"></div>
+      <div class="t-steps-item t-steps-item--error">
+        <div class="t-steps-item__inner ">
+          <div class="t-steps-item__icon t-steps-item--error"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div>
+          <div class="t-steps-item__content">
+            <div class="t-steps-item__title">错误的步骤</div>
+            <div class="t-steps-item__description">这里是错误提示文字</div>
+            <div class="t-steps-item__extra"></div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="t-steps-item t-steps-item--default">
-      <div class="t-steps-item__inner ">
-        <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">4</span></div>
-        <div class="t-steps-item__content">
-          <div class="t-steps-item__title">未进行的步骤</div>
-          <div class="t-steps-item__description">这里是提示文字</div>
-          <div class="t-steps-item__extra"></div>
+      <div class="t-steps-item t-steps-item--default">
+        <div class="t-steps-item__inner ">
+          <div class="t-steps-item__icon t-steps-item--default"><span class="t-steps-item__icon--number">4</span></div>
+          <div class="t-steps-item__content">
+            <div class="t-steps-item__title">未进行的步骤</div>
+            <div class="t-steps-item__description">这里是提示文字</div>
+            <div class="t-steps-item__extra"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -14495,8 +14762,8 @@ exports[`ssr snapshot test renders ./src/steps/_example/status.vue correctly 1`]
 `;
 
 exports[`ssr snapshot test renders ./src/steps/_example/vertical-no-sequence.vue correctly 1`] = `
-<div class="setps-demo">
-  <div class="tdesign-demo-block">
+<div class="justify-around t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item">
     <div class="t-steps t-steps--vertical t-steps--positive t-steps--dot-anchor t-steps--line-separator">
       <div class="t-steps-item t-steps-item--finish">
         <div class="t-steps-item__inner ">
@@ -14539,6 +14806,8 @@ exports[`ssr snapshot test renders ./src/steps/_example/vertical-no-sequence.vue
         </div>
       </div>
     </div>
+  </div>
+  <div class="t-space-item">
     <div class="t-steps t-steps--vertical t-steps--reverse t-steps--dot-anchor t-steps--line-separator">
       <div class="t-steps-item t-steps-item--default">
         <div class="t-steps-item__inner ">
@@ -14586,8 +14855,8 @@ exports[`ssr snapshot test renders ./src/steps/_example/vertical-no-sequence.vue
 `;
 
 exports[`ssr snapshot test renders ./src/steps/_example/vertical-sequence.vue correctly 1`] = `
-<div class="setps-demo">
-  <div class="tdesign-demo-block">
+<div class="justify-around t-space t-space-horizontal" style="gap:236px;">
+  <div class="t-space-item">
     <div class="t-steps t-steps--vertical t-steps--positive t-steps--default-anchor t-steps--line-separator">
       <div class="t-steps-item t-steps-item--finish">
         <div class="t-steps-item__inner ">
@@ -14630,7 +14899,8 @@ exports[`ssr snapshot test renders ./src/steps/_example/vertical-sequence.vue co
         </div>
       </div>
     </div>
-    <div style="margin:16px 0;"></div>
+  </div>
+  <div class="t-space-item">
     <div class="t-steps t-steps--vertical t-steps--reverse t-steps--default-anchor t-steps--line-separator">
       <div class="t-steps-item t-steps-item--default">
         <div class="t-steps-item__inner ">
@@ -18009,7 +18279,7 @@ exports[`ssr snapshot test renders ./src/table/_example/merge-cells.vue correctl
 exports[`ssr snapshot test renders ./src/table/_example/multi-header.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large tdesign-demo-table-multi-heade tdesign-demo__tabler" style="width:100%;">
   <div><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示表格边框</span></label> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">显示固定表头</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定左侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">固定右侧列</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">表头吸顶</span></label></div>
-  <div class="t-table t-table--bordered t-table--multiple-header t-table--col-draggable" style="position:relative;">
+  <div class="t-table t-table--bordered t-table--multiple-header t-table--column-resizable t-table--col-draggable" style="position:relative;">
     <div class="t-table__top-content">
       <div class="t-table__column-controller-trigger t-align-top-right"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-setting">
             <path fill="currentColor" d="M11 8a3 3 0 11-6 0 3 3 0 016 0zm-1 0a2 2 0 10-4 0 2 2 0 004 0z" fill-opacity="0.9"></path>

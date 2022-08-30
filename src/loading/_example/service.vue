@@ -1,29 +1,27 @@
 <template>
-  <div class="tdesign-demo-block-column">
+  <t-space direction="vertical">
     <div id="loading-service-demo" ref="content" class="loading-service-demo">Loading 挂载容器</div>
 
-    <p>this.$loading(true)</p>
     <p>this.$loading({ attach: '#loading-service-demo', showOverlay: true })</p>
+    <p>this.$loading(true)</p>
+    <p>this.$loading({ fullscreen: true, attach: 'body', preventScrollThrough: false })</p>
 
-    <div class="tdesign-demo-block-row">
-      <t-button @click="showAttach1" class="t-loading__btn" size="small" :disabled="attachLoading"
-      >插件方式加载（局部）</t-button
-      >
+    <t-space>
+      <t-button @click="showAttach1" size="small" :disabled="attachLoading">插件方式加载（局部）</t-button>
       <t-button @click="showFullScreen1" size="small">插件方式加载（全屏）</t-button>
       <t-button @click="showFullScrollScreen1" size="small">插件方式加载（全屏-滚动穿透）</t-button>
-    </div>
+    </t-space>
 
-    <p>LoadingPlugin(true)</p>
     <p>LoadingPlugin({ attach: '#loading-service-demo', showOverlay: true })</p>
+    <p>LoadingPlugin(true)</p>
+    <p>LoadingPlugin({ fullscreen: true, attach: 'body', preventScrollThrough: false })</p>
 
-    <div class="tdesign-demo-block-row">
-      <t-button @click="showAttach2" class="t-loading__btn" size="small" :disabled="attachLoading"
-      >函数方式加载（局部）</t-button
-      >
+    <t-space>
+      <t-button @click="showAttach2" size="small" :disabled="attachLoading">函数方式加载（局部）</t-button>
       <t-button @click="showFullScreen2" size="small">函数方式加载（全屏）</t-button>
       <t-button @click="showFullScrollScreen2" size="small">函数方式加载（全屏-滚动穿透）</t-button>
-    </div>
-  </div>
+    </t-space>
+  </t-space>
 </template>
 <script>
 import { LoadingPlugin } from 'tdesign-vue';

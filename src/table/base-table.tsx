@@ -105,7 +105,9 @@ export default defineComponent({
 
     // 列宽拖拽逻辑
     const columnResizeParams = useColumnResize(tableContentRef, refreshTable, getThWidthList, updateThWidthList);
-    const { resizeLineRef, resizeLineStyle, recalculateColWidth } = columnResizeParams;
+    const {
+      resizeLineRef, resizeLineStyle, recalculateColWidth, setEffectColMap,
+    } = columnResizeParams;
     setRecalculateColWidthFuncRef(recalculateColWidth);
 
     const dynamicBaseTableClasses = computed(() => [
@@ -155,6 +157,16 @@ export default defineComponent({
         context.emit('LeafColumnsChange', spansAndLeafNodes.value.leafColumns);
       },
       { immediate: true },
+    );
+
+    watch(
+      thList,
+      () => {
+        setEffectColMap(thList.value[0], null);
+      },
+      {
+        immediate: true,
+      },
     );
 
     const onFixedChange = () => {

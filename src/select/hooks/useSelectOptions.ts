@@ -1,5 +1,5 @@
 import {
-  ref, Ref, SetupContext, computed, onBeforeUpdate,
+  ref, Ref, computed, onBeforeUpdate, ComponentInternalInstance,
 } from '@vue/composition-api';
 import { VNode } from 'vue';
 import get from 'lodash/get';
@@ -13,7 +13,11 @@ type UniOption = (TdOptionProps | SelectOptionGroup) & {
   slots?: () => VNode;
 };
 
-export default function useSelectOptions(props: TdSelectProps, context: SetupContext, keys: Ref<SelectKeysType>) {
+export default function useSelectOptions(
+  props: TdSelectProps,
+  instance: ComponentInternalInstance,
+  keys: Ref<SelectKeysType>,
+) {
   const options = ref<UniOption[]>([]);
 
   const getOptions = () => {
@@ -42,9 +46,9 @@ export default function useSelectOptions(props: TdSelectProps, context: SetupCon
     });
 
     // 处理 slots 中 t-option 与 t-option-group
-    const currentSlots = context.parent.$slots.default || [];
-    const optionsSlots = currentSlots.filter((item) => item.tag?.endsWith('TOption'));
-    const groupSlots = currentSlots.filter((item) => item.tag?.endsWith('TOptionGroup'));
+    const currentSlots = instance.proxy.$slots.default || [];
+    const optionsSlots = currentSlots.filter((item) => item.componentOptions?.tag === 't-option');
+    const groupSlots = currentSlots.filter((item) => item.componentOptions?.tag === 't-option-group');
     if (isArray(groupSlots)) {
       groupSlots.forEach((group) => {
         const groupOption = {
@@ -114,6 +118,7 @@ export default function useSelectOptions(props: TdSelectProps, context: SetupCon
     return res;
   });
 
+  // 首次初始化的时候
   getOptions();
   onBeforeUpdate(() => {
     getOptions();
