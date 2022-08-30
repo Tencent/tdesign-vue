@@ -149,7 +149,11 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     mouseEvent(v: boolean) {
       this.isHover = v;
     },
-    renderIcon(h: CreateElement, icon: string | Function | undefined, iconType: 'prefix-icon' | 'suffix-icon') {
+    renderIcon(
+      h: CreateElement,
+      icon: string | Function | undefined,
+      iconType: 'prefix-icon' | 'suffix-icon' | 'password-icon',
+    ) {
       if (typeof icon === 'function') {
         return icon(h);
       }
@@ -320,7 +324,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
 
     const prefixIcon = this.renderIcon(h, this.prefixIcon, 'prefix-icon');
     let suffixIcon = this.renderIcon(h, this.suffixIcon, 'suffix-icon');
-    let passwordIcon = this.renderIcon(h, undefined, 'passwordIcon');
+    let passwordIcon = this.renderIcon(h, undefined, 'password-icon');
 
     const label = renderTNodeJSX(this, 'label');
     const suffix = renderTNodeJSX(this, 'suffix');
