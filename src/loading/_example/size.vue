@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column-large">
+  <t-space direction="vertical" size="large">
     <div>
       <t-loading size="small" text="加载中(小)..."></t-loading>
     </div>
@@ -15,5 +15,5 @@
     <div>
       <t-loading size="large" text="加载中(大)..."></t-loading>
     </div>
-  </div>
+  </t-space>
 </template>

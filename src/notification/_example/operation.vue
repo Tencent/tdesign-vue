@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <t-space direction="vertical" :size="24">
     <t-notification theme="info" title="超出的文本省略号显示" :content="content" :footer="footer" />
     <t-notification theme="info" title="带关闭按钮" content="这是一条消息通知" :close-btn="true" />
     <t-notification theme="info" title="消息通知标题" content="使用 function 自定义底部内容" :footer="footer2" />
@@ -16,7 +16,7 @@
         </div>
       </template>
     </t-notification>
-  </div>
+  </t-space>
 </template>
 
 <script lang="jsx">
@@ -82,9 +82,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.t-notification + .t-notification {
-  margin-top: 24px;
-}
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <t-space direction="vertical" :size="20">
     <t-notification theme="info" title="标题名称" content="这是一条消息通知" />
     <t-notification
       v-if="show"
@@ -10,7 +10,7 @@
       @duration-end="show = false"
     />
     <t-button variant="outline" @click="show = true" v-if="!show">点击打开计时通知</t-button>
-  </div>
+  </t-space>
 </template>
 <script>
 export default {
@@ -21,12 +21,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.t-notification + .t-notification {
-  margin-top: 20px;
-}
-
-.t-button {
-  margin: 20px 20px 20px 0;
-}
-</style>
