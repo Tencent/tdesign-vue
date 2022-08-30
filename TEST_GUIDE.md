@@ -14,20 +14,22 @@ npm run test:unit
 # 运行服务端渲染测试
 npm run test:node
 
-# 运行监视模式
-npm run test:watch
-
 # 生成测试覆盖率报告
 npm run test:coverage
+
+# 更新 snapshot
+npm run test:update
 ```
 
 ### 1.2 目录结构
 
 - test 测试目录
   |-- e2e UI 测试
-  |-- unit 单元测试
+  |-- unit/coverage 单元测试结果报告
   |-- ssr 服务端测试
   |-- ...
+
+  ssr 测试由 [脚本](https://github.com/Tencent/tdesign-vue/blob/develop/test/ssr/ssr.test.js) 对所有组件的 demo 做渲染测试，无需手动编写测试用例脚本。
 
 ## 2. 单元测试
 
@@ -35,9 +37,9 @@ npm run test:coverage
 npm run test:unit
 ```
 
-- test/unit 目录中，创建对应的组件目录，用于存放测试文件
+- `/src/xx component/__test__/` 目录中存放测试文件
 - index.test.js 用于测试组件较细粒度的属性事件方法
-- demo.test.js 用于测试组件 demo 是否正常工作
+- demo.test.js 用于测试组件 demo 是否正常工作，通常不用手写，如有缺失请执行 `npm run test:demo` 生成
 
 ### 2.1 单元测试规范
 
@@ -47,37 +49,52 @@ npm run test:unit
 
 #### 单元测试文件
 
-需要对组件的 props/event/slot/methods 分别覆盖测试。具体组织方式可以参考 button，简单的渲染测试可以直接使用 snapshot
+需要对组件的 props/event/slot/methods 分别覆盖测试。具体组织方式可以参考 (Button)[https://github.com/Tencent/tdesign-vue/blob/develop/src/button/__tests__/index.test.js]，简单的渲染测试可以直接使用 snapshot
 
 #### 测试调试
 
-可以指定 --testPathPattern 以跑特定的测试文件，例如只想看 button 的测试结果：
+可以指定只跑特定的测试文件，例如只想看 button 的测试结果：
 
 ```
-npx jest --testPathPattern test/unit/button/* --config script/test/jest.unit.conf.js
+npm run test:unit button
 ```
 
-更新快照
+如果确认是预期的修改造成的 snapshot 变化，可以更新 snapshot 并提交:
+更新单元测试用例快照
 ```
-npx jest --testPathPattern test/unit/button/* --config script/test/jest.unit.conf.js --u
-```
-
-
-可以加上`--testNamePattern=<regex>`参数跑指定用例，例如
-
-```
-npx jest --testPathPattern test/unit/transfer/util --testNamePattern='getLeafCount result test 1' --config script/test/jest.unit.conf.js
+npm run test:unit-update
 ```
 
-如果确认是预期的修改造成的 snapshot 变化，可以加上 -u 参数更新 snapshot:
+更新 SSR 测试用例快照
 
 ```
-npx jest --testPathPattern test/unit/button/* --config script/test/jest.unit.conf.js -u
+npm run test:node-update
+```
+#### 检查测试覆盖
+
+```
+npm run test:coverage
 ```
 
-可以浏览器打开根目录下的 test-report.html(git ignored) 查看测试报告
+执行命令，会生成 `/test/unit/coverage/index.html` 页面，在浏览器内打开查看测试报告，以查看 Cascader 组件测试覆盖率为例：
 
-## 4. 服务端渲染测试
+![image](https://user-images.githubusercontent.com/7600149/187356294-226dd845-deb1-4e90-8652-bfc650cc409c.png)
+
+过滤后可以看到组件相关文件测试覆盖情况，`src/cascader/_usage` 目录是官网 live demo 的实现，不需要测试，其他未达到全覆盖的文件可以点击查看详情：
+
+![image](https://user-images.githubusercontent.com/7600149/187362016-bed07ec5-ee81-46d8-be5d-823b0c2b0b6d.png)
+
+红色标记的为还未覆盖到的语句，需要针对性的补充测试用例。
+
+#### PR Review
+
+当你补充了测试用例提交 PR 后，会有负责的 PMC 同学 review，并检查 Codecov Report 指标：
+
+![image](https://user-images.githubusercontent.com/7600149/187367112-6f923092-a4a1-446c-89f1-0b2d1cfd9eb8.png)
+
+达到组件测试覆盖指标后 PR 才会被合入。
+
+## 3. 服务端渲染测试
 
 服务端渲染测试主要利用 node 环境下的测试快照，与已有 jsdom 环境快照进行对比
 
@@ -85,9 +102,7 @@ npx jest --testPathPattern test/unit/button/* --config script/test/jest.unit.con
 npm run test:node
 ```
 
-## 注意事项
-
-# E2E 测试
+## 4. E2E 测试
 
 cypress 可以覆盖 Puppeteer 的 E2E 测试场景，优先选择了 cypress 作为测试框架，它能实现以下功能：
 
