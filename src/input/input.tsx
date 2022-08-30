@@ -320,7 +320,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
 
     const prefixIcon = this.renderIcon(h, this.prefixIcon, 'prefix-icon');
     let suffixIcon = this.renderIcon(h, this.suffixIcon, 'suffix-icon');
-    let passwordIcon = this.renderIcon(h, this, 'passwordIcon');
+    let passwordIcon = this.renderIcon(h, undefined, 'passwordIcon');
 
     const label = renderTNodeJSX(this, 'label');
     const suffix = renderTNodeJSX(this, 'suffix');
