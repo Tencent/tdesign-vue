@@ -1,17 +1,31 @@
 <template>
   <t-space direction="vertical">
     <div class="date-picker-panel-border">
-      <t-date-picker-panel @cell-click="handleCellClick" :on-change="handleChange" />
+      <t-date-picker-panel @panel-click="handlePanelClick" @cell-click="handleCellClick" :on-change="handleChange" />
     </div>
     <div class="date-picker-panel-border">
-      <t-date-picker-panel enable-time-picker @cell-click="handleCellClick" :on-change="handleChange" />
+      <t-date-picker-panel
+        enable-time-picker
+        @panel-click="handlePanelClick"
+        @cell-click="handleCellClick"
+        :on-change="handleChange"
+      />
     </div>
 
     <div class="date-picker-panel-border">
-      <t-date-range-picker-panel @cell-click="handleCellClick" :on-change="handleChange" />
+      <t-date-range-picker-panel
+        @panel-click="handlePanelClick"
+        @cell-click="handleCellClick"
+        :on-change="handleChange"
+      />
     </div>
     <div class="date-picker-panel-border">
-      <t-date-range-picker-panel enable-time-picker @cell-click="handleCellClick" :on-change="handleChange" />
+      <t-date-range-picker-panel
+        enable-time-picker
+        @panel-click="handlePanelClick"
+        @cell-click="handleCellClick"
+        :on-change="handleChange"
+      />
     </div>
   </t-space>
 </template>
@@ -23,7 +37,10 @@ export default {
       console.log('onChange value', value);
     },
     handleCellClick(value) {
-      console.log('onPick value', value);
+      console.log('onCellClick value', value);
+    },
+    handlePanelClick(ctx) {
+      console.log('onPanelClick', ctx);
     },
   },
 };

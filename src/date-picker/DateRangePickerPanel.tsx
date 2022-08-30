@@ -329,6 +329,11 @@ export default defineComponent({
       });
     }
 
+    function onPanelClick(context: { e: MouseEvent }) {
+      props.onPanelClick?.(context);
+      emit('panel-click', context);
+    }
+
     const panelProps = computed(() => ({
       hoverValue: (isHoverCell.value ? hoverValue.value : []) as string[],
       value: (isSelected.value ? cacheValue.value : value.value) as string[],
@@ -345,6 +350,7 @@ export default defineComponent({
       enableTimePicker: props.enableTimePicker,
       presetsPlacement: props.presetsPlacement,
       panelPreselection: props.panelPreselection,
+      onPanelClick,
       onCellClick,
       onCellMouseEnter,
       onCellMouseLeave,
