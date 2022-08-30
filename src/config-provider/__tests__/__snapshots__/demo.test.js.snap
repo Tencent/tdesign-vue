@@ -19,6 +19,7 @@ exports[`ConfigProvider ConfigProvider calendarVue demo works fine 1`] = `
       >
         <div
           class="t-select__wrap"
+          size="medium"
         >
           <div
             class="t-input__wrap t-select"
@@ -70,6 +71,7 @@ exports[`ConfigProvider ConfigProvider calendarVue demo works fine 1`] = `
       >
         <div
           class="t-select__wrap"
+          size="medium"
         >
           <div
             class="t-input__wrap t-select"
