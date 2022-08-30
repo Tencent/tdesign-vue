@@ -323,6 +323,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
 
     const label = renderTNodeJSX(this, 'label');
     const suffix = renderTNodeJSX(this, 'suffix');
+    let passwordIcon = renderTNodeJSX(this, 'passwordIcon');
 
     const labelContent = label ? <div class={`${this.componentName}__prefix`}>{label}</div> : null;
     const suffixContent = suffix ? <div class={`${this.componentName}__suffix`}>{suffix}</div> : null;
@@ -342,9 +343,16 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     }
 
     if (this.showClear) {
-      suffixIcon = (
-        <CloseCircleFilledIcon class={`${this.componentName}__suffix-clear`} nativeOnClick={this.emitClear} />
-      );
+      // 如果类型为 password 则使用 passwordIcon 显示 clear
+      if (this.type === 'password') {
+        passwordIcon = (
+          <CloseCircleFilledIcon class={`${this.componentName}__suffix-clear`} nativeOnClick={this.emitClear} />
+        );
+      } else {
+        suffixIcon = (
+          <CloseCircleFilledIcon class={`${this.componentName}__suffix-clear`} nativeOnClick={this.emitClear} />
+        );
+      }
     }
 
     const classes = [
@@ -385,6 +393,17 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
           </span>
         )}
         {suffixContent}
+        {passwordIcon ? (
+          <span
+            class={[
+              `${this.componentName}__suffix`,
+              `${this.componentName}__suffix-icon`,
+              `${this.componentName}__clear`,
+            ]}
+          >
+            {passwordIcon}
+          </span>
+        ) : null}
         {suffixIcon ? (
           <span
             class={[
