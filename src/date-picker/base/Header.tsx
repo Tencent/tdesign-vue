@@ -163,7 +163,10 @@ export default defineComponent({
                   value: this.month,
                   options: monthOptions,
                   onChange: (val: number) => this.onMonthChange?.(val),
-                  popupProps: { overlayClassName: `${COMPONENT_NAME}-controller-month-popup` },
+                  popupProps: {
+                    attach: (triggerElement: HTMLElement) => triggerElement.parentNode,
+                    overlayClassName: `${COMPONENT_NAME}-controller-month-popup`,
+                  },
                 },
               }}
             />
@@ -177,6 +180,7 @@ export default defineComponent({
                 onChange: (val: number) => this.onYearChange?.(val),
                 popupProps: {
                   onScroll: this.handleScroll,
+                  attach: (triggerElement: HTMLElement) => triggerElement.parentNode,
                   overlayClassName: `${COMPONENT_NAME}-controller-year-popup`,
                 },
                 panelTopContent: () => (
