@@ -18,7 +18,9 @@ import useDefaultValue from '../hooks/useDefaultValue';
 import useVModel from '../hooks/useVModel';
 import { useTNodeJSX } from '../hooks/tnode';
 import { useConfig, usePrefixClass } from '../config-provider/useConfig';
-import { TdSelectProps, SelectValue, TdOptionProps } from './type';
+import {
+  TdSelectProps, SelectValue, TdOptionProps, SelectOptionGroup,
+} from './type';
 import props from './props';
 import TLoading from '../loading';
 import Popup, { PopupVisibleChangeContext } from '../popup';
@@ -34,6 +36,7 @@ import Option from './option';
 import SelectPanel from './select-panel';
 import { getSingleContent, getMultipleContent, getNewMultipleValue } from './util';
 import useSelectOptions from './hooks/useSelectOptions';
+import { SelectPanelInstance } from './instance';
 
 export type OptionInstance = InstanceType<typeof Option>;
 
@@ -54,6 +57,7 @@ export default defineComponent({
     const renderTNode = useTNodeJSX();
     const instance = getCurrentInstance();
     const selectInputRef = ref<HTMLElement>(null);
+    const selectPanelRef = ref<SelectPanelInstance>();
     const popupOpenTime = ref(250);
     const formDisabled = ref();
     const COMPONENT_NAME = usePrefixClass('select');
@@ -72,6 +76,7 @@ export default defineComponent({
       inputValue,
       popupVisible,
       minCollapsedNum,
+      creatable,
     } = toRefs(props);
 
     const keys = computed(() => ({
@@ -254,7 +259,7 @@ export default defineComponent({
     const handleEnter = (value: string, context: { e: KeyboardEvent }) => {
       instance.emit('enter', { value, e: context?.e, inputValue: tInputValue.value });
       props.onEnter?.({ value, e: context?.e, inputValue: tInputValue.value.toString() });
-      handleCreate();
+      creatable.value && handleCreate();
     };
 
     const debounceSearch = debounce(() => {
@@ -298,38 +303,51 @@ export default defineComponent({
     // 键盘操作逻辑相关
     const hoverIndex = ref(-1);
     const keydownEvent = (e: KeyboardEvent) => {
-      const optionsListLength = optionsList.value.length;
+      const displayOptions: Array<TdOptionProps> = [];
+
+      const getCurrentOptionsList = (options: TdOptionProps[]) => {
+        options.forEach((option) => {
+          if ((option as SelectOptionGroup).group) {
+            getCurrentOptionsList((option as SelectOptionGroup).children);
+          } else {
+            displayOptions.push(option);
+          }
+        });
+      };
+      getCurrentOptionsList(selectPanelRef.value?.getDisplayOptions());
+
+      const displayOptionsLength = displayOptions.length;
       const arrowDownOption = () => {
         let count = 0;
-        while (hoverIndex.value < optionsListLength) {
-          if (!optionsList.value[hoverIndex.value]?.disabled) {
+        while (hoverIndex.value < displayOptionsLength) {
+          if (!(displayOptions[hoverIndex.value] as TdOptionProps)?.disabled) {
             break;
           }
-          if (hoverIndex.value === optionsListLength - 1) {
+          if (hoverIndex.value === displayOptionsLength - 1) {
             hoverIndex.value = 0;
           } else {
             hoverIndex.value += 1;
           }
           count += 1;
-          if (count >= optionsListLength) break;
+          if (count >= displayOptionsLength) break;
         }
       };
       const arrowUpOption = () => {
         let count = 0;
         while (hoverIndex.value > -1) {
-          if (!optionsList.value[hoverIndex.value]?.disabled) {
+          if (!(displayOptions[hoverIndex.value] as TdOptionProps)?.disabled) {
             break;
           }
           if (hoverIndex.value === 0) {
-            hoverIndex.value = optionsListLength - 1;
+            hoverIndex.value = displayOptionsLength - 1;
           } else {
             hoverIndex.value -= 1;
           }
           count += 1;
-          if (count >= optionsListLength) break;
+          if (count >= displayOptionsLength) break;
         }
       };
-      if (optionsListLength === 0) return;
+      if (displayOptionsLength === 0) return;
       const preventKeys = ['ArrowDown', 'ArrowUp', 'Enter', 'Escape', 'Tab'];
       if (preventKeys.includes(e.code)) {
         e.preventDefault();
@@ -340,7 +358,7 @@ export default defineComponent({
             hoverIndex.value = 0;
             return;
           }
-          if (hoverIndex.value < optionsListLength - 1) {
+          if (hoverIndex.value < displayOptionsLength - 1) {
             hoverIndex.value += 1;
             arrowDownOption();
           } else {
@@ -357,21 +375,21 @@ export default defineComponent({
             hoverIndex.value -= 1;
             arrowUpOption();
           } else {
-            hoverIndex.value = optionsListLength - 1;
+            hoverIndex.value = displayOptionsLength - 1;
             arrowUpOption();
           }
           break;
         case 'Enter':
           if (hoverIndex.value === -1) return;
           if (!multiple.value) {
-            setInnerValue(optionsList.value[hoverIndex.value].value, {
+            setInnerValue((displayOptions[hoverIndex.value] as TdOptionProps).value, {
               e,
               trigger: 'check',
             });
             setInnerPopupVisible(false, { e });
           } else {
             if (hoverIndex.value === -1) return;
-            const optionValue = optionsList.value[hoverIndex.value]?.value;
+            const optionValue = (displayOptions[hoverIndex.value] as TdOptionProps)?.value;
             if (!optionValue) return;
             const newValue = getNewMultipleValue(innerValue.value, optionValue);
             setInnerValue(newValue.value, { e, trigger: newValue.isCheck ? 'check' : 'uncheck' });
@@ -447,6 +465,7 @@ export default defineComponent({
       innerOptions,
       placeholderText,
       selectInputRef,
+      selectPanelRef,
       innerPopupVisible,
       displayText,
       tInputValue,
@@ -544,6 +563,7 @@ export default defineComponent({
           updateScrollTop={this.updateScrollTop}
         >
           <select-panel
+            ref="selectPanelRef"
             slot="panel"
             scopedSlots={this.$scopedSlots}
             size={this.size}

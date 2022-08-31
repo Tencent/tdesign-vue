@@ -91,21 +91,28 @@ export default defineComponent({
         return option.label?.indexOf(`${props.inputValue}`) > -1;
       };
 
-      const res: SelectOption[] = [];
+      const res: Array<SelectOption & { index?: number }> = [];
+      let groupIndex = 0;
       props.options.forEach((option) => {
         if ((option as SelectOptionGroup).group && (option as SelectOptionGroup).children) {
           res.push({
             ...option,
-            children: (option as SelectOptionGroup).children.filter(filterMethods),
+            // 处理index使其在过滤后的分组中能正确触发上下移动键的hover效果
+            children: (option as SelectOptionGroup).children.filter(filterMethods).reduce((pre, cur) => {
+              pre.push({ ...cur, index: groupIndex });
+              groupIndex += 1;
+              return pre;
+            }, []),
           });
         }
         if (filterMethods(option)) {
-          res.push(option);
+          res.push({ ...option, index: res.length });
         }
       });
 
       return res;
     });
+    const getDisplayOptions = () => displayOptions.value;
 
     const isCreateOptionShown = computed(() => props.creatable && props.filterable && props.inputValue);
     const isEmpty = computed(() => !(displayOptions.value.length > 0));
@@ -179,6 +186,7 @@ export default defineComponent({
       bufferSize,
       threshold,
       displayOptions,
+      getDisplayOptions,
       componentName: COMPONENT_NAME,
     };
   },
