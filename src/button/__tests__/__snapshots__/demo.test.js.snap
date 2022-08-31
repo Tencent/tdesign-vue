@@ -1155,7 +1155,7 @@ exports[`Button Button statusVue demo works fine 1`] = `
     class="t-space-item"
   >
     <button
-      class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled t-is-loading"
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-loading"
       disabled="disabled"
       type="button"
     >
