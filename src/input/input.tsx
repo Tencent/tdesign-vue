@@ -149,7 +149,11 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     mouseEvent(v: boolean) {
       this.isHover = v;
     },
-    renderIcon(h: CreateElement, icon: string | Function | undefined, iconType: 'prefix-icon' | 'suffix-icon') {
+    renderIcon(
+      h: CreateElement,
+      icon: string | Function | undefined,
+      iconType: 'prefix-icon' | 'suffix-icon' | 'password-icon',
+    ) {
       if (typeof icon === 'function') {
         return icon(h);
       }
@@ -320,6 +324,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
 
     const prefixIcon = this.renderIcon(h, this.prefixIcon, 'prefix-icon');
     let suffixIcon = this.renderIcon(h, this.suffixIcon, 'suffix-icon');
+    let passwordIcon = this.renderIcon(h, undefined, 'password-icon');
 
     const label = renderTNodeJSX(this, 'label');
     const suffix = renderTNodeJSX(this, 'suffix');
@@ -342,9 +347,16 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     }
 
     if (this.showClear) {
-      suffixIcon = (
-        <CloseCircleFilledIcon class={`${this.componentName}__suffix-clear`} nativeOnClick={this.emitClear} />
-      );
+      // 如果类型为 password 则使用 passwordIcon 显示 clear
+      if (this.type === 'password') {
+        passwordIcon = (
+          <CloseCircleFilledIcon class={`${this.componentName}__suffix-clear`} nativeOnClick={this.emitClear} />
+        );
+      } else {
+        suffixIcon = (
+          <CloseCircleFilledIcon class={`${this.componentName}__suffix-clear`} nativeOnClick={this.emitClear} />
+        );
+      }
     }
 
     const classes = [
@@ -385,6 +397,17 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
           </span>
         )}
         {suffixContent}
+        {passwordIcon ? (
+          <span
+            class={[
+              `${this.componentName}__suffix`,
+              `${this.componentName}__suffix-icon`,
+              `${this.componentName}__clear`,
+            ]}
+          >
+            {passwordIcon}
+          </span>
+        ) : null}
         {suffixIcon ? (
           <span
             class={[

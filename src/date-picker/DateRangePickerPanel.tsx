@@ -71,6 +71,9 @@ export default defineComponent({
 
     // 日期点击
     function onCellClick(date: Date, { e, partial }: { e: MouseEvent; partial: DateRangePickerPartial }) {
+      props.onCellClick?.({ e, partial, date: value.value.map((v: string) => dayjs(v).toDate()) });
+      emit('cell-click', { e, partial, date: value.value.map((v: string) => dayjs(v).toDate()) });
+
       isHoverCell.value = false;
       isSelected.value = true;
 
@@ -100,9 +103,6 @@ export default defineComponent({
       } else {
         isFirstValueSelected.value = true;
       }
-
-      props.onCellClick?.({ e, partial, date: value.value.map((v: string) => dayjs(v).toDate()) });
-      emit('cell-click', { e, partial, date: value.value.map((v: string) => dayjs(v).toDate()) });
     }
 
     // 头部快速切换
@@ -329,6 +329,11 @@ export default defineComponent({
       });
     }
 
+    function onPanelClick(context: { e: MouseEvent }) {
+      props.onPanelClick?.(context);
+      emit('panel-click', context);
+    }
+
     const panelProps = computed(() => ({
       hoverValue: (isHoverCell.value ? hoverValue.value : []) as string[],
       value: (isSelected.value ? cacheValue.value : value.value) as string[],
@@ -345,6 +350,7 @@ export default defineComponent({
       enableTimePicker: props.enableTimePicker,
       presetsPlacement: props.presetsPlacement,
       panelPreselection: props.panelPreselection,
+      onPanelClick,
       onCellClick,
       onCellMouseEnter,
       onCellMouseLeave,

@@ -204,7 +204,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
         this.emitRemoveEvent({ e, file, index });
       } else {
         const index = findIndex(this.files, (o) => o.name === file?.name);
-        this.handleMultipleRemove({ e, index });
+        this.handleMultipleRemove({ e, index, file });
       }
     },
 

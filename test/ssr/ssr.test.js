@@ -8,7 +8,7 @@ const transitionStub = () => ({
 config.stubs.transition = transitionStub();
 
 function ssrSnapshotTest() {
-  const files = glob.sync('./examples/*/demos/*.vue');
+  const files = glob.sync('./src/**/_example/*.vue');
   describe('ssr snapshot test', () => {
     beforeAll(() => {
       jest.useFakeTimers().setSystemTime(new Date('2021-12-31').getTime());

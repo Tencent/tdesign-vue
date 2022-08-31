@@ -16,18 +16,32 @@ const classPrefixMixins = getClassPrefixMixins('notification');
 export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
   name: 'TNotification',
   props: { ...props },
-  mounted() {
-    if (this.duration > 0) {
-      const timer = setTimeout(() => {
-        clearTimeout(timer);
-        this.$emit('duration-end');
-        if (this.onDurationEnd) {
-          this.onDurationEnd();
-        }
-      }, this.duration);
-    }
+  data() {
+    return {
+      timer: null,
+    };
+  },
+  created() {
+    this.duration && this.setTimer();
   },
   methods: {
+    setTimer() {
+      if (!this.duration) {
+        return;
+      }
+      this.timer = Number(
+        setTimeout(() => {
+          this.clearTimer();
+          this.$emit('duration-end');
+          if (this.onDurationEnd) {
+            this.onDurationEnd();
+          }
+        }, this.duration),
+      );
+    },
+    clearTimer() {
+      this.duration && clearTimeout(this.timer);
+    },
     close(e?: MouseEvent) {
       this.$emit('close-btn-click', { e });
       if (this.onCloseBtnClick) {
@@ -78,7 +92,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
     const title = renderTNodeJSX(this, 'title');
 
     return (
-      <div class={`${this.componentName}`}>
+      <div class={`${this.componentName}`} onMouseenter={this.clearTimer} onMouseleave={this.setTimer}>
         {icon}
         <div class={`${this.componentName}__main`}>
           <div class={`${this.componentName}__title__wrap`}>
