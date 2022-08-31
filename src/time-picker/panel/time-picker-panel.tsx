@@ -10,6 +10,7 @@ import { panelProps } from './props';
 import SinglePanel from './single-panel';
 import TButton from '../../button/button';
 import { useConfig, usePrefixClass } from '../../hooks/useConfig';
+import log from '../../_common/js/log';
 
 dayjs.extend(customParseFormat);
 
@@ -58,7 +59,7 @@ export default defineComponent({
         if (Array.isArray(presetVal)) {
           props.onChange(presetVal[props.activeIndex]);
         } else {
-          console.error(`preset: ${props.presets} 预设值必须是数组!`);
+          log.error('TimePicker', `preset: ${props.presets} 预设值必须是数组!`);
         }
       } else {
         props.onChange(presetVal);

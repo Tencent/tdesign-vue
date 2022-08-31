@@ -1,6 +1,6 @@
 import { PropType } from 'vue';
 
-import { TdTimePickerProps } from '@src/time-picker';
+import { TdTimePickerProps } from '../../time-picker';
 import * as Props from '../props';
 
 export const panelProps = () => ({
