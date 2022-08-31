@@ -5,6 +5,30 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.46.3 `2022-08-31` 
+### 🚀 Features
+- `Grid`: `align` 可选值新增 `start/end/center`，修复 `justify`和 `align` 同为 `center` 属性冲突问题 @Micro-sun ([#1359](https://github.com/Tencent/tdesign-vue/pull/1359))
+- `Notification`: 鼠标移入时不会关闭通知 @sechi747 ([#1366](https://github.com/Tencent/tdesign-vue/pull/1366))
+- `Cascader`: CascaderPanel 点击选项时派发 `click` 事件 @luwuer ([#1396](https://github.com/Tencent/tdesign-vue/pull/1396))
+- `Table`: 文本超出提示由 `Popup` 更为 `Tooltip`，以便于定制各种提示文本主题色 @PDieE ([#1365](https://github.com/Tencent/tdesign-vue/pull/1365))
+- `Input`: 优化 `clearable` 按钮显示逻辑，区分 `password` 输入框 @PDieE ([#1415](https://github.com/Tencent/tdesign-vue/pull/1415))
+- `Popconfirm/Table` 组件样式优化 @zhangpaopao0609 ([#1388](https://github.com/Tencent/tdesign-vue/pull/1388))
+- `Watermark`: 新增`Watermark` 水印组件 @samhou1988 ([#1347](https://github.com/Tencent/tdesign-vue/pull/1347))
+### 🐞 Bug Fixes
+- `useModel`:  兼容因 `v-model` 初始值为 `undefined` 导致 `useModel` 失效的问题 @zhangpaopao0609 ([#1363](https://github.com/Tencent/tdesign-vue/pull/1363))
+- `Table`:
+  - 修复 `editableCellState` 表现与预期相反的问题 @sechi747 ([#1367](https://github.com/Tencent/tdesign-vue/pull/1367))
+  - 修复多级表头下不支持调整列宽的问题 @ZTao-z ([#1395](https://github.com/Tencent/tdesign-vue/pull/1395))
+- `Select`: 去除组件注册时的 map props @skytt ([#1399](https://github.com/Tencent/tdesign-vue/pull/1399))
+- `InputNumber`: 修复 `string/number` 类型比较错误及其导致的分页组件样式异常的问题 [common#784](https://github.com/Tencent/tdesign-common/pull/784) @uyarn ([#1413](https://github.com/Tencent/tdesign-vue/pull/1413))
+- `DatePicker`: @HQ-Lin 
+  - 优化不设置 valueType 场景下与 format 表现一致 ([#1398](https://github.com/Tencent/tdesign-vue/pull/1398))
+  - 修复左右面板切换错位问题 ([#1400](https://github.com/Tencent/tdesign-vue/pull/1400))
+  - 修复 `cell-click` 事件失效问题 ([#1420](https://github.com/Tencent/tdesign-vue/pull/1420))
+  - 修复 `panel-click` 事件失效问题 ([#1421](https://github.com/Tencent/tdesign-vue/pull/1421))
+- `Calendar`: 优化组件事件设置示例 @PsTiu ([#1405](https://github.com/Tencent/tdesign-vue/pull/1405))
+- `Upload`:  修复`theme`为`flow-list`时 remove事件file参数丢失的问题 @uyarn ([#1430](https://github.com/Tencent/tdesign-vue/pull/1430))
+
 ## 🌈 0.46.2 `2022-08-24` 
 ### 🚀 Features
 - `Table`: @chaishi ([#1341](https://github.com/Tencent/tdesign-vue/pull/1341))
