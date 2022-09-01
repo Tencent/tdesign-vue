@@ -177,7 +177,9 @@ export default mixins(classPrefixMixins).extend({
     (this.$refs.container as any)?.updateContent();
   },
   beforeDestroy() {
-    (this as any).popup?.preventClosing(false);
+    if (this.visible) {
+      (this as any).popup?.preventClosing(false);
+    }
     this.destroyPopper();
     off(document, 'click', this.handleDocumentClick, true);
   },
