@@ -23,6 +23,7 @@ import {
   TableColFixedClasses,
   RecalculateColumnWidthFunc,
 } from '../interface';
+import { getIEVersion } from '../../_common/js/utils/helper';
 
 // 固定列相关类名处理
 export function getColumnFixedStyles(
@@ -492,6 +493,15 @@ export default function useFixed(
 
   const onResize = refreshTable;
 
+  function addTableResizeObserver(tableElement: HTMLDivElement) {
+    // IE 11 以下使用 window resize；IE 11 以上使用 ResizeObserver
+    if (getIEVersion() < 11) return;
+    const ro = new ResizeObserver(() => {
+      refreshTable();
+    });
+    ro.observe(tableElement);
+  }
+
   onMounted(() => {
     const scrollWidth = getScrollbarWidth();
     scrollbarWidth.value = scrollWidth;
@@ -503,7 +513,8 @@ export default function useFixed(
       clearTimeout(timer);
     });
     const isWatchResize = isFixedColumn.value || isFixedHeader.value || !notNeedThWidthList.value || !data.value.length;
-    if (isWatchResize) {
+    // IE 11 以下使用 window resize；IE 11 以上使用 ResizeObserver
+    if (isWatchResize && getIEVersion() < 11) {
       on(window, 'resize', onResize);
     }
   });
@@ -537,5 +548,6 @@ export default function useFixed(
     getThWidthList,
     updateThWidthList,
     setRecalculateColWidthFuncRef,
+    addTableResizeObserver,
   };
 }
