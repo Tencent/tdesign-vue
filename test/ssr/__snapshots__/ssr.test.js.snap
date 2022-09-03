@@ -8171,19 +8171,19 @@ exports[`ssr snapshot test renders ./src/icon/_example/iconfont-enhanced.vue cor
 <div class="t-space t-space-vertical" style="gap:16px;">
   <div class="t-space-item">
     <div class="t-space t-space-align-center t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
-      <div class="t-space-item"><i class="t-icon cps-icon cps-icon-home-sheep"></i></div>
-      <div class="t-space-item"><i class="t-icon cps-icon cps-icon-home-sheep t-size-m"></i></div>
-      <div class="t-space-item"><i class="t-icon cps-icon cps-icon-home-sheep t-size-l"></i></div>
-      <div class="t-space-item"><i class="t-icon cps-icon cps-icon-home-sheep" style="font-size:25px;"></i></div>
-      <div class="t-space-item"><i class="t-icon cps-icon cps-icon-home-sheep" style="font-size:2em;"></i></div>
+      <div class="t-space-item"><i class="cps-icon cps-icon-home-sheep"></i></div>
+      <div class="t-space-item"><i class="cps-icon cps-icon-home-sheep t-size-m"></i></div>
+      <div class="t-space-item"><i class="cps-icon cps-icon-home-sheep t-size-l"></i></div>
+      <div class="t-space-item"><i class="cps-icon cps-icon-home-sheep" style="font-size:25px;"></i></div>
+      <div class="t-space-item"><i class="cps-icon cps-icon-home-sheep" style="font-size:2em;"></i></div>
     </div>
   </div>
   <div class="t-space-item">
     <div class="t-space t-space-align-center t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
-      <div class="t-space-item"><i class="t-icon cps-icon cps-icon-home-sheep" style="color:red;"></i></div>
-      <div class="t-space-item"><i class="t-icon cps-icon cps-icon-home-sheep" style="color:green;"></i></div>
-      <div class="t-space-item"><i class="t-icon cps-icon cps-icon-home-sheep" style="color:orange;"></i></div>
-      <div class="t-space-item"><i class="t-icon t-icon-home"></i></div>
+      <div class="t-space-item"><i class="cps-icon cps-icon-home-sheep" style="color:red;"></i></div>
+      <div class="t-space-item"><i class="cps-icon cps-icon-home-sheep" style="color:green;"></i></div>
+      <div class="t-space-item"><i class="cps-icon cps-icon-home-sheep" style="color:orange;"></i></div>
+      <div class="t-space-item"><i class="t-icon-home t-icon"></i></div>
     </div>
   </div>
   <div class="t-space-item"><br></div>
