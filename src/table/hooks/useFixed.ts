@@ -100,6 +100,7 @@ export default function useFixed(
     allowResizeColumnWidth,
   } = toRefs(props);
   const data = ref<TableRowData[]>([]);
+  const tableRef = ref<HTMLDivElement>();
   const tableContentRef = ref<HTMLDivElement>();
   const isFixedHeader = ref(false);
   const isWidthOverflow = ref(false);
@@ -493,14 +494,16 @@ export default function useFixed(
 
   const onResize = refreshTable;
 
+  let resizeObserver: ResizeObserver = null;
   function addTableResizeObserver(tableElement: HTMLDivElement) {
     // IE 11 以下使用 window resize；IE 11 以上使用 ResizeObserver
-    if (getIEVersion() < 11 || !ResizeObserver) return;
-    on(window, 'resize', onResize);
-    const tmp = new ResizeObserver(() => {
+    if (getIEVersion() < 11 || typeof window.ResizeObserver === 'undefined') return;
+    off(window, 'resize', onResize);
+    resizeObserver = new window.ResizeObserver(() => {
       refreshTable();
     });
-    tmp.observe(tableElement);
+    resizeObserver.observe(tableElement);
+    tableRef.value = tableElement;
   }
 
   onMounted(() => {
@@ -515,13 +518,15 @@ export default function useFixed(
     });
     const isWatchResize = isFixedColumn.value || isFixedHeader.value || !notNeedThWidthList.value || !data.value.length;
     // IE 11 以下使用 window resize；IE 11 以上使用 ResizeObserver
-    if ((isWatchResize && getIEVersion() < 11) || !ResizeObserver) {
+    if ((isWatchResize && getIEVersion() < 11) || typeof window.ResizeObserver === 'undefined') {
       on(window, 'resize', onResize);
     }
   });
 
   onBeforeMount(() => {
     off(window, 'resize', onResize);
+    resizeObserver?.unobserve(tableRef.value);
+    resizeObserver?.disconnect();
   });
 
   const setData = (dataSource: TableRowData[]) => {
