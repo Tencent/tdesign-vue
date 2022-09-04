@@ -21,7 +21,7 @@ export default {
           // 层级控制：非当前场景自由控制开关的关键代码，仅用于测试 API 是否运行正常
           zIndex: 1001,
           // 挂载元素控制：非当前场景自由控制开关的关键代码，仅用于测试 API 是否运行正常
-          attach: '#t-demo-message-toggle',
+          attach: document.body,
         });
       } else {
         // 关键代码
