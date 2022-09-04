@@ -1,5 +1,5 @@
 <template>
-  <div class="t-demo-message">
+  <t-space direction="vertical">
     <t-message v-if="isShowMsg" :closeBtn="true" @close-btn-click="isShowMsg = false"
     >点击关闭按钮触发事件 close-btn-click
     </t-message>
@@ -18,7 +18,7 @@
         </div>
       </template>
     </t-message>
-  </div>
+  </t-space>
 </template>
 
 <script lang="jsx">

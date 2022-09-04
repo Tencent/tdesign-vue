@@ -84,6 +84,7 @@ export default mixins(classPrefixMixins).extend({
           [`${this.componentName}__content--arrow`]: this.showArrow,
           [this.commonStatusClassName.disabled]: this.disabled,
         },
+        this.overlayInnerClassName,
       ];
     },
     hasTrigger(): Record<typeof triggers[number], boolean> {
