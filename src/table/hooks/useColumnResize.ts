@@ -1,4 +1,5 @@
 import { ref, Ref, reactive } from '@vue/composition-api';
+import isNumber from 'lodash/isNumber';
 import { RecalculateColumnWidthFunc } from '../interface';
 import { BaseTableCol, TableRowData } from '../type';
 import setThWidthListByColumnDrag from '../../_common/js/table/set-column-width-by-drag';
@@ -89,18 +90,30 @@ export default function useColumnResize(
     // 非 resize 的点击，不做处理
     if (!resizeLineParams.draggingCol) return;
 
+    const getMinMaxColWidth = (col: BaseTableCol<TableRowData>, effectPrevCol: BaseTableCol<TableRowData>) => {
+      let targetCol = null;
+      if (resizeLineParams.effectCol === 'next') {
+        targetCol = col;
+      } else {
+        targetCol = effectPrevCol;
+      }
+      const propMinWidth = isNumber(targetCol.minWidth) ? targetCol.minWidth : parseFloat(targetCol.minWidth);
+      return {
+        minColWidth: Math.max(targetCol.resize?.minWidth || DEFAULT_MIN_WIDTH, propMinWidth || DEFAULT_MIN_WIDTH),
+        maxColWidth: targetCol.resize?.maxWidth || DEFAULT_MAX_WIDTH,
+      };
+    };
+
     const target = resizeLineParams.draggingCol;
     const targetBoundRect = target.getBoundingClientRect();
     const tableBoundRect = tableContentRef.value?.getBoundingClientRect();
     const resizeLinePos = targetBoundRect.right - tableBoundRect.left;
     const colLeft = targetBoundRect.left - tableBoundRect.left;
-    const minColWidth = col.resize?.minWidth || DEFAULT_MIN_WIDTH;
-    const maxColWidth = col.resize?.maxWidth || DEFAULT_MAX_WIDTH;
-    const minResizeLineLeft = colLeft + minColWidth;
-    const maxResizeLineLeft = colLeft + maxColWidth;
-
     const effectNextCol = effectColMap.value[col.colKey].next;
     const effectPrevCol = effectColMap.value[col.colKey].prev;
+    const { minColWidth, maxColWidth } = getMinMaxColWidth(col, effectPrevCol);
+    const minResizeLineLeft = colLeft + minColWidth;
+    const maxResizeLineLeft = colLeft + maxColWidth;
 
     // 开始拖拽，记录下鼠标起始位置
     resizeLineParams.isDragging = true;

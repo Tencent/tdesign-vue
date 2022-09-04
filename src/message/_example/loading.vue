@@ -1,10 +1,10 @@
 <template>
-  <div class="t-demo-message">
+  <t-space direction="vertical">
     <t-message theme="loading">用于表示操作正在生效的过程中</t-message>
     <t-message :theme="status1">用于表示操作顺利达成(10s)</t-message>
     <t-message :theme="status2">用于表示普通操作失败中断(10s)</t-message>
     <t-button :disabled="isDisabled" @click="reset">重置</t-button>
-  </div>
+  </t-space>
 </template>
 
 <script>
@@ -44,12 +44,3 @@ export default {
   },
 };
 </script>
-
-<style lang="less" scoped>
-.t-demo-message {
-  .t-message,
-  .t-button {
-    margin-bottom: 16px;
-  }
-}
-</style>
