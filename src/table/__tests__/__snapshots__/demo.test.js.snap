@@ -21563,55 +21563,76 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
 <div
   class="t-table-tree-select-demo"
 >
-  <div>
+  <div
+    class="t-space t-space-horizontal"
+    style="gap: 16px;"
+  >
     <div
-      class="t-radio-group t-size-m t-radio-group--filled"
+      class="t-space-item"
     >
-      <label
-        class="t-radio-button t-is-checked"
+      <div
+        class="t-radio-group t-size-m t-radio-group--filled"
       >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="true"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
+        <label
+          class="t-radio-button t-is-checked"
         >
-          父子行选中独立
-        </span>
-      </label>
-       
-      <label
-        class="t-radio-button"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="false"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
+          <input
+            class="t-radio-button__former"
+            name=""
+            type="radio"
+            value="true"
+          />
+          <span
+            class="t-radio-button__input"
+          />
+          <span
+            class="t-radio-button__label"
+          >
+            父子行选中独立
+          </span>
+        </label>
+         
+        <label
+          class="t-radio-button"
         >
-          <span>
-            
+          <input
+            class="t-radio-button__former"
+            name=""
+            type="radio"
+            value="false"
+          />
+          <span
+            class="t-radio-button__input"
+          />
+          <span
+            class="t-radio-button__label"
+          >
+            <span>
+              
           父子行选中关联
         
+            </span>
           </span>
+        </label>
+        <div
+          class="t-radio-group__bg-block"
+          style="width: 0px; left: 0px;"
+        />
+      </div>
+    </div>
+    <div
+      class="t-space-item"
+    >
+      <button
+        class="t-button t-size-m t-button--variant-base t-button--theme-default"
+        type="button"
+      >
+        <span
+          class="t-button__text"
+        >
+          获取树形结构展开的节点
         </span>
-      </label>
-      <div
-        class="t-radio-group__bg-block"
-        style="width: 0px; left: 0px;"
-      />
+      </button>
     </div>
   </div>
    
