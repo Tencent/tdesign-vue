@@ -38,6 +38,10 @@ export interface TdMessageProps {
    * 计时结束后触发
    */
   onDurationEnd?: () => void;
+  /**
+   * 计时结束后或者点击关闭按钮都将触发
+   */
+  onClose?: () => void;
 }
 
 export interface MessageOptions extends TdMessageProps {

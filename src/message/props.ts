@@ -40,4 +40,6 @@ export default {
   onCloseBtnClick: Function as PropType<TdMessageProps['onCloseBtnClick']>,
   /** 计时结束后触发 */
   onDurationEnd: Function as PropType<TdMessageProps['onDurationEnd']>,
+  /** 计时结束后或者点击关闭按钮都将触发 */
+  onClose: Function as PropType<TdMessageProps['onClose']>,
 };

@@ -13,6 +13,7 @@ icon | Boolean / Slot / Function | true | Typescript：`boolean | TNode`。[see 
 theme | String | info | options：info/success/warning/error/question/loading。Typescript：`MessageThemeList` `type MessageThemeList = 'info' | 'success' | 'warning' | 'error' | 'question' | 'loading'`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/message/type.ts) | N
 onCloseBtnClick | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/> | N
 onDurationEnd | Function |  | TS 类型：`() => void`<br/> | N
+onClose | Function |  | TS ：`() => void`<br/> | N
 
 ### Message Events
 

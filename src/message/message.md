@@ -52,6 +52,7 @@ icon | Boolean / Slot / Function | true | 用于自定义消息前面的图标�
 theme | String | info | 消息组件风格。可选项：info/success/warning/error/question/loading。TS 类型：`MessageThemeList` `type MessageThemeList = 'info' | 'success' | 'warning' | 'error' | 'question' | 'loading'`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/message/type.ts) | N
 onCloseBtnClick | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/>当关闭按钮存在时，用户点击关闭按钮触发 | N
 onDurationEnd | Function |  | TS 类型：`() => void`<br/>计时结束后触发 | N
+onClose | Function |  | TS 类型：`() => void`<br/>计时结束后或者点击关闭按钮都将触发 | N
 
 ### Message Events
 
