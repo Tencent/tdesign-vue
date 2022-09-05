@@ -1,8 +1,8 @@
 <template>
-  <div class="tdesign-demo-block-row t-cascader-demo">
+  <t-space direction="vertical" size="16px">
     <t-cascader v-model="value1" :options="options" clearable placeholder="请选择" />
     <t-cascader v-model="value2" multiple :options="options" clearable placeholder="请选择" />
-  </div>
+  </t-space>
 </template>
 <script>
 export default {
@@ -48,8 +48,3 @@ export default {
   },
 };
 </script>
-<style>
-.t-cascader-demo {
-  width: 100%;
-}
-</style>

@@ -1,8 +1,8 @@
 <template>
-  <div class="tdesign-demo-block-row">
+  <t-space direction="vertical" size="16px">
     <t-cascader v-model="value" :options="options" :show-all-levels="false" />
     <t-cascader v-model="value2" :options="options" :show-all-levels="false" multiple />
-  </div>
+  </t-space>
 </template>
 <script>
 export default {
