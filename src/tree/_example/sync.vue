@@ -1,6 +1,6 @@
 <template>
-  <t-space direction="vertical">
-    <t-space direction="vertical">
+  <t-space :size="32" direction="vertical">
+    <t-space :size="16" direction="vertical" style="width: 100%">
       <t-input-adornment prepend="checked:">
         <t-input :value="allChecked" @change="onAllCheckedInput" />
       </t-input-adornment>

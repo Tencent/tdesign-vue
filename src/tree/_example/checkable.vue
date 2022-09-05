@@ -1,5 +1,5 @@
 <template>
-  <t-space direction="vertical">
+  <t-space size="32px" direction="vertical">
     <t-form>
       <t-form-item label="可选" style="margin-bottom: 16px">
         <t-switch v-model="checkable" />

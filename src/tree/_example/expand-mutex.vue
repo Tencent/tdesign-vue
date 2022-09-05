@@ -1,15 +1,15 @@
 <template>
-  <t-space direction="vertical" :size="10">
-    <t-space>
-      <t-form labelWidth="120">
-        <t-form-item label="互斥展开" style="margin-bottom: 5px">
-          <t-switch v-model="mutex" />
-        </t-form-item>
-        <t-form-item label="整个节点可点击" style="margin-bottom: 5px">
-          <t-switch v-model="expandOnClickNode" />
-        </t-form-item>
-      </t-form>
-    </t-space>
+  <t-space :size="10" direction="vertical">
+    <!-- <div class="operations"> -->
+    <t-form labelWidth="120">
+      <t-form-item label="互斥展开">
+        <t-switch v-model="mutex" />
+      </t-form-item>
+      <t-form-item label="整个节点可点击">
+        <t-switch v-model="expandOnClickNode" />
+      </t-form-item>
+    </t-form>
+    <!-- </div> -->
     <t-tree
       :data="items"
       hover
@@ -105,3 +105,24 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.tdesign-tree-demo .t-tree {
+  margin-bottom: 20px;
+}
+.tdesign-tree-demo .title {
+  margin-bottom: 10px;
+}
+.tdesign-tree-demo .tips {
+  margin-bottom: 10px;
+}
+.tdesign-tree-demo .operations {
+  margin-bottom: 10px;
+}
+.tdesign-tree-demo .t-form__item {
+  margin-bottom: 5px;
+}
+.tdesign-tree-demo .t-button {
+  margin: 0 10px 10px 0;
+}
+</style>

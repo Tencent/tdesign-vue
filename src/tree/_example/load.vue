@@ -1,14 +1,12 @@
 <template>
-  <t-space direction="vertical" :size="10">
-    <t-space>
-      <t-form labelWidth="150">
-        <t-space direction="vertical" :size="5">
-          <t-form-item label="可选">
-            <t-switch v-model="checkable" />
-          </t-form-item>
-        </t-space>
-      </t-form>
-    </t-space>
+  <t-space :size="10" direction="vertical">
+    <!-- <div class="operations"> -->
+    <t-form labelWidth="150">
+      <t-form-item label="可选">
+        <t-switch v-model="checkable" />
+      </t-form-item>
+    </t-form>
+    <!-- </div> -->
     <t-tree :data="items" hover expand-all :checkable="checkable" v-model="value" :load="load" :lazy="false" />
   </t-space>
 </template>
@@ -59,3 +57,24 @@ export default {
   },
 };
 </script>
+
+<style>
+.tdesign-tree-demo .t-tree {
+  margin-bottom: 20px;
+}
+.tdesign-tree-demo .title {
+  margin-bottom: 10px;
+}
+.tdesign-tree-demo .tips {
+  margin-bottom: 10px;
+}
+.tdesign-tree-demo .operations {
+  margin-bottom: 10px;
+}
+.tdesign-tree-demo .t-form__item {
+  margin-bottom: 5px;
+}
+.tdesign-tree-demo .t-button {
+  margin: 0 10px 10px 0;
+}
+</style>

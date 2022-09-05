@@ -1,5 +1,5 @@
 <template>
-  <t-space direction="vertical">
+  <t-space :size="32" direction="vertical">
     <t-input-adornment prepend="filter:">
       <t-input v-model="filterText" @change="onInput" />
     </t-input-adornment>

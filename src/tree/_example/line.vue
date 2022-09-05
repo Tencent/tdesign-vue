@@ -1,16 +1,15 @@
 <template>
-  <t-space class="tdesign-tree-line" direction="vertical">
+  <!-- <div class="tdesign-demo-block-column-large tdesign-tree-demo tdesign-tree-line"> -->
+  <t-space :size="32" direction="vertical" class="tdesign-tree-line">
     <t-form>
-      <t-space direction="vertical" :size="5">
-        <t-form-item label="显示连线">
-          <t-switch v-model="showLine" />
-        </t-form-item>
-        <t-form-item label="显示图标">
-          <t-switch v-model="showIcon" />
-        </t-form-item>
-      </t-space>
+      <t-form-item label="显示连线" style="margin-bottom: 16px">
+        <t-switch v-model="showLine" />
+      </t-form-item>
+      <t-form-item label="显示图标" style="margin-bottom: 16px">
+        <t-switch v-model="showIcon" />
+      </t-form-item>
     </t-form>
-    <t-space direction="vertical">
+    <t-space :size="16" direction="vertical" style="width: 100%">
       <t-tree :data="items" :line="showLine" :icon="showIcon" expand-all />
       <h3>render</h3>
       <t-tree :data="items" :icon="showIcon" expand-all :line="renderLine" />
@@ -199,11 +198,11 @@ export default {
   },
 };
 </script>
-<style>
-.tdesign-tree-demo .t-tree {
+<style scoped>
+.t-tree {
   margin-bottom: 20px;
 }
-.tdesign-tree-demo .title {
+/* .tdesign-tree-demo .title {
   margin-bottom: 10px;
 }
 .tdesign-tree-demo .tips {
@@ -217,7 +216,7 @@ export default {
 }
 .tdesign-tree-demo .t-button {
   margin: 0 10px 10px 0;
-}
+} */
 
 .tdesign-tree-line .custom-line {
   display: flex;
