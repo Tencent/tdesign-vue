@@ -12,8 +12,6 @@ import mixins from '../utils/mixins';
 
 const classPrefixMixins = getClassPrefixMixins('popup');
 
-const showTimeout = 250;
-const hideTimeout = 150;
 const triggers = ['click', 'hover', 'focus', 'context-menu'] as const;
 const injectionKey = '__T_POPUP';
 
@@ -86,6 +84,7 @@ export default mixins(classPrefixMixins).extend({
           [`${this.componentName}__content--arrow`]: this.showArrow,
           [this.commonStatusClassName.disabled]: this.disabled,
         },
+        this.overlayInnerClassName,
       ];
     },
     hasTrigger(): Record<typeof triggers[number], boolean> {
@@ -96,6 +95,13 @@ export default mixins(classPrefixMixins).extend({
         }),
         {} as any,
       );
+    },
+    normalizedDelay(): { open: number; close: number } {
+      const delay = [].concat(this.delay ?? [250, 150]);
+      return {
+        open: delay[0],
+        close: delay[1] ?? delay[0],
+      };
     },
   },
   watch: {
@@ -177,9 +183,12 @@ export default mixins(classPrefixMixins).extend({
     (this.$refs.container as any)?.updateContent();
   },
   beforeDestroy() {
-    (this as any).popup?.preventClosing(false);
+    if (this.visible) {
+      (this as any).popup?.preventClosing(false);
+    }
     this.destroyPopper();
     off(document, 'click', this.handleDocumentClick, true);
+    clearTimeout(this.timeout);
   },
   methods: {
     updatePopper() {
@@ -270,7 +279,7 @@ export default mixins(classPrefixMixins).extend({
         () => {
           this.emitPopVisible(true, context);
         },
-        this.hasTrigger.click ? 0 : showTimeout,
+        this.hasTrigger.click ? 0 : this.normalizedDelay.open,
       );
     },
     handleClose(context: Pick<PopupVisibleChangeContext, 'trigger'>) {
@@ -279,7 +288,7 @@ export default mixins(classPrefixMixins).extend({
         () => {
           this.emitPopVisible(false, context);
         },
-        this.hasTrigger.click ? 0 : hideTimeout,
+        this.hasTrigger.click ? 0 : this.normalizedDelay.close,
       );
     },
     handleDocumentClick(ev?: MouseEvent) {

@@ -12,12 +12,12 @@ export default {
   allowInput: Boolean,
   /** 是否允许清除选中值 */
   clearable: Boolean,
-  /** 是否禁用组件 */
-  disabled: Boolean,
   /** 禁用时间项 */
   disableTime: {
     type: Function as PropType<TdTimePickerProps['disableTime']>,
   },
+  /** 是否禁用组件 */
+  disabled: Boolean,
   /** 用于格式化时间，[详细文档](https://day.js.org/docs/en/display/format) */
   format: {
     type: String,
@@ -41,6 +41,10 @@ export default {
   popupProps: {
     type: Object as PropType<TdTimePickerProps['popupProps']>,
   },
+  /** 预设快捷时间选择，示例：`{ '前一小时': '11:00:00' }` */
+  presets: {
+    type: Object as PropType<TdTimePickerProps['presets']>,
+  },
   /** 尺寸 */
   size: {
     type: String as PropType<TdTimePickerProps['size']>,
@@ -58,10 +62,12 @@ export default {
   /** 选中值 */
   value: {
     type: String,
+    default: '',
   },
   /** 选中值，非受控属性 */
   defaultValue: {
     type: String,
+    default: '',
   },
   /** 当输入框失去焦点时触发，value 表示组件当前有效值 */
   onBlur: Function as PropType<TdTimePickerProps['onBlur']>,
