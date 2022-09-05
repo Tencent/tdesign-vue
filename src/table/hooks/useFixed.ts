@@ -23,6 +23,7 @@ import {
   TableColFixedClasses,
   RecalculateColumnWidthFunc,
 } from '../interface';
+import { getIEVersion } from '../../_common/js/utils/helper';
 
 // 固定列相关类名处理
 export function getColumnFixedStyles(
@@ -99,6 +100,7 @@ export default function useFixed(
     allowResizeColumnWidth,
   } = toRefs(props);
   const data = ref<TableRowData[]>([]);
+  const tableRef = ref<HTMLDivElement>();
   const tableContentRef = ref<HTMLDivElement>();
   const isFixedHeader = ref(false);
   const isWidthOverflow = ref(false);
@@ -504,6 +506,18 @@ export default function useFixed(
 
   const onResize = refreshTable;
 
+  let resizeObserver: ResizeObserver = null;
+  function addTableResizeObserver(tableElement: HTMLDivElement) {
+    // IE 11 以下使用 window resize；IE 11 以上使用 ResizeObserver
+    if (getIEVersion() < 11 || typeof window.ResizeObserver === 'undefined') return;
+    off(window, 'resize', onResize);
+    resizeObserver = new window.ResizeObserver(() => {
+      refreshTable();
+    });
+    resizeObserver.observe(tableElement);
+    tableRef.value = tableElement;
+  }
+
   onMounted(() => {
     const scrollWidth = getScrollbarWidth();
     scrollbarWidth.value = scrollWidth;
@@ -515,13 +529,16 @@ export default function useFixed(
       clearTimeout(timer);
     });
     const isWatchResize = isFixedColumn.value || isFixedHeader.value || !notNeedThWidthList.value || !data.value.length;
-    if (isWatchResize) {
+    // IE 11 以下使用 window resize；IE 11 以上使用 ResizeObserver
+    if ((isWatchResize && getIEVersion() < 11) || typeof window.ResizeObserver === 'undefined') {
       on(window, 'resize', onResize);
     }
   });
 
   onBeforeMount(() => {
     off(window, 'resize', onResize);
+    resizeObserver?.unobserve(tableRef.value);
+    resizeObserver?.disconnect();
   });
 
   const setData = (dataSource: TableRowData[]) => {
@@ -549,5 +566,6 @@ export default function useFixed(
     getThWidthList,
     updateThWidthList,
     setRecalculateColWidthFuncRef,
+    addTableResizeObserver,
   };
 }
