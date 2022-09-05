@@ -3571,7 +3571,9 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
                   <div
                     class="t-table__cell--title"
                   >
-                    <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
                       Type
                     </div>
                     <div
@@ -3635,7 +3637,9 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
                   <div
                     class="t-table__cell--title"
                   >
-                    <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
                       Platform
                     </div>
                     <div
@@ -3676,7 +3680,9 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
                   <div
                     class="t-table__cell--title"
                   >
-                    <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
                       Property
                     </div>
                     <div
@@ -3807,7 +3813,11 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
             >
               <div
                 class="t-table__th-cell-inner"
-              />
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                />
+              </div>
             </th>
             <th
               class="t-table__th-type"
@@ -3822,7 +3832,9 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
                   <div
                     class="t-table__cell--title"
                   >
-                    <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
                       Type
                     </div>
                     <div
@@ -3886,7 +3898,9 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
                   <div
                     class="t-table__cell--title"
                   >
-                    <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
                       Platform
                     </div>
                     <div
@@ -3927,7 +3941,9 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
                   <div
                     class="t-table__cell--title"
                   >
-                    <div>
+                    <div
+                      class="t-table__ellipsis t-text-ellipsis"
+                    >
                       Property
                     </div>
                     <div
