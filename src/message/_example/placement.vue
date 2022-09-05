@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <div class="t-message-offset">
+  <t-space direction="vertical" size="large">
+    <t-space>
       <t-input placeholder="请输入横向偏移量" v-model="offsetX"></t-input>
       <t-input placeholder="请输入纵向偏移量" v-model="offsetY"></t-input>
-    </div>
+    </t-space>
     <div class="tdesign-tooltip-placement">
       <t-button variant="outline" @click="$message.success(msgList[0])" class="placement-center">center</t-button>
       <t-button variant="outline" @click="$message.info(msgList[1])" class="placement-top">top</t-button>
@@ -21,7 +21,7 @@
       >bottom-right</t-button
       >
     </div>
-  </div>
+  </t-space>
 </template>
 
 <script>
@@ -54,24 +54,12 @@ export default {
 </script>
 
 <style scoped>
-.t-button {
-  margin-right: 16px;
-  margin-bottom: 16px;
-}
-
-.t-message-offset > .t-input__wrap {
-  width: 130px;
-  display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 36px;
-}
-
-.t-message-placement {
+/* .t-message-placement {
   margin: 0 auto;
   width: 500px;
   height: 260px;
   position: relative;
-}
+} */
 .placement-top {
   position: absolute;
   top: 0;

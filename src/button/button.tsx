@@ -37,7 +37,7 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
       `${this.componentName}--variant-${this.variant}`,
       `${this.componentName}--theme-${theme}`,
       {
-        [this.commonStatusClassName.disabled]: disabled,
+        [this.commonStatusClassName.disabled]: this.disabled,
         [this.commonStatusClassName.loading]: this.loading,
         [`${this.componentName}--shape-${this.shape}`]: this.shape !== 'rectangle',
         [`${this.componentName}--ghost`]: this.ghost,
