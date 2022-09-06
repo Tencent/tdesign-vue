@@ -4,7 +4,7 @@ import {
 import dayjs from 'dayjs';
 import {
   formatDate, formatTime, isValidDate, getDefaultFormat,
-} from './useFormat';
+} from '../../_common/js/date-picker/format';
 import useVModel from '../../hooks/useVModel';
 import { TdDatePickerProps } from '../type';
 import { extractTimeFormat } from '../../_common/js/date-picker/utils';
