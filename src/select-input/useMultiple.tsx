@@ -92,10 +92,7 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
           },
         }}
         onChange={onTagInputChange}
-        onClear={(context: { e: MouseEvent }) => {
-          context.e.stopPropagation();
-          p.onInnerClear;
-        }}
+        onClear={p.onInnerClear}
         onBlur={(val: TagInputValue, context: { inputValue: InputValue; e: FocusEvent }) => {
           props.onBlur?.(props.value, { ...context, tagInputValue: val });
           instance.emit('blur', props.value, { ...context, tagInputValue: val });

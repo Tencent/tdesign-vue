@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-row">
+  <t-space direction="vertical">
     <t-cascader
       v-model="value"
       :keys="{ label: 'name', value: 'code', children: 'items' }"
@@ -10,10 +10,10 @@
       v-model="value2"
       :keys="{ label: 'name', value: 'code', children: 'items' }"
       :options="options"
-      multiple
       clearable
+      multiple
     />
-  </div>
+  </t-space>
 </template>
 <script>
 export default {
