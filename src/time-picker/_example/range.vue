@@ -1,7 +1,7 @@
 <template>
-  <div class="tdesign-demo-block">
+  <t-space>
     <t-time-range-picker class="demos" clearable v-model="time" format="HH:mm:ss" allow-input />
-  </div>
+  </t-space>
 </template>
 
 <script>
