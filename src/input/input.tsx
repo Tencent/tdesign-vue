@@ -6,6 +6,7 @@ import {
 } from 'tdesign-icons-vue';
 import camelCase from 'lodash/camelCase';
 import kebabCase from 'lodash/kebabCase';
+import { limitUnicodeMaxLength } from '../_common/js/utils/helper';
 import { InputValue, TdInputProps } from './type';
 import { getCharacterLength, omit } from '../utils/helper';
 import getConfigReceiverMixins, { InputConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
@@ -78,7 +79,6 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         readonly: this.readonly,
         autocomplete: this.autocomplete ?? this.global.autocomplete,
         placeholder: this.tPlaceholder,
-        maxlength: this.maxlength,
         name: this.name || undefined,
         type: this.renderType,
         unselectable: this.readonly ? 'on' : 'off',
@@ -274,6 +274,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       if (this.composingRef) {
         this.composingRefValue = val;
       } else {
+        val = limitUnicodeMaxLength(val, this.maxlength);
         if (this.maxcharacter && this.maxcharacter >= 0) {
           const stringInfo = getCharacterLength(val, this.maxcharacter);
           val = typeof stringInfo === 'object' && stringInfo.characters;

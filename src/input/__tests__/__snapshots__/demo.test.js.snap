@@ -520,7 +520,6 @@ exports[`Input Input maxLengthCountVue demo works fine 1`] = `
       <input
         autocomplete=""
         class="t-input__inner"
-        maxlength="5"
         placeholder="请输入"
         type="text"
         unselectable="off"

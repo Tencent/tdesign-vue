@@ -1,5 +1,6 @@
 import Vue, { VueConstructor } from 'vue';
 import isFunction from 'lodash/isFunction';
+import { getUnicodeLength, limitUnicodeMaxLength } from '../_common/js/utils/helper';
 import props from './props';
 import { TextareaValue } from './type';
 import { getPropsApiByEvent, getCharacterLength } from '../utils/helper';
@@ -62,7 +63,6 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
         disabled: this.tDisabled,
         readonly: this.readonly,
         placeholder: this.placeholder,
-        maxlength: this.maxlength || undefined,
         name: this.name || undefined,
         unselectable: this.readonly ? 'on' : 'off',
       });
@@ -118,6 +118,7 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
     inputValueChangeHandle(e: InputEvent) {
       const { target } = e;
       let val = (target as HTMLInputElement).value;
+      val = limitUnicodeMaxLength(val, this.maxlength);
       if (this.maxcharacter && this.maxcharacter >= 0) {
         const stringInfo = getCharacterLength(val, this.maxcharacter);
         val = typeof stringInfo === 'object' && stringInfo.characters;
@@ -196,7 +197,7 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
           <span class={`${this.componentName}__limit`}>{`${this.characterNumber}/${this.maxcharacter}`}</span>
         ) : null}
         {!this.maxcharacter && this.maxlength ? (
-          <span class={`${this.componentName}__limit`}>{`${this.value ? String(this.value)?.length : 0}/${
+          <span class={`${this.componentName}__limit`}>{`${this.value ? getUnicodeLength(String(this.value)) : 0}/${
             this.maxlength
           }`}</span>
         ) : null}
