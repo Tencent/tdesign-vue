@@ -18906,7 +18906,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-multiple.vue corr
         </colgroup>
         <thead class="t-table__header">
           <tr>
-            <th data-colkey="row-select" class="t-table__cell-check t-table__th-row-select">
+            <th data-colkey="row-select" class="t-table__cell-check demo-multiple-select-cell t-table__th-row-select">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__ellipsis t-text-ellipsis"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></div>
               </div>
@@ -18942,7 +18942,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-multiple.vue corr
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="t-table__cell-check"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
+            <td class="t-table__cell-check demo-multiple-select-cell"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest1</td>
             <td>
               <p class="status">健康</p>
@@ -18953,7 +18953,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-multiple.vue corr
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__cell-check"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
+            <td class="t-table__cell-check demo-multiple-select-cell"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest2</td>
             <td>
               <!---->
@@ -18964,7 +18964,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-multiple.vue corr
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__cell-check"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
+            <td class="t-table__cell-check demo-multiple-select-cell"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest3</td>
             <td>
               <p class="status">健康</p>
@@ -18975,7 +18975,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-multiple.vue corr
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__cell-check"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
+            <td class="t-table__cell-check demo-multiple-select-cell"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest4</td>
             <td>
               <!---->
@@ -18986,7 +18986,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-multiple.vue corr
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__cell-check"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
+            <td class="t-table__cell-check demo-multiple-select-cell"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest5</td>
             <td>
               <p class="status">健康</p>
@@ -19022,7 +19022,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-single.vue correc
         </colgroup>
         <thead class="t-table__header">
           <tr>
-            <th data-colkey="row-select" class="t-table__cell-check t-table__th-row-select">
+            <th data-colkey="row-select" class="t-table__cell-check demo-single-select-cell t-table__th-row-select">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__ellipsis t-text-ellipsis"></div>
               </div>
@@ -19058,7 +19058,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-single.vue correc
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="t-table__cell-check"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+            <td class="t-table__cell-check demo-single-select-cell"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest1</td>
             <td>
               <p class="status">健康</p>
@@ -19069,7 +19069,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-single.vue correc
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr class="t-table__row--disabled">
-            <td class="t-table__cell-check"><label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+            <td class="t-table__cell-check demo-single-select-cell"><label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest2</td>
             <td>
               <!---->
@@ -19080,7 +19080,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-single.vue correc
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr class="t-table__row--selected">
-            <td class="t-table__cell-check"><label class="t-radio t-is-checked"><input type="radio" checked="checked" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+            <td class="t-table__cell-check demo-single-select-cell"><label class="t-radio t-is-checked"><input type="radio" checked="checked" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest3</td>
             <td>
               <p class="status">健康</p>
@@ -19091,7 +19091,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-single.vue correc
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr class="t-table__row--disabled">
-            <td class="t-table__cell-check"><label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+            <td class="t-table__cell-check demo-single-select-cell"><label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest4</td>
             <td>
               <!---->
@@ -19102,7 +19102,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-single.vue correc
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__cell-check"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+            <td class="t-table__cell-check demo-single-select-cell"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest5</td>
             <td>
               <p class="status">健康</p>
