@@ -5,7 +5,7 @@ import { usePrefixClass, useConfig } from '../../hooks/useConfig';
 import { TdDatePickerProps, DateValue } from '../type';
 import {
   isValidDate, formatDate, formatTime, getDefaultFormat,
-} from './useFormat';
+} from '../../_common/js/date-picker/format';
 import useSingleValue from './useSingleValue';
 
 export default function useSingle(props: TdDatePickerProps, { emit }: any) {
