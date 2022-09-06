@@ -348,14 +348,14 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     handleClick(state: TypeEventState): void {
       const { expandOnClickNode } = this;
       const { mouseEvent, event, node } = state;
-      if (!node || this.disabled || node.disabled) {
+      if (!node) {
         return;
       }
 
       this.$mouseEvent = mouseEvent;
 
       let shouldExpand = expandOnClickNode;
-      let shouldActive = true;
+      let shouldActive = !this.disabled && !node.disabled;
       ['trigger', 'ignore'].forEach((markName) => {
         const mark = getMark(markName, event.target as HTMLElement, event.currentTarget as HTMLElement);
         const markValue = mark?.value || '';
