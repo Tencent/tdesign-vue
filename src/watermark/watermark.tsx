@@ -15,6 +15,7 @@ export default defineComponent({
   setup(props) {
     const backgroundImage = ref('');
     const watermarkRef = ref<HTMLElement>();
+    const watermarkContentRef = ref<HTMLElement>();
     const parent = ref<HTMLElement>();
     const gapX = computed(() => (props.movable ? 0 : props.x));
     const gapY = computed(() => (props.movable ? 0 : props.y));
@@ -30,49 +31,53 @@ export default defineComponent({
     const offsetLeft = computed(() => props.offset?.[0] || gapX.value / 2);
 
     const offsetTop = computed(() => props.offset?.[1] || gapY.value / 2);
-
-    useMutationObserver(
-      watermarkRef,
-      (mutations) => {
-        if (props.removable) return;
-        mutations.forEach((mutation) => {
-          if (mutation.type === 'childList') {
-            const removeNodes = mutation.removedNodes;
-            removeNodes.forEach((node) => {
-              watermarkRef.value.appendChild(node);
-            });
-          }
-        });
-      },
-      {
-        attributes: true,
-        childList: true,
-        characterData: true,
-        subtree: true,
-      },
-    );
+    const bgImageOptions = {
+      width: props.width,
+      height: props.height,
+      rotate: rotate.value,
+      lineSpace: props.lineSpace,
+      alpha: props.alpha,
+      gapX: gapX.value,
+      gapY: gapY.value,
+      watermarkContent: props.watermarkContent,
+      offsetLeft: offsetLeft.value,
+      offsetTop: offsetTop.value,
+    };
 
     onMounted(() => {
-      generateBase64Url(
-        {
-          width: props.width,
-          height: props.height,
-          rotate: rotate.value,
-          lineSpace: props.lineSpace,
-          alpha: props.alpha,
-          gapX: gapX.value,
-          gapY: gapY.value,
-          watermarkContent: props.watermarkContent,
-          offsetLeft: offsetLeft.value,
-          offsetTop: offsetTop.value,
-        },
-        (base64Url) => {
-          backgroundImage.value = base64Url;
-        },
-      );
+      generateBase64Url(bgImageOptions, (base64Url) => {
+        backgroundImage.value = base64Url;
+      });
       parent.value = watermarkRef.value?.parentElement;
       const keyframesStyle = randomMovingStyle();
       injectStyle(keyframesStyle);
+
+      useMutationObserver(
+        parent.value,
+        (mutations) => {
+          if (props.removable) return;
+          mutations.forEach((mutation) => {
+            if (mutation.type === 'childList') {
+              const removeNodes = mutation.removedNodes;
+              removeNodes.forEach((node) => {
+                const element = node as HTMLElement;
+                if (element === watermarkRef.value) {
+                  parent.value.appendChild(element);
+                }
+                if (element === watermarkContentRef.value) {
+                  watermarkRef.value.appendChild(element);
+                }
+              });
+            }
+          });
+        },
+        {
+          attributes: true,
+          childList: true,
+          characterData: true,
+          subtree: true,
+        },
+      );
     });
 
     return {
@@ -80,11 +85,26 @@ export default defineComponent({
       gapY,
       backgroundRepeat,
       backgroundImage,
+      watermarkRef,
+      watermarkContentRef,
+      bgImageOptions,
     };
+  },
+  watch: {
+    watermarkContent(content) {
+      generateBase64Url(
+        {
+          ...this.bgImageOptions,
+          watermarkContent: content,
+        },
+        (base64Url) => {
+          this.backgroundImage = base64Url;
+        },
+      );
+    },
   },
   render() {
     const COMPONENT_NAME = usePrefixClass('watermark');
-    const watermarkRef = ref<HTMLElement>();
     const renderContent = useContent();
 
     return (
@@ -95,10 +115,11 @@ export default defineComponent({
           width: '100%',
         }}
         class={COMPONENT_NAME.value}
-        ref={watermarkRef}
+        ref="watermarkRef"
       >
         {renderContent('default', 'content')}
         <div
+          ref="watermarkContentRef"
           style={{
             zIndex: this.zIndex,
             position: 'absolute',
