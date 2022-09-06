@@ -147,6 +147,7 @@ export default defineComponent({
                       onChange: this.handlePanelChange,
                       hideDisabledTime: this.hideDisabledTime,
                       handleConfirmClick: this.handleClickConfirm,
+                      presets: this.presets,
                     },
                   }}
                 />

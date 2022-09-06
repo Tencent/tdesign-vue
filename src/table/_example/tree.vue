@@ -18,9 +18,7 @@
     <br />
     <!-- 第一列展开树结点，缩进为 24px，子节点字段 childrenKey 默认为 children -->
     <!-- !!! 树形结构 EnhancedTable 才支持，普通 Table 不支持 !!! -->
-    <!-- treeNodeColumnIndex 定义第几列作为树结点展开列，默认为第一列 -->
-    <!-- tree.defaultExpandAll: true 默认展开全部 -->
-    <!-- this.$refs.table.dataSource 查看树形结构平铺数据 -->
+    <!-- Ref: this.$refs.table.dataSource 查看树形结构平铺数据，获取属性结构使用 this.$refs.table.getTreeNode() -->
     <t-enhanced-table
       ref="table"
       rowKey="key"
@@ -209,11 +207,11 @@ export default {
   computed: {
     // 可以使用同名插槽代替渲染函数：<template #treeExpandAndFoldIcon><icon /></template>
     treeExpandIcon() {
-      // 懒加载图标渲染
-      if (this.lazyLoadingData) return this.lazyLoadingTreeIconRender;
       // 自定义展开图标
-      if (this.customTreeExpandAndFoldIcon) return this.treeExpandAndFoldIconRender;
-      return undefined;
+      if (this.customTreeExpandAndFoldIcon) {
+        return this.treeExpandAndFoldIconRender;
+      }
+      return this.lazyLoadingTreeIconRender;
     },
   },
 
@@ -333,7 +331,10 @@ export default {
     },
 
     // eslint-disable-next-line
-    treeExpandAndFoldIconRender(h, { type }) {
+    treeExpandAndFoldIconRender(h, { type, row }) {
+      if (this.lazyLoadingData && this.lazyLoadingData.id === row?.id) {
+        return <Loading size="14px" />;
+      }
       return type === 'expand' ? <ChevronRightIcon /> : <ChevronDownIcon />;
     },
 

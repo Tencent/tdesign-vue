@@ -82,7 +82,7 @@ export default defineComponent({
     } = props.scroll || {};
 
     const displayOptions = computed(() => {
-      if (!inputValue.value || props.creatable || !(props.filterable || isFunction(props.filter))) return options.value;
+      if (!inputValue.value || !(props.filterable || isFunction(props.filter))) return options.value;
 
       const filterMethods = (option: SelectOption) => {
         if (isFunction(props.filter)) {
@@ -108,7 +108,7 @@ export default defineComponent({
     });
 
     const isCreateOptionShown = computed(() => props.creatable && props.filterable && props.inputValue);
-    const isEmpty = computed(() => !displayOptions.value.length);
+    const isEmpty = computed(() => !(displayOptions.value.length > 0));
     const isVirtual = computed(
       () => props.scroll?.type === 'virtual' && props.options?.length > (props.scroll?.threshold || 100),
     );
@@ -299,7 +299,7 @@ export default defineComponent({
           {renderTNode('panelTopContent')}
           {isCreateOptionShown && this.renderCreateOption()}
           {loading && this.renderLoadingContent()}
-          {!loading && isEmpty && this.renderEmptyContent()}
+          {!loading && isEmpty && !isCreateOptionShown && this.renderEmptyContent()}
           {!loading && !isEmpty && this.renderOptionsContent(isVirtual && visibleData ? visibleData : displayOptions)}
           {renderTNode('panelBottomContent')}
         </div>
