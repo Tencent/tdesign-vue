@@ -376,15 +376,16 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       if (shouldExpand) {
         this.toggleExpanded(node);
       }
-      if (shouldActive) {
-        this.toggleActived(node);
-      }
 
       const ctx = {
         node: node.getModel(),
         e: mouseEvent,
       };
-      emitEvent<Parameters<TypeTdTreeProps['onClick']>>(this, 'click', ctx);
+
+      if (shouldActive) {
+        this.toggleActived(node);
+        emitEvent<Parameters<TypeTdTreeProps['onClick']>>(this, 'click', ctx);
+      }
 
       this.$mouseEvent = null;
     },
