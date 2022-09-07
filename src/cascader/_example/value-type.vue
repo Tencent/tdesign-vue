@@ -1,5 +1,5 @@
 <template>
-  <t-space direction="vertical" size="16px">
+  <t-space direction="vertical">
     <div>{{ value }}</div>
     <t-cascader v-model="value" :options="options" value-type="full" />
     <div>{{ value2 }}</div>

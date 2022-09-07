@@ -1,6 +1,6 @@
 <template>
   <t-space direction="vertical" size="48px">
-    <t-space direction="vertical" size="16px">
+    <t-space direction="vertical">
       <div>方式一：业务侧自定义全选功能。选中值: {{ value1.join(',') }}</div>
       <div>
         <t-checkbox :checked="checkAll" :indeterminate="indeterminate" :onChange="handleSelectAll">全选</t-checkbox>
@@ -8,7 +8,7 @@
       <t-checkbox-group v-model="value1" :options="options1" @change="onChange1" />
     </t-space>
 
-    <t-space direction="vertical" size="16px">
+    <t-space direction="vertical">
       <div>方式二：组件内置全选功能，使用插槽定义选项。选中值: {{ value2.join(', ') }}</div>
       <t-checkbox-group v-model="value2" @change="onChange2">
         <t-checkbox :checkAll="true" label="全选" />
@@ -18,12 +18,12 @@
       </t-checkbox-group>
     </t-space>
 
-    <t-space direction="vertical" size="16px">
+    <t-space direction="vertical">
       <div>方式三：组件内置全选功能，使用 `options` 定义选项。选中值: {{ value3.join(', ') }}</div>
       <t-checkbox-group v-model="value3" :options="options2" @change="onChange3" />
     </t-space>
 
-    <t-space direction="vertical" size="16px">
+    <t-space direction="vertical">
       <div>方式四：组件内置全选功能，非受控用法</div>
       <t-checkbox-group :defaultValue="['选项一']" :options="options2" />
     </t-space>

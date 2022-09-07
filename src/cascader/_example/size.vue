@@ -1,5 +1,5 @@
 <template>
-  <t-space direction="vertical" size="16px">
+  <t-space direction="vertical">
     <!-- 非受控用法 -->
     <t-cascader :options="options" :default-value="value" clearable size="small" />
     <!-- 受控+语法糖用法 -->

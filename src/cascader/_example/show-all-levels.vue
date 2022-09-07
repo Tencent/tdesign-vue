@@ -1,5 +1,5 @@
 <template>
-  <t-space direction="vertical" size="16px">
+  <t-space direction="vertical">
     <t-cascader v-model="value" :options="options" :show-all-levels="false" />
     <t-cascader v-model="value2" :options="options" :show-all-levels="false" multiple />
   </t-space>

@@ -1,5 +1,5 @@
 <template>
-  <t-space direction="vertical" size="16px">
+  <t-space direction="vertical">
     <t-cascader
       v-model="value"
       :keys="{ label: 'name', value: 'code', children: 'items' }"

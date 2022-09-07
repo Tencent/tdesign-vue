@@ -1,5 +1,5 @@
 <template>
-  <t-space direction="vertical" size="16px">
+  <t-space direction="vertical">
     <t-cascader v-model="value" :options="options" trigger="click" />
     <t-cascader v-model="value" :options="options" trigger="hover" />
   </t-space>

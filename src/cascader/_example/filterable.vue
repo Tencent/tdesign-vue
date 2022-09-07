@@ -1,5 +1,5 @@
 <template>
-  <t-space direction="vertical" size="16px">
+  <t-space direction="vertical">
     <t-cascader v-model="value" :options="options" filterable clearable />
     <t-cascader v-model="value2" :options="options" filterable clearable multiple :min-collapsed-num="2" />
     <t-cascader v-model="value3" :filter="filterMethod" :options="options" clearable :min-collapsed-num="2" />

@@ -1,5 +1,5 @@
 <template>
-  <t-space direction="vertical" size="16px">
+  <t-space direction="vertical">
     <div class="cascader-demo-panel-container">
       <t-cascader-panel v-model="value" :options="options" />
     </div>

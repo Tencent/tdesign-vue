@@ -1,5 +1,5 @@
 <template>
-  <t-space direction="vertical" size="16px">
+  <t-space direction="vertical">
     <t-cascader v-model="value1" :options="options" multiple value-mode="onlyLeaf" />
     <t-cascader v-model="value2" :options="options" multiple value-mode="parentFirst" />
     <t-cascader v-model="value3" :options="options" multiple value-mode="all" />
