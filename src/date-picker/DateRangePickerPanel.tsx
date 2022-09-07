@@ -1,4 +1,6 @@
-import { defineComponent, computed, ref } from '@vue/composition-api';
+import {
+  defineComponent, computed, ref, watch,
+} from '@vue/composition-api';
 import dayjs from 'dayjs';
 
 import dateRangePickerPanelProps from './date-range-picker-panel-props';
@@ -13,7 +15,7 @@ import {
 
 import TRangePanel from './panel/RangePanel';
 import useRangeValue from './hooks/useRangeValue';
-import { formatDate, getDefaultFormat } from './hooks/useFormat';
+import { formatDate, getDefaultFormat, parseToDayjs } from '../_common/js/date-picker/format';
 import { subtractMonth, addMonth, extractTimeObj } from '../_common/js/date-picker/utils';
 
 export default defineComponent({
@@ -51,6 +53,21 @@ export default defineComponent({
     const isHoverCell = ref(false);
     const hoverValue = ref([]);
     const activeIndex = computed(() => (isFirstValueSelected.value ? 1 : 0));
+
+    watch(
+      () => value.value,
+      (value) => {
+        // 确保右侧面板月份比左侧大 避免两侧面板月份一致
+        if (value.length === 2 && !props.enableTimePicker) {
+          const nextMonth = value.map((v: string) => parseToDayjs(v || new Date(), formatRef.value.format).month());
+          if (year.value[0] === year.value[1] && nextMonth[0] === nextMonth[1]) {
+            nextMonth[0] === 11 ? (nextMonth[0] -= 1) : (nextMonth[1] += 1);
+          }
+          month.value = nextMonth;
+        }
+      },
+      { immediate: true },
+    );
 
     // 日期 hover
     function onCellMouseEnter(date: Date) {

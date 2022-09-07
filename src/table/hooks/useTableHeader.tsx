@@ -59,7 +59,7 @@ export default function useTableHeader(props: TdBaseTableProps) {
     return (
       <div class={classes}>
         <div class={tableSortClasses.title}>
-          {col.ellipsis && ellipsisTitle !== false && ellipsisTitle !== null ? (
+          { ellipsisTitle !== false && ellipsisTitle !== null ? (
             <TEllipsis
               placement="bottom-right"
               attach={attach ? () => attach : undefined}

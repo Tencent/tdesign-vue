@@ -7,7 +7,7 @@ import { useGlobalIcon } from '../hooks/useGlobalIcon';
 import useSingle from './hooks/useSingle';
 import {
   parseToDayjs, getDefaultFormat, formatTime, formatDate,
-} from './hooks/useFormat';
+} from '../_common/js/date-picker/format';
 import { subtractMonth, addMonth, extractTimeObj } from '../_common/js/date-picker/utils';
 import type { DateValue } from './type';
 import props from './props';

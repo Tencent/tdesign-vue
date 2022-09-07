@@ -224,22 +224,24 @@ exports[`ssr snapshot test renders ./src/alert/_example/icon.vue correctly 1`] =
 `;
 
 exports[`ssr snapshot test renders ./src/alert/_example/operation.vue correctly 1`] = `
-<t-sapce>
-  <div class="t-alert t-alert--info">
-    <div class="t-alert__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled">
-        <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
-      </svg></div>
-    <div class="t-alert__content">
-      <div class="t-alert__message">
-        <div class="t-alert__description">这是一条普通的消息提示</div>
-        <div class="t-alert__operation"><span>相关操作</span></div>
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-alert t-alert--info">
+      <div class="t-alert__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-info-circle-filled">
+          <path fill="currentColor" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fill-opacity="0.9"></path>
+        </svg></div>
+      <div class="t-alert__content">
+        <div class="t-alert__message">
+          <div class="t-alert__description">这是一条普通的消息提示</div>
+          <div class="t-alert__operation"><span>相关操作</span></div>
+        </div>
       </div>
+      <div class="t-alert__close"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close">
+          <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
+        </svg></div>
     </div>
-    <div class="t-alert__close"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close">
-        <path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path>
-      </svg></div>
   </div>
-</t-sapce>
+</div>
 `;
 
 exports[`ssr snapshot test renders ./src/alert/_example/title.vue correctly 1`] = `
@@ -2972,268 +2974,302 @@ exports[`ssr snapshot test renders ./src/card/_example/small.vue correctly 1`] =
 `;
 
 exports[`ssr snapshot test renders ./src/cascader/_example/base.vue correctly 1`] = `
-<div>
-  <div class="t-input__wrap t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="选项一 / 子选项一" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
-    </div>
+<div class="t-input__wrap t-cascader">
+  <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+    <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="选项一 / 子选项一" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/cascader/_example/check-strictly.vue correctly 1`] = `
-<div class="tdesign-demo-block-row">
-  <div class="t-input__wrap t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="1 / 1.2 / 1.2.2" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-input__wrap t-cascader">
+      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="1 / 1.2 / 1.2.2" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
-  <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">1/1.1/1.1.2/1.1.2.1<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">2<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+  <div class="t-space-item">
+    <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
+      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">1/1.1/1.1.2/1.1.2.1<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">2<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/cascader/_example/collapsed.vue correctly 1`] = `
-<div class="tdesign-demo-block-row">
-  <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">选项一/子选项一<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark">+2</span></div><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
+      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">选项一/子选项一<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark">+2</span></div><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
-  <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">选项一/子选项一<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span style="color:#ED7B2F;">+2</span></div><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+  <div class="t-space-item">
+    <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
+      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">选项一/子选项一<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span style="color:#ED7B2F;">+2</span></div><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
-  <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">选项一/子选项一<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span> <span style="color:#00a870;">+2</span></span></div><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+  <div class="t-space-item">
+    <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
+      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">选项一/子选项一<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span> <span style="color:#00a870;">+2</span></span></div><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/cascader/_example/disabled.vue correctly 1`] = `
-<div class="tdesign-demo-block-row">
-  <div class="t-input__wrap t-cascader">
-    <div class="t-input t-size-m t-is-disabled t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input disabled="disabled" readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="选项一 / 子选项一" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" disabled="disabled" class="t-fake-arrow t-cascader__icon t-is-disabled"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-input__wrap t-cascader">
+      <div class="t-input t-size-m t-is-disabled t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"></div><input disabled="disabled" readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="选项一 / 子选项一" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" disabled="disabled" class="t-fake-arrow t-cascader__icon t-is-disabled"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
-  <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
-    <div class="t-input t-size-m t-is-disabled t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled">选项一/子选项一</span></div><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" disabled="disabled" class="t-fake-arrow t-cascader__icon t-is-disabled"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+  <div class="t-space-item">
+    <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
+      <div class="t-input t-size-m t-is-disabled t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled">选项一/子选项一</span></div><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" disabled="disabled" class="t-fake-arrow t-cascader__icon t-is-disabled"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/cascader/_example/ellipsis.vue correctly 1`] = `
-<div class="tdesign-demo-block-row t-cascader-demo">
-  <div class="t-input__wrap t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="当选项一数据展示文本过长时 / 子选项一" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-input__wrap t-cascader">
+      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="当选项一数据展示文本过长时 / 子选项一" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
-  <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">当选项一数据展示文本过长时/子选项一<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+  <div class="t-space-item">
+    <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
+      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">当选项一数据展示文本过长时/子选项一<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/cascader/_example/filterable.vue correctly 1`] = `
-<div class="tdesign-demo-block-row">
-  <div class="t-input__wrap t-select-input--empty t-cascader">
-    <div class="t-input t-size-m t-is-default t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input autocomplete="" placeholder="请选择" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-input__wrap t-select-input--empty t-cascader">
+      <div class="t-input t-size-m t-is-default t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"></div><input autocomplete="" placeholder="请选择" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
-  <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
-    <div class="t-input t-size-m t-is-default t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">当选项一数据展示文本过长时/子选项一<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div><input autocomplete="" placeholder="" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+  <div class="t-space-item">
+    <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
+      <div class="t-input t-size-m t-is-default t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">当选项一数据展示文本过长时/子选项一<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div><input autocomplete="" placeholder="" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
-  <div class="t-input__wrap t-select-input--empty t-cascader">
-    <div class="t-input t-size-m t-is-default t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input autocomplete="" placeholder="请选择" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+  <div class="t-space-item">
+    <div class="t-input__wrap t-select-input--empty t-cascader">
+      <div class="t-input t-size-m t-is-default t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"></div><input autocomplete="" placeholder="请选择" type="text" unselectable="off" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/cascader/_example/keys.vue correctly 1`] = `
-<div class="tdesign-demo-block-row">
-  <div class="t-input__wrap t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="选项一 / 子选项一" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-input__wrap t-cascader">
+      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="选项一 / 子选项一" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
-  <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">选项一/子选项一<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+  <div class="t-space-item">
+    <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
+      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">选项一/子选项一<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/cascader/_example/load.vue correctly 1`] = `
-<div>
-  <div class="t-input__wrap t-select-input--empty t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
-    </div>
+<div class="t-input__wrap t-select-input--empty t-cascader">
+  <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+    <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/cascader/_example/max.vue correctly 1`] = `
-<div>
-  <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
-    </div>
+<div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader">
+  <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+    <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/cascader/_example/multiple.vue correctly 1`] = `
-<div class="t-cascader-demo">
-  <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">选项一/子选项一<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
-    </div>
+<div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
+  <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+    <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">选项一/子选项一<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/cascader/_example/panel.vue correctly 1`] = `
-<div class="tdesign-demo-block-row">
-  <div class="cascader-demo-panel-container">
-    <div class="t-cascader__panel t-cascader--normal">
-      <ul class="t-cascader__menu narrow-scrollbar">
-        <li node="[object Object]" cascaderContext="[object Object]" class="t-cascader__item t-size-m t-cascader__item--with-icon"><span title="选项一" role="label" class="t-cascader__item-label t-cascader__item-label--ellipsis">选项一</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right t-cascader__item-icon t-icon">
-            <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
-          </svg></li>
-        <li node="[object Object]" cascaderContext="[object Object]" class="t-cascader__item t-size-m t-cascader__item--with-icon"><span title="选项二" role="label" class="t-cascader__item-label t-cascader__item-label--ellipsis">选项二</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right t-cascader__item-icon t-icon">
-            <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
-          </svg></li>
-      </ul>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="cascader-demo-panel-container">
+      <div class="t-cascader__panel t-cascader--normal">
+        <ul class="t-cascader__menu narrow-scrollbar">
+          <li node="[object Object]" cascaderContext="[object Object]" class="t-cascader__item t-size-m t-cascader__item--with-icon"><span title="选项一" role="label" class="t-cascader__item-label t-cascader__item-label--ellipsis">选项一</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right t-cascader__item-icon t-icon">
+              <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
+            </svg></li>
+          <li node="[object Object]" cascaderContext="[object Object]" class="t-cascader__item t-size-m t-cascader__item--with-icon"><span title="选项二" role="label" class="t-cascader__item-label t-cascader__item-label--ellipsis">选项二</span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right t-cascader__item-icon t-icon">
+              <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
+            </svg></li>
+        </ul>
+      </div>
     </div>
   </div>
-  <div class="cascader-demo-panel-container">
-    <div class="t-cascader__panel t-cascader--normal">
-      <ul class="t-cascader__menu narrow-scrollbar">
-        <li node="[object Object]" cascaderContext="[object Object]" class="t-cascader__item t-size-m t-cascader__item--with-icon"><label title="选项一" class="t-checkbox"><input type="checkbox" name="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">选项一</span></label><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right t-cascader__item-icon t-icon">
-            <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
-          </svg></li>
-        <li node="[object Object]" cascaderContext="[object Object]" class="t-cascader__item t-size-m t-cascader__item--with-icon"><label title="选项二" class="t-checkbox"><input type="checkbox" name="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">选项二</span></label><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right t-cascader__item-icon t-icon">
-            <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
-          </svg></li>
-      </ul>
+  <div class="t-space-item">
+    <div class="cascader-demo-panel-container">
+      <div class="t-cascader__panel t-cascader--normal">
+        <ul class="t-cascader__menu narrow-scrollbar">
+          <li node="[object Object]" cascaderContext="[object Object]" class="t-cascader__item t-size-m t-cascader__item--with-icon"><label title="选项一" class="t-checkbox"><input type="checkbox" name="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">选项一</span></label><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right t-cascader__item-icon t-icon">
+              <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
+            </svg></li>
+          <li node="[object Object]" cascaderContext="[object Object]" class="t-cascader__item t-size-m t-cascader__item--with-icon"><label title="选项二" class="t-checkbox"><input type="checkbox" name="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">选项二</span></label><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right t-cascader__item-icon t-icon">
+              <path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path>
+            </svg></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/cascader/_example/show-all-levels.vue correctly 1`] = `
-<div class="tdesign-demo-block-row">
-  <div class="t-input__wrap t-select-input--empty t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-input__wrap t-select-input--empty t-cascader">
+      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
-  <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+  <div class="t-space-item">
+    <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader">
+      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/cascader/_example/size.vue correctly 1`] = `
-<div class="tdesign-demo-block-row">
-  <div class="t-input__wrap t-cascader">
-    <div class="t-input t-size-s t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="选项一 / 子选项一" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-input__wrap t-cascader">
+      <div class="t-input t-size-s t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="选项一 / 子选项一" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
-  <div class="t-input__wrap t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="选项一 / 子选项一" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+  <div class="t-space-item">
+    <div class="t-input__wrap t-cascader">
+      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="选项一 / 子选项一" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
-  <div class="t-input__wrap t-cascader">
-    <div class="t-input t-size-l t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="选项一 / 子选项一" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+  <div class="t-space-item">
+    <div class="t-input__wrap t-cascader">
+      <div class="t-input t-size-l t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="选项一 / 子选项一" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/cascader/_example/trigger.vue correctly 1`] = `
-<div class="tdesign-demo-block-row">
-  <div class="t-input__wrap t-select-input--empty t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-input__wrap t-select-input--empty t-cascader">
+      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
-  <div class="t-input__wrap t-select-input--empty t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+  <div class="t-space-item">
+    <div class="t-input__wrap t-select-input--empty t-cascader">
+      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/cascader/_example/value-mode.vue correctly 1`] = `
-<div class="tdesign-demo-block-row">
-  <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader">
+      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
-  <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+  <div class="t-space-item">
+    <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader">
+      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
-  <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+  <div class="t-space-item">
+    <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader">
+      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/cascader/_example/value-type.vue correctly 1`] = `
-<div class="tdesign-demo-block-row">
-  [
-  &quot;1&quot;,
-  &quot;1.1&quot;
-  ]
-  <div class="t-input__wrap t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="选项一 / 子选项一" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-input__wrap t-cascader">
+      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="请选择" type="text" unselectable="on" value="选项一 / 子选项一" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
-  [
-  [
-  &quot;1&quot;,
-  &quot;1.1&quot;
-  ],
-  [
-  &quot;1&quot;,
-  &quot;1.2&quot;
-  ]
-  ]
-  <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
-    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-      <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">选项一/子选项一<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">选项一/子选项二<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+  <div class="t-space-item">
+    <div class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader">
+      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+        <div class="t-input__prefix"><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">选项一/子选项一<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span><span class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close">选项一/子选项二<svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-close t-tag__icon-close"><path fill="currentColor" d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z" fill-opacity="0.9"></path></svg></span></div><span class="t-input__suffix t-input__suffix-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="t-fake-arrow t-cascader__icon"><path d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921" stroke="black" stroke-opacity="0.9" stroke-width="1.3"></path></svg></span>
+      </div>
     </div>
   </div>
 </div>
@@ -5371,7 +5407,7 @@ exports[`ssr snapshot test renders ./src/config-provider/_example/table.vue corr
               <div class="t-table__th-cell-inner">
                 <div class="t-table__cell--sortable">
                   <div class="t-table__cell--title">
-                    <div>Type</div>
+                    <div class="t-table__ellipsis t-text-ellipsis">Type</div>
                     <div class="t-table__filter-icon-wrap">
                       <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></div>
                     </div>
@@ -5383,7 +5419,7 @@ exports[`ssr snapshot test renders ./src/config-provider/_example/table.vue corr
               <div class="t-table__th-cell-inner">
                 <div class="t-table__cell--filterable">
                   <div class="t-table__cell--title">
-                    <div>Platform</div>
+                    <div class="t-table__ellipsis t-text-ellipsis">Platform</div>
                     <div class="t-table__filter-icon-wrap">
                       <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
                           <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
@@ -5397,7 +5433,7 @@ exports[`ssr snapshot test renders ./src/config-provider/_example/table.vue corr
               <div class="t-table__th-cell-inner">
                 <div class="t-table__cell--sortable t-table__cell--filterable">
                   <div class="t-table__cell--title">
-                    <div>Property</div>
+                    <div class="t-table__ellipsis t-text-ellipsis">Property</div>
                     <div class="t-table__filter-icon-wrap">
                       <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></div>
                       <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
@@ -5435,13 +5471,15 @@ exports[`ssr snapshot test renders ./src/config-provider/_example/table.vue corr
         <thead class="t-table__header">
           <tr>
             <th data-colkey="__EXPAND_ROW_ICON_COLUMN__" class="t-table__expandable-icon-cell t-table__th-__EXPAND_ROW_ICON_COLUMN__">
-              <div class="t-table__th-cell-inner"></div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis"></div>
+              </div>
             </th>
             <th data-colkey="type" class="t-table__th-type">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__cell--sortable">
                   <div class="t-table__cell--title">
-                    <div>Type</div>
+                    <div class="t-table__ellipsis t-text-ellipsis">Type</div>
                     <div class="t-table__filter-icon-wrap">
                       <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></div>
                     </div>
@@ -5453,7 +5491,7 @@ exports[`ssr snapshot test renders ./src/config-provider/_example/table.vue corr
               <div class="t-table__th-cell-inner">
                 <div class="t-table__cell--filterable">
                   <div class="t-table__cell--title">
-                    <div>Platform</div>
+                    <div class="t-table__ellipsis t-text-ellipsis">Platform</div>
                     <div class="t-table__filter-icon-wrap">
                       <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
                           <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
@@ -5467,7 +5505,7 @@ exports[`ssr snapshot test renders ./src/config-provider/_example/table.vue corr
               <div class="t-table__th-cell-inner">
                 <div class="t-table__cell--sortable t-table__cell--filterable">
                   <div class="t-table__cell--title">
-                    <div>Property</div>
+                    <div class="t-table__ellipsis t-text-ellipsis">Property</div>
                     <div class="t-table__filter-icon-wrap">
                       <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:18px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></div>
                       <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
@@ -8342,7 +8380,7 @@ exports[`ssr snapshot test renders ./src/input/_example/group.vue correctly 1`] 
 exports[`ssr snapshot test renders ./src/input/_example/max-length-count.vue correctly 1`] = `
 <div class="tdesign-demo-block-column" style="max-width:500px;">
   <div class="t-input__wrap">
-    <div class="t-input t-size-m t-is-default t-input--suffix"><input autocomplete="" placeholder="请输入" maxlength="5" type="text" unselectable="off" value="" class="t-input__inner">
+    <div class="t-input t-size-m t-is-default t-input--suffix"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="" class="t-input__inner">
       <div class="t-input__suffix">0/5</div>
     </div>
   </div>
@@ -15286,28 +15324,44 @@ exports[`ssr snapshot test renders ./src/table/_example/affix.vue correctly 1`] 
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="row t-table__th-index t-align-center">
-              <div class="t-table__th-cell-inner">序号</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">序号</div>
+              </div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
-              <div class="t-table__th-cell-inner">平台</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
             </th>
             <th data-colkey="type" class="t-table__th-type">
-              <div class="t-table__th-cell-inner">类型</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
             </th>
             <th data-colkey="expo" class="t-table__th-expo">
-              <div class="t-table__th-cell-inner">曝光</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">曝光</div>
+              </div>
             </th>
             <th data-colkey="click" class="t-table__th-click">
-              <div class="t-table__th-cell-inner">点击</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">点击</div>
+              </div>
             </th>
             <th data-colkey="ctr" class="t-table__th-ctr">
-              <div class="t-table__th-cell-inner">点击率</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">点击率</div>
+              </div>
             </th>
             <th data-colkey="default" class="t-table__th-default">
-              <div class="t-table__th-cell-inner">默认值</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
             </th>
             <th data-colkey="required" class="t-table__th-required">
-              <div class="t-table__th-cell-inner">是否必传</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
             </th>
             <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">
@@ -15315,7 +15369,9 @@ exports[`ssr snapshot test renders ./src/table/_example/affix.vue correctly 1`] 
               </div>
             </th>
             <th data-colkey="operation" class="t-table__th-operation">
-              <div class="t-table__th-cell-inner">操作</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">操作</div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -15462,13 +15518,19 @@ exports[`ssr snapshot test renders ./src/table/_example/async-loading.vue correc
         <thead class="t-table__header">
           <tr>
             <th data-colkey="firstName" class="t-table__th-firstName">
-              <div class="t-table__th-cell-inner">FirstName</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">FirstName</div>
+              </div>
             </th>
             <th data-colkey="lastName" class="t-table__th-lastName">
-              <div class="t-table__th-cell-inner">LastName</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">LastName</div>
+              </div>
             </th>
             <th data-colkey="email" class="t-table__th-email">
-              <div class="t-table__th-cell-inner">Email</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">Email</div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -15546,19 +15608,29 @@ exports[`ssr snapshot test renders ./src/table/_example/base.vue correctly 1`] =
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="custom-column-class-name t-table__th-index t-align-center">
-              <div class="t-table__th-cell-inner">序号</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">序号</div>
+              </div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
-              <div class="t-table__th-cell-inner">平台</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
             </th>
             <th data-colkey="type" class="t-table__th-type">
-              <div class="t-table__th-cell-inner">类型</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
             </th>
             <th data-colkey="default" class="t-table__th-default">
-              <div class="t-table__th-cell-inner">默认值</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
             </th>
             <th data-colkey="needed" class="t-table__th-needed">
-              <div class="t-table__th-cell-inner">是否必传</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
             </th>
             <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">
@@ -15669,16 +15741,24 @@ exports[`ssr snapshot test renders ./src/table/_example/custom-cell.vue correctl
         <thead class="t-table__header">
           <tr>
             <th data-colkey="type" class="t-table__th-type">
-              <div class="t-table__th-cell-inner">类型</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
-              <div class="t-table__th-cell-inner">平台</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
             </th>
             <th data-colkey="property" class="t-table__th-property">
-              <div class="t-table__th-cell-inner">属性名</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">属性名</div>
+              </div>
             </th>
             <th data-colkey="description" class="t-table__th-description">
-              <div class="t-table__th-cell-inner">render</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">render</div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -15732,19 +15812,29 @@ exports[`ssr snapshot test renders ./src/table/_example/custom-col.vue correctly
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="row t-table__th-index t-align-center">
-              <div class="t-table__th-cell-inner">序号</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">序号</div>
+              </div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
-              <div class="t-table__th-cell-inner">平台</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
             </th>
             <th data-colkey="type" class="t-table__th-type">
-              <div class="t-table__th-cell-inner">类型</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
             </th>
             <th data-colkey="default" class="t-table__th-default">
-              <div class="t-table__th-cell-inner">默认值</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
             </th>
             <th data-colkey="needed" class="t-table__th-needed">
-              <div class="t-table__th-cell-inner">是否必传</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
             </th>
             <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">
@@ -15871,19 +15961,29 @@ exports[`ssr snapshot test renders ./src/table/_example/custom-col-button.vue co
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="row t-table__th-index t-align-center">
-              <div class="t-table__th-cell-inner">序号</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">序号</div>
+              </div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
-              <div class="t-table__th-cell-inner">平台</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
             </th>
             <th data-colkey="type" class="t-table__th-type">
-              <div class="t-table__th-cell-inner">类型</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
             </th>
             <th data-colkey="default" class="t-table__th-default">
-              <div class="t-table__th-cell-inner">默认值</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
             </th>
             <th data-colkey="needed" class="t-table__th-needed">
-              <div class="t-table__th-cell-inner">是否必传</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
             </th>
             <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">
@@ -16004,19 +16104,29 @@ exports[`ssr snapshot test renders ./src/table/_example/custom-footer.vue correc
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="row t-table__th-index t-align-center">
-              <div class="t-table__th-cell-inner">序号</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">序号</div>
+              </div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
-              <div class="t-table__th-cell-inner">平台</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
             </th>
             <th data-colkey="type" class="t-table__th-type">
-              <div class="t-table__th-cell-inner">类型</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
             </th>
             <th data-colkey="default" class="t-table__th-default">
-              <div class="t-table__th-cell-inner">默认值</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
             </th>
             <th data-colkey="required" class="t-table__th-required">
-              <div class="t-table__th-cell-inner">是否必传</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
             </th>
             <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">
@@ -16091,15 +16201,21 @@ exports[`ssr snapshot test renders ./src/table/_example/custom-header.vue correc
       <thead class="t-table__header">
         <tr>
           <th data-colkey="type" class="t-table__th-type">
-            <div class="t-table__th-cell-inner"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-app">
-                <path fill="currentColor" d="M11.25 1.75a3 3 0 100 6 3 3 0 000-6zm-2 3a2 2 0 114 0 2 2 0 01-4 0zM2 3a1 1 0 011-1h3.5a1 1 0 011 1v3.5a1 1 0 01-1 1H3a1 1 0 01-1-1V3zm1 0v3.5h3.5V3H3zM2 9.5a1 1 0 011-1h3.5a1 1 0 011 1V13a1 1 0 01-1 1H3a1 1 0 01-1-1V9.5zm1 0V13h3.5V9.5H3zM8.5 9.5a1 1 0 011-1H13a1 1 0 011 1V13a1 1 0 01-1 1H9.5a1 1 0 01-1-1V9.5zm1 3.5H13V9.5H9.5V13z" fill-opacity="0.9"></path>
-              </svg> 类型 </div>
+            <div class="t-table__th-cell-inner">
+              <div class="t-table__ellipsis t-text-ellipsis"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-app">
+                  <path fill="currentColor" d="M11.25 1.75a3 3 0 100 6 3 3 0 000-6zm-2 3a2 2 0 114 0 2 2 0 01-4 0zM2 3a1 1 0 011-1h3.5a1 1 0 011 1v3.5a1 1 0 01-1 1H3a1 1 0 01-1-1V3zm1 0v3.5h3.5V3H3zM2 9.5a1 1 0 011-1h3.5a1 1 0 011 1V13a1 1 0 01-1 1H3a1 1 0 01-1-1V9.5zm1 0V13h3.5V9.5H3zM8.5 9.5a1 1 0 011-1H13a1 1 0 011 1V13a1 1 0 01-1 1H9.5a1 1 0 01-1-1V9.5zm1 3.5H13V9.5H9.5V13z" fill-opacity="0.9"></path>
+                </svg> 类型 </div>
+            </div>
           </th>
           <th data-colkey="platform" class="t-table__th-platform">
-            <div class="t-table__th-cell-inner"><b style="color:#0052d9;">标题</b></div>
+            <div class="t-table__th-cell-inner">
+              <div class="t-table__ellipsis t-text-ellipsis"><b style="color:#0052d9;">标题</b></div>
+            </div>
           </th>
           <th data-colkey="property" class="t-table__th-property">
-            <div class="t-table__th-cell-inner">属性名</div>
+            <div class="t-table__th-cell-inner">
+              <div class="t-table__ellipsis t-text-ellipsis">属性名</div>
+            </div>
           </th>
         </tr>
       </thead>
@@ -16140,13 +16256,15 @@ exports[`ssr snapshot test renders ./src/table/_example/data-sort.vue correctly 
           <thead class="t-table__header">
             <tr>
               <th data-colkey="instance" class="t-table__th-instance">
-                <div class="t-table__th-cell-inner">集群名称</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">集群名称</div>
+                </div>
               </th>
               <th data-colkey="status" class="t-table__th-status">
                 <div class="t-table__th-cell-inner">
                   <div class="t-table__cell--sortable">
                     <div class="t-table__cell--title">
-                      <div>状态</div>
+                      <div class="t-table__ellipsis t-text-ellipsis">状态</div>
                       <div class="t-table__filter-icon-wrap">
                         <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:16px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:16px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></div>
                       </div>
@@ -16158,7 +16276,7 @@ exports[`ssr snapshot test renders ./src/table/_example/data-sort.vue correctly 
                 <div class="t-table__th-cell-inner">
                   <div class="t-table__cell--sortable">
                     <div class="t-table__cell--title">
-                      <div>存活时间(s)</div>
+                      <div class="t-table__ellipsis t-text-ellipsis">存活时间(s)</div>
                       <div class="t-table__filter-icon-wrap">
                         <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:16px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-down-small" style="font-size:16px;"><path fill="currentColor" d="M11 6H5l3 4.5L11 6z" fill-opacity="0.9"></path></svg></span></div>
                       </div>
@@ -16167,7 +16285,9 @@ exports[`ssr snapshot test renders ./src/table/_example/data-sort.vue correctly 
                 </div>
               </th>
               <th data-colkey="owner" class="t-table__th-owner">
-                <div class="t-table__th-cell-inner">管理员</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">管理员</div>
+                </div>
               </th>
             </tr>
           </thead>
@@ -16238,16 +16358,24 @@ exports[`ssr snapshot test renders ./src/table/_example/drag-col-sort.vue correc
           <thead class="t-table__header">
             <tr>
               <th data-colkey="instance" class="t-table__th-instance">
-                <div class="t-table__th-cell-inner">集群名称</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">集群名称</div>
+                </div>
               </th>
               <th data-colkey="status" class="t-table__th-status">
-                <div class="t-table__th-cell-inner">状态</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">状态</div>
+                </div>
               </th>
               <th data-colkey="survivalTime" class="t-table__th-survivalTime">
-                <div class="t-table__th-cell-inner">存活时间(s)</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">存活时间(s)</div>
+                </div>
               </th>
               <th data-colkey="owner" class="t-table__th-owner">
-                <div class="t-table__th-cell-inner">管理员</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">管理员</div>
+                </div>
               </th>
             </tr>
           </thead>
@@ -16318,16 +16446,24 @@ exports[`ssr snapshot test renders ./src/table/_example/drag-sort.vue correctly 
           <thead class="t-table__header">
             <tr>
               <th data-colkey="instance" class="t-table__th-instance">
-                <div class="t-table__th-cell-inner">集群名称</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">集群名称</div>
+                </div>
               </th>
               <th data-colkey="status" class="t-table__th-status">
-                <div class="t-table__th-cell-inner">状态</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">状态</div>
+                </div>
               </th>
               <th data-colkey="survivalTime" class="t-table__th-survivalTime">
-                <div class="t-table__th-cell-inner">存活时间(s)</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">存活时间(s)</div>
+                </div>
               </th>
               <th data-colkey="owner" class="t-table__th-owner">
-                <div class="t-table__th-cell-inner">管理员</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">管理员</div>
+                </div>
               </th>
             </tr>
           </thead>
@@ -16400,19 +16536,29 @@ exports[`ssr snapshot test renders ./src/table/_example/drag-sort-handler.vue co
           <thead class="t-table__header">
             <tr>
               <th data-colkey="drag" class="t-table__th-drag">
-                <div class="t-table__th-cell-inner">排序</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">排序</div>
+                </div>
               </th>
               <th data-colkey="instance" class="t-table__th-instance">
-                <div class="t-table__th-cell-inner">集群名称</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">集群名称</div>
+                </div>
               </th>
               <th data-colkey="status" class="t-table__th-status">
-                <div class="t-table__th-cell-inner">状态</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">状态</div>
+                </div>
               </th>
               <th data-colkey="survivalTime" class="t-table__th-survivalTime">
-                <div class="t-table__th-cell-inner">存活时间(s)</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">存活时间(s)</div>
+                </div>
               </th>
               <th data-colkey="owner" class="t-table__th-owner">
-                <div class="t-table__th-cell-inner">管理员</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">管理员</div>
+                </div>
               </th>
             </tr>
           </thead>
@@ -16495,16 +16641,24 @@ exports[`ssr snapshot test renders ./src/table/_example/editable-cell.vue correc
         <thead class="t-table__header">
           <tr>
             <th data-colkey="firstName" class="t-table__th-firstName">
-              <div class="t-table__th-cell-inner">FirstName</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">FirstName</div>
+              </div>
             </th>
             <th data-colkey="framework" class="t-table__th-framework">
-              <div class="t-table__th-cell-inner">Framework</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">Framework</div>
+              </div>
             </th>
             <th data-colkey="letters" class="t-table__th-letters">
-              <div class="t-table__th-cell-inner">Letters</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">Letters</div>
+              </div>
             </th>
             <th data-colkey="createTime" class="t-table__th-createTime">
-              <div class="t-table__th-cell-inner">Date</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">Date</div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -16669,19 +16823,29 @@ exports[`ssr snapshot test renders ./src/table/_example/editable-row.vue correct
         <thead class="t-table__header">
           <tr>
             <th data-colkey="firstName" class="t-table__th-firstName">
-              <div class="t-table__th-cell-inner">FirstName</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">FirstName</div>
+              </div>
             </th>
             <th data-colkey="framework" class="t-table__th-framework">
-              <div class="t-table__th-cell-inner">Framework</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">Framework</div>
+              </div>
             </th>
             <th data-colkey="letters" class="t-table__th-letters">
-              <div class="t-table__th-cell-inner">Letters</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">Letters</div>
+              </div>
             </th>
             <th data-colkey="createTime" class="t-demo-col__datepicker t-table__th-createTime">
-              <div class="t-table__th-cell-inner">Date</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">Date</div>
+              </div>
             </th>
             <th data-colkey="operate" class="t-table__th-operate">
-              <div class="t-table__th-cell-inner">Operate</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">Operate</div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -16825,22 +16989,34 @@ exports[`ssr snapshot test renders ./src/table/_example/empty.vue correctly 1`] 
         <thead class="t-table__header">
           <tr>
             <th data-colkey="type" class="t-table__th-type">
-              <div class="t-table__th-cell-inner">类型</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
-              <div class="t-table__th-cell-inner">平台</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
             </th>
             <th data-colkey="property" class="t-table__th-property">
-              <div class="t-table__th-cell-inner">属性</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">属性</div>
+              </div>
             </th>
             <th data-colkey="default" class="t-table__th-default">
-              <div class="t-table__th-cell-inner">默认值</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
             </th>
             <th data-colkey="needed" class="t-table__th-needed">
-              <div class="t-table__th-cell-inner">是否必传</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
             </th>
             <th data-colkey="description" class="t-table__th-description">
-              <div class="t-table__th-cell-inner">说明</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -16871,22 +17047,34 @@ exports[`ssr snapshot test renders ./src/table/_example/empty.vue correctly 1`] 
         <thead class="t-table__header">
           <tr>
             <th data-colkey="type" class="t-table__th-type">
-              <div class="t-table__th-cell-inner">类型</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
-              <div class="t-table__th-cell-inner">平台</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
             </th>
             <th data-colkey="property" class="t-table__th-property">
-              <div class="t-table__th-cell-inner">属性</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">属性</div>
+              </div>
             </th>
             <th data-colkey="default" class="t-table__th-default">
-              <div class="t-table__th-cell-inner">默认值</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
             </th>
             <th data-colkey="needed" class="t-table__th-needed">
-              <div class="t-table__th-cell-inner">是否必传</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
             </th>
             <th data-colkey="description" class="t-table__th-description">
-              <div class="t-table__th-cell-inner">说明</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -16917,22 +17105,34 @@ exports[`ssr snapshot test renders ./src/table/_example/empty.vue correctly 1`] 
         <thead class="t-table__header">
           <tr>
             <th data-colkey="type" class="t-table__th-type">
-              <div class="t-table__th-cell-inner">类型</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
-              <div class="t-table__th-cell-inner">平台</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
             </th>
             <th data-colkey="property" class="t-table__th-property">
-              <div class="t-table__th-cell-inner">属性</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">属性</div>
+              </div>
             </th>
             <th data-colkey="default" class="t-table__th-default">
-              <div class="t-table__th-cell-inner">默认值</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
             </th>
             <th data-colkey="needed" class="t-table__th-needed">
-              <div class="t-table__th-cell-inner">是否必传</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
             </th>
             <th data-colkey="description" class="t-table__th-description">
-              <div class="t-table__th-cell-inner">说明</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -16980,41 +17180,65 @@ exports[`ssr snapshot test renders ./src/table/_example/expandable.vue correctly
         <thead class="t-table__header">
           <tr>
             <th data-colkey="__EXPAND_ROW_ICON_COLUMN__" class="t-table__expandable-icon-cell t-table__th-__EXPAND_ROW_ICON_COLUMN__">
-              <div class="t-table__th-cell-inner"></div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis"></div>
+              </div>
             </th>
             <th data-colkey="instance" class="t-table__th-instance">
-              <div class="t-table__th-cell-inner">集群名称</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">集群名称</div>
+              </div>
             </th>
             <th data-colkey="status" class="t-table__th-status">
-              <div class="t-table__th-cell-inner">状态</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">状态</div>
+              </div>
             </th>
             <th data-colkey="owner" class="t-table__th-owner">
-              <div class="t-table__th-cell-inner">管理员</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">管理员</div>
+              </div>
             </th>
             <th data-colkey="description" class="t-table__th-description">
-              <div class="t-table__th-cell-inner">描述</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">描述</div>
+              </div>
             </th>
             <th data-colkey="field1" class="t-table__th-field1">
-              <div class="t-table__th-cell-inner">字段 1</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">字段 1</div>
+              </div>
             </th>
             <th data-colkey="field2" class="t-table__th-field2">
-              <div class="t-table__th-cell-inner">字段 2</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">字段 2</div>
+              </div>
             </th>
             <th data-colkey="field3" class="t-table__th-field3">
-              <div class="t-table__th-cell-inner">字段 3</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">字段 3</div>
+              </div>
             </th>
             <th data-colkey="field4" class="t-table__th-field4">
-              <div class="t-table__th-cell-inner">字段 4</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">字段 4</div>
+              </div>
             </th>
             <th data-colkey="field5" class="t-table__th-field5">
-              <div class="t-table__th-cell-inner">字段 5</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">字段 5</div>
+              </div>
             </th>
             <th data-colkey="field6" class="t-table__th-field6">
-              <div class="t-table__th-cell-inner">字段 6</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">字段 6</div>
+              </div>
             </th>
             <th data-colkey="op" class="t-table__th-op">
               <div class="t-table__th-cell-inner">
-                <p>操作</p>
+                <div class="t-table__ellipsis t-text-ellipsis">
+                  <p>操作</p>
+                </div>
               </div>
             </th>
           </tr>
@@ -17161,7 +17385,7 @@ exports[`ssr snapshot test renders ./src/table/_example/filter-controlled.vue co
               <div class="t-table__th-cell-inner">
                 <div class="t-table__cell--filterable">
                   <div class="t-table__cell--title">
-                    <div>FirstName</div>
+                    <div class="t-table__ellipsis t-text-ellipsis">FirstName</div>
                     <div class="t-table__filter-icon-wrap">
                       <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
                           <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
@@ -17175,7 +17399,7 @@ exports[`ssr snapshot test renders ./src/table/_example/filter-controlled.vue co
               <div class="t-table__th-cell-inner">
                 <div class="t-table__cell--sortable t-table__cell--filterable">
                   <div class="t-table__cell--title">
-                    <div>LastName</div>
+                    <div class="t-table__ellipsis t-text-ellipsis">LastName</div>
                     <div class="t-table__filter-icon-wrap">
                       <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></div>
                       <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
@@ -17190,7 +17414,7 @@ exports[`ssr snapshot test renders ./src/table/_example/filter-controlled.vue co
               <div class="t-table__th-cell-inner">
                 <div class="t-table__cell--filterable">
                   <div class="t-table__cell--title">
-                    <div>Email</div>
+                    <div class="t-table__ellipsis t-text-ellipsis">Email</div>
                     <div class="t-table__filter-icon-wrap">
                       <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
                           <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
@@ -17204,7 +17428,7 @@ exports[`ssr snapshot test renders ./src/table/_example/filter-controlled.vue co
               <div class="t-table__th-cell-inner">
                 <div class="t-table__cell--filterable">
                   <div class="t-table__cell--title">
-                    <div>Date</div>
+                    <div class="t-table__ellipsis t-text-ellipsis">Date</div>
                     <div class="t-table__filter-icon-wrap">
                       <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
                           <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
@@ -17290,25 +17514,39 @@ exports[`ssr snapshot test renders ./src/table/_example/fixed-column.vue correct
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="t-table__th-index t-align-center">
-              <div class="t-table__th-cell-inner">序号</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">序号</div>
+              </div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
-              <div class="t-table__th-cell-inner">平台</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
             </th>
             <th data-colkey="type" class="t-table__th-type">
-              <div class="t-table__th-cell-inner">类型</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
             </th>
             <th data-colkey="default" class="t-table__th-default">
-              <div class="t-table__th-cell-inner">默认值</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
             </th>
             <th data-colkey="description" class="t-table__th-description">
-              <div class="t-table__th-cell-inner">说明</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+              </div>
             </th>
             <th data-colkey="needed" class="t-table__th-needed">
-              <div class="t-table__th-cell-inner">是否必传</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
             </th>
             <th data-colkey="operation" class="t-table__th-operation">
-              <div class="t-table__th-cell-inner">操作</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">操作</div>
+              </div>
             </th>
             <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">
@@ -17410,16 +17648,24 @@ exports[`ssr snapshot test renders ./src/table/_example/fixed-header.vue correct
         <thead class="t-table__header">
           <tr>
             <th data-colkey="platform" class="t-table__th-platform">
-              <div class="t-table__th-cell-inner">平台</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
             </th>
             <th data-colkey="type" class="t-table__th-type">
-              <div class="t-table__th-cell-inner">类型</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
             </th>
             <th data-colkey="default" class="t-table__th-default">
-              <div class="t-table__th-cell-inner">默认值</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
             </th>
             <th data-colkey="needed" class="t-table__th-needed">
-              <div class="t-table__th-cell-inner">必传</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">必传</div>
+              </div>
             </th>
             <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">
@@ -17427,7 +17673,9 @@ exports[`ssr snapshot test renders ./src/table/_example/fixed-header.vue correct
               </div>
             </th>
             <th data-colkey="description" class="t-table__th-description">
-              <div class="t-table__th-cell-inner">说明</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -17675,28 +17923,44 @@ exports[`ssr snapshot test renders ./src/table/_example/fixed-header-col.vue cor
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="t-table__th-index t-align-center">
-              <div class="t-table__th-cell-inner">序号</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">序号</div>
+              </div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
-              <div class="t-table__th-cell-inner">平台</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
             </th>
             <th data-colkey="type" class="t-table__th-type">
-              <div class="t-table__th-cell-inner">类型</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
             </th>
             <th data-colkey="default" class="t-table__th-default">
-              <div class="t-table__th-cell-inner">默认值</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
             </th>
             <th data-colkey="detail.position" class="t-table__th-detail.position">
-              <div class="t-table__th-cell-inner">详情信息</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">详情信息</div>
+              </div>
             </th>
             <th data-colkey="description" class="t-table__th-description">
-              <div class="t-table__th-cell-inner">说明</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+              </div>
             </th>
             <th data-colkey="needed" class="t-table__th-needed">
-              <div class="t-table__th-cell-inner">必传</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">必传</div>
+              </div>
             </th>
             <th data-colkey="operation" class="t-table__th-operation">
-              <div class="t-table__th-cell-inner">操作</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">操作</div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -18056,19 +18320,29 @@ exports[`ssr snapshot test renders ./src/table/_example/merge-cells.vue correctl
       <thead class="t-table__header">
         <tr>
           <th data-colkey="platform" class="test t-table__th-platform">
-            <div class="t-table__th-cell-inner">平台</div>
+            <div class="t-table__th-cell-inner">
+              <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+            </div>
           </th>
           <th data-colkey="type" class="row t-table__th-type">
-            <div class="t-table__th-cell-inner">类型</div>
+            <div class="t-table__th-cell-inner">
+              <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+            </div>
           </th>
           <th data-colkey="default" class="test4 t-table__th-default">
-            <div class="t-table__th-cell-inner">默认值</div>
+            <div class="t-table__th-cell-inner">
+              <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+            </div>
           </th>
           <th data-colkey="needed" class="test3 t-table__th-needed">
-            <div class="t-table__th-cell-inner">是否必传</div>
+            <div class="t-table__th-cell-inner">
+              <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+            </div>
           </th>
           <th data-colkey="description" class="row t-table__th-description">
-            <div class="t-table__th-cell-inner">说明</div>
+            <div class="t-table__th-cell-inner">
+              <div class="t-table__ellipsis t-text-ellipsis">说明</div>
+            </div>
           </th>
         </tr>
       </thead>
@@ -18146,42 +18420,62 @@ exports[`ssr snapshot test renders ./src/table/_example/multi-header.vue correct
         <thead class="t-table__header t-table--bordered t-table__header--multiple">
           <tr>
             <th data-colkey="index" rowspan="3" class="t-table__th-index">
-              <div class="t-table__th-cell-inner">序号</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">序号</div>
+              </div>
             </th>
             <th data-colkey="total_info" colspan="4" class="t-table__th-total_info">
-              <div class="t-table__th-cell-inner">汇总属性</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">汇总属性</div>
+              </div>
             </th>
             <th data-colkey="field1" rowspan="3" class="t-table__th-field1">
-              <div class="t-table__th-cell-inner">字段1</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">字段1</div>
+              </div>
             </th>
             <th data-colkey="field2" rowspan="3" class="t-table__th-field2">
-              <div class="t-table__th-cell-inner">字段2</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">字段2</div>
+              </div>
             </th>
             <th data-colkey="field3" rowspan="3" class="t-table__th-field3">
-              <div class="t-table__th-cell-inner">字段3</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">字段3</div>
+              </div>
             </th>
             <th data-colkey="field4" rowspan="3" class="t-table__th-field4">
-              <div class="t-table__th-cell-inner">字段4</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">字段4</div>
+              </div>
             </th>
             <th data-colkey="instruction" colspan="4" class="t-table__th-instruction">
-              <div class="t-table__th-cell-inner">属性及说明</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">属性及说明</div>
+              </div>
             </th>
             <th data-colkey="field5" rowspan="3" class="t-table__th-field5">
-              <div class="t-table__th-cell-inner">字段5</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">字段5</div>
+              </div>
             </th>
           </tr>
           <tr>
             <th data-colkey="platform" rowspan="2" class="t-table__header-th--bordered t-table__th-platform">
-              <div class="t-table__th-cell-inner">平台</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
             </th>
             <th data-colkey="type_default" colspan="3" class="t-table__th-type_default">
-              <div class="t-table__th-cell-inner">类型及默认值</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型及默认值</div>
+              </div>
             </th>
             <th data-colkey="property" rowspan="2" class="t-table__th-property">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__cell--filterable">
                   <div class="t-table__cell--title">
-                    <div>属性</div>
+                    <div class="t-table__ellipsis t-text-ellipsis">属性</div>
                     <div class="t-table__filter-icon-wrap">
                       <div class="t-table__filter-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-filter">
                           <path fill="currentColor" d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1.79l-4.25 2.5V14h-3.5V7.29L2 4.79V3zm11 0H3v1.21l4.25 2.5V13h1.5V6.71L13 4.21V3z" fill-opacity="0.9"></path>
@@ -18199,13 +18493,15 @@ exports[`ssr snapshot test renders ./src/table/_example/multi-header.vue correct
           </tr>
           <tr>
             <th data-colkey="type" class="t-table__header-th--bordered t-table__th-type">
-              <div class="t-table__th-cell-inner">类型</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
             </th>
             <th data-colkey="default" class="t-table__th-default">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__cell--sortable">
                   <div class="t-table__cell--title">
-                    <div>默认值</div>
+                    <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
                     <div class="t-table__filter-icon-wrap">
                       <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></div>
                     </div>
@@ -18214,13 +18510,19 @@ exports[`ssr snapshot test renders ./src/table/_example/multi-header.vue correct
               </div>
             </th>
             <th data-colkey="needed" class="t-table__th-needed">
-              <div class="t-table__th-cell-inner">是否必传</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
             </th>
             <th data-colkey="field6" class="t-table__th-field6">
-              <div class="t-table__th-cell-inner">字段6</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">字段6</div>
+              </div>
             </th>
             <th data-colkey="field7" class="t-table__th-field7">
-              <div class="t-table__th-cell-inner">字段7</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">字段7</div>
+              </div>
             </th>
             <th data-colkey="text" class="t-table__th-text">
               <div class="t-table__th-cell-inner">
@@ -18270,13 +18572,15 @@ exports[`ssr snapshot test renders ./src/table/_example/multiple-sort.vue correc
           <thead class="t-table__header">
             <tr>
               <th data-colkey="instance" class="t-table__th-instance">
-                <div class="t-table__th-cell-inner">集群名称</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">集群名称</div>
+                </div>
               </th>
               <th data-colkey="status" class="t-table__th-status">
                 <div class="t-table__th-cell-inner">
                   <div class="t-table__cell--sortable">
                     <div class="t-table__cell--title">
-                      <div>状态</div>
+                      <div class="t-table__ellipsis t-text-ellipsis">状态</div>
                       <div class="t-table__filter-icon-wrap">
                         <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></div>
                       </div>
@@ -18288,7 +18592,7 @@ exports[`ssr snapshot test renders ./src/table/_example/multiple-sort.vue correc
                 <div class="t-table__th-cell-inner">
                   <div class="t-table__cell--sortable">
                     <div class="t-table__cell--title">
-                      <div>存活时间(s)</div>
+                      <div class="t-table__ellipsis t-text-ellipsis">存活时间(s)</div>
                       <div class="t-table__filter-icon-wrap">
                         <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></div>
                       </div>
@@ -18297,7 +18601,9 @@ exports[`ssr snapshot test renders ./src/table/_example/multiple-sort.vue correc
                 </div>
               </th>
               <th data-colkey="owner" class="t-table__th-owner">
-                <div class="t-table__th-cell-inner">管理员</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">管理员</div>
+                </div>
               </th>
             </tr>
           </thead>
@@ -18369,19 +18675,29 @@ exports[`ssr snapshot test renders ./src/table/_example/pagination.vue correctly
         <thead class="t-table__header">
           <tr>
             <th data-colkey="index" class="row t-table__th-index t-align-center">
-              <div class="t-table__th-cell-inner">序号</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">序号</div>
+              </div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
-              <div class="t-table__th-cell-inner">平台</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
             </th>
             <th data-colkey="type" class="t-table__th-type">
-              <div class="t-table__th-cell-inner">类型</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">类型</div>
+              </div>
             </th>
             <th data-colkey="default" class="t-table__th-default">
-              <div class="t-table__th-cell-inner">默认值</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">默认值</div>
+              </div>
             </th>
             <th data-colkey="needed" class="t-table__th-needed">
-              <div class="t-table__th-cell-inner">是否必传</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">是否必传</div>
+              </div>
             </th>
             <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">
@@ -18503,16 +18819,24 @@ exports[`ssr snapshot test renders ./src/table/_example/pagination-ajax.vue corr
       <thead class="t-table__header">
         <tr>
           <th data-colkey="row-select" class="t-table__cell-check t-table__th-row-select">
-            <div class="t-table__th-cell-inner"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></div>
+            <div class="t-table__th-cell-inner">
+              <div class="t-table__ellipsis t-text-ellipsis"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></div>
+            </div>
           </th>
           <th data-colkey="name" class="t-table__th-name">
-            <div class="t-table__th-cell-inner">UNKNOWN_USER</div>
+            <div class="t-table__th-cell-inner">
+              <div class="t-table__ellipsis t-text-ellipsis">UNKNOWN_USER</div>
+            </div>
           </th>
           <th data-colkey="gender" class="t-table__th-gender">
-            <div class="t-table__th-cell-inner">性别</div>
+            <div class="t-table__th-cell-inner">
+              <div class="t-table__ellipsis t-text-ellipsis">性别</div>
+            </div>
           </th>
           <th data-colkey="phone" class="t-table__th-phone">
-            <div class="t-table__th-cell-inner">联系方式</div>
+            <div class="t-table__th-cell-inner">
+              <div class="t-table__ellipsis t-text-ellipsis">联系方式</div>
+            </div>
           </th>
           <th data-colkey="email" class="t-table__th-email">
             <div class="t-table__th-cell-inner">
@@ -18582,31 +18906,43 @@ exports[`ssr snapshot test renders ./src/table/_example/select-multiple.vue corr
         </colgroup>
         <thead class="t-table__header">
           <tr>
-            <th data-colkey="row-select" class="t-table__cell-check t-table__th-row-select">
-              <div class="t-table__th-cell-inner"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></div>
+            <th data-colkey="row-select" class="t-table__cell-check demo-multiple-select-cell t-table__th-row-select">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></div>
+              </div>
             </th>
             <th data-colkey="instance" class="t-table__th-instance">
-              <div class="t-table__th-cell-inner">集群名称</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">集群名称</div>
+              </div>
             </th>
             <th data-colkey="status" class="t-table__th-status">
-              <div class="t-table__th-cell-inner">状态</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">状态</div>
+              </div>
             </th>
             <th data-colkey="owner" class="t-table__th-owner">
-              <div class="t-table__th-cell-inner">管理员</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">管理员</div>
+              </div>
             </th>
             <th data-colkey="description" class="t-table__th-description">
-              <div class="t-table__th-cell-inner">描述</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">描述</div>
+              </div>
             </th>
             <th data-colkey="op" class="t-table__th-op">
               <div class="t-table__th-cell-inner">
-                <p>操作</p>
+                <div class="t-table__ellipsis t-text-ellipsis">
+                  <p>操作</p>
+                </div>
               </div>
             </th>
           </tr>
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="t-table__cell-check"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
+            <td class="t-table__cell-check demo-multiple-select-cell"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest1</td>
             <td>
               <p class="status">健康</p>
@@ -18617,7 +18953,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-multiple.vue corr
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__cell-check"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
+            <td class="t-table__cell-check demo-multiple-select-cell"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest2</td>
             <td>
               <!---->
@@ -18628,7 +18964,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-multiple.vue corr
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__cell-check"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
+            <td class="t-table__cell-check demo-multiple-select-cell"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest3</td>
             <td>
               <p class="status">健康</p>
@@ -18639,7 +18975,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-multiple.vue corr
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__cell-check"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
+            <td class="t-table__cell-check demo-multiple-select-cell"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest4</td>
             <td>
               <!---->
@@ -18650,7 +18986,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-multiple.vue corr
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__cell-check"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
+            <td class="t-table__cell-check demo-multiple-select-cell"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest5</td>
             <td>
               <p class="status">健康</p>
@@ -18686,31 +19022,43 @@ exports[`ssr snapshot test renders ./src/table/_example/select-single.vue correc
         </colgroup>
         <thead class="t-table__header">
           <tr>
-            <th data-colkey="row-select" class="t-table__cell-check t-table__th-row-select">
-              <div class="t-table__th-cell-inner"></div>
+            <th data-colkey="row-select" class="t-table__cell-check demo-single-select-cell t-table__th-row-select">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis"></div>
+              </div>
             </th>
             <th data-colkey="instance" class="t-table__th-instance">
-              <div class="t-table__th-cell-inner">集群名称</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">集群名称</div>
+              </div>
             </th>
             <th data-colkey="status" class="t-table__th-status">
-              <div class="t-table__th-cell-inner">状态</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">状态</div>
+              </div>
             </th>
             <th data-colkey="owner" class="t-table__th-owner">
-              <div class="t-table__th-cell-inner">管理员</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">管理员</div>
+              </div>
             </th>
             <th data-colkey="description" class="t-table__th-description">
-              <div class="t-table__th-cell-inner">描述</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">描述</div>
+              </div>
             </th>
             <th data-colkey="op" class="t-table__th-op">
               <div class="t-table__th-cell-inner">
-                <p>操作</p>
+                <div class="t-table__ellipsis t-text-ellipsis">
+                  <p>操作</p>
+                </div>
               </div>
             </th>
           </tr>
         </thead>
         <tbody class="t-table__body">
           <tr>
-            <td class="t-table__cell-check"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+            <td class="t-table__cell-check demo-single-select-cell"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest1</td>
             <td>
               <p class="status">健康</p>
@@ -18721,7 +19069,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-single.vue correc
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr class="t-table__row--disabled">
-            <td class="t-table__cell-check"><label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+            <td class="t-table__cell-check demo-single-select-cell"><label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest2</td>
             <td>
               <!---->
@@ -18732,7 +19080,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-single.vue correc
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr class="t-table__row--selected">
-            <td class="t-table__cell-check"><label class="t-radio t-is-checked"><input type="radio" checked="checked" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+            <td class="t-table__cell-check demo-single-select-cell"><label class="t-radio t-is-checked"><input type="radio" checked="checked" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest3</td>
             <td>
               <p class="status">健康</p>
@@ -18743,7 +19091,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-single.vue correc
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr class="t-table__row--disabled">
-            <td class="t-table__cell-check"><label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+            <td class="t-table__cell-check demo-single-select-cell"><label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest4</td>
             <td>
               <!---->
@@ -18754,7 +19102,7 @@ exports[`ssr snapshot test renders ./src/table/_example/select-single.vue correc
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
           <tr>
-            <td class="t-table__cell-check"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
+            <td class="t-table__cell-check demo-single-select-cell"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest5</td>
             <td>
               <p class="status">健康</p>
@@ -18789,20 +19137,30 @@ exports[`ssr snapshot test renders ./src/table/_example/show-columns.vue correct
         <thead class="t-table__header">
           <tr>
             <th data-colkey="instance" class="t-table__th-instance">
-              <div class="t-table__th-cell-inner">集群名称</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">集群名称</div>
+              </div>
             </th>
             <th data-colkey="status" class="t-table__th-status">
-              <div class="t-table__th-cell-inner">状态</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">状态</div>
+              </div>
             </th>
             <th data-colkey="owner" class="t-table__th-owner">
-              <div class="t-table__th-cell-inner">管理员</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">管理员</div>
+              </div>
             </th>
             <th data-colkey="description" class="t-table__th-description">
-              <div class="t-table__th-cell-inner">描述</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">描述</div>
+              </div>
             </th>
             <th data-colkey="op" class="t-table__th-op">
               <div class="t-table__th-cell-inner">
-                <p>操作</p>
+                <div class="t-table__ellipsis t-text-ellipsis">
+                  <p>操作</p>
+                </div>
               </div>
             </th>
           </tr>
@@ -18876,13 +19234,15 @@ exports[`ssr snapshot test renders ./src/table/_example/single-sort.vue correctl
         <thead class="t-table__header">
           <tr>
             <th data-colkey="instance" class="t-table__th-instance">
-              <div class="t-table__th-cell-inner">集群名称</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">集群名称</div>
+              </div>
             </th>
             <th data-colkey="status" class="t-table__th-status">
               <div class="t-table__th-cell-inner">
                 <div class="t-table__cell--sortable">
                   <div class="t-table__cell--title">
-                    <div>状态</div>
+                    <div class="t-table__ellipsis t-text-ellipsis">状态</div>
                     <div class="t-table__filter-icon-wrap">
                       <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-table__sort-icon--active t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></div>
                     </div>
@@ -18894,7 +19254,7 @@ exports[`ssr snapshot test renders ./src/table/_example/single-sort.vue correctl
               <div class="t-table__th-cell-inner">
                 <div class="t-table__cell--sortable">
                   <div class="t-table__cell--title">
-                    <div>存活时间(s)</div>
+                    <div class="t-table__ellipsis t-text-ellipsis">存活时间(s)</div>
                     <div class="t-table__filter-icon-wrap">
                       <div class="t-table__cell--sort-trigger t-table__double-icons"><span class="t-icon-sort--default t-table__sort-icon t-table-sort-asc t-negative-rotate-180 t-table-sort-asc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span><span class="t-icon-sort--default t-table__sort-icon t-table-sort-desc t-table-sort-desc"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></div>
                     </div>
@@ -18903,7 +19263,9 @@ exports[`ssr snapshot test renders ./src/table/_example/single-sort.vue correctl
               </div>
             </th>
             <th data-colkey="owner" class="t-table__th-owner">
-              <div class="t-table__th-cell-inner">管理员</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">管理员</div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -18977,7 +19339,9 @@ exports[`ssr snapshot test renders ./src/table/_example/tree.vue correctly 1`] =
         <thead class="t-table__header">
           <tr>
             <th data-colkey="drag" class="t-table__th-drag">
-              <div class="t-table__th-cell-inner">排序</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">排序</div>
+              </div>
             </th>
             <th data-colkey="id" class="t-table__th-id">
               <div class="t-table__th-cell-inner">
@@ -18990,10 +19354,14 @@ exports[`ssr snapshot test renders ./src/table/_example/tree.vue correctly 1`] =
               </div>
             </th>
             <th data-colkey="platform" class="t-table__th-platform">
-              <div class="t-table__th-cell-inner">平台</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">平台</div>
+              </div>
             </th>
             <th data-colkey="operate" class="t-table__th-operate t-align-center">
-              <div class="t-table__th-cell-inner">操作</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">操作</div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -19151,12 +19519,15 @@ exports[`ssr snapshot test renders ./src/table/_example/tree.vue correctly 1`] =
 
 exports[`ssr snapshot test renders ./src/table/_example/tree-select.vue correctly 1`] = `
 <div class="t-table-tree-select-demo">
-  <div>
-    <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="true" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">父子行选中独立</span></label> <label class="t-radio-button"><input type="radio" value="false" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label"><span>
+  <div class="t-space t-space-horizontal" style="gap:16px;">
+    <div class="t-space-item">
+      <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="true" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">父子行选中独立</span></label> <label class="t-radio-button"><input type="radio" value="false" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label"><span>
           父子行选中关联
         </span></span></label>
-      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+        <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+      </div>
     </div>
+    <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default"><span class="t-button__text">获取树形结构展开的节点</span></button></div>
   </div> <br>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
@@ -19172,22 +19543,34 @@ exports[`ssr snapshot test renders ./src/table/_example/tree-select.vue correctl
         <thead class="t-table__header">
           <tr>
             <th data-colkey="__EXPAND_ROW_ICON_COLUMN__" class="t-table__expandable-icon-cell t-table__th-__EXPAND_ROW_ICON_COLUMN__">
-              <div class="t-table__th-cell-inner"></div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis"></div>
+              </div>
             </th>
             <th data-colkey="row-select" class="t-table__cell-check t-table__th-row-select">
-              <div class="t-table__th-cell-inner"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></div>
+              </div>
             </th>
             <th data-colkey="instance" class="t-table__th-instance">
-              <div class="t-table__th-cell-inner">集群名称</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">集群名称</div>
+              </div>
             </th>
             <th data-colkey="status" class="t-table__th-status">
-              <div class="t-table__th-cell-inner">状态</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">状态</div>
+              </div>
             </th>
             <th data-colkey="owner" class="t-table__th-owner">
-              <div class="t-table__th-cell-inner">管理员</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">管理员</div>
+              </div>
             </th>
             <th data-colkey="description" class="t-table__th-description">
-              <div class="t-table__th-cell-inner">描述</div>
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">描述</div>
+              </div>
             </th>
           </tr>
         </thead>
@@ -19278,16 +19661,24 @@ exports[`ssr snapshot test renders ./src/table/_example/virtual-scroll.vue corre
           <thead class="t-table__header">
             <tr>
               <th data-colkey="id" class="t-table__th-id">
-                <div class="t-table__th-cell-inner">id</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">id</div>
+                </div>
               </th>
               <th data-colkey="instance" class="t-table__th-instance">
-                <div class="t-table__th-cell-inner">集群名称</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">集群名称</div>
+                </div>
               </th>
               <th data-colkey="survivalTime" class="t-table__th-survivalTime">
-                <div class="t-table__th-cell-inner">存活时间(s)</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">存活时间(s)</div>
+                </div>
               </th>
               <th data-colkey="owner" class="t-table__th-owner">
-                <div class="t-table__th-cell-inner">管理员</div>
+                <div class="t-table__th-cell-inner">
+                  <div class="t-table__ellipsis t-text-ellipsis">管理员</div>
+                </div>
               </th>
             </tr>
           </thead>
@@ -20017,7 +20408,7 @@ exports[`ssr snapshot test renders ./src/textarea/_example/events.vue correctly 
 
 exports[`ssr snapshot test renders ./src/textarea/_example/maxlength.vue correctly 1`] = `
 <div>
-  <div class="t-textarea"><textarea placeholder="请输入描述文案，文本长度最多20，maxlength=20" maxlength="20" unselectable="off" class="t-textarea__inner"></textarea><span class="t-textarea__limit">0/20</span></div> <br>
+  <div class="t-textarea"><textarea placeholder="请输入描述文案，文本长度最多20，maxlength=20" unselectable="off" class="t-textarea__inner"></textarea><span class="t-textarea__limit">0/20</span></div> <br>
   <div class="t-textarea"><textarea placeholder="请输入描述文案，最多20字符（一个汉字占两个字符长度），maxcharacter=20" unselectable="off" class="t-textarea__inner"></textarea><span class="t-textarea__limit">0/20</span></div>
 </div>
 `;
@@ -20042,18 +20433,22 @@ exports[`ssr snapshot test renders ./src/textarea/_example/type.vue correctly 1`
 `;
 
 exports[`ssr snapshot test renders ./src/time-picker/_example/base.vue correctly 1`] = `
-<div class="tdesign-demo-block">
-  <div class="demos t-time-picker">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="20:22" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-time-picker">
+      <div class="t-input__wrap">
+        <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="20:22" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+        </div>
       </div>
     </div>
   </div>
-  <div class="demos t-time-picker">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="21:22" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+  <div class="t-space-item">
+    <div class="t-time-picker">
+      <div class="t-input__wrap">
+        <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="21:22" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+        </div>
       </div>
     </div>
   </div>
@@ -20061,20 +20456,28 @@ exports[`ssr snapshot test renders ./src/time-picker/_example/base.vue correctly
 `;
 
 exports[`ssr snapshot test renders ./src/time-picker/_example/clearable.vue correctly 1`] = `
-<div class="tdesign-demo-block">
-  <h3>具备清空按钮</h3>
-  <div class="t-time-picker">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="11:12:10" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <h3>具备清空按钮</h3>
+  </div>
+  <div class="t-space-item">
+    <div class="t-time-picker">
+      <div class="t-input__wrap">
+        <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="11:12:10" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+        </div>
       </div>
     </div>
   </div>
-  <h3>禁止清空按钮</h3>
-  <div class="t-time-picker">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="11:12:10" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+  <div class="t-space-item">
+    <h3>禁止清空按钮</h3>
+  </div>
+  <div class="t-space-item">
+    <div class="t-time-picker">
+      <div class="t-input__wrap">
+        <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="11:12:10" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+        </div>
       </div>
     </div>
   </div>
@@ -20082,20 +20485,28 @@ exports[`ssr snapshot test renders ./src/time-picker/_example/clearable.vue corr
 `;
 
 exports[`ssr snapshot test renders ./src/time-picker/_example/disabled.vue correctly 1`] = `
-<div class="tdesign-demo-block">
-  <h3>禁用整个选择器</h3> <br>
-  <div class="t-time-picker">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-disabled t-is-default t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input disabled="disabled" readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="11:12:10" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <h3>禁用整个选择器</h3>
+  </div>
+  <div class="t-space-item">
+    <div class="t-time-picker">
+      <div class="t-input__wrap">
+        <div class="t-input t-size-m t-is-disabled t-is-default t-is-readonly t-input--prefix t-input--suffix">
+          <div class="t-input__prefix"></div><input disabled="disabled" readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="11:12:10" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+        </div>
       </div>
     </div>
-  </div> <br> <br>
-  <h3>禁用指定时间</h3> <br>
-  <div class="t-time-picker">
-    <div class="t-input__wrap t-select-input--empty">
-      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="选择时间" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+  </div>
+  <div class="t-space-item">
+    <h3>禁用指定时间</h3>
+  </div>
+  <div class="t-space-item">
+    <div class="t-time-picker">
+      <div class="t-input__wrap t-select-input--empty">
+        <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="选择时间" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+        </div>
       </div>
     </div>
   </div>
@@ -20103,32 +20514,38 @@ exports[`ssr snapshot test renders ./src/time-picker/_example/disabled.vue corre
 `;
 
 exports[`ssr snapshot test renders ./src/time-picker/_example/format.vue correctly 1`] = `
-<div class="tdesign-demo-block">
-  <div class="demos t-time-picker">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="00:00:00 am" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
-      </div>
+<div class="t-time-picker">
+  <div class="t-input__wrap">
+    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="00:00:00 am" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/time-picker/_example/hide-clear-button.vue correctly 1`] = `
-<div class="tdesign-demo-block">
-  <h3>具备清空按钮</h3>
-  <div class="t-time-picker">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="11:12:10" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <h3>具备清空按钮</h3>
+  </div>
+  <div class="t-space-item">
+    <div class="t-time-picker">
+      <div class="t-input__wrap">
+        <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="11:12:10" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+        </div>
       </div>
     </div>
   </div>
-  <h3>禁止清空按钮</h3>
-  <div class="t-time-picker">
-    <div class="t-input__wrap t-select-input--empty">
-      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="选择时间" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+  <div class="t-space-item">
+    <h3>禁止清空按钮</h3>
+  </div>
+  <div class="t-space-item">
+    <div class="t-time-picker">
+      <div class="t-input__wrap t-select-input--empty">
+        <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="选择时间" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+        </div>
       </div>
     </div>
   </div>
@@ -20136,20 +20553,28 @@ exports[`ssr snapshot test renders ./src/time-picker/_example/hide-clear-button.
 `;
 
 exports[`ssr snapshot test renders ./src/time-picker/_example/hm.vue correctly 1`] = `
-<div class="tdesign-demo-block">
-  <h3>时分选择</h3> <br>
-  <div class="t-time-picker">
-    <div class="t-input__wrap t-select-input--empty">
-      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="选择时间" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <h3>时分选择</h3>
+  </div>
+  <div class="t-space-item">
+    <div class="t-time-picker">
+      <div class="t-input__wrap t-select-input--empty">
+        <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="选择时间" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+        </div>
       </div>
     </div>
-  </div> <br> <br>
-  <h3>毫秒选择</h3> <br>
-  <div class="t-time-picker">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="12:59:59:000" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+  </div>
+  <div class="t-space-item">
+    <h3>毫秒选择</h3>
+  </div>
+  <div class="t-space-item">
+    <div class="t-time-picker">
+      <div class="t-input__wrap">
+        <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="12:59:59:000" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+        </div>
       </div>
     </div>
   </div>
@@ -20157,32 +20582,38 @@ exports[`ssr snapshot test renders ./src/time-picker/_example/hm.vue correctly 1
 `;
 
 exports[`ssr snapshot test renders ./src/time-picker/_example/hms.vue correctly 1`] = `
-<div class="tdesign-demo-block">
-  <div class="t-time-picker">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="12:20:30" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
-      </div>
+<div class="t-time-picker">
+  <div class="t-input__wrap">
+    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="12:20:30" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/time-picker/_example/keyboard.vue correctly 1`] = `
-<div class="tdesign-demo-block">
-  <h3>允许输入</h3>
-  <div class="t-time-picker">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-default t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input autocomplete="" placeholder="" type="text" unselectable="off" value="20:22:33" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <h3>允许输入</h3>
+  </div>
+  <div class="t-space-item">
+    <div class="t-time-picker">
+      <div class="t-input__wrap">
+        <div class="t-input t-size-m t-is-default t-input--prefix t-input--suffix">
+          <div class="t-input__prefix"></div><input autocomplete="" placeholder="" type="text" unselectable="off" value="20:22:33" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+        </div>
       </div>
     </div>
   </div>
-  <h3>禁止输入</h3>
-  <div class="t-time-picker">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="22:22:22" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+  <div class="t-space-item">
+    <h3>禁止输入</h3>
+  </div>
+  <div class="t-space-item">
+    <div class="t-time-picker">
+      <div class="t-input__wrap">
+        <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+          <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="22:22:22" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
+        </div>
       </div>
     </div>
   </div>
@@ -20190,30 +20621,30 @@ exports[`ssr snapshot test renders ./src/time-picker/_example/keyboard.vue corre
 `;
 
 exports[`ssr snapshot test renders ./src/time-picker/_example/panel.vue correctly 1`] = `
-<div class="tdesign-demo-block">
-  <div class="t-time-picker__panel">
-    <div class="t-time-picker__panel-section-body">
-      <div class="t-time-picker__panel-body">
-        <div class="t-time-picker__panel-body-active-mask"></div>
-      </div>
+<div class="t-time-picker__panel">
+  <div class="t-time-picker__panel-section-body">
+    <div class="t-time-picker__panel-body">
+      <div class="t-time-picker__panel-body-active-mask"></div>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/time-picker/_example/range.vue correctly 1`] = `
-<div class="tdesign-demo-block">
-  <div class="demos t-time-range-picker">
-    <div class="t-range-input-popup">
-      <div class="t-range-input">
-        <div class="t-range-input__inner">
-          <div class="t-input__wrap t-range-input__inner-left">
-            <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="选择时间" type="text" unselectable="off" value="00:00:00" class="t-input__inner"></div>
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="demos t-time-range-picker">
+      <div class="t-range-input-popup">
+        <div class="t-range-input">
+          <div class="t-range-input__inner">
+            <div class="t-input__wrap t-range-input__inner-left">
+              <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="选择时间" type="text" unselectable="off" value="00:00:00" class="t-input__inner"></div>
+            </div>
+            <div class="t-range-input__inner-separator">-</div>
+            <div class="t-input__wrap t-range-input__inner-right">
+              <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="选择时间" type="text" unselectable="off" value="23:59:59" class="t-input__inner"></div>
+            </div><span class="t-range-input__suffix t-range-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
           </div>
-          <div class="t-range-input__inner-separator">-</div>
-          <div class="t-input__wrap t-range-input__inner-right">
-            <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="选择时间" type="text" unselectable="off" value="23:59:59" class="t-input__inner"></div>
-          </div><span class="t-range-input__suffix t-range-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
         </div>
       </div>
     </div>
@@ -20222,48 +20653,40 @@ exports[`ssr snapshot test renders ./src/time-picker/_example/range.vue correctl
 `;
 
 exports[`ssr snapshot test renders ./src/time-picker/_example/show-steps.vue correctly 1`] = `
-<div class="tdesign-demo-block">
-  <div class="t-time-picker">
-    <div class="t-input__wrap t-select-input--empty">
-      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="选择时间" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
-      </div>
+<div class="t-time-picker">
+  <div class="t-input__wrap t-select-input--empty">
+    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="选择时间" type="text" unselectable="on" value="" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/time-picker/_example/step.vue correctly 1`] = `
-<div class="tdesign-demo-block">
-  <div class="t-time-picker">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="09:18:17" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
-      </div>
+<div class="t-time-picker">
+  <div class="t-input__wrap">
+    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="09:18:17" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/time-picker/_example/twelve-hour.vue correctly 1`] = `
-<div class="tdesign-demo-block">
-  <div class="t-time-picker">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="10:20:30 am" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
-      </div>
+<div class="t-time-picker">
+  <div class="t-input__wrap">
+    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="10:20:30 am" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
     </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/time-picker/_example/twelve-hour-meridian.vue correctly 1`] = `
-<div class="tdesign-demo-block">
-  <div class="t-time-picker">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
-        <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="PM 10:20:30" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
-      </div>
+<div class="t-time-picker">
+  <div class="t-input__wrap">
+    <div class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix">
+      <div class="t-input__prefix"></div><input readonly="readonly" autocomplete="" placeholder="" type="text" unselectable="on" value="PM 10:20:30" class="t-input__inner"><span class="t-input__suffix t-input__suffix-icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-time"><path fill="currentColor" d="M7.5 4v4.39L10 11l.7-.7-2.2-2.33V4h-1z" fill-opacity="0.9"></path><path fill="currentColor" d="M15 8A7 7 0 111 8a7 7 0 0114 0zm-1 0A6 6 0 102 8a6 6 0 0012 0z" fill-opacity="0.9"></path></svg></span>
     </div>
   </div>
 </div>

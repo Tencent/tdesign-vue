@@ -2721,7 +2721,7 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                         <div
                           class="t-date-picker__cell-inner"
                         >
-                          30
+                          31
                         </div>
                       </td>
                       <td
@@ -2868,7 +2868,7 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                         </div>
                       </td>
                       <td
-                        class="t-date-picker__cell"
+                        class="t-date-picker__cell t-date-picker__cell--active t-date-picker__cell--highlight t-date-picker__cell--active-start"
                       >
                         <div
                           class="t-date-picker__cell-inner"
@@ -2877,7 +2877,7 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                         </div>
                       </td>
                       <td
-                        class="t-date-picker__cell"
+                        class="t-date-picker__cell t-date-picker__cell--highlight"
                       >
                         <div
                           class="t-date-picker__cell-inner"
@@ -2886,7 +2886,7 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                         </div>
                       </td>
                       <td
-                        class="t-date-picker__cell"
+                        class="t-date-picker__cell t-date-picker__cell--highlight"
                       >
                         <div
                           class="t-date-picker__cell-inner"
@@ -2895,7 +2895,7 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                         </div>
                       </td>
                       <td
-                        class="t-date-picker__cell"
+                        class="t-date-picker__cell t-date-picker__cell--highlight"
                       >
                         <div
                           class="t-date-picker__cell-inner"
@@ -2904,7 +2904,7 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                         </div>
                       </td>
                       <td
-                        class="t-date-picker__cell"
+                        class="t-date-picker__cell t-date-picker__cell--highlight"
                       >
                         <div
                           class="t-date-picker__cell-inner"
@@ -2917,7 +2917,7 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                       class="t-date-picker__table-date-row"
                     >
                       <td
-                        class="t-date-picker__cell"
+                        class="t-date-picker__cell t-date-picker__cell--active t-date-picker__cell--highlight t-date-picker__cell--active-end"
                       >
                         <div
                           class="t-date-picker__cell-inner"
@@ -2984,39 +2984,12 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                       class="t-date-picker__table-date-row"
                     >
                       <td
-                        class="t-date-picker__cell t-date-picker__cell--now"
-                      >
-                        <div
-                          class="t-date-picker__cell-inner"
-                        >
-                          28
-                        </div>
-                      </td>
-                      <td
-                        class="t-date-picker__cell"
-                      >
-                        <div
-                          class="t-date-picker__cell-inner"
-                        >
-                          29
-                        </div>
-                      </td>
-                      <td
-                        class="t-date-picker__cell"
-                      >
-                        <div
-                          class="t-date-picker__cell-inner"
-                        >
-                          30
-                        </div>
-                      </td>
-                      <td
                         class="t-date-picker__cell t-date-picker__cell--last-day-of-month"
                       >
                         <div
                           class="t-date-picker__cell-inner"
                         >
-                          31
+                          28
                         </div>
                       </td>
                       <td
@@ -3046,10 +3019,6 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                           3
                         </div>
                       </td>
-                    </tr>
-                    <tr
-                      class="t-date-picker__table-date-row"
-                    >
                       <td
                         class="t-date-picker__cell t-date-picker__cell--additional"
                       >
@@ -3077,6 +3046,10 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                           6
                         </div>
                       </td>
+                    </tr>
+                    <tr
+                      class="t-date-picker__table-date-row"
+                    >
                       <td
                         class="t-date-picker__cell t-date-picker__cell--additional"
                       >
@@ -3111,6 +3084,33 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                           class="t-date-picker__cell-inner"
                         >
                           10
+                        </div>
+                      </td>
+                      <td
+                        class="t-date-picker__cell t-date-picker__cell--additional"
+                      >
+                        <div
+                          class="t-date-picker__cell-inner"
+                        >
+                          11
+                        </div>
+                      </td>
+                      <td
+                        class="t-date-picker__cell t-date-picker__cell--additional"
+                      >
+                        <div
+                          class="t-date-picker__cell-inner"
+                        >
+                          12
+                        </div>
+                      </td>
+                      <td
+                        class="t-date-picker__cell t-date-picker__cell--additional"
+                      >
+                        <div
+                          class="t-date-picker__cell-inner"
+                        >
+                          13
                         </div>
                       </td>
                     </tr>
@@ -3321,33 +3321,6 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                         </div>
                       </td>
                       <td
-                        class="t-date-picker__cell t-date-picker__cell--additional"
-                      >
-                        <div
-                          class="t-date-picker__cell-inner"
-                        >
-                          29
-                        </div>
-                      </td>
-                      <td
-                        class="t-date-picker__cell t-date-picker__cell--additional"
-                      >
-                        <div
-                          class="t-date-picker__cell-inner"
-                        >
-                          30
-                        </div>
-                      </td>
-                      <td
-                        class="t-date-picker__cell t-date-picker__cell--additional"
-                      >
-                        <div
-                          class="t-date-picker__cell-inner"
-                        >
-                          31
-                        </div>
-                      </td>
-                      <td
                         class="t-date-picker__cell t-date-picker__cell--first-day-of-month"
                       >
                         <div
@@ -3374,10 +3347,6 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                           3
                         </div>
                       </td>
-                    </tr>
-                    <tr
-                      class="t-date-picker__table-date-row"
-                    >
                       <td
                         class="t-date-picker__cell"
                       >
@@ -3405,6 +3374,10 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                           6
                         </div>
                       </td>
+                    </tr>
+                    <tr
+                      class="t-date-picker__table-date-row"
+                    >
                       <td
                         class="t-date-picker__cell"
                       >
@@ -3441,10 +3414,6 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                           10
                         </div>
                       </td>
-                    </tr>
-                    <tr
-                      class="t-date-picker__table-date-row"
-                    >
                       <td
                         class="t-date-picker__cell"
                       >
@@ -3472,6 +3441,10 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                           13
                         </div>
                       </td>
+                    </tr>
+                    <tr
+                      class="t-date-picker__table-date-row"
+                    >
                       <td
                         class="t-date-picker__cell"
                       >
@@ -3508,10 +3481,6 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                           17
                         </div>
                       </td>
-                    </tr>
-                    <tr
-                      class="t-date-picker__table-date-row"
-                    >
                       <td
                         class="t-date-picker__cell"
                       >
@@ -3539,6 +3508,10 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                           20
                         </div>
                       </td>
+                    </tr>
+                    <tr
+                      class="t-date-picker__table-date-row"
+                    >
                       <td
                         class="t-date-picker__cell"
                       >
@@ -3575,10 +3548,6 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                           24
                         </div>
                       </td>
-                    </tr>
-                    <tr
-                      class="t-date-picker__table-date-row"
-                    >
                       <td
                         class="t-date-picker__cell"
                       >
@@ -3606,6 +3575,10 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                           27
                         </div>
                       </td>
+                    </tr>
+                    <tr
+                      class="t-date-picker__table-date-row"
+                    >
                       <td
                         class="t-date-picker__cell"
                       >
@@ -3642,10 +3615,6 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                           31
                         </div>
                       </td>
-                    </tr>
-                    <tr
-                      class="t-date-picker__table-date-row"
-                    >
                       <td
                         class="t-date-picker__cell t-date-picker__cell--additional"
                       >
@@ -3673,6 +3642,10 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                           3
                         </div>
                       </td>
+                    </tr>
+                    <tr
+                      class="t-date-picker__table-date-row"
+                    >
                       <td
                         class="t-date-picker__cell t-date-picker__cell--additional"
                       >
@@ -3707,6 +3680,33 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
                           class="t-date-picker__cell-inner"
                         >
                           7
+                        </div>
+                      </td>
+                      <td
+                        class="t-date-picker__cell t-date-picker__cell--additional"
+                      >
+                        <div
+                          class="t-date-picker__cell-inner"
+                        >
+                          8
+                        </div>
+                      </td>
+                      <td
+                        class="t-date-picker__cell t-date-picker__cell--additional"
+                      >
+                        <div
+                          class="t-date-picker__cell-inner"
+                        >
+                          9
+                        </div>
+                      </td>
+                      <td
+                        class="t-date-picker__cell t-date-picker__cell--additional"
+                      >
+                        <div
+                          class="t-date-picker__cell-inner"
+                        >
+                          10
                         </div>
                       </td>
                     </tr>

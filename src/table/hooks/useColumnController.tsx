@@ -161,7 +161,7 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
         if (columnControllerVisible.value === undefined) {
           dialogInstance.value.hide();
         } else {
-          props.onColumnControllerVisibleChange?.(false, { trigger: 'cancel' });
+          props.onColumnControllerVisibleChange?.(false, { trigger: 'confirm' });
           context.emit('update:columnControllerVisible', false);
         }
       },
@@ -170,7 +170,7 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
         if (columnControllerVisible.value === undefined) {
           dialogInstance.value.hide();
         } else {
-          props.onColumnControllerVisibleChange?.(false, { trigger: 'confirm' });
+          props.onColumnControllerVisibleChange?.(false, { trigger: 'cancel' });
           context.emit('update:columnControllerVisible', false);
         }
       },

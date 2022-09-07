@@ -1,5 +1,6 @@
 import { ref, computed, SetupContext } from '@vue/composition-api';
 import get from 'lodash/get';
+import isFunction from 'lodash/isFunction';
 import { PrimaryTableProps } from '../interface';
 import { getEditableKeysMap } from '../utils';
 import { AllValidateResult } from '../../form/type';
@@ -44,11 +45,12 @@ export default function useRowEdit(props: PrimaryTableProps, context: SetupConte
     const list = rowRules.map(
       (item) => new Promise<ErrorListObjectType>((resolve) => {
         const { editedRow, col } = item;
-        if (!col.edit || !col.edit.rules || !col.edit.rules.length) {
+        const rules = isFunction(col.edit.rules) ? col.edit.rules(item) : col.edit.rules;
+        if (!col.edit || !rules || !rules.length) {
           resolve({ ...item, errorList: [] });
           return;
         }
-        validate(editedRow[col.colKey], col.edit.rules).then((r) => {
+        validate(editedRow[col.colKey], rules).then((r) => {
           resolve({ ...item, errorList: r.filter((t) => !t.result) });
         });
       }),

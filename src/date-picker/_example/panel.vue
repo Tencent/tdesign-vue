@@ -17,6 +17,7 @@
         @panel-click="handlePanelClick"
         @cell-click="handleCellClick"
         :on-change="handleChange"
+        :value="['2022-02-16', '2022-02-21']"
       />
     </div>
     <div class="date-picker-panel-border">

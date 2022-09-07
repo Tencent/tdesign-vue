@@ -62,7 +62,6 @@ exports[`Textarea Textarea maxlengthVue demo works fine 1`] = `
   >
     <textarea
       class="t-textarea__inner"
-      maxlength="20"
       placeholder="请输入描述文案，文本长度最多20，maxlength=20"
       unselectable="off"
     />

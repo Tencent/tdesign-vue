@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 import { usePrefixClass, useConfig } from '../../hooks/useConfig';
 
 import { TdDateRangePickerProps, DateValue } from '../type';
-import { isValidDate, formatDate, getDefaultFormat } from './useFormat';
+import { isValidDate, formatDate, getDefaultFormat } from '../../_common/js/date-picker/format';
 import useRangeValue from './useRangeValue';
 
 export const PARTIAL_MAP = { first: 'start', second: 'end' };
