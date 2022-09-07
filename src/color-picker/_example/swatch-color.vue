@@ -1,14 +1,14 @@
 <template>
-  <div class="tdesign-demo-block-row">
-    <div>
+  <t-space>
+    <t-space direction="vertical" size="10px">
       <h6>自定义系统色</h6>
       <t-color-picker-panel v-model="color" :swatch-colors="systemColors" />
-    </div>
-    <div>
+    </t-space>
+    <t-space direction="vertical" size="10px">
       <h6>完全不显示系统色</h6>
       <t-color-picker-panel v-model="color" :swatch-colors="null" />
-    </div>
-  </div>
+    </t-space>
+  </t-space>
 </template>
 <script>
 export default {
@@ -20,12 +20,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.tdesign-demo-block-row {
-  align-items: flex-start;
-}
-h6 {
-  margin-bottom: 10px;
-}
-</style>
