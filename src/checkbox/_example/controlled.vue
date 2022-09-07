@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <t-space direction="vertical" size="36px">
     <!-- 单个 Checkbox 受控模式 -->
-    <t-checkbox v-model="checked1" @change="onChange1">语法糖（v-model）</t-checkbox>
-    <t-checkbox :checked="true" @change="onChange2">受控属性</t-checkbox>
-    <t-checkbox :defaultChecked="false" :onChange="onChange2">非受控属性</t-checkbox>
-
-    <br /><br /><br />
+    <t-space>
+      <t-checkbox v-model="checked1" @change="onChange1">语法糖（v-model）</t-checkbox>
+      <t-checkbox :checked="true" @change="onChange2">受控属性</t-checkbox>
+      <t-checkbox :defaultChecked="false" :onChange="onChange2">非受控属性</t-checkbox>
+    </t-space>
     <!-- 复选框框组受控模式 -->
     <t-checkbox-group :value="checked2" :options="options" :onChange="onChange2" />
-  </div>
+  </t-space>
 </template>
 
 <script>
