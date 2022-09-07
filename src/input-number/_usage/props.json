@@ -18,6 +18,12 @@
     "options": []
   },
   {
+    "name": "largeNumber",
+    "type": "Boolean",
+    "defaultValue": false,
+    "options": []
+  },
+  {
     "name": "size",
     "type": "enum",
     "defaultValue": "medium",

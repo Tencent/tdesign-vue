@@ -1,10 +1,10 @@
 <template>
-  <div class="tdesign-demo-block">
+  <t-space direction="vertical">
     <h3>允许输入</h3>
     <t-time-picker v-model="time1" allowInput @blur="blur" @focus="focus" />
     <h3>禁止输入</h3>
     <t-time-picker v-model="time2" :allowInput="false" />
-  </div>
+  </t-space>
 </template>
 
 <script>
@@ -28,15 +28,3 @@ export default {
   },
 };
 </script>
-
-<style lang="less" scoped>
-.tdesign-demo-block {
-  h3 {
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  h3:nth-child(3) {
-    margin-top: 30px;
-  }
-}
-</style>
