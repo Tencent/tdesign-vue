@@ -117,7 +117,7 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
         {
           [`${this.componentName}__label--required`]: this.needRequiredMark,
           [`${this.componentName}__label--colon`]: this.hasColon,
-          [`${this.componentName}__label--top`]: labelAlign === 'top' || !labelWidth,
+          [`${this.componentName}__label--top`]: this.getLabelContent() && (labelAlign === 'top' || !labelWidth),
           [`${this.componentName}__label--left`]: labelAlign === 'left' && labelWidth,
           [`${this.componentName}__label--right`]: labelAlign === 'right' && labelWidth,
         },

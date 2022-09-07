@@ -1,8 +1,8 @@
 <template>
-  <div class="tdesign-demo-block">
-    <t-time-picker class="demos" v-model="time1"> </t-time-picker>
-    <t-time-picker class="demos" v-model="time2"> </t-time-picker>
-  </div>
+  <t-space direction="vertical">
+    <t-time-picker v-model="time1"> </t-time-picker>
+    <t-time-picker v-model="time2"> </t-time-picker>
+  </t-space>
 </template>
 
 <script>
@@ -16,9 +16,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.demos {
-  margin-top: 20px;
-}
-</style>
