@@ -4,7 +4,7 @@ description: TDesign 适配桌面端的组件库，适合在 vue 2 技术栈项�
 spline: explain
 ---
 
-<div style="background: var(--td-warning-color-2); padding: 14px 24px; border-radius: 3px; color: #555a65">
+<div style="background: var(--td-warning-color-2); padding: 14px 24px; border-radius: 3px; color: #555a65; line-height: 22px">
   <p>由于 vue 2.7 与 tdesign-vue 目前的其他依赖不兼容，请暂时保证您的 vue 版本在 <b>2.7 以下</b>。</p>
   <p>建议您将项目依赖配置为`vue: ~2.6.14`。
   <p>如果项目同时使用了 vue-template-compiler，请保证 vue-template-compiler 的安装版本与vue一致。</p>
