@@ -19944,7 +19944,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
         >
           <tr>
             <th
-              class="t-table__cell-check t-table__th-row-select"
+              class="t-table__cell-check demo-multiple-select-cell t-table__th-row-select"
               data-colkey="row-select"
             >
               <div
@@ -20052,7 +20052,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="t-table__cell-check"
+              class="t-table__cell-check demo-multiple-select-cell"
             >
               <label
                 class="t-checkbox"
@@ -20116,7 +20116,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="t-table__cell-check"
+              class="t-table__cell-check demo-multiple-select-cell"
             >
               <label
                 class="t-checkbox t-is-disabled"
@@ -20181,7 +20181,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="t-table__cell-check"
+              class="t-table__cell-check demo-multiple-select-cell"
             >
               <label
                 class="t-checkbox"
@@ -20245,7 +20245,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="t-table__cell-check"
+              class="t-table__cell-check demo-multiple-select-cell"
             >
               <label
                 class="t-checkbox t-is-disabled"
@@ -20310,7 +20310,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="t-table__cell-check"
+              class="t-table__cell-check demo-multiple-select-cell"
             >
               <label
                 class="t-checkbox"
@@ -20459,7 +20459,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
         >
           <tr>
             <th
-              class="t-table__cell-check t-table__th-row-select"
+              class="t-table__cell-check demo-single-select-cell t-table__th-row-select"
               data-colkey="row-select"
             >
               <div
@@ -20551,7 +20551,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="t-table__cell-check"
+              class="t-table__cell-check demo-single-select-cell"
             >
               <label
                 class="t-radio"
@@ -20616,7 +20616,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             class="t-table__row--disabled"
           >
             <td
-              class="t-table__cell-check"
+              class="t-table__cell-check demo-single-select-cell"
             >
               <label
                 class="t-radio t-is-disabled"
@@ -20682,7 +20682,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             class="t-table__row--selected"
           >
             <td
-              class="t-table__cell-check"
+              class="t-table__cell-check demo-single-select-cell"
             >
               <label
                 class="t-radio t-is-checked"
@@ -20747,7 +20747,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             class="t-table__row--disabled"
           >
             <td
-              class="t-table__cell-check"
+              class="t-table__cell-check demo-single-select-cell"
             >
               <label
                 class="t-radio t-is-disabled"
@@ -20813,7 +20813,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             class=""
           >
             <td
-              class="t-table__cell-check"
+              class="t-table__cell-check demo-single-select-cell"
             >
               <label
                 class="t-radio"

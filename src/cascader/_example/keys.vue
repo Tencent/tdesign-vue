@@ -10,8 +10,8 @@
       v-model="value2"
       :keys="{ label: 'name', value: 'code', children: 'items' }"
       :options="options"
-      multiple
       clearable
+      multiple
     />
   </t-space>
 </template>

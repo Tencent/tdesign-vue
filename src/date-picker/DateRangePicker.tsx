@@ -15,7 +15,7 @@ import useRange from './hooks/useRange';
 import { initYearMonthTime } from './hooks/useRangeValue';
 import {
   parseToDayjs, formatTime, formatDate, isValidDate, getDefaultFormat,
-} from './hooks/useFormat';
+} from '../_common/js/date-picker/format';
 import { subtractMonth, addMonth, extractTimeObj } from '../_common/js/date-picker/utils';
 
 export default defineComponent({

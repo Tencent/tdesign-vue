@@ -23,6 +23,11 @@ dayjs.extend(customParseFormat);
 
 const timeArr = [EPickerCols.hour, EPickerCols.minute, EPickerCols.second, EPickerCols.milliSecond];
 
+const panelOffset = {
+  top: 15,
+  bottom: 21,
+};
+
 export default defineComponent({
   name: 'TTimePickerPanelCol',
   props: {
@@ -99,8 +104,17 @@ export default defineComponent({
     // 获取每个时间的高度
     const getItemHeight = () => {
       const maskDom = maskRef.value?.querySelector('div');
-      const timeItemTotalHeight = maskDom.offsetHeight + parseInt(getComputedStyle(maskDom).marginTop, 10);
-      return timeItemTotalHeight;
+
+      if (!maskDom) {
+        return {
+          offsetHeight: 0,
+          margin: 0,
+        };
+      }
+      return {
+        offsetHeight: maskDom.offsetHeight,
+        margin: parseInt(getComputedStyle(maskDom).marginTop, 10),
+      };
     };
 
     const timeItemCanUsed = (col: EPickerCols, el: string | number) => {
@@ -156,8 +170,9 @@ export default defineComponent({
       } // 一定是数字，直接cast
 
       const itemIdx = getColList(col).indexOf(padStart(String(time), 2, '0'));
-      const timeItemTotalHeight = getItemHeight();
-      const distance = Math.abs(itemIdx * timeItemTotalHeight + timeItemTotalHeight / 2);
+      const { offsetHeight, margin } = getItemHeight();
+      const timeItemTotalHeight = offsetHeight + margin;
+      const distance = Math.abs(Math.max(0, itemIdx) * timeItemTotalHeight);
       return distance;
     };
 
@@ -167,7 +182,9 @@ export default defineComponent({
 
       const scrollTop = (ctx.refs as any)[`${col}Col`]?.scrollTop;
 
-      let colStep = Math.abs(Math.round(scrollTop / getItemHeight() + 0.5));
+      const { offsetHeight, margin } = getItemHeight();
+      const timeItemTotalHeight = offsetHeight + margin;
+      let colStep = Math.abs(Math.round(scrollTop / timeItemTotalHeight + 0.5));
       const meridiem = MERIDIEM_LIST[Math.min(colStep - 1, 1)].toLowerCase(); // 处理PM、AM与am、pm
 
       if (Number.isNaN(colStep)) colStep = 1;
@@ -193,23 +210,25 @@ export default defineComponent({
 
       const distance = getScrollDistance(col, val);
 
-      if (!dayjs(dayjsValue.value).isValid()) return;
-      if (distance !== scrollTop) {
-        if (timeArr.includes(col)) {
-          if (timeItemCanUsed(col, val)) formattedVal = dayjsValue.value[col]?.(val).format(format.value);
-        } else {
-          const currentHour = dayjsValue.value.hour();
-          if (meridiem === AM && currentHour >= 12) {
-            formattedVal = dayjsValue.value.hour(currentHour - 12).format(format.value);
-          } else if (meridiem === PM && currentHour < 12) {
-            formattedVal = dayjsValue.value.hour(currentHour + 12).format(format.value);
-          }
-        }
-        props.onChange?.(formattedVal);
+      if (!dayjs(dayjsValue.value).isValid() || (value.value && !dayjs(value.value, format.value, true).isValid())) return;
 
+      if (timeArr.includes(col)) {
+        if (timeItemCanUsed(col, val)) formattedVal = dayjsValue.value[col]?.(val).format(format.value);
+      } else {
+        const currentHour = dayjsValue.value.hour();
+        if (meridiem === AM && currentHour >= 12) {
+          formattedVal = dayjsValue.value.hour(currentHour - 12).format(format.value);
+        } else if (meridiem === PM && currentHour < 12) {
+          formattedVal = dayjsValue.value.hour(currentHour + 12).format(format.value);
+        } else {
+          formattedVal = dayjsValue.value.format(format.value);
+        }
+      }
+      if (formattedVal !== value.value) props.onChange?.(formattedVal);
+      if (distance !== scrollTop) {
         const scrollCtrl = (ctx.refs as any)[`${col}Col`];
 
-        if (!distance || !scrollCtrl || scrollCtrl.scrollTop === distance) return;
+        if (!scrollCtrl || scrollCtrl.scrollTop === distance) return;
 
         scrollCtrl.scrollTo?.({
           top: distance,
@@ -227,7 +246,7 @@ export default defineComponent({
       const distance = getScrollDistance(col, time);
       const scrollCtrl = (ctx.refs as any)[`${col}Col`];
 
-      if (!distance || !scrollCtrl || scrollCtrl.scrollTop === distance || !timeItemCanUsed(col, time)) return;
+      if (!scrollCtrl || scrollCtrl.scrollTop === distance || !timeItemCanUsed(col, time)) return;
       scrollCtrl.scrollTo?.({
         top: distance,
         behavior,
@@ -328,6 +347,10 @@ export default defineComponent({
             ref={`${col}Col`}
             class={`${this.panelClassName}-body-scroll`}
             onScroll={debounce(() => this.handleScroll(col), 50)}
+            style={{
+              '--timePickerPanelOffsetTop': panelOffset.top,
+              '--timePickerPanelOffsetBottom': panelOffset.bottom,
+            }}
           >
             {this.getColList(col).map((el) => (
               <li
