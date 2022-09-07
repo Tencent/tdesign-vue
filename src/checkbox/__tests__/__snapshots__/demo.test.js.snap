@@ -1,616 +1,213 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Checkbox Checkbox baseVue demo works fine 1`] = `
-<div>
-  <label
-    class="t-checkbox"
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
   >
-    <input
-      class="t-checkbox__former"
-      type="checkbox"
-      value=""
-    />
-    <span
-      class="t-checkbox__input"
-    />
-    <span
-      class="t-checkbox__label"
+    <label
+      class="t-checkbox"
     >
-      未选中项
-    </span>
-  </label>
-   
-  <label
-    class="t-checkbox t-is-indeterminate"
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        未选中项
+      </span>
+    </label>
+  </div>
+  <div
+    class="t-space-item"
   >
-    <input
-      class="t-checkbox__former"
-      indeterminate="indeterminate"
-      type="checkbox"
-      value=""
-    />
-    <span
-      class="t-checkbox__input"
-    />
-    <span
-      class="t-checkbox__label"
+    <label
+      class="t-checkbox t-is-indeterminate"
     >
-      半选状态
-    </span>
-  </label>
-   
-  <label
-    class="t-checkbox t-is-checked"
+      <input
+        class="t-checkbox__former"
+        indeterminate="indeterminate"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        半选状态
+      </span>
+    </label>
+  </div>
+  <div
+    class="t-space-item"
   >
-    <input
-      class="t-checkbox__former"
-      type="checkbox"
-      value=""
-    />
-    <span
-      class="t-checkbox__input"
-    />
-    <span
-      class="t-checkbox__label"
+    <label
+      class="t-checkbox t-is-checked"
     >
-      选中项
-    </span>
-  </label>
-   
-  <label
-    class="t-checkbox t-is-disabled"
+      <input
+        class="t-checkbox__former"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        选中项
+      </span>
+    </label>
+  </div>
+  <div
+    class="t-space-item"
   >
-    <input
-      class="t-checkbox__former"
-      disabled="disabled"
-      type="checkbox"
-      value=""
-    />
-    <span
-      class="t-checkbox__input"
-    />
-    <span
-      class="t-checkbox__label"
+    <label
+      class="t-checkbox t-is-disabled"
     >
-      未选禁用项
-    </span>
-  </label>
-   
-  <label
-    class="t-checkbox t-is-checked t-is-disabled"
+      <input
+        class="t-checkbox__former"
+        disabled="disabled"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        未选禁用项
+      </span>
+    </label>
+  </div>
+  <div
+    class="t-space-item"
   >
-    <input
-      class="t-checkbox__former"
-      disabled="disabled"
-      type="checkbox"
-      value=""
-    />
-    <span
-      class="t-checkbox__input"
-    />
-    <span
-      class="t-checkbox__label"
+    <label
+      class="t-checkbox t-is-checked t-is-disabled"
     >
-      选中禁用项
-    </span>
-  </label>
+      <input
+        class="t-checkbox__former"
+        disabled="disabled"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        选中禁用项
+      </span>
+    </label>
+  </div>
 </div>
 `;
 
 exports[`Checkbox Checkbox controlledVue demo works fine 1`] = `
-<div>
-  <label
-    class="t-checkbox t-is-checked"
-  >
-    <input
-      class="t-checkbox__former"
-      type="checkbox"
-      value=""
-    />
-    <span
-      class="t-checkbox__input"
-    />
-    <span
-      class="t-checkbox__label"
-    >
-      语法糖（v-model）
-    </span>
-  </label>
-   
-  <label
-    class="t-checkbox t-is-checked"
-  >
-    <input
-      class="t-checkbox__former"
-      type="checkbox"
-      value=""
-    />
-    <span
-      class="t-checkbox__input"
-    />
-    <span
-      class="t-checkbox__label"
-    >
-      受控属性
-    </span>
-  </label>
-   
-  <label
-    class="t-checkbox"
-  >
-    <input
-      class="t-checkbox__former"
-      type="checkbox"
-      value=""
-    />
-    <span
-      class="t-checkbox__input"
-    />
-    <span
-      class="t-checkbox__label"
-    >
-      非受控属性
-    </span>
-  </label>
-   
-  <br />
-  <br />
-  <br />
-   
-  <div
-    class="t-checkbox-group"
-  >
-    <label
-      class="t-checkbox t-is-indeterminate"
-    >
-      <input
-        class="t-checkbox__former"
-        indeterminate="indeterminate"
-        name=""
-        type="checkbox"
-        value=""
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        全选
-      </span>
-    </label>
-    <label
-      class="t-checkbox t-is-checked"
-    >
-      <input
-        class="t-checkbox__former"
-        name=""
-        type="checkbox"
-        value="1"
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        受控模式选项一
-      </span>
-    </label>
-    <label
-      class="t-checkbox"
-    >
-      <input
-        class="t-checkbox__former"
-        name=""
-        type="checkbox"
-        value="2"
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        受控模式选项二
-      </span>
-    </label>
-    <label
-      class="t-checkbox"
-    >
-      <input
-        class="t-checkbox__former"
-        name=""
-        type="checkbox"
-        value="3"
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        受控模式选项三
-      </span>
-    </label>
-  </div>
-</div>
-`;
-
-exports[`Checkbox Checkbox groupVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column"
+  class="t-space t-space-vertical"
+  style="gap: 36px;"
 >
-  <div>
-    方式一：业务侧自定义全选功能。选中值: 选项一
-  </div>
-   
-  <div>
-    <label
-      class="t-checkbox t-is-indeterminate"
-    >
-      <input
-        class="t-checkbox__former"
-        indeterminate="indeterminate"
-        type="checkbox"
-        value=""
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        全选
-      </span>
-    </label>
-  </div>
-   
   <div
-    class="t-checkbox-group"
+    class="t-space-item"
   >
-    <label
-      class="t-checkbox t-is-checked"
+    <div
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
     >
-      <input
-        class="t-checkbox__former"
-        name=""
-        type="checkbox"
-        value="选项一"
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
+      <div
+        class="t-space-item"
       >
-        <div>
-          选项一
-        </div>
-      </span>
-    </label>
-    <label
-      class="t-checkbox"
-    >
-      <input
-        class="t-checkbox__former"
-        name=""
-        type="checkbox"
-        value="选项二"
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
+        <label
+          class="t-checkbox t-is-checked"
+        >
+          <input
+            class="t-checkbox__former"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            语法糖（v-model）
+          </span>
+        </label>
+      </div>
+      <div
+        class="t-space-item"
       >
-        选项二
-      </span>
-    </label>
-    <label
-      class="t-checkbox"
-    >
-      <input
-        class="t-checkbox__former"
-        name=""
-        type="checkbox"
-        value="选项三"
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
+        <label
+          class="t-checkbox t-is-checked"
+        >
+          <input
+            class="t-checkbox__former"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            受控属性
+          </span>
+        </label>
+      </div>
+      <div
+        class="t-space-item"
       >
-        选项三
-      </span>
-    </label>
+        <label
+          class="t-checkbox"
+        >
+          <input
+            class="t-checkbox__former"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            非受控属性
+          </span>
+        </label>
+      </div>
+    </div>
   </div>
-   
-  <br />
-   
-  <div>
-    方式二：组件内置全选功能，使用插槽定义选项。选中值: 选项一
-  </div>
-   
   <div
-    class="t-checkbox-group"
-  >
-    <label
-      class="t-checkbox t-is-indeterminate"
-    >
-      <input
-        class="t-checkbox__former"
-        indeterminate="indeterminate"
-        name=""
-        type="checkbox"
-        value=""
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        全选
-      </span>
-    </label>
-     
-    <label
-      class="t-checkbox t-is-checked"
-    >
-      <input
-        class="t-checkbox__former"
-        name=""
-        type="checkbox"
-        value="选项一"
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        选项一
-      </span>
-    </label>
-     
-    <label
-      class="t-checkbox"
-    >
-      <input
-        class="t-checkbox__former"
-        name=""
-        type="checkbox"
-        value="选项二"
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        选项二
-      </span>
-    </label>
-     
-    <label
-      class="t-checkbox"
-    >
-      <input
-        class="t-checkbox__former"
-        name=""
-        type="checkbox"
-        value="选项三"
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        选项三
-      </span>
-    </label>
-  </div>
-   
-  <br />
-   
-  <div>
-    方式三：组件内置全选功能，使用 \`options\` 定义选项。选中值: 选项一, 选项二, 选项三
-  </div>
-   
-  <div
-    class="t-checkbox-group"
-  >
-    <label
-      class="t-checkbox t-is-checked"
-    >
-      <input
-        class="t-checkbox__former"
-        name=""
-        type="checkbox"
-        value=""
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        全选
-      </span>
-    </label>
-    <label
-      class="t-checkbox t-is-checked"
-    >
-      <input
-        class="t-checkbox__former"
-        name=""
-        type="checkbox"
-        value="选项一"
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        选项一
-      </span>
-    </label>
-    <label
-      class="t-checkbox t-is-checked"
-    >
-      <input
-        class="t-checkbox__former"
-        name=""
-        type="checkbox"
-        value="选项二"
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        <div>
-          选项二
-        </div>
-      </span>
-    </label>
-    <label
-      class="t-checkbox t-is-checked"
-    >
-      <input
-        class="t-checkbox__former"
-        name=""
-        type="checkbox"
-        value="选项三"
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        选项三
-      </span>
-    </label>
-  </div>
-   
-  <br />
-   
-  <div>
-    方式四：组件内置全选功能，非受控用法
-  </div>
-   
-  <div
-    class="t-checkbox-group"
-  >
-    <label
-      class="t-checkbox t-is-indeterminate"
-    >
-      <input
-        class="t-checkbox__former"
-        indeterminate="indeterminate"
-        name=""
-        type="checkbox"
-        value=""
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        全选
-      </span>
-    </label>
-    <label
-      class="t-checkbox t-is-checked"
-    >
-      <input
-        class="t-checkbox__former"
-        name=""
-        type="checkbox"
-        value="选项一"
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        选项一
-      </span>
-    </label>
-    <label
-      class="t-checkbox"
-    >
-      <input
-        class="t-checkbox__former"
-        name=""
-        type="checkbox"
-        value="选项二"
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        <div>
-          选项二
-        </div>
-      </span>
-    </label>
-    <label
-      class="t-checkbox"
-    >
-      <input
-        class="t-checkbox__former"
-        name=""
-        type="checkbox"
-        value="选项三"
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
-      >
-        选项三
-      </span>
-    </label>
-  </div>
-</div>
-`;
-
-exports[`Checkbox Checkbox linkVue demo works fine 1`] = `
-<div>
-  <div
-    class="demo-checkbox-row-desc"
-  >
-    选中值: [
-  "选项二"
-]
-  </div>
-   
-  <div
-    class="demo-checkbox-row"
+    class="t-space-item"
   >
     <div
       class="t-checkbox-group"
     >
       <label
-        class="t-checkbox"
+        class="t-checkbox t-is-indeterminate"
       >
         <input
           class="t-checkbox__former"
-          name="city"
+          indeterminate="indeterminate"
+          name=""
           type="checkbox"
-          value="选项一"
+          value=""
         />
         <span
           class="t-checkbox__input"
@@ -618,7 +215,7 @@ exports[`Checkbox Checkbox linkVue demo works fine 1`] = `
         <span
           class="t-checkbox__label"
         >
-          选项一
+          全选
         </span>
       </label>
       <label
@@ -626,9 +223,9 @@ exports[`Checkbox Checkbox linkVue demo works fine 1`] = `
       >
         <input
           class="t-checkbox__former"
-          name="city"
+          name=""
           type="checkbox"
-          value="选项二"
+          value="1"
         />
         <span
           class="t-checkbox__input"
@@ -636,7 +233,7 @@ exports[`Checkbox Checkbox linkVue demo works fine 1`] = `
         <span
           class="t-checkbox__label"
         >
-          选项二
+          受控模式选项一
         </span>
       </label>
       <label
@@ -644,9 +241,9 @@ exports[`Checkbox Checkbox linkVue demo works fine 1`] = `
       >
         <input
           class="t-checkbox__former"
-          name="city"
+          name=""
           type="checkbox"
-          value="选项三"
+          value="2"
         />
         <span
           class="t-checkbox__input"
@@ -654,25 +251,539 @@ exports[`Checkbox Checkbox linkVue demo works fine 1`] = `
         <span
           class="t-checkbox__label"
         >
-          选项三
+          受控模式选项二
+        </span>
+      </label>
+      <label
+        class="t-checkbox"
+      >
+        <input
+          class="t-checkbox__former"
+          name=""
+          type="checkbox"
+          value="3"
+        />
+        <span
+          class="t-checkbox__input"
+        />
+        <span
+          class="t-checkbox__label"
+        >
+          受控模式选项三
         </span>
       </label>
     </div>
   </div>
-   
+</div>
+`;
+
+exports[`Checkbox Checkbox groupVue demo works fine 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 48px;"
+>
   <div
-    class="demo-checkbox-row"
+    class="t-space-item"
   >
-    <button
-      class="t-button t-size-s t-button--variant-base t-button--theme-primary"
-      type="button"
+    <div
+      class="t-space t-space-vertical"
+      style="gap: 16px;"
     >
-      <span
-        class="t-button__text"
+      <div
+        class="t-space-item"
       >
-        重置
-      </span>
-    </button>
+        <div>
+          方式一：业务侧自定义全选功能。选中值: 选项一
+        </div>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div>
+          <label
+            class="t-checkbox t-is-indeterminate"
+          >
+            <input
+              class="t-checkbox__former"
+              indeterminate="indeterminate"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              全选
+            </span>
+          </label>
+        </div>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-checkbox-group"
+        >
+          <label
+            class="t-checkbox t-is-checked"
+          >
+            <input
+              class="t-checkbox__former"
+              name=""
+              type="checkbox"
+              value="选项一"
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              <div>
+                选项一
+              </div>
+            </span>
+          </label>
+          <label
+            class="t-checkbox"
+          >
+            <input
+              class="t-checkbox__former"
+              name=""
+              type="checkbox"
+              value="选项二"
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              选项二
+            </span>
+          </label>
+          <label
+            class="t-checkbox"
+          >
+            <input
+              class="t-checkbox__former"
+              name=""
+              type="checkbox"
+              value="选项三"
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              选项三
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-vertical"
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <div>
+          方式二：组件内置全选功能，使用插槽定义选项。选中值: 选项一
+        </div>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-checkbox-group"
+        >
+          <label
+            class="t-checkbox t-is-indeterminate"
+          >
+            <input
+              class="t-checkbox__former"
+              indeterminate="indeterminate"
+              name=""
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              全选
+            </span>
+          </label>
+           
+          <label
+            class="t-checkbox t-is-checked"
+          >
+            <input
+              class="t-checkbox__former"
+              name=""
+              type="checkbox"
+              value="选项一"
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              选项一
+            </span>
+          </label>
+           
+          <label
+            class="t-checkbox"
+          >
+            <input
+              class="t-checkbox__former"
+              name=""
+              type="checkbox"
+              value="选项二"
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              选项二
+            </span>
+          </label>
+           
+          <label
+            class="t-checkbox"
+          >
+            <input
+              class="t-checkbox__former"
+              name=""
+              type="checkbox"
+              value="选项三"
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              选项三
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-vertical"
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <div>
+          方式三：组件内置全选功能，使用 \`options\` 定义选项。选中值: 选项一, 选项二, 选项三
+        </div>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-checkbox-group"
+        >
+          <label
+            class="t-checkbox t-is-checked"
+          >
+            <input
+              class="t-checkbox__former"
+              name=""
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              全选
+            </span>
+          </label>
+          <label
+            class="t-checkbox t-is-checked"
+          >
+            <input
+              class="t-checkbox__former"
+              name=""
+              type="checkbox"
+              value="选项一"
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              选项一
+            </span>
+          </label>
+          <label
+            class="t-checkbox t-is-checked"
+          >
+            <input
+              class="t-checkbox__former"
+              name=""
+              type="checkbox"
+              value="选项二"
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              <div>
+                选项二
+              </div>
+            </span>
+          </label>
+          <label
+            class="t-checkbox t-is-checked"
+          >
+            <input
+              class="t-checkbox__former"
+              name=""
+              type="checkbox"
+              value="选项三"
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              选项三
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-vertical"
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <div>
+          方式四：组件内置全选功能，非受控用法
+        </div>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-checkbox-group"
+        >
+          <label
+            class="t-checkbox t-is-indeterminate"
+          >
+            <input
+              class="t-checkbox__former"
+              indeterminate="indeterminate"
+              name=""
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              全选
+            </span>
+          </label>
+          <label
+            class="t-checkbox t-is-checked"
+          >
+            <input
+              class="t-checkbox__former"
+              name=""
+              type="checkbox"
+              value="选项一"
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              选项一
+            </span>
+          </label>
+          <label
+            class="t-checkbox"
+          >
+            <input
+              class="t-checkbox__former"
+              name=""
+              type="checkbox"
+              value="选项二"
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              <div>
+                选项二
+              </div>
+            </span>
+          </label>
+          <label
+            class="t-checkbox"
+          >
+            <input
+              class="t-checkbox__former"
+              name=""
+              type="checkbox"
+              value="选项三"
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              选项三
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Checkbox Checkbox linkVue demo works fine 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 24px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div>
+      选中值: [
+  "选项二"
+]
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-vertical"
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-checkbox-group"
+        >
+          <label
+            class="t-checkbox"
+          >
+            <input
+              class="t-checkbox__former"
+              name="city"
+              type="checkbox"
+              value="选项一"
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              选项一
+            </span>
+          </label>
+          <label
+            class="t-checkbox t-is-checked"
+          >
+            <input
+              class="t-checkbox__former"
+              name="city"
+              type="checkbox"
+              value="选项二"
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              选项二
+            </span>
+          </label>
+          <label
+            class="t-checkbox"
+          >
+            <input
+              class="t-checkbox__former"
+              name="city"
+              type="checkbox"
+              value="选项三"
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              选项三
+            </span>
+          </label>
+        </div>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <button
+          class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            重置
+          </span>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;
