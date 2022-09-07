@@ -48,8 +48,3 @@ export default {
   },
 };
 </script>
-<style>
-.t-cascader-demo {
-  width: 100%;
-}
-</style>

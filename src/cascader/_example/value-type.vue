@@ -1,8 +1,8 @@
 <template>
   <t-space direction="vertical">
-    {{ value }}
+    <div>{{ value }}</div>
     <t-cascader v-model="value" :options="options" value-type="full" />
-    {{ value2 }}
+    <div>{{ value2 }}</div>
     <t-cascader v-model="value2" multiple :options="options" value-type="full" />
   </t-space>
 </template>
