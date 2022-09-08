@@ -1558,6 +1558,16 @@ exports[`Cascader Cascader valueTypeVue demo works fine 1`] = `
   <div
     class="t-space-item"
   >
+    <div>
+      [
+  "1",
+  "1.1"
+]
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
     <div
       class="t-input__wrap t-cascader"
     >
@@ -1595,6 +1605,22 @@ exports[`Cascader Cascader valueTypeVue demo works fine 1`] = `
           </svg>
         </span>
       </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div>
+      [
+  [
+    "1",
+    "1.1"
+  ],
+  [
+    "1",
+    "1.2"
+  ]
+]
     </div>
   </div>
   <div
