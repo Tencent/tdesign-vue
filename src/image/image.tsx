@@ -1,28 +1,37 @@
 import { defineComponent, ref } from '@vue/composition-api';
+import omit from 'lodash/omit';
+import observe from '../_common/js/utils/observe';
 import { useConfig } from '../config-provider/useConfig';
 import { TdImageProps } from './type';
+import props from './props';
 
 export default defineComponent({
   name: 'TImage',
   components: {},
+  props,
   setup(props: TdImageProps) {
     const {
-      src,
-      alt,
-      fit,
-      position,
-      shape,
-      placeholder,
-      loading,
-      error,
-      overlayTrigger,
-      overlayContent,
-      lazy,
-      gallery,
-      onLoad,
-      onError,
-      ...rest
+      lazy, overlayTrigger, onLoad, onError,
     } = props;
+
+    const rest = omit(props, [
+      'className',
+      'src',
+      'style',
+      'alt',
+      'fit',
+      'position',
+      'shape',
+      'placeholder',
+      'loading',
+      'error',
+      'overlayTrigger',
+      'overlayContent',
+      'lazy',
+      'gallery',
+      'onLoad',
+      'onError',
+    ]);
 
     const { classPrefix } = useConfig();
     const imageRef = ref<HTMLElement>(null);
@@ -49,56 +58,55 @@ export default defineComponent({
       shouldShowOverlay.value = !shouldShowOverlay.value;
     };
 
-    const renderOverlay = () => {
-      if (!overlayContent) return null;
+    return {
+      imageRef,
+      handleLoadImage,
+      classPrefix,
+      hasMouseEvent,
+      handleToggleOverlay,
+      shouldShowOverlay,
+      hasError,
+      shouldLoad,
+      handleError,
+      handleLoad,
+      isLoaded,
+      rest,
+    };
+  },
+  mounted(this) {
+    if (!this.lazy || !this.imageRef) return;
+
+    const io = observe(this.imageRef, null, this.handleLoadImage, 0);
+    this.io = io;
+  },
+  destroyed(this) {
+    this.imageRef && this.io && (this.io as IntersectionObserver).unobserve(this.imageRef);
+  },
+  methods: {
+    renderPlaceholder() {
+      if (!this.placeholder) {
+        return null;
+      }
+      return <div class={`${this.classPrefix}-image__placeholder`}>{this.placeholder}</div>;
+    },
+    renderGalleryShadow() {
+      if (!this.gallery) return null;
+      return <div class={`${this.classPrefix}-image__gallery-shadow`} />;
+    },
+    renderOverlay() {
+      if (!this.overlayContent) return null;
       return (
         <div
           class={[
-            `${classPrefix}-image__overlay-content`,
-            !shouldShowOverlay && `${classPrefix}-image__overlay-content--hidden`,
+            `${this.classPrefix}-image__overlay-content`,
+            !this.shouldShowOverlay && `${this.classPrefix}-image__overlay-content--hidden`,
           ]}
         >
-          {overlayContent}
+          {this.overlayContent}
         </div>
       );
-    };
-
-    const renderPlaceholder = () => {
-      if (!placeholder) {
-        return null;
-      }
-      return <div className={`${classPrefix}-image__placeholder`}>{placeholder}</div>;
-    };
-
-    const renderGalleryShadow = () => {
-      if (!gallery) return null;
-      return <div className={`${classPrefix}-image__gallery-shadow`} />;
-    };
-
-    return {
-      classPrefix,
-      shape,
-      gallery,
-      hasMouseEvent,
-      handleToggleOverlay,
-      rest,
-      renderPlaceholder,
-      renderGalleryShadow,
-      hasError,
-      shouldLoad,
-      src,
-      handleError,
-      handleLoad,
-      fit,
-      position,
-      alt,
-      isLoaded,
-      loading,
-      error,
-      renderOverlay,
-    };
+    },
   },
-  methods: {},
 
   render() {
     return (
@@ -109,6 +117,7 @@ export default defineComponent({
           `${this.classPrefix}-image__wrapper--shape-${this.shape}`,
           this.gallery && `${this.classPrefix}-image__wrapper--gallery`,
           this.hasMouseEvent && `${this.classPrefix}-image__wrapper--need-hover`,
+          this.className,
         ]}
         {...(this.hasMouseEvent
           ? {
@@ -119,38 +128,34 @@ export default defineComponent({
         {...this.rest}
       >
         {this.renderPlaceholder()}
-
         {this.renderGalleryShadow()}
 
-        {this.hasError || !this.shouldLoad ? (
-          <div className={`${this.classPrefix}-image`} />
-        ) : (
-          <template>
-            <img
-              src={this.src}
-              onError={this.handleError}
-              onLoad={this.handleLoad}
-              class={[
-                `${this.classPrefix}-image`,
-                `${this.classPrefix}-image--fit-${this.fit}`,
-                `${this.classPrefix}-image--position-${this.position}`,
-              ]}
-              alt={this.alt}
-            />
-            {!this.isLoaded && (
-              <div className={`${this.classPrefix}-image__loading`}>
-                {this.loading || (
-                  <div direction="vertical" size={8} align="center">
-                    图片加载中
-                  </div>
-                )}
+        {(this.hasError || !this.shouldLoad) && <div class={`${this.classPrefix}-image`} />}
+        {!(this.hasError || !this.shouldLoad) && (
+          <img
+            src={this.src}
+            onError={this.handleError}
+            onLoad={this.handleLoad}
+            class={[
+              `${this.classPrefix}-image`,
+              `${this.classPrefix}-image--fit-${this.fit}`,
+              `${this.classPrefix}-image--position-${this.position}`,
+            ]}
+            alt={this.alt}
+          />
+        )}
+        {!(this.hasError || !this.shouldLoad) && !this.isLoaded && (
+          <div class={`${this.classPrefix}-image__loading`}>
+            {this.loading || (
+              <div direction="vertical" size={8} align="center">
+                图片加载中
               </div>
             )}
-          </template>
+          </div>
         )}
 
         {this.hasError && (
-          <div className={`${this.classPrefix}-image__error`}>
+          <div class={`${this.classPrefix}-image__error`}>
             {this.error || (
               <div direction="vertical" size={8} align="center">
                 图片无法显示

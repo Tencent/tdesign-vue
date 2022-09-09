@@ -47,6 +47,7 @@ export * from './badge';
 export * from './calendar';
 export * from './card';
 export * from './comment';
+export * from './image';
 export * from './list';
 export * from './loading';
 export * from './progress';

@@ -1,16 +1,19 @@
 <template>
-  <div>
+  <t-space :breakLine="true" :size="16">
     <t-image
       v-for="item in mode"
       :key="item"
       src="https://tdesign.gtimg.com/demo/demo-image-1.png"
       :fit="item"
-      :style="{ width: 120, height: 120 }"
+      :style="{ width: '120px', height: '120px' }"
     />
-  </div>
+  </t-space>
 </template>
+
 <script>
-export default {
+import Vue from 'vue';
+
+export default Vue.extend({
   data() {
     return {
       mode: ['fill', 'contain', 'cover', 'none', 'scale-down'],
@@ -24,5 +27,5 @@ export default {
       console.log(this.input, val);
     },
   },
-};
+});
 </script>
