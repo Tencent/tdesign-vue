@@ -1,6 +1,5 @@
 <template>
-  <t-space :size="10" direction="vertical">
-    <!-- <div class="operations"> -->
+  <t-space :size="10" direction="vertical" class="tdesign-tree-demo">
     <t-form labelWidth="150">
       <t-form-item label="切换数据">
         <t-switch @change="toggleData" />
@@ -9,7 +8,6 @@
         <t-switch v-model="transition" />
       </t-form-item>
     </t-form>
-    <!-- </div> -->
     <t-tree :data="items" expand-all :transition="transition" />
   </t-space>
 </template>
@@ -92,22 +90,7 @@ export default {
 </script>
 
 <style scoped>
-.tdesign-tree-demo .t-tree {
-  margin-bottom: 20px;
-}
-.tdesign-tree-demo .title {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .tips {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .operations {
-  margin-bottom: 10px;
-}
 .tdesign-tree-demo .t-form__item {
   margin-bottom: 5px;
-}
-.tdesign-tree-demo .t-button {
-  margin: 0 10px 10px 0;
 }
 </style>

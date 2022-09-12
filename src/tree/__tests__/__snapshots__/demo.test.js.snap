@@ -2,7 +2,7 @@
 
 exports[`Tree Tree activableVue demo works fine 1`] = `
 <div
-  class="t-space t-space-vertical"
+  class="tdesign-tree-demo t-space t-space-vertical"
   style="gap: 10px;"
 >
   <div
@@ -281,7 +281,9 @@ exports[`Tree Tree activableVue demo works fine 1`] = `
 `;
 
 exports[`Tree Tree baseVue demo works fine 1`] = `
-<div>
+<div
+  class="tdesign-tree-demo"
+>
   <div
     class="t-tree t-tree--hoverable t-tree--transition"
   >
@@ -3254,7 +3256,7 @@ exports[`Tree Tree emptyVue demo works fine 1`] = `
 
 exports[`Tree Tree expandAllVue demo works fine 1`] = `
 <div
-  class="t-space t-space-vertical"
+  class="tdesign-tree-demo t-space t-space-vertical"
   style="gap: 10px;"
 >
   <div
@@ -3812,7 +3814,7 @@ exports[`Tree Tree expandLevelVue demo works fine 1`] = `
 
 exports[`Tree Tree expandMutexVue demo works fine 1`] = `
 <div
-  class="t-space t-space-vertical"
+  class="tdesign-tree-demo t-space t-space-vertical"
   style="gap: 10px;"
 >
   <div
@@ -4711,7 +4713,7 @@ exports[`Tree Tree labelVue demo works fine 1`] = `
 
 exports[`Tree Tree lazyVue demo works fine 1`] = `
 <div
-  class="t-space t-space-vertical"
+  class="tdesign-tree-demo t-space t-space-vertical"
   style="gap: 10px;"
 >
   <div

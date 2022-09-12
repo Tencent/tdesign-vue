@@ -1,5 +1,5 @@
 <template>
-  <t-space :size="10" direction="vertical">
+  <t-space :size="10" direction="vertical" class="tdesign-tree-demo">
     <h3>数据延迟加载</h3>
     <p>默认为点击加载数据。</p>
     <p>
@@ -81,23 +81,8 @@ export default {
 };
 </script>
 
-<!-- <style scoped>
-.tdesign-tree-demo .t-tree {
-  margin-bottom: 20px;
-}
-.tdesign-tree-demo .title {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .tips {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .operations {
-  margin-bottom: 10px;
-}
+<style scoped>
 .tdesign-tree-demo .t-form__item {
   margin-bottom: 5px;
 }
-.tdesign-tree-demo .t-button {
-  margin: 0 10px 10px 0;
-}
-</style> -->
+</style>

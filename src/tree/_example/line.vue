@@ -1,5 +1,4 @@
 <template>
-  <!-- <div class="tdesign-demo-block-column-large tdesign-tree-demo tdesign-tree-line"> -->
   <t-space :size="32" direction="vertical" class="tdesign-tree-line">
     <t-form>
       <t-form-item label="显示连线" style="margin-bottom: 16px">

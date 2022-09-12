@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tdesign-tree-demo">
     <t-tree :data="items" activable hover transition />
   </div>
 </template>
@@ -60,10 +60,7 @@ export default {
 </script>
 
 <style scoped>
-/* .t-tree {
-  margin-bottom: 20px;
-} */
-/* .tdesign-tree-demo .title {
+.tdesign-tree-demo .title {
   margin-bottom: 10px;
 }
 .tdesign-tree-demo .tips {
@@ -77,5 +74,5 @@ export default {
 }
 .tdesign-tree-demo .t-button {
   margin: 0 10px 10px 0;
-} */
+}
 </style>

@@ -1,12 +1,10 @@
 <template>
   <t-space :size="10" direction="vertical">
-    <!-- <div class="operations"> -->
     <t-form labelWidth="150">
       <t-form-item label="可选">
         <t-switch v-model="checkable" />
       </t-form-item>
     </t-form>
-    <!-- </div> -->
     <t-tree :data="items" hover expand-all :checkable="checkable" v-model="value" :load="load" :lazy="false" />
   </t-space>
 </template>
