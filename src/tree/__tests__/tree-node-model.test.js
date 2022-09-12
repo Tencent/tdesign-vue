@@ -184,6 +184,9 @@ describe('Tree:treeNodeModel', () => {
             {
               value: 't1.2',
             },
+            {
+              value: 't1.4',
+            },
           ],
         },
       ];
@@ -203,7 +206,7 @@ describe('Tree:treeNodeModel', () => {
 
       const root = tree.getItem('t1');
       const children = root.getChildren();
-      expect(children.length).toBe(3);
+      expect(children.length).toBe(4);
       expect(children[2].value).toBe('t1.3');
     });
   });
