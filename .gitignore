@@ -5,6 +5,7 @@ node_modules
 es/
 esm/
 lib/
+cjs/
 dist/
 
 _site
