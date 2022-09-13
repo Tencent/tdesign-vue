@@ -143,6 +143,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
     },
 
     reUpload(e: MouseEvent) {
+      e.stopPropagation();
       this.remove({ e, file: this.file });
       this.trigger(e);
     },
@@ -173,7 +174,10 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
                   theme="primary"
                   variant="text"
                   class={`${this.componentName}__dragger-progress-cancel`}
-                  onClick={this.cancel}
+                  onClick={(e: MouseEvent) => {
+                    this.cancel?.(e);
+                    e.stopPropagation();
+                  }}
                 >
                   {this.locale?.cancelUploadText || this.global.cancelUploadText}
                 </TButton>
@@ -182,7 +186,10 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
                 <TButton
                   theme="primary"
                   variant="text"
-                  onClick={(e: MouseEvent) => this.upload({ ...this.loadingFile }, e)}
+                  onClick={(e: MouseEvent) => {
+                    this.upload({ ...this.loadingFile }, e);
+                    e.stopPropagation();
+                  }}
                 >
                   {this.locale?.triggerUploadText?.normal || this.global.triggerUploadText.normal}
                 </TButton>
@@ -198,7 +205,14 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
                 >
                   {this.locale?.triggerUploadText?.reupload || this.global.triggerUploadText.reupload}
                 </TButton>
-                <TButton theme="primary" variant="text" onClick={this.remove}>
+                <TButton
+                  theme="primary"
+                  variant="text"
+                  onClick={(e: MouseEvent) => {
+                    this.remove?.({ e, file: this.file });
+                    e.stopPropagation();
+                  }}
+                >
                   {this.locale?.triggerUploadText?.delete || this.global.triggerUploadText.delete}
                 </TButton>
               </div>
