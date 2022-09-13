@@ -5,6 +5,16 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.46.5 `2022-09-13` 
+### 🐞 Bug Fixes
+- `Tabs`: 修复替换classPrefix时组件渲染异常的问题 @uyarn ([#1494](https://github.com/Tencent/tdesign-vue/pull/1494))
+### 🚧 Others
+- chore: update cascader, checkbox, color-picker & date-picker demos @Summer-Shen ([#1485](https://github.com/Tencent/tdesign-vue/pull/1485))
+- fix: 修复 cell-click 返回日期错误 @HQ-Lin ([#1490](https://github.com/Tencent/tdesign-vue/pull/1490))
+- chore: 修复版本切换问题 @HQ-Lin ([#1489](https://github.com/Tencent/tdesign-vue/pull/1489))
+- chore: update tree demo @lmmlala ([#1406](https://github.com/Tencent/tdesign-vue/pull/1406))
+- chore: update tree demo @lmmlala ([#1406](https://github.com/Tencent/tdesign-vue/pull/1406))
+
 ## 🌈 0.46.4 `2022-09-07` 
 ### 🚀 Features
 - `Popup`: 新增 `delay` 属性用于控制延时显示或隐藏浮层，修复子 Popup 销毁时父级意外关闭的问题 @ikeq ([#1436](https://github.com/Tencent/tdesign-vue/pull/1436))
