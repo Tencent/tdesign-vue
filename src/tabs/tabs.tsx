@@ -70,7 +70,7 @@ export default mixins(Vue as VueConstructor<TabVue>, classPrefixMixins).extend({
       const newPanels = this.listPanels
         .map((panel: VNode) => panel.componentInstance as InstanceType<typeof TTabPanel>)
         .filter(Boolean)
-        .filter((child) => kebabCase(child?.$vnode?.tag).endsWith(`${this.classPrefix}-tab-panel`));
+        .filter((child) => kebabCase(child?.$vnode?.tag).endsWith('t-tab-panel')); // 不可用classPrefix替换 此处是判断组件tag
       const isUnchanged = () => newPanels.length === this.panels.length && this.panels.every((panel, index) => panel === newPanels[index]);
       if (isUnchanged() && !force) return;
       this.panels = newPanels;

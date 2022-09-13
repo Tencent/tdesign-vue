@@ -16,6 +16,7 @@
   "files": [
     "es",
     "esm",
+    "cjs",
     "lib",
     "dist",
     "LICENSE",
@@ -58,7 +59,7 @@
     "build:tsc-es": "tsc --emitDeclarationOnly -d --outDir es/",
     "build:tsc-esm": "tsc --emitDeclarationOnly -d --outDir esm/",
     "build:tsc-lib": " tsc --emitDeclarationOnly -d --outDir lib/",
-    "postbuild": "node script/postbuild.js",
+    "build:tsc-cjs": " tsc --emitDeclarationOnly -d --outDir cjs/",
     "lint:fix": "eslint --fix",
     "lint": "npm run lint:tsc && eslint --ext .vue,.js,.ts,.tsx ./ --max-warnings 0",
     "lint:tsc": "tsc --emitDeclarationOnly",
