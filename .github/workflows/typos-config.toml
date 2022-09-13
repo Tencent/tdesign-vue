@@ -2,3 +2,6 @@
 actived = "actived"
 ba = "ba"
 thead = "thead"
+
+[files]
+extend-exclude = ["CHANGELOG.md"]
