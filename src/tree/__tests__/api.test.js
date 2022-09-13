@@ -207,7 +207,7 @@ describe('Tree:api', () => {
   // tree.insertBefore
   // 将节点插入到一个节点之前
   describe('insertBefore', () => {
-    it('节点插入到之前', async () => {
+    it('新节点插入到之前', async () => {
       const data = [
         {
           value: 't1',
@@ -253,7 +253,7 @@ describe('Tree:api', () => {
       expect(wrapper.find('[data-value="t1.i"]').exists()).toBe(true);
     });
 
-    it('已存节点插入到之前', async () => {
+    it('已存后置节点插入到之前', async () => {
       const data = [
         {
           value: 't1',
@@ -290,12 +290,88 @@ describe('Tree:api', () => {
       expect(t1d2.getIndex()).toBe(2);
       expect(t1d3.getIndex()).toBe(1);
     });
+
+    it('已存后置节点插入到最前', async () => {
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+            {
+              value: 't1.2',
+            },
+            {
+              value: 't1.3',
+            },
+          ],
+        },
+      ];
+      const wrapper = mount({
+        render() {
+          return <Tree ref="tree" data={data} expandAll={true} />;
+        },
+      });
+
+      const { tree } = wrapper.vm.$refs;
+
+      const t1 = tree.getItem('t1');
+      const t1d1 = tree.getItem('t1.1');
+      const t1d2 = tree.getItem('t1.2');
+      const t1d3 = tree.getItem('t1.3');
+
+      tree.insertBefore('t1.1', t1d2);
+
+      expect(t1.getChildren().length).toBe(3);
+      expect(t1d1.getIndex()).toBe(1);
+      expect(t1d2.getIndex()).toBe(0);
+      expect(t1d3.getIndex()).toBe(2);
+    });
+
+    it('已存前置节点插入到之前', async () => {
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+            {
+              value: 't1.2',
+            },
+            {
+              value: 't1.3',
+            },
+          ],
+        },
+      ];
+      const wrapper = mount({
+        render() {
+          return <Tree ref="tree" data={data} expandAll={true} />;
+        },
+      });
+
+      const { tree } = wrapper.vm.$refs;
+
+      const t1 = tree.getItem('t1');
+      const t1d1 = tree.getItem('t1.1');
+      const t1d2 = tree.getItem('t1.2');
+      const t1d3 = tree.getItem('t1.3');
+
+      tree.insertBefore('t1.3', t1d1);
+
+      expect(t1.getChildren().length).toBe(3);
+      expect(t1d1.getIndex()).toBe(1);
+      expect(t1d2.getIndex()).toBe(0);
+      expect(t1d3.getIndex()).toBe(2);
+    });
   });
 
   // tree.insertAfter
   // 将节点插入到一个节点之后
   describe('insertAfter', () => {
-    it('节点插入到之后', async () => {
+    it('新节点插入到之后', async () => {
       const data = [
         {
           value: 't1',
@@ -341,44 +417,119 @@ describe('Tree:api', () => {
       expect(wrapper.find('[data-value="t1.i"]').exists()).toBe(true);
     });
 
-    // TODO: 这个测试未能通过，存在 bug，需要修改 _common 里面的代码
-    // it('已存节点插入到之后', async () => {
-    //   const data = [
-    //     {
-    //       value: 't1',
-    //       children: [
-    //         {
-    //           value: 't1.1',
-    //         },
-    //         {
-    //           value: 't1.2',
-    //         },
-    //         {
-    //           value: 't1.3',
-    //         },
-    //       ],
-    //     },
-    //   ];
-    //   const wrapper = mount({
-    //     render() {
-    //       return <Tree ref="tree" data={data} expandAll={true} />;
-    //     },
-    //   });
+    it('已存前置节点插入到之后', async () => {
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+            {
+              value: 't1.2',
+            },
+            {
+              value: 't1.3',
+            },
+          ],
+        },
+      ];
+      const wrapper = mount({
+        render() {
+          return <Tree ref="tree" data={data} expandAll={true} />;
+        },
+      });
 
-    //   const { tree } = wrapper.vm.$refs;
+      const { tree } = wrapper.vm.$refs;
 
-    //   const t1 = tree.getItem('t1');
-    //   const t1d1 = tree.getItem('t1.1');
-    //   const t1d2 = tree.getItem('t1.2');
-    //   const t1d3 = tree.getItem('t1.3');
+      const t1 = tree.getItem('t1');
+      const t1d1 = tree.getItem('t1.1');
+      const t1d2 = tree.getItem('t1.2');
+      const t1d3 = tree.getItem('t1.3');
 
-    //   tree.insertAfter('t1.2', t1d1);
+      tree.insertAfter('t1.2', t1d1);
 
-    //   expect(t1.getChildren().length).toBe(3);
-    //   expect(t1d1.getIndex()).toBe(1);
-    //   expect(t1d2.getIndex()).toBe(0);
-    //   expect(t1d3.getIndex()).toBe(2);
-    // });
+      expect(t1.getChildren().length).toBe(3);
+      expect(t1d1.getIndex()).toBe(1);
+      expect(t1d2.getIndex()).toBe(0);
+      expect(t1d3.getIndex()).toBe(2);
+    });
+
+    it('已存后置节点插入到之后', async () => {
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+            {
+              value: 't1.2',
+            },
+            {
+              value: 't1.3',
+            },
+          ],
+        },
+      ];
+      const wrapper = mount({
+        render() {
+          return <Tree ref="tree" data={data} expandAll={true} />;
+        },
+      });
+
+      const { tree } = wrapper.vm.$refs;
+
+      const t1 = tree.getItem('t1');
+      const t1d1 = tree.getItem('t1.1');
+      const t1d2 = tree.getItem('t1.2');
+      const t1d3 = tree.getItem('t1.3');
+
+      tree.insertAfter('t1.1', t1d3);
+
+      expect(t1.getChildren().length).toBe(3);
+      expect(t1d1.getIndex()).toBe(0);
+      expect(t1d2.getIndex()).toBe(2);
+      expect(t1d3.getIndex()).toBe(1);
+    });
+
+    it('已存前置节点插入到末尾', async () => {
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+            {
+              value: 't1.2',
+            },
+            {
+              value: 't1.3',
+            },
+          ],
+        },
+      ];
+      const wrapper = mount({
+        render() {
+          return <Tree ref="tree" data={data} expandAll={true} />;
+        },
+      });
+
+      const { tree } = wrapper.vm.$refs;
+
+      const t1 = tree.getItem('t1');
+      const t1d1 = tree.getItem('t1.1');
+      const t1d2 = tree.getItem('t1.2');
+      const t1d3 = tree.getItem('t1.3');
+
+      tree.insertAfter('t1.3', t1d1);
+
+      expect(t1.getChildren().length).toBe(3);
+      expect(t1d1.getIndex()).toBe(2);
+      expect(t1d2.getIndex()).toBe(0);
+      expect(t1d3.getIndex()).toBe(1);
+    });
   });
 
   // tree.getIndex
