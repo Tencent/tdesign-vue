@@ -439,8 +439,8 @@ const docs = [
         titleEn: 'Image',
         name: 'image',
         path: '/vue/components/image',
-        component: () => import('@/examples/image/image.md'),
-        componentEn: () => import('@/examples/image/image.en-US.md'),
+        component: () => import('tdesign-vue/image/image.md'),
+        componentEn: () => import('tdesign-vue/image/image.en-US.md'),
       },
       {
         title: 'List 列表',
