@@ -23,7 +23,6 @@ export default defineComponent({
   props: {
     value: dateRangePickerProps.value,
     defaultValue: dateRangePickerProps.defaultValue,
-    valueType: dateRangePickerProps.valueType,
     disabled: dateRangePickerProps.disabled,
     disableDate: dateRangePickerProps.disableDate,
     enableTimePicker: dateRangePickerProps.enableTimePicker,
@@ -45,7 +44,6 @@ export default defineComponent({
       mode: props.mode,
       enableTimePicker: props.enableTimePicker,
       format: props.format,
-      valueType: props.valueType,
     }));
 
     // 记录面板是否选中过
@@ -75,7 +73,6 @@ export default defineComponent({
       const nextValue = [...(hoverValue.value as string[])];
       nextValue[activeIndex.value] = formatDate(date, {
         format: formatRef.value.format,
-        targetFormat: formatRef.value.format,
       }) as string;
       hoverValue.value = nextValue;
     }
@@ -94,19 +91,18 @@ export default defineComponent({
       const nextValue = [...(cacheValue.value as string[])];
       nextValue[activeIndex.value] = formatDate(date, {
         format: formatRef.value.format,
-        targetFormat: formatRef.value.format,
       }) as string;
       cacheValue.value = nextValue;
 
       props.onCellClick?.({
         e,
         partial: activeIndex.value ? 'end' : 'start',
-        date: nextValue.map((v: string) => dayjs(v).toDate()),
+        date: nextValue.map((v: string) => parseToDayjs(v, formatRef.value.format).toDate()),
       });
       emit('cell-click', {
         e,
         partial: activeIndex.value ? 'end' : 'start',
-        date: nextValue.map((v: string) => dayjs(v).toDate()),
+        date: nextValue.map((v: string) => parseToDayjs(v, formatRef.value.format).toDate()),
       });
 
       // 有时间选择器走 confirm 逻辑
@@ -117,10 +113,9 @@ export default defineComponent({
         onChange?.(
           formatDate(nextValue, {
             format: formatRef.value.format,
-            targetFormat: formatRef.value.valueType,
           }) as DateValue[],
           {
-            dayjsValue: nextValue.map((v) => dayjs(v)),
+            dayjsValue: nextValue.map((v) => parseToDayjs(v, formatRef.value.format)),
             trigger: 'pick',
           },
         );
@@ -234,7 +229,6 @@ export default defineComponent({
       isSelected.value = true;
       cacheValue.value = formatDate(nextInputValue, {
         format: formatRef.value.format,
-        targetFormat: formatRef.value.format,
       });
 
       props.onTimeChange?.({
@@ -260,10 +254,9 @@ export default defineComponent({
         onChange?.(
           formatDate(nextValue, {
             format: formatRef.value.format,
-            targetFormat: formatRef.value.valueType,
           }) as DateValue[],
           {
-            dayjsValue: nextValue.map((v) => dayjs(v)),
+            dayjsValue: nextValue.map((v) => parseToDayjs(v, formatRef.value.format)),
             trigger: 'confirm',
           },
         );
@@ -290,10 +283,9 @@ export default defineComponent({
         onChange?.(
           formatDate(presetValue, {
             format: formatRef.value.format,
-            targetFormat: formatRef.value.valueType,
           }) as DateValue[],
           {
-            dayjsValue: presetValue.map((p) => dayjs(p)),
+            dayjsValue: presetValue.map((p) => parseToDayjs(p, formatRef.value.format)),
             trigger: 'preset',
           },
         );
