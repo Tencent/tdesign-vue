@@ -8353,8 +8353,7 @@ exports[`ssr snapshot test renders ./src/icon/_example/single.vue correctly 1`] 
 </div>
 `;
 
-<<<<<<< HEAD
-exports[`ssr snapshot test renders ./examples/image/demos/extra-always.vue correctly 1`] = `
+exports[`ssr snapshot test renders ./src/image/_example/extra-always.vue correctly 1`] = `
 <div class="t-space t-space-horizontal" style="gap:32px;">
   <div class="t-space-item">
     <div class="t-space t-space-vertical" style="gap:16px;">
@@ -8387,7 +8386,7 @@ exports[`ssr snapshot test renders ./examples/image/demos/extra-always.vue corre
 </div>
 `;
 
-exports[`ssr snapshot test renders ./examples/image/demos/extra-hover.vue correctly 1`] = `
+exports[`ssr snapshot test renders ./src/image/_example/extra-hover.vue correctly 1`] = `
 <div class="t-image__wrapper t-image__wrapper--shape-square t-image__wrapper--need-hover" style="width:284px;height:160px;"><img src="https://tdesign.gtimg.com/demo/demo-image-1.png" alt="" class="t-image t-image--fit-fill t-image--position-center">
   <div class="t-image__loading">
     <div direction="vertical" size="8" align="center">图片加载中</div>
@@ -8398,7 +8397,7 @@ exports[`ssr snapshot test renders ./examples/image/demos/extra-hover.vue correc
 </div>
 `;
 
-exports[`ssr snapshot test renders ./examples/image/demos/fill-mode.vue correctly 1`] = `
+exports[`ssr snapshot test renders ./src/image/_example/fill-mode.vue correctly 1`] = `
 <div class="t-space t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
   <div class="t-space-item">
     <div class="t-space t-space-align-start t-space-vertical" style="gap:16px;">
@@ -8463,7 +8462,7 @@ exports[`ssr snapshot test renders ./examples/image/demos/fill-mode.vue correctl
 </div>
 `;
 
-exports[`ssr snapshot test renders ./examples/image/demos/fill-position.vue correctly 1`] = `
+exports[`ssr snapshot test renders ./src/image/_example/fill-position.vue correctly 1`] = `
 <div class="t-space t-space-vertical" style="gap:16px;width:100%;">
   <div class="t-space-item">
     <div class="t-space t-space-horizontal" style="gap:16px;flex-wrap:wrap;">
@@ -8604,7 +8603,7 @@ exports[`ssr snapshot test renders ./examples/image/demos/fill-position.vue corr
 </div>
 `;
 
-exports[`ssr snapshot test renders ./examples/image/demos/gallery-cover.vue correctly 1`] = `
+exports[`ssr snapshot test renders ./src/image/_example/gallery-cover.vue correctly 1`] = `
 <div class="t-image__wrapper t-image__wrapper--shape-square t-image__wrapper--gallery" style="width:284px;height:160px;">
   <div class="t-image__gallery-shadow"></div><img src="https://tdesign.gtimg.com/demo/demo-image-1.png" alt="" class="t-image t-image--fit-fill t-image--position-center">
   <div class="t-image__loading">
@@ -8614,7 +8613,7 @@ exports[`ssr snapshot test renders ./examples/image/demos/gallery-cover.vue corr
 </div>
 `;
 
-exports[`ssr snapshot test renders ./examples/image/demos/lazy-list.vue correctly 1`] = `
+exports[`ssr snapshot test renders ./src/image/_example/lazy-list.vue correctly 1`] = `
 <div class="t-space t-space-vertical" style="gap:16px;">
   <div class="t-space-item">
     <div class="t-space t-space-horizontal" style="gap:16px;flex-wrap:wrap;height:240px;overflow-y:scroll;">
@@ -8748,7 +8747,7 @@ exports[`ssr snapshot test renders ./examples/image/demos/lazy-list.vue correctl
 </div>
 `;
 
-exports[`ssr snapshot test renders ./examples/image/demos/lazy-single.vue correctly 1`] = `
+exports[`ssr snapshot test renders ./src/image/_example/lazy-single.vue correctly 1`] = `
 <div class="t-space t-space-vertical" style="gap:16px;">
   <div class="t-space-item">
     <div class="t-image__wrapper t-image__wrapper--shape-square" style="width:284px;height:160px;">
@@ -8764,7 +8763,7 @@ exports[`ssr snapshot test renders ./examples/image/demos/lazy-single.vue correc
 </div>
 `;
 
-exports[`ssr snapshot test renders ./examples/image/demos/placeholder.vue correctly 1`] = `
+exports[`ssr snapshot test renders ./src/image/_example/placeholder.vue correctly 1`] = `
 <div>
   <div class="t-space t-space-vertical" style="gap:24px;">
     <div class="t-space-item">
@@ -8840,7 +8839,7 @@ exports[`ssr snapshot test renders ./examples/image/demos/placeholder.vue correc
 </div>
 `;
 
-exports[`ssr snapshot test renders ./examples/image/demos/shape.vue correctly 1`] = `
+exports[`ssr snapshot test renders ./src/image/_example/shape.vue correctly 1`] = `
 <div class="t-space t-space-horizontal" style="gap:16px;">
   <div class="t-space-item">
     <div class="t-space t-space-align-center t-space-vertical" style="gap:16px;">
@@ -8881,10 +8880,7 @@ exports[`ssr snapshot test renders ./examples/image/demos/shape.vue correctly 1`
 </div>
 `;
 
-exports[`ssr snapshot test renders ./examples/input/demos/addon.vue correctly 1`] = `
-=======
 exports[`ssr snapshot test renders ./src/input/_example/addon.vue correctly 1`] = `
->>>>>>> upstream/develop
 <div class="tdesign-demo-block-column" style="max-width:500px;">
   <div class="t-input-adornment t-input-adornment--prepend"><span class="t-input-adornment__prepend">http://</span>
     <div class="t-input__wrap">
