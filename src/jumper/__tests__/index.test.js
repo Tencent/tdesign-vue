@@ -110,7 +110,7 @@ describe('Jumper', () => {
       const prevBtn = wrapper.find('.t-jumper__prev');
       prevBtn.trigger('click');
 
-      expect(wrapper.emitted().change.length).toBeTruthy(1);
+      expect(wrapper.emitted().change.length).toEqual(1);
       expect(onChange).toHaveBeenCalledTimes(1);
       expect(onChange).toHaveBeenCalledWith({
         e: expect.any(Object),
@@ -119,7 +119,7 @@ describe('Jumper', () => {
 
       const currentBtn = wrapper.find('.t-jumper__current');
       currentBtn.trigger('click');
-      expect(wrapper.emitted().change.length).toBeTruthy(2);
+      expect(wrapper.emitted().change.length).toEqual(2);
       expect(onChange).toHaveBeenCalledTimes(2);
       expect(onChange).toHaveBeenLastCalledWith({
         e: expect.any(Object),
@@ -128,7 +128,7 @@ describe('Jumper', () => {
 
       const nextBtn = wrapper.find('.t-jumper__next');
       nextBtn.trigger('click');
-      expect(wrapper.emitted().change.length).toBeTruthy(3);
+      expect(wrapper.emitted().change.length).toEqual(3);
       expect(onChange).toHaveBeenCalledTimes(3);
       expect(onChange).toHaveBeenLastCalledWith({
         e: expect.any(Object),
