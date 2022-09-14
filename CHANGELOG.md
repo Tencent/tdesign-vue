@@ -5,6 +5,20 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.47.0 `2022-09-14` 
+### ❗ Breaking Changes
+- 支持 `es module` 导出不带样式产物，调整 lib 包内容，新增 `cjs` 产物支持 `commonjs` 导出不带样式产物 @HQ-Lin ([#1493](https://github.com/Tencent/tdesign-vue/pull/1493))
+### 🚀 Features
+- `DatePicker`: @HQ-Lin
+  - 支持二次更改时间选择器时可单次变更日期 ([#1498](https://github.com/Tencent/tdesign-vue/pull/1498))
+  - 默认时间调整成 00:00:00 [#1500](https://github.com/Tencent/tdesign-vue/pull/1500))
+- `Image`: 新增 Image 图片组件 @insekkei ([#1503](https://github.com/Tencent/tdesign-vue/pull/1503))
+### 🐞 Bug Fixes
+- `Tabs`: 修复替换 `classPrefix` 时组件渲染异常的问题 @uyarn ([#1494](https://github.com/Tencent/tdesign-vue/pull/1494))
+- `Upload`: 修复在 `wujie` 环境中，部分按钮会触发两次的问题 @chaishi ([#1502](https://github.com/Tencent/tdesign-vue/pull/1502))
+- `TimePicker`: 修复往前点击时间时滚动异常的问题 @uyarn ([#1499](https://github.com/Tencent/tdesign-vue/pull/1499))
+- `DatePicker`: 修复 `cell-click` 返回日期错误 @HQ-Lin ([#1490](https://github.com/Tencent/tdesign-vue/pull/1490))
+
 ## 🌈 0.46.4 `2022-09-07` 
 ### 🚀 Features
 - `Popup`: 新增 `delay` 属性用于控制延时显示或隐藏浮层，修复子 Popup 销毁时父级意外关闭的问题 @ikeq ([#1436](https://github.com/Tencent/tdesign-vue/pull/1436))
