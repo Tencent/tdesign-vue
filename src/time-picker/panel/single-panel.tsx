@@ -265,10 +265,6 @@ export default defineComponent({
           el = Number(el) + 12;
         }
         scrollToTime(col, el, idx, 'smooth');
-
-        setTimeout(() => {
-          props.onChange(dayjsValue.value[col]?.(el).format(format.value));
-        }, 100);
       } else {
         const currentHour = dayjsValue.value.hour();
         if (el === AM && currentHour >= 12) {
