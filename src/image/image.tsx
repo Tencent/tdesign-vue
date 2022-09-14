@@ -51,11 +51,14 @@ export default defineComponent({
       hasError.value = true;
       onError?.();
     };
+
     const hasMouseEvent = overlayTrigger === 'hover';
 
     const shouldShowOverlay = ref(!hasMouseEvent);
     const handleToggleOverlay = () => {
-      shouldShowOverlay.value = !shouldShowOverlay.value;
+      if (hasMouseEvent) {
+        shouldShowOverlay.value = !shouldShowOverlay.value;
+      }
     };
 
     return {
@@ -76,11 +79,11 @@ export default defineComponent({
   mounted(this) {
     if (!this.lazy || !this.imageRef) return;
 
-    const io = observe(this.imageRef, null, this.handleLoadImage, 0);
+    const io = observe(this.imageRef as HTMLElement, null, this.handleLoadImage as Function, 0);
     this.io = io;
   },
   destroyed(this) {
-    this.imageRef && this.io && (this.io as IntersectionObserver).unobserve(this.imageRef);
+    this.imageRef && this.io && (this.io as IntersectionObserver).unobserve(this.imageRef as Element);
   },
   methods: {
     renderPlaceholder() {
@@ -119,12 +122,8 @@ export default defineComponent({
           this.hasMouseEvent && `${this.classPrefix}-image__wrapper--need-hover`,
           this.className,
         ]}
-        {...(this.hasMouseEvent
-          ? {
-            onMouseEnter: this.handleToggleOverlay,
-            onMouseLeave: this.handleToggleOverlay,
-          }
-          : null)}
+        onMouseenter={this.handleToggleOverlay}
+        onMouseleave={this.handleToggleOverlay}
         {...this.rest}
       >
         {this.renderPlaceholder()}

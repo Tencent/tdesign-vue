@@ -8,7 +8,7 @@
           position="center"
           :style="{ width: '120px', height: '120px' }"
         />
-        cover center
+        <span>cover center</span>
       </t-space>
       <t-space direction="vertical" align="start">
         <t-image
@@ -17,7 +17,7 @@
           :style="{ width: '120px', height: '120px' }"
           position="left"
         />
-        cover left
+        <span>cover left</span>
       </t-space>
       <t-space direction="vertical" align="start">
         <t-image
@@ -26,7 +26,7 @@
           :style="{ width: '120px', height: '120px' }"
           position="right"
         />
-        cover right
+        <span>cover right</span>
       </t-space>
     </t-space>
     <t-space :style="{ marginTop: 20 }" breakLine>
@@ -37,7 +37,7 @@
           :style="{ width: '280px', height: '120px' }"
           position="top"
         />
-        cover top
+        <span>cover top</span>
       </t-space>
       <t-space direction="vertical" align="start">
         <t-image
@@ -46,7 +46,7 @@
           :style="{ width: '280px', height: '120px' }"
           position="bottom"
         />
-        cover bottom
+        <span>cover bottom</span>
       </t-space>
     </t-space>
     <t-space :style="{ marginTop: 20 }" breakLine>
@@ -57,7 +57,7 @@
           :style="{ width: '120px', height: '200px' }"
           position="top"
         />
-        contain top
+        <span>contain top</span>
       </t-space>
       <t-space direction="vertical" align="start">
         <t-image
@@ -66,7 +66,7 @@
           :style="{ width: '120px', height: '200px' }"
           position="bottom"
         />
-        contain bottom
+        <span>contain bottom</span>
       </t-space>
       <t-space direction="vertical" align="start">
         <t-image
@@ -75,7 +75,7 @@
           :style="{ width: '120px', height: '200px' }"
           position="center"
         />
-        contain center
+        <span>contain center</span>
       </t-space>
       <t-space :style="{ marginTop: 20 }" breakLine>
         <t-space direction="vertical" align="start">
@@ -85,7 +85,7 @@
             :style="{ width: '280px', height: '120px' }"
             position="left"
           />
-          contain left
+          <span>contain left</span>
         </t-space>
         <t-space direction="vertical" align="start">
           <t-image
@@ -94,7 +94,7 @@
             :style="{ width: '280px', height: '120px' }"
             position="right"
           />
-          contain right
+          <span>contain right</span>
         </t-space>
       </t-space>
     </t-space>

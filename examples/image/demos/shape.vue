@@ -7,7 +7,7 @@
         :style="{ width: '160px', height: '160px' }"
         fit="cover"
       />
-      square
+      <span>square</span>
     </t-space>
     <t-space direction="vertical" align="center">
       <t-image
@@ -16,7 +16,7 @@
         fit="cover"
         shape="round"
       />
-      round
+      <span>round</span>
     </t-space>
     <t-space direction="vertical" align="center">
       <t-image
@@ -25,7 +25,7 @@
         shape="circle"
         fit="cover"
       />
-      circle
+      <span>circle</span>
     </t-space>
   </t-space>
 </template>

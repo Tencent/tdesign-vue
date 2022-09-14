@@ -5,7 +5,7 @@
         <h3 :style="{ 'margin-bottom': '15px' }">加载中的图片</h3>
         <t-space>
           <t-space direction="vertical">
-            默认占位
+            <span>默认占位</span>
             <t-image
               src="https://tdesign.gtimg.com/demo/demo-image-1.png"
               :key.sync="loadingCount"
@@ -14,7 +14,7 @@
             <t-button variant="outline" :icon="renderIcon" @click="loadCount = loadCount + 1"> 重演 loading </t-button>
           </t-space>
           <t-space direction="vertical">
-            自定义占位
+            <span>自定义占位</span>
             <t-image
               :key.sync="loadingCount"
               src="https://tdesign.gtimg.com/demo/demo-image-1.png"
@@ -28,12 +28,12 @@
         <h3 :style="{ 'margin-bottom': '15px' }">加载失败的图片</h3>
         <t-space>
           <t-space direction="vertical">
-            默认错误
+            <span>默认错误</span>
             <t-image src="" :key.sync="errorCount" :style="{ width: '284px', height: '160px' }" />
             <t-button variant="outline" :icon="renderIcon" @click="errorCount = errorCount + 1"> 重演 error </t-button>
           </t-space>
           <t-space direction="vertical">
-            自定义错误
+            <span>自定义错误</span>
             <t-image
               src=""
               :key.sync="errorCount"
