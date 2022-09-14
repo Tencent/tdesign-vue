@@ -1,7 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-row">
-    <t-color-picker v-model="color" />
-  </div>
+  <t-color-picker v-model="color" />
 </template>
 <script>
 export default {

@@ -59,10 +59,7 @@ export default {
 };
 </script>
 
-<style>
-.tdesign-tree-demo .t-tree {
-  margin-bottom: 20px;
-}
+<style scoped>
 .tdesign-tree-demo .title {
   margin-bottom: 10px;
 }

@@ -88,17 +88,6 @@ export default defineComponent({
 
     // 日期点击
     function onCellClick(date: Date, { e }: { e: MouseEvent }) {
-      props.onCellClick?.({
-        e,
-        partial: activeIndex.value ? 'end' : 'start',
-        date: value.value.map((v: string) => dayjs(v).toDate()),
-      });
-      emit('cell-click', {
-        e,
-        partial: activeIndex.value ? 'end' : 'start',
-        date: value.value.map((v: string) => dayjs(v).toDate()),
-      });
-
       isHoverCell.value = false;
       isSelected.value = true;
 
@@ -109,11 +98,22 @@ export default defineComponent({
       }) as string;
       cacheValue.value = nextValue;
 
+      props.onCellClick?.({
+        e,
+        partial: activeIndex.value ? 'end' : 'start',
+        date: nextValue.map((v: string) => dayjs(v).toDate()),
+      });
+      emit('cell-click', {
+        e,
+        partial: activeIndex.value ? 'end' : 'start',
+        date: nextValue.map((v: string) => dayjs(v).toDate()),
+      });
+
       // 有时间选择器走 confirm 逻辑
       if (props.enableTimePicker) return;
 
       // 首次点击不关闭、确保两端都有有效值并且无时间选择器时点击后自动关闭
-      if (nextValue.length === 2 && !props.enableTimePicker && isFirstValueSelected.value) {
+      if (nextValue.length === 2 && isFirstValueSelected.value) {
         onChange?.(
           formatDate(nextValue, {
             format: formatRef.value.format,

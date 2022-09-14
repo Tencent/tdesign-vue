@@ -129,7 +129,7 @@ export default defineComponent({
               on={resizeColumnListener}
             >
               <div class={this.tableBaseClass.thCellInner}>
-                { col.ellipsisTitle !== false && col.ellipsisTitle !== null ? (
+                {col.ellipsisTitle !== false && col.ellipsisTitle !== null ? (
                   <TEllipsis
                     placement="bottom"
                     attach={this.theadRef ? () => this.theadRef : undefined}
