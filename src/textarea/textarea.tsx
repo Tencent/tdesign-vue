@@ -1,17 +1,16 @@
 import Vue, { VueConstructor } from 'vue';
 import isFunction from 'lodash/isFunction';
-import { prefix } from '../config';
-import CLASSNAMES from '../utils/classnames';
+import { getUnicodeLength, limitUnicodeMaxLength } from '../_common/js/utils/helper';
 import props from './props';
 import { TextareaValue } from './type';
 import { getPropsApiByEvent, getCharacterLength } from '../utils/helper';
 import calcTextareaHeight from './calcTextareaHeight';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { ClassName } from '../common';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-textarea`;
-const TEXTAREA_TIPS_CLASS = `${prefix}-textarea__tips`;
-const TEXTAREA_LIMIT = `${name}__limit`;
+const classPrefixMixins = getClassPrefixMixins('textarea');
 
 function getValidAttrs(obj: object): object {
   const newObj = {};
@@ -28,7 +27,7 @@ export interface Textarea extends Vue {
   };
 }
 
-export default (Vue as VueConstructor<Textarea>).extend({
+export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend({
   name: 'TTextarea',
   props: {
     ...props,
@@ -51,10 +50,10 @@ export default (Vue as VueConstructor<Textarea>).extend({
     },
     textareaClasses(): ClassName {
       return [
-        name,
+        this.componentName,
         {
-          [`${prefix}-is-disabled`]: this.tDisabled,
-          [`${prefix}-is-readonly`]: this.readonly,
+          [`${this.classPrefix}-is-disabled`]: this.tDisabled,
+          [`${this.classPrefix}-is-readonly`]: this.readonly,
         },
       ];
     },
@@ -64,7 +63,6 @@ export default (Vue as VueConstructor<Textarea>).extend({
         disabled: this.tDisabled,
         readonly: this.readonly,
         placeholder: this.placeholder,
-        maxlength: this.maxlength || undefined,
         name: this.name || undefined,
         unselectable: this.readonly ? 'on' : 'off',
       });
@@ -120,6 +118,7 @@ export default (Vue as VueConstructor<Textarea>).extend({
     inputValueChangeHandle(e: InputEvent) {
       const { target } = e;
       let val = (target as HTMLInputElement).value;
+      val = limitUnicodeMaxLength(val, this.maxlength);
       if (this.maxcharacter && this.maxcharacter >= 0) {
         const stringInfo = getCharacterLength(val, this.maxcharacter);
         val = typeof stringInfo === 'object' && stringInfo.characters;
@@ -174,12 +173,12 @@ export default (Vue as VueConstructor<Textarea>).extend({
       keypress: this.emitKeypress,
     });
     const classes = [
-      `${name}__inner`,
+      `${this.componentName}__inner`,
       {
-        [`${prefix}-is-${this.status}`]: this.status,
-        [CLASSNAMES.STATUS.disabled]: this.tDisabled,
-        [CLASSNAMES.STATUS.focused]: this.focused,
-        [`${prefix}-resize-none`]: typeof this.autosize === 'object',
+        [`${this.classPrefix}-is-${this.status}`]: this.status,
+        [this.commonStatusClassName.disabled]: this.tDisabled,
+        [this.commonStatusClassName.focused]: this.focused,
+        [`${this.classPrefix}-resize-none`]: typeof this.autosize === 'object',
       },
     ];
     const tips = renderTNodeJSX(this, 'tips');
@@ -195,13 +194,17 @@ export default (Vue as VueConstructor<Textarea>).extend({
           ref="refTextareaElem"
         ></textarea>
         {this.maxcharacter ? (
-          <span class={`${name}__limit`}>{`${this.characterNumber}/${this.maxcharacter}`}</span>
+          <span class={`${this.componentName}__limit`}>{`${this.characterNumber}/${this.maxcharacter}`}</span>
         ) : null}
         {!this.maxcharacter && this.maxlength ? (
-          <span class={TEXTAREA_LIMIT}>{`${this.value ? String(this.value)?.length : 0}/${this.maxlength}`}</span>
+          <span class={`${this.componentName}__limit`}>{`${this.value ? getUnicodeLength(String(this.value)) : 0}/${
+            this.maxlength
+          }`}</span>
         ) : null}
         {tips && (
-          <div class={`${TEXTAREA_TIPS_CLASS} ${prefix}-textarea__tips--${this.status || 'normal'}`}>{tips}</div>
+          <div class={[`${this.componentName}__tips`, `${this.componentName}__tips--${this.status || 'normal'}`]}>
+            {tips}
+          </div>
         )}
       </div>
     );

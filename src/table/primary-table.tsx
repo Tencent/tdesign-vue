@@ -128,7 +128,6 @@ export default defineComponent({
     onMounted(() => {
       setFilterPrimaryTableRef(primaryTableRef.value);
       setDragSortPrimaryTableRef(primaryTableRef.value);
-      setDragSortColumns(props.columns);
     });
 
     watch(primaryTableRef, () => {
@@ -184,6 +183,9 @@ export default defineComponent({
               const key = [rowValue, p.col.colKey].join('__');
               const errorList = errorListMap.value?.[key];
               errorList && (cellProps.errors = errorList);
+            }
+            if (props.editableCellState) {
+              cellProps.readonly = !props.editableCellState(p);
             }
             return renderEditableCell(h, cellProps);
           };

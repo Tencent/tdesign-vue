@@ -1,7 +1,5 @@
-import Vue, { VNodeDirective } from 'vue';
+import { VNodeDirective } from 'vue';
 import { createPopper, Placement } from '@popperjs/core';
-import { prefix } from '../config';
-import commonCls from '../utils/classnames';
 import { on, off, once } from '../utils/dom';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import { getIEVersion } from '../utils/helper';
@@ -9,10 +7,11 @@ import setStyle from '../_common/js/utils/set-style';
 import props from './props';
 import { PopupVisibleChangeContext, TdPopupProps } from './type';
 import Container from './container';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const prefixCls = `${prefix}-popup`;
-const showTimeout = 250;
-const hideTimeout = 150;
+const classPrefixMixins = getClassPrefixMixins('popup');
+
 const triggers = ['click', 'hover', 'focus', 'context-menu'] as const;
 const injectionKey = '__T_POPUP';
 
@@ -36,7 +35,7 @@ function attachListeners(elm: Element) {
   };
 }
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TPopup',
 
   provide(this: any) {
@@ -79,12 +78,13 @@ export default Vue.extend({
   computed: {
     overlayClasses(): any {
       return [
-        `${prefixCls}__content`,
+        `${this.componentName}__content`,
         {
-          [`${prefixCls}__content--text`]: this.content === 'string',
-          [`${prefixCls}__content--arrow`]: this.showArrow,
-          [commonCls.STATUS.disabled]: this.disabled,
+          [`${this.componentName}__content--text`]: this.content === 'string',
+          [`${this.componentName}__content--arrow`]: this.showArrow,
+          [this.commonStatusClassName.disabled]: this.disabled,
         },
+        this.overlayInnerClassName,
       ];
     },
     hasTrigger(): Record<typeof triggers[number], boolean> {
@@ -95,6 +95,13 @@ export default Vue.extend({
         }),
         {} as any,
       );
+    },
+    normalizedDelay(): { open: number; close: number } {
+      const delay = [].concat(this.delay ?? [250, 150]);
+      return {
+        open: delay[0],
+        close: delay[1] ?? delay[0],
+      };
     },
   },
   watch: {
@@ -157,7 +164,7 @@ export default Vue.extend({
           this.handleToggle({ e, trigger: 'trigger-element-click' });
           // ie9-10 trigger propagation
           if (getIEVersion() < 11) {
-            this.handleDocumentClick();
+            this.handleDocumentClick(e);
           }
         });
       } else if (hasTrigger['context-menu']) {
@@ -176,9 +183,12 @@ export default Vue.extend({
     (this.$refs.container as any)?.updateContent();
   },
   beforeDestroy() {
-    (this as any).popup?.preventClosing(false);
+    if (this.visible) {
+      (this as any).popup?.preventClosing(false);
+    }
     this.destroyPopper();
     off(document, 'click', this.handleDocumentClick, true);
+    clearTimeout(this.timeout);
   },
   methods: {
     updatePopper() {
@@ -269,7 +279,7 @@ export default Vue.extend({
         () => {
           this.emitPopVisible(true, context);
         },
-        this.hasTrigger.click ? 0 : showTimeout,
+        this.hasTrigger.click ? 0 : this.normalizedDelay.open,
       );
     },
     handleClose(context: Pick<PopupVisibleChangeContext, 'trigger'>) {
@@ -278,7 +288,7 @@ export default Vue.extend({
         () => {
           this.emitPopVisible(false, context);
         },
-        this.hasTrigger.click ? 0 : hideTimeout,
+        this.hasTrigger.click ? 0 : this.normalizedDelay.close,
       );
     },
     handleDocumentClick(ev?: MouseEvent) {
@@ -363,7 +373,7 @@ export default Vue.extend({
       ? h(
         'div',
         {
-          class: [prefixCls, this.overlayClassName],
+          class: [this.componentName, this.overlayClassName],
           ref: 'popper',
           style: [
             hidePopup && { visibility: 'hidden', pointerEvents: 'none' },
@@ -404,7 +414,7 @@ export default Vue.extend({
                 }
                 : undefined,
             },
-            [content, this.showArrow && h('div', { class: `${prefixCls}__arrow` })],
+            [content, this.showArrow && h('div', { class: `${this.componentName}__arrow` })],
           ),
         ],
       )
@@ -430,7 +440,7 @@ export default Vue.extend({
       >
         <transition
           slot="content"
-          name={this.expandAnimation ? `${prefixCls}--animation-expand` : `${prefixCls}--animation`}
+          name={this.expandAnimation ? `${this.componentName}--animation-expand` : `${this.componentName}--animation`}
           appear
           onBeforeEnter={this.onBeforeEnter}
           onAfterEnter={this.onAfterEnter}

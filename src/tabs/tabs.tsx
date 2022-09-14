@@ -1,17 +1,20 @@
 import Vue, { VNode, VueConstructor } from 'vue';
 import kebabCase from 'lodash/kebabCase';
 import props from './props';
-import { prefix } from '../config';
 import TTabPanel from './tab-panel';
 import TTabNav from './tab-nav';
 import { TabValue, TdTabsProps } from './type';
 import { emitEvent } from '../utils/event';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
+
+const classPrefixMixins = getClassPrefixMixins('tabs');
 
 interface TabVue extends Vue {
   listPanels?: Array<VNode>;
 }
 
-export default (Vue as VueConstructor<TabVue>).extend({
+export default mixins(Vue as VueConstructor<TabVue>, classPrefixMixins).extend({
   name: 'TTabs',
   model: {
     prop: 'value',
@@ -67,7 +70,7 @@ export default (Vue as VueConstructor<TabVue>).extend({
       const newPanels = this.listPanels
         .map((panel: VNode) => panel.componentInstance as InstanceType<typeof TTabPanel>)
         .filter(Boolean)
-        .filter((child) => kebabCase(child?.$vnode?.tag).endsWith(`${prefix}-tab-panel`));
+        .filter((child) => kebabCase(child?.$vnode?.tag).endsWith('t-tab-panel')); // 不可用classPrefix替换 此处是判断组件tag
       const isUnchanged = () => newPanels.length === this.panels.length && this.panels.every((panel, index) => panel === newPanels[index]);
       if (isUnchanged() && !force) return;
       this.panels = newPanels;
@@ -102,8 +105,8 @@ export default (Vue as VueConstructor<TabVue>).extend({
       return (
         <div
           class={{
-            [`${prefix}-tabs__header`]: true,
-            [`${prefix}-is-${this.placement}`]: true,
+            [`${this.componentName}__header`]: true,
+            [`${this.classPrefix}-is-${this.placement}`]: true,
           }}
         >
           <TTabNav
@@ -127,13 +130,13 @@ export default (Vue as VueConstructor<TabVue>).extend({
     renderContent() {
       // default 的函数可能返回null，此时为了防止 panels 的更新失败，默认用空数组
       this.listPanels = this.list ? this.renderList() : this.$scopedSlots.default?.({}) || [];
-      return <div class={[`${prefix}-tabs__content`]}>{this.listPanels}</div>;
+      return <div class={[`${this.componentName}__content`]}>{this.listPanels}</div>;
     },
   },
 
   render() {
     return (
-      <div class={[`${prefix}-tabs`]}>
+      <div class={this.componentName}>
         {this.placement !== 'bottom'
           ? [this.renderHeader(), this.renderContent()]
           : [this.renderContent(), this.renderHeader()]}

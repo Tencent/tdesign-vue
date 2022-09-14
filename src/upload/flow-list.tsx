@@ -1,12 +1,11 @@
 import Vue, { VNode, PropType } from 'vue';
 import {
-  TimeFilledIcon,
-  CheckCircleFilledIcon,
-  ErrorCircleFilledIcon,
-  DeleteIcon,
-  BrowseIcon,
+  TimeFilledIcon as TdTimeFilledIcon,
+  CheckCircleFilledIcon as TdCheckCircleFilledIcon,
+  ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
+  DeleteIcon as TdDeleteIcon,
+  BrowseIcon as TdBrowseIcon,
 } from 'tdesign-icons-vue';
-import { prefix } from '../config';
 import { UploadFile } from './type';
 import TButton from '../button';
 import TLoading from '../loading';
@@ -14,21 +13,14 @@ import { returnFileSize, abridgeName } from '../_common/js/upload/utils';
 import { FlowRemoveContext } from './interface';
 import props from './props';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { UploadConfig } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { UploadConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 
-const uploadName = `${prefix}-upload`;
-
-export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).extend({
+export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getGlobalIconMixins()).extend({
   name: 'TUploadFlowList',
 
   components: {
     TButton,
     TLoading,
-    TimeFilledIcon,
-    CheckCircleFilledIcon,
-    ErrorCircleFilledIcon,
-    DeleteIcon,
-    BrowseIcon,
   },
 
   props: {
@@ -53,6 +45,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
         return ['file-flow', 'image-flow'].includes(val);
       },
     },
+    locale: props.locale,
   },
 
   data() {
@@ -100,10 +93,12 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       return Boolean(this.waitingUploadFiles && this.waitingUploadFiles.length) && !this.isUploading;
     },
     uploadText(): string {
-      if (this.isUploading) return `${this.global.progress.uploadingText}...`;
-      return this.failedList && this.failedList.length
-        ? this.global.triggerUploadText.reupload
-        : this.global.triggerUploadText.normal;
+      const uploadingText = this.locale?.progress?.uploadingText || this.global.progress.uploadingText;
+      const reuploadText = this.locale?.triggerUploadText?.reupload || this.global.triggerUploadText.reupload;
+      const normalText = this.locale?.triggerUploadText?.normal || this.global.triggerUploadText.normal;
+
+      if (this.isUploading) return `${uploadingText}...`;
+      return this.failedList && this.failedList.length ? reuploadText : normalText;
     },
     batchRemoveRow(): boolean {
       return this.batchUpload && this.files.length > 0;
@@ -112,37 +107,45 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
   methods: {
     renderStatus(file: UploadFile) {
       let status = null;
+      const { TimeFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon } = this.useGlobalIcon({
+        TimeFilledIcon: TdTimeFilledIcon,
+        CheckCircleFilledIcon: TdCheckCircleFilledIcon,
+        ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
+      });
       switch (file.status) {
         case 'success':
           status = (
-            <div class={`${uploadName}__flow-status`}>
+            <div class={`${this.componentName}__flow-status`}>
               <CheckCircleFilledIcon />
-              <span>{this.global.progress.successText}</span>
+              <span>{this.locale?.progress?.successText || this.global.progress.successText}</span>
             </div>
           );
           break;
         case 'fail':
           status = (
-            <div class={`${uploadName}__flow-status`}>
+            <div class={`${this.componentName}__flow-status`}>
               <ErrorCircleFilledIcon />
-              <span>{this.global.progress.failText}</span>
+              <span>{this.locale?.progress?.failText || this.global.progress.failText}</span>
             </div>
           );
           break;
         case 'progress':
           this.showUploadProgress
             && (status = (
-              <div class={`${uploadName}__flow-status`}>
+              <div class={`${this.componentName}__flow-status`}>
                 <TLoading />
-                <span>{`${this.global.progress.uploadingText} ${Math.min(file.percent, 99)}%`}</span>
+                <span>{`${this.locale?.progress?.uploadingText || this.global.progress.uploadingText} ${Math.min(
+                  file.percent,
+                  99,
+                )}%`}</span>
               </div>
             ));
           break;
         case 'waiting':
           status = (
-            <div class={`${uploadName}__flow-status`}>
+            <div class={`${this.componentName}__flow-status`}>
               <TimeFilledIcon />
-              <span>{this.global.progress.waitingText}</span>
+              <span>{this.locale?.progress?.waitingText || this.global.progress.waitingText}</span>
             </div>
           );
           break;
@@ -179,27 +182,30 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     },
 
     renderDragger() {
+      const dragDropText = this.locale?.dragger?.dragDropText || this.global.dragger.dragDropText;
+      const clickAndDragText = this.locale?.dragger?.clickAndDragText || this.global.dragger.clickAndDragText;
+
       return (
         <div
-          class={`${uploadName}__flow-empty`}
+          class={`${this.componentName}__flow-empty`}
           onDrop={this.handleDrop}
           onDragenter={this.handleDragenter}
           onDragover={this.handleDragover}
           onDragleave={this.handleDragleave}
         >
-          {this.dragActive ? this.global.dragger.dragDropText : this.global.dragger.clickAndDragText}
+          {this.dragActive ? dragDropText : clickAndDragText}
         </div>
       );
     },
 
     renderFileList() {
       return (
-        <table class={`${uploadName}__flow-table`}>
+        <table class={`${this.componentName}__flow-table`}>
           <tr>
-            <th>{this.global.file.fileNameText}</th>
-            <th>{this.global.file.fileSizeText}</th>
-            <th>{this.global.file.fileStatusText}</th>
-            <th>{this.global.file.fileOperationText}</th>
+            <th>{this.locale?.file?.fileNameText || this.global.file.fileNameText}</th>
+            <th>{this.locale?.file?.fileSizeText || this.global.file.fileSizeText}</th>
+            <th>{this.locale?.file?.fileStatusText || this.global.file.fileStatusText}</th>
+            <th>{this.locale?.file?.fileOperationText || this.global.file.fileOperationText}</th>
           </tr>
           {this.showInitial && (
             <tr>
@@ -226,7 +232,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
       return (
         <td>
           <span
-            class={`${uploadName}__flow-button`}
+            class={`${this.componentName}__flow-button`}
             onClick={(e: MouseEvent) => this.remove({
               e,
               index,
@@ -234,7 +240,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
             })
             }
           >
-            {this.global.triggerUploadText.delete}
+            {this.locale?.triggerUploadText?.delete || this.global.triggerUploadText.delete}
           </span>
         </td>
       );
@@ -244,9 +250,9 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     renderBatchActionCol(index: number) {
       // 第一行数据才需要合并单元格
       return index === 0 ? (
-        <td rowspan={this.listFiles.length} class={`${uploadName}__flow-table__batch-row`}>
+        <td rowspan={this.listFiles.length} class={`${this.componentName}__flow-table__batch-row`}>
           <span
-            class={`${uploadName}__flow-button`}
+            class={`${this.componentName}__flow-button`}
             onClick={(e: MouseEvent) => this.remove({
               e,
               index: -1,
@@ -254,7 +260,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
             })
             }
           >
-            {this.global.triggerUploadText.delete}
+            {this.locale?.triggerUploadText?.delete || this.global.triggerUploadText.delete}
           </span>
         </td>
       ) : (
@@ -263,46 +269,55 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
     },
 
     renderImgList() {
+      const { ErrorCircleFilledIcon, DeleteIcon, BrowseIcon } = this.useGlobalIcon({
+        ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
+        DeleteIcon: TdDeleteIcon,
+        BrowseIcon: TdBrowseIcon,
+      });
       return (
-        <div class={`${uploadName}__flow-card-area`}>
+        <div class={`${this.componentName}__flow-card-area`}>
           {this.showInitial && this.renderDragger()}
           {!!this.listFiles.length && (
-            <ul class={`${uploadName}__card clearfix`}>
+            <ul class={`${this.componentName}__card clearfix`}>
               {this.listFiles.map((file, index) => (
-                <li class={`${uploadName}__card-item`}>
+                <li class={`${this.componentName}__card-item`}>
                   <div
-                    class={[`${uploadName}__card-content`, { [`${prefix}-is-bordered`]: file.status !== 'waiting' }]}
+                    class={[
+                      `${this.componentName}__card-content`,
+                      { [`${this.classPrefix}-is-bordered`]: file.status !== 'waiting' },
+                    ]}
                   >
                     {file.status === 'fail' && (
-                      <div class={`${uploadName}__card-status-wrap`}>
+                      <div class={`${this.componentName}__card-status-wrap`}>
                         <ErrorCircleFilledIcon />
-                        <p>{this.global.progress.failText}</p>
+                        <p>{this.locale?.progress?.failText || this.global.progress.failText}</p>
                       </div>
                     )}
                     {file.status === 'progress' && (
-                      <div class={`${uploadName}__card-status-wrap`}>
+                      <div class={`${this.componentName}__card-status-wrap`}>
                         <TLoading />
                         <p>
-                          {this.global.progress.uploadingText} {Math.min(file.percent, 99)}
+                          {this.locale?.progress?.uploadingText || this.global.progress.uploadingText}{' '}
+                          {Math.min(file.percent, 99)}
                         </p>
                       </div>
                     )}
                     {(['waiting', 'success'].includes(file.status) || (!file.status && file.url)) && (
                       <img
-                        class={`${uploadName}__card-image`}
+                        class={`${this.componentName}__card-image`}
                         src={file.url || '//tdesign.gtimg.com/tdesign-default-img.png'}
                       />
                     )}
-                    <div class={`${uploadName}__card-mask`}>
+                    <div class={`${this.componentName}__card-mask`}>
                       {file.url && (
-                        <span class={`${uploadName}__card-mask-item`}>
+                        <span class={`${this.componentName}__card-mask-item`}>
                           <BrowseIcon nativeOnClick={(e: MouseEvent) => this.onViewClick(e, file)} />
-                          <span class={`${uploadName}__card-mask-item-divider`}></span>
+                          <span class={`${this.componentName}__card-mask-item-divider`}></span>
                         </span>
                       )}
                       {!this.disabled && (
                         <span
-                          class={`${uploadName}__card-mask-item`}
+                          class={`${this.componentName}__card-mask-item`}
                           onClick={(e: MouseEvent) => this.remove({ e, index, file })}
                         >
                           <DeleteIcon />
@@ -310,7 +325,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
                       )}
                     </div>
                   </div>
-                  <p class={`${uploadName}__card-name`}>{abridgeName(file.name)}</p>
+                  <p class={`${this.componentName}__card-name`}>{abridgeName(file.name)}</p>
                 </li>
               ))}
             </ul>
@@ -322,16 +337,16 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload')).exte
 
   render(): VNode {
     return (
-      <div class={[`${uploadName}__flow`, `${uploadName}__flow-${this.display}`]}>
-        <div class={`${uploadName}__flow-op`}>
+      <div class={[`${this.componentName}__flow`, `${this.componentName}__flow-${this.display}`]}>
+        <div class={`${this.componentName}__flow-op`}>
           {this.$scopedSlots.default && this.$scopedSlots.default(null)}
-          <small class={`${prefix}-size-s ${uploadName}__flow-placeholder`}>{this.placeholder}</small>
+          <small class={`${this.classPrefix}-size-s ${this.componentName}__flow-placeholder`}>{this.placeholder}</small>
         </div>
         {this.display === 'file-flow' && this.renderFileList()}
         {this.display === 'image-flow' && this.renderImgList()}
-        <div class={`${uploadName}__flow-bottom`}>
+        <div class={`${this.componentName}__flow-bottom`}>
           <TButton theme="default" onClick={this.cancel}>
-            {this.global.cancelUploadText}
+            {this.locale?.cancelUploadText || this.global.cancelUploadText}
           </TButton>
           <TButton
             disabled={!this.allowUpload}

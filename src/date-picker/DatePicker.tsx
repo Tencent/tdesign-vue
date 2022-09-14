@@ -1,12 +1,13 @@
 import { defineComponent, watch, computed } from '@vue/composition-api';
 import dayjs from 'dayjs';
-import { CalendarIcon } from 'tdesign-icons-vue';
-import { usePrefixClass } from '../hooks/useConfig';
+import { CalendarIcon as TdCalendarIcon } from 'tdesign-icons-vue';
 
+import { usePrefixClass } from '../hooks/useConfig';
+import { useGlobalIcon } from '../hooks/useGlobalIcon';
 import useSingle from './hooks/useSingle';
 import {
   parseToDayjs, getDefaultFormat, formatTime, formatDate,
-} from './hooks/useFormat';
+} from '../_common/js/date-picker/format';
 import { subtractMonth, addMonth, extractTimeObj } from '../_common/js/date-picker/utils';
 import type { DateValue } from './type';
 import props from './props';
@@ -19,6 +20,7 @@ export default defineComponent({
   props,
   setup(props, { emit }) {
     const COMPONENT_NAME = usePrefixClass('date-picker');
+    const { CalendarIcon } = useGlobalIcon({ CalendarIcon: TdCalendarIcon });
 
     const {
       inputValue,
@@ -243,12 +245,27 @@ export default defineComponent({
       datePickerInputProps,
       popupVisible,
       panelProps,
+      CalendarIcon,
     };
   },
   render() {
     const {
-      COMPONENT_NAME, inputValue, datePickerPopupProps, datePickerInputProps, popupVisible, panelProps,
+      COMPONENT_NAME,
+      inputValue,
+      datePickerPopupProps,
+      datePickerInputProps,
+      popupVisible,
+      panelProps,
+      CalendarIcon,
     } = this;
+
+    const renderSuffixIcon = () => {
+      if (this.suffixIcon) return this.suffixIcon;
+      if (this.$scopedSlots.suffixIcon) return this.$scopedSlots.suffixIcon;
+      if (this.$scopedSlots['suffix-icon']) return this.$scopedSlots['suffix-icon'];
+
+      return () => <CalendarIcon />;
+    };
 
     return (
       <div class={COMPONENT_NAME}>
@@ -258,7 +275,7 @@ export default defineComponent({
           status={this.status}
           tips={this.tips}
           popupProps={datePickerPopupProps}
-          inputProps={{ suffixIcon: this.suffixIcon || (() => <CalendarIcon />), ...datePickerInputProps }}
+          inputProps={{ suffixIcon: renderSuffixIcon(), ...datePickerInputProps }}
           popupVisible={popupVisible}
           clearable={this.clearable}
           allowInput={this.allowInput}

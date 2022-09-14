@@ -4,15 +4,17 @@ import {
 import get from 'lodash/get';
 import set from 'lodash/set';
 import isFunction from 'lodash/isFunction';
-import { Edit1Icon } from 'tdesign-icons-vue';
+import { Edit1Icon as TdEdit1Icon } from 'tdesign-icons-vue';
 import {
   TableRowData,
   PrimaryTableCol,
   PrimaryTableRowEditContext,
   PrimaryTableRowValidateContext,
   TdBaseTableProps,
+  PrimaryTableCellParams,
 } from './type';
 import { TableClassName } from './hooks/useClassName';
+import { useGlobalIcon } from '../hooks/useGlobalIcon';
 import { renderCell } from './tr';
 import { validate } from '../form/form-model';
 import log from '../_common/js/log';
@@ -27,6 +29,7 @@ export interface EditableCellProps {
   tableBaseClass?: TableClassName['tableBaseClass'];
   /** 行编辑需要使用 editable。单元格编辑则无需使用，设置为 undefined */
   editable?: boolean;
+  readonly?: boolean;
   errors?: AllValidateResult[];
   cellEmptyContent?: TdBaseTableProps['cellEmptyContent'];
   onChange?: (context: PrimaryTableRowEditContext<TableRowData>) => void;
@@ -48,6 +51,9 @@ export default defineComponent({
       type: Boolean,
       default: undefined,
     },
+    readonly: {
+      type: Boolean,
+    },
     errors: {
       type: Array as PropType<EditableCellProps['errors']>,
       default: undefined,
@@ -60,9 +66,11 @@ export default defineComponent({
   setup(props: EditableCellProps, context: SetupContext) {
     const { row, col } = toRefs(props);
     const tableEditableCellRef = ref(null);
-    const isEdit = ref(false);
+    const isEdit = ref(props.col.edit?.defaultEditable || false);
     const editValue = ref();
     const errorList = ref<AllValidateResult[]>();
+
+    const { Edit1Icon } = useGlobalIcon({ Edit1Icon: TdEdit1Icon });
 
     const currentRow = computed(() => {
       const newRow = { ...row.value };
@@ -112,25 +120,29 @@ export default defineComponent({
     });
 
     const validateEdit = (trigger: 'self' | 'parent') => new Promise((resolve) => {
+      const cellParams: PrimaryTableCellParams<TableRowData> = {
+        col: props.col,
+        row: props.row,
+        colIndex: props.colIndex,
+        rowIndex: props.rowIndex,
+      };
       const params: PrimaryTableRowValidateContext<TableRowData> = {
         result: [
           {
-            col: props.col,
-            row: props.row,
-            colIndex: props.colIndex,
-            rowIndex: props.rowIndex,
+            ...cellParams,
             errorList: [],
             value: editValue.value,
           },
         ],
         trigger,
       };
-      if (!col.value.edit || !col.value.edit.rules) {
+      const rules = isFunction(col.value.edit.rules) ? col.value.edit.rules(cellParams) : col.value.edit.rules;
+      if (!col.value.edit || !rules || !rules.length) {
         props.onValidate?.(params);
         resolve(true);
         return;
       }
-      validate(editValue.value, col.value.edit.rules).then((result) => {
+      validate(editValue.value, rules).then((result) => {
         const list = result?.filter((t) => !t.result);
         params.result[0].errorList = list;
         props.onValidate?.(params);
@@ -203,6 +215,7 @@ export default defineComponent({
         value: val,
         col: props.col,
         colIndex: props.colIndex,
+        editedRow: { ...props.row, [props.col.colKey]: val },
       };
       props.onChange?.(params);
       props.onRuleChange?.(params);
@@ -256,29 +269,34 @@ export default defineComponent({
       { immediate: true },
     );
 
-    watch(isEdit, (isEdit) => {
-      const isCellEditable = props.editable === undefined;
-      if (!col.value.edit || !col.value.edit.component || !isCellEditable) return;
-      if (isEdit) {
-        document.addEventListener('click', documentClickHandler);
-      } else {
-        document.removeEventListener('click', documentClickHandler);
-      }
-    });
+    watch(
+      isEdit,
+      (isEdit) => {
+        const isCellEditable = props.editable === undefined;
+        if (!col.value.edit || !col.value.edit.component || !isCellEditable) return;
+        if (isEdit) {
+          document.addEventListener('click', documentClickHandler);
+        } else {
+          document.removeEventListener('click', documentClickHandler);
+        }
+      },
+      { immediate: true },
+    );
 
     watch(
-      () => props.editable,
-      () => {
+      () => [props.editable, props.rowIndex, props.colIndex],
+      ([editable, rowIndex, colIndex]: [boolean, number, number]) => {
         // 退出编辑态时，恢复原始值，等待父组件传入新的 data 值
-        if (props.editable === false) {
+        if (editable === false) {
           editValue.value = cellValue.value;
         } else {
           props.onRuleChange?.({
             col: col.value,
             row: row.value,
-            rowIndex: props.rowIndex,
-            colIndex: props.colIndex,
+            rowIndex,
+            colIndex,
             value: cellValue.value,
+            editedRow: row.value,
           });
         }
       },
@@ -287,8 +305,8 @@ export default defineComponent({
 
     watch(
       () => props.errors,
-      () => {
-        errorList.value = props.errors;
+      (errors) => {
+        errorList.value = errors;
       },
     );
 
@@ -302,12 +320,17 @@ export default defineComponent({
       tableEditableCellRef,
       errorList,
       onEditChange,
+      Edit1Icon,
     };
   },
 
   render() {
+    if (this.readonly) {
+      return <div>{this.cellNode}</div>;
+    }
     // props.editable = undefined 表示由组件内部控制编辑状态
     if ((this.editable === undefined && !this.isEdit) || this.editable === false) {
+      const { Edit1Icon } = this;
       return (
         <div
           class={this.tableBaseClass?.cellEditable}
@@ -322,8 +345,8 @@ export default defineComponent({
       );
     }
     // @ts-ignore
-    const component = this.col.edit?.component;
-    if (!component) {
+    const Component = this.col.edit?.component;
+    if (!Component) {
       log.error('Table', 'edit.component is required.');
       return null;
     }
@@ -335,7 +358,7 @@ export default defineComponent({
           e.stopPropagation();
         }}
       >
-        <component
+        <Component
           ref="tableEditableCellRef"
           status={errorMessage ? this.errorList?.[0]?.type || 'error' : undefined}
           tips={errorMessage}

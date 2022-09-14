@@ -34,23 +34,26 @@ export default {
   /** 列配置功能中，当前显示的列 */
   displayColumns: {
     type: Array as PropType<TdPrimaryTableProps['displayColumns']>,
-    default: undefined,
   },
   /** 列配置功能中，当前显示的列，非受控属性 */
   defaultDisplayColumns: {
     type: Array as PropType<TdPrimaryTableProps['defaultDisplayColumns']>,
   },
-  /** 拖拽排序方式，值为 `row` 表示行拖拽排序，这种方式无法进行文本复制，慎用。值为`row-handler` 表示通过专门的 拖拽手柄 进行 行拖拽排序。值为 `col` 表示列顺序拖拽。`drag-col` 已废弃，请勿使用 */
+  /** 拖拽排序方式，值为 `row` 表示行拖拽排序，这种方式无法进行文本复制，慎用。值为`row-handler` 表示通过拖拽手柄进行行拖拽排序。值为 `col` 表示列顺序拖拽。值为 `row-handler-col` 表示同时支持行拖拽和列拖拽。⚠️`drag-col` 已废弃，请勿使用。 */
   dragSort: {
     type: String as PropType<TdPrimaryTableProps['dragSort']>,
     validator(val: TdPrimaryTableProps['dragSort']): boolean {
       if (!val) return true;
-      return ['row', 'row-handler', 'col', 'drag-col'].includes(val);
+      return ['row', 'row-handler', 'col', 'row-handler-col', 'drag-col'].includes(val);
     },
   },
   /** 拖拽排序扩展参数，具体参数见 [Sortable](https://github.com/SortableJS/Sortable) */
   dragSortOptions: {
     type: Object as PropType<TdPrimaryTableProps['dragSortOptions']>,
+  },
+  /** 单元格是否允许编辑。返回值为 `true` 则表示可编辑；返回值为 `false` 则表示不可编辑，只读状态 */
+  editableCellState: {
+    type: Function as PropType<TdPrimaryTableProps['editableCellState']>,
   },
   /** 处于编辑状态的行 */
   editableRowKeys: {
@@ -70,7 +73,7 @@ export default {
   /** 展开行 */
   expandedRowKeys: {
     type: Array as PropType<TdPrimaryTableProps['expandedRowKeys']>,
-    default: undefined,
+    default: (): TdPrimaryTableProps['expandedRowKeys'] => [],
   },
   /** 展开行，非受控属性 */
   defaultExpandedRowKeys: {
@@ -88,7 +91,6 @@ export default {
   /** 过滤数据的值 */
   filterValue: {
     type: Object as PropType<TdPrimaryTableProps['filterValue']>,
-    default: undefined,
   },
   /** 过滤数据的值，非受控属性 */
   defaultFilterValue: {
@@ -105,7 +107,7 @@ export default {
   /** 选中行，控制属性。半选状态行请更为使用 `indeterminateSelectedRowKeys` 控制 */
   selectedRowKeys: {
     type: Array as PropType<TdPrimaryTableProps['selectedRowKeys']>,
-    default: undefined,
+    default: (): TdPrimaryTableProps['selectedRowKeys'] => [],
   },
   /** 选中行，控制属性。半选状态行请更为使用 `indeterminateSelectedRowKeys` 控制，非受控属性 */
   defaultSelectedRowKeys: {
@@ -115,7 +117,6 @@ export default {
   /** 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序 */
   sort: {
     type: [Object, Array] as PropType<TdPrimaryTableProps['sort']>,
-    default: undefined,
   },
   /** 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序，非受控属性 */
   defaultSort: {

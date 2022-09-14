@@ -494,17 +494,20 @@ module.exports = {
   },
   tree: {
     panelStr: `const panelList = [{label: 'tree', value: 'tree'}];`,
+    script: `
+      const data = ref([{ label: '第一段',
+        children: [ { label: '第二段' }, { label: '第二段' } ],
+      },{
+        label: '第一段',
+        children: [ { label: '第二段' }, { label: '第二段' } ],
+      },{
+        label: '第一段',
+        children: [ { label: '第二段' }, { label: '第二段' } ],
+      }]);
+    `,
     render: {
       tree: `
-        <t-tree :data="[{ label: '第一段',
-          children: [ { label: '第二段' }, { label: '第二段' } ],
-        },{
-          label: '第一段',
-          children: [ { label: '第二段' }, { label: '第二段' } ],
-        },{
-          label: '第一段',
-          children: [ { label: '第二段' }, { label: '第二段' } ],
-        }]" v-bind="configProps" />
+        <t-tree :data="data" v-bind="configProps" />
       `,
     },
   },
@@ -539,7 +542,7 @@ module.exports = {
       drawer: `
         <div>
           <t-button @click="handleClick">Open Drawer</t-button>
-          <t-drawer v-bind="configProps" :visible.sync="visible" header="header" :close-btn="true">
+          <t-drawer v-bind="configProps" :visible.sync="visible" header="header">
             <p>This is a Drawer</p>
           </t-drawer>
         </div>
@@ -549,13 +552,13 @@ module.exports = {
   message: {
     panelStr: `const panelList = [{label: 'message', value: 'message'}];`,
     render: {
-      message: `<t-message v-bind="configProps" :duration="0" content="这里是 Message 信息"  :closeBtn="true" />`,
+      message: `<t-message v-bind="configProps" :duration="0" content="这里是 Message 信息" />`,
     },
   },
   notification: {
     panelStr: `const panelList = [{label: 'notification', value: 'notification'}];`,
     render: {
-      notification: `<t-notification v-bind="configProps" duration="0" title="标题名称" content="这是一条消息通知" :closeBtn="true" />`,
+      notification: `<t-notification v-bind="configProps" duration="0" title="标题名称" content="这是一条消息通知" />`,
     },
   },
   popconfirm: {

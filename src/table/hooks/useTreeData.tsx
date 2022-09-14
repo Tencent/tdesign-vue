@@ -1,11 +1,11 @@
 import {
   SetupContext, ref, watch, toRefs, onUnmounted, computed,
 } from '@vue/composition-api';
-import { AddRectangleIcon, MinusRectangleIcon } from 'tdesign-icons-vue';
+import { AddRectangleIcon as TdAddRectangleIcon, MinusRectangleIcon as TdMinusRectangleIcon } from 'tdesign-icons-vue';
 import cloneDeep from 'lodash/cloneDeep';
 import get from 'lodash/get';
 import { CreateElement } from 'vue';
-import TableTreeStore, { SwapParams } from './tree-store';
+import TableTreeStore, { SwapParams } from '../../_common/js/table/tree-store';
 import {
   TdEnhancedTableProps,
   PrimaryTableCol,
@@ -18,10 +18,15 @@ import useClassName from './useClassName';
 import { renderCell } from '../tr';
 import { useConfig } from '../../config-provider/useConfig';
 import { useTNodeDefault } from '../../hooks/tnode';
+import { useGlobalIcon } from '../../hooks/useGlobalIcon';
 
 export default function useTreeData(props: TdEnhancedTableProps, context: SetupContext) {
   const { data, columns } = toRefs(props);
   const { t, global } = useConfig('table');
+  const { AddRectangleIcon, MinusRectangleIcon } = useGlobalIcon({
+    AddRectangleIcon: TdAddRectangleIcon,
+    MinusRectangleIcon: TdMinusRectangleIcon,
+  });
   const store = ref(new TableTreeStore() as InstanceType<typeof TableTreeStore>);
   const treeNodeCol = ref<PrimaryTableCol>();
   const dataSource = ref<TdEnhancedTableProps['data']>([]);
@@ -109,7 +114,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   }
 
   /**
-   * 组件实例方法，展开或收起某一行
+   * 对外暴露的组件实例方法，展开或收起某一行
    * @param p 行数据
    */
   function toggleExpandData(p: { row: TableRowData; rowIndex: number }, trigger?: 'expand-fold-icon') {
@@ -180,7 +185,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   }
 
   /**
-   * 组件实例方法，设置行数据，自动刷新界面
+   * 对外暴露的组件实例方法，设置行数据，自动刷新界面
    * @param key 当前行唯一标识值
    * @param newRowData 新行数据
    */
@@ -192,7 +197,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   }
 
   /**
-   * 组件实例方法，获取当前行全部数据
+   * 对外暴露的组件实例方法，获取当前行全部数据
    * @param key 行唯一标识
    * @returns {TableRowState} 当前行数据
    */
@@ -201,7 +206,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   }
 
   /**
-   * 组件实例方法，移除指定节点
+   * 对外暴露的组件实例方法，移除指定节点
    * @param key 行唯一标识
    */
   function remove(key: TableRowValue) {
@@ -210,7 +215,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   }
 
   /**
-   * 为当前节点添加子节点，默认添加到最后一个节点
+   * 对外暴露的组件实例方法，为当前节点添加子节点，默认添加到最后一个节点
    * @param key 当前节点唯一标识
    * @param newData 待添加的新节点
    */
@@ -224,35 +229,35 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   }
 
   /**
-   * 当前节点之后，插入节点
+   * 对外暴露的组件实例方法，当前节点之后，插入节点
    */
   function insertAfter<T>(rowValue: TableRowValue, newData: T) {
     dataSource.value = [...store.value.insertAfter(rowValue, newData, dataSource.value, rowDataKeys.value)];
   }
 
   /**
-   * 当前节点之后，插入节点
+   * 对外暴露的组件实例方法，当前节点之后，插入节点
    */
   function insertBefore<T>(rowValue: TableRowValue, newData: T) {
     dataSource.value = [...store.value.insertBefore(rowValue, newData, dataSource.value, rowDataKeys.value)];
   }
 
   /**
-   * 展开所有节点
+   * 对外暴露的组件实例方法，展开所有节点
    */
   function expandAll() {
     dataSource.value = [...store.value.expandAll(dataSource.value, rowDataKeys.value)];
   }
 
   /**
-   * 收起所有节点
+   * 对外暴露的组件实例方法，收起所有节点
    */
   function foldAll() {
     dataSource.value = [...store.value.foldAll(dataSource.value, rowDataKeys.value)];
   }
 
   /**
-   * 交换行数据
+   * 对外暴露的组件实例方法，交换行数据
    */
   function swapData(params: SwapParams<TableRowData>) {
     const r = store.value.swapData(dataSource.value, params, rowDataKeys.value);
@@ -270,11 +275,18 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   }
 
   /**
-   * 获取全部数据的树形结构
+   * 对外暴露的组件实例方法，获取全部数据的树形结构
    * @param key 节点唯一标识
    */
   function getTreeNode() {
     return store.value.getTreeNode(dataSource.value, rowDataKeys.value);
+  }
+
+  /**
+   * 对外暴露的组件实例方法，获取树形结构展开的节点
+   */
+  function getTreeExpandedRow(type: 'unique' | 'data' | 'all' = 'data') {
+    return store.value.getTreeExpandedRow(dataSource.value, rowDataKeys.value, type);
   }
 
   return {
@@ -294,5 +306,6 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     foldAll,
     getTreeNode,
     resetData,
+    getTreeExpandedRow,
   };
 }

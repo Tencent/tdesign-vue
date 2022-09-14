@@ -1,13 +1,13 @@
 import {
   defineComponent, computed, provide, ref, reactive, watch, onMounted,
 } from '@vue/composition-api';
-import { prefix } from '../config';
 import props from './head-menu-props';
 import { MenuValue } from './type';
 import { TdMenuInterface, TdOpenType } from './const';
 import { Tabs, TabPanel } from '../tabs';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import VMenu from './v-menu';
+import { usePrefixClass } from '../hooks/useConfig';
 
 export default defineComponent({
   name: 'THeadMenu',
@@ -21,11 +21,14 @@ export default defineComponent({
     const activeValue = ref(props.defaultValue || props.value);
     const activeValues = ref([]);
     const expandValues = ref(props.defaultExpanded || props.expanded || []);
+
+    const classPrefix = usePrefixClass();
+
     const theme = computed(() => props.theme);
     const menuClass = computed(() => [
-      `${prefix}-menu`,
-      `${prefix}-head-menu`,
-      `${prefix}-menu--${props.theme}`,
+      `${classPrefix.value}-menu`,
+      `${classPrefix.value}-head-menu`,
+      `${classPrefix.value}-menu--${props.theme}`,
     ]);
     const mode = ref(props.expandType);
     const submenu = reactive([]);
@@ -59,7 +62,8 @@ export default defineComponent({
 
         if (mode.value === 'popup') {
           if (type === 'add') {
-            if (index === -1) { // 可能初始expanded里包含了该value
+            if (index === -1) {
+              // 可能初始expanded里包含了该value
               expanded.push(value);
             }
           } else if (type === 'remove') {
@@ -101,9 +105,12 @@ export default defineComponent({
     };
     watch(() => props.value, updateActiveValues);
     watch(() => props.defaultValue, updateActiveValues);
-    watch(() => props.expandType, (value) => {
-      mode.value = value;
-    });
+    watch(
+      () => props.expandType,
+      (value) => {
+        mode.value = value;
+      },
+    );
 
     onMounted(() => {
       activeValues.value = vMenu.select(activeValue.value);
@@ -120,16 +127,17 @@ export default defineComponent({
       activeValues,
       submenu,
       handleTabChange,
+      classPrefix,
     };
   },
   methods: {
     renderNormalSubmenu() {
       if (this.submenu.length === 0) return null;
       return (
-        <ul class={[`${prefix}-head-menu__submenu`, `${prefix}-submenu`]}>
+        <ul class={[`${this.classPrefix}-head-menu__submenu`, `${this.classPrefix}-submenu`]}>
           {
             <t-tabs value={this.activeValue} onChange={this.handleTabChange}>
-              { this.submenu.map((item) => (
+              {this.submenu.map((item) => (
                 <t-tab-panel value={item.value} label={item.vnode[0].text} />
               ))}
             </t-tabs>
@@ -146,12 +154,10 @@ export default defineComponent({
     const logo = renderTNodeJSX(this, 'logo');
     return (
       <div class={this.menuClass}>
-        <div class={`${prefix}-head-menu__inner`}>
-          {logo && <div class={`${prefix}-menu__logo`}>{logo}</div>}
-          <ul class={`${prefix}-menu`}>
-            {renderContent(this, 'default', 'content')}
-          </ul>
-          {operations && <div class={`${prefix}-menu__operations`}>{operations}</div>}
+        <div class={`${this.classPrefix}-head-menu__inner`}>
+          {logo && <div class={`${this.classPrefix}-menu__logo`}>{logo}</div>}
+          <ul class={`${this.classPrefix}-menu`}>{renderContent(this, 'default', 'content')}</ul>
+          {operations && <div class={`${this.classPrefix}-menu__operations`}>{operations}</div>}
         </div>
         {this.mode === 'normal' && this.renderNormalSubmenu()}
       </div>

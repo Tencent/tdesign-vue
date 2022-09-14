@@ -3,24 +3,22 @@ import DialogComponent from './dialog';
 
 import { getAttach } from '../utils/dom';
 import {
-  DialogOptions,
-  DialogMethod,
-  DialogConfirmMethod,
-  DialogAlertMethod,
-  DialogInstance,
+  DialogOptions, DialogMethod, DialogConfirmMethod, DialogAlertMethod, DialogInstance,
 } from './type';
 
 const createDialog: DialogMethod = (props: DialogOptions) => {
   const options = { ...props };
-  options.visible = true;
   const dialog = new DialogComponent({
     propsData: {
       ...options,
-      onClose: options.onClose || (() => {
-        dialog.visible = false;
-      }),
+      onClose:
+        options.onClose
+        || (() => {
+          dialog.visible = false;
+        }),
     },
   }).$mount();
+  dialog.visible = true;
   if (options.className) {
     options.className.split(' ').forEach((name) => {
       dialog.$el.classList.add(name.trim());
@@ -84,11 +82,7 @@ Object.keys(extraApi).forEach((funcName) => {
   _DialogPlugin[funcName] = extraApi[funcName];
 });
 
-export const DialogPlugin: (
-  Vue.PluginObject<undefined>
-  & DialogMethod
-  & ExtraApi
-) = _DialogPlugin as any;
+export const DialogPlugin: Vue.PluginObject<undefined> & DialogMethod & ExtraApi = _DialogPlugin as any;
 export default DialogPlugin;
 
 declare module 'vue/types/vue' {

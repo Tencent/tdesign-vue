@@ -4,15 +4,17 @@ import {
 } from './type';
 import { InputValue } from '../input';
 import Tag from '../tag';
-import { prefix } from '../config';
 import useVModel from '../hooks/useVModel';
 import { useTNodeJSX } from '../hooks/tnode';
+import { useConfig } from '../config-provider/useConfig';
 
 export type ChangeParams = [TagInputChangeContext];
 
 // handle tag add and remove
 export default function useTagList(props: TdTagInputProps, getDragProps: DragProps) {
   const renderTNode = useTNodeJSX();
+  const { classPrefix } = useConfig('classPrefix');
+
   const {
     value, onRemove, max, minCollapsedNum, size, disabled, readonly, tagProps,
   } = toRefs(props);
@@ -101,7 +103,7 @@ export default function useTagList(props: TdTagInputProps, getDragProps: DragPro
 
         return itemDrag && itemDrag.draggable ? (
             <span
-              class={`${prefix}-tag-input__drag_wrapper`}
+              class={`${classPrefix.value}-tag-input__drag_wrapper`}
               draggable={true}
               onDragstart={itemDrag.onDragstart}
               onDragover={itemDrag.onDragover}
@@ -116,7 +118,7 @@ export default function useTagList(props: TdTagInputProps, getDragProps: DragPro
       });
     if (![null, undefined, ''].includes(label)) {
       list.unshift(
-        <div class={`${prefix}-tag-input__prefix`} key="label">
+        <div class={`${classPrefix.value}-tag-input__prefix`} key="label">
           {label}
         </div>,
       );

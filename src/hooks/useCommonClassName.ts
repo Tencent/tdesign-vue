@@ -30,7 +30,9 @@ export default function useCommonClassName() {
     expanded: `${classPrefix.value}-is-expanded`,
     indeterminate: `${classPrefix.value}-is-indeterminate`,
   };
+
   return {
+    classPrefix,
     sizeClassNames,
     statusClassNames,
     classNames: {

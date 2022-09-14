@@ -27,6 +27,7 @@ const Ripple = {
         el.classList.contains(`${prefix}-is-active`)
         || el.classList.contains(`${prefix}-is-disabled`)
         || el.classList.contains(`${prefix}-is-checked`)
+        || el.classList.contains(`${prefix}-is-loading`)
       ) {
         return;
       }

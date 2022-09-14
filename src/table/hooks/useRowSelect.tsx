@@ -1,5 +1,4 @@
 // 行选中相关功能：单选 + 多选
-
 import {
   computed, toRefs, h, ref, watch,
 } from '@vue/composition-api';
@@ -15,7 +14,7 @@ import {
   TableRowData,
   TdPrimaryTableProps,
 } from '../type';
-import { filterDataByIds, isRowSelectedDisabled } from '../utils';
+import { isRowSelectedDisabled } from '../utils';
 import { TableClassName } from './useClassName';
 import Checkbox from '../../checkbox';
 import Radio from '../../radio';
@@ -37,8 +36,9 @@ export default function useRowSelect(
     'selectedRowKeys',
     'select-change',
   );
+  const selectedRowDataMap = ref(new Map<string | number, TableRowData>());
   const selectColumn = computed(() => props.columns.find(({ type }) => ['multiple', 'single'].includes(type)));
-  const canSelectedRows = computed(() => props.data.filter((row, rowIndex): boolean => !isDisabled(row, rowIndex)));
+  const canSelectedRows = computed(() => data.value.filter((row, rowIndex): boolean => !isDisabled(row, rowIndex)));
   // 选中的行，和所有可以选择的行，交集，用于计算 isSelectedAll 和 isIndeterminate
   const intersectionKeys = computed(() => intersection(
     tSelectedRowKeys.value,
@@ -119,6 +119,7 @@ export default function useRowSelect(
     let selectedRowKeys = [...tSelectedRowKeys.value];
     const reRowKey = props.rowKey || 'id';
     const id = get(row, reRowKey);
+    selectedRowDataMap.value.set(id, row);
     const selectedRowIndex = selectedRowKeys.indexOf(id);
     const isExisted = selectedRowIndex !== -1;
     if (selectColumn.value.type === 'multiple') {
@@ -130,7 +131,7 @@ export default function useRowSelect(
       return;
     }
     setTSelectedRowKeys(selectedRowKeys, {
-      selectedRowData: filterDataByIds(props.data, selectedRowKeys, reRowKey),
+      selectedRowData: selectedRowKeys.map((t) => selectedRowDataMap.value.get(t)),
       currentRowKey: id,
       currentRowData: row,
       type: isExisted ? 'uncheck' : 'check',
@@ -143,7 +144,7 @@ export default function useRowSelect(
     const disabledSelectedRowKeys = selectedRowKeys.value?.filter((id) => !canSelectedRowKeys.includes(id)) || [];
     const allIds = checked ? [...disabledSelectedRowKeys, ...canSelectedRowKeys] : [...disabledSelectedRowKeys];
     setTSelectedRowKeys(allIds, {
-      selectedRowData: checked ? filterDataByIds(props.data, allIds, reRowKey) : [],
+      selectedRowData: checked ? allIds.map((t) => selectedRowDataMap.value.get(t)) : [],
       type: checked ? 'check' : 'uncheck',
       currentRowKey: 'CHECK_ALL_BOX',
     });
@@ -155,11 +156,21 @@ export default function useRowSelect(
     return {
       ...col,
       width: col.width || 64,
-      className: tableSelectedClasses.checkCell,
+      className: [tableSelectedClasses.checkCell, col.className],
       cell: (h: CreateElement, p: PrimaryTableCellParams<TableRowData>) => renderSelectCell(h, p),
       title: col.type === 'multiple' ? getSelectedHeader(h) : '',
     };
   }
+
+  watch(
+    [data, rowKey],
+    ([data, rowKey]) => {
+      for (let i = 0, len = data.length; i < len; i++) {
+        selectedRowDataMap.value.set(get(data[i], rowKey || 'id'), data[i]);
+      }
+    },
+    { immediate: true },
+  );
 
   return {
     selectedRowClassNames,

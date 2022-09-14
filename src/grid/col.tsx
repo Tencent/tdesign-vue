@@ -1,15 +1,16 @@
-import Vue, { VNode } from 'vue';
+import { VNode } from 'vue';
 import isObject from 'lodash/isObject';
 import { calcSize } from '../utils/responsive';
-import { prefix } from '../config';
 import props from './col-props';
 import { ClassName } from '../common';
 import { TdColProps, TdRowProps } from './type';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import mixins from '../utils/mixins';
 
-const name = `${prefix}-col`;
+const classPrefixMixins = getClassPrefixMixins('col');
 
-export default Vue.extend({
+export default mixins(classPrefixMixins).extend({
   name: 'TCol',
 
   props: { ...props },
@@ -40,21 +41,21 @@ export default Vue.extend({
 
         return {
           ...acc,
-          [`${name}-${currSize}-${sizeObject.span}`]: sizeObject.span !== undefined,
-          [`${name}-${currSize}-order-${sizeObject.order}`]: parseInt(sizeObject.order, 10) >= 0,
-          [`${name}-${currSize}-offset-${sizeObject.offset}`]: parseInt(sizeObject.offset, 10) >= 0,
-          [`${name}-${currSize}-push-${sizeObject.push}`]: parseInt(sizeObject.push, 10) >= 0,
-          [`${name}-${currSize}-pull-${sizeObject.pull}`]: parseInt(sizeObject.pull, 10) >= 0,
+          [`${this.componentName}-${currSize}-${sizeObject.span}`]: sizeObject.span !== undefined,
+          [`${this.componentName}-${currSize}-order-${sizeObject.order}`]: parseInt(sizeObject.order, 10) >= 0,
+          [`${this.componentName}-${currSize}-offset-${sizeObject.offset}`]: parseInt(sizeObject.offset, 10) >= 0,
+          [`${this.componentName}-${currSize}-push-${sizeObject.push}`]: parseInt(sizeObject.push, 10) >= 0,
+          [`${this.componentName}-${currSize}-pull-${sizeObject.pull}`]: parseInt(sizeObject.pull, 10) >= 0,
         };
       }, {});
 
       return {
-        [`${name}`]: true,
-        [`${name}-${span}`]: span !== undefined,
-        [`${name}-order-${order}`]: order,
-        [`${name}-offset-${offset}`]: offset,
-        [`${name}-push-${push}`]: push,
-        [`${name}-pull-${pull}`]: pull,
+        [`${this.componentName}`]: true,
+        [`${this.componentName}-${span}`]: span !== undefined,
+        [`${this.componentName}-order-${order}`]: order,
+        [`${this.componentName}-offset-${offset}`]: offset,
+        [`${this.componentName}-push-${push}`]: push,
+        [`${this.componentName}-pull-${pull}`]: pull,
         ...sizeClasses,
       };
     },

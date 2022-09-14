@@ -15,11 +15,13 @@ export default defineComponent({
     empty: CascaderProps.empty,
     trigger: CascaderProps.trigger,
     onChange: CascaderProps.onChange,
+    loading: CascaderProps.loading,
+    loadingText: CascaderProps.loadingText,
     cascaderContext: {
       type: Object as PropType<CascaderContextType>,
     },
   },
-  setup(props) {
+  setup(props, { emit }) {
     const renderTNodeJSXDefault = useTNodeDefault();
     const COMPONENT_NAME = usePrefixClass('cascader');
     const { global } = useConfig('cascader');
@@ -37,11 +39,12 @@ export default defineComponent({
       handleExpand,
       renderTNodeJSXDefault,
       COMPONENT_NAME,
+      emit,
     };
   },
   render() {
     const {
-      global, COMPONENT_NAME, handleExpand, renderTNodeJSXDefault, cascaderContext, panels,
+      global, COMPONENT_NAME, handleExpand, renderTNodeJSXDefault, cascaderContext, panels, emit,
     } = this;
 
     const renderItem = (node: TreeNode) => (
@@ -54,6 +57,7 @@ export default defineComponent({
             node,
             cascaderContext,
             onClick: () => {
+              emit('click', node.value, node);
               handleExpand(node, 'click');
             },
             onMouseenter: () => {
@@ -90,11 +94,21 @@ export default defineComponent({
         : panels.map((treeNodes, index: number) => renderList(treeNodes, false, index !== panels.length - 1, `${COMPONENT_NAME}__menu${index}`));
     };
 
+    let content;
+    if (this.loading) {
+      content = renderTNodeJSXDefault(
+        'loadingText',
+        <div class={`${COMPONENT_NAME}__panel--empty`}>{global.loadingText}</div>,
+      );
+    } else {
+      content = panels.length
+        ? renderPanels()
+        : renderTNodeJSXDefault('empty', <div class={`${COMPONENT_NAME}__panel--empty`}>{global.empty}</div>);
+    }
+
     return (
-      <div class={[`${COMPONENT_NAME}__panel`, { [`${COMPONENT_NAME}--normal`]: panels.length }]}>
-        {panels.length
-          ? renderPanels()
-          : renderTNodeJSXDefault('empty', <div class={`${COMPONENT_NAME}__panel--empty`}>{global.empty}</div>)}
+      <div class={[`${COMPONENT_NAME}__panel`, { [`${COMPONENT_NAME}--normal`]: panels.length && !this.loading }]}>
+        {content}
       </div>
     );
   },

@@ -1,5 +1,5 @@
 import { defineComponent, PropType, computed } from '@vue/composition-api';
-import { ChevronRightIcon } from 'tdesign-icons-vue';
+import { ChevronRightIcon as TdChevronRightIcon } from 'tdesign-icons-vue';
 import { getFullPathLabel } from '../core/helper';
 import { getCascaderItemClass, getCascaderItemIconClass } from '../core/className';
 
@@ -11,6 +11,7 @@ import TLoading from '../../loading';
 import { getKeepAnimationMixins } from '../../config-provider/config-receiver';
 import { CascaderContextType, TreeNodeValue, TreeNode } from '../interface';
 import { usePrefixClass, useCommonClassName } from '../../hooks/useConfig';
+import { useGlobalIcon } from '../../hooks/useGlobalIcon';
 import Ripple from '../../utils/ripple';
 
 const keepAnimationMixins = getKeepAnimationMixins();
@@ -38,6 +39,7 @@ export default defineComponent({
     const COMPONENT_NAME = usePrefixClass('cascader__item');
     const classPrefix = usePrefixClass();
     const { STATUS, SIZE } = useCommonClassName();
+    const { ChevronRightIcon } = useGlobalIcon({ ChevronRightIcon: TdChevronRightIcon });
 
     const itemClass = computed(() => getCascaderItemClass(classPrefix.value, props.node, SIZE.value, STATUS.value, props.cascaderContext));
 
@@ -45,13 +47,14 @@ export default defineComponent({
 
     return {
       COMPONENT_NAME,
+      ChevronRightIcon,
       iconClass,
       itemClass,
     };
   },
   render() {
     const {
-      iconClass, cascaderContext, itemClass, node, COMPONENT_NAME, onChange,
+      iconClass, cascaderContext, itemClass, node, COMPONENT_NAME, onChange, ChevronRightIcon,
     } = this;
 
     function RenderLabelInner(node: TreeNode, cascaderContext: CascaderContextType) {
@@ -100,8 +103,9 @@ export default defineComponent({
           checked={node.checked}
           indeterminate={node.indeterminate}
           disabled={node.isDisabled() || ((value as TreeNodeValue[]).length >= max && max !== 0)}
-          name={node.value}
+          name={String(node.value)}
           title={inputVal ? getFullPathLabel(node) : node.label}
+          stopLabelTrigger={true}
           onChange={(vale: boolean, { e }: { e: MouseEvent }) => {
             e.stopPropagation();
             onChange();

@@ -5,11 +5,10 @@ import isFunction from 'lodash/isFunction';
 import { VNode } from 'vue';
 import { useTNodeJSX } from '../hooks/tnode';
 import { renderTNodeJSXDefault } from '../utils/render-tnode';
-import { useConfig } from '../config-provider/useConfig';
+import { useConfig, usePrefixClass } from '../config-provider/useConfig';
 import {
   TdOptionProps, SelectOptionGroup, TdSelectProps, SelectOption,
 } from './type';
-import { name } from './select';
 import Option from './option';
 import useVirtualScroll from '../hooks/useVirtualScroll';
 
@@ -70,6 +69,7 @@ export default defineComponent({
     const renderTNode = useTNodeJSX();
     const { t, global } = useConfig('select');
     const selectProvider: any = inject('tSelect');
+    const COMPONENT_NAME = usePrefixClass('select');
 
     const panelContentRef = computed(() => selectProvider.getOverlayElm());
 
@@ -82,7 +82,7 @@ export default defineComponent({
     } = props.scroll || {};
 
     const displayOptions = computed(() => {
-      if (!inputValue.value || props.creatable || !(props.filterable || isFunction(props.filter))) return options.value;
+      if (!inputValue.value || !(props.filterable || isFunction(props.filter))) return options.value;
 
       const filterMethods = (option: SelectOption) => {
         if (isFunction(props.filter)) {
@@ -91,24 +91,31 @@ export default defineComponent({
         return option.label?.indexOf(`${props.inputValue}`) > -1;
       };
 
-      const res: SelectOption[] = [];
+      const res: Array<SelectOption & { index?: number }> = [];
+      let groupIndex = 0;
       props.options.forEach((option) => {
         if ((option as SelectOptionGroup).group && (option as SelectOptionGroup).children) {
           res.push({
             ...option,
-            children: (option as SelectOptionGroup).children.filter(filterMethods),
+            // 处理index使其在过滤后的分组中能正确触发上下移动键的hover效果
+            children: (option as SelectOptionGroup).children.filter(filterMethods).reduce((pre, cur) => {
+              pre.push({ ...cur, index: groupIndex });
+              groupIndex += 1;
+              return pre;
+            }, []),
           });
         }
         if (filterMethods(option)) {
-          res.push(option);
+          res.push({ ...option, index: res.length });
         }
       });
 
       return res;
     });
+    const getDisplayOptions = () => displayOptions.value;
 
     const isCreateOptionShown = computed(() => props.creatable && props.filterable && props.inputValue);
-    const isEmpty = computed(() => !displayOptions.value.length);
+    const isEmpty = computed(() => !(displayOptions.value.length > 0));
     const isVirtual = computed(
       () => props.scroll?.type === 'virtual' && props.options?.length > (props.scroll?.threshold || 100),
     );
@@ -179,6 +186,8 @@ export default defineComponent({
       bufferSize,
       threshold,
       displayOptions,
+      getDisplayOptions,
+      componentName: COMPONENT_NAME,
     };
   },
 
@@ -186,19 +195,19 @@ export default defineComponent({
     renderEmptyContent() {
       const { empty, t, global } = this;
       if (empty && typeof empty === 'string') {
-        return <div class={`${name}__empty`}>{empty}</div>;
+        return <div class={`${this.componentName}__empty`}>{empty}</div>;
       }
-      return renderTNodeJSXDefault(this, 'empty', <div class={`${name}__empty`}>{t(global.empty)}</div>);
+      return renderTNodeJSXDefault(this, 'empty', <div class={`${this.componentName}__empty`}>{t(global.empty)}</div>);
     },
     renderLoadingContent() {
       const { loadingText, t, global } = this;
       if (loadingText && typeof loadingText === 'string') {
-        return <div class={`${name}__loading-tips`}>{loadingText}</div>;
+        return <div class={`${this.componentName}__loading-tips`}>{loadingText}</div>;
       }
       return renderTNodeJSXDefault(
         this,
         'loadingText',
-        <div class={`${name}__loading-tips`}>{t(global.loadingText)}</div>,
+        <div class={`${this.componentName}__loading-tips`}>{t(global.loadingText)}</div>,
       );
     },
     renderCreateOption() {
@@ -208,12 +217,12 @@ export default defineComponent({
       const on = isVirtual ? { onRowMounted: handleRowMounted } : {};
 
       return (
-        <ul class={[`${name}__create-option`, `${name}__list`]}>
+        <ul class={[`${this.componentName}__create-option`, `${this.componentName}__list`]}>
           <t-option
             isCreatedOption={true}
             value={inputValue}
             label={inputValue}
-            class={`${name}__create-option--special`}
+            class={`${this.componentName}__create-option--special`}
             trs={trs}
             scrollType={scrollType}
             isVirtual={isVirtual}
@@ -233,7 +242,7 @@ export default defineComponent({
       const on = isVirtual ? { onRowMounted: handleRowMounted } : {};
 
       return (
-        <ul class={`${name}__list`}>
+        <ul class={`${this.componentName}__list`}>
           {options.map(
             (
               item: SelectOptionGroup &
@@ -289,14 +298,17 @@ export default defineComponent({
       } = this;
       return (
         <div
-          class={[`${name}__dropdown-inner`, `${name}__dropdown-inner--size-${sizeClassMap[size]}`]}
+          class={[
+            `${this.componentName}__dropdown-inner`,
+            `${this.componentName}__dropdown-inner--size-${sizeClassMap[size]}`,
+          ]}
           style={innerStyle}
         >
           {renderTNode('panelTopContent')}
-          {isEmpty && this.renderEmptyContent()}
           {isCreateOptionShown && this.renderCreateOption()}
-          {!isEmpty && loading && this.renderLoadingContent()}
-          {!isEmpty && !loading && this.renderOptionsContent(isVirtual && visibleData ? visibleData : displayOptions)}
+          {loading && this.renderLoadingContent()}
+          {!loading && isEmpty && !isCreateOptionShown && this.renderEmptyContent()}
+          {!loading && !isEmpty && this.renderOptionsContent(isVirtual && visibleData ? visibleData : displayOptions)}
           {renderTNode('panelBottomContent')}
         </div>
       );

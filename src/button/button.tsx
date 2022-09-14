@@ -1,34 +1,26 @@
-import { VNode } from 'vue';
-import { prefix } from '../config';
-import CLASSNAMES from '../utils/classnames';
+import { VNode, CreateElement } from 'vue';
 import TLoading from '../loading';
 import props from './props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import ripple from '../utils/ripple';
-import { getKeepAnimationMixins } from '../config-provider/config-receiver';
+import { getKeepAnimationMixins, getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
 
-const name = `${prefix}-button`;
-
 const keepAnimationMixins = getKeepAnimationMixins();
-export interface ButtonHTMLAttributes {
-  attrs?: {
-    disabled?: boolean;
-    type?: string;
-  };
-}
+const classPrefixMixins = getClassPrefixMixins('button');
 
-export default mixins(keepAnimationMixins).extend({
+export default mixins(keepAnimationMixins, classPrefixMixins).extend({
   name: 'TButton',
 
   props,
 
   directives: { ripple },
 
-  render(): VNode {
+  render(h: CreateElement): VNode {
     let buttonContent = renderContent(this, 'default', 'content');
     const icon = this.loading ? <TLoading inheritColor={true} /> : renderTNodeJSX(this, 'icon');
     const disabled = this.disabled || this.loading;
+
     let { theme } = this;
 
     if (!this.theme) {
@@ -40,20 +32,20 @@ export default mixins(keepAnimationMixins).extend({
     }
 
     const buttonClass = [
-      `${name}`,
-      CLASSNAMES.SIZE[this.size],
-      `${name}--variant-${this.variant}`,
-      `${name}--theme-${theme}`,
+      `${this.componentName}`,
+      this.commonSizeClassName[this.size],
+      `${this.componentName}--variant-${this.variant}`,
+      `${this.componentName}--theme-${theme}`,
       {
-        [CLASSNAMES.STATUS.disabled]: disabled,
-        [CLASSNAMES.STATUS.loading]: this.loading,
-        [`${name}--shape-${this.shape}`]: this.shape !== 'rectangle',
-        [`${name}--ghost`]: this.ghost,
-        [CLASSNAMES.SIZE.block]: this.block,
+        [this.commonStatusClassName.disabled]: this.disabled,
+        [this.commonStatusClassName.loading]: this.loading,
+        [`${this.componentName}--shape-${this.shape}`]: this.shape !== 'rectangle',
+        [`${this.componentName}--ghost`]: this.ghost,
+        [this.commonSizeClassName.block]: this.block,
       },
     ];
 
-    buttonContent = buttonContent ? <span class={`${name}__text`}>{buttonContent}</span> : '';
+    buttonContent = buttonContent ? <span class={`${this.componentName}__text`}>{buttonContent}</span> : '';
     if (icon) {
       buttonContent = [icon, buttonContent];
     }
@@ -63,17 +55,26 @@ export default mixins(keepAnimationMixins).extend({
       on.click = this.onClick;
     }
 
-    const buttonAttrs: ButtonHTMLAttributes = {
-      attrs: {
-        type: this.type,
-        disabled,
-      },
+    const buttonAttrs = {
+      type: this.type,
+      disabled,
+      href: this.href,
     };
 
-    return (
-      <button v-ripple={this.keepAnimation.ripple} class={buttonClass} {...buttonAttrs} {...{ on }}>
-        {buttonContent}
-      </button>
+    const renderTag = () => {
+      if (!this.tag && this.href) return 'a';
+      return this.tag || 'button';
+    };
+
+    return h(
+      renderTag(),
+      {
+        class: buttonClass,
+        attrs: buttonAttrs,
+        on,
+        directives: [{ name: 'ripple', value: this.keepAnimation.ripple }],
+      },
+      [buttonContent],
     );
   },
 });

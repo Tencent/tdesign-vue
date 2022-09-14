@@ -13,8 +13,6 @@ import Vue, { PropType } from 'vue';
 
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { renderContent } from '../utils/render-tnode';
-import { prefix } from '../config';
-import CLASSNAMES from '../utils/classnames';
 import Ripple from '../utils/ripple';
 import { getKeepAnimationMixins } from '../config-provider/config-receiver';
 import props from './option-props';
@@ -24,6 +22,8 @@ import { SelectInstance } from './instance';
 import useLazyLoad from '../hooks/useLazyLoad';
 import { TScroll } from '../common';
 import { getNewMultipleValue } from './util';
+import { useConfig } from '../config-provider/useConfig';
+import useCommonClassName from '../hooks/useCommonClassName';
 
 const keepAnimationMixins = getKeepAnimationMixins();
 export interface OptionInstance extends Vue {
@@ -64,6 +64,8 @@ export default defineComponent({
   setup(props: OptionProps, context: SetupContext) {
     const selectProvider: any = inject('tSelect');
     const optionNode = ref(null);
+    const { sizeClassNames, statusClassNames } = useCommonClassName();
+    const { classPrefix } = useConfig('classPrefix');
 
     const {
       value, label, disabled, panelElement, scrollType, bufferSize, index, multiple, isCreatedOption,
@@ -87,12 +89,12 @@ export default defineComponent({
 
     const labelText = computed(() => label.value || value.value);
     const classes = computed(() => [
-      `${prefix}-select-option`,
-      CLASSNAMES.SIZE[selectProvider && selectProvider.size.value],
+      `${classPrefix.value}-select-option`,
+      sizeClassNames[selectProvider && selectProvider.size.value],
       {
-        [CLASSNAMES.STATUS.disabled]: isDisabled.value,
-        [CLASSNAMES.STATUS.selected]: isSelected.value,
-        [`${prefix}-select-option__hover`]:
+        [statusClassNames.disabled]: isDisabled.value,
+        [statusClassNames.selected]: isSelected.value,
+        [`${classPrefix.value}-select-option__hover`]:
           (isHover.value || selectProvider.hoverIndex.value === index.value) && !isDisabled.value && !isSelected.value,
       },
     ]);

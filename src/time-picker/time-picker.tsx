@@ -3,7 +3,7 @@ import {
 } from '@vue/composition-api';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
-import { TimeIcon } from 'tdesign-icons-vue';
+import { TimeIcon as TdTimeIcon } from 'tdesign-icons-vue';
 
 import TimePickerPanel from './panel/time-picker-panel';
 import TSelectInput from '../select-input';
@@ -12,6 +12,7 @@ import { formatInputValue, validateInputValue } from '../_common/js/time-picker/
 // hooks
 import useVModel from '../hooks/useVModel';
 import { useConfig, usePrefixClass } from '../hooks/useConfig';
+import { useGlobalIcon } from '../hooks/useGlobalIcon';
 
 import props from './props';
 
@@ -23,6 +24,7 @@ export default defineComponent({
   setup(props, ctx) {
     const { classPrefix } = useConfig('classPrefix');
     const componentName = usePrefixClass('time-picker');
+    const { TimeIcon } = useGlobalIcon({ TimeIcon: TdTimeIcon });
 
     const currentValue = ref('');
     const isShowPanel = ref(false);
@@ -107,9 +109,12 @@ export default defineComponent({
       isShowPanel,
       global,
       currentValue,
+      TimeIcon,
     };
   },
   render() {
+    const { TimeIcon } = this;
+
     return (
       <div class={this.componentName}>
         <TSelectInput
@@ -142,6 +147,7 @@ export default defineComponent({
                       onChange: this.handlePanelChange,
                       hideDisabledTime: this.hideDisabledTime,
                       handleConfirmClick: this.handleClickConfirm,
+                      presets: this.presets,
                     },
                   }}
                 />
