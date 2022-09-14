@@ -435,6 +435,14 @@ const docs = [
         componentEn: () => import('tdesign-vue/comment/comment.en-US.md'),
       },
       {
+        title: 'Image 图片',
+        titleEn: 'Image',
+        name: 'image',
+        path: '/vue/components/image',
+        component: () => import('tdesign-vue/image/image.md'),
+        componentEn: () => import('tdesign-vue/image/image.en-US.md'),
+      },
+      {
         title: 'List 列表',
         titleEn: 'List',
         name: 'list',
