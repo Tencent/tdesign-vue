@@ -2471,7 +2471,7 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
             <div
               class="t-date-picker__panel-time-viewer"
             >
-              08:00:00
+              00:00:00
             </div>
             <div
               class="t-time-picker__panel"
