@@ -15564,7 +15564,7 @@ exports[`ssr snapshot test renders ./src/steps/_example/vertical-no-sequence.vue
         <div class="t-steps-item__inner ">
           <div class="t-steps-item__icon t-steps-item--process"></div>
           <div class="t-steps-item__content">
-            <div class="t-steps-item__title">未进行的步骤</div>
+            <div class="t-steps-item__title">进行中的步骤</div>
             <div class="t-steps-item__description">这里是提示文字</div>
             <div class="t-steps-item__extra"></div>
           </div>
@@ -15574,7 +15574,7 @@ exports[`ssr snapshot test renders ./src/steps/_example/vertical-no-sequence.vue
         <div class="t-steps-item__inner ">
           <div class="t-steps-item__icon t-steps-item--finish"></div>
           <div class="t-steps-item__content">
-            <div class="t-steps-item__title">进行中的步骤</div>
+            <div class="t-steps-item__title">已完成的步骤</div>
             <div class="t-steps-item__description">这里是提示文字</div>
             <div class="t-steps-item__extra"></div>
           </div>
@@ -15657,7 +15657,7 @@ exports[`ssr snapshot test renders ./src/steps/_example/vertical-sequence.vue co
         <div class="t-steps-item__inner ">
           <div class="t-steps-item__icon t-steps-item--process"><span class="t-steps-item__icon--number">3</span></div>
           <div class="t-steps-item__content">
-            <div class="t-steps-item__title">未进行的步骤</div>
+            <div class="t-steps-item__title">进行中的步骤</div>
             <div class="t-steps-item__description">这里是提示文字</div>
             <div class="t-steps-item__extra"></div>
           </div>
@@ -15667,7 +15667,7 @@ exports[`ssr snapshot test renders ./src/steps/_example/vertical-sequence.vue co
         <div class="t-steps-item__inner ">
           <div class="t-steps-item__icon t-steps-item--finish"><span class="t-steps-item__icon--number"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-check"><path fill="currentColor" d="M6.43 9.92l6.23-6.22.92.92-7.15 7.14L1.97 7.3l.92-.92 3.54 3.54z" fill-opacity="0.9"></path></svg></span></div>
           <div class="t-steps-item__content">
-            <div class="t-steps-item__title">进行中的步骤</div>
+            <div class="t-steps-item__title">已完成的步骤</div>
             <div class="t-steps-item__description">这里是提示文字</div>
             <div class="t-steps-item__extra"></div>
           </div>
