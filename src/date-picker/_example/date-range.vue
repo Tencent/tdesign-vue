@@ -11,8 +11,16 @@ export default {
     onPick(value, context) {
       console.log('onPick:', value, context);
     },
-    onChange(value) {
-      console.log('onChange:', value);
+    onChange(value, context) {
+      console.log('onChange:', value, context);
+      console.log(
+        'timestamp:',
+        context.dayjsValue.map((d) => d.valueOf()),
+      );
+      console.log(
+        'YYYYMMDD:',
+        context.dayjsValue.map((d) => d.format('YYYYMMDD')),
+      );
     },
   },
 };

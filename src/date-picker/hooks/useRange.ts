@@ -3,7 +3,9 @@ import dayjs from 'dayjs';
 import { usePrefixClass, useConfig } from '../../hooks/useConfig';
 
 import { TdDateRangePickerProps, DateValue } from '../type';
-import { isValidDate, formatDate, getDefaultFormat } from '../../_common/js/date-picker/format';
+import {
+  isValidDate, formatDate, getDefaultFormat, parseToDayjs,
+} from '../../_common/js/date-picker/format';
 import useRangeValue from './useRangeValue';
 
 export const PARTIAL_MAP = { first: 'start', second: 'end' };
@@ -22,16 +24,13 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
   const formatRef = computed(() => getDefaultFormat({
     mode: props.mode,
     format: props.format,
-    valueType: props.valueType,
     enableTimePicker: props.enableTimePicker,
   }));
 
   const popupVisible = ref(false);
   const isHoverCell = ref(false);
   const activeIndex = ref(0); // 确定当前选中的输入框序号
-  const inputValue = ref(
-    formatDate(props.value, { format: formatRef.value.format, targetFormat: formatRef.value.format }),
-  ); // 未真正选中前可能不断变更输入框的内容
+  const inputValue = ref(formatDate(props.value, { format: formatRef.value.format })); // 未真正选中前可能不断变更输入框的内容
 
   // input 设置
   const rangeInputProps = computed(() => ({
@@ -89,17 +88,15 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
         onChange?.(
           formatDate(newVal, {
             format: formatRef.value.format,
-            targetFormat: formatRef.value.valueType,
           }) as DateValue[],
           {
-            dayjsValue: newVal.map((v) => dayjs(v)),
+            dayjsValue: newVal.map((v) => parseToDayjs(v, formatRef.value.format)),
             trigger: 'enter',
           },
         );
       } else if (isValidDate(value.value, formatRef.value.format)) {
         inputValue.value = formatDate(value.value, {
           format: formatRef.value.format,
-          targetFormat: formatRef.value.format,
         });
       } else {
         inputValue.value = [];
@@ -132,11 +129,10 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
       inputValue.value = [];
       return;
     }
-    if (!isValidDate(value.value, 'valueType')) return;
+    if (!isValidDate(value.value, formatRef.value.format)) return;
 
     inputValue.value = formatDate(value.value, {
       format: formatRef.value.format,
-      targetFormat: formatRef.value.format,
     });
   });
 
