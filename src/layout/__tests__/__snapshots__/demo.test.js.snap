@@ -212,110 +212,13 @@ exports[`Layout Layout asideVue demo works fine 1`] = `
 
 exports[`Layout Layout baseVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-item--base"
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
 >
-  <div>
-    <section
-      class="t-layout"
-    >
-      <header
-        class="t-layout__header"
-      >
-        Header
-      </header>
-       
-      <main
-        class="t-layout__content"
-      >
-        Content
-      </main>
-       
-      <footer
-        class="t-layout__footer"
-      >
-        Footer
-      </footer>
-    </section>
-  </div>
-   
-  <div>
-    <section
-      class="t-layout"
-    >
-      <header
-        class="t-layout__header"
-      >
-        Header
-      </header>
-       
-      <section
-        class="t-layout"
-      >
-        <aside
-          class="t-layout__sider"
-        >
-          Aside
-        </aside>
-         
-        <main
-          class="t-layout__content"
-        >
-          Content
-        </main>
-      </section>
-       
-      <footer
-        class="t-layout__footer"
-      >
-        Footer
-      </footer>
-    </section>
-  </div>
-   
-  <div>
-    <section
-      class="t-layout"
-    >
-      <header
-        class="t-layout__header"
-      >
-        Header
-      </header>
-       
-      <section
-        class="t-layout"
-      >
-        <main
-          class="t-layout__content"
-        >
-          Content
-        </main>
-         
-        <aside
-          class="t-layout__sider"
-        >
-          Aside
-        </aside>
-      </section>
-       
-      <footer
-        class="t-layout__footer"
-      >
-        Footer
-      </footer>
-    </section>
-  </div>
-   
-  <div>
-    <section
-      class="t-layout"
-    >
-      <aside
-        class="t-layout__sider"
-      >
-        Aside
-      </aside>
-       
+  <div
+    class="t-space-item"
+  >
+    <div>
       <section
         class="t-layout"
       >
@@ -337,7 +240,118 @@ exports[`Layout Layout baseVue demo works fine 1`] = `
           Footer
         </footer>
       </section>
-    </section>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div>
+      <section
+        class="t-layout"
+      >
+        <header
+          class="t-layout__header"
+        >
+          Header
+        </header>
+         
+        <section
+          class="t-layout"
+        >
+          <aside
+            class="t-layout__sider"
+          >
+            Aside
+          </aside>
+           
+          <main
+            class="t-layout__content"
+          >
+            Content
+          </main>
+        </section>
+         
+        <footer
+          class="t-layout__footer"
+        >
+          Footer
+        </footer>
+      </section>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div>
+      <section
+        class="t-layout"
+      >
+        <header
+          class="t-layout__header"
+        >
+          Header
+        </header>
+         
+        <section
+          class="t-layout"
+        >
+          <main
+            class="t-layout__content"
+          >
+            Content
+          </main>
+           
+          <aside
+            class="t-layout__sider"
+          >
+            Aside
+          </aside>
+        </section>
+         
+        <footer
+          class="t-layout__footer"
+        >
+          Footer
+        </footer>
+      </section>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div>
+      <section
+        class="t-layout"
+      >
+        <aside
+          class="t-layout__sider"
+        >
+          Aside
+        </aside>
+         
+        <section
+          class="t-layout"
+        >
+          <header
+            class="t-layout__header"
+          >
+            Header
+          </header>
+           
+          <main
+            class="t-layout__content"
+          >
+            Content
+          </main>
+           
+          <footer
+            class="t-layout__footer"
+          >
+            Footer
+          </footer>
+        </section>
+      </section>
+    </div>
   </div>
 </div>
 `;
