@@ -101,7 +101,6 @@ export default {
 .tdesign-demo__select-input-ul-single > li {
   display: block;
   border-radius: 3px;
-  height: 40px;
   line-height: 22px;
   cursor: pointer;
   padding: 9px 8px;
@@ -111,7 +110,6 @@ export default {
   word-wrap: normal;
   overflow: hidden;
   text-overflow: ellipsis;
-  box-sizing: border-box;
 }
 
 .tdesign-demo__select-input-ul-single > li:hover {
@@ -129,7 +127,6 @@ export default {
   line-height: 32px;
 }
 .displaySpan {
-  display: flex;
-  align-items: center;
+  line-height: 24px;
 }
 </style>
