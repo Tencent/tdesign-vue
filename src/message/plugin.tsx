@@ -104,7 +104,9 @@ const showThemeMessage: MessageMethod = (theme, params, duration) => {
   return MessageFunction(options);
 };
 
-const setMessageConfig: MessageConfigMethod = (placement, attach, offset, zIndex) => {
+const setMessageConfig: MessageConfigMethod = ({
+  placement, attach, offset, zIndex,
+}) => {
   attach && (defaultMessageOptions.attach = attach);
   offset && (defaultMessageOptions.offset = offset);
   placement && (defaultMessageOptions.placement = placement);
