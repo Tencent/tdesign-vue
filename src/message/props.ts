@@ -36,10 +36,10 @@ export default {
       return ['info', 'success', 'warning', 'error', 'question', 'loading'].includes(val);
     },
   },
+  /** 关闭Message时触发 */
+  onClose: Function as PropType<TdMessageProps['onClose']>,
   /** 当关闭按钮存在时，用户点击关闭按钮触发 */
   onCloseBtnClick: Function as PropType<TdMessageProps['onCloseBtnClick']>,
   /** 计时结束后触发 */
   onDurationEnd: Function as PropType<TdMessageProps['onDurationEnd']>,
-  /** 计时结束后或者点击关闭按钮都将触发 */
-  onClose: Function as PropType<TdMessageProps['onClose']>,
 };

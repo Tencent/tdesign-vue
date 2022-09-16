@@ -69,7 +69,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
             this.$emit('close');
           });
           this.onDurationEnd?.();
-          this.onClose?.();
+          this.onClose?.({ trigger: 'duration-end' });
         }, this.duration),
       );
     },
@@ -80,7 +80,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
       this.$emit('close-btn-click', { e });
       this.$emit('close');
       this.onCloseBtnClick?.({ e });
-      this.onClose?.();
+      this.onClose?.({ trigger: 'close-click', e });
     },
     renderClose() {
       const { CloseIcon } = this.useGlobalIcon({
