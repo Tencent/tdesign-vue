@@ -443,6 +443,14 @@ const docs = [
         componentEn: () => import('tdesign-vue/image/image.en-US.md'),
       },
       {
+        title: 'ImageViewer 图片预览',
+        titleEn: 'ImageViewer',
+        name: 'image-viewer',
+        path: '/vue/components/image-viewer',
+        component: () => import('tdesign-vue/image-viewer/image-viewer.md'),
+        componentEn: () => import('tdesign-vue/image-viewer/image-viewer.en-US.md'),
+      },
+      {
         title: 'List 列表',
         titleEn: 'List',
         name: 'list',
