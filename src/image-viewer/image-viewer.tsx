@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, ref, toRefs, onMounted, onBeforeUnmount,
+  computed, defineComponent, ref, toRefs, onMounted, onBeforeUnmount, watch,
 } from '@vue/composition-api';
 import { ChevronLeftIcon, ChevronDownIcon, CloseIcon } from 'tdesign-icons-vue';
 
@@ -130,13 +130,17 @@ export default defineComponent({
           break;
       }
     };
-    onMounted(() => {
-      window.addEventListener('keydown', keydownHandler);
-    });
 
-    onBeforeUnmount(() => {
-      window.removeEventListener('keydown', keydownHandler);
-    });
+    watch(
+      () => visibleValue.value,
+      (val) => {
+        if (val) {
+          window.addEventListener('keydown', keydownHandler);
+          return;
+        }
+        window.removeEventListener('keydown', keydownHandler);
+      },
+    );
 
     const onWheel = (e: WheelEvent) => {
       e.preventDefault();
