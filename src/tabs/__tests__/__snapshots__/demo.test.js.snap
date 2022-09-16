@@ -2,117 +2,132 @@
 
 exports[`Tabs Tabs banVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large"
+  class="t-space t-space-vertical"
+  style="gap: 36px;"
 >
-  <div>
-    <div
-      class="t-radio-group t-size-m t-radio-group--filled"
-    >
-      <label
-        class="t-radio-button t-is-checked"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="normal"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          常规型
-        </span>
-      </label>
-       
-      <label
-        class="t-radio-button"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="card"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          卡片型
-        </span>
-      </label>
-      <div
-        class="t-radio-group__bg-block"
-        style="width: 0px; left: 0px;"
-      />
-    </div>
-  </div>
-   
   <div
-    class="t-tabs"
+    class="t-space-item"
   >
     <div
-      class="t-tabs__header t-is-top"
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
     >
       <div
-        class="t-tabs__nav"
+        class="t-space-item"
       >
         <div
-          class="t-tabs__operations t-tabs__operations--left"
+          class="t-radio-group t-size-m t-radio-group--filled"
         >
-          <transition-stub
-            appear="true"
-            mode="out-in"
-            name="fade"
+          <label
+            class="t-radio-button t-is-checked"
+          >
+            <input
+              class="t-radio-button__former"
+              name=""
+              type="radio"
+              value="normal"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              常规型
+            </span>
+          </label>
+           
+          <label
+            class="t-radio-button"
+          >
+            <input
+              class="t-radio-button__former"
+              name=""
+              type="radio"
+              value="card"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              卡片型
+            </span>
+          </label>
+          <div
+            class="t-radio-group__bg-block"
+            style="width: 0px; left: 0px;"
           />
         </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-tabs"
+    >
+      <div
+        class="t-tabs__header t-is-top"
+      >
         <div
-          class="t-tabs__operations t-tabs__operations--right"
-        >
-          <transition-stub
-            appear="true"
-            mode="out-in"
-            name="fade"
-          />
-        </div>
-        <div
-          class="t-tabs__nav-container t-is-top"
+          class="t-tabs__nav"
         >
           <div
-            class="t-tabs__nav-scroll"
+            class="t-tabs__operations t-tabs__operations--left"
+          >
+            <transition-stub
+              appear="true"
+              mode="out-in"
+              name="fade"
+            />
+          </div>
+          <div
+            class="t-tabs__operations t-tabs__operations--right"
+          >
+            <transition-stub
+              appear="true"
+              mode="out-in"
+              name="fade"
+            />
+          </div>
+          <div
+            class="t-tabs__nav-container t-is-top"
           >
             <div
-              class="t-tabs__nav-wrap t-is-smooth"
-              style="transform: translate(0px, 0);"
+              class="t-tabs__nav-scroll"
             >
               <div
-                class="t-tabs__bar t-is-top"
-              />
+                class="t-tabs__nav-wrap t-is-smooth"
+                style="transform: translate(0px, 0);"
+              >
+                <div
+                  class="t-tabs__bar t-is-top"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div
-      class="t-tabs__content"
-    >
       <div
-        class="t-tab-panel"
+        class="t-tabs__content"
       >
-        <p
-          style="padding: 25px;"
+        <div
+          class="t-tab-panel"
         >
-          选项卡1的内容
-        </p>
+          <p
+            style="padding: 25px;"
+          >
+            选项卡1的内容
+          </p>
+        </div>
+         
+        <!---->
+         
+        <!---->
       </div>
-       
-      <!---->
-       
-      <!---->
     </div>
   </div>
 </div>
@@ -120,10 +135,11 @@ exports[`Tabs Tabs banVue demo works fine 1`] = `
 
 exports[`Tabs Tabs baseVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large"
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
 >
   <div
-    class="tdesign-demo-block-column"
+    class="t-space-item"
   >
     <div
       class="t-tabs"
@@ -197,7 +213,10 @@ exports[`Tabs Tabs baseVue demo works fine 1`] = `
         <!---->
       </div>
     </div>
-     
+  </div>
+  <div
+    class="t-space-item"
+  >
     <div
       class="t-tabs"
     >
@@ -265,133 +284,147 @@ exports[`Tabs Tabs baseVue demo works fine 1`] = `
 
 exports[`Tabs Tabs combinationVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large"
-  style="width: 100%;"
+  class="t-space t-space-vertical"
+  style="gap: 32px; width: 100%;"
 >
-  <div>
-    <div
-      class="t-radio-group t-size-m t-radio-group--filled"
-    >
-      <label
-        class="t-radio-button t-is-checked"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="normal"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          常规型
-        </span>
-      </label>
-       
-      <label
-        class="t-radio-button"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="card"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          卡片型
-        </span>
-      </label>
-      <div
-        class="t-radio-group__bg-block"
-        style="width: 0px; left: 0px;"
-      />
-    </div>
-  </div>
-   
   <div
-    class="t-tabs"
+    class="t-space-item"
   >
     <div
-      class="t-tabs__header t-is-top"
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
     >
       <div
-        class="t-tabs__nav"
+        class="t-space-item"
       >
         <div
-          class="t-tabs__operations t-tabs__operations--left"
+          class="t-radio-group t-size-m t-radio-group--filled"
         >
-          <transition-stub
-            appear="true"
-            mode="out-in"
-            name="fade"
+          <label
+            class="t-radio-button t-is-checked"
+          >
+            <input
+              class="t-radio-button__former"
+              name=""
+              type="radio"
+              value="normal"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              常规型
+            </span>
+          </label>
+           
+          <label
+            class="t-radio-button"
+          >
+            <input
+              class="t-radio-button__former"
+              name=""
+              type="radio"
+              value="card"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              卡片型
+            </span>
+          </label>
+          <div
+            class="t-radio-group__bg-block"
+            style="width: 0px; left: 0px;"
           />
         </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-tabs"
+    >
+      <div
+        class="t-tabs__header t-is-top"
+      >
         <div
-          class="t-tabs__operations t-tabs__operations--right"
-        >
-          <transition-stub
-            appear="true"
-            mode="out-in"
-            name="fade"
-          />
-        </div>
-        <div
-          class="t-tabs__nav-container t-is-top"
+          class="t-tabs__nav"
         >
           <div
-            class="t-tabs__nav-scroll"
+            class="t-tabs__operations t-tabs__operations--left"
+          >
+            <transition-stub
+              appear="true"
+              mode="out-in"
+              name="fade"
+            />
+          </div>
+          <div
+            class="t-tabs__operations t-tabs__operations--right"
+          >
+            <transition-stub
+              appear="true"
+              mode="out-in"
+              name="fade"
+            />
+          </div>
+          <div
+            class="t-tabs__nav-container t-is-top"
           >
             <div
-              class="t-tabs__nav-wrap t-is-smooth"
-              style="transform: translate(0px, 0);"
+              class="t-tabs__nav-scroll"
             >
               <div
-                class="t-tabs__bar t-is-top"
-              />
+                class="t-tabs__nav-wrap t-is-smooth"
+                style="transform: translate(0px, 0);"
+              >
+                <div
+                  class="t-tabs__bar t-is-top"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div
-      class="t-tabs__content"
-    >
-      <!---->
       <div
-        class="t-tab-panel"
+        class="t-tabs__content"
       >
-        <p
-          style="padding: 25px;"
+        <!---->
+        <div
+          class="t-tab-panel"
         >
-          选项卡2
-        </p>
+          <p
+            style="padding: 25px;"
+          >
+            选项卡2
+          </p>
+        </div>
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
       </div>
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
     </div>
   </div>
 </div>
@@ -477,118 +510,133 @@ exports[`Tabs Tabs customVue demo works fine 1`] = `
 
 exports[`Tabs Tabs iconVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large"
+  class="t-space t-space-vertical"
+  style="gap: 32px;"
 >
-  <div>
-    <div
-      class="t-radio-group t-size-m t-radio-group--filled"
-    >
-      <label
-        class="t-radio-button t-is-checked"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="normal"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          常规型
-        </span>
-      </label>
-       
-      <label
-        class="t-radio-button"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="card"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          卡片型
-        </span>
-      </label>
-      <div
-        class="t-radio-group__bg-block"
-        style="width: 0px; left: 0px;"
-      />
-    </div>
-  </div>
-   
   <div
-    class="t-tabs"
+    class="t-space-item"
   >
     <div
-      class="t-tabs__header t-is-top"
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
     >
       <div
-        class="t-tabs__nav"
+        class="t-space-item"
       >
         <div
-          class="t-tabs__operations t-tabs__operations--left"
+          class="t-radio-group t-size-m t-radio-group--filled"
         >
-          <transition-stub
-            appear="true"
-            mode="out-in"
-            name="fade"
+          <label
+            class="t-radio-button t-is-checked"
+          >
+            <input
+              class="t-radio-button__former"
+              name=""
+              type="radio"
+              value="normal"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              常规型
+            </span>
+          </label>
+           
+          <label
+            class="t-radio-button"
+          >
+            <input
+              class="t-radio-button__former"
+              name=""
+              type="radio"
+              value="card"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              卡片型
+            </span>
+          </label>
+          <div
+            class="t-radio-group__bg-block"
+            style="width: 0px; left: 0px;"
           />
         </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-tabs"
+    >
+      <div
+        class="t-tabs__header t-is-top"
+      >
         <div
-          class="t-tabs__operations t-tabs__operations--right"
-        >
-          <transition-stub
-            appear="true"
-            mode="out-in"
-            name="fade"
-          />
-        </div>
-        <div
-          class="t-tabs__nav-container t-is-top"
+          class="t-tabs__nav"
         >
           <div
-            class="t-tabs__nav-scroll"
+            class="t-tabs__operations t-tabs__operations--left"
+          >
+            <transition-stub
+              appear="true"
+              mode="out-in"
+              name="fade"
+            />
+          </div>
+          <div
+            class="t-tabs__operations t-tabs__operations--right"
+          >
+            <transition-stub
+              appear="true"
+              mode="out-in"
+              name="fade"
+            />
+          </div>
+          <div
+            class="t-tabs__nav-container t-is-top"
           >
             <div
-              class="t-tabs__nav-wrap t-is-smooth"
-              style="transform: translate(0px, 0);"
+              class="t-tabs__nav-scroll"
             >
               <div
-                class="t-tabs__bar t-is-top"
-              />
+                class="t-tabs__nav-wrap t-is-smooth"
+                style="transform: translate(0px, 0);"
+              >
+                <div
+                  class="t-tabs__bar t-is-top"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div
-      class="t-tabs__content"
-    >
       <div
-        class="t-tab-panel"
+        class="t-tabs__content"
       >
-         
-        <p
-          style="padding: 25px;"
+        <div
+          class="t-tab-panel"
         >
-          首页的内容
-        </p>
+           
+          <p
+            style="padding: 25px;"
+          >
+            首页的内容
+          </p>
+        </div>
+         
+        <!---->
+         
+        <!---->
       </div>
-       
-      <!---->
-       
-      <!---->
     </div>
   </div>
 </div>
@@ -673,166 +721,107 @@ exports[`Tabs Tabs operationVue demo works fine 1`] = `
 
 exports[`Tabs Tabs positionVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large"
+  class="t-space t-space-vertical"
+  style="gap: 32px;"
 >
-  <div>
-    <div
-      class="t-radio-group t-size-m t-radio-group--filled"
-    >
-      <label
-        class="t-radio-button t-is-checked"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="top"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          top
-        </span>
-      </label>
-       
-      <label
-        class="t-radio-button"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="right"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          right
-        </span>
-      </label>
-       
-      <label
-        class="t-radio-button"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="bottom"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          bottom
-        </span>
-      </label>
-       
-      <label
-        class="t-radio-button"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="left"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          left
-        </span>
-      </label>
-      <div
-        class="t-radio-group__bg-block"
-        style="width: 0px; left: 0px;"
-      />
-    </div>
-  </div>
-   
   <div
-    class="t-tabs"
+    class="t-space-item"
   >
     <div
-      class="t-tabs__header t-is-top"
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
     >
       <div
-        class="t-tabs__nav"
+        class="t-space-item"
       >
         <div
-          class="t-tabs__operations t-tabs__operations--left"
+          class="t-radio-group t-size-m t-radio-group--filled"
         >
-          <transition-stub
-            appear="true"
-            mode="out-in"
-            name="fade"
-          />
-        </div>
-        <div
-          class="t-tabs__operations t-tabs__operations--right"
-        >
-          <transition-stub
-            appear="true"
-            mode="out-in"
-            name="fade"
-          />
-        </div>
-        <div
-          class="t-tabs__nav-container t-is-top"
-        >
-          <div
-            class="t-tabs__nav-scroll"
+          <label
+            class="t-radio-button t-is-checked"
           >
-            <div
-              class="t-tabs__nav-wrap t-is-smooth"
-              style="transform: translate(0px, 0);"
+            <input
+              class="t-radio-button__former"
+              name=""
+              type="radio"
+              value="top"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
             >
-              <div
-                class="t-tabs__bar t-is-top"
-              />
-            </div>
-          </div>
+              top
+            </span>
+          </label>
+           
+          <label
+            class="t-radio-button"
+          >
+            <input
+              class="t-radio-button__former"
+              name=""
+              type="radio"
+              value="right"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              right
+            </span>
+          </label>
+           
+          <label
+            class="t-radio-button"
+          >
+            <input
+              class="t-radio-button__former"
+              name=""
+              type="radio"
+              value="bottom"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              bottom
+            </span>
+          </label>
+           
+          <label
+            class="t-radio-button"
+          >
+            <input
+              class="t-radio-button__former"
+              name=""
+              type="radio"
+              value="left"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              left
+            </span>
+          </label>
+          <div
+            class="t-radio-group__bg-block"
+            style="width: 0px; left: 0px;"
+          />
         </div>
       </div>
-    </div>
-    <div
-      class="t-tabs__content"
-    >
-      <div
-        class="t-tab-panel"
-      >
-        <p
-          style="padding: 25px;"
-        >
-          选项卡1
-        </p>
-      </div>
-       
-      <!---->
-       
-      <!---->
     </div>
   </div>
-</div>
-`;
-
-exports[`Tabs Tabs sizeVue demo works fine 1`] = `
-<div
-  class="tdesign-demo-block-column-large"
->
   <div
-    class="tdesign-demo-block-column"
+    class="t-space-item"
   >
     <div
       class="t-tabs"
@@ -897,7 +886,85 @@ exports[`Tabs Tabs sizeVue demo works fine 1`] = `
         <!---->
       </div>
     </div>
-     
+  </div>
+</div>
+`;
+
+exports[`Tabs Tabs sizeVue demo works fine 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-tabs"
+    >
+      <div
+        class="t-tabs__header t-is-top"
+      >
+        <div
+          class="t-tabs__nav"
+        >
+          <div
+            class="t-tabs__operations t-tabs__operations--left"
+          >
+            <transition-stub
+              appear="true"
+              mode="out-in"
+              name="fade"
+            />
+          </div>
+          <div
+            class="t-tabs__operations t-tabs__operations--right"
+          >
+            <transition-stub
+              appear="true"
+              mode="out-in"
+              name="fade"
+            />
+          </div>
+          <div
+            class="t-tabs__nav-container t-is-top"
+          >
+            <div
+              class="t-tabs__nav-scroll"
+            >
+              <div
+                class="t-tabs__nav-wrap t-is-smooth"
+                style="transform: translate(0px, 0);"
+              >
+                <div
+                  class="t-tabs__bar t-is-top"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-tabs__content"
+      >
+        <div
+          class="t-tab-panel"
+        >
+          <p
+            style="padding: 25px;"
+          >
+            选项卡1
+          </p>
+        </div>
+         
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
     <div
       class="t-tabs"
     >
@@ -967,10 +1034,11 @@ exports[`Tabs Tabs sizeVue demo works fine 1`] = `
 
 exports[`Tabs Tabs themeVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column-large"
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
 >
   <div
-    class="tdesign-demo-block-column"
+    class="t-space-item"
   >
     <div
       class="t-tabs"
@@ -1035,7 +1103,10 @@ exports[`Tabs Tabs themeVue demo works fine 1`] = `
         <!---->
       </div>
     </div>
-     
+  </div>
+  <div
+    class="t-space-item"
+  >
     <div
       class="t-tabs"
     >
