@@ -8,62 +8,6 @@ exports[`DatePicker DatePicker baseVue demo works fine 1`] = `
   <div
     class="t-space-item"
   >
-    <h3>
-      valueType:
-    </h3>
-  </div>
-  <div
-    class="t-space-item"
-  >
-    <div
-      class="t-radio-group t-size-m t-radio-group--filled"
-    >
-      <label
-        class="t-radio-button t-is-checked"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="YYYY-MM-DD"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          YYYY-MM-DD
-        </span>
-      </label>
-       
-      <label
-        class="t-radio-button"
-      >
-        <input
-          class="t-radio-button__former"
-          name=""
-          type="radio"
-          value="time-stamp"
-        />
-        <span
-          class="t-radio-button__input"
-        />
-        <span
-          class="t-radio-button__label"
-        >
-          time-stamp
-        </span>
-      </label>
-      <div
-        class="t-radio-group__bg-block"
-        style="width: 0px; left: 0px;"
-      />
-    </div>
-  </div>
-  <div
-    class="t-space-item"
-  >
     <div
       class="t-date-picker"
     >
@@ -268,9 +212,7 @@ exports[`DatePicker DatePicker datePresetsAltVue demo works fine 1`] = `
             </div>
             <div
               class="t-range-input__inner-separator"
-            >
-              -
-            </div>
+            />
             <div
               class="t-input__wrap t-range-input__inner-right"
             >
@@ -342,9 +284,7 @@ exports[`DatePicker DatePicker datePresetsAltVue demo works fine 1`] = `
             </div>
             <div
               class="t-range-input__inner-separator"
-            >
-              -
-            </div>
+            />
             <div
               class="t-input__wrap t-range-input__inner-right"
             >
@@ -423,9 +363,7 @@ exports[`DatePicker DatePicker dateRangeVue demo works fine 1`] = `
             </div>
             <div
               class="t-range-input__inner-separator"
-            >
-              -
-            </div>
+            />
             <div
               class="t-input__wrap t-range-input__inner-right"
             >
@@ -495,9 +433,7 @@ exports[`DatePicker DatePicker dateRangeVue demo works fine 1`] = `
             </div>
             <div
               class="t-range-input__inner-separator"
-            >
-              -
-            </div>
+            />
             <div
               class="t-input__wrap t-range-input__inner-right"
             >
@@ -890,9 +826,7 @@ exports[`DatePicker DatePicker disableDateVue demo works fine 1`] = `
             </div>
             <div
               class="t-range-input__inner-separator"
-            >
-              -
-            </div>
+            />
             <div
               class="t-input__wrap t-range-input__inner-right"
             >
@@ -1204,9 +1138,7 @@ exports[`DatePicker DatePicker monthVue demo works fine 1`] = `
             </div>
             <div
               class="t-range-input__inner-separator"
-            >
-              -
-            </div>
+            />
             <div
               class="t-input__wrap t-range-input__inner-right"
             >
@@ -2471,7 +2403,7 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
             <div
               class="t-date-picker__panel-time-viewer"
             >
-              08:00:00
+              00:00:00
             </div>
             <div
               class="t-time-picker__panel"
@@ -4457,9 +4389,7 @@ exports[`DatePicker DatePicker quarterVue demo works fine 1`] = `
             </div>
             <div
               class="t-range-input__inner-separator"
-            >
-              -
-            </div>
+            />
             <div
               class="t-input__wrap t-range-input__inner-right"
             >
@@ -4580,9 +4510,7 @@ exports[`DatePicker DatePicker weekVue demo works fine 1`] = `
             </div>
             <div
               class="t-range-input__inner-separator"
-            >
-              -
-            </div>
+            />
             <div
               class="t-input__wrap t-range-input__inner-right"
             >
@@ -4703,9 +4631,7 @@ exports[`DatePicker DatePicker yearVue demo works fine 1`] = `
             </div>
             <div
               class="t-range-input__inner-separator"
-            >
-              -
-            </div>
+            />
             <div
               class="t-input__wrap t-range-input__inner-right"
             >
