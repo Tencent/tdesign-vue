@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, ref, toRefs, onMounted, onBeforeUnmount, watch,
+  computed, defineComponent, ref, toRefs, watch,
 } from '@vue/composition-api';
 import { ChevronLeftIcon, ChevronDownIcon, CloseIcon } from 'tdesign-icons-vue';
 
