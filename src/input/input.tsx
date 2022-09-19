@@ -100,6 +100,14 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         },
       ];
     },
+    inputWrapClass(): ClassName {
+      return [
+        `${this.componentName}__wrap`,
+        {
+          [`${this.componentName}__focused`]: this.focused,
+        },
+      ];
+    },
   },
   watch: {
     autofocus: {
@@ -424,8 +432,9 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     );
 
     const tips = renderTNodeJSX(this, 'tips');
+
     return (
-      <div class={`${this.componentName}__wrap`}>
+      <div class={this.inputWrapClass}>
         {inputNode}
         {tips && (
           <div class={`${this.componentName}__tips ${this.componentName}__tips--${this.status || 'normal'}`}>
