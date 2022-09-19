@@ -2,19 +2,6 @@ import { mount } from '@vue/test-utils';
 import { jest, expect, it } from '@jest/globals';
 import { Dropdown, DropdownMenu, DropdownItem } from '../index';
 
-// in order to test transitions, we need to use
-// await rAF() after firing transition events.
-async function rAF(nextTick) {
-  return new Promise((res) => {
-    requestAnimationFrame(() => {
-      requestAnimationFrame(async () => {
-        await nextTick();
-        res(null);
-      });
-    });
-  });
-}
-
 // every component needs four parts: props/events/slots/functions.
 describe('Dropdown', () => {
   const props = {
