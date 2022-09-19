@@ -1,7 +1,6 @@
 :: BASE_DOC ::
 
 ## API
-
 ### Message Props
 
 name | type | default | description | required
@@ -11,13 +10,15 @@ content | String / Slot / Function | - | Typescript：`string | TNode`。[see mo
 duration | Number | 3000 | \- | N
 icon | Boolean / Slot / Function | true | Typescript：`boolean | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 theme | String | info | options：info/success/warning/error/question/loading。Typescript：`MessageThemeList` `type MessageThemeList = 'info' | 'success' | 'warning' | 'error' | 'question' | 'loading'`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/message/type.ts) | N
-onCloseBtnClick | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/> | N
-onDurationEnd | Function |  | TS 类型：`() => void`<br/> | N
+onClose | Function |  | Typescript：`(context: { trigger: 'close-click' | 'duration-end', e?: MouseEvent }) => void`<br/> | N
+onCloseBtnClick | Function |  | Typescript：`(context: { e: MouseEvent }) => void`<br/> | N
+onDurationEnd | Function |  | Typescript：`() => void`<br/> | N
 
 ### Message Events
 
 name | params | description
 -- | -- | --
+close | `(context: { trigger: 'close-click' | 'duration-end', e?: MouseEvent })` | \-
 close-btn-click | `(context: { e: MouseEvent })` | \-
 duration-end | \- | \-
 
@@ -26,8 +27,10 @@ duration-end | \- | \-
 name | type | default | description | required
 -- | -- | -- | -- | --
 attach | String / Function | 'body' | Typescript：`AttachNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+className | String | - | HTMLElement class | N
 offset | Array | - | Typescript：`Array<string | number>` | N
 placement | String | top | options：center/top/left/right/bottom/top-left/top-right/bottom-left/bottom-right。Typescript：`MessagePlacementList` `type MessagePlacementList = 'center' | 'top' | 'left' | 'right' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/message/type.ts) | N
+style | Object | - | CSS style。Typescript：`CSSProperties` | N
 zIndex | Number | 5000 | \- | N
 `MessageProps` | \- | - | \- | N
 
@@ -117,7 +120,4 @@ name | params | default | description
 
 name | params | default | description
 -- | -- | -- | --
-placement | String | top | options：center/top/left/right/bottom/top-left/top-right/bottom-left/bottom-right。Typescript：`MessagePlacementList` `type MessagePlacementList = 'center' | 'top' | 'left' | 'right' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/message/type.ts)
-attach | String / Function | 'body' | Typescript：`AttachNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)
-offset | Array | - | Typescript：`Array<string | number>`
-zIndex | Number | 5000 | \-
+message | Object | - | required。Typescript：`MessageOptions`
