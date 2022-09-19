@@ -71,18 +71,16 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
     const closeIcon = this.getCloseIcon();
     // 标签内容
     const tagContent: TNodeReturnValue = renderContent(this, 'default', 'content');
-    const tagContentWithMaxWidth = (
-      <span style={this.tagStyle} class={`${this.componentName}--text`}>
-        {tagContent}
-      </span>
-    );
+
     // 图标
     const icon = renderTNodeJSX(this, 'icon');
 
     return (
       <span class={this.tagClass} onClick={this.handleClick}>
         {icon}
-        {this.maxWidth ? tagContentWithMaxWidth : tagContent}
+        <span style={this.tagStyle} class={this.maxWidth ? `${this.componentName}--text` : undefined}>
+          {tagContent}
+        </span>
         {closeIcon}
       </span>
     );

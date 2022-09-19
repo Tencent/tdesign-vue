@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block">
+  <t-space direction="vertical">
     <t-card :cover="cover" theme="poster2" :style="{ width: '400px' }">
       <template #footer>
         <t-row :align="'middle'" justify="center">
@@ -64,7 +64,7 @@
         </t-dropdown>
       </template>
     </t-card>
-  </div>
+  </t-space>
 </template>
 <script lang="jsx">
 import {
