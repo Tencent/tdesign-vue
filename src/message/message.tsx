@@ -66,10 +66,10 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
           const msgDom = this.$refs.msg as HTMLElement;
           fadeOut(msgDom, this.$props.placement, () => {
             this.$emit('duration-end');
+            this.$emit('close');
           });
-          if (this.onDurationEnd) {
-            this.onDurationEnd();
-          }
+          this.onDurationEnd?.();
+          this.onClose?.({ trigger: 'duration-end' });
         }, this.duration),
       );
     },
@@ -78,9 +78,9 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
     },
     close(e?: MouseEvent) {
       this.$emit('close-btn-click', { e });
-      if (this.onCloseBtnClick) {
-        this.onCloseBtnClick({ e });
-      }
+      this.$emit('close');
+      this.onCloseBtnClick?.({ e });
+      this.onClose?.({ trigger: 'close-click', e });
     },
     renderClose() {
       const { CloseIcon } = this.useGlobalIcon({
