@@ -13,24 +13,33 @@ import {
   // watch,
   // onMounted,
 } from '@vue/composition-api';
-// import TreeNode from '../_common/js/tree/tree-node';
+import TreeNode from '../_common/js/tree/tree-node';
 // import TreeItem from './tree-item';
 import props from './props';
 // import { renderTNodeJSX } from '../utils/render-tnode';
-// import { ClassName, TNodeReturnValue, TreeOptionData } from '../common';
+import {
+  // ClassName,
+  // TNodeReturnValue,
+  TreeOptionData,
+} from '../common';
 // import { TdTreeProps } from './type';
-import // TypeTdTreeProps,
-// TreeNodeValue,
-// TypeValueMode,
-// TypeEventState,
-// TreeNodeState,
-// TypeTreeNodeModel,
-// TypeTreeInstance,
-// TypeTargetNode,
-'./interface';
+import {
+  // TypeTdTreeProps,
+  TreeNodeValue,
+  // TypeValueMode,
+  // TypeEventState,
+  // TreeNodeState,
+  TypeTreeNodeModel,
+  // TypeTreeInstance,
+  // TypeTargetNode,
+} from './interface';
 import useTreeStore from './hooks/useTreeStore';
 import useCache from './hooks/useCache';
-// import { getMark, getNode, emitEvent } from './util';
+import {
+  // getMark,
+  getNode,
+  // emitEvent,
+} from './util';
 
 export default defineComponent({
   name: 'TTree',
@@ -44,21 +53,104 @@ export default defineComponent({
 
     const { cache, updateTreeScope } = useCache(props);
 
-    // 不想暴露给用户的属性与方法，统一挂载到 $privates 对象上
-    const $privates = {
+    // 不想暴露给用户的属性与方法，统一挂载到 setup 返回的对象上
+    // 实例上无法直接访问这些方法与属性
+    return {
       store,
       updateStoreConfig,
       updateExpanded,
       cache,
       updateTreeScope,
     };
-
-    return {
-      $privates,
-    };
+  },
+  // 在 methods 提供公共方法
+  // 实例上可以直接访问
+  methods: {
+    // setItem(value: TreeNodeValue, options: TreeNodeState): void {
+    // const node: TreeNode = this.store.getNode(value);
+    // const spec = options;
+    // const keys = Object.keys(spec);
+    // if (node && spec) {
+    //   ['expanded', 'actived', 'checked'].forEach((name) => {
+    //     if (keys.includes(name)) {
+    //       this[`set${upperFirst(name)}`](node, spec[name]);
+    //       delete spec[name];
+    //     }
+    //   });
+    //   node.set(spec);
+    // }
+    // },
+    getItem(value: TreeNodeValue): TypeTreeNodeModel {
+      const node: TreeNode = this.store.getNode(value);
+      return node?.getModel();
+    },
+    getItems(value?: TreeNodeValue): TypeTreeNodeModel[] {
+      const nodes = this.store.getNodes(value);
+      return nodes.map((node: TreeNode) => node.getModel());
+    },
+    appendTo(para?: TreeNodeValue, item?: TreeOptionData | TreeOptionData[]) {
+      const { store } = this;
+      let list = [];
+      if (Array.isArray(item)) {
+        list = item;
+      } else {
+        list = [item];
+      }
+      list.forEach((item) => {
+        const val = item?.value || '';
+        const node = getNode(store, val);
+        if (node) {
+          store.appendNodes(para, node);
+        } else {
+          store.appendNodes(para, item);
+        }
+      });
+    },
+    insertBefore(value: TreeNodeValue, item: TreeOptionData) {
+      const { store } = this;
+      const val = item?.value || '';
+      const node = getNode(store, val);
+      if (node) {
+        store.insertBefore(value, node);
+      } else {
+        store.insertBefore(value, item);
+      }
+    },
+    insertAfter(value: TreeNodeValue, item: TreeOptionData) {
+      const { store } = this;
+      const val = item?.value || '';
+      const node = getNode(store, val);
+      if (node) {
+        store.insertAfter(value, node);
+      } else {
+        store.insertAfter(value, item);
+      }
+    },
+    remove(value?: TreeNodeValue) {
+      return this.store.remove(value);
+    },
+    getIndex(value: TreeNodeValue): number {
+      return this.store.getNodeIndex(value);
+    },
+    getParent(value: TreeNodeValue): TypeTreeNodeModel {
+      const node = this.store.getParent(value);
+      return node?.getModel();
+    },
+    getParents(value: TreeNodeValue): TypeTreeNodeModel[] {
+      const nodes = this.store.getParents(value);
+      return nodes.map((node: TreeNode) => node.getModel());
+    },
+    getPath(value: TreeNodeValue): TypeTreeNodeModel[] {
+      const node = this.store.getNode(value);
+      let pathNodes: TypeTreeNodeModel[] = [];
+      if (node) {
+        pathNodes = node.getPath().map((node: TreeNode) => node.getModel());
+      }
+      return pathNodes;
+    },
   },
   render() {
-    const { updateStoreConfig, updateTreeScope } = this.$privates;
+    const { updateStoreConfig, updateTreeScope } = this;
 
     updateStoreConfig();
     updateTreeScope();
@@ -454,88 +546,7 @@ export default defineComponent({
 // },
 
 // // -------- 公共方法 start --------
-// setItem(value: TreeNodeValue, options: TreeNodeState): void {
-//   const node: TreeNode = this.store.getNode(value);
-//   const spec = options;
-//   const keys = Object.keys(spec);
-//   if (node && spec) {
-//     ['expanded', 'actived', 'checked'].forEach((name) => {
-//       if (keys.includes(name)) {
-//         this[`set${upperFirst(name)}`](node, spec[name]);
-//         delete spec[name];
-//       }
-//     });
-//     node.set(spec);
-//   }
-// },
-// getItem(value: TreeNodeValue): TypeTreeNodeModel {
-//   const node: TreeNode = this.store.getNode(value);
-//   return node?.getModel();
-// },
-// getItems(value?: TreeNodeValue): TypeTreeNodeModel[] {
-//   const nodes = this.store.getNodes(value);
-//   return nodes.map((node: TreeNode) => node.getModel());
-// },
-// appendTo(para?: TreeNodeValue, item?: TreeOptionData | TreeOptionData[]) {
-//   const { store } = this;
-//   let list = [];
-//   if (Array.isArray(item)) {
-//     list = item;
-//   } else {
-//     list = [item];
-//   }
-//   list.forEach((item) => {
-//     const val = item?.value || '';
-//     const node = getNode(store, val);
-//     if (node) {
-//       store.appendNodes(para, node);
-//     } else {
-//       store.appendNodes(para, item);
-//     }
-//   });
-// },
-// insertBefore(value: TreeNodeValue, item: TreeOptionData) {
-//   const { store } = this;
-//   const val = item?.value || '';
-//   const node = getNode(store, val);
-//   if (node) {
-//     store.insertBefore(value, node);
-//   } else {
-//     store.insertBefore(value, item);
-//   }
-// },
-// insertAfter(value: TreeNodeValue, item: TreeOptionData) {
-//   const { store } = this;
-//   const val = item?.value || '';
-//   const node = getNode(store, val);
-//   if (node) {
-//     store.insertAfter(value, node);
-//   } else {
-//     store.insertAfter(value, item);
-//   }
-// },
-// remove(value?: TreeNodeValue) {
-//   return this.store.remove(value);
-// },
-// getIndex(value: TreeNodeValue): number {
-//   return this.store.getNodeIndex(value);
-// },
-// getParent(value: TreeNodeValue): TypeTreeNodeModel {
-//   const node = this.store.getParent(value);
-//   return node?.getModel();
-// },
-// getParents(value: TreeNodeValue): TypeTreeNodeModel[] {
-//   const nodes = this.store.getParents(value);
-//   return nodes.map((node: TreeNode) => node.getModel());
-// },
-// getPath(value: TreeNodeValue): TypeTreeNodeModel[] {
-//   const node = this.store.getNode(value);
-//   let pathNodes = [];
-//   if (node) {
-//     pathNodes = node.getPath().map((node: TreeNode) => node.getModel());
-//   }
-//   return pathNodes;
-// },
+
 // // -------- 公共方法 end --------
 // },
 // created() {
