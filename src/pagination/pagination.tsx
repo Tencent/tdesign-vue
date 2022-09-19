@@ -128,19 +128,9 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
     jumperInputClass(): ClassName {
       return [`${this.componentName}__input`];
     },
-    simpleClass(): ClassName {
-      return [`${this.componentName}__select`];
-    },
     pageCount(): number {
       const c: number = Math.ceil(this.total / this.pageSize);
       return c > 0 ? c : 1;
-    },
-    pageCountOption(): Array<{ label: string; value: number }> {
-      const ans = [];
-      for (let i = 1; i <= this.pageCount; i++) {
-        ans.push({ value: i, label: `${i}/${this.pageCount}` });
-      }
-      return ans;
     },
     sizeOptions(): Array<{ label: string; value: number }> {
       const options = this.pageSizeOptions.map((option) => typeof option === 'object'
