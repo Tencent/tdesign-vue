@@ -1,5 +1,5 @@
 <template>
-  <t-space direction="vertical">
+  <t-space direction="vertical" style="width: 80%">
     <!-- 标签数量超出时，滚动显示 -->
     <t-tag-input v-model="tags" label="Scroll: " clearable />
 

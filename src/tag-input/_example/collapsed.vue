@@ -1,5 +1,5 @@
 <template>
-  <t-space direction="vertical">
+  <t-space direction="vertical" style="width: 80%">
     <t-tag-input v-model="tags" :min-collapsed-num="1" />
 
     <!-- 方式一：使用渲染函数自定义折叠项 -->

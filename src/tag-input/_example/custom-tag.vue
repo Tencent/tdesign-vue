@@ -1,11 +1,11 @@
 <template>
-  <t-space class="custom-tag" direction="vertical">
+  <t-space direction="vertical">
     <!-- 方式一：使用 tag 定义标签内部内容。也可以使用同名渲染函数 tag -->
     <t-tag-input v-model="tags" clearable :min-collapsed-num="2">
       <template #tag="{ value }">
         <img
           src="https://tdesign.gtimg.com/site/avatar.jpg"
-          style="max-width: 20px; max-height: 20px; border-radius: 50%"
+          style="max-width: 20px; max-height: 20px; border-radius: 50%; vertical-align: text-top"
         />
         <span>&nbsp;&nbsp;{{ value }}</span>
       </template>
@@ -22,7 +22,7 @@
         >
           <img
             src="https://tdesign.gtimg.com/site/avatar.jpg"
-            style="max-width: 20px; max-height: 20px; border-radius: 50%"
+            style="max-width: 20px; max-height: 20px; border-radius: 50%; vertical-align: text-top"
           />
           <span>&nbsp;&nbsp;{{ item }}</span>
         </t-tag>
@@ -44,11 +44,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.custom-tag /deep/ .t-input {
-  display: flex;
-}
-.custom-tag /deep/ .t-input > .t-input__prefix {
-  display: inline-flex;
-}
-</style>

@@ -1,5 +1,5 @@
 <template>
-  <t-space direction="vertical">
+  <t-space direction="vertical" style="width: 80%">
     <t-tag-input v-model="tags1" clearable @paste="onPaste" @enter="onTagInputEnter" />
 
     <t-tag-input :value="tags2" label="Controlled: " clearable @change="onChange" />
