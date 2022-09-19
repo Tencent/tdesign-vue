@@ -166,11 +166,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  序号
-                </div>
+                序号
               </div>
             </th>
             <th
@@ -180,11 +176,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  平台
-                </div>
+                平台
               </div>
             </th>
             <th
@@ -194,11 +186,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  类型
-                </div>
+                类型
               </div>
             </th>
             <th
@@ -208,11 +196,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  曝光
-                </div>
+                曝光
               </div>
             </th>
             <th
@@ -222,11 +206,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  点击
-                </div>
+                点击
               </div>
             </th>
             <th
@@ -236,11 +216,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  点击率
-                </div>
+                点击率
               </div>
             </th>
             <th
@@ -250,11 +226,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  默认值
-                </div>
+                默认值
               </div>
             </th>
             <th
@@ -264,11 +236,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  是否必传
-                </div>
+                是否必传
               </div>
             </th>
             <th
@@ -292,11 +260,7 @@ exports[`Table Table affixVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  操作
-                </div>
+                操作
               </div>
             </th>
           </tr>
@@ -939,11 +903,7 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  FirstName
-                </div>
+                FirstName
               </div>
             </th>
             <th
@@ -953,11 +913,7 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  LastName
-                </div>
+                LastName
               </div>
             </th>
             <th
@@ -967,11 +923,7 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  Email
-                </div>
+                Email
               </div>
             </th>
           </tr>
@@ -1320,11 +1272,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  序号
-                </div>
+                序号
               </div>
             </th>
             <th
@@ -1334,11 +1282,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  平台
-                </div>
+                平台
               </div>
             </th>
             <th
@@ -1348,11 +1292,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  类型
-                </div>
+                类型
               </div>
             </th>
             <th
@@ -1362,11 +1302,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  默认值
-                </div>
+                默认值
               </div>
             </th>
             <th
@@ -1376,11 +1312,7 @@ exports[`Table Table baseVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  是否必传
-                </div>
+                是否必传
               </div>
             </th>
             <th
@@ -1773,11 +1705,7 @@ exports[`Table Table customCellVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  类型
-                </div>
+                类型
               </div>
             </th>
             <th
@@ -1787,11 +1715,7 @@ exports[`Table Table customCellVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  平台
-                </div>
+                平台
               </div>
             </th>
             <th
@@ -1801,11 +1725,7 @@ exports[`Table Table customCellVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  属性名
-                </div>
+                属性名
               </div>
             </th>
             <th
@@ -1815,11 +1735,7 @@ exports[`Table Table customCellVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  render
-                </div>
+                render
               </div>
             </th>
           </tr>
@@ -2130,11 +2046,7 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  序号
-                </div>
+                序号
               </div>
             </th>
             <th
@@ -2144,11 +2056,7 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  平台
-                </div>
+                平台
               </div>
             </th>
             <th
@@ -2158,11 +2066,7 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  类型
-                </div>
+                类型
               </div>
             </th>
             <th
@@ -2172,11 +2076,7 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  默认值
-                </div>
+                默认值
               </div>
             </th>
             <th
@@ -2186,11 +2086,7 @@ exports[`Table Table customColButtonVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  是否必传
-                </div>
+                是否必传
               </div>
             </th>
             <th
@@ -2611,11 +2507,7 @@ exports[`Table Table customColVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  序号
-                </div>
+                序号
               </div>
             </th>
             <th
@@ -2625,11 +2517,7 @@ exports[`Table Table customColVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  平台
-                </div>
+                平台
               </div>
             </th>
             <th
@@ -2639,11 +2527,7 @@ exports[`Table Table customColVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  类型
-                </div>
+                类型
               </div>
             </th>
             <th
@@ -2653,11 +2537,7 @@ exports[`Table Table customColVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  默认值
-                </div>
+                默认值
               </div>
             </th>
             <th
@@ -2667,11 +2547,7 @@ exports[`Table Table customColVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  是否必传
-                </div>
+                是否必传
               </div>
             </th>
             <th
@@ -3154,11 +3030,7 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  序号
-                </div>
+                序号
               </div>
             </th>
             <th
@@ -3168,11 +3040,7 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  平台
-                </div>
+                平台
               </div>
             </th>
             <th
@@ -3182,11 +3050,7 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  类型
-                </div>
+                类型
               </div>
             </th>
             <th
@@ -3196,11 +3060,7 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  默认值
-                </div>
+                默认值
               </div>
             </th>
             <th
@@ -3210,11 +3070,7 @@ exports[`Table Table customFooterVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  是否必传
-                </div>
+                是否必传
               </div>
             </th>
             <th
@@ -3444,24 +3300,20 @@ exports[`Table Table customHeaderVue demo works fine 1`] = `
             <div
               class="t-table__th-cell-inner"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
+              <svg
+                class="t-icon t-icon-app"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
               >
-                <svg
-                  class="t-icon t-icon-app"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  width="1em"
-                >
-                  <path
-                    d="M11.25 1.75a3 3 0 100 6 3 3 0 000-6zm-2 3a2 2 0 114 0 2 2 0 01-4 0zM2 3a1 1 0 011-1h3.5a1 1 0 011 1v3.5a1 1 0 01-1 1H3a1 1 0 01-1-1V3zm1 0v3.5h3.5V3H3zM2 9.5a1 1 0 011-1h3.5a1 1 0 011 1V13a1 1 0 01-1 1H3a1 1 0 01-1-1V9.5zm1 0V13h3.5V9.5H3zM8.5 9.5a1 1 0 011-1H13a1 1 0 011 1V13a1 1 0 01-1 1H9.5a1 1 0 01-1-1V9.5zm1 3.5H13V9.5H9.5V13z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                </svg>
-                 类型 
-              </div>
+                <path
+                  d="M11.25 1.75a3 3 0 100 6 3 3 0 000-6zm-2 3a2 2 0 114 0 2 2 0 01-4 0zM2 3a1 1 0 011-1h3.5a1 1 0 011 1v3.5a1 1 0 01-1 1H3a1 1 0 01-1-1V3zm1 0v3.5h3.5V3H3zM2 9.5a1 1 0 011-1h3.5a1 1 0 011 1V13a1 1 0 01-1 1H3a1 1 0 01-1-1V9.5zm1 0V13h3.5V9.5H3zM8.5 9.5a1 1 0 011-1H13a1 1 0 011 1V13a1 1 0 01-1 1H9.5a1 1 0 01-1-1V9.5zm1 3.5H13V9.5H9.5V13z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+               类型 
             </div>
           </th>
           <th
@@ -3471,15 +3323,11 @@ exports[`Table Table customHeaderVue demo works fine 1`] = `
             <div
               class="t-table__th-cell-inner"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
+              <b
+                style="color: rgb(0, 82, 217);"
               >
-                <b
-                  style="color: rgb(0, 82, 217);"
-                >
-                  标题
-                </b>
-              </div>
+                标题
+              </b>
             </div>
           </th>
           <th
@@ -3489,11 +3337,7 @@ exports[`Table Table customHeaderVue demo works fine 1`] = `
             <div
               class="t-table__th-cell-inner"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                属性名
-              </div>
+              属性名
             </div>
           </th>
         </tr>
@@ -3624,11 +3468,7 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    集群名称
-                  </div>
+                  集群名称
                 </div>
               </th>
               <th
@@ -3644,9 +3484,7 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
                     <div
                       class="t-table__cell--title"
                     >
-                      <div
-                        class="t-table__ellipsis t-text-ellipsis"
-                      >
+                      <div>
                         状态
                       </div>
                       <div
@@ -3710,9 +3548,7 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
                     <div
                       class="t-table__cell--title"
                     >
-                      <div
-                        class="t-table__ellipsis t-text-ellipsis"
-                      >
+                      <div>
                         存活时间(s)
                       </div>
                       <div
@@ -3770,11 +3606,7 @@ exports[`Table Table dataSortVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    管理员
-                  </div>
+                  管理员
                 </div>
               </th>
             </tr>
@@ -3961,11 +3793,7 @@ exports[`Table Table dragColSortVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    集群名称
-                  </div>
+                  集群名称
                 </div>
               </th>
               <th
@@ -3975,11 +3803,7 @@ exports[`Table Table dragColSortVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    状态
-                  </div>
+                  状态
                 </div>
               </th>
               <th
@@ -3989,11 +3813,7 @@ exports[`Table Table dragColSortVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    存活时间(s)
-                  </div>
+                  存活时间(s)
                 </div>
               </th>
               <th
@@ -4003,11 +3823,7 @@ exports[`Table Table dragColSortVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    管理员
-                  </div>
+                  管理员
                 </div>
               </th>
             </tr>
@@ -4209,11 +4025,7 @@ exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    排序
-                  </div>
+                  排序
                 </div>
               </th>
               <th
@@ -4223,11 +4035,7 @@ exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    集群名称
-                  </div>
+                  集群名称
                 </div>
               </th>
               <th
@@ -4237,11 +4045,7 @@ exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    状态
-                  </div>
+                  状态
                 </div>
               </th>
               <th
@@ -4251,11 +4055,7 @@ exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    存活时间(s)
-                  </div>
+                  存活时间(s)
                 </div>
               </th>
               <th
@@ -4265,11 +4065,7 @@ exports[`Table Table dragSortHandlerVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    管理员
-                  </div>
+                  管理员
                 </div>
               </th>
             </tr>
@@ -4531,11 +4327,7 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    集群名称
-                  </div>
+                  集群名称
                 </div>
               </th>
               <th
@@ -4545,11 +4337,7 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    状态
-                  </div>
+                  状态
                 </div>
               </th>
               <th
@@ -4559,11 +4347,7 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    存活时间(s)
-                  </div>
+                  存活时间(s)
                 </div>
               </th>
               <th
@@ -4573,11 +4357,7 @@ exports[`Table Table dragSortVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    管理员
-                  </div>
+                  管理员
                 </div>
               </th>
             </tr>
@@ -4755,11 +4535,7 @@ exports[`Table Table editableCellVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  FirstName
-                </div>
+                FirstName
               </div>
             </th>
             <th
@@ -4769,11 +4545,7 @@ exports[`Table Table editableCellVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  Framework
-                </div>
+                Framework
               </div>
             </th>
             <th
@@ -4783,11 +4555,7 @@ exports[`Table Table editableCellVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  Letters
-                </div>
+                Letters
               </div>
             </th>
             <th
@@ -4797,11 +4565,7 @@ exports[`Table Table editableCellVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  Date
-                </div>
+                Date
               </div>
             </th>
           </tr>
@@ -5342,11 +5106,7 @@ exports[`Table Table editableRowVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  FirstName
-                </div>
+                FirstName
               </div>
             </th>
             <th
@@ -5356,11 +5116,7 @@ exports[`Table Table editableRowVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  Framework
-                </div>
+                Framework
               </div>
             </th>
             <th
@@ -5370,11 +5126,7 @@ exports[`Table Table editableRowVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  Letters
-                </div>
+                Letters
               </div>
             </th>
             <th
@@ -5384,11 +5136,7 @@ exports[`Table Table editableRowVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  Date
-                </div>
+                Date
               </div>
             </th>
             <th
@@ -5398,11 +5146,7 @@ exports[`Table Table editableRowVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  Operate
-                </div>
+                Operate
               </div>
             </th>
           </tr>
@@ -5917,11 +5661,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  类型
-                </div>
+                类型
               </div>
             </th>
             <th
@@ -5931,11 +5671,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  平台
-                </div>
+                平台
               </div>
             </th>
             <th
@@ -5945,11 +5681,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  属性
-                </div>
+                属性
               </div>
             </th>
             <th
@@ -5959,11 +5691,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  默认值
-                </div>
+                默认值
               </div>
             </th>
             <th
@@ -5973,11 +5701,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  是否必传
-                </div>
+                是否必传
               </div>
             </th>
             <th
@@ -5987,11 +5711,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  说明
-                </div>
+                说明
               </div>
             </th>
           </tr>
@@ -6055,11 +5775,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  类型
-                </div>
+                类型
               </div>
             </th>
             <th
@@ -6069,11 +5785,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  平台
-                </div>
+                平台
               </div>
             </th>
             <th
@@ -6083,11 +5795,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  属性
-                </div>
+                属性
               </div>
             </th>
             <th
@@ -6097,11 +5805,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  默认值
-                </div>
+                默认值
               </div>
             </th>
             <th
@@ -6111,11 +5815,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  是否必传
-                </div>
+                是否必传
               </div>
             </th>
             <th
@@ -6125,11 +5825,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  说明
-                </div>
+                说明
               </div>
             </th>
           </tr>
@@ -6195,11 +5891,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  类型
-                </div>
+                类型
               </div>
             </th>
             <th
@@ -6209,11 +5901,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  平台
-                </div>
+                平台
               </div>
             </th>
             <th
@@ -6223,11 +5911,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  属性
-                </div>
+                属性
               </div>
             </th>
             <th
@@ -6237,11 +5921,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  默认值
-                </div>
+                默认值
               </div>
             </th>
             <th
@@ -6251,11 +5931,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  是否必传
-                </div>
+                是否必传
               </div>
             </th>
             <th
@@ -6265,11 +5941,7 @@ exports[`Table Table emptyVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  说明
-                </div>
+                说明
               </div>
             </th>
           </tr>
@@ -6475,11 +6147,7 @@ exports[`Table Table expandableVue demo works fine 1`] = `
             >
               <div
                 class="t-table__th-cell-inner"
-              >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                />
-              </div>
+              />
             </th>
             <th
               class="t-table__th-instance"
@@ -6488,11 +6156,7 @@ exports[`Table Table expandableVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  集群名称
-                </div>
+                集群名称
               </div>
             </th>
             <th
@@ -6502,11 +6166,7 @@ exports[`Table Table expandableVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  状态
-                </div>
+                状态
               </div>
             </th>
             <th
@@ -6516,11 +6176,7 @@ exports[`Table Table expandableVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  管理员
-                </div>
+                管理员
               </div>
             </th>
             <th
@@ -6530,11 +6186,7 @@ exports[`Table Table expandableVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  描述
-                </div>
+                描述
               </div>
             </th>
             <th
@@ -6544,11 +6196,7 @@ exports[`Table Table expandableVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  字段 1
-                </div>
+                字段 1
               </div>
             </th>
             <th
@@ -6558,11 +6206,7 @@ exports[`Table Table expandableVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  字段 2
-                </div>
+                字段 2
               </div>
             </th>
             <th
@@ -6572,11 +6216,7 @@ exports[`Table Table expandableVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  字段 3
-                </div>
+                字段 3
               </div>
             </th>
             <th
@@ -6586,11 +6226,7 @@ exports[`Table Table expandableVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  字段 4
-                </div>
+                字段 4
               </div>
             </th>
             <th
@@ -6600,11 +6236,7 @@ exports[`Table Table expandableVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  字段 5
-                </div>
+                字段 5
               </div>
             </th>
             <th
@@ -6614,11 +6246,7 @@ exports[`Table Table expandableVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  字段 6
-                </div>
+                字段 6
               </div>
             </th>
             <th
@@ -6628,13 +6256,9 @@ exports[`Table Table expandableVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  <p>
-                    操作
-                  </p>
-                </div>
+                <p>
+                  操作
+                </p>
               </div>
             </th>
           </tr>
@@ -7377,9 +7001,7 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
                   <div
                     class="t-table__cell--title"
                   >
-                    <div
-                      class="t-table__ellipsis t-text-ellipsis"
-                    >
+                    <div>
                       FirstName
                     </div>
                     <div
@@ -7420,9 +7042,7 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
                   <div
                     class="t-table__cell--title"
                   >
-                    <div
-                      class="t-table__ellipsis t-text-ellipsis"
-                    >
+                    <div>
                       LastName
                     </div>
                     <div
@@ -7501,9 +7121,7 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
                   <div
                     class="t-table__cell--title"
                   >
-                    <div
-                      class="t-table__ellipsis t-text-ellipsis"
-                    >
+                    <div>
                       Email
                     </div>
                     <div
@@ -7544,9 +7162,7 @@ exports[`Table Table filterControlledVue demo works fine 1`] = `
                   <div
                     class="t-table__cell--title"
                   >
-                    <div
-                      class="t-table__ellipsis t-text-ellipsis"
-                    >
+                    <div>
                       Date
                     </div>
                     <div
@@ -7928,11 +7544,7 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  序号
-                </div>
+                序号
               </div>
             </th>
             <th
@@ -7942,11 +7554,7 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  平台
-                </div>
+                平台
               </div>
             </th>
             <th
@@ -7956,11 +7564,7 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  类型
-                </div>
+                类型
               </div>
             </th>
             <th
@@ -7970,11 +7574,7 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  默认值
-                </div>
+                默认值
               </div>
             </th>
             <th
@@ -7984,11 +7584,7 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  说明
-                </div>
+                说明
               </div>
             </th>
             <th
@@ -7998,11 +7594,7 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  是否必传
-                </div>
+                是否必传
               </div>
             </th>
             <th
@@ -8012,11 +7604,7 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  操作
-                </div>
+                操作
               </div>
             </th>
             <th
@@ -8026,11 +7614,7 @@ exports[`Table Table fixedColumnVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  详情信息
-                </div>
+                详情信息
               </div>
             </th>
           </tr>
@@ -8453,11 +8037,7 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  序号
-                </div>
+                序号
               </div>
             </th>
             <th
@@ -8467,11 +8047,7 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  平台
-                </div>
+                平台
               </div>
             </th>
             <th
@@ -8481,11 +8057,7 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  类型
-                </div>
+                类型
               </div>
             </th>
             <th
@@ -8495,11 +8067,7 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  默认值
-                </div>
+                默认值
               </div>
             </th>
             <th
@@ -8509,11 +8077,7 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  详情信息
-                </div>
+                详情信息
               </div>
             </th>
             <th
@@ -8523,11 +8087,7 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  说明
-                </div>
+                说明
               </div>
             </th>
             <th
@@ -8537,11 +8097,7 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  必传
-                </div>
+                必传
               </div>
             </th>
             <th
@@ -8551,11 +8107,7 @@ exports[`Table Table fixedHeaderColVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  操作
-                </div>
+                操作
               </div>
             </th>
           </tr>
@@ -9408,11 +8960,7 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  平台
-                </div>
+                平台
               </div>
             </th>
             <th
@@ -9422,11 +8970,7 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  类型
-                </div>
+                类型
               </div>
             </th>
             <th
@@ -9436,11 +8980,7 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  默认值
-                </div>
+                默认值
               </div>
             </th>
             <th
@@ -9450,11 +8990,7 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  必传
-                </div>
+                必传
               </div>
             </th>
             <th
@@ -9478,11 +9014,7 @@ exports[`Table Table fixedHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  说明
-                </div>
+                说明
               </div>
             </th>
           </tr>
@@ -10353,11 +9885,7 @@ exports[`Table Table lazyVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    id
-                  </div>
+                  id
                 </div>
               </th>
               <th
@@ -10367,11 +9895,7 @@ exports[`Table Table lazyVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    集群名称
-                  </div>
+                  集群名称
                 </div>
               </th>
               <th
@@ -10381,11 +9905,7 @@ exports[`Table Table lazyVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    存活时间(s)
-                  </div>
+                  存活时间(s)
                 </div>
               </th>
               <th
@@ -10395,11 +9915,7 @@ exports[`Table Table lazyVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    管理员
-                  </div>
+                  管理员
                 </div>
               </th>
             </tr>
@@ -17964,11 +17480,7 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
             <div
               class="t-table__th-cell-inner"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                平台
-              </div>
+              平台
             </div>
           </th>
           <th
@@ -17978,11 +17490,7 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
             <div
               class="t-table__th-cell-inner"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                类型
-              </div>
+              类型
             </div>
           </th>
           <th
@@ -17992,11 +17500,7 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
             <div
               class="t-table__th-cell-inner"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                默认值
-              </div>
+              默认值
             </div>
           </th>
           <th
@@ -18006,11 +17510,7 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
             <div
               class="t-table__th-cell-inner"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                是否必传
-              </div>
+              是否必传
             </div>
           </th>
           <th
@@ -18020,11 +17520,7 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
             <div
               class="t-table__th-cell-inner"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                说明
-              </div>
+              说明
             </div>
           </th>
         </tr>
@@ -18383,11 +17879,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  序号
-                </div>
+                序号
               </div>
             </th>
             <th
@@ -18398,11 +17890,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  汇总属性
-                </div>
+                汇总属性
               </div>
             </th>
             <th
@@ -18413,11 +17901,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  字段1
-                </div>
+                字段1
               </div>
             </th>
             <th
@@ -18428,11 +17912,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  字段2
-                </div>
+                字段2
               </div>
             </th>
             <th
@@ -18443,11 +17923,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  字段3
-                </div>
+                字段3
               </div>
             </th>
             <th
@@ -18458,11 +17934,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  字段4
-                </div>
+                字段4
               </div>
             </th>
             <th
@@ -18473,11 +17945,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  属性及说明
-                </div>
+                属性及说明
               </div>
             </th>
             <th
@@ -18488,11 +17956,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  字段5
-                </div>
+                字段5
               </div>
             </th>
           </tr>
@@ -18505,11 +17969,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  平台
-                </div>
+                平台
               </div>
             </th>
             <th
@@ -18520,11 +17980,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  类型及默认值
-                </div>
+                类型及默认值
               </div>
             </th>
             <th
@@ -18541,9 +17997,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
                   <div
                     class="t-table__cell--title"
                   >
-                    <div
-                      class="t-table__ellipsis t-text-ellipsis"
-                    >
+                    <div>
                       属性
                     </div>
                     <div
@@ -18595,11 +18049,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  类型
-                </div>
+                类型
               </div>
             </th>
             <th
@@ -18615,9 +18065,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
                   <div
                     class="t-table__cell--title"
                   >
-                    <div
-                      class="t-table__ellipsis t-text-ellipsis"
-                    >
+                    <div>
                       默认值
                     </div>
                     <div
@@ -18673,11 +18121,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  是否必传
-                </div>
+                是否必传
               </div>
             </th>
             <th
@@ -18687,11 +18131,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  字段6
-                </div>
+                字段6
               </div>
             </th>
             <th
@@ -18701,11 +18141,7 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  字段7
-                </div>
+                字段7
               </div>
             </th>
             <th
@@ -18816,11 +18252,7 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    集群名称
-                  </div>
+                  集群名称
                 </div>
               </th>
               <th
@@ -18836,9 +18268,7 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
                     <div
                       class="t-table__cell--title"
                     >
-                      <div
-                        class="t-table__ellipsis t-text-ellipsis"
-                      >
+                      <div>
                         状态
                       </div>
                       <div
@@ -18900,9 +18330,7 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
                     <div
                       class="t-table__cell--title"
                     >
-                      <div
-                        class="t-table__ellipsis t-text-ellipsis"
-                      >
+                      <div>
                         存活时间(s)
                       </div>
                       <div
@@ -18958,11 +18386,7 @@ exports[`Table Table multipleSortVue demo works fine 1`] = `
                 <div
                   class="t-table__th-cell-inner"
                 >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    管理员
-                  </div>
+                  管理员
                 </div>
               </th>
             </tr>
@@ -19154,26 +18578,22 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
             <div
               class="t-table__th-cell-inner"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
+              <label
+                class="t-checkbox t-is-disabled"
               >
-                <label
-                  class="t-checkbox t-is-disabled"
-                >
-                  <input
-                    class="t-checkbox__former"
-                    disabled="disabled"
-                    type="checkbox"
-                    value=""
-                  />
-                  <span
-                    class="t-checkbox__input"
-                  />
-                  <span
-                    class="t-checkbox__label"
-                  />
-                </label>
-              </div>
+                <input
+                  class="t-checkbox__former"
+                  disabled="disabled"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="t-checkbox__input"
+                />
+                <span
+                  class="t-checkbox__label"
+                />
+              </label>
             </div>
           </th>
           <th
@@ -19183,11 +18603,7 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
             <div
               class="t-table__th-cell-inner"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                UNKNOWN_USER
-              </div>
+              UNKNOWN_USER
             </div>
           </th>
           <th
@@ -19197,11 +18613,7 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
             <div
               class="t-table__th-cell-inner"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                性别
-              </div>
+              性别
             </div>
           </th>
           <th
@@ -19211,11 +18623,7 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
             <div
               class="t-table__th-cell-inner"
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                联系方式
-              </div>
+              联系方式
             </div>
           </th>
           <th
@@ -19444,11 +18852,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  序号
-                </div>
+                序号
               </div>
             </th>
             <th
@@ -19458,11 +18862,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  平台
-                </div>
+                平台
               </div>
             </th>
             <th
@@ -19472,11 +18872,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  类型
-                </div>
+                类型
               </div>
             </th>
             <th
@@ -19486,11 +18882,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  默认值
-                </div>
+                默认值
               </div>
             </th>
             <th
@@ -19500,11 +18892,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  是否必传
-                </div>
+                是否必传
               </div>
             </th>
             <th
@@ -19950,25 +19338,21 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
+                <label
+                  class="t-checkbox"
                 >
-                  <label
-                    class="t-checkbox"
-                  >
-                    <input
-                      class="t-checkbox__former"
-                      type="checkbox"
-                      value=""
-                    />
-                    <span
-                      class="t-checkbox__input"
-                    />
-                    <span
-                      class="t-checkbox__label"
-                    />
-                  </label>
-                </div>
+                  <input
+                    class="t-checkbox__former"
+                    type="checkbox"
+                    value=""
+                  />
+                  <span
+                    class="t-checkbox__input"
+                  />
+                  <span
+                    class="t-checkbox__label"
+                  />
+                </label>
               </div>
             </th>
             <th
@@ -19978,11 +19362,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  集群名称
-                </div>
+                集群名称
               </div>
             </th>
             <th
@@ -19992,11 +19372,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  状态
-                </div>
+                状态
               </div>
             </th>
             <th
@@ -20006,11 +19382,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  管理员
-                </div>
+                管理员
               </div>
             </th>
             <th
@@ -20020,11 +19392,7 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  描述
-                </div>
+                描述
               </div>
             </th>
             <th
@@ -20034,13 +19402,9 @@ exports[`Table Table selectMultipleVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  <p>
-                    操作
-                  </p>
-                </div>
+                <p>
+                  操作
+                </p>
               </div>
             </th>
           </tr>
@@ -20464,11 +19828,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
             >
               <div
                 class="t-table__th-cell-inner"
-              >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                />
-              </div>
+              />
             </th>
             <th
               class="t-table__th-instance"
@@ -20477,11 +19837,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  集群名称
-                </div>
+                集群名称
               </div>
             </th>
             <th
@@ -20491,11 +19847,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  状态
-                </div>
+                状态
               </div>
             </th>
             <th
@@ -20505,11 +19857,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  管理员
-                </div>
+                管理员
               </div>
             </th>
             <th
@@ -20519,11 +19867,7 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  描述
-                </div>
+                描述
               </div>
             </th>
             <th
@@ -20533,13 +19877,9 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  <p>
-                    操作
-                  </p>
-                </div>
+                <p>
+                  操作
+                </p>
               </div>
             </th>
           </tr>
@@ -20927,11 +20267,7 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  集群名称
-                </div>
+                集群名称
               </div>
             </th>
             <th
@@ -20941,11 +20277,7 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  状态
-                </div>
+                状态
               </div>
             </th>
             <th
@@ -20955,11 +20287,7 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  管理员
-                </div>
+                管理员
               </div>
             </th>
             <th
@@ -20969,11 +20297,7 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  描述
-                </div>
+                描述
               </div>
             </th>
             <th
@@ -20983,13 +20307,9 @@ exports[`Table Table showColumnsVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  <p>
-                    操作
-                  </p>
-                </div>
+                <p>
+                  操作
+                </p>
               </div>
             </th>
           </tr>
@@ -21261,11 +20581,7 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  集群名称
-                </div>
+                集群名称
               </div>
             </th>
             <th
@@ -21281,9 +20597,7 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
                   <div
                     class="t-table__cell--title"
                   >
-                    <div
-                      class="t-table__ellipsis t-text-ellipsis"
-                    >
+                    <div>
                       状态
                     </div>
                     <div
@@ -21345,9 +20659,7 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
                   <div
                     class="t-table__cell--title"
                   >
-                    <div
-                      class="t-table__ellipsis t-text-ellipsis"
-                    >
+                    <div>
                       存活时间(s)
                     </div>
                     <div
@@ -21403,11 +20715,7 @@ exports[`Table Table singleSortVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  管理员
-                </div>
+                管理员
               </div>
             </th>
           </tr>
@@ -21674,11 +20982,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
             >
               <div
                 class="t-table__th-cell-inner"
-              >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                />
-              </div>
+              />
             </th>
             <th
               class="t-table__cell-check t-table__th-row-select"
@@ -21687,25 +20991,21 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
+                <label
+                  class="t-checkbox"
                 >
-                  <label
-                    class="t-checkbox"
-                  >
-                    <input
-                      class="t-checkbox__former"
-                      type="checkbox"
-                      value=""
-                    />
-                    <span
-                      class="t-checkbox__input"
-                    />
-                    <span
-                      class="t-checkbox__label"
-                    />
-                  </label>
-                </div>
+                  <input
+                    class="t-checkbox__former"
+                    type="checkbox"
+                    value=""
+                  />
+                  <span
+                    class="t-checkbox__input"
+                  />
+                  <span
+                    class="t-checkbox__label"
+                  />
+                </label>
               </div>
             </th>
             <th
@@ -21715,11 +21015,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  集群名称
-                </div>
+                集群名称
               </div>
             </th>
             <th
@@ -21729,11 +21025,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  状态
-                </div>
+                状态
               </div>
             </th>
             <th
@@ -21743,11 +21035,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  管理员
-                </div>
+                管理员
               </div>
             </th>
             <th
@@ -21757,11 +21045,7 @@ exports[`Table Table treeSelectVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  描述
-                </div>
+                描述
               </div>
             </th>
           </tr>
@@ -22413,11 +21697,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  排序
-                </div>
+                排序
               </div>
             </th>
             <th
@@ -22441,11 +21721,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  名称
-                </div>
+                名称
               </div>
             </th>
             <th
@@ -22455,11 +21731,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  平台
-                </div>
+                平台
               </div>
             </th>
             <th
@@ -22469,11 +21741,7 @@ exports[`Table Table treeVue demo works fine 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  操作
-                </div>
+                操作
               </div>
             </th>
           </tr>
