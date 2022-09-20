@@ -88,6 +88,14 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
       const { popupObject } = this;
       return `${popupObject.overlayClassName} ${this.classPrefix}-select__dropdown narrow-scrollbar`;
     },
+    dropdownInnerSize(): ClassName {
+      const sizeMap = {
+        small: 's',
+        medium: 'm',
+        large: 'l',
+      };
+      return sizeMap[this.size];
+    },
     isObjectValue(): boolean {
       return this.valueType === 'object';
     },
@@ -548,7 +556,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
               size="small"
             />
           </div>
-          <div slot="content">
+          <div slot="content" class={`${this.classPrefix}-select__dropdown-inner ${this.classPrefix}-select__dropdown-inner--size-${this.dropdownInnerSize}`}>
             <p
               v-show={this.showLoading}
               class={`${this.classPrefix}-select__loading-tips ${this.classPrefix}-select__right-icon-polyfill`}
