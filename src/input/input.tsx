@@ -101,10 +101,11 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       ];
     },
     inputWrapClass(): ClassName {
+      const wrapClass = `${this.componentName}__wrap`;
       return [
-        `${this.componentName}__wrap`,
+        `${wrapClass}`,
         {
-          [`${this.componentName}__focused`]: this.focused,
+          [`${wrapClass}--focused`]: this.focused,
         },
       ];
     },

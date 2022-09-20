@@ -74,12 +74,12 @@ export default defineComponent({
       ];
       return (
         <div ref={'headRef'} class={cls} onClick={handleClick}>
-          <div class={`${this.componentName}__header--left`}>
+          <div class={`${this.componentName}__header-left`}>
             {showExpandIcon && this.expandIconPlacement === 'left' ? renderIcon(this.expandIconPlacement) : null}
           </div>
-          <div class={`${this.componentName}__header--content`}>{renderTNodeJSX(this, 'header')}</div>
+          <div class={`${this.componentName}__header-content`}>{renderTNodeJSX(this, 'header')}</div>
           {renderBlank()}
-          <div class={`${this.componentName}__header--right`}>
+          <div class={`${this.componentName}__header-right`}>
             {renderTNodeJSX(this, 'headerRightContent')}
             {showExpandIcon && this.expandIconPlacement === 'right' ? renderIcon(this.expandIconPlacement) : null}
           </div>
