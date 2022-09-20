@@ -16227,7 +16227,7 @@ exports[`ssr snapshot test renders ./src/table/_example/base.vue correctly 1`] =
             </th>
             <th data-colkey="detail.position" class="t-table__th-detail.position">
               <div class="t-table__th-cell-inner">
-                <div class="t-table__ellipsis t-text-ellipsis">详情信息详情信息详情信息详情信息详情信息详情信息详情信息</div>
+                <div class="t-table__ellipsis t-text-ellipsis">详情信息</div>
               </div>
             </th>
           </tr>
