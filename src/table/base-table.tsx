@@ -56,6 +56,8 @@ export default defineComponent({
     const tableElmRef = ref<HTMLTableElement>();
     const tableBodyRef = ref<HTMLTableElement>();
     const tableFootHeight = ref(0);
+    const paginationAffixRef = ref();
+
     const {
       virtualScrollClasses, tableLayoutClasses, tableBaseClass, tableColFixedClasses,
     } = useClassName();
@@ -86,7 +88,7 @@ export default defineComponent({
       updateThWidthList,
       setRecalculateColWidthFuncRef,
       addTableResizeObserver,
-    } = useFixed(props, context, finalColumns);
+    } = useFixed(props, context, finalColumns, paginationAffixRef);
 
     // 1. 表头吸顶；2. 表尾吸底；3. 底部滚动条吸底；4. 分页器吸底
     const {
@@ -306,6 +308,7 @@ export default defineComponent({
       updateAffixHeaderOrFooter,
       refreshTable,
       onInnerVirtualScroll,
+      paginationAffixRef,
     };
   },
 
@@ -581,7 +584,7 @@ export default defineComponent({
 
         {/* 吸底的分页器 */}
         {this.paginationAffixedBottom ? (
-          <Affix offsetBottom={0} props={getAffixProps(this.paginationAffixedBottom)}>
+          <Affix offsetBottom={0} props={getAffixProps(this.paginationAffixedBottom)} ref="paginationAffixRef">
             {pagination}
           </Affix>
         ) : (
