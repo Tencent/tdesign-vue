@@ -2,1226 +2,77 @@
 
 exports[`TagInput TagInput autoWidthVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column"
-  style="width: 80%;"
+  class="t-input__wrap t-tag-input t-tag-input--break-line"
 >
   <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
+    class="t-input t-size-m t-is-default t-input--prefix"
   >
     <div
-      class="t-input t-size-m t-is-default t-input--prefix"
+      class="t-input__prefix"
     >
-      <div
-        class="t-input__prefix"
-      >
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          Vue
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          React
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-      </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
       <span
-        class="t-input__input-pre"
-      />
+        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+      >
+        <span>
+          Vue
+        </span>
+        <svg
+          class="t-icon t-icon-close t-tag__icon-close"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+      </span>
+      <span
+        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+      >
+        <span>
+          React
+        </span>
+        <svg
+          class="t-icon t-icon-close t-tag__icon-close"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+      </span>
     </div>
+    <input
+      autocomplete=""
+      class="t-input__inner"
+      placeholder=""
+      type="text"
+      unselectable="off"
+    />
+    <span
+      class="t-input__input-pre"
+    />
   </div>
 </div>
 `;
 
 exports[`TagInput TagInput baseVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column"
-  style="width: 80%;"
+  class="t-space t-space-vertical"
+  style="gap: 16px; width: 80%;"
 >
   <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
+    class="t-space-item"
   >
-    <div
-      class="t-input t-size-m t-is-default t-input--prefix"
-    >
-      <div
-        class="t-input__prefix"
-      >
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          Vue
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          React1
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-      </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
-    </div>
-  </div>
-   
-  <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
-  >
-    <div
-      class="t-input t-size-m t-is-default t-input--prefix"
-    >
-      <div
-        class="t-input__prefix"
-      >
-        <div
-          class="t-tag-input__prefix"
-        >
-          Controlled: 
-        </div>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          Vue
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          React2
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-      </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
-    </div>
-  </div>
-   
-  <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
-  >
-    <div
-      class="t-input t-size-m t-is-default t-input--prefix"
-    >
-      <div
-        class="t-input__prefix"
-      >
-        <div
-          class="t-tag-input__prefix"
-        >
-          UnControlled: 
-        </div>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          Vue
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          React3
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-      </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`TagInput TagInput collapsedVue demo works fine 1`] = `
-<div
-  class="tdesign-demo-block-column"
-  style="width: 80%;"
->
-  <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
-  >
-    <div
-      class="t-input t-size-m t-is-default t-input--prefix"
-    >
-      <div
-        class="t-input__prefix"
-      >
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          Vue
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark"
-        >
-          +4
-        </span>
-      </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
-    </div>
-  </div>
-   
-  <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
-  >
-    <div
-      class="t-input t-size-m t-is-default t-input--prefix"
-    >
-      <div
-        class="t-input__prefix"
-      >
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          Vue
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          React
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark"
-        >
-          更多(3)
-        </span>
-      </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
-    </div>
-  </div>
-   
-  <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
-  >
-    <div
-      class="t-input t-size-m t-is-default t-input--prefix"
-    >
-      <div
-        class="t-input__prefix"
-      >
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          Vue
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          React
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          Miniprogram
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark"
-        >
-          More(2)
-        </span>
-      </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`TagInput TagInput customTagVue demo works fine 1`] = `
-<div
-  class="tdesign-demo-block-column"
-  style="width: 80%;"
->
-  <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
-  >
-    <div
-      class="t-input t-size-m t-is-default t-input--prefix"
-    >
-      <div
-        class="t-input__prefix"
-      >
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          <img
-            src="https://tdesign.gtimg.com/site/avatar.jpg"
-            style="max-width: 20px; max-height: 20px; border-radius: 50%;"
-          />
-           
-          <span>
-              StudentA
-          </span>
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          <img
-            src="https://tdesign.gtimg.com/site/avatar.jpg"
-            style="max-width: 20px; max-height: 20px; border-radius: 50%;"
-          />
-           
-          <span>
-              StudentB
-          </span>
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark"
-        >
-          +1
-        </span>
-      </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
-    </div>
-  </div>
-   
-  <br />
-  <br />
-   
-  <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
-  >
-    <div
-      class="t-input t-size-m t-is-default t-input--prefix"
-    >
-      <div
-        class="t-input__prefix"
-      >
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-          style="margin-right: 4px;"
-        >
-          <img
-            src="https://tdesign.gtimg.com/site/avatar.jpg"
-            style="max-width: 20px; max-height: 20px; border-radius: 50%;"
-          />
-           
-          <span>
-              StudentA
-          </span>
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-          style="margin-right: 4px;"
-        >
-          <img
-            src="https://tdesign.gtimg.com/site/avatar.jpg"
-            style="max-width: 20px; max-height: 20px; border-radius: 50%;"
-          />
-           
-          <span>
-              StudentB
-          </span>
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-          style="margin-right: 4px;"
-        >
-          <img
-            src="https://tdesign.gtimg.com/site/avatar.jpg"
-            style="max-width: 20px; max-height: 20px; border-radius: 50%;"
-          />
-           
-          <span>
-              StudentC
-          </span>
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-      </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`TagInput TagInput draggableVue demo works fine 1`] = `
-<div
-  class="tdesign-demo-block-column"
-  style="width: 80%;"
->
-  <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
-  >
-    <div
-      class="t-input t-size-m t-is-default t-input--prefix"
-    >
-      <div
-        class="t-input__prefix"
-      >
-        <span
-          class="t-tag-input__drag_wrapper"
-          draggable="true"
-        >
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-          >
-            Vue
-            <svg
-              class="t-icon t-icon-close t-tag__icon-close"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-          </span>
-        </span>
-        <span
-          class="t-tag-input__drag_wrapper"
-          draggable="true"
-        >
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-          >
-            React
-            <svg
-              class="t-icon t-icon-close t-tag__icon-close"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-          </span>
-        </span>
-        <span
-          class="t-tag-input__drag_wrapper"
-          draggable="true"
-        >
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-          >
-            Angular
-            <svg
-              class="t-icon t-icon-close t-tag__icon-close"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-          </span>
-        </span>
-      </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
-    </div>
-  </div>
-   
-  <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
-  >
-    <div
-      class="t-input t-size-m t-is-default t-input--prefix"
-    >
-      <div
-        class="t-input__prefix"
-      >
-        <div
-          class="t-tag-input__prefix"
-        >
-          Controlled: 
-        </div>
-        <span
-          class="t-tag-input__drag_wrapper"
-          draggable="true"
-        >
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-          >
-            Vue
-            <svg
-              class="t-icon t-icon-close t-tag__icon-close"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-          </span>
-        </span>
-        <span
-          class="t-tag-input__drag_wrapper"
-          draggable="true"
-        >
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-          >
-            React
-            <svg
-              class="t-icon t-icon-close t-tag__icon-close"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-          </span>
-        </span>
-        <span
-          class="t-tag-input__drag_wrapper"
-          draggable="true"
-        >
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-          >
-            Angular
-            <svg
-              class="t-icon t-icon-close t-tag__icon-close"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-          </span>
-        </span>
-        <span
-          class="t-tag-input__drag_wrapper"
-          draggable="true"
-        >
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-          >
-            Miniprogram
-            <svg
-              class="t-icon t-icon-close t-tag__icon-close"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-          </span>
-        </span>
-      </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`TagInput TagInput excessVue demo works fine 1`] = `
-<div
-  class="tdesign-demo-block-column"
-  style="width: 80%;"
->
-  <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
-  >
-    <div
-      class="t-input t-size-m t-is-default t-input--prefix"
-    >
-      <div
-        class="t-input__prefix"
-      >
-        <div
-          class="t-tag-input__prefix"
-        >
-          Scroll: 
-        </div>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          Vue
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          React
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-      </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
-    </div>
-  </div>
-   
-  <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
-  >
-    <div
-      class="t-input t-size-m t-is-default t-input--prefix"
-    >
-      <div
-        class="t-input__prefix"
-      >
-        <div
-          class="t-tag-input__prefix"
-        >
-          BreakLine: 
-        </div>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          Vue
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          React
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-      </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`TagInput TagInput maxVue demo works fine 1`] = `
-<div
-  style="width: 100%;"
->
-  <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
-  >
-    <div
-      class="t-input t-size-m t-is-default t-input--prefix"
-    >
-      <div
-        class="t-input__prefix"
-      />
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder="最多只能输入 3 个标签"
-        type="text"
-        unselectable="off"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`TagInput TagInput sizeVue demo works fine 1`] = `
-<div
-  class="tdesign-demo-block-column"
-  style="width: 80%;"
->
-  <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
-  >
-    <div
-      class="t-input t-size-s t-is-default t-input--prefix"
-    >
-      <div
-        class="t-input__prefix"
-      >
-        <span
-          class="t-tag t-tag--default t-size-s t-tag--dark t-tag--close"
-        >
-          Vue
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-s t-tag--dark t-tag--close"
-        >
-          React
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-      </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
-    </div>
-  </div>
-   
-  <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
-  >
-    <div
-      class="t-input t-size-m t-is-default t-input--prefix"
-    >
-      <div
-        class="t-input__prefix"
-      >
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          Vue
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-        >
-          React
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-      </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
-    </div>
-  </div>
-   
-  <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
-  >
-    <div
-      class="t-input t-size-l t-is-default t-input--prefix"
-    >
-      <div
-        class="t-input__prefix"
-      >
-        <span
-          class="t-tag t-tag--default t-size-l t-tag--dark t-tag--close"
-        >
-          Vue
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-l t-tag--dark t-tag--close"
-        >
-          React
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-      </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`TagInput TagInput statusVue demo works fine 1`] = `
-<div
-  class="tdesign-demo-block-column"
-  style="width: 100%;"
->
-  <div
-    class="t-tdesign-demo__tag-input"
-  >
-    <label>
-      禁用状态：
-    </label>
-     
-    <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
-    >
-      <div
-        class="t-input t-size-m t-is-disabled t-is-default t-input--prefix"
-      >
-        <div
-          class="t-input__prefix"
-        >
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled"
-          >
-            Vue
-          </span>
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled"
-          >
-            React
-          </span>
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled"
-          >
-            Miniprogram
-          </span>
-        </div>
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          disabled="disabled"
-          placeholder=""
-          type="text"
-          unselectable="off"
-        />
-      </div>
-    </div>
-  </div>
-   
-  <div
-    class="t-tdesign-demo__tag-input"
-  >
-    <label>
-      只读状态：
-    </label>
-     
     <div
       class="t-input__wrap t-tag-input t-tag-input--break-line"
     >
@@ -1232,19 +83,44 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            Vue
+            <span>
+              Vue
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            React
-          </span>
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
-          >
-            Miniprogram
+            <span>
+              React1
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </span>
         </div>
         <input
@@ -1255,26 +131,160 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
           unselectable="off"
         />
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      >
-        这是普通文本提示
-      </div>
     </div>
   </div>
-   
   <div
-    class="t-tdesign-demo__tag-input"
+    class="t-space-item"
   >
-    <label>
-      成功状态：
-    </label>
-     
     <div
       class="t-input__wrap t-tag-input t-tag-input--break-line"
     >
       <div
-        class="t-input t-size-m t-is-success t-input--prefix"
+        class="t-input t-size-m t-is-default t-input--prefix"
+      >
+        <div
+          class="t-input__prefix"
+        >
+          <div
+            class="t-tag-input__prefix"
+          >
+            Controlled: 
+          </div>
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+          >
+            <span>
+              Vue
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+          >
+            <span>
+              React2
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+        </div>
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder=""
+          type="text"
+          unselectable="off"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-input__wrap t-tag-input t-tag-input--break-line"
+    >
+      <div
+        class="t-input t-size-m t-is-default t-input--prefix"
+      >
+        <div
+          class="t-input__prefix"
+        >
+          <div
+            class="t-tag-input__prefix"
+          >
+            UnControlled: 
+          </div>
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+          >
+            <span>
+              Vue
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+          >
+            <span>
+              React3
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+        </div>
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder=""
+          type="text"
+          unselectable="off"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TagInput TagInput collapsedVue demo works fine 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px; width: 80%;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-input__wrap t-tag-input t-tag-input--break-line"
+    >
+      <div
+        class="t-input t-size-m t-is-default t-input--prefix"
       >
         <div
           class="t-input__prefix"
@@ -1282,7 +292,9 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            Vue
+            <span>
+              Vue
+            </span>
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -1298,40 +310,11 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-size-m t-tag--dark"
           >
-            React
-            <svg
-              class="t-icon t-icon-close t-tag__icon-close"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-          </span>
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
-          >
-            Miniprogram
-            <svg
-              class="t-icon t-icon-close t-tag__icon-close"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
+            <span>
+              +4
+            </span>
           </span>
         </div>
         <input
@@ -1342,26 +325,16 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
           unselectable="off"
         />
       </div>
-      <div
-        class="t-input__tips t-input__tips--success"
-      >
-        校验通过文本提示
-      </div>
     </div>
   </div>
-   
   <div
-    class="t-tdesign-demo__tag-input"
+    class="t-space-item"
   >
-    <label>
-      告警状态：
-    </label>
-     
     <div
       class="t-input__wrap t-tag-input t-tag-input--break-line"
     >
       <div
-        class="t-input t-size-m t-is-warning t-input--prefix"
+        class="t-input t-size-m t-is-default t-input--prefix"
       >
         <div
           class="t-input__prefix"
@@ -1369,7 +342,9 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            Vue
+            <span>
+              Vue
+            </span>
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -1387,7 +362,9 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            React
+            <span>
+              React
+            </span>
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -1403,22 +380,11 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-size-m t-tag--dark"
           >
-            Miniprogram
-            <svg
-              class="t-icon t-icon-close t-tag__icon-close"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
+            <span>
+              更多(3)
+            </span>
           </span>
         </div>
         <input
@@ -1429,26 +395,16 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
           unselectable="off"
         />
       </div>
-      <div
-        class="t-input__tips t-input__tips--warning"
-      >
-        校验不通过文本提示
-      </div>
     </div>
   </div>
-   
   <div
-    class="t-tdesign-demo__tag-input"
+    class="t-space-item"
   >
-    <label>
-      错误状态：
-    </label>
-     
     <div
       class="t-input__wrap t-tag-input t-tag-input--break-line"
     >
       <div
-        class="t-input t-size-m t-is-error t-input--prefix"
+        class="t-input t-size-m t-is-default t-input--prefix"
       >
         <div
           class="t-input__prefix"
@@ -1456,7 +412,9 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            Vue
+            <span>
+              Vue
+            </span>
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -1474,7 +432,9 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            React
+            <span>
+              React
+            </span>
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -1492,7 +452,215 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            Miniprogram
+            <span>
+              Miniprogram
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark"
+          >
+            <span>
+              More(2)
+            </span>
+          </span>
+        </div>
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder=""
+          type="text"
+          unselectable="off"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TagInput TagInput customTagVue demo works fine 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-input__wrap t-tag-input t-tag-input--break-line"
+    >
+      <div
+        class="t-input t-size-m t-is-default t-input--prefix"
+      >
+        <div
+          class="t-input__prefix"
+        >
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+          >
+            <span>
+              <img
+                src="https://tdesign.gtimg.com/site/avatar.jpg"
+                style="max-width: 20px; max-height: 20px; border-radius: 50%; vertical-align: text-top;"
+              />
+               
+              <span>
+                  StudentA
+              </span>
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+          >
+            <span>
+              <img
+                src="https://tdesign.gtimg.com/site/avatar.jpg"
+                style="max-width: 20px; max-height: 20px; border-radius: 50%; vertical-align: text-top;"
+              />
+               
+              <span>
+                  StudentB
+              </span>
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark"
+          >
+            <span>
+              +1
+            </span>
+          </span>
+        </div>
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder=""
+          type="text"
+          unselectable="off"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-input__wrap t-tag-input t-tag-input--break-line"
+    >
+      <div
+        class="t-input t-size-m t-is-default t-input--prefix"
+      >
+        <div
+          class="t-input__prefix"
+        >
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            style="margin-right: 4px;"
+          >
+            <span>
+              <img
+                src="https://tdesign.gtimg.com/site/avatar.jpg"
+                style="max-width: 20px; max-height: 20px; border-radius: 50%; vertical-align: text-top;"
+              />
+               
+              <span>
+                  StudentA
+              </span>
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            style="margin-right: 4px;"
+          >
+            <span>
+              <img
+                src="https://tdesign.gtimg.com/site/avatar.jpg"
+                style="max-width: 20px; max-height: 20px; border-radius: 50%; vertical-align: text-top;"
+              />
+               
+              <span>
+                  StudentB
+              </span>
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            style="margin-right: 4px;"
+          >
+            <span>
+              <img
+                src="https://tdesign.gtimg.com/site/avatar.jpg"
+                style="max-width: 20px; max-height: 20px; border-radius: 50%; vertical-align: text-top;"
+              />
+               
+              <span>
+                  StudentC
+              </span>
+            </span>
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -1516,10 +684,1008 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
           unselectable="off"
         />
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TagInput TagInput draggableVue demo works fine 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-input__wrap t-tag-input t-tag-input--break-line"
+    >
       <div
-        class="t-input__tips t-input__tips--error"
+        class="t-input t-size-m t-is-default t-input--prefix"
       >
-        校验存在严重问题文本提示
+        <div
+          class="t-input__prefix"
+        >
+          <span
+            class="t-tag-input__drag_wrapper"
+            draggable="true"
+          >
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            >
+              <span>
+                Vue
+              </span>
+              <svg
+                class="t-icon t-icon-close t-tag__icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+          </span>
+          <span
+            class="t-tag-input__drag_wrapper"
+            draggable="true"
+          >
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            >
+              <span>
+                React
+              </span>
+              <svg
+                class="t-icon t-icon-close t-tag__icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+          </span>
+          <span
+            class="t-tag-input__drag_wrapper"
+            draggable="true"
+          >
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            >
+              <span>
+                Angular
+              </span>
+              <svg
+                class="t-icon t-icon-close t-tag__icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+          </span>
+        </div>
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder=""
+          type="text"
+          unselectable="off"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-input__wrap t-tag-input t-tag-input--break-line"
+    >
+      <div
+        class="t-input t-size-m t-is-default t-input--prefix"
+      >
+        <div
+          class="t-input__prefix"
+        >
+          <div
+            class="t-tag-input__prefix"
+          >
+            Controlled: 
+          </div>
+          <span
+            class="t-tag-input__drag_wrapper"
+            draggable="true"
+          >
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            >
+              <span>
+                Vue
+              </span>
+              <svg
+                class="t-icon t-icon-close t-tag__icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+          </span>
+          <span
+            class="t-tag-input__drag_wrapper"
+            draggable="true"
+          >
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            >
+              <span>
+                React
+              </span>
+              <svg
+                class="t-icon t-icon-close t-tag__icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+          </span>
+          <span
+            class="t-tag-input__drag_wrapper"
+            draggable="true"
+          >
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            >
+              <span>
+                Angular
+              </span>
+              <svg
+                class="t-icon t-icon-close t-tag__icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+          </span>
+          <span
+            class="t-tag-input__drag_wrapper"
+            draggable="true"
+          >
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            >
+              <span>
+                Miniprogram
+              </span>
+              <svg
+                class="t-icon t-icon-close t-tag__icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+          </span>
+        </div>
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder=""
+          type="text"
+          unselectable="off"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TagInput TagInput excessVue demo works fine 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px; width: 80%;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-input__wrap t-tag-input t-tag-input--break-line"
+    >
+      <div
+        class="t-input t-size-m t-is-default t-input--prefix"
+      >
+        <div
+          class="t-input__prefix"
+        >
+          <div
+            class="t-tag-input__prefix"
+          >
+            Scroll: 
+          </div>
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+          >
+            <span>
+              Vue
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+          >
+            <span>
+              React
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+        </div>
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder=""
+          type="text"
+          unselectable="off"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-input__wrap t-tag-input t-tag-input--break-line"
+    >
+      <div
+        class="t-input t-size-m t-is-default t-input--prefix"
+      >
+        <div
+          class="t-input__prefix"
+        >
+          <div
+            class="t-tag-input__prefix"
+          >
+            BreakLine: 
+          </div>
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+          >
+            <span>
+              Vue
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+          >
+            <span>
+              React
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+        </div>
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder=""
+          type="text"
+          unselectable="off"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TagInput TagInput maxVue demo works fine 1`] = `
+<div
+  class="t-input__wrap t-tag-input t-tag-input--break-line"
+  style="width: 80%;"
+>
+  <div
+    class="t-input t-size-m t-is-default t-input--prefix"
+  >
+    <div
+      class="t-input__prefix"
+    />
+    <input
+      autocomplete=""
+      class="t-input__inner"
+      placeholder="最多只能输入 3 个标签"
+      type="text"
+      unselectable="off"
+    />
+  </div>
+</div>
+`;
+
+exports[`TagInput TagInput sizeVue demo works fine 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px; width: 80%;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-input__wrap t-tag-input t-tag-input--break-line"
+    >
+      <div
+        class="t-input t-size-s t-is-default t-input--prefix"
+      >
+        <div
+          class="t-input__prefix"
+        >
+          <span
+            class="t-tag t-tag--default t-size-s t-tag--dark t-tag--close"
+          >
+            <span>
+              Vue
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--default t-size-s t-tag--dark t-tag--close"
+          >
+            <span>
+              React
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+        </div>
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder=""
+          type="text"
+          unselectable="off"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-input__wrap t-tag-input t-tag-input--break-line"
+    >
+      <div
+        class="t-input t-size-m t-is-default t-input--prefix"
+      >
+        <div
+          class="t-input__prefix"
+        >
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+          >
+            <span>
+              Vue
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+          >
+            <span>
+              React
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+        </div>
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder=""
+          type="text"
+          unselectable="off"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-input__wrap t-tag-input t-tag-input--break-line"
+    >
+      <div
+        class="t-input t-size-l t-is-default t-input--prefix"
+      >
+        <div
+          class="t-input__prefix"
+        >
+          <span
+            class="t-tag t-tag--default t-size-l t-tag--dark t-tag--close"
+          >
+            <span>
+              Vue
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--default t-size-l t-tag--dark t-tag--close"
+          >
+            <span>
+              React
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+        </div>
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder=""
+          type="text"
+          unselectable="off"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TagInput TagInput statusVue demo works fine 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-tdesign-demo__tag-input"
+    >
+      <label>
+        禁用状态：
+      </label>
+       
+      <div
+        class="t-input__wrap t-tag-input t-tag-input--break-line"
+      >
+        <div
+          class="t-input t-size-m t-is-disabled t-is-default t-input--prefix"
+        >
+          <div
+            class="t-input__prefix"
+          >
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled"
+            >
+              <span>
+                Vue
+              </span>
+            </span>
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled"
+            >
+              <span>
+                React
+              </span>
+            </span>
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled"
+            >
+              <span>
+                Miniprogram
+              </span>
+            </span>
+          </div>
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            disabled="disabled"
+            placeholder=""
+            type="text"
+            unselectable="off"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-tdesign-demo__tag-input"
+    >
+      <label>
+        只读状态：
+      </label>
+       
+      <div
+        class="t-input__wrap t-tag-input t-tag-input--break-line"
+      >
+        <div
+          class="t-input t-size-m t-is-default t-input--prefix"
+        >
+          <div
+            class="t-input__prefix"
+          >
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark"
+            >
+              <span>
+                Vue
+              </span>
+            </span>
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark"
+            >
+              <span>
+                React
+              </span>
+            </span>
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark"
+            >
+              <span>
+                Miniprogram
+              </span>
+            </span>
+          </div>
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder=""
+            type="text"
+            unselectable="off"
+          />
+        </div>
+        <div
+          class="t-input__tips t-input__tips--default"
+        >
+          这是普通文本提示
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-tdesign-demo__tag-input"
+    >
+      <label>
+        成功状态：
+      </label>
+       
+      <div
+        class="t-input__wrap t-tag-input t-tag-input--break-line"
+      >
+        <div
+          class="t-input t-size-m t-is-success t-input--prefix"
+        >
+          <div
+            class="t-input__prefix"
+          >
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            >
+              <span>
+                Vue
+              </span>
+              <svg
+                class="t-icon t-icon-close t-tag__icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            >
+              <span>
+                React
+              </span>
+              <svg
+                class="t-icon t-icon-close t-tag__icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            >
+              <span>
+                Miniprogram
+              </span>
+              <svg
+                class="t-icon t-icon-close t-tag__icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+          </div>
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder=""
+            type="text"
+            unselectable="off"
+          />
+        </div>
+        <div
+          class="t-input__tips t-input__tips--success"
+        >
+          校验通过文本提示
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-tdesign-demo__tag-input"
+    >
+      <label>
+        告警状态：
+      </label>
+       
+      <div
+        class="t-input__wrap t-tag-input t-tag-input--break-line"
+      >
+        <div
+          class="t-input t-size-m t-is-warning t-input--prefix"
+        >
+          <div
+            class="t-input__prefix"
+          >
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            >
+              <span>
+                Vue
+              </span>
+              <svg
+                class="t-icon t-icon-close t-tag__icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            >
+              <span>
+                React
+              </span>
+              <svg
+                class="t-icon t-icon-close t-tag__icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            >
+              <span>
+                Miniprogram
+              </span>
+              <svg
+                class="t-icon t-icon-close t-tag__icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+          </div>
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder=""
+            type="text"
+            unselectable="off"
+          />
+        </div>
+        <div
+          class="t-input__tips t-input__tips--warning"
+        >
+          校验不通过文本提示
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-tdesign-demo__tag-input"
+    >
+      <label>
+        错误状态：
+      </label>
+       
+      <div
+        class="t-input__wrap t-tag-input t-tag-input--break-line"
+      >
+        <div
+          class="t-input t-size-m t-is-error t-input--prefix"
+        >
+          <div
+            class="t-input__prefix"
+          >
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            >
+              <span>
+                Vue
+              </span>
+              <svg
+                class="t-icon t-icon-close t-tag__icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            >
+              <span>
+                React
+              </span>
+              <svg
+                class="t-icon t-icon-close t-tag__icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+            <span
+              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            >
+              <span>
+                Miniprogram
+              </span>
+              <svg
+                class="t-icon t-icon-close t-tag__icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+          </div>
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder=""
+            type="text"
+            unselectable="off"
+          />
+        </div>
+        <div
+          class="t-input__tips t-input__tips--error"
+        >
+          校验存在严重问题文本提示
+        </div>
       </div>
     </div>
   </div>
@@ -1528,302 +1694,339 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
 
 exports[`TagInput TagInput themeVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column"
-  style="width: 80%;"
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
 >
   <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
+    class="t-space-item"
   >
     <div
-      class="t-input t-size-m t-is-default t-input--prefix"
+      class="t-input__wrap t-tag-input t-tag-input--break-line"
     >
       <div
-        class="t-input__prefix"
+        class="t-input t-size-m t-is-default t-input--prefix"
       >
-        <span
-          class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--close"
+        <div
+          class="t-input__prefix"
         >
-          Vue
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+          <span
+            class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--close"
           >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--close"
-        >
-          React
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+            <span>
+              Vue
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--close"
           >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--close"
-        >
-          Miniprogram
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+            <span>
+              React
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--close"
           >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
+            <span>
+              Miniprogram
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+        </div>
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder=""
+          type="text"
+          unselectable="off"
+        />
       </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
     </div>
   </div>
-   
   <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
+    class="t-space-item"
   >
     <div
-      class="t-input t-size-m t-is-default t-input--prefix"
+      class="t-input__wrap t-tag-input t-tag-input--break-line"
     >
       <div
-        class="t-input__prefix"
+        class="t-input t-size-m t-is-default t-input--prefix"
       >
-        <span
-          class="t-tag t-tag--success t-size-m t-tag--dark t-tag--close"
+        <div
+          class="t-input__prefix"
         >
-          Vue
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+          <span
+            class="t-tag t-tag--success t-size-m t-tag--dark t-tag--close"
           >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--success t-size-m t-tag--dark t-tag--close"
-        >
-          React
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+            <span>
+              Vue
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--success t-size-m t-tag--dark t-tag--close"
           >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--success t-size-m t-tag--dark t-tag--close"
-        >
-          Miniprogram
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+            <span>
+              React
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--success t-size-m t-tag--dark t-tag--close"
           >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
+            <span>
+              Miniprogram
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+        </div>
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder=""
+          type="text"
+          unselectable="off"
+        />
       </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
     </div>
   </div>
-   
   <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
+    class="t-space-item"
   >
     <div
-      class="t-input t-size-m t-is-default t-input--prefix"
+      class="t-input__wrap t-tag-input t-tag-input--break-line"
     >
       <div
-        class="t-input__prefix"
+        class="t-input t-size-m t-is-default t-input--prefix"
       >
-        <span
-          class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--close"
+        <div
+          class="t-input__prefix"
         >
-          Vue
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+          <span
+            class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--close"
           >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--close"
-        >
-          React
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+            <span>
+              Vue
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--close"
           >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--close"
-        >
-          Miniprogram
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+            <span>
+              React
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--close"
           >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
+            <span>
+              Miniprogram
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+        </div>
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder=""
+          type="text"
+          unselectable="off"
+        />
       </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
     </div>
   </div>
-   
   <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line"
+    class="t-space-item"
   >
     <div
-      class="t-input t-size-m t-is-default t-input--prefix"
+      class="t-input__wrap t-tag-input t-tag-input--break-line"
     >
       <div
-        class="t-input__prefix"
+        class="t-input t-size-m t-is-default t-input--prefix"
       >
-        <span
-          class="t-tag t-tag--danger t-size-m t-tag--dark t-tag--close"
+        <div
+          class="t-input__prefix"
         >
-          Vue
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+          <span
+            class="t-tag t-tag--danger t-size-m t-tag--dark t-tag--close"
           >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--danger t-size-m t-tag--dark t-tag--close"
-        >
-          React
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+            <span>
+              Vue
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--danger t-size-m t-tag--dark t-tag--close"
           >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <span
-          class="t-tag t-tag--danger t-size-m t-tag--dark t-tag--close"
-        >
-          Miniprogram
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+            <span>
+              React
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+          <span
+            class="t-tag t-tag--danger t-size-m t-tag--dark t-tag--close"
           >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
+            <span>
+              Miniprogram
+            </span>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+        </div>
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder=""
+          type="text"
+          unselectable="off"
+        />
       </div>
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder=""
-        type="text"
-        unselectable="off"
-      />
     </div>
   </div>
 </div>

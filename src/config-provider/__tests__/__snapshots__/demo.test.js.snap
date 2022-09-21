@@ -2571,7 +2571,9 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
       >
-        +0
+        <span>
+          +0
+        </span>
       </span>
       <div
         class="t-input__wrap t-select__input"
@@ -2669,7 +2671,9 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
       >
-        +0
+        <span>
+          +0
+        </span>
       </span>
       <div
         class="t-input__wrap t-select__input"
@@ -2751,7 +2755,9 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
       >
-        +0
+        <span>
+          +0
+        </span>
       </span>
       <div
         class="t-input__wrap t-select__input"
@@ -2881,7 +2887,9 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
   <span
     class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--close"
   >
-    Feature Tag
+    <span>
+      Feature Tag
+    </span>
     <svg
       class="t-icon t-icon-close-circle t-tag__icon-close"
       fill="none"
@@ -2905,7 +2913,9 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
   <span
     class="t-tag t-tag--success t-size-m t-tag--dark t-tag--close"
   >
-    Feature Tag
+    <span>
+      Feature Tag
+    </span>
     <svg
       class="t-icon t-icon-close-circle t-tag__icon-close"
       fill="none"
@@ -2929,7 +2939,9 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
   <span
     class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--close"
   >
-    Feature Tag
+    <span>
+      Feature Tag
+    </span>
     <svg
       class="t-icon t-icon-close-circle t-tag__icon-close"
       fill="none"
@@ -2953,7 +2965,9 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
   <span
     class="t-tag t-tag--danger t-size-m t-tag--dark t-tag--close"
   >
-    Feature Tag
+    <span>
+      Feature Tag
+    </span>
     <svg
       class="t-icon t-icon-close-circle t-tag__icon-close"
       fill="none"

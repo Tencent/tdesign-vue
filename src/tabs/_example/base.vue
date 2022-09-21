@@ -1,22 +1,20 @@
 <template>
-  <div class="tdesign-demo-block-column-large">
-    <div class="tdesign-demo-block-column">
-      <!-- 方式一： t-tab-panel 方式 -->
-      <t-tabs v-model="value">
-        <!-- 默认插槽 和 具名插槽（panel）都是用来渲染面板内容 -->
-        <t-tab-panel value="first" label="选项卡1" :destroyOnHide="false">
-          <p style="padding: 25px">选项卡1的内容，使用 t-tab-panel 渲染</p>
-        </t-tab-panel>
-        <t-tab-panel value="second" label="选项卡2" :destroyOnHide="false">
-          <p slot="panel" style="padding: 25px">选项卡2的内容，使用 t-tab-panel 渲染</p>
-        </t-tab-panel>
-        <t-tab-panel value="third" label="选项卡3" :panel="panelRender" />
-      </t-tabs>
+  <t-space direction="vertical">
+    <!-- 方式一： t-tab-panel 方式 -->
+    <t-tabs v-model="value">
+      <!-- 默认插槽 和 具名插槽（panel）都是用来渲染面板内容 -->
+      <t-tab-panel value="first" label="选项卡1" :destroyOnHide="false">
+        <p style="padding: 25px">选项卡1的内容，使用 t-tab-panel 渲染</p>
+      </t-tab-panel>
+      <t-tab-panel value="second" label="选项卡2" :destroyOnHide="false">
+        <p slot="panel" style="padding: 25px">选项卡2的内容，使用 t-tab-panel 渲染</p>
+      </t-tab-panel>
+      <t-tab-panel value="third" label="选项卡3" :panel="panelRender" />
+    </t-tabs>
 
-      <!-- 方式二：使用 list 定义 Tab -->
-      <t-tabs v-model="tab" :list="tabList" />
-    </div>
-  </div>
+    <!-- 方式二：使用 list 定义 Tab -->
+    <t-tabs v-model="tab" :list="tabList" />
+  </t-space>
 </template>
 
 <script lang="jsx">

@@ -1506,7 +1506,9 @@ exports[`Form Form disabledVue demo works fine 1`] = `
                   class="t-tag t-tag--default t-size-m t-tag--dark"
                   style="display: none;"
                 >
-                  +0
+                  <span>
+                    +0
+                  </span>
                 </span>
                 <div
                   class="t-input__wrap t-select__input"
@@ -6152,7 +6154,9 @@ exports[`Form Form validatorVue demo works fine 1`] = `
               class="t-tag t-tag--default t-size-m t-tag--dark"
               style="display: none;"
             >
-              +0
+              <span>
+                +0
+              </span>
             </span>
             <div
               class="t-input__wrap t-select__input"

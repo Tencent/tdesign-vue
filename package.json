@@ -1,14 +1,14 @@
 {
   "name": "tdesign-vue",
   "purename": "tdesign",
-  "version": "0.47.0",
+  "version": "0.48.0",
   "description": "tdesign-vue",
   "title": "tdesign-vue",
   "keywords": [
     "vue",
     "tdesign"
   ],
-  "main": "lib/index-lib.js",
+  "main": "cjs/index-lib.js",
   "module": "es/index.js",
   "typings": "es/index.d.ts",
   "unpkg": "dist/tdesign.min.js",
@@ -53,7 +53,7 @@
     "site:preview": "cd site && npm run build:preview",
     "site:intranet": "cd site && npm run build:intranet",
     "postsite:preview": "cp _site/index.html _site/404.html",
-    "prebuild": "rimraf es/* esm/* lib/* dist/*",
+    "prebuild": "rimraf es/* esm/* lib/* cjs/* dist/*",
     "build": "cross-env NODE_ENV=production rollup -c script/rollup.config.js && npm run build:tsc",
     "build:tsc": "run-p build:tsc-*",
     "build:tsc-es": "tsc --emitDeclarationOnly -d --outDir es/",

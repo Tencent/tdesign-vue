@@ -1,7 +1,5 @@
 <template>
-  <div class="tdesign-demo-block">
-    <t-card bordered :style="{ width: '400px' }"> {{ infoMessage }} </t-card>
-  </div>
+  <t-card bordered :style="{ width: '400px' }"> {{ infoMessage }} </t-card>
 </template>
 
 <script>
@@ -14,8 +12,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.tdesign-demo-block /deep/ .t-card__actions {
-  line-height: 24px;
-}
-</style>

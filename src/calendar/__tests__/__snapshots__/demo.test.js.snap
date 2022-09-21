@@ -2284,7 +2284,9 @@ exports[`Calendar Calendar cellAppendVue demo works fine 1`] = `
                   <span
                     class="activeTag t-tag t-tag--primary t-size-s t-tag--dark"
                   >
-                    今天
+                    <span>
+                      今天
+                    </span>
                   </span>
                 </div>
               </div>
