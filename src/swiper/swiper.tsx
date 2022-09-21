@@ -194,10 +194,14 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGl
       }
     },
     onMouseEnterNavigationItem(i: number) {
-      this.swiperTo(i, { source: 'hover' });
+      if (this.trigger === 'hover') {
+        this.swiperTo(i, { source: 'hover' });
+      }
     },
     onClickNavigationItem(i: number) {
-      this.swiperTo(i, { source: 'click' });
+      if (this.trigger === 'click') {
+        this.swiperTo(i, { source: 'click' });
+      }
     },
     swiperTo(index: number, context: { source: SwiperChangeSource }) {
       const targetIndex = index % this.swiperItemLength;
@@ -306,7 +310,7 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGl
       <div
         class={this.componentName}
         onMouseenter={this.onMouseEnter}
-        onMouseLeave={this.onMouseLeave}
+        onMouseleave={this.onMouseLeave}
         ref="swiperWrap"
       >
         <div class={this.swiperWrapClass}>

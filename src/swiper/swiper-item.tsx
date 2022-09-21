@@ -87,6 +87,7 @@ export default mixins(classPrefixMixins).extend({
         return {
           opacity: this.active ? 1 : 0,
           transition: this.isSwitching ? `opacity ${this.duration / 1000}s` : '',
+          zIndex: this.active ? 1 : 0,
         };
       }
       if (this.type === 'card') {
