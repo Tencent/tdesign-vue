@@ -18,8 +18,9 @@ describe('Affix', () => {
     }).findComponent(Affix);
 
     it('Test get container', async () => {
-      await wrapper.vm.$nextTick();
-      expect(wrapper.vm.scrollContainer).toBe(window);
+      setTimeout(() => {
+        expect(wrapper.vm.scrollContainer).toBe(window);
+      }, 0);
     });
 
     it('Test the scrolling state', async () => {
@@ -48,9 +49,10 @@ describe('Affix', () => {
     });
 
     it('Test get container', async () => {
-      await wrapper.vm.$nextTick();
-      const affixWrapper = wrapper.findComponent(Affix);
-      expect(affixWrapper.vm.scrollContainer).toBe(wrapper.vm.container());
+      setTimeout(() => {
+        const affixWrapper = wrapper.findComponent(Affix);
+        expect(affixWrapper.vm.scrollContainer).toBe(wrapper.vm.container());
+      }, 0);
     });
 
     it('Test the scrolling state', async () => {
