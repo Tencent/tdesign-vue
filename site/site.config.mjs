@@ -527,7 +527,9 @@ const docs = [
         name: 'rate',
         docType: 'data',
         path: '/vue/components/rate',
-        component: () => import('@/examples/rate/rate.md'),
+        component: () => import('tdesign-vue/rate/rate.md'),
+        componentEn: () => import('tdesign-vue/rate/rate.en-US.md'),
+
       },
     ],
   },
