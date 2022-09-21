@@ -114,7 +114,6 @@ export default defineComponent({
   },
   render() {
     const { TimeIcon } = this;
-
     return (
       <div class={this.componentName}>
         <TSelectInput

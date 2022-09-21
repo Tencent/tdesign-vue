@@ -522,6 +522,15 @@ const docs = [
         component: () => import('tdesign-vue/watermark/watermark.md'),
         componentEn: () => import('tdesign-vue/watermark/watermark.en-US.md'),
       },
+      {
+        title: 'Rate 评分',
+        name: 'rate',
+        docType: 'data',
+        path: '/vue/components/rate',
+        component: () => import('tdesign-vue/rate/rate.md'),
+        componentEn: () => import('tdesign-vue/rate/rate.en-US.md'),
+
+      },
     ],
   },
   {
