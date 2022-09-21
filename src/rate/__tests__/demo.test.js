@@ -6,7 +6,6 @@ import { mount } from '@vue/test-utils';
 import baseVue from '@/src/rate/_example/base.vue';
 import customVue from '@/src/rate/_example/custom.vue';
 import iconVue from '@/src/rate/_example/icon.vue';
-
 import sizeVue from '@/src/rate/_example/size.vue';
 import statusVue from '@/src/rate/_example/status.vue';
 import textsVue from '@/src/rate/_example/texts.vue';
@@ -20,9 +19,9 @@ const mapper = {
   textsVue,
 };
 
-describe('RangeInput', () => {
+describe('Rate', () => {
   Object.keys(mapper).forEach((demoName) => {
-    it(`RangeInput ${demoName} demo works fine`, () => {
+    it(`Rate ${demoName} demo works fine`, () => {
       const wrapper = mount(mapper[demoName]);
       expect(wrapper.element).toMatchSnapshot();
     });

@@ -1,8 +1,17 @@
 <template>
   <t-space direction="vertical">
     <h3>16px</h3>
-    <t-rate :default-value="5" size="16px" />
+    <t-rate v-model="value" size="16px" />
     <h3>24px</h3>
-    <t-rate :default-value="5" />
+    <t-rate v-model="value" />
   </t-space>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      value: 5,
+    };
+  },
+};
+</script>
