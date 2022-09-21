@@ -180,7 +180,7 @@ export default defineComponent({
       let val: number | string;
       let formattedVal: string;
 
-      const scrollTop = (ctx.refs as any)[`${col}Col`]?.scrollTop;
+      const scrollTop = (ctx.refs as any)[`${col}Col`]?.scrollTop + panelOffset.top;
 
       const { offsetHeight, margin } = getItemHeight();
       const timeItemTotalHeight = offsetHeight + margin;

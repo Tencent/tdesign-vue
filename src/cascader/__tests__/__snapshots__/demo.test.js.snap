@@ -103,7 +103,9 @@ exports[`Cascader Cascader checkStrictlyVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            1/1.1/1.1.2/1.1.2.1
+            <span>
+              1/1.1/1.1.2/1.1.2.1
+            </span>
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -121,7 +123,9 @@ exports[`Cascader Cascader checkStrictlyVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            2
+            <span>
+              2
+            </span>
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -182,7 +186,9 @@ exports[`Cascader Cascader collapsedVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            选项一/子选项一
+            <span>
+              选项一/子选项一
+            </span>
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -200,7 +206,9 @@ exports[`Cascader Cascader collapsedVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark"
           >
-            +2
+            <span>
+              +2
+            </span>
           </span>
         </div>
         <span
@@ -240,7 +248,9 @@ exports[`Cascader Cascader collapsedVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            选项一/子选项一
+            <span>
+              选项一/子选项一
+            </span>
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -298,7 +308,9 @@ exports[`Cascader Cascader collapsedVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            选项一/子选项一
+            <span>
+              选项一/子选项一
+            </span>
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -411,7 +423,9 @@ exports[`Cascader Cascader disabledVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled"
           >
-            选项一/子选项一
+            <span>
+              选项一/子选项一
+            </span>
           </span>
         </div>
         <span
@@ -502,7 +516,9 @@ exports[`Cascader Cascader ellipsisVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            当选项一数据展示文本过长时/子选项一
+            <span>
+              当选项一数据展示文本过长时/子选项一
+            </span>
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -604,7 +620,9 @@ exports[`Cascader Cascader filterableVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            当选项一数据展示文本过长时/子选项一
+            <span>
+              当选项一数据展示文本过长时/子选项一
+            </span>
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -755,7 +773,9 @@ exports[`Cascader Cascader keysVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            选项一/子选项一
+            <span>
+              选项一/子选项一
+            </span>
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -891,7 +911,9 @@ exports[`Cascader Cascader multipleVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
       >
-        选项一/子选项一
+        <span>
+          选项一/子选项一
+        </span>
         <svg
           class="t-icon t-icon-close t-tag__icon-close"
           fill="none"
@@ -1638,7 +1660,9 @@ exports[`Cascader Cascader valueTypeVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            选项一/子选项一
+            <span>
+              选项一/子选项一
+            </span>
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"
@@ -1656,7 +1680,9 @@ exports[`Cascader Cascader valueTypeVue demo works fine 1`] = `
           <span
             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           >
-            选项一/子选项二
+            <span>
+              选项一/子选项二
+            </span>
             <svg
               class="t-icon t-icon-close t-tag__icon-close"
               fill="none"

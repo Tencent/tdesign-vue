@@ -16,25 +16,36 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
-          <svg
-            class="t-fake-arrow t-fake-arrow--active t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          这是一个折叠标题
+            <svg
+              class="t-fake-arrow t-fake-arrow--active t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            这是一个折叠标题
+          </div>
           <div
             class="t-collapse-panel__header--blank"
+          />
+          <div
+            class="t-collapse-panel__header-right"
           />
         </div>
         <transition-stub
@@ -64,25 +75,36 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
-          <svg
-            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          设置默认展开项
+            <svg
+              class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            设置默认展开项
+          </div>
           <div
             class="t-collapse-panel__header--blank"
+          />
+          <div
+            class="t-collapse-panel__header-right"
           />
         </div>
         <transition-stub
@@ -100,25 +122,36 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
-          <svg
-            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          自定义折叠面板内容
+            <svg
+              class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            自定义折叠面板内容
+          </div>
           <div
             class="t-collapse-panel__header--blank"
+          />
+          <div
+            class="t-collapse-panel__header-right"
           />
         </div>
         <transition-stub
@@ -147,7 +180,9 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
                       <span
                         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
                       >
-                        Vue
+                        <span>
+                          Vue
+                        </span>
                         <svg
                           class="t-icon t-icon-close t-tag__icon-close"
                           fill="none"
@@ -165,7 +200,9 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
                       <span
                         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
                       >
-                        React
+                        <span>
+                          React
+                        </span>
                         <svg
                           class="t-icon t-icon-close t-tag__icon-close"
                           fill="none"
@@ -208,7 +245,9 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
                       <span
                         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
                       >
-                        Vue
+                        <span>
+                          Vue
+                        </span>
                         <svg
                           class="t-icon t-icon-close t-tag__icon-close"
                           fill="none"
@@ -226,7 +265,9 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
                       <span
                         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
                       >
-                        React
+                        <span>
+                          React
+                        </span>
                         <svg
                           class="t-icon t-icon-close t-tag__icon-close"
                           fill="none"
@@ -269,7 +310,9 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
                       <span
                         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
                       >
-                        Vue
+                        <span>
+                          Vue
+                        </span>
                         <svg
                           class="t-icon t-icon-close t-tag__icon-close"
                           fill="none"
@@ -287,7 +330,9 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
                       <span
                         class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
                       >
-                        React
+                        <span>
+                          React
+                        </span>
                         <svg
                           class="t-icon t-icon-close t-tag__icon-close"
                           fill="none"
@@ -328,25 +373,36 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
-          <svg
-            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          嵌套折叠面板
+            <svg
+              class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            嵌套折叠面板
+          </div>
           <div
             class="t-collapse-panel__header--blank"
+          />
+          <div
+            class="t-collapse-panel__header-right"
           />
         </div>
         <transition-stub
@@ -371,25 +427,36 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
                     <div
                       class="t-collapse-panel__header t-is-clickable"
                     >
-                      <svg
-                        class="t-fake-arrow t-fake-arrow--active t-collapse-panel__icon t-collapse-panel__icon--left"
-                        fill="none"
-                        height="16"
-                        name="arrow"
-                        viewBox="0 0 16 16"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        class="t-collapse-panel__header-left"
                       >
-                        <path
-                          d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                          stroke="black"
-                          stroke-opacity="0.9"
-                          stroke-width="1.3"
-                        />
-                      </svg>
-                      子面板1
+                        <svg
+                          class="t-fake-arrow t-fake-arrow--active t-collapse-panel__icon t-collapse-panel__icon--left"
+                          fill="none"
+                          height="16"
+                          name="arrow"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                            stroke="black"
+                            stroke-opacity="0.9"
+                            stroke-width="1.3"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="t-collapse-panel__header-content"
+                      >
+                        子面板1
+                      </div>
                       <div
                         class="t-collapse-panel__header--blank"
+                      />
+                      <div
+                        class="t-collapse-panel__header-right"
                       />
                     </div>
                     <transition-stub
@@ -417,25 +484,36 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
                     <div
                       class="t-collapse-panel__header t-is-clickable"
                     >
-                      <svg
-                        class="t-fake-arrow t-fake-arrow--active t-collapse-panel__icon t-collapse-panel__icon--left"
-                        fill="none"
-                        height="16"
-                        name="arrow"
-                        viewBox="0 0 16 16"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        class="t-collapse-panel__header-left"
                       >
-                        <path
-                          d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                          stroke="black"
-                          stroke-opacity="0.9"
-                          stroke-width="1.3"
-                        />
-                      </svg>
-                      子面板2
+                        <svg
+                          class="t-fake-arrow t-fake-arrow--active t-collapse-panel__icon t-collapse-panel__icon--left"
+                          fill="none"
+                          height="16"
+                          name="arrow"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                            stroke="black"
+                            stroke-opacity="0.9"
+                            stroke-width="1.3"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="t-collapse-panel__header-content"
+                      >
+                        子面板2
+                      </div>
                       <div
                         class="t-collapse-panel__header--blank"
+                      />
+                      <div
+                        class="t-collapse-panel__header-right"
                       />
                     </div>
                     <transition-stub
@@ -463,25 +541,36 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
                     <div
                       class="t-collapse-panel__header t-is-clickable"
                     >
-                      <svg
-                        class="t-fake-arrow t-fake-arrow--active t-collapse-panel__icon t-collapse-panel__icon--left"
-                        fill="none"
-                        height="16"
-                        name="arrow"
-                        viewBox="0 0 16 16"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        class="t-collapse-panel__header-left"
                       >
-                        <path
-                          d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                          stroke="black"
-                          stroke-opacity="0.9"
-                          stroke-width="1.3"
-                        />
-                      </svg>
-                      子面板3
+                        <svg
+                          class="t-fake-arrow t-fake-arrow--active t-collapse-panel__icon t-collapse-panel__icon--left"
+                          fill="none"
+                          height="16"
+                          name="arrow"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                            stroke="black"
+                            stroke-opacity="0.9"
+                            stroke-width="1.3"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="t-collapse-panel__header-content"
+                      >
+                        子面板3
+                      </div>
                       <div
                         class="t-collapse-panel__header--blank"
+                      />
+                      <div
+                        class="t-collapse-panel__header-right"
                       />
                     </div>
                     <transition-stub
@@ -509,25 +598,36 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
                     <div
                       class="t-collapse-panel__header t-is-clickable"
                     >
-                      <svg
-                        class="t-fake-arrow t-fake-arrow--active t-collapse-panel__icon t-collapse-panel__icon--left"
-                        fill="none"
-                        height="16"
-                        name="arrow"
-                        viewBox="0 0 16 16"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        class="t-collapse-panel__header-left"
                       >
-                        <path
-                          d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                          stroke="black"
-                          stroke-opacity="0.9"
-                          stroke-width="1.3"
-                        />
-                      </svg>
-                      子面板4
+                        <svg
+                          class="t-fake-arrow t-fake-arrow--active t-collapse-panel__icon t-collapse-panel__icon--left"
+                          fill="none"
+                          height="16"
+                          name="arrow"
+                          viewBox="0 0 16 16"
+                          width="16"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                            stroke="black"
+                            stroke-opacity="0.9"
+                            stroke-width="1.3"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        class="t-collapse-panel__header-content"
+                      >
+                        子面板4
+                      </div>
                       <div
                         class="t-collapse-panel__header--blank"
+                      />
+                      <div
+                        class="t-collapse-panel__header-right"
                       />
                     </div>
                     <transition-stub
@@ -579,25 +679,36 @@ exports[`Collapse Collapse iconVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
-          <svg
-            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          这是一个折叠标题
+            <svg
+              class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            这是一个折叠标题
+          </div>
           <div
             class="t-collapse-panel__header--blank"
+          />
+          <div
+            class="t-collapse-panel__header-right"
           />
         </div>
         <transition-stub
@@ -628,25 +739,36 @@ exports[`Collapse Collapse iconVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
-          <svg
-            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          这是一个折叠标题
+            <svg
+              class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            这是一个折叠标题
+          </div>
           <div
             class="t-collapse-panel__header--blank"
+          />
+          <div
+            class="t-collapse-panel__header-right"
           />
         </div>
         <transition-stub
@@ -675,25 +797,36 @@ exports[`Collapse Collapse iconVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
-          <svg
-            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          这是一个折叠标题
+            <svg
+              class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            这是一个折叠标题
+          </div>
           <div
             class="t-collapse-panel__header--blank"
+          />
+          <div
+            class="t-collapse-panel__header-right"
           />
         </div>
         <transition-stub
@@ -724,25 +857,36 @@ exports[`Collapse Collapse iconVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
-          <svg
-            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          这是一个折叠标题
+            <svg
+              class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            这是一个折叠标题
+          </div>
           <div
             class="t-collapse-panel__header--blank"
+          />
+          <div
+            class="t-collapse-panel__header-right"
           />
         </div>
         <transition-stub
@@ -869,25 +1013,36 @@ exports[`Collapse Collapse mutexVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
-          <svg
-            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          这是一个折叠标题
+            <svg
+              class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            这是一个折叠标题
+          </div>
           <div
             class="t-collapse-panel__header--blank"
+          />
+          <div
+            class="t-collapse-panel__header-right"
           />
         </div>
         <transition-stub
@@ -918,25 +1073,36 @@ exports[`Collapse Collapse mutexVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
-          <svg
-            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          这是一个折叠标题
+            <svg
+              class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            这是一个折叠标题
+          </div>
           <div
             class="t-collapse-panel__header--blank"
+          />
+          <div
+            class="t-collapse-panel__header-right"
           />
         </div>
         <transition-stub
@@ -965,25 +1131,36 @@ exports[`Collapse Collapse mutexVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
-          <svg
-            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          这是一个折叠标题
+            <svg
+              class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            这是一个折叠标题
+          </div>
           <div
             class="t-collapse-panel__header--blank"
+          />
+          <div
+            class="t-collapse-panel__header-right"
           />
         </div>
         <transition-stub
@@ -1014,25 +1191,36 @@ exports[`Collapse Collapse mutexVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
-          <svg
-            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          这是一个折叠标题
+            <svg
+              class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            这是一个折叠标题
+          </div>
           <div
             class="t-collapse-panel__header--blank"
+          />
+          <div
+            class="t-collapse-panel__header-right"
           />
         </div>
         <transition-stub
@@ -1079,25 +1267,36 @@ exports[`Collapse Collapse otherVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
-          <svg
-            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          这是一个折叠标题
+            <svg
+              class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            这是一个折叠标题
+          </div>
           <div
             class="t-collapse-panel__header--blank"
+          />
+          <div
+            class="t-collapse-panel__header-right"
           />
         </div>
         <transition-stub
@@ -1128,25 +1327,36 @@ exports[`Collapse Collapse otherVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
-          <svg
-            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          这是一个折叠标题
+            <svg
+              class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            这是一个折叠标题
+          </div>
           <div
             class="t-collapse-panel__header--blank"
+          />
+          <div
+            class="t-collapse-panel__header-right"
           />
         </div>
         <transition-stub
@@ -1175,25 +1385,36 @@ exports[`Collapse Collapse otherVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
-          <svg
-            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          这是一个折叠标题
+            <svg
+              class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            这是一个折叠标题
+          </div>
           <div
             class="t-collapse-panel__header--blank"
+          />
+          <div
+            class="t-collapse-panel__header-right"
           />
         </div>
         <transition-stub
@@ -1224,25 +1445,36 @@ exports[`Collapse Collapse otherVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
-          <svg
-            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          这是一个折叠标题
+            <svg
+              class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            这是一个折叠标题
+          </div>
           <div
             class="t-collapse-panel__header--blank"
+          />
+          <div
+            class="t-collapse-panel__header-right"
           />
         </div>
         <transition-stub
@@ -1323,54 +1555,66 @@ exports[`Collapse Collapse rightSlotVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
-          <svg
-            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          这是一个折叠标题可以设置右侧操作区域
+            <svg
+              class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            这是一个折叠标题可以设置右侧操作区域
+          </div>
           <div
             class="t-collapse-panel__header--blank"
           />
-          <label
-            class="t-checkbox"
+          <div
+            class="t-collapse-panel__header-right"
           >
-            <input
-              class="t-checkbox__former"
-              type="checkbox"
-              value=""
-            />
-            <span
-              class="t-checkbox__input"
-            />
-            <span
-              class="t-checkbox__label"
+            <label
+              class="t-checkbox"
             >
-              禁用
-            </span>
-          </label>
-           
-          <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
-            type="button"
-          >
-            <span
-              class="t-button__text"
+              <input
+                class="t-checkbox__former"
+                type="checkbox"
+                value=""
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
+              >
+                禁用
+              </span>
+            </label>
+             
+            <button
+              class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+              type="button"
             >
-              操作
-            </span>
-          </button>
+              <span
+                class="t-button__text"
+              >
+                操作
+              </span>
+            </button>
+          </div>
         </div>
         <transition-stub
           name="t-slide-down"
@@ -1400,54 +1644,66 @@ exports[`Collapse Collapse rightSlotVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header"
         >
-          <svg
-            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          这是一个折叠标题可以设置右侧操作区域
+            <svg
+              class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            这是一个折叠标题可以设置右侧操作区域
+          </div>
           <div
             class="t-collapse-panel__header--blank"
           />
-          <label
-            class="t-checkbox t-is-checked"
+          <div
+            class="t-collapse-panel__header-right"
           >
-            <input
-              class="t-checkbox__former"
-              type="checkbox"
-              value=""
-            />
-            <span
-              class="t-checkbox__input"
-            />
-            <span
-              class="t-checkbox__label"
+            <label
+              class="t-checkbox t-is-checked"
             >
-              禁用
-            </span>
-          </label>
-           
-          <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
-            type="button"
-          >
-            <span
-              class="t-button__text"
+              <input
+                class="t-checkbox__former"
+                type="checkbox"
+                value=""
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
+              >
+                禁用
+              </span>
+            </label>
+             
+            <button
+              class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+              type="button"
             >
-              操作
-            </span>
-          </button>
+              <span
+                class="t-button__text"
+              >
+                操作
+              </span>
+            </button>
+          </div>
         </div>
         <transition-stub
           name="t-slide-down"
@@ -1477,54 +1733,66 @@ exports[`Collapse Collapse rightSlotVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header t-is-clickable"
         >
-          <svg
-            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          这是一个折叠标题可以设置右侧操作区域
+            <svg
+              class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            这是一个折叠标题可以设置右侧操作区域
+          </div>
           <div
             class="t-collapse-panel__header--blank"
           />
-          <label
-            class="t-checkbox"
+          <div
+            class="t-collapse-panel__header-right"
           >
-            <input
-              class="t-checkbox__former"
-              type="checkbox"
-              value=""
-            />
-            <span
-              class="t-checkbox__input"
-            />
-            <span
-              class="t-checkbox__label"
+            <label
+              class="t-checkbox"
             >
-              禁用
-            </span>
-          </label>
-           
-          <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
-            type="button"
-          >
-            <span
-              class="t-button__text"
+              <input
+                class="t-checkbox__former"
+                type="checkbox"
+                value=""
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
+              >
+                禁用
+              </span>
+            </label>
+             
+            <button
+              class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+              type="button"
             >
-              操作
-            </span>
-          </button>
+              <span
+                class="t-button__text"
+              >
+                操作
+              </span>
+            </button>
+          </div>
         </div>
         <transition-stub
           name="t-slide-down"
@@ -1554,54 +1822,66 @@ exports[`Collapse Collapse rightSlotVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header"
         >
-          <svg
-            class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
-            fill="none"
-            height="16"
-            name="arrow"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-collapse-panel__header-left"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
-            />
-          </svg>
-          这是一个折叠标题可以设置右侧操作区域
+            <svg
+              class="t-fake-arrow t-collapse-panel__icon t-collapse-panel__icon--left"
+              fill="none"
+              height="16"
+              name="arrow"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <div
+            class="t-collapse-panel__header-content"
+          >
+            这是一个折叠标题可以设置右侧操作区域
+          </div>
           <div
             class="t-collapse-panel__header--blank"
           />
-          <label
-            class="t-checkbox t-is-checked"
+          <div
+            class="t-collapse-panel__header-right"
           >
-            <input
-              class="t-checkbox__former"
-              type="checkbox"
-              value=""
-            />
-            <span
-              class="t-checkbox__input"
-            />
-            <span
-              class="t-checkbox__label"
+            <label
+              class="t-checkbox t-is-checked"
             >
-              禁用
-            </span>
-          </label>
-           
-          <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
-            type="button"
-          >
-            <span
-              class="t-button__text"
+              <input
+                class="t-checkbox__former"
+                type="checkbox"
+                value=""
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
+              >
+                禁用
+              </span>
+            </label>
+             
+            <button
+              class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+              type="button"
             >
-              操作
-            </span>
-          </button>
+              <span
+                class="t-button__text"
+              >
+                操作
+              </span>
+            </button>
+          </div>
         </div>
         <transition-stub
           name="t-slide-down"

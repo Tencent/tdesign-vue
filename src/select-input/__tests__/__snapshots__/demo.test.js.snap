@@ -58,7 +58,9 @@ exports[`SelectInput SelectInput autowidthMultipleVue demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          Vue
+          <span>
+            Vue
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -76,7 +78,9 @@ exports[`SelectInput SelectInput autowidthMultipleVue demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark"
         >
-          +2
+          <span>
+            +2
+          </span>
         </span>
       </div>
       <input
@@ -174,7 +178,9 @@ exports[`SelectInput SelectInput borderlessMultipleVue demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          Vue
+          <span>
+            Vue
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -192,7 +198,9 @@ exports[`SelectInput SelectInput borderlessMultipleVue demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark"
         >
-          +2
+          <span>
+            +2
+          </span>
         </span>
       </div>
       <input
@@ -251,7 +259,9 @@ exports[`SelectInput SelectInput collapsedItemsVue demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          tdesign-vue
+          <span>
+            tdesign-vue
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -269,7 +279,9 @@ exports[`SelectInput SelectInput collapsedItemsVue demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark"
         >
-          +5
+          <span>
+            +5
+          </span>
         </span>
       </div>
       <input
@@ -298,7 +310,9 @@ exports[`SelectInput SelectInput collapsedItemsVue demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          tdesign-vue
+          <span>
+            tdesign-vue
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -316,7 +330,9 @@ exports[`SelectInput SelectInput collapsedItemsVue demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          tdesign-react
+          <span>
+            tdesign-react
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -334,7 +350,9 @@ exports[`SelectInput SelectInput collapsedItemsVue demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark"
         >
-          更多(4)
+          <span>
+            更多(4)
+          </span>
         </span>
       </div>
       <input
@@ -363,7 +381,9 @@ exports[`SelectInput SelectInput collapsedItemsVue demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          tdesign-vue
+          <span>
+            tdesign-vue
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -381,7 +401,9 @@ exports[`SelectInput SelectInput collapsedItemsVue demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          tdesign-react
+          <span>
+            tdesign-react
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -399,7 +421,9 @@ exports[`SelectInput SelectInput collapsedItemsVue demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          tdesign-miniprogram
+          <span>
+            tdesign-miniprogram
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -417,7 +441,9 @@ exports[`SelectInput SelectInput collapsedItemsVue demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark"
         >
-          More(3)
+          <span>
+            More(3)
+          </span>
         </span>
       </div>
       <input
@@ -493,26 +519,28 @@ exports[`SelectInput SelectInput customTagVue demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          <span
-            class="displaySpan"
-          >
-            <svg
-              class="t-icon t-icon-control-platform"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
+          <span>
+            <span
+              class="displaySpan"
             >
-              <path
-                clip-rule="evenodd"
-                d="M14.5 4.25L8.47.77a.94.94 0 00-.94 0L1.5 4.25v6.96c0 .33.18.64.47.81L8 15.5l6.03-3.48a.94.94 0 00.47-.81V4.25zM8 7.42L3 4.54l5-2.89 5 2.89-5 2.88zm.5.87l5-2.89v5.77l-5 2.89V8.29zm-1 0v5.77l-5-2.89V5.4l5 2.89z"
-                fill="currentColor"
-                fill-rule="evenodd"
-              />
-            </svg>
-            
+              <svg
+                class="t-icon t-icon-control-platform"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M14.5 4.25L8.47.77a.94.94 0 00-.94 0L1.5 4.25v6.96c0 .33.18.64.47.81L8 15.5l6.03-3.48a.94.94 0 00.47-.81V4.25zM8 7.42L3 4.54l5-2.89 5 2.89-5 2.88zm.5.87l5-2.89v5.77l-5 2.89V8.29zm-1 0v5.77l-5-2.89V5.4l5 2.89z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+              
         tdesign-vue
       
+            </span>
           </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
@@ -531,26 +559,28 @@ exports[`SelectInput SelectInput customTagVue demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          <span
-            class="displaySpan"
-          >
-            <svg
-              class="t-icon t-icon-control-platform"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
+          <span>
+            <span
+              class="displaySpan"
             >
-              <path
-                clip-rule="evenodd"
-                d="M14.5 4.25L8.47.77a.94.94 0 00-.94 0L1.5 4.25v6.96c0 .33.18.64.47.81L8 15.5l6.03-3.48a.94.94 0 00.47-.81V4.25zM8 7.42L3 4.54l5-2.89 5 2.89-5 2.88zm.5.87l5-2.89v5.77l-5 2.89V8.29zm-1 0v5.77l-5-2.89V5.4l5 2.89z"
-                fill="currentColor"
-                fill-rule="evenodd"
-              />
-            </svg>
-            
+              <svg
+                class="t-icon t-icon-control-platform"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M14.5 4.25L8.47.77a.94.94 0 00-.94 0L1.5 4.25v6.96c0 .33.18.64.47.81L8 15.5l6.03-3.48a.94.94 0 00.47-.81V4.25zM8 7.42L3 4.54l5-2.89 5 2.89-5 2.88zm.5.87l5-2.89v5.77l-5 2.89V8.29zm-1 0v5.77l-5-2.89V5.4l5 2.89z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+              
         tdesign-react
       
+            </span>
           </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
@@ -586,26 +616,28 @@ exports[`SelectInput SelectInput customTagVue demo works fine 1`] = `
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           style="margin-right: 4px;"
         >
-          <span
-            class="displaySpan"
-          >
-            <svg
-              class="t-icon t-icon-control-platform"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
+          <span>
+            <span
+              class="displaySpan"
             >
-              <path
-                clip-rule="evenodd"
-                d="M14.5 4.25L8.47.77a.94.94 0 00-.94 0L1.5 4.25v6.96c0 .33.18.64.47.81L8 15.5l6.03-3.48a.94.94 0 00.47-.81V4.25zM8 7.42L3 4.54l5-2.89 5 2.89-5 2.88zm.5.87l5-2.89v5.77l-5 2.89V8.29zm-1 0v5.77l-5-2.89V5.4l5 2.89z"
-                fill="currentColor"
-                fill-rule="evenodd"
-              />
-            </svg>
-             
-            <span>
-              tdesign-vue
+              <svg
+                class="t-icon t-icon-control-platform"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M14.5 4.25L8.47.77a.94.94 0 00-.94 0L1.5 4.25v6.96c0 .33.18.64.47.81L8 15.5l6.03-3.48a.94.94 0 00.47-.81V4.25zM8 7.42L3 4.54l5-2.89 5 2.89-5 2.88zm.5.87l5-2.89v5.77l-5 2.89V8.29zm-1 0v5.77l-5-2.89V5.4l5 2.89z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+               
+              <span>
+                tdesign-vue
+              </span>
             </span>
           </span>
           <svg
@@ -626,26 +658,28 @@ exports[`SelectInput SelectInput customTagVue demo works fine 1`] = `
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           style="margin-right: 4px;"
         >
-          <span
-            class="displaySpan"
-          >
-            <svg
-              class="t-icon t-icon-control-platform"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
+          <span>
+            <span
+              class="displaySpan"
             >
-              <path
-                clip-rule="evenodd"
-                d="M14.5 4.25L8.47.77a.94.94 0 00-.94 0L1.5 4.25v6.96c0 .33.18.64.47.81L8 15.5l6.03-3.48a.94.94 0 00.47-.81V4.25zM8 7.42L3 4.54l5-2.89 5 2.89-5 2.88zm.5.87l5-2.89v5.77l-5 2.89V8.29zm-1 0v5.77l-5-2.89V5.4l5 2.89z"
-                fill="currentColor"
-                fill-rule="evenodd"
-              />
-            </svg>
-             
-            <span>
-              tdesign-react
+              <svg
+                class="t-icon t-icon-control-platform"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M14.5 4.25L8.47.77a.94.94 0 00-.94 0L1.5 4.25v6.96c0 .33.18.64.47.81L8 15.5l6.03-3.48a.94.94 0 00.47-.81V4.25zM8 7.42L3 4.54l5-2.89 5 2.89-5 2.88zm.5.87l5-2.89v5.77l-5 2.89V8.29zm-1 0v5.77l-5-2.89V5.4l5 2.89z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+               
+              <span>
+                tdesign-react
+              </span>
             </span>
           </span>
           <svg
@@ -666,26 +700,28 @@ exports[`SelectInput SelectInput customTagVue demo works fine 1`] = `
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
           style="margin-right: 4px;"
         >
-          <span
-            class="displaySpan"
-          >
-            <svg
-              class="t-icon t-icon-control-platform"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
+          <span>
+            <span
+              class="displaySpan"
             >
-              <path
-                clip-rule="evenodd"
-                d="M14.5 4.25L8.47.77a.94.94 0 00-.94 0L1.5 4.25v6.96c0 .33.18.64.47.81L8 15.5l6.03-3.48a.94.94 0 00.47-.81V4.25zM8 7.42L3 4.54l5-2.89 5 2.89-5 2.88zm.5.87l5-2.89v5.77l-5 2.89V8.29zm-1 0v5.77l-5-2.89V5.4l5 2.89z"
-                fill="currentColor"
-                fill-rule="evenodd"
-              />
-            </svg>
-             
-            <span>
-              tdesign-mobile-vue
+              <svg
+                class="t-icon t-icon-control-platform"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M14.5 4.25L8.47.77a.94.94 0 00-.94 0L1.5 4.25v6.96c0 .33.18.64.47.81L8 15.5l6.03-3.48a.94.94 0 00.47-.81V4.25zM8 7.42L3 4.54l5-2.89 5 2.89-5 2.88zm.5.87l5-2.89v5.77l-5 2.89V8.29zm-1 0v5.77l-5-2.89V5.4l5 2.89z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+               
+              <span>
+                tdesign-mobile-vue
+              </span>
             </span>
           </span>
           <svg
@@ -731,7 +767,9 @@ exports[`SelectInput SelectInput excessTagsDisplayTypeVue demo works fine 1`] = 
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          tdesign-vue
+          <span>
+            tdesign-vue
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -749,7 +787,9 @@ exports[`SelectInput SelectInput excessTagsDisplayTypeVue demo works fine 1`] = 
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          tdesign-react
+          <span>
+            tdesign-react
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -767,7 +807,9 @@ exports[`SelectInput SelectInput excessTagsDisplayTypeVue demo works fine 1`] = 
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          tdesign-miniprogram
+          <span>
+            tdesign-miniprogram
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -785,7 +827,9 @@ exports[`SelectInput SelectInput excessTagsDisplayTypeVue demo works fine 1`] = 
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          tdesign-angular
+          <span>
+            tdesign-angular
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -803,7 +847,9 @@ exports[`SelectInput SelectInput excessTagsDisplayTypeVue demo works fine 1`] = 
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          tdesign-mobile-vue
+          <span>
+            tdesign-mobile-vue
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -821,7 +867,9 @@ exports[`SelectInput SelectInput excessTagsDisplayTypeVue demo works fine 1`] = 
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          tdesign-mobile-react
+          <span>
+            tdesign-mobile-react
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -869,7 +917,9 @@ exports[`SelectInput SelectInput excessTagsDisplayTypeVue demo works fine 1`] = 
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          tdesign-vue
+          <span>
+            tdesign-vue
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -887,7 +937,9 @@ exports[`SelectInput SelectInput excessTagsDisplayTypeVue demo works fine 1`] = 
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          tdesign-react
+          <span>
+            tdesign-react
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -905,7 +957,9 @@ exports[`SelectInput SelectInput excessTagsDisplayTypeVue demo works fine 1`] = 
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          tdesign-miniprogram
+          <span>
+            tdesign-miniprogram
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -923,7 +977,9 @@ exports[`SelectInput SelectInput excessTagsDisplayTypeVue demo works fine 1`] = 
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          tdesign-angular
+          <span>
+            tdesign-angular
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -941,7 +997,9 @@ exports[`SelectInput SelectInput excessTagsDisplayTypeVue demo works fine 1`] = 
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          tdesign-mobile-vue
+          <span>
+            tdesign-mobile-vue
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -959,7 +1017,9 @@ exports[`SelectInput SelectInput excessTagsDisplayTypeVue demo works fine 1`] = 
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          tdesign-mobile-react
+          <span>
+            tdesign-mobile-react
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -1180,7 +1240,9 @@ exports[`SelectInput SelectInput multipleVue demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          Vue
+          <span>
+            Vue
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -1198,7 +1260,9 @@ exports[`SelectInput SelectInput multipleVue demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          React
+          <span>
+            React
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
@@ -1216,7 +1280,9 @@ exports[`SelectInput SelectInput multipleVue demo works fine 1`] = `
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
         >
-          Miniprogram
+          <span>
+            Miniprogram
+          </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
