@@ -13633,6 +13633,631 @@ exports[`ssr snapshot test renders ./src/range-input/_example/status.vue correct
 </div>
 `;
 
+exports[`ssr snapshot test renders ./src/rate/_example/base.vue correctly 1`] = `
+<div class="t-rate">
+  <ul class="t-rate__list" style="gap:4px;">
+    <li class="t-rate__item t-rate__item--full">
+      <div>
+        <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+        <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+      </div>
+    </li>
+    <li class="t-rate__item t-rate__item--full">
+      <div>
+        <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+        <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+      </div>
+    </li>
+    <li class="t-rate__item t-rate__item--full">
+      <div>
+        <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+        <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+      </div>
+    </li>
+    <li class="t-rate__item">
+      <div>
+        <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+        <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+      </div>
+    </li>
+    <li class="t-rate__item">
+      <div>
+        <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+        <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./src/rate/_example/custom.vue correctly 1`] = `
+<div class="t-rate">
+  <ul class="t-rate__list" style="gap:4px;">
+    <li class="t-rate__item t-rate__item--full">
+      <div>
+        <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+        <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+      </div>
+    </li>
+    <li class="t-rate__item t-rate__item--full">
+      <div>
+        <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+        <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+      </div>
+    </li>
+    <li class="t-rate__item t-rate__item--full">
+      <div>
+        <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+        <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+      </div>
+    </li>
+    <li class="t-rate__item t-rate__item--full">
+      <div>
+        <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+        <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+      </div>
+    </li>
+    <li class="t-rate__item t-rate__item--full">
+      <div>
+        <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+        <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+      </div>
+    </li>
+    <li class="t-rate__item t-rate__item--full">
+      <div>
+        <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+        <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+      </div>
+    </li>
+    <li class="t-rate__item">
+      <div>
+        <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+        <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+            <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+          </svg></div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./src/rate/_example/icon.vue correctly 1`] = `
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-rate">
+      <ul class="t-rate__list" style="gap:4px;">
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;">
+              <star-icon></star-icon>
+            </div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);">
+              <star-icon></star-icon>
+            </div>
+          </div>
+        </li>
+        <li class="t-rate__item">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;">
+              <star-icon></star-icon>
+            </div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);">
+              <star-icon></star-icon>
+            </div>
+          </div>
+        </li>
+        <li class="t-rate__item">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;">
+              <star-icon></star-icon>
+            </div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);">
+              <star-icon></star-icon>
+            </div>
+          </div>
+        </li>
+        <li class="t-rate__item">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;">
+              <star-icon></star-icon>
+            </div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);">
+              <star-icon></star-icon>
+            </div>
+          </div>
+        </li>
+        <li class="t-rate__item">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;">
+              <star-icon></star-icon>
+            </div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);">
+              <star-icon></star-icon>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-rate">
+      <ul class="t-rate__list" style="gap:4px;">
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;">
+              <logo-github-icon></logo-github-icon>
+            </div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);">
+              <logo-github-icon></logo-github-icon>
+            </div>
+          </div>
+        </li>
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;">
+              <logo-github-icon></logo-github-icon>
+            </div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);">
+              <logo-github-icon></logo-github-icon>
+            </div>
+          </div>
+        </li>
+        <li class="t-rate__item">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;">
+              <logo-github-icon></logo-github-icon>
+            </div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);">
+              <logo-github-icon></logo-github-icon>
+            </div>
+          </div>
+        </li>
+        <li class="t-rate__item">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;">
+              <logo-github-icon></logo-github-icon>
+            </div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);">
+              <logo-github-icon></logo-github-icon>
+            </div>
+          </div>
+        </li>
+        <li class="t-rate__item">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;">
+              <logo-github-icon></logo-github-icon>
+            </div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);">
+              <logo-github-icon></logo-github-icon>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-rate">
+      <ul class="t-rate__list" style="gap:4px;">
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:var(--td-error-color-7);">
+              <heart-filled-icon></heart-filled-icon>
+            </div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);">
+              <heart-filled-icon></heart-filled-icon>
+            </div>
+          </div>
+        </li>
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:var(--td-error-color-7);">
+              <heart-filled-icon></heart-filled-icon>
+            </div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);">
+              <heart-filled-icon></heart-filled-icon>
+            </div>
+          </div>
+        </li>
+        <li class="t-rate__item t-rate__item--half">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:var(--td-error-color-7);">
+              <heart-filled-icon></heart-filled-icon>
+            </div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);">
+              <heart-filled-icon></heart-filled-icon>
+            </div>
+          </div>
+        </li>
+        <li class="t-rate__item">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:var(--td-error-color-7);">
+              <heart-filled-icon></heart-filled-icon>
+            </div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);">
+              <heart-filled-icon></heart-filled-icon>
+            </div>
+          </div>
+        </li>
+        <li class="t-rate__item">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:var(--td-error-color-7);">
+              <heart-filled-icon></heart-filled-icon>
+            </div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);">
+              <heart-filled-icon></heart-filled-icon>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./src/rate/_example/size.vue correctly 1`] = `
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <h3>16px</h3>
+  </div>
+  <div class="t-space-item">
+    <div class="t-rate">
+      <ul class="t-rate__list" style="gap:4px;">
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:16px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:16px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:16px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:16px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:16px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:16px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:16px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:16px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:16px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:16px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <h3>24px</h3>
+  </div>
+  <div class="t-space-item">
+    <div class="t-rate">
+      <ul class="t-rate__list" style="gap:4px;">
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./src/rate/_example/status.vue correctly 1`] = `
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <h3>未评分状态</h3>
+  </div>
+  <div class="t-space-item">
+    <div class="t-rate">
+      <ul class="t-rate__list" style="gap:4px;">
+        <li class="t-rate__item">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <h3>满分状态</h3>
+  </div>
+  <div class="t-space-item">
+    <div class="t-rate">
+      <ul class="t-rate__list" style="gap:4px;">
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <h3>半星状态</h3>
+  </div>
+  <div class="t-space-item">
+    <div class="t-rate">
+      <ul class="t-rate__list" style="gap:4px;">
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item t-rate__item--full">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+        <li class="t-rate__item t-rate__item--half">
+          <div>
+            <div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+            <div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled">
+                <path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path>
+              </svg></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./src/rate/_example/texts.vue correctly 1`] = `
+<div class="t-rate">
+  <ul class="t-rate__list" style="gap:4px;">
+    <li class="t-rate__item t-rate__item--full"><span><div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled"><path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path></svg></div><div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled"><path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path></svg></div></span></li>
+    <li class="t-rate__item t-rate__item--full"><span><div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled"><path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path></svg></div><div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled"><path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path></svg></div></span></li>
+    <li class="t-rate__item t-rate__item--full"><span><div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled"><path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path></svg></div><div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled"><path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path></svg></div></span></li>
+    <li class="t-rate__item t-rate__item--full"><span><div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled"><path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path></svg></div><div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled"><path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path></svg></div></span></li>
+    <li class="t-rate__item"><span><div class="t-rate__star-top" style="font-size:24px;color:#ED7B2F;"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled"><path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path></svg></div><div class="t-rate__star-bottom" style="font-size:24px;color:var(--td-bg-color-component);"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-star-filled"><path fill="currentColor" d="M7.6 1.82a.45.45 0 01.8 0l1.8 3.65 4.03.58c.37.05.52.5.25.77l-2.91 2.84.69 4a.45.45 0 01-.66.48L8 12.25l-3.6 1.9a.45.45 0 01-.65-.48l.68-4.01-2.9-2.84a.45.45 0 01.24-.77l4.03-.58 1.8-3.65z" fill-opacity="0.9"></path></svg></div></span></li>
+  </ul>
+  <div class="t-rate__text">满意</div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./src/select/_example/base.vue correctly 1`] = `
 <div class="t-space t-space-horizontal" style="gap:16px;">
   <div class="t-space-item">
