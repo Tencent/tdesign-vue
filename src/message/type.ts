@@ -31,6 +31,10 @@ export interface TdMessageProps {
    */
   theme?: MessageThemeList;
   /**
+   * 关闭Message时触发
+   */
+  onClose?: (context: { trigger: 'close-click' | 'duration-end'; e?: MouseEvent }) => void;
+  /**
    * 当关闭按钮存在时，用户点击关闭按钮触发
    */
   onCloseBtnClick?: (context: { e: MouseEvent }) => void;
@@ -47,6 +51,11 @@ export interface MessageOptions extends TdMessageProps {
    */
   attach?: AttachNode;
   /**
+   * 类名
+   * @default ''
+   */
+  className?: string;
+  /**
    * 相对于 placement 的偏移量，示例：[-10, 20] 或 ['10em', '8rem']
    */
   offset?: Array<string | number>;
@@ -55,6 +64,10 @@ export interface MessageOptions extends TdMessageProps {
    * @default top
    */
   placement?: MessagePlacementList;
+  /**
+   * 内敛样式
+   */
+  style?: object;
   /**
    * 消息层级
    * @default 5000
@@ -115,9 +128,4 @@ export type MessageCloseMethod = (options: Promise<MessageInstance>) => void;
 
 export type MessageCloseAllMethod = () => void;
 
-export type MessageConfigMethod = (
-  placement?: MessagePlacementList,
-  attach?: AttachNode,
-  offset?: Array<string | number>,
-  zIndex?: number,
-) => void;
+export type MessageConfigMethod = (message: MessageOptions) => void;

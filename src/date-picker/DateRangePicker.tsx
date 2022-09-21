@@ -45,7 +45,6 @@ export default defineComponent({
       mode: props.mode,
       enableTimePicker: props.enableTimePicker,
       format: props.format,
-      valueType: props.valueType,
     }));
 
     // 记录面板是否选中过
@@ -57,7 +56,6 @@ export default defineComponent({
         isSelected.value = false;
         cacheValue.value = formatDate(value.value || [], {
           format: formatRef.value.format,
-          targetFormat: formatRef.value.format,
         }) as string[];
         time.value = formatTime(
           value.value || [dayjs().format(formatRef.value.timeFormat), dayjs().format(formatRef.value.timeFormat)],
@@ -89,7 +87,6 @@ export default defineComponent({
         isFirstValueSelected.value = false;
         inputValue.value = formatDate(value.value, {
           format: formatRef.value.format,
-          targetFormat: formatRef.value.format,
         });
       }
     });
@@ -104,7 +101,6 @@ export default defineComponent({
       const nextValue = [...(inputValue.value as string[])];
       nextValue[activeIndex.value] = formatDate(date, {
         format: formatRef.value.format,
-        targetFormat: formatRef.value.format,
       }) as string;
       inputValue.value = nextValue;
     }
@@ -130,7 +126,6 @@ export default defineComponent({
       const nextValue = [...(inputValue.value as string[])];
       nextValue[activeIndex.value] = formatDate(date, {
         format: formatRef.value.format,
-        targetFormat: formatRef.value.format,
       }) as string;
       cacheValue.value = nextValue;
       inputValue.value = nextValue;
@@ -155,16 +150,25 @@ export default defineComponent({
 
       // 当两端都有有效值时更改 value
       if (notValidIndex === -1 && nextValue.length === 2) {
-        onChange?.(
-          formatDate(nextValue, {
-            format: formatRef.value.format,
-            targetFormat: formatRef.value.valueType,
-          }) as DateValue[],
-          {
-            dayjsValue: nextValue.map((v) => dayjs(v)),
-            trigger: 'pick',
-          },
-        );
+        // 二次修改时当其中一侧不符合上次区间规范时，清空另一侧数据
+        if (
+          !isFirstValueSelected.value
+          && parseToDayjs(nextValue[0], formatRef.value.format).isAfter(parseToDayjs(nextValue[1], formatRef.value.format))
+        ) {
+          nextValue[activeIndex.value ? 0 : 1] = '';
+          cacheValue.value = nextValue;
+          inputValue.value = nextValue;
+        } else {
+          onChange?.(
+            formatDate(nextValue, {
+              format: formatRef.value.format,
+            }) as DateValue[],
+            {
+              dayjsValue: nextValue.map((v) => parseToDayjs(v, formatRef.value.format)),
+              trigger: 'pick',
+            },
+          );
+        }
       }
 
       // 首次点击不关闭、确保两端都有有效值并且无时间选择器时点击后自动关闭
@@ -255,11 +259,9 @@ export default defineComponent({
       isSelected.value = true;
       inputValue.value = formatDate(nextInputValue, {
         format: formatRef.value.format,
-        targetFormat: formatRef.value.format,
       });
       cacheValue.value = formatDate(nextInputValue, {
         format: formatRef.value.format,
-        targetFormat: formatRef.value.format,
       });
     }
 
@@ -271,18 +273,25 @@ export default defineComponent({
 
       // 当两端都有有效值时更改 value
       if (notValidIndex === -1 && nextValue.length === 2) {
-        onChange?.(
-          formatDate(nextValue, {
-            format: formatRef.value.format,
-            targetFormat: formatRef.value.valueType,
-          }) as DateValue[],
-          {
-            dayjsValue: nextValue.map((v) => dayjs(v)),
-            trigger: 'confirm',
-          },
-        );
-        year.value = nextValue.map((v) => dayjs(v, formatRef.value.format).year());
-        month.value = nextValue.map((v) => dayjs(v, formatRef.value.format).month());
+        // 二次修改时当其中一侧不符合上次区间规范时，清空另一侧数据
+        if (
+          !isFirstValueSelected.value
+          && parseToDayjs(nextValue[0], formatRef.value.format).isAfter(parseToDayjs(nextValue[1], formatRef.value.format))
+        ) {
+          nextValue[activeIndex.value ? 0 : 1] = '';
+          cacheValue.value = nextValue;
+          inputValue.value = nextValue;
+        } else {
+          onChange?.(
+            formatDate(nextValue, {
+              format: formatRef.value.format,
+            }) as DateValue[],
+            {
+              dayjsValue: nextValue.map((v) => parseToDayjs(v, formatRef.value.format)),
+              trigger: 'confirm',
+            },
+          );
+        }
       }
 
       // 首次点击不关闭、确保两端都有有效值并且无时间选择器时点击后自动关闭
@@ -308,10 +317,9 @@ export default defineComponent({
         onChange?.(
           formatDate(presetValue, {
             format: formatRef.value.format,
-            targetFormat: formatRef.value.valueType,
           }) as DateValue[],
           {
-            dayjsValue: presetValue.map((p) => dayjs(p)),
+            dayjsValue: presetValue.map((p) => parseToDayjs(p, formatRef.value.format)),
             trigger: 'preset',
           },
         );

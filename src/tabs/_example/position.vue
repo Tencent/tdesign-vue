@@ -1,13 +1,13 @@
 <template>
-  <div class="tdesign-demo-block-column-large">
-    <div>
+  <t-space direction="vertical" size="32px">
+    <t-space>
       <t-radio-group variant="default-filled" v-model="placement">
         <t-radio-button value="top">top</t-radio-button>
         <t-radio-button value="right">right</t-radio-button>
         <t-radio-button value="bottom">bottom</t-radio-button>
         <t-radio-button value="left">left</t-radio-button>
       </t-radio-group>
-    </div>
+    </t-space>
     <t-tabs :value="value" :placement="placement" @change="(newValue) => (value = newValue)">
       <t-tab-panel value="first" label="选项卡1">
         <p style="padding: 25px">选项卡1</p>
@@ -19,7 +19,7 @@
         <p style="padding: 25px">选项卡3</p>
       </t-tab-panel>
     </t-tabs>
-  </div>
+  </t-space>
 </template>
 
 <script>
