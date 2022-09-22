@@ -556,7 +556,13 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
               size="small"
             />
           </div>
-          <div slot="content" class={`${this.classPrefix}-select__dropdown-inner ${this.classPrefix}-select__dropdown-inner--size-${this.dropdownInnerSize}`}>
+          <div
+            slot="content"
+            class={[
+              `${this.classPrefix}-select__dropdown-inner`,
+              `${this.classPrefix}-select__dropdown-inner--size-${this.dropdownInnerSize}`,
+            ]}
+          >
             <p
               v-show={this.showLoading}
               class={`${this.classPrefix}-select__loading-tips ${this.classPrefix}-select__right-icon-polyfill`}
