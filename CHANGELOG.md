@@ -5,6 +5,15 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.48.1 `2022-09-22` 
+### 🐞 Bug Fixes
+- `Table`
+    - 修复初始化获取数据，吸底滚动条位置计算不正确问题 @LoopZhou ([#1546](https://github.com/Tencent/tdesign-vue/pull/1546))
+    - 处理不存在分页吸底和滚动条吸底的表格控制台报错的问题 @uyarn ([#1550](https://github.com/Tencent/tdesign-vue/pull/1550))
+### 🚧 Others
+- `Dropdown`: Dropdown组件添加单元测试 @james-curtis ([#1516](https://github.com/Tencent/tdesign-vue/pull/1516))
+- `Collapse`: Collapse组件添加单元测试 @isanxia ([#1536](https://github.com/Tencent/tdesign-vue/pull/1536))
+
 ## 🌈 0.48.0 `2022-09-21` 
 ### ❗ Breaking Changes
 - `DatePicker`: 移除 `valueType` api，可使用返回的 dayjs 对象自行格式化 @HQ-Lin ([#1510](https://github.com/Tencent/tdesign-vue/pull/1510))
