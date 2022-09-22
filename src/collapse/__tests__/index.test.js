@@ -412,8 +412,8 @@ describe('CollapsePanel', () => {
 
       const panel = wrapper.findComponent({ ref: '1' });
       expect(panel.find('.t-collapse-panel__content > div').html()).toBe('<div>内容</div>');
-      expect(panel.find('.t-collapse-panel__header > h4').html()).toBe('<h4>标题</h4>');
-      expect(panel.find('.t-collapse-panel__header > span').html()).toBe('<span>操作</span>');
+      expect(panel.find('.t-collapse-panel__header-content > h4').html()).toBe('<h4>标题</h4>');
+      expect(panel.find('.t-collapse-panel__header-right > span').html()).toBe('<span>操作</span>');
     });
 
     test('content', () => {
