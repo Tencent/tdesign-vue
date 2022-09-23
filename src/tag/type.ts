@@ -49,6 +49,10 @@ export interface TdTagProps {
    */
   theme?: 'default' | 'primary' | 'warning' | 'danger' | 'success';
   /**
+   * 标签颜色，用于自定义标签颜色(优先级高于 theme)
+   */
+  color?: string;
+  /**
    * 标签风格变体
    * @default dark
    */

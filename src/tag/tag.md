@@ -18,6 +18,12 @@
 
 {{ shape }}
 
+### 自定义标签颜色
+
+通过`color`属性设置标签颜色，其优先级高于`theme`。
+
+{{ custom-color }}
+
 ## API
 ### Tag Props
 

@@ -27,12 +27,25 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
           [`${this.componentName}--close`]: this.closable,
           [`${this.classPrefix}-is-disabled`]: this.disabled,
           [`${this.componentName}--disabled`]: this.disabled,
+          [`${this.componentName}--custom-color`]: this.color,
         },
       ];
     },
     tagStyle(): Styles {
-      if (this.maxWidth) return { maxWidth: `${this.maxWidth}px` };
-      return {};
+      const style: Styles = {};
+      if (this.color) {
+        style.backgroundColor = this.color;
+      }
+
+      return style;
+    },
+    tagInnerStyle(): Styles {
+      const style: Styles = {};
+      if (this.maxWidth) {
+        style.maxWidth = `${this.maxWidth}px`;
+      }
+
+      return style;
     },
   },
 
@@ -76,9 +89,9 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
     const icon = renderTNodeJSX(this, 'icon');
 
     return (
-      <span class={this.tagClass} onClick={this.handleClick}>
+      <span style={this.tagStyle} class={this.tagClass} onClick={this.handleClick}>
         {icon}
-        <span style={this.tagStyle} class={this.maxWidth ? `${this.componentName}--text` : undefined}>
+        <span style={this.tagInnerStyle} class={this.maxWidth ? `${this.componentName}--text` : undefined}>
           {tagContent}
         </span>
         {closeIcon}

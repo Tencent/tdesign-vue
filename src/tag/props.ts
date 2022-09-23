@@ -45,13 +45,17 @@ export default {
       return ['small', 'medium', 'large'].includes(val);
     },
   },
-  /** 组件风格，用于描述组件不同的应用场景 */
+  /** 标签风格，用于描述组件不同的应用场景 */
   theme: {
     type: String as PropType<TdTagProps['theme']>,
     default: 'default' as TdTagProps['theme'],
     validator(val: TdTagProps['theme']): boolean {
       return ['default', 'primary', 'warning', 'danger', 'success'].includes(val);
     },
+  },
+  /** 标签颜色，用于自定义标签颜色(优先级高于 theme) */
+  color: {
+    type: String as PropType<TdTagProps['color']>,
   },
   /** 标签风格变体 */
   variant: {
