@@ -249,7 +249,7 @@ exports[`Swiper Swiper sizeVue demo works fine 1`] = `
   </div>
    
   <div
-    class="tdesign-demo-block--swiper-new"
+    class="tdesign-demo-block--swiper"
     style="width: 500px; margin-top: 20px;"
   >
     <h3>
