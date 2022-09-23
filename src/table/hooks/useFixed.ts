@@ -381,8 +381,8 @@ export default function useFixed(
 
   const updateAffixPosition = () => {
     // 在表格高度变化的时候 需要手动调整affix的位置 因为affix本身无法监听到这些变化触发重新计算
-    paginationAffixRef.value.handleScroll();
-    horizontalScrollAffixRef.value.handleScroll();
+    paginationAffixRef.value?.handleScroll?.();
+    horizontalScrollAffixRef.value?.handleScroll?.();
   };
 
   const updateThWidthList = (trList: HTMLCollection | { [colKey: string]: number }) => {

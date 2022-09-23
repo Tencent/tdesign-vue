@@ -108,12 +108,13 @@ export default mixins(Vue as VueConstructor<Affix>, classMixins).extend({
   },
   mounted() {
     this.placeholderEL = document.createElement('div');
-    this.$nextTick(() => {
+    const timer = setTimeout(() => {
       this.scrollContainer = getScrollContainer(this.container);
       this.handleScroll();
       on(this.scrollContainer, 'scroll', this.handleScroll);
       on(window, 'resize', this.handleScroll);
-    });
+      clearTimeout(timer);
+    }, 0);
   },
   destroyed() {
     if (!this.scrollContainer) return;

@@ -6,7 +6,7 @@ import FakeArrow from '../common-components/fake-arrow';
 import { CollapseValue, TdCollapsePanelProps } from './type';
 import { usePrefixClass } from '../hooks/useConfig';
 import useCollapseAnimation from './useCollapseAnimation';
-import { renderTNodeJSX } from '../utils/render-tnode';
+import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 
 export default defineComponent({
   name: 'TCollapsePanel',
@@ -95,14 +95,14 @@ export default defineComponent({
     renderBodyByNormal() {
       return (
         <div v-show={this.isActive} class={`${this.componentName}__body`}>
-          <div class={`${this.componentName}__content`}>{renderTNodeJSX(this, 'default')}</div>
+          <div class={`${this.componentName}__content`}>{renderContent(this, 'default', 'content')}</div>
         </div>
       );
     },
     renderBodyDestroyOnCollapse() {
       return this.isActive ? (
         <div class={`${this.componentName}__body`}>
-          <div class={`${this.componentName}__content`}>{renderTNodeJSX(this, 'default')}</div>
+          <div class={`${this.componentName}__content`}>{renderContent(this, 'default', 'content')}</div>
         </div>
       ) : null;
     },
