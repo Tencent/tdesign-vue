@@ -288,7 +288,7 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGl
               class={[
                 `${this.componentName}__navigation-item`,
                 {
-                  [`${this.componentName}-is-active`]: i === this.currentIndex,
+                  [`${this.classPrefix}-is-active`]: i === this.currentIndex,
                 },
               ]}
               onMouseenter={() => this.onMouseEnterNavigationItem(i)}
