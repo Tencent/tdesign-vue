@@ -12,7 +12,7 @@ import ImageCard from './image';
 import FlowList from './flow-list';
 import xhr from '../_common/js/upload/xhr';
 import log from '../_common/js/log';
-import { formatFiles, isOverSizeLimit } from '../_common/js/upload/utils';
+import { formatFiles, isOverSizeLimit1 } from '../_common/js/upload/utils';
 import TButton from '../button';
 import TDialog from '../dialog';
 import SingleFile from './single-file';
@@ -516,7 +516,7 @@ export default mixins(getConfigReceiverMixins<Vue, UploadConfig>('upload'), getG
 
     handleSizeLimit(fileSize: number) {
       const sizeLimit: SizeLimitObj = typeof this.sizeLimit === 'number' ? { size: this.sizeLimit, unit: 'KB' } : this.sizeLimit;
-      const rSize = isOverSizeLimit(fileSize, sizeLimit.size, sizeLimit.unit);
+      const rSize = isOverSizeLimit1(fileSize, sizeLimit.size, sizeLimit.unit);
       if (!rSize) {
         // 有参数 message 则使用，没有就使用全局 global 配置
         this.errorMsg = sizeLimit.message
