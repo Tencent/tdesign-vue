@@ -357,9 +357,9 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
     context.emit('remove', p);
   }
 
-  const triggerUpload = (e: MouseEvent) => {
+  const triggerUpload = (e?: MouseEvent) => {
     if (innerDisabled.value) return;
-    e.stopPropagation?.();
+    e?.stopPropagation?.();
     (inputRef.value as HTMLInputElement).click();
   };
 
