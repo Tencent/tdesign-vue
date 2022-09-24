@@ -35,7 +35,7 @@ export default defineComponent({
 
     return {
       dragActive,
-      drag,
+      ...drag,
     };
   },
 
@@ -45,10 +45,10 @@ export default defineComponent({
       return (
         <div
           class={`${this.classPrefix}-upload__dragger ${this.classPrefix}-upload__dragger-center`}
-          onDrop={this.drag.handleDrop}
-          onDragenter={this.drag.handleDragenter}
-          onDragover={this.drag.handleDragover}
-          onDragleave={this.drag.handleDragleave}
+          onDrop={this.handleDrop}
+          onDragenter={this.handleDragenter}
+          onDragover={this.handleDragover}
+          onDragleave={this.handleDragleave}
           onClick={this.triggerUpload}
         >
           <div class={`${this.classPrefix}-upload__trigger`}>
