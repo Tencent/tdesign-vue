@@ -2,12 +2,19 @@ import { Ref, ref, getCurrentInstance } from '@vue/composition-api';
 
 export type ChangeHandler<T, P extends any[]> = (value: T, ...args: P) => void;
 
+export interface UseVModelParams<T> {
+  value: Ref<T>;
+  eventName?: string;
+  propName?: string;
+}
+
 export default function useVModel<T, P extends any[]>(
   value: Ref<T>,
   defaultValue: T,
   onChange: ChangeHandler<T, P>,
-  // eventName 不是 input 时，需要单独传入 eventName 用于事件输出
-  eventName?: string,
+  eventName = 'change',
+  // 除了 value + onChange，还支持其他同含义字段和事件
+  alias: UseVModelParams<T>[] = [],
 ): [Ref<T>, ChangeHandler<T, P>] {
   const { emit, vnode } = getCurrentInstance();
   const internalValue = ref<T>();
@@ -26,6 +33,24 @@ export default function useVModel<T, P extends any[]>(
         }
       },
     ];
+  }
+
+  // controlled, other fields, upload.files.etc.
+  for (let i = 0, len = alias.length; i < len; i++) {
+    const item = alias[i];
+    if (Object.prototype.hasOwnProperty.call(vnode.componentOptions.propsData, item.propName)) {
+      return [
+        value,
+        (newValue, ...args) => {
+          // .sync support
+          emit?.(`update:${item.propName}`, newValue, ...args);
+          onChange?.(newValue, ...args);
+          if (item.eventName && item.eventName !== 'input') {
+            emit?.(item.eventName, newValue, ...args);
+          }
+        },
+      ];
+    }
   }
 
   // 非受控模式

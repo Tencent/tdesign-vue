@@ -1,26 +1,25 @@
 <template>
-  <div class="tdesign-demo-upload">
-    <div>
-      <t-upload
-        action="https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo"
-        :tips="tips"
-        v-model="files"
-        @fail="handleFail"
-        @success="tips = ''"
-        theme="custom"
-        :beforeUpload="beforeUpload"
-        multiple
-      >
-        <t-button theme="primary">自定义上传</t-button>
-      </t-upload>
-      <div v-if="files && files.length" class="list-custom">
-        <ul>
-          <li v-for="(item, index) in files" :key="index">{{ item.name }}</li>
-        </ul>
-      </div>
+  <div>
+    <t-upload
+      action="https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo"
+      :tips="tips"
+      v-model="files"
+      theme="custom"
+      :beforeUpload="beforeUpload"
+      multiple
+      @fail="handleFail"
+      @success="tips = ''"
+    >
+      <t-button theme="primary">自定义上传</t-button>
+    </t-upload>
+    <div v-if="files && files.length" class="list-custom">
+      <ul>
+        <li v-for="(item, index) in files" :key="index">{{ item.name }}</li>
+      </ul>
     </div>
   </div>
 </template>
+
 <script>
 export default {
   data() {

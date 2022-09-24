@@ -1,49 +1,77 @@
 <template>
-  <div class="tdesign-demo-upload">
-    <div class="tdesign-demo-upload-item">
+  <t-space direction="vertical">
+    <t-space>
+      <t-checkbox v-model="disabled"> 禁用状态 </t-checkbox>
+      <t-checkbox v-model="uploadAllFilesInOneRequest"> 多个文件一个请求上传 </t-checkbox>
+      <t-checkbox v-model="autoUpload"> 自动上传 </t-checkbox>
+      <t-button
+        v-if="!autoUpload"
+        variant="base"
+        theme="default"
+        size="small"
+        style="height: 22px"
+        @click="uploadFiles"
+      >
+        点击上传
+      </t-button>
+    </t-space>
+
+    <br />
+
+    <t-space>
       <t-upload
+        ref="uploadRef1"
         action="https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo"
         v-model="file1"
+        :disabled="disabled"
+        :autoUpload="autoUpload"
         @fail="handleFail"
         theme="image"
         tips="请选择单张图片文件上传（上传成功状态演示）"
         accept="image/*"
       ></t-upload>
-    </div>
-    <div class="tdesign-demo-upload-item">
+
       <t-upload
+        ref="uploadRef2"
         action="https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo"
         v-model="fileFail"
+        :disabled="disabled"
+        :autoUpload="autoUpload"
         theme="image"
         tips="请选择单张图片文件上传（上传失败状态演示）"
         accept="image/*"
         :formatResponse="formatResponse"
       ></t-upload>
-    </div>
-    <div class="tdesign-demo-upload-item">
-      <t-upload
-        action="https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo"
-        v-model="file2"
-        @fail="handleFail"
-        theme="image"
-        tips="请选择单张图片文件上传（自定义预览图片地址）"
-        accept="image/*"
-        :formatResponse="formatImgResponse"
-      ></t-upload>
-    </div>
-    <div class="tdesign-demo-upload-item">
-      <t-upload
-        action="https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo"
-        v-model="files"
-        @fail="handleFail"
-        theme="image"
-        tips="允许选择多张图片文件上传，最多只能上传 3 张图片"
-        accept="image/*"
-        multiple
-        :max="3"
-      ></t-upload>
-    </div>
-  </div>
+    </t-space>
+
+    <t-upload
+      ref="uploadRef3"
+      action="https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo"
+      v-model="file2"
+      :disabled="disabled"
+      :autoUpload="autoUpload"
+      @fail="handleFail"
+      theme="image"
+      tips="请选择单张图片文件上传（自定义预览图片地址）"
+      accept="image/*"
+      :formatResponse="formatImgResponse"
+    ></t-upload>
+
+    <t-upload
+      ref="uploadRef4"
+      action="https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo"
+      v-model="files"
+      :disabled="disabled"
+      :autoUpload="autoUpload"
+      :uploadAllFilesInOneRequest="uploadAllFilesInOneRequest"
+      @fail="handleFail"
+      theme="image"
+      tips="允许选择多张图片文件上传，最多只能上传 3 张图片"
+      accept="image/*"
+      multiple
+      :max="3"
+    ></t-upload>
+  </t-space>
 </template>
 <script>
 export default {
@@ -53,6 +81,9 @@ export default {
       file2: [],
       files: [],
       fileFail: [],
+      disabled: false,
+      uploadAllFilesInOneRequest: false,
+      autoUpload: true,
     };
   },
   methods: {
@@ -66,6 +97,13 @@ export default {
     },
     handleFail({ file }) {
       this.$message.error(`文件 ${file.name} 上传失败`);
+    },
+
+    uploadFiles() {
+      this.$refs.uploadRef1.uploadFiles();
+      this.$refs.uploadRef2.uploadFiles();
+      this.$refs.uploadRef3.uploadFiles();
+      this.$refs.uploadRef4.uploadFiles();
     },
   },
 };
