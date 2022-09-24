@@ -511,6 +511,16 @@ module.exports = {
       `,
     },
   },
+  rate: {
+    panelStr: `const panelList = [{label: 'rate', value: 'rate'}];`,
+    render: {
+      rate: `
+        <t-rate
+          v-bind="configProps"
+        ></t-rate>
+      `,
+    },
+  },
   dialog: {
     panelStr: `const panelList = [{label: 'dialog', value: 'dialog'}];`,
     script: `

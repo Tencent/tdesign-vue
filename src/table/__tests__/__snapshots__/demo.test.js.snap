@@ -5257,7 +5257,9 @@ exports[`Table Table editableRowVue demo works fine 1`] = `
                         <span
                           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
                         >
-                          A
+                          <span>
+                            A
+                          </span>
                           <svg
                             class="t-icon t-icon-close t-tag__icon-close"
                             fill="none"

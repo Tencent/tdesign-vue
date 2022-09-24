@@ -59,6 +59,7 @@ export * from './tooltip';
 export * from './tree';
 export * from './watermark';
 export * from './collapse';
+export * from './rate';
 
 // 消息提醒
 

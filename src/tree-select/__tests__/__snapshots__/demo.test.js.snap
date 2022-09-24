@@ -23,7 +23,9 @@ exports[`TreeSelect TreeSelect baseVue demo works fine 1`] = `
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
       >
-        +0
+        <span>
+          +0
+        </span>
       </span>
       <div
         class="t-input__wrap t-select__input"
@@ -172,7 +174,9 @@ exports[`TreeSelect TreeSelect collapsedVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
       >
-        +1
+        <span>
+          +1
+        </span>
       </span>
       <div
         class="t-input__wrap t-select__input"
@@ -316,7 +320,9 @@ exports[`TreeSelect TreeSelect collapsedVue demo works fine 1`] = `
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
       >
-        更多...
+        <span>
+          更多...
+        </span>
       </span>
       <div
         class="t-input__wrap t-select__input"
@@ -417,7 +423,9 @@ exports[`TreeSelect TreeSelect dvalueVue demo works fine 1`] = `
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
       >
-        +0
+        <span>
+          +0
+        </span>
       </span>
       <span
         class="t-select__single t-tree-select t-single-suffix"
@@ -573,7 +581,9 @@ exports[`TreeSelect TreeSelect filterableVue demo works fine 1`] = `
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
       >
-        +0
+        <span>
+          +0
+        </span>
       </span>
       <span
         class="t-select__single t-tree-select t-single-suffix"
@@ -679,7 +689,9 @@ exports[`TreeSelect TreeSelect lazyVue demo works fine 1`] = `
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
       >
-        +0
+        <span>
+          +0
+        </span>
       </span>
       <div
         class="t-input__wrap t-select__input"
@@ -829,7 +841,9 @@ exports[`TreeSelect TreeSelect multipleVue demo works fine 1`] = `
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
       >
-        +2
+        <span>
+          +2
+        </span>
       </span>
       <div
         class="t-input__wrap t-select__input"
@@ -940,7 +954,9 @@ exports[`TreeSelect TreeSelect prefixVue demo works fine 1`] = `
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
       >
-        +0
+        <span>
+          +0
+        </span>
       </span>
       <div
         class="t-input__wrap t-select__input"
@@ -1041,7 +1057,9 @@ exports[`TreeSelect TreeSelect propsVue demo works fine 1`] = `
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
       >
-        +0
+        <span>
+          +0
+        </span>
       </span>
       <span
         class="t-select__single t-tree-select t-single-suffix"
@@ -1148,7 +1166,9 @@ exports[`TreeSelect TreeSelect valuedisplayVue demo works fine 1`] = `
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
       >
-        +0
+        <span>
+          +0
+        </span>
       </span>
        () 
       <div
@@ -1244,7 +1264,9 @@ exports[`TreeSelect TreeSelect valuedisplayVue demo works fine 1`] = `
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
       >
-        +2
+        <span>
+          +2
+        </span>
       </span>
       <div
         class="t-input__wrap t-select__input"
@@ -1344,7 +1366,9 @@ exports[`TreeSelect TreeSelect valuetypeVue demo works fine 1`] = `
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
       >
-        +0
+        <span>
+          +0
+        </span>
       </span>
       <span
         class="t-select__single t-tree-select t-single-suffix"
@@ -1494,7 +1518,9 @@ exports[`TreeSelect TreeSelect valuetypeVue demo works fine 1`] = `
         class="t-tag t-tag--default t-size-m t-tag--dark"
         style="display: none;"
       >
-        +2
+        <span>
+          +2
+        </span>
       </span>
       <div
         class="t-input__wrap t-select__input"

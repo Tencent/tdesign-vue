@@ -56,6 +56,9 @@ export default defineComponent({
     const tableElmRef = ref<HTMLTableElement>();
     const tableBodyRef = ref<HTMLTableElement>();
     const tableFootHeight = ref(0);
+    const paginationAffixRef = ref();
+    const horizontalScrollAffixRef = ref();
+
     const {
       virtualScrollClasses, tableLayoutClasses, tableBaseClass, tableColFixedClasses,
     } = useClassName();
@@ -86,7 +89,7 @@ export default defineComponent({
       updateThWidthList,
       setRecalculateColWidthFuncRef,
       addTableResizeObserver,
-    } = useFixed(props, context, finalColumns);
+    } = useFixed(props, context, finalColumns, paginationAffixRef, horizontalScrollAffixRef);
 
     // 1. 表头吸顶；2. 表尾吸底；3. 底部滚动条吸底；4. 分页器吸底
     const {
@@ -306,6 +309,8 @@ export default defineComponent({
       updateAffixHeaderOrFooter,
       refreshTable,
       onInnerVirtualScroll,
+      paginationAffixRef,
+      horizontalScrollAffixRef,
     };
   },
 
@@ -564,6 +569,7 @@ export default defineComponent({
             offsetBottom={0}
             props={getAffixProps(this.horizontalScrollAffixedBottom)}
             style={{ marginTop: `-${this.scrollbarWidth * 2}px` }}
+            ref="horizontalScrollAffixRef"
           >
             <div
               ref="horizontalScrollbarRef"
@@ -581,7 +587,7 @@ export default defineComponent({
 
         {/* 吸底的分页器 */}
         {this.paginationAffixedBottom ? (
-          <Affix offsetBottom={0} props={getAffixProps(this.paginationAffixedBottom)}>
+          <Affix offsetBottom={0} props={getAffixProps(this.paginationAffixedBottom)} ref="paginationAffixRef">
             {pagination}
           </Affix>
         ) : (
