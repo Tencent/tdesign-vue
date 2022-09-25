@@ -119,6 +119,7 @@ export default defineComponent({
             }
             : {};
           const content = isFunction(col.ellipsisTitle) ? col.ellipsisTitle(h, { col, colIndex: index }) : undefined;
+          const isEllipsis = col.ellipsisTitle !== undefined ? Boolean(col.ellipsisTitle) : Boolean(col.ellipsis);
           return (
             <th
               key={col.colKey}
@@ -129,7 +130,7 @@ export default defineComponent({
               on={resizeColumnListener}
             >
               <div class={this.tableBaseClass.thCellInner}>
-                {col.ellipsisTitle !== false && col.ellipsisTitle !== null ? (
+                {isEllipsis ? (
                   <TEllipsis
                     placement="bottom"
                     attach={this.theadRef ? () => this.theadRef : undefined}
