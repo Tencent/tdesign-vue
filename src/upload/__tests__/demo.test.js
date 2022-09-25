@@ -6,12 +6,9 @@ import { mount } from '@vue/test-utils';
 import baseVue from '@/src/upload/_example/base.vue';
 import customDragVue from '@/src/upload/_example/custom-drag.vue';
 import draggableVue from '@/src/upload/_example/draggable.vue';
-import fileFlowListBatchUploadVue from '@/src/upload/_example/file-flow-list-batch-upload.vue';
-import fileFlowListDuplicateVue from '@/src/upload/_example/file-flow-list-duplicate.vue';
 import fileFlowListVue from '@/src/upload/_example/file-flow-list.vue';
 import imageVue from '@/src/upload/_example/image.vue';
 import imgFlowListVue from '@/src/upload/_example/img-flow-list.vue';
-import listTypeVue from '@/src/upload/_example/listType.vue';
 import requestMethodVue from '@/src/upload/_example/request-method.vue';
 import singleCustomVue from '@/src/upload/_example/single-custom.vue';
 import singleInputVue from '@/src/upload/_example/single-input.vue';
@@ -21,12 +18,9 @@ const mapper = {
   baseVue,
   customDragVue,
   draggableVue,
-  fileFlowListBatchUploadVue,
-  fileFlowListDuplicateVue,
   fileFlowListVue,
   imageVue,
   imgFlowListVue,
-  listTypeVue,
   requestMethodVue,
   singleCustomVue,
   singleInputVue,

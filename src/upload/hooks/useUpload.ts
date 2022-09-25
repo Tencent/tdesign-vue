@@ -364,6 +364,7 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
   };
 
   const cancelUpload = (context?: { file?: UploadFile; e?: MouseEvent }) => {
+    context.e?.stopPropagation?.();
     xhrReq.value?.forEach((item) => {
       item.xhrReq?.abort();
     });
