@@ -59,9 +59,10 @@ export default {
       showHeader: true,
       columns: [
         {
-          width: '100',
-          colKey: 'index',
+          // 序号列，设置 colKey = serial-number 即可
+          colKey: 'serial-number',
           title: '序号',
+          width: '100',
           // 对齐方式
           align: 'center',
           // 设置列类名
@@ -69,6 +70,7 @@ export default {
           // 设置列属性
           attrs: {
             'data-id': 'first-column',
+            style: {},
           },
         },
         {

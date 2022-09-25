@@ -271,7 +271,7 @@ export interface BaseTableCol<T extends TableRowData = TableRowData> {
    */
   className?: ClassName | ((context: CellData<T>) => ClassName);
   /**
-   * 渲染列所需字段
+   * 渲染列所需字段，值为 `serial-number` 表示当前列为「序号」列
    * @default ''
    */
   colKey?: string;
@@ -531,7 +531,7 @@ export interface PrimaryTableCol<T extends TableRowData = TableRowData>
    */
   children?: Array<PrimaryTableCol<T>>;
   /**
-   * 渲染列所需字段，必须唯一。值为 `row-select` 表示当前列为行选中操作列。值为 `drag` 表示当前列为拖拽排序操作列
+   * 渲染列所需字段，必须唯一。值为 `row-select` 表示当前列为行选中操作列。值为 `drag` 表示当前列为拖拽排序操作列。值为 `serial-number` 表示当前列列「序号」列
    * @default ''
    */
   colKey?: string;

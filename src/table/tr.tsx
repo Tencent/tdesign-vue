@@ -89,7 +89,11 @@ export function renderCell(
     cellEmptyContent?: TdBaseTableProps['cellEmptyContent'];
   },
 ) {
-  const { col, row } = params;
+  const { col, row, rowIndex } = params;
+  // support serial number column
+  if (col.colKey === 'serial-number') {
+    return rowIndex + 1;
+  }
   if (isFunction(col.cell)) {
     return col.cell(h, params);
   }
