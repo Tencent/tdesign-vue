@@ -40,7 +40,7 @@ export default function useVModel<T, P extends any[]>(
     const item = alias[i];
     if (Object.prototype.hasOwnProperty.call(vnode.componentOptions.propsData, item.propName)) {
       return [
-        value,
+        item.value,
         (newValue, ...args) => {
           // .sync support
           emit?.(`update:${item.propName}`, newValue, ...args);
