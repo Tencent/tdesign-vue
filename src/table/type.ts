@@ -163,6 +163,11 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   scroll?: TableScroll;
   /**
+   * 是否显示表头
+   * @default true
+   */
+  showHeader?: boolean;
+  /**
    * 表格尺寸
    * @default medium
    */
@@ -300,11 +305,6 @@ export interface BaseTableCol<T extends TableRowData = TableRowData> {
    * 限制拖拽调整的最小宽度和最大宽度。`resize.minWidth` 默认为 `80`，`resize.maxWidth` 默认为 `600`
    */
   resize?: TableColumnResizeConfig;
-  /**
-   * 是否允许拖拽调整该列大小，仅当 `table.resizable = true` 时生效
-   * @default true
-   */
-  resizable?: boolean;
   /**
    * 自定义表头渲染。值类型为 Function 表示以函数形式渲染表头。值类型为 string 表示使用插槽渲染，插槽名称为 title 的值。优先级高于 render
    */
@@ -802,7 +802,7 @@ export interface TableEditableCellConfig<T extends TableRowData = TableRowData> 
   /**
    * 编辑完成后，退出编辑模式时触发
    */
-  onEdited?: (context: { trigger: string; newRowData: T; rowIndex: number }) => void;
+  onEdited?: (context: PrimaryTableOnEditedContext<T>) => void;
   /**
    * 透传给组件 `edit.component` 的属性
    */
@@ -1053,6 +1053,8 @@ export interface SwapParams<T> {
 export type FilterProps = RadioProps | CheckboxProps | InputProps | { [key: string]: any };
 
 export type FilterType = 'input' | 'single' | 'multiple';
+
+export type PrimaryTableOnEditedContext<T> = PrimaryTableCellParams<T> & { trigger: string; newRowData: T };
 
 export type TableEditableCellProps<T> =
   | TablePlainObject
