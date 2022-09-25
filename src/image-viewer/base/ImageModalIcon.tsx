@@ -22,7 +22,7 @@ export default defineComponent({
     const classPrefix = usePrefixClass();
     const renderTNodeJSX = useTNodeJSX();
     const wrapClass = computed(() => [
-      `${classPrefix.value}-image-viewer__modal--icon`,
+      `${classPrefix.value}-image-viewer__modal-icon`,
       {
         [`${classPrefix.value}-is-disabled`]: props.disabled,
       },
@@ -38,7 +38,7 @@ export default defineComponent({
     return (
       <div class={this.wrapClass} onClick={this.clickHandler}>
         {this.renderTNodeJSX('icon')}
-        {this.label && <span class={`${this.classPrefix}-image-viewer__modal--icon-label`}>{this.label}</span>}
+        {this.label && <span class={`${this.classPrefix}-image-viewer__modal-icon-label`}>{this.label}</span>}
       </div>
     );
   },

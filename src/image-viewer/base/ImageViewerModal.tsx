@@ -77,10 +77,10 @@ export default defineComponent({
         showOverlay={this.showOverlay}
         class={`${this.classPrefix}-image-viewer__dialog`}
         header={() => (
-          <div class={`${this.classPrefix}-image-viewer__mini--header`}>
+          <div class={`${this.classPrefix}-image-viewer__mini-header`}>
             {`${this.index + 1}/${this.images.length}`}
             <span
-              class={`${this.classPrefix}-image-viewer__mini--close`}
+              class={`${this.classPrefix}-image-viewer__mini-close`}
               onClick={(e: MouseEvent) => {
                 this.closeHandler({ e, trigger: 'close-btn' });
               }}

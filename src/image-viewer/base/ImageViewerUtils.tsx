@@ -38,7 +38,7 @@ export default defineComponent({
   render() {
     return (
       <div class={`${this.classPrefix}-image-viewer__utils`}>
-        <div class={`${this.classPrefix}-image-viewer__utils--content`}>
+        <div class={`${this.classPrefix}-image-viewer__utils-content`}>
           <TToolTip
             overlayClassName={`${this.classPrefix}-image-viewer__utils--tip`}
             content="镜像"
@@ -61,7 +61,7 @@ export default defineComponent({
           </TToolTip>
           <TImageViewerIcon icon={() => <ZoomOutIcon size="medium" />} clickHandler={this.zoomOutHandler} />
           <TImageViewerIcon
-            class={`${this.classPrefix}-image-viewer__utils--scale`}
+            class={`${this.classPrefix}-image-viewer__utils-scale`}
             size="medium"
             label={`${this.scale * 100}%`}
           />
@@ -74,7 +74,7 @@ export default defineComponent({
             showArrow
             theme="default"
           >
-            <div class={`${this.classPrefix}-image-viewer__modal--icon`}>
+            <div class={`${this.classPrefix}-image-viewer__modal-icon`}>
               <TImageViewerIcon icon={() => <ImageIcon size="medium" />} clickHandler={this.resetHandler} />
             </div>
           </TToolTip>

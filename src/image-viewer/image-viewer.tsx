@@ -194,18 +194,18 @@ export default defineComponent({
         <div class={this.headerClass}>
           <TImageViewerIcon
             icon={() => <ChevronDownIcon size="20px" />}
-            class={`${this.COMPONENT_NAME}__header--pre__bt`}
+            class={`${this.COMPONENT_NAME}__header-pre__bt`}
             clickHandler={this.toggleExpand}
           />
-          <div class={`${this.COMPONENT_NAME}__header--prev`}>
-            <div class={`${this.COMPONENT_NAME}__bokeh--left`} />
-            <div class={`${this.COMPONENT_NAME}__bokeh--right`} />
-            <div class={`${this.COMPONENT_NAME}__header--trans`} style={this.transStyle}>
+          <div class={`${this.COMPONENT_NAME}__header-prev`}>
+            <div class={`${this.COMPONENT_NAME}__bokeh-left`} />
+            <div class={`${this.COMPONENT_NAME}__bokeh-right`} />
+            <div class={`${this.COMPONENT_NAME}__header-trans`} style={this.transStyle}>
               {this.imagesList.map((image, index) => (
                 <div
                   key={index}
                   class={[
-                    `${this.COMPONENT_NAME}__header--box`,
+                    `${this.COMPONENT_NAME}__header-box`,
                     {
                       [`${this.classPrefix}-is-active`]: index === this.indexValue,
                     },
@@ -214,7 +214,7 @@ export default defineComponent({
                   <img
                     alt=""
                     src={image.thumbnail || image.mainImage}
-                    class={`${this.COMPONENT_NAME}__header--img`}
+                    class={`${this.COMPONENT_NAME}__header-img`}
                     onClick={() => this.onImgClick(index)}
                   />
                 </div>
@@ -234,7 +234,7 @@ export default defineComponent({
 
       return (
         <TImageViewerIcon
-          class={`${this.COMPONENT_NAME}__modal--${type}-bt`}
+          class={`${this.COMPONENT_NAME}__modal-${type}-bt`}
           clickHandler={type === 'prev' ? this.prevImage : this.nextImage}
           icon={() => icon}
         />
@@ -275,19 +275,19 @@ export default defineComponent({
         {this.visibleValue && (
           <div class={this.wrapClass} v-transfer-dom="body" style={{ zIndex: this.zIndexValue }} onWheel={this.onWheel}>
             {!!this.showOverlayValue && (
-              <div class={`${this.COMPONENT_NAME}__modal--mask`} onClick={this.clickOverlayHandler} />
+              <div class={`${this.COMPONENT_NAME}__modal-mask`} onClick={this.clickOverlayHandler} />
             )}
             {this.isMultipleImg && this.renderHeader()}
             {this.isMultipleImg && this.renderNavigationArrow('prev')}
             {this.isMultipleImg && this.renderNavigationArrow('next')}
             {this.isMultipleImg && (
-              <div class={`${this.COMPONENT_NAME}__modal--index`}>
+              <div class={`${this.COMPONENT_NAME}__modal-index`}>
                 {renderTNodeJSX(this, 'title')}
                 {`${this.indexValue + 1}/${this.imagesList.length}`}
               </div>
             )}
             <div
-              class={[`${this.COMPONENT_NAME}__modal--icon`, `${this.COMPONENT_NAME}__modal--close-bt`]}
+              class={[`${this.COMPONENT_NAME}__modal-icon`, `${this.COMPONENT_NAME}__modal-close-bt`]}
               onClick={this.closeBtnAction}
             >
               {renderTNodeJSX(this, 'closeBtn', <CloseIcon size="24px" />)}

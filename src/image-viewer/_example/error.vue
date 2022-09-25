@@ -5,7 +5,7 @@
         v-if="isError[index]"
         class="tdesign-demo-image-viewer__error tdesign-demo-image-viewer__ui-image tdesign-demo-image-viewer__base"
       >
-        <div class="tdesign-demo-image-viewer__error--content">
+        <div class="tdesign-demo-image-viewer__error-content">
           <image-error-icon name="image-error" size="2em" />
           <div>图片无法显示</div>
         </div>
@@ -152,7 +152,7 @@ export default {
   cursor: inherit;
 }
 
-.tdesign-demo-image-viewer__error--content {
+.tdesign-demo-image-viewer__error-content {
   position: absolute;
   height: 100%;
   width: 100%;
