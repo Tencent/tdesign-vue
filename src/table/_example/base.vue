@@ -126,10 +126,3 @@ export default {
   },
 };
 </script>
-
-<style>
-/* 不要改成 scope，就是要全局间距 */
-.tdesign-demo__table .t-checkbox + .t-checkbox {
-  margin-left: 16px;
-}
-</style>
