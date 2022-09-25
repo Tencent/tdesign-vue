@@ -12,6 +12,7 @@
       <t-checkbox v-model="bordered">显示表格边框</t-checkbox>
       <t-checkbox v-model="hover">显示悬浮效果</t-checkbox>
       <t-checkbox v-model="tableLayout">宽度自适应</t-checkbox>
+      <t-checkbox v-model="showHeader">显示表头</t-checkbox>
     </div>
 
     <!-- 当数据为空需要占位时，会显示 cellEmptyContent -->
@@ -25,8 +26,8 @@
       :size="size"
       :table-layout="tableLayout ? 'auto' : 'fixed'"
       :pagination="pagination"
+      :showHeader="showHeader"
       cellEmptyContent="-"
-      resizable
     ></t-table>
   </div>
 </template>
@@ -55,6 +56,7 @@ export default {
       stripe: true,
       bordered: true,
       hover: false,
+      showHeader: true,
       columns: [
         {
           width: '100',

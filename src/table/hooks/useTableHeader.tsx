@@ -61,7 +61,7 @@ export default function useTableHeader(props: TdBaseTableProps) {
         <div class={tableSortClasses.title}>
           {ellipsisTitle !== false && ellipsisTitle !== null ? (
             <TEllipsis
-              placement="bottom-right"
+              placement="bottom"
               attach={attach ? () => attach : undefined}
               tooltipContent={content && (() => content)}
               tooltipProps={typeof ellipsisTitle === 'object' ? ellipsisTitle : undefined}

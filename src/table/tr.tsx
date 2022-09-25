@@ -233,12 +233,10 @@ export default defineComponent({
     ) {
       const { cellNode } = params;
       const { col, colIndex } = cellParams;
-      // 前两列左对齐显示
-      const placement = colIndex < 2 ? 'top-left' : 'top-right';
       const content = isFunction(col.ellipsis) ? col.ellipsis(h, cellParams) : undefined;
       return (
         <TEllipsis
-          placement={placement}
+          placement={'top'}
           attach={this.tableElm ? () => this.tableElm : undefined}
           tooltipContent={content && (() => content)}
           tooltipProps={typeof col.ellipsis === 'object' ? col.ellipsis : undefined}

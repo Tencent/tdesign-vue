@@ -340,7 +340,7 @@ export default defineComponent({
      * Affixed Header
      */
     renderFixedHeader(columns: BaseTableCol<TableRowData>[]) {
-      if (!props.showHeader) return null;
+      if (!this.showHeader) return null;
       // onlyVirtualScrollBordered 用于浏览器兼容性处理，只有 chrome 需要调整 bordered，FireFox 和 Safari 不需要
       const onlyVirtualScrollBordered = !!(this.isVirtual && !this.headerAffixedTop && this.bordered) && /Chrome/.test(navigator?.userAgent);
       const borderWidth = this.bordered && onlyVirtualScrollBordered ? 1 : 0;
@@ -523,7 +523,7 @@ export default defineComponent({
         {this.isVirtual && <div class={this.virtualScrollClasses.cursor} style={virtualStyle} />}
         <table ref="tableElmRef" class={this.tableElmClasses} style={this.tableElementStyles}>
           {this.renderColGroup(columns)}
-          {props.showHeader && (
+          {this.showHeader && (
             <THead
               scopedSlots={this.$scopedSlots}
               isFixedHeader={this.isFixedHeader}
