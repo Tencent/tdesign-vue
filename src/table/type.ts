@@ -302,6 +302,11 @@ export interface BaseTableCol<T extends TableRowData = TableRowData> {
    */
   render?: TNode<BaseTableRenderParams<T>>;
   /**
+   * 是否允许调整当前列列宽
+   * @default true
+   */
+  resizable?: boolean;
+  /**
    * 限制拖拽调整的最小宽度和最大宽度。`resize.minWidth` 默认为 `80`，`resize.maxWidth` 默认为 `600`
    */
   resize?: TableColumnResizeConfig;

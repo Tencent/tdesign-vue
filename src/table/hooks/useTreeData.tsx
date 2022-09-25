@@ -171,8 +171,10 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
           </div>
         );
       }
+      // leaf nodes
       return (
-        <div style={colStyle} class={classes}>
+        <div style={colStyle} class={[classes, tableTreeClasses.leafNode]}>
+          <span class={tableTreeClasses.icon}></span>
           {cellInfo}
         </div>
       );

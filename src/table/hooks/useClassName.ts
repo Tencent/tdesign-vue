@@ -159,6 +159,7 @@ export default function useClassName() {
       col: `${classPrefix.value}-table__tree-col`,
       inlineCol: `${classPrefix.value}-table__tree-col--inline`,
       icon: `${classPrefix.value}-table__tree-op-icon`,
+      leafNode: `${classPrefix.value}-table__tree-leaf-node`,
     },
 
     // 拖拽功能类名
