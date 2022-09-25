@@ -30,8 +30,6 @@
 </template>
 
 <script>
-import { MessagePlugin as Message } from 'tdesign-vue';
-
 export default {
   name: 'TUploadFileFlow',
 

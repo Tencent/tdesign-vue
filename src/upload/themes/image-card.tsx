@@ -21,7 +21,7 @@ export interface ImageCardUploadProps extends CommonDisplayFileProps {
   triggerUpload?: (e: MouseEvent) => void;
   uploadFiles?: (toFiles?: UploadFile[]) => void;
   cancelUpload?: (context: { e: MouseEvent; file: UploadFile }) => void;
-  // onPreview?: TdUploadProps['onPreview'];
+  onPreview?: TdUploadProps['onPreview'];
 }
 
 export default defineComponent({
@@ -71,7 +71,7 @@ export default defineComponent({
             <span class={`${this.classPrefix}-upload__card-mask-item`} onClick={(e: MouseEvent) => e.stopPropagation()}>
               <BrowseIcon
                 onClick={({ e }: { e: MouseEvent }) => {
-                  // this.onPreview?.({ file, index, e });
+                  this.onPreview?.({ file, index, e });
                   open();
                 }}
               />

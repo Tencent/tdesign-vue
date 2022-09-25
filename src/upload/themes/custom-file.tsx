@@ -1,4 +1,4 @@
-import { defineComponent, PropType, toRefs } from '@vue/composition-api';
+import { defineComponent, PropType } from '@vue/composition-api';
 import isFunction from 'lodash/isFunction';
 import useDrag, { UploadDragEvents } from '../hooks/useDrag';
 import { CommonDisplayFileProps, commonProps } from '../interface';

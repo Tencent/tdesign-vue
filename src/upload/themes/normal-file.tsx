@@ -1,4 +1,4 @@
-import { defineComponent, toRefs, h } from '@vue/composition-api';
+import { defineComponent } from '@vue/composition-api';
 import {
   CloseIcon as TdCloseIcon,
   TimeFilledIcon as TdTimeFilledIcon,

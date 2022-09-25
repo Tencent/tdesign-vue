@@ -1,5 +1,5 @@
 import {
-  reactive, computed, defineComponent, toRefs, PropType,
+  computed, defineComponent, toRefs, PropType,
 } from '@vue/composition-api';
 import classNames from 'classnames';
 import {
