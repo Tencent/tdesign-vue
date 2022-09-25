@@ -16,7 +16,7 @@ import isString from 'lodash/isString';
 import pick from 'lodash/pick';
 import get from 'lodash/get';
 import { CreateElement } from 'vue';
-import { formatRowAttributes, formatRowClassNames } from './utils';
+import { formatClassNames, formatRowAttributes, formatRowClassNames } from './utils';
 import { getRowFixedStyles, getColumnFixedStyles } from './hooks/useFixed';
 import { RowAndColFixedPosition } from './interface';
 import useClassName from './hooks/useClassName';
@@ -255,7 +255,7 @@ export default defineComponent({
       const { cellSpans, dataLength, rowAndColFixedPosition } = extra;
       const cellNode = renderCell(params, this.tSlots, { cellEmptyContent: extra.cellEmptyContent });
       const tdStyles = getColumnFixedStyles(col, colIndex, rowAndColFixedPosition, this.tableColFixedClasses);
-      const customClasses = isFunction(col.className) ? col.className({ ...params, type: 'td' }) : col.className;
+      const customClasses = formatClassNames(col.className, { ...params, type: 'td' });
       const classes = [
         tdStyles.classes,
         customClasses,

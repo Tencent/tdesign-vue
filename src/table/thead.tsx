@@ -10,6 +10,7 @@ import { useConfig } from '../config-provider/useConfig';
 import { BaseTableCol, TableRowData } from './type';
 import { renderTitle } from './hooks/useTableHeader';
 import TEllipsis from './ellipsis';
+import { formatClassNames } from './utils';
 
 export interface TheadProps {
   // 是否固定表头
@@ -97,7 +98,7 @@ export default defineComponent({
             row: {},
             rowIndex: -1,
           };
-          const customClasses = isFunction(col.className) ? col.className({ ...colParams, type: 'th' }) : col.className;
+          const customClasses = formatClassNames(col.className, { ...colParams, type: 'th' });
           const thClasses = [
             thStyles.classes,
             customClasses,

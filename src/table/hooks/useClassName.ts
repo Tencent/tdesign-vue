@@ -115,6 +115,7 @@ export default function useClassName() {
     // 排序功能，全部类名
     tableSortClasses: {
       sortable: `${classPrefix.value}-table__cell--sortable`,
+      sortColumn: `${classPrefix.value}-table__sort-column`,
       title: `${classPrefix.value}-table__cell--title`,
       trigger: `${classPrefix.value}-table__cell--sort-trigger`,
       doubleIcon: `${classPrefix.value}-table__double-icons`,

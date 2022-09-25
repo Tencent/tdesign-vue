@@ -269,7 +269,7 @@ export interface BaseTableCol<T extends TableRowData = TableRowData> {
   /**
    * 列类名，值类型是 Function 使用返回值作为列类名；值类型不为 Function 时，值用于整列类名（含表头）。泛型 T 指表格数据类型
    */
-  className?: ClassName | ((context: CellData<T>) => ClassName);
+  className?: TableColumnClassName<T> | TableColumnClassName<T>[];
   /**
    * 渲染列所需字段，值为 `serial-number` 表示当前列为「序号」列
    * @default ''
@@ -424,6 +424,11 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    * @default []
    */
   defaultSelectedRowKeys?: Array<string | number>;
+  /**
+   * 当前排序列是否显示背景色
+   * @default false
+   */
+  showSortColumnBgColor?: boolean;
   /**
    * 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序
    */
@@ -889,6 +894,8 @@ export interface BaseTableCellParams<T> {
   col: BaseTableCol<T>;
   colIndex: number;
 }
+
+export type TableColumnClassName<T> = ClassName | ((context: CellData<T>) => ClassName);
 
 export interface CellData<T> extends BaseTableCellParams<T> {
   type: 'th' | 'td';

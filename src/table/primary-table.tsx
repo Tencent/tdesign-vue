@@ -3,6 +3,7 @@ import {
 } from '@vue/composition-api';
 import get from 'lodash/get';
 import omit from 'lodash/omit';
+import isFunction from 'lodash/isFunction';
 import baseTableProps from './base-table-props';
 import primaryTableProps from './primary-table-props';
 import BaseTable, { BASE_TABLE_ALL_EVENTS, TableListeners } from './base-table';
@@ -61,7 +62,9 @@ export default defineComponent({
     const renderTNode = useTNodeJSX();
     const { columns } = toRefs(props);
     const primaryTableRef = ref(null);
-    const { tableDraggableClasses, tableBaseClass, tableSelectedClasses } = useClassName();
+    const {
+      tableDraggableClasses, tableBaseClass, tableSelectedClasses, tableSortClasses,
+    } = useClassName();
     // 自定义列配置功能
     const { tDisplayColumns, renderColumnController } = useColumnController(props, context);
     // 展开/收起行功能
@@ -144,6 +147,16 @@ export default defineComponent({
         const isDisplayColumn = item.children?.length || tDisplayColumns.value?.includes(item.colKey);
         if (!isDisplayColumn && props.columnController) continue;
         item = formatToRowSelectColumn(item);
+        const { sort } = props;
+        if (item.sorter && props.showSortColumnBgColor) {
+          const sorts = sort instanceof Array ? sort : [sort];
+          const sortedColumn = sorts.find((sort) => sort.sortBy === item.colKey);
+          if (sortedColumn) {
+            item.className = item.className instanceof Array
+              ? item.className.concat(tableSortClasses.sortColumn)
+              : [item.className, tableSortClasses.sortColumn];
+          }
+        }
         // 添加排序图标和过滤图标
         if (item.sorter || item.filter) {
           const titleContent = renderTitle(h, context.slots, item, i);
