@@ -8992,6 +8992,129 @@ exports[`ssr snapshot test renders ./src/image/_example/shape.vue correctly 1`] 
 </div>
 `;
 
+exports[`ssr snapshot test renders ./src/image-viewer/_example/album.vue correctly 1`] = `
+<div class="tdesign-demo-image-viewer__base">
+  <div class="t-image-viewer" style="display:inline-block;">
+    <div class="tdesign-demo-image-viewer__ui-image"><img alt="test" src="https://tdesign.gtimg.com/demo/demo-image-1.png" class="tdesign-demo-image-viewer__ui-image--img">
+      <div class="tdesign-demo-image-viewer__ui-image--hover"><span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse" style="font-size:1.4em;"><path fill="currentColor" d="M10.88 8a2.88 2.88 0 11-5.76 0 2.88 2.88 0 015.76 0zm-1 0a1.88 1.88 0 10-3.76 0 1.88 1.88 0 003.76 0z" fill-opacity="0.9"></path><path fill="currentColor" d="M1.12 8.23A7.72 7.72 0 008 12.5c2.9 0 5.54-1.63 6.88-4.27L15 8l-.12-.23A7.73 7.73 0 008 3.5a7.74 7.74 0 00-6.88 4.27L1 8l.12.23zM8 11.5A6.73 6.73 0 012.11 8 6.73 6.73 0 0113.9 8 6.74 6.74 0 018 11.5z" fill-opacity="0.9"></path></svg> 预览</span></div>
+      <div class="tdesign-demo-image-viewer__ui-image--footer"><span class="tdesign-demo-image-viewer__ui-image--title">相册封面标题</span></div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./src/image-viewer/_example/albumIcons.vue correctly 1`] = `
+<div class="tdesign-demo-image-viewer__base">
+  <div class="t-image-viewer" style="display:inline-block;">
+    <div class="tdesign-demo-image-viewer__ui-image"><img alt="test" src="https://tdesign.gtimg.com/demo/demo-image-1.png" class="tdesign-demo-image-viewer__ui-image--img">
+      <div class="tdesign-demo-image-viewer__ui-image--hover"><span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse" style="font-size:1.4em;"><path fill="currentColor" d="M10.88 8a2.88 2.88 0 11-5.76 0 2.88 2.88 0 015.76 0zm-1 0a1.88 1.88 0 10-3.76 0 1.88 1.88 0 003.76 0z" fill-opacity="0.9"></path><path fill="currentColor" d="M1.12 8.23A7.72 7.72 0 008 12.5c2.9 0 5.54-1.63 6.88-4.27L15 8l-.12-.23A7.73 7.73 0 008 3.5a7.74 7.74 0 00-6.88 4.27L1 8l.12.23zM8 11.5A6.73 6.73 0 012.11 8 6.73 6.73 0 0113.9 8 6.74 6.74 0 018 11.5z" fill-opacity="0.9"></path></svg> 预览 </span></div>
+      <div class="tdesign-demo-image-viewer__ui-image--footer"><span class="tdesign-demo-image-viewer__ui-image--title">相册封面标题</span> <span class="tdesign-demo-image-viewer__ui-image--icons"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse"><path fill="currentColor" d="M10.88 8a2.88 2.88 0 11-5.76 0 2.88 2.88 0 015.76 0zm-1 0a1.88 1.88 0 10-3.76 0 1.88 1.88 0 003.76 0z" fill-opacity="0.9"></path><path fill="currentColor" d="M1.12 8.23A7.72 7.72 0 008 12.5c2.9 0 5.54-1.63 6.88-4.27L15 8l-.12-.23A7.73 7.73 0 008 3.5a7.74 7.74 0 00-6.88 4.27L1 8l.12.23zM8 11.5A6.73 6.73 0 012.11 8 6.73 6.73 0 0113.9 8 6.74 6.74 0 018 11.5z" fill-opacity="0.9"></path></svg> <span> <svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-ellipsis tdesign-demo-image-viewer__ui-image--ellipsis"><path fill="currentColor" d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z" fill-opacity="0.9"></path></svg></span></span></div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./src/image-viewer/_example/base.vue correctly 1`] = `
+<div>
+  <div class="tdesign-demo-image-viewer__base">
+    <div class="t-image-viewer" style="display:inline-block;">
+      <div class="tdesign-demo-image-viewer__ui-image"><img alt="test" src="https://tdesign.gtimg.com/demo/demo-image-1.png" class="tdesign-demo-image-viewer__ui-image--img">
+        <div class="tdesign-demo-image-viewer__ui-image--hover"><span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse" style="font-size:1.4em;"><path fill="currentColor" d="M10.88 8a2.88 2.88 0 11-5.76 0 2.88 2.88 0 015.76 0zm-1 0a1.88 1.88 0 10-3.76 0 1.88 1.88 0 003.76 0z" fill-opacity="0.9"></path><path fill="currentColor" d="M1.12 8.23A7.72 7.72 0 008 12.5c2.9 0 5.54-1.63 6.88-4.27L15 8l-.12-.23A7.73 7.73 0 008 3.5a7.74 7.74 0 00-6.88 4.27L1 8l.12.23zM8 11.5A6.73 6.73 0 012.11 8 6.73 6.73 0 0113.9 8 6.74 6.74 0 018 11.5z" fill-opacity="0.9"></path></svg> 预览</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./src/image-viewer/_example/block.vue correctly 1`] = `
+<div>
+  <div class="tdesign-demo-image-viewer__ui-image tdesign-demo-image-viewer__base">
+    <div class="t-image-viewer" style="display:inline-block;">
+      <div class="tdesign-demo-image-viewer__ui-image"><img alt="test" src="https://tdesign.gtimg.com/demo/demo-image-1.png" class="tdesign-demo-image-viewer__ui-image--img">
+        <div class="tdesign-demo-image-viewer__ui-image--hover"><span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse" style="font-size:1.4em;"><path fill="currentColor" d="M10.88 8a2.88 2.88 0 11-5.76 0 2.88 2.88 0 015.76 0zm-1 0a1.88 1.88 0 10-3.76 0 1.88 1.88 0 003.76 0z" fill-opacity="0.9"></path><path fill="currentColor" d="M1.12 8.23A7.72 7.72 0 008 12.5c2.9 0 5.54-1.63 6.88-4.27L15 8l-.12-.23A7.73 7.73 0 008 3.5a7.74 7.74 0 00-6.88 4.27L1 8l.12.23zM8 11.5A6.73 6.73 0 012.11 8 6.73 6.73 0 0113.9 8 6.74 6.74 0 018 11.5z" fill-opacity="0.9"></path></svg> 预览</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="tdesign-demo-image-viewer__ui-image tdesign-demo-image-viewer__base">
+    <div class="t-image-viewer" style="display:inline-block;">
+      <div class="tdesign-demo-image-viewer__ui-image"><img alt="test" src="https://tdesign.gtimg.com/demo/demo-image-1.png" class="tdesign-demo-image-viewer__ui-image--img">
+        <div class="tdesign-demo-image-viewer__ui-image--hover"><span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse" style="font-size:1.4em;"><path fill="currentColor" d="M10.88 8a2.88 2.88 0 11-5.76 0 2.88 2.88 0 015.76 0zm-1 0a1.88 1.88 0 10-3.76 0 1.88 1.88 0 003.76 0z" fill-opacity="0.9"></path><path fill="currentColor" d="M1.12 8.23A7.72 7.72 0 008 12.5c2.9 0 5.54-1.63 6.88-4.27L15 8l-.12-.23A7.73 7.73 0 008 3.5a7.74 7.74 0 00-6.88 4.27L1 8l.12.23zM8 11.5A6.73 6.73 0 012.11 8 6.73 6.73 0 0113.9 8 6.74 6.74 0 018 11.5z" fill-opacity="0.9"></path></svg> 预览</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./src/image-viewer/_example/button.vue correctly 1`] = `
+<div>
+  <div class="t-image-viewer" style="display:inline-block;"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">预览单张图片</span></button></div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./src/image-viewer/_example/error.vue correctly 1`] = `
+<div class="tdesign-demo-image-viewer-wrapper">
+  <div>
+    <div class="t-image-viewer" style="display:inline-block;">
+      <div class="tdesign-demo-image-viewer__ui-image tdesign-demo-image-viewer__base"><img alt="test" src="https://tdesign.gtimg.com/demo/demo-image-1.png" class="tdesign-demo-image-viewer__ui-image--img">
+        <div class="tdesign-demo-image-viewer__ui-image--hover"><span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse" style="font-size:1.4em;"><path fill="currentColor" d="M10.88 8a2.88 2.88 0 11-5.76 0 2.88 2.88 0 015.76 0zm-1 0a1.88 1.88 0 10-3.76 0 1.88 1.88 0 003.76 0z" fill-opacity="0.9"></path><path fill="currentColor" d="M1.12 8.23A7.72 7.72 0 008 12.5c2.9 0 5.54-1.63 6.88-4.27L15 8l-.12-.23A7.73 7.73 0 008 3.5a7.74 7.74 0 00-6.88 4.27L1 8l.12.23zM8 11.5A6.73 6.73 0 012.11 8 6.73 6.73 0 0113.9 8 6.74 6.74 0 018 11.5z" fill-opacity="0.9"></path></svg> 预览</span></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="t-image-viewer" style="display:inline-block;">
+      <div class="tdesign-demo-image-viewer__ui-image tdesign-demo-image-viewer__base"><img alt="test" src="https://tdesign.gtimg.com/demo/demo-image-error1.png" class="tdesign-demo-image-viewer__ui-image--img">
+        <div class="tdesign-demo-image-viewer__ui-image--hover"><span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse" style="font-size:1.4em;"><path fill="currentColor" d="M10.88 8a2.88 2.88 0 11-5.76 0 2.88 2.88 0 015.76 0zm-1 0a1.88 1.88 0 10-3.76 0 1.88 1.88 0 003.76 0z" fill-opacity="0.9"></path><path fill="currentColor" d="M1.12 8.23A7.72 7.72 0 008 12.5c2.9 0 5.54-1.63 6.88-4.27L15 8l-.12-.23A7.73 7.73 0 008 3.5a7.74 7.74 0 00-6.88 4.27L1 8l.12.23zM8 11.5A6.73 6.73 0 012.11 8 6.73 6.73 0 0113.9 8 6.74 6.74 0 018 11.5z" fill-opacity="0.9"></path></svg> 预览</span></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="t-image-viewer" style="display:inline-block;">
+      <div class="tdesign-demo-image-viewer__ui-image tdesign-demo-image-viewer__base"><img alt="test" src="https://tdesign.gtimg.com/demo/demo-image-error2.png" class="tdesign-demo-image-viewer__ui-image--img">
+        <div class="tdesign-demo-image-viewer__ui-image--hover"><span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse" style="font-size:1.4em;"><path fill="currentColor" d="M10.88 8a2.88 2.88 0 11-5.76 0 2.88 2.88 0 015.76 0zm-1 0a1.88 1.88 0 10-3.76 0 1.88 1.88 0 003.76 0z" fill-opacity="0.9"></path><path fill="currentColor" d="M1.12 8.23A7.72 7.72 0 008 12.5c2.9 0 5.54-1.63 6.88-4.27L15 8l-.12-.23A7.73 7.73 0 008 3.5a7.74 7.74 0 00-6.88 4.27L1 8l.12.23zM8 11.5A6.73 6.73 0 012.11 8 6.73 6.73 0 0113.9 8 6.74 6.74 0 018 11.5z" fill-opacity="0.9"></path></svg> 预览</span></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="t-image-viewer" style="display:inline-block;">
+      <div class="tdesign-demo-image-viewer__ui-image tdesign-demo-image-viewer__base"><img alt="test" src="https://tdesign.gtimg.com/demo/demo-image-error3.png" class="tdesign-demo-image-viewer__ui-image--img">
+        <div class="tdesign-demo-image-viewer__ui-image--hover"><span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse" style="font-size:1.4em;"><path fill="currentColor" d="M10.88 8a2.88 2.88 0 11-5.76 0 2.88 2.88 0 015.76 0zm-1 0a1.88 1.88 0 10-3.76 0 1.88 1.88 0 003.76 0z" fill-opacity="0.9"></path><path fill="currentColor" d="M1.12 8.23A7.72 7.72 0 008 12.5c2.9 0 5.54-1.63 6.88-4.27L15 8l-.12-.23A7.73 7.73 0 008 3.5a7.74 7.74 0 00-6.88 4.27L1 8l.12.23zM8 11.5A6.73 6.73 0 012.11 8 6.73 6.73 0 0113.9 8 6.74 6.74 0 018 11.5z" fill-opacity="0.9"></path></svg> 预览</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./src/image-viewer/_example/modeless.vue correctly 1`] = `
+<div class="tdesign-demo-image-viewer__base">
+  <div class="t-image-viewer" style="display:inline-block;">
+    <div class="tdesign-demo-image-viewer__ui-image"><img alt="test" src="https://tdesign.gtimg.com/demo/demo-image-1.png" class="tdesign-demo-image-viewer__ui-image--img">
+      <div class="tdesign-demo-image-viewer__ui-image--hover"><span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse" style="font-size:1.4em;"><path fill="currentColor" d="M10.88 8a2.88 2.88 0 11-5.76 0 2.88 2.88 0 015.76 0zm-1 0a1.88 1.88 0 10-3.76 0 1.88 1.88 0 003.76 0z" fill-opacity="0.9"></path><path fill="currentColor" d="M1.12 8.23A7.72 7.72 0 008 12.5c2.9 0 5.54-1.63 6.88-4.27L15 8l-.12-.23A7.73 7.73 0 008 3.5a7.74 7.74 0 00-6.88 4.27L1 8l.12.23zM8 11.5A6.73 6.73 0 012.11 8 6.73 6.73 0 0113.9 8 6.74 6.74 0 018 11.5z" fill-opacity="0.9"></path></svg> 预览</span></div>
+    </div>
+    <div duration="300" name="t-dialog-zoom__vue" class="t-image-viewer__dialog"></div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./src/image-viewer/_example/multiple.vue correctly 1`] = `
+<div>
+  <div class="t-image-viewer" style="display:inline-block;">
+    <div class="tdesign-demo-image-viewer__ui-image tdesign-demo-image-viewer__base"><img alt="test" src="https://tdesign.gtimg.com/demo/demo-image-1.png" class="tdesign-demo-image-viewer__ui-image--img">
+      <div class="tdesign-demo-image-viewer__ui-image--hover"><span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse" style="font-size:1.4em;"><path fill="currentColor" d="M10.88 8a2.88 2.88 0 11-5.76 0 2.88 2.88 0 015.76 0zm-1 0a1.88 1.88 0 10-3.76 0 1.88 1.88 0 003.76 0z" fill-opacity="0.9"></path><path fill="currentColor" d="M1.12 8.23A7.72 7.72 0 008 12.5c2.9 0 5.54-1.63 6.88-4.27L15 8l-.12-.23A7.73 7.73 0 008 3.5a7.74 7.74 0 00-6.88 4.27L1 8l.12.23zM8 11.5A6.73 6.73 0 012.11 8 6.73 6.73 0 0113.9 8 6.74 6.74 0 018 11.5z" fill-opacity="0.9"></path></svg> 预览</span></div>
+    </div>
+  </div>
+  <div class="t-image-viewer" style="display:inline-block;">
+    <div class="tdesign-demo-image-viewer__ui-image tdesign-demo-image-viewer__base"><img alt="test" src="https://tdesign.gtimg.com/demo/demo-image-2.png" class="tdesign-demo-image-viewer__ui-image--img">
+      <div class="tdesign-demo-image-viewer__ui-image--hover"><span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse" style="font-size:1.4em;"><path fill="currentColor" d="M10.88 8a2.88 2.88 0 11-5.76 0 2.88 2.88 0 015.76 0zm-1 0a1.88 1.88 0 10-3.76 0 1.88 1.88 0 003.76 0z" fill-opacity="0.9"></path><path fill="currentColor" d="M1.12 8.23A7.72 7.72 0 008 12.5c2.9 0 5.54-1.63 6.88-4.27L15 8l-.12-.23A7.73 7.73 0 008 3.5a7.74 7.74 0 00-6.88 4.27L1 8l.12.23zM8 11.5A6.73 6.73 0 012.11 8 6.73 6.73 0 0113.9 8 6.74 6.74 0 018 11.5z" fill-opacity="0.9"></path></svg> 预览</span></div>
+    </div>
+  </div>
+  <div class="t-image-viewer" style="display:inline-block;">
+    <div class="tdesign-demo-image-viewer__ui-image tdesign-demo-image-viewer__base"><img alt="test" src="https://tdesign.gtimg.com/demo/demo-image-3.png" class="tdesign-demo-image-viewer__ui-image--img">
+      <div class="tdesign-demo-image-viewer__ui-image--hover"><span><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-browse" style="font-size:1.4em;"><path fill="currentColor" d="M10.88 8a2.88 2.88 0 11-5.76 0 2.88 2.88 0 015.76 0zm-1 0a1.88 1.88 0 10-3.76 0 1.88 1.88 0 003.76 0z" fill-opacity="0.9"></path><path fill="currentColor" d="M1.12 8.23A7.72 7.72 0 008 12.5c2.9 0 5.54-1.63 6.88-4.27L15 8l-.12-.23A7.73 7.73 0 008 3.5a7.74 7.74 0 00-6.88 4.27L1 8l.12.23zM8 11.5A6.73 6.73 0 012.11 8 6.73 6.73 0 0113.9 8 6.74 6.74 0 018 11.5z" fill-opacity="0.9"></path></svg> 预览</span></div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./src/input/_example/addon.vue correctly 1`] = `
 <div class="tdesign-demo-block-column" style="max-width:500px;">
   <div class="t-input-adornment t-input-adornment--prepend"><span class="t-input-adornment__prepend">http://</span>
