@@ -1092,7 +1092,7 @@ exports[`Table Table asyncLoadingVue demo works fine 1`] = `
 
 exports[`Table Table baseVue demo works fine 1`] = `
 <div
-  class="t-space t-space-horizontal"
+  class="t-space t-space-vertical"
   style="gap: 16px;"
 >
   <div

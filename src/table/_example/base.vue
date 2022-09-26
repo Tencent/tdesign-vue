@@ -1,5 +1,5 @@
 <template>
-  <t-space>
+  <t-space direction="vertical">
     <!-- 按钮操作区域 -->
     <div>
       <t-radio-group v-model="size" variant="default-filled">
