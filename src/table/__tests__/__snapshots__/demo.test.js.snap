@@ -17498,7 +17498,7 @@ exports[`Table Table loadingVue demo works fine 1`] = `
 
 exports[`Table Table mergeCellsVue demo works fine 1`] = `
 <div
-  class="t-table t-size-s t-table--bordered t-table--rowspan-colspan t-table--column-resizable"
+  class="t-table t-table--bordered t-table--rowspan-colspan t-table--column-resizable"
   style="position: relative;"
 >
   <div
@@ -17735,96 +17735,115 @@ exports[`Table Table multiHeaderVue demo works fine 1`] = `
   class="tdesign-demo-block-column-large tdesign-demo-table-multi-heade tdesign-demo__tabler"
   style="width: 100%;"
 >
-  <div>
-    <label
-      class="t-checkbox t-is-checked"
+  <div
+    class="t-space t-space-horizontal"
+    style="gap: 16px;"
+  >
+    <div
+      class="t-space-item"
     >
-      <input
-        class="t-checkbox__former"
-        type="checkbox"
-        value=""
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
+      <label
+        class="t-checkbox t-is-checked"
       >
-        显示表格边框
-      </span>
-    </label>
-     
-    <label
-      class="t-checkbox t-is-checked"
+        <input
+          class="t-checkbox__former"
+          type="checkbox"
+          value=""
+        />
+        <span
+          class="t-checkbox__input"
+        />
+        <span
+          class="t-checkbox__label"
+        >
+          显示表格边框
+        </span>
+      </label>
+    </div>
+    <div
+      class="t-space-item"
     >
-      <input
-        class="t-checkbox__former"
-        type="checkbox"
-        value=""
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
+      <label
+        class="t-checkbox t-is-checked"
       >
-        显示固定表头
-      </span>
-    </label>
-     
-    <label
-      class="t-checkbox"
+        <input
+          class="t-checkbox__former"
+          type="checkbox"
+          value=""
+        />
+        <span
+          class="t-checkbox__input"
+        />
+        <span
+          class="t-checkbox__label"
+        >
+          显示固定表头
+        </span>
+      </label>
+    </div>
+    <div
+      class="t-space-item"
     >
-      <input
-        class="t-checkbox__former"
-        type="checkbox"
-        value=""
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
+      <label
+        class="t-checkbox"
       >
-        固定左侧列
-      </span>
-    </label>
-     
-    <label
-      class="t-checkbox"
+        <input
+          class="t-checkbox__former"
+          type="checkbox"
+          value=""
+        />
+        <span
+          class="t-checkbox__input"
+        />
+        <span
+          class="t-checkbox__label"
+        >
+          固定左侧列
+        </span>
+      </label>
+    </div>
+    <div
+      class="t-space-item"
     >
-      <input
-        class="t-checkbox__former"
-        type="checkbox"
-        value=""
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
+      <label
+        class="t-checkbox"
       >
-        固定右侧列
-      </span>
-    </label>
-     
-    <label
-      class="t-checkbox"
+        <input
+          class="t-checkbox__former"
+          type="checkbox"
+          value=""
+        />
+        <span
+          class="t-checkbox__input"
+        />
+        <span
+          class="t-checkbox__label"
+        >
+          固定右侧列
+        </span>
+      </label>
+    </div>
+    <div
+      class="t-space-item"
     >
-      <input
-        class="t-checkbox__former"
-        type="checkbox"
-        value=""
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
+      <label
+        class="t-checkbox"
       >
-        表头吸顶
-      </span>
-    </label>
+        <input
+          class="t-checkbox__former"
+          type="checkbox"
+          value=""
+        />
+        <span
+          class="t-checkbox__input"
+        />
+        <span
+          class="t-checkbox__label"
+        >
+          表头吸顶
+        </span>
+      </label>
+    </div>
   </div>
    
   <div

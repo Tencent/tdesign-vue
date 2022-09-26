@@ -25,7 +25,6 @@
       :stripe="stripe"
       :bordered="bordered"
       :hover="hover"
-      :size="size"
       :table-layout="tableLayout ? 'auto' : 'fixed'"
       :pagination="pagination"
       :showHeader="showHeader"
