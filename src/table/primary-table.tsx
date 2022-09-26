@@ -3,7 +3,6 @@ import {
 } from '@vue/composition-api';
 import get from 'lodash/get';
 import omit from 'lodash/omit';
-import isFunction from 'lodash/isFunction';
 import baseTableProps from './base-table-props';
 import primaryTableProps from './primary-table-props';
 import BaseTable, { BASE_TABLE_ALL_EVENTS, TableListeners } from './base-table';
