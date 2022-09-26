@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column-large tdesign-demo__table">
+  <t-space>
     <!-- 按钮操作区域 -->
     <div>
       <t-radio-group v-model="size" variant="default-filled">
@@ -7,13 +7,15 @@
         <t-radio-button value="medium">中尺寸</t-radio-button>
         <t-radio-button value="large">大尺寸</t-radio-button>
       </t-radio-group>
-      <br /><br />
+    </div>
+
+    <t-space>
       <t-checkbox v-model="stripe">显示斑马纹</t-checkbox>
       <t-checkbox v-model="bordered">显示表格边框</t-checkbox>
       <t-checkbox v-model="hover">显示悬浮效果</t-checkbox>
       <t-checkbox v-model="tableLayout">宽度自适应</t-checkbox>
       <t-checkbox v-model="showHeader">显示表头</t-checkbox>
-    </div>
+    </t-space>
 
     <!-- 当数据为空需要占位时，会显示 cellEmptyContent -->
     <t-table
@@ -29,7 +31,7 @@
       :showHeader="showHeader"
       cellEmptyContent="-"
     ></t-table>
-  </div>
+  </t-space>
 </template>
 <script lang="jsx">
 const data = [];

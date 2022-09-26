@@ -88,9 +88,9 @@ export default {
             type: 'single',
             // showConfirmAndReset: true,
             list: [
-              { label: 'anyone', value: 0 },
-              { label: 'Heriberto', value: 1 },
-              { label: 'Eric', value: 2 },
+              { label: 'anyone', value: '' },
+              { label: 'Heriberto', value: 'Heriberto' },
+              { label: 'Eric', value: 'Eric' },
             ],
           },
         },

@@ -236,7 +236,7 @@ export default defineComponent({
       params: RenderEllipsisCellParams,
     ) {
       const { cellNode } = params;
-      const { col, colIndex } = cellParams;
+      const { col } = cellParams;
       const content = isFunction(col.ellipsis) ? col.ellipsis(h, cellParams) : undefined;
       return (
         <TEllipsis
