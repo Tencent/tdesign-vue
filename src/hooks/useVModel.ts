@@ -1,4 +1,5 @@
 import { Ref, ref, getCurrentInstance } from '@vue/composition-api';
+import kebabCase from 'lodash/kebabCase';
 
 export type ChangeHandler<T, P extends any[]> = (value: T, ...args: P) => void;
 
@@ -13,6 +14,7 @@ export default function useVModel<T, P extends any[]>(
   defaultValue: T,
   onChange: ChangeHandler<T, P>,
   eventName = 'change',
+  propName = 'value',
   // 除了 value + onChange，还支持其他同含义字段和事件
   alias: UseVModelParams<T>[] = [],
 ): [Ref<T>, ChangeHandler<T, P>] {
@@ -20,8 +22,10 @@ export default function useVModel<T, P extends any[]>(
   const internalValue = ref<T>();
   internalValue.value = defaultValue;
 
+  const isControlled = Object.prototype.hasOwnProperty.call(vnode.componentOptions.propsData, propName)
+    || Object.prototype.hasOwnProperty.call(vnode.componentOptions.propsData, kebabCase(propName));
   // 受控模式
-  if (Object.prototype.hasOwnProperty.call(vnode.componentOptions.propsData, 'value')) {
+  if (isControlled) {
     return [
       value,
       (newValue, ...args) => {

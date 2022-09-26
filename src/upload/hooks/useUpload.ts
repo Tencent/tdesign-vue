@@ -36,11 +36,13 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
     autoUpload, isBatchUpload, multiple, value, defaultValue, files, defaultFiles,
   } = toRefs(props);
   const { global, t, classPrefix } = useConfig('upload');
+  // 同时支持 value 和 files
   const [uploadValue, setUploadValue] = useVModel(
     value,
     defaultValue.value || defaultFiles.value,
     props.onChange,
     'change',
+    'value',
     [
       {
         value: files,
