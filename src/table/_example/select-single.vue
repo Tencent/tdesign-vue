@@ -48,6 +48,8 @@ export default {
       selectedRowKeys: [102],
       columns: [
         {
+          // title: '单选',
+          // align: 'center',
           colKey: 'row-select',
           type: 'single',
           className: 'demo-single-select-cell',

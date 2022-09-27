@@ -183,6 +183,9 @@ export default defineComponent({
     const { column, FilterIcon } = this;
     if (!column.filter || (column.filter && !Object.keys(column.filter).length)) return null;
     const defaultFilterIcon = this.t(this.global.filterIcon) || <FilterIcon />;
+    const filterValue = this.tFilterValue?.[column.colKey];
+    const isObjectTrue = typeof filterValue === 'object' && !isEmpty(filterValue);
+    const isValueTrue = filterValue && typeof filterValue !== 'object';
     return (
       <Popup
         attach={this.primaryTableElement ? () => this.primaryTableElement : undefined}
@@ -195,7 +198,12 @@ export default defineComponent({
         on={{
           'visible-change': (val: boolean) => this.onFilterPopupVisibleChange(val),
         }}
-        class={[this.tableFilterClasses.icon, { [this.isFocusClass]: !isEmpty(this.tFilterValue?.[column.colKey]) }]}
+        class={[
+          this.tableFilterClasses.icon,
+          {
+            [this.isFocusClass]: isObjectTrue || isValueTrue,
+          },
+        ]}
         content={() => (
           <div class={this.tableFilterClasses.popupContent}>
             {getFilterContent(h, column)}
