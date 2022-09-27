@@ -57,8 +57,6 @@ export default defineComponent({
     const tableElmRef = ref<HTMLTableElement>();
     const tableBodyRef = ref<HTMLTableElement>();
     const tableFootHeight = ref(0);
-    const paginationAffixRef = ref();
-    const horizontalScrollAffixRef = ref();
 
     const {
       virtualScrollClasses, tableLayoutClasses, tableBaseClass, tableColFixedClasses,
@@ -68,6 +66,12 @@ export default defineComponent({
     const { global } = useConfig('table');
     const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
     const finalColumns = computed(() => spansAndLeafNodes.value?.leafColumns || props.columns);
+
+    // 吸附相关ref 用来做视图resize后重新定位
+    const paginationAffixRef = ref();
+    const horizontalScrollAffixRef = ref();
+    const headerTopAffixRef = ref();
+    const footerBottomAffixRef = ref();
 
     // 固定表头和固定列逻辑
     const {
@@ -90,7 +94,12 @@ export default defineComponent({
       updateThWidthList,
       setRecalculateColWidthFuncRef,
       addTableResizeObserver,
-    } = useFixed(props, context, finalColumns, paginationAffixRef, horizontalScrollAffixRef);
+    } = useFixed(props, context, finalColumns, {
+      paginationAffixRef,
+      horizontalScrollAffixRef,
+      headerTopAffixRef,
+      footerBottomAffixRef,
+    });
 
     // 1. 表头吸顶；2. 表尾吸底；3. 底部滚动条吸底；4. 分页器吸底
     const {
@@ -315,6 +324,8 @@ export default defineComponent({
       onInnerVirtualScroll,
       paginationAffixRef,
       horizontalScrollAffixRef,
+      headerTopAffixRef,
+      footerBottomAffixRef,
     };
   },
 
@@ -415,6 +426,7 @@ export default defineComponent({
           offsetBottom={marginScrollbarWidth || 0}
           props={getAffixProps(this.footerAffixedBottom, this.footerAffixProps)}
           style={{ marginTop: `${-1 * (this.tableFootHeight + marginScrollbarWidth)}px` }}
+          ref="footerBottomAffixRef"
         >
           <div
             ref="affixFooterRef"
@@ -459,6 +471,7 @@ export default defineComponent({
             offsetTop={0}
             props={getAffixProps(this.headerAffixedTop, this.headerAffixProps)}
             onFixedChange={this.onFixedChange}
+            ref="headerTopAffixRef"
           >
             {this.renderFixedHeader(columns)}
           </Affix>
