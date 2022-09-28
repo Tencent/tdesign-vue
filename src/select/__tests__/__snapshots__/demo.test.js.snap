@@ -1814,7 +1814,7 @@ exports[`Select Select popupPropsVue demo works fine 1`] = `
   >
     <div
       class="t-select__wrap"
-      style="width: 200px; display: inline-block; margin-left: 20px;"
+      style="width: 300px; display: inline-block; margin-left: 20px;"
     >
       <div
         class="t-input__wrap t-select"
