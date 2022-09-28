@@ -8,11 +8,11 @@
       style="width: 200px; display: inline-block"
     />
     <t-select
-      v-model="value"
+      v-model="value2"
       placeholder="-请选择-"
-      :options="options"
+      :options="options2"
       :popupProps="popupProps2"
-      style="width: 200px; display: inline-block; margin-left: 20px"
+      style="width: 300px; display: inline-block; margin-left: 20px"
     />
   </t-space>
 </template>
@@ -21,27 +21,39 @@
 export default {
   data() {
     return {
+      value: '1',
       options: [
         {
-          label: '已选择的选项',
+          label: '固定300px宽度',
           value: '1',
         },
         {
-          label: '短的选项二',
+          label: '选项内容超长超长超长超长超长超长超长超长超长超长超长的选项',
           value: '2',
         },
       ],
       // 自定义下拉选项宽度为300px
       popupProps: {
-        overlayStyle: {
+        overlayInnerStyle: {
           width: '300px',
         },
       },
+
+      value2: '1',
+      options2: [
+        {
+          label: '下拉框强制和输入框同宽',
+          value: '1',
+        },
+        {
+          label: '选项内容超长超长超长超长超长超长超长超长超长超长超长的选项',
+          value: '2',
+        },
+      ],
       // 定义下拉宽度始终与触发浮层的元素（即select组件）等宽
       popupProps2: {
-        overlayStyle: (trigger) => ({ width: `${trigger.offsetWidth}px` }),
+        overlayInnerStyle: (trigger) => ({ width: `${trigger.offsetWidth}px` }),
       },
-      value: '1',
     };
   },
 };
