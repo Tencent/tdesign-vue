@@ -1,3 +1,4 @@
+import { CreateElement } from 'vue';
 import {
   defineComponent, toRefs, PropType, ref, computed, h,
 } from '@vue/composition-api';
@@ -13,6 +14,7 @@ import useCommonClassName from '../../hooks/useCommonClassName';
 import TLoading from '../../loading';
 import useDrag, { UploadDragEvents } from '../hooks/useDrag';
 import useGlobalIcon from '../../hooks/useGlobalIcon';
+import ImageViewer from '../../image-viewer';
 
 export interface DraggerProps extends CommonDisplayFileProps {
   trigger?: TdUploadProps['trigger'];
@@ -71,7 +73,19 @@ export default defineComponent({
     renderImage() {
       const file = this.displayFiles[0];
       if (!file) return null;
-      return <div class={`${this.uploadPrefix}__dragger-img-wrap`}>{file.url && <img src={file.url} />}</div>;
+      return (
+        <div class={`${this.uploadPrefix}__dragger-img-wrap`}>
+          {file.url && (
+            <ImageViewer
+              images={[file.url]}
+              trigger={(h: CreateElement, { open }: any) => (
+                <img src={file.url} onClick={open} style={{ maxWidth: '100%', maxHeight: '100%' }} />
+              )}
+              style={{ maxWidth: '120px', maxHeight: '120px' }}
+            ></ImageViewer>
+          )}
+        </div>
+      );
     },
 
     renderUploading() {

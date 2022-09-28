@@ -1,3 +1,4 @@
+import { CreateElement } from 'vue';
 import {
   defineComponent, PropType, toRefs, computed,
 } from '@vue/composition-api';
@@ -9,7 +10,7 @@ import {
 } from 'tdesign-icons-vue';
 import Loading from '../../loading';
 import { useGlobalIcon } from '../../hooks/useGlobalIcon';
-// import ImageViewer from '../../image-viewer';
+import ImageViewer from '../../image-viewer';
 import { CommonDisplayFileProps, commonProps } from '../interface';
 import { TdUploadProps, UploadFile } from '../type';
 
@@ -69,26 +70,18 @@ export default defineComponent({
           <img class={`${this.classPrefix}-upload__card-image`} src={file.url} />
           <div class={`${this.classPrefix}-upload__card-mask`}>
             <span class={`${this.classPrefix}-upload__card-mask-item`} onClick={(e: MouseEvent) => e.stopPropagation()}>
-              <BrowseIcon
-                onClick={({ e }: { e: MouseEvent }) => {
-                  this.onPreview?.({ file, index, e });
-                  open();
-                }}
-              />
-              {/* <ImageViewer
-                images={displayFiles.value.map((t: UploadFile) => t.url)}
+              <ImageViewer
+                images={this.displayFiles.map((t: UploadFile) => t.url)}
                 defaultIndex={index}
-                trigger={(h, { open }) => {
-                  return (
-                    <BrowseIcon
-                      onClick={({ e }: { e: MouseEvent }) => {
-                        props.onPreview?.({ file, index, e });
-                        open();
-                      }}
-                    />
-                  );
-                }}
-              ></ImageViewer> */}
+                trigger={(h: CreateElement, { open }: any) => (
+                  <BrowseIcon
+                    onClick={({ e }: { e: MouseEvent }) => {
+                      this.onPreview?.({ file, index, e });
+                      open();
+                    }}
+                  />
+                )}
+              ></ImageViewer>
             </span>
             {!this.disabled && [
               <span class={`${this.classPrefix}-upload__card-mask-item-divider`} />,

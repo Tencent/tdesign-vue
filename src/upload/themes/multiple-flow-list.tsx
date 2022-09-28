@@ -1,3 +1,4 @@
+import { CreateElement } from 'vue';
 import {
   computed, defineComponent, toRefs, PropType,
 } from '@vue/composition-api';
@@ -10,7 +11,7 @@ import {
   TimeFilledIcon as TdTimeFilledIcon,
 } from 'tdesign-icons-vue';
 import { useGlobalIcon } from '../../hooks/useGlobalIcon';
-// import ImageViewer from '../../image-viewer';
+import ImageViewer from '../../image-viewer';
 import { CommonDisplayFileProps, commonProps } from '../interface';
 import TButton from '../../button';
 import { UploadFile, TdUploadProps } from '../type';
@@ -143,24 +144,18 @@ export default defineComponent({
             <div class={`${this.uploadPrefix}__card-mask`}>
               {file.url && (
                 <span class={`${this.uploadPrefix}__card-mask-item`}>
-                  <BrowseIcon
-                    onClick={({ e }: { e: MouseEvent }) => {
-                      open();
-                      this.onPreview?.({ file, index, e });
-                    }}
-                  />
-                  {/* <ImageViewer
-                    images={displayFiles.value.map((t) => t.url)}
+                  <ImageViewer
+                    images={this.displayFiles.map((t) => t.url)}
                     defaultIndex={index}
-                    trigger={(h, { open }) => (
+                    trigger={(h: CreateElement, { open }: any) => (
                       <BrowseIcon
                         onClick={({ e }: { e: MouseEvent }) => {
+                          this.onPreview?.({ file, index, e });
                           open();
-                          props.onPreview?.({ file, index, e });
                         }}
                       />
                     )}
-                  ></ImageViewer> */}
+                  ></ImageViewer>
                   <span class={`${this.uploadPrefix}__card-mask-item-divider`}></span>
                 </span>
               )}

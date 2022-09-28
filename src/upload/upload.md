@@ -1,9 +1,5 @@
 :: BASE_DOC ::
 
-### 输入框文件上传
-
-{{ single-input }}
-
 ## API
 ### Upload Props
 
