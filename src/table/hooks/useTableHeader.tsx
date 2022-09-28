@@ -56,12 +56,13 @@ export default function useTableHeader(props: TdBaseTableProps) {
       [tableFilterClasses.filterable]: filterIcon,
     };
     const content = isFunction(ellipsisTitle) ? ellipsisTitle(h, { col, colIndex }) : undefined;
+    const isEllipsis = ellipsisTitle !== undefined ? Boolean(ellipsisTitle) : Boolean(col.ellipsis);
     return (
       <div class={classes}>
         <div class={tableSortClasses.title}>
-          {ellipsisTitle !== false && ellipsisTitle !== null ? (
+          {isEllipsis ? (
             <TEllipsis
-              placement="bottom-right"
+              placement="bottom"
               attach={attach ? () => attach : undefined}
               tooltipContent={content && (() => content)}
               tooltipProps={typeof ellipsisTitle === 'object' ? ellipsisTitle : undefined}

@@ -4,7 +4,6 @@
     :bordered="true"
     :data="data"
     :columns="columns"
-    :size="size"
     :rowspanAndColspan="rowspanAndColspan"
     table-layout="fixed"
     resizable
@@ -61,7 +60,6 @@ export default {
           title: '说明',
         },
       ],
-      size: 'small',
     };
   },
   methods: {

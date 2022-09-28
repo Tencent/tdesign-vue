@@ -16,7 +16,7 @@ import isString from 'lodash/isString';
 import pick from 'lodash/pick';
 import get from 'lodash/get';
 import { CreateElement } from 'vue';
-import { formatRowAttributes, formatRowClassNames } from './utils';
+import { formatClassNames, formatRowAttributes, formatRowClassNames } from './utils';
 import { getRowFixedStyles, getColumnFixedStyles } from './hooks/useFixed';
 import { RowAndColFixedPosition } from './interface';
 import useClassName from './hooks/useClassName';
@@ -89,7 +89,11 @@ export function renderCell(
     cellEmptyContent?: TdBaseTableProps['cellEmptyContent'];
   },
 ) {
-  const { col, row } = params;
+  const { col, row, rowIndex } = params;
+  // support serial number column
+  if (col.colKey === 'serial-number') {
+    return rowIndex + 1;
+  }
   if (isFunction(col.cell)) {
     return col.cell(h, params);
   }
@@ -232,13 +236,11 @@ export default defineComponent({
       params: RenderEllipsisCellParams,
     ) {
       const { cellNode } = params;
-      const { col, colIndex } = cellParams;
-      // 前两列左对齐显示
-      const placement = colIndex < 2 ? 'top-left' : 'top-right';
+      const { col } = cellParams;
       const content = isFunction(col.ellipsis) ? col.ellipsis(h, cellParams) : undefined;
       return (
         <TEllipsis
-          placement={placement}
+          placement={'top'}
           attach={this.tableElm ? () => this.tableElm : undefined}
           tooltipContent={content && (() => content)}
           tooltipProps={typeof col.ellipsis === 'object' ? col.ellipsis : undefined}
@@ -253,7 +255,7 @@ export default defineComponent({
       const { cellSpans, dataLength, rowAndColFixedPosition } = extra;
       const cellNode = renderCell(params, this.tSlots, { cellEmptyContent: extra.cellEmptyContent });
       const tdStyles = getColumnFixedStyles(col, colIndex, rowAndColFixedPosition, this.tableColFixedClasses);
-      const customClasses = isFunction(col.className) ? col.className({ ...params, type: 'td' }) : col.className;
+      const customClasses = formatClassNames(col.className, { ...params, type: 'td' });
       const classes = [
         tdStyles.classes,
         customClasses,

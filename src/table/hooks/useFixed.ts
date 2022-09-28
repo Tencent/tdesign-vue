@@ -85,8 +85,7 @@ export default function useFixed(
   props: TdBaseTableProps,
   context: SetupContext,
   finalColumns: ComputedRef<BaseTableCol<TableRowData>[]>,
-  paginationAffixRef: Ref,
-  horizontalScrollAffixRef: Ref,
+  affixRef: Record<string, Ref>,
 ) {
   const {
     columns,
@@ -381,8 +380,10 @@ export default function useFixed(
 
   const updateAffixPosition = () => {
     // 在表格高度变化的时候 需要手动调整affix的位置 因为affix本身无法监听到这些变化触发重新计算
-    paginationAffixRef.value?.handleScroll?.();
-    horizontalScrollAffixRef.value?.handleScroll?.();
+    affixRef.paginationAffixRef.value?.handleScroll?.();
+    affixRef.horizontalScrollAffixRef.value?.handleScroll?.();
+    affixRef.headerTopAffixRef.value?.handleScroll?.();
+    affixRef.footerBottomAffixRef.value?.handleScroll?.();
   };
 
   const updateThWidthList = (trList: HTMLCollection | { [colKey: string]: number }) => {

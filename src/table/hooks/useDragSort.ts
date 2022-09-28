@@ -102,6 +102,7 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
       },
     };
 
+    if (!dragContainer) return;
     if (isRowDraggable.value) {
       dragInstanceTmp = new Sortable(dragContainer, { ...baseOptions });
     } else {
@@ -163,6 +164,7 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
         context.emit('drag-sort', params);
       },
     };
+    if (!container) return;
     dragInstanceTmp = new Sortable(container, options);
     return dragInstanceTmp;
   };
