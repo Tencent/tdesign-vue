@@ -13,6 +13,7 @@ import selectableVue from '@/src/tag/_example/selectable.vue';
 import shapeVue from '@/src/tag/_example/shape.vue';
 import sizeVue from '@/src/tag/_example/size.vue';
 import themeVue from '@/src/tag/_example/theme.vue';
+import customColorVue from '@/src/tag/_example/custom-color.vue';
 
 const mapper = {
   baseVue,
@@ -25,6 +26,7 @@ const mapper = {
   shapeVue,
   sizeVue,
   themeVue,
+  customColorVue,
 };
 
 describe('Tag', () => {
