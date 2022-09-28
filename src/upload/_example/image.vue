@@ -78,7 +78,7 @@ export default {
   data() {
     return {
       file1: [],
-      file2: [],
+      file2: [{ name: 'demo-image-1.png', url: 'https://tdesign.gtimg.com/demo/demo-image-1.png' }],
       files: [],
       fileFail: [],
       disabled: false,
