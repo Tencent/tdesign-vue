@@ -32,6 +32,7 @@ import SelectInput, {
   SelectInputValueChangeContext,
 } from '../select-input';
 import FakeArrow from '../common-components/fake-arrow';
+import { off, on } from '../utils/dom';
 import Option from './option';
 import SelectPanel from './select-panel';
 import { getSingleContent, getMultipleContent, getNewMultipleValue } from './util';
@@ -214,7 +215,8 @@ export default defineComponent({
     const handleCreate = () => {
       if (!tInputValue.value) return;
       const createVal = tInputValue.value;
-      setTInputValue('');
+      // 只有多选情况下需要帮用户清除一次输入框内容，单选场景选中后 popup 消失，携带内容清除的作用
+      multiple.value && setTInputValue('');
       instance.emit('create', createVal);
       props.onCreate?.(createVal);
     };
@@ -259,7 +261,8 @@ export default defineComponent({
     const handleEnter = (value: string, context: { e: KeyboardEvent }) => {
       instance.emit('enter', { value, e: context?.e, inputValue: tInputValue.value });
       props.onEnter?.({ value, e: context?.e, inputValue: tInputValue.value.toString() });
-      creatable.value && handleCreate();
+      // 当支持创建的时候，按下 enter 键，若 hoverIndex 大于 0，则视为选择列表中筛选出的已有项目，只有当 hoverIndex 为 -1(未选中)/0(创建条目) 的时候，才视为触发 create 回调
+      creatable.value && hoverIndex.value < 1 && handleCreate();
     };
 
     const debounceSearch = debounce(() => {
@@ -303,7 +306,7 @@ export default defineComponent({
     // 键盘操作逻辑相关
     const hoverIndex = ref(-1);
     const keydownEvent = (e: KeyboardEvent) => {
-      const displayOptions: Array<TdOptionProps> = [];
+      const displayOptions: (TdOptionProps & { isCreated?: boolean })[] = [];
 
       const getCurrentOptionsList = (options: TdOptionProps[]) => {
         options.forEach((option) => {
@@ -381,6 +384,9 @@ export default defineComponent({
           break;
         case 'Enter':
           if (hoverIndex.value === -1) return;
+          if (displayOptions[hoverIndex.value].isCreated && multiple.value) {
+            handleCreate();
+          }
           if (!multiple.value) {
             setInnerValue((displayOptions[hoverIndex.value] as TdOptionProps).value, {
               e,
@@ -426,8 +432,8 @@ export default defineComponent({
     watch(
       innerPopupVisible,
       (val) => {
-        val && document.addEventListener('keydown', keydownEvent);
-        !val && document.removeEventListener('keydown', keydownEvent);
+        val && on(document, 'keydown', keydownEvent);
+        !val && off(document, 'keydown', keydownEvent);
       },
       {
         flush: 'sync',

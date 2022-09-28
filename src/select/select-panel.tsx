@@ -92,7 +92,8 @@ export default defineComponent({
       };
 
       const res: Array<SelectOption & { index?: number }> = [];
-      let groupIndex = 0;
+      // 动态赋予选项 index 的计数：默认从 0 开始累加，当含有用户创建条目的时候，创建条目 index 为 0，正常条目下标从 1 开始累加
+      let groupIndex = isCreateOptionShown.value ? 1 : 0;
       props.options.forEach((option) => {
         if ((option as SelectOptionGroup).group && (option as SelectOptionGroup).children) {
           res.push({
@@ -106,15 +107,22 @@ export default defineComponent({
           });
         }
         if (filterMethods(option)) {
-          res.push({ ...option, index: res.length });
+          res.push({ ...option, index: groupIndex + res.length });
         }
       });
 
       return res;
     });
-    const getDisplayOptions = () => displayOptions.value;
+    const getDisplayOptions = () => {
+      const arr: (SelectOption & { isCreated?: boolean })[] = [];
+      if (isCreateOptionShown.value) {
+        arr.push({ label: String(inputValue.value), value: String(inputValue.value), isCreated: true } as SelectOption);
+      }
+      arr.push(...displayOptions.value);
+      return arr;
+    };
 
-    const isCreateOptionShown = computed(() => props.creatable && props.filterable && props.inputValue);
+    const isCreateOptionShown = computed(() => !!(props.creatable && props.filterable && props.inputValue));
     const isEmpty = computed(() => !(displayOptions.value.length > 0));
     const isVirtual = computed(
       () => props.scroll?.type === 'virtual' && props.options?.length > (props.scroll?.threshold || 100),
@@ -219,6 +227,7 @@ export default defineComponent({
       return (
         <ul class={[`${this.componentName}__create-option`, `${this.componentName}__list`]}>
           <t-option
+            index={0}
             isCreatedOption={true}
             value={inputValue}
             label={inputValue}
