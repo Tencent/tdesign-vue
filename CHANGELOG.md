@@ -5,6 +5,15 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.48.4 `2022-09-28` 
+### 🚀 Features
+- `Upload`: 支持使用 ImageViewer 预览图片 @chaishi ([#1579](https://github.com/Tencent/tdesign-vue/pull/1579))
+### 🐞 Bug Fixes
+- `InputNumber`: 输入中文或特殊符号时，清空数字为 `undefined` @chaishi ([#1579](https://github.com/Tencent/tdesign-vue/pull/1579))
+- `Upload`:
+  - 请求支持带上自定义 `headers` @chaishi ([#1579](https://github.com/Tencent/tdesign-vue/pull/1579))
+  - 请求支持带上 `withCredentials` @chaishi ([#1579](https://github.com/Tencent/tdesign-vue/pull/1579))
+
 ## 🌈 0.48.3 `2022-09-28` 
 ### 🚀 Features
 - `ImageViewer`: 新增 `ImageViewer` 图片预览组件 @sinbadmaster ([#1520](https://github.com/Tencent/tdesign-vue/pull/1520))
