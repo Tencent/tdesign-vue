@@ -343,10 +343,6 @@ export default defineComponent({
             ref={`${col}Col`}
             class={`${this.panelClassName}-body-scroll`}
             onScroll={debounce(() => this.handleScroll(col), 50)}
-            style={{
-              '--timePickerPanelOffsetTop': panelOffset.top,
-              '--timePickerPanelOffsetBottom': panelOffset.bottom,
-            }}
           >
             {this.getColList(col).map((el) => (
               <li
