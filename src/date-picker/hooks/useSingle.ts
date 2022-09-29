@@ -25,6 +25,7 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
   const formatRef = computed(() => getDefaultFormat({
     mode: props.mode,
     format: props.format,
+    valueType: props.valueType,
     enableTimePicker: props.enableTimePicker,
   }));
 
@@ -82,10 +83,13 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
 
       popupVisible.value = false;
       if (isValidDate(val, formatRef.value.format)) {
-        onChange?.(formatDate(val, { format: formatRef.value.format }) as DateValue, {
-          dayjsValue: parseToDayjs(val, formatRef.value.format),
-          trigger: 'enter',
-        });
+        onChange?.(
+          formatDate(val, { format: formatRef.value.format, targetFormat: formatRef.value.valueType }) as DateValue,
+          {
+            dayjsValue: parseToDayjs(val, formatRef.value.format),
+            trigger: 'enter',
+          },
+        );
       } else if (isValidDate(value.value, formatRef.value.format)) {
         inputValue.value = formatDate(value.value, {
           format: formatRef.value.format,
