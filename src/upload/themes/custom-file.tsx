@@ -1,7 +1,8 @@
 import { defineComponent, PropType } from '@vue/composition-api';
 import isFunction from 'lodash/isFunction';
 import useDrag, { UploadDragEvents } from '../hooks/useDrag';
-import { CommonDisplayFileProps, commonProps } from '../interface';
+import { CommonDisplayFileProps } from '../interface';
+import { commonProps } from '../constants';
 import { renderContent } from '../../utils/render-tnode';
 import { TdUploadProps } from '../type';
 
