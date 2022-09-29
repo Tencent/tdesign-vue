@@ -293,11 +293,15 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
           }
           xhrReq.value = [];
           const params: SuccessContext = {
+            // 全部文件
             fileList: data.files,
+            // 当次上传成功的文件
             currentFiles: files,
             file: files[0],
             // 只有全部请求完成后，才会存在该字段
             results: list?.map((t) => t.data),
+            // 单文件单请求有一个 response，多文件多请求有多个 response
+            response: data.response || list.map((t) => t.data.response),
           };
           props.onSuccess?.(params);
           context.emit('success', params);
