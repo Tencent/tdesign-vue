@@ -356,7 +356,9 @@ export default defineComponent({
 
     const panelProps = computed(() => ({
       hoverValue: (isHoverCell.value ? hoverValue.value : []) as string[],
-      value: (isSelected.value ? cacheValue.value : value.value) as string[],
+      value: (isSelected.value
+        ? formatDate(cacheValue.value, { format: formatRef.value.format })
+        : value.value) as string[],
       activeIndex: activeIndex.value,
       year: year.value,
       month: month.value,
