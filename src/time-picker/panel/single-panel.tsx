@@ -37,6 +37,7 @@ export default defineComponent({
     onChange: Function,
     resetTriggerScroll: Function,
     disableTime: Function,
+    isShowPanel: Boolean,
   },
   setup(props, ctx) {
     const {
@@ -179,6 +180,7 @@ export default defineComponent({
     const handleScroll = (col: EPickerCols) => {
       let val: number | string;
       let formattedVal: string;
+      if (!props.isShowPanel) return;
 
       const scrollTop = (ctx.refs as any)[`${col}Col`]?.scrollTop + panelOffset.top;
 
