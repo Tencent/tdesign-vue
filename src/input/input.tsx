@@ -48,6 +48,9 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       default: false,
     },
   },
+  inject: {
+    tFormItem: { default: undefined },
+  },
   data() {
     return {
       formDisabled: undefined,
