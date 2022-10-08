@@ -9,7 +9,7 @@ import { Styles } from '../common';
 
 export type overlayInnerStyleProps = Pick<
   TdSelectInputProps,
-  'popupProps' | 'autoWidth' | 'readonly' | 'onPopupVisibleChange' | 'disabled'
+  'popupProps' | 'autoWidth' | 'readonly' | 'onPopupVisibleChange' | 'disabled' | 'allowInput'
 >;
 
 // 单位：px
@@ -43,9 +43,12 @@ export default function useOverlayInnerStyle(props: overlayInnerStyleProps) {
 
   const onInnerPopupVisibleChange = (visible: boolean, context: PopupVisibleChangeContext) => {
     if (props.disabled || props.readonly) return;
-    innerPopupVisible.value = visible;
-    props.onPopupVisibleChange?.(visible, context);
-    instance.emit('popup-visible-change', visible, context);
+
+    // 如果点击触发元素（输入框）且为可输入状态，则继续显示下拉框
+    const newVisible = context.trigger === 'trigger-element-click' && props.allowInput ? true : visible;
+    innerPopupVisible.value = newVisible;
+    props.onPopupVisibleChange?.(newVisible, context);
+    instance.emit('popup-visible-change', newVisible, context);
   };
 
   const tOverlayInnerStyle = computed(() => {
