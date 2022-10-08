@@ -1,25 +1,8 @@
 import pick from 'lodash/pick';
-import { TdTreeProps } from '../type';
-
-export interface TypeTreeScope {
-  checkProps?: TdTreeProps['checkProps'];
-  disableCheck?: TdTreeProps['disableCheck'];
-  empty?: TdTreeProps['empty'];
-  icon?: TdTreeProps['icon'];
-  label?: TdTreeProps['label'];
-  line?: TdTreeProps['line'];
-  operations?: TdTreeProps['operations'];
-}
-
-export interface TypeTreeCache {
-  nodesMap: Map<string, any>;
-  mouseEvent?: Event;
-  scope: TypeTreeScope;
-  scopedSlots: any;
-}
+import { TypeTreeProps, TypeTreeCache } from '../interface';
 
 // 提供缓存对象
-export default function useCache(props: TdTreeProps) {
+export default function useCache(props: TypeTreeProps) {
   const cache: TypeTreeCache = {
     // 缓存渲染节点
     nodesMap: new Map(),

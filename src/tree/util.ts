@@ -1,8 +1,12 @@
-import { VNode } from 'vue';
-import TreeStore from '../_common/js/tree/tree-store';
-import TreeNode from '../_common/js/tree/tree-node';
 import {
-  TypeMark, TypeLineModel, TypeTNodeProp, TypeGetTNodeOption, TypeTargetNode,
+  TypeVNode,
+  TypeTreeStore,
+  TypeTreeNode,
+  TypeMark,
+  TypeLineModel,
+  TypeTNodeProp,
+  TypeGetTNodeOption,
+  TypeTargetNode,
 } from './interface';
 
 export { emitEvent } from '../utils/event';
@@ -40,7 +44,7 @@ export function getMark(name: string, element?: HTMLElement, root?: HTMLElement)
   return info;
 }
 
-export function getTNode(prop: TypeTNodeProp, options: TypeGetTNodeOption): string | VNode {
+export function getTNode(prop: TypeTNodeProp, options: TypeGetTNodeOption): string | TypeVNode {
   let tnode = null;
   let item = null;
   const conf = {
@@ -54,13 +58,13 @@ export function getTNode(prop: TypeTNodeProp, options: TypeGetTNodeOption): stri
   if (typeof item === 'string') {
     tnode = item;
   } else if (item) {
-    tnode = item as VNode;
+    tnode = item as TypeVNode;
   }
   return tnode;
 }
 
 // 获取一个节点层级位置的连线模型
-export function getLineModel(nodes: TreeNode[], node: TreeNode, index: number): TypeLineModel {
+export function getLineModel(nodes: TypeTreeNode[], node: TypeTreeNode, index: number): TypeLineModel {
   // 标记 [上，右，下，左] 是否有连线
   const lineModel: TypeLineModel = {
     top: false,
@@ -96,7 +100,7 @@ export function isTreeNodeValue(item: unknown): boolean {
   return typeof item === 'string' || typeof item === 'number';
 }
 
-export function getNode(store: TreeStore, item: TypeTargetNode): TreeNode {
+export function getNode(store: TypeTreeStore, item: TypeTargetNode): TypeTreeNode {
   let node = null;
   let val = null;
   if (typeof item === 'string' || typeof item === 'number') {

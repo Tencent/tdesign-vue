@@ -1,14 +1,8 @@
 import pick from 'lodash/pick';
 import TreeStore from '../../_common/js/tree/tree-store';
-import { TdTreeProps } from '../type';
-import { TypeValueMode, TypeEventState, TypeTreeNodeModel } from '../interface';
+import { TypeTreeProps, TypeValueMode, TypeTreeNodeModel } from '../interface';
 
-export interface TypeUseStoreOptions {
-  onLoad?: (info: TypeEventState) => void;
-  onUpdate?: () => void;
-}
-
-export default function useTreeStore(props: TdTreeProps) {
+export default function useTreeStore(props: TypeTreeProps) {
   const {
     actived, value, valueMode, filter, keys,
   } = props;

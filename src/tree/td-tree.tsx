@@ -18,15 +18,11 @@ import TreeNode from '../_common/js/tree/tree-node';
 import props from './props';
 import { useConfig, usePrefixClass } from '../hooks/useConfig';
 import { renderTNodeJSX } from '../utils/render-tnode';
-import {
-  // ClassName,
-  TNodeReturnValue,
-  TreeOptionData,
-} from '../common';
-// import { TdTreeProps } from './type';
+import { TNodeReturnValue, TreeOptionData } from '../common';
 import {
   // TypeTdTreeProps,
   TreeNodeValue,
+  TypeTreeState,
   // TypeValueMode,
   // TypeEventState,
   // TreeNodeState,
@@ -36,6 +32,7 @@ import {
 } from './interface';
 import useTreeStore from './hooks/useTreeStore';
 import useCache from './hooks/useCache';
+import useTreeNodes from './hooks/useTreeNodes';
 import {
   // getMark,
   getNode,
@@ -57,27 +54,50 @@ export default defineComponent({
     const { cache, updateTreeScope } = useCache(props);
 
     const classList = computed(() => {
-      const list: Array<string> = [`${componentName}`];
+      const cname = componentName.value;
+      const list: Array<string> = [cname];
       const {
         disabled, hover, transition, checkable, expandOnClickNode,
       } = props;
       if (disabled) {
-        list.push(`${classPrefix}-is-disabled`);
+        list.push(`${classPrefix.value}-is-disabled`);
       }
       if (hover) {
-        list.push(`${componentName}--hoverable`);
+        list.push(`${cname}--hoverable`);
       }
       if (checkable) {
-        list.push(`${componentName}--checkable`);
+        list.push(`${cname}--checkable`);
       }
       if (transition) {
-        list.push(`${componentName}--transition`);
+        list.push(`${cname}--transition`);
       }
       if (expandOnClickNode) {
-        list.push(`${componentName}--block-node`);
+        list.push(`${cname}--block-node`);
       }
       return list;
     });
+
+    // 单个节点高度(px)
+    const itemMaxHeight = computed(() => 42);
+    // tree 高度限制格式化
+    const maxHeight = computed(() => 0);
+    // 是否使用虚拟滚动
+    const vScrollEnable = computed(() => !!maxHeight);
+    // 是否启用嵌套布局
+    // 暂时仅使用平铺布局
+    // 嵌套布局还需要进一步提升渲染性能
+    const nested = computed(() => !!maxHeight);
+
+    // 用于 hooks 传递数据
+    const state: TypeTreeState = {
+      itemMaxHeight,
+      vScrollEnable,
+      nested,
+      store,
+      cache,
+    };
+
+    useTreeNodes(props, state);
 
     // 不想暴露给用户的属性与方法，统一挂载到 setup 返回的对象上
     // 实例上无法直接访问这些方法与属性
@@ -218,82 +238,6 @@ export default defineComponent({
   },
 });
 
-// mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tree')).extend({
-// data() {
-//   // 添加 $ 前缀的属性，不会被 vue 监听，初始化时无法取得 data 中定义的值
-//   // 写在 data 中是为了通过 ts 语法检测，应当在 created 生命周期初始化
-//   return {
-//     // 数据源
-//     store: null,
-//     // 视图列表
-//     treeNodeViews: [],
-//     // 混合配置对象
-//     // 传递给子节点，一起监听属性
-//     // 便于同步传递给 tree 的状态
-//     treeScope: {
-//       checkProps: null,
-//       disableCheck: false,
-//       empty: null,
-//       icon: null,
-//       label: null,
-//       line: null,
-//       operations: null,
-//     },
-//     // 缓存节点
-//     $cacheMap: null,
-//     // 缓存鼠标事件
-//     $mouseEvent: null,
-//     // 用于禁止绑定监听的 scope 对象，例如 scopedSlots
-//     // 如果 scopedSlots 放在可监听属性如 treeScope 中
-//     // 会导致外部关联组件如 input value 更新时，同步触发了所有子节点 render 方法
-//     // 因此单独提供此对象解锁关联
-//     $proxyScope: null,
-//   };
-// },
-// computed: {
-//   classList(): ClassName {
-//     const list: Array<string> = [this.componentName];
-//     const {
-//       disabled, hover, transition, checkable, expandOnClickNode,
-//     } = this;
-//     if (disabled) {
-//       list.push(`${this.classPrefix}-is-disabled`);
-//     }
-//     if (hover) {
-//       list.push(`${this.componentName}--hoverable`);
-//     }
-//     if (checkable) {
-//       list.push(`${this.componentName}--checkable`);
-//     }
-//     if (transition) {
-//       list.push(`${this.componentName}--transition`);
-//     }
-//     if (expandOnClickNode) {
-//       list.push(`${this.componentName}--block-node`);
-//     }
-//     return list;
-//   },
-//   // 单个节点高度(px)
-//   itemMaxHeight(): number {
-//     return 42;
-//   },
-//   // tree 高度限制格式化
-//   maxHeight(): number {
-//     return 0;
-//   },
-//   // 是否使用虚拟滚动
-//   vScrollEnable(): boolean {
-//     return !!this.maxHeight;
-//   },
-//   // 是否启用嵌套布局
-//   nested(): boolean {
-//     let nested = !!this.maxHeight;
-//     // 暂时仅使用平铺布局
-//     // 嵌套布局还需要进一步提升渲染性能
-//     nested = false;
-//     return nested;
-//   },
-// },
 // watch: {
 //   // tdesign-vue-next 编译的代码导致了 dom 频繁刷新
 //   // 怀疑是在 render 替换了 object 类型的属性导致
@@ -318,25 +262,6 @@ export default defineComponent({
 //   },
 // },
 // methods: {
-// // 创建单个 tree 节点
-// renderItem(node: TreeNode) {
-//   const {
-//     nested, treeScope, $proxyScope, expandOnClickNode,
-//   } = this;
-//   const treeItem = (
-//     <TreeItem
-//       key={node.value}
-//       node={node}
-//       nested={nested}
-//       treeScope={treeScope}
-//       proxyScope={$proxyScope}
-//       onClick={this.handleClick}
-//       onChange={this.handleChange}
-//       expandOnClickNode={expandOnClickNode}
-//     />
-//   );
-//   return treeItem;
-// },
 // // 刷新树的视图状态
 // refresh() {
 //   const { store, nested } = this;
@@ -375,97 +300,6 @@ export default defineComponent({
 //       }
 //     });
 //   });
-// },
-// // 同步 Store 选项
-// updateStoreConfig() {
-//   const { store } = this;
-//   if (!store) return;
-//   // 统一更新选项，然后在 store 统一识别属性更新
-//   const storeProps = pick(this, [
-//     'expandAll',
-//     'expandLevel',
-//     'expandMutex',
-//     'expandParent',
-//     'activable',
-//     'activeMultiple',
-//     'disabled',
-//     'checkable',
-//     'checkStrictly',
-//     'load',
-//     'lazy',
-//     'valueMode',
-//     'filter',
-//   ]);
-//   store.setConfig(storeProps);
-// },
-// updateExpanded() {
-//   const { store, expanded, expandParent } = this;
-//   // 初始化展开状态
-//   // 校验是否自动展开父节点
-//   if (Array.isArray(expanded)) {
-//     const expandedMap = new Map();
-//     expanded.forEach((val) => {
-//       expandedMap.set(val, true);
-//       if (expandParent) {
-//         const node = store.getNode(val);
-//         node.getParents().forEach((tn: TypeTreeNodeModel) => {
-//           expandedMap.set(tn.value, true);
-//         });
-//       }
-//     });
-//     const expandedArr = Array.from(expandedMap.keys());
-//     store.setExpanded(expandedArr);
-//   }
-// },
-// // 初始化树结构
-// build() {
-//   let list = this.data;
-//   const {
-//     actived, value, valueMode, filter, keys,
-//   } = this;
-
-//   const store = new TreeStore({
-//     valueMode: valueMode as TypeValueMode,
-//     filter,
-//     onLoad: (info: TypeEventState) => {
-//       this.handleLoad(info);
-//     },
-//     onUpdate: () => {
-//       this.refresh();
-//     },
-//   });
-
-//   // 初始化数据
-//   this.store = store;
-//   this.updateStoreConfig();
-//   this.store.setConfig({
-//     keys,
-//   });
-
-//   if (!Array.isArray(list)) {
-//     list = [];
-//   }
-//   store.append(list);
-
-//   // 刷新节点，必须在配置选中之前执行
-//   // 这样选中态联动判断才能找到父节点
-//   store.refreshNodes();
-
-//   // 初始化选中状态
-//   if (Array.isArray(value)) {
-//     store.setChecked(value);
-//   }
-
-//   // 更新节点展开状态
-//   this.updateExpanded();
-
-//   // 初始化激活状态
-//   if (Array.isArray(actived)) {
-//     store.setActived(actived);
-//   }
-
-//   // 树的数据初始化之后，需要立即进行一次视图刷新
-//   this.refresh();
 // },
 // rebuild(list: TdTreeProps['data']) {
 //   this.$cacheMap.clear();
@@ -598,55 +432,3 @@ export default defineComponent({
 //   }
 //   this.toggleChecked(node);
 // },
-// updateTreeScope(): void {
-//   const { treeScope } = this;
-//   const scopedProps = pick(this, ['checkProps', 'disableCheck', 'empty', 'icon', 'label', 'line', 'operations']);
-//   Object.assign(treeScope, scopedProps);
-// },
-
-// // -------- 公共方法 start --------
-
-// // -------- 公共方法 end --------
-// },
-// created() {
-//   this.$cacheMap = new Map();
-//   this.$mouseEvent = null;
-//   this.$proxyScope = {};
-//   this.updateTreeScope();
-
-//   this.build();
-// },
-// render(): VNode {
-//   const { classList, $proxyScope, treeNodeViews } = this;
-
-//   // 一些选项的变化，要传递到子节点去
-//   this.updateStoreConfig();
-//   this.updateTreeScope();
-
-//   // 更新 scopedSlots
-//   $proxyScope.scopedSlots = this.$scopedSlots;
-
-//   // 空数据判定
-//   let emptyNode: TNodeReturnValue = null;
-//   if (treeNodeViews.length <= 0) {
-//     const useLocale = !this.empty && !this.$scopedSlots.empty;
-//     const emptyContent = useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty');
-//     emptyNode = <div class={`${this.componentName}__empty`}>{emptyContent}</div>;
-//   }
-
-//   // 构造列表
-//   const treeNodeList = (
-//     <transition-group
-//       tag="div"
-//       class={`${this.componentName}__list`}
-//       enter-active-class={`${this.componentName}__item--enter-active`}
-//       leave-active-class={`${this.componentName}__item--leave-active`}
-//     >
-//       {treeNodeViews}
-//     </transition-group>
-//   );
-
-//   const treeNode = <div class={classList}>{emptyNode || treeNodeList}</div>;
-//   return treeNode;
-// },
-// });
