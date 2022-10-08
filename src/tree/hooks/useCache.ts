@@ -15,6 +15,7 @@ export interface TypeTreeCache {
   nodesMap: Map<string, any>;
   mouseEvent?: Event;
   scope: TypeTreeScope;
+  scopedSlots: any;
 }
 
 // 提供缓存对象
@@ -26,6 +27,8 @@ export default function useCache(props: TdTreeProps) {
     mouseEvent: null,
     // 缓存与节点共享的关联对象
     scope: {},
+    // 缓存 slots 对象
+    scopedSlots: {},
   };
 
   const updateTreeScope = () => {

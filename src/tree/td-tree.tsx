@@ -1,8 +1,8 @@
-// import { VNode } from 'vue';
+import { VNode } from 'vue';
 // import upperFirst from 'lodash/upperFirst';
 // import pick from 'lodash/pick';
 import {
-  // computed,
+  computed,
   defineComponent,
   // SetupContext,
   // toRefs,
@@ -16,10 +16,11 @@ import {
 import TreeNode from '../_common/js/tree/tree-node';
 // import TreeItem from './tree-item';
 import props from './props';
-// import { renderTNodeJSX } from '../utils/render-tnode';
+import { useConfig, usePrefixClass } from '../hooks/useConfig';
+import { renderTNodeJSX } from '../utils/render-tnode';
 import {
   // ClassName,
-  // TNodeReturnValue,
+  TNodeReturnValue,
   TreeOptionData,
 } from '../common';
 // import { TdTreeProps } from './type';
@@ -49,17 +50,47 @@ export default defineComponent({
   },
   props,
   setup(props) {
+    const { t, global } = useConfig('tree');
+    const classPrefix = usePrefixClass();
+    const componentName = usePrefixClass('tree');
     const { store, updateStoreConfig, updateExpanded } = useTreeStore(props);
-
     const { cache, updateTreeScope } = useCache(props);
+
+    const classList = computed(() => {
+      const list: Array<string> = [`${componentName}`];
+      const {
+        disabled, hover, transition, checkable, expandOnClickNode,
+      } = props;
+      if (disabled) {
+        list.push(`${classPrefix}-is-disabled`);
+      }
+      if (hover) {
+        list.push(`${componentName}--hoverable`);
+      }
+      if (checkable) {
+        list.push(`${componentName}--checkable`);
+      }
+      if (transition) {
+        list.push(`${componentName}--transition`);
+      }
+      if (expandOnClickNode) {
+        list.push(`${componentName}--block-node`);
+      }
+      return list;
+    });
 
     // 不想暴露给用户的属性与方法，统一挂载到 setup 返回的对象上
     // 实例上无法直接访问这些方法与属性
     return {
+      t,
+      global,
+      classPrefix,
+      componentName,
       store,
+      cache,
+      classList,
       updateStoreConfig,
       updateExpanded,
-      cache,
       updateTreeScope,
     };
   },
@@ -150,12 +181,40 @@ export default defineComponent({
     },
   },
   render() {
-    const { updateStoreConfig, updateTreeScope } = this;
+    const {
+      cache, classList, updateStoreConfig, updateTreeScope,
+    } = this;
 
     updateStoreConfig();
     updateTreeScope();
 
-    return <div>tree</div>;
+    // 更新 scopedSlots
+    cache.scopedSlots = this.$scopedSlots;
+
+    const treeNodeViews: VNode[] = [];
+
+    // 空数据判定
+    let emptyNode: TNodeReturnValue = null;
+    if (treeNodeViews.length <= 0) {
+      const useLocale = !this.empty && !this.$scopedSlots.empty;
+      const emptyContent = useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty');
+      emptyNode = <div class={`${this.componentName}__empty`}>{emptyContent}</div>;
+    }
+
+    // 构造列表
+    const treeNodeList = (
+      <transition-group
+        tag="div"
+        class={`${this.componentName}__list`}
+        enter-active-class={`${this.componentName}__item--enter-active`}
+        leave-active-class={`${this.componentName}__item--leave-active`}
+      >
+        {treeNodeViews}
+      </transition-group>
+    );
+
+    const treeNode = <div class={classList}>{emptyNode || treeNodeList}</div>;
+    return treeNode;
   },
 });
 
