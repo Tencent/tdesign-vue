@@ -1,8 +1,11 @@
 import pick from 'lodash/pick';
+import { SetupContext } from '@vue/composition-api';
 import TreeStore from '../../_common/js/tree/tree-store';
-import { TypeTreeProps, TypeValueMode, TypeTreeNodeModel } from '../interface';
+import {
+  TypeTreeProps, TypeValueMode, TypeEventState, TypeTreeNodeModel,
+} from '../interface';
 
-export default function useTreeStore(props: TypeTreeProps) {
+export default function useTreeStore(props: TypeTreeProps, context: SetupContext) {
   const {
     actived, value, valueMode, filter, keys,
   } = props;
@@ -57,6 +60,25 @@ export default function useTreeStore(props: TypeTreeProps) {
     store.setExpanded(expandedArr);
   };
 
+  const handleLoad = (info: TypeEventState) => {
+    const { node } = info;
+    const evtCtx = {
+      node: node.getModel(),
+    };
+    const { value, expanded, actived } = props;
+    if (value && value.length > 0) {
+      store.replaceChecked(value);
+    }
+    if (expanded && expanded.length > 0) {
+      store.replaceExpanded(expanded);
+    }
+    if (actived && actived.length > 0) {
+      store.replaceActived(actived);
+    }
+    props?.onLoad(evtCtx);
+    context.emit('load', evtCtx);
+  };
+
   // keys map 比较特殊，不应该在实例化之后再次变更
   store.setConfig({
     keys,
@@ -80,6 +102,8 @@ export default function useTreeStore(props: TypeTreeProps) {
   if (Array.isArray(actived)) {
     store.setActived(actived);
   }
+
+  store.emitter.on('load', handleLoad);
 
   return {
     store,

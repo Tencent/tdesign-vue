@@ -1,4 +1,3 @@
-import { VNode } from 'vue';
 // import upperFirst from 'lodash/upperFirst';
 // import pick from 'lodash/pick';
 import {
@@ -46,11 +45,11 @@ export default defineComponent({
     event: 'change',
   },
   props,
-  setup(props) {
+  setup(props, context) {
     const { t, global } = useConfig('tree');
     const classPrefix = usePrefixClass();
     const componentName = usePrefixClass('tree');
-    const { store, updateStoreConfig, updateExpanded } = useTreeStore(props);
+    const { store, updateStoreConfig } = useTreeStore(props, context);
     const { cache, updateTreeScope } = useCache(props);
 
     const classList = computed(() => {
@@ -97,7 +96,7 @@ export default defineComponent({
       cache,
     };
 
-    useTreeNodes(props, state);
+    const { renderTreeNodes } = useTreeNodes(props, state);
 
     // 不想暴露给用户的属性与方法，统一挂载到 setup 返回的对象上
     // 实例上无法直接访问这些方法与属性
@@ -110,8 +109,8 @@ export default defineComponent({
       cache,
       classList,
       updateStoreConfig,
-      updateExpanded,
       updateTreeScope,
+      renderTreeNodes,
     };
   },
   // 在 methods 提供公共方法
@@ -200,9 +199,9 @@ export default defineComponent({
       return pathNodes;
     },
   },
-  render() {
+  render(h) {
     const {
-      cache, classList, updateStoreConfig, updateTreeScope,
+      cache, classList, updateStoreConfig, updateTreeScope, renderTreeNodes,
     } = this;
 
     updateStoreConfig();
@@ -211,7 +210,7 @@ export default defineComponent({
     // 更新 scopedSlots
     cache.scopedSlots = this.$scopedSlots;
 
-    const treeNodeViews: VNode[] = [];
+    const treeNodeViews = renderTreeNodes(h);
 
     // 空数据判定
     let emptyNode: TNodeReturnValue = null;
@@ -221,7 +220,7 @@ export default defineComponent({
       emptyNode = <div class={`${this.componentName}__empty`}>{emptyContent}</div>;
     }
 
-    // 构造列表
+    // // 构造列表
     const treeNodeList = (
       <transition-group
         tag="div"
@@ -262,45 +261,6 @@ export default defineComponent({
 //   },
 // },
 // methods: {
-// // 刷新树的视图状态
-// refresh() {
-//   const { store, nested } = this;
-//   let nodes = [];
-//   if (nested) {
-//     // 渲染为嵌套结构
-//     nodes = store.getChildren();
-//   } else {
-//     // 渲染为平铺列表
-//     nodes = store.getNodes();
-//   }
-//   // 默认取全部可显示节点
-//   this.renderTreeNodeViews(nodes);
-// },
-// // 记录要渲染的节点
-// renderTreeNodeViews(nodes: TreeNode[]) {
-//   const { store, $cacheMap } = this;
-//   this.treeNodeViews = nodes.map((node: TreeNode) => {
-//     // 如果节点已经存在，则使用缓存节点
-//     let nodeView = $cacheMap.get(node.value);
-//     // 如果节点未曾创建，则临时创建
-//     if (!nodeView && node.visible) {
-//       // 初次仅渲染可显示的节点
-//       // 不存在节点视图，则创建该节点视图并插入到当前位置
-//       nodeView = this.renderItem(node);
-//       $cacheMap.set(node.value, nodeView);
-//     }
-//     return nodeView;
-//   });
-
-//   // 更新缓存后，被删除的节点要移除掉，避免内存泄露
-//   this.$nextTick(() => {
-//     $cacheMap.forEach((view: VNode, value: string) => {
-//       if (!store.getNode(value)) {
-//         $cacheMap.delete(value);
-//       }
-//     });
-//   });
-// },
 // rebuild(list: TdTreeProps['data']) {
 //   this.$cacheMap.clear();
 //   const { store, value, actived } = this;
@@ -360,25 +320,6 @@ export default defineComponent({
 //   };
 //   emitEvent<Parameters<TypeTdTreeProps['onChange']>>(this, 'change', checked, ctx);
 //   return checked;
-// },
-// handleLoad(info: TypeEventState): void {
-//   const { node } = info;
-//   const ctx = {
-//     node: node.getModel(),
-//   };
-//   const {
-//     value, expanded, actived, store,
-//   } = this;
-//   if (value && value.length > 0) {
-//     store.replaceChecked(value);
-//   }
-//   if (expanded && expanded.length > 0) {
-//     store.replaceExpanded(expanded);
-//   }
-//   if (actived && actived.length > 0) {
-//     store.replaceActived(actived);
-//   }
-//   emitEvent<Parameters<TypeTdTreeProps['onLoad']>>(this, 'load', ctx);
 // },
 // handleClick(state: TypeEventState): void {
 //   const { expandOnClickNode } = this;
