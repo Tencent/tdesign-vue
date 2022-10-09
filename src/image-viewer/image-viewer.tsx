@@ -4,6 +4,7 @@ import {
 import { ChevronLeftIcon, ChevronDownIcon, CloseIcon } from 'tdesign-icons-vue';
 
 import props from './props';
+import Container from './base/Container';
 import TImageViewerIcon from './base/ImageModalIcon';
 import TImageViewerUtils from './base/ImageViewerUtils';
 import TImageItem from './base/ImageItem';
@@ -11,9 +12,7 @@ import TImageViewerModal from './base/ImageViewerModal';
 import useVModel from '../hooks/useVModel';
 import useDefaultValue from '../hooks/useDefaultValue';
 import { usePrefixClass } from '../hooks/useConfig';
-import TransferDom from '../utils/transfer-dom';
 import { renderTNodeJSX } from '../utils/render-tnode';
-import { getAttach, removeDom } from '../utils/dom';
 
 import { TdImageViewerProps } from './type';
 import { useMirror, useRotate, useScale } from './hooks';
@@ -23,9 +22,6 @@ import { EVENT_CODE } from './const';
 export default defineComponent({
   name: 'TImageViewer',
   props: { ...props },
-  directives: {
-    TransferDom,
-  },
   model: {
     prop: 'visible',
     event: 'change',
@@ -132,14 +128,28 @@ export default defineComponent({
       }
     };
 
+    const containerRef = ref();
+    const mountContent = () => {
+      if (containerRef) {
+        containerRef.value.mountContent();
+      }
+    };
+    const unmountContent = () => {
+      if (containerRef) {
+        containerRef.value.unmountContent();
+      }
+    };
+
     watch(
       () => visibleValue.value,
       (val) => {
         if (val) {
           window.addEventListener('keydown', keydownHandler);
+          mountContent();
           return;
         }
         window.removeEventListener('keydown', keydownHandler);
+        unmountContent();
       },
     );
 
@@ -187,20 +197,8 @@ export default defineComponent({
       closeBtnAction,
       scale,
       isMultipleImg,
-      viewerContent: null as Vue,
+      containerRef,
     };
-  },
-  watch: {
-    visibleValue: {
-      handler(val) {
-        if (val) {
-          this.mountContent();
-          return;
-        }
-        this.unmountContent();
-      },
-      immediate: true,
-    },
   },
   methods: {
     renderHeader() {
@@ -254,6 +252,29 @@ export default defineComponent({
         />
       );
     },
+    renderModal() {
+      return (
+        <TImageViewerModal
+          zIndex={this.zIndexValue}
+          visible={this.visibleValue}
+          index={this.indexValue}
+          images={this.imagesList}
+          scale={this.scale}
+          rotate={this.rotate}
+          mirror={this.mirror}
+          currentImage={this.currentImage}
+          rotateHandler={this.onRotate}
+          zoomInHandler={this.onZoomIn}
+          zoomOutHandler={this.onZoomOut}
+          mirrorHandler={this.onMirror}
+          resetHandler={this.onRest}
+          closeHandler={this.onCloseHandle}
+          draggable={this.draggable}
+          showOverlay={this.showOverlayValue}
+          closeBtn={this.closeBtn}
+        />
+      );
+    },
     renderViewer() {
       return (
         <div class={this.wrapClass} style={{ zIndex: this.zIndexValue }} onWheel={this.onWheel}>
@@ -294,56 +315,13 @@ export default defineComponent({
         </div>
       );
     },
-    renderModal() {
-      return (
-        <TImageViewerModal
-          zIndex={this.zIndexValue}
-          visible={this.visibleValue}
-          index={this.indexValue}
-          images={this.imagesList}
-          scale={this.scale}
-          rotate={this.rotate}
-          mirror={this.mirror}
-          currentImage={this.currentImage}
-          rotateHandler={this.onRotate}
-          zoomInHandler={this.onZoomIn}
-          zoomOutHandler={this.onZoomOut}
-          mirrorHandler={this.onMirror}
-          resetHandler={this.onRest}
-          closeHandler={this.onCloseHandle}
-          draggable={this.draggable}
-          showOverlay={this.showOverlayValue}
-          closeBtn={this.closeBtn}
-        />
-      );
-    },
-    mountContent() {
-      if (this.viewerContent) return;
-      // eslint-disable-next-line @typescript-eslint/no-this-alias
-      const parent = this;
-      const elm = document.createElement('div');
-      elm.style.cssText = 'position: absolute; top: 0px; left: 0px; width: 100%';
-      this.viewerContent = new (this.$root.constructor as any)({
-        parent,
-        render() {
-          return parent.mode === 'modeless' ? parent.renderModal() : parent.renderViewer();
-        },
-        destroyed() {
-          if (parent.viewerContent.$el) {
-            removeDom(parent.viewerContent.$el as HTMLElement);
-          }
-          parent.viewerContent = null;
-        },
-      });
-
-      getAttach(document.body).appendChild(elm);
-      this.viewerContent.$mount(elm);
-    },
-    unmountContent() {
-      this.viewerContent?.$destroy?.();
-    },
   },
+
   render() {
-    return renderTNodeJSX(this, 'trigger', { params: { open: this.openHandler } });
+    return (
+      <Container ref="containerRef" mode={this.mode} renderModal={this.renderModal} renderViewer={this.renderViewer}>
+        {renderTNodeJSX(this, 'trigger', { params: { open: this.openHandler } })}
+      </Container>
+    );
   },
 });
