@@ -25,6 +25,7 @@
       <t-upload
         ref="uploadRef1"
         v-model="files1"
+        @change="onFileChange"
         action="https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo"
         :placeholder="multiple ? '文件数量不超过 5 个' : '要求文件大小在 1M 以内'"
         :multiple="multiple"
@@ -147,6 +148,15 @@ export default {
   },
 
   methods: {
+    // 单文件这样调整文件对象属性，多文件类似
+    onFileChange(files) {
+      if (files[0]) {
+        // eslint-disable-next-line
+        files[0].id = files[0].response?.id || 100;
+        this.files1 = files;
+      }
+    },
+
     handleFail({ file }) {
       this.$message.error(`文件 ${file.name} 上传失败`);
     },
