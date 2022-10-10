@@ -4,9 +4,18 @@ import dropdownItemProps from './dropdown-item-props';
 import { useTNodeJSX } from '../hooks/tnode';
 import { usePrefixClass } from '../hooks/useConfig';
 import { pxCompat } from '../utils/helper';
+import ripple from '../utils/ripple';
+import { getKeepAnimationMixins } from '../config-provider/config-receiver';
+import { AnimationType } from '../config-provider/type';
+
+const keepAnimationMixins = getKeepAnimationMixins();
 
 export default defineComponent({
   name: 'TDropdownItem',
+  mixins: [keepAnimationMixins],
+  directives: {
+    ripple,
+  },
   props: {
     ...dropdownItemProps,
     maxColumnWidth: {
@@ -58,6 +67,7 @@ export default defineComponent({
           maxWidth: pxCompat(this.maxColumnWidth),
           minWidth: pxCompat(this.minColumnWidth),
         }}
+        v-ripple={!this.isSubmenu && (this.keepAnimation as Record<AnimationType, boolean>).ripple}
         ref={this.itemRef}
       >
         {this.prefixIcon ? <div class={`${this.dropdownItemClass}-icon`}>{prefixIcon}</div> : null}
