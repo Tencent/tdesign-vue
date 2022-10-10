@@ -63,7 +63,6 @@ export default defineComponent({
     return (
       <TDialog
         destroyOnClose
-        attach="body"
         onClose={this.closeHandler}
         visible={this.visible}
         placement="center"

@@ -81,7 +81,7 @@ export default defineComponent({
     const formDisabled = ref(undefined);
     const isDisabled = computed(() => formDisabled.value || disabled.value || selectProvider.isReachMaxLimit.value);
     const isSelected = computed(() => multiple.value
-      ? (selectProvider.selectValue.value as SelectValue[]).includes(props.value)
+      ? (selectProvider.selectValue.value as SelectValue[])?.includes(props.value)
       : selectProvider.selectValue.value === props.value);
     const mouseEvent = (v: boolean) => {
       isHover.value = v;

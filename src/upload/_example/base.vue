@@ -155,7 +155,8 @@ export default {
       console.log('onSelectChange', files);
     },
 
-    handleSuccess() {
+    handleSuccess(params) {
+      console.log(params);
       this.$message.success('上传成功');
     },
 

@@ -45,6 +45,7 @@ export default defineComponent({
       mode: props.mode,
       enableTimePicker: props.enableTimePicker,
       format: props.format,
+      valueType: props.valueType,
     }));
 
     // 记录面板是否选中过
@@ -163,6 +164,7 @@ export default defineComponent({
           onChange?.(
             formatDate(nextValue, {
               format: formatRef.value.format,
+              targetFormat: formatRef.value.valueType,
             }) as DateValue[],
             {
               dayjsValue: nextValue.map((v) => parseToDayjs(v, formatRef.value.format)),
@@ -286,6 +288,7 @@ export default defineComponent({
           onChange?.(
             formatDate(nextValue, {
               format: formatRef.value.format,
+              targetFormat: formatRef.value.valueType,
             }) as DateValue[],
             {
               dayjsValue: nextValue.map((v) => parseToDayjs(v, formatRef.value.format)),
@@ -318,6 +321,7 @@ export default defineComponent({
         onChange?.(
           formatDate(presetValue, {
             format: formatRef.value.format,
+            targetFormat: formatRef.value.valueType,
           }) as DateValue[],
           {
             dayjsValue: presetValue.map((p) => parseToDayjs(p, formatRef.value.format)),
