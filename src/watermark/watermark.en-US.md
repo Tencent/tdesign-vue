@@ -1,14 +1,13 @@
 :: BASE_DOC ::
 
 ## API
-
 ### Watermark Props
 
 name | type | default | description | required
 -- | -- | -- | -- | --
 alpha | Number | 1 | \- | N
-content | String / Slot / Function | - | Typescript：`string | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-default | String / Slot / Function | - | Typescript：`string | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+content | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+default | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 height | Number | - | \- | N
 isRepeat | Boolean | true | \- | N
 lineSpace | Number | 16 | \- | N
@@ -17,7 +16,7 @@ moveInterval | Number | 3000 | \- | N
 offset | Array | - | Typescript：`Array<number>` | N
 removable | Boolean | true | \- | N
 rotate | Number | -22 | \- | N
-watermarkContent | Object / Array | - | Typescript：`WatermarkText|WatermarkImage|Array<WatermarkText|WatermarkImage>` | N
+watermarkContent | Object / Array | - | Typescript：`WatermarkText\|WatermarkImage\|Array<WatermarkText\|WatermarkImage>` | N
 width | Number | - | \- | N
 x | Number | - | \- | N
 y | Number | - | \- | N
