@@ -44,8 +44,8 @@ content | String / Slot / Function | '' | 下拉操作项内容。TS 类型：`s
 disabled | Boolean | false | 是否禁用操作项 | N
 divider | Boolean | false | 是否显示操作项之间的分隔线（分隔线默认在下方） | N
 prefixIcon | Slot / Function | - | 组件前置图标。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-theme | String | default | 下拉菜单选项主题。可选项：default/success/warning/error。TS 类型：`DropdownItemTheme` `type DropdownItemTheme = 'default' \| 'success' \| 'warning' \| 'error'`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/dropdown/type.ts) | N
-value | String / Number / Object | - | 下拉操作项唯一标识。TS 类型：`string \| number \| { [key: string]: any }` | N
+theme | String | default | 下拉菜单选项主题。可选项：default/success/warning/error。TS 类型：`DropdownItemTheme` `type DropdownItemTheme = 'default' | 'success' | 'warning' | 'error'`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/dropdown/type.ts) | N
+value | String / Number / Object | - | 下拉操作项唯一标识。TS 类型：`string | number | { [key: string]: any }` | N
 onClick | Function |  | TS 类型：`(dropdownItem: DropdownOption, context: { e: MouseEvent }) => void`<br/>点击时触发 | N
 
 ### DropdownItem Events
