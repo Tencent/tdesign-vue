@@ -5,6 +5,18 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.48.5 `2022-10-10` 
+### 🚀 Features
+- `Select`: 调整下拉交互 允许输入时不关闭下拉面板 减少相关交互问题 @uyarn ([#1600](https://github.com/Tencent/tdesign-vue/pull/1600))
+- `Datepicker`: 支持 `valueType` 格式化日期用法 @HQ-Lin ([#1578](https://github.com/Tencent/tdesign-vue/pull/1578))
+- `ImageViewer`: 移除额外的根元素 @sinbadmaster ([#1598](https://github.com/Tencent/tdesign-vue/pull/1598))
+### 🐞 Bug Fixes
+- `Upload`:
+  - 修复 `upload` 导出预期外的变量导致组件注册时出现告警 @pengYYYYY ([#1583](https://github.com/Tencent/tdesign-vue/pull/1583))
+  - 添加参数 `response` 到事件 `onSuccess`，单文件是对象，多文件是数组，[tdesign-vue-next#1774](https://github.com/Tencent/tdesign-vue-next/issues/1774) @chaishi ([#1584](https://github.com/Tencent/tdesign-vue/pull/1584))
+- `TimePicker`: 关闭面板不再滚动 避免部分场景滚动未结束关闭面板继续滚动引发的问题 @uyarn ([#1590](https://github.com/Tencent/tdesign-vue/pull/1590))
+- `Select`: value 参数类型检测报错修复，增加 value 传值异常流的控制台提示 @skytt ([#1574](https://github.com/Tencent/tdesign-vue/pull/1574))
+
 ## 🌈 0.48.4 `2022-09-28` 
 ### 🚀 Features
 - `Upload`: 支持使用 ImageViewer 预览图片 @chaishi ([#1579](https://github.com/Tencent/tdesign-vue/pull/1579))
