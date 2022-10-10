@@ -1,48 +1,48 @@
 :: BASE_DOC ::
 
 ## API
-
 ### Tree Props
 
 name | type | default | description | required
 -- | -- | -- | -- | --
 activable | Boolean | false | \- | N
+activeMultiple | Boolean | false | \- | N
 actived | Array | - | `.sync` is supported。Typescript：`Array<TreeNodeValue>` | N
 defaultActived | Array | - | uncontrolled property。Typescript：`Array<TreeNodeValue>` | N
-activeMultiple | Boolean | false | \- | N
 allowFoldNodeOnFilter | Boolean | false | \- | N
-checkable | Boolean | false | \- | N
 checkProps | Object | - | Typescript：`CheckboxProps`，[Checkbox API Documents](./checkbox?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts) | N
 checkStrictly | Boolean | false | \- | N
+checkable | Boolean | false | \- | N
 data | Array | [] | Typescript：`Array<T>` | N
-disableCheck | Boolean / Function | false | Typescript：`boolean | ((node: TreeNodeModel) => boolean)` | N
+disableCheck | Boolean / Function | false | Typescript：`boolean \| ((node: TreeNodeModel<T>) => boolean)` | N
 disabled | Boolean | - | \- | N
-empty | String / Slot / Function | '' | Typescript：`string | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+draggable | Boolean | - | \- | N
+empty | String / Slot / Function | '' | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 expandAll | Boolean | false | \- | N
-expanded | Array | [] | `.sync` is supported。Typescript：`Array<TreeNodeValue>` | N
-defaultExpanded | Array | [] | uncontrolled property。Typescript：`Array<TreeNodeValue>` | N
 expandLevel | Number | 0 | \- | N
 expandMutex | Boolean | false | \- | N
 expandOnClickNode | Boolean | false | \- | N
 expandParent | Boolean | false | \- | N
+expanded | Array | [] | `.sync` is supported。Typescript：`Array<TreeNodeValue>` | N
+defaultExpanded | Array | [] | uncontrolled property。Typescript：`Array<TreeNodeValue>` | N
 filter | Function | - | Typescript：`(node: TreeNodeModel<T>) => boolean` | N
 hover | Boolean | - | \- | N
-icon | Boolean / Slot / Function | true | Typescript：`boolean | TNode<TreeNodeModel>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+icon | Boolean / Slot / Function | true | Typescript：`boolean \| TNode<TreeNodeModel<T>>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 keys | Object | - | Typescript：`TreeKeysType` `interface TreeKeysType { value?: string; label?: string; children?: string }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts) | N
-label | String / Boolean / Slot / Function | true | Typescript：`string | boolean | TNode<TreeNodeModel<T>>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+label | String / Boolean / Slot / Function | true | Typescript：`string \| boolean \| TNode<TreeNodeModel<T>>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 lazy | Boolean | true | \- | N
-line | Boolean / Slot / Function | false | Typescript：`boolean | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+line | Boolean / Slot / Function | false | Typescript：`boolean \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 load | Function | - | Typescript：`(node: TreeNodeModel<T>) => Promise<Array<T>>` | N
 operations | Slot / Function | - | Typescript：`TNode<TreeNodeModel<T>>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 transition | Boolean | true | \- | N
-value | Array | [] | `v-model` is supported。Typescript：`Array<TreeNodeValue>` `type TreeNodeValue = string | number`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts) | N
-defaultValue | Array | [] | uncontrolled property。Typescript：`Array<TreeNodeValue>` `type TreeNodeValue = string | number`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts) | N
+value | Array | [] | `v-model` is supported。Typescript：`Array<TreeNodeValue>` `type TreeNodeValue = string \| number`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts) | N
+defaultValue | Array | [] | uncontrolled property。Typescript：`Array<TreeNodeValue>` `type TreeNodeValue = string \| number`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts) | N
 valueMode | String | onlyLeaf | options：onlyLeaf/parentFirst/all | N
-onActive | Function |  | TS 类型：`(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T> }) => void`<br/> | N
-onChange | Function |  | TS 类型：`(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T> }) => void`<br/> | N
-onClick | Function |  | TS 类型：`(context: { node: TreeNodeModel<T>; e: MouseEvent }) => void`<br/> | N
-onExpand | Function |  | TS 类型：`(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e: MouseEvent }) => void`<br/> | N
-onLoad | Function |  | TS 类型：`(context: { node: TreeNodeModel<T> }) => void`<br/> | N
+onActive | Function |  | Typescript：`(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T> }) => void`<br/> | N
+onChange | Function |  | Typescript：`(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T> }) => void`<br/> | N
+onClick | Function |  | Typescript：`(context: { node: TreeNodeModel<T>; e: MouseEvent }) => void`<br/> | N
+onExpand | Function |  | Typescript：`(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e: MouseEvent }) => void`<br/> | N
+onLoad | Function |  | Typescript：`(context: { node: TreeNodeModel<T> }) => void`<br/> | N
 
 ### Tree Events
 
@@ -58,7 +58,7 @@ load | `(context: { node: TreeNodeModel<T> })` | \-
 
 name | params | return | description
 -- | -- | -- | --
-appendTo | `(value: TreeNodeValue, newData: T | Array<T>)` | \- | \-
+appendTo | `(value: TreeNodeValue, newData: T \| Array<T>)` | \- | \-
 getIndex | `(value: TreeNodeValue)` | `number` | \-
 getItem | `(value: TreeNodeValue)` | `TreeNodeModel<T>` | \-
 getItems | `(value?: TreeNodeValue)` | `Array<TreeNodeModel<T>>` | \-
@@ -79,8 +79,8 @@ actived | Boolean | false | \- | N
 checkable | Boolean | false | \- | N
 checked | Boolean | false | \- | N
 disabled | Boolean | false | \- | N
-expanded | Boolean | false | \- | N
 expandMutex | Boolean | false | \- | N
+expanded | Boolean | false | \- | N
 indeterminate | Boolean | false | \- | N
 label | String | - | \- | N
 loading | Boolean | false | \- | N
@@ -102,15 +102,15 @@ loading | Boolean | - | required | Y
 
 name | params | return | description
 -- | -- | -- | --
-appendData | `(data: T | Array<T>)` | \- | required
-getChildren | `(deep: boolean)` | `Array<TreeNodeModel> | boolean` | required
+appendData | `(data: T \| Array<T>)` | \- | required
+getChildren | `(deep: boolean)` | `Array<TreeNodeModel<T>> \| boolean` | required
 getIndex | \- | `number` | required
 getLevel | \- | `number` | required
-getParent | \- | `TreeNodeModel` | required
-getParents | \- | `Array<TreeNodeModel>` | required
-getPath | \- | `Array<TreeNodeModel>` | required
-getRoot | \- | `TreeNodeModel` | required
-getSiblings | \- | `Array<TreeNodeModel>` | required
+getParent | \- | `TreeNodeModel<T>` | required
+getParents | \- | `Array<TreeNodeModel<T>>` | required
+getPath | \- | `Array<TreeNodeModel<T>>` | required
+getRoot | \- | `TreeNodeModel<T>` | required
+getSiblings | \- | `Array<TreeNodeModel<T>>` | required
 insertAfter | `(newData: T)` | \- | required
 insertBefore | `(newData: T)` | \- | required
 isFirst | \- | `boolean` | required
