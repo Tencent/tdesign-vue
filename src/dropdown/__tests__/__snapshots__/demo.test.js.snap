@@ -15,7 +15,7 @@ exports[`Dropdown Dropdown baseVue demo works fine 1`] = `
         class="tdesign-demo-dropdown__text"
       >
         
-        下拉菜单
+        更多
         
         <svg
           class="t-icon t-icon-chevron-down"
@@ -39,13 +39,19 @@ exports[`Dropdown Dropdown baseVue demo works fine 1`] = `
 exports[`Dropdown Dropdown buttonVue demo works fine 1`] = `
 <div>
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square"
     type="button"
   >
     <span
       class="t-button__text"
     >
-      下拉菜单
+      <svg
+        class="t-icon t-icon-ellipsis"
+      >
+        <use
+          href="#t-icon-ellipsis"
+        />
+      </svg>
     </span>
   </button>
 </div>
