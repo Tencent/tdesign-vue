@@ -33,21 +33,12 @@ describe('Dropdown', () => {
 
   it('should emit click event', () => {
     const onClick = jest.fn();
-    const dropdownWrapper = mount({
-      render() {
-        return <Dropdown options={props.options} onClick={onClick}></Dropdown>;
-      },
-    }).findComponent(Dropdown);
     const wrapper = mount({
-      provide() {
-        return {
-          dropdown: dropdownWrapper.vm,
-        };
-      },
       render() {
-        return <DropdownMenu></DropdownMenu>;
+        return <DropdownMenu options={props.options} onClick={onClick}></DropdownMenu>;
       },
     });
+
     wrapper.find('.t-dropdown__item').trigger('click');
     expect(onClick).toBeCalled();
   });
@@ -68,21 +59,12 @@ describe('Dropdown', () => {
         value: 3,
       },
     ];
-    const dropdownWrapper = mount({
-      render() {
-        return <Dropdown options={options}></Dropdown>;
-      },
-    }).findComponent(Dropdown);
     const wrapper = mount({
-      provide() {
-        return {
-          dropdown: dropdownWrapper.vm,
-        };
-      },
       render() {
-        return <DropdownMenu></DropdownMenu>;
+        return <DropdownMenu options={options}></DropdownMenu>;
       },
     });
+
     expect(wrapper.find('.t-divider').element.parentElement.textContent).toBe(options[1].content);
   });
 
@@ -93,24 +75,16 @@ describe('Dropdown', () => {
     }));
     const maxHeight = 400;
     const minColumnWidth = 88;
-    const dropdownWrapper = mount({
-      render() {
-        return <Dropdown options={options} maxHeight={maxHeight} minColumnWidth={minColumnWidth}></Dropdown>;
-      },
-    }).findComponent(Dropdown);
     const wrapper = mount({
-      provide() {
-        return {
-          dropdown: dropdownWrapper.vm,
-        };
-      },
       render() {
-        return <DropdownMenu></DropdownMenu>;
+        return <DropdownMenu options={options} maxHeight={maxHeight} minColumnWidth={minColumnWidth}></DropdownMenu>;
       },
-    }).findComponent(DropdownMenu);
-    expect(wrapper.find('.t-dropdown__menu-column').exists()).toBe(true);
-    expect(wrapper.find('.t-dropdown__menu-column').element.style.maxHeight).toBe(`${maxHeight}px`);
-    expect(wrapper.find('.t-dropdown__menu-column').element.style.minWidth).toBe(`${minColumnWidth}px`);
+    });
+
+    expect(wrapper.find('.t-dropdown__menu').exists()).toBe(true);
+    expect(wrapper.find('.t-dropdown__item').exists()).toBe(true);
+    expect(wrapper.find('.t-dropdown__menu').element.style.maxHeight).toBe(`${maxHeight}px`);
+    expect(wrapper.find('.t-dropdown__item').element.style.minWidth).toBe(`${minColumnWidth}px`);
   });
 
   it('should handle each option of click event', () => {
@@ -131,22 +105,12 @@ describe('Dropdown', () => {
         onClick: jest.fn(),
       },
     ];
-    const dropdownWrapper = mount({
-      render() {
-        return <Dropdown options={options}></Dropdown>;
-      },
-    }).findComponent(Dropdown);
     const wrapper = mount({
-      provide() {
-        return {
-          dropdown: dropdownWrapper.vm,
-        };
-      },
       render() {
-        return <DropdownMenu></DropdownMenu>;
+        return <DropdownMenu options={options}></DropdownMenu>;
       },
-    }).findComponent(DropdownMenu);
-    wrapper.findAll('.t-dropdown__item-text').trigger('click');
+    });
+    wrapper.findAll('.t-dropdown__item').trigger('click');
     options.forEach((value) => {
       expect(value.onClick).toBeCalled();
     });
@@ -158,22 +122,20 @@ describe('Dropdown', () => {
         return (
           <Dropdown trigger="click">
             <div>menu</div>
-            <template slot="dropdown">
-              <DropdownMenu>
-                <DropdownItem class="op1" value={1}>
-                  操作一
-                </DropdownItem>
-                <DropdownItem value={2}>操作二</DropdownItem>
-                <DropdownItem value={3}>操作三</DropdownItem>
-                <DropdownItem value={4}>操作四</DropdownItem>
-                <DropdownItem value={5}>操作五</DropdownItem>
-              </DropdownMenu>
-            </template>
+            <DropdownMenu>
+              <DropdownItem class="op1" value={1}>
+                操作一
+              </DropdownItem>
+              <DropdownItem value={2}>操作二</DropdownItem>
+              <DropdownItem value={3}>操作三</DropdownItem>
+              <DropdownItem value={4}>操作四</DropdownItem>
+              <DropdownItem value={5}>操作五</DropdownItem>
+            </DropdownMenu>
           </Dropdown>
         );
       },
     });
     await wrapper.trigger('click');
-    expect(document.querySelector('.op1')).not.toBe(null);
+    expect(document.querySelector('.t-dropdown__item')).not.toBe(null);
   });
 });

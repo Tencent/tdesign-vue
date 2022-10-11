@@ -26,14 +26,16 @@
                 操作2-1
                 <t-dropdown-menu>
                   <t-dropdown-item :value="211">操作2-1-1</t-dropdown-item>
-                  <t-dropdown-item :value="211">操作2-1-2</t-dropdown-item>
+                  <t-dropdown-item :value="212" theme="error" @click="handleClick">
+                    <div><t-icon name="error-circle"></t-icon>危险操作</div>
+                  </t-dropdown-item>
                 </t-dropdown-menu>
               </t-dropdown-item>
               <t-dropdown-item :value="22"> 操作2-2 </t-dropdown-item>
             </t-dropdown-menu>
           </t-dropdown-item>
 
-          <t-dropdown-item :value="3">操作三</t-dropdown-item>
+          <t-dropdown-item :value="3"> 操作三 </t-dropdown-item>
         </t-dropdown-menu>
       </t-dropdown>
     </t-space>
@@ -70,7 +72,11 @@ import { MessagePlugin } from 'tdesign-vue';
 export default {
   methods: {
     clickHandler(data) {
-      MessagePlugin.success(`选中【${data.content}】`);
+      console.log(data, 'data');
+      if (data.value !== 212) MessagePlugin.success(`选中【${data.content}】`);
+    },
+    handleClick() {
+      MessagePlugin.success('点击 操作2-1-2');
     },
   },
 };

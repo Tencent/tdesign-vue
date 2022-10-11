@@ -1,7 +1,10 @@
-import { defineComponent } from '@vue/composition-api';
+import { CreateElement } from 'vue';
+import { ScopedSlotReturnValue } from 'vue/types/vnode';
+import { defineComponent, h } from '@vue/composition-api';
 import { ChevronRightIcon as TdChevronRightIcon, ChevronLeftIcon as TdChevronLeftIcon } from 'tdesign-icons-vue';
-import DropdownItem from './dropdown-item';
+import isFunction from 'lodash/isFunction';
 
+import DropdownItem from './dropdown-item';
 import { DropdownOption } from './type';
 import DropdownProps from './props';
 import TDivider from '../divider';
@@ -34,6 +37,12 @@ export default defineComponent({
     };
   },
   methods: {
+    renderOptionContent(content: string | ((h: CreateElement) => ScopedSlotReturnValue)) {
+      if (isFunction(content)) {
+        return content(h);
+      }
+      return content;
+    },
     // 处理options渲染的场景
     renderOptions(data: Array<DropdownOption>) {
       const { ChevronRightIcon, ChevronLeftIcon } = useGlobalIcon({
@@ -66,13 +75,17 @@ export default defineComponent({
               >
                 {this.direction === 'right' ? (
                   <div class={`${this.dropdownClass}__item-content`}>
-                    <span class={`${this.dropdownClass}__item-text`}>{optionItem.content}</span>
+                    <span class={`${this.dropdownClass}__item-text`}>
+                      {this.renderOptionContent(optionItem.content)}
+                    </span>
                     <ChevronRightIcon class={`${this.dropdownClass}__item-direction`} size="16" />
                   </div>
                 ) : (
                   <div class={`${this.dropdownClass}__item-content`}>
                     <ChevronLeftIcon class={`${this.dropdownClass}__item-direction`} size="16" />
-                    <span class={`${this.dropdownClass}__item-text`}>{optionItem.content}</span>
+                    <span class={`${this.dropdownClass}__item-text`}>
+                      {this.renderOptionContent(optionItem.content)}
+                    </span>
                   </div>
                 )}
                 <div
@@ -114,7 +127,7 @@ export default defineComponent({
                   },
                 }}
               >
-                <span class={`${this.dropdownClass}-text`}>{optionItem.content}</span>
+                <span class={`${this.dropdownClass}-text`}>{this.renderOptionContent(optionItem.content)}</span>
               </DropdownItem>
               {optionItem.divider ? <TDivider /> : null}
             </div>
