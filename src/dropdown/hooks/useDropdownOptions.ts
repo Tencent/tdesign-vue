@@ -19,33 +19,35 @@ export const getOptionsFromChildren = (menuGroup: any): DropdownOption[] => {
   }
 
   if (Array.isArray(menuGroup)) {
-    return menuGroup.map((item) => {
-      const groupChildren = item?.componentOptions?.children;
-      if (!groupChildren) return {};
-      const contentIdx = groupChildren.findIndex?.((v: VNode) => typeof v.text === 'string');
-      const childrenContent = groupChildren.filter?.(
-        (v: VNode) => typeof v.text !== 'string'
-          && [DropdownMenuName, DropdownItemName].includes(get(v, 'componentOptions.Ctor.extendOptions.name')),
-      );
+    return menuGroup
+      .map((item) => {
+        const groupChildren = item?.componentOptions?.children;
+        if (!groupChildren) return {};
+        const contentIdx = groupChildren.findIndex?.((v: VNode) => typeof v.text === 'string');
+        const childrenContent = groupChildren.filter?.(
+          (v: VNode) => typeof v.text !== 'string'
+            && [DropdownMenuName, DropdownItemName].includes(get(v, 'componentOptions.Ctor.extendOptions.name')),
+        );
 
-      const commonProps = {
-        ...item.componentOptions?.propsData,
-        style: item.componentOptions?.data?.style,
-        class: item.componentOptions?.data?.staticClass,
-        onClick: item.componentOptions?.listeners?.click,
-        content: groupChildren[contentIdx]?.text || groupChildren,
-      };
-      if (childrenContent.length === 1) {
+        const commonProps = {
+          ...item.componentOptions?.propsData,
+          style: item.componentOptions?.data?.style,
+          class: item.componentOptions?.data?.staticClass,
+          onClick: item.componentOptions?.listeners?.click,
+          content: groupChildren[contentIdx]?.text || groupChildren,
+        };
+        if (childrenContent.length === 1) {
+          return {
+            ...commonProps,
+            children: childrenContent.length > 0 ? getOptionsFromChildren(childrenContent[0].componentOptions) : null,
+          };
+        }
         return {
           ...commonProps,
-          children: childrenContent.length > 0 ? getOptionsFromChildren(childrenContent[0].componentOptions) : null,
+          children: childrenContent.length > 0 ? getOptionsFromChildren(childrenContent) : null,
         };
-      }
-      return {
-        ...commonProps,
-        children: childrenContent.length > 0 ? getOptionsFromChildren(childrenContent) : null,
-      };
-    });
+      })
+      .filter((v) => !!v.content);
   }
 
   return [];

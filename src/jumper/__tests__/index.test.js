@@ -9,7 +9,7 @@ describe('Jumper', () => {
           disabled: true,
         },
       });
-      expect(wrapper.findAll('button[disabled="disabled"]')).toHaveLength(3);
+      expect(wrapper.findAll('button[disabled="disabled"]').length).toEqual(3);
 
       await wrapper.setProps({
         disabled: {
@@ -18,7 +18,7 @@ describe('Jumper', () => {
           next: false,
         },
       });
-      expect(wrapper.findAll('button[disabled="disabled"]')).toHaveLength(1);
+      expect(wrapper.findAll('button[disabled="disabled"]').length).toEqual(1);
     });
 
     it(':layout', async () => {
@@ -27,14 +27,14 @@ describe('Jumper', () => {
           layout: 'horizontal',
         },
       });
-      expect(wrapper.findAll('.t-icon-chevron-right')).toHaveLength(1);
-      expect(wrapper.findAll('.t-icon-chevron-up')).toHaveLength(0);
+      expect(wrapper.findAll('.t-icon-chevron-right').length).toEqual(1);
+      expect(wrapper.findAll('.t-icon-chevron-up').length).toEqual(0);
 
       await wrapper.setProps({
         layout: 'vertical',
       });
-      expect(wrapper.findAll('.t-icon-chevron-right')).toHaveLength(0);
-      expect(wrapper.findAll('.t-icon-chevron-up')).toHaveLength(1);
+      expect(wrapper.findAll('.t-icon-chevron-right').length).toEqual(0);
+      expect(wrapper.findAll('.t-icon-chevron-up').length).toEqual(1);
     });
 
     it(':showCurrent', async () => {
@@ -56,13 +56,13 @@ describe('Jumper', () => {
           size: 'small',
         },
       });
-      expect(wrapper.findAll('.t-size-s')).toHaveLength(3);
-      expect(wrapper.findAll('.t-size-m')).toHaveLength(0);
+      expect(wrapper.findAll('.t-size-s').length).toEqual(3);
+      expect(wrapper.findAll('.t-size-m').length).toEqual(0);
       await wrapper.setProps({
         size: 'medium',
       });
-      expect(wrapper.findAll('.t-size-s')).toHaveLength(0);
-      expect(wrapper.findAll('.t-size-m')).toHaveLength(3);
+      expect(wrapper.findAll('.t-size-s').length).toEqual(0);
+      expect(wrapper.findAll('.t-size-m').length).toEqual(3);
     });
 
     it(':tips', async () => {
