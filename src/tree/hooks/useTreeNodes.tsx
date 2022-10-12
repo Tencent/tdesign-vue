@@ -2,12 +2,130 @@ import { CreateElement } from 'vue';
 import {
   // ref,
   nextTick,
+  SetupContext,
 } from '@vue/composition-api';
-import { TypeVNode, TypeTreeProps, TypeTreeState } from '../interface';
+import {
+  TypeVNode, TreeNodeValue, TypeTreeProps, TypeTreeState, TypeEventState, TypeTargetNode,
+} from '../interface';
 import TreeItem from '../tree-item';
 import TreeNode from '../../_common/js/tree/tree-node';
+import { getMark, getNode } from '../util';
 
-export default function useTreeNodes(props: TypeTreeProps, state: TypeTreeState) {
+export default function useTreeNodes(props: TypeTreeProps, state: TypeTreeState, context: SetupContext) {
+  const { cache, store } = state;
+
+  const setExpanded = (item: TypeTargetNode, isExpanded: boolean): TreeNodeValue[] => {
+    const node = getNode(store, item);
+    const expanded = node.setExpanded(isExpanded);
+    const evtCtx = {
+      node: node.getModel(),
+      e: cache.mouseEvent as MouseEvent,
+    };
+    if (props?.onExpand) {
+      props?.onExpand(expanded, evtCtx);
+    }
+    context.emit('expand', expanded, evtCtx);
+    return expanded;
+  };
+
+  const toggleExpanded = (item: TypeTargetNode): TreeNodeValue[] => {
+    const node = getNode(store, item);
+    return setExpanded(node, !node.isExpanded());
+  };
+
+  const setActived = (item: TypeTargetNode, isActived: boolean) => {
+    const node = getNode(store, item);
+    const actived = node.setActived(isActived);
+    const evtCtx = {
+      node: node.getModel(),
+      e: cache.mouseEvent,
+    };
+    if (props?.onActive) {
+      props?.onActive(actived, evtCtx);
+    }
+    context.emit('active', actived, evtCtx);
+    return actived;
+  };
+
+  const toggleActived = (item: TypeTargetNode): TreeNodeValue[] => {
+    const node = getNode(store, item);
+    return setActived(node, !node.isActived());
+  };
+
+  const setChecked = (item: TypeTargetNode, isChecked: boolean): TreeNodeValue[] => {
+    const node = getNode(store, item);
+    const checked = node.setChecked(isChecked);
+    const evtCtx = {
+      node: node.getModel(),
+    };
+    if (props?.onChange) {
+      props?.onChange(checked, evtCtx);
+    }
+    context.emit('change', checked, evtCtx);
+    return checked;
+  };
+
+  const toggleChecked = (item: TypeTargetNode): TreeNodeValue[] => {
+    const node = getNode(store, item);
+    return setChecked(node, !node.isChecked());
+  };
+
+  const handleClick = (evtState: TypeEventState) => {
+    const { mouseEvent, event, node } = evtState;
+    if (!node) {
+      return;
+    }
+
+    cache.mouseEvent = mouseEvent;
+
+    let shouldExpand = props.expandOnClickNode;
+    let shouldActive = !props.disabled && !node.disabled;
+    ['trigger', 'ignore'].forEach((markName) => {
+      const mark = getMark(markName, event.target as HTMLElement, event.currentTarget as HTMLElement);
+      const markValue = mark?.value || '';
+      if (markValue.indexOf('expand') >= 0) {
+        if (markName === 'trigger') {
+          shouldExpand = true;
+        } else if (markName === 'ignore') {
+          shouldExpand = false;
+        }
+      }
+      if (markValue.indexOf('active') >= 0) {
+        if (markName === 'ignore') {
+          shouldActive = false;
+        }
+      }
+    });
+
+    if (shouldExpand) {
+      toggleExpanded(node);
+    }
+
+    const evtCtx = {
+      node: node.getModel(),
+      e: mouseEvent,
+    };
+
+    if (shouldActive) {
+      toggleActived(node);
+      if (props?.onClick) {
+        props?.onClick(evtCtx);
+      }
+      context.emit('click', evtCtx);
+    }
+
+    cache.mouseEvent = null;
+  };
+
+  const handleChange = (evtState: TypeEventState) => {
+    const { disabled } = props;
+    const { node } = evtState;
+    if (!node || disabled || node.disabled) {
+      return;
+    }
+    toggleChecked(node);
+  };
+
   // 创建单个 tree 节点
   const renderItem = (h: CreateElement, node: TreeNode) => {
     const { nested, cache } = state;
@@ -21,8 +139,8 @@ export default function useTreeNodes(props: TypeTreeProps, state: TypeTreeState)
         nested={nested.value}
         treeScope={scope}
         proxyScope={scopedSlots}
-        // onClick={this.handleClick}
-        // onChange={this.handleChange}
+        onClick={handleClick}
+        onChange={handleChange}
         expandOnClickNode={expandOnClickNode}
       />
     );

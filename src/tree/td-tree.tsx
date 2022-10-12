@@ -96,7 +96,7 @@ export default defineComponent({
       cache,
     };
 
-    const { renderTreeNodes } = useTreeNodes(props, state);
+    const { renderTreeNodes } = useTreeNodes(props, state, context);
 
     // 不想暴露给用户的属性与方法，统一挂载到 setup 返回的对象上
     // 实例上无法直接访问这些方法与属性
@@ -277,99 +277,4 @@ export default defineComponent({
 //   }
 //   // 刷新节点状态
 //   store.refreshState();
-// },
-// toggleActived(item: TypeTargetNode): TreeNodeValue[] {
-//   const node = getNode(this.store, item);
-//   return this.setActived(node, !node.isActived());
-// },
-// setActived(item: TypeTargetNode, isActived: boolean) {
-//   const node = getNode(this.store, item);
-//   const actived = node.setActived(isActived);
-//   const { $mouseEvent } = this;
-//   const ctx = {
-//     node: node.getModel(),
-//     e: $mouseEvent,
-//   };
-//   emitEvent<Parameters<TypeTdTreeProps['onActive']>>(this, 'active', actived, ctx);
-//   return actived;
-// },
-// toggleExpanded(item: TypeTargetNode): TreeNodeValue[] {
-//   const node = getNode(this.store, item);
-//   return this.setExpanded(node, !node.isExpanded());
-// },
-// setExpanded(item: TypeTargetNode, isExpanded: boolean): TreeNodeValue[] {
-//   const node = getNode(this.store, item);
-//   const expanded = node.setExpanded(isExpanded);
-//   const { $mouseEvent } = this;
-//   const ctx = {
-//     node: node.getModel(),
-//     e: $mouseEvent,
-//   };
-//   emitEvent<Parameters<TypeTdTreeProps['onExpand']>>(this, 'expand', expanded, ctx);
-//   return expanded;
-// },
-// toggleChecked(item: TypeTargetNode): TreeNodeValue[] {
-//   const node = getNode(this.store, item);
-//   return this.setChecked(node, !node.isChecked());
-// },
-// setChecked(item: TypeTargetNode, isChecked: boolean): TreeNodeValue[] {
-//   const node = getNode(this.store, item);
-//   const checked = node.setChecked(isChecked);
-//   const ctx = {
-//     node: node.getModel(),
-//   };
-//   emitEvent<Parameters<TypeTdTreeProps['onChange']>>(this, 'change', checked, ctx);
-//   return checked;
-// },
-// handleClick(state: TypeEventState): void {
-//   const { expandOnClickNode } = this;
-//   const { mouseEvent, event, node } = state;
-//   if (!node) {
-//     return;
-//   }
-
-//   this.$mouseEvent = mouseEvent;
-
-//   let shouldExpand = expandOnClickNode;
-//   let shouldActive = !this.disabled && !node.disabled;
-//   ['trigger', 'ignore'].forEach((markName) => {
-//     const mark = getMark(markName, event.target as HTMLElement, event.currentTarget as HTMLElement);
-//     const markValue = mark?.value || '';
-//     if (markValue.indexOf('expand') >= 0) {
-//       if (markName === 'trigger') {
-//         shouldExpand = true;
-//       } else if (markName === 'ignore') {
-//         shouldExpand = false;
-//       }
-//     }
-//     if (markValue.indexOf('active') >= 0) {
-//       if (markName === 'ignore') {
-//         shouldActive = false;
-//       }
-//     }
-//   });
-
-//   if (shouldExpand) {
-//     this.toggleExpanded(node);
-//   }
-
-//   const ctx = {
-//     node: node.getModel(),
-//     e: mouseEvent,
-//   };
-
-//   if (shouldActive) {
-//     this.toggleActived(node);
-//     emitEvent<Parameters<TypeTdTreeProps['onClick']>>(this, 'click', ctx);
-//   }
-
-//   this.$mouseEvent = null;
-// },
-// handleChange(state: TypeEventState): void {
-//   const { disabled } = this;
-//   const { node } = state;
-//   if (!node || disabled || node.disabled) {
-//     return;
-//   }
-//   this.toggleChecked(node);
 // },
