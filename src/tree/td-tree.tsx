@@ -1,15 +1,15 @@
-// import upperFirst from 'lodash/upperFirst';
+import upperFirst from 'lodash/upperFirst';
 // import pick from 'lodash/pick';
 import {
   computed,
+  watch,
+  toRefs,
   defineComponent,
   // SetupContext,
-  // toRefs,
   // ref,
   // provide,
   // nextTick,
   // PropType,
-  // watch,
   // onMounted,
 } from '@vue/composition-api';
 import TreeNode from '../_common/js/tree/tree-node';
@@ -24,7 +24,7 @@ import {
   TypeTreeState,
   // TypeValueMode,
   // TypeEventState,
-  // TreeNodeState,
+  TreeNodeState,
   TypeTreeNodeModel,
   // TypeTreeInstance,
   // TypeTargetNode,
@@ -49,7 +49,8 @@ export default defineComponent({
     const { t, global } = useConfig('tree');
     const classPrefix = usePrefixClass();
     const componentName = usePrefixClass('tree');
-    const { store, updateStoreConfig } = useTreeStore(props, context);
+    const refProps = toRefs(props);
+    const { store, rebuild, updateStoreConfig } = useTreeStore(props, context);
     const { cache, updateTreeScope } = useCache(props);
 
     const classList = computed(() => {
@@ -96,7 +97,27 @@ export default defineComponent({
       cache,
     };
 
-    const { renderTreeNodes } = useTreeNodes(props, state, context);
+    const {
+      setActived, setExpanded, setChecked, renderTreeNodes,
+    } = useTreeNodes(props, state, context);
+
+    watch(refProps.data, (list) => {
+      rebuild(list);
+    });
+    watch(refProps.keys, (keys) => {
+      store.setConfig({
+        keys,
+      });
+    });
+    watch(refProps.value, (nVal) => {
+      store.replaceChecked(nVal);
+    });
+    watch(refProps.expanded, (nVal) => {
+      store.replaceExpanded(nVal);
+    });
+    watch(refProps.actived, (nVal) => {
+      store.replaceActived(nVal);
+    });
 
     // 不想暴露给用户的属性与方法，统一挂载到 setup 返回的对象上
     // 实例上无法直接访问这些方法与属性
@@ -110,26 +131,32 @@ export default defineComponent({
       classList,
       updateStoreConfig,
       updateTreeScope,
+      setActived,
+      setExpanded,
+      setChecked,
       renderTreeNodes,
     };
   },
   // 在 methods 提供公共方法
   // 实例上可以直接访问
   methods: {
-    // setItem(value: TreeNodeValue, options: TreeNodeState): void {
-    // const node: TreeNode = this.store.getNode(value);
-    // const spec = options;
-    // const keys = Object.keys(spec);
-    // if (node && spec) {
-    //   ['expanded', 'actived', 'checked'].forEach((name) => {
-    //     if (keys.includes(name)) {
-    //       this[`set${upperFirst(name)}`](node, spec[name]);
-    //       delete spec[name];
-    //     }
-    //   });
-    //   node.set(spec);
-    // }
-    // },
+    setItem(value: TreeNodeValue, options: TreeNodeState): void {
+      const node: TreeNode = this.store.getNode(value);
+      const spec = options;
+      const keys = Object.keys(spec);
+      if (node && spec) {
+        ['expanded', 'actived', 'checked'].forEach((name) => {
+          if (keys.includes(name)) {
+            const setupMethod = this[`set${upperFirst(name)}`];
+            if (typeof setupMethod === 'function') {
+              setupMethod(node, spec[name]);
+            }
+            delete spec[name];
+          }
+        });
+        node.set(spec);
+      }
+    },
     getItem(value: TreeNodeValue): TypeTreeNodeModel {
       const node: TreeNode = this.store.getNode(value);
       return node?.getModel();

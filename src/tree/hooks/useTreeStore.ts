@@ -105,8 +105,26 @@ export default function useTreeStore(props: TypeTreeProps, context: SetupContext
 
   store.emitter.on('load', handleLoad);
 
+  const rebuild = (list: TypeTreeProps['data']) => {
+    const { value, actived } = props;
+    store.reload(list);
+    // 初始化选中状态
+    if (Array.isArray(value)) {
+      store.setChecked(value);
+    }
+    // 更新展开状态
+    updateExpanded();
+    // 初始化激活状态
+    if (Array.isArray(actived)) {
+      store.setActived(actived);
+    }
+    // 刷新节点状态
+    store.refreshState();
+  };
+
   return {
     store,
+    rebuild,
     updateStoreConfig,
     updateExpanded,
   };

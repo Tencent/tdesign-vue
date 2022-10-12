@@ -149,6 +149,10 @@ export default function useTreeNodes(props: TypeTreeProps, state: TypeTreeState,
 
   const cacheMap = new Map();
 
+  const clearCache = () => {
+    cacheMap.clear();
+  };
+
   const renderTreeNodes = (h: CreateElement) => {
     const { store, nested } = state;
     let nodes = [];
@@ -186,6 +190,13 @@ export default function useTreeNodes(props: TypeTreeProps, state: TypeTreeState,
   };
 
   return {
+    setExpanded,
+    toggleExpanded,
+    setActived,
+    toggleActived,
+    setChecked,
+    toggleChecked,
+    clearCache,
     renderTreeNodes,
   };
 }
