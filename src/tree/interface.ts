@@ -70,7 +70,6 @@ export interface TypeTreeScope {
 }
 
 export interface TypeTreeCache {
-  nodesMap: Map<string, any>;
   mouseEvent?: Event;
   scope: TypeTreeScope;
   scopedSlots: any;

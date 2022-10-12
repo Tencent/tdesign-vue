@@ -1,42 +1,19 @@
 import upperFirst from 'lodash/upperFirst';
-// import pick from 'lodash/pick';
 import {
-  computed,
-  watch,
-  toRefs,
-  defineComponent,
-  // SetupContext,
-  // ref,
-  // provide,
-  // nextTick,
-  // PropType,
-  // onMounted,
+  computed, watch, toRefs, defineComponent,
 } from '@vue/composition-api';
 import TreeNode from '../_common/js/tree/tree-node';
-// import TreeItem from './tree-item';
 import props from './props';
 import { useConfig, usePrefixClass } from '../hooks/useConfig';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { TNodeReturnValue, TreeOptionData } from '../common';
 import {
-  // TypeTdTreeProps,
-  TreeNodeValue,
-  TypeTreeState,
-  // TypeValueMode,
-  // TypeEventState,
-  TreeNodeState,
-  TypeTreeNodeModel,
-  // TypeTreeInstance,
-  // TypeTargetNode,
+  TreeNodeValue, TypeTreeState, TreeNodeState, TypeTreeNodeModel,
 } from './interface';
 import useTreeStore from './hooks/useTreeStore';
 import useCache from './hooks/useCache';
 import useTreeNodes from './hooks/useTreeNodes';
-import {
-  // getMark,
-  getNode,
-  // emitEvent,
-} from './util';
+import { getNode } from './util';
 
 export default defineComponent({
   name: 'TTree',
@@ -263,45 +240,3 @@ export default defineComponent({
     return treeNode;
   },
 });
-
-// watch: {
-//   // tdesign-vue-next 编译的代码导致了 dom 频繁刷新
-//   // 怀疑是在 render 替换了 object 类型的属性导致
-//   // 因此变更属性替换能力为 watch 形式
-//   // @see https://github.com/Tencent/tdesign-vue-next/issues/445
-//   keys(keys) {
-//     this.store.setConfig({
-//       keys,
-//     });
-//   },
-//   data(list) {
-//     this.rebuild(list);
-//   },
-//   value(nVal) {
-//     this.store.replaceChecked(nVal);
-//   },
-//   expanded(nVal) {
-//     this.store.replaceExpanded(nVal);
-//   },
-//   actived(nVal) {
-//     this.store.replaceActived(nVal);
-//   },
-// },
-// methods: {
-// rebuild(list: TdTreeProps['data']) {
-//   this.$cacheMap.clear();
-//   const { store, value, actived } = this;
-//   store.reload(list);
-//   // 初始化选中状态
-//   if (Array.isArray(value)) {
-//     store.setChecked(value);
-//   }
-//   // 更新展开状态
-//   this.updateExpanded();
-//   // 初始化激活状态
-//   if (Array.isArray(actived)) {
-//     store.setActived(actived);
-//   }
-//   // 刷新节点状态
-//   store.refreshState();
-// },
