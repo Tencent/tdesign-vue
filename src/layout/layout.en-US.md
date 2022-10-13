@@ -1,7 +1,6 @@
 :: BASE_DOC ::
 
 ## API
-
 ### Layout Props
 
 name | type | default | description | required
