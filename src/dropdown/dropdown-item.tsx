@@ -1,100 +1,78 @@
-import Vue from 'vue';
-import { ChevronRightIcon as TdChevronRightIcon } from 'tdesign-icons-vue';
-import TDivider from '../divider';
-import itemProps from './dropdown-item-props';
-import { DropdownOption } from './type';
-
-import { renderContent } from '../utils/render-tnode';
-import { emitEvent } from '../utils/event';
+import { defineComponent, ref, PropType } from '@vue/composition-api';
+import { TdDropdownProps } from '../dropdown/type';
+import dropdownItemProps from './dropdown-item-props';
+import { useTNodeJSX } from '../hooks/tnode';
+import { usePrefixClass } from '../hooks/useConfig';
+import { pxCompat } from '../utils/helper';
 import ripple from '../utils/ripple';
-import mixins from '../utils/mixins';
-import { getKeepAnimationMixins, getClassPrefixMixins, getGlobalIconMixins } from '../config-provider/config-receiver';
+import { getKeepAnimationMixins } from '../config-provider/config-receiver';
+import { AnimationType } from '../config-provider/type';
 
-import { TNodeReturnValue } from '../common';
+const keepAnimationMixins = getKeepAnimationMixins();
 
-const classPrefixMixins = getClassPrefixMixins('dropdown');
-
-const keepAnimationMixins = getKeepAnimationMixins<DropdownItemInstance>();
-
-export interface DropdownItemInstance extends Vue {
-  dropdown: {
-    handleMenuClick: (data: DropdownOption, context: { e: MouseEvent }) => void;
-  };
-}
-
-export default mixins(keepAnimationMixins, classPrefixMixins, getGlobalIconMixins()).extend({
+export default defineComponent({
   name: 'TDropdownItem',
-  components: {
-    TDivider,
-  },
-  directives: { ripple },
-  inject: {
-    dropdown: {
-      default: undefined,
-    },
+  mixins: [keepAnimationMixins],
+  directives: {
+    ripple,
   },
   props: {
-    ...itemProps,
-    path: {
-      type: String,
-      default: '',
+    ...dropdownItemProps,
+    maxColumnWidth: {
+      type: [String, Number] as PropType<TdDropdownProps['maxColumnWidth']>,
+      default: 100,
     },
-    hasChildren: {
-      type: Boolean,
-      default: false,
+    minColumnWidth: {
+      type: [String, Number] as PropType<TdDropdownProps['minColumnWidth']>,
+      default: 10,
     },
+    isSubmenu: Boolean,
   },
-  data() {
-    return {
-      focused: false,
-    };
-  },
-  methods: {
-    renderSuffix(): TNodeReturnValue {
-      const { ChevronRightIcon } = this.useGlobalIcon({ ChevronRightIcon: TdChevronRightIcon });
-      return this.hasChildren ? <ChevronRightIcon class={`${this.componentName}__item-icon`} /> : null;
-    },
-    handleItemClick(e: MouseEvent): void {
-      if (!this.hasChildren && !this.disabled) {
-        const data = {
-          value: this.value,
-          path: this.path,
-          content: this.content,
-        };
+  setup(props, { emit }) {
+    const itemRef = ref<HTMLElement>();
 
-        emitEvent(this, 'item-hover', this.path);
-        emitEvent(this, 'click', data, { e }); // dropdown item的点击回调
-        this.dropdown.handleMenuClick(data, { e });
-      }
-    },
-    handleMouseover(): void {
-      emitEvent(this, 'hover', this.path);
-    },
+    const dropdownItemClass = usePrefixClass('dropdown__item');
+    const handleItemClick = (e: MouseEvent) => {
+      props.onClick?.(props.value, {
+        e,
+      });
+      emit('click', props.value, {
+        e,
+      });
+    };
+
+    return {
+      itemRef,
+      dropdownItemClass,
+      handleItemClick,
+    };
   },
   render() {
     const classes = [
-      `${this.componentName}__item`,
+      this.dropdownItemClass,
+      `${this.dropdownItemClass}--theme-${this.theme}`,
       {
-        [`${this.componentName}--suffix`]: this.hasChildren,
-        [this.commonStatusClassName.disabled]: this.disabled,
-        [this.commonStatusClassName.active]: this.active,
+        [`${this.dropdownItemClass}--active`]: this.active,
+        [`${this.dropdownItemClass}--disabled`]: this.disabled,
       },
     ];
+    const renderTNodeJSX = useTNodeJSX();
+    const prefixIcon = renderTNodeJSX('prefixIcon');
+
     return (
-      <div>
-        <div
-          v-ripple={this.keepAnimation.ripple}
-          class={classes}
-          onClick={this.handleItemClick}
-          onMouseover={this.handleMouseover}
-        >
-          <div class={`${this.componentName}__item-content`}>
-            <span class={`${this.componentName}__item-text`}>{renderContent(this, 'content', 'default')}</span>
-          </div>
-          {this.renderSuffix()}
-        </div>
-        {this.divider ? <TDivider /> : null}
-      </div>
+      <li
+        class={classes}
+        onClick={this.handleItemClick}
+        style={{
+          maxWidth: pxCompat(this.maxColumnWidth),
+          minWidth: pxCompat(this.minColumnWidth),
+        }}
+        v-ripple={!this.isSubmenu && (this.keepAnimation as Record<AnimationType, boolean>).ripple}
+        ref={this.itemRef}
+      >
+        {this.prefixIcon ? <div class={`${this.dropdownItemClass}-icon`}>{prefixIcon}</div> : null}
+        {renderTNodeJSX('default')}
+      </li>
     );
   },
 });

@@ -6579,11 +6579,11 @@ exports[`ssr snapshot test renders ./src/drawer/_example/size-draggable.vue corr
 
 exports[`ssr snapshot test renders ./src/dropdown/_example/base.vue correctly 1`] = `
 <div class="tdesign-demo-dropdown"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text"><span class="tdesign-demo-dropdown__text">
-        下拉菜单
+        更多
         <svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></button></div>
 `;
 
-exports[`ssr snapshot test renders ./src/dropdown/_example/button.vue correctly 1`] = `<div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">下拉菜单</span></button></div>`;
+exports[`ssr snapshot test renders ./src/dropdown/_example/button.vue correctly 1`] = `<div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square"><span class="t-button__text"><svg class="t-icon t-icon-ellipsis" style="font-size:16;"><use href="#t-icon-ellipsis"></use></svg></span></button></div>`;
 
 exports[`ssr snapshot test renders ./src/dropdown/_example/custom.vue correctly 1`] = `<div><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">下拉菜单</span></button></div>`;
 
@@ -6595,6 +6595,12 @@ exports[`ssr snapshot test renders ./src/dropdown/_example/disabled.vue correctl
 
 exports[`ssr snapshot test renders ./src/dropdown/_example/event.vue correctly 1`] = `<div><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">下拉菜单</span></button></div>`;
 
+exports[`ssr snapshot test renders ./src/dropdown/_example/left.vue correctly 1`] = `
+<div class="t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text"> 下拉菜单 </span></button></div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./src/dropdown/_example/long.vue correctly 1`] = `<div><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">下拉菜单</span></button></div>`;
 
 exports[`ssr snapshot test renders ./src/dropdown/_example/multiple.vue correctly 1`] = `
@@ -6603,9 +6609,36 @@ exports[`ssr snapshot test renders ./src/dropdown/_example/multiple.vue correctl
         <svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-down" style="font-size:16;"><path fill="currentColor" d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z" fill-opacity="0.9"></path></svg></span></span></button></div>
 `;
 
-exports[`ssr snapshot test renders ./src/dropdown/_example/slot.vue correctly 1`] = `<div><span><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">下拉菜单</span></button> </span></div>`;
+exports[`ssr snapshot test renders ./src/dropdown/_example/slot.vue correctly 1`] = `
+<div class="t-space t-space-vertical" style="gap:16px;">
+  <div class="t-space-item">
+    <div class="t-space t-space-vertical" style="gap:16px;">
+      <div class="t-space-item">
+        <h4>支持直接使用 t-dropdown-menu</h4>
+      </div>
+      <div class="t-space-item"><span><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">下拉菜单</span></button>
+        <div class="t-dropdown__menu t-dropdown__menu--right" style="max-height:300px;"></div></span>
+      </div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-space t-space-vertical" style="gap:16px;">
+      <div class="t-space-item">
+        <h4>兼容历史版本 通过 dropdown 具名插槽的使用</h4>
+      </div>
+      <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">下拉菜单</span></button></div>
+    </div>
+  </div>
+</div>
+`;
 
 exports[`ssr snapshot test renders ./src/dropdown/_example/split.vue correctly 1`] = `<div><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">下拉菜单</span></button></div>`;
+
+exports[`ssr snapshot test renders ./src/dropdown/_example/theme.vue correctly 1`] = `
+<div class="tdesign-demo-dropdown t-space t-space-horizontal" style="gap:16px;">
+  <div class="t-space-item"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text"> 下拉菜单 </span></button></div>
+</div>
+`;
 
 exports[`ssr snapshot test renders ./src/form/_example/align.vue correctly 1`] = `
 <div class="t-space t-space-vertical" style="gap:32px;">

@@ -2,7 +2,6 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-09 14:09:08
  * */
 
 import { PopupProps } from '../popup';
@@ -35,7 +34,7 @@ export interface TdDropdownProps {
    */
   maxHeight?: number;
   /**
-   * 选项最小宽度。值为字符串时，值就是最大宽度；值为数字时，单位：px
+   * 选项最小宽度。值为字符串时，值就是最小宽度；值为数字时，单位：px
    * @default 10
    */
   minColumnWidth?: string | number;
@@ -48,7 +47,19 @@ export interface TdDropdownProps {
    * 弹窗定位方式，可选值同 Popup 组件
    * @default bottom-left
    */
-  placement?: 'top' | 'left' | 'right' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'left-top' | 'left-bottom' | 'right-top' | 'right-bottom';
+  placement?:
+    | 'top'
+    | 'left'
+    | 'right'
+    | 'bottom'
+    | 'top-left'
+    | 'top-right'
+    | 'bottom-left'
+    | 'bottom-right'
+    | 'left-top'
+    | 'left-bottom'
+    | 'right-top'
+    | 'right-bottom';
   /**
    * 透传  Popup 组件属性，方便更加自由地控制。比如使用 popupProps.overlayStyle 设置浮层样式
    */
@@ -62,7 +73,7 @@ export interface TdDropdownProps {
    * 下拉操作项点击时触发
    */
   onClick?: (dropdownItem: DropdownOption, context: { e: MouseEvent }) => void;
-};
+}
 
 export interface TdDropdownItemProps {
   /**
@@ -86,6 +97,15 @@ export interface TdDropdownItemProps {
    */
   divider?: boolean;
   /**
+   * 组件前置图标
+   */
+  prefixIcon?: TNode;
+  /**
+   * 下拉菜单选项主题
+   * @default default
+   */
+  theme?: DropdownItemTheme;
+  /**
    * 下拉操作项唯一标识
    */
   value?: string | number | { [key: string]: any };
@@ -93,6 +113,8 @@ export interface TdDropdownItemProps {
    * 点击时触发
    */
   onClick?: (dropdownItem: DropdownOption, context: { e: MouseEvent }) => void;
-};
+}
 
 export type DropdownOption = { children?: Array<TdDropdownItemProps> } & TdDropdownItemProps & Record<string, any>;
+
+export type DropdownItemTheme = 'default' | 'success' | 'warning' | 'error';

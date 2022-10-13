@@ -157,12 +157,12 @@ describe('Collapse', () => {
       const panel2 = wrapper.findComponent({ ref: '2' });
       await panel1.find('.t-collapse-panel__header').trigger('click');
 
-      expect(wrapper.vm.value).toHaveLength(1);
+      expect(wrapper.vm.value.length).toEqual(1);
       expect(wrapper.vm.value).toContain('1');
 
       await panel2.find('.t-collapse-panel__header').trigger('click');
 
-      expect(wrapper.vm.value).toHaveLength(1);
+      expect(wrapper.vm.value.length).toEqual(1);
       expect(wrapper.vm.value).toContain('2');
     });
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <t-dropdown :options="options" :minColumnWidth="88">
+    <t-dropdown :options="options">
       <t-button theme="default" variant="outline">下拉菜单</t-button>
     </t-dropdown>
   </div>
