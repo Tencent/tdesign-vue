@@ -55,7 +55,7 @@ export default mixins(Vue as VueConstructor<Affix>, classMixins).extend({
           let fixedTop: number | false;
           const calcTop = wrapToTop - containerTop; // 节点顶部到 container 顶部的距离
 
-          const containerHeight = scrollContainer[scrollContainer instanceof Window ? 'innerHeight' : 'clientHeight'] - wrapHeight;
+          const containerHeight = scrollContainer?.[scrollContainer instanceof Window ? 'innerHeight' : 'clientHeight'] - wrapHeight;
           const calcBottom = containerTop + containerHeight - offsetBottom; // 计算 bottom 相对应的 top 值
 
           if (offsetTop !== undefined && calcTop <= offsetTop) {

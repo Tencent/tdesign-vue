@@ -1,7 +1,9 @@
 <template>
   <div>
-    <t-dropdown :options="options" @click="clickHandler" :minColumnWidth="88">
-      <t-button theme="default" variant="outline">下拉菜单</t-button>
+    <t-dropdown :options="options" @click="clickHandler">
+      <t-button theme="default" variant="outline" shape="square">
+        <t-icon name="ellipsis" size="16" />
+      </t-button>
     </t-dropdown>
   </div>
 </template>
