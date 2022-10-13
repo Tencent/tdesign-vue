@@ -136,6 +136,7 @@
     "babel-jest": "29.1.0",
     "babel-polyfill": "^6.26.0",
     "camelcase": "~6.3.0",
+    "canvas": "^2.10.1",
     "cli-color": "^2.0.0",
     "commitizen": "^4.0.3",
     "cross-env": "^7.0.2",

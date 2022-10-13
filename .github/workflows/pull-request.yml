@@ -10,4 +10,4 @@ on:
 
 jobs:
   call-test-build:
-    uses: Tencent/tdesign-vue/.github/workflows/test-build.yml@fix/ci-fail
+    uses: Tencent/tdesign/.github/workflows/test-build.yml@main
