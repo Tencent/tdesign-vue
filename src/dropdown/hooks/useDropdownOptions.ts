@@ -28,11 +28,10 @@ export const getOptionsFromChildren = (menuGroup: any): DropdownOption[] => {
           (v: VNode) => typeof v.text !== 'string'
             && [DropdownMenuName, DropdownItemName].includes(get(v, 'componentOptions.Ctor.extendOptions.name')),
         );
-
         const commonProps = {
           ...item.componentOptions?.propsData,
-          style: item.componentOptions?.data?.style,
-          class: item.componentOptions?.data?.staticClass,
+          style: item?.data?.style,
+          class: item?.data?.staticClass,
           onClick: item.componentOptions?.listeners?.click,
           content: groupChildren[contentIdx]?.text || groupChildren,
         };

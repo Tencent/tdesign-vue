@@ -59,7 +59,7 @@ export default defineComponent({
           renderContent = (
             <div key={idx}>
               <DropdownItem
-                class={[`${this.dropdownClass}__item`, `${this.dropdownClass}__item--suffix`]}
+                class={[`${this.dropdownClass}__item`, `${this.dropdownClass}__item--suffix`, optionItem.class]}
                 {...{
                   props: {
                     value: optionItem.value,
@@ -110,7 +110,7 @@ export default defineComponent({
           renderContent = (
             <div key={idx}>
               <DropdownItem
-                class={`${this.dropdownClass}__item`}
+                class={[`${this.dropdownClass}__item`, optionItem.class]}
                 {...{
                   props: {
                     value: optionItem.value,
