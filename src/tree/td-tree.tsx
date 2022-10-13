@@ -216,8 +216,9 @@ export default defineComponent({
     updateStoreConfig();
     updateTreeScope();
 
+    const { scope } = cache;
     // 更新 scopedSlots
-    cache.scopedSlots = this.$scopedSlots;
+    scope.scopedSlots = this.$scopedSlots;
 
     const treeNodeViews = renderTreeNodes(h);
 

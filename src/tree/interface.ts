@@ -26,7 +26,7 @@ export type TypeTreeNode = TreeNode;
 
 export type TypeTreeStore = TreeStore;
 
-export type TypeValueMode = TdTreeProps['valueMode'];
+export type TypeValueMode = TypeTreeProps['valueMode'];
 
 export type TypeTNodeProp = string | TNode<TypeTreeNodeModel>;
 
@@ -60,20 +60,28 @@ export interface TypeGetTNodeOption {
   createElement?: Vue.CreateElement;
 }
 
+export interface TypeScopedSlots {
+  empty?: () => VNode;
+  icon?: () => VNode;
+  label?: () => VNode;
+  line?: () => VNode;
+  operations?: () => VNode;
+}
+
 export interface TypeTreeScope {
-  checkProps?: TdTreeProps['checkProps'];
-  disableCheck?: TdTreeProps['disableCheck'];
-  empty?: TdTreeProps['empty'];
-  icon?: TdTreeProps['icon'];
-  label?: TdTreeProps['label'];
-  line?: TdTreeProps['line'];
-  operations?: TdTreeProps['operations'];
+  checkProps?: TypeTreeProps['checkProps'];
+  disableCheck?: TypeTreeProps['disableCheck'];
+  empty?: TypeTreeProps['empty'];
+  icon?: TypeTreeProps['icon'];
+  label?: TypeTreeProps['label'];
+  line?: TypeTreeProps['line'];
+  operations?: TypeTreeProps['operations'];
+  scopedSlots?: TypeScopedSlots;
 }
 
 export interface TypeTreeCache {
   mouseEvent?: Event;
   scope: TypeTreeScope;
-  scopedSlots: any;
 }
 
 export interface TypeTreeState {

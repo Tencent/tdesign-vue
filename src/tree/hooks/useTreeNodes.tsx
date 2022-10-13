@@ -128,7 +128,7 @@ export default function useTreeNodes(props: TypeTreeProps, state: TypeTreeState,
   const renderItem = (h: CreateElement, node: TreeNode) => {
     const { nested, cache } = state;
     const { expandOnClickNode } = props;
-    const { scope, scopedSlots } = cache;
+    const { scope } = cache;
 
     const treeItem = (
       <TreeItem
@@ -136,7 +136,6 @@ export default function useTreeNodes(props: TypeTreeProps, state: TypeTreeState,
         node={node}
         nested={nested.value}
         treeScope={scope}
-        proxyScope={scopedSlots}
         onClick={handleClick}
         onChange={handleChange}
         expandOnClickNode={expandOnClickNode}

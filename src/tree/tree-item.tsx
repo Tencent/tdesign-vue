@@ -28,9 +28,6 @@ export const TreeItemProps = {
   treeScope: {
     type: Object,
   },
-  proxyScope: {
-    type: Object,
-  },
   expandOnClickNode: {
     type: Boolean,
   },
@@ -78,9 +75,8 @@ const TreeItem = mixins(
       return list;
     },
     renderLine(createElement: CreateElement): VNode {
-      const { node, treeScope, proxyScope } = this;
-      const { line } = treeScope;
-      const { scopedSlots } = proxyScope;
+      const { node, treeScope } = this;
+      const { line, scopedSlots } = treeScope;
       const iconVisible = !!treeScope.icon;
 
       let lineNode = null;
@@ -145,9 +141,8 @@ const TreeItem = mixins(
       return <CaretRightSmallIcon />;
     },
     renderIcon(createElement: CreateElement): VNode {
-      const { node, treeScope, proxyScope } = this;
-      const { icon } = treeScope;
-      const { scopedSlots } = proxyScope;
+      const { node, treeScope } = this;
+      const { icon, scopedSlots } = treeScope;
       let isDefaultIcon = false;
 
       let iconNode = null;
@@ -188,11 +183,8 @@ const TreeItem = mixins(
       return iconNode;
     },
     renderLabel(createElement: CreateElement): VNode {
-      const {
-        node, treeScope, proxyScope, expandOnClickNode,
-      } = this;
-      const { label, disableCheck } = treeScope;
-      const { scopedSlots } = proxyScope;
+      const { node, treeScope, expandOnClickNode } = this;
+      const { label, disableCheck, scopedSlots } = treeScope;
       const checkProps = treeScope.checkProps || {};
 
       let labelNode = null;
@@ -265,9 +257,8 @@ const TreeItem = mixins(
       return labelNode;
     },
     renderOperations(createElement: CreateElement): VNode {
-      const { node, treeScope, proxyScope } = this;
-      const { operations } = treeScope;
-      const { scopedSlots } = proxyScope;
+      const { node, treeScope } = this;
+      const { operations, scopedSlots } = treeScope;
 
       let opNode = null;
       if (scopedSlots?.operations) {
@@ -362,14 +353,13 @@ const TreeItem = mixins(
     },
     // 创建单个 tree 节点
     getNestedItem(node: TreeNode) {
-      const { nested, treeScope, proxyScope } = this;
+      const { nested, treeScope } = this;
       const treeItem = (
         <TreeItem
           key={node.value}
           node={node}
           nested={nested}
           treeScope={treeScope}
-          proxyScope={proxyScope}
           onClick={this.proxyClick}
           onChange={this.proxyChange}
         />
