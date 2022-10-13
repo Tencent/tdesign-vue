@@ -21362,6 +21362,7 @@ exports[`ssr snapshot test renders ./src/tag/_example/base.vue correctly 1`] = `
   <div class="tag-demo"><span class="t-tag t-tag--primary t-size-m t-tag--dark"><span>标签一</span></span> <span class="t-tag t-tag--success t-size-m t-tag--dark"><span>标签二</span></span> <span class="t-tag t-tag--warning t-size-m t-tag--dark"><span>标签三</span></span> <span class="t-tag t-tag--danger t-size-m t-tag--dark"><span>标签四</span></span></div>
   <div class="tag-demo light"><span class="t-tag t-tag--primary t-size-m t-tag--light"><span>标签一</span></span> <span class="t-tag t-tag--success t-size-m t-tag--light"><span>标签二</span></span> <span class="t-tag t-tag--warning t-size-m t-tag--light"><span>标签三</span></span> <span class="t-tag t-tag--danger t-size-m t-tag--light"><span>标签四</span></span></div>
   <div class="tag-demo"><span class="t-tag t-tag--primary t-size-m t-tag--outline"><span>标签一</span></span> <span class="t-tag t-tag--success t-size-m t-tag--outline"><span>标签二</span></span> <span class="t-tag t-tag--warning t-size-m t-tag--outline"><span>标签三</span></span> <span class="t-tag t-tag--danger t-size-m t-tag--outline"><span>标签四</span></span></div>
+  <div class="tag-demo"><span class="t-tag t-tag--primary t-size-m t-tag--light-outline"><span>标签一</span></span> <span class="t-tag t-tag--success t-size-m t-tag--light-outline"><span>标签二</span></span> <span class="t-tag t-tag--warning t-size-m t-tag--light-outline"><span>标签三</span></span> <span class="t-tag t-tag--danger t-size-m t-tag--light-outline"><span>标签四</span></span></div>
 </div>
 `;
 
