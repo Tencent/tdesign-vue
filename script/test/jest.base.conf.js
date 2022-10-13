@@ -7,7 +7,7 @@ process.env.TZ = 'Asia/Shanghai';
 module.exports = {
   verbose: true,
   rootDir: path.resolve(__dirname, '../../'),
-  testURL: 'http://localhost/',
+  testEnvironmentOptions: { testURL: 'http://localhost/' },
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'vue', 'json'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
@@ -20,10 +20,10 @@ module.exports = {
   },
   modulePathIgnorePatterns: ['<rootDir>/test/unit/coverage/'],
   transform: {
-    '.*\\.js$': 'babel-jest',
-    '.*\\.(vue)$': 'vue-jest',
-    '.*\\.tsx?$': 'ts-jest',
-    '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
+    '.*\\.js$': ['babel-jest'],
+    '.*\\.(vue)$': ['vue-jest'],
+    '.*\\.tsx?$': ['ts-jest'],
+    '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$': ['jest-transform-stub'],
   },
   testPathIgnorePatterns: ['/node_modules/', '.history'],
   setupFiles: ['<rootDir>/script/test/setup'],
