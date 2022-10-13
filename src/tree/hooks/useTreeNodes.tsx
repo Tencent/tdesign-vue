@@ -1,5 +1,7 @@
 import { CreateElement } from 'vue';
-import { nextTick, SetupContext } from '@vue/composition-api';
+import {
+  ref, nextTick, SetupContext, Ref,
+} from '@vue/composition-api';
 import {
   TypeVNode, TreeNodeValue, TypeTreeProps, TypeTreeState, TypeEventState, TypeTargetNode,
 } from '../interface';
@@ -145,22 +147,24 @@ export default function useTreeNodes(props: TypeTreeProps, state: TypeTreeState,
 
   const cacheMap = new Map();
 
-  const clearCache = () => {
+  const clearCacheNodes = () => {
     cacheMap.clear();
   };
 
-  const renderTreeNodes = (h: CreateElement) => {
-    const { store, nested } = state;
-    let nodes = [];
+  const nodes: Ref<TreeNode[]> = ref([]);
+  const refresh = () => {
+    const { nested } = state;
     if (nested.value) {
       // 渲染为嵌套结构
-      nodes = store.getChildren();
+      nodes.value = store.getChildren();
     } else {
       // 渲染为平铺列表
-      nodes = store.getNodes();
+      nodes.value = store.getNodes();
     }
+  };
 
-    const treeNodeViews = nodes.map((node: TreeNode) => {
+  const renderTreeNodes = (h: CreateElement) => {
+    const treeNodeViews = nodes.value.map((node: TreeNode) => {
       // 如果节点已经存在，则使用缓存节点
       let nodeView = cacheMap.get(node.value);
       // 如果节点未曾创建，则临时创建
@@ -185,6 +189,11 @@ export default function useTreeNodes(props: TypeTreeProps, state: TypeTreeState,
     return treeNodeViews;
   };
 
+  refresh();
+  store.emitter.on('update', () => {
+    refresh();
+  });
+
   return {
     setExpanded,
     toggleExpanded,
@@ -192,7 +201,7 @@ export default function useTreeNodes(props: TypeTreeProps, state: TypeTreeState,
     toggleActived,
     setChecked,
     toggleChecked,
-    clearCache,
+    clearCacheNodes,
     renderTreeNodes,
   };
 }

@@ -59,11 +59,11 @@ export default defineComponent({
     // tree 高度限制格式化
     const maxHeight = computed(() => 0);
     // 是否使用虚拟滚动
-    const vScrollEnable = computed(() => !!maxHeight);
+    const vScrollEnable = computed(() => !!maxHeight.value);
     // 是否启用嵌套布局
     // 暂时仅使用平铺布局
     // 嵌套布局还需要进一步提升渲染性能
-    const nested = computed(() => !!maxHeight);
+    const nested = computed(() => !!maxHeight.value);
 
     // 用于 hooks 传递数据
     const state: TypeTreeState = {
@@ -75,10 +75,15 @@ export default defineComponent({
     };
 
     const {
-      setActived, setExpanded, setChecked, renderTreeNodes,
-    } = useTreeNodes(props, state, context);
+      setActived, setExpanded, setChecked, renderTreeNodes, clearCacheNodes,
+    } = useTreeNodes(
+      props,
+      state,
+      context,
+    );
 
     watch(refProps.data, (list) => {
+      clearCacheNodes();
       rebuild(list);
     });
     watch(refProps.keys, (keys) => {

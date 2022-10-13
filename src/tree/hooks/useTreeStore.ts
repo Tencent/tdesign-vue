@@ -75,7 +75,9 @@ export default function useTreeStore(props: TypeTreeProps, context: SetupContext
     if (actived && actived.length > 0) {
       store.replaceActived(actived);
     }
-    props?.onLoad(evtCtx);
+    if (props?.onLoad) {
+      props?.onLoad(evtCtx);
+    }
     context.emit('load', evtCtx);
   };
 

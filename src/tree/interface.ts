@@ -15,6 +15,7 @@ export * from './type';
 
 export type TypeVNode = VNode;
 
+export type TreeProps = TdTreeProps;
 export type TypeTreeProps = TdTreeProps;
 
 export type TypeTNodeState = TreeNodeValue;
