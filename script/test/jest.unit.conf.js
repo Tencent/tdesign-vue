@@ -5,7 +5,8 @@ module.exports = {
   testEnvironment: 'jsdom',
   testMatch: ['<rootDir>/src/**/__tests__/**/*.test.{js,ts,tsx}'],
   // close coverage by default
-  collectCoverage: false,
+  collectCoverage: true,
+  coverageProvider: 'v8',
   coverageDirectory: '<rootDir>/test/unit/coverage',
   collectCoverageFrom: ['src/**/*.{ts,tsx,js,vue}', '!**/node_modules/**'],
   testPathIgnorePatterns: ['/node_modules/', '/src/_common'],
