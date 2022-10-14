@@ -189,9 +189,7 @@ export default function useTreeNodes(props: TypeTreeProps, state: TypeTreeState,
   };
 
   refresh();
-  store.emitter.on('update', () => {
-    refresh();
-  });
+  store.emitter.on('update', refresh);
 
   return {
     setExpanded,

@@ -81,12 +81,29 @@ export default function useTreeStore(props: TypeTreeProps, context: SetupContext
     context.emit('load', evtCtx);
   };
 
+  const rebuild = (list: TypeTreeProps['data']) => {
+    const { value, actived } = props;
+    store.reload(list || []);
+    // 初始化选中状态
+    if (Array.isArray(value)) {
+      store.setChecked(value);
+    }
+    // 更新展开状态
+    updateExpanded();
+    // 初始化激活状态
+    if (Array.isArray(actived)) {
+      store.setActived(actived);
+    }
+    // 刷新节点状态
+    store.refreshState();
+  };
+
   // keys map 比较特殊，不应该在实例化之后再次变更
   store.setConfig({
     keys,
   });
   updateStoreConfig();
-  store.append(props.data);
+  store.append(props.data || []);
 
   // 刷新节点，必须在配置选中之前执行
   // 这样选中态联动判断才能找到父节点
@@ -106,23 +123,6 @@ export default function useTreeStore(props: TypeTreeProps, context: SetupContext
   }
 
   store.emitter.on('load', handleLoad);
-
-  const rebuild = (list: TypeTreeProps['data']) => {
-    const { value, actived } = props;
-    store.reload(list);
-    // 初始化选中状态
-    if (Array.isArray(value)) {
-      store.setChecked(value);
-    }
-    // 更新展开状态
-    updateExpanded();
-    // 初始化激活状态
-    if (Array.isArray(actived)) {
-      store.setActived(actived);
-    }
-    // 刷新节点状态
-    store.refreshState();
-  };
 
   return {
     store,
