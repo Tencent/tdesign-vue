@@ -427,20 +427,15 @@ exports[`ssr snapshot test renders ./src/avatar/_example/adjust.vue correctly 1`
 exports[`ssr snapshot test renders ./src/avatar/_example/base.vue correctly 1`] = `
 <div class="t-space t-space-horizontal" style="gap:24px;">
   <div class="t-space-item">
+    <div class="t-avatar t-avatar--circle t-avatar__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-user">
+        <path fill="currentColor" d="M11.5 5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zm-1 0a2.5 2.5 0 10-5 0 2.5 2.5 0 005 0zM13.96 10.85c.34.16.54.5.54.87V14a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-2.28c0-.37.2-.7.54-.87a13.79 13.79 0 0111.92 0zM8 10.5c-1.97 0-3.83.45-5.5 1.24v1.76h11v-1.76A12.78 12.78 0 008 10.5z" fill-opacity="0.9"></path>
+      </svg></div>
+  </div>
+  <div class="t-space-item">
     <div class="t-avatar t-avatar--circle"><img src="https://tdesign.gtimg.com/site/avatar.jpg" alt=""></div>
   </div>
   <div class="t-space-item">
     <div class="t-avatar t-avatar--circle"><span style="transform:;">W</span></div>
-  </div>
-  <div class="t-space-item">
-    <div class="t-avatar t-avatar--circle t-avatar__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-user">
-        <path fill="currentColor" d="M11.5 5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zm-1 0a2.5 2.5 0 10-5 0 2.5 2.5 0 005 0zM13.96 10.85c.34.16.54.5.54.87V14a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-2.28c0-.37.2-.7.54-.87a13.79 13.79 0 0111.92 0zM8 10.5c-1.97 0-3.83.45-5.5 1.24v1.76h11v-1.76A12.78 12.78 0 008 10.5z" fill-opacity="0.9"></path>
-      </svg></div>
-  </div>
-  <div class="t-space-item">
-    <div class="t-avatar t-avatar--circle t-avatar__icon"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-user">
-        <path fill="currentColor" d="M11.5 5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zm-1 0a2.5 2.5 0 10-5 0 2.5 2.5 0 005 0zM13.96 10.85c.34.16.54.5.54.87V14a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-2.28c0-.37.2-.7.54-.87a13.79 13.79 0 0111.92 0zM8 10.5c-1.97 0-3.83.45-5.5 1.24v1.76h11v-1.76A12.78 12.78 0 008 10.5z" fill-opacity="0.9"></path>
-      </svg></div>
   </div>
 </div>
 `;
@@ -2519,7 +2514,7 @@ exports[`ssr snapshot test renders ./src/calendar/_example/value.vue correctly 1
 <div>
   <form class="t-form t-form-inline">
     <div class="t-form__item t-form-item__">
-      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">自己指定年：</label></div>
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">自己指定年：</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
           <div class="t-input__wrap">
@@ -2529,7 +2524,7 @@ exports[`ssr snapshot test renders ./src/calendar/_example/value.vue correctly 1
       </div>
     </div>
     <div class="t-form__item t-form-item__">
-      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">自己指定年月：</label></div>
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">自己指定年月：</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
           <div class="t-input__wrap">
@@ -6650,7 +6645,7 @@ exports[`ssr snapshot test renders ./src/form/_example/align.vue correctly 1`] =
   <div class="t-space-item">
     <form class="t-form">
       <div class="t-form__item t-form-item__name">
-        <div class="t-form__label t-form__label--right" style="width:60px;"><label for="">姓名</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:60px;"><label for="">姓名</label></div>
         <div class="t-form__controls" style="margin-left:60px;">
           <div class="t-form__controls-content">
             <div class="t-input__wrap">
@@ -6660,7 +6655,7 @@ exports[`ssr snapshot test renders ./src/form/_example/align.vue correctly 1`] =
         </div>
       </div>
       <div class="t-form__item t-form-item__password">
-        <div class="t-form__label t-form__label--right" style="width:60px;"><label for="">密码</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:60px;"><label for="">密码</label></div>
         <div class="t-form__controls" style="margin-left:60px;">
           <div class="t-form__controls-content">
             <div class="t-input__wrap">
@@ -6687,7 +6682,7 @@ exports[`ssr snapshot test renders ./src/form/_example/base.vue correctly 1`] = 
     </div>
   </div>
   <div class="t-form__item t-form-item__tel">
-    <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">手机号码</label></div>
+    <div class="t-form__label t-form__label--required t-form__label--colon t-form__label--right" style="width:100px;"><label for="">手机号码</label></div>
     <div class="t-form__controls" style="margin-left:100px;">
       <div class="t-form__controls-content">
         <div class="t-input__wrap">
@@ -6697,7 +6692,7 @@ exports[`ssr snapshot test renders ./src/form/_example/base.vue correctly 1`] = 
     </div>
   </div>
   <div class="t-form__item t-form-item__status">
-    <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">接收短信</label></div>
+    <div class="t-form__label t-form__label--required t-form__label--colon t-form__label--right" style="width:100px;"><label for="">接收短信</label></div>
     <div class="t-form__controls" style="margin-left:100px;">
       <div class="t-form__controls-content">
         <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
@@ -6707,7 +6702,7 @@ exports[`ssr snapshot test renders ./src/form/_example/base.vue correctly 1`] = 
     </div>
   </div>
   <div class="t-form__item t-form-item__gender">
-    <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">性别</label></div>
+    <div class="t-form__label t-form__label--required t-form__label--colon t-form__label--right" style="width:100px;"><label for="">性别</label></div>
     <div class="t-form__controls" style="margin-left:100px;">
       <div class="t-form__controls-content">
         <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio"><input type="radio" value="1" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="2" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
@@ -6715,7 +6710,7 @@ exports[`ssr snapshot test renders ./src/form/_example/base.vue correctly 1`] = 
     </div>
   </div>
   <div class="t-form__item t-form-item__course">
-    <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">课程</label></div>
+    <div class="t-form__label t-form__label--required t-form__label--colon t-form__label--right" style="width:100px;"><label for="">课程</label></div>
     <div class="t-form__controls" style="margin-left:100px;">
       <div class="t-form__controls-content">
         <div class="t-checkbox-group"><label class="t-checkbox"><input type="checkbox" name="" value="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">语文</span></label><label class="t-checkbox"><input type="checkbox" name="" value="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">数学</span></label><label class="t-checkbox"><input type="checkbox" name="" value="3" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">英语</span></label></div>
@@ -6723,7 +6718,7 @@ exports[`ssr snapshot test renders ./src/form/_example/base.vue correctly 1`] = 
     </div>
   </div>
   <div class="t-form__item t-form-item__" style="margin-left:100px;">
-    <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
+    <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for=""></label></div>
     <div class="t-form__controls">
       <div class="t-form__controls-content">
         <div class="t-space t-space-horizontal" style="gap:10px;">
@@ -6750,7 +6745,7 @@ exports[`ssr snapshot test renders ./src/form/_example/clear-validate.vue correc
     </div>
   </div>
   <div class="t-form__item t-form-item__description t-form__item-with-help">
-    <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">个人简介</label></div>
+    <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">个人简介</label></div>
     <div class="t-form__controls" style="margin-left:100px;">
       <div class="t-form__controls-content">
         <div class="t-input__wrap">
@@ -6797,7 +6792,7 @@ exports[`ssr snapshot test renders ./src/form/_example/clear-validate.vue correc
     </div>
   </div>
   <div class="t-form__item t-form-item__college">
-    <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">学院</label></div>
+    <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">学院</label></div>
     <div class="t-form__controls" style="margin-left:100px;">
       <div class="t-form__controls-content">
         <div class="demo-select-base t-select__wrap">
@@ -6811,7 +6806,7 @@ exports[`ssr snapshot test renders ./src/form/_example/clear-validate.vue correc
     </div>
   </div>
   <div class="t-form__item t-form-item__date">
-    <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">入学时间</label></div>
+    <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">入学时间</label></div>
     <div class="t-form__controls" style="margin-left:100px;">
       <div class="t-form__controls-content">
         <div class="t-input__wrap">
@@ -6831,7 +6826,7 @@ exports[`ssr snapshot test renders ./src/form/_example/clear-validate.vue correc
     </div>
   </div>
   <div class="t-form__item t-form-item__" style="margin-left:100px;">
-    <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
+    <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for=""></label></div>
     <div class="t-form__controls">
       <div class="t-form__controls-content">
         <div class="t-space t-space-horizontal" style="gap:10px;">
@@ -6881,7 +6876,7 @@ exports[`ssr snapshot test renders ./src/form/_example/custom-validator.vue corr
     </div>
   </div>
   <div class="t-form__item t-form-item__" style="margin-left:100px;">
-    <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
+    <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for=""></label></div>
     <div class="t-form__controls">
       <div class="t-form__controls-content">
         <div class="t-space t-space-horizontal" style="gap:10px;">
@@ -6904,7 +6899,7 @@ exports[`ssr snapshot test renders ./src/form/_example/disabled.vue correctly 1`
   <div class="t-space-item">
     <form class="t-form">
       <div class="t-form__item t-form-item__name">
-        <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">姓名</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--colon t-form__label--right" style="width:100px;"><label for="">姓名</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-input__wrap">
@@ -6914,7 +6909,7 @@ exports[`ssr snapshot test renders ./src/form/_example/disabled.vue correctly 1`
         </div>
       </div>
       <div class="t-form__item t-form-item__college">
-        <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">学院</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--colon t-form__label--right" style="width:100px;"><label for="">学院</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-select__wrap">
@@ -6928,7 +6923,7 @@ exports[`ssr snapshot test renders ./src/form/_example/disabled.vue correctly 1`
         </div>
       </div>
       <div class="t-form__item t-form-item__address1">
-        <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">寄件地址</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--colon t-form__label--right" style="width:100px;"><label for="">寄件地址</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-select__wrap">
@@ -6951,7 +6946,7 @@ exports[`ssr snapshot test renders ./src/form/_example/disabled.vue correctly 1`
         </div>
       </div>
       <div class="t-form__item t-form-item__address2">
-        <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">收件地址</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--colon t-form__label--right" style="width:100px;"><label for="">收件地址</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-input__wrap t-select-input--empty t-cascader">
@@ -6963,7 +6958,7 @@ exports[`ssr snapshot test renders ./src/form/_example/disabled.vue correctly 1`
         </div>
       </div>
       <div class="t-form__item t-form-item__date">
-        <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">日期</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--colon t-form__label--right" style="width:100px;"><label for="">日期</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-date-picker">
@@ -6977,7 +6972,7 @@ exports[`ssr snapshot test renders ./src/form/_example/disabled.vue correctly 1`
         </div>
       </div>
       <div class="t-form__item t-form-item__personalProfile">
-        <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">个人简介</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--colon t-form__label--right" style="width:100px;"><label for="">个人简介</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div clearable="" class="t-textarea"><textarea clearable="" placeholder="简单描述自己的经历" unselectable="off" class="t-textarea__inner"></textarea></div>
@@ -6985,7 +6980,7 @@ exports[`ssr snapshot test renders ./src/form/_example/disabled.vue correctly 1`
         </div>
       </div>
       <div class="t-form__item t-form-item__message">
-        <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">短信</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--colon t-form__label--right" style="width:100px;"><label for="">短信</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
@@ -6995,7 +6990,7 @@ exports[`ssr snapshot test renders ./src/form/_example/disabled.vue correctly 1`
         </div>
       </div>
       <div class="t-form__item t-form-item__gender">
-        <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">性别</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--colon t-form__label--right" style="width:100px;"><label for="">性别</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio"><input type="radio" value="1" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="2" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
@@ -7003,7 +6998,7 @@ exports[`ssr snapshot test renders ./src/form/_example/disabled.vue correctly 1`
         </div>
       </div>
       <div class="t-form__item t-form-item__course">
-        <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">课程</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--colon t-form__label--right" style="width:100px;"><label for="">课程</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-checkbox-group"><label class="t-checkbox"><input type="checkbox" name="" value="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">语文</span></label><label class="t-checkbox"><input type="checkbox" name="" value="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">数学</span></label><label class="t-checkbox"><input type="checkbox" name="" value="3" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">英语</span></label></div>
@@ -7011,7 +7006,7 @@ exports[`ssr snapshot test renders ./src/form/_example/disabled.vue correctly 1`
         </div>
       </div>
       <div class="t-form__item t-form-item__gradePoint">
-        <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">绩点</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--colon t-form__label--right" style="width:100px;"><label for="">绩点</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-input-number t-size-m t-is-disabled t-input-number--row"><button type="button" disabled="disabled" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled t-button--shape-square t-input-number__decrease t-is-disabled"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
@@ -7027,7 +7022,7 @@ exports[`ssr snapshot test renders ./src/form/_example/disabled.vue correctly 1`
         </div>
       </div>
       <div class="t-form__item t-form-item__avatar">
-        <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">头像</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--colon t-form__label--right" style="width:100px;"><label for="">头像</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-upload"><input type="file" accept="image/*" hidden="hidden">
@@ -7046,7 +7041,7 @@ exports[`ssr snapshot test renders ./src/form/_example/disabled.vue correctly 1`
         </div>
       </div>
       <div class="t-form__item t-form-item__" style="margin-left:100px;">
-        <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for=""></label></div>
         <div class="t-form__controls">
           <div class="t-form__controls-content">
             <div class="t-space t-space-horizontal" style="gap:10px;">
@@ -7086,7 +7081,7 @@ exports[`ssr snapshot test renders ./src/form/_example/error-message.vue correct
         </div>
       </div>
       <div class="t-form__item t-form-item__description t-form__item-with-help">
-        <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">个人简介</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">个人简介</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-input__wrap">
@@ -7133,7 +7128,7 @@ exports[`ssr snapshot test renders ./src/form/_example/error-message.vue correct
         </div>
       </div>
       <div class="t-form__item t-form-item__college">
-        <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">学院</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">学院</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="demo-select-base t-select__wrap">
@@ -7147,7 +7142,7 @@ exports[`ssr snapshot test renders ./src/form/_example/error-message.vue correct
         </div>
       </div>
       <div class="t-form__item t-form-item__date">
-        <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">入学时间</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">入学时间</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-input__wrap">
@@ -7167,7 +7162,7 @@ exports[`ssr snapshot test renders ./src/form/_example/error-message.vue correct
         </div>
       </div>
       <div class="t-form__item t-form-item__" style="margin-left:100px;">
-        <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for=""></label></div>
         <div class="t-form__controls">
           <div class="t-form__controls-content">
             <div class="t-space t-space-horizontal" style="gap:10px;">
@@ -7193,7 +7188,7 @@ exports[`ssr snapshot test renders ./src/form/_example/layout.vue correctly 1`] 
   <div class="t-space-item">
     <form class="t-form t-form-inline">
       <div class="t-form__item t-form-item__name">
-        <div class="t-form__label t-form__label--right" style="width:calc(2em + 24px);"><label for="">名字</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:calc(2em + 24px);"><label for="">名字</label></div>
         <div class="t-form__controls" style="margin-left:calc(2em + 24px);">
           <div class="t-form__controls-content">
             <div class="t-input__wrap">
@@ -7203,7 +7198,7 @@ exports[`ssr snapshot test renders ./src/form/_example/layout.vue correctly 1`] 
         </div>
       </div>
       <div class="t-form__item t-form-item__password">
-        <div class="t-form__label t-form__label--right" style="width:calc(2em + 24px);"><label for="">密码</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:calc(2em + 24px);"><label for="">密码</label></div>
         <div class="t-form__controls" style="margin-left:calc(2em + 24px);">
           <div class="t-form__controls-content">
             <div class="t-input__wrap">
@@ -7259,7 +7254,7 @@ exports[`ssr snapshot test renders ./src/form/_example/reset.vue correctly 1`] =
   <div class="t-space-item">
     <form class="t-form">
       <div class="t-form__item t-form-item__name">
-        <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">姓名</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--colon t-form__label--right" style="width:100px;"><label for="">姓名</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-input__wrap">
@@ -7269,7 +7264,7 @@ exports[`ssr snapshot test renders ./src/form/_example/reset.vue correctly 1`] =
         </div>
       </div>
       <div class="t-form__item t-form-item__tel">
-        <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">手机号码</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--colon t-form__label--right" style="width:100px;"><label for="">手机号码</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-input__wrap">
@@ -7279,7 +7274,7 @@ exports[`ssr snapshot test renders ./src/form/_example/reset.vue correctly 1`] =
         </div>
       </div>
       <div class="t-form__item t-form-item__course">
-        <div class="t-form__label t-form__label--colon t-form__label--right" style="width:100px;"><label for="">课程</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--colon t-form__label--right" style="width:100px;"><label for="">课程</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-checkbox-group"><label class="t-checkbox t-is-checked"><input type="checkbox" name="" value="1" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">语文</span></label><label class="t-checkbox"><input type="checkbox" name="" value="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">数学</span></label><label class="t-checkbox"><input type="checkbox" name="" value="3" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">英语</span></label></div>
@@ -7287,7 +7282,7 @@ exports[`ssr snapshot test renders ./src/form/_example/reset.vue correctly 1`] =
         </div>
       </div>
       <div class="t-form__item t-form-item__" style="margin-left:100px;">
-        <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for=""></label></div>
         <div class="t-form__controls">
           <div class="t-form__controls-content">
             <div class="t-space t-space-horizontal" style="gap:10px;">
@@ -7313,7 +7308,7 @@ exports[`ssr snapshot test renders ./src/form/_example/size.vue correctly 1`] = 
   <div class="t-space-item">
     <form size="medium" class="t-form">
       <div class="t-form__item t-form-item__name">
-        <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">姓名</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">姓名</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-input__wrap">
@@ -7323,7 +7318,7 @@ exports[`ssr snapshot test renders ./src/form/_example/size.vue correctly 1`] = 
         </div>
       </div>
       <div class="t-form__item t-form-item__tel">
-        <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">手机号码</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">手机号码</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-input__wrap">
@@ -7333,7 +7328,7 @@ exports[`ssr snapshot test renders ./src/form/_example/size.vue correctly 1`] = 
         </div>
       </div>
       <div class="t-form__item t-form-item__status">
-        <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">接收短信</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">接收短信</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
@@ -7343,7 +7338,7 @@ exports[`ssr snapshot test renders ./src/form/_example/size.vue correctly 1`] = 
         </div>
       </div>
       <div class="t-form__item t-form-item__gender">
-        <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">性别</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">性别</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-radio-group t-size-m t-radio-group__outline"><label class="t-radio"><input type="radio" value="1" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">男</span></label> <label class="t-radio"><input type="radio" value="2" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label">女</span></label></div>
@@ -7351,7 +7346,7 @@ exports[`ssr snapshot test renders ./src/form/_example/size.vue correctly 1`] = 
         </div>
       </div>
       <div class="t-form__item t-form-item__course">
-        <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">课程</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">课程</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-checkbox-group"><label class="t-checkbox"><input type="checkbox" name="" value="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">语文</span></label><label class="t-checkbox"><input type="checkbox" name="" value="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">数学</span></label><label class="t-checkbox"><input type="checkbox" name="" value="3" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">英语</span></label></div>
@@ -7359,7 +7354,7 @@ exports[`ssr snapshot test renders ./src/form/_example/size.vue correctly 1`] = 
         </div>
       </div>
       <div class="t-form__item t-form-item__" style="margin-left:100px;">
-        <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for=""></label></div>
         <div class="t-form__controls">
           <div class="t-form__controls-content">
             <div class="t-space t-space-horizontal" style="gap:10px;">
@@ -7440,7 +7435,7 @@ exports[`ssr snapshot test renders ./src/form/_example/validate-complicated-data
           </div>
           <div class="t-space-item">
             <div class="t-form__item t-form-item__" style="margin-left:100px;">
-              <div class="t-form__label t-form__label--right" style="width:80px;"><label for=""></label></div>
+              <div class="t-form__label t-form__label--required t-form__label--right" style="width:80px;"><label for=""></label></div>
               <div class="t-form__controls">
                 <div class="t-form__controls-content">
                   <div class="t-space t-space-horizontal" style="gap:10px;">
@@ -7489,7 +7484,7 @@ exports[`ssr snapshot test renders ./src/form/_example/validate-complicated-data
           </div>
           <div class="t-space-item">
             <div class="t-form__item t-form-item__" style="margin-left:100px;">
-              <div class="t-form__label t-form__label--right" style="width:80px;"><label for=""></label></div>
+              <div class="t-form__label t-form__label--required t-form__label--right" style="width:80px;"><label for=""></label></div>
               <div class="t-form__controls">
                 <div class="t-form__controls-content">
                   <div class="t-space t-space-horizontal" style="gap:10px;">
@@ -7521,7 +7516,7 @@ exports[`ssr snapshot test renders ./src/form/_example/validate-message.vue corr
     </div>
   </div>
   <div class="t-form__item t-form-item__description t-form__item-with-help">
-    <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">个人简介</label></div>
+    <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">个人简介</label></div>
     <div class="t-form__controls" style="margin-left:100px;">
       <div class="t-form__controls-content">
         <div class="t-input__wrap">
@@ -7542,7 +7537,7 @@ exports[`ssr snapshot test renders ./src/form/_example/validate-message.vue corr
     </div>
   </div>
   <div class="t-form__item t-form-item__" style="margin-left:100px;">
-    <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
+    <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for=""></label></div>
     <div class="t-form__controls">
       <div class="t-form__controls-content">
         <div class="t-space t-space-horizontal" style="gap:10px;">
@@ -7672,7 +7667,7 @@ exports[`ssr snapshot test renders ./src/form/_example/validator.vue correctly 1
     </div>
   </div>
   <div class="t-form__item t-form-item__description t-form__item-with-help">
-    <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">个人简介</label></div>
+    <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">个人简介</label></div>
     <div class="t-form__controls" style="margin-left:100px;">
       <div class="t-form__controls-content">
         <div class="t-textarea"><textarea unselectable="off" class="t-textarea__inner"></textarea></div>
@@ -7704,7 +7699,7 @@ exports[`ssr snapshot test renders ./src/form/_example/validator.vue correctly 1
     </div>
   </div>
   <div class="t-form__item t-form-item__" style="margin-left:100px;">
-    <div class="t-form__label t-form__label--right" style="width:100px;"><label for=""></label></div>
+    <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for=""></label></div>
     <div class="t-form__controls">
       <div class="t-form__controls-content">
         <div class="t-space t-space-horizontal" style="gap:10px;">
@@ -7748,7 +7743,7 @@ exports[`ssr snapshot test renders ./src/form/_example/validator-status.vue corr
         </div>
       </div>
       <div class="t-form__item t-form-item__success">
-        <div class="t-form__label t-form__label--right" style="width:80px;"><label for="">成功</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:80px;"><label for="">成功</label></div>
         <div class="t-form__controls" style="margin-left:80px;">
           <div class="t-form__controls-content">
             <div class="t-input__wrap">
@@ -7758,7 +7753,7 @@ exports[`ssr snapshot test renders ./src/form/_example/validator-status.vue corr
         </div>
       </div>
       <div class="t-form__item t-form-item__success">
-        <div class="t-form__label t-form__label--right" style="width:80px;"><label for="">成功</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:80px;"><label for="">成功</label></div>
         <div class="t-form__controls" style="margin-left:80px;">
           <div class="t-form__controls-content">
             <div class="t-input__wrap">
@@ -7788,7 +7783,7 @@ exports[`ssr snapshot test renders ./src/form/_example/validator-status.vue corr
         </div>
       </div>
       <div class="t-form__item t-form-item__loading">
-        <div class="t-form__label t-form__label--right" style="width:80px;"><label for="">加载中</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:80px;"><label for="">加载中</label></div>
         <div class="t-form__controls" style="margin-left:80px;">
           <div class="t-form__controls-content">
             <div class="t-input__wrap">
@@ -7798,7 +7793,7 @@ exports[`ssr snapshot test renders ./src/form/_example/validator-status.vue corr
         </div>
       </div>
       <div class="t-form__item t-form-item__help">
-        <div class="t-form__label t-form__label--right" style="width:80px;"><label for="">帮助</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:80px;"><label for="">帮助</label></div>
         <div class="t-form__controls" style="margin-left:80px;">
           <div class="t-form__controls-content">
             <div class="t-input__wrap">
@@ -7808,7 +7803,7 @@ exports[`ssr snapshot test renders ./src/form/_example/validator-status.vue corr
         </div>
       </div>
       <div class="t-form__item t-form-item__add0">
-        <div class="t-form__label t-form__label--right" style="width:80px;"><label for="">新增</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:80px;"><label for="">新增</label></div>
         <div class="t-form__controls" style="margin-left:80px;">
           <div class="t-form__controls-content">
             <div class="t-input__wrap">
@@ -7819,7 +7814,7 @@ exports[`ssr snapshot test renders ./src/form/_example/validator-status.vue corr
         </div>
       </div>
       <div class="t-form__item t-form-item__" style="margin-left:80px;">
-        <div class="t-form__label t-form__label--right" style="width:80px;"><label for=""></label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:80px;"><label for=""></label></div>
         <div class="t-form__controls">
           <div class="t-form__controls-content">
             <div class="t-space t-space-horizontal" style="gap:10px;">
@@ -9707,7 +9702,7 @@ exports[`ssr snapshot test renders ./src/input-number/_example/status.vue correc
     <!---->
     <!---->
     <div class="t-form__item t-form-item__">
-      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">正常提示</label></div>
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">正常提示</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
           <div class="t-input-number t-size-m t-input-number--row"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
@@ -9724,7 +9719,7 @@ exports[`ssr snapshot test renders ./src/input-number/_example/status.vue correc
       </div>
     </div><br>
     <div class="t-form__item t-form-item__">
-      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">成功提示</label></div>
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">成功提示</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
           <div class="t-input-number t-size-m t-input-number--row"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
@@ -9741,7 +9736,7 @@ exports[`ssr snapshot test renders ./src/input-number/_example/status.vue correc
       </div>
     </div><br>
     <div class="t-form__item t-form-item__">
-      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">警告提示</label></div>
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">警告提示</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
           <div class="t-input-number t-size-m t-input-number--row"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
@@ -9758,7 +9753,7 @@ exports[`ssr snapshot test renders ./src/input-number/_example/status.vue correc
       </div>
     </div><br>
     <div class="t-form__item t-form-item__">
-      <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">错误提示</label></div>
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">错误提示</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
         <div class="t-form__controls-content">
           <div class="t-input-number t-size-m t-input-number--row"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-remove t-size-m">
@@ -22575,7 +22570,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/activable.vue correctly 1
   <div class="t-space-item">
     <form class="t-form">
       <div class="t-form__item t-form-item__">
-        <div class="t-form__label t-form__label--right" style="width:120;"><label for="">节点可高亮</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:120;"><label for="">节点可高亮</label></div>
         <div class="t-form__controls" style="margin-left:120;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
@@ -22585,7 +22580,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/activable.vue correctly 1
         </div>
       </div>
       <div class="t-form__item t-form-item__">
-        <div class="t-form__label t-form__label--right" style="width:120;"><label for="">节点可多选高亮</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:120;"><label for="">节点可多选高亮</label></div>
         <div class="t-form__controls" style="margin-left:120;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
@@ -22595,7 +22590,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/activable.vue correctly 1
         </div>
       </div>
       <div class="t-form__item t-form-item__">
-        <div class="t-form__label t-form__label--right" style="width:120;"><label for="">整个节点可点击</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:120;"><label for="">整个节点可点击</label></div>
         <div class="t-form__controls" style="margin-left:120;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
@@ -22639,7 +22634,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/checkable.vue correctly 1
   <div class="t-space-item">
     <form class="t-form">
       <div class="t-form__item t-form-item__" style="margin-bottom:16px;">
-        <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">可选</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">可选</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
@@ -22649,7 +22644,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/checkable.vue correctly 1
         </div>
       </div>
       <div class="t-form__item t-form-item__" style="margin-bottom:16px;">
-        <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">严格模式</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">严格模式</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
@@ -22659,7 +22654,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/checkable.vue correctly 1
         </div>
       </div>
       <div class="t-form__item t-form-item__" style="margin-bottom:16px;">
-        <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">选中值模式</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">选中值模式</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="onlyLeaf" name="value-mode" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">onlyLeaf</span></label><label class="t-radio-button"><input type="radio" value="parentFirst" name="value-mode" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">parentFirst</span></label><label class="t-radio-button"><input type="radio" value="all" name="value-mode" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">all</span></label>
@@ -22739,7 +22734,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/data.vue correctly 1`] = 
   <div class="operations">
     <form class="t-form">
       <div class="t-form__item t-form-item__">
-        <div class="t-form__label t-form__label--right" style="width:150;"><label for="">切换数据</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:150;"><label for="">切换数据</label></div>
         <div class="t-form__controls" style="margin-left:150;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
@@ -22749,7 +22744,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/data.vue correctly 1`] = 
         </div>
       </div>
       <div class="t-form__item t-form-item__">
-        <div class="t-form__label t-form__label--right" style="width:150;"><label for="">默认展开全部</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:150;"><label for="">默认展开全部</label></div>
         <div class="t-form__controls" style="margin-left:150;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
@@ -22759,7 +22754,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/data.vue correctly 1`] = 
         </div>
       </div>
       <div class="t-form__item t-form-item__">
-        <div class="t-form__label t-form__label--right" style="width:150;"><label for="">可选</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:150;"><label for="">可选</label></div>
         <div class="t-form__controls" style="margin-left:150;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
@@ -22769,7 +22764,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/data.vue correctly 1`] = 
         </div>
       </div>
       <div class="t-form__item t-form-item__">
-        <div class="t-form__label t-form__label--right" style="width:150;"><label for="">节点可高亮</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:150;"><label for="">节点可高亮</label></div>
         <div class="t-form__controls" style="margin-left:150;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
@@ -22779,7 +22774,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/data.vue correctly 1`] = 
         </div>
       </div>
       <div class="t-form__item t-form-item__">
-        <div class="t-form__label t-form__label--right" style="width:150;"><label for="">展开动画</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:150;"><label for="">展开动画</label></div>
         <div class="t-form__controls" style="margin-left:150;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
@@ -22812,7 +22807,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/disabled.vue correctly 1`
   <div class="operations">
     <form class="t-form">
       <div class="t-form__item t-form-item__">
-        <div class="t-form__label t-form__label--right" style="width:150;"><label for="">是否禁用整个 tree</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:150;"><label for="">是否禁用整个 tree</label></div>
         <div class="t-form__controls" style="margin-left:150;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
@@ -22822,7 +22817,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/disabled.vue correctly 1`
         </div>
       </div>
       <div class="t-form__item t-form-item__">
-        <div class="t-form__label t-form__label--right" style="width:200;"><label for="">是否只禁用 checkbox</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:200;"><label for="">是否只禁用 checkbox</label></div>
         <div class="t-form__controls" style="margin-left:200;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
@@ -22850,7 +22845,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/disabled.vue correctly 1`
   <div class="operations">
     <form class="t-form">
       <div class="t-form__item t-form-item__">
-        <div class="t-form__label t-form__label--right" style="width:200;"><label for="">禁用指定节点 checkbox</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:200;"><label for="">禁用指定节点 checkbox</label></div>
         <div class="t-form__controls" style="margin-left:200;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
@@ -22915,7 +22910,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/expand-all.vue correctly 
   <div class="t-space-item">
     <form class="t-form">
       <div class="t-form__item t-form-item__">
-        <div class="t-form__label t-form__label--right" style="width:150;"><label for="">切换数据</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:150;"><label for="">切换数据</label></div>
         <div class="t-form__controls" style="margin-left:150;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
@@ -22925,7 +22920,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/expand-all.vue correctly 
         </div>
       </div>
       <div class="t-form__item t-form-item__">
-        <div class="t-form__label t-form__label--right" style="width:150;"><label for="">展开动画</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:150;"><label for="">展开动画</label></div>
         <div class="t-form__controls" style="margin-left:150;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
@@ -22975,7 +22970,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/expand-mutex.vue correctl
   <div class="t-space-item">
     <form class="t-form">
       <div class="t-form__item t-form-item__">
-        <div class="t-form__label t-form__label--right" style="width:120;"><label for="">互斥展开</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:120;"><label for="">互斥展开</label></div>
         <div class="t-form__controls" style="margin-left:120;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
@@ -22985,7 +22980,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/expand-mutex.vue correctl
         </div>
       </div>
       <div class="t-form__item t-form-item__">
-        <div class="t-form__label t-form__label--right" style="width:120;"><label for="">整个节点可点击</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:120;"><label for="">整个节点可点击</label></div>
         <div class="t-form__controls" style="margin-left:120;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
@@ -23108,7 +23103,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/lazy.vue correctly 1`] = 
   <div class="t-space-item">
     <form class="t-form">
       <div class="t-form__item t-form-item__">
-        <div class="t-form__label t-form__label--right" style="width:150;"><label for="">可选</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:150;"><label for="">可选</label></div>
         <div class="t-form__controls" style="margin-left:150;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
@@ -23118,7 +23113,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/lazy.vue correctly 1`] = 
         </div>
       </div>
       <div class="t-form__item t-form-item__">
-        <div class="t-form__label t-form__label--right" style="width:150;"><label for="">严格模式</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:150;"><label for="">严格模式</label></div>
         <div class="t-form__controls" style="margin-left:150;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
@@ -23145,7 +23140,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/line.vue correctly 1`] = 
   <div class="t-space-item">
     <form class="t-form">
       <div class="t-form__item t-form-item__" style="margin-bottom:16px;">
-        <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">显示连线</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">显示连线</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
@@ -23155,7 +23150,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/line.vue correctly 1`] = 
         </div>
       </div>
       <div class="t-form__item t-form-item__" style="margin-bottom:16px;">
-        <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">显示图标</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:100px;"><label for="">显示图标</label></div>
         <div class="t-form__controls" style="margin-left:100px;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
@@ -23409,7 +23404,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/load.vue correctly 1`] = 
   <div class="t-space-item">
     <form class="t-form">
       <div class="t-form__item t-form-item__">
-        <div class="t-form__label t-form__label--right" style="width:150;"><label for="">可选</label></div>
+        <div class="t-form__label t-form__label--required t-form__label--right" style="width:150;"><label for="">可选</label></div>
         <div class="t-form__controls" style="margin-left:150;">
           <div class="t-form__controls-content">
             <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
@@ -23456,7 +23451,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/operations.vue correctly 
       <div class="t-space-item">
         <form class="t-form">
           <div class="t-form__item t-form-item__" style="margin-bottom:5px;">
-            <div class="t-form__label t-form__label--right" style="width:200;"><label for="">插入节点使用高亮节点</label></div>
+            <div class="t-form__label t-form__label--required t-form__label--right" style="width:200;"><label for="">插入节点使用高亮节点</label></div>
             <div class="t-form__controls" style="margin-left:200;">
               <div class="t-form__controls-content">
                 <div class="t-switch t-size-m"><span class="t-switch__handle"></span>
@@ -23466,7 +23461,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/operations.vue correctly 
             </div>
           </div>
           <div class="t-form__item t-form-item__">
-            <div class="t-form__label t-form__label--right" style="width:200;"><label for="">子节点展开触发父节点展开</label></div>
+            <div class="t-form__label t-form__label--required t-form__label--right" style="width:200;"><label for="">子节点展开触发父节点展开</label></div>
             <div class="t-form__controls" style="margin-left:200;">
               <div class="t-form__controls-content">
                 <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
@@ -23545,7 +23540,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/performance.vue correctly
   <div class="operations"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">插入根节点</span></button></div>
   <form class="t-form" style="max-width:500px;">
     <div class="t-form__item t-form-item__">
-      <div class="t-form__label t-form__label--right" style="width:150;"><label for="">展开动画</label></div>
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:150;"><label for="">展开动画</label></div>
       <div class="t-form__controls" style="margin-left:150;">
         <div class="t-form__controls-content">
           <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
@@ -23555,7 +23550,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/performance.vue correctly
       </div>
     </div>
     <div class="t-form__item t-form-item__">
-      <div class="t-form__label t-form__label--right" style="width:150;"><label for="">显示连线</label></div>
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:150;"><label for="">显示连线</label></div>
       <div class="t-form__controls" style="margin-left:150;">
         <div class="t-form__controls-content">
           <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
@@ -23565,7 +23560,7 @@ exports[`ssr snapshot test renders ./src/tree/_example/performance.vue correctly
       </div>
     </div>
     <div class="t-form__item t-form-item__">
-      <div class="t-form__label t-form__label--right" style="width:150;"><label for="">显示图标</label></div>
+      <div class="t-form__label t-form__label--required t-form__label--right" style="width:150;"><label for="">显示图标</label></div>
       <div class="t-form__controls" style="margin-left:150;">
         <div class="t-form__controls-content">
           <div class="t-switch t-size-m t-is-checked"><span class="t-switch__handle"></span>
