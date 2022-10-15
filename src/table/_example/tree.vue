@@ -29,6 +29,13 @@
       :treeExpandAndFoldIcon="treeExpandIcon"
       :pagination="pagination"
       :beforeDragSort="beforeDragSort"
+      :displayColumns.sync="displayColumns"
+      :columnController="{
+        placement: 'bottom-left',
+        // 允许控制哪些列显示或隐藏
+        fields: ['id', 'platform', 'operate'],
+        dialogProps: { preventScrollThrough: true },
+      }"
       @page-change="onPageChange"
       @abnormal-drag-sort="onAbnormalDragSort"
       @drag-sort="onDragSort"
@@ -137,6 +144,7 @@ export default {
         defaultPageSize: 10,
         total: TOTAL,
       },
+      displayColumns: ['drag', 'id', 'key', 'platform', 'operate'],
       columns: [
         {
           // 列拖拽排序必要参数

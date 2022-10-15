@@ -20,6 +20,8 @@ const PRIMARY_B_EVENTS = [
   'sort-change',
   'data-change',
   'async-loading-click',
+  'column-change',
+  'display-columns-change',
 ];
 
 const PRIMARY_ALL_EVENTS = BASE_TABLE_ALL_EVENTS.concat(PRIMARY_B_EVENTS);
@@ -96,6 +98,9 @@ export default defineComponent({
       PRIMARY_ALL_EVENTS.forEach((key) => {
         listeners[key] = (...args: any) => {
           this.$emit(key, ...args);
+          if (key === 'display-columns-change') {
+            this.$emit('update:displayColumns', ...args);
+          }
         };
       });
       return listeners;
