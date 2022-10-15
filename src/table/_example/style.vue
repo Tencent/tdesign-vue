@@ -75,7 +75,7 @@ export default {
   },
 
   methods: {
-    getRowClassName({ row, rowIndex }) {
+    getRowClassName({ rowIndex }) {
       if (rowIndex === 2) return 'custom-third-class-name';
       return '';
     },
