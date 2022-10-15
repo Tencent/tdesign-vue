@@ -109,7 +109,7 @@ export default defineComponent({
 
   render() {
     const props = {
-      ...this.$props,
+      ...this.$options.propsData,
       data: this.dataSource,
       columns: this.tColumns,
       // 半选状态节点
