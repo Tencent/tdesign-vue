@@ -1,9 +1,9 @@
 <template>
   <div class="tdesign-demo__table">
-    <div>
+    <t-space>
       <t-checkbox v-model="highlightSelectedRow">高亮行选中</t-checkbox>
       <t-checkbox v-model="selectedOnRowClick">整行选中</t-checkbox>
-    </div>
+    </t-space>
 
     <!-- 支持非受控属性 default-selected-row-keys -->
     <!-- 支持语法糖 selected-row-keys.sync -->
@@ -117,9 +117,9 @@ export default {
     font-size: 12px;
     position: absolute;
     right: 0;
-    bottom: 0;
-    width: 60px;
-    height: 35px;
+    bottom: 18px;
+    width: 20px;
+    height: 16px;
   }
 }
 </style>

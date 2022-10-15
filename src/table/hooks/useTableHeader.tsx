@@ -50,6 +50,10 @@ export default function useTableHeader(props: TdBaseTableProps) {
     colIndex: number,
     ellipsisTitle: BaseTableCol['ellipsisTitle'],
     attach: HTMLElement,
+    extra?: {
+      classPrefix: string;
+      ellipsisOverlayClassName: string;
+    },
   ) => {
     const classes = {
       [tableSortClasses.sortable]: sortIcon,
@@ -66,6 +70,8 @@ export default function useTableHeader(props: TdBaseTableProps) {
               attach={attach ? () => attach : undefined}
               tooltipContent={content && (() => content)}
               tooltipProps={typeof ellipsisTitle === 'object' ? ellipsisTitle : undefined}
+              classPrefix={extra?.classPrefix}
+              overlayClassName={extra?.ellipsisOverlayClassName}
             >
               {title}
             </TEllipsis>
