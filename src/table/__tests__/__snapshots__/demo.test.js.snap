@@ -1313,6 +1313,8 @@ exports[`Table Table baseVue demo works fine 1`] = `
               <th
                 class="custom-column-class-name t-table__th-serial-number t-align-center"
                 data-colkey="serial-number"
+                data-id="first-column"
+                style="[object Object]"
               >
                 <div
                   class="t-table__th-cell-inner"
@@ -17508,21 +17510,12 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
       class="t-table--layout-fixed"
     >
       <colgroup>
-        <col
-          style="width: 100px;"
-        />
-        <col
-          style="width: 100px;"
-        />
-        <col
-          style="width: 100px;"
-        />
-        <col
-          style="width: 100px;"
-        />
-        <col
-          style="width: 100px;"
-        />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
       </colgroup>
       <thead
         class="t-table__header"
@@ -17570,12 +17563,13 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
           </th>
           <th
             class="row t-table__th-description"
+            colspan="2"
             data-colkey="description"
           >
             <div
               class="t-table__th-cell-inner"
             >
-              说明
+              合并单行表头的最后两列
             </div>
           </th>
         </tr>
@@ -17608,6 +17602,11 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
           >
             Y
           </td>
+          <td
+            class=""
+          >
+            表头合并
+          </td>
         </tr>
         <tr
           class=""
@@ -17629,6 +17628,11 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
           >
             描述
           </td>
+          <td
+            class=""
+          >
+            表头合并
+          </td>
         </tr>
         <tr
           class=""
@@ -17648,6 +17652,11 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
             class="row"
           >
             复杂类型
+          </td>
+          <td
+            class=""
+          >
+            表头合并
           </td>
         </tr>
         <tr
@@ -17672,6 +17681,11 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
             class="row"
           >
             标识符
+          </td>
+          <td
+            class=""
+          >
+            表头合并
           </td>
         </tr>
         <tr
@@ -17700,6 +17714,11 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
           >
             数据源
           </td>
+          <td
+            class=""
+          >
+            表头合并
+          </td>
         </tr>
         <tr
           class=""
@@ -17713,6 +17732,11 @@ exports[`Table Table mergeCellsVue demo works fine 1`] = `
             class="row"
           >
             描述
+          </td>
+          <td
+            class=""
+          >
+            表头合并
           </td>
         </tr>
       </tbody>
@@ -19828,42 +19852,52 @@ exports[`Table Table selectSingleVue demo works fine 1`] = `
 <div
   class="tdesign-demo__table"
 >
-  <div>
-    <label
-      class="t-checkbox"
+  <div
+    class="t-space t-space-horizontal"
+    style="gap: 16px;"
+  >
+    <div
+      class="t-space-item"
     >
-      <input
-        class="t-checkbox__former"
-        type="checkbox"
-        value=""
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
+      <label
+        class="t-checkbox"
       >
-        高亮行选中
-      </span>
-    </label>
-     
-    <label
-      class="t-checkbox"
+        <input
+          class="t-checkbox__former"
+          type="checkbox"
+          value=""
+        />
+        <span
+          class="t-checkbox__input"
+        />
+        <span
+          class="t-checkbox__label"
+        >
+          高亮行选中
+        </span>
+      </label>
+    </div>
+    <div
+      class="t-space-item"
     >
-      <input
-        class="t-checkbox__former"
-        type="checkbox"
-        value=""
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
+      <label
+        class="t-checkbox"
       >
-        整行选中
-      </span>
-    </label>
+        <input
+          class="t-checkbox__former"
+          type="checkbox"
+          value=""
+        />
+        <span
+          class="t-checkbox__input"
+        />
+        <span
+          class="t-checkbox__label"
+        >
+          整行选中
+        </span>
+      </label>
+    </div>
   </div>
    
   <div
