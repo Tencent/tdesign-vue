@@ -18,6 +18,7 @@ import { InputValue } from '../input';
 import { closeIconClickEffect, handleRemoveTagEffect } from './core/effect';
 import { getPanels, getSingleContent, getMultipleContent } from './core/helper';
 import { getFakeArrowIconClass } from './core/className';
+import useFormDisabled from '../hooks/useFormDisabled';
 
 export default defineComponent({
   name: 'TCascader',
@@ -43,6 +44,9 @@ export default defineComponent({
         || (props.placeholder ?? global.value.placeholder),
     );
 
+    const { formDisabled } = useFormDisabled();
+    const isDisabled = computed(() => formDisabled.value || cascaderContext.value.disabled);
+
     return {
       COMPONENT_NAME,
       overlayClassName,
@@ -50,6 +54,7 @@ export default defineComponent({
       displayValue,
       inputPlaceholder,
       isFilterable,
+      isDisabled,
       STATUS,
       classPrefix,
       cascaderContext,
@@ -65,6 +70,7 @@ export default defineComponent({
       displayValue,
       inputPlaceholder,
       isFilterable,
+      isDisabled,
       STATUS,
       classPrefix,
       cascaderContext,
@@ -72,12 +78,12 @@ export default defineComponent({
       emit,
     } = this;
     const renderSuffixIcon = () => {
-      const { visible, disabled } = cascaderContext;
+      const { visible } = cascaderContext;
       return (
         <FakeArrow
           overlayClassName={getFakeArrowIconClass(classPrefix, STATUS, cascaderContext)}
           isActive={visible}
-          disabled={disabled}
+          disabled={isDisabled}
         />
       );
     };
@@ -99,7 +105,7 @@ export default defineComponent({
             minCollapsedNum: this.minCollapsedNum,
             collapsedItems: this.collapsedItems,
             readonly: this.readonly,
-            disabled: this.disabled,
+            disabled: isDisabled,
             clearable: this.clearable,
             placeholder: inputPlaceholder,
             multiple: this.multiple,
