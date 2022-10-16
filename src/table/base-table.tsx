@@ -398,7 +398,7 @@ export default defineComponent({
           style={{ width: `${this.tableWidth - affixedLeftBorder}px`, opacity: headerOpacity }}
           class={['scrollbar', { [this.tableBaseClass.affixedHeaderElm]: this.headerAffixedTop || this.isVirtual }]}
         >
-          <table class={this.tableElmClasses} style={this.tableElementActualStyles}>
+          <table class={this.tableElmClasses} style={{ ...this.tableElementStyles, width: `${this.tableElmWidth}px` }}>
             {colgroup}
             <THead
               scopedSlots={this.$scopedSlots}
@@ -456,7 +456,10 @@ export default defineComponent({
               { [this.tableBaseClass.affixedFooterElm]: this.footerAffixedBottom || this.isVirtual },
             ]}
           >
-            <table class={this.tableElmClasses} style={this.tableElementActualStyles}>
+            <table
+              class={this.tableElmClasses}
+              style={{ ...this.tableElementStyles, width: `${this.tableElmWidth}px` }}
+            >
               {this.renderColGroup(columns)}
               <TFoot
                 rowKey={this.rowKey}
