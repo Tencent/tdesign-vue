@@ -63,10 +63,10 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     });
   }
 
-  // const uniqueKeys = computed(() => store.value?.getAllUniqueKeys(data.value, rowDataKeys.value)?.join() || '');
+  const uniqueKeys = computed(() => store.value?.getAllUniqueKeys(data.value, rowDataKeys.value)?.join() || '');
 
   watch(
-    [data],
+    [uniqueKeys],
     () => {
       if (!data.value) return [];
       if (!props.tree) {
