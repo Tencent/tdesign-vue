@@ -94,6 +94,7 @@ export default defineComponent({
       updateThWidthList,
       setRecalculateColWidthFuncRef,
       addTableResizeObserver,
+      columnResizeType,
     } = useFixed(props, context, finalColumns, {
       paginationAffixRef,
       horizontalScrollAffixRef,
@@ -118,7 +119,14 @@ export default defineComponent({
     const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
 
     // 列宽拖拽逻辑
-    const columnResizeParams = useColumnResize(tableContentRef, refreshTable, getThWidthList, updateThWidthList);
+    const columnResizeParams = useColumnResize(
+      tableContentRef,
+      refreshTable,
+      getThWidthList,
+      updateThWidthList,
+      columnResizeType.value,
+      tableElmWidth,
+    );
     const {
       resizeLineRef, resizeLineStyle, recalculateColWidth, setEffectColMap,
     } = columnResizeParams;
@@ -133,7 +141,7 @@ export default defineComponent({
         [tableBaseClass.multipleHeader]: isMultipleHeader.value,
         [tableColFixedClasses.leftShadow]: showColumnShadow.left,
         [tableColFixedClasses.rightShadow]: showColumnShadow.right,
-        [tableBaseClass.columnResizableTable]: props.resizable,
+        [tableBaseClass.columnResizableTable]: !!props.resizable,
       },
     ]);
 
@@ -152,7 +160,18 @@ export default defineComponent({
         && ((isMultipleHeader.value && isWidthOverflow.value) || !isMultipleHeader.value),
     );
 
-    const columnResizable = computed(() => props.allowResizeColumnWidth === undefined ? props.resizable : props.allowResizeColumnWidth);
+    const columnResizable = computed(() => props.allowResizeColumnWidth === undefined ? !!props.resizable : props.allowResizeColumnWidth);
+
+    const tableElementActualStyles = computed(() => {
+      // 防止初始值ableElmWidth.value=0对结果的影响
+      if (columnResizeType.value === 'resize-table' && tableElmWidth.value) {
+        return {
+          ...tableElementStyles.value,
+          width: `${tableElmWidth.value}px`,
+        };
+      }
+      return tableElementStyles.value;
+    });
 
     watch(tableElmRef, () => {
       setUseFixedTableElmRef(tableElmRef.value);
@@ -326,6 +345,7 @@ export default defineComponent({
       horizontalScrollAffixRef,
       headerTopAffixRef,
       footerBottomAffixRef,
+      tableElementActualStyles,
     };
   },
 
@@ -378,7 +398,7 @@ export default defineComponent({
           style={{ width: `${this.tableWidth - affixedLeftBorder}px`, opacity: headerOpacity }}
           class={['scrollbar', { [this.tableBaseClass.affixedHeaderElm]: this.headerAffixedTop || this.isVirtual }]}
         >
-          <table class={this.tableElmClasses} style={{ ...this.tableElementStyles, width: `${this.tableElmWidth}px` }}>
+          <table class={this.tableElmClasses} style={this.tableElementActualStyles}>
             {colgroup}
             <THead
               scopedSlots={this.$scopedSlots}
@@ -436,10 +456,7 @@ export default defineComponent({
               { [this.tableBaseClass.affixedFooterElm]: this.footerAffixedBottom || this.isVirtual },
             ]}
           >
-            <table
-              class={this.tableElmClasses}
-              style={{ ...this.tableElementStyles, width: `${this.tableElmWidth}px` }}
-            >
+            <table class={this.tableElmClasses} style={this.tableElementActualStyles}>
               {this.renderColGroup(columns)}
               <TFoot
                 rowKey={this.rowKey}
@@ -534,7 +551,7 @@ export default defineComponent({
         on={{ scroll: this.onInnerVirtualScroll }}
       >
         {this.isVirtual && <div class={this.virtualScrollClasses.cursor} style={virtualStyle} />}
-        <table ref="tableElmRef" class={this.tableElmClasses} style={this.tableElementStyles}>
+        <table ref="tableElmRef" class={this.tableElmClasses} style={this.tableElementActualStyles}>
           {this.renderColGroup(columns)}
           {this.showHeader && (
             <THead

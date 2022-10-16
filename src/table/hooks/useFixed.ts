@@ -12,6 +12,7 @@ import {
 } from '@vue/composition-api';
 import get from 'lodash/get';
 import debounce from 'lodash/debounce';
+import isObject from 'lodash/isObject';
 import log from '../../_common/js/log';
 import { ClassName, Styles } from '../../common';
 import { BaseTableCol, TableRowData, TdBaseTableProps } from '../type';
@@ -125,7 +126,13 @@ export default function useFixed(
   const isFixedRightColumn = ref(false);
   const isFixedLeftColumn = ref(false);
 
-  const columnResizable = computed(() => resizable.value || allowResizeColumnWidth.value || false);
+  const columnResizable = computed(() => !!resizable.value || allowResizeColumnWidth.value || false);
+  const columnResizeType = computed(() => {
+    if (isObject(resizable.value)) {
+      return resizable.value.resizeType;
+    }
+    return 'resize-sibling-column';
+  });
 
   // 没有表头吸顶，没有虚拟滚动，则不需要表头宽度计算
   const notNeedThWidthList = computed(
@@ -577,5 +584,6 @@ export default function useFixed(
     updateThWidthList,
     setRecalculateColWidthFuncRef,
     addTableResizeObserver,
+    columnResizeType,
   };
 }

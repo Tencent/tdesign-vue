@@ -13,10 +13,14 @@ export default function useColumnResize(
   refreshTable: () => void,
   getThWidthList: () => { [colKeys: string]: number },
   updateThWidthList: (data: { [colKeys: string]: number }) => void,
+  columnResizeType: 'resize-sibling-column' | 'resize-table',
+  tableElmWidth: Ref<number>,
 ) {
   const resizeLineRef = ref<HTMLDivElement>();
   const notCalculateWidthCols = ref<string[]>([]);
   const effectColMap = ref<{ [colKey: string]: any }>({});
+  const colResizeType = ref<'resize-sibling-column' | 'resize-table'>(columnResizeType);
+  const tableElmWidthRef = tableElmWidth;
 
   // 递归查找列宽度变化后，受影响的相关列
   const setEffectColMap = (nodes: BaseTableCol<TableRowData>[], parent: BaseTableCol<TableRowData> | null) => {
@@ -150,7 +154,7 @@ export default function useColumnResize(
             col,
             width,
             effectNextCol,
-            { getThWidthList, DEFAULT_MIN_WIDTH },
+            { getThWidthList, DEFAULT_MIN_WIDTH, columnResizeType: colResizeType.value },
             (updateMap, notCalculateCols) => {
               updateThWidthList(updateMap);
               setNotCalculateWidthCols(notCalculateCols);
@@ -161,14 +165,13 @@ export default function useColumnResize(
             effectPrevCol,
             width,
             col,
-            { getThWidthList, DEFAULT_MIN_WIDTH },
+            { getThWidthList, DEFAULT_MIN_WIDTH, columnResizeType: colResizeType.value },
             (updateMap, notCalculateCols) => {
               updateThWidthList(updateMap);
               setNotCalculateWidthCols(notCalculateCols);
             },
           );
         }
-
         // 恢复设置
         resizeLineParams.isDragging = false;
         resizeLineParams.draggingCol = null;
@@ -215,10 +218,20 @@ export default function useColumnResize(
       notCalculateWidthCols.value,
       (widthMap) => {
         updateThWidthList(widthMap);
+        // resize-table模式下重新调整tableElmWidth
+        if (colResizeType.value === 'resize-table') {
+          const thWidthList = getThWidthList();
+          let actualWidth = 0;
+          Object.keys(thWidthList).forEach((key) => {
+            actualWidth += thWidthList[key];
+          });
+          tableElmWidthRef.value = actualWidth;
+        }
         if (notCalculateWidthCols.value.length) {
           notCalculateWidthCols.value = [];
         }
       },
+      colResizeType.value,
     );
   };
 

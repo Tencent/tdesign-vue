@@ -136,7 +136,7 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    * 是否允许调整列宽。如果想要配置宽度可调整的最小值和最大值，请使用 `column.resize`，示例：`columns: [{ resize: { minWidth: 120, maxWidth: 300 } }]`
    * @default false
    */
-  resizable?: boolean;
+  resizable?: boolean | { resizeType: 'resize-sibling-column' | 'resize-table' };
   /**
    * HTML 标签 `tr` 的属性。类型为 Function 时，参数说明：`params.row` 表示行数据；`params.rowIndex` 表示行下标；`params.type=body` 表示属性作用于 `tbody` 中的元素；`params.type=foot` 表示属性作用于 `tfoot` 中的元素。<br />示例一：{ draggable: true }，<br />示例二：[{ draggable: true }, { title: '超出省略显示' }]。<br /> 示例三：() => [{ draggable: true }]
    */
