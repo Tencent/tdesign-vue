@@ -59,10 +59,12 @@ export default defineComponent({
     const tableFootHeight = ref(0);
 
     const {
-      virtualScrollClasses, tableLayoutClasses, tableBaseClass, tableColFixedClasses,
+      classPrefix, virtualScrollClasses, tableLayoutClasses, tableBaseClass, tableColFixedClasses,
     } = useClassName();
     // 表格基础样式类
-    const { tableClasses, tableContentStyles, tableElementStyles } = useStyle(props);
+    const {
+      tableClasses, sizeClassNames, tableContentStyles, tableElementStyles,
+    } = useStyle(props);
     const { global } = useConfig('table');
     const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
     const finalColumns = computed(() => spansAndLeafNodes.value?.leafColumns || props.columns);
@@ -268,6 +270,7 @@ export default defineComponent({
     return {
       columnResizable,
       thList,
+      classPrefix,
       isVirtual,
       global,
       tableFootHeight,
@@ -275,6 +278,7 @@ export default defineComponent({
       tableElmWidth,
       tableRef,
       tableElmRef,
+      sizeClassNames,
       tableBaseClass,
       spansAndLeafNodes,
       dynamicBaseTableClasses,
@@ -347,6 +351,23 @@ export default defineComponent({
       );
     },
 
+    getHeadProps() {
+      const headProps = {
+        isFixedHeader: this.isFixedHeader,
+        rowAndColFixedPosition: this.rowAndColFixedPosition,
+        isMultipleHeader: this.isMultipleHeader,
+        bordered: this.bordered,
+        spansAndLeafNodes: this.spansAndLeafNodes,
+        thList: this.thList,
+        thWidthList: this.thWidthList,
+        resizable: this.resizable,
+        columnResizeParams: this.columnResizeParams,
+        classPrefix: this.classPrefix,
+        ellipsisOverlayClassName: this.size !== 'medium' ? this.sizeClassNames[this.size] : '',
+      };
+      return headProps;
+    },
+
     /**
      * Affixed Header
      */
@@ -380,18 +401,7 @@ export default defineComponent({
         >
           <table class={this.tableElmClasses} style={{ ...this.tableElementStyles, width: `${this.tableElmWidth}px` }}>
             {colgroup}
-            <THead
-              scopedSlots={this.$scopedSlots}
-              isFixedHeader={this.isFixedHeader}
-              rowAndColFixedPosition={this.rowAndColFixedPosition}
-              isMultipleHeader={this.isMultipleHeader}
-              bordered={this.bordered}
-              spansAndLeafNodes={this.spansAndLeafNodes}
-              thList={this.thList}
-              thWidthList={this.thWidthList}
-              resizable={this.columnResizable}
-              columnResizeParams={this.columnResizeParams}
-            />
+            <THead scopedSlots={this.$scopedSlots} props={this.getHeadProps()} />
           </table>
         </div>
       );
@@ -520,6 +530,7 @@ export default defineComponent({
       bufferSize: this.bufferSize,
       scroll: this.scroll,
       cellEmptyContent: this.cellEmptyContent,
+      classPrefix: this.classPrefix,
       handleRowMounted: this.handleRowMounted,
       renderExpandedRow: this.renderExpandedRow,
       ...pick(this.$props, extendTableProps),
@@ -536,20 +547,7 @@ export default defineComponent({
         {this.isVirtual && <div class={this.virtualScrollClasses.cursor} style={virtualStyle} />}
         <table ref="tableElmRef" class={this.tableElmClasses} style={this.tableElementStyles}>
           {this.renderColGroup(columns)}
-          {this.showHeader && (
-            <THead
-              scopedSlots={this.$scopedSlots}
-              isFixedHeader={this.isFixedHeader}
-              rowAndColFixedPosition={this.rowAndColFixedPosition}
-              isMultipleHeader={this.isMultipleHeader}
-              bordered={this.bordered}
-              spansAndLeafNodes={this.spansAndLeafNodes}
-              thList={this.thList}
-              thWidthList={this.thWidthList}
-              resizable={this.columnResizable}
-              columnResizeParams={this.columnResizeParams}
-            />
-          )}
+          {this.showHeader && <THead scopedSlots={this.$scopedSlots} props={this.getHeadProps()} />}
           <TBody ref="tableBodyRef" scopedSlots={this.$scopedSlots} props={tableBodyProps} on={tBodyListener} />
           <TFoot
             rowKey={this.rowKey}

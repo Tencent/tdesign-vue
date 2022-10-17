@@ -7,16 +7,17 @@ import { TNode } from '../common';
 import { renderContent } from '../utils/render-tnode';
 import { isNodeOverflow } from '../utils/dom';
 import TTooltip, { TooltipProps } from '../tooltip';
-import { useConfig } from '../config-provider/useConfig';
 
 export interface EllipsisProps {
-  content: string | TNode;
-  default: string | TNode;
-  tooltipContent: string | number | TNode;
-  placement: TooltipProps['placement'];
-  attach: () => HTMLElement;
-  tooltipProps: TooltipProps;
-  zIndex: number;
+  content?: string | TNode;
+  default?: string | TNode;
+  tooltipContent?: string | number | TNode;
+  placement?: TooltipProps['placement'];
+  attach?: () => HTMLElement;
+  tooltipProps?: TooltipProps;
+  zIndex?: number;
+  overlayClassName?: string;
+  classPrefix?: string;
 }
 
 export default defineComponent({
@@ -42,18 +43,25 @@ export default defineComponent({
     /** 透传 Tooltip 组件属性 */
     tooltipProps: Object as PropType<EllipsisProps['tooltipProps']>,
     zIndex: Number,
+    overlayClassName: String,
+    classPrefix: {
+      type: String,
+      // default: 't',
+    },
   },
 
-  // 空 props 是为了 TS 类型检测
-  // eslint-disable-next-line
   setup(props: EllipsisProps) {
-    const { classPrefix } = useConfig();
     const root = ref();
     const isOverflow = ref(false);
 
     const ellipsisClasses = computed(() => [
-      `${classPrefix.value}-table__ellipsis`,
-      `${classPrefix.value}-text-ellipsis`,
+      `${props.classPrefix}-table__ellipsis`,
+      `${props.classPrefix}-text-ellipsis`,
+    ]);
+
+    const innerEllipsisClassName = computed<TooltipProps['overlayClassName']>(() => [
+      `${props.classPrefix}-table__ellipsis-content`,
+      props.overlayClassName,
     ]);
 
     // 当表格数据量大时，不希望默认渲染全量的 Tooltip，期望在用户 mouseenter 的时候再显示
@@ -75,6 +83,7 @@ export default defineComponent({
       root,
       isOverflow,
       ellipsisClasses,
+      innerEllipsisClassName,
       onMouseAround,
     };
   },
@@ -87,6 +96,7 @@ export default defineComponent({
       </div>
     );
     let content = null;
+    const tooltipProps = this.tooltipProps as EllipsisProps['tooltipProps'];
     if (this.isOverflow) {
       const rProps = {
         content: this.tooltipContent || (() => cellNode),
@@ -94,7 +104,10 @@ export default defineComponent({
         zIndex: this.zIndex,
         attach: this.attach || (() => this.root),
         placement: this.placement,
-        ...(this.tooltipProps || {}),
+        overlayClassName: tooltipProps?.overlayClassName
+          ? this.innerEllipsisClassName.concat(tooltipProps.overlayClassName)
+          : this.innerEllipsisClassName,
+        ...tooltipProps,
       };
       content = <TTooltip props={rProps}>{ellipsisContent}</TTooltip>;
     } else {

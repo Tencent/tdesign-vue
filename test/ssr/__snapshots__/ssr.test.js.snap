@@ -17188,7 +17188,7 @@ exports[`ssr snapshot test renders ./src/table/_example/base.vue correctly 1`] =
           </colgroup>
           <thead class="t-table__header">
             <tr>
-              <th data-colkey="serial-number" class="custom-column-class-name t-table__th-serial-number t-align-center">
+              <th data-colkey="serial-number" data-id="first-column" class="custom-column-class-name t-table__th-serial-number t-align-center">
                 <div class="t-table__th-cell-inner">序号</div>
               </th>
               <th data-colkey="platform" class="t-table__th-platform">
@@ -17488,10 +17488,18 @@ exports[`ssr snapshot test renders ./src/table/_example/custom-col.vue correctly
 
 exports[`ssr snapshot test renders ./src/table/_example/custom-col-button.vue correctly 1`] = `
 <div class="tdesign-demo-block-column-large tdesign-demo__table">
-  <div>
-    <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button"><input type="radio" value="top-left" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左上角</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="top-right" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右上角</span></label> <label class="t-radio-button"><input type="radio" value="bottom-left" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左下角</span></label> <label class="t-radio-button"><input type="radio" value="bottom-right" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右下角</span></label>
-      <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
-    </div> <br><br> <label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否显示边框</span></label> <label class="t-checkbox" style="margin-left:16px;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">自定义列配置按钮</span></label>
+  <div class="t-space t-space-vertical" style="gap:16px;">
+    <div class="t-space-item">
+      <div class="t-radio-group t-size-m t-radio-group--filled"><label class="t-radio-button"><input type="radio" value="top-left" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左上角</span></label> <label class="t-radio-button t-is-checked"><input type="radio" checked="checked" value="top-right" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右上角</span></label> <label class="t-radio-button"><input type="radio" value="bottom-left" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">左下角</span></label> <label class="t-radio-button"><input type="radio" value="bottom-right" name="" class="t-radio-button__former"><span class="t-radio-button__input"></span><span class="t-radio-button__label">右下角</span></label>
+        <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
+      </div>
+    </div>
+    <div class="t-space-item">
+      <div class="t-space t-space-horizontal" style="gap:16px;">
+        <div class="t-space-item"><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">是否显示边框</span></label></div>
+        <div class="t-space-item"><label class="t-checkbox" style="margin-left:16px;"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">自定义列配置按钮</span></label></div>
+      </div>
+    </div>
   </div>
   <div class="t-table t-table--bordered t-table--striped t-table--col-draggable" style="position:relative;">
     <div class="t-table__top-content">
@@ -18441,6 +18449,154 @@ exports[`ssr snapshot test renders ./src/table/_example/editable-row.vue correct
             </td>
             <td>
               <div class="table-operations"><button type="button" data-id="5" class="t-button t-size-m t-button--variant-text t-button--theme-primary"><span class="t-button__text">编辑</span></button></div>
+            </td>
+          </tr>
+        </tbody>
+        <!---->
+      </table>
+    </div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
+  </div>
+</div>
+`;
+
+exports[`ssr snapshot test renders ./src/table/_example/ellipsis.vue correctly 1`] = `
+<div>
+  <div class="t-table" style="position:relative;">
+    <div class="t-table__content">
+      <table class="t-table--layout-fixed" style="width:;">
+        <colgroup>
+          <col>
+          <col style="width:120px;">
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
+        <thead class="t-table__header">
+          <tr>
+            <th data-colkey="desc" class="t-table__th-desc">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">Description</div>
+              </div>
+            </th>
+            <th data-colkey="something" class="t-table__th-something">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">这是一个很长很长的标题</div>
+              </div>
+            </th>
+            <th data-colkey="link" class="t-table__th-link">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">Link</div>
+              </div>
+            </th>
+            <th data-colkey="ellipsisProps" class="t-table__th-ellipsisProps">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">Ellipsis Props</div>
+              </div>
+            </th>
+            <th data-colkey="ellipsisContent" class="t-table__th-ellipsisContent">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">Ellipsis Content</div>
+              </div>
+            </th>
+            <th data-colkey="propsAndContent1" class="t-table__th-propsAndContent1">
+              <div class="t-table__th-cell-inner">
+                <div class="t-table__ellipsis t-text-ellipsis">Props &amp; Content</div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="t-table__body">
+          <tr>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">单元格文本超出省略设置</div>
+            </td>
+            <td>仅标题省略</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis"><a href="/vue-next/components/table" target="_blank">Long link text. Popup content is pure text</a></div>
+            </td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">Setting ellipsis tooltip to be light</div>
+            </td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">Custom Ellipsis Content</div>
+            </td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">Setting props and content at the same time</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">这是普通文本的超出省略</div>
+            </td>
+            <td>仅标题省略</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis"><a href="/vue-next/components/table" target="_blank">Long link text. Popup content is pure text</a></div>
+            </td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">Setting ellipsis tooltip to be light</div>
+            </td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">Custom Ellipsis Content</div>
+            </td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">Setting props and content at the same time</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">单元格文本超出省略设置</div>
+            </td>
+            <td>仅标题省略</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis"><a href="/vue-next/components/table" target="_blank">Long link text. Popup content is pure text</a></div>
+            </td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">Setting ellipsis tooltip to be light</div>
+            </td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">Custom Ellipsis Content</div>
+            </td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">Setting props and content at the same time</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">这是普通文本的超出省略</div>
+            </td>
+            <td>仅标题省略</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis"><a href="/vue-next/components/table" target="_blank">Long link text. Popup content is pure text</a></div>
+            </td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">Setting ellipsis tooltip to be light</div>
+            </td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">Custom Ellipsis Content</div>
+            </td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">Setting props and content at the same time</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">单元格文本超出省略设置</div>
+            </td>
+            <td>仅标题省略</td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis"><a href="/vue-next/components/table" target="_blank">Long link text. Popup content is pure text</a></div>
+            </td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">Setting ellipsis tooltip to be light</div>
+            </td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">Custom Ellipsis Content</div>
+            </td>
+            <td class="t-table-td--ellipsis">
+              <div class="t-table__ellipsis t-text-ellipsis">Setting props and content at the same time</div>
             </td>
           </tr>
         </tbody>
@@ -19693,11 +19849,12 @@ exports[`ssr snapshot test renders ./src/table/_example/merge-cells.vue correctl
   <div class="t-table__content">
     <table class="t-table--layout-fixed" style="width:;">
       <colgroup>
-        <col style="width:100px;">
-        <col style="width:100px;">
-        <col style="width:100px;">
-        <col style="width:100px;">
-        <col style="width:100px;">
+        <col>
+        <col>
+        <col>
+        <col>
+        <col>
+        <col>
       </colgroup>
       <thead class="t-table__header">
         <tr>
@@ -19713,8 +19870,8 @@ exports[`ssr snapshot test renders ./src/table/_example/merge-cells.vue correctl
           <th data-colkey="needed" class="test3 t-table__th-needed">
             <div class="t-table__th-cell-inner">是否必传</div>
           </th>
-          <th data-colkey="description" class="row t-table__th-description">
-            <div class="t-table__th-cell-inner">说明</div>
+          <th data-colkey="description" colspan="2" class="row t-table__th-description">
+            <div class="t-table__th-cell-inner">合并单行表头的最后两列</div>
           </th>
         </tr>
       </thead>
@@ -19724,32 +19881,38 @@ exports[`ssr snapshot test renders ./src/table/_example/merge-cells.vue correctl
           <td class="row">Array&lt;any&gt;</td>
           <td class="test4">[]</td>
           <td colspan="2" class="test3">Y</td>
+          <td>表头合并</td>
         </tr>
         <tr>
           <td rowspan="2" colspan="2" class="row">String</td>
           <td class="test3">Y</td>
           <td class="row">描述</td>
+          <td>表头合并</td>
         </tr>
         <tr>
           <td rowspan="2" class="test t-table__td-first-col">公有</td>
           <td class="test3">Y</td>
           <td class="row">复杂类型</td>
+          <td>表头合并</td>
         </tr>
         <tr>
           <td class="row">Boolean</td>
           <td class="test4">false</td>
           <td class="test3">Y</td>
           <td class="row">标识符</td>
+          <td>表头合并</td>
         </tr>
         <tr>
           <td rowspan="2" class="test t-table__td-last-row t-table__td-first-col">公有</td>
           <td class="row">Array&lt;any&gt;</td>
           <td rowspan="2" colspan="2" class="test4 t-table__td-last-row">-1</td>
           <td class="row">数据源</td>
+          <td>表头合并</td>
         </tr>
         <tr>
           <td class="row">String</td>
           <td class="row">描述</td>
+          <td>表头合并</td>
         </tr>
       </tbody>
       <!---->
@@ -20324,7 +20487,10 @@ exports[`ssr snapshot test renders ./src/table/_example/select-multiple.vue corr
 
 exports[`ssr snapshot test renders ./src/table/_example/select-single.vue correctly 1`] = `
 <div class="tdesign-demo__table">
-  <div><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">高亮行选中</span></label> <label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">整行选中</span></label></div>
+  <div class="t-space t-space-horizontal" style="gap:16px;">
+    <div class="t-space-item"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">高亮行选中</span></label></div>
+    <div class="t-space-item"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">整行选中</span></label></div>
+  </div>
   <div class="t-table" style="position:relative;">
     <div class="t-table__content">
       <table class="t-table--layout-fixed" style="width:;">
@@ -20610,6 +20776,91 @@ exports[`ssr snapshot test renders ./src/table/_example/single-sort.vue correctl
 </div>
 `;
 
+exports[`ssr snapshot test renders ./src/table/_example/style.vue correctly 1`] = `
+<div class="t-demo__style">
+  <div class="t-table" style="position:relative;">
+    <div class="t-table__content">
+      <table class="t-table--layout-fixed" style="width:;">
+        <colgroup>
+          <col style="width:80px;">
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
+        <thead class="t-table__header">
+          <tr>
+            <th data-colkey="serial-number" class="t-table__th-serial-number t-align-center">
+              <div class="t-table__th-cell-inner">序号</div>
+            </th>
+            <th data-colkey="framework" class="t-table__th-framework">
+              <div class="t-table__th-cell-inner">框架</div>
+            </th>
+            <th data-colkey="data" class="t-table__th-data t-align-right">
+              <div class="t-table__th-cell-inner">数据</div>
+            </th>
+            <th data-colkey="ringRatio" class="t-table__th-ringRatio t-align-right">
+              <div class="t-table__th-cell-inner">环比</div>
+            </th>
+            <th data-colkey="yearRatio" class="last-column-class-name t-table__th-yearRatio t-align-right">
+              <div class="t-table__th-cell-inner">同比</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="t-table__body">
+          <tr>
+            <td class="t-align-center">1</td>
+            <td>tdesign-vue</td>
+            <td class="t-align-right">100,000</td>
+            <td class="t-align-right">8%</td>
+            <td class="last-column-class-name t-align-right">10%</td>
+          </tr>
+          <tr>
+            <td class="t-align-center">2</td>
+            <td>tdesign-react</td>
+            <td class="t-align-right" style="color:green;font-weight:600;background-color:var(--td-brand-color-1);font-size:16px;">21,514</td>
+            <td class="t-align-right">30%</td>
+            <td class="last-column-class-name t-align-right">20%</td>
+          </tr>
+          <tr class="custom-third-class-name">
+            <td class="t-align-center">3</td>
+            <td>tdesign-vue-next</td>
+            <td class="t-align-right">7,884</td>
+            <td class="t-align-right">75%</td>
+            <td class="last-column-class-name t-align-right">80%</td>
+          </tr>
+          <tr>
+            <td class="t-align-center">4</td>
+            <td>tdesign-vue</td>
+            <td class="t-align-right">1,290</td>
+            <td class="custom-cell-class-name t-align-right">200%</td>
+            <td class="last-column-class-name t-align-right">100%</td>
+          </tr>
+          <tr>
+            <td class="t-align-center">5</td>
+            <td>tdesign-react</td>
+            <td class="t-align-right">100,000</td>
+            <td class="t-align-right">8%</td>
+            <td class="last-column-class-name t-align-right">10%</td>
+          </tr>
+        </tbody>
+        <tfoot class="t-table__footer">
+          <tr class="t-table__row--full">
+            <td colspan="5">
+              <div class="t-table__row-full-element">
+                <div class="t-table__row-filter-inner">汇总：近期数据波动较大</div>
+              </div>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="t-table__pagination-wrap" style="opacity:1;"></div>
+    <div class="t-table__resize-line" style="display:none;height:10px;left:10px;bottom:0;"></div>
+  </div>
+</div>
+`;
+
 exports[`ssr snapshot test renders ./src/table/_example/tree.vue correctly 1`] = `
 <div>
   <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">添加根节点</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-left:16px;"><span class="t-button__text">重置/更新数据</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-left:16px;"><span class="t-button__text">任意节点展开/收起</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-left:16px;"><span class="t-button__text">展开全部</span></button> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-default" style="margin-left:16px;"><span class="t-button__text">获取全部树形结构</span></button></div> <br>
@@ -20772,6 +21023,12 @@ exports[`ssr snapshot test renders ./src/table/_example/tree.vue correctly 1`] =
         </tbody>
         <!---->
       </table>
+    </div>
+    <div class="t-table__bottom-content">
+      <div class="t-table__column-controller-trigger t-align-bottom-left"><button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-setting">
+            <path fill="currentColor" d="M11 8a3 3 0 11-6 0 3 3 0 016 0zm-1 0a2 2 0 10-4 0 2 2 0 004 0z" fill-opacity="0.9"></path>
+            <path fill="currentColor" d="M8 1.25l6.06 3.38v6.75L8 14.75l-6.06-3.38V4.63L8 1.25zM2.94 5.21v5.58L8 13.6l5.06-2.82V5.2L8 2.4 2.94 5.21z" fill-opacity="0.9"></path>
+          </svg><span class="t-button__text">列配置</span></button></div>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;">
       <div class="t-table__pagination">

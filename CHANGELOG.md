@@ -30,6 +30,7 @@ docClass: timeline
 ### 🚀 Features
 - `ImageViewer`: 新增 `ImageViewer` 图片预览组件 @sinbadmaster ([#1520](https://github.com/Tencent/tdesign-vue/pull/1520))
 - `Upload`: 组件重构 @chaishi ([#1561](https://github.com/Tencent/tdesign-vue/pull/1561))
+  - ⚠️ `formatResponse` 不再对 `file` 对象进行格式化，仅处理 `response` 属性进行处理。如果要扩展 `file` 对象，请在 `onChange`
   - 新增`beforeAllFilesUpload`，所有文件上传之前执行，支持一次性判定所有文件是否继续上传。已经存在的 `beforeUpload` 用于判定单个文件的是否继续上传
   - 新增事件 `onValidate`，文件校验不通过时触发，可能情况有：自定义全文件校验不通过、文件数量校验不通过、文件数量校验不通过
   - 新增事件 `onOneFileSuccess` ，多文件上传场景下，在单个文件上传成功后触发

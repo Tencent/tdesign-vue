@@ -16,6 +16,8 @@ import { TdBaseTableProps } from './type';
 
 export const ROW_AND_TD_LISTENERS = ROW_LISTENERS.concat('cell-click');
 export interface TableBodyProps extends BaseTableProps {
+  classPrefix: string;
+  ellipsisOverlayClassName: string;
   // 固定列 left/right 具体值
   rowAndColFixedPosition: RowAndColFixedPosition;
   showColumnShadow: { left: boolean; right: boolean };
@@ -66,6 +68,8 @@ export default defineComponent({
   name: 'TBody',
 
   props: {
+    classPrefix: String,
+    ellipsisOverlayClassName: String,
     data: Array as PropType<TableBodyProps['data']>,
     columns: Array as PropType<TableBodyProps['columns']>,
     rowAndColFixedPosition: Map as PropType<TableBodyProps['rowAndColFixedPosition']>,
@@ -180,6 +184,8 @@ export default defineComponent({
     const trNodeList: JSX.Element[] = [];
 
     const properties = [
+      'classPrefix',
+      'ellipsisOverlayClassName',
       'rowAndColFixedPosition',
       'scroll',
       'tableElm',

@@ -21,6 +21,7 @@ import useClassName from './hooks/useClassName';
 import useEditableCell from './hooks/useEditableCell';
 import useEditableRow from './hooks/useEditableRow';
 import { EditableCellProps } from './editable-cell';
+import useStyle from './hooks/useStyle';
 
 export { BASE_TABLE_ALL_EVENTS } from './base-table';
 
@@ -62,8 +63,9 @@ export default defineComponent({
     const { columns } = toRefs(props);
     const primaryTableRef = ref(null);
     const {
-      tableDraggableClasses, tableBaseClass, tableSelectedClasses, tableSortClasses,
+      classPrefix, tableDraggableClasses, tableBaseClass, tableSelectedClasses, tableSortClasses,
     } = useClassName();
+    const { sizeClassNames } = useStyle(props);
     // 自定义列配置功能
     const { tDisplayColumns, renderColumnController } = useColumnController(props, context);
     // 展开/收起行功能
@@ -174,6 +176,10 @@ export default defineComponent({
               p.colIndex,
               ellipsisTitle,
               attach,
+              {
+                classPrefix,
+                ellipsisOverlayClassName: props.size !== 'medium' ? sizeClassNames[props.size] : '',
+              },
             );
           };
           item.ellipsisTitle = false;
