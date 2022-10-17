@@ -1,4 +1,5 @@
 import upperFirst from 'lodash/upperFirst';
+import isFunction from 'lodash/isFunction';
 import {
   computed, watch, toRefs, defineComponent,
 } from '@vue/composition-api';
@@ -130,7 +131,7 @@ export default defineComponent({
         ['expanded', 'actived', 'checked'].forEach((name) => {
           if (keys.includes(name)) {
             const setupMethod = this[`set${upperFirst(name)}`];
-            if (typeof setupMethod === 'function') {
+            if (isFunction(setupMethod)) {
               setupMethod(node, spec[name]);
             }
             delete spec[name];

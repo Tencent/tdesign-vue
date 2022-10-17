@@ -91,3 +91,10 @@ export interface TypeTreeState {
   vScrollEnable: ComputedRef<boolean>;
   nested: ComputedRef<boolean>;
 }
+
+export interface TypeTreeItemProps {
+  nested: boolean;
+  node: TreeNode;
+  treeScope: TypeTreeScope;
+  expandOnClickNode: boolean;
+}
