@@ -127,7 +127,7 @@ export default defineComponent({
                   },
                 }}
               >
-                <span class={`${this.dropdownClass}-text`}>{this.renderOptionContent(optionItem.content)}</span>
+                <span class={`${this.dropdownClass}__item-text`}>{this.renderOptionContent(optionItem.content)}</span>
               </DropdownItem>
               {optionItem.divider ? <TDivider /> : null}
             </div>
