@@ -28,7 +28,7 @@ export type TypeTreeStore = TreeStore;
 
 export type TypeValueMode = TypeTreeProps['valueMode'];
 
-export type TypeTNodeProp = string | TNode<TypeTreeNodeModel>;
+export type TypeTNodeProp = boolean | string | TNode<TypeTreeNodeModel>;
 
 export type TypeTreeNodeModel = TreeNodeModel<TreeOptionData>;
 
@@ -60,12 +60,16 @@ export interface TypeGetTNodeOption {
   createElement?: Vue.CreateElement;
 }
 
+export interface TypeRenderTNodeOption {
+  node?: TypeTreeNodeModel;
+}
+
 export interface TypeScopedSlots {
-  empty?: () => VNode;
-  icon?: () => VNode;
-  label?: () => VNode;
-  line?: () => VNode;
-  operations?: () => VNode;
+  empty?: (opts?: TypeRenderTNodeOption) => VNode;
+  icon?: (opts?: TypeRenderTNodeOption) => VNode;
+  label?: (opts?: TypeRenderTNodeOption) => VNode;
+  line?: (opts?: TypeRenderTNodeOption) => VNode;
+  operations?: (opts?: TypeRenderTNodeOption) => VNode;
 }
 
 export interface TypeTreeScope {
