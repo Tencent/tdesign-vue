@@ -68,8 +68,7 @@ export default function useAffix(props: TdBaseTableProps) {
 
   // 横向滚动条是否显示
   const isAffixedBottomScrollShow = (elementRect: DOMRect, tableRect: DOMRect, headerHeight: number) => tableContentRef.value.scrollWidth > tableContentRef.value.clientWidth
-    && tableRect.top + headerHeight < elementRect.top
-    && elementRect.top > elementRect.height;
+    && isAffixedBottomElementShow(elementRect, tableRect, headerHeight);
 
   const getOffsetTop = (props: boolean | AffixProps) => {
     if (typeof props === 'boolean') return 0;
