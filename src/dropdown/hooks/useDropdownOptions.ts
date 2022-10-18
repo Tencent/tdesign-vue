@@ -23,27 +23,35 @@ export const getOptionsFromChildren = (menuGroup: any): DropdownOption[] => {
       .map((item) => {
         const groupChildren = item?.componentOptions?.children;
         if (!groupChildren) return {};
-        const contentIdx = groupChildren.findIndex?.((v: VNode) => typeof v.text === 'string');
-        const childrenContent = groupChildren.filter?.(
+
+        // 当前节点的渲染内容
+        const contentCtx = groupChildren?.filter?.(
+          (v: VNode) => ![DropdownMenuName, DropdownItemName].includes(get(v, 'componentOptions.Ctor.extendOptions.name')),
+        );
+        // 嵌套菜单的节点
+        const childrenCtx = groupChildren?.filter?.(
           (v: VNode) => typeof v.text !== 'string'
             && [DropdownMenuName, DropdownItemName].includes(get(v, 'componentOptions.Ctor.extendOptions.name')),
         );
+
         const commonProps = {
           ...item.componentOptions?.propsData,
           style: item?.data?.style,
           class: item?.data?.staticClass,
           onClick: item.componentOptions?.listeners?.click,
-          content: groupChildren[contentIdx]?.text || groupChildren,
+          content: contentCtx || groupChildren,
         };
-        if (childrenContent.length === 1) {
+
+        if (childrenCtx.length === 1) {
           return {
             ...commonProps,
-            children: childrenContent.length > 0 ? getOptionsFromChildren(childrenContent[0].componentOptions) : null,
+            children: childrenCtx.length > 0 ? getOptionsFromChildren(childrenCtx[0].componentOptions) : null,
           };
         }
+
         return {
           ...commonProps,
-          children: childrenContent.length > 0 ? getOptionsFromChildren(childrenContent) : null,
+          children: childrenCtx.length > 0 ? getOptionsFromChildren(childrenCtx) : null,
         };
       })
       .filter((v) => !!v.content);
