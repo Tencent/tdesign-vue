@@ -43,6 +43,7 @@ export default function useStyle(props: TdBaseTableProps) {
   }));
 
   return {
+    sizeClassNames,
     tableClasses,
     tableElementStyles,
     tableContentStyles,

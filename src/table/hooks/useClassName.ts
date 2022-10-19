@@ -3,6 +3,7 @@ import { useConfig } from '../../config-provider/useConfig';
 export default function useClassName() {
   const { classPrefix } = useConfig();
   const classNames = {
+    classPrefix: classPrefix.value,
     tableBaseClass: {
       table: `${classPrefix.value}-table`,
       columnResizableTable: `${classPrefix.value}-table--column-resizable`,
