@@ -127,7 +127,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     },
     value: {
       handler(val) {
-        this.inputValue = val;
+        this.inputValue = this.format ? this.format(val) : val;
       },
       immediate: true,
     },
