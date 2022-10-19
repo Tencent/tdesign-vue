@@ -32,8 +32,8 @@ docClass: timeline
 - `Datepicker`:
   - 修复范围选择器面板年份异常的问题 @sinbadmaster ([#1644](https://github.com/Tencent/tdesign-vue/pull/1644))
   - 修复范围选择器数据格式化异常的问题 @HQ-Lin ([#1613](https://github.com/Tencent/tdesign-vue/pull/1613))
-- `Upload`:
-    - 只有多个上传请求同时触发时才需触发 onOneFileFail 回调 @xixileng  ([#1652](https://github.com/Tencent/tdesign-vue/pull/1652))
+- `Upload`: 只有多个上传请求同时触发时才需触发 onOneFileFail 回调 @xixileng ([#1652](https://github.com/Tencent/tdesign-vue/pull/1652))
+- `Input`: 修复初始化或者赋值时，format 不生效的问题 @LoopZhou ([#1650](https://github.com/Tencent/tdesign-vue/pull/1650))
 
 ## 🌈 0.48.5 `2022-10-10` 
 ### 🚀 Features
