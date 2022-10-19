@@ -63,8 +63,12 @@ export default function useAffix(props: TdBaseTableProps) {
     }
   };
 
-  // 吸底的元素（footer、横向滚动条、分页器）是否显示
+  // 吸底的元素（footer、分页器）是否显示
   const isAffixedBottomElementShow = (elementRect: DOMRect, tableRect: DOMRect, headerHeight: number) => tableRect.top + headerHeight < elementRect.top && elementRect.top > elementRect.height;
+
+  // 横向滚动条是否显示
+  const isAffixedBottomScrollShow = (elementRect: DOMRect, tableRect: DOMRect, headerHeight: number) => tableContentRef.value.scrollWidth > tableContentRef.value.clientWidth
+    && isAffixedBottomElementShow(elementRect, tableRect, headerHeight);
 
   const getOffsetTop = (props: boolean | AffixProps) => {
     if (typeof props === 'boolean') return 0;
@@ -92,7 +96,7 @@ export default function useAffix(props: TdBaseTableProps) {
       showAffixFooter.value = isAffixedBottomElementShow(footerRect, pos, headerHeight);
     } else if (props.horizontalScrollAffixedBottom && horizontalScrollbarRef?.value) {
       const horizontalScrollbarRect = horizontalScrollbarRef.value.getBoundingClientRect();
-      showAffixFooter.value = isAffixedBottomElementShow(horizontalScrollbarRect, pos, headerHeight);
+      showAffixFooter.value = isAffixedBottomScrollShow(horizontalScrollbarRect, pos, headerHeight);
     }
     if (props.paginationAffixedBottom && paginationRef.value) {
       const pageRect = paginationRef.value.getBoundingClientRect();

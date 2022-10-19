@@ -619,7 +619,11 @@ export default defineComponent({
           <Affix
             offsetBottom={0}
             props={getAffixProps(this.horizontalScrollAffixedBottom)}
-            style={{ marginTop: `-${this.scrollbarWidth * 2}px` }}
+            style={
+              this.showAffixFooter
+                ? { marginTop: `-${this.scrollbarWidth * 2}px` }
+                : { float: 'right', visibility: 'hidden' }
+            }
             ref="horizontalScrollAffixRef"
           >
             <div
