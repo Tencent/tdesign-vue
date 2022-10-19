@@ -915,7 +915,7 @@ exports[`InputNumber InputNumber largeNumberVue demo works fine 1`] = `
       </button>
     </div>
   </div>
-
+   
   <div>
     <div
       class="t-input-number t-size-m t-input-number--row"
@@ -1267,7 +1267,7 @@ exports[`InputNumber InputNumber sizeVue demo works fine 1`] = `
       </svg>
     </button>
   </div>
-
+   
   <div
     class="t-input-number t-size-m t-input-number--row"
     style="margin: 0px 50px;"
@@ -1324,7 +1324,7 @@ exports[`InputNumber InputNumber sizeVue demo works fine 1`] = `
       </svg>
     </button>
   </div>
-
+   
   <div
     class="t-input-number t-size-l t-input-number--row"
   >
@@ -1409,7 +1409,7 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
           隐藏文本提示
         </span>
       </label>
-
+       
       <label
         class="t-radio-button"
       >
@@ -1428,7 +1428,7 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
           文本提示左对齐
         </span>
       </label>
-
+       
       <label
         class="t-radio-button t-is-checked"
       >
@@ -1453,14 +1453,14 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
       />
     </div>
   </div>
-
+   
   <form
     class="t-form"
   >
     <!---->
-
+     
     <!---->
-
+     
     <div
       class="t-form__item t-form-item__"
     >
@@ -1545,7 +1545,7 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
       </div>
     </div>
     <br />
-
+     
     <div
       class="t-form__item t-form-item__"
     >
@@ -1630,7 +1630,7 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
       </div>
     </div>
     <br />
-
+     
     <div
       class="t-form__item t-form-item__"
     >
@@ -1715,7 +1715,7 @@ exports[`InputNumber InputNumber statusVue demo works fine 1`] = `
       </div>
     </div>
     <br />
-
+     
     <div
       class="t-form__item t-form-item__"
     >
