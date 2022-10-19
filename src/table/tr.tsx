@@ -67,7 +67,9 @@ export type TrPropsKeys = typeof TABLE_PROPS[number];
 export interface TrProps extends TrCommonProps {
   row: TableRowData;
   rowIndex: number;
-  dataLength: number;
+  ellipsisOverlayClassName?: string;
+  classPrefix?: string;
+  dataLength?: number;
   rowAndColFixedPosition?: RowAndColFixedPosition;
   skipSpansMap?: Map<string, SkipSpansValue>;
   tableElm?: HTMLDivElement;
@@ -77,7 +79,7 @@ export interface TrProps extends TrCommonProps {
   trs?: Map<number, object>;
   bufferSize?: number;
   tableContentElm?: HTMLDivElement;
-  cellEmptyContent: TdBaseTableProps['cellEmptyContent'];
+  cellEmptyContent?: TdBaseTableProps['cellEmptyContent'];
 }
 
 export const ROW_LISTENERS = ['click', 'dblclick', 'mouseover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];
@@ -124,6 +126,8 @@ export default defineComponent({
   props: {
     row: Object as PropType<TableRowData>,
     rowIndex: Number,
+    ellipsisOverlayClassName: String,
+    classPrefix: String,
     dataLength: Number,
     rowAndColFixedPosition: Map as PropType<RowAndColFixedPosition>,
     // 合并单元格，是否跳过渲染
@@ -237,13 +241,22 @@ export default defineComponent({
     ) {
       const { cellNode } = params;
       const { col } = cellParams;
-      const content = isFunction(col.ellipsis) ? col.ellipsis(h, cellParams) : undefined;
+      let content = isFunction(col.ellipsis) ? col.ellipsis(h, cellParams) : undefined;
+      if (typeof col.ellipsis === 'object' && isFunction(col.ellipsis.content)) {
+        content = col.ellipsis.content(h, cellParams);
+      }
+      let tooltipProps = {};
+      if (typeof col.ellipsis === 'object') {
+        tooltipProps = 'props' in col.ellipsis ? col.ellipsis.props : col.ellipsis || undefined;
+      }
       return (
         <TEllipsis
           placement={'top'}
           attach={this.tableElm ? () => this.tableElm : undefined}
           tooltipContent={content && (() => content)}
-          tooltipProps={typeof col.ellipsis === 'object' ? col.ellipsis : undefined}
+          tooltipProps={tooltipProps}
+          overlayClassName={this.ellipsisOverlayClassName}
+          classPrefix={this.classPrefix}
         >
           {cellNode}
         </TEllipsis>
@@ -274,8 +287,10 @@ export default defineComponent({
         // Vue3 ignore this line
         this.$emit('cell-click', p);
       };
+      const normalAttrs = isFunction(col.attrs) ? col.attrs({ ...params, type: 'td' }) : col.attrs;
+      const attrs: { [key: string]: any } = { ...normalAttrs, ...cellSpans };
       return (
-        <td class={classes} style={tdStyles.style} attrs={{ ...col.attrs, ...cellSpans }} onClick={onClick}>
+        <td class={classes} attrs={attrs} style={{ ...tdStyles.style, ...attrs.style }} onClick={onClick}>
           {col.ellipsis ? this.renderEllipsisCell(h, params, { cellNode }) : cellNode}
         </td>
       );

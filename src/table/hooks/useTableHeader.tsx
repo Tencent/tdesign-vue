@@ -10,6 +10,7 @@ import { BaseTableColumns } from '../interface';
 import useClassName from './useClassName';
 import { TNodeReturnValue } from '../../common';
 import TEllipsis from '../ellipsis';
+import log from '../../_common/js/log';
 
 // 渲染表头的通用方法
 export function renderTitle(h: CreateElement, slots: SetupContext['slots'], col: BaseTableColumns[0], index: number) {
@@ -18,6 +19,15 @@ export function renderTitle(h: CreateElement, slots: SetupContext['slots'], col:
     return col.title(h, params);
   }
   if (isString(col.title) && slots[col.title]) {
+    if (col.colKey === col.title) {
+      log.error(
+        'Table',
+        [
+          `both colKey '${col.colKey}' and title have the same slot name`,
+          'please set a different slot name for col and title.',
+        ].join(', '),
+      );
+    }
     return slots[col.title](params);
   }
   if (isFunction(col.render)) {
@@ -50,6 +60,10 @@ export default function useTableHeader(props: TdBaseTableProps) {
     colIndex: number,
     ellipsisTitle: BaseTableCol['ellipsisTitle'],
     attach: HTMLElement,
+    extra?: {
+      classPrefix: string;
+      ellipsisOverlayClassName: string;
+    },
   ) => {
     const classes = {
       [tableSortClasses.sortable]: sortIcon,
@@ -66,6 +80,8 @@ export default function useTableHeader(props: TdBaseTableProps) {
               attach={attach ? () => attach : undefined}
               tooltipContent={content && (() => content)}
               tooltipProps={typeof ellipsisTitle === 'object' ? ellipsisTitle : undefined}
+              classPrefix={extra?.classPrefix}
+              overlayClassName={extra?.ellipsisOverlayClassName}
             >
               {title}
             </TEllipsis>

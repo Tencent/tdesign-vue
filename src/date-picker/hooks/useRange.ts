@@ -90,6 +90,7 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
           formatDate(newVal, {
             format: formatRef.value.format,
             targetFormat: formatRef.value.valueType,
+            autoSwap: true,
           }) as DateValue[],
           {
             dayjsValue: newVal.map((v) => parseToDayjs(v, formatRef.value.format)),

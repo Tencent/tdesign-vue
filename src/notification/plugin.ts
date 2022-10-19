@@ -104,6 +104,10 @@ NotificationPlugin.install = () => {
   Vue.prototype.$notification = NotificationPlugin;
 };
 
+/** notify 和 NotificationPlugin 等效 */
+export const notify = NotificationPlugin;
+
+/** NotifyPlugin 均和 NotificationPlugin 等效 */
 export const NotifyPlugin = NotificationPlugin;
 
 export default NotifyPlugin;

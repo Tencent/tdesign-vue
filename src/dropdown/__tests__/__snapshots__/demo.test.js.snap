@@ -15,7 +15,7 @@ exports[`Dropdown Dropdown baseVue demo works fine 1`] = `
         class="tdesign-demo-dropdown__text"
       >
         
-        下拉菜单
+        更多
         
         <svg
           class="t-icon t-icon-chevron-down"
@@ -39,13 +39,19 @@ exports[`Dropdown Dropdown baseVue demo works fine 1`] = `
 exports[`Dropdown Dropdown buttonVue demo works fine 1`] = `
 <div>
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square"
     type="button"
   >
     <span
       class="t-button__text"
     >
-      下拉菜单
+      <svg
+        class="t-icon t-icon-ellipsis"
+      >
+        <use
+          href="#t-icon-ellipsis"
+        />
+      </svg>
     </span>
   </button>
 </div>
@@ -169,20 +175,77 @@ exports[`Dropdown Dropdown multipleVue demo works fine 1`] = `
 `;
 
 exports[`Dropdown Dropdown slotVue demo works fine 1`] = `
-<div>
-  <span>
-    <button
-      class="t-button t-size-m t-button--variant-text t-button--theme-default"
-      type="button"
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-vertical"
+      style="gap: 16px;"
     >
-      <span
-        class="t-button__text"
+      <div
+        class="t-space-item"
       >
-        下拉菜单
-      </span>
-    </button>
-     
-  </span>
+        <h4>
+          支持直接使用 t-dropdown-menu
+        </h4>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <span>
+          <button
+            class="t-button t-size-m t-button--variant-text t-button--theme-default"
+            type="button"
+          >
+            <span
+              class="t-button__text"
+            >
+              下拉菜单
+            </span>
+          </button>
+           
+          <div
+            class="t-dropdown__menu t-dropdown__menu--right"
+            style="max-height: 300px;"
+          />
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-vertical"
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <h4>
+          兼容历史版本 通过 dropdown 具名插槽的使用
+        </h4>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            下拉菜单
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 

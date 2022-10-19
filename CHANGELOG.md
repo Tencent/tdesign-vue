@@ -5,6 +5,36 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.49.0 `2022-10-19` 
+### ❗ Breaking Changes
+- `Dropdown`: 调整`Dropdown`样式，优化多层菜单样式结构，多层菜单结构有变动 @uyarn ([#1607](https://github.com/Tencent/tdesign-vue/pull/1607))
+### 🚀 Features
+- `Dropdown`: @uyarn ([#1607](https://github.com/Tencent/tdesign-vue/pull/1607))
+  - 支持`direction` API，支持向左展开菜单
+  - 新增`theme`等API 支持自定义菜单项主题
+  - 支持直接使用 `t-dropdown-menu` 作为子节点，同时继续支持 `dropdown` 的具名插槽，插槽方式支持多级菜单嵌套
+- `Tag`: 样式优化，实现 `light-outline` 风格 @HelKyle ([#1617](https://github.com/Tencent/tdesign-vue/pull/1617))
+- `Table`: @chaishi ([#1633](https://github.com/Tencent/tdesign-vue/pull/1633))
+  - 表格列属性 `attrs` 支持自定义任意单元格属性
+  - 新增列属性 `colspan`，用于设置单行表头合并
+  - 超出省略功能，支持同时设置省略浮层内容 `ellipsis.content` 和属性透传 `ellipsis.props`
+  - 增强型表格，支持列配置，支持不传 `displayColumns` 时默认显示全部列，[issue#1784](https://github.com/Tencent/tdesign-vue-next/issues/1784)
+- `Card`: Card 样式调整 @yilaierwang ([#1631](https://github.com/Tencent/tdesign-vue/pull/1631)) ([common#901](https://github.com/Tencent/tdesign-common/pull/901))
+### 🐞 Bug Fixes
+- `Form`:
+  - Form 可以禁用 Select/Cascader/DatePicker，及其 `clearable` 属性 @Summer-Shen ([#1351](https://github.com/Tencent/tdesign-vue/pull/1351))
+  - 调整 `requiredMark` 支持独立控制星号展示 @HQ-Lin ([#1606](https://github.com/Tencent/tdesign-vue/pull/1606))
+- `Table`:
+  - 筛选功能，`resetValue` 无效，[issue#1611](https://github.com/Tencent/tdesign-vue/issues/1611) @chaishi ([#1633](https://github.com/Tencent/tdesign-vue/pull/1633))
+  - 表头吸顶功能，数据变化更新吸顶位置，[issue#1452](https://github.com/Tencent/tdesign-vue/issues/1452)
+  - 修复配置吸底滚动条时，margin-top 造成遮挡到问题，[issue#1585](https://github.com/Tencent/tdesign-vue/issues/1585) @LoopZhou ([#1633](https://github.com/Tencent/tdesign-vue/pull/1633))
+- `ImageViewer`: 修复 zIndex 默认值过低的问题 @sinbadmaster ([#1634](https://github.com/Tencent/tdesign-vue/pull/1634))
+- `Datepicker`:
+  - 修复范围选择器面板年份异常的问题 @sinbadmaster ([#1644](https://github.com/Tencent/tdesign-vue/pull/1644))
+  - 修复范围选择器数据格式化异常的问题 @HQ-Lin ([#1613](https://github.com/Tencent/tdesign-vue/pull/1613))
+- `Upload`:
+    - 只有多个上传请求同时触发时才需触发 onOneFileFail 回调 @xixileng  ([#1652](https://github.com/Tencent/tdesign-vue/pull/1652))
+
 ## 🌈 0.48.5 `2022-10-10` 
 ### 🚀 Features
 - `Select`: 调整下拉交互 允许输入时不关闭下拉面板 减少相关交互问题 @uyarn ([#1600](https://github.com/Tencent/tdesign-vue/pull/1600))
@@ -30,6 +60,7 @@ docClass: timeline
 ### 🚀 Features
 - `ImageViewer`: 新增 `ImageViewer` 图片预览组件 @sinbadmaster ([#1520](https://github.com/Tencent/tdesign-vue/pull/1520))
 - `Upload`: 组件重构 @chaishi ([#1561](https://github.com/Tencent/tdesign-vue/pull/1561))
+  - ⚠️ `formatResponse` 不再对 `file` 对象进行格式化，仅处理 `response` 属性进行处理。如果要扩展 `file` 对象，请在 `onChange`
   - 新增`beforeAllFilesUpload`，所有文件上传之前执行，支持一次性判定所有文件是否继续上传。已经存在的 `beforeUpload` 用于判定单个文件的是否继续上传
   - 新增事件 `onValidate`，文件校验不通过时触发，可能情况有：自定义全文件校验不通过、文件数量校验不通过、文件数量校验不通过
   - 新增事件 `onOneFileSuccess` ，多文件上传场景下，在单个文件上传成功后触发

@@ -40,6 +40,7 @@ import { getSingleContent, getMultipleContent, getNewMultipleValue } from './uti
 import useSelectOptions from './hooks/useSelectOptions';
 import { SelectPanelInstance } from './instance';
 import log from '../_common/js/log';
+import useFormDisabled from '../hooks/useFormDisabled';
 
 export type OptionInstance = InstanceType<typeof Option>;
 
@@ -62,7 +63,7 @@ export default defineComponent({
     const selectInputRef = ref<HTMLElement>(null);
     const selectPanelRef = ref<SelectPanelInstance>();
     const popupOpenTime = ref(250);
-    const formDisabled = ref();
+    const { formDisabled } = useFormDisabled();
     const COMPONENT_NAME = usePrefixClass('select');
     const { classPrefix } = useConfig('classPrefix');
 

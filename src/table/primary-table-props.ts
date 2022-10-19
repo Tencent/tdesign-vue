@@ -34,6 +34,7 @@ export default {
   /** 列配置功能中，当前显示的列 */
   displayColumns: {
     type: Array as PropType<TdPrimaryTableProps['displayColumns']>,
+    default: undefined,
   },
   /** 列配置功能中，当前显示的列，非受控属性 */
   defaultDisplayColumns: {
@@ -73,7 +74,7 @@ export default {
   /** 展开行 */
   expandedRowKeys: {
     type: Array as PropType<TdPrimaryTableProps['expandedRowKeys']>,
-    default: (): TdPrimaryTableProps['expandedRowKeys'] => [],
+    default: undefined,
   },
   /** 展开行，非受控属性 */
   defaultExpandedRowKeys: {
@@ -91,6 +92,7 @@ export default {
   /** 过滤数据的值 */
   filterValue: {
     type: Object as PropType<TdPrimaryTableProps['filterValue']>,
+    default: undefined,
   },
   /** 过滤数据的值，非受控属性 */
   defaultFilterValue: {
@@ -107,7 +109,7 @@ export default {
   /** 选中行，控制属性。半选状态行请更为使用 `indeterminateSelectedRowKeys` 控制 */
   selectedRowKeys: {
     type: Array as PropType<TdPrimaryTableProps['selectedRowKeys']>,
-    default: (): TdPrimaryTableProps['selectedRowKeys'] => [],
+    default: undefined,
   },
   /** 选中行，控制属性。半选状态行请更为使用 `indeterminateSelectedRowKeys` 控制，非受控属性 */
   defaultSelectedRowKeys: {
@@ -119,6 +121,7 @@ export default {
   /** 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序 */
   sort: {
     type: [Object, Array] as PropType<TdPrimaryTableProps['sort']>,
+    default: undefined,
   },
   /** 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序，非受控属性 */
   defaultSort: {
