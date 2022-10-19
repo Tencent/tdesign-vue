@@ -1,12 +1,12 @@
 <template>
-  <div class="tdesign-demo-block-column-large">
-    <div>
+  <t-space direction="vertical" size="large">
+    <t-space size="small" align="center">
       <label>请选择风格：</label>
       <t-select v-model="theme" class="demo-select-base">
         <t-option v-for="item in options" :key="item.value" :value="item.value" :label="item.label" />
       </t-select>
       <t-button theme="primary" @click="toCurrent()">今天（当前高亮日期）</t-button>
-    </div>
+    </t-space>
     <div>
       <label>日期补零：</label>
       <t-switch size="large" v-model="fillWithZero"></t-switch>
@@ -17,7 +17,7 @@
       :isShowWeekendDefault="isShowWeekendDefault"
       :fillWithZero="fillWithZero"
     ></t-calendar>
-  </div>
+  </t-space>
 </template>
 
 <script>
