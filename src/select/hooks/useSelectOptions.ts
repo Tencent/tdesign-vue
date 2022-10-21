@@ -24,7 +24,7 @@ export default function useSelectOptions(
     let dynamicIndex = 0;
 
     // 解析 props 中 options 字段的配置，以此初始化 innerOptions
-    const innerOptions: UniOption[] = props.options.map((option) => {
+    const innerOptions: UniOption[] = props.options?.map((option) => {
       const getFormatOption = (option: TdOptionProps) => {
         const { value, label } = keys.value;
         const res = {
@@ -43,7 +43,7 @@ export default function useSelectOptions(
         };
       }
       return getFormatOption(option);
-    });
+    }) || [];
 
     // 处理 slots 中 t-option 与 t-option-group
     const currentSlots = instance.proxy.$slots.default || [];

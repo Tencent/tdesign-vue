@@ -20,7 +20,7 @@ import useVModel from '../hooks/useVModel';
 import { useTNodeJSX } from '../hooks/tnode';
 import { useConfig, usePrefixClass } from '../config-provider/useConfig';
 import {
-  TdSelectProps, SelectValue, TdOptionProps, SelectOptionGroup,
+  TdSelectProps, SelectValue, TdOptionProps, SelectOptionGroup, SelectValueChangeTrigger,
 } from './type';
 import props from './props';
 import TLoading from '../loading';
@@ -126,30 +126,55 @@ export default defineComponent({
       // value 类型的 value 变量，直接返回
       return _value;
     });
-    const setInnerValue: TdSelectProps['onChange'] = (newVal: SelectValue | SelectValue[], e) => {
-      if (valueType.value === 'object') {
-        const { value: valueOfKeys, label: labelOfKeys } = keys.value;
-
-        // 若为多选情况，将历史 value 加入 option 待取列表，兼容远程搜索改变 options 数组后旧选项无法找到的问题
-        const oldValueMap = new Map<SelectValue, TdOptionProps>();
-        if (multiple.value) {
-          (value.value as TdOptionProps[]).forEach((option) => {
-            oldValueMap.set(option[valueOfKeys], option);
-          });
-        }
-
-        const getOption = (val: SelectValue) => {
-          const option = optionsMap.value.get(val) || oldValueMap.get(val);
-          return {
-            [valueOfKeys]: get(option, valueOfKeys),
-            [labelOfKeys]: get(option, labelOfKeys),
-          };
-        };
-        // eslint-disable-next-line no-param-reassign
-        newVal = multiple.value ? (newVal as SelectValue[]).map((val) => getOption(val)) : getOption(newVal);
-      }
+    const setInnerValue = (
+      newVal: SelectValue,
+      context: { trigger: SelectValueChangeTrigger; e?: MouseEvent | KeyboardEvent },
+      optionValue?: SelectValue,
+    ) => {
       if (newVal === value.value) return;
-      setValue(newVal, e);
+
+      const selectedOptions: TdOptionProps[] = [];
+      const { value: valueOfKeys, label: labelOfKeys } = keys.value;
+      // 若为多选情况，将历史 value 加入 option 待取列表，兼容远程搜索改变 options 数组后旧选项无法找到的问题
+      const oldValueMap = new Map<SelectValue, TdOptionProps>();
+      if (multiple.value) {
+        (value.value as TdOptionProps[]).forEach((option) => {
+          oldValueMap.set(option[valueOfKeys], option);
+        });
+      }
+      const getOriginOptions = (val: SelectValue) => {
+        const option = optionsMap.value.get(val);
+        delete (option as any).index;
+        return option;
+      };
+      const getFormatOption = (val: SelectValue) => {
+        const option = optionsMap.value.get(val) || oldValueMap.get(val);
+        delete (option as any).index;
+        selectedOptions.push({ ...option });
+        return {
+          [valueOfKeys]: get(option, valueOfKeys),
+          [labelOfKeys]: get(option, labelOfKeys),
+        };
+      };
+
+      if (multiple.value) {
+        (newVal as SelectValue[]).forEach((v) => selectedOptions.push(getOriginOptions(v)));
+      } else {
+        selectedOptions.push(getOriginOptions(newVal));
+      }
+      if (valueType.value === 'object') {
+        // eslint-disable-next-line no-param-reassign
+        newVal = multiple.value
+          ? (newVal as SelectValue[]).map((val) => getFormatOption(val))
+          : getFormatOption(newVal);
+      }
+
+      const outputContext = { ...context, selectedOptions };
+      if (optionValue) {
+        // eslint-disable-next-line dot-notation
+        outputContext['option'] = getOriginOptions(optionValue);
+      }
+      setValue(newVal, outputContext);
     };
 
     const [tInputValue, setTInputValue] = useDefaultValue(
@@ -165,7 +190,6 @@ export default defineComponent({
       false,
       (visible: boolean, context: PopupVisibleChangeContext) => {
         props.onPopupVisibleChange?.(visible, context);
-        props.onVisibleChange?.(visible);
         instance.emit('visible-change', visible);
       },
       'popupVisible',
@@ -419,17 +443,22 @@ export default defineComponent({
             handleCreate();
           }
           if (!multiple.value) {
-            setInnerValue((displayOptions[hoverIndex.value] as TdOptionProps).value, {
-              e,
-              trigger: 'check',
-            });
+            const optionValue = (displayOptions[hoverIndex.value] as TdOptionProps).value;
+            setInnerValue(
+              optionValue,
+              {
+                e,
+                trigger: 'check',
+              },
+              optionValue,
+            );
             setInnerPopupVisible(false, { e });
           } else {
             if (hoverIndex.value === -1) return;
             const optionValue = (displayOptions[hoverIndex.value] as TdOptionProps)?.value;
             if (!optionValue) return;
             const newValue = getNewMultipleValue(innerValue.value, optionValue);
-            setInnerValue(newValue.value, { e, trigger: newValue.isCheck ? 'check' : 'uncheck' });
+            setInnerValue(newValue.value, { e, trigger: newValue.isCheck ? 'check' : 'uncheck' }, optionValue);
           }
           break;
         case 'Escape':
@@ -537,7 +566,7 @@ export default defineComponent({
           ref="selectInputRef"
           class={this.componentName}
           autoWidth={this.autoWidth}
-          borderless={this.borderless || !this.bordered}
+          borderless={this.borderless}
           readonly={this.readonly}
           allowInput={this.isFilterable}
           multiple={this.multiple}
