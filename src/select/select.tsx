@@ -187,7 +187,7 @@ export default defineComponent({
 
     const [innerPopupVisible, setInnerPopupVisible] = useDefaultValue(
       popupVisible,
-      false,
+      props.defaultPopupVisible,
       (visible: boolean, context: PopupVisibleChangeContext) => {
         props.onPopupVisibleChange?.(visible, context);
         instance.emit('visible-change', visible);
