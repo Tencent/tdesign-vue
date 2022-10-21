@@ -169,6 +169,7 @@ export default defineComponent({
             formatDate(nextValue, {
               format: formatRef.value.format,
               targetFormat: formatRef.value.valueType,
+              autoSwap: true,
             }) as DateValue[],
             {
               dayjsValue: nextValue.map((v) => parseToDayjs(v, formatRef.value.format)),
@@ -293,6 +294,7 @@ export default defineComponent({
             formatDate(nextValue, {
               format: formatRef.value.format,
               targetFormat: formatRef.value.valueType,
+              autoSwap: true,
             }) as DateValue[],
             {
               dayjsValue: nextValue.map((v) => parseToDayjs(v, formatRef.value.format)),
@@ -326,6 +328,7 @@ export default defineComponent({
           formatDate(presetValue, {
             format: formatRef.value.format,
             targetFormat: formatRef.value.valueType,
+            autoSwap: true,
           }) as DateValue[],
           {
             dayjsValue: presetValue.map((p) => parseToDayjs(p, formatRef.value.format)),

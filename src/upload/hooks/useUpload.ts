@@ -93,16 +93,19 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
   const onResponseError = (p: OnResponseErrorContext) => {
     if (!p || !p.files || !p.files[0]) return;
     const { response, event, files } = p;
-    updateFilesProgress();
-    const params: UploadFailContext = {
-      e: event,
-      file: files?.[0],
-      currentFiles: files,
-      failedFiles: files,
-      response,
-    };
-    props.onOneFileFail?.(params);
-    context.emit('one-file-fail', params);
+    // 只有多个上传请求同时触发时才需 onOneFileFail
+    if (props.multiple && !props.uploadAllFilesInOneRequest) {
+      updateFilesProgress();
+      const params: UploadFailContext = {
+        e: event,
+        file: files?.[0],
+        currentFiles: files,
+        failedFiles: files,
+        response,
+      };
+      props.onOneFileFail?.(params);
+      context.emit('one-file-fail', params);
+    }
     // 单选或多文件替换，需要清空上一次上传成功的文件
     if (!props.multiple || props.isBatchUpload) {
       setUploadValue([], {
