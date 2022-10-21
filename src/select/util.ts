@@ -11,7 +11,7 @@ export const getSingleContent = (value: TdSelectProps['value'], options: SelectO
       return option?.label || String((option as TdOptionProps).value);
     }
   }
-  return value !== undefined ? String(value) : undefined;
+  return value !== undefined && value !== null ? String(value) : undefined;
 };
 
 export const getMultipleContent = (value: SelectValue[], options: SelectOption[]) => {
