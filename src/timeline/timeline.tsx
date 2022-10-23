@@ -12,7 +12,7 @@ import {
 import { prefix } from '../config';
 import getRenderAlign from './utils';
 import TimelineItem from './timelineItem';
-import { TdTimelineProps } from './type';
+import { TdTimeLineProps } from './type';
 import { TimelineProps } from './props';
 
 export default defineComponent({
@@ -21,12 +21,10 @@ export default defineComponent({
     TimelineItem,
   },
   props: { ...TimelineProps },
-  setup(props: TdTimelineProps, context: SetupContext) {
+  setup(props: TdTimeLineProps, context: SetupContext) {
     const {
       theme: oriTheme,
       labelAlign: oriLabelAlign,
-      className,
-      style,
       reverse: oriReverse,
       layout: oriLayout,
       mode: oriMode,
@@ -62,7 +60,6 @@ export default defineComponent({
       if (hasLabelItem.value) {
         classNames.push(`${prefix}-timeline-label`);
       }
-      classNames.push(className?.value);
       return classNames.join(' ');
     });
 
@@ -78,7 +75,6 @@ export default defineComponent({
 
     return {
       timelineClassName,
-      style,
     };
   },
 

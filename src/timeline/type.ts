@@ -4,9 +4,9 @@
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
  * */
 
-import { TNode, Styles } from '../common';
+import { TNode } from '../common';
 
-export interface TdTimelineProps {
+export interface TdTimeLineProps {
   /**
    * 标签信息放在时间轴的位置，`mode='alternate'` 时生效。纵向时间轴信息位置：左侧、右侧或两侧，默认信息在时间轴右侧。横向时间轴信息位置：上方、下方、两侧
    * @default right
@@ -32,31 +32,17 @@ export interface TdTimelineProps {
    * @default default
    */
   theme?: 'default' | 'dot';
-  /**
-   * 属性名称
-   * @default ''
-   */
-  className?: string;
-  /**
-   * 样式
-   * @default {}
-   */
-  style?: Object;
 }
 
-export interface TdTimelineItemProps {
-  /**
-   * class样式名
-   */
-  className?: string;
-  /**
-   * style样式名
-   */
-  style?: Styles;
+export interface TdTimeLineItemProps {
   /**
    * 描述内容
    */
-  content?: TNode;
+  content?: string | TNode;
+  /**
+   * 用于自定义时间轴节点元素
+   */
+  dot?: TNode;
   /**
    * 时间轴颜色，内置 `primary/warning/error/default` 四种色值，可传入 16 进制颜色码或 RGB 颜色值.
    * @default default
@@ -65,9 +51,9 @@ export interface TdTimelineItemProps {
   /**
    * 标签文本内容，可完全自定义
    */
-  label?: string;
+  label?: string | TNode;
   /**
-   * 标签信息相对于时间轴的位置，在 `mode='alternate'` 时生效，优先级高于 `Timeline.labelAlign`
+   * 标签信息相对于时间轴的位置，在 `mode='alternate'` 时生效，优先级高于 `TimeLine.labelAlign`
    */
   labelAlign?: 'left' | 'right' | 'top' | 'bottom';
   /**

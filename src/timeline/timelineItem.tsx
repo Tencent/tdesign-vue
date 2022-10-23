@@ -3,7 +3,7 @@ import {
   computed, defineComponent, SetupContext, toRefs, getCurrentInstance, inject,
 } from '@vue/composition-api';
 import TLoading from '../loading';
-import { TdTimelineItemProps } from './type';
+import { TdTimeLineItemProps } from './type';
 import { prefix } from '../config';
 import getRenderAlign from './utils';
 import { TimelineItemProps } from './props';
@@ -18,16 +18,14 @@ export default defineComponent({
   props: {
     ...TimelineItemProps,
   },
-  setup(props: TdTimelineItemProps, context: SetupContext) {
+  setup(props: TdTimeLineItemProps, context: SetupContext) {
     const instance = getCurrentInstance();
 
     const timelineProvider: any = inject('TTimeline');
     const {
       layout, reverse, theme, labelAlign, mode, uidArr,
     } = timelineProvider;
-    const {
-      className, dotColor, labelAlign: itemLabelAlign, loading,
-    } = toRefs(props);
+    const { dotColor, labelAlign: itemLabelAlign, loading } = toRefs(props);
     const renderAlign = computed(() => {
       const result = getRenderAlign(labelAlign.value, layout.value);
       return result;
@@ -66,7 +64,7 @@ export default defineComponent({
     const getItemClassName = computed(() => {
       const isLastChildren = uidArr.value.length - 1 === currentIndex.value;
       const lastClassName = isLastChildren ? `${prefix}-timeline-item--last` : '';
-      return `${prefix}-timeline-item ${getPositionClassName.value} ${className} ${lastClassName}`;
+      return `${prefix}-timeline-item ${getPositionClassName.value} ${lastClassName}`;
     });
 
     // 连线类名
@@ -97,12 +95,11 @@ export default defineComponent({
     };
   },
 
-  render() {
+  render(h) {
     const defaultSlot: VNode[] = this.$scopedSlots.default ? this.$scopedSlots.default(null) : [null];
     const dotSlot: VNode[] = this.$scopedSlots.dot ? this.$scopedSlots.dot(null) : null;
     const {
       dotColor,
-      className,
       dotClassName,
       style = {},
       labelClassName,
@@ -118,7 +115,7 @@ export default defineComponent({
         {mode === 'alternate' && label && <div class={labelClassName}>{label}</div>}
         <div class={`${prefix}-timeline-item__wrapper`}>
           <div class={dotClassName} style={{ borderColor: !DefaultTheme.includes(dotColor) && dotColor }}>
-            <div class={`${className} ${prefix}-timeline-item__dot-content`}>
+            <div class={`${prefix}-timeline-item__dot-content`}>
               {!dotSlot && loading && <TLoading size="12px" />}
               {dotSlot}
             </div>
