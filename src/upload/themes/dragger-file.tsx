@@ -106,7 +106,7 @@ export default defineComponent({
       const file = this.displayFiles[0];
       if (!file) return null;
       const { CheckCircleFilledIcon, ErrorCircleFilledIcon } = this.icons;
-      const fileName = this.abridgeName ? abridgeName(file.name, this.abridgeName[0], this.abridgeName[1]) : file.name;
+      const fileName = this.abridgeName ? abridgeName(file.name, ...this.abridgeName) : file.name;
       return (
         <div class={`${this.uploadPrefix}__dragger-progress`}>
           {this.theme === 'image' && this.renderImage()}

@@ -112,9 +112,7 @@ const NormalFile = defineComponent({
         { [`${this.uploadPrefix}__placeholder`]: !this.displayFiles[0] },
       ];
       const disabledClass = this.disabled ? `${this.classPrefix}-is-disabled` : '';
-      const fileName = this.abridgeName?.length && file?.name
-        ? abridgeName(file.name, this.abridgeName[0], this.abridgeName[1])
-        : file?.name;
+      const fileName = this.abridgeName?.length && file?.name ? abridgeName(file.name, ...this.abridgeName) : file?.name;
       return (
         <div class={`${this.uploadPrefix}__single-input-preview ${this.classPrefix}-input ${disabledClass}`}>
           <div class={inputTextClass}>
