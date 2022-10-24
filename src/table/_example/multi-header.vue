@@ -2,7 +2,7 @@
   <!-- 注意控制父元素宽度 -->
   <div style="width: 100%" class="tdesign-demo-block-column-large tdesign-demo-table-multi-heade tdesign-demo__tabler">
     <!-- 按钮操作区域 -->
-    <div>
+    <t-space>
       <t-checkbox v-model="bordered">显示表格边框</t-checkbox>
       <!-- 只要有 maxHeight，就有固定表头，无论该值是否存在 -->
       <t-checkbox v-model="fixedHeader">显示固定表头</t-checkbox>
@@ -11,7 +11,7 @@
       <t-checkbox v-model="fixedLeftCol">固定左侧列</t-checkbox>
       <t-checkbox v-model="fixedRightCol">固定右侧列</t-checkbox>
       <t-checkbox v-model="headerAffixedTop">表头吸顶</t-checkbox>
-    </div>
+    </t-space>
 
     <!-- tableContentWidth 必须大于表格的外层宽度，否则请设置 width: 100% -->
     <!-- 多级表头中，如果要使用固定列功能，则必须设置 colKey 和 fixed -->

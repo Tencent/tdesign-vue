@@ -119,7 +119,6 @@ export default function useRowSelect(
     let selectedRowKeys = [...tSelectedRowKeys.value];
     const reRowKey = props.rowKey || 'id';
     const id = get(row, reRowKey);
-    selectedRowDataMap.value.set(id, row);
     const selectedRowIndex = selectedRowKeys.indexOf(id);
     const isExisted = selectedRowIndex !== -1;
     if (selectColumn.value.type === 'multiple') {
@@ -158,7 +157,7 @@ export default function useRowSelect(
       width: col.width || 64,
       className: [tableSelectedClasses.checkCell, col.className],
       cell: (h: CreateElement, p: PrimaryTableCellParams<TableRowData>) => renderSelectCell(h, p),
-      title: col.type === 'multiple' ? getSelectedHeader(h) : '',
+      title: col.type === 'multiple' ? getSelectedHeader(h) : col.title,
     };
   }
 

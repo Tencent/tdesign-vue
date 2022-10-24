@@ -114,7 +114,6 @@ export default defineComponent({
   },
   render() {
     const { TimeIcon } = this;
-
     return (
       <div class={this.componentName}>
         <TSelectInput
@@ -153,7 +152,7 @@ export default defineComponent({
                 />
               ),
               popupProps: {
-                overlayInnerStyle: { width: 'auto' },
+                overlayInnerStyle: { width: 'auto', padding: 0 },
                 onVisibleChange: this.handleShowPopup,
                 ...(this.popupProps as object),
               },

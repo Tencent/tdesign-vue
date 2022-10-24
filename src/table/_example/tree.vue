@@ -19,6 +19,7 @@
     <!-- 第一列展开树结点，缩进为 24px，子节点字段 childrenKey 默认为 children -->
     <!-- !!! 树形结构 EnhancedTable 才支持，普通 Table 不支持 !!! -->
     <!-- Ref: this.$refs.table.dataSource 查看树形结构平铺数据，获取属性结构使用 this.$refs.table.getTreeNode() -->
+    <!-- 可以使用受控属性 :displayColumns.sync="displayColumns" 完全自由控制显示列 -->
     <t-enhanced-table
       ref="table"
       rowKey="key"
@@ -29,6 +30,12 @@
       :treeExpandAndFoldIcon="treeExpandIcon"
       :pagination="pagination"
       :beforeDragSort="beforeDragSort"
+      :columnController="{
+        placement: 'bottom-left',
+        // 允许控制哪些列显示或隐藏
+        fields: ['id', 'platform', 'operate'],
+        dialogProps: { preventScrollThrough: true },
+      }"
       @page-change="onPageChange"
       @abnormal-drag-sort="onAbnormalDragSort"
       @drag-sort="onDragSort"
@@ -137,6 +144,7 @@ export default {
         defaultPageSize: 10,
         total: TOTAL,
       },
+      displayColumns: ['drag', 'id', 'key', 'platform', 'operate'],
       columns: [
         {
           // 列拖拽排序必要参数

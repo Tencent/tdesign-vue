@@ -1,9 +1,9 @@
 <template>
   <div class="tdesign-demo-dropdown">
-    <t-dropdown :options="options" @click="clickHandler" :minColumnWidth="112">
+    <t-dropdown :options="options" @click="clickHandler">
       <t-button variant="text">
         <span class="tdesign-demo-dropdown__text">
-          下拉菜单
+          更多
           <chevron-down-icon size="16" />
         </span>
       </t-button>
@@ -53,6 +53,7 @@ export default {
 .tdesign-demo-dropdown {
   &__text {
     display: inline-flex;
+    align-items: center;
     .t-icon {
       margin-left: 8px;
     }

@@ -25,6 +25,7 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
   const formatRef = computed(() => getDefaultFormat({
     mode: props.mode,
     format: props.format,
+    valueType: props.valueType,
     enableTimePicker: props.enableTimePicker,
   }));
 
@@ -72,14 +73,23 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
       !Number.isNaN(newTime) && (time.value = newTime);
     },
     onEnter: (val: string) => {
+      if (!val) {
+        onChange?.('', { dayjsValue: dayjs(), trigger: 'enter' });
+        popupVisible.value = false;
+        return;
+      }
+
       if (!isValidDate(val, formatRef.value.format) && !isValidDate(value.value, formatRef.value.format)) return;
 
       popupVisible.value = false;
       if (isValidDate(val, formatRef.value.format)) {
-        onChange?.(formatDate(val, { format: formatRef.value.format }) as DateValue, {
-          dayjsValue: parseToDayjs(val, formatRef.value.format),
-          trigger: 'enter',
-        });
+        onChange?.(
+          formatDate(val, { format: formatRef.value.format, targetFormat: formatRef.value.valueType }) as DateValue,
+          {
+            dayjsValue: parseToDayjs(val, formatRef.value.format),
+            trigger: 'enter',
+          },
+        );
       } else if (isValidDate(value.value, formatRef.value.format)) {
         inputValue.value = formatDate(value.value, {
           format: formatRef.value.format,
@@ -101,12 +111,6 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
       if (context.trigger === 'trigger-element-click') {
         popupVisible.value = true;
         return;
-      }
-      if (!visible) {
-        isHoverCell.value = false;
-        inputValue.value = formatDate(value.value, {
-          format: formatRef.value.format,
-        });
       }
       popupVisible.value = visible;
     },

@@ -162,6 +162,9 @@ MessagePlugin.install = () => {
   Vue.prototype.$message = MessagePlugin;
 };
 
+/** message 和 MessagePlugin 等效 */
+export const message = MessagePlugin;
+
 export default MessagePlugin;
 
 declare module 'vue/types/vue' {

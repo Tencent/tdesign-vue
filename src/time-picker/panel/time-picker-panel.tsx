@@ -103,6 +103,7 @@ export default defineComponent({
                 triggerScroll: this.triggerScroll,
                 disableTime: this.disableTime,
                 resetTriggerScroll: this.resetTriggerScroll,
+                isShowPanel: this.isShowPanel,
               },
             }}
           />

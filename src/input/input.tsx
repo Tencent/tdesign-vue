@@ -48,6 +48,9 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       default: false,
     },
   },
+  inject: {
+    tFormItem: { default: undefined },
+  },
   data() {
     return {
       formDisabled: undefined,
@@ -124,7 +127,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     },
     value: {
       handler(val) {
-        this.inputValue = val;
+        this.inputValue = this.format ? this.format(val) : val;
       },
       immediate: true,
     },
@@ -437,11 +440,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     return (
       <div class={this.inputWrapClass}>
         {inputNode}
-        {tips && (
-          <div class={`${this.componentName}__tips ${this.componentName}__tips--${this.status || 'normal'}`}>
-            {tips}
-          </div>
-        )}
+        {tips && <div class={`${this.componentName}__tips ${this.componentName}__tips--${this.status}`}>{tips}</div>}
       </div>
     );
   },

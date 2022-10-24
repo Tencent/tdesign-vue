@@ -168,12 +168,9 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
       return !!(parent && parent.colon && this.getLabelContent());
     },
     needRequiredMark(): boolean {
-      const { requiredMark } = this.$props;
-      if (typeof requiredMark === 'boolean') return requiredMark;
-      const parent = this.form;
-      const parentRequiredMark = parent?.requiredMark === undefined ? this.global.requiredMark : parent.requiredMark;
+      const requiredMark = this.$props.requiredMark ?? this.form.requiredMark ?? this.global.requiredMark;
       const isRequired = this.innerRules.filter((rule) => rule.required).length > 0;
-      return Boolean(parentRequiredMark && isRequired);
+      return requiredMark || (requiredMark ?? isRequired);
     },
     innerRules(): FormRule[] {
       const parent = this.form;

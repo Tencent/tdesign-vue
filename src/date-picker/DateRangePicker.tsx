@@ -45,6 +45,7 @@ export default defineComponent({
       mode: props.mode,
       enableTimePicker: props.enableTimePicker,
       format: props.format,
+      valueType: props.valueType,
     }));
 
     // 记录面板是否选中过
@@ -78,6 +79,11 @@ export default defineComponent({
             nextMonth[0] === 11 ? (nextMonth[0] -= 1) : (nextMonth[1] += 1);
           }
           month.value = nextMonth;
+          year.value = value.value.map((v: string) => parseToDayjs(v || new Date(), formatRef.value.format).year());
+          // 月份季度选择时需要确保右侧面板年份比左侧大
+          if ((props.mode === 'month' || props.mode === 'quarter') && year.value[0] === year.value[1]) {
+            year.value = [year.value[0], year.value[0] + 1];
+          }
         } else {
           year.value = value.value.map((v: string) => parseToDayjs(v || new Date(), formatRef.value.format).year());
           month.value = value.value.map((v: string) => parseToDayjs(v || new Date(), formatRef.value.format).month());
@@ -162,6 +168,8 @@ export default defineComponent({
           onChange?.(
             formatDate(nextValue, {
               format: formatRef.value.format,
+              targetFormat: formatRef.value.valueType,
+              autoSwap: true,
             }) as DateValue[],
             {
               dayjsValue: nextValue.map((v) => parseToDayjs(v, formatRef.value.format)),
@@ -285,6 +293,8 @@ export default defineComponent({
           onChange?.(
             formatDate(nextValue, {
               format: formatRef.value.format,
+              targetFormat: formatRef.value.valueType,
+              autoSwap: true,
             }) as DateValue[],
             {
               dayjsValue: nextValue.map((v) => parseToDayjs(v, formatRef.value.format)),
@@ -317,6 +327,8 @@ export default defineComponent({
         onChange?.(
           formatDate(presetValue, {
             format: formatRef.value.format,
+            targetFormat: formatRef.value.valueType,
+            autoSwap: true,
           }) as DateValue[],
           {
             dayjsValue: presetValue.map((p) => parseToDayjs(p, formatRef.value.format)),
