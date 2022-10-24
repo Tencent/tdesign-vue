@@ -23,7 +23,7 @@ export default {
     return {
       protocolSelect: () => (
         <t-select
-          bordered={false}
+          borderless={true}
           autoWidth
           options={['http://', 'https://'].map((value) => ({ label: value, value }))}
           defaultValue="http://"
@@ -31,7 +31,7 @@ export default {
       ),
       tldSelect: () => (
         <t-select
-          bordered={false}
+          borderless={true}
           autoWidth
           options={['.com', '.cn', '.net', '.org'].map((value) => ({ label: value, value }))}
           defaultValue=".cn"
