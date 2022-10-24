@@ -74,13 +74,14 @@ export default defineComponent({
     renderImage() {
       const file = this.displayFiles[0];
       if (!file) return null;
+      const url = file.url || file.response?.url;
       return (
         <div class={`${this.uploadPrefix}__dragger-img-wrap`}>
-          {file.url && (
+          {url && (
             <ImageViewer
-              images={[file.url]}
+              images={[url]}
               trigger={(h: CreateElement, { open }: any) => (
-                <img src={file.url} onClick={open} style={{ maxWidth: '100%', maxHeight: '100%' }} />
+                <img src={url} onClick={open} style={{ maxWidth: '100%', maxHeight: '100%' }} />
               )}
               style={{ maxWidth: '120px', maxHeight: '120px' }}
             ></ImageViewer>
