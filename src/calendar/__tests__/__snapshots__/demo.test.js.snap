@@ -8674,7 +8674,7 @@ exports[`Calendar Calendar valueVue demo works fine 1`] = `
       class="t-form__item t-form-item__"
     >
       <div
-        class="t-form__label t-form__label--required t-form__label--right"
+        class="t-form__label t-form__label--right"
         style="width: 100px;"
       >
         <label
@@ -8713,7 +8713,7 @@ exports[`Calendar Calendar valueVue demo works fine 1`] = `
       class="t-form__item t-form-item__"
     >
       <div
-        class="t-form__label t-form__label--required t-form__label--right"
+        class="t-form__label t-form__label--right"
         style="width: 100px;"
       >
         <label

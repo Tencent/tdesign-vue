@@ -15,7 +15,7 @@ exports[`Tree Tree activableVue demo works fine 1`] = `
         class="t-form__item t-form-item__"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
         >
           <label
             for=""
@@ -47,7 +47,7 @@ exports[`Tree Tree activableVue demo works fine 1`] = `
         class="t-form__item t-form-item__"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
         >
           <label
             for=""
@@ -79,7 +79,7 @@ exports[`Tree Tree activableVue demo works fine 1`] = `
         class="t-form__item t-form-item__"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
         >
           <label
             for=""
@@ -454,7 +454,7 @@ exports[`Tree Tree checkableVue demo works fine 1`] = `
         style="margin-bottom: 16px;"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -489,7 +489,7 @@ exports[`Tree Tree checkableVue demo works fine 1`] = `
         style="margin-bottom: 16px;"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -524,7 +524,7 @@ exports[`Tree Tree checkableVue demo works fine 1`] = `
         style="margin-bottom: 16px;"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -1780,7 +1780,7 @@ exports[`Tree Tree dataVue demo works fine 1`] = `
         class="t-form__item t-form-item__"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
         >
           <label
             for=""
@@ -1812,7 +1812,7 @@ exports[`Tree Tree dataVue demo works fine 1`] = `
         class="t-form__item t-form-item__"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
         >
           <label
             for=""
@@ -1844,7 +1844,7 @@ exports[`Tree Tree dataVue demo works fine 1`] = `
         class="t-form__item t-form-item__"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
         >
           <label
             for=""
@@ -1876,7 +1876,7 @@ exports[`Tree Tree dataVue demo works fine 1`] = `
         class="t-form__item t-form-item__"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
         >
           <label
             for=""
@@ -1908,7 +1908,7 @@ exports[`Tree Tree dataVue demo works fine 1`] = `
         class="t-form__item t-form-item__"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
         >
           <label
             for=""
@@ -2322,7 +2322,7 @@ exports[`Tree Tree disabledVue demo works fine 1`] = `
         class="t-form__item t-form-item__"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
         >
           <label
             for=""
@@ -2354,7 +2354,7 @@ exports[`Tree Tree disabledVue demo works fine 1`] = `
         class="t-form__item t-form-item__"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
         >
           <label
             for=""
@@ -2772,7 +2772,7 @@ exports[`Tree Tree disabledVue demo works fine 1`] = `
         class="t-form__item t-form-item__"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
         >
           <label
             for=""
@@ -3269,7 +3269,7 @@ exports[`Tree Tree expandAllVue demo works fine 1`] = `
         class="t-form__item t-form-item__"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
         >
           <label
             for=""
@@ -3301,7 +3301,7 @@ exports[`Tree Tree expandAllVue demo works fine 1`] = `
         class="t-form__item t-form-item__"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
         >
           <label
             for=""
@@ -3827,7 +3827,7 @@ exports[`Tree Tree expandMutexVue demo works fine 1`] = `
         class="t-form__item t-form-item__"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
         >
           <label
             for=""
@@ -3859,7 +3859,7 @@ exports[`Tree Tree expandMutexVue demo works fine 1`] = `
         class="t-form__item t-form-item__"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
         >
           <label
             for=""
@@ -4756,7 +4756,7 @@ exports[`Tree Tree lazyVue demo works fine 1`] = `
         class="t-form__item t-form-item__"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
         >
           <label
             for=""
@@ -4788,7 +4788,7 @@ exports[`Tree Tree lazyVue demo works fine 1`] = `
         class="t-form__item t-form-item__"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
         >
           <label
             for=""
@@ -4939,7 +4939,7 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
         style="margin-bottom: 16px;"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -4974,7 +4974,7 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
         style="margin-bottom: 16px;"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -6909,7 +6909,7 @@ exports[`Tree Tree loadVue demo works fine 1`] = `
         class="t-form__item t-form-item__"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
         >
           <label
             for=""
@@ -7181,7 +7181,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
             style="margin-bottom: 5px;"
           >
             <div
-              class="t-form__label t-form__label--required t-form__label--right"
+              class="t-form__label t-form__label--right"
             >
               <label
                 for=""
@@ -7213,7 +7213,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
             class="t-form__item t-form-item__"
           >
             <div
-              class="t-form__label t-form__label--required t-form__label--right"
+              class="t-form__label t-form__label--right"
             >
               <label
                 for=""
@@ -7740,7 +7740,7 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
       class="t-form__item t-form-item__"
     >
       <div
-        class="t-form__label t-form__label--required t-form__label--right"
+        class="t-form__label t-form__label--right"
       >
         <label
           for=""
@@ -7772,7 +7772,7 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
       class="t-form__item t-form-item__"
     >
       <div
-        class="t-form__label t-form__label--required t-form__label--right"
+        class="t-form__label t-form__label--right"
       >
         <label
           for=""
@@ -7804,7 +7804,7 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
       class="t-form__item t-form-item__"
     >
       <div
-        class="t-form__label t-form__label--required t-form__label--right"
+        class="t-form__label t-form__label--right"
       >
         <label
           for=""
@@ -8860,7 +8860,7 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
       class="t-form__item t-form-item__"
     >
       <div
-        class="t-form__label t-form__label--required t-form__label--right"
+        class="t-form__label t-form__label--right"
       >
         <label
           for=""
@@ -8892,7 +8892,7 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
       class="t-form__item t-form-item__"
     >
       <div
-        class="t-form__label t-form__label--required t-form__label--right"
+        class="t-form__label t-form__label--right"
       >
         <label
           for=""
@@ -8924,7 +8924,7 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
       class="t-form__item t-form-item__"
     >
       <div
-        class="t-form__label t-form__label--required t-form__label--right"
+        class="t-form__label t-form__label--right"
       >
         <label
           for=""
@@ -8956,7 +8956,7 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
       class="t-form__item t-form-item__"
     >
       <div
-        class="t-form__label t-form__label--required t-form__label--right"
+        class="t-form__label t-form__label--right"
       >
         <label
           for=""
