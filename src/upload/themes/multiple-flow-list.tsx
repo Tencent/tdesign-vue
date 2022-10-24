@@ -239,9 +239,7 @@ export default defineComponent({
               const deleteNode = showBatchUploadAction && !this.displayFiles.find((item) => item.status !== 'success')
                 ? this.renderBatchActionCol(index)
                 : this.renderNormalActionCol(file, index);
-              const fileName = this.abridgeName?.length
-                ? abridgeName(file.name, this.abridgeName[0], this.abridgeName[1])
-                : file.name;
+              const fileName = this.abridgeName?.length ? abridgeName(file.name, ...this.abridgeName) : file.name;
               return (
                 <tr key={file.name + index}>
                   <td>
