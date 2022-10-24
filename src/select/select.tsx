@@ -150,18 +150,19 @@ export default defineComponent({
       const getFormatOption = (val: SelectValue) => {
         const option = optionsMap.value.get(val) || oldValueMap.get(val);
         delete (option as any).index;
-        selectedOptions.push({ ...option });
         return {
           [valueOfKeys]: get(option, valueOfKeys),
           [labelOfKeys]: get(option, labelOfKeys),
         };
       };
 
+      // 构造 selectOptions
       if (multiple.value) {
         (newVal as SelectValue[]).forEach((v) => selectedOptions.push(getOriginOptions(v)));
       } else {
         selectedOptions.push(getOriginOptions(newVal));
       }
+      // 当 value 为 object 类型时，通过 innerValue 寻找对应的 object
       if (valueType.value === 'object') {
         // eslint-disable-next-line no-param-reassign
         newVal = multiple.value
