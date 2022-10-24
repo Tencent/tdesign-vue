@@ -2,7 +2,7 @@
   <t-space>
     <t-select
       v-model="value"
-      :bordered="false"
+      :borderless="true"
       style="width: 200px"
       placeholder="-请选择-"
       clearable
@@ -10,7 +10,7 @@
     />
     <t-select
       v-model="value2"
-      :bordered="false"
+      :borderless="true"
       placeholder="-请选择-"
       clearable
       auto-width

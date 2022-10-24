@@ -10,11 +10,6 @@ import { PropType } from 'vue';
 export default {
   /** 宽度随内容自适应 */
   autoWidth: Boolean,
-  /** 是否有边框 */
-  bordered: {
-    type: Boolean,
-    default: true,
-  },
   /** 无边框模式 */
   borderless: Boolean,
   /** 是否可以清空选项 */
@@ -30,7 +25,6 @@ export default {
   /** 当下拉列表为空时显示的内容 */
   empty: {
     type: [String, Function] as PropType<TdSelectProps['empty']>,
-    default: '',
   },
   /** 自定义过滤方法，用于对现有数据进行搜索过滤，判断是否过滤某一项数据 */
   filter: {
@@ -45,7 +39,6 @@ export default {
   /** 输入框的值 */
   inputValue: {
     type: [String, Number] as PropType<TdSelectProps['inputValue']>,
-    default: undefined,
   },
   /** 输入框的值，非受控属性 */
   defaultInputValue: {
@@ -60,7 +53,6 @@ export default {
   /** 远程加载时显示的文字，支持自定义。如加上超链接 */
   loadingText: {
     type: [String, Function] as PropType<TdSelectProps['loadingText']>,
-    default: '',
   },
   /** 用于控制多选数量，值为 0 则不限制 */
   max: {
@@ -77,7 +69,6 @@ export default {
   /** 数据化配置选项内容 */
   options: {
     type: Array as PropType<TdSelectProps['options']>,
-    default: (): TdSelectProps['options'] => [],
   },
   /** 面板内的底部内容 */
   panelBottomContent: {
@@ -97,10 +88,9 @@ export default {
     type: Object as PropType<TdSelectProps['popupProps']>,
   },
   /** 是否显示下拉框 */
-  popupVisible: {
-    type: Boolean,
-    default: undefined,
-  },
+  popupVisible: Boolean,
+  /** 是否显示下拉框，非受控属性 */
+  defaultPopupVisible: Boolean,
   /** 组件前置图标 */
   prefixIcon: {
     type: Function as PropType<TdSelectProps['prefixIcon']>,
@@ -154,7 +144,6 @@ export default {
   /** 选中值 */
   value: {
     type: [String, Number, Object, Array] as PropType<TdSelectProps['value']>,
-    default: undefined,
   },
   /** 选中值，非受控属性 */
   defaultValue: {
@@ -175,7 +164,7 @@ export default {
   },
   /** 输入框失去焦点时触发 */
   onBlur: Function as PropType<TdSelectProps['onBlur']>,
-  /** 选中值变化时触发，`context. trigger` 表示触发变化的来源 */
+  /** 选中值变化时触发。`context.trigger` 表示触发变化的来源；`context.selectedOptions` 表示选中值的完整对象，数组长度一定和 `value` 相同；`context.option` 表示当前操作的选项，不一定存在 */
   onChange: Function as PropType<TdSelectProps['onChange']>,
   /** 点击清除按钮时触发 */
   onClear: Function as PropType<TdSelectProps['onClear']>,
@@ -193,6 +182,4 @@ export default {
   onRemove: Function as PropType<TdSelectProps['onRemove']>,
   /** 输入值变化时，触发搜索事件。主要用于远程搜索新数据 */
   onSearch: Function as PropType<TdSelectProps['onSearch']>,
-  /** 下拉框隐藏/显示时触发 */
-  onVisibleChange: Function as PropType<TdSelectProps['onVisibleChange']>,
 };
