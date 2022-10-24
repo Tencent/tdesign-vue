@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <t-space direction="vertical">
     <!-- :popup-props="{ trigger: 'hover' }" -->
     <!-- 前置内容使用 label 自定义，支持同名插槽 label -->
     <t-select-input
@@ -24,8 +24,6 @@
         <chevron-down-icon />
       </template>
     </t-select-input>
-    <br /><br />
-
     <!-- 后置内容使用 suffix 自定义，支持同名插槽 suffix -->
     <t-select-input
       :value="selectValue"
@@ -48,7 +46,7 @@
         <chevron-down-icon />
       </template>
     </t-select-input>
-  </div>
+  </t-space>
 </template>
 <script>
 import { ChevronDownIcon } from 'tdesign-icons-vue';

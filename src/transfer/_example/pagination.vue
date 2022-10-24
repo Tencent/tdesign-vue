@@ -1,14 +1,12 @@
 <template>
-  <div>
-    <t-transfer
-      theme="primary"
-      :data="list"
-      v-model="targetValue"
-      :checked-value="checkedValue"
-      :pagination="pagination"
-      :onPageChange="handlePageChange"
-    />
-  </div>
+  <t-transfer
+    theme="primary"
+    :data="list"
+    v-model="targetValue"
+    :checked-value="checkedValue"
+    :pagination="pagination"
+    :onPageChange="handlePageChange"
+  />
 </template>
 <script>
 const list = [];

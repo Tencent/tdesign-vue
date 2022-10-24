@@ -1,13 +1,8 @@
 <template>
-  <div class="demo-slider">
-    <div class="block">
-      <t-slider v-model="value1" />
-    </div>
-
-    <div class="block">
-      <t-slider v-model="value2" range :tooltipProps="{}" :label="renderLabel" />
-    </div>
-  </div>
+  <t-space direction="vertical" size="60px">
+    <t-slider v-model="value1" />
+    <t-slider v-model="value2" range :tooltipProps="{}" :label="renderLabel" />
+  </t-space>
 </template>
 <script>
 export default {
@@ -26,8 +21,3 @@ export default {
   },
 };
 </script>
-<style>
-.block {
-  padding: 30px 24px;
-}
-</style>

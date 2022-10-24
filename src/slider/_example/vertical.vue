@@ -1,13 +1,8 @@
 <template>
-  <div class="demo-slider">
-    <div class="vertical-block">
-      <t-slider v-model="value1" :layout="layout" :show-tooltip="true" />
-    </div>
-
-    <div class="vertical-block">
-      <t-slider v-model="value2" :layout="layout" range :show-tooltip="true" />
-    </div>
-  </div>
+  <t-space :style="{ height: '300px' }" size="60px">
+    <t-slider v-model="value1" :layout="layout" :show-tooltip="true" />
+    <t-slider v-model="value2" :layout="layout" range :show-tooltip="true" />
+  </t-space>
 </template>
 <script>
 export default {
@@ -20,7 +15,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .vertical-block {
   display: inline-block;
   padding: 30px 24px;

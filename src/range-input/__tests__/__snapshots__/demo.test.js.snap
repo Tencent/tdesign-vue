@@ -98,135 +98,146 @@ exports[`RangeInput RangeInput popupVue demo works fine 1`] = `
 
 exports[`RangeInput RangeInput sizeVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column"
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
 >
   <div
-    class="t-range-input t-size-s"
+    class="t-space-item"
   >
     <div
-      class="t-range-input__inner"
+      class="t-range-input t-size-s"
     >
       <div
-        class="t-input__wrap t-range-input__inner-left"
+        class="t-range-input__inner"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input__wrap t-range-input__inner-left"
         >
-          <input
-            autocomplete=""
-            class="t-input__inner"
-            placeholder="请输入"
-            type="text"
-            unselectable="off"
-          />
+          <div
+            class="t-input t-size-m t-is-default"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
         </div>
-      </div>
-      <div
-        class="t-range-input__inner-separator"
-      >
-        -
-      </div>
-      <div
-        class="t-input__wrap t-range-input__inner-right"
-      >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-range-input__inner-separator"
         >
-          <input
-            autocomplete=""
-            class="t-input__inner"
-            placeholder="请输入"
-            type="text"
-            unselectable="off"
-          />
+          -
+        </div>
+        <div
+          class="t-input__wrap t-range-input__inner-right"
+        >
+          <div
+            class="t-input t-size-m t-is-default"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
         </div>
       </div>
     </div>
   </div>
-   
   <div
-    class="t-range-input"
+    class="t-space-item"
   >
     <div
-      class="t-range-input__inner"
+      class="t-range-input"
     >
       <div
-        class="t-input__wrap t-range-input__inner-left"
+        class="t-range-input__inner"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input__wrap t-range-input__inner-left"
         >
-          <input
-            autocomplete=""
-            class="t-input__inner"
-            placeholder="请输入"
-            type="text"
-            unselectable="off"
-          />
+          <div
+            class="t-input t-size-m t-is-default"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
         </div>
-      </div>
-      <div
-        class="t-range-input__inner-separator"
-      >
-        -
-      </div>
-      <div
-        class="t-input__wrap t-range-input__inner-right"
-      >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-range-input__inner-separator"
         >
-          <input
-            autocomplete=""
-            class="t-input__inner"
-            placeholder="请输入"
-            type="text"
-            unselectable="off"
-          />
+          -
+        </div>
+        <div
+          class="t-input__wrap t-range-input__inner-right"
+        >
+          <div
+            class="t-input t-size-m t-is-default"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
         </div>
       </div>
     </div>
   </div>
-   
   <div
-    class="t-range-input t-size-l"
+    class="t-space-item"
   >
     <div
-      class="t-range-input__inner"
+      class="t-range-input t-size-l"
     >
       <div
-        class="t-input__wrap t-range-input__inner-left"
+        class="t-range-input__inner"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input__wrap t-range-input__inner-left"
         >
-          <input
-            autocomplete=""
-            class="t-input__inner"
-            placeholder="请输入"
-            type="text"
-            unselectable="off"
-          />
+          <div
+            class="t-input t-size-m t-is-default"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
         </div>
-      </div>
-      <div
-        class="t-range-input__inner-separator"
-      >
-        -
-      </div>
-      <div
-        class="t-input__wrap t-range-input__inner-right"
-      >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-range-input__inner-separator"
         >
-          <input
-            autocomplete=""
-            class="t-input__inner"
-            placeholder="请输入"
-            type="text"
-            unselectable="off"
-          />
+          -
+        </div>
+        <div
+          class="t-input__wrap t-range-input__inner-right"
+        >
+          <div
+            class="t-input t-size-m t-is-default"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -236,135 +247,146 @@ exports[`RangeInput RangeInput sizeVue demo works fine 1`] = `
 
 exports[`RangeInput RangeInput statusVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-block-column"
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
 >
   <div
-    class="t-range-input"
+    class="t-space-item"
   >
     <div
-      class="t-range-input__inner"
+      class="t-range-input"
     >
       <div
-        class="t-input__wrap t-range-input__inner-left"
+        class="t-range-input__inner"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input__wrap t-range-input__inner-left"
         >
-          <input
-            autocomplete=""
-            class="t-input__inner"
-            placeholder="请输入"
-            type="text"
-            unselectable="off"
-          />
+          <div
+            class="t-input t-size-m t-is-default"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
         </div>
-      </div>
-      <div
-        class="t-range-input__inner-separator"
-      >
-        -
-      </div>
-      <div
-        class="t-input__wrap t-range-input__inner-right"
-      >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-range-input__inner-separator"
         >
-          <input
-            autocomplete=""
-            class="t-input__inner"
-            placeholder="请输入"
-            type="text"
-            unselectable="off"
-          />
+          -
+        </div>
+        <div
+          class="t-input__wrap t-range-input__inner-right"
+        >
+          <div
+            class="t-input t-size-m t-is-default"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
         </div>
       </div>
     </div>
   </div>
-   
   <div
-    class="t-range-input"
+    class="t-space-item"
   >
     <div
-      class="t-range-input__inner"
+      class="t-range-input"
     >
       <div
-        class="t-input__wrap t-range-input__inner-left"
+        class="t-range-input__inner"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input__wrap t-range-input__inner-left"
         >
-          <input
-            autocomplete=""
-            class="t-input__inner"
-            placeholder="请输入"
-            type="text"
-            unselectable="off"
-          />
+          <div
+            class="t-input t-size-m t-is-default"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
         </div>
-      </div>
-      <div
-        class="t-range-input__inner-separator"
-      >
-        -
-      </div>
-      <div
-        class="t-input__wrap t-range-input__inner-right"
-      >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-range-input__inner-separator"
         >
-          <input
-            autocomplete=""
-            class="t-input__inner"
-            placeholder="请输入"
-            type="text"
-            unselectable="off"
-          />
+          -
+        </div>
+        <div
+          class="t-input__wrap t-range-input__inner-right"
+        >
+          <div
+            class="t-input t-size-m t-is-default"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
         </div>
       </div>
     </div>
   </div>
-   
   <div
-    class="t-range-input"
+    class="t-space-item"
   >
     <div
-      class="t-range-input__inner"
+      class="t-range-input"
     >
       <div
-        class="t-input__wrap t-range-input__inner-left"
+        class="t-range-input__inner"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input__wrap t-range-input__inner-left"
         >
-          <input
-            autocomplete=""
-            class="t-input__inner"
-            placeholder="请输入"
-            type="text"
-            unselectable="off"
-          />
+          <div
+            class="t-input t-size-m t-is-default"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
         </div>
-      </div>
-      <div
-        class="t-range-input__inner-separator"
-      >
-        -
-      </div>
-      <div
-        class="t-input__wrap t-range-input__inner-right"
-      >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-range-input__inner-separator"
         >
-          <input
-            autocomplete=""
-            class="t-input__inner"
-            placeholder="请输入"
-            type="text"
-            unselectable="off"
-          />
+          -
+        </div>
+        <div
+          class="t-input__wrap t-range-input__inner-right"
+        >
+          <div
+            class="t-input t-size-m t-is-default"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
         </div>
       </div>
     </div>

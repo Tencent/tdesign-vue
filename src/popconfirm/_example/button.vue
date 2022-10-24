@@ -1,7 +1,7 @@
 <template>
-  <div class="popconfirm-demo">
+  <t-space>
     <!-- 和 Dialog/Drawer 组件的确认/取消 逻辑一样 -->
-    <div class="tdesign-demo-block">
+    <t-space>
       <!-- 使用 props 定义按钮内容 -->
       <t-popconfirm theme="default" content="您确定要提交吗" confirmBtn="确认提交" cancelBtn="我再想想">
         <t-button variant="outline">按钮样式（属性-字符串）</t-button>
@@ -35,8 +35,8 @@
         >
         <t-button slot="confirmBtn" size="small" theme="primary" @click="visible = false">确定</t-button>
       </t-popconfirm>
-    </div>
-  </div>
+    </t-space>
+  </t-space>
 </template>
 <script>
 export default {
@@ -47,10 +47,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.popconfirm-demo .tdesign-demo-block {
-  display: flex;
-  justify-content: space-around;
-}
-</style>

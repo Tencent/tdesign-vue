@@ -1,13 +1,8 @@
 <template>
-  <div class="demo-slider">
-    <div class="number-vertical-block">
-      <t-slider v-model="value1" :layout="layout" :show-tooltip="true" :inputNumberProps="inputNumberProps" />
-    </div>
-
-    <div class="number-vertical-block">
-      <t-slider v-model="value2" :layout="layout" range :show-tooltip="true" :inputNumberProps="inputNumberProps" />
-    </div>
-  </div>
+  <t-space :style="{ height: '300px' }" size="60px">
+    <t-slider v-model="value1" :layout="layout" :show-tooltip="true" :inputNumberProps="inputNumberProps" />
+    <t-slider v-model="value2" :layout="layout" range :show-tooltip="true" :inputNumberProps="inputNumberProps" />
+  </t-space>
 </template>
 <script>
 export default {
@@ -21,10 +16,3 @@ export default {
   },
 };
 </script>
-<style>
-.number-vertical-block {
-  display: inline-block;
-  padding: 30px 24px;
-  height: 300px;
-}
-</style>
