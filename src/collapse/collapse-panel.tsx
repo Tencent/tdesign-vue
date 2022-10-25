@@ -109,8 +109,7 @@ export default defineComponent({
       ) : null;
     },
     handleClick(e: MouseEvent) {
-      const canExpand = (this.expandOnRowClick && e.target === this.$refs.headRef)
-        || (e.target as Element).getAttribute('name') === 'arrow';
+      const canExpand = this.expandOnRowClick || (e.target as Element).getAttribute('name') === 'arrow';
       if (canExpand && !this.isDisabled) {
         this.updateCollapseValue(this.innerValue);
       }
