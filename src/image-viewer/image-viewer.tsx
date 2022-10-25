@@ -13,6 +13,7 @@ import useVModel from '../hooks/useVModel';
 import useDefaultValue from '../hooks/useDefaultValue';
 import { usePrefixClass } from '../hooks/useConfig';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import { setTransform } from '../utils/helper';
 
 import { TdImageViewerProps } from './type';
 import { useMirror, useRotate, useScale } from './hooks';
@@ -163,7 +164,7 @@ export default defineComponent({
       deltaY > 0 ? onZoomIn() : onZoomOut();
     };
 
-    const transStyle = computed(() => ({ transform: `translateX(-${indexValue.value * 84}px)` }));
+    const transStyle = computed(() => setTransform(`translateX(-${indexValue.value * 84}px)`));
     const isMultipleImg = computed(() => imagesList.value.length > 1);
 
     return {
@@ -241,7 +242,7 @@ export default defineComponent({
       const icon = renderTNodeJSX(
         this,
         'navigationArrow',
-        <ChevronLeftIcon style={{ transform: `rotate(${rotateDeg}deg)` }} size="24px" />,
+          <ChevronLeftIcon style={setTransform(`rotate(${rotateDeg}deg)`)} size="24px" />,
       );
 
       return (
