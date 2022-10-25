@@ -4,6 +4,7 @@ import {
 import { ImageErrorIcon } from 'tdesign-icons-vue';
 import { usePrefixClass } from '../../hooks/useConfig';
 import { useDrag } from '../hooks';
+import { setTransform } from '../../utils/helper';
 
 export default defineComponent({
   name: 'TImageItem',
@@ -21,18 +22,16 @@ export default defineComponent({
     const { transform, mouseDownHandler } = useDrag({ translateX: 0, translateY: 0 });
 
     const imgStyle = computed(() => ({
-      transform: `rotate(${props.rotate}deg) scale(${props.scale})`,
+      ...setTransform(`rotate(${props.rotate}deg) scale(${props.scale})`),
       display: !props.placementSrc || loaded.value ? 'block' : 'none',
     }));
     const placementImgStyle = computed(() => ({
-      transform: `rotate(${props.rotate}deg) scale(${props.scale})`,
+      ...setTransform(`rotate(${props.rotate}deg) scale(${props.scale})`),
       display: !loaded.value ? 'block' : 'none',
     }));
     const boxStyle = computed(() => {
       const { translateX, translateY } = transform.value;
-      return {
-        transform: `translate(${translateX}px, ${translateY}px) scale(${props.mirror}, 1)`,
-      };
+      return setTransform(`translate(${translateX}px, ${translateY}px) scale(${props.mirror}, 1)`);
     });
 
     const resetStatus = () => {

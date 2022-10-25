@@ -51,8 +51,9 @@ export default mixins(keepAnimationMixins, classPrefixMixins, getGlobalIconMixin
       e.stopPropagation();
       emitEvent<Parameters<TdTabsProps['onRemove']>>(this, 'remove', { e, value: this.value, index: this.index });
     },
-    onClickNav({ e }: { e: MouseEvent }) {
+    onClickNav(e: MouseEvent) {
       if (this.disabled) return;
+      e.stopPropagation();
       emitEvent<Parameters<(e: MouseEvent) => void>>(this, 'click', e);
     },
     renderCardItem(): VNode {
