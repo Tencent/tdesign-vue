@@ -2132,22 +2132,22 @@ exports[`ssr snapshot test renders ./src/calendar/_example/mode.vue correctly 1`
         <table class="t-calendar__table">
           <tbody class="t-calendar__table-body">
             <tr class="t-calendar__table-body-row">
-              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">一月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">二月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">三月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">四月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">1 月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">2 月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">3 月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">4 月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
             </tr>
             <tr class="t-calendar__table-body-row">
-              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">五月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">六月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">七月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">八月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">5 月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">6 月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">7 月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">8 月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
             </tr>
             <tr class="t-calendar__table-body-row">
-              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">九月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">十月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">十一月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
-              <div class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"><span><div class="t-calendar__table-body-cell-display">十二月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">9 月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">10 月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+              <div class="t-calendar__table-body-cell"><span><div class="t-calendar__table-body-cell-display">11 月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
+              <div class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"><span><div class="t-calendar__table-body-cell-display">12 月</div><div class="t-calendar__table-body-cell-content"></div></span></div>
             </tr>
           </tbody>
         </table>
