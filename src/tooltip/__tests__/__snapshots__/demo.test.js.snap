@@ -159,34 +159,35 @@ exports[`Tooltip Tooltip baseVue demo works fine 1`] = `
 `;
 
 exports[`Tooltip Tooltip durationVue demo works fine 1`] = `
-<div>
-  <button
-    class="t-button t-size-m t-button--variant-text t-button--theme-default t-is-disabled"
-    disabled="disabled"
-    type="button"
-    visible="visible"
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
   >
-    <span
-      class="t-button__text"
+    <button
+      class="t-button t-size-m t-button--variant-text t-button--theme-default t-is-disabled"
+      disabled="disabled"
+      type="button"
+      visible="visible"
     >
-      定时消失
-    </span>
-  </button>
-   
-  <!---->
+      <span
+        class="t-button__text"
+      >
+        定时消失
+      </span>
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Tooltip Tooltip mouseVue demo works fine 1`] = `
-<div
-  class="tdesign-tooltip-demo"
+<a
+  href="#"
 >
-  <a
-    href="#"
-  >
-    文案比较长...
-  </a>
-</div>
+  文案比较长...
+</a>
 `;
 
 exports[`Tooltip Tooltip noArrowVue demo works fine 1`] = `
@@ -206,127 +207,161 @@ exports[`Tooltip Tooltip noArrowVue demo works fine 1`] = `
 
 exports[`Tooltip Tooltip themeVue demo works fine 1`] = `
 <div
-  class="tdesign-tooltip-demo"
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
 >
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-default"
-    type="button"
+  <div
+    class="t-space-item"
   >
-    <span
-      class="t-button__text"
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-default"
+      type="button"
     >
-      default
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-    type="button"
+      <span
+        class="t-button__text"
+      >
+        default
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
   >
-    <span
-      class="t-button__text"
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+      type="button"
     >
-      primary
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-success"
-    type="button"
+      <span
+        class="t-button__text"
+      >
+        primary
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
   >
-    <span
-      class="t-button__text"
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-success"
+      type="button"
     >
-      success
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-danger"
-    type="button"
+      <span
+        class="t-button__text"
+      >
+        success
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
   >
-    <span
-      class="t-button__text"
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-danger"
+      type="button"
     >
-      danger
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-base t-button--theme-warning"
-    type="button"
+      <span
+        class="t-button__text"
+      >
+        danger
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
   >
-    <span
-      class="t-button__text"
+    <button
+      class="t-button t-size-m t-button--variant-base t-button--theme-warning"
+      type="button"
     >
-      warning
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
+      <span
+        class="t-button__text"
+      >
+        warning
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
   >
-    <span
-      class="t-button__text"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
     >
-      light
-    </span>
-  </button>
+      <span
+        class="t-button__text"
+      >
+        light
+      </span>
+    </button>
+  </div>
 </div>
 `;
 
 exports[`Tooltip Tooltip triggerVue demo works fine 1`] = `
 <div
-  class="tdesign-tooltip-demo"
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
 >
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      悬浮时触发（默认）
-    </span>
-  </button>
-   
   <div
-    class="t-input__wrap"
+    class="t-space-item"
+  >
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        悬浮时触发（默认）
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
   >
     <div
-      class="t-input t-size-m t-is-default"
+      class="t-input__wrap"
     >
-      <input
-        autocomplete=""
-        class="t-input__inner"
-        placeholder="获得焦点时触发"
-        type="text"
-        unselectable="off"
-      />
+      <div
+        class="t-input t-size-m t-is-default"
+      >
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder="获得焦点时触发"
+          type="text"
+          unselectable="off"
+        />
+      </div>
     </div>
   </div>
-   
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
+  <div
+    class="t-space-item"
   >
-    <span
-      class="t-button__text"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
     >
-      点击时触发
-    </span>
-  </button>
-   
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
+      <span
+        class="t-button__text"
+      >
+        点击时触发
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
   >
-    <span
-      class="t-button__text"
+    <button
+      class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+      type="button"
     >
-      右击时触发
-    </span>
-  </button>
+      <span
+        class="t-button__text"
+      >
+        右击时触发
+      </span>
+    </button>
+  </div>
 </div>
 `;

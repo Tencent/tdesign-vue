@@ -1,7 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column" style="max-width: 500px">
-    <t-input clearable v-model="value" placeholder="请输入" @clear="onClear" />
-  </div>
+  <t-input clearable v-model="value" placeholder="请输入" @clear="onClear" style="max-width: 500px" />
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column adornment-select" style="max-width: 500px">
+  <t-space direction="vertical" class="adornment-select" style="max-width: 500px">
     <t-input-adornment :prepend="protocolSelect">
       <t-input placeholder="请输入内容" />
     </t-input-adornment>
@@ -14,7 +14,7 @@
         defaultValue="tencent"
       />
     </t-input-adornment>
-  </div>
+  </t-space>
 </template>
 
 <script lang="jsx">
@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style lang="less">
-.tdesign-demo-block-column.adornment-select {
+.adornment-select {
   .t-input-adornment {
     .t-input-adornment__prepend,
     .t-input-adornment__append {

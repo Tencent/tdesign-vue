@@ -1,7 +1,5 @@
 <template>
-  <div class="tdesign-tree-select-base">
-    <t-tree-select :data="options" :value="defaultValue" placeholder="请选择" />
-  </div>
+  <t-tree-select style="width: 300px" :data="options" :value="defaultValue" placeholder="请选择" />
 </template>
 <script>
 const defaultValue = ['shenzhen', 'guangzhou'];
@@ -48,8 +46,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.tdesign-tree-select-base {
-  width: 300px;
-}
-</style>

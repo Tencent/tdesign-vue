@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <t-space direction="vertical">
     <t-form layout="inline">
       <t-form-item label="自己指定年：">
         <t-input v-model="year" />
@@ -9,7 +9,7 @@
       </t-form-item>
     </t-form>
     <t-calendar :value="value" :year="year" :month="month"></t-calendar>
-  </div>
+  </t-space>
 </template>
 
 <script>

@@ -1,7 +1,6 @@
 <template>
-  <div class="tdesign-tree-select-multiple">
-    <t-tree-select v-model="value" :data="options" multiple clearable placeholder="请选择"> </t-tree-select>
-  </div>
+  <t-tree-select style="width: 300px" v-model="value" :data="options" multiple clearable placeholder="请选择">
+  </t-tree-select>
 </template>
 <script>
 export default {
@@ -42,9 +41,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.tdesign-tree-select-multiple {
-  width: 300px;
-  margin: 0 20px;
-}
-</style>
