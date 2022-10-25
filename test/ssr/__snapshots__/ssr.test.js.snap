@@ -1320,86 +1320,102 @@ exports[`ssr snapshot test renders ./src/calendar/_example/cell.vue correctly 1`
         <tr class="t-calendar__table-body-row">
           <div class="t-calendar__table-body-cell t-is-disabled">
             <div class="outerWrapper">
-              <div class="number">29</div> <!---->
+              <div class="number">29</div>
+              <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell t-is-disabled">
             <div class="outerWrapper">
-              <div class="number">30</div> <!---->
+              <div class="number">30</div>
+              <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
             <div class="outerWrapper">
-              <div class="number">1</div> <!---->
+              <div class="number">1</div>
+              <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
             <div class="outerWrapper">
-              <div class="number">2</div> <!---->
+              <div class="number">2</div>
+              <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
             <div class="outerWrapper">
-              <div class="number">3</div> <!---->
+              <div class="number">3</div>
+              <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
             <div class="outerWrapper">
-              <div class="number">4</div> <!---->
+              <div class="number">4</div>
+              <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
             <div class="outerWrapper">
-              <div class="number">5</div> <!---->
-            </div>
-          </div>
-        </tr>
-        <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell">
-            <div class="outerWrapper">
-              <div class="number">6</div> <!---->
-            </div>
-          </div>
-          <div class="t-calendar__table-body-cell">
-            <div class="outerWrapper">
-              <div class="number">7</div> <!---->
-            </div>
-          </div>
-          <div class="t-calendar__table-body-cell">
-            <div class="outerWrapper">
-              <div class="number">8</div> <!---->
-            </div>
-          </div>
-          <div class="t-calendar__table-body-cell">
-            <div class="outerWrapper">
-              <div class="number">9</div> <!---->
-            </div>
-          </div>
-          <div class="t-calendar__table-body-cell">
-            <div class="outerWrapper">
-              <div class="number">10</div> <!---->
-            </div>
-          </div>
-          <div class="t-calendar__table-body-cell">
-            <div class="outerWrapper">
-              <div class="number">11</div> <!---->
-            </div>
-          </div>
-          <div class="t-calendar__table-body-cell">
-            <div class="outerWrapper">
-              <div class="number">12</div> <!---->
+              <div class="number">5</div>
+              <!---->
             </div>
           </div>
         </tr>
         <tr class="t-calendar__table-body-row">
           <div class="t-calendar__table-body-cell">
             <div class="outerWrapper">
-              <div class="number">13</div> <!---->
+              <div class="number">6</div>
+              <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
             <div class="outerWrapper">
-              <div class="number">14</div> <!---->
+              <div class="number">7</div>
+              <!---->
+            </div>
+          </div>
+          <div class="t-calendar__table-body-cell">
+            <div class="outerWrapper">
+              <div class="number">8</div>
+              <!---->
+            </div>
+          </div>
+          <div class="t-calendar__table-body-cell">
+            <div class="outerWrapper">
+              <div class="number">9</div>
+              <!---->
+            </div>
+          </div>
+          <div class="t-calendar__table-body-cell">
+            <div class="outerWrapper">
+              <div class="number">10</div>
+              <!---->
+            </div>
+          </div>
+          <div class="t-calendar__table-body-cell">
+            <div class="outerWrapper">
+              <div class="number">11</div>
+              <!---->
+            </div>
+          </div>
+          <div class="t-calendar__table-body-cell">
+            <div class="outerWrapper">
+              <div class="number">12</div>
+              <!---->
+            </div>
+          </div>
+        </tr>
+        <tr class="t-calendar__table-body-row">
+          <div class="t-calendar__table-body-cell">
+            <div class="outerWrapper">
+              <div class="number">13</div>
+              <!---->
+            </div>
+          </div>
+          <div class="t-calendar__table-body-cell">
+            <div class="outerWrapper">
+              <div class="number">14</div>
+              <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
@@ -1421,96 +1437,114 @@ exports[`ssr snapshot test renders ./src/calendar/_example/cell.vue correctly 1`
           </div>
           <div class="t-calendar__table-body-cell">
             <div class="outerWrapper">
-              <div class="number">16</div> <!---->
+              <div class="number">16</div>
+              <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
             <div class="outerWrapper">
-              <div class="number">17</div> <!---->
+              <div class="number">17</div>
+              <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
             <div class="outerWrapper">
-              <div class="number">18</div> <!---->
+              <div class="number">18</div>
+              <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
             <div class="outerWrapper">
-              <div class="number">19</div> <!---->
-            </div>
-          </div>
-        </tr>
-        <tr class="t-calendar__table-body-row">
-          <div class="t-calendar__table-body-cell">
-            <div class="outerWrapper">
-              <div class="number">20</div> <!---->
-            </div>
-          </div>
-          <div class="t-calendar__table-body-cell">
-            <div class="outerWrapper">
-              <div class="number">21</div> <!---->
-            </div>
-          </div>
-          <div class="t-calendar__table-body-cell">
-            <div class="outerWrapper">
-              <div class="number">22</div> <!---->
-            </div>
-          </div>
-          <div class="t-calendar__table-body-cell">
-            <div class="outerWrapper">
-              <div class="number">23</div> <!---->
-            </div>
-          </div>
-          <div class="t-calendar__table-body-cell">
-            <div class="outerWrapper">
-              <div class="number">24</div> <!---->
-            </div>
-          </div>
-          <div class="t-calendar__table-body-cell">
-            <div class="outerWrapper">
-              <div class="number">25</div> <!---->
-            </div>
-          </div>
-          <div class="t-calendar__table-body-cell">
-            <div class="outerWrapper">
-              <div class="number">26</div> <!---->
+              <div class="number">19</div>
+              <!---->
             </div>
           </div>
         </tr>
         <tr class="t-calendar__table-body-row">
           <div class="t-calendar__table-body-cell">
             <div class="outerWrapper">
-              <div class="number">27</div> <!---->
+              <div class="number">20</div>
+              <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
             <div class="outerWrapper">
-              <div class="number">28</div> <!---->
+              <div class="number">21</div>
+              <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
             <div class="outerWrapper">
-              <div class="number">29</div> <!---->
+              <div class="number">22</div>
+              <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell">
             <div class="outerWrapper">
-              <div class="number">30</div> <!---->
+              <div class="number">23</div>
+              <!---->
+            </div>
+          </div>
+          <div class="t-calendar__table-body-cell">
+            <div class="outerWrapper">
+              <div class="number">24</div>
+              <!---->
+            </div>
+          </div>
+          <div class="t-calendar__table-body-cell">
+            <div class="outerWrapper">
+              <div class="number">25</div>
+              <!---->
+            </div>
+          </div>
+          <div class="t-calendar__table-body-cell">
+            <div class="outerWrapper">
+              <div class="number">26</div>
+              <!---->
+            </div>
+          </div>
+        </tr>
+        <tr class="t-calendar__table-body-row">
+          <div class="t-calendar__table-body-cell">
+            <div class="outerWrapper">
+              <div class="number">27</div>
+              <!---->
+            </div>
+          </div>
+          <div class="t-calendar__table-body-cell">
+            <div class="outerWrapper">
+              <div class="number">28</div>
+              <!---->
+            </div>
+          </div>
+          <div class="t-calendar__table-body-cell">
+            <div class="outerWrapper">
+              <div class="number">29</div>
+              <!---->
+            </div>
+          </div>
+          <div class="t-calendar__table-body-cell">
+            <div class="outerWrapper">
+              <div class="number">30</div>
+              <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now">
             <div class="outerWrapper">
-              <div class="number">31</div> <!---->
+              <div class="number">31</div>
+              <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell t-is-disabled">
             <div class="outerWrapper">
-              <div class="number">1</div> <!---->
+              <div class="number">1</div>
+              <!---->
             </div>
           </div>
           <div class="t-calendar__table-body-cell t-is-disabled">
             <div class="outerWrapper">
-              <div class="number">2</div> <!---->
+              <div class="number">2</div>
+              <!---->
             </div>
           </div>
         </tr>
@@ -3404,7 +3438,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/base.vue correctly 1`
               </svg></div>
             <div class="t-collapse-panel__header-content">这是一个折叠标题</div>
             <div class="t-collapse-panel__header--blank"></div>
-            <div class="t-collapse-panel__header-right"></div>
+            <div class="t-collapse-panel__header-right">
+              <div class="t-collapse-panel__header-right-content"></div>
+            </div>
           </div>
           <div name="t-slide-down"></div>
         </div>
@@ -3417,7 +3453,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/base.vue correctly 1`
               </svg></div>
             <div class="t-collapse-panel__header-content">设置默认展开项</div>
             <div class="t-collapse-panel__header--blank"></div>
-            <div class="t-collapse-panel__header-right"></div>
+            <div class="t-collapse-panel__header-right">
+              <div class="t-collapse-panel__header-right-content"></div>
+            </div>
           </div>
           <div name="t-slide-down"></div>
         </div>
@@ -3430,7 +3468,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/base.vue correctly 1`
               </svg></div>
             <div class="t-collapse-panel__header-content">自定义折叠面板内容</div>
             <div class="t-collapse-panel__header--blank"></div>
-            <div class="t-collapse-panel__header-right"></div>
+            <div class="t-collapse-panel__header-right">
+              <div class="t-collapse-panel__header-right-content"></div>
+            </div>
           </div>
           <div name="t-slide-down"></div>
         </div>
@@ -3443,7 +3483,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/base.vue correctly 1`
               </svg></div>
             <div class="t-collapse-panel__header-content">嵌套折叠面板</div>
             <div class="t-collapse-panel__header--blank"></div>
-            <div class="t-collapse-panel__header-right"></div>
+            <div class="t-collapse-panel__header-right">
+              <div class="t-collapse-panel__header-right-content"></div>
+            </div>
           </div>
           <div name="t-slide-down"></div>
         </div>
@@ -3470,7 +3512,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/icon.vue correctly 1`
               </svg></div>
             <div class="t-collapse-panel__header-content">这是一个折叠标题</div>
             <div class="t-collapse-panel__header--blank"></div>
-            <div class="t-collapse-panel__header-right"></div>
+            <div class="t-collapse-panel__header-right">
+              <div class="t-collapse-panel__header-right-content"></div>
+            </div>
           </div>
           <div name="t-slide-down"></div>
         </div>
@@ -3483,7 +3527,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/icon.vue correctly 1`
               </svg></div>
             <div class="t-collapse-panel__header-content">这是一个折叠标题</div>
             <div class="t-collapse-panel__header--blank"></div>
-            <div class="t-collapse-panel__header-right"></div>
+            <div class="t-collapse-panel__header-right">
+              <div class="t-collapse-panel__header-right-content"></div>
+            </div>
           </div>
           <div name="t-slide-down"></div>
         </div>
@@ -3496,7 +3542,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/icon.vue correctly 1`
               </svg></div>
             <div class="t-collapse-panel__header-content">这是一个折叠标题</div>
             <div class="t-collapse-panel__header--blank"></div>
-            <div class="t-collapse-panel__header-right"></div>
+            <div class="t-collapse-panel__header-right">
+              <div class="t-collapse-panel__header-right-content"></div>
+            </div>
           </div>
           <div name="t-slide-down"></div>
         </div>
@@ -3509,7 +3557,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/icon.vue correctly 1`
               </svg></div>
             <div class="t-collapse-panel__header-content">这是一个折叠标题</div>
             <div class="t-collapse-panel__header--blank"></div>
-            <div class="t-collapse-panel__header-right"></div>
+            <div class="t-collapse-panel__header-right">
+              <div class="t-collapse-panel__header-right-content"></div>
+            </div>
           </div>
           <div name="t-slide-down"></div>
         </div>
@@ -3542,7 +3592,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/mutex.vue correctly 1
               </svg></div>
             <div class="t-collapse-panel__header-content">这是一个折叠标题</div>
             <div class="t-collapse-panel__header--blank"></div>
-            <div class="t-collapse-panel__header-right"></div>
+            <div class="t-collapse-panel__header-right">
+              <div class="t-collapse-panel__header-right-content"></div>
+            </div>
           </div>
           <div name="t-slide-down"></div>
         </div>
@@ -3555,7 +3607,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/mutex.vue correctly 1
               </svg></div>
             <div class="t-collapse-panel__header-content">这是一个折叠标题</div>
             <div class="t-collapse-panel__header--blank"></div>
-            <div class="t-collapse-panel__header-right"></div>
+            <div class="t-collapse-panel__header-right">
+              <div class="t-collapse-panel__header-right-content"></div>
+            </div>
           </div>
           <div name="t-slide-down"></div>
         </div>
@@ -3568,7 +3622,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/mutex.vue correctly 1
               </svg></div>
             <div class="t-collapse-panel__header-content">这是一个折叠标题</div>
             <div class="t-collapse-panel__header--blank"></div>
-            <div class="t-collapse-panel__header-right"></div>
+            <div class="t-collapse-panel__header-right">
+              <div class="t-collapse-panel__header-right-content"></div>
+            </div>
           </div>
           <div name="t-slide-down"></div>
         </div>
@@ -3581,7 +3637,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/mutex.vue correctly 1
               </svg></div>
             <div class="t-collapse-panel__header-content">这是一个折叠标题</div>
             <div class="t-collapse-panel__header--blank"></div>
-            <div class="t-collapse-panel__header-right"></div>
+            <div class="t-collapse-panel__header-right">
+              <div class="t-collapse-panel__header-right-content"></div>
+            </div>
           </div>
           <div name="t-slide-down"></div>
         </div>
@@ -3606,7 +3664,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/other.vue correctly 1
               </svg></div>
             <div class="t-collapse-panel__header-content">这是一个折叠标题</div>
             <div class="t-collapse-panel__header--blank"></div>
-            <div class="t-collapse-panel__header-right"></div>
+            <div class="t-collapse-panel__header-right">
+              <div class="t-collapse-panel__header-right-content"></div>
+            </div>
           </div>
           <div name="t-slide-down"></div>
         </div>
@@ -3619,7 +3679,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/other.vue correctly 1
               </svg></div>
             <div class="t-collapse-panel__header-content">这是一个折叠标题</div>
             <div class="t-collapse-panel__header--blank"></div>
-            <div class="t-collapse-panel__header-right"></div>
+            <div class="t-collapse-panel__header-right">
+              <div class="t-collapse-panel__header-right-content"></div>
+            </div>
           </div>
           <div name="t-slide-down"></div>
         </div>
@@ -3632,7 +3694,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/other.vue correctly 1
               </svg></div>
             <div class="t-collapse-panel__header-content">这是一个折叠标题</div>
             <div class="t-collapse-panel__header--blank"></div>
-            <div class="t-collapse-panel__header-right"></div>
+            <div class="t-collapse-panel__header-right">
+              <div class="t-collapse-panel__header-right-content"></div>
+            </div>
           </div>
           <div name="t-slide-down"></div>
         </div>
@@ -3645,7 +3709,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/other.vue correctly 1
               </svg></div>
             <div class="t-collapse-panel__header-content">这是一个折叠标题</div>
             <div class="t-collapse-panel__header--blank"></div>
-            <div class="t-collapse-panel__header-right"></div>
+            <div class="t-collapse-panel__header-right">
+              <div class="t-collapse-panel__header-right-content"></div>
+            </div>
           </div>
           <div name="t-slide-down"></div>
         </div>
@@ -3668,7 +3734,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/rightSlot.vue correct
           </svg></div>
         <div class="t-collapse-panel__header-content">这是一个折叠标题可以设置右侧操作区域</div>
         <div class="t-collapse-panel__header--blank"></div>
-        <div class="t-collapse-panel__header-right"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">禁用</span></label> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary" style="margin-left:8px;"><span class="t-button__text">操作</span></button></div>
+        <div class="t-collapse-panel__header-right">
+          <div class="t-collapse-panel__header-right-content"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">禁用</span></label> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary" style="margin-left:8px;"><span class="t-button__text">操作</span></button></div>
+        </div>
       </div>
       <div name="t-slide-down"></div>
     </div>
@@ -3681,7 +3749,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/rightSlot.vue correct
           </svg></div>
         <div class="t-collapse-panel__header-content">这是一个折叠标题可以设置右侧操作区域</div>
         <div class="t-collapse-panel__header--blank"></div>
-        <div class="t-collapse-panel__header-right"><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">禁用</span></label> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary" style="margin-left:8px;"><span class="t-button__text">操作</span></button></div>
+        <div class="t-collapse-panel__header-right">
+          <div class="t-collapse-panel__header-right-content"><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">禁用</span></label> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary" style="margin-left:8px;"><span class="t-button__text">操作</span></button></div>
+        </div>
       </div>
       <div name="t-slide-down"></div>
     </div>
@@ -3694,7 +3764,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/rightSlot.vue correct
           </svg></div>
         <div class="t-collapse-panel__header-content">这是一个折叠标题可以设置右侧操作区域</div>
         <div class="t-collapse-panel__header--blank"></div>
-        <div class="t-collapse-panel__header-right"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">禁用</span></label> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary" style="margin-left:8px;"><span class="t-button__text">操作</span></button></div>
+        <div class="t-collapse-panel__header-right">
+          <div class="t-collapse-panel__header-right-content"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">禁用</span></label> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary" style="margin-left:8px;"><span class="t-button__text">操作</span></button></div>
+        </div>
       </div>
       <div name="t-slide-down"></div>
     </div>
@@ -3707,7 +3779,9 @@ exports[`ssr snapshot test renders ./src/collapse/_example/rightSlot.vue correct
           </svg></div>
         <div class="t-collapse-panel__header-content">这是一个折叠标题可以设置右侧操作区域</div>
         <div class="t-collapse-panel__header--blank"></div>
-        <div class="t-collapse-panel__header-right"><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">禁用</span></label> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary" style="margin-left:8px;"><span class="t-button__text">操作</span></button></div>
+        <div class="t-collapse-panel__header-right">
+          <div class="t-collapse-panel__header-right-content"><label class="t-checkbox t-is-checked"><input type="checkbox" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">禁用</span></label> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary" style="margin-left:8px;"><span class="t-button__text">操作</span></button></div>
+        </div>
       </div>
       <div name="t-slide-down"></div>
     </div>
@@ -5520,10 +5594,12 @@ exports[`ssr snapshot test renders ./src/config-provider/_example/others.vue cor
   <div class="t-tree t-tree--transition">
     <div class="t-tree__empty">Tree Empty Data</div>
   </div> <br><br>
-  <div class="t-tree t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+  <div class="t-tree t-tree--transition">
+    <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
       <div data-value="1" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right" style="font-size:18px;"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">Department A</span></span></div>
       <div data-value="2" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right" style="font-size:18px;"><path fill="currentColor" d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">Department B</span></span></div>
-    </transition-group-stub></div> <br><br> <br>
+    </transition-group-stub>
+  </div> <br><br> <br>
   <div class="t-steps t-steps--vertical t-steps--positive t-steps--default-anchor t-steps--line-separator">
     <div class="t-steps-item t-steps-item--finish">
       <div class="t-steps-item__inner t-steps-item--clickable">
@@ -5683,7 +5759,8 @@ exports[`ssr snapshot test renders ./src/config-provider/_example/table.vue corr
               <div class="t-table__empty">Empty Data</div>
             </td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -5765,7 +5842,8 @@ exports[`ssr snapshot test renders ./src/config-provider/_example/table.vue corr
             <td>Miniprogram</td>
             <td>C</td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -6199,7 +6277,10 @@ exports[`ssr snapshot test renders ./src/dialog/_example/icon.vue correctly 1`] 
   <div duration="300" name="t-dialog-zoom__vue"></div> <br>
   <div duration="300" name="t-dialog-zoom__vue"></div> <br>
   <div duration="300" name="t-dialog-zoom__vue"></div> <br>
-  <div duration="300" name="t-dialog-zoom__vue"></div> <br> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">theme: info</span></button> <!----> <!----> <!---->
+  <div duration="300" name="t-dialog-zoom__vue"></div> <br> <button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">theme: info</span></button>
+  <!---->
+  <!---->
+  <!---->
 </div>
 `;
 
@@ -6440,7 +6521,11 @@ exports[`ssr snapshot test renders ./src/drawer/_example/custom.vue correctly 1`
 </div>
 `;
 
-exports[`ssr snapshot test renders ./src/drawer/_example/destroy.vue correctly 1`] = `<div><!----> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">打开抽屉</span></button></div>`;
+exports[`ssr snapshot test renders ./src/drawer/_example/destroy.vue correctly 1`] = `
+<div>
+  <!----> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">打开抽屉</span></button>
+</div>
+`;
 
 exports[`ssr snapshot test renders ./src/drawer/_example/no-mask.vue correctly 1`] = `
 <div>
@@ -7825,7 +7910,8 @@ exports[`ssr snapshot test renders ./src/form/_example/validator-status.vue corr
           <div class="t-form__controls-content">
             <div class="t-input__wrap">
               <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" class="t-input__inner"></div>
-            </div> <!----><span class="t-form__status"><button type="button" class="t-button t-size-m t-button--variant-dashed t-button--theme-default"><span class="t-button__text"><svg class="t-icon t-icon-add" style="font-size:16px;color:#0004;"><use href="#t-icon-add"></use></svg></span></button></span>
+            </div>
+            <!----><span class="t-form__status"><button type="button" class="t-button t-size-m t-button--variant-dashed t-button--theme-default"><span class="t-button__text"><svg class="t-icon t-icon-add" style="font-size:16px;color:#0004;"><use href="#t-icon-add"></use></svg></span></button></span>
           </div>
         </div>
       </div>
@@ -9826,7 +9912,9 @@ exports[`ssr snapshot test renders ./src/input-number/_example/status.vue correc
       <div class="t-radio-group__bg-block" style="width:0px;left:0px;"></div>
     </div>
   </div>
-  <form class="t-form"><!----> <!---->
+  <form class="t-form">
+    <!---->
+    <!---->
     <div class="t-form__item t-form-item__">
       <div class="t-form__label t-form__label--right" style="width:100px;"><label for="">正常提示</label></div>
       <div class="t-form__controls" style="margin-left:100px;">
@@ -10913,7 +11001,9 @@ exports[`ssr snapshot test renders ./src/loading/_example/delay.vue correctly 1`
 
 exports[`ssr snapshot test renders ./src/loading/_example/fullscreen.vue correctly 1`] = `
 <div class="t-space t-space-horizontal" style="gap:16px;">
-  <div class="t-space-item"><!----></div>
+  <div class="t-space-item">
+    <!---->
+  </div>
   <div class="t-space-item">
     <div>
       全局加载开关（开启加载1秒后自动归位）：
@@ -12172,7 +12262,9 @@ exports[`ssr snapshot test renders ./src/notification/_example/close.vue correct
       <div class="t-notification__title__wrap"><span class="t-notification__title">自定义关闭按钮(插槽)</span><span class="t-message__close">x</span></div>
       <div class="t-notification__content">这是一条消息通知</div>
     </div>
-  </div> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">处理开关事件</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">处理定时关闭事件（3s）</span></button> <!----> <!---->
+  </div> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">处理开关事件</span></button> <button type="button" class="t-button t-size-m t-button--variant-outline t-button--theme-default"><span class="t-button__text">处理定时关闭事件（3s）</span></button>
+  <!---->
+  <!---->
 </div>
 `;
 
@@ -17333,7 +17425,8 @@ exports[`ssr snapshot test renders ./src/table/_example/async-loading.vue correc
               </div>
             </td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -17445,7 +17538,8 @@ exports[`ssr snapshot test renders ./src/table/_example/base.vue correctly 1`] =
                 <div class="t-table__ellipsis t-text-ellipsis">读取 9 个数据的嵌套信息值</div>
               </td>
             </tr>
-          </tbody><!---->
+          </tbody>
+          <!---->
         </table>
       </div>
       <div class="t-table__pagination-wrap" style="opacity:1;">
@@ -17532,7 +17626,8 @@ exports[`ssr snapshot test renders ./src/table/_example/custom-cell.vue correctl
             </td>
             <td>render 方法渲染单元格: 1-3</td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -17630,7 +17725,8 @@ exports[`ssr snapshot test renders ./src/table/_example/custom-col.vue correctly
               <div class="t-table__ellipsis t-text-ellipsis">读取 4 个数据的嵌套信息值</div>
             </td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;">
@@ -17776,7 +17872,8 @@ exports[`ssr snapshot test renders ./src/table/_example/custom-col-button.vue co
               <div class="t-table__ellipsis t-text-ellipsis">读取 4 个数据的嵌套信息值</div>
             </td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;">
@@ -17946,7 +18043,8 @@ exports[`ssr snapshot test renders ./src/table/_example/custom-header.vue correc
           <td>标题使用 title 方法自定义</td>
           <td>rowkey</td>
         </tr>
-      </tbody><!---->
+      </tbody>
+      <!---->
     </table>
   </div>
   <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -18043,7 +18141,8 @@ exports[`ssr snapshot test renders ./src/table/_example/data-sort.vue correctly 
               <td>1000</td>
               <td>jenny;peter</td>
             </tr>
-          </tbody><!---->
+          </tbody>
+          <!---->
         </table>
       </div>
       <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -18122,7 +18221,8 @@ exports[`ssr snapshot test renders ./src/table/_example/drag-col-sort.vue correc
               <td>1500</td>
               <td>peter</td>
             </tr>
-          </tbody><!---->
+          </tbody>
+          <!---->
         </table>
       </div>
       <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -18201,7 +18301,8 @@ exports[`ssr snapshot test renders ./src/table/_example/drag-sort.vue correctly 
               <td>1500</td>
               <td>peter</td>
             </tr>
-          </tbody><!---->
+          </tbody>
+          <!---->
         </table>
       </div>
       <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -18297,7 +18398,8 @@ exports[`ssr snapshot test renders ./src/table/_example/drag-sort-handler.vue co
               <td>1500</td>
               <td>peter</td>
             </tr>
-          </tbody><!---->
+          </tbody>
+          <!---->
         </table>
       </div>
       <div class="t-loading--center t-size-s t-loading"></div>
@@ -18470,7 +18572,8 @@ exports[`ssr snapshot test renders ./src/table/_example/editable-cell.vue correc
                 </svg></div>
             </td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -18627,7 +18730,8 @@ exports[`ssr snapshot test renders ./src/table/_example/editable-row.vue correct
               <div class="table-operations"><button type="button" data-id="5" class="t-button t-size-m t-button--variant-text t-button--theme-primary"><span class="t-button__text">编辑</span></button></div>
             </td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -18774,7 +18878,8 @@ exports[`ssr snapshot test renders ./src/table/_example/ellipsis.vue correctly 1
               <div class="t-table__ellipsis t-text-ellipsis">Setting props and content at the same time</div>
             </td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -18824,7 +18929,8 @@ exports[`ssr snapshot test renders ./src/table/_example/empty.vue correctly 1`] 
               <div class="t-table__empty">暂无数据</div>
             </td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -18869,7 +18975,8 @@ exports[`ssr snapshot test renders ./src/table/_example/empty.vue correctly 1`] 
               <div class="t-table__empty"><span>😊 使用插槽自定义的空内容 😊</span></div>
             </td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -18914,7 +19021,8 @@ exports[`ssr snapshot test renders ./src/table/_example/empty.vue correctly 1`] 
               <div class="t-table__empty"><span>😊 使用渲染函数自定义的空内容 😊</span></div>
             </td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -18995,7 +19103,8 @@ exports[`ssr snapshot test renders ./src/table/_example/expandable.vue correctly
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td>JQTest1</td>
             <td>
-              <p class="status">健康</p> <!---->
+              <p class="status">健康</p>
+              <!---->
             </td>
             <td>jenny;peter</td>
             <td>description</td>
@@ -19010,7 +19119,8 @@ exports[`ssr snapshot test renders ./src/table/_example/expandable.vue correctly
           <tr>
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td>JQTest2</td>
-            <td><!---->
+            <td>
+              <!---->
               <p class="status unhealth">异常</p>
             </td>
             <td>jenny;peter</td>
@@ -19027,7 +19137,8 @@ exports[`ssr snapshot test renders ./src/table/_example/expandable.vue correctly
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--expanded t-positive-rotate-90"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td>JQTest3</td>
             <td>
-              <p class="status">健康</p> <!---->
+              <p class="status">健康</p>
+              <!---->
             </td>
             <td>jenny;peter</td>
             <td>description</td>
@@ -19058,7 +19169,8 @@ exports[`ssr snapshot test renders ./src/table/_example/expandable.vue correctly
           <tr>
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td>JQTest4</td>
-            <td><!---->
+            <td>
+              <!---->
               <p class="status unhealth">异常</p>
             </td>
             <td>jenny;peter</td>
@@ -19075,7 +19187,8 @@ exports[`ssr snapshot test renders ./src/table/_example/expandable.vue correctly
             <td class="t-table__expandable-icon-cell"><span class="t-table__expand-box t-table__row--collapsed"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-chevron-right-circle"><path fill="currentColor" d="M6.2 5.2L9 8l-2.8 2.8.71.7 3.5-3.5-3.5-3.5-.7.7z" fill-opacity="0.9"></path><path fill="currentColor" d="M8 15A7 7 0 118 1a7 7 0 010 14zm0-1A6 6 0 108 2a6 6 0 000 12z" fill-opacity="0.9"></path></svg></span></td>
             <td>JQTest5</td>
             <td>
-              <p class="status">健康</p> <!---->
+              <p class="status">健康</p>
+              <!---->
             </td>
             <td>jenny;peter</td>
             <td>description</td>
@@ -19087,7 +19200,8 @@ exports[`ssr snapshot test renders ./src/table/_example/expandable.vue correctly
             <td>field6</td>
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div style="margin-top:-12px;">
@@ -19214,7 +19328,8 @@ exports[`ssr snapshot test renders ./src/table/_example/filter-controlled.vue co
             <td>espinke0@apache.org</td>
             <td>2021-11-01</td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -19344,7 +19459,8 @@ exports[`ssr snapshot test renders ./src/table/_example/fixed-column.vue correct
               <div class="t-table__ellipsis t-text-ellipsis">读取 4 个数据的嵌套信息值</div>
             </td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -19874,7 +19990,8 @@ exports[`ssr snapshot test renders ./src/table/_example/loading.vue correctly 1`
             </th>
           </tr>
         </thead>
-        <tbody class="t-table__body"></tbody><!---->
+        <tbody class="t-table__body"></tbody>
+        <!---->
       </table>
     </div>
     <div class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
@@ -19930,7 +20047,8 @@ exports[`ssr snapshot test renders ./src/table/_example/loading.vue correctly 1`
             </th>
           </tr>
         </thead>
-        <tbody class="t-table__body"></tbody><!---->
+        <tbody class="t-table__body"></tbody>
+        <!---->
       </table>
     </div>
     <div class="t-loading--center t-size-s t-loading">
@@ -19986,7 +20104,8 @@ exports[`ssr snapshot test renders ./src/table/_example/loading.vue correctly 1`
             </th>
           </tr>
         </thead>
-        <tbody class="t-table__body"></tbody><!---->
+        <tbody class="t-table__body"></tbody>
+        <!---->
       </table>
     </div>
     <div class="t-loading--center t-size-s t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="small" class="t-loading__gradient t-icon-loading">
@@ -20074,7 +20193,8 @@ exports[`ssr snapshot test renders ./src/table/_example/merge-cells.vue correctl
           <td class="row">描述</td>
           <td>表头合并</td>
         </tr>
-      </tbody><!---->
+      </tbody>
+      <!---->
     </table>
   </div>
   <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -20209,7 +20329,8 @@ exports[`ssr snapshot test renders ./src/table/_example/multi-header.vue correct
               <div class="t-table__empty">暂无数据</div>
             </td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -20278,22 +20399,28 @@ exports[`ssr snapshot test renders ./src/table/_example/multiple-sort.vue correc
             <tr>
               <td>JQTest1</td>
               <td>
-                <p class="status">健康</p> <!----> <!---->
+                <p class="status">健康</p>
+                <!---->
+                <!---->
               </td>
               <td>1000</td>
               <td>jenny;peter</td>
             </tr>
             <tr>
               <td>JQTest2</td>
-              <td><!---->
-                <p class="status warning">警告</p> <!---->
+              <td>
+                <!---->
+                <p class="status warning">警告</p>
+                <!---->
               </td>
               <td>1000</td>
               <td>jenny</td>
             </tr>
             <tr>
               <td>JQTest3</td>
-              <td><!----> <!---->
+              <td>
+                <!---->
+                <!---->
                 <p class="status unhealth">异常</p>
               </td>
               <td>500</td>
@@ -20301,13 +20428,16 @@ exports[`ssr snapshot test renders ./src/table/_example/multiple-sort.vue correc
             </tr>
             <tr>
               <td>JQTest4</td>
-              <td><!---->
-                <p class="status warning">警告</p> <!---->
+              <td>
+                <!---->
+                <p class="status warning">警告</p>
+                <!---->
               </td>
               <td>1500</td>
               <td>peter</td>
             </tr>
-          </tbody><!---->
+          </tbody>
+          <!---->
         </table>
       </div>
       <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -20405,7 +20535,8 @@ exports[`ssr snapshot test renders ./src/table/_example/pagination.vue correctly
               <div class="t-table__ellipsis t-text-ellipsis">读取 9 个数据的嵌套信息值</div>
             </td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;">
@@ -20490,7 +20621,8 @@ exports[`ssr snapshot test renders ./src/table/_example/pagination-ajax.vue corr
             <div class="t-table__empty">暂无数据</div>
           </td>
         </tr>
-      </tbody><!---->
+      </tbody>
+      <!---->
     </table>
   </div>
   <div class="t-loading--center t-size-s t-loading"></div>
@@ -20571,7 +20703,8 @@ exports[`ssr snapshot test renders ./src/table/_example/select-multiple.vue corr
             <td class="t-table__cell-check demo-multiple-select-cell"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest1</td>
             <td>
-              <p class="status">健康</p> <!---->
+              <p class="status">健康</p>
+              <!---->
             </td>
             <td>jenny;peter</td>
             <td>test</td>
@@ -20580,7 +20713,8 @@ exports[`ssr snapshot test renders ./src/table/_example/select-multiple.vue corr
           <tr>
             <td class="t-table__cell-check demo-multiple-select-cell"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest2</td>
-            <td><!---->
+            <td>
+              <!---->
               <p class="status unhealth">异常</p>
             </td>
             <td>jenny;peter</td>
@@ -20591,7 +20725,8 @@ exports[`ssr snapshot test renders ./src/table/_example/select-multiple.vue corr
             <td class="t-table__cell-check demo-multiple-select-cell"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest3</td>
             <td>
-              <p class="status">健康</p> <!---->
+              <p class="status">健康</p>
+              <!---->
             </td>
             <td>jenny;peter</td>
             <td>test</td>
@@ -20600,7 +20735,8 @@ exports[`ssr snapshot test renders ./src/table/_example/select-multiple.vue corr
           <tr>
             <td class="t-table__cell-check demo-multiple-select-cell"><label class="t-checkbox t-is-disabled"><input type="checkbox" disabled="disabled" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest4</td>
-            <td><!---->
+            <td>
+              <!---->
               <p class="status unhealth">异常</p>
             </td>
             <td>jenny;peter</td>
@@ -20611,13 +20747,15 @@ exports[`ssr snapshot test renders ./src/table/_example/select-multiple.vue corr
             <td class="t-table__cell-check demo-multiple-select-cell"><label class="t-checkbox"><input type="checkbox" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"></span></label></td>
             <td>JQTest5</td>
             <td>
-              <p class="status">健康</p> <!---->
+              <p class="status">健康</p>
+              <!---->
             </td>
             <td>jenny;peter</td>
             <td>test</td>
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -20672,7 +20810,8 @@ exports[`ssr snapshot test renders ./src/table/_example/select-single.vue correc
             <td class="t-table__cell-check demo-single-select-cell"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest1</td>
             <td>
-              <p class="status">健康</p> <!---->
+              <p class="status">健康</p>
+              <!---->
             </td>
             <td>jenny;peter</td>
             <td>test</td>
@@ -20681,7 +20820,8 @@ exports[`ssr snapshot test renders ./src/table/_example/select-single.vue correc
           <tr class="t-table__row--disabled">
             <td class="t-table__cell-check demo-single-select-cell"><label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest2</td>
-            <td><!---->
+            <td>
+              <!---->
               <p class="status unhealth">异常</p>
             </td>
             <td>jenny;peter</td>
@@ -20692,7 +20832,8 @@ exports[`ssr snapshot test renders ./src/table/_example/select-single.vue correc
             <td class="t-table__cell-check demo-single-select-cell"><label class="t-radio t-is-checked"><input type="radio" checked="checked" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest3</td>
             <td>
-              <p class="status">健康</p> <!---->
+              <p class="status">健康</p>
+              <!---->
             </td>
             <td>jenny;peter</td>
             <td>test</td>
@@ -20701,7 +20842,8 @@ exports[`ssr snapshot test renders ./src/table/_example/select-single.vue correc
           <tr class="t-table__row--disabled">
             <td class="t-table__cell-check demo-single-select-cell"><label class="t-radio t-is-disabled"><input type="radio" disabled="disabled" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest4</td>
-            <td><!---->
+            <td>
+              <!---->
               <p class="status unhealth">异常</p>
             </td>
             <td>jenny;peter</td>
@@ -20712,13 +20854,15 @@ exports[`ssr snapshot test renders ./src/table/_example/select-single.vue correc
             <td class="t-table__cell-check demo-single-select-cell"><label class="t-radio"><input type="radio" name="" class="t-radio__former"><span class="t-radio__input"></span><span class="t-radio__label"></span></label></td>
             <td>JQTest5</td>
             <td>
-              <p class="status">健康</p> <!---->
+              <p class="status">健康</p>
+              <!---->
             </td>
             <td>jenny;peter</td>
             <td>test</td>
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -20764,7 +20908,8 @@ exports[`ssr snapshot test renders ./src/table/_example/show-columns.vue correct
           <tr>
             <td>JQTest1</td>
             <td>
-              <p class="status">健康</p> <!---->
+              <p class="status">健康</p>
+              <!---->
             </td>
             <td>jenny;peter</td>
             <td>test</td>
@@ -20772,7 +20917,8 @@ exports[`ssr snapshot test renders ./src/table/_example/show-columns.vue correct
           </tr>
           <tr>
             <td>JQTest2</td>
-            <td><!---->
+            <td>
+              <!---->
               <p class="status unhealth">异常</p>
             </td>
             <td>jenny</td>
@@ -20782,7 +20928,8 @@ exports[`ssr snapshot test renders ./src/table/_example/show-columns.vue correct
           <tr>
             <td>JQTest3</td>
             <td>
-              <p class="status">健康</p> <!---->
+              <p class="status">健康</p>
+              <!---->
             </td>
             <td>jenny</td>
             <td>test</td>
@@ -20790,14 +20937,16 @@ exports[`ssr snapshot test renders ./src/table/_example/show-columns.vue correct
           </tr>
           <tr>
             <td>JQTest4</td>
-            <td><!---->
+            <td>
+              <!---->
               <p class="status unhealth">异常</p>
             </td>
             <td>peter</td>
             <td>test</td>
             <td><a class="link">管理</a> <a class="link">删除</a></td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -20859,22 +21008,28 @@ exports[`ssr snapshot test renders ./src/table/_example/single-sort.vue correctl
           <tr>
             <td>JQTest1</td>
             <td class="t-table__sort-column">
-              <p class="status">健康</p> <!----> <!---->
+              <p class="status">健康</p>
+              <!---->
+              <!---->
             </td>
             <td>1000</td>
             <td>jenny;peter</td>
           </tr>
           <tr>
             <td>JQTest2</td>
-            <td class="t-table__sort-column"><!---->
-              <p class="status warning">警告</p> <!---->
+            <td class="t-table__sort-column">
+              <!---->
+              <p class="status warning">警告</p>
+              <!---->
             </td>
             <td>1000</td>
             <td>jenny</td>
           </tr>
           <tr>
             <td>JQTest3</td>
-            <td class="t-table__sort-column"><!----> <!---->
+            <td class="t-table__sort-column">
+              <!---->
+              <!---->
               <p class="status unhealth">异常</p>
             </td>
             <td>500</td>
@@ -20883,12 +21038,15 @@ exports[`ssr snapshot test renders ./src/table/_example/single-sort.vue correctl
           <tr>
             <td>JQTest4</td>
             <td class="t-table__sort-column">
-              <p class="status">健康</p> <!----> <!---->
+              <p class="status">健康</p>
+              <!---->
+              <!---->
             </td>
             <td>1000</td>
             <td>jenny;peter</td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -21141,7 +21299,8 @@ exports[`ssr snapshot test renders ./src/table/_example/tree.vue correctly 1`] =
               <div class="tdesign-table-demo__table-operations"><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">插入</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">前插</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">后插</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">更新</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">查看</span></button><button type="button" class="t-button t-size-m t-button--variant-text t-button--theme-default"><span class="t-button__text">删除</span></button></div>
             </td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__bottom-content">
@@ -21284,7 +21443,8 @@ exports[`ssr snapshot test renders ./src/table/_example/tree-select.vue correctl
             <td>jenny</td>
             <td>important.</td>
           </tr>
-        </tbody><!---->
+        </tbody>
+        <!---->
       </table>
     </div>
     <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -21328,7 +21488,8 @@ exports[`ssr snapshot test renders ./src/table/_example/virtual-scroll.vue corre
                 <div class="t-table__empty">暂无数据</div>
               </td>
             </tr>
-          </tbody><!---->
+          </tbody>
+          <!---->
         </table>
       </div>
       <div class="t-table__pagination-wrap" style="opacity:1;"></div>
@@ -21371,7 +21532,9 @@ exports[`ssr snapshot test renders ./src/tabs/_example/ban.vue correctly 1`] = `
       <div class="t-tabs__content">
         <div class="t-tab-panel">
           <p style="padding:25px;">选项卡1的内容</p>
-        </div> <!----> <!---->
+        </div>
+        <!---->
+        <!---->
       </div>
     </div>
   </div>
@@ -21405,7 +21568,8 @@ exports[`ssr snapshot test renders ./src/tabs/_example/base.vue correctly 1`] = 
         </div>
         <div class="t-tab-panel" style="display:none;">
           <p style="padding:25px;">选项卡2的内容，使用 t-tab-panel 渲染</p>
-        </div> <!---->
+        </div>
+        <!---->
       </div>
     </div>
   </div>
@@ -21431,7 +21595,9 @@ exports[`ssr snapshot test renders ./src/tabs/_example/base.vue correctly 1`] = 
       <div class="t-tabs__content">
         <div class="t-tab-panel">
           <p style="padding:25px;">这是选项卡一的内容，使用 t-tabs 渲染</p>
-        </div><!----><!---->
+        </div>
+        <!---->
+        <!---->
       </div>
     </div>
   </div>
@@ -21468,10 +21634,29 @@ exports[`ssr snapshot test renders ./src/tabs/_example/combination.vue correctly
           </div>
         </div>
       </div>
-      <div class="t-tabs__content"><!---->
+      <div class="t-tabs__content">
+        <!---->
         <div class="t-tab-panel">
           <p style="padding:25px;">选项卡2</p>
-        </div><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+        </div>
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
       </div>
     </div>
   </div>
@@ -21501,7 +21686,8 @@ exports[`ssr snapshot test renders ./src/tabs/_example/custom.vue correctly 1`] 
   <div class="t-tabs__content">
     <div class="t-tab-panel">
       <p style="padding:25px;">原有选项卡内容</p>
-    </div><!---->
+    </div>
+    <!---->
   </div>
 </div>
 `;
@@ -21539,7 +21725,9 @@ exports[`ssr snapshot test renders ./src/tabs/_example/icon.vue correctly 1`] = 
       <div class="t-tabs__content">
         <div class="t-tab-panel">
           <p style="padding:25px;">首页的内容</p>
-        </div> <!----> <!---->
+        </div>
+        <!---->
+        <!---->
       </div>
     </div>
   </div>
@@ -21569,7 +21757,8 @@ exports[`ssr snapshot test renders ./src/tabs/_example/operation.vue correctly 1
   <div class="t-tabs__content">
     <div class="t-tab-panel">
       <p style="padding:25px;">原有选项卡内容</p>
-    </div><!---->
+    </div>
+    <!---->
   </div>
 </div>
 `;
@@ -21607,7 +21796,9 @@ exports[`ssr snapshot test renders ./src/tabs/_example/position.vue correctly 1`
       <div class="t-tabs__content">
         <div class="t-tab-panel">
           <p style="padding:25px;">选项卡1</p>
-        </div> <!----> <!---->
+        </div>
+        <!---->
+        <!---->
       </div>
     </div>
   </div>
@@ -21638,7 +21829,9 @@ exports[`ssr snapshot test renders ./src/tabs/_example/size.vue correctly 1`] = 
       <div class="t-tabs__content">
         <div class="t-tab-panel">
           <p style="padding:25px;">选项卡1</p>
-        </div> <!----> <!---->
+        </div>
+        <!---->
+        <!---->
       </div>
     </div>
   </div>
@@ -21664,7 +21857,9 @@ exports[`ssr snapshot test renders ./src/tabs/_example/size.vue correctly 1`] = 
       <div class="t-tabs__content">
         <div class="t-tab-panel">
           <p style="padding:25px;">选项卡1</p>
-        </div> <!----> <!---->
+        </div>
+        <!---->
+        <!---->
       </div>
     </div>
   </div>
@@ -21695,7 +21890,9 @@ exports[`ssr snapshot test renders ./src/tabs/_example/theme.vue correctly 1`] =
       <div class="t-tabs__content">
         <div class="t-tab-panel">
           <p style="padding:25px;">选项卡1</p>
-        </div> <!----> <!---->
+        </div>
+        <!---->
+        <!---->
       </div>
     </div>
   </div>
@@ -21719,7 +21916,9 @@ exports[`ssr snapshot test renders ./src/tabs/_example/theme.vue correctly 1`] =
       <div class="t-tabs__content">
         <div class="t-tab-panel">
           <p style="padding:25px;">选项卡1</p>
-        </div> <!----> <!---->
+        </div>
+        <!---->
+        <!---->
       </div>
     </div>
   </div>
@@ -23021,7 +23220,8 @@ exports[`ssr snapshot test renders ./src/transfer/_example/tree.vue correctly 1`
     </div>
     <div class="t-transfer__list-body">
       <div class="t-transfer__list-content narrow-scrollbar">
-        <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+        <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition">
+          <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
             <div data-value="1" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1</span></label></div>
             <div data-value="1.1" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="1.1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1</span></label></div>
             <div data-value="1.2" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="1.2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.2</span></label></div>
@@ -23031,7 +23231,8 @@ exports[`ssr snapshot test renders ./src/transfer/_example/tree.vue correctly 1`
             <div data-value="2" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2</span></label></div>
             <div data-value="2.1" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="2.1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.1</span></label></div>
             <div data-value="2.2" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="2.2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.2</span></label></div>
-          </transition-group-stub></div>
+          </transition-group-stub>
+        </div>
       </div>
     </div>
     <div class="t-transfer__footer"></div>
@@ -23090,26 +23291,30 @@ exports[`ssr snapshot test renders ./src/tree/_example/activable.vue correctly 1
     </form>
   </div>
   <div class="t-space-item">
-    <div class="t-tree t-tree--hoverable t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+    <div class="t-tree t-tree--hoverable t-tree--transition">
+      <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
         <div data-value="t15" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">1</span></span></div>
         <div data-value="t16" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;">1.1</span></span></div>
         <div data-value="t17" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;">1.2</span></span></div>
         <div data-value="t18" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">2</span></span></div>
         <div data-value="t19" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;">2.1</span></span></div>
         <div data-value="t20" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;">2.2</span></span></div>
-      </transition-group-stub></div>
+      </transition-group-stub>
+    </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/tree/_example/base.vue correctly 1`] = `
 <div class="tdesign-tree-demo">
-  <div class="t-tree t-tree--hoverable t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+  <div class="t-tree t-tree--hoverable t-tree--transition">
+    <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
       <div data-value="t33" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">第一段</span></span></div>
       <div data-value="t36" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">第一段</span></span></div>
       <div data-value="t39" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">第一段</span></span></div>
       <div data-value="t42" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">第一段</span></span></div>
-    </transition-group-stub></div>
+    </transition-group-stub>
+  </div>
 </div>
 `;
 
@@ -23150,7 +23355,8 @@ exports[`ssr snapshot test renders ./src/tree/_example/checkable.vue correctly 1
     </form>
   </div>
   <div class="t-space-item">
-    <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+    <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition">
+      <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
         <div data-value="1" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1</span></label></div>
         <div data-value="1.1" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="1.1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1</span></label></div>
         <div data-value="1.1.1" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="1.1.1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1.1</span></label></div>
@@ -23169,7 +23375,8 @@ exports[`ssr snapshot test renders ./src/tree/_example/checkable.vue correctly 1
         <div data-value="2" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2</span></label></div>
         <div data-value="2.1" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="2.1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.1</span></label></div>
         <div data-value="2.2" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="2.2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.2</span></label></div>
-      </transition-group-stub></div>
+      </transition-group-stub>
+    </div>
   </div>
 </div>
 `;
@@ -23193,7 +23400,8 @@ exports[`ssr snapshot test renders ./src/tree/_example/controlled.vue correctly 
       </div>
     </div>
   </div>
-  <div class="t-tree t-tree--checkable t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+  <div class="t-tree t-tree--checkable t-tree--transition">
+    <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
       <div data-value="1" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-indeterminate t-tree__label"><input type="checkbox" indeterminate="indeterminate" name="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1</span></label></div>
       <div data-value="1.1" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-indeterminate t-tree__label"><input type="checkbox" indeterminate="indeterminate" name="1.1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1</span></label></div>
       <div data-value="1.1.1" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-checked t-tree__label"><input type="checkbox" name="1.1.1" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1.1</span></label></div>
@@ -23204,7 +23412,8 @@ exports[`ssr snapshot test renders ./src/tree/_example/controlled.vue correctly 
       <div data-value="2" data-level="0" class="t-tree__item t-tree__item--open t-is-active t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label t-is-active"><input type="checkbox" name="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2 这个节点不允许展开, 不允许激活</span></label></div>
       <div data-value="2.1" data-level="1" class="t-tree__item t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="2.1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.1 这个节点不允许选中</span></label></div>
       <div data-value="2.2" data-level="1" class="t-tree__item t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="2.2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.2</span></label></div>
-    </transition-group-stub></div>
+    </transition-group-stub>
+  </div>
 </div>
 `;
 
@@ -23265,7 +23474,8 @@ exports[`ssr snapshot test renders ./src/tree/_example/data.vue correctly 1`] = 
       </div>
     </form>
   </div>
-  <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+  <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition">
+    <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
       <div data-value="1" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1</span></label></div>
       <div data-value="1.1" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="1.1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1</span></label></div>
       <div data-value="1.1.1" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="1.1.1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1.1</span></label></div>
@@ -23276,7 +23486,8 @@ exports[`ssr snapshot test renders ./src/tree/_example/data.vue correctly 1`] = 
       <div data-value="2" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2</span></label></div>
       <div data-value="2.1" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="2.1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.1</span></label></div>
       <div data-value="2.2" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="2.2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.2</span></label></div>
-    </transition-group-stub></div>
+    </transition-group-stub>
+  </div>
 </div>
 `;
 
@@ -23306,7 +23517,8 @@ exports[`ssr snapshot test renders ./src/tree/_example/disabled.vue correctly 1`
       </div>
     </form>
   </div>
-  <div class="t-tree t-is-disabled t-tree--hoverable t-tree--checkable t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+  <div class="t-tree t-is-disabled t-tree--hoverable t-tree--checkable t-tree--transition">
+    <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
       <div data-value="t65" data-level="0" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-disabled t-tree__label"><input type="checkbox" disabled="disabled" name="t65" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1</span></label></div>
       <div data-value="t66" data-level="1" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-disabled t-tree__label"><input type="checkbox" disabled="disabled" name="t66" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1</span></label></div>
       <div data-value="t67" data-level="2" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-is-disabled t-tree__label"><input type="checkbox" disabled="disabled" name="t67" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1.1</span></label></div>
@@ -23317,7 +23529,8 @@ exports[`ssr snapshot test renders ./src/tree/_example/disabled.vue correctly 1`
       <div data-value="t72" data-level="0" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-disabled t-tree__label"><input type="checkbox" disabled="disabled" name="t72" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2</span></label></div>
       <div data-value="t73" data-level="1" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-is-disabled t-tree__label"><input type="checkbox" disabled="disabled" name="t73" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.1</span></label></div>
       <div data-value="t74" data-level="1" class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-is-disabled t-tree__label"><input type="checkbox" disabled="disabled" name="t74" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.2</span></label></div>
-    </transition-group-stub></div>
+    </transition-group-stub>
+  </div>
   <div class="operations">
     <form class="t-form">
       <div class="t-form__item t-form-item__">
@@ -23332,7 +23545,8 @@ exports[`ssr snapshot test renders ./src/tree/_example/disabled.vue correctly 1`
       </div>
     </form>
   </div>
-  <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+  <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition">
+    <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
       <div data-value="t75" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="t75" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1</span></label></div>
       <div data-value="t76" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-disabled t-tree__label"><input type="checkbox" disabled="disabled" name="t76" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1</span></label></div>
       <div data-value="t77" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="t77" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1.1</span></label></div>
@@ -23343,7 +23557,8 @@ exports[`ssr snapshot test renders ./src/tree/_example/disabled.vue correctly 1`
       <div data-value="t82" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="t82" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2</span></label></div>
       <div data-value="t83" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-is-disabled t-tree__label"><input type="checkbox" disabled="disabled" name="t83" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.1</span></label></div>
       <div data-value="t84" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="t84" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.2</span></label></div>
-    </transition-group-stub></div>
+    </transition-group-stub>
+  </div>
 </div>
 `;
 
@@ -23406,7 +23621,8 @@ exports[`ssr snapshot test renders ./src/tree/_example/expand-all.vue correctly 
     </form>
   </div>
   <div class="t-space-item">
-    <div class="t-tree t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+    <div class="t-tree t-tree--transition">
+      <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
         <div data-value="t95" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">1</span></span></div>
         <div data-value="t96" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">1.1</span></span></div>
         <div data-value="t97" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;">1.1.1</span></span></div>
@@ -23417,21 +23633,24 @@ exports[`ssr snapshot test renders ./src/tree/_example/expand-all.vue correctly 
         <div data-value="t102" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">2</span></span></div>
         <div data-value="t103" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;">2.1</span></span></div>
         <div data-value="t104" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;">2.2</span></span></div>
-      </transition-group-stub></div>
+      </transition-group-stub>
+    </div>
   </div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/tree/_example/expand-level.vue correctly 1`] = `
 <div>
-  <div class="t-tree t-tree--hoverable t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+  <div class="t-tree t-tree--hoverable t-tree--transition">
+    <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
       <div data-value="t115" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">1</span></span></div>
       <div data-value="t116" data-level="1" class="t-tree__item t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">1.1</span></span></div>
       <div data-value="t119" data-level="1" class="t-tree__item t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">1.2</span></span></div>
       <div data-value="t122" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">2</span></span></div>
       <div data-value="t123" data-level="1" class="t-tree__item t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;">2.1</span></span></div>
       <div data-value="t124" data-level="1" class="t-tree__item t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;">2.2</span></span></div>
-    </transition-group-stub></div>
+    </transition-group-stub>
+  </div>
 </div>
 `;
 
@@ -23462,10 +23681,12 @@ exports[`ssr snapshot test renders ./src/tree/_example/expand-mutex.vue correctl
     </form>
   </div>
   <div class="t-space-item">
-    <div class="t-tree t-tree--hoverable t-tree--transition t-tree--block-node"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+    <div class="t-tree t-tree--hoverable t-tree--transition t-tree--block-node">
+      <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
         <div data-value="t139" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">1</span></span></div>
         <div data-value="t146" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">2</span></span></div>
-      </transition-group-stub></div>
+      </transition-group-stub>
+    </div>
   </div>
 </div>
 `;
@@ -23480,10 +23701,12 @@ exports[`ssr snapshot test renders ./src/tree/_example/filter.vue correctly 1`] 
     </div>
   </div>
   <div class="t-space-item">
-    <div class="t-tree t-tree--hoverable t-tree--transition t-tree--block-node"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+    <div class="t-tree t-tree--hoverable t-tree--transition t-tree--block-node">
+      <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
         <div data-value="1" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">1</span></span></div>
         <div data-value="2" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">2</span></span></div>
-      </transition-group-stub></div>
+      </transition-group-stub>
+    </div>
   </div>
 </div>
 `;
@@ -23493,19 +23716,23 @@ exports[`ssr snapshot test renders ./src/tree/_example/icon.vue correctly 1`] = 
   <div class="t-space-item">
     <div>
       <h3>render:</h3>
-      <div class="t-tree t-tree--hoverable t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+      <div class="t-tree t-tree--hoverable t-tree--transition">
+        <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
           <div data-value="t157" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-folder"><use href="#t-icon-folder"></use></svg></span><span class="t-tree__label"><span style="position:relative;">1</span></span></div>
           <div data-value="t158" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-folder"><use href="#t-icon-folder"></use></svg></span><span class="t-tree__label"><span style="position:relative;">2</span></span></div>
-        </transition-group-stub></div>
+        </transition-group-stub>
+      </div>
     </div>
   </div>
   <div class="t-space-item">
     <div>
       <h3>scope slot:</h3>
-      <div class="t-tree t-tree--hoverable t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+      <div class="t-tree t-tree--hoverable t-tree--transition">
+        <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
           <div data-value="t159" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-caret-right"><use href="#t-icon-caret-right"></use></svg></span><span class="t-tree__label"><span style="position:relative;">1</span></span></div>
           <div data-value="t160" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-caret-right"><use href="#t-icon-caret-right"></use></svg></span><span class="t-tree__label"><span style="position:relative;">2</span></span></div>
-        </transition-group-stub></div>
+        </transition-group-stub>
+      </div>
     </div>
   </div>
 </div>
@@ -23516,27 +23743,31 @@ exports[`ssr snapshot test renders ./src/tree/_example/label.vue correctly 1`] =
   <div class="t-space-item">
     <div>
       <h3>render:</h3>
-      <div class="t-tree t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+      <div class="t-tree t-tree--transition">
+        <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
           <div data-value="t173" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;"><strong>value: t173, label: 1</strong></span></span></div>
           <div data-value="t174" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;"><strong>value: t174, label: 1.1</strong></span></span></div>
           <div data-value="t175" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;"><strong>value: t175, label: 1.2</strong></span></span></div>
           <div data-value="t176" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;"><strong>value: t176, label: 2</strong></span></span></div>
           <div data-value="t177" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;"><strong>value: t177, label: 2.1</strong></span></span></div>
           <div data-value="t178" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;"><strong>value: t178, label: 2.2</strong></span></span></div>
-        </transition-group-stub></div>
+        </transition-group-stub>
+      </div>
     </div>
   </div>
   <div class="t-space-item">
     <div>
       <h3>scope slot:</h3>
-      <div class="t-tree t-tree--checkable t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+      <div class="t-tree t-tree--checkable t-tree--transition">
+        <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
           <div data-value="t179" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="t179" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"><font color="blue">label: 1, value: t179</font></span></label></div>
           <div data-value="t180" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="t180" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"><font color="blue">label: 1.1, value: t180</font></span></label></div>
           <div data-value="t181" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="t181" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"><font color="blue">label: 1.2, value: t181</font></span></label></div>
           <div data-value="t182" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="t182" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"><font color="blue">label: 2, value: t182</font></span></label></div>
           <div data-value="t183" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="t183" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"><font color="blue">label: 2.1, value: t183</font></span></label></div>
           <div data-value="t184" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="t184" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label"><font color="blue">label: 2.2, value: t184</font></span></label></div>
-        </transition-group-stub></div>
+        </transition-group-stub>
+      </div>
     </div>
   </div>
 </div>
@@ -23583,10 +23814,12 @@ exports[`ssr snapshot test renders ./src/tree/_example/lazy.vue correctly 1`] = 
     </form>
   </div>
   <div class="t-space-item">
-    <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+    <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition">
+      <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
         <div data-value="1" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1</span></label></div>
         <div data-value="2" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2</span></label></div>
-      </transition-group-stub></div>
+      </transition-group-stub>
+    </div>
   </div>
 </div>
 `;
@@ -23620,7 +23853,8 @@ exports[`ssr snapshot test renders ./src/tree/_example/line.vue correctly 1`] = 
   <div class="t-space-item">
     <div class="t-space t-space-vertical" style="gap:16px;width:100%;">
       <div class="t-space-item">
-        <div class="t-tree t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+        <div class="t-tree t-tree--transition">
+          <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
             <div data-value="1" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">1</span></span></div>
             <div data-value="1.1" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span class="t-tree__line t-tree__line--leaf t-tree__line--first" style="--level:1;box-shadow:;"></span><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;">1.1</span></span></div>
             <div data-value="1.2" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span class="t-tree__line t-tree__line--leaf" style="--level:1;box-shadow:;"></span><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;">1.2</span></span></div>
@@ -23636,13 +23870,15 @@ exports[`ssr snapshot test renders ./src/tree/_example/line.vue correctly 1`] = 
             <div data-value="3.1" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span class="t-tree__line t-tree__line--leaf t-tree__line--first" style="--level:1;box-shadow:;"></span><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;">3.1</span></span></div>
             <div data-value="3.2" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span class="t-tree__line t-tree__line--leaf" style="--level:1;box-shadow:;"></span><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;">3.2</span></span></div>
             <div data-value="4" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;">4</span></span></div>
-          </transition-group-stub></div>
+          </transition-group-stub>
+        </div>
       </div>
       <div class="t-space-item">
         <h3>render</h3>
       </div>
       <div class="t-space-item">
-        <div class="t-tree t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+        <div class="t-tree t-tree--transition">
+          <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
             <div data-value="1" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;">
               <div class="custom-line custom-line-first">
                 <div class="custom-line-box"></div>
@@ -23736,16 +23972,19 @@ exports[`ssr snapshot test renders ./src/tree/_example/line.vue correctly 1`] = 
                   </svg></i>
               </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;">4</span></span>
             </div>
-          </transition-group-stub></div>
+          </transition-group-stub>
+        </div>
       </div>
       <div class="t-space-item">
         <h3>scope slot</h3>
       </div>
       <div class="t-space-item">
-        <div class="t-tree t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+        <div class="t-tree t-tree--transition">
+          <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
             <div data-value="1" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;">
               <div class="custom-line custom-line-first">
-                <div class="custom-line-box"></div> <!---->
+                <div class="custom-line-box"></div>
+                <!---->
               </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">1</span></span>
             </div>
             <div data-value="1.1" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;">
@@ -23764,22 +24003,26 @@ exports[`ssr snapshot test renders ./src/tree/_example/line.vue correctly 1`] = 
             </div>
             <div data-value="2" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;">
               <div class="custom-line">
-                <div class="custom-line-box"></div> <!---->
+                <div class="custom-line-box"></div>
+                <!---->
               </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">2</span></span>
             </div>
             <div data-value="2.1" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;">
               <div class="custom-line custom-line-first">
-                <div class="custom-line-box"><span></span></div> <!---->
+                <div class="custom-line-box"><span></span></div>
+                <!---->
               </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">2.1</span></span>
             </div>
             <div data-value="2.1.1" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;">
               <div class="custom-line custom-line-first">
-                <div class="custom-line-box"><span class="custom-line-cross"></span><span></span></div> <!---->
+                <div class="custom-line-box"><span class="custom-line-cross"></span><span></span></div>
+                <!---->
               </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">2.1.1</span></span>
             </div>
             <div data-value="2.1.1.1" data-level="3" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:3;">
               <div class="custom-line custom-line-first custom-line-last">
-                <div class="custom-line-box"><span class="custom-line-cross"></span><span class="custom-line-cross"></span><span></span></div> <!---->
+                <div class="custom-line-box"><span class="custom-line-cross"></span><span class="custom-line-cross"></span><span></span></div>
+                <!---->
               </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">2.1.1.1</span></span>
             </div>
             <div data-value="2.1.1.1.1" data-level="4" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:4;">
@@ -23812,7 +24055,8 @@ exports[`ssr snapshot test renders ./src/tree/_example/line.vue correctly 1`] = 
             </div>
             <div data-value="3" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;">
               <div class="custom-line">
-                <div class="custom-line-box"></div> <!---->
+                <div class="custom-line-box"></div>
+                <!---->
               </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><span class="t-tree__label"><span style="position:relative;">3</span></span>
             </div>
             <div data-value="3.1" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;">
@@ -23836,7 +24080,8 @@ exports[`ssr snapshot test renders ./src/tree/_example/line.vue correctly 1`] = 
                   </svg></i>
               </div><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;">4</span></span>
             </div>
-          </transition-group-stub></div>
+          </transition-group-stub>
+        </div>
       </div>
     </div>
   </div>
@@ -23860,10 +24105,12 @@ exports[`ssr snapshot test renders ./src/tree/_example/load.vue correctly 1`] = 
     </form>
   </div>
   <div class="t-space-item">
-    <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+    <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition">
+      <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
         <div data-value="1" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></div></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1</span></label></div>
         <div data-value="2" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><div class="t-loading--center t-size-m t-loading"><svg viewBox="0 0 14 14" version="1.1" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" size="medium" class="t-loading__gradient t-icon-loading"><foreignObject x="1" y="1" width="12" height="12"><div class="t-loading__gradient-conic"></div></foreignObject></svg></div></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2</span></label></div>
-      </transition-group-stub></div>
+      </transition-group-stub>
+    </div>
   </div>
 </div>
 `;
@@ -23876,10 +24123,12 @@ exports[`ssr snapshot test renders ./src/tree/_example/operations.vue correctly 
         <h3>Render:</h3>
       </div>
       <div class="t-space-item">
-        <div class="t-tree t-tree--hoverable t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+        <div class="t-tree t-tree--hoverable t-tree--transition">
+          <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
             <div data-value="node1" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;">1 | value: node1</span></span><span ignore="active,expand" class="t-tree__operations">value: node1</span></div>
             <div data-value="node2" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><span class="t-tree__label"><span style="position:relative;">2 | value: node2</span></span><span ignore="active,expand" class="t-tree__operations">value: node2</span></div>
-          </transition-group-stub></div>
+          </transition-group-stub>
+        </div>
       </div>
     </div>
   </div>
@@ -23920,7 +24169,8 @@ exports[`ssr snapshot test renders ./src/tree/_example/operations.vue correctly 
         </div>
       </div>
       <div class="t-space-item">
-        <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+        <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition">
+          <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
             <div data-value="node1" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="node1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1 | value: node1</span></label><span ignore="active,expand" class="t-tree__operations"><div class="t-space t-space-horizontal" style="gap:10px;"><div class="t-space-item"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">添加子节点</span></button></div>
             <div class="t-space-item"><button type="button" class="t-button t-size-s t-button--variant-outline t-button--theme-default"><span class="t-button__text">前插节点</span></button></div>
             <div class="t-space-item"><button type="button" class="t-button t-size-s t-button--variant-outline t-button--theme-default"><span class="t-button__text">后插节点</span></button></div>
@@ -23932,7 +24182,8 @@ exports[`ssr snapshot test renders ./src/tree/_example/operations.vue correctly 
       <div class="t-space-item"><button type="button" class="t-button t-size-s t-button--variant-outline t-button--theme-default"><span class="t-button__text">后插节点</span></button></div>
       <div class="t-space-item"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-danger"><span class="t-button__text">删除</span></button></div>
     </div></span>
-  </div></transition-group-stub>
+  </div>
+  </transition-group-stub>
 </div>
 </div>
 </div>
@@ -24008,21 +24259,29 @@ exports[`ssr snapshot test renders ./src/tree/_example/performance.vue correctly
       </div>
     </div>
   </form>
-  <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
-      <div data-value="t1" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="t1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">t1</span></label><span ignore="active,expand" class="t-tree__operations"><div class="tdesign-demo-block-row"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">添加子节点</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-danger"><span class="t-button__text">删除</span></button></div></span></div>
+  <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition">
+    <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+      <div data-value="t1" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="t1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">t1</span></label><span ignore="active,expand" class="t-tree__operations"><div class="tdesign-demo-block-row"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">添加子节点</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-danger"><span class="t-button__text">删除</span></button></div></span>
+  </div>
   <div data-value="t14" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="t14" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">t14</span></label><span ignore="active,expand" class="t-tree__operations"><div class="tdesign-demo-block-row"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">添加子节点</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-danger"><span class="t-button__text">删除</span></button></div></span>
 </div>
-<div data-value="t27" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="t27" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">t27</span></label><span ignore="active,expand" class="t-tree__operations"><div class="tdesign-demo-block-row"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">添加子节点</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-danger"><span class="t-button__text">删除</span></button></div></span></div></transition-group-stub></div>
+<div data-value="t27" data-level="0" class="t-tree__item t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="t27" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">t27</span></label><span ignore="active,expand" class="t-tree__operations"><div class="tdesign-demo-block-row"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">添加子节点</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-danger"><span class="t-button__text">删除</span></button></div></span></div>
+</transition-group-stub>
+</div>
 </div>
 `;
 
 exports[`ssr snapshot test renders ./src/tree/_example/state.vue correctly 1`] = `
 <div class="tdesign-demo-block-column">
   <div><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">插入一个根节点</span></button></div>
-  <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
-      <div data-value="node1" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-file"><use href="#t-icon-file"></use></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="node1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">node1: 1639267200000</span></label><span ignore="active,expand" class="t-tree__operations"><div class="tdesign-demo-block-row"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">检查节点信息</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">变更时间</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">变更图标</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">添加子节点</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-danger"><span class="t-button__text">删除</span></button></div></span></div>
+  <div class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition">
+    <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+      <div data-value="node1" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-file"><use href="#t-icon-file"></use></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="node1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">node1: 1639267200000</span></label><span ignore="active,expand" class="t-tree__operations"><div class="tdesign-demo-block-row"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">检查节点信息</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">变更时间</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">变更图标</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">添加子节点</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-danger"><span class="t-button__text">删除</span></button></div></span>
+  </div>
   <div data-value="node2" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"><svg class="t-icon t-icon-file"><use href="#t-icon-file"></use></svg></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="node2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">node2: 1639267200000</span></label><span ignore="active,expand" class="t-tree__operations"><div class="tdesign-demo-block-row"><button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">检查节点信息</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">变更时间</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">变更图标</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-primary"><span class="t-button__text">添加子节点</span></button> <button type="button" class="t-button t-size-s t-button--variant-base t-button--theme-danger"><span class="t-button__text">删除</span></button></div></span>
-</div></transition-group-stub></div>
+</div>
+</transition-group-stub>
+</div>
 </div>
 `;
 
@@ -24054,7 +24313,8 @@ exports[`ssr snapshot test renders ./src/tree/_example/sync.vue correctly 1`] = 
     </div>
   </div>
   <div class="t-space-item">
-    <div class="t-tree t-tree--checkable t-tree--transition"><transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
+    <div class="t-tree t-tree--checkable t-tree--transition">
+      <transition-group-stub tag="div" enterActiveClass="t-tree__item--enter-active" leaveActiveClass="t-tree__item--leave-active" class="t-tree__list">
         <div data-value="1" data-level="0" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-indeterminate t-tree__label"><input type="checkbox" indeterminate="indeterminate" name="1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1</span></label></div>
         <div data-value="1.1" data-level="1" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-indeterminate t-tree__label"><input type="checkbox" indeterminate="indeterminate" name="1.1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1</span></label></div>
         <div data-value="1.1.1" data-level="2" class="t-tree__item t-tree__item--open t-tree__item--visible" style="--level:2;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-is-checked t-tree__label"><input type="checkbox" name="1.1.1" checked="checked" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">1.1.1</span></label></div>
@@ -24065,7 +24325,8 @@ exports[`ssr snapshot test renders ./src/tree/_example/sync.vue correctly 1`] = 
         <div data-value="2" data-level="0" class="t-tree__item t-tree__item--open t-is-active t-tree__item--visible" style="--level:0;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon t-tree__icon--default"><svg fill="none" viewBox="0 0 16 16" width="1em" height="1em" class="t-icon t-icon-caret-right-small"><path fill="currentColor" d="M6 5v6l4.5-3L6 5z" fill-opacity="0.9"></path></svg></span><label class="t-checkbox t-tree__label t-is-active"><input type="checkbox" name="2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2</span></label></div>
         <div data-value="2.1" data-level="1" class="t-tree__item t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="2.1" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.1</span></label></div>
         <div data-value="2.2" data-level="1" class="t-tree__item t-tree__item--visible" style="--level:1;"><span trigger="expand" ignore="active" class="t-tree__icon t-folder-icon"></span><label class="t-checkbox t-tree__label"><input type="checkbox" name="2.2" class="t-checkbox__former"><span class="t-checkbox__input"></span><span class="t-checkbox__label">2.2</span></label></div>
-      </transition-group-stub></div>
+      </transition-group-stub>
+    </div>
   </div>
 </div>
 `;
@@ -24415,7 +24676,9 @@ exports[`ssr snapshot test renders ./src/upload/_example/custom-drag.vue correct
     </svg><span class="t-button__text">点击上传 </span></button> <br><br>
   <div class="t-upload"><input type="file" accept="" hidden="hidden">
     <div class="t-upload__dragger t-upload__dragger-center">
-      <div class="t-upload__trigger"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">自定义拖拽区域</span></button> <!----> <br><br></div>
+      <div class="t-upload__trigger"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">自定义拖拽区域</span></button>
+        <!----> <br><br>
+      </div>
     </div>
   </div>
 </div>
@@ -24622,7 +24885,8 @@ exports[`ssr snapshot test renders ./src/upload/_example/single-custom.vue corre
 <div>
   <div class="t-upload"><input type="file" multiple="multiple" accept="" hidden="hidden">
     <div class="t-upload__trigger"><button type="button" class="t-button t-size-m t-button--variant-base t-button--theme-primary"><span class="t-button__text">自定义上传</span></button></div><small class="t-upload__tips t-size-s">上传文件大小在 5M 以内</small>
-  </div> <!---->
+  </div>
+  <!---->
 </div>
 `;
 
