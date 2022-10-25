@@ -1,7 +1,13 @@
 <template>
-  <div class="tdesign-tree-select-base">
-    <t-tree-select :data="options" v-model="value" @blur="onBlurTrigger" filterable clearable placeholder="请选择" />
-  </div>
+  <t-tree-select
+    style="width: 300px"
+    :data="options"
+    v-model="value"
+    @blur="onBlurTrigger"
+    filterable
+    clearable
+    placeholder="请选择"
+  />
 </template>
 <script>
 export default {
@@ -48,8 +54,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.tdesign-tree-select-base {
-  width: 300px;
-}
-</style>

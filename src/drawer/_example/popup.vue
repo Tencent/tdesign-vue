@@ -5,13 +5,13 @@
     </t-drawer>
 
     <!-- 状态控制区 -->
-    <div class="tdesign-radio-button">
+    <t-space>
       抽屉弹出模式：
       <t-radio-group v-model="mode">
         <t-radio-button value="overlay">overlay</t-radio-button>
         <t-radio-button value="push">push</t-radio-button>
       </t-radio-group>
-    </div>
+    </t-space>
     <br /><br />
     <t-button variant="outline" @click="visible = true">打开抽屉</t-button>
   </div>

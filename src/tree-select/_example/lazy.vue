@@ -1,15 +1,14 @@
 <template>
-  <div class="tdesign-tree-select-lazy">
-    <t-tree-select
-      v-model="value"
-      :data="options"
-      clearable
-      placeholder="请选择"
-      :treeProps="{
-        load: loadFunc,
-      }"
-    />
-  </div>
+  <t-tree-select
+    v-model="value"
+    :data="options"
+    clearable
+    placeholder="请选择"
+    :treeProps="{
+      load: loadFunc,
+    }"
+    style="width: 300px"
+  />
 </template>
 <script>
 export default {
@@ -56,9 +55,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.tdesign-tree-select-lazy {
-  width: 300px;
-  margin: 0 20px;
-}
-</style>

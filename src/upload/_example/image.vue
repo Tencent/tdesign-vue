@@ -61,6 +61,7 @@
       ref="uploadRef4"
       action="https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo"
       v-model="files"
+      :abridgeName="[6, 6]"
       :disabled="disabled"
       :autoUpload="autoUpload"
       :uploadAllFilesInOneRequest="uploadAllFilesInOneRequest"

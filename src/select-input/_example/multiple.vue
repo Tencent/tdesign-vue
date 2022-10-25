@@ -1,21 +1,16 @@
 <template>
-  <div class="tdesign-demo__select-input-multiple" style="width: 100%">
-    <div>
+  <t-space direction="vertical">
+    <t-space>
       <t-checkbox v-model="allowInput">是否允许输入</t-checkbox>
       <t-checkbox v-model="creatable">允许创建新选项（Enter 创建）</t-checkbox>
-    </div>
-    <br />
-    <div>
-      <t-radio-group
-        v-model="excessTagsDisplayType"
-        :options="[
-          { label: '选中项过多横向滚动', value: 'scroll' },
-          { label: '选中项过多换行显示', value: 'break-line' },
-        ]"
-      />
-    </div>
-    <br /><br />
-
+    </t-space>
+    <t-radio-group
+      v-model="excessTagsDisplayType"
+      :options="[
+        { label: '选中项过多横向滚动', value: 'scroll' },
+        { label: '选中项过多换行显示', value: 'break-line' },
+      ]"
+    />
     <!-- :popup-props="{ trigger: 'hover' }" -->
     <t-select-input
       :input-value.sync="inputValue"
@@ -44,7 +39,7 @@
         <chevron-down-icon />
       </template>
     </t-select-input>
-  </div>
+  </t-space>
 </template>
 <script>
 import { ChevronDownIcon } from 'tdesign-icons-vue';

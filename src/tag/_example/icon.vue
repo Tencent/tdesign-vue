@@ -1,17 +1,14 @@
 <template>
-  <div class="tdesign-demo-block-column">
-    <div class="tdesign-demo-block-row">
-      <t-tag :icon="renderDiscountIcon">默认标签</t-tag>
-    </div>
-    <div class="tdesign-demo-block-row">
-      <t-tag>
-        <template #icon>
-          <discount-icon />
-        </template>
-        Icon插槽
-      </t-tag>
-    </div>
-  </div>
+  <t-space>
+    <t-tag :icon="renderDiscountIcon">默认标签</t-tag>
+
+    <t-tag>
+      <template #icon>
+        <discount-icon />
+      </template>
+      Icon插槽
+    </t-tag>
+  </t-space>
 </template>
 
 <script lang="jsx">
@@ -26,5 +23,3 @@ export default {
   },
 };
 </script>
-
-<style lang="less"></style>

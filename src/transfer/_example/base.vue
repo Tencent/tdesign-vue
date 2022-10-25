@@ -1,13 +1,11 @@
 <template>
-  <div>
-    <t-transfer
-      :data="list"
-      v-model="targetValue"
-      :checked.sync="checked"
-      @change="onChange"
-      @checked-change="handleCheckedChange"
-    />
-  </div>
+  <t-transfer
+    :data="list"
+    v-model="targetValue"
+    :checked.sync="checked"
+    @change="onChange"
+    @checked-change="handleCheckedChange"
+  />
 </template>
 <script>
 const list = [];

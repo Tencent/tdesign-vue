@@ -2,253 +2,261 @@
 
 exports[`Skeleton Skeleton advanceVue demo works fine 1`] = `
 <div
-  class="t-skeleton-demo"
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
 >
-  <section
-    class="t-skeleton-demo-card"
+  <div
+    class="t-space-item"
   >
-    <div
-      class="header"
-    >
-      组合成网页效果
-    </div>
-     
-    <div
-      class="content"
+    <section
+      class="t-skeleton-demo-card"
     >
       <div
-        class="t-skeleton"
+        class="header"
+      >
+        组合成网页效果
+      </div>
+       
+      <div
+        class="content"
       >
         <div
-          class="t-skeleton__row"
+          class="t-skeleton"
         >
           <div
-            class="t-skeleton__col t-skeleton--type-rect"
-            style="width: 33%; height: 180px;"
-          >
-            image
-          </div>
-          <div
-            class="t-skeleton__col t-skeleton--type-rect"
-            style="width: 33%; height: 180px;"
-          >
-            image
-          </div>
-          <div
-            class="t-skeleton__col t-skeleton--type-rect"
-            style="width: 33%; height: 180px;"
-          >
-            image
-          </div>
-        </div>
-        <div
-          class="t-skeleton__row"
-        >
-          <div
-            class="t-skeleton__col t-skeleton--type-circle"
-            style="width: 50px; height: 50px;"
-          />
-          <div
-            class="t-skeleton__col t-skeleton--type-rect"
-            style="width: 80%; height: 30px; margin: 20px 0px;"
-          />
-          <div
-            class="t-skeleton__col t-skeleton--type-rect"
-            style="width: 80px; height: 30px; margin-left: 20px;"
-          >
-            确定
-          </div>
-        </div>
-        <div
-          class="t-skeleton__row"
-        >
-          <div
-            class="t-skeleton__col t-skeleton--type-text"
-          />
-        </div>
-        <div
-          class="t-skeleton__row"
-        >
-          <div
-            class="t-skeleton__col t-skeleton--type-text"
-          />
-        </div>
-        <div
-          class="t-skeleton__row"
-        >
-          <div
-            class="t-skeleton__col t-skeleton--type-text"
-            style="width: 70%; margin: 0px 0px 16px 0px;"
-          />
-        </div>
-        <div
-          class="t-skeleton__row"
-        >
-          <div
-            class="t-skeleton__col t-skeleton--type-rect"
-            style="width: 100%; height: 300px;"
+            class="t-skeleton__row"
           >
             <div
-              class="row-col-content"
+              class="t-skeleton__col t-skeleton--type-rect"
+              style="width: 33%; height: 180px;"
             >
-              <h3
-                class="row-col-content__header"
+              image
+            </div>
+            <div
+              class="t-skeleton__col t-skeleton--type-rect"
+              style="width: 33%; height: 180px;"
+            >
+              image
+            </div>
+            <div
+              class="t-skeleton__col t-skeleton--type-rect"
+              style="width: 33%; height: 180px;"
+            >
+              image
+            </div>
+          </div>
+          <div
+            class="t-skeleton__row"
+          >
+            <div
+              class="t-skeleton__col t-skeleton--type-circle"
+              style="width: 50px; height: 50px;"
+            />
+            <div
+              class="t-skeleton__col t-skeleton--type-rect"
+              style="width: 80%; height: 30px; margin: 20px 0px;"
+            />
+            <div
+              class="t-skeleton__col t-skeleton--type-rect"
+              style="width: 80px; height: 30px; margin-left: 20px;"
+            >
+              确定
+            </div>
+          </div>
+          <div
+            class="t-skeleton__row"
+          >
+            <div
+              class="t-skeleton__col t-skeleton--type-text"
+            />
+          </div>
+          <div
+            class="t-skeleton__row"
+          >
+            <div
+              class="t-skeleton__col t-skeleton--type-text"
+            />
+          </div>
+          <div
+            class="t-skeleton__row"
+          >
+            <div
+              class="t-skeleton__col t-skeleton--type-text"
+              style="width: 70%; margin: 0px 0px 16px 0px;"
+            />
+          </div>
+          <div
+            class="t-skeleton__row"
+          >
+            <div
+              class="t-skeleton__col t-skeleton--type-rect"
+              style="width: 100%; height: 300px;"
+            >
+              <div
+                class="row-col-content"
               >
-                标题
-              </h3>
-              <section
-                class="row-col-content__content"
-              >
-                 内容
-              </section>
+                <h3
+                  class="row-col-content__header"
+                >
+                  标题
+                </h3>
+                <section
+                  class="row-col-content__content"
+                >
+                   内容
+                </section>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-   
-  <section
-    class="t-skeleton-demo-card"
+    </section>
+  </div>
+  <div
+    class="t-space-item"
   >
-    <div
-      class="header"
+    <section
+      class="t-skeleton-demo-card"
     >
-      组合成列表效果
-    </div>
-     
-    <div
-      class="content"
-    >
-      <ul
-        class="t-skeleton-demo-list"
+      <div
+        class="header"
       >
-        <li>
-          <div
-            class="avatar t-skeleton"
-          >
+        组合成列表效果
+      </div>
+       
+      <div
+        class="content"
+      >
+        <ul
+          class="t-skeleton-demo-list"
+        >
+          <li>
             <div
-              class="t-skeleton__row"
+              class="avatar t-skeleton"
             >
               <div
-                class="t-skeleton__col t-skeleton--type-circle"
-                style="width: 56px; height: 56px;"
-              />
+                class="t-skeleton__row"
+              >
+                <div
+                  class="t-skeleton__col t-skeleton--type-circle"
+                  style="width: 56px; height: 56px;"
+                />
+              </div>
             </div>
-          </div>
-           
-          <div
-            class="paragraph t-skeleton"
-          >
+             
             <div
-              class="t-skeleton__row"
+              class="paragraph t-skeleton"
             >
               <div
-                class="t-skeleton__col t-skeleton--type-text"
-              />
+                class="t-skeleton__row"
+              >
+                <div
+                  class="t-skeleton__col t-skeleton--type-text"
+                />
+              </div>
+              <div
+                class="t-skeleton__row"
+              >
+                <div
+                  class="t-skeleton__col t-skeleton--type-text"
+                />
+              </div>
+              <div
+                class="t-skeleton__row"
+              >
+                <div
+                  class="t-skeleton__col t-skeleton--type-text"
+                  style="width: 70%;"
+                />
+              </div>
             </div>
+          </li>
+          <li>
             <div
-              class="t-skeleton__row"
+              class="avatar t-skeleton"
             >
               <div
-                class="t-skeleton__col t-skeleton--type-text"
-              />
+                class="t-skeleton__row"
+              >
+                <div
+                  class="t-skeleton__col t-skeleton--type-circle"
+                  style="width: 56px; height: 56px;"
+                />
+              </div>
             </div>
+             
             <div
-              class="t-skeleton__row"
+              class="paragraph t-skeleton"
             >
               <div
-                class="t-skeleton__col t-skeleton--type-text"
-                style="width: 70%;"
-              />
+                class="t-skeleton__row"
+              >
+                <div
+                  class="t-skeleton__col t-skeleton--type-text"
+                />
+              </div>
+              <div
+                class="t-skeleton__row"
+              >
+                <div
+                  class="t-skeleton__col t-skeleton--type-text"
+                />
+              </div>
+              <div
+                class="t-skeleton__row"
+              >
+                <div
+                  class="t-skeleton__col t-skeleton--type-text"
+                  style="width: 70%;"
+                />
+              </div>
             </div>
-          </div>
-        </li>
-        <li>
-          <div
-            class="avatar t-skeleton"
-          >
+          </li>
+          <li>
             <div
-              class="t-skeleton__row"
+              class="avatar t-skeleton"
             >
               <div
-                class="t-skeleton__col t-skeleton--type-circle"
-                style="width: 56px; height: 56px;"
-              />
+                class="t-skeleton__row"
+              >
+                <div
+                  class="t-skeleton__col t-skeleton--type-circle"
+                  style="width: 56px; height: 56px;"
+                />
+              </div>
             </div>
-          </div>
-           
-          <div
-            class="paragraph t-skeleton"
-          >
+             
             <div
-              class="t-skeleton__row"
+              class="paragraph t-skeleton"
             >
               <div
-                class="t-skeleton__col t-skeleton--type-text"
-              />
-            </div>
-            <div
-              class="t-skeleton__row"
-            >
+                class="t-skeleton__row"
+              >
+                <div
+                  class="t-skeleton__col t-skeleton--type-text"
+                />
+              </div>
               <div
-                class="t-skeleton__col t-skeleton--type-text"
-              />
-            </div>
-            <div
-              class="t-skeleton__row"
-            >
+                class="t-skeleton__row"
+              >
+                <div
+                  class="t-skeleton__col t-skeleton--type-text"
+                />
+              </div>
               <div
-                class="t-skeleton__col t-skeleton--type-text"
-                style="width: 70%;"
-              />
+                class="t-skeleton__row"
+              >
+                <div
+                  class="t-skeleton__col t-skeleton--type-text"
+                  style="width: 70%;"
+                />
+              </div>
             </div>
-          </div>
-        </li>
-        <li>
-          <div
-            class="avatar t-skeleton"
-          >
-            <div
-              class="t-skeleton__row"
-            >
-              <div
-                class="t-skeleton__col t-skeleton--type-circle"
-                style="width: 56px; height: 56px;"
-              />
-            </div>
-          </div>
-           
-          <div
-            class="paragraph t-skeleton"
-          >
-            <div
-              class="t-skeleton__row"
-            >
-              <div
-                class="t-skeleton__col t-skeleton--type-text"
-              />
-            </div>
-            <div
-              class="t-skeleton__row"
-            >
-              <div
-                class="t-skeleton__col t-skeleton--type-text"
-              />
-            </div>
-            <div
-              class="t-skeleton__row"
-            >
-              <div
-                class="t-skeleton__col t-skeleton--type-text"
-                style="width: 70%;"
-              />
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
 </div>
 `;
 
@@ -369,19 +377,27 @@ exports[`Skeleton Skeleton animationVue demo works fine 1`] = `
 `;
 
 exports[`Skeleton Skeleton baseVue demo works fine 1`] = `
-<div>
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
   <div
-    class="mb-20 t-switch t-size-m t-is-checked"
+    class="t-space-item"
   >
-    <span
-      class="t-switch__handle"
-    />
     <div
-      class="t-switch__content t-size-m"
-    />
+      class="t-switch t-size-m t-is-checked"
+    >
+      <span
+        class="t-switch__handle"
+      />
+      <div
+        class="t-switch__content t-size-m"
+      />
+    </div>
   </div>
-   
-  <div>
+  <div
+    class="t-space-item"
+  >
     <div
       class="t-skeleton"
     >
@@ -421,36 +437,48 @@ exports[`Skeleton Skeleton baseVue demo works fine 1`] = `
 
 exports[`Skeleton Skeleton delayVue demo works fine 1`] = `
 <div
-  class="t-skeleton-demo-delay"
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
 >
   <div
-    class="header"
+    class="t-space-item"
   >
-    <button
-      class="t-button t-size-s t-button--variant-base t-button--theme-primary"
-      type="button"
+    <div
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
     >
-      <span
-        class="t-button__text"
+      <div
+        class="t-space-item"
       >
-        无 delay 属性快速加载数据（会闪屏）
-      </span>
-    </button>
-     
-    <button
-      class="t-button t-size-s t-button--variant-base t-button--theme-primary"
-      type="button"
-    >
-      <span
-        class="t-button__text"
+        <button
+          class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            无 delay 属性快速加载数据（会闪屏）
+          </span>
+        </button>
+      </div>
+      <div
+        class="t-space-item"
       >
-        有 delay 属性快速加载数据（无闪屏）
-      </span>
-    </button>
+        <button
+          class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            有 delay 属性快速加载数据（无闪屏）
+          </span>
+        </button>
+      </div>
+    </div>
   </div>
-   
   <div
-    class="content"
+    class="t-space-item"
   >
     <div>
       <div
@@ -458,9 +486,9 @@ exports[`Skeleton Skeleton delayVue demo works fine 1`] = `
       >
         <p>
           
-          骨架屏组件，是指当网络较慢时，在页面真实数据加载之前，给用户展示出页面的大致结构。
-          一方面让用户对页面有一定的心理预期，另一方面可以改善长期停留在空白屏给用户带来的枯燥和不适感。它可以为用户提供更好视觉效果和使用体验。
-        
+        骨架屏组件，是指当网络较慢时，在页面真实数据加载之前，给用户展示出页面的大致结构。
+        一方面让用户对页面有一定的心理预期，另一方面可以改善长期停留在空白屏给用户带来的枯燥和不适感。它可以为用户提供更好视觉效果和使用体验。
+      
         </p>
       </div>
     </div>
