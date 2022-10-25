@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-collapse">
+  <t-space direction="vertical">
     <t-collapse :default-value="[1]" @change="handlePanelChange">
       <t-collapse-panel header="这是一个折叠标题">
         这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
@@ -8,13 +8,11 @@
         这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
       </t-collapse-panel>
       <t-collapse-panel header="自定义折叠面板内容">
-        <div class="tdesign-demo-block-column" style="width: 80%">
+        <t-space direction="vertical" style="width: 80%">
           <t-tag-input v-model="tags1" clearable />
-
           <t-tag-input :value="tags2" label="Controlled: " clearable />
-
           <t-tag-input :default-value="tags3" label="UnControlled: " clearable />
-        </div>
+        </t-space>
       </t-collapse-panel>
       <t-collapse-panel header="嵌套折叠面板">
         <t-collapse default-expand-all>
@@ -26,7 +24,7 @@
       </t-collapse-panel>
     </t-collapse>
     <div style="margin-top: 10px">当前展开项:{{ currentItem }}</div>
-  </div>
+  </t-space>
 </template>
 <script>
 export default {
@@ -45,13 +43,3 @@ export default {
   },
 };
 </script>
-<style lang="less">
-.accordion-demo {
-  background-color: #f9f9f9;
-}
-.button-area {
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-}
-</style>

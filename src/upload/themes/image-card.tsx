@@ -14,6 +14,7 @@ import ImageViewer from '../../image-viewer';
 import { CommonDisplayFileProps } from '../interface';
 import { commonProps } from '../constants';
 import { TdUploadProps, UploadFile } from '../type';
+import { abridgeName } from '../../_common/js/upload/utils';
 
 export interface ImageCardUploadProps extends CommonDisplayFileProps {
   multiple: TdUploadProps['multiple'];
@@ -129,17 +130,19 @@ export default defineComponent({
   render() {
     const cardItemClasses = `${this.classPrefix}-upload__card-item ${this.classPrefix}-is-background`;
     const { AddIcon } = this.icons;
+
     return (
       <div>
         <ul class={`${this.classPrefix}-upload__card`}>
           {this.displayFiles?.map((file: UploadFile, index: number) => {
             const loadCard = `${this.classPrefix}-upload__card-container ${this.classPrefix}-upload__card-box`;
+            const fileName = this.abridgeName ? abridgeName(file.name, ...this.abridgeName) : file.name;
             return (
               <li class={cardItemClasses} key={index}>
                 {file.status === 'progress' && this.renderProgressFile(file, loadCard)}
                 {file.status === 'fail' && this.renderFailFile(file, index, loadCard)}
                 {!['progress', 'fail'].includes(file.status) && file.url && this.renderMainContent(file, index)}
-                <div class={`${this.classPrefix}-upload__card-name`}>{file.name}</div>
+                <div class={`${this.classPrefix}-upload__card-name`}>{fileName}</div>
               </li>
             );
           })}

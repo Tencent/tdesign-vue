@@ -74,13 +74,14 @@ export default defineComponent({
     renderImage() {
       const file = this.displayFiles[0];
       if (!file) return null;
+      const url = file.url || file.response?.url;
       return (
         <div class={`${this.uploadPrefix}__dragger-img-wrap`}>
-          {file.url && (
+          {url && (
             <ImageViewer
-              images={[file.url]}
+              images={[url]}
               trigger={(h: CreateElement, { open }: any) => (
-                <img src={file.url} onClick={open} style={{ maxWidth: '100%', maxHeight: '100%' }} />
+                <img src={url} onClick={open} style={{ maxWidth: '100%', maxHeight: '100%' }} />
               )}
               style={{ maxWidth: '120px', maxHeight: '120px' }}
             ></ImageViewer>
@@ -106,7 +107,7 @@ export default defineComponent({
       const file = this.displayFiles[0];
       if (!file) return null;
       const { CheckCircleFilledIcon, ErrorCircleFilledIcon } = this.icons;
-      const fileName = this.abridgeName ? abridgeName(file.name, this.abridgeName[0], this.abridgeName[1]) : file.name;
+      const fileName = this.abridgeName ? abridgeName(file.name, ...this.abridgeName) : file.name;
       return (
         <div class={`${this.uploadPrefix}__dragger-progress`}>
           {this.theme === 'image' && this.renderImage()}

@@ -1,13 +1,8 @@
 <template>
-  <div class="demo-slider">
-    <div class="vertical-marks-block">
-      <t-slider v-model="value1" @change="change" :layout="layout" vertical :show-tooltip="true" :marks="marks1" />
-    </div>
-
-    <div class="vertical-marks-block">
-      <t-slider v-model="value2" :layout="layout" vertical range :show-tooltip="true" :marks="marks2" />
-    </div>
-  </div>
+  <t-space :style="{ height: '300px' }" size="60px">
+    <t-slider v-model="value1" @change="change" :layout="layout" vertical :show-tooltip="true" :marks="marks1" />
+    <t-slider v-model="value2" :layout="layout" vertical range :show-tooltip="true" :marks="marks2" />
+  </t-space>
 </template>
 <script lang="jsx">
 export default {
@@ -41,10 +36,3 @@ export default {
   },
 };
 </script>
-<style>
-.vertical-marks-block {
-  display: inline-block;
-  padding: 30px 70px;
-  height: 300px;
-}
-</style>

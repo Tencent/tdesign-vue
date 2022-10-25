@@ -1,29 +1,27 @@
 <template>
-  <div class="tdesign-demo__select-input-borderless-multiple" style="width: 100%">
-    <t-select-input
-      :value="value"
-      :min-collapsed-num="1"
-      auto-width
-      allow-input
-      placeholder="select frameworks"
-      clearable
-      multiple
-      @tag-change="onTagChange"
-    >
-      <template #panel>
-        <t-checkbox-group
-          :value="checkboxValue"
-          :options="options"
-          class="tdesign-demo__panel-options-borderless-multiple"
-          @change="onCheckedChange"
-          @click="(e) => e.stopPropagation()"
-        />
-      </template>
-      <template #suffixIcon>
-        <chevron-down-icon />
-      </template>
-    </t-select-input>
-  </div>
+  <t-select-input
+    :value="value"
+    :min-collapsed-num="1"
+    auto-width
+    allow-input
+    placeholder="select frameworks"
+    clearable
+    multiple
+    @tag-change="onTagChange"
+  >
+    <template #panel>
+      <t-checkbox-group
+        :value="checkboxValue"
+        :options="options"
+        class="tdesign-demo__panel-options-borderless-multiple"
+        @change="onCheckedChange"
+        @click="(e) => e.stopPropagation()"
+      />
+    </template>
+    <template #suffixIcon>
+      <chevron-down-icon />
+    </template>
+  </t-select-input>
 </template>
 <script>
 import { ChevronDownIcon } from 'tdesign-icons-vue';
@@ -95,13 +93,8 @@ export default {
   },
 };
 </script>
-<style lang="less">
-.tdesign-demo__panel-options-borderless-multiple {
-  width: 100%;
-  padding: 4px 0;
-  display: inline-block;
-}
-.tdesign-demo__panel-options-borderless-multiple .t-checkbox {
+<style lang="less" scoped>
+.t-checkbox {
   display: flex;
   border-radius: 3px;
   line-height: 22px;
@@ -116,7 +109,7 @@ export default {
   margin: 0 0 4px;
 }
 
-.tdesign-demo__panel-options-borderless-multiple .t-checkbox:hover {
+.t-checkbox:hover {
   background-color: var(--td-bg-color-container-hover);
 }
 </style>

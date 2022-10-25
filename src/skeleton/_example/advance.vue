@@ -1,5 +1,5 @@
 <template>
-  <div class="t-skeleton-demo">
+  <t-space direction="vertical">
     <section class="t-skeleton-demo-card">
       <div class="header">组合成网页效果</div>
       <div class="content">
@@ -18,7 +18,7 @@
         </ul>
       </div>
     </section>
-  </div>
+  </t-space>
 </template>
 
 <script lang="jsx">

@@ -1,21 +1,29 @@
 <template>
-  <div class="tdesign-tree-select-collapsed">
+  <t-space direction="vertical">
     <t-tree-select
       v-model="value"
       :data="options"
-      class="demo-space"
+      multiple
+      clearable
+      placeholder="请选择"
+      :minCollapsedNum="1"
+      style="width: 300px"
+    >
+    </t-tree-select>
+    <t-tree-select
+      v-model="slotValue"
+      style="width: 300px"
+      :data="options"
       multiple
       clearable
       placeholder="请选择"
       :minCollapsedNum="1"
     >
-    </t-tree-select>
-    <t-tree-select v-model="slotValue" :data="options" multiple clearable placeholder="请选择" :minCollapsedNum="1">
       <template slot="collapsedItems">
         <t-tag>更多...</t-tag>
       </template>
     </t-tree-select>
-  </div>
+  </t-space>
 </template>
 <script>
 export default {
@@ -57,12 +65,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.tdesign-tree-select-collapsed {
-  width: 300px;
-  margin: 0 20px;
-}
-.demo-space {
-  margin-bottom: 20px;
-}
-</style>

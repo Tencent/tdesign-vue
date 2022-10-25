@@ -1,9 +1,7 @@
 <template>
-  <div class="tdesign-tree-select-prefix">
-    <t-tree-select v-model="value" :data="options" placeholder="请输入">
-      <icon slot="prefixIcon" name="user" />
-    </t-tree-select>
-  </div>
+  <t-tree-select style="width: 300px" v-model="value" :data="options" placeholder="请输入">
+    <icon slot="prefixIcon" name="user" />
+  </t-tree-select>
 </template>
 <script>
 import { Icon } from 'tdesign-icons-vue';
@@ -49,9 +47,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.tdesign-tree-select-prefix {
-  width: 300px;
-  margin: 0 20px;
-}
-</style>
