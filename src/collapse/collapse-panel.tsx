@@ -80,7 +80,9 @@ export default defineComponent({
           <div class={`${this.componentName}__header-content`}>{renderTNodeJSX(this, 'header')}</div>
           {renderBlank()}
           <div class={`${this.componentName}__header-right`}>
-            {renderTNodeJSX(this, 'headerRightContent')}
+            <div class={`${this.componentName}__header-right-content`} onClick={(e: MouseEvent) => e.stopPropagation()}>
+              {renderTNodeJSX(this, 'headerRightContent')}
+            </div>
             {showExpandIcon && this.expandIconPlacement === 'right' ? renderIcon(this.expandIconPlacement) : null}
           </div>
         </div>
