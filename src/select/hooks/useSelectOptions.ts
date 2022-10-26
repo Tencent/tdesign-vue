@@ -1,5 +1,5 @@
 import {
-  ref, Ref, computed, onBeforeUpdate, ComponentInternalInstance,
+  ref, Ref, computed, onBeforeUpdate, ComponentInternalInstance, watch,
 } from '@vue/composition-api';
 import { VNode } from 'vue';
 import get from 'lodash/get';
@@ -120,6 +120,14 @@ export default function useSelectOptions(
 
   // 首次初始化的时候
   getOptions();
+  // 监听 options 参数，变化时重新构造内部 options 数组
+  watch(
+    () => props.options,
+    () => {
+      getOptions();
+    },
+  );
+  // 监听组件 slot，当变化时构造内部 options 数组
   onBeforeUpdate(() => {
     getOptions();
   });

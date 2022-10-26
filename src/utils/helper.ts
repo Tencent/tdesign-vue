@@ -140,3 +140,16 @@ export function getCharacterLength(str: string, maxCharacter?: number) {
 export function pxCompat(param: string | number) {
   return typeof param === 'number' ? `${param}px` : param;
 }
+
+/**
+ * 设置transform的值兼容低版本浏览器
+ * @param value string
+ */
+export function setTransform(value: string): object {
+  return {
+    transform: value,
+    '-ms-transform': value,
+    '-moz-transform': value,
+    '-webkit-transform': value,
+  };
+}

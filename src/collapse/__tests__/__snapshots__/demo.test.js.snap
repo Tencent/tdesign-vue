@@ -50,7 +50,11 @@ exports[`Collapse > Collapse baseVue demo works fine 1`] = `
             />
             <div
               class="t-collapse-panel__header-right"
-            />
+            >
+              <div
+                class="t-collapse-panel__header-right-content"
+              />
+            </div>
           </div>
           <transition-stub
             name="t-slide-down"
@@ -106,7 +110,11 @@ exports[`Collapse > Collapse baseVue demo works fine 1`] = `
             />
             <div
               class="t-collapse-panel__header-right"
-            />
+            >
+              <div
+                class="t-collapse-panel__header-right-content"
+              />
+            </div>
           </div>
           <transition-stub
             name="t-slide-down"
@@ -152,7 +160,11 @@ exports[`Collapse > Collapse baseVue demo works fine 1`] = `
             />
             <div
               class="t-collapse-panel__header-right"
-            />
+            >
+              <div
+                class="t-collapse-panel__header-right-content"
+              />
+            </div>
           </div>
           <transition-stub
             name="t-slide-down"
@@ -412,7 +424,11 @@ exports[`Collapse > Collapse baseVue demo works fine 1`] = `
             />
             <div
               class="t-collapse-panel__header-right"
-            />
+            >
+              <div
+                class="t-collapse-panel__header-right-content"
+              />
+            </div>
           </div>
           <transition-stub
             name="t-slide-down"
@@ -466,7 +482,11 @@ exports[`Collapse > Collapse baseVue demo works fine 1`] = `
                         />
                         <div
                           class="t-collapse-panel__header-right"
-                        />
+                        >
+                          <div
+                            class="t-collapse-panel__header-right-content"
+                          />
+                        </div>
                       </div>
                       <transition-stub
                         name="t-slide-down"
@@ -522,7 +542,11 @@ exports[`Collapse > Collapse baseVue demo works fine 1`] = `
                         />
                         <div
                           class="t-collapse-panel__header-right"
-                        />
+                        >
+                          <div
+                            class="t-collapse-panel__header-right-content"
+                          />
+                        </div>
                       </div>
                       <transition-stub
                         name="t-slide-down"
@@ -578,7 +602,11 @@ exports[`Collapse > Collapse baseVue demo works fine 1`] = `
                         />
                         <div
                           class="t-collapse-panel__header-right"
-                        />
+                        >
+                          <div
+                            class="t-collapse-panel__header-right-content"
+                          />
+                        </div>
                       </div>
                       <transition-stub
                         name="t-slide-down"
@@ -634,7 +662,11 @@ exports[`Collapse > Collapse baseVue demo works fine 1`] = `
                         />
                         <div
                           class="t-collapse-panel__header-right"
-                        />
+                        >
+                          <div
+                            class="t-collapse-panel__header-right-content"
+                          />
+                        </div>
                       </div>
                       <transition-stub
                         name="t-slide-down"
@@ -723,7 +755,11 @@ exports[`Collapse > Collapse iconVue demo works fine 1`] = `
             />
             <div
               class="t-collapse-panel__header-right"
-            />
+            >
+              <div
+                class="t-collapse-panel__header-right-content"
+              />
+            </div>
           </div>
           <transition-stub
             name="t-slide-down"
@@ -780,7 +816,11 @@ exports[`Collapse > Collapse iconVue demo works fine 1`] = `
             />
             <div
               class="t-collapse-panel__header-right"
-            />
+            >
+              <div
+                class="t-collapse-panel__header-right-content"
+              />
+            </div>
           </div>
           <transition-stub
             name="t-slide-down"
@@ -837,7 +877,11 @@ exports[`Collapse > Collapse iconVue demo works fine 1`] = `
             />
             <div
               class="t-collapse-panel__header-right"
-            />
+            >
+              <div
+                class="t-collapse-panel__header-right-content"
+              />
+            </div>
           </div>
           <transition-stub
             name="t-slide-down"
@@ -894,7 +938,11 @@ exports[`Collapse > Collapse iconVue demo works fine 1`] = `
             />
             <div
               class="t-collapse-panel__header-right"
-            />
+            >
+              <div
+                class="t-collapse-panel__header-right-content"
+              />
+            </div>
           </div>
           <transition-stub
             name="t-slide-down"
@@ -1066,7 +1114,11 @@ exports[`Collapse > Collapse mutexVue demo works fine 1`] = `
             />
             <div
               class="t-collapse-panel__header-right"
-            />
+            >
+              <div
+                class="t-collapse-panel__header-right-content"
+              />
+            </div>
           </div>
           <transition-stub
             name="t-slide-down"
@@ -1123,7 +1175,11 @@ exports[`Collapse > Collapse mutexVue demo works fine 1`] = `
             />
             <div
               class="t-collapse-panel__header-right"
-            />
+            >
+              <div
+                class="t-collapse-panel__header-right-content"
+              />
+            </div>
           </div>
           <transition-stub
             name="t-slide-down"
@@ -1180,7 +1236,11 @@ exports[`Collapse > Collapse mutexVue demo works fine 1`] = `
             />
             <div
               class="t-collapse-panel__header-right"
-            />
+            >
+              <div
+                class="t-collapse-panel__header-right-content"
+              />
+            </div>
           </div>
           <transition-stub
             name="t-slide-down"
@@ -1237,7 +1297,11 @@ exports[`Collapse > Collapse mutexVue demo works fine 1`] = `
             />
             <div
               class="t-collapse-panel__header-right"
-            />
+            >
+              <div
+                class="t-collapse-panel__header-right-content"
+              />
+            </div>
           </div>
           <transition-stub
             name="t-slide-down"
@@ -1319,7 +1383,11 @@ exports[`Collapse > Collapse otherVue demo works fine 1`] = `
             />
             <div
               class="t-collapse-panel__header-right"
-            />
+            >
+              <div
+                class="t-collapse-panel__header-right-content"
+              />
+            </div>
           </div>
           <transition-stub
             name="t-slide-down"
@@ -1376,7 +1444,11 @@ exports[`Collapse > Collapse otherVue demo works fine 1`] = `
             />
             <div
               class="t-collapse-panel__header-right"
-            />
+            >
+              <div
+                class="t-collapse-panel__header-right-content"
+              />
+            </div>
           </div>
           <transition-stub
             name="t-slide-down"
@@ -1433,7 +1505,11 @@ exports[`Collapse > Collapse otherVue demo works fine 1`] = `
             />
             <div
               class="t-collapse-panel__header-right"
-            />
+            >
+              <div
+                class="t-collapse-panel__header-right-content"
+              />
+            </div>
           </div>
           <transition-stub
             name="t-slide-down"
@@ -1490,7 +1566,11 @@ exports[`Collapse > Collapse otherVue demo works fine 1`] = `
             />
             <div
               class="t-collapse-panel__header-right"
-            />
+            >
+              <div
+                class="t-collapse-panel__header-right-content"
+              />
+            </div>
           </div>
           <transition-stub
             name="t-slide-down"
@@ -1599,34 +1679,39 @@ exports[`Collapse > Collapse rightSlotVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header-right"
         >
-          <label
-            class="t-checkbox"
+          <div
+            class="t-collapse-panel__header-right-content"
           >
-            <input
-              class="t-checkbox__former"
-              type="checkbox"
-              value=""
-            />
-            <span
-              class="t-checkbox__input"
-            />
-            <span
-              class="t-checkbox__label"
+            <label
+              class="t-checkbox"
             >
-              禁用
-            </span>
-          </label>
-          <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
-            style="margin-left: 8px;"
-            type="button"
-          >
-            <span
-              class="t-button__text"
+              <input
+                class="t-checkbox__former"
+                type="checkbox"
+                value=""
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
+              >
+                禁用
+              </span>
+            </label>
+             
+            <button
+              class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+              style="margin-left: 8px;"
+              type="button"
             >
-              操作
-            </span>
-          </button>
+              <span
+                class="t-button__text"
+              >
+                操作
+              </span>
+            </button>
+          </div>
         </div>
       </div>
       <transition-stub
@@ -1685,34 +1770,39 @@ exports[`Collapse > Collapse rightSlotVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header-right"
         >
-          <label
-            class="t-checkbox t-is-checked"
+          <div
+            class="t-collapse-panel__header-right-content"
           >
-            <input
-              class="t-checkbox__former"
-              type="checkbox"
-              value=""
-            />
-            <span
-              class="t-checkbox__input"
-            />
-            <span
-              class="t-checkbox__label"
+            <label
+              class="t-checkbox t-is-checked"
             >
-              禁用
-            </span>
-          </label>
-          <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
-            style="margin-left: 8px;"
-            type="button"
-          >
-            <span
-              class="t-button__text"
+              <input
+                class="t-checkbox__former"
+                type="checkbox"
+                value=""
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
+              >
+                禁用
+              </span>
+            </label>
+             
+            <button
+              class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+              style="margin-left: 8px;"
+              type="button"
             >
-              操作
-            </span>
-          </button>
+              <span
+                class="t-button__text"
+              >
+                操作
+              </span>
+            </button>
+          </div>
         </div>
       </div>
       <transition-stub
@@ -1771,34 +1861,39 @@ exports[`Collapse > Collapse rightSlotVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header-right"
         >
-          <label
-            class="t-checkbox"
+          <div
+            class="t-collapse-panel__header-right-content"
           >
-            <input
-              class="t-checkbox__former"
-              type="checkbox"
-              value=""
-            />
-            <span
-              class="t-checkbox__input"
-            />
-            <span
-              class="t-checkbox__label"
+            <label
+              class="t-checkbox"
             >
-              禁用
-            </span>
-          </label>
-          <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
-            style="margin-left: 8px;"
-            type="button"
-          >
-            <span
-              class="t-button__text"
+              <input
+                class="t-checkbox__former"
+                type="checkbox"
+                value=""
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
+              >
+                禁用
+              </span>
+            </label>
+             
+            <button
+              class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+              style="margin-left: 8px;"
+              type="button"
             >
-              操作
-            </span>
-          </button>
+              <span
+                class="t-button__text"
+              >
+                操作
+              </span>
+            </button>
+          </div>
         </div>
       </div>
       <transition-stub
@@ -1857,34 +1952,39 @@ exports[`Collapse > Collapse rightSlotVue demo works fine 1`] = `
         <div
           class="t-collapse-panel__header-right"
         >
-          <label
-            class="t-checkbox t-is-checked"
+          <div
+            class="t-collapse-panel__header-right-content"
           >
-            <input
-              class="t-checkbox__former"
-              type="checkbox"
-              value=""
-            />
-            <span
-              class="t-checkbox__input"
-            />
-            <span
-              class="t-checkbox__label"
+            <label
+              class="t-checkbox t-is-checked"
             >
-              禁用
-            </span>
-          </label>
-          <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-primary"
-            style="margin-left: 8px;"
-            type="button"
-          >
-            <span
-              class="t-button__text"
+              <input
+                class="t-checkbox__former"
+                type="checkbox"
+                value=""
+              />
+              <span
+                class="t-checkbox__input"
+              />
+              <span
+                class="t-checkbox__label"
+              >
+                禁用
+              </span>
+            </label>
+             
+            <button
+              class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+              style="margin-left: 8px;"
+              type="button"
             >
-              操作
-            </span>
-          </button>
+              <span
+                class="t-button__text"
+              >
+                操作
+              </span>
+            </button>
+          </div>
         </div>
       </div>
       <transition-stub

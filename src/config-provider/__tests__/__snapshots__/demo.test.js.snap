@@ -1205,7 +1205,7 @@ exports[`ConfigProvider > ConfigProvider dialogVue demo works fine 1`] = `
               </svg>
             </span>
             <div
-              class="t-dialog__body__icon"
+              class="t-dialog__body t-dialog__body--icon"
             >
               Would you like to be my friends？
             </div>
@@ -1296,7 +1296,7 @@ exports[`ConfigProvider > ConfigProvider dialogVue demo works fine 1`] = `
               </svg>
             </span>
             <div
-              class="t-dialog__body__icon"
+              class="t-dialog__body t-dialog__body--icon"
             >
               Would you like to be my friends？
             </div>
@@ -1387,7 +1387,7 @@ exports[`ConfigProvider > ConfigProvider dialogVue demo works fine 1`] = `
               </svg>
             </span>
             <div
-              class="t-dialog__body__icon"
+              class="t-dialog__body t-dialog__body--icon"
             >
               Would you like to be my friends？
             </div>
@@ -1478,7 +1478,7 @@ exports[`ConfigProvider > ConfigProvider dialogVue demo works fine 1`] = `
               </svg>
             </span>
             <div
-              class="t-dialog__body__icon"
+              class="t-dialog__body t-dialog__body--icon"
             >
               Would you like to be my friends？
             </div>
