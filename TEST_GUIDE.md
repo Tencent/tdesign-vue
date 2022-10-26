@@ -45,7 +45,7 @@ npm run test:unit
 
 - 每个组件至少有两个单元测试文件，一个是测试源代码的单元测试文件 index.test.js，另一个则是测试组件示例代码的单元测试文件 demo.test.js
 - 用例书写请使用：[vue-test-utils](https://vue-test-utils.vuejs.org/zh/)
-- 断言库请使用：[https://jestjs.io/docs/en/expect](https://jestjs.io/docs/en/expect)
+- 断言库请使用：[https://vitest.dev/api/#expect](https://vitest.dev/api/#expect)
 
 #### 单元测试文件
 

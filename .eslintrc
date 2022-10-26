@@ -12,7 +12,8 @@
   },
   "globals": {
     "cy": "readonly",
-    "__VERSION__": true
+    "__VERSION__": true,
+    "vi": true
   },
   "plugins": [
     "vue",
