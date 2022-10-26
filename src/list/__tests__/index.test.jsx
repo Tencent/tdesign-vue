@@ -9,7 +9,7 @@ describe('List', () => {
           return <List size={'large'}>text</List>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':split', () => {
       const wrapper = mount({
@@ -17,7 +17,7 @@ describe('List', () => {
           return <List split={true}>text</List>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':stripe', () => {
       const wrapper = mount({
@@ -25,7 +25,7 @@ describe('List', () => {
           return <List stripe={false}>text</List>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':layout', () => {
       const wrapper = mount({
@@ -33,7 +33,7 @@ describe('List', () => {
           return <List layout={'horizontal'}>text</List>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':header is a string', () => {
       const wrapper = mount({
@@ -41,7 +41,7 @@ describe('List', () => {
           return <List header={'header'}>text</List>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':footer is a string', () => {
       const wrapper = mount({
@@ -49,7 +49,7 @@ describe('List', () => {
           return <List footer={'footer'}>text</List>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':asyncLoading is a string', () => {
       const wrapper = mount({
@@ -57,7 +57,7 @@ describe('List', () => {
           return <List asyncLoading={'loading'}>text</List>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':asyncLoading is load-more', () => {
       const wrapper = mount({
@@ -65,7 +65,7 @@ describe('List', () => {
           return <List asyncLoading="load-more">text</List>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':header is a function, () => VNode.', () => {
       const wrapper = mount({
@@ -76,7 +76,7 @@ describe('List', () => {
       const list = wrapper.findComponent(List);
       const header = list.find('.t-list__header');
       expect(header.exists()).toBe(true);
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':footer is a function, () => VNode.', () => {
       const wrapper = mount({
@@ -87,7 +87,7 @@ describe('List', () => {
       const list = wrapper.findComponent(List);
       const footer = list.find('.t-list__footer');
       expect(footer.exists()).toBe(true);
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':asyncLoading is a function, () => VNode.', () => {
       const wrapper = mount({
@@ -98,7 +98,7 @@ describe('List', () => {
       const list = wrapper.findComponent(List);
       const loading = list.find('.t-list__load');
       expect(loading.exists()).toBe(true);
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
   describe('@event', () => {
@@ -187,7 +187,7 @@ describe('ListItem', () => {
           return <ListItem default={'default'}>text</ListItem>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':content', () => {
       const wrapper = mount({
@@ -195,7 +195,7 @@ describe('ListItem', () => {
           return <ListItem content={'content'}>text</ListItem>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':action', () => {
       const wrapper = mount({
@@ -203,7 +203,7 @@ describe('ListItem', () => {
           return <ListItem action={'action'}>text</ListItem>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':default is a function, () => VNode.', () => {
       const wrapper = mount({
@@ -214,7 +214,7 @@ describe('ListItem', () => {
       const listItem = wrapper.findComponent(ListItem);
       const defaultContent = listItem.find('.t-list-item-main');
       expect(defaultContent.exists()).toBe(true);
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':content is a function, () => VNode.', () => {
       const wrapper = mount({
@@ -225,7 +225,7 @@ describe('ListItem', () => {
       const listItem = wrapper.findComponent(ListItem);
       const content = listItem.find('.t-list-item-main');
       expect(content.exists()).toBe(true);
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':action is a function, () => VNode.', () => {
       const wrapper = mount({
@@ -236,7 +236,7 @@ describe('ListItem', () => {
       const listItem = wrapper.findComponent(ListItem);
       const action = listItem.find('.t-list-item__action');
       expect(action.exists()).toBe(true);
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
   describe('<slot>', () => {
@@ -302,7 +302,7 @@ describe('ListItemMeta', () => {
           return <ListItemMeta image={'image'}>text</ListItemMeta>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':title', () => {
       const wrapper = mount({
@@ -310,7 +310,7 @@ describe('ListItemMeta', () => {
           return <ListItemMeta title={'title'}>text</ListItemMeta>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':description', () => {
       const wrapper = mount({
@@ -318,7 +318,7 @@ describe('ListItemMeta', () => {
           return <ListItemMeta description={'description'}>text</ListItemMeta>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':image is a function, () => VNode.', () => {
       const wrapper = mount({
@@ -329,7 +329,7 @@ describe('ListItemMeta', () => {
       const listItemMeta = wrapper.findComponent(ListItemMeta);
       const avatar = listItemMeta.find('.t-list-item__meta-avatar');
       expect(avatar.exists()).toBe(true);
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':title is a function, () => VNode.', () => {
       const wrapper = mount({
@@ -340,7 +340,7 @@ describe('ListItemMeta', () => {
       const listItemMeta = wrapper.findComponent(ListItemMeta);
       const title = listItemMeta.find('.t-list-item__meta-title');
       expect(title.exists()).toBe(true);
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':description is a function, () => VNode.', () => {
       const wrapper = mount({
@@ -351,7 +351,7 @@ describe('ListItemMeta', () => {
       const listItemMeta = wrapper.findComponent(ListItemMeta);
       const description = listItemMeta.find('.t-list-item__meta-description');
       expect(description.exists()).toBe(true);
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
   describe('<slot>', () => {

@@ -11,7 +11,7 @@ describe('HeadMenu', () => {
           return <HeadMenu theme={'light'}></HeadMenu>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':active', () => {
@@ -20,7 +20,7 @@ describe('HeadMenu', () => {
           return <HeadMenu value={'2-1'}></HeadMenu>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':height', () => {
@@ -29,7 +29,7 @@ describe('HeadMenu', () => {
           return <HeadMenu height={'750px'}></HeadMenu>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 
@@ -40,7 +40,7 @@ describe('HeadMenu', () => {
           logo: '<div></div>',
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it('<default>', () => {
@@ -49,7 +49,7 @@ describe('HeadMenu', () => {
           default: '<div></div>',
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it('<options>', () => {
@@ -58,7 +58,7 @@ describe('HeadMenu', () => {
           options: '<div></div>',
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 });

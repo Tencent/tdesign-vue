@@ -14,7 +14,7 @@ describe('Slider', () => {
         },
       });
       // 写入快照
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it('disabled', () => {
       const wrapper = mount({
@@ -91,7 +91,7 @@ describe('Slider [marks]', () => {
   it('render right', () => {
     expect(wrapper.html()).toContain('aria-valuetext="2"');
     expect(wrapper.html()).toContain('37°C');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   // 输入框输入20
@@ -135,7 +135,7 @@ describe('Slider [vertical-marks]', () => {
   it('render right', () => {
     expect(wrapper.html()).toContain('aria-valuetext="30-70"');
     expect(wrapper.html()).toContain('37°C');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
   // 检查内部函数是否返回正确
   it('call setValues()', () => {

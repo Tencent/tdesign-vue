@@ -10,7 +10,7 @@ describe('Select', () => {
           return <Select disabled={true}></Select>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':size', () => {
       const wrapper = mount({
@@ -18,7 +18,7 @@ describe('Select', () => {
           return <Select size="large"></Select>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':clearable', () => {
       const wrapper = mount({
@@ -26,7 +26,7 @@ describe('Select', () => {
           return <Select clearable={true}></Select>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':multiple', () => {
       const wrapper = mount({
@@ -34,7 +34,7 @@ describe('Select', () => {
           return <Select multiple={true}></Select>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':placeholder', () => {
       const wrapper = mount({
@@ -42,7 +42,7 @@ describe('Select', () => {
           return <Select placeholder="please select"></Select>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':creatable', () => {
       const wrapper = mount({
@@ -50,7 +50,7 @@ describe('Select', () => {
           return <Select creatable={true}></Select>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':remote', () => {
       const wrapper = mount({
@@ -58,7 +58,7 @@ describe('Select', () => {
           return <Select remote={true}></Select>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':loading', () => {
       const wrapper = mount({
@@ -66,7 +66,7 @@ describe('Select', () => {
           return <Select loading={true}></Select>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':labelInValue', () => {
       const wrapper = mount({
@@ -74,7 +74,7 @@ describe('Select', () => {
           return <Select labelInValue={false}></Select>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':reserveKeyword', () => {
       const wrapper = mount({
@@ -82,7 +82,7 @@ describe('Select', () => {
           return <Select reserveKeyword={false}></Select>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':bordered', () => {
       const wrapper = mount({
@@ -90,7 +90,7 @@ describe('Select', () => {
           return <Select bordered={true}></Select>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 });
@@ -109,7 +109,7 @@ describe('Select Option', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':label', () => {
       const value = '1';
@@ -122,7 +122,7 @@ describe('Select Option', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':disabled', () => {
       const value = '1';
@@ -135,7 +135,7 @@ describe('Select Option', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 });
@@ -159,7 +159,7 @@ describe('Select OptionGroup', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 });

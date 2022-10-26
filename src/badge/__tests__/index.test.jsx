@@ -11,7 +11,7 @@ describe('Badge', () => {
           return <Badge color="green">Tdesign</Badge>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':count', () => {
@@ -20,7 +20,7 @@ describe('Badge', () => {
           return <Badge count={2}>Tdesign</Badge>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':dot', () => {
@@ -33,7 +33,7 @@ describe('Badge', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':maxCount', () => {
@@ -46,7 +46,7 @@ describe('Badge', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':count', () => {
@@ -59,7 +59,7 @@ describe('Badge', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':size', () => {
@@ -72,7 +72,7 @@ describe('Badge', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':shape', () => {
@@ -85,7 +85,7 @@ describe('Badge', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':showZero', () => {
@@ -98,7 +98,7 @@ describe('Badge', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':offset', () => {
@@ -111,7 +111,7 @@ describe('Badge', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 
@@ -123,7 +123,7 @@ describe('Badge', () => {
           return <Badge count={2}>Tdesign</Badge>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 });

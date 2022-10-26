@@ -11,7 +11,7 @@ describe('Link', () => {
           return <Link size={'large'}>text</Link>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':theme', () => {
       const wrapper = mount({
@@ -19,7 +19,7 @@ describe('Link', () => {
           return <Link theme={'primary'}>text</Link>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':hover', () => {
       const wrapper = mount({
@@ -27,7 +27,7 @@ describe('Link', () => {
           return <Link hover={'color'}>text</Link>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':underline', () => {
       const wrapper = mount({
@@ -35,7 +35,7 @@ describe('Link', () => {
           return <Link underline={true}>text</Link>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':disabled', () => {
       const fn = vi.fn();
@@ -50,7 +50,7 @@ describe('Link', () => {
       });
       wrapper.trigger('click');
       expect(fn).not.toHaveBeenCalled();
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':content', () => {
       const renderContent = function () {
@@ -69,7 +69,7 @@ describe('Link', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 
@@ -95,7 +95,7 @@ describe('Link', () => {
           icon: '<div></div>',
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 });

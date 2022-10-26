@@ -11,7 +11,7 @@ describe('Menu', () => {
           return <Menu></Menu>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':theme', () => {
@@ -20,7 +20,7 @@ describe('Menu', () => {
           return <Menu theme={'light'}></Menu>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':active', () => {
@@ -29,7 +29,7 @@ describe('Menu', () => {
           return <Menu value={'2-1'}></Menu>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':width', () => {
@@ -38,7 +38,7 @@ describe('Menu', () => {
           return <Menu width={'256px'}></Menu>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':height', () => {
@@ -47,7 +47,7 @@ describe('Menu', () => {
           return <Menu height={'750px'}></Menu>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':collapsed', () => {
@@ -56,7 +56,7 @@ describe('Menu', () => {
           return <Menu collapsed={true}></Menu>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':collapsedWidth', () => {
@@ -65,7 +65,7 @@ describe('Menu', () => {
           return <Menu collapsedWidth={'100px'}></Menu>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 
@@ -76,7 +76,7 @@ describe('Menu', () => {
           logo: '<div></div>',
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it('<default>', () => {
@@ -85,7 +85,7 @@ describe('Menu', () => {
           default: '<div></div>',
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it('<options>', () => {
@@ -94,7 +94,7 @@ describe('Menu', () => {
           options: '<div></div>',
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 });

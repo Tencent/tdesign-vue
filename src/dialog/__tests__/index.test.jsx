@@ -47,7 +47,7 @@ describe('Dialog', () => {
       expect(classes).not.toContain('t-dialog--center');
       expect(styles).toMatch(/padding-top: 200px/);
       expect(widthStyles).toMatch(/width: 200px/);
-      // expect(wrapper).toMatchSnapshot();
+      // expect(wrapper.element).toMatchSnapshot();
     });
 
     it('header,body,footer and closebtn', () => {

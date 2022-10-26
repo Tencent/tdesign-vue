@@ -15,7 +15,7 @@ describe('MenuItem', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':route', () => {
@@ -28,7 +28,7 @@ describe('MenuItem', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':disabled', () => {
@@ -41,7 +41,7 @@ describe('MenuItem', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 
@@ -66,7 +66,7 @@ describe('MenuItem', () => {
           },
         },
       );
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it('<default>', () => {
@@ -89,7 +89,7 @@ describe('MenuItem', () => {
           },
         },
       );
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 });

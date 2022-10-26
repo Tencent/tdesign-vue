@@ -9,7 +9,7 @@ describe('Progress', () => {
     const wrapper = mount(Progress);
     const classes = wrapper.classes();
     expect(classes).toContain('t-progress');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   describe(':props', () => {
@@ -22,7 +22,7 @@ describe('Progress', () => {
             },
           });
           expect(wrapper.findComponent(Progress).vm.theme).toBe(theme);
-          expect(wrapper).toMatchSnapshot();
+          expect(wrapper.element).toMatchSnapshot();
         });
       });
       it(':theme line and plump progress have t-progress__inner class', () => {
@@ -34,7 +34,7 @@ describe('Progress', () => {
         const lineClass = lineWrapper.element.querySelector('.t-progress__inner');
 
         expect(lineClass !== undefined && lineClass !== null).toBe(true);
-        expect(lineWrapper).toMatchSnapshot();
+        expect(lineWrapper.element).toMatchSnapshot();
 
         // < 10% plump
         const plumpWrapper = mount({
@@ -45,7 +45,7 @@ describe('Progress', () => {
         const plumpClass = plumpWrapper.element.querySelector('.t-progress__inner');
 
         expect(plumpClass !== undefined && plumpClass !== null).toBe(true);
-        expect(plumpWrapper).toMatchSnapshot();
+        expect(plumpWrapper.element).toMatchSnapshot();
         expect(plumpWrapper.element.querySelector('.t-progress__info').innerHTML).toBe('0%');
 
         // =10% plump
@@ -57,7 +57,7 @@ describe('Progress', () => {
         const plump10Class = plump10Wrapper.element.querySelector('.t-progress__inner');
 
         expect(plump10Class !== undefined && plump10Class !== null).toBe(true);
-        expect(plump10Wrapper).toMatchSnapshot();
+        expect(plump10Wrapper.element).toMatchSnapshot();
         expect(plump10Wrapper.element.querySelector('.t-progress__info').innerHTML).toBe('10%');
 
         // >10% plump
@@ -69,7 +69,7 @@ describe('Progress', () => {
         const plump11Class = plump11Wrapper.element.querySelector('.t-progress__inner');
 
         expect(plump11Class !== undefined && plump11Class !== null).toBe(true);
-        expect(plump11Wrapper).toMatchSnapshot();
+        expect(plump11Wrapper.element).toMatchSnapshot();
         expect(plump11Class.querySelector('.t-progress__info').innerHTML).toBe('11%');
       });
 
@@ -83,7 +83,7 @@ describe('Progress', () => {
         const innerClass = wrapper.element.querySelector('.t-progress__circle-inner');
         expect(outerClass !== undefined && outerClass !== null).toBe(true);
         expect(innerClass !== undefined && innerClass !== null).toBe(true);
-        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.element).toMatchSnapshot();
       });
     });
 
@@ -95,7 +95,7 @@ describe('Progress', () => {
           },
         });
         expect(wrapper.findComponent(Progress).vm.percentage).toBe(50);
-        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.element).toMatchSnapshot();
       });
       it(':percentage is less than 0, equal to -10', () => {
         const wrapper = mount({
@@ -104,7 +104,7 @@ describe('Progress', () => {
           },
         });
         expect(wrapper.findComponent(Progress).vm.percentage).toBe(-10);
-        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.element).toMatchSnapshot();
       });
       it(':percentage is great equal than 100, equal to 200', () => {
         const wrapper = mount({
@@ -113,7 +113,7 @@ describe('Progress', () => {
           },
         });
         expect(wrapper.findComponent(Progress).vm.percentage).toBe(200);
-        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.element).toMatchSnapshot();
       });
     });
 
@@ -127,7 +127,7 @@ describe('Progress', () => {
         });
 
         expect(wrapper.findComponent(Progress).vm.label).toBe('custom label test');
-        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.element).toMatchSnapshot();
       });
       it(':label is boolean, equal to true', () => {
         const wrapper = mount({
@@ -137,7 +137,7 @@ describe('Progress', () => {
         });
 
         expect(wrapper.findComponent(Progress).vm.label).toBe(true);
-        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.element).toMatchSnapshot();
       });
       it(':label is boolean, equal to false', () => {
         const wrapper = mount({
@@ -147,7 +147,7 @@ describe('Progress', () => {
         });
 
         expect(wrapper.findComponent(Progress).vm.label).toBe(false);
-        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.element).toMatchSnapshot();
       });
       it(':label is TNode, equal to () => "tnode"', () => {
         const wrapper = mount({
@@ -158,7 +158,7 @@ describe('Progress', () => {
 
         const el = wrapper.element.querySelector('.t-progress__info');
         expect(el.textContent).toBe('tnode');
-        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.element).toMatchSnapshot();
       });
     });
 
@@ -171,7 +171,7 @@ describe('Progress', () => {
             },
           });
           expect(wrapper.findComponent(Progress).vm.status).toBe(status);
-          expect(wrapper).toMatchSnapshot();
+          expect(wrapper.element).toMatchSnapshot();
         });
       });
     });
@@ -185,7 +185,7 @@ describe('Progress', () => {
           },
         });
         expect(wrapper.findComponent(Progress).vm.color).toBe('#aaa');
-        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.element).toMatchSnapshot();
       });
       it(':color is Object, equal to { "0%": "#f00", "100%": "#0ff" }', () => {
         const wrapper = mount({
@@ -193,7 +193,7 @@ describe('Progress', () => {
             return <Progress color={{ '0%': '#f00', '100%': '#0ff' }}></Progress>;
           },
         });
-        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.element).toMatchSnapshot();
       });
       it(':color is Array, equal to ["#f00", "#0ff", "#f0f"]', () => {
         const wrapper = mount({
@@ -201,7 +201,7 @@ describe('Progress', () => {
             return <Progress color={['#f00', '#0ff', '#f0f']}></Progress>;
           },
         });
-        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.element).toMatchSnapshot();
       });
     });
 
@@ -213,7 +213,7 @@ describe('Progress', () => {
           },
         });
         expect(wrapper.findComponent(Progress).vm.trackColor).toBe('#aaa');
-        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.element).toMatchSnapshot();
       });
     });
 
@@ -226,7 +226,7 @@ describe('Progress', () => {
           },
         });
         expect(wrapper.findComponent(Progress).vm.strokeWidth).toBe('50px');
-        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.element).toMatchSnapshot();
       });
       it(':strokeWidth is Number, equal to 50', () => {
         const wrapper = mount({
@@ -235,7 +235,7 @@ describe('Progress', () => {
           },
         });
         expect(wrapper.findComponent(Progress).vm.strokeWidth).toBe(50);
-        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.element).toMatchSnapshot();
       });
     });
 
@@ -249,7 +249,7 @@ describe('Progress', () => {
             },
           });
           expect(wrapper.findComponent(Progress).vm.size).toBe(size);
-          expect(wrapper).toMatchSnapshot();
+          expect(wrapper.element).toMatchSnapshot();
         });
       });
       it(':size is Number, equal to 50', () => {
@@ -259,7 +259,7 @@ describe('Progress', () => {
           },
         });
         expect(wrapper.findComponent(Progress).vm.size).toBe(50);
-        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.element).toMatchSnapshot();
       });
     });
   });

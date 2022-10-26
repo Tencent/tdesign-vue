@@ -8,7 +8,7 @@ describe('InputNumber', () => {
       const wrapper = mount(InputNumber);
       const classes = wrapper.classes();
       expect(classes).toContain('t-input-number');
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':disabled, function can not be call', () => {
@@ -20,7 +20,7 @@ describe('InputNumber', () => {
       });
       wrapper.find('input').trigger('keydown');
       expect(fn).not.toHaveBeenCalled();
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':format, with 6%', () => {
@@ -31,7 +31,7 @@ describe('InputNumber', () => {
       });
       const inputNumber = wrapper.find('input');
       expect(inputNumber.element.value).toEqual('6%');
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':value, 6', () => {
@@ -42,7 +42,7 @@ describe('InputNumber', () => {
       });
       const inputNumber = wrapper.find('input');
       expect(inputNumber.element.value).toEqual('6');
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':value, 6.55', () => {
@@ -53,7 +53,7 @@ describe('InputNumber', () => {
       });
       const inputNumber = wrapper.find('input');
       expect(inputNumber.element.value).toEqual('6.55');
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':value, 3.22 and step 1.2, value will become 4.22 after clicking increase button', async () => {
@@ -77,7 +77,7 @@ describe('InputNumber', () => {
       });
       const inputNumber = wrapper.find('input');
       expect(inputNumber.element.value).toEqual('6');
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':mode, without class t-is-controls-right', () => {
@@ -89,7 +89,7 @@ describe('InputNumber', () => {
       const inputNumber = wrapper.findComponent(InputNumber);
       const right = inputNumber.find('.t-is-controls-right');
       expect(right.exists()).toBe(false);
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':mode:row, without class t-is-controls-right', () => {
       const wrapper = mount({
@@ -100,7 +100,7 @@ describe('InputNumber', () => {
       const inputNumber = wrapper.findComponent(InputNumber);
       const right = inputNumber.find('.t-is-controls-right');
       expect(right.exists()).toBe(false);
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':mode:column, with class t-is-controls-right', () => {
       const wrapper = mount({
@@ -111,7 +111,7 @@ describe('InputNumber', () => {
       const inputNumber = wrapper.findComponent(InputNumber);
       const right = inputNumber.find('.t-is-controls-right');
       expect(right.exists()).toBe(true);
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':max, value 6 < max 10', () => {
@@ -122,7 +122,7 @@ describe('InputNumber', () => {
       });
       const inputNumber = wrapper.find('input');
       expect(inputNumber.element.value).toEqual('6');
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':max, value 16 > max 10', () => {
       const wrapper = mount({
@@ -132,7 +132,7 @@ describe('InputNumber', () => {
       });
       const inputNumber = wrapper.find('input');
       expect(inputNumber.element.value).toEqual('16');
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':min, value 6 > min 1', () => {
@@ -143,7 +143,7 @@ describe('InputNumber', () => {
       });
       const inputNumber = wrapper.find('input');
       expect(inputNumber.element.value).toEqual('6');
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':min, value -1 < min 1', () => {
       const wrapper = mount({
@@ -153,7 +153,7 @@ describe('InputNumber', () => {
       });
       const inputNumber = wrapper.find('input');
       expect(inputNumber.element.value).toEqual('-1');
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':step, 2', async () => {
@@ -163,7 +163,7 @@ describe('InputNumber', () => {
         },
       });
       wrapper.find('.t-input-number__increase').trigger('click');
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':size:small, with class t-size-s', () => {
@@ -175,7 +175,7 @@ describe('InputNumber', () => {
       const inputNumber = wrapper.findComponent(InputNumber);
       const classes = inputNumber.classes();
       expect(classes).toContain('t-size-s');
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':size:medium, with class t-size-m', () => {
       const wrapper = mount({
@@ -186,7 +186,7 @@ describe('InputNumber', () => {
       const inputNumber = wrapper.findComponent(InputNumber);
       const classes = inputNumber.classes();
       expect(classes).toContain('t-size-m');
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':size:large, with class t-size-l', () => {
       const wrapper = mount({
@@ -197,7 +197,7 @@ describe('InputNumber', () => {
       const inputNumber = wrapper.findComponent(InputNumber);
       const classes = inputNumber.classes();
       expect(classes).toContain('t-size-l');
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 

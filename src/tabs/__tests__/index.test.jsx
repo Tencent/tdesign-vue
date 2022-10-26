@@ -21,7 +21,7 @@ describe('Tabs', () => {
           return <Tabs theme={'card'} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':value', () => {
       const wrapper = mount({
@@ -29,7 +29,7 @@ describe('Tabs', () => {
           return <Tabs value={1} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':size', () => {
       const wrapper = mount({
@@ -37,7 +37,7 @@ describe('Tabs', () => {
           return <Tabs size={'large'} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':placement', () => {
       const wrapper = mount({
@@ -45,7 +45,7 @@ describe('Tabs', () => {
           return <Tabs placement={'left'} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':addable', () => {
       const wrapper = mount({
@@ -53,7 +53,7 @@ describe('Tabs', () => {
           return <Tabs addable={true} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':disabled', () => {
       const wrapper = mount({
@@ -61,7 +61,7 @@ describe('Tabs', () => {
           return <Tabs disabled={true} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':defaultValue', () => {
       const wrapper = mount({
@@ -69,7 +69,7 @@ describe('Tabs', () => {
           return <Tabs defaultValue={1} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 
@@ -145,7 +145,7 @@ describe('Tabs', () => {
         },
       });
       await Vue.nextTick();
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it('panel default slot:function | panel slot:function', async () => {
       const wrapper = mount({
@@ -163,7 +163,7 @@ describe('Tabs', () => {
         },
       });
       await Vue.nextTick();
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it('no valid panel', async () => {
       const wrapper = mount({
@@ -172,7 +172,7 @@ describe('Tabs', () => {
         },
       });
       await Vue.nextTick();
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it('@remove on panel', async () => {
       const fn = vi.fn();

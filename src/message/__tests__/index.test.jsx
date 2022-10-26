@@ -31,7 +31,7 @@ describe('Message', () => {
       expect(classes).toContain('t-message');
       expect(classes).toContain('t-is-info');
       expect(wrapper.findComponent(CloseIcon).exists()).toBe(false);
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(`:theme ${THEME_LIST.join()}`, () => {
@@ -44,7 +44,7 @@ describe('Message', () => {
         const msg = wrapper.findComponent(Message);
         expect(msg.classes()).toContain(`t-is-${t}`);
         expect(msg.findComponent(THEME_MAP[t]).exists()).toBe(true);
-        expect(wrapper).toMatchSnapshot();
+        expect(wrapper.element).toMatchSnapshot();
       });
     });
 
@@ -57,7 +57,7 @@ describe('Message', () => {
       const msg = wrapper.findComponent(Message);
       expect(msg.find('.t-message__close').exists()).toBe(true);
       expect(msg.findComponent(CloseIcon).exists()).toBe(true);
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':closeBtn is a string, equal "关闭".', () => {
@@ -70,7 +70,7 @@ describe('Message', () => {
       const close = msg.find('.t-message__close');
       expect(close.exists()).toBe(true);
       expect(close.text()).toBe('关闭');
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':closeBtn is a function, () => VNode.', () => {
@@ -83,7 +83,7 @@ describe('Message', () => {
       const close = msg.find('.t-message-close-content');
       expect(close.exists()).toBe(true);
       expect(close.html()).toBe('<b class="t-message-close-content">x</b>');
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':icon is false', () => {
@@ -94,7 +94,7 @@ describe('Message', () => {
       });
       const msg = wrapper.findComponent(Message);
       expect(msg.find('.t-icon').exists()).toBe(false);
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':icon is a function, () => MoreIcon', () => {
@@ -104,7 +104,7 @@ describe('Message', () => {
         },
       });
       expect(wrapper.findComponent(MoreIcon).exists()).toBe(true);
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':default is a function, () => <b>这是重要信息</b>', () => {
@@ -113,7 +113,7 @@ describe('Message', () => {
           return <Message content={() => <b>这是重要信息</b>}></Message>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':default is a string, 这是普通信息', () => {
@@ -122,7 +122,7 @@ describe('Message', () => {
           return <Message content="这是普通信息"></Message>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 
@@ -191,7 +191,7 @@ describe('Message', () => {
         },
       });
       expect(wrapper.findComponent(MoreIcon).exists()).toBe(true);
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it('<closeBtn>', () => {

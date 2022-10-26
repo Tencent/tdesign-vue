@@ -75,7 +75,7 @@ describe('TreeSelect', () => {
           return <TreeSelect clearable={true} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':disabled', () => {
       const wrapper = mount({
@@ -83,7 +83,7 @@ describe('TreeSelect', () => {
           return <TreeSelect disabled={true} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':empty string', () => {
       const wrapper = mount({
@@ -91,7 +91,7 @@ describe('TreeSelect', () => {
           return <TreeSelect empty={'no data'} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':filterable', () => {
       const wrapper = mount({
@@ -99,7 +99,7 @@ describe('TreeSelect', () => {
           return <TreeSelect filterable={true} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':loading', () => {
       const wrapper = mount({
@@ -107,7 +107,7 @@ describe('TreeSelect', () => {
           return <TreeSelect loading={true} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':loadingText', () => {
       const wrapper = mount({
@@ -115,7 +115,7 @@ describe('TreeSelect', () => {
           return <TreeSelect loadingText={'data loading'} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':max', () => {
       const wrapper = mount({
@@ -123,7 +123,7 @@ describe('TreeSelect', () => {
           return <TreeSelect max={10} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':minCollapsedNum', () => {
       const wrapper = mount({
@@ -131,7 +131,7 @@ describe('TreeSelect', () => {
           return <TreeSelect minCollapsedNum={1} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':multiple', () => {
       const wrapper = mount({
@@ -139,7 +139,7 @@ describe('TreeSelect', () => {
           return <TreeSelect multiple={true} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':placeholder', () => {
       const wrapper = mount({
@@ -147,7 +147,7 @@ describe('TreeSelect', () => {
           return <TreeSelect placeholder={'please select address'} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':popupProps', () => {
       const popupProps = {
@@ -160,7 +160,7 @@ describe('TreeSelect', () => {
           return <TreeSelect popupProps={popupProps} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':size', () => {
       const wrapper = mount({
@@ -168,7 +168,7 @@ describe('TreeSelect', () => {
           return <TreeSelect size={'large'} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':treeProps', () => {
       const treeProps = {
@@ -183,7 +183,7 @@ describe('TreeSelect', () => {
           return <TreeSelect data={propsOptions} treeProps={treeProps} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':value', () => {
       const value = 'shenzhen';
@@ -192,7 +192,7 @@ describe('TreeSelect', () => {
           return <TreeSelect v-model={value} data={options} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':defaultValue', () => {
       const defaultValue = ['shenzhen', 'guangzhou'];
@@ -201,7 +201,7 @@ describe('TreeSelect', () => {
           return <TreeSelect defaultValue={defaultValue} data={options} multiple={true} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':valueType', () => {
       const wrapper = mount({
@@ -209,7 +209,7 @@ describe('TreeSelect', () => {
           return <TreeSelect valueType={'object'} data={options} value={objectValue} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 
@@ -295,7 +295,7 @@ describe('TreeSelect', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it('<empty>', () => {
       const wrapper = mount({
@@ -307,7 +307,7 @@ describe('TreeSelect', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it('<loadingText>', () => {
       const wrapper = mount({
@@ -319,7 +319,7 @@ describe('TreeSelect', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it('<prefixIcon>', () => {
       const wrapper = mount({
@@ -333,7 +333,7 @@ describe('TreeSelect', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 
@@ -351,7 +351,7 @@ describe('TreeSelect', () => {
           return <TreeSelect collapsedItems={renderCollapsedItems} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':empty', () => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -361,7 +361,7 @@ describe('TreeSelect', () => {
           return <TreeSelect empty={renderEmpty}></TreeSelect>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':loadingText', () => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -371,7 +371,7 @@ describe('TreeSelect', () => {
           return <TreeSelect loading={true} loadingText={renderLoadingText} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':prefixIcon', () => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -385,7 +385,7 @@ describe('TreeSelect', () => {
           return <TreeSelect prefixIcon={renderPrefixIcon} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 });

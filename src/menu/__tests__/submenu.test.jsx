@@ -22,7 +22,7 @@ describe('Submenu', () => {
           return <Submenu name="1"></Submenu>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':disabled', () => {
@@ -34,7 +34,7 @@ describe('Submenu', () => {
           return <Submenu disabled={true}></Submenu>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 
@@ -48,7 +48,7 @@ describe('Submenu', () => {
           TdMenu: Menu,
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it('<default>', () => {
@@ -60,7 +60,7 @@ describe('Submenu', () => {
           TdMenu: Menu,
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it('<title>', () => {
@@ -72,7 +72,7 @@ describe('Submenu', () => {
           TdMenu: Menu,
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 });

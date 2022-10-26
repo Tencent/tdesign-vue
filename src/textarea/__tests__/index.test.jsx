@@ -46,7 +46,7 @@ describe('Textarea', () => {
           return <Textarea disabled={true} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':readonly', () => {
@@ -55,7 +55,7 @@ describe('Textarea', () => {
           return <Textarea readonly={true} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':maxlength', () => {
@@ -64,7 +64,7 @@ describe('Textarea', () => {
           return <Textarea maxlength={10} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 
@@ -75,7 +75,7 @@ describe('Textarea', () => {
           return <Textarea name="description" placeholder="please text" maxLength="20" />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 

@@ -46,7 +46,7 @@ describe('Input', () => {
           return <Input disabled={true} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':readonly', () => {
@@ -55,7 +55,7 @@ describe('Input', () => {
           return <Input readonly={true} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':autocomplete', () => {
@@ -64,7 +64,7 @@ describe('Input', () => {
           return <Input autocomplete={true} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':prefix-icon', () => {
@@ -73,7 +73,7 @@ describe('Input', () => {
           return <Input prefix-icon={(h) => <i class="icon"></i>} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':suffix-icon', () => {
@@ -82,7 +82,7 @@ describe('Input', () => {
           return <Input suffix-icon={(h) => <i class="icon"></i>} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
 
     it(':size', () => {
@@ -91,7 +91,7 @@ describe('Input', () => {
           return <Input size={'large'} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 
@@ -102,7 +102,7 @@ describe('Input', () => {
           return <Input name="password" placeholder="please text" maxLength="20" type="password" />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 

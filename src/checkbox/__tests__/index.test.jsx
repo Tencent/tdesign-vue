@@ -11,7 +11,7 @@ describe('Checkbox', () => {
           return <Checkbox checked={true}></Checkbox>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':defaultChecked', () => {
       const wrapper = mount({
@@ -19,7 +19,7 @@ describe('Checkbox', () => {
           return <Checkbox defaultChecked={true}></Checkbox>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':disabled', () => {
       const wrapper = mount({
@@ -27,7 +27,7 @@ describe('Checkbox', () => {
           return <Checkbox disabled={true}></Checkbox>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':indeterminate', () => {
       const wrapper = mount({
@@ -35,7 +35,7 @@ describe('Checkbox', () => {
           return <Checkbox indeterminate={true}></Checkbox>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':name', () => {
       const wrapper = mount({
@@ -43,7 +43,7 @@ describe('Checkbox', () => {
           return <Checkbox name={'checkbox-name'}></Checkbox>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 
@@ -78,7 +78,7 @@ describe('Checkbox CheckboxGroup', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':checked', () => {
       const wrapper = mount({
@@ -93,7 +93,7 @@ describe('Checkbox CheckboxGroup', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':disabled', () => {
       const wrapper = mount({
@@ -109,7 +109,7 @@ describe('Checkbox CheckboxGroup', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':max', () => {
       const options = [
@@ -122,7 +122,7 @@ describe('Checkbox CheckboxGroup', () => {
           return <CheckboxGroup options={options} value={['sz', 'gz']} max={2} />;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':options', () => {
       const options = [
@@ -134,7 +134,7 @@ describe('Checkbox CheckboxGroup', () => {
           return <CheckboxGroup options={options}></CheckboxGroup>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':name', () => {
       const wrapper = mount({
@@ -149,7 +149,7 @@ describe('Checkbox CheckboxGroup', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 

@@ -11,7 +11,7 @@ describe('Avatar', () => {
           return <Avatar image="https://tdesign.gtimg.com/site/avatar.jpg"></Avatar>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':icon', () => {
       const wrapper = mount({
@@ -19,7 +19,7 @@ describe('Avatar', () => {
           return <div></div>;
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':shape', () => {
       const wrapper = mount({
@@ -32,7 +32,7 @@ describe('Avatar', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':size', () => {
       const wrapper = mount({
@@ -47,7 +47,7 @@ describe('Avatar', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 
@@ -58,7 +58,7 @@ describe('Avatar', () => {
           icon: '<div></div>',
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 });
@@ -82,7 +82,7 @@ describe('AvatarGroup', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':collapseAvatar', () => {
       const wrapper = mount({
@@ -101,7 +101,7 @@ describe('AvatarGroup', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':max', () => {
       const wrapper = mount({
@@ -117,7 +117,7 @@ describe('AvatarGroup', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':placement', () => {
       const wrapper = mount({
@@ -133,7 +133,7 @@ describe('AvatarGroup', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':popupProps', () => {
       const wrapper = mount({
@@ -149,7 +149,7 @@ describe('AvatarGroup', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
     it(':size', () => {
       const wrapper = mount({
@@ -165,7 +165,7 @@ describe('AvatarGroup', () => {
           );
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 });

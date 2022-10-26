@@ -25,7 +25,7 @@ describe('DatePicker', () => {
         return <DatePicker value={'1998-11-11'}></DatePicker>;
       },
     });
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it(':mode', () => {
@@ -34,7 +34,7 @@ describe('DatePicker', () => {
         return <DatePicker mode={'year'}></DatePicker>;
       },
     });
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it(':range', () => {
@@ -47,7 +47,7 @@ describe('DatePicker', () => {
         return <DatePicker value={testRange} range></DatePicker>;
       },
     });
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   // test slots

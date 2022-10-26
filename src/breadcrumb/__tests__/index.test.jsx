@@ -131,7 +131,7 @@ describe('Breadcrumb', () => {
           tBreadcrumb: this,
         },
       });
-      expect(wrapper).toMatchSnapshot();
+      expect(wrapper.element).toMatchSnapshot();
     });
   });
 });
