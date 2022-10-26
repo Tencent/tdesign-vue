@@ -1987,7 +1987,7 @@ exports[`Dialog Dialog dragVue demo works fine 1`] = `
           class="t-dialog__position t-dialog--top"
         >
           <div
-            class="t-dialog t-dialog--default t-dialog__modal-default"
+            class="t-dialog t-dialog--default t-dialog__modal-default t-dialog--draggable"
           >
             <div
               class="t-dialog__header"
@@ -2189,7 +2189,7 @@ exports[`Dialog Dialog iconVue demo works fine 1`] = `
               </svg>
             </span>
             <div
-              class="t-dialog__body__icon"
+              class="t-dialog__body t-dialog__body--icon"
             >
               信息已全部保存，是否确认下单？
             </div>
@@ -2279,7 +2279,7 @@ exports[`Dialog Dialog iconVue demo works fine 1`] = `
               </svg>
             </span>
             <div
-              class="t-dialog__body__icon"
+              class="t-dialog__body t-dialog__body--icon"
             >
               系统重启后会短暂影响页面访问，确认重启吗？
             </div>
@@ -2369,7 +2369,7 @@ exports[`Dialog Dialog iconVue demo works fine 1`] = `
               </svg>
             </span>
             <div
-              class="t-dialog__body__icon"
+              class="t-dialog__body t-dialog__body--icon"
             >
               请检查推送数据是否符合要求
             </div>
@@ -2459,7 +2459,7 @@ exports[`Dialog Dialog iconVue demo works fine 1`] = `
               </svg>
             </span>
             <div
-              class="t-dialog__body__icon"
+              class="t-dialog__body t-dialog__body--icon"
             >
               是否前往查看订单列表
             </div>
@@ -2682,7 +2682,7 @@ exports[`Dialog Dialog modalVue demo works fine 1`] = `
           class="t-dialog__position t-dialog--top"
         >
           <div
-            class="t-dialog t-dialog--default t-dialog__modal-default"
+            class="t-dialog t-dialog--default t-dialog__modal-default t-dialog--draggable"
           >
             <div
               class="t-dialog__header"
@@ -3764,7 +3764,7 @@ exports[`Dialog Dialog warningVue demo works fine 1`] = `
               </svg>
             </span>
             <div
-              class="t-dialog__body__icon"
+              class="t-dialog__body t-dialog__body--icon"
             >
               对话框内容
             </div>
@@ -3856,7 +3856,7 @@ exports[`Dialog Dialog warningVue demo works fine 1`] = `
               </svg>
             </span>
             <div
-              class="t-dialog__body__icon"
+              class="t-dialog__body t-dialog__body--icon"
             >
               对话框内容
             </div>
@@ -3948,7 +3948,7 @@ exports[`Dialog Dialog warningVue demo works fine 1`] = `
               </svg>
             </span>
             <div
-              class="t-dialog__body__icon"
+              class="t-dialog__body t-dialog__body--icon"
             >
               对话框内容
             </div>
@@ -4030,7 +4030,7 @@ exports[`Dialog Dialog warningVue demo works fine 1`] = `
               </svg>
             </span>
             <div
-              class="t-dialog__body__icon"
+              class="t-dialog__body t-dialog__body--icon"
             >
               对话框内容
             </div>

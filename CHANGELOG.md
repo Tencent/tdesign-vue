@@ -5,6 +5,31 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.49.1 `2022-10-26` 
+### 🚀 Features
+- `Select`:
+  - `onChange` 事件增加 option 参数返回 [issue#1664](https://github.com/Tencent/tdesign-vue/issues/1664) @skytt ([#1667](https://github.com/Tencent/tdesign-vue/pull/1667))
+  - 添加 options 参数监听, 优化部分场景下 option 更新逻辑 [issue#1681](https://github.com/Tencent/tdesign-vue/issues/1681) @skytt ([#1682](https://github.com/Tencent/tdesign-vue/pull/1682))
+- `Upload`: 多图片上传，图片文件名支持 `abridgeName` @chaishi ([#1669](https://github.com/Tencent/tdesign-vue/pull/1669))
+- `dialog`:  优化非模态对话框拖拽事件鼠标表现  @huoyuhao ([#1352](https://github.com/Tencent/tdesign-vue/pull/1352))
+### 🐞 Bug Fixes
+- `Select`: 空值兼容 null 的情况 [issue#1668](https://github.com/Tencent/tdesign-vue/issues/1668) @skytt ([#1667](https://github.com/Tencent/tdesign-vue/pull/1667))
+- `Upload`: @chaishi ([#1669](https://github.com/Tencent/tdesign-vue/pull/1669))
+  - 修复 `name` 无效的问题
+  - 修复自定义上传方法不支持图片回显的问题
+- `Collapse`: 修复点击标题没有触发折叠功能的问题 @huangpiqiao ([#1676](https://github.com/Tencent/tdesign-vue/pull/1676))
+- `Tabs`: 修复 Tabs 切换时会导致表单初始化聚焦失效问题 @huangpiqiao ([#1676](https://github.com/Tencent/tdesign-vue/pull/1676))
+- `Datepicker`: @luwuer ([#1587](https://github.com/Tencent/tdesign-vue/pull/1587))
+  - 修复 `t-date-picker__cell--active-start` 和 `t-date-picker__cell--active-end` 在第二次操作时错序的问题 [issue#1580](https://github.com/Tencent/tdesign-vue/issues/1580)
+  - 修复 hover 已选择日期动画导致 cell 闪烁问题 @luwuer ([#1587](https://github.com/Tencent/tdesign-vue/pull/1587))
+- `Textarea`: 修复禁用状态字数限制区域的样式问题 @uyarn ([#1684](https://github.com/Tencent/tdesign-vue/pull/1684))
+- `Space`: 修复子节点为空的报错 @uyarn ([#1684](https://github.com/Tencent/tdesign-vue/pull/1684))
+- `Dialog`: 修复 theme 为非 default 时 body 节点类名的问题 @uyarn ([#1684](https://github.com/Tencent/tdesign-vue/pull/1684))
+### 🚧 Others
+- `Popconfirm`: 修复官网 demo 气泡框描述文案字体颜色 @iLunZ ([#1677](https://github.com/Tencent/tdesign-vue/pull/1677))
+- 官网: 主题生成器新增阴影配置能力 @uyarn @yilaierwang ([#1655](https://github.com/Tencent/tdesign-vue/pull/1655))
+- `Avatar`: demo 中删除重复头像并调整展示顺序 @tutaizi ([#1612](https://github.com/Tencent/tdesign-vue/pull/1612))
+
 ## 🌈 0.49.0 `2022-10-19` 
 ### ❗ Breaking Changes
 - `Dropdown`: 调整`Dropdown`样式，优化多层菜单样式结构，多层菜单结构有变动 @uyarn ([#1607](https://github.com/Tencent/tdesign-vue/pull/1607))
