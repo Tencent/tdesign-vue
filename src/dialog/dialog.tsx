@@ -102,7 +102,27 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     wrapClass(): ClassName {
       return [!this.isNormal && `${this.componentName}__wrap`];
     },
-
+    bodyClass(): ClassName {
+      return [
+        `${this.componentName}__body`,
+        {
+          [`${this.componentName}__body--icon`]: this.theme !== 'default',
+        },
+      ];
+    },
+    ctxClass(): ClassName {
+      // dialog__ctx--fixed 绝对定位
+      // dialog__ctx--absolute 挂载在attach元素上 相对定位
+      // __ctx--modeless modeless 点击穿透
+      return [
+        `${this.componentName}__ctx`,
+        {
+          [`${this.classPrefix}-dialog__ctx--fixed`]: this.mode === 'modal',
+          [`${this.classPrefix}-dialog__ctx--absolute`]: this.isModal && this.showInAttachedElement,
+          [`${this.componentName}__ctx--modeless`]: this.isModeLess,
+        },
+      ];
+    },
     positionStyle(): Styles {
       const topStyle = {} as Styles;
 
@@ -373,7 +393,6 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
           })}
         </div>
       );
-      const bodyClassName = this.theme === 'default' ? `${this.componentName}__body` : `${this.componentName}__body__icon`;
       // 此处获取定位方式 top 优先级较高 存在时 默认使用top定位
       return (
         // 非模态形态下draggable为true才允许拖拽
@@ -389,7 +408,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
                   {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
                 </span>
               ) : null}
-              <div class={bodyClassName} onmousedown={this.onStopDown}>
+              <div class={this.bodyClass} onmousedown={this.onStopDown}>
                 {body}
               </div>
               <div class={`${this.componentName}__footer`} onmousedown={this.onStopDown}>
@@ -406,18 +425,8 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     const maskView = this.isModal && <div key="mask" class={this.maskClass}></div>;
     const dialogView = this.renderDialog();
     const view = [maskView, dialogView];
-    const ctxStyle: any = { zIndex: this.zIndex };
-    // dialog__ctx--fixed 绝对定位
-    // dialog__ctx--absolute 挂载在attach元素上 相对定位
-    // __ctx--modeless modeless 点击穿透
-    const ctxClass = [
-      `${this.componentName}__ctx`,
-      {
-        [`${this.classPrefix}-dialog__ctx--fixed`]: this.mode === 'modal',
-        [`${this.classPrefix}-dialog__ctx--absolute`]: this.isModal && this.showInAttachedElement,
-        [`${this.componentName}__ctx--modeless`]: this.isModeLess,
-      },
-    ];
+    const ctxStyle = { zIndex: this.zIndex };
+
     return (
       <transition
         duration={300}
@@ -426,7 +435,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         onAfterLeave={this.afterLeave}
       >
         {(!this.destroyOnClose || this.visible) && (
-          <div v-show={this.visible} class={ctxClass} style={ctxStyle} v-transfer-dom={this.attach}>
+          <div v-show={this.visible} class={this.ctxClass} style={ctxStyle} v-transfer-dom={this.attach}>
             {view}
           </div>
         )}
