@@ -133,6 +133,7 @@
     {
       "files": [
         "**/_example/*",
+        "**/__tests__/*",
         "script/**/*",
         "script/*",
         "*.js",
