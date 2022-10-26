@@ -1987,7 +1987,7 @@ exports[`Dialog Dialog dragVue demo works fine 1`] = `
           class="t-dialog__position t-dialog--top"
         >
           <div
-            class="t-dialog t-dialog--default t-dialog__modal-default"
+            class="t-dialog t-dialog--default t-dialog__modal-default t-dialog--draggable"
           >
             <div
               class="t-dialog__header"
@@ -2682,7 +2682,7 @@ exports[`Dialog Dialog modalVue demo works fine 1`] = `
           class="t-dialog__position t-dialog--top"
         >
           <div
-            class="t-dialog t-dialog--default t-dialog__modal-default"
+            class="t-dialog t-dialog--default t-dialog__modal-default t-dialog--draggable"
           >
             <div
               class="t-dialog__header"

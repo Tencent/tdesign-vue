@@ -86,6 +86,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         `${this.componentName}`,
         `${this.componentName}--default`,
         `${this.componentName}__modal-${this.theme}`,
+        this.isModeLess && this.draggable && `${this.componentName}--draggable`,
       ];
       return dialogClass;
     },
@@ -343,6 +344,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         target.style.top = `${this.dTop * (window.innerHeight / this.windowInnerHeight)}px`;
       }
     },
+    onStopDown(e: MouseEvent) {
+      if (this.isModeLess && this.draggable) e.stopPropagation();
+    },
     renderDialog() {
       const { CloseIcon } = this.useGlobalIcon({
         CloseIcon: TdCloseIcon,
@@ -376,7 +380,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         <div class={this.wrapClass}>
           <div class={this.positionClass} style={this.positionStyle} onClick={this.overlayAction} ref="dialogPosition">
             <div key="dialog" ref="dialog" class={this.dialogClass} style={this.dialogStyle}>
-              <div class={`${this.componentName}__header`}>
+              <div class={`${this.componentName}__header`} onmousedown={this.onStopDown}>
                 {this.getIcon()}
                 {renderTNodeJSX(this, 'header', defaultHeader)}
               </div>
@@ -385,8 +389,12 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
                   {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
                 </span>
               ) : null}
-              <div class={bodyClassName}>{body}</div>
-              <div class={`${this.componentName}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
+              <div class={bodyClassName} onmousedown={this.onStopDown}>
+                {body}
+              </div>
+              <div class={`${this.componentName}__footer`} onmousedown={this.onStopDown}>
+                {renderTNodeJSX(this, 'footer', defaultFooter)}
+              </div>
             </div>
           </div>
         </div>
