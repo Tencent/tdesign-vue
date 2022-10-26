@@ -1,0 +1,69 @@
+// Vitest Snapshot v1
+
+exports[`Textarea > $attrs > textarea attrs should pass to textarea element 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Textarea > :props > :disabled 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Textarea > :props > :maxlength 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Textarea > :props > :readonly 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;

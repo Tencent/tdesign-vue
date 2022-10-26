@@ -1,0 +1,69 @@
+// Vitest Snapshot v1
+
+exports[`Divider > :props > :align 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Divider > :props > :dashed 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Divider > :props > :layout 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Divider > <slot> > default 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;

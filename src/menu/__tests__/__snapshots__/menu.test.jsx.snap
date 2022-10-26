@@ -1,0 +1,171 @@
+// Vitest Snapshot v1
+
+exports[`Menu > props > :active 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Menu > props > :collapsed 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Menu > props > :collapsedWidth 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Menu > props > :height 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Menu > props > :theme 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Menu > props > :theme 2`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Menu > props > :width 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Menu > slot > <default> 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Menu > slot > <logo> 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Menu > slot > <options> 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;

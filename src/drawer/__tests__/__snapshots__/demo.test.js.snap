@@ -1,14 +1,17 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Drawer Drawer attachParentVue demo works fine 1`] = `
+exports[`Drawer > Drawer attachParentVue demo works fine 1`] = `
 <div
   class="t-container"
+  data-v-241b7623=""
 >
   <div
     class="t-suf-container"
+    data-v-241b7623=""
   >
     <div
       class="t-drawer t-drawer--right t-drawer--attach"
+      data-v-241b7623=""
       tabindex="0"
     >
       <div
@@ -26,7 +29,9 @@ exports[`Drawer Drawer attachParentVue demo works fine 1`] = `
         <div
           class="t-drawer__body"
         >
-          <p>
+          <p
+            data-v-241b7623=""
+          >
             抽屉的内容
           </p>
         </div>
@@ -60,18 +65,18 @@ exports[`Drawer Drawer attachParentVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
     <div
       class="tdesign-radio-button"
+      data-v-241b7623=""
     >
-      
-      抽屉弹出方向：
-      
+       抽屉弹出方向： 
       <div
         class="t-radio-group t-size-m t-radio-group__outline"
+        data-v-241b7623=""
       >
         <label
           class="t-radio-button"
+          data-v-241b7623=""
         >
           <input
             class="t-radio-button__former"
@@ -88,9 +93,9 @@ exports[`Drawer Drawer attachParentVue demo works fine 1`] = `
             左侧
           </span>
         </label>
-         
         <label
           class="t-radio-button t-is-checked"
+          data-v-241b7623=""
         >
           <input
             class="t-radio-button__former"
@@ -107,9 +112,9 @@ exports[`Drawer Drawer attachParentVue demo works fine 1`] = `
             右侧
           </span>
         </label>
-         
         <label
           class="t-radio-button"
+          data-v-241b7623=""
         >
           <input
             class="t-radio-button__former"
@@ -126,9 +131,9 @@ exports[`Drawer Drawer attachParentVue demo works fine 1`] = `
             上方
           </span>
         </label>
-         
         <label
           class="t-radio-button"
+          data-v-241b7623=""
         >
           <input
             class="t-radio-button__former"
@@ -147,20 +152,21 @@ exports[`Drawer Drawer attachParentVue demo works fine 1`] = `
         </label>
       </div>
     </div>
-     
-    <br />
-     
+    <br
+      data-v-241b7623=""
+    />
     <div
       class="tdesign-radio-button"
+      data-v-241b7623=""
     >
-      
-      抽屉弹出模式：
-      
+       抽屉弹出模式： 
       <div
         class="t-radio-group t-size-m t-radio-group__outline"
+        data-v-241b7623=""
       >
         <label
           class="t-radio-button t-is-checked"
+          data-v-241b7623=""
         >
           <input
             class="t-radio-button__former"
@@ -177,9 +183,9 @@ exports[`Drawer Drawer attachParentVue demo works fine 1`] = `
             overlay
           </span>
         </label>
-         
         <label
           class="t-radio-button"
+          data-v-241b7623=""
         >
           <input
             class="t-radio-button__former"
@@ -198,12 +204,15 @@ exports[`Drawer Drawer attachParentVue demo works fine 1`] = `
         </label>
       </div>
     </div>
-     
-    <br />
-    <br />
-     
+    <br
+      data-v-241b7623=""
+    />
+    <br
+      data-v-241b7623=""
+    />
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+      data-v-241b7623=""
       type="button"
     >
       <span
@@ -216,10 +225,13 @@ exports[`Drawer Drawer attachParentVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Drawer Drawer baseVue demo works fine 1`] = `
-<div>
+exports[`Drawer > Drawer baseVue demo works fine 1`] = `
+<div
+  data-v-18b3c170=""
+>
   <div
     class="t-drawer t-drawer--right"
+    data-v-18b3c170=""
     tabindex="0"
   >
     <div
@@ -254,7 +266,9 @@ exports[`Drawer Drawer baseVue demo works fine 1`] = `
       <div
         class="t-drawer__body"
       >
-        <p>
+        <p
+          data-v-18b3c170=""
+        >
           抽屉的内容
         </p>
       </div>
@@ -288,9 +302,9 @@ exports[`Drawer Drawer baseVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-18b3c170=""
     type="button"
   >
     <span
@@ -302,7 +316,7 @@ exports[`Drawer Drawer baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Drawer Drawer customVue demo works fine 1`] = `
+exports[`Drawer > Drawer customVue demo works fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right"
@@ -359,7 +373,6 @@ exports[`Drawer Drawer customVue demo works fine 1`] = `
             确定
           </span>
         </button>
-         
         <button
           class="t-button t-size-m t-button--variant-outline t-button--theme-default"
           type="button"
@@ -373,7 +386,6 @@ exports[`Drawer Drawer customVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
     class="t-drawer t-drawer--right"
     tabindex="0"
@@ -442,7 +454,6 @@ exports[`Drawer Drawer customVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
     class="t-drawer t-drawer--right"
     tabindex="0"
@@ -514,7 +525,6 @@ exports[`Drawer Drawer customVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
@@ -525,9 +535,7 @@ exports[`Drawer Drawer customVue demo works fine 1`] = `
       打开(插槽定义)
     </span>
   </button>
-  
-    
-  
+      
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
@@ -538,9 +546,7 @@ exports[`Drawer Drawer customVue demo works fine 1`] = `
       打开(属性定义)
     </span>
   </button>
-  
-    
-  
+      
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
@@ -554,10 +560,9 @@ exports[`Drawer Drawer customVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Drawer Drawer destroyVue demo works fine 1`] = `
+exports[`Drawer > Drawer destroyVue demo works fine 1`] = `
 <div>
   <!---->
-   
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
@@ -571,7 +576,7 @@ exports[`Drawer Drawer destroyVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Drawer Drawer noMaskVue demo works fine 1`] = `
+exports[`Drawer > Drawer noMaskVue demo works fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right t-drawer--without-mask"
@@ -623,7 +628,6 @@ exports[`Drawer Drawer noMaskVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
@@ -637,10 +641,13 @@ exports[`Drawer Drawer noMaskVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Drawer Drawer operationVue demo works fine 1`] = `
-<div>
+exports[`Drawer > Drawer operationVue demo works fine 1`] = `
+<div
+  data-v-c1a23f50=""
+>
   <div
     class="t-drawer t-drawer--right"
+    data-v-c1a23f50=""
     tabindex="0"
   >
     <div
@@ -660,13 +667,16 @@ exports[`Drawer Drawer operationVue demo works fine 1`] = `
       >
         <div
           class="t-drawer-demo-div"
+          data-v-c1a23f50=""
         >
-          <span>
+          <span
+            data-v-c1a23f50=""
+          >
             标签 A
           </span>
-           
           <div
             class="t-input__wrap"
+            data-v-c1a23f50=""
           >
             <div
               class="t-input t-size-m t-is-default"
@@ -681,16 +691,18 @@ exports[`Drawer Drawer operationVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-         
         <div
           class="t-drawer-demo-div"
+          data-v-c1a23f50=""
         >
-          <span>
+          <span
+            data-v-c1a23f50=""
+          >
             标签 B
           </span>
-           
           <div
             class="t-input__wrap"
+            data-v-c1a23f50=""
           >
             <div
               class="t-input t-size-m t-is-default"
@@ -705,16 +717,18 @@ exports[`Drawer Drawer operationVue demo works fine 1`] = `
             </div>
           </div>
         </div>
-         
         <div
           class="t-drawer-demo-div"
+          data-v-c1a23f50=""
         >
-          <span>
+          <span
+            data-v-c1a23f50=""
+          >
             标签 C
           </span>
-           
           <div
             class="t-input__wrap"
+            data-v-c1a23f50=""
           >
             <div
               class="t-input t-size-m t-is-default"
@@ -760,9 +774,9 @@ exports[`Drawer Drawer operationVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-c1a23f50=""
     type="button"
   >
     <span
@@ -774,7 +788,7 @@ exports[`Drawer Drawer operationVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Drawer Drawer placementVue demo works fine 1`] = `
+exports[`Drawer > Drawer placementVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -867,7 +881,6 @@ exports[`Drawer Drawer placementVue demo works fine 1`] = `
               左侧
             </span>
           </label>
-           
           <label
             class="t-radio-button t-is-checked"
           >
@@ -886,7 +899,6 @@ exports[`Drawer Drawer placementVue demo works fine 1`] = `
               右侧
             </span>
           </label>
-           
           <label
             class="t-radio-button"
           >
@@ -905,7 +917,6 @@ exports[`Drawer Drawer placementVue demo works fine 1`] = `
               上方
             </span>
           </label>
-           
           <label
             class="t-radio-button"
           >
@@ -945,9 +956,8 @@ exports[`Drawer Drawer placementVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Drawer Drawer popupVue demo works fine 1`] = `
+exports[`Drawer > Drawer popupVue demo works fine 1`] = `
 <div>
-   
   <div
     class="t-space t-space-horizontal"
     style="gap: 16px;"
@@ -976,7 +986,6 @@ exports[`Drawer Drawer popupVue demo works fine 1`] = `
             overlay
           </span>
         </label>
-         
         <label
           class="t-radio-button t-is-checked"
         >
@@ -998,10 +1007,8 @@ exports[`Drawer Drawer popupVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <br />
   <br />
-   
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
@@ -1015,7 +1022,7 @@ exports[`Drawer Drawer popupVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Drawer Drawer sizeDraggableVue demo works fine 1`] = `
+exports[`Drawer > Drawer sizeDraggableVue demo works fine 1`] = `
 <div>
   <div
     class="t-drawer t-drawer--right"
@@ -1073,7 +1080,6 @@ exports[`Drawer Drawer sizeDraggableVue demo works fine 1`] = `
       />
     </div>
   </div>
-   
   <div
     class="t-space t-space-vertical"
     style="gap: 16px;"
@@ -1102,7 +1108,6 @@ exports[`Drawer Drawer sizeDraggableVue demo works fine 1`] = `
             从左侧拖拽抽屉
           </span>
         </label>
-         
         <label
           class="t-radio-button t-is-checked"
         >
@@ -1121,7 +1126,6 @@ exports[`Drawer Drawer sizeDraggableVue demo works fine 1`] = `
             从右侧拖拽抽屉
           </span>
         </label>
-         
         <label
           class="t-radio-button"
         >
@@ -1140,7 +1144,6 @@ exports[`Drawer Drawer sizeDraggableVue demo works fine 1`] = `
             从上方拖拽抽屉
           </span>
         </label>
-         
         <label
           class="t-radio-button"
         >
@@ -1179,7 +1182,7 @@ exports[`Drawer Drawer sizeDraggableVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Drawer Drawer sizeVue demo works fine 1`] = `
+exports[`Drawer > Drawer sizeVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -1272,7 +1275,6 @@ exports[`Drawer Drawer sizeVue demo works fine 1`] = `
               小
             </span>
           </label>
-           
           <label
             class="t-radio-button"
           >
@@ -1291,7 +1293,6 @@ exports[`Drawer Drawer sizeVue demo works fine 1`] = `
               中
             </span>
           </label>
-           
           <label
             class="t-radio-button"
           >
@@ -1310,7 +1311,6 @@ exports[`Drawer Drawer sizeVue demo works fine 1`] = `
               大
             </span>
           </label>
-           
           <label
             class="t-radio-button"
           >
@@ -1329,7 +1329,6 @@ exports[`Drawer Drawer sizeVue demo works fine 1`] = `
               200
             </span>
           </label>
-           
           <label
             class="t-radio-button"
           >
@@ -1348,7 +1347,6 @@ exports[`Drawer Drawer sizeVue demo works fine 1`] = `
               400px
             </span>
           </label>
-           
           <label
             class="t-radio-button"
           >

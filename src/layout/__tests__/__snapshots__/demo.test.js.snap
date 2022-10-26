@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Layout Layout asideVue demo works fine 1`] = `
+exports[`Layout > Layout asideVue demo works fine 1`] = `
 <div
   class="tdesign-demo-item--layout"
 >
@@ -31,7 +31,6 @@ exports[`Layout Layout asideVue demo works fine 1`] = `
           <ul
             class="t-menu t-menu--scroll narrow-scrollbar"
           >
-             
             <li
               class="t-menu__item t-is-active"
             >
@@ -48,7 +47,6 @@ exports[`Layout Layout asideVue demo works fine 1`] = `
                 仪表盘 
               </span>
             </li>
-             
             <li
               class="t-menu__item"
             >
@@ -65,7 +63,6 @@ exports[`Layout Layout asideVue demo works fine 1`] = `
                 资源列表 
               </span>
             </li>
-             
             <li
               class="t-menu__item"
             >
@@ -82,7 +79,6 @@ exports[`Layout Layout asideVue demo works fine 1`] = `
                 根目录 
               </span>
             </li>
-             
             <li
               class="t-menu__item"
             >
@@ -99,7 +95,6 @@ exports[`Layout Layout asideVue demo works fine 1`] = `
                 调度平台 
               </span>
             </li>
-             
             <li
               class="t-menu__item"
             >
@@ -116,7 +111,6 @@ exports[`Layout Layout asideVue demo works fine 1`] = `
                 精准监控 
               </span>
             </li>
-             
             <li
               class="t-menu__item"
             >
@@ -133,7 +127,6 @@ exports[`Layout Layout asideVue demo works fine 1`] = `
                 消息区 
               </span>
             </li>
-             
             <li
               class="t-menu__item"
             >
@@ -150,7 +143,6 @@ exports[`Layout Layout asideVue demo works fine 1`] = `
                 个人中心 
               </span>
             </li>
-             
             <li
               class="t-menu__item"
             >
@@ -167,7 +159,6 @@ exports[`Layout Layout asideVue demo works fine 1`] = `
                 视频区 
               </span>
             </li>
-             
             <li
               class="t-menu__item"
             >
@@ -188,7 +179,6 @@ exports[`Layout Layout asideVue demo works fine 1`] = `
         </div>
       </div>
     </aside>
-     
     <section
       class="t-layout"
     >
@@ -199,7 +189,6 @@ exports[`Layout Layout asideVue demo works fine 1`] = `
           Content
         </div>
       </main>
-       
       <footer
         class="t-layout__footer"
       >
@@ -210,7 +199,7 @@ exports[`Layout Layout asideVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Layout Layout baseVue demo works fine 1`] = `
+exports[`Layout > Layout baseVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -227,13 +216,11 @@ exports[`Layout Layout baseVue demo works fine 1`] = `
         >
           Header
         </header>
-         
         <main
           class="t-layout__content"
         >
           Content
         </main>
-         
         <footer
           class="t-layout__footer"
         >
@@ -254,7 +241,6 @@ exports[`Layout Layout baseVue demo works fine 1`] = `
         >
           Header
         </header>
-         
         <section
           class="t-layout"
         >
@@ -263,14 +249,12 @@ exports[`Layout Layout baseVue demo works fine 1`] = `
           >
             Aside
           </aside>
-           
           <main
             class="t-layout__content"
           >
             Content
           </main>
         </section>
-         
         <footer
           class="t-layout__footer"
         >
@@ -291,7 +275,6 @@ exports[`Layout Layout baseVue demo works fine 1`] = `
         >
           Header
         </header>
-         
         <section
           class="t-layout"
         >
@@ -300,14 +283,12 @@ exports[`Layout Layout baseVue demo works fine 1`] = `
           >
             Content
           </main>
-           
           <aside
             class="t-layout__sider"
           >
             Aside
           </aside>
         </section>
-         
         <footer
           class="t-layout__footer"
         >
@@ -328,7 +309,6 @@ exports[`Layout Layout baseVue demo works fine 1`] = `
         >
           Aside
         </aside>
-         
         <section
           class="t-layout"
         >
@@ -337,13 +317,11 @@ exports[`Layout Layout baseVue demo works fine 1`] = `
           >
             Header
           </header>
-           
           <main
             class="t-layout__content"
           >
             Content
           </main>
-           
           <footer
             class="t-layout__footer"
           >
@@ -356,7 +334,7 @@ exports[`Layout Layout baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Layout Layout combineVue demo works fine 1`] = `
+exports[`Layout > Layout combineVue demo works fine 1`] = `
 <div
   class="tdesign-demo-item--layout"
 >
@@ -386,7 +364,6 @@ exports[`Layout Layout combineVue demo works fine 1`] = `
           <ul
             class="t-menu"
           >
-             
             <li
               class="t-menu__item t-is-active t-menu__item--plain"
             >
@@ -396,7 +373,6 @@ exports[`Layout Layout combineVue demo works fine 1`] = `
                 已选内容
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain"
             >
@@ -406,7 +382,6 @@ exports[`Layout Layout combineVue demo works fine 1`] = `
                 菜单内容一
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain"
             >
@@ -416,7 +391,6 @@ exports[`Layout Layout combineVue demo works fine 1`] = `
                 菜单内容二
               </span>
             </li>
-             
             <li
               class="t-menu__item t-is-disabled t-menu__item--plain"
             >
@@ -441,7 +415,6 @@ exports[`Layout Layout combineVue demo works fine 1`] = `
                 />
               </svg>
             </a>
-             
             <a
               href="javascript:;"
             >
@@ -453,7 +426,6 @@ exports[`Layout Layout combineVue demo works fine 1`] = `
                 />
               </svg>
             </a>
-             
             <a
               href="javascript:;"
             >
@@ -469,7 +441,6 @@ exports[`Layout Layout combineVue demo works fine 1`] = `
         </div>
       </div>
     </header>
-     
     <section
       class="t-layout"
     >
@@ -503,7 +474,6 @@ exports[`Layout Layout combineVue demo works fine 1`] = `
                   仪表盘 
                 </span>
               </li>
-               
               <li
                 class="t-menu__item"
               >
@@ -520,7 +490,6 @@ exports[`Layout Layout combineVue demo works fine 1`] = `
                   资源列表 
                 </span>
               </li>
-               
               <li
                 class="t-menu__item"
               >
@@ -537,7 +506,6 @@ exports[`Layout Layout combineVue demo works fine 1`] = `
                   根目录 
                 </span>
               </li>
-               
               <li
                 class="t-menu__item"
               >
@@ -554,7 +522,6 @@ exports[`Layout Layout combineVue demo works fine 1`] = `
                   调度平台 
                 </span>
               </li>
-               
               <li
                 class="t-menu__item"
               >
@@ -571,7 +538,6 @@ exports[`Layout Layout combineVue demo works fine 1`] = `
                   精准监控 
                 </span>
               </li>
-               
               <li
                 class="t-menu__item"
               >
@@ -588,7 +554,6 @@ exports[`Layout Layout combineVue demo works fine 1`] = `
                   消息区 
                 </span>
               </li>
-               
               <li
                 class="t-menu__item"
               >
@@ -605,7 +570,6 @@ exports[`Layout Layout combineVue demo works fine 1`] = `
                   个人中心 
                 </span>
               </li>
-               
               <li
                 class="t-menu__item"
               >
@@ -622,7 +586,6 @@ exports[`Layout Layout combineVue demo works fine 1`] = `
                   视频区 
                 </span>
               </li>
-               
               <li
                 class="t-menu__item"
               >
@@ -643,7 +606,6 @@ exports[`Layout Layout combineVue demo works fine 1`] = `
           </div>
         </div>
       </aside>
-       
       <section
         class="t-layout"
       >
@@ -654,7 +616,6 @@ exports[`Layout Layout combineVue demo works fine 1`] = `
             Content
           </div>
         </main>
-         
         <footer
           class="t-layout__footer"
         >
@@ -666,7 +627,7 @@ exports[`Layout Layout combineVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Layout Layout topVue demo works fine 1`] = `
+exports[`Layout > Layout topVue demo works fine 1`] = `
 <div
   class="tdesign-demo-item--layout"
 >
@@ -696,7 +657,6 @@ exports[`Layout Layout topVue demo works fine 1`] = `
           <ul
             class="t-menu"
           >
-             
             <li
               class="t-menu__item t-is-active t-menu__item--plain"
             >
@@ -706,7 +666,6 @@ exports[`Layout Layout topVue demo works fine 1`] = `
                 已选内容
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain"
             >
@@ -716,7 +675,6 @@ exports[`Layout Layout topVue demo works fine 1`] = `
                 菜单内容一
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain"
             >
@@ -726,7 +684,6 @@ exports[`Layout Layout topVue demo works fine 1`] = `
                 菜单内容二
               </span>
             </li>
-             
             <li
               class="t-menu__item t-is-disabled t-menu__item--plain"
             >
@@ -751,7 +708,6 @@ exports[`Layout Layout topVue demo works fine 1`] = `
                 />
               </svg>
             </a>
-             
             <a
               href="javascript:;"
             >
@@ -763,7 +719,6 @@ exports[`Layout Layout topVue demo works fine 1`] = `
                 />
               </svg>
             </a>
-             
             <a
               href="javascript:;"
             >
@@ -779,7 +734,6 @@ exports[`Layout Layout topVue demo works fine 1`] = `
         </div>
       </div>
     </header>
-     
     <main
       class="t-layout__content"
     >
@@ -787,7 +741,6 @@ exports[`Layout Layout topVue demo works fine 1`] = `
         Content
       </div>
     </main>
-     
     <footer
       class="t-layout__footer"
     >

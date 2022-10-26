@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Watermark Watermark baseVue demo works fine 1`] = `
+exports[`Watermark > Watermark baseVue demo works fine 1`] = `
 <div
   class="t-watermark"
   style="position: relative; overflow: hidden; width: 100%;"
@@ -14,7 +14,7 @@ exports[`Watermark Watermark baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Watermark Watermark graylevelVue demo works fine 1`] = `
+exports[`Watermark > Watermark graylevelVue demo works fine 1`] = `
 <div
   class="t-watermark"
   style="position: relative; overflow: hidden; width: 100%;"
@@ -28,7 +28,7 @@ exports[`Watermark Watermark graylevelVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Watermark Watermark imageVue demo works fine 1`] = `
+exports[`Watermark > Watermark imageVue demo works fine 1`] = `
 <div
   class="t-watermark"
   style="position: relative; overflow: hidden; width: 100%;"
@@ -42,7 +42,7 @@ exports[`Watermark Watermark imageVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Watermark Watermark movingImageVue demo works fine 1`] = `
+exports[`Watermark > Watermark movingImageVue demo works fine 1`] = `
 <div
   class="t-watermark"
   style="position: relative; overflow: hidden; width: 100%;"
@@ -56,7 +56,7 @@ exports[`Watermark Watermark movingImageVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Watermark Watermark movingTextVue demo works fine 1`] = `
+exports[`Watermark > Watermark movingTextVue demo works fine 1`] = `
 <div
   class="t-watermark"
   style="position: relative; overflow: hidden; width: 100%;"
@@ -70,7 +70,7 @@ exports[`Watermark Watermark movingTextVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Watermark Watermark multilineVue demo works fine 1`] = `
+exports[`Watermark > Watermark multilineVue demo works fine 1`] = `
 <div
   class="t-watermark"
   style="position: relative; overflow: hidden; width: 100%;"

@@ -1,13 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Anchor Anchor baseVue demo works fine 1`] = `
+exports[`Anchor > Anchor baseVue demo works fine 1`] = `
 <div
   style="display: flex;"
 >
   <div
     style="flex: 1;"
   />
-   
   <div>
     <div>
       <div
@@ -36,7 +35,6 @@ exports[`Anchor Anchor baseVue demo works fine 1`] = `
             基础锚点
           </a>
         </div>
-         
         <div
           class="t-anchor__item"
         >
@@ -49,7 +47,6 @@ exports[`Anchor Anchor baseVue demo works fine 1`] = `
             多级锚点
           </a>
         </div>
-         
         <div
           class="t-anchor__item"
         >
@@ -62,7 +59,6 @@ exports[`Anchor Anchor baseVue demo works fine 1`] = `
             指定容器锚点
           </a>
         </div>
-         
         <div
           class="t-anchor__item"
         >
@@ -75,7 +71,6 @@ exports[`Anchor Anchor baseVue demo works fine 1`] = `
             特定交互锚点
           </a>
         </div>
-         
         <div
           class="t-anchor__item"
         >
@@ -94,12 +89,14 @@ exports[`Anchor Anchor baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Anchor Anchor containerVue demo works fine 1`] = `
+exports[`Anchor > Anchor containerVue demo works fine 1`] = `
 <div
   class="anchor-demo anchor-container-demo"
+  data-v-5085b42e=""
 >
   <div
     class="t-anchor t-size-m"
+    data-v-5085b42e=""
   >
     <div
       class="t-anchor__line"
@@ -114,6 +111,7 @@ exports[`Anchor Anchor containerVue demo works fine 1`] = `
     </div>
     <div
       class="t-anchor__item"
+      data-v-5085b42e=""
     >
       <a
         class="t-anchor__item-link"
@@ -124,9 +122,9 @@ exports[`Anchor Anchor containerVue demo works fine 1`] = `
         content-1
       </a>
     </div>
-     
     <div
       class="t-anchor__item"
+      data-v-5085b42e=""
     >
       <a
         class="t-anchor__item-link"
@@ -137,9 +135,9 @@ exports[`Anchor Anchor containerVue demo works fine 1`] = `
         content-2
       </a>
     </div>
-     
     <div
       class="t-anchor__item"
+      data-v-5085b42e=""
     >
       <a
         class="t-anchor__item-link"
@@ -150,9 +148,9 @@ exports[`Anchor Anchor containerVue demo works fine 1`] = `
         content-3
       </a>
     </div>
-     
     <div
       class="t-anchor__item"
+      data-v-5085b42e=""
     >
       <a
         class="t-anchor__item-link"
@@ -164,40 +162,41 @@ exports[`Anchor Anchor containerVue demo works fine 1`] = `
       </a>
     </div>
   </div>
-   
   <div
+    data-v-5085b42e=""
     id="anchor-container"
   >
     <div
       class="anchor-content-1"
+      data-v-5085b42e=""
       id="content-1"
     >
       anchor-content-1
     </div>
-     
     <div
       class="anchor-content-2"
+      data-v-5085b42e=""
       id="content-2"
     >
       anchor-content-2
     </div>
-     
     <div
       class="anchor-content-3"
+      data-v-5085b42e=""
       id="content-3"
     >
       anchor-content-3
     </div>
-     
     <div
       class="anchor-content-4"
+      data-v-5085b42e=""
       id="content-4"
     >
       anchor-content-4
     </div>
-     
     <div
       class="anchor-content-5"
+      data-v-5085b42e=""
       id="content-5"
     >
       anchor-content-5
@@ -206,12 +205,14 @@ exports[`Anchor Anchor containerVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Anchor Anchor cursorVue demo works fine 1`] = `
+exports[`Anchor > Anchor cursorVue demo works fine 1`] = `
 <div
   class="anchor-demo"
+  data-v-0c89850e=""
 >
   <div
     class="t-anchor t-size-m"
+    data-v-0c89850e=""
   >
     <div
       class="t-anchor__line"
@@ -221,12 +222,13 @@ exports[`Anchor Anchor cursorVue demo works fine 1`] = `
       >
         <div
           class="test-cursor"
+          data-v-0c89850e=""
         />
       </div>
     </div>
-     
     <div
       class="t-anchor__item"
+      data-v-0c89850e=""
     >
       <a
         class="t-anchor__item-link"
@@ -237,9 +239,9 @@ exports[`Anchor Anchor cursorVue demo works fine 1`] = `
         基础锚点
       </a>
     </div>
-     
     <div
       class="t-anchor__item"
+      data-v-0c89850e=""
     >
       <a
         class="t-anchor__item-link"
@@ -250,9 +252,9 @@ exports[`Anchor Anchor cursorVue demo works fine 1`] = `
         多级锚点
       </a>
     </div>
-     
     <div
       class="t-anchor__item"
+      data-v-0c89850e=""
     >
       <a
         class="t-anchor__item-link"
@@ -263,9 +265,9 @@ exports[`Anchor Anchor cursorVue demo works fine 1`] = `
         指定容器锚点
       </a>
     </div>
-     
     <div
       class="t-anchor__item"
+      data-v-0c89850e=""
     >
       <a
         class="t-anchor__item-link"
@@ -276,9 +278,9 @@ exports[`Anchor Anchor cursorVue demo works fine 1`] = `
         特定交互锚点
       </a>
     </div>
-     
     <div
       class="t-anchor__item"
+      data-v-0c89850e=""
     >
       <a
         class="t-anchor__item-link"
@@ -293,9 +295,10 @@ exports[`Anchor Anchor cursorVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Anchor Anchor largeVue demo works fine 1`] = `
+exports[`Anchor > Anchor largeVue demo works fine 1`] = `
 <div
   class="t-anchor t-size-l"
+  data-v-4dca4868=""
 >
   <div
     class="t-anchor__line"
@@ -310,6 +313,7 @@ exports[`Anchor Anchor largeVue demo works fine 1`] = `
   </div>
   <div
     class="t-anchor__item"
+    data-v-4dca4868=""
   >
     <a
       class="t-anchor__item-link"
@@ -320,9 +324,9 @@ exports[`Anchor Anchor largeVue demo works fine 1`] = `
       基础锚点
     </a>
   </div>
-   
   <div
     class="t-anchor__item"
+    data-v-4dca4868=""
   >
     <a
       class="t-anchor__item-link"
@@ -333,9 +337,9 @@ exports[`Anchor Anchor largeVue demo works fine 1`] = `
       多级锚点
     </a>
   </div>
-   
   <div
     class="t-anchor__item"
+    data-v-4dca4868=""
   >
     <a
       class="t-anchor__item-link"
@@ -346,9 +350,9 @@ exports[`Anchor Anchor largeVue demo works fine 1`] = `
       指定容器锚点
     </a>
   </div>
-   
   <div
     class="t-anchor__item"
+    data-v-4dca4868=""
   >
     <a
       class="t-anchor__item-link"
@@ -359,9 +363,9 @@ exports[`Anchor Anchor largeVue demo works fine 1`] = `
       特定交互锚点
     </a>
   </div>
-   
   <div
     class="t-anchor__item"
+    data-v-4dca4868=""
   >
     <a
       class="t-anchor__item-link"
@@ -375,7 +379,7 @@ exports[`Anchor Anchor largeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Anchor Anchor multipleVue demo works fine 1`] = `
+exports[`Anchor > Anchor multipleVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -409,7 +413,6 @@ exports[`Anchor Anchor multipleVue demo works fine 1`] = `
           基础锚点
         </a>
       </div>
-       
       <div
         class="t-anchor__item"
       >
@@ -422,7 +425,6 @@ exports[`Anchor Anchor multipleVue demo works fine 1`] = `
           多级锚点
         </a>
       </div>
-       
       <div
         class="t-anchor__item"
       >
@@ -435,7 +437,6 @@ exports[`Anchor Anchor multipleVue demo works fine 1`] = `
           指定容器锚点
         </a>
       </div>
-       
       <div
         class="t-anchor__item"
       >
@@ -448,7 +449,6 @@ exports[`Anchor Anchor multipleVue demo works fine 1`] = `
           特定交互锚点
         </a>
       </div>
-       
       <div
         class="t-anchor__item"
       >
@@ -466,12 +466,14 @@ exports[`Anchor Anchor multipleVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Anchor Anchor smallVue demo works fine 1`] = `
+exports[`Anchor > Anchor smallVue demo works fine 1`] = `
 <div
   class="anchor-demo"
+  data-v-804f4798=""
 >
   <div
     class="t-anchor t-size-s"
+    data-v-804f4798=""
   >
     <div
       class="t-anchor__line"
@@ -486,6 +488,7 @@ exports[`Anchor Anchor smallVue demo works fine 1`] = `
     </div>
     <div
       class="t-anchor__item"
+      data-v-804f4798=""
     >
       <a
         class="t-anchor__item-link"
@@ -496,9 +499,9 @@ exports[`Anchor Anchor smallVue demo works fine 1`] = `
         基础锚点
       </a>
     </div>
-     
     <div
       class="t-anchor__item"
+      data-v-804f4798=""
     >
       <a
         class="t-anchor__item-link"
@@ -509,9 +512,9 @@ exports[`Anchor Anchor smallVue demo works fine 1`] = `
         多级锚点
       </a>
     </div>
-     
     <div
       class="t-anchor__item"
+      data-v-804f4798=""
     >
       <a
         class="t-anchor__item-link"
@@ -522,9 +525,9 @@ exports[`Anchor Anchor smallVue demo works fine 1`] = `
         指定容器锚点
       </a>
     </div>
-     
     <div
       class="t-anchor__item"
+      data-v-804f4798=""
     >
       <a
         class="t-anchor__item-link"
@@ -535,9 +538,9 @@ exports[`Anchor Anchor smallVue demo works fine 1`] = `
         特定交互锚点
       </a>
     </div>
-     
     <div
       class="t-anchor__item"
+      data-v-804f4798=""
     >
       <a
         class="t-anchor__item-link"
@@ -552,7 +555,7 @@ exports[`Anchor Anchor smallVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Anchor Anchor targetVue demo works fine 1`] = `
+exports[`Anchor > Anchor targetVue demo works fine 1`] = `
 <div
   class="anchor-demo"
 >
@@ -580,7 +583,6 @@ exports[`Anchor Anchor targetVue demo works fine 1`] = `
       />
     </svg>
   </div>
-   
   <div
     class="t-anchor__target"
     id="#anchor-target-2"
@@ -605,7 +607,6 @@ exports[`Anchor Anchor targetVue demo works fine 1`] = `
       />
     </svg>
   </div>
-   
   <div
     class="t-anchor__target"
     id="#anchor-target-3"
@@ -630,7 +631,6 @@ exports[`Anchor Anchor targetVue demo works fine 1`] = `
       />
     </svg>
   </div>
-   
   <div
     class="t-anchor__target"
     id="#anchor-target-4"
@@ -655,7 +655,6 @@ exports[`Anchor Anchor targetVue demo works fine 1`] = `
       />
     </svg>
   </div>
-   
   <div
     class="t-anchor__target"
     id="#anchor-target-5"
@@ -680,7 +679,6 @@ exports[`Anchor Anchor targetVue demo works fine 1`] = `
       />
     </svg>
   </div>
-   
   <div
     class="t-anchor__target"
     id="#anchor-target-6"
@@ -705,7 +703,6 @@ exports[`Anchor Anchor targetVue demo works fine 1`] = `
       />
     </svg>
   </div>
-   
   <div
     class="t-anchor__target"
     id="#anchor-target-7"

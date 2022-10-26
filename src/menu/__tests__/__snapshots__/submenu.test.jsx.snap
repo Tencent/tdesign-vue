@@ -1,0 +1,128 @@
+// Vitest Snapshot v1
+
+exports[`Submenu > props > :disabled 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Submenu > props > :name 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Submenu > slot > <default> 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:beforeMount": [
+      [],
+    ],
+    "hook:created": [
+      [],
+    ],
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:created",
+    },
+    {
+      "args": [],
+      "name": "hook:beforeMount",
+    },
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Submenu > slot > <icon> 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:beforeMount": [
+      [],
+    ],
+    "hook:created": [
+      [],
+    ],
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:created",
+    },
+    {
+      "args": [],
+      "name": "hook:beforeMount",
+    },
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Submenu > slot > <title> 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:beforeMount": [
+      [],
+    ],
+    "hook:created": [
+      [],
+    ],
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:created",
+    },
+    {
+      "args": [],
+      "name": "hook:beforeMount",
+    },
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;

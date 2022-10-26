@@ -1,8 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`ConfigProvider ConfigProvider calendarVue demo works fine 1`] = `
+exports[`ConfigProvider > ConfigProvider calendarVue demo works fine 1`] = `
 <div
   class="t-calendar t-calendar--full"
+  data-v-2441a166=""
   style="padding: 16px;"
 >
   <div
@@ -33,7 +34,7 @@ exports[`ConfigProvider ConfigProvider calendarVue demo works fine 1`] = `
               <input
                 autocomplete=""
                 class="t-input__inner"
-                placeholder="请选择"
+                placeholder="please select"
                 readonly="readonly"
                 type="text"
                 unselectable="on"
@@ -85,7 +86,7 @@ exports[`ConfigProvider ConfigProvider calendarVue demo works fine 1`] = `
               <input
                 autocomplete=""
                 class="t-input__inner"
-                placeholder="请选择"
+                placeholder="please select"
                 readonly="readonly"
                 type="text"
                 unselectable="on"
@@ -775,12 +776,14 @@ exports[`ConfigProvider ConfigProvider calendarVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`ConfigProvider ConfigProvider datePickerVue demo works fine 1`] = `
+exports[`ConfigProvider > ConfigProvider datePickerVue demo works fine 1`] = `
 <div
   class="tdesign-demo-item__locale-provider-date-picker"
+  data-v-a34a89d6=""
 >
   <div
     class="t-date-picker"
+    data-v-a34a89d6=""
   >
     <div
       class="t-input__wrap t-select-input--empty"
@@ -819,12 +822,15 @@ exports[`ConfigProvider ConfigProvider datePickerVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
-  <br />
-  <br />
-   
+  <br
+    data-v-a34a89d6=""
+  />
+  <br
+    data-v-a34a89d6=""
+  />
   <div
     class="t-date-picker"
+    data-v-a34a89d6=""
     range=""
   >
     <div
@@ -864,12 +870,15 @@ exports[`ConfigProvider ConfigProvider datePickerVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
-  <br />
-  <br />
-   
+  <br
+    data-v-a34a89d6=""
+  />
+  <br
+    data-v-a34a89d6=""
+  />
   <div
     class="t-date-picker"
+    data-v-a34a89d6=""
   >
     <div
       class="t-input__wrap t-select-input--empty"
@@ -908,12 +917,15 @@ exports[`ConfigProvider ConfigProvider datePickerVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
-  <br />
-  <br />
-   
+  <br
+    data-v-a34a89d6=""
+  />
+  <br
+    data-v-a34a89d6=""
+  />
   <div
     class="t-date-picker"
+    data-v-a34a89d6=""
     range=""
   >
     <div
@@ -953,12 +965,15 @@ exports[`ConfigProvider ConfigProvider datePickerVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
-  <br />
-  <br />
-   
+  <br
+    data-v-a34a89d6=""
+  />
+  <br
+    data-v-a34a89d6=""
+  />
   <div
     class="t-date-picker"
+    data-v-a34a89d6=""
   >
     <div
       class="t-input__wrap t-select-input--empty"
@@ -997,12 +1012,15 @@ exports[`ConfigProvider ConfigProvider datePickerVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
-  <br />
-  <br />
-   
+  <br
+    data-v-a34a89d6=""
+  />
+  <br
+    data-v-a34a89d6=""
+  />
   <div
     class="t-date-picker"
+    data-v-a34a89d6=""
     range=""
   >
     <div
@@ -1042,17 +1060,22 @@ exports[`ConfigProvider ConfigProvider datePickerVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
-  <br />
-  <br />
+  <br
+    data-v-a34a89d6=""
+  />
+  <br
+    data-v-a34a89d6=""
+  />
 </div>
 `;
 
-exports[`ConfigProvider ConfigProvider dialogVue demo works fine 1`] = `
+exports[`ConfigProvider > ConfigProvider dialogVue demo works fine 1`] = `
 <div
+  data-v-6be7f270=""
   style="width: 480px; padding: 16px;"
 >
   <transition-stub
+    data-v-6be7f270=""
     duration="300"
     name="t-dialog-zoom__vue"
   >
@@ -1126,10 +1149,11 @@ exports[`ConfigProvider ConfigProvider dialogVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-   
-  <br />
-   
+  <br
+    data-v-6be7f270=""
+  />
   <transition-stub
+    data-v-6be7f270=""
     duration="300"
     name="t-dialog-zoom__vue"
   >
@@ -1216,10 +1240,11 @@ exports[`ConfigProvider ConfigProvider dialogVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-   
-  <br />
-   
+  <br
+    data-v-6be7f270=""
+  />
   <transition-stub
+    data-v-6be7f270=""
     duration="300"
     name="t-dialog-zoom__vue"
   >
@@ -1306,10 +1331,11 @@ exports[`ConfigProvider ConfigProvider dialogVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-   
-  <br />
-   
+  <br
+    data-v-6be7f270=""
+  />
   <transition-stub
+    data-v-6be7f270=""
     duration="300"
     name="t-dialog-zoom__vue"
   >
@@ -1396,10 +1422,11 @@ exports[`ConfigProvider ConfigProvider dialogVue demo works fine 1`] = `
       </div>
     </div>
   </transition-stub>
-   
-  <br />
-   
+  <br
+    data-v-6be7f270=""
+  />
   <transition-stub
+    data-v-6be7f270=""
     duration="300"
     name="t-dialog-zoom__vue"
   >
@@ -1489,7 +1516,7 @@ exports[`ConfigProvider ConfigProvider dialogVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`ConfigProvider ConfigProvider globalVue demo works fine 1`] = `
+exports[`ConfigProvider > ConfigProvider globalVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1548,7 +1575,7 @@ exports[`ConfigProvider ConfigProvider globalVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`ConfigProvider ConfigProvider inputVue demo works fine 1`] = `
+exports[`ConfigProvider > ConfigProvider inputVue demo works fine 1`] = `
 <div
   class="t-input__wrap"
 >
@@ -1588,15 +1615,18 @@ exports[`ConfigProvider ConfigProvider inputVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
+exports[`ConfigProvider > ConfigProvider othersVue demo works fine 1`] = `
 <div
   class="tdesign-demo-item--locale-provider-base"
+  data-v-96b659ea=""
 >
   <form
     class="t-form"
+    data-v-96b659ea=""
   >
     <div
       class="t-form__item t-form-item__username"
+      data-v-96b659ea=""
     >
       <div
         class="t-form__label t-form__label--right"
@@ -1617,6 +1647,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
         >
           <div
             class="t-input__wrap"
+            data-v-96b659ea=""
             style="width: 400px;"
           >
             <div
@@ -1634,9 +1665,9 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
     <div
       class="t-form__item t-form-item__password"
+      data-v-96b659ea=""
     >
       <div
         class="t-form__label t-form__label--required t-form__label--right"
@@ -1657,6 +1688,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
         >
           <div
             class="t-input__wrap"
+            data-v-96b659ea=""
             style="width: 400px;"
           >
             <div
@@ -1697,12 +1729,15 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       </div>
     </div>
   </form>
-   
-  <br />
-  <br />
-   
+  <br
+    data-v-96b659ea=""
+  />
+  <br
+    data-v-96b659ea=""
+  />
   <div
     class="t-transfer t-transfer__search"
+    data-v-96b659ea=""
   >
     <div
       class="t-transfer__list t-transfer__list-source"
@@ -2312,12 +2347,15 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       />
     </div>
   </div>
-   
-  <br />
-  <br />
-   
+  <br
+    data-v-96b659ea=""
+  />
+  <br
+    data-v-96b659ea=""
+  />
   <div
     class="t-select__wrap"
+    data-v-96b659ea=""
     style="width: 400px;"
   >
     <div
@@ -2359,12 +2397,15 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
-  <br />
-  <br />
-   
+  <br
+    data-v-96b659ea=""
+  />
+  <br
+    data-v-96b659ea=""
+  />
   <div
     class="t-select__wrap"
+    data-v-96b659ea=""
     style="width: 400px;"
   >
     <div
@@ -2406,12 +2447,15 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
-  <br />
-  <br />
-   
+  <br
+    data-v-96b659ea=""
+  />
+  <br
+    data-v-96b659ea=""
+  />
   <div
     class="t-select__wrap"
+    data-v-96b659ea=""
     style="width: 400px;"
   >
     <div
@@ -2462,12 +2506,15 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
-  <br />
-  <br />
-   
+  <br
+    data-v-96b659ea=""
+  />
+  <br
+    data-v-96b659ea=""
+  />
   <div
     class="t-input__wrap t-select-input--empty t-cascader"
+    data-v-96b659ea=""
     style="width: 400px;"
   >
     <div
@@ -2505,12 +2552,15 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       </span>
     </div>
   </div>
-   
-  <br />
-  <br />
-   
+  <br
+    data-v-96b659ea=""
+  />
+  <br
+    data-v-96b659ea=""
+  />
   <div
     class="t-input__wrap t-select-input--empty t-cascader"
+    data-v-96b659ea=""
     style="width: 400px;"
   >
     <div
@@ -2548,12 +2598,15 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       </span>
     </div>
   </div>
-   
-  <br />
-  <br />
-   
+  <br
+    data-v-96b659ea=""
+  />
+  <br
+    data-v-96b659ea=""
+  />
   <div
     class="t-select__wrap"
+    data-v-96b659ea=""
     style="width: 400px;"
   >
     <div
@@ -2648,12 +2701,15 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
-  <br />
-  <br />
-   
+  <br
+    data-v-96b659ea=""
+  />
+  <br
+    data-v-96b659ea=""
+  />
   <div
     class="t-select__wrap"
+    data-v-96b659ea=""
     style="width: 400px;"
   >
     <div
@@ -2731,12 +2787,15 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
-  <br />
-  <br />
-   
+  <br
+    data-v-96b659ea=""
+  />
+  <br
+    data-v-96b659ea=""
+  />
   <div
     class="t-select__wrap"
+    data-v-96b659ea=""
     style="width: 400px;"
   >
     <div
@@ -2831,12 +2890,15 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
-  <br />
-  <br />
-   
+  <br
+    data-v-96b659ea=""
+  />
+  <br
+    data-v-96b659ea=""
+  />
   <div
     class="t-time-picker"
+    data-v-96b659ea=""
   >
     <div
       class="t-input__wrap t-select-input--empty"
@@ -2879,13 +2941,18 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
-  <br />
-  <br />
-  <br />
-   
+  <br
+    data-v-96b659ea=""
+  />
+  <br
+    data-v-96b659ea=""
+  />
+  <br
+    data-v-96b659ea=""
+  />
   <span
     class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--close"
+    data-v-96b659ea=""
   >
     <span>
       Feature Tag
@@ -2909,9 +2976,9 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       />
     </svg>
   </span>
-   
   <span
     class="t-tag t-tag--success t-size-m t-tag--dark t-tag--close"
+    data-v-96b659ea=""
   >
     <span>
       Feature Tag
@@ -2935,9 +3002,9 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       />
     </svg>
   </span>
-   
   <span
     class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--close"
+    data-v-96b659ea=""
   >
     <span>
       Feature Tag
@@ -2961,9 +3028,9 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       />
     </svg>
   </span>
-   
   <span
     class="t-tag t-tag--danger t-size-m t-tag--dark t-tag--close"
+    data-v-96b659ea=""
   >
     <span>
       Feature Tag
@@ -2987,12 +3054,15 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       />
     </svg>
   </span>
-   
-  <br />
-  <br />
-   
+  <br
+    data-v-96b659ea=""
+  />
+  <br
+    data-v-96b659ea=""
+  />
   <div
     class="t-tree t-tree--transition"
+    data-v-96b659ea=""
   >
     <div
       class="t-tree__empty"
@@ -3000,12 +3070,15 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       Tree Empty Data
     </div>
   </div>
-   
-  <br />
-  <br />
-   
+  <br
+    data-v-96b659ea=""
+  />
+  <br
+    data-v-96b659ea=""
+  />
   <div
     class="t-tree t-tree--transition"
+    data-v-96b659ea=""
   >
     <transition-group-stub
       class="t-tree__list"
@@ -3087,17 +3160,22 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       </div>
     </transition-group-stub>
   </div>
-   
-  <br />
-  <br />
-   
-  <br />
-   
+  <br
+    data-v-96b659ea=""
+  />
+  <br
+    data-v-96b659ea=""
+  />
+  <br
+    data-v-96b659ea=""
+  />
   <div
     class="t-steps t-steps--vertical t-steps--positive t-steps--default-anchor t-steps--line-separator"
+    data-v-96b659ea=""
   >
     <div
       class="t-steps-item t-steps-item--finish"
+      data-v-96b659ea=""
     >
       <div
         class="t-steps-item__inner t-steps-item--clickable"
@@ -3144,6 +3222,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
     </div>
     <div
       class="t-steps-item t-steps-item--finish"
+      data-v-96b659ea=""
     >
       <div
         class="t-steps-item__inner t-steps-item--clickable"
@@ -3190,6 +3269,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
     </div>
     <div
       class="t-steps-item t-steps-item--error"
+      data-v-96b659ea=""
     >
       <div
         class="t-steps-item__inner t-steps-item--clickable"
@@ -3236,6 +3316,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
     </div>
     <div
       class="t-steps-item t-steps-item--default"
+      data-v-96b659ea=""
     >
       <div
         class="t-steps-item__inner t-steps-item--clickable"
@@ -3269,15 +3350,19 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
-  <br />
-  <br />
+  <br
+    data-v-96b659ea=""
+  />
+  <br
+    data-v-96b659ea=""
+  />
 </div>
 `;
 
-exports[`ConfigProvider ConfigProvider paginationVue demo works fine 1`] = `
+exports[`ConfigProvider > ConfigProvider paginationVue demo works fine 1`] = `
 <div
   class="t-pagination t-size-m"
+  data-v-4ae7ebc2=""
   style="padding: 16px;"
 >
   <div
@@ -3300,7 +3385,7 @@ exports[`ConfigProvider ConfigProvider paginationVue demo works fine 1`] = `
         <input
           autocomplete=""
           class="t-input__inner"
-          placeholder="请选择"
+          placeholder="please select"
           readonly="readonly"
           type="text"
           unselectable="on"
@@ -3427,13 +3512,15 @@ exports[`ConfigProvider ConfigProvider paginationVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`ConfigProvider ConfigProvider popconfirmVue demo works fine 1`] = `
+exports[`ConfigProvider > ConfigProvider popconfirmVue demo works fine 1`] = `
 <div
   class="tdesign-demo-item__config-provider-base"
+  data-v-1f100e12=""
   style="padding: 16px;"
 >
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    data-v-1f100e12=""
     type="button"
   >
     <span
@@ -3442,9 +3529,9 @@ exports[`ConfigProvider ConfigProvider popconfirmVue demo works fine 1`] = `
       Default
     </span>
   </button>
-   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-warning"
+    data-v-1f100e12=""
     type="button"
   >
     <span
@@ -3453,9 +3540,9 @@ exports[`ConfigProvider ConfigProvider popconfirmVue demo works fine 1`] = `
       Warning
     </span>
   </button>
-   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-danger"
+    data-v-1f100e12=""
     type="button"
   >
     <span
@@ -3464,9 +3551,9 @@ exports[`ConfigProvider ConfigProvider popconfirmVue demo works fine 1`] = `
       Danger
     </span>
   </button>
-   
   <button
     class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+    data-v-1f100e12=""
     type="button"
   >
     <span
@@ -3475,9 +3562,9 @@ exports[`ConfigProvider ConfigProvider popconfirmVue demo works fine 1`] = `
       Open Drawer
     </span>
   </button>
-   
   <div
     class="t-drawer t-drawer--right"
+    data-v-1f100e12=""
     tabindex="0"
   >
     <div
@@ -3512,7 +3599,9 @@ exports[`ConfigProvider ConfigProvider popconfirmVue demo works fine 1`] = `
       <div
         class="t-drawer__body"
       >
-        <p>
+        <p
+          data-v-1f100e12=""
+        >
           This is a controlled drawer
         </p>
       </div>
@@ -3549,12 +3638,14 @@ exports[`ConfigProvider ConfigProvider popconfirmVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
+exports[`ConfigProvider > ConfigProvider tableVue demo works fine 1`] = `
 <div
+  data-v-7dcbc254=""
   style="padding: 16px;"
 >
   <div
     class="t-table t-table--bordered"
+    data-v-7dcbc254=""
     style="position: relative;"
   >
     <div
@@ -3789,12 +3880,15 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
       style="display: none; height: 10px; left: 10px; bottom: 0px;"
     />
   </div>
-   
-  <br />
-  <br />
-   
+  <br
+    data-v-7dcbc254=""
+  />
+  <br
+    data-v-7dcbc254=""
+  />
   <div
     class="t-table"
+    data-v-7dcbc254=""
     style="position: relative;"
   >
     <div
@@ -4147,8 +4241,11 @@ exports[`ConfigProvider ConfigProvider tableVue demo works fine 1`] = `
       style="display: none; height: 10px; left: 10px; bottom: 0px;"
     />
   </div>
-   
-  <br />
-  <br />
+  <br
+    data-v-7dcbc254=""
+  />
+  <br
+    data-v-7dcbc254=""
+  />
 </div>
 `;

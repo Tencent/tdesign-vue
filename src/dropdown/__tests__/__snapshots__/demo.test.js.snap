@@ -1,11 +1,13 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Dropdown Dropdown baseVue demo works fine 1`] = `
+exports[`Dropdown > Dropdown baseVue demo works fine 1`] = `
 <div
   class="tdesign-demo-dropdown"
+  data-v-31515850=""
 >
   <button
     class="t-button t-size-m t-button--variant-text t-button--theme-default"
+    data-v-31515850=""
     type="button"
   >
     <span
@@ -13,12 +15,12 @@ exports[`Dropdown Dropdown baseVue demo works fine 1`] = `
     >
       <span
         class="tdesign-demo-dropdown__text"
+        data-v-31515850=""
       >
-        
-        更多
-        
+         更多 
         <svg
           class="t-icon t-icon-chevron-down"
+          data-v-31515850=""
           fill="none"
           height="1em"
           viewBox="0 0 16 16"
@@ -26,6 +28,7 @@ exports[`Dropdown Dropdown baseVue demo works fine 1`] = `
         >
           <path
             d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+            data-v-31515850=""
             fill="currentColor"
             fill-opacity="0.9"
           />
@@ -36,10 +39,13 @@ exports[`Dropdown Dropdown baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Dropdown Dropdown buttonVue demo works fine 1`] = `
-<div>
+exports[`Dropdown > Dropdown buttonVue demo works fine 1`] = `
+<div
+  data-v-b123bb1e=""
+>
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square"
+    data-v-b123bb1e=""
     type="button"
   >
     <span
@@ -47,6 +53,7 @@ exports[`Dropdown Dropdown buttonVue demo works fine 1`] = `
     >
       <svg
         class="t-icon t-icon-ellipsis"
+        data-v-b123bb1e=""
       >
         <use
           href="#t-icon-ellipsis"
@@ -57,10 +64,13 @@ exports[`Dropdown Dropdown buttonVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Dropdown Dropdown customVue demo works fine 1`] = `
-<div>
+exports[`Dropdown > Dropdown customVue demo works fine 1`] = `
+<div
+  data-v-33c84f30=""
+>
   <button
     class="t-button t-size-m t-button--variant-text t-button--theme-default"
+    data-v-33c84f30=""
     type="button"
   >
     <span
@@ -72,12 +82,14 @@ exports[`Dropdown Dropdown customVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Dropdown Dropdown disabledVue demo works fine 1`] = `
+exports[`Dropdown > Dropdown disabledVue demo works fine 1`] = `
 <div
   class="tdesign-demo-dropdown"
+  data-v-503db2fb=""
 >
   <button
     class="t-button t-size-m t-button--variant-text t-button--theme-default"
+    data-v-503db2fb=""
     type="button"
   >
     <span
@@ -85,12 +97,12 @@ exports[`Dropdown Dropdown disabledVue demo works fine 1`] = `
     >
       <span
         class="tdesign-demo-dropdown__text"
+        data-v-503db2fb=""
       >
-        
-        下拉菜单
-        
+         下拉菜单 
         <svg
           class="t-icon t-icon-chevron-down"
+          data-v-503db2fb=""
           fill="none"
           height="1em"
           viewBox="0 0 16 16"
@@ -98,6 +110,7 @@ exports[`Dropdown Dropdown disabledVue demo works fine 1`] = `
         >
           <path
             d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+            data-v-503db2fb=""
             fill="currentColor"
             fill-opacity="0.9"
           />
@@ -108,7 +121,7 @@ exports[`Dropdown Dropdown disabledVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Dropdown Dropdown eventVue demo works fine 1`] = `
+exports[`Dropdown > Dropdown eventVue demo works fine 1`] = `
 <div>
   <button
     class="t-button t-size-m t-button--variant-text t-button--theme-default"
@@ -123,27 +136,32 @@ exports[`Dropdown Dropdown eventVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Dropdown Dropdown longVue demo works fine 1`] = `
-<div>
-  <button
-    class="t-button t-size-m t-button--variant-text t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      下拉菜单
-    </span>
-  </button>
-</div>
-`;
-
-exports[`Dropdown Dropdown multipleVue demo works fine 1`] = `
+exports[`Dropdown > Dropdown longVue demo works fine 1`] = `
 <div
-  class="tdesign-demo-dropdown"
+  data-v-1c484a7b=""
 >
   <button
     class="t-button t-size-m t-button--variant-text t-button--theme-default"
+    data-v-1c484a7b=""
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      下拉菜单
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Dropdown > Dropdown multipleVue demo works fine 1`] = `
+<div
+  class="tdesign-demo-dropdown"
+  data-v-cbef96e2=""
+>
+  <button
+    class="t-button t-size-m t-button--variant-text t-button--theme-default"
+    data-v-cbef96e2=""
     type="button"
   >
     <span
@@ -151,12 +169,12 @@ exports[`Dropdown Dropdown multipleVue demo works fine 1`] = `
     >
       <span
         class="tdesign-demo-dropdown__text"
+        data-v-cbef96e2=""
       >
-        
-        下拉菜单
-        
+         下拉菜单 
         <svg
           class="t-icon t-icon-chevron-down"
+          data-v-cbef96e2=""
           fill="none"
           height="1em"
           viewBox="0 0 16 16"
@@ -164,6 +182,7 @@ exports[`Dropdown Dropdown multipleVue demo works fine 1`] = `
         >
           <path
             d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+            data-v-cbef96e2=""
             fill="currentColor"
             fill-opacity="0.9"
           />
@@ -174,7 +193,7 @@ exports[`Dropdown Dropdown multipleVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Dropdown Dropdown slotVue demo works fine 1`] = `
+exports[`Dropdown > Dropdown slotVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -207,7 +226,6 @@ exports[`Dropdown Dropdown slotVue demo works fine 1`] = `
               下拉菜单
             </span>
           </button>
-           
           <div
             class="t-dropdown__menu t-dropdown__menu--right"
             style="max-height: 300px;"
@@ -249,10 +267,13 @@ exports[`Dropdown Dropdown slotVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Dropdown Dropdown splitVue demo works fine 1`] = `
-<div>
+exports[`Dropdown > Dropdown splitVue demo works fine 1`] = `
+<div
+  data-v-7fd82e2b=""
+>
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-7fd82e2b=""
     type="button"
   >
     <span

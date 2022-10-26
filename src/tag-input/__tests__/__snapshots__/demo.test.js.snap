@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`TagInput TagInput autoWidthVue demo works fine 1`] = `
+exports[`TagInput > TagInput autoWidthVue demo works fine 1`] = `
 <div
   class="t-input__wrap t-tag-input t-tag-input--break-line"
 >
@@ -65,7 +65,7 @@ exports[`TagInput TagInput autoWidthVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TagInput TagInput baseVue demo works fine 1`] = `
+exports[`TagInput > TagInput baseVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px; width: 80%;"
@@ -272,7 +272,7 @@ exports[`TagInput TagInput baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TagInput TagInput collapsedVue demo works fine 1`] = `
+exports[`TagInput > TagInput collapsedVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px; width: 80%;"
@@ -490,7 +490,7 @@ exports[`TagInput TagInput collapsedVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TagInput TagInput customTagVue demo works fine 1`] = `
+exports[`TagInput > TagInput customTagVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -515,7 +515,6 @@ exports[`TagInput TagInput customTagVue demo works fine 1`] = `
                 src="https://tdesign.gtimg.com/site/avatar.jpg"
                 style="max-width: 20px; max-height: 20px; border-radius: 50%; vertical-align: text-top;"
               />
-               
               <span>
                   StudentA
               </span>
@@ -542,7 +541,6 @@ exports[`TagInput TagInput customTagVue demo works fine 1`] = `
                 src="https://tdesign.gtimg.com/site/avatar.jpg"
                 style="max-width: 20px; max-height: 20px; border-radius: 50%; vertical-align: text-top;"
               />
-               
               <span>
                   StudentB
               </span>
@@ -600,7 +598,6 @@ exports[`TagInput TagInput customTagVue demo works fine 1`] = `
                 src="https://tdesign.gtimg.com/site/avatar.jpg"
                 style="max-width: 20px; max-height: 20px; border-radius: 50%; vertical-align: text-top;"
               />
-               
               <span>
                   StudentA
               </span>
@@ -628,7 +625,6 @@ exports[`TagInput TagInput customTagVue demo works fine 1`] = `
                 src="https://tdesign.gtimg.com/site/avatar.jpg"
                 style="max-width: 20px; max-height: 20px; border-radius: 50%; vertical-align: text-top;"
               />
-               
               <span>
                   StudentB
               </span>
@@ -656,7 +652,6 @@ exports[`TagInput TagInput customTagVue demo works fine 1`] = `
                 src="https://tdesign.gtimg.com/site/avatar.jpg"
                 style="max-width: 20px; max-height: 20px; border-radius: 50%; vertical-align: text-top;"
               />
-               
               <span>
                   StudentC
               </span>
@@ -689,7 +684,7 @@ exports[`TagInput TagInput customTagVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TagInput TagInput draggableVue demo works fine 1`] = `
+exports[`TagInput > TagInput draggableVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -923,7 +918,7 @@ exports[`TagInput TagInput draggableVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TagInput TagInput excessVue demo works fine 1`] = `
+exports[`TagInput > TagInput excessVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px; width: 80%;"
@@ -1067,7 +1062,7 @@ exports[`TagInput TagInput excessVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TagInput TagInput maxVue demo works fine 1`] = `
+exports[`TagInput > TagInput maxVue demo works fine 1`] = `
 <div
   class="t-input__wrap t-tag-input t-tag-input--break-line"
   style="width: 80%;"
@@ -1089,7 +1084,7 @@ exports[`TagInput TagInput maxVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TagInput TagInput sizeVue demo works fine 1`] = `
+exports[`TagInput > TagInput sizeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px; width: 80%;"
@@ -1286,7 +1281,7 @@ exports[`TagInput TagInput sizeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TagInput TagInput statusVue demo works fine 1`] = `
+exports[`TagInput > TagInput statusVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1300,7 +1295,6 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
       <label>
         禁用状态：
       </label>
-       
       <div
         class="t-input__wrap t-tag-input t-tag-input--break-line"
       >
@@ -1353,7 +1347,6 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
       <label>
         只读状态：
       </label>
-       
       <div
         class="t-input__wrap t-tag-input t-tag-input--break-line"
       >
@@ -1410,7 +1403,6 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
       <label>
         成功状态：
       </label>
-       
       <div
         class="t-input__wrap t-tag-input t-tag-input--break-line"
       >
@@ -1506,7 +1498,6 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
       <label>
         告警状态：
       </label>
-       
       <div
         class="t-input__wrap t-tag-input t-tag-input--break-line"
       >
@@ -1602,7 +1593,6 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
       <label>
         错误状态：
       </label>
-       
       <div
         class="t-input__wrap t-tag-input t-tag-input--break-line"
       >
@@ -1692,7 +1682,7 @@ exports[`TagInput TagInput statusVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TagInput TagInput themeVue demo works fine 1`] = `
+exports[`TagInput > TagInput themeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"

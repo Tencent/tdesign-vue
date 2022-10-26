@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Grid Grid baseVue demo works fine 1`] = `
+exports[`Grid > Grid baseVue demo works fine 1`] = `
 <div
   class="tdesign-demo-item--grid"
 >
@@ -261,7 +261,7 @@ exports[`Grid Grid baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Grid Grid flexVue demo works fine 1`] = `
+exports[`Grid > Grid flexVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -281,7 +281,6 @@ exports[`Grid Grid flexVue demo works fine 1`] = `
           2 / 5
         </div>
       </div>
-       
       <div
         class="t-col t-col-12"
         style="flex: 3 3 0px; padding-left: 0px; padding-right: 0px;"
@@ -307,7 +306,6 @@ exports[`Grid Grid flexVue demo works fine 1`] = `
           100px
         </div>
       </div>
-       
       <div
         class="t-col t-col-12"
         style="flex-basis: auto; padding-left: 0px; padding-right: 0px;"
@@ -333,7 +331,6 @@ exports[`Grid Grid flexVue demo works fine 1`] = `
           1 1 200px
         </div>
       </div>
-       
       <div
         class="t-col t-col-12"
         style="flex: 0 1 300px; padding-left: 0px; padding-right: 0px;"
@@ -361,7 +358,6 @@ exports[`Grid Grid flexVue demo works fine 1`] = `
           none
         </div>
       </div>
-       
       <div
         class="t-col t-col-12"
         style="flex-basis: auto; padding-left: 0px; padding-right: 0px;"
@@ -375,7 +371,7 @@ exports[`Grid Grid flexVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Grid Grid gutterVue demo works fine 1`] = `
+exports[`Grid > Grid gutterVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -402,7 +398,6 @@ exports[`Grid Grid gutterVue demo works fine 1`] = `
           col-3
         </div>
       </div>
-       
       <div
         class="t-col t-col-3"
         style="padding-left: 8px; padding-right: 8px;"
@@ -411,7 +406,6 @@ exports[`Grid Grid gutterVue demo works fine 1`] = `
           col-3
         </div>
       </div>
-       
       <div
         class="t-col t-col-3"
         style="padding-left: 8px; padding-right: 8px;"
@@ -420,7 +414,6 @@ exports[`Grid Grid gutterVue demo works fine 1`] = `
           col-3
         </div>
       </div>
-       
       <div
         class="t-col t-col-3"
         style="padding-left: 8px; padding-right: 8px;"
@@ -453,7 +446,6 @@ exports[`Grid Grid gutterVue demo works fine 1`] = `
           col-3
         </div>
       </div>
-       
       <div
         class="t-col t-col-3"
         style="padding-left: 12px; padding-right: 12px;"
@@ -462,7 +454,6 @@ exports[`Grid Grid gutterVue demo works fine 1`] = `
           col-3
         </div>
       </div>
-       
       <div
         class="t-col t-col-3"
         style="padding-left: 12px; padding-right: 12px;"
@@ -471,7 +462,6 @@ exports[`Grid Grid gutterVue demo works fine 1`] = `
           col-3
         </div>
       </div>
-       
       <div
         class="t-col t-col-3"
         style="padding-left: 12px; padding-right: 12px;"
@@ -725,7 +715,7 @@ exports[`Grid Grid gutterVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Grid Grid halignVue demo works fine 1`] = `
+exports[`Grid > Grid halignVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -752,7 +742,6 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
           col-2
         </div>
       </div>
-       
       <div
         class="t-col t-col-2"
         style="padding-left: 0px; padding-right: 0px;"
@@ -761,7 +750,6 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
           col-2
         </div>
       </div>
-       
       <div
         class="t-col t-col-2"
         style="padding-left: 0px; padding-right: 0px;"
@@ -770,7 +758,6 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
           col-2
         </div>
       </div>
-       
       <div
         class="t-col t-col-2"
         style="padding-left: 0px; padding-right: 0px;"
@@ -803,7 +790,6 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
           col-2
         </div>
       </div>
-       
       <div
         class="t-col t-col-2"
         style="padding-left: 0px; padding-right: 0px;"
@@ -812,7 +798,6 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
           col-2
         </div>
       </div>
-       
       <div
         class="t-col t-col-2"
         style="padding-left: 0px; padding-right: 0px;"
@@ -821,7 +806,6 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
           col-2
         </div>
       </div>
-       
       <div
         class="t-col t-col-2"
         style="padding-left: 0px; padding-right: 0px;"
@@ -854,7 +838,6 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
           col-2
         </div>
       </div>
-       
       <div
         class="t-col t-col-2"
         style="padding-left: 0px; padding-right: 0px;"
@@ -863,7 +846,6 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
           col-2
         </div>
       </div>
-       
       <div
         class="t-col t-col-2"
         style="padding-left: 0px; padding-right: 0px;"
@@ -872,7 +854,6 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
           col-2
         </div>
       </div>
-       
       <div
         class="t-col t-col-2"
         style="padding-left: 0px; padding-right: 0px;"
@@ -905,7 +886,6 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
           col-2
         </div>
       </div>
-       
       <div
         class="t-col t-col-2"
         style="padding-left: 0px; padding-right: 0px;"
@@ -914,7 +894,6 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
           col-2
         </div>
       </div>
-       
       <div
         class="t-col t-col-2"
         style="padding-left: 0px; padding-right: 0px;"
@@ -923,7 +902,6 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
           col-2
         </div>
       </div>
-       
       <div
         class="t-col t-col-2"
         style="padding-left: 0px; padding-right: 0px;"
@@ -956,7 +934,6 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
           col-2
         </div>
       </div>
-       
       <div
         class="t-col t-col-2"
         style="padding-left: 0px; padding-right: 0px;"
@@ -965,7 +942,6 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
           col-2
         </div>
       </div>
-       
       <div
         class="t-col t-col-2"
         style="padding-left: 0px; padding-right: 0px;"
@@ -974,7 +950,6 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
           col-2
         </div>
       </div>
-       
       <div
         class="t-col t-col-2"
         style="padding-left: 0px; padding-right: 0px;"
@@ -988,7 +963,7 @@ exports[`Grid Grid halignVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Grid Grid offsetVue demo works fine 1`] = `
+exports[`Grid > Grid offsetVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1008,7 +983,6 @@ exports[`Grid Grid offsetVue demo works fine 1`] = `
           col-4
         </div>
       </div>
-       
       <div
         class="t-col t-col-4 t-col-offset-4"
         style="padding-left: 0px; padding-right: 0px;"
@@ -1034,7 +1008,6 @@ exports[`Grid Grid offsetVue demo works fine 1`] = `
           col-3 col-offset-3
         </div>
       </div>
-       
       <div
         class="t-col t-col-3 t-col-offset-3"
         style="padding-left: 0px; padding-right: 0px;"
@@ -1065,7 +1038,7 @@ exports[`Grid Grid offsetVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Grid Grid orderVue demo works fine 1`] = `
+exports[`Grid > Grid orderVue demo works fine 1`] = `
 <div
   class="t-row t-row--start t-row--align-top"
   style="margin-left: 0px; margin-right: 0px;"
@@ -1078,7 +1051,6 @@ exports[`Grid Grid orderVue demo works fine 1`] = `
       1 col-3-order-4
     </div>
   </div>
-   
   <div
     class="t-col t-col-3 t-col-order-3"
     style="padding-left: 0px; padding-right: 0px;"
@@ -1087,7 +1059,6 @@ exports[`Grid Grid orderVue demo works fine 1`] = `
       2 col-3-order-3
     </div>
   </div>
-   
   <div
     class="t-col t-col-3 t-col-order-2"
     style="padding-left: 0px; padding-right: 0px;"
@@ -1096,7 +1067,6 @@ exports[`Grid Grid orderVue demo works fine 1`] = `
       3 col-3-order-2
     </div>
   </div>
-   
   <div
     class="t-col t-col-3 t-col-order-1"
     style="padding-left: 0px; padding-right: 0px;"
@@ -1108,7 +1078,7 @@ exports[`Grid Grid orderVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Grid Grid responsiveVue demo works fine 1`] = `
+exports[`Grid > Grid responsiveVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1135,7 +1105,6 @@ exports[`Grid Grid responsiveVue demo works fine 1`] = `
           Col
         </div>
       </div>
-       
       <div
         class="t-col t-col-12 t-col-xs-10 t-col-sm-8 t-col-md-6 t-col-lg-4 t-col-xl-2"
         style="padding-left: 0px; padding-right: 0px;"
@@ -1173,7 +1142,7 @@ exports[`Grid Grid responsiveVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Grid Grid sortVue demo works fine 1`] = `
+exports[`Grid > Grid sortVue demo works fine 1`] = `
 <div
   class="t-row t-row--start t-row--align-top"
   style="margin-left: 0px; margin-right: 0px;"
@@ -1186,7 +1155,6 @@ exports[`Grid Grid sortVue demo works fine 1`] = `
       col-9 col-pull-3
     </div>
   </div>
-   
   <div
     class="t-col t-col-3 t-col-pull-9"
     style="padding-left: 0px; padding-right: 0px;"
@@ -1198,7 +1166,7 @@ exports[`Grid Grid sortVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Grid Grid valignVue demo works fine 1`] = `
+exports[`Grid > Grid valignVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1227,7 +1195,6 @@ exports[`Grid Grid valignVue demo works fine 1`] = `
           col-3
         </div>
       </div>
-       
       <div
         class="t-col t-col-3"
         style="padding-left: 0px; padding-right: 0px;"
@@ -1236,7 +1203,6 @@ exports[`Grid Grid valignVue demo works fine 1`] = `
           col-3
         </div>
       </div>
-       
       <div
         class="t-col t-col-3"
         style="padding-left: 0px; padding-right: 0px;"
@@ -1247,7 +1213,6 @@ exports[`Grid Grid valignVue demo works fine 1`] = `
           col-3
         </div>
       </div>
-       
       <div
         class="t-col t-col-3"
         style="padding-left: 0px; padding-right: 0px;"
@@ -1282,7 +1247,6 @@ exports[`Grid Grid valignVue demo works fine 1`] = `
           col-3
         </div>
       </div>
-       
       <div
         class="t-col t-col-3"
         style="padding-left: 0px; padding-right: 0px;"
@@ -1291,7 +1255,6 @@ exports[`Grid Grid valignVue demo works fine 1`] = `
           col-3
         </div>
       </div>
-       
       <div
         class="t-col t-col-3"
         style="padding-left: 0px; padding-right: 0px;"
@@ -1302,7 +1265,6 @@ exports[`Grid Grid valignVue demo works fine 1`] = `
           col-3
         </div>
       </div>
-       
       <div
         class="t-col t-col-3"
         style="padding-left: 0px; padding-right: 0px;"
@@ -1337,7 +1299,6 @@ exports[`Grid Grid valignVue demo works fine 1`] = `
           col-3
         </div>
       </div>
-       
       <div
         class="t-col t-col-3"
         style="padding-left: 0px; padding-right: 0px;"
@@ -1346,7 +1307,6 @@ exports[`Grid Grid valignVue demo works fine 1`] = `
           col-3
         </div>
       </div>
-       
       <div
         class="t-col t-col-3"
         style="padding-left: 0px; padding-right: 0px;"
@@ -1357,7 +1317,6 @@ exports[`Grid Grid valignVue demo works fine 1`] = `
           col-3
         </div>
       </div>
-       
       <div
         class="t-col t-col-3"
         style="padding-left: 0px; padding-right: 0px;"

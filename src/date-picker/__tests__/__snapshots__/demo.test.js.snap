@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`DatePicker DatePicker baseVue demo works fine 1`] = `
+exports[`DatePicker > DatePicker baseVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -95,7 +95,7 @@ exports[`DatePicker DatePicker baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`DatePicker DatePicker customIconVue demo works fine 1`] = `
+exports[`DatePicker > DatePicker customIconVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -174,7 +174,7 @@ exports[`DatePicker DatePicker customIconVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`DatePicker DatePicker datePresetsAltVue demo works fine 1`] = `
+exports[`DatePicker > DatePicker datePresetsAltVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -326,7 +326,7 @@ exports[`DatePicker DatePicker datePresetsAltVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`DatePicker DatePicker dateRangeVue demo works fine 1`] = `
+exports[`DatePicker > DatePicker dateRangeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -474,7 +474,7 @@ exports[`DatePicker DatePicker dateRangeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`DatePicker DatePicker dateTimeVue demo works fine 1`] = `
+exports[`DatePicker > DatePicker dateTimeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -568,7 +568,7 @@ exports[`DatePicker DatePicker dateTimeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`DatePicker DatePicker disableDateVue demo works fine 1`] = `
+exports[`DatePicker > DatePicker disableDateVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -868,7 +868,7 @@ exports[`DatePicker DatePicker disableDateVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`DatePicker DatePicker firstDayOfWeekVue demo works fine 1`] = `
+exports[`DatePicker > DatePicker firstDayOfWeekVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1058,7 +1058,7 @@ exports[`DatePicker DatePicker firstDayOfWeekVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`DatePicker DatePicker monthVue demo works fine 1`] = `
+exports[`DatePicker > DatePicker monthVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1179,7 +1179,7 @@ exports[`DatePicker DatePicker monthVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
+exports[`DatePicker > DatePicker panelVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -4309,7 +4309,7 @@ exports[`DatePicker DatePicker panelVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`DatePicker DatePicker quarterVue demo works fine 1`] = `
+exports[`DatePicker > DatePicker quarterVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -4430,7 +4430,7 @@ exports[`DatePicker DatePicker quarterVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`DatePicker DatePicker weekVue demo works fine 1`] = `
+exports[`DatePicker > DatePicker weekVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -4551,7 +4551,7 @@ exports[`DatePicker DatePicker weekVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`DatePicker DatePicker yearVue demo works fine 1`] = `
+exports[`DatePicker > DatePicker yearVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"

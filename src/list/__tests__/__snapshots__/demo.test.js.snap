@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`List List baseVue demo works fine 1`] = `
+exports[`List > List baseVue demo works fine 1`] = `
 <div
   class="t-list t-size-m"
 >
@@ -16,9 +16,7 @@ exports[`List List baseVue demo works fine 1`] = `
         <div
           class="t-list-item__content"
         >
-          
-    列表内容的描述性文字
-    
+           列表内容的描述性文字 
         </div>
         <li
           class="t-list-item__action"
@@ -33,7 +31,6 @@ exports[`List List baseVue demo works fine 1`] = `
               操作1
             </span>
           </button>
-           
           <button
             class="t-button t-size-m t-button--variant-text t-button--theme-default"
             type="button"
@@ -44,7 +41,6 @@ exports[`List List baseVue demo works fine 1`] = `
               操作2
             </span>
           </button>
-           
           <button
             class="t-button t-size-m t-button--variant-text t-button--theme-default"
             type="button"
@@ -58,7 +54,6 @@ exports[`List List baseVue demo works fine 1`] = `
         </li>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -68,9 +63,7 @@ exports[`List List baseVue demo works fine 1`] = `
         <div
           class="t-list-item__content"
         >
-          
-    列表内容的描述性文字
-    
+           列表内容的描述性文字 
         </div>
         <li
           class="t-list-item__action"
@@ -85,7 +78,6 @@ exports[`List List baseVue demo works fine 1`] = `
               操作1
             </span>
           </button>
-           
           <button
             class="t-button t-size-m t-button--variant-text t-button--theme-default"
             type="button"
@@ -96,7 +88,6 @@ exports[`List List baseVue demo works fine 1`] = `
               操作2
             </span>
           </button>
-           
           <button
             class="t-button t-size-m t-button--variant-text t-button--theme-default"
             type="button"
@@ -117,7 +108,7 @@ exports[`List List baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`List List headerFooterVue demo works fine 1`] = `
+exports[`List > List headerFooterVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -173,7 +164,6 @@ exports[`List List headerFooterVue demo works fine 1`] = `
             </div>
           </div>
         </li>
-         
         <li
           class="t-list-item"
         >
@@ -211,7 +201,6 @@ exports[`List List headerFooterVue demo works fine 1`] = `
             </div>
           </div>
         </li>
-         
         <li
           class="t-list-item"
         >
@@ -274,7 +263,6 @@ exports[`List List headerFooterVue demo works fine 1`] = `
       <ul
         class="t-list__inner"
       >
-         
         <li
           class="t-list-item"
         >
@@ -312,7 +300,6 @@ exports[`List List headerFooterVue demo works fine 1`] = `
             </div>
           </div>
         </li>
-         
         <li
           class="t-list-item"
         >
@@ -350,7 +337,6 @@ exports[`List List headerFooterVue demo works fine 1`] = `
             </div>
           </div>
         </li>
-         
         <li
           class="t-list-item"
         >
@@ -402,7 +388,7 @@ exports[`List List headerFooterVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`List List imageTextVue demo works fine 1`] = `
+exports[`List > List imageTextVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -453,7 +439,6 @@ exports[`List List imageTextVue demo works fine 1`] = `
             </div>
           </div>
         </li>
-         
         <li
           class="t-list-item"
         >
@@ -491,7 +476,6 @@ exports[`List List imageTextVue demo works fine 1`] = `
             </div>
           </div>
         </li>
-         
         <li
           class="t-list-item"
         >
@@ -592,7 +576,7 @@ exports[`List List imageTextVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`List List loadingVue demo works fine 1`] = `
+exports[`List > List loadingVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -621,7 +605,6 @@ exports[`List List loadingVue demo works fine 1`] = `
           加载更多
         </span>
       </label>
-       
       <label
         class="t-radio-button"
       >
@@ -640,7 +623,6 @@ exports[`List List loadingVue demo works fine 1`] = `
           加载中
         </span>
       </label>
-       
       <label
         class="t-radio-button"
       >
@@ -659,7 +641,6 @@ exports[`List List loadingVue demo works fine 1`] = `
           自定义加载更多
         </span>
       </label>
-       
       <label
         class="t-radio-button"
       >
@@ -823,7 +804,7 @@ exports[`List List loadingVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`List List multilineVue demo works fine 1`] = `
+exports[`List > List multilineVue demo works fine 1`] = `
 <div
   class="t-list t-size-m t-list--split"
 >
@@ -860,7 +841,6 @@ exports[`List List multilineVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -891,7 +871,6 @@ exports[`List List multilineVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -929,7 +908,7 @@ exports[`List List multilineVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`List List operationVue demo works fine 1`] = `
+exports[`List > List operationVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -992,7 +971,6 @@ exports[`List List operationVue demo works fine 1`] = `
                     操作1
                   </span>
                 </button>
-                 
                 <button
                   class="t-button t-size-m t-button--variant-text t-button--theme-default"
                   type="button"
@@ -1003,7 +981,6 @@ exports[`List List operationVue demo works fine 1`] = `
                     操作2
                   </span>
                 </button>
-                 
                 <button
                   class="t-button t-size-m t-button--variant-text t-button--theme-default"
                   type="button"
@@ -1018,7 +995,6 @@ exports[`List List operationVue demo works fine 1`] = `
             </li>
           </div>
         </li>
-         
         <li
           class="t-list-item"
         >
@@ -1068,7 +1044,6 @@ exports[`List List operationVue demo works fine 1`] = `
                     操作1
                   </span>
                 </button>
-                 
                 <button
                   class="t-button t-size-m t-button--variant-text t-button--theme-default"
                   type="button"
@@ -1079,7 +1054,6 @@ exports[`List List operationVue demo works fine 1`] = `
                     操作2
                   </span>
                 </button>
-                 
                 <button
                   class="t-button t-size-m t-button--variant-text t-button--theme-default"
                   type="button"
@@ -1169,7 +1143,6 @@ exports[`List List operationVue demo works fine 1`] = `
                   </svg>
                 </span>
               </button>
-               
               <button
                 class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
                 type="button"
@@ -1200,7 +1173,6 @@ exports[`List List operationVue demo works fine 1`] = `
             </li>
           </div>
         </li>
-         
         <li
           class="t-list-item"
         >
@@ -1261,7 +1233,6 @@ exports[`List List operationVue demo works fine 1`] = `
                   </svg>
                 </span>
               </button>
-               
               <button
                 class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
                 type="button"
@@ -1301,7 +1272,7 @@ exports[`List List operationVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`List List scrollVue demo works fine 1`] = `
+exports[`List > List scrollVue demo works fine 1`] = `
 <div
   class="t-list t-size-m"
   style="max-height: 200px;"
@@ -1322,7 +1293,6 @@ exports[`List List scrollVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -1336,7 +1306,6 @@ exports[`List List scrollVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -1350,7 +1319,6 @@ exports[`List List scrollVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -1364,7 +1332,6 @@ exports[`List List scrollVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -1378,7 +1345,6 @@ exports[`List List scrollVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -1392,7 +1358,6 @@ exports[`List List scrollVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -1406,7 +1371,6 @@ exports[`List List scrollVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -1420,7 +1384,6 @@ exports[`List List scrollVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -1434,7 +1397,6 @@ exports[`List List scrollVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -1448,7 +1410,6 @@ exports[`List List scrollVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -1462,7 +1423,6 @@ exports[`List List scrollVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -1476,7 +1436,6 @@ exports[`List List scrollVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -1490,7 +1449,6 @@ exports[`List List scrollVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -1504,7 +1462,6 @@ exports[`List List scrollVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -1518,7 +1475,6 @@ exports[`List List scrollVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -1539,7 +1495,7 @@ exports[`List List scrollVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`List List sizeVue demo works fine 1`] = `
+exports[`List > List sizeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1566,7 +1522,6 @@ exports[`List List sizeVue demo works fine 1`] = `
             </div>
           </div>
         </li>
-         
         <li
           class="t-list-item"
         >
@@ -1580,7 +1535,6 @@ exports[`List List sizeVue demo works fine 1`] = `
             </div>
           </div>
         </li>
-         
         <li
           class="t-list-item"
         >
@@ -1622,7 +1576,6 @@ exports[`List List sizeVue demo works fine 1`] = `
             </div>
           </div>
         </li>
-         
         <li
           class="t-list-item"
         >
@@ -1636,7 +1589,6 @@ exports[`List List sizeVue demo works fine 1`] = `
             </div>
           </div>
         </li>
-         
         <li
           class="t-list-item"
         >
@@ -1678,7 +1630,6 @@ exports[`List List sizeVue demo works fine 1`] = `
             </div>
           </div>
         </li>
-         
         <li
           class="t-list-item"
         >
@@ -1692,7 +1643,6 @@ exports[`List List sizeVue demo works fine 1`] = `
             </div>
           </div>
         </li>
-         
         <li
           class="t-list-item"
         >
@@ -1715,7 +1665,7 @@ exports[`List List sizeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`List List stripeVue demo works fine 1`] = `
+exports[`List > List stripeVue demo works fine 1`] = `
 <div
   class="t-list t-size-m t-list--stripe"
 >
@@ -1735,7 +1685,6 @@ exports[`List List stripeVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -1749,7 +1698,6 @@ exports[`List List stripeVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >
@@ -1763,7 +1711,6 @@ exports[`List List stripeVue demo works fine 1`] = `
         </div>
       </div>
     </li>
-     
     <li
       class="t-list-item"
     >

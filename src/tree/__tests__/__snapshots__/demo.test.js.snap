@@ -1,8 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Tree Tree activableVue demo works fine 1`] = `
+exports[`Tree > Tree activableVue demo works fine 1`] = `
 <div
   class="tdesign-tree-demo t-space t-space-vertical"
+  data-v-6c5aa77d=""
   style="gap: 10px;"
 >
   <div
@@ -10,9 +11,11 @@ exports[`Tree Tree activableVue demo works fine 1`] = `
   >
     <form
       class="t-form"
+      data-v-6c5aa77d=""
     >
       <div
         class="t-form__item t-form-item__"
+        data-v-6c5aa77d=""
       >
         <div
           class="t-form__label t-form__label--right"
@@ -31,6 +34,7 @@ exports[`Tree Tree activableVue demo works fine 1`] = `
           >
             <div
               class="t-switch t-size-m t-is-checked"
+              data-v-6c5aa77d=""
             >
               <span
                 class="t-switch__handle"
@@ -42,9 +46,9 @@ exports[`Tree Tree activableVue demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
         class="t-form__item t-form-item__"
+        data-v-6c5aa77d=""
       >
         <div
           class="t-form__label t-form__label--right"
@@ -63,6 +67,7 @@ exports[`Tree Tree activableVue demo works fine 1`] = `
           >
             <div
               class="t-switch t-size-m"
+              data-v-6c5aa77d=""
             >
               <span
                 class="t-switch__handle"
@@ -74,9 +79,9 @@ exports[`Tree Tree activableVue demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
         class="t-form__item t-form-item__"
+        data-v-6c5aa77d=""
       >
         <div
           class="t-form__label t-form__label--right"
@@ -95,6 +100,7 @@ exports[`Tree Tree activableVue demo works fine 1`] = `
           >
             <div
               class="t-switch t-size-m"
+              data-v-6c5aa77d=""
             >
               <span
                 class="t-switch__handle"
@@ -113,6 +119,7 @@ exports[`Tree Tree activableVue demo works fine 1`] = `
   >
     <div
       class="t-tree t-tree--hoverable t-tree--transition"
+      data-v-6c5aa77d=""
     >
       <transition-group-stub
         class="t-tree__list"
@@ -280,12 +287,14 @@ exports[`Tree Tree activableVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree baseVue demo works fine 1`] = `
+exports[`Tree > Tree baseVue demo works fine 1`] = `
 <div
   class="tdesign-tree-demo"
+  data-v-74e1071d=""
 >
   <div
     class="t-tree t-tree--hoverable t-tree--transition"
+    data-v-74e1071d=""
   >
     <transition-group-stub
       class="t-tree__list"
@@ -438,7 +447,7 @@ exports[`Tree Tree baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree checkableVue demo works fine 1`] = `
+exports[`Tree > Tree checkableVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 32px;"
@@ -483,7 +492,6 @@ exports[`Tree Tree checkableVue demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
         class="t-form__item t-form-item__"
         style="margin-bottom: 16px;"
@@ -518,7 +526,6 @@ exports[`Tree Tree checkableVue demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
         class="t-form__item t-form-item__"
         style="margin-bottom: 16px;"
@@ -1277,7 +1284,7 @@ exports[`Tree Tree checkableVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree controlledVue demo works fine 1`] = `
+exports[`Tree > Tree controlledVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large"
 >
@@ -1308,7 +1315,6 @@ exports[`Tree Tree controlledVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
     <div
       class="t-input-adornment t-input-adornment--prepend"
     >
@@ -1333,7 +1339,6 @@ exports[`Tree Tree controlledVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
     <div
       class="t-input-adornment t-input-adornment--prepend"
     >
@@ -1359,7 +1364,6 @@ exports[`Tree Tree controlledVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
     class="t-tree t-tree--checkable t-tree--transition"
   >
@@ -1760,7 +1764,7 @@ exports[`Tree Tree controlledVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree dataVue demo works fine 1`] = `
+exports[`Tree > Tree dataVue demo works fine 1`] = `
 <div
   class="tdesign-tree-demo"
 >
@@ -1769,7 +1773,6 @@ exports[`Tree Tree dataVue demo works fine 1`] = `
   >
     数据切换
   </h3>
-   
   <div
     class="operations"
   >
@@ -1807,7 +1810,6 @@ exports[`Tree Tree dataVue demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
         class="t-form__item t-form-item__"
       >
@@ -1839,7 +1841,6 @@ exports[`Tree Tree dataVue demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
         class="t-form__item t-form-item__"
       >
@@ -1871,7 +1872,6 @@ exports[`Tree Tree dataVue demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
         class="t-form__item t-form-item__"
       >
@@ -1903,7 +1903,6 @@ exports[`Tree Tree dataVue demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
         class="t-form__item t-form-item__"
       >
@@ -1937,7 +1936,6 @@ exports[`Tree Tree dataVue demo works fine 1`] = `
       </div>
     </form>
   </div>
-   
   <div
     class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
   >
@@ -2308,7 +2306,7 @@ exports[`Tree Tree dataVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree disabledVue demo works fine 1`] = `
+exports[`Tree > Tree disabledVue demo works fine 1`] = `
 <div
   class="tdesign-tree-demo"
 >
@@ -2349,7 +2347,6 @@ exports[`Tree Tree disabledVue demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
         class="t-form__item t-form-item__"
       >
@@ -2383,7 +2380,6 @@ exports[`Tree Tree disabledVue demo works fine 1`] = `
       </div>
     </form>
   </div>
-   
   <div
     class="t-tree t-is-disabled t-tree--hoverable t-tree--checkable t-tree--transition"
   >
@@ -2761,7 +2757,6 @@ exports[`Tree Tree disabledVue demo works fine 1`] = `
       </div>
     </transition-group-stub>
   </div>
-   
   <div
     class="operations"
   >
@@ -2801,7 +2796,6 @@ exports[`Tree Tree disabledVue demo works fine 1`] = `
       </div>
     </form>
   </div>
-   
   <div
     class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
   >
@@ -3175,7 +3169,7 @@ exports[`Tree Tree disabledVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree emptyVue demo works fine 1`] = `
+exports[`Tree > Tree emptyVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 20px;"
@@ -3254,9 +3248,10 @@ exports[`Tree Tree emptyVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree expandAllVue demo works fine 1`] = `
+exports[`Tree > Tree expandAllVue demo works fine 1`] = `
 <div
   class="tdesign-tree-demo t-space t-space-vertical"
+  data-v-5902ba8c=""
   style="gap: 10px;"
 >
   <div
@@ -3264,9 +3259,11 @@ exports[`Tree Tree expandAllVue demo works fine 1`] = `
   >
     <form
       class="t-form"
+      data-v-5902ba8c=""
     >
       <div
         class="t-form__item t-form-item__"
+        data-v-5902ba8c=""
       >
         <div
           class="t-form__label t-form__label--right"
@@ -3285,6 +3282,7 @@ exports[`Tree Tree expandAllVue demo works fine 1`] = `
           >
             <div
               class="t-switch t-size-m"
+              data-v-5902ba8c=""
             >
               <span
                 class="t-switch__handle"
@@ -3296,9 +3294,9 @@ exports[`Tree Tree expandAllVue demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
         class="t-form__item t-form-item__"
+        data-v-5902ba8c=""
       >
         <div
           class="t-form__label t-form__label--right"
@@ -3317,6 +3315,7 @@ exports[`Tree Tree expandAllVue demo works fine 1`] = `
           >
             <div
               class="t-switch t-size-m t-is-checked"
+              data-v-5902ba8c=""
             >
               <span
                 class="t-switch__handle"
@@ -3335,6 +3334,7 @@ exports[`Tree Tree expandAllVue demo works fine 1`] = `
   >
     <div
       class="t-tree t-tree--transition"
+      data-v-5902ba8c=""
     >
       <transition-group-stub
         class="t-tree__list"
@@ -3614,7 +3614,7 @@ exports[`Tree Tree expandAllVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree expandLevelVue demo works fine 1`] = `
+exports[`Tree > Tree expandLevelVue demo works fine 1`] = `
 <div>
   <div
     class="t-tree t-tree--hoverable t-tree--transition"
@@ -3812,9 +3812,10 @@ exports[`Tree Tree expandLevelVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree expandMutexVue demo works fine 1`] = `
+exports[`Tree > Tree expandMutexVue demo works fine 1`] = `
 <div
   class="tdesign-tree-demo t-space t-space-vertical"
+  data-v-e4ed8150=""
   style="gap: 10px;"
 >
   <div
@@ -3822,9 +3823,11 @@ exports[`Tree Tree expandMutexVue demo works fine 1`] = `
   >
     <form
       class="t-form"
+      data-v-e4ed8150=""
     >
       <div
         class="t-form__item t-form-item__"
+        data-v-e4ed8150=""
       >
         <div
           class="t-form__label t-form__label--right"
@@ -3843,6 +3846,7 @@ exports[`Tree Tree expandMutexVue demo works fine 1`] = `
           >
             <div
               class="t-switch t-size-m t-is-checked"
+              data-v-e4ed8150=""
             >
               <span
                 class="t-switch__handle"
@@ -3854,9 +3858,9 @@ exports[`Tree Tree expandMutexVue demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
         class="t-form__item t-form-item__"
+        data-v-e4ed8150=""
       >
         <div
           class="t-form__label t-form__label--right"
@@ -3875,6 +3879,7 @@ exports[`Tree Tree expandMutexVue demo works fine 1`] = `
           >
             <div
               class="t-switch t-size-m t-is-checked"
+              data-v-e4ed8150=""
             >
               <span
                 class="t-switch__handle"
@@ -3893,6 +3898,7 @@ exports[`Tree Tree expandMutexVue demo works fine 1`] = `
   >
     <div
       class="t-tree t-tree--hoverable t-tree--transition t-tree--block-node"
+      data-v-e4ed8150=""
     >
       <transition-group-stub
         class="t-tree__list"
@@ -3976,7 +3982,7 @@ exports[`Tree Tree expandMutexVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree filterVue demo works fine 1`] = `
+exports[`Tree > Tree filterVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 32px;"
@@ -4097,21 +4103,26 @@ exports[`Tree Tree filterVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree iconVue demo works fine 1`] = `
+exports[`Tree > Tree iconVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
+  data-v-a0fdae76=""
   style="gap: 20px;"
 >
   <div
     class="t-space-item"
   >
-    <div>
-      <h3>
+    <div
+      data-v-a0fdae76=""
+    >
+      <h3
+        data-v-a0fdae76=""
+      >
         render:
       </h3>
-       
       <div
         class="t-tree t-tree--hoverable t-tree--transition"
+        data-v-a0fdae76=""
       >
         <transition-group-stub
           class="t-tree__list"
@@ -4132,6 +4143,7 @@ exports[`Tree Tree iconVue demo works fine 1`] = `
             >
               <svg
                 class="t-icon t-icon-folder"
+                data-v-a0fdae76=""
               >
                 <use
                   href="#t-icon-folder"
@@ -4161,6 +4173,7 @@ exports[`Tree Tree iconVue demo works fine 1`] = `
             >
               <svg
                 class="t-icon t-icon-folder"
+                data-v-a0fdae76=""
               >
                 <use
                   href="#t-icon-folder"
@@ -4184,13 +4197,17 @@ exports[`Tree Tree iconVue demo works fine 1`] = `
   <div
     class="t-space-item"
   >
-    <div>
-      <h3>
+    <div
+      data-v-a0fdae76=""
+    >
+      <h3
+        data-v-a0fdae76=""
+      >
         scope slot:
       </h3>
-       
       <div
         class="t-tree t-tree--hoverable t-tree--transition"
+        data-v-a0fdae76=""
       >
         <transition-group-stub
           class="t-tree__list"
@@ -4211,6 +4228,7 @@ exports[`Tree Tree iconVue demo works fine 1`] = `
             >
               <svg
                 class="t-icon t-icon-caret-right"
+                data-v-a0fdae76=""
               >
                 <use
                   href="#t-icon-caret-right"
@@ -4240,6 +4258,7 @@ exports[`Tree Tree iconVue demo works fine 1`] = `
             >
               <svg
                 class="t-icon t-icon-caret-right"
+                data-v-a0fdae76=""
               >
                 <use
                   href="#t-icon-caret-right"
@@ -4263,7 +4282,7 @@ exports[`Tree Tree iconVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree labelVue demo works fine 1`] = `
+exports[`Tree > Tree labelVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 20px;"
@@ -4275,7 +4294,6 @@ exports[`Tree Tree labelVue demo works fine 1`] = `
       <h3>
         render:
       </h3>
-       
       <div
         class="t-tree t-tree--transition"
       >
@@ -4462,7 +4480,6 @@ exports[`Tree Tree labelVue demo works fine 1`] = `
       <h3>
         scope slot:
       </h3>
-       
       <div
         class="t-tree t-tree--checkable t-tree--transition"
       >
@@ -4711,38 +4728,45 @@ exports[`Tree Tree labelVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree lazyVue demo works fine 1`] = `
+exports[`Tree > Tree lazyVue demo works fine 1`] = `
 <div
   class="tdesign-tree-demo t-space t-space-vertical"
+  data-v-de8eeb80=""
   style="gap: 10px;"
 >
   <div
     class="t-space-item"
   >
-    <h3>
+    <h3
+      data-v-de8eeb80=""
+    >
       数据延迟加载
     </h3>
   </div>
   <div
     class="t-space-item"
   >
-    <p>
+    <p
+      data-v-de8eeb80=""
+    >
       默认为点击加载数据。
     </p>
   </div>
   <div
     class="t-space-item"
   >
-    <p>
-      
-    valueMode 默认为 'onlyLeaf'。选中父节点时，子节点由于未加载，无法更新和获取选中状态，导致无法更新父节点的状态。
-  
+    <p
+      data-v-de8eeb80=""
+    >
+       valueMode 默认为 'onlyLeaf'。选中父节点时，子节点由于未加载，无法更新和获取选中状态，导致无法更新父节点的状态。 
     </p>
   </div>
   <div
     class="t-space-item"
   >
-    <p>
+    <p
+      data-v-de8eeb80=""
+    >
       所以使用延迟加载时，推荐 valueMode 设置为 'all' 或者 'parentFirst'。
     </p>
   </div>
@@ -4751,9 +4775,11 @@ exports[`Tree Tree lazyVue demo works fine 1`] = `
   >
     <form
       class="t-form"
+      data-v-de8eeb80=""
     >
       <div
         class="t-form__item t-form-item__"
+        data-v-de8eeb80=""
       >
         <div
           class="t-form__label t-form__label--right"
@@ -4772,6 +4798,7 @@ exports[`Tree Tree lazyVue demo works fine 1`] = `
           >
             <div
               class="t-switch t-size-m t-is-checked"
+              data-v-de8eeb80=""
             >
               <span
                 class="t-switch__handle"
@@ -4783,9 +4810,9 @@ exports[`Tree Tree lazyVue demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
         class="t-form__item t-form-item__"
+        data-v-de8eeb80=""
       >
         <div
           class="t-form__label t-form__label--right"
@@ -4804,6 +4831,7 @@ exports[`Tree Tree lazyVue demo works fine 1`] = `
           >
             <div
               class="t-switch t-size-m"
+              data-v-de8eeb80=""
             >
               <span
                 class="t-switch__handle"
@@ -4822,6 +4850,7 @@ exports[`Tree Tree lazyVue demo works fine 1`] = `
   >
     <div
       class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
+      data-v-de8eeb80=""
     >
       <transition-group-stub
         class="t-tree__list"
@@ -4923,9 +4952,10 @@ exports[`Tree Tree lazyVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree lineVue demo works fine 1`] = `
+exports[`Tree > Tree lineVue demo works fine 1`] = `
 <div
   class="tdesign-tree-line t-space t-space-vertical"
+  data-v-225666c0=""
   style="gap: 32px;"
 >
   <div
@@ -4933,9 +4963,11 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
   >
     <form
       class="t-form"
+      data-v-225666c0=""
     >
       <div
         class="t-form__item t-form-item__"
+        data-v-225666c0=""
         style="margin-bottom: 16px;"
       >
         <div
@@ -4957,6 +4989,7 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
           >
             <div
               class="t-switch t-size-m t-is-checked"
+              data-v-225666c0=""
             >
               <span
                 class="t-switch__handle"
@@ -4968,9 +5001,9 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
           </div>
         </div>
       </div>
-       
       <div
         class="t-form__item t-form-item__"
+        data-v-225666c0=""
         style="margin-bottom: 16px;"
       >
         <div
@@ -4992,6 +5025,7 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
           >
             <div
               class="t-switch t-size-m t-is-checked"
+              data-v-225666c0=""
             >
               <span
                 class="t-switch__handle"
@@ -5010,6 +5044,7 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-vertical"
+      data-v-225666c0=""
       style="gap: 16px; width: 100%;"
     >
       <div
@@ -5017,6 +5052,7 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
       >
         <div
           class="t-tree t-tree--transition"
+          data-v-225666c0=""
         >
           <transition-group-stub
             class="t-tree__list"
@@ -5473,7 +5509,9 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
       <div
         class="t-space-item"
       >
-        <h3>
+        <h3
+          data-v-225666c0=""
+        >
           render
         </h3>
       </div>
@@ -5482,6 +5520,7 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
       >
         <div
           class="t-tree t-tree--transition"
+          data-v-225666c0=""
         >
           <transition-group-stub
             class="t-tree__list"
@@ -5552,6 +5591,7 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
+                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -5595,6 +5635,7 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
+                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -5836,6 +5877,7 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
+                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -5888,6 +5930,7 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
+                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -5934,6 +5977,7 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
+                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -5977,6 +6021,7 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
+                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -6062,6 +6107,7 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
+                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -6105,6 +6151,7 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
+                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -6144,6 +6191,7 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
+                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -6172,7 +6220,9 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
       <div
         class="t-space-item"
       >
-        <h3>
+        <h3
+          data-v-225666c0=""
+        >
           scope slot
         </h3>
       </div>
@@ -6181,6 +6231,7 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
       >
         <div
           class="t-tree t-tree--transition"
+          data-v-225666c0=""
         >
           <transition-group-stub
             class="t-tree__list"
@@ -6196,11 +6247,12 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
             >
               <div
                 class="custom-line custom-line-first"
+                data-v-225666c0=""
               >
                 <div
                   class="custom-line-box"
+                  data-v-225666c0=""
                 />
-                 
                 <!---->
               </div>
               <span
@@ -6240,20 +6292,24 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
             >
               <div
                 class="custom-line custom-line-first custom-line-leaf"
+                data-v-225666c0=""
               >
                 <div
                   class="custom-line-box"
+                  data-v-225666c0=""
                 >
                   <span
                     class=""
+                    data-v-225666c0=""
                   />
                 </div>
-                 
                 <i
                   class="custom-line-icon"
+                  data-v-225666c0=""
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
+                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -6284,20 +6340,24 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
             >
               <div
                 class="custom-line custom-line-leaf custom-line-last"
+                data-v-225666c0=""
               >
                 <div
                   class="custom-line-box"
+                  data-v-225666c0=""
                 >
                   <span
                     class=""
+                    data-v-225666c0=""
                   />
                 </div>
-                 
                 <i
                   class="custom-line-icon"
+                  data-v-225666c0=""
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
+                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -6328,11 +6388,12 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
             >
               <div
                 class="custom-line"
+                data-v-225666c0=""
               >
                 <div
                   class="custom-line-box"
+                  data-v-225666c0=""
                 />
-                 
                 <!---->
               </div>
               <span
@@ -6372,15 +6433,17 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
             >
               <div
                 class="custom-line custom-line-first"
+                data-v-225666c0=""
               >
                 <div
                   class="custom-line-box"
+                  data-v-225666c0=""
                 >
                   <span
                     class=""
+                    data-v-225666c0=""
                   />
                 </div>
-                 
                 <!---->
               </div>
               <span
@@ -6420,18 +6483,21 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
             >
               <div
                 class="custom-line custom-line-first"
+                data-v-225666c0=""
               >
                 <div
                   class="custom-line-box"
+                  data-v-225666c0=""
                 >
                   <span
                     class="custom-line-cross"
+                    data-v-225666c0=""
                   />
                   <span
                     class=""
+                    data-v-225666c0=""
                   />
                 </div>
-                 
                 <!---->
               </div>
               <span
@@ -6471,21 +6537,25 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
             >
               <div
                 class="custom-line custom-line-first custom-line-last"
+                data-v-225666c0=""
               >
                 <div
                   class="custom-line-box"
+                  data-v-225666c0=""
                 >
                   <span
                     class="custom-line-cross"
+                    data-v-225666c0=""
                   />
                   <span
                     class="custom-line-cross"
+                    data-v-225666c0=""
                   />
                   <span
                     class=""
+                    data-v-225666c0=""
                   />
                 </div>
-                 
                 <!---->
               </div>
               <span
@@ -6525,29 +6595,36 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
             >
               <div
                 class="custom-line custom-line-first custom-line-leaf"
+                data-v-225666c0=""
               >
                 <div
                   class="custom-line-box"
+                  data-v-225666c0=""
                 >
                   <span
                     class="custom-line-cross"
+                    data-v-225666c0=""
                   />
                   <span
                     class="custom-line-cross"
+                    data-v-225666c0=""
                   />
                   <span
                     class=""
+                    data-v-225666c0=""
                   />
                   <span
                     class=""
+                    data-v-225666c0=""
                   />
                 </div>
-                 
                 <i
                   class="custom-line-icon"
+                  data-v-225666c0=""
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
+                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -6578,29 +6655,36 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
             >
               <div
                 class="custom-line custom-line-leaf custom-line-last"
+                data-v-225666c0=""
               >
                 <div
                   class="custom-line-box"
+                  data-v-225666c0=""
                 >
                   <span
                     class="custom-line-cross"
+                    data-v-225666c0=""
                   />
                   <span
                     class="custom-line-cross"
+                    data-v-225666c0=""
                   />
                   <span
                     class=""
+                    data-v-225666c0=""
                   />
                   <span
                     class=""
+                    data-v-225666c0=""
                   />
                 </div>
-                 
                 <i
                   class="custom-line-icon"
+                  data-v-225666c0=""
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
+                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -6631,23 +6715,28 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
             >
               <div
                 class="custom-line custom-line-leaf custom-line-last"
+                data-v-225666c0=""
               >
                 <div
                   class="custom-line-box"
+                  data-v-225666c0=""
                 >
                   <span
                     class="custom-line-cross"
+                    data-v-225666c0=""
                   />
                   <span
                     class=""
+                    data-v-225666c0=""
                   />
                 </div>
-                 
                 <i
                   class="custom-line-icon"
+                  data-v-225666c0=""
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
+                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -6678,20 +6767,24 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
             >
               <div
                 class="custom-line custom-line-leaf custom-line-last"
+                data-v-225666c0=""
               >
                 <div
                   class="custom-line-box"
+                  data-v-225666c0=""
                 >
                   <span
                     class=""
+                    data-v-225666c0=""
                   />
                 </div>
-                 
                 <i
                   class="custom-line-icon"
+                  data-v-225666c0=""
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
+                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -6722,11 +6815,12 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
             >
               <div
                 class="custom-line"
+                data-v-225666c0=""
               >
                 <div
                   class="custom-line-box"
+                  data-v-225666c0=""
                 />
-                 
                 <!---->
               </div>
               <span
@@ -6766,20 +6860,24 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
             >
               <div
                 class="custom-line custom-line-first custom-line-leaf"
+                data-v-225666c0=""
               >
                 <div
                   class="custom-line-box"
+                  data-v-225666c0=""
                 >
                   <span
                     class=""
+                    data-v-225666c0=""
                   />
                 </div>
-                 
                 <i
                   class="custom-line-icon"
+                  data-v-225666c0=""
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
+                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -6810,20 +6908,24 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
             >
               <div
                 class="custom-line custom-line-leaf custom-line-last"
+                data-v-225666c0=""
               >
                 <div
                   class="custom-line-box"
+                  data-v-225666c0=""
                 >
                   <span
                     class=""
+                    data-v-225666c0=""
                   />
                 </div>
-                 
                 <i
                   class="custom-line-icon"
+                  data-v-225666c0=""
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
+                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -6854,16 +6956,19 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
             >
               <div
                 class="custom-line custom-line-leaf custom-line-last"
+                data-v-225666c0=""
               >
                 <div
                   class="custom-line-box"
+                  data-v-225666c0=""
                 />
-                 
                 <i
                   class="custom-line-icon"
+                  data-v-225666c0=""
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
+                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -6894,7 +6999,7 @@ exports[`Tree Tree lineVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree loadVue demo works fine 1`] = `
+exports[`Tree > Tree loadVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 10px;"
@@ -7066,9 +7171,10 @@ exports[`Tree Tree loadVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree operationsVue demo works fine 1`] = `
+exports[`Tree > Tree operationsVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
+  data-v-43574890=""
   style="gap: 20px;"
 >
   <div
@@ -7076,12 +7182,15 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-vertical"
+      data-v-43574890=""
       style="gap: 10px; width: 100%;"
     >
       <div
         class="t-space-item"
       >
-        <h3>
+        <h3
+          data-v-43574890=""
+        >
           Render:
         </h3>
       </div>
@@ -7090,6 +7199,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
       >
         <div
           class="t-tree t-tree--hoverable t-tree--transition"
+          data-v-43574890=""
         >
           <transition-group-stub
             class="t-tree__list"
@@ -7161,12 +7271,15 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-vertical"
+      data-v-43574890=""
       style="gap: 10px; width: 100%;"
     >
       <div
         class="t-space-item"
       >
-        <h3>
+        <h3
+          data-v-43574890=""
+        >
           Scope Slot:
         </h3>
       </div>
@@ -7175,9 +7288,11 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
       >
         <form
           class="t-form"
+          data-v-43574890=""
         >
           <div
             class="t-form__item t-form-item__"
+            data-v-43574890=""
             style="margin-bottom: 5px;"
           >
             <div
@@ -7197,6 +7312,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
               >
                 <div
                   class="t-switch t-size-m"
+                  data-v-43574890=""
                 >
                   <span
                     class="t-switch__handle"
@@ -7208,9 +7324,9 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
               </div>
             </div>
           </div>
-           
           <div
             class="t-form__item t-form-item__"
+            data-v-43574890=""
           >
             <div
               class="t-form__label t-form__label--right"
@@ -7229,6 +7345,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
               >
                 <div
                   class="t-switch t-size-m t-is-checked"
+                  data-v-43574890=""
                 >
                   <span
                     class="t-switch__handle"
@@ -7247,6 +7364,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
       >
         <div
           class="t-input-adornment t-input-adornment--prepend"
+          data-v-43574890=""
         >
           <span
             class="t-input-adornment__prepend"
@@ -7255,6 +7373,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
           </span>
           <div
             class="t-input__wrap"
+            data-v-43574890=""
           >
             <div
               class="t-input t-size-m t-is-default"
@@ -7275,6 +7394,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
       >
         <div
           class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
+          data-v-43574890=""
         >
           <transition-group-stub
             class="t-tree__list"
@@ -7317,6 +7437,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
               >
                 <div
                   class="t-space t-space-horizontal"
+                  data-v-43574890=""
                   style="gap: 10px;"
                 >
                   <div
@@ -7324,6 +7445,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
                   >
                     <button
                       class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+                      data-v-43574890=""
                       type="button"
                     >
                       <span
@@ -7338,6 +7460,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
                   >
                     <button
                       class="t-button t-size-s t-button--variant-outline t-button--theme-default"
+                      data-v-43574890=""
                       type="button"
                     >
                       <span
@@ -7352,6 +7475,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
                   >
                     <button
                       class="t-button t-size-s t-button--variant-outline t-button--theme-default"
+                      data-v-43574890=""
                       type="button"
                     >
                       <span
@@ -7366,6 +7490,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
                   >
                     <button
                       class="t-button t-size-s t-button--variant-base t-button--theme-danger"
+                      data-v-43574890=""
                       type="button"
                     >
                       <span
@@ -7413,6 +7538,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
               >
                 <div
                   class="t-space t-space-horizontal"
+                  data-v-43574890=""
                   style="gap: 10px;"
                 >
                   <div
@@ -7420,6 +7546,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
                   >
                     <button
                       class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+                      data-v-43574890=""
                       type="button"
                     >
                       <span
@@ -7434,6 +7561,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
                   >
                     <button
                       class="t-button t-size-s t-button--variant-outline t-button--theme-default"
+                      data-v-43574890=""
                       type="button"
                     >
                       <span
@@ -7448,6 +7576,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
                   >
                     <button
                       class="t-button t-size-s t-button--variant-outline t-button--theme-default"
+                      data-v-43574890=""
                       type="button"
                     >
                       <span
@@ -7462,6 +7591,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
                   >
                     <button
                       class="t-button t-size-s t-button--variant-base t-button--theme-danger"
+                      data-v-43574890=""
                       type="button"
                     >
                       <span
@@ -7484,12 +7614,15 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-vertical"
+      data-v-43574890=""
       style="gap: 10px;"
     >
       <div
         class="t-space-item"
       >
-        <h3>
+        <h3
+          data-v-43574890=""
+        >
           API:
         </h3>
       </div>
@@ -7498,6 +7631,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
       >
         <div
           class="t-space t-space-horizontal"
+          data-v-43574890=""
           style="gap: 10px; flex-wrap: wrap;"
         >
           <div
@@ -7505,6 +7639,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
           >
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              data-v-43574890=""
               type="button"
             >
               <span
@@ -7519,6 +7654,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
           >
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              data-v-43574890=""
               type="button"
             >
               <span
@@ -7533,6 +7669,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
           >
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              data-v-43574890=""
               type="button"
             >
               <span
@@ -7547,6 +7684,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
           >
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              data-v-43574890=""
               type="button"
             >
               <span
@@ -7561,6 +7699,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
           >
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              data-v-43574890=""
               type="button"
             >
               <span
@@ -7575,6 +7714,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
           >
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              data-v-43574890=""
               type="button"
             >
               <span
@@ -7589,6 +7729,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
           >
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              data-v-43574890=""
               type="button"
             >
               <span
@@ -7603,6 +7744,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
           >
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              data-v-43574890=""
               type="button"
             >
               <span
@@ -7617,6 +7759,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
           >
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              data-v-43574890=""
               type="button"
             >
               <span
@@ -7631,6 +7774,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
           >
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              data-v-43574890=""
               type="button"
             >
               <span
@@ -7645,6 +7789,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
           >
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              data-v-43574890=""
               type="button"
             >
               <span
@@ -7659,6 +7804,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
           >
             <button
               class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              data-v-43574890=""
               type="button"
             >
               <span
@@ -7675,6 +7821,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
       >
         <p
           class="tips"
+          data-v-43574890=""
         >
           * 相关信息通过控制台输出
         </p>
@@ -7684,7 +7831,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree performanceVue demo works fine 1`] = `
+exports[`Tree > Tree performanceVue demo works fine 1`] = `
 <div
   class="tdesign-tree-demo tdesign-demo-performance"
 >
@@ -7716,7 +7863,6 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
     class="operations"
   >
@@ -7731,7 +7877,6 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
       </span>
     </button>
   </div>
-   
   <form
     class="t-form"
     style="max-width: 500px;"
@@ -7767,7 +7912,6 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
     <div
       class="t-form__item t-form-item__"
     >
@@ -7799,7 +7943,6 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
     <div
       class="t-form__item t-form-item__"
     >
@@ -7832,7 +7975,6 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
       </div>
     </div>
   </form>
-   
   <div
     class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
   >
@@ -7902,7 +8044,6 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -7976,7 +8117,6 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -8050,7 +8190,6 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -8069,7 +8208,7 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree stateVue demo works fine 1`] = `
+exports[`Tree > Tree stateVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column"
 >
@@ -8085,7 +8224,6 @@ exports[`Tree Tree stateVue demo works fine 1`] = `
       </span>
     </button>
   </div>
-   
   <div
     class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
   >
@@ -8149,7 +8287,6 @@ exports[`Tree Tree stateVue demo works fine 1`] = `
                 检查节点信息
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-primary"
               type="button"
@@ -8160,7 +8297,6 @@ exports[`Tree Tree stateVue demo works fine 1`] = `
                 变更时间
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-primary"
               type="button"
@@ -8171,7 +8307,6 @@ exports[`Tree Tree stateVue demo works fine 1`] = `
                 变更图标
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-primary"
               type="button"
@@ -8182,7 +8317,6 @@ exports[`Tree Tree stateVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -8250,7 +8384,6 @@ exports[`Tree Tree stateVue demo works fine 1`] = `
                 检查节点信息
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-primary"
               type="button"
@@ -8261,7 +8394,6 @@ exports[`Tree Tree stateVue demo works fine 1`] = `
                 变更时间
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-primary"
               type="button"
@@ -8272,7 +8404,6 @@ exports[`Tree Tree stateVue demo works fine 1`] = `
                 变更图标
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-primary"
               type="button"
@@ -8283,7 +8414,6 @@ exports[`Tree Tree stateVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -8302,7 +8432,7 @@ exports[`Tree Tree stateVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree syncVue demo works fine 1`] = `
+exports[`Tree > Tree syncVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 32px;"
@@ -8804,7 +8934,7 @@ exports[`Tree Tree syncVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tree Tree vscrollVue demo works fine 1`] = `
+exports[`Tree > Tree vscrollVue demo works fine 1`] = `
 <div
   class="tdesign-tree-demo tdesign-demo-vscroll"
 >
@@ -8836,7 +8966,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
     class="operations"
   >
@@ -8851,7 +8980,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
       </span>
     </button>
   </div>
-   
   <form
     class="t-form"
     style="max-width: 500px;"
@@ -8887,7 +9015,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
     <div
       class="t-form__item t-form-item__"
     >
@@ -8919,7 +9046,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
     <div
       class="t-form__item t-form-item__"
     >
@@ -8951,7 +9077,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
         </div>
       </div>
     </div>
-     
     <div
       class="t-form__item t-form-item__"
     >
@@ -8984,7 +9109,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
       </div>
     </div>
   </form>
-   
   <div
     class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
     height="300"
@@ -9055,7 +9179,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -9133,7 +9256,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -9197,7 +9319,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -9261,7 +9382,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -9325,7 +9445,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -9403,7 +9522,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -9467,7 +9585,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -9531,7 +9648,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -9595,7 +9711,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -9673,7 +9788,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -9737,7 +9851,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -9801,7 +9914,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -9865,7 +9977,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -9939,7 +10050,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -10017,7 +10127,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -10081,7 +10190,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -10145,7 +10253,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -10209,7 +10316,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -10287,7 +10393,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -10351,7 +10456,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -10415,7 +10519,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -10479,7 +10582,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -10557,7 +10659,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -10621,7 +10722,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -10685,7 +10785,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -10749,7 +10848,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -10823,7 +10921,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -10901,7 +10998,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -10965,7 +11061,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -11029,7 +11124,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -11093,7 +11187,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -11171,7 +11264,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -11235,7 +11327,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -11299,7 +11390,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -11363,7 +11453,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -11441,7 +11530,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -11505,7 +11593,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -11569,7 +11656,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"
@@ -11633,7 +11719,6 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
                 添加子节点
               </span>
             </button>
-             
             <button
               class="t-button t-size-s t-button--variant-base t-button--theme-danger"
               type="button"

@@ -1,8 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Loading Loading attachVue demo works fine 1`] = `
+exports[`Loading > Loading attachVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
+  data-v-5d1ead0d=""
   style="gap: 16px;"
 >
   <div
@@ -10,6 +11,7 @@ exports[`Loading Loading attachVue demo works fine 1`] = `
   >
     <div
       class="loading-attach-demo__title"
+      data-v-5d1ead0d=""
       id="alice"
     >
       Hello, I'm Alice. I'm going to be a front-end developer.
@@ -20,6 +22,7 @@ exports[`Loading Loading attachVue demo works fine 1`] = `
   >
     <div
       class="t-loading--center t-size-s t-loading t-loading--full t-loading__overlay"
+      data-v-5d1ead0d=""
     >
       <svg
         class="t-loading__gradient t-icon-loading"
@@ -48,6 +51,7 @@ exports[`Loading Loading attachVue demo works fine 1`] = `
   >
     <div
       class="t-switch t-size-m t-is-checked"
+      data-v-5d1ead0d=""
     >
       <span
         class="t-switch__handle"
@@ -62,7 +66,7 @@ exports[`Loading Loading attachVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Loading Loading baseVue demo works fine 1`] = `
+exports[`Loading > Loading baseVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -98,7 +102,7 @@ exports[`Loading Loading baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Loading Loading delayVue demo works fine 1`] = `
+exports[`Loading > Loading delayVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -193,7 +197,7 @@ exports[`Loading Loading delayVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Loading Loading fullscreenVue demo works fine 1`] = `
+exports[`Loading > Loading fullscreenVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -207,9 +211,7 @@ exports[`Loading Loading fullscreenVue demo works fine 1`] = `
     class="t-space-item"
   >
     <div>
-      
-    全局加载开关（开启加载1秒后自动归位）：
-    
+       全局加载开关（开启加载1秒后自动归位）： 
       <div
         class="t-switch t-size-m"
       >
@@ -225,7 +227,7 @@ exports[`Loading Loading fullscreenVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Loading Loading iconTextVue demo works fine 1`] = `
+exports[`Loading > Loading iconTextVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -266,9 +268,10 @@ exports[`Loading Loading iconTextVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Loading Loading serviceVue demo works fine 1`] = `
+exports[`Loading > Loading serviceVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
+  data-v-0331361d=""
   style="gap: 16px;"
 >
   <div
@@ -276,6 +279,7 @@ exports[`Loading Loading serviceVue demo works fine 1`] = `
   >
     <div
       class="loading-service-demo"
+      data-v-0331361d=""
       id="loading-service-demo"
     >
       Loading 挂载容器
@@ -284,21 +288,27 @@ exports[`Loading Loading serviceVue demo works fine 1`] = `
   <div
     class="t-space-item"
   >
-    <p>
+    <p
+      data-v-0331361d=""
+    >
       this.$loading({ attach: '#loading-service-demo', showOverlay: true })
     </p>
   </div>
   <div
     class="t-space-item"
   >
-    <p>
+    <p
+      data-v-0331361d=""
+    >
       this.$loading(true)
     </p>
   </div>
   <div
     class="t-space-item"
   >
-    <p>
+    <p
+      data-v-0331361d=""
+    >
       this.$loading({ fullscreen: true, attach: 'body', preventScrollThrough: false })
     </p>
   </div>
@@ -307,6 +317,7 @@ exports[`Loading Loading serviceVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-horizontal"
+      data-v-0331361d=""
       style="gap: 16px;"
     >
       <div
@@ -314,6 +325,7 @@ exports[`Loading Loading serviceVue demo works fine 1`] = `
       >
         <button
           class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+          data-v-0331361d=""
           type="button"
         >
           <span
@@ -328,6 +340,7 @@ exports[`Loading Loading serviceVue demo works fine 1`] = `
       >
         <button
           class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+          data-v-0331361d=""
           type="button"
         >
           <span
@@ -342,6 +355,7 @@ exports[`Loading Loading serviceVue demo works fine 1`] = `
       >
         <button
           class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+          data-v-0331361d=""
           type="button"
         >
           <span
@@ -356,21 +370,27 @@ exports[`Loading Loading serviceVue demo works fine 1`] = `
   <div
     class="t-space-item"
   >
-    <p>
+    <p
+      data-v-0331361d=""
+    >
       LoadingPlugin({ attach: '#loading-service-demo', showOverlay: true })
     </p>
   </div>
   <div
     class="t-space-item"
   >
-    <p>
+    <p
+      data-v-0331361d=""
+    >
       LoadingPlugin(true)
     </p>
   </div>
   <div
     class="t-space-item"
   >
-    <p>
+    <p
+      data-v-0331361d=""
+    >
       LoadingPlugin({ fullscreen: true, attach: 'body', preventScrollThrough: false })
     </p>
   </div>
@@ -379,6 +399,7 @@ exports[`Loading Loading serviceVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-horizontal"
+      data-v-0331361d=""
       style="gap: 16px;"
     >
       <div
@@ -386,6 +407,7 @@ exports[`Loading Loading serviceVue demo works fine 1`] = `
       >
         <button
           class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+          data-v-0331361d=""
           type="button"
         >
           <span
@@ -400,6 +422,7 @@ exports[`Loading Loading serviceVue demo works fine 1`] = `
       >
         <button
           class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+          data-v-0331361d=""
           type="button"
         >
           <span
@@ -414,6 +437,7 @@ exports[`Loading Loading serviceVue demo works fine 1`] = `
       >
         <button
           class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+          data-v-0331361d=""
           type="button"
         >
           <span
@@ -428,7 +452,7 @@ exports[`Loading Loading serviceVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Loading Loading sizeVue demo works fine 1`] = `
+exports[`Loading > Loading sizeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 24px;"
@@ -613,7 +637,7 @@ exports[`Loading Loading sizeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Loading Loading textVue demo works fine 1`] = `
+exports[`Loading > Loading textVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 100px;"
@@ -662,9 +686,10 @@ exports[`Loading Loading textVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Loading Loading wrapVue demo works fine 1`] = `
+exports[`Loading > Loading wrapVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
+  data-v-4fca1edc=""
   style="gap: 24px;"
 >
   <div
@@ -672,6 +697,7 @@ exports[`Loading Loading wrapVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-horizontal"
+      data-v-4fca1edc=""
       style="gap: 16px;"
     >
       <div
@@ -679,24 +705,31 @@ exports[`Loading Loading wrapVue demo works fine 1`] = `
       >
         <div
           class="t-loading__parent"
+          data-v-4fca1edc=""
         >
-          <div>
+          <div
+            data-v-4fca1edc=""
+          >
             this is loading component
           </div>
-           
-          <div>
+          <div
+            data-v-4fca1edc=""
+          >
             this is loading component
           </div>
-           
-          <div>
+          <div
+            data-v-4fca1edc=""
+          >
             this is loading component
           </div>
-           
-          <div>
+          <div
+            data-v-4fca1edc=""
+          >
             this is loading component
           </div>
-           
-          <div>
+          <div
+            data-v-4fca1edc=""
+          >
             this is loading component
           </div>
           <div
@@ -732,6 +765,7 @@ exports[`Loading Loading wrapVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-horizontal"
+      data-v-4fca1edc=""
       style="gap: 24px;"
     >
       <div
@@ -739,6 +773,7 @@ exports[`Loading Loading wrapVue demo works fine 1`] = `
       >
         <button
           class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+          data-v-4fca1edc=""
           type="button"
         >
           <span
@@ -753,6 +788,7 @@ exports[`Loading Loading wrapVue demo works fine 1`] = `
       >
         <button
           class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+          data-v-4fca1edc=""
           type="button"
         >
           <span

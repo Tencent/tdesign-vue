@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`TimePicker TimePicker baseVue demo works fine 1`] = `
+exports[`TimePicker > TimePicker baseVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -106,7 +106,7 @@ exports[`TimePicker TimePicker baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TimePicker TimePicker clearableVue demo works fine 1`] = `
+exports[`TimePicker > TimePicker clearableVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -226,7 +226,7 @@ exports[`TimePicker TimePicker clearableVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TimePicker TimePicker disabledVue demo works fine 1`] = `
+exports[`TimePicker > TimePicker disabledVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -347,7 +347,7 @@ exports[`TimePicker TimePicker disabledVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TimePicker TimePicker formatVue demo works fine 1`] = `
+exports[`TimePicker > TimePicker formatVue demo works fine 1`] = `
 <div
   class="t-time-picker"
 >
@@ -395,7 +395,7 @@ exports[`TimePicker TimePicker formatVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TimePicker TimePicker hideClearButtonVue demo works fine 1`] = `
+exports[`TimePicker > TimePicker hideClearButtonVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -515,7 +515,7 @@ exports[`TimePicker TimePicker hideClearButtonVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TimePicker TimePicker hmVue demo works fine 1`] = `
+exports[`TimePicker > TimePicker hmVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -635,7 +635,7 @@ exports[`TimePicker TimePicker hmVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TimePicker TimePicker hmsVue demo works fine 1`] = `
+exports[`TimePicker > TimePicker hmsVue demo works fine 1`] = `
 <div
   class="t-time-picker"
 >
@@ -683,7 +683,7 @@ exports[`TimePicker TimePicker hmsVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TimePicker TimePicker keyboardVue demo works fine 1`] = `
+exports[`TimePicker > TimePicker keyboardVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -802,7 +802,7 @@ exports[`TimePicker TimePicker keyboardVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TimePicker TimePicker panelVue demo works fine 1`] = `
+exports[`TimePicker > TimePicker panelVue demo works fine 1`] = `
 <div
   class="t-time-picker__panel"
 >
@@ -820,7 +820,7 @@ exports[`TimePicker TimePicker panelVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TimePicker TimePicker rangeVue demo works fine 1`] = `
+exports[`TimePicker > TimePicker rangeVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -905,7 +905,7 @@ exports[`TimePicker TimePicker rangeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TimePicker TimePicker showStepsVue demo works fine 1`] = `
+exports[`TimePicker > TimePicker showStepsVue demo works fine 1`] = `
 <div
   class="t-time-picker"
 >
@@ -953,7 +953,7 @@ exports[`TimePicker TimePicker showStepsVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TimePicker TimePicker stepVue demo works fine 1`] = `
+exports[`TimePicker > TimePicker stepVue demo works fine 1`] = `
 <div
   class="t-time-picker"
 >
@@ -1001,7 +1001,7 @@ exports[`TimePicker TimePicker stepVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TimePicker TimePicker twelveHourMeridianVue demo works fine 1`] = `
+exports[`TimePicker > TimePicker twelveHourMeridianVue demo works fine 1`] = `
 <div
   class="t-time-picker"
 >
@@ -1049,7 +1049,7 @@ exports[`TimePicker TimePicker twelveHourMeridianVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`TimePicker TimePicker twelveHourVue demo works fine 1`] = `
+exports[`TimePicker > TimePicker twelveHourVue demo works fine 1`] = `
 <div
   class="t-time-picker"
 >

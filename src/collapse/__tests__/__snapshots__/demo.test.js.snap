@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Collapse Collapse baseVue demo works fine 1`] = `
+exports[`Collapse > Collapse baseVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -61,15 +61,12 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
               <div
                 class="t-collapse-panel__content"
               >
-                
-      这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
-    
+                 这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。 
               </div>
             </div>
           </transition-stub>
         </div>
       </div>
-       
       <div
         class="t-collapse-panel"
       >
@@ -116,7 +113,6 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
           />
         </div>
       </div>
-       
       <div
         class="t-collapse-panel"
       >
@@ -377,7 +373,6 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
           </transition-stub>
         </div>
       </div>
-       
       <div
         class="t-collapse-panel"
       >
@@ -488,7 +483,6 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
                       </transition-stub>
                     </div>
                   </div>
-                   
                   <div
                     class="t-collapse-panel"
                   >
@@ -545,7 +539,6 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
                       </transition-stub>
                     </div>
                   </div>
-                   
                   <div
                     class="t-collapse-panel"
                   >
@@ -602,7 +595,6 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
                       </transition-stub>
                     </div>
                   </div>
-                   
                   <div
                     class="t-collapse-panel"
                   >
@@ -681,7 +673,7 @@ exports[`Collapse Collapse baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Collapse Collapse iconVue demo works fine 1`] = `
+exports[`Collapse > Collapse iconVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -743,15 +735,12 @@ exports[`Collapse Collapse iconVue demo works fine 1`] = `
               <div
                 class="t-collapse-panel__content"
               >
-                
-      这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
-    
+                 这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。 
               </div>
             </div>
           </transition-stub>
         </div>
       </div>
-       
       <div
         class="t-collapse-panel"
       >
@@ -809,7 +798,6 @@ exports[`Collapse Collapse iconVue demo works fine 1`] = `
           </transition-stub>
         </div>
       </div>
-       
       <div
         class="t-collapse-panel"
       >
@@ -861,15 +849,12 @@ exports[`Collapse Collapse iconVue demo works fine 1`] = `
               <div
                 class="t-collapse-panel__content"
               >
-                
-      这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
-    
+                 这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。 
               </div>
             </div>
           </transition-stub>
         </div>
       </div>
-       
       <div
         class="t-collapse-panel"
       >
@@ -921,9 +906,7 @@ exports[`Collapse Collapse iconVue demo works fine 1`] = `
               <div
                 class="t-collapse-panel__content"
               >
-                
-      这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
-    
+                 这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。 
               </div>
             </div>
           </transition-stub>
@@ -983,7 +966,6 @@ exports[`Collapse Collapse iconVue demo works fine 1`] = `
               左边
             </span>
           </label>
-           
           <label
             class="t-radio"
           >
@@ -1034,7 +1016,7 @@ exports[`Collapse Collapse iconVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Collapse Collapse mutexVue demo works fine 1`] = `
+exports[`Collapse > Collapse mutexVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1096,15 +1078,12 @@ exports[`Collapse Collapse mutexVue demo works fine 1`] = `
               <div
                 class="t-collapse-panel__content"
               >
-                
-      这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
-    
+                 这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。 
               </div>
             </div>
           </transition-stub>
         </div>
       </div>
-       
       <div
         class="t-collapse-panel"
       >
@@ -1162,7 +1141,6 @@ exports[`Collapse Collapse mutexVue demo works fine 1`] = `
           </transition-stub>
         </div>
       </div>
-       
       <div
         class="t-collapse-panel"
       >
@@ -1214,15 +1192,12 @@ exports[`Collapse Collapse mutexVue demo works fine 1`] = `
               <div
                 class="t-collapse-panel__content"
               >
-                
-      这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
-    
+                 这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。 
               </div>
             </div>
           </transition-stub>
         </div>
       </div>
-       
       <div
         class="t-collapse-panel"
       >
@@ -1274,9 +1249,7 @@ exports[`Collapse Collapse mutexVue demo works fine 1`] = `
               <div
                 class="t-collapse-panel__content"
               >
-                
-      这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
-    
+                 这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。 
               </div>
             </div>
           </transition-stub>
@@ -1296,7 +1269,7 @@ exports[`Collapse Collapse mutexVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Collapse Collapse otherVue demo works fine 1`] = `
+exports[`Collapse > Collapse otherVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1358,15 +1331,12 @@ exports[`Collapse Collapse otherVue demo works fine 1`] = `
               <div
                 class="t-collapse-panel__content"
               >
-                
-      这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
-    
+                 这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。 
               </div>
             </div>
           </transition-stub>
         </div>
       </div>
-       
       <div
         class="t-collapse-panel"
       >
@@ -1424,7 +1394,6 @@ exports[`Collapse Collapse otherVue demo works fine 1`] = `
           </transition-stub>
         </div>
       </div>
-       
       <div
         class="t-collapse-panel"
       >
@@ -1476,15 +1445,12 @@ exports[`Collapse Collapse otherVue demo works fine 1`] = `
               <div
                 class="t-collapse-panel__content"
               >
-                
-      这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
-    
+                 这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。 
               </div>
             </div>
           </transition-stub>
         </div>
       </div>
-       
       <div
         class="t-collapse-panel"
       >
@@ -1536,9 +1502,7 @@ exports[`Collapse Collapse otherVue demo works fine 1`] = `
               <div
                 class="t-collapse-panel__content"
               >
-                
-      这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
-    
+                 这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。 
               </div>
             </div>
           </transition-stub>
@@ -1569,7 +1533,6 @@ exports[`Collapse Collapse otherVue demo works fine 1`] = `
           全部禁用
         </span>
       </label>
-       
       <label
         class="t-checkbox"
       >
@@ -1592,7 +1555,7 @@ exports[`Collapse Collapse otherVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Collapse Collapse rightSlotVue demo works fine 1`] = `
+exports[`Collapse > Collapse rightSlotVue demo works fine 1`] = `
 <div
   class="t-collapse"
 >
@@ -1653,7 +1616,6 @@ exports[`Collapse Collapse rightSlotVue demo works fine 1`] = `
               禁用
             </span>
           </label>
-           
           <button
             class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             style="margin-left: 8px;"
@@ -1677,15 +1639,12 @@ exports[`Collapse Collapse rightSlotVue demo works fine 1`] = `
           <div
             class="t-collapse-panel__content"
           >
-            
-    这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
-  
+             这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。 
           </div>
         </div>
       </transition-stub>
     </div>
   </div>
-   
   <div
     class="t-collapse-panel t-is-disabled"
   >
@@ -1743,7 +1702,6 @@ exports[`Collapse Collapse rightSlotVue demo works fine 1`] = `
               禁用
             </span>
           </label>
-           
           <button
             class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             style="margin-left: 8px;"
@@ -1767,15 +1725,12 @@ exports[`Collapse Collapse rightSlotVue demo works fine 1`] = `
           <div
             class="t-collapse-panel__content"
           >
-            
-    这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
-  
+             这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。 
           </div>
         </div>
       </transition-stub>
     </div>
   </div>
-   
   <div
     class="t-collapse-panel"
   >
@@ -1833,7 +1788,6 @@ exports[`Collapse Collapse rightSlotVue demo works fine 1`] = `
               禁用
             </span>
           </label>
-           
           <button
             class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             style="margin-left: 8px;"
@@ -1857,15 +1811,12 @@ exports[`Collapse Collapse rightSlotVue demo works fine 1`] = `
           <div
             class="t-collapse-panel__content"
           >
-            
-    这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
-  
+             这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。 
           </div>
         </div>
       </transition-stub>
     </div>
   </div>
-   
   <div
     class="t-collapse-panel t-is-disabled"
   >
@@ -1923,7 +1874,6 @@ exports[`Collapse Collapse rightSlotVue demo works fine 1`] = `
               禁用
             </span>
           </label>
-           
           <button
             class="t-button t-size-s t-button--variant-base t-button--theme-primary"
             style="margin-left: 8px;"
@@ -1947,9 +1897,7 @@ exports[`Collapse Collapse rightSlotVue demo works fine 1`] = `
           <div
             class="t-collapse-panel__content"
           >
-            
-    这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
-  
+             这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。 
           </div>
         </div>
       </transition-stub>

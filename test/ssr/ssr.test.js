@@ -11,7 +11,7 @@ function ssrSnapshotTest() {
   const files = glob.sync('./src/**/_example/*.vue');
   describe('ssr snapshot test', () => {
     beforeAll(() => {
-      jest.useFakeTimers().setSystemTime(new Date('2021-12-31').getTime());
+      vi.useFakeTimers().setSystemTime(new Date('2021-12-31').getTime());
     });
     files.forEach((file) => {
       if (file.indexOf('temp') > -1) {

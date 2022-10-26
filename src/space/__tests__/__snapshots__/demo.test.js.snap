@@ -1,8 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Space Space alignVue demo works fine 1`] = `
+exports[`Space > Space alignVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
+  data-v-2418d6a3=""
   style="gap: 16px; flex-wrap: wrap;"
 >
   <div
@@ -10,12 +11,15 @@ exports[`Space Space alignVue demo works fine 1`] = `
   >
     <div
       class="space-border t-space t-space-align-start t-space-horizontal"
+      data-v-2418d6a3=""
       style="gap: 16px;"
     >
       <div
         class="t-space-item"
       >
-        <div>
+        <div
+          data-v-2418d6a3=""
+        >
           start
         </div>
       </div>
@@ -24,6 +28,7 @@ exports[`Space Space alignVue demo works fine 1`] = `
       >
         <button
           class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          data-v-2418d6a3=""
           type="button"
         >
           <span
@@ -38,6 +43,7 @@ exports[`Space Space alignVue demo works fine 1`] = `
       >
         <div
           class="space-block"
+          data-v-2418d6a3=""
         />
       </div>
     </div>
@@ -47,12 +53,15 @@ exports[`Space Space alignVue demo works fine 1`] = `
   >
     <div
       class="space-border t-space t-space-align-center t-space-horizontal"
+      data-v-2418d6a3=""
       style="gap: 16px;"
     >
       <div
         class="t-space-item"
       >
-        <div>
+        <div
+          data-v-2418d6a3=""
+        >
           center
         </div>
       </div>
@@ -61,6 +70,7 @@ exports[`Space Space alignVue demo works fine 1`] = `
       >
         <button
           class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          data-v-2418d6a3=""
           type="button"
         >
           <span
@@ -75,6 +85,7 @@ exports[`Space Space alignVue demo works fine 1`] = `
       >
         <div
           class="space-block"
+          data-v-2418d6a3=""
         />
       </div>
     </div>
@@ -84,12 +95,15 @@ exports[`Space Space alignVue demo works fine 1`] = `
   >
     <div
       class="space-border t-space t-space-align-end t-space-horizontal"
+      data-v-2418d6a3=""
       style="gap: 16px;"
     >
       <div
         class="t-space-item"
       >
-        <div>
+        <div
+          data-v-2418d6a3=""
+        >
           end
         </div>
       </div>
@@ -98,6 +112,7 @@ exports[`Space Space alignVue demo works fine 1`] = `
       >
         <button
           class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          data-v-2418d6a3=""
           type="button"
         >
           <span
@@ -112,6 +127,7 @@ exports[`Space Space alignVue demo works fine 1`] = `
       >
         <div
           class="space-block"
+          data-v-2418d6a3=""
         />
       </div>
     </div>
@@ -121,12 +137,15 @@ exports[`Space Space alignVue demo works fine 1`] = `
   >
     <div
       class="space-border t-space t-space-align-baseline t-space-horizontal"
+      data-v-2418d6a3=""
       style="gap: 16px;"
     >
       <div
         class="t-space-item"
       >
-        <div>
+        <div
+          data-v-2418d6a3=""
+        >
           baseline
         </div>
       </div>
@@ -135,6 +154,7 @@ exports[`Space Space alignVue demo works fine 1`] = `
       >
         <button
           class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          data-v-2418d6a3=""
           type="button"
         >
           <span
@@ -149,6 +169,7 @@ exports[`Space Space alignVue demo works fine 1`] = `
       >
         <div
           class="space-block"
+          data-v-2418d6a3=""
         />
       </div>
     </div>
@@ -156,7 +177,7 @@ exports[`Space Space alignVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Space Space baseVue demo works fine 1`] = `
+exports[`Space > Space baseVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -206,7 +227,7 @@ exports[`Space Space baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Space Space breakLineVue demo works fine 1`] = `
+exports[`Space > Space breakLineVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px; flex-wrap: wrap;"
@@ -354,7 +375,7 @@ exports[`Space Space breakLineVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Space Space separatorVue demo works fine 1`] = `
+exports[`Space > Space separatorVue demo works fine 1`] = `
 <div
   class="t-space t-space-align-center t-space-horizontal"
   style="gap: 16px;"
@@ -418,7 +439,7 @@ exports[`Space Space separatorVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Space Space sizeVue demo works fine 1`] = `
+exports[`Space > Space sizeVue demo works fine 1`] = `
 <div>
   <div
     aria-valuetext="8"
@@ -451,9 +472,7 @@ exports[`Space Space sizeVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <br />
-   
   <div
     class="t-space t-space-horizontal"
     style="gap: 8px;"
@@ -518,7 +537,7 @@ exports[`Space Space sizeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Space Space verticalVue demo works fine 1`] = `
+exports[`Space > Space verticalVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -552,9 +571,7 @@ exports[`Space Space verticalVue demo works fine 1`] = `
       <div
         class="t-card__body"
       >
-        
-    仅有内容区域的卡片形式。卡片内容区域可以是文字、图片、表单、表格等形式信息内容。可使用大中小不同的卡片尺寸，按业务需求进行呈现。
-  
+         仅有内容区域的卡片形式。卡片内容区域可以是文字、图片、表单、表格等形式信息内容。可使用大中小不同的卡片尺寸，按业务需求进行呈现。 
       </div>
     </div>
   </div>
@@ -587,9 +604,7 @@ exports[`Space Space verticalVue demo works fine 1`] = `
       <div
         class="t-card__body"
       >
-        
-    仅有内容区域的卡片形式。卡片内容区域可以是文字、图片、表单、表格等形式信息内容。可使用大中小不同的卡片尺寸，按业务需求进行呈现。
-  
+         仅有内容区域的卡片形式。卡片内容区域可以是文字、图片、表单、表格等形式信息内容。可使用大中小不同的卡片尺寸，按业务需求进行呈现。 
       </div>
     </div>
   </div>
@@ -622,9 +637,7 @@ exports[`Space Space verticalVue demo works fine 1`] = `
       <div
         class="t-card__body"
       >
-        
-    仅有内容区域的卡片形式。卡片内容区域可以是文字、图片、表单、表格等形式信息内容。可使用大中小不同的卡片尺寸，按业务需求进行呈现。
-  
+         仅有内容区域的卡片形式。卡片内容区域可以是文字、图片、表单、表格等形式信息内容。可使用大中小不同的卡片尺寸，按业务需求进行呈现。 
       </div>
     </div>
   </div>

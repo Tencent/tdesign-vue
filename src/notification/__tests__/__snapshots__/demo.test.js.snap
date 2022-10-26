@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Notification Notification baseVue demo works fine 1`] = `
+exports[`Notification > Notification baseVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 20px;"
@@ -100,7 +100,7 @@ exports[`Notification Notification baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Notification Notification closeAllVue demo works fine 1`] = `
+exports[`Notification > Notification closeAllVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -137,10 +137,13 @@ exports[`Notification Notification closeAllVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Notification Notification closeVue demo works fine 1`] = `
-<div>
+exports[`Notification > Notification closeVue demo works fine 1`] = `
+<div
+  data-v-6204336f=""
+>
   <div
     class="t-notification"
+    data-v-6204336f=""
   >
     <div
       class="t-notification__icon"
@@ -181,9 +184,9 @@ exports[`Notification Notification closeVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
     class="t-notification"
+    data-v-6204336f=""
   >
     <div
       class="t-notification__icon"
@@ -226,9 +229,9 @@ exports[`Notification Notification closeVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
     class="t-notification"
+    data-v-6204336f=""
   >
     <div
       class="t-notification__icon"
@@ -261,7 +264,9 @@ exports[`Notification Notification closeVue demo works fine 1`] = `
         <span
           class="t-message__close"
         >
-          <span>
+          <span
+            data-v-6204336f=""
+          >
             close
           </span>
         </span>
@@ -273,9 +278,9 @@ exports[`Notification Notification closeVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
     class="t-notification"
+    data-v-6204336f=""
   >
     <div
       class="t-notification__icon"
@@ -318,9 +323,9 @@ exports[`Notification Notification closeVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-6204336f=""
     type="button"
   >
     <span
@@ -329,9 +334,9 @@ exports[`Notification Notification closeVue demo works fine 1`] = `
       处理开关事件
     </span>
   </button>
-   
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-6204336f=""
     type="button"
   >
     <span
@@ -340,14 +345,12 @@ exports[`Notification Notification closeVue demo works fine 1`] = `
       处理定时关闭事件（3s）
     </span>
   </button>
-   
   <!---->
-   
   <!---->
 </div>
 `;
 
-exports[`Notification Notification contentVue demo works fine 1`] = `
+exports[`Notification > Notification contentVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 20px;"
@@ -497,10 +500,13 @@ exports[`Notification Notification contentVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Notification Notification footerVue demo works fine 1`] = `
-<div>
+exports[`Notification > Notification footerVue demo works fine 1`] = `
+<div
+  data-v-9ea0c098=""
+>
   <div
     class="t-notification"
+    data-v-9ea0c098=""
   >
     <div
       class="t-notification__icon"
@@ -541,18 +547,20 @@ exports[`Notification Notification footerVue demo works fine 1`] = `
       </div>
       <div
         class="t-notification__detail"
+        data-v-9ea0c098=""
       >
         <span
           class="t-notification__detail-item t-is-active"
+          data-v-9ea0c098=""
         >
           查看详情
         </span>
       </div>
     </div>
   </div>
-   
   <div
     class="t-notification"
+    data-v-9ea0c098=""
   >
     <div
       class="t-notification__icon"
@@ -593,15 +601,17 @@ exports[`Notification Notification footerVue demo works fine 1`] = `
       </div>
       <div
         class="t-notification__detail"
+        data-v-9ea0c098=""
       >
         <span
           class="t-notification__detail-item"
+          data-v-9ea0c098=""
         >
           重启
         </span>
-         
         <span
           class="t-notification__detail-item t-is-active"
+          data-v-9ea0c098=""
         >
           查看详情
         </span>
@@ -611,7 +621,7 @@ exports[`Notification Notification footerVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Notification Notification iconVue demo works fine 1`] = `
+exports[`Notification > Notification iconVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 20px;"
@@ -803,7 +813,7 @@ exports[`Notification Notification iconVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Notification Notification offsetVue demo works fine 1`] = `
+exports[`Notification > Notification offsetVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 10px;"
@@ -839,7 +849,7 @@ exports[`Notification Notification offsetVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Notification Notification operationVue demo works fine 1`] = `
+exports[`Notification > Notification operationVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 24px;"
@@ -1085,7 +1095,6 @@ exports[`Notification Notification operationVue demo works fine 1`] = `
               取消
             </span>
           </button>
-           
           <button
             class="t-notification__detail-item t-button t-size-m t-button--variant-text t-button--theme-primary"
             type="button"
@@ -1093,9 +1102,7 @@ exports[`Notification Notification operationVue demo works fine 1`] = `
             <span
               class="t-button__text"
             >
-              
-          稍后提醒我(10s)
-        
+               稍后提醒我(10s) 
             </span>
           </button>
         </div>
@@ -1105,7 +1112,7 @@ exports[`Notification Notification operationVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Notification Notification placementVue demo works fine 1`] = `
+exports[`Notification > Notification placementVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1243,7 +1250,7 @@ exports[`Notification Notification placementVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Notification Notification pluginVue demo works fine 1`] = `
+exports[`Notification > Notification pluginVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 42px;"
@@ -1321,9 +1328,7 @@ exports[`Notification Notification pluginVue demo works fine 1`] = `
               <span
                 class="t-button__text"
               >
-                
-        永久显示
-      
+                 永久显示 
               </span>
             </button>
           </div>
@@ -1415,7 +1420,7 @@ exports[`Notification Notification pluginVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Notification Notification sizeVue demo works fine 1`] = `
+exports[`Notification > Notification sizeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 20px;"
@@ -1518,9 +1523,10 @@ exports[`Notification Notification sizeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Notification Notification toggleVue demo works fine 1`] = `
+exports[`Notification > Notification toggleVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
+  data-v-293420ed=""
   style="gap: 16px;"
 >
   <div
@@ -1528,6 +1534,7 @@ exports[`Notification Notification toggleVue demo works fine 1`] = `
   >
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+      data-v-293420ed=""
       type="button"
     >
       <span
@@ -1540,7 +1547,7 @@ exports[`Notification Notification toggleVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Notification Notification type4FnVue demo works fine 1`] = `
+exports[`Notification > Notification type4FnVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 10px;"
@@ -1604,10 +1611,13 @@ exports[`Notification Notification type4FnVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Notification Notification typeVue demo works fine 1`] = `
-<div>
+exports[`Notification > Notification typeVue demo works fine 1`] = `
+<div
+  data-v-0500de13=""
+>
   <div
     class="t-notification"
+    data-v-0500de13=""
   >
     <div
       class="t-notification__icon"
@@ -1648,9 +1658,9 @@ exports[`Notification Notification typeVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
     class="t-notification"
+    data-v-0500de13=""
   >
     <div
       class="t-notification__icon"
@@ -1691,9 +1701,9 @@ exports[`Notification Notification typeVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
     class="t-notification"
+    data-v-0500de13=""
   >
     <div
       class="t-notification__icon"
@@ -1734,9 +1744,9 @@ exports[`Notification Notification typeVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
     class="t-notification"
+    data-v-0500de13=""
   >
     <div
       class="t-notification__icon"

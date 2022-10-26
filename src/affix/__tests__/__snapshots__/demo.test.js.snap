@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Affix Affix baseVue demo works fine 1`] = `
+exports[`Affix > Affix baseVue demo works fine 1`] = `
 <div
   class="affix-base"
 >
@@ -21,20 +21,26 @@ exports[`Affix Affix baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Affix Affix containerVue demo works fine 1`] = `
+exports[`Affix > Affix containerVue demo works fine 1`] = `
 <div
   class="affix-container"
+  data-v-8141d1d6=""
 >
   <div
     class="affix-container-demo1"
+    data-v-8141d1d6=""
   >
     <div
       class="background"
+      data-v-8141d1d6=""
     >
-      <div>
+      <div
+        data-v-8141d1d6=""
+      >
         <div>
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            data-v-8141d1d6=""
             type="button"
           >
             <span

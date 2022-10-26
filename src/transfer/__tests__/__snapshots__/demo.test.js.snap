@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Transfer Transfer baseVue demo works fine 1`] = `
+exports[`Transfer > Transfer baseVue demo works fine 1`] = `
 <div
   class="t-transfer"
 >
@@ -542,7 +542,7 @@ exports[`Transfer Transfer baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Transfer Transfer checkedVue demo works fine 1`] = `
+exports[`Transfer > Transfer checkedVue demo works fine 1`] = `
 <div
   class="t-transfer"
 >
@@ -1084,7 +1084,7 @@ exports[`Transfer Transfer checkedVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Transfer Transfer customVue demo works fine 1`] = `
+exports[`Transfer > Transfer customVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1567,9 +1567,7 @@ exports[`Transfer Transfer customVue demo works fine 1`] = `
           <span
             class="t-button__text"
           >
-            
-      加入
-    
+             加入 
           </span>
         </button>
         <button
@@ -1580,9 +1578,7 @@ exports[`Transfer Transfer customVue demo works fine 1`] = `
           <span
             class="t-button__text"
           >
-            
-      移除
-    
+             移除 
           </span>
         </button>
       </div>
@@ -2237,7 +2233,7 @@ exports[`Transfer Transfer customVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Transfer Transfer disabledVue demo works fine 1`] = `
+exports[`Transfer > Transfer disabledVue demo works fine 1`] = `
 <div
   class="t-transfer"
 >
@@ -2785,7 +2781,7 @@ exports[`Transfer Transfer disabledVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Transfer Transfer emptyVue demo works fine 1`] = `
+exports[`Transfer > Transfer emptyVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -3083,7 +3079,7 @@ exports[`Transfer Transfer emptyVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Transfer Transfer paginationVue demo works fine 1`] = `
+exports[`Transfer > Transfer paginationVue demo works fine 1`] = `
 <div
   checked-value=""
   class="t-transfer t-transfer__pagination"
@@ -3498,7 +3494,7 @@ exports[`Transfer Transfer paginationVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Transfer Transfer searchVue demo works fine 1`] = `
+exports[`Transfer > Transfer searchVue demo works fine 1`] = `
 <div
   checked-value=""
   class="t-transfer t-transfer__search"
@@ -4109,7 +4105,7 @@ exports[`Transfer Transfer searchVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Transfer Transfer targetValueVue demo works fine 1`] = `
+exports[`Transfer > Transfer targetValueVue demo works fine 1`] = `
 <div
   class="t-transfer"
 >
@@ -4646,7 +4642,7 @@ exports[`Transfer Transfer targetValueVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Transfer Transfer treeVue demo works fine 1`] = `
+exports[`Transfer > Transfer treeVue demo works fine 1`] = `
 <div
   class="t-transfer t-transfer--with-tree"
 >

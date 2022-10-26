@@ -6,7 +6,6 @@ import { mount } from '@vue/test-utils';
 import asyncVue from '@/src/dialog/_example/async.vue';
 import attachVue from '@/src/dialog/_example/attach.vue';
 import baseVue from '@/src/dialog/_example/base.vue';
-import custom from '@/src/dialog/_example/custom';
 import customVue from '@/src/dialog/_example/custom.vue';
 import dragVue from '@/src/dialog/_example/drag.vue';
 import iconVue from '@/src/dialog/_example/icon.vue';
@@ -19,7 +18,6 @@ const mapper = {
   asyncVue,
   attachVue,
   baseVue,
-  custom,
   customVue,
   dragVue,
   iconVue,

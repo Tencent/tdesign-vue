@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Steps Steps extraVue demo works fine 1`] = `
+exports[`Steps > Steps extraVue demo works fine 1`] = `
 <div
   class="t-steps t-steps--vertical t-steps--positive t-steps--default-anchor t-steps--line-separator"
 >
@@ -84,40 +84,6 @@ exports[`Steps Steps extraVue demo works fine 1`] = `
         </div>
         <div
           class="t-steps-item__extra"
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-steps-item t-steps-item--default"
-  >
-    <div
-      class="t-steps-item__inner t-steps-item--clickable"
-    >
-      <div
-        class="t-steps-item__icon t-steps-item--default"
-      >
-        <span
-          class="t-steps-item__icon--number"
-        >
-          3
-        </span>
-      </div>
-      <div
-        class="t-steps-item__content"
-      >
-        <div
-          class="t-steps-item__title"
-        >
-          步骤3
-        </div>
-        <div
-          class="t-steps-item__description"
-        >
-          这里是提示文字
-        </div>
-        <div
-          class="t-steps-item__extra"
         >
           <div
             class="t-space t-space-horizontal"
@@ -168,6 +134,40 @@ exports[`Steps Steps extraVue demo works fine 1`] = `
         <span
           class="t-steps-item__icon--number"
         >
+          3
+        </span>
+      </div>
+      <div
+        class="t-steps-item__content"
+      >
+        <div
+          class="t-steps-item__title"
+        >
+          步骤3
+        </div>
+        <div
+          class="t-steps-item__description"
+        >
+          这里是提示文字
+        </div>
+        <div
+          class="t-steps-item__extra"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-steps-item t-steps-item--default"
+  >
+    <div
+      class="t-steps-item__inner t-steps-item--clickable"
+    >
+      <div
+        class="t-steps-item__icon t-steps-item--default"
+      >
+        <span
+          class="t-steps-item__icon--number"
+        >
           4
         </span>
       </div>
@@ -193,7 +193,7 @@ exports[`Steps Steps extraVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps iconVue demo works fine 1`] = `
+exports[`Steps > Steps iconVue demo works fine 1`] = `
 <div
   class="t-steps t-steps--horizontal t-steps--positive t-steps--default-anchor t-steps--line-separator"
 >
@@ -378,7 +378,7 @@ exports[`Steps Steps iconVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps noSequenceVue demo works fine 1`] = `
+exports[`Steps > Steps noSequenceVue demo works fine 1`] = `
 <div
   class="t-steps t-steps--horizontal t-steps--positive t-steps--dot-anchor t-steps--line-separator"
 >
@@ -497,7 +497,7 @@ exports[`Steps Steps noSequenceVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps optionsVue demo works fine 1`] = `
+exports[`Steps > Steps optionsVue demo works fine 1`] = `
 <div
   class="t-steps t-steps--horizontal t-steps--positive t-steps--default-anchor t-steps--line-separator"
 >
@@ -652,7 +652,7 @@ exports[`Steps Steps optionsVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps sequenceVue demo works fine 1`] = `
+exports[`Steps > Steps sequenceVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 24px;"
@@ -976,7 +976,7 @@ exports[`Steps Steps sequenceVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps statusVue demo works fine 1`] = `
+exports[`Steps > Steps statusVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 24px;"
@@ -1320,9 +1320,10 @@ exports[`Steps Steps statusVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps verticalNoSequenceVue demo works fine 1`] = `
+exports[`Steps > Steps verticalNoSequenceVue demo works fine 1`] = `
 <div
   class="justify-around t-space t-space-horizontal"
+  data-v-7f4a1ba9=""
   style="gap: 16px;"
 >
   <div
@@ -1330,9 +1331,11 @@ exports[`Steps Steps verticalNoSequenceVue demo works fine 1`] = `
   >
     <div
       class="t-steps t-steps--vertical t-steps--positive t-steps--dot-anchor t-steps--line-separator"
+      data-v-7f4a1ba9=""
     >
       <div
         class="t-steps-item t-steps-item--finish"
+        data-v-7f4a1ba9=""
       >
         <div
           class="t-steps-item__inner "
@@ -1361,6 +1364,7 @@ exports[`Steps Steps verticalNoSequenceVue demo works fine 1`] = `
       </div>
       <div
         class="t-steps-item t-steps-item--process"
+        data-v-7f4a1ba9=""
       >
         <div
           class="t-steps-item__inner "
@@ -1389,6 +1393,7 @@ exports[`Steps Steps verticalNoSequenceVue demo works fine 1`] = `
       </div>
       <div
         class="t-steps-item t-steps-item--default"
+        data-v-7f4a1ba9=""
       >
         <div
           class="t-steps-item__inner "
@@ -1417,6 +1422,7 @@ exports[`Steps Steps verticalNoSequenceVue demo works fine 1`] = `
       </div>
       <div
         class="t-steps-item t-steps-item--default"
+        data-v-7f4a1ba9=""
       >
         <div
           class="t-steps-item__inner "
@@ -1450,9 +1456,11 @@ exports[`Steps Steps verticalNoSequenceVue demo works fine 1`] = `
   >
     <div
       class="t-steps t-steps--vertical t-steps--reverse t-steps--dot-anchor t-steps--line-separator"
+      data-v-7f4a1ba9=""
     >
       <div
         class="t-steps-item t-steps-item--default"
+        data-v-7f4a1ba9=""
       >
         <div
           class="t-steps-item__inner "
@@ -1481,6 +1489,7 @@ exports[`Steps Steps verticalNoSequenceVue demo works fine 1`] = `
       </div>
       <div
         class="t-steps-item t-steps-item--process"
+        data-v-7f4a1ba9=""
       >
         <div
           class="t-steps-item__inner "
@@ -1509,6 +1518,7 @@ exports[`Steps Steps verticalNoSequenceVue demo works fine 1`] = `
       </div>
       <div
         class="t-steps-item t-steps-item--finish"
+        data-v-7f4a1ba9=""
       >
         <div
           class="t-steps-item__inner "
@@ -1537,6 +1547,7 @@ exports[`Steps Steps verticalNoSequenceVue demo works fine 1`] = `
       </div>
       <div
         class="t-steps-item t-steps-item--finish"
+        data-v-7f4a1ba9=""
       >
         <div
           class="t-steps-item__inner "
@@ -1568,9 +1579,10 @@ exports[`Steps Steps verticalNoSequenceVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Steps Steps verticalSequenceVue demo works fine 1`] = `
+exports[`Steps > Steps verticalSequenceVue demo works fine 1`] = `
 <div
   class="justify-around t-space t-space-horizontal"
+  data-v-48740715=""
   style="gap: 236px;"
 >
   <div
@@ -1578,9 +1590,11 @@ exports[`Steps Steps verticalSequenceVue demo works fine 1`] = `
   >
     <div
       class="t-steps t-steps--vertical t-steps--positive t-steps--default-anchor t-steps--line-separator"
+      data-v-48740715=""
     >
       <div
         class="t-steps-item t-steps-item--finish"
+        data-v-48740715=""
       >
         <div
           class="t-steps-item__inner "
@@ -1627,6 +1641,7 @@ exports[`Steps Steps verticalSequenceVue demo works fine 1`] = `
       </div>
       <div
         class="t-steps-item t-steps-item--process"
+        data-v-48740715=""
       >
         <div
           class="t-steps-item__inner "
@@ -1661,6 +1676,7 @@ exports[`Steps Steps verticalSequenceVue demo works fine 1`] = `
       </div>
       <div
         class="t-steps-item t-steps-item--default"
+        data-v-48740715=""
       >
         <div
           class="t-steps-item__inner "
@@ -1695,6 +1711,7 @@ exports[`Steps Steps verticalSequenceVue demo works fine 1`] = `
       </div>
       <div
         class="t-steps-item t-steps-item--default"
+        data-v-48740715=""
       >
         <div
           class="t-steps-item__inner "
@@ -1734,9 +1751,11 @@ exports[`Steps Steps verticalSequenceVue demo works fine 1`] = `
   >
     <div
       class="t-steps t-steps--vertical t-steps--reverse t-steps--default-anchor t-steps--line-separator"
+      data-v-48740715=""
     >
       <div
         class="t-steps-item t-steps-item--default"
+        data-v-48740715=""
       >
         <div
           class="t-steps-item__inner "
@@ -1771,6 +1790,7 @@ exports[`Steps Steps verticalSequenceVue demo works fine 1`] = `
       </div>
       <div
         class="t-steps-item t-steps-item--process"
+        data-v-48740715=""
       >
         <div
           class="t-steps-item__inner "
@@ -1805,6 +1825,7 @@ exports[`Steps Steps verticalSequenceVue demo works fine 1`] = `
       </div>
       <div
         class="t-steps-item t-steps-item--finish"
+        data-v-48740715=""
       >
         <div
           class="t-steps-item__inner "
@@ -1851,6 +1872,7 @@ exports[`Steps Steps verticalSequenceVue demo works fine 1`] = `
       </div>
       <div
         class="t-steps-item t-steps-item--finish"
+        data-v-48740715=""
       >
         <div
           class="t-steps-item__inner "

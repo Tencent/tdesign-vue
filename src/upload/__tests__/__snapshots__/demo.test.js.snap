@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Upload Upload baseVue demo works fine 1`] = `
+exports[`Upload > Upload baseVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -36,7 +36,6 @@ exports[`Upload Upload baseVue demo works fine 1`] = `
               单文件上传
             </span>
           </label>
-           
           <label
             class="t-radio-button"
           >
@@ -314,7 +313,7 @@ exports[`Upload Upload baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Upload Upload customDragVue demo works fine 1`] = `
+exports[`Upload > Upload customDragVue demo works fine 1`] = `
 <div
   class="tdesign-demo-upload t-upload"
 >
@@ -346,10 +345,8 @@ exports[`Upload Upload customDragVue demo works fine 1`] = `
       点击上传 
     </span>
   </button>
-   
   <br />
   <br />
-   
   <div
     class="t-upload"
   >
@@ -374,9 +371,7 @@ exports[`Upload Upload customDragVue demo works fine 1`] = `
             自定义拖拽区域
           </span>
         </button>
-         
         <!---->
-         
         <br />
         <br />
       </div>
@@ -385,7 +380,7 @@ exports[`Upload Upload customDragVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Upload Upload draggableVue demo works fine 1`] = `
+exports[`Upload > Upload draggableVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large"
 >
@@ -405,7 +400,6 @@ exports[`Upload Upload draggableVue demo works fine 1`] = `
         />
       </div>
     </div>
-     
     <div>
       <div
         class="t-radio-group t-size-m t-radio-group--filled"
@@ -428,7 +422,6 @@ exports[`Upload Upload draggableVue demo works fine 1`] = `
             文件拖拽上传
           </span>
         </label>
-         
         <label
           class="t-radio-button"
         >
@@ -454,7 +447,6 @@ exports[`Upload Upload draggableVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
     class="t-space t-space-horizontal"
     style="gap: 16px;"
@@ -578,7 +570,7 @@ exports[`Upload Upload draggableVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Upload Upload fileFlowListVue demo works fine 1`] = `
+exports[`Upload > Upload fileFlowListVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -799,9 +791,10 @@ exports[`Upload Upload fileFlowListVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Upload Upload imageVue demo works fine 1`] = `
+exports[`Upload > Upload imageVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
+  data-v-26399fbc=""
   style="gap: 16px;"
 >
   <div
@@ -809,6 +802,7 @@ exports[`Upload Upload imageVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-horizontal"
+      data-v-26399fbc=""
       style="gap: 16px;"
     >
       <div
@@ -816,6 +810,7 @@ exports[`Upload Upload imageVue demo works fine 1`] = `
       >
         <label
           class="t-checkbox"
+          data-v-26399fbc=""
         >
           <input
             class="t-checkbox__former"
@@ -837,6 +832,7 @@ exports[`Upload Upload imageVue demo works fine 1`] = `
       >
         <label
           class="t-checkbox"
+          data-v-26399fbc=""
         >
           <input
             class="t-checkbox__former"
@@ -858,6 +854,7 @@ exports[`Upload Upload imageVue demo works fine 1`] = `
       >
         <label
           class="t-checkbox t-is-checked"
+          data-v-26399fbc=""
         >
           <input
             class="t-checkbox__former"
@@ -879,13 +876,16 @@ exports[`Upload Upload imageVue demo works fine 1`] = `
   <div
     class="t-space-item"
   >
-    <br />
+    <br
+      data-v-26399fbc=""
+    />
   </div>
   <div
     class="t-space-item"
   >
     <div
       class="t-space t-space-horizontal"
+      data-v-26399fbc=""
       style="gap: 16px;"
     >
       <div
@@ -893,6 +893,7 @@ exports[`Upload Upload imageVue demo works fine 1`] = `
       >
         <div
           class="t-upload"
+          data-v-26399fbc=""
         >
           <input
             accept="image/*"
@@ -943,6 +944,7 @@ exports[`Upload Upload imageVue demo works fine 1`] = `
       >
         <div
           class="t-upload"
+          data-v-26399fbc=""
         >
           <input
             accept="image/*"
@@ -995,6 +997,7 @@ exports[`Upload Upload imageVue demo works fine 1`] = `
   >
     <div
       class="t-upload"
+      data-v-26399fbc=""
     >
       <input
         accept="image/*"
@@ -1087,6 +1090,7 @@ exports[`Upload Upload imageVue demo works fine 1`] = `
   >
     <div
       class="t-upload"
+      data-v-26399fbc=""
     >
       <input
         accept="image/*"
@@ -1136,7 +1140,7 @@ exports[`Upload Upload imageVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Upload Upload imgFlowListVue demo works fine 1`] = `
+exports[`Upload > Upload imgFlowListVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1145,9 +1149,7 @@ exports[`Upload Upload imgFlowListVue demo works fine 1`] = `
     class="t-space-item"
   >
     <div>
-      
-    是否自动上传：
-    
+       是否自动上传： 
       <div
         class="t-switch t-size-m"
       >
@@ -1262,7 +1264,7 @@ exports[`Upload Upload imgFlowListVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Upload Upload requestMethodVue demo works fine 1`] = `
+exports[`Upload > Upload requestMethodVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block-column-large"
 >
@@ -1288,7 +1290,6 @@ exports[`Upload Upload requestMethodVue demo works fine 1`] = `
           上传成功示例
         </span>
       </label>
-       
       <label
         class="t-radio-button"
       >
@@ -1313,7 +1314,6 @@ exports[`Upload Upload requestMethodVue demo works fine 1`] = `
       />
     </div>
   </div>
-   
   <div
     class="t-upload"
   >
@@ -1367,10 +1367,13 @@ exports[`Upload Upload requestMethodVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Upload Upload singleCustomVue demo works fine 1`] = `
-<div>
+exports[`Upload > Upload singleCustomVue demo works fine 1`] = `
+<div
+  data-v-b4e7cf12=""
+>
   <div
     class="t-upload"
+    data-v-b4e7cf12=""
   >
     <input
       accept=""
@@ -1383,6 +1386,7 @@ exports[`Upload Upload singleCustomVue demo works fine 1`] = `
     >
       <button
         class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+        data-v-b4e7cf12=""
         type="button"
       >
         <span
@@ -1398,12 +1402,11 @@ exports[`Upload Upload singleCustomVue demo works fine 1`] = `
       上传文件大小在 5M 以内
     </small>
   </div>
-   
   <!---->
 </div>
 `;
 
-exports[`Upload Upload singleInputVue demo works fine 1`] = `
+exports[`Upload > Upload singleInputVue demo works fine 1`] = `
 <div
   class="tdesign-demo-upload"
 >
@@ -1472,7 +1475,7 @@ exports[`Upload Upload singleInputVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Upload Upload tableVue demo works fine 1`] = `
+exports[`Upload > Upload tableVue demo works fine 1`] = `
 <section
   class="tdesign-demo-upload-multiple"
   style="width: 570px;"
@@ -1527,7 +1530,6 @@ exports[`Upload Upload tableVue demo works fine 1`] = `
       </div>
     </div>
   </header>
-   
   <div
     class="tdesign-demo-upload-table"
   >
@@ -1539,26 +1541,22 @@ exports[`Upload Upload tableVue demo works fine 1`] = `
       >
         文件名
       </div>
-       
       <div
         class="tdesign-demo-upload-table__size"
       >
         大小
       </div>
-       
       <div
         class="tdesign-demo-upload-table__status"
       >
         状态
       </div>
-       
       <div
         class="tdesign-demo-upload-table__operator"
       >
         操作
       </div>
     </div>
-     
     <div
       class="tdesign-demo-upload-table--empty"
     >
@@ -1566,9 +1564,7 @@ exports[`Upload Upload tableVue demo works fine 1`] = `
         点击上方“选择文件”或将文件拖拽到此区域
       </p>
     </div>
-     
   </div>
-   
   <div
     class="tdesign-demo-upload-bottom"
   >
@@ -1577,7 +1573,6 @@ exports[`Upload Upload tableVue demo works fine 1`] = `
     >
       取消
     </button>
-     
     <button
       class="t-button t-button--primary"
     >

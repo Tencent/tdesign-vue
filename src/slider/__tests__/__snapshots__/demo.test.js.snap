@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Slider Slider baseVue demo works fine 1`] = `
+exports[`Slider > Slider baseVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 60px;"
@@ -89,7 +89,7 @@ exports[`Slider Slider baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Slider Slider disabledVue demo works fine 1`] = `
+exports[`Slider > Slider disabledVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 60px;"
@@ -184,7 +184,7 @@ exports[`Slider Slider disabledVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Slider Slider inputNumberVerticalVue demo works fine 1`] = `
+exports[`Slider > Slider inputNumberVerticalVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 60px; height: 300px;"
@@ -452,7 +452,7 @@ exports[`Slider Slider inputNumberVerticalVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Slider Slider inputNumberVue demo works fine 1`] = `
+exports[`Slider > Slider inputNumberVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 60px;"
@@ -733,7 +733,7 @@ exports[`Slider Slider inputNumberVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Slider Slider marksVue demo works fine 1`] = `
+exports[`Slider > Slider marksVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 60px;"
@@ -971,7 +971,7 @@ exports[`Slider Slider marksVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Slider Slider minAndMaxVue demo works fine 1`] = `
+exports[`Slider > Slider minAndMaxVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 60px;"
@@ -1117,7 +1117,7 @@ exports[`Slider Slider minAndMaxVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Slider Slider stepVue demo works fine 1`] = `
+exports[`Slider > Slider stepVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 60px;"
@@ -1207,7 +1207,7 @@ exports[`Slider Slider stepVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Slider Slider verticalMarksVue demo works fine 1`] = `
+exports[`Slider > Slider verticalMarksVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 60px; height: 300px;"
@@ -1453,9 +1453,10 @@ exports[`Slider Slider verticalMarksVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Slider Slider verticalVue demo works fine 1`] = `
+exports[`Slider > Slider verticalVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
+  data-v-8810cff6=""
   style="gap: 60px; height: 300px;"
 >
   <div
@@ -1464,6 +1465,7 @@ exports[`Slider Slider verticalVue demo works fine 1`] = `
     <div
       aria-valuetext="12"
       class="t-slider__container is-vertical"
+      data-v-8810cff6=""
       show-tooltip="true"
     >
       <div
@@ -1501,6 +1503,7 @@ exports[`Slider Slider verticalVue demo works fine 1`] = `
     <div
       aria-valuetext="30-70"
       class="t-slider__container is-vertical"
+      data-v-8810cff6=""
       show-tooltip="true"
     >
       <div

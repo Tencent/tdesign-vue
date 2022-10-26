@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Button Button baseVue demo works fine 1`] = `
+exports[`Button > Button baseVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 24px;"
@@ -64,9 +64,10 @@ exports[`Button Button baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Button Button blockVue demo works fine 1`] = `
+exports[`Button > Button blockVue demo works fine 1`] = `
 <div
   class="t-space t-space-align-center t-space-vertical"
+  data-v-59dd211d=""
   style="gap: 16px;"
 >
   <div
@@ -74,6 +75,7 @@ exports[`Button Button blockVue demo works fine 1`] = `
   >
     <button
       class="t-button t-size-m t-button--variant-base t-button--theme-primary t-size-full-width"
+      data-v-59dd211d=""
       type="button"
     >
       <span
@@ -88,6 +90,7 @@ exports[`Button Button blockVue demo works fine 1`] = `
   >
     <button
       class="t-button t-size-m t-button--variant-outline t-button--theme-default t-size-full-width"
+      data-v-59dd211d=""
       type="button"
     >
       <span
@@ -102,6 +105,7 @@ exports[`Button Button blockVue demo works fine 1`] = `
   >
     <button
       class="t-button t-size-m t-button--variant-dashed t-button--theme-default t-size-full-width"
+      data-v-59dd211d=""
       type="button"
     >
       <span
@@ -116,6 +120,7 @@ exports[`Button Button blockVue demo works fine 1`] = `
   >
     <button
       class="t-button t-size-m t-button--variant-text t-button--theme-default t-size-full-width"
+      data-v-59dd211d=""
       type="button"
     >
       <span
@@ -128,7 +133,7 @@ exports[`Button Button blockVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Button Button customElementVue demo works fine 1`] = `
+exports[`Button > Button customElementVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 24px;"
@@ -179,7 +184,7 @@ exports[`Button Button customElementVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Button Button ghostVue demo works fine 1`] = `
+exports[`Button > Button ghostVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -442,7 +447,7 @@ exports[`Button Button ghostVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Button Button iconVue demo works fine 1`] = `
+exports[`Button > Button iconVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 24px;"
@@ -470,9 +475,7 @@ exports[`Button Button iconVue demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        
-    新建
-  
+         新建 
       </span>
     </button>
   </div>
@@ -504,9 +507,7 @@ exports[`Button Button iconVue demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        
-    上传文件
-  
+         上传文件 
       </span>
     </button>
   </div>
@@ -596,7 +597,7 @@ exports[`Button Button iconVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Button Button shapeVue demo works fine 1`] = `
+exports[`Button > Button shapeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -928,7 +929,7 @@ exports[`Button Button shapeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Button Button sizeVue demo works fine 1`] = `
+exports[`Button > Button sizeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1131,7 +1132,7 @@ exports[`Button Button sizeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Button Button statusVue demo works fine 1`] = `
+exports[`Button > Button statusVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -1193,7 +1194,7 @@ exports[`Button Button statusVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Button Button themeVue demo works fine 1`] = `
+exports[`Button > Button themeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"

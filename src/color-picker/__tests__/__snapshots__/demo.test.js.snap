@@ -1,8 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`ColorPicker ColorPicker colorModeVue demo works fine 1`] = `
+exports[`ColorPicker > ColorPicker colorModeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
+  data-v-b3486e9a=""
   style="gap: 32px;"
 >
   <div
@@ -10,6 +11,7 @@ exports[`ColorPicker ColorPicker colorModeVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-horizontal"
+      data-v-b3486e9a=""
       style="gap: 36px;"
     >
       <div
@@ -17,12 +19,15 @@ exports[`ColorPicker ColorPicker colorModeVue demo works fine 1`] = `
       >
         <div
           class="item t-space t-space-vertical"
+          data-v-b3486e9a=""
           style="gap: 10px;"
         >
           <div
             class="t-space-item"
           >
-            <h5>
+            <h5
+              data-v-b3486e9a=""
+            >
               默认（单色 + 线性渐变）
             </h5>
           </div>
@@ -31,6 +36,7 @@ exports[`ColorPicker ColorPicker colorModeVue demo works fine 1`] = `
           >
             <div
               class="t-color-picker__trigger"
+              data-v-b3486e9a=""
             >
               <div
                 class="t-color-picker__trigger--default"
@@ -77,12 +83,15 @@ exports[`ColorPicker ColorPicker colorModeVue demo works fine 1`] = `
       >
         <div
           class="item t-space t-space-vertical"
+          data-v-b3486e9a=""
           style="gap: 10px;"
         >
           <div
             class="t-space-item"
           >
-            <h5>
+            <h5
+              data-v-b3486e9a=""
+            >
               仅单色模式
             </h5>
           </div>
@@ -91,6 +100,7 @@ exports[`ColorPicker ColorPicker colorModeVue demo works fine 1`] = `
           >
             <div
               class="t-color-picker__trigger"
+              data-v-b3486e9a=""
             >
               <div
                 class="t-color-picker__trigger--default"
@@ -139,12 +149,15 @@ exports[`ColorPicker ColorPicker colorModeVue demo works fine 1`] = `
   >
     <div
       class="item t-space t-space-vertical"
+      data-v-b3486e9a=""
       style="gap: 10px;"
     >
       <div
         class="t-space-item"
       >
-        <h5>
+        <h5
+          data-v-b3486e9a=""
+        >
           仅线性渐变模式
         </h5>
       </div>
@@ -153,6 +166,7 @@ exports[`ColorPicker ColorPicker colorModeVue demo works fine 1`] = `
       >
         <div
           class="t-color-picker__trigger"
+          data-v-b3486e9a=""
         >
           <div
             class="t-color-picker__trigger--default"
@@ -196,7 +210,7 @@ exports[`ColorPicker ColorPicker colorModeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
+exports[`ColorPicker > ColorPicker enableAlphaVue demo works fine 1`] = `
 <div
   class="t-color-picker__panel t-is-inline"
 >
@@ -1016,7 +1030,7 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
+exports[`ColorPicker > ColorPicker panelVue demo works fine 1`] = `
 <div
   class="t-color-picker__panel t-is-inline"
 >
@@ -1791,7 +1805,7 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
+exports[`ColorPicker > ColorPicker recentColorVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -3464,7 +3478,7 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`ColorPicker ColorPicker statusDisabledVue demo works fine 1`] = `
+exports[`ColorPicker > ColorPicker statusDisabledVue demo works fine 1`] = `
 <div
   class="t-color-picker__trigger"
 >
@@ -3508,7 +3522,7 @@ exports[`ColorPicker ColorPicker statusDisabledVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
+exports[`ColorPicker > ColorPicker statusReadonlyVue demo works fine 1`] = `
 <div
   class="t-color-picker__panel t-is-disabled t-is-inline"
 >
@@ -4286,7 +4300,7 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
+exports[`ColorPicker > ColorPicker swatchColorVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -4963,7 +4977,7 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`ColorPicker ColorPicker triggerVue demo works fine 1`] = `
+exports[`ColorPicker > ColorPicker triggerVue demo works fine 1`] = `
 <div
   class="t-color-picker__trigger"
 >

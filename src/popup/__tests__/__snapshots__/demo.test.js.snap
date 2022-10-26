@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Popup Popup baseVue demo works fine 1`] = `
+exports[`Popup > Popup baseVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -78,7 +78,7 @@ exports[`Popup Popup baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Popup Popup containerVue demo works fine 1`] = `
+exports[`Popup > Popup containerVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -137,7 +137,7 @@ exports[`Popup Popup containerVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Popup Popup destroyVue demo works fine 1`] = `
+exports[`Popup > Popup destroyVue demo works fine 1`] = `
 <div>
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
@@ -152,7 +152,7 @@ exports[`Popup Popup destroyVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Popup Popup disabledVue demo works fine 1`] = `
+exports[`Popup > Popup disabledVue demo works fine 1`] = `
 <div>
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled"
@@ -168,12 +168,14 @@ exports[`Popup Popup disabledVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Popup Popup placementVue demo works fine 1`] = `
+exports[`Popup > Popup placementVue demo works fine 1`] = `
 <div
   class="container"
+  data-v-b59115c6=""
 >
   <button
     class="placement top center t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-b59115c6=""
     type="button"
   >
     <span
@@ -182,9 +184,9 @@ exports[`Popup Popup placementVue demo works fine 1`] = `
        top 
     </span>
   </button>
-   
   <button
     class="placement top left t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-b59115c6=""
     type="button"
   >
     <span
@@ -193,9 +195,9 @@ exports[`Popup Popup placementVue demo works fine 1`] = `
        top-left 
     </span>
   </button>
-   
   <button
     class="placement top right t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-b59115c6=""
     type="button"
   >
     <span
@@ -204,9 +206,9 @@ exports[`Popup Popup placementVue demo works fine 1`] = `
        top-right 
     </span>
   </button>
-   
   <button
     class="placement bottom center t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-b59115c6=""
     type="button"
   >
     <span
@@ -215,9 +217,9 @@ exports[`Popup Popup placementVue demo works fine 1`] = `
        bottom 
     </span>
   </button>
-   
   <button
     class="placement bottom left t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-b59115c6=""
     type="button"
   >
     <span
@@ -226,9 +228,9 @@ exports[`Popup Popup placementVue demo works fine 1`] = `
        bottom-left 
     </span>
   </button>
-   
   <button
     class="placement bottom right t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-b59115c6=""
     type="button"
   >
     <span
@@ -237,9 +239,9 @@ exports[`Popup Popup placementVue demo works fine 1`] = `
        bottom-right 
     </span>
   </button>
-   
   <button
     class="placement align t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-b59115c6=""
     type="button"
   >
     <span
@@ -248,9 +250,9 @@ exports[`Popup Popup placementVue demo works fine 1`] = `
        left 
     </span>
   </button>
-   
   <button
     class="placement top-align t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-b59115c6=""
     type="button"
   >
     <span
@@ -259,9 +261,9 @@ exports[`Popup Popup placementVue demo works fine 1`] = `
        left-top 
     </span>
   </button>
-   
   <button
     class="placement bottom-align t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-b59115c6=""
     type="button"
   >
     <span
@@ -270,9 +272,9 @@ exports[`Popup Popup placementVue demo works fine 1`] = `
        left-bottom 
     </span>
   </button>
-   
   <button
     class="placement right-full align t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-b59115c6=""
     type="button"
   >
     <span
@@ -281,9 +283,9 @@ exports[`Popup Popup placementVue demo works fine 1`] = `
        right 
     </span>
   </button>
-   
   <button
     class="placement right-full top-align t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-b59115c6=""
     destroy-on-hide=""
     type="button"
   >
@@ -293,9 +295,9 @@ exports[`Popup Popup placementVue demo works fine 1`] = `
        right-top 
     </span>
   </button>
-   
   <button
     class="placement right-full bottom-align t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-b59115c6=""
     destroy-on-hide=""
     type="button"
   >
@@ -308,7 +310,7 @@ exports[`Popup Popup placementVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Popup Popup styleVue demo works fine 1`] = `
+exports[`Popup > Popup styleVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -372,9 +374,10 @@ exports[`Popup Popup styleVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Popup Popup triggerElementVue demo works fine 1`] = `
+exports[`Popup > Popup triggerElementVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
+  data-v-c5c5cdc2=""
   style="gap: 16px;"
 >
   <div
@@ -382,6 +385,7 @@ exports[`Popup Popup triggerElementVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-horizontal"
+      data-v-c5c5cdc2=""
       style="gap: 16px;"
     >
       <div
@@ -389,6 +393,7 @@ exports[`Popup Popup triggerElementVue demo works fine 1`] = `
       >
         <div
           class="t-space t-space-horizontal"
+          data-v-c5c5cdc2=""
           style="gap: 16px;"
         >
           <div
@@ -396,6 +401,7 @@ exports[`Popup Popup triggerElementVue demo works fine 1`] = `
           >
             <button
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              data-v-c5c5cdc2=""
               type="button"
             >
               <span
@@ -412,6 +418,7 @@ exports[`Popup Popup triggerElementVue demo works fine 1`] = `
       >
         <div
           class="t-space t-space-horizontal"
+          data-v-c5c5cdc2=""
           style="gap: 16px;"
         >
           <div
@@ -419,6 +426,7 @@ exports[`Popup Popup triggerElementVue demo works fine 1`] = `
           >
             <button
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              data-v-c5c5cdc2=""
               type="button"
             >
               <span
@@ -437,6 +445,7 @@ exports[`Popup Popup triggerElementVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-horizontal"
+      data-v-c5c5cdc2=""
       style="gap: 16px;"
     >
       <div
@@ -444,6 +453,7 @@ exports[`Popup Popup triggerElementVue demo works fine 1`] = `
       >
         <div
           class="t-space t-space-horizontal"
+          data-v-c5c5cdc2=""
           style="gap: 16px;"
         >
           <div
@@ -451,6 +461,7 @@ exports[`Popup Popup triggerElementVue demo works fine 1`] = `
           >
             <button
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              data-v-c5c5cdc2=""
               type="button"
             >
               <span
@@ -467,6 +478,7 @@ exports[`Popup Popup triggerElementVue demo works fine 1`] = `
       >
         <div
           class="t-space t-space-horizontal"
+          data-v-c5c5cdc2=""
           style="gap: 16px;"
         >
           <div
@@ -474,6 +486,7 @@ exports[`Popup Popup triggerElementVue demo works fine 1`] = `
           >
             <button
               class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              data-v-c5c5cdc2=""
               type="button"
             >
               <span
@@ -490,7 +503,7 @@ exports[`Popup Popup triggerElementVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Popup Popup triggerVue demo works fine 1`] = `
+exports[`Popup > Popup triggerVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -559,7 +572,7 @@ exports[`Popup Popup triggerVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Popup Popup visibleVue demo works fine 1`] = `
+exports[`Popup > Popup visibleVue demo works fine 1`] = `
 <div>
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"

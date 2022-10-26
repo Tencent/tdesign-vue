@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Select Select baseVue demo works fine 1`] = `
+exports[`Select > Select baseVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -100,7 +100,7 @@ exports[`Select Select baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Select Select collapsedVue demo works fine 1`] = `
+exports[`Select > Select collapsedVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -270,13 +270,10 @@ exports[`Select Select collapsedVue demo works fine 1`] = `
                 />
               </svg>
             </span>
-            <span>
-               
-              <span
-                style="color: rgb(0, 168, 112);"
-              >
-                +1
-              </span>
+            <span
+              style="color: rgb(0, 168, 112);"
+            >
+              +1
             </span>
           </div>
           <span
@@ -305,7 +302,7 @@ exports[`Select Select collapsedVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Select Select creatableVue demo works fine 1`] = `
+exports[`Select > Select creatableVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -405,7 +402,7 @@ exports[`Select Select creatableVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Select Select customOptionsVue demo works fine 1`] = `
+exports[`Select > Select customOptionsVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -517,7 +514,7 @@ exports[`Select Select customOptionsVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Select Select customSelectedVue demo works fine 1`] = `
+exports[`Select > Select customSelectedVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -640,9 +637,7 @@ exports[`Select Select customSelectedVue demo works fine 1`] = `
               class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
             >
               <span>
-                
-        选项四(4)
-      
+                 选项四(4) 
               </span>
               <svg
                 class="t-icon t-icon-close t-tag__icon-close"
@@ -662,9 +657,7 @@ exports[`Select Select customSelectedVue demo works fine 1`] = `
               class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
             >
               <span>
-                
-        选项五(5)
-      
+                 选项五(5) 
               </span>
               <svg
                 class="t-icon t-icon-close t-tag__icon-close"
@@ -684,9 +677,7 @@ exports[`Select Select customSelectedVue demo works fine 1`] = `
               class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
             >
               <span>
-                
-        选项六(6)
-      
+                 选项六(6) 
               </span>
               <svg
                 class="t-icon t-icon-close t-tag__icon-close"
@@ -706,9 +697,7 @@ exports[`Select Select customSelectedVue demo works fine 1`] = `
               class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
             >
               <span>
-                
-        选项七(7)
-      
+                 选项七(7) 
               </span>
               <svg
                 class="t-icon t-icon-close t-tag__icon-close"
@@ -751,7 +740,7 @@ exports[`Select Select customSelectedVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Select Select disabledVue demo works fine 1`] = `
+exports[`Select > Select disabledVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -860,7 +849,7 @@ exports[`Select Select disabledVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Select Select filterableVue demo works fine 1`] = `
+exports[`Select > Select filterableVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -960,7 +949,7 @@ exports[`Select Select filterableVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Select Select groupVue demo works fine 1`] = `
+exports[`Select > Select groupVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -1058,7 +1047,7 @@ exports[`Select Select groupVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Select Select labelInValueVue demo works fine 1`] = `
+exports[`Select > Select labelInValueVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -1173,7 +1162,7 @@ exports[`Select Select labelInValueVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Select Select maxVue demo works fine 1`] = `
+exports[`Select > Select maxVue demo works fine 1`] = `
 <div
   class="t-select__wrap"
   style="width: 200px;"
@@ -1219,7 +1208,7 @@ exports[`Select Select maxVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Select Select multipleVue demo works fine 1`] = `
+exports[`Select > Select multipleVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1551,7 +1540,7 @@ exports[`Select Select multipleVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Select Select noborderVue demo works fine 1`] = `
+exports[`Select > Select noborderVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -1657,9 +1646,10 @@ exports[`Select Select noborderVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Select Select panelVue demo works fine 1`] = `
+exports[`Select > Select panelVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
+  data-v-77d8cd0a=""
   style="gap: 16px;"
 >
   <div
@@ -1667,6 +1657,7 @@ exports[`Select Select panelVue demo works fine 1`] = `
   >
     <div
       class="t-select__wrap"
+      data-v-77d8cd0a=""
     >
       <div
         class="t-input__wrap t-select-input--empty t-select"
@@ -1713,6 +1704,7 @@ exports[`Select Select panelVue demo works fine 1`] = `
   >
     <div
       class="t-select__wrap"
+      data-v-77d8cd0a=""
     >
       <div
         class="t-input__wrap t-select-input--empty t-select"
@@ -1757,7 +1749,7 @@ exports[`Select Select panelVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Select Select popupPropsVue demo works fine 1`] = `
+exports[`Select > Select popupPropsVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -1859,7 +1851,7 @@ exports[`Select Select popupPropsVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Select Select prefixVue demo works fine 1`] = `
+exports[`Select > Select prefixVue demo works fine 1`] = `
 <div
   class="t-select__wrap"
   style="width: 200px;"
@@ -1914,7 +1906,7 @@ exports[`Select Select prefixVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Select Select remoteSearchVue demo works fine 1`] = `
+exports[`Select > Select remoteSearchVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -2014,7 +2006,7 @@ exports[`Select Select remoteSearchVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Select Select sizeVue demo works fine 1`] = `
+exports[`Select > Select sizeVue demo works fine 1`] = `
 <div
   class="t-space t-space-align-center t-space-horizontal"
   style="gap: 16px;"
@@ -2163,7 +2155,7 @@ exports[`Select Select sizeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Select Select statusVue demo works fine 1`] = `
+exports[`Select > Select statusVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -2319,7 +2311,7 @@ exports[`Select Select statusVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Select Select virtualScrollVue demo works fine 1`] = `
+exports[`Select > Select virtualScrollVue demo works fine 1`] = `
 <div
   class="t-select__wrap"
   style="width: 300px;"

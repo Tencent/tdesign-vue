@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Tabs Tabs banVue demo works fine 1`] = `
+exports[`Tabs > Tabs banVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 36px;"
@@ -36,7 +36,6 @@ exports[`Tabs Tabs banVue demo works fine 1`] = `
               常规型
             </span>
           </label>
-           
           <label
             class="t-radio-button"
           >
@@ -123,9 +122,7 @@ exports[`Tabs Tabs banVue demo works fine 1`] = `
             选项卡1的内容
           </p>
         </div>
-         
         <!---->
-         
         <!---->
       </div>
     </div>
@@ -133,7 +130,7 @@ exports[`Tabs Tabs banVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tabs Tabs baseVue demo works fine 1`] = `
+exports[`Tabs > Tabs baseVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -198,7 +195,6 @@ exports[`Tabs Tabs baseVue demo works fine 1`] = `
             选项卡1的内容，使用 t-tab-panel 渲染
           </p>
         </div>
-         
         <div
           class="t-tab-panel"
           style="display: none;"
@@ -209,7 +205,6 @@ exports[`Tabs Tabs baseVue demo works fine 1`] = `
             选项卡2的内容，使用 t-tab-panel 渲染
           </p>
         </div>
-         
         <!---->
       </div>
     </div>
@@ -282,7 +277,7 @@ exports[`Tabs Tabs baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tabs Tabs combinationVue demo works fine 1`] = `
+exports[`Tabs > Tabs combinationVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 32px; width: 100%;"
@@ -318,7 +313,6 @@ exports[`Tabs Tabs combinationVue demo works fine 1`] = `
               常规型
             </span>
           </label>
-           
           <label
             class="t-radio-button"
           >
@@ -430,7 +424,7 @@ exports[`Tabs Tabs combinationVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tabs Tabs customVue demo works fine 1`] = `
+exports[`Tabs > Tabs customVue demo works fine 1`] = `
 <div
   class="t-tabs"
   style="width: 100%;"
@@ -508,7 +502,7 @@ exports[`Tabs Tabs customVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tabs Tabs iconVue demo works fine 1`] = `
+exports[`Tabs > Tabs iconVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 32px;"
@@ -544,7 +538,6 @@ exports[`Tabs Tabs iconVue demo works fine 1`] = `
               常规型
             </span>
           </label>
-           
           <label
             class="t-radio-button"
           >
@@ -625,16 +618,13 @@ exports[`Tabs Tabs iconVue demo works fine 1`] = `
         <div
           class="t-tab-panel"
         >
-           
           <p
             style="padding: 25px;"
           >
             首页的内容
           </p>
         </div>
-         
         <!---->
-         
         <!---->
       </div>
     </div>
@@ -642,7 +632,7 @@ exports[`Tabs Tabs iconVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tabs Tabs operationVue demo works fine 1`] = `
+exports[`Tabs > Tabs operationVue demo works fine 1`] = `
 <div
   class="t-tabs"
 >
@@ -719,7 +709,7 @@ exports[`Tabs Tabs operationVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tabs Tabs positionVue demo works fine 1`] = `
+exports[`Tabs > Tabs positionVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 32px;"
@@ -755,7 +745,6 @@ exports[`Tabs Tabs positionVue demo works fine 1`] = `
               top
             </span>
           </label>
-           
           <label
             class="t-radio-button"
           >
@@ -774,7 +763,6 @@ exports[`Tabs Tabs positionVue demo works fine 1`] = `
               right
             </span>
           </label>
-           
           <label
             class="t-radio-button"
           >
@@ -793,7 +781,6 @@ exports[`Tabs Tabs positionVue demo works fine 1`] = `
               bottom
             </span>
           </label>
-           
           <label
             class="t-radio-button"
           >
@@ -880,9 +867,7 @@ exports[`Tabs Tabs positionVue demo works fine 1`] = `
             选项卡1
           </p>
         </div>
-         
         <!---->
-         
         <!---->
       </div>
     </div>
@@ -890,7 +875,7 @@ exports[`Tabs Tabs positionVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tabs Tabs sizeVue demo works fine 1`] = `
+exports[`Tabs > Tabs sizeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -955,9 +940,7 @@ exports[`Tabs Tabs sizeVue demo works fine 1`] = `
             选项卡1
           </p>
         </div>
-         
         <!---->
-         
         <!---->
       </div>
     </div>
@@ -1022,9 +1005,7 @@ exports[`Tabs Tabs sizeVue demo works fine 1`] = `
             选项卡1
           </p>
         </div>
-         
         <!---->
-         
         <!---->
       </div>
     </div>
@@ -1032,7 +1013,7 @@ exports[`Tabs Tabs sizeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tabs Tabs themeVue demo works fine 1`] = `
+exports[`Tabs > Tabs themeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1097,9 +1078,7 @@ exports[`Tabs Tabs themeVue demo works fine 1`] = `
             选项卡1
           </p>
         </div>
-         
         <!---->
-         
         <!---->
       </div>
     </div>
@@ -1160,9 +1139,7 @@ exports[`Tabs Tabs themeVue demo works fine 1`] = `
             选项卡1
           </p>
         </div>
-         
         <!---->
-         
         <!---->
       </div>
     </div>

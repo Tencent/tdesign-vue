@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Menu Menu closableSideVue demo works fine 1`] = `
+exports[`Menu > Menu closableSideVue demo works fine 1`] = `
 <div
   class="t-default-menu t-menu--light t-is-collapsed"
   height="550px"
@@ -19,7 +19,6 @@ exports[`Menu Menu closableSideVue demo works fine 1`] = `
     <ul
       class="t-menu narrow-scrollbar"
     >
-       
       <li
         class="t-menu__item"
       >
@@ -33,12 +32,9 @@ exports[`Menu Menu closableSideVue demo works fine 1`] = `
         <span
           class="t-menu__content"
         >
-          
-    仪表盘
-  
+           仪表盘 
         </span>
       </li>
-       
       <li
         class="t-submenu"
       >
@@ -82,7 +78,6 @@ exports[`Menu Menu closableSideVue demo works fine 1`] = `
           <ul
             class="t-menu__popup-wrapper"
           >
-              
             <li
               class="t-menu__item t-is-active t-menu__item--plain t-submenu__item"
             >
@@ -92,7 +87,6 @@ exports[`Menu Menu closableSideVue demo works fine 1`] = `
                 菜单内容一
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
             >
@@ -102,7 +96,6 @@ exports[`Menu Menu closableSideVue demo works fine 1`] = `
                 菜单内容二
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
             >
@@ -115,7 +108,6 @@ exports[`Menu Menu closableSideVue demo works fine 1`] = `
           </ul>
         </div>
       </li>
-       
       <li
         class="t-menu__item"
       >
@@ -129,12 +121,9 @@ exports[`Menu Menu closableSideVue demo works fine 1`] = `
         <span
           class="t-menu__content"
         >
-          
-    视频区
-  
+           视频区 
         </span>
       </li>
-       
       <li
         class="t-menu__item t-is-disabled"
       >
@@ -148,9 +137,7 @@ exports[`Menu Menu closableSideVue demo works fine 1`] = `
         <span
           class="t-menu__content"
         >
-          
-    资源区
-  
+           资源区 
         </span>
       </li>
     </ul>
@@ -169,9 +156,10 @@ exports[`Menu Menu closableSideVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Menu Menu customHeaderVue demo works fine 1`] = `
+exports[`Menu > Menu customHeaderVue demo works fine 1`] = `
 <div
   class="t-menu t-head-menu t-menu--dark"
+  data-v-92091f28=""
 >
   <div
     class="t-head-menu__inner"
@@ -181,6 +169,7 @@ exports[`Menu Menu customHeaderVue demo works fine 1`] = `
     >
       <li
         class="t-menu__item t-menu__item--plain"
+        data-v-92091f28=""
       >
         <span
           class="t-menu__content"
@@ -188,9 +177,9 @@ exports[`Menu Menu customHeaderVue demo works fine 1`] = `
           菜单1
         </span>
       </li>
-       
       <li
         class="t-menu__item t-is-active t-menu__item--plain"
+        data-v-92091f28=""
       >
         <span
           class="t-menu__content"
@@ -198,9 +187,9 @@ exports[`Menu Menu customHeaderVue demo works fine 1`] = `
           菜单2
         </span>
       </li>
-       
       <li
         class="t-menu__item t-menu__item--plain"
+        data-v-92091f28=""
       >
         <span
           class="t-menu__content"
@@ -208,9 +197,9 @@ exports[`Menu Menu customHeaderVue demo works fine 1`] = `
           菜单3
         </span>
       </li>
-       
       <li
         class="t-menu__item t-is-disabled t-menu__item--plain"
+        data-v-92091f28=""
       >
         <span
           class="t-menu__content"
@@ -224,6 +213,7 @@ exports[`Menu Menu customHeaderVue demo works fine 1`] = `
     >
       <div
         class="demo-box"
+        data-v-92091f28=""
       >
         自定义内容区域
       </div>
@@ -232,7 +222,7 @@ exports[`Menu Menu customHeaderVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Menu Menu customSideVue demo works fine 1`] = `
+exports[`Menu > Menu customSideVue demo works fine 1`] = `
 <div
   class="t-default-menu t-menu--light"
   style="height: 100%; width: 232px;"
@@ -252,7 +242,6 @@ exports[`Menu Menu customSideVue demo works fine 1`] = `
     <ul
       class="t-menu t-menu--scroll narrow-scrollbar"
     >
-       
       <li
         class="t-menu__item t-menu__item--plain"
       >
@@ -262,7 +251,6 @@ exports[`Menu Menu customSideVue demo works fine 1`] = `
           菜单内容
         </span>
       </li>
-       
       <li
         class="t-menu__item t-is-active t-menu__item--plain"
       >
@@ -272,7 +260,6 @@ exports[`Menu Menu customSideVue demo works fine 1`] = `
           菜单内容
         </span>
       </li>
-       
       <li
         class="t-menu__item t-menu__item--plain"
       >
@@ -282,7 +269,6 @@ exports[`Menu Menu customSideVue demo works fine 1`] = `
           菜单内容
         </span>
       </li>
-       
       <li
         class="t-menu__item t-is-disabled t-menu__item--plain"
       >
@@ -297,7 +283,7 @@ exports[`Menu Menu customSideVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Menu Menu doubleVue demo works fine 1`] = `
+exports[`Menu > Menu doubleVue demo works fine 1`] = `
 <div
   class="box"
 >
@@ -319,7 +305,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
       <ul
         class="t-menu"
       >
-         
         <li
           class="t-submenu t-is-opened"
         >
@@ -333,7 +318,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
           <ul
             style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
           >
-             
             <li
               class="t-menu__item t-is-active t-menu__item--plain"
             >
@@ -343,7 +327,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
                 子菜单1-1
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain"
             >
@@ -353,7 +336,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
                 子菜单1-2
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain"
             >
@@ -365,7 +347,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
             </li>
           </ul>
         </li>
-         
         <li
           class="t-submenu"
         >
@@ -379,7 +360,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
           <ul
             style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
           >
-             
             <li
               class="t-menu__item t-menu__item--plain"
             >
@@ -389,7 +369,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
                 子菜单2-1
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain"
             >
@@ -399,7 +378,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
                 子菜单2-2
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain"
             >
@@ -426,7 +404,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
             />
           </svg>
         </a>
-         
         <a
           href="javascript:;"
         >
@@ -438,7 +415,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
             />
           </svg>
         </a>
-         
         <a
           href="javascript:;"
         >
@@ -450,7 +426,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
             />
           </svg>
         </a>
-         
         <a
           href="javascript:;"
         >
@@ -465,7 +440,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
     class="t-menu t-head-menu t-menu--dark"
     style="margin-top: 24px;"
@@ -485,7 +459,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
       <ul
         class="t-menu"
       >
-         
         <li
           class="t-submenu t-is-opened"
         >
@@ -499,7 +472,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
           <ul
             style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
           >
-             
             <li
               class="t-menu__item t-is-active t-menu__item--plain"
             >
@@ -509,7 +481,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
                 子菜单1-1
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain"
             >
@@ -519,7 +490,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
                 子菜单1-2
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain"
             >
@@ -531,7 +501,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
             </li>
           </ul>
         </li>
-         
         <li
           class="t-submenu"
         >
@@ -545,7 +514,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
           <ul
             style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
           >
-             
             <li
               class="t-menu__item t-menu__item--plain"
             >
@@ -555,7 +523,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
                 子菜单2-1
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain"
             >
@@ -565,7 +532,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
                 子菜单2-2
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain"
             >
@@ -592,7 +558,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
             />
           </svg>
         </a>
-         
         <a
           href="javascript:;"
         >
@@ -604,7 +569,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
             />
           </svg>
         </a>
-         
         <a
           href="javascript:;"
         >
@@ -616,7 +580,6 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
             />
           </svg>
         </a>
-         
         <a
           href="javascript:;"
         >
@@ -634,7 +597,7 @@ exports[`Menu Menu doubleVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Menu Menu groupSideVue demo works fine 1`] = `
+exports[`Menu > Menu groupSideVue demo works fine 1`] = `
 <div
   class="t-default-menu t-menu--light"
   height="550px"
@@ -655,7 +618,6 @@ exports[`Menu Menu groupSideVue demo works fine 1`] = `
     <ul
       class="t-menu t-menu--scroll narrow-scrollbar"
     >
-       
       <div
         class="t-menu-group"
       >
@@ -674,7 +636,6 @@ exports[`Menu Menu groupSideVue demo works fine 1`] = `
           </span>
         </li>
       </div>
-       
       <div
         class="t-menu-group"
       >
@@ -692,7 +653,6 @@ exports[`Menu Menu groupSideVue demo works fine 1`] = `
             菜单内容
           </span>
         </li>
-         
         <li
           class="t-menu__item t-menu__item--plain"
         >
@@ -703,7 +663,6 @@ exports[`Menu Menu groupSideVue demo works fine 1`] = `
           </span>
         </li>
       </div>
-       
       <div
         class="t-menu-group"
       >
@@ -738,7 +697,7 @@ exports[`Menu Menu groupSideVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Menu Menu headMenuDarkVue demo works fine 1`] = `
+exports[`Menu > Menu headMenuDarkVue demo works fine 1`] = `
 <div
   class="t-menu t-head-menu t-menu--dark"
 >
@@ -757,7 +716,6 @@ exports[`Menu Menu headMenuDarkVue demo works fine 1`] = `
     <ul
       class="t-menu"
     >
-       
       <li
         class="t-menu__item t-is-active t-menu__item--plain"
       >
@@ -767,7 +725,6 @@ exports[`Menu Menu headMenuDarkVue demo works fine 1`] = `
           已选内容
         </span>
       </li>
-       
       <li
         class="t-menu__item t-menu__item--plain"
       >
@@ -777,7 +734,6 @@ exports[`Menu Menu headMenuDarkVue demo works fine 1`] = `
           菜单内容一
         </span>
       </li>
-       
       <li
         class="t-menu__item t-menu__item--plain"
       >
@@ -787,7 +743,6 @@ exports[`Menu Menu headMenuDarkVue demo works fine 1`] = `
           菜单内容二
         </span>
       </li>
-       
       <li
         class="t-menu__item t-is-disabled t-menu__item--plain"
       >
@@ -812,7 +767,6 @@ exports[`Menu Menu headMenuDarkVue demo works fine 1`] = `
           />
         </svg>
       </a>
-       
       <a
         href="javascript:;"
       >
@@ -824,7 +778,6 @@ exports[`Menu Menu headMenuDarkVue demo works fine 1`] = `
           />
         </svg>
       </a>
-       
       <a
         href="javascript:;"
       >
@@ -836,7 +789,6 @@ exports[`Menu Menu headMenuDarkVue demo works fine 1`] = `
           />
         </svg>
       </a>
-       
       <a
         href="javascript:;"
       >
@@ -853,7 +805,7 @@ exports[`Menu Menu headMenuDarkVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Menu Menu headMenuEmptyVue demo works fine 1`] = `
+exports[`Menu > Menu headMenuEmptyVue demo works fine 1`] = `
 <div
   class="t-menu t-head-menu t-menu--light"
 >
@@ -872,7 +824,6 @@ exports[`Menu Menu headMenuEmptyVue demo works fine 1`] = `
           菜单内容一
         </span>
       </li>
-       
       <li
         class="t-menu__item t-is-active t-menu__item--plain"
       >
@@ -882,7 +833,6 @@ exports[`Menu Menu headMenuEmptyVue demo works fine 1`] = `
           已选内容
         </span>
       </li>
-       
       <li
         class="t-menu__item t-menu__item--plain"
       >
@@ -892,7 +842,6 @@ exports[`Menu Menu headMenuEmptyVue demo works fine 1`] = `
           菜单内容二
         </span>
       </li>
-       
       <li
         class="t-menu__item t-is-disabled t-menu__item--plain"
       >
@@ -907,7 +856,7 @@ exports[`Menu Menu headMenuEmptyVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Menu Menu headMenuModeTileVue demo works fine 1`] = `
+exports[`Menu > Menu headMenuModeTileVue demo works fine 1`] = `
 <div
   class="t-menu t-head-menu t-menu--dark"
 >
@@ -926,7 +875,6 @@ exports[`Menu Menu headMenuModeTileVue demo works fine 1`] = `
     <ul
       class="t-menu"
     >
-       
       <li
         class="t-menu__item t-menu__item--plain"
       >
@@ -936,7 +884,6 @@ exports[`Menu Menu headMenuModeTileVue demo works fine 1`] = `
           111菜单内容一
         </span>
       </li>
-       
       <li
         class="t-menu__item t-is-active t-menu__item--plain"
       >
@@ -946,7 +893,6 @@ exports[`Menu Menu headMenuModeTileVue demo works fine 1`] = `
           已选内容
         </span>
       </li>
-       
       <li
         class="t-menu__item t-menu__item--plain"
       >
@@ -956,7 +902,6 @@ exports[`Menu Menu headMenuModeTileVue demo works fine 1`] = `
           菜单内容二
         </span>
       </li>
-       
       <li
         class="t-menu__item t-is-disabled t-menu__item--plain"
       >
@@ -981,7 +926,6 @@ exports[`Menu Menu headMenuModeTileVue demo works fine 1`] = `
           />
         </svg>
       </a>
-       
       <a
         href="javascript:;"
       >
@@ -993,7 +937,6 @@ exports[`Menu Menu headMenuModeTileVue demo works fine 1`] = `
           />
         </svg>
       </a>
-       
       <a
         href="javascript:;"
       >
@@ -1005,7 +948,6 @@ exports[`Menu Menu headMenuModeTileVue demo works fine 1`] = `
           />
         </svg>
       </a>
-       
       <a
         href="javascript:;"
       >
@@ -1022,7 +964,7 @@ exports[`Menu Menu headMenuModeTileVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Menu Menu headMenuTileVue demo works fine 1`] = `
+exports[`Menu > Menu headMenuTileVue demo works fine 1`] = `
 <div
   class="t-menu t-head-menu t-menu--dark"
 >
@@ -1041,16 +983,13 @@ exports[`Menu Menu headMenuTileVue demo works fine 1`] = `
     <ul
       class="t-menu"
     >
-       
       <li
         class="t-menu__item t-menu__item--plain"
       >
         <span
           class="t-menu__content"
         >
-          
-    菜单1
-    
+           菜单1 
           <li
             class="t-submenu"
           >
@@ -1066,9 +1005,7 @@ exports[`Menu Menu headMenuTileVue demo works fine 1`] = `
                 <span
                   class="t-menu__content"
                 >
-                  
-        子菜单1-1
-      
+                   子菜单1-1 
                 </span>
               </li>
               <li
@@ -1077,9 +1014,7 @@ exports[`Menu Menu headMenuTileVue demo works fine 1`] = `
                 <span
                   class="t-menu__content"
                 >
-                  
-        子菜单1-2
-      
+                   子菜单1-2 
                 </span>
               </li>
               <li
@@ -1088,9 +1023,7 @@ exports[`Menu Menu headMenuTileVue demo works fine 1`] = `
                 <span
                   class="t-menu__content"
                 >
-                  
-        子菜单1-3
-      
+                   子菜单1-3 
                 </span>
               </li>
             </ul>
@@ -1103,9 +1036,7 @@ exports[`Menu Menu headMenuTileVue demo works fine 1`] = `
         <span
           class="t-menu__content"
         >
-          
-    菜单2
-    
+           菜单2 
           <li
             class="t-submenu"
           >
@@ -1121,9 +1052,7 @@ exports[`Menu Menu headMenuTileVue demo works fine 1`] = `
                 <span
                   class="t-menu__content"
                 >
-                  
-        子菜单2-1
-      
+                   子菜单2-1 
                 </span>
               </li>
               <li
@@ -1132,9 +1061,7 @@ exports[`Menu Menu headMenuTileVue demo works fine 1`] = `
                 <span
                   class="t-menu__content"
                 >
-                  
-        子菜单2-2
-      
+                   子菜单2-2 
                 </span>
               </li>
               <li
@@ -1143,9 +1070,7 @@ exports[`Menu Menu headMenuTileVue demo works fine 1`] = `
                 <span
                   class="t-menu__content"
                 >
-                  
-        子菜单2-3
-      
+                   子菜单2-3 
                 </span>
               </li>
             </ul>
@@ -1158,9 +1083,7 @@ exports[`Menu Menu headMenuTileVue demo works fine 1`] = `
         <span
           class="t-menu__content"
         >
-          
-    菜单3
-    
+           菜单3 
           <li
             class="t-submenu"
           >
@@ -1176,9 +1099,7 @@ exports[`Menu Menu headMenuTileVue demo works fine 1`] = `
                 <span
                   class="t-menu__content"
                 >
-                  
-        子菜单3-1
-      
+                   子菜单3-1 
                 </span>
               </li>
               <li
@@ -1187,9 +1108,7 @@ exports[`Menu Menu headMenuTileVue demo works fine 1`] = `
                 <span
                   class="t-menu__content"
                 >
-                  
-        子菜单3-2
-      
+                   子菜单3-2 
                 </span>
               </li>
               <li
@@ -1198,16 +1117,13 @@ exports[`Menu Menu headMenuTileVue demo works fine 1`] = `
                 <span
                   class="t-menu__content"
                 >
-                  
-        子菜单3-3
-      
+                   子菜单3-3 
                 </span>
               </li>
             </ul>
           </li>
         </span>
       </li>
-       
       <li
         class="t-menu__item t-is-disabled t-menu__item--plain"
       >
@@ -1232,7 +1148,6 @@ exports[`Menu Menu headMenuTileVue demo works fine 1`] = `
           />
         </svg>
       </a>
-       
       <a
         href="javascript:;"
       >
@@ -1244,7 +1159,6 @@ exports[`Menu Menu headMenuTileVue demo works fine 1`] = `
           />
         </svg>
       </a>
-       
       <a
         href="javascript:;"
       >
@@ -1256,7 +1170,6 @@ exports[`Menu Menu headMenuTileVue demo works fine 1`] = `
           />
         </svg>
       </a>
-       
       <a
         href="javascript:;"
       >
@@ -1273,7 +1186,7 @@ exports[`Menu Menu headMenuTileVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Menu Menu multiSideVue demo works fine 1`] = `
+exports[`Menu > Menu multiSideVue demo works fine 1`] = `
 <div
   class="box"
 >
@@ -1327,7 +1240,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
             class="t-menu__sub t-is-opened"
             style="--padding-left: 44px;"
           >
-             
             <li
               class="t-submenu"
             >
@@ -1369,7 +1281,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
                     三级菜单内容
                   </span>
                 </li>
-                 
                 <li
                   class="t-menu__item t-menu__item--plain t-submenu__item"
                 >
@@ -1379,7 +1290,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
                     三级菜单内容
                   </span>
                 </li>
-                 
                 <li
                   class="t-menu__item t-menu__item--plain t-submenu__item"
                 >
@@ -1391,7 +1301,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
                 </li>
               </ul>
             </li>
-             
             <li
               class="t-submenu"
             >
@@ -1433,7 +1342,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
                     三级菜单内容
                   </span>
                 </li>
-                 
                 <li
                   class="t-menu__item t-menu__item--plain t-submenu__item"
                 >
@@ -1443,7 +1351,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
                     三级菜单内容
                   </span>
                 </li>
-                 
                 <li
                   class="t-menu__item t-menu__item--plain t-submenu__item"
                 >
@@ -1455,7 +1362,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
                 </li>
               </ul>
             </li>
-             
             <li
               class="t-menu__item t-is-active t-menu__item--plain t-submenu__item"
             >
@@ -1465,7 +1371,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
                 二级菜单内容
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
             >
@@ -1475,7 +1380,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
                 二级菜单内容
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
             >
@@ -1487,7 +1391,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
             </li>
           </ul>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -1501,12 +1404,9 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      个人中心
-    
+             个人中心 
           </span>
         </li>
-         
         <li
           class="t-submenu t-is-disabled"
         >
@@ -1546,7 +1446,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
             class="t-menu__sub"
             style="--padding-left: 44px;"
           >
-             
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
             >
@@ -1556,7 +1455,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
                 二级菜单内容
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
             >
@@ -1566,7 +1464,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
                 二级菜单内容
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
             >
@@ -1578,7 +1475,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
             </li>
           </ul>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -1592,9 +1488,7 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      资源编辑
-    
+             资源编辑 
           </span>
         </li>
       </ul>
@@ -1611,7 +1505,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
     class="t-default-menu t-menu--dark"
     height="550px"
@@ -1636,12 +1529,9 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      仪表盘
-    
+             仪表盘 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -1655,12 +1545,9 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      资源列表
-    
+             资源列表 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -1674,12 +1561,9 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      根目录
-    
+             根目录 
           </span>
         </li>
-         
         <li
           class="t-submenu t-is-opened"
         >
@@ -1719,7 +1603,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
             class="t-menu__sub t-is-opened"
             style="--padding-left: 44px;"
           >
-             
             <li
               class="t-menu__item t-is-active t-menu__item--plain t-submenu__item"
             >
@@ -1729,7 +1612,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
                 二级菜单内容
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
             >
@@ -1739,7 +1621,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
                 二级菜单内容
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
             >
@@ -1751,7 +1632,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
             </li>
           </ul>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -1765,12 +1645,9 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      精准监控
-    
+             精准监控 
           </span>
         </li>
-         
         <li
           class="t-submenu t-is-disabled"
         >
@@ -1810,7 +1687,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
             class="t-menu__sub"
             style="--padding-left: 44px;"
           >
-             
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
             >
@@ -1820,7 +1696,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
                 二级菜单内容
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
             >
@@ -1830,7 +1705,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
                 二级菜单内容
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
             >
@@ -1842,7 +1716,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
             </li>
           </ul>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -1856,12 +1729,9 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      个人中心
-    
+             个人中心 
           </span>
         </li>
-         
         <li
           class="t-submenu"
         >
@@ -1901,7 +1771,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
             class="t-menu__sub"
             style="--padding-left: 44px;"
           >
-             
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
             >
@@ -1911,7 +1780,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
                 二级菜单内容
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
             >
@@ -1921,7 +1789,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
                 二级菜单内容
               </span>
             </li>
-             
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
             >
@@ -1933,7 +1800,6 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
             </li>
           </ul>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -1947,9 +1813,7 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      资源编辑
-    
+             资源编辑 
           </span>
         </li>
       </ul>
@@ -1969,7 +1833,7 @@ exports[`Menu Menu multiSideVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Menu Menu multipleVue demo works fine 1`] = `
+exports[`Menu > Menu multipleVue demo works fine 1`] = `
 <div
   class="box"
 >
@@ -1991,7 +1855,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
       <ul
         class="t-menu"
       >
-         
         <li
           class="t-submenu"
         >
@@ -2024,7 +1887,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
             <ul
               class="t-menu__popup-wrapper"
             >
-               
               <li
                 class="t-submenu"
               >
@@ -2064,7 +1926,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
                         子菜单1-1-1
                       </span>
                     </li>
-                     
                     <li
                       class="t-menu__item t-menu__item--plain"
                     >
@@ -2074,7 +1935,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
                         子菜单1-1-2
                       </span>
                     </li>
-                     
                     <li
                       class="t-menu__item t-menu__item--plain"
                     >
@@ -2087,7 +1947,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
                   </ul>
                 </div>
               </li>
-               
               <li
                 class="t-menu__item t-menu__item--plain"
               >
@@ -2097,7 +1956,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
                   子菜单1-2
                 </span>
               </li>
-               
               <li
                 class="t-menu__item t-menu__item--plain"
               >
@@ -2107,7 +1965,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
                   子菜单1-3
                 </span>
               </li>
-               
               <li
                 class="t-menu__item t-menu__item--plain"
               >
@@ -2117,7 +1974,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
                   子菜单1-4
                 </span>
               </li>
-               
               <li
                 class="t-submenu"
               >
@@ -2157,7 +2013,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
                         子菜单1-5-1
                       </span>
                     </li>
-                     
                     <li
                       class="t-menu__item t-menu__item--plain"
                     >
@@ -2167,7 +2022,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
                         子菜单1-5-2
                       </span>
                     </li>
-                     
                     <li
                       class="t-menu__item t-menu__item--plain"
                     >
@@ -2183,7 +2037,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
             </ul>
           </div>
         </li>
-         
         <li
           class="t-submenu"
         >
@@ -2223,7 +2076,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
                   子菜单2-1
                 </span>
               </li>
-               
               <li
                 class="t-menu__item t-menu__item--plain"
               >
@@ -2233,7 +2085,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
                   子菜单2-2
                 </span>
               </li>
-               
               <li
                 class="t-menu__item t-menu__item--plain"
               >
@@ -2261,7 +2112,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
             />
           </svg>
         </a>
-         
         <a
           href="javascript:;"
         >
@@ -2273,7 +2123,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
             />
           </svg>
         </a>
-         
         <a
           href="javascript:;"
         >
@@ -2285,7 +2134,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
             />
           </svg>
         </a>
-         
         <a
           href="javascript:;"
         >
@@ -2300,7 +2148,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
     class="t-menu t-head-menu t-menu--dark"
     style="margin-top: 24px;"
@@ -2320,7 +2167,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
       <ul
         class="t-menu"
       >
-         
         <li
           class="t-submenu"
         >
@@ -2353,7 +2199,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
             <ul
               class="t-menu__popup-wrapper"
             >
-               
               <li
                 class="t-menu__item t-menu__item--plain"
               >
@@ -2363,7 +2208,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
                   子菜单1-1
                 </span>
               </li>
-               
               <li
                 class="t-menu__item t-menu__item--plain"
               >
@@ -2373,7 +2217,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
                   子菜单1-2
                 </span>
               </li>
-               
               <li
                 class="t-menu__item t-menu__item--plain"
               >
@@ -2386,7 +2229,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
             </ul>
           </div>
         </li>
-         
         <li
           class="t-submenu"
         >
@@ -2419,7 +2261,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
             <ul
               class="t-menu__popup-wrapper"
             >
-               
               <li
                 class="t-menu__item t-is-active t-menu__item--plain"
               >
@@ -2429,7 +2270,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
                   子菜单2-1
                 </span>
               </li>
-               
               <li
                 class="t-menu__item t-menu__item--plain"
               >
@@ -2439,7 +2279,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
                   子菜单2-2
                 </span>
               </li>
-               
               <li
                 class="t-menu__item t-menu__item--plain"
               >
@@ -2467,7 +2306,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
             />
           </svg>
         </a>
-         
         <a
           href="javascript:;"
         >
@@ -2479,7 +2317,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
             />
           </svg>
         </a>
-         
         <a
           href="javascript:;"
         >
@@ -2491,7 +2328,6 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
             />
           </svg>
         </a>
-         
         <a
           href="javascript:;"
         >
@@ -2509,7 +2345,7 @@ exports[`Menu Menu multipleVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Menu Menu popupSideVue demo works fine 1`] = `
+exports[`Menu > Menu popupSideVue demo works fine 1`] = `
 <div
   class="t-default-menu t-menu--light"
   style="height: 100%; width: 232px;"
@@ -2529,7 +2365,6 @@ exports[`Menu Menu popupSideVue demo works fine 1`] = `
     <ul
       class="t-menu t-menu--scroll narrow-scrollbar"
     >
-       
       <li
         class="t-menu__item"
       >
@@ -2543,12 +2378,9 @@ exports[`Menu Menu popupSideVue demo works fine 1`] = `
         <span
           class="t-menu__content"
         >
-          
-    仪表盘
-  
+           仪表盘 
         </span>
       </li>
-       
       <li
         class="t-submenu t-is-opened"
       >
@@ -2590,7 +2422,6 @@ exports[`Menu Menu popupSideVue demo works fine 1`] = `
           class="t-menu__sub t-is-opened"
           style="--padding-left: 44px;"
         >
-            
           <li
             class="t-menu__item t-is-active t-menu__item--plain t-submenu__item"
           >
@@ -2600,7 +2431,6 @@ exports[`Menu Menu popupSideVue demo works fine 1`] = `
               子菜单内容一
             </span>
           </li>
-           
           <li
             class="t-menu__item t-menu__item--plain t-submenu__item"
           >
@@ -2610,7 +2440,6 @@ exports[`Menu Menu popupSideVue demo works fine 1`] = `
               子菜单内容二
             </span>
           </li>
-           
           <li
             class="t-menu__item t-menu__item--plain t-submenu__item"
           >
@@ -2622,7 +2451,6 @@ exports[`Menu Menu popupSideVue demo works fine 1`] = `
           </li>
         </ul>
       </li>
-       
       <li
         class="t-submenu"
       >
@@ -2664,7 +2492,6 @@ exports[`Menu Menu popupSideVue demo works fine 1`] = `
           class="t-menu__sub"
           style="--padding-left: 44px;"
         >
-            
           <li
             class="t-menu__item t-menu__item--plain t-submenu__item"
           >
@@ -2674,7 +2501,6 @@ exports[`Menu Menu popupSideVue demo works fine 1`] = `
               子菜单内容一
             </span>
           </li>
-           
           <li
             class="t-menu__item t-menu__item--plain t-submenu__item"
           >
@@ -2684,7 +2510,6 @@ exports[`Menu Menu popupSideVue demo works fine 1`] = `
               子菜单内容二
             </span>
           </li>
-           
           <li
             class="t-menu__item t-menu__item--plain t-submenu__item"
           >
@@ -2696,7 +2521,6 @@ exports[`Menu Menu popupSideVue demo works fine 1`] = `
           </li>
         </ul>
       </li>
-       
       <li
         class="t-menu__item t-is-disabled"
       >
@@ -2710,9 +2534,7 @@ exports[`Menu Menu popupSideVue demo works fine 1`] = `
         <span
           class="t-menu__content"
         >
-          
-    资源列表
-  
+           资源列表 
         </span>
       </li>
     </ul>
@@ -2731,7 +2553,7 @@ exports[`Menu Menu popupSideVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Menu Menu sideMenuWidthVue demo works fine 1`] = `
+exports[`Menu > Menu sideMenuWidthVue demo works fine 1`] = `
 <div
   class="wrapper"
 >
@@ -2755,7 +2577,6 @@ exports[`Menu Menu sideMenuWidthVue demo works fine 1`] = `
       <ul
         class="t-menu t-menu--scroll narrow-scrollbar"
       >
-         
         <li
           class="t-menu__item t-menu__item--plain"
         >
@@ -2765,7 +2586,6 @@ exports[`Menu Menu sideMenuWidthVue demo works fine 1`] = `
             仪表盘
           </span>
         </li>
-         
         <li
           class="t-menu__item t-is-active t-menu__item--plain"
         >
@@ -2775,7 +2595,6 @@ exports[`Menu Menu sideMenuWidthVue demo works fine 1`] = `
             信息区
           </span>
         </li>
-         
         <li
           class="t-menu__item t-menu__item--plain"
         >
@@ -2785,7 +2604,6 @@ exports[`Menu Menu sideMenuWidthVue demo works fine 1`] = `
             视频区
           </span>
         </li>
-         
         <li
           class="t-menu__item t-menu__item--plain"
         >
@@ -2798,7 +2616,6 @@ exports[`Menu Menu sideMenuWidthVue demo works fine 1`] = `
       </ul>
     </div>
   </div>
-   
   <div
     class="t-default-menu t-menu--light"
     height="550px"
@@ -2819,7 +2636,6 @@ exports[`Menu Menu sideMenuWidthVue demo works fine 1`] = `
       <ul
         class="t-menu t-menu--scroll narrow-scrollbar"
       >
-         
         <li
           class="t-menu__item"
         >
@@ -2833,12 +2649,9 @@ exports[`Menu Menu sideMenuWidthVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      仪表盘
-    
+             仪表盘 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -2852,12 +2665,9 @@ exports[`Menu Menu sideMenuWidthVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      信息区
-    
+             信息区 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -2871,12 +2681,9 @@ exports[`Menu Menu sideMenuWidthVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      视频区
-    
+             视频区 
           </span>
         </li>
-         
         <li
           class="t-menu__item t-is-disabled"
         >
@@ -2890,9 +2697,7 @@ exports[`Menu Menu sideMenuWidthVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      资源区
-    
+             资源区 
           </span>
         </li>
       </ul>
@@ -2912,7 +2717,7 @@ exports[`Menu Menu sideMenuWidthVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Menu Menu singleSideVue demo works fine 1`] = `
+exports[`Menu > Menu singleSideVue demo works fine 1`] = `
 <div
   class="box"
 >
@@ -2936,7 +2741,6 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
       <ul
         class="t-menu t-menu--scroll narrow-scrollbar"
       >
-         
         <li
           class="t-menu__item t-is-active t-menu__item--plain"
         >
@@ -2946,7 +2750,6 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
             仪表盘
           </span>
         </li>
-         
         <li
           class="t-menu__item t-menu__item--plain"
         >
@@ -2956,7 +2759,6 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
             资源列表
           </span>
         </li>
-         
         <li
           class="t-menu__item t-menu__item--plain"
         >
@@ -2966,7 +2768,6 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
             根目录
           </span>
         </li>
-         
         <li
           class="t-menu__item t-is-disabled t-menu__item--plain"
         >
@@ -2976,7 +2777,6 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
             调度平台
           </span>
         </li>
-         
         <li
           class="t-menu__item t-menu__item--plain"
         >
@@ -2986,7 +2786,6 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
             精准监控
           </span>
         </li>
-         
         <li
           class="t-menu__item t-menu__item--plain"
         >
@@ -2996,7 +2795,6 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
             消息区
           </span>
         </li>
-         
         <li
           class="t-menu__item t-menu__item--plain"
         >
@@ -3006,7 +2804,6 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
             个人中心
           </span>
         </li>
-         
         <li
           class="t-menu__item t-menu__item--plain"
         >
@@ -3016,7 +2813,6 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
             视频区
           </span>
         </li>
-         
         <li
           class="t-menu__item t-menu__item--plain"
         >
@@ -3029,7 +2825,6 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
       </ul>
     </div>
   </div>
-   
   <div
     class="t-default-menu t-menu--light"
     height="550px"
@@ -3050,7 +2845,6 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
       <ul
         class="t-menu t-menu--scroll narrow-scrollbar"
       >
-         
         <li
           class="t-menu__item t-is-active"
         >
@@ -3064,12 +2858,9 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      仪表盘
-    
+             仪表盘 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -3083,12 +2874,9 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      资源列表
-    
+             资源列表 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -3102,12 +2890,9 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      根目录
-    
+             根目录 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -3121,12 +2906,9 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      调度平台
-    
+             调度平台 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -3140,12 +2922,9 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      精准监控
-    
+             精准监控 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -3159,12 +2938,9 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      消息区
-    
+             消息区 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -3178,12 +2954,9 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      个人中心
-    
+             个人中心 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -3197,12 +2970,9 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      视频区
-    
+             视频区 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -3216,15 +2986,12 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      资源编辑
-    
+             资源编辑 
           </span>
         </li>
       </ul>
     </div>
   </div>
-   
   <div
     class="t-default-menu t-menu--dark"
     height="550px"
@@ -3245,7 +3012,6 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
       <ul
         class="t-menu t-menu--scroll narrow-scrollbar"
       >
-         
         <li
           class="t-menu__item t-is-active"
         >
@@ -3259,12 +3025,9 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      仪表盘
-    
+             仪表盘 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -3278,12 +3041,9 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      资源列表
-    
+             资源列表 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -3297,12 +3057,9 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      根目录
-    
+             根目录 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -3316,12 +3073,9 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      调度平台
-    
+             调度平台 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -3335,12 +3089,9 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      精准监控
-    
+             精准监控 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -3354,12 +3105,9 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      消息区
-    
+             消息区 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -3373,12 +3121,9 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      个人中心
-    
+             个人中心 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -3392,12 +3137,9 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      视频区
-    
+             视频区 
           </span>
         </li>
-         
         <li
           class="t-menu__item"
         >
@@ -3411,9 +3153,7 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
           <span
             class="t-menu__content"
           >
-            
-      资源编辑
-    
+             资源编辑 
           </span>
         </li>
       </ul>
@@ -3422,7 +3162,7 @@ exports[`Menu Menu singleSideVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Menu Menu singleVue demo works fine 1`] = `
+exports[`Menu > Menu singleVue demo works fine 1`] = `
 <div>
   <div
     class="t-menu t-head-menu t-menu--light"
@@ -3442,7 +3182,6 @@ exports[`Menu Menu singleVue demo works fine 1`] = `
       <ul
         class="t-menu"
       >
-         
         <li
           class="t-menu__item t-menu__item--plain"
         >
@@ -3452,7 +3191,6 @@ exports[`Menu Menu singleVue demo works fine 1`] = `
             菜单1
           </span>
         </li>
-         
         <li
           class="t-menu__item t-is-active t-menu__item--plain"
         >
@@ -3462,7 +3200,6 @@ exports[`Menu Menu singleVue demo works fine 1`] = `
             菜单2
           </span>
         </li>
-         
         <li
           class="t-menu__item t-is-disabled t-menu__item--plain"
         >
@@ -3487,7 +3224,6 @@ exports[`Menu Menu singleVue demo works fine 1`] = `
             />
           </svg>
         </a>
-         
         <a
           href="javascript:;"
         >
@@ -3499,7 +3235,6 @@ exports[`Menu Menu singleVue demo works fine 1`] = `
             />
           </svg>
         </a>
-         
         <a
           href="javascript:;"
         >
@@ -3511,7 +3246,6 @@ exports[`Menu Menu singleVue demo works fine 1`] = `
             />
           </svg>
         </a>
-         
         <a
           href="javascript:;"
         >
@@ -3526,9 +3260,7 @@ exports[`Menu Menu singleVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <br />
-   
   <div
     class="t-menu t-head-menu t-menu--dark"
     height="120px"
@@ -3548,7 +3280,6 @@ exports[`Menu Menu singleVue demo works fine 1`] = `
       <ul
         class="t-menu"
       >
-         
         <li
           class="t-menu__item t-is-active t-menu__item--plain"
         >
@@ -3558,7 +3289,6 @@ exports[`Menu Menu singleVue demo works fine 1`] = `
             菜单1
           </span>
         </li>
-         
         <li
           class="t-menu__item t-menu__item--plain"
         >
@@ -3568,7 +3298,6 @@ exports[`Menu Menu singleVue demo works fine 1`] = `
             菜单2
           </span>
         </li>
-         
         <li
           class="t-menu__item t-is-disabled t-menu__item--plain"
         >
@@ -3593,7 +3322,6 @@ exports[`Menu Menu singleVue demo works fine 1`] = `
             />
           </svg>
         </a>
-         
         <a
           href="javascript:;"
         >
@@ -3605,7 +3333,6 @@ exports[`Menu Menu singleVue demo works fine 1`] = `
             />
           </svg>
         </a>
-         
         <a
           href="javascript:;"
         >
@@ -3617,7 +3344,6 @@ exports[`Menu Menu singleVue demo works fine 1`] = `
             />
           </svg>
         </a>
-         
         <a
           href="javascript:;"
         >

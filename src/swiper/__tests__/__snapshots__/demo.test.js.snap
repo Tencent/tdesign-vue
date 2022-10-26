@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Swiper Swiper baseVue demo works fine 1`] = `
+exports[`Swiper > Swiper baseVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block--swiper"
 >
@@ -26,7 +26,7 @@ exports[`Swiper Swiper baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Swiper Swiper cardVue demo works fine 1`] = `
+exports[`Swiper > Swiper cardVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block--swiper"
 >
@@ -52,7 +52,7 @@ exports[`Swiper Swiper cardVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Swiper Swiper currentVue demo works fine 1`] = `
+exports[`Swiper > Swiper currentVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block--swiper"
 >
@@ -75,7 +75,6 @@ exports[`Swiper Swiper currentVue demo works fine 1`] = `
       />
     </div>
   </div>
-   
   <div
     class="tdesign-demo-block-row"
   >
@@ -86,16 +85,14 @@ exports[`Swiper Swiper currentVue demo works fine 1`] = `
       <span
         class="t-button__text"
       >
-        
-      跳转到第 2 项
-    
+         跳转到第 2 项 
       </span>
     </button>
   </div>
 </div>
 `;
 
-exports[`Swiper Swiper fadeVue demo works fine 1`] = `
+exports[`Swiper > Swiper fadeVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block--swiper"
 >
@@ -121,7 +118,7 @@ exports[`Swiper Swiper fadeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Swiper Swiper fractionVue demo works fine 1`] = `
+exports[`Swiper > Swiper fractionVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block--swiper"
 >
@@ -191,7 +188,7 @@ exports[`Swiper Swiper fractionVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Swiper Swiper placementVue demo works fine 1`] = `
+exports[`Swiper > Swiper placementVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block--swiper"
 >
@@ -217,7 +214,7 @@ exports[`Swiper Swiper placementVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Swiper Swiper sizeVue demo works fine 1`] = `
+exports[`Swiper > Swiper sizeVue demo works fine 1`] = `
 <div>
   <div
     class="tdesign-demo-block--swiper"
@@ -226,7 +223,6 @@ exports[`Swiper Swiper sizeVue demo works fine 1`] = `
     <h3>
       large
     </h3>
-     
     <div
       class="t-swiper"
     >
@@ -247,7 +243,6 @@ exports[`Swiper Swiper sizeVue demo works fine 1`] = `
       </div>
     </div>
   </div>
-   
   <div
     class="tdesign-demo-block--swiper"
     style="width: 500px; margin-top: 20px;"
@@ -255,7 +250,6 @@ exports[`Swiper Swiper sizeVue demo works fine 1`] = `
     <h3>
       small
     </h3>
-     
     <div
       class="t-swiper"
     >
@@ -279,7 +273,7 @@ exports[`Swiper Swiper sizeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Swiper Swiper verticalVue demo works fine 1`] = `
+exports[`Swiper > Swiper verticalVue demo works fine 1`] = `
 <div
   class="tdesign-demo-block--swiper"
 >

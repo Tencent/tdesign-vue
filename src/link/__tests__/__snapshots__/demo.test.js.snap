@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Link Link baseVue demo works fine 1`] = `
+exports[`Link > Link baseVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -18,7 +18,7 @@ exports[`Link Link baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Link Link disabledVue demo works fine 1`] = `
+exports[`Link > Link disabledVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -70,9 +70,7 @@ exports[`Link Link disabledVue demo works fine 1`] = `
       class="t-link t-size-m t-link--theme-success t-is-disabled"
       target=""
     >
-      
-    跳转链接
-  
+       跳转链接 
       <span
         class="t-link__suffix-icon"
       >
@@ -100,7 +98,7 @@ exports[`Link Link disabledVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Link Link hoverVue demo works fine 1`] = `
+exports[`Link > Link hoverVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -285,7 +283,7 @@ exports[`Link Link hoverVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Link Link iconVue demo works fine 1`] = `
+exports[`Link > Link iconVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -352,9 +350,7 @@ exports[`Link Link iconVue demo works fine 1`] = `
           />
         </svg>
       </span>
-      
-    跳转链接
-  
+       跳转链接 
     </a>
   </div>
   <div
@@ -365,9 +361,7 @@ exports[`Link Link iconVue demo works fine 1`] = `
       href="https://tdesign.tencent.com/"
       target="_blank"
     >
-      
-    跳转链接
-  
+       跳转链接 
       <span
         class="t-link__suffix-icon"
       >
@@ -427,7 +421,7 @@ exports[`Link Link iconVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Link Link sizeVue demo works fine 1`] = `
+exports[`Link > Link sizeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -486,9 +480,7 @@ exports[`Link Link sizeVue demo works fine 1`] = `
           class="t-link t-size-s t-link--theme-success t-link--hover-underline"
           target=""
         >
-          
-      跳转链接
-    
+           跳转链接 
           <span
             class="t-link__suffix-icon"
           >
@@ -569,9 +561,7 @@ exports[`Link Link sizeVue demo works fine 1`] = `
           class="t-link t-size-m t-link--theme-success t-link--hover-underline"
           target=""
         >
-          
-      跳转链接
-    
+           跳转链接 
           <span
             class="t-link__suffix-icon"
           >
@@ -652,9 +642,7 @@ exports[`Link Link sizeVue demo works fine 1`] = `
           class="t-link t-size-l t-link--theme-success t-link--hover-underline"
           target=""
         >
-          
-      跳转链接
-    
+           跳转链接 
           <span
             class="t-link__suffix-icon"
           >
@@ -684,7 +672,7 @@ exports[`Link Link sizeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Link Link themeVue demo works fine 1`] = `
+exports[`Link > Link themeVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -742,7 +730,7 @@ exports[`Link Link themeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Link Link underlineVue demo works fine 1`] = `
+exports[`Link > Link underlineVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"

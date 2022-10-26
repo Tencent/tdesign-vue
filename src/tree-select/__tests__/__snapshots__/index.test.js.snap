@@ -1,5 +1,3 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
 exports[`TreeSelect :props :clearable 1`] = `
 <div class="t-select__wrap">
   <div class="t-select t-select-polyfill t-size-m t-select__popup-reference"><span class="t-select__placeholder">请选择</span><span class="t-tree-select t-tag-prefix"></span><span class="t-tag t-tag--default t-size-m t-tag--dark" style="display: none;"><span>+0</span></span>

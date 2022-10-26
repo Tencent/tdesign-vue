@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`InputAdornment InputAdornment selectVue demo works fine 1`] = `
+exports[`InputAdornment > InputAdornment selectVue demo works fine 1`] = `
 <div
   class="adornment-select t-space t-space-vertical"
   style="gap: 16px; max-width: 500px;"
@@ -311,7 +311,7 @@ exports[`InputAdornment InputAdornment selectVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`InputAdornment InputAdornment textVue demo works fine 1`] = `
+exports[`InputAdornment > InputAdornment textVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px; max-width: 500px;"

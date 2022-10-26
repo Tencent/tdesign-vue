@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Tag Tag baseVue demo works fine 1`] = `
+exports[`Tag > Tag baseVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -256,9 +256,10 @@ exports[`Tag Tag baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tag Tag deleteVue demo works fine 1`] = `
+exports[`Tag > Tag deleteVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
+  data-v-48c2675e=""
   style="gap: 30px;"
 >
   <div
@@ -266,6 +267,7 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-horizontal"
+      data-v-48c2675e=""
       style="gap: 16px;"
     >
       <div
@@ -273,6 +275,7 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--close"
+          data-v-48c2675e=""
         >
           <span>
             标签一
@@ -297,6 +300,7 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--success t-size-m t-tag--dark t-tag--close"
+          data-v-48c2675e=""
         >
           <span>
             标签二
@@ -321,6 +325,7 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--close"
+          data-v-48c2675e=""
         >
           <span>
             标签三
@@ -345,6 +350,7 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--danger t-size-m t-tag--dark t-tag--close"
+          data-v-48c2675e=""
         >
           <span>
             标签四
@@ -371,6 +377,7 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-horizontal"
+      data-v-48c2675e=""
       style="gap: 16px;"
     >
       <div
@@ -378,6 +385,7 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--primary t-size-m t-tag--light t-tag--close"
+          data-v-48c2675e=""
         >
           <span>
             标签一
@@ -402,6 +410,7 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--success t-size-m t-tag--light t-tag--close"
+          data-v-48c2675e=""
         >
           <span>
             标签二
@@ -426,6 +435,7 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--warning t-size-m t-tag--light t-tag--close"
+          data-v-48c2675e=""
         >
           <span>
             标签三
@@ -450,6 +460,7 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--danger t-size-m t-tag--light t-tag--close"
+          data-v-48c2675e=""
         >
           <span>
             标签四
@@ -476,6 +487,7 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-horizontal"
+      data-v-48c2675e=""
       style="gap: 16px;"
     >
       <div
@@ -483,6 +495,7 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--primary t-size-m t-tag--outline t-tag--close"
+          data-v-48c2675e=""
         >
           <span>
             标签一
@@ -507,6 +520,7 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--success t-size-m t-tag--outline t-tag--close"
+          data-v-48c2675e=""
         >
           <span>
             标签二
@@ -531,6 +545,7 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--warning t-size-m t-tag--outline t-tag--close"
+          data-v-48c2675e=""
         >
           <span>
             标签三
@@ -555,6 +570,7 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--danger t-size-m t-tag--outline t-tag--close"
+          data-v-48c2675e=""
         >
           <span>
             标签四
@@ -581,6 +597,7 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-horizontal"
+      data-v-48c2675e=""
       style="gap: 16px;"
     >
       <div
@@ -588,14 +605,13 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+          data-v-48c2675e=""
         >
           <span
             class="t-tag--text"
             style="max-width: 100px;"
           >
-            
-      可删除标签可删除标签
-    
+             可删除标签可删除标签 
           </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
@@ -617,9 +633,11 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+          data-v-48c2675e=""
         >
           <svg
             class="t-icon t-icon-discount"
+            data-v-48c2675e=""
             fill="none"
             height="1em"
             viewBox="0 0 16 16"
@@ -627,12 +645,14 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
           >
             <path
               d="M7.84 5.01A2 2 0 115 7.84 2 2 0 017.84 5zm-.7.7a1 1 0 10-1.42 1.42 1 1 0 001.41-1.41z"
+              data-v-48c2675e=""
               fill="currentColor"
               fill-opacity="0.9"
             />
             <path
               clip-rule="evenodd"
               d="M2 7.95V2h5.95a1 1 0 01.7.3l6.14 6.13a1 1 0 010 1.41L9.84 14.8a1 1 0 01-1.41 0L2.29 8.66A1 1 0 012 7.95zM7.95 3l6.13 6.13-4.95 4.95L3 7.95V3h4.95z"
+              data-v-48c2675e=""
               fill="currentColor"
               fill-opacity="0.9"
               fill-rule="evenodd"
@@ -642,9 +662,7 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
             class="t-tag--text"
             style="max-width: 100px;"
           >
-            
-      可删除标签可删除标签
-    
+             可删除标签可删除标签 
           </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
@@ -666,11 +684,10 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close t-is-disabled t-tag--disabled"
+          data-v-48c2675e=""
         >
           <span>
-            
-      可删除标签
-    
+             可删除标签 
           </span>
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
@@ -694,13 +711,16 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
   >
     <div
       class="tag-block editable"
+      data-v-48c2675e=""
     >
       <span
         class="t-tag t-tag--default t-size-m t-tag--dark"
+        data-v-48c2675e=""
       >
         <span>
           <svg
             class="t-icon t-icon-add"
+            data-v-48c2675e=""
             fill="none"
             height="1em"
             viewBox="0 0 16 16"
@@ -708,13 +728,12 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
           >
             <path
               d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z"
+              data-v-48c2675e=""
               fill="currentColor"
               fill-opacity="0.9"
             />
           </svg>
-          
-      添加标签
-    
+           添加标签 
         </span>
       </span>
     </div>
@@ -722,7 +741,7 @@ exports[`Tag Tag deleteVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tag Tag disabledVue demo works fine 1`] = `
+exports[`Tag > Tag disabledVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 30px;"
@@ -750,7 +769,7 @@ exports[`Tag Tag disabledVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tag Tag iconVue demo works fine 1`] = `
+exports[`Tag > Tag iconVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -813,16 +832,14 @@ exports[`Tag Tag iconVue demo works fine 1`] = `
         />
       </svg>
       <span>
-        
-    Icon插槽
-  
+         Icon插槽 
       </span>
     </span>
   </div>
 </div>
 `;
 
-exports[`Tag Tag longTextVue demo works fine 1`] = `
+exports[`Tag > Tag longTextVue demo works fine 1`] = `
 <div>
   <span
     class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis"
@@ -838,7 +855,7 @@ exports[`Tag Tag longTextVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tag Tag plainVue demo works fine 1`] = `
+exports[`Tag > Tag plainVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -901,7 +918,7 @@ exports[`Tag Tag plainVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tag Tag selectableVue demo works fine 1`] = `
+exports[`Tag > Tag selectableVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 30px;"
@@ -912,9 +929,7 @@ exports[`Tag Tag selectableVue demo works fine 1`] = `
     <span
       class="t-tag t-tag--check t-tag--default t-size-m t-tag--checked"
     >
-      
-    选中
-  
+       选中 
     </span>
   </div>
   <div
@@ -923,9 +938,7 @@ exports[`Tag Tag selectableVue demo works fine 1`] = `
     <span
       class="t-tag t-tag--check t-tag--default t-size-m"
     >
-      
-    未选
-  
+       未选 
     </span>
   </div>
   <div
@@ -934,17 +947,16 @@ exports[`Tag Tag selectableVue demo works fine 1`] = `
     <span
       class="t-tag t-tag--check t-tag--default t-size-m t-is-disabled t-tag--disabled"
     >
-      
-    禁用
-  
+       禁用 
     </span>
   </div>
 </div>
 `;
 
-exports[`Tag Tag shapeVue demo works fine 1`] = `
+exports[`Tag > Tag shapeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
+  data-v-2785032a=""
   style="gap: 16px;"
 >
   <div
@@ -952,6 +964,7 @@ exports[`Tag Tag shapeVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-horizontal"
+      data-v-2785032a=""
       style="gap: 16px;"
     >
       <div
@@ -959,6 +972,7 @@ exports[`Tag Tag shapeVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark"
+          data-v-2785032a=""
         >
           <span>
             标签一
@@ -970,6 +984,7 @@ exports[`Tag Tag shapeVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--primary t-size-m t-tag--dark"
+          data-v-2785032a=""
         >
           <span>
             标签一
@@ -983,6 +998,7 @@ exports[`Tag Tag shapeVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-horizontal"
+      data-v-2785032a=""
       style="gap: 16px;"
     >
       <div
@@ -990,6 +1006,7 @@ exports[`Tag Tag shapeVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--round"
+          data-v-2785032a=""
         >
           <span>
             标签一
@@ -1001,6 +1018,7 @@ exports[`Tag Tag shapeVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--round"
+          data-v-2785032a=""
         >
           <span>
             标签一
@@ -1014,6 +1032,7 @@ exports[`Tag Tag shapeVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-horizontal"
+      data-v-2785032a=""
       style="gap: 16px;"
     >
       <div
@@ -1021,6 +1040,7 @@ exports[`Tag Tag shapeVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--mark"
+          data-v-2785032a=""
         >
           <span>
             标签一
@@ -1032,6 +1052,7 @@ exports[`Tag Tag shapeVue demo works fine 1`] = `
       >
         <span
           class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--mark"
+          data-v-2785032a=""
         >
           <span>
             标签一
@@ -1043,7 +1064,7 @@ exports[`Tag Tag shapeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tag Tag sizeVue demo works fine 1`] = `
+exports[`Tag > Tag sizeVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 30px;"
@@ -1084,7 +1105,7 @@ exports[`Tag Tag sizeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Tag Tag themeVue demo works fine 1`] = `
+exports[`Tag > Tag themeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"

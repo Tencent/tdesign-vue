@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Radio Radio baseVue demo works fine 1`] = `
+exports[`Radio > Radio baseVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px;"
@@ -98,7 +98,7 @@ exports[`Radio Radio baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Radio Radio groupVue demo works fine 1`] = `
+exports[`Radio > Radio groupVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -223,7 +223,6 @@ exports[`Radio Radio groupVue demo works fine 1`] = `
               选项一
             </span>
           </label>
-           
           <label
             class="t-radio"
           >
@@ -242,7 +241,6 @@ exports[`Radio Radio groupVue demo works fine 1`] = `
               选项二
             </span>
           </label>
-           
           <label
             class="t-radio"
           >
@@ -261,7 +259,6 @@ exports[`Radio Radio groupVue demo works fine 1`] = `
               选项三
             </span>
           </label>
-           
           <label
             class="t-radio t-is-disabled"
           >
@@ -288,7 +285,7 @@ exports[`Radio Radio groupVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Radio Radio sizeVue demo works fine 1`] = `
+exports[`Radio > Radio sizeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -317,7 +314,6 @@ exports[`Radio Radio sizeVue demo works fine 1`] = `
           选项一
         </span>
       </label>
-       
       <label
         class="t-radio-button"
       >
@@ -336,7 +332,6 @@ exports[`Radio Radio sizeVue demo works fine 1`] = `
           选项二
         </span>
       </label>
-       
       <label
         class="t-radio-button"
       >
@@ -355,7 +350,6 @@ exports[`Radio Radio sizeVue demo works fine 1`] = `
           选项三
         </span>
       </label>
-       
       <label
         class="t-radio-button"
       >
@@ -400,7 +394,6 @@ exports[`Radio Radio sizeVue demo works fine 1`] = `
           选项一
         </span>
       </label>
-       
       <label
         class="t-radio-button t-is-checked"
       >
@@ -419,7 +412,6 @@ exports[`Radio Radio sizeVue demo works fine 1`] = `
           选项二
         </span>
       </label>
-       
       <label
         class="t-radio-button"
       >
@@ -438,7 +430,6 @@ exports[`Radio Radio sizeVue demo works fine 1`] = `
           选项三
         </span>
       </label>
-       
       <label
         class="t-radio-button"
       >
@@ -483,7 +474,6 @@ exports[`Radio Radio sizeVue demo works fine 1`] = `
           选项一
         </span>
       </label>
-       
       <label
         class="t-radio-button"
       >
@@ -502,7 +492,6 @@ exports[`Radio Radio sizeVue demo works fine 1`] = `
           选项二
         </span>
       </label>
-       
       <label
         class="t-radio-button t-is-checked"
       >
@@ -521,7 +510,6 @@ exports[`Radio Radio sizeVue demo works fine 1`] = `
           选项三
         </span>
       </label>
-       
       <label
         class="t-radio-button"
       >
@@ -545,7 +533,7 @@ exports[`Radio Radio sizeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Radio Radio typeVue demo works fine 1`] = `
+exports[`Radio > Radio typeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 36px;"
@@ -588,7 +576,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
               选项一
             </span>
           </label>
-           
           <label
             class="t-radio-button"
           >
@@ -607,7 +594,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
               选项二
             </span>
           </label>
-           
           <label
             class="t-radio-button"
           >
@@ -626,7 +612,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
               选项三
             </span>
           </label>
-           
           <label
             class="t-radio-button"
           >
@@ -645,7 +630,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
               选项四
             </span>
           </label>
-           
           <label
             class="t-radio-button"
           >
@@ -691,7 +675,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
               选项一
             </span>
           </label>
-           
           <label
             class="t-radio-button t-is-disabled"
           >
@@ -711,7 +694,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
               选项二
             </span>
           </label>
-           
           <label
             class="t-radio-button t-is-disabled"
           >
@@ -731,7 +713,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
               选项三
             </span>
           </label>
-           
           <label
             class="t-radio-button t-is-checked t-is-disabled"
           >
@@ -751,7 +732,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
               选中禁用态
             </span>
           </label>
-           
           <label
             class="t-radio-button t-is-disabled"
           >
@@ -820,7 +800,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
                   选项一
                 </span>
               </label>
-               
               <label
                 class="t-radio-button"
               >
@@ -839,7 +818,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
                   选项二
                 </span>
               </label>
-               
               <label
                 class="t-radio-button"
               >
@@ -858,7 +836,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
                   选项三
                 </span>
               </label>
-               
               <label
                 class="t-radio-button"
               >
@@ -877,7 +854,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
                   选项四
                 </span>
               </label>
-               
               <label
                 class="t-radio-button"
               >
@@ -935,7 +911,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
                   选项一
                 </span>
               </label>
-               
               <label
                 class="t-radio-button"
               >
@@ -954,7 +929,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
                   选项二
                 </span>
               </label>
-               
               <label
                 class="t-radio-button"
               >
@@ -973,7 +947,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
                   选项三
                 </span>
               </label>
-               
               <label
                 class="t-radio-button"
               >
@@ -992,7 +965,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
                   选项四
                 </span>
               </label>
-               
               <label
                 class="t-radio-button"
               >
@@ -1051,7 +1023,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
                   选项一
                 </span>
               </label>
-               
               <label
                 class="t-radio-button t-is-disabled"
               >
@@ -1071,7 +1042,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
                   选项二
                 </span>
               </label>
-               
               <label
                 class="t-radio-button t-is-disabled"
               >
@@ -1091,7 +1061,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
                   选项三
                 </span>
               </label>
-               
               <label
                 class="t-radio-button t-is-checked t-is-disabled"
               >
@@ -1111,7 +1080,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
                   选中禁用态
                 </span>
               </label>
-               
               <label
                 class="t-radio-button t-is-disabled"
               >
@@ -1171,7 +1139,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
                   选项一
                 </span>
               </label>
-               
               <label
                 class="t-radio-button t-is-disabled"
               >
@@ -1191,7 +1158,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
                   选项二
                 </span>
               </label>
-               
               <label
                 class="t-radio-button t-is-disabled"
               >
@@ -1211,7 +1177,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
                   选项三
                 </span>
               </label>
-               
               <label
                 class="t-radio-button t-is-checked t-is-disabled"
               >
@@ -1231,7 +1196,6 @@ exports[`Radio Radio typeVue demo works fine 1`] = `
                   选中禁用态
                 </span>
               </label>
-               
               <label
                 class="t-radio-button t-is-disabled"
               >

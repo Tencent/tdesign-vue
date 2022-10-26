@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Cascader Cascader baseVue demo works fine 1`] = `
+exports[`Cascader > Cascader baseVue demo works fine 1`] = `
 <div
   class="t-input__wrap t-cascader"
 >
@@ -41,7 +41,7 @@ exports[`Cascader Cascader baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Cascader Cascader checkStrictlyVue demo works fine 1`] = `
+exports[`Cascader > Cascader checkStrictlyVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -166,7 +166,7 @@ exports[`Cascader Cascader checkStrictlyVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Cascader Cascader collapsedVue demo works fine 1`] = `
+exports[`Cascader > Cascader collapsedVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -325,13 +325,10 @@ exports[`Cascader Cascader collapsedVue demo works fine 1`] = `
               />
             </svg>
           </span>
-          <span>
-             
-            <span
-              style="color: rgb(0, 168, 112);"
-            >
-              +2
-            </span>
+          <span
+            style="color: rgb(0, 168, 112);"
+          >
+            +2
           </span>
         </div>
         <span
@@ -359,7 +356,7 @@ exports[`Cascader Cascader collapsedVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Cascader Cascader disabledVue demo works fine 1`] = `
+exports[`Cascader > Cascader disabledVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -454,7 +451,7 @@ exports[`Cascader Cascader disabledVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Cascader Cascader ellipsisVue demo works fine 1`] = `
+exports[`Cascader > Cascader ellipsisVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -559,7 +556,7 @@ exports[`Cascader Cascader ellipsisVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Cascader Cascader filterableVue demo works fine 1`] = `
+exports[`Cascader > Cascader filterableVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -711,7 +708,7 @@ exports[`Cascader Cascader filterableVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Cascader Cascader keysVue demo works fine 1`] = `
+exports[`Cascader > Cascader keysVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -816,7 +813,7 @@ exports[`Cascader Cascader keysVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Cascader Cascader loadVue demo works fine 1`] = `
+exports[`Cascader > Cascader loadVue demo works fine 1`] = `
 <div
   class="t-input__wrap t-select-input--empty t-cascader"
 >
@@ -857,7 +854,7 @@ exports[`Cascader Cascader loadVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Cascader Cascader maxVue demo works fine 1`] = `
+exports[`Cascader > Cascader maxVue demo works fine 1`] = `
 <div
   class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader"
 >
@@ -898,7 +895,7 @@ exports[`Cascader Cascader maxVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Cascader Cascader multipleVue demo works fine 1`] = `
+exports[`Cascader > Cascader multipleVue demo works fine 1`] = `
 <div
   class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
 >
@@ -952,7 +949,7 @@ exports[`Cascader Cascader multipleVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Cascader Cascader panelVue demo works fine 1`] = `
+exports[`Cascader > Cascader panelVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1120,7 +1117,7 @@ exports[`Cascader Cascader panelVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Cascader Cascader showAllLevelsVue demo works fine 1`] = `
+exports[`Cascader > Cascader showAllLevelsVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1212,7 +1209,7 @@ exports[`Cascader Cascader showAllLevelsVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Cascader Cascader sizeVue demo works fine 1`] = `
+exports[`Cascader > Cascader sizeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1346,7 +1343,7 @@ exports[`Cascader Cascader sizeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Cascader Cascader triggerVue demo works fine 1`] = `
+exports[`Cascader > Cascader triggerVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1438,7 +1435,7 @@ exports[`Cascader Cascader triggerVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Cascader Cascader valueModeVue demo works fine 1`] = `
+exports[`Cascader > Cascader valueModeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1572,7 +1569,7 @@ exports[`Cascader Cascader valueModeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Cascader Cascader valueTypeVue demo works fine 1`] = `
+exports[`Cascader > Cascader valueTypeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"

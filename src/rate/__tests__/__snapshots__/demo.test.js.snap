@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Rate Rate baseVue demo works fine 1`] = `
+exports[`Rate > Rate baseVue demo works fine 1`] = `
 <div
   class="t-rate"
 >
@@ -222,7 +222,7 @@ exports[`Rate Rate baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Rate Rate customVue demo works fine 1`] = `
+exports[`Rate > Rate customVue demo works fine 1`] = `
 <div
   class="t-rate"
 >
@@ -528,7 +528,7 @@ exports[`Rate Rate customVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Rate Rate iconVue demo works fine 1`] = `
+exports[`Rate > Rate iconVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1205,7 +1205,7 @@ exports[`Rate Rate iconVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Rate Rate sizeVue demo works fine 1`] = `
+exports[`Rate > Rate sizeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -1673,7 +1673,7 @@ exports[`Rate Rate sizeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Rate Rate statusVue demo works fine 1`] = `
+exports[`Rate > Rate statusVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -2371,7 +2371,7 @@ exports[`Rate Rate statusVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Rate Rate textsVue demo works fine 1`] = `
+exports[`Rate > Rate textsVue demo works fine 1`] = `
 <div
   class="t-rate"
 >

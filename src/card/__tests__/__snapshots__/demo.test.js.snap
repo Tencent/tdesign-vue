@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Card Card baseVue demo works fine 1`] = `
+exports[`Card > Card baseVue demo works fine 1`] = `
 <div
   class="t-card t-card--bordered"
   style="width: 400px;"
@@ -32,19 +32,19 @@ exports[`Card Card baseVue demo works fine 1`] = `
   <div
     class="t-card__body"
   >
-    
-  仅有内容区域的卡片形式。卡片内容区域可以是文字、图片、表单、表格等形式信息内容。可使用大中小不同的卡片尺寸，按业务需求进行呈现。
-  
+     仅有内容区域的卡片形式。卡片内容区域可以是文字、图片、表单、表格等形式信息内容。可使用大中小不同的卡片尺寸，按业务需求进行呈现。 
   </div>
 </div>
 `;
 
-exports[`Card Card borderedNoneVue demo works fine 1`] = `
+exports[`Card > Card borderedNoneVue demo works fine 1`] = `
 <div
   class="demo-card"
+  data-v-3afd352c=""
 >
   <div
     class="t-card t-card--shadow-hover"
+    data-v-3afd352c=""
     style="width: 400px;"
   >
     <div
@@ -65,6 +65,7 @@ exports[`Card Card borderedNoneVue demo works fine 1`] = `
         class="t-card__actions"
       >
         <a
+          data-v-3afd352c=""
           href="javascript:void(0)"
           style="line-height: 24px;"
         >
@@ -75,15 +76,13 @@ exports[`Card Card borderedNoneVue demo works fine 1`] = `
     <div
       class="t-card__body"
     >
-      
-    仅有内容区域的卡片形式。卡片内容区域可以是文字、图片、表单、表格等形式信息内容。可使用大中小不同的卡片尺寸，按业务需求进行呈现。
-    
+       仅有内容区域的卡片形式。卡片内容区域可以是文字、图片、表单、表格等形式信息内容。可使用大中小不同的卡片尺寸，按业务需求进行呈现。 
     </div>
   </div>
 </div>
 `;
 
-exports[`Card Card borderedVue demo works fine 1`] = `
+exports[`Card > Card borderedVue demo works fine 1`] = `
 <div
   class="t-card t-card--bordered"
   style="width: 400px;"
@@ -96,7 +95,7 @@ exports[`Card Card borderedVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Card Card footerActionsVue demo works fine 1`] = `
+exports[`Card > Card footerActionsVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -152,7 +151,6 @@ exports[`Card Card footerActionsVue demo works fine 1`] = `
                 </span>
               </button>
             </div>
-             
             <div
               class="t-col t-col-12"
               style="flex: 0 0 auto; padding-left: 0px; padding-right: 0px;"
@@ -161,7 +159,6 @@ exports[`Card Card footerActionsVue demo works fine 1`] = `
                 class="t-divider t-divider--vertical"
               />
             </div>
-             
             <div
               class="t-col t-col-12"
               style="flex-basis: auto; padding-left: 0px; padding-right: 0px;"
@@ -189,7 +186,6 @@ exports[`Card Card footerActionsVue demo works fine 1`] = `
                 </span>
               </button>
             </div>
-             
             <div
               class="t-col t-col-12"
               style="flex: 0 0 auto; padding-left: 0px; padding-right: 0px;"
@@ -198,7 +194,6 @@ exports[`Card Card footerActionsVue demo works fine 1`] = `
                 class="t-divider t-divider--vertical"
               />
             </div>
-             
             <div
               class="t-col t-col-12"
               style="flex-basis: auto; padding-left: 0px; padding-right: 0px;"
@@ -279,7 +274,6 @@ exports[`Card Card footerActionsVue demo works fine 1`] = `
               </svg>
             </span>
           </button>
-           
           <button
             class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
             type="button"
@@ -368,12 +362,18 @@ exports[`Card Card footerActionsVue demo works fine 1`] = `
                 src="https://tdesign.gtimg.com/site/avatar-boy.jpg"
               />
             </div>
-             
             <div
               class="t-avatar t-avatar--circle"
             >
               <span>
-                +7
+                Q
+              </span>
+            </div>
+            <div
+              class="t-avatar t-avatar--circle"
+            >
+              <span>
+                +3
               </span>
             </div>
           </div>
@@ -410,9 +410,10 @@ exports[`Card Card footerActionsVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Card Card footerContentActionsVue demo works fine 1`] = `
+exports[`Card > Card footerContentActionsVue demo works fine 1`] = `
 <div
   class="t-card t-card--bordered"
+  data-v-15ae4635=""
   style="width: 400px;"
 >
   <div
@@ -430,6 +431,7 @@ exports[`Card Card footerContentActionsVue demo works fine 1`] = `
     >
       <div
         class="t-comment"
+        data-v-15ae4635=""
       >
         <div
           class="t-comment__inner"
@@ -469,6 +471,7 @@ exports[`Card Card footerContentActionsVue demo works fine 1`] = `
     >
       <button
         class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+        data-v-15ae4635=""
         type="button"
       >
         <span
@@ -476,6 +479,7 @@ exports[`Card Card footerContentActionsVue demo works fine 1`] = `
         >
           <svg
             class="t-icon t-icon-more"
+            data-v-15ae4635=""
             fill="none"
             height="1em"
             viewBox="0 0 16 16"
@@ -483,6 +487,7 @@ exports[`Card Card footerContentActionsVue demo works fine 1`] = `
           >
             <path
               d="M8 4a1 1 0 100-2 1 1 0 000 2zM8 9a1 1 0 100-2 1 1 0 000 2zM9 13a1 1 0 11-2 0 1 1 0 012 0z"
+              data-v-15ae4635=""
               fill="currentColor"
               fill-opacity="0.9"
             />
@@ -494,7 +499,7 @@ exports[`Card Card footerContentActionsVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Card Card footerContentVue demo works fine 1`] = `
+exports[`Card > Card footerContentVue demo works fine 1`] = `
 <div
   class="t-card t-card--bordered"
   style="width: 400px;"
@@ -552,7 +557,7 @@ exports[`Card Card footerContentVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Card Card footerVue demo works fine 1`] = `
+exports[`Card > Card footerVue demo works fine 1`] = `
 <div
   class="t-card t-card--bordered"
   style="width: 400px;"
@@ -642,7 +647,6 @@ exports[`Card Card footerVue demo works fine 1`] = `
             </span>
           </button>
         </div>
-         
         <div
           class="t-col t-col-12"
           style="flex: 0 0 auto; padding-left: 0px; padding-right: 0px;"
@@ -651,7 +655,6 @@ exports[`Card Card footerVue demo works fine 1`] = `
             class="t-divider t-divider--vertical"
           />
         </div>
-         
         <div
           class="t-col t-col-12"
           style="flex-basis: auto; padding-left: 0px; padding-right: 0px;"
@@ -679,7 +682,6 @@ exports[`Card Card footerVue demo works fine 1`] = `
             </span>
           </button>
         </div>
-         
         <div
           class="t-col t-col-12"
           style="flex: 0 0 auto; padding-left: 0px; padding-right: 0px;"
@@ -688,7 +690,6 @@ exports[`Card Card footerVue demo works fine 1`] = `
             class="t-divider t-divider--vertical"
           />
         </div>
-         
         <div
           class="t-col t-col-12"
           style="flex-basis: auto; padding-left: 0px; padding-right: 0px;"
@@ -722,7 +723,7 @@ exports[`Card Card footerVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Card Card headerAllPropsVue demo works fine 1`] = `
+exports[`Card > Card headerAllPropsVue demo works fine 1`] = `
 <div
   class="t-card t-card--bordered t-card--shadow-hover"
   style="width: 400px;"
@@ -760,14 +761,12 @@ exports[`Card Card headerAllPropsVue demo works fine 1`] = `
   <div
     class="t-card__body"
   >
-    
-  卡片内容，以描述性为主，可以是文字、图片或图文组合的形式。按业务需求进行自定义组合。
-
+     卡片内容，以描述性为主，可以是文字、图片或图文组合的形式。按业务需求进行自定义组合。 
   </div>
 </div>
 `;
 
-exports[`Card Card headerBorderedVue demo works fine 1`] = `
+exports[`Card > Card headerBorderedVue demo works fine 1`] = `
 <div
   class="t-card t-card--bordered"
   style="width: 400px;"
@@ -800,14 +799,12 @@ exports[`Card Card headerBorderedVue demo works fine 1`] = `
   <div
     class="t-card__body"
   >
-    
-  卡片内容，以描述性为主，可以是文字、图片或图文组合的形式。按业务需求进行自定义组合。
-  
+     卡片内容，以描述性为主，可以是文字、图片或图文组合的形式。按业务需求进行自定义组合。 
   </div>
 </div>
 `;
 
-exports[`Card Card headerDescriptionVue demo works fine 1`] = `
+exports[`Card > Card headerDescriptionVue demo works fine 1`] = `
 <div
   class="t-card t-card--bordered t-card--shadow-hover"
   style="width: 400px;"
@@ -840,16 +837,15 @@ exports[`Card Card headerDescriptionVue demo works fine 1`] = `
   <div
     class="t-card__body"
   >
-    
-  卡片内容，以描述性为主，可以是文字、图片或图文组合的形式。按业务需求进行自定义组合。
-
+     卡片内容，以描述性为主，可以是文字、图片或图文组合的形式。按业务需求进行自定义组合。 
   </div>
 </div>
 `;
 
-exports[`Card Card headerFooterActionsVue demo works fine 1`] = `
+exports[`Card > Card headerFooterActionsVue demo works fine 1`] = `
 <div
   class="t-card t-card--bordered"
+  data-v-bed46286=""
   style="width: 400px;"
 >
   <div
@@ -863,6 +859,7 @@ exports[`Card Card headerFooterActionsVue demo works fine 1`] = `
       >
         <div
           class="t-avatar t-avatar--circle"
+          data-v-bed46286=""
         >
           <img
             alt=""
@@ -888,9 +885,11 @@ exports[`Card Card headerFooterActionsVue demo works fine 1`] = `
     >
       <div
         class="tdesign-demo-dropdown-trigger"
+        data-v-bed46286=""
       >
         <button
           class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          data-v-bed46286=""
           type="button"
         >
           <span
@@ -898,6 +897,7 @@ exports[`Card Card headerFooterActionsVue demo works fine 1`] = `
           >
             <svg
               class="t-icon t-icon-more"
+              data-v-bed46286=""
               fill="none"
               height="1em"
               viewBox="0 0 16 16"
@@ -905,6 +905,7 @@ exports[`Card Card headerFooterActionsVue demo works fine 1`] = `
             >
               <path
                 d="M8 4a1 1 0 100-2 1 1 0 000 2zM8 9a1 1 0 100-2 1 1 0 000 2zM9 13a1 1 0 11-2 0 1 1 0 012 0z"
+                data-v-bed46286=""
                 fill="currentColor"
                 fill-opacity="0.9"
               />
@@ -929,14 +930,17 @@ exports[`Card Card headerFooterActionsVue demo works fine 1`] = `
     >
       <div
         class="t-row t-row--center t-row--align-middle"
+        data-v-bed46286=""
         style="margin-left: 0px; margin-right: 0px;"
       >
         <div
           class="t-col t-col-12"
+          data-v-bed46286=""
           style="flex-basis: auto; padding-left: 0px; padding-right: 0px;"
         >
           <button
             class="t-button t-size-m t-button--variant-text t-button--theme-default t-size-full-width"
+            data-v-bed46286=""
             type="button"
           >
             <span
@@ -944,6 +948,7 @@ exports[`Card Card headerFooterActionsVue demo works fine 1`] = `
             >
               <svg
                 class="t-icon t-icon-thumb-up"
+                data-v-bed46286=""
                 fill="none"
                 height="1em"
                 viewBox="0 0 16 16"
@@ -951,6 +956,7 @@ exports[`Card Card headerFooterActionsVue demo works fine 1`] = `
               >
                 <path
                   d="M10 6h3.22a1 1 0 01.97 1.24l-1.5 6a1 1 0 01-.97.76H3a1 1 0 01-1-1V8a1 1 0 011-1h2l2-5h2a1 1 0 011 1v3zM6 7.2V13h5.72l1.5-6H9V3H7.68L6 7.2zM5 8H3v5h2V8z"
+                  data-v-bed46286=""
                   fill="currentColor"
                   fill-opacity="0.9"
                 />
@@ -958,22 +964,24 @@ exports[`Card Card headerFooterActionsVue demo works fine 1`] = `
             </span>
           </button>
         </div>
-         
         <div
           class="t-col t-col-12"
+          data-v-bed46286=""
           style="flex: 0 0 auto; padding-left: 0px; padding-right: 0px;"
         >
           <div
             class="t-divider t-divider--vertical"
+            data-v-bed46286=""
           />
         </div>
-         
         <div
           class="t-col t-col-12"
+          data-v-bed46286=""
           style="flex-basis: auto; padding-left: 0px; padding-right: 0px;"
         >
           <button
             class="t-button t-size-m t-button--variant-text t-button--theme-default t-size-full-width"
+            data-v-bed46286=""
             type="button"
           >
             <span
@@ -981,6 +989,7 @@ exports[`Card Card headerFooterActionsVue demo works fine 1`] = `
             >
               <svg
                 class="t-icon t-icon-chat"
+                data-v-bed46286=""
                 fill="none"
                 height="1em"
                 viewBox="0 0 16 16"
@@ -988,6 +997,7 @@ exports[`Card Card headerFooterActionsVue demo works fine 1`] = `
               >
                 <path
                   d="M4.64 10.5H13V4H3v7.87l1.64-1.37zm-2.15 3.09a.3.3 0 01-.49-.23V4a1 1 0 011-1h10a1 1 0 011 1v6.5a1 1 0 01-1 1H5l-2.5 2.09z"
+                  data-v-bed46286=""
                   fill="currentColor"
                   fill-opacity="0.9"
                 />
@@ -995,22 +1005,24 @@ exports[`Card Card headerFooterActionsVue demo works fine 1`] = `
             </span>
           </button>
         </div>
-         
         <div
           class="t-col t-col-12"
+          data-v-bed46286=""
           style="flex: 0 0 auto; padding-left: 0px; padding-right: 0px;"
         >
           <div
             class="t-divider t-divider--vertical"
+            data-v-bed46286=""
           />
         </div>
-         
         <div
           class="t-col t-col-12"
+          data-v-bed46286=""
           style="flex-basis: auto; padding-left: 0px; padding-right: 0px;"
         >
           <button
             class="t-button t-size-m t-button--variant-text t-button--theme-default t-size-full-width"
+            data-v-bed46286=""
             type="button"
           >
             <span
@@ -1018,6 +1030,7 @@ exports[`Card Card headerFooterActionsVue demo works fine 1`] = `
             >
               <svg
                 class="t-icon t-icon-share"
+                data-v-bed46286=""
                 fill="none"
                 height="1em"
                 viewBox="0 0 16 16"
@@ -1025,6 +1038,7 @@ exports[`Card Card headerFooterActionsVue demo works fine 1`] = `
               >
                 <path
                   d="M9.93 5.36a2.31 2.31 0 004.02-1.57 2.32 2.32 0 10-4.52.7L6.07 6.45a2.31 2.31 0 00-4.02 1.58A2.32 2.32 0 006.07 9.6l3.36 1.96a2.32 2.32 0 10.5-.87L6.57 8.73a2.32 2.32 0 000-1.41l3.36-1.96zm1.7-2.9a1.32 1.32 0 110 2.64 1.32 1.32 0 010-2.63zM5.5 7.35a.5.5 0 00.03.05 1.31 1.31 0 01-.03 1.33 1.32 1.32 0 110-1.38zm4.83 4.93c0-.22.05-.43.14-.6a.52.52 0 00.07-.13 1.32 1.32 0 11-.21.73z"
+                  data-v-bed46286=""
                   fill="currentColor"
                   fill-opacity="0.9"
                 />
@@ -1038,7 +1052,7 @@ exports[`Card Card headerFooterActionsVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Card Card headerSubtitleFooterActionsVue demo works fine 1`] = `
+exports[`Card > Card headerSubtitleFooterActionsVue demo works fine 1`] = `
 <div
   class="t-card t-card--bordered"
   style="width: 400px;"
@@ -1137,7 +1151,6 @@ exports[`Card Card headerSubtitleFooterActionsVue demo works fine 1`] = `
             </span>
           </button>
         </div>
-         
         <div
           class="t-col t-col-12"
           style="flex: 0 0 auto; padding-left: 0px; padding-right: 0px;"
@@ -1146,7 +1159,6 @@ exports[`Card Card headerSubtitleFooterActionsVue demo works fine 1`] = `
             class="t-divider t-divider--vertical"
           />
         </div>
-         
         <div
           class="t-col t-col-12"
           style="flex-basis: auto; padding-left: 0px; padding-right: 0px;"
@@ -1174,7 +1186,6 @@ exports[`Card Card headerSubtitleFooterActionsVue demo works fine 1`] = `
             </span>
           </button>
         </div>
-         
         <div
           class="t-col t-col-12"
           style="flex: 0 0 auto; padding-left: 0px; padding-right: 0px;"
@@ -1183,7 +1194,6 @@ exports[`Card Card headerSubtitleFooterActionsVue demo works fine 1`] = `
             class="t-divider t-divider--vertical"
           />
         </div>
-         
         <div
           class="t-col t-col-12"
           style="flex-basis: auto; padding-left: 0px; padding-right: 0px;"
@@ -1217,7 +1227,7 @@ exports[`Card Card headerSubtitleFooterActionsVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Card Card headerSubtitleVue demo works fine 1`] = `
+exports[`Card > Card headerSubtitleVue demo works fine 1`] = `
 <div
   class="t-card t-card--bordered t-card--shadow-hover"
   style="width: 400px;"
@@ -1250,14 +1260,12 @@ exports[`Card Card headerSubtitleVue demo works fine 1`] = `
   <div
     class="t-card__body"
   >
-    
-  卡片内容，以描述性为主，可以是文字、图片或图文组合的形式。按业务需求进行自定义组合。
-
+     卡片内容，以描述性为主，可以是文字、图片或图文组合的形式。按业务需求进行自定义组合。 
   </div>
 </div>
 `;
 
-exports[`Card Card headerVue demo works fine 1`] = `
+exports[`Card > Card headerVue demo works fine 1`] = `
 <div
   class="t-card t-card--bordered t-card--shadow-hover"
   style="width: 400px;"
@@ -1290,14 +1298,12 @@ exports[`Card Card headerVue demo works fine 1`] = `
   <div
     class="t-card__body"
   >
-    
-  卡片内容，以描述性为主，可以是文字、图片或图文组合的形式。按业务需求进行自定义组合。
-  
+     卡片内容，以描述性为主，可以是文字、图片或图文组合的形式。按业务需求进行自定义组合。 
   </div>
 </div>
 `;
 
-exports[`Card Card hoverVue demo works fine 1`] = `
+exports[`Card > Card hoverVue demo works fine 1`] = `
 <div
   class="t-card t-card--bordered t-card--shadow-hover"
   style="width: 400px;"
@@ -1325,17 +1331,15 @@ exports[`Card Card hoverVue demo works fine 1`] = `
   <div
     class="t-card__body"
   >
-    
-  这是一段很长很长很长很长很长很长很长很长很长很长很长很长
+     这是一段很长很长很长很长很长很长很长很长很长很长很长很长
   很长很长很长很长很长很长很长很长很长很长很长很长很长很长
   很长很长很长很长很长很长很长很长很长很长很长很长很长很长
-  很长很长很长很长很长很长很长很长很长很长很长的内容示例。
-
+  很长很长很长很长很长很长很长很长很长很长很长的内容示例。 
   </div>
 </div>
 `;
 
-exports[`Card Card smallVue demo works fine 1`] = `
+exports[`Card > Card smallVue demo works fine 1`] = `
 <div
   class="t-card t-size-s t-card--bordered t-card--shadow-hover"
   style="width: 400px;"
@@ -1363,12 +1367,10 @@ exports[`Card Card smallVue demo works fine 1`] = `
   <div
     class="t-card__body"
   >
-    
-  这是一段很长很长很长很长很长很长很长很长很长很长很长很长
+     这是一段很长很长很长很长很长很长很长很长很长很长很长很长
   很长很长很长很长很长很长很长很长很长很长很长很长很长很长
   很长很长很长很长很长很长很长很长很长很长很长很长很长很长
-  很长很长很长很长很长很长很长很长很长很长很长的内容示例。
-
+  很长很长很长很长很长很长很长很长很长很长很长的内容示例。 
   </div>
 </div>
 `;

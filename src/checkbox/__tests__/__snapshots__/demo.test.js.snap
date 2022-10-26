@@ -1,8 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Checkbox Checkbox baseVue demo works fine 1`] = `
+exports[`Checkbox > Checkbox baseVue demo works fine 1`] = `
 <div
   class="t-space t-space-horizontal"
+  data-v-3e7d6782=""
   style="gap: 16px;"
 >
   <div
@@ -10,6 +11,7 @@ exports[`Checkbox Checkbox baseVue demo works fine 1`] = `
   >
     <label
       class="t-checkbox"
+      data-v-3e7d6782=""
     >
       <input
         class="t-checkbox__former"
@@ -31,6 +33,7 @@ exports[`Checkbox Checkbox baseVue demo works fine 1`] = `
   >
     <label
       class="t-checkbox t-is-indeterminate"
+      data-v-3e7d6782=""
     >
       <input
         class="t-checkbox__former"
@@ -53,6 +56,7 @@ exports[`Checkbox Checkbox baseVue demo works fine 1`] = `
   >
     <label
       class="t-checkbox t-is-checked"
+      data-v-3e7d6782=""
     >
       <input
         class="t-checkbox__former"
@@ -74,6 +78,7 @@ exports[`Checkbox Checkbox baseVue demo works fine 1`] = `
   >
     <label
       class="t-checkbox t-is-disabled"
+      data-v-3e7d6782=""
     >
       <input
         class="t-checkbox__former"
@@ -96,6 +101,7 @@ exports[`Checkbox Checkbox baseVue demo works fine 1`] = `
   >
     <label
       class="t-checkbox t-is-checked t-is-disabled"
+      data-v-3e7d6782=""
     >
       <input
         class="t-checkbox__former"
@@ -116,9 +122,10 @@ exports[`Checkbox Checkbox baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Checkbox Checkbox controlledVue demo works fine 1`] = `
+exports[`Checkbox > Checkbox controlledVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
+  data-v-032bf202=""
   style="gap: 36px;"
 >
   <div
@@ -126,6 +133,7 @@ exports[`Checkbox Checkbox controlledVue demo works fine 1`] = `
   >
     <div
       class="t-space t-space-horizontal"
+      data-v-032bf202=""
       style="gap: 16px;"
     >
       <div
@@ -133,6 +141,7 @@ exports[`Checkbox Checkbox controlledVue demo works fine 1`] = `
       >
         <label
           class="t-checkbox t-is-checked"
+          data-v-032bf202=""
         >
           <input
             class="t-checkbox__former"
@@ -154,6 +163,7 @@ exports[`Checkbox Checkbox controlledVue demo works fine 1`] = `
       >
         <label
           class="t-checkbox t-is-checked"
+          data-v-032bf202=""
         >
           <input
             class="t-checkbox__former"
@@ -175,6 +185,7 @@ exports[`Checkbox Checkbox controlledVue demo works fine 1`] = `
       >
         <label
           class="t-checkbox"
+          data-v-032bf202=""
         >
           <input
             class="t-checkbox__former"
@@ -198,6 +209,7 @@ exports[`Checkbox Checkbox controlledVue demo works fine 1`] = `
   >
     <div
       class="t-checkbox-group"
+      data-v-032bf202=""
     >
       <label
         class="t-checkbox t-is-indeterminate"
@@ -277,7 +289,7 @@ exports[`Checkbox Checkbox controlledVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Checkbox Checkbox groupVue demo works fine 1`] = `
+exports[`Checkbox > Checkbox groupVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 48px;"
@@ -425,7 +437,6 @@ exports[`Checkbox Checkbox groupVue demo works fine 1`] = `
               全选
             </span>
           </label>
-           
           <label
             class="t-checkbox t-is-checked"
           >
@@ -444,7 +455,6 @@ exports[`Checkbox Checkbox groupVue demo works fine 1`] = `
               选项一
             </span>
           </label>
-           
           <label
             class="t-checkbox"
           >
@@ -463,7 +473,6 @@ exports[`Checkbox Checkbox groupVue demo works fine 1`] = `
               选项二
             </span>
           </label>
-           
           <label
             class="t-checkbox"
           >
@@ -686,7 +695,7 @@ exports[`Checkbox Checkbox groupVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Checkbox Checkbox linkVue demo works fine 1`] = `
+exports[`Checkbox > Checkbox linkVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 24px;"

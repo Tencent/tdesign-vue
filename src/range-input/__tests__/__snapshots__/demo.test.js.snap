@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`RangeInput RangeInput baseVue demo works fine 1`] = `
+exports[`RangeInput > RangeInput baseVue demo works fine 1`] = `
 <div
   class="t-range-input"
 >
@@ -46,7 +46,7 @@ exports[`RangeInput RangeInput baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`RangeInput RangeInput popupVue demo works fine 1`] = `
+exports[`RangeInput > RangeInput popupVue demo works fine 1`] = `
 <div
   class="t-range-input-popup"
 >
@@ -96,7 +96,7 @@ exports[`RangeInput RangeInput popupVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`RangeInput RangeInput sizeVue demo works fine 1`] = `
+exports[`RangeInput > RangeInput sizeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -245,7 +245,7 @@ exports[`RangeInput RangeInput sizeVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`RangeInput RangeInput statusVue demo works fine 1`] = `
+exports[`RangeInput > RangeInput statusVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"

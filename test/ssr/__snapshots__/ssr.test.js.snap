@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
 exports[`ssr snapshot test renders ./src/affix/_example/base.vue correctly 1`] = `
 <div class="affix-base">

@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`Textarea Textarea baseVue demo works fine 1`] = `
+exports[`Textarea > Textarea baseVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -50,7 +50,7 @@ exports[`Textarea Textarea baseVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Textarea Textarea eventsVue demo works fine 1`] = `
+exports[`Textarea > Textarea eventsVue demo works fine 1`] = `
 <div
   class="t-textarea"
 >
@@ -62,7 +62,7 @@ exports[`Textarea Textarea eventsVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Textarea Textarea maxlengthVue demo works fine 1`] = `
+exports[`Textarea > Textarea maxlengthVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"
@@ -106,7 +106,7 @@ exports[`Textarea Textarea maxlengthVue demo works fine 1`] = `
 </div>
 `;
 
-exports[`Textarea Textarea typeVue demo works fine 1`] = `
+exports[`Textarea > Textarea typeVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px;"

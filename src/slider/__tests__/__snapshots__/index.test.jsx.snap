@@ -1,0 +1,80 @@
+// Vitest Snapshot v1
+
+exports[`Slider > :props >  1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:mounted": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Slider [marks] > render right 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:beforeUpdate": [
+      [],
+    ],
+    "hook:mounted": [
+      [],
+    ],
+    "hook:updated": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+    {
+      "args": [],
+      "name": "hook:beforeUpdate",
+    },
+    {
+      "args": [],
+      "name": "hook:updated",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
+
+exports[`Slider [vertical-marks] > render right 1`] = `
+VueWrapper {
+  "_emitted": {
+    "hook:beforeUpdate": [
+      [],
+    ],
+    "hook:mounted": [
+      [],
+    ],
+    "hook:updated": [
+      [],
+    ],
+  },
+  "_emittedByOrder": [
+    {
+      "args": [],
+      "name": "hook:mounted",
+    },
+    {
+      "args": [],
+      "name": "hook:beforeUpdate",
+    },
+    {
+      "args": [],
+      "name": "hook:updated",
+    },
+  ],
+  "isFunctionalComponent": undefined,
+}
+`;
