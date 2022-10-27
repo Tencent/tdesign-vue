@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, ref, toRefs, inject,
+  computed, defineComponent, toRefs, inject,
 } from '@vue/composition-api';
 import Vue from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
@@ -21,7 +21,6 @@ export default defineComponent({
   props: { ...props },
   setup(props: TdOptionGroupProps) {
     const { divider } = toRefs(props);
-    const ulRef = ref<HTMLElement>(null);
     const tSelect: any = inject('tSelect');
     const { sizeClassNames } = useCommonClassName();
     const COMPONENT_NAME = usePrefixClass('select');
@@ -36,7 +35,6 @@ export default defineComponent({
     ]);
     return {
       classes,
-      ulRef,
       classPrefix,
       componentName: COMPONENT_NAME,
     };
@@ -47,9 +45,7 @@ export default defineComponent({
     return (
       <li class={this.classes}>
         <div class={`${this.componentName}-option-group__header`}>{this.label}</div>
-        <ul class={`${this.classPrefix}-select__list`} ref="ulRef">
-          {children}
-        </ul>
+        {children}
       </li>
     );
   },

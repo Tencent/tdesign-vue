@@ -144,12 +144,12 @@ export default defineComponent({
       }
       const getOriginOptions = (val: SelectValue) => {
         const option = optionsMap.value.get(val);
-        delete (option as any).index;
+        if (option) delete (option as any).index;
         return option;
       };
       const getFormatOption = (val: SelectValue) => {
         const option = optionsMap.value.get(val) || oldValueMap.get(val);
-        delete (option as any).index;
+        if (option) delete (option as any).index;
         return {
           [valueOfKeys]: get(option, valueOfKeys),
           [labelOfKeys]: get(option, labelOfKeys),

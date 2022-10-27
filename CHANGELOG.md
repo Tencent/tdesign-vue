@@ -5,6 +5,13 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.49.2 `2022-10-27` 
+### 🐞 Bug Fixes
+- `Select`
+    - 修复单选清除失效的问题 @uyarn ([#1690](https://github.com/Tencent/tdesign-vue/pull/1690))
+    - 修复分组样式问题 @uyarn ([#1690](https://github.com/Tencent/tdesign-vue/pull/1690))
+- `TreeSelect`: 修复0.49.1版本样式丢失的异常 @uyarn ([common#934](https://github.com/Tencent/tdesign-common/pull/934))
+
 ## 🌈 0.49.1 `2022-10-26` 
 ### 🚀 Features
 - `Select`:
