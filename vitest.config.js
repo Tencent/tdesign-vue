@@ -16,6 +16,7 @@ const testConfig = {
     web: [/\.[jt]sx$/],
   },
   coverage: {
+    provider: 'istanbul',
     reporter: ['text', 'json', 'html'],
     reportsDirectory: 'test/unit/coverage',
   },
