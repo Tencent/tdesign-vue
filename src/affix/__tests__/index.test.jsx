@@ -59,7 +59,6 @@ describe('Affix', () => {
       const affixWrapper = wrapper.findComponent(Affix);
       await affixWrapper.setData({ fixedTop: 10 });
       expect(affixWrapper.find('.t-affix').selector).toBe('.t-affix');
-      wrapper.destroy();
     });
   });
 });
