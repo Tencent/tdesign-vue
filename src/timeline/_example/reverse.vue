@@ -4,7 +4,7 @@
       <t-space>
         <t-form labelWidth="200">
           <t-form-item label="是否倒序" style="margin-bottom: 5px">
-            <t-switch size="large" v-model="reverse" @change="onChange"></t-switch>
+            <t-switch size="large" v-model="reverse"></t-switch>
           </t-form-item>
         </t-form>
       </t-space>
@@ -23,11 +23,6 @@ export default {
     return {
       reverse: false,
     };
-  },
-  methods: {
-    onChange(val) {
-      console.error(val);
-    },
   },
 };
 </script>

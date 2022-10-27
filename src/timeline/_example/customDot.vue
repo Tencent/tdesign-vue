@@ -29,7 +29,7 @@
   </div>
 </template>
 <script>
-import { LoadingIcon, CloseIcon, CheckCircleFilledIcon } from 'tdesign-icons-vue';
+import { LoadingIcon, CheckCircleFilledIcon } from 'tdesign-icons-vue';
 
 export default {
   components: {

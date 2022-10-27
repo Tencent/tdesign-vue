@@ -1,19 +1,12 @@
 import { VNode } from 'vue';
 import {
-  computed,
-  defineComponent,
-  ref,
-  SetupContext,
-  toRefs,
-  nextTick,
-  getCurrentInstance,
-  provide,
+  computed, defineComponent, ref, toRefs, nextTick, getCurrentInstance, provide,
 } from '@vue/composition-api';
 import { prefix } from '../config';
 import getRenderAlign from './utils';
 import TimelineItem from './timelineItem';
 import { TdTimeLineProps } from './type';
-import { TimelineProps } from './props';
+import TimelineProps from './timelineProps';
 
 export default defineComponent({
   name: 'TTimeline',
@@ -21,19 +14,10 @@ export default defineComponent({
     TimelineItem,
   },
   props: { ...TimelineProps },
-  setup(props: TdTimeLineProps, context: SetupContext) {
+  setup(props: TdTimeLineProps) {
     const {
-      theme: oriTheme,
-      labelAlign: oriLabelAlign,
-      reverse: oriReverse,
-      layout: oriLayout,
-      mode: oriMode,
+      theme, labelAlign, reverse, layout, mode,
     } = toRefs(props);
-    const theme = computed(() => oriTheme?.value || 'default');
-    const labelAlign = computed(() => oriLabelAlign?.value);
-    const mode = computed(() => oriMode?.value || 'alternate');
-    const reverse = computed(() => oriReverse?.value || false);
-    const layout = computed(() => oriLayout?.value || 'vertical');
 
     const instance = getCurrentInstance();
     const uidArr: any = ref([]);
@@ -47,17 +31,17 @@ export default defineComponent({
     });
 
     const timelineClassName = computed(() => {
-      const renderAlign = getRenderAlign(labelAlign.value, layout.value);
+      const renderAlign = getRenderAlign(labelAlign?.value, layout?.value);
       const classNames = [
         `${prefix}-timeline`,
         `${prefix}-timeline-${renderAlign}`,
-        `${prefix}-timeline-${layout.value}`,
-        `${prefix}-timeline-label--${mode.value}`,
+        `${prefix}-timeline-${layout?.value}`,
+        `${prefix}-timeline-label--${mode?.value}`,
       ];
-      if (reverse.value) {
+      if (reverse?.value) {
         classNames.push(`${prefix}-timeline-reverse`);
       }
-      if (hasLabelItem.value) {
+      if (hasLabelItem?.value) {
         classNames.push(`${prefix}-timeline-label`);
       }
       return classNames.join(' ');
