@@ -3,7 +3,6 @@
     <t-space direction="vertical">
       <t-timeline mode="same">
         <t-timelineItem label="2022-01-01" dotColor="primary"> 已完成的时间 </t-timelineItem>
-        <t-timelineItem label="2022-02-01" dotColor="success"> 成功的时间 </t-timelineItem>
         <t-timelineItem label="2022-03-01" dotColor="error"> 危险时间 </t-timelineItem>
         <t-timelineItem label="2022-04-01" dotColor="warning"> 告警事件 </t-timelineItem>
         <t-timelineItem label="2022-05-01">默认的时间</t-timelineItem>
