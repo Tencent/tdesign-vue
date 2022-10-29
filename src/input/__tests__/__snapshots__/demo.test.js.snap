@@ -100,7 +100,7 @@ exports[`Input Input addonVue demo works fine 1`] = `
 exports[`Input Input alignVue demo works fine 1`] = `
 <div
   class="t-space t-space-vertical"
-  style="gap: 16px; max-width: 300px;"
+  style="gap: 16px; max-width: 500px;"
 >
   <div
     class="t-space-item"
@@ -305,7 +305,7 @@ exports[`Input Input formatVue demo works fine 1`] = `
   style="max-width: 500px;"
 >
   <div
-    class="t-input t-size-m"
+    class="t-input t-size-m t-is-default"
   >
     <input
       autocomplete=""
@@ -527,23 +527,115 @@ exports[`Input Input groupVue demo works fine 1`] = `
 
 exports[`Input Input maxLengthCountVue demo works fine 1`] = `
 <div
-  class="t-input__wrap"
-  style="max-width: 500px;"
+  class="t-space t-space-vertical"
+  style="gap: 24px; max-width: 500px;"
 >
   <div
-    class="t-input t-size-m t-is-default t-input--suffix"
+    class="t-space-item"
   >
-    <input
-      autocomplete=""
-      class="t-input__inner"
-      placeholder="请输入"
-      type="text"
-      unselectable="off"
-    />
     <div
-      class="t-input__suffix"
+      class="t-input__wrap"
     >
-      0/5
+      <div
+        class="t-input t-size-m t-is-default t-input--suffix"
+      >
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder="内置字数限制，最大文本长度，一个中文字等于一个长度"
+          type="text"
+          unselectable="off"
+        />
+        <div
+          class="t-input__suffix"
+        >
+          <div
+            class="t-input__limit-number"
+          >
+            0/5
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-input__wrap"
+    >
+      <div
+        class="t-input t-size-m t-is-default t-input--suffix"
+      >
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder="内置字数限制，最大字符数量限制，一个中文字等于两个字符"
+          type="text"
+          unselectable="off"
+        />
+        <div
+          class="t-input__suffix"
+        >
+          <div
+            class="t-input__limit-number"
+          >
+            0/10
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-input__wrap"
+    >
+      <div
+        class="t-input t-size-m t-is-default t-input--suffix"
+      >
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder="内置字数限制，字数超出时允许继续输入"
+          type="text"
+          unselectable="off"
+        />
+        <div
+          class="t-input__suffix"
+        >
+          <div
+            class="t-input__limit-number"
+          >
+            0/5
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-input__wrap"
+    >
+      <div
+        class="t-input t-size-m t-is-default t-input--suffix"
+      >
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder="自定义字数限制文本"
+          type="text"
+          unselectable="off"
+        />
+        <div
+          class="t-input__suffix"
+        >
+          0/5
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -750,26 +842,55 @@ exports[`Input Input sizeVue demo works fine 1`] = `
 
 exports[`Input Input statusVue demo works fine 1`] = `
 <div
-  class="t-space t-space-vertical"
-  style="gap: 25px; max-width: 500px;"
+  class="t-demo__input-status t-space t-space-horizontal"
+  style="gap: 80px; max-width: 800px;"
 >
   <div
     class="t-space-item"
   >
     <div
-      class="t-input__wrap"
+      class="t-space t-space-vertical"
+      style="gap: 16px;"
     >
       <div
-        class="t-input t-size-m t-is-disabled t-is-default"
+        class="t-space-item"
       >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          disabled="disabled"
-          placeholder="请输入"
-          type="text"
-          unselectable="off"
-        />
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input t-size-m t-is-disabled t-is-default"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              disabled="disabled"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input t-size-m t-is-default t-is-readonly"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              readonly="readonly"
+              type="text"
+              unselectable="on"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -777,19 +898,84 @@ exports[`Input Input statusVue demo works fine 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap"
+      class="t-space t-space-vertical"
+      style="gap: 16px;"
     >
       <div
-        class="t-input t-size-m t-is-default t-is-readonly"
+        class="t-space-item"
       >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="请输入"
-          readonly="readonly"
-          type="text"
-          unselectable="on"
-        />
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input t-size-m t-is-default"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input t-size-m t-is-success"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input t-size-m t-is-warning"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input t-size-m t-is-error"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -797,171 +983,104 @@ exports[`Input Input statusVue demo works fine 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap"
+      class="t-space t-space-vertical"
+      style="gap: 16px;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-space-item"
       >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="请输入"
-          type="text"
-          unselectable="off"
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-space-item"
-  >
-    <div
-      class="t-input__wrap"
-    >
-      <div
-        class="t-input t-size-m t-is-success"
-      >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="请输入"
-          type="text"
-          unselectable="off"
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-space-item"
-  >
-    <div
-      class="t-input__wrap"
-    >
-      <div
-        class="t-input t-size-m t-is-warning"
-      >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="请输入"
-          type="text"
-          unselectable="off"
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-space-item"
-  >
-    <div
-      class="t-input__wrap"
-    >
-      <div
-        class="t-input t-size-m t-is-error"
-      >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="请输入"
-          type="text"
-          unselectable="off"
-        />
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-space-item"
-  >
-    <div
-      class="t-input__wrap"
-    >
-      <div
-        class="t-input t-size-m t-is-default"
-      >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="请输入"
-          type="text"
-          unselectable="off"
-        />
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input t-size-m t-is-default"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+          <div
+            class="t-input__tips t-input__tips--default"
+          >
+            这是普通文本提示
+          </div>
+        </div>
       </div>
       <div
-        class="t-input__tips t-input__tips--default"
+        class="t-space-item"
       >
-        这是普通文本提示
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-space-item"
-  >
-    <div
-      class="t-input__wrap"
-    >
-      <div
-        class="t-input t-size-m t-is-success"
-      >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="请输入"
-          type="text"
-          unselectable="off"
-        />
-      </div>
-      <div
-        class="t-input__tips t-input__tips--success"
-      >
-        校验通过文本提示
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-space-item"
-  >
-    <div
-      class="t-input__wrap"
-    >
-      <div
-        class="t-input t-size-m t-is-warning"
-      >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="请输入"
-          type="text"
-          unselectable="off"
-        />
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input t-size-m t-is-success"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+          <div
+            class="t-input__tips t-input__tips--success"
+          >
+            校验通过文本提示
+          </div>
+        </div>
       </div>
       <div
-        class="t-input__tips t-input__tips--warning"
+        class="t-space-item"
       >
-        校验不通过文本提示
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input t-size-m t-is-warning"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+          <div
+            class="t-input__tips t-input__tips--warning"
+          >
+            校验不通过文本提示
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div
-    class="t-space-item"
-  >
-    <div
-      class="t-input__wrap"
-    >
       <div
-        class="t-input t-size-m t-is-error"
+        class="t-space-item"
       >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="请输入"
-          type="text"
-          unselectable="off"
-        />
-      </div>
-      <div
-        class="t-input__tips t-input__tips--error"
-      >
-        校验存在严重问题文本提示
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input t-size-m t-is-error"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+          <div
+            class="t-input__tips t-input__tips--error"
+          >
+            校验存在严重问题文本提示
+          </div>
+        </div>
       </div>
     </div>
   </div>

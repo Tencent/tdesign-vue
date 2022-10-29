@@ -9251,7 +9251,7 @@ exports[`ssr snapshot test renders ./src/input/_example/addon.vue correctly 1`] 
 `;
 
 exports[`ssr snapshot test renders ./src/input/_example/align.vue correctly 1`] = `
-<div class="t-space t-space-vertical" style="gap:16px;max-width:300px;">
+<div class="t-space t-space-vertical" style="gap:16px;max-width:500px;">
   <div class="t-space-item">
     <div class="t-input__wrap">
       <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="左对齐" class="t-input__inner"></div>
@@ -9313,7 +9313,7 @@ exports[`ssr snapshot test renders ./src/input/_example/focus.vue correctly 1`] 
 
 exports[`ssr snapshot test renders ./src/input/_example/format.vue correctly 1`] = `
 <div class="t-input__wrap" style="max-width:500px;">
-  <div class="t-input t-size-m"><input autocomplete="" placeholder="请输入数字" type="text" unselectable="off" value="" class="t-input__inner"></div>
+  <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请输入数字" type="text" unselectable="off" value="" class="t-input__inner"></div>
 </div>
 `;
 
@@ -9369,9 +9369,40 @@ exports[`ssr snapshot test renders ./src/input/_example/group.vue correctly 1`] 
 `;
 
 exports[`ssr snapshot test renders ./src/input/_example/max-length-count.vue correctly 1`] = `
-<div class="t-input__wrap" style="max-width:500px;">
-  <div class="t-input t-size-m t-is-default t-input--suffix"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="" class="t-input__inner">
-    <div class="t-input__suffix">0/5</div>
+<div class="t-space t-space-vertical" style="gap:24px;max-width:500px;">
+  <div class="t-space-item">
+    <div class="t-input__wrap">
+      <div class="t-input t-size-m t-is-default t-input--suffix"><input autocomplete="" placeholder="内置字数限制，最大文本长度，一个中文字等于一个长度" type="text" unselectable="off" value="" class="t-input__inner">
+        <div class="t-input__suffix">
+          <div class="t-input__limit-number">0/5</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-input__wrap">
+      <div class="t-input t-size-m t-is-default t-input--suffix"><input autocomplete="" placeholder="内置字数限制，最大字符数量限制，一个中文字等于两个字符" type="text" unselectable="off" value="" class="t-input__inner">
+        <div class="t-input__suffix">
+          <div class="t-input__limit-number">0/10</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-input__wrap">
+      <div class="t-input t-size-m t-is-default t-input--suffix"><input autocomplete="" placeholder="内置字数限制，字数超出时允许继续输入" type="text" unselectable="off" value="" class="t-input__inner">
+        <div class="t-input__suffix">
+          <div class="t-input__limit-number">0/5</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="t-space-item">
+    <div class="t-input__wrap">
+      <div class="t-input t-size-m t-is-default t-input--suffix"><input autocomplete="" placeholder="自定义字数限制文本" type="text" unselectable="off" value="" class="t-input__inner">
+        <div class="t-input__suffix">0/5</div>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -9412,59 +9443,71 @@ exports[`ssr snapshot test renders ./src/input/_example/size.vue correctly 1`] =
 `;
 
 exports[`ssr snapshot test renders ./src/input/_example/status.vue correctly 1`] = `
-<div class="t-space t-space-vertical" style="gap:25px;max-width:500px;">
+<div class="t-demo__input-status t-space t-space-horizontal" style="gap:80px;max-width:800px;">
   <div class="t-space-item">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-disabled t-is-default"><input disabled="disabled" autocomplete="" placeholder="请输入" type="text" unselectable="off" value="禁用状态" class="t-input__inner"></div>
+    <div class="t-space t-space-vertical" style="gap:16px;">
+      <div class="t-space-item">
+        <div class="t-input__wrap">
+          <div class="t-input t-size-m t-is-disabled t-is-default"><input disabled="disabled" autocomplete="" placeholder="请输入" type="text" unselectable="off" value="禁用状态" class="t-input__inner"></div>
+        </div>
+      </div>
+      <div class="t-space-item">
+        <div class="t-input__wrap">
+          <div class="t-input t-size-m t-is-default t-is-readonly"><input readonly="readonly" autocomplete="" placeholder="请输入" type="text" unselectable="on" value="只读状态" class="t-input__inner"></div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="t-space-item">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-default t-is-readonly"><input readonly="readonly" autocomplete="" placeholder="请输入" type="text" unselectable="on" value="只读状态" class="t-input__inner"></div>
+    <div class="t-space t-space-vertical" style="gap:16px;">
+      <div class="t-space-item">
+        <div class="t-input__wrap">
+          <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="成功状态" class="t-input__inner"></div>
+        </div>
+      </div>
+      <div class="t-space-item">
+        <div class="t-input__wrap">
+          <div class="t-input t-size-m t-is-success"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="成功状态" class="t-input__inner"></div>
+        </div>
+      </div>
+      <div class="t-space-item">
+        <div class="t-input__wrap">
+          <div class="t-input t-size-m t-is-warning"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="警告状态" class="t-input__inner"></div>
+        </div>
+      </div>
+      <div class="t-space-item">
+        <div class="t-input__wrap">
+          <div class="t-input t-size-m t-is-error"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="错误状态" class="t-input__inner"></div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="t-space-item">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="成功状态" class="t-input__inner"></div>
-    </div>
-  </div>
-  <div class="t-space-item">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-success"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="成功状态" class="t-input__inner"></div>
-    </div>
-  </div>
-  <div class="t-space-item">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-warning"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="警告状态" class="t-input__inner"></div>
-    </div>
-  </div>
-  <div class="t-space-item">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-error"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="错误状态" class="t-input__inner"></div>
-    </div>
-  </div>
-  <div class="t-space-item">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="普通状态" class="t-input__inner"></div>
-      <div class="t-input__tips t-input__tips--default">这是普通文本提示</div>
-    </div>
-  </div>
-  <div class="t-space-item">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-success"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="成功状态" class="t-input__inner"></div>
-      <div class="t-input__tips t-input__tips--success">校验通过文本提示</div>
-    </div>
-  </div>
-  <div class="t-space-item">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-warning"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="警告状态" class="t-input__inner"></div>
-      <div class="t-input__tips t-input__tips--warning">校验不通过文本提示</div>
-    </div>
-  </div>
-  <div class="t-space-item">
-    <div class="t-input__wrap">
-      <div class="t-input t-size-m t-is-error"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="错误状态" class="t-input__inner"></div>
-      <div class="t-input__tips t-input__tips--error">校验存在严重问题文本提示</div>
+    <div class="t-space t-space-vertical" style="gap:16px;">
+      <div class="t-space-item">
+        <div class="t-input__wrap">
+          <div class="t-input t-size-m t-is-default"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="普通状态" class="t-input__inner"></div>
+          <div class="t-input__tips t-input__tips--default">这是普通文本提示</div>
+        </div>
+      </div>
+      <div class="t-space-item">
+        <div class="t-input__wrap">
+          <div class="t-input t-size-m t-is-success"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="成功状态" class="t-input__inner"></div>
+          <div class="t-input__tips t-input__tips--success">校验通过文本提示</div>
+        </div>
+      </div>
+      <div class="t-space-item">
+        <div class="t-input__wrap">
+          <div class="t-input t-size-m t-is-warning"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="警告状态" class="t-input__inner"></div>
+          <div class="t-input__tips t-input__tips--warning">校验不通过文本提示</div>
+        </div>
+      </div>
+      <div class="t-space-item">
+        <div class="t-input__wrap">
+          <div class="t-input t-size-m t-is-error"><input autocomplete="" placeholder="请输入" type="text" unselectable="off" value="错误状态" class="t-input__inner"></div>
+          <div class="t-input__tips t-input__tips--error">校验存在严重问题文本提示</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

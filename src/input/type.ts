@@ -186,4 +186,4 @@ export interface TdInputProps {
 
 export type InputFormatType = (value: InputValue) => number | string;
 
-export type InputValue = string | number;
+export type InputValue = string;

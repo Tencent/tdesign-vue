@@ -139,7 +139,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     },
 
     tStatus(): string {
-      return this.status || this.innerStatus;
+      return this.status || this.innerStatus || 'default';
     },
   },
 
@@ -505,7 +505,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     return (
       <div class={this.inputWrapClass}>
         {inputNode}
-        {tips && <div class={`${this.componentName}__tips ${this.componentName}__tips--${this.status}`}>{tips}</div>}
+        {tips && <div class={`${this.componentName}__tips ${this.componentName}__tips--${this.tStatus}`}>{tips}</div>}
       </div>
     );
   },
