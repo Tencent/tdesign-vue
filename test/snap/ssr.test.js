@@ -18,7 +18,7 @@ function ssrSnapshotTest() {
         return;
       }
       it(`renders ${file} correctly`, async () => {
-        const demo = require(`../.${file}`);
+        const demo = await import(`../.${file}`);
         const realDemoComp = demo.default ? demo.default : demo;
         const wrapper = mount(realDemoComp);
         const renderer = createRenderer();
