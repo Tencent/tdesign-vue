@@ -844,7 +844,7 @@ exports[`TimePicker TimePicker rangeVue demo works fine 1`] = `
               class="t-input__wrap t-range-input__inner-left"
             >
               <div
-                class="t-input t-size-m t-is-default"
+                class="t-input t-size-m"
               >
                 <input
                   autocomplete=""
@@ -864,7 +864,7 @@ exports[`TimePicker TimePicker rangeVue demo works fine 1`] = `
               class="t-input__wrap t-range-input__inner-right"
             >
               <div
-                class="t-input t-size-m t-is-default"
+                class="t-input t-size-m"
               >
                 <input
                   autocomplete=""

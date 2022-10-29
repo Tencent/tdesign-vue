@@ -39,7 +39,7 @@ exports[`ColorPicker ColorPicker colorModeVue demo works fine 1`] = `
                   class="t-input__wrap"
                 >
                   <div
-                    class="t-input t-size-m t-is-default t-input--auto-width t-input--prefix"
+                    class="t-input t-size-m t-input--auto-width t-input--prefix"
                   >
                     <div
                       class="t-input__prefix"
@@ -99,7 +99,7 @@ exports[`ColorPicker ColorPicker colorModeVue demo works fine 1`] = `
                   class="t-input__wrap"
                 >
                   <div
-                    class="t-input t-size-m t-is-default t-input--auto-width t-input--prefix"
+                    class="t-input t-size-m t-input--auto-width t-input--prefix"
                   >
                     <div
                       class="t-input__prefix"
@@ -161,7 +161,7 @@ exports[`ColorPicker ColorPicker colorModeVue demo works fine 1`] = `
               class="t-input__wrap"
             >
               <div
-                class="t-input t-size-m t-is-default t-input--auto-width t-input--prefix"
+                class="t-input t-size-m t-input--auto-width t-input--prefix"
               >
                 <div
                   class="t-input__prefix"
@@ -386,7 +386,7 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
                 class="t-input__wrap"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-align-center"
+                  class="t-input t-size-m t-align-center"
                 >
                   <input
                     autocomplete="off"
@@ -411,7 +411,7 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
                 class="t-input__wrap"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-align-center"
+                  class="t-input t-size-m t-align-center"
                 >
                   <input
                     autocomplete="off"
@@ -436,7 +436,7 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
                 class="t-input__wrap"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-align-center"
+                  class="t-input t-size-m t-align-center"
                 >
                   <input
                     autocomplete="off"
@@ -461,7 +461,7 @@ exports[`ColorPicker ColorPicker enableAlphaVue demo works fine 1`] = `
                 class="t-input__wrap"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-align-center"
+                  class="t-input t-size-m t-align-center"
                 >
                   <input
                     autocomplete="off"
@@ -1186,7 +1186,7 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
                 class="t-input__wrap"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-align-center"
+                  class="t-input t-size-m t-align-center"
                 >
                   <input
                     autocomplete="off"
@@ -1211,7 +1211,7 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
                 class="t-input__wrap"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-align-center"
+                  class="t-input t-size-m t-align-center"
                 >
                   <input
                     autocomplete="off"
@@ -1236,7 +1236,7 @@ exports[`ColorPicker ColorPicker panelVue demo works fine 1`] = `
                 class="t-input__wrap"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-align-center"
+                  class="t-input t-size-m t-align-center"
                 >
                   <input
                     autocomplete="off"
@@ -1982,7 +1982,7 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                         class="t-input__wrap"
                       >
                         <div
-                          class="t-input t-size-m t-is-default t-align-center"
+                          class="t-input t-size-m t-align-center"
                         >
                           <input
                             autocomplete="off"
@@ -2007,7 +2007,7 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                         class="t-input__wrap"
                       >
                         <div
-                          class="t-input t-size-m t-is-default t-align-center"
+                          class="t-input t-size-m t-align-center"
                         >
                           <input
                             autocomplete="off"
@@ -2032,7 +2032,7 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                         class="t-input__wrap"
                       >
                         <div
-                          class="t-input t-size-m t-is-default t-align-center"
+                          class="t-input t-size-m t-align-center"
                         >
                           <input
                             autocomplete="off"
@@ -2891,7 +2891,7 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                         class="t-input__wrap"
                       >
                         <div
-                          class="t-input t-size-m t-is-default t-align-center"
+                          class="t-input t-size-m t-align-center"
                         >
                           <input
                             autocomplete="off"
@@ -2916,7 +2916,7 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                         class="t-input__wrap"
                       >
                         <div
-                          class="t-input t-size-m t-is-default t-align-center"
+                          class="t-input t-size-m t-align-center"
                         >
                           <input
                             autocomplete="off"
@@ -2941,7 +2941,7 @@ exports[`ColorPicker ColorPicker recentColorVue demo works fine 1`] = `
                         class="t-input__wrap"
                       >
                         <div
-                          class="t-input t-size-m t-is-default t-align-center"
+                          class="t-input t-size-m t-align-center"
                         >
                           <input
                             autocomplete="off"
@@ -3475,7 +3475,7 @@ exports[`ColorPicker ColorPicker statusDisabledVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-disabled t-is-default t-input--auto-width t-input--prefix"
+        class="t-input t-size-m t-is-disabled t-input--auto-width t-input--prefix"
       >
         <div
           class="t-input__prefix"
@@ -3678,7 +3678,7 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
                 class="t-input__wrap"
               >
                 <div
-                  class="t-input t-size-m t-is-disabled t-is-default t-align-center"
+                  class="t-input t-size-m t-is-disabled t-align-center"
                 >
                   <input
                     autocomplete="off"
@@ -3704,7 +3704,7 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
                 class="t-input__wrap"
               >
                 <div
-                  class="t-input t-size-m t-is-disabled t-is-default t-align-center"
+                  class="t-input t-size-m t-is-disabled t-align-center"
                 >
                   <input
                     autocomplete="off"
@@ -3730,7 +3730,7 @@ exports[`ColorPicker ColorPicker statusReadonlyVue demo works fine 1`] = `
                 class="t-input__wrap"
               >
                 <div
-                  class="t-input t-size-m t-is-disabled t-is-default t-align-center"
+                  class="t-input t-size-m t-is-disabled t-align-center"
                 >
                   <input
                     autocomplete="off"
@@ -4477,7 +4477,7 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                         class="t-input__wrap"
                       >
                         <div
-                          class="t-input t-size-m t-is-default t-align-center"
+                          class="t-input t-size-m t-align-center"
                         >
                           <input
                             autocomplete="off"
@@ -4502,7 +4502,7 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                         class="t-input__wrap"
                       >
                         <div
-                          class="t-input t-size-m t-is-default t-align-center"
+                          class="t-input t-size-m t-align-center"
                         >
                           <input
                             autocomplete="off"
@@ -4527,7 +4527,7 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                         class="t-input__wrap"
                       >
                         <div
-                          class="t-input t-size-m t-is-default t-align-center"
+                          class="t-input t-size-m t-align-center"
                         >
                           <input
                             autocomplete="off"
@@ -4849,7 +4849,7 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                         class="t-input__wrap"
                       >
                         <div
-                          class="t-input t-size-m t-is-default t-align-center"
+                          class="t-input t-size-m t-align-center"
                         >
                           <input
                             autocomplete="off"
@@ -4874,7 +4874,7 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                         class="t-input__wrap"
                       >
                         <div
-                          class="t-input t-size-m t-is-default t-align-center"
+                          class="t-input t-size-m t-align-center"
                         >
                           <input
                             autocomplete="off"
@@ -4899,7 +4899,7 @@ exports[`ColorPicker ColorPicker swatchColorVue demo works fine 1`] = `
                         class="t-input__wrap"
                       >
                         <div
-                          class="t-input t-size-m t-is-default t-align-center"
+                          class="t-input t-size-m t-align-center"
                         >
                           <input
                             autocomplete="off"
@@ -4974,7 +4974,7 @@ exports[`ColorPicker ColorPicker triggerVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-default t-input--auto-width t-input--prefix"
+        class="t-input t-size-m t-input--auto-width t-input--prefix"
       >
         <div
           class="t-input__prefix"

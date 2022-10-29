@@ -463,7 +463,7 @@ exports[`Message Message placementVue demo works fine 1`] = `
           class="t-input__wrap"
         >
           <div
-            class="t-input t-size-m t-is-default"
+            class="t-input t-size-m"
           >
             <input
               autocomplete=""
@@ -482,7 +482,7 @@ exports[`Message Message placementVue demo works fine 1`] = `
           class="t-input__wrap"
         >
           <div
-            class="t-input t-size-m t-is-default"
+            class="t-input t-size-m"
           >
             <input
               autocomplete=""

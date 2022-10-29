@@ -452,7 +452,7 @@ exports[`Pagination Pagination customizableVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-is-default"
+              class="t-input t-size-m"
             >
               <input
                 autocomplete="off"
@@ -635,7 +635,7 @@ exports[`Pagination Pagination disabledVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-is-default"
+              class="t-input t-size-m"
             >
               <input
                 autocomplete="off"
@@ -922,7 +922,7 @@ exports[`Pagination Pagination jumpVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-is-default"
+              class="t-input t-size-m"
             >
               <input
                 autocomplete="off"
@@ -1624,7 +1624,7 @@ exports[`Pagination Pagination simpleMiniVue demo works fine 1`] = `
           class="t-input__wrap"
         >
           <div
-            class="t-input t-size-m t-is-default"
+            class="t-input t-size-m"
           >
             <input
               autocomplete="off"
@@ -1752,7 +1752,7 @@ exports[`Pagination Pagination simpleVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-is-default"
+              class="t-input t-size-m"
             >
               <input
                 autocomplete="off"

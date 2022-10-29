@@ -4686,7 +4686,7 @@ exports[`Table Table editableCellVue demo works fine 1`] = `
                   class="t-input__wrap"
                 >
                   <div
-                    class="t-input t-size-m t-is-default"
+                    class="t-input t-size-m"
                   >
                     <input
                       autocomplete=""
@@ -4795,7 +4795,7 @@ exports[`Table Table editableCellVue demo works fine 1`] = `
                   class="t-input__wrap"
                 >
                   <div
-                    class="t-input t-size-m t-is-default"
+                    class="t-input t-size-m"
                   >
                     <input
                       autocomplete=""
@@ -4904,7 +4904,7 @@ exports[`Table Table editableCellVue demo works fine 1`] = `
                   class="t-input__wrap"
                 >
                   <div
-                    class="t-input t-size-m t-is-default"
+                    class="t-input t-size-m"
                   >
                     <input
                       autocomplete=""
@@ -5013,7 +5013,7 @@ exports[`Table Table editableCellVue demo works fine 1`] = `
                   class="t-input__wrap"
                 >
                   <div
-                    class="t-input t-size-m t-is-default"
+                    class="t-input t-size-m"
                   >
                     <input
                       autocomplete=""
@@ -5235,7 +5235,7 @@ exports[`Table Table editableRowVue demo works fine 1`] = `
                   class="t-input__wrap"
                 >
                   <div
-                    class="t-input t-size-m t-is-default t-input--auto-width"
+                    class="t-input t-size-m t-input--auto-width"
                   >
                     <input
                       autocomplete=""
@@ -18903,7 +18903,7 @@ exports[`Table Table paginationAjaxVue demo works fine 1`] = `
                 class="t-input__wrap"
               >
                 <div
-                  class="t-input t-size-m t-is-default"
+                  class="t-input t-size-m"
                 >
                   <input
                     autocomplete="off"
@@ -19386,7 +19386,7 @@ exports[`Table Table paginationVue demo works fine 1`] = `
                   class="t-input__wrap"
                 >
                   <div
-                    class="t-input t-size-m t-is-default"
+                    class="t-input t-size-m"
                   >
                     <input
                       autocomplete="off"

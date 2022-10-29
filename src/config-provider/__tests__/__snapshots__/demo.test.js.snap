@@ -1553,7 +1553,7 @@ exports[`ConfigProvider ConfigProvider inputVue demo works fine 1`] = `
   class="t-input__wrap"
 >
   <div
-    class="t-input t-size-m t-is-default t-input--suffix"
+    class="t-input t-size-m t-input--suffix"
   >
     <input
       autocomplete=""
@@ -1620,7 +1620,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
             style="width: 400px;"
           >
             <div
-              class="t-input t-size-m t-is-default"
+              class="t-input t-size-m"
             >
               <input
                 autocomplete=""
@@ -1660,7 +1660,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
             style="width: 400px;"
           >
             <div
-              class="t-input t-size-m t-is-default t-input--suffix"
+              class="t-input t-size-m t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -1742,7 +1742,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-is-default t-input--suffix"
+              class="t-input t-size-m t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -2270,7 +2270,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-is-default t-input--suffix"
+              class="t-input t-size-m t-input--suffix"
             >
               <input
                 autocomplete=""
@@ -2580,7 +2580,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -2680,7 +2680,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
         style="display: none;"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -2763,7 +2763,7 @@ exports[`ConfigProvider ConfigProvider othersVue demo works fine 1`] = `
         class="t-input__wrap t-select__input"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -3405,7 +3405,7 @@ exports[`ConfigProvider ConfigProvider paginationVue demo works fine 1`] = `
           class="t-input__wrap"
         >
           <div
-            class="t-input t-size-m t-is-default"
+            class="t-input t-size-m"
           >
             <input
               autocomplete="off"

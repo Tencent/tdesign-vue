@@ -20,7 +20,7 @@ exports[`Input Input addonVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -43,7 +43,7 @@ exports[`Input Input addonVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -76,7 +76,7 @@ exports[`Input Input addonVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -109,7 +109,7 @@ exports[`Input Input alignVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -128,7 +128,7 @@ exports[`Input Input alignVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-default t-align-center"
+        class="t-input t-size-m t-align-center"
       >
         <input
           autocomplete=""
@@ -147,7 +147,7 @@ exports[`Input Input alignVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-default t-align-right"
+        class="t-input t-size-m t-align-right"
       >
         <input
           autocomplete=""
@@ -168,7 +168,7 @@ exports[`Input Input autoWidthVue demo works fine 1`] = `
   style="max-width: 500px;"
 >
   <div
-    class="t-input t-size-m t-is-default t-input--auto-width"
+    class="t-input t-size-m t-input--auto-width"
   >
     <input
       autocomplete=""
@@ -198,7 +198,7 @@ exports[`Input Input baseVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -217,7 +217,7 @@ exports[`Input Input baseVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -236,7 +236,7 @@ exports[`Input Input baseVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
+        class="t-input t-size-m t-input--prefix t-input--suffix"
       >
         <div
           class="t-input__prefix"
@@ -267,7 +267,7 @@ exports[`Input Input clearableVue demo works fine 1`] = `
   style="max-width: 500px;"
 >
   <div
-    class="t-input t-size-m t-is-default"
+    class="t-input t-size-m"
   >
     <input
       autocomplete=""
@@ -286,7 +286,7 @@ exports[`Input Input focusVue demo works fine 1`] = `
   style="max-width: 500px;"
 >
   <div
-    class="t-input t-size-m t-is-default"
+    class="t-input t-size-m"
   >
     <input
       autocomplete=""
@@ -305,7 +305,7 @@ exports[`Input Input formatVue demo works fine 1`] = `
   style="max-width: 500px;"
 >
   <div
-    class="t-input t-size-m t-is-default"
+    class="t-input t-size-m"
   >
     <input
       autocomplete=""
@@ -334,7 +334,7 @@ exports[`Input Input groupVue demo works fine 1`] = `
         style="width: 100px;"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -350,7 +350,7 @@ exports[`Input Input groupVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -373,7 +373,7 @@ exports[`Input Input groupVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -389,7 +389,7 @@ exports[`Input Input groupVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -412,7 +412,7 @@ exports[`Input Input groupVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -428,7 +428,7 @@ exports[`Input Input groupVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -452,7 +452,7 @@ exports[`Input Input groupVue demo works fine 1`] = `
         style="width: 100px;"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -475,7 +475,7 @@ exports[`Input Input groupVue demo works fine 1`] = `
         style="width: 100px;"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -492,7 +492,7 @@ exports[`Input Input groupVue demo works fine 1`] = `
         style="width: 100px;"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -509,7 +509,7 @@ exports[`Input Input groupVue demo works fine 1`] = `
         style="width: 100px;"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -537,7 +537,7 @@ exports[`Input Input maxLengthCountVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-default t-input--suffix"
+        class="t-input t-size-m t-input--suffix"
       >
         <input
           autocomplete=""
@@ -565,7 +565,7 @@ exports[`Input Input maxLengthCountVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-default t-input--suffix"
+        class="t-input t-size-m t-input--suffix"
       >
         <input
           autocomplete=""
@@ -593,7 +593,7 @@ exports[`Input Input maxLengthCountVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-default t-input--suffix"
+        class="t-input t-size-m t-input--suffix"
       >
         <input
           autocomplete=""
@@ -621,7 +621,7 @@ exports[`Input Input maxLengthCountVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-default t-input--suffix"
+        class="t-input t-size-m t-input--suffix"
       >
         <input
           autocomplete=""
@@ -653,7 +653,7 @@ exports[`Input Input passwordVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
+        class="t-input t-size-m t-input--prefix t-input--suffix"
       >
         <span
           class="t-input__prefix t-input__prefix-icon"
@@ -716,7 +716,7 @@ exports[`Input Input passwordVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
+        class="t-input t-size-m t-input--prefix t-input--suffix"
       >
         <span
           class="t-input__prefix t-input__prefix-icon"
@@ -787,7 +787,7 @@ exports[`Input Input sizeVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-l t-is-default"
+        class="t-input t-size-l"
       >
         <input
           autocomplete=""
@@ -806,7 +806,7 @@ exports[`Input Input sizeVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -825,7 +825,7 @@ exports[`Input Input sizeVue demo works fine 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-s t-is-default"
+        class="t-input t-size-s"
       >
         <input
           autocomplete=""
@@ -859,7 +859,7 @@ exports[`Input Input statusVue demo works fine 1`] = `
           class="t-input__wrap"
         >
           <div
-            class="t-input t-size-m t-is-disabled t-is-default"
+            class="t-input t-size-m t-is-disabled"
           >
             <input
               autocomplete=""
@@ -879,7 +879,7 @@ exports[`Input Input statusVue demo works fine 1`] = `
           class="t-input__wrap"
         >
           <div
-            class="t-input t-size-m t-is-default t-is-readonly"
+            class="t-input t-size-m t-is-readonly"
           >
             <input
               autocomplete=""
@@ -908,7 +908,7 @@ exports[`Input Input statusVue demo works fine 1`] = `
           class="t-input__wrap"
         >
           <div
-            class="t-input t-size-m t-is-default"
+            class="t-input t-size-m"
           >
             <input
               autocomplete=""
@@ -993,7 +993,7 @@ exports[`Input Input statusVue demo works fine 1`] = `
           class="t-input__wrap"
         >
           <div
-            class="t-input t-size-m t-is-default"
+            class="t-input t-size-m"
           >
             <input
               autocomplete=""

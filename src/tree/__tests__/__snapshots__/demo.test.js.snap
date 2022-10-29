@@ -1296,7 +1296,7 @@ exports[`Tree Tree controlledVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -1321,7 +1321,7 @@ exports[`Tree Tree controlledVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -1346,7 +1346,7 @@ exports[`Tree Tree controlledVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -3996,7 +3996,7 @@ exports[`Tree Tree filterVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -7257,7 +7257,7 @@ exports[`Tree Tree operationsVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-is-default"
+              class="t-input t-size-m"
             >
               <input
                 autocomplete=""
@@ -7703,7 +7703,7 @@ exports[`Tree Tree performanceVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""
@@ -8329,7 +8329,7 @@ exports[`Tree Tree syncVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-is-default"
+              class="t-input t-size-m"
             >
               <input
                 autocomplete=""
@@ -8357,7 +8357,7 @@ exports[`Tree Tree syncVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-is-default"
+              class="t-input t-size-m"
             >
               <input
                 autocomplete=""
@@ -8385,7 +8385,7 @@ exports[`Tree Tree syncVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-is-default"
+              class="t-input t-size-m"
             >
               <input
                 autocomplete=""
@@ -8823,7 +8823,7 @@ exports[`Tree Tree vscrollVue demo works fine 1`] = `
         class="t-input__wrap"
       >
         <div
-          class="t-input t-size-m t-is-default"
+          class="t-input t-size-m"
         >
           <input
             autocomplete=""

@@ -252,7 +252,7 @@ exports[`Slider Slider inputNumberVerticalVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-is-default"
+              class="t-input t-size-m"
             >
               <input
                 autocomplete="off"
@@ -358,7 +358,7 @@ exports[`Slider Slider inputNumberVerticalVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-is-default"
+              class="t-input t-size-m"
             >
               <input
                 autocomplete="off"
@@ -416,7 +416,7 @@ exports[`Slider Slider inputNumberVerticalVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-is-default"
+              class="t-input t-size-m"
             >
               <input
                 autocomplete="off"
@@ -519,7 +519,7 @@ exports[`Slider Slider inputNumberVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-is-default t-input--auto-width"
+              class="t-input t-size-m t-input--auto-width"
             >
               <input
                 autocomplete="off"
@@ -629,7 +629,7 @@ exports[`Slider Slider inputNumberVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-is-default t-input--auto-width"
+              class="t-input t-size-m t-input--auto-width"
             >
               <input
                 autocomplete="off"
@@ -692,7 +692,7 @@ exports[`Slider Slider inputNumberVue demo works fine 1`] = `
             class="t-input__wrap"
           >
             <div
-              class="t-input t-size-m t-is-default t-input--auto-width"
+              class="t-input t-size-m t-input--auto-width"
             >
               <input
                 autocomplete="off"
