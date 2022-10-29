@@ -4,6 +4,7 @@ import { createVuePlugin } from 'vite-plugin-vue2';
 import ScriptSetup from 'unplugin-vue2-script-setup/vite';
 
 const testConfig = {
+  exclude: ['src/**/__tests__/demo.test.js'],
   include:
     process.env.NODE_ENV === 'test-snap'
       ? ['test/snap/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}']
