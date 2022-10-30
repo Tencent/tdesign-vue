@@ -70,7 +70,6 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
     let dragInstanceTmp: Sortable = null;
     const baseOptions: SortableOptions = {
       animation: 150,
-      ...props.dragSortOptions,
       ghostClass: tableDraggableClasses.ghost,
       chosenClass: tableDraggableClasses.chosen,
       dragClass: tableDraggableClasses.dragging,
@@ -100,6 +99,7 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
         // Vue3 ignore next line
         context.emit('drag-sort', params);
       },
+      ...props.dragSortOptions,
     };
 
     if (!dragContainer) return;

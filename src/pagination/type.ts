@@ -4,7 +4,8 @@
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
  * */
 
-import { TNode } from '../common';
+import { SelectProps } from '../select';
+import { TNode, SizeEnum } from '../common';
 
 export interface TdPaginationProps {
   /**
@@ -19,7 +20,6 @@ export interface TdPaginationProps {
   defaultCurrent?: number;
   /**
    * 是否禁用分页组件
-   * @default false
    */
   disabled?: boolean;
   /**
@@ -38,20 +38,24 @@ export interface TdPaginationProps {
    */
   pageEllipsisMode?: 'mid' | 'both-ends';
   /**
-   * 分页总页数
+   * 每一页的数据量
    * @default 10
    */
   pageSize?: number;
   /**
-   * 分页总页数，非受控属性
+   * 每一页的数据量，非受控属性
    * @default 10
    */
   defaultPageSize?: number;
   /**
    * 分页大小控制器，值为 [] 则不显示
-   * @default () => [5, 10, 20, 50]
+   * @default [5, 10, 20, 50]
    */
   pageSizeOptions?: Array<number | { label: string; value: number }>;
+  /**
+   * 透传全部属性到 Select 组件，也可使用 `selectProps.popupProps` 透传全部 Popup 组件
+   */
+  selectProps?: SelectProps;
   /**
    * 是否显示跳转首页尾页页码控制器
    * @default false
@@ -111,8 +115,49 @@ export interface TdPaginationProps {
   onPageSizeChange?: (pageSize: number, pageInfo: PageInfo) => void;
 }
 
+export interface TdPaginationMiniProps {
+  /**
+   * 按钮禁用配置
+   */
+  disabled?: boolean | JumperDisabledConfig;
+  /**
+   * 按钮方向
+   * @default horizontal
+   */
+  layout?: 'horizontal' | 'vertical';
+  /**
+   * 是否展示当前按钮
+   * @default true
+   */
+  showCurrent?: boolean;
+  /**
+   * 按钮尺寸
+   * @default medium
+   */
+  size?: SizeEnum;
+  /**
+   * 提示文案配置，值为 `true` 显示默认文案；值为 `false` 不显示提示文案；值类型为对象则单独配置文案内容
+   */
+  tips?: boolean | JumperTipsConfig;
+  /**
+   * 按钮形式
+   * @default text
+   */
+  variant?: 'text' | 'outline';
+  /**
+   * 按钮点击事件回调
+   */
+  onChange?: (context: { e: MouseEvent; trigger: JumperTrigger }) => void;
+}
+
 export interface PageInfo {
   current: number;
   previous: number;
   pageSize: number;
 }
+
+export type JumperDisabledConfig = { prev?: boolean; current?: boolean; next?: boolean };
+
+export type JumperTipsConfig = { prev?: string; current?: string; next?: string };
+
+export type JumperTrigger = 'prev' | 'current' | 'next';
