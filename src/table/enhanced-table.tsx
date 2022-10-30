@@ -13,15 +13,22 @@ import useTreeSelect from './hooks/useTreeSelect';
 import { TableListeners } from './base-table';
 
 const PRIMARY_B_EVENTS = [
+  'cell-click',
   'change',
   'page-change',
   'expand-change',
   'filter-change',
+  'select-change',
   'sort-change',
   'data-change',
   'async-loading-click',
   'column-change',
+  'column-controller-visible-change',
   'display-columns-change',
+  'drag-sort',
+  'row-edit',
+  'row-validate',
+  'validate',
 ];
 
 const PRIMARY_ALL_EVENTS = BASE_TABLE_ALL_EVENTS.concat(PRIMARY_B_EVENTS);
