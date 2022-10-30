@@ -36,6 +36,8 @@ export default defineComponent({
   },
 
   setup(props: TdEnhancedTableProps, context: SetupContext) {
+    const enhancedTableRef = ref();
+
     const {
       store, dataSource, formatTreeColumn, swapData, ...treeInstanceFunctions
     } = useTreeData(props, context);
@@ -85,6 +87,7 @@ export default defineComponent({
       dataSource,
       tColumns,
       tIndeterminateSelectedRowKeys,
+      enhancedTableRef,
       onDragSortChange,
       onInnerSelectChange,
       ...treeInstanceFunctions,
@@ -124,6 +127,8 @@ export default defineComponent({
       'drag-sort': this.onDragSortChange,
     };
     // replace `scopedSlots={this.$scopedSlots}` of `v-slots={this.$slots}` in Vue3
-    return <PrimaryTable scopedSlots={this.$scopedSlots} props={props} on={on} {...this.$attrs} />;
+    return (
+      <PrimaryTable ref="enhancedTableRef" scopedSlots={this.$scopedSlots} props={props} on={on} {...this.$attrs} />
+    );
   },
 });
