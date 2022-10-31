@@ -1,6 +1,6 @@
 <template>
   <t-space direction="vertical">
-    <t-collapse :expand-icon="showArrow" :expand-icon-placement="direction" :expand-on-row-click="!onlyIcon">
+    <t-collapse :expand-icon-placement="direction" :expand-on-row-click="!onlyIcon">
       <t-collapse-panel value="0" header="这是一个折叠标题">
         这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
       </t-collapse-panel>
@@ -20,7 +20,6 @@
       </t-collapse-panel>
     </t-collapse>
     <t-space>
-      <t-checkbox v-model="showArrow">显示箭头</t-checkbox>
       <t-radio-group v-model="direction">
         <t-radio value="left">左边</t-radio>
         <t-radio value="right">右边</t-radio>
@@ -40,7 +39,6 @@ export default {
   },
   data() {
     return {
-      showArrow: true,
       direction: 'left',
       disable: false,
       onlyIcon: false,
