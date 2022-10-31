@@ -11,10 +11,11 @@
         >
       </t-collapse-panel>
       <t-collapse-panel value="2">
-        <template #header>这是一个折叠标题</template>
+        <template #expandIcon><star-icon /></template>
+        <template #header>可根据需求自定义icon</template>
         这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
       </t-collapse-panel>
-      <t-collapse-panel value="3" header="这是一个折叠标题">
+      <t-collapse-panel value="3" :expand-icon="renderLogo" header="可根据需求自定义icon">
         这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
       </t-collapse-panel>
     </t-collapse>
@@ -30,8 +31,13 @@
     </div>
   </t-space>
 </template>
-<script>
+<script lang="jsx">
+import { StarIcon, LogoGithubIcon } from 'tdesign-icons-vue';
+
 export default {
+  components: {
+    StarIcon,
+  },
   data() {
     return {
       showArrow: true,
@@ -39,6 +45,11 @@ export default {
       disable: false,
       onlyIcon: false,
     };
+  },
+  methods: {
+    renderLogo() {
+      return <LogoGithubIcon />;
+    },
   },
 };
 </script>
