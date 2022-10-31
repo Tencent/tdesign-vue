@@ -28,7 +28,7 @@ exports[`TreeSelect > :props > :clearable 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -176,7 +176,7 @@ exports[`TreeSelect > :props > :defaultValue 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -274,7 +274,7 @@ exports[`TreeSelect > :props > :disabled 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-disabled t-is-default"
+        class="t-input t-size-m t-is-disabled"
       >
         <input
           autocomplete=""
@@ -373,7 +373,7 @@ exports[`TreeSelect > :props > :empty string 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -471,7 +471,7 @@ exports[`TreeSelect > :props > :filterable 1`] = `
       class="t-input__wrap t-select__input"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -569,7 +569,7 @@ exports[`TreeSelect > :props > :loading 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -650,7 +650,7 @@ exports[`TreeSelect > :props > :loadingText 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -748,7 +748,7 @@ exports[`TreeSelect > :props > :max 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -846,7 +846,7 @@ exports[`TreeSelect > :props > :minCollapsedNum 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -944,7 +944,7 @@ exports[`TreeSelect > :props > :multiple 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -1042,7 +1042,7 @@ exports[`TreeSelect > :props > :placeholder 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -1140,7 +1140,7 @@ exports[`TreeSelect > :props > :popupProps 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -1238,7 +1238,7 @@ exports[`TreeSelect > :props > :size 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-l t-is-default"
+        class="t-input t-size-l"
       >
         <input
           autocomplete=""
@@ -1336,7 +1336,7 @@ exports[`TreeSelect > :props > :treeProps 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -1441,7 +1441,7 @@ exports[`TreeSelect > :props > :value 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -1546,7 +1546,7 @@ exports[`TreeSelect > :props > :valueType 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -1644,7 +1644,7 @@ exports[`TreeSelect > <slot> > <collapsedItems> 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -1742,7 +1742,7 @@ exports[`TreeSelect > <slot> > <empty> 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -1840,7 +1840,7 @@ exports[`TreeSelect > <slot> > <loadingText> 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -1930,7 +1930,7 @@ exports[`TreeSelect > <slot> > <prefixIcon> 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -2028,7 +2028,7 @@ exports[`TreeSelect > function > :collapsedItems 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -2126,7 +2126,7 @@ exports[`TreeSelect > function > :empty 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -2224,7 +2224,7 @@ exports[`TreeSelect > function > :loadingText 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
@@ -2308,7 +2308,7 @@ exports[`TreeSelect > function > :prefixIcon 1`] = `
       style="display: none;"
     >
       <div
-        class="t-input t-size-m t-is-default"
+        class="t-input t-size-m"
       >
         <input
           autocomplete=""
