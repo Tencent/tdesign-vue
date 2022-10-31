@@ -13,15 +13,22 @@ import useTreeSelect from './hooks/useTreeSelect';
 import { TableListeners } from './base-table';
 
 const PRIMARY_B_EVENTS = [
+  'cell-click',
   'change',
   'page-change',
   'expand-change',
   'filter-change',
+  'select-change',
   'sort-change',
   'data-change',
   'async-loading-click',
   'column-change',
+  'column-controller-visible-change',
   'display-columns-change',
+  'drag-sort',
+  'row-edit',
+  'row-validate',
+  'validate',
 ];
 
 const PRIMARY_ALL_EVENTS = BASE_TABLE_ALL_EVENTS.concat(PRIMARY_B_EVENTS);
@@ -36,6 +43,8 @@ export default defineComponent({
   },
 
   setup(props: TdEnhancedTableProps, context: SetupContext) {
+    const enhancedTableRef = ref();
+
     const {
       store, dataSource, formatTreeColumn, swapData, ...treeInstanceFunctions
     } = useTreeData(props, context);
@@ -85,6 +94,7 @@ export default defineComponent({
       dataSource,
       tColumns,
       tIndeterminateSelectedRowKeys,
+      enhancedTableRef,
       onDragSortChange,
       onInnerSelectChange,
       ...treeInstanceFunctions,
@@ -124,6 +134,8 @@ export default defineComponent({
       'drag-sort': this.onDragSortChange,
     };
     // replace `scopedSlots={this.$scopedSlots}` of `v-slots={this.$slots}` in Vue3
-    return <PrimaryTable scopedSlots={this.$scopedSlots} props={props} on={on} {...this.$attrs} />;
+    return (
+      <PrimaryTable ref="enhancedTableRef" scopedSlots={this.$scopedSlots} props={props} on={on} {...this.$attrs} />
+    );
   },
 });

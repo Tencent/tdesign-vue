@@ -202,6 +202,8 @@ export default {
       const { id } = e.currentTarget.dataset;
       this.currentSaveId = id;
       // 触发内部校验，而后在 onRowValidate 中接收异步校验结果
+      // 重点：受框架层面限制，如果是 EnhancedTable 请更为使用 this.$refs.tableRef.enhancedTableRef.validateRowData(id)
+      // this.$refs.tableRef.enhancedTableRef.validateRowData(id).then((params) => {
       this.$refs.tableRef.validateRowData(id).then((params) => {
         console.log('Event Table Promise Validate:', params);
         if (params.result.length) {
