@@ -261,7 +261,9 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -270,12 +272,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -284,12 +288,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -298,12 +304,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -312,12 +320,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -326,12 +336,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -340,12 +352,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -354,7 +368,7 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -363,7 +377,9 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -372,12 +388,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -386,12 +404,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -400,12 +420,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -414,12 +436,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -428,12 +452,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -442,12 +468,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -456,7 +484,7 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -465,7 +493,9 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -474,12 +504,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -488,12 +520,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -502,12 +536,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -516,12 +552,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -530,12 +568,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -544,12 +584,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -558,7 +600,7 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -567,7 +609,9 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -576,12 +620,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -590,12 +636,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -604,12 +652,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -618,12 +668,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -632,12 +684,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -646,12 +700,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -660,7 +716,7 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -669,7 +725,9 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -678,12 +736,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -692,12 +752,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -706,12 +768,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -720,12 +784,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -734,12 +800,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -748,12 +816,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -762,7 +832,7 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -771,7 +841,9 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -780,12 +852,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -794,12 +868,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -808,12 +884,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -822,12 +900,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -836,12 +916,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -850,12 +932,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -864,7 +948,7 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
       </tbody>
@@ -1120,7 +1204,9 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1129,12 +1215,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1143,12 +1231,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1157,12 +1247,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1171,12 +1263,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1185,7 +1279,7 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -1194,7 +1288,9 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1203,12 +1299,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1217,12 +1315,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1231,12 +1331,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1245,12 +1347,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1259,7 +1363,7 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -1268,7 +1372,9 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1277,12 +1383,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1291,12 +1399,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1305,12 +1415,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1319,12 +1431,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1333,7 +1447,7 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -1342,7 +1456,9 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1351,12 +1467,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1365,12 +1483,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1379,12 +1499,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1393,12 +1515,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1407,7 +1531,7 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -1416,7 +1540,9 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
           <div
             class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1425,12 +1551,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1439,12 +1567,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1453,12 +1583,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1467,12 +1599,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1481,7 +1615,7 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
       </tbody>
@@ -1634,7 +1768,9 @@ exports[`Calendar > :props > :mode 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1643,12 +1779,14 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1657,12 +1795,14 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1671,12 +1811,14 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1685,7 +1827,7 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -1694,7 +1836,9 @@ exports[`Calendar > :props > :mode 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1703,12 +1847,14 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1717,12 +1863,14 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1731,12 +1879,14 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1745,7 +1895,7 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -1754,7 +1904,9 @@ exports[`Calendar > :props > :mode 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1763,12 +1915,14 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1777,12 +1931,14 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1791,12 +1947,14 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -1805,7 +1963,7 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
       </tbody>
@@ -2075,7 +2233,9 @@ exports[`Calendar > :props > :range 1`] = `
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2084,12 +2244,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2098,12 +2260,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2112,12 +2276,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2126,12 +2292,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2140,12 +2308,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2154,12 +2324,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2168,7 +2340,7 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -2177,7 +2349,9 @@ exports[`Calendar > :props > :range 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2186,12 +2360,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2200,12 +2376,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2214,12 +2392,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2228,12 +2408,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2242,12 +2424,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2256,12 +2440,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2270,7 +2456,7 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -2279,7 +2465,9 @@ exports[`Calendar > :props > :range 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2288,12 +2476,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2302,12 +2492,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2316,12 +2508,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2330,12 +2524,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2344,12 +2540,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2358,12 +2556,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2372,7 +2572,7 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -2381,7 +2581,9 @@ exports[`Calendar > :props > :range 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2390,12 +2592,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2404,12 +2608,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2418,12 +2624,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2432,12 +2640,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2446,12 +2656,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2460,12 +2672,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2474,7 +2688,7 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -2483,7 +2697,9 @@ exports[`Calendar > :props > :range 1`] = `
           <div
             class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2492,12 +2708,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2506,12 +2724,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2520,12 +2740,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2534,12 +2756,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2548,12 +2772,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2562,12 +2788,14 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2576,7 +2804,7 @@ exports[`Calendar > :props > :range 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
       </tbody>
@@ -2823,7 +3051,9 @@ exports[`Calendar > :props > :theme 1`] = `
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2832,12 +3062,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2846,12 +3078,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2860,12 +3094,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2874,12 +3110,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2888,12 +3126,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2902,12 +3142,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2916,7 +3158,7 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -2925,7 +3167,9 @@ exports[`Calendar > :props > :theme 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2934,12 +3178,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2948,12 +3194,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2962,12 +3210,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2976,12 +3226,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -2990,12 +3242,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3004,12 +3258,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3018,7 +3274,7 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -3027,7 +3283,9 @@ exports[`Calendar > :props > :theme 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3036,12 +3294,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3050,12 +3310,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3064,12 +3326,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3078,12 +3342,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3092,12 +3358,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3106,12 +3374,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3120,7 +3390,7 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -3129,7 +3399,9 @@ exports[`Calendar > :props > :theme 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3138,12 +3410,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3152,12 +3426,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3166,12 +3442,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3180,12 +3458,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3194,12 +3474,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3208,12 +3490,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3222,7 +3506,7 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -3231,7 +3515,9 @@ exports[`Calendar > :props > :theme 1`] = `
           <div
             class="t-calendar__table-body-cell t-is-checked t-calendar__table-body-cell--now"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3240,12 +3526,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3254,12 +3542,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3268,12 +3558,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3282,12 +3574,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3296,12 +3590,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3310,12 +3606,14 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3324,7 +3622,7 @@ exports[`Calendar > :props > :theme 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
       </tbody>
@@ -3594,7 +3892,9 @@ exports[`Calendar > :props > :value 1`] = `
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3603,12 +3903,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3617,12 +3919,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3631,12 +3935,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3645,12 +3951,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3659,12 +3967,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3673,12 +3983,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3687,7 +3999,7 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -3696,7 +4008,9 @@ exports[`Calendar > :props > :value 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3705,12 +4019,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3719,12 +4035,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3733,12 +4051,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3747,12 +4067,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3761,12 +4083,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3775,12 +4099,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3789,7 +4115,7 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -3798,7 +4124,9 @@ exports[`Calendar > :props > :value 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3807,12 +4135,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3821,12 +4151,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3835,12 +4167,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3849,12 +4183,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3863,12 +4199,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3877,12 +4215,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3891,7 +4231,7 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -3900,7 +4240,9 @@ exports[`Calendar > :props > :value 1`] = `
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3909,12 +4251,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3923,12 +4267,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3937,12 +4283,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3951,12 +4299,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3965,12 +4315,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3979,12 +4331,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -3993,7 +4347,7 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
         <tr
@@ -4002,7 +4356,9 @@ exports[`Calendar > :props > :value 1`] = `
           <div
             class="t-calendar__table-body-cell t-calendar__table-body-cell--now"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -4011,12 +4367,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -4025,12 +4383,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -4039,12 +4399,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -4053,12 +4415,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -4067,12 +4431,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -4081,12 +4447,14 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
           <div
             class="t-calendar__table-body-cell t-is-disabled"
           >
-            <span>
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
               <div
                 class="t-calendar__table-body-cell-display"
               >
@@ -4095,7 +4463,7 @@ exports[`Calendar > :props > :value 1`] = `
               <div
                 class="t-calendar__table-body-cell-content"
               />
-            </span>
+            </div>
           </div>
         </tr>
       </tbody>
