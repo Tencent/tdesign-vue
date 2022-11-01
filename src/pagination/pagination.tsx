@@ -340,6 +340,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
             class={this.sizerClass}
             onChange={this.onSelectorChange}
             autoWidth={true}
+            props={this.selectProps || {}}
           >
             {this.sizeOptions.map((item, index) => (
               <t-option value={item.value} label={item.label} key={index} />

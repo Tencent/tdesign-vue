@@ -82,12 +82,24 @@ export default defineComponent({
       return map;
     });
 
+    const getTableNode = (thead: HTMLElement) => {
+      let parent = thead;
+      while (parent) {
+        parent = parent.parentNode as HTMLElement;
+        if (parent?.classList?.contains(`${props.classPrefix}-table`)) {
+          break;
+        }
+      }
+      return parent;
+    };
+
     return {
       ...classnames,
       colspanSkipMap,
       theadRef,
       theadClasses,
       slots,
+      getTableNode,
     };
   },
 
@@ -158,7 +170,7 @@ export default defineComponent({
                 {isEllipsis ? (
                   <TEllipsis
                     placement="bottom"
-                    attach={this.theadRef ? () => this.theadRef : undefined}
+                    attach={this.theadRef ? () => this.getTableNode(this.theadRef) : undefined}
                     tooltipContent={content && (() => content)}
                     tooltipProps={typeof col.ellipsisTitle === 'object' ? col.ellipsisTitle : undefined}
                     overlayClassName={this.ellipsisOverlayClassName}

@@ -242,6 +242,7 @@ export default defineComponent({
       // Vue3 ignore next line
       context.emit('change', ...changeParams);
     };
+
     return {
       tColumns,
       showExpandedRow,

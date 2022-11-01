@@ -14,10 +14,10 @@ beforeAllFilesUpload | Function | - | before all files upload, return false can 
 beforeUpload | Function | - | Typescript：`(file: UploadFile) => boolean \| Promise<boolean>` | N
 data | Object | - | Typescript：`Record<string, any> \| ((file: File) => Record<string, any>)` | N
 default | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-disabled | Boolean | false | \- | N
-dragContent | String / Slot / Function | - | drag content。Typescript：`TNode<TriggerContext>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+disabled | Boolean | - | \- | N
+dragContent | String / Slot / Function | - | drag content。Typescript：`TNode \| TNode<TriggerContext>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 draggable | Boolean | undefined | \- | N
-fileListDisplay | Slot / Function | - | Typescript：`TNode<{ files: UploadFile[] }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+fileListDisplay | Slot / Function | - | Typescript：`TNode<{ files: UploadFile[]; dragEvents?: UploadDisplayDragEvents }>` `interface UploadDisplayDragEvents { drop?: (event: DragEvent) => void; dragenter?: (event: DragEvent) => void; dragover?: (event: DragEvent) => void; dragleave?: (event: DragEvent) => void; }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/upload/type.ts) | N
 files | Array | [] | `.sync` is supported。Typescript：`Array<T>` | N
 defaultFiles | Array | [] | uncontrolled property。Typescript：`Array<T>` | N
 format | Function | - | Typescript：`(file: File) => UploadFile` | N
