@@ -107,6 +107,8 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
     overlayInnerStyle: props.popupProps?.overlayInnerStyle ?? { width: 'auto' },
     overlayClassName: [props.popupProps?.overlayClassName, `${COMPONENT_NAME.value}__panel-container`],
     onVisibleChange: (visible: boolean, context: any) => {
+      // 这里劫持了进一步向 popup 传递的 onVisibleChange 事件，为了保证可以在 Datepicker 中使用 popupProps.onVisibleChange，故此处理
+      props.popupProps?.onVisibleChange?.(visible, context);
       // 输入框点击不关闭面板
       if (context.trigger === 'trigger-element-click') {
         popupVisible.value = true;
