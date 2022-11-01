@@ -3,6 +3,7 @@ dist
 lib
 es
 esm
+cjs
 node_modules
 src/_common
 static
