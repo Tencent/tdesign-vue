@@ -78,17 +78,25 @@ export default mixins(classPrefixMixins).extend({
       item, cellCls, clickCell, valueDisplay, allowSlot,
     } = this;
 
-    const defaultNode = () => (
-      <span>
-        <div class={`${this.componentName}__table-body-cell-display`}>{valueDisplay}</div>
-        <div class={`${this.componentName}__table-body-cell-content`}>
-          {allowSlot
-            && renderTNodeJSX(this, 'cellAppend', {
-              params: item,
-            })}
+    const defaultNode = () => {
+      const cellContentOuterDomStyle = {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-end',
+      };
+      return (
+        // 由于vue2的限制，这里需要一个实体dom。
+        <div style={cellContentOuterDomStyle}>
+          <div class={`${this.componentName}__table-body-cell-display`}>{valueDisplay}</div>
+          <div class={`${this.componentName}__table-body-cell-content`}>
+            {allowSlot
+              && renderTNodeJSX(this, 'cellAppend', {
+                params: item,
+              })}
+          </div>
         </div>
-      </span>
-    );
+      );
+    };
 
     return (
       item && (
