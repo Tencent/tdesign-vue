@@ -393,6 +393,11 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
           })}
         </div>
       );
+      const footer = this.footer ? (
+        <div class={`${this.componentName}__footer`} onmousedown={this.onStopDown}>
+          {renderTNodeJSX(this, 'footer', defaultFooter)}
+        </div>
+      ) : null;
       // 此处获取定位方式 top 优先级较高 存在时 默认使用top定位
       return (
         // 非模态形态下draggable为true才允许拖拽
@@ -411,9 +416,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
               <div class={this.bodyClass} onmousedown={this.onStopDown}>
                 {body}
               </div>
-              <div class={`${this.componentName}__footer`} onmousedown={this.onStopDown}>
-                {renderTNodeJSX(this, 'footer', defaultFooter)}
-              </div>
+              {footer}
             </div>
           </div>
         </div>
