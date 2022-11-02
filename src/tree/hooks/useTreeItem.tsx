@@ -1,23 +1,8 @@
 import { CreateElement } from 'vue';
-import {
-  // ref,
-  // nextTick,
-  SetupContext,
-  // Ref,
-} from '@vue/composition-api';
+import { nextTick, SetupContext } from '@vue/composition-api';
 import { CaretRightSmallIcon as TdCaretRightSmallIcon } from 'tdesign-icons-vue';
-import {
-  TypeVNode,
-  // TreeNodeValue,
-  TypeTreeItemProps,
-  // TypeTreeState,
-  TypeEventState,
-  // TypeTargetNode,
-} from '../interface';
-import {
-  // useConfig,
-  usePrefixClass,
-} from '../../hooks/useConfig';
+import { TypeVNode, TypeTreeItemProps, TypeEventState } from '../interface';
+import { usePrefixClass } from '../../hooks/useConfig';
 import { useGlobalIcon } from '../../hooks/useGlobalIcon';
 import { ClassName } from '../../common';
 import TreeNode from '../../_common/js/tree/tree-node';
@@ -30,7 +15,6 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
   const { node } = props;
   const classPrefix = usePrefixClass().value;
   const componentName = usePrefixClass('tree').value;
-  // const { global } = useConfig('tree');
 
   const nodesMap = new Map();
 
@@ -107,14 +91,15 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
     context.emit('change', state);
   };
 
-  const getFolderIcon = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const getFolderIcon = (h: CreateElement) => {
     const { CaretRightSmallIcon } = useGlobalIcon({
       CaretRightSmallIcon: TdCaretRightSmallIcon,
     });
     return <CaretRightSmallIcon />;
   };
 
-  const renderLine = (createElement: CreateElement): TypeVNode => {
+  const renderLine = (h: CreateElement): TypeVNode => {
     const { node, treeScope } = props;
     const { line, scopedSlots } = treeScope;
     const iconVisible = !!treeScope.icon;
@@ -165,14 +150,14 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
       }
     } else {
       lineNode = getTNode(line, {
-        createElement,
+        createElement: h,
         node,
       });
     }
     return lineNode as TypeVNode;
   };
 
-  const renderIcon = (createElement: CreateElement): TypeVNode => {
+  const renderIcon = (h: CreateElement) => {
     const { node, treeScope } = props;
     const { icon, scopedSlots } = treeScope;
     let isDefaultIcon = false;
@@ -185,7 +170,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
         });
       } else if (!node.vmIsLeaf) {
         isDefaultIcon = true;
-        iconNode = getFolderIcon();
+        iconNode = getFolderIcon(h);
         if (node.loading && node.expanded) {
           iconNode = <TLoading />;
         }
@@ -194,7 +179,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
       }
     } else if (icon) {
       iconNode = getTNode(icon, {
-        createElement,
+        createElement: h,
         node,
       });
     }
@@ -215,7 +200,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
     return wrapIconNode;
   };
 
-  const renderLabel = (createElement: CreateElement): TypeVNode => {
+  const renderLabel = (h: CreateElement): TypeVNode => {
     const { treeScope, expandOnClickNode } = props;
     const { label, disableCheck, scopedSlots } = treeScope;
     const checkProps = treeScope.checkProps || {};
@@ -231,7 +216,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
       }
     } else {
       labelNode = getTNode(label, {
-        createElement,
+        createElement: h,
         node,
       });
     }
@@ -295,7 +280,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
     return labelNode;
   };
 
-  const renderOperations = (createElement: CreateElement): TypeVNode => {
+  const renderOperations = (h: CreateElement): TypeVNode => {
     const { treeScope } = props;
     const { operations, scopedSlots } = treeScope;
 
@@ -306,7 +291,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
       });
     } else {
       opNode = getTNode(operations, {
-        createElement,
+        createElement: h,
         node,
       });
     }
@@ -320,12 +305,14 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
     return opNode as TypeVNode;
   };
 
-  const renderItem = (createElement: CreateElement) => {
+  const renderItem = (h: CreateElement) => {
     const itemNodes: TypeVNode[] = [];
-    const iconNode = renderIcon(createElement);
-    // 渲染连线排在渲染图标之后，是为了确认图标是否存在
-    const lineNode = renderLine(createElement);
 
+    // 第一步是渲染图标
+    const iconNode = renderIcon(h);
+
+    // 渲染连线排在渲染图标之后，是为了确认图标是否存在
+    const lineNode = renderLine(h);
     if (lineNode) {
       itemNodes.push(lineNode);
     }
@@ -334,12 +321,12 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
       itemNodes.push(iconNode);
     }
 
-    const labelNode = renderLabel(createElement);
+    const labelNode = renderLabel(h);
     if (labelNode) {
       itemNodes.push(labelNode);
     }
 
-    const opNode = renderOperations(createElement);
+    const opNode = renderOperations(h);
     if (opNode) {
       itemNodes.push(opNode);
     }
@@ -347,7 +334,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
     return itemNodes;
   };
 
-  const renderItemNode = (createElement: CreateElement) => {
+  const renderItemNode = (h: CreateElement) => {
     const { level, value } = node;
     const styles = getItemStyles();
     const classList = getItemClassList();
@@ -360,21 +347,14 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
         style={styles}
         onClick={(evt: MouseEvent) => handleClick(evt)}
       >
-        {renderItem(createElement)}
+        {renderItem(h)}
       </div>
     );
     return itemNode;
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const renderBranchNode = (createElement: CreateElement) => {
-    const branchNode = <div></div>;
-    return branchNode;
-  };
-
   // 创建单个 tree 节点
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const renderNestedItem = (createElement: CreateElement) => {
+  const renderNestedItem = (h: CreateElement, node: TreeNode) => {
     const { nested, treeScope } = props;
     const treeItem = (
       <TreeItem
@@ -387,6 +367,82 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
       />
     );
     return treeItem;
+  };
+
+  const renderChildNodes = (h: CreateElement) => {
+    // 以嵌套形式渲染节点
+    let children: TreeNode[] = [];
+    if (Array.isArray(node.children)) {
+      children = node.children;
+    }
+
+    const curNodesMap = new Map();
+    const childrenNodes = children.map((child: TreeNode) => {
+      curNodesMap.set(child.value, 1);
+      let nodeView = nodesMap.get(child.value);
+      if (!nodeView && child.visible) {
+        nodeView = renderNestedItem(h, child);
+        nodesMap.set(child.value, nodeView);
+      }
+      return nodeView;
+    });
+
+    // 移除不再使用的节点
+    nextTick(() => {
+      const keys = [...nodesMap.keys()];
+      keys.forEach((value: string) => {
+        if (!curNodesMap.get(value)) {
+          nodesMap.delete(value);
+        }
+      });
+      curNodesMap.clear();
+    });
+
+    return childrenNodes;
+  };
+
+  const renderBranchNode = (h: CreateElement) => {
+    const itemNode = renderItemNode(h);
+    const childNodes = renderChildNodes(h);
+
+    const childrenClassList = [];
+    childrenClassList.push(`${componentName}__children`);
+    if (node.expanded) {
+      childrenClassList.push(`${componentName}__children--visible`);
+    } else {
+      childrenClassList.push(`${componentName}__children--hidden`);
+    }
+
+    const allChildren = node.walk();
+    allChildren.shift();
+    const allExpandedChildren = allChildren.filter((node: TreeNode) => {
+      const parent = node.getParent();
+      if (!parent) return true;
+      return parent.expanded;
+    });
+    const childrenStyles = {
+      '--hscale': allExpandedChildren.length,
+    };
+
+    const childrenBox = (
+      <transition-group
+        tag="div"
+        class={childrenClassList}
+        style={childrenStyles}
+        enter-active-class={`${componentName}__item--enter-active`}
+        leave-active-class={`${componentName}__item--leave-active`}
+      >
+        {childNodes}
+      </transition-group>
+    );
+
+    const branchNode = (
+      <div class={`${componentName}__branch`}>
+        {itemNode}
+        {childrenBox}
+      </div>
+    );
+    return branchNode;
   };
 
   const clearNodesMap = () => {
