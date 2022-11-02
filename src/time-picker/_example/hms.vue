@@ -1,5 +1,5 @@
 <template>
-  <t-time-picker v-model="value" @change="timechange" @open="open" @close="close" />
+  <t-time-picker v-model="value" @change="timechange" @open="open" @close="close" @pick="pick" />
 </template>
 
 <script>
@@ -19,6 +19,9 @@ export default {
     },
     close() {
       console.log('close');
+    },
+    pick(v) {
+      console.log(v, 'vv');
     },
   },
 };
