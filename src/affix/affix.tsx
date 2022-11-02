@@ -45,11 +45,11 @@ export default mixins(Vue as VueConstructor<Affix>, classMixins).extend({
             top: wrapToTop,
             width: wrapWidth,
             height: wrapHeight,
-          } = affixWrapRef.getBoundingClientRect() ?? { top: 0, width: 0, height: 0 };
+          } = affixWrapRef?.getBoundingClientRect() ?? { top: 0, width: 0, height: 0 };
 
           let containerTop = 0; // containerTop = 容器到页面顶部的距离
           if (scrollContainer instanceof HTMLElement) {
-            containerTop = scrollContainer.getBoundingClientRect().top;
+            containerTop = scrollContainer?.getBoundingClientRect?.().top;
           }
 
           let fixedTop: number | false;
