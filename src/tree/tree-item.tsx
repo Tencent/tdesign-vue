@@ -30,13 +30,17 @@ export default defineComponent({
   mixins: [getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnimationMixins, getGlobalIconMixins()],
   setup(props: TypeTreeItemProps, context) {
     const { renderItemNode } = useTreeItem(props, context);
-
     return {
       renderItemNode,
     };
   },
   render(h) {
-    const { renderItemNode } = this;
-    return renderItemNode(h);
+    // 这个类型判断看起来多此一举
+    // 然而单元测试时没有它却会报错:
+    // This expression is not callable. Type '{}' has no call signatures.
+    if (typeof this.renderItemNode === 'function') {
+      return this.renderItemNode(h);
+    }
+    return null;
   },
 });
