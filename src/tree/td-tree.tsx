@@ -16,6 +16,12 @@ import useCache from './hooks/useCache';
 import useTreeNodes from './hooks/useTreeNodes';
 import { getNode } from './util';
 
+// 2022.11.02 tabliang 备注
+// 之前尝试实现了嵌套布局，原本预期嵌套布局能够提升大数据量下，全部渲染节点时的性能表现
+// 实测性能提升有限，不如使用虚拟滚动的收益高，反而导致了组件的维护困难与混乱
+// 自 2022 年初首次提出嵌套布局要求，大半年以来，对嵌套布局的需求也不是很高
+// 因此废弃嵌套布局方案，之后重点解决虚拟滚动能力
+
 export default defineComponent({
   name: 'TTree',
   model: {
@@ -55,22 +61,8 @@ export default defineComponent({
       return list;
     });
 
-    // 单个节点高度(px)
-    const itemMaxHeight = computed(() => 42);
-    // tree 高度限制格式化
-    const maxHeight = computed(() => 0);
-    // 是否使用虚拟滚动
-    const vScrollEnable = computed(() => !!maxHeight.value);
-    // 是否启用嵌套布局
-    // 暂时仅使用平铺布局
-    // 嵌套布局还需要进一步提升渲染性能
-    const nested = computed(() => !!maxHeight.value);
-
     // 用于 hooks 传递数据
     const state: TypeTreeState = {
-      itemMaxHeight,
-      vScrollEnable,
-      nested,
       store,
       cache,
     };

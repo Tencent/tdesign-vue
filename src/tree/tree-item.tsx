@@ -12,10 +12,6 @@ import ripple from '../utils/ripple';
 const keepAnimationMixins = getKeepAnimationMixins();
 
 export const treeItemProps = {
-  nested: {
-    type: Boolean as PropType<TypeTreeItemProps['nested']>,
-    default: false,
-  },
   node: {
     type: Object as PropType<TypeTreeItemProps['node']>,
   },
@@ -33,27 +29,14 @@ export default defineComponent({
   directives: { ripple },
   mixins: [getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnimationMixins, getGlobalIconMixins()],
   setup(props: TypeTreeItemProps, context) {
-    const { clearNodesMap, renderItemNode, renderBranchNode } = useTreeItem(props, context);
+    const { renderItemNode } = useTreeItem(props, context);
 
     return {
       renderItemNode,
-      renderBranchNode,
-      clearNodesMap,
     };
   },
   render(h) {
-    const {
-      node, nested, clearNodesMap, renderItemNode, renderBranchNode,
-    } = this;
-    const { tree, value } = node;
-
-    if (!tree || !tree.nodeMap.get(value)) {
-      clearNodesMap();
-    }
-
-    if (!nested) {
-      return renderItemNode(h);
-    }
-    return renderBranchNode(h);
+    const { renderItemNode } = this;
+    return renderItemNode(h);
   },
 });

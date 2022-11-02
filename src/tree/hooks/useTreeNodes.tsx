@@ -126,7 +126,7 @@ export default function useTreeNodes(props: TypeTreeProps, state: TypeTreeState,
 
   // 创建单个 tree 节点
   const renderItem = (h: CreateElement, node: TreeNode) => {
-    const { nested, cache } = state;
+    const { cache } = state;
     const { expandOnClickNode } = props;
     const { scope } = cache;
 
@@ -134,7 +134,6 @@ export default function useTreeNodes(props: TypeTreeProps, state: TypeTreeState,
       <TreeItem
         key={node.value}
         node={node}
-        nested={nested.value}
         treeScope={scope}
         onClick={handleClick}
         onChange={handleChange}
@@ -152,14 +151,8 @@ export default function useTreeNodes(props: TypeTreeProps, state: TypeTreeState,
 
   const nodes: Ref<TreeNode[]> = ref([]);
   const refresh = () => {
-    const { nested } = state;
-    if (nested.value) {
-      // 渲染为嵌套结构
-      nodes.value = store.getChildren();
-    } else {
-      // 渲染为平铺列表
-      nodes.value = store.getNodes();
-    }
+    // 渲染为平铺列表
+    nodes.value = store.getNodes();
   };
 
   const renderTreeNodes = (h: CreateElement) => {

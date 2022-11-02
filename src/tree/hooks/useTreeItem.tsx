@@ -1,5 +1,5 @@
 import { CreateElement } from 'vue';
-import { nextTick, SetupContext } from '@vue/composition-api';
+import { SetupContext } from '@vue/composition-api';
 import { CaretRightSmallIcon as TdCaretRightSmallIcon } from 'tdesign-icons-vue';
 import { TypeVNode, TypeTreeItemProps, TypeEventState } from '../interface';
 import { usePrefixClass } from '../../hooks/useConfig';
@@ -9,14 +9,11 @@ import TreeNode from '../../_common/js/tree/tree-node';
 import TCheckBox from '../../checkbox';
 import TLoading from '../../loading';
 import { getTNode } from '../util';
-import TreeItem from '../tree-item';
 
 export default function useTreeItem(props: TypeTreeItemProps, context: SetupContext) {
   const { node } = props;
   const classPrefix = usePrefixClass().value;
   const componentName = usePrefixClass('tree').value;
-
-  const nodesMap = new Map();
 
   const getItemStyles = (): string => {
     const { level, visible } = node;
@@ -27,8 +24,6 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
   };
 
   const getItemClassList = (): ClassName => {
-    const { nested } = props;
-
     const list = [];
     list.push(`${componentName}__item`);
     list.push({
@@ -36,12 +31,10 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
       [`${classPrefix}-is-active`]: node.isActivable() ? node.actived : false,
       [`${classPrefix}-is-disabled`]: node.isDisabled(),
     });
-    if (!nested) {
-      if (node.visible) {
-        list.push(`${componentName}__item--visible`);
-      } else {
-        list.push(`${componentName}__item--hidden`);
-      }
+    if (node.visible) {
+      list.push(`${componentName}__item--visible`);
+    } else {
+      list.push(`${componentName}__item--hidden`);
     }
     return list;
   };
@@ -81,14 +74,6 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
       path: node.getPath(),
     };
     context.emit('click', state);
-  };
-
-  const proxyClick = (state: TypeEventState) => {
-    context.emit('click', state);
-  };
-
-  const proxyChange = (state: TypeEventState) => {
-    context.emit('change', state);
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -353,105 +338,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
     return itemNode;
   };
 
-  // 创建单个 tree 节点
-  const renderNestedItem = (h: CreateElement, node: TreeNode) => {
-    const { nested, treeScope } = props;
-    const treeItem = (
-      <TreeItem
-        key={node.value}
-        node={node}
-        nested={nested}
-        treeScope={treeScope}
-        onClick={proxyClick}
-        onChange={proxyChange}
-      />
-    );
-    return treeItem;
-  };
-
-  const renderChildNodes = (h: CreateElement) => {
-    // 以嵌套形式渲染节点
-    let children: TreeNode[] = [];
-    if (Array.isArray(node.children)) {
-      children = node.children;
-    }
-
-    const curNodesMap = new Map();
-    const childrenNodes = children.map((child: TreeNode) => {
-      curNodesMap.set(child.value, 1);
-      let nodeView = nodesMap.get(child.value);
-      if (!nodeView && child.visible) {
-        nodeView = renderNestedItem(h, child);
-        nodesMap.set(child.value, nodeView);
-      }
-      return nodeView;
-    });
-
-    // 移除不再使用的节点
-    nextTick(() => {
-      const keys = [...nodesMap.keys()];
-      keys.forEach((value: string) => {
-        if (!curNodesMap.get(value)) {
-          nodesMap.delete(value);
-        }
-      });
-      curNodesMap.clear();
-    });
-
-    return childrenNodes;
-  };
-
-  const renderBranchNode = (h: CreateElement) => {
-    const itemNode = renderItemNode(h);
-    const childNodes = renderChildNodes(h);
-
-    const childrenClassList = [];
-    childrenClassList.push(`${componentName}__children`);
-    if (node.expanded) {
-      childrenClassList.push(`${componentName}__children--visible`);
-    } else {
-      childrenClassList.push(`${componentName}__children--hidden`);
-    }
-
-    const allChildren = node.walk();
-    allChildren.shift();
-    const allExpandedChildren = allChildren.filter((node: TreeNode) => {
-      const parent = node.getParent();
-      if (!parent) return true;
-      return parent.expanded;
-    });
-    const childrenStyles = {
-      '--hscale': allExpandedChildren.length,
-    };
-
-    const childrenBox = (
-      <transition-group
-        tag="div"
-        class={childrenClassList}
-        style={childrenStyles}
-        enter-active-class={`${componentName}__item--enter-active`}
-        leave-active-class={`${componentName}__item--leave-active`}
-      >
-        {childNodes}
-      </transition-group>
-    );
-
-    const branchNode = (
-      <div class={`${componentName}__branch`}>
-        {itemNode}
-        {childrenBox}
-      </div>
-    );
-    return branchNode;
-  };
-
-  const clearNodesMap = () => {
-    nodesMap.clear();
-  };
-
   return {
     renderItemNode,
-    renderBranchNode,
-    clearNodesMap,
   };
 }

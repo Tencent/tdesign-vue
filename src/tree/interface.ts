@@ -1,5 +1,4 @@
 import { VNode } from 'vue';
-import { ComputedRef } from '@vue/composition-api';
 import { TNode, TreeOptionData } from '../common';
 import TreeStore from '../_common/js/tree/tree-store';
 import TreeNode from '../_common/js/tree/tree-node';
@@ -91,14 +90,10 @@ export interface TypeTreeCache {
 export interface TypeTreeState {
   store: TypeTreeStore;
   cache: TypeTreeCache;
-  itemMaxHeight: ComputedRef<number>;
-  vScrollEnable: ComputedRef<boolean>;
-  nested: ComputedRef<boolean>;
 }
 
 export interface TypeTreeItemProps {
-  nested: boolean;
-  node: TreeNode;
+  node: TypeTreeNode;
   treeScope: TypeTreeScope;
   expandOnClickNode: boolean;
 }
