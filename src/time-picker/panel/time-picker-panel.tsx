@@ -20,6 +20,7 @@ export default defineComponent({
     ...panelProps(),
     handleConfirmClick: Function,
     onChange: Function,
+    onPick: Function,
     disableTime: Function,
   },
   setup(props, ctx) {
@@ -50,8 +51,12 @@ export default defineComponent({
     };
 
     const handleChange = (v: string) => {
+      // 触发onPick事件
+      props.onPick?.(v);
+      ctx.emit('pick', v); // 处理直接使用panel的场景 支持@/v-on语法
+
       props.onChange?.(v);
-      ctx.emit('change', v);
+      ctx.emit('change', v); // 处理直接使用panel的场景 支持@/v-on语法
     };
     const handlePresetClick = (presetValue: TimePickerValue | (() => TimePickerValue)) => {
       const presetVal = typeof presetValue === 'function' ? presetValue() : presetValue;
@@ -98,6 +103,7 @@ export default defineComponent({
               props: {
                 value: this.value,
                 onChange: this.handleChange,
+                onPick: this.onPick,
                 format: this.format || DEFAULT_FORMAT,
                 steps: this.steps || DEFAULT_STEPS,
                 triggerScroll: this.triggerScroll,

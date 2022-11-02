@@ -49,17 +49,17 @@ export default defineComponent({
     };
     const renderTNodeJSX = useTNodeJSX();
     const options = useDropdownOptions(this.$props, this.$slots);
-    const trigger = renderTNodeJSX('default');
+    const trigger = renderTNodeJSX('default')?.[0];
 
     return (
       <Popup
         {...{
           props: {
-            ...popupParams,
             destroyOnClose: true,
             visible: this.isPopupVisible,
             onVisibleChange: this.handleVisibleChange,
             expandAnimation: true,
+            ...popupParams,
           },
         }}
       >

@@ -88,6 +88,11 @@ export default defineComponent({
       ctx.emit('focus', context);
     };
 
+    const handleOnPick = (v: string) => {
+      props.onPick?.(v);
+      ctx.emit('pick', v);
+    };
+
     watch(
       () => isShowPanel.value,
       () => {
@@ -103,6 +108,7 @@ export default defineComponent({
       handleClear,
       handleShowPopup,
       handleOnFocus,
+      handleOnPick,
       inputClasses,
       componentName,
       innerValue,
@@ -144,6 +150,7 @@ export default defineComponent({
                       isShowPanel: this.isShowPanel,
                       disableTime: this.disableTime,
                       onChange: this.handlePanelChange,
+                      onPick: this.handleOnPick,
                       hideDisabledTime: this.hideDisabledTime,
                       handleConfirmClick: this.handleClickConfirm,
                       presets: this.presets,

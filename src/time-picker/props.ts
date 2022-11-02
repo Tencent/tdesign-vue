@@ -81,4 +81,6 @@ export default {
   onInput: Function as PropType<TdTimePickerProps['onInput']>,
   /** 面板打开时触发 */
   onOpen: Function as PropType<TdTimePickerProps['onOpen']>,
+  /** 面板选中值后触发 */
+  onPick: Function as PropType<TdTimePickerProps['onPick']>,
 };

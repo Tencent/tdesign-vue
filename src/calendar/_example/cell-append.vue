@@ -1,8 +1,12 @@
 <template>
   <t-calendar>
-    <div slot="cellAppend" slot-scope="data" v-if="getShow(data)" class="cell-append-demo-outer">
-      <t-tag theme="primary" size="small" class="activeTag">{{ data.mode == 'month' ? '今天' : '本月' }}</t-tag>
-    </div>
+    <template slot="cellAppend" slot-scope="data">
+      <div v-if="getShow(data)" class="cell-append-demo-outer">
+        <t-tag theme="primary" size="small" class="activeTag">
+          {{ data.mode == 'month' ? '今天' : '本月' }}
+        </t-tag>
+      </div>
+    </template>
   </t-calendar>
 </template>
 
@@ -19,17 +23,3 @@ export default {
   },
 };
 </script>
-
-<style lang="less" scoped>
-.cell-append-demo-outer {
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: 16px;
-  padding: 0 16px;
-}
-.activeTag {
-  display: block;
-  text-align: center;
-}
-</style>

@@ -1,6 +1,6 @@
 import { CreateElement } from 'vue';
 import {
-  computed, defineComponent, toRefs, PropType,
+  h, computed, defineComponent, toRefs, PropType,
 } from '@vue/composition-api';
 import classNames from 'classnames';
 import {
@@ -15,7 +15,7 @@ import ImageViewer from '../../image-viewer';
 import { CommonDisplayFileProps } from '../interface';
 import { commonProps } from '../constants';
 import TButton from '../../button';
-import { UploadFile, TdUploadProps } from '../type';
+import { UploadFile, TdUploadProps, UploadDisplayDragEvents } from '../type';
 import useDrag, { UploadDragEvents } from '../hooks/useDrag';
 import { abridgeName, returnFileSize } from '../../_common/js/upload/utils';
 import TLoading from '../../loading';
@@ -65,7 +65,7 @@ export default defineComponent({
       return locale.value.triggerUploadText.normal;
     });
 
-    const innerDragEvents = computed(() => {
+    const innerDragEvents = computed<UploadDisplayDragEvents>(() => {
       const draggable = props.draggable === undefined ? true : props.draggable;
       return draggable
         ? {
@@ -217,13 +217,19 @@ export default defineComponent({
     },
 
     renderFileList() {
+      if (this.fileListDisplay) {
+        return this.fileListDisplay(h, {
+          files: this.displayFiles,
+          dragEvents: this.innerDragEvents,
+        });
+      }
       return (
         <table class={`${this.uploadPrefix}__flow-table`} on={this.innerDragEvents}>
           <thead>
             <tr>
               <th>{this.locale.file?.fileNameText}</th>
-              <th>{this.locale.file?.fileSizeText}</th>
-              <th>{this.locale.file?.fileStatusText}</th>
+              <th style={{ width: '120px' }}>{this.locale.file?.fileSizeText}</th>
+              <th style={{ width: '120px' }}>{this.locale.file?.fileStatusText}</th>
               {this.disabled ? null : <th>{this.locale.file?.fileOperationText}</th>}
             </tr>
           </thead>

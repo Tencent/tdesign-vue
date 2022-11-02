@@ -242,7 +242,7 @@ export default defineComponent({
       const icon = renderTNodeJSX(
         this,
         'navigationArrow',
-          <ChevronLeftIcon style={setTransform(`rotate(${rotateDeg}deg)`)} size="24px" />,
+        <ChevronLeftIcon style={setTransform(`rotate(${rotateDeg}deg)`)} size="24px" />,
       );
 
       return (

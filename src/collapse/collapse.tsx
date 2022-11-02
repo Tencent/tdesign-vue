@@ -37,17 +37,19 @@ export default defineComponent({
       let index = 0;
       return () => (index += 1);
     })();
+    const renderTNodeJSX = useTNodeJSX();
     provide('collapseValue', collapseValue);
     provide('updateCollapseValue', updateCollapseValue);
     provide('collapseProps', toRefs(props));
     provide('getUniqId', getUniqId);
+    provide('renderParentTNode', useTNodeJSX());
     return {
       classes,
+      renderTNodeJSX,
     };
   },
   render() {
-    const renderTNodeJSX = useTNodeJSX();
-    const nodes = renderTNodeJSX('default');
+    const nodes = this.renderTNodeJSX('default');
     return <div class={this.classes}>{nodes}</div>;
   },
 });
