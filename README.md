@@ -21,12 +21,12 @@
 
 English | [简体中文](./README-zh_CN.md) 
 
-TDesign Vue is a UI component library for vue 2 and desktop application.
+TDesign Vue is a UI component library for Vue 2 and desktop application.
 
 # 🎉 Features
 
 - Desktop application interaction
-- High quality UI components for Vue 2.0 (< Vue 2.7)
+- High quality UI components for Vue 2.x (< Vue 2.7)
 - Consistent API and UI with TDesign component libraries for other frameworks
 - Dark mode and customizable theme
 - Support tree-shaking
@@ -37,13 +37,12 @@ TDesign Vue is a UI component library for vue 2 and desktop application.
 npm i tdesign-vue
 ```
 
-# Usage
-
+# 🔨 Usage
 
 ```js
 import Vue from 'vue';
 import TDesign from 'tdesign-vue';
-// import global css resource
+
 import 'tdesign-vue/es/style/index.css';
 
 Vue.use(TDesign);
@@ -53,7 +52,7 @@ The package of tdesign-vue provides kinds of bundles, read [the documentation](h
 
 # Quick Start
 
-Visit [TDesign Starter](https://tdesign.tencent.com/starter/vue/) to experience in TDesign Vue UI components.
+Visit [TDesign Starter](https://tdesign.tencent.com/starter/vue/) to experience in the application built with TDesign Vue UI components.
 
 # Browser Support
 
@@ -68,9 +67,13 @@ Read our [browser compatibility](https://github.com/Tencent/tdesign/wiki/Browser
 
 TDesign also provides component libraries for other platforms and frameworks.
 
-- UI component library for Vue 3.x : [tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next)
-- UI component library for React : [tdesign-react](https://github.com/Tencent/tdesign-react)
+- component library for Vue 3.x : [tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next)
+- component library for React : [tdesign-react](https://github.com/Tencent/tdesign-react)
 - component library for Wechat miniprogram : [tdesign-miniprogram](https://github.com/Tencent/tdesign-miniprogram)
+
+# Contributing
+
+Contributing is welcome. Read [guidelines for contributing](https://github.com/Tencent/tdesign-vue/blob/develop/CONTRIBUTING.md) before submitting your [Pull Request](https://github.com/Tencent/tdesign-vue/pulls).
 
 # License
 
