@@ -21,17 +21,17 @@
 
 English | [简体中文](./README-zh_CN.md) 
 
-TDesign Vue is a UI components library for vue 2 and desktop application.
+TDesign Vue is a UI component library for vue 2 and desktop application.
 
 # 🎉 Features
 
 - Desktop application interaction
-- High-quality UI components for Vue 2.0 (< Vue 2.7)
-- Consistent API and UI with TDesign components libraries for other frameworks
+- High quality UI components for Vue 2.0 (< Vue 2.7)
+- Consistent API and UI with TDesign component libraries for other frameworks
 - Dark mode and customizable theme
 - Support tree-shaking
 
-# 📦 Install
+# 📦 Installation
 
 ```shell
 npm i tdesign-vue
@@ -49,11 +49,11 @@ import 'tdesign-vue/es/style/index.css';
 Vue.use(TDesign);
 ```
 
-Package of tdesign-vue provides kinds of bundles, read [develop-install](https://github.com/Tencent/tdesign/blob/main/docs/develop-install.md) for the detail of differences between bundles in different directories.
+The package of tdesign-vue provides kinds of bundles, read [the documentation](https://github.com/Tencent/tdesign/blob/main/docs/develop-install.md) for the detail of differences between bundles.
 
-# Quick Started
+# Quick Start
 
-Visit [TDesign Starter](https://tdesign.tencent.com/starter/vue/) to experience the starter-kit for TDesign Vue UI components。
+Visit [TDesign Starter](https://tdesign.tencent.com/starter/vue/) to experience in TDesign Vue UI components.
 
 # Browser Support
 
@@ -64,13 +64,13 @@ Visit [TDesign Starter](https://tdesign.tencent.com/starter/vue/) to experience 
 
 Read our [browser compatibility](https://github.com/Tencent/tdesign/wiki/Browser-Compatibility) for more details.
 
-# TDesign components libraries
+# TDesign component libraries
 
-TDesign also provides components libraries for other platforms and frameworks.
+TDesign also provides component libraries for other platforms and frameworks.
 
-- UI components library for Vue 3.x : [tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next)
-- UI components library for React : [tdesign-react](https://github.com/Tencent/tdesign-react)
-- components library for Wechat miniprogram : [tdesign-miniprogram](https://github.com/Tencent/tdesign-miniprogram)
+- UI component library for Vue 3.x : [tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next)
+- UI component library for React : [tdesign-react](https://github.com/Tencent/tdesign-react)
+- component library for Wechat miniprogram : [tdesign-miniprogram](https://github.com/Tencent/tdesign-miniprogram)
 
 # License
 
