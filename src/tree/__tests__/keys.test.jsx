@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import Tree from '@/src/tree/index.ts';
 
 describe('Tree:keys', () => {
-  jest.useRealTimers();
+  vi.useRealTimers();
   describe(':props.keys', () => {
     it('可指定树结构监听分配的属性', async () => {
       const data = [

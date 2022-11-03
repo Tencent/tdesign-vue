@@ -6,9 +6,9 @@ tree 针对性测试命令:
 
 ```bash
 # 执行单测
-npx jest --config script/test/jest.unit.conf.js ./src/tree/__tests__/
+npx vitest ./src/tree/__tests__/
 # 更新单测快照
-npx jest --config script/test/jest.unit.conf.js --updateSnapshot ./src/tree/__tests__/
+npx vitest --updateSnapshot ./src/tree/__tests__/
 ```
 
 ## 调试界面
