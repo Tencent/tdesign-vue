@@ -5,7 +5,7 @@ import Tree from '@/src/tree/index.ts';
 describe('Tree:props:events', () => {
   vi.useRealTimers();
   describe('event:active', () => {
-    it('onActive 回调可触发', () => new Promise((done) => {
+    it('onActive 回调可触发', () => new Promise((resolve) => {
       const data = [{ value: 't1' }, { value: 't2' }];
       mount(
         Vue.component('test', {
@@ -25,7 +25,7 @@ describe('Tree:props:events', () => {
               expect(actived.length).toBe(1);
               expect(actived[0]).toBe('t2');
               expect(context.node.value).toBe('t2');
-              done();
+              resolve();
             },
           },
           mounted() {
@@ -37,7 +37,7 @@ describe('Tree:props:events', () => {
       );
     }, 10));
 
-    it('active 事件可触发', () => new Promise((done) => {
+    it('active 事件可触发', () => new Promise((resolve) => {
       const data = [{ value: 't1' }, { value: 't2' }];
       mount(
         Vue.component('test', {
@@ -55,7 +55,7 @@ describe('Tree:props:events', () => {
               expect(actived.length).toBe(1);
               expect(actived[0]).toBe('t2');
               expect(context.node.value).toBe('t2');
-              done();
+              resolve();
             },
           },
           mounted() {
@@ -69,7 +69,7 @@ describe('Tree:props:events', () => {
   });
 
   describe('event:expand', () => {
-    it('onExpand 回调可触发', () => new Promise((done) => {
+    it('onExpand 回调可触发', () => new Promise((resolve) => {
       const data = [
         {
           value: 't1',
@@ -105,7 +105,7 @@ describe('Tree:props:events', () => {
               expect(expanded.length).toBe(1);
               expect(expanded[0]).toBe('t2');
               expect(context.node.value).toBe('t2');
-              done();
+              resolve();
             },
           },
           mounted() {
@@ -117,7 +117,7 @@ describe('Tree:props:events', () => {
       );
     }, 10));
 
-    it('expand 事件可触发', () => new Promise((done) => {
+    it('expand 事件可触发', () => new Promise((resolve) => {
       const data = [
         {
           value: 't1',
@@ -153,7 +153,7 @@ describe('Tree:props:events', () => {
               expect(expanded.length).toBe(1);
               expect(expanded[0]).toBe('t2');
               expect(context.node.value).toBe('t2');
-              done();
+              resolve();
             },
           },
           mounted() {
@@ -167,7 +167,7 @@ describe('Tree:props:events', () => {
   });
 
   describe('event:change', () => {
-    it('onChange 回调可触发', () => new Promise((done) => {
+    it('onChange 回调可触发', () => new Promise((resolve) => {
       const data = [
         {
           value: 't1',
@@ -190,7 +190,7 @@ describe('Tree:props:events', () => {
         expect(checked.length).toBe(1);
         expect(checked[0]).toBe('t2.1');
         expect(context.node.value).toBe('t2');
-        done();
+        resolve();
       };
       mount({
         mounted() {
@@ -206,7 +206,7 @@ describe('Tree:props:events', () => {
   });
 
   describe('event:load', () => {
-    it('onLoad 回调可触发', () => new Promise((done) => {
+    it('onLoad 回调可触发', () => new Promise((resolve) => {
       const data = [
         {
           label: '1',
@@ -217,7 +217,7 @@ describe('Tree:props:events', () => {
 
       const onLoad = (context) => {
         expect(context.node.value).toBe('t1');
-        done();
+        resolve();
       };
 
       const loadData = (node) => new Promise((resolve) => {
