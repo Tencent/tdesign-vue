@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column" style="max-width: 500px">
+  <t-space direction="vertical" class="adornment-select" style="max-width: 500px">
     <t-input-adornment :prepend="protocolSelect">
       <t-input placeholder="请输入内容" />
     </t-input-adornment>
@@ -14,7 +14,7 @@
         defaultValue="tencent"
       />
     </t-input-adornment>
-  </div>
+  </t-space>
 </template>
 
 <script lang="jsx">
@@ -23,7 +23,7 @@ export default {
     return {
       protocolSelect: () => (
         <t-select
-          bordered={false}
+          borderless={true}
           autoWidth
           options={['http://', 'https://'].map((value) => ({ label: value, value }))}
           defaultValue="http://"
@@ -31,7 +31,7 @@ export default {
       ),
       tldSelect: () => (
         <t-select
-          bordered={false}
+          borderless={true}
           autoWidth
           options={['.com', '.cn', '.net', '.org'].map((value) => ({ label: value, value }))}
           defaultValue=".cn"
@@ -41,3 +41,26 @@ export default {
   },
 };
 </script>
+
+<style lang="less">
+.adornment-select {
+  .t-input-adornment {
+    .t-input-adornment__prepend,
+    .t-input-adornment__append {
+      transition: background-color 0.3s;
+      &:hover {
+        background-color: var(--td-bg-color-secondarycontainer-hover);
+      }
+      .t-select__wrap {
+        .t-select {
+          .t-input:hover:not(.t-is-disabled) {
+            .t-fake-arrow {
+              color: var(--td-text-color-placeholder);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</style>

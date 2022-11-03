@@ -37,6 +37,7 @@ export default defineComponent({
     onChange: Function,
     resetTriggerScroll: Function,
     disableTime: Function,
+    isShowPanel: Boolean,
   },
   setup(props, ctx) {
     const {
@@ -145,6 +146,7 @@ export default defineComponent({
         else count = 59;
 
         const colList = range(0, count + 1, Number(colStep)).map((v) => padStart(String(v), 2, '0')) || [];
+
         return props.hideDisabledTime && !!props.disableTime
           ? colList.filter((t) => {
             const params: [number, number, number] = [
@@ -179,8 +181,9 @@ export default defineComponent({
     const handleScroll = (col: EPickerCols) => {
       let val: number | string;
       let formattedVal: string;
+      if (!props.isShowPanel) return;
 
-      const scrollTop = (ctx.refs as any)[`${col}Col`]?.scrollTop;
+      const scrollTop = (ctx.refs as any)[`${col}Col`]?.scrollTop + panelOffset.top;
 
       const { offsetHeight, margin } = getItemHeight();
       const timeItemTotalHeight = offsetHeight + margin;
@@ -265,10 +268,6 @@ export default defineComponent({
           el = Number(el) + 12;
         }
         scrollToTime(col, el, idx, 'smooth');
-
-        setTimeout(() => {
-          props.onChange(dayjsValue.value[col]?.(el).format(format.value));
-        }, 100);
       } else {
         const currentHour = dayjsValue.value.hour();
         if (el === AM && currentHour >= 12) {
@@ -347,10 +346,6 @@ export default defineComponent({
             ref={`${col}Col`}
             class={`${this.panelClassName}-body-scroll`}
             onScroll={debounce(() => this.handleScroll(col), 50)}
-            style={{
-              '--timePickerPanelOffsetTop': panelOffset.top,
-              '--timePickerPanelOffsetBottom': panelOffset.bottom,
-            }}
           >
             {this.getColList(col).map((el) => (
               <li
@@ -366,7 +361,7 @@ export default defineComponent({
               >
                 {/* eslint-disable-next-line no-nested-ternary */}
                 {timeArr.includes(col)
-                  ? TWELVE_HOUR_FORMAT.test(this.format) && el === '00'
+                  ? TWELVE_HOUR_FORMAT.test(this.format) && col === EPickerCols.hour && el === '00'
                     ? '12'
                     : el
                   : this.global[el === AM ? 'anteMeridiem' : 'postMeridiem']}

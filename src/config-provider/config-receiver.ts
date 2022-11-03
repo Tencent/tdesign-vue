@@ -128,10 +128,10 @@ export function getKeepAnimationMixins<BasicComponent extends Vue>() {
     },
     computed: {
       keepAnimation() {
-        let animationConfig: Record<'include' | 'exclude', Array<AnimationType>> = {
-          include: ['ripple', 'expand', 'fade'],
-          exclude: [],
-        };
+        let animationConfig = mergeWith({}, defaultGlobalConfig.animation) as Record<
+          'include' | 'exclude',
+          Array<AnimationType>
+        >;
         if (this.globalConfig && this.globalConfig.animation) {
           // deal with https://github.com/lodash/lodash/issues/1313
           animationConfig = mergeWith(animationConfig, this.globalConfig.animation, (objValue, srcValue) => {

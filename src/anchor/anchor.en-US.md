@@ -1,7 +1,6 @@
 :: BASE_DOC ::
 
 ## API
-
 ### Anchor Props
 
 name | type | default | description | required
@@ -12,8 +11,8 @@ container | String / Function | () => (() => window) | Typescript：`ScrollConta
 cursor | Slot / Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 size | String | medium | options：small/medium/large。Typescript：`SizeEnum`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 targetOffset | Number | 0 | \- | N
-onChange | Function |  | TS 类型：`(currentLink: string, prevLink: string) => void`<br/> | N
-onClick | Function |  | TS 类型：`(link: { href: string; title: string; e: MouseEvent }) => void`<br/> | N
+onChange | Function |  | Typescript：`(currentLink: string, prevLink: string) => void`<br/> | N
+onClick | Function |  | Typescript：`(link: { href: string; title: string; e: MouseEvent }) => void`<br/> | N
 
 ### Anchor Events
 
@@ -28,7 +27,7 @@ name | type | default | description | required
 -- | -- | -- | -- | --
 href | String | - | required | Y
 target | String | _self | options：_self/_blank/_parent/_top | N
-title | String / Slot / Function | '' | Typescript：`string | TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+title | String / Slot / Function | '' | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 
 ### AnchorTarget Props
 

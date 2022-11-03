@@ -14,3 +14,5 @@ export function useGlobalIcon(tdIcon: Record<string, any>) {
 
   return resultIcon;
 }
+
+export default useGlobalIcon;

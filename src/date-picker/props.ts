@@ -28,7 +28,7 @@ export default {
       return [1, 2, 3, 4, 5, 6, 7].includes(val);
     },
   },
-  /** 用于格式化日期，全局配置默认为：'YYYY-MM-DD'，[详细文档](https://day.js.org/docs/en/display/format) */
+  /** 仅用于格式化日期显示的格式，不影响日期值。注意和 `valueType` 的区别，`valueType`会直接决定日期值 `value` 的格式。全局配置默认为：'YYYY-MM-DD'，[详细文档](https://day.js.org/docs/en/display/format) */
   format: {
     type: String,
     default: undefined,
@@ -102,10 +102,23 @@ export default {
     type: [String, Number, Array, Date] as PropType<TdDatePickerProps['defaultValue']>,
     default: '',
   },
-  /** 用于格式化日期，默认为：'YYYY-MM-DD'，可选值：'date/time-stamp/YYY-MM-DD' 等，[更多可选值见 Dayjs 详细文档](https://day.js.org/docs/en/display/format)。<br /> 其中 `valueType=date` 表示 `value` 数据类型为 `Date`；`valueType='time-stamp'` 表示 `value` 数据类型为时间戳 */
+  /** 用于格式化日期的值，仅支持部分格式，时间戳、日期等。⚠️ `YYYYMMDD` 这种格式不支持，请勿使用，如果希望支持可以给 `dayjs` 提个 PR。注意和 `format` 的区别，`format` 仅用于处理日期在页面中呈现的格式 */
   valueType: {
-    type: String,
-    default: '',
+    type: String as PropType<TdDatePickerProps['valueType']>,
+    validator(val: TdDatePickerProps['valueType']): boolean {
+      if (!val) return true;
+      return [
+        'time-stamp',
+        'Date',
+        'YYYY',
+        'YYYY-MM',
+        'YYYY-MM-DD',
+        'YYYY-MM-DD HH',
+        'YYYY-MM-DD HH:mm',
+        'YYYY-MM-DD HH:mm:ss',
+        'YYYY-MM-DD HH:mm:ss:SSS',
+      ].includes(val);
+    },
   },
   /** 当输入框失去焦点时触发 */
   onBlur: Function as PropType<TdDatePickerProps['onBlur']>,

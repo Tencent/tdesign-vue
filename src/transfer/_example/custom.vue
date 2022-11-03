@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <t-space direction="vertical">
     <p style="margin: 10px">自定义头部、底部及操作按钮的渲染</p>
     <t-transfer :data="list">
       <template v-slot:title="props" :name="123">
@@ -25,7 +25,7 @@
       :transfer-item="transferItem"
     >
     </t-transfer>
-  </div>
+  </t-space>
 </template>
 <script lang="jsx">
 const list = [];

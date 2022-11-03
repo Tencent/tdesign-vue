@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo-block-column" style="width: 80%">
+  <t-space direction="vertical">
     <t-tag-input
       v-model="tags1"
       clearable
@@ -10,7 +10,6 @@
       @change="onChange"
       @drag-sort="onDragSort"
     />
-
     <t-tag-input
       v-model="tags2"
       drag-sort
@@ -21,7 +20,7 @@
       @change="onChange2"
       @drag-sort="onDragSort2"
     />
-  </div>
+  </t-space>
 </template>
 
 <script>

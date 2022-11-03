@@ -16,7 +16,7 @@ import isString from 'lodash/isString';
 import pick from 'lodash/pick';
 import get from 'lodash/get';
 import { CreateElement } from 'vue';
-import { formatRowAttributes, formatRowClassNames } from './utils';
+import { formatClassNames, formatRowAttributes, formatRowClassNames } from './utils';
 import { getRowFixedStyles, getColumnFixedStyles } from './hooks/useFixed';
 import { RowAndColFixedPosition } from './interface';
 import useClassName from './hooks/useClassName';
@@ -67,7 +67,9 @@ export type TrPropsKeys = typeof TABLE_PROPS[number];
 export interface TrProps extends TrCommonProps {
   row: TableRowData;
   rowIndex: number;
-  dataLength: number;
+  ellipsisOverlayClassName?: string;
+  classPrefix?: string;
+  dataLength?: number;
   rowAndColFixedPosition?: RowAndColFixedPosition;
   skipSpansMap?: Map<string, SkipSpansValue>;
   tableElm?: HTMLDivElement;
@@ -77,7 +79,7 @@ export interface TrProps extends TrCommonProps {
   trs?: Map<number, object>;
   bufferSize?: number;
   tableContentElm?: HTMLDivElement;
-  cellEmptyContent: TdBaseTableProps['cellEmptyContent'];
+  cellEmptyContent?: TdBaseTableProps['cellEmptyContent'];
 }
 
 export const ROW_LISTENERS = ['click', 'dblclick', 'mouseover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];
@@ -89,7 +91,11 @@ export function renderCell(
     cellEmptyContent?: TdBaseTableProps['cellEmptyContent'];
   },
 ) {
-  const { col, row } = params;
+  const { col, row, rowIndex } = params;
+  // support serial number column
+  if (col.colKey === 'serial-number') {
+    return rowIndex + 1;
+  }
   if (isFunction(col.cell)) {
     return col.cell(h, params);
   }
@@ -120,6 +126,8 @@ export default defineComponent({
   props: {
     row: Object as PropType<TableRowData>,
     rowIndex: Number,
+    ellipsisOverlayClassName: String,
+    classPrefix: String,
     dataLength: Number,
     rowAndColFixedPosition: Map as PropType<RowAndColFixedPosition>,
     // 合并单元格，是否跳过渲染
@@ -232,16 +240,23 @@ export default defineComponent({
       params: RenderEllipsisCellParams,
     ) {
       const { cellNode } = params;
-      const { col, colIndex } = cellParams;
-      // 前两列左对齐显示
-      const placement = colIndex < 2 ? 'top-left' : 'top-right';
-      const content = isFunction(col.ellipsis) ? col.ellipsis(h, cellParams) : undefined;
+      const { col } = cellParams;
+      let content = isFunction(col.ellipsis) ? col.ellipsis(h, cellParams) : undefined;
+      if (typeof col.ellipsis === 'object' && isFunction(col.ellipsis.content)) {
+        content = col.ellipsis.content(h, cellParams);
+      }
+      let tooltipProps = {};
+      if (typeof col.ellipsis === 'object') {
+        tooltipProps = 'props' in col.ellipsis ? col.ellipsis.props : col.ellipsis || undefined;
+      }
       return (
         <TEllipsis
-          placement={placement}
+          placement={'top'}
           attach={this.tableElm ? () => this.tableElm : undefined}
           tooltipContent={content && (() => content)}
-          tooltipProps={typeof col.ellipsis === 'object' ? col.ellipsis : undefined}
+          tooltipProps={tooltipProps}
+          overlayClassName={this.ellipsisOverlayClassName}
+          classPrefix={this.classPrefix}
         >
           {cellNode}
         </TEllipsis>
@@ -253,7 +268,7 @@ export default defineComponent({
       const { cellSpans, dataLength, rowAndColFixedPosition } = extra;
       const cellNode = renderCell(params, this.tSlots, { cellEmptyContent: extra.cellEmptyContent });
       const tdStyles = getColumnFixedStyles(col, colIndex, rowAndColFixedPosition, this.tableColFixedClasses);
-      const customClasses = isFunction(col.className) ? col.className({ ...params, type: 'td' }) : col.className;
+      const customClasses = formatClassNames(col.className, { ...params, type: 'td' });
       const classes = [
         tdStyles.classes,
         customClasses,
@@ -272,8 +287,10 @@ export default defineComponent({
         // Vue3 ignore this line
         this.$emit('cell-click', p);
       };
+      const normalAttrs = isFunction(col.attrs) ? col.attrs({ ...params, type: 'td' }) : col.attrs;
+      const attrs: { [key: string]: any } = { ...normalAttrs, ...cellSpans };
       return (
-        <td class={classes} style={tdStyles.style} attrs={{ ...col.attrs, ...cellSpans }} onClick={onClick}>
+        <td class={classes} attrs={attrs} style={{ ...tdStyles.style, ...attrs.style }} onClick={onClick}>
           {col.ellipsis ? this.renderEllipsisCell(h, params, { cellNode }) : cellNode}
         </td>
       );

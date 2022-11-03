@@ -1,7 +1,12 @@
 <template>
-  <div class="tdesign-demo-block-column" style="max-width: 500px">
-    <t-input v-model="input" :status="inputStatus" :format="format" placeholder="请输入数字" :tips="tips" />
-  </div>
+  <t-input
+    v-model="input"
+    :status="inputStatus"
+    :format="format"
+    placeholder="请输入数字"
+    :tips="tips"
+    style="max-width: 500px"
+  />
 </template>
 <script>
 export default {

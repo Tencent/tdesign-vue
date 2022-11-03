@@ -1,29 +1,26 @@
 <template>
-  <div>
-    <!-- :popup-props="{ trigger: 'hover' }" -->
-    <t-select-input
-      :value="selectValue"
-      :popup-visible="popupVisible"
-      style="width: 300px"
-      placeholder="Please Select"
-      clearable
-      allow-input
-      @popup-visible-change="onPopupVisibleChange"
-      @clear="onClear"
-      @input-change="onInputChange"
-    >
-      <template #panel>
-        <ul class="tdesign-demo__select-input-ul-single">
-          <li v-for="item in options" :key="item.value" @click="() => onOptionClick(item)">
-            {{ item.label }}
-          </li>
-        </ul>
-      </template>
-      <template #suffixIcon>
-        <chevron-down-icon />
-      </template>
-    </t-select-input>
-  </div>
+  <t-select-input
+    :value="selectValue"
+    :popup-visible="popupVisible"
+    style="width: 300px"
+    placeholder="Please Select"
+    clearable
+    allow-input
+    @popup-visible-change="onPopupVisibleChange"
+    @clear="onClear"
+    @input-change="onInputChange"
+  >
+    <template #panel>
+      <ul class="tdesign-demo__select-input-ul-single">
+        <li v-for="item in options" :key="item.value" @click="() => onOptionClick(item)">
+          {{ item.label }}
+        </li>
+      </ul>
+    </template>
+    <template #suffixIcon>
+      <chevron-down-icon />
+    </template>
+  </t-select-input>
 </template>
 <script>
 import { ChevronDownIcon } from 'tdesign-icons-vue';
@@ -72,7 +69,6 @@ export default {
 .tdesign-demo__select-input-ul-single > li {
   display: block;
   border-radius: 3px;
-  height: 40px;
   line-height: 22px;
   cursor: pointer;
   padding: 9px 8px;

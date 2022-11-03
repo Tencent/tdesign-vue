@@ -1,58 +1,78 @@
-import { VNode } from 'vue';
-import Popup from '../popup';
+import { defineComponent, ref } from '@vue/composition-api';
+import omit from 'lodash/omit';
+import Popup, { PopupVisibleChangeContext } from '../popup/index';
 import DropdownMenu from './dropdown-menu';
-import { emitEvent } from '../utils/event';
-import { DropdownOption } from './type';
+import { DropdownOption, TdDropdownProps } from './type';
 import props from './props';
-import { getClassPrefixMixins } from '../config-provider/config-receiver';
-import mixins from '../utils/mixins';
+import { usePrefixClass } from '../hooks/useConfig';
+import { useTNodeJSX } from '../hooks/tnode';
+import useDropdownOptions from './hooks/useDropdownOptions';
 
-const classPrefixMixins = getClassPrefixMixins('dropdown');
-
-export default mixins(classPrefixMixins).extend({
+export default defineComponent({
   name: 'TDropdown',
-  props: {
-    ...props,
-  },
-  provide() {
-    return {
-      dropdown: this,
-    };
-  },
-  methods: {
-    handleMenuClick(data: DropdownOption, context: { e: MouseEvent }) {
-      if (this.hideAfterItemClick) {
-        const { popupElem }: any = this.$refs;
-        popupElem.handleClose();
+  props: { ...props },
+  setup(props: TdDropdownProps, { emit }) {
+    const dropdownClass = usePrefixClass('dropdown');
+    const isPopupVisible = ref(false);
+
+    const handleMenuClick = (data: DropdownOption, context: { e: MouseEvent }) => {
+      if (props.hideAfterItemClick) {
+        isPopupVisible.value = false;
+        props.popupProps?.onVisibleChange?.(false, context);
       }
-      emitEvent(this, 'click', data, context);
-    },
+      props?.onClick?.(data, context);
+      emit('click', data, context);
+    };
+
+    const handleVisibleChange = (visible: boolean, context: PopupVisibleChangeContext) => {
+      isPopupVisible.value = visible;
+      props.popupProps?.onVisibleChange?.(visible, context);
+    };
+
+    return {
+      dropdownClass,
+      handleMenuClick,
+      isPopupVisible,
+      handleVisibleChange,
+    };
   },
   render() {
-    const trigger: VNode[] | VNode | string = this.$scopedSlots.default ? this.$scopedSlots.default(null) : '';
-    const contentSlot: VNode[] | VNode | string = this.$scopedSlots.dropdown ? this.$scopedSlots.dropdown(null) : '';
-
-    const popupProps = {
-      props: {
-        ...this.$attrs,
-        ...this.popupProps,
-        disabled: this.disabled,
-        placement: this.placement,
-        trigger: this.trigger,
-        overlayClassName:
-          this.popupProps && this.popupProps.overlayClassName
-            ? [this.componentName, this.popupProps.overlayClassName]
-            : this.componentName,
-      },
-      ...this.popupProps,
-      ref: 'popup',
+    const popupParams = {
+      disabled: this.disabled,
+      placement: this.placement,
+      trigger: this.trigger,
+      ...omit(this.popupProps, 'onVisibleChange'),
+      overlayInnerClassName: [
+        this.dropdownClass,
+        (this.popupProps as TdDropdownProps['popupProps'])?.overlayInnerClassName,
+      ],
     };
+    const renderTNodeJSX = useTNodeJSX();
+    const options = useDropdownOptions(this.$props, this.$slots);
+    const trigger = renderTNodeJSX('default')?.[0];
 
     return (
-      <Popup {...popupProps} ref="popupElem" expandAnimation={true}>
-        <template slot="content" role="dropdown">
-          {contentSlot || <DropdownMenu />}
-        </template>
+      <Popup
+        {...{
+          props: {
+            destroyOnClose: true,
+            visible: this.isPopupVisible,
+            onVisibleChange: this.handleVisibleChange,
+            expandAnimation: true,
+            ...popupParams,
+          },
+        }}
+      >
+        <DropdownMenu
+          slot="content"
+          {...{
+            props: {
+              ...this.$props,
+              options: options.value,
+              onClick: this.handleMenuClick,
+            },
+          }}
+        />
         {trigger}
       </Popup>
     );

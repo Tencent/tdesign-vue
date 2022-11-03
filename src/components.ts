@@ -47,6 +47,8 @@ export * from './badge';
 export * from './calendar';
 export * from './card';
 export * from './comment';
+export * from './image';
+export * from './image-viewer';
 export * from './list';
 export * from './loading';
 export * from './progress';
@@ -58,6 +60,7 @@ export * from './tooltip';
 export * from './tree';
 export * from './watermark';
 export * from './collapse';
+export * from './rate';
 
 // 消息提醒
 

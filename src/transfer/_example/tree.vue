@@ -1,17 +1,15 @@
 <template>
-  <div>
-    <t-transfer
-      :data="items"
-      v-model="targetValue"
-      :checked.sync="checked"
-      @change="onChange"
-      @checked-change="handleCheckedChange"
-    >
-      <template v-slot:tree="slotProps">
-        <t-tree v-bind="slotProps" checkable hover expand-all transition />
-      </template>
-    </t-transfer>
-  </div>
+  <t-transfer
+    :data="items"
+    v-model="targetValue"
+    :checked.sync="checked"
+    @change="onChange"
+    @checked-change="handleCheckedChange"
+  >
+    <template v-slot:tree="slotProps">
+      <t-tree v-bind="slotProps" checkable hover expand-all transition />
+    </template>
+  </t-transfer>
 </template>
 <script>
 export default {

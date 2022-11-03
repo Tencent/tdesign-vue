@@ -1,63 +1,71 @@
 <template>
-  <div class="tdesign-tree-demo">
-    <h3 class="title">Render:</h3>
-    <t-tree :data="items" hover expand-all :label="getLabel" :operations="renderOperations" />
-    <h3 class="title">Scope Slot:</h3>
-    <div class="operations">
+  <t-space :size="20" direction="vertical">
+    <t-space :size="10" direction="vertical" style="width: 100%">
+      <h3>Render:</h3>
+      <t-tree :data="items" hover expand-all :label="getLabel" :operations="renderOperations" />
+    </t-space>
+    <!-- <div> -->
+    <t-space :size="10" direction="vertical" style="width: 100%">
+      <h3>Scope Slot:</h3>
       <t-form labelWidth="200">
-        <t-form-item label="插入节点使用高亮节点">
+        <t-form-item label="插入节点使用高亮节点" style="margin-bottom: 5px">
           <t-switch v-model="useActived" />
         </t-form-item>
         <t-form-item label="子节点展开触发父节点展开">
           <t-switch v-model="expandParent" />
         </t-form-item>
       </t-form>
-    </div>
-    <div class="operations">
+      <!-- <div> -->
       <t-input-adornment prepend="filter:">
         <t-input v-model="filterText" @change="onInputChange" />
       </t-input-adornment>
-    </div>
-    <t-tree
-      :data="items"
-      hover
-      expand-all
-      activable
-      checkable
-      :expand-on-click-node="false"
-      :label="getLabel"
-      :expand-parent="expandParent"
-      :filter="filterByText"
-      @expand="onExpand"
-      @change="onChange"
-      @active="onActive"
-      line
-      ref="tree"
-    >
-      <template #operations="{ node }">
-        <t-button size="small" variant="base" @click="append(node)">添加子节点</t-button>
-        <t-button size="small" variant="outline" @click="insertBefore(node)">前插节点</t-button>
-        <t-button size="small" variant="outline" @click="insertAfter(node)">后插节点</t-button>
-        <t-button size="small" variant="base" theme="danger" @click="remove(node)">删除</t-button>
-      </template>
-    </t-tree>
-    <h3 class="title">API:</h3>
-    <div class="operations">
-      <t-button theme="primary" @click="getItem">获取 value 为 'node1' 的单个节点</t-button>
-      <t-button theme="primary" @click="getAllItems">获取所有节点</t-button>
-      <t-button theme="primary" @click="getActiveChildren">获取高亮节点的所有子节点</t-button>
-      <t-button theme="primary" @click="getAllActived">获取所有高亮节点</t-button>
-      <t-button theme="primary" @click="getActiveChecked">获取高亮节点下的选中节点</t-button>
-      <t-button theme="primary" @click="append()">插入一个根节点</t-button>
-      <t-button theme="primary" @click="getActiveParent">获取高亮节点的父节点</t-button>
-      <t-button theme="primary" @click="getActiveParents">获取高亮节点的所有父节点</t-button>
-      <t-button theme="primary" @click="getActiveIndex">获取高亮节点在子节点中的位置</t-button>
-      <t-button theme="primary" @click="setActiveChecked">选中高亮节点</t-button>
-      <t-button theme="primary" @click="setActiveExpanded">展开高亮节点</t-button>
-      <t-button theme="primary" @click="getActivePlainData">获取高亮节点与其子节点的数据</t-button>
-    </div>
-    <p class="tips">* 相关信息通过控制台输出</p>
-  </div>
+      <!-- </div> -->
+      <t-tree
+        :data="items"
+        hover
+        expand-all
+        activable
+        checkable
+        :expand-on-click-node="false"
+        :label="getLabel"
+        :expand-parent="expandParent"
+        :filter="filterByText"
+        @expand="onExpand"
+        @change="onChange"
+        @active="onActive"
+        line
+        ref="tree"
+      >
+        <template #operations="{ node }">
+          <t-space :size="10">
+            <t-button size="small" variant="base" @click="append(node)">添加子节点</t-button>
+            <t-button size="small" variant="outline" @click="insertBefore(node)">前插节点</t-button>
+            <t-button size="small" variant="outline" @click="insertAfter(node)">后插节点</t-button>
+            <t-button size="small" variant="base" theme="danger" @click="remove(node)">删除</t-button>
+          </t-space>
+        </template>
+      </t-tree>
+    </t-space>
+    <!-- </div> -->
+    <t-space :size="10" direction="vertical">
+      <h3>API:</h3>
+      <t-space :size="10" breakLine>
+        <t-button theme="primary" @click="getItem">获取 value 为 'node1' 的单个节点</t-button>
+        <t-button theme="primary" @click="getAllItems">获取所有节点</t-button>
+        <t-button theme="primary" @click="getActiveChildren">获取高亮节点的所有子节点</t-button>
+        <t-button theme="primary" @click="getAllActived">获取所有高亮节点</t-button>
+        <t-button theme="primary" @click="getActiveChecked">获取高亮节点下的选中节点</t-button>
+        <t-button theme="primary" @click="append()">插入一个根节点</t-button>
+        <t-button theme="primary" @click="getActiveParent">获取高亮节点的父节点</t-button>
+        <t-button theme="primary" @click="getActiveParents">获取高亮节点的所有父节点</t-button>
+        <t-button theme="primary" @click="getActiveIndex">获取高亮节点在子节点中的位置</t-button>
+        <t-button theme="primary" @click="setActiveChecked">选中高亮节点</t-button>
+        <t-button theme="primary" @click="setActiveExpanded">展开高亮节点</t-button>
+        <t-button theme="primary" @click="getActivePlainData">获取高亮节点与其子节点的数据</t-button>
+      </t-space>
+      <p class="tips">* 相关信息通过控制台输出</p>
+    </t-space>
+  </t-space>
 </template>
 
 <script>
@@ -313,6 +321,15 @@ export default {
 };
 </script>
 <style scoped>
+.tips {
+  font-size: 10px;
+  color: gray;
+}
+/* .t-space{
+  width: 100%;
+} */
+</style>
+<!-- <style scoped>
 .tdesign-tree-demo .t-tree {
   margin-bottom: 20px;
 }
@@ -335,4 +352,4 @@ export default {
   font-size: 10px;
   color: gray;
 }
-</style>
+</style> -->

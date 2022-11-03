@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-demo__select-input-width">
+  <t-space direction="vertical" class="tdesign-demo__select-input-width">
     <div>
       <span>下拉框默认宽度：</span>
       <t-select-input :value="selectValue" placeholder="Please Select" class="t-demo-normal">
@@ -8,8 +8,6 @@
         </template>
       </t-select-input>
     </div>
-    <br />
-
     <div>
       <span>下拉框最大宽度：</span>
       <t-select-input :value="selectValue" placeholder="Please Select" class="t-demo-normal">
@@ -20,14 +18,12 @@
         </template>
       </t-select-input>
     </div>
-    <br />
-
     <div>
       <span>与内容宽度一致：</span>
       <t-select-input
         :value="selectValue"
         :popup-props="{
-          overlayStyle: { width: 'auto' },
+          overlayInnerStyle: { width: 'auto' },
         }"
         placeholder="Please Select"
         class="t-demo-normal"
@@ -37,14 +33,12 @@
         </template>
       </t-select-input>
     </div>
-    <br />
-
     <div>
       <span>下拉框固定宽度：</span>
       <t-select-input
         :value="selectValue"
         :popup-props="{
-          overlayStyle: { width: '360px' },
+          overlayInnerStyle: { width: '360px' },
         }"
         placeholder="Please Select"
         class="t-demo-normal"
@@ -54,8 +48,7 @@
         </template>
       </t-select-input>
     </div>
-    <br />
-  </div>
+  </t-space>
 </template>
 <script>
 export default {

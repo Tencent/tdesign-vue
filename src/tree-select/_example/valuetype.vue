@@ -1,8 +1,15 @@
 <template>
-  <div class="tdesign-tree-select-base">
-    <t-tree-select :data="options" v-model="value" clearable valueType="object" placeholder="请选择" />
+  <t-space direction="vertical">
     <t-tree-select
-      class="tree-select-multiple"
+      style="width: 300px"
+      :data="options"
+      v-model="value"
+      clearable
+      valueType="object"
+      placeholder="请选择"
+    />
+    <t-tree-select
+      style="width: 300px"
       :data="options"
       v-model="mulValue"
       clearable
@@ -10,7 +17,7 @@
       valueType="object"
       placeholder="请选择"
     />
-  </div>
+  </t-space>
 </template>
 <script>
 export default {
@@ -55,12 +62,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.tdesign-tree-select-base {
-  width: 300px;
-  margin: 0 20px;
-}
-.tree-select-multiple {
-  margin-top: 20px;
-}
-</style>

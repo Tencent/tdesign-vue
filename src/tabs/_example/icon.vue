@@ -1,11 +1,11 @@
 <template>
-  <div class="tdesign-demo-block-column-large">
-    <div>
+  <t-space direction="vertical" size="32px">
+    <t-space>
       <t-radio-group variant="default-filled" v-model="theme">
         <t-radio-button value="normal">常规型</t-radio-button>
         <t-radio-button value="card">卡片型</t-radio-button>
       </t-radio-group>
-    </div>
+    </t-space>
     <t-tabs :value="value" :theme="theme" @change="(newValue) => (value = newValue)">
       <t-tab-panel value="first">
         <template #label> <icon name="home" style="margin-right: 4px" /> 首页 </template>
@@ -20,7 +20,7 @@
         <p style="padding: 25px">事项的内容</p>
       </t-tab-panel>
     </t-tabs>
-  </div>
+  </t-space>
 </template>
 
 <script>

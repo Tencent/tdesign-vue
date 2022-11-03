@@ -1,22 +1,15 @@
 <template>
   <t-space size="large">
+    <t-avatar :icon="icon"></t-avatar>
     <t-avatar :image="image" :hideOnLoadFailed="false"></t-avatar>
     <t-avatar>W</t-avatar>
-    <t-avatar :icon="icon"></t-avatar>
-    <t-avatar>
-      <template #icon>
-        <user-icon />
-      </template>
-    </t-avatar>
   </t-space>
 </template>
 <script lang="jsx">
 import { UserIcon } from 'tdesign-icons-vue';
 
 export default {
-  components: {
-    UserIcon,
-  },
+  components: {},
   data() {
     return {
       image: 'https://tdesign.gtimg.com/site/avatar.jpg',

@@ -1,6 +1,6 @@
 <template>
   <div class="tdesign-demo-dropdown">
-    <t-dropdown :options="options" :minColumnWidth="112">
+    <t-dropdown :options="options">
       <t-button variant="text">
         <span class="tdesign-demo-dropdown__text">
           下拉菜单
@@ -48,6 +48,7 @@ export default Vue.extend({
 .tdesign-demo-dropdown {
   &__text {
     display: inline-flex;
+    align-items: center;
     .t-icon {
       margin-left: 8px;
     }

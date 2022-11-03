@@ -1,11 +1,9 @@
 <template>
-  <div class="tdesign-demo-block-column-large">
-    <div>
-      <t-radio-group v-model="type" variant="default-filled">
-        <t-radio-button value="default">默认</t-radio-button>
-        <t-radio-button value="function">自定义方法</t-radio-button>
-      </t-radio-group>
-    </div>
+  <t-space direction="vertical">
+    <t-radio-group v-model="type" variant="default-filled">
+      <t-radio-button value="default">默认</t-radio-button>
+      <t-radio-button value="function">自定义方法</t-radio-button>
+    </t-radio-group>
 
     <t-tree-select
       v-if="type === 'default'"
@@ -26,7 +24,7 @@
       placeholder="请选择"
       style="width: 300px"
     />
-  </div>
+  </t-space>
 </template>
 <script>
 export default {

@@ -81,7 +81,7 @@ export default defineComponent({
     const formDisabled = ref(undefined);
     const isDisabled = computed(() => formDisabled.value || disabled.value || selectProvider.isReachMaxLimit.value);
     const isSelected = computed(() => multiple.value
-      ? (selectProvider.selectValue.value as SelectValue[]).includes(props.value)
+      ? (selectProvider.selectValue.value as SelectValue[])?.includes(props.value)
       : selectProvider.selectValue.value === props.value);
     const mouseEvent = (v: boolean) => {
       isHover.value = v;
@@ -107,17 +107,21 @@ export default defineComponent({
         selectProvider.handleCreate?.(value.value);
         if (selectProvider.multiple.value) {
           const newValue = getNewMultipleValue(selectProvider.selectValue.value as SelectValue[], value.value);
-          selectProvider.handleValueChange(newValue.value, { e, trigger: 'check' });
+          selectProvider.handleValueChange(newValue.value, { e, trigger: 'check' }, value.value);
           return;
         }
       }
-      selectProvider.handleValueChange(value.value, { e, trigger: 'check' });
+      selectProvider.handleValueChange(value.value, { e, trigger: 'check' }, value.value);
       selectProvider.handlePopupVisibleChange(false, { e });
     };
 
     const handleCheckboxClick = (val: boolean, context: { e: MouseEvent | KeyboardEvent }) => {
       const newValue = getNewMultipleValue(selectProvider.selectValue.value as SelectValue[], value.value);
-      selectProvider.handleValueChange(newValue.value, { e: context.e, trigger: val ? 'check' : 'uncheck' });
+      selectProvider.handleValueChange(
+        newValue.value,
+        { e: context.e, trigger: val ? 'check' : 'uncheck' },
+        value.value,
+      );
       if (!selectProvider.reserveKeyword.value) {
         selectProvider.handlerInputChange('');
       }

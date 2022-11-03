@@ -1,13 +1,13 @@
 <template>
-  <div class="tdesign-demo-block-column-large">
-    <div>
+  <t-space direction="vertical">
+    <t-space size="small" align="center">
       <label>日历的第一列为：</label>
       <t-select v-model="firstDayOfWeek" class="demo-select-base">
         <t-option v-for="item in options" :key="item.value" :value="item.value" :label="item.label" />
       </t-select>
-    </div>
+    </t-space>
     <t-calendar :firstDayOfWeek="firstDayOfWeek"></t-calendar>
-  </div>
+  </t-space>
 </template>
 
 <script>

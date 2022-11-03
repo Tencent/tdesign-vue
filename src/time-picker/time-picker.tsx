@@ -88,6 +88,11 @@ export default defineComponent({
       ctx.emit('focus', context);
     };
 
+    const handleOnPick = (v: string) => {
+      props.onPick?.(v);
+      ctx.emit('pick', v);
+    };
+
     watch(
       () => isShowPanel.value,
       () => {
@@ -103,6 +108,7 @@ export default defineComponent({
       handleClear,
       handleShowPopup,
       handleOnFocus,
+      handleOnPick,
       inputClasses,
       componentName,
       innerValue,
@@ -114,7 +120,6 @@ export default defineComponent({
   },
   render() {
     const { TimeIcon } = this;
-
     return (
       <div class={this.componentName}>
         <TSelectInput
@@ -145,6 +150,7 @@ export default defineComponent({
                       isShowPanel: this.isShowPanel,
                       disableTime: this.disableTime,
                       onChange: this.handlePanelChange,
+                      onPick: this.handleOnPick,
                       hideDisabledTime: this.hideDisabledTime,
                       handleConfirmClick: this.handleClickConfirm,
                       presets: this.presets,
@@ -153,7 +159,7 @@ export default defineComponent({
                 />
               ),
               popupProps: {
-                overlayInnerStyle: { width: 'auto' },
+                overlayInnerStyle: { width: 'auto', padding: 0 },
                 onVisibleChange: this.handleShowPopup,
                 ...(this.popupProps as object),
               },

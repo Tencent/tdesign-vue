@@ -1,13 +1,8 @@
 <template>
-  <div class="demo-slider">
-    <div class="block">
-      <t-slider v-model="value1" :show-tooltip="true" :marks="marks1" />
-    </div>
-
-    <div class="block">
-      <t-slider v-model="value2" range :show-tooltip="true" :marks="marks2" />
-    </div>
-  </div>
+  <t-space direction="vertical" size="60px">
+    <t-slider v-model="value1" :show-tooltip="true" :marks="marks1" />
+    <t-slider v-model="value2" range :show-tooltip="true" :marks="marks2" />
+  </t-space>
 </template>
 <script lang="jsx">
 export default {

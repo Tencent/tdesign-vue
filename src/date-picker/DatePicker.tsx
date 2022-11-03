@@ -14,6 +14,7 @@ import props from './props';
 
 import TSelectInput from '../select-input';
 import TSinglePanel from './panel/SinglePanel';
+import useFormDisabled from '../hooks/useFormDisabled';
 
 export default defineComponent({
   name: 'TDatePicker',
@@ -44,18 +45,24 @@ export default defineComponent({
       enableTimePicker: props.enableTimePicker,
     }));
 
+    const { formDisabled } = useFormDisabled();
+    const isDisabled = computed(() => formDisabled.value || props.disabled);
+
     watch(popupVisible, (visible) => {
+      cacheValue.value = formatDate(value.value, {
+        format: formatRef.value.format,
+      });
+      inputValue.value = formatDate(value.value, {
+        format: formatRef.value.format,
+      });
+
       // 面板展开重置数据
       if (visible) {
-        year.value = parseToDayjs(value.value || new Date(), formatRef.value.format).year();
-        month.value = parseToDayjs(value.value || new Date(), formatRef.value.format).month();
-        time.value = formatTime(value.value || new Date(), formatRef.value.timeFormat);
-        if (value.value) {
-          cacheValue.value = formatDate(value.value, {
-            format: formatRef.value.format,
-            targetFormat: formatRef.value.format,
-          });
-        }
+        year.value = parseToDayjs(value.value, formatRef.value.format).year();
+        month.value = parseToDayjs(value.value, formatRef.value.format).month();
+        time.value = formatTime(value.value, formatRef.value.timeFormat);
+      } else {
+        isHoverCell.value = false;
       }
     });
 
@@ -64,7 +71,6 @@ export default defineComponent({
       isHoverCell.value = true;
       inputValue.value = formatDate(date, {
         format: formatRef.value.format,
-        targetFormat: formatRef.value.format,
       });
     }
 
@@ -73,7 +79,6 @@ export default defineComponent({
       isHoverCell.value = false;
       inputValue.value = formatDate(cacheValue.value, {
         format: formatRef.value.format,
-        targetFormat: formatRef.value.format,
       });
     }
 
@@ -88,7 +93,6 @@ export default defineComponent({
       if (props.enableTimePicker) {
         cacheValue.value = formatDate(date, {
           format: formatRef.value.format,
-          targetFormat: formatRef.value.format,
         });
       } else {
         onChange?.(
@@ -97,7 +101,7 @@ export default defineComponent({
             targetFormat: formatRef.value.valueType,
           }) as DateValue,
           {
-            dayjsValue: dayjs(date),
+            dayjsValue: parseToDayjs(date, formatRef.value.format),
             trigger: 'pick',
           },
         );
@@ -156,7 +160,9 @@ export default defineComponent({
         .toDate();
       inputValue.value = formatDate(nextDate, {
         format: formatRef.value.format,
-        targetFormat: formatRef.value.format,
+      });
+      cacheValue.value = formatDate(nextDate, {
+        format: formatRef.value.format,
       });
 
       props.onPick?.(nextDate);
@@ -166,7 +172,6 @@ export default defineComponent({
     function onConfirmClick() {
       const nextValue = formatDate(inputValue.value, {
         format: formatRef.value.format,
-        targetFormat: formatRef.value.format,
       });
       if (nextValue) {
         onChange?.(
@@ -175,14 +180,13 @@ export default defineComponent({
             targetFormat: formatRef.value.valueType,
           }) as DateValue,
           {
-            dayjsValue: dayjs(inputValue.value as string),
+            dayjsValue: parseToDayjs(inputValue.value as string, formatRef.value.format),
             trigger: 'confirm',
           },
         );
       } else {
         inputValue.value = formatDate(value.value, {
           format: formatRef.value.format,
-          targetFormat: formatRef.value.format,
         });
       }
       popupVisible.value = false;
@@ -197,7 +201,7 @@ export default defineComponent({
           targetFormat: formatRef.value.valueType,
         }) as DateValue,
         {
-          dayjsValue: dayjs(presetVal),
+          dayjsValue: parseToDayjs(presetVal, formatRef.value.format),
           trigger: 'preset',
         },
       );
@@ -245,6 +249,7 @@ export default defineComponent({
       datePickerInputProps,
       popupVisible,
       panelProps,
+      isDisabled,
       CalendarIcon,
     };
   },
@@ -256,6 +261,7 @@ export default defineComponent({
       datePickerInputProps,
       popupVisible,
       panelProps,
+      isDisabled,
       CalendarIcon,
     } = this;
 
@@ -270,7 +276,7 @@ export default defineComponent({
     return (
       <div class={COMPONENT_NAME}>
         <TSelectInput
-          disabled={this.disabled}
+          disabled={isDisabled}
           value={inputValue}
           status={this.status}
           tips={this.tips}

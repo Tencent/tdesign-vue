@@ -1,14 +1,18 @@
 <template>
-  <div class="tdesign-tree-demo">
-    <h3>render:</h3>
-    <t-tree :data="items" expand-all :label="label"></t-tree>
-    <h3>scope slot:</h3>
-    <t-tree :data="items" expand-all checkable>
-      <template #label="{ node }">
-        <font color="blue">label: {{ node.label }}, value: {{ node.value }}</font>
-      </template>
-    </t-tree>
-  </div>
+  <t-space :size="20" direction="vertical">
+    <div>
+      <h3>render:</h3>
+      <t-tree :data="items" expand-all :label="label"></t-tree>
+    </div>
+    <div>
+      <h3>scope slot:</h3>
+      <t-tree :data="items" expand-all checkable>
+        <template #label="{ node }">
+          <font color="blue">label: {{ node.label }}, value: {{ node.value }}</font>
+        </template>
+      </t-tree>
+    </div>
+  </t-space>
 </template>
 
 <script>

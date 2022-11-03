@@ -8,6 +8,7 @@ import {
   computed,
   onBeforeMount,
   ComputedRef,
+  Ref,
 } from '@vue/composition-api';
 import get from 'lodash/get';
 import debounce from 'lodash/debounce';
@@ -84,6 +85,7 @@ export default function useFixed(
   props: TdBaseTableProps,
   context: SetupContext,
   finalColumns: ComputedRef<BaseTableCol<TableRowData>[]>,
+  affixRef: Record<string, Ref>,
 ) {
   const {
     columns,
@@ -376,6 +378,14 @@ export default function useFixed(
     tableElmWidth.value = elmRect?.width;
   };
 
+  const updateAffixPosition = () => {
+    // 在表格高度变化的时候 需要手动调整affix的位置 因为affix本身无法监听到这些变化触发重新计算
+    affixRef.paginationAffixRef.value?.handleScroll?.();
+    affixRef.horizontalScrollAffixRef.value?.handleScroll?.();
+    affixRef.headerTopAffixRef.value?.handleScroll?.();
+    affixRef.footerBottomAffixRef.value?.handleScroll?.();
+  };
+
   const updateThWidthList = (trList: HTMLCollection | { [colKey: string]: number }) => {
     if (trList instanceof HTMLCollection) {
       if (columnResizable.value) return;
@@ -469,6 +479,13 @@ export default function useFixed(
 
   watch([maxHeight, data, columns, bordered], updateFixedHeader, { immediate: true });
 
+  watch(finalColumns, () => {
+    resetThWidthList();
+    if (columnResizable.value) {
+      recalculateColWidth.value(finalColumns.value, thWidthList.value, tableLayout.value, tableElmWidth.value);
+    }
+  });
+
   // 影响表头宽度的元素
   watch(
     [
@@ -482,22 +499,18 @@ export default function useFixed(
       footerAffixedBottom,
       tableContentWidth,
     ],
-    updateThWidthListHandler,
+    () => {
+      updateThWidthListHandler();
+      updateAffixPosition();
+    },
     { immediate: true },
   );
-
-  watch(finalColumns, () => {
-    updateTableWidth();
-    resetThWidthList();
-    if (columnResizable.value) {
-      recalculateColWidth.value(finalColumns.value, thWidthList.value, tableLayout.value, tableElmWidth.value);
-    }
-  });
 
   const refreshTable = debounce(() => {
     updateTableWidth();
     updateFixedHeader();
     updateThWidthListHandler();
+    updateAffixPosition();
     if (isFixedColumn.value || isFixedHeader.value) {
       updateFixedStatus();
       updateColumnFixedShadow(tableContentRef.value, { skipScrollLimit: true });

@@ -68,7 +68,9 @@ export default {
   data() {
     return {
       data,
-      filterValue: {},
+      filterValue: {
+        createTime: [],
+      },
       bordered: true,
       align: 'left',
     };
@@ -153,7 +155,11 @@ export default {
     // filters 参数包含自定义过滤组件 日期选择器 的值
     onFilterChange(filters) {
       console.log('filter-change', filters);
-      this.filterValue = filters;
+      // 保证日期是一个数组
+      this.filterValue = {
+        ...filters,
+        createTime: filters.createTime || [],
+      };
       // 模拟异步请求进行数据过滤
       this.request(this.filterValue);
     },
@@ -183,7 +189,7 @@ export default {
           if (result && filters.email) {
             result = item.email.indexOf(filters.email) !== -1;
           }
-          if (result && filters.createTime) {
+          if (result && filters.createTime && filters.createTime.length) {
             result = item.createTime === filters.createTime;
           }
           return result;

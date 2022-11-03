@@ -5,14 +5,14 @@ import props from './collapse-panel-props';
 import FakeArrow from '../common-components/fake-arrow';
 import { CollapseValue, TdCollapsePanelProps } from './type';
 import { usePrefixClass } from '../hooks/useConfig';
+import { useTNodeJSX, useContent } from '../hooks/tnode';
 import useCollapseAnimation from './useCollapseAnimation';
-import { renderTNodeJSX } from '../utils/render-tnode';
 
 export default defineComponent({
   name: 'TCollapsePanel',
   props,
-  setup(props: TdCollapsePanelProps) {
-    const { value, disabled, expandIcon } = toRefs(props);
+  setup(props: TdCollapsePanelProps, { slots }) {
+    const { value, disabled } = toRefs(props);
     const componentName = usePrefixClass('collapse-panel');
     const disableClass = usePrefixClass('is-disabled');
     const clickableClass = usePrefixClass('is-clickable');
@@ -25,10 +25,9 @@ export default defineComponent({
       disabled: disableAll,
       expandIconPlacement,
       expandOnRowClick,
-      expandIcon: expandIconAll,
-    } = inject('collapseProps');
+    } = inject<any>('collapseProps');
+    const renderParentTNode: Function = inject('renderParentTNode');
     const innerValue = value.value || getUniqId();
-    const showExpandIcon = computed(() => (expandIcon.value === undefined ? expandIconAll.value : expandIcon.value));
     if (defaultExpandAll.value) {
       updateCollapseValue(innerValue);
     }
@@ -37,7 +36,9 @@ export default defineComponent({
       ? collapseValue.value.includes(innerValue)
       : collapseValue.value === innerValue);
     const classes = computed(() => [componentName.value, { [disableClass.value]: isDisabled.value }]);
-
+    const panelExpandIcon = computed(() => slots.expandIcon || props.expandIcon);
+    const renderTNodeJSX = useTNodeJSX();
+    const renderContent = useContent();
     return {
       isDisabled,
       classes,
@@ -49,22 +50,44 @@ export default defineComponent({
       componentName,
       clickableClass,
       transitionClass,
-      showExpandIcon,
+      panelExpandIcon,
+      renderParentTNode,
+      renderTNodeJSX,
+      renderContent,
     };
   },
   methods: {
-    renderIcon(direction: string) {
+    renderDefaultIcon() {
+      const { componentName } = this;
+      return <FakeArrow overlayClassName={`${componentName}__icon--default`} />;
+    },
+    renderIcon() {
+      const {
+        panelExpandIcon,
+        renderParentTNode,
+        componentName,
+        expandIconPlacement,
+        isActive,
+        handleClick,
+        renderDefaultIcon,
+        renderTNodeJSX,
+      } = this;
+      const tNodeRender = panelExpandIcon === undefined ? renderParentTNode : renderTNodeJSX;
       return (
-        <FakeArrow
-          name="arrow"
-          isActive={this.isActive}
-          overlayClassName={`${this.componentName}__icon ${this.componentName}__icon--${direction}`}
-        />
+        <div
+          ref="iconRef"
+          class={`${componentName}__icon ${componentName}__icon--${expandIconPlacement} ${
+            isActive ? `${componentName}__icon--active` : ''
+          }`}
+          onClick={handleClick}
+        >
+          {tNodeRender('expandIcon', renderDefaultIcon())}
+        </div>
       );
     },
     renderHeader() {
       const {
-        showExpandIcon, isDisabled, handleClick, renderIcon, renderBlank,
+        isDisabled, handleClick, renderIcon, renderBlank,
       } = this;
       const cls = [
         `${this.componentName}__header`,
@@ -73,12 +96,16 @@ export default defineComponent({
         },
       ];
       return (
-        <div ref={'headRef'} class={cls} onClick={handleClick}>
-          {showExpandIcon && this.expandIconPlacement === 'left' ? renderIcon(this.expandIconPlacement) : null}
-          {renderTNodeJSX(this, 'header')}
+        <div class={cls} onClick={handleClick}>
+          <div class={`${this.componentName}__header-left`}>{this.expandIconPlacement === 'left' && renderIcon()}</div>
+          <div class={`${this.componentName}__header-content`}>{this.renderTNodeJSX('header')}</div>
           {renderBlank()}
-          {renderTNodeJSX(this, 'headerRightContent')}
-          {showExpandIcon && this.expandIconPlacement === 'right' ? renderIcon(this.expandIconPlacement) : null}
+          <div class={`${this.componentName}__header-right`}>
+            <div class={`${this.componentName}__header-right-content`} onClick={(e: MouseEvent) => e.stopPropagation()}>
+              {this.renderTNodeJSX('headerRightContent')}
+            </div>
+            {this.expandIconPlacement === 'right' && renderIcon()}
+          </div>
         </div>
       );
     },
@@ -91,23 +118,26 @@ export default defineComponent({
     renderBodyByNormal() {
       return (
         <div v-show={this.isActive} class={`${this.componentName}__body`}>
-          <div class={`${this.componentName}__content`}>{renderTNodeJSX(this, 'default')}</div>
+          <div class={`${this.componentName}__content`}>{this.renderContent('default', 'content')}</div>
         </div>
       );
     },
     renderBodyDestroyOnCollapse() {
       return this.isActive ? (
         <div class={`${this.componentName}__body`}>
-          <div class={`${this.componentName}__content`}>{renderTNodeJSX(this, 'default')}</div>
+          <div class={`${this.componentName}__content`}>{this.renderContent('default', 'content')}</div>
         </div>
       ) : null;
     },
     handleClick(e: MouseEvent) {
-      const canExpand = (this.expandOnRowClick && e.target === this.$refs.headRef)
-        || (e.target as Element).getAttribute('name') === 'arrow';
-      if (canExpand && !this.isDisabled) {
-        this.updateCollapseValue(this.innerValue);
+      const {
+        expandOnRowClick, updateCollapseValue, innerValue, isDisabled,
+      } = this;
+      const canExpand = expandOnRowClick || e.currentTarget === this.$refs.iconRef;
+      if (canExpand && !isDisabled) {
+        updateCollapseValue(innerValue);
       }
+      e.stopPropagation();
     },
   },
   render() {

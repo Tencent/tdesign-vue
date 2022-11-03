@@ -28,7 +28,6 @@ export interface TdDatePickerProps {
   disableDate?: DisableDate;
   /**
    * 是否禁用组件
-   * @default false
    */
   disabled?: boolean;
   /**
@@ -41,7 +40,7 @@ export interface TdDatePickerProps {
    */
   firstDayOfWeek?: number;
   /**
-   * 用于格式化日期，全局配置默认为：'YYYY-MM-DD'，[详细文档](https://day.js.org/docs/en/display/format)
+   * 仅用于格式化日期显示的格式，不影响日期值。注意和 `valueType` 的区别，`valueType`会直接决定日期值 `value` 的格式。全局配置默认为：'YYYY-MM-DD'，[详细文档](https://day.js.org/docs/en/display/format)
    */
   format?: string;
   /**
@@ -101,10 +100,18 @@ export interface TdDatePickerProps {
    */
   defaultValue?: DateValue;
   /**
-   * 用于格式化日期，默认为：'YYYY-MM-DD'，可选值：'date/time-stamp/YYY-MM-DD' 等，[更多可选值见 Dayjs 详细文档](https://day.js.org/docs/en/display/format)。<br /> 其中 `valueType=date` 表示 `value` 数据类型为 `Date`；`valueType='time-stamp'` 表示 `value` 数据类型为时间戳
-   * @default ''
+   * 用于格式化日期的值，仅支持部分格式，时间戳、日期等。⚠️ `YYYYMMDD` 这种格式不支持，请勿使用，如果希望支持可以给 `dayjs` 提个 PR。注意和 `format` 的区别，`format` 仅用于处理日期在页面中呈现的格式
    */
-  valueType?: string;
+  valueType?:
+    | 'time-stamp'
+    | 'Date'
+    | 'YYYY'
+    | 'YYYY-MM'
+    | 'YYYY-MM-DD'
+    | 'YYYY-MM-DD HH'
+    | 'YYYY-MM-DD HH:mm'
+    | 'YYYY-MM-DD HH:mm:ss'
+    | 'YYYY-MM-DD HH:mm:ss:SSS';
   /**
    * 当输入框失去焦点时触发
    */
@@ -139,8 +146,7 @@ export interface TdDateRangePickerProps {
    */
   disableDate?: DisableRangeDate;
   /**
-   * 是否禁用组件，值为数组表示可分别控制开始日期和结束日期是否禁用
-   * @default false
+   * 是否禁用组件
    */
   disabled?: boolean;
   /**
@@ -193,8 +199,8 @@ export interface TdDateRangePickerProps {
    */
   rangeInputProps?: RangeInputProps;
   /**
-   * 日期分隔符
-   * @default -
+   * 日期分隔符，支持全局配置，默认为 '-'
+   * @default ''
    */
   separator?: string;
   /**
@@ -224,10 +230,18 @@ export interface TdDateRangePickerProps {
    */
   defaultValue?: DateRangeValue;
   /**
-   * 用于格式化日期，默认为：'YYYY-MM-DD'，可选值：'date/time-stamp/YYY-MM-DD' 等，[更多可选值见 Dayjs 详细文档](https://day.js.org/docs/en/display/format)。<br /> 其中 `valueType=date` 表示 `value` 数据类型为 `Date`；`valueType='time-stamp'` 表示 `value` 数据类型为时间戳
-   * @default ''
+   * 用于格式化日期的值，仅支持部分格式，时间戳、日期等。⚠️ `YYYYMMDD` 这种格式不支持，请勿使用，如果希望支持可以给 `dayjs` 提个 PR。注意和 `format` 的区别，`format` 仅用于处理日期在页面中呈现的格式
    */
-  valueType?: string;
+  valueType?:
+    | 'time-stamp'
+    | 'Date'
+    | 'YYYY'
+    | 'YYYY-MM'
+    | 'YYYY-MM-DD'
+    | 'YYYY-MM-DD HH'
+    | 'YYYY-MM-DD HH:mm'
+    | 'YYYY-MM-DD HH:mm:ss'
+    | 'YYYY-MM-DD HH:mm:ss:SSS';
   /**
    * 当输入框失去焦点时触发
    */
@@ -255,7 +269,6 @@ export interface TdDatePickerPanelProps
     TdDatePickerProps,
     | 'value'
     | 'defaultValue'
-    | 'valueType'
     | 'disabled'
     | 'disableDate'
     | 'enableTimePicker'
@@ -313,7 +326,6 @@ export interface TdDateRangePickerPanelProps
     TdDateRangePickerProps,
     | 'value'
     | 'defaultValue'
-    | 'valueType'
     | 'disabled'
     | 'disableDate'
     | 'enableTimePicker'

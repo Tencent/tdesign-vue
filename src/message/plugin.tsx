@@ -104,7 +104,9 @@ const showThemeMessage: MessageMethod = (theme, params, duration) => {
   return MessageFunction(options);
 };
 
-const setMessageConfig: MessageConfigMethod = (placement, attach, offset, zIndex) => {
+const setMessageConfig: MessageConfigMethod = ({
+  placement, attach, offset, zIndex,
+}) => {
   attach && (defaultMessageOptions.attach = attach);
   offset && (defaultMessageOptions.offset = offset);
   placement && (defaultMessageOptions.placement = placement);
@@ -159,6 +161,9 @@ MessagePlugin.install = () => {
   // 这样定义后，可以通过 this.$message 调用插件
   Vue.prototype.$message = MessagePlugin;
 };
+
+/** message 和 MessagePlugin 等效 */
+export const message = MessagePlugin;
 
 export default MessagePlugin;
 

@@ -1,5 +1,10 @@
 <template>
-  <div class="t-upload__img-flow-demo">
+  <t-space direction="vertical">
+    <div>
+      是否自动上传：
+      <t-switch v-model="autoUpload" />
+    </div>
+    <br />
     <t-upload
       v-model="files"
       action="https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo"
@@ -7,10 +12,13 @@
       theme="image-flow"
       accept="image/*"
       multiple
-      :auto-upload="false"
+      :auto-upload="autoUpload"
       :max="8"
+      @dragenter="onDragenter"
+      @dragleave="onDragleave"
+      @drop="onDrop"
     ></t-upload>
-  </div>
+  </t-space>
 </template>
 
 <script>
@@ -19,6 +27,7 @@ export default {
 
   data() {
     return {
+      autoUpload: false,
       files: [
         // {
         //   url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
@@ -28,12 +37,16 @@ export default {
     };
   },
 
-  computed: {},
-
-  watch: {},
-
-  methods: {},
+  methods: {
+    onDragenter(p) {
+      console.log('dragenter', p);
+    },
+    onDragleave(p) {
+      console.log('dragleave', p);
+    },
+    onDrop(p) {
+      console.log('drop', p);
+    },
+  },
 };
 </script>
-
-<style></style>

@@ -62,7 +62,7 @@
 
 `iconfont`需要加载图标的字体资源，而`icon`需要加载图标的svgsprite资源，这些资源都是相对来说比较大的，所以没有直接放在包里（当然不排除未来会做改动），所以会发起网络请求。
 
-所以如果你的项目是无网络场景，请使用按需加载的图标，如`<t-icon name="add" />`请改完`<AddIcon />`。
+所以如果你的项目是无网络场景，请使用按需加载的图标，如`<t-icon name="add" />`请改为`<AddIcon />`。
 
 ### 全部图标
 
@@ -76,8 +76,8 @@
 loadDefaultIcons | Boolean | true | 是否加载组件库内置图标 | N
 name | String | - | 必需。图标名称 | Y
 size | String | undefined | 图标尺寸，支持 'small', 'medium', 'large'，'35px', '3em' 等 | N
-style | String | - | HTML 原生属性。可用于设置图标颜色，如：style="color: red" | N
-url | String / Array | - | 图标地址，地址内容参考[组件内部默认加载图标](https://tdesign.gtimg.com/icon/web/index.js)。TS 类型：`string | Array<string>` | N
+style | String | - | HTML 原生属性。可用于设置图标颜色，如：style=\"color: red\" | N
+url | String / Array | - | 图标地址，地址内容参考[组件内部默认加载图标](https://tdesign.gtimg.com/icon/web/index.js)。TS 类型：`string \| Array<string>` | N
 onClick | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/>点击时触发 | N
 
 ### IconSVG Events
@@ -93,9 +93,9 @@ click | `(context: { e: MouseEvent })` | 点击时触发
 loadDefaultIcons | Boolean | true | 是否加载组件库内置图标 | N
 name | String | - | 必需。图标名称 | Y
 size | String | undefined | 图标尺寸，支持 'small', 'medium', 'large'，'35px', '3em' 等 | N
-style | String | - | HTML 原生属性。可用于设置图标颜色，如：style="color: red" | N
+style | String | - | HTML 原生属性。可用于设置图标颜色，如：style=\"color: red\" | N
 tag | String | i | 图标 DOM 元素，可选值：i/span/div/... | N
-url | String / Array | - | 图标地址，地址内容参考[组件内部默认加载图标](https://tdesign.gtimg.com/icon/web/index.css)。也可以在 index.html 中引入图标地址。TS 类型：`string | Array<string>` | N
+url | String / Array | - | 图标地址，地址内容参考[组件内部默认加载图标](https://tdesign.gtimg.com/icon/web/index.css)。也可以在 index.html 中引入图标地址。TS 类型：`string \| Array<string>` | N
 onClick | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/>点击时触发 | N
 
 ### Iconfont Events

@@ -50,6 +50,7 @@ export default mixins(classPrefixMixins).extend({
     },
     options: {
       immediate: true,
+      deep: true,
       handler() {
         if (!this.options) return [];
         this.optionList = this.options.map((item) => {

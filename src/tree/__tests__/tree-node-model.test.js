@@ -3,7 +3,7 @@ import Tree from '@/src/tree/index.ts';
 import { delay } from './kit';
 
 describe('Tree:treeNodeModel', () => {
-  jest.useRealTimers();
+  vi.useRealTimers();
   describe('#getLevel', () => {
     it('返回节点深度', async () => {
       const data = [

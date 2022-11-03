@@ -511,6 +511,16 @@ module.exports = {
       `,
     },
   },
+  rate: {
+    panelStr: `const panelList = [{label: 'rate', value: 'rate'}];`,
+    render: {
+      rate: `
+        <t-rate
+          v-bind="configProps"
+        ></t-rate>
+      `,
+    },
+  },
   dialog: {
     panelStr: `const panelList = [{label: 'dialog', value: 'dialog'}];`,
     script: `
@@ -614,6 +624,14 @@ module.exports = {
     render: {
       jumper: `
         <t-jumper v-bind="configProps"></t-jumper>
+      `,
+    },
+  },
+  image: {
+    panelStr: `const panelList = [{label: 'image', value: 'image'}];`,
+    render: {
+      image: `
+        <t-image v-bind="configProps" src="https://tdesign.gtimg.com/demo/demo-image-1.png" fit="cover" :style="{ width: '120px', height: '120px' }" />
       `,
     },
   },

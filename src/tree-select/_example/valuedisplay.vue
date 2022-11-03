@@ -1,15 +1,15 @@
 <template>
-  <div class="tdesign-tree-select-valuedisplay">
-    <t-tree-select :data="options" v-model="value" clearable placeholder="请选择">
+  <t-space direction="vertical">
+    <t-tree-select :data="options" v-model="value" clearable placeholder="请选择" style="width: 400px">
       <template #valueDisplay="{ value }"> {{ value.label }}({{ value.value }}) </template>
     </t-tree-select>
     <t-tree-select
-      class="tree-select-multiple"
       :data="options"
       v-model="mulValue"
       multiple
       clearable
       filterable
+      style="width: 400px"
       placeholder="请选择"
     >
       <template #valueDisplay="{ value, onClose }">
@@ -18,7 +18,7 @@
         </t-tag>
       </template>
     </t-tree-select>
-  </div>
+  </t-space>
 </template>
 <script>
 export default {
@@ -60,12 +60,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.tdesign-tree-select-valuedisplay {
-  width: 300px;
-  margin: 0 20px;
-}
-.tree-select-multiple {
-  margin-top: 20px;
-}
-</style>

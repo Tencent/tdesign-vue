@@ -1,13 +1,10 @@
 <template>
-  <div class="tdesign-demo-block-column-large">
-    <div>
-      <label>可以在组件外切换成：</label>
-      <t-select v-model="mode" class="demo-select-base">
-        <t-option v-for="item in options" :key="item.value" :value="item.value" :label="item.label" />
-      </t-select>
-    </div>
+  <t-space direction="vertical">
+    <t-select v-model="mode" class="demo-select-base">
+      <t-option v-for="item in options" :key="item.value" :value="item.value" :label="item.label" />
+    </t-select>
     <t-calendar :mode="mode"></t-calendar>
-  </div>
+  </t-space>
 </template>
 
 <script>

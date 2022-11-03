@@ -1,14 +1,12 @@
 <template>
-  <div class="tdesign-tree-demo">
-    <div class="operations">
-      <t-form labelWidth="150">
-        <t-form-item label="可选">
-          <t-switch v-model="checkable" />
-        </t-form-item>
-      </t-form>
-    </div>
+  <t-space :size="10" direction="vertical">
+    <t-form labelWidth="150">
+      <t-form-item label="可选">
+        <t-switch v-model="checkable" />
+      </t-form-item>
+    </t-form>
     <t-tree :data="items" hover expand-all :checkable="checkable" v-model="value" :load="load" :lazy="false" />
-  </div>
+  </t-space>
 </template>
 
 <script>

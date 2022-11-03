@@ -57,6 +57,14 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
         },
       ];
     },
+    limitClasses(): ClassName {
+      return [
+        `${this.componentName}__limit`,
+        {
+          [`${this.classPrefix}-is-disabled`]: this.tDisabled,
+        },
+      ];
+    },
     inputAttrs(): Record<string, any> {
       return getValidAttrs({
         autofocus: this.autofocus,
@@ -194,10 +202,10 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
           ref="refTextareaElem"
         ></textarea>
         {this.maxcharacter ? (
-          <span class={`${this.componentName}__limit`}>{`${this.characterNumber}/${this.maxcharacter}`}</span>
+          <span class={this.limitClasses}>{`${this.characterNumber}/${this.maxcharacter}`}</span>
         ) : null}
         {!this.maxcharacter && this.maxlength ? (
-          <span class={`${this.componentName}__limit`}>{`${this.value ? getUnicodeLength(String(this.value)) : 0}/${
+          <span class={this.limitClasses}>{`${this.value ? getUnicodeLength(String(this.value)) : 0}/${
             this.maxlength
           }`}</span>
         ) : null}
