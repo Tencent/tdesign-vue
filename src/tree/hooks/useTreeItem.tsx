@@ -15,12 +15,11 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
   const classPrefix = usePrefixClass().value;
   const componentName = usePrefixClass('tree').value;
 
+  // 节点隐藏用 class 切换，不要写在 js 中
   const getItemStyles = (): string => {
-    const { level, visible } = node;
+    const { level } = node;
     const levelStyle = `--level: ${level};`;
-    const hiddenStyle = 'display:none;';
-    if (visible) return levelStyle;
-    return `${hiddenStyle} ${levelStyle}`;
+    return levelStyle;
   };
 
   const getItemClassList = (): ClassName => {
