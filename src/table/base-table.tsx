@@ -334,13 +334,16 @@ export default defineComponent({
   },
 
   methods: {
-    renderColGroup(columns: BaseTableCol<TableRowData>[]) {
+    renderColGroup(columns: BaseTableCol<TableRowData>[], isAffixHeader = true) {
       const defaultColWidth = this.tableLayout === 'fixed' && this.isWidthOverflow ? '100px' : undefined;
       return (
         <colgroup>
           {columns.map((col) => {
             const style: Styles = {
-              width: formatCSSUnit(this.thWidthList[col.colKey] || col.width) || defaultColWidth,
+              width:
+                formatCSSUnit(
+                  (isAffixHeader || this.columnResizable ? this.thWidthList[col.colKey] : undefined) || col.width,
+                ) || defaultColWidth,
             };
             if (col.minWidth) {
               style.minWidth = formatCSSUnit(col.minWidth);
@@ -351,7 +354,7 @@ export default defineComponent({
       );
     },
 
-    getHeadProps() {
+    getHeadProps(isAffixHeader = true) {
       const headProps = {
         isFixedHeader: this.isFixedHeader,
         rowAndColFixedPosition: this.rowAndColFixedPosition,
@@ -359,7 +362,7 @@ export default defineComponent({
         bordered: this.bordered,
         spansAndLeafNodes: this.spansAndLeafNodes,
         thList: this.thList,
-        thWidthList: this.thWidthList,
+        thWidthList: isAffixHeader || this.columnResizable ? this.thWidthList : {},
         resizable: this.resizable,
         columnResizeParams: this.columnResizeParams,
         classPrefix: this.classPrefix,
@@ -389,7 +392,7 @@ export default defineComponent({
         opacity: headerOpacity,
         marginTop: onlyVirtualScrollBordered ? `${borderWidth}px` : 0,
       };
-      const colgroup = this.renderColGroup(columns);
+      const colgroup = this.renderColGroup(columns, true);
       // 多级表头左边线缺失
       const affixedLeftBorder = this.bordered ? 1 : 0;
 
@@ -401,7 +404,7 @@ export default defineComponent({
         >
           <table class={this.tableElmClasses} style={{ ...this.tableElementStyles, width: `${this.tableElmWidth}px` }}>
             {colgroup}
-            <THead scopedSlots={this.$scopedSlots} props={this.getHeadProps()} />
+            <THead scopedSlots={this.$scopedSlots} props={this.getHeadProps(true)} />
           </table>
         </div>
       );
@@ -450,7 +453,7 @@ export default defineComponent({
               class={this.tableElmClasses}
               style={{ ...this.tableElementStyles, width: `${this.tableElmWidth}px` }}
             >
-              {this.renderColGroup(columns)}
+              {this.renderColGroup(columns, true)}
               <TFoot
                 rowKey={this.rowKey}
                 scopedSlots={this.$scopedSlots}
@@ -546,8 +549,8 @@ export default defineComponent({
       >
         {this.isVirtual && <div class={this.virtualScrollClasses.cursor} style={virtualStyle} />}
         <table ref="tableElmRef" class={this.tableElmClasses} style={this.tableElementStyles}>
-          {this.renderColGroup(columns)}
-          {this.showHeader && <THead scopedSlots={this.$scopedSlots} props={this.getHeadProps()} />}
+          {this.renderColGroup(columns, false)}
+          {this.showHeader && <THead scopedSlots={this.$scopedSlots} props={this.getHeadProps(false)} />}
           <TBody ref="tableBodyRef" scopedSlots={this.$scopedSlots} props={tableBodyProps} on={tBodyListener} />
           <TFoot
             rowKey={this.rowKey}
