@@ -20,9 +20,10 @@ import {
   TypeTreeInstance,
   TypeTargetNode,
 } from './interface';
+import onDragMixins from './mixins/onDrag';
 import { getMark, getNode, emitEvent } from './util';
 
-export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tree')).extend({
+export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tree'), onDragMixins()).extend({
   name: 'TTree',
   model: {
     prop: 'value',
@@ -65,7 +66,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
     classList(): ClassName {
       const list: Array<string> = [this.componentName];
       const {
-        disabled, hover, transition, checkable, expandOnClickNode,
+        disabled, hover, transition, checkable, draggable, expandOnClickNode,
       } = this;
       if (disabled) {
         list.push(`${this.classPrefix}-is-disabled`);
@@ -75,6 +76,9 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       }
       if (checkable) {
         list.push(`${this.componentName}--checkable`);
+      }
+      if (draggable) {
+        list.push(`${this.componentName}--draggable`);
       }
       if (transition) {
         list.push(`${this.componentName}--transition`);
@@ -194,6 +198,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         'activeMultiple',
         'disabled',
         'checkable',
+        'draggable',
         'checkStrictly',
         'load',
         'lazy',

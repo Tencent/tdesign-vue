@@ -14,6 +14,7 @@ import { getTNode } from './util';
 import { TypeEventState } from './interface';
 import { ClassName } from '../common';
 import ripple from '../utils/ripple';
+import draggableMixins from './mixins/draggable';
 
 const keepAnimationMixins = getKeepAnimationMixins();
 
@@ -40,16 +41,32 @@ const TreeItem = mixins(
   getConfigReceiverMixins<Vue, TreeConfig>('tree'),
   keepAnimationMixins,
   getGlobalIconMixins(),
+  draggableMixins(),
 ).extend({
   name: 'TTreeItem',
   props: TreeItemProps,
   directives: { ripple },
+  inject: {
+    onDrag: { default: undefined },
+  },
   data() {
     return {
       data: null,
       $clicked: false,
       $nodesMap: null,
     };
+  },
+  computed: {
+    classList(): ClassName {
+      const { isDragOver, isDragging, dropPosition } = this.dragStates;
+      return {
+        // 拖拽样式
+        [`${this.componentName}__item--dragging`]: isDragging,
+        [`${this.componentName}__item--tip-top`]: isDragOver && dropPosition < 0,
+        [`${this.componentName}__item--tip-bottom`]: isDragOver && dropPosition > 0,
+        [`${this.componentName}__item--tip-highlight`]: !isDragging && isDragOver && dropPosition === 0,
+      };
+    },
   },
   methods: {
     getStyles(): string {
@@ -67,6 +84,9 @@ const TreeItem = mixins(
         [`${this.componentName}__item--open`]: node.expanded,
         [`${this.classPrefix}-is-active`]: node.isActivable() ? node.actived : false,
         [`${this.classPrefix}-is-disabled`]: node.isDisabled(),
+      });
+      list.push({
+        [`${this.componentName}__item--draggable`]: node.isDraggable(),
       });
       if (!nested) {
         if (node.visible) {
@@ -345,6 +365,7 @@ const TreeItem = mixins(
       };
       this.$emit('click', state);
     },
+
     handleChange() {
       const { node } = this;
       const event = new Event('change');
@@ -427,15 +448,22 @@ const TreeItem = mixins(
     if (!tree || !tree.nodeMap.get(value)) {
       this.$destroy();
     }
+
     const styles = this.getStyles();
-    const classList = this.getClassList();
+    const classList = this.getClassList().concat(this.classList);
     const itemNode = (
       <div
         class={classList}
         data-value={value}
         data-level={level}
         style={styles}
+        draggable={node.isDraggable()}
         onClick={(evt: MouseEvent) => this.handleClick(evt)}
+        onDragstart={(evt: DragEvent) => this.handleDragStart(evt)}
+        onDragend={(evt: DragEvent) => this.handleDragEnd(evt)}
+        onDragover={(evt: DragEvent) => this.handleDragOver(evt)}
+        onDragleave={(evt: DragEvent) => this.handleDragLeave(evt)}
+        onDrop={(evt: DragEvent) => this.handleDrop(evt)}
       >
         {this.renderItem(createElement)}
       </div>
