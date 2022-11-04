@@ -19,62 +19,61 @@
   </a>
 </p>
 
-English | [简体中文](./README-zh_CN.md) 
+简体中文 | [English](./README.md) 
 
-TDesign Vue is a UI component library for Vue 2 and desktop application.
+TDesign 适配桌面端的组件库，适合在 Vue 2.x 技术栈项目中使用。
 
-# 🎉 Features
+# 🎉 特性
 
-- Desktop application interaction
-- High quality UI components for Vue 2.x (< Vue 2.7)
-- Consistent API and UI with TDesign component libraries for other frameworks
-- Dark mode and customizable theme
-- Support tree-shaking
+- 适配桌面端交互
+- 基于 Vue 2.0 (Vue2.6.x及以下)
+- 与其他框架实现版本（React/Angular 等） API、UI 保持一致
+- 支持暗黑模式及其他主题定制
+- 支持按需加载
 
-# 📦 Installation
+# 📦 安装
 
 ```shell
 npm i tdesign-vue
 ```
 
-# 🔨 Usage
+# 🔨 基础使用
+
 
 ```js
 import Vue from 'vue';
 import TDesign from 'tdesign-vue';
-
+// 引入组件库全局样式资源
 import 'tdesign-vue/es/style/index.css';
 
 Vue.use(TDesign);
 ```
 
-The package of tdesign-vue provides kinds of bundles, read [the documentation](https://github.com/Tencent/tdesign/blob/main/docs/develop-install.md) for the detail of differences between bundles.
+npm package 中提供了多种构建产物，可以阅读 [这里](https://github.com/Tencent/tdesign/blob/main/docs/develop-install.md) 了解不同目录下产物的差别。
 
-# Quick Start
+# 快速体验
 
-Visit [TDesign Starter](https://tdesign.tencent.com/starter/vue/) to experience in the application built with TDesign Vue UI components.
+可以访问官方提供的 [TDesign Starter](https://tdesign.tencent.com/starter/vue/) 项目体验使用 TDesign 组件快速搭建业务系统。
 
-# Browser Support
+# 浏览器兼容性
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/> IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Safari |
 | --- | --- | --- | --- |
 | Edge >=91 | Firefox >=83 | Chrome >=91 | Safari >=14.1 |
 
 
-Read our [browser compatibility](https://github.com/Tencent/tdesign/wiki/Browser-Compatibility) for more details.
+详情参见[桌面端组件库浏览器兼容性说明](https://github.com/Tencent/tdesign/wiki/Browser-Compatibility)
 
-# TDesign component libraries
+# 其他技术栈实现
 
-TDesign also provides component libraries for other platforms and frameworks.
+- 桌面端 Vue 3 实现：[web-vue-next](https://github.com/Tencent/tdesign-vue-next)
+- 桌面端 React 实现： [web-react](https://github.com/Tencent/tdesign-react)
+- 移动端小程序实现： [小程序](https://github.com/Tencent/tdesign-miniprogram)
 
-- component library for Vue 3.x : [tdesign-vue-next](https://github.com/Tencent/tdesign-vue-next)
-- component library for React : [tdesign-react](https://github.com/Tencent/tdesign-react)
-- component library for Wechat miniprogram : [tdesign-miniprogram](https://github.com/Tencent/tdesign-miniprogram)
+# 参与贡献
 
-# Contributing
+TDesign 欢迎任何愿意参与贡献的参与者。如果需要本地运行代码或参与贡献，请先阅读[参与贡献](https://github.com/Tencent/tdesign-vue/blob/develop/CONTRIBUTING.md)。
 
-Contributing is welcome. Read [guidelines for contributing](https://github.com/Tencent/tdesign-vue/blob/develop/CONTRIBUTING.md) before submitting your [Pull Request](https://github.com/Tencent/tdesign-vue/pulls).
+# 开源协议
 
-# License
-
-The MIT License. Please see [the license file](./LICENSE) for more information.
+TDesign 遵循 [MIT 协议](https://github.com/Tencent/tdesign-vue/blob/main/LICENSE)。
