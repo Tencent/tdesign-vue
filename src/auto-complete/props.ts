@@ -1,0 +1,90 @@
+/* eslint-disable */
+
+/**
+ * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
+ * */
+
+import { TdAutoCompleteProps } from './type';
+import { PropType } from 'vue';
+
+export default {
+  /** 自动获取焦点 */
+  autoFocus: Boolean,
+  /** 是否允许清空 */
+  clearable: Boolean,
+  /** 是否禁用 */
+  disabled: Boolean,
+  /** 自定义过滤规则，用于对现有数据进行搜索过滤，判断是否过滤某一项数据。参数 `filterWords` 表示搜索词，`option`表示单个选项内容，返回值为 `true` 保留该选项，返回值为 `false` 则隐藏该选项。使用该方法时无需设置 `filterable` */
+  filter: {
+    type: Function as PropType<TdAutoCompleteProps['filter']>,
+  },
+  /** 是否根据输入内容过滤联想词。默认过滤规则不区分大小写，全文本任意位置匹配。如果默认搜索规则不符合业务需求，可以更为使用 `filter` 自定义过滤规则。部分场景下输入关键词和下拉联想词完全不同，此时可以设置为 `false` */
+  filterable: {
+    type: Boolean,
+    default: true,
+  },
+  /** 是否高亮联想词中和输入值的相同部分 */
+  highlightKeyword: {
+    type: Boolean,
+    default: true,
+  },
+  /** 透传 Input 组件全部特性 */
+  inputProps: {
+    type: Object as PropType<TdAutoCompleteProps['inputProps']>,
+  },
+  /** 下拉联想词列表。示例一：`['联想词一', '联想词二']`。示例二：`{ label: () => <div>联想词元素</div>, text: '用于搜索的纯联想词' }` */
+  options: {
+    type: Array as PropType<TdAutoCompleteProps['options']>,
+  },
+  /** 输入框为空时的占位提示 */
+  placeholder: {
+    type: String,
+    default: '',
+  },
+  /** 透传 Popup 组件全部特性 */
+  popupProps: {
+    type: Object as PropType<TdAutoCompleteProps['popupProps']>,
+  },
+  /** 输入框状态 */
+  status: {
+    type: String as PropType<TdAutoCompleteProps['status']>,
+    validator(val: TdAutoCompleteProps['status']): boolean {
+      if (!val) return true;
+      return ['default', 'success', 'warning', 'error'].includes(val);
+    },
+  },
+  /** 透传 Textarea 组件全部特性 */
+  textareaProps: {
+    type: Object as PropType<TdAutoCompleteProps['textareaProps']>,
+  },
+  /** 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式 */
+  tips: {
+    type: [String, Function] as PropType<TdAutoCompleteProps['tips']>,
+  },
+  /** 输入框的值，即当前指定的联想词 */
+  value: {
+    type: String,
+    default: undefined,
+  },
+  /** 输入框的值，即当前指定的联想词，非受控属性 */
+  defaultValue: {
+    type: String,
+    default: '',
+  },
+  /** 失去焦点时触发 */
+  onBlur: Function as PropType<TdAutoCompleteProps['onBlur']>,
+  /** 输入框值发生变化时触发 */
+  onChange: Function as PropType<TdAutoCompleteProps['onChange']>,
+  /** 清空按钮点击时触发 */
+  onClear: Function as PropType<TdAutoCompleteProps['onClear']>,
+  /** 中文输入结束时触发 */
+  onCompositionend: Function as PropType<TdAutoCompleteProps['onCompositionend']>,
+  /** 中文输入开始时触发 */
+  onCompositionstart: Function as PropType<TdAutoCompleteProps['onCompositionstart']>,
+  /** 回车键按下时触发 */
+  onEnter: Function as PropType<TdAutoCompleteProps['onEnter']>,
+  /** 获得焦点时触发 */
+  onFocus: Function as PropType<TdAutoCompleteProps['onFocus']>,
+  /** 选中联想词时触发 */
+  onSelect: Function as PropType<TdAutoCompleteProps['onSelect']>,
+};
