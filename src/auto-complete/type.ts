@@ -7,7 +7,7 @@
 import { InputProps } from '../input';
 import { PopupProps } from '../popup';
 import { TextareaProps } from '../textarea';
-import { TNode } from '../common';
+import { TNode, SizeEnum } from '../common';
 
 export interface TdAutoCompleteProps<T extends AutoCompleteOption = AutoCompleteOption> {
   /**
@@ -18,6 +18,10 @@ export interface TdAutoCompleteProps<T extends AutoCompleteOption = AutoComplete
    * 是否允许清空
    */
   clearable?: boolean;
+  /**
+   * 触发显示联想词下拉框的元素，同 `triggerElement`
+   */
+  default?: string | TNode;
   /**
    * 是否禁用
    */
@@ -54,6 +58,11 @@ export interface TdAutoCompleteProps<T extends AutoCompleteOption = AutoComplete
    */
   popupProps?: PopupProps;
   /**
+   * 组件尺寸
+   * @default medium
+   */
+  size?: SizeEnum;
+  /**
    * 输入框状态
    */
   status?: 'default' | 'success' | 'warning' | 'error';
@@ -65,6 +74,10 @@ export interface TdAutoCompleteProps<T extends AutoCompleteOption = AutoComplete
    * 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式
    */
   tips?: string | TNode;
+  /**
+   * 触发显示联想词下拉框的元素，默认为 Input 组件，可以使用 `trigger` 自定义为 Textarea 组件或其他组件
+   */
+  triggerElement?: string | TNode;
   /**
    * 输入框的值，即当前指定的联想词
    * @default ''
@@ -82,7 +95,7 @@ export interface TdAutoCompleteProps<T extends AutoCompleteOption = AutoComplete
   /**
    * 输入框值发生变化时触发
    */
-  onChange?: (value: InputValue, context?: { e?: InputEvent | MouseEvent }) => void;
+  onChange?: (value: string, context?: { e?: InputEvent | MouseEvent | KeyboardEvent }) => void;
   /**
    * 清空按钮点击时触发
    */
@@ -106,7 +119,7 @@ export interface TdAutoCompleteProps<T extends AutoCompleteOption = AutoComplete
   /**
    * 选中联想词时触发
    */
-  onSelect?: (value: string, context: { e: MouseEvent }) => void;
+  onSelect?: (value: string, context: { e: MouseEvent | KeyboardEvent }) => void;
 }
 
-export type AutoCompleteOption = string | { label: string | TNode; text?: string };
+export type AutoCompleteOption = string | { label?: string | TNode; text?: string; [key: string]: any };
