@@ -6,7 +6,7 @@ import {
 } from 'tdesign-icons-vue';
 import camelCase from 'lodash/camelCase';
 import kebabCase from 'lodash/kebabCase';
-import { getIEVersion, getUnicodeLength, limitUnicodeMaxLength } from '../_common/js/utils/helper';
+import { getUnicodeLength, limitUnicodeMaxLength } from '../_common/js/utils/helper';
 import { InputValue, TdInputProps } from './type';
 import { getCharacterLength, omit } from '../utils/helper';
 import getConfigReceiverMixins, { InputConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
@@ -32,8 +32,6 @@ interface InputInstance extends Vue {
   composing: boolean;
   tFormItem: InstanceType<typeof FormItem>;
 }
-
-let resizeObserver: ResizeObserver = null;
 
 export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input'), getGlobalIconMixins()).extend({
   name: 'TInput',
@@ -63,6 +61,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       inputValue: this.value,
       composingRef: false,
       composingRefValue: this.value,
+      resizeObserver: null as ResizeObserver,
     };
   },
   computed: {
@@ -190,8 +189,8 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
   },
 
   beforeMount() {
-    resizeObserver?.unobserve(this.$refs.inputPreRef as Element);
-    resizeObserver?.disconnect();
+    this.resizeObserver?.unobserve(this.$refs.inputPreRef as Element);
+    this.resizeObserver?.disconnect();
   },
 
   methods: {
@@ -211,10 +210,10 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     addTableResizeObserver(element: Element) {
       // IE 11 以下使用设置 minWidth 兼容；IE 11 以上使用 ResizeObserver
       if (typeof window.ResizeObserver === 'undefined') return;
-      resizeObserver = new window.ResizeObserver(() => {
+      this.resizeObserver = new window.ResizeObserver(() => {
         this.updateInputWidth();
       });
-      resizeObserver.observe(element);
+      this.resizeObserver.observe(element);
     },
     mouseEvent(v: boolean) {
       this.isHover = v;
