@@ -188,7 +188,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     this.addTableResizeObserver(this.$refs.inputPreRef as Element);
   },
 
-  beforeMount() {
+  beforeDestroy() {
     this.resizeObserver?.unobserve(this.$refs.inputPreRef as Element);
     this.resizeObserver?.disconnect();
   },
