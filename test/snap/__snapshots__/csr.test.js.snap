@@ -59,7 +59,7 @@ exports[`csr snapshot test > csr test ./src/affix/_example/container.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/alert/_example/base.vue 1`] = `
 <div
   class="t-space t-space-vertical"
-  style="gap: 16px;"
+  style="gap: 16px; width: 100%;"
 >
   <div
     class="t-space-item"
@@ -221,7 +221,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/base.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/alert/_example/close.vue 1`] = `
 <div
   class="t-space t-space-vertical"
-  style="gap: 16px;"
+  style="gap: 16px; width: 100%;"
 >
   <div
     class="t-space-item"
@@ -413,7 +413,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/close.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/alert/_example/collapse.vue 1`] = `
 <div
   class="t-space t-space-horizontal"
-  style="gap: 16px;"
+  style="gap: 16px; width: 100%;"
 >
   <div
     class="t-space-item"
@@ -490,7 +490,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/collapse.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/alert/_example/icon.vue 1`] = `
 <div
   class="t-space t-space-vertical"
-  style="gap: 16px;"
+  style="gap: 16px; width: 100%;"
 >
   <div
     class="t-space-item"
@@ -676,7 +676,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/icon.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/alert/_example/operation.vue 1`] = `
 <div
   class="t-space t-space-horizontal"
-  style="gap: 16px;"
+  style="gap: 16px; width: 100%;"
 >
   <div
     class="t-space-item"
@@ -746,7 +746,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/operation.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/alert/_example/title.vue 1`] = `
 <div
   class="t-space t-space-horizontal"
-  style="gap: 16px;"
+  style="gap: 16px; width: 100%;"
 >
   <div
     class="t-space-item"
