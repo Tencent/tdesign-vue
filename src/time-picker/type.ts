@@ -102,6 +102,10 @@ export interface TdTimePickerProps {
    * 面板打开时触发
    */
   onOpen?: (context: { e: MouseEvent }) => void;
+  /**
+   * 面板选中值后触发
+   */
+  onPick?: (value: TimePickerValue) => void;
 }
 
 export interface TdTimeRangePickerProps {
@@ -189,6 +193,10 @@ export interface TdTimeRangePickerProps {
    * 当输入框内容发生变化时触发，参数 input 表示输入内容，value 表示组件当前有效值
    */
   onInput?: (context: { value: TimeRangeValue; e?: InputEvent; position?: TimeRangePickerPartial }) => void;
+  /**
+   * 面板选中值后触发
+   */
+  onPick?: (value: TimeRangeValue, context: { position?: TimeRangePickerPartial }) => void;
 }
 
 export interface PresetTime {

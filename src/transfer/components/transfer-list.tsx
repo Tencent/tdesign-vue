@@ -148,7 +148,7 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
   },
   watch: {
     totalCount(val) {
-      if (val <= (this.currentPage - 1) * this.pageSize) {
+      if (val <= (this.currentPage - 1) * this.pageSize && val !== 0) {
         const lastPage = Math.ceil(val / this.pageSize);
         this.defaultCurrent = lastPage;
       }

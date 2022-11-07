@@ -4,8 +4,8 @@
       <p>使用<code>t-config-provider</code>包裹业务功能的最外层组件，点击下方图标查看示例代码</p>
       <p>英文语言包引入路径：<code>import enConfig from 'tdesign-vue/es/locale/en_US';</code></p>
       <p>中文语言包引入路径：<code>import zhConfig from 'tdesign-vue/es/locale/zh_CN';</code></p>
-      <p>日文语言包引入路径：<code>import jpConfig from 'tdesign-react/es/locale/ja_JP';</code></p>
-      <p>韩文语言包引入路径：<code>import koConfig from 'tdesign-react/es/locale/ko_KR';</code></p>
+      <p>日文语言包引入路径：<code>import jpConfig from 'tdesign-vue/es/locale/ja_JP';</code></p>
+      <p>韩文语言包引入路径：<code>import koConfig from 'tdesign-vue/es/locale/ko_KR';</code></p>
     </t-space>
   </t-config-provider>
 </template>
