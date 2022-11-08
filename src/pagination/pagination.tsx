@@ -18,6 +18,7 @@ import props from './props';
 import { ClassName } from '../common';
 import { emitEvent } from '../utils/event';
 import { TdPaginationProps } from './type';
+import { getIEVersion } from '../_common/js/utils/helper';
 
 const min = 1;
 
@@ -83,6 +84,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
         this.commonSizeClassName[this.size],
         {
           [this.commonStatusClassName.disabled]: this.disabled,
+          [`${this.componentName}-ie`]: getIEVersion() < 11,
         },
       ];
     },
