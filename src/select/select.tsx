@@ -430,10 +430,15 @@ export default defineComponent({
           }
           break;
         case 'Enter':
-          // 当支持创建的时候，只有当 hoverIndex 为 -1(未选中)/0(创建条目) 的时候，才视为触发 create 回调，否则视为选择列表中筛选出的已有项目
-          creatable.value && hoverIndex.value < 1 && handleCreate();
-          // 未选中任意项的时候不触发其他键盘事件
-          if (hoverIndex.value === -1) return;
+          // 当支持创建、且 hoverIndex 为 -1(未选中)/0(创建条目)、第一项为创建项的时候，才视为触发 create 回调，并继续键盘事件
+          if (creatable.value && hoverIndex.value < 1 && displayOptions?.[0]?.isCreated) {
+            handleCreate();
+          } else if (hoverIndex.value === -1) {
+            // 否则视为选择列表中筛选出的已有项目
+            // 当 hoverIndex 为 -1，即未选中任意项的时候，不触发其他键盘事件
+            return;
+          }
+          // enter 选中逻辑
           if (!multiple.value) {
             const optionValue = (displayOptions[hoverIndex.value] as TdOptionProps).value;
             setInnerValue(
