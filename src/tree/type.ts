@@ -176,6 +176,31 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
    */
   onClick?: (context: { node: TreeNodeModel<T>; e: MouseEvent }) => void;
   /**
+   * 节点结束拖拽时触发，泛型 `T` 表示树节点 TS 类型
+   */
+  onDragEnd?: (context: { e: DragEvent; node: TreeNodeModel<T> }) => void;
+  /**
+   * 节点拖拽时离开目标元素时触发，泛型 `T` 表示树节点 TS 类型
+   */
+  onDragLeave?: (context: { e: DragEvent; node: TreeNodeModel<T> }) => void;
+  /**
+   * 节点拖拽到目标元素时触发，泛型 `T` 表示树节点 TS 类型
+   */
+  onDragOver?: (context: { e: DragEvent; node: TreeNodeModel<T> }) => void;
+  /**
+   * 节点开始拖拽时触发，泛型 `T` 表示树节点 TS 类型
+   */
+  onDragStart?: (context: { e: DragEvent; node: TreeNodeModel<T> }) => void;
+  /**
+   * 节点在目标元素上释放时触发，泛型 `T` 表示树节点 TS 类型
+   */
+  onDrop?: (context: {
+    e: DragEvent;
+    dragNode: TreeNodeModel<T>;
+    dropNode: TreeNodeModel<T>;
+    dropPosition: number;
+  }) => void;
+  /**
    * 节点展开或收起时触发，泛型 `T` 表示树节点 TS 类型
    */
   onExpand?: (value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e: MouseEvent }) => void;

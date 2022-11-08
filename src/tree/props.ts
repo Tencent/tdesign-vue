@@ -42,7 +42,7 @@ export default {
   },
   /** 是否禁用树操作 */
   disabled: Boolean,
-  /** 节点是否可拖拽 */
+  /** [开发中]节点是否可拖拽 */
   draggable: Boolean,
   /** 数据为空时展示的文本 */
   empty: {
@@ -140,6 +140,16 @@ export default {
   onChange: Function as PropType<TdTreeProps['onChange']>,
   /** 节点点击时触发，泛型 `T` 表示树节点 TS 类型 */
   onClick: Function as PropType<TdTreeProps['onClick']>,
+  /** 节点结束拖拽时触发，泛型 `T` 表示树节点 TS 类型 */
+  onDragEnd: Function as PropType<TdTreeProps['onDragEnd']>,
+  /** 节点拖拽时离开目标元素时触发，泛型 `T` 表示树节点 TS 类型 */
+  onDragLeave: Function as PropType<TdTreeProps['onDragLeave']>,
+  /** 节点拖拽到目标元素时触发，泛型 `T` 表示树节点 TS 类型 */
+  onDragOver: Function as PropType<TdTreeProps['onDragOver']>,
+  /** 节点开始拖拽时触发，泛型 `T` 表示树节点 TS 类型 */
+  onDragStart: Function as PropType<TdTreeProps['onDragStart']>,
+  /** 节点在目标元素上释放时触发，泛型 `T` 表示树节点 TS 类型 */
+  onDrop: Function as PropType<TdTreeProps['onDrop']>,
   /** 节点展开或收起时触发，泛型 `T` 表示树节点 TS 类型 */
   onExpand: Function as PropType<TdTreeProps['onExpand']>,
   /** 异步加载后触发，泛型 `T` 表示树节点 TS 类型 */
