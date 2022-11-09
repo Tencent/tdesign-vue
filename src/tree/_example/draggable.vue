@@ -79,12 +79,20 @@ export default {
     };
   },
   methods: {
-    handleDragStart({ node, e }) {},
-    handleDragEnd({ node, e }) {},
-    handleDragOver({ node, e }) {},
-    handleDragLeave({ node, e }) {},
-    handleDrop({ node, dropPosition, e }) {
-      console.log('handleDrop', node, dropPosition, e);
+    handleDragStart(ctx) {
+      console.log('handleDragStart', ctx);
+    },
+    handleDragEnd(ctx) {
+      console.log('handleDragEnd', ctx);
+    },
+    handleDragOver(ctx) {
+      console.log('handleDragOver', ctx);
+    },
+    handleDragLeave(ctx) {
+      console.log('handleDragLeave', ctx);
+    },
+    handleDrop(ctx) {
+      console.log('handleDrop', ctx);
     },
   },
 };
