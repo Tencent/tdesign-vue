@@ -66,7 +66,6 @@ export interface TdFormProps<FormData extends Data = Data> {
   rules?: { [field in keyof FormData]: Array<FormRule> };
   /**
    * 表单校验不通过时，是否自动滚动到第一个校验不通过的字段，平滑滚动或是瞬间直达。值为空则表示不滚动
-   * @default ''
    */
   scrollToFirstError?: '' | 'smooth' | 'auto';
   /**
@@ -137,7 +136,6 @@ export interface TdFormItemProps {
   help?: string | TNode;
   /**
    * 字段标签名称
-   * @default ''
    */
   label?: string | TNode;
   /**
@@ -158,7 +156,6 @@ export interface TdFormItemProps {
   requiredMark?: boolean;
   /**
    * 表单字段校验规则
-   * @default []
    */
   rules?: Array<FormRule>;
   /**
