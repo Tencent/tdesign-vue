@@ -68,7 +68,7 @@ export default defineComponent({
     const { classPrefix } = useConfig('classPrefix');
 
     const {
-      value, label, disabled, panelElement, scrollType, bufferSize, index, multiple, isCreatedOption,
+      value, label, multiple, disabled, panelElement, scrollType, bufferSize, index, isCreatedOption,
     } = toRefs(props);
 
     const { hasLazyLoadHolder = null, tRowHeight = null } = useLazyLoad(
@@ -100,30 +100,26 @@ export default defineComponent({
     ]);
 
     const handleClick = (e: MouseEvent | KeyboardEvent) => {
-      if (multiple.value || isDisabled.value) return;
-      e.stopPropagation();
+      if (isDisabled.value) return;
+      e.preventDefault();
 
       if (isCreatedOption.value) {
         selectProvider.handleCreate?.(value.value);
-        if (selectProvider.multiple.value) {
-          const newValue = getNewMultipleValue(selectProvider.selectValue.value as SelectValue[], value.value);
-          selectProvider.handleValueChange(newValue.value, { e, trigger: 'check' }, value.value);
-          return;
-        }
       }
-      selectProvider.handleValueChange(value.value, { e, trigger: 'check' }, value.value);
-      selectProvider.handlePopupVisibleChange(false, { e });
-    };
 
-    const handleCheckboxClick = (val: boolean, context: { e: MouseEvent | KeyboardEvent }) => {
-      const newValue = getNewMultipleValue(selectProvider.selectValue.value as SelectValue[], value.value);
-      selectProvider.handleValueChange(
-        newValue.value,
-        { e: context.e, trigger: val ? 'check' : 'uncheck' },
-        value.value,
-      );
-      if (!selectProvider.reserveKeyword.value) {
-        selectProvider.handlerInputChange('');
+      if (multiple.value) {
+        const newValue = getNewMultipleValue(selectProvider.selectValue.value as SelectValue[], value.value);
+        selectProvider.handleValueChange(
+          newValue.value,
+          { e, trigger: newValue.isCheck ? 'check' : 'uncheck' },
+          value.value,
+        );
+        if (!selectProvider.reserveKeyword.value) {
+          selectProvider.handlerInputChange('');
+        }
+      } else {
+        selectProvider.handleValueChange(value.value, { e, trigger: 'check' }, value.value);
+        selectProvider.handlePopupVisibleChange(false, { e });
       }
     };
 
@@ -160,13 +156,12 @@ export default defineComponent({
       tRowHeight,
       hasLazyLoadHolder,
       handleClick,
-      handleCheckboxClick,
     };
   },
 
   render() {
     const {
-      classes, multiple, labelText, isSelected, disabled, selectProvider, handleCheckboxClick, mouseEvent,
+      classes, multiple, labelText, isSelected, disabled, selectProvider, mouseEvent,
     } = this;
     const children: ScopedSlotReturnValue = renderContent(this, 'default', 'content');
     const optionChild = children || <span>{labelText}</span>;
@@ -195,11 +190,7 @@ export default defineComponent({
         v-ripple={(this.keepAnimation as any).ripple}
       >
         {multiple ? (
-          <t-checkbox
-            checked={isSelected}
-            disabled={disabled || (!isSelected && selectProvider.isReachMaxLimit.value)}
-            onChange={handleCheckboxClick}
-          >
+          <t-checkbox checked={isSelected} disabled={disabled || (!isSelected && selectProvider.isReachMaxLimit.value)}>
             {optionChild}
           </t-checkbox>
         ) : (

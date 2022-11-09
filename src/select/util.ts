@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-syntax */
 import cloneDeep from 'lodash/cloneDeep';
 import {
-  SelectOption, SelectValue, TdOptionProps, TdSelectProps,
+  SelectOption, SelectOptionGroup, SelectValue, TdOptionProps, TdSelectProps,
 } from './type';
 
 export const getSingleContent = (value: TdSelectProps['value'], options: SelectOption[]): string => {
@@ -38,3 +38,11 @@ export const getNewMultipleValue = (innerValue: SelectValue[], optionValue: Sele
     isCheck: valueIndex < 0,
   };
 };
+
+/** 将 options 扁平化，拍扁所有 group */
+export const flattenOptions = (options: TdOptionProps[]): SelectOption[] => options.reduce(
+  (pre, current) => pre.concat(
+    (current as SelectOptionGroup).group ? flattenOptions((current as SelectOptionGroup).children) : current,
+  ),
+    [] as SelectOption[],
+);
