@@ -5,6 +5,27 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.49.4 `2022-11-09` 
+### 🚀 Features
+- `Tree`: 支持拖拽功能，详见示例代码 @xixileng ([#1745](https://github.com/Tencent/tdesign-vue/pull/1745))
+- `Timeline`: 新增 Timeline 时间轴组件，@weijiyang @uyarn ([#1638](https://github.com/Tencent/tdesign-vue/pull/1638))
+
+### 🐞 Bug Fixes
+- `Table`: `resizable = false` 时，基础表格表头默认使用用户定义的列宽  @ZTao-z ([#1733](https://github.com/Tencent/tdesign-vue/pull/1733))
+- `Transfer`: 带分页的穿梭框，修复两侧全量勾选时报错的问题 @yaogengzhu ([#1741](https://github.com/Tencent/tdesign-vue/pull/1741))
+- `Input`: 修复在输入框进行预渲染处于 `display: none` 状态时，宽度计算不正确的问题，[issue#1678](https://github.com/Tencent/tdesign-vue/issues/1678) @chaishi ([#1749](https://github.com/Tencent/tdesign-vue/pull/1749))
+- `Select`: @skytt ([#1755](https://github.com/Tencent/tdesign-vue/pull/1755))
+  - 修复创建项目在已有选项中存在时，重复显示的问题
+  - 修复多选时，待创建选项显示样式问题
+  - 优化键盘事件的逻辑
+- ConfigProvider: 修复 `t-config-provider` 直接包裹 router-view 标签时控制台报错的问题 @LoopZhou ([#1753](https://github.com/Tencent/tdesign-vue/pull/1753))
+- `Tree`: 修复 filter 过滤后，过滤结果为空，未能显示 empty slot 的问题 @yaogengzhu ([#1748](https://github.com/Tencent/tdesign-vue/pull/1748))
+- `InputNumber`: 修复`theme=column`时，`autoWidth` 无效问题，[issue#1652](https://github.com/Tencent/tdesign-react/issues/1652) @chaishi ([common #969](https://github.com/Tencent/tdesign-common/pull/969))
+- `Form/Upload`: 修复 `formRule` `uploadFile` 类型未导出的问题 @uyarn ([#1638](https://github.com/Tencent/tdesign-vue/pull/1638))
+- `Form`: 修复表单中使用 DateRangePicker，校验失败时样式缺少红框展示的问题 @LoopZhou ([common #965](https://github.com/Tencent/tdesign-common/pull/965))
+### 🚧 Others
+- `Alert`: 官网示例的宽度根据屏幕宽度自动撑开 @aomnisz ([#1658](https://github.com/Tencent/tdesign-vue/pull/1658))
+
 ## 🌈 0.49.3 `2022-11-02` 
 ### 🚀 Features
 - `Input`:  @chaishi ([#1700](https://github.com/Tencent/tdesign-vue/pull/1700))
