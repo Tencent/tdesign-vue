@@ -117095,6 +117095,1516 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/twelve-hour-mer
 </div>
 `;
 
+exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
+<div
+  data-v-09f93c80=""
+>
+  <div
+    class="t-space t-space-vertical"
+    data-v-09f93c80=""
+    style="gap: 16px;"
+  >
+    <div
+      class="t-space-item"
+    >
+      <div
+        class="t-space t-space-horizontal"
+        data-v-09f93c80=""
+        style="gap: 16px;"
+      >
+        <div
+          class="t-space-item"
+        >
+          <div
+            class="t-radio-group t-size-m t-radio-group__outline"
+            data-v-09f93c80=""
+          >
+            <label
+              class="t-radio-button t-is-checked"
+              data-v-09f93c80=""
+            >
+              <input
+                class="t-radio-button__former"
+                name=""
+                type="radio"
+                value="vertical"
+              />
+              <span
+                class="t-radio-button__input"
+              />
+              <span
+                class="t-radio-button__label"
+              >
+                垂直时间轴
+              </span>
+            </label>
+            <label
+              class="t-radio-button"
+              data-v-09f93c80=""
+            >
+              <input
+                class="t-radio-button__former"
+                name=""
+                type="radio"
+                value="horizontal"
+              />
+              <span
+                class="t-radio-button__input"
+              />
+              <span
+                class="t-radio-button__label"
+              >
+                水平时间轴
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul
+    class="t-timeline t-timeline-right t-timeline-vertical t-timeline-label--same t-timeline-label"
+    data-v-09f93c80=""
+  >
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-09f93c80=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        事件一
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-01-01
+        </div>
+      </div>
+    </li>
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-09f93c80=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        事件二
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-02-01
+        </div>
+      </div>
+    </li>
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-09f93c80=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        事件三
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-03-01
+        </div>
+      </div>
+    </li>
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-09f93c80=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        事件四
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-04-01
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/timeline/_example/customContent.vue 1`] = `
+<div
+  data-v-63c3f6ae=""
+>
+  <ul
+    class="t-timeline t-timeline-right t-timeline-vertical t-timeline-label--same t-timeline-label"
+    data-v-63c3f6ae=""
+  >
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-63c3f6ae=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        <div
+          data-v-63c3f6ae=""
+        >
+          事件一
+        </div>
+        <div
+          data-v-63c3f6ae=""
+          style="color: rgba(0, 0, 0, 0.6);"
+        >
+          事件一自定义内容
+        </div>
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-01-01
+        </div>
+      </div>
+    </li>
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-63c3f6ae=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        <div
+          data-v-63c3f6ae=""
+        >
+          事件二
+        </div>
+        <div
+          data-v-63c3f6ae=""
+          style="color: rgba(0, 0, 0, 0.6);"
+        >
+          事件二自定义内容
+        </div>
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-02-01
+        </div>
+      </div>
+    </li>
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-63c3f6ae=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        <div
+          data-v-63c3f6ae=""
+        >
+          事件三
+        </div>
+        <div
+          data-v-63c3f6ae=""
+          style="color: rgba(0, 0, 0, 0.6);"
+        >
+          事件三自定义内容
+        </div>
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-03-01
+        </div>
+      </div>
+    </li>
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-63c3f6ae=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        <div
+          data-v-63c3f6ae=""
+        >
+          事件四
+        </div>
+        <div
+          data-v-63c3f6ae=""
+          style="color: rgba(0, 0, 0, 0.6);"
+        >
+          事件四自定义内容
+        </div>
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-04-01
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] = `
+<div
+  data-v-55783979=""
+>
+  <div
+    class="t-space t-space-vertical"
+    data-v-55783979=""
+    style="gap: 16px;"
+  >
+    <div
+      class="t-space-item"
+    >
+      <div
+        class="t-space t-space-horizontal"
+        data-v-55783979=""
+        style="gap: 16px;"
+      >
+        <div
+          class="t-space-item"
+        >
+          <div
+            class="t-radio-group t-size-m t-radio-group__outline"
+            data-v-55783979=""
+          >
+            <label
+              class="t-radio-button t-is-checked"
+              data-v-55783979=""
+            >
+              <input
+                class="t-radio-button__former"
+                name=""
+                type="radio"
+                value="default"
+              />
+              <span
+                class="t-radio-button__input"
+              />
+              <span
+                class="t-radio-button__label"
+              >
+                默认样式
+              </span>
+            </label>
+            <label
+              class="t-radio-button"
+              data-v-55783979=""
+            >
+              <input
+                class="t-radio-button__former"
+                name=""
+                type="radio"
+                value="dot"
+              />
+              <span
+                class="t-radio-button__input"
+              />
+              <span
+                class="t-radio-button__label"
+              >
+                Dot样式
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul
+    class="t-timeline t-timeline-right t-timeline-vertical t-timeline-label--same t-timeline-label"
+    data-v-55783979=""
+  >
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-55783979=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot t-timeline-item__dot--custom t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          >
+            <svg
+              class="t-icon t-icon-loading t-size-m"
+              data-v-55783979=""
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 1.5a6.5 6.5 0 000 13v-1.63A4.87 4.87 0 1112.88 8h1.62A6.5 6.5 0 008 1.5z"
+                data-v-55783979=""
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        事件一 
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-01-01
+        </div>
+      </div>
+    </li>
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-55783979=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot t-timeline-item__dot--custom t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          >
+            <svg
+              class="t-icon t-icon-check-circle-filled t-size-m"
+              data-v-55783979=""
+              fill="none"
+              height="1em"
+              style="color: red;"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
+                data-v-55783979=""
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        事件二 
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-02-01
+        </div>
+      </div>
+    </li>
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-55783979=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot t-timeline-item__dot--custom t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          >
+            <svg
+              class="t-icon t-icon-check-circle-filled t-size-m"
+              data-v-55783979=""
+              fill="none"
+              height="1em"
+              style="color: green;"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
+                data-v-55783979=""
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        事件三 
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-03-01
+        </div>
+      </div>
+    </li>
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-55783979=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot t-timeline-item__dot--custom t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          >
+            <svg
+              class="t-icon t-icon-check-circle-filled t-size-m"
+              data-v-55783979=""
+              fill="none"
+              height="1em"
+              style="color: orange;"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
+                data-v-55783979=""
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        事件四 
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-04-01
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
+<div
+  data-v-16a85ace=""
+>
+  <div
+    class="t-space t-space-vertical"
+    data-v-16a85ace=""
+    style="gap: 16px;"
+  >
+    <div
+      class="t-space-item"
+    >
+      <div
+        class="t-space t-space-horizontal"
+        data-v-16a85ace=""
+        style="gap: 16px;"
+      >
+        <div
+          class="t-space-item"
+        >
+          <h4
+            data-v-16a85ace=""
+          >
+            时间轴方向
+          </h4>
+        </div>
+        <div
+          class="t-space-item"
+        >
+          <div
+            class="t-radio-group t-size-m t-radio-group__outline"
+            data-v-16a85ace=""
+          >
+            <label
+              class="t-radio-button t-is-checked"
+              data-v-16a85ace=""
+            >
+              <input
+                class="t-radio-button__former"
+                name=""
+                type="radio"
+                value="vertical"
+              />
+              <span
+                class="t-radio-button__input"
+              />
+              <span
+                class="t-radio-button__label"
+              >
+                垂直时间轴
+              </span>
+            </label>
+            <label
+              class="t-radio-button"
+              data-v-16a85ace=""
+            >
+              <input
+                class="t-radio-button__former"
+                name=""
+                type="radio"
+                value="horizontal"
+              />
+              <span
+                class="t-radio-button__input"
+              />
+              <span
+                class="t-radio-button__label"
+              >
+                水平时间轴
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="t-space-item"
+    >
+      <div
+        class="t-space t-space-horizontal"
+        data-v-16a85ace=""
+        style="gap: 16px;"
+      >
+        <div
+          class="t-space-item"
+        >
+          <h4
+            data-v-16a85ace=""
+          >
+            对齐方式
+          </h4>
+        </div>
+        <div
+          class="t-space-item"
+        >
+          <div
+            class="t-radio-group t-size-m t-radio-group__outline"
+            data-v-16a85ace=""
+          >
+            <label
+              class="t-radio-button t-is-checked"
+              data-v-16a85ace=""
+            >
+              <input
+                class="t-radio-button__former"
+                name=""
+                type="radio"
+                value="left"
+              />
+              <span
+                class="t-radio-button__input"
+              />
+              <span
+                class="t-radio-button__label"
+              >
+                左对齐
+              </span>
+            </label>
+            <label
+              class="t-radio-button"
+              data-v-16a85ace=""
+            >
+              <input
+                class="t-radio-button__former"
+                name=""
+                type="radio"
+                value="alternate"
+              />
+              <span
+                class="t-radio-button__input"
+              />
+              <span
+                class="t-radio-button__label"
+              >
+                交错对齐
+              </span>
+            </label>
+            <label
+              class="t-radio-button"
+              data-v-16a85ace=""
+            >
+              <input
+                class="t-radio-button__former"
+                name=""
+                type="radio"
+                value="right"
+              />
+              <span
+                class="t-radio-button__input"
+              />
+              <span
+                class="t-radio-button__label"
+              >
+                右对齐
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="t-space-item"
+    >
+      <div
+        class="t-space t-space-horizontal"
+        data-v-16a85ace=""
+        style="gap: 16px;"
+      >
+        <div
+          class="t-space-item"
+        >
+          <h4
+            data-v-16a85ace=""
+          >
+            label对齐方式
+          </h4>
+        </div>
+        <div
+          class="t-space-item"
+        >
+          <div
+            class="t-radio-group t-size-m t-radio-group__outline"
+            data-v-16a85ace=""
+          >
+            <label
+              class="t-radio-button t-is-checked"
+              data-v-16a85ace=""
+            >
+              <input
+                class="t-radio-button__former"
+                name=""
+                type="radio"
+                value="same"
+              />
+              <span
+                class="t-radio-button__input"
+              />
+              <span
+                class="t-radio-button__label"
+              >
+                同侧
+              </span>
+            </label>
+            <label
+              class="t-radio-button"
+              data-v-16a85ace=""
+            >
+              <input
+                class="t-radio-button__former"
+                name=""
+                type="radio"
+                value="alternate"
+              />
+              <span
+                class="t-radio-button__input"
+              />
+              <span
+                class="t-radio-button__label"
+              >
+                交错
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul
+    class="t-timeline t-timeline-left t-timeline-vertical t-timeline-label--same t-timeline-label"
+    data-v-16a85ace=""
+  >
+    <li
+      class="t-timeline-item t-timeline-item-left "
+      data-v-16a85ace=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        事件一
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-01-01
+        </div>
+      </div>
+    </li>
+    <li
+      class="t-timeline-item t-timeline-item-left "
+      data-v-16a85ace=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        事件二
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-02-01
+        </div>
+      </div>
+    </li>
+    <li
+      class="t-timeline-item t-timeline-item-left "
+      data-v-16a85ace=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        事件三
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-03-01
+        </div>
+      </div>
+    </li>
+    <li
+      class="t-timeline-item t-timeline-item-left "
+      data-v-16a85ace=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        事件四
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-04-01
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = `
+<div
+  data-v-1db606dd=""
+>
+  <div
+    class="t-space t-space-vertical"
+    data-v-1db606dd=""
+    style="gap: 16px;"
+  >
+    <div
+      class="t-space-item"
+    >
+      <div
+        class="t-space t-space-horizontal"
+        data-v-1db606dd=""
+        style="gap: 16px;"
+      >
+        <div
+          class="t-space-item"
+        >
+          <form
+            class="t-form"
+            data-v-1db606dd=""
+          >
+            <div
+              class="t-form__item t-form-item__"
+              data-v-1db606dd=""
+              style="margin-bottom: 5px;"
+            >
+              <div
+                class="t-form__label t-form__label--right"
+              >
+                <label
+                  for=""
+                >
+                  加载中
+                </label>
+              </div>
+              <div
+                class="t-form__controls"
+              >
+                <div
+                  class="t-form__controls-content"
+                >
+                  <div
+                    class="t-switch t-size-l"
+                    data-v-1db606dd=""
+                  >
+                    <span
+                      class="t-switch__handle"
+                    />
+                    <div
+                      class="t-switch__content t-size-l"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul
+    class="t-timeline t-timeline-right t-timeline-vertical t-timeline-label--same t-timeline-label"
+    data-v-1db606dd=""
+  >
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-1db606dd=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        事件一
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-01-01
+        </div>
+      </div>
+    </li>
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-1db606dd=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        事件二
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-02-01
+        </div>
+      </div>
+    </li>
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-1db606dd=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        事件三
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-03-01
+        </div>
+      </div>
+    </li>
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-1db606dd=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+         事件四 
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-04-01
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/timeline/_example/reverse.vue 1`] = `
+<div
+  data-v-f39394fa=""
+>
+  <div
+    class="t-space t-space-vertical"
+    data-v-f39394fa=""
+    style="gap: 16px;"
+  >
+    <div
+      class="t-space-item"
+    >
+      <div
+        class="t-space t-space-horizontal"
+        data-v-f39394fa=""
+        style="gap: 16px;"
+      >
+        <div
+          class="t-space-item"
+        >
+          <form
+            class="t-form"
+            data-v-f39394fa=""
+          >
+            <div
+              class="t-form__item t-form-item__"
+              data-v-f39394fa=""
+              style="margin-bottom: 5px;"
+            >
+              <div
+                class="t-form__label t-form__label--right"
+              >
+                <label
+                  for=""
+                >
+                  是否倒序
+                </label>
+              </div>
+              <div
+                class="t-form__controls"
+              >
+                <div
+                  class="t-form__controls-content"
+                >
+                  <div
+                    class="t-switch t-size-l"
+                    data-v-f39394fa=""
+                  >
+                    <span
+                      class="t-switch__handle"
+                    />
+                    <div
+                      class="t-switch__content t-size-l"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul
+    class="t-timeline t-timeline-right t-timeline-vertical t-timeline-label--same t-timeline-label"
+    data-v-f39394fa=""
+  >
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-f39394fa=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        事件一
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-01-01
+        </div>
+      </div>
+    </li>
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-f39394fa=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        事件二
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-02-01
+        </div>
+      </div>
+    </li>
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-f39394fa=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        事件三
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-03-01
+        </div>
+      </div>
+    </li>
+    <li
+      class="t-timeline-item t-timeline-item-right "
+      data-v-f39394fa=""
+    >
+      <div
+        class="t-timeline-item__wrapper"
+      >
+        <div
+          class="t-timeline-item__dot  t-timeline-item__dot--default"
+        >
+          <div
+            class="t-timeline-item__dot-content"
+          />
+        </div>
+        <div
+          class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+        />
+      </div>
+      <div
+        class="t-timeline-item__content"
+      >
+        事件四
+        <div
+          class="t-timeline-item__label t-timeline-item__label--same"
+        >
+          2022-04-01
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
+<div
+  data-v-b5c789ac=""
+>
+  <div
+    class="t-space t-space-vertical"
+    data-v-b5c789ac=""
+    style="gap: 16px;"
+  >
+    <div
+      class="t-space-item"
+    >
+      <ul
+        class="t-timeline t-timeline-right t-timeline-vertical t-timeline-label--same t-timeline-label"
+        data-v-b5c789ac=""
+      >
+        <li
+          class="t-timeline-item t-timeline-item-right "
+          data-v-b5c789ac=""
+        >
+          <div
+            class="t-timeline-item__wrapper"
+          >
+            <div
+              class="t-timeline-item__dot  t-timeline-item__dot--primary"
+            >
+              <div
+                class="t-timeline-item__dot-content"
+              />
+            </div>
+            <div
+              class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
+            />
+          </div>
+          <div
+            class="t-timeline-item__content"
+          >
+             已完成的时间 
+            <div
+              class="t-timeline-item__label t-timeline-item__label--same"
+            >
+              2022-01-01
+            </div>
+          </div>
+        </li>
+        <li
+          class="t-timeline-item t-timeline-item-right "
+          data-v-b5c789ac=""
+        >
+          <div
+            class="t-timeline-item__wrapper"
+          >
+            <div
+              class="t-timeline-item__dot  t-timeline-item__dot--error"
+            >
+              <div
+                class="t-timeline-item__dot-content"
+              />
+            </div>
+            <div
+              class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-error"
+            />
+          </div>
+          <div
+            class="t-timeline-item__content"
+          >
+             危险时间 
+            <div
+              class="t-timeline-item__label t-timeline-item__label--same"
+            >
+              2022-03-01
+            </div>
+          </div>
+        </li>
+        <li
+          class="t-timeline-item t-timeline-item-right "
+          data-v-b5c789ac=""
+        >
+          <div
+            class="t-timeline-item__wrapper"
+          >
+            <div
+              class="t-timeline-item__dot  t-timeline-item__dot--warning"
+            >
+              <div
+                class="t-timeline-item__dot-content"
+              />
+            </div>
+            <div
+              class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-warning"
+            />
+          </div>
+          <div
+            class="t-timeline-item__content"
+          >
+             告警事件 
+            <div
+              class="t-timeline-item__label t-timeline-item__label--same"
+            >
+              2022-04-01
+            </div>
+          </div>
+        </li>
+        <li
+          class="t-timeline-item t-timeline-item-right "
+          data-v-b5c789ac=""
+        >
+          <div
+            class="t-timeline-item__wrapper"
+          >
+            <div
+              class="t-timeline-item__dot  t-timeline-item__dot--default"
+            >
+              <div
+                class="t-timeline-item__dot-content"
+              />
+            </div>
+            <div
+              class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-default"
+            />
+          </div>
+          <div
+            class="t-timeline-item__content"
+          >
+            默认的时间
+            <div
+              class="t-timeline-item__label t-timeline-item__label--same"
+            >
+              2022-05-01
+            </div>
+          </div>
+        </li>
+        <li
+          class="t-timeline-item t-timeline-item-right "
+          data-v-b5c789ac=""
+        >
+          <div
+            class="t-timeline-item__wrapper"
+          >
+            <div
+              class="t-timeline-item__dot  "
+              style="border-color: yellowgreen;"
+            >
+              <div
+                class="t-timeline-item__dot-content"
+              />
+            </div>
+            <div
+              class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-yellowgreen"
+            />
+          </div>
+          <div
+            class="t-timeline-item__content"
+          >
+             自定义主题色 
+            <div
+              class="t-timeline-item__label t-timeline-item__label--same"
+            >
+              2022-06-01
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`csr snapshot test > csr test ./src/tooltip/_example/arrow.vue 1`] = `
 <div>
   <button
