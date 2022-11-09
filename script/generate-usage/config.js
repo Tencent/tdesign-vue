@@ -386,7 +386,7 @@ module.exports = {
     },
   },
   timeline: {
-    panelStr: `const panelList = [{label: 'timePicker', value: 'timePicker'}];`,
+    panelStr: `const panelList = [{label: 'timeline', value: 'timeline'}];`,
     render: {
       timePicker: `<t-timeline v-bind="configProps" />`,
     },
