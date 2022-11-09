@@ -58,6 +58,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       // 会导致外部关联组件如 input value 更新时，同步触发了所有子节点 render 方法
       // 因此单独提供此对象解锁关联
       $proxyScope: null,
+      $isFilterEmpty: false,
     };
   },
   computed: {
@@ -167,7 +168,8 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
         }
         return nodeView;
       });
-
+      // 检测过滤后list是否为空
+      this.$isFilterEmpty = nodes.every((v) => !v.visible);
       // 更新缓存后，被删除的节点要移除掉，避免内存泄露
       this.$nextTick(() => {
         $cacheMap.forEach((view: VNode, value: string) => {
@@ -225,7 +227,6 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
       const {
         actived, value, valueMode, filter,
       } = this;
-
       const store = new TreeStore({
         valueMode: valueMode as TypeValueMode,
         filter,
@@ -236,7 +237,6 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
           this.refresh();
         },
       });
-
       // 初始化数据
       this.store = store;
       this.updateStoreConfig();
@@ -508,7 +508,7 @@ export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tre
 
     // 空数据判定
     let emptyNode: TNodeReturnValue = null;
-    if (treeNodeViews.length <= 0) {
+    if (treeNodeViews.length <= 0 || this.$isFilterEmpty) {
       const useLocale = !this.empty && !this.$scopedSlots.empty;
       const emptyContent = useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty');
       emptyNode = <div class={`${this.componentName}__empty`}>{emptyContent}</div>;
