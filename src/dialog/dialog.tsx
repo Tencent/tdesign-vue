@@ -405,14 +405,17 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
           <div class={this.positionClass} style={this.positionStyle} onClick={this.overlayAction} ref="dialogPosition">
             <div key="dialog" ref="dialog" class={this.dialogClass} style={this.dialogStyle}>
               <div class={`${this.componentName}__header`} onmousedown={this.onStopDown}>
-                {this.getIcon()}
-                {renderTNodeJSX(this, 'header', defaultHeader)}
+                <div class={`${this.componentName}__header-content`}>
+                  {this.getIcon()}
+                  {renderTNodeJSX(this, 'header', defaultHeader)}
+                </div>
+                {this.closeBtn ? (
+                  <span class={`${this.componentName}__close`} onClick={this.closeBtnAction}>
+                    {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
+                  </span>
+                ) : null}
               </div>
-              {this.closeBtn ? (
-                <span class={`${this.componentName}__close`} onClick={this.closeBtnAction}>
-                  {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
-                </span>
-              ) : null}
+
               <div class={this.bodyClass} onmousedown={this.onStopDown}>
                 {body}
               </div>
