@@ -26,7 +26,7 @@ export const panelProps = () => ({
   },
   isShowPanel: {
     type: Boolean,
-    default: false,
+    default: true,
   },
   activeIndex: {
     type: Number,
