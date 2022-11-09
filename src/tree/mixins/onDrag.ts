@@ -3,33 +3,33 @@ import TreeNode from '../../_common/js/tree/tree-node';
 import { emitEvent } from '../util';
 import { TypeTdTreeProps, TypDragEventState } from '../interface';
 
-export interface DragInjectKey extends Vue {
+export interface onDragInjectKey {
   dragNode: TreeNode;
-  onDragStart: (context: { node: TreeNode; dragEvent: DragEvent }) => void;
-  onDragEnd: (context: { node: TreeNode; dragEvent: DragEvent }) => void;
-  onDragOver: (context: { node: TreeNode; dragEvent: DragEvent }) => void;
-  onDragLeave: (context: { node: TreeNode; dragEvent: DragEvent }) => void;
-  onDrop: (context: { node: TreeNode; dropPosition: number; dragEvent: DragEvent }) => void;
+  handleDragStart: (context: { node: TreeNode; dragEvent: DragEvent }) => void;
+  handleDragEnd: (context: { node: TreeNode; dragEvent: DragEvent }) => void;
+  handleDragOver: (context: { node: TreeNode; dragEvent: DragEvent }) => void;
+  handleDragLeave: (context: { node: TreeNode; dragEvent: DragEvent }) => void;
+  handleDrop: (context: { node: TreeNode; dropPosition: number; dragEvent: DragEvent }) => void;
 }
 
-export interface OnDrag extends Vue {
-  onDrag: DragInjectKey;
-}
+export type OnDragMixinsType = {
+  onDrag: onDragInjectKey;
+};
 
-export default function draggableMixins<BasicComponent extends Vue>() {
-  return (Vue as VueConstructor<DragInjectKey & BasicComponent>).extend({
+export default function onDragMixins<BasicComponent extends Vue>() {
+  return (Vue as VueConstructor<onDragInjectKey & BasicComponent>).extend({
     provide() {
       const {
-        onDragStart, onDragEnd, onDragOver, onDragLeave, onDrop,
+        handleDragStart, handleDragEnd, handleDragOver, handleDragLeave, handleDrop,
       } = this;
       return {
         onDrag: {
-          onDragStart,
-          onDragEnd,
-          onDragOver,
-          onDragLeave,
-          onDrop,
-        } as DragInjectKey,
+          handleDragStart,
+          handleDragEnd,
+          handleDragOver,
+          handleDragLeave,
+          handleDrop,
+        } as onDragInjectKey,
       };
     },
     data() {
@@ -38,7 +38,7 @@ export default function draggableMixins<BasicComponent extends Vue>() {
       };
     },
     methods: {
-      onDragStart(state: TypDragEventState) {
+      handleDragStart(state: TypDragEventState) {
         const { dragEvent, node } = state;
         this.dragNode = node;
 
@@ -49,7 +49,7 @@ export default function draggableMixins<BasicComponent extends Vue>() {
         emitEvent<Parameters<TypeTdTreeProps['onDragStart']>>(this, 'drag-start', ctx);
       },
 
-      onDragEnd(state: TypDragEventState) {
+      handleDragEnd(state: TypDragEventState) {
         const { dragEvent, node } = state;
         this.dragNode = node;
 
@@ -60,7 +60,7 @@ export default function draggableMixins<BasicComponent extends Vue>() {
         emitEvent<Parameters<TypeTdTreeProps['onDragEnd']>>(this, 'drag-end', ctx);
       },
 
-      onDragOver(state: TypDragEventState) {
+      handleDragOver(state: TypDragEventState) {
         const { dragEvent, node } = state;
         const ctx = {
           node: node.getModel(),
@@ -69,7 +69,7 @@ export default function draggableMixins<BasicComponent extends Vue>() {
         emitEvent<Parameters<TypeTdTreeProps['onDragOver']>>(this, 'drag-over', ctx);
       },
 
-      onDragLeave(state: TypDragEventState) {
+      handleDragLeave(state: TypDragEventState) {
         const { dragEvent, node } = state;
         const ctx = {
           node: node.getModel(),
@@ -78,7 +78,7 @@ export default function draggableMixins<BasicComponent extends Vue>() {
         emitEvent<Parameters<TypeTdTreeProps['onDragLeave']>>(this, 'drag-leave', ctx);
       },
 
-      onDrop(state: TypDragEventState) {
+      handleDrop(state: TypDragEventState) {
         const { dragEvent, node, dropPosition } = state;
         if (
           node.value === this.dragNode.value
@@ -100,7 +100,8 @@ export default function draggableMixins<BasicComponent extends Vue>() {
           return false;
         });
         const ctx = {
-          node: node.getModel(),
+          dropNode: node.getModel(),
+          dragNode: this.dragNode.getModel(),
           dropPosition,
           e: dragEvent,
         };

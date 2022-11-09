@@ -1,7 +1,7 @@
 import Vue, { VueConstructor } from 'vue';
 import type { DebouncedFunc } from 'lodash';
 import throttle from 'lodash/throttle';
-import { OnDrag } from './onDrag';
+import { OnDragMixinsType } from './onDrag';
 
 export interface DragStates {
   isDragOver: boolean;
@@ -9,14 +9,14 @@ export interface DragStates {
   dropPosition: number;
 }
 
-export interface Draggable extends Vue {
+export interface DraggableMixinsType {
   throttleUpdateDropPosition: DebouncedFunc<any>;
 }
 
 type DragStatus = 'dragStart' | 'dragOver' | 'dragLeave' | 'dragEnd' | 'drop';
 
 export default function draggableMixins<BasicComponent extends Vue>() {
-  return (Vue as VueConstructor<OnDrag & Draggable & BasicComponent>).extend({
+  return (Vue as VueConstructor<OnDragMixinsType & DraggableMixinsType & BasicComponent>).extend({
     inject: {
       onDrag: { default: undefined },
     },
@@ -39,7 +39,7 @@ export default function draggableMixins<BasicComponent extends Vue>() {
         const { $el, dragStates } = this;
         if (!$el) return;
 
-        const rect = $el.getBoundingClientRect();
+        const rect = $el?.getBoundingClientRect?.();
         const offsetY = window.pageYOffset + rect.top;
         const { pageY } = dragEvent;
         const gapHeight = rect.height / 4;
@@ -62,28 +62,28 @@ export default function draggableMixins<BasicComponent extends Vue>() {
           case 'dragStart':
             dragStates.isDragging = true;
             dragStates.dropPosition = 0;
-            onDrag.onDragStart?.({ node, dragEvent });
+            onDrag.handleDragStart?.({ node, dragEvent });
             break;
           case 'dragEnd':
             dragStates.isDragging = false;
             dragStates.isDragOver = false;
             dragStates.dropPosition = 0;
             throttleUpdateDropPosition.cancel();
-            onDrag.onDragEnd?.({ node, dragEvent });
+            onDrag.handleDragEnd?.({ node, dragEvent });
             break;
           case 'dragOver':
             dragStates.isDragOver = true;
             throttleUpdateDropPosition(dragEvent);
-            onDrag.onDragOver?.({ node, dragEvent });
+            onDrag.handleDragOver?.({ node, dragEvent });
             break;
           case 'dragLeave':
             dragStates.isDragOver = false;
             dragStates.dropPosition = 0;
             throttleUpdateDropPosition.cancel();
-            onDrag.onDragLeave?.({ node, dragEvent });
+            onDrag.handleDragLeave?.({ node, dragEvent });
             break;
           case 'drop':
-            onDrag.onDrop?.({ node, dropPosition: dragStates.dropPosition, dragEvent });
+            onDrag.handleDrop?.({ node, dropPosition: dragStates.dropPosition, dragEvent });
             dragStates.isDragOver = false;
             throttleUpdateDropPosition.cancel();
             break;

@@ -59,26 +59,10 @@ const TreeItem = mixins(
   computed: {
     classList(): ClassName {
       const { isDragOver, isDragging, dropPosition } = this.dragStates;
-      return {
-        // 拖拽样式
-        [`${this.componentName}__item--dragging`]: isDragging,
-        [`${this.componentName}__item--tip-top`]: isDragOver && dropPosition < 0,
-        [`${this.componentName}__item--tip-bottom`]: isDragOver && dropPosition > 0,
-        [`${this.componentName}__item--tip-highlight`]: !isDragging && isDragOver && dropPosition === 0,
-      };
-    },
-  },
-  methods: {
-    getStyles(): string {
-      const { level, visible } = this.node;
-      const levelStyle = `--level: ${level};`;
-      const hiddenStyle = 'display:none;';
-      if (visible) return levelStyle;
-      return `${hiddenStyle} ${levelStyle}`;
-    },
-    getClassList(): ClassName {
       const { node, nested } = this;
+
       const list = [];
+
       list.push(`${this.componentName}__item`);
       list.push({
         [`${this.componentName}__item--open`]: node.expanded,
@@ -95,7 +79,23 @@ const TreeItem = mixins(
           list.push(`${this.componentName}__item--hidden`);
         }
       }
-      return list;
+      // 拖拽过程样式相关classList
+      const dragClassList = {
+        [`${this.componentName}__item--dragging`]: isDragging,
+        [`${this.componentName}__item--tip-top`]: isDragOver && dropPosition < 0,
+        [`${this.componentName}__item--tip-bottom`]: isDragOver && dropPosition > 0,
+        [`${this.componentName}__item--tip-highlight`]: !isDragging && isDragOver && dropPosition === 0,
+      };
+      return list.concat(dragClassList);
+    },
+  },
+  methods: {
+    getStyles(): string {
+      const { level, visible } = this.node;
+      const levelStyle = `--level: ${level};`;
+      const hiddenStyle = 'display:none;';
+      if (visible) return levelStyle;
+      return `${hiddenStyle} ${levelStyle}`;
     },
     renderLine(createElement: CreateElement): VNode {
       const { node, treeScope, proxyScope } = this;
@@ -450,7 +450,7 @@ const TreeItem = mixins(
     }
 
     const styles = this.getStyles();
-    const classList = this.getClassList().concat(this.classList);
+    const { classList } = this;
     const itemNode = (
       <div
         class={classList}
