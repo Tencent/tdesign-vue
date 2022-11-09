@@ -10,13 +10,13 @@
       </t-space>
     </t-space>
     <t-timeline mode="same">
-      <t-timelineItem label="2022-01-01">事件一</t-timelineItem>
-      <t-timelineItem label="2022-02-01">事件二</t-timelineItem>
-      <t-timelineItem label="2022-03-01">事件三</t-timelineItem>
-      <t-timelineItem label="2022-04-01" :loading="loading">
+      <t-timeline-item label="2022-01-01">事件一</t-timeline-item>
+      <t-timeline-item label="2022-02-01" :loading="loading">事件二</t-timeline-item>
+      <t-timeline-item label="2022-03-01">事件三</t-timeline-item>
+      <t-timeline-item label="2022-04-01" :loading="loading">
         事件四
         <!-- <t-loading size="12px" slot="dot" /> -->
-      </t-timelineItem>
+      </t-timeline-item>
     </t-timeline>
   </div>
 </template>

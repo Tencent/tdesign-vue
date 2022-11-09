@@ -4,9 +4,9 @@ import {
 } from '@vue/composition-api';
 import TLoading from '../loading';
 import { TdTimeLineItemProps } from './type';
-import { prefix } from '../config';
 import getRenderAlign from './utils';
-import TimelineItemProps from './timelineItemProps';
+import TimelineItemProps from './timeline-item-props';
+import { usePrefixClass } from '../hooks/useConfig';
 
 const DefaultTheme = ['primary', 'warning', 'error', 'default'];
 
@@ -20,6 +20,7 @@ export default defineComponent({
   },
   setup(props: TdTimeLineItemProps) {
     const instance = getCurrentInstance();
+    const classPrefix = usePrefixClass();
 
     const timelineProvider: any = inject('TTimeline');
     const {
@@ -49,41 +50,41 @@ export default defineComponent({
       // 单独设置则单独生效
       if (renderAlign.value === 'alternate') {
         return itemLabelAlign?.value || currentIndex.value % 2 === 0
-          ? `${prefix}-timeline-item-${left}`
-          : `${prefix}-timeline-item-${right}`;
+          ? `${classPrefix.value}-timeline-item-${left}`
+          : `${classPrefix.value}-timeline-item-${right}`;
       }
       if (renderAlign.value === 'left' || renderAlign.value === 'top') {
-        return `${prefix}-timeline-item-${left}`;
+        return `${classPrefix.value}-timeline-item-${left}`;
       }
       if (renderAlign.value === 'right' || renderAlign.value === 'bottom') {
-        return `${prefix}-timeline-item-${right}`;
+        return `${classPrefix.value}-timeline-item-${right}`;
       }
       return '';
     });
     // 计算是不是末尾子元素
     const getItemClassName = computed(() => {
       const isLastChildren = uidArr.value.length - 1 === currentIndex.value;
-      const lastClassName = isLastChildren ? `${prefix}-timeline-item--last` : '';
-      return `${prefix}-timeline-item ${getPositionClassName.value} ${lastClassName}`;
+      const lastClassName = isLastChildren ? `${classPrefix.value}-timeline-item--last` : '';
+      return `${classPrefix.value}-timeline-item ${getPositionClassName.value} ${lastClassName}`;
     });
 
     // 连线类名
     const tailClassName = computed(() => {
-      const statusClassName = reverse ? `${prefix}-timeline-item__tail--status-${dotColor?.value}` : '';
-      return `${prefix}-timeline-item__tail ${prefix}-timeline-item__tail--theme-${theme?.value} ${statusClassName}`;
+      const statusClassName = reverse ? `${classPrefix.value}-timeline-item__tail--status-${dotColor?.value}` : '';
+      return `${classPrefix.value}-timeline-item__tail ${classPrefix.value}-timeline-item__tail--theme-${theme?.value} ${statusClassName}`;
     });
     const dotElement = instance.slots.dot;
     // 圆圈类名
     const dotClassName = computed(() => {
-      const dotCustomClassName = !!dotElement || (!dotElement && loading?.value) ? `${prefix}-timeline-item__dot--custom` : '';
+      const dotCustomClassName = !!dotElement || (!dotElement && loading?.value) ? `${classPrefix.value}-timeline-item__dot--custom` : '';
       const docColorClassName = DefaultTheme.includes(dotColor?.value)
-        ? `${prefix}-timeline-item__dot--${dotColor?.value}`
+        ? `${classPrefix.value}-timeline-item__dot--${dotColor?.value}`
         : '';
-      return `${prefix}-timeline-item__dot ${dotCustomClassName} ${docColorClassName}`;
+      return `${classPrefix.value}-timeline-item__dot ${dotCustomClassName} ${docColorClassName}`;
     });
 
     const labelClassName = computed(
-      () => `${prefix}-timeline-item__label ${prefix}-timeline-item__label--${mode?.value}`,
+      () => `${classPrefix.value}-timeline-item__label ${classPrefix.value}-timeline-item__label--${mode?.value}`,
     );
     return {
       mode,
@@ -92,6 +93,7 @@ export default defineComponent({
       dotClassName,
       labelClassName,
       getItemClassName,
+      classPrefix,
     };
   },
 
@@ -109,20 +111,21 @@ export default defineComponent({
       tailClassName,
       content,
       getItemClassName,
+      classPrefix,
     } = this;
     return (
       <li class={getItemClassName} style={style}>
         {mode === 'alternate' && label && <div class={labelClassName}>{label}</div>}
-        <div class={`${prefix}-timeline-item__wrapper`}>
+        <div class={`${classPrefix}-timeline-item__wrapper`}>
           <div class={dotClassName} style={{ borderColor: !DefaultTheme.includes(dotColor) && dotColor }}>
-            <div class={`${prefix}-timeline-item__dot-content`}>
+            <div class={`${classPrefix}-timeline-item__dot-content`}>
               {!dotSlot && loading && <TLoading size="12px" />}
               {dotSlot}
             </div>
           </div>
           <div class={tailClassName} />
         </div>
-        <div class={`${prefix}-timeline-item__content`}>
+        <div class={`${classPrefix}-timeline-item__content`}>
           {content || defaultSlot}
           {mode === 'same' && label && <div class={labelClassName}>{label}</div>}
         </div>

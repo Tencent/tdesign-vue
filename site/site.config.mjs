@@ -512,6 +512,7 @@ const docs = [
         name: 'timeline',
         path: '/vue/components/timeline',
         component: () => import('tdesign-vue/timeline/timeline.md'),
+        componentEn: () => import('tdesign-vue/timeline/timeline.en-US.md'),
       },
       {
         title: 'Tooltip 文字提示',

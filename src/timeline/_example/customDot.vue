@@ -1,44 +1,48 @@
 <template>
-  <div>
-    <t-space direction="vertical">
-      <t-space>
-        <t-radio-group default-value="default" @change="handleChange">
-          <t-radio-button value="default">默认样式</t-radio-button>
-          <t-radio-button value="dot">Dot样式</t-radio-button>
-        </t-radio-group>
-      </t-space>
+  <t-space direction="vertical">
+    <t-space align="center">
+      <label>时间轴样式</label>
+      <t-radio-group default-value="default" @change="handleChange" variant="default-filled">
+        <t-radio-button value="default">默认样式</t-radio-button>
+        <t-radio-button value="dot">点状样式</t-radio-button>
+      </t-radio-group>
     </t-space>
     <t-timeline mode="same" :theme="docStyle">
-      <t-timelineItem label="2022-01-01"
+      <t-timeline-item label="2022-01-01"
       >事件一
-        <loading-icon size="medium" slot="dot" />
-      </t-timelineItem>
-      <t-timelineItem label="2022-02-01"
+        <tips-icon size="medium" :style="{ color: color }" slot="dot" />
+      </t-timeline-item>
+      <t-timeline-item label="2022-02-01"
       >事件二
-        <check-circle-filled-icon size="medium" style="color: red" slot="dot" />
-      </t-timelineItem>
-      <t-timelineItem label="2022-03-01"
+        <user-icon size="medium" :style="{ color: color }" slot="dot" />
+      </t-timeline-item>
+      <t-timeline-item label="2022-03-01"
       >事件三
-        <check-circle-filled-icon size="medium" style="color: green" slot="dot" />
-      </t-timelineItem>
-      <t-timelineItem label="2022-04-01"
+        <heart-icon size="medium" :style="{ color: color }" slot="dot" />
+      </t-timeline-item>
+      <t-timeline-item label="2022-04-01"
       >事件四
-        <check-circle-filled-icon size="medium" style="color: orange" slot="dot" />
-      </t-timelineItem>
+        <home-icon size="medium" :style="{ color: color }" slot="dot" />
+      </t-timeline-item>
     </t-timeline>
-  </div>
+  </t-space>
 </template>
 <script>
-import { LoadingIcon, CheckCircleFilledIcon } from 'tdesign-icons-vue';
+import {
+  TipsIcon, UserIcon, HeartIcon, HomeIcon,
+} from 'tdesign-icons-vue';
 
 export default {
   components: {
-    LoadingIcon,
-    CheckCircleFilledIcon,
+    TipsIcon,
+    UserIcon,
+    HeartIcon,
+    HomeIcon,
   },
   data() {
     return {
       docStyle: 'default',
+      color: 'var(--td-brand-color)',
     };
   },
   methods: {

@@ -25,10 +25,10 @@
       </t-space>
     </t-space>
     <t-timeline :layout="layout" :labelAlign="direction" :mode="mode">
-      <t-timelineItem label="2022-01-01">事件一</t-timelineItem>
-      <t-timelineItem label="2022-02-01">事件二</t-timelineItem>
-      <t-timelineItem label="2022-03-01">事件三</t-timelineItem>
-      <t-timelineItem label="2022-04-01">事件四</t-timelineItem>
+      <t-timeline-item label="2022-01-01">事件一</t-timeline-item>
+      <t-timeline-item label="2022-02-01">事件二</t-timeline-item>
+      <t-timeline-item label="2022-03-01">事件三</t-timeline-item>
+      <t-timeline-item label="2022-04-01">事件四</t-timeline-item>
     </t-timeline>
   </div>
 </template>

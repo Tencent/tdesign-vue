@@ -4,7 +4,7 @@
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
  * */
 
-import { TdTimeLineItemProps } from './type';
+import { TdTimeLineItemProps } from '../time-line/type';
 import { PropType } from 'vue';
 
 export default {
@@ -19,7 +19,7 @@ export default {
   /** 时间轴颜色，内置 `primary/warning/error/default` 四种色值，可传入 16 进制颜色码或 RGB 颜色值. */
   dotColor: {
     type: String as PropType<TdTimeLineItemProps['dotColor']>,
-    default: 'default' as TdTimeLineItemProps['dotColor'],
+    default: 'primary' as TdTimeLineItemProps['dotColor'],
     validator(val: TdTimeLineItemProps['dotColor']): boolean {
       if (!val) return true;
       return ['primary', 'warning', 'error', 'default'].includes(val);

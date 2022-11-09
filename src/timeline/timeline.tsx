@@ -2,11 +2,11 @@ import { VNode } from 'vue';
 import {
   computed, defineComponent, ref, toRefs, nextTick, getCurrentInstance, provide,
 } from '@vue/composition-api';
-import { prefix } from '../config';
 import getRenderAlign from './utils';
-import TimelineItem from './timelineItem';
+import TimelineItem from './timeline-item';
 import { TdTimeLineProps } from './type';
-import TimelineProps from './timelineProps';
+import TimelineProps from './props';
+import { usePrefixClass } from '../hooks/useConfig';
 
 export default defineComponent({
   name: 'TTimeline',
@@ -20,6 +20,9 @@ export default defineComponent({
     } = toRefs(props);
 
     const instance = getCurrentInstance();
+
+    const classPrefix = usePrefixClass();
+
     const uidArr: any = ref([]);
     nextTick(() => {
       const defaultSlots: any = instance.slots.default ? instance.slots.default : [null];
@@ -33,16 +36,16 @@ export default defineComponent({
     const timelineClassName = computed(() => {
       const renderAlign = getRenderAlign(labelAlign?.value, layout?.value);
       const classNames = [
-        `${prefix}-timeline`,
-        `${prefix}-timeline-${renderAlign}`,
-        `${prefix}-timeline-${layout?.value}`,
-        `${prefix}-timeline-label--${mode?.value}`,
+        `${classPrefix.value}-timeline`,
+        `${classPrefix.value}-timeline-${renderAlign}`,
+        `${classPrefix.value}-timeline-${layout?.value}`,
+        `${classPrefix.value}-timeline-label--${mode?.value}`,
       ];
       if (reverse?.value) {
-        classNames.push(`${prefix}-timeline-reverse`);
+        classNames.push(`${classPrefix.value}-timeline-reverse`);
       }
       if (hasLabelItem?.value) {
-        classNames.push(`${prefix}-timeline-label`);
+        classNames.push(`${classPrefix.value}-timeline-label`);
       }
       return classNames.join(' ');
     });
