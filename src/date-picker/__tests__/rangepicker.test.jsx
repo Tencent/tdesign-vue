@@ -3,19 +3,19 @@ import MockDate from 'mockdate';
 import { nextTick } from 'vue';
 import { BrowseIcon, LockOnIcon } from 'tdesign-icons-vue';
 import dayjs from 'dayjs';
-import DatePicker from '@/src/date-picker/index.ts';
+import DateRangePicker from '@/src/date-picker/index.ts';
 
 // 固定时间，当使用 new Date() 时，返回固定时间，防止“当前时间”的副作用影响，导致 snapshot 变更，mockdate 插件见 https://github.com/boblauer/MockDate
 MockDate.set('2020-12-28');
 
 // every component needs four parts: props/events/slots/functions.
-describe('DatePicker', () => {
+describe('DateRangePicker', () => {
   // test props api
   describe(':props', () => {
     it('', () => {
       const wrapper = mount({
         render() {
-          return <DatePicker />;
+          return <DateRangePicker />;
         },
       });
       expect(wrapper.exists()).toBe(true);
@@ -25,7 +25,7 @@ describe('DatePicker', () => {
   it(':value', () => {
     const wrapper = mount({
       render() {
-        return <DatePicker value={'1998-11-11'} />;
+        return <DateRangePicker value={'1998-11-11'} />;
       },
     });
     expect(wrapper.element).toMatchSnapshot();
@@ -34,7 +34,7 @@ describe('DatePicker', () => {
   it(':mode', () => {
     const wrapper = mount({
       render() {
-        return <DatePicker mode={'year'} />;
+        return <DateRangePicker mode={'year'} />;
       },
     });
     expect(wrapper.element).toMatchSnapshot();
@@ -47,7 +47,7 @@ describe('DatePicker', () => {
           '2018-08', // new Date(2017, 7)
           '2028-04', // new Date(2027, 3)
         ];
-        return <DatePicker value={testRange} range />;
+        return <DateRangePicker value={testRange} range />;
       },
     });
     expect(wrapper.element).toMatchSnapshot();
@@ -56,7 +56,7 @@ describe('DatePicker', () => {
   it('clearable', async () => {
     const wrapper = mount({
       render() {
-        return <DatePicker defaultValue={'2022-09-14'} clearable></DatePicker>;
+        return <DateRangePicker defaultValue={'2022-09-14'} clearable></DateRangePicker>;
       },
     });
     const input = wrapper.find('.t-input');
@@ -68,7 +68,7 @@ describe('DatePicker', () => {
   it('disabled', () => {
     const wrapper = mount({
       render() {
-        return <DatePicker disabled />;
+        return <DateRangePicker disabled />;
       },
     });
     const inputInner = wrapper.find('.t-input__inner');
@@ -78,7 +78,7 @@ describe('DatePicker', () => {
   it('enableTimePicker', async () => {
     const wrapper = mount({
       render() {
-        return <DatePicker enableTimePicker />;
+        return <DateRangePicker enableTimePicker />;
       },
     });
     wrapper.find('.t-input').trigger('click');
@@ -87,7 +87,7 @@ describe('DatePicker', () => {
   });
 
   it('firstDayOfWeek', async () => {
-    const wrapper = mount(DatePicker, {
+    const wrapper = mount(DateRangePicker, {
       propsData: {
         firstDayOfWeek: 3,
       },
@@ -102,7 +102,7 @@ describe('DatePicker', () => {
     // defaultValue
     const wrapper = mount({
       render() {
-        return <DatePicker defaultValue={'2022-09-14 16:30:20'} format={'YYYY-MM-DD'} />;
+        return <DateRangePicker defaultValue={'2022-09-14 16:30:20'} format={'YYYY-MM-DD'} />;
       },
     });
     const inputElement1 = wrapper.find('.t-input__inner');
@@ -111,7 +111,7 @@ describe('DatePicker', () => {
     // value
     const wrapper2 = mount({
       render() {
-        return <DatePicker value={'2022-09-14 16:30:20'} format={'YYYY-MM-DD'} />;
+        return <DateRangePicker value={'2022-09-14 16:30:20'} format={'YYYY-MM-DD'} />;
       },
     });
     const inputElement2 = wrapper2.find('.t-input__inner');
@@ -119,7 +119,7 @@ describe('DatePicker', () => {
   });
 
   it('inputProps', () => {
-    const wrapper = mount(DatePicker, {
+    const wrapper = mount(DateRangePicker, {
       propsData: {
         inputProps: { inputClass: 'test-inputClass' },
       },
@@ -130,7 +130,7 @@ describe('DatePicker', () => {
   it('mode week', async () => {
     const wrapper = mount({
       render() {
-        return <DatePicker mode={'week'} value={'2022-37th'} />;
+        return <DateRangePicker mode={'week'} value={'2022-37th'} />;
       },
     });
     wrapper.find('.t-input').trigger('click');
@@ -141,7 +141,7 @@ describe('DatePicker', () => {
   it('mode month', async () => {
     const wrapper = mount({
       render() {
-        return <DatePicker mode={'month'} />;
+        return <DateRangePicker mode={'month'} />;
       },
     });
     wrapper.find('.t-input').trigger('click');
@@ -152,7 +152,7 @@ describe('DatePicker', () => {
   it('mode quarter', async () => {
     const wrapper = mount({
       render() {
-        return <DatePicker mode={'quarter'} />;
+        return <DateRangePicker mode={'quarter'} />;
       },
     });
     wrapper.find('.t-input').trigger('click');
@@ -163,7 +163,7 @@ describe('DatePicker', () => {
   it('mode year', async () => {
     const wrapper = mount({
       render() {
-        return <DatePicker mode={'year'} />;
+        return <DateRangePicker mode={'year'} />;
       },
     });
     wrapper.find('.t-input').trigger('click');
@@ -174,7 +174,7 @@ describe('DatePicker', () => {
   it('placeholder', () => {
     const wrapper = mount({
       render() {
-        return <DatePicker />;
+        return <DateRangePicker />;
       },
     });
     expect(wrapper.find('input').element.placeholder).toEqual('请选择日期');
@@ -183,7 +183,7 @@ describe('DatePicker', () => {
   it('popupProps', async () => {
     const wrapper = mount({
       render() {
-        return <DatePicker popupProps={{ showArrow: true }} />;
+        return <DateRangePicker popupProps={{ showArrow: true }} />;
       },
     });
     wrapper.find('.t-input').trigger('click');
@@ -194,7 +194,7 @@ describe('DatePicker', () => {
   it('prefixIcon suffixIcon', () => {
     const wrapper = mount({
       render() {
-        return <DatePicker prefixIcon={() => <BrowseIcon />} suffixIcon={() => <LockOnIcon />} />;
+        return <DateRangePicker prefixIcon={() => <BrowseIcon />} suffixIcon={() => <LockOnIcon />} />;
       },
     });
     expect(wrapper.find('.t-icon-browse')).not.toBe(null);
@@ -207,7 +207,7 @@ describe('DatePicker', () => {
     };
     const wrapper = mount({
       render() {
-        return <DatePicker presets={presets} />;
+        return <DateRangePicker presets={presets} />;
       },
     });
     wrapper.find('.t-input').trigger('click');
@@ -218,7 +218,7 @@ describe('DatePicker', () => {
   test('status', () => {
     const wrapper = mount({
       render() {
-        return <DatePicker status={'warning'} />;
+        return <DateRangePicker status={'warning'} />;
       },
     });
     expect(wrapper.find('.t-input').classes()).toContain('t-is-warning');
@@ -230,7 +230,7 @@ describe('DatePicker', () => {
       const blurFn = vi.fn();
       const wrapper = mount({
         render() {
-          return <DatePicker allowInput onBlur={blurFn} />;
+          return <DateRangePicker allowInput onBlur={blurFn} />;
         },
       });
       const InputDom = wrapper.find('input');
