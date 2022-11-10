@@ -5,6 +5,11 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.49.5 `2022-11-10` 
+### 🐞 Bug Fixes
+- `Form`: 修复0.49.4版本表单检验异常的问题 @uyarn ([#1768](https://github.com/Tencent/tdesign-vue/pull/1768))
+- `Collapse`: 修复动态设置`collapse-panel`时panel展示异常的问题 @asbstty ([#1767](https://github.com/Tencent/tdesign-vue/pull/1767))
+
 ## 🌈 0.49.4 `2022-11-09` 
 ### 🚀 Features
 - `Tree`: 支持拖拽功能，详见示例代码 @xixileng ([#1745](https://github.com/Tencent/tdesign-vue/pull/1745))
@@ -21,7 +26,7 @@ docClass: timeline
 - ConfigProvider: 修复 `t-config-provider` 直接包裹 router-view 标签时控制台报错的问题 @LoopZhou ([#1753](https://github.com/Tencent/tdesign-vue/pull/1753))
 - `Tree`: 修复 filter 过滤后，过滤结果为空，未能显示 empty slot 的问题 @yaogengzhu ([#1748](https://github.com/Tencent/tdesign-vue/pull/1748))
 - `InputNumber`: 修复`theme=column`时，`autoWidth` 无效问题，[issue#1652](https://github.com/Tencent/tdesign-react/issues/1652) @chaishi ([common #969](https://github.com/Tencent/tdesign-common/pull/969))
-- `Form/Upload`: 修复 `formRule` `uploadFile` 类型未导出的问题 @uyarn ([#1638](https://github.com/Tencent/tdesign-vue/pull/1638))
+- `Form/Upload`: 修复 `formRule` `uploadFile` 类型未导出的问题 @uyarn ([#1762](https://github.com/Tencent/tdesign-vue/pull/1762))
 - `Form`: 修复表单中使用 DateRangePicker，校验失败时样式缺少红框展示的问题 @LoopZhou ([common #965](https://github.com/Tencent/tdesign-common/pull/965))
 ### 🚧 Others
 - `Alert`: 官网示例的宽度根据屏幕宽度自动撑开 @aomnisz ([#1658](https://github.com/Tencent/tdesign-vue/pull/1658))
