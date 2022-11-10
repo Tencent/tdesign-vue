@@ -22,9 +22,13 @@ export default defineComponent({
 
     const popupVisible = ref();
 
-    const getOverlayStyle = (trigger: HTMLElement) => ({
-      width: `${trigger.offsetWidth || trigger.clientWidth}px`,
-    });
+    const getOverlayStyle = (trigger: HTMLElement, popupElement: HTMLElement) => {
+      const triggerWidth = trigger.getBoundingClientRect().width || trigger.offsetWidth || trigger.clientWidth;
+      const popupWidth = popupElement.getBoundingClientRect().width || popupElement.offsetWidth || popupElement.clientWidth;
+      return {
+        width: triggerWidth > popupWidth ? `${triggerWidth}px` : 'auto',
+      };
+    };
 
     const classes = computed(() => [`${classPrefix.value}-auto-complete`]);
     const popupClasses = computed(() => [`${classPrefix.value}-select__dropdown`]);
@@ -84,6 +88,20 @@ export default defineComponent({
   },
 
   render() {
+    const listContent = (
+      <AutoCompleteOptionList
+        value={this.value}
+        options={this.options}
+        size={this.size}
+        classPrefix={this.classPrefix}
+        sizeClassNames={this.sizeClassNames}
+        onSelect={this.onInnerSelect}
+        popupVisible={this.popupVisible}
+        highlightKeyword={this.highlightKeyword}
+        filterable={this.filterable}
+        filter={this.filter}
+      />
+    );
     return (
       <div class={this.classes}>
         <Popup
@@ -92,22 +110,12 @@ export default defineComponent({
           overlayClassName={this.popupClasses}
           overlayInnerClassName={this.popupInnerClasses}
           trigger="click"
-          placement="bottom"
+          placement="bottom-left"
           overlayInnerStyle={this.getOverlayStyle}
-          scopedSlots={{
-            content: () => (
-              <AutoCompleteOptionList
-                options={this.options}
-                size={this.size}
-                classPrefix={this.classPrefix}
-                sizeClassNames={this.sizeClassNames}
-                onSelect={this.onInnerSelect}
-                popupVisible={this.popupVisible}
-              />
-            ),
-          }}
+          hideEmptyPopup={true}
+          content={listContent ? () => listContent : null}
         >
-          <Input on={this.inputListeners} props={this.innerInputProps} />
+          <Input placeholder={this.placeholder} on={this.inputListeners} props={this.innerInputProps} />
         </Popup>
       </div>
     );

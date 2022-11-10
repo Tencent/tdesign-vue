@@ -2,8 +2,9 @@ import {
   ref, computed, defineComponent, PropType, h, watch,
 } from '@vue/composition-api';
 import isFunction from 'lodash/isFunction';
+import HighlightOption from './highlight-option';
 import { CommonClassNameType } from '../hooks/useCommonClassName';
-import { TdAutoCompleteProps } from './type';
+import { AutoCompleteOptionObj, TdAutoCompleteProps } from './type';
 import log from '../_common/js/log';
 
 export default defineComponent({
@@ -12,9 +13,13 @@ export default defineComponent({
   props: {
     classPrefix: String,
     sizeClassNames: Object as PropType<CommonClassNameType['sizeClassNames']>,
+    value: String,
     size: String as PropType<TdAutoCompleteProps['size']>,
     options: Array as PropType<TdAutoCompleteProps['options']>,
     popupVisible: Boolean,
+    highlightKeyword: Boolean,
+    filterable: Boolean,
+    filter: Function as PropType<TdAutoCompleteProps['filter']>,
   },
 
   setup(props, { emit }) {
@@ -29,26 +34,49 @@ export default defineComponent({
     ]);
 
     // 整理数据格式
-    const tOptions = computed(() => props.options.map((item) => {
-      if (typeof item === 'string') return { text: item, label: item };
-      if (!item.text) {
-        if (typeof item.label === 'string') {
-          return {
-            ...item,
-            text: item.label,
-          };
+    const tOptions = computed<AutoCompleteOptionObj[]>(() => {
+      let options = props.options.map((item) => {
+        let option: AutoCompleteOptionObj = {};
+        if (typeof item === 'string') {
+          option = { text: item, label: item };
+        } else {
+          if (item.text && typeof item.text !== 'string') {
+            log.warn('AutoComplete', '`text` must be a string.');
+          }
+          if (!item.text) {
+            if (typeof item.label === 'string') {
+              option = { ...item, text: item.label };
+            } else {
+              log.warn('AutoComplete', 'one of `label` and `text` must be a existed string.');
+            }
+          } else {
+            option = item;
+          }
         }
-        log.warn('AutoComplete', 'one of `label` and `text` must be a existed string.');
+        return option;
+      });
+      // 默认过滤规则
+      if (props.filterable) {
+        const regExp = new RegExp(props.value, 'i');
+        options = options.filter((item) => regExp.test(item.text));
       }
-      return item;
-    }));
+      if (props.filter) {
+        options = options.filter((option) => props.filter(props.value, option));
+      }
+      return options;
+    });
 
     const onOptionClick = (e: MouseEvent) => {
-      const keyword = (e.target as HTMLElement).getAttribute('title');
+      let liNode = e.target as HTMLElement;
+      while (liNode && liNode.tagName !== 'LI') {
+        liNode = liNode.parentNode as HTMLElement;
+      }
+      const keyword = liNode.getAttribute('title');
       active.value = keyword;
       emit('select', keyword, { e });
     };
 
+    // 键盘事件，上下选择
     const onKeyInnerPress = (e: KeyboardEvent) => {
       if (e.code === 'ArrowUp' || e.key === 'ArrowUp') {
         const index = tOptions.value.findIndex((item) => item.text === active.value);
@@ -85,6 +113,7 @@ export default defineComponent({
   },
 
   render() {
+    if (!this.tOptions.length) return null;
     return (
       <ul class={this.classes}>
         {this.tOptions.map((item) => {
@@ -93,9 +122,14 @@ export default defineComponent({
             cls.push(`${this.classPrefix}-select-option--hover`);
           }
           const label = isFunction(item.label) ? item.label(h) : item.label;
+          const content = item.text || label || this.$scopedSlots.label?.({ option: item });
           return (
             <li class={cls} title={item.text} onClick={this.onOptionClick}>
-              {item.text || label || this.$scopedSlots.label?.({ option: item })}
+              {typeof content === 'string' && this.highlightKeyword ? (
+                <HighlightOption content={content} keyword={this.value} classPrefix={this.classPrefix} />
+              ) : (
+                content
+              )}
             </li>
           );
         })}
