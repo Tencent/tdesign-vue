@@ -164,7 +164,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         (document.activeElement as HTMLElement).blur();
       } else {
         document.body.style.cssText = '';
-        removeClass(document.body, `${this.componentName}--lock`);
+        this.removeBodyLockClass();
       }
       // 多个dialog同时存在时使用esc关闭异常 (#1209)
       this.storeUid(value);
@@ -194,6 +194,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
 
   beforeDestroy() {
     this.addKeyboardEvent(false);
+    this.removeBodyLockClass();
   },
 
   directives: {
@@ -424,6 +425,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
           </div>
         </div>
       );
+    },
+    removeBodyLockClass() {
+      removeClass(document.body, `${this.componentName}--lock`);
     },
   },
 
