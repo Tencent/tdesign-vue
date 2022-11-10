@@ -44,7 +44,10 @@ export default {
     type: Array as PropType<TdFormItemProps['rules']>,
   },
   /** 校验不通过时，是否显示错误提示信息，优先级高于 `Form.showErrorMessage` */
-  showErrorMessage: Boolean,
+  showErrorMessage: {
+    type: Boolean,
+    default: undefined,
+  },
   /** 校验状态，可在需要完全自主控制校验状态时使用 */
   status: {
     type: String,
