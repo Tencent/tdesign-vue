@@ -31,7 +31,7 @@ export default defineComponent({
     popupProps: Object,
   },
 
-  setup(props) {
+  setup(props, ctx) {
     const componentName = usePrefixClass('time-range-picker');
     const { global } = useConfig('timePicker');
     const { classPrefix } = useConfig('classPrefix');
@@ -97,6 +97,7 @@ export default defineComponent({
     ) => {
       currentValue.value = inputVal;
       props.onInput?.({ value: innerValue.value, e, position: position === 'first' ? 'start' : 'end' });
+      ctx.emit('input', { value: innerValue.value, e, position: position === 'first' ? 'start' : 'end' });
     };
 
     const handleClickConfirm = () => {
@@ -107,6 +108,21 @@ export default defineComponent({
 
     const handleFocus = (value: TimeRangeValue, { e, position }: { e: FocusEvent; position: RangeInputPosition }) => {
       props.onFocus?.({ value, e, position: position === 'first' ? 'start' : 'end' });
+      ctx.emit('focus', { value, e, position: position === 'first' ? 'start' : 'end' });
+    };
+
+    const handleOnPick = (pickValue: string) => {
+      let pickedRangeValue = [];
+      let context = {};
+      if (currentPanelIdx.value === 0) {
+        pickedRangeValue = [pickValue, currentValue.value[1] ?? pickValue];
+        context = { position: 'start' };
+      } else {
+        pickedRangeValue = [currentValue.value[0] ?? pickValue, pickValue];
+        context = { position: 'end' };
+      }
+      props.onPick?.(pickedRangeValue, context);
+      ctx.emit('pick', pickedRangeValue, context);
     };
 
     watch(
@@ -128,6 +144,7 @@ export default defineComponent({
       handleShowPopup,
       handleClear,
       handleFocus,
+      handleOnPick,
       handleClickConfirm,
       handleClick,
       handleInputBlur,
@@ -182,6 +199,7 @@ export default defineComponent({
                       isFooterDisplay: true,
                       value: this.currentValue[this.currentPanelIdx || 0],
                       onChange: this.handleTimeChange,
+                      onPick: this.handleOnPick,
                       handleConfirmClick: this.handleClickConfirm,
                       position: this.currentPanelIdx === 0 ? 'start' : 'end',
                       activeIndex: this.currentPanelIdx,

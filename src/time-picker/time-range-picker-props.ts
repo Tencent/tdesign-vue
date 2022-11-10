@@ -78,4 +78,6 @@ export default {
   onFocus: Function as PropType<TdTimeRangePickerProps['onFocus']>,
   /** 当输入框内容发生变化时触发，参数 input 表示输入内容，value 表示组件当前有效值 */
   onInput: Function as PropType<TdTimeRangePickerProps['onInput']>,
+  /** 面板选中值后触发 */
+  onPick: Function as PropType<TdTimeRangePickerProps['onPick']>,
 };

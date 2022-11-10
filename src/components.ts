@@ -61,6 +61,7 @@ export * from './tree';
 export * from './watermark';
 export * from './collapse';
 export * from './rate';
+export * from './timeline';
 
 // 消息提醒
 

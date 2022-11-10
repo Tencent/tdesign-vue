@@ -20,7 +20,7 @@ import useVModel from '../hooks/useVModel';
 import { useTNodeJSX } from '../hooks/tnode';
 import { useConfig, usePrefixClass } from '../config-provider/useConfig';
 import {
-  TdSelectProps, SelectValue, TdOptionProps, SelectOptionGroup, SelectValueChangeTrigger,
+  TdSelectProps, SelectValue, TdOptionProps, SelectValueChangeTrigger,
 } from './type';
 import props from './props';
 import TLoading from '../loading';
@@ -36,7 +36,9 @@ import FakeArrow from '../common-components/fake-arrow';
 import { off, on } from '../utils/dom';
 import Option from './option';
 import SelectPanel from './select-panel';
-import { getSingleContent, getMultipleContent, getNewMultipleValue } from './util';
+import {
+  getSingleContent, getMultipleContent, getNewMultipleValue, flattenOptions,
+} from './util';
 import useSelectOptions from './hooks/useSelectOptions';
 import { SelectPanelInstance } from './instance';
 import log from '../_common/js/log';
@@ -317,8 +319,6 @@ export default defineComponent({
     const handleEnter = (value: string, context: { e: KeyboardEvent }) => {
       instance.emit('enter', { value, e: context?.e, inputValue: tInputValue.value });
       props.onEnter?.({ value, e: context?.e, inputValue: tInputValue.value.toString() });
-      // 当支持创建的时候，按下 enter 键，若 hoverIndex 大于 0，则视为选择列表中筛选出的已有项目，只有当 hoverIndex 为 -1(未选中)/0(创建条目) 的时候，才视为触发 create 回调
-      creatable.value && hoverIndex.value < 1 && handleCreate();
     };
 
     const debounceSearch = debounce(() => {
@@ -362,18 +362,9 @@ export default defineComponent({
     // 键盘操作逻辑相关
     const hoverIndex = ref(-1);
     const keydownEvent = (e: KeyboardEvent) => {
-      const displayOptions: (TdOptionProps & { isCreated?: boolean })[] = [];
-
-      const getCurrentOptionsList = (options: TdOptionProps[]) => {
-        options.forEach((option) => {
-          if ((option as SelectOptionGroup).group) {
-            getCurrentOptionsList((option as SelectOptionGroup).children);
-          } else {
-            displayOptions.push(option);
-          }
-        });
-      };
-      getCurrentOptionsList(selectPanelRef.value?.getDisplayOptions());
+      const displayOptions: (TdOptionProps & { isCreated?: boolean })[] = flattenOptions(
+        selectPanelRef.value?.getDisplayOptions(),
+      );
 
       const displayOptionsLength = displayOptions.length;
       const arrowDownOption = () => {
@@ -439,10 +430,15 @@ export default defineComponent({
           }
           break;
         case 'Enter':
-          if (hoverIndex.value === -1) return;
-          if (displayOptions[hoverIndex.value].isCreated && multiple.value) {
+          // 当支持创建、且 hoverIndex 为 -1(未选中)/0(创建条目)、第一项为创建项的时候，才视为触发 create 回调，并继续键盘事件
+          if (creatable.value && hoverIndex.value < 1 && displayOptions?.[0]?.isCreated) {
             handleCreate();
+          } else if (hoverIndex.value === -1) {
+            // 否则视为选择列表中筛选出的已有项目
+            // 当 hoverIndex 为 -1，即未选中任意项的时候，不触发其他键盘事件
+            return;
           }
+          // enter 选中逻辑
           if (!multiple.value) {
             const optionValue = (displayOptions[hoverIndex.value] as TdOptionProps).value;
             setInnerValue(
@@ -455,7 +451,6 @@ export default defineComponent({
             );
             setInnerPopupVisible(false, { e });
           } else {
-            if (hoverIndex.value === -1) return;
             const optionValue = (displayOptions[hoverIndex.value] as TdOptionProps)?.value;
             if (!optionValue) return;
             const newValue = getNewMultipleValue(innerValue.value, optionValue);

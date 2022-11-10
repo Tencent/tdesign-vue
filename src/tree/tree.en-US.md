@@ -41,6 +41,11 @@ valueMode | String | onlyLeaf | options：onlyLeaf/parentFirst/all | N
 onActive | Function |  | Typescript：`(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T> }) => void`<br/> | N
 onChange | Function |  | Typescript：`(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T> }) => void`<br/> | N
 onClick | Function |  | Typescript：`(context: { node: TreeNodeModel<T>; e: MouseEvent }) => void`<br/> | N
+onDragEnd | Function |  | Typescript：`(context: { e: DragEvent; node: TreeNodeModel<T> }) => void`<br/> | N
+onDragLeave | Function |  | Typescript：`(context: { e: DragEvent; node: TreeNodeModel<T> }) => void`<br/> | N
+onDragOver | Function |  | Typescript：`(context: { e: DragEvent; node: TreeNodeModel<T> }) => void`<br/> | N
+onDragStart | Function |  | Typescript：`(context: { e: DragEvent; node: TreeNodeModel<T> }) => void`<br/> | N
+onDrop | Function |  | Typescript：`(context: {     e: DragEvent;     dragNode: TreeNodeModel<T>;     dropNode: TreeNodeModel<T>;     dropPosition: number;   }) => void`<br/> | N
 onExpand | Function |  | Typescript：`(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e: MouseEvent }) => void`<br/> | N
 onLoad | Function |  | Typescript：`(context: { node: TreeNodeModel<T> }) => void`<br/> | N
 
@@ -51,6 +56,11 @@ name | params | description
 active | `(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T> })` | \-
 change | `(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T> })` | \-
 click | `(context: { node: TreeNodeModel<T>; e: MouseEvent })` | \-
+drag-end | `(context: { e: DragEvent; node: TreeNodeModel<T> })` | \-
+drag-leave | `(context: { e: DragEvent; node: TreeNodeModel<T> })` | \-
+drag-over | `(context: { e: DragEvent; node: TreeNodeModel<T> })` | \-
+drag-start | `(context: { e: DragEvent; node: TreeNodeModel<T> })` | \-
+drop | `(context: {     e: DragEvent;     dragNode: TreeNodeModel<T>;     dropNode: TreeNodeModel<T>;     dropPosition: number;   })` | \-
 expand | `(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e: MouseEvent })` | \-
 load | `(context: { node: TreeNodeModel<T> })` | \-
 
