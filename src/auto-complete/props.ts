@@ -40,10 +40,10 @@ export default {
   options: {
     type: Array as PropType<TdAutoCompleteProps['options']>,
   },
-  /** 输入框为空时的占位提示 */
+  /** 输入框为空时的占位提示。组件本身默认值为 `undefined`，但全局配置存在默认值，不同语言全局默认值不同 */
   placeholder: {
     type: String,
-    default: '',
+    default: undefined,
   },
   /** 透传 Popup 组件全部特性 */
   popupProps: {

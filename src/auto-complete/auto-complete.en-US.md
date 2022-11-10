@@ -14,7 +14,7 @@ filterable | Boolean | true | \- | N
 highlightKeyword | Boolean | true | \- | N
 inputProps | Object | - | Typescript：`InputProps`，[Input API Documents](./input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/auto-complete/type.ts) | N
 options | Array | - | Typescript：`Array<T>` | N
-placeholder | String | - | \- | N
+placeholder | String | undefined | \- | N
 popupProps | Object | - | Typescript：`PopupProps`，[Popup API Documents](./popup?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/auto-complete/type.ts) | N
 size | String | medium | options：small/medium/large。Typescript：`SizeEnum`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 status | String | - | options：default/success/warning/error | N

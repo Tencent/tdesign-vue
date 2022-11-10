@@ -14,7 +14,7 @@ filterable | Boolean | true | 是否根据输入内容过滤联想词。默认�
 highlightKeyword | Boolean | true | 是否高亮联想词中和输入值的相同部分 | N
 inputProps | Object | - | 透传 Input 组件全部特性。TS 类型：`InputProps`，[Input API Documents](./input?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/auto-complete/type.ts) | N
 options | Array | - | 下拉联想词列表。示例一：`['联想词一', '联想词二']`。示例二：`{ label: () => <div>联想词元素</div>, text: '用于搜索的纯联想词' }`。TS 类型：`Array<T>` | N
-placeholder | String | - | 输入框为空时的占位提示 | N
+placeholder | String | undefined | 输入框为空时的占位提示。组件本身默认值为 `undefined`，但全局配置存在默认值，不同语言全局默认值不同 | N
 popupProps | Object | - | 透传 Popup 组件全部特性。TS 类型：`PopupProps`，[Popup API Documents](./popup?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/auto-complete/type.ts) | N
 size | String | medium | 组件尺寸。可选项：small/medium/large。TS 类型：`SizeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 status | String | - | 输入框状态。可选项：default/success/warning/error | N

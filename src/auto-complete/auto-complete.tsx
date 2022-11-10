@@ -4,11 +4,11 @@ import {
 import props from './props';
 import { TdAutoCompleteProps } from './type';
 import Input, { InputProps } from '../input';
-// import textarea from '../textarea';
 import Popup, { PopupProps } from '../popup';
 import useCommonClassName from '../hooks/useCommonClassName';
 import AutoCompleteOptionList from './option-list';
 import useVModel from '../hooks/useVModel';
+import { useConfig } from '../config-provider/useConfig';
 
 export default defineComponent({
   name: 'TAutoComplete',
@@ -19,6 +19,7 @@ export default defineComponent({
     const { value } = toRefs(props);
     const [tValue, setTValue] = useVModel(value, props.defaultValue, props.onChange);
     const { classPrefix, sizeClassNames } = useCommonClassName();
+    const { global } = useConfig('input');
 
     const popupVisible = ref();
 
@@ -72,6 +73,7 @@ export default defineComponent({
     };
 
     return {
+      global,
       classes,
       classPrefix,
       popupClasses,
@@ -115,7 +117,11 @@ export default defineComponent({
           hideEmptyPopup={true}
           content={listContent ? () => listContent : null}
         >
-          <Input placeholder={this.placeholder} on={this.inputListeners} props={this.innerInputProps} />
+          <Input
+            placeholder={this.placeholder ?? this.global.placeholder}
+            on={this.inputListeners}
+            props={this.innerInputProps}
+          />
         </Popup>
       </div>
     );
