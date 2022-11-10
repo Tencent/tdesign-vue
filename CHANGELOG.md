@@ -5,6 +5,11 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.49.5 `2022-11-10` 
+### 🐞 Bug Fixes
+- `Form`: 修复0.49.4版本表单检验异常的问题 @uyarn ([#1768](https://github.com/Tencent/tdesign-vue/pull/1768))
+- `Collapse`: 修复动态设置`collapse-panel`时panel展示异常的问题 @asbstty ([#1767](https://github.com/Tencent/tdesign-vue/pull/1767))
+
 ## 🌈 0.49.4 `2022-11-09` 
 ### 🚀 Features
 - `Tree`: 支持拖拽功能，详见示例代码 @xixileng ([#1745](https://github.com/Tencent/tdesign-vue/pull/1745))
