@@ -37,7 +37,6 @@ export default defineComponent({
       let index = 0;
       return () => (index += 1);
     })();
-    const renderTNodeJSX = useTNodeJSX();
     provide('collapseValue', collapseValue);
     provide('updateCollapseValue', updateCollapseValue);
     provide('collapseProps', toRefs(props));
@@ -45,11 +44,10 @@ export default defineComponent({
     provide('renderParentTNode', useTNodeJSX());
     return {
       classes,
-      renderTNodeJSX,
     };
   },
   render() {
-    const nodes = this.renderTNodeJSX('default');
+    const nodes = this.$scopedSlots?.default?.({}) || null;
     return <div class={this.classes}>{nodes}</div>;
   },
 });
