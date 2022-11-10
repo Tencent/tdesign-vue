@@ -61,11 +61,11 @@ export default function useVModel<T, P extends any[]>(
   return [
     internalValue,
     (newValue, ...args) => {
-      internalValue.value = newValue;
       onChange?.(newValue, ...args);
       if (eventName && eventName !== 'input') {
         emit?.(eventName, newValue, ...args);
       }
+      internalValue.value = newValue;
     },
   ];
 }
