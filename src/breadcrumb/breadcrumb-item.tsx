@@ -105,9 +105,11 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
 
     const clickEvent = to && !disabled ? { on: { click: this.bindEvent } } : {};
     const textContent = (
-      <span ref="breadcrumbText" class={`${this.componentName}__inner`} style={this.maxWithStyle}>
+      <span class={`${this.componentName}__inner`} style={this.maxWithStyle}>
         {renderTNodeJSX(this, 'icon')}
-        <span class={`${this.componentName}__inner-text`}>{this.$slots.default}</span>
+        <span ref="breadcrumbText" class={`${this.componentName}__inner-text`}>
+          {this.$slots.default}
+        </span>
       </span>
     );
     let itemContent = (
