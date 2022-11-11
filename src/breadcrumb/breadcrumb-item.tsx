@@ -5,6 +5,7 @@ import { isNodeOverflow } from '../utils/dom';
 import { TNodeReturnValue } from '../common';
 import { getClassPrefixMixins, getGlobalIconMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 const classPrefixMixins = getClassPrefixMixins('breadcrumb');
 
@@ -105,7 +106,8 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
     const clickEvent = to && !disabled ? { on: { click: this.bindEvent } } : {};
     const textContent = (
       <span ref="breadcrumbText" class={`${this.componentName}__inner`} style={this.maxWithStyle}>
-        {this.$slots.default}
+        {renderTNodeJSX(this, 'icon')}
+        <span class={`${this.componentName}__inner-text`}>{this.$slots.default}</span>
       </span>
     );
     let itemContent = (
