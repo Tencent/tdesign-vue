@@ -163,8 +163,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         // 清除鼠标焦点 避免entry事件多次触发（按钮弹出弹窗 不移除焦点 立即按Entry按键 会造成弹窗关闭再弹出）
         (document.activeElement as HTMLElement).blur();
       } else {
-        document.body.style.cssText = '';
-        removeClass(document.body, `${this.componentName}--lock`);
+        this.removeBodyLockClassAndCss();
       }
       // 多个dialog同时存在时使用esc关闭异常 (#1209)
       this.storeUid(value);
@@ -194,6 +193,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
 
   beforeDestroy() {
     this.addKeyboardEvent(false);
+    this.removeBodyLockClassAndCss();
   },
 
   directives: {
@@ -424,6 +424,10 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
           </div>
         </div>
       );
+    },
+    removeBodyLockClassAndCss() {
+      document.body.style.cssText = '';
+      removeClass(document.body, `${this.componentName}--lock`);
     },
   },
 

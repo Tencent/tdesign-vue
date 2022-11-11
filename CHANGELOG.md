@@ -5,6 +5,14 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.49.6 `2022-11-11` 
+### 🐞 Bug Fixes
+- `Form`: 修复InputNumber min为0的边界场景校验异常的问题 @yaogengzhu ([#1772](https://github.com/Tencent/tdesign-vue/pull/1772))
+- `Dialog`: 修复组件在一些种场景下销毁时没有删除body上的t-dialog-lock类的问题 @huangpiqiao ([#1766](https://github.com/Tencent/tdesign-vue/pull/1766))
+- `Loading`: 修复全屏实例无法全部销毁问题 @huangpiqiao ([#1774](https://github.com/Tencent/tdesign-vue/pull/1774))
+- `Form`: 修复`requiredMark`默认值的问题 @uyarn ([#1776](https://github.com/Tencent/tdesign-vue/pull/1776))
+
+
 ## 🌈 0.49.5 `2022-11-10` 
 ### 🐞 Bug Fixes
 - `Form`: 修复0.49.4版本表单检验异常的问题 @uyarn ([#1768](https://github.com/Tencent/tdesign-vue/pull/1768))

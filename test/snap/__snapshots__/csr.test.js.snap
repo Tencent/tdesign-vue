@@ -30845,25 +30845,29 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/dialog.vue 
             <div
               class="t-dialog__header"
             >
-              Title
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                Title
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -30923,38 +30927,42 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/dialog.vue 
             <div
               class="t-dialog__header"
             >
-              <svg
-                class="t-icon t-icon-info-circle-filled t-is-info"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-              confirm
+                <svg
+                  class="t-icon t-icon-info-circle-filled t-is-info"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+                confirm
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
             </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
             <div
               class="t-dialog__body t-dialog__body--icon"
             >
@@ -31014,38 +31022,42 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/dialog.vue 
             <div
               class="t-dialog__header"
             >
-              <svg
-                class="t-icon t-icon-error-circle-filled t-is-warning"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-              confirm
+                <svg
+                  class="t-icon t-icon-error-circle-filled t-is-warning"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+                confirm
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
             </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
             <div
               class="t-dialog__body t-dialog__body--icon"
             >
@@ -31105,38 +31117,42 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/dialog.vue 
             <div
               class="t-dialog__header"
             >
-              <svg
-                class="t-icon t-icon-error-circle-filled t-is-error"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-              confirm
+                <svg
+                  class="t-icon t-icon-error-circle-filled t-is-error"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+                confirm
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
             </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
             <div
               class="t-dialog__body t-dialog__body--icon"
             >
@@ -31196,38 +31212,42 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/dialog.vue 
             <div
               class="t-dialog__header"
             >
-              <svg
-                class="t-icon t-icon-check-circle-filled t-is-success"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-              confirm
+                <svg
+                  class="t-icon t-icon-check-circle-filled t-is-success"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+                confirm
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
             </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
             <div
               class="t-dialog__body t-dialog__body--icon"
             >
@@ -34018,7 +34038,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/base.vue 1`] = 
         class="t-input__wrap t-select-input--empty"
       >
         <div
-          class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+          class="t-input t-size-m t-is-default t-is-readonly test-inputClass t-input--prefix t-input--suffix"
         >
           <div
             class="t-input__prefix"
@@ -38710,25 +38730,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/async.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              保存
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                保存
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -38903,25 +38927,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/attach.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              对话框仅展示在挂载元素区域
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                对话框仅展示在挂载元素区域
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -39009,25 +39037,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/base.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              对话框标题
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                对话框标题
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -39096,25 +39128,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/base.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              对话框标题二
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                对话框标题二
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -39230,24 +39266,28 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/custom.vue 1`] = `
             >
               <div
                 class="t-dialog__header"
-              />
-              <span
-                class="t-dialog__close"
               >
-                <svg
-                  class="t-icon t-icon-close"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  width="1em"
+                <div
+                  class="t-dialog__header-content"
+                />
+                <span
+                  class="t-dialog__close"
                 >
-                  <path
-                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                </svg>
-              </span>
+                  <svg
+                    class="t-icon t-icon-close"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
+              </div>
               <div
                 class="t-dialog__body"
               >
@@ -39307,25 +39347,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/custom.vue 1`] = `
               <div
                 class="t-dialog__header"
               >
-                对话框标题
-              </div>
-              <span
-                class="t-dialog__close"
-              >
-                <svg
-                  class="t-icon t-icon-close"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  width="1em"
+                <div
+                  class="t-dialog__header-content"
                 >
-                  <path
-                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                </svg>
-              </span>
+                  对话框标题
+                </div>
+                <span
+                  class="t-dialog__close"
+                >
+                  <svg
+                    class="t-icon t-icon-close"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
+              </div>
               <div
                 class="t-dialog__body"
               >
@@ -39387,25 +39431,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/custom.vue 1`] = `
               <div
                 class="t-dialog__header"
               >
-                对话框标题
-              </div>
-              <span
-                class="t-dialog__close"
-              >
-                <svg
-                  class="t-icon t-icon-close"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  width="1em"
+                <div
+                  class="t-dialog__header-content"
                 >
-                  <path
-                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                </svg>
-              </span>
+                  对话框标题
+                </div>
+                <span
+                  class="t-dialog__close"
+                >
+                  <svg
+                    class="t-icon t-icon-close"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
+              </div>
               <div
                 class="t-dialog__body"
               >
@@ -39542,25 +39590,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/custom.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              提示
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                提示
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -39620,25 +39672,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/custom.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              提示
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                提示
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -39713,25 +39769,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/custom.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              对话框标题
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                对话框标题
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -39782,25 +39842,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/custom.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              对话框标题
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                对话框标题
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -39887,25 +39951,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/drag.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              模态对话框
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                模态对话框
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -39969,25 +40037,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/drag.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              非模态对话框-可拖拽
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                非模态对话框-可拖拽
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -40048,25 +40120,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/drag.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              非模态对话框-不可拖拽
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                非模态对话框-不可拖拽
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -40132,38 +40208,42 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/icon.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              <svg
-                class="t-icon t-icon-info-circle-filled t-is-info"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-              下单确认
+                <svg
+                  class="t-icon t-icon-info-circle-filled t-is-info"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+                下单确认
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
             </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
             <div
               class="t-dialog__body t-dialog__body--icon"
             >
@@ -40220,38 +40300,42 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/icon.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              <svg
-                class="t-icon t-icon-error-circle-filled t-is-warning"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-              温馨提示
+                <svg
+                  class="t-icon t-icon-error-circle-filled t-is-warning"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+                温馨提示
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
             </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
             <div
               class="t-dialog__body t-dialog__body--icon"
             >
@@ -40308,38 +40392,42 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/icon.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              <svg
-                class="t-icon t-icon-error-circle-filled t-is-error"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-              推送失败
+                <svg
+                  class="t-icon t-icon-error-circle-filled t-is-error"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+                推送失败
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
             </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
             <div
               class="t-dialog__body t-dialog__body--icon"
             >
@@ -40396,38 +40484,42 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/icon.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              <svg
-                class="t-icon t-icon-check-circle-filled t-is-success"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-              操作成功
+                <svg
+                  class="t-icon t-icon-check-circle-filled t-is-success"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+                操作成功
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
             </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
             <div
               class="t-dialog__body t-dialog__body--icon"
             >
@@ -40567,25 +40659,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/modal.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              模态对话框
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                模态对话框
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -40649,25 +40745,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/modal.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              非模态对话框
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                非模态对话框
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -40728,25 +40828,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/modal.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              非模态对话框-不可拖拽
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                非模态对话框-不可拖拽
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -40807,25 +40911,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/modal.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              非模态对话框-不可拖拽
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                非模态对话框-不可拖拽
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -40886,25 +40994,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/modal.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              普通对话框-不可拖拽
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                普通对话框-不可拖拽
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -41118,25 +41230,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/position.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              对话框标题
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                对话框标题
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -41196,25 +41312,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/position.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              对话框标题
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                对话框标题
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -41277,25 +41397,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/position.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              对话框标题
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                对话框标题
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -41355,25 +41479,29 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/position.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              文本溢出对话框标题
-            </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
+                文本溢出对话框标题
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
             <div
               class="t-dialog__body"
             >
@@ -41647,38 +41775,42 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/warning.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              <svg
-                class="t-icon t-icon-info-circle-filled t-is-info"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-              提示
+                <svg
+                  class="t-icon t-icon-info-circle-filled t-is-info"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+                提示
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
             </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
             <div
               class="t-dialog__body t-dialog__body--icon"
             >
@@ -41738,38 +41870,42 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/warning.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              <svg
-                class="t-icon t-icon-check-circle-filled t-is-success"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-              成功
+                <svg
+                  class="t-icon t-icon-check-circle-filled t-is-success"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+                成功
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
             </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
             <div
               class="t-dialog__body t-dialog__body--icon"
             >
@@ -41829,38 +41965,42 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/warning.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              <svg
-                class="t-icon t-icon-error-circle-filled t-is-warning"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-              警示
+                <svg
+                  class="t-icon t-icon-error-circle-filled t-is-warning"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+                警示
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
             </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
             <div
               class="t-dialog__body t-dialog__body--icon"
             >
@@ -41910,38 +42050,42 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/warning.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              <svg
-                class="t-icon t-icon-error-circle-filled t-is-error"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
+              <div
+                class="t-dialog__header-content"
               >
-                <path
-                  d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-              错误
+                <svg
+                  class="t-icon t-icon-error-circle-filled t-is-error"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+                错误
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
             </div>
-            <span
-              class="t-dialog__close"
-            >
-              <svg
-                class="t-icon t-icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </span>
             <div
               class="t-dialog__body t-dialog__body--icon"
             >
@@ -41991,20 +42135,24 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/warning.vue 1`] = `
             <div
               class="t-dialog__header"
             >
-              <div>
-                <svg
-                  class="t-icon t-icon-check-circle-filled"
-                  color="orange"
-                >
-                  <use
-                    href="#t-icon-check-circle-filled"
-                  />
-                </svg>
-                <span
-                  style="vertical-align: middle;"
-                >
-                  对话框标题
-                </span>
+              <div
+                class="t-dialog__header-content"
+              >
+                <div>
+                  <svg
+                    class="t-icon t-icon-check-circle-filled"
+                    color="orange"
+                  >
+                    <use
+                      href="#t-icon-check-circle-filled"
+                    />
+                  </svg>
+                  <span
+                    style="vertical-align: middle;"
+                  >
+                    对话框标题
+                  </span>
+                </div>
               </div>
             </div>
             <div
@@ -44118,7 +44266,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
     class="t-form__item t-form-item__name"
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--colon t-form__label--right"
+      class="t-form__label t-form__label--colon t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -44434,7 +44582,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
     data-v-6f67d4f0=""
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -44524,7 +44672,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
     data-v-6f67d4f0=""
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -44586,7 +44734,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
     data-v-6f67d4f0=""
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -44626,7 +44774,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
     data-v-6f67d4f0=""
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -44693,7 +44841,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
     data-v-6f67d4f0=""
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -44901,7 +45049,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
     data-v-6f67d4f0=""
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -45035,7 +45183,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/custom-validator.vue 1
     class="t-form__item t-form-item__account"
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -45073,7 +45221,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/custom-validator.vue 1
     class="t-form__item t-form-item__password t-form__item-with-help"
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -45138,7 +45286,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/custom-validator.vue 1
     class="t-form__item t-form-item__rePassword t-form__item-with-help"
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -46185,7 +46333,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
         data-v-e6f62b80=""
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -46275,7 +46423,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
         data-v-e6f62b80=""
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -46337,7 +46485,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
         data-v-e6f62b80=""
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -46377,7 +46525,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
         data-v-e6f62b80=""
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -46444,7 +46592,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
         data-v-e6f62b80=""
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -46652,7 +46800,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
         data-v-e6f62b80=""
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -47750,7 +47898,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
     class="t-form__item t-form-item__school"
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -47904,7 +48052,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
               class="t-form__item t-form-item__students[0].name"
             >
               <div
-                class="t-form__label t-form__label--required t-form__label--right"
+                class="t-form__label t-form__label--right"
                 style="width: 80px;"
               >
                 <label
@@ -47946,7 +48094,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
               class="t-form__item t-form-item__students[0].courseType"
             >
               <div
-                class="t-form__label t-form__label--required t-form__label--right"
+                class="t-form__label t-form__label--right"
                 style="width: 80px;"
               >
                 <label
@@ -48013,7 +48161,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
               class="t-form__item t-form-item__students[0].course"
             >
               <div
-                class="t-form__label t-form__label--required t-form__label--right"
+                class="t-form__label t-form__label--right"
                 style="width: 80px;"
               >
                 <label
@@ -48239,7 +48387,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
               class="t-form__item t-form-item__students[1].name"
             >
               <div
-                class="t-form__label t-form__label--required t-form__label--right"
+                class="t-form__label t-form__label--right"
                 style="width: 80px;"
               >
                 <label
@@ -48281,7 +48429,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
               class="t-form__item t-form-item__students[1].courseType"
             >
               <div
-                class="t-form__label t-form__label--required t-form__label--right"
+                class="t-form__label t-form__label--right"
                 style="width: 80px;"
               >
                 <label
@@ -48348,7 +48496,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
               class="t-form__item t-form-item__students[1].course"
             >
               <div
-                class="t-form__label t-form__label--required t-form__label--right"
+                class="t-form__label t-form__label--right"
                 style="width: 80px;"
               >
                 <label
@@ -48571,7 +48719,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-message.vue 1
     class="t-form__item t-form-item__account t-form__item-with-help"
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -48657,7 +48805,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-message.vue 1
     class="t-form__item t-form-item__password"
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -48794,7 +48942,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -48839,7 +48987,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -48919,7 +49067,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -48981,7 +49129,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -49043,7 +49191,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -49083,7 +49231,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -49150,7 +49298,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -49251,7 +49399,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -49317,7 +49465,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -49382,7 +49530,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -49460,7 +49608,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--right"
+      class="t-form__label t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -49714,7 +49862,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator-status.vue 1
         class="t-form__item t-form-item__fail"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 80px;"
         >
           <label
@@ -49752,7 +49900,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator-status.vue 1
         class="t-form__item t-form-item__warning"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 80px;"
         >
           <label
@@ -49866,7 +50014,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator-status.vue 1
         class="t-form__item t-form-item__failB"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 80px;"
         >
           <label
@@ -49904,7 +50052,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator-status.vue 1
         class="t-form__item t-form-item__warningB"
       >
         <div
-          class="t-form__label t-form__label--required t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 80px;"
         >
           <label
@@ -49973,39 +50121,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator-status.vue 1
                 />
               </div>
             </div>
-            <span
-              class="t-form__status"
-            >
-              <div
-                style="width: 24px; display: flex; justify-content: center;"
-              >
-                <div
-                  class="t-loading--center t-size-s t-loading"
-                  slot="statusIcon"
-                >
-                  <svg
-                    class="t-loading__gradient t-icon-loading"
-                    height="1em"
-                    size="small"
-                    version="1.1"
-                    viewBox="0 0 14 14"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <foreignobject
-                      height="12"
-                      width="12"
-                      x="1"
-                      y="1"
-                    >
-                      <div
-                        class="t-loading__gradient-conic"
-                      />
-                    </foreignobject>
-                  </svg>
-                </div>
-              </div>
-            </span>
           </div>
         </div>
       </div>
@@ -50095,27 +50210,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator-status.vue 1
               </div>
             </div>
             <!---->
-            <span
-              class="t-form__status"
-            >
-              <button
-                class="t-button t-size-m t-button--variant-dashed t-button--theme-default"
-                type="button"
-              >
-                <span
-                  class="t-button__text"
-                >
-                  <svg
-                    class="t-icon t-icon-add"
-                    style="font-size: 16px; color: rgba(0, 0, 0, 0.267);"
-                  >
-                    <use
-                      href="#t-icon-add"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </span>
           </div>
         </div>
       </div>
@@ -117098,7 +117192,6 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/twelve-hour-mer
 exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
 <div
   class="t-space t-space-vertical"
-  data-v-09f93c80=""
   style="gap: 16px;"
 >
   <div
@@ -117106,15 +117199,12 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
   >
     <div
       class="t-space t-space-align-center t-space-horizontal"
-      data-v-09f93c80=""
       style="gap: 16px;"
     >
       <div
         class="t-space-item"
       >
-        <label
-          data-v-09f93c80=""
-        >
+        <label>
           时间轴方向
         </label>
       </div>
@@ -117123,11 +117213,9 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
       >
         <div
           class="t-radio-group t-size-m t-radio-group__outline"
-          data-v-09f93c80=""
         >
           <label
             class="t-radio-button t-is-checked"
-            data-v-09f93c80=""
           >
             <input
               class="t-radio-button__former"
@@ -117146,7 +117234,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
-            data-v-09f93c80=""
           >
             <input
               class="t-radio-button__former"
@@ -117172,11 +117259,9 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
   >
     <ul
       class="t-timeline t-timeline-left t-timeline-vertical t-timeline-label--same t-timeline-label"
-      data-v-09f93c80=""
     >
       <li
         class="t-timeline-item t-timeline-item-left "
-        data-v-09f93c80=""
       >
         <div
           class="t-timeline-item__wrapper"
@@ -117205,7 +117290,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
       </li>
       <li
         class="t-timeline-item t-timeline-item-left "
-        data-v-09f93c80=""
       >
         <div
           class="t-timeline-item__wrapper"
@@ -117234,7 +117318,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
       </li>
       <li
         class="t-timeline-item t-timeline-item-left "
-        data-v-09f93c80=""
       >
         <div
           class="t-timeline-item__wrapper"
@@ -117263,7 +117346,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
       </li>
       <li
         class="t-timeline-item t-timeline-item-left "
-        data-v-09f93c80=""
       >
         <div
           class="t-timeline-item__wrapper"
@@ -117330,8 +117412,8 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customContent.vue 
           事件一
         </div>
         <div
+          class="timeline-custom-content"
           data-v-63c3f6ae=""
-          style="color: rgba(0, 0, 0, 0.6);"
         >
           事件一自定义内容
         </div>
@@ -117369,8 +117451,8 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customContent.vue 
           事件二
         </div>
         <div
+          class="timeline-custom-content"
           data-v-63c3f6ae=""
-          style="color: rgba(0, 0, 0, 0.6);"
         >
           事件二自定义内容
         </div>
@@ -117408,8 +117490,8 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customContent.vue 
           事件三
         </div>
         <div
+          class="timeline-custom-content"
           data-v-63c3f6ae=""
-          style="color: rgba(0, 0, 0, 0.6);"
         >
           事件三自定义内容
         </div>
@@ -117447,8 +117529,8 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customContent.vue 
           事件四
         </div>
         <div
+          class="timeline-custom-content"
           data-v-63c3f6ae=""
-          style="color: rgba(0, 0, 0, 0.6);"
         >
           事件四自定义内容
         </div>
@@ -117466,7 +117548,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customContent.vue 
 exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] = `
 <div
   class="t-space t-space-vertical"
-  data-v-55783979=""
   style="gap: 16px;"
 >
   <div
@@ -117474,15 +117555,12 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
   >
     <div
       class="t-space t-space-align-center t-space-horizontal"
-      data-v-55783979=""
       style="gap: 16px;"
     >
       <div
         class="t-space-item"
       >
-        <label
-          data-v-55783979=""
-        >
+        <label>
           时间轴样式
         </label>
       </div>
@@ -117491,11 +117569,9 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
       >
         <div
           class="t-radio-group t-size-m t-radio-group--filled"
-          data-v-55783979=""
         >
           <label
             class="t-radio-button t-is-checked"
-            data-v-55783979=""
           >
             <input
               class="t-radio-button__former"
@@ -117514,7 +117590,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
           </label>
           <label
             class="t-radio-button"
-            data-v-55783979=""
           >
             <input
               class="t-radio-button__former"
@@ -117544,11 +117619,9 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
   >
     <ul
       class="t-timeline t-timeline-left t-timeline-vertical t-timeline-label--same t-timeline-label"
-      data-v-55783979=""
     >
       <li
         class="t-timeline-item t-timeline-item-left "
-        data-v-55783979=""
       >
         <div
           class="t-timeline-item__wrapper"
@@ -117561,7 +117634,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
             >
               <svg
                 class="t-icon t-icon-tips t-size-m"
-                data-v-55783979=""
                 fill="none"
                 height="1em"
                 viewBox="0 0 16 16"
@@ -117569,7 +117641,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
               >
                 <path
                   d="M8 1c-1.38 0-2.63.55-3.53 1.47a4.96 4.96 0 000 7.06c.3.32.65.58 1.03.8V12a1 1 0 001 1h3a1 1 0 001-1v-1.67A4.96 4.96 0 0013 6a5 5 0 00-5-5zM5.18 3.17a4 4 0 115.65 5.65v.01c-.3.3-.66.55-1.05.75l-.28.14V12h-3V9.72l-.28-.14A3.96 3.96 0 014 6c0-1.1.44-2.1 1.17-2.82zM5.5 14v1h5v-1h-5z"
-                  data-v-55783979=""
                   fill="currentColor"
                   fill-opacity="0.9"
                 />
@@ -117593,7 +117664,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
       </li>
       <li
         class="t-timeline-item t-timeline-item-left "
-        data-v-55783979=""
       >
         <div
           class="t-timeline-item__wrapper"
@@ -117606,7 +117676,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
             >
               <svg
                 class="t-icon t-icon-user t-size-m"
-                data-v-55783979=""
                 fill="none"
                 height="1em"
                 viewBox="0 0 16 16"
@@ -117614,7 +117683,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
               >
                 <path
                   d="M11.5 5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zm-1 0a2.5 2.5 0 10-5 0 2.5 2.5 0 005 0zM13.96 10.85c.34.16.54.5.54.87V14a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-2.28c0-.37.2-.7.54-.87a13.79 13.79 0 0111.92 0zM8 10.5c-1.97 0-3.83.45-5.5 1.24v1.76h11v-1.76A12.78 12.78 0 008 10.5z"
-                  data-v-55783979=""
                   fill="currentColor"
                   fill-opacity="0.9"
                 />
@@ -117638,7 +117706,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
       </li>
       <li
         class="t-timeline-item t-timeline-item-left "
-        data-v-55783979=""
       >
         <div
           class="t-timeline-item__wrapper"
@@ -117651,7 +117718,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
             >
               <svg
                 class="t-icon t-icon-heart t-size-m"
-                data-v-55783979=""
                 fill="none"
                 height="1em"
                 viewBox="0 0 16 16"
@@ -117659,7 +117725,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
               >
                 <path
                   d="M8 5.86l1.06-.98a2.35 2.35 0 013.25 3.4L8 12.57l-4.31-4.3a2.35 2.35 0 013.25-3.4L8 5.86zm-.39-1.72a3.35 3.35 0 00-4.63 4.84l4.87 4.87a.2.2 0 00.3 0l4.87-4.87a3.35 3.35 0 00-4.63-4.84L8 4.5l-.39-.36z"
-                  data-v-55783979=""
                   fill="currentColor"
                   fill-opacity="0.9"
                 />
@@ -117683,7 +117748,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
       </li>
       <li
         class="t-timeline-item t-timeline-item-left "
-        data-v-55783979=""
       >
         <div
           class="t-timeline-item__wrapper"
@@ -117696,7 +117760,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
             >
               <svg
                 class="t-icon t-icon-home t-size-m"
-                data-v-55783979=""
                 fill="none"
                 height="1em"
                 viewBox="0 0 16 16"
@@ -117704,13 +117767,11 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
               >
                 <path
                   d="M6 11v1h4v-1H6z"
-                  data-v-55783979=""
                   fill="currentColor"
                   fill-opacity="0.9"
                 />
                 <path
                   d="M7.65 1.65c.2-.2.5-.2.7 0l6.5 6.5-.7.7L13 7.71v5.79a1 1 0 01-1 1H4a1 1 0 01-1-1V7.7L1.85 8.86l-.7-.7 6.5-6.5zM8 2.7l-4 4v6.79h8V6.7l-4-4z"
-                  data-v-55783979=""
                   fill="currentColor"
                   fill-opacity="0.9"
                 />
@@ -117738,12 +117799,9 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
 `;
 
 exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
-<div
-  data-v-16a85ace=""
->
+<div>
   <div
     class="t-space t-space-vertical"
-    data-v-16a85ace=""
     style="gap: 16px;"
   >
     <div
@@ -117751,15 +117809,12 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
     >
       <div
         class="t-space t-space-horizontal"
-        data-v-16a85ace=""
         style="gap: 16px;"
       >
         <div
           class="t-space-item"
         >
-          <h4
-            data-v-16a85ace=""
-          >
+          <h4>
             时间轴方向
           </h4>
         </div>
@@ -117768,11 +117823,9 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
         >
           <div
             class="t-radio-group t-size-m t-radio-group__outline"
-            data-v-16a85ace=""
           >
             <label
               class="t-radio-button t-is-checked"
-              data-v-16a85ace=""
             >
               <input
                 class="t-radio-button__former"
@@ -117791,7 +117844,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
             </label>
             <label
               class="t-radio-button"
-              data-v-16a85ace=""
             >
               <input
                 class="t-radio-button__former"
@@ -117817,15 +117869,12 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
     >
       <div
         class="t-space t-space-horizontal"
-        data-v-16a85ace=""
         style="gap: 16px;"
       >
         <div
           class="t-space-item"
         >
-          <h4
-            data-v-16a85ace=""
-          >
+          <h4>
             对齐方式
           </h4>
         </div>
@@ -117834,11 +117883,9 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
         >
           <div
             class="t-radio-group t-size-m t-radio-group__outline"
-            data-v-16a85ace=""
           >
             <label
               class="t-radio-button t-is-checked"
-              data-v-16a85ace=""
             >
               <input
                 class="t-radio-button__former"
@@ -117857,7 +117904,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
             </label>
             <label
               class="t-radio-button"
-              data-v-16a85ace=""
             >
               <input
                 class="t-radio-button__former"
@@ -117876,7 +117922,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
             </label>
             <label
               class="t-radio-button"
-              data-v-16a85ace=""
             >
               <input
                 class="t-radio-button__former"
@@ -117902,15 +117947,12 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
     >
       <div
         class="t-space t-space-horizontal"
-        data-v-16a85ace=""
         style="gap: 16px;"
       >
         <div
           class="t-space-item"
         >
-          <h4
-            data-v-16a85ace=""
-          >
+          <h4>
             label对齐方式
           </h4>
         </div>
@@ -117919,11 +117961,9 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
         >
           <div
             class="t-radio-group t-size-m t-radio-group__outline"
-            data-v-16a85ace=""
           >
             <label
               class="t-radio-button t-is-checked"
-              data-v-16a85ace=""
             >
               <input
                 class="t-radio-button__former"
@@ -117942,7 +117982,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
             </label>
             <label
               class="t-radio-button"
-              data-v-16a85ace=""
             >
               <input
                 class="t-radio-button__former"
@@ -117966,11 +118005,9 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
   </div>
   <ul
     class="t-timeline t-timeline-left t-timeline-vertical t-timeline-label--same t-timeline-label"
-    data-v-16a85ace=""
   >
     <li
       class="t-timeline-item t-timeline-item-left "
-      data-v-16a85ace=""
     >
       <div
         class="t-timeline-item__wrapper"
@@ -117999,7 +118036,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
     </li>
     <li
       class="t-timeline-item t-timeline-item-left "
-      data-v-16a85ace=""
     >
       <div
         class="t-timeline-item__wrapper"
@@ -118028,7 +118064,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
     </li>
     <li
       class="t-timeline-item t-timeline-item-left "
-      data-v-16a85ace=""
     >
       <div
         class="t-timeline-item__wrapper"
@@ -118057,7 +118092,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
     </li>
     <li
       class="t-timeline-item t-timeline-item-left "
-      data-v-16a85ace=""
     >
       <div
         class="t-timeline-item__wrapper"
@@ -118089,12 +118123,9 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
 `;
 
 exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = `
-<div
-  data-v-1db606dd=""
->
+<div>
   <div
     class="t-space t-space-vertical"
-    data-v-1db606dd=""
     style="gap: 16px;"
   >
     <div
@@ -118102,7 +118133,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = 
     >
       <div
         class="t-space t-space-horizontal"
-        data-v-1db606dd=""
         style="gap: 16px;"
       >
         <div
@@ -118110,11 +118140,9 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = 
         >
           <form
             class="t-form"
-            data-v-1db606dd=""
           >
             <div
               class="t-form__item t-form-item__"
-              data-v-1db606dd=""
               style="margin-bottom: 5px;"
             >
               <div
@@ -118134,7 +118162,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = 
                 >
                   <div
                     class="t-switch t-size-l"
-                    data-v-1db606dd=""
                   >
                     <span
                       class="t-switch__handle"
@@ -118153,11 +118180,9 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = 
   </div>
   <ul
     class="t-timeline t-timeline-left t-timeline-vertical t-timeline-label--same t-timeline-label"
-    data-v-1db606dd=""
   >
     <li
       class="t-timeline-item t-timeline-item-left "
-      data-v-1db606dd=""
     >
       <div
         class="t-timeline-item__wrapper"
@@ -118186,7 +118211,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = 
     </li>
     <li
       class="t-timeline-item t-timeline-item-left "
-      data-v-1db606dd=""
     >
       <div
         class="t-timeline-item__wrapper"
@@ -118215,7 +118239,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = 
     </li>
     <li
       class="t-timeline-item t-timeline-item-left "
-      data-v-1db606dd=""
     >
       <div
         class="t-timeline-item__wrapper"
@@ -118244,7 +118267,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = 
     </li>
     <li
       class="t-timeline-item t-timeline-item-left "
-      data-v-1db606dd=""
     >
       <div
         class="t-timeline-item__wrapper"
@@ -118276,12 +118298,9 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = 
 `;
 
 exports[`csr snapshot test > csr test ./src/timeline/_example/reverse.vue 1`] = `
-<div
-  data-v-f39394fa=""
->
+<div>
   <div
     class="t-space t-space-vertical"
-    data-v-f39394fa=""
     style="gap: 24px;"
   >
     <div
@@ -118289,15 +118308,12 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/reverse.vue 1`] = 
     >
       <div
         class="t-space t-space-horizontal"
-        data-v-f39394fa=""
         style="gap: 16px;"
       >
         <div
           class="t-space-item"
         >
-          <label
-            data-v-f39394fa=""
-          >
+          <label>
             是否倒序
           </label>
         </div>
@@ -118306,7 +118322,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/reverse.vue 1`] = 
         >
           <div
             class="t-switch t-size-l"
-            data-v-f39394fa=""
           >
             <span
               class="t-switch__handle"
@@ -118321,11 +118336,9 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/reverse.vue 1`] = 
   </div>
   <ul
     class="t-timeline t-timeline-left t-timeline-vertical t-timeline-label--same t-timeline-label"
-    data-v-f39394fa=""
   >
     <li
       class="t-timeline-item t-timeline-item-left "
-      data-v-f39394fa=""
     >
       <div
         class="t-timeline-item__wrapper"
@@ -118354,7 +118367,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/reverse.vue 1`] = 
     </li>
     <li
       class="t-timeline-item t-timeline-item-left "
-      data-v-f39394fa=""
     >
       <div
         class="t-timeline-item__wrapper"
@@ -118383,7 +118395,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/reverse.vue 1`] = 
     </li>
     <li
       class="t-timeline-item t-timeline-item-left "
-      data-v-f39394fa=""
     >
       <div
         class="t-timeline-item__wrapper"
@@ -118412,7 +118423,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/reverse.vue 1`] = 
     </li>
     <li
       class="t-timeline-item t-timeline-item-left "
-      data-v-f39394fa=""
     >
       <div
         class="t-timeline-item__wrapper"
@@ -118444,12 +118454,9 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/reverse.vue 1`] = 
 `;
 
 exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
-<div
-  data-v-b5c789ac=""
->
+<div>
   <div
     class="t-space t-space-vertical"
-    data-v-b5c789ac=""
     style="gap: 16px;"
   >
     <div
@@ -118457,11 +118464,9 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
     >
       <ul
         class="t-timeline t-timeline-left t-timeline-vertical t-timeline-label--same t-timeline-label"
-        data-v-b5c789ac=""
       >
         <li
           class="t-timeline-item t-timeline-item-left "
-          data-v-b5c789ac=""
         >
           <div
             class="t-timeline-item__wrapper"
@@ -118490,7 +118495,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
         </li>
         <li
           class="t-timeline-item t-timeline-item-left "
-          data-v-b5c789ac=""
         >
           <div
             class="t-timeline-item__wrapper"
@@ -118519,7 +118523,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
         </li>
         <li
           class="t-timeline-item t-timeline-item-left "
-          data-v-b5c789ac=""
         >
           <div
             class="t-timeline-item__wrapper"
@@ -118548,7 +118551,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
         </li>
         <li
           class="t-timeline-item t-timeline-item-left "
-          data-v-b5c789ac=""
         >
           <div
             class="t-timeline-item__wrapper"
@@ -118577,7 +118579,6 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
         </li>
         <li
           class="t-timeline-item t-timeline-item-left "
-          data-v-b5c789ac=""
         >
           <div
             class="t-timeline-item__wrapper"

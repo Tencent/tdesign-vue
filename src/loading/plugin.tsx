@@ -32,8 +32,18 @@ function createLoading(options: TdLoadingProps): LoadingInstance {
 }
 
 function produceLoading(props: boolean | TdLoadingProps): LoadingInstance {
+  const destroyLoadingInstance = () => {
+    // 销毁全屏实例
+    removeClass(document.body, lockClass);
+    fullScreenLoadingInstance.hide();
+    fullScreenLoadingInstance = null;
+  };
   // 全屏加载
   if (props === true) {
+    // 若存在已经创建的全屏实例则先hide
+    if (fullScreenLoadingInstance) {
+      destroyLoadingInstance();
+    }
     fullScreenLoadingInstance = createLoading({
       fullscreen: true,
       loading: true,
@@ -43,9 +53,7 @@ function produceLoading(props: boolean | TdLoadingProps): LoadingInstance {
   }
   if (props === false) {
     // 销毁全屏实例
-    removeClass(document.body, lockClass);
-    fullScreenLoadingInstance.hide();
-    fullScreenLoadingInstance = null;
+    destroyLoadingInstance();
     return;
   }
   return createLoading(props);
