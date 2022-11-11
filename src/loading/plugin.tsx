@@ -41,7 +41,9 @@ function produceLoading(props: boolean | TdLoadingProps): LoadingInstance {
   // 全屏加载
   if (props === true) {
     // 若存在已经创建的全屏实例则先hide
-    destroyLoadingInstance();
+    if (fullScreenLoadingInstance) {
+      destroyLoadingInstance();
+    }
     fullScreenLoadingInstance = createLoading({
       fullscreen: true,
       loading: true,
