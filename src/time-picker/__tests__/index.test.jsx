@@ -122,18 +122,10 @@ describe('TimePicker', () => {
         popupProps: {
           visible: true,
         },
-        disableTime: (h) => {
-          const disableHour = [1, 2, 3];
-          if (h > 4) {
-            return {
-              hour: disableHour,
-              minute: [1, 2, 3, 4, 5],
-            };
-          }
-          return {
-            hour: disableHour,
-          };
-        },
+        disableTime: () => ({
+          hour: [1, 2, 3],
+          minute: [1, 2, 3, 4, 5],
+        }),
       });
       const panelNode = document.querySelector('.t-time-picker__panel');
 
@@ -156,18 +148,10 @@ describe('TimePicker', () => {
             visible: false,
           },
           hideDisabledTime: false,
-          disableTime: (h) => {
-            const disableHour = [1, 2, 3];
-            if (h > 4) {
-              return {
-                hour: disableHour,
-                minute: [1, 2, 3, 4, 5],
-              };
-            }
-            return {
-              hour: disableHour,
-            };
-          },
+          disableTime: () => ({
+            hour: [1, 2, 3],
+            minute: [1, 2, 3, 4, 5],
+          }),
         },
       });
       await wrapper.setProps({
