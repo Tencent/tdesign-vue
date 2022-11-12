@@ -22,6 +22,8 @@ export default {
   },
   /** 是否禁用组件 */
   disabled: Boolean,
+  /** 只读属性 */
+  readonly: Boolean,
   /** 当下拉列表为空时显示的内容 */
   empty: {
     type: [String, Function] as PropType<TdTreeSelectProps['empty']>,

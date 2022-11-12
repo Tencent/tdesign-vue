@@ -85,6 +85,14 @@ describe('TreeSelect', () => {
       });
       expect(wrapper.element).toMatchSnapshot();
     });
+    it(':readonly', () => {
+      const wrapper = mount({
+        render() {
+          return <TreeSelect readonly={true} />;
+        },
+      });
+      expect(wrapper.element).toMatchSnapshot();
+    });
     it(':empty string', () => {
       const wrapper = mount({
         render() {
