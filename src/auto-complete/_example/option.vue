@@ -77,7 +77,7 @@ export default {
           <div class="custom-option">
             <img src="https://tdesign.gtimg.com/site/avatar.jpg" />
             <div class="custom-option__main">
-              <t-highlight-option content={text} keyword={this.value2} />
+              <t-highlight-option content={text} keyword={this.value1} />
               <small class="description">这是关于联想词的描述，使用 Props 属性渲染</small>
             </div>
           </div>
