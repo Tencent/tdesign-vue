@@ -49,6 +49,8 @@ export default {
   popupProps: {
     type: Object as PropType<TdAutoCompleteProps['popupProps']>,
   },
+  /** 是否只读 */
+  readonly: Boolean,
   /** 组件尺寸 */
   size: {
     type: String as PropType<TdAutoCompleteProps['size']>,

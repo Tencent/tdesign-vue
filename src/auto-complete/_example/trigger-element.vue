@@ -1,12 +1,9 @@
 <template>
   <div>
-    <t-auto-complete
-      v-model="value"
-      :options="options"
-      highlightKeyword
-      placeholder="请输入关键词搜索"
-      @change="onChange"
-    />
+    <!-- 使用 options 自定义下拉选项 -->
+    <t-auto-complete v-model="value" :options="options" highlightKeyword @change="onChange" />
+
+    <!-- 使用插槽自定义下拉选项 -->
   </div>
 </template>
 

@@ -1,4 +1,5 @@
 import { computed, defineComponent } from '@vue/composition-api';
+import { usePrefixClass } from '../hooks/useConfig';
 
 export default defineComponent({
   name: 'HighlightOption',
@@ -8,10 +9,10 @@ export default defineComponent({
     content: String,
     /** 搜索词 */
     keyword: String,
-    classPrefix: String,
   },
 
   setup(props) {
+    const classPrefix = usePrefixClass();
     const words = computed<{ list: string[]; keyword?: string }>(() => {
       const { content, keyword } = props;
       if (!content) return { list: [] };
@@ -23,7 +24,7 @@ export default defineComponent({
         keyword: splitKeyword,
       };
     });
-    return { words };
+    return { words, classPrefix };
   },
 
   render() {

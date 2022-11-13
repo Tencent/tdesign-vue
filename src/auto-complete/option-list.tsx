@@ -121,12 +121,17 @@ export default defineComponent({
           if (item.text === this.active) {
             cls.push(`${this.classPrefix}-select-option--hover`);
           }
-          const label = isFunction(item.label) ? item.label(h) : item.label;
-          const content = item.text || label || this.$scopedSlots.label?.({ option: item });
+          let labelNode = item.label;
+          if (isFunction(item.label)) {
+            labelNode = item.label(h);
+          } else if (this.$scopedSlots.label) {
+            labelNode = this.$scopedSlots.label?.({ option: item });
+          }
+          const content = labelNode || item.text;
           return (
             <li class={cls} title={item.text} onClick={this.onOptionClick}>
               {typeof content === 'string' && this.highlightKeyword ? (
-                <HighlightOption content={content} keyword={this.value} classPrefix={this.classPrefix} />
+                <HighlightOption content={content} keyword={this.value} />
               ) : (
                 content
               )}

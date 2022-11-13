@@ -9,6 +9,7 @@ import useCommonClassName from '../hooks/useCommonClassName';
 import AutoCompleteOptionList from './option-list';
 import useVModel from '../hooks/useVModel';
 import { useConfig } from '../config-provider/useConfig';
+import { ClassName } from '../common';
 
 export default defineComponent({
   name: 'TAutoComplete',
@@ -28,12 +29,25 @@ export default defineComponent({
       const popupWidth = popupElement.getBoundingClientRect().width || popupElement.offsetWidth || popupElement.clientWidth;
       return {
         width: triggerWidth > popupWidth ? `${triggerWidth}px` : 'auto',
+        ...props.popupProps?.overlayInnerStyle,
       };
     };
 
     const classes = computed(() => [`${classPrefix.value}-auto-complete`]);
-    const popupClasses = computed(() => [`${classPrefix.value}-select__dropdown`]);
-    const popupInnerClasses = computed(() => [`${classPrefix.value}-select__dropdown-inner`]);
+    const popupClasses = computed(() => {
+      let classes: ClassName = [`${classPrefix.value}-select__dropdown`];
+      if (props.popupProps?.overlayClassName) {
+        classes = classes.concat(props.popupProps.overlayClassName);
+      }
+      return classes;
+    });
+    const popupInnerClasses = computed(() => {
+      let classes: ClassName = [`${classPrefix.value}-select__dropdown-inner`];
+      if (props.popupProps?.overlayInnerClassName) {
+        classes = classes.concat(props.popupProps.overlayInnerClassName);
+      }
+      return classes;
+    });
 
     const onInputChange = (value: string, context: { e?: InputEvent | MouseEvent }) => {
       setTValue(value, context);
@@ -60,6 +74,7 @@ export default defineComponent({
     }));
 
     const onInnerSelect: TdAutoCompleteProps['onSelect'] = (value, context) => {
+      if (props.readonly || props.disabled) return;
       popupVisible.value = false;
       setTValue(value, context);
       emit('select', value, context);
@@ -102,24 +117,33 @@ export default defineComponent({
         highlightKeyword={this.highlightKeyword}
         filterable={this.filterable}
         filter={this.filter}
+        scopedSlots={this.$scopedSlots}
       />
     );
+    const popupProps = {
+      ...this.popupProps,
+      overlayInnerStyle: this.getOverlayStyle,
+      overlayInnerClassName: this.popupInnerClasses,
+      overlayClassName: this.popupClasses,
+    };
     return (
       <div class={this.classes}>
         <Popup
           visible={this.popupVisible}
           on={{ 'visible-change': this.onPopupVisibleChange }}
-          overlayClassName={this.popupClasses}
-          overlayInnerClassName={this.popupInnerClasses}
           trigger="click"
           placement="bottom-left"
-          overlayInnerStyle={this.getOverlayStyle}
           hideEmptyPopup={true}
           content={listContent ? () => listContent : null}
+          props={popupProps}
         >
           <Input
             placeholder={this.placeholder ?? this.global.placeholder}
             on={this.inputListeners}
+            tips={this.tips}
+            status={this.status}
+            readonly={this.readonly}
+            disabled={this.disabled}
             props={this.innerInputProps}
           />
         </Popup>
