@@ -121,11 +121,11 @@ export default defineComponent({
           if (item.text === this.active) {
             cls.push(`${this.classPrefix}-select-option--hover`);
           }
-          let labelNode = item.label;
+          let labelNode: any = item.label;
           if (isFunction(item.label)) {
             labelNode = item.label(h);
-          } else if (this.$scopedSlots.label) {
-            labelNode = this.$scopedSlots.label?.({ option: item });
+          } else if (this.$scopedSlots.option) {
+            labelNode = this.$scopedSlots.option?.({ option: item });
           }
           const content = labelNode || item.text;
           return (

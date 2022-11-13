@@ -10,6 +10,7 @@ import AutoCompleteOptionList from './option-list';
 import useVModel from '../hooks/useVModel';
 import { useConfig } from '../config-provider/useConfig';
 import { ClassName } from '../common';
+import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 
 export default defineComponent({
   name: 'TAutoComplete',
@@ -105,6 +106,20 @@ export default defineComponent({
   },
 
   render() {
+    // 触发元素
+    const triggerNode = renderContent(this, 'default', 'content') || (
+      <Input
+        placeholder={this.placeholder ?? this.global.placeholder}
+        on={this.inputListeners}
+        tips={this.tips}
+        status={this.status}
+        readonly={this.readonly}
+        disabled={this.disabled}
+        props={this.innerInputProps}
+        scopedSlots={this.$scopedSlots}
+      />
+    );
+    // 联想词列表
     const listContent = (
       <AutoCompleteOptionList
         value={this.value}
@@ -117,9 +132,20 @@ export default defineComponent({
         highlightKeyword={this.highlightKeyword}
         filterable={this.filterable}
         filter={this.filter}
-        scopedSlots={this.$scopedSlots}
+        scopedSlots={{
+          option: this.$scopedSlots.option,
+        }}
       />
     );
+    const topContent = renderTNodeJSX(this, 'panelTopContent');
+    const bottomContent = renderTNodeJSX(this, 'panelBottomContent');
+    const panelContent = topContent || listContent || bottomContent ? (
+        <div class={`${this.classPrefix}-autocomplete__panel`}>
+          {topContent}
+          {listContent}
+          {bottomContent}
+        </div>
+    ) : null;
     const popupProps = {
       ...this.popupProps,
       overlayInnerStyle: this.getOverlayStyle,
@@ -131,21 +157,13 @@ export default defineComponent({
         <Popup
           visible={this.popupVisible}
           on={{ 'visible-change': this.onPopupVisibleChange }}
-          trigger="click"
+          trigger="focus"
           placement="bottom-left"
           hideEmptyPopup={true}
-          content={listContent ? () => listContent : null}
+          content={panelContent ? () => panelContent : null}
           props={popupProps}
         >
-          <Input
-            placeholder={this.placeholder ?? this.global.placeholder}
-            on={this.inputListeners}
-            tips={this.tips}
-            status={this.status}
-            readonly={this.readonly}
-            disabled={this.disabled}
-            props={this.innerInputProps}
-          />
+          {triggerNode}
         </Popup>
       </div>
     );

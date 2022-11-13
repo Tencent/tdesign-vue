@@ -58,7 +58,7 @@
 
 <script>
 export default {
-  name: 'AutoCompleteBase',
+  name: 'AutoCompleteStatus',
 
   data() {
     return {

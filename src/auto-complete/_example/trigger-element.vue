@@ -1,20 +1,20 @@
 <template>
   <div>
-    <!-- 使用 options 自定义下拉选项 -->
-    <t-auto-complete v-model="value" :options="options" highlightKeyword @change="onChange" />
-
-    <!-- 使用插槽自定义下拉选项 -->
+    <!-- 下拉浮层默认触发方式为 focus，如果期望更为其他，可以设置 :popupProps="{ trigger: 'click' }" -->
+    <t-auto-complete v-model="value" :options="options" highlightKeyword @change="onChange">
+      <t-textarea v-model="value" placeholder="自定义联想词触发元素"></t-textarea>
+    </t-auto-complete>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'AutoCompleteBase',
+  name: 'AutoCompleteTriggerElement',
 
   data() {
     return {
       value: '',
-      options: ['第一个默认联想词', '第二个默认联想词', '第三个默认联想词'],
+      options: ['First AutoComplete Textarea', 'Second AutoComplete Textarea', 'Third AutoComplete Textarea'],
       timer: null,
     };
   },
@@ -24,10 +24,10 @@ export default {
     onChange(value) {
       clearTimeout(this.timer);
       this.timer = setTimeout(() => {
-        const text = '搜索联想词';
-        const pureValue = value.replace(`第一个${text}`, '').replace(`第二个${text}`, '').replace(`第三个${text}`, '');
+        const text = 'AutoComplete Textarea';
+        const pureValue = value.replace(`First ${text}`, '').replace(`Second ${text}`, '').replace(`Third ${text}`, '');
 
-        this.options = [`${pureValue}第一个${text}`, `${pureValue}第二个${text}`, `${pureValue}第三个${text}`];
+        this.options = [`${pureValue}First ${text}`, `${pureValue}Second ${text}`, `${pureValue}Third ${text}`];
         clearTimeout(this.timer);
       }, 200);
     },

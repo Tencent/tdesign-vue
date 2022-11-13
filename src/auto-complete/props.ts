@@ -40,6 +40,14 @@ export default {
   options: {
     type: Array as PropType<TdAutoCompleteProps['options']>,
   },
+  /** 面板内的底部内容 */
+  panelBottomContent: {
+    type: [String, Function] as PropType<TdAutoCompleteProps['panelBottomContent']>,
+  },
+  /** 面板内的顶部内容 */
+  panelTopContent: {
+    type: [String, Function] as PropType<TdAutoCompleteProps['panelTopContent']>,
+  },
   /** 输入框为空时的占位提示。组件本身默认值为 `undefined`，但全局配置存在默认值，不同语言全局默认值不同 */
   placeholder: {
     type: String,

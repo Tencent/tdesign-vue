@@ -5,6 +5,7 @@
       v-model="value1"
       :options="options1"
       :popupProps="{ overlayClassName: 't-demo-autocomplete-option-list' }"
+      placeholder="使用属性自定义联想词选项内容"
       @change="onChange"
     />
 
@@ -13,9 +14,10 @@
       v-model="value2"
       :options="options2"
       :popupProps="{ overlayClassName: 't-demo-autocomplete-option-list' }"
+      placeholder="使用插槽自定义联想词选项内容"
       @change="onChange"
     >
-      <template #label="{ option }">
+      <template #option="{ option }">
         <div class="custom-option">
           <img :src="option.avatar" />
           <div class="custom-option__main">
@@ -36,7 +38,7 @@ import { HighlightOption } from 'tdesign-vue';
 const TEXTS = ['第一个默认联想词', '第二个默认联想词', '第三个默认联想词'];
 
 export default {
-  name: 'AutoCompleteBase',
+  name: 'AutoCompleteOption',
 
   components: {
     THighlightOption: HighlightOption,
