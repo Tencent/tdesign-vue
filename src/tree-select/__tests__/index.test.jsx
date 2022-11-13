@@ -88,10 +88,10 @@ describe('TreeSelect', () => {
     it(':readonly', () => {
       const wrapper = mount({
         render() {
-          return <TreeSelect readonly={true} />;
+          return <TreeSelect disabled={true} />;
         },
       });
-      expect(wrapper.element).toMatchSnapshot();
+      expect(wrapper.find('.t-is-disabled').exists()).toBe(true);
     });
     it(':empty string', () => {
       const wrapper = mount({
