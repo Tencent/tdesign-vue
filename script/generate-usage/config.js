@@ -385,6 +385,12 @@ module.exports = {
       timePicker: `<t-timePicker v-bind="configProps" />`,
     },
   },
+  timeline: {
+    panelStr: `const panelList = [{label: 'timeline', value: 'timeline'}];`,
+    render: {
+      timePicker: `<t-timeline v-bind="configProps" />`,
+    },
+  },
   upload: {
     panelStr: `const panelList = [{label: 'upload', value: 'upload'}];`,
     render: {

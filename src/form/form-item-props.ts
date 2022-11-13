@@ -46,12 +46,16 @@ export default {
   /** 表单字段校验规则 */
   rules: {
     type: Array as PropType<TdFormItemProps['rules']>,
-    default: (): TdFormItemProps['rules'] => [],
   },
   /** 校验不通过时，是否显示错误提示信息，优先级高于 `Form.showErrorMessage` */
   showErrorMessage: {
     type: Boolean,
     default: undefined,
+  },
+  /** 校验状态，可在需要完全自主控制校验状态时使用 */
+  status: {
+    type: String,
+    default: '',
   },
   /** 校验状态图标，值为 `true` 显示默认图标，默认图标有 成功、失败、警告 等，不同的状态图标不同。`statusIcon` 值为 `false`，不显示图标。`statusIcon` 值类型为渲染函数，则可以自定义右侧状态图标。优先级高级 Form 的 statusIcon */
   statusIcon: {
@@ -60,4 +64,8 @@ export default {
   },
   /** 是否显示校验成功的边框，默认不显示 */
   successBorder: Boolean,
+  /** 自定义提示内容，样式跟随 `status` 变动，可在需要完全自主控制校验规则时使用 */
+  tips: {
+    type: [String, Function] as PropType<TdFormItemProps['tips']>,
+  },
 };

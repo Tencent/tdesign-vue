@@ -1,5 +1,5 @@
 <template>
-  <t-space direction="vertical">
+  <t-space style="width: 100%" direction="vertical">
     <t-alert theme="info" message="这是一条普通的消息提示" />
     <t-alert theme="warning" message="这是一条警示消息提示" />
     <t-alert theme="error" message="高危操作/出错信息提示" />

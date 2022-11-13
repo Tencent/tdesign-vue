@@ -1,6 +1,6 @@
 <template>
   <t-space direction="vertical">
-    <t-date-picker v-model="date2" @change="handleChange" />
+    <t-date-picker v-model="date2" @change="handleChange" :firstDayOfWeek="3" :inputProps="inputProps" />
     <t-date-picker
       v-model="date"
       placeholder="可清除、可输入的日期选择器"
@@ -12,11 +12,21 @@
 </template>
 
 <script>
+import dayjs from 'dayjs';
+
 export default {
   data() {
     return {
       date: '',
       date2: '',
+      firstDayOfWeek: 3,
+      inputProps: { inputClass: 'test-inputClass' },
+      presets: {
+        昨天: dayjs().subtract(1, 'day').format('YYYY-MM-DD'),
+      },
+      timePickerProps: {
+        value: '13:00:00',
+      },
     };
   },
   methods: {
