@@ -2679,7 +2679,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/base.vue 1`] = `
         class="t-breadcrumb__inner"
         style="max-width: 150px;"
       >
-        页面1
+        <span
+          class="t-breadcrumb__inner-text"
+        >
+          页面1
+        </span>
       </span>
     </span>
     <span
@@ -2710,7 +2714,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/base.vue 1`] = `
         class="t-breadcrumb__inner"
         style="max-width: 150px;"
       >
-        页面2面包屑文案超长时悬浮显示文案全部信息
+        <span
+          class="t-breadcrumb__inner-text"
+        >
+          页面2面包屑文案超长时悬浮显示文案全部信息
+        </span>
       </span>
     </span>
     <span
@@ -2741,7 +2749,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/base.vue 1`] = `
         class="t-breadcrumb__inner"
         style="max-width: 160px;"
       >
-        面包屑中文案过长时可缩略显示，鼠标hover时显示全部
+        <span
+          class="t-breadcrumb__inner-text"
+        >
+          面包屑中文案过长时可缩略显示，鼠标hover时显示全部
+        </span>
       </span>
     </span>
     <span
@@ -2779,7 +2791,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/custom.vue 1`] =
         class="t-breadcrumb__inner"
         style="max-width: 120px;"
       >
-        页面1
+        <span
+          class="t-breadcrumb__inner-text"
+        >
+          页面1
+        </span>
       </span>
     </span>
     <span
@@ -2804,7 +2820,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/custom.vue 1`] =
         class="t-breadcrumb__inner"
         style="max-width: 120px;"
       >
-        页面2
+        <span
+          class="t-breadcrumb__inner-text"
+        >
+          页面2
+        </span>
       </span>
     </span>
     <span
@@ -2829,7 +2849,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/custom.vue 1`] =
         class="t-breadcrumb__inner"
         style="max-width: 120px;"
       >
-        页面3
+        <span
+          class="t-breadcrumb__inner-text"
+        >
+          页面3
+        </span>
       </span>
     </span>
     <span
@@ -2861,33 +2885,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/dropdown.vue 1`]
         class="t-breadcrumb__inner"
         style="max-width: 120px;"
       >
-        页面1
-      </span>
-    </span>
-    <span
-      class="t-breadcrumb__separator"
-    >
-      /
-    </span>
-  </div>
-  <div
-    class="t-breadcrumb__item light"
-  >
-    <span
-      class="t-breadcrumb--text-overflow"
-    >
-      <span
-        class="t-breadcrumb__inner"
-        style="max-width: 120px;"
-      >
-        页面2 
-        <svg
-          class="t-icon t-icon-chevron-down"
+        <span
+          class="t-breadcrumb__inner-text"
         >
-          <use
-            href="#t-icon-chevron-down"
-          />
-        </svg>
+          页面1
+        </span>
       </span>
     </span>
     <span
@@ -2906,7 +2908,41 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/dropdown.vue 1`]
         class="t-breadcrumb__inner"
         style="max-width: 120px;"
       >
-        页面3
+        <span
+          class="t-breadcrumb__inner-text"
+        >
+          页面2 
+          <svg
+            class="t-icon t-icon-chevron-down"
+          >
+            <use
+              href="#t-icon-chevron-down"
+            />
+          </svg>
+        </span>
+      </span>
+    </span>
+    <span
+      class="t-breadcrumb__separator"
+    >
+      /
+    </span>
+  </div>
+  <div
+    class="t-breadcrumb__item light"
+  >
+    <span
+      class="t-breadcrumb--text-overflow"
+    >
+      <span
+        class="t-breadcrumb__inner"
+        style="max-width: 120px;"
+      >
+        <span
+          class="t-breadcrumb__inner-text"
+        >
+          页面3
+        </span>
       </span>
     </span>
     <span
@@ -2939,7 +2975,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/href.vue 1`] = `
             class="t-breadcrumb__inner"
             style="max-width: 120px;"
           >
-            首页
+            <span
+              class="t-breadcrumb__inner-text"
+            >
+              首页
+            </span>
           </span>
         </span>
         <span
@@ -2970,7 +3010,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/href.vue 1`] = `
             class="t-breadcrumb__inner"
             style="max-width: 120px;"
           >
-            页面1(覆盖路由)
+            <span
+              class="t-breadcrumb__inner-text"
+            >
+              页面1(覆盖路由)
+            </span>
           </span>
         </span>
         <span
@@ -3003,7 +3047,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/href.vue 1`] = `
             class="t-breadcrumb__inner"
             style="max-width: 120px;"
           >
-            页面2
+            <span
+              class="t-breadcrumb__inner-text"
+            >
+              页面2
+            </span>
           </span>
         </a>
         <span
@@ -3034,7 +3082,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/href.vue 1`] = `
             class="t-breadcrumb__inner"
             style="max-width: 120px;"
           >
-            页面3(disabled)
+            <span
+              class="t-breadcrumb__inner-text"
+            >
+              页面3(disabled)
+            </span>
           </span>
         </span>
         <span
@@ -3065,7 +3117,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/href.vue 1`] = `
             class="t-breadcrumb__inner"
             style="max-width: 120px;"
           >
-            页面4自定义点击
+            <span
+              class="t-breadcrumb__inner-text"
+            >
+              页面4自定义点击
+            </span>
           </span>
         </span>
         <span
@@ -3121,7 +3177,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/icon.vue 1`] = `
             href="#t-icon-books"
           />
         </svg>
-        页面1
+        <span
+          class="t-breadcrumb__inner-text"
+        >
+          页面1
+        </span>
       </span>
     </span>
     <span
@@ -3159,7 +3219,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/icon.vue 1`] = `
             href="#t-icon-books"
           />
         </svg>
-        页面2
+        <span
+          class="t-breadcrumb__inner-text"
+        >
+          页面2
+        </span>
       </span>
     </span>
     <span
@@ -3197,7 +3261,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/icon.vue 1`] = `
             href="#t-icon-books"
           />
         </svg>
-        页面3
+        <span
+          class="t-breadcrumb__inner-text"
+        >
+          页面3
+        </span>
       </span>
     </span>
     <span
@@ -3235,7 +3303,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/options.vue 1`] 
         class="t-breadcrumb__inner"
         style="max-width: 120px;"
       >
-        页面1
+        <span
+          class="t-breadcrumb__inner-text"
+        >
+          页面1
+        </span>
       </span>
     </span>
     <span
@@ -3266,7 +3338,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/options.vue 1`] 
         class="t-breadcrumb__inner"
         style="max-width: 120px;"
       >
-        页面2
+        <span
+          class="t-breadcrumb__inner-text"
+        >
+          页面2
+        </span>
       </span>
     </span>
     <span
@@ -3299,7 +3375,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/options.vue 1`] 
         class="t-breadcrumb__inner"
         style="max-width: 120px;"
       >
-        页面3
+        <span
+          class="t-breadcrumb__inner-text"
+        >
+          页面3
+        </span>
       </span>
     </a>
     <span
@@ -3337,7 +3417,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/to.vue 1`] = `
         class="t-breadcrumb__inner"
         style="max-width: 120px;"
       >
-        首页
+        <span
+          class="t-breadcrumb__inner-text"
+        >
+          首页
+        </span>
       </span>
     </span>
     <span
@@ -3368,7 +3452,11 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/to.vue 1`] = `
         class="t-breadcrumb__inner"
         style="max-width: 120px;"
       >
-        页面1
+        <span
+          class="t-breadcrumb__inner-text"
+        >
+          页面1
+        </span>
       </span>
     </span>
     <span
@@ -44266,7 +44354,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
     class="t-form__item t-form-item__name"
   >
     <div
-      class="t-form__label t-form__label--colon t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--colon t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -44582,7 +44670,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
     data-v-6f67d4f0=""
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -44672,7 +44760,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
     data-v-6f67d4f0=""
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -44734,7 +44822,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
     data-v-6f67d4f0=""
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -44774,7 +44862,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
     data-v-6f67d4f0=""
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -44841,7 +44929,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
     data-v-6f67d4f0=""
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -45049,7 +45137,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
     data-v-6f67d4f0=""
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -45183,7 +45271,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/custom-validator.vue 1
     class="t-form__item t-form-item__account"
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -45221,7 +45309,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/custom-validator.vue 1
     class="t-form__item t-form-item__password t-form__item-with-help"
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -45286,7 +45374,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/custom-validator.vue 1
     class="t-form__item t-form-item__rePassword t-form__item-with-help"
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -46333,7 +46421,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
         data-v-e6f62b80=""
       >
         <div
-          class="t-form__label t-form__label--right"
+          class="t-form__label t-form__label--required t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -46423,7 +46511,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
         data-v-e6f62b80=""
       >
         <div
-          class="t-form__label t-form__label--right"
+          class="t-form__label t-form__label--required t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -46485,7 +46573,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
         data-v-e6f62b80=""
       >
         <div
-          class="t-form__label t-form__label--right"
+          class="t-form__label t-form__label--required t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -46525,7 +46613,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
         data-v-e6f62b80=""
       >
         <div
-          class="t-form__label t-form__label--right"
+          class="t-form__label t-form__label--required t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -46592,7 +46680,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
         data-v-e6f62b80=""
       >
         <div
-          class="t-form__label t-form__label--right"
+          class="t-form__label t-form__label--required t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -46800,7 +46888,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
         data-v-e6f62b80=""
       >
         <div
-          class="t-form__label t-form__label--right"
+          class="t-form__label t-form__label--required t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -47898,7 +47986,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
     class="t-form__item t-form-item__school"
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -48052,7 +48140,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
               class="t-form__item t-form-item__students[0].name"
             >
               <div
-                class="t-form__label t-form__label--right"
+                class="t-form__label t-form__label--required t-form__label--right"
                 style="width: 80px;"
               >
                 <label
@@ -48094,7 +48182,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
               class="t-form__item t-form-item__students[0].courseType"
             >
               <div
-                class="t-form__label t-form__label--right"
+                class="t-form__label t-form__label--required t-form__label--right"
                 style="width: 80px;"
               >
                 <label
@@ -48161,7 +48249,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
               class="t-form__item t-form-item__students[0].course"
             >
               <div
-                class="t-form__label t-form__label--right"
+                class="t-form__label t-form__label--required t-form__label--right"
                 style="width: 80px;"
               >
                 <label
@@ -48387,7 +48475,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
               class="t-form__item t-form-item__students[1].name"
             >
               <div
-                class="t-form__label t-form__label--right"
+                class="t-form__label t-form__label--required t-form__label--right"
                 style="width: 80px;"
               >
                 <label
@@ -48429,7 +48517,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
               class="t-form__item t-form-item__students[1].courseType"
             >
               <div
-                class="t-form__label t-form__label--right"
+                class="t-form__label t-form__label--required t-form__label--right"
                 style="width: 80px;"
               >
                 <label
@@ -48496,7 +48584,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
               class="t-form__item t-form-item__students[1].course"
             >
               <div
-                class="t-form__label t-form__label--right"
+                class="t-form__label t-form__label--required t-form__label--right"
                 style="width: 80px;"
               >
                 <label
@@ -48719,7 +48807,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-message.vue 1
     class="t-form__item t-form-item__account t-form__item-with-help"
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -48805,7 +48893,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-message.vue 1
     class="t-form__item t-form-item__password"
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -48942,7 +49030,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -48987,7 +49075,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -49067,7 +49155,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -49129,7 +49217,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -49191,7 +49279,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -49231,7 +49319,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -49298,7 +49386,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -49399,7 +49487,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -49465,7 +49553,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -49530,7 +49618,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -49608,7 +49696,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     data-v-064ce350=""
   >
     <div
-      class="t-form__label t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -49862,7 +49950,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator-status.vue 1
         class="t-form__item t-form-item__fail"
       >
         <div
-          class="t-form__label t-form__label--right"
+          class="t-form__label t-form__label--required t-form__label--right"
           style="width: 80px;"
         >
           <label
@@ -49900,7 +49988,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator-status.vue 1
         class="t-form__item t-form-item__warning"
       >
         <div
-          class="t-form__label t-form__label--right"
+          class="t-form__label t-form__label--required t-form__label--right"
           style="width: 80px;"
         >
           <label
@@ -50014,7 +50102,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator-status.vue 1
         class="t-form__item t-form-item__failB"
       >
         <div
-          class="t-form__label t-form__label--right"
+          class="t-form__label t-form__label--required t-form__label--right"
           style="width: 80px;"
         >
           <label
@@ -50052,7 +50140,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator-status.vue 1
         class="t-form__item t-form-item__warningB"
       >
         <div
-          class="t-form__label t-form__label--right"
+          class="t-form__label t-form__label--required t-form__label--right"
           style="width: 80px;"
         >
           <label
@@ -50121,6 +50209,39 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator-status.vue 1
                 />
               </div>
             </div>
+            <span
+              class="t-form__status"
+            >
+              <div
+                style="width: 24px; display: flex; justify-content: center;"
+              >
+                <div
+                  class="t-loading--center t-size-s t-loading"
+                  slot="statusIcon"
+                >
+                  <svg
+                    class="t-loading__gradient t-icon-loading"
+                    height="1em"
+                    size="small"
+                    version="1.1"
+                    viewBox="0 0 14 14"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <foreignobject
+                      height="12"
+                      width="12"
+                      x="1"
+                      y="1"
+                    >
+                      <div
+                        class="t-loading__gradient-conic"
+                      />
+                    </foreignobject>
+                  </svg>
+                </div>
+              </div>
+            </span>
           </div>
         </div>
       </div>
@@ -50210,6 +50331,27 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator-status.vue 1
               </div>
             </div>
             <!---->
+            <span
+              class="t-form__status"
+            >
+              <button
+                class="t-button t-size-m t-button--variant-dashed t-button--theme-default"
+                type="button"
+              >
+                <span
+                  class="t-button__text"
+                >
+                  <svg
+                    class="t-icon t-icon-add"
+                    style="font-size: 16px; color: rgba(0, 0, 0, 0.267);"
+                  >
+                    <use
+                      href="#t-icon-add"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </span>
           </div>
         </div>
       </div>
