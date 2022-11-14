@@ -177,7 +177,7 @@ export default defineComponent({
         showInput={!this.inputProps?.readonly || !this.tagValue || !this.tagValue?.length}
         keepWrapperWidth={true}
         onMousewheel={this.onWheel}
-        autoWidth={this.autoWidth}
+        autoWidth
         size={this.size}
         disabled={this.disabled}
         label={() => this.renderLabel({ displayNode, label }, h)}
