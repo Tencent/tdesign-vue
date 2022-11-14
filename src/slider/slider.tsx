@@ -465,7 +465,7 @@ export default mixins(classPrefixMixins).extend({
 
             {this.showSteps && (
               <div class={`${this.componentName}__stops`}>
-                {this.steps.map((item, key) => {
+                {this.steps.map((item: any, key) => {
                   if (item.position === 0 || item.position === 1) return null;
                   return <div class={`${this.componentName}__stop`} key={key} style={this.getStopStyle(item)}></div>;
                 })}
