@@ -346,14 +346,17 @@ export default mixins(classPrefixMixins).extend({
       if (this.markList.length) {
         return (
           <div>
-            <div>
-              {this.markList.map((item, index) => (
-                <div
-                  class={[`${this.componentName}__stop`, `${this.componentName}__mark-stop`]}
-                  style={this.getStopStyle(item.position)}
-                  key={index}
-                ></div>
-              ))}
+            <div class={`${this.componentName}__stops`}>
+              {this.markList.map((item, index) => {
+                if (item.position === 0 || item.position === 1) return null;
+                return (
+                  <div
+                    class={[`${this.componentName}__stop`, `${this.componentName}__mark-stop`]}
+                    style={this.getStopStyle(item.position)}
+                    key={index}
+                  ></div>
+                );
+              })}
             </div>
             <div class={`${this.componentName}__mark`}>
               {this.markList.map((item, key) => (
