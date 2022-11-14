@@ -69,7 +69,7 @@ export default mixins(getConfigReceiverMixins<Vue, TreeSelectConfig>('treeSelect
   },
   computed: {
     tDisabled(): boolean {
-      return this.formDisabled || this.disabled;
+      return this.formDisabled || this.disabled || this.readonly;
     },
     classes(): ClassName {
       return [
