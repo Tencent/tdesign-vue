@@ -1,6 +1,7 @@
 :: BASE_DOC ::
 
 ## API
+
 ### TreeSelect Props
 
 name | type | default | description | required
@@ -15,7 +16,7 @@ empty | String / Slot / Function | '' | Typescript：`string \| TNode`。[see mo
 filter | Function | - | Typescript：`(filterWords: string, option: DataOption) => boolean` | N
 filterable | Boolean | false | \- | N
 inputProps | Object | - | Typescript：`InputProps`，[Input API Documents](./input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
-inputValue | String / Number | - | input value。`.sync` is supported。Typescript：`InputValue`，[Input API Documents](./input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
+inputValue | String / Number | - | input value。`v-model:inputValue` is supported。Typescript：`InputValue`，[Input API Documents](./input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
 defaultInputValue | String / Number | - | input value。uncontrolled property。Typescript：`InputValue`，[Input API Documents](./input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
 loading | Boolean | false | \- | N
 loadingText | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
@@ -33,7 +34,7 @@ status | String | - | options：default/success/warning/error | N
 tagProps | Object | - | Typescript：`TagProps`，[Tag API Documents](./tag?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
 tips | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 treeProps | Object | - | Typescript：`TreeProps`，[Tree API Documents](./tree?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
-value | String / Number / Object / Array | - | `v-model` is supported。Typescript：`TreeSelectValue` `type TreeSelectValue = string \| number \| object \| Array<TreeSelectValue>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
+value | String / Number / Object / Array | - | `v-model` and `v-model:value` is supported。Typescript：`TreeSelectValue` `type TreeSelectValue = string \| number \| object \| Array<TreeSelectValue>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
 defaultValue | String / Number / Object / Array | - | uncontrolled property。Typescript：`TreeSelectValue` `type TreeSelectValue = string \| number \| object \| Array<TreeSelectValue>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
 valueDisplay | Slot / Function | - | Typescript：`string \| TNode<{ value: TreeSelectValue; onClose: (index: number, item?: any) => void }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 valueType | String | value | options：value/object | N

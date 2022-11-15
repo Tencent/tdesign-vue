@@ -1,5 +1,13 @@
 <template>
-  <t-tree-select style="width: 300px" v-model="value" :data="options" multiple clearable placeholder="请选择">
+  <t-tree-select
+    style="width: 300px"
+    v-model="value"
+    :data="options"
+    multiple
+    clearable
+    placeholder="请选择"
+    @remove="handleRemove"
+  >
   </t-tree-select>
 </template>
 <script>
@@ -38,6 +46,11 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    handleRemove(ctx) {
+      console.log('移除选项', ctx);
+    },
   },
 };
 </script>

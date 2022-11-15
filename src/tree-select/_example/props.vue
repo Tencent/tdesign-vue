@@ -45,7 +45,7 @@ export default {
         },
       ],
       popupProps: {
-        overlayStyle: {
+        overlayInnerStyle: {
           width: '500px',
         },
       },
