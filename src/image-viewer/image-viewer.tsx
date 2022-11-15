@@ -30,7 +30,7 @@ export default defineComponent({
   setup(props, { emit }) {
     const classPrefix = usePrefixClass();
     const COMPONENT_NAME = usePrefixClass('image-viewer');
-    const isExpand = ref(false);
+    const isExpand = ref(true);
     const showOverlayValue = computed(() => getOverlay(props));
 
     const { index, visible } = toRefs(props);
@@ -164,7 +164,7 @@ export default defineComponent({
       deltaY > 0 ? onZoomIn() : onZoomOut();
     };
 
-    const transStyle = computed(() => setTransform(`translateX(-${indexValue.value * 84}px)`));
+    const transStyle = computed(() => setTransform(`translateX(calc(-${indexValue.value} * (40px / 9 * 16 + 4px)))`));
     const isMultipleImg = computed(() => imagesList.value.length > 1);
 
     return {
@@ -206,13 +206,11 @@ export default defineComponent({
       return (
         <div class={this.headerClass}>
           <TImageViewerIcon
-            icon={() => <ChevronDownIcon size="20px" />}
+            icon={() => <ChevronDownIcon size="16px" />}
             class={`${this.COMPONENT_NAME}__header-pre-bt`}
             clickHandler={this.toggleExpand}
           />
           <div class={`${this.COMPONENT_NAME}__header-prev`}>
-            <div class={`${this.COMPONENT_NAME}__bokeh-left`} />
-            <div class={`${this.COMPONENT_NAME}__bokeh-right`} />
             <div class={`${this.COMPONENT_NAME}__header-trans`} style={this.transStyle}>
               {this.imagesList.map((image, index) => (
                 <div

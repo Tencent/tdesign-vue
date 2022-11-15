@@ -46,13 +46,11 @@ describe('ImageViewer', () => {
     await nextTick();
 
     // 鼠标点击后，有 mini 元素
-    const miniHeader = document.querySelector('.t-image-viewer__mini-header');
     const miniFooter = document.querySelector('.t-image-viewer-mini__footer');
-    expect(miniHeader).not.toBe(null);
     expect(miniFooter).not.toBe(null);
 
     // 模拟鼠标点击关闭
-    const closeBtn = document.querySelector('.t-image-viewer__mini-close');
+    const closeBtn = document.querySelector('.t-dialog__close');
     await closeBtn.click();
     await nextTick();
     expect(onClose).toHaveBeenCalledTimes(1);
