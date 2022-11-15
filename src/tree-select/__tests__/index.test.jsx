@@ -85,6 +85,14 @@ describe('TreeSelect', () => {
       });
       expect(wrapper.element).toMatchSnapshot();
     });
+    it(':readonly', () => {
+      const wrapper = mount({
+        render() {
+          return <TreeSelect disabled={true} />;
+        },
+      });
+      expect(wrapper.find('.t-is-disabled').exists()).toBe(true);
+    });
     it(':empty string', () => {
       const wrapper = mount({
         render() {

@@ -89,7 +89,7 @@ export default defineComponent({
         if (isFunction(props.filter)) {
           return props.filter(`${props.inputValue}`, option);
         }
-        return option.label?.indexOf(`${props.inputValue}`) > -1;
+        return option.label?.toLowerCase?.().indexOf(`${props.inputValue}`.toLowerCase()) > -1;
       };
 
       const res: Array<SelectOption & { index?: number }> = [];
