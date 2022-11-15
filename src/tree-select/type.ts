@@ -21,7 +21,7 @@ export interface TdTreeSelectProps<DataOption extends TreeOptionData = TreeOptio
    */
   autoWidth?: boolean;
   /**
-   * 【开发中】无边框模式
+   * 无边框模式
    * @default false
    */
   borderless?: boolean;
@@ -41,7 +41,6 @@ export interface TdTreeSelectProps<DataOption extends TreeOptionData = TreeOptio
   data?: Array<DataOption>;
   /**
    * 是否禁用组件
-   * @default false
    */
   disabled?: boolean;
   /**
@@ -77,7 +76,6 @@ export interface TdTreeSelectProps<DataOption extends TreeOptionData = TreeOptio
   loading?: boolean;
   /**
    * 远程加载时显示的文字，支持自定义。如加上超链接
-   * @default ''
    */
   loadingText?: string | TNode;
   /**
@@ -126,9 +124,17 @@ export interface TdTreeSelectProps<DataOption extends TreeOptionData = TreeOptio
    */
   size?: 'small' | 'medium' | 'large';
   /**
-   * 【开发中】透传 Tag 标签组件全部属性
+   * 输入框状态
+   */
+  status?: 'default' | 'success' | 'warning' | 'error';
+  /**
+   * 透传 Tag 标签组件全部属性
    */
   tagProps?: TagProps;
+  /**
+   * 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式
+   */
+  tips?: string | TNode;
   /**
    * 透传 Tree 组件的全部属性
    */
@@ -142,13 +148,9 @@ export interface TdTreeSelectProps<DataOption extends TreeOptionData = TreeOptio
    */
   defaultValue?: TreeSelectValue;
   /**
-   * 选中值
-   */
-  modelValue?: TreeSelectValue;
-  /**
    * 自定义选中项呈现方式
    */
-  valueDisplay?: TNode<{ value: DataOption[]; onClose: () => void }>;
+  valueDisplay?: string | TNode<{ value: TreeSelectValue; onClose: (index: number, item?: any) => void }>;
   /**
    * 用于控制选中值的类型。假设数据选项为：`[{ label: '姓名', value: 'name' }]`，value 表示值仅返回数据选项中的 value， object 表示值返回全部数据
    * @default value

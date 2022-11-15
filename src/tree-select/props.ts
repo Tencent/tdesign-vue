@@ -43,7 +43,6 @@ export default {
   /** 输入框的值 */
   inputValue: {
     type: [String, Number] as PropType<TdTreeSelectProps['inputValue']>,
-    default: undefined,
   },
   /** 输入框的值，非受控属性 */
   defaultInputValue: {
@@ -54,7 +53,6 @@ export default {
   /** 远程加载时显示的文字，支持自定义。如加上超链接 */
   loadingText: {
     type: [String, Function] as PropType<TdTreeSelectProps['loadingText']>,
-    default: '',
   },
   /** 用于控制多选数量，值为 0 则不限制 */
   max: {
@@ -98,9 +96,21 @@ export default {
       return ['small', 'medium', 'large'].includes(val);
     },
   },
-  /** 【开发中】透传 Tag 标签组件全部属性 */
+  /** 输入框状态 */
+  status: {
+    type: String as PropType<TdTreeSelectProps['status']>,
+    validator(val: TdTreeSelectProps['status']): boolean {
+      if (!val) return true;
+      return ['default', 'success', 'warning', 'error'].includes(val);
+    },
+  },
+  /** 透传 Tag 标签组件全部属性 */
   tagProps: {
     type: Object as PropType<TdTreeSelectProps['tagProps']>,
+  },
+  /** 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式 */
+  tips: {
+    type: [String, Function] as PropType<TdTreeSelectProps['tips']>,
   },
   /** 透传 Tree 组件的全部属性 */
   treeProps: {
@@ -109,11 +119,6 @@ export default {
   /** 选中值 */
   value: {
     type: [String, Number, Object, Array] as PropType<TdTreeSelectProps['value']>,
-    default: undefined,
-  },
-  modelValue: {
-    type: [String, Number, Object, Array] as PropType<TdTreeSelectProps['value']>,
-    default: undefined,
   },
   /** 选中值，非受控属性 */
   defaultValue: {
