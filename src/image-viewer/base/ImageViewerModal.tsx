@@ -1,5 +1,4 @@
 import { computed, defineComponent, PropType } from '@vue/composition-api';
-import { CloseIcon } from 'tdesign-icons-vue';
 import TDialog from '../../dialog';
 import TImageItem from './ImageItem';
 import TImageViewerUtils from './ImageViewerUtils';
