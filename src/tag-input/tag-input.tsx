@@ -175,9 +175,9 @@ export default defineComponent({
           this.setTInputValue(val, { ...context, trigger: 'input' });
         }}
         showInput={!this.inputProps?.readonly || !this.tagValue || !this.tagValue?.length}
-        keepWrapperWidth={true}
+        keepWrapperWidth={!this.autoWidth}
         onMousewheel={this.onWheel}
-        autoWidth
+        autoWidth={true}
         size={this.size}
         disabled={this.disabled}
         label={() => this.renderLabel({ displayNode, label }, h)}
