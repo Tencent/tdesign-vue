@@ -80000,7 +80000,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/noborder.vue 1`] = `
         class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--borderless t-select-input--multiple t-select-input--empty t-select"
       >
         <div
-          class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+          class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
         >
           <div
             class="t-input__prefix"
@@ -80854,7 +80854,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/autowidth-mult
   data-v-43e6ff8d=""
 >
   <div
-    class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
+    class="t-input t-size-m t-is-default t-input--auto-width t-input--prefix t-input--suffix"
   >
     <div
       class="t-input__prefix"
@@ -114261,7 +114261,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/auto-width.vue 1`
   class="t-input__wrap t-tag-input t-tag-input--break-line"
 >
   <div
-    class="t-input t-size-m t-is-default t-input--prefix"
+    class="t-input t-size-m t-is-default t-input--auto-width t-input--prefix"
   >
     <div
       class="t-input__prefix"
@@ -115213,7 +115213,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/excess.vue 1`] = 
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
