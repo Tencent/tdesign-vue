@@ -84076,11 +84076,9 @@ exports[`csr snapshot test > csr test ./src/slider/_example/marks.vue 1`] = `
             />
           </div>
           <div>
-            <div>
-              <div
-                class="t-slider__stop t-slider__mark-stop"
-                style="left: 0%;"
-              />
+            <div
+              class="t-slider__stops"
+            >
               <div
                 class="t-slider__stop t-slider__mark-stop"
                 style="left: 20%;"
@@ -84198,11 +84196,9 @@ exports[`csr snapshot test > csr test ./src/slider/_example/marks.vue 1`] = `
             />
           </div>
           <div>
-            <div>
-              <div
-                class="t-slider__stop t-slider__mark-stop"
-                style="left: 0%;"
-              />
+            <div
+              class="t-slider__stops"
+            >
               <div
                 class="t-slider__stop t-slider__mark-stop"
                 style="left: 20%;"
@@ -84314,11 +84310,9 @@ exports[`csr snapshot test > csr test ./src/slider/_example/min-and-max.vue 1`] 
             />
           </div>
           <div>
-            <div>
-              <div
-                class="t-slider__stop t-slider__mark-stop"
-                style="left: 0%;"
-              />
+            <div
+              class="t-slider__stops"
+            >
               <div
                 class="t-slider__stop t-slider__mark-stop"
                 style="left: 100%;"
@@ -84388,11 +84382,9 @@ exports[`csr snapshot test > csr test ./src/slider/_example/min-and-max.vue 1`] 
             />
           </div>
           <div>
-            <div>
-              <div
-                class="t-slider__stop t-slider__mark-stop"
-                style="left: 0%;"
-              />
+            <div
+              class="t-slider__stops"
+            >
               <div
                 class="t-slider__stop t-slider__mark-stop"
                 style="left: 100%;"
@@ -84647,11 +84639,9 @@ exports[`csr snapshot test > csr test ./src/slider/_example/vertical-marks.vue 1
             />
           </div>
           <div>
-            <div>
-              <div
-                class="t-slider__stop t-slider__mark-stop"
-                style="top: calc(100% - 1px);"
-              />
+            <div
+              class="t-slider__stops"
+            >
               <div
                 class="t-slider__stop t-slider__mark-stop"
                 style="top: calc(80% - 1px);"
@@ -84771,11 +84761,9 @@ exports[`csr snapshot test > csr test ./src/slider/_example/vertical-marks.vue 1
             />
           </div>
           <div>
-            <div>
-              <div
-                class="t-slider__stop t-slider__mark-stop"
-                style="top: calc(100% - 1px);"
-              />
+            <div
+              class="t-slider__stops"
+            >
               <div
                 class="t-slider__stop t-slider__mark-stop"
                 style="top: calc(80% - 1px);"

@@ -64,11 +64,9 @@ exports[`Slider [marks] > render right 1`] = `
         />
       </div>
       <div>
-        <div>
-          <div
-            class="t-slider__stop t-slider__mark-stop"
-            style="left: 0%;"
-          />
+        <div
+          class="t-slider__stops"
+        >
           <div
             class="t-slider__stop t-slider__mark-stop"
             style="left: 8%;"
@@ -216,11 +214,9 @@ exports[`Slider [vertical-marks] > render right 1`] = `
         />
       </div>
       <div>
-        <div>
-          <div
-            class="t-slider__stop t-slider__mark-stop"
-            style="top: calc(100% - 1px);"
-          />
+        <div
+          class="t-slider__stops"
+        >
           <div
             class="t-slider__stop t-slider__mark-stop"
             style="top: calc(92% - 1px);"
