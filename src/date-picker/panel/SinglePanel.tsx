@@ -50,11 +50,11 @@ export default defineComponent({
       enableTimePicker: props.enableTimePicker,
     });
 
-    const disableDateOptions = useDisableDate({
+    const disableDateOptions = computed(() => useDisableDate({
       format,
       mode: props.mode,
       disableDate: props.disableDate,
-    });
+    }));
 
     const tableData = computed(() => useTableData({
       year: props.year,
@@ -62,7 +62,7 @@ export default defineComponent({
       mode: props.mode,
       start: props.value ? parseToDayjs(props.value, format).toDate() : undefined,
       firstDayOfWeek: props.firstDayOfWeek || global.value.firstDayOfWeek,
-      ...disableDateOptions,
+      ...disableDateOptions.value,
     }));
 
     const panelContentProps = computed(() => ({
