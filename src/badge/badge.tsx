@@ -12,6 +12,9 @@ export default mixins(classPrefixMixins).extend({
   methods: {
     getContent() {
       if (this.dot) return '';
+      if (typeof this.$scopedSlots.count === 'function') {
+        return this.$scopedSlots.count(null);
+      }
       if (typeof this.count === 'function') {
         return renderTNodeJSX(this, 'count');
       }

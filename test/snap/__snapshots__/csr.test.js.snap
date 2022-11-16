@@ -2274,6 +2274,50 @@ exports[`csr snapshot test > csr test ./src/badge/_example/custom.vue 1`] = `
       </sup>
     </div>
   </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-badge"
+      data-v-a2369e40=""
+    >
+      <div
+        class="badge-block"
+        data-v-a2369e40=""
+      />
+      <sup
+        class="t-badge--round"
+        style="background: transparent;"
+      >
+        <div
+          class="t-loading--center t-loading"
+          data-v-a2369e40=""
+          style="font-size: 20px;"
+        >
+          <svg
+            class="t-loading__gradient t-icon-loading"
+            height="1em"
+            size="20px"
+            version="1.1"
+            viewBox="0 0 14 14"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <foreignobject
+              height="12"
+              width="12"
+              x="1"
+              y="1"
+            >
+              <div
+                class="t-loading__gradient-conic"
+              />
+            </foreignobject>
+          </svg>
+        </div>
+      </sup>
+    </div>
+  </div>
 </div>
 `;
 
@@ -43862,37 +43906,32 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/size-draggable.vue 1
 exports[`csr snapshot test > csr test ./src/dropdown/_example/base.vue 1`] = `
 <div
   class="tdesign-demo-dropdown"
-  data-v-31515850=""
 >
   <button
     class="t-button t-size-m t-button--variant-text t-button--theme-default"
-    data-v-31515850=""
     type="button"
   >
     <span
       class="t-button__text"
     >
-      <span
-        class="tdesign-demo-dropdown__text"
-        data-v-31515850=""
+       更多 
+    </span>
+    <span
+      class="t-button__suffix"
+    >
+      <svg
+        class="t-icon t-icon-chevron-down"
+        fill="none"
+        height="1em"
+        viewBox="0 0 16 16"
+        width="1em"
       >
-         更多 
-        <svg
-          class="t-icon t-icon-chevron-down"
-          data-v-31515850=""
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-            data-v-31515850=""
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </span>
+        <path
+          d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+          fill="currentColor"
+          fill-opacity="0.9"
+        />
+      </svg>
     </span>
   </button>
 </div>
@@ -43944,11 +43983,9 @@ exports[`csr snapshot test > csr test ./src/dropdown/_example/custom.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/dropdown/_example/disabled.vue 1`] = `
 <div
   class="tdesign-demo-dropdown"
-  data-v-503db2fb=""
 >
   <button
     class="t-button t-size-m t-button--variant-text t-button--theme-default"
-    data-v-503db2fb=""
     type="button"
   >
     <span
@@ -43956,20 +43993,18 @@ exports[`csr snapshot test > csr test ./src/dropdown/_example/disabled.vue 1`] =
     >
       <span
         class="tdesign-demo-dropdown__text"
-        data-v-503db2fb=""
       >
          下拉菜单 
         <svg
           class="t-icon t-icon-chevron-down"
-          data-v-503db2fb=""
           fill="none"
           height="1em"
+          slot="suffix"
           viewBox="0 0 16 16"
           width="1em"
         >
           <path
             d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-            data-v-503db2fb=""
             fill="currentColor"
             fill-opacity="0.9"
           />
@@ -44038,37 +44073,32 @@ exports[`csr snapshot test > csr test ./src/dropdown/_example/long.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/dropdown/_example/multiple.vue 1`] = `
 <div
   class="tdesign-demo-dropdown"
-  data-v-cbef96e2=""
 >
   <button
     class="t-button t-size-m t-button--variant-text t-button--theme-default"
-    data-v-cbef96e2=""
     type="button"
   >
     <span
       class="t-button__text"
     >
-      <span
-        class="tdesign-demo-dropdown__text"
-        data-v-cbef96e2=""
+       下拉菜单 
+    </span>
+    <span
+      class="t-button__suffix"
+    >
+      <svg
+        class="t-icon t-icon-chevron-down"
+        fill="none"
+        height="1em"
+        viewBox="0 0 16 16"
+        width="1em"
       >
-         下拉菜单 
-        <svg
-          class="t-icon t-icon-chevron-down"
-          data-v-cbef96e2=""
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-            data-v-cbef96e2=""
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </span>
+        <path
+          d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+          fill="currentColor"
+          fill-opacity="0.9"
+        />
+      </svg>
     </span>
   </button>
 </div>
