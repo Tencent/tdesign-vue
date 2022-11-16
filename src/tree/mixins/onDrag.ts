@@ -1,6 +1,6 @@
 import Vue, { VueConstructor } from 'vue';
 import TreeNode from '../../_common/js/tree/tree-node';
-import { emitEvent } from '../util';
+import { emitEvent } from '../../utils/event';
 import { TypeTreeProps, TypDragEventState } from '../interface';
 
 export interface onDragInjectKey {

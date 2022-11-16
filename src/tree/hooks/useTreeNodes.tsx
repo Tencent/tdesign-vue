@@ -7,7 +7,7 @@ import {
 } from '../interface';
 import TreeItem from '../tree-item';
 import TreeNode from '../../_common/js/tree/tree-node';
-import { getMark, getNode } from '../util';
+import { getMark, getNode, emitEvent } from '../util';
 
 export default function useTreeNodes(props: TypeTreeProps, context: SetupContext, state: TypeTreeState) {
   const { cache, store } = state;
@@ -19,10 +19,7 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
       node: node.getModel(),
       e: cache.mouseEvent as MouseEvent,
     };
-    if (props?.onExpand) {
-      props?.onExpand(expanded, evtCtx);
-    }
-    context.emit('expand', expanded, evtCtx);
+    emitEvent<Parameters<TypeTreeProps['onExpand']>>(props, context, 'onExpand', expanded, evtCtx);
     return expanded;
   };
 
@@ -38,10 +35,7 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
       node: node.getModel(),
       e: cache.mouseEvent,
     };
-    if (props?.onActive) {
-      props?.onActive(actived, evtCtx);
-    }
-    context.emit('active', actived, evtCtx);
+    emitEvent<Parameters<TypeTreeProps['onActive']>>(props, context, 'onActive', actived, evtCtx);
     return actived;
   };
 
@@ -56,10 +50,7 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
     const evtCtx = {
       node: node.getModel(),
     };
-    if (props?.onChange) {
-      props?.onChange(checked, evtCtx);
-    }
-    context.emit('change', checked, evtCtx);
+    emitEvent<Parameters<TypeTreeProps['onChange']>>(props, context, 'onChange', checked, evtCtx);
     return checked;
   };
 
@@ -106,10 +97,7 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
 
     if (shouldActive) {
       toggleActived(node);
-      if (props?.onClick) {
-        props?.onClick(evtCtx);
-      }
-      context.emit('click', evtCtx);
+      emitEvent<Parameters<TypeTreeProps['onClick']>>(props, context, 'onClick', evtCtx);
     }
 
     cache.mouseEvent = null;

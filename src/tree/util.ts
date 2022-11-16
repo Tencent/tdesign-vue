@@ -1,4 +1,6 @@
+import { SetupContext } from '@vue/composition-api';
 import {
+  TypeTreeProps,
   TypeVNode,
   TypeTreeStore,
   TypeTreeNode,
@@ -9,7 +11,13 @@ import {
   TypeTargetNode,
 } from './interface';
 
-export { emitEvent } from '../utils/event';
+export function emitEvent<T extends any[]>(props: TypeTreeProps, context: SetupContext, evtName: string, ...args: T) {
+  const sname = evtName.replace(/^on/, '').toLowerCase();
+  if (typeof props[sname] === 'function') {
+    props[sname](...args);
+  }
+  context.emit(sname, ...args);
+}
 
 export function getParentsToRoot(element?: HTMLElement, root?: HTMLElement): HTMLElement[] {
   const list = [];
