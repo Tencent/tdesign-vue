@@ -81705,7 +81705,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/label-suffix.v
 exports[`csr snapshot test > csr test ./src/select-input/_example/multiple.vue 1`] = `
 <div
   class="t-space t-space-vertical"
-  style="gap: 16px;"
+  style="gap: 16px; width: 100%;"
 >
   <div
     class="t-space-item"
