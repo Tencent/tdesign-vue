@@ -223,46 +223,6 @@ describe('TreeSelect', () => {
 
   // test events
   describe('@event', () => {
-    it('blur', () => {
-      const fn = vi.fn();
-      const wrapper = mount({
-        render() {
-          return <TreeSelect data={options} filterable={true} onBlur={fn} />;
-        },
-      });
-      const treeSelectWrapper = wrapper.findComponent(TreeSelect);
-      const inputElement = wrapper.find('input');
-      treeSelectWrapper.vm.focus();
-      treeSelectWrapper.vm.blur();
-      inputElement.trigger('blur');
-      expect(treeSelectWrapper.emitted().blur).toBeTruthy();
-    });
-    it('clear', () => {
-      const value = 'shenzhen';
-      const wrapper = mount({
-        render() {
-          return <TreeSelect data={options} value={value} clearable={true} />;
-        },
-      });
-      const treeSelectWrapper = wrapper.findComponent(TreeSelect);
-      treeSelectWrapper.trigger('mouseover');
-      const closeIconWrapper = wrapper.find('.t-icon-close-circle-filled');
-      closeIconWrapper.trigger('click');
-      expect(treeSelectWrapper.emitted().clear).toBeTruthy();
-    });
-    it('focus', () => {
-      const fn = vi.fn();
-      const wrapper = mount({
-        render() {
-          return <TreeSelect data={options} filterable={true} onFocus={fn} />;
-        },
-      });
-      const treeSelectWrapper = wrapper.findComponent(TreeSelect);
-      const inputElement = wrapper.find('input');
-      treeSelectWrapper.vm.focus();
-      inputElement.trigger('focus');
-      expect(treeSelectWrapper.emitted().focus).toBeTruthy();
-    });
     it('remove', () => {
       const value = ['shenzhen'];
       const wrapper = mount({
