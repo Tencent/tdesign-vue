@@ -348,7 +348,7 @@ export default mixins(classPrefixMixins).extend({
           <div>
             <div class={`${this.componentName}__stops`}>
               {this.markList.map((item, index) => {
-                if (item.position === 0 || item.position === 1) return null;
+                if (item.position === 0 || item.position === 100) return null;
                 return (
                   <div
                     class={[`${this.componentName}__stop`, `${this.componentName}__mark-stop`]}
@@ -466,7 +466,7 @@ export default mixins(classPrefixMixins).extend({
             {this.showSteps && (
               <div class={`${this.componentName}__stops`}>
                 {this.steps.map((item: any, key) => {
-                  if (item.position === 0 || item.position === 1) return null;
+                  if (item.position === 0 || item.position === 100) return null;
                   return <div class={`${this.componentName}__stop`} key={key} style={this.getStopStyle(item)}></div>;
                 })}
               </div>
