@@ -303,6 +303,11 @@ exports[`Select > :props > :multiple 1`] = `
         unselectable="on"
       />
       <span
+        class="t-input__input-pre"
+      >
+        请选择
+      </span>
+      <span
         class="t-input__suffix t-input__suffix-icon"
       >
         <svg

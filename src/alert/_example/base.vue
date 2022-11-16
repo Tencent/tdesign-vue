@@ -1,5 +1,5 @@
 <template>
-  <t-space direction="vertical">
+  <t-space style="width: 100%" direction="vertical">
     <t-alert theme="info" :message="infoMessage" />
     <t-alert theme="success" message="这是一条成功的消息提示" />
     <t-alert theme="warning">

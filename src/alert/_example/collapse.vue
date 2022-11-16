@@ -1,5 +1,5 @@
 <template>
-  <t-space>
+  <t-space style="width: 100%">
     <t-alert theme="info" close :max-line="2">
       <span>这是折叠的第一条消息</span>
       <span>这是折叠的第二条消息</span>

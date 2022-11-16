@@ -29,7 +29,7 @@ const ConfigProvider = Vue.extend({
   },
 
   render(): VNode {
-    if (this.$slots.default.length === 1) {
+    if (this.$slots.default?.length === 1) {
       return this.$slots.default[0];
     }
     return <div>{this.$slots.default}</div>;

@@ -18,6 +18,7 @@ export default function useTreeStore(props: TypeTreeProps, context: SetupContext
   // 同步 Store 选项
   const updateStoreConfig = () => {
     // 统一更新选项，然后在 store 统一识别属性更新
+    // 注意: keys 属性比较特殊，不应该在实例化之后再次变更
     const storeProps = pick(props, [
       'expandAll',
       'expandLevel',
@@ -27,6 +28,7 @@ export default function useTreeStore(props: TypeTreeProps, context: SetupContext
       'activeMultiple',
       'disabled',
       'checkable',
+      'draggable',
       'checkStrictly',
       'load',
       'lazy',
@@ -98,7 +100,7 @@ export default function useTreeStore(props: TypeTreeProps, context: SetupContext
     store.refreshState();
   };
 
-  // keys map 比较特殊，不应该在实例化之后再次变更
+  // keys 属性比较特殊，不应该在实例化之后再次变更
   store.setConfig({
     keys,
   });

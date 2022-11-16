@@ -41,6 +41,11 @@ valueMode | String | onlyLeaf | 选中值模式。all 表示父节点和子节�
 onActive | Function |  | TS 类型：`(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T> }) => void`<br/>节点激活时触发，泛型 `T` 表示树节点 TS 类型 | N
 onChange | Function |  | TS 类型：`(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T> }) => void`<br/>节点选中状态变化时触发，context.node 表示当前变化的选项，泛型 `T` 表示树节点 TS 类型 | N
 onClick | Function |  | TS 类型：`(context: { node: TreeNodeModel<T>; e: MouseEvent }) => void`<br/>节点点击时触发，泛型 `T` 表示树节点 TS 类型 | N
+onDragEnd | Function |  | TS 类型：`(context: { e: DragEvent; node: TreeNodeModel<T> }) => void`<br/>节点结束拖拽时触发，泛型 `T` 表示树节点 TS 类型 | N
+onDragLeave | Function |  | TS 类型：`(context: { e: DragEvent; node: TreeNodeModel<T> }) => void`<br/>节点拖拽时离开目标元素时触发，泛型 `T` 表示树节点 TS 类型 | N
+onDragOver | Function |  | TS 类型：`(context: { e: DragEvent; node: TreeNodeModel<T> }) => void`<br/>节点拖拽到目标元素时触发，泛型 `T` 表示树节点 TS 类型 | N
+onDragStart | Function |  | TS 类型：`(context: { e: DragEvent; node: TreeNodeModel<T> }) => void`<br/>节点开始拖拽时触发，泛型 `T` 表示树节点 TS 类型 | N
+onDrop | Function |  | TS 类型：`(context: {     e: DragEvent;     dragNode: TreeNodeModel<T>;     dropNode: TreeNodeModel<T>;     dropPosition: number;   }) => void`<br/>节点在目标元素上释放时触发，泛型 `T` 表示树节点 TS 类型 | N
 onExpand | Function |  | TS 类型：`(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e: MouseEvent }) => void`<br/>节点展开或收起时触发，泛型 `T` 表示树节点 TS 类型 | N
 onLoad | Function |  | TS 类型：`(context: { node: TreeNodeModel<T> }) => void`<br/>异步加载后触发，泛型 `T` 表示树节点 TS 类型 | N
 
@@ -51,6 +56,11 @@ onLoad | Function |  | TS 类型：`(context: { node: TreeNodeModel<T> }) => voi
 active | `(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T> })` | 节点激活时触发，泛型 `T` 表示树节点 TS 类型
 change | `(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T> })` | 节点选中状态变化时触发，context.node 表示当前变化的选项，泛型 `T` 表示树节点 TS 类型
 click | `(context: { node: TreeNodeModel<T>; e: MouseEvent })` | 节点点击时触发，泛型 `T` 表示树节点 TS 类型
+drag-end | `(context: { e: DragEvent; node: TreeNodeModel<T> })` | 节点结束拖拽时触发，泛型 `T` 表示树节点 TS 类型
+drag-leave | `(context: { e: DragEvent; node: TreeNodeModel<T> })` | 节点拖拽时离开目标元素时触发，泛型 `T` 表示树节点 TS 类型
+drag-over | `(context: { e: DragEvent; node: TreeNodeModel<T> })` | 节点拖拽到目标元素时触发，泛型 `T` 表示树节点 TS 类型
+drag-start | `(context: { e: DragEvent; node: TreeNodeModel<T> })` | 节点开始拖拽时触发，泛型 `T` 表示树节点 TS 类型
+drop | `(context: {     e: DragEvent;     dragNode: TreeNodeModel<T>;     dropNode: TreeNodeModel<T>;     dropPosition: number;   })` | 节点在目标元素上释放时触发，泛型 `T` 表示树节点 TS 类型
 expand | `(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e: MouseEvent })` | 节点展开或收起时触发，泛型 `T` 表示树节点 TS 类型
 load | `(context: { node: TreeNodeModel<T> })` | 异步加载后触发，泛型 `T` 表示树节点 TS 类型
 

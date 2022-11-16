@@ -163,8 +163,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         // 清除鼠标焦点 避免entry事件多次触发（按钮弹出弹窗 不移除焦点 立即按Entry按键 会造成弹窗关闭再弹出）
         (document.activeElement as HTMLElement).blur();
       } else {
-        document.body.style.cssText = '';
-        removeClass(document.body, `${this.componentName}--lock`);
+        this.removeBodyLockClassAndCss();
       }
       // 多个dialog同时存在时使用esc关闭异常 (#1209)
       this.storeUid(value);
@@ -194,6 +193,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
 
   beforeDestroy() {
     this.addKeyboardEvent(false);
+    this.removeBodyLockClassAndCss();
   },
 
   directives: {
@@ -405,14 +405,17 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
           <div class={this.positionClass} style={this.positionStyle} onClick={this.overlayAction} ref="dialogPosition">
             <div key="dialog" ref="dialog" class={this.dialogClass} style={this.dialogStyle}>
               <div class={`${this.componentName}__header`} onmousedown={this.onStopDown}>
-                {this.getIcon()}
-                {renderTNodeJSX(this, 'header', defaultHeader)}
+                <div class={`${this.componentName}__header-content`}>
+                  {this.getIcon()}
+                  {renderTNodeJSX(this, 'header', defaultHeader)}
+                </div>
+                {this.closeBtn ? (
+                  <span class={`${this.componentName}__close`} onClick={this.closeBtnAction}>
+                    {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
+                  </span>
+                ) : null}
               </div>
-              {this.closeBtn ? (
-                <span class={`${this.componentName}__close`} onClick={this.closeBtnAction}>
-                  {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
-                </span>
-              ) : null}
+
               <div class={this.bodyClass} onmousedown={this.onStopDown}>
                 {body}
               </div>
@@ -421,6 +424,10 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
           </div>
         </div>
       );
+    },
+    removeBodyLockClassAndCss() {
+      document.body.style.cssText = '';
+      removeClass(document.body, `${this.componentName}--lock`);
     },
   },
 

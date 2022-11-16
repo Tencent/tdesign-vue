@@ -20,7 +20,9 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
     let buttonContent = renderContent(this, 'default', 'content');
     const icon = this.loading ? <TLoading inheritColor={true} /> : renderTNodeJSX(this, 'icon');
     const disabled = this.disabled || this.loading;
-
+    const suffix = this.suffix || this.$scopedSlots.suffix ? (
+        <span class={`${this.componentName}__suffix`}>{renderTNodeJSX(this, 'suffix')}</span>
+    ) : null;
     let { theme } = this;
 
     if (!this.theme) {
@@ -48,6 +50,9 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
     buttonContent = buttonContent ? <span class={`${this.componentName}__text`}>{buttonContent}</span> : '';
     if (icon) {
       buttonContent = [icon, buttonContent];
+    }
+    if (suffix) {
+      buttonContent = [buttonContent].concat(suffix);
     }
 
     const on = { ...this.$listeners };

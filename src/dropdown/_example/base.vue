@@ -2,10 +2,9 @@
   <div class="tdesign-demo-dropdown">
     <t-dropdown :options="options" @click="clickHandler">
       <t-button variant="text">
-        <span class="tdesign-demo-dropdown__text">
-          更多
-          <chevron-down-icon size="16" />
-        </span>
+        更多
+
+        <chevron-down-icon size="16" slot="suffix" />
       </t-button>
     </t-dropdown>
   </div>
@@ -49,14 +48,3 @@ export default {
   },
 };
 </script>
-<style lang="less" scoped>
-.tdesign-demo-dropdown {
-  &__text {
-    display: inline-flex;
-    align-items: center;
-    .t-icon {
-      margin-left: 8px;
-    }
-  }
-}
-</style>

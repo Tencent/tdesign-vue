@@ -11,9 +11,15 @@ import { TNodeReturnValue, TreeOptionData } from '../common';
 import {
   TreeNodeValue, TypeTreeState, TreeNodeState, TypeTreeNodeModel,
 } from './interface';
+
+// export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tree'), onDragMixins()).extend({
+
 import useTreeStore from './hooks/useTreeStore';
 import useCache from './hooks/useCache';
 import useTreeNodes from './hooks/useTreeNodes';
+// import onDragMixins from './mixins/onDrag';
+// import { getMark, getNode } from './util';
+
 import { getNode } from './util';
 
 // 2022.11.02 tabliang 备注
@@ -41,7 +47,7 @@ export default defineComponent({
       const cname = componentName.value;
       const list: Array<string> = [cname];
       const {
-        disabled, hover, transition, checkable, expandOnClickNode,
+        disabled, hover, transition, checkable, draggable, expandOnClickNode,
       } = props;
       if (disabled) {
         list.push(`${classPrefix.value}-is-disabled`);
@@ -51,6 +57,9 @@ export default defineComponent({
       }
       if (checkable) {
         list.push(`${cname}--checkable`);
+      }
+      if (draggable) {
+        list.push(`${cname}--draggable`);
       }
       if (transition) {
         list.push(`${cname}--transition`);
@@ -217,7 +226,7 @@ export default defineComponent({
 
     // 空数据判定
     let emptyNode: TNodeReturnValue = null;
-    if (treeNodeViews.length <= 0) {
+    if (treeNodeViews.length <= 0 || this.$isFilterEmpty) {
       const useLocale = !this.empty && !this.$scopedSlots.empty;
       const emptyContent = useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty');
       emptyNode = <div class={`${this.componentName}__empty`}>{emptyContent}</div>;

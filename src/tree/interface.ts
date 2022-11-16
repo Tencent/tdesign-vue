@@ -37,6 +37,13 @@ export interface TypeEventState extends TypeTreeEventState {
   mouseEvent?: MouseEvent;
   event?: Event;
   path?: TypeTreeNode[];
+  dragEvent?: DragEvent;
+  dropPosition?: number;
+}
+
+export interface TypDragEventState extends TypeEventState {
+  dragEvent?: DragEvent;
+  dropPosition?: number;
 }
 
 export interface TypeMark {

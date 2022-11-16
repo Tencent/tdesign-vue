@@ -15,7 +15,11 @@ exports[`Breadcrumb > <slot> > <separator> 1`] = `
         class="t-breadcrumb__inner"
         style="max-width: 120px;"
       >
-        面包屑1
+        <span
+          class="t-breadcrumb__inner-text"
+        >
+          面包屑1
+        </span>
       </span>
     </span>
     <span
@@ -46,7 +50,11 @@ exports[`Breadcrumb > <slot> > <separator> 1`] = `
         class="t-breadcrumb__inner"
         style="max-width: 120px;"
       >
-        面包屑2
+        <span
+          class="t-breadcrumb__inner-text"
+        >
+          面包屑2
+        </span>
       </span>
     </span>
     <span

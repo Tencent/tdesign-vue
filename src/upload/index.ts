@@ -9,3 +9,5 @@ export * from './interface';
 export const Upload = withInstall(_Upload, VueCompositionAPI);
 
 export default Upload;
+
+export * from './type';
