@@ -1,7 +1,7 @@
 import { CreateElement } from 'vue';
 import { SetupContext } from '@vue/composition-api';
 import { CaretRightSmallIcon as TdCaretRightSmallIcon } from 'tdesign-icons-vue';
-import { TypeVNode, TypeTreeItemProps, TypeEventState } from '../interface';
+import { TypeVNode, TypeTreeItemProps } from '../interface';
 import { usePrefixClass } from '../../hooks/useConfig';
 import { useGlobalIcon } from '../../hooks/useGlobalIcon';
 import { ClassName } from '../../common';
@@ -9,11 +9,14 @@ import TreeNode from '../../_common/js/tree/tree-node';
 import TCheckBox from '../../checkbox';
 import TLoading from '../../loading';
 import { getTNode } from '../util';
+import useItemEvents from './useItemEvents';
 
 export default function useTreeItem(props: TypeTreeItemProps, context: SetupContext) {
   const { node } = props;
   const classPrefix = usePrefixClass().value;
   const componentName = usePrefixClass('tree').value;
+
+  const { handleChange, handleClick } = useItemEvents(props, context);
 
   // 节点隐藏用 class 切换，不要写在 js 中
   const getItemStyles = (): string => {
@@ -36,43 +39,6 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
       list.push(`${componentName}__item--hidden`);
     }
     return list;
-  };
-
-  const handleChange = () => {
-    const event = new Event('change');
-    const state: TypeEventState = {
-      event,
-      node,
-    };
-    context.emit('change', state);
-  };
-
-  let clicked = false;
-  const handleClick = (evt: MouseEvent) => {
-    const { expandOnClickNode } = props;
-    const srcTarget = evt.target as HTMLElement;
-    const isBranchTrigger = node.children
-      && expandOnClickNode
-      && (srcTarget.className === `${classPrefix}-checkbox__input` || srcTarget.tagName.toLowerCase() === 'input');
-    // checkbox 上也有 emit click 事件
-    // 用这个逻辑避免重复的 click 事件被触发
-    if (clicked || isBranchTrigger) return;
-
-    // 处理expandOnClickNode时与checkbox的选中的逻辑冲突
-    if (expandOnClickNode && node.children && srcTarget.className?.indexOf?.(`${classPrefix}-tree__label`) !== -1) evt.preventDefault();
-
-    clicked = true;
-    setTimeout(() => {
-      clicked = false;
-    });
-
-    const state: TypeEventState = {
-      mouseEvent: evt,
-      event: evt,
-      node,
-      path: node.getPath(),
-    };
-    context.emit('click', state);
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -9,7 +9,7 @@ import TreeItem from '../tree-item';
 import TreeNode from '../../_common/js/tree/tree-node';
 import { getMark, getNode } from '../util';
 
-export default function useTreeNodes(props: TypeTreeProps, state: TypeTreeState, context: SetupContext) {
+export default function useTreeNodes(props: TypeTreeProps, context: SetupContext, state: TypeTreeState) {
   const { cache, store } = state;
 
   const setExpanded = (item: TypeTargetNode, isExpanded: boolean): TreeNodeValue[] => {

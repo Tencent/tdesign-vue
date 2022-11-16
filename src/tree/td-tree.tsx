@@ -77,8 +77,8 @@ export default defineComponent({
       setActived, setExpanded, setChecked, renderTreeNodes, clearCacheNodes,
     } = useTreeNodes(
       props,
-      state,
       context,
+      state,
     );
 
     watch(refProps.data, (list) => {
