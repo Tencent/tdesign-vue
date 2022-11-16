@@ -47,6 +47,10 @@ export default {
       return ['small', 'medium', 'large'].includes(val);
     },
   },
+  /** 右侧内容，可用于定义右侧图标 */
+  suffix: {
+    type: Function as PropType<TdButtonProps['suffix']>,
+  },
   /**渲染按钮的 HTML 标签*/
   tag: {
     type: String as PropType<TdButtonProps['tag']>,
