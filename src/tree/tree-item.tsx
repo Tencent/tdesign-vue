@@ -28,15 +28,15 @@ export default defineComponent({
   name: 'TTreeItem',
   props: treeItemProps,
   directives: { ripple },
-  inject: {
-    onDrag: { default: undefined },
-  },
   mixins: [
     getConfigReceiverMixins<Vue, TreeConfig>('tree'),
     keepAnimationMixins,
     getGlobalIconMixins(),
     draggableMixins(),
   ],
+  inject: {
+    onDrag: { default: undefined },
+  },
   setup(props: TypeTreeItemProps, context) {
     const { renderItemNode } = useTreeItem(props, context);
     return {

@@ -21,6 +21,7 @@ npx vitest --updateSnapshot ./src/tree/__tests__/
 - [受控](http://localhost:16000/vue/demos/tree/controlled)
 - [数据切换](http://localhost:16000/vue/demos/tree/data)
 - [禁用](http://localhost:16000/vue/demos/tree/disabled)
+- [可拖动](http://localhost:16000/vue/demos/tree/draggable)
 - [空数据](http://localhost:16000/vue/demos/tree/empty)
 - [全部展开](http://localhost:16000/vue/demos/tree/expand-all)
 - [分层展开](http://localhost:16000/vue/demos/tree/expand-level)

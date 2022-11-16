@@ -3,6 +3,7 @@ import isFunction from 'lodash/isFunction';
 import {
   computed, watch, toRefs, defineComponent,
 } from '@vue/composition-api';
+
 import TreeNode from '../_common/js/tree/tree-node';
 import props from './props';
 import { useConfig, usePrefixClass } from '../hooks/useConfig';
@@ -11,15 +12,10 @@ import { TNodeReturnValue, TreeOptionData } from '../common';
 import {
   TreeNodeValue, TypeTreeState, TreeNodeState, TypeTreeNodeModel,
 } from './interface';
-
-// export default mixins(getConfigReceiverMixins<TypeTreeInstance, TreeConfig>('tree'), onDragMixins()).extend({
-
 import useTreeStore from './hooks/useTreeStore';
 import useCache from './hooks/useCache';
 import useTreeNodes from './hooks/useTreeNodes';
-// import onDragMixins from './mixins/onDrag';
-// import { getMark, getNode } from './util';
-
+import onDragMixins from './mixins/onDrag';
 import { getNode } from './util';
 
 // 2022.11.02 tabliang 备注
@@ -35,6 +31,7 @@ export default defineComponent({
     event: 'change',
   },
   props,
+  mixins: [onDragMixins()],
   setup(props, context) {
     const { t, global } = useConfig('tree');
     const classPrefix = usePrefixClass();
@@ -223,22 +220,23 @@ export default defineComponent({
     scope.scopedSlots = this.$scopedSlots;
 
     const treeNodeViews = renderTreeNodes(h);
+    const cname = this.componentName;
 
     // 空数据判定
     let emptyNode: TNodeReturnValue = null;
     if (treeNodeViews.length <= 0 || this.$isFilterEmpty) {
       const useLocale = !this.empty && !this.$scopedSlots.empty;
       const emptyContent = useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty');
-      emptyNode = <div class={`${this.componentName}__empty`}>{emptyContent}</div>;
+      emptyNode = <div class={`${cname}__empty`}>{emptyContent}</div>;
     }
 
-    // // 构造列表
+    // 构造列表
     const treeNodeList = (
       <transition-group
         tag="div"
-        class={`${this.componentName}__list`}
-        enter-active-class={`${this.componentName}__item--enter-active`}
-        leave-active-class={`${this.componentName}__item--leave-active`}
+        class={`${cname}__list`}
+        enter-active-class={`${cname}__item--enter-active`}
+        leave-active-class={`${cname}__item--leave-active`}
       >
         {treeNodeViews}
       </transition-group>
