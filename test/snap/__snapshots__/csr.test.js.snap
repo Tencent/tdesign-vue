@@ -2274,6 +2274,50 @@ exports[`csr snapshot test > csr test ./src/badge/_example/custom.vue 1`] = `
       </sup>
     </div>
   </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-badge"
+      data-v-a2369e40=""
+    >
+      <div
+        class="badge-block"
+        data-v-a2369e40=""
+      />
+      <sup
+        class="t-badge--round"
+        style="background: transparent;"
+      >
+        <div
+          class="t-loading--center t-loading"
+          data-v-a2369e40=""
+          style="font-size: 20px;"
+        >
+          <svg
+            class="t-loading__gradient t-icon-loading"
+            height="1em"
+            size="20px"
+            version="1.1"
+            viewBox="0 0 14 14"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <foreignobject
+              height="12"
+              width="12"
+              x="1"
+              y="1"
+            >
+              <div
+                class="t-loading__gradient-conic"
+              />
+            </foreignobject>
+          </svg>
+        </div>
+      </sup>
+    </div>
+  </div>
 </div>
 `;
 
