@@ -1,5 +1,5 @@
 import { PropType } from 'vue';
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent, ref } from '@vue/composition-api';
 import getConfigReceiverMixins, {
   TreeConfig,
   getKeepAnimationMixins,
@@ -32,8 +32,10 @@ export default defineComponent({
     onDrag: { default: undefined },
   },
   setup(props: TypeTreeItemProps, context) {
-    const { renderItemNode } = useTreeItem(props, context);
+    const root = ref(null);
+    const { renderItemNode } = useTreeItem(props, context, root);
     return {
+      root,
       renderItemNode,
     };
   },

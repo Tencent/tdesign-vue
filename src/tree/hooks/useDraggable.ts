@@ -1,5 +1,5 @@
 import throttle from 'lodash/throttle';
-import { Ref, ref } from '@vue/composition-api';
+import { Ref } from '@vue/composition-api';
 import { TypeTreeItemProps } from '../interface';
 
 export interface TypeDragStates {
@@ -10,23 +10,18 @@ export interface TypeDragStates {
 
 type TypeDrag = 'dragStart' | 'dragOver' | 'dragLeave' | 'dragEnd' | 'drop';
 
-export default function useDraggable(props: TypeTreeItemProps) {
+export default function useDraggable(props: TypeTreeItemProps, root: Ref<HTMLElement>) {
   const dragStates: TypeDragStates = {
     isDragOver: false,
     isDragging: false,
     dropPosition: 0,
   };
 
-  const getRootNode = () => {
-    const root = ref(null as unknown) as Ref<HTMLElement>;
-    return root.value;
-  };
-
   const updateDropPosition = (dragEvent: DragEvent) => {
-    const $el = getRootNode();
-    if (!$el) return;
+    const rootNode = root.value;
+    if (!rootNode) return;
 
-    const rect = $el?.getBoundingClientRect?.();
+    const rect = rootNode?.getBoundingClientRect?.();
     const offsetY = window.pageYOffset + rect.top;
     const { pageY } = dragEvent;
     const gapHeight = rect.height / 4;

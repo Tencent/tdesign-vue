@@ -1,5 +1,5 @@
 import { CreateElement } from 'vue';
-import { SetupContext } from '@vue/composition-api';
+import { SetupContext, Ref } from '@vue/composition-api';
 import { TypeVNode, TypeTreeItemProps } from '../interface';
 import { usePrefixClass } from '../../hooks/useConfig';
 import { ClassName } from '../../common';
@@ -10,7 +10,7 @@ import useRenderLine from './useRenderLine';
 import useRenderOperations from './useRenderOperations';
 import useDraggable from './useDraggable';
 
-export default function useTreeItem(props: TypeTreeItemProps, context: SetupContext) {
+export default function useTreeItem(props: TypeTreeItemProps, context: SetupContext, root: Ref<HTMLElement>) {
   const { node } = props;
   const classPrefix = usePrefixClass().value;
   const componentName = usePrefixClass('tree').value;
@@ -22,7 +22,10 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
   const { renderOperations } = useRenderOperations(props);
   const {
     dragStates, handleDragStart, handleDragEnd, handleDragOver, handleDragLeave, handleDrop,
-  } = useDraggable(props);
+  } = useDraggable(
+    props,
+    root,
+  );
 
   // 节点隐藏用 class 切换，不要写在 js 中
   const getItemStyles = (): string => {
@@ -94,6 +97,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
 
     const itemNode = (
       <div
+        ref="root"
         class={classList}
         data-value={value}
         data-level={level}
