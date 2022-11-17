@@ -2,115 +2,16 @@ import { CreateElement } from 'vue';
 import {
   ref, nextTick, SetupContext, Ref,
 } from '@vue/composition-api';
-import {
-  TypeVNode, TreeNodeValue, TypeTreeProps, TypeTreeState, TypeEventState, TypeTargetNode,
-} from '../interface';
+import { TypeVNode, TypeTreeProps, TypeTreeState } from '../interface';
 import TreeItem from '../tree-item';
 import TreeNode from '../../_common/js/tree/tree-node';
-import { getMark, getNode, emitEvent } from '../util';
+import useTreeEvents from './useTreeEvents';
 
+// tree 节点列表渲染
 export default function useTreeNodes(props: TypeTreeProps, context: SetupContext, state: TypeTreeState) {
-  const { cache, store } = state;
+  const { store } = state;
 
-  const setExpanded = (item: TypeTargetNode, isExpanded: boolean): TreeNodeValue[] => {
-    const node = getNode(store, item);
-    const expanded = node.setExpanded(isExpanded);
-    const evtCtx = {
-      node: node.getModel(),
-      e: cache.mouseEvent as MouseEvent,
-    };
-    emitEvent<Parameters<TypeTreeProps['onExpand']>>(props, context, 'onExpand', expanded, evtCtx);
-    return expanded;
-  };
-
-  const toggleExpanded = (item: TypeTargetNode): TreeNodeValue[] => {
-    const node = getNode(store, item);
-    return setExpanded(node, !node.isExpanded());
-  };
-
-  const setActived = (item: TypeTargetNode, isActived: boolean) => {
-    const node = getNode(store, item);
-    const actived = node.setActived(isActived);
-    const evtCtx = {
-      node: node.getModel(),
-      e: cache.mouseEvent,
-    };
-    emitEvent<Parameters<TypeTreeProps['onActive']>>(props, context, 'onActive', actived, evtCtx);
-    return actived;
-  };
-
-  const toggleActived = (item: TypeTargetNode): TreeNodeValue[] => {
-    const node = getNode(store, item);
-    return setActived(node, !node.isActived());
-  };
-
-  const setChecked = (item: TypeTargetNode, isChecked: boolean): TreeNodeValue[] => {
-    const node = getNode(store, item);
-    const checked = node.setChecked(isChecked);
-    const evtCtx = {
-      node: node.getModel(),
-    };
-    emitEvent<Parameters<TypeTreeProps['onChange']>>(props, context, 'onChange', checked, evtCtx);
-    return checked;
-  };
-
-  const toggleChecked = (item: TypeTargetNode): TreeNodeValue[] => {
-    const node = getNode(store, item);
-    return setChecked(node, !node.isChecked());
-  };
-
-  const handleClick = (evtState: TypeEventState) => {
-    const { mouseEvent, event, node } = evtState;
-    if (!node) {
-      return;
-    }
-
-    cache.mouseEvent = mouseEvent;
-
-    let shouldExpand = props.expandOnClickNode;
-    let shouldActive = !props.disabled && !node.disabled;
-    ['trigger', 'ignore'].forEach((markName) => {
-      const mark = getMark(markName, event.target as HTMLElement, event.currentTarget as HTMLElement);
-      const markValue = mark?.value || '';
-      if (markValue.indexOf('expand') >= 0) {
-        if (markName === 'trigger') {
-          shouldExpand = true;
-        } else if (markName === 'ignore') {
-          shouldExpand = false;
-        }
-      }
-      if (markValue.indexOf('active') >= 0) {
-        if (markName === 'ignore') {
-          shouldActive = false;
-        }
-      }
-    });
-
-    if (shouldExpand) {
-      toggleExpanded(node);
-    }
-
-    const evtCtx = {
-      node: node.getModel(),
-      e: mouseEvent,
-    };
-
-    if (shouldActive) {
-      toggleActived(node);
-      emitEvent<Parameters<TypeTreeProps['onClick']>>(props, context, 'onClick', evtCtx);
-    }
-
-    cache.mouseEvent = null;
-  };
-
-  const handleChange = (evtState: TypeEventState) => {
-    const { disabled } = props;
-    const { node } = evtState;
-    if (!node || disabled || node.disabled) {
-      return;
-    }
-    toggleChecked(node);
-  };
+  const { handleClick, handleChange } = useTreeEvents(props, context, state);
 
   // 创建单个 tree 节点
   const renderItem = (h: CreateElement, node: TreeNode) => {
@@ -173,12 +74,6 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
   store.emitter.on('update', refresh);
 
   return {
-    setExpanded,
-    toggleExpanded,
-    setActived,
-    toggleActived,
-    setChecked,
-    toggleChecked,
     clearCacheNodes,
     renderTreeNodes,
   };

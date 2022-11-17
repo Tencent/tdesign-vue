@@ -14,8 +14,8 @@ import {
 } from './interface';
 import useTreeStore from './hooks/useTreeStore';
 import useCache from './hooks/useCache';
+import useTreeAction from './hooks/useTreeAction';
 import useTreeNodes from './hooks/useTreeNodes';
-import onDragMixins from './mixins/onDrag';
 import { getNode } from './util';
 
 // 2022.11.02 tabliang 备注
@@ -31,7 +31,6 @@ export default defineComponent({
     event: 'change',
   },
   props,
-  mixins: [onDragMixins()],
   setup(props, context) {
     const { t, global } = useConfig('tree');
     const classPrefix = usePrefixClass();
@@ -73,13 +72,9 @@ export default defineComponent({
       cache,
     };
 
-    const {
-      setActived, setExpanded, setChecked, renderTreeNodes, clearCacheNodes,
-    } = useTreeNodes(
-      props,
-      context,
-      state,
-    );
+    const { setActived, setExpanded, setChecked } = useTreeAction(props, context, state);
+
+    const { renderTreeNodes, clearCacheNodes } = useTreeNodes(props, context, state);
 
     watch(refProps.data, (list) => {
       clearCacheNodes();

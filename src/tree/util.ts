@@ -1,4 +1,5 @@
 import { SetupContext } from '@vue/composition-api';
+import camelCase from 'lodash/camelCase';
 import {
   TypeTreeProps,
   TypeVNode,
@@ -12,11 +13,12 @@ import {
 } from './interface';
 
 export function emitEvent<T extends any[]>(props: TypeTreeProps, context: SetupContext, evtName: string, ...args: T) {
-  const sname = evtName.replace(/^on/, '').toLowerCase();
-  if (typeof props[sname] === 'function') {
-    props[sname](...args);
+  const apiName = camelCase(`on-${evtName}`);
+  evtName.replace(/^on/, '').toLowerCase();
+  if (typeof props[apiName] === 'function') {
+    props[apiName](...args);
   }
-  context.emit(sname, ...args);
+  context.emit(evtName, ...args);
 }
 
 export function getParentsToRoot(element?: HTMLElement, root?: HTMLElement): HTMLElement[] {
