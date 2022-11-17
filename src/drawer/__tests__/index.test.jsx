@@ -216,7 +216,6 @@ describe('Drawer', () => {
       });
       await nextTick();
       const btn = wrapper.find('.t-drawer__close-btn');
-      console.log('onCloseBtnClick', btn);
       await btn.trigger('click');
       expect(fn).toBeCalled();
     });

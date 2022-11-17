@@ -5,6 +5,28 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.50.0 `2022-11-16` 
+### ❗ Breaking Changes
+- `Comment/Slider/ImageViewer`: 组件 DOM 结构调整，有覆盖样式的同学请关注 @HQ-Lin ([#1785](https://github.com/Tencent/tdesign-vue/pull/1785)、[#1794](https://github.com/Tencent/tdesign-vue/pull/1794)、[#1788](https://github.com/Tencent/tdesign-vue/pull/1788))
+- 部分组件间距、尺寸等样式统一调整，支持使用尺寸相关Design Token调整间距、尺寸大小 @uyarn ([common #993](https://github.com/Tencent/tdesign-common/pull/993)) @Wen1kang ([common #977](https://github.com/Tencent/tdesign-common/pull/977)) 
+### 🚀 Features
+- `Breadcrumb`: 新增`icon` API @uyarn ([#1781](https://github.com/Tencent/tdesign-vue/pull/1781))
+- `TreeSelect`: 支持`borderless`、`tagProps`、`selectInputProps`等 API @uyarn ([#1795](https://github.com/Tencent/tdesign-vue/pull/1795))
+- `Button`: 新增`suffix` 插槽 适用文字后置图标场景 @uyarn ([#1799](https://github.com/Tencent/tdesign-vue/pull/1799))
+- `TreeSelect`:
+  - TreeSelect 底层重构为基于 SelectInput 实现，复用SelectInput样式，减少兼容样式代码 @uyarn ([#1795](https://github.com/Tencent/tdesign-vue/pull/1795))
+  - 补充 readonly 只读属性，@yaogengzhu ([#1783](https://github.com/Tencent/tdesign-vue/pull/1783))
+### 🐞 Bug Fixes
+- `Breadcrumb`: 修复文字省略样式失效的问题 @uyarn ([#1781](https://github.com/Tencent/tdesign-vue/pull/1781))
+- `Select`: 搜索修复模糊大小写 (fixed: #1786) @skytt ([#1787](https://github.com/Tencent/tdesign-vue/pull/1787))
+- `TagInput`: 修复 `autoWidth = true` 时宽度跟随内容自适应失效的问题；修复标签超出滚动时，显示异常的问题。 @xiaosansiji ([#1793](https://github.com/Tencent/tdesign-vue/pull/1793))
+- `TreeSelect`: 修复单选模式打开下拉框右侧图标缺失的问题 @uyarn ([#1795](https://github.com/Tencent/tdesign-vue/pull/1795))
+- `Badge`: 修复 `count` 无法通过插槽方式使用的问题 @uyarn ([#1799](https://github.com/Tencent/tdesign-vue/pull/1799))
+- `Form`: 修复 InputNumber `min = 0` 的边界场景校验异常的问题 @yaogengzhu ([#1772](https://github.com/Tencent/tdesign-vue/pull/1772))
+- `DatePicker`: @HQ-Lin
+  - 修复区间日期选择器分隔符丢失的问题 ([#1805](https://github.com/Tencent/tdesign-vue/pull/1805))
+  - 修复disableDate 动态调整失效的问题 ([#1803](https://github.com/Tencent/tdesign-vue/pull/1803))
+
 ## 🌈 0.49.6 `2022-11-11` 
 ### 🐞 Bug Fixes
 - `Form`: 修复InputNumber min为0的边界场景校验异常的问题 @yaogengzhu ([#1772](https://github.com/Tencent/tdesign-vue/pull/1772))

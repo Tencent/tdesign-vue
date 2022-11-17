@@ -121,20 +121,6 @@ describe('Input', () => {
       expect(fn).toBeCalled();
     });
 
-    // it('@focus', () => {
-    //   const fn = vi.fn();
-    //   const wrapper = mount({
-    //     render() {
-    //       return <Input onFocus={fn} />;
-    //     },
-    //   });
-    //   const inputWrapper = wrapper.findComponent(Input);
-    //   const inputElemWrapper = wrapper.find('input');
-    //   inputElemWrapper.trigger('focus');
-    //   expect(inputWrapper.emitted().focus).toBeTruthy();
-    //   expect(fn).toBeCalled();
-    // });
-
     it('@blur', () => {
       const fn = vi.fn();
       const wrapper = mount({
@@ -149,37 +135,20 @@ describe('Input', () => {
       expect(fn).toBeCalled();
     });
 
-    // unit test is not right.
-    // it('@keydown-enter', () => {
-    //   const fn = vi.fn();
-    //   const wrapper = mount({
-    //     render() {
-    //       return <Input {...{ on: { 'keydown-enter': fn } }} />;
-    //     },
-    //   });
-    //   const inputElemWrapper = wrapper.find('input');
-    //   inputElemWrapper.trigger('keydown.enter');
-
-    //   expect(fn).toBeCalled();
-    // });
+    it(':onKeydown', async () => {
+      const fn = vi.fn();
+      const wrapper = mount({
+        render() {
+          return <Input onKeydown={fn} />;
+        },
+      });
+      const input = wrapper.find('.t-input input');
+      await input.trigger('keydown');
+      expect(fn).toBeCalled();
+    });
   });
 
   describe('methods', () => {
-    // it('focus', async () => {
-    //   const fn = vi.fn();
-    //   const wrapper = mount({
-    //     render() {
-    //       return <Input onFocus={fn} />;
-    //     },
-    //   });
-    //   const inputWrapper = wrapper.findComponent(Input);
-    //   const inputElemWrapper = wrapper.find('input');
-    //   inputWrapper.vm.focus();
-    //   inputElemWrapper.trigger('focus');
-    //   await Vue.nextTick();
-    //   expect(inputWrapper.emitted().focus).toBeTruthy();
-    // });
-
     it('blur', async () => {
       const fn = vi.fn();
       const wrapper = mount({
