@@ -8,6 +8,7 @@ import useRenderIcon from './useRenderIcon';
 import useRenderLabel from './useRenderLabel';
 import useRenderLine from './useRenderLine';
 import useRenderOperations from './useRenderOperations';
+import useDraggable from './useDraggable';
 
 export default function useTreeItem(props: TypeTreeItemProps, context: SetupContext) {
   const { node } = props;
@@ -19,6 +20,9 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
   const { renderLabel } = useRenderLabel(props, context);
   const { renderLine } = useRenderLine(props);
   const { renderOperations } = useRenderOperations(props);
+  const {
+    dragStates, handleDragStart, handleDragEnd, handleDragOver, handleDragLeave, handleDrop,
+  } = useDraggable(props);
 
   // 节点隐藏用 class 切换，不要写在 js 中
   const getItemStyles = (): string => {
@@ -28,6 +32,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
   };
 
   const getItemClassList = (): ClassName => {
+    const { isDragOver, isDragging, dropPosition } = dragStates;
     const list = [];
     list.push(`${componentName}__item`);
     list.push({
@@ -35,11 +40,21 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
       [`${classPrefix}-is-active`]: node.isActivable() ? node.actived : false,
       [`${classPrefix}-is-disabled`]: node.isDisabled(),
     });
+    list.push({
+      [`${componentName}__item--draggable`]: node.isDraggable(),
+    });
     if (node.visible) {
       list.push(`${componentName}__item--visible`);
     } else {
       list.push(`${componentName}__item--hidden`);
     }
+    // 拖拽过程样式相关classList
+    list.push({
+      [`${componentName}__item--dragging`]: isDragging,
+      [`${componentName}__item--tip-top`]: isDragOver && dropPosition < 0,
+      [`${componentName}__item--tip-bottom`]: isDragOver && dropPosition > 0,
+      [`${componentName}__item--tip-highlight`]: !isDragging && isDragOver && dropPosition === 0,
+    });
     return list;
   };
 
@@ -84,6 +99,12 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
         data-level={level}
         style={styles}
         onClick={(evt: MouseEvent) => handleClick(evt)}
+        draggable={node.isDraggable()}
+        onDragstart={(evt: DragEvent) => handleDragStart(evt)}
+        onDragend={(evt: DragEvent) => handleDragEnd(evt)}
+        onDragover={(evt: DragEvent) => handleDragOver(evt)}
+        onDragleave={(evt: DragEvent) => handleDragLeave(evt)}
+        onDrop={(evt: DragEvent) => handleDrop(evt)}
       >
         {renderItem(h)}
       </div>

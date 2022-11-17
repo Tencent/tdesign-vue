@@ -78,6 +78,14 @@ export interface TypeScopedSlots {
   operations?: (opts?: TypeRenderTNodeOption) => VNode;
 }
 
+export interface TypeDragHandle {
+  handleDragStart: (state: TypDragEventState) => void;
+  handleDragEnd: (state: TypDragEventState) => void;
+  handleDragOver: (state: TypDragEventState) => void;
+  handleDragLeave: (state: TypDragEventState) => void;
+  handleDrop: (state: TypDragEventState) => void;
+}
+
 export interface TypeTreeScope {
   checkProps?: TypeTreeProps['checkProps'];
   disableCheck?: TypeTreeProps['disableCheck'];
@@ -87,6 +95,7 @@ export interface TypeTreeScope {
   line?: TypeTreeProps['line'];
   operations?: TypeTreeProps['operations'];
   scopedSlots?: TypeScopedSlots;
+  drag?: TypeDragHandle;
 }
 
 export interface TypeTreeCache {

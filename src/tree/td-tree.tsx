@@ -16,6 +16,7 @@ import useTreeStore from './hooks/useTreeStore';
 import useCache from './hooks/useCache';
 import useTreeAction from './hooks/useTreeAction';
 import useTreeNodes from './hooks/useTreeNodes';
+import useDragHandle from './hooks/useDragHandle';
 import { getNode } from './util';
 
 // 2022.11.02 tabliang 备注
@@ -72,8 +73,8 @@ export default defineComponent({
       cache,
     };
 
+    useDragHandle(props, context, state);
     const { setActived, setExpanded, setChecked } = useTreeAction(props, context, state);
-
     const { renderTreeNodes, clearCacheNodes } = useTreeNodes(props, context, state);
 
     watch(refProps.data, (list) => {
