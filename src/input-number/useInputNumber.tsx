@@ -134,14 +134,13 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
       setTValue(val, { type: 'input', e: ctx.e });
       return;
     }
-    // 普通数-数字。此处是为了将 2e3，2.1e3 等内容转换为数字
     const isNumberCode = ['-', '.', 'e', 'E'].includes(val.slice(-1));
     const smallNumber = val === '' ? undefined : Number(val);
     const newVal = isNumberCode ? val : smallNumber;
     if (!isNaN(Number(newVal)) || !newVal || !isNumberCode) {
       setTValue(newVal, { type: 'input', e: ctx.e });
-      userInput.value = String(newVal);
-    } else {
+      userInput.value = newVal ? String(newVal) : '';
+    } else if (isNumberCode) {
       userInput.value = val;
     }
   };
@@ -152,7 +151,10 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     } = props;
     if (!props.allowInputOverLimit) {
       const r = getMaxOrMinValidateResult({
-        value: tValue.value, largeNumber, max, min,
+        value: tValue.value,
+        largeNumber,
+        max,
+        min,
       });
       if (r === 'below-minimum') {
         setTValue(min, { type: 'blur', e: ctx.e });
