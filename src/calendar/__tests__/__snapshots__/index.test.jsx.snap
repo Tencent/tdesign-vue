@@ -1774,7 +1774,7 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-display"
               >
-                1 月
+                一月
               </div>
               <div
                 class="t-calendar__table-body-cell-content"
@@ -1790,7 +1790,7 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-display"
               >
-                2 月
+                二月
               </div>
               <div
                 class="t-calendar__table-body-cell-content"
@@ -1806,7 +1806,7 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-display"
               >
-                3 月
+                三月
               </div>
               <div
                 class="t-calendar__table-body-cell-content"
@@ -1822,75 +1822,7 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-display"
               >
-                4 月
-              </div>
-              <div
-                class="t-calendar__table-body-cell-content"
-              />
-            </div>
-          </div>
-        </tr>
-        <tr
-          class="t-calendar__table-body-row"
-        >
-          <div
-            class="t-calendar__table-body-cell"
-          >
-            <div
-              style="display: flex; flex-direction: column; align-items: flex-end;"
-            >
-              <div
-                class="t-calendar__table-body-cell-display"
-              >
-                5 月
-              </div>
-              <div
-                class="t-calendar__table-body-cell-content"
-              />
-            </div>
-          </div>
-          <div
-            class="t-calendar__table-body-cell"
-          >
-            <div
-              style="display: flex; flex-direction: column; align-items: flex-end;"
-            >
-              <div
-                class="t-calendar__table-body-cell-display"
-              >
-                6 月
-              </div>
-              <div
-                class="t-calendar__table-body-cell-content"
-              />
-            </div>
-          </div>
-          <div
-            class="t-calendar__table-body-cell"
-          >
-            <div
-              style="display: flex; flex-direction: column; align-items: flex-end;"
-            >
-              <div
-                class="t-calendar__table-body-cell-display"
-              >
-                7 月
-              </div>
-              <div
-                class="t-calendar__table-body-cell-content"
-              />
-            </div>
-          </div>
-          <div
-            class="t-calendar__table-body-cell"
-          >
-            <div
-              style="display: flex; flex-direction: column; align-items: flex-end;"
-            >
-              <div
-                class="t-calendar__table-body-cell-display"
-              >
-                8 月
+                四月
               </div>
               <div
                 class="t-calendar__table-body-cell-content"
@@ -1910,7 +1842,7 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-display"
               >
-                9 月
+                五月
               </div>
               <div
                 class="t-calendar__table-body-cell-content"
@@ -1926,7 +1858,7 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-display"
               >
-                10 月
+                六月
               </div>
               <div
                 class="t-calendar__table-body-cell-content"
@@ -1942,7 +1874,75 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-display"
               >
-                11 月
+                七月
+              </div>
+              <div
+                class="t-calendar__table-body-cell-content"
+              />
+            </div>
+          </div>
+          <div
+            class="t-calendar__table-body-cell"
+          >
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
+              <div
+                class="t-calendar__table-body-cell-display"
+              >
+                八月
+              </div>
+              <div
+                class="t-calendar__table-body-cell-content"
+              />
+            </div>
+          </div>
+        </tr>
+        <tr
+          class="t-calendar__table-body-row"
+        >
+          <div
+            class="t-calendar__table-body-cell"
+          >
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
+              <div
+                class="t-calendar__table-body-cell-display"
+              >
+                九月
+              </div>
+              <div
+                class="t-calendar__table-body-cell-content"
+              />
+            </div>
+          </div>
+          <div
+            class="t-calendar__table-body-cell"
+          >
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
+              <div
+                class="t-calendar__table-body-cell-display"
+              >
+                十月
+              </div>
+              <div
+                class="t-calendar__table-body-cell-content"
+              />
+            </div>
+          </div>
+          <div
+            class="t-calendar__table-body-cell"
+          >
+            <div
+              style="display: flex; flex-direction: column; align-items: flex-end;"
+            >
+              <div
+                class="t-calendar__table-body-cell-display"
+              >
+                十一月
               </div>
               <div
                 class="t-calendar__table-body-cell-content"
@@ -1958,7 +1958,7 @@ exports[`Calendar > :props > :mode 1`] = `
               <div
                 class="t-calendar__table-body-cell-display"
               >
-                12 月
+                十二月
               </div>
               <div
                 class="t-calendar__table-body-cell-content"
