@@ -16,6 +16,8 @@ import {
 } from '../_common/js/input-number/number';
 import useFormDisabled from '../hooks/useFormDisabled';
 
+export const specialCode = ['-', '.', 'e', 'E'];
+
 /**
  * 独立一个组件 Hook 方便用户直接使用相关逻辑 自定义任何样式的数字输入框
  */
@@ -128,19 +130,21 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     setTValue(newValue, { type: 'add', e });
   };
 
-  const onInnerInputChange = (val: string, ctx: { e: InputEvent }) => {
+  const onInnerInputChange = (val: string, { e }: { e: InputEvent }) => {
     if (!canInputNumber(val, props.largeNumber)) return;
     if (props.largeNumber) {
-      setTValue(val, { type: 'input', e: ctx.e });
+      setTValue(val, { type: 'input', e });
       return;
     }
-    const isNumberCode = ['-', '.', 'e', 'E'].includes(val.slice(-1));
-    const smallNumber = val === '' ? undefined : Number(val);
-    const newVal = isNumberCode ? val : smallNumber;
-    if ((!isNaN(Number(newVal)) || !newVal) && !isNumberCode) {
-      setTValue(newVal, { type: 'input', e: ctx.e });
-      userInput.value = newVal ? String(newVal) : '';
-    } else if (isNumberCode) {
+    // specialCode 新增或删除这些字符时不触发 change 事件
+    const isDelete = e.inputType === 'deleteContentBackward';
+    const inputSpecialCode = specialCode.includes(val.slice(-1));
+    const deleteSpecialCode = isDelete && specialCode.includes(String(userInput.value).slice(-1));
+    if ((!isNaN(Number(val)) && !inputSpecialCode) || deleteSpecialCode) {
+      const newVal = val === '' ? undefined : Number(val);
+      setTValue(newVal, { type: 'input', e });
+    }
+    if (inputSpecialCode || deleteSpecialCode) {
       userInput.value = val;
     }
   };
