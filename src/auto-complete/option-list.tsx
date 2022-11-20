@@ -104,12 +104,23 @@ export default defineComponent({
       { immediate: true },
     );
 
+    watch(
+      () => props.value,
+      () => {
+        if (!props.value) {
+          active.value = '';
+        }
+      },
+      { immediate: true },
+    );
+
     onBeforeMount(() => {
       document.removeEventListener('keydown', onKeyInnerPress);
     });
 
     return {
       classes,
+      classPrefix,
       optionClasses,
       active,
       tOptions,
