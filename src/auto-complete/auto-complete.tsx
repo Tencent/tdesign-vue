@@ -29,7 +29,7 @@ export default defineComponent({
       const triggerWidth = trigger.getBoundingClientRect().width || trigger.offsetWidth || trigger.clientWidth;
       const popupWidth = popupElement.getBoundingClientRect().width || popupElement.offsetWidth || popupElement.clientWidth;
       return {
-        width: triggerWidth > popupWidth ? `${triggerWidth}px` : 'auto',
+        width: triggerWidth >= popupWidth ? `${triggerWidth}px` : 'auto',
         ...props.popupProps?.overlayInnerStyle,
       };
     };
