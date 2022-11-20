@@ -122,10 +122,9 @@ export default defineComponent({
     // 联想词列表
     const listContent = (
       <AutoCompleteOptionList
-        value={this.value}
+        value={this.tValue}
         options={this.options}
         size={this.size}
-        classPrefix={this.classPrefix}
         sizeClassNames={this.sizeClassNames}
         onSelect={this.onInnerSelect}
         popupVisible={this.popupVisible}

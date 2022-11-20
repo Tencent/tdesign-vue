@@ -1,17 +1,17 @@
 import {
-  ref, computed, defineComponent, PropType, h, watch,
+  ref, computed, defineComponent, PropType, h, watch, onBeforeMount,
 } from '@vue/composition-api';
 import isFunction from 'lodash/isFunction';
 import HighlightOption from './highlight-option';
 import { CommonClassNameType } from '../hooks/useCommonClassName';
 import { AutoCompleteOptionObj, TdAutoCompleteProps } from './type';
 import log from '../_common/js/log';
+import { usePrefixClass } from '../hooks/useConfig';
 
 export default defineComponent({
   name: 'AutoCompleteOptionList',
 
   props: {
-    classPrefix: String,
     sizeClassNames: Object as PropType<CommonClassNameType['sizeClassNames']>,
     value: String,
     size: String as PropType<TdAutoCompleteProps['size']>,
@@ -24,10 +24,11 @@ export default defineComponent({
 
   setup(props, { emit }) {
     const active = ref('');
+    const classPrefix = usePrefixClass();
 
-    const classes = computed(() => `${props.classPrefix}-select__list`);
+    const classes = computed(() => `${classPrefix.value}-select__list`);
     const optionClasses = computed(() => [
-      `${props.classPrefix}-select-option`,
+      `${classPrefix.value}-select-option`,
       {
         [props.sizeClassNames[props.size]]: props.size,
       },
@@ -102,6 +103,10 @@ export default defineComponent({
       },
       { immediate: true },
     );
+
+    onBeforeMount(() => {
+      document.removeEventListener('keydown', onKeyInnerPress);
+    });
 
     return {
       classes,
