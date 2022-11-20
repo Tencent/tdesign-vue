@@ -6,7 +6,6 @@
       :options="options1"
       :popupProps="{ overlayClassName: 't-demo-autocomplete-option-list' }"
       placeholder="使用属性自定义联想词选项内容"
-      @change="onChange"
     />
 
     <!-- 使用插槽自定义下拉选项 -->
@@ -15,7 +14,6 @@
       :options="options2"
       :popupProps="{ overlayClassName: 't-demo-autocomplete-option-list' }"
       placeholder="使用插槽自定义联想词选项内容"
-      @change="onChange"
     >
       <template #option="{ option }">
         <div class="custom-option">
@@ -83,20 +81,6 @@ export default {
           </div>
         ),
       }));
-    },
-  },
-
-  methods: {
-    // 输入框内容发生变化时进行搜索，200ms 搜索一次
-    onChange(value) {
-      clearTimeout(this.timer);
-      this.timer = setTimeout(() => {
-        const text = '搜索联想词';
-        const pureValue = value.replace(`第一个${text}`, '').replace(`第二个${text}`, '').replace(`第三个${text}`, '');
-
-        this.options = [`${pureValue}第一个${text}`, `${pureValue}第二个${text}`, `${pureValue}第三个${text}`];
-        clearTimeout(this.timer);
-      }, 200);
     },
   },
 };
