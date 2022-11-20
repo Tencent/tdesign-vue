@@ -507,6 +507,14 @@ const docs = [
         componentEn: () => import('tdesign-vue/tag/tag.en-US.md'),
       },
       {
+        title: 'Timeline 时间轴',
+        titleEn: 'Timeline',
+        name: 'timeline',
+        path: '/vue/components/timeline',
+        component: () => import('tdesign-vue/timeline/timeline.md'),
+        componentEn: () => import('tdesign-vue/timeline/timeline.en-US.md'),
+      },
+      {
         title: 'Tooltip 文字提示',
         titleEn: 'Tooltip',
         name: 'tooltip',

@@ -27,7 +27,7 @@ export default defineComponent({
       expandOnRowClick,
     } = inject<any>('collapseProps');
     const renderParentTNode: Function = inject('renderParentTNode');
-    const innerValue = value.value || getUniqId();
+    const innerValue = value.value === undefined ? getUniqId() : value.value;
     if (defaultExpandAll.value) {
       updateCollapseValue(innerValue);
     }

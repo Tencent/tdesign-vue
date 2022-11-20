@@ -30,7 +30,13 @@ describe('Tree:filter', () => {
           this.filter = (node) => node.value.indexOf('2') >= 0;
         },
         render() {
-          return <Tree data={data} expandAll filter={this.filter}></Tree>;
+          return (
+            <Tree data={data} expandAll filter={this.filter}>
+              <div slot="empty" class="tree-empty">
+                暂无数据
+              </div>
+            </Tree>
+          );
         },
       });
 
@@ -38,7 +44,7 @@ describe('Tree:filter', () => {
 
       const t1 = wrapper.find('[data-value="t1"]');
       let t1d1 = wrapper.find('[data-value="t1.1"]');
-      const t1d2 = wrapper.find('[data-value="t1.2"]');
+      let t1d2 = wrapper.find('[data-value="t1.2"]');
 
       // t1.2 被命中, t1 被锁定, t1.1 隐藏
       expect(t1.exists()).toBe(true);
@@ -64,17 +70,18 @@ describe('Tree:filter', () => {
       });
       await delay(10);
 
-      // 无命中，全部隐藏
-      expect(t1.classes('t-tree__item--visible')).toBe(false);
-      expect(t1d1.classes('t-tree__item--visible')).toBe(false);
-      expect(t1d2.classes('t-tree__item--visible')).toBe(false);
+      // 无命中，则显示空元素
+      expect(wrapper.find('.tree-empty').exists()).toBe(true);
 
       await wrapper.setData({
         filter: null,
       });
-      await delay(10);
+      await delay(20);
 
-      // 清除过滤器，全部显示
+      // 清除过滤器，全部显示、空元素不显示
+      t1d1 = wrapper.find('[data-value="t1.1"]');
+      t1d2 = wrapper.find('[data-value="t1.2"]');
+      expect(wrapper.find('.tree-empty').exists()).toBe(false);
       expect(t1.classes('t-tree__item--visible')).toBe(true);
       expect(t1d1.classes('t-tree__item--visible')).toBe(true);
       expect(t1d2.classes('t-tree__item--visible')).toBe(true);

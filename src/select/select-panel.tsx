@@ -11,6 +11,7 @@ import {
 } from './type';
 import Option from './option';
 import useVirtualScroll from '../hooks/useVirtualScroll';
+import { flattenOptions } from './util';
 
 export interface OptionsType extends TdOptionProps {
   $index?: number;
@@ -88,7 +89,7 @@ export default defineComponent({
         if (isFunction(props.filter)) {
           return props.filter(`${props.inputValue}`, option);
         }
-        return option.label?.indexOf(`${props.inputValue}`) > -1;
+        return option.label?.toLowerCase?.().indexOf(`${props.inputValue}`.toLowerCase()) > -1;
       };
 
       const res: Array<SelectOption & { index?: number }> = [];
@@ -122,7 +123,15 @@ export default defineComponent({
       return arr;
     };
 
-    const isCreateOptionShown = computed(() => !!(props.creatable && props.filterable && props.inputValue));
+    // 是否显示创建选项，需满足条件：1. creatable 为真；2. filterable 为真；3.有用户输入筛选内容；4. 用户输入的筛选内容不能在当前 options 下找到
+    const isCreateOptionShown = computed(
+      () => !!(
+        props.creatable
+          && props.filterable
+          && props.inputValue
+          && flattenOptions(options.value).find((v) => v.label === props.inputValue) === undefined
+      ),
+    );
     const isEmpty = computed(() => !(displayOptions.value.length > 0));
     const isVirtual = computed(
       () => props.scroll?.type === 'virtual' && props.options?.length > (props.scroll?.threshold || 100),
@@ -201,41 +210,41 @@ export default defineComponent({
 
   methods: {
     renderEmptyContent() {
-      const { empty, t, global } = this;
-      if (empty && typeof empty === 'string') {
-        return <div class={`${this.componentName}__empty`}>{empty}</div>;
+      if (this.empty && typeof this.empty === 'string') {
+        return <div class={`${this.componentName}__empty`}>{this.empty}</div>;
       }
-      return renderTNodeJSXDefault(this, 'empty', <div class={`${this.componentName}__empty`}>{t(global.empty)}</div>);
+      return renderTNodeJSXDefault(
+        this,
+        'empty',
+        <div class={`${this.componentName}__empty`}>{this.t(this.global.empty)}</div>,
+      );
     },
     renderLoadingContent() {
-      const { loadingText, t, global } = this;
-      if (loadingText && typeof loadingText === 'string') {
-        return <div class={`${this.componentName}__loading-tips`}>{loadingText}</div>;
+      if (this.loadingText && typeof this.loadingText === 'string') {
+        return <div class={`${this.componentName}__loading-tips`}>{this.loadingText}</div>;
       }
       return renderTNodeJSXDefault(
         this,
         'loadingText',
-        <div class={`${this.componentName}__loading-tips`}>{t(global.loadingText)}</div>,
+        <div class={`${this.componentName}__loading-tips`}>{this.t(this.global.loadingText)}</div>,
       );
     },
     renderCreateOption() {
-      const {
-        inputValue, trs, scrollType, isVirtual, handleRowMounted, bufferSize,
-      } = this;
-      const on = isVirtual ? { onRowMounted: handleRowMounted } : {};
+      const on = this.isVirtual ? { onRowMounted: this.handleRowMounted } : {};
 
       return (
         <ul class={[`${this.componentName}__create-option`, `${this.componentName}__list`]}>
           <t-option
+            multiple={this.multiple}
             index={0}
             isCreatedOption={true}
-            value={inputValue}
-            label={inputValue}
+            value={this.inputValue}
+            label={this.inputValue}
             class={`${this.componentName}__create-option--special`}
-            trs={trs}
-            scrollType={scrollType}
-            isVirtual={isVirtual}
-            bufferSize={bufferSize}
+            trs={this.trs}
+            scrollType={this.scrollType}
+            isVirtual={this.isVirtual}
+            bufferSize={this.bufferSize}
             on={on}
           />
         </ul>
@@ -244,11 +253,7 @@ export default defineComponent({
 
     // 递归render options
     renderOptionsContent(options: SelectOption[]) {
-      const {
-        multiple, trs, scrollType, isVirtual, handleRowMounted, bufferSize,
-      } = this;
-
-      const on = isVirtual ? { onRowMounted: handleRowMounted } : {};
+      const on = this.isVirtual ? { onRowMounted: this.handleRowMounted } : {};
 
       return (
         <ul class={`${this.componentName}__list`}>
@@ -270,13 +275,13 @@ export default defineComponent({
                 );
               }
 
-              const scrollProps = isVirtual
+              const scrollProps = this.isVirtual
                 ? {
                   rowIndex: item.$index,
-                  trs,
-                  scrollType,
-                  isVirtual,
-                  bufferSize,
+                  trs: this.trs,
+                  scrollType: this.scrollType,
+                  isVirtual: this.isVirtual,
+                  bufferSize: this.bufferSize,
                 }
                 : { key: index };
               // replace `scopedSlots` of `v-slots` in Vue3
@@ -289,7 +294,7 @@ export default defineComponent({
                   // 透传其余参数
                   {...{ props: { ...item, ...scrollProps } }}
                   // t-option 自身逻辑所需属性
-                  multiple={multiple}
+                  multiple={this.multiple}
                   scopedSlots={{ default: item.slots }}
                   key={`${item.$index || ''}_${index}`}
                   on={on}
@@ -302,34 +307,32 @@ export default defineComponent({
     },
 
     renderPanelContent(innerStyle = {}) {
-      const {
-        renderTNode, isEmpty, isCreateOptionShown, size, loading, isVirtual, visibleData, displayOptions,
-      } = this;
+      const { loading } = this;
       return (
         <div
           class={[
             `${this.componentName}__dropdown-inner`,
-            `${this.componentName}__dropdown-inner--size-${sizeClassMap[size]}`,
+            `${this.componentName}__dropdown-inner--size-${sizeClassMap[this.size]}`,
           ]}
           style={innerStyle}
         >
-          {renderTNode('panelTopContent')}
-          {isCreateOptionShown && this.renderCreateOption()}
+          {this.renderTNode('panelTopContent')}
+          {this.isCreateOptionShown && this.renderCreateOption()}
           {loading && this.renderLoadingContent()}
-          {!loading && isEmpty && !isCreateOptionShown && this.renderEmptyContent()}
-          {!loading && !isEmpty && this.renderOptionsContent(isVirtual && visibleData ? visibleData : displayOptions)}
-          {renderTNode('panelBottomContent')}
+          {!loading && this.isEmpty && !this.isCreateOptionShown && this.renderEmptyContent()}
+          {!loading
+            && !this.isEmpty
+            && this.renderOptionsContent(this.isVirtual && this.visibleData ? this.visibleData : this.displayOptions)}
+          {this.renderTNode('panelBottomContent')}
         </div>
       );
     },
   },
 
   render() {
-    const { translateY, scrollHeight, isVirtual } = this;
-
     // 虚拟滚动渲染，popup 的 dom 结构有区别
-    if (isVirtual) {
-      const cursorTranslate = `translate(0, ${scrollHeight}px)`;
+    if (this.isVirtual) {
+      const cursorTranslate = `translate(0, ${this.scrollHeight}px)`;
       const cursorTranslateStyle = {
         position: 'absolute',
         width: '1px',
@@ -341,7 +344,7 @@ export default defineComponent({
         '-webkit-transform': cursorTranslate,
       };
 
-      const translate = `translate(0, ${translateY}px)`;
+      const translate = `translate(0, ${this.translateY}px)`;
       const virtualStyle = {
         transform: translate,
         '-ms-transform': translate,

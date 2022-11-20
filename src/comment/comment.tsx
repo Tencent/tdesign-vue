@@ -4,6 +4,7 @@ import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
+import Button from '../button';
 
 const classPrefixMixins = getClassPrefixMixins('comment');
 
@@ -18,11 +19,13 @@ export default mixins(classPrefixMixins).extend({
     renderActions() {
       const actions: ScopedSlotReturnArray = renderTNodeJSX(this, 'actions');
       return actions && actions.length ? (
-        <ul class={`${this.componentName}__actions`}>
+        <div class={`${this.componentName}__actions`}>
           {actions.map((action: ScopedSlotReturnValue, index: number) => (
-            <li key={`action-${index}`}>{action}</li>
+            <Button key={`action-${index}`} size="small" variant="text">
+              {action}
+            </Button>
           ))}
-        </ul>
+        </div>
       ) : null;
     },
 
