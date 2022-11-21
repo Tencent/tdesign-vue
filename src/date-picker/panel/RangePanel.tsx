@@ -61,19 +61,19 @@ export default defineComponent({
     // 是否隐藏预选状态,只有 value 有值的时候需要隐藏
     const hidePreselection = !props.panelPreselection && props.value.length === 2;
 
-    const disableDateOptions = useDisableDate({
+    const disableDateOptions = computed(() => useDisableDate({
       format,
       mode: props.mode,
       disableDate: props.disableDate,
       start:
-        props.isFirstValueSelected && props.activeIndex === 1
-          ? new Date(parseToDayjs(props.value[0], format, 'start').toDate().setHours(0, 0, 0))
-          : undefined,
+          props.isFirstValueSelected && props.activeIndex === 1
+            ? new Date(parseToDayjs(props.value[0], format, 'start').toDate().setHours(0, 0, 0))
+            : undefined,
       end:
-        props.isFirstValueSelected && props.activeIndex === 0
-          ? new Date(parseToDayjs(props.value[1], format).toDate().setHours(23, 59, 59))
-          : undefined,
-    });
+          props.isFirstValueSelected && props.activeIndex === 0
+            ? new Date(parseToDayjs(props.value[1], format).toDate().setHours(23, 59, 59))
+            : undefined,
+    }));
 
     const startTableData = computed(() => useTableData({
       isRange: true,
@@ -91,7 +91,7 @@ export default defineComponent({
       month: props.month[0],
       mode: props.mode,
       firstDayOfWeek: props.firstDayOfWeek || global.value.firstDayOfWeek,
-      ...disableDateOptions,
+      ...disableDateOptions.value,
     }));
 
     const endTableData = computed(() => useTableData({
@@ -110,7 +110,7 @@ export default defineComponent({
       month: props.month[1],
       mode: props.mode,
       firstDayOfWeek: props.firstDayOfWeek || global.value.firstDayOfWeek,
-      ...disableDateOptions,
+      ...disableDateOptions.value,
     }));
 
     const panelContentProps = computed(() => ({

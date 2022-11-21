@@ -1,7 +1,7 @@
 <template>
   <t-space direction="vertical">
     <t-tree-select :data="options" v-model="value" clearable placeholder="请选择" style="width: 400px">
-      <template #valueDisplay="{ value }"> {{ value.label }}({{ value.value }}) </template>
+      <template #valueDisplay="{ value }" v-if="value"> {{ value.label }}({{ value.value }})</template>
     </t-tree-select>
     <t-tree-select
       :data="options"

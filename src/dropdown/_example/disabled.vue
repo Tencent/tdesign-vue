@@ -4,7 +4,7 @@
       <t-button variant="text">
         <span class="tdesign-demo-dropdown__text">
           下拉菜单
-          <chevron-down-icon size="16" />
+          <chevron-down-icon size="16" slot="suffix" />
         </span>
       </t-button>
     </t-dropdown>
@@ -44,14 +44,3 @@ export default Vue.extend({
   },
 });
 </script>
-<style lang="less" scoped>
-.tdesign-demo-dropdown {
-  &__text {
-    display: inline-flex;
-    align-items: center;
-    .t-icon {
-      margin-left: 8px;
-    }
-  }
-}
-</style>

@@ -346,14 +346,17 @@ export default mixins(classPrefixMixins).extend({
       if (this.markList.length) {
         return (
           <div>
-            <div>
-              {this.markList.map((item, index) => (
-                <div
-                  class={[`${this.componentName}__stop`, `${this.componentName}__mark-stop`]}
-                  style={this.getStopStyle(item.position)}
-                  key={index}
-                ></div>
-              ))}
+            <div class={`${this.componentName}__stops`}>
+              {this.markList.map((item, index) => {
+                if (item.position === 0 || item.position === 100) return null;
+                return (
+                  <div
+                    class={[`${this.componentName}__stop`, `${this.componentName}__mark-stop`]}
+                    style={this.getStopStyle(item.position)}
+                    key={index}
+                  ></div>
+                );
+              })}
             </div>
             <div class={`${this.componentName}__mark`}>
               {this.markList.map((item, key) => (
@@ -461,10 +464,11 @@ export default mixins(classPrefixMixins).extend({
             )}
 
             {this.showSteps && (
-              <div>
-                {this.steps.map((item, key) => (
-                  <div class={`${this.componentName}__stop`} key={key} style={this.getStopStyle(item)}></div>
-                ))}
+              <div class={`${this.componentName}__stops`}>
+                {this.steps.map((item: any, key) => {
+                  if (item.position === 0 || item.position === 100) return null;
+                  return <div class={`${this.componentName}__stop`} key={key} style={this.getStopStyle(item)}></div>;
+                })}
               </div>
             )}
             {masks}
