@@ -218,6 +218,14 @@ const docs = [
     type: 'component', // 组件文档
     children: [
       {
+        title: 'AutoComplete 自动填充',
+        titleEn: 'AutoComplete',
+        name: 'auto-complete',
+        path: '/vue/components/auto-complete',
+        component: () => import('tdesign-vue/auto-complete/auto-complete.md'),
+        componentEn: () => import('tdesign-vue/auto-complete/auto-complete.en-US.md'),
+      },
+      {
         title: 'Cascader 级联组件',
         titleEn: 'Cascader',
         name: 'cascader',
