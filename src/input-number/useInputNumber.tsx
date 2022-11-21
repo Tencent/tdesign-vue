@@ -109,25 +109,40 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     { immediate: true },
   );
 
-  const handleStepValue = (op: 'add' | 'reduce') => getStepValue({
-    op,
-    step: props.step,
-    max: props.max,
-    min: props.min,
-    lastValue: tValue.value,
-    largeNumber: props.largeNumber,
-  });
+  const handleStepValue = (op: 'add' | 'reduce') => {
+    const newValue = getStepValue({
+      op,
+      step: props.step,
+      max: props.max,
+      min: props.min,
+      lastValue: tValue.value,
+      largeNumber: props.largeNumber,
+    });
+    const { largeNumber, max, min } = props;
+    const overLimit = getMaxOrMinValidateResult({
+      value: newValue,
+      largeNumber,
+      max,
+      min,
+    });
+    return {
+      overLimit,
+      newValue,
+    };
+  };
 
   const handleReduce = (e: KeyboardEvent | MouseEvent) => {
     if (disabledReduce.value || props.readonly) return;
-    const newValue = handleStepValue('reduce');
-    setTValue(newValue, { type: 'reduce', e });
+    const r = handleStepValue('reduce');
+    if (r.overLimit && !props.allowInputOverLimit) return;
+    setTValue(r.newValue, { type: 'reduce', e });
   };
 
   const handleAdd = (e: KeyboardEvent | MouseEvent) => {
     if (disabledAdd.value || props.readonly) return;
-    const newValue = handleStepValue('add');
-    setTValue(newValue, { type: 'add', e });
+    const r = handleStepValue('add');
+    if (r.overLimit && !props.allowInputOverLimit) return;
+    setTValue(r.newValue, { type: 'add', e });
   };
 
   const onInnerInputChange = (val: string, { e }: { e: InputEvent }) => {
