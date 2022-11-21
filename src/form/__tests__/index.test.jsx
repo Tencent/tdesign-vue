@@ -1,5 +1,5 @@
-import { nextTick } from 'vue';
 import { mount } from '@vue/test-utils';
+import { nextTick } from 'vue';
 import { CheckCircleFilledIcon, CloseCircleFilledIcon, InfoCircleIcon } from 'tdesign-icons-vue';
 import isObject from 'lodash/isObject';
 import omit from 'lodash/omit';
@@ -16,9 +16,8 @@ const delay = (time = 0) => new Promise((res, rej) => {
 describe('Form', () => {
   // test props api
   describe(':props', () => {
-    let wrapper = null;
-    beforeEach(() => {
-      wrapper = mount({
+    it(':labelAlign', async () => {
+      let wrapper = mount({
         render() {
           return (
             <Form>
@@ -29,79 +28,161 @@ describe('Form', () => {
           );
         },
       });
-    });
-    it('exists', () => {
-      expect(wrapper.exists()).eq(true);
-    });
-
-    it(':labelAlign', async () => {
       // Form labelAlign default value: right
       expect(wrapper.find('.t-form__label').classes('t-form__label--right')).eq(true);
 
-      await wrapper.setProps({ labelAlign: 'top' });
-      console.log('labelAlignxx', wrapper.vm.labelAlign);
+      wrapper = mount({
+        render() {
+          return (
+            <Form labelAlign="top">
+              <FormItem label="name" name="name">
+                <Input placeholder="请输入内容" />
+              </FormItem>
+            </Form>
+          );
+        },
+      });
       expect(wrapper.find('.t-form__label').classes('t-form__label--top')).eq(true);
 
-      await wrapper.setProps({ labelAlign: 'left' });
+      wrapper = mount({
+        render() {
+          return (
+            <Form labelAlign="left">
+              <FormItem label="name" name="name">
+                <Input placeholder="请输入内容" />
+              </FormItem>
+            </Form>
+          );
+        },
+      });
       expect(wrapper.find('.t-form__label').classes('t-form__label--left')).eq(true);
     });
 
     it(':labelWidth', async () => {
+      let wrapper = mount({
+        render() {
+          return (
+            <Form>
+              <FormItem label="name" name="name">
+                <Input placeholder="请输入内容" />
+              </FormItem>
+            </Form>
+          );
+        },
+      });
+
       expect(wrapper.find('.t-form__label').element.style.width).eq('100px');
       expect(wrapper.find('.t-form__controls').element.style.marginLeft).eq('100px');
 
-      await wrapper.setProps({ labelWidth: '200px' });
+      wrapper = mount({
+        render() {
+          return (
+            <Form labelWidth="200px">
+              <FormItem label="name" name="name">
+                <Input placeholder="请输入内容" />
+              </FormItem>
+            </Form>
+          );
+        },
+      });
       expect(wrapper.find('.t-form__label').element.style.width).eq('200px');
       expect(wrapper.find('.t-form__controls').element.style.marginLeft).eq('200px');
     });
 
-    // it(':layout', async () => {
-    //   expect(wrapper.find('.t-form').classes('t-form-inline')).eq(false);
+    it(':layout', async () => {
+      let wrapper = mount({
+        render() {
+          return (
+            <Form>
+              <FormItem label="name" name="name">
+                <Input placeholder="请输入内容" />
+              </FormItem>
+            </Form>
+          );
+        },
+      });
+      expect(wrapper.find('.t-form').classes('t-form-inline')).eq(false);
 
-    //   await wrapper.setProps({ layout: 'inline' });
-    //   expect(wrapper.find('.t-form').classes('t-form-inline')).eq(true);
-    // });
+      wrapper = mount({
+        render() {
+          return (
+            <Form layout="inline">
+              <FormItem label="name" name="name">
+                <Input placeholder="请输入内容" />
+              </FormItem>
+            </Form>
+          );
+        },
+      });
+      expect(wrapper.find('.t-form').classes('t-form-inline')).eq(true);
+    });
 
-    // it(':colon', async () => {
-    //   expect(window.getComputedStyle(wrapper.find('label').element, '::after').content).eq('none');
+    it(':colon', async () => {
+      const wrapper = mount({
+        render() {
+          return (
+            <Form>
+              <FormItem label="name" name="name">
+                <Input placeholder="请输入内容" />
+              </FormItem>
+            </Form>
+          );
+        },
+      });
+      expect(getComputedStyle(wrapper.find('label').element, '::after').content).eq('');
+    });
 
-    //   await wrapper.setProps({ colon: true });
-    //   expect(window.getComputedStyle(wrapper.find('label').element, '::after').content).eq('":"');
-    // });
+    it(':showErrorMessage', async () => {
+      const rules = {
+        name: [{ required: true, message: '姓名必填' }],
+      };
+      const formData = {
+        name: '',
+      };
+      const wrapper = mount({
+        render() {
+          return (
+            <Form rules={rules} data={formData}>
+              <FormItem label="name" name="name">
+                <Input v-model={formData.name} />
+              </FormItem>
+            </Form>
+          );
+        },
+      });
+      const formComp = wrapper.findComponent(Form);
+      await formComp.vm.validate();
+      expect(wrapper.find('.t-input__extra').text()).eq('姓名必填');
+    });
 
-    // it(':showErrorMessage', async () => {
-    //   const rules = {
-    //     name: [{ required: true, message: '姓名必填' }],
-    //   };
-    //   const formData = {
-    //     name: '',
-    //   };
-    //   const wrapper = mount({
-    //     render() {
-    //       return (
-    //         <Form rules={rules} data={formData}>
-    //           <FormItem label="name" name="name">
-    //             <Input v-model={formData.name} />
-    //           </FormItem>
-    //         </Form>
-    //       );
-    //     },
-    //   });
+    it(':disabled', async () => {
+      let wrapper = mount({
+        render() {
+          return (
+            <Form>
+              <FormItem label="name" name="name">
+                <Input placeholder="请输入内容" />
+              </FormItem>
+            </Form>
+          );
+        },
+      });
+      expect(wrapper.find('.t-input').classes('t-is-disabled')).eq(false);
 
-    //   await wrapper.findComponent(Form).vm.$.exposed.validate();
-    //   expect(wrapper.find('.t-input__extra').text()).eq('姓名必填');
-
-    //   await wrapper.setProps({ showErrorMessage: false });
-    //   await wrapper.findComponent(Form).vm.$.exposed.validate();
-    //   expect(wrapper.find('.t-input__extra').exists()).eq(false);
-    // });
-
-    // it(':disabled', async () => {
-    //   expect(wrapper.find('.t-input').classes('t-is-disabled')).eq(false);
-
-    //   await wrapper.setProps({ disabled: true });
-    //   expect(wrapper.find('.t-input').classes('t-is-disabled')).eq(true);
-    // });
+      wrapper = mount({
+        render() {
+          return (
+            <Form disabled={true}>
+              <FormItem label="name" name="name">
+                <Input placeholder="请输入内容" />
+              </FormItem>
+            </Form>
+          );
+        },
+      });
+      console.log(wrapper.html());
+      expect(wrapper.find('.t-input').classes('t-is-disabled')).eq(true);
+    });
 
     // it(':resetType', async () => {
     //   const rules = {
