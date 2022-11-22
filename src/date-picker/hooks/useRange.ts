@@ -31,7 +31,7 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
   const popupVisible = ref(false);
   const isHoverCell = ref(false);
   const activeIndex = ref(0); // 确定当前选中的输入框序号
-  const inputValue = ref(formatDate(props.value, { format: formatRef.value.format })); // 未真正选中前可能不断变更输入框的内容
+  const inputValue = ref(formatDate(value.value, { format: formatRef.value.format })); // 未真正选中前可能不断变更输入框的内容
 
   // input 设置
   const rangeInputProps = computed(() => ({
@@ -40,7 +40,7 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
     clearable: props.clearable,
     prefixIcon: props.prefixIcon,
     readonly: !props.allowInput,
-    separator: props.separator,
+    separator: props.separator || global.value.rangeSeparator,
     placeholder: props.placeholder || global.value.placeholder[props.mode],
     activeIndex: popupVisible.value ? activeIndex.value : undefined,
     class: {

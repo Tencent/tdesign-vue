@@ -12,6 +12,12 @@
     <t-badge count="100" color="#0052D9" shape="round">
       <div class="badge-block"></div>
     </t-badge>
+    <t-badge color="transparent" shape="round">
+      <template #count>
+        <t-loading size="20px"></t-loading>
+      </template>
+      <div class="badge-block"></div>
+    </t-badge>
   </t-space>
 </template>
 <style scoped>

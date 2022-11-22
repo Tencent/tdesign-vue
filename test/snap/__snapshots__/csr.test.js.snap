@@ -1548,6 +1548,484 @@ exports[`csr snapshot test > csr test ./src/anchor/_example/target.vue 1`] = `
 </div>
 `;
 
+exports[`csr snapshot test > csr test ./src/auto-complete/_example/base.vue 1`] = `
+<div
+  class="t-demo-auto-complete__base t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-auto-complete"
+    >
+      <div
+        class="t-input__wrap"
+      >
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请输入关键词搜索"
+            type="text"
+            unselectable="off"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-auto-complete"
+    >
+      <div
+        class="t-input__wrap"
+      >
+        <div
+          class="t-input t-size-m t-input--suffix"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请输入关键词搜索（右侧搜索按钮可以使用插槽自定义）"
+            type="text"
+            unselectable="off"
+          />
+          <div
+            class="t-input__suffix"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-button--shape-square"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                <svg
+                  class="t-icon t-icon-search"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M9.51 10.22a4.76 4.76 0 11.7-.7l3.54 3.52-.7.71-3.54-3.53zm.77-3.7a3.76 3.76 0 10-7.53 0 3.76 3.76 0 007.53 0z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/auto-complete/_example/filter.vue 1`] = `
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-auto-complete"
+      style="width: 280px;"
+    >
+      <div
+        class="t-input__wrap"
+      >
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="组件默认过滤规则（不区分大小写）"
+            type="text"
+            unselectable="off"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-auto-complete"
+      style="width: 280px;"
+    >
+      <div
+        class="t-input__wrap"
+      >
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="自定义过滤规则（区分大小写）"
+            type="text"
+            unselectable="off"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/auto-complete/_example/option.vue 1`] = `
+<div
+  class="t-demo-autocomplete-option t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-auto-complete"
+    >
+      <div
+        class="t-input__wrap"
+      >
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="使用属性自定义联想词选项内容"
+            type="text"
+            unselectable="off"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-auto-complete"
+    >
+      <div
+        class="t-input__wrap"
+      >
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="使用插槽自定义联想词选项内容"
+            type="text"
+            unselectable="off"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/auto-complete/_example/size.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-auto-complete"
+    >
+      <div
+        class="t-input__wrap"
+      >
+        <div
+          class="t-input t-size-s t-input--prefix"
+        >
+          <div
+            class="t-input__prefix"
+          >
+            小尺寸：
+          </div>
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请输入"
+            type="text"
+            unselectable="off"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-auto-complete"
+    >
+      <div
+        class="t-input__wrap"
+      >
+        <div
+          class="t-input t-size-m t-input--prefix"
+        >
+          <div
+            class="t-input__prefix"
+          >
+            中尺寸：
+          </div>
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请输入"
+            type="text"
+            unselectable="off"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-auto-complete"
+    >
+      <div
+        class="t-input__wrap"
+      >
+        <div
+          class="t-input t-size-l t-input--prefix"
+        >
+          <div
+            class="t-input__prefix"
+          >
+            大尺寸：
+          </div>
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请输入"
+            type="text"
+            unselectable="off"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/auto-complete/_example/status.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 32px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-auto-complete"
+    >
+      <div
+        class="t-input__wrap"
+      >
+        <div
+          class="t-input t-size-m t-is-disabled"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            disabled="disabled"
+            placeholder="请输入关键词搜索"
+            type="text"
+            unselectable="off"
+          />
+        </div>
+        <div
+          class="t-input__tips t-input__tips--default"
+        >
+          这是禁用状态
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-auto-complete"
+    >
+      <div
+        class="t-input__wrap"
+      >
+        <div
+          class="t-input t-size-m t-is-readonly"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请输入关键词搜索"
+            readonly="readonly"
+            type="text"
+            unselectable="on"
+          />
+        </div>
+        <div
+          class="t-input__tips t-input__tips--default"
+        >
+          这是只读状态
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-auto-complete"
+    >
+      <div
+        class="t-input__wrap"
+      >
+        <div
+          class="t-input t-size-m"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请输入关键词搜索"
+            type="text"
+            unselectable="off"
+          />
+        </div>
+        <div
+          class="t-input__tips t-input__tips--default"
+        >
+          这是普通状态
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-auto-complete"
+    >
+      <div
+        class="t-input__wrap"
+      >
+        <div
+          class="t-input t-size-m t-is-warning"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请输入关键词搜索"
+            type="text"
+            unselectable="off"
+          />
+        </div>
+        <div
+          class="t-input__tips t-input__tips--warning"
+        >
+          这是告警状态
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-auto-complete"
+    >
+      <div
+        class="t-input__wrap"
+      >
+        <div
+          class="t-input t-size-m t-is-error"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请输入关键词搜索"
+            type="text"
+            unselectable="off"
+          />
+        </div>
+        <div
+          class="t-input__tips t-input__tips--error"
+        >
+          这是错误状态
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-auto-complete"
+    >
+      <div
+        class="t-input__wrap"
+      >
+        <div
+          class="t-input t-size-m t-is-success"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="请输入关键词搜索"
+            type="text"
+            unselectable="off"
+          />
+        </div>
+        <div
+          class="t-input__tips t-input__tips--success"
+        >
+          这是成功状态
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/auto-complete/_example/trigger-element.vue 1`] = `
+<div>
+  <div
+    class="t-auto-complete"
+  >
+    <div
+      class="t-textarea"
+    >
+      <textarea
+        class="t-textarea__inner"
+        placeholder="自定义联想词触发元素"
+        unselectable="off"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`csr snapshot test > csr test ./src/avatar/_example/adjust.vue 1`] = `
 <div
   class="t-space t-space-horizontal"
@@ -2271,6 +2749,50 @@ exports[`csr snapshot test > csr test ./src/badge/_example/custom.vue 1`] = `
         style="background: rgb(0, 82, 217);"
       >
         99+
+      </sup>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-badge"
+      data-v-a2369e40=""
+    >
+      <div
+        class="badge-block"
+        data-v-a2369e40=""
+      />
+      <sup
+        class="t-badge--round"
+        style="background: transparent;"
+      >
+        <div
+          class="t-loading--center t-loading"
+          data-v-a2369e40=""
+          style="font-size: 20px;"
+        >
+          <svg
+            class="t-loading__gradient t-icon-loading"
+            height="1em"
+            size="20px"
+            version="1.1"
+            viewBox="0 0 14 14"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <foreignobject
+              height="12"
+              width="12"
+              x="1"
+              y="1"
+            >
+              <div
+                class="t-loading__gradient-conic"
+              />
+            </foreignobject>
+          </svg>
+        </div>
       </sup>
     </div>
   </div>
@@ -32626,100 +33148,43 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
     data-v-96b659ea=""
   />
   <div
-    class="t-select__wrap"
+    class="t-input__wrap t-select-input--empty t-tree-select"
     data-v-96b659ea=""
     style="width: 400px;"
   >
     <div
-      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
+      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
-      <span
-        class="t-select__placeholder"
-      >
-        see empty data in TreeSelect
-      </span>
-      <span
-        class="t-tree-select t-tag-prefix"
+      <div
+        class="t-input__prefix"
+      />
+      <input
+        autocomplete=""
+        class="t-input__inner"
+        placeholder="see empty data in TreeSelect"
+        readonly="readonly"
+        type="text"
+        unselectable="on"
       />
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark"
-        style="display: none;"
-      >
-        <span>
-          +0
-        </span>
-      </span>
-      <div
-        class="t-input__wrap t-select__input"
-        style="display: none;"
-      >
-        <div
-          class="t-input t-size-m"
-        >
-          <input
-            autocomplete=""
-            class="t-input__inner"
-            placeholder="see empty data in TreeSelect"
-            type="text"
-            unselectable="off"
-          />
-        </div>
-      </div>
-      <svg
-        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-        fill="none"
-        height="16"
-        style="font-size: medium;"
-        viewBox="0 0 16 16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-          stroke="black"
-          stroke-opacity="0.9"
-          stroke-width="1.3"
-        />
-      </svg>
-      <svg
-        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
-        fill="none"
-        height="1em"
-        style="display: none;"
-        viewBox="0 0 16 16"
-        width="1em"
-      >
-        <path
-          d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
-          fill="currentColor"
-          fill-opacity="0.9"
-        />
-      </svg>
-      <div
-        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
-        style="display: none;"
+        class="t-input__suffix t-input__suffix-icon"
       >
         <svg
-          class="t-loading__gradient t-icon-loading"
-          height="1em"
-          size="small"
-          version="1.1"
-          viewBox="0 0 14 14"
-          width="1em"
+          class="t-fake-arrow"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <foreignobject
-            height="12"
-            width="12"
-            x="1"
-            y="1"
-          >
-            <div
-              class="t-loading__gradient-conic"
-            />
-          </foreignobject>
+          <path
+            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+            stroke="black"
+            stroke-opacity="0.9"
+            stroke-width="1.3"
+          />
         </svg>
-      </div>
+      </span>
     </div>
   </div>
   <br
@@ -32729,83 +33194,52 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
     data-v-96b659ea=""
   />
   <div
-    class="t-select__wrap"
+    class="t-input__wrap t-select-input--empty t-tree-select"
     data-v-96b659ea=""
     style="width: 400px;"
   >
     <div
-      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
+      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
-      <span
-        class="t-select__placeholder"
-      >
-        see loading text in TreeSelect
-      </span>
-      <span
-        class="t-tree-select t-tag-prefix"
+      <div
+        class="t-input__prefix"
+      />
+      <input
+        autocomplete=""
+        class="t-input__inner"
+        placeholder="see loading text in TreeSelect"
+        readonly="readonly"
+        type="text"
+        unselectable="on"
       />
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark"
-        style="display: none;"
-      >
-        <span>
-          +0
-        </span>
-      </span>
-      <div
-        class="t-input__wrap t-select__input"
-        style="display: none;"
+        class="t-input__suffix t-input__suffix-icon"
       >
         <div
-          class="t-input t-size-m"
+          class="t-loading--center t-size-s t-loading"
         >
-          <input
-            autocomplete=""
-            class="t-input__inner"
-            placeholder="see loading text in TreeSelect"
-            type="text"
-            unselectable="off"
-          />
-        </div>
-      </div>
-      <svg
-        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
-        fill="none"
-        height="1em"
-        style="display: none;"
-        viewBox="0 0 16 16"
-        width="1em"
-      >
-        <path
-          d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
-          fill="currentColor"
-          fill-opacity="0.9"
-        />
-      </svg>
-      <div
-        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
-      >
-        <svg
-          class="t-loading__gradient t-icon-loading"
-          height="1em"
-          size="small"
-          version="1.1"
-          viewBox="0 0 14 14"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <foreignobject
-            height="12"
-            width="12"
-            x="1"
-            y="1"
+          <svg
+            class="t-loading__gradient t-icon-loading"
+            height="1em"
+            size="small"
+            version="1.1"
+            viewBox="0 0 14 14"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <div
-              class="t-loading__gradient-conic"
-            />
-          </foreignobject>
-        </svg>
-      </div>
+            <foreignobject
+              height="12"
+              width="12"
+              x="1"
+              y="1"
+            >
+              <div
+                class="t-loading__gradient-conic"
+              />
+            </foreignobject>
+          </svg>
+        </div>
+      </span>
     </div>
   </div>
   <br
@@ -32815,100 +33249,42 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
     data-v-96b659ea=""
   />
   <div
-    class="t-select__wrap"
+    class="t-input__wrap t-select-input--empty t-tree-select"
     data-v-96b659ea=""
     style="width: 400px;"
   >
     <div
-      class="t-select t-select-polyfill t-size-m t-select__popup-reference"
+      class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
     >
-      <span
-        class="t-select__placeholder"
-        style="display: none;"
-      >
-        tree select
-      </span>
-      <span
-        class="t-tree-select t-tag-prefix"
+      <div
+        class="t-input__prefix"
+      />
+      <input
+        autocomplete=""
+        class="t-input__inner"
+        placeholder="tree select"
+        type="text"
+        unselectable="off"
       />
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark"
-        style="display: none;"
-      >
-        <span>
-          +0
-        </span>
-      </span>
-      <div
-        class="t-input__wrap t-select__input"
-      >
-        <div
-          class="t-input t-size-m"
-        >
-          <input
-            autocomplete=""
-            class="t-input__inner"
-            placeholder="tree select"
-            type="text"
-            unselectable="off"
-          />
-        </div>
-      </div>
-      <svg
-        class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-        fill="none"
-        height="16"
-        style="font-size: medium;"
-        viewBox="0 0 16 16"
-        width="16"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-          stroke="black"
-          stroke-opacity="0.9"
-          stroke-width="1.3"
-        />
-      </svg>
-      <svg
-        class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
-        fill="none"
-        height="1em"
-        style="display: none;"
-        viewBox="0 0 16 16"
-        width="1em"
-      >
-        <path
-          d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
-          fill="currentColor"
-          fill-opacity="0.9"
-        />
-      </svg>
-      <div
-        class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
-        style="display: none;"
+        class="t-input__suffix t-input__suffix-icon"
       >
         <svg
-          class="t-loading__gradient t-icon-loading"
-          height="1em"
-          size="small"
-          version="1.1"
-          viewBox="0 0 14 14"
-          width="1em"
+          class="t-fake-arrow"
+          fill="none"
+          height="16"
+          viewBox="0 0 16 16"
+          width="16"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <foreignobject
-            height="12"
-            width="12"
-            x="1"
-            y="1"
-          >
-            <div
-              class="t-loading__gradient-conic"
-            />
-          </foreignobject>
+          <path
+            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+            stroke="black"
+            stroke-opacity="0.9"
+            stroke-width="1.3"
+          />
         </svg>
-      </div>
+      </span>
     </div>
   </div>
   <br
@@ -34485,7 +34861,9 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-presets-al
             </div>
             <div
               class="t-range-input__inner-separator"
-            />
+            >
+               - 
+            </div>
             <div
               class="t-input__wrap t-range-input__inner-right"
             >
@@ -34557,7 +34935,9 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-presets-al
             </div>
             <div
               class="t-range-input__inner-separator"
-            />
+            >
+               - 
+            </div>
             <div
               class="t-input__wrap t-range-input__inner-right"
             >
@@ -34636,7 +35016,9 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-range.vue 
             </div>
             <div
               class="t-range-input__inner-separator"
-            />
+            >
+               - 
+            </div>
             <div
               class="t-input__wrap t-range-input__inner-right"
             >
@@ -34706,7 +35088,9 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-range.vue 
             </div>
             <div
               class="t-range-input__inner-separator"
-            />
+            >
+               - 
+            </div>
             <div
               class="t-input__wrap t-range-input__inner-right"
             >
@@ -35099,7 +35483,9 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/disable-date.vu
             </div>
             <div
               class="t-range-input__inner-separator"
-            />
+            >
+               - 
+            </div>
             <div
               class="t-input__wrap t-range-input__inner-right"
             >
@@ -35411,7 +35797,9 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/month.vue 1`] =
             </div>
             <div
               class="t-range-input__inner-separator"
-            />
+            >
+               - 
+            </div>
             <div
               class="t-input__wrap t-range-input__inner-right"
             >
@@ -38662,7 +39050,9 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/quarter.vue 1`]
             </div>
             <div
               class="t-range-input__inner-separator"
-            />
+            >
+               - 
+            </div>
             <div
               class="t-input__wrap t-range-input__inner-right"
             >
@@ -38783,7 +39173,9 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/week.vue 1`] = 
             </div>
             <div
               class="t-range-input__inner-separator"
-            />
+            >
+               - 
+            </div>
             <div
               class="t-input__wrap t-range-input__inner-right"
             >
@@ -38904,7 +39296,9 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/year.vue 1`] = 
             </div>
             <div
               class="t-range-input__inner-separator"
-            />
+            >
+               - 
+            </div>
             <div
               class="t-input__wrap t-range-input__inner-right"
             >
@@ -44008,37 +44402,32 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/size-draggable.vue 1
 exports[`csr snapshot test > csr test ./src/dropdown/_example/base.vue 1`] = `
 <div
   class="tdesign-demo-dropdown"
-  data-v-31515850=""
 >
   <button
     class="t-button t-size-m t-button--variant-text t-button--theme-default"
-    data-v-31515850=""
     type="button"
   >
     <span
       class="t-button__text"
     >
-      <span
-        class="tdesign-demo-dropdown__text"
-        data-v-31515850=""
+       更多 
+    </span>
+    <span
+      class="t-button__suffix"
+    >
+      <svg
+        class="t-icon t-icon-chevron-down"
+        fill="none"
+        height="1em"
+        viewBox="0 0 16 16"
+        width="1em"
       >
-         更多 
-        <svg
-          class="t-icon t-icon-chevron-down"
-          data-v-31515850=""
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-            data-v-31515850=""
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </span>
+        <path
+          d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+          fill="currentColor"
+          fill-opacity="0.9"
+        />
+      </svg>
     </span>
   </button>
 </div>
@@ -44090,11 +44479,9 @@ exports[`csr snapshot test > csr test ./src/dropdown/_example/custom.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/dropdown/_example/disabled.vue 1`] = `
 <div
   class="tdesign-demo-dropdown"
-  data-v-503db2fb=""
 >
   <button
     class="t-button t-size-m t-button--variant-text t-button--theme-default"
-    data-v-503db2fb=""
     type="button"
   >
     <span
@@ -44102,20 +44489,18 @@ exports[`csr snapshot test > csr test ./src/dropdown/_example/disabled.vue 1`] =
     >
       <span
         class="tdesign-demo-dropdown__text"
-        data-v-503db2fb=""
       >
          下拉菜单 
         <svg
           class="t-icon t-icon-chevron-down"
-          data-v-503db2fb=""
           fill="none"
           height="1em"
+          slot="suffix"
           viewBox="0 0 16 16"
           width="1em"
         >
           <path
             d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-            data-v-503db2fb=""
             fill="currentColor"
             fill-opacity="0.9"
           />
@@ -44184,37 +44569,32 @@ exports[`csr snapshot test > csr test ./src/dropdown/_example/long.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/dropdown/_example/multiple.vue 1`] = `
 <div
   class="tdesign-demo-dropdown"
-  data-v-cbef96e2=""
 >
   <button
     class="t-button t-size-m t-button--variant-text t-button--theme-default"
-    data-v-cbef96e2=""
     type="button"
   >
     <span
       class="t-button__text"
     >
-      <span
-        class="tdesign-demo-dropdown__text"
-        data-v-cbef96e2=""
+       下拉菜单 
+    </span>
+    <span
+      class="t-button__suffix"
+    >
+      <svg
+        class="t-icon t-icon-chevron-down"
+        fill="none"
+        height="1em"
+        viewBox="0 0 16 16"
+        width="1em"
       >
-         下拉菜单 
-        <svg
-          class="t-icon t-icon-chevron-down"
-          data-v-cbef96e2=""
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-            data-v-cbef96e2=""
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </span>
+        <path
+          d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+          fill="currentColor"
+          fill-opacity="0.9"
+        />
+      </svg>
     </span>
   </button>
 </div>
@@ -45820,98 +46200,42 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
             class="t-form__controls-content"
           >
             <div
-              class="t-select__wrap"
+              class="t-input__wrap t-select-input--empty t-tree-select"
             >
               <div
-                class="t-select t-select-polyfill t-size-m t-select__popup-reference"
+                class="t-input t-size-m t-is-disabled t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                <span
-                  class="t-select__placeholder"
-                >
-                  请选择
-                </span>
-                <span
-                  class="t-tree-select t-tag-prefix"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  disabled="disabled"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
                 />
                 <span
-                  class="t-tag t-tag--default t-size-m t-tag--dark"
-                  style="display: none;"
-                >
-                  <span>
-                    +0
-                  </span>
-                </span>
-                <div
-                  class="t-input__wrap t-select__input"
-                  style="display: none;"
-                >
-                  <div
-                    class="t-input t-size-m"
-                  >
-                    <input
-                      autocomplete=""
-                      class="t-input__inner"
-                      placeholder=""
-                      type="text"
-                      unselectable="off"
-                    />
-                  </div>
-                </div>
-                <svg
-                  class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-                  fill="none"
-                  height="16"
-                  style="font-size: medium;"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-                <svg
-                  class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
-                  fill="none"
-                  height="1em"
-                  style="display: none;"
-                  viewBox="0 0 16 16"
-                  width="1em"
-                >
-                  <path
-                    d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                </svg>
-                <div
-                  class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
-                  style="display: none;"
+                  class="t-input__suffix t-input__suffix-icon"
                 >
                   <svg
-                    class="t-loading__gradient t-icon-loading"
-                    height="1em"
-                    size="small"
-                    version="1.1"
-                    viewBox="0 0 14 14"
-                    width="1em"
+                    class="t-fake-arrow"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <foreignobject
-                      height="12"
-                      width="12"
-                      x="1"
-                      y="1"
-                    >
-                      <div
-                        class="t-loading__gradient-conic"
-                      />
-                    </foreignobject>
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
                   </svg>
-                </div>
+                </span>
               </div>
             </div>
           </div>
@@ -49875,99 +50199,41 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
         class="t-form__controls-content"
       >
         <div
-          class="t-select__wrap"
+          class="t-input__wrap t-select-input--empty t-tree-select"
           data-v-064ce350=""
         >
           <div
-            class="t-select t-select-polyfill t-size-m t-select__popup-reference"
+            class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
           >
-            <span
-              class="t-select__placeholder"
-              style="display: none;"
-            >
-              请选择你的兴趣爱好
-            </span>
-            <span
-              class="t-tree-select t-tag-prefix"
+            <div
+              class="t-input__prefix"
+            />
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请选择你的兴趣爱好"
+              type="text"
+              unselectable="off"
             />
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark"
-              style="display: none;"
-            >
-              <span>
-                +0
-              </span>
-            </span>
-            <div
-              class="t-input__wrap t-select__input"
-            >
-              <div
-                class="t-input t-size-m"
-              >
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择你的兴趣爱好"
-                  type="text"
-                  unselectable="off"
-                />
-              </div>
-            </div>
-            <svg
-              class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-              fill="none"
-              height="16"
-              style="font-size: medium;"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                stroke="black"
-                stroke-opacity="0.9"
-                stroke-width="1.3"
-              />
-            </svg>
-            <svg
-              class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
-              fill="none"
-              height="1em"
-              style="display: none;"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-            <div
-              class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
-              style="display: none;"
+              class="t-input__suffix t-input__suffix-icon"
             >
               <svg
-                class="t-loading__gradient t-icon-loading"
-                height="1em"
-                size="small"
-                version="1.1"
-                viewBox="0 0 14 14"
-                width="1em"
+                class="t-fake-arrow"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <foreignobject
-                  height="12"
-                  width="12"
-                  x="1"
-                  y="1"
-                >
-                  <div
-                    class="t-loading__gradient-conic"
-                  />
-                </foreignobject>
+                <path
+                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                  stroke="black"
+                  stroke-opacity="0.9"
+                  stroke-width="1.3"
+                />
               </svg>
-            </div>
+            </span>
           </div>
         </div>
       </div>
@@ -81965,7 +82231,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/label-suffix.v
 exports[`csr snapshot test > csr test ./src/select-input/_example/multiple.vue 1`] = `
 <div
   class="t-space t-space-vertical"
-  style="gap: 16px;"
+  style="gap: 16px; width: 100%;"
 >
   <div
     class="t-space-item"
@@ -84095,10 +84361,6 @@ exports[`csr snapshot test > csr test ./src/slider/_example/marks.vue 1`] = `
                 class="t-slider__stop t-slider__mark-stop"
                 style="left: 80%;"
               />
-              <div
-                class="t-slider__stop t-slider__mark-stop"
-                style="left: 100%;"
-              />
             </div>
             <div
               class="t-slider__mark"
@@ -84215,10 +84477,6 @@ exports[`csr snapshot test > csr test ./src/slider/_example/marks.vue 1`] = `
                 class="t-slider__stop t-slider__mark-stop"
                 style="left: 80%;"
               />
-              <div
-                class="t-slider__stop t-slider__mark-stop"
-                style="left: 100%;"
-              />
             </div>
             <div
               class="t-slider__mark"
@@ -84312,12 +84570,7 @@ exports[`csr snapshot test > csr test ./src/slider/_example/min-and-max.vue 1`] 
           <div>
             <div
               class="t-slider__stops"
-            >
-              <div
-                class="t-slider__stop t-slider__mark-stop"
-                style="left: 100%;"
-              />
-            </div>
+            />
             <div
               class="t-slider__mark"
             >
@@ -84384,12 +84637,7 @@ exports[`csr snapshot test > csr test ./src/slider/_example/min-and-max.vue 1`] 
           <div>
             <div
               class="t-slider__stops"
-            >
-              <div
-                class="t-slider__stop t-slider__mark-stop"
-                style="left: 100%;"
-              />
-            </div>
+            />
             <div
               class="t-slider__mark"
             >
@@ -84658,10 +84906,6 @@ exports[`csr snapshot test > csr test ./src/slider/_example/vertical-marks.vue 1
                 class="t-slider__stop t-slider__mark-stop"
                 style="top: calc(20% - 1px);"
               />
-              <div
-                class="t-slider__stop t-slider__mark-stop"
-                style="top: calc(0% - 1px);"
-              />
             </div>
             <div
               class="t-slider__mark"
@@ -84779,10 +85023,6 @@ exports[`csr snapshot test > csr test ./src/slider/_example/vertical-marks.vue 1
               <div
                 class="t-slider__stop t-slider__mark-stop"
                 style="top: calc(20% - 1px);"
-              />
-              <div
-                class="t-slider__stop t-slider__mark-stop"
-                style="top: calc(0% - 1px);"
               />
             </div>
             <div
@@ -136839,99 +137079,41 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/tree-select/_example/base.vue 1`] = `
 <div
-  class="t-select__wrap"
+  class="t-input__wrap t-select-input--empty t-tree-select"
   style="width: 300px;"
 >
   <div
-    class="t-select t-select-polyfill t-size-m t-select__popup-reference"
+    class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
   >
-    <span
-      class="t-select__placeholder"
-      style="display: none;"
-    >
-      请选择
-    </span>
-    <span
-      class="t-tree-select t-tag-prefix"
+    <div
+      class="t-input__prefix"
+    />
+    <input
+      autocomplete=""
+      class="t-input__inner"
+      placeholder="请选择"
+      type="text"
+      unselectable="off"
     />
     <span
-      class="t-tag t-tag--default t-size-m t-tag--dark"
-      style="display: none;"
-    >
-      <span>
-        +0
-      </span>
-    </span>
-    <div
-      class="t-input__wrap t-select__input"
-    >
-      <div
-        class="t-input t-size-m"
-      >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="请选择"
-          type="text"
-          unselectable="off"
-        />
-      </div>
-    </div>
-    <svg
-      class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-      fill="none"
-      height="16"
-      style="font-size: medium;"
-      viewBox="0 0 16 16"
-      width="16"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-        stroke="black"
-        stroke-opacity="0.9"
-        stroke-width="1.3"
-      />
-    </svg>
-    <svg
-      class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
-      fill="none"
-      height="1em"
-      style="display: none;"
-      viewBox="0 0 16 16"
-      width="1em"
-    >
-      <path
-        d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
-        fill="currentColor"
-        fill-opacity="0.9"
-      />
-    </svg>
-    <div
-      class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
-      style="display: none;"
+      class="t-input__suffix t-input__suffix-icon"
     >
       <svg
-        class="t-loading__gradient t-icon-loading"
-        height="1em"
-        size="small"
-        version="1.1"
-        viewBox="0 0 14 14"
-        width="1em"
+        class="t-fake-arrow"
+        fill="none"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <foreignobject
-          height="12"
-          width="12"
-          x="1"
-          y="1"
-        >
-          <div
-            class="t-loading__gradient-conic"
-          />
-        </foreignobject>
+        <path
+          d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+          stroke="black"
+          stroke-opacity="0.9"
+          stroke-width="1.3"
+        />
       </svg>
-    </div>
+    </span>
   </div>
 </div>
 `;
@@ -136945,149 +137127,59 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/collapsed.vue 1
     class="t-space-item"
   >
     <div
-      class="t-select__wrap"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-tree-select"
       style="width: 300px;"
     >
       <div
-        class="t-select t-select-polyfill t-size-m t-select-selected t-select__popup-reference"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
-        <span
-          class="t-select__placeholder"
-          style="display: none;"
-        >
-          请选择
-        </span>
-        <span
-          class="t-tree-select t-tag-prefix"
-        >
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
-            title="guangzhou"
-          >
-            <span
-              class="t-tag--text"
-              style="max-width: 300px;"
-            >
-              guangzhou
-            </span>
-            <svg
-              class="t-icon t-icon-close t-tag__icon-close"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-          </span>
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
-            style="display: none;"
-            title="shenzhen"
-          >
-            <span
-              class="t-tag--text"
-              style="max-width: 300px;"
-            >
-              shenzhen
-            </span>
-            <svg
-              class="t-icon t-icon-close t-tag__icon-close"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-          </span>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark"
-        >
-          <span>
-            +1
-          </span>
-        </span>
         <div
-          class="t-input__wrap t-select__input"
-          style="display: none;"
+          class="t-input__prefix"
         >
-          <div
-            class="t-input t-size-m"
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
           >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder=""
-              type="text"
-              unselectable="off"
+            <span
+              class="t-tag--text"
+              style="max-width: 300px;"
             />
-          </div>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
         </div>
-        <svg
-          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-          fill="none"
-          height="16"
-          style="font-size: medium;"
-          viewBox="0 0 16 16"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-            stroke="black"
-            stroke-opacity="0.9"
-            stroke-width="1.3"
-          />
-        </svg>
-        <svg
-          class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
-          fill="none"
-          height="1em"
-          style="display: none;"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-        <div
-          class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
-          style="display: none;"
+        <span
+          class="t-input__input-pre"
+        />
+        <span
+          class="t-input__suffix t-input__suffix-icon"
         >
           <svg
-            class="t-loading__gradient t-icon-loading"
-            height="1em"
-            size="small"
-            version="1.1"
-            viewBox="0 0 14 14"
-            width="1em"
+            class="t-fake-arrow"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <foreignobject
-              height="12"
-              width="12"
-              x="1"
-              y="1"
-            >
-              <div
-                class="t-loading__gradient-conic"
-              />
-            </foreignobject>
+            <path
+              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+              stroke="black"
+              stroke-opacity="0.9"
+              stroke-width="1.3"
+            />
           </svg>
-        </div>
+        </span>
       </div>
     </div>
   </div>
@@ -137095,149 +137187,59 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/collapsed.vue 1
     class="t-space-item"
   >
     <div
-      class="t-select__wrap"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-tree-select"
       style="width: 300px;"
     >
       <div
-        class="t-select t-select-polyfill t-size-m t-select-selected t-select__popup-reference"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
-        <span
-          class="t-select__placeholder"
-          style="display: none;"
-        >
-          请选择
-        </span>
-        <span
-          class="t-tree-select t-tag-prefix"
-        >
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
-            title="guangzhou"
-          >
-            <span
-              class="t-tag--text"
-              style="max-width: 300px;"
-            >
-              guangzhou
-            </span>
-            <svg
-              class="t-icon t-icon-close t-tag__icon-close"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-          </span>
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
-            style="display: none;"
-            title="shenzhen"
-          >
-            <span
-              class="t-tag--text"
-              style="max-width: 300px;"
-            >
-              shenzhen
-            </span>
-            <svg
-              class="t-icon t-icon-close t-tag__icon-close"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-          </span>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark"
-        >
-          <span>
-            更多...
-          </span>
-        </span>
         <div
-          class="t-input__wrap t-select__input"
-          style="display: none;"
+          class="t-input__prefix"
         >
-          <div
-            class="t-input t-size-m"
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
           >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder=""
-              type="text"
-              unselectable="off"
+            <span
+              class="t-tag--text"
+              style="max-width: 300px;"
             />
-          </div>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
         </div>
-        <svg
-          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-          fill="none"
-          height="16"
-          style="font-size: medium;"
-          viewBox="0 0 16 16"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-            stroke="black"
-            stroke-opacity="0.9"
-            stroke-width="1.3"
-          />
-        </svg>
-        <svg
-          class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
-          fill="none"
-          height="1em"
-          style="display: none;"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-        <div
-          class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
-          style="display: none;"
+        <span
+          class="t-input__input-pre"
+        />
+        <span
+          class="t-input__suffix t-input__suffix-icon"
         >
           <svg
-            class="t-loading__gradient t-icon-loading"
-            height="1em"
-            size="small"
-            version="1.1"
-            viewBox="0 0 14 14"
-            width="1em"
+            class="t-fake-arrow"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <foreignobject
-              height="12"
-              width="12"
-              x="1"
-              y="1"
-            >
-              <div
-                class="t-loading__gradient-conic"
-              />
-            </foreignobject>
+            <path
+              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+              stroke="black"
+              stroke-opacity="0.9"
+              stroke-width="1.3"
+            />
           </svg>
-        </div>
+        </span>
       </div>
     </div>
   </div>
@@ -137246,106 +137248,42 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/collapsed.vue 1
 
 exports[`csr snapshot test > csr test ./src/tree-select/_example/dvalue.vue 1`] = `
 <div
-  class="t-select__wrap"
+  class="t-input__wrap t-select-input--empty t-tree-select"
   style="width: 300px;"
 >
   <div
-    class="t-select t-select-polyfill t-size-m t-select-selected t-select__popup-reference"
+    class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
   >
-    <span
-      class="t-select__placeholder"
-      style="display: none;"
-    >
-      请选择
-    </span>
-    <span
-      class="t-tree-select t-tag-prefix"
+    <div
+      class="t-input__prefix"
+    />
+    <input
+      autocomplete=""
+      class="t-input__inner"
+      placeholder="请选择"
+      readonly="readonly"
+      type="text"
+      unselectable="on"
     />
     <span
-      class="t-tag t-tag--default t-size-m t-tag--dark"
-      style="display: none;"
-    >
-      <span>
-        +0
-      </span>
-    </span>
-    <span
-      class="t-select__single t-tree-select t-single-suffix"
-      title="shenzhen,guangzhou"
-    >
-      shenzhen,guangzhou
-    </span>
-    <div
-      class="t-input__wrap t-select__input"
-      style="display: none;"
-    >
-      <div
-        class="t-input t-size-m"
-      >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="shenzhen,guangzhou"
-          type="text"
-          unselectable="off"
-        />
-      </div>
-    </div>
-    <svg
-      class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-      fill="none"
-      height="16"
-      style="font-size: medium;"
-      viewBox="0 0 16 16"
-      width="16"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-        stroke="black"
-        stroke-opacity="0.9"
-        stroke-width="1.3"
-      />
-    </svg>
-    <svg
-      class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
-      fill="none"
-      height="1em"
-      style="display: none;"
-      viewBox="0 0 16 16"
-      width="1em"
-    >
-      <path
-        d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
-        fill="currentColor"
-        fill-opacity="0.9"
-      />
-    </svg>
-    <div
-      class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
-      style="display: none;"
+      class="t-input__suffix t-input__suffix-icon"
     >
       <svg
-        class="t-loading__gradient t-icon-loading"
-        height="1em"
-        size="small"
-        version="1.1"
-        viewBox="0 0 14 14"
-        width="1em"
+        class="t-fake-arrow"
+        fill="none"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <foreignobject
-          height="12"
-          width="12"
-          x="1"
-          y="1"
-        >
-          <div
-            class="t-loading__gradient-conic"
-          />
-        </foreignobject>
+        <path
+          d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+          stroke="black"
+          stroke-opacity="0.9"
+          stroke-width="1.3"
+        />
       </svg>
-    </div>
+    </span>
   </div>
 </div>
 `;
@@ -137407,106 +137345,41 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/filterable.vue 
     class="t-space-item"
   >
     <div
-      class="t-select__wrap"
+      class="t-input__wrap t-select-input--empty t-tree-select"
       style="width: 300px;"
     >
       <div
-        class="t-select t-select-polyfill t-size-m t-select-selected t-select__popup-reference"
+        class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
       >
-        <span
-          class="t-select__placeholder"
-          style="display: none;"
-        >
-          请选择
-        </span>
-        <span
-          class="t-tree-select t-tag-prefix"
+        <div
+          class="t-input__prefix"
+        />
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder="请选择"
+          type="text"
+          unselectable="off"
         />
         <span
-          class="t-tag t-tag--default t-size-m t-tag--dark"
-          style="display: none;"
-        >
-          <span>
-            +0
-          </span>
-        </span>
-        <span
-          class="t-select__single t-tree-select t-single-suffix"
-          title="shenzhen"
-        >
-          shenzhen
-        </span>
-        <div
-          class="t-input__wrap t-select__input"
-          style="display: none;"
-        >
-          <div
-            class="t-input t-size-m"
-          >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder="shenzhen"
-              type="text"
-              unselectable="off"
-            />
-          </div>
-        </div>
-        <svg
-          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-          fill="none"
-          height="16"
-          style="font-size: medium;"
-          viewBox="0 0 16 16"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-            stroke="black"
-            stroke-opacity="0.9"
-            stroke-width="1.3"
-          />
-        </svg>
-        <svg
-          class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
-          fill="none"
-          height="1em"
-          style="display: none;"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-        <div
-          class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
-          style="display: none;"
+          class="t-input__suffix t-input__suffix-icon"
         >
           <svg
-            class="t-loading__gradient t-icon-loading"
-            height="1em"
-            size="small"
-            version="1.1"
-            viewBox="0 0 14 14"
-            width="1em"
+            class="t-fake-arrow"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <foreignobject
-              height="12"
-              width="12"
-              x="1"
-              y="1"
-            >
-              <div
-                class="t-loading__gradient-conic"
-              />
-            </foreignobject>
+            <path
+              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+              stroke="black"
+              stroke-opacity="0.9"
+              stroke-width="1.3"
+            />
           </svg>
-        </div>
+        </span>
       </div>
     </div>
   </div>
@@ -137515,262 +137388,115 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/filterable.vue 
 
 exports[`csr snapshot test > csr test ./src/tree-select/_example/lazy.vue 1`] = `
 <div
-  class="t-select__wrap"
+  class="t-input__wrap t-select-input--empty t-tree-select"
   style="width: 300px;"
 >
   <div
-    class="t-select t-select-polyfill t-size-m t-select__popup-reference"
+    class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
   >
-    <span
-      class="t-select__placeholder"
-    >
-      请选择
-    </span>
-    <span
-      class="t-tree-select t-tag-prefix"
+    <div
+      class="t-input__prefix"
+    />
+    <input
+      autocomplete=""
+      class="t-input__inner"
+      placeholder="请选择"
+      readonly="readonly"
+      type="text"
+      unselectable="on"
     />
     <span
-      class="t-tag t-tag--default t-size-m t-tag--dark"
-      style="display: none;"
-    >
-      <span>
-        +0
-      </span>
-    </span>
-    <div
-      class="t-input__wrap t-select__input"
-      style="display: none;"
-    >
-      <div
-        class="t-input t-size-m"
-      >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="请选择"
-          type="text"
-          unselectable="off"
-        />
-      </div>
-    </div>
-    <svg
-      class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-      fill="none"
-      height="16"
-      style="font-size: medium;"
-      viewBox="0 0 16 16"
-      width="16"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-        stroke="black"
-        stroke-opacity="0.9"
-        stroke-width="1.3"
-      />
-    </svg>
-    <svg
-      class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
-      fill="none"
-      height="1em"
-      style="display: none;"
-      viewBox="0 0 16 16"
-      width="1em"
-    >
-      <path
-        d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
-        fill="currentColor"
-        fill-opacity="0.9"
-      />
-    </svg>
-    <div
-      class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
-      style="display: none;"
+      class="t-input__suffix t-input__suffix-icon"
     >
       <svg
-        class="t-loading__gradient t-icon-loading"
-        height="1em"
-        size="small"
-        version="1.1"
-        viewBox="0 0 14 14"
-        width="1em"
+        class="t-fake-arrow"
+        fill="none"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <foreignobject
-          height="12"
-          width="12"
-          x="1"
-          y="1"
-        >
-          <div
-            class="t-loading__gradient-conic"
-          />
-        </foreignobject>
+        <path
+          d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+          stroke="black"
+          stroke-opacity="0.9"
+          stroke-width="1.3"
+        />
       </svg>
-    </div>
+    </span>
   </div>
 </div>
 `;
 
 exports[`csr snapshot test > csr test ./src/tree-select/_example/multiple.vue 1`] = `
 <div
-  class="t-select__wrap"
+  class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-tree-select"
   style="width: 300px;"
 >
   <div
-    class="t-select t-select-polyfill t-size-m t-select-selected t-select__popup-reference"
+    class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
   >
-    <span
-      class="t-select__placeholder"
-      style="display: none;"
-    >
-      请选择
-    </span>
-    <span
-      class="t-tree-select t-tag-prefix"
-    >
-      <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
-        title="guangzhou"
-      >
-        <span
-          class="t-tag--text"
-          style="max-width: 300px;"
-        >
-          guangzhou
-        </span>
-        <svg
-          class="t-icon t-icon-close t-tag__icon-close"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </span>
-      <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
-        title="shenzhen"
-      >
-        <span
-          class="t-tag--text"
-          style="max-width: 300px;"
-        >
-          shenzhen
-        </span>
-        <svg
-          class="t-icon t-icon-close t-tag__icon-close"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </span>
-    </span>
-    <span
-      class="t-tag t-tag--default t-size-m t-tag--dark"
-      style="display: none;"
-    >
-      <span>
-        +2
-      </span>
-    </span>
     <div
-      class="t-input__wrap t-select__input"
-      style="display: none;"
+      class="t-input__prefix"
     >
-      <div
-        class="t-input t-size-m"
+      <span
+        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
       >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder=""
-          type="text"
-          unselectable="off"
+        <span
+          class="t-tag--text"
+          style="max-width: 300px;"
         />
-      </div>
+        <svg
+          class="t-icon t-icon-close t-tag__icon-close"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+      </span>
     </div>
-    <svg
-      class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-      fill="none"
-      height="16"
-      style="font-size: medium;"
-      viewBox="0 0 16 16"
-      width="16"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-        stroke="black"
-        stroke-opacity="0.9"
-        stroke-width="1.3"
-      />
-    </svg>
-    <svg
-      class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
-      fill="none"
-      height="1em"
-      style="display: none;"
-      viewBox="0 0 16 16"
-      width="1em"
-    >
-      <path
-        d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
-        fill="currentColor"
-        fill-opacity="0.9"
-      />
-    </svg>
-    <div
-      class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
-      style="display: none;"
+    <span
+      class="t-input__input-pre"
+    />
+    <span
+      class="t-input__suffix t-input__suffix-icon"
     >
       <svg
-        class="t-loading__gradient t-icon-loading"
-        height="1em"
-        size="small"
-        version="1.1"
-        viewBox="0 0 14 14"
-        width="1em"
+        class="t-fake-arrow"
+        fill="none"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <foreignobject
-          height="12"
-          width="12"
-          x="1"
-          y="1"
-        >
-          <div
-            class="t-loading__gradient-conic"
-          />
-        </foreignobject>
+        <path
+          d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+          stroke="black"
+          stroke-opacity="0.9"
+          stroke-width="1.3"
+        />
       </svg>
-    </div>
+    </span>
   </div>
 </div>
 `;
 
 exports[`csr snapshot test > csr test ./src/tree-select/_example/prefix.vue 1`] = `
 <div
-  class="t-select__wrap"
+  class="t-input__wrap t-select-input--empty t-tree-select"
   style="width: 300px;"
 >
   <div
-    class="t-select t-select-polyfill t-size-m t-has-prefix t-select__popup-reference"
+    class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
   >
-    <span
-      class="t-select__left-icon"
+    <div
+      class="t-input__prefix"
     >
       <svg
         class="t-icon t-icon-user"
@@ -137779,200 +137505,76 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/prefix.vue 1`] 
           href="#t-icon-user"
         />
       </svg>
-    </span>
-    <span
-      class="t-select__placeholder"
-    >
-      请输入
-    </span>
-    <span
-      class="t-tree-select t-tag-prefix"
+    </div>
+    <input
+      autocomplete=""
+      class="t-input__inner"
+      placeholder="请输入"
+      readonly="readonly"
+      type="text"
+      unselectable="on"
     />
     <span
-      class="t-tag t-tag--default t-size-m t-tag--dark"
-      style="display: none;"
-    >
-      <span>
-        +0
-      </span>
-    </span>
-    <div
-      class="t-input__wrap t-select__input"
-      style="display: none;"
-    >
-      <div
-        class="t-input t-size-m"
-      >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="请输入"
-          type="text"
-          unselectable="off"
-        />
-      </div>
-    </div>
-    <svg
-      class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-      fill="none"
-      height="16"
-      style="font-size: medium;"
-      viewBox="0 0 16 16"
-      width="16"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-        stroke="black"
-        stroke-opacity="0.9"
-        stroke-width="1.3"
-      />
-    </svg>
-    <svg
-      class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
-      fill="none"
-      height="1em"
-      style="display: none;"
-      viewBox="0 0 16 16"
-      width="1em"
-    >
-      <path
-        d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
-        fill="currentColor"
-        fill-opacity="0.9"
-      />
-    </svg>
-    <div
-      class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
-      style="display: none;"
+      class="t-input__suffix t-input__suffix-icon"
     >
       <svg
-        class="t-loading__gradient t-icon-loading"
-        height="1em"
-        size="small"
-        version="1.1"
-        viewBox="0 0 14 14"
-        width="1em"
+        class="t-fake-arrow"
+        fill="none"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <foreignobject
-          height="12"
-          width="12"
-          x="1"
-          y="1"
-        >
-          <div
-            class="t-loading__gradient-conic"
-          />
-        </foreignobject>
+        <path
+          d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+          stroke="black"
+          stroke-opacity="0.9"
+          stroke-width="1.3"
+        />
       </svg>
-    </div>
+    </span>
   </div>
 </div>
 `;
 
 exports[`csr snapshot test > csr test ./src/tree-select/_example/props.vue 1`] = `
 <div
-  class="t-select__wrap"
+  class="t-input__wrap t-select-input--empty t-tree-select"
   style="width: 300px;"
 >
   <div
-    class="t-select t-select-polyfill t-size-m t-select-selected t-select__popup-reference"
+    class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
   >
-    <span
-      class="t-select__placeholder"
-      style="display: none;"
-    >
-      请选择
-    </span>
-    <span
-      class="t-tree-select t-tag-prefix"
+    <div
+      class="t-input__prefix"
+    />
+    <input
+      autocomplete=""
+      class="t-input__inner"
+      placeholder="请选择"
+      readonly="readonly"
+      type="text"
+      unselectable="on"
     />
     <span
-      class="t-tag t-tag--default t-size-m t-tag--dark"
-      style="display: none;"
-    >
-      <span>
-        +0
-      </span>
-    </span>
-    <span
-      class="t-select__single t-tree-select t-single-suffix"
-      title="shenzhen"
-    >
-      shenzhen
-    </span>
-    <div
-      class="t-input__wrap t-select__input"
-      style="display: none;"
-    >
-      <div
-        class="t-input t-size-m"
-      >
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="shenzhen"
-          type="text"
-          unselectable="off"
-        />
-      </div>
-    </div>
-    <svg
-      class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-      fill="none"
-      height="16"
-      style="font-size: medium;"
-      viewBox="0 0 16 16"
-      width="16"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-        stroke="black"
-        stroke-opacity="0.9"
-        stroke-width="1.3"
-      />
-    </svg>
-    <svg
-      class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
-      fill="none"
-      height="1em"
-      style="display: none;"
-      viewBox="0 0 16 16"
-      width="1em"
-    >
-      <path
-        d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
-        fill="currentColor"
-        fill-opacity="0.9"
-      />
-    </svg>
-    <div
-      class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
-      style="display: none;"
+      class="t-input__suffix t-input__suffix-icon"
     >
       <svg
-        class="t-loading__gradient t-icon-loading"
-        height="1em"
-        size="small"
-        version="1.1"
-        viewBox="0 0 14 14"
-        width="1em"
+        class="t-fake-arrow"
+        fill="none"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <foreignobject
-          height="12"
-          width="12"
-          x="1"
-          y="1"
-        >
-          <div
-            class="t-loading__gradient-conic"
-          />
-        </foreignobject>
+        <path
+          d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+          stroke="black"
+          stroke-opacity="0.9"
+          stroke-width="1.3"
+        />
       </svg>
-    </div>
+    </span>
   </div>
 </div>
 `;
@@ -137986,101 +137588,44 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuedisplay.vu
     class="t-space-item"
   >
     <div
-      class="t-select__wrap"
+      class="t-input__wrap t-select-input--empty t-tree-select"
       style="width: 400px;"
     >
       <div
-        class="t-select t-select-polyfill t-size-m t-select-selected t-select__popup-reference"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
-        <span
-          class="t-select__placeholder"
-          style="display: none;"
+        <div
+          class="t-input__prefix"
         >
-          请选择
-        </span>
-        <span
-          class="t-tree-select t-tag-prefix"
+           ()
+        </div>
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder=""
+          readonly="readonly"
+          type="text"
+          unselectable="on"
         />
         <span
-          class="t-tag t-tag--default t-size-m t-tag--dark"
-          style="display: none;"
-        >
-          <span>
-            +0
-          </span>
-        </span>
-         () 
-        <div
-          class="t-input__wrap t-select__input"
-          style="display: none;"
-        >
-          <div
-            class="t-input t-size-m"
-          >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder="shenzhen"
-              type="text"
-              unselectable="off"
-            />
-          </div>
-        </div>
-        <svg
-          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-          fill="none"
-          height="16"
-          style="font-size: medium;"
-          viewBox="0 0 16 16"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-            stroke="black"
-            stroke-opacity="0.9"
-            stroke-width="1.3"
-          />
-        </svg>
-        <svg
-          class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
-          fill="none"
-          height="1em"
-          style="display: none;"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-        <div
-          class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
-          style="display: none;"
+          class="t-input__suffix t-input__suffix-icon"
         >
           <svg
-            class="t-loading__gradient t-icon-loading"
-            height="1em"
-            size="small"
-            version="1.1"
-            viewBox="0 0 14 14"
-            width="1em"
+            class="t-fake-arrow"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <foreignobject
-              height="12"
-              width="12"
-              x="1"
-              y="1"
-            >
-              <div
-                class="t-loading__gradient-conic"
-              />
-            </foreignobject>
+            <path
+              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+              stroke="black"
+              stroke-opacity="0.9"
+              stroke-width="1.3"
+            />
           </svg>
-        </div>
+        </span>
       </div>
     </div>
   </div>
@@ -138088,99 +137633,66 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuedisplay.vu
     class="t-space-item"
   >
     <div
-      class="t-select__wrap"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-tree-select"
       style="width: 400px;"
     >
       <div
-        class="t-select t-select-polyfill t-size-m t-select-selected t-select__popup-reference"
+        class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
       >
-        <span
-          class="t-select__placeholder"
-          style="display: none;"
+        <div
+          class="t-input__prefix"
         >
-          请选择
-        </span>
-        <span
-          class="t-tree-select t-tag-prefix"
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+          >
+            <span
+              class="t-tag--text"
+              style="max-width: 300px;"
+            />
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
+        </div>
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder=""
+          type="text"
+          unselectable="off"
         />
         <span
-          class="t-tag t-tag--default t-size-m t-tag--dark"
-          style="display: none;"
-        >
-          <span>
-            +2
-          </span>
-        </span>
-        <div
-          class="t-input__wrap t-select__input"
-        >
-          <div
-            class="t-input t-size-m"
-          >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder=""
-              type="text"
-              unselectable="off"
-            />
-          </div>
-        </div>
-        <svg
-          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-          fill="none"
-          height="16"
-          style="font-size: medium;"
-          viewBox="0 0 16 16"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-            stroke="black"
-            stroke-opacity="0.9"
-            stroke-width="1.3"
-          />
-        </svg>
-        <svg
-          class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
-          fill="none"
-          height="1em"
-          style="display: none;"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-        <div
-          class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
-          style="display: none;"
+          class="t-input__input-pre"
+        />
+        <span
+          class="t-input__suffix t-input__suffix-icon"
         >
           <svg
-            class="t-loading__gradient t-icon-loading"
-            height="1em"
-            size="small"
-            version="1.1"
-            viewBox="0 0 14 14"
-            width="1em"
+            class="t-fake-arrow"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <foreignobject
-              height="12"
-              width="12"
-              x="1"
-              y="1"
-            >
-              <div
-                class="t-loading__gradient-conic"
-              />
-            </foreignobject>
+            <path
+              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+              stroke="black"
+              stroke-opacity="0.9"
+              stroke-width="1.3"
+            />
           </svg>
-        </div>
+        </span>
       </div>
     </div>
   </div>
@@ -138196,106 +137708,42 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuetype.vue 1
     class="t-space-item"
   >
     <div
-      class="t-select__wrap"
+      class="t-input__wrap t-select-input--empty t-tree-select"
       style="width: 300px;"
     >
       <div
-        class="t-select t-select-polyfill t-size-m t-select-selected t-select__popup-reference"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
-        <span
-          class="t-select__placeholder"
-          style="display: none;"
-        >
-          请选择
-        </span>
-        <span
-          class="t-tree-select t-tag-prefix"
+        <div
+          class="t-input__prefix"
+        />
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder="请选择"
+          readonly="readonly"
+          type="text"
+          unselectable="on"
         />
         <span
-          class="t-tag t-tag--default t-size-m t-tag--dark"
-          style="display: none;"
-        >
-          <span>
-            +0
-          </span>
-        </span>
-        <span
-          class="t-select__single t-tree-select t-single-suffix"
-          title="[object Object]"
-        >
-          [object Object]
-        </span>
-        <div
-          class="t-input__wrap t-select__input"
-          style="display: none;"
-        >
-          <div
-            class="t-input t-size-m"
-          >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder="[object Object]"
-              type="text"
-              unselectable="off"
-            />
-          </div>
-        </div>
-        <svg
-          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-          fill="none"
-          height="16"
-          style="font-size: medium;"
-          viewBox="0 0 16 16"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-            stroke="black"
-            stroke-opacity="0.9"
-            stroke-width="1.3"
-          />
-        </svg>
-        <svg
-          class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
-          fill="none"
-          height="1em"
-          style="display: none;"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-        <div
-          class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
-          style="display: none;"
+          class="t-input__suffix t-input__suffix-icon"
         >
           <svg
-            class="t-loading__gradient t-icon-loading"
-            height="1em"
-            size="small"
-            version="1.1"
-            viewBox="0 0 14 14"
-            width="1em"
+            class="t-fake-arrow"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <foreignobject
-              height="12"
-              width="12"
-              x="1"
-              y="1"
-            >
-              <div
-                class="t-loading__gradient-conic"
-              />
-            </foreignobject>
+            <path
+              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+              stroke="black"
+              stroke-opacity="0.9"
+              stroke-width="1.3"
+            />
           </svg>
-        </div>
+        </span>
       </div>
     </div>
   </div>
@@ -138303,149 +137751,59 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuetype.vue 1
     class="t-space-item"
   >
     <div
-      class="t-select__wrap"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-tree-select"
       style="width: 300px;"
     >
       <div
-        class="t-select t-select-polyfill t-size-m t-select-selected t-select__popup-reference"
+        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
-        <span
-          class="t-select__placeholder"
-          style="display: none;"
-        >
-          请选择
-        </span>
-        <span
-          class="t-tree-select t-tag-prefix"
-        >
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
-            title="[object Object]"
-          >
-            <span
-              class="t-tag--text"
-              style="max-width: 300px;"
-            >
-              undefined
-            </span>
-            <svg
-              class="t-icon t-icon-close t-tag__icon-close"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-          </span>
-          <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
-            title="[object Object]"
-          >
-            <span
-              class="t-tag--text"
-              style="max-width: 300px;"
-            >
-              undefined
-            </span>
-            <svg
-              class="t-icon t-icon-close t-tag__icon-close"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-          </span>
-        </span>
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark"
-          style="display: none;"
-        >
-          <span>
-            +2
-          </span>
-        </span>
         <div
-          class="t-input__wrap t-select__input"
-          style="display: none;"
+          class="t-input__prefix"
         >
-          <div
-            class="t-input t-size-m"
+          <span
+            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
           >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder=""
-              type="text"
-              unselectable="off"
+            <span
+              class="t-tag--text"
+              style="max-width: 300px;"
             />
-          </div>
+            <svg
+              class="t-icon t-icon-close t-tag__icon-close"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </span>
         </div>
-        <svg
-          class="t-fake-arrow t-select__right-icon t-select__right-icon-polyfill"
-          fill="none"
-          height="16"
-          style="font-size: medium;"
-          viewBox="0 0 16 16"
-          width="16"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-            stroke="black"
-            stroke-opacity="0.9"
-            stroke-width="1.3"
-          />
-        </svg>
-        <svg
-          class="t-icon t-icon-close-circle-filled t-size-m t-select__right-icon t-select__right-icon-polyfill t-select__right-icon-clear"
-          fill="none"
-          height="1em"
-          style="display: none;"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-        <div
-          class="t-loading--center t-size-s t-loading t-select__right-icon t-select__right-icon-polyfill t-select__active-icon"
-          style="display: none;"
+        <span
+          class="t-input__input-pre"
+        />
+        <span
+          class="t-input__suffix t-input__suffix-icon"
         >
           <svg
-            class="t-loading__gradient t-icon-loading"
-            height="1em"
-            size="small"
-            version="1.1"
-            viewBox="0 0 14 14"
-            width="1em"
+            class="t-fake-arrow"
+            fill="none"
+            height="16"
+            viewBox="0 0 16 16"
+            width="16"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <foreignobject
-              height="12"
-              width="12"
-              x="1"
-              y="1"
-            >
-              <div
-                class="t-loading__gradient-conic"
-              />
-            </foreignobject>
+            <path
+              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+              stroke="black"
+              stroke-opacity="0.9"
+              stroke-width="1.3"
+            />
           </svg>
-        </div>
+        </span>
       </div>
     </div>
   </div>
