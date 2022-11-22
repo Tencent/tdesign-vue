@@ -100,7 +100,8 @@ export default defineComponent({
     ]);
 
     const handleClick = (e: MouseEvent | KeyboardEvent) => {
-      if (isDisabled.value) return;
+      const hasBeenSelected = (selectProvider.selectValue.value as SelectValue[])?.includes(value.value);
+      if (isDisabled.value && !hasBeenSelected) return;
       e.preventDefault();
 
       if (isCreatedOption.value) {
