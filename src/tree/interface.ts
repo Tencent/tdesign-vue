@@ -87,13 +87,7 @@ export interface TypeDragHandle {
 }
 
 export interface TypeTreeScope {
-  checkProps?: TypeTreeProps['checkProps'];
-  disableCheck?: TypeTreeProps['disableCheck'];
-  empty?: TypeTreeProps['empty'];
-  icon?: TypeTreeProps['icon'];
-  label?: TypeTreeProps['label'];
-  line?: TypeTreeProps['line'];
-  operations?: TypeTreeProps['operations'];
+  treeProps?: TypeTreeProps;
   scopedSlots?: TypeScopedSlots;
   drag?: TypeDragHandle;
 }

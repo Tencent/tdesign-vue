@@ -10,8 +10,10 @@ export default function useRenderLine(props: TypeTreeItemProps) {
 
   const renderLine = (h: CreateElement): TypeVNode => {
     const { node, treeScope } = props;
-    const { line, scopedSlots } = treeScope;
-    const iconVisible = !!treeScope.icon;
+    const { scopedSlots } = treeScope;
+    const treeProps = treeScope?.treeProps || {};
+    const { line } = treeProps;
+    const iconVisible = !!treeProps.icon;
 
     let lineNode = null;
     if (line === true) {

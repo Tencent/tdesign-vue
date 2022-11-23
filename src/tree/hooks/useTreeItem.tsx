@@ -30,8 +30,13 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
   // 节点隐藏用 class 切换，不要写在 js 中
   const getItemStyles = (): string => {
     const { level } = node;
+    // 原本想在这里计算 --hscale
+    // 实际操作中发现 scrollHeight 在动画执行到一半的时候取得了错误的值
+    // 导致 hscale 值获取错误
+    // 暂无合适的方案，先搁置 hscale 自动计算策略
     const levelStyle = `--level: ${level};`;
-    return levelStyle;
+    const strStyle = `${levelStyle}`;
+    return strStyle;
   };
 
   const getItemClassList = (): ClassName => {

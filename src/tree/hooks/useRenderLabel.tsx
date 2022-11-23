@@ -15,8 +15,10 @@ export default function useRenderLabel(props: TypeTreeItemProps, context: SetupC
 
   const renderLabel = (h: CreateElement): TypeVNode => {
     const { node, treeScope, expandOnClickNode } = props;
-    const { label, disableCheck, scopedSlots } = treeScope;
-    const checkProps = treeScope.checkProps || {};
+    const { scopedSlots } = treeScope;
+    const treeProps = treeScope?.treeProps || {};
+    const { label, disableCheck } = treeProps;
+    const checkProps = treeProps?.checkProps || {};
 
     let labelNode = null;
     if (label === true) {

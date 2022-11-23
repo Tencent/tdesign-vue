@@ -36,4 +36,5 @@ npx vitest --updateSnapshot ./src/tree/__tests__/
 - [性能测试](http://localhost:16000/vue/demos/tree/performance)
 - [节点数据变更](http://localhost:16000/vue/demos/tree/state)
 - [双向绑定](http://localhost:16000/vue/demos/tree/sync)
+- [动画](http://localhost:16000/vue/demos/tree/transition)
 - [虚拟滚动](http://localhost:16000/vue/demos/tree/vscroll)

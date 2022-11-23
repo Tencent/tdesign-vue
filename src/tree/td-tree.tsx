@@ -38,7 +38,7 @@ export default defineComponent({
     const componentName = usePrefixClass('tree');
     const refProps = toRefs(props);
     const { store, rebuild, updateStoreConfig } = useTreeStore(props, context);
-    const { cache, updateTreeScope } = useCache(props);
+    const { cache } = useCache(props);
 
     const classList = computed(() => {
       const cname = componentName.value;
@@ -107,7 +107,6 @@ export default defineComponent({
       cache,
       classList,
       updateStoreConfig,
-      updateTreeScope,
       setActived,
       setExpanded,
       setChecked,
@@ -205,11 +204,10 @@ export default defineComponent({
   },
   render(h) {
     const {
-      cache, classList, updateStoreConfig, updateTreeScope, renderTreeNodes,
+      cache, classList, updateStoreConfig, renderTreeNodes,
     } = this;
 
     updateStoreConfig();
-    updateTreeScope();
 
     const { scope } = cache;
     // 更新 scopedSlots

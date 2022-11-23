@@ -21,7 +21,9 @@ export default function useRenderIcon(props: TypeTreeItemProps) {
 
   const renderIcon = (h: CreateElement) => {
     const { node, treeScope } = props;
-    const { icon, scopedSlots } = treeScope;
+    const { scopedSlots } = treeScope;
+    const treeProps = treeScope?.treeProps || {};
+    const { icon } = treeProps;
     let isDefaultIcon = false;
 
     let iconNode = null;

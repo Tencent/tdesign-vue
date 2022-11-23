@@ -9,7 +9,9 @@ export default function useRenderOperations(props: TypeTreeItemProps) {
 
   const renderOperations = (h: CreateElement): TypeVNode => {
     const { node, treeScope } = props;
-    const { operations, scopedSlots } = treeScope;
+    const { scopedSlots } = treeScope;
+    const treeProps = treeScope?.treeProps || {};
+    const { operations } = treeProps;
 
     let opNode = null;
     if (scopedSlots?.operations) {
