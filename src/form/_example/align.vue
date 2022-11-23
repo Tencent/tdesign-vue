@@ -6,13 +6,13 @@
       <t-radio-button value="top">顶部对齐</t-radio-button>
     </t-radio-group>
 
-    <t-form :data="formData" :labelAlign="formData.labelAlign" :labelWidth="60">
+    <t-form :data="formData" :labelAlign="formData.labelAlign" :labelWidth="100">
       <t-form-item name="name">
         <template #label>姓名</template>
-        <t-input v-model="formData.name"></t-input>
+        <t-input v-model="formData.name" placeholder="请输入姓名"></t-input>
       </t-form-item>
-      <t-form-item label="密码" name="password">
-        <t-input v-model="formData.password" type="password"></t-input>
+      <t-form-item label="初始密码" name="password">
+        <t-input v-model="formData.password" type="password" placeholder="请输入初始密码"></t-input>
       </t-form-item>
     </t-form>
   </t-space>
