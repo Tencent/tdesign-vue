@@ -75,7 +75,7 @@ export default defineComponent({
 
     useDragHandle(props, context, state);
     const { setActived, setExpanded, setChecked } = useTreeAction(props, context, state);
-    const { renderTreeNodes, clearCacheNodes } = useTreeNodes(props, context, state);
+    const { renderTreeNodes, clearCacheNodes, nodesFilterEmpty } = useTreeNodes(props, context, state);
 
     watch(refProps.data, (list) => {
       clearCacheNodes();
@@ -111,6 +111,7 @@ export default defineComponent({
       setExpanded,
       setChecked,
       renderTreeNodes,
+      nodesFilterEmpty,
     };
   },
   // 在 methods 提供公共方法
@@ -204,7 +205,7 @@ export default defineComponent({
   },
   render(h) {
     const {
-      cache, classList, updateStoreConfig, renderTreeNodes,
+      cache, classList, updateStoreConfig, renderTreeNodes, nodesFilterEmpty,
     } = this;
 
     updateStoreConfig();
@@ -218,7 +219,7 @@ export default defineComponent({
 
     // 空数据判定
     let emptyNode: TNodeReturnValue = null;
-    if (treeNodeViews.length <= 0 || this.$isFilterEmpty) {
+    if (treeNodeViews.length <= 0 || nodesFilterEmpty) {
       const useLocale = !this.empty && !this.$scopedSlots.empty;
       const emptyContent = useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty');
       emptyNode = <div class={`${cname}__empty`}>{emptyContent}</div>;

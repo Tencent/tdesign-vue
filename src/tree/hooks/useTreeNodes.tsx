@@ -39,24 +39,31 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
   };
 
   const nodes: Ref<TreeNode[]> = ref([]);
+  const nodesFilterEmpty = ref(false);
   const refresh = () => {
     // 渲染为平铺列表
     nodes.value = store.getNodes();
   };
 
   const renderTreeNodes = (h: CreateElement) => {
+    let isFilterEmpty = true;
     const treeNodeViews = nodes.value.map((node: TreeNode) => {
       // 如果节点已经存在，则使用缓存节点
       let nodeView = cacheMap.get(node.value);
-      // 如果节点未曾创建，则临时创建
-      if (!nodeView && node.visible) {
-        // 初次仅渲染可显示的节点
-        // 不存在节点视图，则创建该节点视图并插入到当前位置
-        nodeView = renderItem(h, node);
-        cacheMap.set(node.value, nodeView);
+      if (node.visible) {
+        // 任意一个节点可视，过滤结果就不是空
+        isFilterEmpty = false;
+        // 如果节点未曾创建，则临时创建
+        if (!nodeView) {
+          // 初次仅渲染可显示的节点
+          // 不存在节点视图，则创建该节点视图并插入到当前位置
+          nodeView = renderItem(h, node);
+          cacheMap.set(node.value, nodeView);
+        }
       }
       return nodeView;
     });
+    nodesFilterEmpty.value = isFilterEmpty;
 
     // 更新缓存后，被删除的节点要移除掉，避免内存泄露
     nextTick(() => {
@@ -74,6 +81,7 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
   store.emitter.on('update', refresh);
 
   return {
+    nodesFilterEmpty,
     clearCacheNodes,
     renderTreeNodes,
   };
