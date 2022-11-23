@@ -87,32 +87,3 @@ exports[`Form > @event > validate 4`] = `
   },
 }
 `;
-
-exports[`Form > function > validate 1`] = `
-{
-  "age": [
-    {
-      "message": "age必填",
-      "required": true,
-      "result": false,
-      "trigger": "blur",
-    },
-  ],
-  "name": [
-    {
-      "message": "姓名必填",
-      "required": true,
-      "result": false,
-      "trigger": "blur",
-    },
-  ],
-}
-`;
-
-exports[`Form > function > validate 2`] = `
-WrapperArray {
-  "selector": ".t-input__extra",
-}
-`;
-
-exports[`Form > function > validate 3`] = `true`;
