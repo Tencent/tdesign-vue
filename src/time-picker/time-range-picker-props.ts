@@ -48,19 +48,22 @@ export default {
   rangeInputProps: {
     type: Object as PropType<TdTimeRangePickerProps['rangeInputProps']>,
   },
-  /** 尺寸 */
-  size: {
-    type: String as PropType<TdTimeRangePickerProps['size']>,
-    default: 'medium' as TdTimeRangePickerProps['size'],
-    validator(val: TdTimeRangePickerProps['size']): boolean {
+  /** 输入框状态 */
+  status: {
+    type: String as PropType<TdTimeRangePickerProps['status']>,
+    validator(val: TdTimeRangePickerProps['status']): boolean {
       if (!val) return true;
-      return ['small', 'medium', 'large'].includes(val);
+      return ['default', 'success', 'warning', 'error'].includes(val);
     },
   },
   /** 时间间隔步数，数组排列 [小时, 分钟, 秒]，示例：[2, 1, 1] 或者 ['2', '1', '1'] */
   steps: {
     type: Array as PropType<TdTimeRangePickerProps['steps']>,
     default: (): TdTimeRangePickerProps['steps'] => [1, 1, 1],
+  },
+  /** 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式 */
+  tips: {
+    type: [String, Function] as PropType<TdTimeRangePickerProps['tips']>,
   },
   /** 选中值 */
   value: {

@@ -1,7 +1,7 @@
 {
   "name": "tdesign-vue",
   "purename": "tdesign",
-  "version": "0.49.6",
+  "version": "0.50.0",
   "description": "tdesign-vue",
   "title": "tdesign-vue",
   "keywords": [
@@ -21,7 +21,8 @@
     "dist",
     "LICENSE",
     "README.md",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "helper"
   ],
   "sideEffects": [
     "*.vue",
@@ -200,5 +201,10 @@
       "prettier --write",
       "npm run lint:fix"
     ]
-  }
+  },
+  "vetur": {
+    "tags": "helper/tags.json",
+    "attributes": "helper/attributes.json"
+  },
+  "web-types": "helper/web-types.json"
 }
