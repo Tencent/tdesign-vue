@@ -10,7 +10,6 @@ import {
   reactive,
 } from '@vue/composition-api';
 import Vue, { PropType } from 'vue';
-
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { renderContent } from '../utils/render-tnode';
 import Ripple from '../utils/ripple';
@@ -24,6 +23,7 @@ import { TScroll } from '../common';
 import { getNewMultipleValue } from './util';
 import { useConfig } from '../config-provider/useConfig';
 import useCommonClassName from '../hooks/useCommonClassName';
+import useFormDisabled from '../hooks/useFormDisabled';
 
 const keepAnimationMixins = getKeepAnimationMixins();
 export interface OptionInstance extends Vue {
@@ -78,11 +78,15 @@ export default defineComponent({
     );
 
     const isHover = ref(false);
-    const formDisabled = ref(undefined);
-    const isDisabled = computed(() => formDisabled.value || disabled.value || selectProvider.isReachMaxLimit.value);
+    const { formDisabled } = useFormDisabled();
     const isSelected = computed(() => multiple.value
       ? (selectProvider.selectValue.value as SelectValue[])?.includes(props.value)
       : selectProvider.selectValue.value === props.value);
+    const isDisabled = computed(
+      () => disabled.value
+        || formDisabled.value
+        || (multiple.value && !isSelected.value && selectProvider.isReachMaxLimit.value),
+    );
     const mouseEvent = (v: boolean) => {
       isHover.value = v;
     };
@@ -148,6 +152,7 @@ export default defineComponent({
     return {
       isHover,
       isSelected,
+      isDisabled,
       mouseEvent,
       classes,
       selectProvider,
@@ -161,7 +166,7 @@ export default defineComponent({
 
   render() {
     const {
-      classes, multiple, labelText, isSelected, disabled, selectProvider, mouseEvent,
+      classes, multiple, labelText, isSelected, isDisabled, mouseEvent,
     } = this;
     const children: ScopedSlotReturnValue = renderContent(this, 'default', 'content');
     const optionChild = children || <span>{labelText}</span>;
@@ -190,7 +195,7 @@ export default defineComponent({
         v-ripple={(this.keepAnimation as any).ripple}
       >
         {multiple ? (
-          <t-checkbox checked={isSelected} disabled={disabled || (!isSelected && selectProvider.isReachMaxLimit.value)}>
+          <t-checkbox checked={isSelected} disabled={isDisabled}>
             {optionChild}
           </t-checkbox>
         ) : (
