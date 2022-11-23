@@ -119,7 +119,7 @@ export default mixins(Vue as VueConstructor<TabVue>, classPrefixMixins).extend({
       );
     },
     createListPanels() {
-      return this.list.map((item) => <TTabPanel props={{ ...item }} onRemove={this.onRemoveTab}></TTabPanel>);
+      return this.list.map((item) => <TTabPanel props={{ ...item }}></TTabPanel>);
     },
     renderList(): VNode[] {
       if (!this.listPanels) {
