@@ -7,10 +7,10 @@
         <t-popup>
           <template #content>
             <p v-for="(item, index) in collapsedSelectedItems" :key="index" style="padding: 10px">
-              {{ item.label }}
+              {{ item }}
             </p>
           </template>
-          <span v-show="count > 0" style="color: #00a870">+{{ count - 1 }}</span>
+          <span v-show="count > 0" style="color: #00a870; margin-left: 10px">+{{ count - 1 }}</span>
         </t-popup>
       </template>
     </t-cascader>
@@ -66,10 +66,10 @@ export default {
         <t-popup>
           <div slot="content">
             {value.map((item) => (
-              <p style="padding: 10px;">{item.label}</p>
+              <p style="padding: 10px;">{item}</p>
             ))}
           </div>
-          <span v-show={count > 0} style="color: #ED7B2F;">
+          <span v-show={count > 0} style="color: #ED7B2F; margin-left: 10px;">
             +{count - 1}
           </span>
         </t-popup>
