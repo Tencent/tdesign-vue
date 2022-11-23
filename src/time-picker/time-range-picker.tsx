@@ -172,6 +172,8 @@ export default defineComponent({
                 onVisibleChange: this.handleShowPopup,
                 ...this.popupProps,
               },
+              status: this.status,
+              tips: this.tips,
               rangeInputProps: {
                 size: this.size,
                 clearable: this.clearable,
