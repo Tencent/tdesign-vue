@@ -45,19 +45,22 @@ export default {
   presets: {
     type: Object as PropType<TdTimePickerProps['presets']>,
   },
-  /** 尺寸 */
-  size: {
-    type: String as PropType<TdTimePickerProps['size']>,
-    default: 'medium' as TdTimePickerProps['size'],
-    validator(val: TdTimePickerProps['size']): boolean {
+  /** 输入框状态 */
+  status: {
+    type: String as PropType<TdTimePickerProps['status']>,
+    validator(val: TdTimePickerProps['status']): boolean {
       if (!val) return true;
-      return ['small', 'medium', 'large'].includes(val);
+      return ['default', 'success', 'warning', 'error'].includes(val);
     },
   },
   /** 时间间隔步数，数组排列 [小时, 分钟, 秒]，示例：[2, 1, 1] 或者 ['2', '1', '1'] */
   steps: {
     type: Array as PropType<TdTimePickerProps['steps']>,
     default: (): TdTimePickerProps['steps'] => [1, 1, 1],
+  },
+  /** 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式 */
+  tips: {
+    type: [String, Function] as PropType<TdTimePickerProps['tips']>,
   },
   /** 选中值 */
   value: {
