@@ -173,6 +173,17 @@ describe('Progress', () => {
           expect(wrapper.findComponent(Progress).vm.status).toBe(status);
           expect(wrapper.element).toMatchSnapshot();
         });
+
+        it(`:status is ${status} and percentage is 100`, () => {
+          const wrapper = mount({
+            render() {
+              return <Progress status={status} percentage={100}></Progress>;
+            },
+          });
+          expect(wrapper.findComponent(Progress).vm.percentage).toBe(100);
+          expect(wrapper.findComponent(Progress).vm.status).toBe(status);
+          expect(wrapper.element).toMatchSnapshot();
+        });
       });
     });
 
