@@ -141,7 +141,7 @@ export default defineComponent({
       const oldValueMap = new Map<SelectValue, TdOptionProps>();
       if (multiple.value) {
         const mapValue = value.value || [];
-        (mapValue as TdOptionProps[]).forEach((option) => {
+        (mapValue as TdOptionProps[]).forEach?.((option) => {
           oldValueMap.set(option[valueOfKeys], option);
         });
       }
