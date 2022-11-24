@@ -139,6 +139,8 @@ export default defineComponent({
               value: this.isShowPanel ? this.currentValue : this.innerValue ?? undefined,
               inputValue: this.isShowPanel ? this.currentValue : this.innerValue ?? undefined,
               inputProps: this.inputProps,
+              status: this.status,
+              tips: this.tips,
               panel: () => (
                 <TimePickerPanel
                   {...{

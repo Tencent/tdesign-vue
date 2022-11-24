@@ -27,7 +27,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
 
   computed: {
     statusStyle(): string {
-      if (this.percentage >= 100) {
+      if (!this.status && this.percentage >= 100) {
         return 'success';
       }
       return this.status;

@@ -202,7 +202,6 @@ describe('Drawer', () => {
       });
       await nextTick();
       const btn = wrapper.find('.t-drawer__confirm');
-      console.log('onConfirm', btn);
       await btn.trigger('click');
       expect(fn).toBeCalled();
     });
