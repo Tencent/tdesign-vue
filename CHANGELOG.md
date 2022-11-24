@@ -5,6 +5,28 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.50.1 `2022-11-24` 
+### 🚀 Features
+- `InputNumber`: 支持 `allowInputOverLimit`，用于设置是否允许输入数字超过 `max` `min` 范围的值 @chaishi ([#1811](https://github.com/Tencent/tdesign-vue/pull/1811))
+- `SelectInput`: 支持`multiple`和`single`模式切换，适用于动态表单或低码平台场景 @uyarn ([#1818](https://github.com/Tencent/tdesign-vue/pull/1818))
+- `AutoComplete`: 新增自动填充组件 @chaishi ([#1784](https://github.com/Tencent/tdesign-vue/pull/1784))
+- `TimePicker`: `TimePicker` 新增`tips`和 `status` API @uyarn ([#1830](https://github.com/Tencent/tdesign-vue/pull/1830))
+- `Switch`: 优化`Switch`样式 区分打开与关闭按钮大小 @Wen1kang @uyarn ([#1834](https://github.com/Tencent/tdesign-vue/pull/1834))
+- 添加 Webstorm 和 Vetur 组件代码提示 @chaishi ([#1835](https://github.com/Tencent/tdesign-vue/pull/1835))
+### 🐞 Bug Fixes
+- `InputNumber`: 修复删除数字时数据类型会从 number 变为 string 问题 @chaishi ([#1811](https://github.com/Tencent/tdesign-vue/pull/1811))
+- `Select`: 修复限制可选条目数下禁用态不能反选的问题 (#1819) @skytt ([#1825](https://github.com/Tencent/tdesign-vue/pull/1825))
+- `Tabs`: 修复 list 定义的 tabs 删除时，remove 方法循环调用的问题 (#1696) @LoopZhou ([#1832](https://github.com/Tencent/tdesign-vue/pull/1832))
+- `TimePicker`: 修复面板打开时清空内容回填的问题 @uyarn ([#1830](https://github.com/Tencent/tdesign-vue/pull/1830))
+- `Table`: 可编辑行，修复因没有监听数据变化，出现的校验不通过的问题，[issue#1822](https://github.com/Tencent/tdesign-vue/issues/1822) @chaishi ([#1833](https://github.com/Tencent/tdesign-vue/pull/1833))
+- `Progress`: 修复percentage值为100时,会忽略 status 设置的问题 @yusongh ([#1836](https://github.com/Tencent/tdesign-vue/pull/1836))
+- `ColorPicker`: 修复在渐变区域滑竿滑动时，触发 picker 关闭的问题 @S-mohan ([#1806](https://github.com/Tencent/tdesign-vue/pull/1806))
+- `DatePicker`: 修复周选择器高亮错误的问题 @honkinglin ([#1814](https://github.com/Tencent/tdesign-vue/pull/1814))
+### 🚧 Others
+- `Test`: 完善 `Form/Steps/Space/Rate/Layout/Grid` 组件测试用例  @xiaosansiji ([#1820](https://github.com/Tencent/tdesign-vue/pull/1820))
+- `Pagination`: 优化 demo 展示效果  @Ccppmmm ([#1824](https://github.com/Tencent/tdesign-vue/pull/1824))
+- `Cascader`: 优化自定义 collapsed demo 展示 @xiaosansiji ([#1827](https://github.com/Tencent/tdesign-vue/pull/1827))
+
 ## 🌈 0.50.0 `2022-11-16` 
 ### ❗ Breaking Changes
 - `Comment/Slider/ImageViewer`: 组件 DOM 结构调整，有覆盖样式的同学请关注 @HQ-Lin ([#1785](https://github.com/Tencent/tdesign-vue/pull/1785)、[#1794](https://github.com/Tencent/tdesign-vue/pull/1794)、[#1788](https://github.com/Tencent/tdesign-vue/pull/1788))
