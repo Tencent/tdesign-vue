@@ -42,3 +42,29 @@ close-btn-click | `(context: { e: MouseEvent })` | \-
 confirm | `(context: { e: MouseEvent })` | \-
 esc-keydown | `(context: { e: KeyboardEvent })` | \-
 overlay-click | `(context: { e: MouseEvent })` | \-
+
+### DrawerOptions
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+attach | String / Function | 'body' | Typescript：`AttachNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+className | String | - | \- | N
+style | String / Object | - | Typescript：`string \| Styles`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+`Omit<DrawerProps, 'attach'>` | \- | - | \- | N
+
+### DrawerInstance
+
+name | params | return | description
+-- | -- | -- | --
+destroy | \- | \- | \-
+hide | \- | \- | \-
+show | \- | \- | \-
+update | `(props: DrawerOptions)` | \- | \-
+
+### DrawerPlugin
+
+同时也支持 `this.$drawer`。
+
+name | params | default | description
+-- | -- | -- | --
+options | \- | - | Typescript：`DrawerOptions`
