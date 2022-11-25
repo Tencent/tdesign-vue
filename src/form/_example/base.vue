@@ -1,5 +1,5 @@
 <template>
-  <t-form :data="formData" ref="form" @reset="onReset" @submit="onSubmit" :colon="true">
+  <t-form :data="formData" ref="form" @reset="onReset" @submit="onSubmit" :colon="true" disabled>
     <t-form-item label="姓名" name="name" :rules="requiredRules">
       <t-input v-model="formData.name" placeholder="请输入内容"></t-input>
     </t-form-item>

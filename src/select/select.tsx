@@ -140,7 +140,8 @@ export default defineComponent({
       // 若为多选情况，将历史 value 加入 option 待取列表，兼容远程搜索改变 options 数组后旧选项无法找到的问题
       const oldValueMap = new Map<SelectValue, TdOptionProps>();
       if (multiple.value) {
-        (value.value as TdOptionProps[]).forEach((option) => {
+        const mapValue = value.value || [];
+        (mapValue as TdOptionProps[]).forEach?.((option) => {
           oldValueMap.set(option[valueOfKeys], option);
         });
       }

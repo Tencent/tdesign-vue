@@ -19,7 +19,7 @@ describe('Tree:init', () => {
       expect(wrapper.find('.tree-empty').exists()).toBe(true);
     });
 
-    it('空数据初始化后，允许插入根节点', () => new Promise((done) => {
+    it('空数据初始化后，允许插入根节点', () => new Promise((resolve) => {
       const wrapper = mount({
         mounted() {
           const { tree } = this.$refs;
@@ -29,7 +29,7 @@ describe('Tree:init', () => {
           setTimeout(() => {
             expect(wrapper.find('.tree-empty').exists()).toBe(false);
             expect(wrapper.find('[data-value="insert1"]').exists()).toBe(true);
-            done();
+            resolve();
           });
         },
         render() {
