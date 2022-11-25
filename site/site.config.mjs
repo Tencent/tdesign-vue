@@ -171,14 +171,6 @@ const docs = [
         componentEn: () => import('tdesign-vue/dropdown/dropdown.en-US.md'),
       },
       {
-        title: 'Jumper 跳转',
-        titleEn: 'Jumper',
-        name: 'jumper',
-        path: '/vue/components/jumper',
-        component: () => import('tdesign-vue/jumper/jumper.md'),
-        componentEn: () => import('tdesign-vue/jumper/jumper.en-US.md'),
-      },
-      {
         title: 'Menu 导航菜单',
         titleEn: 'Menu',
         name: 'menu',
