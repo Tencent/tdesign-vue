@@ -56,13 +56,13 @@ export default defineComponent({
         }
         return option;
       });
-      // 默认过滤规则
-      if (props.filterable) {
-        const regExp = new RegExp(props.value, 'i');
-        options = options.filter((item) => regExp.test(item.text));
-      }
+      // 自定义过滤规则
       if (props.filter) {
         options = options.filter((option) => props.filter(props.value, option));
+      } else if (props.filterable) {
+        // 默认过滤规则
+        const regExp = new RegExp(props.value, 'i');
+        options = options.filter((item) => regExp.test(item.text));
       }
       return options;
     });
@@ -145,7 +145,7 @@ export default defineComponent({
           }
           const content = labelNode || item.text;
           return (
-            <li class={cls} title={item.text} onClick={this.onOptionClick}>
+            <li key={item.text} class={cls} title={item.text} onClick={this.onOptionClick}>
               {typeof content === 'string' && this.highlightKeyword ? (
                 <HighlightOption content={content} keyword={this.value} />
               ) : (
