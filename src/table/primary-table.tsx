@@ -36,6 +36,7 @@ const OMIT_PROPS = [
   'expandOnRowClick',
   'multipleSort',
   'expandIcon',
+  'reserveSelectedRowOnPaginate',
   'onChange',
   'onAsyncLoadingClick',
   'onChange',
