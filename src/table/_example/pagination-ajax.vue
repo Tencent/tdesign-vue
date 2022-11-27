@@ -24,14 +24,14 @@ export default {
       selectedRowKeys: [],
       columns: [
         {
-          colKey: 'serial-number',
-          title: '序号',
-          width: 60,
-        },
-        {
           colKey: 'row-select',
           type: 'multiple',
           width: 64,
+        },
+        {
+          colKey: 'serial-number',
+          title: '序号',
+          width: 60,
         },
         {
           width: 200,

@@ -107941,10 +107941,10 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination-ajax.vue 1
     >
       <colgroup>
         <col
-          style="width: 60px;"
+          style="width: 64px;"
         />
         <col
-          style="width: 64px;"
+          style="width: 60px;"
         />
         <col
           style="width: 200px;"
@@ -107963,16 +107963,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination-ajax.vue 1
         class="t-table__header"
       >
         <tr>
-          <th
-            class="t-table__th-serial-number"
-            data-colkey="serial-number"
-          >
-            <div
-              class="t-table__th-cell-inner"
-            >
-              序号
-            </div>
-          </th>
           <th
             class="t-table__cell-check t-table__th-row-select"
             data-colkey="row-select"
@@ -107996,6 +107986,16 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination-ajax.vue 1
                   class="t-checkbox__label"
                 />
               </label>
+            </div>
+          </th>
+          <th
+            class="t-table__th-serial-number"
+            data-colkey="serial-number"
+          >
+            <div
+              class="t-table__th-cell-inner"
+            >
+              序号
             </div>
           </th>
           <th
