@@ -43,11 +43,9 @@ export default {
       selectedRowKeys: [],
       columns: [
         {
-          align: 'center',
-          width: '100',
-          className: 'row',
-          colKey: 'index',
+          colKey: 'serial-number',
           title: '序号',
+          width: 60,
         },
         {
           width: 100,

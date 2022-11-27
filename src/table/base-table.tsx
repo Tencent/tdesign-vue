@@ -117,7 +117,9 @@ export default defineComponent({
       setTableContentRef,
     } = useAffix(props);
 
-    const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
+    const {
+      dataSource, innerPagination, isPaginateData, renderPagination,
+    } = usePagination(props, context);
 
     // 列宽拖拽逻辑
     const columnResizeParams = useColumnResize(tableContentRef, refreshTable, getThWidthList, updateThWidthList);
@@ -271,6 +273,7 @@ export default defineComponent({
       columnResizable,
       thList,
       classPrefix,
+      innerPagination,
       isVirtual,
       global,
       tableFootHeight,
@@ -537,6 +540,8 @@ export default defineComponent({
       handleRowMounted: this.handleRowMounted,
       renderExpandedRow: this.renderExpandedRow,
       ...pick(this.$props, extendTableProps),
+      // 内部使用分页信息必须取 innerPagination
+      pagination: this.innerPagination,
     };
     // Vue3 do not need getListener
     const tBodyListener = this.getListener();
