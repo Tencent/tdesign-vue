@@ -89580,7 +89580,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                 data-id="first-column"
                 style="[object Object]"
               >
-                1
+                6
               </td>
               <td
                 class=""
@@ -89620,7 +89620,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                 data-id="first-column"
                 style="[object Object]"
               >
-                2
+                7
               </td>
               <td
                 class=""
@@ -89660,7 +89660,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                 data-id="first-column"
                 style="[object Object]"
               >
-                3
+                8
               </td>
               <td
                 class=""
@@ -89700,7 +89700,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                 data-id="first-column"
                 style="[object Object]"
               >
-                4
+                9
               </td>
               <td
                 class=""
@@ -89740,7 +89740,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                 data-id="first-column"
                 style="[object Object]"
               >
-                5
+                10
               </td>
               <td
                 class=""
@@ -107335,7 +107335,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
         >
           <colgroup>
             <col
-              style="width: 100px;"
+              style="width: 60px;"
             />
             <col
               style="width: 100px;"
@@ -107355,8 +107355,8 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
           >
             <tr>
               <th
-                class="row t-table__th-index t-align-center"
-                data-colkey="index"
+                class="t-table__th-serial-number"
+                data-colkey="serial-number"
               >
                 <div
                   class="t-table__th-cell-inner"
@@ -107451,9 +107451,9 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
               class=""
             >
               <td
-                class="row t-align-center"
+                class=""
               >
-                5
+                6
               </td>
               <td
                 class=""
@@ -107508,9 +107508,9 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
               class=""
             >
               <td
-                class="row t-align-center"
+                class=""
               >
-                6
+                7
               </td>
               <td
                 class=""
@@ -107565,9 +107565,9 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
               class=""
             >
               <td
-                class="row t-align-center"
+                class=""
               >
-                7
+                8
               </td>
               <td
                 class=""
@@ -107622,9 +107622,9 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
               class=""
             >
               <td
-                class="row t-align-center"
+                class=""
               >
-                8
+                9
               </td>
               <td
                 class=""
@@ -107679,9 +107679,9 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
               class=""
             >
               <td
-                class="row t-align-center"
+                class=""
               >
-                9
+                10
               </td>
               <td
                 class=""
@@ -107941,6 +107941,9 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination-ajax.vue 1
     >
       <colgroup>
         <col
+          style="width: 60px;"
+        />
+        <col
           style="width: 64px;"
         />
         <col
@@ -107960,6 +107963,16 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination-ajax.vue 1
         class="t-table__header"
       >
         <tr>
+          <th
+            class="t-table__th-serial-number"
+            data-colkey="serial-number"
+          >
+            <div
+              class="t-table__th-cell-inner"
+            >
+              序号
+            </div>
+          </th>
           <th
             class="t-table__cell-check t-table__th-row-select"
             data-colkey="row-select"
@@ -108038,7 +108051,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination-ajax.vue 1
           class="t-table__empty-row"
         >
           <td
-            colspan="5"
+            colspan="6"
           >
             <div
               class="t-table__empty"
