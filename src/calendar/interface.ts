@@ -11,6 +11,7 @@ export type CalendarProps = TdCalendarProps;
  * 日历组件的data定义
  */
 export interface CalendarData {
+  realFirstDayOfWeek: number;
   // 当前选中的高亮日期，单选（默认 multiple === false）的时候用这个
   curDate?: dayjs.Dayjs | null;
   // 当前选中的高亮日期列表，多选（multiple === true）的时候用这个

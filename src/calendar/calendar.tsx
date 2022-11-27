@@ -91,6 +91,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
   props: { ...props },
   data(): CalendarData {
     return {
+      realFirstDayOfWeek: 1,
       curDate: null,
       curDateList: [],
       curSelectedYear: null,
@@ -106,9 +107,6 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     },
     props(): TdCalendarProps {
       return this.$props as TdCalendarProps;
-    },
-    realFirstDayOfWeek(): number {
-      return this.firstDayOfWeek ?? this.global.firstDayOfWeek ?? 1;
     },
     TEXT_MAP(): TextConfigType {
       const { t, global } = this;
@@ -241,7 +239,6 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     },
     // month模式下日历单元格的数据
     monthCellsData(): CalendarCell[][] {
-      const { realFirstDayOfWeek } = this;
       const daysArr: CalendarCell[][] = utils.createMonthCellsData(this.props, this.state);
       return daysArr;
     },
@@ -342,6 +339,12 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     },
   },
   watch: {
+    firstDayOfWeek: {
+      handler() {
+        this.realFirstDayOfWeek = this.firstDayOfWeek ?? this.global.firstDayOfWeek ?? 1;
+      },
+      immediate: true,
+    },
     value: {
       handler(v: TdCalendarProps['value']) {
         if (this.multiple) {
