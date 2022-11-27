@@ -58,12 +58,14 @@ export default function usePagination(props: TdBaseTableProps, context: SetupCon
             props: pagination.value,
             on: {
               change: (pageInfo: PageInfo) => {
-                // Vue3 ignore this line
-                context.emit('page-change', pageInfo, dataSource.value);
+                props.pagination?.onChange?.(pageInfo);
                 // 如果是非受控情况的分页变化，还需更新分页数据（data）
                 if (pagination.value && !pagination.value.current && pagination.value.defaultCurrent) {
                   updateDataSourceAndPaginate(pageInfo.current, pageInfo.pageSize);
                 }
+                // Vue3 ignore this line
+                context.emit('page-change', pageInfo, dataSource.value);
+                props.onPageChange?.(pageInfo, dataSource.value);
               },
             },
           }}
