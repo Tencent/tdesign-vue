@@ -9,7 +9,6 @@ import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { DrawerConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
-import { addClass, removeClass } from '../utils/dom';
 import { ClassName, Styles } from '../common';
 import ActionMixin from '../dialog/actions';
 
