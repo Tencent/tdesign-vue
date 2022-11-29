@@ -149,7 +149,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     visible(value) {
       if (value) {
         this.animationEnd = false;
-        if (this.isModal && !this.showInAttachedElement) {
+        if (this.isModal && !this.showInAttachedElement && this.preventScrollThrough) {
           document.head.appendChild(this.styleEl);
 
           this.$nextTick(() => {
@@ -196,7 +196,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       }
     `;
 
-    if (this.visible && this.isModal && this.preventScrollThrough) {
+    if (this.visible && this.isModal && this.preventScrollThrough && !this.showInAttachedElement) {
       document.head.appendChild(this.styleEl);
     }
   },
@@ -445,11 +445,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
   },
 
   render() {
-    const maskView = (
-      <transition name="fade">
-        <div v-show={this.visible && this.isModal} key="mask" class={this.maskClass}></div>
-      </transition>
-    );
+    const maskView = this.isModal && <div key="mask" class={this.maskClass}></div>;
     const dialogView = this.renderDialog();
     const view = [maskView, dialogView];
     const ctxStyle = { zIndex: this.zIndex };
