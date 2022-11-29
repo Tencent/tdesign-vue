@@ -445,7 +445,11 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
   },
 
   render() {
-    const maskView = this.isModal && <div key="mask" class={this.maskClass}></div>;
+    const maskView = (
+      <transition name="fade">
+        <div v-show={this.visible && this.isModal} key="mask" class={this.maskClass}></div>
+      </transition>
+    );
     const dialogView = this.renderDialog();
     const view = [maskView, dialogView];
     const ctxStyle = { zIndex: this.zIndex };
