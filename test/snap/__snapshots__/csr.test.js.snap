@@ -34936,79 +34936,90 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/popconfirm.
       Open Drawer
     </span>
   </button>
-  <div
-    class="t-drawer t-drawer--right"
+  <transition-stub
     data-v-1f100e12=""
-    tabindex="0"
+    duration="[object Object]"
   >
     <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
     >
-      <div
-        class="t-drawer__header"
-      >
-        Drawer
-      </div>
-      <div
-        class="t-drawer__close-btn"
-      >
-        <svg
-          class="t-icon t-icon-close t-submenu-icon"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p
-          data-v-1f100e12=""
-        >
-          This is a controlled drawer
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
       >
         <div
-          style="display: flex; justify-content: flex-start;"
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
         >
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-            type="button"
+          Drawer
+        </div>
+        <div
+          class="t-drawer__close-btn"
+        >
+          <svg
+            class="t-icon t-icon-close t-submenu-icon"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            <span
-              class="t-button__text"
-            >
-              confirm
-            </span>
-          </button>
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-            type="button"
+            <path
+              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <p
+            data-v-1f100e12=""
           >
-            <span
-              class="t-button__text"
+            This is a controlled drawer
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div
+            style="display: flex; justify-content: flex-start;"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+              type="button"
             >
-              cancel
-            </span>
-          </button>
+              <span
+                class="t-button__text"
+              >
+                confirm
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                cancel
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </transition-stub>
 </div>
 `;
 
@@ -44183,62 +44194,73 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/attach-parent.vue 1`
     class="t-suf-container"
     data-v-241b7623=""
   >
-    <div
-      class="t-drawer t-drawer--right t-drawer--attach"
+    <transition-stub
       data-v-241b7623=""
-      tabindex="0"
+      duration="[object Object]"
     >
       <div
-        class="t-drawer__mask"
-      />
-      <div
-        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-        style="width: 300px;"
+        class="t-drawer t-drawer--right t-drawer--attach"
+        style="display: none;"
+        tabindex="0"
       >
-        <div
-          class="t-drawer__header"
-        >
-          抽屉标题
-        </div>
-        <div
-          class="t-drawer__body"
-        >
-          <p
-            data-v-241b7623=""
-          >
-            抽屉的内容
-          </p>
-        </div>
-        <div
-          class="t-drawer__footer"
+        <transition-stub
+          duration="300"
+          name="t-drawer-fade"
         >
           <div
-            style="display: flex; justify-content: flex-start;"
+            class="t-drawer__mask"
+            style="display: none;"
+          />
+        </transition-stub>
+        <div
+          class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+          style="width: 300px;"
+        >
+          <div
+            class="t-drawer__header"
           >
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-              type="button"
+            抽屉标题
+          </div>
+          <div
+            class="t-drawer__body"
+          >
+            <p
+              data-v-241b7623=""
             >
-              <span
-                class="t-button__text"
-              >
-                确认
-              </span>
-            </button>
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-              type="button"
+              抽屉的内容
+            </p>
+          </div>
+          <div
+            class="t-drawer__footer"
+          >
+            <div
+              style="display: flex; justify-content: flex-start;"
             >
-              <span
-                class="t-button__text"
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+                type="button"
               >
-                取消
-              </span>
-            </button>
+                <span
+                  class="t-button__text"
+                >
+                  确认
+                </span>
+              </button>
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+                type="button"
+              >
+                <span
+                  class="t-button__text"
+                >
+                  取消
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </transition-stub>
     <div
       class="tdesign-radio-button"
       data-v-241b7623=""
@@ -44403,79 +44425,90 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/base.vue 1`] = `
 <div
   data-v-18b3c170=""
 >
-  <div
-    class="t-drawer t-drawer--right"
+  <transition-stub
     data-v-18b3c170=""
-    tabindex="0"
+    duration="[object Object]"
   >
     <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
     >
-      <div
-        class="t-drawer__header"
-      >
-        抽屉标题
-      </div>
-      <div
-        class="t-drawer__close-btn"
-      >
-        <svg
-          class="t-icon t-icon-close t-submenu-icon"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p
-          data-v-18b3c170=""
-        >
-          抽屉的内容
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
       >
         <div
-          style="display: flex; justify-content: flex-start;"
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
         >
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-            type="button"
+          抽屉标题
+        </div>
+        <div
+          class="t-drawer__close-btn"
+        >
+          <svg
+            class="t-icon t-icon-close t-submenu-icon"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            <span
-              class="t-button__text"
-            >
-              确认
-            </span>
-          </button>
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-            type="button"
+            <path
+              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <p
+            data-v-18b3c170=""
           >
-            <span
-              class="t-button__text"
+            抽屉的内容
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div
+            style="display: flex; justify-content: flex-start;"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+              type="button"
             >
-              取消
-            </span>
-          </button>
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </transition-stub>
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     data-v-18b3c170=""
@@ -44492,118 +44525,61 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/base.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/drawer/_example/custom.vue 1`] = `
 <div>
-  <div
-    class="t-drawer t-drawer--right"
-    tabindex="0"
+  <transition-stub
+    duration="[object Object]"
   >
     <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
     >
-      <div
-        class="t-drawer__header"
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
       >
-        <div>
-          自定义头部
+        <div
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
+        >
+          <div>
+            自定义头部
+          </div>
         </div>
-      </div>
-      <div
-        class="t-drawer__close-btn"
-      >
-        <svg
-          class="t-icon t-icon-close t-submenu-icon"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
+        <div
+          class="t-drawer__close-btn"
         >
-          <path
-            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p>
-          抽屉的内容
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
-      >
-        <button
-          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-          type="button"
-        >
-          <span
-            class="t-button__text"
+          <svg
+            class="t-icon t-icon-close t-submenu-icon"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            确定
-          </span>
-        </button>
-        <button
-          class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-          type="button"
+            <path
+              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </div>
+        <div
+          class="t-drawer__body"
         >
-          <span
-            class="t-button__text"
-          >
-            取消
-          </span>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-drawer t-drawer--right"
-    tabindex="0"
-  >
-    <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
-    >
-      <div
-        class="t-drawer__header"
-      >
-        抽屉标题
-      </div>
-      <div
-        class="t-drawer__close-btn"
-      >
-        <svg
-          class="t-icon t-icon-close t-submenu-icon"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
+          <p>
+            抽屉的内容
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
         >
-          <path
-            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p>
-          抽屉的内容
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
-      >
-        <div>
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-primary"
             type="button"
@@ -44611,82 +44587,11 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/custom.vue 1`] = `
             <span
               class="t-button__text"
             >
-              confirm
+              确定
             </span>
           </button>
           <button
             class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              cancel
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-drawer t-drawer--right"
-    tabindex="0"
-  >
-    <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
-    >
-      <div
-        class="t-drawer__header"
-      >
-        抽屉标题
-      </div>
-      <div
-        class="t-drawer__close-btn"
-      >
-        <svg
-          class="t-icon t-icon-close t-submenu-icon"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p>
-          抽屉的内容
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
-      >
-        <div
-          style="display: flex; justify-content: flex-start;"
-        >
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled t-drawer__confirm"
-            disabled="disabled"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              确认
-            </span>
-          </button>
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="button"
           >
             <span
@@ -44698,7 +44603,168 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/custom.vue 1`] = `
         </div>
       </div>
     </div>
-  </div>
+  </transition-stub>
+  <transition-stub
+    duration="[object Object]"
+  >
+    <div
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
+    >
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
+      >
+        <div
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
+        >
+          抽屉标题
+        </div>
+        <div
+          class="t-drawer__close-btn"
+        >
+          <svg
+            class="t-icon t-icon-close t-submenu-icon"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <p>
+            抽屉的内容
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                confirm
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                cancel
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+  <transition-stub
+    duration="[object Object]"
+  >
+    <div
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
+    >
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
+      >
+        <div
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
+        >
+          抽屉标题
+        </div>
+        <div
+          class="t-drawer__close-btn"
+        >
+          <svg
+            class="t-icon t-icon-close t-submenu-icon"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <p>
+            抽屉的内容
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div
+            style="display: flex; justify-content: flex-start;"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled t-drawer__confirm"
+              disabled="disabled"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
@@ -44736,247 +44802,23 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/custom.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/drawer/_example/destroy.vue 1`] = `
 <div>
-  <!---->
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      打开抽屉
-    </span>
-  </button>
-</div>
-`;
-
-exports[`csr snapshot test > csr test ./src/drawer/_example/no-mask.vue 1`] = `
-<div>
-  <div
-    class="t-drawer t-drawer--right t-drawer--without-mask"
-    tabindex="0"
-  >
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
-    >
-      <div
-        class="t-drawer__header"
-      >
-        抽屉标题
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p>
-          抽屉的内容
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
-      >
-        <div
-          style="display: flex; justify-content: flex-start;"
-        >
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              确认
-            </span>
-          </button>
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              取消
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      打开抽屉
-    </span>
-  </button>
-</div>
-`;
-
-exports[`csr snapshot test > csr test ./src/drawer/_example/operation.vue 1`] = `
-<div
-  data-v-c1a23f50=""
->
-  <div
-    class="t-drawer t-drawer--right"
-    data-v-c1a23f50=""
-    tabindex="0"
-  >
-    <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
-    >
-      <div
-        class="t-drawer__header"
-      >
-        抽屉标题
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <div
-          class="t-drawer-demo-div"
-          data-v-c1a23f50=""
-        >
-          <span
-            data-v-c1a23f50=""
-          >
-            标签 A
-          </span>
-          <div
-            class="t-input__wrap"
-            data-v-c1a23f50=""
-          >
-            <div
-              class="t-input t-size-m"
-            >
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请输入"
-                type="text"
-                unselectable="off"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class="t-drawer-demo-div"
-          data-v-c1a23f50=""
-        >
-          <span
-            data-v-c1a23f50=""
-          >
-            标签 B
-          </span>
-          <div
-            class="t-input__wrap"
-            data-v-c1a23f50=""
-          >
-            <div
-              class="t-input t-size-m"
-            >
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请输入"
-                type="text"
-                unselectable="off"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class="t-drawer-demo-div"
-          data-v-c1a23f50=""
-        >
-          <span
-            data-v-c1a23f50=""
-          >
-            标签 C
-          </span>
-          <div
-            class="t-input__wrap"
-            data-v-c1a23f50=""
-          >
-            <div
-              class="t-input t-size-m"
-            >
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请输入"
-                type="text"
-                unselectable="off"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-drawer__footer"
-      >
-        <div
-          style="display: flex; justify-content: flex-start;"
-        >
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              确认
-            </span>
-          </button>
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              取消
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    data-v-c1a23f50=""
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      打开抽屉
-    </span>
-  </button>
-</div>
-`;
-
-exports[`csr snapshot test > csr test ./src/drawer/_example/placement.vue 1`] = `
-<div
-  class="t-space t-space-horizontal"
-  style="gap: 16px;"
->
-  <div
-    class="t-space-item"
+  <transition-stub
+    duration="[object Object]"
   >
     <div
       class="t-drawer t-drawer--right"
+      style="display: none;"
       tabindex="0"
     >
-      <div
-        class="t-drawer__mask"
-      />
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
+      >
+        <div
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
       <div
         class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
         style="width: 300px;"
@@ -45023,6 +44865,320 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/placement.vue 1`] = 
         </div>
       </div>
     </div>
+  </transition-stub>
+  <button
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      打开抽屉
+    </span>
+  </button>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/drawer/_example/no-mask.vue 1`] = `
+<div>
+  <transition-stub
+    duration="[object Object]"
+  >
+    <div
+      class="t-drawer t-drawer--right t-drawer--without-mask"
+      style="display: none;"
+      tabindex="0"
+    >
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
+        >
+          抽屉标题
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <p>
+            抽屉的内容
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div
+            style="display: flex; justify-content: flex-start;"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+  <button
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      打开抽屉
+    </span>
+  </button>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/drawer/_example/operation.vue 1`] = `
+<div
+  data-v-c1a23f50=""
+>
+  <transition-stub
+    data-v-c1a23f50=""
+    duration="[object Object]"
+  >
+    <div
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
+    >
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
+      >
+        <div
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
+        >
+          抽屉标题
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <div
+            class="t-drawer-demo-div"
+            data-v-c1a23f50=""
+          >
+            <span
+              data-v-c1a23f50=""
+            >
+              标签 A
+            </span>
+            <div
+              class="t-input__wrap"
+              data-v-c1a23f50=""
+            >
+              <div
+                class="t-input t-size-m"
+              >
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请输入"
+                  type="text"
+                  unselectable="off"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-drawer-demo-div"
+            data-v-c1a23f50=""
+          >
+            <span
+              data-v-c1a23f50=""
+            >
+              标签 B
+            </span>
+            <div
+              class="t-input__wrap"
+              data-v-c1a23f50=""
+            >
+              <div
+                class="t-input t-size-m"
+              >
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请输入"
+                  type="text"
+                  unselectable="off"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-drawer-demo-div"
+            data-v-c1a23f50=""
+          >
+            <span
+              data-v-c1a23f50=""
+            >
+              标签 C
+            </span>
+            <div
+              class="t-input__wrap"
+              data-v-c1a23f50=""
+            >
+              <div
+                class="t-input t-size-m"
+              >
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请输入"
+                  type="text"
+                  unselectable="off"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div
+            style="display: flex; justify-content: flex-start;"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+  <button
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-c1a23f50=""
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      打开抽屉
+    </span>
+  </button>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/drawer/_example/placement.vue 1`] = `
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <transition-stub
+      duration="[object Object]"
+    >
+      <div
+        class="t-drawer t-drawer--right"
+        style="display: none;"
+        tabindex="0"
+      >
+        <transition-stub
+          duration="300"
+          name="t-drawer-fade"
+        >
+          <div
+            class="t-drawer__mask"
+            style="display: none;"
+          />
+        </transition-stub>
+        <div
+          class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+          style="width: 300px;"
+        >
+          <div
+            class="t-drawer__header"
+          >
+            抽屉标题
+          </div>
+          <div
+            class="t-drawer__body"
+          >
+            <p>
+              抽屉的内容
+            </p>
+          </div>
+          <div
+            class="t-drawer__footer"
+          >
+            <div
+              style="display: flex; justify-content: flex-start;"
+            >
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+                type="button"
+              >
+                <span
+                  class="t-button__text"
+                >
+                  确认
+                </span>
+              </button>
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+                type="button"
+              >
+                <span
+                  class="t-button__text"
+                >
+                  取消
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition-stub>
   </div>
   <div
     class="t-space-item"
@@ -45132,6 +45288,9 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/placement.vue 1`] = 
 
 exports[`csr snapshot test > csr test ./src/drawer/_example/popup.vue 1`] = `
 <div>
+  <transition-stub
+    duration="[object Object]"
+  />
   <div
     class="t-space t-space-horizontal"
     style="gap: 16px;"
@@ -45204,59 +45363,70 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/size.vue 1`] = `
   <div
     class="t-space-item"
   >
-    <div
-      class="t-drawer t-drawer--right"
-      tabindex="0"
+    <transition-stub
+      duration="[object Object]"
     >
       <div
-        class="t-drawer__mask"
-      />
-      <div
-        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-        style="width: 300px;"
+        class="t-drawer t-drawer--right"
+        style="display: none;"
+        tabindex="0"
       >
-        <div
-          class="t-drawer__header"
-        >
-          抽屉标题
-        </div>
-        <div
-          class="t-drawer__body"
-        >
-          <p>
-            抽屉的内容
-          </p>
-        </div>
-        <div
-          class="t-drawer__footer"
+        <transition-stub
+          duration="300"
+          name="t-drawer-fade"
         >
           <div
-            style="display: flex; justify-content: flex-start;"
+            class="t-drawer__mask"
+            style="display: none;"
+          />
+        </transition-stub>
+        <div
+          class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+          style="width: 300px;"
+        >
+          <div
+            class="t-drawer__header"
           >
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-              type="button"
+            抽屉标题
+          </div>
+          <div
+            class="t-drawer__body"
+          >
+            <p>
+              抽屉的内容
+            </p>
+          </div>
+          <div
+            class="t-drawer__footer"
+          >
+            <div
+              style="display: flex; justify-content: flex-start;"
             >
-              <span
-                class="t-button__text"
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+                type="button"
               >
-                确认
-              </span>
-            </button>
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-              type="button"
-            >
-              <span
-                class="t-button__text"
+                <span
+                  class="t-button__text"
+                >
+                  确认
+                </span>
+              </button>
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+                type="button"
               >
-                取消
-              </span>
-            </button>
+                <span
+                  class="t-button__text"
+                >
+                  取消
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </transition-stub>
   </div>
   <div
     class="t-space-item"
@@ -45402,62 +45572,73 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/size.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/drawer/_example/size-draggable.vue 1`] = `
 <div>
-  <div
-    class="t-drawer t-drawer--right"
-    tabindex="0"
+  <transition-stub
+    duration="[object Object]"
   >
     <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
     >
-      <div
-        class="t-drawer__header"
-      >
-        抽屉标题
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p>
-          抽屉的内容
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
       >
         <div
-          style="display: flex; justify-content: flex-start;"
-        >
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              确认
-            </span>
-          </button>
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              取消
-            </span>
-          </button>
-        </div>
-      </div>
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
       <div
-        style="z-index: 1; position: absolute; background: transparent; left: 0px; width: 16px; height: 100%; cursor: col-resize;"
-      />
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
+        >
+          抽屉标题
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <p>
+            抽屉的内容
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div
+            style="display: flex; justify-content: flex-start;"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          style="z-index: 1; position: absolute; background: transparent; left: 0px; width: 16px; height: 100%; cursor: col-resize;"
+        />
+      </div>
     </div>
-  </div>
+  </transition-stub>
   <div
     class="t-space t-space-vertical"
     style="gap: 16px;"
