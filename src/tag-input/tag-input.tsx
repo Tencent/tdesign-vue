@@ -161,8 +161,9 @@ export default defineComponent({
     ) : (
       renderTNodeJSX(this, 'suffixIcon')
     );
-    if (suffixIconNode) {
-      this.classes.push(`${this.classPrefix}-tag-input__with-suffix-icon`);
+    const suffixClass = `${this.classPrefix}-tag-input__with-suffix-icon`;
+    if (suffixIconNode && !this.classes.includes(suffixClass)) {
+      this.classes.push(suffixClass);
     }
     // 自定义 Tag 节点
     const displayNode = renderTNodeJSX(this, 'valueDisplay', {
