@@ -4,10 +4,10 @@
     <template #form="{ configProps }">
       <t-form v-bind="configProps">
         <t-form-item label="姓名" name="name" initialData="TDesign">
-          <t-input placeholder="请输入内容" />
+          <t-input placeholder="请输入姓名" />
         </t-form-item>
         <t-form-item label="手机号码" name="tel" initialData="123456">
-          <t-input placeholder="请输入内容" />
+          <t-input placeholder="请输入手机号码" />
         </t-form-item>
         <t-form-item label="课程" name="course" initialData="['1']">
           <t-checkbox-group>

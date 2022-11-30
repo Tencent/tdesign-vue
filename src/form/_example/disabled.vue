@@ -14,22 +14,27 @@
       @submit="onSubmit"
     >
       <t-form-item label="姓名" name="name">
-        <t-input v-model="formData.name" @enter="onEnter"></t-input>
+        <t-input v-model="formData.name" @enter="onEnter" placeholder="请输入姓名"></t-input>
       </t-form-item>
       <t-form-item label="学院" name="college">
-        <t-select v-model="formData.college" :options="COLLEGE_OPTIONS" clearable></t-select>
+        <t-select
+          v-model="formData.college"
+          :options="COLLEGE_OPTIONS"
+          clearable
+          placeholder="请选择所在学院"
+        ></t-select>
       </t-form-item>
       <t-form-item label="寄件地址" name="address1">
-        <t-tree-select v-model="formData.address1" :data="ADDRESS_OPTIONS" clearable />
+        <t-tree-select v-model="formData.address1" :data="ADDRESS_OPTIONS" clearable placeholder="请选择寄件地址" />
       </t-form-item>
       <t-form-item label="收件地址" name="address2">
-        <t-cascader v-model="formData.address2" :options="ADDRESS_OPTIONS" clearable />
+        <t-cascader v-model="formData.address2" :options="ADDRESS_OPTIONS" clearable placeholder="请选择收件地址" />
       </t-form-item>
       <t-form-item label="日期" name="date">
-        <t-date-picker v-model="formData.date" mode="date" clearable />
+        <t-date-picker v-model="formData.date" mode="date" clearable placeholder="请选择日期" />
       </t-form-item>
       <t-form-item label="个人简介" name="personalProfile">
-        <t-textarea v-model="formData.personalProfile" placeholder="简单描述自己的经历" clearable />
+        <t-textarea v-model="formData.personalProfile" placeholder="请用一句话介绍自己" clearable />
       </t-form-item>
       <t-form-item label="短信" name="message">
         <t-switch v-model="formData.message" :label="['接受', '不接']"></t-switch>
@@ -44,7 +49,7 @@
         <t-checkbox-group v-model="formData.course" :options="courseOptions" />
       </t-form-item>
       <t-form-item label="绩点" name="gradePoint">
-        <t-input-number v-model="formData.gradePoint" placeholder="数字" />
+        <t-input-number v-model="formData.gradePoint" placeholder="分数值" />
       </t-form-item>
       <t-form-item label="头像" name="avatar">
         <t-upload
