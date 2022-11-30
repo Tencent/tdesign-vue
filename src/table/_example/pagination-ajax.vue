@@ -29,6 +29,11 @@ export default {
           width: 64,
         },
         {
+          colKey: 'serial-number',
+          title: '序号',
+          width: 60,
+        },
+        {
           width: 200,
           colKey: 'name',
           title: '姓名',
