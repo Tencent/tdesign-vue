@@ -136,7 +136,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
   mounted() {
     const scrollWidth = window.innerWidth - document.body.offsetWidth;
     this.styleEl = document.createElement('style');
-    this.styleEl.dataset.id = `td_dialog_${+new Date()}_${(key += 1)}`;
+    this.styleEl.dataset.id = `td_drawer_${+new Date()}_${(key += 1)}`;
     this.styleEl.innerHTML = `
       html body {
         overflow-y: hidden;
