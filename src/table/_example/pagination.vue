@@ -1,14 +1,23 @@
 <template>
-  <div>
+  <t-space direction="vertical">
+    <!-- 按钮操作区域 -->
+    <t-radio-group v-model="reserveSelectedRowOnPaginate" variant="default-filled">
+      <t-radio-button :value="true">跨分页选中</t-radio-button>
+      <t-radio-button :value="false">当前页选中</t-radio-button>
+    </t-radio-group>
+
     <t-table
       rowKey="index"
       :data="data"
       :columns="columns"
       :pagination="pagination"
+      :selected-row-keys.sync="selectedRowKeys"
+      :reserve-selected-row-on-paginate="reserveSelectedRowOnPaginate"
       @change="onChange"
       @page-change="onPageChange"
+      @select-change="onSelectChange"
     ></t-table>
-  </div>
+  </t-space>
 </template>
 <script>
 const data = [];
@@ -30,13 +39,13 @@ export default {
   data() {
     return {
       data,
+      reserveSelectedRowOnPaginate: true,
+      selectedRowKeys: [],
       columns: [
         {
-          align: 'center',
-          width: '100',
-          className: 'row',
-          colKey: 'index',
+          colKey: 'serial-number',
           title: '序号',
+          width: 60,
         },
         {
           width: 100,
@@ -61,6 +70,11 @@ export default {
           width: 200,
           ellipsis: true,
         },
+        {
+          colKey: 'row-select',
+          type: 'multiple',
+          width: 46,
+        },
       ],
       /** 非受控用法：与分页组件对齐（此处注释为非受控用法示例，代码有效，勿删） */
       pagination: {
@@ -84,6 +98,9 @@ export default {
       // this.pagination.current = pageInfo.current;
       // this.pagination.pageSize = pageInfo.pageSize;
       console.log('page-change:', pageInfo, newData);
+    },
+    onSelectChange(selectedRowKeys, context) {
+      console.log(selectedRowKeys, context);
     },
   },
 };

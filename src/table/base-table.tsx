@@ -56,6 +56,7 @@ export default defineComponent({
     const tableRef = ref<HTMLDivElement>();
     const tableElmRef = ref<HTMLTableElement>();
     const tableBodyRef = ref<HTMLTableElement>();
+    const bottomContentRef = ref<HTMLDivElement>();
     const tableFootHeight = ref(0);
 
     const {
@@ -117,7 +118,9 @@ export default defineComponent({
       setTableContentRef,
     } = useAffix(props);
 
-    const { dataSource, isPaginateData, renderPagination } = usePagination(props, context);
+    const {
+      dataSource, innerPagination, isPaginateData, renderPagination,
+    } = usePagination(props, context);
 
     // 列宽拖拽逻辑
     const columnResizeParams = useColumnResize(tableContentRef, refreshTable, getThWidthList, updateThWidthList);
@@ -153,6 +156,13 @@ export default defineComponent({
         && isFixedHeader.value
         && ((isMultipleHeader.value && isWidthOverflow.value) || !isMultipleHeader.value),
     );
+
+    const dividerBottom = computed(() => {
+      if (!props.bordered) return 0;
+      const bottomRect = bottomContentRef.value?.getBoundingClientRect();
+      const paginationRect = paginationRef.value?.getBoundingClientRect();
+      return (bottomRect?.height || 0) + (paginationRect?.height || 0);
+    });
 
     const columnResizable = computed(() => props.allowResizeColumnWidth === undefined ? props.resizable : props.allowResizeColumnWidth);
 
@@ -271,6 +281,7 @@ export default defineComponent({
       columnResizable,
       thList,
       classPrefix,
+      innerPagination,
       isVirtual,
       global,
       tableFootHeight,
@@ -287,6 +298,7 @@ export default defineComponent({
       virtualScrollClasses,
       tableLayoutClasses,
       tableElmClasses,
+      dividerBottom,
       tableContentRef,
       isFixedHeader,
       isWidthOverflow,
@@ -306,6 +318,7 @@ export default defineComponent({
       affixHeaderRef,
       affixFooterRef,
       paginationRef,
+      bottomContentRef,
       showAffixHeader,
       showAffixFooter,
       scrollbarWidth,
@@ -537,6 +550,8 @@ export default defineComponent({
       handleRowMounted: this.handleRowMounted,
       renderExpandedRow: this.renderExpandedRow,
       ...pick(this.$props, extendTableProps),
+      // 内部使用分页信息必须取 innerPagination
+      pagination: this.innerPagination,
     };
     // Vue3 do not need getListener
     const tBodyListener = this.getListener();
@@ -590,7 +605,11 @@ export default defineComponent({
         {this.renderPagination(h)}
       </div>
     );
-    const bottom = !!bottomContent && <div class={this.tableBaseClass.bottomContent}>{bottomContent}</div>;
+    const bottom = !!bottomContent && (
+      <div ref="bottomContentRef" class={this.tableBaseClass.bottomContent}>
+        {bottomContent}
+      </div>
+    );
 
     return (
       <div ref="tableRef" class={this.dynamicBaseTableClasses} style="position: relative">
@@ -604,18 +623,19 @@ export default defineComponent({
 
         {loadingContent}
 
+        {bottom}
+
         {/* 右侧滚动条分隔线 */}
         {this.showRightDivider && (
           <div
             class={this.tableBaseClass.scrollbarDivider}
             style={{
               right: `${this.scrollbarWidth}px`,
+              bottom: this.dividerBottom ? `${this.dividerBottom}px` : undefined,
               height: `${this.tableContentRef?.getBoundingClientRect().height}px`,
             }}
           ></div>
         )}
-
-        {bottom}
 
         {/* 吸底的滚动条 */}
         {this.horizontalScrollAffixedBottom && (
