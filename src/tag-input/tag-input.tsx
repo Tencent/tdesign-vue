@@ -6,7 +6,6 @@ import { CloseCircleFilledIcon as TdCloseCircleFilledIcon } from 'tdesign-icons-
 import TInput, { InputValue } from '../input';
 import { TdTagInputProps } from './type';
 import props from './props';
-import { prefix } from '../config';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import useTagScroll from './hooks/useTagScroll';
 import useTagList from './useTagList';
@@ -26,6 +25,7 @@ export default defineComponent({
     // 除了绑定 DOM 的变量，其他的一律不可使用 Ref 作为后缀
     const isComposition = ref(false);
     const COMPONENT_NAME = usePrefixClass('tag-input');
+    const classPrefix = usePrefixClass();
 
     const [tInputValue, setTInputValue] = useDefaultValue(
       inputValue,
@@ -52,7 +52,7 @@ export default defineComponent({
         sortOnDraggable: props.dragSort,
         onDragOverCheck: {
           x: true,
-          targetClassNameRegExp: new RegExp(`^${prefix}-tag`),
+          targetClassNameRegExp: new RegExp(`^${classPrefix.value}-tag`),
         },
       },
       context,
@@ -77,8 +77,8 @@ export default defineComponent({
         COMPONENT_NAME.value,
         {
           [`${COMPONENT_NAME.value}--break-line`]: excessTagsDisplayType.value === 'break-line',
-          [`${prefix}-is-empty`]: isEmpty,
-          [`${prefix}-tag-input--with-tag`]: !isEmpty,
+          [`${classPrefix.value}-is-empty`]: isEmpty,
+          [`${classPrefix.value}-tag-input--with-tag`]: !isEmpty,
         },
       ];
     });
@@ -132,6 +132,7 @@ export default defineComponent({
       tagInputPlaceholder,
       showClearIcon,
       tagInputRef,
+      classPrefix,
       setTInputValue,
       addHover,
       cancelHover,
@@ -161,7 +162,7 @@ export default defineComponent({
       renderTNodeJSX(this, 'suffixIcon')
     );
     if (suffixIconNode) {
-      this.classes.push(`${prefix}-tag-input__with-suffix-icon`);
+      this.classes.push(`${this.classPrefix}-tag-input__with-suffix-icon`);
     }
     // 自定义 Tag 节点
     const displayNode = renderTNodeJSX(this, 'valueDisplay', {
