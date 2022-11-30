@@ -1,4 +1,4 @@
-import { ref, toRefs, Ref } from '@vue/composition-api';
+import { ref, toRefs } from '@vue/composition-api';
 import {
   TagInputValue, TagInputChangeContext, TdTagInputProps, DragProps, TagInputRemoveContext,
 } from './type';
