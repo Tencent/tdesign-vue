@@ -24,7 +24,8 @@ export default defineComponent({
   setup(props: TdTagInputProps, context) {
     const { inputValue } = toRefs(props);
     const { inputProps } = props;
-    const isCompositionRef = ref(false);
+    // 除了绑定 DOM 的变量，其他的一律不可使用 Ref 作为后缀
+    const isComposition = ref(false);
     const COMPONENT_NAME = usePrefixClass('tag-input');
 
     const [tInputValue, setTInputValue] = useDefaultValue(
@@ -71,12 +72,17 @@ export default defineComponent({
 
     const { CloseCircleFilledIcon } = useGlobalIcon({ CloseCircleFilledIcon: TdCloseCircleFilledIcon });
 
-    const classes = computed(() => [
-      COMPONENT_NAME.value,
-      {
-        [`${COMPONENT_NAME.value}--break-line`]: excessTagsDisplayType.value === 'break-line',
-      },
-    ]);
+    const classes = computed(() => {
+      const isEmpty = !(Array.isArray(tagValue.value) && tagValue.value.length);
+      return [
+        COMPONENT_NAME.value,
+        {
+          [`${COMPONENT_NAME.value}--break-line`]: excessTagsDisplayType.value === 'break-line',
+          [`${prefix}-is-empty`]: isEmpty,
+          [`${prefix}-tag-input--with-tag`]: !isEmpty,
+        },
+      ];
+    });
 
     const tagInputPlaceholder = computed(() => (!tagValue.value?.length ? placeholder.value : ''));
 
@@ -89,12 +95,12 @@ export default defineComponent({
     ));
 
     const onInputCompositionstart = (value: InputValue, context: { e: CompositionEvent }) => {
-      isCompositionRef.value = true;
+      isComposition.value = true;
       inputProps?.onCompositionstart?.(value, context);
     };
 
     const onInputCompositionend = (value: InputValue, context: { e: CompositionEvent }) => {
-      isCompositionRef.value = false;
+      isComposition.value = false;
       inputProps?.onCompositionend?.(value, context);
     };
 
@@ -102,10 +108,10 @@ export default defineComponent({
       // 阻止 Enter 默认行为，避免在 Form 中触发 submit 事件
       context.e?.preventDefault();
       setTInputValue('', { e: context.e, trigger: 'enter' });
-      !isCompositionRef.value && onInnerEnter(value, context);
+      !isComposition.value && onInnerEnter(value, context);
       nextTick(() => {
         scrollToRight();
-        isCompositionRef.value = false;
+        isComposition.value = false;
       });
     };
 
@@ -155,6 +161,9 @@ export default defineComponent({
     ) : (
       renderTNodeJSX(this, 'suffixIcon')
     );
+    if (suffixIconNode) {
+      this.classes.push(`${prefix}-tag-input__with-suffix-icon`);
+    }
     // 自定义 Tag 节点
     const displayNode = renderTNodeJSX(this, 'valueDisplay', {
       params: {
