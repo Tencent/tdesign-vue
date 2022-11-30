@@ -394,6 +394,13 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     isControllerVisible() {
       this.handleIE();
     },
+    theme: {
+      handler(v: TdCalendarProps['theme']) {
+        if (v === 'card') this.controlSize = 'small';
+        if (v === 'full') this.controlSize = 'medium';
+      },
+      immediate: true,
+    },
   },
   mounted() {
     this.handleIE();
