@@ -5,7 +5,7 @@ toc: false
 docClass: timeline
 ---
 
-## 🌈 0.51.0 `2022-11-30` 
+## 🌈 0.51.1 `2022-11-30` 
 ### ❗ Breaking Changes
 - `Jumper`: Jumper 更名为 PaginationMini 组件，正在使用 Jumper 组件的同学请从 Pagination 中导出替换 @honkinglin ([#1845](https://github.com/Tencent/tdesign-vue/pull/1845))
 ### 🚀 Features
