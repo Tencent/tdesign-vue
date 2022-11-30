@@ -14,11 +14,11 @@
       @submit="onSubmit"
       scrollToFirstError="smooth"
     >
-      <t-form-item label="名字" name="name">
-        <t-input v-model="formData.name"></t-input>
+      <t-form-item label="姓名" name="name">
+        <t-input v-model="formData.name" placeholder="请输入姓名"></t-input>
       </t-form-item>
       <t-form-item label="密码" name="password">
-        <t-input v-model="formData.password" type="password"></t-input>
+        <t-input v-model="formData.password" type="password" placeholder="请输入密码"></t-input>
       </t-form-item>
     </t-form>
   </t-space>

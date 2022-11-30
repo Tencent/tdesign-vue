@@ -36,6 +36,7 @@ const OMIT_PROPS = [
   'expandOnRowClick',
   'multipleSort',
   'expandIcon',
+  'reserveSelectedRowOnPaginate',
   'onChange',
   'onAsyncLoadingClick',
   'onChange',
@@ -75,7 +76,12 @@ export default defineComponent({
     // 排序功能
     const { renderSortIcon } = useSorter(props, context);
     // 行选中功能
-    const { formatToRowSelectColumn, selectedRowClassNames } = useRowSelect(props, tableSelectedClasses);
+    const {
+      selectedRowClassNames, currentPaginateData, formatToRowSelectColumn, setTSelectedRowKeys,
+    } = useRowSelect(
+      props,
+      tableSelectedClasses,
+    );
     // 过滤功能
     const {
       hasEmptyCondition,
@@ -230,6 +236,7 @@ export default defineComponent({
     });
 
     const onInnerPageChange = (pageInfo: PageInfo, newData: Array<TableRowData>) => {
+      currentPaginateData.value = newData;
       props.onPageChange?.(pageInfo, newData);
       // Vue3 ignore next line
       context.emit('page-change', pageInfo, newData);
@@ -241,6 +248,14 @@ export default defineComponent({
       props.onChange?.(...changeParams);
       // Vue3 ignore next line
       context.emit('change', ...changeParams);
+      // 是否在分页时保留选中结果，如果不保留则需清空
+      if (!props.reserveSelectedRowOnPaginate) {
+        setTSelectedRowKeys([], {
+          selectedRowData: [],
+          type: 'uncheck',
+          currentRowKey: 'CLEAR_ON_PAGINATE',
+        });
+      }
     };
 
     return {

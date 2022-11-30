@@ -15000,6 +15000,13 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/value.vue 1`] = `
   <div
     class="t-space-item"
   >
+    <h2>
+      单个高亮日期
+    </h2>
+  </div>
+  <div
+    class="t-space-item"
+  >
     <div
       class="t-calendar t-calendar--full"
     >
@@ -15555,6 +15562,976 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/value.vue 1`] = `
               </div>
               <div
                 class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    13
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    14
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    15
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+            </tr>
+            <tr
+              class="t-calendar__table-body-row"
+            >
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    16
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    17
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    18
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    19
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    20
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    21
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    22
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+            </tr>
+            <tr
+              class="t-calendar__table-body-row"
+            >
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    23
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    24
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    25
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    26
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    27
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    28
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    29
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+            </tr>
+            <tr
+              class="t-calendar__table-body-row"
+            >
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    30
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell t-is-disabled"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    01
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell t-is-disabled"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    02
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell t-is-disabled"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    03
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell t-is-disabled"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    04
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell t-is-disabled"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    05
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell t-is-disabled"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    06
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <br />
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <h2>
+      多个高亮日期
+    </h2>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-calendar t-calendar--full"
+    >
+      <div
+        class="t-calendar__control"
+      >
+        <div
+          class="t-calendar__title"
+        />
+        <div
+          class="t-calendar__control-section"
+        >
+          <div
+            class="t-calendar__control-section-cell"
+          >
+            <div
+              class="t-select__wrap"
+            >
+              <div
+                class="t-input__wrap t-select"
+              >
+                <div
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                >
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
+                  >
+                    1998 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-calendar__control-section-cell"
+          >
+            <div
+              class="t-select__wrap"
+            >
+              <div
+                class="t-input__wrap t-select"
+              >
+                <div
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                >
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
+                  >
+                    11 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-calendar__control-section-cell"
+            style="height: auto;"
+          >
+            <div
+              class="t-radio-group t-size-m t-radio-group--filled"
+            >
+              <label
+                class="t-radio-button t-is-checked"
+              >
+                <input
+                  class="t-radio-button__former"
+                  name=""
+                  type="radio"
+                  value="month"
+                />
+                <span
+                  class="t-radio-button__input"
+                />
+                <span
+                  class="t-radio-button__label"
+                >
+                  月
+                </span>
+              </label>
+              <label
+                class="t-radio-button"
+              >
+                <input
+                  class="t-radio-button__former"
+                  name=""
+                  type="radio"
+                  value="year"
+                />
+                <span
+                  class="t-radio-button__input"
+                />
+                <span
+                  class="t-radio-button__label"
+                >
+                  年
+                </span>
+              </label>
+              <div
+                class="t-radio-group__bg-block"
+                style="width: 0px; left: 0px;"
+              />
+            </div>
+          </div>
+          <div
+            class="t-calendar__control-section-cell"
+          >
+            <span
+              class="t-tag t-tag--check t-tag--default t-size-m t-calendar__control-tag"
+            >
+              隐藏周末
+            </span>
+          </div>
+          <div
+            class="t-calendar__control-section-cell"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                今天
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-calendar__panel t-calendar__panel--month"
+      >
+        <table
+          class="t-calendar__table"
+        >
+          <thead
+            class="t-calendar__table-head"
+          >
+            <tr
+              class="t-calendar__table-head-row"
+            >
+              <th
+                class="t-calendar__table-head-cell"
+              >
+                <span>
+                  一
+                </span>
+              </th>
+              <th
+                class="t-calendar__table-head-cell"
+              >
+                <span>
+                  二
+                </span>
+              </th>
+              <th
+                class="t-calendar__table-head-cell"
+              >
+                <span>
+                  三
+                </span>
+              </th>
+              <th
+                class="t-calendar__table-head-cell"
+              >
+                <span>
+                  四
+                </span>
+              </th>
+              <th
+                class="t-calendar__table-head-cell"
+              >
+                <span>
+                  五
+                </span>
+              </th>
+              <th
+                class="t-calendar__table-head-cell"
+              >
+                <span>
+                  六
+                </span>
+              </th>
+              <th
+                class="t-calendar__table-head-cell"
+              >
+                <span>
+                  日
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="t-calendar__table-body"
+          >
+            <tr
+              class="t-calendar__table-body-row"
+            >
+              <div
+                class="t-calendar__table-body-cell t-is-disabled"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    26
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell t-is-disabled"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    27
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell t-is-disabled"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    28
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell t-is-disabled"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    29
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell t-is-disabled"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    30
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell t-is-disabled"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    31
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    01
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+            </tr>
+            <tr
+              class="t-calendar__table-body-row"
+            >
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    02
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    03
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    04
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    05
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    06
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    07
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    08
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+            </tr>
+            <tr
+              class="t-calendar__table-body-row"
+            >
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    09
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    10
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell t-is-checked"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    11
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell t-is-checked"
+              >
+                <div
+                  style="display: flex; flex-direction: column; align-items: flex-end;"
+                >
+                  <div
+                    class="t-calendar__table-body-cell-display"
+                  >
+                    12
+                  </div>
+                  <div
+                    class="t-calendar__table-body-cell-content"
+                  />
+                </div>
+              </div>
+              <div
+                class="t-calendar__table-body-cell t-is-checked"
               >
                 <div
                   style="display: flex; flex-direction: column; align-items: flex-end;"
@@ -19972,7 +20949,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/check-strictly.vue
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -20058,7 +21035,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/collapsed.vue 1`] 
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -20123,7 +21100,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/collapsed.vue 1`] 
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -20186,7 +21163,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/collapsed.vue 1`] 
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -20301,7 +21278,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/disabled.vue 1`] =
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
     >
       <div
         class="t-input t-size-m t-is-disabled t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -20397,7 +21374,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/ellipsis.vue 1`] =
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -20504,7 +21481,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/filterable.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -20660,7 +21637,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/keys.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -20760,7 +21737,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/load.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/cascader/_example/max.vue 1`] = `
 <div
-  class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader"
+  class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-cascader"
 >
   <div
     class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -20806,7 +21783,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/max.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/cascader/_example/multiple.vue 1`] = `
 <div
-  class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+  class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
 >
   <div
     class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -21080,7 +22057,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/show-all-levels.vu
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -21361,7 +22338,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/value-mode.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -21408,7 +22385,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/value-mode.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -21455,7 +22432,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/value-mode.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -21578,7 +22555,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/value-type.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -22645,7 +23622,7 @@ exports[`csr snapshot test > csr test ./src/collapse/_example/base.vue 1`] = `
                     class="t-space-item"
                   >
                     <div
-                      class="t-input__wrap t-tag-input t-tag-input--break-line"
+                      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
                     >
                       <div
                         class="t-input t-size-m t-is-default t-input--prefix"
@@ -22711,7 +23688,7 @@ exports[`csr snapshot test > csr test ./src/collapse/_example/base.vue 1`] = `
                     class="t-space-item"
                   >
                     <div
-                      class="t-input__wrap t-tag-input t-tag-input--break-line"
+                      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
                     >
                       <div
                         class="t-input t-size-m t-is-default t-input--prefix"
@@ -22782,7 +23759,7 @@ exports[`csr snapshot test > csr test ./src/collapse/_example/base.vue 1`] = `
                     class="t-space-item"
                   >
                     <div
-                      class="t-input__wrap t-tag-input t-tag-input--break-line"
+                      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
                     >
                       <div
                         class="t-input t-size-m t-is-default t-input--prefix"
@@ -33496,15 +34473,14 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             fill="none"
             height="1em"
-            style="font-size: 18px;"
             viewBox="0 0 16 16"
             width="1em"
           >
             <path
-              d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+              d="M6 5v6l4.5-3L6 5z"
               fill="currentColor"
               fill-opacity="0.9"
             />
@@ -33533,15 +34509,14 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             fill="none"
             height="1em"
-            style="font-size: 18px;"
             viewBox="0 0 16 16"
             width="1em"
           >
             <path
-              d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+              d="M6 5v6l4.5-3L6 5z"
               fill="currentColor"
               fill-opacity="0.9"
             />
@@ -33961,79 +34936,90 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/popconfirm.
       Open Drawer
     </span>
   </button>
-  <div
-    class="t-drawer t-drawer--right"
+  <transition-stub
     data-v-1f100e12=""
-    tabindex="0"
+    duration="[object Object]"
   >
     <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
     >
-      <div
-        class="t-drawer__header"
-      >
-        Drawer
-      </div>
-      <div
-        class="t-drawer__close-btn"
-      >
-        <svg
-          class="t-icon t-icon-close t-submenu-icon"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p
-          data-v-1f100e12=""
-        >
-          This is a controlled drawer
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
       >
         <div
-          style="display: flex; justify-content: flex-start;"
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
         >
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-            type="button"
+          Drawer
+        </div>
+        <div
+          class="t-drawer__close-btn"
+        >
+          <svg
+            class="t-icon t-icon-close t-submenu-icon"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            <span
-              class="t-button__text"
-            >
-              confirm
-            </span>
-          </button>
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-            type="button"
+            <path
+              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <p
+            data-v-1f100e12=""
           >
-            <span
-              class="t-button__text"
+            This is a controlled drawer
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div
+            style="display: flex; justify-content: flex-start;"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+              type="button"
             >
-              cancel
-            </span>
-          </button>
+              <span
+                class="t-button__text"
+              >
+                confirm
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                cancel
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </transition-stub>
 </div>
 `;
 
@@ -35952,10 +36938,10 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                 </div>
               </div>
               <div
-                class="t-jumper"
+                class="t-pagination-mini"
               >
                 <button
-                  class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__prev"
+                  class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-pagination-mini__prev"
                   title="上个月"
                   type="button"
                 >
@@ -35974,7 +36960,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                   </svg>
                 </button>
                 <button
-                  class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__current"
+                  class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-pagination-mini__current"
                   title="当前"
                   type="button"
                 >
@@ -35993,7 +36979,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                   </svg>
                 </button>
                 <button
-                  class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__next"
+                  class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-pagination-mini__next"
                   title="下个月"
                   type="button"
                 >
@@ -36561,10 +37547,10 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                 </div>
               </div>
               <div
-                class="t-jumper"
+                class="t-pagination-mini"
               >
                 <button
-                  class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__prev"
+                  class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-pagination-mini__prev"
                   title="上个月"
                   type="button"
                 >
@@ -36583,7 +37569,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                   </svg>
                 </button>
                 <button
-                  class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__current"
+                  class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-pagination-mini__current"
                   title="当前"
                   type="button"
                 >
@@ -36602,7 +37588,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                   </svg>
                 </button>
                 <button
-                  class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__next"
+                  class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-pagination-mini__next"
                   title="下个月"
                   type="button"
                 >
@@ -37214,10 +38200,10 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                   </div>
                 </div>
                 <div
-                  class="t-jumper"
+                  class="t-pagination-mini"
                 >
                   <button
-                    class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__prev"
+                    class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-pagination-mini__prev"
                     title="上个月"
                     type="button"
                   >
@@ -37236,7 +38222,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                     </svg>
                   </button>
                   <button
-                    class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__current"
+                    class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-pagination-mini__current"
                     title="当前"
                     type="button"
                   >
@@ -37255,7 +38241,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                     </svg>
                   </button>
                   <button
-                    class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__next"
+                    class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-pagination-mini__next"
                     title="下个月"
                     type="button"
                   >
@@ -37810,10 +38796,10 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                   </div>
                 </div>
                 <div
-                  class="t-jumper"
+                  class="t-pagination-mini"
                 >
                   <button
-                    class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__prev"
+                    class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-pagination-mini__prev"
                     title="上个月"
                     type="button"
                   >
@@ -37832,7 +38818,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                     </svg>
                   </button>
                   <button
-                    class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__current"
+                    class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-pagination-mini__current"
                     title="当前"
                     type="button"
                   >
@@ -37851,7 +38837,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                     </svg>
                   </button>
                   <button
-                    class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__next"
+                    class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-pagination-mini__next"
                     title="下个月"
                     type="button"
                   >
@@ -38423,10 +39409,10 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                   </div>
                 </div>
                 <div
-                  class="t-jumper"
+                  class="t-pagination-mini"
                 >
                   <button
-                    class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__prev"
+                    class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-pagination-mini__prev"
                     title="上个月"
                     type="button"
                   >
@@ -38445,7 +39431,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                     </svg>
                   </button>
                   <button
-                    class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__current"
+                    class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-pagination-mini__current"
                     title="当前"
                     type="button"
                   >
@@ -38464,7 +39450,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                     </svg>
                   </button>
                   <button
-                    class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__next"
+                    class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-pagination-mini__next"
                     title="下个月"
                     type="button"
                   >
@@ -39541,7 +40527,103 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/attach.vue 1`] = `
     data-v-d38b880a=""
     duration="300"
     name="t-dialog-zoom__vue"
-  />
+  >
+    <div
+      class="t-dialog__ctx t-dialog__ctx--fixed"
+      style="display: none;"
+    >
+      <div
+        class="t-dialog__mask"
+      />
+      <div
+        class="t-dialog__wrap"
+      >
+        <div
+          class="t-dialog__position t-dialog--top"
+        >
+          <div
+            class="t-dialog t-dialog--default t-dialog__modal-default"
+          >
+            <div
+              class="t-dialog__header"
+            >
+              <div
+                class="t-dialog__header-content"
+              >
+                挂载到id为app的元素
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="t-dialog__body"
+            >
+              <div
+                data-v-d38b880a=""
+              >
+                <div
+                  data-v-d38b880a=""
+                >
+                  通过querySelect指定元素挂载
+                </div>
+                <div
+                  data-v-d38b880a=""
+                >
+                  支持原生document.querySelect选择元素
+                </div>
+                <div
+                  data-v-d38b880a=""
+                >
+                  querySelect获取到的第一个元素为挂载点
+                </div>
+              </div>
+            </div>
+            <div
+              class="t-dialog__footer"
+            >
+              <div>
+                <button
+                  class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog__cancel"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    取消
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    确认
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
   <transition-stub
     data-v-d38b880a=""
     duration="300"
@@ -39643,6 +40725,96 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/attach.vue 1`] = `
       </div>
     </div>
   </transition-stub>
+  <div
+    class="t-dialog__ctx t-dialog__ctx--fixed"
+    style="display: none;"
+  >
+    <div
+      class="t-dialog__mask"
+    />
+    <div
+      class="t-dialog__wrap"
+    >
+      <div
+        class="t-dialog__position t-dialog--top"
+      >
+        <div
+          class="t-dialog t-dialog--default t-dialog__modal-default"
+        >
+          <div
+            class="t-dialog__header"
+          >
+            <div
+              class="t-dialog__header-content"
+            >
+              函数返回挂载节点
+            </div>
+            <span
+              class="t-dialog__close"
+            >
+              <svg
+                class="t-icon t-icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            class="t-dialog__body"
+          >
+            <div
+              data-v-d38b880a=""
+            >
+              <div
+                data-v-d38b880a=""
+              >
+                指定函数返回的节点为挂载点
+              </div>
+              <div
+                data-v-d38b880a=""
+              >
+                函数返回为DOM节点对象
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-dialog__footer"
+          >
+            <div>
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog__cancel"
+                type="button"
+              >
+                <span
+                  class="t-button__text"
+                >
+                  取消
+                </span>
+              </button>
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                type="button"
+              >
+                <span
+                  class="t-button__text"
+                >
+                  确认
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -43022,62 +44194,73 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/attach-parent.vue 1`
     class="t-suf-container"
     data-v-241b7623=""
   >
-    <div
-      class="t-drawer t-drawer--right t-drawer--attach"
+    <transition-stub
       data-v-241b7623=""
-      tabindex="0"
+      duration="[object Object]"
     >
       <div
-        class="t-drawer__mask"
-      />
-      <div
-        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-        style="width: 300px;"
+        class="t-drawer t-drawer--right t-drawer--attach"
+        style="display: none;"
+        tabindex="0"
       >
-        <div
-          class="t-drawer__header"
-        >
-          抽屉标题
-        </div>
-        <div
-          class="t-drawer__body"
-        >
-          <p
-            data-v-241b7623=""
-          >
-            抽屉的内容
-          </p>
-        </div>
-        <div
-          class="t-drawer__footer"
+        <transition-stub
+          duration="300"
+          name="t-drawer-fade"
         >
           <div
-            style="display: flex; justify-content: flex-start;"
+            class="t-drawer__mask"
+            style="display: none;"
+          />
+        </transition-stub>
+        <div
+          class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+          style="width: 300px;"
+        >
+          <div
+            class="t-drawer__header"
           >
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-              type="button"
+            抽屉标题
+          </div>
+          <div
+            class="t-drawer__body"
+          >
+            <p
+              data-v-241b7623=""
             >
-              <span
-                class="t-button__text"
-              >
-                确认
-              </span>
-            </button>
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-              type="button"
+              抽屉的内容
+            </p>
+          </div>
+          <div
+            class="t-drawer__footer"
+          >
+            <div
+              style="display: flex; justify-content: flex-start;"
             >
-              <span
-                class="t-button__text"
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+                type="button"
               >
-                取消
-              </span>
-            </button>
+                <span
+                  class="t-button__text"
+                >
+                  确认
+                </span>
+              </button>
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+                type="button"
+              >
+                <span
+                  class="t-button__text"
+                >
+                  取消
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </transition-stub>
     <div
       class="tdesign-radio-button"
       data-v-241b7623=""
@@ -43242,79 +44425,90 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/base.vue 1`] = `
 <div
   data-v-18b3c170=""
 >
-  <div
-    class="t-drawer t-drawer--right"
+  <transition-stub
     data-v-18b3c170=""
-    tabindex="0"
+    duration="[object Object]"
   >
     <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
     >
-      <div
-        class="t-drawer__header"
-      >
-        抽屉标题
-      </div>
-      <div
-        class="t-drawer__close-btn"
-      >
-        <svg
-          class="t-icon t-icon-close t-submenu-icon"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p
-          data-v-18b3c170=""
-        >
-          抽屉的内容
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
       >
         <div
-          style="display: flex; justify-content: flex-start;"
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
         >
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-            type="button"
+          抽屉标题
+        </div>
+        <div
+          class="t-drawer__close-btn"
+        >
+          <svg
+            class="t-icon t-icon-close t-submenu-icon"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            <span
-              class="t-button__text"
-            >
-              确认
-            </span>
-          </button>
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-            type="button"
+            <path
+              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <p
+            data-v-18b3c170=""
           >
-            <span
-              class="t-button__text"
+            抽屉的内容
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div
+            style="display: flex; justify-content: flex-start;"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+              type="button"
             >
-              取消
-            </span>
-          </button>
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </transition-stub>
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     data-v-18b3c170=""
@@ -43331,118 +44525,61 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/base.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/drawer/_example/custom.vue 1`] = `
 <div>
-  <div
-    class="t-drawer t-drawer--right"
-    tabindex="0"
+  <transition-stub
+    duration="[object Object]"
   >
     <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
     >
-      <div
-        class="t-drawer__header"
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
       >
-        <div>
-          自定义头部
+        <div
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
+        >
+          <div>
+            自定义头部
+          </div>
         </div>
-      </div>
-      <div
-        class="t-drawer__close-btn"
-      >
-        <svg
-          class="t-icon t-icon-close t-submenu-icon"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
+        <div
+          class="t-drawer__close-btn"
         >
-          <path
-            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p>
-          抽屉的内容
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
-      >
-        <button
-          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-          type="button"
-        >
-          <span
-            class="t-button__text"
+          <svg
+            class="t-icon t-icon-close t-submenu-icon"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            确定
-          </span>
-        </button>
-        <button
-          class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-          type="button"
+            <path
+              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </div>
+        <div
+          class="t-drawer__body"
         >
-          <span
-            class="t-button__text"
-          >
-            取消
-          </span>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-drawer t-drawer--right"
-    tabindex="0"
-  >
-    <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
-    >
-      <div
-        class="t-drawer__header"
-      >
-        抽屉标题
-      </div>
-      <div
-        class="t-drawer__close-btn"
-      >
-        <svg
-          class="t-icon t-icon-close t-submenu-icon"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
+          <p>
+            抽屉的内容
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
         >
-          <path
-            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p>
-          抽屉的内容
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
-      >
-        <div>
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-primary"
             type="button"
@@ -43450,82 +44587,11 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/custom.vue 1`] = `
             <span
               class="t-button__text"
             >
-              confirm
+              确定
             </span>
           </button>
           <button
             class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              cancel
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-drawer t-drawer--right"
-    tabindex="0"
-  >
-    <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
-    >
-      <div
-        class="t-drawer__header"
-      >
-        抽屉标题
-      </div>
-      <div
-        class="t-drawer__close-btn"
-      >
-        <svg
-          class="t-icon t-icon-close t-submenu-icon"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p>
-          抽屉的内容
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
-      >
-        <div
-          style="display: flex; justify-content: flex-start;"
-        >
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled t-drawer__confirm"
-            disabled="disabled"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              确认
-            </span>
-          </button>
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="button"
           >
             <span
@@ -43537,7 +44603,168 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/custom.vue 1`] = `
         </div>
       </div>
     </div>
-  </div>
+  </transition-stub>
+  <transition-stub
+    duration="[object Object]"
+  >
+    <div
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
+    >
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
+      >
+        <div
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
+        >
+          抽屉标题
+        </div>
+        <div
+          class="t-drawer__close-btn"
+        >
+          <svg
+            class="t-icon t-icon-close t-submenu-icon"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <p>
+            抽屉的内容
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                confirm
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                cancel
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+  <transition-stub
+    duration="[object Object]"
+  >
+    <div
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
+    >
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
+      >
+        <div
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
+        >
+          抽屉标题
+        </div>
+        <div
+          class="t-drawer__close-btn"
+        >
+          <svg
+            class="t-icon t-icon-close t-submenu-icon"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <p>
+            抽屉的内容
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div
+            style="display: flex; justify-content: flex-start;"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled t-drawer__confirm"
+              disabled="disabled"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
@@ -43575,247 +44802,23 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/custom.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/drawer/_example/destroy.vue 1`] = `
 <div>
-  <!---->
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      打开抽屉
-    </span>
-  </button>
-</div>
-`;
-
-exports[`csr snapshot test > csr test ./src/drawer/_example/no-mask.vue 1`] = `
-<div>
-  <div
-    class="t-drawer t-drawer--right t-drawer--without-mask"
-    tabindex="0"
-  >
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
-    >
-      <div
-        class="t-drawer__header"
-      >
-        抽屉标题
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p>
-          抽屉的内容
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
-      >
-        <div
-          style="display: flex; justify-content: flex-start;"
-        >
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              确认
-            </span>
-          </button>
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              取消
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      打开抽屉
-    </span>
-  </button>
-</div>
-`;
-
-exports[`csr snapshot test > csr test ./src/drawer/_example/operation.vue 1`] = `
-<div
-  data-v-c1a23f50=""
->
-  <div
-    class="t-drawer t-drawer--right"
-    data-v-c1a23f50=""
-    tabindex="0"
-  >
-    <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
-    >
-      <div
-        class="t-drawer__header"
-      >
-        抽屉标题
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <div
-          class="t-drawer-demo-div"
-          data-v-c1a23f50=""
-        >
-          <span
-            data-v-c1a23f50=""
-          >
-            标签 A
-          </span>
-          <div
-            class="t-input__wrap"
-            data-v-c1a23f50=""
-          >
-            <div
-              class="t-input t-size-m"
-            >
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请输入"
-                type="text"
-                unselectable="off"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class="t-drawer-demo-div"
-          data-v-c1a23f50=""
-        >
-          <span
-            data-v-c1a23f50=""
-          >
-            标签 B
-          </span>
-          <div
-            class="t-input__wrap"
-            data-v-c1a23f50=""
-          >
-            <div
-              class="t-input t-size-m"
-            >
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请输入"
-                type="text"
-                unselectable="off"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class="t-drawer-demo-div"
-          data-v-c1a23f50=""
-        >
-          <span
-            data-v-c1a23f50=""
-          >
-            标签 C
-          </span>
-          <div
-            class="t-input__wrap"
-            data-v-c1a23f50=""
-          >
-            <div
-              class="t-input t-size-m"
-            >
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请输入"
-                type="text"
-                unselectable="off"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-drawer__footer"
-      >
-        <div
-          style="display: flex; justify-content: flex-start;"
-        >
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              确认
-            </span>
-          </button>
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              取消
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    data-v-c1a23f50=""
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      打开抽屉
-    </span>
-  </button>
-</div>
-`;
-
-exports[`csr snapshot test > csr test ./src/drawer/_example/placement.vue 1`] = `
-<div
-  class="t-space t-space-horizontal"
-  style="gap: 16px;"
->
-  <div
-    class="t-space-item"
+  <transition-stub
+    duration="[object Object]"
   >
     <div
       class="t-drawer t-drawer--right"
+      style="display: none;"
       tabindex="0"
     >
-      <div
-        class="t-drawer__mask"
-      />
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
+      >
+        <div
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
       <div
         class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
         style="width: 300px;"
@@ -43862,6 +44865,320 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/placement.vue 1`] = 
         </div>
       </div>
     </div>
+  </transition-stub>
+  <button
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      打开抽屉
+    </span>
+  </button>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/drawer/_example/no-mask.vue 1`] = `
+<div>
+  <transition-stub
+    duration="[object Object]"
+  >
+    <div
+      class="t-drawer t-drawer--right t-drawer--without-mask"
+      style="display: none;"
+      tabindex="0"
+    >
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
+        >
+          抽屉标题
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <p>
+            抽屉的内容
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div
+            style="display: flex; justify-content: flex-start;"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+  <button
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      打开抽屉
+    </span>
+  </button>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/drawer/_example/operation.vue 1`] = `
+<div
+  data-v-c1a23f50=""
+>
+  <transition-stub
+    data-v-c1a23f50=""
+    duration="[object Object]"
+  >
+    <div
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
+    >
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
+      >
+        <div
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
+        >
+          抽屉标题
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <div
+            class="t-drawer-demo-div"
+            data-v-c1a23f50=""
+          >
+            <span
+              data-v-c1a23f50=""
+            >
+              标签 A
+            </span>
+            <div
+              class="t-input__wrap"
+              data-v-c1a23f50=""
+            >
+              <div
+                class="t-input t-size-m"
+              >
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请输入"
+                  type="text"
+                  unselectable="off"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-drawer-demo-div"
+            data-v-c1a23f50=""
+          >
+            <span
+              data-v-c1a23f50=""
+            >
+              标签 B
+            </span>
+            <div
+              class="t-input__wrap"
+              data-v-c1a23f50=""
+            >
+              <div
+                class="t-input t-size-m"
+              >
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请输入"
+                  type="text"
+                  unselectable="off"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-drawer-demo-div"
+            data-v-c1a23f50=""
+          >
+            <span
+              data-v-c1a23f50=""
+            >
+              标签 C
+            </span>
+            <div
+              class="t-input__wrap"
+              data-v-c1a23f50=""
+            >
+              <div
+                class="t-input t-size-m"
+              >
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请输入"
+                  type="text"
+                  unselectable="off"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div
+            style="display: flex; justify-content: flex-start;"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+  <button
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-c1a23f50=""
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      打开抽屉
+    </span>
+  </button>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/drawer/_example/placement.vue 1`] = `
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <transition-stub
+      duration="[object Object]"
+    >
+      <div
+        class="t-drawer t-drawer--right"
+        style="display: none;"
+        tabindex="0"
+      >
+        <transition-stub
+          duration="300"
+          name="t-drawer-fade"
+        >
+          <div
+            class="t-drawer__mask"
+            style="display: none;"
+          />
+        </transition-stub>
+        <div
+          class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+          style="width: 300px;"
+        >
+          <div
+            class="t-drawer__header"
+          >
+            抽屉标题
+          </div>
+          <div
+            class="t-drawer__body"
+          >
+            <p>
+              抽屉的内容
+            </p>
+          </div>
+          <div
+            class="t-drawer__footer"
+          >
+            <div
+              style="display: flex; justify-content: flex-start;"
+            >
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+                type="button"
+              >
+                <span
+                  class="t-button__text"
+                >
+                  确认
+                </span>
+              </button>
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+                type="button"
+              >
+                <span
+                  class="t-button__text"
+                >
+                  取消
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition-stub>
   </div>
   <div
     class="t-space-item"
@@ -43971,6 +45288,9 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/placement.vue 1`] = 
 
 exports[`csr snapshot test > csr test ./src/drawer/_example/popup.vue 1`] = `
 <div>
+  <transition-stub
+    duration="[object Object]"
+  />
   <div
     class="t-space t-space-horizontal"
     style="gap: 16px;"
@@ -44043,59 +45363,70 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/size.vue 1`] = `
   <div
     class="t-space-item"
   >
-    <div
-      class="t-drawer t-drawer--right"
-      tabindex="0"
+    <transition-stub
+      duration="[object Object]"
     >
       <div
-        class="t-drawer__mask"
-      />
-      <div
-        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-        style="width: 300px;"
+        class="t-drawer t-drawer--right"
+        style="display: none;"
+        tabindex="0"
       >
-        <div
-          class="t-drawer__header"
-        >
-          抽屉标题
-        </div>
-        <div
-          class="t-drawer__body"
-        >
-          <p>
-            抽屉的内容
-          </p>
-        </div>
-        <div
-          class="t-drawer__footer"
+        <transition-stub
+          duration="300"
+          name="t-drawer-fade"
         >
           <div
-            style="display: flex; justify-content: flex-start;"
+            class="t-drawer__mask"
+            style="display: none;"
+          />
+        </transition-stub>
+        <div
+          class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+          style="width: 300px;"
+        >
+          <div
+            class="t-drawer__header"
           >
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-              type="button"
+            抽屉标题
+          </div>
+          <div
+            class="t-drawer__body"
+          >
+            <p>
+              抽屉的内容
+            </p>
+          </div>
+          <div
+            class="t-drawer__footer"
+          >
+            <div
+              style="display: flex; justify-content: flex-start;"
             >
-              <span
-                class="t-button__text"
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+                type="button"
               >
-                确认
-              </span>
-            </button>
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-              type="button"
-            >
-              <span
-                class="t-button__text"
+                <span
+                  class="t-button__text"
+                >
+                  确认
+                </span>
+              </button>
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+                type="button"
               >
-                取消
-              </span>
-            </button>
+                <span
+                  class="t-button__text"
+                >
+                  取消
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </transition-stub>
   </div>
   <div
     class="t-space-item"
@@ -44241,62 +45572,73 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/size.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/drawer/_example/size-draggable.vue 1`] = `
 <div>
-  <div
-    class="t-drawer t-drawer--right"
-    tabindex="0"
+  <transition-stub
+    duration="[object Object]"
   >
     <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
     >
-      <div
-        class="t-drawer__header"
-      >
-        抽屉标题
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p>
-          抽屉的内容
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
       >
         <div
-          style="display: flex; justify-content: flex-start;"
-        >
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              确认
-            </span>
-          </button>
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              取消
-            </span>
-          </button>
-        </div>
-      </div>
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
       <div
-        style="z-index: 1; position: absolute; background: transparent; left: 0px; width: 16px; height: 100%; cursor: col-resize;"
-      />
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
+        >
+          抽屉标题
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <p>
+            抽屉的内容
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div
+            style="display: flex; justify-content: flex-start;"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          style="z-index: 1; position: absolute; background: transparent; left: 0px; width: 16px; height: 100%; cursor: col-resize;"
+        />
+      </div>
     </div>
-  </div>
+  </transition-stub>
   <div
     class="t-space t-space-vertical"
     style="gap: 16px;"
@@ -44790,7 +46132,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/align.vue 1`] = `
       >
         <div
           class="t-form__label t-form__label--right"
-          style="width: 60px;"
+          style="width: 100px;"
         >
           <label
             for=""
@@ -44800,7 +46142,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/align.vue 1`] = `
         </div>
         <div
           class="t-form__controls"
-          style="margin-left: 60px;"
+          style="margin-left: 100px;"
         >
           <div
             class="t-form__controls-content"
@@ -44814,7 +46156,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/align.vue 1`] = `
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder="请输入姓名"
                   type="text"
                   unselectable="off"
                 />
@@ -44828,17 +46170,17 @@ exports[`csr snapshot test > csr test ./src/form/_example/align.vue 1`] = `
       >
         <div
           class="t-form__label t-form__label--right"
-          style="width: 60px;"
+          style="width: 100px;"
         >
           <label
             for=""
           >
-            密码
+            初始密码
           </label>
         </div>
         <div
           class="t-form__controls"
-          style="margin-left: 60px;"
+          style="margin-left: 100px;"
         >
           <div
             class="t-form__controls-content"
@@ -44852,7 +46194,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/align.vue 1`] = `
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder="请输入初始密码"
                   type="password"
                   unselectable="off"
                 />
@@ -44921,7 +46263,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入内容"
+              placeholder="请输入姓名"
               type="text"
               unselectable="off"
             />
@@ -44959,7 +46301,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入内容"
+              placeholder="请输入手机号码"
               type="text"
               unselectable="off"
             />
@@ -45238,7 +46580,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请输入用户名"
               type="text"
               unselectable="off"
             />
@@ -45248,7 +46590,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
       <div
         class="t-input__help"
       >
-        这是用户名字段帮助说明
+        这里可以展示一段说明文字
       </div>
     </div>
   </div>
@@ -45283,7 +46625,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请输入个人简介"
               type="text"
               unselectable="off"
             />
@@ -45293,7 +46635,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
       <div
         class="t-input__help"
       >
-        一句话介绍自己
+        请用一句话介绍自己
       </div>
     </div>
   </div>
@@ -45328,7 +46670,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请输入密码"
               type="password"
               unselectable="off"
             />
@@ -45390,7 +46732,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请输入邮箱"
               type="text"
               unselectable="off"
             />
@@ -45604,7 +46946,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
               <input
                 autocomplete=""
                 class="t-input__inner"
-                placeholder="请选择"
+                placeholder="请选择所在院校"
                 readonly="readonly"
                 type="text"
                 unselectable="on"
@@ -45665,7 +47007,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请输入入学时间"
               type="text"
               unselectable="off"
             />
@@ -45705,7 +47047,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请输入个人网站地址"
               type="text"
               unselectable="off"
             />
@@ -45838,7 +47180,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/custom-validator.vue 1
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请输入用户名"
               type="text"
               unselectable="off"
             />
@@ -45876,7 +47218,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/custom-validator.vue 1
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请输入密码"
               type="password"
               unselectable="off"
             />
@@ -45941,7 +47283,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/custom-validator.vue 1
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请再次输入密码"
               type="password"
               unselectable="off"
             />
@@ -46104,7 +47446,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder="请输入姓名"
                   type="text"
                   unselectable="off"
                 />
@@ -46149,7 +47491,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                     autocomplete=""
                     class="t-input__inner"
                     disabled="disabled"
-                    placeholder="请选择"
+                    placeholder="请选择所在学院"
                     readonly="readonly"
                     type="text"
                     unselectable="on"
@@ -46212,7 +47554,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                   autocomplete=""
                   class="t-input__inner"
                   disabled="disabled"
-                  placeholder="请选择"
+                  placeholder="请选择寄件地址"
                   readonly="readonly"
                   type="text"
                   unselectable="on"
@@ -46274,7 +47616,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                   autocomplete=""
                   class="t-input__inner"
                   disabled="disabled"
-                  placeholder="请选择"
+                  placeholder="请选择收件地址"
                   readonly="readonly"
                   type="text"
                   unselectable="on"
@@ -46395,7 +47737,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
               <textarea
                 class="t-textarea__inner"
                 clearable=""
-                placeholder="简单描述自己的经历"
+                placeholder="请用一句话介绍自己"
                 unselectable="off"
               />
             </div>
@@ -46633,7 +47975,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                     autocomplete="off"
                     class="t-input__inner"
                     disabled="disabled"
-                    placeholder="数字"
+                    placeholder="分数值"
                     type="text"
                     unselectable="off"
                   />
@@ -46933,7 +48275,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder="请输入用户名"
                   type="text"
                   unselectable="off"
                 />
@@ -46943,7 +48285,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
           <div
             class="t-input__help"
           >
-            这是用户名字段帮助说明
+            这里可以展示一段说明文字
           </div>
         </div>
       </div>
@@ -46978,7 +48320,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder="请输入个人简介"
                   type="text"
                   unselectable="off"
                 />
@@ -47023,7 +48365,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder="请输入密码"
                   type="password"
                   unselectable="off"
                 />
@@ -47085,7 +48427,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder="请输入邮箱"
                   type="text"
                   unselectable="off"
                 />
@@ -47299,7 +48641,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
                   <input
                     autocomplete=""
                     class="t-input__inner"
-                    placeholder="请选择"
+                    placeholder="请选择所在学院"
                     readonly="readonly"
                     type="text"
                     unselectable="on"
@@ -47360,7 +48702,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder="请输入入学时间"
                   type="text"
                   unselectable="off"
                 />
@@ -47400,7 +48742,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder="请输入个人网站地址"
                   type="text"
                   unselectable="off"
                 />
@@ -47556,7 +48898,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/layout.vue 1`] = `
           <label
             for=""
           >
-            名字
+            姓名
           </label>
         </div>
         <div
@@ -47574,7 +48916,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/layout.vue 1`] = `
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder="请输入姓名"
                   type="text"
                   unselectable="off"
                 />
@@ -47611,7 +48953,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/layout.vue 1`] = `
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder="请输入密码"
                   type="password"
                   unselectable="off"
                 />
@@ -47890,7 +49232,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/reset.vue 1`] = `
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入内容"
+                  placeholder="请输入姓名"
                   type="text"
                   unselectable="off"
                 />
@@ -47928,7 +49270,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/reset.vue 1`] = `
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入内容"
+                  placeholder="请输入手机号码"
                   type="text"
                   unselectable="off"
                 />
@@ -48180,7 +49522,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/size.vue 1`] = `
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入内容"
+                  placeholder="请输入姓名"
                   type="text"
                   unselectable="off"
                 />
@@ -48218,7 +49560,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/size.vue 1`] = `
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入内容"
+                  placeholder="请输入手机号码"
                   type="text"
                   unselectable="off"
                 />
@@ -48651,7 +49993,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
                       <input
                         autocomplete=""
                         class="t-input__inner"
-                        placeholder="请输入内容"
+                        placeholder="请输入姓名"
                         type="text"
                         unselectable="off"
                       />
@@ -48986,7 +50328,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
                       <input
                         autocomplete=""
                         class="t-input__inner"
-                        placeholder="请输入内容"
+                        placeholder="请输入姓名"
                         type="text"
                         unselectable="off"
                       />
@@ -49318,7 +50660,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-message.vue 1
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请输入用户名"
               type="text"
               unselectable="off"
             />
@@ -49328,7 +50670,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-message.vue 1
       <div
         class="t-input__help"
       >
-        这是用户名字段帮助说明
+        这里可以展示一段说明文字
       </div>
     </div>
   </div>
@@ -49361,7 +50703,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-message.vue 1
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请输入个人简介"
               type="text"
               unselectable="off"
             />
@@ -49371,7 +50713,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-message.vue 1
       <div
         class="t-input__help"
       >
-        一句话介绍自己
+        请用一句话介绍自己
       </div>
     </div>
   </div>
@@ -49404,7 +50746,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-message.vue 1
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请输入密码"
               type="password"
               unselectable="off"
             />
@@ -49542,7 +50884,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请输入用户名"
               type="text"
               unselectable="off"
             />
@@ -49552,7 +50894,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
       <div
         class="t-input__help"
       >
-        这是用户名字段帮助说明
+        这里可以展示一段说明文字
       </div>
     </div>
   </div>
@@ -49729,7 +51071,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请输入密码"
               type="password"
               unselectable="off"
             />
@@ -49791,7 +51133,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请输入邮箱"
               type="text"
               unselectable="off"
             />
@@ -50005,7 +51347,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
               <input
                 autocomplete=""
                 class="t-input__inner"
-                placeholder="请选择"
+                placeholder="请选择所在学院"
                 type="text"
                 unselectable="off"
               />
@@ -50130,7 +51472,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请输入个人网站地址"
               type="text"
               unselectable="off"
             />
@@ -50166,6 +51508,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
         >
           <textarea
             class="t-textarea__inner"
+            placeholder="请用一句话介绍自己"
             unselectable="off"
           />
         </div>
@@ -50173,7 +51516,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
       <div
         class="t-input__help"
       >
-        一句话介绍自己
+        请用一句话介绍自己
       </div>
     </div>
   </div>
@@ -56576,7 +57919,7 @@ exports[`csr snapshot test > csr test ./src/input-adornment/_example/select.vue 
       class="t-input-adornment t-input-adornment--append"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty"
       >
         <div
           class="t-input t-size-m t-is-default t-input--prefix"
@@ -56846,7 +58189,7 @@ exports[`csr snapshot test > csr test ./src/input-adornment/_example/text.vue 1`
       class="t-input-adornment t-input-adornment--append"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty"
       >
         <div
           class="t-input t-size-m t-is-default t-input--prefix"
@@ -58785,325 +60128,6 @@ exports[`csr snapshot test > csr test ./src/input-number/_example/step.vue 1`] =
       </svg>
     </button>
   </div>
-</div>
-`;
-
-exports[`csr snapshot test > csr test ./src/jumper/_example/layout.vue 1`] = `
-<div
-  class="t-jumper"
->
-  <button
-    class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__prev"
-    type="button"
-  >
-    <svg
-      class="t-icon t-icon-chevron-up"
-      fill="none"
-      height="1em"
-      viewBox="0 0 16 16"
-      width="1em"
-    >
-      <path
-        d="M12.46 9.54l-.92.92L8 6.92l-3.54 3.54-.92-.92L8 5.08l4.46 4.46z"
-        fill="currentColor"
-        fill-opacity="0.9"
-      />
-    </svg>
-  </button>
-  <button
-    class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__current"
-    type="button"
-  >
-    <svg
-      class="t-icon t-icon-round"
-      fill="none"
-      height="1em"
-      viewBox="0 0 16 16"
-      width="1em"
-    >
-      <path
-        d="M8 11.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7zM8 13A5 5 0 108 3a5 5 0 000 10z"
-        fill="currentColor"
-        fill-opacity="0.9"
-      />
-    </svg>
-  </button>
-  <button
-    class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__next"
-    type="button"
-  >
-    <svg
-      class="t-icon t-icon-chevron-down"
-      fill="none"
-      height="1em"
-      viewBox="0 0 16 16"
-      width="1em"
-    >
-      <path
-        d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-        fill="currentColor"
-        fill-opacity="0.9"
-      />
-    </svg>
-  </button>
-</div>
-`;
-
-exports[`csr snapshot test > csr test ./src/jumper/_example/size.vue 1`] = `
-<div
-  class="t-space t-space-vertical"
-  style="gap: 16px; text-align: center;"
->
-  <div
-    class="t-space-item"
-  >
-    <div
-      class="t-jumper"
-    >
-      <button
-        class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__prev"
-        type="button"
-      >
-        <svg
-          class="t-icon t-icon-chevron-left"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </button>
-      <button
-        class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__current"
-        type="button"
-      >
-        <svg
-          class="t-icon t-icon-round"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M8 11.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7zM8 13A5 5 0 108 3a5 5 0 000 10z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </button>
-      <button
-        class="t-button t-size-s t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__next"
-        type="button"
-      >
-        <svg
-          class="t-icon t-icon-chevron-right"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </button>
-    </div>
-  </div>
-  <div
-    class="t-space-item"
-  >
-    <div
-      class="t-jumper"
-    >
-      <button
-        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__prev"
-        type="button"
-      >
-        <svg
-          class="t-icon t-icon-chevron-left"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </button>
-      <button
-        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__current"
-        type="button"
-      >
-        <svg
-          class="t-icon t-icon-round"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M8 11.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7zM8 13A5 5 0 108 3a5 5 0 000 10z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </button>
-      <button
-        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__next"
-        type="button"
-      >
-        <svg
-          class="t-icon t-icon-chevron-right"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </button>
-    </div>
-  </div>
-  <div
-    class="t-space-item"
-  >
-    <div
-      class="t-jumper"
-    >
-      <button
-        class="t-button t-size-l t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__prev"
-        type="button"
-      >
-        <svg
-          class="t-icon t-icon-chevron-left"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </button>
-      <button
-        class="t-button t-size-l t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__current"
-        type="button"
-      >
-        <svg
-          class="t-icon t-icon-round"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M8 11.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7zM8 13A5 5 0 108 3a5 5 0 000 10z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </button>
-      <button
-        class="t-button t-size-l t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__next"
-        type="button"
-      >
-        <svg
-          class="t-icon t-icon-chevron-right"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`csr snapshot test > csr test ./src/jumper/_example/tips.vue 1`] = `
-<div
-  class="t-jumper"
->
-  <button
-    class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__prev"
-    title="前尘忆梦"
-    type="button"
-  >
-    <svg
-      class="t-icon t-icon-chevron-left"
-      fill="none"
-      height="1em"
-      viewBox="0 0 16 16"
-      width="1em"
-    >
-      <path
-        d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
-        fill="currentColor"
-        fill-opacity="0.9"
-      />
-    </svg>
-  </button>
-  <button
-    class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__current"
-    title="回到现在"
-    type="button"
-  >
-    <svg
-      class="t-icon t-icon-round"
-      fill="none"
-      height="1em"
-      viewBox="0 0 16 16"
-      width="1em"
-    >
-      <path
-        d="M8 11.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7zM8 13A5 5 0 108 3a5 5 0 000 10z"
-        fill="currentColor"
-        fill-opacity="0.9"
-      />
-    </svg>
-  </button>
-  <button
-    class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square t-jumper__next"
-    title="展望未来"
-    type="button"
-  >
-    <svg
-      class="t-icon t-icon-chevron-right"
-      fill="none"
-      height="1em"
-      viewBox="0 0 16 16"
-      width="1em"
-    >
-      <path
-        d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
-        fill="currentColor"
-        fill-opacity="0.9"
-      />
-    </svg>
-  </button>
 </div>
 `;
 
@@ -70956,6 +71980,225 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/page-num.vue 1`]
 </div>
 `;
 
+exports[`csr snapshot test > csr test ./src/pagination/_example/pagination-mini.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-align-center t-space-horizontal"
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <span>
+          layout:
+        </span>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-radio-group t-size-m t-radio-group--filled"
+        >
+          <label
+            class="t-radio-button t-is-checked"
+          >
+            <input
+              class="t-radio-button__former"
+              name=""
+              type="radio"
+              value="vertical"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              vertical
+            </span>
+          </label>
+          <label
+            class="t-radio-button"
+          >
+            <input
+              class="t-radio-button__former"
+              name=""
+              type="radio"
+              value="horizontal"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              horizontal
+            </span>
+          </label>
+          <div
+            class="t-radio-group__bg-block"
+            style="width: 0px; left: 0px;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-align-center t-space-horizontal"
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <span>
+          size:
+        </span>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-radio-group t-size-m t-radio-group--filled"
+        >
+          <label
+            class="t-radio-button"
+          >
+            <input
+              class="t-radio-button__former"
+              name=""
+              type="radio"
+              value="small"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              small
+            </span>
+          </label>
+          <label
+            class="t-radio-button t-is-checked"
+          >
+            <input
+              class="t-radio-button__former"
+              name=""
+              type="radio"
+              value="medium"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              medium
+            </span>
+          </label>
+          <label
+            class="t-radio-button"
+          >
+            <input
+              class="t-radio-button__former"
+              name=""
+              type="radio"
+              value="large"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              large
+            </span>
+          </label>
+          <div
+            class="t-radio-group__bg-block"
+            style="width: 0px; left: 0px;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-pagination-mini"
+    >
+      <button
+        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square t-pagination-mini__prev"
+        title="前尘忆梦"
+        type="button"
+      >
+        <svg
+          class="t-icon t-icon-chevron-up"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M12.46 9.54l-.92.92L8 6.92l-3.54 3.54-.92-.92L8 5.08l4.46 4.46z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+      </button>
+      <button
+        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square t-pagination-mini__current"
+        title="回到现在"
+        type="button"
+      >
+        <svg
+          class="t-icon t-icon-round"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M8 11.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7zM8 13A5 5 0 108 3a5 5 0 000 10z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+      </button>
+      <button
+        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square t-pagination-mini__next"
+        title="展望未来"
+        type="button"
+      >
+        <svg
+          class="t-icon t-icon-chevron-down"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`csr snapshot test > csr test ./src/pagination/_example/simple.vue 1`] = `
 <div>
   <div
@@ -78752,7 +79995,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/collapsed.vue 1`] = 
       class="t-select__wrap"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -78821,7 +80064,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/collapsed.vue 1`] = 
       class="t-select__wrap"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -78888,7 +80131,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/collapsed.vue 1`] = 
       class="t-select__wrap"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -79010,7 +80253,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/creatable.vue 1`] = 
       style="width: 400px; display: inline-block;"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -79180,7 +80423,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/custom-selected.vue 
       class="t-select__wrap"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -79282,7 +80525,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/custom-selected.vue 
       class="t-select__wrap"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -79460,7 +80703,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/disabled.vue 1`] = `
       style="width: 200px; display: inline-block;"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-disabled t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -79571,7 +80814,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/filterable.vue 1`] =
       style="width: 400px; display: inline-block;"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -79775,7 +81018,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/label-in-value.vue 1
       style="width: 200px; display: inline-block;"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -79839,7 +81082,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/max.vue 1`] = `
   style="width: 200px;"
 >
   <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-select"
+    class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-select"
   >
     <div
       class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -79896,7 +81139,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
       class="t-select__wrap"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -79978,7 +81221,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
       class="t-select__wrap"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -80140,7 +81383,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
       class="t-select__wrap"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -80284,7 +81527,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/noborder.vue 1`] = `
       class="t-select__wrap"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--borderless t-select-input--multiple t-select-input--empty t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--borderless t-select-input--multiple t-select-input--empty t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
@@ -80650,7 +81893,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/remote-search.vue 1`
       style="width: 400px; display: inline-block;"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -81137,7 +82380,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/autowidth.vue 
 
 exports[`csr snapshot test > csr test ./src/select-input/_example/autowidth-multiple.vue 1`] = `
 <div
-  class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
+  class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple"
   data-v-43e6ff8d=""
 >
   <div
@@ -81233,7 +82476,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/borderless.vue
 
 exports[`csr snapshot test > csr test ./src/select-input/_example/borderless-multiple.vue 1`] = `
 <div
-  class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--borderless t-select-input--multiple"
+  class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-select-input--borderless t-select-input--multiple"
   data-v-56f11d7e=""
   style="width: 250px;"
 >
@@ -81294,7 +82537,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/collapsed-item
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-select-input--multiple"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -81347,7 +82590,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/collapsed-item
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-select-input--multiple"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -81420,7 +82663,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/collapsed-item
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-select-input--multiple"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -81569,7 +82812,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/custom-tag.vue
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-select-input--multiple"
       data-v-3251f825=""
     >
       <div
@@ -81671,7 +82914,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/custom-tag.vue
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-select-input--multiple"
       data-v-3251f825=""
     >
       <div
@@ -81847,7 +83090,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/excess-tags-di
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-select-input--multiple"
+      class="t-input__wrap t-tag-input t-tag-input--with-tag t-select-input--multiple"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -82000,7 +83243,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/excess-tags-di
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-select-input--multiple"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -82353,7 +83596,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/multiple.vue 1
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -89682,7 +90925,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                 data-id="first-column"
                 style="[object Object]"
               >
-                1
+                6
               </td>
               <td
                 class=""
@@ -89722,7 +90965,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                 data-id="first-column"
                 style="[object Object]"
               >
-                2
+                7
               </td>
               <td
                 class=""
@@ -89762,7 +91005,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                 data-id="first-column"
                 style="[object Object]"
               >
-                3
+                8
               </td>
               <td
                 class=""
@@ -89802,7 +91045,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                 data-id="first-column"
                 style="[object Object]"
               >
-                4
+                9
               </td>
               <td
                 class=""
@@ -89842,7 +91085,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                 data-id="first-column"
                 style="[object Object]"
               >
-                5
+                10
               </td>
               <td
                 class=""
@@ -93575,7 +94818,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-row.vue 1`] 
                   class="t-select__wrap"
                 >
                   <div
-                    class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+                    class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
                   >
                     <div
                       class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -107370,485 +108613,662 @@ exports[`csr snapshot test > csr test ./src/table/_example/multiple-sort.vue 1`]
 `;
 
 exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = `
-<div>
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
   <div
-    class="t-table"
-    style="position: relative;"
+    class="t-space-item"
   >
     <div
-      class="t-table__content"
+      class="t-radio-group t-size-m t-radio-group--filled"
     >
-      <table
-        class="t-table--layout-fixed"
+      <label
+        class="t-radio-button t-is-checked"
       >
-        <colgroup>
-          <col
-            style="width: 100px;"
-          />
-          <col
-            style="width: 100px;"
-          />
-          <col />
-          <col />
-          <col />
-          <col
-            style="width: 200px;"
-          />
-        </colgroup>
-        <thead
-          class="t-table__header"
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="true"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
         >
-          <tr>
-            <th
-              class="row t-table__th-index t-align-center"
-              data-colkey="index"
-            >
-              <div
-                class="t-table__th-cell-inner"
+          跨分页选中
+        </span>
+      </label>
+      <label
+        class="t-radio-button"
+      >
+        <input
+          class="t-radio-button__former"
+          name=""
+          type="radio"
+          value="false"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          当前页选中
+        </span>
+      </label>
+      <div
+        class="t-radio-group__bg-block"
+        style="width: 0px; left: 0px;"
+      />
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-table"
+      style="position: relative;"
+    >
+      <div
+        class="t-table__content"
+      >
+        <table
+          class="t-table--layout-fixed"
+        >
+          <colgroup>
+            <col
+              style="width: 60px;"
+            />
+            <col
+              style="width: 100px;"
+            />
+            <col />
+            <col />
+            <col />
+            <col
+              style="width: 200px;"
+            />
+            <col
+              style="width: 46px;"
+            />
+          </colgroup>
+          <thead
+            class="t-table__header"
+          >
+            <tr>
+              <th
+                class="t-table__th-serial-number"
+                data-colkey="serial-number"
               >
-                序号
-              </div>
-            </th>
-            <th
-              class="t-table__th-platform"
-              data-colkey="platform"
-            >
-              <div
-                class="t-table__th-cell-inner"
+                <div
+                  class="t-table__th-cell-inner"
+                >
+                  序号
+                </div>
+              </th>
+              <th
+                class="t-table__th-platform"
+                data-colkey="platform"
               >
-                平台
-              </div>
-            </th>
-            <th
-              class="t-table__th-type"
-              data-colkey="type"
-            >
-              <div
-                class="t-table__th-cell-inner"
+                <div
+                  class="t-table__th-cell-inner"
+                >
+                  平台
+                </div>
+              </th>
+              <th
+                class="t-table__th-type"
+                data-colkey="type"
               >
-                类型
-              </div>
-            </th>
-            <th
-              class="t-table__th-default"
-              data-colkey="default"
-            >
-              <div
-                class="t-table__th-cell-inner"
+                <div
+                  class="t-table__th-cell-inner"
+                >
+                  类型
+                </div>
+              </th>
+              <th
+                class="t-table__th-default"
+                data-colkey="default"
               >
-                默认值
-              </div>
-            </th>
-            <th
-              class="t-table__th-needed"
-              data-colkey="needed"
-            >
-              <div
-                class="t-table__th-cell-inner"
+                <div
+                  class="t-table__th-cell-inner"
+                >
+                  默认值
+                </div>
+              </th>
+              <th
+                class="t-table__th-needed"
+                data-colkey="needed"
               >
-                是否必传
-              </div>
-            </th>
-            <th
-              class="t-table__th-detail.position"
-              data-colkey="detail.position"
+                <div
+                  class="t-table__th-cell-inner"
+                >
+                  是否必传
+                </div>
+              </th>
+              <th
+                class="t-table__th-detail.position"
+                data-colkey="detail.position"
+              >
+                <div
+                  class="t-table__th-cell-inner"
+                >
+                  <div
+                    class="t-table__ellipsis t-text-ellipsis"
+                  >
+                    详情信息
+                  </div>
+                </div>
+              </th>
+              <th
+                class="t-table__cell-check t-table__th-row-select"
+                data-colkey="row-select"
+              >
+                <div
+                  class="t-table__th-cell-inner"
+                >
+                  <label
+                    class="t-checkbox"
+                  >
+                    <input
+                      class="t-checkbox__former"
+                      type="checkbox"
+                      value=""
+                    />
+                    <span
+                      class="t-checkbox__input"
+                    />
+                    <span
+                      class="t-checkbox__label"
+                    />
+                  </label>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="t-table__body"
+          >
+            <tr
+              class=""
             >
-              <div
-                class="t-table__th-cell-inner"
+              <td
+                class=""
+              >
+                6
+              </td>
+              <td
+                class=""
+              >
+                私有
+              </td>
+              <td
+                class=""
+              >
+                Number
+              </td>
+              <td
+                class=""
+              >
+                0
+              </td>
+              <td
+                class=""
+              >
+                否
+              </td>
+              <td
+                class="t-table-td--ellipsis"
               >
                 <div
                   class="t-table__ellipsis t-text-ellipsis"
                 >
-                  详情信息
+                  读取 5 个数据的嵌套信息值
                 </div>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          class="t-table__body"
-        >
-          <tr
-            class=""
-          >
-            <td
-              class="row t-align-center"
-            >
-              5
-            </td>
-            <td
-              class=""
-            >
-              私有
-            </td>
-            <td
-              class=""
-            >
-              Number
-            </td>
-            <td
-              class=""
-            >
-              0
-            </td>
-            <td
-              class=""
-            >
-              否
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
+              </td>
+              <td
+                class="t-table__cell-check"
               >
-                读取 5 个数据的嵌套信息值
-              </div>
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class="row t-align-center"
-            >
-              6
-            </td>
-            <td
+                <label
+                  class="t-checkbox"
+                >
+                  <input
+                    class="t-checkbox__former"
+                    type="checkbox"
+                    value=""
+                  />
+                  <span
+                    class="t-checkbox__input"
+                  />
+                  <span
+                    class="t-checkbox__label"
+                  />
+                </label>
+              </td>
+            </tr>
+            <tr
               class=""
             >
-              共有
-            </td>
-            <td
-              class=""
-            >
-              Array
-            </td>
-            <td
-              class=""
-            >
-              []
-            </td>
-            <td
-              class=""
-            >
-              否
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
+              <td
+                class=""
               >
-                读取 6 个数据的嵌套信息值
-              </div>
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class="row t-align-center"
-            >
-              7
-            </td>
-            <td
-              class=""
-            >
-              私有
-            </td>
-            <td
-              class=""
-            >
-              Object
-            </td>
-            <td
-              class=""
-            >
-              {}
-            </td>
-            <td
-              class=""
-            >
-              否
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
+                7
+              </td>
+              <td
+                class=""
               >
-                读取 7 个数据的嵌套信息值
-              </div>
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class="row t-align-center"
-            >
-              8
-            </td>
-            <td
-              class=""
-            >
-              共有
-            </td>
-            <td
-              class=""
-            >
-              String
-            </td>
-            <td
-              class=""
-            >
-              -
-            </td>
-            <td
-              class=""
-            >
-              是
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
+                共有
+              </td>
+              <td
+                class=""
               >
-                读取 8 个数据的嵌套信息值
-              </div>
-            </td>
-          </tr>
-          <tr
-            class=""
-          >
-            <td
-              class="row t-align-center"
-            >
-              9
-            </td>
-            <td
-              class=""
-            >
-              私有
-            </td>
-            <td
-              class=""
-            >
-              Number
-            </td>
-            <td
-              class=""
-            >
-              0
-            </td>
-            <td
-              class=""
-            >
-              否
-            </td>
-            <td
-              class="t-table-td--ellipsis"
-            >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
+                Array
+              </td>
+              <td
+                class=""
               >
-                读取 9 个数据的嵌套信息值
-              </div>
-            </td>
-          </tr>
-        </tbody>
-        <!---->
-      </table>
-    </div>
-    <div
-      class="t-table__pagination-wrap"
-      style="opacity: 1;"
-    >
-      <div
-        class="t-table__pagination"
-      >
-        <div
-          class="t-pagination t-size-m"
-        >
-          <div
-            class="t-pagination__total"
-          >
-            共 60 项数据
-          </div>
-          <div
-            class="t-select__wrap t-pagination__select"
-          >
-            <div
-              class="t-input__wrap t-select"
-            >
-              <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                []
+              </td>
+              <td
+                class=""
+              >
+                否
+              </td>
+              <td
+                class="t-table-td--ellipsis"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-table__ellipsis t-text-ellipsis"
                 >
-                  5 条/页
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
+                  读取 6 个数据的嵌套信息值
+                </div>
+              </td>
+              <td
+                class="t-table__cell-check"
+              >
+                <label
+                  class="t-checkbox"
                 >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <input
+                    class="t-checkbox__former"
+                    type="checkbox"
+                    value=""
+                  />
+                  <span
+                    class="t-checkbox__input"
+                  />
+                  <span
+                    class="t-checkbox__label"
+                  />
+                </label>
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                8
+              </td>
+              <td
+                class=""
+              >
+                私有
+              </td>
+              <td
+                class=""
+              >
+                Object
+              </td>
+              <td
+                class=""
+              >
+                {}
+              </td>
+              <td
+                class=""
+              >
+                否
+              </td>
+              <td
+                class="t-table-td--ellipsis"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 7 个数据的嵌套信息值
+                </div>
+              </td>
+              <td
+                class="t-table__cell-check"
+              >
+                <label
+                  class="t-checkbox"
+                >
+                  <input
+                    class="t-checkbox__former"
+                    type="checkbox"
+                    value=""
+                  />
+                  <span
+                    class="t-checkbox__input"
+                  />
+                  <span
+                    class="t-checkbox__label"
+                  />
+                </label>
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                9
+              </td>
+              <td
+                class=""
+              >
+                共有
+              </td>
+              <td
+                class=""
+              >
+                String
+              </td>
+              <td
+                class=""
+              >
+                -
+              </td>
+              <td
+                class=""
+              >
+                是
+              </td>
+              <td
+                class="t-table-td--ellipsis"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 8 个数据的嵌套信息值
+                </div>
+              </td>
+              <td
+                class="t-table__cell-check"
+              >
+                <label
+                  class="t-checkbox"
+                >
+                  <input
+                    class="t-checkbox__former"
+                    type="checkbox"
+                    value=""
+                  />
+                  <span
+                    class="t-checkbox__input"
+                  />
+                  <span
+                    class="t-checkbox__label"
+                  />
+                </label>
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                10
+              </td>
+              <td
+                class=""
+              >
+                私有
+              </td>
+              <td
+                class=""
+              >
+                Number
+              </td>
+              <td
+                class=""
+              >
+                0
+              </td>
+              <td
+                class=""
+              >
+                否
+              </td>
+              <td
+                class="t-table-td--ellipsis"
+              >
+                <div
+                  class="t-table__ellipsis t-text-ellipsis"
+                >
+                  读取 9 个数据的嵌套信息值
+                </div>
+              </td>
+              <td
+                class="t-table__cell-check"
+              >
+                <label
+                  class="t-checkbox"
+                >
+                  <input
+                    class="t-checkbox__former"
+                    type="checkbox"
+                    value=""
+                  />
+                  <span
+                    class="t-checkbox__input"
+                  />
+                  <span
+                    class="t-checkbox__label"
+                  />
+                </label>
+              </td>
+            </tr>
+          </tbody>
+          <!---->
+        </table>
+      </div>
+      <div
+        class="t-table__pagination-wrap"
+        style="opacity: 1;"
+      >
+        <div
+          class="t-table__pagination"
+        >
+          <div
+            class="t-pagination t-size-m"
+          >
+            <div
+              class="t-pagination__total"
+            >
+              共 60 项数据
+            </div>
+            <div
+              class="t-select__wrap t-pagination__select"
+            >
+              <div
+                class="t-input__wrap t-select"
+              >
+                <div
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                >
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    5 条/页
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            class="t-pagination__btn t-pagination__btn-prev"
-          >
-            <svg
-              class="t-icon t-icon-chevron-left"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-          </div>
-          <ul
-            class="t-pagination__pager"
-          >
-            <li
-              class="t-pagination__number"
-            >
-              1
-            </li>
-            <li
-              class="t-pagination__number t-is-current"
-            >
-              2
-            </li>
-            <li
-              class="t-pagination__number"
-            >
-              3
-            </li>
-            <li
-              class="t-pagination__number"
-            >
-              4
-            </li>
-            <li
-              class="t-pagination__number"
-            >
-              5
-            </li>
-            <li
-              class="t-pagination__number t-pagination__number--more"
+            <div
+              class="t-pagination__btn t-pagination__btn-prev"
             >
               <svg
-                class="t-icon t-icon-ellipsis"
+                class="t-icon t-icon-chevron-left"
                 fill="none"
                 height="1em"
                 viewBox="0 0 16 16"
                 width="1em"
               >
                 <path
-                  d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+                  d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
                   fill="currentColor"
                   fill-opacity="0.9"
                 />
               </svg>
-            </li>
-            <li
-              class="t-pagination__number"
+            </div>
+            <ul
+              class="t-pagination__pager"
             >
-              12
-            </li>
-          </ul>
-          <div
-            class="t-pagination__btn t-pagination__btn-next"
-          >
-            <svg
-              class="t-icon t-icon-chevron-right"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
-          </div>
-          <div
-            class="t-pagination__jump"
-          >
-            跳至
+              <li
+                class="t-pagination__number"
+              >
+                1
+              </li>
+              <li
+                class="t-pagination__number t-is-current"
+              >
+                2
+              </li>
+              <li
+                class="t-pagination__number"
+              >
+                3
+              </li>
+              <li
+                class="t-pagination__number"
+              >
+                4
+              </li>
+              <li
+                class="t-pagination__number"
+              >
+                5
+              </li>
+              <li
+                class="t-pagination__number t-pagination__number--more"
+              >
+                <svg
+                  class="t-icon t-icon-ellipsis"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </li>
+              <li
+                class="t-pagination__number"
+              >
+                12
+              </li>
+            </ul>
             <div
-              class="t-input-adornment t-input-adornment--append"
+              class="t-pagination__btn t-pagination__btn-next"
             >
+              <svg
+                class="t-icon t-icon-chevron-right"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </div>
+            <div
+              class="t-pagination__jump"
+            >
+              跳至
               <div
-                class="t-input-number t-size-m t-input-number--normal t-pagination__input"
+                class="t-input-adornment t-input-adornment--append"
               >
                 <div
-                  class="t-input__wrap"
+                  class="t-input-number t-size-m t-input-number--normal t-pagination__input"
                 >
                   <div
-                    class="t-input t-size-m"
+                    class="t-input__wrap"
                   >
-                    <input
-                      autocomplete="off"
-                      class="t-input__inner"
-                      placeholder=""
-                      type="text"
-                      unselectable="off"
-                    />
+                    <div
+                      class="t-input t-size-m"
+                    >
+                      <input
+                        autocomplete="off"
+                        class="t-input__inner"
+                        placeholder=""
+                        type="text"
+                        unselectable="off"
+                      />
+                    </div>
                   </div>
                 </div>
+                <span
+                  class="t-input-adornment__append"
+                >
+                  / 12 页
+                </span>
               </div>
-              <span
-                class="t-input-adornment__append"
-              >
-                / 12 页
-              </span>
             </div>
           </div>
         </div>
       </div>
+      <div
+        class="t-table__resize-line"
+        style="display: none; height: 10px; left: 10px; bottom: 0px;"
+      />
     </div>
-    <div
-      class="t-table__resize-line"
-      style="display: none; height: 10px; left: 10px; bottom: 0px;"
-    />
   </div>
 </div>
 `;
@@ -107867,6 +109287,9 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination-ajax.vue 1
       <colgroup>
         <col
           style="width: 64px;"
+        />
+        <col
+          style="width: 60px;"
         />
         <col
           style="width: 200px;"
@@ -107908,6 +109331,16 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination-ajax.vue 1
                   class="t-checkbox__label"
                 />
               </label>
+            </div>
+          </th>
+          <th
+            class="t-table__th-serial-number"
+            data-colkey="serial-number"
+          >
+            <div
+              class="t-table__th-cell-inner"
+            >
+              序号
             </div>
           </th>
           <th
@@ -107963,7 +109396,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination-ajax.vue 1
           class="t-table__empty-row"
         >
           <td
-            colspan="5"
+            colspan="6"
           >
             <div
               class="t-table__empty"
@@ -114507,7 +115940,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/theme.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/tag-input/_example/auto-width.vue 1`] = `
 <div
-  class="t-input__wrap t-tag-input t-tag-input--break-line"
+  class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
 >
   <div
     class="t-input t-size-m t-is-default t-input--auto-width t-input--prefix"
@@ -114579,7 +116012,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/base.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -114645,7 +116078,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/base.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -114716,7 +116149,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/base.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -114795,7 +116228,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/collapsed.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -114848,7 +116281,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/collapsed.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -114921,7 +116354,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/collapsed.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -115022,7 +116455,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/custom-tag.vue 1`
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -115107,7 +116540,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/custom-tag.vue 1`
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -115222,7 +116655,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/draggable.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -115323,7 +116756,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/draggable.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -115462,7 +116895,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/excess.vue 1`] = 
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input"
+      class="t-input__wrap t-tag-input t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -115533,7 +116966,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/excess.vue 1`] = 
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -115605,7 +117038,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/excess.vue 1`] = 
 
 exports[`csr snapshot test > csr test ./src/tag-input/_example/max.vue 1`] = `
 <div
-  class="t-input__wrap t-tag-input t-tag-input--break-line"
+  class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty"
   style="width: 80%;"
 >
   <div
@@ -115639,7 +117072,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/size.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-s t-is-default t-input--prefix"
@@ -115705,7 +117138,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/size.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -115771,7 +117204,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/size.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-l t-is-default t-input--prefix"
@@ -115839,7 +117272,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/size.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = `
 <div
   class="t-space t-space-vertical"
-  style="gap: 16px;"
+  style="gap: 32px;"
 >
   <div
     class="t-space-item"
@@ -115851,7 +117284,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
         禁用状态：
       </label>
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
       >
         <div
           class="t-input t-size-m t-is-disabled t-is-default t-input--prefix"
@@ -115906,7 +117339,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
         只读状态：
       </label>
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
       >
         <div
           class="t-input t-size-m t-is-default t-input--prefix"
@@ -115965,7 +117398,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
         成功状态：
       </label>
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
       >
         <div
           class="t-input t-size-m t-is-success t-input--prefix"
@@ -116063,7 +117496,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
         告警状态：
       </label>
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
       >
         <div
           class="t-input t-size-m t-is-warning t-input--prefix"
@@ -116161,7 +117594,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
         错误状态：
       </label>
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
       >
         <div
           class="t-input t-size-m t-is-error t-input--prefix"
@@ -116261,7 +117694,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -116347,7 +117780,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -116433,7 +117866,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -116519,7 +117952,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -134256,6 +135689,257 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
 </div>
 `;
 
+exports[`csr snapshot test > csr test ./src/tree/_example/transition.vue 1`] = `
+<div
+  class="tdesign-tree-demo tdesign-demo-transition"
+>
+  <form
+    class="t-form"
+    style="max-width: 500px;"
+  >
+    <div
+      class="t-form__item t-form-item__"
+    >
+      <div
+        class="t-form__label t-form__label--right"
+      >
+        <label
+          for=""
+        >
+          展开动画
+        </label>
+      </div>
+      <div
+        class="t-form__controls"
+      >
+        <div
+          class="t-form__controls-content"
+        >
+          <div
+            class="t-switch t-size-m t-is-checked"
+          >
+            <span
+              class="t-switch__handle"
+            />
+            <div
+              class="t-switch__content t-size-m"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="t-form__item t-form-item__"
+    >
+      <div
+        class="t-form__label t-form__label--right"
+      >
+        <label
+          for=""
+        >
+          显示连线
+        </label>
+      </div>
+      <div
+        class="t-form__controls"
+      >
+        <div
+          class="t-form__controls-content"
+        >
+          <div
+            class="t-switch t-size-m t-is-checked"
+          >
+            <span
+              class="t-switch__handle"
+            />
+            <div
+              class="t-switch__content t-size-m"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="t-form__item t-form-item__"
+    >
+      <div
+        class="t-form__label t-form__label--right"
+      >
+        <label
+          for=""
+        >
+          显示图标
+        </label>
+      </div>
+      <div
+        class="t-form__controls"
+      >
+        <div
+          class="t-form__controls-content"
+        >
+          <div
+            class="t-switch t-size-m t-is-checked"
+          >
+            <span
+              class="t-switch__handle"
+            />
+            <div
+              class="t-switch__content t-size-m"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div
+    class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
+  >
+    <transition-group-stub
+      class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
+      tag="div"
+    >
+      <div
+        class="t-tree__item t-tree__item--visible"
+        data-level="0"
+        data-value="t1"
+        draggable="false"
+        style="--level: 0;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon t-tree__icon--default"
+          ignore="active"
+          trigger="expand"
+        >
+          <svg
+            class="t-icon t-icon-caret-right-small"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </span>
+        <label
+          class="t-checkbox t-tree__label"
+        >
+          <input
+            class="t-checkbox__former"
+            name="t1"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            t1
+          </span>
+        </label>
+      </div>
+      <div
+        class="t-tree__item t-tree__item--visible"
+        data-level="0"
+        data-value="t2"
+        draggable="false"
+        style="--level: 0;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon t-tree__icon--default"
+          ignore="active"
+          trigger="expand"
+        >
+          <svg
+            class="t-icon t-icon-caret-right-small"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </span>
+        <label
+          class="t-checkbox t-tree__label"
+        >
+          <input
+            class="t-checkbox__former"
+            name="t2"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            t2
+          </span>
+        </label>
+      </div>
+      <div
+        class="t-tree__item t-tree__item--visible"
+        data-level="0"
+        data-value="t3"
+        draggable="false"
+        style="--level: 0;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon t-tree__icon--default"
+          ignore="active"
+          trigger="expand"
+        >
+          <svg
+            class="t-icon t-icon-caret-right-small"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </span>
+        <label
+          class="t-checkbox t-tree__label"
+        >
+          <input
+            class="t-checkbox__former"
+            name="t3"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            t3
+          </span>
+        </label>
+      </div>
+    </transition-group-stub>
+  </div>
+</div>
+`;
+
 exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
 <div
   class="tdesign-tree-demo tdesign-demo-vscroll"
@@ -137148,7 +138832,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/collapsed.vue 1
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-tree-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-tree-select"
       style="width: 300px;"
     >
       <div
@@ -137208,7 +138892,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/collapsed.vue 1
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-tree-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-tree-select"
       style="width: 300px;"
     >
       <div
@@ -137451,7 +139135,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/lazy.vue 1`] = 
 
 exports[`csr snapshot test > csr test ./src/tree-select/_example/multiple.vue 1`] = `
 <div
-  class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-tree-select"
+  class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-tree-select"
   style="width: 300px;"
 >
   <div
@@ -137654,7 +139338,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuedisplay.vu
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-tree-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-tree-select"
       style="width: 400px;"
     >
       <div
@@ -137772,7 +139456,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuetype.vue 1
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-tree-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-tree-select"
       style="width: 300px;"
     >
       <div

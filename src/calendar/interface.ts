@@ -1,21 +1,21 @@
 import dayjs from 'dayjs';
 
 import {
-  CalendarValue,
-  CalendarCell,
-  WeekDay,
-  TdCalendarProps,
+  CalendarValue, CalendarCell, WeekDay, TdCalendarProps,
 } from './type';
 
 export * from './type';
 export type CalendarProps = TdCalendarProps;
 
 /**
-* 日历组件的data定义
-*/
+ * 日历组件的data定义
+ */
 export interface CalendarData {
-  // 当前高亮的日期\月份（目前写死为“今天”）
-  curDate: dayjs.Dayjs;
+  realFirstDayOfWeek: number;
+  // 当前选中的高亮日期，单选（默认 multiple === false）的时候用这个
+  curDate?: dayjs.Dayjs | null;
+  // 当前选中的高亮日期列表，多选（multiple === true）的时候用这个
+  curDateList?: dayjs.Dayjs[];
   // 当前选中的年份
   curSelectedYear: number;
   // 当前选中的月份

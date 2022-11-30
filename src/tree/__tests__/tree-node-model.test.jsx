@@ -18,7 +18,7 @@ describe('Tree:treeNodeModel', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll></Tree>;
+          return <Tree ref="tree" data={data} expandAll={true}></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -46,7 +46,7 @@ describe('Tree:treeNodeModel', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll></Tree>;
+          return <Tree ref="tree" data={data} expandAll={true}></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -73,7 +73,7 @@ describe('Tree:treeNodeModel', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll></Tree>;
+          return <Tree ref="tree" data={data} expandAll={true}></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -100,7 +100,7 @@ describe('Tree:treeNodeModel', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll></Tree>;
+          return <Tree ref="tree" data={data} expandAll={true}></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -127,7 +127,7 @@ describe('Tree:treeNodeModel', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll></Tree>;
+          return <Tree ref="tree" data={data} expandAll={true}></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -153,7 +153,7 @@ describe('Tree:treeNodeModel', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll></Tree>;
+          return <Tree ref="tree" data={data} expandAll={true}></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -184,12 +184,15 @@ describe('Tree:treeNodeModel', () => {
             {
               value: 't1.2',
             },
+            {
+              value: 't1.4',
+            },
           ],
         },
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll></Tree>;
+          return <Tree ref="tree" data={data} expandAll={true}></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -203,7 +206,7 @@ describe('Tree:treeNodeModel', () => {
 
       const root = tree.getItem('t1');
       const children = root.getChildren();
-      expect(children.length).toBe(3);
+      expect(children.length).toBe(4);
       expect(children[2].value).toBe('t1.3');
     });
   });
@@ -222,7 +225,7 @@ describe('Tree:treeNodeModel', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll></Tree>;
+          return <Tree ref="tree" data={data} expandAll={true}></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -275,7 +278,7 @@ describe('Tree:treeNodeModel', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll></Tree>;
+          return <Tree ref="tree" data={data} expandAll={true}></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -307,7 +310,7 @@ describe('Tree:treeNodeModel', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll></Tree>;
+          return <Tree ref="tree" data={data} expandAll={true}></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -341,7 +344,7 @@ describe('Tree:treeNodeModel', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll></Tree>;
+          return <Tree ref="tree" data={data} expandAll={true}></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -372,7 +375,7 @@ describe('Tree:treeNodeModel', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll></Tree>;
+          return <Tree ref="tree" data={data} expandAll={true}></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -405,7 +408,7 @@ describe('Tree:treeNodeModel', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll></Tree>;
+          return <Tree ref="tree" data={data} expandAll={true}></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -442,7 +445,7 @@ describe('Tree:treeNodeModel', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll></Tree>;
+          return <Tree ref="tree" data={data} expandAll={true}></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -473,7 +476,7 @@ describe('Tree:treeNodeModel', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll></Tree>;
+          return <Tree ref="tree" data={data} expandAll={true}></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -498,7 +501,7 @@ describe('Tree:treeNodeModel', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll></Tree>;
+          return <Tree ref="tree" data={data} expandAll={true}></Tree>;
         },
       });
       expect(wrapper.find('[data-value="t1.1"]').exists()).toBe(true);
@@ -521,7 +524,7 @@ describe('Tree:treeNodeModel', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll></Tree>;
+          return <Tree ref="tree" data={data} expandAll={true}></Tree>;
         },
       });
       expect(wrapper.find('[data-value="t1.1"]').exists()).toBe(true);
@@ -544,13 +547,14 @@ describe('Tree:treeNodeModel', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll></Tree>;
+          return <Tree ref="tree" data={data} expandAll={true}></Tree>;
         },
       });
       const node = wrapper.vm.$refs.tree.getItem('t1');
       // 这会产生一个警告信息
       node.remove('t1.2');
       await delay(1);
+      // 应确保不影响正常节点
       expect(wrapper.find('[data-value="t1.1"]').exists()).toBe(true);
     });
   });
@@ -576,7 +580,7 @@ describe('Tree:treeNodeModel', () => {
           },
         },
         render() {
-          return <Tree ref="tree" label={this.label} data={data} expandAll></Tree>;
+          return <Tree ref="tree" label={this.label} data={data} expandAll={true}></Tree>;
         },
       });
       const el = wrapper.find('[data-value="t1.1"]');

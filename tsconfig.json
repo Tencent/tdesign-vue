@@ -46,7 +46,8 @@
     "dist",
     "lib",
     "esm",
-    "es"
+    "es",
+    "global.d.ts"
   ],
   "compileOnSave": false
 }
