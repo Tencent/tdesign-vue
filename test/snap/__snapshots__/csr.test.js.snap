@@ -20949,7 +20949,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/check-strictly.vue
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -21035,7 +21035,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/collapsed.vue 1`] 
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -21100,7 +21100,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/collapsed.vue 1`] 
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -21163,7 +21163,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/collapsed.vue 1`] 
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -21278,7 +21278,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/disabled.vue 1`] =
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
     >
       <div
         class="t-input t-size-m t-is-disabled t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -21374,7 +21374,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/ellipsis.vue 1`] =
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -21481,7 +21481,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/filterable.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -21637,7 +21637,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/keys.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -21737,7 +21737,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/load.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/cascader/_example/max.vue 1`] = `
 <div
-  class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader"
+  class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-cascader"
 >
   <div
     class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -21783,7 +21783,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/max.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/cascader/_example/multiple.vue 1`] = `
 <div
-  class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+  class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
 >
   <div
     class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -22057,7 +22057,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/show-all-levels.vu
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -22338,7 +22338,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/value-mode.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -22385,7 +22385,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/value-mode.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -22432,7 +22432,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/value-mode.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -22555,7 +22555,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/value-type.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-cascader"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-cascader"
     >
       <div
         class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -23622,7 +23622,7 @@ exports[`csr snapshot test > csr test ./src/collapse/_example/base.vue 1`] = `
                     class="t-space-item"
                   >
                     <div
-                      class="t-input__wrap t-tag-input t-tag-input--break-line"
+                      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
                     >
                       <div
                         class="t-input t-size-m t-is-default t-input--prefix"
@@ -23688,7 +23688,7 @@ exports[`csr snapshot test > csr test ./src/collapse/_example/base.vue 1`] = `
                     class="t-space-item"
                   >
                     <div
-                      class="t-input__wrap t-tag-input t-tag-input--break-line"
+                      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
                     >
                       <div
                         class="t-input t-size-m t-is-default t-input--prefix"
@@ -23759,7 +23759,7 @@ exports[`csr snapshot test > csr test ./src/collapse/_example/base.vue 1`] = `
                     class="t-space-item"
                   >
                     <div
-                      class="t-input__wrap t-tag-input t-tag-input--break-line"
+                      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
                     >
                       <div
                         class="t-input t-size-m t-is-default t-input--prefix"
@@ -34936,79 +34936,90 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/popconfirm.
       Open Drawer
     </span>
   </button>
-  <div
-    class="t-drawer t-drawer--right"
+  <transition-stub
     data-v-1f100e12=""
-    tabindex="0"
+    duration="[object Object]"
   >
     <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
     >
-      <div
-        class="t-drawer__header"
-      >
-        Drawer
-      </div>
-      <div
-        class="t-drawer__close-btn"
-      >
-        <svg
-          class="t-icon t-icon-close t-submenu-icon"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p
-          data-v-1f100e12=""
-        >
-          This is a controlled drawer
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
       >
         <div
-          style="display: flex; justify-content: flex-start;"
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
         >
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-            type="button"
+          Drawer
+        </div>
+        <div
+          class="t-drawer__close-btn"
+        >
+          <svg
+            class="t-icon t-icon-close t-submenu-icon"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            <span
-              class="t-button__text"
-            >
-              confirm
-            </span>
-          </button>
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-            type="button"
+            <path
+              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <p
+            data-v-1f100e12=""
           >
-            <span
-              class="t-button__text"
+            This is a controlled drawer
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div
+            style="display: flex; justify-content: flex-start;"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+              type="button"
             >
-              cancel
-            </span>
-          </button>
+              <span
+                class="t-button__text"
+              >
+                confirm
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                cancel
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </transition-stub>
 </div>
 `;
 
@@ -40516,7 +40527,103 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/attach.vue 1`] = `
     data-v-d38b880a=""
     duration="300"
     name="t-dialog-zoom__vue"
-  />
+  >
+    <div
+      class="t-dialog__ctx t-dialog__ctx--fixed"
+      style="display: none;"
+    >
+      <div
+        class="t-dialog__mask"
+      />
+      <div
+        class="t-dialog__wrap"
+      >
+        <div
+          class="t-dialog__position t-dialog--top"
+        >
+          <div
+            class="t-dialog t-dialog--default t-dialog__modal-default"
+          >
+            <div
+              class="t-dialog__header"
+            >
+              <div
+                class="t-dialog__header-content"
+              >
+                挂载到id为app的元素
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="t-dialog__body"
+            >
+              <div
+                data-v-d38b880a=""
+              >
+                <div
+                  data-v-d38b880a=""
+                >
+                  通过querySelect指定元素挂载
+                </div>
+                <div
+                  data-v-d38b880a=""
+                >
+                  支持原生document.querySelect选择元素
+                </div>
+                <div
+                  data-v-d38b880a=""
+                >
+                  querySelect获取到的第一个元素为挂载点
+                </div>
+              </div>
+            </div>
+            <div
+              class="t-dialog__footer"
+            >
+              <div>
+                <button
+                  class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog__cancel"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    取消
+                  </span>
+                </button>
+                <button
+                  class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    确认
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
   <transition-stub
     data-v-d38b880a=""
     duration="300"
@@ -40618,6 +40725,96 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/attach.vue 1`] = `
       </div>
     </div>
   </transition-stub>
+  <div
+    class="t-dialog__ctx t-dialog__ctx--fixed"
+    style="display: none;"
+  >
+    <div
+      class="t-dialog__mask"
+    />
+    <div
+      class="t-dialog__wrap"
+    >
+      <div
+        class="t-dialog__position t-dialog--top"
+      >
+        <div
+          class="t-dialog t-dialog--default t-dialog__modal-default"
+        >
+          <div
+            class="t-dialog__header"
+          >
+            <div
+              class="t-dialog__header-content"
+            >
+              函数返回挂载节点
+            </div>
+            <span
+              class="t-dialog__close"
+            >
+              <svg
+                class="t-icon t-icon-close"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            class="t-dialog__body"
+          >
+            <div
+              data-v-d38b880a=""
+            >
+              <div
+                data-v-d38b880a=""
+              >
+                指定函数返回的节点为挂载点
+              </div>
+              <div
+                data-v-d38b880a=""
+              >
+                函数返回为DOM节点对象
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-dialog__footer"
+          >
+            <div>
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-default t-dialog__cancel"
+                type="button"
+              >
+                <span
+                  class="t-button__text"
+                >
+                  取消
+                </span>
+              </button>
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                type="button"
+              >
+                <span
+                  class="t-button__text"
+                >
+                  确认
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -43997,62 +44194,73 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/attach-parent.vue 1`
     class="t-suf-container"
     data-v-241b7623=""
   >
-    <div
-      class="t-drawer t-drawer--right t-drawer--attach"
+    <transition-stub
       data-v-241b7623=""
-      tabindex="0"
+      duration="[object Object]"
     >
       <div
-        class="t-drawer__mask"
-      />
-      <div
-        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-        style="width: 300px;"
+        class="t-drawer t-drawer--right t-drawer--attach"
+        style="display: none;"
+        tabindex="0"
       >
-        <div
-          class="t-drawer__header"
-        >
-          抽屉标题
-        </div>
-        <div
-          class="t-drawer__body"
-        >
-          <p
-            data-v-241b7623=""
-          >
-            抽屉的内容
-          </p>
-        </div>
-        <div
-          class="t-drawer__footer"
+        <transition-stub
+          duration="300"
+          name="t-drawer-fade"
         >
           <div
-            style="display: flex; justify-content: flex-start;"
+            class="t-drawer__mask"
+            style="display: none;"
+          />
+        </transition-stub>
+        <div
+          class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+          style="width: 300px;"
+        >
+          <div
+            class="t-drawer__header"
           >
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-              type="button"
+            抽屉标题
+          </div>
+          <div
+            class="t-drawer__body"
+          >
+            <p
+              data-v-241b7623=""
             >
-              <span
-                class="t-button__text"
-              >
-                确认
-              </span>
-            </button>
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-              type="button"
+              抽屉的内容
+            </p>
+          </div>
+          <div
+            class="t-drawer__footer"
+          >
+            <div
+              style="display: flex; justify-content: flex-start;"
             >
-              <span
-                class="t-button__text"
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+                type="button"
               >
-                取消
-              </span>
-            </button>
+                <span
+                  class="t-button__text"
+                >
+                  确认
+                </span>
+              </button>
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+                type="button"
+              >
+                <span
+                  class="t-button__text"
+                >
+                  取消
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </transition-stub>
     <div
       class="tdesign-radio-button"
       data-v-241b7623=""
@@ -44217,79 +44425,90 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/base.vue 1`] = `
 <div
   data-v-18b3c170=""
 >
-  <div
-    class="t-drawer t-drawer--right"
+  <transition-stub
     data-v-18b3c170=""
-    tabindex="0"
+    duration="[object Object]"
   >
     <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
     >
-      <div
-        class="t-drawer__header"
-      >
-        抽屉标题
-      </div>
-      <div
-        class="t-drawer__close-btn"
-      >
-        <svg
-          class="t-icon t-icon-close t-submenu-icon"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p
-          data-v-18b3c170=""
-        >
-          抽屉的内容
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
       >
         <div
-          style="display: flex; justify-content: flex-start;"
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
         >
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-            type="button"
+          抽屉标题
+        </div>
+        <div
+          class="t-drawer__close-btn"
+        >
+          <svg
+            class="t-icon t-icon-close t-submenu-icon"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            <span
-              class="t-button__text"
-            >
-              确认
-            </span>
-          </button>
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-            type="button"
+            <path
+              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <p
+            data-v-18b3c170=""
           >
-            <span
-              class="t-button__text"
+            抽屉的内容
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div
+            style="display: flex; justify-content: flex-start;"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+              type="button"
             >
-              取消
-            </span>
-          </button>
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </transition-stub>
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     data-v-18b3c170=""
@@ -44306,118 +44525,61 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/base.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/drawer/_example/custom.vue 1`] = `
 <div>
-  <div
-    class="t-drawer t-drawer--right"
-    tabindex="0"
+  <transition-stub
+    duration="[object Object]"
   >
     <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
     >
-      <div
-        class="t-drawer__header"
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
       >
-        <div>
-          自定义头部
+        <div
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
+        >
+          <div>
+            自定义头部
+          </div>
         </div>
-      </div>
-      <div
-        class="t-drawer__close-btn"
-      >
-        <svg
-          class="t-icon t-icon-close t-submenu-icon"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
+        <div
+          class="t-drawer__close-btn"
         >
-          <path
-            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p>
-          抽屉的内容
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
-      >
-        <button
-          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
-          type="button"
-        >
-          <span
-            class="t-button__text"
+          <svg
+            class="t-icon t-icon-close t-submenu-icon"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            确定
-          </span>
-        </button>
-        <button
-          class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-          type="button"
+            <path
+              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </div>
+        <div
+          class="t-drawer__body"
         >
-          <span
-            class="t-button__text"
-          >
-            取消
-          </span>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-drawer t-drawer--right"
-    tabindex="0"
-  >
-    <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
-    >
-      <div
-        class="t-drawer__header"
-      >
-        抽屉标题
-      </div>
-      <div
-        class="t-drawer__close-btn"
-      >
-        <svg
-          class="t-icon t-icon-close t-submenu-icon"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
+          <p>
+            抽屉的内容
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
         >
-          <path
-            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p>
-          抽屉的内容
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
-      >
-        <div>
           <button
             class="t-button t-size-m t-button--variant-base t-button--theme-primary"
             type="button"
@@ -44425,82 +44587,11 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/custom.vue 1`] = `
             <span
               class="t-button__text"
             >
-              confirm
+              确定
             </span>
           </button>
           <button
             class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              cancel
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-drawer t-drawer--right"
-    tabindex="0"
-  >
-    <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
-    >
-      <div
-        class="t-drawer__header"
-      >
-        抽屉标题
-      </div>
-      <div
-        class="t-drawer__close-btn"
-      >
-        <svg
-          class="t-icon t-icon-close t-submenu-icon"
-          fill="none"
-          height="1em"
-          viewBox="0 0 16 16"
-          width="1em"
-        >
-          <path
-            d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-            fill="currentColor"
-            fill-opacity="0.9"
-          />
-        </svg>
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p>
-          抽屉的内容
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
-      >
-        <div
-          style="display: flex; justify-content: flex-start;"
-        >
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled t-drawer__confirm"
-            disabled="disabled"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              确认
-            </span>
-          </button>
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default"
             type="button"
           >
             <span
@@ -44512,7 +44603,168 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/custom.vue 1`] = `
         </div>
       </div>
     </div>
-  </div>
+  </transition-stub>
+  <transition-stub
+    duration="[object Object]"
+  >
+    <div
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
+    >
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
+      >
+        <div
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
+        >
+          抽屉标题
+        </div>
+        <div
+          class="t-drawer__close-btn"
+        >
+          <svg
+            class="t-icon t-icon-close t-submenu-icon"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <p>
+            抽屉的内容
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                confirm
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                cancel
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+  <transition-stub
+    duration="[object Object]"
+  >
+    <div
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
+    >
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
+      >
+        <div
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
+        >
+          抽屉标题
+        </div>
+        <div
+          class="t-drawer__close-btn"
+        >
+          <svg
+            class="t-icon t-icon-close t-submenu-icon"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <p>
+            抽屉的内容
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div
+            style="display: flex; justify-content: flex-start;"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-is-disabled t-drawer__confirm"
+              disabled="disabled"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
   <button
     class="t-button t-size-m t-button--variant-outline t-button--theme-default"
     type="button"
@@ -44550,247 +44802,23 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/custom.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/drawer/_example/destroy.vue 1`] = `
 <div>
-  <!---->
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      打开抽屉
-    </span>
-  </button>
-</div>
-`;
-
-exports[`csr snapshot test > csr test ./src/drawer/_example/no-mask.vue 1`] = `
-<div>
-  <div
-    class="t-drawer t-drawer--right t-drawer--without-mask"
-    tabindex="0"
-  >
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
-    >
-      <div
-        class="t-drawer__header"
-      >
-        抽屉标题
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p>
-          抽屉的内容
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
-      >
-        <div
-          style="display: flex; justify-content: flex-start;"
-        >
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              确认
-            </span>
-          </button>
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              取消
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      打开抽屉
-    </span>
-  </button>
-</div>
-`;
-
-exports[`csr snapshot test > csr test ./src/drawer/_example/operation.vue 1`] = `
-<div
-  data-v-c1a23f50=""
->
-  <div
-    class="t-drawer t-drawer--right"
-    data-v-c1a23f50=""
-    tabindex="0"
-  >
-    <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
-    >
-      <div
-        class="t-drawer__header"
-      >
-        抽屉标题
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <div
-          class="t-drawer-demo-div"
-          data-v-c1a23f50=""
-        >
-          <span
-            data-v-c1a23f50=""
-          >
-            标签 A
-          </span>
-          <div
-            class="t-input__wrap"
-            data-v-c1a23f50=""
-          >
-            <div
-              class="t-input t-size-m"
-            >
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请输入"
-                type="text"
-                unselectable="off"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class="t-drawer-demo-div"
-          data-v-c1a23f50=""
-        >
-          <span
-            data-v-c1a23f50=""
-          >
-            标签 B
-          </span>
-          <div
-            class="t-input__wrap"
-            data-v-c1a23f50=""
-          >
-            <div
-              class="t-input t-size-m"
-            >
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请输入"
-                type="text"
-                unselectable="off"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class="t-drawer-demo-div"
-          data-v-c1a23f50=""
-        >
-          <span
-            data-v-c1a23f50=""
-          >
-            标签 C
-          </span>
-          <div
-            class="t-input__wrap"
-            data-v-c1a23f50=""
-          >
-            <div
-              class="t-input t-size-m"
-            >
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请输入"
-                type="text"
-                unselectable="off"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-drawer__footer"
-      >
-        <div
-          style="display: flex; justify-content: flex-start;"
-        >
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              确认
-            </span>
-          </button>
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              取消
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
-    data-v-c1a23f50=""
-    type="button"
-  >
-    <span
-      class="t-button__text"
-    >
-      打开抽屉
-    </span>
-  </button>
-</div>
-`;
-
-exports[`csr snapshot test > csr test ./src/drawer/_example/placement.vue 1`] = `
-<div
-  class="t-space t-space-horizontal"
-  style="gap: 16px;"
->
-  <div
-    class="t-space-item"
+  <transition-stub
+    duration="[object Object]"
   >
     <div
       class="t-drawer t-drawer--right"
+      style="display: none;"
       tabindex="0"
     >
-      <div
-        class="t-drawer__mask"
-      />
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
+      >
+        <div
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
       <div
         class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
         style="width: 300px;"
@@ -44837,6 +44865,320 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/placement.vue 1`] = 
         </div>
       </div>
     </div>
+  </transition-stub>
+  <button
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      打开抽屉
+    </span>
+  </button>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/drawer/_example/no-mask.vue 1`] = `
+<div>
+  <transition-stub
+    duration="[object Object]"
+  >
+    <div
+      class="t-drawer t-drawer--right t-drawer--without-mask"
+      style="display: none;"
+      tabindex="0"
+    >
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
+        >
+          抽屉标题
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <p>
+            抽屉的内容
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div
+            style="display: flex; justify-content: flex-start;"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+  <button
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      打开抽屉
+    </span>
+  </button>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/drawer/_example/operation.vue 1`] = `
+<div
+  data-v-c1a23f50=""
+>
+  <transition-stub
+    data-v-c1a23f50=""
+    duration="[object Object]"
+  >
+    <div
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
+    >
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
+      >
+        <div
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
+      <div
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
+        >
+          抽屉标题
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <div
+            class="t-drawer-demo-div"
+            data-v-c1a23f50=""
+          >
+            <span
+              data-v-c1a23f50=""
+            >
+              标签 A
+            </span>
+            <div
+              class="t-input__wrap"
+              data-v-c1a23f50=""
+            >
+              <div
+                class="t-input t-size-m"
+              >
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请输入"
+                  type="text"
+                  unselectable="off"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-drawer-demo-div"
+            data-v-c1a23f50=""
+          >
+            <span
+              data-v-c1a23f50=""
+            >
+              标签 B
+            </span>
+            <div
+              class="t-input__wrap"
+              data-v-c1a23f50=""
+            >
+              <div
+                class="t-input t-size-m"
+              >
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请输入"
+                  type="text"
+                  unselectable="off"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-drawer-demo-div"
+            data-v-c1a23f50=""
+          >
+            <span
+              data-v-c1a23f50=""
+            >
+              标签 C
+            </span>
+            <div
+              class="t-input__wrap"
+              data-v-c1a23f50=""
+            >
+              <div
+                class="t-input t-size-m"
+              >
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请输入"
+                  type="text"
+                  unselectable="off"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div
+            style="display: flex; justify-content: flex-start;"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+  <button
+    class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+    data-v-c1a23f50=""
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      打开抽屉
+    </span>
+  </button>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/drawer/_example/placement.vue 1`] = `
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <transition-stub
+      duration="[object Object]"
+    >
+      <div
+        class="t-drawer t-drawer--right"
+        style="display: none;"
+        tabindex="0"
+      >
+        <transition-stub
+          duration="300"
+          name="t-drawer-fade"
+        >
+          <div
+            class="t-drawer__mask"
+            style="display: none;"
+          />
+        </transition-stub>
+        <div
+          class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+          style="width: 300px;"
+        >
+          <div
+            class="t-drawer__header"
+          >
+            抽屉标题
+          </div>
+          <div
+            class="t-drawer__body"
+          >
+            <p>
+              抽屉的内容
+            </p>
+          </div>
+          <div
+            class="t-drawer__footer"
+          >
+            <div
+              style="display: flex; justify-content: flex-start;"
+            >
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+                type="button"
+              >
+                <span
+                  class="t-button__text"
+                >
+                  确认
+                </span>
+              </button>
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+                type="button"
+              >
+                <span
+                  class="t-button__text"
+                >
+                  取消
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition-stub>
   </div>
   <div
     class="t-space-item"
@@ -44946,6 +45288,9 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/placement.vue 1`] = 
 
 exports[`csr snapshot test > csr test ./src/drawer/_example/popup.vue 1`] = `
 <div>
+  <transition-stub
+    duration="[object Object]"
+  />
   <div
     class="t-space t-space-horizontal"
     style="gap: 16px;"
@@ -45018,59 +45363,70 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/size.vue 1`] = `
   <div
     class="t-space-item"
   >
-    <div
-      class="t-drawer t-drawer--right"
-      tabindex="0"
+    <transition-stub
+      duration="[object Object]"
     >
       <div
-        class="t-drawer__mask"
-      />
-      <div
-        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-        style="width: 300px;"
+        class="t-drawer t-drawer--right"
+        style="display: none;"
+        tabindex="0"
       >
-        <div
-          class="t-drawer__header"
-        >
-          抽屉标题
-        </div>
-        <div
-          class="t-drawer__body"
-        >
-          <p>
-            抽屉的内容
-          </p>
-        </div>
-        <div
-          class="t-drawer__footer"
+        <transition-stub
+          duration="300"
+          name="t-drawer-fade"
         >
           <div
-            style="display: flex; justify-content: flex-start;"
+            class="t-drawer__mask"
+            style="display: none;"
+          />
+        </transition-stub>
+        <div
+          class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+          style="width: 300px;"
+        >
+          <div
+            class="t-drawer__header"
           >
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-              type="button"
+            抽屉标题
+          </div>
+          <div
+            class="t-drawer__body"
+          >
+            <p>
+              抽屉的内容
+            </p>
+          </div>
+          <div
+            class="t-drawer__footer"
+          >
+            <div
+              style="display: flex; justify-content: flex-start;"
             >
-              <span
-                class="t-button__text"
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+                type="button"
               >
-                确认
-              </span>
-            </button>
-            <button
-              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-              type="button"
-            >
-              <span
-                class="t-button__text"
+                <span
+                  class="t-button__text"
+                >
+                  确认
+                </span>
+              </button>
+              <button
+                class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+                type="button"
               >
-                取消
-              </span>
-            </button>
+                <span
+                  class="t-button__text"
+                >
+                  取消
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </transition-stub>
   </div>
   <div
     class="t-space-item"
@@ -45216,62 +45572,73 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/size.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/drawer/_example/size-draggable.vue 1`] = `
 <div>
-  <div
-    class="t-drawer t-drawer--right"
-    tabindex="0"
+  <transition-stub
+    duration="[object Object]"
   >
     <div
-      class="t-drawer__mask"
-    />
-    <div
-      class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
-      style="width: 300px;"
+      class="t-drawer t-drawer--right"
+      style="display: none;"
+      tabindex="0"
     >
-      <div
-        class="t-drawer__header"
-      >
-        抽屉标题
-      </div>
-      <div
-        class="t-drawer__body"
-      >
-        <p>
-          抽屉的内容
-        </p>
-      </div>
-      <div
-        class="t-drawer__footer"
+      <transition-stub
+        duration="300"
+        name="t-drawer-fade"
       >
         <div
-          style="display: flex; justify-content: flex-start;"
-        >
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              确认
-            </span>
-          </button>
-          <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
-            type="button"
-          >
-            <span
-              class="t-button__text"
-            >
-              取消
-            </span>
-          </button>
-        </div>
-      </div>
+          class="t-drawer__mask"
+          style="display: none;"
+        />
+      </transition-stub>
       <div
-        style="z-index: 1; position: absolute; background: transparent; left: 0px; width: 16px; height: 100%; cursor: col-resize;"
-      />
+        class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+        style="width: 300px;"
+      >
+        <div
+          class="t-drawer__header"
+        >
+          抽屉标题
+        </div>
+        <div
+          class="t-drawer__body"
+        >
+          <p>
+            抽屉的内容
+          </p>
+        </div>
+        <div
+          class="t-drawer__footer"
+        >
+          <div
+            style="display: flex; justify-content: flex-start;"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-primary t-drawer__confirm"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                确认
+              </span>
+            </button>
+            <button
+              class="t-button t-size-m t-button--variant-base t-button--theme-default t-drawer__cancel"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                取消
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          style="z-index: 1; position: absolute; background: transparent; left: 0px; width: 16px; height: 100%; cursor: col-resize;"
+        />
+      </div>
     </div>
-  </div>
+  </transition-stub>
   <div
     class="t-space t-space-vertical"
     style="gap: 16px;"
@@ -57552,7 +57919,7 @@ exports[`csr snapshot test > csr test ./src/input-adornment/_example/select.vue 
       class="t-input-adornment t-input-adornment--append"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty"
       >
         <div
           class="t-input t-size-m t-is-default t-input--prefix"
@@ -57822,7 +58189,7 @@ exports[`csr snapshot test > csr test ./src/input-adornment/_example/text.vue 1`
       class="t-input-adornment t-input-adornment--append"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty"
       >
         <div
           class="t-input t-size-m t-is-default t-input--prefix"
@@ -79628,7 +79995,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/collapsed.vue 1`] = 
       class="t-select__wrap"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -79697,7 +80064,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/collapsed.vue 1`] = 
       class="t-select__wrap"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -79764,7 +80131,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/collapsed.vue 1`] = 
       class="t-select__wrap"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -79886,7 +80253,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/creatable.vue 1`] = 
       style="width: 400px; display: inline-block;"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -80056,7 +80423,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/custom-selected.vue 
       class="t-select__wrap"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -80158,7 +80525,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/custom-selected.vue 
       class="t-select__wrap"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -80336,7 +80703,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/disabled.vue 1`] = `
       style="width: 200px; display: inline-block;"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-disabled t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -80447,7 +80814,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/filterable.vue 1`] =
       style="width: 400px; display: inline-block;"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -80651,7 +81018,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/label-in-value.vue 1
       style="width: 200px; display: inline-block;"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -80715,7 +81082,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/max.vue 1`] = `
   style="width: 200px;"
 >
   <div
-    class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-select"
+    class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-select"
   >
     <div
       class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -80772,7 +81139,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
       class="t-select__wrap"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -80854,7 +81221,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
       class="t-select__wrap"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -81016,7 +81383,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
       class="t-select__wrap"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -81160,7 +81527,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/noborder.vue 1`] = `
       class="t-select__wrap"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--borderless t-select-input--multiple t-select-input--empty t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--borderless t-select-input--multiple t-select-input--empty t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
@@ -81526,7 +81893,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/remote-search.vue 1`
       style="width: 400px; display: inline-block;"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-select"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-select"
       >
         <div
           class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -82013,7 +82380,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/autowidth.vue 
 
 exports[`csr snapshot test > csr test ./src/select-input/_example/autowidth-multiple.vue 1`] = `
 <div
-  class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
+  class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple"
   data-v-43e6ff8d=""
 >
   <div
@@ -82109,7 +82476,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/borderless.vue
 
 exports[`csr snapshot test > csr test ./src/select-input/_example/borderless-multiple.vue 1`] = `
 <div
-  class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--borderless t-select-input--multiple"
+  class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-select-input--borderless t-select-input--multiple"
   data-v-56f11d7e=""
   style="width: 250px;"
 >
@@ -82170,7 +82537,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/collapsed-item
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-select-input--multiple"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -82223,7 +82590,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/collapsed-item
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-select-input--multiple"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -82296,7 +82663,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/collapsed-item
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-select-input--multiple"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -82445,7 +82812,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/custom-tag.vue
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-select-input--multiple"
       data-v-3251f825=""
     >
       <div
@@ -82547,7 +82914,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/custom-tag.vue
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-select-input--multiple"
       data-v-3251f825=""
     >
       <div
@@ -82723,7 +83090,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/excess-tags-di
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-select-input--multiple"
+      class="t-input__wrap t-tag-input t-tag-input--with-tag t-select-input--multiple"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -82876,7 +83243,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/excess-tags-di
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-select-input--multiple"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -83229,7 +83596,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/multiple.vue 1
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
@@ -94451,7 +94818,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-row.vue 1`] 
                   class="t-select__wrap"
                 >
                   <div
-                    class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select"
+                    class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select"
                   >
                     <div
                       class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
@@ -115383,7 +115750,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/theme.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/tag-input/_example/auto-width.vue 1`] = `
 <div
-  class="t-input__wrap t-tag-input t-tag-input--break-line"
+  class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
 >
   <div
     class="t-input t-size-m t-is-default t-input--auto-width t-input--prefix"
@@ -115455,7 +115822,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/base.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -115521,7 +115888,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/base.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -115592,7 +115959,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/base.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -115671,7 +116038,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/collapsed.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -115724,7 +116091,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/collapsed.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -115797,7 +116164,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/collapsed.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -115898,7 +116265,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/custom-tag.vue 1`
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -115983,7 +116350,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/custom-tag.vue 1`
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -116098,7 +116465,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/draggable.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -116199,7 +116566,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/draggable.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -116338,7 +116705,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/excess.vue 1`] = 
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input"
+      class="t-input__wrap t-tag-input t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -116409,7 +116776,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/excess.vue 1`] = 
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -116481,7 +116848,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/excess.vue 1`] = 
 
 exports[`csr snapshot test > csr test ./src/tag-input/_example/max.vue 1`] = `
 <div
-  class="t-input__wrap t-tag-input t-tag-input--break-line"
+  class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty"
   style="width: 80%;"
 >
   <div
@@ -116515,7 +116882,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/size.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-s t-is-default t-input--prefix"
@@ -116581,7 +116948,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/size.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -116647,7 +117014,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/size.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-l t-is-default t-input--prefix"
@@ -116715,7 +117082,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/size.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = `
 <div
   class="t-space t-space-vertical"
-  style="gap: 16px;"
+  style="gap: 32px;"
 >
   <div
     class="t-space-item"
@@ -116727,7 +117094,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
         禁用状态：
       </label>
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
       >
         <div
           class="t-input t-size-m t-is-disabled t-is-default t-input--prefix"
@@ -116782,7 +117149,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
         只读状态：
       </label>
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
       >
         <div
           class="t-input t-size-m t-is-default t-input--prefix"
@@ -116841,7 +117208,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
         成功状态：
       </label>
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
       >
         <div
           class="t-input t-size-m t-is-success t-input--prefix"
@@ -116939,7 +117306,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
         告警状态：
       </label>
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
       >
         <div
           class="t-input t-size-m t-is-warning t-input--prefix"
@@ -117037,7 +117404,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
         错误状态：
       </label>
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line"
+        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
       >
         <div
           class="t-input t-size-m t-is-error t-input--prefix"
@@ -117137,7 +117504,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -117223,7 +117590,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -117309,7 +117676,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -117395,7 +117762,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
     >
       <div
         class="t-input t-size-m t-is-default t-input--prefix"
@@ -138275,7 +138642,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/collapsed.vue 1
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-tree-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-tree-select"
       style="width: 300px;"
     >
       <div
@@ -138335,7 +138702,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/collapsed.vue 1
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-tree-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-tree-select"
       style="width: 300px;"
     >
       <div
@@ -138578,7 +138945,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/lazy.vue 1`] = 
 
 exports[`csr snapshot test > csr test ./src/tree-select/_example/multiple.vue 1`] = `
 <div
-  class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-tree-select"
+  class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-tree-select"
   style="width: 300px;"
 >
   <div
@@ -138781,7 +139148,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuedisplay.vu
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-tree-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-tree-select"
       style="width: 400px;"
     >
       <div
@@ -138899,7 +139266,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuetype.vue 1
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-select-input--multiple t-select-input--empty t-tree-select"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon t-select-input--multiple t-select-input--empty t-tree-select"
       style="width: 300px;"
     >
       <div

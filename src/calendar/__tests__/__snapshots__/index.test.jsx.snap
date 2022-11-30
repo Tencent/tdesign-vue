@@ -15409,7 +15409,7 @@ exports[`Calendar > :props > :theme 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input t-size-s t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -15460,7 +15460,7 @@ exports[`Calendar > :props > :theme 1`] = `
               class="t-input__wrap t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input t-size-s t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -15506,7 +15506,7 @@ exports[`Calendar > :props > :theme 1`] = `
           style="height: auto;"
         >
           <div
-            class="t-radio-group t-size-m t-radio-group--filled"
+            class="t-radio-group t-size-s t-radio-group--filled"
           >
             <label
               class="t-radio-button t-is-checked"
