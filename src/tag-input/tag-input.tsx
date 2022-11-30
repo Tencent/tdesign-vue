@@ -22,8 +22,7 @@ export default defineComponent({
   props: { ...props },
 
   setup(props: TdTagInputProps, context) {
-    const { inputValue } = toRefs(props);
-    const { inputProps } = props;
+    const { inputValue, inputProps } = toRefs(props);
     // 除了绑定 DOM 的变量，其他的一律不可使用 Ref 作为后缀
     const isComposition = ref(false);
     const COMPONENT_NAME = usePrefixClass('tag-input');
@@ -96,12 +95,12 @@ export default defineComponent({
 
     const onInputCompositionstart = (value: InputValue, context: { e: CompositionEvent }) => {
       isComposition.value = true;
-      inputProps?.onCompositionstart?.(value, context);
+      inputProps.value?.onCompositionstart?.(value, context);
     };
 
     const onInputCompositionend = (value: InputValue, context: { e: CompositionEvent }) => {
       isComposition.value = false;
-      inputProps?.onCompositionend?.(value, context);
+      inputProps.value?.onCompositionend?.(value, context);
     };
 
     const onInputEnter = (value: InputValue, context: { e: KeyboardEvent }) => {
