@@ -175,7 +175,6 @@ export default defineComponent({
     return (
       <TInput
         ref="tagInputRef"
-        {...this.inputProps}
         readonly={this.inputProps?.readonly}
         inputClass={this.inputProps?.inputClass} // 展开无效 需直接透传
         value={this.tInputValue}
@@ -224,6 +223,7 @@ export default defineComponent({
         }}
         onCompositionstart={this.onInputCompositionstart}
         onCompositionend={this.onInputCompositionend}
+        props={this.inputProps}
       />
     );
   },
