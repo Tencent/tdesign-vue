@@ -1,7 +1,7 @@
 <template>
   <t-head-menu theme="dark" defaultValue="item2">
     <template #logo>
-      <img width="136" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo" />
+      <img height="28" src="https://tdesign.gtimg.com/site/baseLogo-light.png" alt="logo" />
     </template>
     <t-menu-item value="item1">111菜单内容一</t-menu-item>
     <t-menu-item value="item2">已选内容</t-menu-item>

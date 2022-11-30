@@ -2,7 +2,7 @@
   <div class="wrapper">
     <t-menu defaultValue="item2" width="200px" height="550px" style="margin-right: 20px">
       <template #logo>
-        <img width="136" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo" />
+        <img height="28" src="https://tdesign.gtimg.com/site/baseLogo-light.png" alt="logo" />
       </template>
       <t-menu-item value="item1">仪表盘</t-menu-item>
       <t-menu-item value="item2">信息区</t-menu-item>
@@ -12,7 +12,7 @@
 
     <t-menu defaultValue="item2" :collapsed="collapsed" :width="['300px', 150]" height="550px">
       <template #logo>
-        <img width="136" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo" />
+        <img height="28" src="https://tdesign.gtimg.com/site/baseLogo-light.png" alt="logo" />
       </template>
       <t-menu-item value="item1">
         <template #icon>

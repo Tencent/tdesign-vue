@@ -2,7 +2,7 @@
   <div>
     <t-head-menu theme="light" v-model="menu1Value" @change="changeHandler">
       <template #logo>
-        <img width="136" src="https://www.tencent.com/img/index/menu_logo_hover.png" alt="logo" />
+        <img height="28" src="https://tdesign.gtimg.com/site/baseLogo-light.png" alt="logo" />
       </template>
       <t-menu-item value="item1">菜单1</t-menu-item>
       <t-menu-item value="item2">菜单2</t-menu-item>
@@ -18,7 +18,7 @@
     <br />
 
     <t-head-menu theme="dark" v-model="menu2Value" height="120px">
-      <img slot="logo" width="136" src="https://www.tencent.com/img/index/menu_logo.png" alt="logo" />
+      <img slot="logo" height="28" src="https://tdesign.gtimg.com/site/baseLogo-dark.png" alt="logo" />
       <t-menu-item value="item1">菜单1</t-menu-item>
       <t-menu-item value="item2">菜单2</t-menu-item>
       <t-menu-item value="item4" :disabled="true">禁用菜单</t-menu-item>

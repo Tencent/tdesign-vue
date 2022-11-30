@@ -1,7 +1,7 @@
 <template>
   <t-head-menu @change="changeHandler" theme="dark" :value="active">
     <template #logo>
-      <img width="136" src="https://www.tencent.com/img/index/menu_logo.png" alt="logo" />
+      <img height="28" src="https://tdesign.gtimg.com/site/baseLogo-dark.png" alt="logo" />
     </template>
     <t-menu-item :value="`${index + 1}`" v-for="(menu, index) in menus" :key="index">
       {{ menu.title }}
