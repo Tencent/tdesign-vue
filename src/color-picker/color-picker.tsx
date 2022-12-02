@@ -105,6 +105,7 @@ export default defineComponent({
             <default-trigger
               color={this.innerValue}
               disabled={disabled}
+              clearable={this.clearable}
               input-props={this.inputProps}
               handleTriggerChange={this.setInnerValue}
             />,
