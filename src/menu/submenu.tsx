@@ -139,7 +139,7 @@ export default defineComponent({
         <div class={this.submenuClass}>
           {renderTNodeJSX(this, 'title')}
           <fake-arrow
-            overlayClassName={this.arrowClass}
+            overlayClassName={/submenu/i.test(this.$parent.$vnode?.tag) ? null : this.arrowClass}
             overlayStyle={{ transform: `rotate(${this.isNested ? -90 : 0}deg)` }}
           />
         </div>,
@@ -183,10 +183,7 @@ export default defineComponent({
         <div class={this.submenuClass}>
           {icon}
           <span class={[`${this.classPrefix}-menu__content`]}>{renderTNodeJSX(this, 'title')}</span>
-          <fake-arrow
-            overlayClassName={this.arrowClass}
-            overlayStyle={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }}
-          />
+          <fake-arrow overlayStyle={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }} />
         </div>,
         <div ref="popup" class={this.popupClass}>
           <ul ref="popupInner" class={`${this.classPrefix}-menu__popup-wrapper`}>
