@@ -352,14 +352,16 @@ export default defineComponent({
                 <alpha-slider color={this.color} disabled={this.disabled} handleChange={this.handleAlphaChange} />
               ) : null}
             </div>
-            <div class={[`${baseClassName}__sliders-preview`, `${baseClassName}--bg-alpha`]}>
-              <span
-                class={`${baseClassName}__sliders-preview-inner`}
-                style={{
-                  background: previewColorStyle,
-                }}
-              />
-            </div>
+            {this.showPrimaryColorPreview ? (
+              <div class={[`${baseClassName}__sliders-preview`, `${baseClassName}--bg-alpha`]}>
+                <span
+                  class={`${baseClassName}__sliders-preview-inner`}
+                  style={{
+                    background: previewColorStyle,
+                  }}
+                />
+              </div>
+            ) : null}
           </div>
 
           <format-panel
