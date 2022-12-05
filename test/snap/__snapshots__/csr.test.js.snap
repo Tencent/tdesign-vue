@@ -63002,13 +63002,18 @@ exports[`csr snapshot test > csr test ./src/menu/_example/closable-side.vue 1`] 
     <div
       class="t-menu__operations"
     >
-      <svg
-        class="t-menu__operations-icon t-icon t-icon-chevron-right"
+      <button
+        class="t-demo-collapse-btn t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+        type="button"
       >
-        <use
-          href="#t-icon-chevron-right"
-        />
-      </svg>
+        <svg
+          class="t-icon t-icon-chevron-right"
+        >
+          <use
+            href="#t-icon-chevron-right"
+          />
+        </svg>
+      </button>
     </div>
   </div>
 </div>
@@ -63878,13 +63883,22 @@ exports[`csr snapshot test > csr test ./src/menu/_example/group-side.vue 1`] = `
     <div
       class="t-menu__operations"
     >
-      <svg
-        class="t-menu__operations-icon t-icon t-icon-view-list"
+      <button
+        class="t-demo-collapse-btn t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+        type="button"
       >
-        <use
-          href="#t-icon-view-list"
-        />
-      </svg>
+        <span
+          class="t-button__text"
+        >
+          <svg
+            class="t-icon t-icon-view-list"
+          >
+            <use
+              href="#t-icon-view-list"
+            />
+          </svg>
+        </span>
+      </button>
     </div>
   </div>
 </div>
@@ -64505,9 +64519,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
 exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
 <div
   class="box"
+  data-v-3a81e078=""
 >
   <div
     class="t-default-menu t-menu--light"
+    data-v-3a81e078=""
     height="550px"
     style="height: 100%; width: 232px;"
   >
@@ -64519,12 +64535,14 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
       >
         <li
           class="t-submenu t-is-opened"
+          data-v-3a81e078=""
         >
           <div
             class="t-menu__item t-is-opened"
           >
             <svg
               class="t-icon t-icon-mail"
+              data-v-3a81e078=""
             >
               <use
                 href="#t-icon-mail"
@@ -64558,6 +64576,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
           >
             <li
               class="t-submenu"
+              data-v-3a81e078=""
             >
               <div
                 class="t-menu__item"
@@ -64590,6 +64609,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
               >
                 <li
                   class="t-menu__item t-menu__item--plain t-submenu__item"
+                  data-v-3a81e078=""
                 >
                   <span
                     class="t-menu__content"
@@ -64599,6 +64619,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
                 </li>
                 <li
                   class="t-menu__item t-menu__item--plain t-submenu__item"
+                  data-v-3a81e078=""
                 >
                   <span
                     class="t-menu__content"
@@ -64608,6 +64629,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
                 </li>
                 <li
                   class="t-menu__item t-menu__item--plain t-submenu__item"
+                  data-v-3a81e078=""
                 >
                   <span
                     class="t-menu__content"
@@ -64619,6 +64641,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
             </li>
             <li
               class="t-submenu"
+              data-v-3a81e078=""
             >
               <div
                 class="t-menu__item"
@@ -64651,6 +64674,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
               >
                 <li
                   class="t-menu__item t-menu__item--plain t-submenu__item"
+                  data-v-3a81e078=""
                 >
                   <span
                     class="t-menu__content"
@@ -64660,6 +64684,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
                 </li>
                 <li
                   class="t-menu__item t-menu__item--plain t-submenu__item"
+                  data-v-3a81e078=""
                 >
                   <span
                     class="t-menu__content"
@@ -64669,6 +64694,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
                 </li>
                 <li
                   class="t-menu__item t-menu__item--plain t-submenu__item"
+                  data-v-3a81e078=""
                 >
                   <span
                     class="t-menu__content"
@@ -64680,6 +64706,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
             </li>
             <li
               class="t-menu__item t-is-active t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
             >
               <span
                 class="t-menu__content"
@@ -64689,6 +64716,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
             </li>
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
             >
               <span
                 class="t-menu__content"
@@ -64698,6 +64726,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
             </li>
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
             >
               <span
                 class="t-menu__content"
@@ -64709,9 +64738,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
         </li>
         <li
           class="t-menu__item"
+          data-v-3a81e078=""
         >
           <svg
             class="t-icon t-icon-user-circle"
+            data-v-3a81e078=""
           >
             <use
               href="#t-icon-user-circle"
@@ -64725,12 +64756,14 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
         </li>
         <li
           class="t-submenu t-is-disabled"
+          data-v-3a81e078=""
         >
           <div
             class="t-menu__item t-is-disabled"
           >
             <svg
               class="t-icon t-icon-play-circle"
+              data-v-3a81e078=""
             >
               <use
                 href="#t-icon-play-circle"
@@ -64764,6 +64797,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
           >
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
             >
               <span
                 class="t-menu__content"
@@ -64773,6 +64807,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
             </li>
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
             >
               <span
                 class="t-menu__content"
@@ -64782,6 +64817,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
             </li>
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
             >
               <span
                 class="t-menu__content"
@@ -64793,9 +64829,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
         </li>
         <li
           class="t-menu__item"
+          data-v-3a81e078=""
         >
           <svg
             class="t-icon t-icon-edit-1"
+            data-v-3a81e078=""
           >
             <use
               href="#t-icon-edit-1"
@@ -64811,18 +64849,43 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
       <div
         class="t-menu__operations"
       >
-        <svg
-          class="t-menu__operations-icon t-icon t-icon-view-list"
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          data-v-3a81e078=""
+          type="button"
         >
-          <use
-            href="#t-icon-view-list"
-          />
-        </svg>
+          <span
+            class="t-button__text"
+          >
+            <button
+              class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+              data-v-3a81e078=""
+              type="button"
+            >
+              <svg
+                class="t-icon t-icon-view-list"
+                data-v-3a81e078=""
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M14 4.5H2v-1h12v1zM14 8.5H2v-1h12v1zM2 12.5h12v-1H2v1z"
+                  data-v-3a81e078=""
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </button>
+          </span>
+        </button>
       </div>
     </div>
   </div>
   <div
     class="t-default-menu t-menu--dark"
+    data-v-3a81e078=""
     height="550px"
     style="height: 100%; width: 232px; margin-left: 40px;"
   >
@@ -64834,9 +64897,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
       >
         <li
           class="t-menu__item"
+          data-v-3a81e078=""
         >
           <svg
             class="t-icon t-icon-dashboard"
+            data-v-3a81e078=""
           >
             <use
               href="#t-icon-dashboard"
@@ -64850,9 +64915,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
         </li>
         <li
           class="t-menu__item"
+          data-v-3a81e078=""
         >
           <svg
             class="t-icon t-icon-server"
+            data-v-3a81e078=""
           >
             <use
               href="#t-icon-server"
@@ -64866,9 +64933,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
         </li>
         <li
           class="t-menu__item"
+          data-v-3a81e078=""
         >
           <svg
             class="t-icon t-icon-root-list"
+            data-v-3a81e078=""
           >
             <use
               href="#t-icon-root-list"
@@ -64882,12 +64951,14 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
         </li>
         <li
           class="t-submenu t-is-opened"
+          data-v-3a81e078=""
         >
           <div
             class="t-menu__item t-is-opened"
           >
             <svg
               class="t-icon t-icon-control-platform"
+              data-v-3a81e078=""
             >
               <use
                 href="#t-icon-control-platform"
@@ -64921,6 +64992,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
           >
             <li
               class="t-menu__item t-is-active t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
             >
               <span
                 class="t-menu__content"
@@ -64930,6 +65002,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
             </li>
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
             >
               <span
                 class="t-menu__content"
@@ -64939,6 +65012,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
             </li>
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
             >
               <span
                 class="t-menu__content"
@@ -64950,9 +65024,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
         </li>
         <li
           class="t-menu__item"
+          data-v-3a81e078=""
         >
           <svg
             class="t-icon t-icon-precise-monitor"
+            data-v-3a81e078=""
           >
             <use
               href="#t-icon-precise-monitor"
@@ -64966,12 +65042,14 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
         </li>
         <li
           class="t-submenu t-is-disabled"
+          data-v-3a81e078=""
         >
           <div
             class="t-menu__item t-is-disabled"
           >
             <svg
               class="t-icon t-icon-mail"
+              data-v-3a81e078=""
             >
               <use
                 href="#t-icon-mail"
@@ -65005,6 +65083,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
           >
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
             >
               <span
                 class="t-menu__content"
@@ -65014,6 +65093,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
             </li>
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
             >
               <span
                 class="t-menu__content"
@@ -65023,6 +65103,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
             </li>
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
             >
               <span
                 class="t-menu__content"
@@ -65034,9 +65115,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
         </li>
         <li
           class="t-menu__item"
+          data-v-3a81e078=""
         >
           <svg
             class="t-icon t-icon-user-circle"
+            data-v-3a81e078=""
           >
             <use
               href="#t-icon-user-circle"
@@ -65050,12 +65133,14 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
         </li>
         <li
           class="t-submenu"
+          data-v-3a81e078=""
         >
           <div
             class="t-menu__item"
           >
             <svg
               class="t-icon t-icon-play-circle"
+              data-v-3a81e078=""
             >
               <use
                 href="#t-icon-play-circle"
@@ -65089,6 +65174,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
           >
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
             >
               <span
                 class="t-menu__content"
@@ -65098,6 +65184,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
             </li>
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
             >
               <span
                 class="t-menu__content"
@@ -65107,6 +65194,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
             </li>
             <li
               class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
             >
               <span
                 class="t-menu__content"
@@ -65118,9 +65206,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
         </li>
         <li
           class="t-menu__item"
+          data-v-3a81e078=""
         >
           <svg
             class="t-icon t-icon-edit-1"
+            data-v-3a81e078=""
           >
             <use
               href="#t-icon-edit-1"
@@ -65136,13 +65226,27 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
       <div
         class="t-menu__operations"
       >
-        <svg
-          class="t-menu__operations-icon t-icon t-icon-view-list"
+        <button
+          class="t-demo-collapse-btn t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          data-v-3a81e078=""
+          type="button"
         >
-          <use
-            href="#t-icon-view-list"
-          />
-        </svg>
+          <svg
+            class="t-icon t-icon-view-list"
+            data-v-3a81e078=""
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M14 4.5H2v-1h12v1zM14 8.5H2v-1h12v1zM2 12.5h12v-1H2v1z"
+              data-v-3a81e078=""
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   </div>
@@ -65978,13 +66082,22 @@ exports[`csr snapshot test > csr test ./src/menu/_example/popup-side.vue 1`] = `
     <div
       class="t-menu__operations"
     >
-      <svg
-        class="t-menu__operations-icon t-icon t-icon-view-list"
+      <button
+        class="t-demo-collapse-btn t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+        type="button"
       >
-        <use
-          href="#t-icon-view-list"
-        />
-      </svg>
+        <span
+          class="t-button__text"
+        >
+          <svg
+            class="t-icon t-icon-view-list"
+          >
+            <use
+              href="#t-icon-view-list"
+            />
+          </svg>
+        </span>
+      </button>
     </div>
   </div>
 </div>
@@ -66141,13 +66254,22 @@ exports[`csr snapshot test > csr test ./src/menu/_example/side-menu-width.vue 1`
       <div
         class="t-menu__operations"
       >
-        <svg
-          class="t-menu__operations-icon t-icon t-icon-view-list"
+        <button
+          class="t-demo-collapse-btn t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          type="button"
         >
-          <use
-            href="#t-icon-view-list"
-          />
-        </svg>
+          <span
+            class="t-button__text"
+          >
+            <svg
+              class="t-icon t-icon-view-list"
+            >
+              <use
+                href="#t-icon-view-list"
+              />
+            </svg>
+          </span>
+        </button>
       </div>
     </div>
   </div>
