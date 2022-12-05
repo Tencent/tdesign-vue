@@ -20,10 +20,12 @@ export default Vue.extend<
       data() {
         return {
           content: null as Vue,
+          timer: null,
         };
       },
       methods: {
         mountContent() {
+          clearTimeout(this.timer);
           if (this.content) return;
           // eslint-disable-next-line @typescript-eslint/no-this-alias
           const _this = this;
@@ -46,7 +48,10 @@ export default Vue.extend<
           this.content.$mount(elm);
         },
         unmountContent() {
-          this.content?.$destroy?.();
+          clearTimeout(this.timer);
+          this.timer = setTimeout(() => {
+            this.content?.$destroy?.();
+          }, 200);
         },
       },
       render() {
