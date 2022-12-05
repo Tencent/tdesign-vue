@@ -39,7 +39,9 @@
         资源区
       </t-menu-item>
       <template #operations>
-        <icon class="t-menu__operations-icon" name="view-list" @click.native="changeCollapsed" />
+        <t-button class="t-demo-collapse-btn" variant="text" shape="square" @click.native="changeCollapsed">
+          <icon name="view-list" />
+        </t-button>
       </template>
     </t-menu>
   </div>
