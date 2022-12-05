@@ -8,10 +8,18 @@
       <t-menu-item value="item2">菜单2</t-menu-item>
       <t-menu-item value="item4" :disabled="true">禁用菜单</t-menu-item>
       <template #operations>
-        <a href="javascript:;"><icon class="t-menu__operations-icon" name="search" /></a>
-        <a href="javascript:;"><icon class="t-menu__operations-icon" name="mail" /></a>
-        <a href="javascript:;"><icon class="t-menu__operations-icon" name="user" /></a>
-        <a href="javascript:;"><icon class="t-menu__operations-icon" name="ellipsis" /></a>
+        <t-button variant="text" shape="square">
+          <search-icon slot="icon" shape="square" />
+        </t-button>
+        <t-button variant="text" shape="square">
+          <mail-icon slot="icon" />
+        </t-button>
+        <t-button variant="text" shape="square">
+          <user-icon slot="icon" />
+        </t-button>
+        <t-button variant="text" shape="square">
+          <ellipsis-icon slot="icon" />
+        </t-button>
       </template>
     </t-head-menu>
 
@@ -23,21 +31,36 @@
       <t-menu-item value="item2">菜单2</t-menu-item>
       <t-menu-item value="item4" :disabled="true">禁用菜单</t-menu-item>
       <template #operations>
-        <a href="javascript:;"><icon class="t-menu__operations-icon" name="search" /></a>
-        <a href="javascript:;"><icon class="t-menu__operations-icon" name="mail" /></a>
-        <a href="javascript:;"><icon class="t-menu__operations-icon" name="user" /></a>
-        <a href="javascript:;"><icon class="t-menu__operations-icon" name="ellipsis" /></a>
+        <div class="t-demo-menu--dark">
+          <t-button variant="text" shape="square">
+            <search-icon slot="icon" />
+          </t-button>
+          <t-button variant="text" shape="square">
+            <mail-icon slot="icon" />
+          </t-button>
+          <t-button variant="text" shape="square">
+            <user-icon slot="icon" />
+          </t-button>
+          <t-button variant="text" shape="square">
+            <ellipsis-icon slot="icon" />
+          </t-button>
+        </div>
       </template>
     </t-head-menu>
   </div>
 </template>
 
 <script>
-import { Icon } from 'tdesign-icons-vue';
+import {
+  SearchIcon, MailIcon, UserIcon, EllipsisIcon,
+} from 'tdesign-icons-vue';
 
 export default {
   components: {
-    Icon,
+    SearchIcon,
+    MailIcon,
+    UserIcon,
+    EllipsisIcon,
   },
   data() {
     return {
@@ -52,3 +75,22 @@ export default {
   },
 };
 </script>
+
+<style lang="less" scoped>
+.t-menu__operations {
+  .t-button {
+    margin-left: 8px;
+  }
+}
+.t-demo-menu--dark {
+  .t-button {
+    color: #fff;
+
+    &:hover {
+      background-color: #4b4b4b;
+      border-color: transparent;
+      --ripple-color: #383838;
+    }
+  }
+}
+</style>
