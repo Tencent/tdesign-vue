@@ -25,6 +25,7 @@ export default Vue.extend<
       },
       methods: {
         mountContent() {
+          clearTimeout(this.timer);
           if (this.content) return;
           // eslint-disable-next-line @typescript-eslint/no-this-alias
           const _this = this;
