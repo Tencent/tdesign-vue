@@ -285,6 +285,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     afterLeave() {
       if (this.isModeLess && this.draggable) {
         const target = this.$refs.dialog as HTMLElement;
+        if (!target) return;
         // 关闭弹窗 清空拖拽设置的相关css
         target.style.position = 'relative';
         target.style.left = 'unset';

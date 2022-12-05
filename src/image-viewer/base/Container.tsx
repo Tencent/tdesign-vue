@@ -20,6 +20,7 @@ export default Vue.extend<
       data() {
         return {
           content: null as Vue,
+          timer: null,
         };
       },
       methods: {
@@ -46,7 +47,10 @@ export default Vue.extend<
           this.content.$mount(elm);
         },
         unmountContent() {
-          this.content?.$destroy?.();
+          clearTimeout(this.timer);
+          this.timer = setTimeout(() => {
+            this.content?.$destroy?.();
+          }, 200);
         },
       },
       render() {
