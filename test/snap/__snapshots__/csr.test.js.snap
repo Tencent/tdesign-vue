@@ -33496,15 +33496,14 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             fill="none"
             height="1em"
-            style="font-size: 18px;"
             viewBox="0 0 16 16"
             width="1em"
           >
             <path
-              d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+              d="M6 5v6l4.5-3L6 5z"
               fill="currentColor"
               fill-opacity="0.9"
             />
@@ -33533,15 +33532,14 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
           trigger="expand"
         >
           <svg
-            class="t-icon t-icon-chevron-right"
+            class="t-icon t-icon-caret-right-small"
             fill="none"
             height="1em"
-            style="font-size: 18px;"
             viewBox="0 0 16 16"
             width="1em"
           >
             <path
-              d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+              d="M6 5v6l4.5-3L6 5z"
               fill="currentColor"
               fill-opacity="0.9"
             />
@@ -63072,10 +63070,93 @@ exports[`csr snapshot test > csr test ./src/menu/_example/custom-header.vue 1`] 
       class="t-menu__operations"
     >
       <div
-        class="demo-box"
+        class="t-demo-menu--dark"
         data-v-92091f28=""
       >
-        自定义内容区域
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          data-v-92091f28=""
+          type="button"
+        >
+          <svg
+            class="t-icon t-icon-search"
+            data-v-92091f28=""
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M9.51 10.22a4.76 4.76 0 11.7-.7l3.54 3.52-.7.71-3.54-3.53zm.77-3.7a3.76 3.76 0 10-7.53 0 3.76 3.76 0 007.53 0z"
+              data-v-92091f28=""
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </button>
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          data-v-92091f28=""
+          type="button"
+        >
+          <svg
+            class="t-icon t-icon-mail"
+            data-v-92091f28=""
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M1.5 4a1 1 0 011-1h11a1 1 0 011 1v8a1 1 0 01-1 1h-11a1 1 0 01-1-1V4zm11.6 0H2.9L8 7.4 13.1 4zm-10.6.93V12h11V4.93L8 8.6 2.5 4.93z"
+              data-v-92091f28=""
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </button>
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          data-v-92091f28=""
+          type="button"
+        >
+          <svg
+            class="t-icon t-icon-user"
+            data-v-92091f28=""
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M11.5 5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zm-1 0a2.5 2.5 0 10-5 0 2.5 2.5 0 005 0zM13.96 10.85c.34.16.54.5.54.87V14a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-2.28c0-.37.2-.7.54-.87a13.79 13.79 0 0111.92 0zM8 10.5c-1.97 0-3.83.45-5.5 1.24v1.76h11v-1.76A12.78 12.78 0 008 10.5z"
+              data-v-92091f28=""
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </button>
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          data-v-92091f28=""
+          type="button"
+        >
+          <svg
+            class="t-icon t-icon-ellipsis"
+            data-v-92091f28=""
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+              data-v-92091f28=""
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   </div>
@@ -63095,8 +63176,8 @@ exports[`csr snapshot test > csr test ./src/menu/_example/custom-side.vue 1`] = 
     >
       <img
         alt="logo"
-        src="https://www.tencent.com/img/index/menu_logo_hover.png"
-        width="136"
+        height="28"
+        src="https://tdesign.gtimg.com/site/baseLogo-light.png"
       />
     </div>
     <ul
@@ -63146,9 +63227,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/custom-side.vue 1`] = 
 exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
 <div
   class="box"
+  data-v-3a8c765e=""
 >
   <div
     class="t-menu t-head-menu t-menu--light"
+    data-v-3a8c765e=""
   >
     <div
       class="t-head-menu__inner"
@@ -63158,8 +63241,9 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
       >
         <img
           alt="logo"
-          src="https://www.tencent.com/img/index/menu_logo_hover.png"
-          width="136"
+          data-v-3a8c765e=""
+          height="28"
+          src="https://tdesign.gtimg.com/site/baseLogo-light.png"
         />
       </div>
       <ul
@@ -63167,11 +63251,14 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
       >
         <li
           class="t-submenu t-is-opened"
+          data-v-3a8c765e=""
         >
           <div
             class="t-menu__item t-is-opened"
           >
-            <span>
+            <span
+              data-v-3a8c765e=""
+            >
               菜单1
             </span>
           </div>
@@ -63180,6 +63267,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
           >
             <li
               class="t-menu__item t-is-active t-menu__item--plain"
+              data-v-3a8c765e=""
             >
               <span
                 class="t-menu__content"
@@ -63189,6 +63277,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
             </li>
             <li
               class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
             >
               <span
                 class="t-menu__content"
@@ -63198,6 +63287,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
             </li>
             <li
               class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
             >
               <span
                 class="t-menu__content"
@@ -63209,11 +63299,14 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
         </li>
         <li
           class="t-submenu"
+          data-v-3a8c765e=""
         >
           <div
             class="t-menu__item"
           >
-            <span>
+            <span
+              data-v-3a8c765e=""
+            >
               菜单2
             </span>
           </div>
@@ -63222,6 +63315,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
           >
             <li
               class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
             >
               <span
                 class="t-menu__content"
@@ -63231,6 +63325,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
             </li>
             <li
               class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
             >
               <span
                 class="t-menu__content"
@@ -63240,6 +63335,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
             </li>
             <li
               class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
             >
               <span
                 class="t-menu__content"
@@ -63253,55 +63349,97 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
       <div
         class="t-menu__operations"
       >
-        <a
-          href="javascript:;"
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          data-v-3a8c765e=""
+          type="button"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-search"
+            class="t-icon t-icon-search"
+            data-v-3a8c765e=""
+            fill="none"
+            height="1em"
+            shape="square"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            <use
-              href="#t-icon-search"
+            <path
+              d="M9.51 10.22a4.76 4.76 0 11.7-.7l3.54 3.52-.7.71-3.54-3.53zm.77-3.7a3.76 3.76 0 10-7.53 0 3.76 3.76 0 007.53 0z"
+              data-v-3a8c765e=""
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
-        </a>
-        <a
-          href="javascript:;"
+        </button>
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          data-v-3a8c765e=""
+          type="button"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-mail"
+            class="t-icon t-icon-mail"
+            data-v-3a8c765e=""
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            <use
-              href="#t-icon-mail"
+            <path
+              d="M1.5 4a1 1 0 011-1h11a1 1 0 011 1v8a1 1 0 01-1 1h-11a1 1 0 01-1-1V4zm11.6 0H2.9L8 7.4 13.1 4zm-10.6.93V12h11V4.93L8 8.6 2.5 4.93z"
+              data-v-3a8c765e=""
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
-        </a>
-        <a
-          href="javascript:;"
+        </button>
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          data-v-3a8c765e=""
+          type="button"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-user"
+            class="t-icon t-icon-user"
+            data-v-3a8c765e=""
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            <use
-              href="#t-icon-user"
+            <path
+              d="M11.5 5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zm-1 0a2.5 2.5 0 10-5 0 2.5 2.5 0 005 0zM13.96 10.85c.34.16.54.5.54.87V14a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-2.28c0-.37.2-.7.54-.87a13.79 13.79 0 0111.92 0zM8 10.5c-1.97 0-3.83.45-5.5 1.24v1.76h11v-1.76A12.78 12.78 0 008 10.5z"
+              data-v-3a8c765e=""
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
-        </a>
-        <a
-          href="javascript:;"
+        </button>
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          data-v-3a8c765e=""
+          type="button"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-ellipsis"
+            class="t-icon t-icon-ellipsis"
+            data-v-3a8c765e=""
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            <use
-              href="#t-icon-ellipsis"
+            <path
+              d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+              data-v-3a8c765e=""
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
-        </a>
+        </button>
       </div>
     </div>
   </div>
   <div
     class="t-menu t-head-menu t-menu--dark"
+    data-v-3a8c765e=""
     style="margin-top: 24px;"
   >
     <div
@@ -63312,8 +63450,9 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
       >
         <img
           alt="logo"
-          src="https://www.tencent.com/img/index/menu_logo.png"
-          width="136"
+          data-v-3a8c765e=""
+          height="28"
+          src="https://tdesign.gtimg.com/site/baseLogo-dark.png"
         />
       </div>
       <ul
@@ -63321,11 +63460,14 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
       >
         <li
           class="t-submenu t-is-opened"
+          data-v-3a8c765e=""
         >
           <div
             class="t-menu__item t-is-opened"
           >
-            <span>
+            <span
+              data-v-3a8c765e=""
+            >
               菜单1
             </span>
           </div>
@@ -63334,6 +63476,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
           >
             <li
               class="t-menu__item t-is-active t-menu__item--plain"
+              data-v-3a8c765e=""
             >
               <span
                 class="t-menu__content"
@@ -63343,6 +63486,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
             </li>
             <li
               class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
             >
               <span
                 class="t-menu__content"
@@ -63352,6 +63496,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
             </li>
             <li
               class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
             >
               <span
                 class="t-menu__content"
@@ -63363,11 +63508,14 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
         </li>
         <li
           class="t-submenu"
+          data-v-3a8c765e=""
         >
           <div
             class="t-menu__item"
           >
-            <span>
+            <span
+              data-v-3a8c765e=""
+            >
               菜单2
             </span>
           </div>
@@ -63376,6 +63524,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
           >
             <li
               class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
             >
               <span
                 class="t-menu__content"
@@ -63385,6 +63534,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
             </li>
             <li
               class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
             >
               <span
                 class="t-menu__content"
@@ -63394,6 +63544,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
             </li>
             <li
               class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
             >
               <span
                 class="t-menu__content"
@@ -63407,50 +63558,95 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
       <div
         class="t-menu__operations"
       >
-        <a
-          href="javascript:;"
+        <div
+          class="t-demo-menu--dark"
+          data-v-3a8c765e=""
         >
-          <svg
-            class="t-menu__operations-icon t-icon t-icon-search"
+          <button
+            class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+            data-v-3a8c765e=""
+            type="button"
           >
-            <use
-              href="#t-icon-search"
-            />
-          </svg>
-        </a>
-        <a
-          href="javascript:;"
-        >
-          <svg
-            class="t-menu__operations-icon t-icon t-icon-mail"
+            <svg
+              class="t-icon t-icon-search"
+              data-v-3a8c765e=""
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M9.51 10.22a4.76 4.76 0 11.7-.7l3.54 3.52-.7.71-3.54-3.53zm.77-3.7a3.76 3.76 0 10-7.53 0 3.76 3.76 0 007.53 0z"
+                data-v-3a8c765e=""
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </button>
+          <button
+            class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+            data-v-3a8c765e=""
+            type="button"
           >
-            <use
-              href="#t-icon-mail"
-            />
-          </svg>
-        </a>
-        <a
-          href="javascript:;"
-        >
-          <svg
-            class="t-menu__operations-icon t-icon t-icon-user"
+            <svg
+              class="t-icon t-icon-mail"
+              data-v-3a8c765e=""
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M1.5 4a1 1 0 011-1h11a1 1 0 011 1v8a1 1 0 01-1 1h-11a1 1 0 01-1-1V4zm11.6 0H2.9L8 7.4 13.1 4zm-10.6.93V12h11V4.93L8 8.6 2.5 4.93z"
+                data-v-3a8c765e=""
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </button>
+          <button
+            class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+            data-v-3a8c765e=""
+            type="button"
           >
-            <use
-              href="#t-icon-user"
-            />
-          </svg>
-        </a>
-        <a
-          href="javascript:;"
-        >
-          <svg
-            class="t-menu__operations-icon t-icon t-icon-ellipsis"
+            <svg
+              class="t-icon t-icon-user"
+              data-v-3a8c765e=""
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M11.5 5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zm-1 0a2.5 2.5 0 10-5 0 2.5 2.5 0 005 0zM13.96 10.85c.34.16.54.5.54.87V14a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-2.28c0-.37.2-.7.54-.87a13.79 13.79 0 0111.92 0zM8 10.5c-1.97 0-3.83.45-5.5 1.24v1.76h11v-1.76A12.78 12.78 0 008 10.5z"
+                data-v-3a8c765e=""
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </button>
+          <button
+            class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+            data-v-3a8c765e=""
+            type="button"
           >
-            <use
-              href="#t-icon-ellipsis"
-            />
-          </svg>
-        </a>
+            <svg
+              class="t-icon t-icon-ellipsis"
+              data-v-3a8c765e=""
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+                data-v-3a8c765e=""
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -63471,7 +63667,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/group-side.vue 1`] = `
     >
       <img
         alt="logo"
-        src="https://www.tencent.com/img/index/menu_logo_hover.png"
+        src="https://tdesign.gtimg.com/site/baseLogo-light.png"
         width="136"
       />
     </div>
@@ -63484,15 +63680,22 @@ exports[`csr snapshot test > csr test ./src/menu/_example/group-side.vue 1`] = `
         <div
           class="t-menu-group__title"
         >
-          分组类型1
+          主导航
         </div>
         <li
-          class="t-menu__item t-menu__item--plain"
+          class="t-menu__item"
         >
+          <svg
+            class="t-icon t-icon-app"
+          >
+            <use
+              href="#t-icon-app"
+            />
+          </svg>
           <span
             class="t-menu__content"
           >
-             菜单内容 
+             仪表盘 
           </span>
         </li>
       </div>
@@ -63502,24 +63705,131 @@ exports[`csr snapshot test > csr test ./src/menu/_example/group-side.vue 1`] = `
         <div
           class="t-menu-group__title"
         >
-          分组类型2
+          组件
         </div>
         <li
-          class="t-menu__item t-is-active t-menu__item--plain"
+          class="t-submenu"
         >
+          <div
+            class="t-menu__item"
+          >
+            <svg
+              class="t-icon t-icon-server"
+            >
+              <use
+                href="#t-icon-server"
+              />
+            </svg>
+            <span
+              class="t-menu__content"
+            >
+              列表项
+            </span>
+            <svg
+              class="t-fake-arrow"
+              fill="none"
+              height="16"
+              style="transform: rotate(0deg);"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+          <ul
+            class="t-menu__sub"
+            style="--padding-left: 44px;"
+          >
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+            >
+              <span
+                class="t-menu__content"
+              >
+                基础列表项
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+            >
+              <span
+                class="t-menu__content"
+              >
+                卡片列表项
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+            >
+              <span
+                class="t-menu__content"
+              >
+                筛选列表项
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+            >
+              <span
+                class="t-menu__content"
+              >
+                树状筛选列表项
+              </span>
+            </li>
+          </ul>
+        </li>
+        <li
+          class="t-menu__item"
+        >
+          <svg
+            class="t-icon t-icon-edit-1"
+          >
+            <use
+              href="#t-icon-edit-1"
+            />
+          </svg>
           <span
             class="t-menu__content"
           >
-            菜单内容
+             表单项 
           </span>
         </li>
         <li
-          class="t-menu__item t-menu__item--plain"
+          class="t-menu__item"
         >
+          <svg
+            class="t-icon t-icon-root-list"
+          >
+            <use
+              href="#t-icon-root-list"
+            />
+          </svg>
           <span
             class="t-menu__content"
           >
-            菜单内容
+             详情页 
+          </span>
+        </li>
+        <li
+          class="t-menu__item"
+        >
+          <svg
+            class="t-icon t-icon-check"
+          >
+            <use
+              href="#t-icon-check"
+            />
+          </svg>
+          <span
+            class="t-menu__content"
+          >
+             结果页 
           </span>
         </li>
       </div>
@@ -63529,15 +63839,38 @@ exports[`csr snapshot test > csr test ./src/menu/_example/group-side.vue 1`] = `
         <div
           class="t-menu-group__title"
         >
-          分组类型3
+          更多
         </div>
         <li
-          class="t-menu__item t-menu__item--plain"
+          class="t-menu__item"
         >
+          <svg
+            class="t-icon t-icon-user"
+          >
+            <use
+              href="#t-icon-user"
+            />
+          </svg>
           <span
             class="t-menu__content"
           >
-            菜单内容
+             个人页 
+          </span>
+        </li>
+        <li
+          class="t-menu__item"
+        >
+          <svg
+            class="t-icon t-icon-login"
+          >
+            <use
+              href="#t-icon-login"
+            />
+          </svg>
+          <span
+            class="t-menu__content"
+          >
+             登录页 
           </span>
         </li>
       </div>
@@ -63569,8 +63902,8 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-dark.vue 1`]
     >
       <img
         alt="logo"
-        src="https://www.tencent.com/img/index/menu_logo.png"
-        width="136"
+        height="28"
+        src="https://tdesign.gtimg.com/site/baseLogo-dark.png"
       />
     </div>
     <ul
@@ -63616,50 +63949,82 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-dark.vue 1`]
     <div
       class="t-menu__operations"
     >
-      <a
-        href="javascript:;"
+      <div
+        class="t-demo-menu--dark"
       >
-        <svg
-          class="t-menu__operations-icon t-icon t-icon-search"
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          type="button"
         >
-          <use
-            href="#t-icon-search"
-          />
-        </svg>
-      </a>
-      <a
-        href="javascript:;"
-      >
-        <svg
-          class="t-menu__operations-icon t-icon t-icon-mail"
+          <svg
+            class="t-icon t-icon-search"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M9.51 10.22a4.76 4.76 0 11.7-.7l3.54 3.52-.7.71-3.54-3.53zm.77-3.7a3.76 3.76 0 10-7.53 0 3.76 3.76 0 007.53 0z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </button>
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          type="button"
         >
-          <use
-            href="#t-icon-mail"
-          />
-        </svg>
-      </a>
-      <a
-        href="javascript:;"
-      >
-        <svg
-          class="t-menu__operations-icon t-icon t-icon-user"
+          <svg
+            class="t-icon t-icon-mail"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M1.5 4a1 1 0 011-1h11a1 1 0 011 1v8a1 1 0 01-1 1h-11a1 1 0 01-1-1V4zm11.6 0H2.9L8 7.4 13.1 4zm-10.6.93V12h11V4.93L8 8.6 2.5 4.93z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </button>
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          type="button"
         >
-          <use
-            href="#t-icon-user"
-          />
-        </svg>
-      </a>
-      <a
-        href="javascript:;"
-      >
-        <svg
-          class="t-menu__operations-icon t-icon t-icon-ellipsis"
+          <svg
+            class="t-icon t-icon-user"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M11.5 5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zm-1 0a2.5 2.5 0 10-5 0 2.5 2.5 0 005 0zM13.96 10.85c.34.16.54.5.54.87V14a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-2.28c0-.37.2-.7.54-.87a13.79 13.79 0 0111.92 0zM8 10.5c-1.97 0-3.83.45-5.5 1.24v1.76h11v-1.76A12.78 12.78 0 008 10.5z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </button>
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          type="button"
         >
-          <use
-            href="#t-icon-ellipsis"
-          />
-        </svg>
-      </a>
+          <svg
+            class="t-icon t-icon-ellipsis"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -63728,8 +64093,8 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-mode-tile.vu
     >
       <img
         alt="logo"
-        src="https://www.tencent.com/img/index/menu_logo_hover.png"
-        width="136"
+        height="28"
+        src="https://tdesign.gtimg.com/site/baseLogo-light.png"
       />
     </div>
     <ul
@@ -63775,50 +64140,82 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-mode-tile.vu
     <div
       class="t-menu__operations"
     >
-      <a
-        href="javascript:;"
+      <div
+        class="t-demo-menu--dark"
       >
-        <svg
-          class="t-menu__operations-icon t-icon t-icon-search"
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          type="button"
         >
-          <use
-            href="#t-icon-search"
-          />
-        </svg>
-      </a>
-      <a
-        href="javascript:;"
-      >
-        <svg
-          class="t-menu__operations-icon t-icon t-icon-mail"
+          <svg
+            class="t-icon t-icon-search"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M9.51 10.22a4.76 4.76 0 11.7-.7l3.54 3.52-.7.71-3.54-3.53zm.77-3.7a3.76 3.76 0 10-7.53 0 3.76 3.76 0 007.53 0z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </button>
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          type="button"
         >
-          <use
-            href="#t-icon-mail"
-          />
-        </svg>
-      </a>
-      <a
-        href="javascript:;"
-      >
-        <svg
-          class="t-menu__operations-icon t-icon t-icon-user"
+          <svg
+            class="t-icon t-icon-mail"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M1.5 4a1 1 0 011-1h11a1 1 0 011 1v8a1 1 0 01-1 1h-11a1 1 0 01-1-1V4zm11.6 0H2.9L8 7.4 13.1 4zm-10.6.93V12h11V4.93L8 8.6 2.5 4.93z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </button>
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          type="button"
         >
-          <use
-            href="#t-icon-user"
-          />
-        </svg>
-      </a>
-      <a
-        href="javascript:;"
-      >
-        <svg
-          class="t-menu__operations-icon t-icon t-icon-ellipsis"
+          <svg
+            class="t-icon t-icon-user"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M11.5 5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zm-1 0a2.5 2.5 0 10-5 0 2.5 2.5 0 005 0zM13.96 10.85c.34.16.54.5.54.87V14a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-2.28c0-.37.2-.7.54-.87a13.79 13.79 0 0111.92 0zM8 10.5c-1.97 0-3.83.45-5.5 1.24v1.76h11v-1.76A12.78 12.78 0 008 10.5z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </button>
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          type="button"
         >
-          <use
-            href="#t-icon-ellipsis"
-          />
-        </svg>
-      </a>
+          <svg
+            class="t-icon t-icon-ellipsis"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -63827,6 +64224,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-mode-tile.vu
 exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`] = `
 <div
   class="t-menu t-head-menu t-menu--dark"
+  data-v-46745d88=""
 >
   <div
     class="t-head-menu__inner"
@@ -63836,8 +64234,9 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
     >
       <img
         alt="logo"
-        src="https://www.tencent.com/img/index/menu_logo.png"
-        width="136"
+        data-v-46745d88=""
+        height="28"
+        src="https://tdesign.gtimg.com/site/baseLogo-dark.png"
       />
     </div>
     <ul
@@ -63845,6 +64244,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
     >
       <li
         class="t-menu__item t-menu__item--plain"
+        data-v-46745d88=""
       >
         <span
           class="t-menu__content"
@@ -63852,6 +64252,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
            菜单1 
           <li
             class="t-submenu"
+            data-v-46745d88=""
           >
             <div
               class="t-menu__item"
@@ -63861,6 +64262,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
             >
               <li
                 class="t-menu__item t-menu__item--plain"
+                data-v-46745d88=""
               >
                 <span
                   class="t-menu__content"
@@ -63870,6 +64272,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
               </li>
               <li
                 class="t-menu__item t-menu__item--plain"
+                data-v-46745d88=""
               >
                 <span
                   class="t-menu__content"
@@ -63879,6 +64282,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
               </li>
               <li
                 class="t-menu__item t-menu__item--plain"
+                data-v-46745d88=""
               >
                 <span
                   class="t-menu__content"
@@ -63892,6 +64296,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
       </li>
       <li
         class="t-menu__item t-menu__item--plain"
+        data-v-46745d88=""
       >
         <span
           class="t-menu__content"
@@ -63899,6 +64304,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
            菜单2 
           <li
             class="t-submenu"
+            data-v-46745d88=""
           >
             <div
               class="t-menu__item"
@@ -63908,6 +64314,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
             >
               <li
                 class="t-menu__item t-is-active t-menu__item--plain"
+                data-v-46745d88=""
               >
                 <span
                   class="t-menu__content"
@@ -63917,6 +64324,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
               </li>
               <li
                 class="t-menu__item t-menu__item--plain"
+                data-v-46745d88=""
               >
                 <span
                   class="t-menu__content"
@@ -63926,6 +64334,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
               </li>
               <li
                 class="t-menu__item t-menu__item--plain"
+                data-v-46745d88=""
               >
                 <span
                   class="t-menu__content"
@@ -63939,6 +64348,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
       </li>
       <li
         class="t-menu__item t-menu__item--plain"
+        data-v-46745d88=""
       >
         <span
           class="t-menu__content"
@@ -63946,6 +64356,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
            菜单3 
           <li
             class="t-submenu"
+            data-v-46745d88=""
           >
             <div
               class="t-menu__item"
@@ -63955,6 +64366,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
             >
               <li
                 class="t-menu__item t-menu__item--plain"
+                data-v-46745d88=""
               >
                 <span
                   class="t-menu__content"
@@ -63964,6 +64376,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
               </li>
               <li
                 class="t-menu__item t-menu__item--plain"
+                data-v-46745d88=""
               >
                 <span
                   class="t-menu__content"
@@ -63973,6 +64386,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
               </li>
               <li
                 class="t-menu__item t-menu__item--plain"
+                data-v-46745d88=""
               >
                 <span
                   class="t-menu__content"
@@ -63986,6 +64400,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
       </li>
       <li
         class="t-menu__item t-is-disabled t-menu__item--plain"
+        data-v-46745d88=""
       >
         <span
           class="t-menu__content"
@@ -63997,50 +64412,91 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
     <div
       class="t-menu__operations"
     >
-      <a
-        href="javascript:;"
+      <button
+        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+        data-v-46745d88=""
+        type="button"
       >
         <svg
-          class="t-menu__operations-icon t-icon t-icon-search"
+          class="t-icon t-icon-search"
+          data-v-46745d88=""
+          fill="none"
+          height="1em"
+          shape="square"
+          viewBox="0 0 16 16"
+          width="1em"
         >
-          <use
-            href="#t-icon-search"
+          <path
+            d="M9.51 10.22a4.76 4.76 0 11.7-.7l3.54 3.52-.7.71-3.54-3.53zm.77-3.7a3.76 3.76 0 10-7.53 0 3.76 3.76 0 007.53 0z"
+            data-v-46745d88=""
+            fill="currentColor"
+            fill-opacity="0.9"
           />
         </svg>
-      </a>
-      <a
-        href="javascript:;"
+      </button>
+      <button
+        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+        data-v-46745d88=""
+        type="button"
       >
         <svg
-          class="t-menu__operations-icon t-icon t-icon-mail"
+          class="t-icon t-icon-mail"
+          data-v-46745d88=""
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
         >
-          <use
-            href="#t-icon-mail"
+          <path
+            d="M1.5 4a1 1 0 011-1h11a1 1 0 011 1v8a1 1 0 01-1 1h-11a1 1 0 01-1-1V4zm11.6 0H2.9L8 7.4 13.1 4zm-10.6.93V12h11V4.93L8 8.6 2.5 4.93z"
+            data-v-46745d88=""
+            fill="currentColor"
+            fill-opacity="0.9"
           />
         </svg>
-      </a>
-      <a
-        href="javascript:;"
+      </button>
+      <button
+        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+        data-v-46745d88=""
+        type="button"
       >
         <svg
-          class="t-menu__operations-icon t-icon t-icon-user"
+          class="t-icon t-icon-user"
+          data-v-46745d88=""
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
         >
-          <use
-            href="#t-icon-user"
+          <path
+            d="M11.5 5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zm-1 0a2.5 2.5 0 10-5 0 2.5 2.5 0 005 0zM13.96 10.85c.34.16.54.5.54.87V14a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-2.28c0-.37.2-.7.54-.87a13.79 13.79 0 0111.92 0zM8 10.5c-1.97 0-3.83.45-5.5 1.24v1.76h11v-1.76A12.78 12.78 0 008 10.5z"
+            data-v-46745d88=""
+            fill="currentColor"
+            fill-opacity="0.9"
           />
         </svg>
-      </a>
-      <a
-        href="javascript:;"
+      </button>
+      <button
+        class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+        data-v-46745d88=""
+        type="button"
       >
         <svg
-          class="t-menu__operations-icon t-icon t-icon-ellipsis"
+          class="t-icon t-icon-ellipsis"
+          data-v-46745d88=""
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
         >
-          <use
-            href="#t-icon-ellipsis"
+          <path
+            d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+            data-v-46745d88=""
+            fill="currentColor"
+            fill-opacity="0.9"
           />
         </svg>
-      </a>
+      </button>
     </div>
   </div>
 </div>
@@ -64696,9 +65152,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
 <div
   class="box"
+  data-v-4dc7c046=""
 >
   <div
     class="t-menu t-head-menu t-menu--light"
+    data-v-4dc7c046=""
   >
     <div
       class="t-head-menu__inner"
@@ -64708,8 +65166,9 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
       >
         <img
           alt="logo"
-          src="https://www.tencent.com/img/index/menu_logo_hover.png"
-          width="136"
+          data-v-4dc7c046=""
+          height="28"
+          src="https://tdesign.gtimg.com/site/baseLogo-light.png"
         />
       </div>
       <ul
@@ -64717,11 +65176,14 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
       >
         <li
           class="t-submenu"
+          data-v-4dc7c046=""
         >
           <div
             class="t-menu__item"
           >
-            <span>
+            <span
+              data-v-4dc7c046=""
+            >
               菜单1
             </span>
             <svg
@@ -64749,6 +65211,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
             >
               <li
                 class="t-submenu"
+                data-v-4dc7c046=""
               >
                 <div
                   class="t-menu__item"
@@ -64779,6 +65242,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
                   >
                     <li
                       class="t-menu__item t-menu__item--plain"
+                      data-v-4dc7c046=""
                     >
                       <span
                         class="t-menu__content"
@@ -64788,6 +65252,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
                     </li>
                     <li
                       class="t-menu__item t-menu__item--plain"
+                      data-v-4dc7c046=""
                     >
                       <span
                         class="t-menu__content"
@@ -64797,6 +65262,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
                     </li>
                     <li
                       class="t-menu__item t-menu__item--plain"
+                      data-v-4dc7c046=""
                     >
                       <span
                         class="t-menu__content"
@@ -64809,6 +65275,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
               </li>
               <li
                 class="t-menu__item t-menu__item--plain"
+                data-v-4dc7c046=""
               >
                 <span
                   class="t-menu__content"
@@ -64818,6 +65285,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
               </li>
               <li
                 class="t-menu__item t-menu__item--plain"
+                data-v-4dc7c046=""
               >
                 <span
                   class="t-menu__content"
@@ -64827,6 +65295,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
               </li>
               <li
                 class="t-menu__item t-menu__item--plain"
+                data-v-4dc7c046=""
               >
                 <span
                   class="t-menu__content"
@@ -64836,6 +65305,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
               </li>
               <li
                 class="t-submenu"
+                data-v-4dc7c046=""
               >
                 <div
                   class="t-menu__item"
@@ -64866,6 +65336,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
                   >
                     <li
                       class="t-menu__item t-menu__item--plain"
+                      data-v-4dc7c046=""
                     >
                       <span
                         class="t-menu__content"
@@ -64875,6 +65346,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
                     </li>
                     <li
                       class="t-menu__item t-menu__item--plain"
+                      data-v-4dc7c046=""
                     >
                       <span
                         class="t-menu__content"
@@ -64884,6 +65356,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
                     </li>
                     <li
                       class="t-menu__item t-menu__item--plain"
+                      data-v-4dc7c046=""
                     >
                       <span
                         class="t-menu__content"
@@ -64899,6 +65372,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
         </li>
         <li
           class="t-submenu"
+          data-v-4dc7c046=""
         >
           <div
             class="t-menu__item"
@@ -64929,6 +65403,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
             >
               <li
                 class="t-menu__item t-is-active t-menu__item--plain"
+                data-v-4dc7c046=""
               >
                 <span
                   class="t-menu__content"
@@ -64938,6 +65413,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
               </li>
               <li
                 class="t-menu__item t-menu__item--plain"
+                data-v-4dc7c046=""
               >
                 <span
                   class="t-menu__content"
@@ -64947,6 +65423,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
               </li>
               <li
                 class="t-menu__item t-menu__item--plain"
+                data-v-4dc7c046=""
               >
                 <span
                   class="t-menu__content"
@@ -64961,55 +65438,97 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
       <div
         class="t-menu__operations"
       >
-        <a
-          href="javascript:;"
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          data-v-4dc7c046=""
+          type="button"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-search"
+            class="t-icon t-icon-search"
+            data-v-4dc7c046=""
+            fill="none"
+            height="1em"
+            shape="square"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            <use
-              href="#t-icon-search"
+            <path
+              d="M9.51 10.22a4.76 4.76 0 11.7-.7l3.54 3.52-.7.71-3.54-3.53zm.77-3.7a3.76 3.76 0 10-7.53 0 3.76 3.76 0 007.53 0z"
+              data-v-4dc7c046=""
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
-        </a>
-        <a
-          href="javascript:;"
+        </button>
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          data-v-4dc7c046=""
+          type="button"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-mail"
+            class="t-icon t-icon-mail"
+            data-v-4dc7c046=""
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            <use
-              href="#t-icon-mail"
+            <path
+              d="M1.5 4a1 1 0 011-1h11a1 1 0 011 1v8a1 1 0 01-1 1h-11a1 1 0 01-1-1V4zm11.6 0H2.9L8 7.4 13.1 4zm-10.6.93V12h11V4.93L8 8.6 2.5 4.93z"
+              data-v-4dc7c046=""
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
-        </a>
-        <a
-          href="javascript:;"
+        </button>
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          data-v-4dc7c046=""
+          type="button"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-user"
+            class="t-icon t-icon-user"
+            data-v-4dc7c046=""
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            <use
-              href="#t-icon-user"
+            <path
+              d="M11.5 5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zm-1 0a2.5 2.5 0 10-5 0 2.5 2.5 0 005 0zM13.96 10.85c.34.16.54.5.54.87V14a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-2.28c0-.37.2-.7.54-.87a13.79 13.79 0 0111.92 0zM8 10.5c-1.97 0-3.83.45-5.5 1.24v1.76h11v-1.76A12.78 12.78 0 008 10.5z"
+              data-v-4dc7c046=""
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
-        </a>
-        <a
-          href="javascript:;"
+        </button>
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          data-v-4dc7c046=""
+          type="button"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-ellipsis"
+            class="t-icon t-icon-ellipsis"
+            data-v-4dc7c046=""
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            <use
-              href="#t-icon-ellipsis"
+            <path
+              d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+              data-v-4dc7c046=""
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
-        </a>
+        </button>
       </div>
     </div>
   </div>
   <div
     class="t-menu t-head-menu t-menu--dark"
+    data-v-4dc7c046=""
     style="margin-top: 24px;"
   >
     <div
@@ -65020,8 +65539,9 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
       >
         <img
           alt="logo"
-          src="https://www.tencent.com/img/index/menu_logo.png"
-          width="136"
+          data-v-4dc7c046=""
+          height="28"
+          src="https://tdesign.gtimg.com/site/baseLogo-dark.png"
         />
       </div>
       <ul
@@ -65029,11 +65549,14 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
       >
         <li
           class="t-submenu"
+          data-v-4dc7c046=""
         >
           <div
             class="t-menu__item"
           >
-            <span>
+            <span
+              data-v-4dc7c046=""
+            >
               菜单1
             </span>
             <svg
@@ -65061,6 +65584,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
             >
               <li
                 class="t-menu__item t-menu__item--plain"
+                data-v-4dc7c046=""
               >
                 <span
                   class="t-menu__content"
@@ -65070,6 +65594,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
               </li>
               <li
                 class="t-menu__item t-menu__item--plain"
+                data-v-4dc7c046=""
               >
                 <span
                   class="t-menu__content"
@@ -65079,6 +65604,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
               </li>
               <li
                 class="t-menu__item t-menu__item--plain"
+                data-v-4dc7c046=""
               >
                 <span
                   class="t-menu__content"
@@ -65091,11 +65617,14 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
         </li>
         <li
           class="t-submenu"
+          data-v-4dc7c046=""
         >
           <div
             class="t-menu__item"
           >
-            <span>
+            <span
+              data-v-4dc7c046=""
+            >
               菜单2
             </span>
             <svg
@@ -65123,6 +65652,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
             >
               <li
                 class="t-menu__item t-is-active t-menu__item--plain"
+                data-v-4dc7c046=""
               >
                 <span
                   class="t-menu__content"
@@ -65132,6 +65662,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
               </li>
               <li
                 class="t-menu__item t-menu__item--plain"
+                data-v-4dc7c046=""
               >
                 <span
                   class="t-menu__content"
@@ -65141,6 +65672,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
               </li>
               <li
                 class="t-menu__item t-menu__item--plain"
+                data-v-4dc7c046=""
               >
                 <span
                   class="t-menu__content"
@@ -65155,50 +65687,95 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
       <div
         class="t-menu__operations"
       >
-        <a
-          href="javascript:;"
+        <div
+          class="t-demo-menu--dark"
+          data-v-4dc7c046=""
         >
-          <svg
-            class="t-menu__operations-icon t-icon t-icon-search"
+          <button
+            class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+            data-v-4dc7c046=""
+            type="button"
           >
-            <use
-              href="#t-icon-search"
-            />
-          </svg>
-        </a>
-        <a
-          href="javascript:;"
-        >
-          <svg
-            class="t-menu__operations-icon t-icon t-icon-mail"
+            <svg
+              class="t-icon t-icon-search"
+              data-v-4dc7c046=""
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M9.51 10.22a4.76 4.76 0 11.7-.7l3.54 3.52-.7.71-3.54-3.53zm.77-3.7a3.76 3.76 0 10-7.53 0 3.76 3.76 0 007.53 0z"
+                data-v-4dc7c046=""
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </button>
+          <button
+            class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+            data-v-4dc7c046=""
+            type="button"
           >
-            <use
-              href="#t-icon-mail"
-            />
-          </svg>
-        </a>
-        <a
-          href="javascript:;"
-        >
-          <svg
-            class="t-menu__operations-icon t-icon t-icon-user"
+            <svg
+              class="t-icon t-icon-mail"
+              data-v-4dc7c046=""
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M1.5 4a1 1 0 011-1h11a1 1 0 011 1v8a1 1 0 01-1 1h-11a1 1 0 01-1-1V4zm11.6 0H2.9L8 7.4 13.1 4zm-10.6.93V12h11V4.93L8 8.6 2.5 4.93z"
+                data-v-4dc7c046=""
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </button>
+          <button
+            class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+            data-v-4dc7c046=""
+            type="button"
           >
-            <use
-              href="#t-icon-user"
-            />
-          </svg>
-        </a>
-        <a
-          href="javascript:;"
-        >
-          <svg
-            class="t-menu__operations-icon t-icon t-icon-ellipsis"
+            <svg
+              class="t-icon t-icon-user"
+              data-v-4dc7c046=""
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M11.5 5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zm-1 0a2.5 2.5 0 10-5 0 2.5 2.5 0 005 0zM13.96 10.85c.34.16.54.5.54.87V14a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-2.28c0-.37.2-.7.54-.87a13.79 13.79 0 0111.92 0zM8 10.5c-1.97 0-3.83.45-5.5 1.24v1.76h11v-1.76A12.78 12.78 0 008 10.5z"
+                data-v-4dc7c046=""
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </button>
+          <button
+            class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+            data-v-4dc7c046=""
+            type="button"
           >
-            <use
-              href="#t-icon-ellipsis"
-            />
-          </svg>
-        </a>
+            <svg
+              class="t-icon t-icon-ellipsis"
+              data-v-4dc7c046=""
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+                data-v-4dc7c046=""
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -65218,7 +65795,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/popup-side.vue 1`] = `
     >
       <img
         alt="logo"
-        src="https://www.tencent.com/img/index/menu_logo_hover.png"
+        src="https://tdesign.gtimg.com/site/baseLogo-light.png"
         width="136"
       />
     </div>
@@ -65430,8 +66007,8 @@ exports[`csr snapshot test > csr test ./src/menu/_example/side-menu-width.vue 1`
       >
         <img
           alt="logo"
-          src="https://www.tencent.com/img/index/menu_logo_hover.png"
-          width="136"
+          height="28"
+          src="https://tdesign.gtimg.com/site/baseLogo-light.png"
         />
       </div>
       <ul
@@ -65489,8 +66066,8 @@ exports[`csr snapshot test > csr test ./src/menu/_example/side-menu-width.vue 1`
       >
         <img
           alt="logo"
-          src="https://www.tencent.com/img/index/menu_logo_hover.png"
-          width="136"
+          height="28"
+          src="https://tdesign.gtimg.com/site/baseLogo-light.png"
         />
       </div>
       <ul
@@ -65578,9 +66155,12 @@ exports[`csr snapshot test > csr test ./src/menu/_example/side-menu-width.vue 1`
 `;
 
 exports[`csr snapshot test > csr test ./src/menu/_example/single.vue 1`] = `
-<div>
+<div
+  data-v-42966b55=""
+>
   <div
     class="t-menu t-head-menu t-menu--light"
+    data-v-42966b55=""
   >
     <div
       class="t-head-menu__inner"
@@ -65590,8 +66170,9 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single.vue 1`] = `
       >
         <img
           alt="logo"
-          src="https://www.tencent.com/img/index/menu_logo_hover.png"
-          width="136"
+          data-v-42966b55=""
+          height="28"
+          src="https://tdesign.gtimg.com/site/baseLogo-light.png"
         />
       </div>
       <ul
@@ -65599,6 +66180,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single.vue 1`] = `
       >
         <li
           class="t-menu__item t-menu__item--plain"
+          data-v-42966b55=""
         >
           <span
             class="t-menu__content"
@@ -65608,6 +66190,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single.vue 1`] = `
         </li>
         <li
           class="t-menu__item t-is-active t-menu__item--plain"
+          data-v-42966b55=""
         >
           <span
             class="t-menu__content"
@@ -65617,6 +66200,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single.vue 1`] = `
         </li>
         <li
           class="t-menu__item t-is-disabled t-menu__item--plain"
+          data-v-42966b55=""
         >
           <span
             class="t-menu__content"
@@ -65628,56 +66212,100 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single.vue 1`] = `
       <div
         class="t-menu__operations"
       >
-        <a
-          href="javascript:;"
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          data-v-42966b55=""
+          type="button"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-search"
+            class="t-icon t-icon-search"
+            data-v-42966b55=""
+            fill="none"
+            height="1em"
+            shape="square"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            <use
-              href="#t-icon-search"
+            <path
+              d="M9.51 10.22a4.76 4.76 0 11.7-.7l3.54 3.52-.7.71-3.54-3.53zm.77-3.7a3.76 3.76 0 10-7.53 0 3.76 3.76 0 007.53 0z"
+              data-v-42966b55=""
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
-        </a>
-        <a
-          href="javascript:;"
+        </button>
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          data-v-42966b55=""
+          type="button"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-mail"
+            class="t-icon t-icon-mail"
+            data-v-42966b55=""
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            <use
-              href="#t-icon-mail"
+            <path
+              d="M1.5 4a1 1 0 011-1h11a1 1 0 011 1v8a1 1 0 01-1 1h-11a1 1 0 01-1-1V4zm11.6 0H2.9L8 7.4 13.1 4zm-10.6.93V12h11V4.93L8 8.6 2.5 4.93z"
+              data-v-42966b55=""
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
-        </a>
-        <a
-          href="javascript:;"
+        </button>
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          data-v-42966b55=""
+          type="button"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-user"
+            class="t-icon t-icon-user"
+            data-v-42966b55=""
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            <use
-              href="#t-icon-user"
+            <path
+              d="M11.5 5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zm-1 0a2.5 2.5 0 10-5 0 2.5 2.5 0 005 0zM13.96 10.85c.34.16.54.5.54.87V14a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-2.28c0-.37.2-.7.54-.87a13.79 13.79 0 0111.92 0zM8 10.5c-1.97 0-3.83.45-5.5 1.24v1.76h11v-1.76A12.78 12.78 0 008 10.5z"
+              data-v-42966b55=""
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
-        </a>
-        <a
-          href="javascript:;"
+        </button>
+        <button
+          class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+          data-v-42966b55=""
+          type="button"
         >
           <svg
-            class="t-menu__operations-icon t-icon t-icon-ellipsis"
+            class="t-icon t-icon-ellipsis"
+            data-v-42966b55=""
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
           >
-            <use
-              href="#t-icon-ellipsis"
+            <path
+              d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+              data-v-42966b55=""
+              fill="currentColor"
+              fill-opacity="0.9"
             />
           </svg>
-        </a>
+        </button>
       </div>
     </div>
   </div>
-  <br />
+  <br
+    data-v-42966b55=""
+  />
   <div
     class="t-menu t-head-menu t-menu--dark"
+    data-v-42966b55=""
     height="120px"
   >
     <div
@@ -65688,8 +66316,9 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single.vue 1`] = `
       >
         <img
           alt="logo"
-          src="https://www.tencent.com/img/index/menu_logo.png"
-          width="136"
+          data-v-42966b55=""
+          height="28"
+          src="https://tdesign.gtimg.com/site/baseLogo-dark.png"
         />
       </div>
       <ul
@@ -65697,6 +66326,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single.vue 1`] = `
       >
         <li
           class="t-menu__item t-is-active t-menu__item--plain"
+          data-v-42966b55=""
         >
           <span
             class="t-menu__content"
@@ -65706,6 +66336,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single.vue 1`] = `
         </li>
         <li
           class="t-menu__item t-menu__item--plain"
+          data-v-42966b55=""
         >
           <span
             class="t-menu__content"
@@ -65715,6 +66346,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single.vue 1`] = `
         </li>
         <li
           class="t-menu__item t-is-disabled t-menu__item--plain"
+          data-v-42966b55=""
         >
           <span
             class="t-menu__content"
@@ -65726,50 +66358,95 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single.vue 1`] = `
       <div
         class="t-menu__operations"
       >
-        <a
-          href="javascript:;"
+        <div
+          class="t-demo-menu--dark"
+          data-v-42966b55=""
         >
-          <svg
-            class="t-menu__operations-icon t-icon t-icon-search"
+          <button
+            class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+            data-v-42966b55=""
+            type="button"
           >
-            <use
-              href="#t-icon-search"
-            />
-          </svg>
-        </a>
-        <a
-          href="javascript:;"
-        >
-          <svg
-            class="t-menu__operations-icon t-icon t-icon-mail"
+            <svg
+              class="t-icon t-icon-search"
+              data-v-42966b55=""
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M9.51 10.22a4.76 4.76 0 11.7-.7l3.54 3.52-.7.71-3.54-3.53zm.77-3.7a3.76 3.76 0 10-7.53 0 3.76 3.76 0 007.53 0z"
+                data-v-42966b55=""
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </button>
+          <button
+            class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+            data-v-42966b55=""
+            type="button"
           >
-            <use
-              href="#t-icon-mail"
-            />
-          </svg>
-        </a>
-        <a
-          href="javascript:;"
-        >
-          <svg
-            class="t-menu__operations-icon t-icon t-icon-user"
+            <svg
+              class="t-icon t-icon-mail"
+              data-v-42966b55=""
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M1.5 4a1 1 0 011-1h11a1 1 0 011 1v8a1 1 0 01-1 1h-11a1 1 0 01-1-1V4zm11.6 0H2.9L8 7.4 13.1 4zm-10.6.93V12h11V4.93L8 8.6 2.5 4.93z"
+                data-v-42966b55=""
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </button>
+          <button
+            class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+            data-v-42966b55=""
+            type="button"
           >
-            <use
-              href="#t-icon-user"
-            />
-          </svg>
-        </a>
-        <a
-          href="javascript:;"
-        >
-          <svg
-            class="t-menu__operations-icon t-icon t-icon-ellipsis"
+            <svg
+              class="t-icon t-icon-user"
+              data-v-42966b55=""
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M11.5 5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zm-1 0a2.5 2.5 0 10-5 0 2.5 2.5 0 005 0zM13.96 10.85c.34.16.54.5.54.87V14a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-2.28c0-.37.2-.7.54-.87a13.79 13.79 0 0111.92 0zM8 10.5c-1.97 0-3.83.45-5.5 1.24v1.76h11v-1.76A12.78 12.78 0 008 10.5z"
+                data-v-42966b55=""
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </button>
+          <button
+            class="t-button t-size-m t-button--variant-text t-button--theme-default t-button--shape-square"
+            data-v-42966b55=""
+            type="button"
           >
-            <use
-              href="#t-icon-ellipsis"
-            />
-          </svg>
-        </a>
+            <svg
+              class="t-icon t-icon-ellipsis"
+              data-v-42966b55=""
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M3 9a1 1 0 110-2 1 1 0 010 2zM7 8a1 1 0 102 0 1 1 0 00-2 0zM12 8a1 1 0 102 0 1 1 0 00-2 0z"
+                data-v-42966b55=""
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -65793,8 +66470,8 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single-side.vue 1`] = 
       >
         <img
           alt="logo"
-          src="https://www.tencent.com/img/index/menu_logo_hover.png"
-          width="136"
+          height="28"
+          src="https://tdesign.gtimg.com/site/baseLogo-light.png"
         />
       </div>
       <ul
@@ -65897,8 +66574,8 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single-side.vue 1`] = 
       >
         <img
           alt="logo"
-          src="https://www.tencent.com/img/index/menu_logo_hover.png"
-          width="136"
+          height="28"
+          src="https://tdesign.gtimg.com/site/baseLogo-light.png"
         />
       </div>
       <ul
@@ -66064,8 +66741,8 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single-side.vue 1`] = 
       >
         <img
           alt="logo"
-          src="https://www.tencent.com/img/index/menu_logo.png"
-          width="136"
+          height="28"
+          src="https://tdesign.gtimg.com/site/baseLogo-dark.png"
         />
       </div>
       <ul
@@ -134152,6 +134829,257 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
         </div>
       </transition-group-stub>
     </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/tree/_example/transition.vue 1`] = `
+<div
+  class="tdesign-tree-demo tdesign-demo-transition"
+>
+  <form
+    class="t-form"
+    style="max-width: 500px;"
+  >
+    <div
+      class="t-form__item t-form-item__"
+    >
+      <div
+        class="t-form__label t-form__label--right"
+      >
+        <label
+          for=""
+        >
+          展开动画
+        </label>
+      </div>
+      <div
+        class="t-form__controls"
+      >
+        <div
+          class="t-form__controls-content"
+        >
+          <div
+            class="t-switch t-size-m t-is-checked"
+          >
+            <span
+              class="t-switch__handle"
+            />
+            <div
+              class="t-switch__content t-size-m"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="t-form__item t-form-item__"
+    >
+      <div
+        class="t-form__label t-form__label--right"
+      >
+        <label
+          for=""
+        >
+          显示连线
+        </label>
+      </div>
+      <div
+        class="t-form__controls"
+      >
+        <div
+          class="t-form__controls-content"
+        >
+          <div
+            class="t-switch t-size-m t-is-checked"
+          >
+            <span
+              class="t-switch__handle"
+            />
+            <div
+              class="t-switch__content t-size-m"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="t-form__item t-form-item__"
+    >
+      <div
+        class="t-form__label t-form__label--right"
+      >
+        <label
+          for=""
+        >
+          显示图标
+        </label>
+      </div>
+      <div
+        class="t-form__controls"
+      >
+        <div
+          class="t-form__controls-content"
+        >
+          <div
+            class="t-switch t-size-m t-is-checked"
+          >
+            <span
+              class="t-switch__handle"
+            />
+            <div
+              class="t-switch__content t-size-m"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div
+    class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
+  >
+    <transition-group-stub
+      class="t-tree__list"
+      enteractiveclass="t-tree__item--enter-active"
+      leaveactiveclass="t-tree__item--leave-active"
+      tag="div"
+    >
+      <div
+        class="t-tree__item t-tree__item--visible"
+        data-level="0"
+        data-value="t1"
+        draggable="false"
+        style="--level: 0;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon t-tree__icon--default"
+          ignore="active"
+          trigger="expand"
+        >
+          <svg
+            class="t-icon t-icon-caret-right-small"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </span>
+        <label
+          class="t-checkbox t-tree__label"
+        >
+          <input
+            class="t-checkbox__former"
+            name="t1"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            t1
+          </span>
+        </label>
+      </div>
+      <div
+        class="t-tree__item t-tree__item--visible"
+        data-level="0"
+        data-value="t2"
+        draggable="false"
+        style="--level: 0;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon t-tree__icon--default"
+          ignore="active"
+          trigger="expand"
+        >
+          <svg
+            class="t-icon t-icon-caret-right-small"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </span>
+        <label
+          class="t-checkbox t-tree__label"
+        >
+          <input
+            class="t-checkbox__former"
+            name="t2"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            t2
+          </span>
+        </label>
+      </div>
+      <div
+        class="t-tree__item t-tree__item--visible"
+        data-level="0"
+        data-value="t3"
+        draggable="false"
+        style="--level: 0;"
+      >
+        <span
+          class="t-tree__icon t-folder-icon t-tree__icon--default"
+          ignore="active"
+          trigger="expand"
+        >
+          <svg
+            class="t-icon t-icon-caret-right-small"
+            fill="none"
+            height="1em"
+            viewBox="0 0 16 16"
+            width="1em"
+          >
+            <path
+              d="M6 5v6l4.5-3L6 5z"
+              fill="currentColor"
+              fill-opacity="0.9"
+            />
+          </svg>
+        </span>
+        <label
+          class="t-checkbox t-tree__label"
+        >
+          <input
+            class="t-checkbox__former"
+            name="t3"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            t3
+          </span>
+        </label>
+      </div>
+    </transition-group-stub>
   </div>
 </div>
 `;
