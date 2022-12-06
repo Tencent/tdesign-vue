@@ -87,6 +87,20 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
     this.adjustTextareaHeight();
   },
 
+  watch: {
+    autofocus: {
+      handler(val) {
+        if (val === true) {
+          this.$nextTick(() => {
+            const textArea = this.$refs.refTextareaElem as HTMLInputElement;
+            textArea?.focus();
+          });
+        }
+      },
+      immediate: true,
+    },
+  },
+
   methods: {
     adjustTextareaHeight() {
       if (this.autosize === true) {
@@ -109,12 +123,12 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
     },
 
     focus(): void {
-      const input = this.$refs.refTextareaElem as HTMLInputElement;
-      input?.focus();
+      const textArea = this.$refs.refTextareaElem as HTMLInputElement;
+      textArea?.focus();
     },
     blur(): void {
-      const input = this.$refs.refTextareaElem as HTMLInputElement;
-      input?.blur();
+      const textArea = this.$refs.refTextareaElem as HTMLInputElement;
+      textArea?.blur();
     },
     handleInput(e: any): void {
       if (e.isComposing || e.inputType === 'insertCompositionText') return;
