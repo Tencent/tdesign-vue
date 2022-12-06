@@ -77920,7 +77920,7 @@ exports[`csr snapshot test > csr test ./src/range-input/_example/status.vue 1`] 
     class="t-space-item"
   >
     <div
-      class="t-range-input"
+      class="t-range-input t-is-success"
     >
       <div
         class="t-range-input__inner"
@@ -77967,7 +77967,7 @@ exports[`csr snapshot test > csr test ./src/range-input/_example/status.vue 1`] 
     class="t-space-item"
   >
     <div
-      class="t-range-input"
+      class="t-range-input t-is-warning"
     >
       <div
         class="t-range-input__inner"
@@ -78014,7 +78014,7 @@ exports[`csr snapshot test > csr test ./src/range-input/_example/status.vue 1`] 
     class="t-space-item"
   >
     <div
-      class="t-range-input"
+      class="t-range-input t-is-error"
     >
       <div
         class="t-range-input__inner"
