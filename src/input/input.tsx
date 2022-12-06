@@ -105,7 +105,6 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
           [`${this.classPrefix}-is-disabled`]: this.tDisabled,
           [`${this.classPrefix}-is-readonly`]: this.readonly,
           [`${this.componentName}--focused`]: this.focused,
-          [`${this.componentName}--auto-width`]: this.autoWidth && !this.keepWrapperWidth,
         },
       ];
     },
@@ -115,6 +114,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         `${wrapClass}`,
         {
           [`${wrapClass}--focused`]: this.focused,
+          [`${this.componentName}--auto-width`]: this.autoWidth && !this.keepWrapperWidth,
         },
       ];
     },
