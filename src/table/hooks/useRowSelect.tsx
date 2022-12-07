@@ -124,7 +124,7 @@ export default function useRowSelect(
         ...checkProps,
       },
       on: {
-        click: (e: MouseEvent) => {
+        click: ({ e }: { e: MouseEvent }) => {
           // 选中行功能中，点击 checkbox/radio 需阻止事件冒泡，避免触发不必要的 onRowClick
           e?.stopPropagation();
         },

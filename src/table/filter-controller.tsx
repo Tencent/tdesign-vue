@@ -211,7 +211,7 @@ export default defineComponent({
             {getBottomButtons(h, column)}
           </div>
         )}
-        {...popupProps}
+        props={popupProps}
       >
         <div ref="triggerElementRef">{this.renderTNode('filterIcon', defaultFilterIcon)}</div>
       </Popup>

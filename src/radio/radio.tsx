@@ -67,7 +67,7 @@ export default mixins(Vue as VueConstructor<RadioInstance>, classPrefixMixins).e
     ];
 
     return (
-      <label class={inputClass}>
+      <label class={inputClass} onClick={this.handleRadioClick}>
         <input
           type="radio"
           class={`${prefixCls}__former`}
@@ -92,8 +92,12 @@ export default mixins(Vue as VueConstructor<RadioInstance>, classPrefixMixins).e
         emitEvent<Parameters<TdRadioProps['onChange']>>(this, 'change', target.checked, { e });
       }
     },
+
+    handleRadioClick(e: MouseEvent) {
+      this.$emit('click', { e });
+    },
+
     handleClick(e: Event) {
-      this.$emit('click');
       if (!this.checked || !this.allowUncheck) return;
       if (this.radioGroup) {
         // this.radioGroup.$emit('checked-change', undefined, { e });
