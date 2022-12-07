@@ -1,59 +1,79 @@
 <template>
   <t-table :data="data" :columns="columns" rowKey="property">
     <!-- 自定义表头，title值为插槽名称  -->
-    <template #title-slot-name> <app-icon /> 类型 </template>
+    <template #title-slot-name> <user-circle-icon /> 类型 </template>
   </t-table>
 </template>
 <script lang="jsx">
-import { AppIcon } from 'tdesign-icons-vue';
+import {
+  UserCircleIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon, CloseCircleFilledIcon,
+} from 'tdesign-icons-vue';
+
+const data = [];
+
+for (let i = 0; i < 5; i++) {
+  data.push({
+    index: i + 1,
+    applicant: ['贾明', '张三', '王芳'][i % 3],
+    status: i % 3,
+    channel: ['电子签署', '纸质签署', '纸质签署'][i % 3],
+    detail: {
+      email: ['w.cezkdudy@lhll.au', 'r.nmgw@peurezgn.sl', 'p.cumx@rampblpa.ru'][i % 3],
+    },
+    matters: ['宣传物料制作费用', 'algolia 服务报销', '相关周边制作费', '激励奖品快递费'][i % 4],
+    time: [2, 3, 1, 4][i % 4],
+    createTime: ['2022-01-01', '2022-02-01', '2022-03-01', '2022-04-01', '2022-05-01'][i % 4],
+  });
+}
+
+const columns = [
+  {
+    colKey: 'applicant',
+    title: 'title-slot-name',
+    width: 120,
+  },
+  {
+    colKey: 'matters',
+    title: (h, { colIndex }) => <b style="font-wight: bold">{['', '申请事项'][colIndex]}</b>,
+  },
+  {
+    colKey: 'status',
+    title: '审批状态',
+    width: 120,
+    cell: (h, { row }) => {
+      const statusNameListMap = {
+        0: { label: '审批通过', theme: 'success', icon: <CheckCircleFilledIcon /> },
+        1: { label: '审批失败', theme: 'danger', icon: <CloseCircleFilledIcon /> },
+        2: { label: '审批过期', theme: 'warning', icon: <ErrorCircleFilledIcon /> },
+      };
+      return (
+        <t-tag shape="round" theme={statusNameListMap[row.status].theme} variant="light-outline">
+          {statusNameListMap[row.status].icon}
+          {statusNameListMap[row.status].label}
+        </t-tag>
+      );
+    },
+  },
+  { title: '邮箱地址', colKey: 'detail.email', width: 200 },
+  {
+    colKey: 'createTime',
+    // render 可以渲染表头，也可以渲染单元格。但 title 只能渲染表头，cell 只能渲染单元格
+    render(h, context) {
+      const { type, row, col } = context;
+      return {
+        title: '申请时间',
+        cell: row && row[col.colKey],
+      }[type];
+    },
+  },
+];
 
 export default {
-  components: {
-    AppIcon,
-  },
+  components: { UserCircleIcon },
   data() {
     return {
-      data: [
-        {
-          platform: '标题使用 title 方法自定义',
-          property: 'data',
-          type: '标题是用插槽自定义',
-          default: '[]',
-          needed: 'Y',
-          description: '数据源',
-        },
-        {
-          platform: '标题使用 title 方法自定义',
-          property: 'rowkey',
-          type: '插槽名称为 title 的值',
-          default: '-1',
-          needed: 'N',
-          description: '指定rowkey',
-        },
-      ],
-      columns: [
-        {
-          colKey: 'type',
-          // title-slot-name 表示当前列插槽名称
-          title: 'title-slot-name',
-        },
-        {
-          colKey: 'platform',
-          // 使用 title 自定义标题
-          title: (h, { colIndex }) => <b style="color: #0052d9">{['', '标题'][colIndex]}</b>,
-        },
-        {
-          colKey: 'property',
-          // render 可以渲染表头，也可以渲染单元格。但 title 只能渲染表头，cell 只能渲染单元格
-          render(h, context) {
-            const { type, row, col } = context;
-            return {
-              title: '属性名',
-              cell: row && row[col.colKey],
-            }[type];
-          },
-        },
-      ],
+      data,
+      columns,
     };
   },
 };
