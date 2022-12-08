@@ -67,8 +67,8 @@ const TOTAL = 5;
 function getObject(i, currentPage) {
   return {
     id: i,
-    key: `我是 ${i}_${currentPage} 号`,
-    platform: i % 2 === 0 ? '共有' : '私有',
+    key: `申请人 ${i}_${currentPage} 号`,
+    platform: ['电子签署', '纸质签署', '纸质签署'][i % 3],
     type: ['String', 'Number', 'Array', 'Object'][i % 4],
     default: ['-', '0', '[]', '{}'][i % 4],
     detail: {
@@ -92,14 +92,14 @@ function getData(currentPage = 1) {
         const secondObj = {
           ...obj,
           id: secondIndex,
-          key: `我是 ${secondIndex}_${currentPage} 号`,
+          key: `申请人 ${secondIndex}_${currentPage} 号`,
         };
         secondObj.list = new Array(3).fill(null).map((m, n) => {
           const thirdIndex = secondIndex * 1000 + 100 * m + (n + 1) * 10;
           return {
             ...obj,
             id: thirdIndex,
-            key: `我是 ${thirdIndex}_${currentPage} 号`,
+            key: `申请人 ${thirdIndex}_${currentPage} 号`,
             list: true,
           };
         });
@@ -112,14 +112,14 @@ function getData(currentPage = 1) {
     ...getObject(66666, currentPage),
     /** 如果子节点为懒加载，则初始值设置为 true */
     list: true,
-    key: '我是懒加载节点 66666，点我体验',
+    key: '申请人懒加载节点 66666，点我体验',
   });
   // 懒加载2
   data.push({
     ...getObject(88888, currentPage),
     /** 如果子节点为懒加载，则初始值设置为 true */
     list: true,
-    key: '我是懒加载节点 88888，点我体验 ',
+    key: '申请人懒加载节点 88888，点我体验 ',
   });
   return data;
 }
@@ -158,19 +158,19 @@ export default {
           colKey: 'id',
           title: '编号',
           ellipsis: true,
-          width: 100,
+          width: 80,
         },
         {
           width: 180,
           colKey: 'key',
-          title: '名称',
+          title: '申请人',
           ellipsis: true,
         },
         {
           colKey: 'platform',
-          title: '平台',
-          width: 80,
-          cell: (h, { row }) => row.platform === 'New' ? (
+          title: '签署方式',
+          width: 100,
+          cell: (h, { row }) => row.platform === '电子签署' ? (
               <t-tag size="small" theme="primary">
                 {row.platform}
               </t-tag>
@@ -187,23 +187,25 @@ export default {
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
           cell: (h, { row }) => (
             <div class="tdesign-table-demo__table-operations">
-              <t-button variant="text" onClick={() => this.appendTo(row)}>
+              <t-link variant="text" hover="color" onClick={() => this.appendTo(row)}>
                 插入
-              </t-button>
-              <t-button variant="text" onClick={() => this.insertBefore(row)}>
+              </t-link>
+              <t-link variant="text" hover="color" onClick={() => this.insertBefore(row)}>
                 前插
-              </t-button>
-              <t-button variant="text" onClick={() => this.insertAfter(row)}>
+              </t-link>
+              <t-link variant="text" hover="color" onClick={() => this.insertAfter(row)}>
                 后插
-              </t-button>
-              <t-button variant="text" onClick={() => this.onEditClick(row)}>
+              </t-link>
+              <t-link variant="text" hover="color" onClick={() => this.onEditClick(row)}>
                 更新
-              </t-button>
-              <t-button variant="text" onClick={() => this.onLookUp(row)}>
+              </t-link>
+              <t-link variant="text" hover="color" onClick={() => this.onLookUp(row)}>
                 查看
-              </t-button>
+              </t-link>
               <t-popconfirm content="确认删除吗" onConfirm={() => this.onDeleteConfirm(row)}>
-                <t-button variant="text">删除</t-button>
+                <t-link variant="text" hover="color">
+                  删除
+                </t-link>
               </t-popconfirm>
             </div>
           ),
@@ -266,11 +268,11 @@ export default {
       const randomKey1 = Math.round(Math.random() * Math.random() * 1000) + 10000;
       this.$refs.table.appendTo(row.key, {
         id: randomKey1,
-        key: `我是 ${randomKey1} 号`,
-        platform: '私有',
+        key: `申请人 ${randomKey1} 号`,
+        platform: '电子签署',
         type: 'Number',
       });
-      this.$message.success(`已插入子节点我是 ${randomKey1} 号，请展开查看`);
+      this.$message.success(`已插入子节点申请人 ${randomKey1} 号，请展开查看`);
 
       // 一次性添加多个子节点。示例代码有效，勿删！!!
       // this.appendMultipleDataTo(row);
@@ -282,19 +284,19 @@ export default {
       const newData = [
         {
           id: randomKey1,
-          key: `我是 ${randomKey1} 号`,
-          platform: '私有',
+          key: `申请人 ${randomKey1} 号`,
+          platform: '电子签署',
           type: 'Number',
         },
         {
           id: randomKey2,
-          key: `我是 ${randomKey2} 号`,
-          platform: '私有',
+          key: `申请人 ${randomKey2} 号`,
+          platform: '纸质签署',
           type: 'Number',
         },
       ];
       this.$refs.table.appendTo(row?.key, newData);
-      MessagePlugin.success(`已插入子节点我是 ${randomKey1} 和 ${randomKey2} 号，请展开查看`);
+      MessagePlugin.success(`已插入子节点申请人 ${randomKey1} 和 ${randomKey2} 号，请展开查看`);
     },
 
     // 当前节点之前，新增兄弟节前
@@ -302,11 +304,11 @@ export default {
       const randomKey = Math.round(Math.random() * Math.random() * 1000) + 10000;
       this.$refs.table.insertBefore(row.key, {
         id: randomKey,
-        key: `我是 ${randomKey} 号`,
-        platform: '私有',
+        key: `申请人 ${randomKey} 号`,
+        platform: '纸质签署',
         type: 'Number',
       });
-      this.$message.success(`已插入子节点我是 ${randomKey} 号，请展开查看`);
+      this.$message.success(`已插入子节点申请人 ${randomKey} 号，请展开查看`);
     },
 
     // 当前节点之后，新增兄弟节前
@@ -314,11 +316,11 @@ export default {
       const randomKey = Math.round(Math.random() * Math.random() * 1000) + 10000;
       this.$refs.table.insertAfter(row.key, {
         id: randomKey,
-        key: `我是 ${randomKey} 号`,
-        platform: '私有',
+        key: `申请人 ${randomKey} 号`,
+        platform: '纸质签署',
         type: 'Number',
       });
-      this.$message.success(`已插入子节点我是 ${randomKey} 号，请展开查看`);
+      this.$message.success(`已插入子节点申请人 ${randomKey} 号，请展开查看`);
     },
 
     onPageChange(pageInfo) {
@@ -328,7 +330,7 @@ export default {
     },
 
     onRowToggle() {
-      const rowIds = ['我是 1_1 号', '我是 2_1 号', '我是 3_1 号', '我是 4_1 号'];
+      const rowIds = ['申请人 1_1 号', '申请人 2_1 号', '申请人 3_1 号', '申请人 4_1 号'];
       rowIds.forEach((id) => {
         // getData 参数为行唯一标识，lodash.get(row, rowKey)
         const rowData = this.$refs.table.getData(id);
@@ -388,7 +390,7 @@ export default {
       const key = Math.round(Math.random() * 10010);
       this.$refs.table.appendTo('', {
         id: key,
-        key: `我是 ${key}_${1} 号`,
+        key: `申请人 ${key}_${1} 号`,
         platform: key % 2 === 0 ? '共有' : '私有',
         type: ['String', 'Number', 'Array', 'Object'][key % 4],
         default: ['-', '0', '[]', '{}'][key % 4],
@@ -427,10 +429,7 @@ export default {
 </script>
 
 <style>
-.tdesign-table-demo__table-operations div {
-  display: inline-block;
-}
-.tdesign-table-demo__table-operations .t-button {
+.tdesign-table-demo__table-operations .t-link {
   padding: 0 8px;
 }
 </style>
