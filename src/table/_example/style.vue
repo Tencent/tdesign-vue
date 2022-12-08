@@ -58,13 +58,13 @@ export default {
           width: 120,
           align: 'center',
           // 设置单元格类名
-          className: ({ type, row }) => {
+          className: ({ row }) => {
             if (row.time >= 9) {
               return 'custom-cell-class-name';
             }
             return '';
           },
-          attrs: ({ type, row }) => {
+          attrs: ({ row }) => {
             if (row.time >= 9) {
               return {
                 style: {
@@ -80,7 +80,7 @@ export default {
           title: '签署方式',
           width: 120,
           align: 'right',
-          className: ({ type, row }) => 'custom-cell-class-name',
+          className: () => 'custom-cell-class-name',
         },
         {
           colKey: 'detail.email',

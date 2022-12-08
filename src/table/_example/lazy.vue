@@ -24,7 +24,7 @@ const columns = [
     colKey: 'status',
     title: '申请状态',
     width: '150',
-    cell: (h, { row, rowIndex }) => {
+    cell: (h, { rowIndex }) => {
       const status = rowIndex % 3;
       const statusNameListMap = {
         0: { label: '审批通过', theme: 'success', icon: <CheckCircleFilledIcon /> },

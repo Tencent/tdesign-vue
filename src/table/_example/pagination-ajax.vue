@@ -44,7 +44,7 @@ export default {
           title: '申请状态',
           width: '150',
 
-          cell: (h, { row, rowIndex }) => {
+          cell: (h, { rowIndex }) => {
             const statusNameListMap = {
               0: { label: '审批通过', theme: 'success', icon: <CheckCircleFilledIcon /> },
               1: { label: '审批失败', theme: 'danger', icon: <CloseCircleFilledIcon /> },
