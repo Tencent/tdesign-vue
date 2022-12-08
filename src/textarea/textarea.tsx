@@ -130,8 +130,7 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
       const textArea = this.$refs.refTextareaElem as HTMLInputElement;
       textArea?.blur();
     },
-    handleInput(e: any): void {
-      if (e.isComposing || e.inputType === 'insertCompositionText') return;
+    handleInput(e: InputEvent): void {
       this.inputValueChangeHandle(e);
     },
     onCompositionend(e: InputEvent) {
