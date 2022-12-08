@@ -13,7 +13,7 @@ export default defineComponent({
   props: { ...props },
   setup(props: TdDropdownProps, { emit }) {
     const dropdownClass = usePrefixClass('dropdown');
-    const isPopupVisible = ref(false);
+    const isPopupVisible = ref(true);
 
     const handleMenuClick = (data: DropdownOption, context: { e: MouseEvent }) => {
       if (props.hideAfterItemClick) {
@@ -25,7 +25,7 @@ export default defineComponent({
     };
 
     const handleVisibleChange = (visible: boolean, context: PopupVisibleChangeContext) => {
-      isPopupVisible.value = visible;
+      // isPopupVisible.value = visible;
       props.popupProps?.onVisibleChange?.(visible, context);
     };
 
