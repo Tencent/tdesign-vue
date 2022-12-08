@@ -1,6 +1,6 @@
 import { ref, toRefs } from '@vue/composition-api';
 import {
-  TagInputValue, TagInputChangeContext, TdTagInputProps, DragProps,
+  TagInputValue, TagInputChangeContext, TdTagInputProps, DragProps, TagInputRemoveContext,
 } from './type';
 import { InputValue } from '../input';
 import Tag from '../tag';
@@ -63,18 +63,17 @@ export default function useTagList(props: TdTagInputProps, getDragProps: DragPro
       const index = tagValue.value.length - 1;
       const item = tagValue.value[index];
       const trigger = 'backspace';
-      setTagValue(tagValue.value.slice(0, -1), {
+      const newValue = tagValue.value.slice(0, -1);
+      const params: Omit<TagInputRemoveContext, 'value'> = {
         e,
         index,
         item,
         trigger,
-      });
+      };
+      setTagValue(newValue, params);
       onRemove.value?.({
-        e,
-        index,
-        item,
-        trigger,
-        value: tagValue.value,
+        ...params,
+        value: newValue,
       });
     }
     oldInputValue.value = value;

@@ -12,6 +12,7 @@ import { CheckboxGroupValue } from '../checkbox';
 import { SortableEvent, SortableOptions } from 'sortablejs';
 import { CheckboxProps } from '../checkbox';
 import { RadioProps } from '../radio';
+import { PopupProps } from '../popup';
 import { InputProps } from '../input';
 import { ButtonProps } from '../button';
 import { CheckboxGroupProps } from '../checkbox';
@@ -119,7 +120,7 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
   /**
    * 透传加载组件全部属性
    */
-  loadingProps?: LoadingProps;
+  loadingProps?: Partial<LoadingProps>;
   /**
    * 表格最大高度，超出后会出现滚动条。示例：100, '30%', '300'。值为数字类型，会自动加上单位 px
    */
@@ -432,6 +433,15 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   multipleSort?: boolean;
   /**
+   * 行选中功能，是否在分页时保留上一页选中结果不清空，本地数据分页场景下，会全选所有页数据。值为 `false` 则表示全部选中操作停留在当前页，不跨分页；本地数据分页场景下，全选仅选中当前页
+   * @default true
+   */
+  reserveSelectedRowOnPaginate?: boolean;
+  /**
+   * 是否在点击整行时选中
+   */
+  selectOnRowClick?: boolean;
+  /**
    * 选中行，控制属性。半选状态行请更为使用 `indeterminateSelectedRowKeys` 控制
    * @default []
    */
@@ -727,6 +737,10 @@ export interface TableColumnFilter {
    * 用于配置当前筛选器可选值有哪些，仅当 `filter.type` 等于 `single` 或 `multiple` 时有效
    */
   list?: Array<OptionData>;
+  /**
+   * 透传 Popup 组件全部属性到筛选器浮层
+   */
+  popupProps?: PopupProps;
   /**
    * 用于透传筛选器属性，可以对筛选器进行任何原组件支持的属性配置
    */

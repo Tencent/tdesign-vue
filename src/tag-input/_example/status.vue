@@ -1,5 +1,5 @@
 <template>
-  <t-space direction="vertical">
+  <t-space direction="vertical" size="32px">
     <div class="t-tdesign-demo__tag-input">
       <label>禁用状态：</label>
       <t-tag-input :value="tags1" disabled />

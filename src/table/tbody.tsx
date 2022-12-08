@@ -50,6 +50,7 @@ export const extendTableProps = [
   'rowspanAndColspan',
   'scroll',
   'cellEmptyContent',
+  'pagination',
   'onCellClick',
   'onPageChange',
   'onRowClick',
@@ -195,6 +196,7 @@ export default defineComponent({
       'isVirtual',
       'rowHeight',
       'scrollType',
+      'pagination',
     ];
     this.data?.forEach((row, rowIndex) => {
       const trProps: TrProps = {

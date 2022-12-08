@@ -55,6 +55,7 @@ export default defineComponent({
             <t-radio-group
               variant="default-filled"
               size="small"
+              disabled={this.disabled}
               v-model={this.modeValue}
               onChange={this.handleModeChange}
             >

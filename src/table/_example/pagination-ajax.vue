@@ -15,7 +15,9 @@
   </t-table>
 </template>
 
-<script>
+<script lang="jsx">
+import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+
 export default {
   data() {
     return {
@@ -26,20 +28,36 @@ export default {
         {
           colKey: 'row-select',
           type: 'multiple',
-          width: 64,
+          width: 46,
         },
         {
           width: 200,
           colKey: 'name',
           title: '姓名',
-          render(h, { row: { name } }) {
+          render(h, { type, row: { name } }) {
+            if (type === 'title') return '申请人';
             return name ? `${name.first} ${name.last}` : 'UNKNOWN_USER';
           },
         },
         {
-          width: 200,
-          colKey: 'gender',
-          title: '性别',
+          colKey: 'status',
+          title: '申请状态',
+          width: '150',
+
+          cell: (h, { rowIndex }) => {
+            const statusNameListMap = {
+              0: { label: '审批通过', theme: 'success', icon: <CheckCircleFilledIcon /> },
+              1: { label: '审批失败', theme: 'danger', icon: <CloseCircleFilledIcon /> },
+              2: { label: '审批过期', theme: 'warning', icon: <ErrorCircleFilledIcon /> },
+            };
+            const status = rowIndex % 3;
+            return (
+              <t-tag shape="round" theme={statusNameListMap[status].theme} variant="light-outline">
+                {statusNameListMap[status].icon}
+                {statusNameListMap[status].label}
+              </t-tag>
+            );
+          },
         },
         {
           width: 200,
@@ -50,9 +68,9 @@ export default {
           },
         },
         {
-          width: 260,
           colKey: 'email',
           title: '邮箱',
+          width: 180,
           ellipsis: true,
         },
       ],

@@ -34,7 +34,6 @@ export default {
   /** 列配置功能中，当前显示的列 */
   displayColumns: {
     type: Array as PropType<TdPrimaryTableProps['displayColumns']>,
-    default: undefined,
   },
   /** 列配置功能中，当前显示的列，非受控属性 */
   defaultDisplayColumns: {
@@ -74,7 +73,7 @@ export default {
   /** 展开行 */
   expandedRowKeys: {
     type: Array as PropType<TdPrimaryTableProps['expandedRowKeys']>,
-    default: undefined,
+    default: (): TdPrimaryTableProps['expandedRowKeys'] => [],
   },
   /** 展开行，非受控属性 */
   defaultExpandedRowKeys: {
@@ -92,7 +91,6 @@ export default {
   /** 过滤数据的值 */
   filterValue: {
     type: Object as PropType<TdPrimaryTableProps['filterValue']>,
-    default: undefined,
   },
   /** 过滤数据的值，非受控属性 */
   defaultFilterValue: {
@@ -106,10 +104,17 @@ export default {
   },
   /** 是否支持多列排序 */
   multipleSort: Boolean,
+  /** 行选中功能，是否在分页时保留上一页选中结果不清空，本地数据分页场景下，会全选所有页数据。值为 `false` 则表示全部选中操作停留在当前页，不跨分页；本地数据分页场景下，全选仅选中当前页 */
+  reserveSelectedRowOnPaginate: {
+    type: Boolean,
+    default: true,
+  },
+  /** 是否在点击整行时选中 */
+  selectOnRowClick: Boolean,
   /** 选中行，控制属性。半选状态行请更为使用 `indeterminateSelectedRowKeys` 控制 */
   selectedRowKeys: {
     type: Array as PropType<TdPrimaryTableProps['selectedRowKeys']>,
-    default: undefined,
+    default: (): TdPrimaryTableProps['selectedRowKeys'] => [],
   },
   /** 选中行，控制属性。半选状态行请更为使用 `indeterminateSelectedRowKeys` 控制，非受控属性 */
   defaultSelectedRowKeys: {
@@ -121,7 +126,6 @@ export default {
   /** 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序 */
   sort: {
     type: [Object, Array] as PropType<TdPrimaryTableProps['sort']>,
-    default: undefined,
   },
   /** 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序，非受控属性 */
   defaultSort: {

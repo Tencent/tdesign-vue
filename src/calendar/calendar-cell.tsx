@@ -56,7 +56,10 @@ export default mixins(classPrefixMixins).extend({
       const {
         mode, date, formattedDate, isCurrent,
       } = this.item;
-      const isNow = mode === 'year' ? new Date().getMonth() === date.getMonth() : formattedDate === dayjs().format('YYYY-MM-DD');
+      const now = new Date();
+      const isNow = mode === 'year'
+        ? now.getMonth() === date.getMonth() && now.getFullYear() === date.getFullYear()
+        : formattedDate === dayjs().format('YYYY-MM-DD');
       return [
         `${this.componentName}__table-body-cell`,
         {

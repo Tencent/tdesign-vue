@@ -17,7 +17,6 @@ import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { DialogConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
-import { addClass, removeClass } from '../utils/dom';
 import { ClassName, Styles } from '../common';
 import { updateElement } from '../hooks/useDestroyOnClose';
 import stack from './stack';
@@ -41,6 +40,8 @@ if (typeof window !== 'undefined' && window.document && window.document.document
   document.documentElement.addEventListener('click', getClickPosition, true);
 }
 
+let key = 1;
+
 export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('dialog'), getGlobalIconMixins()).extend({
   name: 'TDialog',
 
@@ -60,6 +61,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       dialogH: 0,
       dLeft: 0,
       dTop: 0,
+      styleEl: null,
+      timer: null,
+      animationEnd: false,
     };
   },
 
@@ -144,13 +148,10 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
   watch: {
     visible(value) {
       if (value) {
-        const { scrollWidth } = this;
-        if (this.isModal && !this.showInAttachedElement) {
-          if (scrollWidth > 0 && this.preventScrollThrough) {
-            const bodyCssText = `position: relative;width: calc(100% - ${scrollWidth}px);`;
-            document.body.style.cssText = bodyCssText;
-          }
-          this.preventScrollThrough && addClass(document.body, `${this.componentName}--lock`);
+        this.animationEnd = false;
+        if (this.isModal && !this.showInAttachedElement && this.preventScrollThrough) {
+          document.head.appendChild(this.styleEl);
+
           this.$nextTick(() => {
             const target = this.$refs.dialog as HTMLElement;
             if (mousePosition && target) {
@@ -163,7 +164,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         // 清除鼠标焦点 避免entry事件多次触发（按钮弹出弹窗 不移除焦点 立即按Entry按键 会造成弹窗关闭再弹出）
         (document.activeElement as HTMLElement).blur();
       } else {
-        this.removeBodyLockClassAndCss();
+        this.clearStyleFunc();
       }
       // 多个dialog同时存在时使用esc关闭异常 (#1209)
       this.storeUid(value);
@@ -184,16 +185,25 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     if (this.draggable) {
       window.addEventListener('resize', throttle(this.resizeAdjustPosition, 1000));
     }
-    if (this.visible && this.isModal && this.preventScrollThrough) {
-      addClass(document.body, `${this.componentName}--lock`);
-    }
     // @ts-ignore 用于获取组件uid
     this.uid = this._uid;
+    this.styleEl = document.createElement('style');
+    this.styleEl.dataset.id = `td_dialog_${+new Date()}_${(key += 1)}`;
+    this.styleEl.innerHTML = `
+      html body {
+        overflow-y: hidden;
+        width: calc(100% - ${this.scrollWidth}px);
+      }
+    `;
+
+    if (this.visible && this.isModal && this.preventScrollThrough && !this.showInAttachedElement) {
+      document.head.appendChild(this.styleEl);
+    }
   },
 
   beforeDestroy() {
     this.addKeyboardEvent(false);
-    this.removeBodyLockClassAndCss();
+    this.clearStyleFunc();
   },
 
   directives: {
@@ -201,6 +211,12 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
   },
 
   methods: {
+    clearStyleFunc() {
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
+        this.styleEl.parentNode?.removeChild?.(this.styleEl);
+      }, 150);
+    },
     storeUid(flag: boolean) {
       if (flag) {
         stack.push(this.uid);
@@ -269,12 +285,14 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     afterLeave() {
       if (this.isModeLess && this.draggable) {
         const target = this.$refs.dialog as HTMLElement;
+        if (!target) return;
         // 关闭弹窗 清空拖拽设置的相关css
         target.style.position = 'relative';
         target.style.left = 'unset';
         target.style.top = 'unset';
       }
       emitEvent<Parameters<TdDialogProps['onClosed']>>(this, 'closed');
+      this.animationEnd = true;
     },
 
     emitCloseEvent(context: DialogCloseContext) {
@@ -425,10 +443,6 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         </div>
       );
     },
-    removeBodyLockClassAndCss() {
-      document.body.style.cssText = '';
-      removeClass(document.body, `${this.componentName}--lock`);
-    },
   },
 
   render() {
@@ -437,6 +451,8 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     const view = [maskView, dialogView];
     const ctxStyle = { zIndex: this.zIndex };
 
+    if (this.destroyOnClose && !this.visible && this.animationEnd) return null;
+
     return (
       <transition
         duration={300}
@@ -444,11 +460,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         onAfterEnter={this.afterEnter}
         onAfterLeave={this.afterLeave}
       >
-        {(!this.destroyOnClose || this.visible) && (
-          <div v-show={this.visible} class={this.ctxClass} style={ctxStyle} v-transfer-dom={this.attach}>
-            {view}
-          </div>
-        )}
+        <div v-show={this.visible} class={this.ctxClass} style={ctxStyle} v-transfer-dom={this.attach}>
+          {view}
+        </div>
       </transition>
     );
   },

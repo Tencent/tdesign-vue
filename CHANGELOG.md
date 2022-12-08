@@ -5,6 +5,37 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.51.1 `2022-11-30` 
+### ❗ Breaking Changes
+- `Jumper`: Jumper 更名为 PaginationMini 组件，正在使用 Jumper 组件的同学请从 Pagination 中导出替换 @honkinglin ([#1845](https://github.com/Tencent/tdesign-vue/pull/1845))
+### 🚀 Features
+- `Calendar`:
+  - 日历组件支持多个高亮单元格； @PsTiu ([#1850](https://github.com/Tencent/tdesign-vue/pull/1850))
+  - 卡片样式菜单操作栏样式调整 @uyarn ([#1863](https://github.com/Tencent/tdesign-vue/pull/1863))
+- `Table`: 选中行功能，新增 `reserveSelectedRowOnPaginate`，用于支持在分页场景中，仅选中当前页数据，切换分页时清空选中结果，全选仅选中当前页数据 @chaishi ([#1849](https://github.com/Tencent/tdesign-vue/pull/1849))
+- `Tree`: 使用 composition api 重构组件 @TabSpace ([#837](https://github.com/Tencent/tdesign-vue/pull/837))
+### 🐞 Bug Fixes
+- `Drawer`:
+  - 修复 `closeOnOverlayClick` 存在默认值导致全局配置失效问题 @chaishi ([#1844](https://github.com/Tencent/tdesign-vue/pull/1844))
+  - 修复 drawer 动画失效的问题 @honkinglin ([#1858](https://github.com/Tencent/tdesign-vue/pull/1858))
+- `Table`: @chaishi ([#1849](https://github.com/Tencent/tdesign-vue/pull/1849))
+  - 修复本地数据分页场景中，切换分页大小，`onPageChange` 事件参数返回的数据不正确问题
+  - 序号列支持跨分页显示 [tdesign-vue-next#2072](https://github.com/Tencent/tdesign-vue-next/issues/2072)
+  - 修复分页场景下，设置 max-height 和 bordered 之后，边框线位置不正确 [issue#2062](https://github.com/Tencent/tdesign-vue-next/issues/2062)
+  - 行选中事件参数选中数据支持 `data.push`， [issue#1747](https://github.com/Tencent/tdesign-vue/issues/1747)
+- `AutoComplete`: 支持使用 `triggerElement` 自定义触发元素 @chaishi ([#1848](https://github.com/Tencent/tdesign-vue/pull/1848))
+- `Input`: 宽度自适应 `auto-width` 支持中文拼音输入也实时调整宽度，[issue#2079](https://github.com/Tencent/tdesign-vue-next/issues/2079) @chaishi ([#1853](https://github.com/Tencent/tdesign-vue/pull/1853))
+- `Dialog`: 修复 destroyOnClose 设置后关闭弹窗无动画效果问题  @honkinglin ([#1857](https://github.com/Tencent/tdesign-vue/pull/1857))
+- `TagInput`: @chaishi ([#1860](https://github.com/Tencent/tdesign-vue/pull/1860))
+  - 不同尺寸的间距和高度问题修复，[issue#1843](https://github.com/Tencent/tdesign-vue/issues/1843)
+  - 修复右侧图标会和标签重合问题
+  - 修复 `onRemove` 事件参数未能返回最新 `value` 问题
+  - 修复未能正确透传 `inputProps` 问题
+- `Menu`: 修复二级菜单子菜单纵向左边距丢失的问题 @uyarn ([#1863](https://github.com/Tencent/tdesign-vue/pull/1863))
+### 🚧 Others
+- 支持插件 valor 代码提示 @chaishi ([#1841](https://github.com/Tencent/tdesign-vue/pull/1841))
+- 优化 Form/Divider 组件 demo @pattybaby110 ([#1829](https://github.com/Tencent/tdesign-vue/pull/1829))
+
 ## 🌈 0.50.1 `2022-11-24` 
 ### 🚀 Features
 - `InputNumber`: 支持 `allowInputOverLimit`，用于设置是否允许输入数字超过 `max` `min` 范围的值 @chaishi ([#1811](https://github.com/Tencent/tdesign-vue/pull/1811))

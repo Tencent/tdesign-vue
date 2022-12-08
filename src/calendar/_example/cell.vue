@@ -75,7 +75,7 @@ export default {
     position: relative;
     display: flex;
     align-items: center;
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--td-text-color-secondary);
     span {
       display: block;
       left: 1px;
@@ -86,13 +86,13 @@ export default {
     }
   }
   .error {
-    background: #e34d59;
+    background: var(--td-error-color);
   }
   .warning {
-    background: #ed7b2f;
+    background: var(--td-warning-color);
   }
   .success {
-    background: #00a870;
+    background: var(--td-success-color);
   }
 
   .slotWrapper {
