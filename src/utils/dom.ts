@@ -268,7 +268,7 @@ export const removeDom = (el: HTMLElement) => {
  */
 export function getScrollbarWidth() {
   const scrollDiv = document.createElement('div');
-  scrollDiv.style.cssText = 'width: 99px; height: 99px; overflow: scroll; position: absolute; top: -9999px;';
+  scrollDiv.style.cssText = 'width: 99px; height: 99px; overflow: scroll; position: absolute; visibility: hidden;';
   document.body.appendChild(scrollDiv);
   const scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
   document.body.removeChild(scrollDiv);
