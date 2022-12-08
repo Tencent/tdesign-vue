@@ -5,6 +5,40 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.52.0 `2022-12-08`
+### ❗ Breaking Changes
+- `SelectInput`: 调整 DOM 结构和类名，同其他框架保持一致，方便全部框架复用同一份 CSS @chaishi ([#1880](https://github.com/Tencent/tdesign-vue/pull/1880))
+- `Menu`: 样式优化 @xiaosansiji ([#1882](https://github.com/Tencent/tdesign-vue/pull/1882))
+  - 弹出菜单中箭头不再翻转，间距等样式与 Dropdown 子菜单对齐
+  - `theme=light` 时默认跟随全局浅色/暗色模式切换，`theme=dark` 保持暗色模式展示
+  - 侧边导航，去除第三级自菜单弹出动画，减少操作干扰
+### 🚀 Features
+- `ColorPicker`: 新增 `clearable` 及 `showPrimaryColorPreview` API，控制是否展示颜色选择条右侧预览区域 @uyarn ([#1875](https://github.com/Tencent/tdesign-vue/pull/1875))
+- `SelectInput`: `selectInputWrapRef ` 更名为 `selectInputRef` @chaishi ([#1880](https://github.com/Tencent/tdesign-vue/pull/1880))
+- `Table`: @chaishi ([#1891](https://github.com/Tencent/tdesign-vue/pull/1891))
+  - 可筛选表格，新增 `filter.popupProps` ，支持透传 Popup 组件全部属性，[tdesign-vue-next#2088](https://github.com/Tencent/tdesign-vue-next/issues/2088)
+  - 选中行表格，新增 `selectOnRowClick`，支持点击行选中，[tdesign-vue-next#1954](https://github.com/Tencent/tdesign-vue-next/issues/1954)
+  - 本地排序功能，支持对默认数据进行排序
+- `Upload`: `onProgress/onSuccess/onFail` 等事件参数添加 `XMLHttpRequest`，用于获取 http status 等数据 @chaishi ([#1886](https://github.com/Tencent/tdesign-vue/pull/1886))
+- `Radio/Checkbox`: `click` 事件更为从最外层输出，防止出现无法在外层阻止冒泡的问题 @chaishi ([#1891](https://github.com/Tencent/tdesign-vue/pull/1891))
+### 🐞 Bug Fixes
+- `ColorPicker`: 修复无法删除颜色值的问题 @uyarn ([#1875](https://github.com/Tencent/tdesign-vue/pull/1875))
+- `SelectInput`: 宽度自适应模式，边距问题修复，[issue#1842](https://github.com/Tencent/tdesign-vue/issues/1842) @chaishi ([#1880](https://github.com/Tencent/tdesign-vue/pull/1880))
+- `TagInput`: 宽度自适应模式，左右边距保持一致 @chaishi ([#1880](https://github.com/Tencent/tdesign-vue/pull/1880))
+- `Textarea`: 修复多行文本autofocus失效的问题 @yaogengzhu ([#1879](https://github.com/Tencent/tdesign-vue/pull/1879))
+- `InputNumber`: 无法输入小数点后面的第一位数字 `0`，[tdesign-vue-next#2103](https://github.com/Tencent/tdesign-vue-next/issues/2103) @chaishi ([#1885](https://github.com/Tencent/tdesign-vue/pull/1885))
+- `InputNumber`: 修复无法使用清空按钮清除输入数字问题，[issue#1855](https://github.com/Tencent/tdesign-vue/issues/1855) @chaishi ([#1885](https://github.com/Tencent/tdesign-vue/pull/1885))
+- `SelectInput`: 修复出现的异常`tips` 节点 @pengYYYYY ([#1889](https://github.com/Tencent/tdesign-vue/pull/1889))
+- `Popup`: 修复初次渲染 `overlayStyle` 不生效的问题 @uyarn ([#1893](https://github.com/Tencent/tdesign-vue/pull/1893))
+- `Dropdown`: 修复父节点超长无法点击子菜单的问题 @uyarn ([#1893](https://github.com/Tencent/tdesign-vue/pull/1893))
+- `Dialog`: 修复滚动条判断的问题 @honkinglin ([#1897](https://github.com/Tencent/tdesign-vue/pull/1897))
+- `ImageViewer`: 修复缺少移除动画的问题 @honkinglin ([#1877](https://github.com/Tencent/tdesign-vue/pull/1877))
+- `RangeInput`: 修复 `status`设置无效的问题 @honkinglin ([#1878](https://github.com/Tencent/tdesign-vue/pull/1878))
+- `InputAdornment`: 修复 InputAdornment 相关样式问题 @honkinglin ([#1888](https://github.com/Tencent/tdesign-vue/pull/1888))
+### 🚧 Others
+- `Table`: demo 样例优化 @pengYYYYY ([#1889](https://github.com/Tencent/tdesign-vue/pull/1889))
+- `Menu`: demo 样例优化 @xiaosansiji ([#1882](https://github.com/Tencent/tdesign-vue/pull/1882))
+
 ## 🌈 0.51.1 `2022-11-30` 
 ### ❗ Breaking Changes
 - `Jumper`: Jumper 更名为 PaginationMini 组件，正在使用 Jumper 组件的同学请从 Pagination 中导出替换 @honkinglin ([#1845](https://github.com/Tencent/tdesign-vue/pull/1845))
