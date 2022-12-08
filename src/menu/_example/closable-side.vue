@@ -31,7 +31,9 @@
       资源区
     </t-menu-item>
     <template #operations>
-      <icon class="t-menu__operations-icon" :name="iconName" @click.native="changeCollapsed" />
+      <t-button class="t-demo-collapse-btn" variant="text" shape="square" @click.native="changeCollapsed">
+        <icon :name="iconName" slot="icon" />
+      </t-button>
     </template>
   </t-menu>
 </template>

@@ -45,7 +45,9 @@
       资源列表
     </t-menu-item>
     <template #operations>
-      <icon class="t-menu__operations-icon" name="view-list" @click.native="changeCollapsed" />
+      <t-button class="t-demo-collapse-btn" variant="text" shape="square" @click.native="changeCollapsed">
+        <icon name="view-list" />
+      </t-button>
     </template>
   </t-menu>
 </template>
@@ -62,7 +64,7 @@ export default {
       expanded: ['2'],
       disabled: true,
       collapsed: false,
-      iconUrl: 'https://www.tencent.com/img/index/menu_logo_hover.png',
+      iconUrl: 'https://tdesign.gtimg.com/site/baseLogo-light.png',
     };
   },
   methods: {
@@ -70,7 +72,7 @@ export default {
       this.collapsed = !this.collapsed;
       this.iconUrl = this.collapsed
         ? 'https://oteam-tdesign-1258344706.cos.ap-guangzhou.myqcloud.com/site/logo%402x.png'
-        : 'https://www.tencent.com/img/index/menu_logo_hover.png';
+        : 'https://tdesign.gtimg.com/site/baseLogo-light.png';
     },
     handleExpand(names) {
       console.log('receive handleExpand', names);
