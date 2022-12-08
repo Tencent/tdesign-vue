@@ -1,6 +1,8 @@
 import { CreateElement } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import { defineComponent, h } from '@vue/composition-api';
+import {
+  defineComponent, h, ref, onMounted,
+} from '@vue/composition-api';
 import { ChevronRightIcon as TdChevronRightIcon, ChevronLeftIcon as TdChevronLeftIcon } from 'tdesign-icons-vue';
 import isFunction from 'lodash/isFunction';
 
@@ -17,7 +19,8 @@ export default defineComponent({
   setup(props, { emit }) {
     const dropdownClass = usePrefixClass('dropdown');
     const dropdownMenuClass = usePrefixClass('dropdown__menu');
-
+    const menuRef = ref<HTMLElement>();
+    const isOverMaxHeight = ref(false);
     const handleItemClick = (
       optionItem: { disabled: boolean; children: unknown },
       options: { data: DropdownOption; context: { e: MouseEvent } },
@@ -30,10 +33,19 @@ export default defineComponent({
       emit('click', data, context);
     };
 
+    onMounted(() => {
+      if (menuRef.value) {
+        const menuHeight = parseInt(window?.getComputedStyle(menuRef.value).height, 10);
+        if (menuHeight >= props.maxHeight) isOverMaxHeight.value = true;
+      }
+    });
+
     return {
       dropdownClass,
       dropdownMenuClass,
       handleItemClick,
+      menuRef,
+      isOverMaxHeight,
     };
   },
   methods: {
@@ -141,7 +153,14 @@ export default defineComponent({
   render() {
     return (
       <div
-        class={[this.dropdownMenuClass, `${this.dropdownMenuClass}--${this.direction}`]}
+        class={[
+          this.dropdownMenuClass,
+          `${this.dropdownMenuClass}--${this.direction}`,
+          {
+            [`${this.dropdownMenuClass}--overflow`]: this.isOverMaxHeight,
+          },
+        ]}
+        ref="menuRef"
         style={{
           maxHeight: `${this.maxHeight}px`,
         }}
