@@ -43,9 +43,6 @@ exports[`DateRangePicker > :mode 1`] = `
         </span>
       </div>
     </div>
-    <div
-      class="t-input__tips t-input__tips--default"
-    />
   </div>
 </div>
 `;
@@ -94,9 +91,6 @@ exports[`DateRangePicker > :range 1`] = `
         </span>
       </div>
     </div>
-    <div
-      class="t-input__tips t-input__tips--default"
-    />
   </div>
 </div>
 `;
@@ -144,9 +138,6 @@ exports[`DateRangePicker > :value 1`] = `
         </span>
       </div>
     </div>
-    <div
-      class="t-input__tips t-input__tips--default"
-    />
   </div>
 </div>
 `;

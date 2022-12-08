@@ -42,9 +42,6 @@ exports[`TreeSelect > :props > :clearable 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -107,9 +104,6 @@ exports[`TreeSelect > :props > :defaultValue 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -157,9 +151,6 @@ exports[`TreeSelect > :props > :disabled 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -205,9 +196,6 @@ exports[`TreeSelect > :props > :empty string 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -252,9 +240,6 @@ exports[`TreeSelect > :props > :filterable 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -309,9 +294,6 @@ exports[`TreeSelect > :props > :loading 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -357,9 +339,6 @@ exports[`TreeSelect > :props > :loadingText 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -405,9 +384,6 @@ exports[`TreeSelect > :props > :max 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -453,9 +429,6 @@ exports[`TreeSelect > :props > :minCollapsedNum 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -518,9 +491,6 @@ exports[`TreeSelect > :props > :multiple 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -566,9 +536,6 @@ exports[`TreeSelect > :props > :placeholder 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -614,9 +581,6 @@ exports[`TreeSelect > :props > :popupProps 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -662,9 +626,6 @@ exports[`TreeSelect > :props > :size 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -710,9 +671,6 @@ exports[`TreeSelect > :props > :treeProps 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -758,9 +716,6 @@ exports[`TreeSelect > :props > :value 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -806,9 +761,6 @@ exports[`TreeSelect > :props > :valueType 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -854,9 +806,6 @@ exports[`TreeSelect > <slot> > <collapsedItems> 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -902,9 +851,6 @@ exports[`TreeSelect > <slot> > <empty> 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -959,9 +905,6 @@ exports[`TreeSelect > <slot> > <loadingText> 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -1013,9 +956,6 @@ exports[`TreeSelect > <slot> > <prefixIcon> 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -1061,9 +1001,6 @@ exports[`TreeSelect > function > :collapsedItems 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -1109,9 +1046,6 @@ exports[`TreeSelect > function > :empty 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -1166,9 +1100,6 @@ exports[`TreeSelect > function > :loadingText 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -1220,8 +1151,5 @@ exports[`TreeSelect > function > :prefixIcon 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
