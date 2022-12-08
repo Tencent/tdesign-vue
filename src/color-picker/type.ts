@@ -11,6 +11,11 @@ import { TNode } from '../common';
 
 export interface TdColorPickerProps {
   /**
+   * 是否可清空
+   * @default false
+   */
+  clearable?: boolean;
+  /**
    * 关闭按钮，值为 `true` 显示默认关闭按钮；值为 `false` 或 `undefined` 则不显示关闭按钮；值类型为函数，则表示自定义关闭按钮
    * @default true
    */
@@ -22,7 +27,6 @@ export interface TdColorPickerProps {
   colorModes?: Array<'monochrome' | 'linear-gradient'>;
   /**
    * 是否禁用组件
-   * @default false
    */
   disabled?: boolean;
   /**
@@ -63,6 +67,11 @@ export interface TdColorPickerProps {
    */
   selectInputProps?: SelectInputProps;
   /**
+   * 是否展示颜色选择条右侧的颜色预览区域
+   * @default true
+   */
+  showPrimaryColorPreview?: boolean;
+  /**
    * 系统预设的颜色样例，值为 `null` 或 `[]` 则不显示系统色，值为 `undefined` 会显示组件内置的系统默认色
    */
   swatchColors?: Array<string>;
@@ -96,7 +105,9 @@ export type ColorPickerChangeTrigger =
   | 'palette-brightness'
   | 'palette-hue-bar'
   | 'palette-alpha-bar'
-  | 'input';
+  | 'input'
+  | 'preset'
+  | 'recent';
 
 export interface ColorObject {
   alpha: number;

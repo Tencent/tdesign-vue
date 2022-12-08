@@ -160,6 +160,9 @@ export default defineComponent({
             [SIZE[this.size]]: this.size !== 'medium',
             [STATUS.disabled]: this.disabled,
             [STATUS.focused]: focused,
+            [STATUS.success]: this.status === 'success',
+            [STATUS.warning]: this.status === 'warning',
+            [STATUS.error]: this.status === 'error',
           },
         ]}
         onMouseenter={handleMouseEnter}

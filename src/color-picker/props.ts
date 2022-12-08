@@ -8,6 +8,8 @@ import { TdColorPickerProps } from './type';
 import { PropType } from 'vue';
 
 export default {
+  /** 是否可清空 */
+  clearable: Boolean,
   /** 关闭按钮，值为 `true` 显示默认关闭按钮；值为 `false` 或 `undefined` 则不显示关闭按钮；值类型为函数，则表示自定义关闭按钮 */
   closeBtn: {
     type: [String, Boolean, Function] as PropType<TdColorPickerProps['closeBtn']>,
@@ -54,6 +56,11 @@ export default {
   /** 透传 SelectInputProps 筛选器输入框组件全部属性 */
   selectInputProps: {
     type: Object as PropType<TdColorPickerProps['selectInputProps']>,
+  },
+  /** 是否展示颜色选择条右侧的颜色预览区域 */
+  showPrimaryColorPreview: {
+    type: Boolean,
+    default: true,
   },
   /** 系统预设的颜色样例，值为 `null` 或 `[]` 则不显示系统色，值为 `undefined` 会显示组件内置的系统默认色 */
   swatchColors: {

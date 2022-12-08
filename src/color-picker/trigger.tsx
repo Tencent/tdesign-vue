@@ -34,6 +34,10 @@ export default defineComponent({
       type: Function as PropType<TdColorHandler>,
       default: () => () => {},
     },
+    clearable: {
+      type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
     const baseClassName = useBaseClassName();
@@ -48,7 +52,7 @@ export default defineComponent({
       if (input === props.color) {
         return;
       }
-      if (!Color.isValid(input)) {
+      if (!Color.isValid(input) && input) {
         value.value = props.color;
       } else {
         value.value = input;
@@ -80,15 +84,16 @@ export default defineComponent({
     return (
       <div class={`${baseClassName}__trigger--default`}>
         <t-input
+          scopedSlots={inputSlots}
+          v-model={this.value}
+          clearable={this.clearable}
+          disabled={this.disabled}
+          onBlur={this.handleChange}
           {...{
             props: {
               ...this.inputProps,
             },
           }}
-          scopedSlots={inputSlots}
-          v-model={this.value}
-          disabled={this.disabled}
-          onBlur={this.handleChange}
         />
       </div>
     );

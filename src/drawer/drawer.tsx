@@ -11,6 +11,7 @@ import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
 import { ClassName, Styles } from '../common';
 import ActionMixin from '../dialog/actions';
+import { getScrollbarWidth } from '../utils/dom';
 
 type FooterButtonType = 'confirm' | 'cancel';
 
@@ -134,7 +135,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
   },
 
   mounted() {
-    const scrollWidth = window.innerWidth - document.body.offsetWidth;
+    const hasScrollBar = document.body.scrollHeight > document.body.clientHeight;
+    const scrollWidth = hasScrollBar ? getScrollbarWidth() : 0;
+
     this.styleEl = document.createElement('style');
     this.styleEl.dataset.id = `td_drawer_${+new Date()}_${(key += 1)}`;
     this.styleEl.innerHTML = `

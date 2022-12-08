@@ -21,46 +21,50 @@ exports[`Calendar > :props > :cell 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2020 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2020 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -72,46 +76,50 @@ exports[`Calendar > :props > :cell 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  12 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    12 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -474,46 +482,50 @@ exports[`Calendar > :props > :cell 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2020 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2020 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -525,46 +537,50 @@ exports[`Calendar > :props > :cell 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  12 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    12 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -1002,46 +1018,50 @@ exports[`Calendar > :props > :cellAppend 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2020 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2020 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -1053,46 +1073,50 @@ exports[`Calendar > :props > :cellAppend 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  12 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    12 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -1840,46 +1864,50 @@ exports[`Calendar > :props > :cellAppend 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2020 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2020 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -1891,46 +1919,50 @@ exports[`Calendar > :props > :cellAppend 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  12 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    12 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -3337,46 +3369,50 @@ exports[`Calendar > :props > :controllerConfig 1`] = `
             size="medium"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-s t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-s t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2020 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2020 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -3389,46 +3425,50 @@ exports[`Calendar > :props > :controllerConfig 1`] = `
             size="medium"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-s t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-s t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  12 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    12 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -4182,46 +4222,50 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2020 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2020 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -4233,46 +4277,50 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  12 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    12 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -5020,46 +5068,50 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2020 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2020 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -5071,46 +5123,50 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  12 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    12 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -5862,46 +5918,50 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
           class="t-select__wrap"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-select-input t-select"
           >
             <div
-              class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                2020 年
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  2020 年
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -5913,46 +5973,50 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
           class="t-select__wrap"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-select-input t-select"
           >
             <div
-              class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                12 月
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  12 月
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -6819,46 +6883,50 @@ exports[`Calendar > :props > :format 1`] = `
           class="t-select__wrap"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-select-input t-select"
           >
             <div
-              class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                2020 年
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  2020 年
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -6870,46 +6938,50 @@ exports[`Calendar > :props > :format 1`] = `
           class="t-select__wrap"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-select-input t-select"
           >
             <div
-              class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                12 月
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  12 月
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -7663,46 +7735,50 @@ exports[`Calendar > :props > :head 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2020 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2020 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -7714,46 +7790,50 @@ exports[`Calendar > :props > :head 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  12 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    12 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -8505,46 +8585,50 @@ exports[`Calendar > :props > :head 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2020 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2020 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -8556,46 +8640,50 @@ exports[`Calendar > :props > :head 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  12 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    12 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -9348,46 +9436,50 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2020 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2020 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -9399,46 +9491,50 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  12 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    12 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -10186,46 +10282,50 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2020 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2020 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -10237,46 +10337,50 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  12 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    12 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -10855,46 +10959,50 @@ exports[`Calendar > :props > :mode 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2020 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2020 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -10906,46 +11014,50 @@ exports[`Calendar > :props > :mode 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  12 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    12 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -11693,46 +11805,50 @@ exports[`Calendar > :props > :mode 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2020 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2020 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -12042,46 +12158,50 @@ exports[`Calendar > :props > :multiple 1`] = `
           class="t-select__wrap"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-select-input t-select"
           >
             <div
-              class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                2020 年
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  2020 年
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -12093,46 +12213,50 @@ exports[`Calendar > :props > :multiple 1`] = `
           class="t-select__wrap"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-select-input t-select"
           >
             <div
-              class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                12 月
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  12 月
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -12884,46 +13008,50 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2020 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2020 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -12935,46 +13063,50 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  12 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    12 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -13722,46 +13854,50 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2020 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2020 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -13773,46 +13909,50 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  12 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    12 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -14564,46 +14704,50 @@ exports[`Calendar > :props > :range 1`] = `
           class="t-select__wrap"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-select-input t-select"
           >
             <div
-              class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                2020 年
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  2020 年
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -14615,46 +14759,50 @@ exports[`Calendar > :props > :range 1`] = `
           class="t-select__wrap"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-select-input t-select"
           >
             <div
-              class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                12 月
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  12 月
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -15406,46 +15554,50 @@ exports[`Calendar > :props > :theme 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-s t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-s t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2020 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2020 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -15457,46 +15609,50 @@ exports[`Calendar > :props > :theme 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-s t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-s t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  12 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    12 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -16221,46 +16377,50 @@ exports[`Calendar > :props > :theme 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2020 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2020 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -16272,46 +16432,50 @@ exports[`Calendar > :props > :theme 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  12 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    12 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -17063,46 +17227,50 @@ exports[`Calendar > :props > :value 1`] = `
           class="t-select__wrap"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-select-input t-select"
           >
             <div
-              class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                2020 年
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  2020 年
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -17114,46 +17282,50 @@ exports[`Calendar > :props > :value 1`] = `
           class="t-select__wrap"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-select-input t-select"
           >
             <div
-              class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                12 月
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  12 月
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -17905,46 +18077,50 @@ exports[`Calendar > :props > :week 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2020 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2020 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -17956,46 +18132,50 @@ exports[`Calendar > :props > :week 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  12 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    12 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -18729,46 +18909,50 @@ exports[`Calendar > :props > :week 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2020 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2020 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -18780,46 +18964,50 @@ exports[`Calendar > :props > :week 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  12 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    12 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -19572,46 +19760,50 @@ exports[`Calendar > :props > :year:month 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2000 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2000 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -19623,46 +19815,50 @@ exports[`Calendar > :props > :year:month 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  11 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    11 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -20410,46 +20606,50 @@ exports[`Calendar > :props > :year:month 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  2000 年
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    2000 年
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -20461,46 +20661,50 @@ exports[`Calendar > :props > :year:month 1`] = `
             class="t-select__wrap"
           >
             <div
-              class="t-input__wrap t-select"
+              class="t-select-input t-select"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+                class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input__prefix"
-                />
-                <input
-                  autocomplete=""
-                  class="t-input__inner"
-                  placeholder="请选择"
-                  readonly="readonly"
-                  type="text"
-                  unselectable="on"
-                />
-                <span
-                  class="t-input__input-pre"
+                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
                 >
-                  11 月
-                </span>
-                <span
-                  class="t-input__suffix t-input__suffix-icon"
-                >
-                  <svg
-                    class="t-fake-arrow t-select__right-icon"
-                    fill="none"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    class="t-input__prefix"
+                  />
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请选择"
+                    readonly="readonly"
+                    type="text"
+                    unselectable="on"
+                  />
+                  <span
+                    class="t-input__input-pre"
                   >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </span>
+                    11 月
+                  </span>
+                  <span
+                    class="t-input__suffix t-input__suffix-icon"
+                  >
+                    <svg
+                      class="t-fake-arrow t-select__right-icon"
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                        stroke="black"
+                        stroke-opacity="0.9"
+                        stroke-width="1.3"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -21252,46 +21456,50 @@ exports[`Calendar > <slot> > <cell> 1`] = `
           class="t-select__wrap"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-select-input t-select"
           >
             <div
-              class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                2020 年
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  2020 年
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -21303,46 +21511,50 @@ exports[`Calendar > <slot> > <cell> 1`] = `
           class="t-select__wrap"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-select-input t-select"
           >
             <div
-              class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                12 月
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  12 月
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -22093,46 +22305,50 @@ exports[`Calendar > <slot> > <cellAppend> 1`] = `
           class="t-select__wrap"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-select-input t-select"
           >
             <div
-              class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                2020 年
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  2020 年
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -22144,46 +22360,50 @@ exports[`Calendar > <slot> > <cellAppend> 1`] = `
           class="t-select__wrap"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-select-input t-select"
           >
             <div
-              class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                12 月
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  12 月
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -22934,46 +23154,50 @@ exports[`Calendar > <slot> > <head> 1`] = `
           class="t-select__wrap"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-select-input t-select"
           >
             <div
-              class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                2020 年
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  2020 年
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -22985,46 +23209,50 @@ exports[`Calendar > <slot> > <head> 1`] = `
           class="t-select__wrap"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-select-input t-select"
           >
             <div
-              class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                12 月
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  12 月
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -23775,46 +24003,50 @@ exports[`Calendar > <slot> > <week> 1`] = `
           class="t-select__wrap"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-select-input t-select"
           >
             <div
-              class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                2020 年
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  2020 年
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -23826,46 +24058,50 @@ exports[`Calendar > <slot> > <week> 1`] = `
           class="t-select__wrap"
         >
           <div
-            class="t-input__wrap t-select"
+            class="t-select-input t-select"
           >
             <div
-              class="t-input t-size-m t-is-default t-is-readonly t-input--auto-width t-input--prefix t-input--suffix"
+              class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input__prefix"
-              />
-              <input
-                autocomplete=""
-                class="t-input__inner"
-                placeholder="请选择"
-                readonly="readonly"
-                type="text"
-                unselectable="on"
-              />
-              <span
-                class="t-input__input-pre"
+                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
               >
-                12 月
-              </span>
-              <span
-                class="t-input__suffix t-input__suffix-icon"
-              >
-                <svg
-                  class="t-fake-arrow t-select__right-icon"
-                  fill="none"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  xmlns="http://www.w3.org/2000/svg"
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__input-pre"
                 >
-                  <path
-                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                    stroke="black"
-                    stroke-opacity="0.9"
-                    stroke-width="1.3"
-                  />
-                </svg>
-              </span>
+                  12 月
+                </span>
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </div>

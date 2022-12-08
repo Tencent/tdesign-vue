@@ -1,4 +1,6 @@
 import { VNode, CreateElement } from 'vue';
+import isString from 'lodash/isString';
+import isNumber from 'lodash/isNumber';
 import { JsxNode } from '../common';
 import props from './props';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
@@ -12,15 +14,16 @@ export default mixins(classPrefixMixins).extend({
   methods: {
     renderAddon(h: CreateElement, type: string, addon: string | Function | undefined): JsxNode {
       let addonNode: JsxNode;
+      const isContentNode = isString(addon) || isNumber(addon);
+
       if (this.$scopedSlots[type]) {
         addonNode = this.$scopedSlots[type](null);
-      } else if (typeof addon === 'string') {
-        addonNode = addon;
       } else if (typeof addon === 'function') {
         addonNode = addon(h);
       } else {
-        addonNode = null;
+        addonNode = isContentNode ? <span class={`${this.componentName}__text`}>{addon}</span> : addon;
       }
+
       return addonNode ? <span class={`${this.componentName}__${type}`}>{addonNode}</span> : addonNode;
     },
   },
@@ -28,20 +31,13 @@ export default mixins(classPrefixMixins).extend({
     const prepend = this.renderAddon(h, 'prepend', this.prepend);
     const append = this.renderAddon(h, 'append', this.append);
     const defaultSlot: VNode[] = this.$scopedSlots.default ? this.$scopedSlots.default(null) : [null];
-    const className = [
-      this.componentName,
-      {
-        [`${this.componentName}--prepend`]: prepend,
-        [`${this.componentName}--append`]: append,
-      },
-    ];
 
     if (!prepend && !append) {
       return defaultSlot[0];
     }
 
     return (
-      <div class={className}>
+      <div class={this.componentName}>
         {prepend}
         {defaultSlot[0]}
         {append}

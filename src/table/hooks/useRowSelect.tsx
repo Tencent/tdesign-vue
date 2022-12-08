@@ -102,12 +102,21 @@ export default function useRowSelect(
     );
   }
 
+  function getRowSelectDisabledData(p: PrimaryTableCellParams<TableRowData>) {
+    const { col, row, rowIndex } = p;
+    const disabled: boolean = typeof col.disabled === 'function' ? col.disabled({ row, rowIndex }) : col.disabled;
+    const checkProps = isFunction(col.checkProps) ? col.checkProps({ row, rowIndex }) : col.checkProps;
+    return {
+      disabled: disabled || checkProps?.disabled,
+      checkProps,
+    };
+  }
+
   // eslint-disable-next-line
   function renderSelectCell(h: CreateElement, p: PrimaryTableCellParams<TableRowData>) {
-    const { col: column, row = {}, rowIndex } = p;
+    const { col: column, row = {} } = p;
     const checked = tSelectedRowKeys.value.includes(get(row, props.rowKey || 'id'));
-    const disabled = typeof column.disabled === 'function' ? column.disabled({ row, rowIndex }) : column.disabled;
-    const checkProps = isFunction(column.checkProps) ? column.checkProps({ row, rowIndex }) : column.checkProps;
+    const { disabled, checkProps } = getRowSelectDisabledData(p);
     const selectBoxProps = {
       props: {
         checked,
@@ -115,7 +124,7 @@ export default function useRowSelect(
         ...checkProps,
       },
       on: {
-        click: (e: MouseEvent) => {
+        click: ({ e }: { e: MouseEvent }) => {
           // 选中行功能中，点击 checkbox/radio 需阻止事件冒泡，避免触发不必要的 onRowClick
           e?.stopPropagation();
         },
@@ -179,6 +188,18 @@ export default function useRowSelect(
     };
   }
 
+  const onInnerSelectRowClick: TdPrimaryTableProps['onRowClick'] = ({ row, index }) => {
+    const selectedColIndex = props.columns.findIndex((item) => item.colKey === 'row-select');
+    const { disabled } = getRowSelectDisabledData({
+      row,
+      rowIndex: index,
+      col: props.columns[selectedColIndex],
+      colIndex: selectedColIndex,
+    });
+    if (disabled) return;
+    handleSelectChange(row);
+  };
+
   watch(
     () => [[...data.value], rowKey],
     () => {
@@ -194,5 +215,6 @@ export default function useRowSelect(
     currentPaginateData,
     setTSelectedRowKeys,
     formatToRowSelectColumn,
+    onInnerSelectRowClick,
   };
 }

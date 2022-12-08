@@ -80,6 +80,7 @@ export default defineComponent({
             }}
             v-model={this.formatModel}
             onChange={handleModeChange}
+            disabled={this.disabled}
           >
             {formats.map((item) => (
               <t-option key={item} value={item} label={upperCase(item)} style={{ fontSize: '12px' }} />

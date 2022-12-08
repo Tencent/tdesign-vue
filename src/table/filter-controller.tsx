@@ -3,8 +3,7 @@ import { CreateElement } from 'vue';
 import { FilterIcon as TdFilterIcon } from 'tdesign-icons-vue';
 import isEmpty from 'lodash/isEmpty';
 import lowerFirst from 'lodash/lowerFirst';
-
-import Popup from '../popup';
+import Popup, { PopupProps } from '../popup';
 import { CheckboxGroup } from '../checkbox';
 import { RadioGroup } from '../radio';
 import Input from '../input';
@@ -36,6 +35,7 @@ export interface TableFilterControllerProps {
   isFocusClass: string;
   column: PrimaryTableCol;
   primaryTableElement: HTMLDivElement;
+  popupProps: PopupProps;
 }
 
 export default defineComponent({
@@ -48,6 +48,7 @@ export default defineComponent({
     tableFilterClasses: Object as PropType<TableFilterControllerProps['tableFilterClasses']>,
     isFocusClass: String,
     primaryTableElement: {},
+    popupProps: Object as PropType<TableFilterControllerProps['popupProps']>,
   },
 
   // eslint-disable-next-line
@@ -180,7 +181,7 @@ export default defineComponent({
       );
     };
 
-    const { column, FilterIcon } = this;
+    const { column, FilterIcon, popupProps } = this;
     if (!column.filter || (column.filter && !Object.keys(column.filter).length)) return null;
     const defaultFilterIcon = this.t(this.global.filterIcon) || <FilterIcon />;
     const filterValue = this.tFilterValue?.[column.colKey];
@@ -210,6 +211,7 @@ export default defineComponent({
             {getBottomButtons(h, column)}
           </div>
         )}
+        props={popupProps}
       >
         <div ref="triggerElementRef">{this.renderTNode('filterIcon', defaultFilterIcon)}</div>
       </Popup>
