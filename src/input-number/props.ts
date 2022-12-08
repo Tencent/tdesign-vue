@@ -103,7 +103,6 @@ export default {
   /** 数字输入框的值。当值为 '' 时，输入框显示为空 */
   value: {
     type: [String, Number] as PropType<TdInputNumberProps['value']>,
-    default: undefined,
   },
   /** 数字输入框的值。当值为 '' 时，输入框显示为空，非受控属性 */
   defaultValue: {
@@ -111,7 +110,7 @@ export default {
   },
   /** 失去焦点时触发 */
   onBlur: Function as PropType<TdInputNumberProps['onBlur']>,
-  /** 值变化时触发 */
+  /** 值变化时触发，`type` 表示触发本次变化的来源 */
   onChange: Function as PropType<TdInputNumberProps['onChange']>,
   /** 回车键按下时触发 */
   onEnter: Function as PropType<TdInputNumberProps['onEnter']>,
