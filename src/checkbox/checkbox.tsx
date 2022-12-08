@@ -69,7 +69,7 @@ export default mixins(classPrefixMixins, Vue as VueConstructor<CheckboxInstance>
 
   render(): VNode {
     return (
-      <label class={this.labelClasses} title={this.$attrs.title}>
+      <label class={this.labelClasses} title={this.$attrs.title} onClick={this.handleClick}>
         <input
           type="checkbox"
           on={{ ...omit(this.$listeners, ['checked', 'change']) }}
@@ -96,6 +96,11 @@ export default mixins(classPrefixMixins, Vue as VueConstructor<CheckboxInstance>
       // 在tree等组件中使用  阻止label触发checked 与expand冲突
       if (this.stopLabelTrigger) e.preventDefault();
     },
+
+    handleClick(e: MouseEvent) {
+      this.$emit('click', { e });
+    },
+
     handleChange(e: Event) {
       const value = !this.checked$;
       emitEvent<Parameters<TdCheckboxProps['onChange']>>(this, 'change', value, { e });

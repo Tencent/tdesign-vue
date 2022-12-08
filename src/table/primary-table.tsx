@@ -37,6 +37,7 @@ const OMIT_PROPS = [
   'multipleSort',
   'expandIcon',
   'reserveSelectedRowOnPaginate',
+  'selectOnRowClick',
   'onChange',
   'onAsyncLoadingClick',
   'onChange',
@@ -77,11 +78,12 @@ export default defineComponent({
     const { renderSortIcon } = useSorter(props, context);
     // 行选中功能
     const {
-      selectedRowClassNames, currentPaginateData, formatToRowSelectColumn, setTSelectedRowKeys,
-    } = useRowSelect(
-      props,
-      tableSelectedClasses,
-    );
+      selectedRowClassNames,
+      currentPaginateData,
+      formatToRowSelectColumn,
+      setTSelectedRowKeys,
+      onInnerSelectRowClick,
+    } = useRowSelect(props, tableSelectedClasses);
     // 过滤功能
     const {
       hasEmptyCondition,
@@ -258,6 +260,11 @@ export default defineComponent({
       }
     };
 
+    const onInnerRowClick: TdPrimaryTableProps['onRowClick'] = (context) => {
+      onInnerExpandRowClick(context);
+      onInnerSelectRowClick(context);
+    };
+
     return {
       tColumns,
       showExpandedRow,
@@ -274,6 +281,7 @@ export default defineComponent({
       renderColumnController,
       renderExpandedRow,
       onInnerExpandRowClick,
+      onInnerRowClick,
       renderFirstFilterRow,
       renderAsyncLoading,
       onInnerPageChange,
@@ -348,8 +356,8 @@ export default defineComponent({
       ...this.getListener(),
       'page-change': this.onInnerPageChange,
     };
-    if (this.expandOnRowClick) {
-      on['row-click'] = this.onInnerExpandRowClick;
+    if (this.expandOnRowClick || this.selectOnRowClick) {
+      on['row-click'] = this.onInnerRowClick;
     }
     on.LeafColumnsChange = this.setDragSortColumns;
     // replace `scopedSlots={this.$scopedSlots}` of `v-slots={this.$slots}` in Vue3
