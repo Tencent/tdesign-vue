@@ -20,6 +20,7 @@ import { emitEvent } from '../utils/event';
 import { ClassName, Styles } from '../common';
 import { updateElement } from '../hooks/useDestroyOnClose';
 import stack from './stack';
+import { getScrollbarWidth } from '../utils/dom';
 
 function getCSSValue(v: string | number) {
   return isNaN(Number(v)) ? v : `${Number(v)}px`;
@@ -181,7 +182,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     },
   },
   mounted() {
-    this.scrollWidth = window.innerWidth - document.body.offsetWidth;
+    const hasScrollBar = document.body.scrollHeight > document.body.clientHeight;
+    const scrollWidth = hasScrollBar ? getScrollbarWidth() : 0;
+
     if (this.draggable) {
       window.addEventListener('resize', throttle(this.resizeAdjustPosition, 1000));
     }
@@ -192,7 +195,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     this.styleEl.innerHTML = `
       html body {
         overflow-y: hidden;
-        width: calc(100% - ${this.scrollWidth}px);
+        width: calc(100% - ${scrollWidth}px);
       }
     `;
 
