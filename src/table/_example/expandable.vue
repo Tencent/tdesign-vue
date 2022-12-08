@@ -188,6 +188,7 @@ export default {
 }
 
 /deep/ .more-detail {
+  line-height: 22px;
   > p {
     display: inline-block;
     margin: 5px;

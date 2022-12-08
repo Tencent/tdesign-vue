@@ -333,7 +333,7 @@ export default defineComponent({
           }}
         >
           {this.cellNode}
-          {this.col.edit?.showEditIcon !== false && <Edit1Icon size="12px" />}
+          {this.col.edit?.showEditIcon !== false && <Edit1Icon />}
         </div>
       );
     }

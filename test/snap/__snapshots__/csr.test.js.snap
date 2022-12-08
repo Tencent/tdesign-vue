@@ -218,7 +218,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/base.vue 1`] = `
 </div>
 `;
 
-exports[`csr snapshot test > csr test ./src/alert/_example/collapse.vue 1`] = `
+exports[`csr snapshot test > csr test ./src/alert/_example/close.vue 1`] = `
 <div
   class="t-space t-space-vertical"
   style="gap: 16px; width: 100%;"
@@ -410,7 +410,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/collapse.vue 1`] = `
 </div>
 `;
 
-exports[`csr snapshot test > csr test ./src/alert/_example/collapse.vue 2`] = `
+exports[`csr snapshot test > csr test ./src/alert/_example/collapse.vue 1`] = `
 <div
   class="t-space t-space-horizontal"
   style="gap: 16px; width: 100%;"
@@ -5594,9 +5594,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/base.vue 1`] = `
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -5652,9 +5649,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/base.vue 1`] = `
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -6455,9 +6449,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/card.vue 1`] = `
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -6570,9 +6561,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/card.vue 1`] = `
                     </span>
                   </div>
                 </div>
-                <div
-                  class="t-input__tips t-input__tips--default"
-                />
               </div>
             </div>
           </div>
@@ -6628,9 +6616,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/card.vue 1`] = `
                     </span>
                   </div>
                 </div>
-                <div
-                  class="t-input__tips t-input__tips--default"
-                />
               </div>
             </div>
           </div>
@@ -7405,9 +7390,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/cell.vue 1`] = `
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -7463,9 +7445,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/cell.vue 1`] = `
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -8298,9 +8277,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/cell-append.vue 1`
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -8356,9 +8332,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/cell-append.vue 1`
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -9455,9 +9428,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/controller-config.
                   </span>
                 </div>
               </div>
-              <div
-                class="t-input__tips t-input__tips--default"
-              />
             </div>
           </div>
         </div>
@@ -9514,9 +9484,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/controller-config.
                   </span>
                 </div>
               </div>
-              <div
-                class="t-input__tips t-input__tips--default"
-              />
             </div>
           </div>
         </div>
@@ -10318,9 +10285,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/events.vue 1`] = `
                   </span>
                 </div>
               </div>
-              <div
-                class="t-input__tips t-input__tips--default"
-              />
             </div>
           </div>
         </div>
@@ -10376,9 +10340,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/events.vue 1`] = `
                   </span>
                 </div>
               </div>
-              <div
-                class="t-input__tips t-input__tips--default"
-              />
             </div>
           </div>
         </div>
@@ -11180,9 +11141,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/first-day-of-week.
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -11256,9 +11214,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/first-day-of-week.
                     </span>
                   </div>
                 </div>
-                <div
-                  class="t-input__tips t-input__tips--default"
-                />
               </div>
             </div>
           </div>
@@ -11314,9 +11269,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/first-day-of-week.
                     </span>
                   </div>
                 </div>
-                <div
-                  class="t-input__tips t-input__tips--default"
-                />
               </div>
             </div>
           </div>
@@ -12233,9 +12185,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/head.vue 1`] = `
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -12291,9 +12240,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/head.vue 1`] = `
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -13077,9 +13023,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/mode.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -13151,9 +13094,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/mode.vue 1`] = `
                     </span>
                   </div>
                 </div>
-                <div
-                  class="t-input__tips t-input__tips--default"
-                />
               </div>
             </div>
           </div>
@@ -13508,9 +13448,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/range.vue 1`] = `
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -13566,9 +13503,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/range.vue 1`] = `
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -14367,9 +14301,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/slot-props-api.vue
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -14425,9 +14356,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/slot-props-api.vue
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -15248,9 +15176,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/value.vue 1`] = `
                     </span>
                   </div>
                 </div>
-                <div
-                  class="t-input__tips t-input__tips--default"
-                />
               </div>
             </div>
           </div>
@@ -15306,9 +15231,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/value.vue 1`] = `
                     </span>
                   </div>
                 </div>
-                <div
-                  class="t-input__tips t-input__tips--default"
-                />
               </div>
             </div>
           </div>
@@ -16232,9 +16154,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/value.vue 1`] = `
                     </span>
                   </div>
                 </div>
-                <div
-                  class="t-input__tips t-input__tips--default"
-                />
               </div>
             </div>
           </div>
@@ -16290,9 +16209,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/value.vue 1`] = `
                     </span>
                   </div>
                 </div>
-                <div
-                  class="t-input__tips t-input__tips--default"
-                />
               </div>
             </div>
           </div>
@@ -17222,9 +17138,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/week.vue 1`] = `
                       </span>
                     </div>
                   </div>
-                  <div
-                    class="t-input__tips t-input__tips--default"
-                  />
                 </div>
               </div>
             </div>
@@ -17280,9 +17193,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/week.vue 1`] = `
                       </span>
                     </div>
                   </div>
-                  <div
-                    class="t-input__tips t-input__tips--default"
-                  />
                 </div>
               </div>
             </div>
@@ -18076,9 +17986,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/week.vue 1`] = `
                       </span>
                     </div>
                   </div>
-                  <div
-                    class="t-input__tips t-input__tips--default"
-                  />
                 </div>
               </div>
             </div>
@@ -18134,9 +18041,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/week.vue 1`] = `
                       </span>
                     </div>
                   </div>
-                  <div
-                    class="t-input__tips t-input__tips--default"
-                  />
                 </div>
               </div>
             </div>
@@ -18930,9 +18834,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/week.vue 1`] = `
                       </span>
                     </div>
                   </div>
-                  <div
-                    class="t-input__tips t-input__tips--default"
-                  />
                 </div>
               </div>
             </div>
@@ -18988,9 +18889,6 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/week.vue 1`] = `
                       </span>
                     </div>
                   </div>
-                  <div
-                    class="t-input__tips t-input__tips--default"
-                  />
                 </div>
               </div>
             </div>
@@ -21146,9 +21044,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/base.vue 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -21201,9 +21096,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/check-strictly.vue
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -21286,9 +21178,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/check-strictly.vue
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>
@@ -21366,9 +21255,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/collapsed.vue 1`] 
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -21436,9 +21322,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/collapsed.vue 1`] 
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -21506,9 +21389,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/collapsed.vue 1`] 
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>
@@ -21565,9 +21445,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/disabled.vue 1`] =
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -21618,9 +21495,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/disabled.vue 1`] =
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>
@@ -21675,9 +21549,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/ellipsis.vue 1`] =
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -21740,9 +21611,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/ellipsis.vue 1`] =
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>
@@ -21796,9 +21664,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/filterable.vue 1`]
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -21868,9 +21733,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/filterable.vue 1`]
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -21916,9 +21778,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/filterable.vue 1`]
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>
@@ -21973,9 +21832,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/keys.vue 1`] = `
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -22038,9 +21894,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/keys.vue 1`] = `
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>
@@ -22088,9 +21941,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/load.vue 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -22141,9 +21991,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/max.vue 1`] = `
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -22205,9 +22052,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/multiple.vue 1`] =
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -22428,9 +22272,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/show-all-levels.vu
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -22482,9 +22323,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/show-all-levels.vu
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>
@@ -22539,9 +22377,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/size.vue 1`] = `
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -22588,9 +22423,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/size.vue 1`] = `
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -22637,9 +22469,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/size.vue 1`] = `
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>
@@ -22694,9 +22523,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/trigger.vue 1`] = 
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -22743,9 +22569,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/trigger.vue 1`] = 
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>
@@ -22805,9 +22628,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/value-mode.vue 1`]
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -22859,9 +22679,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/value-mode.vue 1`]
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -22913,9 +22730,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/value-mode.vue 1`]
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>
@@ -22980,9 +22794,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/value-type.vue 1`]
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -23081,9 +22892,6 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/value-type.vue 1`]
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>
@@ -26344,9 +26152,6 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/enable-alpha.v
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -27113,9 +26918,6 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
                         </span>
                       </div>
                     </div>
-                    <div
-                      class="t-input__tips t-input__tips--default"
-                    />
                   </div>
                 </div>
               </div>
@@ -27946,9 +27748,6 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
                         </span>
                       </div>
                     </div>
-                    <div
-                      class="t-input__tips t-input__tips--default"
-                    />
                   </div>
                 </div>
               </div>
@@ -28724,9 +28523,6 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/recent-color.v
                         </span>
                       </div>
                     </div>
-                    <div
-                      class="t-input__tips t-input__tips--default"
-                    />
                   </div>
                 </div>
               </div>
@@ -29640,9 +29436,6 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/recent-color.v
                         </span>
                       </div>
                     </div>
-                    <div
-                      class="t-input__tips t-input__tips--default"
-                    />
                   </div>
                 </div>
               </div>
@@ -30437,9 +30230,6 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-readonl
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -31243,9 +31033,6 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
                         </span>
                       </div>
                     </div>
-                    <div
-                      class="t-input__tips t-input__tips--default"
-                    />
                   </div>
                 </div>
               </div>
@@ -31622,9 +31409,6 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
                         </span>
                       </div>
                     </div>
-                    <div
-                      class="t-input__tips t-input__tips--default"
-                    />
                   </div>
                 </div>
               </div>
@@ -32777,9 +32561,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/calendar.vu
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -32836,9 +32617,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/calendar.vu
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -33617,9 +33395,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/date-picker
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <br
@@ -33672,9 +33447,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/date-picker
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <br
@@ -33726,9 +33498,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/date-picker
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <br
@@ -33781,9 +33550,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/date-picker
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <br
@@ -33835,9 +33601,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/date-picker
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <br
@@ -33890,9 +33653,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/date-picker
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <br
@@ -35254,9 +35014,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <br
@@ -35311,9 +35068,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <br
@@ -35377,9 +35131,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <br
@@ -35431,9 +35182,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
         </span>
       </div>
     </div>
-    <div
-      class="t-input__tips t-input__tips--default"
-    />
   </div>
   <br
     data-v-96b659ea=""
@@ -35484,9 +35232,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
         </span>
       </div>
     </div>
-    <div
-      class="t-input__tips t-input__tips--default"
-    />
   </div>
   <br
     data-v-96b659ea=""
@@ -35537,9 +35282,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
         </span>
       </div>
     </div>
-    <div
-      class="t-input__tips t-input__tips--default"
-    />
   </div>
   <br
     data-v-96b659ea=""
@@ -35599,9 +35341,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
         </span>
       </div>
     </div>
-    <div
-      class="t-input__tips t-input__tips--default"
-    />
   </div>
   <br
     data-v-96b659ea=""
@@ -35651,9 +35390,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
         </span>
       </div>
     </div>
-    <div
-      class="t-input__tips t-input__tips--default"
-    />
   </div>
   <br
     data-v-96b659ea=""
@@ -35708,9 +35444,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <br
@@ -36191,9 +35924,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/pagination.
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -37094,9 +36824,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/base.vue 1`] = 
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -37144,9 +36871,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/base.vue 1`] = 
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -37230,9 +36954,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/custom-icon.vue
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -37596,9 +37317,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-time.vue 1
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -37646,9 +37364,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-time.vue 1
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -37705,9 +37420,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/disable-date.vu
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -37756,9 +37468,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/disable-date.vu
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -37807,9 +37516,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/disable-date.vu
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -37858,9 +37564,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/disable-date.vu
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -37909,9 +37612,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/disable-date.vu
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -38180,9 +37880,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/first-day-of-we
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -38238,9 +37935,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/month.vue 1`] =
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -38389,9 +38083,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                         </span>
                       </div>
                     </div>
-                    <div
-                      class="t-input__tips t-input__tips--default"
-                    />
                   </div>
                 </div>
                 <div
@@ -38438,9 +38129,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                         </span>
                       </div>
                     </div>
-                    <div
-                      class="t-input__tips t-input__tips--default"
-                    />
                   </div>
                 </div>
               </div>
@@ -39012,9 +38700,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                         </span>
                       </div>
                     </div>
-                    <div
-                      class="t-input__tips t-input__tips--default"
-                    />
                   </div>
                 </div>
                 <div
@@ -39061,9 +38746,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                         </span>
                       </div>
                     </div>
-                    <div
-                      class="t-input__tips t-input__tips--default"
-                    />
                   </div>
                 </div>
               </div>
@@ -39679,9 +39361,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                           </span>
                         </div>
                       </div>
-                      <div
-                        class="t-input__tips t-input__tips--default"
-                      />
                     </div>
                   </div>
                   <div
@@ -39728,9 +39407,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                           </span>
                         </div>
                       </div>
-                      <div
-                        class="t-input__tips t-input__tips--default"
-                      />
                     </div>
                   </div>
                 </div>
@@ -40289,9 +39965,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                           </span>
                         </div>
                       </div>
-                      <div
-                        class="t-input__tips t-input__tips--default"
-                      />
                     </div>
                   </div>
                   <div
@@ -40338,9 +40011,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                           </span>
                         </div>
                       </div>
-                      <div
-                        class="t-input__tips t-input__tips--default"
-                      />
                     </div>
                   </div>
                 </div>
@@ -40916,9 +40586,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                           </span>
                         </div>
                       </div>
-                      <div
-                        class="t-input__tips t-input__tips--default"
-                      />
                     </div>
                   </div>
                   <div
@@ -40965,9 +40632,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
                           </span>
                         </div>
                       </div>
-                      <div
-                        class="t-input__tips t-input__tips--default"
-                      />
                     </div>
                   </div>
                 </div>
@@ -41568,9 +41232,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/quarter.vue 1`]
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -41698,9 +41359,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/week.vue 1`] = 
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -41828,9 +41486,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/year.vue 1`] = 
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -48559,9 +48214,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -49111,9 +48763,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                     </span>
                   </div>
                 </div>
-                <div
-                  class="t-input__tips t-input__tips--default"
-                />
               </div>
             </div>
           </div>
@@ -49181,9 +48830,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                   </span>
                 </div>
               </div>
-              <div
-                class="t-input__tips t-input__tips--default"
-              />
             </div>
           </div>
         </div>
@@ -49251,9 +48897,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                   </span>
                 </div>
               </div>
-              <div
-                class="t-input__tips t-input__tips--default"
-              />
             </div>
           </div>
         </div>
@@ -49321,9 +48964,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                     </span>
                   </div>
                 </div>
-                <div
-                  class="t-input__tips t-input__tips--default"
-                />
               </div>
             </div>
           </div>
@@ -50289,9 +49929,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
                     </span>
                   </div>
                 </div>
-                <div
-                  class="t-input__tips t-input__tips--default"
-                />
               </div>
             </div>
           </div>
@@ -52666,9 +52303,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
               </span>
             </div>
           </div>
-          <div
-            class="t-input__tips t-input__tips--default"
-          />
         </div>
       </div>
     </div>
@@ -53008,9 +52642,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -53080,9 +52711,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </div>
@@ -53229,9 +52857,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
               </span>
             </div>
           </div>
-          <div
-            class="t-input__tips t-input__tips--default"
-          />
         </div>
       </div>
     </div>
@@ -55530,9 +55155,6 @@ exports[`csr snapshot test > csr test ./src/icon/_example/icon-select.vue 1`] = 
         </span>
       </div>
     </div>
-    <div
-      class="t-input__tips t-input__tips--default"
-    />
   </div>
 </div>
 `;
@@ -59573,9 +59195,6 @@ exports[`csr snapshot test > csr test ./src/input-adornment/_example/select.vue 
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </span>
@@ -59677,9 +59296,6 @@ exports[`csr snapshot test > csr test ./src/input-adornment/_example/select.vue 
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </span>
@@ -59743,9 +59359,6 @@ exports[`csr snapshot test > csr test ./src/input-adornment/_example/select.vue 
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </span>
@@ -59793,9 +59406,6 @@ exports[`csr snapshot test > csr test ./src/input-adornment/_example/select.vue 
               </span>
             </div>
           </div>
-          <div
-            class="t-input__tips t-input__tips--default"
-          />
         </div>
       </div>
       <span
@@ -59850,9 +59460,6 @@ exports[`csr snapshot test > csr test ./src/input-adornment/_example/select.vue 
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
       </span>
@@ -72215,9 +71822,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/base.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
     <div
@@ -72358,9 +71962,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/base.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
     <div
@@ -72519,9 +72120,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/customizable.vue
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
     <div
@@ -72715,9 +72313,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/disabled.vue 1`]
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
     <div
@@ -72907,9 +72502,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/few.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
     <div
@@ -73038,9 +72630,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/jump.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
     <div
@@ -73212,9 +72801,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/mini.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
     <div
@@ -73380,9 +72966,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/more.vue 1`] = `
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
         <div
@@ -73561,9 +73144,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/more.vue 1`] = `
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
         <div
@@ -73695,9 +73275,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/page-num.vue 1`]
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
     <div
@@ -74068,9 +73645,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/simple.vue 1`] =
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
     <div
@@ -74207,9 +73781,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/simple-mini.vue 
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -74346,9 +73917,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/total.vue 1`] = 
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
     <div
@@ -81774,9 +81342,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/base.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -81827,9 +81392,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/base.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -81911,9 +81473,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/collapsed.vue 1`] = 
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -81985,9 +81544,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/collapsed.vue 1`] = 
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -82059,9 +81615,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/collapsed.vue 1`] = 
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -82120,9 +81673,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/creatable.vue 1`] = 
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -82178,9 +81728,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/creatable.vue 1`] = 
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -82240,9 +81787,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/custom-options.vue 1
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -82304,9 +81848,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/custom-options.vue 1
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -82421,9 +81962,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/custom-selected.vue 
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -82550,9 +82088,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/custom-selected.vue 
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -82612,9 +82147,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/disabled.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -82676,9 +82208,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/disabled.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -82737,9 +82266,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/filterable.vue 1`] =
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -82795,9 +82321,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/filterable.vue 1`] =
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -82855,9 +82378,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/group.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -82907,9 +82427,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/group.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -82969,9 +82486,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/label-in-value.vue 1
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -83039,9 +82553,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/label-in-value.vue 1
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -83099,9 +82610,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/max.vue 1`] = `
         </span>
       </div>
     </div>
-    <div
-      class="t-input__tips t-input__tips--default"
-    />
   </div>
 </div>
 `;
@@ -83194,9 +82702,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -83363,9 +82868,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -83459,9 +82961,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -83521,9 +83020,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/noborder.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -83579,9 +83075,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/noborder.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -83642,9 +83135,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/panel.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -83696,9 +83186,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/panel.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -83758,9 +83245,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/popup-props.vue 1`] 
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -83812,9 +83296,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/popup-props.vue 1`] 
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -83876,9 +83357,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/prefix.vue 1`] = `
         </span>
       </div>
     </div>
-    <div
-      class="t-input__tips t-input__tips--default"
-    />
   </div>
 </div>
 `;
@@ -83935,9 +83413,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/remote-search.vue 1`
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -83993,9 +83468,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/remote-search.vue 1`
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -84055,9 +83527,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/size.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -84109,9 +83578,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/size.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -84163,9 +83629,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/size.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -84224,9 +83687,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/status.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -84278,9 +83738,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/status.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -84340,9 +83797,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/status.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -84395,9 +83849,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/virtual-scroll.vue 1
         </span>
       </div>
     </div>
-    <div
-      class="t-input__tips t-input__tips--default"
-    />
   </div>
 </div>
 `;
@@ -84445,9 +83896,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/autocomplete.v
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -84498,9 +83946,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/autowidth.vue 
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -84577,9 +84022,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/autowidth-mult
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -84608,9 +84050,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/borderless.vue
       />
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -84669,9 +84108,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/borderless-mul
       />
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -84735,9 +84171,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/collapsed-item
           />
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -84815,9 +84248,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/collapsed-item
           />
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -84915,9 +84345,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/collapsed-item
           />
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>
@@ -84978,9 +84405,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/custom-tag.vue
           />
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -85087,9 +84511,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/custom-tag.vue
           />
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -85255,9 +84676,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/custom-tag.vue
           />
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>
@@ -85423,9 +84841,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/excess-tags-di
           />
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -85583,9 +84998,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/excess-tags-di
           />
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>
@@ -85645,9 +85057,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/label-suffix.v
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -85701,9 +85110,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/label-suffix.v
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>
@@ -85914,9 +85320,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/multiple.vue 1
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>
@@ -85965,9 +85368,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/single.vue 1`]
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -86199,9 +85599,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/width.vue 1`] 
             />
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -86234,9 +85631,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/width.vue 1`] 
             />
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -86269,9 +85663,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/width.vue 1`] 
             />
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -86304,9 +85695,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/width.vue 1`] 
             />
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -92508,9 +91896,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
                   </span>
                 </div>
               </div>
-              <div
-                class="t-input__tips t-input__tips--default"
-              />
             </div>
           </div>
           <div
@@ -93702,9 +93087,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                     </span>
                   </div>
                 </div>
-                <div
-                  class="t-input__tips t-input__tips--default"
-                />
               </div>
             </div>
             <div
@@ -94595,9 +93977,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col.vue 1`] = 
                   </span>
                 </div>
               </div>
-              <div
-                class="t-input__tips t-input__tips--default"
-              />
             </div>
           </div>
           <div
@@ -95292,9 +94671,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col-button.vue
                   </span>
                 </div>
               </div>
-              <div
-                class="t-input__tips t-input__tips--default"
-              />
             </div>
           </div>
           <div
@@ -97855,7 +97231,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-cell.vue 1`]
                   class="t-icon t-icon-edit-1"
                   fill="none"
                   height="1em"
-                  style="font-size: 12px;"
                   viewBox="0 0 16 16"
                   width="1em"
                 >
@@ -97882,7 +97257,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-cell.vue 1`]
                   class="t-icon t-icon-edit-1"
                   fill="none"
                   height="1em"
-                  style="font-size: 12px;"
                   viewBox="0 0 16 16"
                   width="1em"
                 >
@@ -97909,7 +97283,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-cell.vue 1`]
                   class="t-icon t-icon-edit-1"
                   fill="none"
                   height="1em"
-                  style="font-size: 12px;"
                   viewBox="0 0 16 16"
                   width="1em"
                 >
@@ -97964,7 +97337,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-cell.vue 1`]
                   class="t-icon t-icon-edit-1"
                   fill="none"
                   height="1em"
-                  style="font-size: 12px;"
                   viewBox="0 0 16 16"
                   width="1em"
                 >
@@ -97991,7 +97363,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-cell.vue 1`]
                   class="t-icon t-icon-edit-1"
                   fill="none"
                   height="1em"
-                  style="font-size: 12px;"
                   viewBox="0 0 16 16"
                   width="1em"
                 >
@@ -98018,7 +97389,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-cell.vue 1`]
                   class="t-icon t-icon-edit-1"
                   fill="none"
                   height="1em"
-                  style="font-size: 12px;"
                   viewBox="0 0 16 16"
                   width="1em"
                 >
@@ -98105,7 +97475,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-cell.vue 1`]
                   class="t-icon t-icon-edit-1"
                   fill="none"
                   height="1em"
-                  style="font-size: 12px;"
                   viewBox="0 0 16 16"
                   width="1em"
                 >
@@ -98132,7 +97501,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-cell.vue 1`]
                   class="t-icon t-icon-edit-1"
                   fill="none"
                   height="1em"
-                  style="font-size: 12px;"
                   viewBox="0 0 16 16"
                   width="1em"
                 >
@@ -98159,7 +97527,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-cell.vue 1`]
                   class="t-icon t-icon-edit-1"
                   fill="none"
                   height="1em"
-                  style="font-size: 12px;"
                   viewBox="0 0 16 16"
                   width="1em"
                 >
@@ -98214,7 +97581,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-cell.vue 1`]
                   class="t-icon t-icon-edit-1"
                   fill="none"
                   height="1em"
-                  style="font-size: 12px;"
                   viewBox="0 0 16 16"
                   width="1em"
                 >
@@ -98241,7 +97607,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-cell.vue 1`]
                   class="t-icon t-icon-edit-1"
                   fill="none"
                   height="1em"
-                  style="font-size: 12px;"
                   viewBox="0 0 16 16"
                   width="1em"
                 >
@@ -98268,7 +97633,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-cell.vue 1`]
                   class="t-icon t-icon-edit-1"
                   fill="none"
                   height="1em"
-                  style="font-size: 12px;"
                   viewBox="0 0 16 16"
                   width="1em"
                 >
@@ -98480,9 +97844,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-row.vue 1`] 
                         </span>
                       </div>
                     </div>
-                    <div
-                      class="t-input__tips t-input__tips--default"
-                    />
                   </div>
                 </div>
               </div>
@@ -98512,7 +97873,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-row.vue 1`] 
                             class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
                           >
                             <span>
-                              激励奖品快递费
+                              宣传物料制作费用
                             </span>
                             <svg
                               class="t-icon t-icon-close t-tag__icon-close"
@@ -98553,9 +97914,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-row.vue 1`] 
                         </span>
                       </div>
                     </div>
-                    <div
-                      class="t-input__tips t-input__tips--default"
-                    />
                   </div>
                 </div>
               </div>
@@ -98608,9 +97966,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-row.vue 1`] 
                         </span>
                       </div>
                     </div>
-                    <div
-                      class="t-input__tips t-input__tips--default"
-                    />
                   </div>
                 </div>
               </div>
@@ -98665,7 +98020,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-row.vue 1`] 
               <div
                 class="t-table__cell--editable"
               >
-                相关周边制作费、激励奖品快递费
+                宣传物料制作费用
               </div>
             </td>
             <td
@@ -98720,7 +98075,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-row.vue 1`] 
               <div
                 class="t-table__cell--editable"
               >
-                相关周边制作费
+                宣传物料制作费用
               </div>
             </td>
             <td
@@ -98775,7 +98130,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-row.vue 1`] 
               <div
                 class="t-table__cell--editable"
               >
-                激励奖品快递费、相关周边制作费
+                宣传物料制作费用、algolia 服务报销
               </div>
             </td>
             <td
@@ -98830,7 +98185,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-row.vue 1`] 
               <div
                 class="t-table__cell--editable"
               >
-                激励奖品快递费
+                宣传物料制作费用
               </div>
             </td>
             <td
@@ -103256,7 +102611,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
     </label>
   </div>
   <div
-    class="t-table t-table--bordered t-table--column-resizable"
+    class="t-table t-table--bordered t-table--column-fixed t-table--column-resizable"
     data-v-4344bc5a=""
     style="position: relative;"
   >
@@ -103274,9 +102629,11 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
           <col
             style="width: 120px;"
           />
+          <col />
           <col
             style="width: 150px;"
           />
+          <col />
           <col
             style="width: 120px;"
           />
@@ -103309,6 +102666,16 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               </div>
             </th>
             <th
+              class="t-table__th-channel"
+              data-colkey="channel"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                签署方式
+              </div>
+            </th>
+            <th
               class="t-table__th-matters"
               data-colkey="matters"
             >
@@ -103316,6 +102683,16 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
                 class="t-table__th-cell-inner"
               >
                 申请事项
+              </div>
+            </th>
+            <th
+              class="t-table__th-detail.email"
+              data-colkey="detail.email"
+            >
+              <div
+                class="t-table__th-cell-inner"
+              >
+                邮箱地址
               </div>
             </th>
             <th
@@ -103378,7 +102755,17 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
             <td
               class=""
             >
+              电子签署
+            </td>
+            <td
+              class=""
+            >
               宣传物料制作费用
+            </td>
+            <td
+              class=""
+            >
+              w.cezkdudy@lhll.au
             </td>
             <td
               class=""
@@ -103432,7 +102819,17 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
             <td
               class=""
             >
+              纸质签署
+            </td>
+            <td
+              class=""
+            >
               algolia 服务报销
+            </td>
+            <td
+              class=""
+            >
+              r.nmgw@peurezgn.sl
             </td>
             <td
               class=""
@@ -103486,7 +102883,17 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
             <td
               class=""
             >
+              纸质签署
+            </td>
+            <td
+              class=""
+            >
               相关周边制作费
+            </td>
+            <td
+              class=""
+            >
+              p.cumx@rampblpa.ru
             </td>
             <td
               class=""
@@ -103540,7 +102947,17 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
             <td
               class=""
             >
+              电子签署
+            </td>
+            <td
+              class=""
+            >
               激励奖品快递费
+            </td>
+            <td
+              class=""
+            >
+              w.cezkdudy@lhll.au
             </td>
             <td
               class=""
@@ -103594,7 +103011,17 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
             <td
               class=""
             >
+              纸质签署
+            </td>
+            <td
+              class=""
+            >
               宣传物料制作费用
+            </td>
+            <td
+              class=""
+            >
+              r.nmgw@peurezgn.sl
             </td>
             <td
               class=""
@@ -103648,7 +103075,17 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
             <td
               class=""
             >
+              纸质签署
+            </td>
+            <td
+              class=""
+            >
               algolia 服务报销
+            </td>
+            <td
+              class=""
+            >
+              p.cumx@rampblpa.ru
             </td>
             <td
               class=""
@@ -103702,7 +103139,17 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
             <td
               class=""
             >
+              电子签署
+            </td>
+            <td
+              class=""
+            >
               相关周边制作费
+            </td>
+            <td
+              class=""
+            >
+              w.cezkdudy@lhll.au
             </td>
             <td
               class=""
@@ -103756,7 +103203,17 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
             <td
               class=""
             >
+              纸质签署
+            </td>
+            <td
+              class=""
+            >
               激励奖品快递费
+            </td>
+            <td
+              class=""
+            >
+              r.nmgw@peurezgn.sl
             </td>
             <td
               class=""
@@ -103810,7 +103267,17 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
             <td
               class=""
             >
+              纸质签署
+            </td>
+            <td
+              class=""
+            >
               宣传物料制作费用
+            </td>
+            <td
+              class=""
+            >
+              p.cumx@rampblpa.ru
             </td>
             <td
               class=""
@@ -103864,7 +103331,17 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
             <td
               class=""
             >
+              电子签署
+            </td>
+            <td
+              class=""
+            >
               algolia 服务报销
+            </td>
+            <td
+              class=""
+            >
+              w.cezkdudy@lhll.au
             </td>
             <td
               class=""
@@ -103918,7 +103395,17 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
             <td
               class=""
             >
+              纸质签署
+            </td>
+            <td
+              class=""
+            >
               相关周边制作费
+            </td>
+            <td
+              class=""
+            >
+              r.nmgw@peurezgn.sl
             </td>
             <td
               class=""
@@ -103972,7 +103459,17 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
             <td
               class=""
             >
+              纸质签署
+            </td>
+            <td
+              class=""
+            >
               激励奖品快递费
+            </td>
+            <td
+              class=""
+            >
+              p.cumx@rampblpa.ru
             </td>
             <td
               class=""
@@ -104026,7 +103523,17 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
             <td
               class=""
             >
+              电子签署
+            </td>
+            <td
+              class=""
+            >
               宣传物料制作费用
+            </td>
+            <td
+              class=""
+            >
+              w.cezkdudy@lhll.au
             </td>
             <td
               class=""
@@ -104080,7 +103587,17 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
             <td
               class=""
             >
+              纸质签署
+            </td>
+            <td
+              class=""
+            >
               algolia 服务报销
+            </td>
+            <td
+              class=""
+            >
+              r.nmgw@peurezgn.sl
             </td>
             <td
               class=""
@@ -104115,10 +103632,16 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               key="status"
             />
             <td
+              key="channel"
+            />
+            <td
               key="matters"
             >
               -
             </td>
+            <td
+              key="detail.email"
+            />
             <td
               key="createTime"
             >
@@ -113810,9 +113333,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
                     </span>
                   </div>
                 </div>
-                <div
-                  class="t-input__tips t-input__tips--default"
-                />
               </div>
             </div>
             <div
@@ -114139,9 +113659,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination-ajax.vue 1
                 </span>
               </div>
             </div>
-            <div
-              class="t-input__tips t-input__tips--default"
-            />
           </div>
         </div>
         <div
@@ -117482,9 +116999,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree.vue 1`] = `
                   </span>
                 </div>
               </div>
-              <div
-                class="t-input__tips t-input__tips--default"
-              />
             </div>
           </div>
           <div
@@ -123223,9 +122737,6 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/base.vue 1`] = 
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -123279,9 +122790,6 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/base.vue 1`] = 
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -123350,9 +122858,6 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/clearable.vue 1
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -123413,9 +122918,6 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/clearable.vue 1
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -123485,9 +122987,6 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/disabled.vue 1`
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -123548,9 +123047,6 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/disabled.vue 1`
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -123605,9 +123101,6 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/format.vue 1`] 
         </span>
       </div>
     </div>
-    <div
-      class="t-input__tips t-input__tips--default"
-    />
   </div>
 </div>
 `;
@@ -123674,9 +123167,6 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/hide-clear-butt
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -123737,9 +123227,6 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/hide-clear-butt
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -123808,9 +123295,6 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/hm.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -123871,9 +123355,6 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/hm.vue 1`] = `
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -123928,9 +123409,6 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/hms.vue 1`] = `
         </span>
       </div>
     </div>
-    <div
-      class="t-input__tips t-input__tips--default"
-    />
   </div>
 </div>
 `;
@@ -123996,9 +123474,6 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/keyboard.vue 1`
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -124059,9 +123534,6 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/keyboard.vue 1`
             </span>
           </div>
         </div>
-        <div
-          class="t-input__tips t-input__tips--default"
-        />
       </div>
     </div>
   </div>
@@ -124219,9 +123691,6 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/show-steps.vue 
         </span>
       </div>
     </div>
-    <div
-      class="t-input__tips t-input__tips--default"
-    />
   </div>
 </div>
 `;
@@ -124274,9 +123743,6 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/step.vue 1`] = 
         </span>
       </div>
     </div>
-    <div
-      class="t-input__tips t-input__tips--default"
-    />
   </div>
 </div>
 `;
@@ -124329,9 +123795,6 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/twelve-hour.vue
         </span>
       </div>
     </div>
-    <div
-      class="t-input__tips t-input__tips--default"
-    />
   </div>
 </div>
 `;
@@ -124384,9 +123847,6 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/twelve-hour-mer
         </span>
       </div>
     </div>
-    <div
-      class="t-input__tips t-input__tips--default"
-    />
   </div>
 </div>
 `;
@@ -143917,9 +143377,6 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/base.vue 1`] = 
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -143990,9 +143447,6 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/collapsed.vue 1
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -144057,9 +143511,6 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/collapsed.vue 1
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>
@@ -144108,9 +143559,6 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/dvalue.vue 1`] 
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -144211,9 +143659,6 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/filterable.vue 
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>
@@ -144262,9 +143707,6 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/lazy.vue 1`] = 
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -144328,9 +143770,6 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/multiple.vue 1`
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -144385,9 +143824,6 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/prefix.vue 1`] 
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -144434,9 +143870,6 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/props.vue 1`] =
       </span>
     </div>
   </div>
-  <div
-    class="t-input__tips t-input__tips--default"
-  />
 </div>
 `;
 
@@ -144492,9 +143925,6 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuedisplay.vu
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -144566,9 +143996,6 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuedisplay.vu
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>
@@ -144624,9 +144051,6 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuetype.vue 1
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
   <div
@@ -144691,9 +144115,6 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuetype.vue 1
           </span>
         </div>
       </div>
-      <div
-        class="t-input__tips t-input__tips--default"
-      />
     </div>
   </div>
 </div>

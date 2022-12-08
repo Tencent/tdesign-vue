@@ -181,6 +181,7 @@ export default {
       this.filterValue = {
         ...filters,
         createTime: filters.createTime || [],
+        channel: filters.channel || [],
       };
       // 模拟异步请求进行数据过滤
       this.request(this.filterValue);
