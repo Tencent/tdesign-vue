@@ -12,5 +12,14 @@
     <t-tooltip content="文字提示仅展示文本内容" trigger="context-menu">
       <t-button variant="outline">右击时触发</t-button>
     </t-tooltip>
+    <t-tooltip content="文字提示仅展示文本内容" theme="light">
+      <t-button disabled variant="outline">禁止不提示</t-button>
+    </t-tooltip>
+    <t-tooltip content="文字提示仅展示文本内容" theme="light">
+      <div>
+        <t-button disabled variant="outline">禁止但提示</t-button>
+        <div slot="文字提示仅展示文本内容"></div>
+      </div>
+    </t-tooltip>
   </t-space>
 </template>
