@@ -1,13 +1,19 @@
 <template>
   <div class="demo-container">
     <div class="item">
-      <!-- 为保证组件收益最大化，当数据量小于 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，默认值为 100 -->
+      <!--
+        1. rowHeight 接近平均高度即可
+        2. bufferSize 别太大，5 ～ 30 之间合适
+        3. 如果是固定行高请设置 isFixedRowHeight: true。rowHeight 设置精确值
+        4. 当数据量小于 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，默认值 100
+      -->
       <t-table
         row-key="id"
         :columns="columns"
         :data="data"
-        :scroll="{ type: 'virtual', rowHeight: 48, bufferSize: 30 }"
+        :scroll="{ type: 'virtual', rowHeight: 69, bufferSize: 10 }"
         :height="300"
+        bordered
       >
       </t-table>
     </div>
@@ -18,6 +24,8 @@
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
 const columns = [
+  { colKey: 'serial-number', width: 80, title: '序号' },
+  { colKey: 'number', width: 80, cell: (h, { rowIndex }) => rowIndex + 1 },
   { colKey: 'applicant', title: '申请人', width: '100' },
   {
     colKey: 'status',
@@ -58,7 +66,7 @@ for (let i = 0; i < 10; i++) {
   });
 }
 // 为了使得表格滚动更加平稳，建议指定row-height参数值为接近表格的平均行高
-const times = Array.from(new Array(600), () => ''); // 测试共计1k条数据
+const times = Array.from(new Array(1000), () => '');
 const testData = [];
 times.forEach((item, i) => {
   const k = i % 10;

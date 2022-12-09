@@ -13,6 +13,7 @@ import baseTableProps from './base-table-props';
 import useRowspanAndColspan from './hooks/useRowspanAndColspan';
 import { BaseTableProps, RowAndColFixedPosition } from './interface';
 import { TdBaseTableProps } from './type';
+import { VirtualScrollConfig } from '../hooks/useVirtualScrollNew';
 
 export const ROW_AND_TD_LISTENERS = ROW_LISTENERS.concat('cell-click');
 export interface TableBodyProps extends BaseTableProps {
@@ -24,17 +25,10 @@ export interface TableBodyProps extends BaseTableProps {
   tableElm: HTMLDivElement;
   tableWidth: number;
   isWidthOverflow: boolean;
-
-  // 以下内容为虚拟滚动所需参数
-  translateY: number;
-  scrollType: string;
-  isVirtual: boolean;
-  rowHeight: number;
-  trs: Map<number, object>;
-  bufferSize: number;
+  virtualConfig: VirtualScrollConfig;
   tableContentElm: HTMLDivElement;
   cellEmptyContent: TdBaseTableProps['cellEmptyContent'];
-  handleRowMounted: () => void;
+  handleRowMounted: (rowData: any) => void;
 }
 
 // table 到 body 的相同属性
@@ -78,13 +72,7 @@ export default defineComponent({
     tableElm: {},
     tableWidth: Number,
     isWidthOverflow: Boolean,
-    // 以下内容为虚拟滚动所需参数
-    translateY: Number,
-    scrollType: String,
-    isVirtual: Boolean,
-    rowHeight: Number,
-    trs: Map as PropType<TableBodyProps['trs']>,
-    bufferSize: Number,
+    virtualConfig: Object as PropType<VirtualScrollConfig>,
     // eslint-disable-next-line
     tableContentElm: {},
     handleRowMounted: Function as PropType<TableBodyProps['handleRowMounted']>,
@@ -181,7 +169,7 @@ export default defineComponent({
     };
 
     const columnLength = this.columns.length;
-    const dataLength = this.data.length;
+    const dataLength = this.data?.length;
     const trNodeList: JSX.Element[] = [];
 
     const properties = [
@@ -191,21 +179,18 @@ export default defineComponent({
       'scroll',
       'tableElm',
       'tableContentElm',
-      'trs',
-      'bufferSize',
-      'isVirtual',
-      'rowHeight',
-      'scrollType',
       'pagination',
     ];
+
     this.data?.forEach((row, rowIndex) => {
       const trProps: TrProps = {
         ...pick(this.$props, TABLE_PROPS),
         row,
         columns: this.columns,
-        rowIndex,
+        rowIndex: row.__VIRTUAL_SCROLL_INDEX || rowIndex,
         dataLength,
         skipSpansMap: this.skipSpansMap,
+        virtualConfig: this.virtualConfig,
         ...pick(this.$props, properties),
       };
       if (this.onCellClick) {
@@ -214,7 +199,7 @@ export default defineComponent({
       // Vue3 do not need getTrListeners
       const on: { [keys: string]: Function } = this.getTrListeners();
       if (this.handleRowMounted) {
-        on.onRowMounted = this.handleRowMounted;
+        on['row-mounted'] = this.handleRowMounted;
       }
 
       // replace scopedSlots of slots in Vue3
@@ -249,15 +234,18 @@ export default defineComponent({
     ];
     const isEmpty = !this.data?.length && !this.loading && !this.firstFullRow && !this.lastFullRow;
 
-    const translate = `translate(0, ${this.translateY}px)`;
-    const posStyle = {
-      transform: translate,
-      '-ms-transform': translate,
-      '-moz-transform': translate,
-      '-webkit-transform': translate,
-    };
+    // 垫上隐藏的 tr 元素高度
+    const translate = `translateY(${this.virtualConfig?.translateY.value}px)`;
+    const posStyle = this.virtualConfig?.isVirtualScroll.value
+      ? {
+        transform: translate,
+        '-ms-transform': translate,
+        '-moz-transform': translate,
+        '-webkit-transform': translate,
+      }
+      : undefined;
     return (
-      <tbody class={this.tbodyClasses} style={this.isVirtual && { ...posStyle }}>
+      <tbody class={this.tbodyClasses} style={{ ...posStyle }}>
         {isEmpty ? renderEmpty(h, this.columns) : list}
       </tbody>
     );
