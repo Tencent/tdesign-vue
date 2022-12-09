@@ -9,8 +9,10 @@
     </div>
 
     <div>
-      <t-checkbox v-model="fixedTopAndBottomRows">是否冻结首尾两行</t-checkbox>
-      <t-checkbox v-model="stripe">是否显示斑马纹</t-checkbox>
+      <t-space>
+        <t-checkbox v-model="fixedTopAndBottomRows">是否冻结首尾两行</t-checkbox>
+        <t-checkbox v-model="stripe">是否显示斑马纹</t-checkbox>
+      </t-space>
       <!-- TODO：虚拟滚动开启与关闭支持动态响应 -->
       <!-- <t-checkbox v-model="virtualScroll">开启虚拟滚动</t-checkbox> -->
     </div>
@@ -30,7 +32,6 @@
       :scroll="virtualScroll ? { type: 'virtual' } : undefined"
       :stripe="stripe"
       bordered
-      resizable
     >
       <template #operation="{ row }">
         <t-link theme="primary" hover="color" @click="rehandleClickOp(row)">
@@ -126,8 +127,8 @@ export default {
     },
   },
   methods: {
-    rehandleClickOp({ text, row }) {
-      console.log(text, row);
+    rehandleClickOp(context) {
+      console.log(context);
     },
   },
 };

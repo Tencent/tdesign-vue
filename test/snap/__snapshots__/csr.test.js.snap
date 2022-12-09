@@ -95981,16 +95981,24 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-footer.vue 1`]
             </td>
             <td
               key="matters"
-            />
+            >
+              -
+            </td>
             <td
               key="status"
-            />
+            >
+              -
+            </td>
             <td
               key="detail.email"
-            />
+            >
+              -
+            </td>
             <td
               key="createTime"
-            />
+            >
+              -
+            </td>
           </tr>
         </tfoot>
       </table>
@@ -103374,45 +103382,59 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
   <div
     data-v-4344bc5a=""
   >
-    <label
-      class="t-checkbox"
+    <div
+      class="t-space t-space-horizontal"
       data-v-4344bc5a=""
+      style="gap: 16px;"
     >
-      <input
-        class="t-checkbox__former"
-        type="checkbox"
-        value=""
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
+      <div
+        class="t-space-item"
       >
-        是否冻结首尾两行
-      </span>
-    </label>
-    <label
-      class="t-checkbox"
-      data-v-4344bc5a=""
-    >
-      <input
-        class="t-checkbox__former"
-        type="checkbox"
-        value=""
-      />
-      <span
-        class="t-checkbox__input"
-      />
-      <span
-        class="t-checkbox__label"
+        <label
+          class="t-checkbox"
+          data-v-4344bc5a=""
+        >
+          <input
+            class="t-checkbox__former"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            是否冻结首尾两行
+          </span>
+        </label>
+      </div>
+      <div
+        class="t-space-item"
       >
-        是否显示斑马纹
-      </span>
-    </label>
+        <label
+          class="t-checkbox"
+          data-v-4344bc5a=""
+        >
+          <input
+            class="t-checkbox__former"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            是否显示斑马纹
+          </span>
+        </label>
+      </div>
+    </div>
   </div>
   <div
-    class="t-table t-table--bordered t-table--column-fixed t-table--column-resizable"
+    class="t-table t-table--bordered t-table--column-fixed"
     data-v-4344bc5a=""
     style="position: relative;"
   >
@@ -111630,7 +111652,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/lazy.vue 1`] = `
 </div>
 `;
 
-exports[`csr snapshot test > csr test ./src/table/_example/loading.vue 1`] = `
+exports[`csr snapshot test > csr test ./src/table/_example/merge-cells.vue 1`] = `
 <div
   class="tdesign-demo-block-column"
 >
@@ -112112,7 +112134,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/loading.vue 1`] = `
 </div>
 `;
 
-exports[`csr snapshot test > csr test ./src/table/_example/merge-cells.vue 1`] = `
+exports[`csr snapshot test > csr test ./src/table/_example/merge-cells.vue 2`] = `
 <div
   class="t-table t-table--bordered t-table--rowspan-colspan t-table--column-resizable"
   style="position: relative;"
