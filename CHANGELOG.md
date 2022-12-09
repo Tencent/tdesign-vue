@@ -5,6 +5,13 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.52.1 `2022-12-09` 
+
+### 🐞 Bug Fixes
+- `SelectInput`: 修复 popup 与包裹元素导出 ref 重名 导致0.52.0 虚拟滚动失效的问题 @skytt ([#1909](https://github.com/Tencent/tdesign-vue/pull/1909))
+- `TreeSelec`: 修复选中异步加载树节点时 label展示异常的问题
+
+
 ## 🌈 0.52.0 `2022-12-08`
 ### ❗ Breaking Changes
 - `SelectInput`: 调整 DOM 结构和类名，同其他框架保持一致，方便全部框架复用同一份 CSS @chaishi ([#1880](https://github.com/Tencent/tdesign-vue/pull/1880))
