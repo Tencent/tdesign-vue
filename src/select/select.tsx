@@ -2,7 +2,6 @@ import {
   computed,
   defineComponent,
   ref,
-  SetupContext,
   toRefs,
   watch,
   nextTick,
@@ -58,11 +57,11 @@ export default defineComponent({
     FakeArrow,
     SelectPanel,
   },
-  setup(props: TdSelectProps, context: SetupContext) {
+  setup(props: TdSelectProps) {
     const { t, global } = useConfig('select');
     const renderTNode = useTNodeJSX();
     const instance = getCurrentInstance();
-    const selectInputRef = ref<HTMLElement>(null);
+    const selectInputRef = ref(null);
     const selectPanelRef = ref<SelectPanelInstance>();
     const popupOpenTime = ref(250);
     const { formDisabled } = useFormDisabled();
@@ -330,7 +329,7 @@ export default defineComponent({
     const getOverlayElm = (): HTMLElement => {
       let r;
       try {
-        const popupRefs = (context.refs.selectInputRef as any).$refs.selectInputRef.$refs;
+        const popupRefs = selectInputRef.value.$refs.selectInputPopupRef.$refs;
         r = popupRefs.overlay || popupRefs.component.$refs.overlay;
       } catch (e) {
         log.warn('Select', e);
