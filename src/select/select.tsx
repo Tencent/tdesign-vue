@@ -58,7 +58,7 @@ export default defineComponent({
     FakeArrow,
     SelectPanel,
   },
-  setup(props: TdSelectProps, context: SetupContext) {
+  setup(props: TdSelectProps) {
     const { t, global } = useConfig('select');
     const renderTNode = useTNodeJSX();
     const instance = getCurrentInstance();
