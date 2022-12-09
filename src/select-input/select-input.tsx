@@ -61,7 +61,7 @@ export default defineComponent({
 
     const mainContent = (
       <Popup
-        ref="selectInputRef"
+        ref="selectInputPopupRef"
         trigger={this.popupProps?.trigger || 'click'}
         placement="bottom-left"
         visible={this.popupVisible ?? this.innerPopupVisible}
