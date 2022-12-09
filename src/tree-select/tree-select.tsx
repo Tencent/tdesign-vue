@@ -457,9 +457,9 @@ export default defineComponent({
                 ) : null}
                 {!this.loading ? (
                   <Tree
+                    ref="treeRef"
                     {...{
                       props: {
-                        ref: this.treeRef,
                         key: this.treeKey,
                         value: [...this.checked],
                         hover: true,
