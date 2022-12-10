@@ -1,23 +1,26 @@
 <template>
-  <div class="demo-container">
-    <div class="item">
-      <!--
-        1. rowHeight 接近平均高度即可
-        2. bufferSize 别太大，5 ～ 30 之间合适
-        3. 如果是固定行高请设置 isFixedRowHeight: true。rowHeight 设置精确值
-        4. 当数据量小于 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，默认值 100
-      -->
-      <t-table
-        row-key="id"
-        :columns="columns"
-        :data="data"
-        :scroll="{ type: 'virtual', rowHeight: 69, bufferSize: 10 }"
-        :height="300"
-        bordered
-      >
-      </t-table>
-    </div>
-  </div>
+  <t-space direction="vertical">
+    <t-space align="center">
+      <t-button @click="scrollToElement">滚动到指定元素</t-button>
+      <t-checkbox v-model="bordered">是否显示边框</t-checkbox>
+    </t-space>
+    <!--
+      1. rowHeight 接近平均高度即可
+      2. bufferSize 别太大，5 ～ 30 之间合适
+      3. 如果是固定行高请设置 isFixedRowHeight: true。rowHeight 设置精确值
+      4. 当数据量小于 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，默认值 100
+    -->
+    <t-table
+      ref="tableRef"
+      row-key="id"
+      :columns="columns"
+      :data="data"
+      :scroll="{ type: 'virtual', rowHeight: 69, bufferSize: 10 }"
+      :height="300"
+      :bordered="bordered"
+    >
+    </t-table>
+  </t-space>
 </template>
 
 <script lang="jsx">
@@ -25,7 +28,6 @@ import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } f
 
 const columns = [
   { colKey: 'serial-number', width: 80, title: '序号' },
-  { colKey: 'number', width: 80, cell: (h, { rowIndex }) => rowIndex + 1 },
   { colKey: 'applicant', title: '申请人', width: '100' },
   {
     colKey: 'status',
@@ -77,9 +79,24 @@ export default {
   name: 'VirtualScroll',
   data() {
     return {
+      tableRef: null,
       data: [...testData],
       columns,
+      bordered: true,
     };
+  },
+
+  methods: {
+    scrollToElement() {
+      this.$refs.tableRef.scrollToElement({
+        // 跳转元素下标（第 256 个元素位置）
+        index: 255,
+        // 滚动元素距离顶部的距离（如表头高度）
+        top: 47,
+        // 单个元素高度非固定场景下，即 isFixedRowHeight = false。延迟设置元素位置，一般用于依赖不同高度异步渲染等场景，单位：毫秒。（固定高度不需要这个）
+        time: 60,
+      });
+    },
   },
 };
 </script>

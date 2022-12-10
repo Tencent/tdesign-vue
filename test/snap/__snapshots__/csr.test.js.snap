@@ -92124,7 +92124,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
       <div>
         <div
           class="t-table__affixed-header-elm-wrap"
-          style="width: 0px; height: 0px; opacity: 1; margin-top: 0px;"
+          style="width: 0px; height: 0px; opacity: 1;"
         />
       </div>
     </div>
@@ -112666,7 +112666,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
     >
       <div
         class="t-table__virtual-scroll-cursor"
-        style="transform: translate(0, 30000px);"
+        style="transform: translate(0, 47000px);"
       />
       <table
         class="t-table--layout-fixed"
@@ -112984,19 +112984,1311 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
         </thead>
         <tbody
           class="t-table__body"
-          style="transform: translate(0, 0px);"
+          style="transform: translateY(0px);"
         >
           <tr
-            class="t-table__empty-row"
+            class=""
           >
             <td
-              colspan="12"
+              class=""
+            >
+              贾明
+            </td>
+            <td
+              class=""
+            >
+              <span
+                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+              >
+                <span>
+                  <svg
+                    class="t-icon t-icon-check-circle-filled"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                  审批通过
+                </span>
+              </span>
+            </td>
+            <td
+              class=""
+            >
+              电子签署
+            </td>
+            <td
+              class="t-align-center"
+            >
+              3
+            </td>
+            <td
+              class=""
+            >
+              100
+            </td>
+            <td
+              class=""
+            >
+              100
+            </td>
+            <td
+              class=""
+            >
+              100
+            </td>
+            <td
+              class=""
+            >
+              100
+            </td>
+            <td
+              class=""
+            >
+              组长审批
+            </td>
+            <td
+              class=""
+            >
+              审批单号001
+            </td>
+            <td
+              class="t-table-td--ellipsis"
             >
               <div
-                class="t-table__empty"
+                class="t-table__ellipsis t-text-ellipsis"
               >
-                暂无数据
+                w.cezkdudy@lhll.au
               </div>
+            </td>
+            <td
+              class=""
+            >
+              2022-01-01
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              张三
+            </td>
+            <td
+              class=""
+            >
+              <span
+                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+              >
+                <span>
+                  <svg
+                    class="t-icon t-icon-close-circle-filled"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                  审批失败
+                </span>
+              </span>
+            </td>
+            <td
+              class=""
+            >
+              纸质签署
+            </td>
+            <td
+              class="t-align-center"
+            >
+              2
+            </td>
+            <td
+              class=""
+            >
+              200
+            </td>
+            <td
+              class=""
+            >
+              200
+            </td>
+            <td
+              class=""
+            >
+              200
+            </td>
+            <td
+              class=""
+            >
+              200
+            </td>
+            <td
+              class=""
+            >
+              部门审批
+            </td>
+            <td
+              class=""
+            >
+              审批单号002
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                r.nmgw@peurezgn.sl
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              2022-02-01
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              王芳
+            </td>
+            <td
+              class=""
+            >
+              <span
+                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+              >
+                <span>
+                  <svg
+                    class="t-icon t-icon-error-circle-filled"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                  审批过期
+                </span>
+              </span>
+            </td>
+            <td
+              class=""
+            >
+              纸质签署
+            </td>
+            <td
+              class="t-align-center"
+            >
+              4
+            </td>
+            <td
+              class=""
+            >
+              400
+            </td>
+            <td
+              class=""
+            >
+              400
+            </td>
+            <td
+              class=""
+            >
+              400
+            </td>
+            <td
+              class=""
+            >
+              400
+            </td>
+            <td
+              class=""
+            >
+              财务审批
+            </td>
+            <td
+              class=""
+            >
+              审批单号003
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                p.cumx@rampblpa.ru
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              2022-03-01
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              贾明
+            </td>
+            <td
+              class=""
+            >
+              <span
+                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+              >
+                <span>
+                  <svg
+                    class="t-icon t-icon-check-circle-filled"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                  审批通过
+                </span>
+              </span>
+            </td>
+            <td
+              class=""
+            >
+              电子签署
+            </td>
+            <td
+              class="t-align-center"
+            >
+              1
+            </td>
+            <td
+              class=""
+            >
+              500
+            </td>
+            <td
+              class=""
+            >
+              500
+            </td>
+            <td
+              class=""
+            >
+              500
+            </td>
+            <td
+              class=""
+            >
+              500
+            </td>
+            <td
+              class=""
+            >
+              组长审批
+            </td>
+            <td
+              class=""
+            >
+              审批单号004
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                w.cezkdudy@lhll.au
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              2022-04-01
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              张三
+            </td>
+            <td
+              class=""
+            >
+              <span
+                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+              >
+                <span>
+                  <svg
+                    class="t-icon t-icon-close-circle-filled"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                  审批失败
+                </span>
+              </span>
+            </td>
+            <td
+              class=""
+            >
+              纸质签署
+            </td>
+            <td
+              class="t-align-center"
+            >
+              3
+            </td>
+            <td
+              class=""
+            >
+              100
+            </td>
+            <td
+              class=""
+            >
+              100
+            </td>
+            <td
+              class=""
+            >
+              100
+            </td>
+            <td
+              class=""
+            >
+              100
+            </td>
+            <td
+              class=""
+            >
+              部门审批
+            </td>
+            <td
+              class=""
+            >
+              审批单号005
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                r.nmgw@peurezgn.sl
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              2022-01-01
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              王芳
+            </td>
+            <td
+              class=""
+            >
+              <span
+                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+              >
+                <span>
+                  <svg
+                    class="t-icon t-icon-error-circle-filled"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                  审批过期
+                </span>
+              </span>
+            </td>
+            <td
+              class=""
+            >
+              纸质签署
+            </td>
+            <td
+              class="t-align-center"
+            >
+              2
+            </td>
+            <td
+              class=""
+            >
+              200
+            </td>
+            <td
+              class=""
+            >
+              200
+            </td>
+            <td
+              class=""
+            >
+              200
+            </td>
+            <td
+              class=""
+            >
+              200
+            </td>
+            <td
+              class=""
+            >
+              财务审批
+            </td>
+            <td
+              class=""
+            >
+              审批单号006
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                p.cumx@rampblpa.ru
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              2022-02-01
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              贾明
+            </td>
+            <td
+              class=""
+            >
+              <span
+                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+              >
+                <span>
+                  <svg
+                    class="t-icon t-icon-check-circle-filled"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                  审批通过
+                </span>
+              </span>
+            </td>
+            <td
+              class=""
+            >
+              电子签署
+            </td>
+            <td
+              class="t-align-center"
+            >
+              4
+            </td>
+            <td
+              class=""
+            >
+              400
+            </td>
+            <td
+              class=""
+            >
+              400
+            </td>
+            <td
+              class=""
+            >
+              400
+            </td>
+            <td
+              class=""
+            >
+              400
+            </td>
+            <td
+              class=""
+            >
+              组长审批
+            </td>
+            <td
+              class=""
+            >
+              审批单号007
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                w.cezkdudy@lhll.au
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              2022-03-01
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              张三
+            </td>
+            <td
+              class=""
+            >
+              <span
+                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+              >
+                <span>
+                  <svg
+                    class="t-icon t-icon-close-circle-filled"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                  审批失败
+                </span>
+              </span>
+            </td>
+            <td
+              class=""
+            >
+              纸质签署
+            </td>
+            <td
+              class="t-align-center"
+            >
+              1
+            </td>
+            <td
+              class=""
+            >
+              500
+            </td>
+            <td
+              class=""
+            >
+              500
+            </td>
+            <td
+              class=""
+            >
+              500
+            </td>
+            <td
+              class=""
+            >
+              500
+            </td>
+            <td
+              class=""
+            >
+              部门审批
+            </td>
+            <td
+              class=""
+            >
+              审批单号008
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                r.nmgw@peurezgn.sl
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              2022-04-01
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              王芳
+            </td>
+            <td
+              class=""
+            >
+              <span
+                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+              >
+                <span>
+                  <svg
+                    class="t-icon t-icon-error-circle-filled"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                  审批过期
+                </span>
+              </span>
+            </td>
+            <td
+              class=""
+            >
+              纸质签署
+            </td>
+            <td
+              class="t-align-center"
+            >
+              3
+            </td>
+            <td
+              class=""
+            >
+              100
+            </td>
+            <td
+              class=""
+            >
+              100
+            </td>
+            <td
+              class=""
+            >
+              100
+            </td>
+            <td
+              class=""
+            >
+              100
+            </td>
+            <td
+              class=""
+            >
+              财务审批
+            </td>
+            <td
+              class=""
+            >
+              审批单号009
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                p.cumx@rampblpa.ru
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              2022-01-01
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              贾明
+            </td>
+            <td
+              class=""
+            >
+              <span
+                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+              >
+                <span>
+                  <svg
+                    class="t-icon t-icon-check-circle-filled"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                  审批通过
+                </span>
+              </span>
+            </td>
+            <td
+              class=""
+            >
+              电子签署
+            </td>
+            <td
+              class="t-align-center"
+            >
+              2
+            </td>
+            <td
+              class=""
+            >
+              200
+            </td>
+            <td
+              class=""
+            >
+              200
+            </td>
+            <td
+              class=""
+            >
+              200
+            </td>
+            <td
+              class=""
+            >
+              200
+            </td>
+            <td
+              class=""
+            >
+              组长审批
+            </td>
+            <td
+              class=""
+            >
+              审批单号0010
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                w.cezkdudy@lhll.au
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              2022-02-01
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              张三
+            </td>
+            <td
+              class=""
+            >
+              <span
+                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+              >
+                <span>
+                  <svg
+                    class="t-icon t-icon-close-circle-filled"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                  审批失败
+                </span>
+              </span>
+            </td>
+            <td
+              class=""
+            >
+              纸质签署
+            </td>
+            <td
+              class="t-align-center"
+            >
+              4
+            </td>
+            <td
+              class=""
+            >
+              400
+            </td>
+            <td
+              class=""
+            >
+              400
+            </td>
+            <td
+              class=""
+            >
+              400
+            </td>
+            <td
+              class=""
+            >
+              400
+            </td>
+            <td
+              class=""
+            >
+              部门审批
+            </td>
+            <td
+              class=""
+            >
+              审批单号0011
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                r.nmgw@peurezgn.sl
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              2022-03-01
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              王芳
+            </td>
+            <td
+              class=""
+            >
+              <span
+                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+              >
+                <span>
+                  <svg
+                    class="t-icon t-icon-error-circle-filled"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                  审批过期
+                </span>
+              </span>
+            </td>
+            <td
+              class=""
+            >
+              纸质签署
+            </td>
+            <td
+              class="t-align-center"
+            >
+              1
+            </td>
+            <td
+              class=""
+            >
+              500
+            </td>
+            <td
+              class=""
+            >
+              500
+            </td>
+            <td
+              class=""
+            >
+              500
+            </td>
+            <td
+              class=""
+            >
+              500
+            </td>
+            <td
+              class=""
+            >
+              财务审批
+            </td>
+            <td
+              class=""
+            >
+              审批单号0012
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                p.cumx@rampblpa.ru
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              2022-04-01
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              贾明
+            </td>
+            <td
+              class=""
+            >
+              <span
+                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+              >
+                <span>
+                  <svg
+                    class="t-icon t-icon-check-circle-filled"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                  审批通过
+                </span>
+              </span>
+            </td>
+            <td
+              class=""
+            >
+              电子签署
+            </td>
+            <td
+              class="t-align-center"
+            >
+              3
+            </td>
+            <td
+              class=""
+            >
+              100
+            </td>
+            <td
+              class=""
+            >
+              100
+            </td>
+            <td
+              class=""
+            >
+              100
+            </td>
+            <td
+              class=""
+            >
+              100
+            </td>
+            <td
+              class=""
+            >
+              组长审批
+            </td>
+            <td
+              class=""
+            >
+              审批单号0013
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                w.cezkdudy@lhll.au
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              2022-01-01
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              张三
+            </td>
+            <td
+              class=""
+            >
+              <span
+                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+              >
+                <span>
+                  <svg
+                    class="t-icon t-icon-close-circle-filled"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                  审批失败
+                </span>
+              </span>
+            </td>
+            <td
+              class=""
+            >
+              纸质签署
+            </td>
+            <td
+              class="t-align-center"
+            >
+              2
+            </td>
+            <td
+              class=""
+            >
+              200
+            </td>
+            <td
+              class=""
+            >
+              200
+            </td>
+            <td
+              class=""
+            >
+              200
+            </td>
+            <td
+              class=""
+            >
+              200
+            </td>
+            <td
+              class=""
+            >
+              部门审批
+            </td>
+            <td
+              class=""
+            >
+              审批单号0014
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                r.nmgw@peurezgn.sl
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              2022-02-01
+            </td>
+          </tr>
+          <tr
+            class=""
+          >
+            <td
+              class=""
+            >
+              王芳
+            </td>
+            <td
+              class=""
+            >
+              <span
+                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+              >
+                <span>
+                  <svg
+                    class="t-icon t-icon-error-circle-filled"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                  审批过期
+                </span>
+              </span>
+            </td>
+            <td
+              class=""
+            >
+              纸质签署
+            </td>
+            <td
+              class="t-align-center"
+            >
+              4
+            </td>
+            <td
+              class=""
+            >
+              400
+            </td>
+            <td
+              class=""
+            >
+              400
+            </td>
+            <td
+              class=""
+            >
+              400
+            </td>
+            <td
+              class=""
+            >
+              400
+            </td>
+            <td
+              class=""
+            >
+              财务审批
+            </td>
+            <td
+              class=""
+            >
+              审批单号0015
+            </td>
+            <td
+              class="t-table-td--ellipsis"
+            >
+              <div
+                class="t-table__ellipsis t-text-ellipsis"
+              >
+                p.cumx@rampblpa.ru
+              </div>
+            </td>
+            <td
+              class=""
+            >
+              2022-03-01
             </td>
           </tr>
         </tbody>
@@ -118634,13 +119926,58 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
 
 exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`] = `
 <div
-  class="demo-container"
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
 >
   <div
-    class="item"
+    class="t-space-item"
   >
     <div
-      class="t-table"
+      class="t-space t-space-align-center t-space-horizontal"
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <button
+          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            滚动到指定元素
+          </span>
+        </button>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <label
+          class="t-checkbox t-is-checked"
+        >
+          <input
+            class="t-checkbox__former"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+            是否显示边框
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-table t-table--bordered"
       style="position: relative;"
     >
       <div
@@ -118649,12 +119986,15 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
       >
         <div
           class="t-table__virtual-scroll-cursor"
-          style="transform: translate(0, 28800px);"
+          style="transform: translate(0, 69000px);"
         />
         <table
           class="t-table--layout-fixed t-table--full-height"
         >
           <colgroup>
+            <col
+              style="width: 80px;"
+            />
             <col
               style="width: 100px;"
             />
@@ -118671,6 +120011,16 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
             class="t-table__header"
           >
             <tr>
+              <th
+                class="t-table__th-serial-number"
+                data-colkey="serial-number"
+              >
+                <div
+                  class="t-table__th-cell-inner"
+                >
+                  序号
+                </div>
+              </th>
               <th
                 class="t-table__th-applicant"
                 data-colkey="applicant"
@@ -118725,19 +120075,801 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
           </thead>
           <tbody
             class="t-table__body"
-            style="transform: translate(0, 0px);"
+            style="transform: translateY(0px);"
           >
             <tr
-              class="t-table__empty-row"
+              class=""
             >
               <td
-                colspan="5"
+                class=""
               >
-                <div
-                  class="t-table__empty"
+                1
+              </td>
+              <td
+                class=""
+              >
+                贾明
+              </td>
+              <td
+                class=""
+              >
+                <span
+                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
                 >
-                  暂无数据
-                </div>
+                  <span>
+                    <svg
+                      class="t-icon t-icon-check-circle-filled"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                    审批通过
+                  </span>
+                </span>
+              </td>
+              <td
+                class=""
+              >
+                部分宣传物料制作费用
+              </td>
+              <td
+                class=""
+              >
+                w.cezkdudy@lhll.au
+              </td>
+              <td
+                class=""
+              >
+                2022-01-01
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                2
+              </td>
+              <td
+                class=""
+              >
+                张三
+              </td>
+              <td
+                class=""
+              >
+                <span
+                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                >
+                  <span>
+                    <svg
+                      class="t-icon t-icon-close-circle-filled"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                    审批失败
+                  </span>
+                </span>
+              </td>
+              <td
+                class=""
+              >
+                algolia 服务报销
+              </td>
+              <td
+                class=""
+              >
+                r.nmgw@peurezgn.sl
+              </td>
+              <td
+                class=""
+              >
+                2022-02-01
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                3
+              </td>
+              <td
+                class=""
+              >
+                王芳
+              </td>
+              <td
+                class=""
+              >
+                <span
+                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                >
+                  <span>
+                    <svg
+                      class="t-icon t-icon-error-circle-filled"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                    审批过期
+                  </span>
+                </span>
+              </td>
+              <td
+                class=""
+              >
+                相关周边制作费
+              </td>
+              <td
+                class=""
+              >
+                p.cumx@rampblpa.ru
+              </td>
+              <td
+                class=""
+              >
+                2022-03-01
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                4
+              </td>
+              <td
+                class=""
+              >
+                贾明
+              </td>
+              <td
+                class=""
+              >
+                <span
+                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                >
+                  <span>
+                    <svg
+                      class="t-icon t-icon-check-circle-filled"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                    审批通过
+                  </span>
+                </span>
+              </td>
+              <td
+                class=""
+              >
+                激励奖品快递费
+              </td>
+              <td
+                class=""
+              >
+                w.cezkdudy@lhll.au
+              </td>
+              <td
+                class=""
+              >
+                2022-04-01
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                5
+              </td>
+              <td
+                class=""
+              >
+                张三
+              </td>
+              <td
+                class=""
+              >
+                <span
+                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                >
+                  <span>
+                    <svg
+                      class="t-icon t-icon-close-circle-filled"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                    审批失败
+                  </span>
+                </span>
+              </td>
+              <td
+                class=""
+              >
+                部分宣传物料制作费用
+              </td>
+              <td
+                class=""
+              >
+                r.nmgw@peurezgn.sl
+              </td>
+              <td
+                class=""
+              >
+                2022-01-01
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                6
+              </td>
+              <td
+                class=""
+              >
+                王芳
+              </td>
+              <td
+                class=""
+              >
+                <span
+                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                >
+                  <span>
+                    <svg
+                      class="t-icon t-icon-error-circle-filled"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                    审批过期
+                  </span>
+                </span>
+              </td>
+              <td
+                class=""
+              >
+                algolia 服务报销
+              </td>
+              <td
+                class=""
+              >
+                p.cumx@rampblpa.ru
+              </td>
+              <td
+                class=""
+              >
+                2022-02-01
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                7
+              </td>
+              <td
+                class=""
+              >
+                贾明
+              </td>
+              <td
+                class=""
+              >
+                <span
+                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                >
+                  <span>
+                    <svg
+                      class="t-icon t-icon-check-circle-filled"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                    审批通过
+                  </span>
+                </span>
+              </td>
+              <td
+                class=""
+              >
+                相关周边制作费
+              </td>
+              <td
+                class=""
+              >
+                w.cezkdudy@lhll.au
+              </td>
+              <td
+                class=""
+              >
+                2022-03-01
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                8
+              </td>
+              <td
+                class=""
+              >
+                张三
+              </td>
+              <td
+                class=""
+              >
+                <span
+                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                >
+                  <span>
+                    <svg
+                      class="t-icon t-icon-close-circle-filled"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                    审批失败
+                  </span>
+                </span>
+              </td>
+              <td
+                class=""
+              >
+                激励奖品快递费
+              </td>
+              <td
+                class=""
+              >
+                r.nmgw@peurezgn.sl
+              </td>
+              <td
+                class=""
+              >
+                2022-04-01
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                9
+              </td>
+              <td
+                class=""
+              >
+                王芳
+              </td>
+              <td
+                class=""
+              >
+                <span
+                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                >
+                  <span>
+                    <svg
+                      class="t-icon t-icon-error-circle-filled"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                    审批过期
+                  </span>
+                </span>
+              </td>
+              <td
+                class=""
+              >
+                部分宣传物料制作费用
+              </td>
+              <td
+                class=""
+              >
+                p.cumx@rampblpa.ru
+              </td>
+              <td
+                class=""
+              >
+                2022-01-01
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                10
+              </td>
+              <td
+                class=""
+              >
+                贾明
+              </td>
+              <td
+                class=""
+              >
+                <span
+                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                >
+                  <span>
+                    <svg
+                      class="t-icon t-icon-check-circle-filled"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                    审批通过
+                  </span>
+                </span>
+              </td>
+              <td
+                class=""
+              >
+                algolia 服务报销
+              </td>
+              <td
+                class=""
+              >
+                w.cezkdudy@lhll.au
+              </td>
+              <td
+                class=""
+              >
+                2022-02-01
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                11
+              </td>
+              <td
+                class=""
+              >
+                贾明
+              </td>
+              <td
+                class=""
+              >
+                <span
+                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                >
+                  <span>
+                    <svg
+                      class="t-icon t-icon-close-circle-filled"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                    审批失败
+                  </span>
+                </span>
+              </td>
+              <td
+                class=""
+              >
+                部分宣传物料制作费用
+              </td>
+              <td
+                class=""
+              >
+                w.cezkdudy@lhll.au
+              </td>
+              <td
+                class=""
+              >
+                2022-01-01
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                12
+              </td>
+              <td
+                class=""
+              >
+                张三
+              </td>
+              <td
+                class=""
+              >
+                <span
+                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                >
+                  <span>
+                    <svg
+                      class="t-icon t-icon-error-circle-filled"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                    审批过期
+                  </span>
+                </span>
+              </td>
+              <td
+                class=""
+              >
+                algolia 服务报销
+              </td>
+              <td
+                class=""
+              >
+                r.nmgw@peurezgn.sl
+              </td>
+              <td
+                class=""
+              >
+                2022-02-01
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                13
+              </td>
+              <td
+                class=""
+              >
+                王芳
+              </td>
+              <td
+                class=""
+              >
+                <span
+                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                >
+                  <span>
+                    <svg
+                      class="t-icon t-icon-check-circle-filled"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                    审批通过
+                  </span>
+                </span>
+              </td>
+              <td
+                class=""
+              >
+                相关周边制作费
+              </td>
+              <td
+                class=""
+              >
+                p.cumx@rampblpa.ru
+              </td>
+              <td
+                class=""
+              >
+                2022-03-01
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                14
+              </td>
+              <td
+                class=""
+              >
+                贾明
+              </td>
+              <td
+                class=""
+              >
+                <span
+                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                >
+                  <span>
+                    <svg
+                      class="t-icon t-icon-close-circle-filled"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                    审批失败
+                  </span>
+                </span>
+              </td>
+              <td
+                class=""
+              >
+                激励奖品快递费
+              </td>
+              <td
+                class=""
+              >
+                w.cezkdudy@lhll.au
+              </td>
+              <td
+                class=""
+              >
+                2022-04-01
+              </td>
+            </tr>
+            <tr
+              class=""
+            >
+              <td
+                class=""
+              >
+                15
+              </td>
+              <td
+                class=""
+              >
+                张三
+              </td>
+              <td
+                class=""
+              >
+                <span
+                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                >
+                  <span>
+                    <svg
+                      class="t-icon t-icon-error-circle-filled"
+                      fill="none"
+                      height="1em"
+                      viewBox="0 0 16 16"
+                      width="1em"
+                    >
+                      <path
+                        d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+                        fill="currentColor"
+                        fill-opacity="0.9"
+                      />
+                    </svg>
+                    审批过期
+                  </span>
+                </span>
+              </td>
+              <td
+                class=""
+              >
+                部分宣传物料制作费用
+              </td>
+              <td
+                class=""
+              >
+                r.nmgw@peurezgn.sl
+              </td>
+              <td
+                class=""
+              >
+                2022-01-01
               </td>
             </tr>
           </tbody>
