@@ -40,6 +40,8 @@ const columns = [
     colKey: 'status',
     title: '审批状态',
     width: '150',
+    sortType: 'all',
+    sorter: true,
     cell: (h, { row }) => {
       const statusNameListMap = {
         0: { label: '审批通过', theme: 'success', icon: <CheckCircleFilledIcon /> },

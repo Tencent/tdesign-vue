@@ -97,14 +97,24 @@ export default {
             );
           },
         },
-        { colKey: 'channel', title: '签署方式' },
+        {
+          colKey: 'channel',
+          title: '签署方式',
+          width: '120',
+          foot: '-',
+        },
         {
           colKey: 'matters',
           title: '申请事项',
           width: '150',
           foot: '-',
         },
-        { colKey: 'detail.email', title: '邮箱地址' },
+        {
+          colKey: 'detail.email',
+          title: '邮箱地址',
+          width: '180',
+          foot: '-',
+        },
         {
           colKey: 'createTime',
           title: '申请日期',

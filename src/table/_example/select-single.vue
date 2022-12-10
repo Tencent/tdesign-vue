@@ -1,19 +1,13 @@
 <template>
   <div class="tdesign-demo__table">
-    <t-space>
-      <t-checkbox v-model="highlightSelectedRow">高亮行选中</t-checkbox>
-      <t-checkbox v-model="selectedOnRowClick">整行选中</t-checkbox>
-    </t-space>
-
     <!-- 支持非受控属性 default-selected-row-keys -->
     <!-- 支持语法糖 selected-row-keys.sync -->
     <t-table
       rowKey="index"
       :columns="columns"
       :data="data"
-      :selected-row-keys="selectedRowKeys"
-      :class="highlightSelectedRow ? 'tdesign-demo__select-single' : ''"
       @select-change="rehandleSelectChange"
+      select-on-row-click
       @row-click="onRowClick"
     >
       <template #status="{ row }">
@@ -55,7 +49,7 @@ export default {
     return {
       highlightSelectedRow: false,
       selectedOnRowClick: false,
-      selectedRowKeys: [102],
+      selectedRowKeys: [2],
       columns: [
         {
           // title: '单选',
