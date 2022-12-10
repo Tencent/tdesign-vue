@@ -122,7 +122,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     if (p.row.__VIRTUAL_SCROLL_INDEX !== undefined) {
       currentData.rowIndex = p.row.__VIRTUAL_SCROLL_INDEX;
     }
-    dataSource.value = store.value.toggleExpandData(currentData, dataSource.value, rowDataKeys.value);
+    dataSource.value = [...store.value.toggleExpandData(currentData, dataSource.value, rowDataKeys.value)];
     const rowValue = get(p.row, rowDataKeys.value.rowKey);
     const rowState = store.value?.treeDataMap?.get(rowValue);
     const params = {
