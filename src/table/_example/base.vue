@@ -96,3 +96,9 @@ export default {
   },
 };
 </script>
+<style lang="less">
+.t-table__body .t-tag span {
+  display: inline-flex;
+  align-items: center;
+}
+</style>
