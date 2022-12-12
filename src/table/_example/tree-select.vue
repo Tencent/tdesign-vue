@@ -31,11 +31,13 @@
         checkStrictly: checkStrictly === 'true' ? true : false,
         // 第 3 列显示树形结构展开节点
         treeNodeColumnIndex: 2,
+        expandTreeNodeOnClick: true,
       }"
       :height="300"
       :scroll="{ type: 'virtual', rowHeight: 49, bufferSize: 10 }"
       :selected-row-keys="selectedRowKeys"
       @select-change="rehandleSelectChange"
+      @row-click="onRowClick"
     ></t-enhanced-table>
   </t-space>
 </template>
@@ -137,8 +139,8 @@ export default {
   },
 
   methods: {
-    rehandleClickOp({ text, row }) {
-      console.log(text, row);
+    rehandleClickOp(context) {
+      console.log(context);
     },
 
     rehandleSelectChange(value, { selectedRowData }) {
@@ -180,6 +182,10 @@ export default {
         // 高度动态变化场景下，即 isFixedRowHeight = false。延迟设置元素位置，一般用于依赖不同高度异步渲染等场景，单位：毫秒。（固定高度不需要这个）
         time: 60,
       });
+    },
+
+    onRowClick(data) {
+      console.log(data);
     },
   },
 };

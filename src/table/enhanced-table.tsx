@@ -6,7 +6,7 @@ import primaryTableProps from './primary-table-props';
 import enhancedTableProps from './enhanced-table-props';
 import PrimaryTable, { BASE_TABLE_ALL_EVENTS } from './primary-table';
 import {
-  TdEnhancedTableProps, PrimaryTableCol, TableRowData, DragSortContext,
+  TdEnhancedTableProps, PrimaryTableCol, TableRowData, DragSortContext, TdBaseTableProps,
 } from './type';
 import useTreeData from './hooks/useTreeData';
 import useTreeSelect from './hooks/useTreeSelect';
@@ -89,6 +89,20 @@ export default defineComponent({
       context.emit('drag-sort', params);
     };
 
+    const onEnhancedTableRowClick: TdBaseTableProps['onRowClick'] = (p) => {
+      if (props.tree?.expandTreeNodeOnClick) {
+        treeInstanceFunctions.toggleExpandData(
+          {
+            row: p.row,
+            rowIndex: p.index,
+          },
+          'row-click',
+        );
+      }
+      props.onRowClick?.(p);
+      context.emit('row-click', p);
+    };
+
     return {
       store,
       dataSource,
@@ -98,6 +112,7 @@ export default defineComponent({
       primaryTableRef,
       onDragSortChange,
       onInnerSelectChange,
+      onEnhancedTableRowClick,
       ...treeInstanceFunctions,
     };
   },
@@ -134,6 +149,9 @@ export default defineComponent({
       'select-change': this.onInnerSelectChange,
       'drag-sort': this.onDragSortChange,
     };
+    if (this.tree?.expandTreeNodeOnClick) {
+      on['row-click'] = this.onEnhancedTableRowClick;
+    }
     // replace `scopedSlots={this.$scopedSlots}` of `v-slots={this.$slots}` in Vue3
     return (
       <PrimaryTable ref="primaryTableRef" scopedSlots={this.$scopedSlots} props={props} on={on} {...this.$attrs} />
