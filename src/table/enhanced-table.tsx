@@ -6,7 +6,7 @@ import primaryTableProps from './primary-table-props';
 import enhancedTableProps from './enhanced-table-props';
 import PrimaryTable, { BASE_TABLE_ALL_EVENTS } from './primary-table';
 import {
-  TdEnhancedTableProps, PrimaryTableCol, TableRowData, DragSortContext, TdBaseTableProps,
+  TdEnhancedTableProps, PrimaryTableCol, TableRowData, DragSortContext, TdPrimaryTableProps,
 } from './type';
 import useTreeData from './hooks/useTreeData';
 import useTreeSelect from './hooks/useTreeSelect';
@@ -89,7 +89,7 @@ export default defineComponent({
       context.emit('drag-sort', params);
     };
 
-    const onEnhancedTableRowClick: TdBaseTableProps['onRowClick'] = (p) => {
+    const onEnhancedTableRowClick: TdPrimaryTableProps['onRowClick'] = (p) => {
       if (props.tree?.expandTreeNodeOnClick) {
         treeInstanceFunctions.toggleExpandData(
           {
@@ -134,7 +134,8 @@ export default defineComponent({
   },
 
   render() {
-    const props = {
+    const props: TdPrimaryTableProps = {
+      rowKey: this.rowKey || 'id',
       ...this.$options.propsData,
       data: this.dataSource,
       columns: this.tColumns,
