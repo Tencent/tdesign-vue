@@ -433,7 +433,7 @@ export default defineComponent({
         <TRangeInputPopup
           disabled={this.disabled}
           status={this.status}
-          tips={this.tips}
+          tips={this.tips || this.$scopedSlots.tips}
           inputValue={inputValue as string[]}
           popupProps={dateRangePickerPopupProps}
           rangeInputProps={{
