@@ -238,6 +238,16 @@ describe('ListItem', () => {
       expect(action.exists()).toBe(true);
       expect(wrapper.element).toMatchSnapshot();
     });
+    it(':event', () => {
+      const fn = vi.fn();
+      const wrapper = mount({
+        render() {
+          return <ListItem onClick={fn}></ListItem>;
+        },
+      });
+      wrapper.findComponent(ListItem).trigger('click');
+      expect(fn).toHaveBeenCalled();
+    });
   });
   describe('<slot>', () => {
     it('<default>', () => {
