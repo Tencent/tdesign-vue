@@ -58,7 +58,6 @@ export default defineComponent({
       if (value.value) return dayjs(value.value, format.value);
 
       if (isStepsSet) return dayjs().hour(0).minute(0).second(0);
-
       return dayjs();
     });
 
@@ -68,7 +67,7 @@ export default defineComponent({
     watch(
       () => dayjsValue.value,
       () => {
-        if (dayjsValue.value) updateTimeScrollPos(true);
+        if (dayjsValue.value && value.value) updateTimeScrollPos(true);
       },
     );
 

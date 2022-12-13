@@ -105,7 +105,7 @@ export default {
       data.icon = data.icon === 'folder' ? 'folder-open' : 'folder';
     },
     changeTime(node) {
-      const timeStamp = new Date('2021-12-14').getTime();
+      const timeStamp = new Date().getTime();
       node.setData({
         timeStamp,
       });

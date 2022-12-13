@@ -373,6 +373,31 @@ exports[`Progress > :props > :status > :status is active 1`] = `
 </div>
 `;
 
+exports[`Progress > :props > :status > :status is active and percentage is 100 1`] = `
+<div
+  class="t-progress"
+>
+  <div
+    class="t-progress--thin t-progress--status--active"
+  >
+    <div
+      class="t-progress__bar"
+      style="border-radius: undefinedpx;"
+    >
+      <div
+        class="t-progress__inner"
+        style="width: 100%;"
+      />
+    </div>
+    <div
+      class="t-progress__info"
+    >
+      100%
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Progress > :props > :status > :status is error 1`] = `
 <div
   class="t-progress"
@@ -387,6 +412,43 @@ exports[`Progress > :props > :status > :status is error 1`] = `
       <div
         class="t-progress__inner"
         style="width: 0%;"
+      />
+    </div>
+    <div
+      class="t-progress__info"
+    >
+      <svg
+        class="t-icon t-icon-close-circle-filled t-progress__icon"
+        fill="none"
+        height="1em"
+        viewBox="0 0 16 16"
+        width="1em"
+      >
+        <path
+          d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
+          fill="currentColor"
+          fill-opacity="0.9"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Progress > :props > :status > :status is error and percentage is 100 1`] = `
+<div
+  class="t-progress"
+>
+  <div
+    class="t-progress--thin t-progress--status--error"
+  >
+    <div
+      class="t-progress__bar"
+      style="border-radius: undefinedpx;"
+    >
+      <div
+        class="t-progress__inner"
+        style="width: 100%;"
       />
     </div>
     <div
@@ -447,6 +509,43 @@ exports[`Progress > :props > :status > :status is success 1`] = `
 </div>
 `;
 
+exports[`Progress > :props > :status > :status is success and percentage is 100 1`] = `
+<div
+  class="t-progress"
+>
+  <div
+    class="t-progress--thin t-progress--status--success"
+  >
+    <div
+      class="t-progress__bar"
+      style="border-radius: undefinedpx;"
+    >
+      <div
+        class="t-progress__inner"
+        style="width: 100%;"
+      />
+    </div>
+    <div
+      class="t-progress__info"
+    >
+      <svg
+        class="t-icon t-icon-check-circle-filled t-progress__icon"
+        fill="none"
+        height="1em"
+        viewBox="0 0 16 16"
+        width="1em"
+      >
+        <path
+          d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
+          fill="currentColor"
+          fill-opacity="0.9"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Progress > :props > :status > :status is warning 1`] = `
 <div
   class="t-progress"
@@ -461,6 +560,43 @@ exports[`Progress > :props > :status > :status is warning 1`] = `
       <div
         class="t-progress__inner"
         style="width: 0%;"
+      />
+    </div>
+    <div
+      class="t-progress__info"
+    >
+      <svg
+        class="t-icon t-icon-error-circle-filled t-progress__icon"
+        fill="none"
+        height="1em"
+        viewBox="0 0 16 16"
+        width="1em"
+      >
+        <path
+          d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+          fill="currentColor"
+          fill-opacity="0.9"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Progress > :props > :status > :status is warning and percentage is 100 1`] = `
+<div
+  class="t-progress"
+>
+  <div
+    class="t-progress--thin t-progress--status--warning"
+  >
+    <div
+      class="t-progress__bar"
+      style="border-radius: undefinedpx;"
+    >
+      <div
+        class="t-progress__inner"
+        style="width: 100%;"
       />
     </div>
     <div

@@ -7,6 +7,7 @@
 import { InputProps } from '../input';
 import { PopupProps } from '../popup';
 import { RangeInputProps } from '../range-input';
+import { TNode } from '../common';
 
 export interface TdTimePickerProps {
   /**
@@ -59,15 +60,18 @@ export interface TdTimePickerProps {
    */
   presets?: PresetTime;
   /**
-   * 尺寸
-   * @default medium
+   * 输入框状态
    */
-  size?: 'small' | 'medium' | 'large';
+  status?: 'default' | 'success' | 'warning' | 'error';
   /**
    * 时间间隔步数，数组排列 [小时, 分钟, 秒]，示例：[2, 1, 1] 或者 ['2', '1', '1']
    * @default [1, 1, 1]
    */
   steps?: Array<string | number>;
+  /**
+   * 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式
+   */
+  tips?: string | TNode;
   /**
    * 选中值
    * @default ''
@@ -160,15 +164,18 @@ export interface TdTimeRangePickerProps {
    */
   rangeInputProps?: RangeInputProps;
   /**
-   * 尺寸
-   * @default medium
+   * 输入框状态
    */
-  size?: 'small' | 'medium' | 'large';
+  status?: 'default' | 'success' | 'warning' | 'error';
   /**
    * 时间间隔步数，数组排列 [小时, 分钟, 秒]，示例：[2, 1, 1] 或者 ['2', '1', '1']
    * @default [1, 1, 1]
    */
   steps?: Array<string | number>;
+  /**
+   * 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式
+   */
+  tips?: string | TNode;
   /**
    * 选中值
    */

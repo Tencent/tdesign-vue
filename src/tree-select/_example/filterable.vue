@@ -13,8 +13,8 @@
       filterable
       placeholder="请选择"
       style="width: 300px"
-    />
-
+    >
+    </t-tree-select>
     <t-tree-select
       v-else
       v-model="value"
@@ -23,7 +23,8 @@
       :filter="filterFunction"
       placeholder="请选择"
       style="width: 300px"
-    />
+    >
+    </t-tree-select>
   </t-space>
 </template>
 <script>

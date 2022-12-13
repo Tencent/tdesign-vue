@@ -21,7 +21,6 @@ export default defineComponent({
 
   setup(props: TdSelectInputProps, context: SetupContext) {
     const selectInputRef = ref();
-    const selectInputWrapRef = ref();
     const { classPrefix } = useConfig('classPrefix');
 
     const {
@@ -32,7 +31,8 @@ export default defineComponent({
     const { renderSelectMultiple } = useMultiple(props, context);
     const { tOverlayInnerStyle, innerPopupVisible, onInnerPopupVisibleChange } = useOverlayInnerStyle(props);
 
-    const popupClasses = computed(() => [
+    const classes = computed(() => [
+      `${classPrefix.value}-select-input`,
       {
         [`${classPrefix.value}-select-input--borderless`]: borderless.value,
         [`${classPrefix.value}-select-input--multiple`]: multiple.value,
@@ -42,12 +42,11 @@ export default defineComponent({
     ]);
 
     return {
-      selectInputWrapRef,
+      selectInputRef,
       innerPopupVisible,
       commonInputProps,
       tOverlayInnerStyle,
-      selectInputRef,
-      popupClasses,
+      classes,
       onInnerClear,
       renderSelectSingle,
       renderSelectMultiple,
@@ -62,14 +61,14 @@ export default defineComponent({
 
     const mainContent = (
       <Popup
-        ref="selectInputRef"
-        class={this.popupClasses}
+        ref="selectInputPopupRef"
         trigger={this.popupProps?.trigger || 'click'}
         placement="bottom-left"
         visible={this.popupVisible ?? this.innerPopupVisible}
         content={this.panel}
         scopedSlots={{ ...this.$scopedSlots, content: this.$scopedSlots.panel }}
         hideEmptyPopup={true}
+        key={this.multiple ? 'multiple' : 'single'}
         disabled={this.disabled}
         on={{
           'visible-change': this.onInnerPopupVisibleChange,
@@ -90,14 +89,14 @@ export default defineComponent({
       </Popup>
     );
 
-    if (!this.tips) return mainContent;
-
     return (
-      <div ref="selectInputWrapRef" class={`${this.classPrefix}-select-input__wrap`}>
+      <div ref="selectInputRef" class={this.classes}>
         {mainContent}
-        <div class={`${this.classPrefix}-input__tips ${this.classPrefix}-input__tips--${this.status || 'normal'}`}>
-          {this.tips}
-        </div>
+        {this.tips && (
+          <div class={`${this.classPrefix}-input__tips ${this.classPrefix}-input__tips--${this.status || 'normal'}`}>
+            {this.tips}
+          </div>
+        )}
       </div>
     );
   },

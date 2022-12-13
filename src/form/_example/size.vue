@@ -8,10 +8,10 @@
     <!-- 开发中 -->
     <t-form :data="formData" :size="size" @reset="onReset" @submit="onSubmit">
       <t-form-item label="姓名" name="name">
-        <t-input v-model="formData.name" placeholder="请输入内容"></t-input>
+        <t-input v-model="formData.name" placeholder="请输入姓名"></t-input>
       </t-form-item>
       <t-form-item label="手机号码" name="tel">
-        <t-input v-model="formData.tel" placeholder="请输入内容"></t-input>
+        <t-input v-model="formData.tel" placeholder="请输入手机号码"></t-input>
       </t-form-item>
       <t-form-item label="接收短信" name="status">
         <t-switch v-model="formData.status"></t-switch>

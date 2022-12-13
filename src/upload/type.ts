@@ -6,7 +6,7 @@
 
 import { UploadConfig } from '../config-provider/type';
 import { ButtonProps } from '../button';
-import { TNode } from '../common';
+import { TNode, UploadDisplayDragEvents } from '../common';
 
 export interface TdUploadProps<T extends UploadFile = UploadFile> {
   /**
@@ -310,13 +310,6 @@ export interface UploadFile {
   url?: string;
 }
 
-export interface UploadDisplayDragEvents {
-  drop?: (event: DragEvent) => void;
-  dragenter?: (event: DragEvent) => void;
-  dragover?: (event: DragEvent) => void;
-  dragleave?: (event: DragEvent) => void;
-}
-
 export type ResponseType = { error?: string; url?: string } & Record<string, any>;
 
 export interface FormatResponseContext {
@@ -369,6 +362,7 @@ export interface ProgressContext {
   currentFiles: UploadFile[];
   percent: number;
   type: UploadProgressType;
+  XMLHttpRequest?: XMLHttpRequest;
 }
 
 export type UploadProgressType = 'real' | 'mock';

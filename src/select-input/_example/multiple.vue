@@ -1,5 +1,5 @@
 <template>
-  <t-space direction="vertical">
+  <t-space direction="vertical" style="width: 100%">
     <t-space>
       <t-checkbox v-model="allowInput">是否允许输入</t-checkbox>
       <t-checkbox v-model="creatable">允许创建新选项（Enter 创建）</t-checkbox>

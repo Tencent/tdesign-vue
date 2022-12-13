@@ -15,6 +15,9 @@ import {
   getStepValue,
 } from '../_common/js/input-number/number';
 import useFormDisabled from '../hooks/useFormDisabled';
+import { InputProps } from '..';
+
+export const specialCode = ['-', '.', 'e', 'E'];
 
 /**
  * 独立一个组件 Hook 方便用户直接使用相关逻辑 自定义任何样式的数字输入框
@@ -26,7 +29,6 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
   const [tValue, setTValue] = useVModel(value, props.defaultValue, props.onChange, 'change');
   const inputRef = ref<Vue>();
   const userInput = ref('');
-  const displayValue = ref();
 
   const { formDisabled } = useFormDisabled();
   const tDisabled = computed(() => props.disabled || formDisabled.value);
@@ -94,11 +96,12 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     () => {
       // @ts-ignore 没有输入完成，则无需校验
       if ([undefined, '', null].includes(tValue.value)) return;
+      const { max, min, largeNumber } = props;
       const error = getMaxOrMinValidateResult({
         value: tValue.value,
-        largeNumber: props.largeNumber,
-        max: props.max,
-        min: props.min,
+        largeNumber,
+        max,
+        min,
       });
       isError.value = error;
       props.onValidate?.({ error });
@@ -107,43 +110,85 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     { immediate: true },
   );
 
-  const handleStepValue = (op: 'add' | 'reduce') => getStepValue({
-    op,
-    step: props.step,
-    max: props.max,
-    min: props.min,
-    lastValue: tValue.value,
-    largeNumber: props.largeNumber,
-  });
+  const handleStepValue = (op: 'add' | 'reduce') => {
+    const newValue = getStepValue({
+      op,
+      step: props.step,
+      max: props.max,
+      min: props.min,
+      lastValue: tValue.value,
+      largeNumber: props.largeNumber,
+    });
+    const { largeNumber, max, min } = props;
+    const overLimit = getMaxOrMinValidateResult({
+      value: newValue,
+      largeNumber,
+      max,
+      min,
+    });
+    return {
+      overLimit,
+      newValue,
+    };
+  };
 
   const handleReduce = (e: KeyboardEvent | MouseEvent) => {
     if (disabledReduce.value || props.readonly) return;
-    const newValue = handleStepValue('reduce');
-    setTValue(newValue, { type: 'reduce', e });
+    const r = handleStepValue('reduce');
+    if (r.overLimit && !props.allowInputOverLimit) return;
+    setTValue(r.newValue, { type: 'reduce', e });
   };
 
   const handleAdd = (e: KeyboardEvent | MouseEvent) => {
     if (disabledAdd.value || props.readonly) return;
-    const newValue = handleStepValue('add');
-    setTValue(newValue, { type: 'add', e });
+    const r = handleStepValue('add');
+    if (r.overLimit && !props.allowInputOverLimit) return;
+    setTValue(r.newValue, { type: 'add', e });
   };
 
-  const onInnerInputChange = (val: string, ctx: { e: InputEvent }) => {
+  const onInnerInputChange = (val: string, { e }: { e: InputEvent }) => {
     if (!canInputNumber(val, props.largeNumber)) return;
-    userInput.value = val;
-    const isDelete = ctx.e.inputType === 'deleteContentBackward';
-    // 大数-字符串；普通数-数字。此处是了将 2e3，2.1e3 等内容转换为数字
-    const newVal = isDelete || props.largeNumber || !val ? val : Number(val);
-    if (newVal !== tValue.value && !['-', '.', 'e', 'E'].includes(val.slice(-1))) {
-      setTValue(newVal, { type: 'input', e: ctx.e });
+    if (props.largeNumber) {
+      setTValue(val, { type: 'input', e });
+      return;
+    }
+    // specialCode 新增或删除这些字符时不触发 change 事件
+    const isDelete = e.inputType === 'deleteContentBackward';
+    const inputSpecialCode = specialCode.includes(val.slice(-1)) || val.slice(-2) === '.0';
+    const deleteSpecialCode = isDelete && specialCode.includes(String(userInput.value).slice(-1));
+    if ((!isNaN(Number(val)) && !inputSpecialCode) || deleteSpecialCode) {
+      const newVal = val === '' ? undefined : Number(val);
+      setTValue(newVal, { type: 'input', e });
+    }
+    if (inputSpecialCode || deleteSpecialCode) {
+      userInput.value = val;
     }
   };
 
   const handleBlur = (value: string, ctx: { e: FocusEvent }) => {
+    const {
+      largeNumber, max, min, decimalPlaces,
+    } = props;
+    if (!props.allowInputOverLimit && value) {
+      const r = getMaxOrMinValidateResult({
+        value: tValue.value,
+        largeNumber,
+        max,
+        min,
+      });
+      if (r === 'below-minimum') {
+        setTValue(min, { type: 'blur', e: ctx.e });
+        return;
+      }
+      if (r === 'exceed-maximum') {
+        setTValue(max, { type: 'blur', e: ctx.e });
+        return;
+      }
+    }
     userInput.value = getUserInput(tValue.value);
     const newValue = formatToNumber(value, {
-      decimalPlaces: props.decimalPlaces,
-      largeNumber: props.largeNumber,
+      decimalPlaces,
+      largeNumber,
     });
     if (newValue !== value && String(newValue) !== value) {
       setTValue(newValue, { type: 'blur', e: ctx.e });
@@ -195,6 +240,11 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     context.emit('enter', newValue, ctx);
   };
 
+  const handleClear: InputProps['onClear'] = ({ e }) => {
+    setTValue(undefined, { type: 'clear', e });
+    userInput.value = '';
+  };
+
   const focus = () => {
     (inputRef.value as any).focus();
   };
@@ -211,6 +261,7 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     keypress: handleKeypress,
     enter: handleEnter,
     click: focus,
+    clear: handleClear,
   };
 
   return {
@@ -218,7 +269,6 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     wrapClasses,
     reduceClasses,
     addClasses,
-    displayValue,
     tDisabled,
     isError,
     listeners,

@@ -2,10 +2,16 @@ import { useConfig } from '../../config-provider/useConfig';
 
 export default function useClassName() {
   const { classPrefix } = useConfig();
+
   const classNames = {
     classPrefix: classPrefix.value,
     tableBaseClass: {
-      table: `${classPrefix.value}-table`,
+      table: [
+        `${classPrefix.value}-table`,
+        {
+          [`${classPrefix.value}-table--chrome`]: /Chrome/.test(navigator?.userAgent),
+        },
+      ],
       columnResizableTable: `${classPrefix.value}-table--column-resizable`,
       overflowVisible: `${classPrefix.value}-table--overflow-visible`,
       body: `${classPrefix.value}-table__body`,

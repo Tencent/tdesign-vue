@@ -158,6 +158,7 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
         innerFilterValue={innerFilterValue.value}
         tableFilterClasses={tableFilterClasses}
         isFocusClass={isFocusClass}
+        popupProps={col.filter.popupProps}
         primaryTableElement={primaryTableRef.value?.$el}
         on={{
           reset: onReset,

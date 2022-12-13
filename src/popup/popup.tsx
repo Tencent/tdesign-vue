@@ -236,7 +236,6 @@ export default mixins(classPrefixMixins).extend({
       const triggerEl = this.$el as HTMLElement;
       const overlayEl = this.$refs?.overlay as HTMLElement;
 
-      if (!triggerEl || !overlayEl) return;
       if (typeof overlayStyle === 'function') {
         return overlayStyle(triggerEl, overlayEl);
       }

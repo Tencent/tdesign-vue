@@ -7,7 +7,7 @@ import {
   ErrorCircleFilledIcon,
   HelpCircleFilledIcon,
 } from 'tdesign-icons-vue';
-import { Message } from '@/src/message/index.ts';
+import { Message, MessagePlugin } from '@/src/message/index.ts';
 import Button from '@/src/button/index.ts';
 import Loading from '@/src/loading/index.ts';
 
@@ -209,6 +209,18 @@ describe('Message', () => {
         },
       });
       expect(wrapper.find('.custom-close-btn').exists()).toBe(true);
+    });
+
+    it('plugin', async () => {
+      const open = () => MessagePlugin.info('用户表示普通操作信息提示');
+      const wrapper = mount({
+        render() {
+          return <Button onClick={open}>消息</Button>;
+        },
+      });
+      const btn = wrapper.findComponent(Button);
+      await btn.trigger('click');
+      expect(document.querySelector('.t-message')).not.toBe(null);
     });
   });
 });

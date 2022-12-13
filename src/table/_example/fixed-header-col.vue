@@ -9,8 +9,10 @@
     </div>
 
     <div>
-      <t-checkbox v-model="fixedTopAndBottomRows">是否冻结首尾两行</t-checkbox>
-      <t-checkbox v-model="stripe">是否显示斑马纹</t-checkbox>
+      <t-space>
+        <t-checkbox v-model="fixedTopAndBottomRows">是否冻结首尾两行</t-checkbox>
+        <t-checkbox v-model="stripe">是否显示斑马纹</t-checkbox>
+      </t-space>
       <!-- TODO：虚拟滚动开启与关闭支持动态响应 -->
       <!-- <t-checkbox v-model="virtualScroll">开启虚拟滚动</t-checkbox> -->
     </div>
@@ -30,29 +32,32 @@
       :scroll="virtualScroll ? { type: 'virtual' } : undefined"
       :stripe="stripe"
       bordered
-      resizable
     >
-      <template #operation="slotProps">
-        <a class="link" @click="rehandleClickOp(slotProps)">删除</a>
+      <template #operation="{ row }">
+        <t-link theme="primary" hover="color" @click="rehandleClickOp(row)">
+          {{ row.status === 0 ? '查看详情' : '再次申请' }}
+        </t-link>
       </template>
     </t-table>
   </div>
 </template>
-<script>
+<script lang="jsx">
+import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+
 function getData(count) {
   const data = [];
   for (let i = 0; i < count; i++) {
     data.push({
-      index: i,
-      platform: i % 2 === 0 ? '共有' : '私有',
-      type: ['String', 'Number', 'Array', 'Object'][i % 4],
-      default: ['-', '0', '[]', '{}'][i % 4],
+      index: i + 1,
+      applicant: ['贾明', '张三', '王芳'][i % 3],
+      status: i % 3,
+      channel: ['电子签署', '纸质签署', '纸质签署'][i % 3],
       detail: {
-        position: `读取 ${i} 个数据的嵌套信息值`,
-        position1: `读取 ${i} 个数据的嵌套信息值`,
+        email: ['w.cezkdudy@lhll.au', 'r.nmgw@peurezgn.sl', 'p.cumx@rampblpa.ru'][i % 3],
       },
-      description: '数据源',
-      needed: i % 4 === 0 ? '是' : '否',
+      matters: ['宣传物料制作费用', 'algolia 服务报销', '相关周边制作费', '激励奖品快递费'][i % 4],
+      time: [2, 3, 1, 4][i % 4],
+      createTime: ['2022-01-01', '2022-02-01', '2022-03-01', '2022-04-01', '2022-05-01'][i % 4],
     });
   }
   return data;
@@ -68,54 +73,59 @@ export default {
       data: getData(14),
       columns: [
         {
-          align: 'center',
-          width: 100,
-          colKey: 'index',
-          title: '序号',
+          colKey: 'applicant',
+          title: '申请人',
+          width: '100',
+          foot: '共20条',
           fixed: 'left',
-          foot: '总述',
         },
         {
-          colKey: 'platform',
-          title: '平台',
+          colKey: 'status',
+          title: '审批状态',
           width: 120,
-          foot: '公有(5)',
+          cell: (h, { row }) => {
+            const statusNameListMap = {
+              0: { label: '审批通过', theme: 'success', icon: <CheckCircleFilledIcon /> },
+              1: { label: '审批失败', theme: 'danger', icon: <CloseCircleFilledIcon /> },
+              2: { label: '审批过期', theme: 'warning', icon: <ErrorCircleFilledIcon /> },
+            };
+            return (
+              <t-tag shape="round" theme={statusNameListMap[row.status].theme} variant="light-outline">
+                {statusNameListMap[row.status].icon}
+                {statusNameListMap[row.status].label}
+              </t-tag>
+            );
+          },
         },
         {
-          colKey: 'type',
-          title: '类型',
-          width: 120,
-          foot: 'Number(5)',
-        },
-        {
-          colKey: 'default',
-          title: '默认值',
-          width: 150,
+          colKey: 'channel',
+          title: '签署方式',
+          width: '120',
           foot: '-',
         },
         {
-          colKey: 'detail.position',
-          title: '详情信息',
-          width: 250,
+          colKey: 'matters',
+          title: '申请事项',
+          width: '150',
           foot: '-',
         },
         {
-          colKey: 'description',
-          title: '说明',
-          width: 120,
-          foot: '数据(10)',
+          colKey: 'detail.email',
+          title: '邮箱地址',
+          width: '180',
+          foot: '-',
         },
         {
-          colKey: 'needed',
-          title: '必传',
-          foot: '否(6)',
-          width: 120,
+          colKey: 'createTime',
+          title: '申请日期',
+          width: '120',
+          foot: '-',
         },
         {
           colKey: 'operation',
           title: '操作',
-          width: 100,
-          cell: 'operation',
+          width: '150',
+          foot: '-',
           fixed: 'right',
         },
       ],
@@ -127,8 +137,8 @@ export default {
     },
   },
   methods: {
-    rehandleClickOp({ text, row }) {
-      console.log(text, row);
+    rehandleClickOp(context) {
+      console.log(context);
     },
   },
 };

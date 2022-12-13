@@ -279,17 +279,14 @@ export default defineComponent({
     );
 
     watch(
-      () => [props.editable, props.rowIndex, props.colIndex],
-      ([editable, rowIndex, colIndex]: [boolean, number, number]) => {
+      () => [props.editable, props.row, props.col, props.rowIndex, props.colIndex],
+      ([editable]: [boolean]) => {
         // 退出编辑态时，恢复原始值，等待父组件传入新的 data 值
         if (editable === false) {
           editValue.value = cellValue.value;
         } else {
           props.onRuleChange?.({
-            col: col.value,
-            row: row.value,
-            rowIndex,
-            colIndex,
+            ...cellParams.value,
             value: cellValue.value,
             editedRow: row.value,
           });
@@ -336,7 +333,7 @@ export default defineComponent({
           }}
         >
           {this.cellNode}
-          {this.col.edit?.showEditIcon !== false && <Edit1Icon size="12px" />}
+          {this.col.edit?.showEditIcon !== false && <Edit1Icon />}
         </div>
       );
     }

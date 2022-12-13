@@ -1,7 +1,7 @@
 <template>
   <t-head-menu @change="changeHandler" theme="dark" :value="active">
     <template #logo>
-      <img width="136" src="https://www.tencent.com/img/index/menu_logo.png" alt="logo" />
+      <img height="28" src="https://tdesign.gtimg.com/site/baseLogo-dark.png" alt="logo" />
     </template>
     <t-menu-item :value="`${index + 1}`" v-for="(menu, index) in menus" :key="index">
       {{ menu.title }}
@@ -17,20 +17,33 @@
     </t-menu-item>
     <t-menu-item value="4" :disabled="true">菜单4</t-menu-item>
     <template #operations>
-      <a href="javascript:;"><icon class="t-menu__operations-icon" name="search" /></a>
-      <a href="javascript:;"><icon class="t-menu__operations-icon" name="mail" /></a>
-      <a href="javascript:;"><icon class="t-menu__operations-icon" name="user" /></a>
-      <a href="javascript:;"><icon class="t-menu__operations-icon" name="ellipsis" /></a>
+      <t-button variant="text" shape="square">
+        <search-icon slot="icon" shape="square" />
+      </t-button>
+      <t-button variant="text" shape="square">
+        <mail-icon slot="icon" />
+      </t-button>
+      <t-button variant="text" shape="square">
+        <user-icon slot="icon" />
+      </t-button>
+      <t-button variant="text" shape="square">
+        <ellipsis-icon slot="icon" />
+      </t-button>
     </template>
   </t-head-menu>
 </template>
 
 <script>
-import { Icon } from 'tdesign-icons-vue';
+import {
+  SearchIcon, MailIcon, UserIcon, EllipsisIcon,
+} from 'tdesign-icons-vue';
 
 export default {
   components: {
-    Icon,
+    SearchIcon,
+    MailIcon,
+    UserIcon,
+    EllipsisIcon,
   },
   data() {
     return {
@@ -88,3 +101,10 @@ export default {
   },
 };
 </script>
+<style lang="less" scoped>
+.t-menu__operations {
+  .t-button {
+    margin-left: 8px;
+  }
+}
+</style>

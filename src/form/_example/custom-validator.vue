@@ -1,13 +1,13 @@
 <template>
   <t-form :data="formData" :rules="rules" ref="form" @reset="onReset" @submit="onSubmit" @validate="onValidate">
     <t-form-item label="用户名" name="account">
-      <t-input v-model="formData.account"></t-input>
+      <t-input v-model="formData.account" placeholder="请输入用户名"></t-input>
     </t-form-item>
     <t-form-item label="密码" name="password" help="同一个校验方法可输出不同的错误信息和类型，依次输入：1234 观察变化">
-      <t-input type="password" v-model="formData.password"></t-input>
+      <t-input type="password" v-model="formData.password" placeholder="请输入密码"></t-input>
     </t-form-item>
     <t-form-item label="确认密码" name="rePassword" help="自定义异步校验方法">
-      <t-input type="password" v-model="formData.rePassword"></t-input>
+      <t-input type="password" v-model="formData.rePassword" placeholder="请再次输入密码"></t-input>
     </t-form-item>
     <t-form-item style="margin-left: 100px">
       <t-space size="10px">

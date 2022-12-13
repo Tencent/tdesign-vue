@@ -171,14 +171,6 @@ const docs = [
         componentEn: () => import('tdesign-vue/dropdown/dropdown.en-US.md'),
       },
       {
-        title: 'Jumper 跳转',
-        titleEn: 'Jumper',
-        name: 'jumper',
-        path: '/vue/components/jumper',
-        component: () => import('tdesign-vue/jumper/jumper.md'),
-        componentEn: () => import('tdesign-vue/jumper/jumper.en-US.md'),
-      },
-      {
         title: 'Menu 导航菜单',
         titleEn: 'Menu',
         name: 'menu',
@@ -217,6 +209,14 @@ const docs = [
     titleEn: 'Input',
     type: 'component', // 组件文档
     children: [
+      {
+        title: 'AutoComplete 自动填充',
+        titleEn: 'AutoComplete',
+        name: 'auto-complete',
+        path: '/vue/components/auto-complete',
+        component: () => import('tdesign-vue/auto-complete/auto-complete.md'),
+        componentEn: () => import('tdesign-vue/auto-complete/auto-complete.en-US.md'),
+      },
       {
         title: 'Cascader 级联组件',
         titleEn: 'Cascader',

@@ -31,7 +31,7 @@ export interface TdMessageProps {
    */
   theme?: MessageThemeList;
   /**
-   * 关闭Message时触发
+   * 关闭消息时触发
    */
   onClose?: (context: { trigger: 'close-click' | 'duration-end'; e?: MouseEvent }) => void;
   /**
