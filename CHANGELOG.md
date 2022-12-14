@@ -5,6 +5,29 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 0.52.2 `2022-12-14` 
+### 🚀 Features
+- `Table`: @chaishi 
+  - 树形结构，支持点击行展开树节点，[issue#1847](https://github.com/Tencent/tdesign-vue/issues/1847) ([#1915](https://github.com/Tencent/tdesign-vue/pull/1915))
+  - 树形结构，点击树节点展开图标时，不触发 `onRowClick` 行点击事件
+  - 虚拟滚动支持滚动到具体的某一个元素，用于呈现选中行/选中项 ([#1914](https://github.com/Tencent/tdesign-vue/pull/1914))
+  - 虚拟滚动支持数据变化时不重置，进而支持树形结构无限滚动
+  - 虚拟滚动支持表格高度变化，[vue-next #1374](https://github.com/Tencent/tdesign-vue-next/issues/1374)
+### 🐞 Bug Fixes
+- `Table`: 修复点击展开行报错的异常 @chaishi  ([#1910](https://github.com/Tencent/tdesign-vue/pull/1910))
+- `Space`: 修复`separator` slot 无效的问题 @yaogengzhu ([#1922](https://github.com/Tencent/tdesign-vue/pull/1922))
+- `Datepicker`:
+  - 修复右侧面板月份展示错误问题 @honkinglin ([#1924](https://github.com/Tencent/tdesign-vue/pull/1924))
+  - 修复 tips 样式问题 @honkinglin ([#1927](https://github.com/Tencent/tdesign-vue/pull/1927))
+  - 兼容 value 传入空字符串 @honkinglin ([#1927](https://github.com/Tencent/tdesign-vue/pull/1933))
+- `Loading`: 修复 `LoadingPlugin.hide()` 多次调用后报错的问题 @Nice-PLQ ([#1930](https://github.com/Tencent/tdesign-vue/pull/1930))
+- `Dropdown`: 修复超长下拉菜单子菜单位置异常的问题 @uyarn ([#1910](https://github.com/Tencent/tdesign-vue/pull/1935))
+- `Select`: 修复虚拟滚动未关闭下拉框切换页面导致告警的问题 @uyarn ([#1910](https://github.com/Tencent/tdesign-vue/pull/1935))
+- `SelectInput`: 修复多选空值场景下的右侧内边距问题 @chaishi ([common #1082](https://github.com/Tencent/tdesign-common/pull/1082))
+- `Timepicker`: 修复清空 rangepicker 时返回值异常的问题 @uyarn ([#1936](https://github.com/Tencent/tdesign-vue/pull/1936))
+### 🚧 Others
+- `Calendar/Card/Collapse/Form/ImageViewer/Image`: demo 样例优化 @pengYYYYY ([#1932](https://github.com/Tencent/tdesign-vue/pull/1932))
+
 ## 🌈 0.52.1 `2022-12-09` 
 
 ### 🐞 Bug Fixes
