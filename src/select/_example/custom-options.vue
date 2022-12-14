@@ -81,12 +81,13 @@ export default {
 
 .tdesign-demo__user-option > img {
   max-width: 40px;
+  max-height: 40px;
   border-radius: 50%;
 }
 
 .tdesign-demo__user-option-desc {
-  font-size: 13px;
-  color: var(--td-gray-color-9);
+  font-size: 14px;
+  color: var(--td-text-color-secondary);
 }
 
 .tdesign-demo__user-option-info {
@@ -94,6 +95,7 @@ export default {
 }
 
 .tdesign-demo-select__overlay-option .t-select-option {
-  height: 60px;
+  height: 100%;
+  padding: 8px;
 }
 </style>

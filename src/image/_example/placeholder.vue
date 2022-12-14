@@ -49,14 +49,14 @@
 
 <script lang="jsx">
 import Vue from 'vue';
-import { RefreshIcon, QrcodeIcon } from 'tdesign-icons-vue';
+import { RefreshIcon, ImageErrorIcon } from 'tdesign-icons-vue';
 
 export default Vue.extend({
   data() {
     return {
       loadingCount: 0,
       errorCount: 0,
-      renderCustomIcon: <QrcodeIcon size="24" />,
+      renderCustomIcon: <ImageErrorIcon size="24" />,
     };
   },
   methods: {

@@ -1,27 +1,28 @@
 <template>
-  <t-select-input
-    :value="value"
-    :min-collapsed-num="1"
-    auto-width
-    allow-input
-    placeholder="select frameworks"
-    clearable
-    multiple
-    @tag-change="onTagChange"
-  >
-    <template #panel>
-      <t-checkbox-group
-        :value="checkboxValue"
-        :options="options"
-        class="tdesign-demo__panel-options-borderless-multiple"
-        @change="onCheckedChange"
-        @click="(e) => e.stopPropagation()"
-      />
-    </template>
-    <template #suffixIcon>
-      <chevron-down-icon />
-    </template>
-  </t-select-input>
+  <div class="tdesign-demo__select-input-autowidth-multiple" style="width: 100%">
+    <t-select-input
+      :value="value"
+      :min-collapsed-num="1"
+      auto-width
+      allow-input
+      placeholder="select frameworks"
+      clearable
+      multiple
+      @tag-change="onTagChange"
+    >
+      <template #panel>
+        <t-checkbox-group
+          :value="checkboxValue"
+          :options="options"
+          class="tdesign-demo__panel-options-autowidth-multiple"
+          @change="onCheckedChange"
+        />
+      </template>
+      <template #suffixIcon>
+        <chevron-down-icon />
+      </template>
+    </t-select-input>
+  </div>
 </template>
 <script>
 import { ChevronDownIcon } from 'tdesign-icons-vue';
@@ -93,23 +94,32 @@ export default {
   },
 };
 </script>
-<style lang="less" scoped>
-.t-checkbox {
+<style>
+.tdesign-demo__panel-options-autowidth-multiple {
+  width: 100%;
+  padding: 2px 0;
+  margin: 0 -2px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tdesign-demo__panel-options-autowidth-multiple .t-checkbox {
   display: flex;
   border-radius: 3px;
   line-height: 22px;
   cursor: pointer;
-  padding: 9px 8px;
+  padding: 3px 8px;
   color: var(--td-text-color-primary);
-  transition: background-color 0.2s cubic-bezier(0.38, 0, 0.24, 1);
+  transition: background-color 0.2s linear;
   white-space: nowrap;
   word-wrap: normal;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 0 0 4px;
+  margin: 0;
 }
 
-.t-checkbox:hover {
+.tdesign-demo__panel-options-autowidth-multiple .t-checkbox:hover {
   background-color: var(--td-bg-color-container-hover);
 }
 </style>
