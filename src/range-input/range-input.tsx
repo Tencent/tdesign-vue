@@ -50,7 +50,6 @@ export default defineComponent({
 
     function handleClear(context: { e: MouseEvent }) {
       props.onClear?.(context);
-      setInnerValue(['', ''], { ...context, trigger: 'clear', position: 'all' });
     }
 
     function handleEnter(rangeValue: RangeInputValue, context: { e: MouseEvent }) {
