@@ -110,5 +110,10 @@ export default {
       ],
     };
   },
+  methods: {
+    rehandleClickOp(data) {
+      console.log(data);
+    },
+  },
 };
 </script>

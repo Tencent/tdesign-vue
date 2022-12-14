@@ -71,6 +71,7 @@ export default {
         {
           colKey: 'matters',
           title: (h, { colIndex }) => <b style="font-wight: bold">{['', '申请事项'][colIndex]}</b>,
+          foot: '-',
         },
         {
           colKey: 'status',
@@ -89,8 +90,14 @@ export default {
               </t-tag>
             );
           },
+          foot: '-',
         },
-        { title: '邮箱地址', colKey: 'detail.email', width: 200 },
+        {
+          title: '邮箱地址',
+          colKey: 'detail.email',
+          width: 200,
+          foot: '-',
+        },
         {
           colKey: 'createTime',
           // render 可以渲染表头，也可以渲染单元格。但 title 只能渲染表头，cell 只能渲染单元格
@@ -101,6 +108,7 @@ export default {
               cell: row && row[col.colKey],
             }[type];
           },
+          foot: '-',
         },
       ],
     };

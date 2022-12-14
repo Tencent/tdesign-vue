@@ -617,6 +617,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                   defaultChecked={!this.isShowWeekend}
                   disabled={this.isWeekendToggleDisabled}
                   onClick={this.onWeekendToggleClick}
+                  size="large"
                   props={{ ...this.weekendBtnVBind }}
                 >
                   {this.weekendBtnText}

@@ -60,22 +60,24 @@ export default {
   .shadow {
     position: absolute;
     width: 100%;
-    height: 12px;
+    height: 22px;
     bottom: 0;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
   }
   .number {
-    font-weight: bold;
+    font-weight: 600;
     position: absolute;
-    top: 3px;
-    right: 5px;
+    right: 0;
     font-size: 14px;
+    line-height: 22px;
   }
   .item {
     position: relative;
     display: flex;
     align-items: center;
     color: var(--td-text-color-secondary);
+    font-size: 14px;
+    line-height: 22px;
     span {
       display: block;
       left: 1px;

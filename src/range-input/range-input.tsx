@@ -50,7 +50,6 @@ export default defineComponent({
 
     function handleClear(context: { e: MouseEvent }) {
       props.onClear?.(context);
-      setInnerValue(['', ''], { ...context, trigger: 'clear', position: 'all' });
     }
 
     function handleEnter(rangeValue: RangeInputValue, context: { e: MouseEvent }) {
@@ -151,6 +150,7 @@ export default defineComponent({
     const prefixIconContent = renderTNodeJSX('prefixIcon');
     const suffixContent = renderTNodeJSX('suffix');
     const suffixIconContent = renderTNodeJSX('suffixIcon');
+    const tips = renderTNodeJSX('tips');
 
     return (
       <div
@@ -249,7 +249,7 @@ export default defineComponent({
             </span>
           )}
         </div>
-        {this.tips && <div class={`${COMPONENT_NAME}__tips`}>{this.tips}</div>}
+        {tips && <div class={`${COMPONENT_NAME}__tips`}>{tips}</div>}
       </div>
     );
   },

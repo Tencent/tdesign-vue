@@ -139,11 +139,11 @@ export default {
       console.log('sort-change', sort, options);
       // 受控操作当中，this.sort 和 this.data 的赋值都是必须
       this.sort = sort;
-      this.data = options.currentDataSource;
+      // this.data = options.currentDataSource;
     },
     dataChange(data) {
       // 除了 sortChange，也可以在这里对 data.value 进行赋值
-      // this.data = data;
+      this.data = data;
       console.log('data-change', data);
     },
   },

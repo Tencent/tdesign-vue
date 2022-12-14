@@ -62,10 +62,10 @@
           slot="statusIcon"
           variant="dashed"
         >
-          <icon name="add" size="16px" style="color: #0004" />
+          <icon name="add" />
         </t-button>
         <t-button v-if="item.id > 0" @click="removeItem(item, index)" slot="statusIcon" variant="dashed">
-          <icon name="remove" size="16px" style="color: #0004" />
+          <icon name="remove" />
         </t-button>
       </t-form-item>
 

@@ -190,6 +190,7 @@ export default function useRowSelect(
 
   const onInnerSelectRowClick: TdPrimaryTableProps['onRowClick'] = ({ row, index }) => {
     const selectedColIndex = props.columns.findIndex((item) => item.colKey === 'row-select');
+    if (selectedColIndex === -1) return;
     const { disabled } = getRowSelectDisabledData({
       row,
       rowIndex: index,

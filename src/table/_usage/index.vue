@@ -52,7 +52,7 @@ const columns = ref([
 ]);
 
 const configList = ref(baseConfigJson);
-const panelList = [{ label: 'baseTable', value: 'baseTable', config: baseConfigJson }];
+const panelList = [{ label: 'Table', value: 'baseTable', config: baseConfigJson }];
 
 const usageCodeMap = {
   baseTable:

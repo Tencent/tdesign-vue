@@ -1,23 +1,33 @@
 <template>
-  <div class="demo-container">
-    <div class="item">
-      <!-- 为保证组件收益最大化，当数据量小于 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，默认值为 100 -->
-      <t-table
-        row-key="id"
-        :columns="columns"
-        :data="data"
-        :scroll="{ type: 'virtual', rowHeight: 48, bufferSize: 30 }"
-        :height="300"
-      >
-      </t-table>
-    </div>
-  </div>
+  <t-space direction="vertical">
+    <t-space align="center">
+      <t-button @click="scrollToElement">滚动到指定元素</t-button>
+      <t-checkbox v-model="bordered">是否显示边框</t-checkbox>
+    </t-space>
+    <!--
+      1. rowHeight 接近平均高度即可
+      2. bufferSize 别太大，5 ～ 30 之间合适
+      3. 如果是固定行高请设置 isFixedRowHeight: true。rowHeight 设置精确值
+      4. 当数据量小于 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，默认值 100
+    -->
+    <t-table
+      ref="tableRef"
+      row-key="id"
+      :columns="columns"
+      :data="data"
+      :scroll="{ type: 'virtual', rowHeight: 69, bufferSize: 10 }"
+      :height="300"
+      :bordered="bordered"
+    >
+    </t-table>
+  </t-space>
 </template>
 
 <script lang="jsx">
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
 const columns = [
+  { colKey: 'serial-number', width: 80, title: '序号' },
   { colKey: 'applicant', title: '申请人', width: '100' },
   {
     colKey: 'status',
@@ -58,7 +68,7 @@ for (let i = 0; i < 10; i++) {
   });
 }
 // 为了使得表格滚动更加平稳，建议指定row-height参数值为接近表格的平均行高
-const times = Array.from(new Array(600), () => ''); // 测试共计1k条数据
+const times = Array.from(new Array(1000), () => '');
 const testData = [];
 times.forEach((item, i) => {
   const k = i % 10;
@@ -69,9 +79,24 @@ export default {
   name: 'VirtualScroll',
   data() {
     return {
+      tableRef: null,
       data: [...testData],
       columns,
+      bordered: true,
     };
+  },
+
+  methods: {
+    scrollToElement() {
+      this.$refs.tableRef.scrollToElement({
+        // 跳转元素下标（第 256 个元素位置）
+        index: 255,
+        // 滚动元素距离顶部的距离（如表头高度）
+        top: 47,
+        // 行高度动态变化场景场景下，即 isFixedRowHeight = false。延迟设置元素位置，一般用于依赖不同高度异步渲染等场景，单位：毫秒。（固定高度不需要这个）
+        time: 60,
+      });
+    },
   },
 };
 </script>

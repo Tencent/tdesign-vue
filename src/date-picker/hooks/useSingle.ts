@@ -1,4 +1,4 @@
-import { ref, computed, watchEffect } from '@vue/composition-api';
+import { ref, computed, watch } from '@vue/composition-api';
 import dayjs from 'dayjs';
 
 import { usePrefixClass, useConfig } from '../../hooks/useConfig';
@@ -118,14 +118,14 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
     },
   }));
 
-  watchEffect(() => {
-    if (!value.value) {
+  watch(value, (value) => {
+    if (!value) {
       inputValue.value = '';
       return;
     }
-    if (!isValidDate(value.value, formatRef.value.format)) return;
+    if (!isValidDate(value, formatRef.value.format)) return;
 
-    inputValue.value = formatDate(value.value, {
+    inputValue.value = formatDate(value, {
       format: formatRef.value.format,
     });
   });

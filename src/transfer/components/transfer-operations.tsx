@@ -85,6 +85,8 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
       <div class={`${this.componentName}__operations`}>
         <TButton
           variant="outline"
+          size="small"
+          shape={typeof this.operation?.[1] === 'string' ? 'rectangle' : 'square'}
           key={rightDisabled ? 'right-outline' : 'right-base'}
           disabled={rightDisabled}
           onClick={this.moveToRight}
@@ -95,6 +97,8 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
         <TButton
           variant="outline"
           key={leftDisabled ? 'left-outline' : 'left-base'}
+          size="small"
+          shape={typeof this.operation?.[0] === 'string' ? 'rectangle' : 'square'}
           disabled={leftDisabled}
           onClick={this.moveToLeft}
           icon={this.getIcon('left')}

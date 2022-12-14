@@ -274,6 +274,9 @@ export default defineComponent({
       tRowAttributes,
       primaryTableClasses,
       errorListMap,
+      scrollToElement: (data: any) => {
+        primaryTableRef.value.virtualConfig.scrollToElement(data);
+      },
       validateRowData,
       validateTableData,
       clearValidateData,
