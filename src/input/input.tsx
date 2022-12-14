@@ -373,7 +373,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     updateInputWidth() {
       const pre = this.$refs.inputPreRef as HTMLSpanElement;
       if (!pre) return;
-      const width = pre.offsetWidth;
+      const { width } = pre.getBoundingClientRect();
       if (this.$refs.inputRef) {
         (this.$refs.inputRef as HTMLInputElement).style.width = `${width}px`;
       }
