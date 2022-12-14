@@ -1,8 +1,9 @@
 <template>
-  <t-space direction="vertical">
+  <t-space direction="vertical" class="tdesign-demo__select-input-collapsed-items">
     <t-select-input
       :value="value"
       :min-collapsed-num="1"
+      :popup-props="{ overlayInnerStyle: { padding: '6px' } }"
       placeholder="请选择"
       allow-input
       clearable
@@ -15,15 +16,16 @@
           :options="options"
           class="tdesign-demo__panel-options-collapsed-items"
           @change="onCheckedChange"
-          @click="(e) => e.stopPropagation()"
         />
       </template>
     </t-select-input>
+
     <!-- 第一种方式：使用渲染函数 collapsed-items 自定义折叠项 -->
     <t-select-input
       :value="value"
       :min-collapsed-num="2"
       :collapsed-items="renderCollapsedItems"
+      :popup-props="{ overlayInnerStyle: { padding: '6px' } }"
       placeholder="请选择"
       allow-input
       clearable
@@ -36,14 +38,15 @@
           :options="options"
           class="tdesign-demo__panel-options-collapsed-items"
           @change="onCheckedChange"
-          @click="(e) => e.stopPropagation()"
         />
       </template>
     </t-select-input>
+
     <!-- 第二种方式：使用插槽 collapsedItems 自定义折叠项 -->
     <t-select-input
       :value="value"
       :min-collapsed-num="3"
+      :popup-props="{ overlayInnerStyle: { padding: '6px' } }"
       placeholder="请选择"
       allow-input
       clearable
@@ -66,7 +69,6 @@
           :options="options"
           class="tdesign-demo__panel-options-collapsed-items"
           @change="onCheckedChange"
-          @click="(e) => e.stopPropagation()"
         />
       </template>
     </t-select-input>
@@ -140,25 +142,27 @@ export default {
   },
 };
 </script>
-<style lang="less">
+<style>
 .tdesign-demo__panel-options-collapsed-items {
   width: 100%;
-  padding: 4px 0;
-  display: inline-block;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 .tdesign-demo__panel-options-collapsed-items .t-checkbox {
   display: flex;
   border-radius: 3px;
   line-height: 22px;
   cursor: pointer;
-  padding: 9px 8px;
+  padding: 3px 8px;
   color: var(--td-text-color-primary);
-  transition: background-color 0.2s cubic-bezier(0.38, 0, 0.24, 1);
+  transition: background-color 0.2s linear;
   white-space: nowrap;
   word-wrap: normal;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 0 0 4px;
+  margin: 0;
 }
 
 .tdesign-demo__panel-options-collapsed-items .t-checkbox:hover {

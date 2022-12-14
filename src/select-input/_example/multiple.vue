@@ -1,24 +1,35 @@
 <template>
-  <t-space direction="vertical" style="width: 100%">
-    <t-space>
+  <t-space direction="vertical" class="tdesign-demo__select-input-multiple" style="width: 100%">
+    <div>
       <t-checkbox v-model="allowInput">是否允许输入</t-checkbox>
       <t-checkbox v-model="creatable">允许创建新选项（Enter 创建）</t-checkbox>
-    </t-space>
-    <t-radio-group
-      v-model="excessTagsDisplayType"
-      :options="[
-        { label: '选中项过多横向滚动', value: 'scroll' },
-        { label: '选中项过多换行显示', value: 'break-line' },
-      ]"
-    />
+    </div>
+    <div>
+      <t-radio-group
+        v-model="excessTagsDisplayType"
+        :options="[
+          { label: '选中项过多横向滚动', value: 'scroll' },
+          { label: '选中项过多换行显示', value: 'break-line' },
+        ]"
+      />
+    </div>
+
     <!-- :popup-props="{ trigger: 'hover' }" -->
     <t-select-input
-      :input-value.sync="inputValue"
+      :input-value:sync="inputValue"
       :value="value"
       :allow-input="allowInput"
       :placeholder="allowInput ? '请选择或输入' : '请选择'"
       :tag-input-props="{ excessTagsDisplayType }"
-      :popup-props="{ overlayStyle: { maxHeight: '280px', overflow: 'auto' } }"
+      :popup-props="{
+        overlayInnerClassName: ['narrow-scrollbar'],
+        overlayInnerStyle: {
+          maxHeight: '280px',
+          overflowY: 'auto',
+          overscrollBehavior: 'contain',
+          padding: '6px',
+        },
+      }"
       clearable
       multiple
       @tag-change="onTagChange"
@@ -31,7 +42,6 @@
           :options="options"
           class="tdesign-demo__panel-options-multiple"
           @change="onCheckedChange"
-          @click="(e) => e.stopPropagation()"
         />
         <div v-else class="tdesign-demo__select-empty-multiple">暂无数据</div>
       </template>
@@ -124,28 +134,28 @@ export default {
   },
 };
 </script>
-<style lang="less">
+<style>
 .tdesign-demo__panel-options-multiple {
   width: 100%;
-  padding: 4px 0;
-  display: inline-block;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
-
 .tdesign-demo__panel-options-multiple .t-checkbox {
   display: flex;
   border-radius: 3px;
   line-height: 22px;
   cursor: pointer;
-  padding: 9px 8px;
+  padding: 3px 8px;
   color: var(--td-text-color-primary);
-  transition: background-color 0.2s cubic-bezier(0.38, 0, 0.24, 1);
+  transition: background-color 0.2s linear;
   white-space: nowrap;
   word-wrap: normal;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 0 0 4px;
+  margin: 0;
 }
-
 .tdesign-demo__panel-options-multiple .t-checkbox:hover {
   background-color: var(--td-bg-color-container-hover);
 }

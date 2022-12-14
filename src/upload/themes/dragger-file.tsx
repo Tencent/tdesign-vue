@@ -8,7 +8,7 @@ import {
 } from 'tdesign-icons-vue';
 import { abridgeName, getFileSizeText } from '../../_common/js/upload/utils';
 import { TdUploadProps, UploadFile } from '../type';
-import Button from '../../button';
+import TLink from '../../link';
 import { CommonDisplayFileProps } from '../interface';
 import { commonProps } from '../constants';
 import useCommonClassName from '../../hooks/useCommonClassName';
@@ -126,9 +126,9 @@ export default defineComponent({
             </small>
             <div class={`${this.uploadPrefix}__dragger-btns`}>
               {['progress', 'waiting'].includes(file.status) && !this.disabled && (
-                <Button
+                <TLink
                   theme="primary"
-                  variant="text"
+                  hover="color"
                   class={`${this.uploadPrefix}__dragger-progress-cancel`}
                   onClick={(e: MouseEvent) => this.cancelUpload?.({
                     e,
@@ -137,40 +137,40 @@ export default defineComponent({
                   }
                 >
                   {this.locale?.cancelUploadText}
-                </Button>
+                </TLink>
               )}
               {!this.autoUpload && file.status === 'waiting' && (
-                <Button
-                  variant="text"
+                <TLink
                   theme="primary"
+                  hover="color"
                   disabled={this.disabled}
                   onClick={() => this.uploadFiles?.()}
                   class={`${this.uploadPrefix}__dragger-upload-btn`}
                 >
                   {this.locale.triggerUploadText.normal}
-                </Button>
+                </TLink>
               )}
             </div>
             {['fail', 'success'].includes(file?.status) && !this.disabled && (
               <div class={`${this.uploadPrefix}__dragger-btns`}>
-                <Button
+                <TLink
                   theme="primary"
-                  variant="text"
+                  hover="color"
                   disabled={this.disabled}
                   class={`${this.uploadPrefix}__dragger-progress-cancel`}
                   onClick={this.triggerUpload}
                 >
                   {this.locale.triggerUploadText.reupload}
-                </Button>
-                <Button
+                </TLink>
+                <TLink
                   theme="danger"
-                  variant="text"
+                  hover="color"
                   disabled={this.disabled}
                   class={`${this.uploadPrefix}__dragger-delete-btn`}
                   onClick={(e: MouseEvent) => this.onRemove({ e, index: 0, file })}
                 >
                   {this.locale.triggerUploadText.delete}
-                </Button>
+                </TLink>
               </div>
             )}
           </div>

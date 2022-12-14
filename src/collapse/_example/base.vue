@@ -8,7 +8,7 @@
         这部分是每个折叠面板折叠或展开的内容，可根据不同业务或用户的使用诉求，进行自定义填充。可以是纯文本、图文、子列表等内容形式。
       </t-collapse-panel>
       <t-collapse-panel header="自定义折叠面板内容">
-        <t-space direction="vertical" style="width: 80%">
+        <t-space direction="vertical" style="width: 100%">
           <t-tag-input v-model="tags1" clearable />
           <t-tag-input :value="tags2" label="Controlled: " clearable />
           <t-tag-input :default-value="tags3" label="UnControlled: " clearable />
