@@ -21,6 +21,7 @@ export default defineComponent({
     const dropdownMenuClass = usePrefixClass('dropdown__menu');
     const menuRef = ref<HTMLElement>();
     const isOverMaxHeight = ref(false);
+    const scrollTop = ref(0);
     const handleItemClick = (
       optionItem: { disabled: boolean; children: unknown },
       options: { data: DropdownOption; context: { e: MouseEvent } },
@@ -33,6 +34,9 @@ export default defineComponent({
       emit('click', data, context);
     };
 
+    const handleScroll = () => {
+      scrollTop.value = menuRef.value?.scrollTop;
+    };
     onMounted(() => {
       if (menuRef.value) {
         const menuHeight = parseInt(window?.getComputedStyle(menuRef.value).height, 10);
@@ -46,6 +50,8 @@ export default defineComponent({
       handleItemClick,
       menuRef,
       isOverMaxHeight,
+      handleScroll,
+      scrollTop,
     };
   },
   methods: {
@@ -65,6 +71,7 @@ export default defineComponent({
       let renderContent;
       data.forEach?.((menu, idx) => {
         const optionItem = { ...(menu as DropdownOption) };
+        const onViewIdx = Math.ceil(this.scrollTop / 30);
 
         if (optionItem.children) {
           optionItem.children = this.renderOptions(optionItem.children);
@@ -109,7 +116,7 @@ export default defineComponent({
                     },
                   ]}
                   style={{
-                    top: `${idx * 30}px`,
+                    top: `${(idx - onViewIdx) * 30}px`,
                   }}
                 >
                   <ul>{optionItem.children}</ul>
@@ -164,6 +171,7 @@ export default defineComponent({
         style={{
           maxHeight: `${this.maxHeight}px`,
         }}
+        onScroll={this.handleScroll}
       >
         {this.renderOptions(this.options)}
       </div>
