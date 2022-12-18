@@ -1,3 +1,12 @@
+/**
+ * Select 内部 option 处理
+ * 将 slot 方式传入的 <t-option /> 元素与 prop 方式传入的 options 参数进行统一收编处理，便于数据管理和筛选
+ *
+ * 因为 Vue2 没有很好的方案监听 `未实际渲染的 Slots`，这里折中方案如下：
+ * 在 slot 数组首层（若存在 group 分组，其子项作为一个整体考虑）的每个元素对象实例上，进行特殊标记的方式，来区别 slot 是否已经在内部 options 登记
+ * 每次 beforeUpdate 之前，遍历 Select 实例 slot 数组首层，若存在未被标记的元素，则重新构造内部 option 数组
+ */
+
 import {
   ref, Ref, computed, onBeforeUpdate, ComponentInternalInstance, watch,
 } from '@vue/composition-api';
@@ -12,6 +21,9 @@ type UniOption = (TdOptionProps | SelectOptionGroup) & {
   index?: number;
   slots?: () => VNode;
 };
+
+// slot 是否已经被记录的标记字段名称
+const markName = '_t_has_recorded';
 
 export default function useSelectOptions(
   props: TdSelectProps,
@@ -45,51 +57,56 @@ export default function useSelectOptions(
       return getFormatOption(option);
     }) || [];
 
-    // 处理 slots 中 t-option 与 t-option-group
-    const currentSlots = instance.proxy.$slots.default || [];
-    const optionsSlots = currentSlots.filter((item) => item.componentOptions?.tag === 't-option');
-    const groupSlots = currentSlots.filter((item) => item.componentOptions?.tag === 't-option-group');
-    if (isArray(groupSlots)) {
-      groupSlots.forEach((group) => {
-        const groupOption = {
-          group: (group.componentOptions.propsData as TdOptionProps)?.label,
-          ...group.componentOptions.propsData,
-          children: [] as TdOptionProps[],
-        };
+    // props 中 options 参数优先级高于 slots
+    if (props.options === undefined) {
+      // 处理 slots 中 t-option 与 t-option-group
+      const currentSlots = instance.proxy.$slots.default || [];
+      // eslint-disable-next-line no-param-reassign
+      currentSlots.forEach((v) => (v.data[markName] = true));
+      const optionsSlots = currentSlots.filter((item) => item.componentOptions?.tag === 't-option');
+      const groupSlots = currentSlots.filter((item) => item.componentOptions?.tag === 't-option-group');
+      if (isArray(groupSlots)) {
+        groupSlots.forEach((group) => {
+          const groupOption = {
+            group: (group.componentOptions.propsData as TdOptionProps)?.label,
+            ...group.componentOptions.propsData,
+            children: [] as TdOptionProps[],
+          };
 
-        const res = group.componentOptions.children;
-        if (isArray(res)) {
-          res.forEach((child) => {
-            groupOption.children.push({
-              // 单独处理 style 和 class 参数的透传
-              class: child.data.staticClass,
-              style: child.data.staticStyle,
-              // 透传其他常规参数
-              ...child.componentOptions.propsData,
-              slots: () => child.componentOptions.children,
-              index: dynamicIndex,
-            } as TdOptionProps);
-            dynamicIndex += 1;
-          });
-        }
+          const res = group.componentOptions.children;
+          if (isArray(res)) {
+            res.forEach((child) => {
+              groupOption.children.push({
+                // 单独处理 style 和 class 参数的透传
+                class: child.data.staticClass,
+                style: child.data.staticStyle,
+                // 透传其他常规参数
+                ...child.componentOptions.propsData,
+                slots: () => child.componentOptions.children,
+                index: dynamicIndex,
+              } as TdOptionProps);
+              dynamicIndex += 1;
+            });
+          }
 
-        innerOptions.push(groupOption);
-      });
-    }
+          innerOptions.push(groupOption);
+        });
+      }
 
-    if (isArray(optionsSlots)) {
-      optionsSlots.forEach((child) => {
-        innerOptions.push({
-          // 单独处理 style 和 class 参数的透传
-          class: child.data.staticClass,
-          style: child.data.staticStyle,
-          // 透传其他常规参数
-          ...child.componentOptions.propsData,
-          slots: () => child.componentOptions.children,
-          index: dynamicIndex,
-        } as TdOptionProps);
-        dynamicIndex += 1;
-      });
+      if (isArray(optionsSlots)) {
+        optionsSlots.forEach((child) => {
+          innerOptions.push({
+            // 单独处理 style 和 class 参数的透传
+            class: child.data.staticClass,
+            style: child.data.staticStyle,
+            // 透传其他常规参数
+            ...child.componentOptions.propsData,
+            slots: () => child.componentOptions.children,
+            index: dynamicIndex,
+          } as TdOptionProps);
+          dynamicIndex += 1;
+        });
+      }
     }
 
     options.value = innerOptions;
@@ -118,7 +135,7 @@ export default function useSelectOptions(
     return res;
   });
 
-  // 首次初始化的时候
+  // 组件初始化，构造内部 options 数组
   getOptions();
   // 监听 options 参数，变化时重新构造内部 options 数组
   watch(
@@ -127,9 +144,11 @@ export default function useSelectOptions(
       getOptions();
     },
   );
-  // 监听组件 slot，当变化时构造内部 options 数组
+  // 当组件 slot 变化时，重新构造内部 options 数组
   onBeforeUpdate(() => {
-    getOptions();
+    if (instance.proxy.$slots.default?.some((v) => v.data[markName] !== true)) {
+      getOptions();
+    }
   });
 
   return {
