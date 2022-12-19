@@ -6,8 +6,8 @@ import {
   ref,
   reactive,
   computed,
-  onMounted,
   toRefs,
+  watch,
 } from '@vue/composition-api';
 import isFunction from 'lodash/isFunction';
 import upperFirst from 'lodash/upperFirst';
@@ -203,7 +203,7 @@ export default defineComponent({
       return trListeners;
     };
 
-    onMounted(() => {
+    watch([trRef], () => {
       if (props.virtualConfig?.isVirtualScroll.value) {
         context.emit('row-mounted', {
           ref: trRef,
@@ -282,6 +282,9 @@ export default defineComponent({
       ];
       const onClick = (e: MouseEvent) => {
         const p = { ...params, e };
+        if (col.stopPropagation) {
+          e.stopPropagation();
+        }
         this.onCellClick?.(p);
         // Vue3 ignore this line
         this.$emit('cell-click', p);
