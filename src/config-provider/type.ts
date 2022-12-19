@@ -4,6 +4,7 @@
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
  * */
 
+import { GlobalIconConfig } from 'tdesign-icons-vue';
 import { CalendarController } from '../calendar';
 import { ButtonProps } from '../button';
 import { FormErrorMessage } from '../form';
@@ -58,7 +59,7 @@ export interface GlobalConfigProvider {
   /**
    * icon 全局配置，用来覆盖内置 tdesign-icons
    */
-  icon?: IconConfig;
+  icon?: GlobalIconConfig;
   /**
    * 输入框组件全局配置
    */
@@ -812,8 +813,4 @@ export interface UploadTriggerUploadText {
   reupload?: string;
   continueUpload: string;
   delete?: string;
-}
-
-export interface IconConfig {
-  [name: string]: any;
 }
