@@ -193,7 +193,7 @@ export default defineComponent({
       // 多选模式屏蔽 Active 事件
       if (props.multiple) return;
 
-      setInnerVisible(false, {});
+      setInnerVisible(false, context);
 
       // 单选模式重复选择不清空
       if (treeSelectValue.value === context.node.data[realValue.value]) {
