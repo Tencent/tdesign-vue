@@ -579,6 +579,12 @@ const docs = [
         componentEn: () => import('tdesign-vue/drawer/drawer.en-US.md'),
       },
       {
+        title: 'Guide 引导',
+        name: 'guide',
+        path: '/vue/components/guide',
+        component: () => import('tdesign-vue/guide/guide.md'),
+      },
+      {
         title: 'Message 全局提示',
         titleEn: 'Message',
         name: 'message',
