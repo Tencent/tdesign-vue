@@ -207,20 +207,20 @@ export default defineComponent({
       currentHighlightLayerElm,
       dialogWrapperRef,
       dialogTooltipRef,
+      activated,
     };
   },
   methods: {
     renderOverlayLayer() {
       return (
         <div
-          ref={this.overlayLayerRef}
+          ref="overlayLayerRef"
           v-transfer-dom="body"
           class={`${this.componentName}__overlay`}
           style={{ zIndex: this.zIndex - 2 }}
         />
       );
     },
-
     renderAction(mode: TdGuideProps['mode']) {
       const isLast = this.innerCurrent === this.stepsTotal - 1;
       const isFirst = this.innerCurrent === 0;
@@ -316,7 +316,7 @@ export default defineComponent({
 
       return (
         <div
-          ref={this.highlightLayerRef}
+          ref="highlightLayerRef"
           v-transfer-dom="body"
           class={highlightClass.concat(showHighlightContent ? highlightClass : maskClass)}
           style={style}
@@ -361,8 +361,8 @@ export default defineComponent({
       const footerClasses = [`${this.componentName}__footer`, `${this.componentName}__footer--popup`];
       return (
         <div>
-          <div ref={this.dialogWrapperRef} v-transfer-dom="body" class={wrapperClasses} style={style}>
-            <div ref={this.dialogTooltipRef} class={dialogClasses}>
+          <div ref="dialogWrapperRef" v-transfer-dom="body" class={wrapperClasses} style={style}>
+            <div ref="dialogTooltipRef" class={dialogClasses}>
               {this.renderTooltipBody()}
               <div class={footerClasses}>
                 {this.renderCounter()}
@@ -405,7 +405,7 @@ export default defineComponent({
           overlayInnerClassName={{ [`${this.componentName}__popup--content`]: !!content }}
           placement={this.currentStepInfo.placement}
         >
-          <div ref={this.referenceLayerRef} v-transfer-dom="body" class={classes} />
+          <div ref="referenceLayerRef" v-transfer-dom="body" class={classes} />
         </Popup>
       );
     },
