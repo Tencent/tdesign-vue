@@ -1,4 +1,3 @@
-import { VNode } from 'vue';
 import {
   defineComponent, computed, nextTick, onMounted, ref, toRefs, watch,
 } from '@vue/composition-api';
