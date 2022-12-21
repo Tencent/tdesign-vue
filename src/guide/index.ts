@@ -5,6 +5,7 @@ import { TdGuideProps } from './type';
 import './style';
 
 export * from './type';
+
 export type GuideProps = TdGuideProps;
 
 export const Guide = withInstall(_Guide);

@@ -68,30 +68,27 @@ export default {
   methods: {
     handleClick() {
       this.visible = true;
-      this.current = 0;
+      setTimeout(() => {
+        this.current = 0;
+      }, 1000);
     },
-
     handleChange(current, { e, total }) {
       console.log(current, e, total);
     },
-
     handlePrevStepClick({
       e, prev, current, total,
     }) {
       console.log(e, prev, current, total);
     },
-
     handleNextStepClick({
       e, next, current, total,
     }) {
       console.log(e, next, current, total);
     },
-
     handleFinish({ e, current, total }) {
       this.visible = false;
       console.log(e, current, total);
     },
-
     handleSkip({ e, current, total }) {
       this.visible = false;
       console.log(e, current, total);

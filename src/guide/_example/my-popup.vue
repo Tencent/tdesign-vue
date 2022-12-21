@@ -18,6 +18,14 @@ export default {
   components: {
     ArrowUpIcon,
   },
+  props: {
+    handlePrev: Function,
+    handleNext: Function,
+    handleSkip: Function,
+    handleFinish: Function,
+    current: Number,
+    total: Number,
+  },
 };
 </script>
 

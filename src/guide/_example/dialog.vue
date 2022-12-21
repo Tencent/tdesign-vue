@@ -25,7 +25,7 @@
       </div>
 
       <t-guide
-        v-model="current"
+        :current.sync="current"
         :steps="steps"
         mode="dialog"
         @change="handleChange"
@@ -73,7 +73,7 @@ export default {
       this.visible = true;
       setTimeout(() => {
         this.current = 0;
-      }, 800);
+      }, 1000);
     },
 
     handleChange(current, { e, total }) {

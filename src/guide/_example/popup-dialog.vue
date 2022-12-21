@@ -25,7 +25,7 @@
       </div>
 
       <t-guide
-        v-model="current"
+        :current.sync="current"
         :steps="steps"
         @change="handleChange"
         @prev-step-click="handlePrevStepClick"

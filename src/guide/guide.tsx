@@ -1,7 +1,7 @@
+import { VNode } from 'vue';
 import {
   defineComponent, computed, nextTick, onMounted, ref, toRefs, watch,
 } from '@vue/composition-api';
-
 import {
   scrollToParentVisibleArea, getRelativePosition, getTargetElm, scrollToElm,
 } from './utils';
@@ -11,7 +11,7 @@ import {
   addClass, removeClass, isFixed, getWindowScroll,
 } from '../utils/dom';
 
-import useVModel from '../hooks/useVModel';
+import useDefaultValue from '../hooks/useDefaultValue';
 import { useTNodeJSX } from '../hooks/tnode';
 import { usePrefixClass, useConfig } from '../hooks/useConfig';
 
@@ -29,9 +29,15 @@ export default defineComponent({
     const COMPONENT_NAME = usePrefixClass('guide');
     const LOCK_CLASS = usePrefixClass('guide--lock');
     const { global } = useConfig('guide');
-
     const { current } = toRefs(props);
-    const [innerCurrent, setInnerCurrent] = useVModel(current, props.defaultCurrent, props.onChange, 'change');
+
+    const [innerCurrent, setInnerCurrent] = useDefaultValue(
+      current,
+      props.defaultCurrent,
+      props.onChange,
+      'current',
+      'change',
+    );
     // 覆盖层，用于覆盖所有元素
     const overlayLayerRef = ref<HTMLElement>();
     // 高亮层，用于高亮元素
@@ -59,7 +65,6 @@ export default defineComponent({
 
     // 设置高亮层的位置
     const setHighlightLayerPosition = (highlighLayer: HTMLElement) => {
-      // 这里预留了一个相对元素的功能，暂未使用，也是这里导致了 fix #2111
       let { top, left } = getRelativePosition(currentHighlightLayerElm.value);
       let { width, height } = currentHighlightLayerElm.value.getBoundingClientRect();
       const highlightPadding = getCurrentCrossProps('highlightPadding');
@@ -74,7 +79,6 @@ export default defineComponent({
         top += scrollTop;
         left += scrollLeft;
       }
-
       setStyle(highlighLayer, {
         width: `${width}px`,
         height: `${height}px`,
@@ -230,61 +234,77 @@ export default defineComponent({
         <div class={`${this.componentName}__action`}>
           {!this.hideSkip && !isLast && (
             <Button
-              class={`${this.componentName}__skip`}
-              theme="default"
-              size={buttonSize}
-              variant="base"
-              onClick={this.handleSkip}
-              {...(this.getCurrentCrossProps('skipButtonProps') ?? this.global.skipButtonProps)}
+              {...{
+                props: {
+                  class: `${this.componentName}__skip`,
+                  theme: 'default',
+                  size: buttonSize,
+                  variant: 'base',
+                  onClick: this.handleSkip,
+                  ...(this.getCurrentCrossProps('skipButtonProps') ?? this.global.skipButtonProps),
+                },
+              }}
             />
           )}
           {!this.hidePrev && !isFirst && (
             <Button
-              class={`${this.componentName}__prev`}
-              theme="primary"
-              size={buttonSize}
-              variant="base"
-              onClick={this.handlePrev}
-              {...(this.getCurrentCrossProps('prevButtonProps') ?? this.global.prevButtonProps)}
+              {...{
+                props: {
+                  class: `${this.componentName}__prev`,
+                  theme: 'primary',
+                  size: buttonSize,
+                  variant: 'base',
+                  onClick: this.handlePrev,
+                  ...(this.getCurrentCrossProps('prevButtonProps') ?? this.global.prevButtonProps),
+                },
+              }}
             />
           )}
           {!isLast && (
             <Button
-              class={`${this.componentName}__next`}
-              theme="primary"
-              size={buttonSize}
-              variant="base"
-              onClick={this.handleNext}
-              {...(this.getCurrentCrossProps('nextButtonProps') ?? this.global.nextButtonProps)}
+              {...{
+                props: {
+                  class: `${this.componentName}__next`,
+                  theme: 'primary',
+                  size: buttonSize,
+                  variant: 'base',
+                  onClick: this.handleNext,
+                  ...(this.getCurrentCrossProps('nextButtonProps') ?? this.global.nextButtonProps),
+                },
+              }}
             />
           )}
           {isLast && (
             <Button
-              class={`${this.componentName}__finish`}
-              theme="primary"
-              size={buttonSize}
-              variant="base"
-              onClick={this.handleFinish}
-              {...(props.finishButtonProps ?? this.global.finishButtonProps)}
+              {...{
+                props: {
+                  class: `${this.componentName}__finish`,
+                  theme: 'primary',
+                  size: buttonSize,
+                  variant: 'base',
+                  onClick: this.handleFinish,
+                  ...(this.finishButtonProps ?? this.global.finishButtonProps),
+                },
+              }}
             />
           )}
         </div>
       );
     },
 
-    renderTooltipBody() {
+    renderTooltipTitle() {
       const title = <div class={`${this.componentName}__title`}>{this.currentStepInfo.title}</div>;
+
+      return title;
+    },
+
+    renderTooltipDesc() {
       const { body: descBody } = this.currentStepInfo;
       const desc = (
         <div class={`${this.componentName}__desc`}>{typeof descBody === 'string' ? descBody : <descBody />}</div>
       );
 
-      return (
-        <div>
-          {title}
-          {desc}
-        </div>
-      );
+      return desc;
     },
     renderPopupContent() {
       const footerClasses = [`${this.componentName}__footer`, `${this.componentName}__footer--popup`];
@@ -297,7 +317,8 @@ export default defineComponent({
 
       return (
         <div class={`${this.componentName}__tooltip`}>
-          {this.renderTooltipBody()}
+          {this.renderTooltipTitle()}
+          {this.renderTooltipDesc()}
           {action}
         </div>
       );
@@ -341,7 +362,7 @@ export default defineComponent({
           )}
         </div>
       );
-      return <div>{!this.hideCounter && popupDefaultCounter}</div>;
+      return !this.hideCounter ? popupDefaultCounter : null;
     },
     renderDialogGuide() {
       const style = { zIndex: this.zIndex };
@@ -363,7 +384,8 @@ export default defineComponent({
         <div>
           <div ref="dialogWrapperRef" v-transfer-dom="body" class={wrapperClasses} style={style}>
             <div ref="dialogTooltipRef" class={dialogClasses}>
-              {this.renderTooltipBody()}
+              {this.renderTooltipTitle()}
+              {this.renderTooltipDesc()}
               <div class={footerClasses}>
                 {this.renderCounter()}
                 {this.renderAction('dialog')}
@@ -375,7 +397,7 @@ export default defineComponent({
     },
     renderPopupGuide() {
       const { content } = this.currentStepInfo;
-      let renderBody;
+      let renderBody: JSX.Element;
       if (content) {
         const contentProps = {
           handlePrev: this.handlePrev,
@@ -385,7 +407,7 @@ export default defineComponent({
           current: this.innerCurrent,
           total: this.stepsTotal,
         };
-        renderBody = () => <content {...contentProps} />;
+        renderBody = <content {...{ props: { ...contentProps } }} />;
       } else {
         renderBody = this.renderPopupContent();
       }
@@ -394,12 +416,11 @@ export default defineComponent({
         `${this.componentName}__reference`,
         `${this.componentName}--${this.currentElmIsFixed ? 'fixed' : 'absolute'}`,
       ];
-
       return (
         <Popup
           visible={true}
-          v-slots={{ content: renderBody }}
           show-arrow={!content}
+          content={() => renderBody}
           zIndex={this.zIndex}
           overlayClassName={this.currentStepInfo?.stepOverlayClass}
           overlayInnerClassName={{ [`${this.componentName}__popup--content`]: !!content }}

@@ -25,7 +25,7 @@
       </div>
 
       <t-guide
-        v-model="current"
+        :current.sync="current"
         :steps="steps"
         @change="handleChange"
         @prev-step-click="handlePrevStepClick"
@@ -37,7 +37,7 @@
   </t-row>
 </template>
 
-<script>
+<script lang="jsx">
 import MyPopup from './my-popup.vue';
 
 export default {
@@ -75,9 +75,8 @@ export default {
       this.visible = true;
       setTimeout(() => {
         this.current = 0;
-      }, 800);
+      }, 1000);
     },
-
     handleChange(current, { e, total }) {
       console.log(current, e, total);
     },
