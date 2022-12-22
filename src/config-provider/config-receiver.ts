@@ -1,7 +1,8 @@
 import Vue, { VueConstructor } from 'vue';
 import mergeWith from 'lodash/mergeWith';
+import { GlobalIconConfig } from 'tdesign-icons-vue';
 import { defaultGlobalConfig } from './context';
-import { GlobalConfigProvider, AnimationType, IconConfig } from './type';
+import { GlobalConfigProvider, AnimationType } from './type';
 
 export type ValueOf<T> = T[keyof T];
 
@@ -108,7 +109,7 @@ export function getGlobalIconMixins<BasicComponent extends Vue>() {
       useGlobalIcon(tdIcon: Record<string, any>) {
         const iconGlobalData = (this.globalConfig || defaultGlobalConfig).icon;
 
-        const resultIcon: IconConfig = {};
+        const resultIcon: GlobalIconConfig = {};
         Object.keys(tdIcon).forEach((key) => {
           resultIcon[key] = iconGlobalData?.[key] || tdIcon[key];
         });

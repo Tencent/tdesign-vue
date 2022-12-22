@@ -5,6 +5,21 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.0.0 `2022-12-22` 
+### 🚀 Features
+- `Table`: @chaishi ([#1948](https://github.com/Tencent/tdesign-vue/pull/1948))
+  - 列配置支持 `stopPropagation: true`，用于设置某一列单元格阻止事件冒泡
+  - 虚拟滚动支持行高动态变化
+  - 固定表头背景色始终保持为灰色底，无论内容是否溢出
+- `TreeSelect`: `onVisibleChange` 事件增加回调参数 @uyarn ([#1949](https://github.com/Tencent/tdesign-vue/pull/1949))
+- `Guide`: 新增`Guide`引导组件 @uyarn @zhangpaopao0609  ([#1952](https://github.com/Tencent/tdesign-vue/pull/1952))
+- `Select`: 提升部分情况下组件内部 options 处理的性能 优化大量数据加载卡顿的问题 @skytt ([#1945](https://github.com/Tencent/tdesign-vue/pull/1945))
+
+### 🐞 Bug Fixes
+- `Input`: 修复 Input 文字长度省略异常的问题 @uyarn ([#1939](https://github.com/Tencent/tdesign-vue/pull/1939))
+- `Table`: 修复表格宽度过小时出现抖动的问题 @chaishi ([#1948](https://github.com/Tencent/tdesign-vue/pull/1948))
+- `Drawer`: 修复 visible 默认为 `true` 时内容不展示问题 @honkinglin ([#1940](https://github.com/Tencent/tdesign-vue/pull/1940))
+
 ## 🌈 0.52.2 `2022-12-14` 
 ### 🚀 Features
 - `Table`: @chaishi 

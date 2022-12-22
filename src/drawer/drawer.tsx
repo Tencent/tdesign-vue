@@ -161,7 +161,12 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
     const defaultFooter = this.getDefaultFooter();
 
     return (
-      <transition duration={{ enter: 10, leave: 300 }} onAfterEnter={this.afterEnter} onAfterLeave={this.afterLeave}>
+      <transition
+        onAppear={this.afterEnter}
+        duration={{ enter: 10, leave: 300 }}
+        onAfterEnter={this.afterEnter}
+        onAfterLeave={this.afterLeave}
+      >
         <div
           class={this.drawerClasses}
           style={{ zIndex: this.zIndex }}

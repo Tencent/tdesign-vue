@@ -2,6 +2,7 @@ import Vue from 'vue';
 import {
   InfoCircleFilledIcon as TdInfoCircleFilledIcon,
   ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
+  GlobalIconType,
 } from 'tdesign-icons-vue';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { PopconfirmConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
@@ -11,8 +12,6 @@ import { renderTNodeJSX, renderContent, renderTNodeJSXDefault } from '../utils/r
 import { PopconfirmVisibleChangeContext, TdPopconfirmProps } from './type';
 import { emitEvent } from '../utils/event';
 import ActionMixin from '../dialog/actions';
-
-type IconConstructor = typeof TdInfoCircleFilledIcon;
 
 export default mixins(
   ActionMixin,
@@ -26,7 +25,7 @@ export default mixins(
     event: 'visible-change',
   },
   computed: {
-    themeIcon(): IconConstructor {
+    themeIcon(): GlobalIconType {
       const { InfoCircleFilledIcon, ErrorCircleFilledIcon } = this.useGlobalIcon({
         InfoCircleFilledIcon: TdInfoCircleFilledIcon,
         ErrorCircleFilledIcon: TdErrorCircleFilledIcon,

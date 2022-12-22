@@ -3,6 +3,8 @@
     <t-space align="center">
       <t-button @click="scrollToElement">滚动到指定元素</t-button>
       <t-checkbox v-model="bordered">是否显示边框</t-checkbox>
+      <!-- <t-button @click="setLowerHeight">lower height</t-button>
+      <t-button @click="setHigherHeight">higher height</t-button> -->
     </t-space>
     <!--
       1. rowHeight 接近平均高度即可
@@ -16,7 +18,7 @@
       :columns="columns"
       :data="data"
       :scroll="{ type: 'virtual', rowHeight: 69, bufferSize: 10 }"
-      :height="300"
+      :height="height"
       :bordered="bordered"
     >
     </t-table>
@@ -83,6 +85,7 @@ export default {
       data: [...testData],
       columns,
       bordered: true,
+      height: 300,
     };
   },
 
@@ -97,6 +100,14 @@ export default {
         time: 60,
       });
     },
+
+    // setLowerHeight() {
+    //   this.height = 150;
+    // },
+
+    // setHigherHeight() {
+    //   this.height = 600;
+    // },
   },
 };
 </script>
