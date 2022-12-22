@@ -1,11 +1,14 @@
 import {
   defineComponent, computed, nextTick, onMounted, ref, toRefs, watch,
 } from '@vue/composition-api';
+
 import {
   scrollToParentVisibleArea, getRelativePosition, getTargetElm, scrollToElm,
 } from './utils';
+
 import setStyle from '../_common/js/utils/set-style';
 import TransferDom from '../utils/transfer-dom';
+
 import {
   addClass, removeClass, isFixed, getWindowScroll,
 } from '../utils/dom';
@@ -13,18 +16,18 @@ import {
 import useDefaultValue from '../hooks/useDefaultValue';
 import { useTNodeJSX } from '../hooks/tnode';
 import { usePrefixClass, useConfig } from '../hooks/useConfig';
-
+import { GlobalConfigProvider } from '../config-provider/type';
 import Button from '../button';
 import Popup from '../popup';
 
 import props from './props';
-import { TdGuideProps, GuideCrossProps } from './type';
+import { TdGuideProps, GuideCrossProps, TdGuideStepProps } from './type';
 
 export default defineComponent({
   name: 'TGuide',
   directives: { TransferDom },
-  props,
-  setup(props: TdGuideProps) {
+  props: { ...props },
+  setup(props) {
     const COMPONENT_NAME = usePrefixClass('guide');
     const LOCK_CLASS = usePrefixClass('guide--lock');
     const { global } = useConfig('guide');
@@ -213,19 +216,23 @@ export default defineComponent({
       activated,
     };
   },
-  methods: {
-    renderOverlayLayer() {
-      return (
-        <div
-          ref="overlayLayerRef"
-          v-transfer-dom="body"
-          class={`${this.componentName}__overlay`}
-          style={{ zIndex: this.zIndex - 2 }}
-        />
-      );
-    },
-    renderAction(mode: TdGuideProps['mode']) {
-      const isLast = this.innerCurrent === this.stepsTotal - 1;
+  render() {
+    // TODO directives导致return的类型都丢失
+    const { stepsTotal } = this;
+    const currentStepInfo = this.currentStepInfo as TdGuideStepProps;
+    const globalConfig = this.global as GlobalConfigProvider['guide'];
+    const getCurrentCrossProps = this.getCurrentCrossProps as Function;
+    const renderOverlayLayer = () => (
+      <div
+        ref="overlayLayerRef"
+        v-transfer-dom="body"
+        class={`${this.componentName}__overlay`}
+        style={{ zIndex: this.zIndex - 2 }}
+      />
+    );
+
+    const renderAction = (mode: TdGuideProps['mode']) => {
+      const isLast = this.innerCurrent === (stepsTotal as number) - 1;
       const isFirst = this.innerCurrent === 0;
       const buttonSize = mode === 'popup' ? 'small' : 'medium';
 
@@ -240,7 +247,7 @@ export default defineComponent({
                   size: buttonSize,
                   variant: 'base',
                   onClick: this.handleSkip,
-                  ...(this.getCurrentCrossProps('skipButtonProps') ?? this.global.skipButtonProps),
+                  ...(getCurrentCrossProps('skipButtonProps') ?? globalConfig.skipButtonProps),
                 },
               }}
             />
@@ -254,7 +261,7 @@ export default defineComponent({
                   size: buttonSize,
                   variant: 'base',
                   onClick: this.handlePrev,
-                  ...(this.getCurrentCrossProps('prevButtonProps') ?? this.global.prevButtonProps),
+                  ...(getCurrentCrossProps('prevButtonProps') ?? globalConfig.prevButtonProps),
                 },
               }}
             />
@@ -268,7 +275,7 @@ export default defineComponent({
                   size: buttonSize,
                   variant: 'base',
                   onClick: this.handleNext,
-                  ...(this.getCurrentCrossProps('nextButtonProps') ?? this.global.nextButtonProps),
+                  ...(getCurrentCrossProps('nextButtonProps') ?? globalConfig.nextButtonProps),
                 },
               }}
             />
@@ -282,56 +289,58 @@ export default defineComponent({
                   size: buttonSize,
                   variant: 'base',
                   onClick: this.handleFinish,
-                  ...(this.finishButtonProps ?? this.global.finishButtonProps),
+                  ...((this.finishButtonProps as object) ?? globalConfig.finishButtonProps),
                 },
               }}
             />
           )}
         </div>
       );
-    },
+    };
 
-    renderTooltipTitle() {
-      const title = <div class={`${this.componentName}__title`}>{this.currentStepInfo.title}</div>;
+    const renderTooltipTitle = () => {
+      const title = <div class={`${this.componentName}__title`}>{currentStepInfo.title}</div>;
 
       return title;
-    },
+    };
 
-    renderTooltipDesc() {
-      const { body: descBody } = this.currentStepInfo;
+    const renderTooltipDesc = () => {
+      const { body: descBody } = currentStepInfo;
       const desc = (
         <div class={`${this.componentName}__desc`}>{typeof descBody === 'string' ? descBody : <descBody />}</div>
       );
 
       return desc;
-    },
-    renderPopupContent() {
+    };
+
+    const renderPopupContent = () => {
       const footerClasses = [`${this.componentName}__footer`, `${this.componentName}__footer--popup`];
       const action = (
         <div class={footerClasses}>
-          {this.renderCounter()}
-          {this.renderAction('popup')}
+          {renderCounter()}
+          {renderAction('popup')}
         </div>
       );
 
       return (
         <div class={`${this.componentName}__tooltip`}>
-          {this.renderTooltipTitle()}
-          {this.renderTooltipDesc()}
+          {renderTooltipTitle()}
+          {renderTooltipDesc()}
           {action}
         </div>
       );
-    },
-    renderHighlightLayer() {
+    };
+
+    const renderHighlightLayer = () => {
       const style = { zIndex: this.zIndex - 1 };
       const highlightClass = [
         `${this.componentName}__highlight`,
         `${this.componentName}__highlight--${this.isPopup ? 'popup' : 'dialog'}`,
         `${this.componentName}--${this.currentElmIsFixed && this.isPopup ? 'fixed' : 'absolute'}`,
       ];
-      const showOverlay = this.getCurrentCrossProps('showOverlay');
+      const showOverlay = getCurrentCrossProps('showOverlay');
       const maskClass = [`${this.componentName}__highlight--${showOverlay ? 'mask' : 'nomask'}`];
-      const { highlightContent } = this.currentStepInfo;
+      const { highlightContent } = currentStepInfo;
       const showHighlightContent = highlightContent && this.isPopup;
 
       return (
@@ -344,8 +353,8 @@ export default defineComponent({
           {showHighlightContent && <highlightContent class={highlightClass.concat(maskClass)} style={style} />}
         </div>
       );
-    },
-    renderCounter() {
+    };
+    const renderCounter = () => {
       const renderTNodeJSX = useTNodeJSX();
 
       const popupSlotCounter = renderTNodeJSX('counter', {
@@ -356,26 +365,26 @@ export default defineComponent({
         <div class={`${this.componentName}__counter`}>
           {popupSlotCounter || (
             <span>
-              {this.innerCurrent + 1}/{this.stepsTotal}
+              {(this.innerCurrent as number) + 1}/{this.stepsTotal}
             </span>
           )}
         </div>
       );
       return !this.hideCounter ? popupDefaultCounter : null;
-    },
-    renderDialogGuide() {
+    };
+    const renderDialogGuide = () => {
       const style = { zIndex: this.zIndex };
       const wrapperClasses = [
         `${this.componentName}__wrapper`,
-        { [`${this.componentName}__wrapper--center`]: this.currentStepInfo.placement === 'center' },
+        { [`${this.componentName}__wrapper--center`]: currentStepInfo.placement === 'center' },
       ];
       const dialogClasses = [
         `${this.componentName}__reference`,
         `${this.componentName}--absolute`,
         `${this.componentName}__dialog`,
         {
-          [`${this.componentName}__dialog--nomask`]: !this.getCurrentCrossProps('showOverlay'),
-          [this.currentStepInfo.stepOverlayClass]: !!this.currentStepInfo.stepOverlayClass,
+          [`${this.componentName}__dialog--nomask`]: !getCurrentCrossProps('showOverlay'),
+          [currentStepInfo.stepOverlayClass]: !!currentStepInfo.stepOverlayClass,
         },
       ];
       const footerClasses = [`${this.componentName}__footer`, `${this.componentName}__footer--popup`];
@@ -383,19 +392,19 @@ export default defineComponent({
         <div>
           <div ref="dialogWrapperRef" v-transfer-dom="body" class={wrapperClasses} style={style}>
             <div ref="dialogTooltipRef" class={dialogClasses}>
-              {this.renderTooltipTitle()}
-              {this.renderTooltipDesc()}
+              {renderTooltipTitle()}
+              {renderTooltipDesc()}
               <div class={footerClasses}>
-                {this.renderCounter()}
-                {this.renderAction('dialog')}
+                {renderCounter()}
+                {renderAction('dialog')}
               </div>
             </div>
           </div>
         </div>
       );
-    },
-    renderPopupGuide() {
-      const { content } = this.currentStepInfo;
+    };
+    const renderPopupGuide = () => {
+      const { content } = currentStepInfo;
       let renderBody: JSX.Element;
       if (content) {
         const contentProps = {
@@ -408,7 +417,7 @@ export default defineComponent({
         };
         renderBody = <content {...{ props: { ...contentProps } }} />;
       } else {
-        renderBody = this.renderPopupContent();
+        renderBody = renderPopupContent();
       }
 
       const classes = [
@@ -421,21 +430,20 @@ export default defineComponent({
           show-arrow={!content}
           content={() => renderBody}
           zIndex={this.zIndex}
-          overlayClassName={this.currentStepInfo?.stepOverlayClass}
+          overlayClassName={currentStepInfo?.stepOverlayClass}
           overlayInnerClassName={{ [`${this.componentName}__popup--content`]: !!content }}
-          placement={this.currentStepInfo.placement}
+          placement={currentStepInfo.placement}
         >
           <div ref="referenceLayerRef" v-transfer-dom="body" class={classes} />
         </Popup>
       );
-    },
-  },
-  render() {
+    };
+
     return this.activated ? (
       <div>
-        {this.renderOverlayLayer()}
-        {this.renderHighlightLayer()}
-        {this.isPopup ? this.renderPopupGuide() : this.renderDialogGuide()}
+        {renderOverlayLayer()}
+        {renderHighlightLayer()}
+        {this.isPopup ? renderPopupGuide() : renderDialogGuide()}
       </div>
     ) : null;
   },
