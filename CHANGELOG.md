@@ -5,6 +5,10 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.0.1 `2022-12-23` 
+### 🐞 Bug Fixes
+- `Menu`: 修复弹出模式子菜单样式展示问题 @xiaosansiji ([#1960](https://github.com/Tencent/tdesign-vue/pull/1960))
+
 ## 🌈 1.0.0 `2022-12-22` 
 ### 🚀 Features
 - `Table`: @chaishi ([#1948](https://github.com/Tencent/tdesign-vue/pull/1948))
