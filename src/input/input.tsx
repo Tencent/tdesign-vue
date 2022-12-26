@@ -346,6 +346,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       let {
         currentTarget: { value: val },
       }: any = e;
+      let preCursorPos: number;
       if (this.composingRef) {
         this.composingRefValue = val;
       } else {
@@ -353,9 +354,15 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
           val = this.getValueByLimitNumber(val);
         }
         emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e } as { e: MouseEvent | InputEvent });
-        // 受控，重要，勿删
+        // 受控，重要，勿删 input无法直接实现受控
+        const inputRef = this.$refs.inputRef as HTMLInputElement;
+        preCursorPos = inputRef.selectionStart;
+
         this.$nextTick(() => {
           this.setInputValue(this.value);
+        });
+        setTimeout(() => {
+          inputRef.selectionEnd = preCursorPos;
         });
       }
     },
