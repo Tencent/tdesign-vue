@@ -206,7 +206,7 @@ export default defineComponent({
       return (
         <div class={this.headerClass}>
           <TImageViewerIcon
-            icon={() => <ChevronDownIcon size="16px" />}
+            icon={() => <ChevronDownIcon />}
             class={`${this.COMPONENT_NAME}__header-pre-bt`}
             clickHandler={this.toggleExpand}
           />

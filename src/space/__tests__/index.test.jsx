@@ -3,7 +3,6 @@ import Divider from '@/src/divider/index.ts';
 import Space from '@/src/space/index.ts';
 
 describe('Space', () => {
-  // test props api
   describe(':props', () => {
     it('direction and size', () => {
       const sizeMap = new Map(
@@ -68,6 +67,24 @@ describe('Space', () => {
         render() {
           return (
             <Space align="center" separator={() => <Divider layout="vertical" />}>
+              <div>child1</div>
+              <div>child2</div>
+            </Space>
+          );
+        },
+      });
+      expect(wrapper.findComponent(Divider).exists());
+      expect(wrapper.find('.t-space-item-separator').exists());
+    });
+
+    it('slot', () => {
+      const wrapper = mount({
+        render() {
+          return (
+            <Space align="center">
+              <div slot="separator">
+                <Divider layout="vertical" />
+              </div>
               <div>child1</div>
               <div>child2</div>
             </Space>

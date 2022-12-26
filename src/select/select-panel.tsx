@@ -173,14 +173,14 @@ export default defineComponent({
     // 监听popup滚动 处理虚拟滚动时的virtualData变化
     onMounted(() => {
       if (props.scroll?.type === 'virtual') {
-        selectProvider.getOverlayElm().addEventListener('scroll', onInnerVirtualScroll);
+        selectProvider.getOverlayElm()?.addEventListener('scroll', onInnerVirtualScroll);
       }
     });
 
     // 卸载时取消监听
     onBeforeUnmount(() => {
       if (props.scroll?.type === 'virtual') {
-        selectProvider.getOverlayElm().removeEventListener('scroll', onInnerVirtualScroll);
+        selectProvider.getOverlayElm()?.removeEventListener('scroll', onInnerVirtualScroll);
       }
     });
 

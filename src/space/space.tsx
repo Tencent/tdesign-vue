@@ -1,6 +1,7 @@
 import { defineComponent, computed } from '@vue/composition-api';
 import props from './props';
 import { usePrefixClass } from '../hooks/useConfig';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 export default defineComponent({
   name: 'TSpace',
@@ -49,18 +50,16 @@ export default defineComponent({
       slots,
     };
   },
-  render(h) {
+  render() {
     const {
-      COMPONENT_NAME, spaceClassNames, renderStyle, slots, separator,
+      COMPONENT_NAME, spaceClassNames, renderStyle, slots,
     } = this;
 
     const children = slots.default?.().filter((child) => child.tag !== undefined) || [];
     const childCount = children?.length;
 
     const renderChildren = () => children.map((child, index) => {
-      let renderSeparator: any = separator;
-      if (typeof separator === 'function') renderSeparator = separator(h);
-      // filter last child
+      const renderSeparator = renderTNodeJSX(this, 'separator');
       const showSeparator = index + 1 !== childCount && renderSeparator;
 
       return [

@@ -1,7 +1,7 @@
 <template>
   <t-space direction="vertical">
     <p style="margin: 10px">自定义头部、底部及操作按钮的渲染</p>
-    <t-transfer :data="list">
+    <t-transfer :data="list" :operation="['移除', '加入']" class="tdesign-transfer-custom">
       <template v-slot:title="props" :name="123">
         <div>{{ props.type === 'target' ? '目标' : '来源' }}</div>
       </template>
@@ -9,7 +9,7 @@
         {{ props.direction === 'left' ? '移除' : '加入' }}
       </template>
       <template v-slot:footer="props" :name="123">
-        <div style="padding: 10px 20px">
+        <div style="padding: 12px 20px">
           <span v-if="props.type === 'source'">选中并加入</span>
           <span v-else>选中并移除</span>
         </div>
@@ -72,3 +72,11 @@ export default {
   },
 };
 </script>
+<style>
+.tdesign-transfer-custom .t-button .t-icon {
+  display: none;
+}
+.tdesign-transfer-custom .t-icon + .t-button__text:not(:empty) {
+  margin-left: 0;
+}
+</style>
