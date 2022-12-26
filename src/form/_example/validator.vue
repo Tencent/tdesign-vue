@@ -1,8 +1,8 @@
 <template>
   <!--  scrollToFirstError="smooth" -->
   <t-form :data="formData" :rules="rules" ref="form" @reset="onReset" @submit="onSubmit">
-    <t-form-item label="用户名" help="这是用户名字段帮助说明" name="account">
-      <t-input v-model="formData.account"></t-input>
+    <t-form-item label="用户名" help="这里可以展示一段说明文字" name="account">
+      <t-input v-model="formData.account" placeholder="请输入用户名"></t-input>
     </t-form-item>
     <t-form-item label="年龄" name="age">
       <t-input-number v-model="formData.age" placeholder="年龄" />
@@ -11,10 +11,10 @@
       <t-cascader v-model="formData.region" placeholder="请选择籍贯" :options="regionOptions" clearable filterable />
     </t-form-item>
     <t-form-item label="密码" name="password">
-      <t-input type="password" v-model="formData.password"></t-input>
+      <t-input type="password" v-model="formData.password" placeholder="请输入密码"></t-input>
     </t-form-item>
     <t-form-item label="邮箱" name="email">
-      <t-input v-model="formData.email"></t-input>
+      <t-input v-model="formData.email" placeholder="请输入邮箱"></t-input>
     </t-form-item>
     <t-form-item label="性别" name="gender">
       <t-radio-group v-model="formData.gender">
@@ -26,7 +26,7 @@
       <t-checkbox-group v-model="formData.course" :options="courseOptions"></t-checkbox-group>
     </t-form-item>
     <t-form-item label="学院" name="college">
-      <t-select v-model="formData.college" class="demo-select-base" clearable filterable>
+      <t-select v-model="formData.college" class="demo-select-base" clearable filterable placeholder="请选择所在学院">
         <t-option v-for="(item, index) in options" :value="item.value" :label="item.label" :key="index">
           {{ item.label }}
         </t-option>
@@ -43,10 +43,10 @@
       <t-date-picker v-model="formData.date"></t-date-picker>
     </t-form-item>
     <t-form-item label="个人网站" name="content.url">
-      <t-input v-model="formData.content.url"></t-input>
+      <t-input v-model="formData.content.url" placeholder="请输入个人网站地址"></t-input>
     </t-form-item>
-    <t-form-item label="个人简介" help="一句话介绍自己" name="description">
-      <t-textarea v-model="formData.description"></t-textarea>
+    <t-form-item label="个人简介" help="请用一句话介绍自己" name="description">
+      <t-textarea v-model="formData.description" placeholder="请用一句话介绍自己"></t-textarea>
     </t-form-item>
     <t-form-item label="兴趣爱好" name="hobby">
       <t-tree-select

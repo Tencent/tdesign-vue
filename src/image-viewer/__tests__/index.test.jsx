@@ -30,6 +30,8 @@ describe('ImageViewer', () => {
 
     // 点击后，没有元素存在
     expect(onClose).toHaveBeenCalledTimes(1);
+    // 延迟时常
+    await new Promise((resolve) => setTimeout(resolve, 200));
     expect(document.querySelector('.t-image-viewer-preview-image')).toBeNull();
   });
 

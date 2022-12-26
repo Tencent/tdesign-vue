@@ -9,11 +9,13 @@ import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { DrawerConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
-import { addClass, removeClass } from '../utils/dom';
 import { ClassName, Styles } from '../common';
 import ActionMixin from '../dialog/actions';
+import { getScrollbarWidth } from '../utils/dom';
 
 type FooterButtonType = 'confirm' | 'cancel';
+
+let key = 1;
 
 export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('drawer'), getGlobalIconMixins()).extend({
   name: 'TDrawer',
@@ -31,6 +33,10 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
     return {
       isSizeDragging: false,
       draggedSizeValue: null,
+      animationStart: false,
+      animationEnd: false,
+      styleTimer: null,
+      styleEl: null,
     };
   },
   computed: {
@@ -61,7 +67,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
     wrapperStyles(): Styles {
       return {
         // 用于抵消动画效果：transform: translateX(100%); 等
-        transform: this.visible ? 'translateX(0)' : undefined,
+        transform: this.visible && this.animationStart ? 'translateX(0)' : undefined,
         width: this.isHorizontal ? this.sizeValue : '',
         height: this.isVertical ? this.sizeValue : '',
       };
@@ -129,47 +135,92 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
   },
 
   mounted() {
+    const hasScrollBar = document.body.scrollHeight > document.body.clientHeight;
+    const scrollWidth = hasScrollBar ? getScrollbarWidth() : 0;
+
+    this.styleEl = document.createElement('style');
+    this.styleEl.dataset.id = `td_drawer_${+new Date()}_${(key += 1)}`;
+    this.styleEl.innerHTML = `
+      html body {
+        overflow-y: hidden;
+        transition: margin 300ms cubic-bezier(0.7, 0.3, 0.1, 1) 0s;
+        ${this.mode === 'push' ? '' : `width: calc(100% - ${scrollWidth}px);`}
+      }
+    `;
     this.handleScrollThrough(this.visible);
   },
 
   render() {
-    if (this.destroyOnClose && !this.visible) return;
+    if (this.destroyOnClose && !this.visible && this.animationEnd) return null;
+
     const { CloseIcon } = this.useGlobalIcon({
       CloseIcon: TdCloseIcon,
     });
     const defaultCloseBtn = <CloseIcon class={`${this.classPrefix}-submenu-icon`}></CloseIcon>;
     const body = renderContent(this, 'default', 'body');
     const defaultFooter = this.getDefaultFooter();
+
     return (
-      <div
-        class={this.drawerClasses}
-        style={{ zIndex: this.zIndex }}
-        onkeydown={this.onKeyDown}
-        v-transfer-dom={this.attach}
-        ref="drawerContainer"
-        tabindex={0}
+      <transition
+        onAppear={this.afterEnter}
+        duration={{ enter: 10, leave: 300 }}
+        onAfterEnter={this.afterEnter}
+        onAfterLeave={this.afterLeave}
       >
-        {this.showOverlay && <div class={`${this.componentName}__mask`} onClick={this.handleWrapperClick} />}
-        <div class={this.wrapperClasses} style={this.wrapperStyles}>
-          {this.header !== false ? (
-            <div class={`${this.componentName}__header`}>{renderTNodeJSX(this, 'header', <div></div>)}</div>
-          ) : null}
-          {this.closeBtn !== false ? (
-            <div class={`${this.componentName}__close-btn`} onClick={this.handleCloseBtnClick}>
-              {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
-            </div>
-          ) : null}
-          <div class={`${this.componentName}__body`}>{body}</div>
-          {this.footer !== false ? (
-            <div class={`${this.componentName}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
-          ) : null}
-          {this.sizeDraggable && <div style={this.draggableLineStyles} onMousedown={this.enableDrag}></div>}
+        <div
+          class={this.drawerClasses}
+          style={{ zIndex: this.zIndex }}
+          onkeydown={this.onKeyDown}
+          v-transfer-dom={this.attach}
+          ref="drawerContainer"
+          tabindex={0}
+          v-show={this.visible}
+        >
+          {this.showOverlay && (
+            <transition duration={300} name={`${this.componentName}-fade`}>
+              <div
+                key="mask"
+                class={`${this.componentName}__mask`}
+                onClick={this.handleWrapperClick}
+                v-show={this.visible}
+              />
+            </transition>
+          )}
+          <div class={this.wrapperClasses} style={this.wrapperStyles}>
+            {this.header !== false ? (
+              <div class={`${this.componentName}__header`}>{renderTNodeJSX(this, 'header', <div></div>)}</div>
+            ) : null}
+            {this.closeBtn !== false ? (
+              <div class={`${this.componentName}__close-btn`} onClick={this.handleCloseBtnClick}>
+                {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
+              </div>
+            ) : null}
+            <div class={`${this.componentName}__body`}>{body}</div>
+            {this.footer !== false ? (
+              <div class={`${this.componentName}__footer`}>{renderTNodeJSX(this, 'footer', defaultFooter)}</div>
+            ) : null}
+            {this.sizeDraggable && <div style={this.draggableLineStyles} onMousedown={this.enableDrag}></div>}
+          </div>
         </div>
-      </div>
+      </transition>
     );
   },
 
   methods: {
+    clearStyleFunc() {
+      clearTimeout(this.styleTimer);
+      this.styleTimer = setTimeout(() => {
+        this.styleEl.parentNode?.removeChild?.(this.styleEl);
+      }, 150);
+    },
+    afterEnter() {
+      this.animationStart = true;
+      this.animationEnd = false;
+    },
+    afterLeave() {
+      this.animationStart = false;
+      this.animationEnd = true;
+    },
     enableDrag() {
       document.addEventListener('mouseup', this.handleMouseup, true);
       document.addEventListener('mousemove', this.handleMousemove, true);
@@ -208,10 +259,12 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
     },
     handleScrollThrough(visible: boolean) {
       if (!document || !document.body || !this.preventScrollThrough) return;
-      if (visible && !this.showInAttachedElement) {
-        this.preventScrollThrough && addClass(document.body, `${this.componentName}--lock`);
+      if (visible) {
+        if (!this.showInAttachedElement && this.preventScrollThrough) {
+          document.head.appendChild(this.styleEl);
+        }
       } else {
-        this.preventScrollThrough && removeClass(document.body, `${this.componentName}--lock`);
+        this.clearStyleFunc();
       }
     },
     handlePushMode() {

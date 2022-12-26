@@ -19,11 +19,11 @@
       <template #collapsedItems="{ collapsedSelectedItems, count }">
         <t-popup>
           <template #content>
-            <p v-for="(item, index) in collapsedSelectedItems" :key="index" style="padding: 10px">
+            <p v-for="(item, index) in collapsedSelectedItems" :key="index" style="padding: 8px">
               {{ item.label }}
             </p>
           </template>
-          <span v-show="count > 0" style="color: #00a870">+{{ count }}</span>
+          <span v-show="count > 0" style="color: #00a870; margin-left: 8px">+{{ count }}</span>
         </t-popup>
       </template>
     </t-select>
@@ -52,10 +52,10 @@ export default {
         <t-popup>
           <div slot="content">
             {value.map((item) => (
-              <p style="padding: 10px;">{item.label}</p>
+              <p style="padding: 8px;">{item.label}</p>
             ))}
           </div>
-          <span v-show={count > 0} style="color: #ED7B2F;">
+          <span v-show={count > 0} style="color: #ED7B2F; margin-left: 8px">
             +{count}
           </span>
         </t-popup>

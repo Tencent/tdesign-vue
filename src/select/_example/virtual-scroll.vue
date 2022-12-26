@@ -14,7 +14,7 @@
 export default {
   data() {
     const options = [];
-    for (let i = 0; i < 1000; i++) {
+    for (let i = 0; i < 10000; i++) {
       options.push({ label: `选项${i + 1}`, value: String(i) });
     }
     return {

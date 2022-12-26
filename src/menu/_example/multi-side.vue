@@ -47,7 +47,11 @@
         资源编辑
       </t-menu-item>
       <template #operations>
-        <icon class="t-menu__operations-icon" name="view-list" @click.native="changeCollapsed" />
+        <t-button variant="text" shape="square">
+          <t-button variant="text" shape="square" @click.native="changeCollapsed">
+            <view-list-icon slot="icon" />
+          </t-button>
+        </t-button>
       </template>
     </t-menu>
 
@@ -121,18 +125,21 @@
         资源编辑
       </t-menu-item>
       <template #operations>
-        <icon class="t-menu__operations-icon" name="view-list" @click.native="changeCollapsed2" />
+        <t-button class="t-demo-collapse-btn" variant="text" shape="square" @click.native="changeCollapsed2">
+          <view-list-icon slot="icon" />
+        </t-button>
       </template>
     </t-menu>
   </div>
 </template>
 
 <script>
-import { Icon } from 'tdesign-icons-vue';
+import { Icon, ViewListIcon } from 'tdesign-icons-vue';
 
 export default {
   components: {
     Icon,
+    ViewListIcon,
   },
   data() {
     return {
@@ -153,3 +160,14 @@ export default {
   },
 };
 </script>
+<style lang="less" scoped>
+.t-demo-collapse-btn {
+  color: #fff;
+
+  &:hover {
+    background-color: #4b4b4b;
+    border-color: transparent;
+    --ripple-color: #383838;
+  }
+}
+</style>

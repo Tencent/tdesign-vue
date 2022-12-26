@@ -11,7 +11,7 @@ export default {
   /** 当前页 */
   current: {
     type: Number,
-    default: undefined,
+    default: 1,
   },
   /** 当前页，非受控属性 */
   defaultCurrent: {
@@ -42,7 +42,7 @@ export default {
   /** 每一页的数据量 */
   pageSize: {
     type: Number,
-    default: undefined,
+    default: 10,
   },
   /** 每一页的数据量，非受控属性 */
   defaultPageSize: {

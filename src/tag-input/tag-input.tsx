@@ -6,7 +6,6 @@ import { CloseCircleFilledIcon as TdCloseCircleFilledIcon } from 'tdesign-icons-
 import TInput, { InputValue } from '../input';
 import { TdTagInputProps } from './type';
 import props from './props';
-import { prefix } from '../config';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import useTagScroll from './hooks/useTagScroll';
 import useTagList from './useTagList';
@@ -22,10 +21,11 @@ export default defineComponent({
   props: { ...props },
 
   setup(props: TdTagInputProps, context) {
-    const { inputValue } = toRefs(props);
-    const { inputProps } = props;
-    const isCompositionRef = ref(false);
+    const { inputValue, inputProps } = toRefs(props);
+    // 除了绑定 DOM 的变量，其他的一律不可使用 Ref 作为后缀
+    const isComposition = ref(false);
     const COMPONENT_NAME = usePrefixClass('tag-input');
+    const classPrefix = usePrefixClass();
 
     const [tInputValue, setTInputValue] = useDefaultValue(
       inputValue,
@@ -52,7 +52,7 @@ export default defineComponent({
         sortOnDraggable: props.dragSort,
         onDragOverCheck: {
           x: true,
-          targetClassNameRegExp: new RegExp(`^${prefix}-tag`),
+          targetClassNameRegExp: new RegExp(`^${classPrefix.value}-tag`),
         },
       },
       context,
@@ -71,12 +71,17 @@ export default defineComponent({
 
     const { CloseCircleFilledIcon } = useGlobalIcon({ CloseCircleFilledIcon: TdCloseCircleFilledIcon });
 
-    const classes = computed(() => [
-      COMPONENT_NAME.value,
-      {
-        [`${COMPONENT_NAME.value}--break-line`]: excessTagsDisplayType.value === 'break-line',
-      },
-    ]);
+    const classes = computed(() => {
+      const isEmpty = !(Array.isArray(tagValue.value) && tagValue.value.length);
+      return [
+        COMPONENT_NAME.value,
+        {
+          [`${COMPONENT_NAME.value}--break-line`]: excessTagsDisplayType.value === 'break-line',
+          [`${classPrefix.value}-is-empty`]: isEmpty,
+          [`${classPrefix.value}-tag-input--with-tag`]: !isEmpty,
+        },
+      ];
+    });
 
     const tagInputPlaceholder = computed(() => (!tagValue.value?.length ? placeholder.value : ''));
 
@@ -89,23 +94,23 @@ export default defineComponent({
     ));
 
     const onInputCompositionstart = (value: InputValue, context: { e: CompositionEvent }) => {
-      isCompositionRef.value = true;
-      inputProps?.onCompositionstart?.(value, context);
+      isComposition.value = true;
+      inputProps.value?.onCompositionstart?.(value, context);
     };
 
     const onInputCompositionend = (value: InputValue, context: { e: CompositionEvent }) => {
-      isCompositionRef.value = false;
-      inputProps?.onCompositionend?.(value, context);
+      isComposition.value = false;
+      inputProps.value?.onCompositionend?.(value, context);
     };
 
     const onInputEnter = (value: InputValue, context: { e: KeyboardEvent }) => {
       // 阻止 Enter 默认行为，避免在 Form 中触发 submit 事件
       context.e?.preventDefault();
       setTInputValue('', { e: context.e, trigger: 'enter' });
-      !isCompositionRef.value && onInnerEnter(value, context);
+      !isComposition.value && onInnerEnter(value, context);
       nextTick(() => {
         scrollToRight();
-        isCompositionRef.value = false;
+        isComposition.value = false;
       });
     };
 
@@ -127,6 +132,7 @@ export default defineComponent({
       tagInputPlaceholder,
       showClearIcon,
       tagInputRef,
+      classPrefix,
       setTInputValue,
       addHover,
       cancelHover,
@@ -155,6 +161,10 @@ export default defineComponent({
     ) : (
       renderTNodeJSX(this, 'suffixIcon')
     );
+    const suffixClass = `${this.classPrefix}-tag-input__with-suffix-icon`;
+    if (suffixIconNode && !this.classes.includes(suffixClass)) {
+      this.classes.push(suffixClass);
+    }
     // 自定义 Tag 节点
     const displayNode = renderTNodeJSX(this, 'valueDisplay', {
       params: {
@@ -167,7 +177,6 @@ export default defineComponent({
     return (
       <TInput
         ref="tagInputRef"
-        {...this.inputProps}
         readonly={this.inputProps?.readonly}
         inputClass={this.inputProps?.inputClass} // 展开无效 需直接透传
         value={this.tInputValue}
@@ -216,6 +225,7 @@ export default defineComponent({
         }}
         onCompositionstart={this.onInputCompositionstart}
         onCompositionend={this.onInputCompositionend}
+        props={this.inputProps}
       />
     );
   },

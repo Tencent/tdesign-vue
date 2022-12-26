@@ -2,7 +2,6 @@ import {
   computed,
   defineComponent,
   ref,
-  SetupContext,
   toRefs,
   watch,
   nextTick,
@@ -58,11 +57,11 @@ export default defineComponent({
     FakeArrow,
     SelectPanel,
   },
-  setup(props: TdSelectProps, context: SetupContext) {
+  setup(props: TdSelectProps) {
     const { t, global } = useConfig('select');
     const renderTNode = useTNodeJSX();
     const instance = getCurrentInstance();
-    const selectInputRef = ref<HTMLElement>(null);
+    const selectInputRef = ref(null);
     const selectPanelRef = ref<SelectPanelInstance>();
     const popupOpenTime = ref(250);
     const { formDisabled } = useFormDisabled();
@@ -330,7 +329,7 @@ export default defineComponent({
     const getOverlayElm = (): HTMLElement => {
       let r;
       try {
-        const popupRefs = (context.refs.selectInputRef as any).$refs.selectInputRef.$refs;
+        const popupRefs = selectInputRef.value.$refs.selectInputPopupRef.$refs;
         r = popupRefs.overlay || popupRefs.component.$refs.overlay;
       } catch (e) {
         log.warn('Select', e);
@@ -551,10 +550,6 @@ export default defineComponent({
   render() {
     const { renderTNode } = this;
 
-    const prefixIcon = () => renderTNode('prefixIcon');
-    const valueDisplay = () => renderTNode('valueDisplay', { params: this.valueDisplayParams });
-    const collapsedItems = () => renderTNode('collapsedItems', { params: this.collapsedItemsParams });
-
     const { overlayClassName, ...restPopupProps } = this.popupProps || {};
 
     return (
@@ -562,69 +557,73 @@ export default defineComponent({
         <SelectInput
           ref="selectInputRef"
           class={this.componentName}
-          autoWidth={this.autoWidth}
-          borderless={this.borderless}
-          readonly={this.readonly}
-          allowInput={this.isFilterable}
-          multiple={this.multiple}
-          keys={this.keys}
-          status={this.status}
-          tips={this.tips}
-          value={this.displayText}
-          valueDisplay={valueDisplay}
-          clearable={this.clearable}
-          disabled={this.isDisabled}
-          label={prefixIcon}
-          suffixIcon={this.renderSuffixIcon}
-          placeholder={this.placeholderText}
-          inputValue={this.tInputValue}
-          inputProps={{
-            size: this.size,
-            ...this.inputProps,
+          {...{
+            props: {
+              autoWidth: this.autoWidth,
+              borderless: this.borderless,
+              readonly: this.readonly,
+              allowInput: this.isFilterable,
+              multiple: this.multiple,
+              keys: this.keys,
+              status: this.status,
+              tips: this.tips,
+              value: this.displayText,
+              valueDisplay: () => renderTNode('valueDisplay', { params: this.valueDisplayParams }),
+              clearable: this.clearable,
+              disabled: this.disabled,
+              label: () => renderTNode('prefixIcon'),
+              suffixIcon: this.renderSuffixIcon,
+              placeholder: this.placeholderText,
+              inputValue: this.tInputValue,
+              inputProps: {
+                size: this.size,
+                ...this.inputProps,
+              },
+              tagInputProps: {
+                autoWidth: true,
+                ...this.tagInputProps,
+              },
+              tagProps: this.tagProps,
+              minCollapsedNum: this.minCollapsedNum,
+              collapsedItems: () => renderTNode('collapsedItems', { params: this.collapsedItemsParams }),
+              popupVisible: this.innerPopupVisible,
+              popupProps: {
+                overlayClassName: [`${this.componentName}__dropdown`, overlayClassName],
+                ...restPopupProps,
+              },
+              updateScrollTop: this.updateScrollTop,
+              ...this.selectInputProps,
+              panel: () => (
+                <select-panel
+                  ref="selectPanelRef"
+                  scopedSlots={this.$scopedSlots}
+                  size={this.size}
+                  options={this.innerOptions}
+                  inputValue={this.tInputValue}
+                  multiple={this.multiple}
+                  empty={this.empty}
+                  filter={this.filter}
+                  filterable={this.isFilterable}
+                  creatable={this.creatable}
+                  scroll={this.scroll}
+                  loading={this.isLoading}
+                  loadingText={this.loadingText}
+                  panelTopContent={this.panelTopContent}
+                  panelBottomContent={this.panelBottomContent}
+                />
+              ),
+            },
+            on: {
+              focus: this.handleFocus,
+              blur: this.handleBlur,
+              enter: this.handleEnter,
+              clear: this.handleClear,
+              'input-change': this.handleTInputValueChange,
+              'popup-visible-change': this.setInnerPopupVisible,
+              'tag-change': this.handleTagChange,
+            },
           }}
-          tagInputProps={{
-            autoWidth: true,
-            ...this.tagInputProps,
-          }}
-          tagProps={this.tagProps}
-          minCollapsedNum={this.minCollapsedNum}
-          collapsedItems={collapsedItems}
-          popupVisible={this.innerPopupVisible}
-          popupProps={{
-            overlayClassName: [`${this.componentName}__dropdown`, overlayClassName],
-            ...restPopupProps,
-          }}
-          on={{
-            focus: this.handleFocus,
-            blur: this.handleBlur,
-            enter: this.handleEnter,
-            clear: this.handleClear,
-            'input-change': this.handleTInputValueChange,
-            'popup-visible-change': this.setInnerPopupVisible,
-            'tag-change': this.handleTagChange,
-          }}
-          {...this.selectInputProps}
-          updateScrollTop={this.updateScrollTop}
-        >
-          <select-panel
-            ref="selectPanelRef"
-            slot="panel"
-            scopedSlots={this.$scopedSlots}
-            size={this.size}
-            options={this.innerOptions}
-            inputValue={this.tInputValue}
-            multiple={this.multiple}
-            empty={this.empty}
-            filter={this.filter}
-            filterable={this.isFilterable}
-            creatable={this.creatable}
-            scroll={this.scroll}
-            loading={this.isLoading}
-            loadingText={this.loadingText}
-            panelTopContent={this.panelTopContent}
-            panelBottomContent={this.panelBottomContent}
-          />
-        </SelectInput>
+        />
       </div>
     );
   },

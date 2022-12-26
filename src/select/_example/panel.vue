@@ -2,7 +2,7 @@
   <t-space>
     <!-- 自定义面板顶部内容：如自定义搜索框。同时支持插槽和 Props(this,panelTopContent) -->
     <t-select v-model="value1" :options="options1" clearable placeholder="请选择云解决方案">
-      <div slot="panelTopContent">
+      <div slot="panelTopContent" style="padding: 6px 6px 0 6px">
         <t-textarea v-model="search" placeholder="请输入关键词搜索" @change="onSearch" />
       </div>
     </t-select>
@@ -11,11 +11,13 @@
     <t-select v-model="value2" placeholder="请选择云产品" clearable :options="options2">
       <!-- 自定义底部内容 -->
       <div slot="panelBottomContent" class="select-panel-footer">
-        <t-button v-if="editOrCreate === 'create'" theme="primary" variant="text" @click="onAdd">新增选项</t-button>
+        <t-button v-if="editOrCreate === 'create'" theme="primary" variant="text" block @click="onAdd"
+        >新增选项</t-button
+        >
         <div v-else>
           <t-input v-model="newOption" autofocus></t-input>
-          <t-button @click="onAddConfirm" size="small" style="margin-top: 12px"> 确认 </t-button>
-          <t-button @click="onAddCancel" theme="default" size="small" style="margin-top: 12px; margin-left: 8px">
+          <t-button @click="onAddConfirm" size="small" style="margin-top: 8px"> 确认 </t-button>
+          <t-button @click="onAddCancel" theme="default" size="small" style="margin-top: 8px; margin-left: 8px">
             取消
           </t-button>
         </div>
@@ -72,8 +74,7 @@ export default {
 
 <style scoped>
 .select-panel-footer {
-  border-top: 1px solid var(--td-border-level-2-color);
-  margin-top: 8px;
-  padding: 8px 0;
+  border-top: 1px solid var(--td-component-stroke);
+  padding: 6px;
 }
 </style>

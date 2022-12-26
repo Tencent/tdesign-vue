@@ -1,16 +1,16 @@
 <template>
   <t-form :data="formData" :rules="rules" ref="form" @reset="onReset" @submit="onSubmit" scrollToFirstError="smooth">
-    <t-form-item label="用户名" help="这是用户名字段帮助说明" name="account">
-      <t-input v-model="formData.account"></t-input>
+    <t-form-item label="用户名" help="这里可以展示一段说明文字" name="account">
+      <t-input v-model="formData.account" placeholder="请输入用户名"></t-input>
     </t-form-item>
-    <t-form-item label="个人简介" help="一句话介绍自己" name="description">
-      <t-input v-model="formData.description"></t-input>
+    <t-form-item label="个人简介" help="请用一句话介绍自己" name="description">
+      <t-input v-model="formData.description" placeholder="请输入个人简介"></t-input>
     </t-form-item>
     <t-form-item label="密码" name="password">
-      <t-input type="password" v-model="formData.password"></t-input>
+      <t-input type="password" v-model="formData.password" placeholder="请输入密码"></t-input>
     </t-form-item>
     <t-form-item label="邮箱" name="email">
-      <t-input v-model="formData.email"></t-input>
+      <t-input v-model="formData.email" placeholder="请输入邮箱"></t-input>
     </t-form-item>
     <t-form-item label="性别" name="gender">
       <t-radio-group v-model="formData.gender">
@@ -22,7 +22,7 @@
       <t-checkbox-group v-model="formData.course" :options="courseOptions"></t-checkbox-group>
     </t-form-item>
     <t-form-item label="学院" name="college">
-      <t-select v-model="formData.college" class="demo-select-base" clearable>
+      <t-select v-model="formData.college" class="demo-select-base" clearable placeholder="请选择所在院校">
         <t-option v-for="(item, index) in options" :value="item.value" :label="item.label" :key="index">
           {{ item.label }}
         </t-option>
@@ -33,10 +33,10 @@
       name="date"
       :rules="[{ date: { delimiters: ['/', '-', '.'] }, message: '日期格式有误' }]"
     >
-      <t-input v-model="formData.date"></t-input>
+      <t-input v-model="formData.date" placeholder="请输入入学时间"></t-input>
     </t-form-item>
     <t-form-item label="个人网站" name="content.url">
-      <t-input v-model="formData.content.url"></t-input>
+      <t-input v-model="formData.content.url" placeholder="请输入个人网站地址"></t-input>
     </t-form-item>
     <t-form-item style="margin-left: 100px">
       <t-space size="10px">

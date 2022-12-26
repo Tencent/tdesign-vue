@@ -5,6 +5,120 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.0.1 `2022-12-23` 
+### 🐞 Bug Fixes
+- `Menu`: 修复弹出模式子菜单样式展示问题 @xiaosansiji ([#1960](https://github.com/Tencent/tdesign-vue/pull/1960))
+
+## 🌈 1.0.0 `2022-12-22` 
+### 🚀 Features
+- `Table`: @chaishi ([#1948](https://github.com/Tencent/tdesign-vue/pull/1948))
+  - 列配置支持 `stopPropagation: true`，用于设置某一列单元格阻止事件冒泡
+  - 虚拟滚动支持行高动态变化
+  - 固定表头背景色始终保持为灰色底，无论内容是否溢出
+- `TreeSelect`: `onVisibleChange` 事件增加回调参数 @uyarn ([#1949](https://github.com/Tencent/tdesign-vue/pull/1949))
+- `Guide`: 新增`Guide`引导组件 @uyarn @zhangpaopao0609  ([#1952](https://github.com/Tencent/tdesign-vue/pull/1952))
+- `Select`: 提升部分情况下组件内部 options 处理的性能 优化大量数据加载卡顿的问题 @skytt ([#1945](https://github.com/Tencent/tdesign-vue/pull/1945))
+
+### 🐞 Bug Fixes
+- `Input`: 修复 Input 文字长度省略异常的问题 @uyarn ([#1939](https://github.com/Tencent/tdesign-vue/pull/1939))
+- `Table`: 修复表格宽度过小时出现抖动的问题 @chaishi ([#1948](https://github.com/Tencent/tdesign-vue/pull/1948))
+- `Drawer`: 修复 visible 默认为 `true` 时内容不展示问题 @honkinglin ([#1940](https://github.com/Tencent/tdesign-vue/pull/1940))
+
+## 🌈 0.52.2 `2022-12-14` 
+### 🚀 Features
+- `Table`: @chaishi 
+  - 树形结构，支持点击行展开树节点，[issue#1847](https://github.com/Tencent/tdesign-vue/issues/1847) ([#1915](https://github.com/Tencent/tdesign-vue/pull/1915))
+  - 树形结构，点击树节点展开图标时，不触发 `onRowClick` 行点击事件
+  - 虚拟滚动支持滚动到具体的某一个元素，用于呈现选中行/选中项 ([#1914](https://github.com/Tencent/tdesign-vue/pull/1914))
+  - 虚拟滚动支持数据变化时不重置，进而支持树形结构无限滚动
+  - 虚拟滚动支持表格高度变化，[vue-next #1374](https://github.com/Tencent/tdesign-vue-next/issues/1374)
+### 🐞 Bug Fixes
+- `Table`: 修复点击展开行报错的异常 @chaishi  ([#1910](https://github.com/Tencent/tdesign-vue/pull/1910))
+- `Space`: 修复`separator` slot 无效的问题 @yaogengzhu ([#1922](https://github.com/Tencent/tdesign-vue/pull/1922))
+- `Datepicker`:
+  - 修复右侧面板月份展示错误问题 @honkinglin ([#1924](https://github.com/Tencent/tdesign-vue/pull/1924))
+  - 修复 tips 样式问题 @honkinglin ([#1927](https://github.com/Tencent/tdesign-vue/pull/1927))
+  - 兼容 value 传入空字符串 @honkinglin ([#1927](https://github.com/Tencent/tdesign-vue/pull/1933))
+- `Loading`: 修复 `LoadingPlugin.hide()` 多次调用后报错的问题 @Nice-PLQ ([#1930](https://github.com/Tencent/tdesign-vue/pull/1930))
+- `Dropdown`: 修复超长下拉菜单子菜单位置异常的问题 @uyarn ([#1910](https://github.com/Tencent/tdesign-vue/pull/1935))
+- `Select`: 修复虚拟滚动未关闭下拉框切换页面导致告警的问题 @uyarn ([#1910](https://github.com/Tencent/tdesign-vue/pull/1935))
+- `SelectInput`: 修复多选空值场景下的右侧内边距问题 @chaishi ([common #1082](https://github.com/Tencent/tdesign-common/pull/1082))
+- `Timepicker`: 修复清空 rangepicker 时返回值异常的问题 @uyarn ([#1936](https://github.com/Tencent/tdesign-vue/pull/1936))
+### 🚧 Others
+- `Calendar/Card/Collapse/Form/ImageViewer/Image`: demo 样例优化 @pengYYYYY ([#1932](https://github.com/Tencent/tdesign-vue/pull/1932))
+
+## 🌈 0.52.1 `2022-12-09` 
+
+### 🐞 Bug Fixes
+- `SelectInput`: 修复 popup 与包裹元素导出 ref 重名 导致0.52.0 虚拟滚动失效的问题 @skytt ([#1909](https://github.com/Tencent/tdesign-vue/pull/1909))
+- `TreeSelec`: 修复选中异步加载树节点时 label展示异常的问题
+
+
+## 🌈 0.52.0 `2022-12-08`
+### ❗ Breaking Changes
+- `SelectInput`: 调整 DOM 结构和类名，同其他框架保持一致，方便全部框架复用同一份 CSS @chaishi ([#1880](https://github.com/Tencent/tdesign-vue/pull/1880))
+- `Menu`: 样式优化 @xiaosansiji ([#1882](https://github.com/Tencent/tdesign-vue/pull/1882))
+  - 弹出菜单中箭头不再翻转，间距等样式与 Dropdown 子菜单对齐
+  - `theme=light` 时默认跟随全局浅色/暗色模式切换，`theme=dark` 保持暗色模式展示
+  - 侧边导航，去除第三级自菜单弹出动画，减少操作干扰
+### 🚀 Features
+- `ColorPicker`: 新增 `clearable` 及 `showPrimaryColorPreview` API，控制是否展示颜色选择条右侧预览区域 @uyarn ([#1875](https://github.com/Tencent/tdesign-vue/pull/1875))
+- `SelectInput`: `selectInputWrapRef ` 更名为 `selectInputRef` @chaishi ([#1880](https://github.com/Tencent/tdesign-vue/pull/1880))
+- `Table`: @chaishi ([#1891](https://github.com/Tencent/tdesign-vue/pull/1891))
+  - 可筛选表格，新增 `filter.popupProps` ，支持透传 Popup 组件全部属性，[tdesign-vue-next#2088](https://github.com/Tencent/tdesign-vue-next/issues/2088)
+  - 选中行表格，新增 `selectOnRowClick`，支持点击行选中，[tdesign-vue-next#1954](https://github.com/Tencent/tdesign-vue-next/issues/1954)
+  - 本地排序功能，支持对默认数据进行排序
+- `Upload`: `onProgress/onSuccess/onFail` 等事件参数添加 `XMLHttpRequest`，用于获取 http status 等数据 @chaishi ([#1886](https://github.com/Tencent/tdesign-vue/pull/1886))
+- `Radio/Checkbox`: `click` 事件更为从最外层输出，防止出现无法在外层阻止冒泡的问题 @chaishi ([#1891](https://github.com/Tencent/tdesign-vue/pull/1891))
+### 🐞 Bug Fixes
+- `ColorPicker`: 修复无法删除颜色值的问题 @uyarn ([#1875](https://github.com/Tencent/tdesign-vue/pull/1875))
+- `SelectInput`: 宽度自适应模式，边距问题修复，[issue#1842](https://github.com/Tencent/tdesign-vue/issues/1842) @chaishi ([#1880](https://github.com/Tencent/tdesign-vue/pull/1880))
+- `TagInput`: 宽度自适应模式，左右边距保持一致 @chaishi ([#1880](https://github.com/Tencent/tdesign-vue/pull/1880))
+- `Textarea`: 修复多行文本autofocus失效的问题 @yaogengzhu ([#1879](https://github.com/Tencent/tdesign-vue/pull/1879))
+- `InputNumber`: 无法输入小数点后面的第一位数字 `0`，[tdesign-vue-next#2103](https://github.com/Tencent/tdesign-vue-next/issues/2103) @chaishi ([#1885](https://github.com/Tencent/tdesign-vue/pull/1885))
+- `InputNumber`: 修复无法使用清空按钮清除输入数字问题，[issue#1855](https://github.com/Tencent/tdesign-vue/issues/1855) @chaishi ([#1885](https://github.com/Tencent/tdesign-vue/pull/1885))
+- `SelectInput`: 修复出现的异常`tips` 节点 @pengYYYYY ([#1889](https://github.com/Tencent/tdesign-vue/pull/1889))
+- `Popup`: 修复初次渲染 `overlayStyle` 不生效的问题 @uyarn ([#1893](https://github.com/Tencent/tdesign-vue/pull/1893))
+- `Dropdown`: 修复父节点超长无法点击子菜单的问题 @uyarn ([#1893](https://github.com/Tencent/tdesign-vue/pull/1893))
+- `Dialog`: 修复滚动条判断的问题 @honkinglin ([#1897](https://github.com/Tencent/tdesign-vue/pull/1897))
+- `ImageViewer`: 修复缺少移除动画的问题 @honkinglin ([#1877](https://github.com/Tencent/tdesign-vue/pull/1877))
+- `RangeInput`: 修复 `status`设置无效的问题 @honkinglin ([#1878](https://github.com/Tencent/tdesign-vue/pull/1878))
+- `InputAdornment`: 修复 InputAdornment 相关样式问题 @honkinglin ([#1888](https://github.com/Tencent/tdesign-vue/pull/1888))
+### 🚧 Others
+- `Table`: demo 样例优化 @pengYYYYY ([#1889](https://github.com/Tencent/tdesign-vue/pull/1889))
+- `Menu`: demo 样例优化 @xiaosansiji ([#1882](https://github.com/Tencent/tdesign-vue/pull/1882))
+
+## 🌈 0.51.1 `2022-11-30` 
+### ❗ Breaking Changes
+- `Jumper`: Jumper 更名为 PaginationMini 组件，正在使用 Jumper 组件的同学请从 Pagination 中导出替换 @honkinglin ([#1845](https://github.com/Tencent/tdesign-vue/pull/1845))
+### 🚀 Features
+- `Calendar`:
+  - 日历组件支持多个高亮单元格； @PsTiu ([#1850](https://github.com/Tencent/tdesign-vue/pull/1850))
+  - 卡片样式菜单操作栏样式调整 @uyarn ([#1863](https://github.com/Tencent/tdesign-vue/pull/1863))
+- `Table`: 选中行功能，新增 `reserveSelectedRowOnPaginate`，用于支持在分页场景中，仅选中当前页数据，切换分页时清空选中结果，全选仅选中当前页数据 @chaishi ([#1849](https://github.com/Tencent/tdesign-vue/pull/1849))
+- `Tree`: 使用 composition api 重构组件 @TabSpace ([#837](https://github.com/Tencent/tdesign-vue/pull/837))
+### 🐞 Bug Fixes
+- `Drawer`:
+  - 修复 `closeOnOverlayClick` 存在默认值导致全局配置失效问题 @chaishi ([#1844](https://github.com/Tencent/tdesign-vue/pull/1844))
+  - 修复 drawer 动画失效的问题 @honkinglin ([#1858](https://github.com/Tencent/tdesign-vue/pull/1858))
+- `Table`: @chaishi ([#1849](https://github.com/Tencent/tdesign-vue/pull/1849))
+  - 修复本地数据分页场景中，切换分页大小，`onPageChange` 事件参数返回的数据不正确问题
+  - 序号列支持跨分页显示 [tdesign-vue-next#2072](https://github.com/Tencent/tdesign-vue-next/issues/2072)
+  - 修复分页场景下，设置 max-height 和 bordered 之后，边框线位置不正确 [issue#2062](https://github.com/Tencent/tdesign-vue-next/issues/2062)
+  - 行选中事件参数选中数据支持 `data.push`， [issue#1747](https://github.com/Tencent/tdesign-vue/issues/1747)
+- `AutoComplete`: 支持使用 `triggerElement` 自定义触发元素 @chaishi ([#1848](https://github.com/Tencent/tdesign-vue/pull/1848))
+- `Input`: 宽度自适应 `auto-width` 支持中文拼音输入也实时调整宽度，[issue#2079](https://github.com/Tencent/tdesign-vue-next/issues/2079) @chaishi ([#1853](https://github.com/Tencent/tdesign-vue/pull/1853))
+- `Dialog`: 修复 destroyOnClose 设置后关闭弹窗无动画效果问题  @honkinglin ([#1857](https://github.com/Tencent/tdesign-vue/pull/1857))
+- `TagInput`: @chaishi ([#1860](https://github.com/Tencent/tdesign-vue/pull/1860))
+  - 不同尺寸的间距和高度问题修复，[issue#1843](https://github.com/Tencent/tdesign-vue/issues/1843)
+  - 修复右侧图标会和标签重合问题
+  - 修复 `onRemove` 事件参数未能返回最新 `value` 问题
+  - 修复未能正确透传 `inputProps` 问题
+- `Menu`: 修复二级菜单子菜单纵向左边距丢失的问题 @uyarn ([#1863](https://github.com/Tencent/tdesign-vue/pull/1863))
+### 🚧 Others
+- 支持插件 valor 代码提示 @chaishi ([#1841](https://github.com/Tencent/tdesign-vue/pull/1841))
+- 优化 Form/Divider 组件 demo @pattybaby110 ([#1829](https://github.com/Tencent/tdesign-vue/pull/1829))
+
 ## 🌈 0.50.1 `2022-11-24` 
 ### 🚀 Features
 - `InputNumber`: 支持 `allowInputOverLimit`，用于设置是否允许输入数字超过 `max` `min` 范围的值 @chaishi ([#1811](https://github.com/Tencent/tdesign-vue/pull/1811))

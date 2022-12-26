@@ -1,8 +1,8 @@
 import {
   defineComponent, PropType, ref, computed,
 } from '@vue/composition-api';
-import TJumper from '../../jumper/jumper';
-import TSelect from '../../select/select';
+import { PaginationMini } from '../../pagination';
+import TSelect from '../../select';
 import { useConfig, usePrefixClass } from '../../hooks/useConfig';
 import type { TdDatePickerProps } from '../type';
 
@@ -43,7 +43,7 @@ export default defineComponent({
         const maxYear = year - extraYear + 100;
 
         for (let i = minYear; i <= maxYear; i += 10) {
-          options.push({ label: `${i} - ${i + 9}`, value: i + extraYear });
+          options.push({ label: `${i} - ${i + 9}`, value: i + 9 });
         }
       } else {
         options.push({ label: `${year}`, value: year });
@@ -198,7 +198,7 @@ export default defineComponent({
           />
         </div>
 
-        <TJumper {...{ props: { tips: labelMap[this.mode], onChange: this.onJumperClick, size: 'small' } }} />
+        <PaginationMini {...{ props: { tips: labelMap[this.mode], onChange: this.onJumperClick, size: 'small' } }} />
       </div>
     );
   },

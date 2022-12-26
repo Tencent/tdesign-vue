@@ -3,7 +3,9 @@
     style="width: 300px"
     :data="options"
     v-model="value"
+    :popupVisible="popupVisible"
     @blur="onBlurTrigger"
+    @popup-visible-change="onVisibleChange"
     filterable
     clearable
     placeholder="请选择"
@@ -14,6 +16,7 @@ export default {
   data() {
     return {
       value: '',
+      popupVisible: false,
       options: [
         {
           label: '广东省',
@@ -50,6 +53,11 @@ export default {
   methods: {
     onBlurTrigger(context) {
       console.log(context);
+    },
+    onVisibleChange(v, c) {
+      if (c.trigger || c.node?.label !== '广州市') {
+        this.popupVisible = v;
+      }
     },
   },
 };

@@ -1,6 +1,7 @@
 import Vue from 'vue';
 // 通用库
 import dayjs from 'dayjs';
+import remove from 'lodash/remove';
 import calendar from 'dayjs/plugin/calendar';
 import props from './props';
 import mixins from '../utils/mixins';
@@ -90,7 +91,9 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
   props: { ...props },
   data(): CalendarData {
     return {
+      realFirstDayOfWeek: 1,
       curDate: null,
+      curDateList: [],
       curSelectedYear: null,
       curSelectedMonth: null,
       curSelectedMode: null,
@@ -99,8 +102,11 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     };
   },
   computed: {
-    realFirstDayOfWeek(): number {
-      return this.firstDayOfWeek ?? this.global.firstDayOfWeek ?? 1;
+    state(): CalendarData {
+      return this.$data as CalendarData;
+    },
+    props(): TdCalendarProps {
+      return this.$props as TdCalendarProps;
     },
     TEXT_MAP(): TextConfigType {
       const { t, global } = this;
@@ -233,20 +239,13 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     },
     // month模式下日历单元格的数据
     monthCellsData(): CalendarCell[][] {
-      const { realFirstDayOfWeek } = this;
-      const daysArr: CalendarCell[][] = utils.createMonthCellsData(
-        this.curSelectedYear,
-        this.curSelectedMonth,
-        realFirstDayOfWeek,
-        this.curDate,
-        this.format,
-      );
+      const daysArr: CalendarCell[][] = utils.createMonthCellsData(this.props, this.state);
       return daysArr;
     },
     // year模式下日历单元格的数据
     yearCellsData(): CalendarCell[][] {
       const re: CalendarCell[][] = [];
-      const monthsArr: CalendarCell[] = utils.createYearCellsData(this.curSelectedYear, this.curDate, this.format);
+      const monthsArr: CalendarCell[] = utils.createYearCellsData(this.props, this.state);
       const rowCount = Math.ceil(monthsArr.length / DEFAULT_YEAR_CELL_NUMINROW);
       let index = 0;
       for (let i = 1; i <= rowCount; i++) {
@@ -340,9 +339,19 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     },
   },
   watch: {
+    firstDayOfWeek: {
+      handler() {
+        this.realFirstDayOfWeek = this.firstDayOfWeek ?? this.global.firstDayOfWeek ?? 1;
+      },
+      immediate: true,
+    },
     value: {
       handler(v: TdCalendarProps['value']) {
-        this.setCurrentDate(v);
+        if (this.multiple) {
+          this.setCurrentDateList(v);
+        } else {
+          this.setCurrentDate(v);
+        }
       },
       immediate: true,
     },
@@ -385,6 +394,13 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     isControllerVisible() {
       this.handleIE();
     },
+    theme: {
+      handler(v: TdCalendarProps['theme']) {
+        if (v === 'card') this.controlSize = 'small';
+        if (v === 'full') this.controlSize = 'medium';
+      },
+      immediate: true,
+    },
   },
   mounted() {
     this.handleIE();
@@ -421,7 +437,16 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
       };
     },
     clickCell(e: MouseEvent, cellData: CalendarCell) {
-      this.curDate = dayjs(cellData.date);
+      const d = dayjs(cellData.date);
+      if (this.multiple) {
+        if (this.curDateList.find((item) => item.isSame(d))) {
+          this.curDateList = remove(this.curDateList, (item) => !item.isSame(d));
+        } else {
+          this.curDateList.push(d);
+        }
+      } else {
+        this.curDate = d;
+      }
       const options = this.getCellClickEventOptions(e, cellData);
       emitEvent<Parameters<TdCalendarProps['onCellClick']>>(this, 'cell-click', options);
     },
@@ -495,7 +520,18 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
       }
     },
     setCurrentDate(value?: TdCalendarProps['value']): void {
-      this.curDate = value ? dayjs(value) : createDefaultCurDate();
+      if (Array.isArray(value)) {
+        this.curDate = value && value.length ? dayjs(value[0]) : createDefaultCurDate();
+      } else {
+        this.curDate = value ? dayjs(value) : createDefaultCurDate();
+      }
+    },
+    setCurrentDateList(value?: TdCalendarProps['value']): void {
+      if (Array.isArray(value)) {
+        this.curDateList = value && value.length ? value.map((item) => dayjs(item)) : [createDefaultCurDate()];
+      } else {
+        this.curDateList = value ? [dayjs(value)] : [createDefaultCurDate()];
+      }
     },
     checkMonthAndYearSelecterDisabled(year: number, month: number): boolean {
       let disabled = false;
@@ -581,6 +617,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
                   defaultChecked={!this.isShowWeekend}
                   disabled={this.isWeekendToggleDisabled}
                   onClick={this.onWeekendToggleClick}
+                  size="large"
                   props={{ ...this.weekendBtnVBind }}
                 >
                   {this.weekendBtnText}

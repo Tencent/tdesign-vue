@@ -24,6 +24,13 @@ export type FormSubmitEvent = Event;
 export interface Styles {
   [css: string]: string | number;
 }
+
+export interface UploadDisplayDragEvents {
+  drop?: (event: DragEvent) => void;
+  dragenter?: (event: DragEvent) => void;
+  dragover?: (event: DragEvent) => void;
+  dragleave?: (event: DragEvent) => void;
+}
 /** 通用全局类型 */
 
 export type OptionData = {
@@ -54,7 +61,7 @@ export interface HTMLElementAttributes {
   [css: string]: string;
 }
 
-export interface TScroll {
+export interface InfinityScroll {
   /**
    * 表示除可视区域外，额外渲染的行数，避免快速滚动过程中，新出现的内容来不及渲染从而出现空白
    * @default 20
@@ -79,3 +86,5 @@ export interface TScroll {
    */
   type: 'lazy' | 'virtual';
 }
+
+export type TScroll = InfinityScroll;

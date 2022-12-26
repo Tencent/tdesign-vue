@@ -125,6 +125,7 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
       currentFiles: p.files,
       percent: p.percent,
       type: p.type,
+      XMLHttpRequest: p.XMLHttpRequest,
     };
     props.onProgress?.(params);
     context.emit('progress', params);

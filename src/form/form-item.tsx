@@ -8,6 +8,7 @@ import {
   CheckCircleFilledIcon as TdCheckCircleFilledIcon,
   CloseCircleFilledIcon as TdCloseCircleFilledIcon,
   ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
+  GlobalIconType,
 } from 'tdesign-icons-vue';
 import lodashTemplate from 'lodash/template';
 import { validate } from './form-model';
@@ -32,8 +33,6 @@ import log from '../_common/js/log';
 import { renderTNodeJSX } from '../utils/render-tnode';
 
 // type Result = ValidateResult<TdFormProps['data']>;
-
-export type IconConstructor = typeof TdErrorCircleFilledIcon;
 
 export type FormInstance = InstanceType<typeof Form>;
 
@@ -352,9 +351,9 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
       );
     },
     getDefaultIcon(): TNodeReturnValue {
-      const resultIcon = (Icon: IconConstructor) => (
+      const resultIcon = (Icon: GlobalIconType) => (
         <span class={`${this.componentName}__status`}>
-          <Icon></Icon>
+          <Icon />
         </span>
       );
       const list = this.errorList;

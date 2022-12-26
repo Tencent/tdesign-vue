@@ -15,7 +15,8 @@ import ImageViewer from '../../image-viewer';
 import { CommonDisplayFileProps } from '../interface';
 import { commonProps } from '../constants';
 import TButton from '../../button';
-import { UploadFile, TdUploadProps, UploadDisplayDragEvents } from '../type';
+import { UploadFile, TdUploadProps } from '../type';
+import { UploadDisplayDragEvents } from '../../common';
 import useDrag, { UploadDragEvents } from '../hooks/useDrag';
 import { abridgeName, returnFileSize } from '../../_common/js/upload/utils';
 import TLoading from '../../loading';
@@ -191,12 +192,12 @@ export default defineComponent({
     renderNormalActionCol(file: UploadFile, index: number) {
       return (
         <td>
-          <TButton
+          <Link
             theme="primary"
-            variant="text"
+            hover="color"
             content={this.locale?.triggerUploadText?.delete}
             onClick={(e: MouseEvent) => this.onRemove({ e, index, file })}
-          ></TButton>
+          ></Link>
         </td>
       );
     },
@@ -206,12 +207,12 @@ export default defineComponent({
       // 第一行数据才需要合并单元格
       return index === 0 ? (
         <td rowSpan={this.displayFiles.length} class={`${this.uploadPrefix}__flow-table__batch-row`}>
-          <TButton
+          <Link
             theme="primary"
-            variant="text"
+            hover="color"
             content={this.locale?.triggerUploadText?.delete}
             onClick={(e: MouseEvent) => this.onRemove({ e, index: -1, file: null })}
-          ></TButton>
+          ></Link>
         </td>
       ) : null;
     },

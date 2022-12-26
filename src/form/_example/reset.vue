@@ -10,10 +10,10 @@
     <!-- colon 表示，是否统一显示 label 冒号 -->
     <t-form ref="form" :data="formData" :resetType="resetType" colon @reset="onReset" @submit="onSubmit">
       <t-form-item label="姓名" name="name">
-        <t-input v-model="formData.name" placeholder="请输入内容" @enter="onEnter"></t-input>
+        <t-input v-model="formData.name" placeholder="请输入姓名" @enter="onEnter"></t-input>
       </t-form-item>
       <t-form-item label="手机号码" name="tel">
-        <t-input v-model="formData.tel" placeholder="请输入内容" @enter="onEnter"></t-input>
+        <t-input v-model="formData.tel" placeholder="请输入手机号码" @enter="onEnter"></t-input>
       </t-form-item>
       <t-form-item label="课程" name="course">
         <t-checkbox-group v-model="formData.course" :options="courseOptions"></t-checkbox-group>
@@ -32,7 +32,7 @@
 // 这是初始值，数据变化后可以设置表单重置为这个初始值
 const INITIAL_DATA = {
   name: 'TDesign',
-  tel: '12345678910',
+  tel: '18612345678',
   course: ['1'],
 };
 

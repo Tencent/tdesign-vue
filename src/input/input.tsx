@@ -36,6 +36,7 @@ interface InputInstance extends Vue {
 export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input'), getGlobalIconMixins()).extend({
   name: 'TInput',
   inheritAttrs: false,
+
   props: {
     ...props,
     showInput: {
@@ -49,9 +50,11 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       default: false,
     },
   },
+
   inject: {
     tFormItem: { default: undefined },
   },
+
   data() {
     return {
       formDisabled: undefined,
@@ -62,6 +65,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       composingRef: false,
       composingRefValue: this.value,
       resizeObserver: null as ResizeObserver,
+      preValue: this.value,
     };
   },
   computed: {
@@ -101,7 +105,6 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
           [`${this.classPrefix}-is-disabled`]: this.tDisabled,
           [`${this.classPrefix}-is-readonly`]: this.readonly,
           [`${this.componentName}--focused`]: this.focused,
-          [`${this.componentName}--auto-width`]: this.autoWidth && !this.keepWrapperWidth,
         },
       ];
     },
@@ -111,6 +114,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         `${wrapClass}`,
         {
           [`${wrapClass}--focused`]: this.focused,
+          [`${this.componentName}--auto-width`]: this.autoWidth && !this.keepWrapperWidth,
         },
       ];
     },
@@ -159,6 +163,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     value: {
       handler(val) {
         this.inputValue = this.format ? this.format(val) : val;
+        this.preValue = this.inputValue;
       },
       immediate: true,
     },
@@ -337,6 +342,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       this.$emit('click', e);
     },
     handleInput(e: InputEvent | CompositionEvent) {
+      this.preValue = this.inputValue + e.data;
       let {
         currentTarget: { value: val },
       }: any = e;
@@ -367,7 +373,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     updateInputWidth() {
       const pre = this.$refs.inputPreRef as HTMLSpanElement;
       if (!pre) return;
-      const width = pre.offsetWidth;
+      const { width } = pre.getBoundingClientRect();
       if (this.$refs.inputRef) {
         (this.$refs.inputRef as HTMLInputElement).style.width = `${width}px`;
       }
@@ -490,7 +496,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         )}
         {this.autoWidth && (
           <span ref="inputPreRef" class={`${this.classPrefix}-input__input-pre`}>
-            {this.value || this.tPlaceholder}
+            {this.preValue || this.tPlaceholder}
           </span>
         )}
         {suffixContent}

@@ -1,6 +1,8 @@
 import { CreateElement } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import { defineComponent, h } from '@vue/composition-api';
+import {
+  defineComponent, h, ref, onMounted,
+} from '@vue/composition-api';
 import { ChevronRightIcon as TdChevronRightIcon, ChevronLeftIcon as TdChevronLeftIcon } from 'tdesign-icons-vue';
 import isFunction from 'lodash/isFunction';
 
@@ -17,7 +19,9 @@ export default defineComponent({
   setup(props, { emit }) {
     const dropdownClass = usePrefixClass('dropdown');
     const dropdownMenuClass = usePrefixClass('dropdown__menu');
-
+    const menuRef = ref<HTMLElement>();
+    const isOverMaxHeight = ref(false);
+    const scrollTop = ref(0);
     const handleItemClick = (
       optionItem: { disabled: boolean; children: unknown },
       options: { data: DropdownOption; context: { e: MouseEvent } },
@@ -30,10 +34,24 @@ export default defineComponent({
       emit('click', data, context);
     };
 
+    const handleScroll = () => {
+      scrollTop.value = menuRef.value?.scrollTop;
+    };
+    onMounted(() => {
+      if (menuRef.value) {
+        const menuHeight = parseInt(window?.getComputedStyle(menuRef.value).height, 10);
+        if (menuHeight >= props.maxHeight) isOverMaxHeight.value = true;
+      }
+    });
+
     return {
       dropdownClass,
       dropdownMenuClass,
       handleItemClick,
+      menuRef,
+      isOverMaxHeight,
+      handleScroll,
+      scrollTop,
     };
   },
   methods: {
@@ -53,6 +71,7 @@ export default defineComponent({
       let renderContent;
       data.forEach?.((menu, idx) => {
         const optionItem = { ...(menu as DropdownOption) };
+        const onViewIdx = Math.ceil(this.scrollTop / 30);
 
         if (optionItem.children) {
           optionItem.children = this.renderOptions(optionItem.children);
@@ -97,7 +116,7 @@ export default defineComponent({
                     },
                   ]}
                   style={{
-                    top: `${idx * 30}px`,
+                    top: `${(idx - onViewIdx) * 30}px`,
                   }}
                 >
                   <ul>{optionItem.children}</ul>
@@ -141,10 +160,18 @@ export default defineComponent({
   render() {
     return (
       <div
-        class={[this.dropdownMenuClass, `${this.dropdownMenuClass}--${this.direction}`]}
+        class={[
+          this.dropdownMenuClass,
+          `${this.dropdownMenuClass}--${this.direction}`,
+          {
+            [`${this.dropdownMenuClass}--overflow`]: this.isOverMaxHeight,
+          },
+        ]}
+        ref="menuRef"
         style={{
           maxHeight: `${this.maxHeight}px`,
         }}
+        onScroll={this.handleScroll}
       >
         {this.renderOptions(this.options)}
       </div>

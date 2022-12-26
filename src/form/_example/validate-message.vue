@@ -1,14 +1,14 @@
 <template>
   <!-- error-message 非必需 -->
   <t-form :data="formData" :rules="rules" ref="form" @reset="onReset" @submit="onSubmit" scrollToFirstError="smooth">
-    <t-form-item label="用户名" help="这是用户名字段帮助说明" name="account">
-      <t-input v-model="formData.account"></t-input>
+    <t-form-item label="用户名" help="这里可以展示一段说明文字" name="account">
+      <t-input v-model="formData.account" placeholder="请输入用户名"></t-input>
     </t-form-item>
-    <t-form-item label="个人简介" help="一句话介绍自己" name="description">
-      <t-input v-model="formData.description"></t-input>
+    <t-form-item label="个人简介" help="请用一句话介绍自己" name="description">
+      <t-input v-model="formData.description" placeholder="请输入个人简介"></t-input>
     </t-form-item>
     <t-form-item label="密码" name="password">
-      <t-input type="password" v-model="formData.password"></t-input>
+      <t-input type="password" v-model="formData.password" placeholder="请输入密码"></t-input>
     </t-form-item>
     <t-form-item style="margin-left: 100px">
       <t-space size="10px">

@@ -63,23 +63,30 @@ export default {
   },
 };
 </script>
-<style lang="less" scoped>
-li {
+<style>
+.tdesign-demo__select-input-ul-auto-width {
+  padding: 2px 0;
+  margin: 0 -2px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tdesign-demo__select-input-ul-auto-width > li {
   display: block;
   border-radius: 3px;
   line-height: 22px;
   cursor: pointer;
-  padding: 9px 8px;
+  padding: 3px 8px;
   color: var(--td-text-color-primary);
-  transition: background-color 0.2s cubic-bezier(0.38, 0, 0.24, 1);
+  transition: background-color 0.2s linear;
   white-space: nowrap;
   word-wrap: normal;
   overflow: hidden;
   text-overflow: ellipsis;
-  box-sizing: border-box;
 }
 
-li:hover {
+.tdesign-demo__select-input-ul-auto-width > li:hover {
   background-color: var(--td-bg-color-container-hover);
 }
 </style>
