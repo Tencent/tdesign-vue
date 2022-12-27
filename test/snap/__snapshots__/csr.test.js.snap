@@ -65692,6 +65692,60 @@ exports[`csr snapshot test > csr test ./src/loading/_example/delay.vue 1`] = `
 </div>
 `;
 
+exports[`csr snapshot test > csr test ./src/loading/_example/directive.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="loading-container"
+    >
+      Loading...
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <button
+      class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        支持指令 需所在节点设置position: relative
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="loading-container"
+    >
+      Loading...
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <button
+      class="t-button t-size-s t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        支持 fullscreen 修饰符
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
 exports[`csr snapshot test > csr test ./src/loading/_example/fullscreen.vue 1`] = `
 <div
   class="t-space t-space-horizontal"
