@@ -58,7 +58,7 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
     if (clearStep) {
       cacheMap.clear();
       clearStep = 0;
-      nodesEmpty.value = false;
+      nodesEmpty.value = !list.some((node: TreeNode) => node.visible);
       return treeNodeViews;
     }
     treeNodeViews = list.map((node: TreeNode) => {
