@@ -19,16 +19,14 @@ export default function usePagination(props: TdBaseTableProps, context: SetupCon
     // data 数据数量超出分页大小时，则自动启动本地数据分页
     const t = Boolean(!disableDataPage.value && data.length > pageSize);
     isPaginateData.value = t;
-    let newData: TableRowData[] = [];
     if (t) {
       const start = (current - 1) * pageSize;
       const end = current * pageSize;
-      newData = data.slice(start, end);
+      dataSource.value = data.slice(start, end);
     } else {
-      newData = data;
+      dataSource.value = data;
     }
-    dataSource.value = newData;
-    return newData;
+    return dataSource.value;
   };
 
   // 受控情况，只有 pagination.current 或者 pagination.pageSize 变化，才对数据进行排序
