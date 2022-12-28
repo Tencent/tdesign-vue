@@ -23,7 +23,7 @@
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
 const data = [];
-const TOTAL = 60;
+const TOTAL = 59;
 for (let i = 0; i < TOTAL; i++) {
   data.push({
     index: i + 1,
@@ -45,6 +45,7 @@ export default {
       reserveSelectedRowOnPaginate: true,
       selectedRowKeys: [],
       columns: [
+        { colKey: 'serial-number', width: 80, title: '序号' },
         { colKey: 'applicant', title: '申请人', width: '100' },
         {
           colKey: 'status',
@@ -65,11 +66,16 @@ export default {
           },
         },
         { colKey: 'channel', title: '签署方式', width: '120' },
-        { colKey: 'detail.email', title: '邮箱地址', ellipsis: true },
+        // { colKey: 'detail.email', title: '邮箱地址', ellipsis: true },
         { colKey: 'createTime', title: '申请时间' },
         { colKey: 'row-select', type: 'multiple', width: 46 },
       ],
-      /** 非受控用法：与分页组件对齐（此处注释为非受控用法示例，代码有效，勿删） */
+      /**
+       * 1. 本地分页方式一（非受控用法）：使用 defaultCurrent 和 defaultPageSize 设置默认分页信息，仅第一次有效
+       *
+       * 2. 本地分页方式二（受控用法）：使用 current 和 pageSize 设置分页信息，任何时候有效，
+       *    此时，注意需要在 onPageChange 中对 pagination.current 和 pagination.pageSize 进行赋值
+       * */
       pagination: {
         // current: 2,
         // pageSize: 5,
@@ -87,7 +93,7 @@ export default {
     },
     // 分页变化时触发该事件
     onPageChange(pageInfo, newData) {
-      // 受控用法所需
+      // 受控用法所需，即使用 pagination.current 和 pagination.pageSize 时，必须保留恢复下面 2 行代码
       // this.pagination.current = pageInfo.current;
       // this.pagination.pageSize = pageInfo.pageSize;
       console.log('page-change:', pageInfo, newData);

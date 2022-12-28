@@ -19,13 +19,16 @@ export default function usePagination(props: TdBaseTableProps, context: SetupCon
     // data 数据数量超出分页大小时，则自动启动本地数据分页
     const t = Boolean(!disableDataPage.value && data.length > pageSize);
     isPaginateData.value = t;
+    let newData: TableRowData[] = [];
     if (t) {
       const start = (current - 1) * pageSize;
       const end = current * pageSize;
-      dataSource.value = data.slice(start, end);
+      newData = data.slice(start, end);
     } else {
-      dataSource.value = data;
+      newData = data;
     }
+    dataSource.value = newData;
+    return newData;
   };
 
   // 受控情况，只有 pagination.current 或者 pagination.pageSize 变化，才对数据进行排序
@@ -60,10 +63,7 @@ export default function usePagination(props: TdBaseTableProps, context: SetupCon
               change: (pageInfo: PageInfo) => {
                 props.pagination?.onChange?.(pageInfo);
                 innerPagination.value = pageInfo;
-                // 如果是非受控情况的分页变化，还需更新分页数据（data）
-                if (pagination.value && !pagination.value.current && pagination.value.defaultCurrent) {
-                  updateDataSourceAndPaginate(pageInfo.current, pageInfo.pageSize);
-                }
+                updateDataSourceAndPaginate(pageInfo.current, pageInfo.pageSize);
                 // Vue3 ignore this line
                 context.emit('page-change', pageInfo, dataSource.value);
                 props.onPageChange?.(pageInfo, dataSource.value);
