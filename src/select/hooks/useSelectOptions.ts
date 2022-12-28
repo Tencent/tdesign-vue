@@ -61,8 +61,10 @@ export default function useSelectOptions(
     if (props.options === undefined) {
       // 处理 slots 中 t-option 与 t-option-group
       const currentSlots = instance.proxy.$slots.default || [];
-      // eslint-disable-next-line no-param-reassign
-      currentSlots.forEach((v) => (v.data[markName] = true));
+      // 此处可能存在节点数较多的情况，不使用 forEach
+      for (let i = 0, len = currentSlots.length; i < len; i += 1) {
+        currentSlots[i][markName] = true;
+      }
       const optionsSlots = currentSlots.filter((item) => item.componentOptions?.tag === 't-option');
       const groupSlots = currentSlots.filter((item) => item.componentOptions?.tag === 't-option-group');
       if (isArray(groupSlots)) {
@@ -146,7 +148,7 @@ export default function useSelectOptions(
   );
   // 当组件 slot 变化时，重新构造内部 options 数组
   onBeforeUpdate(() => {
-    if (instance.proxy.$slots.default?.some((v) => v.data[markName] !== true)) {
+    if (instance.proxy.$slots.default?.some((v) => v[markName] !== true)) {
       getOptions();
     }
   });
