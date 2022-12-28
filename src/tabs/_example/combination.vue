@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       theme: 'normal',
-      value: '1',
+      value: '18',
     };
   },
 };

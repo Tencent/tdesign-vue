@@ -87,6 +87,13 @@ export default defineComponent({
       </ul>
     );
 
+    const renderEmpty = () => {
+      if (this.empty && typeof this.empty === 'string') {
+        return <div class={`${COMPONENT_NAME}__panel--empty`}>{this.empty}</div>;
+      }
+      return renderTNodeJSXDefault('empty', <div class={`${COMPONENT_NAME}__panel--empty`}>{global.empty}</div>);
+    };
+
     const renderPanels = () => {
       const { inputVal, treeNodes } = cascaderContext;
       return inputVal
@@ -101,9 +108,7 @@ export default defineComponent({
         <div class={`${COMPONENT_NAME}__panel--empty`}>{global.loadingText}</div>,
       );
     } else {
-      content = panels.length
-        ? renderPanels()
-        : renderTNodeJSXDefault('empty', <div class={`${COMPONENT_NAME}__panel--empty`}>{global.empty}</div>);
+      content = panels.length ? renderPanels() : renderEmpty();
     }
 
     return (

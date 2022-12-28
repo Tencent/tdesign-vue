@@ -5,6 +5,21 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.0.2 `2022-12-28` 
+### 🚀 Features
+- `Loading`: 新增`v-loading` 支持 @uyarn ([#1964](https://github.com/Tencent/tdesign-vue/pull/1964))
+- `Tabs`: 新增初始化时选中选项溢出自动滚动到具体位置的能力 @uyarn ([#1965](https://github.com/Tencent/tdesign-vue/pull/1965))
+- `TooltipLite`: mouse 模式下新增定位边界检查，保证内容在可视范围内 @moecasts ([common #1093](https://github.com/Tencent/tdesign-common/pull/1093))
+### 🐞 Bug Fixes
+- `DatePicker`: 修复年份选择器区间展示错误 @honkinglin ([#1963](https://github.com/Tencent/tdesign-vue/pull/1963))
+- `Input`:
+    - 修复input在autowidth为true时,在ie上ResizeObserver监听事件中计算宽度不正常问题 @huangpiqiao ([#1967](https://github.com/Tencent/tdesign-vue/pull/1967))
+    - 光标移动至中间输入等部分场景下Input光标位置异常的问题 @uyarn ([#1968](https://github.com/Tencent/tdesign-vue/pull/1968))
+- `Cascader`: empty为字符串时没有默认样式 @uyarn ([#1962](https://github.com/Tencent/tdesign-vue/pull/1962))
+- `TextArea`: 修复中文输入法等 IME 情况下，`autosize` 计算失效的问题 @xiaosansiji ([#1969](https://github.com/Tencent/tdesign-vue/pull/1969))
+- `Menu`: 修复 logo 区域高度样式问题 @xiaosansiji ([common #1969](https://github.com/Tencent/tdesign-common/pull/1094))
+- `Tag`: 去除选中文字透明色的样式 @uyarn ([common #1095](https://github.com/Tencent/tdesign-common/pull/1095))
+
 ## 🌈 1.0.1 `2022-12-23` 
 ### 🐞 Bug Fixes
 - `Menu`: 修复弹出模式子菜单样式展示问题 @xiaosansiji ([#1960](https://github.com/Tencent/tdesign-vue/pull/1960))
