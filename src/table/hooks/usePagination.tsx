@@ -68,6 +68,7 @@ export default function usePagination(props: TdBaseTableProps, context: SetupCon
               },
             },
           }}
+          scopedSlots={{ totalContent: context.slots.totalContent }}
         />
       </div>
     );
