@@ -17,7 +17,7 @@ exports[`Upload > :props > :isBatchUpload 1`] = `
       class="t-upload__trigger"
     >
       <button
-        class="t-button t-size-m t-button--variant-outline t-button--theme-default"
+        class="t-button t-button--variant-outline t-button--theme-default"
         type="button"
       >
         <svg
