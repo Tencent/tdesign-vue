@@ -117231,6 +117231,9 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
         >
           <colgroup>
             <col
+              style="width: 80px;"
+            />
+            <col
               style="width: 100px;"
             />
             <col
@@ -117243,9 +117246,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
               style="min-width: 80px;"
             />
             <col
-              style="min-width: 80px;"
-            />
-            <col
               style="width: 46px;"
             />
           </colgroup>
@@ -117253,6 +117253,16 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
             class="t-table__header"
           >
             <tr>
+              <th
+                class="t-table__th-serial-number"
+                data-colkey="serial-number"
+              >
+                <div
+                  class="t-table__th-cell-inner"
+                >
+                  序号
+                </div>
+              </th>
               <th
                 class="t-table__th-applicant"
                 data-colkey="applicant"
@@ -117281,20 +117291,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
                   class="t-table__th-cell-inner"
                 >
                   签署方式
-                </div>
-              </th>
-              <th
-                class="t-table__th-detail.email"
-                data-colkey="detail.email"
-              >
-                <div
-                  class="t-table__th-cell-inner"
-                >
-                  <div
-                    class="t-table__ellipsis t-text-ellipsis"
-                  >
-                    邮箱地址
-                  </div>
                 </div>
               </th>
               <th
@@ -117342,6 +117338,11 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
               <td
                 class=""
               >
+                6
+              </td>
+              <td
+                class=""
+              >
                 王芳
               </td>
               <td
@@ -117374,15 +117375,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
                 纸质签署
               </td>
               <td
-                class="t-table-td--ellipsis"
-              >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  p.cumx@rampblpa.ru
-                </div>
-              </td>
-              <td
                 class=""
               >
                 2022-02-01
@@ -117410,6 +117402,11 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
             <tr
               class=""
             >
+              <td
+                class=""
+              >
+                7
+              </td>
               <td
                 class=""
               >
@@ -117445,15 +117442,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
                 电子签署
               </td>
               <td
-                class="t-table-td--ellipsis"
-              >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  w.cezkdudy@lhll.au
-                </div>
-              </td>
-              <td
                 class=""
               >
                 2022-03-01
@@ -117481,6 +117469,11 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
             <tr
               class=""
             >
+              <td
+                class=""
+              >
+                8
+              </td>
               <td
                 class=""
               >
@@ -117516,15 +117509,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
                 纸质签署
               </td>
               <td
-                class="t-table-td--ellipsis"
-              >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  r.nmgw@peurezgn.sl
-                </div>
-              </td>
-              <td
                 class=""
               >
                 2022-04-01
@@ -117552,6 +117536,11 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
             <tr
               class=""
             >
+              <td
+                class=""
+              >
+                9
+              </td>
               <td
                 class=""
               >
@@ -117587,15 +117576,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
                 纸质签署
               </td>
               <td
-                class="t-table-td--ellipsis"
-              >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  p.cumx@rampblpa.ru
-                </div>
-              </td>
-              <td
                 class=""
               >
                 2022-01-01
@@ -117623,6 +117603,11 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
             <tr
               class=""
             >
+              <td
+                class=""
+              >
+                10
+              </td>
               <td
                 class=""
               >
@@ -117656,15 +117641,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
                 class=""
               >
                 电子签署
-              </td>
-              <td
-                class="t-table-td--ellipsis"
-              >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  w.cezkdudy@lhll.au
-                </div>
               </td>
               <td
                 class=""
@@ -117708,7 +117684,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
             <div
               class="t-pagination__total"
             >
-              共 60 项数据
+              共 59 项数据
             </div>
             <div
               class="t-select__wrap t-pagination__select"
@@ -127498,32 +127474,32 @@ exports[`csr snapshot test > csr test ./src/tabs/_example/combination.vue 1`] = 
         class="t-tabs__content"
       >
         <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
         <div
           class="t-tab-panel"
         >
           <p
             style="padding: 25px;"
           >
-            选项卡2
+            选项卡19
           </p>
         </div>
-        <!---->
-        <!---->
-        <!---->
-        <!---->
-        <!---->
-        <!---->
-        <!---->
-        <!---->
-        <!---->
-        <!---->
-        <!---->
-        <!---->
-        <!---->
-        <!---->
-        <!---->
-        <!---->
-        <!---->
         <!---->
       </div>
     </div>
