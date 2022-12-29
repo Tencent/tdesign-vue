@@ -80,6 +80,7 @@ const data2 = [
     children: [
       {
         value: '1.1',
+        label: '1.1 custom label',
         children: [
           {
             value: '1.1.1',
@@ -127,7 +128,7 @@ export default {
       this.items = this.items === data1 ? data2 : data1;
     },
     label(createElement, node) {
-      return node.value;
+      return node.label || node.value;
     },
   },
 };
