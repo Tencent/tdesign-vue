@@ -63017,7 +63017,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/base.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-primary t-link--hover-underline"
+      class="t-link t-link--theme-primary t-link--hover-underline"
       target=""
     >
       跳转链接
@@ -63035,7 +63035,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/disabled.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-default t-is-disabled"
+      class="t-link t-link--theme-default t-is-disabled"
       target=""
     >
        跳转链接 
@@ -63045,7 +63045,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/disabled.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-primary t-is-disabled t-is-underline"
+      class="t-link t-link--theme-primary t-is-disabled t-is-underline"
       target=""
     >
        跳转链接 
@@ -63055,7 +63055,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/disabled.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-danger t-is-disabled"
+      class="t-link t-link--theme-danger t-is-disabled"
       target=""
     >
        跳转链接 
@@ -63065,7 +63065,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/disabled.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-warning t-is-disabled"
+      class="t-link t-link--theme-warning t-is-disabled"
       target=""
     >
        跳转链接 
@@ -63075,7 +63075,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/disabled.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-success t-is-disabled"
+      class="t-link t-link--theme-success t-is-disabled"
       target=""
     >
        跳转链接 
@@ -63122,7 +63122,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/hover.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-m t-link--theme-default t-link--hover-underline"
+          class="t-link t-link--theme-default t-link--hover-underline"
           target=""
         >
            跳转链接 
@@ -63132,7 +63132,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/hover.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-m t-link--theme-primary t-link--hover-underline"
+          class="t-link t-link--theme-primary t-link--hover-underline"
           target=""
         >
            跳转链接 
@@ -63142,7 +63142,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/hover.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-m t-link--theme-danger t-link--hover-underline"
+          class="t-link t-link--theme-danger t-link--hover-underline"
           target=""
         >
            跳转链接 
@@ -63152,7 +63152,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/hover.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-m t-link--theme-warning t-link--hover-underline"
+          class="t-link t-link--theme-warning t-link--hover-underline"
           target=""
         >
            跳转链接 
@@ -63162,66 +63162,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/hover.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-m t-link--theme-success t-link--hover-underline"
-          target=""
-        >
-           跳转链接 
-        </a>
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-space-item"
-  >
-    <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px;"
-    >
-      <div
-        class="t-space-item"
-      >
-        <a
-          class="t-link t-size-m t-link--theme-default t-link--hover-color"
-          target=""
-        >
-           跳转链接 
-        </a>
-      </div>
-      <div
-        class="t-space-item"
-      >
-        <a
-          class="t-link t-size-m t-link--theme-primary t-link--hover-color"
-          target=""
-        >
-           跳转链接 
-        </a>
-      </div>
-      <div
-        class="t-space-item"
-      >
-        <a
-          class="t-link t-size-m t-link--theme-danger t-link--hover-color"
-          target=""
-        >
-           跳转链接 
-        </a>
-      </div>
-      <div
-        class="t-space-item"
-      >
-        <a
-          class="t-link t-size-m t-link--theme-warning t-link--hover-color"
-          target=""
-        >
-           跳转链接 
-        </a>
-      </div>
-      <div
-        class="t-space-item"
-      >
-        <a
-          class="t-link t-size-m t-link--theme-success t-link--hover-color"
+          class="t-link t-link--theme-success t-link--hover-underline"
           target=""
         >
            跳转链接 
@@ -63240,7 +63181,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/hover.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-m t-link--theme-default t-is-underline t-link--hover-color"
+          class="t-link t-link--theme-default t-link--hover-color"
           target=""
         >
            跳转链接 
@@ -63250,7 +63191,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/hover.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-m t-link--theme-primary t-is-underline t-link--hover-color"
+          class="t-link t-link--theme-primary t-link--hover-color"
           target=""
         >
            跳转链接 
@@ -63260,7 +63201,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/hover.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-m t-link--theme-danger t-is-underline t-link--hover-color"
+          class="t-link t-link--theme-danger t-link--hover-color"
           target=""
         >
            跳转链接 
@@ -63270,7 +63211,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/hover.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-m t-link--theme-warning t-is-underline t-link--hover-color"
+          class="t-link t-link--theme-warning t-link--hover-color"
           target=""
         >
            跳转链接 
@@ -63280,7 +63221,66 @@ exports[`csr snapshot test > csr test ./src/link/_example/hover.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-m t-link--theme-success t-is-underline t-link--hover-color"
+          class="t-link t-link--theme-success t-link--hover-color"
+          target=""
+        >
+           跳转链接 
+        </a>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <a
+          class="t-link t-link--theme-default t-is-underline t-link--hover-color"
+          target=""
+        >
+           跳转链接 
+        </a>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <a
+          class="t-link t-link--theme-primary t-is-underline t-link--hover-color"
+          target=""
+        >
+           跳转链接 
+        </a>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <a
+          class="t-link t-link--theme-danger t-is-underline t-link--hover-color"
+          target=""
+        >
+           跳转链接 
+        </a>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <a
+          class="t-link t-link--theme-warning t-is-underline t-link--hover-color"
+          target=""
+        >
+           跳转链接 
+        </a>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <a
+          class="t-link t-link--theme-success t-is-underline t-link--hover-color"
           target=""
         >
            跳转链接 
@@ -63300,7 +63300,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/icon.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-default t-link--hover-underline"
+      class="t-link t-link--theme-default t-link--hover-underline"
       target=""
     >
       <span
@@ -63332,7 +63332,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/icon.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-primary t-is-underline t-link--hover-underline"
+      class="t-link t-link--theme-primary t-is-underline t-link--hover-underline"
       href="https://tdesign.tencent.com/"
       target="_self"
     >
@@ -63365,7 +63365,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/icon.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-danger t-link--hover-color"
+      class="t-link t-link--theme-danger t-link--hover-color"
       href="https://tdesign.tencent.com/"
       target="_blank"
     >
@@ -63398,7 +63398,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/icon.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-warning t-is-disabled"
+      class="t-link t-link--theme-warning t-is-disabled"
       target=""
     >
        跳转链接 
@@ -63445,7 +63445,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/size.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-s t-link--theme-default t-link--hover-underline"
+          class="t-link t-link--theme-default t-size-s t-link--hover-underline"
           target=""
         >
            跳转链接 
@@ -63455,7 +63455,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/size.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-s t-link--theme-primary t-link--hover-underline"
+          class="t-link t-link--theme-primary t-size-s t-link--hover-underline"
           target=""
         >
            跳转链接 
@@ -63465,7 +63465,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/size.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-s t-link--theme-danger t-link--hover-underline"
+          class="t-link t-link--theme-danger t-size-s t-link--hover-underline"
           target=""
         >
            跳转链接 
@@ -63475,7 +63475,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/size.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-s t-link--theme-warning t-is-disabled"
+          class="t-link t-link--theme-warning t-size-s t-is-disabled"
           target=""
         >
           跳转链接
@@ -63485,7 +63485,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/size.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-s t-link--theme-success t-link--hover-underline"
+          class="t-link t-link--theme-success t-size-s t-link--hover-underline"
           target=""
         >
            跳转链接 
@@ -63526,7 +63526,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/size.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-m t-link--theme-default t-link--hover-underline"
+          class="t-link t-link--theme-default t-link--hover-underline"
           target=""
         >
            跳转链接 
@@ -63536,7 +63536,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/size.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-m t-link--theme-primary t-link--hover-underline"
+          class="t-link t-link--theme-primary t-link--hover-underline"
           target=""
         >
            跳转链接 
@@ -63546,7 +63546,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/size.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-m t-link--theme-danger t-link--hover-underline"
+          class="t-link t-link--theme-danger t-link--hover-underline"
           target=""
         >
            跳转链接 
@@ -63556,7 +63556,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/size.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-m t-link--theme-warning t-is-disabled"
+          class="t-link t-link--theme-warning t-is-disabled"
           target=""
         >
           跳转链接
@@ -63566,7 +63566,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/size.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-m t-link--theme-success t-link--hover-underline"
+          class="t-link t-link--theme-success t-link--hover-underline"
           target=""
         >
            跳转链接 
@@ -63607,7 +63607,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/size.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-l t-link--theme-default t-link--hover-underline"
+          class="t-link t-link--theme-default t-size-l t-link--hover-underline"
           target=""
         >
            跳转链接 
@@ -63617,7 +63617,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/size.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-l t-link--theme-primary t-link--hover-underline"
+          class="t-link t-link--theme-primary t-size-l t-link--hover-underline"
           target=""
         >
            跳转链接 
@@ -63627,7 +63627,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/size.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-l t-link--theme-danger t-link--hover-underline"
+          class="t-link t-link--theme-danger t-size-l t-link--hover-underline"
           target=""
         >
            跳转链接 
@@ -63637,7 +63637,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/size.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-l t-link--theme-warning t-is-disabled"
+          class="t-link t-link--theme-warning t-size-l t-is-disabled"
           target=""
         >
           跳转链接
@@ -63647,7 +63647,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/size.vue 1`] = `
         class="t-space-item"
       >
         <a
-          class="t-link t-size-l t-link--theme-success t-link--hover-underline"
+          class="t-link t-link--theme-success t-size-l t-link--hover-underline"
           target=""
         >
            跳转链接 
@@ -63689,7 +63689,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/theme.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-default t-link--hover-underline"
+      class="t-link t-link--theme-default t-link--hover-underline"
       target=""
     >
        跳转链接 
@@ -63699,7 +63699,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/theme.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-primary t-link--hover-underline"
+      class="t-link t-link--theme-primary t-link--hover-underline"
       target=""
     >
        跳转链接 
@@ -63709,7 +63709,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/theme.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-danger t-link--hover-underline"
+      class="t-link t-link--theme-danger t-link--hover-underline"
       target=""
     >
        跳转链接 
@@ -63719,7 +63719,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/theme.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-warning t-link--hover-underline"
+      class="t-link t-link--theme-warning t-link--hover-underline"
       target=""
     >
        跳转链接 
@@ -63729,7 +63729,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/theme.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-success t-link--hover-underline"
+      class="t-link t-link--theme-success t-link--hover-underline"
       target=""
     >
        跳转链接 
@@ -63747,7 +63747,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/underline.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-default t-is-underline t-link--hover-underline"
+      class="t-link t-link--theme-default t-is-underline t-link--hover-underline"
       target=""
     >
        跳转链接 
@@ -63757,7 +63757,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/underline.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-primary t-is-underline t-link--hover-underline"
+      class="t-link t-link--theme-primary t-is-underline t-link--hover-underline"
       target=""
     >
        跳转链接 
@@ -63767,7 +63767,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/underline.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-danger t-is-underline t-link--hover-underline"
+      class="t-link t-link--theme-danger t-is-underline t-link--hover-underline"
       target=""
     >
        跳转链接 
@@ -63777,7 +63777,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/underline.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-warning t-is-underline t-link--hover-underline"
+      class="t-link t-link--theme-warning t-is-underline t-link--hover-underline"
       target=""
     >
        跳转链接 
@@ -63787,7 +63787,7 @@ exports[`csr snapshot test > csr test ./src/link/_example/underline.vue 1`] = `
     class="t-space-item"
   >
     <a
-      class="t-link t-size-m t-link--theme-success t-is-underline t-link--hover-underline"
+      class="t-link t-link--theme-success t-is-underline t-link--hover-underline"
       target=""
     >
        跳转链接 
@@ -63818,21 +63818,21 @@ exports[`csr snapshot test > csr test ./src/list/_example/base.vue 1`] = `
           class="t-list-item__action"
         >
           <a
-            class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+            class="t-link t-link--theme-primary t-link--hover-color"
             style="margin-left: 16px;"
             target=""
           >
              操作1 
           </a>
           <a
-            class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+            class="t-link t-link--theme-primary t-link--hover-color"
             style="margin-left: 16px;"
             target=""
           >
              操作2 
           </a>
           <a
-            class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+            class="t-link t-link--theme-primary t-link--hover-color"
             style="margin-left: 16px;"
             target=""
           >
@@ -63856,21 +63856,21 @@ exports[`csr snapshot test > csr test ./src/list/_example/base.vue 1`] = `
           class="t-list-item__action"
         >
           <a
-            class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+            class="t-link t-link--theme-primary t-link--hover-color"
             style="margin-left: 16px;"
             target=""
           >
              操作1 
           </a>
           <a
-            class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+            class="t-link t-link--theme-primary t-link--hover-color"
             style="margin-left: 16px;"
             target=""
           >
              操作2 
           </a>
           <a
-            class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+            class="t-link t-link--theme-primary t-link--hover-color"
             style="margin-left: 16px;"
             target=""
           >
@@ -64740,21 +64740,21 @@ exports[`csr snapshot test > csr test ./src/list/_example/operation.vue 1`] = `
             >
               <span>
                 <a
-                  class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                  class="t-link t-link--theme-primary t-link--hover-color"
                   style="margin-left: 16px;"
                   target=""
                 >
                   操作1
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                  class="t-link t-link--theme-primary t-link--hover-color"
                   style="margin-left: 16px;"
                   target=""
                 >
                   操作2
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                  class="t-link t-link--theme-primary t-link--hover-color"
                   style="margin-left: 16px;"
                   target=""
                 >
@@ -64804,21 +64804,21 @@ exports[`csr snapshot test > csr test ./src/list/_example/operation.vue 1`] = `
             >
               <span>
                 <a
-                  class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                  class="t-link t-link--theme-primary t-link--hover-color"
                   style="margin-left: 16px;"
                   target=""
                 >
                   操作1
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                  class="t-link t-link--theme-primary t-link--hover-color"
                   style="margin-left: 16px;"
                   target=""
                 >
                   操作2
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                  class="t-link t-link--theme-primary t-link--hover-color"
                   style="margin-left: 16px;"
                   target=""
                 >
@@ -93178,7 +93178,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                 查看详情
@@ -93249,7 +93249,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                 再次申请
@@ -93320,7 +93320,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                 再次申请
@@ -93391,7 +93391,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                 查看详情
@@ -93462,7 +93462,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                 再次申请
@@ -99710,14 +99710,14 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-row.vue 1`] 
                 class="table-operations"
               >
                 <a
-                  class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                  class="t-link t-link--theme-primary t-link--hover-color"
                   data-id="1"
                   target=""
                 >
                   保存
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                  class="t-link t-link--theme-primary t-link--hover-color"
                   data-id="1"
                   target=""
                 >
@@ -99772,7 +99772,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-row.vue 1`] 
                 class="table-operations"
               >
                 <a
-                  class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                  class="t-link t-link--theme-primary t-link--hover-color"
                   data-id="2"
                   target=""
                 >
@@ -99827,7 +99827,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-row.vue 1`] 
                 class="table-operations"
               >
                 <a
-                  class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                  class="t-link t-link--theme-primary t-link--hover-color"
                   data-id="3"
                   target=""
                 >
@@ -99882,7 +99882,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-row.vue 1`] 
                 class="table-operations"
               >
                 <a
-                  class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                  class="t-link t-link--theme-primary t-link--hover-color"
                   data-id="4"
                   target=""
                 >
@@ -99937,7 +99937,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-row.vue 1`] 
                 class="table-operations"
               >
                 <a
-                  class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                  class="t-link t-link--theme-primary t-link--hover-color"
                   data-id="5"
                   target=""
                 >
@@ -101240,7 +101240,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/expandable.vue 1`] = 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-ce8962e4=""
                 target=""
               >
@@ -101329,7 +101329,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/expandable.vue 1`] = 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-ce8962e4=""
                 target=""
               >
@@ -101418,7 +101418,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/expandable.vue 1`] = 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-ce8962e4=""
                 target=""
               >
@@ -101507,7 +101507,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/expandable.vue 1`] = 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-ce8962e4=""
                 target=""
               >
@@ -101596,7 +101596,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/expandable.vue 1`] = 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-ce8962e4=""
                 target=""
               >
@@ -102572,7 +102572,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-c5be352e=""
                 target=""
               >
@@ -102631,7 +102631,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-c5be352e=""
                 target=""
               >
@@ -102690,7 +102690,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-c5be352e=""
                 target=""
               >
@@ -102749,7 +102749,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-c5be352e=""
                 target=""
               >
@@ -102808,7 +102808,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-c5be352e=""
                 target=""
               >
@@ -103062,7 +103062,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  查看详情 
@@ -103124,7 +103124,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  再次申请 
@@ -103186,7 +103186,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  再次申请 
@@ -103248,7 +103248,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  查看详情 
@@ -103310,7 +103310,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  再次申请 
@@ -103372,7 +103372,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  再次申请 
@@ -103434,7 +103434,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  查看详情 
@@ -103496,7 +103496,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  再次申请 
@@ -103558,7 +103558,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  再次申请 
@@ -103620,7 +103620,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  查看详情 
@@ -103682,7 +103682,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  再次申请 
@@ -103744,7 +103744,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  再次申请 
@@ -103806,7 +103806,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  查看详情 
@@ -103868,7 +103868,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  再次申请 
@@ -103930,7 +103930,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  再次申请 
@@ -103992,7 +103992,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  查看详情 
@@ -104054,7 +104054,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  再次申请 
@@ -104116,7 +104116,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  再次申请 
@@ -104178,7 +104178,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  查看详情 
@@ -104240,7 +104240,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 target=""
               >
                  再次申请 
@@ -104579,7 +104579,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-4344bc5a=""
                 target=""
               >
@@ -104643,7 +104643,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-4344bc5a=""
                 target=""
               >
@@ -104707,7 +104707,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-4344bc5a=""
                 target=""
               >
@@ -104771,7 +104771,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-4344bc5a=""
                 target=""
               >
@@ -104835,7 +104835,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-4344bc5a=""
                 target=""
               >
@@ -104899,7 +104899,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-4344bc5a=""
                 target=""
               >
@@ -104963,7 +104963,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-4344bc5a=""
                 target=""
               >
@@ -105027,7 +105027,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-4344bc5a=""
                 target=""
               >
@@ -105091,7 +105091,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-4344bc5a=""
                 target=""
               >
@@ -105155,7 +105155,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-4344bc5a=""
                 target=""
               >
@@ -105219,7 +105219,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-4344bc5a=""
                 target=""
               >
@@ -105283,7 +105283,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-4344bc5a=""
                 target=""
               >
@@ -105347,7 +105347,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-4344bc5a=""
                 target=""
               >
@@ -105411,7 +105411,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <a
-                class="t-link t-size-m t-link--theme-primary t-link--hover-color"
+                class="t-link t-link--theme-primary t-link--hover-color"
                 data-v-4344bc5a=""
                 target=""
               >
@@ -120523,42 +120523,42 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree.vue 1`] = `
                 class="tdesign-table-demo__table-operations"
               >
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   插入
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   前插
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   后插
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   更新
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   查看
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
@@ -120645,42 +120645,42 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree.vue 1`] = `
                 class="tdesign-table-demo__table-operations"
               >
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   插入
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   前插
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   后插
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   更新
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   查看
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
@@ -120767,42 +120767,42 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree.vue 1`] = `
                 class="tdesign-table-demo__table-operations"
               >
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   插入
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   前插
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   后插
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   更新
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   查看
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
@@ -120895,42 +120895,42 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree.vue 1`] = `
                 class="tdesign-table-demo__table-operations"
               >
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   插入
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   前插
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   后插
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   更新
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   查看
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
@@ -121017,42 +121017,42 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree.vue 1`] = `
                 class="tdesign-table-demo__table-operations"
               >
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   插入
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   前插
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   后插
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   更新
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   查看
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
@@ -121145,42 +121145,42 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree.vue 1`] = `
                 class="tdesign-table-demo__table-operations"
               >
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   插入
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   前插
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   后插
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   更新
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   查看
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
@@ -121267,42 +121267,42 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree.vue 1`] = `
                 class="tdesign-table-demo__table-operations"
               >
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   插入
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   前插
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   后插
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   更新
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
                   查看
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+                  class="t-link t-link--theme-default t-link--hover-color"
                   target=""
                   variant="text"
                 >
@@ -153447,7 +153447,7 @@ exports[`csr snapshot test > csr test ./src/upload/_example/base.vue 1`] = `
               class="t-upload__single-display-text t-upload__display-text--margin"
             >
               <a
-                class="t-link t-size-s t-link--theme-default t-link--hover-color t-upload__single-name"
+                class="t-link t-link--theme-default t-size-s t-link--hover-color t-upload__single-name"
                 href="https://tdesign.gtimg.com/site/source/figma-pc.png"
                 target="_blank"
               >
@@ -153758,13 +153758,13 @@ exports[`csr snapshot test > csr test ./src/upload/_example/draggable.vue 1`] = 
                 class="t-upload__dragger-btns"
               >
                 <a
-                  class="t-link t-size-m t-link--theme-primary t-link--hover-color t-upload__dragger-progress-cancel"
+                  class="t-link t-link--theme-primary t-link--hover-color t-upload__dragger-progress-cancel"
                   target=""
                 >
                   重新选择
                 </a>
                 <a
-                  class="t-link t-size-m t-link--theme-danger t-link--hover-color t-upload__dragger-delete-btn"
+                  class="t-link t-link--theme-danger t-link--hover-color t-upload__dragger-delete-btn"
                   target=""
                 >
                   删除
