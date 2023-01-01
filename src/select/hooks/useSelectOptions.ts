@@ -1,10 +1,6 @@
 /**
  * Select 内部 option 处理
  * 将 slot 方式传入的 <t-option /> 元素与 prop 方式传入的 options 参数进行统一收编处理，便于数据管理和筛选
- *
- * 因为 Vue2 没有很好的方案监听 `未实际渲染的 Slots`，这里折中方案如下：
- * 在 slot 数组首层（若存在 group 分组，其子项作为一个整体考虑）的每个元素对象实例上，进行特殊标记的方式，来区别 slot 是否已经在内部 options 登记
- * 每次 beforeUpdate 之前，遍历 Select 实例 slot 数组首层，若存在未被标记的元素，则重新构造内部 option 数组
  */
 
 import {
@@ -22,15 +18,16 @@ type UniOption = (TdOptionProps | SelectOptionGroup) & {
   slots?: () => VNode;
 };
 
-// slot 是否已经被记录的标记字段名称
-const markName = '_t_has_recorded';
-
 export default function useSelectOptions(
   props: TdSelectProps,
   instance: ComponentInternalInstance,
   keys: Ref<SelectKeysType>,
 ) {
+  // 内部 options 记录
   const options = ref<UniOption[]>([]);
+
+  // 指向当前 slots 数组，用来判断 slot 是否被更新
+  let innerSlotRecord: VNode[] = null;
 
   const getOptions = () => {
     let dynamicIndex = 0;
@@ -59,12 +56,10 @@ export default function useSelectOptions(
 
     // props 中 options 参数优先级高于 slots
     if (props.options === undefined) {
+      // 记录当前 slot 数组
+      innerSlotRecord = instance.proxy.$slots.default;
       // 处理 slots 中 t-option 与 t-option-group
       const currentSlots = instance.proxy.$slots.default || [];
-      // 此处可能存在节点数较多的情况，不使用 forEach
-      for (let i = 0, len = currentSlots.length; i < len; i += 1) {
-        currentSlots[i][markName] = true;
-      }
       const optionsSlots = currentSlots.filter((item) => item.componentOptions?.tag === 't-option');
       const groupSlots = currentSlots.filter((item) => item.componentOptions?.tag === 't-option-group');
       if (isArray(groupSlots)) {
@@ -148,7 +143,7 @@ export default function useSelectOptions(
   );
   // 当组件 slot 变化时，重新构造内部 options 数组
   onBeforeUpdate(() => {
-    if (instance.proxy.$slots.default?.some((v) => v[markName] !== true)) {
+    if (props.options === undefined && innerSlotRecord !== instance.proxy.$slots.default) {
       getOptions();
     }
   });
