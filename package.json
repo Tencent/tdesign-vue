@@ -84,7 +84,7 @@
     "@babel/runtime": "^7.14.8",
     "@popperjs/core": "^2.4.0",
     "@types/clipboard": "^2.0.1",
-    "@types/lodash": "4.14.182",
+    "@types/lodash": "4.14.191",
     "@types/raf": "^3.4.0",
     "@types/sortablejs": "^1.10.7",
     "@types/tinycolor2": "^1.4.3",
