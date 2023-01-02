@@ -26,7 +26,7 @@ describe('AutoComplete Component', () => {
       },
     });
     const domWrapper = wrapper.find('input');
-    expect(domWrapper.attributes('autofocus')).not.toBeUndefined();
+    expect(domWrapper.attributes('autofocus')).toBeDefined();
   });
 
   it('props.clearable: show clear icon on mouse enter', async () => {
