@@ -81,7 +81,7 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
         <span style={this.tagStyle} class={this.maxWidth ? `${this.componentName}--text` : undefined}>
           {tagContent}
         </span>
-        {closeIcon}
+        {!this.disabled ? closeIcon : undefined}
       </span>
     );
   },
