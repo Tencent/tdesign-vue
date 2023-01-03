@@ -8,7 +8,7 @@ exports[`TreeSelect > :props > :clearable 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -53,7 +53,7 @@ exports[`TreeSelect > :props > :defaultValue 1`] = `
     class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -115,7 +115,7 @@ exports[`TreeSelect > :props > :disabled 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-disabled t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-disabled t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -162,7 +162,7 @@ exports[`TreeSelect > :props > :empty string 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -207,7 +207,7 @@ exports[`TreeSelect > :props > :filterable 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -251,7 +251,7 @@ exports[`TreeSelect > :props > :loading 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -305,7 +305,7 @@ exports[`TreeSelect > :props > :loadingText 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -350,7 +350,7 @@ exports[`TreeSelect > :props > :max 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -395,7 +395,7 @@ exports[`TreeSelect > :props > :minCollapsedNum 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -440,7 +440,7 @@ exports[`TreeSelect > :props > :multiple 1`] = `
     class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -502,7 +502,7 @@ exports[`TreeSelect > :props > :placeholder 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -547,7 +547,7 @@ exports[`TreeSelect > :props > :popupProps 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -637,7 +637,7 @@ exports[`TreeSelect > :props > :treeProps 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -682,7 +682,7 @@ exports[`TreeSelect > :props > :value 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -727,7 +727,7 @@ exports[`TreeSelect > :props > :valueType 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -772,7 +772,7 @@ exports[`TreeSelect > <slot> > <collapsedItems> 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -817,7 +817,7 @@ exports[`TreeSelect > <slot> > <empty> 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -862,7 +862,7 @@ exports[`TreeSelect > <slot> > <loadingText> 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -916,7 +916,7 @@ exports[`TreeSelect > <slot> > <prefixIcon> 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -967,7 +967,7 @@ exports[`TreeSelect > function > :collapsedItems 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -1012,7 +1012,7 @@ exports[`TreeSelect > function > :empty 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -1057,7 +1057,7 @@ exports[`TreeSelect > function > :loadingText 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"
@@ -1111,7 +1111,7 @@ exports[`TreeSelect > function > :prefixIcon 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+      class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
     >
       <div
         class="t-input__prefix"

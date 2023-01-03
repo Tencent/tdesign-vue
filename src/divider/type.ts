@@ -2,7 +2,6 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-23 10:35:44
  * */
 
 import { TNode } from '../common';
@@ -33,8 +32,7 @@ export interface TdDividerProps {
   layout?: 'horizontal' | 'vertical';
   /**
    * 请更为使用 `layout`。分隔线类型有两种：水平和垂直
-   * @default horizontal
    * @deprecated
    */
   theme?: 'horizontal' | 'vertical';
-};
+}

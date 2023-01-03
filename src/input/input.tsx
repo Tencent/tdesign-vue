@@ -96,8 +96,8 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     inputClasses(): ClassName {
       return [
         this.componentName,
-        this.commonSizeClassName[this.size] || '',
         {
+          [this.commonSizeClassName[this.size]]: this.size !== 'medium',
           [this.commonStatusClassName.disabled]: this.tDisabled,
           [this.commonStatusClassName.focused]: this.focused,
           [`${this.classPrefix}-is-${this.tStatus}`]: this.tStatus,
@@ -263,11 +263,10 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     },
     handleKeydown(e: KeyboardEvent) {
       if (this.tDisabled) return;
-      const code = e.code || e.key;
       const {
         currentTarget: { value },
       }: any = e;
-      if (code === 'Enter' || code === 'NumpadEnter') {
+      if (/enter/i.test(e.key) || /enter/i.test(e.code)) {
         emitEvent<Parameters<TdInputProps['onEnter']>>(this, 'enter', value, { e });
       } else {
         emitEvent<Parameters<TdInputProps['onKeydown']>>(this, 'keydown', value, { e });
