@@ -146,6 +146,10 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     tStatus(): string {
       return this.status || this.innerStatus;
     },
+
+    isIE(): boolean {
+      return getIEVersion() <= 11;
+    },
   },
 
   watch: {
@@ -214,7 +218,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     // 当元素默认为 display: none 状态，无法提前准确计算宽度，因此需要监听元素宽度变化。比如：Tabs 场景切换。
     addTableResizeObserver(element: Element) {
       // IE 11 以下使用设置 minWidth 兼容；IE 11 以上使用 ResizeObserver
-      if (typeof window.ResizeObserver === 'undefined' || !element || getIEVersion() <= 11) return;
+      if (typeof window.ResizeObserver === 'undefined' || !element || this.isIE) return;
       this.resizeObserver = new window.ResizeObserver(() => {
         this.updateInputWidth();
       });
@@ -355,14 +359,16 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         }
         emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e } as { e: MouseEvent | InputEvent });
         // 受控，重要，勿删 input无法直接实现受控
-        const inputRef = this.$refs.inputRef as HTMLInputElement;
-        preCursorPos = inputRef.selectionStart;
+        if (!this.isIE) {
+          const inputRef = this.$refs.inputRef as HTMLInputElement;
+          preCursorPos = inputRef.selectionStart;
+          setTimeout(() => {
+            inputRef.selectionEnd = preCursorPos;
+          });
+        }
 
         this.$nextTick(() => {
           this.setInputValue(this.value);
-        });
-        setTimeout(() => {
-          inputRef.selectionEnd = preCursorPos;
         });
       }
     },
