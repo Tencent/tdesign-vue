@@ -34,25 +34,39 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
 
   const cacheMap = new Map();
 
+  let clearStep = 0;
   const clearCacheNodes = () => {
-    cacheMap.clear();
+    // 重构为 hooks api 之后发现一个问题
+    // 立即执行 cacheMap.clear() 之后，renderTreeNodes 执行了 2 次
+    // 其中第一次在 nodes.value 变更之前执行
+    // 导致 cacheMap 缓存重新建立，并引发了视图绑定异常
+    // 因此用 clearStep 方式解决
+    clearStep = 1;
   };
 
   const nodes: Ref<TreeNode[]> = ref([]);
-  const nodesFilterEmpty = ref(false);
+  const nodesEmpty = ref(false);
   const refresh = () => {
     // 渲染为平铺列表
     nodes.value = store.getNodes();
   };
 
   const renderTreeNodes = (h: CreateElement) => {
-    let isFilterEmpty = true;
-    const treeNodeViews = nodes.value.map((node: TreeNode) => {
+    let treeNodeViews: TypeVNode[] = [];
+    let isEmpty = true;
+    const list = nodes.value;
+    if (clearStep) {
+      cacheMap.clear();
+      clearStep = 0;
+      nodesEmpty.value = !list.some((node: TreeNode) => node.visible);
+      return treeNodeViews;
+    }
+    treeNodeViews = list.map((node: TreeNode) => {
       // 如果节点已经存在，则使用缓存节点
-      let nodeView = cacheMap.get(node.value);
+      let nodeView: TypeVNode = cacheMap.get(node.value);
       if (node.visible) {
         // 任意一个节点可视，过滤结果就不是空
-        isFilterEmpty = false;
+        isEmpty = false;
         // 如果节点未曾创建，则临时创建
         if (!nodeView) {
           // 初次仅渲染可显示的节点
@@ -63,12 +77,13 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
       }
       return nodeView;
     });
-    nodesFilterEmpty.value = isFilterEmpty;
+    nodesEmpty.value = isEmpty;
 
     // 更新缓存后，被删除的节点要移除掉，避免内存泄露
     nextTick(() => {
       cacheMap.forEach((view: TypeVNode, value: string) => {
-        if (!store.getNode(value)) {
+        const node = store.getNode(value);
+        if (!node) {
           cacheMap.delete(value);
         }
       });
@@ -81,7 +96,8 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
   store.emitter.on('update', refresh);
 
   return {
-    nodesFilterEmpty,
+    refresh,
+    nodesEmpty,
     clearCacheNodes,
     renderTreeNodes,
   };

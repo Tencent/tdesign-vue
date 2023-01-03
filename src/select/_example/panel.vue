@@ -3,7 +3,7 @@
     <!-- 自定义面板顶部内容：如自定义搜索框。同时支持插槽和 Props(this,panelTopContent) -->
     <t-select v-model="value1" :options="options1" clearable placeholder="请选择云解决方案">
       <div slot="panelTopContent" style="padding: 6px 6px 0 6px">
-        <t-textarea v-model="search" placeholder="请输入关键词搜索" @change="onSearch" />
+        <t-input v-model="search" placeholder="请输入关键词搜索" @change="onSearch" />
       </div>
     </t-select>
 

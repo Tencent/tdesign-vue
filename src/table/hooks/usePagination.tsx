@@ -26,6 +26,7 @@ export default function usePagination(props: TdBaseTableProps, context: SetupCon
     } else {
       dataSource.value = data;
     }
+    return dataSource.value;
   };
 
   // 受控情况，只有 pagination.current 或者 pagination.pageSize 变化，才对数据进行排序
@@ -60,16 +61,14 @@ export default function usePagination(props: TdBaseTableProps, context: SetupCon
               change: (pageInfo: PageInfo) => {
                 props.pagination?.onChange?.(pageInfo);
                 innerPagination.value = pageInfo;
-                // 如果是非受控情况的分页变化，还需更新分页数据（data）
-                if (pagination.value && !pagination.value.current && pagination.value.defaultCurrent) {
-                  updateDataSourceAndPaginate(pageInfo.current, pageInfo.pageSize);
-                }
+                updateDataSourceAndPaginate(pageInfo.current, pageInfo.pageSize);
                 // Vue3 ignore this line
                 context.emit('page-change', pageInfo, dataSource.value);
                 props.onPageChange?.(pageInfo, dataSource.value);
               },
             },
           }}
+          scopedSlots={{ totalContent: context.slots.totalContent }}
         />
       </div>
     );

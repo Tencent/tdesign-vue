@@ -261,6 +261,16 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
       this.navBarStyle = getNavBarStyle();
     },
 
+    calculateMountedScrollLeft() {
+      if (['left', 'right'].includes(this.placement.toLowerCase())) return;
+
+      const container = this.$refs.navsContainer as HTMLElement;
+      const activeTabEl: HTMLElement = getActiveTabEl(this.navs, this.value);
+      const totalWidthBeforeActiveTab = activeTabEl?.offsetLeft;
+      const containerWidth = getDomWidth(container);
+      if (totalWidthBeforeActiveTab > containerWidth) this.scrollLeft = totalWidthBeforeActiveTab;
+    },
+
     watchDomChange() {
       const onResize = debounce(() => {
         this.resetScrollPosition();
@@ -470,6 +480,9 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
       this.watchDomChange();
       this.calculateNavBarStyle();
       this.calculateCanShowArrow();
+    });
+    setTimeout(() => {
+      this.calculateMountedScrollLeft();
     });
   },
   render() {
