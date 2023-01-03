@@ -1,4 +1,4 @@
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent, computed } from '@vue/composition-api';
 import {
   CloseIcon as TdCloseIcon,
   TimeFilledIcon as TdTimeFilledIcon,
@@ -36,9 +36,12 @@ const NormalFile = defineComponent({
       CloseCircleFilledIcon: TdCloseCircleFilledIcon,
     });
 
-    const uploadPrefix = `${props.classPrefix}-upload`;
+    const uploadPrefix = computed(() => `${props.classPrefix}-upload`);
+
+    const classes = computed(() => [`${uploadPrefix.value}__single`, `${uploadPrefix.value}__single-${props.theme}`]);
 
     return {
+      classes,
       uploadPrefix,
       icons,
     };
@@ -138,10 +141,9 @@ const NormalFile = defineComponent({
   },
 
   render() {
-    const classes = [`${this.uploadPrefix}__single`, `${this.uploadPrefix}__single-${this.theme}`];
     const fileListDisplay = renderTNodeJSX(this, 'fileListDisplay', { params: { files: this.displayFiles } });
     return (
-      <div class={classes}>
+      <div class={this.classes}>
         {this.theme === 'file-input' && this.renderFilePreviewAsInput()}
 
         {this.$scopedSlots.default?.(null)}

@@ -72,10 +72,18 @@ export default defineComponent({
       },
     }));
 
+    const uploadClasses = computed(() => [
+      `${classPrefix.value}-upload`,
+      {
+        [`${classPrefix.value}-upload--theme-${props.theme}`]: props.theme === 'file-input',
+      },
+    ]);
+
     return {
       ...uploadData,
       commonDisplayFileProps,
       dragProps,
+      uploadClasses,
     };
   },
 
@@ -190,7 +198,7 @@ export default defineComponent({
 
   render() {
     return (
-      <div class={`${this.classPrefix}-upload`}>
+      <div class={this.uploadClasses}>
         <input
           ref="inputRef"
           type="file"
