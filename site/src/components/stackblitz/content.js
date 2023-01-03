@@ -80,6 +80,7 @@ export const packageJSONContent = JSON.stringify(
     },
     devDependencies: {
       vite: orgPkg.devDependencies.vite,
+      less: orgPkg.devDependencies.less,
       'vite-plugin-vue2': orgPkg.devDependencies['vite-plugin-vue2'],
       'vue-template-compiler': orgPkg.devDependencies['vue-template-compiler'],
     },
