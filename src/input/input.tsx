@@ -305,8 +305,8 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       this.renderType = toggleType;
     },
     emitClear(e: MouseEvent) {
-      emitEvent<Parameters<TdInputProps['onClear']>>(this, 'clear', { e });
       emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', '', { e });
+      emitEvent<Parameters<TdInputProps['onClear']>>(this, 'clear', { e });
     },
     emitFocus(e: FocusEvent) {
       this.inputValue = this.value;
