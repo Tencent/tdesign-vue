@@ -13,7 +13,7 @@
       <t-checkbox-group v-model="value2" @change="onChange2">
         <t-checkbox :checkAll="true" label="全选" />
         <t-checkbox value="选项一">选项一</t-checkbox>
-        <t-checkbox label="选项二" value="选项二" />
+        <t-checkbox label="选项二" value="选项二" :disabled="true" />
         <t-checkbox label="选项三" value="选项三" />
       </t-checkbox-group>
     </t-space>
