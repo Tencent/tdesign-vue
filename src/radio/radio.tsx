@@ -83,14 +83,14 @@ export default mixins(Vue as VueConstructor<RadioInstance>, classPrefixMixins).e
     },
 
     handleRadioClick(e: MouseEvent) {
+      const tDisabled = this.getDisabled();
+      if (tDisabled) return;
       this.$emit('click', { e });
       this.checkRadio(e);
     },
 
     checkRadio(e: MouseEvent) {
       const tChecked = this.getChecked();
-      const tDisabled = this.getDisabled();
-      if (tDisabled) return;
       const allowUncheck = this.allowUncheck || this.radioGroup?.allowUncheck;
       if (this.radioGroup) {
         const value = tChecked && allowUncheck ? undefined : this.value;
