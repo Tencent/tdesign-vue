@@ -24,7 +24,7 @@ export default {
   options: {
     type: Array as PropType<TdRadioGroupProps['options']>,
   },
-  /** 组件尺寸 */
+  /** 组件尺寸【讨论中】 */
   size: {
     type: String as PropType<TdRadioGroupProps['size']>,
     default: 'medium' as TdRadioGroupProps['size'],

@@ -1,0 +1,157 @@
+// Vitest Snapshot v1
+
+exports[`Radio Component > props.checked is equal to true 1`] = `
+<label
+  class="t-radio t-is-checked"
+  tabindex="0"
+>
+  <input
+    class="t-radio__former"
+    tabindex="-1"
+    type="radio"
+    value=""
+  />
+  <span
+    class="t-radio__input"
+  />
+  <span
+    class="t-radio__label"
+  />
+</label>
+`;
+
+exports[`Radio Component > props.checked works fine 1`] = `
+<label
+  class="t-radio t-is-checked"
+  tabindex="0"
+>
+  <input
+    class="t-radio__former"
+    tabindex="-1"
+    type="radio"
+    value=""
+  />
+  <span
+    class="t-radio__input"
+  />
+  <span
+    class="t-radio__label"
+  />
+</label>
+`;
+
+exports[`Radio Component > props.checked works fine 2`] = `
+<label
+  class="t-radio"
+  tabindex="0"
+>
+  <input
+    class="t-radio__former"
+    tabindex="-1"
+    type="radio"
+    value=""
+  />
+  <span
+    class="t-radio__input"
+  />
+  <span
+    class="t-radio__label"
+  />
+</label>
+`;
+
+exports[`Radio Component > props.default works fine 1`] = `
+<label
+  class="t-radio"
+  tabindex="0"
+>
+  <input
+    class="t-radio__former"
+    tabindex="-1"
+    type="radio"
+    value=""
+  />
+  <span
+    class="t-radio__input"
+  />
+  <span
+    class="t-radio__label"
+  >
+    <span
+      class="custom-node"
+    >
+      TNode
+    </span>
+  </span>
+</label>
+`;
+
+exports[`Radio Component > props.disabled works fine 1`] = `
+<label
+  class="t-radio t-is-disabled"
+>
+  <input
+    class="t-radio__former"
+    disabled="disabled"
+    tabindex="-1"
+    type="radio"
+    value=""
+  />
+  <span
+    class="t-radio__input"
+  />
+  <span
+    class="t-radio__label"
+  >
+    Text
+  </span>
+</label>
+`;
+
+exports[`Radio Component > props.disabled works fine 2`] = `
+<label
+  class="t-radio"
+  tabindex="0"
+>
+  <input
+    class="t-radio__former"
+    tabindex="-1"
+    type="radio"
+    value=""
+  />
+  <span
+    class="t-radio__input"
+  />
+  <span
+    class="t-radio__label"
+  >
+    Text
+  </span>
+</label>
+`;
+
+exports[`Radio Component > slots.default works fine 1`] = `
+<label
+  class="t-radio"
+  tabindex="0"
+>
+  <input
+    class="t-radio__former"
+    tabindex="-1"
+    type="radio"
+    value=""
+  />
+  <span
+    class="t-radio__input"
+  />
+  <span
+    class="t-radio__label"
+  >
+    <span
+      class="custom-node"
+    >
+      TNode
+    </span>
+  </span>
+</label>
+`;

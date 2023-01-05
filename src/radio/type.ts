@@ -69,7 +69,7 @@ export interface TdRadioGroupProps<T = RadioValue> {
    */
   options?: Array<RadioOption>;
   /**
-   * 组件尺寸
+   * 组件尺寸【讨论中】
    * @default medium
    */
   size?: SizeEnum;
