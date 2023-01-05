@@ -7,7 +7,7 @@
 import { mount } from '@vue/test-utils';
 import { vi } from 'vitest';
 import { Radio, RadioGroup } from '..';
-import { getRadioGroupDefaultMount } from './mount';
+import { getRadioGroupSlotsMount, getRadioGroupDefaultMount } from './mount';
 
 describe('Radio Component', () => {
   it('props.allowUncheck works fine', async () => {
@@ -171,9 +171,26 @@ describe('RadioGroup Component', () => {
     expect(onChangeFn.mock.calls[0][1].e.type).toBe('click');
   });
 
+  it('props.allowUncheck works fine', async () => {
+    const onChangeFn = vi.fn();
+    const wrapper = getRadioGroupSlotsMount(RadioGroup, { value: 1, allowUncheck: true }, { change: onChangeFn });
+    wrapper.find('.t-radio').trigger('click');
+    await wrapper.vm.$nextTick();
+    expect(onChangeFn).toHaveBeenCalled();
+    expect(onChangeFn.mock.calls[0][0]).toBe(undefined);
+    expect(onChangeFn.mock.calls[0][1].e.type).toBe('click');
+  });
+
   it('props.disabled is equal true', () => {
     const wrapper = getRadioGroupDefaultMount(RadioGroup, { disabled: true });
     expect(wrapper.findAll('.t-radio.t-is-disabled').length).toBe(4);
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it('props.disabled is equal true', () => {
+    const wrapper = getRadioGroupSlotsMount(RadioGroup, { disabled: true });
+    expect(wrapper.findAll('.t-radio.t-is-disabled').length).toBe(4);
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('Props.disabled: disabled radio can not trigger change', async () => {
@@ -184,10 +201,26 @@ describe('RadioGroup Component', () => {
     expect(onChangeFn).not.toHaveBeenCalled();
   });
 
+  it('Props.disabled: disabled radio can not trigger change', async () => {
+    const onChangeFn = vi.fn();
+    const wrapper = getRadioGroupSlotsMount(RadioGroup, { disabled: true }, { change: onChangeFn });
+    wrapper.find('.t-radio').trigger('click');
+    await wrapper.vm.$nextTick();
+    expect(onChangeFn).not.toHaveBeenCalled();
+  });
+
   it('props.name is equal to \'custom-radio-name\'', () => {
     const wrapper = getRadioGroupDefaultMount(RadioGroup, { name: 'custom-radio-name' });
     const domWrapper = wrapper.find('input');
     expect(domWrapper.attributes('name')).toBe('custom-radio-name');
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it('props.name is equal to \'custom-radio-name\'', () => {
+    const wrapper = getRadioGroupSlotsMount(RadioGroup, { name: 'custom-radio-name' });
+    const domWrapper = wrapper.find('input');
+    expect(domWrapper.attributes('name')).toBe('custom-radio-name');
+    expect(wrapper.element).toMatchSnapshot();
   });
 
   it('props.options works fine. `{".t-radio":4}` should exist', () => {
@@ -200,13 +233,41 @@ describe('RadioGroup Component', () => {
     expect(wrapper.find('.custom-node').exists()).toBeTruthy();
   });
 
-  it('props.value is equal to 2', () => {
-    const wrapper = getRadioGroupDefaultMount(RadioGroup, { value: 2 });
+  it('props.options works fine. `{".t-radio.t-is-disabled":1}` should exist', () => {
+    const wrapper = getRadioGroupDefaultMount(RadioGroup);
+    expect(wrapper.findAll('.t-radio.t-is-disabled').length).toBe(1);
+  });
+
+  it('props.value is equal to \'2\'', () => {
+    const wrapper = getRadioGroupDefaultMount(RadioGroup, { value: '2' });
     const domWrapper = wrapper.find('.t-radio.t-is-checked input');
     expect(domWrapper.element.value).toBe('2');
   });
 
-  it('events.change works fine', async () => {
+  it('props.value is equal to \'2\'', () => {
+    const wrapper = getRadioGroupSlotsMount(RadioGroup, { value: '2' });
+    const domWrapper = wrapper.find('.t-radio.t-is-checked input');
+    expect(domWrapper.element.value).toBe('2');
+  });
+
+  const variantClassNameList = ['t-radio-group__outline', 't-radio-group--primary-filled', 't-radio-group--filled'];
+  ['outline', 'primary-filled', 'default-filled'].forEach((item, index) => {
+    it(`props.variant is equal to ${item}`, () => {
+      const wrapper = mount({
+        render() {
+          return <RadioGroup variant={item}></RadioGroup>;
+        },
+      });
+      if (typeof variantClassNameList[index] === 'string') {
+        expect(wrapper.classes(variantClassNameList[index])).toBeTruthy();
+      } else if (typeof variantClassNameList[index] === 'object') {
+        const classNameKey = Object.keys(variantClassNameList[index])[0];
+        expect(wrapper.classes(classNameKey)).toBeFalsy();
+      }
+    });
+  });
+
+  it('Events.change: default value is 2, trigger change after click', async () => {
     const onChangeFn = vi.fn();
     const wrapper = getRadioGroupDefaultMount(RadioGroup, { value: 2 }, { change: onChangeFn });
     wrapper.find('.t-radio').trigger('click');
@@ -215,9 +276,28 @@ describe('RadioGroup Component', () => {
     expect(onChangeFn.mock.calls[0][0]).toBe(1);
     expect(onChangeFn.mock.calls[0][1].e.type).toBe('click');
   });
-  it('events.change works fine', async () => {
+  it('Events.change: default value is empty, trigger change after click', async () => {
     const onChangeFn = vi.fn();
     const wrapper = getRadioGroupDefaultMount(RadioGroup, {}, { change: onChangeFn });
+    wrapper.find('.t-radio').trigger('click');
+    await wrapper.vm.$nextTick();
+    expect(onChangeFn).toHaveBeenCalled();
+    expect(onChangeFn.mock.calls[0][0]).toBe(1);
+    expect(onChangeFn.mock.calls[0][1].e.type).toBe('click');
+  });
+
+  it('Events.change: default value is 2, trigger change after click', async () => {
+    const onChangeFn = vi.fn();
+    const wrapper = getRadioGroupSlotsMount(RadioGroup, { value: 2 }, { change: onChangeFn });
+    wrapper.find('.t-radio').trigger('click');
+    await wrapper.vm.$nextTick();
+    expect(onChangeFn).toHaveBeenCalled();
+    expect(onChangeFn.mock.calls[0][0]).toBe(1);
+    expect(onChangeFn.mock.calls[0][1].e.type).toBe('click');
+  });
+  it('Events.change: default value is empty, trigger change after click', async () => {
+    const onChangeFn = vi.fn();
+    const wrapper = getRadioGroupSlotsMount(RadioGroup, {}, { change: onChangeFn });
     wrapper.find('.t-radio').trigger('click');
     await wrapper.vm.$nextTick();
     expect(onChangeFn).toHaveBeenCalled();
