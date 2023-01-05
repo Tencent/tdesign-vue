@@ -11,7 +11,7 @@ exports[`DatePicker > :mode 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+        class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
         <div
           class="t-input__prefix"
@@ -59,7 +59,7 @@ exports[`DatePicker > :range 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+        class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
         <div
           class="t-input__prefix"
@@ -106,7 +106,7 @@ exports[`DatePicker > :value 1`] = `
       class="t-input__wrap"
     >
       <div
-        class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+        class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
       >
         <div
           class="t-input__prefix"

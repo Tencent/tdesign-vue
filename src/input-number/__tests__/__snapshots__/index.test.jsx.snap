@@ -5,7 +5,7 @@ exports[`InputNumber > :props > :defaultValue, default value 6 1`] = `
   class="t-input-number t-size-m t-input-number--row"
 >
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
     type="button"
   >
     <svg
@@ -26,7 +26,7 @@ exports[`InputNumber > :props > :defaultValue, default value 6 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-align-center"
+      class="t-input t-align-center"
     >
       <input
         autocomplete="off"
@@ -38,7 +38,7 @@ exports[`InputNumber > :props > :defaultValue, default value 6 1`] = `
     </div>
   </div>
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
     type="button"
   >
     <svg
@@ -63,7 +63,7 @@ exports[`InputNumber > :props > :disabled, function can not be call 1`] = `
   class="t-input-number t-size-m t-is-disabled t-input-number--row"
 >
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled t-button--shape-square t-input-number__decrease t-is-disabled"
+    class="t-button t-button--variant-outline t-button--theme-default t-is-disabled t-button--shape-square t-input-number__decrease t-is-disabled"
     disabled="disabled"
     type="button"
   >
@@ -85,7 +85,7 @@ exports[`InputNumber > :props > :disabled, function can not be call 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-disabled t-align-center"
+      class="t-input t-is-disabled t-align-center"
     >
       <input
         autocomplete="off"
@@ -98,7 +98,7 @@ exports[`InputNumber > :props > :disabled, function can not be call 1`] = `
     </div>
   </div>
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-is-disabled t-button--shape-square t-input-number__increase t-is-disabled"
+    class="t-button t-button--variant-outline t-button--theme-default t-is-disabled t-button--shape-square t-input-number__increase t-is-disabled"
     disabled="disabled"
     type="button"
   >
@@ -124,7 +124,7 @@ exports[`InputNumber > :props > :format, with 6% 1`] = `
   class="t-input-number t-size-m t-input-number--row"
 >
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
     type="button"
   >
     <svg
@@ -145,7 +145,7 @@ exports[`InputNumber > :props > :format, with 6% 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-align-center"
+      class="t-input t-align-center"
     >
       <input
         autocomplete="off"
@@ -157,7 +157,7 @@ exports[`InputNumber > :props > :format, with 6% 1`] = `
     </div>
   </div>
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
     type="button"
   >
     <svg
@@ -182,7 +182,7 @@ exports[`InputNumber > :props > :max, value 6 < max 10 1`] = `
   class="t-input-number t-size-m t-input-number--row"
 >
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
     type="button"
   >
     <svg
@@ -203,7 +203,7 @@ exports[`InputNumber > :props > :max, value 6 < max 10 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-align-center"
+      class="t-input t-align-center"
     >
       <input
         autocomplete="off"
@@ -215,7 +215,7 @@ exports[`InputNumber > :props > :max, value 6 < max 10 1`] = `
     </div>
   </div>
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
     type="button"
   >
     <svg
@@ -240,7 +240,7 @@ exports[`InputNumber > :props > :max, value 16 > max 10 1`] = `
   class="t-input-number t-size-m t-input-number--row"
 >
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
     type="button"
   >
     <svg
@@ -261,7 +261,7 @@ exports[`InputNumber > :props > :max, value 16 > max 10 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-error t-align-center"
+      class="t-input t-is-error t-align-center"
     >
       <input
         autocomplete="off"
@@ -273,7 +273,7 @@ exports[`InputNumber > :props > :max, value 16 > max 10 1`] = `
     </div>
   </div>
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase t-is-disabled"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase t-is-disabled"
     type="button"
   >
     <svg
@@ -298,7 +298,7 @@ exports[`InputNumber > :props > :min, value -1 < min 1 1`] = `
   class="t-input-number t-size-m t-input-number--row"
 >
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease t-is-disabled"
     type="button"
   >
     <svg
@@ -319,7 +319,7 @@ exports[`InputNumber > :props > :min, value -1 < min 1 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-is-error t-align-center"
+      class="t-input t-is-error t-align-center"
     >
       <input
         autocomplete="off"
@@ -331,7 +331,7 @@ exports[`InputNumber > :props > :min, value -1 < min 1 1`] = `
     </div>
   </div>
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
     type="button"
   >
     <svg
@@ -356,7 +356,7 @@ exports[`InputNumber > :props > :min, value 6 > min 1 1`] = `
   class="t-input-number t-size-m t-input-number--row"
 >
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
     type="button"
   >
     <svg
@@ -377,7 +377,7 @@ exports[`InputNumber > :props > :min, value 6 > min 1 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-align-center"
+      class="t-input t-align-center"
     >
       <input
         autocomplete="off"
@@ -389,7 +389,7 @@ exports[`InputNumber > :props > :min, value 6 > min 1 1`] = `
     </div>
   </div>
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
     type="button"
   >
     <svg
@@ -414,7 +414,7 @@ exports[`InputNumber > :props > :mode, without class t-is-controls-right 1`] = `
   class="t-input-number t-size-m t-input-number--row"
 >
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
     type="button"
   >
     <svg
@@ -435,7 +435,7 @@ exports[`InputNumber > :props > :mode, without class t-is-controls-right 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-align-center"
+      class="t-input t-align-center"
     >
       <input
         autocomplete="off"
@@ -447,7 +447,7 @@ exports[`InputNumber > :props > :mode, without class t-is-controls-right 1`] = `
     </div>
   </div>
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
     type="button"
   >
     <svg
@@ -472,7 +472,7 @@ exports[`InputNumber > :props > :mode:column, with class t-is-controls-right 1`]
   class="t-input-number t-size-m t-is-controls-right t-input-number--column"
 >
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
     type="button"
   >
     <svg
@@ -493,7 +493,7 @@ exports[`InputNumber > :props > :mode:column, with class t-is-controls-right 1`]
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m"
+      class="t-input"
     >
       <input
         autocomplete="off"
@@ -505,7 +505,7 @@ exports[`InputNumber > :props > :mode:column, with class t-is-controls-right 1`]
     </div>
   </div>
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
     type="button"
   >
     <svg
@@ -530,7 +530,7 @@ exports[`InputNumber > :props > :mode:row, without class t-is-controls-right 1`]
   class="t-input-number t-size-m t-input-number--row"
 >
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
     type="button"
   >
     <svg
@@ -551,7 +551,7 @@ exports[`InputNumber > :props > :mode:row, without class t-is-controls-right 1`]
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-align-center"
+      class="t-input t-align-center"
     >
       <input
         autocomplete="off"
@@ -563,7 +563,7 @@ exports[`InputNumber > :props > :mode:row, without class t-is-controls-right 1`]
     </div>
   </div>
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
     type="button"
   >
     <svg
@@ -588,7 +588,7 @@ exports[`InputNumber > :props > :size:large, with class t-size-l 1`] = `
   class="t-input-number t-size-l t-input-number--row"
 >
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
     type="button"
   >
     <svg
@@ -609,7 +609,7 @@ exports[`InputNumber > :props > :size:large, with class t-size-l 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-align-center"
+      class="t-input t-align-center"
     >
       <input
         autocomplete="off"
@@ -621,7 +621,7 @@ exports[`InputNumber > :props > :size:large, with class t-size-l 1`] = `
     </div>
   </div>
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
     type="button"
   >
     <svg
@@ -646,7 +646,7 @@ exports[`InputNumber > :props > :size:medium, with class t-size-m 1`] = `
   class="t-input-number t-size-m t-input-number--row"
 >
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
     type="button"
   >
     <svg
@@ -667,7 +667,7 @@ exports[`InputNumber > :props > :size:medium, with class t-size-m 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-align-center"
+      class="t-input t-align-center"
     >
       <input
         autocomplete="off"
@@ -679,7 +679,7 @@ exports[`InputNumber > :props > :size:medium, with class t-size-m 1`] = `
     </div>
   </div>
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
     type="button"
   >
     <svg
@@ -704,7 +704,7 @@ exports[`InputNumber > :props > :size:small, with class t-size-s 1`] = `
   class="t-input-number t-size-s t-input-number--row"
 >
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
     type="button"
   >
     <svg
@@ -725,7 +725,7 @@ exports[`InputNumber > :props > :size:small, with class t-size-s 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-align-center"
+      class="t-input t-align-center"
     >
       <input
         autocomplete="off"
@@ -737,7 +737,7 @@ exports[`InputNumber > :props > :size:small, with class t-size-s 1`] = `
     </div>
   </div>
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
     type="button"
   >
     <svg
@@ -762,7 +762,7 @@ exports[`InputNumber > :props > :step, 2 1`] = `
   class="t-input-number t-size-m t-input-number--row"
 >
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
     type="button"
   >
     <svg
@@ -783,7 +783,7 @@ exports[`InputNumber > :props > :step, 2 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-align-center"
+      class="t-input t-align-center"
     >
       <input
         autocomplete="off"
@@ -795,7 +795,7 @@ exports[`InputNumber > :props > :step, 2 1`] = `
     </div>
   </div>
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
     type="button"
   >
     <svg
@@ -820,7 +820,7 @@ exports[`InputNumber > :props > :value, 6 1`] = `
   class="t-input-number t-size-m t-input-number--row"
 >
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
     type="button"
   >
     <svg
@@ -841,7 +841,7 @@ exports[`InputNumber > :props > :value, 6 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-align-center"
+      class="t-input t-align-center"
     >
       <input
         autocomplete="off"
@@ -853,7 +853,7 @@ exports[`InputNumber > :props > :value, 6 1`] = `
     </div>
   </div>
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
     type="button"
   >
     <svg
@@ -878,7 +878,7 @@ exports[`InputNumber > :props > :value, 6.55 1`] = `
   class="t-input-number t-size-m t-input-number--row"
 >
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
     type="button"
   >
     <svg
@@ -899,7 +899,7 @@ exports[`InputNumber > :props > :value, 6.55 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-align-center"
+      class="t-input t-align-center"
     >
       <input
         autocomplete="off"
@@ -911,7 +911,7 @@ exports[`InputNumber > :props > :value, 6.55 1`] = `
     </div>
   </div>
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
     type="button"
   >
     <svg
@@ -936,7 +936,7 @@ exports[`InputNumber > :props > class, with class t-input-number 1`] = `
   class="t-input-number t-size-m t-input-number--row"
 >
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
     type="button"
   >
     <svg
@@ -957,7 +957,7 @@ exports[`InputNumber > :props > class, with class t-input-number 1`] = `
     class="t-input__wrap"
   >
     <div
-      class="t-input t-size-m t-align-center"
+      class="t-input t-align-center"
     >
       <input
         autocomplete="off"
@@ -969,7 +969,7 @@ exports[`InputNumber > :props > class, with class t-input-number 1`] = `
     </div>
   </div>
   <button
-    class="t-button t-size-m t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
+    class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
     type="button"
   >
     <svg

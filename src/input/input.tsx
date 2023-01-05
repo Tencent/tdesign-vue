@@ -96,8 +96,8 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     inputClasses(): ClassName {
       return [
         this.componentName,
-        this.commonSizeClassName[this.size] || '',
         {
+          [this.commonSizeClassName[this.size]]: this.size !== 'medium',
           [this.commonStatusClassName.disabled]: this.tDisabled,
           [this.commonStatusClassName.focused]: this.focused,
           [`${this.classPrefix}-is-${this.tStatus}`]: this.tStatus,
@@ -145,6 +145,10 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
 
     tStatus(): string {
       return this.status || this.innerStatus;
+    },
+
+    isIE(): boolean {
+      return getIEVersion() <= 11;
     },
   },
 
@@ -214,7 +218,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     // 当元素默认为 display: none 状态，无法提前准确计算宽度，因此需要监听元素宽度变化。比如：Tabs 场景切换。
     addTableResizeObserver(element: Element) {
       // IE 11 以下使用设置 minWidth 兼容；IE 11 以上使用 ResizeObserver
-      if (typeof window.ResizeObserver === 'undefined' || !element || getIEVersion() <= 11) return;
+      if (typeof window.ResizeObserver === 'undefined' || !element || this.isIE) return;
       this.resizeObserver = new window.ResizeObserver(() => {
         this.updateInputWidth();
       });
@@ -259,11 +263,10 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     },
     handleKeydown(e: KeyboardEvent) {
       if (this.tDisabled) return;
-      const code = e.code || e.key;
       const {
         currentTarget: { value },
       }: any = e;
-      if (code === 'Enter' || code === 'NumpadEnter') {
+      if (/enter/i.test(e.key) || /enter/i.test(e.code)) {
         emitEvent<Parameters<TdInputProps['onEnter']>>(this, 'enter', value, { e });
       } else {
         emitEvent<Parameters<TdInputProps['onKeydown']>>(this, 'keydown', value, { e });
@@ -301,8 +304,8 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       this.renderType = toggleType;
     },
     emitClear(e: MouseEvent) {
-      emitEvent<Parameters<TdInputProps['onClear']>>(this, 'clear', { e });
       emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', '', { e });
+      emitEvent<Parameters<TdInputProps['onClear']>>(this, 'clear', { e });
     },
     emitFocus(e: FocusEvent) {
       this.inputValue = this.value;
@@ -355,14 +358,16 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         }
         emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e } as { e: MouseEvent | InputEvent });
         // 受控，重要，勿删 input无法直接实现受控
-        const inputRef = this.$refs.inputRef as HTMLInputElement;
-        preCursorPos = inputRef.selectionStart;
+        if (!this.isIE) {
+          const inputRef = this.$refs.inputRef as HTMLInputElement;
+          preCursorPos = inputRef.selectionStart;
+          setTimeout(() => {
+            inputRef.selectionEnd = preCursorPos;
+          });
+        }
 
         this.$nextTick(() => {
           this.setInputValue(this.value);
-        });
-        setTimeout(() => {
-          inputRef.selectionEnd = preCursorPos;
         });
       }
     },

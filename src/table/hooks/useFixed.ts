@@ -201,7 +201,9 @@ export default function useFixed(
       // 多级表头，使用父元素作为初始基本位置
       const defaultWidth = i === 0 ? parent?.left || 0 : 0;
       const lastColInfo = initialColumnMap.get(lastCol?.colKey || i - 1);
-      colInfo.left = (lastColInfo?.left || defaultWidth) + (lastColInfo?.width || 0);
+      if (colInfo) {
+        colInfo.left = (lastColInfo?.left || defaultWidth) + (lastColInfo?.width || 0);
+      }
       // 多级表头
       if (col.children?.length) {
         setFixedLeftPos(col.children, initialColumnMap, colInfo);

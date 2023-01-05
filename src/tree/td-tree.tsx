@@ -75,7 +75,7 @@ export default defineComponent({
 
     useDragHandle(props, context, state);
     const { setActived, setExpanded, setChecked } = useTreeAction(props, context, state);
-    const { renderTreeNodes, clearCacheNodes, nodesFilterEmpty } = useTreeNodes(props, context, state);
+    const { renderTreeNodes, clearCacheNodes, nodesEmpty } = useTreeNodes(props, context, state);
 
     watch(refProps.data, (list) => {
       clearCacheNodes();
@@ -111,7 +111,7 @@ export default defineComponent({
       setExpanded,
       setChecked,
       renderTreeNodes,
-      nodesFilterEmpty,
+      nodesEmpty,
     };
   },
   // 在 methods 提供公共方法
@@ -205,7 +205,7 @@ export default defineComponent({
   },
   render(h) {
     const {
-      cache, classList, updateStoreConfig, renderTreeNodes, nodesFilterEmpty,
+      cache, classList, updateStoreConfig, renderTreeNodes, nodesEmpty,
     } = this;
 
     updateStoreConfig();
@@ -219,10 +219,14 @@ export default defineComponent({
 
     // 空数据判定
     let emptyNode: TNodeReturnValue = null;
-    if (treeNodeViews.length <= 0 || nodesFilterEmpty) {
+    if (nodesEmpty) {
       const useLocale = !this.empty && !this.$scopedSlots.empty;
       const emptyContent = useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty');
       emptyNode = <div class={`${cname}__empty`}>{emptyContent}</div>;
+    } else if (treeNodeViews.length <= 0) {
+      // 数据切换时，有闪现的缓存节点呈现
+      // 用这个替换内容置空
+      emptyNode = <div></div>;
     }
 
     // 构造列表

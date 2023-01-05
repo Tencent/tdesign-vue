@@ -35,10 +35,10 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
 
     const buttonClass = [
       `${this.componentName}`,
-      this.commonSizeClassName[this.size],
       `${this.componentName}--variant-${this.variant}`,
       `${this.componentName}--theme-${theme}`,
       {
+        [this.commonSizeClassName[this.size]]: this.size !== 'medium',
         [this.commonStatusClassName.disabled]: this.disabled,
         [this.commonStatusClassName.loading]: this.loading,
         [`${this.componentName}--shape-${this.shape}`]: this.shape !== 'rectangle',
@@ -63,7 +63,7 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
     const buttonAttrs = {
       type: this.type,
       disabled,
-      href: this.href,
+      href: this.href || undefined,
     };
 
     const renderTag = () => {

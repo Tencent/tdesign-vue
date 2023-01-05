@@ -184,14 +184,14 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
     },
   },
 
-  watch: {
-    value() {
-      this.validate('change');
-    },
-  },
-
   created() {
     this.addWatch();
+    this.$watch(
+      () => [this.value, this.name, JSON.stringify(this.rules)],
+      () => {
+        this.validate('change');
+      },
+    );
   },
 
   mounted() {
