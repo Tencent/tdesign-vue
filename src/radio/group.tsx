@@ -115,10 +115,14 @@ export default mixins(classPrefixMixins).extend({
     checkRadioInGroup(e: KeyboardEvent) {
       if (/enter/i.test(e.key) || /enter/i.test(e.code)) {
         const inputNode = (e.target as HTMLElement).querySelector('input');
-        const dataValue: string = inputNode.getAttribute('data-value');
-        let value = !isNaN(Number(dataValue)) ? Number(dataValue) : dataValue;
-        value = typeof value === 'string' && value[0] === "'" ? value.replace(/'/g, '') : value;
-        this.handleRadioChange(value, { e });
+        if (inputNode.checked) {
+          this.handleRadioChange(undefined, { e });
+        } else {
+          const dataValue: string = inputNode.getAttribute('data-value');
+          let value = !isNaN(Number(dataValue)) ? Number(dataValue) : dataValue;
+          value = typeof value === 'string' && value[0] === "'" ? value.replace(/'/g, '') : value;
+          this.handleRadioChange(value, { e });
+        }
       }
     },
 
