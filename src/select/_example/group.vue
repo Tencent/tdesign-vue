@@ -4,7 +4,8 @@
     <t-select v-model="value1" :options="options" placeholder="请选择" filterable />
 
     <!-- 方式二：使用插槽节点 -->
-    <t-select v-model="value2" placeholder="请选择" filterable>
+    <t-select multiple v-model="value2" placeholder="请选择" filterable :style="{ minWidth: '240px' }">
+      <t-option :checkAll="true">全选</t-option>
       <t-option-group
         v-for="(list, index) in options"
         :key="index"
@@ -24,7 +25,7 @@ export default {
   data() {
     return {
       value1: '',
-      value2: '',
+      value2: [],
       options: [
         {
           group: '分组一',

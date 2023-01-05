@@ -1,7 +1,7 @@
 <template>
   <t-space direction="vertical">
     <!-- 方式一：使用 options 输出下拉选项。优先级高于 t-option-->
-    <t-select v-model="value1" :options="options1" placeholder="请选择云解决方案" multiple />
+    <t-select v-model="value1" :options="options1" placeholder="请选择云解决方案" multiple @change="handleChange" />
     <!-- 方式二：使用 t-option 输出下拉选项。options 和 t-option 两种实现方式二选一即可 -->
     <t-select v-model="value2" placeholder="请选择云产品" multiple>
       <t-option v-for="item in options2" :value="item.value" :label="item.label" :key="item.value"></t-option>
@@ -20,6 +20,7 @@ export default {
       value2: ['1', '2', '3', '4', '5', '6'],
       value3: ['3', '5', '6', '2'],
       options1: [
+        { label: '全选', checkAll: true },
         { label: '架构云', value: '1' },
         { label: '大数据', value: '2' },
         { label: '区块链', value: '3' },
@@ -42,6 +43,11 @@ export default {
         { label: '低代码平台', value: '6' },
       ],
     };
+  },
+  methods: {
+    handleChange(...args) {
+      console.log('change', ...args);
+    },
   },
 };
 </script>
