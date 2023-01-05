@@ -4,8 +4,6 @@
       <t-radio-group name="city" v-model="value" :options="options" allowUncheck @change="onChange"></t-radio-group>
     </t-space>
 
-    <t-radio>选项二</t-radio>
-
     <t-space>
       <t-radio-group v-model="value2" @change="onChange2">
         <t-radio value="1" allow-uncheck>选项一</t-radio>
