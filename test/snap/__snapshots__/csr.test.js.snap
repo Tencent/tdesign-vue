@@ -4528,14 +4528,16 @@ exports[`csr snapshot test > csr test ./src/button/_example/icon.vue 1`] = `
         width="1em"
       >
         <path
-          d="M7.84 5.01A2 2 0 105 7.84 2 2 0 007.84 5zm-.7.7a1 1 0 11-1.42 1.42 1 1 0 011.41-1.41z"
+          d="M7.84 5.01A2 2 0 115 7.84 2 2 0 017.84 5zm-.7.7a1 1 0 10-1.42 1.42 1 1 0 001.41-1.41z"
           fill="currentColor"
           fill-opacity="0.9"
         />
         <path
-          d="M2 7.95V2h5.95a1 1 0 01.7.3l6.14 6.13a1 1 0 010 1.41L9.84 14.8a1 1 0 01-1.41 0L2.29 8.66A1 1 0 012 7.95zM7.95 3H3v4.95l6.13 6.13 4.95-4.95L7.95 3z"
+          clip-rule="evenodd"
+          d="M2 7.95V2h5.95a1 1 0 01.7.3l6.14 6.13a1 1 0 010 1.41L9.84 14.8a1 1 0 01-1.41 0L2.29 8.66A1 1 0 012 7.95zM7.95 3l6.13 6.13-4.95 4.95L3 7.95V3h4.95z"
           fill="currentColor"
           fill-opacity="0.9"
+          fill-rule="evenodd"
         />
       </svg>
     </button>
@@ -23233,10 +23235,11 @@ exports[`csr snapshot test > csr test ./src/checkbox/_example/group.vue 1`] = `
             </span>
           </label>
           <label
-            class="t-checkbox"
+            class="t-checkbox t-is-disabled"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               name=""
               type="checkbox"
               value="选项二"
@@ -83997,12 +84000,13 @@ exports[`csr snapshot test > csr test ./src/select/_example/group.vue 1`] = `
   >
     <div
       class="t-select__wrap"
+      style="min-width: 240px;"
     >
       <div
-        class="t-select-input t-select-input--empty t-select"
+        class="t-select-input t-select-input--multiple t-select-input--empty t-select"
       >
         <div
-          class="t-input__wrap"
+          class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon"
         >
           <div
             class="t-input t-is-default t-input--prefix t-input--suffix"
@@ -84017,6 +84021,11 @@ exports[`csr snapshot test > csr test ./src/select/_example/group.vue 1`] = `
               type="text"
               unselectable="off"
             />
+            <span
+              class="t-input__input-pre"
+            >
+              请选择
+            </span>
             <span
               class="t-input__suffix t-input__suffix-icon"
             >
@@ -85416,48 +85425,108 @@ exports[`csr snapshot test > csr test ./src/select/_example/status.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/select/_example/virtual-scroll.vue 1`] = `
 <div
-  class="t-select__wrap"
-  style="width: 300px;"
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
 >
   <div
-    class="t-select-input t-select-input--empty t-select"
+    class="t-space-item"
   >
     <div
-      class="t-input__wrap"
+      class="t-select__wrap"
+      style="width: 300px;"
     >
       <div
-        class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
+        class="t-select-input t-select-input--empty t-select"
       >
         <div
-          class="t-input__prefix"
-        />
-        <input
-          autocomplete=""
-          class="t-input__inner"
-          placeholder="请选择"
-          readonly="readonly"
-          type="text"
-          unselectable="on"
-        />
-        <span
-          class="t-input__suffix t-input__suffix-icon"
+          class="t-input__wrap"
         >
-          <svg
-            class="t-fake-arrow t-select__right-icon"
-            fill="none"
-            height="16"
-            viewBox="0 0 16 16"
-            width="16"
-            xmlns="http://www.w3.org/2000/svg"
+          <div
+            class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
           >
-            <path
-              d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-              stroke="black"
-              stroke-opacity="0.9"
-              stroke-width="1.3"
+            <div
+              class="t-input__prefix"
             />
-          </svg>
-        </span>
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请选择"
+              readonly="readonly"
+              type="text"
+              unselectable="on"
+            />
+            <span
+              class="t-input__suffix t-input__suffix-icon"
+            >
+              <svg
+                class="t-fake-arrow t-select__right-icon"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                  stroke="black"
+                  stroke-opacity="0.9"
+                  stroke-width="1.3"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-select__wrap"
+      style="width: 300px;"
+    >
+      <div
+        class="t-select-input t-select-input--empty t-select"
+      >
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input t-is-default t-is-readonly t-input--prefix t-input--suffix"
+          >
+            <div
+              class="t-input__prefix"
+            />
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请选择"
+              readonly="readonly"
+              type="text"
+              unselectable="on"
+            />
+            <span
+              class="t-input__suffix t-input__suffix-icon"
+            >
+              <svg
+                class="t-fake-arrow t-select__right-icon"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                  stroke="black"
+                  stroke-opacity="0.9"
+                  stroke-width="1.3"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -128870,16 +128939,18 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
             width="1em"
           >
             <path
-              d="M7.84 5.01A2 2 0 105 7.84 2 2 0 007.84 5zm-.7.7a1 1 0 11-1.42 1.42 1 1 0 011.41-1.41z"
+              d="M7.84 5.01A2 2 0 115 7.84 2 2 0 017.84 5zm-.7.7a1 1 0 10-1.42 1.42 1 1 0 001.41-1.41z"
               data-v-48c2675e=""
               fill="currentColor"
               fill-opacity="0.9"
             />
             <path
-              d="M2 7.95V2h5.95a1 1 0 01.7.3l6.14 6.13a1 1 0 010 1.41L9.84 14.8a1 1 0 01-1.41 0L2.29 8.66A1 1 0 012 7.95zM7.95 3H3v4.95l6.13 6.13 4.95-4.95L7.95 3z"
+              clip-rule="evenodd"
+              d="M2 7.95V2h5.95a1 1 0 01.7.3l6.14 6.13a1 1 0 010 1.41L9.84 14.8a1 1 0 01-1.41 0L2.29 8.66A1 1 0 012 7.95zM7.95 3l6.13 6.13-4.95 4.95L3 7.95V3h4.95z"
               data-v-48c2675e=""
               fill="currentColor"
               fill-opacity="0.9"
+              fill-rule="evenodd"
             />
           </svg>
           <span
@@ -128913,19 +128984,6 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
           <span>
              可删除标签 
           </span>
-          <svg
-            class="t-icon t-icon-close t-tag__icon-close"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
         </span>
       </div>
     </div>
@@ -129012,14 +129070,16 @@ exports[`csr snapshot test > csr test ./src/tag/_example/icon.vue 1`] = `
         width="1em"
       >
         <path
-          d="M7.84 5.01A2 2 0 105 7.84 2 2 0 007.84 5zm-.7.7a1 1 0 11-1.42 1.42 1 1 0 011.41-1.41z"
+          d="M7.84 5.01A2 2 0 115 7.84 2 2 0 017.84 5zm-.7.7a1 1 0 10-1.42 1.42 1 1 0 001.41-1.41z"
           fill="currentColor"
           fill-opacity="0.9"
         />
         <path
-          d="M2 7.95V2h5.95a1 1 0 01.7.3l6.14 6.13a1 1 0 010 1.41L9.84 14.8a1 1 0 01-1.41 0L2.29 8.66A1 1 0 012 7.95zM7.95 3H3v4.95l6.13 6.13 4.95-4.95L7.95 3z"
+          clip-rule="evenodd"
+          d="M2 7.95V2h5.95a1 1 0 01.7.3l6.14 6.13a1 1 0 010 1.41L9.84 14.8a1 1 0 01-1.41 0L2.29 8.66A1 1 0 012 7.95zM7.95 3l6.13 6.13-4.95 4.95L3 7.95V3h4.95z"
           fill="currentColor"
           fill-opacity="0.9"
+          fill-rule="evenodd"
         />
       </svg>
       <span>
@@ -129041,14 +129101,16 @@ exports[`csr snapshot test > csr test ./src/tag/_example/icon.vue 1`] = `
         width="1em"
       >
         <path
-          d="M7.84 5.01A2 2 0 105 7.84 2 2 0 007.84 5zm-.7.7a1 1 0 11-1.42 1.42 1 1 0 011.41-1.41z"
+          d="M7.84 5.01A2 2 0 115 7.84 2 2 0 017.84 5zm-.7.7a1 1 0 10-1.42 1.42 1 1 0 001.41-1.41z"
           fill="currentColor"
           fill-opacity="0.9"
         />
         <path
-          d="M2 7.95V2h5.95a1 1 0 01.7.3l6.14 6.13a1 1 0 010 1.41L9.84 14.8a1 1 0 01-1.41 0L2.29 8.66A1 1 0 012 7.95zM7.95 3H3v4.95l6.13 6.13 4.95-4.95L7.95 3z"
+          clip-rule="evenodd"
+          d="M2 7.95V2h5.95a1 1 0 01.7.3l6.14 6.13a1 1 0 010 1.41L9.84 14.8a1 1 0 01-1.41 0L2.29 8.66A1 1 0 012 7.95zM7.95 3l6.13 6.13-4.95 4.95L3 7.95V3h4.95z"
           fill="currentColor"
           fill-opacity="0.9"
+          fill-rule="evenodd"
         />
       </svg>
       <span>
@@ -154623,7 +154685,7 @@ exports[`csr snapshot test > csr test ./src/upload/_example/single-input.vue 1`]
     style="width: 350px;"
   >
     <div
-      class="t-upload"
+      class="t-upload t-upload--theme-file-input"
     >
       <input
         accept=""
