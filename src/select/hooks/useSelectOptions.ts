@@ -8,7 +8,6 @@ import {
 } from '@vue/composition-api';
 import { VNode } from 'vue';
 import get from 'lodash/get';
-import isArray from 'lodash/isArray';
 import {
   TdSelectProps, SelectKeysType, TdOptionProps, SelectOptionGroup, SelectValue,
 } from '../type';
