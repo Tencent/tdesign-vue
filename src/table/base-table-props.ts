@@ -40,7 +40,7 @@ export default {
     type: [String, Function] as PropType<TdBaseTableProps['empty']>,
     default: '',
   },
-  /** 首行内容 */
+  /** 首行内容，横跨所有列 */
   firstFullRow: {
     type: [String, Function] as PropType<TdBaseTableProps['firstFullRow']>,
   },
@@ -85,7 +85,7 @@ export default {
   },
   /** 是否显示鼠标悬浮状态 */
   hover: Boolean,
-  /** 尾行内容 */
+  /** 尾行内容，横跨所有列 */
   lastFullRow: {
     type: [String, Function] as PropType<TdBaseTableProps['lastFullRow']>,
   },

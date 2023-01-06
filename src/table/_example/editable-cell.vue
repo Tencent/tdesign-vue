@@ -68,6 +68,11 @@ export default {
               clearable: true,
               autofocus: true,
             },
+            on: {
+              blur: () => {
+                console.log('失去焦点');
+              },
+            },
             // 除了点击非自身元素退出编辑态之外，还有哪些事件退出编辑态
             abortEditOnEvent: ['onEnter'],
             // 编辑完成，退出编辑态后触发

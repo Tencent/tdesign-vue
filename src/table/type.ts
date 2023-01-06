@@ -68,7 +68,7 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   empty?: string | TNode;
   /**
-   * 首行内容
+   * 首行内容，横跨所有列
    */
   firstFullRow?: string | TNode;
   /**
@@ -118,7 +118,7 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   hover?: boolean;
   /**
-   * 尾行内容
+   * 尾行内容，横跨所有列
    */
   lastFullRow?: string | TNode;
   /**
@@ -821,6 +821,10 @@ export interface TableEditableCellConfig<T extends TableRowData = TableRowData> 
    * @default false
    */
   defaultEditable?: boolean;
+  /**
+   * 透传给编辑组件的事件
+   */
+  on?: { [key: string]: any };
   /**
    * 编辑完成后，退出编辑模式时触发
    */

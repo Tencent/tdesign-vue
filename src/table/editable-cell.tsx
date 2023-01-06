@@ -356,7 +356,7 @@ export default defineComponent({
           status={errorMessage ? this.errorList?.[0]?.type || 'error' : undefined}
           tips={errorMessage}
           props={this.componentProps}
-          on={this.listeners}
+          on={{ ...this.listeners, ...this.col.edit?.on }}
           value={this.editValue}
           onChange={this.onEditChange}
         />

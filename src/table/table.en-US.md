@@ -277,6 +277,7 @@ name | type | default | description | required
 abortEditOnEvent | Array | - | Typescript：`string[]` | N
 component | \- | - | component definition。Typescript：`ComponentType`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 defaultEditable | Boolean | false | set default editable once | N
+on | Object | - | Typescript：`{ [key: string]: any }` | N
 onEdited | Function | - | trigger on finishing editing。Typescript：`(context: PrimaryTableOnEditedContext<T>) => void` `type PrimaryTableOnEditedContext<T> = PrimaryTableCellParams<T> & { trigger: string; newRowData: T; }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 props | Object | - | props of `edit.component`。Typescript：`TableEditableCellProps<T>` `type TableEditableCellProps<T> = TablePlainObject \| ((params: TableEditableCellPropsParams<T>) => TablePlainObject)` `interface TableEditableCellPropsParams<T> extends PrimaryTableCellParams<T> { editedRow: T }` `interface TablePlainObject{ [key: string]: any }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 rules | Array | - | form rules。Typescript：`TableEditableCellRules<T>` `type TableEditableCellRules<T> = FormRule[] \| ((params: PrimaryTableCellParams<T>) => FormRule[])`，[Form API Documents](./form?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
