@@ -106,8 +106,7 @@ export default defineComponent({
               return pre;
             }, []),
           });
-        }
-        if (filterMethods(option)) {
+        } else if (filterMethods(option)) {
           res.push({ ...option, index: groupIndex + res.length });
         }
       });
